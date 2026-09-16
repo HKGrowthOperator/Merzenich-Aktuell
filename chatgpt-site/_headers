@@ -1,0 +1,39 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Strict-Transport-Security: max-age=31536000
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+/assets/uploads/*
+  Cache-Control: public, max-age=2592000
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/sw.js
+  Cache-Control: no-cache
+/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=600
+/*/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=600
+/atom.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/feed.json
+  Content-Type: application/feed+json; charset=utf-8
+/news-sitemap.xml
+  Cache-Control: public, max-age=300
+/termine/kalender.ics
+  Content-Type: text/calendar; charset=utf-8
+  Cache-Control: public, max-age=3600
+/termine/*/termin.ics
+  Content-Type: text/calendar; charset=utf-8
+/admin/*
+  X-Robots-Tag: noindex
+  Content-Security-Policy: default-src 'self' https://unpkg.com https://identity.netlify.com https://api.netlify.com https://*.netlify.app https://*.netlify.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; connect-src 'self' https://identity.netlify.com https://api.netlify.com; frame-src 'self'

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Faire Woche in Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:faire-woche-2026@merzenich-aktuell.de
+DTSTAMP:20260827T073200Z
+DTSTART:20260910T220000Z
+DTEND:20260925T215900Z
+SUMMARY:Faire Woche in Merzenich
+DESCRIPTION:Die Gemeinde beteiligt sich an der bundesweiten Fairen Woche 
+ mit Naturangeboten für Familien und Schulklassen und einer Müllsammelakti
+ on am 20. September.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenich
+ -aktuell.de/termine/faire-woche-2026/
+LOCATION:Gemeindegebiet
+URL:https://merzenich-aktuell.de/termine/faire-woche-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

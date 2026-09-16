@@ -1,0 +1,1423 @@
+{
+ "version": "https://jsonfeed.org/version/1.1",
+ "title": "Merzenich Aktuell",
+ "home_page_url": "https://merzenich-aktuell.de/",
+ "feed_url": "https://merzenich-aktuell.de/feed.json",
+ "description": "Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald",
+ "language": "de-DE",
+ "icon": "https://merzenich-aktuell.de/assets/img/avatar-1024.png",
+ "favicon": "https://merzenich-aktuell.de/assets/img/favicon.svg",
+ "authors": [
+  {
+   "name": "Redaktion Merzenich Aktuell",
+   "url": "https://merzenich-aktuell.de/ueber-uns/"
+  }
+ ],
+ "items": [
+  {
+   "id": "https://merzenich-aktuell.de/sport/sc-merzenich-tabellenfuehrer/",
+   "url": "https://merzenich-aktuell.de/sport/sc-merzenich-tabellenfuehrer/",
+   "title": "Nach zwei Spielen: SC Merzenich stand an der Tabellenspitze",
+   "summary": "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim.",
+   "content_html": "<p><strong>Archivstand vom 4. September.</strong> Nach dem Derby vom 6. September gilt dieser Tabellenstand nicht mehr. Aktuelle Ergebnisse stehen im <a href=\"/sc-1919-merzenich/\">Vereinskanal</a>.</p>\n<p>Der SC 1919 Merzenich führt die Kreisliga A an. Nach zwei Spieltagen steht die erste Mannschaft mit zwei Siegen, 6 Punkten und einem Torverhältnis von 7:2 auf Rang eins der Staffel im Kreis Düren.</p>\n<p>Dahinter folgen der SC Jülich 1910/97/Hoengen und der Hambacher Spielverein mit jeweils vier Punkten. Merzenich hat als einzige Mannschaft der Liga beide bisherigen Partien gewonnen.</p>\n<p>Am Sonntag, 6. September, steht um 15 Uhr das Nachbarschaftsduell beim FC Golzheim an. Der Gastgeber ist bislang einmal angetreten und holte dabei einen Punkt. Eine Woche später kommt der BC Oberzier zum Heimspiel nach Merzenich.</p>\n<p>Der SC 1919 Merzenich meldet für die Saison 2026/2027 insgesamt 17 Mannschaften, darunter 14 Juniorenteams. Die zweite Mannschaft spielt in der Kreisliga C, Staffel 2, die dritte in der Staffel 1.</p>\n<p>Tabelle, Spielplan und alle Mannschaften des Vereins stehen gebündelt auf unserer Vereinsseite.</p>\n",
+   "date_published": "2026-09-04T09:30:00+02:00",
+   "date_modified": "2026-09-09T10:15:14+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/sc-1919-merzenich-logo.webp",
+   "tags": [
+    "Sport",
+    "Merzenich",
+    "SC 1919 Merzenich",
+    "Kreisliga A",
+    "Fußball"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "sport",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "FUSSBALL.DE – SC 1919 Merzenich",
+      "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+      "stand": "2026-09-04"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/sport/sc-merzenich-reserven-kreisliga-c/",
+   "url": "https://merzenich-aktuell.de/sport/sc-merzenich-reserven-kreisliga-c/",
+   "title": "Zweite und dritte Mannschaft suchen den Anschluss",
+   "summary": "Beim Datenstand vom 4. September führte die Erste die Kreisliga A an; stehen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am Sonntag sind beide im Einsatz.",
+   "content_html": "<p>Der SC 1919 Merzenich stellt drei Seniorenmannschaften. Während die erste die Kreisliga A anführt, ist der Saisonstart der beiden Reserveteams in der Kreisliga C zäh verlaufen.</p>\n<p>Die zweite Mannschaft steht in der Staffel 2 auf Platz 13 und wartet mit 5:10 Toren noch auf den ersten Punkt. Die dritte Mannschaft liegt in der Staffel 1 mit drei Punkten und 4:13 Toren auf Rang neun.</p>\n<p>Am Sonntag, 6. September, sind beide Teams im Einsatz: Die Dritte empfängt um 12 Uhr Rasensport Tetz, die Zweite spielt um 15 Uhr auswärts beim BSV Wissersheim.</p>\n<p>Insgesamt meldet der Verein für die Saison 2026/2027 siebzehn Mannschaften, davon vierzehn im Juniorenbereich von den A- bis zu den G-Junioren.</p>\n",
+   "date_published": "2026-09-04T09:20:00+02:00",
+   "date_modified": "2026-09-04T09:20:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/sc-1919-merzenich-logo.webp",
+   "tags": [
+    "Sport",
+    "Merzenich",
+    "SC 1919 Merzenich",
+    "Kreisliga C",
+    "Fußball"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "sport",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "FUSSBALL.DE – Vereinsseite SC Merzenich",
+      "url": "https://www.fussball.de/verein/sc-merzenich-mittelrhein/-/id/00ES8GN9A0000054VV0AG08LVUPGND5I",
+      "stand": "2026-09-04"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/sport/sc-golzheim-nachbarschaftsduell/",
+   "url": "https://merzenich-aktuell.de/sport/sc-golzheim-nachbarschaftsduell/",
+   "title": "Nachbarschaftsduell: SC Merzenich beim FC Golzheim",
+   "summary": "Am Sonntag um 15 Uhr treffen die beiden Gemeindevereine in der Kreisliga A aufeinander. Merzenich reist als Tabellenführer an, Golzheim hat erst einmal gespielt.",
+   "content_html": "<p>Zwei Vereine aus derselben Gemeinde, eine Liga: Am Sonntag, 6. September, empfängt der FC Golzheim um 15 Uhr den SC 1919 Merzenich zum Kreisliga-A-Spiel. Die Partie ist bei FUSSBALL.DE unter der Spielnummer 230517018 angesetzt.</p>\n<p>Die Ausgangslage ist ungleich. Merzenich führt die Staffel nach zwei Spieltagen mit zwei Siegen, sechs Punkten und 7:2 Toren an. Golzheim ist bislang einmal angetreten und holte dabei ein torloses Unentschieden, was Platz zehn bedeutet.</p>\n<p>Für Merzenich ist es das dritte Pflichtspiel der Saison, für Golzheim erst das zweite. Eine Woche später kommt der BC Oberzier zum Heimspiel nach Merzenich.</p>\n",
+   "date_published": "2026-09-04T09:10:00+02:00",
+   "date_modified": "2026-09-04T09:10:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/sc-1919-merzenich-logo.webp",
+   "tags": [
+    "Sport",
+    "Golzheim",
+    "SC 1919 Merzenich",
+    "Kreisliga A",
+    "Fußball",
+    "FC Golzheim"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "sport",
+    "ort": "golzheim",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "FUSSBALL.DE – SC 1919 Merzenich",
+      "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+      "stand": "2026-09-04"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/sport/sc-merzenich-5-2-auftakt-rang-zwei/",
+   "url": "https://merzenich-aktuell.de/sport/sc-merzenich-5-2-auftakt-rang-zwei/",
+   "title": "SC Merzenich startet mit 5:2 – nach Spieltag eins auf Rang zwei",
+   "summary": "Die aktuelle Kreisliga-A-Tabelle führt den SC 1919 Merzenich nach einem Spiel mit drei Punkten und 5:2 Toren auf Platz zwei.",
+   "content_html": "<p>Der SC 1919 Merzenich ist mit einem 5:2-Erfolg in die neue Saison der Kreisliga A gestartet. Nach dem ersten Spieltag steht die Mannschaft mit drei Punkten und einem Torverhältnis von 5:2 auf Rang zwei der Tabelle.</p>\n<p>Die Tabelle bei FUSSBALL.DE weist Merzenich damit als eines von mehreren punktgleichen Teams an der Spitze aus. Entscheidend für die Platzierung ist derzeit die Tordifferenz.</p>\n<h2 id=\"die-naechsten-spiele\">Die nächsten Spiele</h2>\n<p>Die dritte Mannschaft spielt am Dienstag, 1. September, um 18:30 Uhr, die zweite um 19:30 Uhr. Die erste Mannschaft ist am Mittwoch, 2. September, um 19:30 Uhr auswärts in Welldorf-Güsten gefordert.</p>\n<p>Ergebnisse und Tabellen der Merzenicher Teams fasst die Redaktion nach jedem Spieltag zusammen. Vereine, die ihre Spielberichte selbst einreichen möchten, nutzen <a href=\"/meldung-senden/\">Meldung senden</a>.</p>\n",
+   "date_published": "2026-09-01T13:59:00+02:00",
+   "date_modified": "2026-09-01T13:59:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/377f353d3043b2512286.png",
+   "tags": [
+    "Sport",
+    "Merzenich",
+    "SC 1919 Merzenich",
+    "Kreisliga A",
+    "Fußball"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "sport",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "FUSSBALL.DE – Vereinsseite SC Merzenich",
+      "url": "https://www.fussball.de/verein/sc-merzenich-mittelrhein/-/id/00ES8GN9A0000054VV0AG08LVUPGND5I",
+      "stand": "2026-09-01"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/trauung-alte-kirche/",
+   "url": "https://merzenich-aktuell.de/leben/trauung-alte-kirche/",
+   "title": "Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar",
+   "summary": "Michaela Bauer und Karl-Heinz Mai haben am 21. August in der Alten Kirche geheiratet. Die Gemeinde veröffentlichte ein Foto der Trauung.",
+   "content_html": "<p>Die Gemeinde Merzenich hat am Montag öffentlich zu einer Hochzeit gratuliert: Michaela Bauer und Karl-Heinz Mai haben sich am 21. August in der Alten Kirche das Ja-Wort gegeben.</p>\n<p>Mit der Veröffentlichung eines Fotos der Trauung würdigte die Gemeinde das Paar auf ihrem Heimat-Info-Kanal. Die Alte Kirche im Ortskern ist einer der beliebtesten Trauorte in Merzenich.</p>\n<p>Paare, die ebenfalls in der Alten Kirche heiraten möchten, können Termine über das Standesamt der Gemeinde anfragen.</p>\n",
+   "date_published": "2026-09-01T10:46:00+02:00",
+   "date_modified": "2026-09-01T10:46:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/trauung-alte-kirche.webp",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "Alte Kirche",
+    "Hochzeit",
+    "Standesamt"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich via Heimat-Info",
+      "url": "https://www.heimat-info.de/",
+      "stand": "2026-09-01"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/leader-reminder/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/leader-reminder/",
+   "title": "LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region",
+   "summary": "Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.",
+   "content_html": "<p>Die Lokale Aktionsgruppe (LAG) Rheinisches Revier an Inde und Rur erinnert an ihren digitalen Infoabend zu LEADER-Fördermöglichkeiten. Die Veranstaltung findet am Dienstag, 2. September, um 17 Uhr online über Zoom statt.</p>\n<p>Vorgestellt werden die Förderbedingungen der aktuellen LEADER-Periode. Nach Angaben der LAG liegen die Fördersätze bei bis zu 70 Prozent der Projektkosten, die maximale Fördersumme beträgt 250.000 Euro.</p>\n<p>Angesprochen sind Vereine, Kommunen, Unternehmen und Initiativen aus der Region, zu der auch die Gemeinde Merzenich gehört. Die Teilnahme ist kostenlos, der Zugangslink wird über die LAG bereitgestellt.</p>\n<p>LEADER ist ein EU-Förderprogramm für die ländliche Entwicklung. In der Region Rheinisches Revier an Inde und Rur begleitet es Projekte zu Dorfentwicklung, Tourismus und Daseinsvorsorge.</p>\n",
+   "date_published": "2026-09-01T10:00:00+02:00",
+   "date_modified": "2026-09-01T10:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/leader-region.webp",
+   "tags": [
+    "Wirtschaft",
+    "Merzenich",
+    "LEADER",
+    "Förderung",
+    "Rheinisches Revier"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "LAG Rheinisches Revier an Inde und Rur via Heimat-Info",
+      "url": "https://www.heimat-info.de/beitraege/452517f0-71d8-4884-a7a2-460132f7c277",
+      "stand": "2026-09-01"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/vereine/fanclub-saisonauftakt/",
+   "url": "https://merzenich-aktuell.de/vereine/fanclub-saisonauftakt/",
+   "title": "FC-Fanclub startet mit knapp 30 Gästen in die neue Bundesliga-Saison",
+   "summary": "Der 1. FC Köln Fanclub Merzenich 1967 traf sich zum Saisonauftakt in der Soccerhalle. Gemeinsam wurde der 3:2-Sieg gegen Hoffenheim verfolgt.",
+   "content_html": "<p>Der 1. FC Köln Fanclub Merzenich 1967 hat die neue Bundesliga-Saison mit einem gemeinsamen Abend in der Soccerhalle eröffnet. Knapp 30 Mitglieder und Gäste verfolgten das Auftaktspiel des FC gegen Hoffenheim.</p>\n<p>Das Spiel endete mit einem 3:2-Erfolg für die Kölner, entsprechend gut war die Stimmung im Fanclub. Der Verein gehört zu den ältesten FC-Fanclubs im Kreis Düren.</p>\n<p>Weitere gemeinsame Spielabende sind für die laufende Saison geplant. Interessierte können sich über den Fanclub informieren.</p>\n",
+   "date_published": "2026-08-31T12:00:00+02:00",
+   "date_modified": "2026-08-31T12:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/fanclub-saisonauftakt.webp",
+   "tags": [
+    "Vereine",
+    "Merzenich",
+    "1. FC Köln",
+    "Fanclub",
+    "Soccerhalle"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "vereine",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "FC Fanclub Merzenich 1967 via Heimat-Info",
+      "url": "https://www.heimat-info.de/beitraege/bb33f4b8-b853-408b-adff-0b22ff9cea4a",
+      "stand": "2026-08-31"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/buergersprechstunde-morschenich/",
+   "url": "https://merzenich-aktuell.de/rathaus/buergersprechstunde-morschenich/",
+   "title": "Bürgermeister-Sprechstunde am Freitag in Morschenich",
+   "summary": "Georg Gelhausen beantwortet am 4. September von 18 bis 19 Uhr Fragen im Bürgewaldzentrum. Eine Anmeldung ist nicht erforderlich.",
+   "content_html": "<p>Bürgermeister Georg Gelhausen bietet am Freitag, 4. September, eine Sprechstunde in Morschenich an. Von 18 bis 19 Uhr steht er im Bürgewaldzentrum für Fragen und Anliegen zur Verfügung.</p>\n<p>Eine Anmeldung ist nach Angaben der Gemeinde nicht erforderlich. Das Angebot richtet sich an alle Bürgerinnen und Bürger, unabhängig vom Ortsteil.</p>\n<p>Die Sprechstunden finden im Wechsel in den Ortsteilen statt. Termine werden über Heimat-Info und die Gemeindewebsite veröffentlicht.</p>\n",
+   "date_published": "2026-08-31T09:20:00+02:00",
+   "date_modified": "2026-08-31T09:20:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/buergersprechstunde.webp",
+   "tags": [
+    "Rathaus & Politik",
+    "Morschenich",
+    "Bürgermeister",
+    "Sprechstunde",
+    "Bürgewaldzentrum"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "morschenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich via Heimat-Info",
+      "url": "https://www.heimat-info.de/beitraege/fb796246-9fa3-422b-b8a8-ab76b2a4ac71",
+      "stand": "2026-08-31"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/e-tour-de-rur/",
+   "url": "https://merzenich-aktuell.de/leben/e-tour-de-rur/",
+   "title": "E-Tour de Rur: LEADER-Region wirbt für Ausflüge mit dem E-Bike",
+   "summary": "Die LAG weist auf E-Bike-Mietstationen und Ziele wie Schloss Kellenberg und die Alte Synagoge Rödingen hin.",
+   "content_html": "<p>Unter dem Titel &quot;E-Tour de Rur&quot; wirbt die Lokale Aktionsgruppe Rheinisches Revier an Inde und Rur für Ausflüge mit dem E-Bike durch die Region.</p>\n<p>Genannt werden Mietstationen für E-Bikes sowie Ziele wie Schloss Kellenberg bei Jülich-Barmen und die Alte Synagoge in Rödingen. Die Routen verlaufen überwiegend auf ausgebauten Radwegen.</p>\n<p>Für Merzenicher bietet sich die Anbindung über die Ruruferradweg-Zubringer an. Details und Karten stellt die LAG online bereit.</p>\n",
+   "date_published": "2026-08-29T10:02:00+02:00",
+   "date_modified": "2026-08-29T10:02:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/e-tour.webp",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "E-Bike",
+    "Rur",
+    "Ausflug"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "LAG Rheinisches Revier an Inde und Rur via Heimat-Info",
+      "url": "https://www.heimat-info.de/",
+      "stand": "2026-08-29"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/faire-woche/",
+   "url": "https://merzenich-aktuell.de/rathaus/faire-woche/",
+   "title": "Faire Woche: Müllsammelaktion und Naturangebote im September",
+   "summary": "Merzenich beteiligt sich vom 11. bis 25. September an der Fairen Woche. Für den 20. September ist eine gemeindeweite Müllsammelaktion geplant.",
+   "content_html": "<p>Die Gemeinde Merzenich beteiligt sich vom 11. bis 25. September an der bundesweiten Fairen Woche. Höhepunkt ist eine gemeindeweite Müllsammelaktion am Samstag, 20. September, ab 11 Uhr.</p>\n<p>Begleitend sind Naturangebote geplant, die sich an Familien und Schulklassen richten. Treffpunkte und Materialausgabe werden von der Gemeinde rechtzeitig bekanntgegeben.</p>\n<p>Wer mithelfen möchte, kann sich über die Gemeindeverwaltung anmelden. Handschuhe und Müllsäcke werden gestellt.</p>\n",
+   "date_published": "2026-08-27T09:32:00+02:00",
+   "date_modified": "2026-08-27T09:32:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/faire-gemeinde.webp",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "Faire Woche",
+    "Müllsammelaktion",
+    "Umwelt"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich via Heimat-Info",
+      "url": "https://www.heimat-info.de/beitraege/fdb48f37-4d9d-4e4d-8a5b-533bc9832951",
+      "stand": "2026-08-27"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/ortsfest-standkarten/",
+   "url": "https://merzenich-aktuell.de/leben/ortsfest-standkarten/",
+   "title": "Ortsfest 2026: Standkarten für den Trödelmarkt am 16. September",
+   "summary": "Die Gemeinde vergibt die Standkarten am 16. September von 14:30 bis 17 Uhr im Bürgerhaus. Das Ortsfest findet am 3. Oktober statt.",
+   "content_html": "<p>Für den Trödelmarkt beim Ortsfest 2026 vergibt die Gemeinde Merzenich die Standkarten am Mittwoch, 16. September, von 14:30 bis 17 Uhr im Bürgerhaus.</p>\n<p>Das Ortsfest selbst findet am Samstag, 3. Oktober, im Ortszentrum statt. Der Trödelmarkt ist seit Jahren fester Bestandteil des Programms.</p>\n<p>Standkarten werden persönlich ausgegeben, eine Reservierung per Telefon oder E-Mail ist nicht vorgesehen.</p>\n",
+   "date_published": "2026-08-26T11:29:00+02:00",
+   "date_modified": "2026-08-26T11:29:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/uploads/ortsfest.webp",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "Ortsfest",
+    "Trödelmarkt",
+    "Bürgerhaus"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich via Heimat-Info",
+      "url": "https://www.heimat-info.de/",
+      "stand": "2026-08-26"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/feuerwehr-einsatzbilanz-sommer/",
+   "url": "https://merzenich-aktuell.de/blaulicht/feuerwehr-einsatzbilanz-sommer/",
+   "title": "119 Einsätze bis Mitte August",
+   "summary": "Die Freiwillige Feuerwehr Merzenich verzeichnet bis zum 16. August 2026 bereits 119 Einsätze. Flächen- und Böschungsbrände dominieren.",
+   "content_html": "<p>Die Freiwillige Feuerwehr Merzenich dokumentiert jeden Einsatz öffentlich auf ihrer Internetseite. Bis zum 16. August 2026 stand der Zähler bei 119 Einsätzen. Den 100. Einsatz des Jahres verzeichnete die Wehr am 22. Juli in Golzheim.</p>\n<p>Auffällig ist die Häufung von Flächen-, Stoppelfeld- und Böschungsbränden zwischen Ende Juni und Mitte August. Allein im Bürgewald und rund um Girbelsrath verzeichnet die Liste in diesem Zeitraum mehrere Einsätze unter den Stichworten „BDW1“ und „BDW2“.</p>\n<p>Daneben bindet die Bundesautobahn 4 regelmäßig Kräfte: Verkehrsunfälle, Fahrzeugbrände und die Unterstützung des Rettungsdienstes auf der Autobahn tauchen im Sommer 2026 mehrfach in der Einsatzliste auf.</p>\n<p>Die vollständige, laufend fortgeschriebene Übersicht mit Datum, Stichwort und Bericht steht auf der Einsatzseite der Freiwilligen Feuerwehr Merzenich.</p>\n",
+   "date_published": "2026-08-17T09:00:00+02:00",
+   "date_modified": "2026-08-17T09:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/d353bb8122796f05b0c2.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "Einsatzbilanz",
+    "Blaulicht"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze",
+      "stand": "2026-08-17"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-119-rauch-buergewald/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-119-rauch-buergewald/",
+   "title": "Rauch im Bürgewald: Feuerwehr rückt aus",
+   "summary": "Am Sonntagmorgen alarmierte die Leitstelle die Feuerwehr Merzenich wegen einer gemeldeten Rauchentwicklung an der L257.",
+   "content_html": "<p>Die Feuerwehr Merzenich ist am Sonntagmorgen zu einer gemeldeten Rauchentwicklung im Bereich der L257 im Bürgewald ausgerückt. Die Alarmierung erfolgte um 09:05 Uhr unter dem Stichwort „BD / Brand“.</p>\n<p>Der Einsatz trägt die laufende Nummer 119/26. Es war damit bereits der 119. Einsatz der Wehr im laufenden Jahr.</p>\n<p>Den vollständigen Bericht mit den Originalbildern veröffentlicht die Freiwillige Feuerwehr Merzenich auf ihrer Einsatzseite.</p>\n",
+   "date_published": "2026-08-16T09:05:00+02:00",
+   "date_modified": "2026-08-16T09:05:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/1711cfa79cfe07bb762c.jpg",
+   "tags": [
+    "Blaulicht",
+    "Bürgewald",
+    "Feuerwehr",
+    "Bürgewald",
+    "L257"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "buergewald",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257",
+      "stand": "2026-08-16"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-118-rosspfad/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-118-rosspfad/",
+   "title": "Unklare Rauchentwicklung am Roßpfad in Girbelsrath",
+   "summary": "Die Feuerwehr Merzenich wurde am 14. August zu einer unklaren Rauchentwicklung ins Gebiet Am Roßpfad gerufen.",
+   "content_html": "<p>Am Nachmittag des 14. August wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung im Bereich Am Roßpfad in Girbelsrath alarmiert. Der Einsatz lief unter dem Stichwort „BD1 / Brand“.</p>\n<p>Unklare Rauchentwicklungen gehören im Sommer zu den häufigsten Alarmstichworten in der Gemeinde. Oft steht dahinter zulässiges Abbrennen oder Staubentwicklung bei der Ernte, jede Meldung wird aber angefahren und erkundet.</p>\n<p>Der Einsatzbericht mit Originalbildern steht auf der Seite der Freiwilligen Feuerwehr Merzenich.</p>\n",
+   "date_published": "2026-08-14T14:06:00+02:00",
+   "date_modified": "2026-08-14T14:06:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/aca7a5093cbb742fe810.jpg",
+   "tags": [
+    "Blaulicht",
+    "Girbelsrath",
+    "Feuerwehr",
+    "Girbelsrath"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11826-girbelsrath-am-rosspfad",
+      "stand": "2026-08-14"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/flaechenbrand-l257/",
+   "url": "https://merzenich-aktuell.de/blaulicht/flaechenbrand-l257/",
+   "title": "Flächenbrand an der L257: mehr als 200 Kräfte und Helfer im Einsatz",
+   "summary": "Trockenheit und Wind beschleunigten die Ausbreitung in Richtung Bürgewald. Die Feuerwehr veröffentlichte 16 Originalfotos des Einsatzes.",
+   "content_html": "<p>Am 13. August wurde die Feuerwehr Merzenich gegen 14 Uhr zu einem Flächenbrand im Bereich der L257 alarmiert. Wegen der raschen Ausbreitung durch Trockenheit und Wind wurde das Einsatzstichwort erhöht und weitere Kräfte nachalarmiert.</p>\n<p>Nach Angaben der Feuerwehr breitete sich das Feuer entlang der Hambachbahn bis in den Bürgewald sowie in Richtung Solarpark und Sportplatz Ellen aus. Weit über 200 Einsatzkräfte und freiwillige Helfer waren beteiligt.</p>\n<p>Am Freitagmittag konnte &quot;Feuer aus&quot; gemeldet werden. Die Feuerwehr dokumentierte den Einsatz mit 16 Originalbildern.</p>\n<p>Die Feuerwehr bittet, bei anhaltender Trockenheit auf offenes Feuer im Freien zu verzichten und Zigarettenreste nicht aus dem Auto zu werfen.</p>\n",
+   "date_published": "2026-08-13T14:28:00+02:00",
+   "date_modified": "2026-08-13T14:28:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/ec7eeed5d5069e51a803.jpg",
+   "tags": [
+    "Blaulicht",
+    "Bürgewald",
+    "Feuerwehr",
+    "Flächenbrand",
+    "L257",
+    "Bürgewald"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "buergewald",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich, Einsatzbericht",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11626-l257",
+      "stand": "2026-08-13"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-115-bab4/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-115-bab4/",
+   "title": "Unfall auf der A4: zwei Löschgruppen im Einsatz",
+   "summary": "Am 13. August unterstützten die Löschgruppen Merzenich und Girbelsrath den Rettungsdienst nach einem Verkehrsunfall auf der Autobahn 4.",
+   "content_html": "<p>Die Löschgruppen Merzenich und Girbelsrath wurden am 13. August um 13:47 Uhr zu einem Verkehrsunfall auf der Bundesautobahn 4 alarmiert. Das Stichwort lautete „TH-VU“, also technische Hilfeleistung nach einem Verkehrsunfall.</p>\n<p>Die A4 durchquert das Gemeindegebiet und sorgt regelmäßig für Einsätze der Merzenicher Wehr. Neben der technischen Hilfe geht es dabei häufig um die Absicherung der Unfallstelle und die Unterstützung des Rettungsdienstes.</p>\n<p>Das gezeigte Foto ist ein Beispielbild der Feuerwehr und stammt nicht von diesem Einsatz. Der Originalbericht steht auf der Einsatzseite der Wehr.</p>\n",
+   "date_published": "2026-08-13T13:47:00+02:00",
+   "date_modified": "2026-08-13T13:47:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/e86d795f50dfe4a6898d.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "A4",
+    "Verkehrsunfall"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11526-bab4",
+      "stand": "2026-08-13"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-112-girbelsrath-flaeche/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-112-girbelsrath-flaeche/",
+   "title": "Flächenbrand Richtung Binsfeld: Feuerwehr am 10. August im Großeinsatz",
+   "summary": "Am Montagnachmittag rückte die Feuerwehr Merzenich zu einem Flächenbrand auf einem Feld Richtung Binsfeld aus.",
+   "content_html": "<p>Gegen 13:30 Uhr wurde die Feuerwehr Merzenich am 10. August zu einem Flächenbrand auf einem Feld in Richtung Binsfeld gerufen. Das Alarmstichwort „BDW2“ steht für einen ausgedehnten Flächenbrand mit erhöhtem Kräftebedarf.</p>\n<p>Am selben Abend folgte um 19:59 Uhr ein weiterer Einsatz im selben Bereich (113/26), diesmal unter dem Stichwort „BD / Brand“.</p>\n<p>Die Wehr dokumentiert den Einsatz mit Originalbildern auf ihrer Internetseite.</p>\n",
+   "date_published": "2026-08-10T13:33:00+02:00",
+   "date_modified": "2026-08-10T13:33:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/649184a7c5dab9204fb4.jpg",
+   "tags": [
+    "Blaulicht",
+    "Girbelsrath",
+    "Feuerwehr",
+    "Girbelsrath",
+    "Flächenbrand"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
+      "stand": "2026-08-10"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/flaechenbrand-girbelsrath/",
+   "url": "https://merzenich-aktuell.de/blaulicht/flaechenbrand-girbelsrath/",
+   "title": "Rund 30 Hektar betroffen: Flächenbrand bei Girbelsrath",
+   "summary": "Der Brand griff nach Angaben der Feuerwehr auf eine Hecke und Flächen am Sportplatz über. Örtliche Landwirte unterstützten die Löscharbeiten.",
+   "content_html": "<p>Bei Girbelsrath ist am 10. August ein Feld in Richtung Binsfeld in Brand geraten. Nach Angaben der Feuerwehr Merzenich waren rund 30 Hektar betroffen.</p>\n<p>Das Feuer griff auf eine Hecke und auf Flächen am Sportplatz über. Örtliche Landwirte unterstützten die Einsatzkräfte, indem sie mit Grubbern Brandschneisen anlegten.</p>\n<p>Verletzt wurde niemand. Die Feuerwehr war mit mehreren Löschzügen im Einsatz und hatte die Lage am Nachmittag unter Kontrolle.</p>\n<p>Es war der erste von zwei großen Flächenbränden im August in der Gemeinde, drei Tage später brannte es an der L257.</p>\n",
+   "date_published": "2026-08-10T13:33:00+02:00",
+   "date_modified": "2026-08-10T13:33:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/cacd01b2804c07d1ca06.jpg",
+   "tags": [
+    "Blaulicht",
+    "Girbelsrath",
+    "Feuerwehr",
+    "Flächenbrand",
+    "Girbelsrath"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich, Einsatzbericht",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
+      "stand": "2026-08-10"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-110-katze-klaeranlage/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-110-katze-klaeranlage/",
+   "title": "Tierrettung in Girbelsrath: Feuerwehr befreit Katze aus der Kläranlage",
+   "summary": "Am 3. August wurde die Feuerwehr Merzenich zu einer Tierrettung an der Matthias-von-den-Driesch-Straße gerufen.",
+   "content_html": "<p>Die Feuerwehr Merzenich ist am Montagmittag zu einer Tierrettung nach Girbelsrath ausgerückt. Der Einsatz an der Matthias-von-den-Driesch-Straße lief unter dem Stichwort „TIN / Tier in Notlage“.</p>\n<p>Tierrettungen gehören zum regelmäßigen Aufgabenspektrum der Freiwilligen Feuerwehr. Allein im Sommer 2026 verzeichnet die Einsatzliste mehrere Einsätze zu Tieren in Notlage und herrenlosen Tieren.</p>\n<p>Der Bericht mit Originalbildern steht auf der Einsatzseite der Feuerwehr Merzenich.</p>\n",
+   "date_published": "2026-08-03T11:15:00+02:00",
+   "date_modified": "2026-08-03T11:15:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/ffb60f94a6664dd38cb7.jpg",
+   "tags": [
+    "Blaulicht",
+    "Girbelsrath",
+    "Feuerwehr",
+    "Girbelsrath",
+    "Tierrettung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/11026-girbelsrath-matthias-von-den-driesch-str",
+      "stand": "2026-08-03"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-108-vu-l264/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-108-vu-l264/",
+   "title": "Verkehrsunfall auf der L264 Ende Juli",
+   "summary": "Die Feuerwehr Merzenich wurde am 30. Juli zu einem Verkehrsunfall auf der Landstraße 264 alarmiert.",
+   "content_html": "<p>Am 30. Juli wurde die Feuerwehr Merzenich um 13:38 Uhr zu einem Verkehrsunfall auf der L264 gerufen. Die Landstraße verbindet Merzenich mit den Nachbarorten und ist eine der unfallträchtigeren Strecken im Gemeindegebiet.</p>\n<p>Der Einsatz lief unter dem Stichwort „TH-VU“, technische Hilfeleistung nach Verkehrsunfall.</p>\n<p>Originalbilder und der vollständige Bericht stehen auf der Seite der Freiwilligen Feuerwehr Merzenich.</p>\n",
+   "date_published": "2026-07-30T13:38:00+02:00",
+   "date_modified": "2026-07-30T13:38:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/e72dec3b8956369ec6e9.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "L264",
+    "Verkehrsunfall"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
+      "stand": "2026-07-30"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-107-stoppelfeld/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-107-stoppelfeld/",
+   "title": "Flächenbrand an der Händelstraße: Stoppelfeld brennt Ende Juli",
+   "summary": "Am 29. Juli rückte die Feuerwehr Merzenich zu einem Flächenbrand an der Händelstraße aus.",
+   "content_html": "<p>Die Feuerwehr Merzenich wurde am 29. Juli um 16:28 Uhr zu einem Flächenbrand an der Händelstraße alarmiert. Betroffen war ein Stoppelfeld.</p>\n<p>Stoppelfeldbrände häufen sich in der Erntezeit. Trockene Halme entzünden sich leicht, das Feuer breitet sich bei Wind schnell aus.</p>\n<p>Die Feuerwehr veröffentlicht Originalbilder des Einsatzes auf ihrer Internetseite.</p>\n",
+   "date_published": "2026-07-29T16:28:00+02:00",
+   "date_modified": "2026-07-29T16:28:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/28e1ea642e6cb7cf8e29.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "Flächenbrand",
+    "Ernte"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
+      "stand": "2026-07-29"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-104-bahnboeschung/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-104-bahnboeschung/",
+   "title": "Rauch an der Bahnanlage am Steinweg: Feuerwehr erkundet Böschungsbrand",
+   "summary": "Ende Juli wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung an der Bahnanlage am Steinweg gerufen.",
+   "content_html": "<p>Am 26. Juli rückte die Feuerwehr Merzenich um 17:41 Uhr zu einer unklaren Rauchentwicklung im Bereich der Bahnanlage am Steinweg aus.</p>\n<p>Bahnböschungen sind im Sommer besonders anfällig für Brände. Einsätze in Gleisnähe erfordern eine Abstimmung mit dem Bahnbetrieb, bevor Kräfte in den Gleisbereich vorgehen.</p>\n<p>Der Bericht mit Originalbildern steht auf der Einsatzseite der Wehr.</p>\n",
+   "date_published": "2026-07-26T17:41:00+02:00",
+   "date_modified": "2026-07-26T17:41:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/bea8f3e95304ac1806b2.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "Bahn",
+    "Brand"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
+      "stand": "2026-07-26"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-100-jubilaeum/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-100-jubilaeum/",
+   "title": "Hundertster Einsatz des Jahres in Golzheim",
+   "summary": "Am 22. Juli verzeichnete die Feuerwehr Merzenich an der Kölner Straße in Golzheim ihren 100. Einsatz des Jahres 2026.",
+   "content_html": "<p>Mit dem Einsatz an der Kölner Straße in Golzheim erreichte die Feuerwehr Merzenich am 22. Juli die Marke von 100 Einsätzen im Jahr 2026. Das Stichwort lautete „BD / Brand“.</p>\n<p>Bis Mitte August stieg die Zahl auf 119 Einsätze. Der trockene Sommer mit zahlreichen Flächen- und Böschungsbränden hat die Einsatzstatistik der Wehr deutlich geprägt.</p>\n<p>Das Bild zeigt ein Fahrzeug der Löschgruppe Golzheim und ist ein Beispielbild der Feuerwehr, nicht dieser Einsatz.</p>\n",
+   "date_published": "2026-07-22T16:56:00+02:00",
+   "date_modified": "2026-07-22T16:56:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/fcbf0751645aa371857e.jpg",
+   "tags": [
+    "Blaulicht",
+    "Golzheim",
+    "Feuerwehr",
+    "Golzheim",
+    "Einsatzbilanz"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "golzheim",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
+      "stand": "2026-07-22"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-99-fahrzeugbrand-a4/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-99-fahrzeugbrand-a4/",
+   "title": "Fahrzeugbrand auf der A4 bei Merzenich",
+   "summary": "Am 21. Juli brannte auf der Autobahn 4 ein Fahrzeug. Zwei Löschgruppen der Feuerwehr Merzenich rückten aus.",
+   "content_html": "<p>Am späten Nachmittag des 21. Juli wurden die Löschgruppen Merzenich und Girbelsrath zu einem Fahrzeugbrand auf der Bundesautobahn 4 gerufen.</p>\n<p>Fahrzeugbrände auf der Autobahn binden viele Kräfte: Neben der Brandbekämpfung müssen die Fahrbahn abgesichert und der Verkehr geführt werden.</p>\n<p>Das gezeigte Motiv ist ein Beispielbild der Feuerwehr von der A4 und stammt nicht aus diesem Einsatz.</p>\n",
+   "date_published": "2026-07-21T17:58:00+02:00",
+   "date_modified": "2026-07-21T17:58:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/bc6485fd9c1acf74e64b.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "A4",
+    "Fahrzeugbrand"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
+      "stand": "2026-07-21"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-97-personenbefreiung/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-97-personenbefreiung/",
+   "title": "Personenbefreiung in Girbelsrath: drei Einheiten am Morgen im Einsatz",
+   "summary": "Am 20. Juli wurden die Löschgruppen Golzheim und Girbelsrath sowie die Tagesalarmgruppe zu einer Personenbefreiung gerufen.",
+   "content_html": "<p>Am Morgen des 20. Juli rückten die Löschgruppen Golzheim und Girbelsrath gemeinsam mit der Tagesalarmgruppe zu einer Personenbefreiung an der Dechant-Fabry-Straße in Girbelsrath aus.</p>\n<p>Die Tagesalarmgruppe stellt sicher, dass auch werktags am Vormittag genügend Kräfte verfügbar sind, wenn viele Feuerwehrangehörige auswärts arbeiten.</p>\n<p>Das Bild ist ein Beispielbild der Feuerwehr und zeigt nicht diesen Einsatz.</p>\n",
+   "date_published": "2026-07-20T08:19:00+02:00",
+   "date_modified": "2026-07-20T08:19:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/00038b5caf7f3aa0584c.jpg",
+   "tags": [
+    "Blaulicht",
+    "Girbelsrath",
+    "Feuerwehr",
+    "Girbelsrath",
+    "Personenbefreiung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
+      "stand": "2026-07-20"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-94-pkw-brand/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-94-pkw-brand/",
+   "title": "PKW-Brand auf der L264 Mitte Juli",
+   "summary": "Die Feuerwehr Merzenich löschte am 15. Juli einen brennenden Personenwagen auf der L264.",
+   "content_html": "<p>Am Dienstagnachmittag des 15. Juli wurde die Feuerwehr Merzenich zu einem brennenden Personenwagen auf der L264 alarmiert.</p>\n<p>Der Einsatz lief unter dem Stichwort „FZB / Fahrzeugbrand“ und trägt die Nummer 94/26.</p>\n<p>Originalbilder des Einsatzes veröffentlicht die Wehr auf ihrer Internetseite.</p>\n",
+   "date_published": "2026-07-15T14:09:00+02:00",
+   "date_modified": "2026-07-15T14:09:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/ac6da8e28763a6740511.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "L264",
+    "Fahrzeugbrand"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
+      "stand": "2026-07-15"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/blaulicht/einsatz-77-person-im-aufzug/",
+   "url": "https://merzenich-aktuell.de/blaulicht/einsatz-77-person-im-aufzug/",
+   "title": "Person im Aufzug: Feuerwehr befreit Eingeschlossenen In den Weingärten",
+   "summary": "Am 24. Juni wurde die Feuerwehr Merzenich zu einer im Aufzug eingeschlossenen Person gerufen.",
+   "content_html": "<p>Die Feuerwehr Merzenich wurde am 24. Juni um 14:26 Uhr zu einer im Aufzug eingeschlossenen Person In den Weingärten gerufen.</p>\n<p>Aufzugsbefreiungen und Türöffnungen gehören zu den häufigeren Hilfeleistungen der Wehr. Sie werden in der Einsatzstatistik gesondert geführt.</p>\n<p>Das gezeigte Werkzeugmotiv ist ein Beispielbild der Feuerwehr.</p>\n",
+   "date_published": "2026-06-24T14:26:00+02:00",
+   "date_modified": "2026-06-24T14:26:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/4445d2fc1c4c0fc9d619.jpg",
+   "tags": [
+    "Blaulicht",
+    "Merzenich",
+    "Feuerwehr",
+    "Hilfeleistung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "blaulicht",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Freiwillige Feuerwehr Merzenich",
+      "url": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
+      "stand": "2026-06-24"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/vereine/container-girbelsrath/",
+   "url": "https://merzenich-aktuell.de/vereine/container-girbelsrath/",
+   "title": "Mehr Platz für die Girbelsrather Vereine",
+   "summary": "Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.",
+   "content_html": "<p>Die Maarhalle ist das Zuhause der Girbelsrather Ortsvereine. Der FC Rhenania, der TV Girbelsrath, die Karnevals- und Bühnenfreunde, die Dorfwerkstatt Girbelsrath 2.0 und der BSC Girbelsrath nutzen das energetisch erneuerte Gebäude am Maarweg das ganze Jahr über. Doch die Halle stößt platztechnisch an ihre Grenzen.</p>\n<p>„Die vorbereitenden Arbeiten zu den Vereinsveranstaltungen sind eine besondere Herausforderung, weil unheimlich viel Material bewegt werden muss: Tische, Stühle, Musikanlage, Lautsprecher, Garderobenständer und Kostüme“, sagt Ortsvorsteher Ralf Locker. Oft werde das Material sogar in Duschen und Umkleiden zwischengelagert.</p>\n<p>Der Gemeinderat beschloss daher die Errichtung von Containern. Dorfmanagerin Teresa Beverungen stellte bei der Bezirksregierung einen Förderantrag unter dem Titel „Platz für Gemeinschaft: Container für das Vereinsleben“, der über das LEADER-Programm mit einer Förderquote von 70 Prozent abgerufen werden kann.</p>\n<p>Nach Eingang des Zuwendungsbescheids wurden drei getrennt voneinander nutzbare Seecontainer in Auftrag gegeben. Bei der Eröffnung lobte Bürgermeister Georg Gelhausen das Engagement der Vereine sowie die Beteiligung der örtlichen Unternehmen Flächen- und Wegebau Böhr und Elektro Kaiser. Die 38.000 Euro teure Maßnahme wird im Rahmen des Nationalen Strategieplans für Deutschland 2023–2027 kofinanziert.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/45419790e0f12bfd202d.jpg",
+   "tags": [
+    "Vereine",
+    "Girbelsrath",
+    "Girbelsrath",
+    "Maarhalle",
+    "LEADER",
+    "Vereine"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "vereine",
+    "ort": "girbelsrath",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/container-girbelsrath.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/glasfaserausbau-soco/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/glasfaserausbau-soco/",
+   "title": "Glasfaser: Ausbau läuft seit 2020 mit SOCO",
+   "summary": "Die Gemeinde setzt den Breitbandausbau gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions um. Für die Gemeinde entstehen dabei keine Kosten.",
+   "content_html": "<p>Die Gemeinde Merzenich setzt den Breitbandausbau seit 2020 gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions GmbH um. Bürgermeister Georg Gelhausen schloss den Kooperationsvertrag am 21. Dezember 2020, zuvor hatte der Rat den Abschluss einstimmig gebilligt.</p>\n<p>„Ich bin sehr froh, dass wir mit einem regionalen Anbieter auch künftig zusammenarbeiten, der wiederum regionale Unternehmen beim Ausbau beauftragt. So bleibt die Wertschöpfung garantiert in der Region“, wird Gelhausen zitiert.</p>\n<p>SOCO hatte in der Gemeinde bereits zuvor Glasfaser-Infrastrukturen ausgebaut und betreibt diese. Zudem hat das Unternehmen vom Kreis Düren den Auftrag, die Schulen der Gemeinde an das Glasfasernetz anzuschließen. Der Ausbau erfolgt eigenwirtschaftlich, der Gemeinde entstehen dadurch keine Kosten.</p>\n<p>Der Ausbau ist in den Ortsteilen unterschiedlich weit: Für Girbelsrath meldet die Gemeinde die Vollendung der letzten Straßen, für Golzheim den Abschluss der Nachfragebündelung und den Beginn der Planungsphase. Der Abschluss des Netzausbaus war für Ende 2025 angekündigt.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/67b41902894a0d890c52.jpg",
+   "tags": [
+    "Wirtschaft",
+    "Merzenich",
+    "Glasfaser",
+    "SOCO",
+    "Breitband"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/info-texte/glasfaser.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/haushalt-2026-chronik/",
+   "url": "https://merzenich-aktuell.de/rathaus/haushalt-2026-chronik/",
+   "title": "Die Chronik des 2026er-Gemeindehaushalts",
+   "summary": "Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.",
+   "content_html": "<p>Finanzielle Sorgen plagen alle Kommunen im Kreis Düren. Auch die Gemeinde Merzenich bringt nun erstmals ein Haushaltssicherungskonzept in den Gemeinderat ein. Der Weg dahin war nach Darstellung der Gemeinde ungewöhnlich transparent.</p>\n<p>Von Anfang Januar bis Mitte März wurden insgesamt sechs öffentlich zugängliche Haushaltsvorberatungen durchgeführt, bevor der von Kämmerer Patrick Harzheim ausgearbeitete Haushaltsentwurf am 25. März in den Gemeinderat eingebracht wurde. Alle relevanten Ausgabepositionen wurden dabei betrachtet.</p>\n<p>Am 16. April folgte die 1. Lesung im Haupt- und Finanzausschuss, am 7. Mai ein Bürgerforum im Merzenicher Bürgerhaus, das die Gemeinde als sehr gut besucht beschreibt. Fragen beantworteten dort neben Kämmerer und Bürgermeister auch die an den Beratungen beteiligten Fraktionen.</p>\n<p>Am 21. Mai wurde der Haushaltsentwurf 2026 im Gemeinderat verabschiedet. Er liegt seither dem Kreis Düren zur endgültigen Genehmigung vor. Beratungsfolge und Ergebnisse sind auf der Gemeindeseite dokumentiert.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/editorial/gemeinde-merzenich.png",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "Haushalt",
+    "Haushaltssicherung",
+    "Kreis Düren"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/haushaltsinfo-2026.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/heimat-info-app/",
+   "url": "https://merzenich-aktuell.de/rathaus/heimat-info-app/",
+   "title": "Die ganze Gemeinde in einer App",
+   "summary": "Die Heimat-Info App bündelt Veranstaltungen, Bekanntmachungen und Warnmeldungen. Vereine können eigene Inhalte veröffentlichen.",
+   "content_html": "<p>Die Heimat-Info App ist die zentrale Kommunikationsplattform für Kommune, Bürgerinnen und Bürger sowie Vereine. Sie bündelt Informationen von Veranstaltungen über Bekanntmachungen bis hin zu Warnmeldungen in einer einzigen Anwendung.</p>\n<p>Push-Nachrichten informieren zuverlässig und können im Ernstfall auch Katastrophenschutz-Warnungen ausspielen. Vereine und Ehrenamt werden aktiv eingebunden und können eigene Inhalte veröffentlichen. Damit entlastet die App nach Darstellung der Gemeinde die Verwaltung und macht die Bürgerkommunikation digital und einfach.</p>\n<p>Als Partner dient der Gemeinde die Cosmema GmbH aus Gaimersheim. Die Einrichtung der App wird kofinanziert von der Europäischen Union und dem Ministerium für Landwirtschaft und Verbraucherschutz des Landes Nordrhein-Westfalen.</p>\n<p>Für Vereine stellt die Gemeinde eine Anleitung bereit, wie Veranstaltungen selbst eingetragen werden. Ansprechpartner ist Frank Schmitz aus dem Bereich Presse, Sport und Kultur, Telefon 02421 399144.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/b3ce1018ef570f662eea.jpg",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "Heimat-Info",
+    "App",
+    "Vereine",
+    "Digitalisierung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/ankuendigung-start-heimat-app.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/jugendgremium-gewaehlt/",
+   "url": "https://merzenich-aktuell.de/rathaus/jugendgremium-gewaehlt/",
+   "title": "Erstes Jugendgremium in Merzenich gewählt",
+   "summary": "Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.",
+   "content_html": "<p>Knapp 30 Wählerinnen und Wähler haben ihre Stimme bei der Wahl zum ersten Jugendgremium Merzenich abgegeben und das Gremium damit gegründet.</p>\n<p>Da nur drei Vereine ihre Option genutzt hatten, einen Kandidaten zu stellen, sind alle zur Wahl aufgestellten Jugendlichen in das erste Jugendgremium gewählt worden. Die Stimmverteilung war nach Angaben der Gemeinde recht ausgewogen.</p>\n<p>Die Auszählung nahmen Kathrin Krafczyk, Bürgermeister Georg Gelhausen und Marcel Haha vor. Die konstituierende Sitzung findet am Samstag, 4. Juli, um 10 Uhr im Bürgerhaus Merzenich an der Burgstraße 9 statt.</p>\n<p>Ansprechpartner für die Jugendarbeit der Gemeinde ist Marcel Haha, erreichbar unter 01573 7252344.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/023320739951bf0c7918.jpg",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "Jugendgremium",
+    "Bürgerhaus",
+    "Beteiligung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/wahl-jugendgremium-2026.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/kleidertreff-zehn-jahre/",
+   "url": "https://merzenich-aktuell.de/leben/kleidertreff-zehn-jahre/",
+   "title": "Kleidertreff feiert seinen 10. Geburtstag",
+   "summary": "Seit zehn Jahren gibt es an der Lindenstraße Kleidung, Schuhe und Spielsachen für einen kleinen Obolus. Ein elfköpfiges Team hält den Laden am Laufen.",
+   "content_html": "<p>Wo an der Lindenstraße einst die Schlecker-Filiale Haushaltsprodukte und Drogerieartikel verkaufte, herrscht bis heute reger Betrieb – seit genau zehn Jahren hat dort der Merzenicher Kleidertreff seine Heimat. Der runde Geburtstag wurde mit Kaffee, Gebäck und zahlreichen Gästen gefeiert, darunter Bürgermeister Georg Gelhausen und Fachbereichsleiter Sebastian Böttcher.</p>\n<p>Der Kleidertreff wurde 2015 eröffnet, nachdem die Gemeinde den Entschluss gefasst hatte, in den Räumen der ehemaligen Filiale eine Kleiderbörse einzurichten. Hilfsbedürftige Menschen sollten für einen kleinen Obolus Kleidung, Schuhe, Spielsachen und mehr erwerben können. Die Bedürftigkeit muss niemand nachweisen.</p>\n<p>„Wir können dank der Unterstützung durch die Gemeinde alle Produkte ohne wirtschaftlichen Druck anbieten. Die Hilfe steht hier im Vordergrund“, sagt Gründungsmitglied Gaby Reimer, die gemeinsam mit Christel Jahn das elfköpfige Team anführt.</p>\n<p>Bürgermeister Gelhausen hebt den sozialen Aspekt hervor: Durch die Einnahmen könnten auch andere soziale Projekte unterstützt werden. Geöffnet ist der Kleidertreff dienstags und donnerstags jeweils von 10 bis 16 Uhr. Spendenfähige Artikel für Kinder und Erwachsene können während der Öffnungszeiten abgegeben werden.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/9b8984a7219eba9db9dd.jpg",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "Kleidertreff",
+    "Ehrenamt",
+    "Lindenstraße"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/jahre-kleidertreff.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/kommunale-waermeplanung/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/kommunale-waermeplanung/",
+   "title": "Wärmeplanung: Merzenich gibt den Startschuss",
+   "summary": "Gemeinsam mit dem Netzbetreiber Leitungspartner und dem Planungsbüro SME erstellt die Gemeinde ihr kommunales Wärmekonzept.",
+   "content_html": "<p>Der Kick-off zur Kommunalen Wärmeplanung sei vom Verwaltungsteam „sehr zügig und kompetent umgesetzt“ worden, lobte Dr. Stefan Röder vom Planungsunternehmen SME. SME hat gemeinsam mit dem Dürener Netzbetreiber Leitungspartner die Federführung bei der Erstellung des Wärmekonzeptes.</p>\n<p>Die Kommunale Wärmeplanung soll aufzeigen, wie künftig in der Gemeinde geheizt werden kann und soll. „Es ist ein Prozess, der viele Beteiligte einbindet und Kommunikation und Kooperation erfordert“, so Bürgermeister Georg Gelhausen.</p>\n<p>Grundlage sind das Wärmeplanungsgesetz des Bundes und das Landeswärmeplanungsgesetz NRW. Vorgesehen ist eine Analyse des vorhandenen Wärmebedarfs samt Treibhausgasemissionen sowie eine Untersuchung lokaler Potenziale für erneuerbare Energien. Fortgeschrieben wird die Planung derzeit spätestens alle fünf Jahre.</p>\n<p>Aus der Gemeindeverwaltung begleiten Projektleiter Andreas Isecke, Selina Schneider und die stellvertretende Fachbereichsleiterin Sarah Keller den Prozess. Einen ersten Entwurf stellte Röder für Mitte des Folgejahres in Aussicht.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/cf3e94415050d7399875.jpg",
+   "tags": [
+    "Wirtschaft",
+    "Merzenich",
+    "Wärmeplanung",
+    "Klimaschutz",
+    "Leitungspartner"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/info-texte/kommunale-waermeplanung.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/maehroboter-igelschutz/",
+   "url": "https://merzenich-aktuell.de/leben/maehroboter-igelschutz/",
+   "title": "Mähroboter dürfen abends nicht mehr raus",
+   "summary": "Der Kreis Düren untersagt den Betrieb von Mährobotern in der Dämmerung und nachts. Igel sind dann besonders aktiv.",
+   "content_html": "<p>Mähroboter werden Igeln und anderen kleineren Wildtieren oft zum Verhängnis, vor allem, wenn sie in der Dämmerung oder nachts betrieben werden. Genau dann sind Igel am aktivsten.</p>\n<p>Deshalb ist es im Kreis Düren nicht mehr erlaubt, Mähroboter in der Dämmerung und nachts fahren zu lassen, sondern nur noch tagsüber. Bei Kollisionen werden die Tiere durch die Schneidemesser schwer verletzt oder getötet. Die offizielle Anordnung ist über die Gemeindeseite abrufbar.</p>\n<p>Igel bevorzugen naturnahe Gärten, weil sie dort in Hecken, Laub- oder Gehölzhaufen Unterschlupf finden und viele Insekten als Nahrung vorhanden sind. Durchschlupfmöglichkeiten im Zaun ermöglichen es ihnen, sich frei zu bewegen, ohne festzustecken. Wer einen gesunden Igel sieht, darf ihn nicht stören, verletzen oder mitnehmen.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/62d8963c5e3da82ca3e5.jpg",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "Igel",
+    "Mähroboter",
+    "Kreis Düren",
+    "Naturschutz"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/igel.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/masterplan-buergewald/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/masterplan-buergewald/",
+   "title": "Grünes Licht für den Masterplan Bürgewald",
+   "summary": "Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.",
+   "content_html": "<p>Nach der schrittweisen Erarbeitung und stetigen Reflektion des Strukturkonzepts erfolgt die abschließende Überarbeitung des dynamischen Masterplans für den Bürgewald. Die Gemeinde nennt als Ziel die Fertigstellung bis Ende 2025.</p>\n<p>Im Anschluss sollen die damit verbundenen Planungen konkretisiert werden, unter anderem mit Blick auf die technischen Infrastrukturen. Der Masterplan ist der Rahmen dafür, den „Ort der Zukunft“ nach der Umsiedlung Wirklichkeit werden zu lassen.</p>\n<p>Die weiterführenden Informationen und Dokumentationen zum Verfahren veröffentlicht die Entwicklungsgesellschaft NRW.URBAN, die den Prozess begleitet.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/14ad594303605254e6c3.jpg",
+   "tags": [
+    "Wirtschaft",
+    "Morschenich",
+    "Bürgewald",
+    "Morschenich",
+    "NRW.URBAN",
+    "Masterplan"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "morschenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/dokumentation-masterplan.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/nahverkehrsplan-beteiligung/",
+   "url": "https://merzenich-aktuell.de/rathaus/nahverkehrsplan-beteiligung/",
+   "title": "Helfen Sie mit beim Nahverkehrsplan",
+   "summary": "Der Kreis Düren stellt seinen Nahverkehrsplan neu auf. Bis Ende Februar 2026 können Hinweise straßengenau auf einer Karte eingetragen werden.",
+   "content_html": "<p>Der neue Nahverkehrsplan des Kreises Düren für den ÖPNV soll im Frühjahr 2027 in Kraft treten. Bis dahin sollen auch die Bürgerinnen und Bürger mit ihren Ideen an der Gestaltung beteiligt werden.</p>\n<p>Bis Ende Februar 2026 besteht dazu eine interaktive Möglichkeit: Auf der Internetseite mobigator.de/kreis-dueren lassen sich auf einer Landkarte gezielt und straßengenau Punkte setzen und dort Verbesserungsvorschläge oder Hinweise auf Mängel dokumentieren.</p>\n<p>Der Nahverkehrsplan wird alle fünf Jahre neu aufgestellt und soll aktuelle Entwicklungen berücksichtigen, etwa Bevölkerungswachstum, veränderte Mobilitätsbedürfnisse, Klimaschutzziele oder neue gesetzliche Anforderungen.</p>\n<p>„Alle eingereichten Ideen und Hinweise werden geprüft und in die Planungen mit einbezogen, sofern sie fachlich und finanziell umsetzbar sind. Wir freuen uns auf viele Beiträge aus unserer Kommune“, sagt der Mobilitätsbeauftragte der Gemeinde Merzenich, Mario Zeyen.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/2b1e36e1979984975897.jpg",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "ÖPNV",
+    "Nahverkehrsplan",
+    "Kreis Düren",
+    "Beteiligung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/umfrage-nvp.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/rathaus/neuer-gemeinderat/",
+   "url": "https://merzenich-aktuell.de/rathaus/neuer-gemeinderat/",
+   "title": "Das ist der neue Rat der Gemeinde Merzenich",
+   "summary": "Der Rat ist vereidigt: 27 Mitglieder inklusive Bürgermeister. Georg Gelhausen führt die Gemeinde in seiner dritten Amtszeit.",
+   "content_html": "<p>Der neue Rat der Gemeinde Merzenich ist vereidigt. Für die kommenden fünf Jahre leitet Georg Gelhausen in seiner dritten Amtszeit als Bürgermeister die Geschicke der Gemeinde. Der Rat besteht inklusive Bürgermeister aus 27 Mitgliedern.</p>\n<p>Die CDU-Fraktion stellt 13 Mitglieder: Barbara Becker, Dirk Becker, Inga Dohmes, Michael Dohmes, Ignaz Foerster, Marcus Gninka, Dirk Guder, Daniel Jonas, Stefan Kettner, Katrin Krafczyk, Stefan Kruth, Ralf Locker und Peter Weber. Die SPD-Fraktion umfasst sieben Mitglieder: Alexander Förster, Kristina Alice Hensen-Reifgens, Ute Hoch, Reimund Müller, Gerald Scheurmann-Kettner, Udo Werres und Jürgen Zeyen.</p>\n<p>Für die FDP sitzen Klaus Breuer und Günther Schmitz im Rat, für Bündnis 90/Die Grünen Vera Boltersdorf und Dr. Bastian Lange, für die Alternative für Deutschland Joelle Marie Jaracz und Kornelius Peters.</p>\n<p>Zum 1. stellvertretenden Bürgermeister wurde Michael Dohmes (CDU) gewählt, zum 2. stellvertretenden Bürgermeister Reimund Müller (SPD). Als Ortsvorsteher fungieren Inga Dohmes für Morschenich, Dirk Guder für Merzenich, Ralf Locker für Girbelsrath und Ignaz Foerster für Golzheim.</p>\n<p>Gelhausen mahnte in seiner Rede eine konstruktive Zusammenarbeit an: „Demokratie lebt von Vielfalt – und das bedeutet auch, dass wir nicht immer einer Meinung sein werden. Wenn das so ist, gilt das Mehrheitsprinzip.“</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/f1e736c28ff986f1818d.jpg",
+   "tags": [
+    "Rathaus & Politik",
+    "Merzenich",
+    "Gemeinderat",
+    "Kommunalpolitik",
+    "Georg Gelhausen"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "rathaus",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/neuer-gemeinderat.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/poolplatz-foerderbescheid/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/poolplatz-foerderbescheid/",
+   "title": "Umbau des Poolplatzes startet im Frühjahr 2026",
+   "summary": "Das Land übergibt einen Förderbescheid über 5,1 Millionen Euro. Der zentrale Merzenicher Platz liegt in einer tektonischen Störzone und soll neu gestaltet werden.",
+   "content_html": "<p>Mit der Übergabe des Förderbescheids aus den Händen von Daniel Sieveke, Staatssekretär im Ministerium für Heimat, Kommunales, Bau und Digitalisierung des Landes Nordrhein-Westfalen, an Bürgermeister Georg Gelhausen kann das Projekt zur Neu- und Umgestaltung des Poolplatzes in die entscheidende Phase übergehen.</p>\n<p>Der Platz liegt im Bereich einer tektonischen Störzone, die durch den heranrückenden Tagebau verursacht wurde. In den platzbegrenzenden Bestandsgebäuden sind dadurch Bauschäden entstanden, die teilweise bereits zur Aufgabe der bisherigen Nutzung und zum Abriss von Gebäuden geführt haben. Angestrebt wird die Neugestaltung eines zentralen Platzes im Zusammenhang mit einer städtebaulichen Lösung für diese Missstände.</p>\n<p>„Die Städtebauförderung von Land und Bund macht Brachflächen zu lebendigen Zentren, Plätze zu Treffpunkten und Bauwerke zu Wahrzeichen“, sagt Staatssekretär Sieveke. Die Förderung in Höhe von 5,1 Millionen Euro stammt aus dem Stadtentwicklungsprogramm „Rheinisches Revier der Zukunft“.</p>\n<p>Bürgermeister Gelhausen ergänzt: „Seit vielen Jahren warten die Merzenicherinnen und Merzenicher auf eine Neu- und Umgestaltung ihres geliebten Poolplatzes. Das Projekt ist ein gutes Beispiel dafür, wie klug man mit Bergschadensproblematiken umgehen und neue Qualitäten bei der Stadtplanung umsetzen kann.“</p>\n<p>An der Übergabe nahmen unter anderem die Landtagsabgeordneten Dr. Patrizia Peill und Antje Grothus, die Kreistagsabgeordneten Dr. Maria Schoeller und Klaus Breuer sowie Vertreterinnen und Vertreter der beteiligten Planungsbüros, der Findeisen-Stiftung und der RWE Power AG teil.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/ab3f7e538509d21dff62.jpg",
+   "tags": [
+    "Wirtschaft",
+    "Merzenich",
+    "Poolplatz",
+    "Städtebauförderung",
+    "Strukturwandel"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/uebergabe-foerderbescheid-poolplatz.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/rheinlandliegen-morschenich/",
+   "url": "https://merzenich-aktuell.de/leben/rheinlandliegen-morschenich/",
+   "title": "Von Morschenich aus den Blick nach Köln genießen",
+   "summary": "Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.",
+   "content_html": "<p>Mithilfe einer Förderung durch einen Heimatscheck konnte Ortsvorsteherin Inga Dohmes zwei Rheinlandliegen für den Rundweg um Morschenich anschaffen. Das Land NRW fördert damit Vorhaben, die sich mit Heimat und Heimatgeschichte im Zusammenhang mit lokalen und regionalen Inhalten befassen.</p>\n<p>„Rund um unseren Ort ist ein naturnaher Spazierpfad, der auch an einer ökologischen Ausgleichsfläche vorbeiführt“, sagt Dohmes. Dort gebe es bei ruhigem Verhalten viel zu entdecken: Falter und Insekten, Eidechsen, Feld- und Rebhühner, Dachse, Hasen, Kaninchen, Füchse und Blindschleichen. „Leider fehlten bislang die Sitzgelegenheiten.“</p>\n<p>Insgesamt haben die beiden Wellenliegen 2.500 Euro gekostet, davon deckte der Heimatscheck 2.000 Euro ab. Den Fehlbetrag von 500 Euro übernahm RWE. Die Bänke wurden bei den Westeifel Werken gekauft und von der Lebenshilfe hergestellt. Der Bauhof der Gemeinde baute sie nach der Anlieferung zusammen und installierte die Betonplattenfundamente.</p>\n<p>„Die Bänke ergänzen das tolle Freizeitwegeangebot rund um Morschenich“, sagte Bürgermeister Georg Gelhausen bei der Einweihung. Bei schönem Wetter reiche der Blick von dort fast bis nach Köln.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/bcf451428cae22eeffd9.jpg",
+   "tags": [
+    "Leben",
+    "Morschenich",
+    "Morschenich",
+    "Heimatscheck",
+    "Freizeit",
+    "Inga Dohmes"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "morschenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/rheinlandliegen-morschenich.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/leben/seniorennachmittag-anmeldung/",
+   "url": "https://merzenich-aktuell.de/leben/seniorennachmittag-anmeldung/",
+   "title": "Jetzt anmelden zum Seniorennachmittag",
+   "summary": "Am Samstag, 17. Oktober 2026, lädt die Gemeinde in die Weinberghalle. Die Anmeldung läuft über einen Coupon, ein Fahrdienst ist möglich.",
+   "content_html": "<p>Zum diesjährigen Seniorennachmittag am Samstag, 17. Oktober 2026, lädt die Gemeinde Merzenich in die Weinberghalle ein. Angemeldet wird über einen Coupon, den man ausdruckt und an einer der Sammelstellen abgibt.</p>\n<p>Abgabestellen sind die Fleischerei Müller an der Aachener Straße 8 in Golzheim, der Dorfkiosk KruFu an der Hauptstraße 42 in Girbelsrath, das Rathaus am Valdersweg 1 in Merzenich sowie Ortsvorsteherin Inga Dohmes, Am Berghof 11 in Morschenich. Wer nicht drucken kann, meldet sich direkt im Rathaus an, dort liegen Coupons aus. Im Coupon lässt sich auch angeben, ob ein Fahrdienst benötigt wird.</p>\n<p>Die Eintrittsgebühr von 5 Euro pro Person ist vor Ort in bar zu entrichten. Geboten wird wie gewohnt ein Programm mit Live-Musik und Unterhaltung, dazu Kaffee und Kuchen.</p>\n<p>Beginn ist um 14:30 Uhr, der Einlass erfolgt gegen 14:15 Uhr, das Ende ist für etwa 17:30 Uhr vorgesehen. Sitzreservierungen sind nicht möglich. Die Veranstaltung ist barrierefrei, für Rollstuhlfahrer stehen besondere Plätze zur Verfügung.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/5ded28881f40b076b9a1.jpg",
+   "tags": [
+    "Leben",
+    "Merzenich",
+    "Seniorennachmittag",
+    "Weinberghalle",
+    "Anmeldung"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "leben",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/seniorennachmittag-2026.php"
+     }
+    ]
+   }
+  },
+  {
+   "id": "https://merzenich-aktuell.de/wirtschaft/stromtrasse-oberzier-blatzheim/",
+   "url": "https://merzenich-aktuell.de/wirtschaft/stromtrasse-oberzier-blatzheim/",
+   "title": "Baustart für die neue Stromtrasse",
+   "summary": "Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.",
+   "content_html": "<p>Zwischen der Umspannanlage Oberzier in Niederzier und dem Punkt Blatzheim bei Kerpen errichtet der Netzbetreiber Amprion eine neue Höchstspannungsfreileitung mit vier 380-Kilovolt-Stromkreisen. Es handelt sich um einen sogenannten Ersatzneubau: Die bestehende Leitung wird ausgebaut, im selben Trassenraum entsteht eine leistungsfähigere Verbindung mit zusätzlichen Stromkreisen.</p>\n<p>Die Gemeinde begründet den Bedarf mit der Auslastung des Netzes im Rheinischen Revier. Die bestehenden 220- und 380-Kilovolt-Leitungen zwischen Aachen und Köln seien bereits heute stark ausgelastet. Die Netzverstärkung zwischen Oberzier und Blatzheim ist im Bundesbedarfsplangesetz verankert.</p>\n<p>Im Gemeindegebiet Merzenich haben die Bauarbeiten begonnen. Derzeit werden vor allem östlich des Gewerbegebietes „Auf der Heide“ Baustraßen und Zufahrten angelegt, damit Baufahrzeuge die Maststandorte erreichen. Im Bereich des S-Bahnhofs laufen bereits die Arbeiten an den Mastfundamenten, dafür ist eine Sperrung des Radweges erforderlich.</p>\n<p>Nach aktueller Planung sollen Fundamentarbeiten und Mastmontage bis Mitte 2027 abgeschlossen sein, anschließend werden die Leiterseile eingezogen. Die bestehende Leitung bleibt während der gesamten Bauzeit in Betrieb. Zeitweise ist mit erhöhtem Baustellenverkehr zu rechnen, insbesondere an der L264, am Steinweg und an der Straße Auf der Heide.</p>\n",
+   "date_modified": "2026-09-04T00:00:00+02:00",
+   "image": "https://merzenich-aktuell.de/assets/sources/feaf052f2afde0ec442a.jpg",
+   "tags": [
+    "Wirtschaft",
+    "Merzenich",
+    "Amprion",
+    "Stromnetz",
+    "Rheinisches Revier",
+    "Baustelle"
+   ],
+   "authors": [
+    {
+     "name": "Redaktion Merzenich Aktuell"
+    }
+   ],
+   "_merzenich": {
+    "ressort": "wirtschaft",
+    "ort": "merzenich",
+    "format": "meldung",
+    "sources": [
+     {
+      "title": "Gemeinde Merzenich",
+      "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/amprion-stromleitung.php"
+     }
+    ]
+   }
+  }
+ ]
+}

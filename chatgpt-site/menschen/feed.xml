@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<title>Merzenich Aktuell – Menschen</title>
+<link>https://merzenich-aktuell.de/menschen/</link>
+<description>Jubiläen, Hochzeiten, Ehrungen, Nachrufe und Porträts: die Menschen hinter den Meldungen.</description>
+<language>de-DE</language>
+<copyright>© 2026 Merzenich Aktuell</copyright>
+<managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
+<lastBuildDate>Wed, 16 Sep 2026 10:12:14 GMT</lastBuildDate>
+<image><url>https://merzenich-aktuell.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Menschen</title><link>https://merzenich-aktuell.de/menschen/</link></image>
+<atom:link href="https://merzenich-aktuell.de/menschen/feed.xml" rel="self" type="application/rss+xml"/>
+<atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+
+</channel>
+</rss>

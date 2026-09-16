@@ -1,0 +1,22 @@
+(() => {
+ 'use strict';
+ const form=document.querySelector('#editorial-composer');if(!form)return;
+ const status=document.querySelector('#editorial-status');let dirty=false;
+ const data=()=>Object.fromEntries(new FormData(form));
+ function tab(name){document.querySelectorAll('[data-work-panel]').forEach(el=>el.hidden=el.dataset.workPanel!==name);document.querySelectorAll('[data-work-tab]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.workTab===name)));}
+ document.querySelectorAll('[data-work-tab]').forEach(el=>el.addEventListener('click',()=>tab(el.dataset.workTab)));
+ function update(){const d=data();document.querySelector('#google-title').textContent=d.title||'Ihre Überschrift';document.querySelector('#google-description').textContent=d.teaser||'Hier erscheint der Teaser Ihrer Nachricht.';document.querySelector('#social-draft').value=[d.title,d.teaser].filter(Boolean).join('\n\n');
+ const checks=[['Überschrift · '+(d.title||'').length+' Zeichen',(d.title||'').length>=10],['Teaser vorhanden',(d.teaser||'').length>=50],['Quelle mit Link',/^https?:\/\//.test(d.sourceUrl||'')&&d.sourceName],['Bild, Credit und Bildtyp',d.image&&d.credit&&d.imageType],['Bildnutzung freigegeben',d.rights],['Fakten und Datum geprüft',d.reviewed]];
+ const ul=document.querySelector('#editorial-checks');ul.replaceChildren();checks.forEach(([label,ok])=>{const li=document.createElement('li');li.textContent=(ok?'✓ ':'○ ')+label;li.className=ok?'complete':'pending';ul.append(li);});}
+ form.addEventListener('input',()=>{dirty=true;update();});
+ document.querySelector('#editorial-save').addEventListener('click',()=>{try{localStorage.setItem('ma19-editorial-draft',JSON.stringify(data()));status.textContent='Entwurf in diesem Browser gespeichert.';dirty=false;}catch{status.textContent='Speichern im Browser nicht möglich. Bitte als Markdown exportieren.';}});
+ try{const saved=JSON.parse(localStorage.getItem('ma19-editorial-draft')||'null');if(saved)for(const [key,value] of Object.entries(saved)){const el=form.elements.namedItem(key);if(el){if(el.type==='checkbox')el.checked=!!value;else el.value=value;}}}catch{}
+ document.querySelectorAll('[data-candidate-title]').forEach(btn=>btn.addEventListener('click',()=>{if(dirty&&!window.confirm('Den ungespeicherten Entwurf durch diesen Quellenkandidaten ersetzen?'))return;form.reset();form.elements.title.value=btn.dataset.candidateTitle;form.elements.sourceName.value=btn.dataset.candidateSource;form.elements.sourceUrl.value=btn.dataset.candidateUrl;dirty=true;tab('write');update();form.elements.title.focus();status.textContent='Quelle übernommen. Bitte öffnen, Fakten prüfen und einen eigenen Text schreiben.';}));
+ document.querySelector('#social-copy').addEventListener('click',async()=>{const el=document.querySelector('#social-draft');try{await navigator.clipboard.writeText(el.value);status.textContent='Text für soziale Kanäle kopiert.';}catch{el.focus();el.select();status.textContent='Text ist ausgewählt. Bitte mit Kopieren übernehmen.';}});
+ form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const d=data(),q=JSON.stringify;const slug=(d.title||'meldung').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');const now=new Date().toISOString();
+ let out=`---\ntitle: ${q(d.title)}\nslug: ${q(slug)}\nteaser: ${q(d.teaser)}\ndate: ${q(now)}\nressort: ${q(d.ressort)}\nort: ${q(d.ort)}\nauthor: redaktion\nformat: meldung\npublicationStatus: draft\ncontentType: news\ndraft: true\nreviewed: ${!!d.reviewed}\nsources:\n  - title: ${q(d.sourceName)}\n    url: ${q(d.sourceUrl)}\n    stand: ${q(now.slice(0,10))}\n`;
+ if(d.image)out+=`image:\n  src: ${q(d.image)}\n  alt: ${q(d.title)}\n  credit: ${q(d.credit)}\n  type: ${q(d.imageType)}\n  rights: ${d.rights?'cleared':'pending'}\n`;
+ out+='---\n\n'+d.body+'\n';const url=URL.createObjectURL(new Blob([out],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=now.slice(0,10)+'-'+slug+'.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Entwurf exportiert. Im Quellprojekt unter content/artikel ablegen oder im CMS übernehmen. Noch nicht veröffentlicht.';dirty=false;
+ });
+ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});update();
+})();

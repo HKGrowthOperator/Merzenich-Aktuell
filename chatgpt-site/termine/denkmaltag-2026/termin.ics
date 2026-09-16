@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Heimatmuseum & Wasserturm: Tag des offenen Denkmals
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:denkmaltag-2026@merzenich-aktuell.de
+DTSTAMP:20260913T110000Z
+DTSTART:20260913T110000Z
+DTEND:20260913T150000Z
+SUMMARY:Heimatmuseum & Wasserturm: Tag des offenen Denkmals
+DESCRIPTION:Zwei Orte der Ortsgeschichte öffnen von 13 bis 17 Uhr. Im Hei
+ matmuseum gibt es historische Bilder sowie Kaffee und Kuchen; der Wassert
+ urm widmet sich der Neffel\nVeranstalter: Geschichts- und Heimatverein Me
+ rzenich e.V.\nhttps://merzenich-aktuell.de/termine/denkmaltag-2026/
+LOCATION:Heimatmuseum und Wasserturm\, Bergstraße 1 / Mühlenstraße 32\, M
+ erzenich
+URL:https://merzenich-aktuell.de/termine/denkmaltag-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

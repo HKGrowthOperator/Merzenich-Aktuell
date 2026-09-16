@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oldieabend am Lindenplatz
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:oldieabend@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20261002T170000Z
+DTEND:20261002T190000Z
+SUMMARY:Oldieabend am Lindenplatz
+DESCRIPTION:Auftakt zum Ortsfest-Wochenende mit Musik der 60er bis 80er.\
+ nVeranstalter: Gemeinde Merzenich\nhttps://merzenich-aktuell.de/termine/o
+ ldieabend/
+LOCATION:Lindenplatz Merzenich
+URL:https://merzenich-aktuell.de/termine/oldieabend/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

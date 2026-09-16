@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bürgersprechstunde mit Bürgermeister Gelhausen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:buergersprechstunde@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260904T160000Z
+DTEND:20260904T170000Z
+SUMMARY:Bürgersprechstunde mit Bürgermeister Gelhausen
+DESCRIPTION:Offene Sprechstunde ohne Anmeldung.\nVeranstalter: Gemeinde M
+ erzenich\nhttps://merzenich-aktuell.de/termine/buergersprechstunde/
+LOCATION:Bürgewaldzentrum Morschenich
+URL:https://merzenich-aktuell.de/termine/buergersprechstunde/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

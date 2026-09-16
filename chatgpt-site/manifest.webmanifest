@@ -1,0 +1,42 @@
+{
+ "name": "Merzenich Aktuell",
+ "short_name": "Merzenich",
+ "description": "Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald",
+ "start_url": "/?source=pwa",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#0c0b0a",
+ "theme_color": "#0c0b0a",
+ "lang": "de",
+ "categories": [
+  "news"
+ ],
+ "icons": [
+  {
+   "src": "/assets/img/avatar-1024.png",
+   "sizes": "1024x1024",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/assets/img/avatar-1024.png",
+   "sizes": "1024x1024",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Blaulicht",
+   "url": "/blaulicht/"
+  },
+  {
+   "name": "Termine",
+   "url": "/termine/"
+  },
+  {
+   "name": "Meldung senden",
+   "url": "/meldung-senden/"
+  }
+ ]
+}

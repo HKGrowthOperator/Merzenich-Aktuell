@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BdSJ-Werwolfnacht
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:werwolfnacht-golzheim@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260905T150000Z
+DTEND:20260905T170000Z
+SUMMARY:BdSJ-Werwolfnacht
+DESCRIPTION:Spieleabend der Schützenjugend.\nVeranstalter: St. Sebastianu
+ s Schützenbruderschaft Golzheim\nhttps://merzenich-aktuell.de/termine/wer
+ wolfnacht-golzheim/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenich-aktuell.de/termine/werwolfnacht-golzheim/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

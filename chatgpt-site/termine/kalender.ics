@@ -1,0 +1,175 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Merzenich Aktuell Termine
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:leader-infoabend@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260902T150000Z
+DTEND:20260902T170000Z
+SUMMARY:Digitaler LEADER-Infoabend
+DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Proze
+ nt Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revie
+ r an Inde und Rur\nhttps://merzenich-aktuell.de/termine/leader-infoabend/
+LOCATION:Online via Zoom
+URL:https://merzenich-aktuell.de/termine/leader-infoabend/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buergersprechstunde@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260904T160000Z
+DTEND:20260904T170000Z
+SUMMARY:Bürgersprechstunde mit Bürgermeister Gelhausen
+DESCRIPTION:Offene Sprechstunde ohne Anmeldung.\nVeranstalter: Gemeinde M
+ erzenich\nhttps://merzenich-aktuell.de/termine/buergersprechstunde/
+LOCATION:Bürgewaldzentrum Morschenich
+URL:https://merzenich-aktuell.de/termine/buergersprechstunde/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ttc-merzenich-birkesdorf@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260904T180000Z
+DTEND:20260904T200000Z
+SUMMARY:Tischtennis: TTC Merzenich – TV Birkesdorf
+DESCRIPTION:Heimspiel des TTC Merzenich.\nVeranstalter: TTC Merzenich\nht
+ tps://merzenich-aktuell.de/termine/ttc-merzenich-birkesdorf/
+LOCATION:Turnhalle der Schule\, Merzenich
+URL:https://merzenich-aktuell.de/termine/ttc-merzenich-birkesdorf/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:werwolfnacht-golzheim@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260905T150000Z
+DTEND:20260905T170000Z
+SUMMARY:BdSJ-Werwolfnacht
+DESCRIPTION:Spieleabend der Schützenjugend.\nVeranstalter: St. Sebastianu
+ s Schützenbruderschaft Golzheim\nhttps://merzenich-aktuell.de/termine/wer
+ wolfnacht-golzheim/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenich-aktuell.de/termine/werwolfnacht-golzheim/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:androcup@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260906T090000Z
+DTEND:20260906T110000Z
+SUMMARY:AndroCup in Merzenich
+DESCRIPTION:Hallenturnier.\nVeranstalter: Jonge vom Berg\nhttps://merzeni
+ ch-aktuell.de/termine/androcup/
+LOCATION:Halle Merzenich
+URL:https://merzenich-aktuell.de/termine/androcup/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buergerpokalschiessen@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260909T163000Z
+DTEND:20260909T183000Z
+SUMMARY:32. Bürgerpokalschießen
+DESCRIPTION:Offenes Schießen um den Bürgerpokal\, Gäste willkommen.\nVera
+ nstalter: St. Sebastianus Schützenbruderschaft Golzheim\nhttps://merzenic
+ h-aktuell.de/termine/buergerpokalschiessen/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenich-aktuell.de/termine/buergerpokalschiessen/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:faire-woche-2026@merzenich-aktuell.de
+DTSTAMP:20260827T073200Z
+DTSTART:20260910T220000Z
+DTEND:20260925T215900Z
+SUMMARY:Faire Woche in Merzenich
+DESCRIPTION:Die Gemeinde beteiligt sich an der bundesweiten Fairen Woche 
+ mit Naturangeboten für Familien und Schulklassen und einer Müllsammelakti
+ on am 20. September.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenich
+ -aktuell.de/termine/faire-woche-2026/
+LOCATION:Gemeindegebiet
+URL:https://merzenich-aktuell.de/termine/faire-woche-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:denkmaltag-2026@merzenich-aktuell.de
+DTSTAMP:20260913T110000Z
+DTSTART:20260913T110000Z
+DTEND:20260913T150000Z
+SUMMARY:Heimatmuseum & Wasserturm: Tag des offenen Denkmals
+DESCRIPTION:Zwei Orte der Ortsgeschichte öffnen von 13 bis 17 Uhr. Im Hei
+ matmuseum gibt es historische Bilder sowie Kaffee und Kuchen; der Wassert
+ urm widmet sich der Neffel\nVeranstalter: Geschichts- und Heimatverein Me
+ rzenich e.V.\nhttps://merzenich-aktuell.de/termine/denkmaltag-2026/
+LOCATION:Heimatmuseum und Wasserturm\, Bergstraße 1 / Mühlenstraße 32\, M
+ erzenich
+URL:https://merzenich-aktuell.de/termine/denkmaltag-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:standkarten-troedelmarkt@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260916T123000Z
+DTEND:20260916T150000Z
+SUMMARY:Standkartenvergabe Trödelmarkt Ortsfest
+DESCRIPTION:Persönliche Ausgabe der Standkarten.\nVeranstalter: Gemeinde 
+ Merzenich\nhttps://merzenich-aktuell.de/termine/standkarten-troedelmarkt/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenich-aktuell.de/termine/standkarten-troedelmarkt/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:muellsammelaktion@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260920T090000Z
+DTEND:20260920T110000Z
+SUMMARY:Müllsammelaktion zur Fairen Woche
+DESCRIPTION:Handschuhe und Säcke werden gestellt.\nVeranstalter: Gemeinde
+  Merzenich\nhttps://merzenich-aktuell.de/termine/muellsammelaktion/
+LOCATION:Gesamtes Gemeindegebiet
+URL:https://merzenich-aktuell.de/termine/muellsammelaktion/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:oldieabend@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20261002T170000Z
+DTEND:20261002T190000Z
+SUMMARY:Oldieabend am Lindenplatz
+DESCRIPTION:Auftakt zum Ortsfest-Wochenende mit Musik der 60er bis 80er.\
+ nVeranstalter: Gemeinde Merzenich\nhttps://merzenich-aktuell.de/termine/o
+ ldieabend/
+LOCATION:Lindenplatz Merzenich
+URL:https://merzenich-aktuell.de/termine/oldieabend/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ortsfest-2026@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20261003T090000Z
+DTEND:20261003T110000Z
+SUMMARY:Ortsfest Merzenich 2026
+DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalter
+ : Gemeinde Merzenich\nhttps://merzenich-aktuell.de/termine/ortsfest-2026/
+LOCATION:Ortszentrum Merzenich
+URL:https://merzenich-aktuell.de/termine/ortsfest-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:seniorennachmittag-2026@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20261017T123000Z
+DTEND:20261017T153000Z
+SUMMARY:Seniorennachmittag der Gemeinde
+DESCRIPTION:Live-Musik\, Kaffee und Kuchen. Anmeldung per Coupon\, Eintri
+ tt 5 Euro\, Fahrdienst auf Wunsch.\nVeranstalter: Gemeinde Merzenich\nhtt
+ ps://merzenich-aktuell.de/termine/seniorennachmittag-2026/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenich-aktuell.de/termine/seniorennachmittag-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

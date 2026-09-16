@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Digitaler LEADER-Infoabend
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:leader-infoabend@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260902T150000Z
+DTEND:20260902T170000Z
+SUMMARY:Digitaler LEADER-Infoabend
+DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Proze
+ nt Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revie
+ r an Inde und Rur\nhttps://merzenich-aktuell.de/termine/leader-infoabend/
+LOCATION:Online via Zoom
+URL:https://merzenich-aktuell.de/termine/leader-infoabend/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

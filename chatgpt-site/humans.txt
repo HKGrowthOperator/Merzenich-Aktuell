@@ -1,0 +1,8 @@
+/* TEAM */
+Lokalredaktion: Redaktion Merzenich Aktuell
+Kontakt: info@kbs-management.tv
+
+/* SITE */
+Stand: 2026-09-09T10:15:14+02:00
+Technik: statischer Generator ohne Abhängigkeiten, Netlify, Decap CMS
+Schriften: Newsreader, Inter (SIL OFL)

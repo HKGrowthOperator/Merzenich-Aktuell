@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ortsfest Merzenich 2026
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ortsfest-2026@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20261003T090000Z
+DTEND:20261003T110000Z
+SUMMARY:Ortsfest Merzenich 2026
+DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalter
+ : Gemeinde Merzenich\nhttps://merzenich-aktuell.de/termine/ortsfest-2026/
+LOCATION:Ortszentrum Merzenich
+URL:https://merzenich-aktuell.de/termine/ortsfest-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

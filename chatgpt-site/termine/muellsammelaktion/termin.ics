@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Müllsammelaktion zur Fairen Woche
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:muellsammelaktion@merzenich-aktuell.de
+DTSTAMP:20260903T060000Z
+DTSTART:20260920T090000Z
+DTEND:20260920T110000Z
+SUMMARY:Müllsammelaktion zur Fairen Woche
+DESCRIPTION:Handschuhe und Säcke werden gestellt.\nVeranstalter: Gemeinde
+  Merzenich\nhttps://merzenich-aktuell.de/termine/muellsammelaktion/
+LOCATION:Gesamtes Gemeindegebiet
+URL:https://merzenich-aktuell.de/termine/muellsammelaktion/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
