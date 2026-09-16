@@ -1,0 +1,1 @@
+<?php get_header(); ?><div class="wrap"><h1 class="section-title"><?php the_archive_title(); ?></h1><div class="news-list"><?php while(have_posts()):the_post();get_template_part('template-parts/card');endwhile; ?></div><?php the_posts_pagination(); ?></div><?php get_footer(); ?>

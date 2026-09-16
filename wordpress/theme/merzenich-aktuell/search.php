@@ -1,0 +1,1 @@
+<?php get_header(); ?><div class="wrap"><h1 class="section-title">Suche: <?php echo esc_html(get_search_query()); ?></h1><div class="news-list"><?php if(have_posts()):while(have_posts()):the_post();get_template_part('template-parts/card');endwhile;else:?><p>Keine Treffer.</p><?php endif; ?></div></div><?php get_footer(); ?>
