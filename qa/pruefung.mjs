@@ -213,11 +213,40 @@ function pruefePlatzhalter() {
   }
 }
 
+// ------------------------------------------------------- 6. Pruefsummen
+// docs/SHA256SUMS.txt ist der Integritaetsnachweis der Lieferstaende. Er lief
+// schon einmal still auseinander, weil die Summendatei eine Minute vor der
+// Datei committet wurde, die sie beschreibt.
+function pruefePruefsummen() {
+  const liste = 'docs/SHA256SUMS.txt';
+  if (!gibtEs(liste)) return;
+  for (const zeile of lies(liste).split('\n')) {
+    const treffer = zeile.trim().match(/^([0-9a-f]{64})\s+(.+)$/);
+    if (!treffer) continue;
+    const [, erwartet, datei] = treffer;
+    if (!gibtEs(datei)) {
+      fehler('Pruefsummen', `${datei} ist in ${liste} aufgefuehrt, liegt aber nicht vor.`);
+      continue;
+    }
+    let ist;
+    try {
+      ist = execFileSync('sha256sum', [join(wurzel, datei)]).toString().split(/\s+/)[0];
+    } catch {
+      hinweis('Pruefsummen', 'sha256sum steht hier nicht bereit, Abgleich uebersprungen.');
+      return;
+    }
+    if (ist !== erwartet) {
+      fehler('Pruefsummen', `${datei} weicht ab: hinterlegt ${erwartet.slice(0, 12)}…, tatsaechlich ${ist.slice(0, 12)}…`);
+    }
+  }
+}
+
 pruefeMarkupGegenCode();
 pruefeInhalte();
 pruefeOertlicheVerweise();
 pruefePhp();
 pruefePlatzhalter();
+pruefePruefsummen();
 
 const fehlerZahl = befunde.filter((b) => b.schwere === 'fehler').length;
 const hinweisZahl = befunde.length - fehlerZahl;
