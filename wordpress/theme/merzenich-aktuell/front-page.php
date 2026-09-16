@@ -7,6 +7,7 @@ $market_sections=[
   'ma_obituary'=>'Traueranzeigen',
   'ma_family_notice'=>'Familienanzeigen',
 ];
+$sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_top').ma_render_ad('homepage_sidebar_middle') : '';
 ?>
 <div class="wrap home-grid">
   <aside class="service-column">
@@ -96,8 +97,10 @@ $market_sections=[
   </section>
 
   <aside class="home-aside">
-    <div class="sidebar-heading">Lokale Anzeigen</div>
-    <?php ma_theme_ad('homepage_sidebar_top'); ma_theme_ad('homepage_sidebar_middle'); ?>
+    <?php if($sidebar_ads!==''): ?>
+      <div class="sidebar-heading">Lokale Anzeigen</div>
+      <?php echo $sidebar_ads; ?>
+    <?php endif; ?>
     <div class="sidebar-heading">Sport</div>
     <?php echo do_shortcode('[ma_sport]'); ?>
   </aside>
