@@ -131,3 +131,14 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 @media (max-width:760px){.markt-row{grid-template-columns:minmax(0,1fr)}.markt-row .d{display:none}.markt-row .act{grid-column:1}.markt-art{display:inline}}
 /* Aufmacher: Kicker und Eyebrow sind zwei Zeilen, auch mobil. Vorher klebten sie zusammen ("KREISLIGA AAKTUELL"). */
 .front-lead-copy .kicker{display:block}
+
+/* Kopf klappt beim Scrollen ein (Desktop): kopf.js setzt html.kopf-kompakt.
+   Der grosse Kopf schiebt sich weg, die Ressortleiste bleibt oben und zeigt
+   links das kleine Logo. Mobil bleibt der schmale Kopf, wie er ist. */
+.masthead{transition:transform .18s ease,opacity .18s ease}
+.mainnav.is-scrolled{transition:top .18s ease}
+.kopf-kompakt .masthead{transform:translateY(-100%);opacity:0;pointer-events:none}
+.kopf-kompakt .mainnav.is-scrolled{top:0}
+.kopf-kompakt .mainnav.is-scrolled .compact-brand{display:flex;align-items:center;flex:0 0 auto;margin-right:12px}
+.kopf-kompakt .mainnav.is-scrolled .compact-brand img{width:118px;height:auto;display:block}
+@media (prefers-reduced-motion:reduce){.masthead,.mainnav.is-scrolled{transition:none}}
