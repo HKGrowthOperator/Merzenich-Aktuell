@@ -115,3 +115,36 @@
  }
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
 })();
+
+// Archive-Priorisierung: dieselben redaktionell geprueften Meldungen muessen
+// nach dem Refresh nicht nur auf der Startseite, sondern auch in den echten
+// Ressortarchiven sichtbar sein. Bestehende Archive bleiben strukturell gleich.
+(()=>{
+ 'use strict';
+ const path=location.pathname.replace(/\/+$/,'/')||'/';
+ if(!['/nachrichten/','/sport/','/blaulicht/'].includes(path))return;
+ const feed=document.querySelector('.content-grid .feed');if(!feed)return;
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function updateLead(s){
+  const lead=feed.querySelector('.feed-lead');if(!lead||!s?.url||!s?.title)return false;
+  lead.dataset.story=s.id||'';
+  const mediaLink=lead.querySelector(':scope > a');if(mediaLink)mediaLink.href=s.url;
+  const media=lead.querySelector('.media');if(media&&s.image){media.classList.toggle('contain',s.imageFit==='contain');const img=media.querySelector('img');if(img){img.src=s.image;img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=s.imageAlt||s.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge&&s.imageBadge)badge.textContent=s.imageBadge;}
+  const copy=lead.querySelector('.lead-copy');if(copy){const loc=copy.querySelector('.location-line');if(loc)loc.innerHTML=`<span class="location-brand">${esc(s.location||'MERZENICH')}</span>`;const kicker=copy.querySelector('.kicker');if(kicker)kicker.textContent=s.kicker||'Aktuell';const a=copy.querySelector('h2 a');if(a){a.href=s.url;a.textContent=s.title;}const dek=copy.querySelector('.dek');if(dek)dek.textContent=s.teaser||'';const time=copy.querySelector('.meta time');if(time){time.dateTime=s.published||'';time.textContent=s.timeLabel||'';}}
+  return true;
+ }
+ function row(s){
+  if(!s?.url||!s?.title||feed.querySelector(`a[href="${CSS.escape(s.url)}"]`))return null;
+  const el=document.createElement('article');el.className='feed-row editorial-current-row no-media';el.dataset.story=s.id||'';
+  el.innerHTML=`<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
+  return el;
+ }
+ function bumpCount(add){const c=document.querySelector('.count-line');if(!c||!add)return;const m=c.textContent.match(/^\s*(\d+)/);if(!m)return;c.firstChild.textContent=c.firstChild.textContent.replace(m[1],String(Number(m[1])+add));}
+ fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{
+  let added=0;
+  if(path==='/sport/'&&data.hero){updateLead(data.hero);}
+  if(path==='/nachrichten/'&&data.hero){updateLead(data.hero);if(data.secondary){const second=row(data.secondary);if(second){feed.querySelector('.feed-lead')?.insertAdjacentElement('afterend',second);added++;}}}
+  if(path==='/blaulicht/'&&data.secondary){const current=row(data.secondary);if(current){feed.prepend(current);added++;}}
+  bumpCount(added);
+ }).catch(()=>{});
+})();
