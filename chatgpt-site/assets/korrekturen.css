@@ -76,3 +76,25 @@
    der Streifen scrollt wie vorgesehen in sich selbst. */
 body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .mainnav .navrow,.mainnav .navscroll,.districtbar>.shell{min-width:0}
+
+/* Recovery-Pass 16.09.: exakt der bestehende Kopf, nur funktional sauber.
+   Die Masthead-Zeile bleibt am Browserrand; die vorhandene Ressortzeile
+   dockt beim Scrollen direkt darunter an. Kein Floating-Gap, kein Schatten. */
+@media (min-width:768px){
+  .masthead{position:sticky;top:0;z-index:70;margin:0;box-shadow:none}
+  .mainnav.is-scrolled{top:84px}
+  .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:12px}
+  .header-local [data-today]{flex-basis:auto;text-align:right}
+}
+
+/* Wetter bleibt bewusst ein schlichter Serviceblock und keine Dashboard-Card. */
+.header-weather{font-weight:650;color:#242424}
+.weather-days>div{padding:9px 0;border-bottom:1px solid var(--line,#dedede);font-size:13px;line-height:1.4}
+.weather-days>div:last-child{border-bottom:0}
+.weather-days small{display:block;margin-top:2px;color:#686868}
+
+/* Aktuelle Blaulicht-Zweitmeldung hat bewusst kein beliebiges Symbol- oder
+   Archivbild. Ohne Bild nutzt der bestehende Front-Side-Slot die volle Breite. */
+.front-brief.editorial-secondary{grid-template-columns:1fr}
+.front-brief.editorial-secondary>div{grid-column:1;grid-row:1}
+.front-brief.editorial-secondary h3{margin-top:4px}
