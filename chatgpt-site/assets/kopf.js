@@ -33,3 +33,17 @@
   window.addEventListener('resize', anfordern, { passive: true });
   window.addEventListener('pageshow', anfordern);
 })();
+
+/*
+ * Der ausgelieferte Coolify-Stand bindet kopf.js auf allen redaktionellen
+ * Seiten ein. Darueber wird die zentrale Startbild-Absicherung geladen, ohne
+ * 213 statische HTML-Dateien einzeln anfassen zu muessen.
+ */
+(() => {
+  if (document.querySelector('script[data-ma-startbilder]')) return;
+  const script = document.createElement('script');
+  script.src = '/assets/bild-fallbacks.js?v=20260916a';
+  script.async = false;
+  script.dataset.maStartbilder = '1';
+  document.head.append(script);
+})();
