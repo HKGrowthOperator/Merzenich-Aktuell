@@ -1,0 +1,1 @@
+Die geforderten Before-Screenshots der aktuell veröffentlichten ChatGPT-Site konnten nicht erstellt werden: Die Domain ist aus der verfügbaren Browser-/Fetch-Umgebung nicht erreichbar. Es wurde bewusst kein alter Screenshot und kein lokaler Ersatz als „Before“ ausgegeben.
