@@ -50,6 +50,9 @@ jobs:
           test -f wordpress/theme/merzenich-aktuell/functions.php
           test -f wordpress/plugin/merzenich-aktuell-core/merzenich-aktuell-core.php
 
+      - name: Freigabe-Logik pruefen
+        run: php qa/wordpress/freigabe-test.php
+
       - name: Lint versioned WordPress source
         run: |
           PHP_COUNT=$(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' | wc -l)

@@ -9,11 +9,13 @@
 if (!defined('ABSPATH')) { exit; }
 define('MA_CORE_VERSION', '1.2.0-recovery');
 define('MA_CORE_PATH', plugin_dir_path(__FILE__));
+define('MA_CORE_URL', plugin_dir_url(__FILE__));
 
 require_once MA_CORE_PATH . 'includes/content.php';
 require_once MA_CORE_PATH . 'includes/images.php';
 require_once MA_CORE_PATH . 'includes/content-admin.php';
 require_once MA_CORE_PATH . 'includes/editorial.php';
+require_once MA_CORE_PATH . 'includes/freigabe.php';
 require_once MA_CORE_PATH . 'includes/weather.php';
 require_once MA_CORE_PATH . 'includes/ads.php';
 require_once MA_CORE_PATH . 'includes/sport.php';
