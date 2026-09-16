@@ -94,7 +94,7 @@ jobs:
       - name: Capture QA screenshots
         run: |
           mkdir -p qa/after
-          cat > /tmp/capture-qa.mjs <<'EOF'
+          cat > .qa-capture.mjs <<'EOF'
           import { chromium } from 'playwright';
 
           const browser = await chromium.launch({ headless: true });
@@ -117,7 +117,8 @@ jobs:
 
           await browser.close();
           EOF
-          node /tmp/capture-qa.mjs
+          node ./.qa-capture.mjs
+          rm .qa-capture.mjs
           ls -lh qa/after
 
       - name: Commit refreshed QA screenshots
