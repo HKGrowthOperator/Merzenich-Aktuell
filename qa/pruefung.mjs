@@ -12,7 +12,7 @@
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { join, dirname, resolve } from 'node:path';
+import { join, dirname, resolve, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -23,7 +23,7 @@ const melde = (schwere, bereich, text) => befunde.push({ schwere, bereich, text 
 const fehler = (bereich, text) => melde('fehler', bereich, text);
 const hinweis = (bereich, text) => melde('hinweis', bereich, text);
 
-const lies = (pfad) => readFileSync(join(wurzel, pfad), 'utf8');
+const lies = (pfad) => readFileSync(isAbsolute(pfad) ? pfad : join(wurzel, pfad), 'utf8');
 const gibtEs = (pfad) => existsSync(join(wurzel, pfad));
 
 function dateienUnter(verzeichnis, endung) {
@@ -241,8 +241,123 @@ function pruefePruefsummen() {
   }
 }
 
+// ------------------------------------------------- 7. Service-Inhalte
+// Immobilien, Stellen, Termine und Bilder: nichts Erfundenes, nichts
+// Abgelaufenes, kein Bild ohne Nachweis. Prueft die Quellen des Generators
+// (site-source/content) und die JSON-Datenstaende der ausgelieferten Seite.
+const DEMO_MARKER = [
+  [/\bdemo(?:daten|-daten|eintrag|-eintrag)?\b/i, 'Demo'],
+  [/\bbeispieldaten\b/i, 'Beispieldaten'],
+  [/\btesteintrag\b/i, 'Testeintrag'],
+  [/\bdummy\b/i, 'Dummy'],
+  [/\bplatzhaltertext\b/i, 'Platzhaltertext'],
+];
+
+function frontmatter(text) {
+  const m = text.match(/^---\n([\s\S]*?)\n---/);
+  if (!m) return {};
+  const out = {};
+  for (const zeile of m[1].split('\n')) {
+    const t = zeile.match(/^([a-zA-Z_]+):\s*(.*)$/);
+    if (t) out[t[1]] = t[2].replace(/^["']|["']$/g, '');
+  }
+  return out;
+}
+
+function pruefeServiceInhalte() {
+  const jetzt = Date.now();
+  const md = (ordner) => [...dateienUnter(ordner, '.md')];
+  const slugs = new Map();
+
+  // Artikel: Bild nur mit Credit, keine doppelten Slugs, keine Demo-Marker.
+  for (const datei of md('site-source/content/artikel')) {
+    const text = lies(datei);
+    const name = datei.replace(wurzel + '/', '');
+    const fm = frontmatter(text);
+    if (fm.slug) slugs.set(fm.slug, (slugs.get(fm.slug) || 0) + 1);
+    const bild = text.match(/^image:\n((?:[ \t]+.*\n?)+)/m);
+    if (bild && /^\s+src:\s*\S/m.test(bild[1]) && !/^\s+credit:\s*\S/m.test(bild[1])) {
+      fehler('Service', `${name}: Bild ohne credit.`);
+    }
+    for (const [muster, label] of DEMO_MARKER) if (muster.test(text)) fehler('Service', `${name}: enthaelt ${label}.`);
+  }
+  for (const [slug, n] of slugs) if (n > 1) fehler('Service', `Artikel-Slug ${slug} kommt ${n} mal vor.`);
+
+  // Stellen: abgelaufene duerfen nicht mehr veroeffentlicht sein.
+  for (const datei of md('site-source/content/stellen')) {
+    const fm = frontmatter(lies(datei));
+    const name = datei.replace(wurzel + '/', '');
+    if (fm.validUntil && !Number.isNaN(Date.parse(fm.validUntil)) && Date.parse(fm.validUntil) < jetzt && fm.draft !== 'true') {
+      fehler('Service', `${name}: Stelle ist seit ${fm.validUntil} abgelaufen, steht aber noch auf veroeffentlicht.`);
+    }
+  }
+
+  // Termine: ein Termin ohne start ist keiner; start muss lesbar sein.
+  for (const datei of md('site-source/content/termine')) {
+    const fm = frontmatter(lies(datei));
+    const name = datei.replace(wurzel + '/', '');
+    if (!fm.start) fehler('Service', `${name}: start fehlt.`);
+    else if (Number.isNaN(Date.parse(fm.start))) fehler('Service', `${name}: start ist kein lesbares Datum (${fm.start}).`);
+  }
+
+  // Ausgelieferte Seite: kein vergangener Termin unter "kommend", keine
+  // Demo-Marker, JSON-Datenstaende lesbar.
+  const termine = 'chatgpt-site/termine/index.html';
+  if (gibtEs(termine)) {
+    const html = lies(termine);
+    // Jede Zeile traegt data-start/data-end; die Seite blendet Vergangenes
+    // erst im Browser aus. Zur Bauzeit darf trotzdem nichts Vergangenes
+    // hinein, das aelter ist als der Datenstand selbst.
+    const stand = Date.parse((html.match(/data-today datetime="([^"]+)"/) || [])[1] || '') || jetzt;
+    let zeilen = 0;
+    for (const m of html.matchAll(/<[^>]*data-event-row[^>]*data-end="([^"]+)"[^>]*>/g)) {
+      zeilen++;
+      const ende = Date.parse(m[1]);
+      if (Number.isNaN(ende)) fehler('Service', `termine/: data-end ist kein lesbares Datum (${m[1]}).`);
+      else if (ende < stand) fehler('Service', `termine/: Termin mit Ende ${m[1]} liegt vor dem Datenstand der Seite, steht aber unter kommend.`);
+    }
+    if (zeilen === 0) hinweis('Service', 'termine/: keine data-event-row gefunden - Terminliste leer oder Markup geaendert.');
+  }
+  for (const datei of ['chatgpt-site/index.html', termine, 'chatgpt-site/immobilien/index.html', 'chatgpt-site/jobs/index.html']) {
+    if (!gibtEs(datei)) continue;
+    const text = lies(datei);
+    for (const [muster, label] of DEMO_MARKER) if (muster.test(text)) fehler('Service', `${datei} enthaelt ${label}.`);
+  }
+  for (const datei of dateienUnter('chatgpt-site/api', '.json')) {
+    try { JSON.parse(lies(datei)); } catch (e) { fehler('Service', `${datei.replace(wurzel + '/', '')}: kein gueltiges JSON (${e.message}).`); }
+  }
+
+  // Sport-Datenstand: Pflichtteile vorhanden, nichts Erfundenes im Ergebnis.
+  const sport = 'chatgpt-site/api/sport-current.json';
+  if (gibtEs(sport)) {
+    try {
+      const d = JSON.parse(lies(sport));
+      for (const k of ['generated', 'sourceUrl', 'table']) if (!(k in d)) fehler('Service', `${sport}: ${k} fehlt.`);
+      if (d.lastMatch && d.lastMatch.confirmed === false && d.lastMatch.score) {
+        fehler('Service', `${sport}: lastMatch traegt ein Ergebnis, ist aber nicht bestaetigt.`);
+      }
+      if (Array.isArray(d.table)) for (const r of d.table) if (!r || !r.team) fehler('Service', `${sport}: Tabellenzeile ohne team.`);
+    } catch { /* oben gemeldet */ }
+  }
+}
+
+// ------------------------------------------------------------ 8. JavaScript
+function pruefeJavaScript() {
+  const dateien = [
+    ...dateienUnter('chatgpt-site/assets', '.js'),
+    ...dateienUnter('wordpress/plugin/merzenich-aktuell-core/assets', '.js'),
+    ...dateienUnter('wordpress/theme/merzenich-aktuell/assets/js', '.js'),
+  ];
+  for (const datei of dateien) {
+    try { execFileSync('node', ['--check', datei], { stdio: 'pipe' }); }
+    catch (error) { fehler('JavaScript', `${datei.replace(wurzel + '/', '')}: ${String(error.stderr || error.message).split('\n')[0]}`); }
+  }
+}
+
 pruefeMarkupGegenCode();
 pruefeInhalte();
+pruefeServiceInhalte();
+pruefeJavaScript();
 pruefeOertlicheVerweise();
 pruefePhp();
 pruefePlatzhalter();
