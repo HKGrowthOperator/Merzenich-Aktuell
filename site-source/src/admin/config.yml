@@ -1,0 +1,487 @@
+# Decap CMS – Redaktionssystem Merzenich Aktuell
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Neu: {{collection}} „{{slug}}“"
+    update: "Aktualisiert: {{collection}} „{{slug}}“"
+    delete: "Gelöscht: {{collection}} „{{slug}}“"
+    uploadMedia: "Bild: {{path}}"
+    deleteMedia: "Bild gelöscht: {{path}}"
+
+publish_mode: editorial_workflow
+locale: de
+site_url: https://merzenich-aktuell.de
+display_url: https://merzenich-aktuell.de
+logo_url: /assets/img/logo-on-light.png
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Wiederverwendbare Felder
+x_ortsteil: &ortsteil
+  label: Ortsteil
+  name: ort
+  widget: select
+  required: false
+  options:
+    - { label: "Merzenich", value: merzenich }
+    - { label: "Golzheim", value: golzheim }
+    - { label: "Girbelsrath", value: girbelsrath }
+    - { label: "Morschenich", value: morschenich }
+    - { label: "Bürgewald", value: buergewald }
+    - { label: "Gesamte Gemeinde", value: gemeinde }
+x_bild: &bild
+  label: Bild
+  name: image
+  widget: object
+  required: false
+  collapsed: false
+  fields:
+    - { label: "Datei", name: src, widget: image, required: false, hint: "Mindestens 1200 Pixel breit, Querformat. Facebook-Links laufen ab, bitte Datei hochladen." }
+    - { label: "Bildbeschreibung (Alt-Text)", name: alt, widget: string, required: false }
+    - { label: "Bildcredit (wer hat es aufgenommen?)", name: credit, widget: string, required: false, hint: "Pflicht, sobald ein Bild gesetzt ist (Handbuch)." }
+    - label: Bildtyp
+      name: type
+      widget: select
+      required: false
+      hint: "Pflicht, sobald ein Bild gesetzt ist (Handbuch)."
+      options:
+        - { label: "Originalbild (zeigt das Ereignis)", value: original }
+        - { label: "Offizielles Veranstaltungsbild", value: veranstaltungsbild }
+        - { label: "Quellenmotiv", value: quellenmotiv }
+        - { label: "Archivbild", value: archivbild }
+        - { label: "Symbolbild", value: symbolbild }
+        - { label: "Offizielles Vereinslogo", value: logo }
+        - { label: "Grafik", value: grafik }
+        - { label: "Leserfoto", value: leserfoto }
+    - { label: "Darstellung", name: fit, widget: select, required: false, options: [{ label: "Bildfüllend (Standard)", value: cover }, { label: "Komplett zeigen (Logos, Plakate)", value: contain }] }
+
+collections:
+  - name: artikel
+    label: Artikel
+    label_singular: Artikel
+    folder: content/artikel
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "{{fields.ressort}}/{{fields.slug}}/"
+    sortable_fields: [date, title, ressort]
+    view_filters:
+      - { label: "Blaulicht", field: ressort, pattern: blaulicht }
+      - { label: "Sport", field: ressort, pattern: sport }
+      - { label: "Entwürfe", field: draft, pattern: true }
+      - { label: "Ohne Datum", field: undated, pattern: true }
+    summary: "{{date | date('DD.MM.YYYY HH:mm')}} · {{ressort}} · {{title}}"
+    editor: { preview: true }
+    fields:
+      - { label: "Überschrift", name: title, widget: string, hint: "10 bis 110 Zeichen. Ort oder Verein nennen. Beispiel: „Flächenbrand an der L257: mehr als 200 Kräfte im Einsatz“" }
+      - { label: "URL-Kürzel (Slug)", name: slug, widget: string, required: true, hint: "Kleinbuchstaben, Ziffern, Bindestriche, ä→ae. Nach der Veröffentlichung nicht mehr ändern.", pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern, Bindestriche'] }
+      - { label: "Dachzeile", name: kicker, widget: string, required: false, hint: "Ein bis drei Wörter, z. B. Kreisliga A, Feuerwehr, Ortsfest 2026" }
+      - { label: "Teaser", name: teaser, widget: text, hint: "1 bis 2 Sätze, 60 bis 200 Zeichen. Erscheint bei Google, WhatsApp und in Listen." }
+      - label: Ressort
+        name: ressort
+        widget: select
+        default: nachrichten
+        options:
+          - { label: "Aktuell (Nachrichten)", value: nachrichten }
+          - { label: "Blaulicht", value: blaulicht }
+          - { label: "Sport", value: sport }
+          - { label: "Rathaus & Politik", value: rathaus }
+          - { label: "Vereine", value: vereine }
+          - { label: "Leben", value: leben }
+          - { label: "Wirtschaft", value: wirtschaft }
+          - { label: "Menschen", value: menschen }
+      - *ortsteil
+      - { label: "Veröffentlicht am", name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD.MM.YYYY", time_format: "HH:mm", hint: "Ein Datum in der Zukunft veröffentlicht die Meldung erst dann (beim nächsten Build)." }
+      - { label: "Aktualisiert am", name: updated, widget: datetime, required: false, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD.MM.YYYY", time_format: "HH:mm" }
+      - { label: "Quelle nennt kein Veröffentlichungsdatum", name: undated, widget: boolean, default: false, required: false }
+      - { label: "Quelle abgerufen am", name: retrieved, widget: datetime, required: false, format: "YYYY-MM-DD", time_format: false }
+      - { label: "Autor/in", name: author, widget: relation, collection: autoren, search_fields: [name], value_field: slug, display_fields: [name], default: redaktion }
+      - { label: "Kürzel", name: kuerzel, widget: string, required: false, hint: "z. B. (ma), erscheint neben dem Autor" }
+      - label: Format
+        name: format
+        widget: select
+        default: meldung
+        options:
+          - { label: "Meldung", value: meldung }
+          - { label: "Bericht", value: bericht }
+          - { label: "Kurz notiert (ohne Bild, Kurzticker)", value: kurz }
+          - { label: "Eilmeldung (48 Stunden im roten Balken)", value: eilmeldung }
+          - { label: "Interview", value: interview }
+          - { label: "Hintergrund", value: hintergrund }
+          - { label: "Kommentar", value: kommentar }
+          - { label: "Kolumne", value: kolumne }
+          - { label: "Tipps", value: tipps }
+          - { label: "Liveticker", value: liveticker }
+          - { label: "Familienanzeige", value: familienanzeige }
+          - { label: "Nachruf", value: nachruf }
+      - *bild
+      - label: Bildergalerie
+        name: gallery
+        widget: list
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Datei", name: src, widget: image }
+          - { label: "Bildbeschreibung", name: alt, widget: string, required: false }
+          - { label: "Bildcredit", name: credit, widget: string, required: false }
+      - { label: "Das Wichtigste in Kürze", name: facts, widget: list, required: false, hint: "3 bis 5 Stichpunkte", field: { label: "Punkt", name: fact, widget: string } }
+      - label: Quellen
+        name: sources
+        widget: list
+        required: false
+        hint: "Mindestens eine Quelle mit Link. Datenstand = Datum, an dem die Quelle abgerufen wurde."
+        fields:
+          - { label: "Bezeichnung", name: title, widget: string }
+          - { label: "Link", name: url, widget: string, required: false }
+          - { label: "Datenstand", name: stand, widget: datetime, required: false, format: "YYYY-MM-DD", time_format: false }
+      - { label: "Schlagworte", name: tags, widget: list, required: false, hint: "Vereinsname, Straße, Thema. Erzeugt Themenseiten." }
+      - { label: "Zugehörige Termine", name: events, widget: relation, collection: termine, search_fields: [title], value_field: slug, display_fields: [title], multiple: true, required: false }
+      - label: Korrekturen
+        name: corrections
+        widget: list
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Datum", name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ" }
+          - { label: "Was wurde korrigiert?", name: text, widget: text }
+      - { label: "Aufmacher (auf der Startseite oben)", name: featured, widget: boolean, default: false, required: false }
+      - { label: "Anzeige / gesponsert", name: sponsored, widget: boolean, default: false, required: false }
+      - { label: "Nicht indexieren (reine Pressemitteilung)", name: noindex, widget: boolean, default: false, required: false }
+      - { label: "Entwurf (nicht veröffentlichen)", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Text", name: body, widget: markdown, hint: "Absätze, Zwischenüberschriften (##), Links. Bilder im Text mit Titel „Beschreibung | Credit“." }
+
+  - name: termine
+    label: Termine
+    label_singular: Termin
+    folder: content/termine
+    create: true
+    slug: "{{slug}}"
+    preview_path: "termine/{{fields.slug}}/"
+    summary: "{{start | date('DD.MM.YYYY HH:mm')}} · {{title}}"
+    sortable_fields: [start, title]
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "URL-Kürzel (Slug)", name: slug, widget: string, required: true, hint: "Kleinbuchstaben, Ziffern, Bindestriche, ä→ae. Nach der Veröffentlichung nicht mehr ändern.", pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern, Bindestriche'] }
+      - { label: "Beginn", name: start, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD.MM.YYYY", time_format: "HH:mm" }
+      - { label: "Ende", name: end, widget: datetime, required: false, format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD.MM.YYYY", time_format: "HH:mm" }
+      - { label: "Kurzbeschreibung", name: teaser, widget: text, required: false }
+      - { label: "Veranstaltungsort", name: location, widget: string, required: false, hint: "z. B. Schützenhalle Golzheim" }
+      - { label: "Adresse", name: address, widget: string, required: false }
+      - *ortsteil
+      - { label: "Kategorie", name: category, widget: select, required: false, options: [Fest, Sport, Kirche, Rathaus, Kultur, Musik, Karneval, Brauchtum, "Kinder & Familie", Info, Markt, Umwelt, Senioren, Jugend, Sonstiges] }
+      - { label: "Veranstalter", name: organizer, widget: string, required: false }
+      - { label: "Veranstalter-Website", name: organizerUrl, widget: string, required: false }
+      - { label: "Eintritt", name: price, widget: string, required: false, hint: "frei / 5 Euro / Spende" }
+      - { label: "Quelle (Link)", name: source, widget: string, required: false }
+      - { label: "Zugehörige Meldung", name: article, widget: relation, collection: artikel, search_fields: [title], value_field: slug, display_fields: [title], required: false }
+      - { label: "Status", name: status, widget: select, required: false, options: [{ label: "Findet statt", value: geplant }, { label: "Abgesagt", value: abgesagt }, { label: "Verschoben", value: verschoben }] }
+      - *bild
+      - { label: "Erstellt am", name: created, widget: datetime, required: false, format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: "Entwurf", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Beschreibung", name: body, widget: markdown, required: false }
+
+  - name: vereine
+    label: Vereine
+    label_singular: Verein
+    folder: content/vereine
+    create: true
+    slug: "{{slug}}"
+    preview_path: "vereine/{{fields.slug}}/"
+    identifier_field: name
+    summary: "{{name}} · {{ort}}"
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - { label: "URL-Kürzel (Slug)", name: slug, widget: string, required: true, hint: "Kleinbuchstaben, Ziffern, Bindestriche, ä→ae. Nach der Veröffentlichung nicht mehr ändern.", pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern, Bindestriche'] }
+      - *ortsteil
+      - { label: "Kategorie", name: category, widget: select, required: false, options: [Fußball, Tischtennis, Sport, Schützen, Karneval, Feuerwehr, Kirche, "Musik & Kultur", "Heimat & Geschichte", Soziales, Jugend, Fanclub, Sonstiges] }
+      - { label: "Kurzbeschreibung", name: description, widget: text }
+      - { label: "Website", name: website, widget: string, required: false }
+      - { label: "Gegründet", name: founded, widget: string, required: false }
+      - { label: "Mitglieder", name: members, widget: string, required: false }
+      - { label: "Adresse", name: address, widget: string, required: false }
+      - { label: "Ansprechpartner", name: contact, widget: string, required: false }
+      - { label: "Telefon", name: phone, widget: string, required: false }
+      - { label: "E-Mail", name: email, widget: string, required: false }
+      - *bild
+      - { label: "Stand", name: updated, widget: datetime, required: false, format: "YYYY-MM-DD", time_format: false }
+      - { label: "Entwurf", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Porträt", name: body, widget: markdown, required: false }
+
+  - name: betriebe
+    label: Lokale Betriebe
+    label_singular: Betrieb
+    folder: content/betriebe
+    create: true
+    slug: "{{slug}}"
+    preview_path: "betriebe/{{fields.slug}}/"
+    identifier_field: name
+    summary: "{{name}} · {{category}}"
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - { label: "URL-Kürzel (Slug)", name: slug, widget: string, required: false, pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern und Bindestriche'] }
+      - *ortsteil
+      - { label: "Branche", name: category, widget: select, required: false, options: ["Bäckerei & Lebensmittel", Gastronomie, Handwerk, "Gesundheit & Pflege", Einzelhandel, Dienstleistung, "Auto & Mobilität", "Bau & Immobilien", "Landwirtschaft & Hofladen", Sonstiges] }
+      - { label: "Kurzbeschreibung", name: description, widget: text }
+      - { label: "Adresse", name: address, widget: string, required: false }
+      - { label: "Öffnungszeiten", name: hours, widget: string, required: false, hint: "z. B. Mo-Fr 08:00-18:00, Sa 08:00-13:00" }
+      - { label: "Telefon", name: phone, widget: string, required: false }
+      - { label: "E-Mail", name: email, widget: string, required: false }
+      - { label: "Website", name: website, widget: string, required: false }
+      - { label: "Hervorgehoben (Anzeige)", name: sponsored, widget: boolean, default: false, required: false }
+      - *bild
+      - { label: "Stand", name: updated, widget: datetime, required: false, format: "YYYY-MM-DD", time_format: false }
+      - { label: "Entwurf", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Porträt", name: body, widget: markdown, required: false }
+
+  - name: stellen
+    label: Stellenmarkt
+    label_singular: Stelle
+    folder: content/stellen
+    create: true
+    slug: "{{slug}}"
+    preview_path: "jobs/{{fields.slug}}/"
+    summary: "{{title}} · {{betrieb}}"
+    fields:
+      - { label: "Stellentitel", name: title, widget: string }
+      - { label: "Slug", name: slug, widget: string, required: false, pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern und Bindestriche'] }
+      - { label: "Arbeitgeber", name: betrieb, widget: string }
+      - { label: "Art", name: art, widget: select, options: [Vollzeit, Teilzeit, Ausbildung, Minijob, Praktikum, Ehrenamt] }
+      - *ortsteil
+      - { label: "Adresse", name: address, widget: string, required: false }
+      - { label: "Beginn", name: start, widget: string, required: false, hint: "z. B. ab sofort, 1. Oktober 2026" }
+      - { label: "Kurzbeschreibung", name: description, widget: text }
+      - { label: "Veröffentlicht am", name: posted, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: "Gültig bis", name: validUntil, widget: datetime, required: false, format: "YYYY-MM-DD", time_format: false }
+      - { label: "Bewerbungslink", name: url, widget: string, required: false }
+      - { label: "E-Mail", name: email, widget: string, required: false }
+      - { label: "Telefon", name: phone, widget: string, required: false }
+      - { label: "Als Anzeige kennzeichnen", name: sponsored, widget: boolean, default: true, required: false, hint: "Bei Ehrenamt und gemeinnützigen Stellen abschalten" }
+      - { label: "Gehalt pro Monat in Euro (optional)", name: gehalt, widget: number, required: false, value_type: int }
+      - { label: "Entwurf", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Stellenbeschreibung", name: body, widget: markdown }
+
+  - name: orte
+    label: Ortsteile
+    label_singular: Ortsteil
+    folder: content/orte
+    create: false
+    identifier_field: name
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - { label: "Slug", name: slug, widget: string, pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern und Bindestriche'] }
+      - { label: "Reihenfolge", name: order, widget: number, required: false }
+      - { label: "Kurzbeschreibung", name: description, widget: text }
+      - { label: "Einwohner (nur mit Quelle)", name: einwohner, widget: string, required: false }
+      - { label: "Breitengrad", name: lat, widget: number, required: false, value_type: float }
+      - { label: "Längengrad", name: lng, widget: number, required: false, value_type: float }
+      - label: Steckbrief
+        name: facts
+        widget: list
+        required: false
+        fields:
+          - { label: "Bezeichnung", name: k, widget: string }
+          - { label: "Wert", name: v, widget: string }
+      - { label: "Porträt", name: body, widget: markdown }
+
+  - name: autoren
+    label: Redaktion
+    label_singular: Person
+    folder: content/autoren
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - { label: "Slug", name: slug, widget: string, required: false, pattern: ['^[a-z0-9-]+$', 'Nur Kleinbuchstaben, Ziffern und Bindestriche'] }
+      - { label: "Funktion", name: role, widget: string, required: false, hint: "z. B. Lokalredaktion, Sportredaktion, Fotograf" }
+      - { label: "Initialen", name: initials, widget: string, required: false }
+      - { label: "Organisation statt Person", name: org, widget: boolean, default: false, required: false }
+      - { label: "Kurzbiografie", name: bio, widget: text }
+      - { label: "E-Mail", name: email, widget: string, required: false }
+      - { label: "Profile (Links)", name: sameAs, widget: list, required: false }
+      - { label: "Über mich", name: body, widget: markdown, required: false }
+
+  - name: seiten
+    label: Seiten
+    label_singular: Seite
+    folder: content/seiten
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Slug", name: slug, widget: string }
+      - { label: "URL (optional)", name: url, widget: string, required: false, pattern: ['^/[a-z0-9/-]*$', 'Nur Pfad mit Kleinbuchstaben, Ziffern, Schrägstrichen'] }
+      - { label: "Dachzeile", name: eyebrow, widget: string, required: false }
+      - { label: "Beschreibung", name: description, widget: text }
+      - { label: "Formular", name: form, widget: select, required: false, options: [meldung, termin, verein, betrieb, korrektur, werbung, kontakt, whatsapp] }
+      - { label: "Layout", name: layout, widget: select, required: false, options: [narrow, sidebar, wide] }
+      - { label: "Typ", name: type, widget: select, required: false, options: [{ label: "Normale Seite", value: seite }, { label: "Danke-Seite", value: danke }] }
+      - { label: "Nicht indexieren", name: noindex, widget: boolean, default: false, required: false }
+      - { label: "Entwurf", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Inhalt", name: body, widget: markdown }
+
+  - name: einstellungen
+    label: Einstellungen
+    files:
+      - name: site
+        label: Website
+        file: content/daten/site.json
+        fields:
+          - { label: "Name", name: name, widget: string }
+          - { label: "Kurzname", name: shortName, widget: string }
+          - { label: "URL", name: url, widget: string }
+          - { label: "Claim", name: tagline, widget: string }
+          - { label: "Untertitel", name: claim, widget: string }
+          - { label: "Beschreibung (Google)", name: description, widget: text }
+          - { label: "Region", name: region, widget: string }
+          - { label: "E-Mail Redaktion", name: email, widget: string }
+          - { label: "Gründungsjahr", name: foundingDate, widget: string }
+          - { label: "Sprache", name: language, widget: string, default: de-DE }
+          - { label: "Darstellung", name: theme, widget: hidden, default: light }
+          - label: Social
+            name: social
+            widget: object
+            fields:
+              - { label: "WhatsApp-Kanal (Link)", name: whatsapp, widget: string, required: false }
+              - { label: "Facebook", name: facebook, widget: string, required: false }
+              - { label: "Instagram", name: instagram, widget: string, required: false }
+              - { label: "YouTube", name: youtube, widget: string, required: false }
+          - label: Geo
+            name: geo
+            widget: object
+            fields:
+              - { label: "Breitengrad", name: lat, widget: number, value_type: float }
+              - { label: "Längengrad", name: lng, widget: number, value_type: float }
+          - label: Navigation
+            name: nav
+            widget: list
+            fields:
+              - { label: "Bezeichnung", name: label, widget: string }
+              - { label: "Link", name: href, widget: string, pattern: ['^/[a-z0-9/-]*$', 'Nur Pfad mit Kleinbuchstaben, Ziffern, Schrägstrichen'] }
+          - { label: "Ressorts", name: ressorts, widget: object, collapsed: true, fields: [
+              { label: "Aktuell", name: nachrichten, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Blaulicht", name: blaulicht, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Sport", name: sport, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Rathaus", name: rathaus, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Vereine", name: vereine, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Leben", name: leben, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Wirtschaft", name: wirtschaft, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] },
+              { label: "Menschen", name: menschen, widget: object, fields: [ { label: "Name", name: name, widget: string }, { label: "Titel", name: long, widget: string }, { label: "Beschreibung", name: desc, widget: text } ] } ] }
+          - { label: "Ortsteile (Reihenfolge)", name: orte, widget: list, required: false }
+          - label: Rathaus
+            name: rathaus
+            widget: object
+            fields:
+              - { label: "Name", name: name, widget: string }
+              - { label: "Straße", name: street, widget: string }
+              - { label: "PLZ", name: zip, widget: string }
+              - { label: "Ort", name: city, widget: string }
+              - { label: "Telefon", name: phone, widget: string }
+              - { label: "Website", name: web, widget: string }
+          - label: Notdienste
+            name: notdienste
+            widget: list
+            fields:
+              - { label: "Bezeichnung", name: k, widget: string }
+              - { label: "Anzeige", name: v, widget: string }
+              - { label: "Telefonnummer (nur Ziffern)", name: tel, widget: string, required: false }
+              - { label: "Link", name: url, widget: string, required: false }
+          - label: Statistik
+            name: analytics
+            widget: object
+            fields:
+              - { label: "Anbieter (plausible, umami oder leer)", name: provider, widget: string, required: false }
+              - { label: "Domain / Script-URL", name: domain, widget: string, required: false }
+          - label: Werbung
+            name: ads
+            widget: object
+            fields:
+              - { label: "Banner anzeigen", name: enabled, widget: boolean }
+              - label: Banner
+                name: banners
+                widget: list
+                fields:
+                  - { label: "Kennung", name: id, widget: string }
+                  - { label: "Firma", name: name, widget: string }
+                  - { label: "Link", name: url, widget: string, required: false }
+                  - { label: "Bannerbild (728×90 oder 300×104)", name: image, widget: image, required: false }
+                  - { label: "Alt-Text", name: alt, widget: string, required: false }
+                  - { label: "Überschrift (native Anzeige im Nachrichtenstrom)", name: headline, widget: string, required: false }
+                  - { label: "Text (native Anzeige, 1 bis 2 Sätze)", name: text, widget: text, required: false }
+      - name: umfrage
+        label: Umfrage
+        file: content/daten/umfrage.json
+        fields:
+          - { label: "Kennung (neu bei jeder Umfrage)", name: id, widget: string }
+          - { label: "Frage", name: question, widget: string }
+          - { label: "Antworten", name: options, widget: list }
+      - name: fussball
+        label: Fußball SC 1919 Merzenich
+        file: content/daten/fussball.json
+        fields:
+          - { label: "Verein", name: verein, widget: string }
+          - { label: "Liga", name: liga, widget: string }
+          - { label: "Saison", name: saison, widget: string, required: false, hint: "z. B. 2026/2027" }
+          - { label: "Quelle", name: quelle, widget: string }
+          - { label: "Vereins-Website", name: vereinUrl, widget: string, required: false }
+          - { label: "Stand", name: stand, widget: datetime, format: "YYYY-MM-DD", time_format: false }
+          - { label: "Vereinslogo", name: logo, widget: image, required: false }
+          - { label: "Logo-Credit", name: logoCredit, widget: string, required: false }
+          - { label: "Hinweis", name: hinweis, widget: text, required: false }
+          - { label: "Heimspielort", name: heimspielort, widget: string, required: false }
+          - { label: "Tabelle vollständig", name: tabelleVollstaendig, widget: boolean, default: false }
+          - { label: "Teams gesamt im Verein", name: teamsGesamt, widget: number, required: false }
+          - label: Tabelle
+            name: tabelle
+            widget: list
+            fields:
+              - { label: "Platz", name: platz, widget: number }
+              - { label: "Mannschaft", name: team, widget: string }
+              - { label: "Spiele", name: spiele, widget: number }
+              - { label: "Siege", name: siege, widget: number }
+              - { label: "Unentschieden", name: unentschieden, widget: number }
+              - { label: "Niederlagen", name: niederlagen, widget: number }
+              - { label: "Tore", name: tore, widget: string }
+              - { label: "Tordifferenz", name: diff, widget: number }
+              - { label: "Punkte", name: punkte, widget: number }
+              - { label: "SC Merzenich", name: wir, widget: boolean, required: false, default: false }
+          - label: Nächste Spiele
+            name: spiele
+            widget: list
+            fields:
+              - { label: "Anstoß", name: datum, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ" }
+              - { label: "Gegner", name: gegner, widget: string }
+              - { label: "Heimspiel", name: heim, widget: boolean, default: true }
+              - { label: "Wettbewerb", name: wettbewerb, widget: string, required: false, hint: "z. B. Kreisliga A, Kreispokal" }
+          - label: Bereits gespielt
+            name: gespielt
+            widget: list
+            required: false
+            fields:
+              - { label: "Anstoß", name: start, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ" }
+              - { label: "Gegner", name: gegner, widget: string }
+              - { label: "Heimspiel", name: heim, widget: boolean, default: true }
+              - { label: "Wettbewerb", name: wettbewerb, widget: string, required: false }
+              - { label: "FUSSBALL.DE-Spielnummer", name: nr, widget: string, required: false }
+              - { label: "Ergebnis", name: ergebnis, widget: string, required: false, hint: "Nur belegte Ergebnisse eintragen, FUSSBALL.DE gibt Einzelergebnisse nicht frei." }
+          - label: Weitere Mannschaften
+            name: weitere
+            widget: list
+            fields:
+              - { label: "Team", name: team, widget: string }
+              - { label: "Liga", name: liga, widget: string }
+              - { label: "Stand", name: stand, widget: string }
+              - { label: "Team-Link", name: url, widget: string, required: false }
+              - label: Nächstes Spiel
+                name: naechstes
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: "Anstoß", name: start, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", required: false }
+                  - { label: "Gegner", name: gegner, widget: string, required: false }
+                  - { label: "Heimspiel", name: heim, widget: boolean, default: true, required: false }

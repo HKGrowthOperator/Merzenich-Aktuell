@@ -1,0 +1,14 @@
+{
+  "name": "merzenich-aktuell",
+  "version": "9.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Merzenich Aktuell – Lokalzeitung online. Statischer Generator ohne Abhängigkeiten, Decap CMS, Netlify.",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:local": "IMAGE_CDN=off node build.mjs",
+    "preview": "IMAGE_CDN=off node build.mjs && python3 -m http.server 8080 --directory dist",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
