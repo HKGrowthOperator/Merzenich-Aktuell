@@ -1,0 +1,26 @@
+# BuildKit liest "<Dockerfile>.dockerignore" neben dem Dockerfile, bevor es auf
+# ein .dockerignore im Wurzelverzeichnis zurueckfaellt. So bleibt die
+# Repository-Wurzel frei (dort liegt das Frontend, siehe PROJECT.md).
+#
+# Bewusst als Ausschlussliste und nicht als "* + Ausnahmen": bei der
+# Allowlist-Form laesst sich eine Datei nicht wieder aufnehmen, wenn ihr
+# uebergeordneter Ordner ausgeschlossen ist. Das ist eine bekannte Stolperfalle
+# und wuerde hier den Build brechen, statt ihn nur zu verlangsamen.
+#
+# Gebraucht werden nur chatgpt-site/ und deploy/coolify/nginx.conf.
+
+.git
+.github
+node_modules
+
+site-source
+qa
+artifacts
+imports
+docs
+wordpress
+wordpress-delivery
+
+# Cloudflare-Anweisungen; nginx hat seine eigene Konfiguration.
+chatgpt-site/_redirects
+chatgpt-site/_headers

@@ -10,6 +10,7 @@ GitHub Pages oder Cloudflare zu warten.
 | `Dockerfile` | nginx-Image, legt `chatgpt-site/` dahinter |
 | `nginx.conf` | **erzeugt** - nicht von Hand bearbeiten |
 | `erzeuge-nginx-conf.mjs` | erzeugt `nginx.conf` aus `_redirects` und `_headers` |
+| `Dockerfile.dockerignore` | haelt den Build-Kontext klein (BuildKit liest ihn neben dem Dockerfile) |
 
 `chatgpt-site/` ist der ausgelieferte Stand. Hier wird nichts gebaut, nur
 ausgeliefert. Das Image enthaelt keinerlei Build-Schritt und keine
@@ -25,11 +26,23 @@ Neue Resource -> Application -> Public Repository (oder GitHub App):
 | Branch | `main` |
 | Build Pack | `Dockerfile` |
 | Base Directory | `/` |
-| Dockerfile Location | `deploy/coolify/Dockerfile` |
+| Dockerfile Location | `/deploy/coolify/Dockerfile` |
 | Ports Exposes | `80` |
 | Domain | die Vorschauadresse, die Coolify vorschlaegt, oder eine eigene |
 
 Kein Build-Command, kein Start-Command, keine Umgebungsvariablen.
+
+**Beide Pfadfelder muessen stimmen.** Steht `Dockerfile Location` noch auf dem
+Standardwert `/Dockerfile`, bricht der Build mit
+
+```
+#1 transferring dockerfile: 2B done
+ERROR: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+```
+
+ab - Coolify sucht dann im Wurzelverzeichnis, und dort liegt bewusst kein
+Dockerfile. `Base Directory` muss auf `/` stehen bleiben: der Dockerfile kopiert
+`chatgpt-site/`, und der Build-Kontext muss diesen Ordner enthalten.
 
 "Automatic Deployment" einschalten, dann baut jeder Push auf `main` die
 Vorschau neu.
