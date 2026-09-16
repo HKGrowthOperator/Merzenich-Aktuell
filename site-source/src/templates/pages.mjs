@@ -355,9 +355,8 @@ export function eventLd(site, e, ctx) {
     location: online ? { '@type': 'VirtualLocation', url: e.source || site.url + e.url } : { '@type': 'Place', name: e.location || (place ? place.name : 'Merzenich'), address: { '@type': 'PostalAddress', streetAddress: e.address || undefined, addressLocality: place ? place.name : 'Merzenich', postalCode: '52399', addressRegion: 'NRW', addressCountry: 'DE' } },
     ...(e.organizer ? { organizer: { '@type': 'Organization', name: e.organizer, ...(e.organizerUrl ? { url: e.organizerUrl } : {}) } } : {}),
     ...(e.image && e.image.src ? { image: [abs(site, e.image.src)] } : {}),
-    offers: { '@type': 'Offer', url: site.url + e.url, price: e.price != null ? String(e.price).replace(/[^\d.,]/g, '').replace(',', '.') || '0' : '0', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', validFrom: isoLocal((() => { const created = e.created ? toDate(e.created) : null; return created && created < e.start ? created : e.start; })()) },
-    performer: e.organizer ? { '@type': 'Organization', name: e.organizer } : undefined,
-    isAccessibleForFree: !e.price || /^(0|frei|kostenlos)/i.test(String(e.price))
+    ...(e.price != null ? { offers: { '@type': 'Offer', url: site.url + e.url, price: String(e.price).replace(/[^\d.,]/g, '').replace(',', '.') || '0', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', validFrom: isoLocal((() => { const created = e.created ? toDate(e.created) : null; return created && created < e.start ? created : e.start; })()) }, isAccessibleForFree: /^(0|frei|kostenlos)/i.test(String(e.price)) } : {}),
+    performer: e.organizer ? { '@type': 'Organization', name: e.organizer } : undefined
   };
 }
 
@@ -381,7 +380,7 @@ export function eventPage(ctx, e) {
       <div class="ef"><span class="ef-ic">${ICONS.calendar}</span><div><b>${esc(fmt.wdLong(e.start))}, ${esc(fmt.date(e.start))}</b><span>${esc(fmt.time(e.start))} Uhr${e.end ? ` bis ${esc(fmt.time(e.end))} Uhr` : ''}</span></div></div>
       <div class="ef"><span class="ef-ic">${ICONS.pin}</span><div><b>${esc(e.location || (place ? place.name : 'Merzenich'))}</b><span>${esc(e.address || (place ? `${place.name}, 52399 Merzenich` : '52399 Merzenich'))}</span></div></div>
       ${e.organizer ? `<div class="ef"><span class="ef-ic">${ICONS.bell}</span><div><b>${esc(e.organizer)}</b><span>Veranstalter${e.organizerUrl ? ` · <a href="${esc(e.organizerUrl)}" target="_blank" rel="noopener">Website ↗</a>` : ''}</span></div></div>` : ''}
-      ${e.price ? `<div class="ef"><span class="ef-ic">€</span><div><b>${esc(e.price)}</b><span>Eintritt</span></div></div>` : '<div class="ef"><span class="ef-ic">€</span><div><b>Eintritt frei</b><span>sofern nicht anders angegeben</span></div></div>'}
+      ${e.price ? `<div class="ef"><span class="ef-ic">€</span><div><b>${esc(e.price)}</b><span>Eintritt</span></div></div>` : '<div class="ef"><div><b>Eintritt</b><span>Keine Preisangabe des Veranstalters</span></div></div>'}
     </div>
     <div class="cta-row"><a class="btn" href="${e.url}termin.ics" download>In den Kalender</a>${e.address || e.location ? `<a class="btn ghost" href="https://www.openstreetmap.org/search?query=${encodeURIComponent((e.address || e.location) + ', Merzenich')}" target="_blank" rel="noopener">Karte ↗</a>` : ''}${e.source ? `<a class="btn ghost" href="${esc(e.source)}" target="_blank" rel="noopener nofollow">Quelle ↗</a>` : ''}</div>
     ${e.image && e.image.src ? `<figure class="art-figure"><div class="media">${img(e.image.src, { alt: e.image.alt || e.title, priority: true, kind: 'termine', sizes: '(max-width: 760px) 100vw, 760px' }, ctx.cfg)}</div><figcaption><span>${e.image.type ? `<span class="figure-badge">${esc(imageTypeLabel(e.image.type))}</span> · ` : ''}${esc(e.image.alt || '')}</span><span>${e.image.credit ? `Bild: ${esc(e.image.credit)}` : ''}</span></figcaption></figure>` : ''}
@@ -542,7 +541,7 @@ export function staticPage(ctx, p) {
   const content = `${C.pageHead(p.eyebrow || 'Service', p.title, p.description, '', crumbs)}
 <section class="section"><div class="shell">${side ? `<div class="content-grid"><div>${inner}</div><aside class="sidebar">${p.sideHtml || ''}${p.form ? C.ablaufBox() : C.tipBox(site)}${C.serviceBox(site)}${C.adSlot('side', site)}</aside></div>` : wide ? inner : `<div class="narrow">${inner}</div>`}</div></section>`;
   const ld = p.jsonld || [];
-  return layout(site, ctx, { title: p.title, description: p.description, url: p.url, breadcrumbs: crumbs, jsonld: ld, noindex: !!p.noindex, bodyClass: 'page', nav: p.nav }, content);
+  return layout(site, ctx, { title: p.title, description: p.metaDescription || p.description, url: p.url, breadcrumbs: crumbs, jsonld: ld, noindex: !!p.noindex, bodyClass: 'page', nav: p.nav }, content);
 }
 
 function formBlock(ctx, kind) {

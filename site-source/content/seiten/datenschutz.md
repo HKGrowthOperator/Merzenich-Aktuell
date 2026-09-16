@@ -40,4 +40,4 @@ Redakteure melden sich über Netlify Identity an; dabei werden E-Mail-Adresse un
 
 ## Ihre Rechte
 
-Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde (für NRW: Landesbeauftragte für Datenschutz und Informationsfreiheit). Anfragen an [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de).
+Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde (für NRW: Landesbeauftragte für Datenschutz und Informationsfreiheit). Anfragen an [info@kbs-management.tv](mailto:info@kbs-management.tv).

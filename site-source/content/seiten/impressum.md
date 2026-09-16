@@ -19,7 +19,7 @@ Deutschland
 
 ## Kontakt
 
-Redaktion: [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de)
+Redaktion: [info@kbs-management.tv](mailto:info@kbs-management.tv)
 
 Anbieter: [info@kbs-management.tv](mailto:info@kbs-management.tv)
 
