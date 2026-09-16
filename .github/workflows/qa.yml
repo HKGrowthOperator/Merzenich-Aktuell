@@ -31,9 +31,15 @@ jobs:
         run: |
           node --check app.js
           node --check app-fixes.js
+          node --check chatgpt-site/assets/app.js
+          node --check chatgpt-site/assets/v20.js
 
       - name: Validate JSON content
-        run: python3 -m json.tool content.json > /dev/null
+        run: |
+          python3 -m json.tool content.json > /dev/null
+          python3 -m json.tool chatgpt-site/api/editorial-current.json > /dev/null
+          python3 -m json.tool chatgpt-site/api/sport-current.json > /dev/null
+          python3 -m json.tool site-source/content/daten/fussball.json > /dev/null
 
       - name: Validate WordPress import XML
         run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('wordpress-delivery/merzenich-aktuell-import.xml'); print('WXR/XML syntax OK')"
@@ -64,13 +70,8 @@ jobs:
           rm -rf /tmp/ma-theme
           mkdir -p /tmp/ma-theme
           unzip -q wordpress-delivery/merzenich-aktuell-theme.zip -d /tmp/ma-theme
-          echo 'Theme ZIP contents:'
-          find /tmp/ma-theme -maxdepth 3 -type f | sort
           PHP_COUNT=$(find /tmp/ma-theme -type f -name '*.php' | wc -l)
-          if [ "$PHP_COUNT" -eq 0 ]; then
-            echo 'ERROR: Theme ZIP contains no PHP files.'
-            exit 1
-          fi
+          test "$PHP_COUNT" -gt 0
           while IFS= read -r file; do php -l "$file"; done < <(find /tmp/ma-theme -type f -name '*.php' -print)
 
       - name: Inspect and lint Core Plugin ZIP
@@ -78,13 +79,8 @@ jobs:
           rm -rf /tmp/ma-core
           mkdir -p /tmp/ma-core
           unzip -q wordpress-delivery/merzenich-aktuell-core.zip -d /tmp/ma-core
-          echo 'Core ZIP contents:'
-          find /tmp/ma-core -maxdepth 4 -type f | sort
           PHP_COUNT=$(find /tmp/ma-core -type f -name '*.php' | wc -l)
-          if [ "$PHP_COUNT" -eq 0 ]; then
-            echo 'ERROR: Core ZIP contains no PHP files.'
-            exit 1
-          fi
+          test "$PHP_COUNT" -gt 0
           while IFS= read -r file; do php -l "$file"; done < <(find /tmp/ma-core -type f -name '*.php' -print)
 
       - name: Check for obvious placeholder delivery files
@@ -95,41 +91,82 @@ jobs:
             echo 'No obvious placeholder markers found.'
           fi
 
+      - name: Build actual Coolify image
+        run: |
+          docker build -f deploy/coolify/Dockerfile -t merzenich-aktuell-qa .
+
+      - name: Start actual Coolify delivery
+        run: |
+          docker run -d --rm --name merzenich-aktuell-qa -p 4173:80 merzenich-aktuell-qa
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail http://127.0.0.1:4173/ > /dev/null
+          curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
+          curl --fail http://127.0.0.1:4173/api/sport-current.json | python3 -m json.tool > /dev/null
+
       - name: Install browser for visual QA
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
 
-      - name: Start static preview
-        run: |
-          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/merzenich-http.log 2>&1 &
-          echo $! > /tmp/merzenich-http.pid
-          sleep 2
-          curl --fail http://127.0.0.1:4173/index.html > /dev/null
-
-      - name: Capture QA screenshots
+      - name: Capture and verify actual delivery
         run: |
           mkdir -p qa/after
           cat > .qa-capture.mjs <<'EOF'
           import { chromium } from 'playwright';
 
           const browser = await chromium.launch({ headless: true });
-          const base = 'http://127.0.0.1:4173/';
+          const base = 'http://127.0.0.1:4173';
 
-          async function shot(name, hash, viewport, ready) {
+          async function assertNoOverflow(page, name) {
+            const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+            if (overflow) throw new Error(`${name}: horizontal overflow`);
+          }
+
+          async function shot(name, path, viewport, ready, verify) {
             const page = await browser.newPage({ viewport });
-            await page.goto(`${base}${hash}`, { waitUntil: 'domcontentloaded' });
+            await page.goto(`${base}${path}`, { waitUntil: 'domcontentloaded' });
             await page.waitForSelector(ready, { timeout: 15000 });
-            await page.waitForTimeout(1800);
+            await page.waitForTimeout(1400);
+            await assertNoOverflow(page, name);
+            if (verify) await verify(page);
             await page.screenshot({ path: `qa/after/${name}.png`, fullPage: false });
             await page.close();
           }
 
-          await shot('home-desktop', '#home', { width: 1440, height: 1000 }, '#heroStory h1');
-          await shot('home-mobile', '#home', { width: 390, height: 844 }, '#heroStory h1');
-          await shot('article-desktop', '#article/einbruch-arnoldsweilerweg-11092026', { width: 1440, height: 1000 }, '#articleView h1');
-          await shot('sport-desktop', '#sport', { width: 1440, height: 1000 }, '#archiveGrid .sport-preview');
-          await shot('events-desktop', '#termine', { width: 1440, height: 1000 }, '#archiveGrid');
+          await shot('home-desktop', '/', { width: 1440, height: 1000 }, '.front-lead h1', async page => {
+            await page.waitForSelector('.header-weather', { timeout: 12000 });
+            const title = (await page.locator('.front-lead h1').textContent() || '').trim();
+            if (title !== 'SC Merzenich gewinnt 3:2 gegen BC Oberzier') throw new Error(`Homepage hero stale/unexpected: ${title}`);
+            const unavailable = await page.getByText('Wetterdaten sind derzeit nicht verfügbar.').count();
+            if (unavailable) throw new Error('Homepage still shows weather unavailable fallback');
+            const top = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
+            if (Math.abs(top) > 1) throw new Error(`Masthead not attached to browser edge: ${top}`);
+            await page.evaluate(() => window.scrollTo(0, 320));
+            await page.waitForTimeout(300);
+            const sticky = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
+            if (Math.abs(sticky) > 1) throw new Error(`Masthead not sticky: ${sticky}`);
+          });
+
+          await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
+            const title = (await page.locator('.front-lead h1').textContent() || '').trim();
+            if (title !== 'SC Merzenich gewinnt 3:2 gegen BC Oberzier') throw new Error(`Mobile hero stale/unexpected: ${title}`);
+          });
+
+          await shot('article-desktop', '/blaulicht/einbruch-arnoldsweilerweg/', { width: 1440, height: 1000 }, '.article-head h1');
+
+          await shot('sport-desktop', '/sport/', { width: 1440, height: 1000 }, '.sports-module', async page => {
+            await page.waitForFunction(() => document.querySelector('.sports-module')?.textContent?.includes('3 : 2'));
+            const text = await page.locator('.sports-module').textContent() || '';
+            if (!text.includes('13.09.2026') || !text.includes('9') || !text.includes('12:8')) throw new Error('Sport module not synchronized to current data');
+          });
+
+          await shot('events-desktop', '/termine/', { width: 1440, height: 1000 }, 'main', async page => {
+            const expiredVisible = await page.evaluate(() => [...document.querySelectorAll('[data-event-end]')].some(el => new Date(el.dataset.eventEnd) < new Date() && !el.hidden));
+            if (expiredVisible) throw new Error('Expired event still visible as upcoming');
+          });
 
           await browser.close();
           EOF
@@ -137,8 +174,12 @@ jobs:
           rm .qa-capture.mjs
           ls -lh qa/after
 
+      - name: Stop QA delivery
+        if: always()
+        run: docker rm -f merzenich-aktuell-qa || true
+
       - name: Commit refreshed QA screenshots
-        if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+        if: github.event_name == 'push' && github.actor != 'github-actions[bot]' && success()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -146,7 +187,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'QA screenshots unchanged.'
           else
-            git commit -m 'qa: refresh browser screenshots [skip ci]'
+            git commit -m 'qa: refresh actual Coolify screenshots [skip ci]'
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
