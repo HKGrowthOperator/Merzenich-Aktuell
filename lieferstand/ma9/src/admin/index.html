@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Redaktion · Merzenich Aktuell</title>
+<link rel="icon" href="/assets/img/favicon.svg">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>body{margin:0}.ma-hint{font:13px Inter,system-ui,sans-serif;background:#0c0b0a;color:#e8e4da;padding:8px 16px}.ma-hint a{color:#c8a24e}</style>
+</head>
+<body>
+<div class="ma-hint">Redaktionssystem Merzenich Aktuell · <a href="/redaktionshandbuch/" target="_blank">Redaktionshandbuch</a> · <a href="/" target="_blank">Zur Seite</a></div>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', function (user) { if (!user) window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; }); });
+  }
+  // Vorschau-Stile: Schrift und Farben der Seite
+  CMS.registerPreviewStyle('/assets/style.css');
+  CMS.registerPreviewStyle('.frame-content{padding:24px;max-width:760px;margin:0 auto;font-family:Inter,system-ui,sans-serif}.frame-content h1{font-family:Newsreader,Georgia,serif;font-size:36px;line-height:1.12;margin:8px 0}.frame-content .dek{font-family:Newsreader,Georgia,serif;font-style:italic;font-size:20px;color:#3c3a36}.frame-content .kicker{color:#971725;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12px}.frame-content img{max-width:100%;border-radius:3px}.frame-content .count{font-size:12px;color:#6d6a62}.frame-content .count.bad{color:#971725;font-weight:700}', true);
+  var ArtikelPreview = createClass({
+    render: function () {
+      var e = this.props.entry, get = function (k) { return e.getIn(['data', k]); };
+      var title = get('title') || '', teaser = get('teaser') || '', img = get('image') && get('image').get ? get('image').get('src') : null;
+      var src = img ? this.props.getAsset(img) : null;
+      return h('div', { className: 'frame-content' },
+        h('div', { className: 'kicker' }, (get('kicker') || get('ressort') || '') + (get('ort') ? ' · ' + get('ort') : '')),
+        h('h1', {}, title),
+        h('div', { className: 'count' + (title.length > 110 || title.length < 10 ? ' bad' : '') }, 'Titel: ' + title.length + ' Zeichen (10 bis 110)'),
+        h('p', { className: 'dek' }, teaser),
+        h('div', { className: 'count' + (teaser.length > 200 || teaser.length < 60 ? ' bad' : '') }, 'Teaser: ' + teaser.length + ' Zeichen (60 bis 200)'),
+        src ? h('img', { src: src.toString(), alt: '' }) : h('div', { className: 'count' }, 'Kein Bild: Es erscheint die gekennzeichnete Grafik „Kein Foto zum Ereignis“.'),
+        h('div', { className: 'prose' }, this.props.widgetFor('body'))
+      );
+    }
+  });
+  CMS.registerPreviewTemplate('artikel', ArtikelPreview);
+</script>
+</body>
+</html>
