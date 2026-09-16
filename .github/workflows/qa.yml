@@ -6,8 +6,12 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   qa:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -73,4 +77,58 @@ jobs:
             echo 'WARNING: Placeholder markers found. Review required.'
           else
             echo 'No obvious placeholder markers found.'
+          fi
+
+      - name: Install browser for visual QA
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start static preview
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/merzenich-http.log 2>&1 &
+          echo $! > /tmp/merzenich-http.pid
+          sleep 2
+          curl --fail http://127.0.0.1:4173/index.html > /dev/null
+
+      - name: Capture QA screenshots
+        run: |
+          mkdir -p qa/after
+          cat > /tmp/capture-qa.mjs <<'EOF'
+          import { chromium } from 'playwright';
+
+          const browser = await chromium.launch({ headless: true });
+          const base = 'http://127.0.0.1:4173/';
+
+          async function shot(name, hash, viewport, ready) {
+            const page = await browser.newPage({ viewport });
+            await page.goto(`${base}${hash}`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector(ready, { timeout: 15000 });
+            await page.waitForTimeout(1800);
+            await page.screenshot({ path: `qa/after/${name}.png`, fullPage: false });
+            await page.close();
+          }
+
+          await shot('home-desktop', '#home', { width: 1440, height: 1000 }, '#heroStory h1');
+          await shot('home-mobile', '#home', { width: 390, height: 844 }, '#heroStory h1');
+          await shot('article-desktop', '#article/einbruch-arnoldsweilerweg-11092026', { width: 1440, height: 1000 }, '#articleView h1');
+          await shot('sport-desktop', '#sport', { width: 1440, height: 1000 }, '#archiveGrid .sport-preview');
+          await shot('events-desktop', '#termine', { width: 1440, height: 1000 }, '#archiveGrid');
+
+          await browser.close();
+          EOF
+          node /tmp/capture-qa.mjs
+          ls -lh qa/after
+
+      - name: Commit refreshed QA screenshots
+        if: github.event_name == 'push'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add qa/after/*.png
+          if git diff --cached --quiet; then
+            echo 'QA screenshots unchanged.'
+          else
+            git commit -m 'qa: refresh browser screenshots [skip ci]'
+            git push
           fi
