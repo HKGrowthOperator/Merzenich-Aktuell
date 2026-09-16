@@ -162,8 +162,16 @@ jobs:
             if (Math.abs(top) > 1) throw new Error(`Masthead not attached to browser edge: ${top}`);
             await page.evaluate(() => window.scrollTo(0, 320));
             await page.waitForTimeout(300);
-            const sticky = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
-            if (Math.abs(sticky) > 1) throw new Error(`Masthead not sticky: ${sticky}`);
+            // Beschluss 16.09.: Der grosse Kopf klappt beim Scrollen ein, die
+            // Ressortleiste bleibt oben und zeigt links das kleine Logo (kopf.js).
+            const kompakt = await page.evaluate(() => ({
+              klasse: document.documentElement.classList.contains('kopf-kompakt'),
+              leiste: document.querySelector('.mainnav')?.getBoundingClientRect().top,
+              logo: (() => { const e = document.querySelector('.mainnav .compact-brand'); return e ? getComputedStyle(e).display : 'fehlt'; })(),
+            }));
+            if (!kompakt.klasse) throw new Error('Kopf klappt beim Scrollen nicht ein (html.kopf-kompakt fehlt)');
+            if (Math.abs(kompakt.leiste) > 1) throw new Error(`Ressortleiste nicht oben: ${kompakt.leiste}`);
+            if (kompakt.logo === 'none' || kompakt.logo === 'fehlt') throw new Error(`Kleines Logo in der Leiste nicht sichtbar: ${kompakt.logo}`);
           });
 
           await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
