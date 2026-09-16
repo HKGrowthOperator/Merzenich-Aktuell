@@ -55,7 +55,7 @@ export function homePage(ctx) {
     return treffer;
   };
 
-  const lead = articles.find(a => a.featured) || articles[0];
+  const lead = C.waehleAufmacher(articles, { erzwingen: true });
   vergeben.add(lead);
 
   // Zwei Nebenmeldungen, nicht drei: mit drei lief die Nebenspalte fast doppelt
@@ -167,8 +167,8 @@ ${businesses.length ? `<section class="section"><div class="shell">
 export function listPage(ctx, opts) {
   const { site } = ctx;
   const { title, eyebrow, desc, items, base, page, pages, nav, ort, crumbs, feed, extraTop = '', extraSide = '', jsonld = [], intro = '' } = opts;
-  const lead = page === 1 ? items[0] : null;
-  const rest = page === 1 ? items.slice(1) : items;
+  const lead = page === 1 ? C.waehleAufmacher(items) : null;
+  const rest = lead ? items.filter(a => a !== lead) : items;
   const content = `
 ${C.pageHead(eyebrow, title, desc, `<p class="count-line">${opts.count} ${opts.count === 1 ? 'Meldung' : 'Meldungen'}${feed ? ` · <a href="${feed}">RSS-Feed</a>` : ''}</p>`, crumbs)}
 ${intro}
@@ -685,7 +685,7 @@ ${C.pageHead('Fußball · Kreisliga A', 'SC 1919 Merzenich', `Tabelle, Spielplan
       ${C.sectionHead('Spielplan', 'Die nächsten Spiele', null, '', { h: 'h2' })}
       <div class="event-list">${f.spiele.map(s => `<article class="event-row">${C.dateBox(s.datum)}<div class="info"><span class="eyebrow">${esc(fmt.wdLong(s.datum))} · ${esc(fmt.time(s.datum))} Uhr · ${s.heim ? 'Heimspiel' : 'Auswärts'}</span><h3>${s.heim ? 'SC 1919 Merzenich' : esc(s.gegner)} – ${s.heim ? esc(s.gegner) : 'SC 1919 Merzenich'}</h3><div class="meta"><span>${s.heim ? esc(f.heimspielort || 'Merzenich') : 'bei ' + esc(s.gegner)}</span></div></div></article>`).join('')}</div>
       <p class="src-line">${esc(f.hinweis)}</p>
-      ${(f.gespielt || []).length ? `${C.sectionHead('Bisher', 'Gespielte Partien', null, '', { h: 'h2' })}<ul class="linklist plainlist">${f.gespielt.map(g => `<li><b>${g.heim ? 'SC 1919 Merzenich' : esc(g.gegner)} – ${g.heim ? esc(g.gegner) : 'SC 1919 Merzenich'}${g.ergebnis ? ` <span class="res">${esc(g.ergebnis)}</span>` : ''}</b><small>${esc(fmt.date(g.start || g.datum))}${g.wettbewerb ? ' · ' + esc(g.wettbewerb) : ''}</small></li>`).join('')}</ul>` : ''}
+      ${(f.gespielt || []).length ? `${C.sectionHead('Bisher', 'Gespielte Partien', null, '', { h: 'h2' })}<ul class="linklist plainlist">${f.gespielt.map(g => `<li><b>${g.heim ? 'SC 1919 Merzenich' : esc(g.gegner)} – ${g.heim ? esc(g.gegner) : 'SC 1919 Merzenich'}${g.ergebnis ? ` <span class="res">${esc(g.ergebnis)}</span>` : ''}</b><small>${esc(fmt.date(g.start || g.datum))}${g.wettbewerb ? ' · ' + esc(g.wettbewerb) : ''}${g.ergebnis ? '' : ' · Ergebnis noch nicht bestätigt'}</small></li>`).join('')}</ul>` : ''}
       ${C.sectionHead('Weitere Mannschaften', 'Zweite, Dritte und Jugend', null, '', { h: 'h2' })}
       <ul class="linklist plainlist">${f.weitere.map(w => `<li><b>${w.url ? `<a href="${esc(w.url)}" target="_blank" rel="noopener nofollow">${esc(w.team)}</a>` : esc(w.team)}</b><small>${esc(w.liga)} · ${esc(w.stand)}${w.naechstes ? ` · nächstes Spiel ${esc(fmt.short(w.naechstes.start))} ${w.naechstes.heim ? 'gegen' : 'bei'} ${esc(w.naechstes.gegner)}` : ''}</small></li>`).join('')}</ul>
     </div>

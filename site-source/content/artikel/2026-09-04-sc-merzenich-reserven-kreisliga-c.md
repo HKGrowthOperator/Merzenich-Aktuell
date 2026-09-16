@@ -2,7 +2,7 @@
 title: "Zweite und dritte Mannschaft suchen den Anschluss"
 slug: sc-merzenich-reserven-kreisliga-c
 kicker: "Kreisliga C"
-teaser: "Während die Erste die Kreisliga A anführt, stehen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am Sonntag sind beide im Einsatz."
+teaser: "Während die Erste damals die Kreisliga A anführte, standen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am 6. September waren beide im Einsatz."
 ressort: sport
 ort: merzenich
 date: 2026-09-04T09:20:00+02:00

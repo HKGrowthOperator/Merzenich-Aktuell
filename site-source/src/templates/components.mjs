@@ -3,6 +3,31 @@ import { img, imageTypeLabel } from './media.mjs';
 import { PULSE, ICONS } from './layout.mjs';
 export const BRANDLINE = `<div class="brandline thin" aria-hidden="true"><i></i><svg viewBox="0 0 240 48"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/></svg></div>`;
 
+/* Der Aufmacher wird ueber die volle Breite ausgespielt. Ein Vereinswappen oder
+   eine Grafik fuellt diese Flaeche nicht, sondern steht als riesiges Logo darin.
+   Fuer den Aufmacher zaehlt deshalb nur ein echtes Bild; gibt es keines, bleibt
+   es bei der ersten Meldung wie bisher. */
+const istWappen = (a) => !!(a && a.image && a.image.src) && ['logo', 'grafik'].includes(a.image.type);
+export const aufmacherTauglich = (a) => !!(a && a.image && a.image.src) && !istWappen(a);
+
+/* erzwingen=true: es MUSS ein Aufmacher herauskommen (Startseite, dort haengt
+   das Layout daran). erzwingen=false: lieber gar keiner als ein schlechter.
+
+   Im Sport gibt es kein einziges Foto. Dort war der Aufmacher erst das
+   Vereinswappen auf 800 px Breite, dann - nach dem ersten Versuch - eine leere
+   Textkachel in derselben Groesse. Beides ist schlechter als gar kein
+   Aufmacher: ohne ihn beginnt die Liste mit ihren Zeilen, und das Wappen steht
+   in seiner Karte, wo es hingehoert. */
+export function waehleAufmacher(items, { erzwingen = false } = {}) {
+  if (!items || !items.length) return null;
+  const mitFoto = items.find(a => a.featured && aufmacherTauglich(a))
+    || items.find(aufmacherTauglich);
+  if (mitFoto || !erzwingen) return mitFoto || null;
+  return items.find(a => a.featured && !istWappen(a))
+    || items.find(a => !istWappen(a))
+    || items[0];
+}
+
 export function kicker(a, ctx) {
   const r = ctx.site.ressorts[a.ressort];
   const label = a.kicker || (r ? r.name : a.ressort);

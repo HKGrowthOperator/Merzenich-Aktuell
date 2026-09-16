@@ -2,7 +2,7 @@
 title: "Nach zwei Spielen: SC Merzenich stand an der Tabellenspitze"
 slug: sc-merzenich-tabellenfuehrer
 kicker: "Kreisliga A"
-teaser: "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim."
+teaser: "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich stand nach dem zweiten Spieltag an der Tabellenspitze. Am 6. September ging es zum Nachbarn nach Golzheim."
 ressort: sport
 ort: merzenich
 date: 2026-09-04T09:30:00+02:00
