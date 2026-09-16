@@ -2,63 +2,67 @@
 
 Stand: 16. September 2026
 
-Dieses Repository wurde aus einem zuvor leeren GitHub-Repository initialisiert.
+Dieses Repository ist ab jetzt die zentrale technische Quelle für Merzenich Aktuell.
 
 ## Im Repository vorhanden
+
+### Frontend
+
+- `PROJECT.md`
+- `index.html`
+- `styles.css`
+- `app.js`
+- `content.json`
+
+### WordPress-Lieferung
+
+- `wordpress-delivery/merzenich-aktuell-theme.zip`
+- `wordpress-delivery/merzenich-aktuell-core.zip`
+- `wordpress-delivery/merzenich-aktuell-import.xml`
+
+### Dokumentation / QA
 
 - `README.md`
 - `docs/README-INSTALLATION.md`
 - `docs/WORDPRESS-LIEFERUNG.md`
 - `docs/PROJECT-REQUIREMENTS.md`
-- `docs/ARTIFACT-STATUS.md`
+- `docs/RECOVERY-BUILD-STATUS.md`
+- `docs/REPO-SYNC-STATUS.md`
+- `.github/workflows/qa.yml`
+- vorbereitete `qa/`-Struktur
 
-## In bisherigen Projektunterlagen nachweislich referenziert
+## Noch offen
 
-Folgende Artefakte wurden im bisherigen Merzenich-Aktuell-Projekt erzeugt bzw. dokumentiert:
+Die installierbaren ZIP-Pakete sind nun physisch vorhanden. Noch nicht als normal versionierbarer Quellcode im Repository vorhanden sind die **entpackten Original-Quellordner** aus diesen Paketen:
 
-- `merzenich-aktuell-theme.zip` – Theme 20.2.0
-- `merzenich-aktuell-core.zip` – Core 1.0.0
-- `merzenich-aktuell-import.xml`
-- `README-INSTALLATION.md`
-- `WORDPRESS-LIEFERUNG.md`
-- `docs/QA-WORDPRESS.json`
-- Sport-Datenstand 14.09.2026
-- Content-Refresh-Dokumentation
-- Bildkandidaten & Rechte
-- PASS/FAIL-QA-Report
-- SHA-256-Prüfsummen
+```text
+wordpress/theme/merzenich-aktuell/
+wordpress/plugin/merzenich-aktuell-core/
+```
 
-## Noch nicht in Git übernommen
+Solange diese Quellordner fehlen, bleiben die ZIPs zwar installierbare Lieferartefakte, aber Änderungen am WordPress-Code sind nicht sauber diff-/reviewbar und die Pakete nicht vollständig reproduzierbar aus Git.
 
-Die folgenden Artefakte stehen in dieser Sitzung nicht als direkt übertragbare Datei/Byte-Quelle zur Verfügung und wurden deshalb **nicht fingiert oder leer angelegt**:
+Weitere noch offene bzw. zu verifizierenende Artefakte:
 
-- `merzenich-aktuell-theme.zip`
-- `merzenich-aktuell-core.zip`
-- vollständiger Theme-Quellordner
-- vollständiger Core-Plugin-Quellordner
-- vollständige `merzenich-aktuell-import.xml`
-- `docs/QA-WORDPRESS.json`
-- Renderings/Screenshots des Recovery-Builds
-- Bilddateien aus dem Recovery-Build
+- `docs/QA-WORDPRESS.json`, sofern aus dem ursprünglichen Recovery-Build vorhanden
+- Recovery-Renderings/Screenshots (`qa/before`, `qa/after`)
+- vollständige Bildrechte-/Content-Refresh-/Sport-Prüfdokumente, sofern Originale vorhanden
+- Prüfsummen des ursprünglichen Lieferstands, sofern Originale vorhanden
 
-Sobald diese Originaldateien als echte Dateien bereitstehen, gehören sie in dieses Repository bzw. bei Binärpaketen gegebenenfalls in einen Release/Artifact-Workflow.
+## Automatische QA
+
+`.github/workflows/qa.yml` prüft bei Push/PR mindestens:
+
+- JavaScript-Syntax von `app.js`
+- JSON-Syntax von `content.json`
+- XML-Syntax des WordPress-Imports
+- Vorhandensein der Theme-/Core-ZIPs
+- Entpackbarkeit beider ZIPs
+- PHP-Syntax aller PHP-Dateien in beiden Paketen
+- auffällige Placeholder-Marker als Warnsignal
 
 ## Source of truth
 
-Ab jetzt soll dieses Repository die zentrale technische Quelle für Merzenich Aktuell werden. Neue Änderungen sollen nicht mehr in getrennten, nicht synchronisierten Parallelständen leben.
+Neue Änderungen gehören ausschließlich in dieses Repository. Keine getrennten `v21`, `v22`, `recovery-final` oder nicht synchronisierten Parallelprojekte mehr.
 
-Empfohlene Zielstruktur:
-
-```text
-wordpress/
-  theme/
-    merzenich-aktuell/
-  plugin/
-    merzenich-aktuell-core/
-imports/
-  merzenich-aktuell-import.xml
-docs/
-qa/
-```
-
-Die öffentliche ChatGPT-Site bleibt Vorschau/Referenz und darf nicht als Ersatz für den Git-/WordPress-Quellstand behandelt werden.
+Die öffentliche ChatGPT-Site bleibt Vorschau/Referenz und ist kein Ersatz für den Git-/WordPress-Quellstand.
