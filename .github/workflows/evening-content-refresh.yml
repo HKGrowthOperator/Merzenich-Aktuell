@@ -34,10 +34,11 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/apply-evening-content-refresh.mjs
+          node scripts/complete-evening-jobs.mjs
           node scripts/finalize-evening-content-refresh.mjs
-          # apply-evening strengthens qa.yml for a local run, but the canonical
-          # workflow stays untouched on this content branch. The dedicated QA
-          # below covers tablet/jobs/properties without rewriting release CI.
+          node scripts/repair-evening-local-targets.mjs
+          # apply-evening temporarily strengthens qa.yml during integration;
+          # keep the canonical release workflow itself unchanged on this branch.
           git checkout HEAD -- .github/workflows/qa.yml
 
       - name: Syntax and JSON validation
@@ -46,7 +47,9 @@ jobs:
           node --check chatgpt-site/assets/app.js
           node --check chatgpt-site/assets/v20.js
           node --check scripts/apply-evening-content-refresh.mjs
+          node --check scripts/complete-evening-jobs.mjs
           node --check scripts/finalize-evening-content-refresh.mjs
+          node --check scripts/repair-evening-local-targets.mjs
           node --check qa/content-link-check.mjs
           python3 -m json.tool chatgpt-site/api/editorial-current.json > /dev/null
           python3 -m json.tool chatgpt-site/api/sport-current.json > /dev/null
@@ -112,14 +115,14 @@ jobs:
             if (!src?.includes('ph-sport.svg')) throw new Error(`${label}: hero does not use rights-safe sport symbol image: ${src}`);
             const body = await page.locator('body').textContent() || '';
             if (!body.includes(secondary)) throw new Error(`${label}: current police secondary missing`);
-            if (body.includes('Standkartenvergabe Trödelmarkt Ortsfest')) {
-              const visible = await page.getByText('Standkartenvergabe Trödelmarkt Ortsfest', { exact: false }).filter({ visible: true }).count().catch(() => 0);
-              if (visible) throw new Error(`${label}: expired stand-card event still visible`);
-            }
+            const expiredStand = await page.evaluate(() => [...document.querySelectorAll('[data-event-end]')].some(el => /Standkartenvergabe Trödelmarkt Ortsfest/.test(el.textContent || '') && !el.hidden));
+            if (expiredStand) throw new Error(`${label}: expired stand-card event still visible`);
             if (viewport.width <= 834) {
               const menu = page.locator('[data-menu]');
               await menu.click();
               if ((await menu.getAttribute('aria-expanded')) !== 'true') throw new Error(`${label}: mobile/tablet menu did not open`);
+              const drawer = page.locator('[data-drawer]');
+              if (!(await drawer.evaluate(el => el.classList.contains('open')))) throw new Error(`${label}: navigation drawer did not open`);
               await page.keyboard.press('Escape');
             }
             await page.close();
@@ -130,7 +133,7 @@ jobs:
           await checkHome({ width: 390, height: 844 }, 'mobile');
 
           for (const [path, label, selector, min] of [
-            ['/jobs/', 'jobs-desktop', '.job-row', 5],
+            ['/jobs/', 'jobs-desktop', '.job-row', 7],
             ['/immobilien/', 'properties-desktop', '.event-row', 3]
           ]) {
             const page = await open(path, { width: 1440, height: 1000 }, selector);
@@ -172,7 +175,7 @@ jobs:
 
           {
             const page = await open('/sport/', { width: 1440, height: 1000 }, '.sports-module');
-            await page.waitForFunction(() => document.querySelector('.sports-module')?.textContent?.includes('3 : 2'));
+            await page.waitForFunction(() => /3\s*:\s*2/.test(document.querySelector('.sports-module')?.textContent || ''));
             const text = await page.locator('.sports-module').textContent() || '';
             for (const value of ['13.09.2026', '9', '12:8']) if (!text.includes(value)) throw new Error(`sport missing ${value}`);
             const logos = await page.locator('img[src*="sc-1919-merzenich-logo"]').count();
@@ -190,7 +193,7 @@ jobs:
           }
 
           await browser.close();
-          console.log('Browser QA passed: desktop/tablet/mobile, jobs, properties, articles, sport, events.');
+          console.log('Browser QA passed: desktop/tablet/mobile, navigation, jobs, properties, articles, sport, events.');
           EOF
           node .qa-evening.mjs
           rm .qa-evening.mjs
