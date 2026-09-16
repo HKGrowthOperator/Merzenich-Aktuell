@@ -9,7 +9,8 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 - Repository: `HKGrowthOperator/Merzenich-Aktuell`
 - Branch: `main`
 - Frontend: Repository-Root
-- Bestehende öffentliche historische Referenz: `https://merzenich-aktuell-v19.luiskummer.chatgpt.site`
+- Öffentliche Deploy-/Kontroll-URL: `https://merzenichaktuell.hk-growthoperator.de`
+- Es gibt **keine separate ChatGPT-Seite als Arbeits-, Deploy- oder Prüfziel mehr**. Frühere ChatGPT-Sites sind nur historische Altstände und dürfen nicht als Source of Truth verwendet werden.
 - WordPress Theme/Core sind ein **separater** Lieferstand unter `/wordpress-delivery` und dürfen nicht mit dem Frontend verwechselt werden.
 
 ## Grundregel
@@ -17,6 +18,8 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 **Recovery + Completion + Polish. Kein radikales Redesign.**
 
 Bestehende gute Komponenten schützen. Änderungen klein, nachvollziehbar und gezielt durchführen. Kein Parallelprojekt und keine v21/v22/v23-Kopie.
+
+**Jede wirksame Änderung an Content, Frontend, Bildern, Komponenten, Logik oder Dokumentation wird im Repository `HKGrowthOperator/Merzenich-Aktuell` auf dem vorgesehenen Branch umgesetzt und dorthin gepusht.** Die öffentliche Seite wird nach dem Deploy über `https://merzenichaktuell.hk-growthoperator.de` kontrolliert.
 
 ## Darstellung — verbindlich
 
@@ -135,13 +138,29 @@ Keine riesigen weißen Kartencontainer.
 - Ortsteil: `MERZENICH · GOLZHEIM` etc.; `MERZENICH` rot, Ortsteil dunkel
 - konsistent Homepage, Archive, Suche, Artikel, Related Content
 
-## Bilder
+## Bilder — verbindlich
 
-- nur eigene, offizielle/freigegebene oder sauber lizenzierte Motive
+**Jede redaktionelle Meldung / Artikelseite hat ein Startbild.** Ein fehlendes Recherchebild darf nicht mehr zu einer bildlosen Seite oder einem thematisch falschen Platzhalter führen.
+
+Priorität:
+
+1. echtes Bild zur konkreten Meldung, dessen Nutzung verifiziert ist
+2. passendes, sauber lizenziertes Archiv-/Kategorie-Bild
+3. verifiziertes, dauerhaftes Symbolbild aus der zentralen Fallback-Bibliothek
+
+Weitere Regeln:
+
+- Ein recherchiertes, rechtlich nutzbares Originalbild wird **nie** durch ein Symbolbild ersetzt.
+- Wenn kein konkretes Bild nutzbar ist, wird ein semantisch passendes Symbolbild gewählt: z. B. Feuerwehrmotiv für Feuerwehreinsatz, Polizeimotiv für Polizeimeldung, Fußballmotiv für Sport, Arbeitsplatz für Stellen und Hausmotiv für Immobilien.
+- Blaulichtmeldungen dürfen nicht mit einem beliebigen Rathaus- oder Ortsbild aufgefüllt werden.
+- Symbolbilder werden im sichtbaren Bildnachweis ausdrücklich mit `Symbolbild` gekennzeichnet.
+- Für jedes Fallback werden Quelle, Urheber, Lizenz und letzter Rechte-Check dokumentiert.
 - kein Google-Image-Scraping
+- nur eigene, offizielle/freigegebene oder sauber lizenzierte Motive
 - Hero möglichst >=1600px; normale Meldung möglichst >=1000px
 - Credits und Alt-Texte speichern
 - Archivbild deutlich, aber dezent kennzeichnen
+- Zentrale technische Fallbacks liegen in `image-fallbacks.js`; Rechte-/Quellendokumentation liegt in `docs/image-fallbacks.md`.
 
 ## Sport
 
@@ -205,6 +224,14 @@ Vor jedem echten Release neu prüfen:
 Gefundener Inhalt ist nicht automatisch ein Artikel. Workflow:
 
 `Fund → Quelle prüfen → Datum → Ort → Bildrechte → redaktionell schreiben → Human Review → Publish`
+
+Für Bilder gilt separat:
+
+`konkretes Bild gefunden → Nutzungsrecht prüfen → erst dann verwenden`
+
+Wenn kein nutzbares konkretes Bild vorhanden ist:
+
+`Fallback-Kategorie bestimmen → verifiziertes Symbolbild verwenden → als Symbolbild kennzeichnen`
 
 ## Statusbegriffe
 
