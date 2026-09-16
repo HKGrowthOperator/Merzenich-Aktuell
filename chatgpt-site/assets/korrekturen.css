@@ -142,3 +142,20 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .kopf-kompakt .mainnav.is-scrolled .compact-brand{display:flex;align-items:center;flex:0 0 auto;margin-right:12px}
 .kopf-kompakt .mainnav.is-scrolled .compact-brand img{width:118px;height:auto;display:block}
 @media (prefers-reduced-motion:reduce){.masthead,.mainnav.is-scrolled{transition:none}}
+
+/* Symbolbilder (deploy/symbolbilder.mjs): gekennzeichnet, mit Quelle. */
+.art-figure--symbol .media{aspect-ratio:3/2}
+.art-figure--symbol figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.markt-row--thumb{grid-template-columns:44px 150px minmax(0,1fr)}
+.markt-thumb{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--surface-soft,#f5f6f6)}
+.markt-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.markt-thumb__badge{position:absolute;left:6px;bottom:6px;padding:2px 6px;border-radius:3px;background:rgba(0,0,0,.62);color:#fff;font-size:10px;letter-spacing:.04em}
+.markt-row--thumb .act{grid-column:3}
+@media (max-width:760px){.markt-row--thumb{grid-template-columns:minmax(0,1fr)}.markt-thumb{max-width:220px;margin-bottom:10px}.markt-row--thumb .act{grid-column:1}}
+.feed-row.editorial-current-row .media{aspect-ratio:1.44}
+/* Zweitkarte mit Symbolbild: wieder zwei Spalten wie jede andere Kurzmeldung. */
+.front-brief.editorial-secondary.has-image{grid-template-columns:112px minmax(0,1fr)}
+.front-brief.editorial-secondary.has-image>div{grid-column:2;grid-row:1}
+@media (max-width:767px){.front-brief.editorial-secondary.has-image{grid-template-columns:96px minmax(0,1fr)}}
+.front-brief.editorial-secondary.has-image .media{width:100%;height:auto;aspect-ratio:4/3}
+.front-brief.editorial-secondary.has-image>.brief-image{width:100%;min-width:0}

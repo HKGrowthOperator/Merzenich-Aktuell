@@ -114,8 +114,9 @@
   const side=document.querySelector('.front-side');if(!side)return;
   let card=side.querySelector('[data-editorial-secondary]');
   if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
-  card.dataset.story=s.id||'';
-  card.innerHTML=`<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
+  card.dataset.story=s.id||'';card.classList.toggle('has-image',!!s.image);
+  const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
+  card.innerHTML=`${bild}<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
  }
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
 })();
@@ -139,8 +140,9 @@
  }
  function row(s){
   if(!s?.url||!s?.title||feed.querySelector(`a[href="${CSS.escape(s.url)}"]`))return null;
-  const el=document.createElement('article');el.className='feed-row editorial-current-row no-media';el.dataset.story=s.id||'';
-  el.innerHTML=`<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
+  const el=document.createElement('article');el.className='feed-row editorial-current-row'+(s.image?'':' no-media no-image');el.dataset.story=s.id||'';
+  const bild=s.image?`<a href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
+  el.innerHTML=`${bild}<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
   return el;
  }
  function bumpCount(add){const c=document.querySelector('.count-line');if(!c||!add)return;const m=c.textContent.match(/^\s*(\d+)/);if(!m)return;c.firstChild.textContent=c.firstChild.textContent.replace(m[1],String(Number(m[1])+add));}

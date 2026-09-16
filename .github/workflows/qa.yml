@@ -63,6 +63,9 @@ jobs:
       - name: Darstellung und Kopf auf allen Seiten eingebunden?
         run: node deploy/kopf-theme-einbinden.mjs --check
 
+      - name: Symbolbilder fuer Meldungen ohne Foto aktuell?
+        run: node deploy/symbolbilder.mjs --check
+
       - name: Freigabe- und Sport-Logik pruefen
         run: php qa/wordpress/freigabe-test.php && php qa/wordpress/sport-test.php
 
