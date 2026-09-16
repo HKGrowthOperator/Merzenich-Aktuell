@@ -36,13 +36,39 @@ function escapeHtml(value = '') {
   return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
 }
 
+// Intl.DateTimeFormat.format wirft bei einem ungueltigen Datum einen
+// RangeError. Da die Formatierer mitten im Rendern stecken, riss ein einziger
+// Artikel ohne publishedAt die komplette Startseite mit: kein Aufmacher, keine
+// Karten, keine Termine. Fehlt das Datum, bleibt jetzt die Stelle leer.
+function isValidDate(date) {
+  return date instanceof Date && !Number.isNaN(date.getTime());
+}
+
 function formatDate(dateValue, options = {}) {
   const date = new Date(dateValue);
+  if (!isValidDate(date)) return '';
   return new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', ...options }).format(date);
 }
 
 function formatTime(dateValue) {
-  return new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit' }).format(new Date(dateValue));
+  const date = new Date(dateValue);
+  if (!isValidDate(date)) return '';
+  return new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit' }).format(date);
+}
+
+// Adressen aus content.json landen in href-Attributen. escapeHtml haelt das
+// Markup heil, verhindert aber kein javascript:-Schema. Erlaubt sind relative
+// Ziele, Sprungmarken und die ueblichen Netzschemata.
+function safeUrl(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return '#';
+  if (/^(#|\/|\.\.?\/)/.test(raw)) return raw;
+  try {
+    const url = new URL(raw, location.href);
+    return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? raw : '#';
+  } catch {
+    return '#';
+  }
 }
 
 function locationMarkup(article) {
@@ -70,7 +96,13 @@ function heroScore(article, now = new Date()) {
 
 function pickHero() {
   const now = new Date();
-  return publishedArticles().sort((a,b) => heroScore(b, now) - heroScore(a, now))[0] || publishedArticles()[0];
+  // publishedArticles() liefert bereits eine eigene, nach Datum sortierte Liste.
+  // Der fruehere Rueckfall auf publishedArticles()[0] konnte nie greifen, weil
+  // [0] einer nichtleeren Liste nie falsy ist, und sortierte die Liste ein
+  // zweites Mal.
+  const artikel = publishedArticles();
+  if (!artikel.length) return null;
+  return artikel.sort((a,b) => heroScore(b, now) - heroScore(a, now))[0];
 }
 
 function renderHero() {
@@ -93,8 +125,16 @@ function buildCard(article) {
   const template = $('#newsCardTemplate');
   const node = template.content.cloneNode(true);
   $('.news-image-link', node).href = articleHref(article);
-  $('.news-image', node).src = article.image;
-  $('.news-image', node).alt = article.imageAlt || '';
+  // Ohne Bildadresse wurde der String "undefined" als src gesetzt und der
+  // Browser holte sich dafuer eine 404.
+  const bild = $('.news-image', node);
+  if (article.image) {
+    bild.src = article.image;
+  } else {
+    bild.removeAttribute('src');
+    bild.hidden = true;
+  }
+  bild.alt = article.imageAlt || '';
   $('.image-credit', node).textContent = article.imageCredit || '';
   $('.location-line', node).innerHTML = locationMarkup(article);
   $('.category', node).textContent = article.category;
@@ -107,14 +147,14 @@ function buildCard(article) {
   return node;
 }
 
-function renderNewsGrid() {
-  const hero = pickHero();
+function renderNewsGrid(hero = pickHero()) {
   const grid = $('#newsGrid');
   grid.innerHTML = '';
-  publishedArticles().filter(a => a.id !== hero?.id).slice(0,6).forEach(article => grid.append(buildCard(article)));
+  const artikel = publishedArticles();
+  artikel.filter(a => a.id !== hero?.id).slice(0,6).forEach(article => grid.append(buildCard(article)));
 
   const compact = $('#compactNews');
-  compact.innerHTML = publishedArticles().slice(0,4).map(article => `
+  compact.innerHTML = artikel.slice(0,4).map(article => `
     <div class="compact-item">
       <div class="compact-meta">${escapeHtml(article.category)} · ${formatDate(article.publishedAt)}</div>
       <a href="${articleHref(article)}">${escapeHtml(article.headline)}</a>
@@ -123,7 +163,7 @@ function renderNewsGrid() {
 
 function upcomingEvents() {
   const now = new Date();
-  return [...state.content.events]
+  return [...(state.content.events || [])]
     .filter(event => new Date(event.end || event.start) >= now)
     .sort((a,b) => new Date(a.start) - new Date(b.start));
 }
@@ -135,7 +175,7 @@ function renderEvents() {
     const date = new Date(event.start);
     const day = new Intl.DateTimeFormat('de-DE',{day:'2-digit'}).format(date);
     const month = new Intl.DateTimeFormat('de-DE',{month:'short'}).format(date).replace('.','');
-    return `<a class="event-row" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener noreferrer">
+    return `<a class="event-row" href="${escapeHtml(safeUrl(event.sourceUrl))}" target="_blank" rel="noopener noreferrer">
       <div class="event-date"><span class="event-day">${day}</span><span class="event-month">${month}</span></div>
       <div class="event-info"><strong>${escapeHtml(event.title)}</strong><span>${formatTime(event.start)} Uhr · ${escapeHtml(event.place)}</span></div>
     </a>`;
@@ -173,9 +213,30 @@ function normalizeWeather(payload) {
   };
 }
 
+// localStorage wirft im privaten Fenster und bei gesperrten Websitedaten schon
+// beim Lesen, und ein beschaedigter Eintrag wirft in JSON.parse. Beides lag
+// ausserhalb des try-Blocks und beendete loadWeather mit einem unbehandelten
+// Fehler.
+function cacheLesen(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || 'null');
+  } catch {
+    return null;
+  }
+}
+
+function cacheSchreiben(key, wert) {
+  try {
+    localStorage.setItem(key, JSON.stringify(wert));
+  } catch {
+    // Kein Zwischenspeicher verfuegbar. Das Wetter wird dann bei jedem Aufruf
+    // neu geholt, was die Anzeige nicht beeintraechtigt.
+  }
+}
+
 async function loadWeather() {
   const cacheKey = 'ma-weather-v1';
-  const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+  const cached = cacheLesen(cacheKey);
   const cacheAge = cached ? Date.now() - new Date(cached.fetchedAt).getTime() : Infinity;
   if (cached && cacheAge < 20 * 60 * 1000) {
     state.weather = cached;
@@ -192,7 +253,7 @@ async function loadWeather() {
     if (!Number.isFinite(Number(weather.current.temperature))) throw new Error('Invalid weather data');
     state.weather = weather;
     state.weatherFromCache = false;
-    localStorage.setItem(cacheKey, JSON.stringify(weather));
+    cacheSchreiben(cacheKey, weather);
   } catch (error) {
     if (cached && Number.isFinite(Number(cached.current?.temperature))) {
       state.weather = cached;
@@ -226,7 +287,10 @@ function renderWeather() {
     <div class="weather-days">${state.weather.days.map((day,index) => {
       const [dayIcon, dayCondition] = weatherCode(Number(day.code));
       const rain = Number.isFinite(Number(day.rain)) ? `${Math.round(day.rain)} % Regen` : 'Regen –';
-      return `<div class="weather-day"><strong>${dayLabels[index]} ${dayIcon}</strong><span>${Math.round(day.max)}° / ${Math.round(day.min)}°</span><span>${dayCondition}</span><span>${rain}</span></div>`;
+      const spanne = [day.max, day.min].every(w => Number.isFinite(Number(w)))
+        ? `${Math.round(day.max)}° / ${Math.round(day.min)}°`
+        : '–';
+      return `<div class="weather-day"><strong>${dayLabels[index]} ${dayIcon}</strong><span>${spanne}</span><span>${dayCondition}</span><span>${rain}</span></div>`;
     }).join('')}</div>
     <div class="weather-updated">Stand ${formatTime(state.weather.fetchedAt)} Uhr${state.weatherFromCache ? ' · letzter gültiger Datenstand' : ''}</div>`;
 }
@@ -240,6 +304,14 @@ function updateClock() {
 
 function renderSport(root = $('#sportPreview'), compact = false) {
   const sport = state.content.sport;
+  // Fehlt der Sportdatensatz, wird der Abschnitt ausgeblendet statt beim
+  // Zugriff auf dataCheckedAt zu werfen.
+  if (!sport || !sport.pending || !sport.next || !sport.table) {
+    root.innerHTML = '';
+    root.hidden = true;
+    return;
+  }
+  root.hidden = false;
   const checked = new Date(sport.dataCheckedAt);
   root.innerHTML = `
     <div class="sport-preview-head">
@@ -251,20 +323,20 @@ function renderSport(root = $('#sportPreview'), compact = false) {
       <div class="sport-box"><span class="sport-label">Nächstes Spiel</span><strong>${escapeHtml(sport.next.home)} – ${escapeHtml(sport.next.away)}</strong><span>${formatDate(sport.next.date)} · ${formatTime(sport.next.date)} Uhr</span></div>
       <div class="sport-box"><span class="sport-label">Tabelle</span><strong>Platz ${sport.table.position} · ${sport.table.points} Punkte</strong><span>Torverhältnis ${escapeHtml(sport.table.goals)}</span></div>
     </div>
-    ${compact ? '' : `<p style="margin:12px 0 0;font-size:12px;color:#686868">Quelle: <a class="text-link" href="${escapeHtml(sport.sourceUrl)}" target="_blank" rel="noopener noreferrer">FUSSBALL.DE</a></p>`}`;
+    ${compact ? '' : `<p style="margin:12px 0 0;font-size:12px;color:#686868">Quelle: <a class="text-link" href="${escapeHtml(safeUrl(sport.sourceUrl))}" target="_blank" rel="noopener noreferrer">FUSSBALL.DE</a></p>`}`;
 }
 
 function renderAds() {
   ['homepage_sidebar_top','homepage_sidebar_middle'].forEach((slotId,index) => {
     const root = $(index === 0 ? '#adSlotTop' : '#adSlotMiddle');
-    const ad = state.content.ads.find(item => item.id === slotId);
+    const ad = (state.content.ads || []).find(item => item.id === slotId);
     if (!ad?.active) {
       root.innerHTML = '';
       root.hidden = true;
       return;
     }
     root.hidden = false;
-    root.innerHTML = `<a class="ad-slot" href="${escapeHtml(ad.target || '#')}"><span class="ad-label">${escapeHtml(ad.label || 'ANZEIGE')}</span><strong>${escapeHtml(ad.headline)}</strong></a>`;
+    root.innerHTML = `<a class="ad-slot" href="${escapeHtml(safeUrl(ad.target))}"><span class="ad-label">${escapeHtml(ad.label || 'ANZEIGE')}</span><strong>${escapeHtml(ad.headline)}</strong></a>`;
   });
 }
 
@@ -287,7 +359,7 @@ function renderArchive(key) {
 
   if (config.special === 'events') {
     const events = upcomingEvents();
-    root.innerHTML = events.length ? events.map(event => `<article class="news-card"><div class="news-card-body"><div class="location-line"><span class="main-location">MERZENICH</span> <span class="district">· ${escapeHtml(event.district)}</span></div><div class="news-meta-line"><span class="category">Termin</span><span>${formatDate(event.start)} · ${formatTime(event.start)} Uhr</span></div><h3>${escapeHtml(event.title)}</h3><p class="teaser">${escapeHtml(event.place)}</p><a class="more-button" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a></div></article>`).join('') : '<div class="notice-box">Keine kommenden Veranstaltungen.</div>';
+    root.innerHTML = events.length ? events.map(event => `<article class="news-card"><div class="news-card-body"><div class="location-line"><span class="main-location">MERZENICH</span>${event.district ? ` <span class="district">· ${escapeHtml(event.district)}</span>` : ''}</div><div class="news-meta-line"><span class="category">Termin</span><span>${formatDate(event.start)} · ${formatTime(event.start)} Uhr</span></div><h3>${escapeHtml(event.title)}</h3><p class="teaser">${escapeHtml(event.place)}</p><a class="more-button" href="${escapeHtml(safeUrl(event.sourceUrl))}" target="_blank" rel="noopener noreferrer">Quelle öffnen</a></div></article>`).join('') : '<div class="notice-box">Keine kommenden Veranstaltungen.</div>';
     return;
   }
 
@@ -318,7 +390,7 @@ function renderArticle(id) {
     <figure class="article-hero"><img src="${escapeHtml(article.image)}" alt="${escapeHtml(article.imageAlt)}"><figcaption class="image-credit">${escapeHtml(article.imageCredit)}</figcaption></figure>
     <div class="article-box"><h2>Das Wichtigste in Kürze</h2><p>${escapeHtml(article.teaser)}</p></div>
     <div class="article-body">${(article.body || []).map(p => `<p>${escapeHtml(p)}</p>`).join('')}</div>
-    <div class="article-box"><h2>Quelle &amp; Transparenz</h2><p>Quelle geprüft · Datum geprüft · Ort geprüft · redaktionell zusammengefasst.</p><p><a href="${escapeHtml(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">Originalquelle: ${escapeHtml(article.sourceName)}</a></p><p>Bild: ${escapeHtml(article.imageCredit)}</p></div>
+    <div class="article-box"><h2>Quelle &amp; Transparenz</h2><p>Quelle geprüft · Datum geprüft · Ort geprüft · redaktionell zusammengefasst.</p><p><a href="${escapeHtml(safeUrl(article.sourceUrl))}" target="_blank" rel="noopener noreferrer">Originalquelle: ${escapeHtml(article.sourceName)}</a></p><p>Bild: ${escapeHtml(article.imageCredit)}</p></div>
     <section class="comment-section" id="comments"><p class="eyebrow">Diskussion</p><h2>${article.comments || 0} Kommentare</h2><p class="comment-note">Kommentare werden moderiert. Beleidigungen, persönliche Daten und unbelegte Anschuldigungen werden nicht veröffentlicht.</p><form class="comment-form" id="commentForm"><input name="name" required placeholder="Name"><input name="email" type="email" required placeholder="E-Mail (wird nicht veröffentlicht)"><textarea name="comment" required placeholder="Kommentar"></textarea><button type="submit">Kommentar absenden</button><p class="comment-note" id="commentFormStatus">Der Kommentar-Endpunkt wird erst auf der verbundenen Produktionsplattform aktiviert.</p></form></section>`;
 
   $('#commentForm')?.addEventListener('submit', event => {
@@ -337,7 +409,16 @@ function showOnly(view) {
 
 function handleRoute() {
   if (!state.content) return;
-  const raw = decodeURIComponent(location.hash.replace(/^#/,'')) || 'home';
+  // Ein einzelnes Prozentzeichen in der Adresse (etwa #100%) liess
+  // decodeURIComponent mit einem URIError abbrechen. Der Fehler beendete den
+  // Start, wodurch das Wetter fuer den ganzen Besuch ausfiel.
+  const roh = location.hash.replace(/^#/,'');
+  let raw;
+  try {
+    raw = decodeURIComponent(roh) || 'home';
+  } catch {
+    raw = roh || 'home';
+  }
   if (raw === 'home') {
     showOnly('home');
     return;
@@ -380,6 +461,25 @@ function bindUi() {
   window.addEventListener('hashchange', handleRoute);
 }
 
+// Kapselt einen Startschritt. Faellt einer aus, laufen die uebrigen weiter und
+// die Ursache steht mit Namen in der Konsole.
+function schritt(name, fn) {
+  try {
+    fn();
+  } catch (error) {
+    console.error(`[Merzenich Aktuell] ${name}: Schritt fehlgeschlagen`, error);
+  }
+}
+
+function renderDataStand() {
+  const stand = state.content.meta?.lastEditorialCheck;
+  const datum = formatDate(stand);
+  const zeit = formatTime(stand);
+  $('#footerDataStand').textContent = datum && zeit
+    ? `Redaktioneller Datenstand: ${datum}, ${zeit} Uhr`
+    : 'Redaktioneller Datenstand: nicht hinterlegt';
+}
+
 async function init() {
   try {
     const response = await fetch('content.json', { cache: 'no-store' });
@@ -391,17 +491,22 @@ async function init() {
     return;
   }
 
-  renderHero();
-  renderNewsGrid();
-  renderEvents();
-  renderSport();
-  renderAds();
-  updateClock();
-  setInterval(updateClock, 30000);
-  $('#footerDataStand').textContent = `Redaktioneller Datenstand: ${formatDate(state.content.meta.lastEditorialCheck)}, ${formatTime(state.content.meta.lastEditorialCheck)} Uhr`;
-  bindUi();
-  handleRoute();
-  loadWeather();
+  // Der Start war eine ungesicherte Kette: warf ein Schritt, blieb alles
+  // dahinter liegen. Ein fehlender Block in content.json (sport, ads, events,
+  // meta) reichte, damit bindUi und handleRoute nie liefen. Die Seite sah dann
+  // vollstaendig aus, war aber tot: Uhr auf Strich, Ressortklicks ohne
+  // Wirkung, Suche ohne Funktion. Jeder Schritt steht jetzt fuer sich.
+  schritt('Aufmacher', renderHero);
+  schritt('Nachrichtenraster', renderNewsGrid);
+  schritt('Termine', renderEvents);
+  schritt('Sport', () => renderSport());
+  schritt('Werbeplaetze', renderAds);
+  schritt('Uhr', updateClock);
+  setInterval(() => schritt('Uhr', updateClock), 30000);
+  schritt('Datenstand', renderDataStand);
+  schritt('Bedienung', bindUi);
+  schritt('Routenwahl', handleRoute);
+  loadWeather().catch(error => console.error('[Merzenich Aktuell] Wetter: Schritt fehlgeschlagen', error));
 }
 
 document.addEventListener('DOMContentLoaded', init);
