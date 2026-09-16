@@ -2,17 +2,28 @@
 
 Zentrales Repository für **Merzenich Aktuell** – lokale Nachrichtenplattform für Merzenich, Golzheim, Girbelsrath, Morschenich/Bürgewald und relevante Umgebung.
 
-## Aktueller dokumentierter Lieferstand
+## Source of Truth
 
-- Stand: 14. September 2026
-- WordPress Theme: 20.2.0
-- Core Plugin: 1.0.0
-- Zielsystem: WordPress
-- Öffentliche Vorschau/Referenz: https://merzenich-aktuell-v19.luiskummer.chatgpt.site
+- Repository: `HKGrowthOperator/Merzenich-Aktuell`
+- Branch: `main`
+- Öffentliche historische Referenz: https://merzenich-aktuell-v19.luiskummer.chatgpt.site
+- Dieses Repository ist ab 16.09.2026 der zentrale technische Arbeitsstand für Frontend, Dokumentation und WordPress-Lieferung.
 
-## Architektur
+## Arbeitsregel für zukünftige Chats
 
-Das Theme enthält Präsentation und Templates. Dauerhafte Funktionen und Datenmodelle liegen im Core-Plugin. Dazu gehören u. a. Nachrichten, Orte, Veranstaltungen, Vereine/Betriebe, Immobilien, Stellen, Trauer- und Familienanzeigen, Werbung, Wetter, Kommentare, Sport, Quellenradar, Formulare sowie KI-/Human-Review-Metadaten.
+Immer zuerst diesen Stand laden und gezielt ändern. **Kein neues Parallelprojekt, kein Redesign-Fork, keine v21/v22/v23-Kopie.**
+
+In einem neuen Chat genügt:
+
+> Arbeite weiter an `HKGrowthOperator/Merzenich-Aktuell`, Branch `main`. Lies zuerst `PROJECT.md` und ändere ausschließlich diesen Stand.
+
+## Repository-Struktur
+
+- Root: dauerhaft editierbares Frontend / visuelle Vorschau
+- `docs/`: Projektstand, Anforderungen, Installation, QA, Content- und Bilddokumentation
+- `wordpress-delivery/`: eingefrorene WordPress-ZIPs und Importdatei
+- `qa/`: Screenshots und visuelle Prüfungen
+- `archive/`: historische Gesamtpakete, sofern sinnvoll
 
 ## Design-/Produktgrundsätze
 
@@ -23,17 +34,19 @@ Das Theme enthält Präsentation und Templates. Dauerhafte Funktionen und Datenm
 - aktuelle Hero-/Featured-Logik; alte Stories laufen automatisch aus
 - echte lokale Inhalte, keine Fake-News und keine erfundenen Marktangebote
 - echte bzw. rechtlich nutzbare Bilder mit Credit/Quelle
-- WordPress ist das produktive CMS; die ChatGPT-Site ist nur Vorschau/Referenz
+- WordPress-Lieferung bleibt technisch getrennt vom Frontend
 
-## Repository-Struktur
+## Frontend-Datenlogik
 
-- `docs/` – Projektstand, Anforderungen, Installation und Lieferdokumentation
-- `imports/` – WordPress-Importdateien, sobald vollständig als Datei verfügbar
-- `wordpress/theme/` – Theme-Quellcode, sobald aus dem bestehenden Lieferpaket eingebracht
-- `wordpress/plugin/` – Core-Plugin-Quellcode, sobald aus dem bestehenden Lieferpaket eingebracht
+`content.json` ist die zentrale Datenquelle der aktuellen Frontend-Preview für Artikel, Veranstaltungen, Sport und Werbeslots.
 
-## Wichtiger Hinweis zum aktuellen Push
+`app.js` enthält Hero-Priorisierung, Event-Filter, Wetterabruf mit Cache/Fallback, Uhrzeit/Datum, Suche und Ressort-Routing.
 
-Das Repository war beim Start leer. Die vorhandenen Projektunterlagen werden hier zentralisiert. Die bereits dokumentierten Binärpakete `merzenich-aktuell-theme.zip` und `merzenich-aktuell-core.zip` sind in den bisherigen Unterlagen referenziert, standen in dieser Sitzung aber nicht als direkt übertragbare Binärdateien zur Verfügung. Es werden **keine leeren oder erfundenen ZIP-Dateien** committed.
+## Statusbegriffe
 
-Siehe `docs/ARTIFACT-STATUS.md` für den genauen Stand.
+- `LOCAL READY`: Source vorhanden, noch nicht öffentlich deployed
+- `STAGING READY`: auf echter Hosting-Stagingumgebung geprüft
+- `LIVE READY`: alle Gates bestanden und Deployment möglich
+- `LIVE DEPLOYED`: öffentliche URL geprüft
+
+Nur `LIVE DEPLOYED` bedeutet öffentlich fertig.
