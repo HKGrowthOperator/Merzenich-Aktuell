@@ -1,7 +1,9 @@
 /*
  * Homepage polish 16.09.2026
  * Nur progressive Korrekturen am ausgelieferten Stand. Reale CMS-Anzeigen mit
- * Bild werden niemals ueberschrieben.
+ * Bild werden niemals ueberschrieben. Beide Auftraggeber-Anzeigen (KBS Management,
+ * AJ Sports Entertainment) sind laut Vorgabe §2 immer sichtbar - ohne Bild als
+ * Textmotiv, nie als Platzhalter.
  */
 (() => {
   'use strict';
@@ -39,7 +41,7 @@
         <span class="ma-display-ad__label">Anzeige</span>
         <a href="https://kbs-management.tv/" target="_blank" rel="noopener sponsored" aria-label="Anzeige von KBS Management GmbH">
           <span class="ma-display-ad__creative">
-            <img src="https://kbs-management.tv/wp-content/themes/kbs/kbs-logo.png" alt="KBS Management GmbH" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+            <img src="https://kbs-management.tv/wp-content/themes/kbs/kbs-logo.png" alt="KBS Management GmbH" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.hidden=true">
             <span class="ma-display-ad__copy">
               <strong>KBS Management</strong>
               <span>App · Software · Broadcast · IT Consultancy</span>
@@ -48,10 +50,18 @@
           </span>
         </a>
       </div>
-      <a class="ma-ad-booking" href="/werben/" data-ad-slot="homepage_sidebar_middle">
-        <span>Dieser Platz wird im WordPress-Backend mit einem echten Banner belegt.</span>
-        <strong>Werbefläche anfragen</strong>
-      </a>`;
+      <div class="ma-display-ad ma-display-ad--text" data-ad-slot="homepage_sidebar_middle">
+        <span class="ma-display-ad__label">Anzeige</span>
+        <a href="/werben/" aria-label="Anzeige von AJ Sports Entertainment">
+          <span class="ma-display-ad__creative ma-display-ad__creative--text">
+            <span class="ma-display-ad__copy">
+              <strong>AJ Sports Entertainment</strong>
+              <span>Merzenich · Kreis Düren</span>
+              <em>Mehr erfahren</em>
+            </span>
+          </span>
+        </a>
+      </div>`;
   }
 
   function start() {

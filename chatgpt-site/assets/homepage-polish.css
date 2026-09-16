@@ -63,6 +63,8 @@
 .ma-display-ad__copy span{display:block;margin-top:9px;font-size:12px;line-height:1.55;color:#ddd}
 .ma-display-ad__copy em{display:inline-block;margin-top:18px;padding-top:10px;border-top:1px solid rgba(255,255,255,.35);font-size:11px;font-style:normal;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}
 .ma-display-ad>a:hover .ma-display-ad__copy em,.ma-display-ad>a:focus-visible .ma-display-ad__copy em{text-decoration:underline;text-underline-offset:4px}
+.ma-display-ad__creative--text{display:flex;align-items:flex-end;min-height:180px;aspect-ratio:auto}
+.ma-display-ad__creative--text .ma-display-ad__copy{border-top:0;width:100%}
 .ma-ad-booking{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line,#dedede);border-bottom:1px solid var(--line,#dedede);font-size:11px;color:#666;text-decoration:none}
 .ma-ad-booking strong{color:var(--ink,#17191b);font-size:12px}
 .ma-ad-booking:hover strong,.ma-ad-booking:focus-visible strong{text-decoration:underline;text-underline-offset:3px}
