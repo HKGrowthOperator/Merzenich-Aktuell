@@ -18,9 +18,19 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 
 Bestehende gute Komponenten schützen. Änderungen klein, nachvollziehbar und gezielt durchführen. Kein Parallelprojekt und keine v21/v22/v23-Kopie.
 
+## Darstellung — verbindlich
+
+- Standardansicht ist **Hell**.
+- Es gibt genau zwei manuell wählbare Modi: **Hell** und **Dunkel**.
+- Die Umschaltung ist oben über **Darstellung / Einstellungen** erreichbar; im Einstellungs-Panel steht sie an erster Stelle.
+- Auswahl wird lokal auf dem Gerät gespeichert.
+- Hellmodus: weißer Header und helle redaktionelle Seite.
+- Dunkelmodus: schwarzer Header, dunkle Seite und schwarzer Footer mit entsprechend angepassten Kontrasten.
+- Kein automatischer Systemmodus als Standard. Nutzerentscheidung hat Vorrang.
+
 ## Header — verbindlich
 
-- Hintergrund `#FFFFFF`
+- Hintergrund im Hellmodus `#FFFFFF`; im Dunkelmodus schwarz/dunkel entsprechend dem Theme
 - sticky, `top:0`
 - kein Abstand oberhalb
 - keine Floating Island, keine Capsule, keine große Rundung
@@ -175,7 +185,7 @@ Claim schützen:
 
 > Internet-Zeitung für die Gemeinde Merzenich und Umkreis.
 
-Footer kompakt halten. Nur Spacing, Typografie, Ausrichtung und Responsive polieren.
+Footer kompakt halten. Nur Spacing, Typografie, Ausrichtung und Responsive polieren. Im Dunkelmodus ist der Footer schwarz/dunkel; im Hellmodus bleibt er hell.
 
 ## Content-Refresh vor Release
 
