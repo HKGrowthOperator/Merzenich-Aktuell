@@ -41,3 +41,38 @@
 .masthead .logo img{height:58px;width:auto;max-width:100%;object-fit:contain}
 @media (max-width:900px){.masthead .logo img{height:46px}}
 @media (max-width:560px){.masthead .logo img{height:38px}}
+
+/* Werbeplaetze: Textfall, solange kein Bildmaterial vorliegt.
+   Nutzt die Klassen der ausgelieferten Gestaltung (.portal-ads/.managed-ad). */
+.managed-ad{position:relative;border:1px solid var(--line,#e2ded6);background:#fff;padding:12px}
+/* style.css setzt .ad-label absolut; ohne positionierten Vorfahren landen alle
+   Kennzeichnungen uebereinander ausserhalb der Flaeche. Hier statisch und sichtbar. */
+.managed-ad .ad-label{position:static;display:block;margin:0 0 8px;font-size:10px;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:#727272;background:none;padding:0}
+.managed-ad>a,.managed-ad>.ad-in{display:flex;align-items:center;justify-content:center;
+  min-height:96px;border-top:2px solid var(--gold,#c8a24e);padding-top:12px;text-decoration:none}
+.managed-ad .ad-name{font-family:Newsreader,Georgia,serif;font-size:18px;font-weight:600;
+  color:#2b2b2b;text-align:center;line-height:1.25}
+.managed-ad .ad-name small{display:block;margin-top:5px;font-family:inherit;font-size:10px;
+  font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#727272}
+.ad-row-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.ad-row-body .managed-ad{margin:0}
+
+@media (max-width:900px){.portal-ads{grid-template-columns:1fr 1fr;gap:16px}}
+@media (max-width:560px){.ad-row-body{grid-template-columns:1fr;gap:14px}}
+@media (max-width:560px){.portal-ads{grid-template-columns:1fr}}
+
+/* recovery.css teilt .front-side bei aktiven Anzeigen in zwei Spalten.
+   Die Regel hat keine Ruecksetzung fuer schmale Fenster; dort laeuft die
+   Ortsmarke aus der Karte heraus. Der Anzeigenpfad war bisher nie aktiv. */
+@media (max-width:900px){
+  .portal-top.has-ads .front-side{grid-template-columns:1fr}
+}
+
+/* Vorgefunden, nicht durch die Anzeigen verursacht: auf /thema/ ist der body
+   ein Flex-Container, und die Navigationsleiste kann als Flex-Element nicht
+   schrumpfen. Dadurch wird das Dokument dort 760px breit und die Seite laesst
+   sich auf dem Telefon seitlich schieben. min-width:0 gibt das Schrumpfen frei;
+   der Streifen scrollt wie vorgesehen in sich selbst. */
+body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
+.mainnav .navrow,.mainnav .navscroll,.districtbar>.shell{min-width:0}
