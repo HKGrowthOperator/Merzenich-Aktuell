@@ -47,6 +47,34 @@ Dockerfile. `Base Directory` muss auf `/` stehen bleiben: der Dockerfile kopiert
 "Automatic Deployment" einschalten, dann baut jeder Push auf `main` die
 Vorschau neu.
 
+## Wenn statt der Seite "Bad Gateway" kommt
+
+Das kommt von Traefik, nicht von nginx: die Route existiert, dahinter antwortet
+nichts. Der Container ist dann meist in Ordnung - der Healthcheck in diesem
+Dockerfile ruft `http://127.0.0.1:80/` von innen ab, und ein gruenes "healthy"
+im Deploy-Log heisst, dass nginx laeuft und die Startseite ausliefert.
+
+Bleibt also der Weg von Traefik zum Container:
+
+1. **Ports Exposes** muss `80` sein. Ist das Feld leer, raet Coolify `3000` -
+   dort lauscht nichts, und genau das ergibt 502. **Port Mappings** bleibt leer.
+   Kontrolle unten bei "Labels": dort muss
+   `loadbalancer.server.port=80` stehen.
+2. Danach **Redeploy**, nicht nur Restart. Redeploy schreibt die Labels neu;
+   ein Restart startet den alten Container mit den alten Labels.
+3. Hilft das nicht: Servers -> localhost -> Proxy -> Restart. Das ist Traefik
+   selbst, nicht die Anwendung.
+4. Browser hart neu laden - 502-Antworten werden gern zwischengespeichert.
+
+Gegentest im **Terminal**-Tab der Anwendung:
+
+```bash
+wget -qO- http://localhost/ | head -5
+```
+
+Kommt `<!doctype html>`, ist der Container in Ordnung und der Fehler liegt
+zwischen Traefik und Container.
+
 ## Nach dem Anlegen pruefen
 
 ```bash
