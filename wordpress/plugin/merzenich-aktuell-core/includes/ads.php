@@ -24,9 +24,16 @@ function ma_active_ad(string $slot): ?WP_Post {
 }
 function ma_render_ad(string $slot): string {
     $ad=ma_active_ad($slot); if (!$ad) return '';
-    $url=esc_url((string)get_post_meta($ad->ID,'ma_ad_url',true)); $sponsor=esc_html((string)get_post_meta($ad->ID,'ma_ad_sponsor',true));
+    $url=esc_url((string)get_post_meta($ad->ID,'ma_ad_url',true));
+    $sponsor=esc_html((string)get_post_meta($ad->ID,'ma_ad_sponsor',true));
     $img=get_the_post_thumbnail_url($ad,'large');
-    $body=$img?'<img src="'.esc_url($img).'" alt="'.esc_attr(get_the_title($ad)).'">':'<span>'.esc_html(get_the_title($ad)).'</span>';
+
+    // Eine bezahlte Displayflaeche ist kein Text-Platzhalter. Ohne hinterlegtes
+    // Creative bleibt der Slot leer und erzeugt gemaess Projektregel auch keinen
+    // Leerraum. Sobald im Backend ein Bannerbild gesetzt ist, wird es ausgeliefert.
+    if (!$img) return '';
+
+    $body='<img src="'.esc_url($img).'" alt="'.esc_attr(get_the_title($ad)).'" loading="lazy" decoding="async">';
     if ($url) $body='<a href="'.$url.'" rel="sponsored noopener" target="_blank">'.$body.'</a>';
     return '<aside class="ma-ad ma-ad--'.esc_attr($slot).'" aria-label="Anzeige"><small>ANZEIGE</small>'.$body.($sponsor?'<p>'.$sponsor.'</p>':'').'</aside>';
 }
