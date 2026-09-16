@@ -19,7 +19,15 @@ function ma_admin_field_value(int $post_id, string $key): string {
     return (string)get_post_meta($post_id, $key, true);
 }
 
+function ma_admin_datetime_input_value(string $value): string {
+    if ($value === '') return '';
+    if (preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/', $value)) return substr($value, 0, 16);
+    if (preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}/', $value)) return str_replace(' ', 'T', substr($value, 0, 16));
+    return '';
+}
+
 function ma_admin_input(string $name, string $label, string $value='', string $type='text', string $placeholder='', string $description=''): void {
+    if ($type === 'datetime-local') $value = ma_admin_datetime_input_value($value);
     echo '<tr><th scope="row"><label for="'.esc_attr($name).'">'.esc_html($label).'</label></th><td>';
     echo '<input class="regular-text" type="'.esc_attr($type).'" id="'.esc_attr($name).'" name="'.esc_attr($name).'" value="'.esc_attr($value).'"'.($placeholder!==''?' placeholder="'.esc_attr($placeholder).'"':'').'>';
     if ($description!=='') echo '<p class="description">'.esc_html($description).'</p>';
@@ -39,33 +47,35 @@ function ma_admin_select(string $name, string $label, string $value, array $opti
     echo '</select></td></tr>';
 }
 
-function ma_admin_checkbox(string $name, string $label, bool $checked, string $description=''): void {
-    echo '<tr><th scope="row">'.esc_html($label).'</th><td><label><input type="checkbox" name="'.esc_attr($name).'" value="1" '.checked($checked,true,false).'> Aktiv</label>';
+function ma_admin_checkbox(string $name, string $label, bool $checked, string $description='', string $check_text='Aktiv'): void {
+    echo '<tr><th scope="row">'.esc_html($label).'</th><td><label><input type="checkbox" name="'.esc_attr($name).'" value="1" '.checked($checked,true,false).'> '.esc_html($check_text).'</label>';
     if ($description!=='') echo '<p class="description">'.esc_html($description).'</p>';
     echo '</td></tr>';
 }
 
-function ma_admin_meta_box_start(string $nonce_action): void {
-    wp_nonce_field($nonce_action, 'ma_content_admin_nonce');
+function ma_admin_meta_box_start(): void {
+    wp_nonce_field('ma_save_content_admin', 'ma_content_admin_nonce');
     echo '<table class="form-table" role="presentation">';
 }
 
 function ma_admin_meta_box_end(): void { echo '</table>'; }
 
 function ma_render_event_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    $source = ma_admin_field_value($post->ID,'ma_event_source_url');
+    if ($source === '') $source = ma_admin_field_value($post->ID,'ma_source_url');
+    ma_admin_meta_box_start();
     ma_admin_input('ma_event_start','Beginn',ma_admin_field_value($post->ID,'ma_event_start'),'datetime-local','','Datum und Uhrzeit des Starts.');
     ma_admin_input('ma_event_end','Ende',ma_admin_field_value($post->ID,'ma_event_end'),'datetime-local','','Bei eintägigen Terminen optional; ohne Ende gilt der Start als Ablaufzeit.');
     ma_admin_input('ma_event_place','Ort / Veranstaltungsstätte',ma_admin_field_value($post->ID,'ma_event_place'),'text','Bürgerhaus Merzenich');
     ma_admin_input('ma_event_organizer','Veranstalter',ma_admin_field_value($post->ID,'ma_event_organizer'),'text','Gemeinde / Verein / Initiative');
-    ma_admin_input('ma_event_source_url','Quelle / Veranstaltungslink',ma_admin_field_value($post->ID,'ma_event_source_url'),'url','https://...');
+    ma_admin_input('ma_event_source_url','Quelle / Veranstaltungslink',$source,'url','https://...');
     ma_admin_input('ma_event_price','Eintritt / Kosten',ma_admin_field_value($post->ID,'ma_event_price'),'text','kostenfrei / 10 €');
     ma_admin_textarea('ma_event_registration','Anmeldung / Hinweise',ma_admin_field_value($post->ID,'ma_event_registration'),'Optional: Anmeldung, Treffpunkt oder besondere Hinweise.');
     ma_admin_meta_box_end();
 }
 
 function ma_render_property_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    ma_admin_meta_box_start();
     ma_admin_select('ma_property_mode','Art',ma_admin_field_value($post->ID,'ma_property_mode'),['rent'=>'Mieten','buy'=>'Kaufen']);
     ma_admin_input('ma_property_price','Preis',ma_admin_field_value($post->ID,'ma_property_price'),'text','1.250 € / Monat oder 385.000 €');
     ma_admin_input('ma_property_rooms','Zimmer',ma_admin_field_value($post->ID,'ma_property_rooms'),'number','4');
@@ -76,23 +86,25 @@ function ma_render_property_meta_box(WP_Post $post): void {
     ma_admin_input('ma_property_contact','Kontakt',ma_admin_field_value($post->ID,'ma_property_contact'),'text','E-Mail / Telefon');
     ma_admin_input('ma_property_url','Externer Link',ma_admin_field_value($post->ID,'ma_property_url'),'url','https://...');
     ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Anzeige nicht mehr als aktiv ausgespielt.');
+    ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Nur veröffentlichen, wenn die Freigabe des Auftraggebers dokumentiert ist.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
 
 function ma_render_job_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    ma_admin_meta_box_start();
     ma_admin_input('ma_job_company','Unternehmen',ma_admin_field_value($post->ID,'ma_job_company'),'text','Unternehmen GmbH');
     ma_admin_input('ma_job_location','Arbeitsort',ma_admin_field_value($post->ID,'ma_job_location'),'text','Merzenich');
-    ma_admin_select('ma_job_employment','Beschäftigungsart',ma_admin_field_value($post->ID,'ma_job_employment'),[''=>'Bitte wählen','fulltime'=>'Vollzeit','parttime'=>'Teilzeit','minijob'=>'Minijob','training'=>'Ausbildung','internship'=>'Praktikum','freelance'=>'Freie Mitarbeit']);
+    ma_admin_select('ma_job_type','Beschäftigungsart',ma_admin_field_value($post->ID,'ma_job_type'),[''=>'Bitte wählen','fulltime'=>'Vollzeit','parttime'=>'Teilzeit','minijob'=>'Minijob','training'=>'Ausbildung','internship'=>'Praktikum','freelance'=>'Freie Mitarbeit']);
     ma_admin_input('ma_job_hours','Arbeitszeit / Umfang',ma_admin_field_value($post->ID,'ma_job_hours'),'text','40 Std. / Woche');
     ma_admin_input('ma_job_contact','Ansprechpartner',ma_admin_field_value($post->ID,'ma_job_contact'),'text','Name / E-Mail / Telefon');
     ma_admin_input('ma_job_apply_url','Bewerbungslink',ma_admin_field_value($post->ID,'ma_job_apply_url'),'url','https://...');
     ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Stelle nicht mehr als aktiv ausgespielt.');
+    ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Nur veröffentlichen, wenn die Freigabe des Unternehmens dokumentiert ist.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
 
 function ma_render_obituary_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    ma_admin_meta_box_start();
     ma_admin_input('ma_obituary_name','Name',ma_admin_field_value($post->ID,'ma_obituary_name'),'text','Vorname Nachname');
     ma_admin_input('ma_obituary_birth','Geburtsdatum',ma_admin_field_value($post->ID,'ma_obituary_birth'),'date');
     ma_admin_input('ma_obituary_death','Sterbedatum',ma_admin_field_value($post->ID,'ma_obituary_death'),'date');
@@ -101,23 +113,26 @@ function ma_render_obituary_meta_box(WP_Post $post): void {
     ma_admin_textarea('ma_obituary_family','Familienangabe',ma_admin_field_value($post->ID,'ma_obituary_family'),'Nur veröffentlichen, wenn die Angabe freigegeben ist.');
     ma_admin_input('ma_obituary_contact','Interner Kontakt',ma_admin_field_value($post->ID,'ma_obituary_contact'),'text','','Nicht automatisch öffentlich ausgeben.');
     ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local');
+    ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Für sensible personenbezogene Angaben muss die Freigabe dokumentiert sein.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
 
 function ma_render_family_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    ma_admin_meta_box_start();
     ma_admin_select('ma_family_kind','Anlass',ma_admin_field_value($post->ID,'ma_family_kind'),['birth'=>'Geburt','wedding'=>'Hochzeit','anniversary'=>'Jubiläum','thanks'=>'Danksagung','congratulations'=>'Glückwunsch','other'=>'Sonstiges']);
     ma_admin_input('ma_family_date','Datum',ma_admin_field_value($post->ID,'ma_family_date'),'date');
     ma_admin_input('ma_family_place','Ort',ma_admin_field_value($post->ID,'ma_family_place'),'text','Merzenich');
     ma_admin_input('ma_family_contact','Interner Kontakt',ma_admin_field_value($post->ID,'ma_family_contact'),'text','','Nicht automatisch öffentlich ausgeben.');
     ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local');
+    ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Für personenbezogene Angaben und Bilder muss die Freigabe dokumentiert sein.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
 
 function ma_render_ad_meta_box(WP_Post $post): void {
-    ma_admin_meta_box_start('ma_save_content_admin');
+    ma_admin_meta_box_start();
     ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Slot in Merzenich Aktuell → Werbung aktiviert sein.');
-    ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),array_combine(ma_ad_slots(),ma_ad_slots()));
+    $slots = ma_ad_slots();
+    ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),array_combine($slots,$slots));
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
     ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
@@ -127,7 +142,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
 }
 
 function ma_content_admin_schema(string $post_type): array {
-    $common_end = ['ma_end_at'=>'datetime'];
+    $common_end = ['ma_end_at'=>'datetime','ma_release_confirmed'=>'bool'];
     $schema = [
         'ma_event'=>[
             'ma_event_start'=>'datetime','ma_event_end'=>'datetime','ma_event_place'=>'text','ma_event_organizer'=>'text','ma_event_source_url'=>'url','ma_event_price'=>'text','ma_event_registration'=>'textarea',
@@ -136,7 +151,7 @@ function ma_content_admin_schema(string $post_type): array {
             'ma_property_mode'=>'text','ma_property_price'=>'text','ma_property_rooms'=>'number','ma_property_area'=>'text','ma_property_lot'=>'text','ma_property_address'=>'text','ma_property_provider'=>'text','ma_property_contact'=>'text','ma_property_url'=>'url',
         ]),
         'ma_job'=>array_merge($common_end,[
-            'ma_job_company'=>'text','ma_job_location'=>'text','ma_job_employment'=>'text','ma_job_hours'=>'text','ma_job_contact'=>'text','ma_job_apply_url'=>'url',
+            'ma_job_company'=>'text','ma_job_location'=>'text','ma_job_type'=>'text','ma_job_hours'=>'text','ma_job_contact'=>'text','ma_job_apply_url'=>'url',
         ]),
         'ma_obituary'=>array_merge($common_end,[
             'ma_obituary_name'=>'text','ma_obituary_birth'=>'date','ma_obituary_death'=>'date','ma_obituary_place'=>'text','ma_obituary_funeral'=>'textarea','ma_obituary_family'=>'textarea','ma_obituary_contact'=>'text',
@@ -158,7 +173,11 @@ function ma_sanitize_content_admin_value(string $type, $value): string {
     if ($type==='bool') return $value ? '1' : '0';
     if ($type==='textarea') return sanitize_textarea_field((string)$value);
     if ($type==='date') return preg_match('/^\d{4}-\d{2}-\d{2}$/',(string)$value) ? (string)$value : '';
-    if ($type==='datetime') return preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/',(string)$value) ? (string)$value : '';
+    if ($type==='datetime') {
+        $raw=(string)$value;
+        if (!preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/',$raw)) return '';
+        return str_replace('T',' ',$raw).':00';
+    }
     return sanitize_text_field((string)$value);
 }
 
@@ -175,5 +194,10 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         $value = ma_sanitize_content_admin_value($type,$raw);
         if ($value==='') delete_post_meta($post_id,$key);
         else update_post_meta($post_id,$key,$value);
+    }
+
+    if ($post->post_type === 'ma_event') {
+        $source = (string)get_post_meta($post_id,'ma_event_source_url',true);
+        if ($source !== '') update_post_meta($post_id,'ma_source_url',$source);
     }
 }
