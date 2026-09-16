@@ -124,6 +124,16 @@ function ma_sport_table_from_request(): array {
 function ma_sport_settings_page(): void {
     if (!current_user_can('manage_options')) return;
 
+    if (isset($_POST['ma_sport_import']) && check_admin_referer('ma_sport_save')) {
+        $ergebnis = ma_sport_import_from_json((string)wp_unslash($_POST['sport_json'] ?? ''));
+        if (is_wp_error($ergebnis)) {
+            echo '<div class="notice notice-error"><p>Import fehlgeschlagen: '.esc_html($ergebnis->get_error_message()).'</p></div>';
+        } else {
+            update_option('ma_sport_data',$ergebnis);
+            echo '<div class="notice notice-success"><p>Datenstand aus JSON übernommen ('.esc_html($ergebnis['checked_at']).'). Unten prüfen und bei Bedarf korrigieren.</p></div>';
+        }
+    }
+
     if (isset($_POST['ma_sport_save']) && check_admin_referer('ma_sport_save')) {
         $data = [
             'checked_at'=>sanitize_text_field(wp_unslash($_POST['checked_at'] ?? '')),
@@ -145,6 +155,10 @@ function ma_sport_settings_page(): void {
 
     echo '<div class="wrap"><h1>Sport</h1><p>Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden hier gemeinsam gepflegt. Keine JSON-Eingabe erforderlich.</p><form method="post">';
     wp_nonce_field('ma_sport_save');
+
+    echo '<h2>Aus JSON übernehmen</h2><p>Denselben Datenstand, den die statische Seite unter <code>/api/sport-current.json</code> ausliefert, hier einfügen. Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden daraus gefüllt; ein unbestätigtes Ergebnis landet als offenes Spiel.</p>';
+    echo '<textarea name="sport_json" rows="6" style="width:100%;max-width:900px;font-family:monospace" placeholder=\'{"generated":"…","sourceUrl":"…","lastMatch":{…},"nextMatch":{…},"table":[…]}\'></textarea>';
+    echo '<p><button class="button" name="ma_sport_import">Aus JSON übernehmen</button></p>';
 
     echo '<h2>Gemeinsamer Datenstand</h2><table class="form-table"><tr><th><label for="checked_at">Datenstand</label></th><td><input class="regular-text" id="checked_at" name="checked_at" value="'.esc_attr((string)($d['checked_at'] ?? '')).'" placeholder="16.09.2026 · 11:30 Uhr"></td></tr><tr><th><label for="source_url">Quelle</label></th><td><input class="regular-text" type="url" id="source_url" name="source_url" value="'.esc_attr((string)($d['source_url'] ?? '')).'" placeholder="https://..."></td></tr></table>';
 
