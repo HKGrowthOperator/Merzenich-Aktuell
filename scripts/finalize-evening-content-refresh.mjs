@@ -38,7 +38,6 @@ const editorial = {
 };
 writeFileSync(join(site, 'api/editorial-current.json'), JSON.stringify(editorial, null, 2) + '\n');
 
-// One exact unresolved asset must not leak into any public HTML/JSON.
 const walk = (dir, exts, fn) => {
   if (!existsSync(dir)) return;
   for (const name of readdirSync(dir)) {
@@ -48,6 +47,8 @@ const walk = (dir, exts, fn) => {
   }
 };
 
+// Rights-safe replacements plus one legacy generator route correction:
+// `Merzenich` is a locality page (`/merzenich/`), not a generated topic page.
 walk(site, ['.html', '.json', '.xml'], file => {
   let text = readFileSync(file, 'utf8');
   const before = text;
@@ -57,7 +58,9 @@ walk(site, ['.html', '.json', '.xml'], file => {
     .replaceAll('Vereinslogo des SC 1919 Merzenich', 'Symbolbild Sport – kein Vereinsfoto')
     .replaceAll('Vereinslogo SC 1919 Merzenich', 'Symbolbild Sport – kein Vereinsfoto')
     .replaceAll('Vereinswappen des SC 1919 Merzenich', 'Symbolbild Sport – kein Vereinsfoto')
-    .replaceAll('Offizielles Vereinslogo', 'Symbolbild');
+    .replaceAll('Offizielles Vereinslogo', 'Symbolbild')
+    .replaceAll('href="/thema/merzenich/"', 'href="/merzenich/"')
+    .replaceAll("href='/thema/merzenich/'", "href='/merzenich/'");
   if (text !== before) writeFileSync(file, text);
 });
 
@@ -91,7 +94,6 @@ if (existsSync(latestPath)) {
   writeFileSync(latestPath, JSON.stringify(latest, null, 2) + '\n');
 }
 
-// Guardrails: rights-sensitive logo reference and stale stand must be absent.
 const offenders = [];
 walk(site, ['.html', '.json', '.xml'], file => {
   const text = readFileSync(file, 'utf8');
@@ -99,4 +101,4 @@ walk(site, ['.html', '.json', '.xml'], file => {
 });
 if (offenders.length) throw new Error('Unresolved SC logo still referenced in public site: ' + offenders.join(', '));
 
-console.log('Rights-safe finalization complete: sport hero retained, police item secondary, unresolved club logo removed.');
+console.log('Rights-safe finalization complete: sport hero retained, police item secondary, unresolved club logo removed, locality links normalized.');
