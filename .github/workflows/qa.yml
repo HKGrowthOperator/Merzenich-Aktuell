@@ -135,6 +135,13 @@ jobs:
           mkdir -p qa/after
           cat > .qa-capture.mjs <<'EOF'
           import { chromium } from 'playwright';
+          import { readFileSync } from 'node:fs';
+
+          // Der Aufmacher wird redaktionell in api/editorial-current.json gesetzt;
+          // der Test erwartet genau diesen Titel und keinen fest verdrahteten.
+          const editorial = JSON.parse(readFileSync('chatgpt-site/api/editorial-current.json', 'utf8'));
+          const expectedHero = String(editorial.hero?.title || '').trim();
+          if (!expectedHero) throw new Error('editorial-current.json: hero.title fehlt');
 
           const browser = await chromium.launch({ headless: true });
           const base = 'http://127.0.0.1:4173';
@@ -158,7 +165,7 @@ jobs:
           await shot('home-desktop', '/', { width: 1440, height: 1000 }, '.front-lead h1', async page => {
             await page.waitForSelector('.header-weather', { timeout: 12000 });
             const title = (await page.locator('.front-lead h1').textContent() || '').trim();
-            if (title !== 'SC Merzenich gewinnt 3:2 gegen BC Oberzier') throw new Error(`Homepage hero stale/unexpected: ${title}`);
+            if (title !== expectedHero) throw new Error(`Homepage hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
             const unavailable = await page.getByText('Wetterdaten sind derzeit nicht verfügbar.').count();
             if (unavailable) throw new Error('Homepage still shows weather unavailable fallback');
             const top = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
@@ -179,7 +186,7 @@ jobs:
 
           await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
             const title = (await page.locator('.front-lead h1').textContent() || '').trim();
-            if (title !== 'SC Merzenich gewinnt 3:2 gegen BC Oberzier') throw new Error(`Mobile hero stale/unexpected: ${title}`);
+            if (title !== expectedHero) throw new Error(`Mobile hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
           });
 
           await shot('article-desktop', '/blaulicht/einbruch-arnoldsweilerweg/', { width: 1440, height: 1000 }, '.article-head h1');
