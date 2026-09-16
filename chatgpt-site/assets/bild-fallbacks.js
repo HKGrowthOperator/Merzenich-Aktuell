@@ -73,17 +73,22 @@
 
   function bildKey(root = document) {
     const t = kontextText(root);
-    if (/\/jobs\/|stellenmarkt|stellenangebot|karriere|arbeitgeber/.test(t)) return 'jobs';
-    if (/\/immobilien\/|immobilienmarkt|wohnung|haus|grundstueck|grundstück/.test(t)) return 'immobilien';
-    if (/\/sport\/|\bsport\b|fussball|fußball|sc 1919/.test(t)) return 'sport';
-    if (/\/termine\/|\/vereine\/|veranstaltung|termin|vereinsleben/.test(t)) return 'termine';
-    if (/\/leben\/|\/menschen\/|kirche|schule|kultur|soziales/.test(t)) return 'leben';
-    if (/\/rathaus\/|politik|gemeinde|verwaltung|ratssitzung/.test(t)) return 'gemeinde';
-    if (/\/blaulicht\//.test(t) || /blaulicht/.test(t)) {
+    const path = location.pathname.toLocaleLowerCase('de-DE');
+
+    // Einsatzseiten zuerst klassifizieren. So kann z. B. das Wort "Gemeinde"
+    // in einem Polizeibericht niemals ein Rathausmotiv vor Blaulicht ziehen.
+    if (path.includes('/blaulicht/') || /\bblaulicht\b/.test(t)) {
       if (/feuerwehr|loesch|lösch|brand|brennt|rauch|drehleiter|tierrettung|person hinter t[uü]r|technische hilfe|einsatznummer/.test(t)) return 'feuerwehr';
       if (/polizei|kriminalpolizei|einbruch|fahndung|zeugen|unfallflucht|diebstahl|verkehrskontrolle/.test(t)) return 'polizei';
-      return /\/blaulicht\/einsatz-/.test(t) ? 'feuerwehr' : 'polizei';
+      return path.includes('/blaulicht/einsatz-') ? 'feuerwehr' : 'polizei';
     }
+
+    if (path.includes('/jobs/') || /stellenmarkt|stellenangebot|karriere|arbeitgeber/.test(t)) return 'jobs';
+    if (path.includes('/immobilien/') || /immobilienmarkt|wohnung|haus|grundstueck|grundstück/.test(t)) return 'immobilien';
+    if (path.includes('/sport/') || /\bsport\b|fussball|fußball|sc 1919/.test(t)) return 'sport';
+    if (path.includes('/termine/') || path.includes('/vereine/') || /veranstaltung|termin|vereinsleben/.test(t)) return 'termine';
+    if (path.includes('/leben/') || path.includes('/menschen/') || /kirche|schule|kultur|soziales/.test(t)) return 'leben';
+    if (path.includes('/rathaus/') || /politik|gemeinde|verwaltung|ratssitzung/.test(t)) return 'gemeinde';
     return 'gemeinde';
   }
 
