@@ -1,0 +1,29 @@
+{
+  "generated": "2026-09-16T15:48:00+02:00",
+  "hero": {
+    "id": "2026-09-14-sc-merzenich-oberzier-3-2",
+    "url": "/sport/sc-merzenich-oberzier-3-2/",
+    "title": "SC Merzenich gewinnt 3:2 gegen BC Oberzier",
+    "teaser": "Drei Punkte im Heimspiel: Der SC 1919 Merzenich schlägt den BC Oberzier 3:2 und steht nach vier Spielen mit neun Punkten auf Platz fünf.",
+    "kicker": "Kreisliga A",
+    "eyebrow": "Aktuell · Heimspiel vom 13. September",
+    "location": "MERZENICH",
+    "published": "2026-09-14T09:15:00+02:00",
+    "timeLabel": "14.09. · 09:15 Uhr",
+    "readTime": "1 Min. Lesezeit",
+    "image": "/assets/uploads/sc-1919-merzenich-logo.webp",
+    "imageAlt": "Vereinswappen des SC 1919 Merzenich",
+    "imageBadge": "Offizielles Vereinslogo",
+    "imageFit": "contain"
+  },
+  "secondary": {
+    "id": "2026-09-11-einbruch-arnoldsweilerweg",
+    "url": "/blaulicht/einbruch-arnoldsweilerweg/",
+    "title": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen",
+    "teaser": "Die Kriminalpolizei sicherte Spuren in einem Einfamilienhaus. Die Polizei Düren bittet um Hinweise aus dem Tatzeitraum am 10. September.",
+    "kicker": "Blaulicht",
+    "location": "MERZENICH",
+    "published": "2026-09-11T08:45:00+02:00",
+    "timeLabel": "11.09. · 08:45 Uhr"
+  }
+}
