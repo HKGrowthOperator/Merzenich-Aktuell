@@ -1,0 +1,66 @@
+name: Extract WordPress Source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wordpress-delivery/merzenich-aktuell-theme.zip'
+      - 'wordpress-delivery/merzenich-aktuell-core.zip'
+      - '.github/workflows/extract-wordpress-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Verify delivery ZIPs
+        run: |
+          test -s wordpress-delivery/merzenich-aktuell-theme.zip
+          test -s wordpress-delivery/merzenich-aktuell-core.zip
+          unzip -tq wordpress-delivery/merzenich-aktuell-theme.zip
+          unzip -tq wordpress-delivery/merzenich-aktuell-core.zip
+
+      - name: Extract original Theme and Core source
+        run: |
+          rm -rf wordpress/theme/merzenich-aktuell
+          rm -rf wordpress/plugin/merzenich-aktuell-core
+          rm -f wordpress/theme/README.md
+          rm -f wordpress/plugin/README.md
+
+          mkdir -p wordpress/theme wordpress/plugin
+          unzip -q wordpress-delivery/merzenich-aktuell-theme.zip -d wordpress/theme
+          unzip -q wordpress-delivery/merzenich-aktuell-core.zip -d wordpress/plugin
+
+          test -f wordpress/theme/merzenich-aktuell/style.css
+          test -f wordpress/theme/merzenich-aktuell/functions.php
+          test -f wordpress/plugin/merzenich-aktuell-core/merzenich-aktuell-core.php
+
+          echo 'Extracted theme files:'
+          find wordpress/theme/merzenich-aktuell -type f | sort
+          echo 'Extracted core files:'
+          find wordpress/plugin/merzenich-aktuell-core -type f | sort
+
+      - name: PHP syntax check before commit
+        run: |
+          while IFS= read -r file; do php -l "$file"; done < <(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' -print)
+
+      - name: Commit extracted original source
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add wordpress/theme wordpress/plugin
+          if git diff --cached --quiet; then
+            echo 'No source changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Extract original WordPress theme and core source'
+          git push origin HEAD:main
