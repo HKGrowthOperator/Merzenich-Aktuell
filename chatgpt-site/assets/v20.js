@@ -86,6 +86,10 @@
  const hero=document.querySelector('.front-lead');
  if(!hero)return;
  const safe=s=>String(s??'');
+ // safe() ist fuer textContent gedacht und darf dort nicht escapen. Wo unten
+ // innerHTML geschrieben wird, braucht es die escapende Fassung - die beiden
+ // anderen Bloecke dieser Datei fuehren sie bereits unter demselben Namen.
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const staticTime=hero.querySelector('.meta time');
  const staticDate=staticTime?.dateTime?new Date(staticTime.dateTime):null;
  const stale=!staticDate||!Number.isFinite(+staticDate)||(Date.now()-staticDate.getTime())>7*86400000;
@@ -96,8 +100,8 @@
   const mediaLink=hero.querySelector(':scope > a');
   if(mediaLink)mediaLink.href=h.url;
   const media=hero.querySelector('.media');
-  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){img.src=h.image;img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=h.imageAlt||h.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
-  const location=hero.querySelector('.location-line');if(location&&h.location)location.innerHTML=`<span class="location-brand">${safe(h.location)}</span>`;
+  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){img.src=h.image;img.alt=h.imageAlt||h.title;if(h.imageSrcset){img.srcset=h.imageSrcset;if(h.imageSizes)img.sizes=h.imageSizes;}else{img.removeAttribute('srcset');img.removeAttribute('sizes');}if(h.imageWidth&&h.imageHeight){img.width=h.imageWidth;img.height=h.imageHeight;}else{img.removeAttribute('width');img.removeAttribute('height');}}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
+  const location=hero.querySelector('.location-line');if(location&&h.location)location.innerHTML=`<span class="location-brand">${esc(h.location)}</span>`;
   setText('.kicker',h.kicker);setText('.eyebrow',h.eyebrow);
   const title=hero.querySelector('h1 a');if(title){title.textContent=h.title;title.href=h.url;}
   const teaser=hero.querySelector('.front-lead-copy > p');if(teaser)teaser.textContent=h.teaser||'';
@@ -111,7 +115,7 @@
   let card=side.querySelector('[data-editorial-secondary]');
   if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
   card.dataset.story=s.id||'';
-  card.innerHTML=`<div><div class="location-line"><span class="location-brand">${safe(s.location||'MERZENICH')}</span></div><span class="kicker">${safe(s.kicker||'Aktuell')}</span><h3><a href="${safe(s.url)}">${safe(s.title)}</a></h3><p>${safe(s.teaser||'')}</p><div class="meta"><time datetime="${safe(s.published||'')}">${safe(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${safe(s.url)}">Mehr lesen<span class="sr-only">: ${safe(s.title)}</span></a></div></div>`;
+  card.innerHTML=`<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
  }
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
 })();
