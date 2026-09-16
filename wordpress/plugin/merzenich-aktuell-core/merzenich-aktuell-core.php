@@ -13,6 +13,7 @@ define('MA_CORE_URL', plugin_dir_url(__FILE__));
 
 require_once MA_CORE_PATH . 'includes/content.php';
 require_once MA_CORE_PATH . 'includes/images.php';
+require_once MA_CORE_PATH . 'includes/orte.php';
 require_once MA_CORE_PATH . 'includes/content-admin.php';
 require_once MA_CORE_PATH . 'includes/editorial.php';
 require_once MA_CORE_PATH . 'includes/freigabe.php';

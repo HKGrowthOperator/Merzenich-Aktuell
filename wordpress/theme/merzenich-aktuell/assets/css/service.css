@@ -12,3 +12,4 @@
 .news-card__image .image-credit,.hero__image .image-credit{display:block;margin-top:6px;color:#6b6b6b;font-size:11px;line-height:1.35}
 .news-card__image--symbol img,.hero__image--symbol img,.article-hero--symbol img{background:#141210}
 .hero__image{margin:0}.hero__image img{width:100%;height:auto;display:block}
+.ort-head{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;margin-top:20px}.ort-head__image{margin:0}.ort-head__image img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}.ort-head__image--symbol img{background:#141210}.ort-head__facts p{margin:0 0 10px}.ort-head__address{color:#6b6b6b;font-size:14px}@media(max-width:720px){.ort-head{grid-template-columns:1fr}}

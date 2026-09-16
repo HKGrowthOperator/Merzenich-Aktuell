@@ -7,6 +7,17 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
     <div class="eyebrow">Merzenich Aktuell</div>
     <h1 class="section-title"><?php the_archive_title(); ?></h1>
     <?php if($description=get_the_archive_description()): ?><div class="archive-description"><?php echo wp_kses_post($description); ?></div><?php endif; ?>
+    <?php /* Ortsteilseite: Adresse, Kurzinfo, Quelle und Bild vom Begriff selbst. */
+    if(is_tax('ma_location') && function_exists('ma_ort_info') && ($term=get_queried_object()) instanceof WP_Term): $ort=ma_ort_info($term); ?>
+      <div class="ort-head">
+        <figure class="ort-head__image<?php echo $ort['is_symbol']?' ort-head__image--symbol':''; ?>"><img src="<?php echo esc_url($ort['image']); ?>" alt="<?php echo esc_attr($ort['image_alt']); ?>" loading="lazy" decoding="async"><figcaption class="image-credit"><?php echo esc_html($ort['credit']); ?></figcaption></figure>
+        <div class="ort-head__facts">
+          <?php if($ort['summary']!==''): ?><p><?php echo esc_html($ort['summary']); ?></p><?php endif; ?>
+          <?php if($ort['address']!==''): ?><p class="ort-head__address"><?php echo esc_html($ort['address']); ?></p><?php endif; ?>
+          <?php if($ort['source_url']!==''): ?><p><a class="read-more" href="<?php echo esc_url($ort['source_url']); ?>" target="_blank" rel="noopener noreferrer">Originalquelle</a></p><?php endif; ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </header>
 
   <div class="archive-content-list">
