@@ -145,5 +145,7 @@ jobs:
             echo 'QA screenshots unchanged.'
           else
             git commit -m 'qa: refresh browser screenshots [skip ci]'
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
