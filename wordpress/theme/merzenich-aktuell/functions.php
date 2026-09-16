@@ -9,8 +9,10 @@ add_action('after_setup_theme', function(){
 });
 
 add_action('wp_enqueue_scripts', function(){
-    wp_enqueue_style('ma-style',get_stylesheet_uri(),[],wp_get_theme()->get('Version'));
-    wp_enqueue_script('ma-site',get_template_directory_uri().'/assets/js/site.js',[],wp_get_theme()->get('Version'),true);
+    $version=wp_get_theme()->get('Version');
+    wp_enqueue_style('ma-style',get_stylesheet_uri(),[],$version);
+    wp_enqueue_style('ma-service',get_template_directory_uri().'/assets/css/service.css',['ma-style'],$version);
+    wp_enqueue_script('ma-site',get_template_directory_uri().'/assets/js/site.js',[],$version,true);
 });
 
 function ma_theme_location_label(int $id=0): string {
