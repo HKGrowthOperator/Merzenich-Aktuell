@@ -98,3 +98,34 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .front-brief.editorial-secondary{grid-template-columns:1fr}
 .front-brief.editorial-secondary>div{grid-column:1;grid-row:1}
 .front-brief.editorial-secondary h3{margin-top:4px}
+
+/* Markt (Stellen, Immobilien): vorab gerendert aus market.json, siehe deploy/markt-prerender.mjs */
+.markt-stand{border-top:3px solid var(--ink,#161616);border-bottom:1px solid var(--line,#d9d9d9);padding:14px 0 16px;margin:0 0 8px}
+.markt-stand strong{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.markt-stand p{margin:6px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted,#666);max-width:760px}
+.markt-ort{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:34px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--ink,#161616);font-size:24px;line-height:1.1}
+.markt-ort-eyebrow{flex-basis:100%;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red,#b71920)}
+.markt-ort-count{margin-left:auto;font-size:12px;font-weight:500;color:var(--muted,#666)}
+.markt-hinweis{margin:6px 0 4px;font-size:13px;line-height:1.5;color:var(--muted,#666)}
+.markt-row .eyebrow{display:block;margin-bottom:4px}
+.markt-ort-tag{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#3e3e3e}
+.markt-ort-tag--merzenich{color:var(--red,#b71920)}
+.markt-row h3 a{color:inherit;text-decoration:none}
+.markt-row h3 a:hover,.markt-row h3 a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+.markt-haupt{margin:2px 0 6px;font-size:15px;font-weight:700}
+.markt-row .meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--muted,#666)}
+.markt-row .ev-desc{margin-top:8px;font-size:12.5px;color:var(--muted,#666)}
+.markt-quellen{margin:10px 0 0;padding:12px 0;border-top:1px solid var(--line,#d9d9d9);font-size:13px;line-height:1.7}
+.markt-quellen a{color:var(--red,#b71920);font-weight:700}
+.markt-quellen small{color:var(--muted,#666)}
+.markt-liste .info-prose{max-width:none}
+.markt-mini{display:block;padding:9px 0;border-top:1px solid #ececec;color:inherit;text-decoration:none}
+.markt-mini:first-of-type{border-top:0}
+.markt-mini strong{display:block;font-size:13.5px;line-height:1.3}
+.markt-mini span{display:block;margin-top:3px;font-size:11.5px;color:var(--muted,#666)}
+.markt-mini:hover strong{text-decoration:underline;text-underline-offset:2px}
+.markt-mini-leer{margin:0 0 8px;font-size:12.5px;color:var(--muted,#666)}
+@media (max-width:760px){.markt-ort{font-size:20px}.markt-row .act{flex-direction:column;gap:6px}}
+/* Mobil: die 44px-Etikettspalte ist fuer "Ausbildung" zu schmal - die Art wandert in die Kopfzeile. */
+.markt-art{display:none;font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#3e3e3e}
+@media (max-width:760px){.markt-row{grid-template-columns:minmax(0,1fr)}.markt-row .d{display:none}.markt-row .act{grid-column:1}.markt-art{display:inline}}

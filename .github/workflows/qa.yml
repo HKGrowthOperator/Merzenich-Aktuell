@@ -50,6 +50,9 @@ jobs:
           test -f wordpress/theme/merzenich-aktuell/functions.php
           test -f wordpress/plugin/merzenich-aktuell-core/merzenich-aktuell-core.php
 
+      - name: Markt in der ausgelieferten Seite aktuell?
+        run: node deploy/markt-prerender.mjs --check
+
       - name: Freigabe- und Sport-Logik pruefen
         run: php qa/wordpress/freigabe-test.php && php qa/wordpress/sport-test.php
 
