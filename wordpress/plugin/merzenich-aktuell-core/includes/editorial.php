@@ -7,9 +7,40 @@ function ma_register_editorial_hooks(): void {
     add_filter('wp_insert_post_data','ma_publication_gate',20,2);
 }
 
+/** Inhalte mit Bild brauchen Bildherkunft - nicht nur Beitraege. */
+const MA_IMAGE_PROVENANCE_TYPES = ['ma_property','ma_job','ma_event','ma_club','ma_business','ma_family_notice'];
+
 function ma_editorial_boxes(): void {
     add_meta_box('ma_editorial','Redaktion & Quelle','ma_editorial_box','post','normal','high');
     add_meta_box('ma_ai','KI & redaktionelle Transparenz','ma_ai_box','post','side','default');
+
+    // Bisher gab es Bildcredit, Lizenz und Rechtefreigabe nur am Beitrag. Eine
+    // Immobilie oder eine Stelle konnte damit ein Bild tragen, zu dem nirgends
+    // stand, woher es kommt. Dieselben Feldnamen, nur an mehr Inhaltsarten.
+    // Traueranzeigen bleiben aussen vor, sie zeigen bewusst kein Bild.
+    foreach (MA_IMAGE_PROVENANCE_TYPES as $typ) {
+        add_meta_box('ma_image_provenance','Bildherkunft','ma_image_provenance_box',$typ,'side','default');
+    }
+}
+
+/** Auswahlfeld fuer ma_image_type. */
+function ma_image_type_field(): void {
+    $wert=(string)get_post_meta(get_the_ID(),'ma_image_type',true);
+    echo '<p><label><strong>Bildtyp</strong><br><select style="width:100%" name="ma_image_type">';
+    echo '<option value="">— nicht gesetzt —</option>';
+    foreach (MA_IMAGE_TYPES as $k=>$label) {
+        echo '<option value="'.esc_attr($k).'" '.selected($wert,$k,false).'>'.esc_html($label).'</option>';
+    }
+    echo '</select></label><br><span class="description">Ohne gepruefte Bildrechte oder eingetragene Lizenz liefert die Seite statt des Bildes die gekennzeichnete Ersatzgrafik aus.</span></p>';
+}
+
+function ma_image_provenance_box(): void {
+    wp_nonce_field('ma_editorial_save','ma_editorial_nonce');
+    ma_image_type_field();
+    ma_field('Bildcredit','ma_image_credit');
+    ma_field('Bildlizenz / Freigabe','ma_image_license');
+    ma_field('Original-Bild-URL','ma_image_original_url','url');
+    ma_check('Bildrechte geprüft','ma_image_rights_verified');
 }
 
 function ma_field(string $label,string $name,string $type='text',string $description=''): void {
@@ -34,6 +65,7 @@ function ma_editorial_box(): void {
     ma_field('Last Checked At','ma_source_checked_at','datetime-local');
     ma_field('Redaktionelle Priorität (0–100)','ma_editorial_priority','number','Beeinflusst zusammen mit Aktualität und lokaler Relevanz die automatische Homepage-Priorisierung.');
     ma_field('Aufmacher fixiert bis','ma_top_until','datetime-local','Nur relevant, wenn „Top Story fixiert“ aktiviert ist. Danach soll die Fixierung auslaufen.');
+    ma_image_type_field();
     ma_field('Bildcredit','ma_image_credit');
     ma_field('Bildlizenz / Freigabe','ma_image_license');
     ma_field('Original-Bild-URL','ma_image_original_url','url');
@@ -63,13 +95,23 @@ function ma_editorial_datetime_value($value): string {
 }
 
 function ma_save_editorial_meta(int $post_id): void {
-    if (get_post_type($post_id)!=='post') return;
+    // Die Bildherkunft wird jetzt auch an Immobilien, Stellen, Terminen,
+    // Vereinen und Betrieben gepflegt. Ohne diese Zeile speicherte die neue
+    // Metabox stillschweigend nichts - der haeufigste Fehler beim Ausweiten
+    // einer Metabox auf weitere Inhaltsarten.
+    $typ = get_post_type($post_id);
+    if ($typ !== 'post' && !in_array($typ, MA_IMAGE_PROVENANCE_TYPES, true)) return;
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (wp_is_post_revision($post_id)) return;
     if (!isset($_POST['ma_editorial_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])),'ma_editorial_save')) return;
     if (!current_user_can('edit_post',$post_id)) return;
 
     $text=['ma_source_publisher','ma_image_credit','ma_image_license','ma_ai_use_type','ma_reviewed_by','ma_editorial_responsibility'];
+    // Bildtyp ist eine feste Auswahl. Alles ausserhalb der Liste wird verworfen,
+    // damit der Resolver sich auf den Wert verlassen kann.
+    $bildtyp = isset($_POST['ma_image_type']) ? sanitize_key(wp_unslash($_POST['ma_image_type'])) : '';
+    if ($bildtyp !== '' && isset(MA_IMAGE_TYPES[$bildtyp])) update_post_meta($post_id,'ma_image_type',$bildtyp);
+    elseif (isset($_POST['ma_image_type'])) delete_post_meta($post_id,'ma_image_type');
     $url=['ma_source_url','ma_image_original_url'];
     $datetime=['ma_source_published_at','ma_source_checked_at','ma_top_until','ma_reviewed_at'];
     $number=['ma_editorial_priority'];
@@ -79,7 +121,14 @@ function ma_save_editorial_meta(int $post_id): void {
     foreach($url as $k){$v=isset($_POST[$k])?esc_url_raw(wp_unslash($_POST[$k])):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($datetime as $k){$v=isset($_POST[$k])?ma_editorial_datetime_value($_POST[$k]):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($number as $k){$v=isset($_POST[$k])?max(0,min(100,(int)$_POST[$k])):0;update_post_meta($post_id,$k,(string)$v);}
-    foreach($checks as $k) update_post_meta($post_id,$k,isset($_POST[$k])?'1':'0');
+    foreach($checks as $k) {
+        // Nur Felder anfassen, die das abgeschickte Formular auch kennt. Die
+        // Service-Metabox zeigt allein die Bildrechte; wuerde man hier pauschal
+        // auf '0' setzen, loeschte das Speichern einer Immobilie die
+        // redaktionellen Freigaben eines Beitrags-Workflows mit.
+        if ($typ !== 'post' && $k !== 'ma_image_rights_verified') continue;
+        update_post_meta($post_id,$k,isset($_POST[$k])?'1':'0');
+    }
 }
 
 function ma_publication_gate(array $data,array $postarr): array {

@@ -88,7 +88,12 @@ $source='';
     </dl>
   <?php endif; ?>
 
-  <?php if(has_post_thumbnail() && $type!=='ma_obituary'): ?><figure class="service-detail__image"><?php the_post_thumbnail('full'); ?></figure><?php endif; ?>
+  <?php if($type!=='ma_obituary'): $bild=ma_content_image(null,'full'); ?>
+    <figure class="service-detail__image<?php echo $bild['is_fallback']?' service-detail__image--symbol':''; ?>">
+      <img src="<?php echo esc_url($bild['url']); ?>" alt="<?php echo esc_attr($bild['alt']); ?>" decoding="async">
+      <figcaption><?php echo esc_html(ma_image_caption($bild)); ?></figcaption>
+    </figure>
+  <?php endif; ?>
   <div class="article-body service-detail__body"><?php the_content(); ?></div>
 
   <?php if($source!==''): ?>
