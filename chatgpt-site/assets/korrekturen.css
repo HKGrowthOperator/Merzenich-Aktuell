@@ -95,8 +95,8 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 
 /* Aktuelle Blaulicht-Zweitmeldung hat bewusst kein beliebiges Symbol- oder
    Archivbild. Ohne Bild nutzt der bestehende Front-Side-Slot die volle Breite. */
-.front-brief.editorial-secondary{grid-template-columns:1fr}
-.front-brief.editorial-secondary>div{grid-column:1;grid-row:1}
+.front-brief.editorial-secondary:not(.secondary-lead){grid-template-columns:1fr}
+.front-brief.editorial-secondary:not(.secondary-lead)>div{grid-column:1;grid-row:1}
 .front-brief.editorial-secondary h3{margin-top:4px}
 
 /* Markt (Stellen, Immobilien): vorab gerendert aus market.json, siehe deploy/markt-prerender.mjs */
@@ -153,9 +153,8 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .markt-row--thumb .act{grid-column:3}
 @media (max-width:760px){.markt-row--thumb{grid-template-columns:minmax(0,1fr)}.markt-thumb{max-width:220px;margin-bottom:10px}.markt-row--thumb .act{grid-column:1}}
 .feed-row.editorial-current-row .media{aspect-ratio:1.44}
-/* Zweitkarte mit Symbolbild: wieder zwei Spalten wie jede andere Kurzmeldung. */
-.front-brief.editorial-secondary.has-image{grid-template-columns:112px minmax(0,1fr)}
-.front-brief.editorial-secondary.has-image>div{grid-column:2;grid-row:1}
-@media (max-width:767px){.front-brief.editorial-secondary.has-image{grid-template-columns:96px minmax(0,1fr)}}
-.front-brief.editorial-secondary.has-image .media{width:100%;height:auto;aspect-ratio:4/3}
-.front-brief.editorial-secondary.has-image>.brief-image{width:100%;min-width:0}
+/* Zweitkarte mit Bild nutzt das vorhandene secondary-lead-Layout (Bild oben, Text darunter). */
+.front-brief.editorial-secondary.secondary-lead{display:block}
+.front-brief.editorial-secondary.secondary-lead>.brief-image{display:block;width:100%}
+.front-brief.editorial-secondary.secondary-lead .media{width:100%;height:auto;aspect-ratio:2.2}
+.front-brief.editorial-secondary.secondary-lead>div{padding-top:12px}

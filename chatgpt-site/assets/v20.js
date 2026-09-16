@@ -114,7 +114,7 @@
   const side=document.querySelector('.front-side');if(!side)return;
   let card=side.querySelector('[data-editorial-secondary]');
   if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
-  card.dataset.story=s.id||'';card.classList.toggle('has-image',!!s.image);
+  card.dataset.story=s.id||'';card.classList.toggle('secondary-lead',!!s.image);
   const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
   card.innerHTML=`${bild}<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
  }
