@@ -59,11 +59,7 @@ function ma_theme_is_local_post(int $post_id): bool {
 function ma_theme_hero_post(): ?WP_Post {
     $now=current_time('Y-m-d H:i:s');
     $pinned=new WP_Query([
-        'post_type'=>'post',
-        'post_status'=>'publish',
-        'posts_per_page'=>1,
-        'orderby'=>'date',
-        'order'=>'DESC',
+        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>1,'orderby'=>'date','order'=>'DESC',
         'meta_query'=>[
             'relation'=>'AND',
             ['key'=>'ma_top_pinned','value'=>'1'],
@@ -79,18 +75,12 @@ function ma_theme_hero_post(): ?WP_Post {
 
     $since=gmdate('Y-m-d H:i:s',time()-7*DAY_IN_SECONDS);
     $q=new WP_Query([
-        'post_type'=>'post',
-        'post_status'=>'publish',
-        'posts_per_page'=>20,
-        'date_query'=>[['after'=>$since,'inclusive'=>true]],
-        'orderby'=>'date',
-        'order'=>'DESC',
+        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>20,
+        'date_query'=>[['after'=>$since,'inclusive'=>true]],'orderby'=>'date','order'=>'DESC',
     ]);
     if(!$q->posts) return null;
 
-    $best=null;
-    $best_score=-INF;
-    $now_ts=time();
+    $best=null;$best_score=-INF;$now_ts=time();
     foreach($q->posts as $post){
         $age=max(0,($now_ts-get_post_time('U',true,$post))/DAY_IN_SECONDS);
         $fresh=max(0,100-($age/7*100));
@@ -110,4 +100,62 @@ function ma_theme_reading_time(int $id=0): int {
 
 function ma_theme_ad(string $slot): void {
     if(function_exists('ma_render_ad')) echo ma_render_ad($slot);
+}
+
+function ma_theme_family_kind_label(string $kind): string {
+    $labels=[
+        'birth'=>'Geburt','wedding'=>'Hochzeit','anniversary'=>'Jubiläum',
+        'thanks'=>'Danksagung','congratulations'=>'Glückwunsch','other'=>'Familienanzeige',
+    ];
+    return $labels[$kind]??'Familienanzeige';
+}
+
+function ma_theme_job_type_label(string $type): string {
+    $labels=[
+        'fulltime'=>'Vollzeit','parttime'=>'Teilzeit','minijob'=>'Minijob','training'=>'Ausbildung',
+        'internship'=>'Praktikum','freelance'=>'Freie Mitarbeit',
+    ];
+    return $labels[$type]??'';
+}
+
+function ma_theme_market_meta(int $post_id=0): array {
+    $post_id=$post_id?:get_the_ID();
+    $type=get_post_type($post_id);
+    $items=[];
+
+    if($type==='ma_property'){
+        foreach(['ma_property_price','ma_property_rooms','ma_property_area'] as $key){
+            $value=(string)get_post_meta($post_id,$key,true);
+            if($value==='') continue;
+            if($key==='ma_property_rooms') $value.=' Zimmer';
+            $items[]=$value;
+        }
+    } elseif($type==='ma_job'){
+        $company=(string)get_post_meta($post_id,'ma_job_company',true);
+        $job_type=ma_theme_job_type_label((string)get_post_meta($post_id,'ma_job_type',true));
+        $location=(string)get_post_meta($post_id,'ma_job_location',true);
+        foreach([$company,$job_type,$location] as $value) if($value!=='') $items[]=$value;
+    } elseif($type==='ma_obituary'){
+        $name=(string)get_post_meta($post_id,'ma_obituary_name',true);
+        $birth=(string)get_post_meta($post_id,'ma_obituary_birth',true);
+        $death=(string)get_post_meta($post_id,'ma_obituary_death',true);
+        if($name!=='') $items[]=$name;
+        if($birth!=='' || $death!=='') $items[]=trim($birth.' – '.$death,' –');
+    } elseif($type==='ma_family_notice'){
+        $items[]=ma_theme_family_kind_label((string)get_post_meta($post_id,'ma_family_kind',true));
+        $date=(string)get_post_meta($post_id,'ma_family_date',true);
+        $place=(string)get_post_meta($post_id,'ma_family_place',true);
+        if($date!=='') $items[]=$date;
+        if($place!=='') $items[]=$place;
+    }
+
+    return array_values(array_filter($items,static fn($v)=>$v!==''));
+}
+
+function ma_theme_market_type_label(string $post_type=''): string {
+    $post_type=$post_type?:get_post_type();
+    $labels=[
+        'ma_property'=>'Immobilien','ma_job'=>'Stellen','ma_obituary'=>'Traueranzeigen','ma_family_notice'=>'Familienanzeigen',
+    ];
+    return $labels[$post_type]??'Anzeigen';
 }
