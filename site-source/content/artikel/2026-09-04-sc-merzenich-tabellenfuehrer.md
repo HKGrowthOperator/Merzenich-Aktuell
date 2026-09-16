@@ -1,5 +1,5 @@
 ---
-title: "SC Merzenich führt die Kreisliga A an"
+title: "Nach zwei Spielen: SC Merzenich stand an der Tabellenspitze"
 slug: sc-merzenich-tabellenfuehrer
 kicker: "Kreisliga A"
 teaser: "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim."
@@ -27,6 +27,8 @@ tags: ["SC 1919 Merzenich", "Kreisliga A", "Fußball"]
 legacy: ["/sc-merzenich-tabellenfuehrer/", "/artikel-sc-merzenich-tabellenfuehrer.html"]
 featured: true
 ---
+
+**Archivstand vom 4. September.** Nach dem Derby vom 6. September gilt dieser Tabellenstand nicht mehr. Aktuelle Ergebnisse stehen im [Vereinskanal](/sc-1919-merzenich/).
 
 Der SC 1919 Merzenich führt die Kreisliga A an. Nach zwei Spieltagen steht die erste Mannschaft mit zwei Siegen, 6 Punkten und einem Torverhältnis von 7:2 auf Rang eins der Staffel im Kreis Düren.
 

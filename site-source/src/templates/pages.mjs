@@ -5,6 +5,21 @@ import * as C from './components.mjs';
 
 const abs = (site, p) => (p && p.startsWith('http')) ? p : site.url + (p || '');
 
+/* Bildangabe in der Quellenbox. Der ausgelieferte Stand nennt Bildtyp und
+   Fotograf beim Namen ("Bildtyp: Originalbild. Foto: Freiwillige Feuerwehr
+   Merzenich."). Die Vorlage schrieb stattdessen den Allgemeinsatz, Bildtyp und
+   Bildcredit seien ausgewiesen - eine Behauptung ueber die Seite statt einer
+   Angabe. Ohne Bild bleibt die Zeile weg, statt etwas zu versprechen. */
+function bildzeile(a) {
+  const im = a.image;
+  if (!im || !im.src) return '';
+  const typ = im.type ? imageTypeLabel(im.type) : '';
+  const teile = [];
+  if (typ) teile.push(`Bildtyp: ${esc(typ)}.`);
+  if (im.credit) teile.push(`Foto: ${esc(im.credit)}.`);
+  return teile.length ? ' ' + teile.join(' ') : '';
+}
+
 /* ============================================================ Startseite */
 export function homePage(ctx) {
   const { site, articles, events } = ctx;
@@ -236,7 +251,7 @@ export function articlePage(ctx, a) {
 
   const corrections = (a.corrections || []).length ? `<div class="corrections"><b>Korrekturhinweis.</b><ul>${a.corrections.map(c => `<li><time datetime="${esc(isoLocal(c.date))}">${esc(fmt.dateTime(c.date))}</time> ${esc(c.text)}</li>`).join('')}</ul></div>` : '';
 
-  const sources = (a.sources || []).length ? `<div class="source-box"><b>Quelle und Datenstand.</b> Grundlage dieser Meldung: ${a.sources.map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.title)} ↗</a>` : esc(s.title)).join(', ')}.${a.sources[0].stand ? ` <span class="stand">Datenstand ${esc(fmt.date(a.sources[0].stand))}.</span>` : ''} Angaben wurden redaktionell geprüft und zusammengefasst; Bildtyp und Bildcredit sind ausgewiesen. <a href="/korrekturen/">Fehler melden</a></div>` : '';
+  const sources = (a.sources || []).length ? `<div class="source-box"><b>Quelle &amp; Transparenz</b> Grundlage dieser Meldung: ${a.sources.map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.title)} ↗</a>` : esc(s.title)).join(', ')}.${a.sources[0].stand ? ` <span class="stand">Datenstand ${esc(fmt.date(a.sources[0].stand))}.</span>` : ''}${bildzeile(a)} <a href="/korrekturen/">Fehler melden</a></div>` : '';
 
   const eventBox = evs.length ? `<div class="sidebox"><h3>Termine zu dieser Meldung</h3><ul>${evs.map(C.terminLi).join('')}</ul></div>` : '';
 
@@ -279,7 +294,7 @@ export function articlePage(ctx, a) {
   </aside>
 </div>
 </article>
-${related.length ? `<section class="section"><div class="shell">${C.sectionHead('Weiterlesen', 'Ebenfalls aktuell', '/nachrichten/', 'Alle Meldungen')}<div class="cards-3">${related.map(x => C.card(x, ctx)).join('')}</div></div></section>` : ''}`;
+${related.length ? `<section class="section"><div class="shell">${C.sectionHead('Weiterlesen', 'Das passt zum Thema', '/nachrichten/', 'Alle Meldungen')}<div class="cards-3">${related.map(x => C.card(x, ctx)).join('')}</div></div></section>` : ''}`;
 
   const images = im && im.src ? [abs(site, im.src)] : [site.url + '/assets/img/og-default.jpg'];
   const ld = [{

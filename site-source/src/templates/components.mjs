@@ -6,8 +6,17 @@ export const BRANDLINE = `<div class="brandline thin" aria-hidden="true"><i></i>
 export function kicker(a, ctx) {
   const r = ctx.site.ressorts[a.ressort];
   const label = a.kicker || (r ? r.name : a.ressort);
+  // Ortszeile wie im ausgelieferten Stand: die Gemeinde in Versalien voran, der
+  // Ortsteil dahinter. Frueher stand der Ort klein im Ressortlabel; das las sich
+  // wie ein Zusatz, nicht wie eine Ortsmarke.
+  return `${locationLine(a, ctx)}<span class="kicker">${esc(label)}</span>`;
+}
+
+export function locationLine(a, ctx) {
+  const gemeinde = (ctx.site.shortName || 'Merzenich').toUpperCase();
   const ort = ctx.placeName(a.ort);
-  return `<span class="kicker">${esc(label)}${ort ? `<span class="dist">${esc(ort)}</span>` : ''}</span>`;
+  const teil = ort && ort.toUpperCase() !== gemeinde ? ` · ${esc(ort.toUpperCase())}` : '';
+  return `<div class="location-line"><span class="location-brand">${esc(gemeinde)}</span>${teil}</div>`;
 }
 
 export function formatBadge(a) {
@@ -70,7 +79,7 @@ export function card(a, ctx, opts = {}) {
     ${kicker(a, ctx)}
     <h3><a href="${esc(a.url)}">${esc(a.title)}</a></h3>
     <p class="dek">${esc(truncate(a.teaser, 150))}</p>
-    <div class="meta">${timeEl(a.date, '', a)}${formatBadge(a)}</div>
+    <div class="meta">${timeEl(a.date, '', a)}${formatBadge(a)}</div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.title)}</span></a></div>
   </div>
 </article>`;
 }
