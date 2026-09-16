@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Merzenich Aktuell – Internet-Zeitung für die Gemeinde Merzenich und Umkreis.">
+  <title>Merzenich Aktuell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-main shell">
+      <a class="brand" href="#home" aria-label="Merzenich Aktuell Startseite">
+        <span class="brand-name">MERZENICH AKTUELL</span>
+        <span class="brand-sub">Internet-Zeitung für Merzenich</span>
+      </a>
+
+      <form class="site-search" id="searchForm" role="search">
+        <label class="sr-only" for="siteSearch">Suche</label>
+        <input id="siteSearch" name="q" type="search" placeholder="Ort, Thema, Nachricht …" autocomplete="off">
+        <button type="submit" aria-label="Suchen">Suchen</button>
+      </form>
+
+      <div class="header-status" aria-live="polite">
+        <span class="weather-inline" id="headerWeather">–</span>
+        <span class="header-time" id="headerTime">–</span>
+        <span class="header-date" id="headerDate">–</span>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-controls="mainNav">Menü</button>
+    </div>
+
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <div class="shell nav-inner">
+        <a href="#aktuell">Aktuell</a>
+        <a href="#blaulicht">Blaulicht</a>
+        <a href="#sport">Sport</a>
+        <a href="#termine">Termine</a>
+        <a href="#vereine">Vereine</a>
+        <a href="#rathaus">Rathaus &amp; Politik</a>
+        <a href="#leben">Leben</a>
+        <a href="#wirtschaft">Wirtschaft</a>
+        <a href="#menschen">Menschen</a>
+        <details class="more-menu">
+          <summary>Mehr</summary>
+          <div class="more-menu-panel">
+            <a href="#kontakt">Kontakt</a>
+            <a href="#anzeigen">Anzeigen</a>
+            <a href="#werben">Werben &amp; Mediadaten</a>
+            <a href="#unterstuetzen">Unterstützen</a>
+            <a href="#archiv">Archiv</a>
+            <a href="#ueber-uns">Über uns</a>
+            <a href="#redaktion">Redaktion</a>
+            <a href="#grundsaetze">Grundsätze</a>
+            <a href="#ki-redaktion">KI &amp; Redaktion</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-shell shell" id="homeView" data-view="home">
+      <aside class="service-column" aria-label="Service">
+        <div class="service-stack" id="serviceStack">
+          <details class="service-module events-module" open>
+            <summary><span>Veranstaltungen</span><span class="summary-meta">Nächste Termine</span></summary>
+            <div class="service-body" id="eventList"></div>
+            <a class="service-link" href="#termine">Alle Veranstaltungen</a>
+          </details>
+
+          <details class="service-module weather-module">
+            <summary><span>Wetter</span><span class="summary-meta" id="weatherSummary">Lädt …</span></summary>
+            <div class="service-body weather-body" id="weatherPanel"></div>
+          </details>
+
+          <details class="service-module">
+            <summary><span>Immobilien</span><span class="summary-meta">0 Einträge</span></summary>
+            <div class="service-body empty-state">Derzeit sind keine Immobilienanzeigen veröffentlicht.</div>
+            <a class="service-link" href="#immobilien">Zum Immobilienmarkt</a>
+          </details>
+
+          <details class="service-module">
+            <summary><span>Stellen</span><span class="summary-meta">0 Einträge</span></summary>
+            <div class="service-body empty-state">Derzeit sind keine Stellenanzeigen veröffentlicht.</div>
+            <a class="service-link" href="#stellen">Zum Stellenmarkt</a>
+          </details>
+
+          <details class="service-module">
+            <summary><span>Traueranzeigen</span><span class="summary-meta">0 Einträge</span></summary>
+            <div class="service-body empty-state">Aktuell liegen keine veröffentlichten Traueranzeigen vor.</div>
+            <a class="service-link" href="#trauer">Zu den Traueranzeigen</a>
+          </details>
+
+          <details class="service-module">
+            <summary><span>Familienanzeigen</span><span class="summary-meta">0 Einträge</span></summary>
+            <div class="service-body empty-state">Aktuell liegen keine veröffentlichten Familienanzeigen vor.</div>
+            <a class="service-link" href="#familie">Zu den Familienanzeigen</a>
+          </details>
+        </div>
+      </aside>
+
+      <section class="news-column" aria-label="Aktuelle Nachrichten">
+        <div class="section-kicker">AKTUELL IN MERZENICH</div>
+        <article class="hero-story" id="heroStory"></article>
+
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">Neu &amp; wichtig</p>
+            <h2>Aktuell in Merzenich</h2>
+          </div>
+          <a href="#aktuell" class="text-link">Alle Meldungen</a>
+        </div>
+
+        <div class="news-grid" id="newsGrid"></div>
+
+        <section class="sport-preview" id="sportPreview" aria-labelledby="sportPreviewTitle"></section>
+      </section>
+
+      <aside class="right-column" aria-label="Zusatzinformationen und Anzeigen">
+        <div id="adSlotTop"></div>
+        <section class="compact-panel">
+          <p class="eyebrow">Kurz &amp; wichtig</p>
+          <div id="compactNews"></div>
+        </section>
+        <div id="adSlotMiddle"></div>
+        <section class="compact-panel source-panel">
+          <p class="eyebrow">Redaktion</p>
+          <h3>Quellen sichtbar. Prüfung nachvollziehbar.</h3>
+          <p>Merzenich Aktuell trennt Quelle, redaktionelle Bearbeitung und Bildnachweis.</p>
+          <a href="#grundsaetze" class="text-link">Unsere Grundsätze</a>
+        </section>
+      </aside>
+    </section>
+
+    <section class="archive-view shell" id="archiveView" hidden>
+      <div class="archive-header">
+        <p class="eyebrow" id="archiveEyebrow">Merzenich Aktuell</p>
+        <h1 id="archiveTitle">Aktuell</h1>
+        <p id="archiveIntro">Die neuesten Meldungen aus Merzenich und den Ortsteilen.</p>
+      </div>
+      <div class="archive-grid" id="archiveGrid"></div>
+    </section>
+
+    <article class="article-view shell" id="articleView" hidden></article>
+
+    <section class="search-view shell" id="searchView" hidden>
+      <div class="archive-header">
+        <p class="eyebrow">Suche</p>
+        <h1>Suchergebnisse</h1>
+        <p id="searchResultMeta"></p>
+      </div>
+      <div class="archive-grid" id="searchResults"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <div class="footer-brand">MERZENICH AKTUELL</div>
+        <p>Internet-Zeitung für die Gemeinde Merzenich und Umkreis.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#kontakt">Kontakt</a>
+        <a href="#redaktion">Redaktion</a>
+        <a href="#grundsaetze">Grundsätze</a>
+        <a href="#ki-redaktion">KI &amp; Redaktion</a>
+        <a href="#werben">Werben &amp; Mediadaten</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <span id="footerDataStand">Datenstand wird geladen …</span>
+      <span>© <span id="currentYear"></span> Merzenich Aktuell</span>
+    </div>
+  </footer>
+
+  <template id="newsCardTemplate">
+    <article class="news-card">
+      <a class="news-image-link" href="#">
+        <img class="news-image" alt="" loading="lazy">
+        <span class="image-credit"></span>
+      </a>
+      <div class="news-card-body">
+        <div class="location-line"></div>
+        <div class="news-meta-line"><span class="category"></span><span class="date"></span><span class="comments"></span></div>
+        <h3><a class="headline-link" href="#"></a></h3>
+        <p class="teaser"></p>
+        <a class="more-button" href="#">Mehr lesen</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
