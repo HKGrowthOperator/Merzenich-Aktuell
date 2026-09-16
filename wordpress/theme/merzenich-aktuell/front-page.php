@@ -67,7 +67,8 @@ $sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_to
   <section class="main-feed">
     <?php if($hero): setup_postdata($GLOBALS['post']=$hero); ?>
       <article class="hero">
-        <?php if(has_post_thumbnail()) the_post_thumbnail('full'); ?>
+        <?php $bild=ma_content_image(null,'full'); ?>
+        <figure class="hero__image<?php echo $bild['is_fallback']?' hero__image--symbol':''; ?>"><img src="<?php echo esc_url($bild['url']); ?>" alt="<?php echo esc_attr($bild['alt']); ?>" decoding="async" fetchpriority="high"><figcaption class="image-credit"><?php echo esc_html(ma_image_caption($bild)); ?></figcaption></figure>
         <div class="eyebrow"><?php echo ma_theme_location_label(); ?> · <?php $category=get_the_category(); echo esc_html($category[0]->name??'Aktuell'); ?></div>
         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         <?php if(has_excerpt()): ?><p class="dek"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>

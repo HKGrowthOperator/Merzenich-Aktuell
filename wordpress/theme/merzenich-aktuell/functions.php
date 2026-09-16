@@ -15,6 +15,32 @@ add_action('wp_enqueue_scripts', function(){
     wp_enqueue_script('ma-site',get_template_directory_uri().'/assets/js/site.js',[],$version,true);
 });
 
+/**
+ * Notnagel ohne Plugin: Die Vorlagen rufen ma_content_image() ungeschuetzt
+ * auf. Ist merzenich-aktuell-core deaktiviert, darf daraus kein Fatal Error
+ * auf jeder Seite werden. Dieselbe Regel wie im Plugin: ein Bild zaehlt nur
+ * mit geklaerten Rechten oder Lizenz, sonst die gekennzeichnete Ersatzgrafik.
+ */
+if(!function_exists('ma_content_image')){
+    function ma_content_image($post=null,string $size='large'): array {
+        $post=get_post($post);
+        $id=$post?(int)$post->ID:0;
+        $credit=$id?(string)get_post_meta($id,'ma_image_credit',true):'';
+        $license=$id?(string)get_post_meta($id,'ma_image_license',true):'';
+        $verified=$id && (string)get_post_meta($id,'ma_image_rights_verified',true)==='1';
+        $thumb=$id?(int)get_post_thumbnail_id($id):0;
+        $url=$thumb?(string)get_the_post_thumbnail_url($id,$size):'';
+        if($url!=='' && ($verified||$license!=='')){
+            $alt=(string)get_post_meta($thumb,'_wp_attachment_image_alt',true);
+            return ['url'=>$url,'type'=>$license!=='' && !$verified?'licensed':'original','type_label'=>'','credit'=>$credit,'alt'=>$alt!==''?$alt:get_the_title($id),'license'=>$license,'source_url'=>'','is_fallback'=>false,'disclaimer'=>''];
+        }
+        return ['url'=>get_template_directory_uri().'/assets/img/ph-nachrichten.svg','type'=>'symbol','type_label'=>'Symbolbild','credit'=>'Symbolbild · Merzenich Aktuell','alt'=>'Symbolgrafik Merzenich Aktuell','license'=>'','source_url'=>'','is_fallback'=>true,'disclaimer'=>''];
+    }
+}
+if(!function_exists('ma_image_caption')){
+    function ma_image_caption(array $bild): string { return (string)($bild['credit']??''); }
+}
+
 function ma_theme_location_label(int $id=0): string {
     $id=$id?:get_the_ID();
     $terms=get_the_terms($id,'ma_location');
