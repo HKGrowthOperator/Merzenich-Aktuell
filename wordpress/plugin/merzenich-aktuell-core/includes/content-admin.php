@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) { exit; }
 function ma_register_content_admin_hooks(): void {
     add_action('add_meta_boxes', 'ma_add_content_meta_boxes');
     add_action('save_post', 'ma_save_content_meta_boxes', 10, 2);
+    add_filter('wp_insert_post_data', 'ma_market_publication_gate', 20, 2);
 }
 
 function ma_add_content_meta_boxes(): void {
@@ -200,4 +201,15 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         $source = (string)get_post_meta($post_id,'ma_event_source_url',true);
         if ($source !== '') update_post_meta($post_id,'ma_source_url',$source);
     }
+}
+
+function ma_market_publication_gate(array $data,array $postarr): array {
+    $gated=['ma_property','ma_job','ma_obituary','ma_family_notice'];
+    if (!in_array($data['post_type']??'',$gated,true) || ($data['post_status']??'')!=='publish') return $data;
+
+    $post_id=(int)($postarr['ID']??0);
+    $submitted=isset($_POST['ma_release_confirmed']);
+    $stored=$post_id && get_post_meta($post_id,'ma_release_confirmed',true)==='1';
+    if(!$submitted && !$stored) $data['post_status']='draft';
+    return $data;
 }
