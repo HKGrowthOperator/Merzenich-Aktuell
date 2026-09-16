@@ -1,0 +1,59 @@
+name: Build WordPress Delivery Packages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wordpress/theme/merzenich-aktuell/**'
+      - 'wordpress/plugin/merzenich-aktuell-core/**'
+      - '.github/workflows/build-wordpress-packages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+
+      - name: Lint versioned WordPress source
+        run: |
+          while IFS= read -r file; do php -l "$file"; done < <(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' -print)
+
+      - name: Build installable ZIPs from versioned source
+        run: |
+          rm -f wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip
+          (
+            cd wordpress/theme
+            zip -X -qr ../../wordpress-delivery/merzenich-aktuell-theme.zip merzenich-aktuell
+          )
+          (
+            cd wordpress/plugin
+            zip -X -qr ../../wordpress-delivery/merzenich-aktuell-core.zip merzenich-aktuell-core
+          )
+          unzip -tq wordpress-delivery/merzenich-aktuell-theme.zip
+          unzip -tq wordpress-delivery/merzenich-aktuell-core.zip
+
+      - name: Commit synchronized delivery packages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip
+          if git diff --cached --quiet; then
+            echo 'Delivery packages already synchronized.'
+            exit 0
+          fi
+          git commit -m 'build: synchronize WordPress delivery ZIPs'
+          git push origin HEAD:main
