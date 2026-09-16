@@ -1,0 +1,43 @@
+/* Zwei Bausteine aus dem aelteren Stand, die dort besser waren.
+   Eigene Klassennamen, damit nichts mit style.css, v19.css, v20.css oder
+   recovery.css kollidiert. Wird als letztes geladen. */
+
+/* Tabellenstand auf einen Blick, wie im aelteren Stand: Platz, Punkte, Tore. */
+.sc-stand{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
+.sc-stand .sc-kachel{background:#17191b;color:#fff;border-radius:4px;padding:16px 12px;text-align:center}
+.sc-stand .sc-wert{display:block;font-family:Newsreader,Georgia,serif;font-size:30px;line-height:1;font-weight:600;color:#c8a24e}
+.sc-stand .sc-label{display:block;margin-top:7px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#cfcbc2}
+.sc-stand-quelle{font-size:12px;color:#666;margin:-8px 0 20px}
+
+/* Offene Begegnung: schliesst die Luecke zwischen letztem und naechstem Spiel,
+   ohne ein Ergebnis zu behaupten, das nicht bestaetigt ist. */
+.match-panel.offen .match-heading b{color:#a8842f}
+.match-offen-hinweis{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;
+  letter-spacing:.04em;color:#a8842f;border:1px solid #e0d3ae;background:#f6efdd;
+  border-radius:3px;padding:3px 9px}
+
+/* Ortsteile: ein Satz, der sagt, was den Ort ausmacht.
+   Die Kacheln sind Fotokacheln mit hellem Text ueber dunklem Schleier, der
+   Satz muss deshalb hell sein. Auf drei Zeilen begrenzt, damit die Kacheln
+   gleich hoch bleiben. */
+.district-text{margin:7px 0 0;font-size:14px;line-height:1.45;
+  color:rgba(255,255,255,.9);text-shadow:0 1px 3px rgba(0,0,0,.65);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:900px){.district-text{-webkit-line-clamp:2;font-size:13px}}
+
+@media (max-width:640px){
+  .sc-stand{grid-template-columns:repeat(3,1fr);gap:7px}
+  .sc-stand .sc-kachel{padding:12px 6px}
+  .sc-stand .sc-wert{font-size:24px}
+  .sc-stand .sc-label{font-size:10px;letter-spacing:.1em}
+}
+
+/* Wortmarke im Kopf. Die Groesse wird in style.css, v19.css, v20.css und
+   recovery.css insgesamt elfmal gesetzt; durchgesetzt hat sich zuletzt
+   height:40px aus recovery.css. Bei 40px laufen die Haarstriche dieser
+   Antiqua auf die Ein-Pixel-Grenze und die Punzen zu, die Marke verliert
+   ihre Form. Bei 58px steht der Strichkontrast wieder. Die Quelldatei ist
+   1200x338 gross, Aufloesung ist also reichlich vorhanden. */
+.masthead .logo img{height:58px;width:auto;max-width:100%;object-fit:contain}
+@media (max-width:900px){.masthead .logo img{height:46px}}
+@media (max-width:560px){.masthead .logo img{height:38px}}

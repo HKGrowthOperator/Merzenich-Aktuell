@@ -41,13 +41,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Nur die oeffentliche Seite uebernehmen
+      - name: Die ausgelieferte Seite uebernehmen
+        # chatgpt-site/ ist der Stand, der oeffentlich laeuft: 212 Seiten mit
+        # echten Adressen. Die index.html im Wurzelverzeichnis ist eine andere,
+        # einzelne Seite und nicht das, was ausgeliefert wird.
         run: |
-          mkdir -p _site
-          cp index.html app.js styles.css content.json _site/
+          test -f chatgpt-site/index.html
+          cp -R chatgpt-site _site
           # Jekyll aus dem Weg raeumen, sonst werden Dateien mit Unterstrich verschluckt.
           touch _site/.nojekyll
-          ls -la _site
+          echo "Seiten: $(find _site -name index.html | wc -l)"
+          du -sh _site
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
