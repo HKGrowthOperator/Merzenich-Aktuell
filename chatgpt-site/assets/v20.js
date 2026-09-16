@@ -75,3 +75,43 @@
   const league=module.querySelector('.league-panel');if(league&&Array.isArray(data.table)){const h=league.querySelector('.league-heading h3');if(h)h.textContent='Kreisliga A · Tabelle';const stamp=league.querySelector('.league-heading span');if(stamp)stamp.textContent=`Datenstand ${dmy(data.generated)}, ${hm(data.generated)}`;const caption=league.querySelector('caption');if(caption)caption.textContent=`Kreisliga A. Datenstand ${dmy(data.generated)}, ${hm(data.generated)}`;const tbody=league.querySelector('tbody');if(tbody)tbody.innerHTML=data.table.map(r=>`<tr${r.homeTeam?' class="home-team"':''}><td>${r.place}</td><th scope="row">${esc(r.team)}</th><td>${r.played}</td><td>${r.wins}</td><td>${r.draws}</td><td>${r.losses}</td><td>${esc(r.goals)}</td><td>${r.diff>0?'+':''}${r.diff}</td><td>${r.points}</td></tr>`).join('');}
  }).catch(()=>{});
 })();
+
+// Homepage-Priorisierung: kein neues Layout, nur Inhalt der bestehenden Slots.
+// Ein Hero, der aelter als sieben Tage ist, wird mit dem aktuellen redaktionell
+// geprueften Prioritaetsdatensatz ersetzt. Schlaegt der Abruf fehl, bleibt das
+// ausgelieferte HTML unveraendert als stabiler Fallback stehen.
+(()=>{
+ 'use strict';
+ if(!document.body.classList.contains('home'))return;
+ const hero=document.querySelector('.front-lead');
+ if(!hero)return;
+ const safe=s=>String(s??'');
+ const staticTime=hero.querySelector('.meta time');
+ const staticDate=staticTime?.dateTime?new Date(staticTime.dateTime):null;
+ const stale=!staticDate||!Number.isFinite(+staticDate)||(Date.now()-staticDate.getTime())>7*86400000;
+ const setText=(selector,value)=>{const el=hero.querySelector(selector);if(el&&value!=null)el.textContent=safe(value);};
+ function applyHero(h){
+  if(!h?.url||!h?.title||!h?.published)return;
+  hero.dataset.story=h.id||'';
+  const mediaLink=hero.querySelector(':scope > a');
+  if(mediaLink)mediaLink.href=h.url;
+  const media=hero.querySelector('.media');
+  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){img.src=h.image;img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=h.imageAlt||h.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
+  const location=hero.querySelector('.location-line');if(location&&h.location)location.innerHTML=`<span class="location-brand">${safe(h.location)}</span>`;
+  setText('.kicker',h.kicker);setText('.eyebrow',h.eyebrow);
+  const title=hero.querySelector('h1 a');if(title){title.textContent=h.title;title.href=h.url;}
+  const teaser=hero.querySelector('.front-lead-copy > p');if(teaser)teaser.textContent=h.teaser||'';
+  const time=hero.querySelector('.meta time');if(time){time.dateTime=h.published;time.textContent=h.timeLabel||new Intl.DateTimeFormat('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(h.published))+' Uhr';}
+  const read=hero.querySelector('.meta span');if(read&&h.readTime)read.textContent=h.readTime;
+  const more=hero.querySelector('.read-more');if(more){more.href=h.url;more.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent='Mehr lesen';});const sr=more.querySelector('.sr-only');if(sr)sr.textContent=': '+h.title;}
+ }
+ function applySecondary(s){
+  if(!s?.url||!s?.title)return;
+  const side=document.querySelector('.front-side');if(!side)return;
+  let card=side.querySelector('[data-editorial-secondary]');
+  if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
+  card.dataset.story=s.id||'';
+  card.innerHTML=`<div><div class="location-line"><span class="location-brand">${safe(s.location||'MERZENICH')}</span></div><span class="kicker">${safe(s.kicker||'Aktuell')}</span><h3><a href="${safe(s.url)}">${safe(s.title)}</a></h3><p>${safe(s.teaser||'')}</p><div class="meta"><time datetime="${safe(s.published||'')}">${safe(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${safe(s.url)}">Mehr lesen<span class="sr-only">: ${safe(s.title)}</span></a></div></div>`;
+ }
+ fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
+})();
