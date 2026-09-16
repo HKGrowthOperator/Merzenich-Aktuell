@@ -8,9 +8,12 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 
 - Repository: `HKGrowthOperator/Merzenich-Aktuell`
 - Branch: `main`
-- Frontend: Repository-Root
+- Source of Truth für Änderungen: dieses GitHub-Repository auf `main`
+- Öffentlich ausgelieferter statischer Stand: `chatgpt-site/` (der Ordnername ist nur ein historischer technischer Name; es gibt keine separate ChatGPT-Seite mehr)
+- Coolify-Auslieferung: `deploy/coolify/Dockerfile` kopiert `chatgpt-site/` nach nginx
+- Repository-Root enthält weiterhin Preview-/Kompatibilitätsdateien, ist aber nicht der aktuell von Coolify ausgelieferte HTML-Bestand
 - Öffentliche Deploy-/Kontroll-URL: `https://merzenichaktuell.hk-growthoperator.de`
-- Es gibt **keine separate ChatGPT-Seite als Arbeits-, Deploy- oder Prüfziel mehr**. Frühere ChatGPT-Sites sind nur historische Altstände und dürfen nicht als Source of Truth verwendet werden.
+- Frühere externe ChatGPT-Sites sind nur historische Altstände und dürfen nicht als Source of Truth verwendet werden.
 - WordPress Theme/Core sind ein **separater** Lieferstand unter `/wordpress-delivery` und dürfen nicht mit dem Frontend verwechselt werden.
 
 ## Grundregel
@@ -160,7 +163,7 @@ Weitere Regeln:
 - Hero möglichst >=1600px; normale Meldung möglichst >=1000px
 - Credits und Alt-Texte speichern
 - Archivbild deutlich, aber dezent kennzeichnen
-- Zentrale technische Fallbacks liegen in `image-fallbacks.js`; Rechte-/Quellendokumentation liegt in `docs/image-fallbacks.md`.
+- Live-Fallbacks liegen in `chatgpt-site/assets/bild-fallbacks.js` und werden zentral über `chatgpt-site/assets/kopf.js` auf den ausgelieferten Seiten geladen. Die Root-Preview nutzt zusätzlich `image-fallbacks.js`. Rechte-/Quellendokumentation liegt in `docs/image-fallbacks.md`.
 
 ## Sport
 
