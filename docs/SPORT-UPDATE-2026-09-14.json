@@ -1,0 +1,23 @@
+{
+  "checked_at": "14.09.2026, 12:05 Uhr",
+  "source_url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+  "last_match": {
+    "date": "06.09.2026",
+    "home": "FC Golzheim",
+    "score": "4:2",
+    "away": "SC 1919 Merzenich"
+  },
+  "pending_match": {
+    "date": "13.09.2026, 15:00 Uhr",
+    "home": "SC 1919 Merzenich",
+    "away": "BC Oberzier"
+  },
+  "next_match": {
+    "date": "18.09.2026, 19:30 Uhr",
+    "home": "SC Jülich 1910/97/Hoengen e.V.",
+    "away": "SC 1919 Merzenich"
+  },
+  "table": [
+    {"rank": 5, "team": "SC 1919 Merzenich", "played": 3, "points": 6, "goals": "9:6"}
+  ]
+}
