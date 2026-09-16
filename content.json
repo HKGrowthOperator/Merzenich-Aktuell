@@ -2,10 +2,34 @@
   "meta": {
     "siteName": "Merzenich Aktuell",
     "tagline": "Internet-Zeitung für die Gemeinde Merzenich und Umkreis.",
-    "lastEditorialCheck": "2026-09-14T12:15:00+02:00",
+    "lastEditorialCheck": "2026-09-16T11:35:00+02:00",
     "location": "Merzenich"
   },
   "articles": [
+    {
+      "id": "fairer-handel-vortrag-16092026",
+      "publishedAt": "2026-09-14T10:31:00+02:00",
+      "updatedAt": "2026-09-16T11:35:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Leben",
+      "headline": "Heute Abend: Vortrag zum Fairen Handel in der Zukunftswerkstatt",
+      "teaser": "Die Gemeinde Merzenich lädt heute um 18 Uhr zu einem Vortrag über Ziele und Herausforderungen des Fairen Handels ein. Veranstaltungsort ist die Zukunftswerkstatt in der Dürener Straße 4.",
+      "body": [
+        "Im Rahmen der Fairen Woche lädt die Gemeinde Merzenich am heutigen Mittwoch, 16. September, um 18 Uhr zu einem Vortrag über Fairen Handel ein.",
+        "Referent Magnus Meier beschäftigt sich nach Angaben der Gemeinde unter anderem mit Definition, Zielen und Herausforderungen des Fairen Handels. Die Veranstaltung findet in der Zukunftswerkstatt Merzenich in der Dürener Straße 4 statt.",
+        "Die Gemeinde beteiligt sich als Fairtrade-Kommune an der Fairen Woche und hat für den September mehrere weitere Aktionen angekündigt."
+      ],
+      "sourceName": "Gemeinde Merzenich / Heimat-Info",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/524a8bc2-a205-4a95-a854-141c6002c73c",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Rathaus%20HDR.jpg?width=1600",
+      "imageAlt": "Rathaus der Gemeinde Merzenich",
+      "imageCredit": "Archivbild Merzenich · Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+      "comments": 0,
+      "localRelevance": 100,
+      "editorialPriority": 93,
+      "status": "published"
+    },
     {
       "id": "einbruch-arnoldsweilerweg-11092026",
       "publishedAt": "2026-09-11T08:30:00+02:00",
@@ -61,10 +85,10 @@
       "location": "MERZENICH",
       "district": "",
       "category": "Termine",
-      "headline": "Standkarten fürs Ortsfest werden am Mittwoch vergeben",
-      "teaser": "Wer beim Trödelmarkt des Merzenicher Ortsfests einen Stand betreiben möchte, kann am 16. September im Bürgerhaus eine Standkarte erhalten.",
+      "headline": "Standkarten fürs Ortsfest werden heute vergeben",
+      "teaser": "Wer beim Trödelmarkt des Merzenicher Ortsfests einen Stand betreiben möchte, kann heute von 14:30 bis 17 Uhr im Bürgerhaus eine Standkarte erhalten.",
       "body": [
-        "Die Vergabe der Standkarten findet am Mittwoch, 16. September, von 14:30 bis 17 Uhr im Bürgerhaus Merzenich statt.",
+        "Die Vergabe der Standkarten findet am heutigen Mittwoch, 16. September, von 14:30 bis 17 Uhr im Bürgerhaus Merzenich statt.",
         "Die Standgebühr beträgt nach Angaben der Gemeinde 10 Euro pro Tisch und ist vor Ort in bar zu bezahlen.",
         "Das Ortsfest selbst ist für Samstag, 3. Oktober, von 11 bis 18 Uhr im Merzenicher Ortszentrum angekündigt."
       ],
@@ -138,6 +162,14 @@
       "sourceUrl": "https://www.heimat-info.de/beitraege/a62bdfba-eb56-4cbb-90ef-6b2c4fd3d857"
     },
     {
+      "id": "fairer-handel-vortrag",
+      "title": "Vortrag: Fairer Handel",
+      "start": "2026-09-16T18:00:00+02:00",
+      "place": "Zukunftswerkstatt Merzenich, Dürener Straße 4",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/524a8bc2-a205-4a95-a854-141c6002c73c"
+    },
+    {
       "id": "cleanup-day",
       "title": "Merzenich räumt auf",
       "start": "2026-09-20T11:00:00+02:00",
@@ -186,26 +218,21 @@
   "sport": {
     "team": "SC 1919 Merzenich",
     "competition": "Kreisliga A",
-    "dataCheckedAt": "2026-09-14T12:15:00+02:00",
+    "dataCheckedAt": "2026-09-16T11:35:00+02:00",
     "sourceName": "FUSSBALL.DE",
     "sourceUrl": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
     "table": {
       "position": 5,
-      "points": 6,
-      "goals": "9:6"
+      "points": 9,
+      "goals": "12:8"
     },
     "lastConfirmed": {
-      "date": "2026-09-06T15:00:00+02:00",
-      "home": "FC Golzheim",
-      "away": "SC 1919 Merzenich",
-      "result": "offizieller Spielstand in dieser Preview nicht dargestellt"
-    },
-    "pending": {
       "date": "2026-09-13T15:00:00+02:00",
       "home": "SC 1919 Merzenich",
       "away": "BC Oberzier",
-      "status": "Ergebnis noch nicht bestätigt"
+      "result": "3:2"
     },
+    "pending": null,
     "next": {
       "date": "2026-09-18T19:30:00+02:00",
       "home": "SC Jülich 1910/97/Hoengen e.V.",
