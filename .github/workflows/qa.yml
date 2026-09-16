@@ -28,7 +28,9 @@ jobs:
           tools: none
 
       - name: Validate frontend JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check app-fixes.js
 
       - name: Validate JSON content
         run: python3 -m json.tool content.json > /dev/null
