@@ -9,11 +9,11 @@ date: 2026-09-14T09:15:00+02:00
 author: redaktion
 format: meldung
 image:
-  src: "/assets/uploads/sc-1919-merzenich-logo.webp"
-  alt: "Vereinswappen des SC 1919 Merzenich"
-  credit: "SC 1919 Merzenich"
-  type: logo
-  fit: contain
+  src: "/assets/img/ph-sport.svg"
+  alt: "Symbolbild Sport – kein Vereinsfoto"
+  credit: "Merzenich Aktuell · Symbolbild"
+  type: symbol
+  fit: cover
 facts:
   - "SC Merzenich – BC Oberzier 3:2"
   - "Halbzeitstand 2:0"
@@ -22,7 +22,7 @@ facts:
 sources:
   - title: "FUSSBALL.DE – Spielbericht SC Merzenich gegen BC Oberzier"
     url: "https://www.fussball.de/mgc.newsdetail/-/article-uuid/03231KINE0000000VS5489BVVSHTTO0V"
-    stand: 2026-09-14
+    stand: 2026-09-16
   - title: "FUSSBALL.DE – SC 1919 Merzenich"
     url: "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7"
     stand: 2026-09-16
@@ -37,3 +37,5 @@ Angelo Minervino brachte den SC in der achten Minute per Elfmeter in Führung. N
 Mit dem Erfolg steht Merzenich nach vier Spielen bei drei Siegen und einer Niederlage. Der aktuelle FUSSBALL.DE-Datenstand führt den SC mit 9 Punkten und 12:8 Toren auf Platz fünf der Kreisliga A.
 
 Weiter geht es bereits am Freitag, 18. September. Um 19:30 Uhr tritt Merzenich auswärts beim SC Jülich 1910/97/Hoengen an.
+
+**Bildhinweis:** Das Vereinslogo ist auffindbar, ein Nutzungsrecht für Merzenich Aktuell wurde jedoch nicht verifiziert. Deshalb verwendet dieser Beitrag das eigene gekennzeichnete Sport-Symbolbild.
