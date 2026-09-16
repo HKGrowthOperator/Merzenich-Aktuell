@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "siteName": "Merzenich Aktuell",
+    "tagline": "Internet-Zeitung für die Gemeinde Merzenich und Umkreis.",
+    "lastEditorialCheck": "2026-09-14T12:15:00+02:00",
+    "location": "Merzenich"
+  },
+  "articles": [
+    {
+      "id": "einbruch-arnoldsweilerweg-11092026",
+      "publishedAt": "2026-09-11T08:30:00+02:00",
+      "updatedAt": "2026-09-14T12:15:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Blaulicht",
+      "headline": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen",
+      "teaser": "Nach einem Einbruch in ein Einfamilienhaus im Arnoldsweilerweg ermittelt die Kriminalpolizei. Die Polizei bittet Menschen mit verdächtigen Beobachtungen um Hinweise.",
+      "body": [
+        "Ein Einfamilienhaus im Arnoldsweilerweg ist am Donnerstag, 10. September, zwischen 8:30 und 11:35 Uhr Ziel eines Einbruchs geworden.",
+        "Nach Angaben der Polizei verschaffte sich mindestens eine Person gewaltsam Zugang zum Erdgeschoss und durchsuchte Schränke und Schubladen. Die Kriminalpolizei sicherte Spuren und nahm die Ermittlungen auf.",
+        "Wer im genannten Zeitraum verdächtige Beobachtungen gemacht hat, kann sich an die Polizei Düren wenden."
+      ],
+      "sourceName": "Polizei Düren / Presseportal",
+      "sourceUrl": "https://www.presseportal.de/blaulicht/pm/8/6349975",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Rathaus%20HDR.jpg?width=1600",
+      "imageAlt": "Rathaus der Gemeinde Merzenich",
+      "imageCredit": "Archivbild Merzenich · Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+      "comments": 0,
+      "localRelevance": 100,
+      "editorialPriority": 96,
+      "status": "published"
+    },
+    {
+      "id": "faire-woche-merzenich-2026",
+      "publishedAt": "2026-09-03T11:55:00+02:00",
+      "updatedAt": "2026-09-14T12:15:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Leben",
+      "headline": "Faire Woche läuft: Aktionen in Merzenich bis 25. September",
+      "teaser": "Merzenich beteiligt sich erstmals als Fairtrade-Kommune an der Fairen Woche. Mehrere Aktionen zu Umweltbildung, fairem Handel und Klimaschutz laufen noch im September.",
+      "body": [
+        "Die Faire Woche läuft in Merzenich vom 11. bis 25. September 2026.",
+        "Zum Programm gehören unter anderem die Müllsammelaktion am 20. September und die Naturdetektive am 21. September. Weitere Aktionen richten sich besonders an Kinder und Jugendliche.",
+        "Die Gemeinde informiert über Termine und Anmeldemöglichkeiten über ihre offiziellen Kanäle."
+      ],
+      "sourceName": "Gemeinde Merzenich / Heimat-Info",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/5d1b06ef-c138-4b59-99ba-9739c4e77fac",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Alte%20Pfarrkirche.jpg?width=1400",
+      "imageAlt": "Alte Pfarrkirche in Merzenich",
+      "imageCredit": "Archivbild · Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+      "comments": 0,
+      "localRelevance": 98,
+      "editorialPriority": 80,
+      "status": "published"
+    },
+    {
+      "id": "standkarten-ortsfest-16092026",
+      "publishedAt": "2026-09-12T08:00:00+02:00",
+      "updatedAt": "2026-09-14T12:15:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Termine",
+      "headline": "Standkarten fürs Ortsfest werden am Mittwoch vergeben",
+      "teaser": "Wer beim Trödelmarkt des Merzenicher Ortsfests einen Stand betreiben möchte, kann am 16. September im Bürgerhaus eine Standkarte erhalten.",
+      "body": [
+        "Die Vergabe der Standkarten findet am Mittwoch, 16. September, von 14:30 bis 17 Uhr im Bürgerhaus Merzenich statt.",
+        "Die Standgebühr beträgt nach Angaben der Gemeinde 10 Euro pro Tisch und ist vor Ort in bar zu bezahlen.",
+        "Das Ortsfest selbst ist für Samstag, 3. Oktober, von 11 bis 18 Uhr im Merzenicher Ortszentrum angekündigt."
+      ],
+      "sourceName": "Gemeinde Merzenich / Heimat-Info",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/a62bdfba-eb56-4cbb-90ef-6b2c4fd3d857",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Denkmal-Nr.%2018%2C%20Lindenplatz%20%281235%29.jpg?width=1400",
+      "imageAlt": "Lindenplatz in Merzenich",
+      "imageCredit": "Wikimedia Commons · Lizenz siehe Dateiseite",
+      "comments": 0,
+      "localRelevance": 96,
+      "editorialPriority": 76,
+      "status": "published"
+    },
+    {
+      "id": "hope-app-faire-woche",
+      "publishedAt": "2026-09-05T10:00:00+02:00",
+      "updatedAt": "2026-09-14T12:15:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Gemeinde",
+      "headline": "Gemeinde stellt Klimaschutz-App während der Fairen Woche vor",
+      "teaser": "Mit der H.O.P.E.-App will die Gemeinde alltagstaugliche Klimaschutz-Challenges und Informationen zugänglicher machen.",
+      "body": [
+        "Die Gemeinde Merzenich weist im Rahmen der Fairen und Nachhaltigen Woche auf die H.O.P.E.-App hin.",
+        "Die Anwendung enthält unter anderem Challenges und Quizfragen zu Ernährung, Mobilität, Energie, Konsum und Biodiversität.",
+        "Das Angebot richtet sich an Bürgerinnen und Bürger sowie Schülerinnen und Schüler."
+      ],
+      "sourceName": "Gemeinde Merzenich / Heimat-Info",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/506d8623-1e3d-4268-b5e5-504e35197cd7",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Rathaus%20HDR.jpg?width=1200",
+      "imageAlt": "Rathaus Merzenich",
+      "imageCredit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+      "comments": 0,
+      "localRelevance": 94,
+      "editorialPriority": 65,
+      "status": "published"
+    },
+    {
+      "id": "feuerwehr-einsatz-steinpfahl-05092026",
+      "publishedAt": "2026-09-07T08:47:00+02:00",
+      "updatedAt": "2026-09-14T12:15:00+02:00",
+      "location": "MERZENICH",
+      "district": "",
+      "category": "Blaulicht",
+      "headline": "Feuerwehr nach Meldung „Person hinter Tür“ in Steinpfahl im Einsatz",
+      "teaser": "Die Freiwillige Feuerwehr Merzenich berichtete über einen Einsatz in Steinpfahl. Alarmiert wurde sie durch einen Pflegedienst.",
+      "body": [
+        "Die Freiwillige Feuerwehr Merzenich berichtete über einen Einsatz am 5. September in Steinpfahl.",
+        "Als Stichwort wurde „Person hinter Tür“ angegeben. Nach Angaben der Feuerwehr waren unter anderem Kräfte aus Merzenich und Morschenich beteiligt.",
+        "Weitere personenbezogene Details werden hier bewusst nicht übernommen."
+      ],
+      "sourceName": "Freiwillige Feuerwehr Merzenich / Heimat-Info",
+      "sourceUrl": "https://www.heimat-info.de/gemeinden/merzenich",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Rathaus%20HDR.jpg?width=1200",
+      "imageAlt": "Ortsansicht Merzenich mit Rathaus",
+      "imageCredit": "Archivbild · Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+      "comments": 0,
+      "localRelevance": 95,
+      "editorialPriority": 58,
+      "status": "published"
+    }
+  ],
+  "events": [
+    {
+      "id": "standkarten-ortsfest",
+      "title": "Standkartenvergabe fürs Ortsfest",
+      "start": "2026-09-16T14:30:00+02:00",
+      "end": "2026-09-16T17:00:00+02:00",
+      "place": "Bürgerhaus Merzenich",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/a62bdfba-eb56-4cbb-90ef-6b2c4fd3d857"
+    },
+    {
+      "id": "cleanup-day",
+      "title": "Merzenich räumt auf",
+      "start": "2026-09-20T11:00:00+02:00",
+      "end": "2026-09-20T13:00:00+02:00",
+      "place": "gesamtes Gemeindegebiet",
+      "district": "Gemeinde Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/fdb48f37-4d9d-4e4d-8a5b-533bc9832951"
+    },
+    {
+      "id": "naturdetektive",
+      "title": "Naturdetektive im Pützpark",
+      "start": "2026-09-21T14:30:00+02:00",
+      "end": "2026-09-21T17:00:00+02:00",
+      "place": "Pützpark / Bürgerhaus",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/fdb48f37-4d9d-4e4d-8a5b-533bc9832951"
+    },
+    {
+      "id": "nistkaesten",
+      "title": "Nistkästen für Vögel bauen",
+      "start": "2026-09-28T15:00:00+02:00",
+      "end": "2026-09-28T17:00:00+02:00",
+      "place": "Merzenich",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/fdb48f37-4d9d-4e4d-8a5b-533bc9832951"
+    },
+    {
+      "id": "oldieabend",
+      "title": "Oldieabend auf dem Lindenplatz",
+      "start": "2026-10-02T19:00:00+02:00",
+      "end": "2026-10-02T23:00:00+02:00",
+      "place": "Lindenplatz Merzenich",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.tourismus.kreis-dueren.de/events/oldieabend"
+    },
+    {
+      "id": "ortsfest",
+      "title": "Ortsfest Merzenich",
+      "start": "2026-10-03T11:00:00+02:00",
+      "end": "2026-10-03T18:00:00+02:00",
+      "place": "Ortszentrum Merzenich",
+      "district": "Merzenich",
+      "sourceUrl": "https://www.heimat-info.de/beitraege/a62bdfba-eb56-4cbb-90ef-6b2c4fd3d857"
+    }
+  ],
+  "sport": {
+    "team": "SC 1919 Merzenich",
+    "competition": "Kreisliga A",
+    "dataCheckedAt": "2026-09-14T12:15:00+02:00",
+    "sourceName": "FUSSBALL.DE",
+    "sourceUrl": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+    "table": {
+      "position": 5,
+      "points": 6,
+      "goals": "9:6"
+    },
+    "lastConfirmed": {
+      "date": "2026-09-06T15:00:00+02:00",
+      "home": "FC Golzheim",
+      "away": "SC 1919 Merzenich",
+      "result": "offizieller Spielstand in dieser Preview nicht dargestellt"
+    },
+    "pending": {
+      "date": "2026-09-13T15:00:00+02:00",
+      "home": "SC 1919 Merzenich",
+      "away": "BC Oberzier",
+      "status": "Ergebnis noch nicht bestätigt"
+    },
+    "next": {
+      "date": "2026-09-18T19:30:00+02:00",
+      "home": "SC Jülich 1910/97/Hoengen e.V.",
+      "away": "SC 1919 Merzenich"
+    }
+  },
+  "ads": [
+    {
+      "id": "homepage_sidebar_top",
+      "active": false,
+      "label": "ANZEIGE",
+      "headline": "",
+      "target": ""
+    },
+    {
+      "id": "homepage_sidebar_middle",
+      "active": false,
+      "label": "ANZEIGE",
+      "headline": "",
+      "target": ""
+    }
+  ]
+}
