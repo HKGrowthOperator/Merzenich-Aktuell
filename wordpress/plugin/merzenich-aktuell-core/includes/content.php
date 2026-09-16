@@ -101,21 +101,64 @@ function ma_active_market_items(string $type, int $limit=3): array {
         'order'=>'DESC',
         'meta_query'=>[
             'relation'=>'AND',
+            ['key'=>'ma_release_confirmed','value'=>'1','compare'=>'='],
             [
                 'relation'=>'OR',
                 ['key'=>'ma_end_at','compare'=>'NOT EXISTS'],
                 ['key'=>'ma_end_at','value'=>'','compare'=>'='],
                 ['key'=>'ma_end_at','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
             ],
-            [
-                'relation'=>'OR',
-                ['key'=>'ma_release_confirmed','compare'=>'NOT EXISTS'],
-                ['key'=>'ma_release_confirmed','value'=>'1','compare'=>'='],
-            ],
         ],
     ]);
     return $q->posts;
 }
+
+function ma_filter_public_service_archives(WP_Query $query): void {
+    if (is_admin() || !$query->is_main_query()) return;
+
+    $post_type=$query->get('post_type');
+    if (is_array($post_type)) return;
+
+    if (in_array($post_type,['ma_property','ma_job','ma_obituary','ma_family_notice'],true) || $query->is_post_type_archive(['ma_property','ma_job','ma_obituary','ma_family_notice'])) {
+        $now=current_time('Y-m-d H:i:s');
+        $query->set('meta_query',[
+            'relation'=>'AND',
+            ['key'=>'ma_release_confirmed','value'=>'1','compare'=>'='],
+            [
+                'relation'=>'OR',
+                ['key'=>'ma_end_at','compare'=>'NOT EXISTS'],
+                ['key'=>'ma_end_at','value'=>'','compare'=>'='],
+                ['key'=>'ma_end_at','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
+            ],
+        ]);
+        $query->set('orderby','date');
+        $query->set('order','DESC');
+        return;
+    }
+
+    if ($post_type==='ma_event' || $query->is_post_type_archive('ma_event')) {
+        $now=current_time('Y-m-d H:i:s');
+        $query->set('posts_per_page',20);
+        $query->set('meta_key','ma_event_start');
+        $query->set('orderby','meta_value');
+        $query->set('order','ASC');
+        $query->set('meta_query',[
+            'relation'=>'OR',
+            ['key'=>'ma_event_end','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
+            [
+                'relation'=>'AND',
+                ['key'=>'ma_event_end','compare'=>'NOT EXISTS'],
+                ['key'=>'ma_event_start','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
+            ],
+            [
+                'relation'=>'AND',
+                ['key'=>'ma_event_end','value'=>'','compare'=>'='],
+                ['key'=>'ma_event_start','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
+            ],
+        ]);
+    }
+}
+add_action('pre_get_posts','ma_filter_public_service_archives');
 
 add_action('wp_head', function () {
     if (is_singular(['ma_obituary','ma_family_notice'])) {
