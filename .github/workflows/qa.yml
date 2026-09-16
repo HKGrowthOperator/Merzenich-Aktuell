@@ -1,0 +1,80 @@
+name: Merzenich Aktuell QA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+
+      - name: Validate frontend JavaScript syntax
+        run: node --check app.js
+
+      - name: Validate JSON content
+        run: python3 -m json.tool content.json > /dev/null
+
+      - name: Validate WordPress import XML
+        run: python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse('wordpress-delivery/merzenich-aktuell-import.xml')
+          print('WXR/XML syntax OK')
+          PY
+
+      - name: Verify WordPress delivery files exist
+        run: |
+          test -s wordpress-delivery/merzenich-aktuell-theme.zip
+          test -s wordpress-delivery/merzenich-aktuell-core.zip
+          test -s wordpress-delivery/merzenich-aktuell-import.xml
+
+      - name: Inspect and lint Theme ZIP
+        run: |
+          rm -rf /tmp/ma-theme
+          mkdir -p /tmp/ma-theme
+          unzip -q wordpress-delivery/merzenich-aktuell-theme.zip -d /tmp/ma-theme
+          echo 'Theme ZIP contents:'
+          find /tmp/ma-theme -maxdepth 3 -type f | sort
+          PHP_COUNT=$(find /tmp/ma-theme -type f -name '*.php' | wc -l)
+          if [ "$PHP_COUNT" -eq 0 ]; then
+            echo 'ERROR: Theme ZIP contains no PHP files.'
+            exit 1
+          fi
+          while IFS= read -r file; do php -l "$file"; done < <(find /tmp/ma-theme -type f -name '*.php' -print)
+
+      - name: Inspect and lint Core Plugin ZIP
+        run: |
+          rm -rf /tmp/ma-core
+          mkdir -p /tmp/ma-core
+          unzip -q wordpress-delivery/merzenich-aktuell-core.zip -d /tmp/ma-core
+          echo 'Core ZIP contents:'
+          find /tmp/ma-core -maxdepth 4 -type f | sort
+          PHP_COUNT=$(find /tmp/ma-core -type f -name '*.php' | wc -l)
+          if [ "$PHP_COUNT" -eq 0 ]; then
+            echo 'ERROR: Core ZIP contains no PHP files.'
+            exit 1
+          fi
+          while IFS= read -r file; do php -l "$file"; done < <(find /tmp/ma-core -type f -name '*.php' -print)
+
+      - name: Check for obvious placeholder delivery files
+        run: |
+          if grep -RniE 'TODO|PLACEHOLDER|dummy content|example only' /tmp/ma-theme /tmp/ma-core; then
+            echo 'WARNING: Placeholder markers found. Review required.'
+          else
+            echo 'No obvious placeholder markers found.'
+          fi
