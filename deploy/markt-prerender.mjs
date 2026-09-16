@@ -24,6 +24,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { symbolbild } from './symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -73,14 +74,18 @@ function zeile(item, art) {
   const haupt = job ? item.employer : item.price;
   const fakten = job ? item.employment : item.details;
   const details = job ? item.details : '';
-  return `<article class="event-row job-row markt-row">` +
-    `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` +
+  // Stellen bekommen das Buero-Symbolbild als Vorschau. Immobilien bewusst
+  // nicht: ein echtes Haus neben einem Inserat liest sich als das Objekt (§4).
+  const symbol = job ? symbolbild('stellen', 480) : null;
+  const thumb = symbol ? `<a class="markt-thumb" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow" tabindex="-1" aria-hidden="true"><img src="${esc(symbol.src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="markt-thumb__badge">Symbolbild</span></a>` : '';
+  return `<article class="event-row job-row markt-row${symbol ? ' markt-row--thumb' : ''}">` +
+    `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` + thumb +
     `<div class="info">` +
       `<span class="eyebrow"><span class="markt-art">${esc(kurzArt(item, art))} · </span>${ortZeile(item)}</span>` +
       `<h3><a href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">${esc(item.title)}</a></h3>` +
       (haupt ? `<p class="markt-haupt">${esc(haupt)}</p>` : '') +
       `<div class="meta">${fakten ? `<span>${esc(fakten)}</span>` : ''}${details ? `<span>${esc(details)}</span>` : ''}${p.tag ? `<span>Geprüft ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</span>` : ''}</div>` +
-      `<p class="ev-desc">Quelle: ${esc(item.sourceName || 'Originalquelle')} · Angaben laut Anbieter, maßgeblich ist die Originalanzeige.</p>` +
+      `<p class="ev-desc">Quelle: ${esc(item.sourceName || 'Originalquelle')} · Angaben laut Anbieter, maßgeblich ist die Originalanzeige.${symbol ? ` Symbolbild: ${esc(symbol.credit)}, <a href="${esc(symbol.sourceUrl)}" target="_blank" rel="noopener noreferrer">Bildquelle</a>.` : ''}</p>` +
     `</div>` +
     `<div class="act"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">Originalanzeige öffnen</a></div>` +
   `</article>`;
