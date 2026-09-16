@@ -79,14 +79,18 @@ function ma_render_property_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     ma_admin_select('ma_property_mode','Art',ma_admin_field_value($post->ID,'ma_property_mode'),['rent'=>'Mieten','buy'=>'Kaufen']);
     ma_admin_input('ma_property_price','Preis',ma_admin_field_value($post->ID,'ma_property_price'),'text','1.250 € / Monat oder 385.000 €');
+    ma_admin_input('ma_property_warm_price','Warmmiete',ma_admin_field_value($post->ID,'ma_property_warm_price'),'text','1.480 € / Monat','Nur bei Mietangeboten. Leer lassen, wenn das Portal keine nennt.');
     ma_admin_input('ma_property_rooms','Zimmer',ma_admin_field_value($post->ID,'ma_property_rooms'),'number','4');
     ma_admin_input('ma_property_area','Wohnfläche',ma_admin_field_value($post->ID,'ma_property_area'),'text','125 m²');
     ma_admin_input('ma_property_lot','Grundstück',ma_admin_field_value($post->ID,'ma_property_lot'),'text','480 m²');
     ma_admin_input('ma_property_address','Adresse / Lage',ma_admin_field_value($post->ID,'ma_property_address'),'text','Merzenich');
+    ma_admin_input('ma_property_available_from','Verfügbar ab',ma_admin_field_value($post->ID,'ma_property_available_from'),'text','sofort / 01.11.2026');
     ma_admin_input('ma_property_provider','Anbieter',ma_admin_field_value($post->ID,'ma_property_provider'),'text','Makler / Eigentümer');
     ma_admin_input('ma_property_contact','Kontakt',ma_admin_field_value($post->ID,'ma_property_contact'),'text','E-Mail / Telefon');
-    ma_admin_input('ma_property_url','Externer Link',ma_admin_field_value($post->ID,'ma_property_url'),'url','https://...');
-    ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Anzeige nicht mehr als aktiv ausgespielt.');
+    ma_admin_input('ma_property_url','Externer Link (Originalportal)',ma_admin_field_value($post->ID,'ma_property_url'),'url','https://...','Das Inserat bleibt auf das Portal verlinkt. Fremde Bilder nicht lokal kopieren, solange die Bildrechte nicht bestätigt sind.');
+    ma_admin_input('ma_source_published_at','Im Portal veröffentlicht am',ma_admin_field_value($post->ID,'ma_source_published_at'),'datetime-local');
+    ma_admin_input('ma_verified_at','Gegen Quelle geprüft am',ma_admin_field_value($post->ID,'ma_verified_at'),'datetime-local','','Wann wurden Preis, Fläche und Verfügbarkeit zuletzt mit dem Portal abgeglichen?');
+    ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Anzeige nicht mehr als aktiv ausgespielt - weder auf der Startseite noch im Archiv.');
     ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Nur veröffentlichen, wenn die Freigabe des Auftraggebers dokumentiert ist.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
@@ -94,12 +98,22 @@ function ma_render_property_meta_box(WP_Post $post): void {
 function ma_render_job_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     ma_admin_input('ma_job_company','Unternehmen',ma_admin_field_value($post->ID,'ma_job_company'),'text','Unternehmen GmbH');
+    // Direkter Arbeitgeber und Personaldienstleister muessen unterscheidbar
+    // sein. Eine Anzeige eines Vermittlers, die wie die des Betriebs aussieht,
+    // fuehrt Bewerber in die Irre - deshalb ist das ein eigenes Feld und nicht
+    // ein Zusatz im Firmennamen.
+    ma_admin_select('ma_job_provider_type','Wer inseriert?',ma_admin_field_value($post->ID,'ma_job_provider_type'),[''=>'Bitte wählen','direct'=>'Direkter Arbeitgeber','agency'=>'Personaldienstleister / Vermittler']);
+    ma_admin_input('ma_job_provider','Inserierender Dienstleister',ma_admin_field_value($post->ID,'ma_job_provider'),'text','Name des Personaldienstleisters','Nur ausfüllen, wenn nicht der Arbeitgeber selbst inseriert.');
     ma_admin_input('ma_job_location','Arbeitsort',ma_admin_field_value($post->ID,'ma_job_location'),'text','Merzenich');
+    ma_admin_input('ma_job_address','Adresse',ma_admin_field_value($post->ID,'ma_job_address'),'text','Straße Nr., 52399 Merzenich');
     ma_admin_select('ma_job_type','Beschäftigungsart',ma_admin_field_value($post->ID,'ma_job_type'),[''=>'Bitte wählen','fulltime'=>'Vollzeit','parttime'=>'Teilzeit','minijob'=>'Minijob','training'=>'Ausbildung','internship'=>'Praktikum','freelance'=>'Freie Mitarbeit']);
     ma_admin_input('ma_job_hours','Arbeitszeit / Umfang',ma_admin_field_value($post->ID,'ma_job_hours'),'text','40 Std. / Woche');
+    ma_admin_input('ma_job_start_date','Beginn',ma_admin_field_value($post->ID,'ma_job_start_date'),'text','ab sofort / 01.10.2026');
     ma_admin_input('ma_job_contact','Ansprechpartner',ma_admin_field_value($post->ID,'ma_job_contact'),'text','Name / E-Mail / Telefon');
-    ma_admin_input('ma_job_apply_url','Bewerbungslink',ma_admin_field_value($post->ID,'ma_job_apply_url'),'url','https://...');
-    ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Stelle nicht mehr als aktiv ausgespielt.');
+    ma_admin_input('ma_job_apply_url','Bewerbungslink (Originalquelle)',ma_admin_field_value($post->ID,'ma_job_apply_url'),'url','https://...');
+    ma_admin_input('ma_source_published_at','Bei der Quelle veröffentlicht am',ma_admin_field_value($post->ID,'ma_source_published_at'),'datetime-local');
+    ma_admin_input('ma_verified_at','Gegen Quelle geprüft am',ma_admin_field_value($post->ID,'ma_verified_at'),'datetime-local');
+    ma_admin_input('ma_end_at','Anzeige endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local','','Nach Ablauf wird die Stelle nicht mehr als aktiv ausgespielt - weder auf der Startseite noch im Archiv.');
     ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Nur veröffentlichen, wenn die Freigabe des Unternehmens dokumentiert ist.','Freigabe dokumentiert');
     ma_admin_meta_box_end();
 }
@@ -150,9 +164,11 @@ function ma_content_admin_schema(string $post_type): array {
         ],
         'ma_property'=>array_merge($common_end,[
             'ma_property_mode'=>'text','ma_property_price'=>'text','ma_property_rooms'=>'number','ma_property_area'=>'text','ma_property_lot'=>'text','ma_property_address'=>'text','ma_property_provider'=>'text','ma_property_contact'=>'text','ma_property_url'=>'url',
+            'ma_property_warm_price'=>'text','ma_property_available_from'=>'text','ma_source_published_at'=>'datetime','ma_verified_at'=>'datetime',
         ]),
         'ma_job'=>array_merge($common_end,[
             'ma_job_company'=>'text','ma_job_location'=>'text','ma_job_type'=>'text','ma_job_hours'=>'text','ma_job_contact'=>'text','ma_job_apply_url'=>'url',
+            'ma_job_address'=>'text','ma_job_start_date'=>'text','ma_job_provider_type'=>'text','ma_job_provider'=>'text','ma_source_published_at'=>'datetime','ma_verified_at'=>'datetime',
         ]),
         'ma_obituary'=>array_merge($common_end,[
             'ma_obituary_name'=>'text','ma_obituary_birth'=>'date','ma_obituary_death'=>'date','ma_obituary_place'=>'text','ma_obituary_funeral'=>'textarea','ma_obituary_family'=>'textarea','ma_obituary_contact'=>'text',

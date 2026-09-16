@@ -120,6 +120,24 @@ function ma_theme_job_type_label(string $type): string {
     return $labels[$type]??'';
 }
 
+/** Wer inseriert eine Stelle? Vermittler werden immer benannt. */
+function ma_theme_job_provider_label(string $type): string {
+    return ['direct'=>'Direkter Arbeitgeber','agency'=>'Personaldienstleister'][$type] ?? '';
+}
+
+/**
+ * Pruefzeile fuer Inserate: wann wurde gegen die Quelle abgeglichen, wann hat
+ * die Quelle veroeffentlicht. Ohne Pruefdatum steht das auch so da.
+ */
+function ma_theme_verified_line(int $post_id): string {
+    $gep=(string)get_post_meta($post_id,'ma_verified_at',true);
+    $veroeff=(string)get_post_meta($post_id,'ma_source_published_at',true);
+    $teile=[];
+    if($veroeff!=='' && ($ts=strtotime($veroeff))) $teile[]='Quelle veröffentlicht am '.wp_date('d.m.Y',$ts);
+    $teile[]=$gep!=='' && ($ts=strtotime($gep)) ? 'Gegen Quelle geprüft am '.wp_date('d.m.Y',$ts) : 'Noch nicht gegen die Quelle geprüft';
+    return implode(' · ',$teile);
+}
+
 function ma_theme_market_meta(int $post_id=0): array {
     $post_id=$post_id?:get_the_ID();
     $type=get_post_type($post_id);
@@ -136,7 +154,10 @@ function ma_theme_market_meta(int $post_id=0): array {
         $company=(string)get_post_meta($post_id,'ma_job_company',true);
         $job_type=ma_theme_job_type_label((string)get_post_meta($post_id,'ma_job_type',true));
         $location=(string)get_post_meta($post_id,'ma_job_location',true);
-        foreach([$company,$job_type,$location] as $value) if($value!=='') $items[]=$value;
+        // Personaldienstleister erscheinen schon in der Kurzzeile, nicht erst
+        // auf der Detailseite. Bewerber sollen es sehen, bevor sie klicken.
+        $vermittler=get_post_meta($post_id,'ma_job_provider_type',true)==='agency' ? 'Personaldienstleister' : '';
+        foreach([$company,$vermittler,$job_type,$location] as $value) if($value!=='') $items[]=$value;
     } elseif($type==='ma_obituary'){
         $name=(string)get_post_meta($post_id,'ma_obituary_name',true);
         $birth=(string)get_post_meta($post_id,'ma_obituary_birth',true);

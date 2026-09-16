@@ -33,9 +33,11 @@ $source='';
     <?php
       $fields=[
         'Preis'=>get_post_meta($post_id,'ma_property_price',true),
+        'Warmmiete'=>get_post_meta($post_id,'ma_property_warm_price',true),
         'Zimmer'=>get_post_meta($post_id,'ma_property_rooms',true),
         'Wohnfläche'=>get_post_meta($post_id,'ma_property_area',true),
         'Grundstück'=>get_post_meta($post_id,'ma_property_lot',true),
+        'Verfügbar ab'=>get_post_meta($post_id,'ma_property_available_from',true),
         'Lage'=>get_post_meta($post_id,'ma_property_address',true),
         'Anbieter'=>get_post_meta($post_id,'ma_property_provider',true),
         'Kontakt'=>get_post_meta($post_id,'ma_property_contact',true),
@@ -43,19 +45,28 @@ $source='';
       $source=(string)get_post_meta($post_id,'ma_property_url',true);
     ?>
     <dl class="service-facts"><?php foreach($fields as $label=>$value): if((string)$value==='') continue; ?><div><dt><?php echo esc_html($label); ?></dt><dd><?php echo esc_html((string)$value); ?><?php if($label==='Zimmer'): ?> Zimmer<?php endif; ?></dd></div><?php endforeach; ?></dl>
+    <p class="service-verified"><?php echo esc_html(ma_theme_verified_line($post_id)); ?></p>
 
   <?php elseif($type==='ma_job'): ?>
     <?php
       $fields=[
         'Unternehmen'=>get_post_meta($post_id,'ma_job_company',true),
+        'Inseriert von'=>(function() use ($post_id){
+            $art=ma_theme_job_provider_label((string)get_post_meta($post_id,'ma_job_provider_type',true));
+            $wer=(string)get_post_meta($post_id,'ma_job_provider',true);
+            return $art==='' ? '' : ($wer!=='' && $art==='Personaldienstleister' ? $art.': '.$wer : $art);
+        })(),
         'Arbeitsort'=>get_post_meta($post_id,'ma_job_location',true),
+        'Adresse'=>get_post_meta($post_id,'ma_job_address',true),
         'Beschäftigungsart'=>ma_theme_job_type_label((string)get_post_meta($post_id,'ma_job_type',true)),
         'Arbeitszeit'=>get_post_meta($post_id,'ma_job_hours',true),
+        'Beginn'=>get_post_meta($post_id,'ma_job_start_date',true),
         'Ansprechpartner'=>get_post_meta($post_id,'ma_job_contact',true),
       ];
       $source=(string)get_post_meta($post_id,'ma_job_apply_url',true);
     ?>
     <dl class="service-facts"><?php foreach($fields as $label=>$value): if((string)$value==='') continue; ?><div><dt><?php echo esc_html($label); ?></dt><dd><?php echo esc_html((string)$value); ?></dd></div><?php endforeach; ?></dl>
+    <p class="service-verified"><?php echo esc_html(ma_theme_verified_line($post_id)); ?></p>
 
   <?php elseif($type==='ma_obituary'): ?>
     <?php
