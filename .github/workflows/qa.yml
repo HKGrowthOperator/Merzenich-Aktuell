@@ -31,11 +31,7 @@ jobs:
         run: python3 -m json.tool content.json > /dev/null
 
       - name: Validate WordPress import XML
-        run: python3 - <<'PY'
-          import xml.etree.ElementTree as ET
-          ET.parse('wordpress-delivery/merzenich-aktuell-import.xml')
-          print('WXR/XML syntax OK')
-          PY
+        run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('wordpress-delivery/merzenich-aktuell-import.xml'); print('WXR/XML syntax OK')"
 
       - name: Verify WordPress delivery files exist
         run: |
