@@ -1,0 +1,214 @@
+name: Evening content refresh 2026-09-16
+
+on:
+  push:
+    branches: [content-refresh-2026-09-16-evening]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout refresh branch
+        uses: actions/checkout@v4
+        with:
+          ref: content-refresh-2026-09-16-evening
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+
+      - name: Integrate audited content into recovered frontend
+        run: |
+          set -euo pipefail
+          node scripts/apply-evening-content-refresh.mjs
+          node scripts/finalize-evening-content-refresh.mjs
+          # apply-evening strengthens qa.yml for a local run, but the canonical
+          # workflow stays untouched on this content branch. The dedicated QA
+          # below covers tablet/jobs/properties without rewriting release CI.
+          git checkout HEAD -- .github/workflows/qa.yml
+
+      - name: Syntax and JSON validation
+        run: |
+          set -euo pipefail
+          node --check chatgpt-site/assets/app.js
+          node --check chatgpt-site/assets/v20.js
+          node --check scripts/apply-evening-content-refresh.mjs
+          node --check scripts/finalize-evening-content-refresh.mjs
+          node --check qa/content-link-check.mjs
+          python3 -m json.tool chatgpt-site/api/editorial-current.json > /dev/null
+          python3 -m json.tool chatgpt-site/api/sport-current.json > /dev/null
+          python3 -m json.tool chatgpt-site/api/latest.json > /dev/null
+
+      - name: Run repository release gates
+        run: |
+          set -euo pipefail
+          node qa/pruefung.mjs
+          node qa/content-link-check.mjs
+          if grep -Rni --include='*.html' --include='*.json' --include='*.js' 'sc-1919-merzenich-logo.webp' chatgpt-site; then
+            echo 'ERROR: unresolved SC Merzenich logo is still referenced in public delivery.'
+            exit 1
+          fi
+
+      - name: Build actual Coolify image
+        run: docker build -f deploy/coolify/Dockerfile -t merzenich-aktuell-evening .
+
+      - name: Start actual Coolify delivery
+        run: |
+          docker run -d --rm --name merzenich-aktuell-evening -p 4173:80 merzenich-aktuell-evening
+          for i in $(seq 1 25); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail http://127.0.0.1:4173/ > /dev/null
+          curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
+          curl --fail http://127.0.0.1:4173/api/editorial-current.json | python3 -m json.tool > /dev/null
+          curl --fail http://127.0.0.1:4173/api/sport-current.json | python3 -m json.tool > /dev/null
+          curl --fail http://127.0.0.1:4173/api/latest.json | python3 -m json.tool > /dev/null
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Desktop tablet mobile QA
+        run: |
+          cat > .qa-evening.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          const browser = await chromium.launch({ headless: true });
+          const base = 'http://127.0.0.1:4173';
+          const hero = 'SC Merzenich gewinnt 3:2 gegen BC Oberzier';
+          const secondary = 'Viertklässler unterstützen Geschwindigkeitskontrolle in Merzenich';
+
+          async function noOverflow(page, label) {
+            const bad = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
+            if (bad) throw new Error(`${label}: horizontal overflow`);
+          }
+          async function open(path, viewport, ready = 'main') {
+            const page = await browser.newPage({ viewport });
+            await page.goto(base + path, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector(ready, { timeout: 15000 });
+            await page.waitForTimeout(1200);
+            return page;
+          }
+          async function checkHome(viewport, label) {
+            const page = await open('/', viewport, '.front-lead h1');
+            await noOverflow(page, label);
+            const title = (await page.locator('.front-lead h1').textContent() || '').trim();
+            if (title !== hero) throw new Error(`${label}: wrong hero: ${title}`);
+            const src = await page.locator('.front-lead img').getAttribute('src');
+            if (!src?.includes('ph-sport.svg')) throw new Error(`${label}: hero does not use rights-safe sport symbol image: ${src}`);
+            const body = await page.locator('body').textContent() || '';
+            if (!body.includes(secondary)) throw new Error(`${label}: current police secondary missing`);
+            if (body.includes('Standkartenvergabe Trödelmarkt Ortsfest')) {
+              const visible = await page.getByText('Standkartenvergabe Trödelmarkt Ortsfest', { exact: false }).filter({ visible: true }).count().catch(() => 0);
+              if (visible) throw new Error(`${label}: expired stand-card event still visible`);
+            }
+            if (viewport.width <= 834) {
+              const menu = page.locator('[data-menu]');
+              await menu.click();
+              if ((await menu.getAttribute('aria-expanded')) !== 'true') throw new Error(`${label}: mobile/tablet menu did not open`);
+              await page.keyboard.press('Escape');
+            }
+            await page.close();
+          }
+
+          await checkHome({ width: 1440, height: 1000 }, 'desktop');
+          await checkHome({ width: 834, height: 1112 }, 'tablet');
+          await checkHome({ width: 390, height: 844 }, 'mobile');
+
+          for (const [path, label, selector, min] of [
+            ['/jobs/', 'jobs-desktop', '.job-row', 5],
+            ['/immobilien/', 'properties-desktop', '.event-row', 3]
+          ]) {
+            const page = await open(path, { width: 1440, height: 1000 }, selector);
+            await noOverflow(page, label);
+            const n = await page.locator(selector).count();
+            if (n < min) throw new Error(`${label}: expected ${min}, got ${n}`);
+            const text = await page.locator('main').textContent() || '';
+            if (label.startsWith('jobs') && text.includes('Noch keine Stellen eingetragen')) throw new Error('jobs still shows empty state');
+            if (label.startsWith('properties') && /reserviert/i.test(text)) throw new Error('reserved property is visible');
+            await page.close();
+          }
+
+          for (const [path, label, selector] of [
+            ['/jobs/', 'jobs-mobile', '.job-row'],
+            ['/immobilien/', 'properties-mobile', '.event-row']
+          ]) {
+            const page = await open(path, { width: 390, height: 844 }, selector);
+            await noOverflow(page, label);
+            await page.close();
+          }
+
+          {
+            const page = await open('/immobilien/', { width: 1440, height: 1000 }, '.event-row');
+            const bad = await page.locator('.event-row img').evaluateAll(imgs => imgs.some(i => !i.getAttribute('src')?.includes('ph-immobilien.svg')));
+            if (bad) throw new Error('property market contains a non-symbol listing image');
+            await page.close();
+          }
+
+          for (const [path, title] of [
+            ['/blaulicht/geschwindigkeitskontrolle-grundschule/', secondary],
+            ['/rathaus/fahrrad-reparaturstationen/', 'Vier neue Fahrrad-Reparaturstationen in der Gemeinde Merzenich']
+          ]) {
+            const page = await open(path, { width: 1440, height: 1000 }, 'h1');
+            const h1 = (await page.locator('h1').textContent() || '').trim();
+            if (h1 !== title) throw new Error(`${path}: unexpected title ${h1}`);
+            await noOverflow(page, path);
+            await page.close();
+          }
+
+          {
+            const page = await open('/sport/', { width: 1440, height: 1000 }, '.sports-module');
+            await page.waitForFunction(() => document.querySelector('.sports-module')?.textContent?.includes('3 : 2'));
+            const text = await page.locator('.sports-module').textContent() || '';
+            for (const value of ['13.09.2026', '9', '12:8']) if (!text.includes(value)) throw new Error(`sport missing ${value}`);
+            const logos = await page.locator('img[src*="sc-1919-merzenich-logo"]').count();
+            if (logos) throw new Error('sport module still renders unresolved club logo');
+            await noOverflow(page, 'sport');
+            await page.close();
+          }
+
+          {
+            const page = await open('/termine/', { width: 1440, height: 1000 }, 'main');
+            const expiredVisible = await page.evaluate(() => [...document.querySelectorAll('[data-event-end]')].some(el => new Date(el.dataset.eventEnd) < new Date() && !el.hidden));
+            if (expiredVisible) throw new Error('expired event visible as upcoming');
+            await noOverflow(page, 'events');
+            await page.close();
+          }
+
+          await browser.close();
+          console.log('Browser QA passed: desktop/tablet/mobile, jobs, properties, articles, sport, events.');
+          EOF
+          node .qa-evening.mjs
+          rm .qa-evening.mjs
+
+      - name: Stop QA delivery
+        if: always()
+        run: docker rm -f merzenich-aktuell-evening || true
+
+      - name: Commit generated refresh to branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add chatgpt-site site-source/content
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'content: integrate verified 16 Sep evening refresh [skip ci]'
+            git pull --rebase origin content-refresh-2026-09-16-evening
+            git push origin HEAD:content-refresh-2026-09-16-evening
+          fi
