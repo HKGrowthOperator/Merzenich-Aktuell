@@ -1,0 +1,18 @@
+# Faehrt die Release-Gates aus qa/README.md bei jedem Push und jedem Pull
+# Request. Ohne Fremdpakete, deshalb ohne Installationsschritt.
+name: Pruefung
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Release-Gates
+        run: node qa/pruefung.mjs
