@@ -47,3 +47,26 @@
   script.dataset.maStartbilder = '1';
   document.head.append(script);
 })();
+
+/*
+ * Homepage-Polish wird zentral nach den bestehenden Styles geladen. Dadurch
+ * bleiben Header/Footer unangetastet und wir muessen den statischen Build nicht
+ * seitenweise duplizieren. Der JS-Teil fasst nur die Startseite an und laesst
+ * spaetere echte CMS-Banner mit Bild in Ruhe.
+ */
+(() => {
+  if (!document.querySelector('link[data-ma-home-polish]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/assets/homepage-polish.css?v=20260916a';
+    style.dataset.maHomePolish = '1';
+    document.head.append(style);
+  }
+  if (!document.querySelector('script[data-ma-home-polish]')) {
+    const script = document.createElement('script');
+    script.src = '/assets/homepage-polish.js?v=20260916a';
+    script.defer = true;
+    script.dataset.maHomePolish = '1';
+    document.head.append(script);
+  }
+})();
