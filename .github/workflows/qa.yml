@@ -9,6 +9,13 @@ on:
 permissions:
   contents: write
 
+# Laeufe auf main nacheinander: zwei gleichzeitige Laeufe haben beide
+# Screenshots committet und sich beim Rebase an den Binaerdateien
+# festgefahren (Lauf 80). Nicht abbrechen, nur warten.
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   qa:
     runs-on: ubuntu-latest
@@ -195,6 +202,13 @@ jobs:
           else
             git commit -m 'qa: refresh actual Coolify screenshots [skip ci]'
             git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            # Bei Konflikten an den Screenshots gewinnt der frische Stand dieses
+            # Laufs (-X theirs = der eingespielte Commit). Schlaegt der Rebase
+            # trotzdem fehl, wird er abgebrochen und nicht der QA-Lauf.
+            if git rebase -X theirs origin/main; then
+              git push origin HEAD:main
+            else
+              git rebase --abort
+              echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
+            fi
           fi
