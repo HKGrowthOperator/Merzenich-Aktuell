@@ -34,6 +34,11 @@ jobs:
 
   deploy:
     needs: gates
+    # GitHub Pages ist fuer dieses Repo nicht aktiviert (Auslieferung laeuft ueber
+    # Coolify). Bis Pages eingeschaltet ist, wuerde configure-pages jeden Push rot
+    # faerben. Zum Aktivieren: Settings > Pages > Source "GitHub Actions", dann
+    # Repository-Variable GITHUB_PAGES_AKTIV=ja setzen.
+    if: vars.GITHUB_PAGES_AKTIV == 'ja'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
