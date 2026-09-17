@@ -44,8 +44,8 @@ function syncFeed(rel,wanted){
 syncFeed('nachrichten/index.html',artikel);
 for(const r of ressorts.filter(x=>x!=='nachrichten')) syncFeed(`${r}/index.html`,artikel.filter(a=>a.ressort===r));
 
-// Ortsseiten. Kombinierte Ortszeilen (z. B. MERZENICH · GIRBELSRATH) werden
-// bewusst beiden passenden Ortskanälen zugeordnet.
+// Ortsseiten. Die gemeinsame Artikel-Erfassung liest die komplette Ortszeile;
+// "MERZENICH · GIRBELSRATH" landet deshalb in beiden passenden Kanaelen.
 for(const [slug,label] of orte) syncFeed(`${slug}/index.html`,artikel.filter(a=>(a.ort||'').toLocaleUpperCase('de-DE').includes(label)));
 
 // Archiv komplett aus dem gleichen Artikelbestand ergänzen.
@@ -60,7 +60,11 @@ for(const [slug,label] of orte) syncFeed(`${slug}/index.html`,artikel.filter(a=>
     }
     for(const [key,list] of months){
       const id=`id="${key}"`, blockStart=html.indexOf(id);
-      const rows=list.filter(a=>!html.includes(`href="${a.url}"`)).map(a=>`<li class="editorial-synced"><time datetime="${esc(a.datum)}">${esc(new Intl.DateTimeFormat('de-DE',{day:'2-digit',month:'2-digit',timeZone:'Europe/Berlin'}).format(new Date(a.datum)))}.</time><a href="${esc(a.url)}">${esc(a.titel)}</a><span class="rs">${esc(a.ressortLabel)}</span></li>`).join('');
+      const rows=list.filter(a=>!html.includes(`href="${a.url}"`)).map(a=>{
+        let kurz=new Intl.DateTimeFormat('de-DE',{day:'2-digit',month:'2-digit',timeZone:'Europe/Berlin'}).format(new Date(a.datum));
+        if(!kurz.endsWith('.'))kurz+='.';
+        return `<li class="editorial-synced"><time datetime="${esc(a.datum)}">${esc(kurz)}</time><a href="${esc(a.url)}">${esc(a.titel)}</a><span class="rs">${esc(a.ressortLabel)}</span></li>`;
+      }).join('');
       if(!rows)continue;
       if(blockStart>=0){
         const ul=html.indexOf('<ul class="archive-list">',blockStart); if(ul>=0){const p=ul+'<ul class="archive-list">'.length;html=html.slice(0,p)+rows+html.slice(p)}
@@ -81,8 +85,8 @@ for(const [slug,label] of orte) syncFeed(`${slug}/index.html`,artikel.filter(a=>
   }
 }
 
-// Release-Texte aus dem Prototyp entfernen. Keine nicht bestätigte natürliche
-// Person für §18 MStV erfinden; dieses Feld bleibt bewusst als Prüfpunkt bestehen.
+// Release-Texte aus dem Prototyp entfernen. Keine nicht bestaetigte natuerliche
+// Person fuer §18 MStV erfinden; dieses Feld bleibt bewusst als echter Prüfpunkt.
 function replaceIn(rel,replacements){
   let html=lesen(rel); if(!html)return; const before=html;
   for(const [a,b] of replacements) html=html.split(a).join(b);
@@ -97,15 +101,34 @@ replaceIn('unterstuetzen/index.html',[
   ['vor dem Livegang','vor einer Aktivierung']
 ]);
 
-// Interne Projektformulierungen auf sämtlichen öffentlichen Seiten entfernen.
+// Redaktion nach außen mit einer konsistenten Markenadresse. Der rechtliche
+// Datenschutzkontakt der KBS Management GmbH bleibt auf Rechtseiten unveraendert.
+for(const rel of ['kontakt/index.html','redaktion/index.html','ueber-uns/index.html','meldung-senden/index.html']){
+  replaceIn(rel,[
+    ['mailto:info@kbs-management.tv','mailto:redaktion@merzenich-aktuell.de'],
+    ['>info@kbs-management.tv<','>redaktion@merzenich-aktuell.de<']
+  ]);
+}
+replaceIn('redaktion/index.html',[
+  ['<h2>Hinweise, Fragen und Korrekturen</h2>','<h2>Herausgeberin</h2><p>Merzenich Aktuell wird von der KBS Management GmbH herausgegeben. Redaktionelle Hinweise, Korrekturen und Themenvorschläge laufen über die Redaktion von Merzenich Aktuell.</p><h2>Hinweise, Fragen und Korrekturen</h2>']
+]);
+
+// Interne Projektformulierungen und oeffentliche Admin-Einstiege auf saemtlichen
+// oeffentlichen Seiten entfernen. /admin selbst wird weiter unten geloescht.
 (function cleanPublic(){
   const files=[]; (function walk(d){for(const e of readdirSync(d)){const p=join(d,e);const s=statSync(p);s.isDirectory()?walk(p):p.endsWith('.html')&&files.push(p)}})(site);
   const needle='Namentlich gezeichnete Beiträge folgen, sobald das Team steht.';
-  for(const p of files){let h=readFileSync(p,'utf8');if(!h.includes(needle))continue;h=h.split(needle).join('Beiträge werden redaktionell geprüft und transparent gekennzeichnet.');writeFileSync(p,h);changed++}
+  for(const p of files){
+    let h=readFileSync(p,'utf8'), before=h;
+    h=h.split(needle).join('Beiträge werden redaktionell geprüft und transparent gekennzeichnet.');
+    h=h.replace(/<p>\s*<a href="\/admin\/"[^>]*>[^<]*<\/a>\s*<\/p>/g,'');
+    h=h.replace(/<a href="\/admin\/"[^>]*>Redaktion anmelden<\/a>/g,'');
+    if(h!==before){writeFileSync(p,h);changed++}
+  }
 })();
 
-// /admin ist in Coolify ohne Identity nicht funktionsfähig und darf nicht als
-// öffentliches Redaktionshandbuch ausgeliefert werden.
-const admin=join(site,'admin'); if(existsSync(admin)){rmSync(admin,{recursive:true,force:true});changed++;console.log('content-sync: /admin aus öffentlichem Build entfernt')}
+// /admin ist in Coolify ohne Identity nicht funktionsfaehig und darf nicht als
+// oeffentliches Redaktionshandbuch ausgeliefert werden.
+const admin=join(site,'admin'); if(existsSync(admin)){rmSync(admin,{recursive:true,force:true});changed++;console.log('content-sync: /admin aus oeffentlichem Build entfernt')}
 
 console.log(`content-sync: ${artikel.length} Artikelseiten geprüft, ${changed} Dateien/Strukturen aktualisiert.`);
