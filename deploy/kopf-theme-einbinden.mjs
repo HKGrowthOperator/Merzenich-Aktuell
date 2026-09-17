@@ -104,8 +104,7 @@ for (const pfad of seiten) {
   // Das Redaktionshandbuch (/redaktion/) ist nicht oeffentlich; der Fusslink fuehrt zur Ueber-uns-Seite.
   html = html.replace(/<a href="\/redaktion\/">Redaktion<\/a>/g, '<a href="/ueber-uns/">Redaktion</a>');
   // Wetter-Akkordeon: bleibt verborgen, bis v20.js echte Daten hat (kein sichtbarer "nicht verfuegbar"-Zustand).
-  // Ein vorhandenes "open" (Startseite: Wetterkarte in der Vor-Ort-Leiste) bleibt erhalten.
-  html = html.replace(/<details class="service-accordion"((?:\s+(?:open|hidden))*)><summary>Wetter<\/summary><div><p>[^<]*<\/p><\/div><\/details>/g, (m, attrs) => `<details class="service-accordion"${/\bopen\b/.test(attrs) ? ' open' : ''} hidden><summary>Wetter</summary><div><p>Wetter wird geladen …</p></div></details>`);
+  html = html.replace(/<details class="service-accordion"(?: hidden)?><summary>Wetter<\/summary><div><p>[^<]*<\/p><\/div><\/details>/g, '<details class="service-accordion" hidden><summary>Wetter</summary><div><p>Wetter wird geladen …</p></div></details>');
   // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
   html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
   html = versioniere(html);
