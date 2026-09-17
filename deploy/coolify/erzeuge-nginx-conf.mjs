@@ -90,6 +90,12 @@ out.push('');
 // Zugriffsprotokolle mit IP-Adressen werden nicht geschrieben (Datenschutzerklaerung,
 // Abschnitt "Bereitstellung der Website"); Fehler landen weiter im error_log.
 out.push('  access_log off;');
+// Server Side Includes fuer das Tagesdatum im Seitenkopf (deploy/kopf-theme-einbinden.mjs
+// schreibt <!--# echo var="date_local" -->); Zeitzone kommt aus TZ im Dockerfile.
+// Auf Server-Ebene, damit auch Kopfzeilen-Locations wie "= /index.html" (aus
+// _headers) SSI verarbeiten; ssi_types bleibt text/html, Assets sind nicht betroffen.
+out.push('  ssi on;');
+out.push('  ssi_last_modified on;');
 // Interne Bereiche (Decap-Admin, Redaktionshandbuch) sind nicht Teil der oeffentlichen Seite.
 out.push('  location ^~ /admin/ { return 404; }');
 out.push('  location ^~ /redaktion/ { return 404; }');
@@ -143,10 +149,6 @@ for (const b of spezifisch) {
 out.push('');
 out.push('  # --- Auslieferung ---');
 out.push('  location / {');
-// Server Side Includes fuer das Tagesdatum im Seitenkopf (deploy/kopf-theme-einbinden.mjs
-// schreibt <!--# echo var="date_local" -->); Zeitzone kommt aus TZ im Dockerfile.
-out.push('    ssi on;');
-out.push('    ssi_last_modified on;');
 out.push(global.map(addHeader).join('\n'));
 // Seiten (und alles ohne eigene Regel) sollen nicht veralten: der Browser fragt
 // jedes Mal nach, bekommt bei unveraendertem Stand aber nur ein 304. Die
