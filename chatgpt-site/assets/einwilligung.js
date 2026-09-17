@@ -58,7 +58,7 @@
       if (!letzte) { try { localStorage.setItem('merzenich-live-letzte', neuste.date); } catch (e) { /* egal */ } return; }
       if (neuste.date > letzte) {
         try { localStorage.setItem('merzenich-live-letzte', neuste.date); } catch (e) { /* egal */ }
-        const url = String(neuste.url || '').replace(/^https?:\/\/merzenich-aktuell\.de/, '');
+        let url = String(neuste.url || ''); try { url = new URL(url, location.href).pathname; } catch (e) { /* relativ lassen */ }
         zeigeHinweis(neuste.title, url);
         if ('Notification' in window && Notification.permission === 'granted') {
           try { const n = new Notification('Merzenich Aktuell', { body: neuste.title, tag: 'merzenich-live' }); n.onclick = () => { window.focus(); location.href = url; }; } catch (e) { /* egal */ }

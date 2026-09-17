@@ -76,7 +76,7 @@
     bindeMelden(sektion);
     const render = (ks) => { anzahl.textContent = ks.length ? `(${ks.length})` : ''; liste.innerHTML = ks.length ? ks.map(kommentarHtml).join('') : '<p class="kommentare__leer">Noch keine Kommentare. Schreiben Sie den ersten.</p>'; };
     try { render((await api('liste?thema=' + encodeURIComponent(thema))).kommentare); }
-    catch (e) { liste.innerHTML = '<p class="kommentare__leer">Kommentare sind gerade nicht erreichbar.</p>'; }
+    catch (e) { liste.innerHTML = '<p class="kommentare__leer">Kommentare sind gerade nicht erreichbar. <button type="button" class="btn ghost kommentare__retry">Erneut versuchen</button></p>'; liste.querySelector('.kommentare__retry').addEventListener('click', () => { sektion.remove(); artikel(); }); }
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); const b = leseFormular(form); zeigeStatus(form, 'Wird gesendet …');
       form.querySelector('button[type=submit]').disabled = true;
@@ -117,7 +117,7 @@
       neuForm.querySelector('button[type=submit]').disabled = false;
     });
     try { themen = (await api('themen')).themen; renderListe(); const m = location.hash.match(/#thema=([^&]+)/); if (m) { const det = liste.querySelector(`details.thema[data-id="${CSS.escape(decodeURIComponent(m[1]))}"]`); if (det) { det.open = true; det.scrollIntoView({ block: 'start' }); } } }
-    catch (e) { liste.innerHTML = '<p class="kommentare__leer">Die Diskussion ist gerade nicht erreichbar. Bitte später noch einmal versuchen.</p>'; }
+    catch (e) { liste.innerHTML = '<p class="kommentare__leer">Die Diskussion ist gerade nicht erreichbar. <button type="button" class="btn ghost kommentare__retry">Erneut versuchen</button></p>'; liste.querySelector('.kommentare__retry').addEventListener('click', () => diskussion()); }
   }
 
   function start() { if (document.documentElement.dataset.page === 'article') artikel(); diskussion(); }

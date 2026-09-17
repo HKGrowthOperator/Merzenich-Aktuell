@@ -22,8 +22,16 @@
 
   function a(url, text){ return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`; }
 
+  // Der Startseiten-Block dieses Layers verlinkt vier Artikel, die noch nicht als
+  // Seiten im Repo liegen (/blaulicht/grundschule-geschwindigkeitskontrolle/,
+  // /wirtschaft/bluetenliebe-couture-eroeffnet/, /sport/damen-30-aufstieg/,
+  // /blaulicht/einsaetze-126-127-september/) und laedt ein Wikimedia-Bild am
+  // Bildproxy vorbei. Bis die Artikel als Seiten existieren, bleibt der Block aus;
+  // Aufmacher und Nebenmeldungen kommen dann automatisch aus dem Inhaltsindex
+  // (deploy/inhaltsindex.mjs) und api/editorial-current.json.
+  const STARTSEITE_AUS_LAYER = false;
   function refreshHome(){
-    const grid = q('.frontpage-grid');
+    const grid = STARTSEITE_AUS_LAYER ? q('.frontpage-grid') : null;
     if (grid) {
       grid.innerHTML = `
         <article class="front-lead" data-story="2026-09-16-grundschule-geschwindigkeit">

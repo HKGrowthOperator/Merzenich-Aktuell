@@ -263,3 +263,18 @@ html[data-theme="dark"] .einwilligung__werbefrei{background:#1f1f1f;border-color
 /* Formulare: Rueckmeldung nach fehlgeschlagener Einsendung (app.js, ?fehler=) */
 .form-fehler{margin:0 0 16px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:#fbf1f1;color:#5a1a1f;font-size:15px;line-height:1.45}
 html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
+
+/* Ladezustand ohne JS-Erfolg: nach 8 s wird aus "Wird geladen" ein Hinweis mit Neuladen (reines CSS, kein Skript noetig) */
+.laden .laden__fehler{display:block;opacity:0;max-height:0;overflow:hidden;animation:ladenFehler .3s 8s forwards}
+.laden .laden__text{display:block;animation:ladenWeg .3s 8s forwards}
+@keyframes ladenFehler{to{opacity:1;max-height:6em}}
+@keyframes ladenWeg{to{opacity:0;max-height:0;overflow:hidden}}
+.kommentare__retry{margin-left:8px;vertical-align:middle}
+
+/* Themenuebersicht: A-Z-Liste unter der Wolke */
+.tag-az{margin-top:32px;padding-top:20px;border-top:1px solid var(--line,#e2e0da)}
+.tag-az h2{font-size:18px;margin:0 0 12px}
+.tag-az ul{list-style:none;margin:0;padding:0;columns:2;column-gap:32px}
+@media (min-width:768px){.tag-az ul{columns:4}}
+.tag-az li{break-inside:avoid;padding:4px 0;font-size:15px}
+.tag-az small{color:var(--muted,#666);font-size:12px}
