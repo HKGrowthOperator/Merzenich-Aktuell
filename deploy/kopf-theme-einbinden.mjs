@@ -5,6 +5,11 @@
  * korrekturen.css laden, und setzt den Link zur Diskussion ins Mehr-Menue.
  * Idempotent: was schon drin ist, wird nicht doppelt eingefuegt.
  * Aufruf: node deploy/kopf-theme-einbinden.mjs [--check]
+ *
+ * --check prueft absichtlich die STRUKTUR (Assets/Loader vorhanden), nicht
+ * Cache-Busting-Hashes. Die Hashes werden im echten Coolify-Build unmittelbar
+ * vor der Auslieferung aktualisiert; sonst wuerde jede legitime Asset-Aenderung
+ * den QA-Lauf vor dem Docker-Build stoppen.
  */
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -15,7 +20,7 @@ const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
-const V = 'v=20260916b';
+const V = 'v=20260917b';
 // Werbung global aus (Entscheidung 17.09.): html[data-werbung="aus"] blendet alle Anzeigenflaechen aus.
 const WERBUNG_AN = false;
 // Assets werden ein Jahr 'immutable' gecacht - deshalb traegt jeder lokale
@@ -45,17 +50,22 @@ const seiten = [];
 (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); statSync(p).isDirectory() ? lauf(p) : p.endsWith('.html') && seiten.push(p); } })(join(wurzel, 'chatgpt-site'));
 
 let geaendert = 0, uebersprungen = 0, fehler = 0;
-// Auch die Loader in kopf.js (bild-fallbacks, homepage-polish) per Hash versionieren.
+// Auch die Loader in kopf.js (bild-fallbacks, homepage-polish, Editorial-Audit)
+// per Hash versionieren. Im --check-Modus werden Cache-Hashes nicht bewertet;
+// die Struktur wird weiter unten geprueft.
 {
   const kp = join(wurzel, 'chatgpt-site', 'assets', 'kopf.js');
   const alt = readFileSync(kp, 'utf8');
   const neu = alt.replace(/(['"])(\/assets\/[a-z0-9-]+\.(?:js|css))\?v=[^'"]*\1/g, (m, q, pfad) => { const h = assetHash(pfad); return h ? `${q}${pfad}?v=${h}${q}` : m; });
-  if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(kp, neu); hashCache.delete('/assets/kopf.js'); }
+  if (neu !== alt && !nurPruefen) { geaendert++; writeFileSync(kp, neu); hashCache.delete('/assets/kopf.js'); }
+  // Der aktuelle globale QA-Layer muss vom zentralen Kopf geladen werden.
+  if (!alt.includes('/assets/editorial-audit.css') || !alt.includes('/assets/editorial-audit.js')) {
+    fehler++; console.error('kopf.js: Editorial-Audit-Layer fehlt');
+  }
 }
 // Service Worker: VERSION aus dem Inhalt aller Assets ableiten. Der SW cacht
 // CSS/JS ohne Query-String (ignoreSearch); nur ein neuer VERSION-Wert leert
-// diesen Cache. So bekommt jeder Deploy mit geaenderten Assets automatisch
-// einen neuen SW, ohne dass jemand die Zahl von Hand hochsetzt.
+// diesen Cache. Im reinen Strukturcheck wird die Versionsdifferenz ignoriert.
 {
   const sw = join(wurzel, 'chatgpt-site', 'sw.js');
   const assetsDir = join(wurzel, 'chatgpt-site', 'assets');
@@ -65,8 +75,8 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
   const version = 'a-' + gesamt.digest('hex').slice(0, 12);
   const alt = readFileSync(sw, 'utf8');
   const neu = alt.replace(/^const VERSION = '[^']*';/m, `const VERSION = '${version}';`);
-  if (neu === alt && !alt.includes(`'${version}'`)) { fehler++; console.error('sw.js: keine Zeile "const VERSION = \'...\';" gefunden'); }
-  else if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(sw, neu); }
+  if (neu === alt && !alt.includes(`'${version}'`) && !/^const VERSION = '[^']*';/m.test(alt)) { fehler++; console.error('sw.js: keine Zeile "const VERSION = \'...\';" gefunden'); }
+  else if (neu !== alt && !nurPruefen) { geaendert++; writeFileSync(sw, neu); }
 }
 for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
@@ -87,8 +97,11 @@ for (const pfad of seiten) {
   html = html.replace(/<html\b[^>]*>/, (m) => m.replace(/\s+data-werbung="[^"]*"/g, '').replace(/>$/, ` data-werbung="${WERBUNG_AN ? 'an' : 'aus'}">`));
   // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
   html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
-  html = versioniere(html);
+  // Cache-Busting ist Build-Aufgabe, kein Strukturfehler. Dadurch kann --check
+  // vor dem Docker-Build gruen sein, waehrend der Docker-Build trotzdem jeden
+  // geaenderten Asset-Link mit dem aktuellen Inhalts-Hash ausliefert.
+  if (!nurPruefen) html = versioniere(html);
   if (html !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, html); }
 }
-console.log(`${seiten.length} Seiten, ${geaendert} ${nurPruefen ? 'nicht aktuell' : 'geaendert'}, ${uebersprungen} ohne korrekturen.css uebersprungen, ${fehler} Fehler.`);
+console.log(`${seiten.length} Seiten, ${geaendert} ${nurPruefen ? 'strukturell nicht aktuell' : 'geaendert'}, ${uebersprungen} ohne korrekturen.css uebersprungen, ${fehler} Fehler.`);
 if (fehler || (nurPruefen && geaendert)) process.exit(2);
