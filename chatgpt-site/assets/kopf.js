@@ -1,18 +1,14 @@
 /*
  * Kopf klappt beim Scrollen ein (Desktop): Der grosse Kopf mit Logo, Suche
- * und Uhrzeit schiebt sich nach oben weg, die Ressortleiste bleibt oben
- * stehen und zeigt links das kleine Logo. Beim Zurueckscrollen kommt der
- * Kopf wieder. Die Klasse kopf-kompakt am <html> steuert alles per CSS
- * (korrekturen.css). Mobil bleibt der schmale Kopf mit Logo wie er ist.
+ * und Uhrzeit schiebt sich nach oben weg, die Ressortleiste bleibt oben.
+ * Im kompakten Zustand rendert der Design-Layer nur das M-Monogramm mit
+ * goldener Signatur. Mobil bleibt der Kopf kompakt.
  */
 (() => {
   const html = document.documentElement;
   const mast = document.querySelector('.masthead');
   if (!mast) return;
-
-  let kompakt = null;
-  let angefordert = false;
-
+  let kompakt = null, angefordert = false;
   function aktualisieren() {
     angefordert = false;
     const schwelle = mast.offsetHeight + 40;
@@ -21,24 +17,13 @@
     kompakt = naechster;
     html.classList.toggle('kopf-kompakt', naechster);
   }
-
-  function anfordern() {
-    if (angefordert) return;
-    angefordert = true;
-    window.requestAnimationFrame(aktualisieren);
-  }
-
+  function anfordern() { if (angefordert) return; angefordert = true; requestAnimationFrame(aktualisieren); }
   aktualisieren();
-  window.addEventListener('scroll', anfordern, { passive: true });
-  window.addEventListener('resize', anfordern, { passive: true });
-  window.addEventListener('pageshow', anfordern);
+  addEventListener('scroll', anfordern, { passive: true });
+  addEventListener('resize', anfordern, { passive: true });
+  addEventListener('pageshow', anfordern);
 })();
 
-/*
- * Der ausgelieferte Coolify-Stand bindet kopf.js auf allen redaktionellen
- * Seiten ein. Darueber wird die zentrale Startbild-Absicherung geladen, ohne
- * hunderte statische HTML-Dateien einzeln anfassen zu muessen.
- */
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
   const script = document.createElement('script');
@@ -48,33 +33,23 @@
   document.head.append(script);
 })();
 
-/*
- * Qualitaets-Layer fuer Startseite/Listen. Dynamisch geladene Skripte werden
- * mit async=false bewusst in Einfuegereihenfolge ausgefuehrt: erst Polish,
- * dann Tagesdaten, zuletzt der verifizierende Editorial-Audit.
- */
 (() => {
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=07e9d64577';
+    style.href = '/assets/homepage-polish.css?v=20260917-3';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=e02f382766';
+    script.src = '/assets/homepage-polish.js?v=20260917-3';
     script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
   }
 })();
 
-/*
- * Redaktioneller Tages-Refresh fuer Service-/Markt-/Anzeigenbereiche. Ein
- * nachgelagerter Audit gleicht die Startseiten-Nachrichten zwingend gegen den
- * echten Suchindex ab, damit keine verwaisten Links sichtbar bleiben.
- */
 (() => {
   if (document.querySelector('script[data-ma-content-refresh]')) return;
   const script = document.createElement('script');
@@ -84,22 +59,17 @@
   document.head.append(script);
 })();
 
-/*
- * Audit-Layer 17.09.2026: gemeinsame redaktionelle Hierarchie, dynamisches
- * Tagesdatum, vereinfachte Navigation, Bildsystem, Empty-/Error-States,
- * verifizierte Homepage und Bereinigung alter Termin-/CMS-Zustaende.
- */
 (() => {
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=12795f439b';
+    style.href = '/assets/editorial-audit.css?v=20260917-4';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=77a57173b8';
+    script.src = '/assets/editorial-audit.js?v=20260917-4';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);
