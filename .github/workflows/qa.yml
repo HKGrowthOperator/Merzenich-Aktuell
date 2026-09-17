@@ -59,6 +59,8 @@ jobs:
 
       - name: Markt in der ausgelieferten Seite aktuell?
         run: node deploy/markt-prerender.mjs --check
+      - name: Sportmodul aus sport-current.json aktuell
+        run: node deploy/sport-prerender.mjs --check
 
       - name: Darstellung und Kopf auf allen Seiten eingebunden?
         run: node deploy/kopf-theme-einbinden.mjs --check
