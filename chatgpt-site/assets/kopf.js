@@ -43,7 +43,7 @@
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/bild-fallbacks.js?v=970efb310c';
+  script.src = '/assets/bild-fallbacks.js?v=f3f725a7ae';
   script.async = false;
   script.dataset.maStartbilder = '1';
   document.head.append(script);
