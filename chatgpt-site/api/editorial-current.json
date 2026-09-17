@@ -1,16 +1,30 @@
 {
-  "generated": "2026-09-16T20:55:00+02:00",
+  "generated": "2026-09-17T10:55:00+02:00",
   "hero": {
+    "id": "2026-09-14-sc-merzenich-oberzier-3-2",
+    "url": "/sport/sc-merzenich-oberzier-3-2/",
+    "title": "SC Merzenich gewinnt 3:2 gegen BC Oberzier",
+    "teaser": "Drei Punkte im Heimspiel: Der SC 1919 Merzenich schlägt den BC Oberzier 3:2 und steht nach vier Spielen mit neun Punkten auf Platz fünf.",
+    "kicker": "Kreisliga A",
+    "eyebrow": "Sport · Merzenich",
+    "location": "MERZENICH",
+    "published": "2026-09-14T09:15:00+02:00",
+    "timeLabel": "14.09. · 09:15 Uhr",
+    "readTime": "2 Min. Lesezeit",
+    "image": "/assets/uploads/sc-1919-merzenich-logo.webp",
+    "imageAlt": "Vereinswappen des SC 1919 Merzenich",
+    "imageBadge": "Offizielles Vereinslogo",
+    "imageFit": "contain"
+  },
+  "secondary": {
     "id": "2026-09-11-einbruch-arnoldsweilerweg",
     "url": "/blaulicht/einbruch-arnoldsweilerweg/",
     "title": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen",
     "teaser": "Die Kriminalpolizei sicherte Spuren in einem Einfamilienhaus. Die Polizei Düren bittet um Hinweise aus dem Tatzeitraum am 10. September.",
     "kicker": "Blaulicht",
-    "eyebrow": "Polizeimeldung · Merzenich",
     "location": "MERZENICH",
     "published": "2026-09-11T08:45:00+02:00",
     "timeLabel": "11.09. · 08:45 Uhr",
-    "readTime": "1 Min. Lesezeit",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Streifenwagen%20f%C3%BCr%20die%20Polizei%20vorgestellt.jpg?width=1600",
     "imageAlt": "Streifenwagen der Polizei Nordrhein-Westfalen",
     "imageBadge": "Symbolbild",
@@ -19,19 +33,5 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Neue_Streifenwagen_f%C3%BCr_die_Polizei_vorgestellt.jpg",
     "imageLicense": "CC0 1.0",
     "imageRightsCheckedAt": "2026-09-16"
-  },
-  "secondary": {
-    "id": "2026-09-14-sc-merzenich-oberzier-3-2",
-    "url": "/sport/sc-merzenich-oberzier-3-2/",
-    "title": "SC Merzenich gewinnt 3:2 gegen BC Oberzier",
-    "teaser": "Drei Punkte im Heimspiel: Der SC 1919 Merzenich schlägt den BC Oberzier 3:2 und steht nach vier Spielen mit neun Punkten auf Platz fünf.",
-    "kicker": "Kreisliga A",
-    "location": "MERZENICH",
-    "published": "2026-09-14T09:15:00+02:00",
-    "timeLabel": "14.09. · 09:15 Uhr",
-    "image": "/assets/uploads/sc-1919-merzenich-logo.webp",
-    "imageAlt": "Vereinswappen des SC 1919 Merzenich",
-    "imageBadge": "Offizielles Vereinslogo",
-    "imageFit": "contain"
   }
 }
