@@ -119,3 +119,11 @@
 /sc-merzenich /sc-1919-merzenich/ 301
 /api/* /api/:splat 200
 /* /404.html 404
+/politik/ /rathaus/ 301
+/politik /rathaus/ 301
+/veranstaltungen/ /termine/ 301
+/stellenmarkt/ /jobs/ 301
+/stadtleben/ /leben/ 301
+/stadtleben /leben/ 301
+/trauer/ /traueranzeigen/ 301
+/trauer /traueranzeigen/ 301
