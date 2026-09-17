@@ -50,19 +50,20 @@
 
 /*
  * Qualitaets-Layer fuer Startseite/Listen. Laedt zuletzt, damit die Regeln fuer
- * Bildschaerfe und Anzeigen nicht von den Recovery-Styles ueberschrieben werden.
+ * Bildschaerfe, Zeitungshierarchie und Anzeigen nicht von Recovery-Styles
+ * ueberschrieben werden.
  */
 (() => {
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=20260916b';
+    style.href = '/assets/homepage-polish.css?v=20260917a';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=20260916b';
+    script.src = '/assets/homepage-polish.js?v=20260917a';
     script.defer = true;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
