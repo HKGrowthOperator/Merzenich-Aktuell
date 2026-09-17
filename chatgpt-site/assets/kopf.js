@@ -63,7 +63,7 @@
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=d1fb2f7039';
+    script.src = '/assets/homepage-polish.js?v=e02f382766';
     script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
