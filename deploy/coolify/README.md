@@ -155,3 +155,23 @@ Regeln ohne Konto: Honeypot, Laengen, hoechstens zwei Links, Richtlinien
 bestaetigen, sechs Beitraege pro Stunde je Absender (Tages-Hash der IP, keine
 Klartext-IP), nach drei Meldungen wird ein Kommentar automatisch ausgeblendet.
 E-Mail ist freiwillig und wird nie ausgegeben, auch nicht im Admin-JSON.
+
+## Werbefrei-Abo und Wetter (derselbe Dienst)
+
+Der Node-Dienst bedient auch `/api/abo/` (Werbefrei-Abo, 2,50 Euro im Monat) und
+`/api/weather.json` (Open-Meteo-Proxy mit 10-Minuten-Cache; nginx leitet dorthin
+weiter, ein eigener DNS-Resolver in nginx ist nicht mehr noetig).
+
+Umgebungsvariablen in Coolify:
+
+| Variable | Pflicht | Bedeutung |
+|---|---|---|
+| `ABO_GEHEIMNIS` | ja, sobald Abos ausgegeben werden | Langes Zufallswort; signiert die Werbefrei-Nachweise im Browser. Aenderung macht alle Nachweise ungueltig. |
+| `ABO_ZAHLUNGSLINK` | fuer Zahlung | Stripe Payment Link. Erfolgs-URL im Link auf `https://merzenichaktuell.hk-growthoperator.de/werbefrei/?session_id={CHECKOUT_SESSION_ID}` setzen. Ohne Variable zeigt `/werbefrei/` "Zahlungslink wird gerade eingerichtet". |
+| `STRIPE_SECRET_KEY` | fuer Zahlung | Geheimer Stripe-Schluessel (`sk_live_...`), mit dem der Dienst die Checkout-Session nach der Rueckkehr prueft. |
+| `ABO_CODES` | optional | Kommagetrennte Einloesecodes der Redaktion (z. B. fuer Testgeraete oder Unterstuetzer ohne Karte). |
+| `ABO_PREIS` | optional | Anzeigetext, Standard `2,50 € im Monat`. |
+
+Werbung ist derzeit global aus (`WERBUNG_AN = false` in `deploy/kopf-theme-einbinden.mjs`,
+ergibt `<html data-werbung="aus">`). Wird sie wieder eingeschaltet, blendet ein
+gueltiger Werbefrei-Nachweis (`html[data-werbefrei="ja"]`) die Anzeigenflaechen aus.
