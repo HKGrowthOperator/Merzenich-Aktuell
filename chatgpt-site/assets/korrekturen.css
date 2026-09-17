@@ -207,3 +207,49 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 @media (max-width:640px){.kommentar-form__zeile{grid-template-columns:1fr}.thema__body{padding-left:12px}}
 html[data-theme="dark"] .kommentar-form input:not([type=checkbox]),html[data-theme="dark"] .kommentar-form textarea{background:#1b1b1b;border-color:#4a4a4a}
 html[data-theme="dark"] .diskussion__neu{background:#1b1b1b;border-color:#353535}
+
+/* Werbung global aus (html[data-werbung="aus"]) oder Werbefrei-Abo aktiv (html[data-werbefrei="ja"]) */
+html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[data-werbung="aus"] .managed-ad,html[data-werbung="aus"] .ma-display-ad,html[data-werbung="aus"] .ma-ad-booking,html[data-werbung="aus"] .native-ad,html[data-werbung="aus"] .ad,html[data-werbung="aus"] .ma-ad,
+html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,html[data-werbefrei="ja"] .managed-ad,html[data-werbefrei="ja"] .ma-display-ad,html[data-werbefrei="ja"] .ma-ad-booking,html[data-werbefrei="ja"] .native-ad,html[data-werbefrei="ja"] .ad,html[data-werbefrei="ja"] .ma-ad{display:none!important}
+@media (min-width:1180px){html[data-werbung="aus"] .portal-top.has-ads,html[data-werbefrei="ja"] .portal-top.has-ads{grid-template-columns:260px minmax(0,1fr)}}
+@media (min-width:901px) and (max-width:1179px){html[data-werbung="aus"] .portal-top.has-ads,html[data-werbefrei="ja"] .portal-top.has-ads{grid-template-columns:230px minmax(0,1fr)}}
+
+/* Externe Bilder ohne Einwilligung: neutraler Platzhalter */
+img.extern-gesperrt{object-fit:contain!important;background:#ecebe7}
+html[data-theme="dark"] img.extern-gesperrt{filter:invert(.88) hue-rotate(180deg)}
+
+/* Einwilligung (assets/einwilligung.js) */
+.einwilligung{position:fixed;left:0;right:0;bottom:0;z-index:2100;padding:0 12px 12px;pointer-events:none}
+.einwilligung__box{pointer-events:auto;max-width:760px;margin:0 auto;padding:18px 20px 14px;background:var(--card,#fff);color:var(--ink,#161616);border:1px solid var(--line,#ddd);border-top:3px solid var(--red,#971725);box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:14px;line-height:1.5}
+.einwilligung__box h2{margin:0 0 6px;font-size:17px}
+.einwilligung__box>p{margin:0 0 10px}
+.einwilligung__form{display:grid;gap:8px;margin:0 0 12px}
+.einwilligung__form label{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45}
+.einwilligung__form input{margin-top:3px;flex:0 0 auto}
+.einwilligung__aktionen{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.einwilligung__mehr{appearance:none;border:0;background:none;padding:0;color:var(--ink,#161616);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.einwilligung__fuss{margin:10px 0 0;font-size:12px;color:var(--muted,#666)}
+.einwilligung__link{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted,#666);text-decoration:underline;text-underline-offset:2px}
+.live-hinweis{position:sticky;top:0;z-index:2050;display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--red,#971725);color:#fff;font-size:14px}
+.live-hinweis__label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border:1px solid rgba(255,255,255,.6)}
+.live-hinweis a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.live-hinweis button{margin-left:auto;appearance:none;border:0;background:none;color:#fff;font-size:22px;line-height:1;cursor:pointer}
+@media (max-width:640px){.einwilligung{padding:0}.einwilligung__box{border-left:0;border-right:0;padding:14px 16px 12px}}
+html[data-theme="dark"] .einwilligung__box{background:#1b1b1b;border-color:#353535}
+
+/* Werbefrei (assets/werbefrei.js) */
+.werbefrei .info-prose{max-width:none}
+.werbefrei__abschnitt{padding:20px 0;border-top:1px solid var(--line,#e4e0d5)}
+.werbefrei__abschnitt h2{margin:0 0 10px;font-size:20px}
+.werbefrei__abschnitt ul{margin:0 0 16px;padding-left:20px;line-height:1.55}
+.werbefrei__klein{font-size:13.5px;color:var(--muted,#666);line-height:1.5}
+.werbefrei__status{margin:0 0 18px;padding:14px 16px;border:1px solid var(--line,#e4e0d5);background:var(--card,#fff);font-size:14px}
+.werbefrei__status.is-aktiv{border-color:#25684a;background:#eef7f1}
+.werbefrei__status.is-fehler{border-color:var(--red,#971725)}
+.werbefrei__ab{appearance:none;border:0;background:none;padding:0;margin-left:8px;color:var(--muted,#666);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
+.werbefrei__code{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.werbefrei__code label{display:grid;gap:5px;font-size:13px;font-weight:600}
+.werbefrei__code input{padding:9px 11px;border:1px solid #bdbdbd;border-radius:4px;font:inherit;font-size:15px;background:var(--card,#fff);color:var(--ink,#161616)}
+.werbefrei__meldung{flex-basis:100%;font-size:13px;color:var(--muted,#666)}
+html[data-theme="dark"] .werbefrei__status{background:#1b1b1b;border-color:#353535}
+html[data-theme="dark"] .werbefrei__status.is-aktiv{background:#16261c}

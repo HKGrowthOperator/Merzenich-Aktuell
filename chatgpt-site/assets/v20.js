@@ -94,13 +94,14 @@
  const staticDate=staticTime?.dateTime?new Date(staticTime.dateTime):null;
  const stale=!staticDate||!Number.isFinite(+staticDate)||(Date.now()-staticDate.getTime())>7*86400000;
  const setText=(selector,value)=>{const el=hero.querySelector(selector);if(el&&value!=null)el.textContent=safe(value);};
+ const externAttr=(u)=>(/^https?:\/\//i.test(u)&&window.maExtern)?window.maExtern.attribute(u):`src="${esc(u)}"`;const externSetze=(img,u)=>{if(/^https?:\/\//i.test(u)&&window.maExtern)window.maExtern.setze(img,u);else img.src=u;};
  function applyHero(h){
   if(!h?.url||!h?.title||!h?.published)return;
   hero.dataset.story=h.id||'';
   const mediaLink=hero.querySelector(':scope > a');
   if(mediaLink)mediaLink.href=h.url;
   const media=hero.querySelector('.media');
-  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){img.src=h.image;img.alt=h.imageAlt||h.title;if(h.imageSrcset){img.srcset=h.imageSrcset;if(h.imageSizes)img.sizes=h.imageSizes;}else{img.removeAttribute('srcset');img.removeAttribute('sizes');}if(h.imageWidth&&h.imageHeight){img.width=h.imageWidth;img.height=h.imageHeight;}else{img.removeAttribute('width');img.removeAttribute('height');}}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
+  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){externSetze(img,h.image);img.alt=h.imageAlt||h.title;if(h.imageSrcset){img.srcset=h.imageSrcset;if(h.imageSizes)img.sizes=h.imageSizes;}else{img.removeAttribute('srcset');img.removeAttribute('sizes');}if(h.imageWidth&&h.imageHeight){img.width=h.imageWidth;img.height=h.imageHeight;}else{img.removeAttribute('width');img.removeAttribute('height');}}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
   const location=hero.querySelector('.location-line');if(location&&h.location)location.innerHTML=`<span class="location-brand">${esc(h.location)}</span>`;
   setText('.kicker',h.kicker);setText('.eyebrow',h.eyebrow);
   const title=hero.querySelector('h1 a');if(title){title.textContent=h.title;title.href=h.url;}
@@ -115,7 +116,7 @@
   let card=side.querySelector('[data-editorial-secondary]');
   if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
   card.dataset.story=s.id||'';card.classList.toggle('secondary-lead',!!s.image);
-  const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
+  const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img ${externAttr(s.image)} alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
   card.innerHTML=`${bild}<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
  }
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
@@ -130,18 +131,19 @@
  if(!['/nachrichten/','/sport/','/blaulicht/'].includes(path))return;
  const feed=document.querySelector('.content-grid .feed');if(!feed)return;
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const externAttr=(u)=>(/^https?:\/\//i.test(u)&&window.maExtern)?window.maExtern.attribute(u):`src="${esc(u)}"`;const externSetze=(img,u)=>{if(/^https?:\/\//i.test(u)&&window.maExtern)window.maExtern.setze(img,u);else img.src=u;};
  function updateLead(s){
   const lead=feed.querySelector('.feed-lead');if(!lead||!s?.url||!s?.title)return false;
   lead.dataset.story=s.id||'';
   const mediaLink=lead.querySelector(':scope > a');if(mediaLink)mediaLink.href=s.url;
-  const media=lead.querySelector('.media');if(media&&s.image){media.classList.toggle('contain',s.imageFit==='contain');const img=media.querySelector('img');if(img){img.src=s.image;img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=s.imageAlt||s.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge&&s.imageBadge)badge.textContent=s.imageBadge;}
+  const media=lead.querySelector('.media');if(media&&s.image){media.classList.toggle('contain',s.imageFit==='contain');const img=media.querySelector('img');if(img){externSetze(img,s.image);img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=s.imageAlt||s.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge&&s.imageBadge)badge.textContent=s.imageBadge;}
   const copy=lead.querySelector('.lead-copy');if(copy){const loc=copy.querySelector('.location-line');if(loc)loc.innerHTML=`<span class="location-brand">${esc(s.location||'MERZENICH')}</span>`;const kicker=copy.querySelector('.kicker');if(kicker)kicker.textContent=s.kicker||'Aktuell';const a=copy.querySelector('h2 a');if(a){a.href=s.url;a.textContent=s.title;}const dek=copy.querySelector('.dek');if(dek)dek.textContent=s.teaser||'';const time=copy.querySelector('.meta time');if(time){time.dateTime=s.published||'';time.textContent=s.timeLabel||'';}}
   return true;
  }
  function row(s){
   if(!s?.url||!s?.title||feed.querySelector(`a[href="${CSS.escape(s.url)}"]`))return null;
   const el=document.createElement('article');el.className='feed-row editorial-current-row'+(s.image?'':' no-media no-image');el.dataset.story=s.id||'';
-  const bild=s.image?`<a href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
+  const bild=s.image?`<a href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img ${externAttr(s.image)} alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
   el.innerHTML=`${bild}<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
   return el;
  }

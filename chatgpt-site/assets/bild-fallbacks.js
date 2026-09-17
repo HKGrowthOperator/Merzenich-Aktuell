@@ -122,7 +122,8 @@
 
   function bildElement(bild, eager = false) {
     const img = document.createElement('img');
-    img.src = bild.src;
+    // Externe Adresse nur mit Einwilligung (einwilligung.js), sonst Platzhalter.
+    if (window.maExtern) window.maExtern.setze(img, bild.src); else img.src = bild.src;
     img.alt = bild.alt;
     img.loading = eager ? 'eager' : 'lazy';
     img.decoding = 'async';
@@ -201,7 +202,7 @@
     img.dataset.maSymbolbild = '1';
     img.removeAttribute('srcset');
     img.removeAttribute('sizes');
-    img.src = bild.src;
+    if (window.maExtern) window.maExtern.setze(img, bild.src); else img.src = bild.src;
     img.alt = bild.alt;
     const media = img.closest('.media');
     const badge = media?.querySelector('.badge');
