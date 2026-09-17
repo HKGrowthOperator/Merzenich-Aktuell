@@ -1,0 +1,1 @@
+{ "url": "https://merzenichaktuell.hk-growthoperator.de", "hinweis": "Oeffentliche Adresse der Seite. Einbinden und Inhaltsindex schreiben canonical, og:url, Feeds, Sitemaps und latest.json damit. Beim Domainwechsel nur diesen Wert aendern und bun/node deploy/kopf-theme-einbinden.mjs + deploy/inhaltsindex.mjs laufen lassen." }
