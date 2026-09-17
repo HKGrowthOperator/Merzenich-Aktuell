@@ -68,3 +68,17 @@
     document.head.append(script);
   }
 })();
+
+/*
+ * Redaktioneller Tages-Refresh. Der Layer aktualisiert die schnell wechselnden
+ * Startseiten-/Markt-/Anzeigenbereiche, ohne den statischen Gesamtbuild zu
+ * duplizieren. Inhalte bleiben quellengebunden und datiert.
+ */
+(() => {
+  if (document.querySelector('script[data-ma-content-refresh]')) return;
+  const script = document.createElement('script');
+  script.src = '/assets/content-refresh-2026-09-17.js?v=20260917-1';
+  script.defer = true;
+  script.dataset.maContentRefresh = '1';
+  document.head.append(script);
+})();
