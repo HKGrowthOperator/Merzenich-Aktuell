@@ -40,11 +40,12 @@
       if(Number.isFinite(end)&&end<now) el.remove();
     });
     if(path==='/termine'){
-      const startToday=new Date(); startToday.setHours(0,0,0,0);
+      const p=berlinParts();
+      const startToday=Date.parse(`${p.year}-${p.month}-${p.day}T00:00:00+02:00`);
       qa('.event-list article,.event-list .event-row,.events-grid article').forEach(el=>{
         if(el.closest('.past'))return;
         const t=q('time[datetime]',el); if(!t)return;
-        const d=Date.parse(t.getAttribute('datetime')); if(Number.isFinite(d)&&d<startToday.getTime()&&!el.hasAttribute('data-event-end')) el.setAttribute('data-editorial-hidden','1');
+        const d=Date.parse(t.getAttribute('datetime')); if(Number.isFinite(d)&&d<startToday&&!el.hasAttribute('data-event-end')) el.setAttribute('data-editorial-hidden','1');
       });
     }
   }
@@ -101,14 +102,32 @@
     }
   }
 
-  /* 8) Veraltete interne Projekttexte gehören nicht in Artikelseiten. */
+  /* 8) Ortsseiten sind Nachrichtenkanäle, keine Lexikon-Landingpages.
+     Der vorhandene historische Ortsporträt-Block bleibt erhalten, rutscht aber
+     unter den aktuellen Feed. Damit steht oberhalb sofort das lokale Geschehen. */
+  const placePaths=['/merzenich','/golzheim','/girbelsrath','/morschenich','/buergewald'];
+  if(placePaths.includes(path)){
+    const main=q('main'), intro=q('.place-intro',main), news=q(':scope > section.section',main);
+    if(intro&&news){
+      news.after(intro);
+      intro.classList.add('editorial-place-portrait');
+      const p=berlinParts(), count=q('.page-head .count-line',main);
+      if(count&&!q('.editorial-updated',count)){
+        const span=document.createElement('span'); span.className='editorial-updated';
+        span.textContent=` · zuletzt aktualisiert ${p.day}.${p.month}.${p.year}`;
+        count.append(span);
+      }
+    }
+  }
+
+  /* 9) Veraltete interne Projekttexte gehören nicht in Artikelseiten. */
   qa('.author-box p,.info-prose p').forEach(p=>{
     if((p.textContent||'').includes('Namentlich gezeichnete Beiträge folgen, sobald das Team steht')){
       p.textContent=(p.textContent||'').replace('Namentlich gezeichnete Beiträge folgen, sobald das Team steht.','Beiträge werden redaktionell geprüft und transparent gekennzeichnet.');
     }
   });
 
-  /* 9) Öffentlich sichtbare Redaktion nutzt eine Markenadresse. Rechtliche Datenschutzkontakte bleiben unverändert. */
+  /* 10) Öffentlich sichtbare Redaktion nutzt eine Markenadresse. Rechtliche Datenschutzkontakte bleiben unverändert. */
   if(['/kontakt','/redaktion','/ueber-uns','/meldung-senden'].includes(path)){
     qa('a[href="mailto:info@kbs-management.tv"]').forEach(a=>{a.href='mailto:redaktion@merzenich-aktuell.de';a.textContent='redaktion@merzenich-aktuell.de'});
   }
