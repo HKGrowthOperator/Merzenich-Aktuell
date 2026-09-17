@@ -142,6 +142,20 @@ for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.fil
     const schluss = html.indexOf('</div>', pos);
     html = html.slice(0, start) + '<div class="front-side"><span class="eyebrow">Weitere Nachrichten</span>' + sekundaer + weitere.map(brief).join('') + html.slice(schluss);
   }
+  // Startseitenbloecke nach der Vorlage vom 17.09.: "Kurz gemeldet", "Aktuelle
+  // Nachrichten" (drei Karten + Liste) und die Zaehler der Ortsteil-Kacheln. Alles
+  // aus dem Inhaltsindex; Aufmacher und Nebenmeldungen werden nicht wiederholt.
+  const zwischen = (h, name, innen) => { const s = `<!-- sz:${name}:start -->`, e = `<!-- sz:${name}:end -->`; const i = h.indexOf(s), j = h.indexOf(e); return i < 0 || j < 0 ? h : h.slice(0, i + s.length) + innen + h.slice(j); };
+  const obenUrls = new Set([...ausgeschlossen, ...weitere.map((a) => a.url)]);
+  const rest = artikel.filter((a) => !obenUrls.has(a.url));
+  const tagKurz = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(new Date(iso));
+  const karte = (a) => `<article class="sz-card" data-story="${esc(a.id)}">${a.bild ? `<a class="sz-card__media" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${a.bild.fit ? ' contain' : ''}">${imgHtml(a.bild, '(max-width:760px) 120px, (max-width:1180px) 30vw, 300px', false)}${badgeHtml(a.bild)}</div></a>` : ''}<div class="sz-card__body">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p>${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${kurzZeit(a.datum)}</time><span>${esc(a.lesezeit)}</span></div></div></article>`;
+  const zeile = (a) => `<li data-story="${esc(a.id)}"><a href="${esc(a.url)}"><time datetime="${esc(a.datum)}">${tagKurz(a.datum)}</time><span><b>${esc(a.titel)}</b><small>${esc(a.ressortLabel)} · ${esc(ORTSTEILE[a.ortsteil] || a.ort)}</small></span></a></li>`;
+  const kurz = (a) => `<li><a href="${esc(a.url)}"><time datetime="${esc(a.datum)}">${tagKurz(a.datum)}</time>${esc(a.titel)}</a></li>`;
+  html = zwischen(html, 'ticker', rest.slice(0, 8).map(kurz).join(''));
+  html = zwischen(html, 'news', rest.slice(0, 3).map(karte).join(''));
+  html = zwischen(html, 'liste', rest.slice(3, 9).map(zeile).join(''));
+  html = html.replace(/(<small data-sz-count="([a-z]+)">)[^<]*(<\/small>)/g, (m, a, ort, z) => { const n = artikel.filter((x) => x.ortsteil === ort).length; return `${a}${n} Meldung${n === 1 ? '' : 'en'}${z}`; });
   if (html !== alt) schreibe(rel, html);
 }
 

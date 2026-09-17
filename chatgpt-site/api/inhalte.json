@@ -226,14 +226,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/10c06ae559cf3c-890.webp",
-    "srcset": "/assets/responsive/10c06ae559cf3c-240.webp 240w, /assets/responsive/10c06ae559cf3c-480.webp 480w, /assets/responsive/10c06ae559cf3c-800.webp 800w, /assets/responsive/10c06ae559cf3c-890.webp 890w",
-    "alt": "Vereinslogo des SC 1919 Merzenich",
-    "width": 890,
-    "height": 500,
+    "src": "/assets/uploads/sc-1919-merzenich-logo.webp",
+    "srcset": "",
+    "alt": "Vereinswappen des SC 1919 Merzenich",
+    "width": 480,
+    "height": 479,
     "fit": "contain",
     "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich / FUSSBALL.DE",
+    "credit": "SC 1919 Merzenich",
     "symbol": false
    }
   },

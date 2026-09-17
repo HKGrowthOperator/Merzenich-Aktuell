@@ -188,6 +188,8 @@ if (schreibe(join(site, 'api', 'market.json'), rohtext)) geaendert.push('api/mar
   let html = readFileSync(pfad, 'utf8');
   html = setze(html, 'home-jobs', mini(daten._jobs.merzenich, 'jobs'), /<summary>Stellenmarkt<\/summary><div>/, false);
   html = setze(html, 'home-immobilien', mini(daten._props.merzenich, 'properties'), /<summary>Immobilienmarkt<\/summary><div>/, false);
+  // Marktkaesten der Startseite: Gesamtzahl der geprueften Angebote (Merzenich und angrenzende Kommunen).
+  html = html.replace(/(<b data-markt-anzahl="jobs">)[^<]*(<\/b>)/, `$1${daten._jobs.anzahl}$2`).replace(/(<b data-markt-anzahl="immobilien">)[^<]*(<\/b>)/, `$1${daten._props.anzahl}$2`);
   if (schreibe(pfad, html)) geaendert.push('index.html');
 }
 

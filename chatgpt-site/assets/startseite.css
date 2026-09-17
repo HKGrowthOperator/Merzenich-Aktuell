@@ -1,0 +1,175 @@
+/* Merzenich Aktuell — Startseitenaufbau 17.09.2026
+   Reihenfolge: Aufmacher + Nebenmeldungen, Kurz gemeldet, Aktuelle Nachrichten
+   mit Vor-Ort-Leiste, Ortsteile, Sport, Marktplatz, Abo-Band. Alle Inhalte
+   kommen aus dem Inhaltsindex, dem Marktstand und den vorhandenen Ortsfotos.
+   Farben und Radien folgen dem Editorial-Layer (--ma-*), mit Ersatzwerten. */
+
+body.home main{padding-bottom:0}
+
+/* --- Aufmacher-Raster ------------------------------------------------ */
+body.home .sz-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,.8fr);gap:clamp(28px,3vw,52px);align-items:start;padding-top:clamp(18px,2.4vw,30px)}
+body.home .sz-top .front-side>.eyebrow{display:block;margin:2px 0 12px;color:var(--ma-red,#971725);font-size:11px;font-weight:830;letter-spacing:.12em;text-transform:uppercase}
+body.home .sz-top .front-brief>div{position:relative;padding-right:24px;min-width:0}
+body.home .sz-top .front-brief>div::after{content:"";position:absolute;right:6px;top:22px;width:8px;height:8px;border-right:1.6px solid var(--ma-muted,#77736d);border-top:1.6px solid var(--ma-muted,#77736d);transform:rotate(45deg)}
+body.home .sz-top .front-brief:hover>div::after{border-color:var(--ma-red,#971725)}
+body.home .sz-top .front-brief.editorial-secondary.secondary-lead>div::after{display:none}
+
+/* --- Kurz gemeldet --------------------------------------------------- */
+body.home .sz-ticker{display:flex;align-items:center;gap:16px;margin-top:clamp(24px,3vw,40px);min-width:0}
+body.home .sz-ticker__label{flex:0 0 auto;padding:6px 11px;border-radius:999px;background:var(--ma-red,#971725);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}
+body.home .sz-ticker__list{flex:1 1 auto;display:flex;gap:0;margin:0;padding:10px 0;list-style:none;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--ma-line,#e8e3da);border-bottom:1px solid var(--ma-line,#e8e3da);min-width:0}
+body.home .sz-ticker__list::-webkit-scrollbar{display:none}
+body.home .sz-ticker__list li{flex:0 0 auto;padding:0 18px;border-left:1px solid var(--ma-line,#e8e3da);white-space:nowrap}
+body.home .sz-ticker__list li:first-child{border-left:0;padding-left:2px}
+body.home .sz-ticker__list a{display:inline-flex;align-items:baseline;gap:8px;font-size:13.5px;font-weight:600;color:var(--ma-ink,#171513)}
+body.home .sz-ticker__list a:hover{color:var(--ma-red,#971725)}
+body.home .sz-ticker__list time{font-size:11px;font-weight:700;color:var(--ma-gold,#a58035);font-variant-numeric:tabular-nums}
+body.home .sz-ticker__list:empty{display:none}
+
+/* --- Nachrichten + Vor Ort ----------------------------------------- */
+body.home .sz-main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:clamp(32px,4vw,56px);align-items:start;padding-top:clamp(40px,5vw,64px)}
+body.home .sz-news{min-width:0}
+body.home .sz-main .desk-heading,body.home .sz-orte .desk-heading,body.home .sz-markt .desk-heading{margin-bottom:22px}
+body.home .sz-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 26px}
+body.home .sz-card{min-width:0}
+body.home .sz-card__media{display:block;margin:0 0 12px}
+body.home .sz-card .media{aspect-ratio:16/10;border-radius:9px;overflow:hidden;background:#eeeae3}
+body.home .sz-card .media.contain{background:#f4f1eb}
+body.home .sz-card .media.contain img{object-fit:contain;padding:14px}
+body.home .sz-card .location-line{margin:0 0 3px}
+body.home .sz-card .location-brand{color:var(--ma-gold,#a58035);font-size:9.5px;font-weight:800;letter-spacing:.09em}
+body.home .sz-card .kicker{display:block;margin:0 0 5px;color:var(--ma-red,#971725);font-size:10px;letter-spacing:.1em}
+body.home .sz-card h3{margin:0 0 7px;font-family:Newsreader,Georgia,serif;font-size:20px;line-height:1.08;font-weight:650;letter-spacing:-.022em}
+body.home .sz-card h3 a{color:var(--ma-ink,#171513)}
+body.home .sz-card h3 a:hover{color:var(--ma-red,#971725)}
+body.home .sz-card p{margin:0;font-size:14px;line-height:1.5;color:var(--ma-text,#4f4d49);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+body.home .sz-card .meta{margin-top:8px;font-size:11px;color:var(--ma-muted,#77736d);display:flex;gap:10px;flex-wrap:wrap}
+body.home .sz-card.ma-no-image .sz-card__media{display:none}
+body.home .sz-list{margin:26px 0 0;padding:0;list-style:none;border-top:1px solid var(--ma-line,#e8e3da)}
+body.home .sz-list li{border-bottom:1px solid var(--ma-line,#e8e3da)}
+body.home .sz-list a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 0;color:var(--ma-ink,#171513)}
+body.home .sz-list a:hover b{color:var(--ma-red,#971725)}
+body.home .sz-list time{font-size:11.5px;font-weight:700;color:var(--ma-gold,#a58035);font-variant-numeric:tabular-nums}
+body.home .sz-list b{display:block;font-family:Newsreader,Georgia,serif;font-size:17px;line-height:1.15;font-weight:620;letter-spacing:-.015em}
+body.home .sz-list small{display:block;margin-top:3px;font-size:11px;color:var(--ma-muted,#77736d);letter-spacing:.04em;text-transform:uppercase}
+body.home .sz-list:empty{display:none}
+
+body.home .sz-rail{min-width:0;display:grid;gap:14px}
+body.home .sz-rail__title{margin:0 0 2px;padding-left:16px;position:relative;font-family:Newsreader,Georgia,serif;font-size:clamp(27px,2.6vw,38px);line-height:1;letter-spacing:-.03em}
+body.home .sz-rail__title::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;border-radius:2px;background:var(--ma-gold,#a58035)}
+body.home .sz-box{padding:16px 16px 14px;border-radius:12px;background:var(--ma-warm,#faf8f3)}
+body.home .sz-box>h3,body.home .sz-box>details>summary{margin:0 0 10px;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:820;letter-spacing:.09em;text-transform:uppercase;color:var(--ma-red,#971725)}
+body.home .sz-box__more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12.5px;font-weight:700;color:var(--ma-ink,#171513)}
+body.home .sz-box__more::after,body.home .sz-mbox__more::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-top:1.5px solid currentColor;transform:rotate(45deg)}
+body.home .sz-box__more:hover,body.home .sz-mbox__more:hover{color:var(--ma-red,#971725)}
+body.home .sz-box .agenda-list{display:grid;gap:8px}
+body.home .sz-box .agenda-list:empty::before{content:"Zurzeit sind keine Termine gemeldet.";font-size:13px;color:var(--ma-muted,#77736d)}
+body.home .sz-box--wetter{padding:0}
+body.home .sz-box--wetter:has(> details[hidden]){display:none}
+body.home .sz-box--wetter details{padding:16px 16px 14px;border:0;background:transparent}
+body.home .sz-box--wetter summary{list-style:none;cursor:pointer;padding:0}
+body.home .sz-box--wetter summary::-webkit-details-marker{display:none}
+body.home .sz-box--wetter summary::before{content:"Das Wetter in Merzenich"}
+body.home .sz-box--wetter summary{font-size:0}
+body.home .sz-box--wetter summary::before{font-size:12px}
+body.home .sz-box--wetter .weather-days{display:grid;gap:0}
+body.home .sz-box--wetter .weather-days>div{padding:8px 0;border-bottom:1px solid var(--ma-line,#e8e3da);font-size:13px}
+body.home .sz-box--wetter .weather-days>div:last-child{border-bottom:0}
+body.home .sz-box--wetter .weather-days b{font-family:Newsreader,Georgia,serif;font-size:15px;font-weight:650}
+body.home .sz-box--wetter>details>div>small{display:block;margin-top:8px;font-size:10.5px;color:var(--ma-muted,#77736d)}
+body.home .sz-box--cta{background:var(--ma-red,#971725);color:#fff}
+body.home .sz-box__eyebrow{display:block;margin-bottom:6px;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#f3d9a0}
+body.home .sz-box--cta h3{margin:0 0 8px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.02;font-weight:650;letter-spacing:-.025em;text-transform:none;color:#fff}
+body.home .sz-box--cta p{margin:0 0 14px;font-size:13.5px;line-height:1.5;color:#f7e9ea}
+body.home .sz-btn{display:inline-flex;align-items:center;min-height:40px;padding:9px 16px;border-radius:7px;background:#fff;color:var(--ma-red,#971725);font-size:12.5px;font-weight:800;letter-spacing:.02em}
+body.home .sz-btn:hover{background:#f6efdd;color:var(--ma-red-dark,#77101b)}
+body.home .sz-rail .portal-ads{margin-top:6px}
+
+/* --- Ortsteile ------------------------------------------------------ */
+body.home .sz-orte{padding-top:clamp(48px,5.5vw,72px)}
+body.home .sz-orte__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+body.home .sz-ort{display:flex;flex-direction:column;min-width:0;color:var(--ma-ink,#171513)}
+body.home .sz-ort__bild{display:block;position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#eeeae3}
+body.home .sz-ort__bild img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+body.home .sz-ort:hover .sz-ort__bild img{transform:scale(1.03)}
+body.home .sz-ort__copy{display:block;padding:10px 2px 0}
+body.home .sz-ort__art{display:block;font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--ma-gold,#a58035)}
+body.home .sz-ort b{display:block;margin-top:2px;font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.05;font-weight:650;letter-spacing:-.02em}
+body.home .sz-ort:hover b{color:var(--ma-red,#971725)}
+body.home .sz-ort small{display:block;margin-top:3px;font-size:11.5px;color:var(--ma-muted,#77736d)}
+body.home .sz-ort__credit{display:block;padding:4px 2px 0;font-size:9.5px;line-height:1.3;color:var(--ma-muted,#77736d)}
+
+/* --- Marktplatz ----------------------------------------------------- */
+body.home .sz-markt{padding-top:clamp(48px,5.5vw,72px)}
+body.home .sz-markt__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+body.home .sz-mbox{display:flex;flex-direction:column;min-width:0;padding:18px 18px 16px;border:1px solid var(--ma-line,#e8e3da);border-radius:12px;background:var(--ma-paper,#fff)}
+body.home .sz-mbox h3{margin:0 0 6px;font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.05;font-weight:650;letter-spacing:-.02em}
+body.home .sz-mbox h3 a:hover{color:var(--ma-red,#971725)}
+body.home .sz-mbox__count{margin:0 0 10px;font-size:12.5px;color:var(--ma-muted,#77736d)}
+body.home .sz-mbox__count b{color:var(--ma-red,#971725);font-weight:800}
+body.home .sz-mbox__text{margin:0;font-size:13px;line-height:1.5;color:var(--ma-text,#4f4d49)}
+body.home .sz-mbox__list{flex:1 1 auto}
+body.home .sz-mbox .markt-mini{padding:9px 0;border-top:1px solid var(--ma-line,#e8e3da)}
+body.home .sz-mbox .markt-mini strong{font-size:13.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body.home .sz-mbox .markt-mini-leer{margin:0;font-size:13px;color:var(--ma-muted,#77736d)}
+body.home .sz-mbox__more{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:12px;font-size:12.5px;font-weight:700;color:var(--ma-ink,#171513)}
+
+/* --- Abo-Band ------------------------------------------------------- */
+body.home .sz-band{margin-top:clamp(48px,6vw,80px);background:var(--ma-red-dark,#77101b);color:#fff}
+body.home .sz-band__inner{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-top:30px;padding-bottom:30px}
+body.home .sz-band__eyebrow{display:block;margin-bottom:6px;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#f3d9a0}
+body.home .sz-band h2{margin:0 0 6px;font-family:Newsreader,Georgia,serif;font-size:clamp(24px,2.4vw,32px);line-height:1;font-weight:650;letter-spacing:-.025em;color:#fff}
+body.home .sz-band p{margin:0;font-size:14px;color:#f3e4e5}
+body.home .sz-band__links{display:flex;flex-wrap:wrap;gap:10px;flex:0 0 auto}
+body.home .sz-band__links a{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid rgba(255,255,255,.55);border-radius:999px;color:#fff;font-size:13px;font-weight:700}
+body.home .sz-band__links a:hover{background:#fff;color:var(--ma-red-dark,#77101b)}
+
+/* --- Responsiv ------------------------------------------------------ */
+@media (max-width:1180px){
+  body.home .sz-main{grid-template-columns:minmax(0,1fr) 300px;gap:32px}
+  body.home .sz-orte__grid{gap:12px}
+  body.home .sz-markt__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1023px){
+  body.home .sz-main{grid-template-columns:minmax(0,1fr)}
+  body.home .sz-rail{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  body.home .sz-rail__title{grid-column:1/-1}
+  body.home .sz-rail .portal-ads{grid-column:1/-1}
+  body.home .sz-orte__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  body.home .sz-top{grid-template-columns:minmax(0,1fr);gap:26px}
+}
+@media (max-width:760px){
+  body.home .sz-cards{grid-template-columns:minmax(0,1fr);gap:22px}
+  body.home .sz-card{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;align-items:start}
+  body.home .sz-card__media{margin:0}
+  body.home .sz-card .media{aspect-ratio:4/3}
+  body.home .sz-card h3{font-size:18px}
+  body.home .sz-card p{display:none}
+  body.home .sz-card.ma-no-image{grid-template-columns:minmax(0,1fr)}
+  body.home .sz-rail{grid-template-columns:minmax(0,1fr)}
+  body.home .sz-band__inner{flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media (max-width:640px){
+  body.home .sz-ticker{gap:10px}
+  body.home .sz-ticker__label{font-size:9.5px;padding:5px 9px}
+  body.home .sz-orte__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.home .sz-markt__grid{grid-template-columns:minmax(0,1fr)}
+  body.home .sz-list a{grid-template-columns:46px minmax(0,1fr);gap:10px}
+}
+@media (max-width:420px){
+  body.home .sz-card{grid-template-columns:104px minmax(0,1fr)}
+  body.home .sz-ort b{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  body.home .sz-ort__bild img{transition:none}
+}
+
+/* --- Dunkelmodus ---------------------------------------------------- */
+html[data-theme="dark"] body.home .sz-box{background:#181715}
+html[data-theme="dark"] body.home .sz-box--cta{background:var(--ma-red,#971725)}
+html[data-theme="dark"] body.home .sz-mbox{background:#141312;border-color:#302e2a}
+html[data-theme="dark"] body.home .sz-ticker__list,html[data-theme="dark"] body.home .sz-ticker__list li,html[data-theme="dark"] body.home .sz-list,html[data-theme="dark"] body.home .sz-list li,html[data-theme="dark"] body.home .sz-mbox .markt-mini,html[data-theme="dark"] body.home .sz-box--wetter .weather-days>div{border-color:#302e2a}
+html[data-theme="dark"] body.home .sz-card p,html[data-theme="dark"] body.home .sz-mbox__text{color:#c2bdb5}
+html[data-theme="dark"] body.home .sz-card .media,html[data-theme="dark"] body.home .sz-ort__bild{background:#222}

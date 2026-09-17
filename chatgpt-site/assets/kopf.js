@@ -53,13 +53,13 @@
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=20260917-3';
+    style.href = '/assets/homepage-polish.css?v=07e9d64577';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=20260917-3';
+    script.src = '/assets/homepage-polish.js?v=e02f382766';
     script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
