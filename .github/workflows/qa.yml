@@ -143,13 +143,19 @@ jobs:
             sleep 1
           done
           curl --fail http://127.0.0.1:4173/ > /dev/null
-          curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
           curl --fail http://127.0.0.1:4173/api/sport-current.json | python3 -m json.tool > /dev/null
-          for i in $(seq 1 15); do
+          # Erst warten, bis der Node-Dienst hinter nginx lauscht (sonst 502 vom Proxy),
+          # dann Wetter mit Wiederholung: Open-Meteo antwortet gelegentlich nicht sofort.
+          for i in $(seq 1 20); do
             if curl --fail --silent http://127.0.0.1:4173/api/kommentare/status > /dev/null; then break; fi
             sleep 1
           done
           curl --fail http://127.0.0.1:4173/api/kommentare/status | python3 -m json.tool
+          for i in $(seq 1 6); do
+            if curl --fail --silent http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null; then break; fi
+            echo "Wetter-Versuch $i fehlgeschlagen"; sleep 5
+          done
+          curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
           curl --fail 'http://127.0.0.1:4173/api/kommentare/liste?thema=/sport/sc-merzenich-oberzier-3-2/' | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"] and isinstance(d["kommentare"], list)'
           curl --fail http://127.0.0.1:4173/diskussion/ | grep -q 'id="diskussion-app"'
           curl --fail http://127.0.0.1:4173/werbefrei/ | grep -q 'id="werbefrei-app"'
