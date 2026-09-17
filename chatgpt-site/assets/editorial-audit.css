@@ -16,6 +16,24 @@
 .districtbar .shell{min-height:38px;gap:18px}
 .districtbar .lbl{font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;opacity:.68}
 
+/* Startseite: Nachrichten sind der Einstieg; Service ist eine kompakte Rail.
+   Das DOM darf aus Kompatibilitaetsgruenden alt bleiben, die visuelle Ordnung
+   ist eindeutig: News links/oben, Service rechts, Anzeigen derzeit aus. */
+body.home .portal-top{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(240px,300px)!important;
+  gap:clamp(24px,3vw,42px)!important;
+  align-items:start!important;
+}
+body.home .portal-news{grid-column:1;grid-row:1;min-width:0}
+body.home .portal-service{grid-column:2;grid-row:1;min-width:0;position:sticky;top:76px}
+body.home .portal-ads{display:none!important}
+body.home .portal-news>.shell{width:100%;max-width:none;padding-inline:0}
+body.home .frontpage-grid{margin-top:0!important}
+body.home .edition-label{padding-block:10px 12px;margin-bottom:18px;border-bottom:1px solid var(--ma-line)}
+body.home .portal-service .service-title{font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;margin-bottom:8px;opacity:.7}
+body.home .portal-service .service-accordion{border-radius:0!important;border-inline:0!important}
+
 /* Editorial Grid: Flächen nicht künstlich aufblasen. */
 .frontpage-grid,.news-mosaic,.fire-stories,.cards-3,.club-grid,.events-grid{align-items:start}
 .desk,.section{scroll-margin-top:90px}
@@ -81,9 +99,18 @@ body[data-page*="markt"] .media:empty,.markt-card .media:empty{display:none}
 .markt-card h2,.markt-card h3{margin-top:4px}
 .markt-card .meta{display:flex;gap:10px;flex-wrap:wrap}
 
+@media (max-width:980px){
+  body.home .portal-top{grid-template-columns:1fr!important}
+  body.home .portal-news{grid-column:1;grid-row:1}
+  body.home .portal-service{grid-column:1;grid-row:2;position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+  body.home .portal-service .service-title{grid-column:1/-1}
+}
 @media (max-width:800px){
   .districtbar .shell{gap:14px;overflow-x:auto;scrollbar-width:none}
   .districtbar .shell::-webkit-scrollbar{display:none}
   .front-lead>.media,.front-lead>a>.media,.lead-card>.media,.lead-card>a>.media{aspect-ratio:16/10}
   .article .byline{align-items:flex-start}
+}
+@media (max-width:620px){
+  body.home .portal-service{grid-template-columns:1fr}
 }
