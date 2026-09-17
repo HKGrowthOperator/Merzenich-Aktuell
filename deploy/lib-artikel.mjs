@@ -1,7 +1,7 @@
 /**
- * Gemeinsame Artikel-Erfassung fuer Suchindex und Themenseiten: liest die
- * ausgelieferten Artikelseiten unter chatgpt-site/<ressort>/<slug>/ und
- * liefert Titel, Teaser, Kicker, Ort, Datum, Themen und Fliesstext.
+ * Gemeinsame Artikel-Erfassung fuer Suchindex, Themenseiten, Ressorts, Orte
+ * und Archiv: liest die ausgelieferten Artikelseiten unter
+ * chatgpt-site/<ressort>/<slug>/ und liefert einen gemeinsamen Datensatz.
  */
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -19,8 +19,9 @@ export function artikelSammeln(site) {
     const ordner = join(site, ressort);
     if (!existsSync(ordner)) continue;
     for (const slug of readdirSync(ordner)) {
-      const pfad = join(ordner, slug, 'index.html');
-      if (!statSync(join(ordner, slug)).isDirectory() || !existsSync(pfad)) continue;
+      const basis = join(ordner, slug);
+      const pfad = join(basis, 'index.html');
+      if (!existsSync(basis) || !statSync(basis).isDirectory() || !existsSync(pfad)) continue;
       const html = readFileSync(pfad, 'utf8');
       if (!/<article class="article"/.test(html) || !html.includes('data-readable')) continue;
       const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
@@ -28,12 +29,16 @@ export function artikelSammeln(site) {
       const zeitLabel = text(erstes(/<time datetime="[^"]+"[^>]*>([^<]*)<\/time>/, main));
       const themen = [...main.matchAll(/<a href="\/thema\/([^"/]+)\/" rel="tag">([^<]*)<\/a>/g)].map((m) => ({ slug: m[1], label: text(m[2]) }));
       const body = erstes(/<div class="article-body" data-readable>([\s\S]*?)<\/div>\s*(?:<footer|<div class="article-foot|<div class="tags|<section|$)/, main) || '';
+      const ortZeile = text(erstes(/<div class="location-line"[^>]*>([\s\S]*?)<\/div>/, main));
+      const ortMarke = text(erstes(/<span class="location-brand">([^<]*)<\/span>/, main));
       out.push({
         url: `/${ressort}/${slug}/`, ressort, ressortLabel: RESSORTE[ressort],
         titel: text(erstes(/<h1[^>]*>([\s\S]*?)<\/h1>/, main)),
         teaser: entschaerfen(erstes(/<meta name="description" content="([^"]*)"/, html)),
         kicker: text(erstes(/<span class="kicker">([\s\S]*?)<\/span>/, main)) || RESSORTE[ressort],
-        ort: text(erstes(/<span class="location-brand">([^<]*)<\/span>/, main)) || 'MERZENICH',
+        // Die komplette Ortszeile ist wichtig: "MERZENICH · GIRBELSRATH" muss
+        // in beiden Ortskanaelen auftauchen, nicht nur im ersten Span.
+        ort: ortZeile || ortMarke || 'MERZENICH',
         datum, zeitLabel, themen,
         text: text(body).slice(0, 700),
         id: `${(datum || '').slice(0, 10)}-${slug}`,
