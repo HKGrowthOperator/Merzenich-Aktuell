@@ -1,254 +1,98 @@
-/*
- * Merzenich Aktuell — Homepage-Qualitaet 17.09.2026
- *
- * Regeln:
- * - zu kleine Motive werden nicht grossgezogen
- * - keine simulierten Textanzeigen
- * - Homepage bekommt eine klare lokale Datumszeile
- * - abgelaufene Termine verschwinden aus dem Vor-Ort-Modul
- * - Mobile bleibt News-first (Layout in homepage-polish.css)
+/* Merzenich Aktuell — Homepage-Qualität 17.09.2026
+ * Grundregel: Ein vorhandenes Motiv wird nicht wegen Pixel-Schwellen aus dem
+ * Layout gelöscht. Fehlt ein brauchbares Motiv, kommt ein geprüftes thematisches
+ * Symbolbild zum Einsatz. Dadurch bleibt die redaktionelle Bildhierarchie stabil.
  */
 (() => {
   'use strict';
+  const q=(s,r=document)=>r.querySelector(s), qa=(s,r=document)=>[...r.querySelectorAll(s)];
+  const BERLIN='Europe/Berlin';
 
-  const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const BERLIN = 'Europe/Berlin';
+  const FALLBACKS={
+    sport:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/2026-08-30%20Fu%C3%9Fballplatz%20Trogen%20HOF8480%20RAW-Export.png?width=1600',alt:'Fußballplatz als Symbolbild für Lokalsport'},
+    polizei:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Streifenwagen%20f%C3%BCr%20die%20Polizei%20vorgestellt.jpg?width=1600',alt:'Streifenwagen der Polizei Nordrhein-Westfalen'},
+    feuerwehr:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/Feuerwehrm%C3%A4nner%20im%20Einsatz.jpg?width=1600',alt:'Feuerwehrkräfte bei einem Einsatz'},
+    rathaus:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Rathaus%20HDR.jpg?width=1600',alt:'Rathaus der Gemeinde Merzenich'},
+    leben:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Alte%20Pfarrkirche.jpg?width=1600',alt:'Ortsmotiv aus Merzenich'},
+    termine:{src:'https://commons.wikimedia.org/wiki/Special:FilePath/Merzenich%20Denkmal-Nr.%2018%2C%20Lindenplatz%20%281235%29.jpg?width=1600',alt:'Lindenplatz in Merzenich'}
+  };
 
-  function berlinNowParts() {
-    const now = new Date();
-    const dateText = new Intl.DateTimeFormat('de-DE', {
-      timeZone: BERLIN,
-      weekday: 'long',
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric'
-    }).format(now);
-    const shortText = new Intl.DateTimeFormat('de-DE', {
-      timeZone: BERLIN,
-      day: '2-digit',
-      month: '2-digit'
-    }).format(now);
-    const isoDate = new Intl.DateTimeFormat('en-CA', {
-      timeZone: BERLIN,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    }).format(now);
-    return { now, dateText, shortText, isoDate };
+  function berlinNow(){
+    const d=new Date();
+    return {
+      label:new Intl.DateTimeFormat('de-DE',{timeZone:BERLIN,weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(d),
+      short:new Intl.DateTimeFormat('de-DE',{timeZone:BERLIN,day:'2-digit',month:'2-digit'}).format(d).replace(/\s/g,''),
+      iso:new Intl.DateTimeFormat('en-CA',{timeZone:BERLIN,year:'numeric',month:'2-digit',day:'2-digit'}).format(d)
+    };
   }
-
-  function refreshVisibleDate() {
-    const { dateText, shortText, isoDate } = berlinNowParts();
-    qsa('[data-today]').forEach((time) => {
-      time.textContent = shortText.replace(/\s/g, '');
-      time.setAttribute('datetime', isoDate);
-      time.setAttribute('title', dateText);
-    });
+  function refreshVisibleDate(){
+    const d=berlinNow();
+    qa('[data-today]').forEach(t=>{t.textContent=d.short;t.dateTime=d.iso;t.title=d.label});
   }
-
-  function addHomepageDateline() {
-    if (!document.body.classList.contains('home')) return;
-    if (document.querySelector('.ma-home-dateline')) return;
-
-    const edition = document.querySelector('.edition-label');
-    const portal = document.querySelector('.portal-top');
-    if (!portal) return;
-
-    const { dateText, isoDate } = berlinNowParts();
-    const section = document.createElement('section');
-    section.className = 'ma-home-dateline shell';
-    section.setAttribute('aria-label', 'Lokale Ausgabe heute');
-    section.innerHTML = `
-      <div class="ma-home-dateline__copy">
-        <span class="ma-home-dateline__eyebrow">Lokaler Überblick</span>
-        <h1>Heute in Merzenich</h1>
-      </div>
-      <time datetime="${isoDate}">${dateText}</time>`;
-
-    if (edition?.nextSibling) edition.parentNode.insertBefore(section, edition.nextSibling);
-    else portal.parentNode.insertBefore(section, portal);
+  function addDateline(){
+    if(!document.body.classList.contains('home')||q('.ma-home-dateline'))return;
+    const edition=q('.edition-label'), portal=q('.portal-top'); if(!portal)return;
+    const d=berlinNow(), section=document.createElement('section');
+    section.className='ma-home-dateline shell';
+    section.innerHTML=`<div class="ma-home-dateline__copy"><span class="ma-home-dateline__eyebrow">Lokaler Überblick</span><h1>Heute in Merzenich</h1></div><time datetime="${d.iso}">${d.label}</time>`;
+    edition?.after(section);
   }
-
-  function removeExpiredAgendaRows() {
-    if (!document.body.classList.contains('home')) return;
-    const now = Date.now();
-    qsa('.agenda-row[data-event-end]').forEach((row) => {
-      const end = Date.parse(row.dataset.eventEnd || '');
-      if (Number.isFinite(end) && end < now) row.remove();
-    });
-
-    qsa('.agenda-list').forEach((list) => {
-      if (list.querySelector('.agenda-row')) return;
-      if (list.querySelector('.ma-empty-events')) return;
-      const p = document.createElement('p');
-      p.className = 'ma-empty-events';
-      p.textContent = 'Derzeit sind hier keine kommenden Termine eingetragen.';
-      list.append(p);
-    });
+  function expireAgenda(){
+    const now=Date.now();
+    qa('.agenda-row[data-event-end]').forEach(row=>{const end=Date.parse(row.dataset.eventEnd||'');if(Number.isFinite(end)&&end<now)row.remove()});
   }
-
-  function maxSourceWidth(img) {
-    const widths = [...String(img.getAttribute('srcset') || '').matchAll(/(?:^|,|\s)(\d+)w(?:\s|,|$)/g)]
-      .map((match) => Number(match[1]))
-      .filter(Number.isFinite);
-    const queryWidth = String(img.currentSrc || img.src || '').match(/[?&]width=(\d+)/i);
-    const declared = Number(img.getAttribute('width')) || 0;
-    const natural = Number(img.naturalWidth) || 0;
-    return Math.max(0, declared, natural, queryWidth ? Number(queryWidth[1]) : 0, ...widths);
+  function keyFor(article){
+    const text=`${article?.textContent||''} ${article?.querySelector('a')?.getAttribute('href')||''}`.toLocaleLowerCase('de-DE');
+    if(/feuerwehr|brand|lösch|einsatz/.test(text))return'feuerwehr';
+    if(/blaulicht|polizei|einbruch|zeugen|verkehr/.test(text))return'polizei';
+    if(/sport|fußball|fussball|sc merzenich|kreisliga/.test(text))return'sport';
+    if(/rathaus|politik|gemeinde|rat/.test(text))return'rathaus';
+    if(/termin|veranstaltung|verein/.test(text))return'termine';
+    return'leben';
   }
-
-  function isLogo(img) {
-    return /(?:logo|wappen|vereinslogo|crest)/i.test(`${img.currentSrc || ''} ${img.src || ''} ${img.alt || ''}`);
+  function fallback(key){
+    return window.MerzenichStartbilder?.bilder?.[key]||FALLBACKS[key]||FALLBACKS.leben;
   }
-
-  function minimumWidth(img, media) {
-    const article = media.closest('article');
-    const rendered = Math.max(media.getBoundingClientRect().width, img.getBoundingClientRect().width, 1);
-
-    if (article?.classList.contains('front-lead')) return Math.max(1200, rendered * 1.5);
-    if (article?.classList.contains('feed-lead')) return Math.max(1000, rendered * 1.5);
-    if (article?.classList.contains('mosaic-lead') || article?.classList.contains('people-major') || article?.classList.contains('fire-major')) {
-      return Math.max(760, rendered * 1.5);
+  function setImage(img,bild){
+    img.removeAttribute('srcset');img.removeAttribute('sizes');
+    if(window.maExtern)window.maExtern.setze(img,bild.src);else img.src=bild.src;
+    img.alt=bild.alt||'Symbolbild';img.dataset.editorialImage='';img.dataset.maSymbolbild='1';
+  }
+  function ensureHeroImage(hero){
+    if(!hero)return;
+    const key=keyFor(hero), bild=fallback(key);
+    let media=q(':scope > a > .media',hero)||q(':scope > .media',hero), img=media&&q('img',media);
+    const looksLikeLogo=img&&/(logo|wappen|vereinslogo|crest)/i.test(`${img.src} ${img.alt}`);
+    if(!media){
+      const title=q('h1 a',hero); if(!title)return;
+      const a=document.createElement('a');a.href=title.href;a.tabIndex=-1;a.setAttribute('aria-hidden','true');
+      media=document.createElement('div');media.className='media';img=document.createElement('img');img.loading='eager';img.fetchPriority='high';media.append(img);a.append(media);hero.prepend(a);
     }
-    if (article?.classList.contains('front-brief')) return Math.max(280, rendered * 1.5);
-    return Math.max(560, rendered * 1.5);
+    if(!img){img=document.createElement('img');img.loading='eager';img.fetchPriority='high';media.append(img)}
+    if(looksLikeLogo||!img.getAttribute('src')){setImage(img,bild);media.classList.remove('contain');let badge=q('.badge',media);if(!badge){badge=document.createElement('span');badge.className='badge';media.append(badge)}badge.textContent='Symbolbild';}
   }
-
-  function removeMedia(media, reason) {
-    if (!media?.isConnected) return;
-    const article = media.closest('article');
-    if (!article) return;
-
-    const holder = media.parentElement?.tagName === 'A' && media.parentElement.children.length === 1
-      ? media.parentElement
-      : media;
-    holder.remove();
-    article.classList.add('ma-no-image');
-    article.dataset.imageRemoved = reason;
+  function ensureBriefImage(article){
+    if(!article||q('.media img',article))return;
+    const title=q('h2 a,h3 a',article);if(!title)return;
+    const bild=fallback(keyFor(article));
+    const a=document.createElement('a');a.href=title.href;a.className='front-brief-media';a.tabIndex=-1;a.setAttribute('aria-hidden','true');
+    const media=document.createElement('div');media.className='media';
+    const img=document.createElement('img');img.loading='lazy';img.decoding='async';setImage(img,bild);media.append(img);a.append(media);article.prepend(a);
   }
-
-  function auditImage(img) {
-    if (!(img instanceof HTMLImageElement) || !img.isConnected) return;
-    const media = img.closest('.media');
-    if (!media) return;
-    const article = media.closest('article');
-    if (!article) return;
-
-    const available = maxSourceWidth(img);
-    const required = minimumWidth(img, media);
-    const heroLogo = article.classList.contains('front-lead') && isLogo(img);
-
-    // naturalWidth === 0 kann kurz waehrend des Ladens auftreten. Nur entfernen,
-    // wenn wir aus srcset/width/URL bereits eine belastbare Quellbreite kennen.
-    if (heroLogo || (available > 0 && available < required)) {
-      removeMedia(media, heroLogo ? 'logo-not-hero' : `low-resolution-${Math.round(available)}-of-${Math.round(required)}`);
-      return;
-    }
-
-    // Kleine Logos in Sport-/Vereinskarten bleiben erlaubt, werden aber nie gecroppt.
-    if (isLogo(img)) media.classList.add('contain');
+  function ensureHomepageVisuals(){
+    if(!document.body.classList.contains('home'))return;
+    ensureHeroImage(q('.front-lead'));
+    qa('.front-side .front-brief').forEach(ensureBriefImage);
   }
-
-  function auditImages() {
-    const selectors = [
-      '.home .front-lead .media img',
-      '.home .front-brief .media img',
-      '.home .news-mosaic .media img',
-      '.home .people-grid .media img',
-      '.home .fire-desk .media img',
-      'article.feed-lead .media img',
-      'article.feed-row .media img'
-    ];
-    qsa(selectors.join(',')).forEach(auditImage);
+  function removeTextOnlyAds(){
+    qa('.managed-ad').forEach(ad=>{if(!q('img,picture,video',ad))ad.remove()});
+    qa('.ad-row-body').forEach(row=>{if(!q('.managed-ad,.ma-ad,img,picture,video',row))row.remove()});
   }
-
-  function removeTextOnlyAds() {
-    // Der alte Recovery-Stand hatte KBS/AJ als Textkarten ohne Creative. Das
-    // sieht wie eine Fake-Anzeige aus und wird deshalb auf allen Seiten entfernt.
-    qsa('.managed-ad').forEach((ad) => {
-      if (!ad.querySelector('img,picture,video')) ad.remove();
-    });
-    qsa('.ad-row-body').forEach((row) => {
-      if (!row.querySelector('.managed-ad,.ma-ad,img,picture,video')) row.remove();
-    });
+  function start(){
+    refreshVisibleDate();addDateline();expireAgenda();removeTextOnlyAds();ensureHomepageVisuals();
+    const grid=q('.frontpage-grid');
+    if(grid&&'MutationObserver'in window){let timer;const obs=new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(ensureHomepageVisuals,60)});obs.observe(grid,{childList:true,subtree:true});setTimeout(()=>obs.disconnect(),8000)}
+    setTimeout(ensureHomepageVisuals,500);setTimeout(ensureHomepageVisuals,1800);
   }
-
-  function bookingSlot() {
-    const a = document.createElement('a');
-    a.className = 'ma-ad-booking-slot';
-    a.href = '/werben/';
-    a.setAttribute('aria-label', 'Werbeflaeche auf Merzenich Aktuell anfragen');
-    a.innerHTML = `
-      <span class="ma-ad-booking-slot__label">Werbeflaeche</span>
-      <span class="ma-ad-booking-slot__body">
-        <strong>Hier werben</strong>
-        <span>Display-Banner im lokalen Nachrichtenumfeld</span>
-        <small>Bannerplatz & Mediadaten anfragen</small>
-      </span>`;
-    return a;
-  }
-
-  function polishHomepageAds() {
-    // Werbung global aus oder Werbefrei-Abo aktiv: keine Anzeigen-Slots anlegen.
-    if (document.documentElement.dataset.werbung === 'aus' || document.documentElement.dataset.werbefrei === 'ja') return;
-    if (!document.body.classList.contains('home')) return;
-    const rail = document.querySelector('.portal-ads');
-    if (!rail || rail.dataset.maQualityAds === '1') return;
-
-    // Ein echtes Motiv bleibt bestehen. Nur die alten Textanzeigen werden durch
-    // einen klar als buchbar gekennzeichneten Slot ersetzt.
-    const realCreative = rail.querySelector('img,picture,video');
-    if (realCreative) return;
-
-    rail.dataset.maQualityAds = '1';
-    rail.replaceChildren(bookingSlot());
-  }
-
-  function markEditorialHierarchy() {
-    if (!document.body.classList.contains('home')) return;
-    document.documentElement.dataset.homeEdition = 'editorial-20260917';
-    const lead = document.querySelector('.front-lead');
-    if (lead) lead.setAttribute('aria-label', 'Hauptaufmacher');
-    qsa('.front-side .front-brief').forEach((story, index) => {
-      story.dataset.secondaryStory = String(index + 1);
-    });
-  }
-
-  let resizeTimer = 0;
-  function scheduleAudit(delay = 0) {
-    window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(auditImages, delay);
-  }
-
-  function start() {
-    refreshVisibleDate();
-    addHomepageDateline();
-    removeExpiredAgendaRows();
-    markEditorialHierarchy();
-    removeTextOnlyAds();
-    polishHomepageAds();
-
-    // v20.js ersetzt Aufmacher/Zweitmeldung asynchron. Danach erst endgueltig
-    // bewerten, damit kein gutes aktuelles Motiv wegen des alten HTML-Fallbacks
-    // entfernt wird.
-    scheduleAudit(1400);
-    window.setTimeout(() => {
-      refreshVisibleDate();
-      removeExpiredAgendaRows();
-      auditImages();
-    }, 3600);
-
-    const main = document.querySelector('main');
-    if (main && 'MutationObserver' in window) {
-      const observer = new MutationObserver(() => scheduleAudit(120));
-      observer.observe(main, { childList: true, subtree: true, attributes: true, attributeFilter: ['src', 'srcset', 'class'] });
-      window.setTimeout(() => observer.disconnect(), 6000);
-    }
-
-    window.addEventListener('resize', () => scheduleAudit(180), { passive: true });
-    window.addEventListener('load', () => scheduleAudit(100), { once: true });
-  }
-
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
-  else start();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
