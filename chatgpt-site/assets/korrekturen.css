@@ -215,8 +215,6 @@ html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,htm
 @media (min-width:901px) and (max-width:1179px){html[data-werbung="aus"] .portal-top.has-ads,html[data-werbefrei="ja"] .portal-top.has-ads{grid-template-columns:230px minmax(0,1fr)}}
 
 /* Externe Bilder ohne Einwilligung: neutraler Platzhalter */
-img.extern-gesperrt{object-fit:contain!important;background:#ecebe7}
-html[data-theme="dark"] img.extern-gesperrt{filter:invert(.88) hue-rotate(180deg)}
 
 /* Einwilligung (assets/einwilligung.js) */
 .einwilligung{position:fixed;left:0;right:0;bottom:0;z-index:2100;padding:0 12px 12px;pointer-events:none}

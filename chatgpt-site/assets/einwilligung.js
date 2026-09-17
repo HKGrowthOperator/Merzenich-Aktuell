@@ -4,16 +4,14 @@
  * Die Seite setzt keine Tracking-Cookies. Im Browser gespeichert werden nur:
  * Darstellung (hell/dunkel), der Kommentarname, der Werbefrei-Nachweis und
  * diese Einwilligung. Was eine Zustimmung braucht:
- *   - externeBilder: Symbolbilder von Wikimedia Commons und Anzeigen-Logos
- *     werden von fremden Servern geladen (IP-Adresse geht dorthin). Ohne
- *     Zustimmung bleibt der neutrale Platzhalter.
+ *   - (externeBilder entfaellt: Symbolbilder laufen ueber /api/bild, den
+ *     eigenen Bildproxy; das Feld bleibt im Speicherformat, wird ignoriert.)
  *   - liveMeldungen: waehrend die Seite offen ist, wird alle fuenf Minuten
  *     /api/latest.json (eigener Server) abgefragt; neue Meldungen erscheinen
  *     als Hinweis oben und, wenn erlaubt, als Browser-Benachrichtigung.
  *
- * Bilder: Erzeuger schreiben externe Adressen in data-extern-src und einen
- * lokalen Platzhalter in src. Dieses Skript setzt src, sobald die Zustimmung
- * vorliegt, und beobachtet spaeter eingefuegte Bilder.
+ * Bilder: window.maExtern.url(adresse) liefert die Proxy-Adresse; aeltere
+ * Seiten mit data-extern-src werden beim Start umgeschrieben.
  */
 (() => {
   'use strict';
@@ -29,31 +27,24 @@
   let stand = lesen();
 
   // ---------------------------------------------------------------- Bilder
-  function bildFreigeben(img) {
-    const src = img.getAttribute('data-extern-src'); if (!src) return;
-    img.src = src; img.removeAttribute('data-extern-src'); img.classList.remove('extern-gesperrt');
+  // Externe Symbolbilder (Wikimedia Commons) laufen ueber unseren eigenen
+  // Bildproxy (/api/bild, siehe deploy/coolify/kommentare/server.mjs). Der
+  // Browser spricht nie mit Wikimedia, deshalb ist keine Einwilligung noetig.
+  const PROXY_HOSTS = ['commons.wikimedia.org', 'upload.wikimedia.org'];
+  function bildUrl(url) {
+    try { const u = new URL(url, location.href); if (/^https?:$/.test(u.protocol) && PROXY_HOSTS.includes(u.host)) return '/api/bild?u=' + encodeURIComponent(u.href); } catch (e) { /* unten */ }
+    return url;
   }
   function bilderAnwenden() {
-    const erlaubt = !!(stand && stand.externeBilder);
-    html.dataset.extern = stand ? (erlaubt ? 'ja' : 'nein') : 'offen';
-    if (erlaubt) document.querySelectorAll('img[data-extern-src]').forEach(bildFreigeben);
+    html.dataset.extern = 'proxy';
+    document.querySelectorAll('img[data-extern-src]').forEach((img) => { img.src = bildUrl(img.getAttribute('data-extern-src')); img.removeAttribute('data-extern-src'); img.classList.remove('extern-gesperrt'); });
   }
-  // Spaeter eingefuegte Bilder (redaktionelle Karten, Fallbacks) ebenfalls freigeben.
-  if ('MutationObserver' in window) {
-    new MutationObserver((muts) => {
-      if (!(stand && stand.externeBilder)) return;
-      for (const m of muts) for (const n of m.addedNodes) {
-        if (!(n instanceof Element)) continue;
-        if (n.matches('img[data-extern-src]')) bildFreigeben(n);
-        n.querySelectorAll?.('img[data-extern-src]').forEach(bildFreigeben);
-      }
-    }).observe(document.documentElement, { childList: true, subtree: true });
-  }
-  // Fuer andere Skripte: externe Adresse als Attributsatz, je nach Zustimmung.
+  // Fuer andere Skripte (v20.js, bild-fallbacks.js): Adresse ueber den Proxy.
   window.maExtern = {
-    erlaubt: () => !!(stand && stand.externeBilder),
-    attribute: (url) => (stand && stand.externeBilder) ? `src="${esc(url)}"` : `src="/assets/img/extern-platzhalter.svg" data-extern-src="${esc(url)}" class="extern-gesperrt"`,
-    setze: (img, url) => { if (stand && stand.externeBilder) { img.src = url; } else { img.src = '/assets/img/extern-platzhalter.svg'; img.setAttribute('data-extern-src', url); img.classList.add('extern-gesperrt'); } },
+    erlaubt: () => true,
+    url: bildUrl,
+    attribute: (url) => `src="${esc(bildUrl(url))}"`,
+    setze: (img, url) => { img.src = bildUrl(url); },
   };
 
   // ---------------------------------------------------------- Live-Meldungen
@@ -100,10 +91,9 @@
   function bannerHtml(details) {
     return `<div class="einwilligung__box" role="dialog" aria-modal="false" aria-labelledby="einwilligung-titel">
       <h2 id="einwilligung-titel">Datenschutz und Einstellungen</h2>
-      <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Darstellung, Kommentarname, diese Auswahl). Zwei Dinge brauchen Ihre Zustimmung, weil dabei Daten an andere Server gehen oder Ihr Browser Sie benachrichtigt:</p>
+      <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Darstellung, Kommentarname, diese Auswahl). Symbolbilder laden wir über unseren eigenen Server, nicht von Dritten. Eine Funktion braucht Ihre Zustimmung, weil Ihr Browser Sie dabei benachrichtigt:</p>
       <form class="einwilligung__form">
         <label><input type="checkbox" checked disabled> <span><strong>Notwendig</strong> · Darstellung, Kommentare, diese Einstellung. Immer aktiv.</span></label>
-        <label><input type="checkbox" name="externeBilder" ${details ? '' : 'checked'}> <span><strong>Externe Bilder</strong> · Symbolbilder von Wikimedia Commons und Logos von Anzeigenpartnern. Dabei erfährt der fremde Server Ihre IP-Adresse.</span></label>
         <label><input type="checkbox" name="liveMeldungen" ${details ? '' : 'checked'}> <span><strong>Live-Meldungen</strong> · Neue Meldungen erscheinen automatisch, solange die Seite offen ist, auf Wunsch als Browser-Benachrichtigung. Abgefragt wird nur unser eigener Server.</span></label>
       </form>
       <div class="einwilligung__aktionen">
@@ -122,16 +112,16 @@
     el.addEventListener('click', (e) => {
       const b = e.target.closest('[data-ew]'); if (!b) return;
       const form = el.querySelector('form');
-      if (b.dataset.ew === 'alle') speichernUndAnwenden(true, true);
+      if (b.dataset.ew === 'alle') speichernUndAnwenden(false, true);
       else if (b.dataset.ew === 'details') bannerZeigen(true);
-      else if (details) speichernUndAnwenden(form.externeBilder.checked, form.liveMeldungen.checked);
+      else if (details) speichernUndAnwenden(false, form.liveMeldungen.checked);
       else speichernUndAnwenden(false, false);
     });
   }
   function fusslinkSetzen() {
     const ziel = document.querySelector('.compact-footer .shell, footer .shell, footer'); if (!ziel || ziel.querySelector('.einwilligung__link')) return;
     const a = document.createElement('a'); a.href = '#datenschutz-einstellungen'; a.className = 'einwilligung__link'; a.textContent = 'Datenschutz-Einstellungen';
-    a.addEventListener('click', (e) => { e.preventDefault(); bannerZeigen(true); if (stand) { const f = document.querySelector('.einwilligung form'); if (f) { f.externeBilder.checked = !!stand.externeBilder; f.liveMeldungen.checked = !!stand.liveMeldungen; } } });
+    a.addEventListener('click', (e) => { e.preventDefault(); bannerZeigen(true); if (stand) { const f = document.querySelector('.einwilligung form'); if (f) { f.liveMeldungen.checked = !!stand.liveMeldungen; } } });
     ziel.append(a);
   }
   window.maEinwilligungOeffnen = () => document.querySelector('.einwilligung__link')?.click();
