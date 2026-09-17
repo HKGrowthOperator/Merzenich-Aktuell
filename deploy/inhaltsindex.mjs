@@ -138,6 +138,26 @@ for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.fil
   if (html !== alt) schreibe(rel, html);
 }
 
+// --------------------------------------------------------- Archiv /archiv/
+{
+  const rel = 'archiv/index.html'; const pfad = join(site, rel);
+  if (existsSync(pfad)) {
+    const alt = readFileSync(pfad, 'utf8'); let html = alt;
+    const monate = new Map();
+    for (const a of artikel) { const k = String(a.datum || '').slice(0, 7); if (!/^\d{4}-\d{2}$/.test(k)) continue; if (!monate.has(k)) monate.set(k, []); monate.get(k).push(a); }
+    const kurz = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(new Date(iso)) + '.';
+    const li = (a) => `<li><time datetime="${esc(a.datum)}">${kurz(a.datum)}</time><a href="${esc(a.url)}">${esc(a.titel)}</a><span class="rs">${esc(a.ressortLabel)}</span></li>`;
+    for (const [k, liste] of [...monate.entries()].sort((a, b) => b[0].localeCompare(a[0]))) {
+      const n = liste.length; const block = `<div class="archive-month" id="${k}"><h3>${new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', month: 'long', year: 'numeric' }).format(new Date(k + '-15T12:00:00+02:00'))}<small>${n} Meldung${n === 1 ? '' : 'en'}</small></h3><ul class="archive-list">${liste.map(li).join('')}</ul></div>`;
+      const re = new RegExp(`<div class="archive-month" id="${k}">[\\s\\S]*?<\\/ul><\\/div>`);
+      if (re.test(html)) html = html.replace(re, () => block);
+      else { const jahr = `<div class="archive-year"><h2>${k.slice(0, 4)}</h2>`; const i = html.indexOf(jahr); if (i >= 0) html = html.slice(0, i + jahr.length) + block + html.slice(i + jahr.length); }
+    }
+    html = zaehler(html, artikel.length);
+    if (html !== alt) schreibe(rel, html);
+  }
+}
+
 // ------------------------------------------------------------- Sidebox
 {
   const top = artikel.slice(0, 5).map((a) => `<li><a href="${esc(a.url)}">${esc(a.titel)}</a></li>`).join('');

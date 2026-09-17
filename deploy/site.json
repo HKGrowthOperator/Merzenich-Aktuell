@@ -1,1 +1,6 @@
-{ "url": "https://merzenichaktuell.hk-growthoperator.de", "hinweis": "Oeffentliche Adresse der Seite. Einbinden und Inhaltsindex schreiben canonical, og:url, Feeds, Sitemaps und latest.json damit. Beim Domainwechsel nur diesen Wert aendern und bun/node deploy/kopf-theme-einbinden.mjs + deploy/inhaltsindex.mjs laufen lassen." }
+{
+  "url": "https://merzenichaktuell.hk-growthoperator.de",
+  "hinweis": "Oeffentliche Adresse der Seite. Einbinden und Inhaltsindex schreiben canonical, og:url, Feeds, Sitemaps und latest.json damit. Beim Domainwechsel nur diesen Wert aendern und bun/node deploy/kopf-theme-einbinden.mjs + deploy/inhaltsindex.mjs laufen lassen.",
+  "kontaktMail": "info@kbs-management.tv",
+  "kontaktHinweis": "Adresse, die auf Kontakt, Ueber uns, Meldung senden und in den Feeds genannt wird. redaktion@merzenich-aktuell.de erst eintragen, wenn das Postfach nachweislich existiert und weitergeleitet wird."
+}

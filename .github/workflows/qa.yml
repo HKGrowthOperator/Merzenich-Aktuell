@@ -59,19 +59,30 @@ jobs:
           test -f wordpress/theme/merzenich-aktuell/functions.php
           test -f wordpress/plugin/merzenich-aktuell-core/merzenich-aktuell-core.php
 
-      - name: Markt in der ausgelieferten Seite aktuell?
-        run: node deploy/markt-prerender.mjs --check
-      - name: Sportmodul aus sport-current.json aktuell
-        run: node deploy/sport-prerender.mjs --check
-      - name: Suchindex kennt alle Artikelseiten
-        run: node deploy/suche-index.mjs --check
-      - name: Themenseiten vollstaendig
-        run: node deploy/thema-prerender.mjs --check
-      - name: Inhaltsindex (Listen, Archiv, Orte, Startseite, Feeds) aktuell
-        run: node deploy/inhaltsindex.mjs --check
-
-      - name: Darstellung und Kopf auf allen Seiten eingebunden?
-        run: node deploy/kopf-theme-einbinden.mjs --check
+      - name: Generierte Ansichten nachziehen (Listen, Archiv, Orte, Startseite, Feeds, Suche, Themen, Sport, Markt, Symbolbilder, Assets)
+        # Schreibmodus statt reiner Pruefung: Wer Artikel oder Assets pusht, ohne die
+        # Generatoren laufen zu lassen, bekommt den Stand hier nachgezogen; der
+        # Commit-Schritt unten schreibt das Ergebnis nach main zurueck. Alle
+        # Generatoren sind idempotent; der zweite Lauf darf nichts mehr aendern.
+        run: |
+          node deploy/symbolbilder.mjs
+          node deploy/markt-prerender.mjs
+          node deploy/sport-prerender.mjs
+          node deploy/suche-index.mjs
+          node deploy/thema-prerender.mjs
+          node deploy/inhaltsindex.mjs
+          node deploy/termine-prerender.mjs
+          node deploy/kopf-theme-einbinden.mjs
+          echo '--- nachgezogen:'; git status --short | head -40
+      - name: Generatoren idempotent (zweiter Lauf aendert nichts)
+        run: |
+          node deploy/symbolbilder.mjs --check
+          node deploy/markt-prerender.mjs --check
+          node deploy/sport-prerender.mjs --check
+          node deploy/suche-index.mjs --check
+          node deploy/thema-prerender.mjs --check
+          node deploy/inhaltsindex.mjs --check
+          node deploy/kopf-theme-einbinden.mjs --check
 
       - name: Symbolbilder fuer Meldungen ohne Foto aktuell?
         run: node deploy/symbolbilder.mjs --check
@@ -244,19 +255,18 @@ jobs:
         if: always()
         run: docker rm -f merzenich-aktuell-qa || true
 
-      - name: Commit refreshed QA screenshots and expired events
+      - name: Commit generierte Ansichten und QA-Screenshots
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.actor != 'github-actions[bot]' && success()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           # Abgelaufene Termine aus Startseite und Terminliste nehmen (Ortszeit); laeuft
           # taeglich per schedule, damit der Stand im Repo nicht veraltet.
-          node deploy/termine-prerender.mjs
-          git add qa/after/*.png chatgpt-site/index.html chatgpt-site/termine/index.html
+          git add -A qa/after chatgpt-site
           if git diff --cached --quiet; then
-            echo 'QA screenshots unchanged.'
+            echo 'Nichts nachzuziehen.'
           else
-            git commit -m 'qa: refresh actual Coolify screenshots, expired events removed [skip ci]'
+            git commit -m 'ci: generierte Ansichten, abgelaufene Termine und QA-Screenshots nachgezogen [skip ci]'
             git fetch origin main
             # Bei Konflikten an den Screenshots gewinnt der frische Stand dieses
             # Laufs (-X theirs = der eingespielte Commit). Schlaegt der Rebase
