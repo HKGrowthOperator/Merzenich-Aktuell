@@ -2,110 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
 <title>Merzenich Aktuell – Wirtschaft</title>
-<link>https://merzenich-aktuell.de/wirtschaft/</link>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/</link>
 <description>Betriebe, Handwerk, Gewerbegebiete, Förderprogramme wie LEADER und der Strukturwandel im Rheinischen Revier rund um Merzenich.</description>
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Tue, 01 Sep 2026 08:00:00 GMT</lastBuildDate>
-<image><url>https://merzenich-aktuell.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Wirtschaft</title><link>https://merzenich-aktuell.de/wirtschaft/</link></image>
-<atom:link href="https://merzenich-aktuell.de/wirtschaft/feed.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Wed, 16 Sep 2026 13:48:00 GMT</lastBuildDate>
+<image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Wirtschaft</title><link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/</link></image>
+<atom:link href="https://merzenichaktuell.hk-growthoperator.de/wirtschaft/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
 <title>LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region</title>
-<link>https://merzenich-aktuell.de/wirtschaft/leader-reminder/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/leader-reminder/</guid>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</guid>
 <pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/uploads/leader-region.webp" type="image/webp" length="17854"/><media:content url="https://merzenich-aktuell.de/assets/uploads/leader-region.webp" medium="image" type="image/webp"><media:credit>LAG Rheinisches Revier an Inde und Rur / Heimat-Info</media:credit><media:description>Ankündigung des digitalen LEADER-Infoabends</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/uploads/leader-region.webp" alt="Ankündigung des digitalen LEADER-Infoabends"></p><p>Die Lokale Aktionsgruppe (LAG) Rheinisches Revier an Inde und Rur erinnert an ihren digitalen Infoabend zu LEADER-Fördermöglichkeiten. Die Veranstaltung findet am Dienstag, 2. September, um 17 Uhr online über Zoom statt.</p>
-<p>Vorgestellt werden die Förderbedingungen der aktuellen LEADER-Periode. Nach Angaben der LAG liegen die Fördersätze bei bis zu 70 Prozent der Projektkosten, die maximale Fördersumme beträgt 250.000 Euro.</p>
-<p>Angesprochen sind Vereine, Kommunen, Unternehmen und Initiativen aus der Region, zu der auch die Gemeinde Merzenich gehört. Die Teilnahme ist kostenlos, der Zugangslink wird über die LAG bereitgestellt.</p>
-<p>LEADER ist ein EU-Förderprogramm für die ländliche Entwicklung. In der Region Rheinisches Revier an Inde und Rur begleitet es Projekte zu Dorfentwicklung, Tourismus und Daseinsvorsorge.</p>
-<p><em>Quelle: <a href="https://www.heimat-info.de/beitraege/452517f0-71d8-4884-a7a2-460132f7c277">LAG Rheinisches Revier an Inde und Rur via Heimat-Info</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/leader-reminder/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
-</item>
-<item>
-<title>Glasfaser: Ausbau läuft seit 2020 mit SOCO</title>
-<link>https://merzenich-aktuell.de/wirtschaft/glasfaserausbau-soco/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/glasfaserausbau-soco/</guid>
-
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Gemeinde setzt den Breitbandausbau gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions um. Für die Gemeinde entstehen dabei keine Kosten.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/sources/67b41902894a0d890c52.jpg" type="image/jpeg" length="63071"/><media:content url="https://merzenich-aktuell.de/assets/sources/67b41902894a0d890c52.jpg" medium="image" type="image/jpeg"><media:credit>Gemeinde Merzenich</media:credit><media:description>Glasfaserausbau in der Gemeinde Merzenich</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/sources/67b41902894a0d890c52.jpg" alt="Glasfaserausbau in der Gemeinde Merzenich"></p><p>Die Gemeinde Merzenich setzt den Breitbandausbau seit 2020 gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions GmbH um. Bürgermeister Georg Gelhausen schloss den Kooperationsvertrag am 21. Dezember 2020, zuvor hatte der Rat den Abschluss einstimmig gebilligt.</p>
-<p>„Ich bin sehr froh, dass wir mit einem regionalen Anbieter auch künftig zusammenarbeiten, der wiederum regionale Unternehmen beim Ausbau beauftragt. So bleibt die Wertschöpfung garantiert in der Region“, wird Gelhausen zitiert.</p>
-<p>SOCO hatte in der Gemeinde bereits zuvor Glasfaser-Infrastrukturen ausgebaut und betreibt diese. Zudem hat das Unternehmen vom Kreis Düren den Auftrag, die Schulen der Gemeinde an das Glasfasernetz anzuschließen. Der Ausbau erfolgt eigenwirtschaftlich, der Gemeinde entstehen dadurch keine Kosten.</p>
-<p>Der Ausbau ist in den Ortsteilen unterschiedlich weit: Für Girbelsrath meldet die Gemeinde die Vollendung der letzten Straßen, für Golzheim den Abschluss der Nachfragebündelung und den Beginn der Planungsphase. Der Abschluss des Netzausbaus war für Ende 2025 angekündigt.</p>
-<p><em>Quelle: <a href="https://www.gemeinde-merzenich.de/aktuelles/info-texte/glasfaser.php">Gemeinde Merzenich</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/glasfaserausbau-soco/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
-</item>
-<item>
-<title>Wärmeplanung: Merzenich gibt den Startschuss</title>
-<link>https://merzenich-aktuell.de/wirtschaft/kommunale-waermeplanung/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/kommunale-waermeplanung/</guid>
-
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Gemeinsam mit dem Netzbetreiber Leitungspartner und dem Planungsbüro SME erstellt die Gemeinde ihr kommunales Wärmekonzept.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/sources/cf3e94415050d7399875.jpg" type="image/jpeg" length="74068"/><media:content url="https://merzenich-aktuell.de/assets/sources/cf3e94415050d7399875.jpg" medium="image" type="image/jpeg"><media:credit>Gemeinde Merzenich</media:credit><media:description>Auftakt zur kommunalen Wärmeplanung in Merzenich</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/sources/cf3e94415050d7399875.jpg" alt="Auftakt zur kommunalen Wärmeplanung in Merzenich"></p><p>Der Kick-off zur Kommunalen Wärmeplanung sei vom Verwaltungsteam „sehr zügig und kompetent umgesetzt“ worden, lobte Dr. Stefan Röder vom Planungsunternehmen SME. SME hat gemeinsam mit dem Dürener Netzbetreiber Leitungspartner die Federführung bei der Erstellung des Wärmekonzeptes.</p>
-<p>Die Kommunale Wärmeplanung soll aufzeigen, wie künftig in der Gemeinde geheizt werden kann und soll. „Es ist ein Prozess, der viele Beteiligte einbindet und Kommunikation und Kooperation erfordert“, so Bürgermeister Georg Gelhausen.</p>
-<p>Grundlage sind das Wärmeplanungsgesetz des Bundes und das Landeswärmeplanungsgesetz NRW. Vorgesehen ist eine Analyse des vorhandenen Wärmebedarfs samt Treibhausgasemissionen sowie eine Untersuchung lokaler Potenziale für erneuerbare Energien. Fortgeschrieben wird die Planung derzeit spätestens alle fünf Jahre.</p>
-<p>Aus der Gemeindeverwaltung begleiten Projektleiter Andreas Isecke, Selina Schneider und die stellvertretende Fachbereichsleiterin Sarah Keller den Prozess. Einen ersten Entwurf stellte Röder für Mitte des Folgejahres in Aussicht.</p>
-<p><em>Quelle: <a href="https://www.gemeinde-merzenich.de/aktuelles/info-texte/kommunale-waermeplanung.php">Gemeinde Merzenich</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/kommunale-waermeplanung/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
-</item>
-<item>
-<title>Grünes Licht für den Masterplan Bürgewald</title>
-<link>https://merzenich-aktuell.de/wirtschaft/masterplan-buergewald/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/masterplan-buergewald/</guid>
-
-<category>Wirtschaft</category>
-<category>Morschenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/sources/14ad594303605254e6c3.jpg" type="image/jpeg" length="81490"/><media:content url="https://merzenich-aktuell.de/assets/sources/14ad594303605254e6c3.jpg" medium="image" type="image/jpeg"><media:credit>Gemeinde Merzenich</media:credit><media:description>Masterplanprozess für Morschenich-Alt im Bürgewald</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/sources/14ad594303605254e6c3.jpg" alt="Masterplanprozess für Morschenich-Alt im Bürgewald"></p><p>Nach der schrittweisen Erarbeitung und stetigen Reflektion des Strukturkonzepts erfolgt die abschließende Überarbeitung des dynamischen Masterplans für den Bürgewald. Die Gemeinde nennt als Ziel die Fertigstellung bis Ende 2025.</p>
-<p>Im Anschluss sollen die damit verbundenen Planungen konkretisiert werden, unter anderem mit Blick auf die technischen Infrastrukturen. Der Masterplan ist der Rahmen dafür, den „Ort der Zukunft“ nach der Umsiedlung Wirklichkeit werden zu lassen.</p>
-<p>Die weiterführenden Informationen und Dokumentationen zum Verfahren veröffentlicht die Entwicklungsgesellschaft NRW.URBAN, die den Prozess begleitet.</p>
-<p><em>Quelle: <a href="https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/dokumentation-masterplan.php">Gemeinde Merzenich</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/masterplan-buergewald/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
-</item>
-<item>
-<title>Umbau des Poolplatzes startet im Frühjahr 2026</title>
-<link>https://merzenich-aktuell.de/wirtschaft/poolplatz-foerderbescheid/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/poolplatz-foerderbescheid/</guid>
-
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Das Land übergibt einen Förderbescheid über 5,1 Millionen Euro. Der zentrale Merzenicher Platz liegt in einer tektonischen Störzone und soll neu gestaltet werden.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/sources/ab3f7e538509d21dff62.jpg" type="image/jpeg" length="79680"/><media:content url="https://merzenich-aktuell.de/assets/sources/ab3f7e538509d21dff62.jpg" medium="image" type="image/jpeg"><media:credit>Gemeinde Merzenich</media:credit><media:description>Übergabe des Förderbescheids für den Merzenicher Poolplatz</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/sources/ab3f7e538509d21dff62.jpg" alt="Übergabe des Förderbescheids für den Merzenicher Poolplatz"></p><p>Mit der Übergabe des Förderbescheids aus den Händen von Daniel Sieveke, Staatssekretär im Ministerium für Heimat, Kommunales, Bau und Digitalisierung des Landes Nordrhein-Westfalen, an Bürgermeister Georg Gelhausen kann das Projekt zur Neu- und Umgestaltung des Poolplatzes in die entscheidende Phase übergehen.</p>
-<p>Der Platz liegt im Bereich einer tektonischen Störzone, die durch den heranrückenden Tagebau verursacht wurde. In den platzbegrenzenden Bestandsgebäuden sind dadurch Bauschäden entstanden, die teilweise bereits zur Aufgabe der bisherigen Nutzung und zum Abriss von Gebäuden geführt haben. Angestrebt wird die Neugestaltung eines zentralen Platzes im Zusammenhang mit einer städtebaulichen Lösung für diese Missstände.</p>
-<p>„Die Städtebauförderung von Land und Bund macht Brachflächen zu lebendigen Zentren, Plätze zu Treffpunkten und Bauwerke zu Wahrzeichen“, sagt Staatssekretär Sieveke. Die Förderung in Höhe von 5,1 Millionen Euro stammt aus dem Stadtentwicklungsprogramm „Rheinisches Revier der Zukunft“.</p>
-<p>Bürgermeister Gelhausen ergänzt: „Seit vielen Jahren warten die Merzenicherinnen und Merzenicher auf eine Neu- und Umgestaltung ihres geliebten Poolplatzes. Das Projekt ist ein gutes Beispiel dafür, wie klug man mit Bergschadensproblematiken umgehen und neue Qualitäten bei der Stadtplanung umsetzen kann.“</p>
-<p>An der Übergabe nahmen unter anderem die Landtagsabgeordneten Dr. Patrizia Peill und Antje Grothus, die Kreistagsabgeordneten Dr. Maria Schoeller und Klaus Breuer sowie Vertreterinnen und Vertreter der beteiligten Planungsbüros, der Findeisen-Stiftung und der RWE Power AG teil.</p>
-<p><em>Quelle: <a href="https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/uebergabe-foerderbescheid-poolplatz.php">Gemeinde Merzenich</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/poolplatz-foerderbescheid/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f507b5f3e2c7d3-360.webp" medium="image"><media:credit>LAG Rheinisches Revier an Inde und Rur / Heimat-Info</media:credit><media:description>Ankündigung des digitalen LEADER-Infoabends</media:description></media:content>
 </item>
 <item>
 <title>Baustart für die neue Stromtrasse</title>
-<link>https://merzenich-aktuell.de/wirtschaft/stromtrasse-oberzier-blatzheim/</link>
-<guid isPermaLink="true">https://merzenich-aktuell.de/wirtschaft/stromtrasse-oberzier-blatzheim/</guid>
-
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</guid>
+<pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.</description>
-<enclosure url="https://merzenich-aktuell.de/assets/sources/feaf052f2afde0ec442a.jpg" type="image/jpeg" length="97713"/><media:content url="https://merzenich-aktuell.de/assets/sources/feaf052f2afde0ec442a.jpg" medium="image" type="image/jpeg"><media:credit>Frank Peterschroeder / Amprion</media:credit><media:description>Neubau der Höchstspannungsleitung Oberzier–Blatzheim</media:description></media:content>
-<content:encoded><![CDATA[<p><img src="https://merzenich-aktuell.de/assets/sources/feaf052f2afde0ec442a.jpg" alt="Neubau der Höchstspannungsleitung Oberzier–Blatzheim"></p><p>Zwischen der Umspannanlage Oberzier in Niederzier und dem Punkt Blatzheim bei Kerpen errichtet der Netzbetreiber Amprion eine neue Höchstspannungsfreileitung mit vier 380-Kilovolt-Stromkreisen. Es handelt sich um einen sogenannten Ersatzneubau: Die bestehende Leitung wird ausgebaut, im selben Trassenraum entsteht eine leistungsfähigere Verbindung mit zusätzlichen Stromkreisen.</p>
-<p>Die Gemeinde begründet den Bedarf mit der Auslastung des Netzes im Rheinischen Revier. Die bestehenden 220- und 380-Kilovolt-Leitungen zwischen Aachen und Köln seien bereits heute stark ausgelastet. Die Netzverstärkung zwischen Oberzier und Blatzheim ist im Bundesbedarfsplangesetz verankert.</p>
-<p>Im Gemeindegebiet Merzenich haben die Bauarbeiten begonnen. Derzeit werden vor allem östlich des Gewerbegebietes „Auf der Heide“ Baustraßen und Zufahrten angelegt, damit Baufahrzeuge die Maststandorte erreichen. Im Bereich des S-Bahnhofs laufen bereits die Arbeiten an den Mastfundamenten, dafür ist eine Sperrung des Radweges erforderlich.</p>
-<p>Nach aktueller Planung sollen Fundamentarbeiten und Mastmontage bis Mitte 2027 abgeschlossen sein, anschließend werden die Leiterseile eingezogen. Die bestehende Leitung bleibt während der gesamten Bauzeit in Betrieb. Zeitweise ist mit erhöhtem Baustellenverkehr zu rechnen, insbesondere an der L264, am Steinweg und an der Straße Auf der Heide.</p>
-<p><em>Quelle: <a href="https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/amprion-stromleitung.php">Gemeinde Merzenich</a></em></p><p><a href="https://merzenich-aktuell.de/wirtschaft/stromtrasse-oberzier-blatzheim/">Zur Meldung auf Merzenich Aktuell</a></p>]]></content:encoded>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/e0224db1617810-1440.webp" medium="image"><media:credit>Frank Peterschroeder / Amprion</media:credit><media:description>Neubau der Höchstspannungsleitung Oberzier–Blatzheim</media:description></media:content>
+</item>
+<item>
+<title>Grünes Licht für den Masterplan Bürgewald</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</guid>
+<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Morschenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/37c79d0e603f3a-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Masterplanprozess für Morschenich-Alt im Bürgewald</media:description></media:content>
+</item>
+<item>
+<title>Glasfaser: Ausbau läuft seit 2020 mit SOCO</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/</guid>
+<pubDate>Invalid Date</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Gemeinde setzt den Breitbandausbau gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions um. Für die Gemeinde entstehen dabei keine Kosten.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/5191bb10b6a3de-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Glasfaserausbau in der Gemeinde Merzenich</media:description></media:content>
+</item>
+<item>
+<title>Wärmeplanung: Merzenich gibt den Startschuss</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/</guid>
+<pubDate>Invalid Date</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Gemeinsam mit dem Netzbetreiber Leitungspartner und dem Planungsbüro SME erstellt die Gemeinde ihr kommunales Wärmekonzept.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/49833d3edfa958-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Auftakt zur kommunalen Wärmeplanung in Merzenich</media:description></media:content>
+</item>
+<item>
+<title>Umbau des Poolplatzes startet im Frühjahr 2026</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/poolplatz-foerderbescheid/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/poolplatz-foerderbescheid/</guid>
+<pubDate>Invalid Date</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Das Land übergibt einen Förderbescheid über 5,1 Millionen Euro. Der zentrale Merzenicher Platz liegt in einer tektonischen Störzone und soll neu gestaltet werden.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/0f626136429ef9-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Übergabe des Förderbescheids für den Merzenicher Poolplatz</media:description></media:content>
 </item>
 </channel>
 </rss>

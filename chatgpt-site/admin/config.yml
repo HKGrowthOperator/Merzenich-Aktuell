@@ -11,8 +11,8 @@ backend:
 
 publish_mode: editorial_workflow
 locale: de
-site_url: https://merzenich-aktuell.de
-display_url: https://merzenich-aktuell.de
+site_url: https://merzenichaktuell.hk-growthoperator.de
+display_url: https://merzenichaktuell.hk-growthoperator.de
 logo_url: /assets/img/logo-on-light.png
 media_folder: src/assets/uploads
 public_folder: /assets/uploads

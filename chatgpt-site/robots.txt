@@ -3,5 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /*/danke/
 
-Sitemap: https://merzenich-aktuell.de/sitemap.xml
-Sitemap: https://merzenich-aktuell.de/news-sitemap.xml
+Sitemap: https://merzenichaktuell.hk-growthoperator.de/sitemap.xml
+Sitemap: https://merzenichaktuell.hk-growthoperator.de/news-sitemap.xml
