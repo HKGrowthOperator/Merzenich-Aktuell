@@ -131,6 +131,9 @@ jobs:
           curl --fail http://127.0.0.1:4173/api/kommentare/status | python3 -m json.tool
           curl --fail 'http://127.0.0.1:4173/api/kommentare/liste?thema=/sport/sc-merzenich-oberzier-3-2/' | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"] and isinstance(d["kommentare"], list)'
           curl --fail http://127.0.0.1:4173/diskussion/ | grep -q 'id="diskussion-app"'
+          curl --fail http://127.0.0.1:4173/werbefrei/ | grep -q 'id="werbefrei-app"'
+          curl --fail http://127.0.0.1:4173/api/abo/konfiguration | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"]'
+          curl --fail http://127.0.0.1:4173/ | grep -q 'data-werbung='
 
       - name: Install browser for visual QA
         run: |

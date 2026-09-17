@@ -189,6 +189,8 @@
   }
 
   function polishHomepageAds() {
+    // Werbung global aus oder Werbefrei-Abo aktiv: keine Anzeigen-Slots anlegen.
+    if (document.documentElement.dataset.werbung === 'aus' || document.documentElement.dataset.werbefrei === 'ja') return;
     if (!document.body.classList.contains('home')) return;
     const rail = document.querySelector('.portal-ads');
     if (!rail || rail.dataset.maQualityAds === '1') return;
