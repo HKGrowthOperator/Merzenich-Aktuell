@@ -78,7 +78,7 @@
 (() => {
   if (document.querySelector('script[data-ma-content-refresh]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/content-refresh-2026-09-17.js?v=20260917-1';
+  script.src = '/assets/content-refresh-2026-09-17.js?v=fd8dd27040';
   script.async = false;
   script.dataset.maContentRefresh = '1';
   document.head.append(script);
@@ -93,13 +93,13 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=20260917-1';
+    style.href = '/assets/editorial-audit.css?v=041e283b84';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=20260917-2';
+    script.src = '/assets/editorial-audit.js?v=77a57173b8';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);
