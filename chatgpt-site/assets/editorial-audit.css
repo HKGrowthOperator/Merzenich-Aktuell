@@ -1,0 +1,89 @@
+/* Merzenich Aktuell — Editorial QA layer, 17.09.2026
+   Ziel: ruhigeres Zeitungslayout, einheitliche Bildlogik, weniger Boxen,
+   bessere Scan-Hierarchie. Die Regeln greifen additiv auf den V20-Stand. */
+
+:root{
+  --ma-line:color-mix(in srgb,currentColor 14%,transparent);
+  --ma-soft:color-mix(in srgb,currentColor 4%,transparent);
+}
+
+/* Header: nur sechs Ressorts auf erster Ebene; weitere Links verschiebt JS nach „Mehr“. */
+.mainnav .navrow{min-height:44px}
+.mainnav .navscroll{gap:clamp(16px,2.1vw,30px)}
+.mainnav .navscroll>a{font-weight:650;letter-spacing:-.01em;white-space:nowrap}
+.nav-more>summary{font-weight:650}
+.districtbar{border-top:1px solid var(--ma-line);border-bottom:1px solid var(--ma-line);box-shadow:none}
+.districtbar .shell{min-height:38px;gap:18px}
+.districtbar .lbl{font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;opacity:.68}
+
+/* Editorial Grid: Flächen nicht künstlich aufblasen. */
+.frontpage-grid,.news-mosaic,.fire-stories,.cards-3,.club-grid,.events-grid{align-items:start}
+.desk,.section{scroll-margin-top:90px}
+.desk-heading,.section-head{border-bottom:1px solid var(--ma-line);padding-bottom:10px;margin-bottom:20px}
+.desk-heading h2,.section-head h2{letter-spacing:-.025em}
+
+/* Drei visuelle Kartentypen: Lead, News, Compact. Keine unnötigen Schatten. */
+.front-lead,.front-brief,.desk-card,.feed-row,.markt-card,.club-card,.event-card,.sidebox,.service-accordion{
+  box-shadow:none!important;
+}
+.front-brief,.desk-card,.feed-row,.markt-card,.club-card,.event-card{border-color:var(--ma-line)!important}
+.front-lead{border-bottom:1px solid var(--ma-line)}
+.front-brief{border-top:1px solid var(--ma-line);padding-top:14px}
+.feed-row{padding-block:20px}
+
+/* Einheitliches Bildsystem. */
+.front-lead>.media,.front-lead>a>.media,.lead-card>.media,.lead-card>a>.media,.feed-lead .media{
+  aspect-ratio:16/9;overflow:hidden;background:var(--ma-soft)
+}
+.front-brief .media,.desk-card .media,.feed-row .media,.card .media,.photo-story .media{
+  aspect-ratio:4/3;overflow:hidden;background:var(--ma-soft)
+}
+.media img:not(.logo):not([alt*="Logo"]){width:100%;height:100%;object-fit:cover}
+.media.contain img,.brief-image .media.contain img,[alt*="Logo"]{object-fit:contain!important;padding:clamp(10px,2vw,24px)}
+.figure-badge,.media>.badge{font-size:.65rem!important;line-height:1.2!important;padding:4px 6px!important;opacity:.82!important;letter-spacing:.02em!important}
+.art-figure figcaption{font-size:.76rem!important;line-height:1.35;opacity:.76;gap:10px}
+
+/* Ortsseiten: Ortsbild ist Identifikation, nicht der Hauptinhalt. */
+body.list .place-hero .media,body.list .place-visual .media,body.list .place-image{
+  max-height:360px;overflow:hidden
+}
+body.list .place-hero img,body.list .place-visual img{width:100%;height:100%;object-fit:cover}
+body.list .place-copy,body.list .place-profile{max-width:76ch}
+
+/* Artikelseite: Text vor Meta. Transparenz bleibt vorhanden, wird aber sekundär. */
+.article-head h1{max-width:980px;letter-spacing:-.035em}
+.article-head .dek{max-width:780px}
+.article .byline{border-top:1px solid var(--ma-line);border-bottom:1px solid var(--ma-line);padding-block:12px}
+.article .source-box,.article .corrections{font-size:.82rem;line-height:1.5;background:transparent!important;border:0!important;border-top:1px solid var(--ma-line)!important;padding:14px 0!important}
+.article .tags{border-top:1px solid var(--ma-line);padding-top:14px}
+.article .author-box{box-shadow:none!important;border:1px solid var(--ma-line)!important;background:transparent!important}
+
+/* Empty-/Error-States sind echte Komponenten statt nackter Platzhalter. */
+.editorial-empty,.editorial-error{
+  padding:24px;border:1px solid var(--ma-line);background:var(--ma-soft);max-width:780px
+}
+.editorial-empty h2,.editorial-error h2{margin:0 0 8px;font-size:1.25rem}
+.editorial-empty p,.editorial-error p{margin:0 0 14px;max-width:65ch}
+.editorial-empty-actions{display:flex;flex-wrap:wrap;gap:10px}
+.editorial-empty-actions a,.editorial-error button{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid currentColor;background:transparent;color:inherit;text-decoration:none;font:inherit;cursor:pointer}
+
+/* Themen: Top-Themen zuerst, lange CMS-Wolke erst auf Wunsch. */
+.tagcloud.is-collapsed>a[data-editorial-extra="1"]{display:none}
+.editorial-topic-toggle{margin-top:18px;border:1px solid currentColor;background:transparent;color:inherit;padding:9px 13px;font:inherit;cursor:pointer}
+
+/* Service-Module kompakt; tote Widgets werden durch JS ausgeblendet. */
+.portal-service .service-accordion>summary{min-height:40px}
+.portal-service .service-accordion>div{padding-top:9px}
+[data-editorial-hidden="1"]{display:none!important}
+
+/* Märkte: Informationen scannen, nicht Bildflächen auffüllen. */
+body[data-page*="markt"] .media:empty,.markt-card .media:empty{display:none}
+.markt-card h2,.markt-card h3{margin-top:4px}
+.markt-card .meta{display:flex;gap:10px;flex-wrap:wrap}
+
+@media (max-width:800px){
+  .districtbar .shell{gap:14px;overflow-x:auto;scrollbar-width:none}
+  .districtbar .shell::-webkit-scrollbar{display:none}
+  .front-lead>.media,.front-lead>a>.media,.lead-card>.media,.lead-card>a>.media{aspect-ratio:16/10}
+  .article .byline{align-items:flex-start}
+}
