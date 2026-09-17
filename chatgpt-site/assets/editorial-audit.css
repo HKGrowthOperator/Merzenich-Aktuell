@@ -99,8 +99,19 @@ body[data-page*="markt"] .media:empty,.markt-card .media:empty{display:none}
 .markt-card h2,.markt-card h3{margin-top:4px}
 .markt-card .meta{display:flex;gap:10px;flex-wrap:wrap}
 
-@media (max-width:980px){
+/* Desktop: Nebenspalte mindestens 320px, sonst brechen lange Ueberschriften in 5-7 Zeilen. */
+@media (min-width:1280px){
+  body.home .portal-news .frontpage-grid{grid-template-columns:minmax(0,1.35fr) minmax(320px,1fr)!important;gap:28px!important}
+  body.home .front-side h2,body.home .front-side h3{hyphens:auto;overflow-wrap:anywhere}
+}
+/* Tablet bis 1279px: Nachrichten bekommen die volle Breite, Service-Leiste rutscht darunter.
+   Vorher teilten sich drei Spalten die Breite und die Nebenmeldungen wurden auf 250px
+   gequetscht (Wort-fuer-Wort-Umbrueche in den Ueberschriften). */
+@media (max-width:1279px){
   body.home .portal-top{grid-template-columns:1fr!important}
+  body.home .portal-news .frontpage-grid{grid-template-columns:minmax(0,1.45fr) minmax(320px,1fr)!important;gap:28px!important}
+  body.home .front-side{display:block!important;padding-left:24px!important;border-left:1px solid var(--ma-line,#dcdedc)}
+  body.home .front-side h2,body.home .front-side h3{hyphens:auto;overflow-wrap:anywhere;font-size:clamp(18px,1.9vw,22px)}
   body.home .portal-news{grid-column:1;grid-row:1}
   body.home .portal-service{grid-column:1;grid-row:2;position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
   body.home .portal-service .service-title{grid-column:1/-1}
