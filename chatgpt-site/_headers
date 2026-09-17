@@ -34,6 +34,3 @@
   Cache-Control: public, max-age=3600
 /termine/*/termin.ics
   Content-Type: text/calendar; charset=utf-8
-/admin/*
-  X-Robots-Tag: noindex
-  Content-Security-Policy: default-src 'self' https://unpkg.com https://identity.netlify.com https://api.netlify.com https://*.netlify.app https://*.netlify.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; connect-src 'self' https://identity.netlify.com https://api.netlify.com; frame-src 'self'
