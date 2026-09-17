@@ -185,3 +185,18 @@ gibt es dafuer keinen Einwilligungs-Punkt mehr. Erlaubt sind nur
 `commons.wikimedia.org` und `upload.wikimedia.org` (Umgebungsvariable `BILD_HOSTS`
 zum Erweitern). Ohne Persistent Storage `/data` wird nach jedem Deploy neu geladen,
 was funktioniert, aber langsamer ist.
+
+## Redaktionsformulare
+
+Die sieben Formulare (Korrektur, Meldung senden, Termin melden, Verein eintragen,
+Betrieb eintragen, Kontakt, Werbung) schicken per `POST /api/formular` an den Dienst.
+Vorher zeigten sie auf `data-netlify`, was auf nginx nur einen Fehler 405 ergab.
+
+- Ablage: `/data/formulare.jsonl` (eine JSON-Zeile je Eingang) und Bilder unter
+  `/data/formulare/`. Ohne Persistent Storage gehen Eingaenge beim naechsten Deploy verloren.
+- Optional `FORMULAR_WEBHOOK`: URL, an die jeder Eingang als JSON gePOSTet wird
+  (z. B. ein Make-/Zapier-Hook, der eine E-Mail an die Redaktion ausloest).
+- Abrufen: `curl -s $B/formular/admin/liste -H 'X-Admin-Token: <TOKEN>'`
+  und `curl -s "$B/formular/admin/datei?datei=<name>" -H 'X-Admin-Token: <TOKEN>' -o bild.jpg`.
+- Schutz: Honeypot, Pflichtfelder serverseitig, 5 Einsendungen pro Stunde je Absender,
+  Doppelversand innerhalb von 10 Minuten wird verworfen, nur Bilder als Anhang.

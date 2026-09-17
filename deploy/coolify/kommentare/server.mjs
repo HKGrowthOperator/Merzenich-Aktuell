@@ -30,7 +30,7 @@
  */
 
 import http from 'node:http';
-import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync, appendFileSync } from 'node:fs';
 import { createHash, createHmac, randomUUID, randomBytes, timingSafeEqual } from 'node:crypto';
 import { join } from 'node:path';
 
@@ -217,6 +217,140 @@ async function bildProxy(req, res, url) {
   }
 }
 
+
+// ------------------------------------------------------------- Formulare
+// POST /api/formular (multipart/form-data oder urlencoded) nimmt die sieben
+// Redaktionsformulare an (Korrektur, Meldung, Termin, Verein, Betrieb,
+// Kontakt, Werbung). Die Seite lief vorher mit data-netlify, was auf nginx
+// nur ein 405 ergab. Ablage: DATA_DIR/formulare.jsonl plus Bilddateien unter
+// DATA_DIR/formulare/. Optional FORMULAR_WEBHOOK (URL, bekommt JSON je Eingang).
+// Erfolg: 303 auf die Danke-Seite (Feld "weiter"). Fehler: 303 zurueck mit
+// ?fehler=<code>. Mit Accept: application/json antwortet der Dienst als JSON.
+const FORM_DATEI = join(DATA_DIR, 'formulare.jsonl');
+const FORM_DIR = join(DATA_DIR, 'formulare');
+const FORM_MAX_BODY = 12 * 1024 * 1024, FORM_MAX_DATEI = 6 * 1024 * 1024, FORM_PRO_STUNDE = Number(process.env.FORMULAR_PRO_STUNDE || 5);
+const FORMULARE = {
+  korrektur: ['url', 'text', 'email', 'einwilligung'],
+  meldung: ['art', 'titel', 'text', 'name', 'ortsteil', 'email', 'einwilligung'],
+  termin: ['titel', 'beginn', 'ort', 'ortsteil', 'veranstalter', 'kategorie', 'text', 'email', 'einwilligung'],
+  verein: ['verein', 'kategorie', 'ortsteil', 'ansprechpartner', 'text', 'email', 'einwilligung'],
+  betrieb: ['betrieb', 'branche', 'adresse', 'ortsteil', 'text', 'email', 'einwilligung'],
+  kontakt: ['name', 'text', 'email', 'einwilligung'],
+  werbung: ['firma', 'name', 'format', 'email', 'einwilligung'],
+};
+const FORM_WEBHOOK = process.env.FORMULAR_WEBHOOK || '';
+const formLetzte = new Map(); // hash -> Zeit (Doppelversand)
+const formZaehler = new Map(); // absender -> [Zeiten]
+function leseRoh(req, max) {
+  return new Promise((resolve, reject) => {
+    let groesse = 0; let teile = [];
+    req.on('data', (c) => { if (!teile) return; groesse += c.length; if (groesse > max) { teile = null; reject({ code: 413, meldung: 'gross' }); return; } teile.push(c); });
+    req.on('end', () => { if (teile) resolve(Buffer.concat(teile)); });
+    req.on('error', () => reject({ code: 400, meldung: 'unbekannt' }));
+  });
+}
+function multipart(buf, boundary) {
+  const delim = Buffer.from('--' + boundary); const teile = [];
+  let start = buf.indexOf(delim);
+  while (start !== -1) {
+    const ende = buf.indexOf(delim, start + delim.length); if (ende === -1) break;
+    const teil = buf.subarray(start + delim.length, ende);
+    if (teil.subarray(0, 2).toString() === '--') break;
+    const kopfEnde = teil.indexOf('\r\n\r\n');
+    if (kopfEnde !== -1) {
+      const kopf = teil.subarray(0, kopfEnde).toString('utf8');
+      const body = teil.subarray(kopfEnde + 4, Math.max(kopfEnde + 4, teil.length - 2));
+      const name = (/name="([^"]*)"/.exec(kopf) || [])[1]; const dateiname = (/filename="([^"]*)"/.exec(kopf) || [])[1];
+      const typ = ((/content-type:\s*([^\r\n]+)/i.exec(kopf) || [])[1] || '').trim();
+      if (name) teile.push({ name, dateiname, typ, body });
+    }
+    start = ende;
+  }
+  return teile;
+}
+function formAbsender(req) {
+  const ip = String(req.headers['x-real-ip'] || String(req.headers['x-forwarded-for'] || '').split(',')[0] || req.socket.remoteAddress || '').trim();
+  return createHash('sha256').update((process.env.KOMMENTARE_SALZ || 'merzenich') + ip + new Date().toISOString().slice(0, 10)).digest('hex').slice(0, 16);
+}
+function formUmleiten(req, res, ziel, json) {
+  if (json) return antwort(res, json.ok ? 200 : (json.code || 400), json);
+  res.writeHead(303, { Location: ziel, 'Cache-Control': 'no-store' }); return res.end();
+}
+async function formularAnnehmen(req, res) {
+  const willJson = String(req.headers.accept || '').includes('application/json');
+  let zurueck = '/'; try { const r = new URL(String(req.headers.referer || ''), 'http://localhost'); if (/^\/[a-z0-9/-]*$/.test(r.pathname)) zurueck = r.pathname; } catch { /* Standard */ }
+  const fehlschlag = (code, meldung) => formUmleiten(req, res, `${zurueck}?fehler=${code}#formular`, willJson ? { ok: false, code: code === 'gross' ? 413 : code === 'limit' ? 429 : 400, fehler: meldung, grund: code } : null);
+  let buf; try { buf = await leseRoh(req, FORM_MAX_BODY); } catch (e) { return fehlschlag(e.meldung === 'gross' ? 'gross' : 'unbekannt', 'Die Anfrage ist zu groß (Bilder bitte unter 6 MB).'); }
+  const ct = String(req.headers['content-type'] || '');
+  const felder = {}; const dateien = [];
+  if (ct.startsWith('multipart/form-data')) {
+    const boundary = (/boundary=("?)([^";]+)\1/.exec(ct) || [])[2]; if (!boundary) return fehlschlag('unbekannt', 'Ungültige Anfrage.');
+    for (const t of multipart(buf, boundary)) {
+      if (t.dateiname) { if (t.body.length) dateien.push(t); continue; }
+      const wert = t.body.toString('utf8').trim();
+      felder[t.name] = felder[t.name] ? felder[t.name] + ', ' + wert : wert;
+    }
+  } else if (ct.startsWith('application/x-www-form-urlencoded')) {
+    for (const [k, v] of new URLSearchParams(buf.toString('utf8'))) felder[k] = felder[k] ? felder[k] + ', ' + v.trim() : v.trim();
+  } else return fehlschlag('unbekannt', 'Ungültiger Inhaltstyp.');
+  const name = String(felder['form-name'] || '').toLowerCase();
+  const pflicht = FORMULARE[name]; if (!pflicht) return fehlschlag('unbekannt', 'Unbekanntes Formular.');
+  const weiter = /^\/[a-z0-9/-]+\/danke\/$/.test(felder.weiter || '') ? felder.weiter : zurueck;
+  // Honeypot: Bots bekommen die Danke-Seite, aber nichts wird gespeichert.
+  if (felder['bot-field']) return formUmleiten(req, res, weiter, willJson ? { ok: true, verworfen: true } : null);
+  const fehlend = pflicht.filter((f) => !String(felder[f] || '').trim());
+  if (fehlend.length) return fehlschlag('felder', 'Bitte alle Pflichtfelder ausfüllen: ' + fehlend.join(', ') + '.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(felder.email)) return fehlschlag('email', 'Bitte eine gültige E-Mail-Adresse angeben.');
+  if (!/^(ja|on|true|1)$/i.test(felder.einwilligung)) return fehlschlag('einwilligung', 'Bitte der Verarbeitung zustimmen.');
+  for (const k of Object.keys(felder)) if (felder[k].length > 5000) felder[k] = felder[k].slice(0, 5000);
+  const absender = formAbsender(req);
+  const jetzt = Date.now();
+  const zeiten = (formZaehler.get(absender) || []).filter((t) => jetzt - t < 3600e3);
+  if (zeiten.length >= FORM_PRO_STUNDE) return fehlschlag('limit', 'Zu viele Einsendungen in kurzer Zeit. Bitte später erneut versuchen.');
+  const inhalt = Object.fromEntries(Object.entries(felder).filter(([k]) => !['bot-field', 'form-name', 'weiter'].includes(k)));
+  const hash = createHash('sha256').update(name + JSON.stringify(inhalt)).digest('hex');
+  if (formLetzte.has(hash) && jetzt - formLetzte.get(hash) < 10 * 60e3) return formUmleiten(req, res, weiter, willJson ? { ok: true, doppelt: true } : null);
+  const id = new Date(jetzt).toISOString().replace(/[-:.TZ]/g, '').slice(0, 14) + '-' + randomBytes(4).toString('hex');
+  const abgelegt = [];
+  for (const d of dateien.slice(0, 3)) {
+    if (!/^image\//.test(d.typ)) return fehlschlag('datei', 'Als Anhang sind nur Bilder möglich.');
+    if (d.body.length > FORM_MAX_DATEI) return fehlschlag('gross', 'Ein Bild ist größer als 6 MB.');
+    const sicher = d.dateiname.replace(/[^A-Za-z0-9._-]/g, '_').slice(-80) || 'bild';
+    mkdirSync(FORM_DIR, { recursive: true });
+    const pfad = join(FORM_DIR, `${id}-${sicher}`); writeFileSync(pfad, d.body);
+    abgelegt.push({ feld: d.name, dateiname: d.dateiname, typ: d.typ, groesse: d.body.length, datei: `${id}-${sicher}` });
+  }
+  const eintrag = { id, formular: name, zeit: new Date(jetzt).toISOString(), absender, felder: inhalt, dateien: abgelegt, persistent };
+  try { mkdirSync(DATA_DIR, { recursive: true }); appendFileSync(FORM_DATEI, JSON.stringify(eintrag) + '\n'); }
+  catch (e) { console.error('formular: Ablage fehlgeschlagen:', e.message); return fehlschlag('unbekannt', 'Die Einsendung konnte nicht gespeichert werden. Bitte per E-Mail an die Redaktion.'); }
+  formLetzte.set(hash, jetzt); zeiten.push(jetzt); formZaehler.set(absender, zeiten);
+  if (!persistent) console.error('formular: /data fehlt, Einsendung ' + id + ' liegt nur im Container');
+  if (FORM_WEBHOOK) {
+    const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 8000);
+    fetch(FORM_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(eintrag), signal: ac.signal }).catch((e) => console.error('formular: Webhook:', e.message)).finally(() => clearTimeout(t));
+  }
+  console.log(`formular: ${name} ${id} (${abgelegt.length} Datei(en))`);
+  return formUmleiten(req, res, weiter, willJson ? { ok: true, id } : null);
+}
+function formularAdmin(req, res, url, unterpfad) {
+  const token = process.env.KOMMENTARE_ADMIN_TOKEN || '';
+  const geliefert = String(req.headers['x-admin-token'] || '');
+  if (!token || geliefert.length !== token.length || !timingSafeEqual(Buffer.from(geliefert), Buffer.from(token))) return fehler(res, 401, 'Admin-Token fehlt oder ist falsch.');
+  if (unterpfad === 'admin/liste') {
+    const limit = Math.min(500, Math.max(1, Number(url.searchParams.get('limit') || 100)));
+    let zeilen = []; try { zeilen = existsSync(FORM_DATEI) ? readFileSync(FORM_DATEI, 'utf8').trim().split('\n').filter(Boolean) : []; } catch { /* leer */ }
+    const eintraege = zeilen.slice(-limit).reverse().map((z) => { try { return JSON.parse(z); } catch { return null; } }).filter(Boolean);
+    return antwort(res, 200, { ok: true, anzahl: zeilen.length, eintraege });
+  }
+  if (unterpfad === 'admin/datei') {
+    const datei = String(url.searchParams.get('datei') || '');
+    if (!/^[0-9]{14}-[0-9a-f]{8}-[A-Za-z0-9._-]+$/.test(datei) || !existsSync(join(FORM_DIR, datei))) return fehler(res, 404, 'Datei nicht gefunden.');
+    const body = readFileSync(join(FORM_DIR, datei));
+    res.writeHead(200, { 'Content-Type': 'application/octet-stream', 'Content-Length': body.length, 'Content-Disposition': `attachment; filename="${datei}"`, 'Cache-Control': 'no-store' }); return res.end(body);
+  }
+  return fehler(res, 404, 'Unbekannter Pfad.');
+}
+
 async function wetter() {
   if (wetterCache.body && Date.now() - wetterCache.zeit < 10 * 60 * 1000) return wetterCache.body;
   const r = await fetch(WETTER_URL, { signal: AbortSignal.timeout(6000) });
@@ -234,6 +368,12 @@ const server = http.createServer(async (req, res) => {
   const pfad = url.pathname.replace(/^\/api\/[a-z]+\/?/, '').replace(/\/+$/, '');
   try {
     if (bereich === 'bild' && (req.method === 'GET' || req.method === 'HEAD')) return bildProxy(req, res, url);
+    if (bereich === 'formular') {
+      const unter = url.pathname.replace(/^\/api\/formular\/?/, '');
+      if (!unter && req.method === 'POST') return formularAnnehmen(req, res);
+      if (unter.startsWith('admin/') && req.method === 'GET') return formularAdmin(req, res, url, unter);
+      return fehler(res, 405, 'Formulare nur per POST.');
+    }
     if (bereich === 'weather' || (bereich === 'wetter')) {
       try { const body = await wetter(); res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=600, stale-while-revalidate=1800', 'X-Content-Type-Options': 'nosniff' }); return res.end(body); }
       catch (e) { if (wetterCache.body) { res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); return res.end(wetterCache.body); } console.error('wetter:', e.message); return fehler(res, 502, 'Wetterdienst nicht erreichbar.'); }

@@ -140,6 +140,10 @@ jobs:
           curl --fail http://127.0.0.1:4173/werbefrei/ | grep -q 'id="werbefrei-app"'
           curl --fail http://127.0.0.1:4173/api/abo/konfiguration | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"]'
           curl --fail http://127.0.0.1:4173/ | grep -q 'data-werbung='
+          # Formulare: echte Annahme durch den Dienst (303 auf Danke-Seite), Fehler zurueck mit ?fehler=
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Referer: http://127.0.0.1:4173/korrekturen/' --data-urlencode 'form-name=korrektur' --data-urlencode 'url=https://merzenichaktuell.hk-growthoperator.de/sport/' --data-urlencode 'text=Testhinweis aus der CI-Pruefung' --data-urlencode 'email=qa@merzenich-aktuell.invalid' --data-urlencode 'einwilligung=ja' --data-urlencode 'weiter=/korrekturen/danke/' | grep -E '^303 .*/korrekturen/danke/$'
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Referer: http://127.0.0.1:4173/korrekturen/' --data-urlencode 'form-name=korrektur' --data-urlencode 'text=zu' --data-urlencode 'weiter=/korrekturen/danke/' | grep -E '^303 .*/korrekturen/\?fehler=felder'
+          curl --silent -o /dev/null -w '%{http_code}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'form-name=korrektur&bot-field=x&url=x&text=spam&email=a@b.cc&einwilligung=ja' | grep -q '^200$'
           # Bildproxy: echtes Wikimedia-Motiv ueber den Dienst (Container hat Netz)
           curl --fail --silent --show-error --max-time 40 -o /tmp/bild.bin -w '%{http_code} %{content_type}\n' 'http://127.0.0.1:4173/api/bild?u=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FNeue%2520Streifenwagen%2520f%25C3%25BCr%2520die%2520Polizei%2520vorgestellt.jpg%3Fwidth%3D480' | grep -E '^200 image/'
           curl --fail --silent -o /dev/null -w '%{http_code}\n' 'http://127.0.0.1:4173/api/bild?u=https%3A%2F%2Fexample.com%2Fx.png' | grep -q '^400$' || (echo 'Bildproxy laesst fremde Hosts durch' && exit 1)

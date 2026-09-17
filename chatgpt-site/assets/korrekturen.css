@@ -259,3 +259,7 @@ html[data-theme="dark"] .werbefrei__status.is-aktiv{background:#16261c}
 .einwilligung__werbefrei{margin:10px 0 0;padding:10px 12px;border:1px solid #e2e0da;border-radius:6px;background:#faf9f6;font-size:14px;line-height:1.45}
 .einwilligung__werbefrei a{font-weight:600;text-decoration:underline;text-underline-offset:2px}
 html[data-theme="dark"] .einwilligung__werbefrei{background:#1f1f1f;border-color:#3a3a3a}
+
+/* Formulare: Rueckmeldung nach fehlgeschlagener Einsendung (app.js, ?fehler=) */
+.form-fehler{margin:0 0 16px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:#fbf1f1;color:#5a1a1f;font-size:15px;line-height:1.45}
+html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
