@@ -21,7 +21,7 @@
 .ma-home-dateline{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:2px;margin-bottom:18px;padding-top:14px;padding-bottom:13px;border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc)}
 .ma-home-dateline__copy{min-width:0}
 .ma-home-dateline__eyebrow{display:block;margin-bottom:4px;color:var(--brand-red,#c71920);font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-.ma-home-dateline h1{margin:0;font-family:Newsreader,Georgia,serif;font-size:30px;line-height:1.02;font-weight:650;letter-spacing:-.025em;color:var(--ink,#17191b)}
+.ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{margin:0;font-family:Newsreader,Georgia,serif;font-size:30px;line-height:1.02;font-weight:650;letter-spacing:-.025em;color:var(--ink,#17191b)}
 .ma-home-dateline time{flex:0 0 auto;color:#666;font-size:12px;font-weight:650;white-space:nowrap}
 
 /* Homepage: klassische Zeitungsspalten mit dominanter Redaktion. */
@@ -105,7 +105,7 @@ html[data-theme="dark"] .districtbar a{color:#f3f3f3}
 html[data-theme="dark"] .districtbar a+a:before{background:#343434}
 html[data-theme="dark"] .districtbar .lbl{color:#aaa}
 html[data-theme="dark"] .ma-home-dateline{border-color:#333;border-top-color:#f1f1f1}
-html[data-theme="dark"] .ma-home-dateline h1{color:#f3f3f3}
+html[data-theme="dark"] .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{color:#f3f3f3}
 html[data-theme="dark"] .ma-home-dateline time{color:#aaa}
 html[data-theme="dark"] .home .portal-service .service-title{border-color:#f1f1f1}
 html[data-theme="dark"] .home .service-accordion{border-color:#333}
@@ -126,7 +126,7 @@ html[data-theme="dark"] .ma-ad-booking-slot__body small{border-color:#444}
   .districtbar .lbl:before{height:17px}
   .districtbar a{padding:13px 15px 12px}
   .ma-home-dateline{margin-top:0;margin-bottom:13px;padding-top:11px;padding-bottom:10px;align-items:flex-start}
-  .ma-home-dateline h1{font-size:27px}
+  .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{font-size:27px}
   .ma-home-dateline time{padding-top:4px;font-size:11px}
   .portal-top.has-ads{display:flex!important;flex-direction:column!important;gap:28px!important}
   .portal-top.has-ads .portal-news{order:1;width:100%}
@@ -143,7 +143,7 @@ html[data-theme="dark"] .ma-ad-booking-slot__body small{border-color:#444}
   .districtbar a{font-size:12px;padding-inline:13px}
   .home .edition-label{padding-top:10px;padding-bottom:5px}
   .ma-home-dateline{display:block}
-  .ma-home-dateline h1{font-size:25px}
+  .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{font-size:25px}
   .ma-home-dateline time{display:block;margin-top:6px;padding:0}
   .home .front-lead h1{font-size:clamp(31px,9vw,36px);line-height:1.01}
   .home .front-lead p{font-size:15px;line-height:1.52}

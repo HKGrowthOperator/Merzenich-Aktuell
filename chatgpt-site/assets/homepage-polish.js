@@ -34,7 +34,7 @@
     const edition=q('.edition-label'), portal=q('.portal-top'); if(!portal)return;
     const d=berlinNow(), section=document.createElement('section');
     section.className='ma-home-dateline shell';
-    section.innerHTML=`<div class="ma-home-dateline__copy"><span class="ma-home-dateline__eyebrow">Lokaler Überblick</span><h1>Heute in Merzenich</h1></div><time datetime="${d.iso}">${d.label}</time>`;
+    section.innerHTML=`<div class="ma-home-dateline__copy"><span class="ma-home-dateline__eyebrow">Lokaler Überblick</span><p class="ma-home-dateline__title">Heute in Merzenich</p></div><time datetime="${d.iso}">${d.label}</time>`;
     edition?.after(section);
   }
   function expireAgenda(){
@@ -51,7 +51,10 @@
     return'leben';
   }
   function fallback(key){
-    return window.MerzenichStartbilder?.bilder?.[key]||FALLBACKS[key]||FALLBACKS.leben;
+    // bild-fallbacks.js liefert seit 17.09. je Kategorie eine Liste (Pool); vorher ein einzelnes Motiv.
+    const pool=window.MerzenichStartbilder?.bilder?.[key];
+    const bild=Array.isArray(pool)?pool[0]:pool;
+    return (bild&&bild.src)?bild:(FALLBACKS[key]||FALLBACKS.leben);
   }
   function setImage(img,bild){
     img.removeAttribute('srcset');img.removeAttribute('sizes');

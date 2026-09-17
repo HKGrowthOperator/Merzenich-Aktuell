@@ -357,21 +357,38 @@
     return h >>> 0;
   }
 
+  // Der Seed haengt nur an der Meldung (data-story oder Ziel-Link), nicht an Seite,
+  // Position oder Kontext: dieselbe Meldung zeigt ueberall dasselbe Symbolbild.
   function seedFuer(root, extra = '') {
-    if (!(root instanceof Element)) return `${location.pathname}|${document.title}|${extra}`;
+    if (!(root instanceof Element)) return `${location.pathname}|${document.title}`;
     const story = root.getAttribute('data-story') || root.id || '';
+    if (story) return `story|${story}`;
     const link = root.querySelector('h1 a,h2 a,h3 a,a[href]')?.getAttribute('href') || '';
+    if (link) return `link|${link}`;
     const heading = text(root.querySelector('h1,h2,h3'));
-    const index = Array.prototype.indexOf.call(root.parentElement?.children || [], root);
-    return `${location.pathname}|${story}|${link}|${heading}|${index}|${extra}`;
+    return `${location.pathname}|${heading}|${extra}`;
   }
 
+  // Ortsmotive (Pool default) duerfen nie unter Blaulicht- oder Verkehrsmeldungen stehen:
+  // ein Dorffoto unter "Einbruch" behauptet still einen Tatort (Design Standard, Bildregel 3).
+  const OHNE_ORTSMOTIV = new Set(['polizei', 'feuerwehr', 'verkehr']);
+  const ORTS_INDEX = [['golzheim', 1], ['girbelsrath', 2], ['morschenich', 3], ['bürgewald', 4], ['buergewald', 4], ['merzenich', 0]];
+  function ortIndexFuer(root) {
+    const t = `${text(root?.querySelector?.('.location-line'))} ${root instanceof HTMLElement ? root.className : ''} ${location.pathname}`.toLocaleLowerCase('de-DE');
+    for (const [name, i] of ORTS_INDEX) if (t.includes(name)) return i;
+    return 0;
+  }
   function poolFuer(key) {
     return BILDER[key] || BILDER.default;
   }
 
-  function waehleBild(key, seed, versatz = 0) {
+  function waehleBild(key, seed, versatz = 0, root = null) {
     const pool = poolFuer(key);
+    if (!BILDER[key] || key === 'default') {
+      // Ortsmotiv: immer das Foto des Orts der Meldung (Merzenich, wenn unbekannt), keine Rotation.
+      const index = ortIndexFuer(root) % pool.length;
+      return { bild: pool[index], index };
+    }
     const index = (hashString(seed) + Math.max(0, versatz)) % pool.length;
     return { bild: pool[index], index };
   }
@@ -476,7 +493,7 @@
     if (!body || body.querySelector('.art-figure')) return;
     const key = bildKey(body);
     const seed = seedFuer(body, 'article');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, body);
     const figure = erzeugeArtikelFigure(bild, key, seed);
     const anker = body.querySelector('.facts,.prose,.source-box');
     if (anker) body.insertBefore(figure, anker);
@@ -491,7 +508,7 @@
 
     const key = bildKey(article);
     const seed = seedFuer(article, 'feed');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, article);
     const a = document.createElement('a');
     a.className = article.classList.contains('feed-lead') ? 'ma-feed-lead-image' : 'feed-img';
     a.href = link.href;
@@ -527,7 +544,7 @@
 
     const key = bildKey(article);
     const seed = seedFuer(article, 'text-story');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, article);
 
     const copy = document.createElement('div');
     copy.className = 'ma-auto-copy';
@@ -553,7 +570,7 @@
 
     const key = bildKey(article);
     const seed = seedFuer(article, 'desk-card');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, article);
 
     const a = document.createElement('a');
     a.className = 'ma-auto-card-image';
@@ -578,7 +595,7 @@
 
     const key = bildKey(article);
     const seed = seedFuer(article, 'markt');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, article);
 
     const a = document.createElement('a');
     a.className = 'markt-thumb';
@@ -612,7 +629,7 @@
     const root = img.closest('article,.feed-row,.feed-lead,.markt-row') || document.body;
     const key = bildKey(root);
     const seed = seedFuer(root, 'rotation');
-    const { bild } = waehleBild(key, seed);
+    const { bild } = waehleBild(key, seed, 0, root);
     img.dataset.maRotationDone = '1';
     setzeBild(img, bild, key, seed, 0);
   }
@@ -625,19 +642,24 @@
     const pool = poolFuer(key);
     const attempt = Number(img.dataset.maFallbackAttempt || 0) + 1;
 
-    if (attempt <= pool.length + BILDER.default.length) {
-      const fallbackKey = attempt <= pool.length ? key : 'default';
-      const offset = attempt <= pool.length ? attempt : attempt - pool.length;
-      const { bild } = waehleBild(fallbackKey, seed, offset);
-      setzeBild(img, bild, fallbackKey, seed, attempt);
+    if (attempt <= pool.length) {
+      const { bild } = waehleBild(key, seed, attempt, root);
+      setzeBild(img, bild, key, seed, attempt);
       return;
     }
 
-    const { bild } = waehleBild('default', seed, 0);
     img.dataset.maFallbackAttempt = String(attempt);
-    img.src = browserSrc(bild.src);
-    img.alt = bild.alt;
-    requestAnimationFrame(() => macheSichtbar(img));
+    if (OHNE_ORTSMOTIV.has(key) || attempt > pool.length + 1) {
+      // Kein Motiv des Pools erreichbar: lieber bildlos als ein Dorffoto unter einer Einsatzmeldung.
+      const box = img.closest('.media,.markt-thumb,.ma-auto-thumb,.ma-auto-card-image,.feed-img,.art-figure');
+      if (box) box.hidden = true;
+      const article = img.closest('article');
+      if (article) article.classList.add('no-image');
+      return;
+    }
+
+    const { bild } = waehleBild('default', seed, 0, root);
+    setzeBild(img, bild, 'default', seed, attempt);
   }
 
   function pruefeBereitsDefekteBilder(root = document) {

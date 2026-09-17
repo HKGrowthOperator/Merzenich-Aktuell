@@ -43,7 +43,7 @@
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/bild-fallbacks.js?v=f3f725a7ae';
+  script.src = '/assets/bild-fallbacks.js?v=2ccb15da72';
   script.async = false;
   script.dataset.maStartbilder = '1';
   document.head.append(script);
@@ -53,13 +53,13 @@
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=07e9d64577';
+    style.href = '/assets/homepage-polish.css?v=90d54ca469';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=e02f382766';
+    script.src = '/assets/homepage-polish.js?v=0b63c29ad9';
     script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
@@ -79,7 +79,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=29fba8a71f';
+    style.href = '/assets/editorial-audit.css?v=dfc73dabb7';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }

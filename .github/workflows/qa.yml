@@ -172,7 +172,126 @@ jobs:
           curl --silent -o /dev/null -w '%{http_code}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'form-name=korrektur&bot-field=x&url=x&text=spam&email=a@b.cc&einwilligung=ja' | grep -q '^200$'
           # Bildproxy: echtes Wikimedia-Motiv ueber den Dienst (Container hat Netz)
           curl --fail --silent --show-error --max-time 40 -o /tmp/bild.bin -w '%{http_code} %{content_type}\n' 'http://127.0.0.1:4173/api/bild?u=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FNeue%2520Streifenwagen%2520f%25C3%25BCr%2520die%2520Polizei%2520vorgestellt.jpg%3Fwidth%3D480' | grep -E '^200 image/'
-          curl --fail --silent -o /dev/null -w '%{http_code}\n' 'http://127.0.0.1:4173/api/bild?u=https%3A%2F%2Fexample.com%2Fx.png' | grep -q '^400$' || (echo 'Bildproxy laesst fremde Hosts durch' && exit 1)
+          curl --fail --silent -o /dev/null -w '%{http_code}\n' 'http://127.0.0.1:4173/api/bild?u=https%3A%2F%2Fexample.com%2Fx.png' | grep -q '^400
+      - name: Install browser for visual QA
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Capture and verify actual delivery
+        run: |
+          mkdir -p qa/after
+          cat > .qa-capture.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import { readFileSync } from 'node:fs';
+
+          // Der Aufmacher wird redaktionell in api/editorial-current.json gesetzt;
+          // der Test erwartet genau diesen Titel und keinen fest verdrahteten.
+          const editorial = JSON.parse(readFileSync('chatgpt-site/api/editorial-current.json', 'utf8'));
+          const expectedHero = String(editorial.hero?.title || '').trim();
+          if (!expectedHero) throw new Error('editorial-current.json: hero.title fehlt');
+
+          const browser = await chromium.launch({ headless: true });
+          const base = 'http://127.0.0.1:4173';
+
+          async function assertNoOverflow(page, name) {
+            const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+            if (overflow) throw new Error(`${name}: horizontal overflow`);
+          }
+
+          async function shot(name, path, viewport, ready, verify) {
+            const page = await browser.newPage({ viewport });
+            await page.goto(`${base}${path}`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector(ready, { timeout: 15000 });
+            await page.waitForTimeout(1400);
+            await assertNoOverflow(page, name);
+            if (verify) await verify(page);
+            await page.screenshot({ path: `qa/after/${name}.png`, fullPage: false });
+            await page.close();
+          }
+
+          await shot('home-desktop', '/', { width: 1440, height: 1000 }, '.front-lead h1', async page => {
+            await page.waitForSelector('.header-weather', { timeout: 12000 });
+            const title = (await page.locator('.front-lead h1').textContent() || '').trim();
+            if (title !== expectedHero) throw new Error(`Homepage hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
+            const unavailable = await page.getByText('Wetterdaten sind derzeit nicht verfügbar.').count();
+            if (unavailable) throw new Error('Homepage still shows weather unavailable fallback');
+            const top = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
+            if (Math.abs(top) > 1) throw new Error(`Masthead not attached to browser edge: ${top}`);
+            await page.evaluate(() => window.scrollTo(0, 320));
+            await page.waitForTimeout(300);
+            // Beschluss 16.09.: Der grosse Kopf klappt beim Scrollen ein, die
+            // Ressortleiste bleibt oben und zeigt links das kleine Logo (kopf.js).
+            const kompakt = await page.evaluate(() => ({
+              klasse: document.documentElement.classList.contains('kopf-kompakt'),
+              leiste: document.querySelector('.mainnav')?.getBoundingClientRect().top,
+              logo: (() => { const e = document.querySelector('.mainnav .compact-brand'); return e ? getComputedStyle(e).display : 'fehlt'; })(),
+            }));
+            if (!kompakt.klasse) throw new Error('Kopf klappt beim Scrollen nicht ein (html.kopf-kompakt fehlt)');
+            if (Math.abs(kompakt.leiste) > 1) throw new Error(`Ressortleiste nicht oben: ${kompakt.leiste}`);
+            if (kompakt.logo === 'none' || kompakt.logo === 'fehlt') throw new Error(`Kleines Logo in der Leiste nicht sichtbar: ${kompakt.logo}`);
+          });
+
+          await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
+            const title = (await page.locator('.front-lead h1').textContent() || '').trim();
+            if (title !== expectedHero) throw new Error(`Mobile hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
+          });
+
+          await shot('article-desktop', '/blaulicht/einbruch-arnoldsweilerweg/', { width: 1440, height: 1000 }, '.article-head h1');
+
+          await shot('sport-desktop', '/sport/', { width: 1440, height: 1000 }, '.sports-module', async page => {
+            await page.waitForFunction(() => document.querySelector('.sports-module')?.textContent?.includes('3 : 2'));
+            const text = await page.locator('.sports-module').textContent() || '';
+            if (!text.includes('13.09.2026') || !text.includes('9') || !text.includes('12:8')) throw new Error('Sport module not synchronized to current data');
+          });
+
+          await shot('events-desktop', '/termine/', { width: 1440, height: 1000 }, 'main', async page => {
+            const expiredVisible = await page.evaluate(() => [...document.querySelectorAll('[data-event-end]')].some(el => new Date(el.dataset.eventEnd) < new Date() && !el.hidden));
+            if (expiredVisible) throw new Error('Expired event still visible as upcoming');
+          });
+
+          await browser.close();
+          EOF
+          node ./.qa-capture.mjs
+          rm .qa-capture.mjs
+          ls -lh qa/after
+
+      - name: Stop QA delivery
+        if: always()
+        run: docker rm -f merzenich-aktuell-qa || true
+
+      - name: Commit generierte Ansichten und QA-Screenshots
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.actor != 'github-actions[bot]' && success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # Abgelaufene Termine aus Startseite und Terminliste nehmen (Ortszeit); laeuft
+          # taeglich per schedule, damit der Stand im Repo nicht veraltet.
+          git add -A qa/after chatgpt-site
+          if git diff --cached --quiet; then
+            echo 'Nichts nachzuziehen.'
+          else
+            git commit -m 'ci: generierte Ansichten, abgelaufene Termine und QA-Screenshots nachgezogen [skip ci]'
+            git fetch origin main
+            # Bei Konflikten an den Screenshots gewinnt der frische Stand dieses
+            # Laufs (-X theirs = der eingespielte Commit). Schlaegt der Rebase
+            # trotzdem fehl, wird er abgebrochen und nicht der QA-Lauf.
+            if git rebase -X theirs origin/main; then
+              git push origin HEAD:main
+            else
+              git rebase --abort
+              echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
+            fi
+          fi
+ || (echo 'Bildproxy laesst fremde Hosts durch' && exit 1)
+          # Jedes in den Assets referenzierte Commons-Motiv muss wirklich existieren: ein falscher
+          # Dateiname wuerde sonst still als graue Ersatzflaeche ausgeliefert (Audit-Befund 17.09.).
+          grep -ho "commons('[^']*'" chatgpt-site/assets/*.js | sed "s/commons('//;s/'$//" | sort -u > /tmp/commons-motive.txt
+          echo "$(wc -l < /tmp/commons-motive.txt) Commons-Motive referenziert"
+          while IFS= read -r datei; do
+            u=$(python3 -c 'import sys,urllib.parse; print(urllib.parse.quote("https://commons.wikimedia.org/wiki/Special:FilePath/"+sys.argv[1]+"?width=480", safe=""))' "$datei")
+            curl --fail --silent --max-time 40 -o /dev/null -w '%{http_code} %{content_type}\n' "http://127.0.0.1:4173/api/bild?u=$u" | grep -qE '^200 image/' || (echo "Commons-Motiv nicht abrufbar: $datei" && exit 1)
+          done < /tmp/commons-motive.txt
 
       - name: Install browser for visual QA
         run: |
