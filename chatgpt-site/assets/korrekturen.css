@@ -278,3 +278,8 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 @media (min-width:768px){.tag-az ul{columns:4}}
 .tag-az li{break-inside:avoid;padding:4px 0;font-size:15px}
 .tag-az small{color:var(--muted,#666);font-size:12px}
+
+/* Aufmacher ohne Foto (z. B. nur Vereinslogo): keine leere Bildflaeche, Text fuellt die Spalte */
+.frontpage-grid>.front-lead.no-media{align-self:start;display:block;padding-top:6px}
+.frontpage-grid>.front-lead.no-media h1{font-size:clamp(34px,4.2vw,58px);line-height:1.05;margin:10px 0 18px}
+.frontpage-grid>.front-lead.no-media .front-lead-copy>p{font-size:clamp(17px,1.5vw,21px);line-height:1.5;max-width:56ch}
