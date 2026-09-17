@@ -42,7 +42,7 @@
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/bild-fallbacks.js?v=20260916a';
+  script.src = '/assets/bild-fallbacks.js?v=a047bce21a';
   script.async = false;
   script.dataset.maStartbilder = '1';
   document.head.append(script);
@@ -50,20 +50,19 @@
 
 /*
  * Qualitaets-Layer fuer Startseite/Listen. Laedt zuletzt, damit die Regeln fuer
- * Bildschaerfe, Zeitungshierarchie und Anzeigen nicht von Recovery-Styles
- * ueberschrieben werden.
+ * Bildschaerfe und Anzeigen nicht von den Recovery-Styles ueberschrieben werden.
  */
 (() => {
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=20260917a';
+    style.href = '/assets/homepage-polish.css?v=07e9d64577';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=20260917a';
+    script.src = '/assets/homepage-polish.js?v=d1fb2f7039';
     script.defer = true;
     script.dataset.maHomePolish = '1';
     document.head.append(script);

@@ -138,6 +138,10 @@ out.push('');
 out.push('  # --- Auslieferung ---');
 out.push('  location / {');
 out.push(global.map(addHeader).join('\n'));
+// Seiten (und alles ohne eigene Regel) sollen nicht veralten: der Browser fragt
+// jedes Mal nach, bekommt bei unveraendertem Stand aber nur ein 304. Die
+// Assets sind per Inhalts-Hash versioniert und duerfen lange gecacht werden.
+out.push('    add_header Cache-Control "no-cache" always;');
 out.push('    try_files $uri $uri/ =404;');
 out.push('  }');
 out.push('');
