@@ -82,3 +82,26 @@
   script.dataset.maContentRefresh = '1';
   document.head.append(script);
 })();
+
+/*
+ * Audit-Layer 17.09.2026: gemeinsame redaktionelle Hierarchie, dynamisches
+ * Tagesdatum, vereinfachte Navigation, Bildsystem, Empty-/Error-States und
+ * Bereinigung alter Termin-/CMS-Zustaende. Zentral geladen, damit jede
+ * oeffentliche Seite denselben Frontendstand benutzt.
+ */
+(() => {
+  if (!document.querySelector('link[data-ma-editorial-audit]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/assets/editorial-audit.css?v=20260917-1';
+    style.dataset.maEditorialAudit = '1';
+    document.head.append(style);
+  }
+  if (!document.querySelector('script[data-ma-editorial-audit]')) {
+    const script = document.createElement('script');
+    script.src = '/assets/editorial-audit.js?v=20260917-1';
+    script.defer = true;
+    script.dataset.maEditorialAudit = '1';
+    document.head.append(script);
+  }
+})();
