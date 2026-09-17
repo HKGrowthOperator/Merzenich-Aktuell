@@ -122,3 +122,36 @@ Gegen nginx 1.24 lokal, mit demselben `nginx.conf`:
 
 Das Docker-Image selbst wurde **nicht** gebaut - in dieser Umgebung laeuft kein
 Docker-Daemon. Geprueft ist die nginx-Konfiguration, nicht der Image-Bau.
+
+
+## Kommentare und Diskussion
+
+Im Container laeuft neben nginx ein kleiner Node-Dienst
+(`deploy/coolify/kommentare/server.mjs`), erreichbar unter `/api/kommentare/`.
+Er speichert Kommentare als JSON-Datei. Zwei Dinge sind in Coolify zu setzen:
+
+1. **Persistent Storage**: Mount-Pfad `/data` (Volume). Ohne Volume laeuft der
+   Dienst zwar, meldet aber unter `/api/kommentare/status` `"persistent": false`,
+   und alle Kommentare sind nach dem naechsten Deploy weg.
+2. **Umgebungsvariable** `KOMMENTARE_ADMIN_TOKEN`: ein langes Zufallswort. Damit
+   kann die Redaktion Kommentare ausblenden oder loeschen und Themen schliessen.
+   Optional `KOMMENTARE_SALZ` (fester Wert, damit das Stundenlimit einen
+   Neustart ueberlebt).
+
+Danach **Redeploy**.
+
+### Moderation (per curl, mit dem Token)
+
+```bash
+H='X-Admin-Token: <TOKEN>'; B=https://merzenichaktuell.hk-growthoperator.de/api/kommentare
+curl -s $B/admin/liste -H "$H" | python3 -m json.tool          # alles, auch Verborgenes
+curl -s -X POST $B/admin/status -H "$H" -H 'Content-Type: application/json' \
+  -d '{"id":"<KOMMENTAR-ID>","status":"verborgen"}'              # sichtbar | verborgen | geloescht
+curl -s -X POST $B/admin/thema-status -H "$H" -H 'Content-Type: application/json' \
+  -d '{"id":"<THEMA-ID>","status":"geschlossen"}'                # offen | geschlossen
+```
+
+Regeln ohne Konto: Honeypot, Laengen, hoechstens zwei Links, Richtlinien
+bestaetigen, sechs Beitraege pro Stunde je Absender (Tages-Hash der IP, keine
+Klartext-IP), nach drei Meldungen wird ein Kommentar automatisch ausgeblendet.
+E-Mail ist freiwillig und wird nie ausgegeben, auch nicht im Admin-JSON.
