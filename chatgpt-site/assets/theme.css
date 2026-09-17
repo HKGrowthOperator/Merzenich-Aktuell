@@ -9,7 +9,9 @@ html[data-theme="light"]{color-scheme:light}
 .darstellung-knopf{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:40px;min-height:40px;padding:7px 9px;border:1px solid var(--line,#ddd);border-radius:6px;background:transparent;color:var(--ink,#151412);font:inherit;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
 .darstellung-knopf:hover,.darstellung-knopf:focus-visible{border-color:var(--ink,#151412);outline:none}
 .darstellung-knopf svg{width:18px;height:18px;display:block}
-@media (max-width:767px){.darstellung-knopf{min-width:44px;min-height:44px;border:0;padding:10px}.darstellung-knopf__text{display:none}}
+@media (max-width:767px){.darstellung-knopf{min-width:44px;min-height:44px;border:0;padding:10px}}
+/* Bis 1199px reicht der Platz in .mast-actions nicht fuer die Beschriftung: der Kopf lief 25-40px ueber und erzeugte eine horizontale Scrollleiste (768/1024). */
+@media (max-width:1199px){.darstellung-knopf__text{display:none}}
 
 /* ---------------------------------------------------------- Schublade */
 .einstellungen-offen{overflow:hidden}
