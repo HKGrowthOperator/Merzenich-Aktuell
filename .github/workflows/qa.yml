@@ -124,6 +124,13 @@ jobs:
           curl --fail http://127.0.0.1:4173/ > /dev/null
           curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
           curl --fail http://127.0.0.1:4173/api/sport-current.json | python3 -m json.tool > /dev/null
+          for i in $(seq 1 15); do
+            if curl --fail --silent http://127.0.0.1:4173/api/kommentare/status > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail http://127.0.0.1:4173/api/kommentare/status | python3 -m json.tool
+          curl --fail 'http://127.0.0.1:4173/api/kommentare/liste?thema=/sport/sc-merzenich-oberzier-3-2/' | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"] and isinstance(d["kommentare"], list)'
+          curl --fail http://127.0.0.1:4173/diskussion/ | grep -q 'id="diskussion-app"'
 
       - name: Install browser for visual QA
         run: |
