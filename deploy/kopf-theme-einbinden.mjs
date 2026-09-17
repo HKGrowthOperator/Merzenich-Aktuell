@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Bindet Darstellung (theme.css/theme.js) und einklappenden Kopf (kopf.js)
- * in alle Seiten von chatgpt-site/ ein, die korrekturen.css laden.
+ * Bindet Darstellung (theme.css/theme.js), einklappenden Kopf (kopf.js) und
+ * Kommentare (kommentare.js) in alle Seiten von chatgpt-site/ ein, die
+ * korrekturen.css laden, und setzt den Link zur Diskussion ins Mehr-Menue.
  * Idempotent: was schon drin ist, wird nicht doppelt eingefuegt.
  * Aufruf: node deploy/kopf-theme-einbinden.mjs [--check]
  */
@@ -17,6 +18,9 @@ const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
 const INLINE = '<script>try{document.documentElement.dataset.theme=localStorage.getItem("merzenich-theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>';
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
 const JS = `<script src="/assets/kopf.js?${V}" defer></script><script src="/assets/theme.js?${V}" defer></script>`;
+const KOMMENTARE = `<script src="/assets/kommentare.js?${V}" defer></script>`;
+const LINK_MEHR = '<a href="/kontakt/">Kontakt</a>';
+const LINK_DISKUSSION = '<a href="/diskussion/">Diskussion</a>';
 
 const seiten = [];
 (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); statSync(p).isDirectory() ? lauf(p) : p.endsWith('.html') && seiten.push(p); } })(join(wurzel, 'chatgpt-site'));
@@ -32,6 +36,9 @@ for (const pfad of seiten) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }
     html = html.replace(JS_ANKER, (m) => m + JS);
   }
+  if (!html.includes('/assets/kommentare.js')) html = html.replace(/<script src="\/assets\/theme\.js[^"]*" defer><\/script>/, (m) => m + KOMMENTARE);
+  // "Diskussion" im Mehr-Menue und in der Schublade, direkt hinter Kontakt.
+  if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (html !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, html); }
 }
 console.log(`${seiten.length} Seiten, ${geaendert} ${nurPruefen ? 'nicht aktuell' : 'geaendert'}, ${uebersprungen} ohne korrekturen.css uebersprungen, ${fehler} Fehler.`);

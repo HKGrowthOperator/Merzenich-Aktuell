@@ -158,3 +158,52 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .front-brief.editorial-secondary.secondary-lead>.brief-image{display:block;width:100%}
 .front-brief.editorial-secondary.secondary-lead .media{width:100%;height:auto;aspect-ratio:2.2}
 .front-brief.editorial-secondary.secondary-lead>div{padding-top:12px}
+
+/* Kommentare und Diskussion (assets/kommentare.js) */
+.kommentare{max-width:760px;margin:40px 0 0;padding-top:24px;border-top:2px solid var(--ink,#161616)}
+.kommentare h2{margin:0 0 14px;font-size:24px}
+.kommentare h3,.thema__body h3{margin:26px 0 10px;font-size:16px}
+.kommentare__anzahl,.diskussion__anzahl{font-weight:500;color:var(--muted,#666);font-size:16px}
+.kommentare__leer{margin:8px 0;color:var(--muted,#666);font-size:14px}
+.kommentare__hinweis{margin:14px 0 0;font-size:13px;color:var(--muted,#666)}
+.kommentar{padding:14px 0;border-top:1px solid var(--line,#e4e0d5)}
+.kommentar:first-child{border-top:0}
+.kommentar__kopf{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;font-size:13px}
+.kommentar__kopf strong{font-size:14px}
+.kommentar__kopf time{color:var(--muted,#666)}
+.kommentar__text{font-size:15px;line-height:1.55}
+.kommentar__text p{margin:6px 0}
+.kommentar__fuss{margin-top:4px}
+.kommentar__melden{appearance:none;border:0;background:none;padding:0;color:var(--muted,#666);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.kommentar__melden:disabled{text-decoration:none;cursor:default}
+.kommentar-form{display:grid;gap:12px;max-width:640px}
+.kommentar-form label{display:grid;gap:5px;font-size:13px;font-weight:600}
+.kommentar-form label small{font-weight:400;color:var(--muted,#666)}
+.kommentar-form input:not([type=checkbox]),.kommentar-form textarea{width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid #bdbdbd;border-radius:4px;background:var(--card,#fff);color:var(--ink,#161616);font:inherit;font-size:15px}
+.kommentar-form input:focus-visible,.kommentar-form textarea:focus-visible{outline:2px solid var(--red,#971725);outline-offset:1px;border-color:transparent}
+.kommentar-form .is-invalid{border-color:var(--red,#971725)}
+.kommentar-form__zeile{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kommentar-form__hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.kommentar-form__regeln{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;font-size:13px;line-height:1.5}
+.kommentar-form__regeln input{margin-top:3px;flex:0 0 auto}
+.kommentar-form__regeln span{flex:1 1 200px;min-width:0}
+.kommentar-form__aktion{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.kommentar-form__status{font-size:13px;color:var(--muted,#666)}
+.kommentar-form__status.is-fehler{color:var(--red,#971725);font-weight:600}
+.diskussion .info-prose{max-width:none}
+.diskussion__neu{padding:20px 22px;margin:0 0 34px;border:1px solid var(--line,#e4e0d5);background:var(--card,#fff)}
+.diskussion__neu h2{margin:0 0 6px;font-size:20px}
+.diskussion__neu p{margin:0 0 14px;font-size:14px;color:var(--muted,#666)}
+.diskussion h2{font-size:24px;margin:0 0 12px}
+.thema{border-top:1px solid var(--line,#e4e0d5)}
+.thema:last-child{border-bottom:1px solid var(--line,#e4e0d5)}
+.thema summary{display:grid;gap:3px;padding:14px 0;cursor:pointer;list-style:none}
+.thema summary::-webkit-details-marker{display:none}
+.thema summary::before{content:"+";float:right;margin-left:12px;font-weight:700;color:var(--muted,#666)}
+.thema[open] summary::before{content:"–"}
+.thema__titel{font-size:18px;font-weight:700;line-height:1.3}
+.thema__meta{font-size:12.5px;color:var(--muted,#666)}
+.thema__body{padding:0 0 22px 18px;border-left:3px solid var(--line,#e4e0d5);margin-bottom:14px}
+@media (max-width:640px){.kommentar-form__zeile{grid-template-columns:1fr}.thema__body{padding-left:12px}}
+html[data-theme="dark"] .kommentar-form input:not([type=checkbox]),html[data-theme="dark"] .kommentar-form textarea{background:#1b1b1b;border-color:#4a4a4a}
+html[data-theme="dark"] .diskussion__neu{background:#1b1b1b;border-color:#353535}
