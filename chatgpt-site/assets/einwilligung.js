@@ -111,6 +111,7 @@
         <button type="button" class="btn ghost" data-ew="auswahl">${details ? 'Auswahl speichern' : 'Nur notwendige'}</button>
         ${details ? '' : '<button type="button" class="einwilligung__mehr" data-ew="details">Auswählen</button>'}
       </div>
+      <p class="einwilligung__werbefrei"><strong>Werbung entfernen</strong> · Merzenich Aktuell ohne Anzeigen für 2,50 € im Monat, monatlich kündbar. <a href="/werbefrei/">Werbefrei lesen</a></p>
       <p class="einwilligung__fuss"><a href="/datenschutz/">Datenschutzerklärung</a> · <a href="/impressum/">Impressum</a> · Änderbar jederzeit unten auf jeder Seite unter „Datenschutz-Einstellungen“.</p>
     </div>`;
   }

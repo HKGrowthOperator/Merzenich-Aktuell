@@ -256,3 +256,8 @@ html[data-theme="dark"] .werbefrei__status.is-aktiv{background:#16261c}
 
 /* Tabellenauszug: Luecke zwischen Spitzengruppe und SC Merzenich */
 .league-table .league-gap td{text-align:center;padding:4px 14px;color:#8a8781;letter-spacing:.2em}
+
+/* Datenschutz-Banner: Hinweis auf das Werbefrei-Abo */
+.einwilligung__werbefrei{margin:10px 0 0;padding:10px 12px;border:1px solid #e2e0da;border-radius:6px;background:#faf9f6;font-size:14px;line-height:1.45}
+.einwilligung__werbefrei a{font-weight:600;text-decoration:underline;text-underline-offset:2px}
+html[data-theme="dark"] .einwilligung__werbefrei{background:#1f1f1f;border-color:#3a3a3a}
