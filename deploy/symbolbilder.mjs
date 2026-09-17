@@ -72,9 +72,16 @@ export function artFuerRessort(ressort, text = '') {
 }
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Externe Symbolbilder laufen ueber den eigenen Bildproxy (/api/bild im
+// Node-Dienst): der Browser spricht nie mit Wikimedia, kein Platzhalter noetig.
+const PROXY_HOSTS = ['commons.wikimedia.org', 'upload.wikimedia.org'];
+export function bildUrl(u) {
+  try { const x = new URL(u); if (/^https?:$/.test(x.protocol) && PROXY_HOSTS.includes(x.host)) return '/api/bild?u=' + encodeURIComponent(x.href); } catch { /* lokal */ }
+  return u;
+}
 
 export function figurHtml(bild) {
-  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(bild.art)}"><div class="media"><img src="/assets/img/extern-platzhalter.svg" data-extern-src="${esc(bild.src)}" class="extern-gesperrt" alt="${esc(bild.alt)}" loading="eager" decoding="async" referrerpolicy="no-referrer"></div>` +
+  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(bild.art)}"><div class="media"><img src="${esc(bildUrl(bild.src))}" alt="${esc(bild.alt)}" loading="eager" decoding="async" referrerpolicy="no-referrer"></div>` +
     `<figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(bild.alt)}. Kein Foto vom Ereignis.</span>` +
     `<span>Bild: ${esc(bild.credit)} · <a href="${esc(bild.sourceUrl)}" target="_blank" rel="noopener noreferrer">Bildquelle</a></span></figcaption></figure>`;
 }
@@ -101,8 +108,8 @@ function hauptlauf() {
       const html = readFileSync(pfad, 'utf8');
       const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
       if (main.includes('<figure')) {
-        // Frueher gesetzte Symbolbilder: externe Adresse hinter die Einwilligung legen.
-        const neu = html.replace(/(<figure class="art-figure art-figure--symbol"[^>]*>\s*<div class="media"><img )src="(https:\/\/commons\.wikimedia\.org[^"]*)"/g, (m, a, u) => `${a}src="/assets/img/extern-platzhalter.svg" data-extern-src="${u}" class="extern-gesperrt"`);
+        // Frueher gesetzte Symbolbilder: externe Adresse auf den Bildproxy umstellen.
+        const neu = html.replace(/(<figure class="art-figure art-figure--symbol"[^>]*>\s*<div class="media"><img )src="([^"]*)"(?: data-extern-src="([^"]*)")?(?: class="extern-gesperrt")?/g, (m, a, src, ext) => { const quelle = (ext || src).replace(/&amp;/g, '&'); return quelle.startsWith('/api/bild') ? m : `${a}src="${esc(bildUrl(quelle))}"`; });
         if (neu !== html) { geaendert.push(pfad.replace(site + '/', '')); if (!nurPruefen) writeFileSync(pfad, neu); }
         continue;
       }

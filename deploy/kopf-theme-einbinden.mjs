@@ -10,6 +10,8 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from '
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { bildUrl } from './symbolbilder.mjs';
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -83,6 +85,8 @@ for (const pfad of seiten) {
   if (!html.includes('href="/werbefrei/"')) html = html.split(LINK_DISKUSSION).join(LINK_DISKUSSION + LINK_WERBEFREI);
   // Werbeschalter am <html>
   html = html.replace(/<html\b[^>]*>/, (m) => m.replace(/\s+data-werbung="[^"]*"/g, '').replace(/>$/, ` data-werbung="${WERBUNG_AN ? 'an' : 'aus'}">`));
+  // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
+  html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
   html = versioniere(html);
   if (html !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, html); }
 }

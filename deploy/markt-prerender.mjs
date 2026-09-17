@@ -24,7 +24,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { symbolbild } from './symbolbilder.mjs';
+import { symbolbild, bildUrl } from './symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -77,7 +77,7 @@ function zeile(item, art) {
   // Stellen bekommen das Buero-Symbolbild als Vorschau. Immobilien bewusst
   // nicht: ein echtes Haus neben einem Inserat liest sich als das Objekt (§4).
   const symbol = job ? symbolbild('stellen', 480) : null;
-  const thumb = symbol ? `<a class="markt-thumb" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow" tabindex="-1" aria-hidden="true"><img src="/assets/img/extern-platzhalter.svg" data-extern-src="${esc(symbol.src)}" class="extern-gesperrt" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="markt-thumb__badge">Symbolbild</span></a>` : '';
+  const thumb = symbol ? `<a class="markt-thumb" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow" tabindex="-1" aria-hidden="true"><img src="${esc(bildUrl(symbol.src))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="markt-thumb__badge">Symbolbild</span></a>` : '';
   return `<article class="event-row job-row markt-row${symbol ? ' markt-row--thumb' : ''}">` +
     `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` + thumb +
     `<div class="info">` +

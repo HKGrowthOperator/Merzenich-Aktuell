@@ -175,3 +175,13 @@ Umgebungsvariablen in Coolify:
 Werbung ist derzeit global aus (`WERBUNG_AN = false` in `deploy/kopf-theme-einbinden.mjs`,
 ergibt `<html data-werbung="aus">`). Wird sie wieder eingeschaltet, blendet ein
 gueltiger Werbefrei-Nachweis (`html[data-werbefrei="ja"]`) die Anzeigenflaechen aus.
+
+## Bildproxy fuer Symbolbilder
+
+Symbolbilder von Wikimedia Commons laufen ueber `/api/bild?u=<Adresse>` (derselbe
+Node-Dienst). Der Dienst laedt das Bild einmal, legt es unter `/data/bilder/` ab und
+liefert es mit langen Cache-Headern aus. Leser sprechen nie mit Wikimedia; deshalb
+gibt es dafuer keinen Einwilligungs-Punkt mehr. Erlaubt sind nur
+`commons.wikimedia.org` und `upload.wikimedia.org` (Umgebungsvariable `BILD_HOSTS`
+zum Erweitern). Ohne Persistent Storage `/data` wird nach jedem Deploy neu geladen,
+was funktioniert, aber langsamer ist.

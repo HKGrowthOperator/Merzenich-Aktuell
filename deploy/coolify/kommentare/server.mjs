@@ -159,6 +159,64 @@ async function stripeSession(id) {
 // Same-origin Proxy fuer Open-Meteo mit 10-Minuten-Cache. Node loest DNS ueber
 // /etc/resolv.conf des Containers auf; das ist robuster als ein resolver in nginx.
 let wetterCache = { zeit: 0, body: '' };
+
+// ---------------------------------------------------------------- Bildproxy
+// /api/bild?u=<https://commons.wikimedia.org/...> laedt Symbolbilder ueber
+// unseren Server und cacht sie unter DATA_DIR/bilder. Leser sprechen nie
+// direkt mit Wikimedia (keine IP-Weitergabe), deshalb braucht es dafuer keine
+// Einwilligung und keinen grauen Platzhalter mehr. Nur Hosts der Allowlist.
+const BILD_DIR = join(DATA_DIR, 'bilder');
+const BILD_HOSTS = (process.env.BILD_HOSTS || 'commons.wikimedia.org,upload.wikimedia.org').split(',').map((h) => h.trim()).filter(Boolean);
+const BILD_MAX = 8 * 1024 * 1024;
+const BILD_PLATZHALTER = '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000"><rect width="1600" height="1000" fill="#ecebe7"/><text x="800" y="520" font-family="system-ui,sans-serif" font-size="40" fill="#8a8781" text-anchor="middle">Bild derzeit nicht verfügbar</text></svg>';
+const bildLaufend = new Map();
+function bildErlaubt(u) {
+  let url; try { url = new URL(u); } catch { return false; }
+  if (!/^https?:$/.test(url.protocol)) return false;
+  return BILD_HOSTS.includes(url.host);
+}
+async function bildHolen(u) {
+  const schluessel = createHash('sha256').update(u).digest('hex');
+  const datei = join(BILD_DIR, schluessel + '.bin'), meta = join(BILD_DIR, schluessel + '.json');
+  if (existsSync(datei) && existsSync(meta)) {
+    try { const m = JSON.parse(readFileSync(meta, 'utf8')); return { typ: m.typ, body: readFileSync(datei) }; } catch { /* neu laden */ }
+  }
+  if (bildLaufend.has(schluessel)) return bildLaufend.get(schluessel);
+  const lauf = (async () => {
+    const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 12000);
+    try {
+      const r = await fetch(u, { redirect: 'follow', signal: ac.signal, headers: { 'User-Agent': 'MerzenichAktuell/1.0 (Bildproxy; https://merzenichaktuell.hk-growthoperator.de)', Accept: 'image/*' } });
+      if (!r.ok) throw new Error('Quelle antwortet ' + r.status);
+      const typ = String(r.headers.get('content-type') || '').split(';')[0].trim();
+      if (!/^image\//.test(typ)) throw new Error('kein Bild: ' + typ);
+      const laenge = Number(r.headers.get('content-length') || 0);
+      if (laenge > BILD_MAX) throw new Error('zu gross');
+      const body = Buffer.from(await r.arrayBuffer());
+      if (body.length > BILD_MAX) throw new Error('zu gross');
+      mkdirSync(BILD_DIR, { recursive: true });
+      const tmp = datei + '.' + process.pid + '.tmp';
+      writeFileSync(tmp, body); renameSync(tmp, datei);
+      writeFileSync(meta, JSON.stringify({ typ, quelle: u, zeit: new Date().toISOString(), laenge: body.length }));
+      return { typ, body };
+    } finally { clearTimeout(t); bildLaufend.delete(schluessel); }
+  })();
+  bildLaufend.set(schluessel, lauf);
+  return lauf;
+}
+async function bildProxy(req, res, url) {
+  const u = url.searchParams.get('u') || '';
+  if (!bildErlaubt(u)) return fehler(res, 400, 'Bildquelle nicht erlaubt.');
+  try {
+    const { typ, body } = await bildHolen(u);
+    res.writeHead(200, { 'Content-Type': typ, 'Content-Length': body.length, 'Cache-Control': 'public, max-age=31536000, immutable', 'X-Content-Type-Options': 'nosniff', 'Cross-Origin-Resource-Policy': 'same-origin' });
+    return res.end(req.method === 'HEAD' ? undefined : body);
+  } catch (e) {
+    console.error('bild:', u, e.message);
+    res.writeHead(502, { 'Content-Type': 'image/svg+xml; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+    return res.end(BILD_PLATZHALTER);
+  }
+}
+
 async function wetter() {
   if (wetterCache.body && Date.now() - wetterCache.zeit < 10 * 60 * 1000) return wetterCache.body;
   const r = await fetch(WETTER_URL, { signal: AbortSignal.timeout(6000) });
@@ -175,6 +233,7 @@ const server = http.createServer(async (req, res) => {
   const bereich = (url.pathname.match(/^\/api\/([a-z]+)/) || [])[1] || '';
   const pfad = url.pathname.replace(/^\/api\/[a-z]+\/?/, '').replace(/\/+$/, '');
   try {
+    if (bereich === 'bild' && (req.method === 'GET' || req.method === 'HEAD')) return bildProxy(req, res, url);
     if (bereich === 'weather' || (bereich === 'wetter')) {
       try { const body = await wetter(); res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=600, stale-while-revalidate=1800', 'X-Content-Type-Options': 'nosniff' }); return res.end(body); }
       catch (e) { if (wetterCache.body) { res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); return res.end(wetterCache.body); } console.error('wetter:', e.message); return fehler(res, 502, 'Wetterdienst nicht erreichbar.'); }
