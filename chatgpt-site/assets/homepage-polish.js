@@ -1,15 +1,91 @@
 /*
- * Merzenich Aktuell — Bild- und Anzeigenqualitaet
+ * Merzenich Aktuell — Homepage-Qualitaet 17.09.2026
  *
- * Regel: Ein zu kleines Motiv wird nicht grossgezogen. Auf Listen/Startseite
- * wird die Bildflaeche entfernt und die Meldung bewusst textlich gesetzt.
- * Ein Vereinslogo darf in einer kleinen Sportkarte stehen, aber nie als grosser
- * Aufmacher. Text-only "Anzeigen" werden nicht als bezahlte Werbung simuliert.
+ * Regeln:
+ * - zu kleine Motive werden nicht grossgezogen
+ * - keine simulierten Textanzeigen
+ * - Homepage bekommt eine klare lokale Datumszeile
+ * - abgelaufene Termine verschwinden aus dem Vor-Ort-Modul
+ * - Mobile bleibt News-first (Layout in homepage-polish.css)
  */
 (() => {
   'use strict';
 
   const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const BERLIN = 'Europe/Berlin';
+
+  function berlinNowParts() {
+    const now = new Date();
+    const dateText = new Intl.DateTimeFormat('de-DE', {
+      timeZone: BERLIN,
+      weekday: 'long',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    }).format(now);
+    const shortText = new Intl.DateTimeFormat('de-DE', {
+      timeZone: BERLIN,
+      day: '2-digit',
+      month: '2-digit'
+    }).format(now);
+    const isoDate = new Intl.DateTimeFormat('en-CA', {
+      timeZone: BERLIN,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(now);
+    return { now, dateText, shortText, isoDate };
+  }
+
+  function refreshVisibleDate() {
+    const { dateText, shortText, isoDate } = berlinNowParts();
+    qsa('[data-today]').forEach((time) => {
+      time.textContent = shortText.replace(/\s/g, '');
+      time.setAttribute('datetime', isoDate);
+      time.setAttribute('title', dateText);
+    });
+  }
+
+  function addHomepageDateline() {
+    if (!document.body.classList.contains('home')) return;
+    if (document.querySelector('.ma-home-dateline')) return;
+
+    const edition = document.querySelector('.edition-label');
+    const portal = document.querySelector('.portal-top');
+    if (!portal) return;
+
+    const { dateText, isoDate } = berlinNowParts();
+    const section = document.createElement('section');
+    section.className = 'ma-home-dateline shell';
+    section.setAttribute('aria-label', 'Lokale Ausgabe heute');
+    section.innerHTML = `
+      <div class="ma-home-dateline__copy">
+        <span class="ma-home-dateline__eyebrow">Lokaler Überblick</span>
+        <h1>Heute in Merzenich</h1>
+      </div>
+      <time datetime="${isoDate}">${dateText}</time>`;
+
+    if (edition?.nextSibling) edition.parentNode.insertBefore(section, edition.nextSibling);
+    else portal.parentNode.insertBefore(section, portal);
+  }
+
+  function removeExpiredAgendaRows() {
+    if (!document.body.classList.contains('home')) return;
+    const now = Date.now();
+    qsa('.agenda-row[data-event-end]').forEach((row) => {
+      const end = Date.parse(row.dataset.eventEnd || '');
+      if (Number.isFinite(end) && end < now) row.remove();
+    });
+
+    qsa('.agenda-list').forEach((list) => {
+      if (list.querySelector('.agenda-row')) return;
+      if (list.querySelector('.ma-empty-events')) return;
+      const p = document.createElement('p');
+      p.className = 'ma-empty-events';
+      p.textContent = 'Derzeit sind hier keine kommenden Termine eingetragen.';
+      list.append(p);
+    });
+  }
 
   function maxSourceWidth(img) {
     const widths = [...String(img.getAttribute('srcset') || '').matchAll(/(?:^|,|\s)(\d+)w(?:\s|,|$)/g)]
@@ -126,6 +202,16 @@
     rail.replaceChildren(bookingSlot());
   }
 
+  function markEditorialHierarchy() {
+    if (!document.body.classList.contains('home')) return;
+    document.documentElement.dataset.homeEdition = 'editorial-20260917';
+    const lead = document.querySelector('.front-lead');
+    if (lead) lead.setAttribute('aria-label', 'Hauptaufmacher');
+    qsa('.front-side .front-brief').forEach((story, index) => {
+      story.dataset.secondaryStory = String(index + 1);
+    });
+  }
+
   let resizeTimer = 0;
   function scheduleAudit(delay = 0) {
     window.clearTimeout(resizeTimer);
@@ -133,6 +219,10 @@
   }
 
   function start() {
+    refreshVisibleDate();
+    addHomepageDateline();
+    removeExpiredAgendaRows();
+    markEditorialHierarchy();
     removeTextOnlyAds();
     polishHomepageAds();
 
@@ -140,7 +230,11 @@
     // bewerten, damit kein gutes aktuelles Motiv wegen des alten HTML-Fallbacks
     // entfernt wird.
     scheduleAudit(1400);
-    window.setTimeout(auditImages, 3600);
+    window.setTimeout(() => {
+      refreshVisibleDate();
+      removeExpiredAgendaRows();
+      auditImages();
+    }, 3600);
 
     const main = document.querySelector('main');
     if (main && 'MutationObserver' in window) {
