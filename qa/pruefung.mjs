@@ -354,7 +354,29 @@ function pruefeJavaScript() {
   }
 }
 
+
+// ------------------------------------------------------------ 9. Interne Links
+// Jeder interne Verweis (href="/...") muss auf eine ausgelieferte Seite oder
+// Datei zeigen. Das Audit vom 17.09. fand drei Themenseiten, die ins Leere liefen.
+function pruefeInterneLinks() {
+  const site = join(wurzel, 'chatgpt-site');
+  const tot = new Map();
+  for (const datei of dateienUnter('chatgpt-site', '.html')) {
+    const html = lies(datei);
+    for (const m of html.matchAll(/href="(\/[^"#?]*)/g)) {
+      const h = m[1];
+      if (h.startsWith('//') || h.startsWith('/api/') || h.startsWith('/admin') || h.startsWith('/redaktion')) continue;
+      if (/\.(?:xml|ics|json|css|js|svg|png|webp|jpg|jpeg|pdf|txt|ico|woff2?)$/.test(h)) continue;
+      const ziel = join(site, h);
+      const ok = (existsSync(ziel) && (h.endsWith('/') ? existsSync(join(ziel, 'index.html')) : true)) || existsSync(ziel + '/index.html') || existsSync(ziel.replace(/\/$/, '') + '.html');
+      if (!ok) { if (!tot.has(h)) tot.set(h, []); tot.get(h).push(datei.replace(wurzel + '/', '')); }
+    }
+  }
+  for (const [h, seiten] of [...tot.entries()].slice(0, 40)) fehler('Links', `${h} fuehrt ins Leere (${seiten.length}x, z. B. ${seiten[0]}).`);
+}
+
 pruefeMarkupGegenCode();
+pruefeInterneLinks();
 pruefeInhalte();
 pruefeServiceInhalte();
 pruefeJavaScript();
