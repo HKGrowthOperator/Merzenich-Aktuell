@@ -152,9 +152,19 @@
  function bumpCount(add){const c=document.querySelector('.count-line');if(!c||!add)return;const m=c.textContent.match(/^\s*(\d+)/);if(!m)return;c.firstChild.textContent=c.firstChild.textContent.replace(m[1],String(Number(m[1])+add));}
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{
   let added=0;
-  if(path==='/sport/'&&data.hero){updateLead(data.hero);}
-  if(path==='/nachrichten/'&&data.hero){updateLead(data.hero);if(data.secondary){const second=row(data.secondary);if(second){feed.querySelector('.feed-lead')?.insertAdjacentElement('afterend',second);added++;}}}
-  if(path==='/blaulicht/'&&data.secondary){const current=row(data.secondary);if(current){feed.prepend(current);added++;}}
+  // Ressortarchive bekommen nur Meldungen aus dem eigenen Ressort. Vorher
+  // landete der Editorial-Hero (z. B. Blaulicht) als Aufmacher in /sport/.
+  const passt=(s,ressort)=>!!(s&&typeof s.url==='string'&&s.url.startsWith(ressort));
+  const kandidaten=[data.hero,data.secondary].filter(Boolean);
+  if(path==='/nachrichten/'){if(data.hero)updateLead(data.hero);if(data.secondary){const second=row(data.secondary);if(second){feed.querySelector('.feed-lead')?.insertAdjacentElement('afterend',second);added++;}}}
+  else{
+   const eigene=kandidaten.filter(s=>passt(s,path));
+   if(eigene.length){
+    const [erste,...rest]=eigene;
+    const leadGesetzt=path==='/sport/'&&updateLead(erste);
+    for(const s of leadGesetzt?rest:eigene){const el=row(s);if(el){const lead=feed.querySelector('.feed-lead');if(lead)lead.insertAdjacentElement('afterend',el);else feed.prepend(el);added++;}}
+   }
+  }
   bumpCount(added);
  }).catch(()=>{});
 })();
