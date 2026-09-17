@@ -79,13 +79,13 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=20260917-4';
+    style.href = '/assets/editorial-audit.css?v=29fba8a71f';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=20260917-4';
+    script.src = '/assets/editorial-audit.js?v=b315cc8b7c';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);
