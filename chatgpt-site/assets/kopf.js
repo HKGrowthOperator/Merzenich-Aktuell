@@ -37,7 +37,7 @@
 /*
  * Der ausgelieferte Coolify-Stand bindet kopf.js auf allen redaktionellen
  * Seiten ein. Darueber wird die zentrale Startbild-Absicherung geladen, ohne
- * 213 statische HTML-Dateien einzeln anfassen zu muessen.
+ * hunderte statische HTML-Dateien einzeln anfassen zu muessen.
  */
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
@@ -49,8 +49,9 @@
 })();
 
 /*
- * Qualitaets-Layer fuer Startseite/Listen. Laedt zuletzt, damit die Regeln fuer
- * Bildschaerfe und Anzeigen nicht von den Recovery-Styles ueberschrieben werden.
+ * Qualitaets-Layer fuer Startseite/Listen. Dynamisch geladene Skripte werden
+ * mit async=false bewusst in Einfuegereihenfolge ausgefuehrt: erst Polish,
+ * dann Tagesdaten, zuletzt der verifizierende Editorial-Audit.
  */
 (() => {
   if (!document.querySelector('link[data-ma-home-polish]')) {
@@ -63,31 +64,30 @@
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
     script.src = '/assets/homepage-polish.js?v=d1fb2f7039';
-    script.defer = true;
+    script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
   }
 })();
 
 /*
- * Redaktioneller Tages-Refresh. Der Layer aktualisiert die schnell wechselnden
- * Startseiten-/Markt-/Anzeigenbereiche, ohne den statischen Gesamtbuild zu
- * duplizieren. Inhalte bleiben quellengebunden und datiert.
+ * Redaktioneller Tages-Refresh fuer Service-/Markt-/Anzeigenbereiche. Ein
+ * nachgelagerter Audit gleicht die Startseiten-Nachrichten zwingend gegen den
+ * echten Suchindex ab, damit keine verwaisten Links sichtbar bleiben.
  */
 (() => {
   if (document.querySelector('script[data-ma-content-refresh]')) return;
   const script = document.createElement('script');
   script.src = '/assets/content-refresh-2026-09-17.js?v=20260917-1';
-  script.defer = true;
+  script.async = false;
   script.dataset.maContentRefresh = '1';
   document.head.append(script);
 })();
 
 /*
  * Audit-Layer 17.09.2026: gemeinsame redaktionelle Hierarchie, dynamisches
- * Tagesdatum, vereinfachte Navigation, Bildsystem, Empty-/Error-States und
- * Bereinigung alter Termin-/CMS-Zustaende. Zentral geladen, damit jede
- * oeffentliche Seite denselben Frontendstand benutzt.
+ * Tagesdatum, vereinfachte Navigation, Bildsystem, Empty-/Error-States,
+ * verifizierte Homepage und Bereinigung alter Termin-/CMS-Zustaende.
  */
 (() => {
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
@@ -99,8 +99,8 @@
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=20260917-1';
-    script.defer = true;
+    script.src = '/assets/editorial-audit.js?v=20260917-2';
+    script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);
   }
