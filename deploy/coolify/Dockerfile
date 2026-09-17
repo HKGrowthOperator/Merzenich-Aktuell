@@ -1,42 +1,37 @@
 # Merzenich Aktuell - statische Auslieferung fuer Coolify.
 #
-# Der Repo-Stand unter chatgpt-site/ bleibt die statische Grundlage. Vor der
-# Auslieferung wird er jedoch in einem reproduzierbaren Node-Build einmal gegen
-# die tatsaechlich vorhandenen Artikelseiten abgeglichen. So koennen Suche,
-# Themen, Ressorts, Ortsseiten und Archiv nicht mehr unterschiedliche Staende
-# ausliefern.
-
-FROM node:22-alpine AS editorial
-WORKDIR /app
-COPY chatgpt-site/ ./chatgpt-site/
-COPY deploy/ ./deploy/
-
-# P0 Editorial Consistency Gate:
-# - fehlende Artikel in Suche nachtragen
-# - Themenseiten aus denselben Artikeln synchronisieren
-# - Ressorts, Orte und Archiv synchronisieren
-# - Prototyp-/Pre-Launch-Texte bereinigen, /admin aus dem oeffentlichen Build entfernen
-# - gemeinsame Assets/Service-Worker abschliessend versionieren
-RUN node deploy/suche-index.mjs \
- && node deploy/thema-prerender.mjs \
- && node deploy/content-sync.mjs \
- && node deploy/kopf-theme-einbinden.mjs
+# Baut kein Projekt: chatgpt-site/ IST der ausgelieferte Stand. Dieses Image
+# legt ihn nur hinter einen nginx, der dieselben Weiterleitungen und Kopfzeilen
+# spricht wie bisher Cloudflare Pages (siehe nginx.conf, erzeugt aus
+# _redirects und _headers).
+#
+# Bewusst KEIN Build-Schritt im Image: Listen, Archiv, Feeds, Suchindex und
+# Themen werden von den Generatoren unter deploy/ im Repo erzeugt und von der
+# CI (qa.yml) geprueft bzw. nachgezogen. So ist das, was Coolify ausliefert,
+# byteidentisch mit main - nichts entsteht erst beim Deploy.
+#
+# In Coolify: Build Pack = Dockerfile, Dockerfile Location = deploy/coolify/Dockerfile,
+# Base Directory = / (Repository-Wurzel), Port = 80.
+# Fuer Kommentare zusaetzlich: Persistent Storage /data und die Umgebungsvariable
+# KOMMENTARE_ADMIN_TOKEN (siehe README.md).
 
 FROM nginx:1.27-alpine
 
-# Node fuer den Kommentar-/Abo-/Wetter-Dienst, ohne npm-Pakete.
-RUN apk add --no-cache nodejs && rm -f /etc/nginx/conf.d/default.conf
+# Node fuer den Kommentar-Dienst (deploy/coolify/kommentare/server.mjs), ohne npm-Pakete.
+RUN apk add --no-cache nodejs tzdata && rm -f /etc/nginx/conf.d/default.conf
+# Tagesdatum im Seitenkopf wird per nginx-SSI in Ortszeit gerendert.
+ENV TZ=Europe/Berlin
 COPY deploy/coolify/nginx.conf /etc/nginx/conf.d/merzenich.conf
 COPY deploy/coolify/kommentare-location.conf /tmp/kommentare-location.conf
 COPY deploy/coolify/40-resolver.sh /docker-entrypoint.d/40-resolver.sh
 COPY deploy/coolify/50-kommentare.sh /docker-entrypoint.d/50-kommentare.sh
 COPY deploy/coolify/kommentare/server.mjs /opt/kommentare/server.mjs
-COPY --from=editorial /app/chatgpt-site/ /usr/share/nginx/html/
+COPY chatgpt-site/ /usr/share/nginx/html/
 
 # Kommentar-, Abo- und Wetter-Weiterleitung (alle zum Node-Dienst) unmittelbar
 # vor die schliessende server-Klammer einsetzen. weather-location.conf bleibt
-# als Referenz im Repo, wird aber nicht mehr eingebaut. nginx.conf bleibt die
-# aus _redirects/_headers erzeugte Datei.
+# als Referenz im Repo, wird aber nicht mehr eingebaut. nginx.conf bleibt weiterhin die aus _redirects/_headers erzeugte
+# Datei und muss fuer diese isolierte API-Ergaenzung nicht von Hand gepflegt werden.
 RUN cat /tmp/kommentare-location.conf > /tmp/extra-locations.conf \
  && awk 'BEGIN { while ((getline line < "/tmp/extra-locations.conf") > 0) extra = extra line ORS } /^}$/ { printf "%s", extra } { print }' \
       /etc/nginx/conf.d/merzenich.conf > /tmp/merzenich.conf \
@@ -46,8 +41,7 @@ RUN cat /tmp/kommentare-location.conf > /tmp/extra-locations.conf \
  && node --version
 
 # _redirects und _headers sind Cloudflare-Anweisungen und gehoeren nicht ins Web.
-# /admin ist bereits im Editorial-Gate entfernt; der zweite rm ist absichtlich
-# idempotent und verhindert eine spaetere versehentliche Oeffnung.
+# /admin/ und /redaktion/ liefert nginx ohnehin 404; der Ordner wird zusaetzlich entfernt.
 RUN rm -f /usr/share/nginx/html/_redirects /usr/share/nginx/html/_headers \
  && rm -rf /usr/share/nginx/html/admin \
  && nginx -t

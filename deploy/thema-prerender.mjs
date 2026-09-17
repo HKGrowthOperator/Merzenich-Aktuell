@@ -52,18 +52,21 @@ for (const [slug, { label, artikel }] of themen) {
   if (!nurPruefen) writeFileSync(pfad, neu);
   nachgetragen++; console.log(`nachgetragen: /thema/${slug}/ + ${fehlend.map((a) => a.url).join(', ')}`);
 }
-// Themenuebersicht /thema/: fehlende Schlagworte anhaengen, Zaehler nachfuehren.
+// Themenuebersicht /thema/: Wolke nur fuer Themen mit mindestens zwei Beitraegen
+// (sonst liest sie sich wie eine CMS-Taxonomie), darunter alle Schlagworte A-Z.
 let uebersicht = 0;
 {
   const pfad = join(site, 'thema', 'index.html');
   if (existsSync(pfad)) {
     const alt = readFileSync(pfad, 'utf8'); let neu = alt;
-    for (const [slug, { label, artikel }] of themen) {
-      const n = artikel.length;
-      const re = new RegExp(`(<a href="/thema/${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/" style="--n:)\\d+(">)([^<]*)(<small>)\\d+(</small></a>)`);
-      if (re.test(neu)) neu = neu.replace(re, (m, a, z, text, k, e) => `${a}${Math.min(n, 12)}${z}${text}${k}${n}${e}`);
-      else neu = neu.replace(/(<div class="tagcloud">[\s\S]*?)(<\/div>)/, (m, a, z) => `${a}<a href="/thema/${slug}/" style="--n:${Math.min(n, 12)}">${esc(label)} <small>${n}</small></a>${z}`);
-    }
+    const sortiert = [...themen.entries()].sort((a, b) => b[1].artikel.length - a[1].artikel.length || a[1].label.localeCompare(b[1].label, 'de'));
+    const wolke = sortiert.filter(([, t]) => t.artikel.length >= 2).map(([slug, t]) => `<a href="/thema/${slug}/" style="--n:${Math.min(t.artikel.length, 12)}">${esc(t.label)} <small>${t.artikel.length}</small></a>`).join('');
+    const az = [...themen.entries()].sort((a, b) => a[1].label.localeCompare(b[1].label, 'de')).map(([slug, t]) => `<li><a href="/thema/${slug}/">${esc(t.label)}</a> <small>${t.artikel.length}</small></li>`).join('');
+    const azBlock = `<div class="tag-az"><h2>Alle Schlagworte von A bis Z</h2><ul>${az}</ul></div>`;
+    neu = neu.replace(/<div class="tagcloud">[\s\S]*?<\/div>/, () => `<div class="tagcloud">${wolke}</div>`);
+    if (/<div class="tag-az">[\s\S]*?<\/ul><\/div>/.test(neu)) neu = neu.replace(/<div class="tag-az">[\s\S]*?<\/ul><\/div>/, () => azBlock);
+    else neu = neu.replace(/(<div class="tagcloud">[\s\S]*?<\/div>)/, (m) => m + azBlock);
+    neu = neu.replace(/<p class="desc">[^<]*<\/p>/, '<p class="desc">Die wichtigsten Themen aus allen Meldungen. Je größer, desto mehr Beiträge. Darunter alle Schlagworte von A bis Z.</p>');
     if (neu !== alt) { uebersicht = 1; if (!nurPruefen) writeFileSync(pfad, neu); }
   }
 }

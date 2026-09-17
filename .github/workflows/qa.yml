@@ -1,6 +1,8 @@
 name: Merzenich Aktuell QA
 
 on:
+  schedule:
+    - cron: '15 2 * * *'   # taeglich 04:15 Berlin: abgelaufene Termine raus, Stand zurueck ins Repo
   push:
     branches: [main]
   pull_request:
@@ -65,6 +67,8 @@ jobs:
         run: node deploy/suche-index.mjs --check
       - name: Themenseiten vollstaendig
         run: node deploy/thema-prerender.mjs --check
+      - name: Inhaltsindex (Listen, Archiv, Orte, Startseite, Feeds) aktuell
+        run: node deploy/inhaltsindex.mjs --check
 
       - name: Darstellung und Kopf auf allen Seiten eingebunden?
         run: node deploy/kopf-theme-einbinden.mjs --check
@@ -140,6 +144,11 @@ jobs:
           curl --fail http://127.0.0.1:4173/werbefrei/ | grep -q 'id="werbefrei-app"'
           curl --fail http://127.0.0.1:4173/api/abo/konfiguration | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"]'
           curl --fail http://127.0.0.1:4173/ | grep -q 'data-werbung='
+          # Tagesdatum per nginx-SSI in Ortszeit, interne Bereiche gesperrt, Ort-Themen umgeleitet
+          curl --fail --silent http://127.0.0.1:4173/ | grep -q "data-today[^>]*>$(TZ=Europe/Berlin date +%d.%m.)<" || (echo 'SSI-Datum fehlt' && exit 1)
+          curl --silent -o /dev/null -w '%{http_code}\n' http://127.0.0.1:4173/admin/ | grep -q '^404$'
+          curl --silent -o /dev/null -w '%{http_code}\n' http://127.0.0.1:4173/redaktion/ | grep -q '^404$'
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' http://127.0.0.1:4173/thema/merzenich/ | grep -qE '^301 .*/merzenich/$'
           # Formulare: echte Annahme durch den Dienst (303 auf Danke-Seite), Fehler zurueck mit ?fehler=
           curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Referer: http://127.0.0.1:4173/korrekturen/' --data-urlencode 'form-name=korrektur' --data-urlencode 'url=https://merzenichaktuell.hk-growthoperator.de/sport/' --data-urlencode 'text=Testhinweis aus der CI-Pruefung' --data-urlencode 'email=qa@merzenich-aktuell.invalid' --data-urlencode 'einwilligung=ja' --data-urlencode 'weiter=/korrekturen/danke/' | grep -E '^303 .*/korrekturen/danke/$'
           curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' -X POST http://127.0.0.1:4173/api/formular -H 'Referer: http://127.0.0.1:4173/korrekturen/' --data-urlencode 'form-name=korrektur' --data-urlencode 'text=zu' --data-urlencode 'weiter=/korrekturen/danke/' | grep -E '^303 .*/korrekturen/\?fehler=felder'
@@ -235,16 +244,19 @@ jobs:
         if: always()
         run: docker rm -f merzenich-aktuell-qa || true
 
-      - name: Commit refreshed QA screenshots
-        if: github.event_name == 'push' && github.actor != 'github-actions[bot]' && success()
+      - name: Commit refreshed QA screenshots and expired events
+        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.actor != 'github-actions[bot]' && success()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add qa/after/*.png
+          # Abgelaufene Termine aus Startseite und Terminliste nehmen (Ortszeit); laeuft
+          # taeglich per schedule, damit der Stand im Repo nicht veraltet.
+          node deploy/termine-prerender.mjs
+          git add qa/after/*.png chatgpt-site/index.html chatgpt-site/termine/index.html
           if git diff --cached --quiet; then
             echo 'QA screenshots unchanged.'
           else
-            git commit -m 'qa: refresh actual Coolify screenshots [skip ci]'
+            git commit -m 'qa: refresh actual Coolify screenshots, expired events removed [skip ci]'
             git fetch origin main
             # Bei Konflikten an den Screenshots gewinnt der frische Stand dieses
             # Laufs (-X theirs = der eingespielte Commit). Schlaegt der Rebase

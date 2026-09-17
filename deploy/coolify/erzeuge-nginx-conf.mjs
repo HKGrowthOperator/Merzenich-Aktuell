@@ -87,6 +87,12 @@ out.push('  charset utf-8;');
 out.push('  absolute_redirect off;');
 out.push('  server_tokens off;');
 out.push('');
+// Zugriffsprotokolle mit IP-Adressen werden nicht geschrieben (Datenschutzerklaerung,
+// Abschnitt "Bereitstellung der Website"); Fehler landen weiter im error_log.
+out.push('  access_log off;');
+// Interne Bereiche (Decap-Admin, Redaktionshandbuch) sind nicht Teil der oeffentlichen Seite.
+out.push('  location ^~ /admin/ { return 404; }');
+out.push('  location ^~ /redaktion/ { return 404; }');
 out.push('  gzip on;');
 out.push('  gzip_vary on;');
 out.push('  gzip_min_length 512;');
@@ -137,6 +143,10 @@ for (const b of spezifisch) {
 out.push('');
 out.push('  # --- Auslieferung ---');
 out.push('  location / {');
+// Server Side Includes fuer das Tagesdatum im Seitenkopf (deploy/kopf-theme-einbinden.mjs
+// schreibt <!--# echo var="date_local" -->); Zeitzone kommt aus TZ im Dockerfile.
+out.push('    ssi on;');
+out.push('    ssi_last_modified on;');
 out.push(global.map(addHeader).join('\n'));
 // Seiten (und alles ohne eigene Regel) sollen nicht veralten: der Browser fragt
 // jedes Mal nach, bekommt bei unveraendertem Stand aber nur ein 304. Die
