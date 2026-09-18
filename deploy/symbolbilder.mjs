@@ -16,11 +16,11 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, esc } from './lib-artikel.mjs';
+import { artikelSammeln, esc, SITE_URL } from './lib-artikel.mjs';
 import {
   RECHTE_GEPRUEFT_AM, KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
   bibliothekErzeugen, bibliothekAudit, zuordnungenLesen, zuordnungenSchreiben,
-  vergibSymbolbilder, brauchtSymbolbild, istUnzulaessigesLogo, selbsttest, kategorieFuer,
+  vergibSymbolbilder, brauchtSymbolbild, selbsttest, kategorieFuer,
 } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -28,6 +28,27 @@ const site = join(wurzel, 'chatgpt-site');
 const nurPruefen = process.argv.includes('--check');
 const geaendert = [];
 const fehler = [];
+
+const norm = (s) => String(s || '').toLocaleLowerCase('de-DE').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
+
+/**
+ * Ein Vereinslogo ist nur dann ein redaktionell erlaubtes Hauptbild, wenn die
+ * Meldung selbst explizit Logo/Wappen/Identitaet zum Gegenstand hat. Wichtig:
+ * Der Fliesstext wird hier absichtlich NICHT ausgewertet, weil dort der
+ * Quellenkasten "Bildtyp: Offizielles Vereinslogo" stehen kann. Genau dieser
+ * Metahinweis darf eine normale Spielmeldung nicht von der Migration ausnehmen.
+ */
+function istAllgemeinesVereinslogo(a) {
+  const b = a?.bild || {};
+  const bildText = norm(`${b.src || ''} ${b.alt || ''} ${b.credit || ''} ${b.badge || ''}`);
+  if (!/logo|wappen|sc[-_ ]?1919|vereinszeichen/.test(bildText)) return false;
+  const redaktionellerKern = norm(`${a?.titel || ''} ${a?.teaser || ''} ${a?.kicker || ''}`);
+  return !/\b(logo|wappen|vereinszeichen|vereinsidentitat)\b/.test(redaktionellerKern);
+}
+
+function brauchtV2Symbol(a) {
+  return !a?.bild?.src || Boolean(a?.bild?.symbol) || istAllgemeinesVereinslogo(a);
+}
 
 function writeIfChanged(pfad, inhalt) {
   const alt = existsSync(pfad) ? readFileSync(pfad, 'utf8') : '';
@@ -43,6 +64,20 @@ function figureHtml(m) {
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }
 
+function metadataAufSymbolbild(html, m) {
+  const absolute = `${SITE_URL}${m.src}`;
+  let neu = html;
+  neu = neu.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${esc(absolute)}">`);
+  neu = neu.replace(/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${esc(m.alt)}">`);
+  // Auf Artikelseiten ist der NewsArticle-Knoten der relevante image-Eintrag.
+  neu = neu.replace(/("@type":"NewsArticle"[\s\S]*?"image":)"[^"]*"/, `$1"${absolute}"`);
+  // Alte Quellenkasten-Angaben zum Vereinslogo/externen Symbolbild duerfen nach
+  // der Migration nicht neben dem neuen V2-Motiv stehen bleiben.
+  neu = neu.replace(/\s*Bildtyp:\s*Offizielles Vereinslogo\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
+  neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
+  return neu;
+}
+
 function ersetzeArtikelbild(a, m) {
   const pfad = artikelPfad(a); if (!existsSync(pfad)) { fehler.push(`${a.url}: Artikelseite fehlt`); return; }
   const html = readFileSync(pfad, 'utf8');
@@ -50,13 +85,14 @@ function ersetzeArtikelbild(a, m) {
   const bodyMarker = '<div class="article-body" data-readable>';
   const figRe = /<figure class="art-figure[^"]*"[^>]*>[\s\S]*?<\/figure>/;
   let neu = html;
-  if (a.bild?.src && (a.bild.symbol || istUnzulaessigesLogo(a))) {
-    if (figRe.test(html)) neu = html.replace(figRe, neuFig);
-    else if (html.includes(bodyMarker)) neu = html.replace(bodyMarker, bodyMarker + neuFig);
+  if (a.bild?.src && (a.bild.symbol || istAllgemeinesVereinslogo(a))) {
+    if (figRe.test(neu)) neu = neu.replace(figRe, neuFig);
+    else if (neu.includes(bodyMarker)) neu = neu.replace(bodyMarker, bodyMarker + neuFig);
   } else if (!a.bild?.src) {
-    if (html.includes(bodyMarker)) neu = html.replace(bodyMarker, bodyMarker + neuFig);
+    if (neu.includes(bodyMarker)) neu = neu.replace(bodyMarker, bodyMarker + neuFig);
     else fehler.push(`${a.url}: article-body fehlt, Symbolbild kann nicht eingesetzt werden`);
   }
+  neu = metadataAufSymbolbild(neu, m);
   writeIfChanged(pfad, neu);
 }
 
@@ -109,7 +145,7 @@ function contentAudit() {
     const t = klassifiziere(a.bild); count[t]++;
     if (!a.bild?.src) fehler.push(`${a.url}: normaler Beitrag ist bildlos`);
     if (a.bild?.src && !a.bild?.credit) { count.missingCredits++; fehler.push(`${a.url}: Bildnachweis/Credit fehlt`); }
-    if (istUnzulaessigesLogo(a)) { count.logos++; fehler.push(`${a.url}: Vereinslogo/Wappen wird als allgemeines Newsfoto verwendet`); }
+    if (istAllgemeinesVereinslogo(a)) { count.logos++; fehler.push(`${a.url}: Vereinslogo/Wappen wird als allgemeines Newsfoto verwendet`); }
     if (a.bild?.symbol) {
       const pool = kategorieFuer(a);
       if (!String(a.bild.src).includes(`/assets/symbolbilder/${pool}/`)) fehler.push(`${a.url}: Symbolbild stammt nicht aus erwartetem Pool ${pool}`);
@@ -132,19 +168,25 @@ if (!nurPruefen && !audit.fehler.length) audit = bibliothekAudit(wurzel);
 
 // 3) Artikel erfassen, persistente Zuordnung anwenden und Artikelseiten migrieren.
 const artikelVorher = artikelSammeln(site);
+// Der Library-Resolver kennt Symbolbilder als Ersatzgrund. Fuer allgemeine
+// Vereinslogos markieren wir ausschliesslich die Arbeitskopie als Symbol,
+// damit die bestehende persistente Vergabelogik dieselbe Route nutzt.
+const artikelFuerVergabe = artikelVorher.map((a) => istAllgemeinesVereinslogo(a)
+  ? { ...a, bild: { ...(a.bild || {}), symbol: true } }
+  : a);
 const bestand = zuordnungenLesen(wurzel);
-const vergabe = vergibSymbolbilder(artikelVorher, audit.pools, bestand);
+const vergabe = vergibSymbolbilder(artikelFuerVergabe, audit.pools, bestand);
 for (const w of vergabe.warnungen) fehler.push(w);
 if (vergabe.dirty) {
   if (nurPruefen) geaendert.push(ZUORDNUNGEN_DATEI);
   else if (zuordnungenSchreiben(wurzel, vergabe.state)) geaendert.push(ZUORDNUNGEN_DATEI);
 }
 for (const a of artikelVorher) {
-  if (!brauchtSymbolbild(a)) continue;
+  if (!brauchtV2Symbol(a)) continue;
   const m = vergabe.zuordnung.get(a.url); if (!m) { fehler.push(`${a.url}: keine gültige Symbolbild-Zuordnung`); continue; }
   ersetzeArtikelbild(a, m);
 }
-aktualisiereEditorialCurrent(artikelVorher, vergabe.zuordnung);
+aktualisiereEditorialCurrent(artikelFuerVergabe, vergabe.zuordnung);
 
 // 4) Nach dem Schreiben tatsächlichen ausgelieferten Stand prüfen.
 const content = contentAudit();
