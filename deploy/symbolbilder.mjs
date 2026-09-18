@@ -3,9 +3,9 @@
  * Editorial Image System V2
  *
  * Build-Time-Resolver fuer Meldungen ohne eigenes/geeignetes Bild.
- * - Originalbilder bleiben unangetastet.
+ * - Originalbilder und offizielle Quellenmotive bleiben unangetastet.
  * - Alte Browser-/Commons-Symbolbilder und allgemeine Vereinslogos werden migriert.
- * - 16 Pools mit je 20 lokalen neutralen Symbolgrafiken werden erzeugt.
+ * - 16 Pools mit mindestens 20 lokalen neutralen Symbolgrafiken werden erzeugt.
  * - Die Zuordnung wird persistent gespeichert und aendert sich bei spaeteren Builds nicht.
  * - Neue Meldungen erhalten nach Tags + geringster Nutzung ein anderes Motiv.
  *
@@ -20,7 +20,7 @@ import { artikelSammeln, esc, SITE_URL } from './lib-artikel.mjs';
 import {
   RECHTE_GEPRUEFT_AM, KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
   bibliothekErzeugen, bibliothekAudit, zuordnungenLesen, zuordnungenSchreiben,
-  vergibSymbolbilder, brauchtSymbolbild, selbsttest, kategorieFuer,
+  vergibSymbolbilder, selbsttest, kategorieFuer,
 } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -33,16 +33,22 @@ const norm = (s) => String(s || '').toLocaleLowerCase('de-DE').normalize('NFD').
 
 /**
  * Ein Vereinslogo ist nur dann ein redaktionell erlaubtes Hauptbild, wenn die
- * Meldung selbst explizit Logo/Wappen/Identitaet zum Gegenstand hat. Wichtig:
- * Der Fliesstext wird hier absichtlich NICHT ausgewertet, weil dort der
- * Quellenkasten "Bildtyp: Offizielles Vereinslogo" stehen kann. Genau dieser
- * Metahinweis darf eine normale Spielmeldung nicht von der Migration ausnehmen.
+ * Meldung selbst explizit Logo/Wappen/Identitaet zum Gegenstand hat.
+ *
+ * Wichtig: Weder der Quellenkasten noch ein alter Badge werden ausgewertet.
+ * Dort kann historisch "Offizielles Vereinslogo" stehen, obwohl es sich z.B.
+ * um ein offizielles Gemeindezeichen handelt. Ausserdem muss ein echter
+ * Vereins-/Club-Kontext vorliegen; Gemeinde-/Behoerdenzeichen bleiben damit
+ * als offizielle Quellenmotive erhalten.
  */
 function istAllgemeinesVereinslogo(a) {
   const b = a?.bild || {};
-  const bildText = norm(`${b.src || ''} ${b.alt || ''} ${b.credit || ''} ${b.badge || ''}`);
-  if (!/logo|wappen|sc[-_ ]?1919|vereinszeichen/.test(bildText)) return false;
+  const bildText = norm(`${b.src || ''} ${b.alt || ''} ${b.credit || ''}`);
   const redaktionellerKern = norm(`${a?.titel || ''} ${a?.teaser || ''} ${a?.kicker || ''}`);
+  const vereinsKontext = a?.ressort === 'sport' || a?.ressort === 'vereine'
+    || /\b(sc|fc|sv|verein|club|sportverein)\b/.test(redaktionellerKern);
+  if (!vereinsKontext) return false;
+  if (!/logo|wappen|sc[-_ ]?1919|vereinszeichen/.test(bildText)) return false;
   return !/\b(logo|wappen|vereinszeichen|vereinsidentitat)\b/.test(redaktionellerKern);
 }
 
@@ -64,15 +70,41 @@ function figureHtml(m) {
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }
 
+/**
+ * Repariert genau eine Fehlmigration aus dem ersten V2-Lauf: Das offizielle
+ * Gemeindezeichen der Haushaltschronik war wegen eines historisch falsch
+ * benannten Badges als Vereinslogo interpretiert worden. Die Quelle ist lokal,
+ * dokumentiert und fuer diese Gemeindemeldung das passendere Originalmotiv.
+ * Die Reparatur ist idempotent und greift nur, solange dort unser versehentlich
+ * zugewiesenes Vereine-Symbol liegt.
+ */
+function repariereOffiziellesGemeindebild() {
+  const pfad = join(site, 'rathaus', 'haushalt-2026-chronik', 'index.html');
+  if (!existsSync(pfad)) return;
+  const alt = readFileSync(pfad, 'utf8');
+  if (!/data-editorial-image-id="vereine-01-vereinsleben"/.test(alt)) return;
+  const src = '/assets/editorial/gemeinde-merzenich.png';
+  const abs = `${SITE_URL}${src}`;
+  const altText = 'Offizielles Zeichen der Gemeinde Merzenich';
+  const credit = 'Gemeinde Merzenich · Heimat-Info';
+  const figure = `<figure class="art-figure"><div class="media contain"><img src="${src}" alt="${altText}" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Offizielles Quellenmotiv</span> · ${altText}</span><span>Bild: ${credit}</span></figcaption></figure>`;
+  let neu = alt.replace(/<figure class="art-figure[^"]*"[^>]*>[\s\S]*?<\/figure>/, figure);
+  neu = neu.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${abs}">`);
+  neu = neu.replace(/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${altText}">`);
+  neu = neu.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${abs}">`);
+  neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*Bild:\s*Merzenich Aktuell[^<]*\./i, ` Bildtyp: Offizielles Quellenmotiv. Bild: ${credit}.`);
+  writeIfChanged(pfad, neu);
+}
+
 function metadataAufSymbolbild(html, m) {
   const absolute = `${SITE_URL}${m.src}`;
   let neu = html;
   neu = neu.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${esc(absolute)}">`);
   neu = neu.replace(/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${esc(m.alt)}">`);
-  // Auf Artikelseiten ist der NewsArticle-Knoten der relevante image-Eintrag.
-  neu = neu.replace(/("@type":"NewsArticle"[\s\S]*?"image":)"[^"]*"/, `$1"${absolute}"`);
-  // Alte Quellenkasten-Angaben zum Vereinslogo/externen Symbolbild duerfen nach
-  // der Migration nicht neben dem neuen V2-Motiv stehen bleiben.
+  neu = neu.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${esc(absolute)}">`);
+  // NewsArticle und Article werden beide verwendet. Nur der redaktionelle
+  // Artikelknoten wird angefasst, nicht Organization/WebSite-JSON-LD.
+  neu = neu.replace(/("@type":"(?:NewsArticle|Article)"[\s\S]*?"image":)"[^"]*"/, `$1"${absolute}"`);
   neu = neu.replace(/\s*Bildtyp:\s*Offizielles Vereinslogo\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
   neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
   return neu;
@@ -108,9 +140,12 @@ function aktualisiereEditorialCurrent(artikel, zuordnung) {
     const neu = {
       image: m.src, imageAlt: m.alt, imageBadge: 'Symbolbild', imageCredit: m.credit,
       imageType: 'symbol', imageId: m.id, imagePool: m.pool, imageSource: m.source,
-      imageLicense: m.license, imageRightsCheckedAt: m.rightsCheckedAt,
+      imageLicense: m.license, imageRightsCheckedAt: m.rightsCheckedAt, imageFit: '',
     };
     for (const [feld, wert] of Object.entries(neu)) if (s[feld] !== wert) { s[feld] = wert; dirty = true; }
+    for (const feld of ['imageSrcset', 'imageSizes', 'imageWidth', 'imageHeight', 'imageSourceUrl']) {
+      if (feld in s) { delete s[feld]; dirty = true; }
+    }
   }
   if (dirty) writeIfChanged(pfad, JSON.stringify(d, null, 2) + '\n');
 }
@@ -154,6 +189,10 @@ function contentAudit() {
   return count;
 }
 
+// 0) Eine bekannte Fehlmigration des ersten V2-Laufs zurueckdrehen, bevor
+// der aktuelle Bestand erfasst und die persistente Vergabe bereinigt wird.
+repariereOffiziellesGemeindebild();
+
 // 1) Bibliothek materialisieren bzw. im Check-Modus gegen Sollzustand pruefen.
 const libBuild = bibliothekErzeugen(wurzel, { schreiben: !nurPruefen });
 for (const p of libBuild.geaendert) geaendert.push(p.replace(wurzel + '/', ''));
@@ -163,7 +202,6 @@ let audit = bibliothekAudit(wurzel);
 for (const f of audit.fehler) fehler.push(f);
 try { selbsttest(); } catch (e) { fehler.push(`Rotation/Selftest: ${e.message}`); }
 
-// Im Schreibmodus nach dem Erzeugen noch einmal aus der realen Library lesen.
 if (!nurPruefen && !audit.fehler.length) audit = bibliothekAudit(wurzel);
 
 // 3) Artikel erfassen, persistente Zuordnung anwenden und Artikelseiten migrieren.
