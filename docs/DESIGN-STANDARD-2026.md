@@ -133,9 +133,15 @@ Regeln für Ersatzbilder (Stufe 4):
    ein fremdes Feuerwehrhaus.
 3. Ortsmotive nicht für Blaulicht. Blaulicht bekommt Fahrzeug- und Ausrüstungsmotive ohne
    Ortsbezug. Ortsmotive für Rathaus, Politik, Gemeinde, Veranstaltungen.
-4. Kuratierter Pool im Repo, je Kategorie mehrere Motive, Lizenz je Datei dokumentiert. Die Auswahl ist
-   deterministisch je Meldung und innerhalb einer Kategorie gleichmäßig verteilt, damit nicht jede
-   dritte Meldung dasselbe Motiv zeigt. Keine generierten Bilder, keine Montagen.
+4. Kuratierter Pool im Repo unter `chatgpt-site/assets/symbolbilder/<kategorie>/`, je Kategorie 20 bis 30
+   Motive, Nachweis und Alt-Text je Datei in `lizenzen.json`. Ein Motiv ohne vollständigen Eintrag wird
+   nicht ausgeliefert. Generierte Symbolbilder sind zulässig, wenn sie als Symbolbild gekennzeichnet sind
+   und keine reale Szene behaupten; sie ersetzen nie ein Foto des Ereignisses.
+   Die Vergabe macht `deploy/lib-symbolbilder.mjs`: fest je Meldung, also auf Startseite, Ressortseite,
+   Suchseite und Artikelseite dasselbe Motiv, und zugleich gleichmäßig über die Meldungen einer Kategorie
+   verteilt. Keine Zufallsauswahl, kein Wechsel beim Neuladen. Bei n Meldungen und p Motiven erscheint
+   ein Motiv höchstens aufgerundet n durch p mal. Deshalb bestimmt die Poolgröße direkt, wie oft sich ein
+   Bild wiederholt: 30 Motive und 5 Meldungen heißt jedes Motiv höchstens einmal.
 5. Vereinslogos sind kein allgemeiner Fallback. Ein Logo als großes Aufmacherbild sieht nicht nach
    Redaktion aus. Für Fußball gehören Platz, Ball, Tor, Mannschaft, Tribüne oder lokales Vereinsumfeld
    in den Pool. Ein Logo erscheint nur dort, wo das Logo selbst das Thema ist.

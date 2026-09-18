@@ -399,8 +399,53 @@ function pruefeLaufzeitUmbau() {
   }
 }
 
+
+// ------------------------------------- 10. Symbolbilder: Pools und Vergabe
+// Die Vergabe muss zwei Dinge zugleich leisten: fest je Meldung und verteilt
+// ueber die Meldungen einer Kategorie. Der Selbsttest im Modul prueft beides
+// rechnerisch; hier wird er ausgefuehrt, damit ein Umbau daran nicht still
+// vorbeigeht. Dazu die Pools: ein Bild ohne Eintrag in lizenzen.json waere ein
+// Bild ohne Nachweis und wird nicht ausgeliefert - das soll sichtbar sein.
+async function pruefeSymbolbilder() {
+  let modul;
+  try { modul = await import('../deploy/lib-symbolbilder.mjs'); }
+  catch (e) { fehler('Symbolbilder', `deploy/lib-symbolbilder.mjs laedt nicht: ${e.message}`); return; }
+  try { modul.selbsttest(); }
+  catch (e) { fehler('Symbolbilder', `Selbsttest der Vergabe fehlgeschlagen: ${e.message}`); }
+  const { pools, hinweise } = modul.poolsLesen(wurzel);
+  for (const h of hinweise) hinweis('Symbolbilder', h);
+  const leer = Object.entries(pools).filter(([, v]) => !v.length).map(([k]) => k);
+  if (leer.length === modul.KATEGORIEN.length) hinweis('Symbolbilder', 'Noch keine Motive abgelegt; siehe chatgpt-site/assets/symbolbilder/README.md.');
+  else if (leer.length) hinweis('Symbolbilder', `Pools ohne Motiv: ${leer.join(', ')}.`);
+  for (const [k, v] of Object.entries(pools)) {
+    if (v.length && v.length < 5) hinweis('Symbolbilder', `Pool ${k} hat nur ${v.length} Motiv(e); bei mehr Meldungen wiederholt sich das Bild sichtbar.`);
+  }
+}
+
+// ------------------------------------ 11. Ein Motiv darf eine Seite nicht fluten
+// Gemessen am 18.09.: /jobs/ zeigt 24 mal dasselbe Bueromotiv untereinander.
+// Das ist schlechter als gar kein Bild. Die Grenze ist bewusst grosszuegig, sie
+// soll nur das Fluten fangen, nicht die normale Wiederholung.
+function pruefeBildwiederholung() {
+  const GRENZE = 6;
+  for (const datei of dateienUnter('chatgpt-site', '.html')) {
+    const name = datei.replace(wurzel + '/', '');
+    const zaehler = new Map();
+    for (const m of lies(datei).matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)) {
+      const src = m[1];
+      if (/logo|favicon|avatar|pixel|\.svg(\?|$)/i.test(src)) continue;
+      zaehler.set(src, (zaehler.get(src) || 0) + 1);
+    }
+    for (const [src, n] of zaehler) {
+      if (n > GRENZE) hinweis('Bilder', `${name}: ein Motiv ${n} mal auf einer Seite (${src.slice(0, 60)}).`);
+    }
+  }
+}
+
 pruefeOertlicheVerweise();
 pruefeLaufzeitUmbau();
+await pruefeSymbolbilder();
+pruefeBildwiederholung();
 pruefePhp();
 pruefePlatzhalter();
 pruefePruefsummen();
