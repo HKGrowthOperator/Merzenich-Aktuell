@@ -1,50 +1,70 @@
-# Symbolbilder
+# Editorial Image System V2
 
-Hier liegen die thematischen Ersatzmotive. Sie erscheinen nur dann, wenn eine
-Meldung kein eigenes Bild hat, und sie tragen immer sichtbar die Kennzeichnung
-"Symbolbild" mit Bildnachweis.
+Die thematischen Ersatzmotive werden beim Build erzeugt und zugewiesen. Ein Browser-Reload darf niemals ein anderes Motiv auswählen.
 
-## Ablage
+## Source of Truth
 
-    chatgpt-site/assets/symbolbilder/<kategorie>/<datei>.webp
-    chatgpt-site/assets/symbolbilder/<kategorie>/lizenzen.json
+- Generator und Motivdefinitionen: `deploy/lib-symbolbilder.mjs`
+- Build-Time-Resolver: `deploy/symbolbilder.mjs`
+- Zentrale Bibliothek: `chatgpt-site/data/editorial-images/editorial-images.json`
+- Persistente Zuweisungen: `chatgpt-site/data/editorial-images/editorial-image-assignments.json`
+- Technischer Browser-Fallback: `chatgpt-site/assets/bild-fallbacks.js`
 
-Kategorien: polizei, feuerwehr, verkehr, sport, vereine, gemeinde, leben,
-termine, wirtschaft, jobs, immobilien, familie, trauer.
+## Pools
 
-## lizenzen.json
+Pflichtpools: Sport, Polizei, Feuerwehr, Verkehr, Vereine/Ehrenamt, Rathaus/Gemeinde, Veranstaltungen, Leben/Menschen, Wirtschaft, Jobs/Arbeit, Immobilien, Familie, Trauer, Kultur/Freizeit, Schule/Bildung und Kirche/religiöses Leben.
 
-Je Bilddatei ein Eintrag. Ohne vollstaendigen Eintrag wird ein Bild nicht
-ausgeliefert, auch wenn die Datei im Ordner liegt. Ein Bild ohne Nachweis ist ein
-Rechtsrisiko, und ein Alt-Text, den niemand geschrieben hat, waere eine
-Behauptung ueber ein Bild, das die Redaktion nicht gesehen hat.
+Jeder Pflichtpool enthält mindestens 20 eigenständige Motive. Die aktuelle V2 erzeugt exakt 20 pro Pool, insgesamt 320 lokale SVG-Symbolgrafiken. SVG wird verwendet, weil die Grafiken damit ohne Hochskalierung responsiv bleiben und keine externe Bild-URL ausfallen kann.
 
-    {
-      "platz-01.webp": {
-        "alt": "Leerer Fussballplatz bei Flutlicht",
-        "credit": "Symbolbild · KI-generiert fuer Merzenich Aktuell",
-        "lizenz": "",
-        "quelle": ""
-      }
-    }
+## Rechte
 
-Pflicht sind `alt` und `credit`. `lizenz` und `quelle` sind Pflicht, sobald das
-Motiv von einer fremden Quelle stammt.
+Die V2-Poolmotive sind eigene neutrale redaktionelle Symbolgrafiken für Merzenich Aktuell. Sie enthalten keine Fotos fremder Ereignisse, keine erkennbaren Personen, Kennzeichen, Hausnummern oder Vereinslogos. Für jedes Motiv dokumentiert die zentrale Bibliothek:
 
-## Regeln fuer die Motive
+- ID
+- Pool
+- src
+- alt
+- credit
+- source
+- license
+- rightsCheckedAt
+- tags
+- width / height
+- checksum
 
-1. Keine erkennbaren Personen, Kennzeichen, Hausnummern oder Firmenschilder.
-2. Kein Vereinslogo als Motiv. Der Verein erscheint als kleine Textmarke.
-3. Keine Ortsansicht der Gemeinde fuer Blaulicht und Verkehr. Ein Dorffoto unter
-   einer Einsatzmeldung behauptet still einen Tatort.
-4. Kein Foto, das zu einer anderen Meldung gehoert.
-5. Je Kategorie moeglichst 20 bis 30 Motive. Der Verteiler vergibt sie der Reihe
-   nach, deshalb bestimmt die Poolgroesse direkt, wie oft sich ein Motiv
-   wiederholt: bei n Meldungen und p Motiven hoechstens aufgerundet n/p mal.
+## Priorität
 
-## Vergabe
+1. echtes Bild der konkreten Meldung
+2. offizielles Quellenbild
+3. passendes lokales Archivbild
+4. thematisches Symbolbild aus dem Pool
 
-Die Zuordnung macht `deploy/lib-symbolbilder.mjs`. Sie ist fest je Meldung, also
-auf Startseite, Ressortseite, Suchseite und Artikelseite dasselbe Motiv, und
-gleichzeitig ueber die Meldungen einer Kategorie gleichmaessig verteilt. Keine
-Zufallsauswahl, kein Wechsel beim Neuladen.
+Ein bereits vorhandenes echtes Bild wird nicht durch die Rotation ersetzt. Alte allgemeine Symbolbilder und unzulässige Vereinslogos als Newsfoto werden dagegen in das V2-System migriert.
+
+## Rotation
+
+Neue Meldungen ohne eigenes Bild erhalten ein Motiv anhand von Kategorie, Inhaltstags und bisheriger Nutzung. Die Zuordnung wird persistent gespeichert. Deshalb gilt:
+
+- Rotation bei neuer Meldung: ja
+- Rotation bei Reload: nein
+- Rotation bei erneutem Build: nein
+- bestehende Zuweisung verschieben, nur weil eine neue Meldung hinzukommt: nein
+
+## Browser-Fallback
+
+`bild-fallbacks.js` entscheidet keine redaktionellen Bilder. Scheitert ein bereits ausgewähltes Bild technisch, versucht das Skript ausschließlich das nächste Motiv desselben Pools. Polizei, Feuerwehr oder Verkehr fallen niemals auf ein beliebiges Ortsbild zurück.
+
+## QA
+
+`node deploy/symbolbilder.mjs --check` ist Teil der bestehenden GitHub-QA-Kette. Der Check schlägt fehl, wenn unter anderem:
+
+- ein Pflichtpool weniger als 20 gültige Motive hat
+- Metadaten oder Dateien fehlen
+- eine exakte Bilddublette als eigener Pool-Eintrag gezählt würde
+- die Rotation nicht stabil ist
+- ein normaler Artikel bildlos bleibt
+- ein allgemeines Vereinslogo als Newsfoto verbleibt
+- ein Symbolbild aus dem falschen Pool stammt
+- der Generator nicht idempotent ist
+
+Die allgemeine Prüfung `qa/pruefung.mjs` läuft zusätzlich weiter.
