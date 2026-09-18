@@ -203,7 +203,15 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
   if (h && heroLogo) console.log('Startseite: Aufmacher ohne Foto (Bild ist ein Logo): ' + h.url);
   if (h && h.url && h.title) {
     const hero = `<article class="front-lead${h.image && !heroLogo ? '' : ' no-media ma-no-image'}" data-story="${esc(h.id || '')}"${heroLogo ? ' data-image-removed="logo-not-hero"' : ''}>${h.image && !heroLogo ? `<a href="${esc(h.url)}" tabindex="-1" aria-hidden="true"><div class="media${h.imageFit === 'contain' ? ' contain' : ''}"><img src="${esc(h.image)}"${h.imageSrcset ? ` srcset="${esc(h.imageSrcset)}"` : ''}${h.imageSizes ? ` sizes="${esc(h.imageSizes)}"` : ''} alt="${esc(h.imageAlt || h.title)}"${h.imageWidth && h.imageHeight ? ` width="${h.imageWidth}" height="${h.imageHeight}"` : ''} loading="eager" fetchpriority="high" decoding="async" data-editorial-image class="">${h.imageBadge ? `<span class="badge">${esc(h.imageBadge)}</span>` : ''}</div></a>` : ''}<div class="front-lead-copy"><div class="location-line"><span class="location-brand">${esc(h.location || 'MERZENICH')}</span></div><span class="kicker">${esc(h.kicker || 'Aktuell')}</span>${h.eyebrow ? `<span class="eyebrow">${esc(h.eyebrow)}</span>` : ''}<h1><a href="${esc(h.url)}">${esc(h.title)}</a></h1><p>${esc(h.teaser || '')}</p><div class="meta"><time datetime="${esc(h.published || '')}">${esc(h.timeLabel || kurzZeit(h.published))}</time>${h.readTime ? `<span>${esc(h.readTime)}</span>` : ''}</div><div class="story-actions"><a class="read-more" href="${esc(h.url)}">Mehr lesen<span class="sr-only">: ${esc(h.title)}</span></a></div></div></article>`;
-    html = html.replace(/<article class="front-lead"[\s\S]*?<\/article>/, () => hero);
+    // Der Aufmacher traegt seit dem Text-Aufmacher Zusatzklassen ("no-media
+  // ma-no-image"). Eine Regex auf class="front-lead" exakt trifft ihn dann nie
+  // mehr, und die Startseite friert still auf dem letzten Treffer ein. Deshalb
+  // Zusatzklassen zulassen - und pruefen, ob wirklich ersetzt wurde.
+  // Gefragt ist, ob die Regel ueberhaupt greift - nicht, ob sich der Text
+  // aendert. Ein identischer Ersatz ist der Normalfall und kein Fehler.
+  const aufmacherRe = /<article class="front-lead[^"]*"[\s\S]*?<\/article>/;
+  if (!aufmacherRe.test(html)) { console.error('Startseite: Aufmacher nicht gefunden, Markup geaendert?'); process.exitCode = 2; }
+  else html = html.replace(aufmacherRe, () => hero);
   }
   const s = ed.secondary;
   const brief = (a) => `<article class="front-brief ${a.bild ? 'secondary-lead' : ''}" data-story="${esc(a.id)}">${a.bild ? `<a class="brief-image" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${a.bild.fit ? ' contain' : ''}">${imgHtml(a.bild, '120px', false)}${badgeHtml(a.bild)}</div></a>` : ''}<div>${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><div class="meta">${zeitHtml(a, kurzZeit)}</div>${mehr(a)}</div></article>`;

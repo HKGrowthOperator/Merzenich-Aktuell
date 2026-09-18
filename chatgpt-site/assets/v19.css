@@ -1,5 +1,10 @@
+/* 18.09.: --red und --red-dark standen hier auf #806224 und #70551e, also auf
+   Oliv statt auf dem Marken-Bordeaux #971725 aus style.css. Dadurch erschienen
+   Ressortlabels teils oliv, teils bordeaux - dieselbe Klasse in zwei Farben.
+   Die Ueberschreibungen sind entfernt; die Marke kommt aus style.css.
+   --red-surface bleibt bewusst stehen, es faerbt Flaechen, nicht Text. */
 /* V19 — A local newspaper with a contemporary magazine rhythm. */
-:root{--paper:#fff;--card:#fff;--ink:#16181b;--ink-soft:#34373b;--muted:#686b70;--line:#dfe1e3;--stage:#111315;--stage-2:#202327;--gold:#c5a460;--gold-text:#806224;--gold-wash:#f3ecdd;--red:#806224;--red-dark:#70551e;--red-surface:#17191c;--radius:0;--shell:1320px}
+:root{--paper:#fff;--card:#fff;--ink:#16181b;--ink-soft:#34373b;--muted:#686b70;--line:#dfe1e3;--stage:#111315;--stage-2:#202327;--gold:#c5a460;--gold-text:#806224;--gold-wash:#f3ecdd;--red-surface:#17191c;--radius:0;--shell:1320px}
 body{background:var(--paper);color:var(--ink)}
 h1,h2,h3,h4{font-family:var(--sans);letter-spacing:-.035em;line-height:1.15;text-wrap:pretty}
 .shell{padding-inline:32px}.section{padding-top:48px}.eyebrow,.kicker{font-size:12px;letter-spacing:.085em;font-weight:750;line-height:1.45}.kicker .dist{font-size:12px;letter-spacing:0;font-weight:500;color:var(--muted)}

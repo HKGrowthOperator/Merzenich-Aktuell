@@ -79,7 +79,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=dfc73dabb7';
+    style.href = '/assets/editorial-audit.css?v=204fc06168';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
