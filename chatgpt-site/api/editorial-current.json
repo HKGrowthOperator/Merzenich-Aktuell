@@ -14,7 +14,7 @@
     "image": "/assets/symbolbilder/sport/sport-05-ball.svg",
     "imageAlt": "Fußball als neutrales Symbolbild",
     "imageBadge": "Symbolbild",
-    "imageFit": "contain",
+    "imageFit": "",
     "imageCredit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "imageType": "symbol",
     "imageId": "sport-05-ball",
@@ -37,11 +37,11 @@
     "imageBadge": "Symbolbild",
     "imageCredit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "imageType": "symbol",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Neue_Streifenwagen_f%C3%BCr_die_Polizei_vorgestellt.jpg",
     "imageLicense": "Projektasset – Nutzung durch Merzenich Aktuell",
     "imageRightsCheckedAt": "2026-09-18",
     "imageId": "polizei-08-einbruch",
     "imagePool": "polizei",
-    "imageSource": "Merzenich Aktuell / Editorial Image System V2"
+    "imageSource": "Merzenich Aktuell / Editorial Image System V2",
+    "imageFit": ""
   }
 }

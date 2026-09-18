@@ -1277,15 +1277,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/symbolbilder/vereine/vereine-01-vereinsleben.svg",
+    "src": "/assets/editorial/gemeinde-merzenich.png",
     "srcset": "",
-    "alt": "Vereinsleben als neutrales Symbolbild",
+    "alt": "Offizielles Zeichen der Gemeinde Merzenich",
     "width": 1600,
     "height": 900,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
-    "symbol": true
+    "fit": "contain",
+    "badge": "Offizielles Quellenmotiv",
+    "credit": "Gemeinde Merzenich · Heimat-Info",
+    "symbol": false
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T13:42:11.344Z",
+  "updatedAt": "2026-09-18T13:46:10.988Z",
   "assignments": {
     "/blaulicht/einbruch-arnoldsweilerweg/": {
       "imageId": "polizei-08-einbruch",
@@ -24,16 +24,6 @@
         "fussball",
         "spiel",
         "spieltag"
-      ]
-    },
-    "/rathaus/haushalt-2026-chronik/": {
-      "imageId": "vereine-01-vereinsleben",
-      "pool": "vereine",
-      "assignedAt": "2026-09-18T13:42:11.342Z",
-      "articleId": "-haushalt-2026-chronik",
-      "articleDate": "2026-09-04",
-      "tagsMatched": [
-        "verein"
       ]
     },
     "/sport/sc-golzheim-nachbarschaftsduell/": {
