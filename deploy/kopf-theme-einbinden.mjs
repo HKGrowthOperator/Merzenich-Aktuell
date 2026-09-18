@@ -11,13 +11,20 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from '
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { bildUrl } from './symbolbilder.mjs';
 import { SITE_URL } from './lib-artikel.mjs';
 const KONTAKT_MAIL = JSON.parse(readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '..'), 'deploy', 'site.json'), 'utf8')).kontaktMail;
 const KONTAKT_SEITEN = ['kontakt', 'ueber-uns', 'meldung-senden', 'korrekturen', 'redaktion'];
 const ALTE_DOMAIN = 'https://merzenich-aktuell.de';
 const SSI_DATUM = '<time data-today datetime="<!--# config timefmt="%Y-%m-%dT%H:%M:%S%z" --><!--# echo var="date_local" -->"><!--# config timefmt="%d.%m." --><!--# echo var="date_local" --></time>';
 const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Nur technischer URL-Proxy fuer alte externe Platzhalter. Editoriale Bildauswahl
+// liegt seit V2 ausschliesslich in deploy/symbolbilder.mjs + lib-symbolbilder.mjs.
+const bildUrl = (u) => {
+  const s = String(u || '').trim();
+  if (!s || s.startsWith('/')) return s;
+  if (!/^https?:\/\//i.test(s)) return '';
+  return `/api/bild?u=${encodeURIComponent(s)}`;
+};
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
