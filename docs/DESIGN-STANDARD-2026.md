@@ -1,6 +1,11 @@
 # Merzenich Aktuell – Design Standard 2026
 
-Stand: 17.09.2026 · Status: Planungsgrundlage, beschlossen im Gespräch (Entwurf 01). Kein Code.
+Stand: 18.09.2026, Fassung 2 · Status: verbindlich, beschlossen im Gespräch (Entwurf 01 und V2-Regeln).
+
+Fassung 2 ändert gegenüber Fassung 1 drei Dinge, jeweils auf Ansage des Auftraggebers:
+Abstandsleiter von sechs auf zehn Stufen, weil die Referenzen neun bis elf führen.
+Bildsystem: kein Beitrag bleibt bildlos, die frühere Regel "im Zweifel lieber kein Bild" ist aufgehoben.
+Farbwelt: keine großen beigefarbenen Flächen mehr, Gold verliert seine Rolle.
 Dieses Dokument ist die einzige Quelle für Gestaltung. Was hier nicht steht, gibt es nicht.
 
 ## 1. Zielbild
@@ -33,8 +38,12 @@ Leerzustand. Keine Platzhalter, keine erfundenen Zeiten, keine Attrappen.
 
 ## 3. Farben
 
-Eine Identität, keine Ressortfarben. Verteilung ungefähr 80 % Weiß/neutral, 15 %
-Bordeaux/Anthrazit, 5 % Gold/Creme.
+Eine Identität, keine Ressortfarben. Ziel ist Newsroom und Wirtschaftsmagazin, nicht Lifestyle.
+
+Ab Fassung 2: Weiß und Off-White als Fläche, Anthrazit für Text, Bordeaux als Marke, ein sehr dezentes
+neutrales Grau für Linien und Ruhezonen. Keine großen beigefarbenen Hintergründe. Gold höchstens als
+winziges Detail, wenn überhaupt, und nie für kleine Schrift, weil es den Kontrastwert verfehlt.
+Verteilung ungefähr 85 Prozent Weiß und Off-White, 13 Prozent Bordeaux und Anthrazit, 2 Prozent Akzent.
 
 | Token | Hell | Dunkel | Verwendung |
 |---|---|---|---|
@@ -75,8 +84,11 @@ umgebrochen in eine vierte Zeile, sondern redaktionell gekürzt; das Raster wäc
 
 - Inhaltsbreite 1200 px, 12 Spalten, Rinne 24 px, Seitenrand 20 px (mobil 16 px).
 - Umbrüche: 390 (mobil), 768 (Tablet), 1024 (kleiner Desktop), 1280 (Desktop).
-- Abstände nur 8 / 16 / 24 / 32 / 48 / 64. Sektionen 64 (mobil 48), zwischen Karten 24,
-  innerhalb einer Karte 8 und 16.
+- Abstände aus einer benannten Leiter mit zehn Stufen: 4, 8, 12, 16, 20, 24, 32, 48, 64, 96.
+  Dazu zwei fließende Werte für den Sektionsrhythmus: clamp(32px, 5vw, 64px) und clamp(48px, 7vw, 96px).
+  Gemessen führen Guardian neun Stufen von 4 bis 96 und BBC neun bis elf von 4 bis 56, dazu 80. Sechs
+  Werte wären enger als jede Referenz. Rohe Zwischenwerte bleiben innerhalb einer Komponente erlaubt,
+  der Rhythmus zwischen Blöcken kommt ausschließlich aus der Leiter.
 - Radien nur 0 (Redaktion), 6 (Bilder, Buttons), 12 (Dienstkarten).
 - Innerhalb einer Reihe haben alle Bilder dieselbe Höhe. Kein Bild bestimmt die Kartenhöhe.
 
@@ -94,8 +106,8 @@ Form oder Farbe.
 
 ## 7. Bildsystem
 
-Kein Teaser ohne gültiges Bild. Ein Teaser ohne gültiges Bild wird nicht in Hero oder
-Bildreihen gerendert, sondern nur in Größe S mit Ressortbild.
+Kein Beitrag bleibt bildlos. Das gilt ohne Ausnahme, auch für Blaulicht, Verkehr, Immobilien, Stellen,
+Familie und Trauer. Die Zuweisung geschieht im Generator zur Bauzeit, nicht im Browser.
 
 Formate: Hero 16:9 · Größe M 16:9 · Größe S 3:2 · Personen 4:3 · Immobilien 4:3 ·
 Fotostrecke 16:9. Mindestbreite eines Originalbilds für XL und M: 960 px, für S: 480 px.
@@ -103,29 +115,44 @@ Kleinere Bilder werden nicht hochgezogen, sondern durch die Ersatzlogik ersetzt.
 
 Bildpriorität:
 
-1. Originalbild des Ereignisses
-2. Bild der offiziellen Quelle
-3. Bild des Vereins oder Unternehmens (Logo nie als Hero, nur in Größe S)
-4. Ortsbild (nicht für Blaulicht)
-5. kuratiertes Stockmotiv
-6. kuratiertes Ressortbild
+1. echtes Bild der konkreten Meldung
+2. offizielles passendes Quellenbild: Feuerwehr, Verein, Kommune, Veranstalter
+3. passendes lokales Archivbild
+4. thematisches Symbolbild aus dem Pool der Kategorie
+5. niemals bildlos
 
 Originalbilder (Stufe 1 bis 3) werden unverändert und ohne Symbolbild-Kennzeichnung
 verwendet, mit Bildnachweis.
 
-Regeln für Ersatzbilder (Stufe 4 bis 6):
+Regeln für Ersatzbilder (Stufe 4):
 
 1. Jedes Ersatzbild trägt sichtbar „Symbolbild“, im Teaser und im Artikel.
 2. Kein Ersatzbild zeigt erkennbare Personen, Kennzeichen, Hausnummern, Firmenschilder oder
    ein fremdes Feuerwehrhaus.
 3. Ortsmotive nicht für Blaulicht. Blaulicht bekommt Fahrzeug- und Ausrüstungsmotive ohne
    Ortsbezug. Ortsmotive für Rathaus, Politik, Gemeinde, Veranstaltungen.
-4. Kuratierter Pool im Repo, je Kategorie 10 bis 30 Motive, Lizenz je Datei dokumentiert.
-   Auswahl deterministisch nach Meldungs-ID, nie zufällig je Seitenaufruf. Keine
-   generierten Bilder, keine Montagen.
+4. Kuratierter Pool im Repo, je Kategorie mehrere Motive, Lizenz je Datei dokumentiert. Die Auswahl ist
+   deterministisch je Meldung und innerhalb einer Kategorie gleichmäßig verteilt, damit nicht jede
+   dritte Meldung dasselbe Motiv zeigt. Keine generierten Bilder, keine Montagen.
+5. Vereinslogos sind kein allgemeiner Fallback. Ein Logo als großes Aufmacherbild sieht nicht nach
+   Redaktion aus. Für Fußball gehören Platz, Ball, Tor, Mannschaft, Tribüne oder lokales Vereinsumfeld
+   in den Pool. Ein Logo erscheint nur dort, wo das Logo selbst das Thema ist.
+6. Kein Foto, das zu einer anderen Meldung gehört, wird als Symbolbild einer fremden Meldung
+   wiederverwendet.
 
 Kategorien der Pools: Feuerwehr, Polizei, Verkehr, Fußball, Vereine, Rathaus/Politik,
 Wirtschaft, Immobilien, Stellen, Veranstaltungen, Hochzeit, Geburt, Trauer, Menschen.
+
+## 7a. Aufbau der oberen Fläche
+
+Die linke Service-Spalte bleibt als eigenständiges Element erhalten. Sie ist der Punkt, an dem sich
+Merzenich Aktuell von einer normalen Nachrichtenseite unterscheidet: links sofort das lokale Leben und
+die Dienste, rechts die Redaktion.
+
+Rechts daneben läuft eine dichte redaktionelle Matrix, damit kein Weißraum entsteht, während links
+sieben Servicepunkte stehen: ein Aufmacher mit großem Bild, zwei mittlere Meldungen nebeneinander,
+vier kompakte Meldungen, bei Bedarf eine Kurzmeldungsleiste. Die redaktionelle Fläche endet dadurch
+ungefähr auf derselben Höhe wie die Service-Spalte. Header und Footer bleiben unverändert.
 
 ## 8. Komponenten
 
