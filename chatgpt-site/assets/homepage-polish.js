@@ -5,6 +5,20 @@
  */
 (() => {
   'use strict';
+
+  /* Stilllegung 17.09.2026 — Gewerk 3: Laufzeit-Skripte schreiben kein Markup mehr um.
+   * Grund: Der ausgelieferte Stand ist der sichtbare Stand. Bilder, Bildnachweis und
+   * die Symbolbild-Kennzeichnung entscheidet die Redaktion im Inhalt, nicht ein
+   * Skript, das nach dem Laden ein Motiv nach Stichwoertern raet. Diese Datei hat
+   * genau das getan: Hero- und Nebenbilder nachtraeglich eingesetzt, eine zweite
+   * Ueberschrift eingeschoben und Anzeigen entfernt. Alles davon haengt jetzt an
+   * dieser Konstante und bleibt aus; die Startseite kommt fertig aus
+   * deploy/inhaltsindex.mjs und deploy/symbolbilder.mjs.
+   * Weiter laeuft nur, was ein Generator nicht vorberechnen kann: das sichtbare
+   * Tagesdatum und das Ausblenden abgelaufener Termine.
+   * true setzen ist nur zum Vergleichen gedacht, nicht fuer den Betrieb. */
+  const LAUFZEIT_UMBAU = false;
+
   const q=(s,r=document)=>r.querySelector(s), qa=(s,r=document)=>[...r.querySelectorAll(s)];
   const BERLIN='Europe/Berlin';
 
@@ -92,7 +106,15 @@
     qa('.ad-row-body').forEach(row=>{if(!q('.managed-ad,.ma-ad,img,picture,video',row))row.remove()});
   }
   function start(){
-    refreshVisibleDate();addDateline();expireAgenda();removeTextOnlyAds();ensureHomepageVisuals();
+    /* Bleibt: zeitabhaengig, kein Markup-Umbau. */
+    refreshVisibleDate();expireAgenda();
+    if(!LAUFZEIT_UMBAU)return;
+    /* Ab hier nur noch der stillgelegte Umbau: Datumszeile, Bildnachruestung,
+     * Anzeigenentfernung und der Beobachter, der das Raster nachgebessert hat.
+     * Der MutationObserver und die beiden Nachlaeufer nach 0,5 s und 1,8 s haben den
+     * Umbau gegen konkurrierende Layer verteidigt — ohne Umbau gibt es nichts zu
+     * verteidigen, und das Nachschieben von Bildern nach dem ersten Blick entfaellt. */
+    addDateline();removeTextOnlyAds();ensureHomepageVisuals();
     const grid=q('.frontpage-grid');
     if(grid&&'MutationObserver'in window){let timer;const obs=new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(ensureHomepageVisuals,60)});obs.observe(grid,{childList:true,subtree:true});setTimeout(()=>obs.disconnect(),8000)}
     setTimeout(ensureHomepageVisuals,500);setTimeout(ensureHomepageVisuals,1800);

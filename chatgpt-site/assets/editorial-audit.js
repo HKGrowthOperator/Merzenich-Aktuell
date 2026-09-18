@@ -1,6 +1,21 @@
 /* Merzenich Aktuell — Editorial QA runtime, 17.09.2026 */
 (() => {
   'use strict';
+
+  /* Stilllegung 17.09.2026 — Gewerk 3: Laufzeit-Skripte schreiben kein Markup mehr um.
+   * Grund: Der ausgelieferte Stand ist der sichtbare Stand. Wer die Seite ohne
+   * JavaScript, mit langsamer Verbindung oder als Suchmaschine liest, muss dasselbe
+   * sehen wie alle anderen. Gestaltung, Reihenfolge und Inhalt entstehen deshalb in
+   * den Generatoren unter deploy/*.mjs und stehen fertig im HTML.
+   * Alles, was hier Markup erzeugt, ersetzt oder umsortiert, haengt an dieser
+   * Konstante und bleibt aus. Weiter laufen nur zwei Gruppen:
+   *   - Zeitabhaengiges, das ein Generator nicht vorberechnen kann: Uhr und
+   *     Tagesdatum (1), abgelaufene Termine (4).
+   *   - Bedienung und echte Laufzeitzustaende: Ortsleiste auf- und zuklappen (2b),
+   *     totes Wettermodul wegblenden (5), Ladefehler eines Dienstes (6).
+   * true setzen ist nur zum Vergleichen gedacht, nicht fuer den Betrieb. */
+  const LAUFZEIT_UMBAU = false;
+
   const q=(s,r=document)=>r.querySelector(s), qa=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const path=location.pathname.replace(/\/+$/,'')||'/';
   const htmlEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
@@ -54,7 +69,11 @@
       });
     });
   }
-  simplifyNav();
+  /* Stillgelegt: Die Ressortleiste ist Gestaltung. Welche sechs Ziele oben stehen,
+   * wie sie heissen und was unter "Mehr" wandert, gehoert in den Generator, der die
+   * Kopfzeile schreibt (deploy/kopf-theme-einbinden.mjs). Ein Umbau nach dem Laden
+   * laesst die Navigation sichtbar springen. */
+  if (LAUFZEIT_UMBAU) simplifyNav();
 
   /* 2b) Ortsteile sind eine echte einklappbare Navigation, keine starre Linkleiste. */
   function setupDistrictToggle(){
@@ -101,7 +120,13 @@
       grid.dataset.editorialVerified='1';
     }catch(e){/* stabiles ausgeliefertes HTML bleibt Fallback */}
   }
-  if(path==='/'){
+  /* Stillgelegt: Das Startseitenraster wird von deploy/inhaltsindex.mjs gebaut und
+   * steht vollstaendig im ausgelieferten HTML. Ein zweiter Aufbau per innerHTML nach
+   * dem Laden verwirft die fertigen Bilder samt Bildnachweis, verliert die
+   * Symbolbild-Kennzeichnung und erzeugt einen sichtbaren Sprung. Der
+   * MutationObserver hat diesen Neubau zusaetzlich gegen fremde Layer verteidigt und
+   * faellt mit weg — ohne Umbau gibt es nichts zu verteidigen. */
+  if(LAUFZEIT_UMBAU && path==='/'){
     verifiedHomepage();
     const grid=q('.frontpage-grid');
     if(grid&&'MutationObserver' in window){
@@ -138,27 +163,44 @@
     qa('main p, main div').forEach(el=>{if(el.children.length)return;if(!/^\s*(wird geladen|die diskussion wird geladen)[….\.]*\s*$/i.test(el.textContent||''))return;const box=document.createElement('div');box.className='editorial-error';box.innerHTML='<h2>Inhalt konnte nicht geladen werden</h2><p>Die Verbindung zum Dienst ist gerade nicht verfügbar. Die übrige Website funktioniert weiter.</p><button type="button">Erneut versuchen</button>';q('button',box).addEventListener('click',()=>location.reload());el.replaceWith(box)});
   },8000);
 
-  /* 7) Leeres Menschen-Ressort zeigt keine fachfremden Fallbacks. */
-  if(path==='/menschen'){
+  /* 7) Leeres Menschen-Ressort zeigt keine fachfremden Fallbacks.
+   * Stillgelegt: Der Leerzustand ist redaktioneller Inhalt mit Ueberschrift, Text und
+   * drei Verweisen. Er gehoert in die Ressortseite selbst, nicht in ein Skript, das
+   * den Feed nach dem Laden per innerHTML ersetzt. */
+  if(LAUFZEIT_UMBAU && path==='/menschen'){
     const count=q('.count-line');
     if(count&&/^\s*0\s+Meldung/.test(count.textContent||'')){const feed=q('.feed');if(feed)feed.innerHTML='<div class="editorial-empty"><h2>Menschen & Familien aus der Gemeinde</h2><p>Hier erscheinen veröffentlichte Jubiläen, Hochzeiten, Ehrungen, Nachrufe und Porträts. Solange keine redaktionell bestätigten Meldungen vorliegen, zeigen wir keine fachfremden Ersatzartikel.</p><div class="editorial-empty-actions"><a href="/familienanzeigen/">Familienanzeigen</a><a href="/traueranzeigen/">Traueranzeigen</a><a href="/meldung-senden/">Meldung einsenden</a></div></div>'}
   }
 
-  /* 8) Themenübersicht: Top-Themen statt CMS-Wolke. */
-  if(path==='/thema'){
+  /* 8) Themenübersicht: Top-Themen statt CMS-Wolke.
+   * Stillgelegt: Sortierung nach Haeufigkeit und die Grenze bei 20 Themen sind
+   * Gestaltungsentscheidungen. Sie gehoeren in deploy/thema-prerender.mjs, das die
+   * Themenseite ohnehin schreibt. Der Aufklapper waere Bedienung, haengt hier aber am
+   * Umbau: Ohne vorgerendertes Markup gibt es nichts zu bedienen. */
+  if(LAUFZEIT_UMBAU && path==='/thema'){
     const cloud=q('.tagcloud');if(cloud){const links=qa(':scope > a',cloud);links.sort((a,b)=>{const n=x=>Number((q('small',x)?.textContent||'0').replace(/\D/g,''))||0;return n(b)-n(a)||a.textContent.localeCompare(b.textContent,'de')}).forEach((a,i)=>{cloud.append(a);if(i>=20)a.dataset.editorialExtra='1'});if(links.length>20){cloud.classList.add('is-collapsed');const btn=document.createElement('button');btn.type='button';btn.className='editorial-topic-toggle';btn.textContent='Alle Themen A–Z anzeigen';btn.addEventListener('click',()=>{const closed=cloud.classList.toggle('is-collapsed');btn.textContent=closed?'Alle Themen A–Z anzeigen':'Top-Themen anzeigen'});cloud.after(btn)}}
   }
 
   /* 9) Ortsseiten: News zuerst, Ortsporträt danach. */
   const placePaths=['/merzenich','/golzheim','/girbelsrath','/morschenich','/buergewald'];
-  if(placePaths.includes(path)){
+  /* Stillgelegt: Die Reihenfolge "News zuerst, Ortsportraet danach" ist Gestaltung und
+   * muss schon im ausgelieferten HTML stimmen. Ein Verschieben nach dem Laden laesst
+   * die Seite umspringen. Die angehaengte Zeile "zuletzt aktualisiert" nannte zudem
+   * immer den Abruftag, nicht den Tag der letzten redaktionellen Aenderung — das ist
+   * keine echte Angabe und darf so nicht zurueckkommen. */
+  if(LAUFZEIT_UMBAU && placePaths.includes(path)){
     const main=q('main'),intro=q('.place-intro',main),news=q(':scope > section.section',main);
     if(intro&&news){news.after(intro);intro.classList.add('editorial-place-portrait');const p=berlinParts(),count=q('.page-head .count-line',main);if(count&&!q('.editorial-updated',count)){const span=document.createElement('span');span.className='editorial-updated';span.textContent=` · zuletzt aktualisiert ${p.day}.${p.month}.${p.year}`;count.append(span)}}
   }
 
-  /* 10) Interne Projekttexte gehören nicht in Artikelseiten. */
-  qa('.author-box p,.info-prose p').forEach(p=>{if((p.textContent||'').includes('Namentlich gezeichnete Beiträge folgen, sobald das Team steht'))p.textContent=(p.textContent||'').replace('Namentlich gezeichnete Beiträge folgen, sobald das Team steht.','Beiträge werden redaktionell geprüft und transparent gekennzeichnet.')});
+  /* 10) Interne Projekttexte gehören nicht in Artikelseiten.
+   * Stillgelegt: Ein Satz, der im Browser gegen einen anderen getauscht wird, steht
+   * falsch in der Quelle. Der richtige Wortlaut gehoert in die Artikelvorlage. */
+  if(LAUFZEIT_UMBAU) qa('.author-box p,.info-prose p').forEach(p=>{if((p.textContent||'').includes('Namentlich gezeichnete Beiträge folgen, sobald das Team steht'))p.textContent=(p.textContent||'').replace('Namentlich gezeichnete Beiträge folgen, sobald das Team steht.','Beiträge werden redaktionell geprüft und transparent gekennzeichnet.')});
 
-  /* 11) Öffentlich sichtbare Redaktion nutzt eine Markenadresse. */
-  if(['/kontakt','/redaktion','/ueber-uns','/meldung-senden'].includes(path))qa('a[href="mailto:info@kbs-management.tv"]').forEach(a=>{a.href='mailto:redaktion@merzenich-aktuell.de';a.textContent='redaktion@merzenich-aktuell.de'});
+  /* 11) Öffentlich sichtbare Redaktion nutzt eine Markenadresse.
+   * Stillgelegt: Eine Kontaktadresse, die erst im Browser umgeschrieben wird, steht in
+   * der ausgelieferten Seite falsch — Mailprogramme, Kopieren und Suchmaschinen sehen
+   * die alte. Die richtige Adresse gehoert in die Quellseiten. */
+  if(LAUFZEIT_UMBAU && ['/kontakt','/redaktion','/ueber-uns','/meldung-senden'].includes(path))qa('a[href="mailto:info@kbs-management.tv"]').forEach(a=>{a.href='mailto:redaktion@merzenich-aktuell.de';a.textContent='redaktion@merzenich-aktuell.de'});
 })();

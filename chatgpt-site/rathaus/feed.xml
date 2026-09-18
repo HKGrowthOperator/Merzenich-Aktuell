@@ -12,6 +12,61 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
+<title>Die Chronik des 2026er-Gemeindehaushalts</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial/gemeinde-merzenich.png" medium="image"><media:credit>Gemeinde Merzenich · Heimat-Info</media:credit><media:description>Offizielles Zeichen der Gemeinde Merzenich</media:description></media:content>
+</item>
+<item>
+<title>Die ganze Gemeinde in einer App</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Heimat-Info App bündelt Veranstaltungen, Bekanntmachungen und Warnmeldungen. Vereine können eigene Inhalte veröffentlichen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/9dcc2811fc8f96-768.webp" medium="image"><media:credit>Cosmema GmbH</media:credit><media:description>Start der Heimat-Info App der Gemeinde Merzenich</media:description></media:content>
+</item>
+<item>
+<title>Erstes Jugendgremium in Merzenich gewählt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/574e8ee34ee536-768.webp" medium="image"><media:credit>Jugendgremium der Gemeinde Merzenich</media:credit><media:description>Wahl des ersten Jugendgremiums in Merzenich</media:description></media:content>
+</item>
+<item>
+<title>Helfen Sie mit beim Nahverkehrsplan</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/nahverkehrsplan-beteiligung/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/nahverkehrsplan-beteiligung/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Kreis Düren stellt seinen Nahverkehrsplan neu auf. Bis Ende Februar 2026 können Hinweise straßengenau auf einer Karte eingetragen werden.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/4c0d56e27ec89b-1440.webp" medium="image"><media:credit>Buravleva stock / Shutterstock (Symbolbild)</media:credit><media:description>Beteiligung am Nahverkehrsplan des Kreises Düren</media:description></media:content>
+</item>
+<item>
+<title>Das ist der neue Rat der Gemeinde Merzenich</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/neuer-gemeinderat/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/neuer-gemeinderat/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Rat ist vereidigt: 27 Mitglieder inklusive Bürgermeister. Georg Gelhausen führt die Gemeinde in seiner dritten Amtszeit.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/b301922570e52f-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Der neue Rat der Gemeinde Merzenich</media:description></media:content>
+</item>
+<item>
 <title>Bürgermeister-Sprechstunde am Freitag in Morschenich</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</guid>
@@ -32,61 +87,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Merzenich beteiligt sich vom 11. bis 25. September an der Fairen Woche. Für den 20. September ist eine gemeindeweite Müllsammelaktion geplant.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/6dbd3a8d61b0e6-360.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Plakat der Fairen Woche in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Erstes Jugendgremium in Merzenich gewählt</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/</guid>
-<pubDate>Wed, 26 Aug 2026 09:29:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/574e8ee34ee536-768.webp" medium="image"><media:credit>Jugendgremium der Gemeinde Merzenich</media:credit><media:description>Wahl des ersten Jugendgremiums in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Die Chronik des 2026er-Gemeindehaushalts</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</guid>
-<pubDate>Invalid Date</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial/gemeinde-merzenich.png" medium="image"><media:credit>Gemeinde Merzenich · Heimat-Info</media:credit><media:description>Offizielles Zeichen der Gemeinde Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Die ganze Gemeinde in einer App</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/</guid>
-<pubDate>Invalid Date</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Heimat-Info App bündelt Veranstaltungen, Bekanntmachungen und Warnmeldungen. Vereine können eigene Inhalte veröffentlichen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/9dcc2811fc8f96-768.webp" medium="image"><media:credit>Cosmema GmbH</media:credit><media:description>Start der Heimat-Info App der Gemeinde Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Helfen Sie mit beim Nahverkehrsplan</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/nahverkehrsplan-beteiligung/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/nahverkehrsplan-beteiligung/</guid>
-<pubDate>Invalid Date</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der Kreis Düren stellt seinen Nahverkehrsplan neu auf. Bis Ende Februar 2026 können Hinweise straßengenau auf einer Karte eingetragen werden.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/4c0d56e27ec89b-1440.webp" medium="image"><media:credit>Buravleva stock / Shutterstock (Symbolbild)</media:credit><media:description>Beteiligung am Nahverkehrsplan des Kreises Düren</media:description></media:content>
-</item>
-<item>
-<title>Das ist der neue Rat der Gemeinde Merzenich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/neuer-gemeinderat/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/neuer-gemeinderat/</guid>
-<pubDate>Invalid Date</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der Rat ist vereidigt: 27 Mitglieder inklusive Bürgermeister. Georg Gelhausen führt die Gemeinde in seiner dritten Amtszeit.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/b301922570e52f-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Der neue Rat der Gemeinde Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

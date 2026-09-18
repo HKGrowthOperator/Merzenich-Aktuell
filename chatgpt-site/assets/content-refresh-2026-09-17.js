@@ -9,6 +9,19 @@
   const q = (s, r=document) => r.querySelector(s);
   const qa = (s, r=document) => Array.from(r.querySelectorAll(s));
 
+  /* Stilllegung 17.09.2026 — Gewerk 3: Laufzeit-Skripte schreiben kein Markup mehr um.
+   * Grund: Der ausgelieferte Stand ist der sichtbare Stand. Diese Datei war ein
+   * kompletter Redaktionsstand in JavaScript-Form: Sie hat Termine, Familien- und
+   * Traueranzeigen, Marktverweise und einen Umkreis-Block erst nach dem Laden in die
+   * Seite geschrieben, dazu ein eigenes Stylesheet in den Kopf gehaengt. Damit stand
+   * echter Inhalt nur im Skript und nicht in der Seite, und die Gestaltung kam aus
+   * einer zehnten Quelle. Beides gehoert in die Generatoren unter deploy/*.mjs.
+   * Alle Einstiege haengen jetzt an dieser Konstante und bleiben aus. Der Inhalt
+   * bleibt im Quelltext stehen, damit die Redaktion ihn uebernehmen kann, ohne ihn
+   * neu zu recherchieren; wohin er gehoert, steht in den naechsten Schritten.
+   * true setzen ist nur zum Vergleichen gedacht, nicht fuer den Betrieb. */
+  const LAUFZEIT_UMBAU = false;
+
   const style = document.createElement('style');
   style.textContent = `
     .ma-refresh-note{border-top:3px solid #8e1f2d;border-bottom:1px solid var(--line,#ddd);padding:12px 0;margin:0 0 20px;font-size:.88rem;color:var(--muted,#666)}
@@ -18,7 +31,10 @@
     .ma-umkreis{margin:36px auto}.ma-umkreis-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.ma-umkreis-head h2{margin:2px 0 0}.ma-umkreis-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.ma-umkreis-card{border-top:2px solid #8e1f2d;padding-top:12px}.ma-umkreis-card h3{font-size:1.12rem;margin:5px 0 7px}.ma-umkreis-card p{margin:0 0 9px}.ma-umkreis-card .eyebrow{display:block}
     @media(max-width:800px){.ma-live-grid,.ma-umkreis-grid{grid-template-columns:1fr}.ma-umkreis-head{display:block}}
   `;
-  document.head.append(style);
+  /* Das Stylesheet formatiert ausschliesslich Markup, das diese Datei selbst erzeugt
+   * hat. Ohne dieses Markup waere es toter Ballast und eine weitere Schicht im
+   * ohnehin ueberfuellten CSS-Stapel — deshalb haengt auch die Einbindung am Schalter. */
+  if (LAUFZEIT_UMBAU) document.head.append(style);
 
   function a(url, text){ return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`; }
 
@@ -108,9 +124,17 @@
     </div><p><a href="/kontakt/">Traueranzeige bei Merzenich Aktuell aufgeben</a></p>`;
   }
 
-  if(path==='/') refreshHome();
-  if(path==='/jobs') marketMore('jobs');
-  if(path==='/immobilien') marketMore('immobilien');
-  if(path==='/familienanzeigen') family();
-  if(path==='/traueranzeigen') trauer();
+  /* Stillgelegt: jeder dieser Einstiege ersetzt oder ergaenzt Markup nach dem Laden.
+   * Die Startseite kommt aus deploy/inhaltsindex.mjs, die Terminliste aus
+   * deploy/termine-prerender.mjs, die Marktseiten aus deploy/markt-prerender.mjs.
+   * Familien- und Traueranzeigen haben bisher keinen Generator; ihr Inhalt steht
+   * oben in family() und trauer() und muss in den Redaktionsbestand uebernommen
+   * werden, bevor die Seiten ihn zeigen koennen. */
+  if(LAUFZEIT_UMBAU){
+    if(path==='/') refreshHome();
+    if(path==='/jobs') marketMore('jobs');
+    if(path==='/immobilien') marketMore('immobilien');
+    if(path==='/familienanzeigen') family();
+    if(path==='/traueranzeigen') trauer();
+  }
 })();

@@ -12,21 +12,10 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/morschenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
-<title>Bürgermeister-Sprechstunde am Freitag in Morschenich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</guid>
-<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Morschenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Georg Gelhausen beantwortet am 4. September von 18 bis 19 Uhr Fragen im Bürgewaldzentrum. Eine Anmeldung ist nicht erforderlich.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/aa69fa186a0719-360.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Ankündigung der Bürgersprechstunde in Morschenich</media:description></media:content>
-</item>
-<item>
 <title>Von Morschenich aus den Blick nach Köln genießen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/</guid>
-<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
 <category>Leben</category>
 <category>Morschenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
@@ -37,12 +26,23 @@
 <title>Grünes Licht für den Masterplan Bürgewald</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</guid>
-<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Morschenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/37c79d0e603f3a-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Masterplanprozess für Morschenich-Alt im Bürgewald</media:description></media:content>
+</item>
+<item>
+<title>Bürgermeister-Sprechstunde am Freitag in Morschenich</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/</guid>
+<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Morschenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Georg Gelhausen beantwortet am 4. September von 18 bis 19 Uhr Fragen im Bürgewaldzentrum. Eine Anmeldung ist nicht erforderlich.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/aa69fa186a0719-360.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Ankündigung der Bürgersprechstunde in Morschenich</media:description></media:content>
 </item>
 </channel>
 </rss>

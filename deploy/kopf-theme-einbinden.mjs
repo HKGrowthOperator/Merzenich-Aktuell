@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Bindet Darstellung (theme.css/theme.js), einklappenden Kopf (kopf.js) und
+ * Bindet Fundament-Tokens (system.css, vor allen Projektdateien),
+ * Darstellung (theme.css/theme.js), einklappenden Kopf (kopf.js) und
  * Kommentare (kommentare.js) in alle Seiten von chatgpt-site/ ein, die
  * korrekturen.css laden, und setzt den Link zur Diskussion ins Mehr-Menue.
  * Idempotent: was schon drin ist, wird nicht doppelt eingefuegt.
@@ -36,8 +37,14 @@ function versioniere(html) {
   return html.replace(/(<(?:link|script)\b[^>]*?\b(?:href|src)=")(\/assets\/[^"?]+\.(?:css|js))(?:\?[^"]*)?(")/g, (m, a, pfad, z) => { const h = assetHash(pfad); return h ? `${a}${pfad}?v=${h}${z}` : m; });
 }
 const CSS_ANKER = /<link rel="stylesheet" href="\/assets\/korrekturen\.css[^"]*">/;
+// system.css traegt nur die Tokens (Abstand, Typo, Radius, Breite) und muss
+// deshalb VOR allen Projektdateien stehen, damit style.css und alles danach
+// sie nutzen kann. style.css ist auf jeder Seite, die korrekturen.css laedt,
+// die erste Projektdatei - und damit der verlaessliche Anker zum Davorhaengen.
+const SYSTEM_ANKER = /<link rel="stylesheet" href="\/assets\/style\.css[^"]*">/;
 const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
 const INLINE = '<script>try{document.documentElement.dataset.theme=localStorage.getItem("merzenich-theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>';
+const SYSTEM = `<link rel="stylesheet" href="/assets/system.css?${V}">`;
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
 const JS = `<script src="/assets/kopf.js?${V}" defer></script><script src="/assets/theme.js?${V}" defer></script>`;
 const KOMMENTARE = `<script src="/assets/kommentare.js?${V}" defer></script>`;
@@ -79,6 +86,11 @@ for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
   if (!CSS_ANKER.test(html)) { uebersprungen++; continue; }
   const alt = html;
+  // Fundament zuerst: vor style.css, nicht dahinter (siehe SYSTEM_ANKER).
+  if (!html.includes('/assets/system.css')) {
+    if (!SYSTEM_ANKER.test(html)) { fehler++; console.error('kein style.css-Anker: ' + pfad); continue; }
+    html = html.replace(SYSTEM_ANKER, (m) => SYSTEM + m);
+  }
   if (!html.includes('/assets/theme.css')) html = html.replace(CSS_ANKER, (m) => m + CSS);
   if (!html.includes('merzenich-theme')) html = html.replace('<head>', '<head>' + INLINE);
   if (!html.includes('/assets/kopf.js')) {

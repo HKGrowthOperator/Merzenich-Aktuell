@@ -12,6 +12,17 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/vereine/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
+<title>Mehr Platz für die Girbelsrather Vereine</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/939564298cdfdc-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Drei neue Seecontainer vor der Maarhalle in Girbelsrath</media:description></media:content>
+</item>
+<item>
 <title>FC-Fanclub startet mit knapp 30 Gästen in die neue Bundesliga-Saison</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/vereine/fanclub-saisonauftakt/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/fanclub-saisonauftakt/</guid>
@@ -21,17 +32,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der 1. FC Köln Fanclub Merzenich 1967 traf sich zum Saisonauftakt in der Soccerhalle. Gemeinsam wurde der 3:2-Sieg gegen Hoffenheim verfolgt.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/c87735f6d1ed7e-340.webp" medium="image"><media:credit>1. FC Köln Fanclub Merzenich 1967 / Heimat-Info</media:credit><media:description>Saisonauftakt des FC-Fanclubs Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Mehr Platz für die Girbelsrather Vereine</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</guid>
-<pubDate>Fri, 14 Aug 2026 12:06:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/939564298cdfdc-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Drei neue Seecontainer vor der Maarhalle in Girbelsrath</media:description></media:content>
 </item>
 </channel>
 </rss>

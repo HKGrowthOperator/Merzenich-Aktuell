@@ -13,6 +13,12 @@
  *   - feed.xml, atom.xml, feed.json, Ressort-/Ortsfeeds, news-sitemap.xml,
  *     sitemap-artikel.xml
  *   - Sidebox "Neueste Meldungen" auf allen Seiten
+ * Der Index traegt zusaetzlich den Bestand: je Ressort und je Ortsteil die
+ * echte Anzahl der Meldungen und den Zustand der zugehoerigen Listenseite.
+ * Damit muss niemand nachzaehlen - weder ein spaeterer Generator noch die
+ * Pruefung. Eine Liste ohne Meldung bekommt keine leere Flaeche, sondern einen
+ * benannten Leerzustand, und am Ende des Laufs steht der Bestand auf der
+ * Konsole, mit einer Warnzeile je Bereich ohne Meldung.
  * Vorher wurden diese Ansichten getrennt gepflegt; ein neuer Artikel fehlte
  * dann in Ressort, Archiv, Ort, Feed und auf der Startseite (Audit 17.09.).
  * Idempotent. Aufruf: node deploy/inhaltsindex.mjs [--check]
@@ -20,12 +26,24 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, esc, dmyLang, ORTSTEILE, SITE_URL } from './lib-artikel.mjs';
+import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
 const site = join(wurzel, 'chatgpt-site');
 const SEITENGROESSE = 12;
+// Alle Ressorts, die die Seite anbietet - auch die ohne eigene Meldung. Nur so
+// faellt auf, wenn ein Bereich etwas verspricht, das es redaktionell nicht gibt.
+// Reihenfolge = Reihenfolge der Navigation.
+const RESSORT_ORDNUNG = ['nachrichten', 'blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine', 'kultur'];
+// /nachrichten/ ist das Gesamtarchiv und sammelt alle Meldungen; unter dem
+// Ordner selbst liegt kein Beitrag. Ein Zaehlerstand 0 ist dort also richtig
+// und keine Luecke - die Liste fuehrt trotzdem alle Meldungen.
+const ARCHIV_RESSORT = 'nachrichten';
+// 'region' vergibt lib-artikel.mjs, wenn die Ortszeile einen Ort nennt, der
+// kein Ortsteil der Gemeinde ist. Redaktionell gibt es diesen Bereich noch
+// nicht; er wird mitgezaehlt, damit das sichtbar bleibt.
+const ORT_ORDNUNG = [...Object.keys(ORTSTEILE), 'region'];
 const geaendert = []; const geloescht = [];
 function schreibe(rel, inhalt) {
   const pfad = join(site, rel);
@@ -37,13 +55,35 @@ function schreibe(rel, inhalt) {
 }
 const x = (s) => String(s ?? '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]));
 const abs = (u) => (u && /^https?:/.test(u) ? u : SITE_URL + u);
+// Klartext aus einer ausgelieferten Seite lesen (Seitenkopf, nicht der Feed).
+const seitenText = (html, re) => entschaerfen(String((re.exec(html) || ['', ''])[1]).replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+// Zeitzeile nur, wenn es ein Veroeffentlichungsdatum gibt. Ein leeres
+// <time datetime=""></time> ist ungueltiges Markup (das Attribut muss, wenn
+// es dasteht, ein gueltiges Datum tragen) und behauptet eine Angabe, die die
+// Meldung nicht hat. Die bewusst undatierten Hintergrundstuecke - im
+// Artikelkopf als "Quelle ohne Veroeffentlichungsdatum" gekennzeichnet -
+// erscheinen in den Listen deshalb ganz ohne Zeitzeile.
+const zeitHtml = (a, fmt) => (a.datum ? `<time datetime="${esc(a.datum)}">${fmt(a.datum)}</time>` : '');
 const kurzZeit = (iso) => { const d = new Date(iso); return new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(d) + ' · ' + new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit' }).format(d) + ' Uhr'; };
 
 // ------------------------------------------------------------------ Index
 const artikel = artikelSammeln(site);
 const neuester = artikel.reduce((m, a) => (a.aktualisiert || a.datum) > m ? (a.aktualisiert || a.datum) : m, '');
-const index = { generated: neuester, anzahl: artikel.length, hinweis: 'Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.', artikel: artikel.map((a) => ({ id: a.id, url: a.url, titel: a.titel, teaser: a.teaser, kicker: a.kicker, ressort: a.ressort, ressortLabel: a.ressortLabel, ort: a.ort, ortsteil: a.ortsteil, datum: a.datum, aktualisiert: a.aktualisiert || a.datum, lesezeit: a.lesezeit, themen: a.themen, bild: a.bild })) };
-schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
+// Bestand je Ressort und je Ortsteil: einmal zaehlen, in den Index schreiben.
+// Unbekannte Schluessel werden mitgezaehlt statt verschluckt, damit die Summe
+// der Zaehler immer der Zahl der Artikel entspricht.
+function zaehlen(feld, ordnung) {
+  const z = Object.fromEntries(ordnung.map((k) => [k, 0]));
+  for (const a of artikel) { const k = a[feld] || ''; z[k] = (z[k] || 0) + 1; }
+  return z;
+}
+const bestandRessort = zaehlen('ressort', RESSORT_ORDNUNG);
+const bestandOrt = zaehlen('ortsteil', ORT_ORDNUNG);
+// Zustand jeder Listenseite; fuellt listeSchreiben() waehrend des Laufs.
+const bestandListen = {};
+const index = { generated: neuester, anzahl: artikel.length, bestand: null, hinweis: 'Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.', artikel: artikel.map((a) => ({ id: a.id, url: a.url, titel: a.titel, teaser: a.teaser, kicker: a.kicker, ressort: a.ressort, ressortLabel: a.ressortLabel, ort: a.ort, ortsteil: a.ortsteil, datum: a.datum, aktualisiert: a.aktualisiert || a.datum, lesezeit: a.lesezeit, themen: a.themen, bild: a.bild, undatiert: !!a.undatiert, abgerufen: a.abgerufen || '' })) };
+// Geschrieben wird der Index erst nach den Listen: bestand.listen haelt fest,
+// welche Listenseite der Generator wirklich gepflegt hat.
 
 // ------------------------------------------------------------ Bausteine
 const locHtml = (a) => `<div class="location-line"><span class="location-brand">${esc(a.ort)}</span>${a.ortsteilLabel ? ' · ' + esc(a.ortsteilLabel) : ''}</div>`;
@@ -52,13 +92,30 @@ const badgeHtml = (b) => (b.badge ? `<span class="badge">${esc(b.badge)}</span>`
 const mehr = (a) => `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`;
 function leadHtml(a) {
   const b = a.bild;
-  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${dmyLang(a.datum)}</time>${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
+  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
 }
 function rowHtml(a) {
   const b = a.bild;
-  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${dmyLang(a.datum)}</time>${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
+  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
 }
-const leerHtml = '<p class="empty">In diesem Bereich ist noch keine Meldung erschienen. Sie haben einen Hinweis für die Redaktion? <a href="/meldung-senden/">Meldung senden</a>.</p>';
+/**
+ * Leerzustand einer Liste: Ueberschrift, ein Satz, was hier erscheinen wird,
+ * und der Weg zur Redaktion. Eine Liste ohne Meldung zeigte bisher nur eine
+ * einzelne graue Zeile - das liest sich wie ein Fehler, nicht wie eine Aussage.
+ *
+ * Der beschreibende Satz stammt aus der Seite selbst (<p class="desc"> im
+ * Seitenkopf). Damit steht im Leerzustand nur, was die Redaktion dort ohnehin
+ * ankuendigt; erfunden wird nichts. Fehlt die Beschreibung, bleibt der Satz weg.
+ *
+ * Ausgezeichnet wird mit der vorhandenen .facts-Box, damit keine neue
+ * CSS-Schicht entsteht; data-leerzustand ist die Marke, an der ersetzeFeed()
+ * den Block beim naechsten Lauf wiederfindet (Idempotenz).
+ */
+function leerHtml(html, basis) {
+  const desc = seitenText(html, /<p class="desc">([\s\S]*?)<\/p>/);
+  const satz = (desc ? esc(desc) + ' ' : '') + 'Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.';
+  return `<div data-leerzustand="${esc(basis)}" class="facts"><h2>Noch keine Meldung</h2><p>${satz}</p><p>Sie haben einen Hinweis für die Redaktion? <a href="/meldung-senden/">Meldung senden</a>.</p></div>`;
+}
 function paginationHtml(basis, n, k) {
   if (k < 2) return '';
   const prev = n === 2 ? basis : `${basis}seite/${n - 1}/`;
@@ -70,7 +127,9 @@ function ersetzeFeed(html, neuInnen) {
   let ende = html.indexOf('<aside class="sidebar">', start); if (ende < 0) ende = html.indexOf('</section>', start); if (ende < 0) return null;
   const schluss = html.lastIndexOf('</div>', ende); if (schluss < start) return null;
   const innen = html.slice(start + '<div class="feed">'.length, schluss);
-  const marken = ['<article class="feed-lead"', '<article data-story=', '<p class="empty"', '<nav class="pagination"'].map((m) => innen.indexOf(m)).filter((i) => i >= 0);
+  // '<p class="empty"' ist der alte, einzeilige Leerzustand: die Marke bleibt,
+  // damit er beim ersten Lauf ersetzt und nicht als Vorspann bewahrt wird.
+  const marken = ['<article class="feed-lead"', '<article data-story=', '<div data-leerzustand', '<p class="empty"', '<nav class="pagination"'].map((m) => innen.indexOf(m)).filter((i) => i >= 0);
   const praefix = (marken.length ? innen.slice(0, Math.min(...marken)) : innen).replace(/\s+$/, '');
   return html.slice(0, start) + '<div class="feed">' + praefix + neuInnen + '\n    ' + html.slice(schluss);
 }
@@ -78,11 +137,16 @@ const zaehler = (html, n) => html.replace(/<p class="count-line">\d+ Meldung(?:e
 
 function listeSchreiben(basis, items, { seiten = true } = {}) {
   const rel1 = basis.replace(/^\//, '') + 'index.html';
-  const pfad1 = join(site, rel1); if (!existsSync(pfad1)) return;
-  const html1 = readFileSync(pfad1, 'utf8'); if (!html1.includes('<div class="feed">')) return;
+  // Buchfuehrung fuer den Bestand: 'keine Seite' und 'kein Feed' sind keine
+  // Fehler, sondern Bereiche, die dieser Generator nicht pflegen kann. Sie
+  // muessen trotzdem im Index stehen, sonst sieht niemand die Luecke.
+  const buchen = (zustand) => { bestandListen[basis] = { anzahl: items.length, liste: zustand }; };
+  const pfad1 = join(site, rel1); if (!existsSync(pfad1)) { buchen('keine Seite'); return; }
+  const html1 = readFileSync(pfad1, 'utf8'); if (!html1.includes('<div class="feed">')) { buchen('kein Feed'); return; }
+  buchen('gepflegt');
   const k = seiten ? Math.max(1, Math.ceil(items.length / SEITENGROESSE)) : 1;
   const seite1 = items.length ? (seiten ? items.slice(0, SEITENGROESSE) : items) : [];
-  const innen1 = seite1.length ? '\n      ' + leadHtml(seite1[0]) + seite1.slice(1).map((a) => '\n      ' + rowHtml(a)).join('') + (k > 1 ? '\n      ' + paginationHtml(basis, 1, k) : '') : '\n      ' + leerHtml;
+  const innen1 = seite1.length ? '\n      ' + leadHtml(seite1[0]) + seite1.slice(1).map((a) => '\n      ' + rowHtml(a)).join('') + (k > 1 ? '\n      ' + paginationHtml(basis, 1, k) : '') : '\n      ' + leerHtml(html1, basis);
   const neu1 = ersetzeFeed(zaehler(html1, items.length), innen1); if (neu1) schreibe(rel1, neu1);
   if (!seiten) return;
   const vorlagePfad = join(site, basis.replace(/^\//, ''), 'seite', '2', 'index.html');
@@ -103,11 +167,30 @@ function listeSchreiben(basis, items, { seiten = true } = {}) {
 
 // ----------------------------------------------------- Listen und Archiv
 const ressorts = [...new Set(artikel.map((a) => a.ressort))];
-for (const r of ['nachrichten', 'blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine', 'kultur']) {
-  if (r === 'nachrichten') listeSchreiben('/nachrichten/', artikel);
-  else if (existsSync(join(site, r, 'index.html'))) listeSchreiben(`/${r}/`, artikel.filter((a) => a.ressort === r));
+// Jedes Ressort laeuft durch listeSchreiben(), auch eines ohne Seite: die
+// Funktion bricht selbst ab und vermerkt den Zustand im Bestand.
+for (const r of RESSORT_ORDNUNG) {
+  listeSchreiben(`/${r}/`, r === ARCHIV_RESSORT ? artikel : artikel.filter((a) => a.ressort === r));
 }
 for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.filter((a) => a.ortsteil === ort), { seiten: false });
+
+// --------------------------------------------------------------- Bestand
+// Jetzt stehen alle Zaehler fest. Sie gehen in den Index, damit spaetere
+// Generatoren und die Pruefung den Bestand lesen koennen, ohne erneut alle
+// Artikelseiten zu oeffnen. 'leer' ist die daraus abgeleitete Liste der
+// Bereiche ohne Meldung - das Gesamtarchiv zaehlt dort nicht mit, es hat
+// keine eigenen Beitraege und ist trotzdem gefuellt (siehe ARCHIV_RESSORT).
+const leerRessorts = RESSORT_ORDNUNG.filter((r) => r !== ARCHIV_RESSORT && !bestandRessort[r]);
+const leerOrte = ORT_ORDNUNG.filter((o) => !bestandOrt[o]);
+const leerListen = Object.keys(bestandListen).filter((b) => !bestandListen[b].anzahl);
+index.bestand = {
+  gesamt: artikel.length,
+  ressorts: bestandRessort,
+  ortsteile: bestandOrt,
+  listen: bestandListen,
+  leer: { ressorts: leerRessorts, ortsteile: leerOrte, listen: leerListen },
+};
+schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
 
 // ----------------------------------------------------------- Startseite
 {
@@ -123,7 +206,7 @@ for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.fil
     html = html.replace(/<article class="front-lead"[\s\S]*?<\/article>/, () => hero);
   }
   const s = ed.secondary;
-  const brief = (a) => `<article class="front-brief ${a.bild ? 'secondary-lead' : ''}" data-story="${esc(a.id)}">${a.bild ? `<a class="brief-image" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${a.bild.fit ? ' contain' : ''}">${imgHtml(a.bild, '120px', false)}${badgeHtml(a.bild)}</div></a>` : ''}<div>${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><div class="meta"><time datetime="${esc(a.datum)}">${kurzZeit(a.datum)}</time></div>${mehr(a)}</div></article>`;
+  const brief = (a) => `<article class="front-brief ${a.bild ? 'secondary-lead' : ''}" data-story="${esc(a.id)}">${a.bild ? `<a class="brief-image" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${a.bild.fit ? ' contain' : ''}">${imgHtml(a.bild, '120px', false)}${badgeHtml(a.bild)}</div></a>` : ''}<div>${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><div class="meta">${zeitHtml(a, kurzZeit)}</div>${mehr(a)}</div></article>`;
   const sekundaer = s && s.url && s.title ? `<article class="front-brief editorial-secondary${s.image ? ' secondary-lead' : ''}" data-editorial-secondary="" data-story="${esc(s.id || '')}">${s.image ? `<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit === 'contain' ? ' contain' : ''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt || s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge ? `<span class="badge">${esc(s.imageBadge)}</span>` : ''}</div></a>` : ''}<div><div class="location-line"><span class="location-brand">${esc(s.location || 'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker || 'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser || '')}</p><div class="meta"><time datetime="${esc(s.published || '')}">${esc(s.timeLabel || '')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div></article>` : '';
   const ausgeschlossen = new Set([h && h.url, s && s.url].filter(Boolean));
   const weitere = artikel.filter((a) => !ausgeschlossen.has(a.url)).slice(0, 3);
@@ -170,7 +253,11 @@ for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.fil
   const top = artikel.slice(0, 5).map((a) => `<li><a href="${esc(a.url)}">${esc(a.titel)}</a></li>`).join('');
   const re = /<div class="sidebox"><h3>(?:Aus den Ortsteilen|Neueste Meldungen)<a href="\/nachrichten\/">alle<\/a><\/h3><ol class="ranked">[\s\S]*?<\/ol><\/div>/g;
   const neu = `<div class="sidebox"><h3>Neueste Meldungen<a href="/nachrichten/">alle</a></h3><ol class="ranked">${top}</ol></div>`;
-  (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); if (statSync(p).isDirectory()) lauf(p); else if (e.endsWith('.html')) { const alt = readFileSync(p, 'utf8'); if (re.test(alt)) { re.lastIndex = 0; const n = alt.replace(re, () => neu); if (n !== alt) schreibe(p.slice(site.length + 1), n); } re.lastIndex = 0; } } })(site);
+  // Ohne Meldung bliebe auf jeder Seite eine leere <ol> stehen - genau die
+  // leere Flaeche, die dieser Umbau abschafft. Dann bleibt die vorhandene
+  // Sidebox unveraendert und der Lauf sagt es auf der Konsole.
+  if (!top) console.log('Warnung: keine Meldung vorhanden - Sidebox "Neueste Meldungen" bleibt unveraendert.');
+  else (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); if (statSync(p).isDirectory()) lauf(p); else if (e.endsWith('.html')) { const alt = readFileSync(p, 'utf8'); if (re.test(alt)) { re.lastIndex = 0; const n = alt.replace(re, () => neu); if (n !== alt) schreibe(p.slice(site.length + 1), n); } re.lastIndex = 0; } } })(site);
 }
 
 // ----------------------------------------------------------- latest.json
@@ -182,8 +269,28 @@ for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.fil
 }
 
 // ---------------------------------------------------------------- Feeds
-const rssItem = (a) => `<item>\n<title>${x(a.titel)}</title>\n<link>${abs(a.url)}</link>\n<guid isPermaLink="true">${abs(a.url)}</guid>\n<pubDate>${new Date(a.datum).toUTCString()}</pubDate>\n<category>${x(a.ressortLabel)}</category>\n<category>${x(ORTSTEILE[a.ortsteil] || 'Region')}</category>\n<dc:creator>Redaktion Merzenich Aktuell</dc:creator>\n<description>${x(a.teaser)}</description>${a.bild ? `\n<media:content url="${x(abs(a.bild.src))}" medium="image">${a.bild.credit ? `<media:credit>${x(a.bild.credit)}</media:credit>` : ''}<media:description>${x(a.bild.alt)}</media:description></media:content>` : ''}\n</item>`;
-const atomEntry = (a) => `<entry>\n<title>${x(a.titel)}</title>\n<link href="${abs(a.url)}"/>\n<id>${abs(a.url)}</id>\n<published>${x(a.datum)}</published>\n<updated>${x(a.aktualisiert || a.datum)}</updated>\n<summary>${x(a.teaser)}</summary>\n<content type="html">${x(`<p>${esc(a.teaser)}</p><p><a href="${abs(a.url)}">Zum Beitrag</a></p>`)}</content>\n<category term="${x(a.ressortLabel)}"/>\n</entry>`;
+// Ein Feedeintrag ist eine datierte Ankuendigung: RSS sortiert ueber <pubDate>,
+// Atom verlangt in <published> ein gueltiges Datum. Die bewusst undatierten
+// Hintergrundstuecke haben kein Erscheinungsdatum und duerfen auch keines
+// bekommen - das Abrufdatum waere der Erfassungstag der Redaktion, nicht der
+// Tag der Veroeffentlichung. Frueher lieferten sie deshalb
+// <pubDate>Invalid Date</pubDate> und ein leeres <published></published> aus.
+// Statt ein Datum zu erfinden, bleiben sie aus den Feeds heraus; auf der
+// Seite, in den Ressortlisten, im Archiv und in sitemap-artikel.xml stehen
+// sie unveraendert (dort traegt <lastmod> das Aenderungsdatum, das es gibt).
+// Beitraege, deren Quelle kein Veroeffentlichungsdatum nennt, fallen nicht aus
+// den Feeds. Der Tag, an dem der Beitrag hier erschienen ist (abgerufen), ist
+// ein echtes, belegtes Datum und traegt Sortierung und Zeitstempel im Feed.
+// Die Seite selbst behauptet weiterhin kein Quelldatum: dort steht keine
+// Zeitzeile, sondern der Hinweis im Artikelkopf.
+const feedZeit = (a) => a.datum || (a.abgerufen ? `${a.abgerufen}T00:00:00+02:00` : '');
+const ohneZeit = artikel.filter((a) => !feedZeit(a));
+if (ohneZeit.length) { console.log(`  Feeds: ${ohneZeit.length} Meldung(en) ohne jedes Datum ausgelassen.`); for (const a of ohneZeit) console.log(`    ${a.url}`); }
+const feedArtikel = artikel.filter((a) => feedZeit(a)).sort((a, b) => (feedZeit(a) < feedZeit(b) ? 1 : feedZeit(a) > feedZeit(b) ? -1 : 0));
+const undatiertImFeed = feedArtikel.filter((a) => !a.datum).length;
+if (undatiertImFeed) console.log(`  Feeds: ${undatiertImFeed} Meldung(en) ohne Quelldatum, Zeitstempel ist der Erscheinungstag hier.`);
+const rssItem = (a) => `<item>\n<title>${x(a.titel)}</title>\n<link>${abs(a.url)}</link>\n<guid isPermaLink="true">${abs(a.url)}</guid>\n<pubDate>${new Date(feedZeit(a)).toUTCString()}</pubDate>\n<category>${x(a.ressortLabel)}</category>\n<category>${x(ORTSTEILE[a.ortsteil] || 'Region')}</category>\n<dc:creator>Redaktion Merzenich Aktuell</dc:creator>\n<description>${x(a.teaser)}</description>${a.bild ? `\n<media:content url="${x(abs(a.bild.src))}" medium="image">${a.bild.credit ? `<media:credit>${x(a.bild.credit)}</media:credit>` : ''}<media:description>${x(a.bild.alt)}</media:description></media:content>` : ''}\n</item>`;
+const atomEntry = (a) => `<entry>\n<title>${x(a.titel)}</title>\n<link href="${abs(a.url)}"/>\n<id>${abs(a.url)}</id>\n<published>${x(feedZeit(a))}</published>\n<updated>${x(a.aktualisiert || feedZeit(a))}</updated>\n<summary>${x(a.teaser)}</summary>\n<content type="html">${x(`<p>${esc(a.teaser)}</p><p><a href="${abs(a.url)}">Zum Beitrag</a></p>`)}</content>\n<category term="${x(a.ressortLabel)}"/>\n</entry>`;
 function ersetzeBlock(rel, tagStart, tagEnde, items, datumTag) {
   const pfad = join(site, rel); if (!existsSync(pfad)) return;
   const alt = readFileSync(pfad, 'utf8');
@@ -195,15 +302,15 @@ function ersetzeBlock(rel, tagStart, tagEnde, items, datumTag) {
   const neu = kopf.replace(/\s*$/, '\n') + items.join('\n') + '\n' + fuss.replace(/^\s*/, '');
   schreibe(rel, neu);
 }
-ersetzeBlock('feed.xml', '<item>', '</item>', artikel.slice(0, 30).map(rssItem), 'rss');
-ersetzeBlock('atom.xml', '<entry>', '</entry>', artikel.slice(0, 30).map(atomEntry), 'atom');
-ersetzeBlock('nachrichten/feed.xml', '<item>', '</item>', artikel.slice(0, 30).map(rssItem), 'rss');
-for (const r of ressorts) ersetzeBlock(`${r}/feed.xml`, '<item>', '</item>', artikel.filter((a) => a.ressort === r).slice(0, 30).map(rssItem), 'rss');
-for (const ort of Object.keys(ORTSTEILE)) ersetzeBlock(`${ort}/feed.xml`, '<item>', '</item>', artikel.filter((a) => a.ortsteil === ort).slice(0, 30).map(rssItem), 'rss');
+ersetzeBlock('feed.xml', '<item>', '</item>', feedArtikel.slice(0, 30).map(rssItem), 'rss');
+ersetzeBlock('atom.xml', '<entry>', '</entry>', feedArtikel.slice(0, 30).map(atomEntry), 'atom');
+ersetzeBlock('nachrichten/feed.xml', '<item>', '</item>', feedArtikel.slice(0, 30).map(rssItem), 'rss');
+for (const r of ressorts) ersetzeBlock(`${r}/feed.xml`, '<item>', '</item>', feedArtikel.filter((a) => a.ressort === r).slice(0, 30).map(rssItem), 'rss');
+for (const ort of Object.keys(ORTSTEILE)) ersetzeBlock(`${ort}/feed.xml`, '<item>', '</item>', feedArtikel.filter((a) => a.ortsteil === ort).slice(0, 30).map(rssItem), 'rss');
 {
   const rel = 'feed.json'; if (existsSync(join(site, rel))) {
     const alt = JSON.parse(readFileSync(join(site, rel), 'utf8'));
-    alt.items = artikel.slice(0, 30).map((a) => ({ id: abs(a.url), url: abs(a.url), title: a.titel, summary: a.teaser, content_html: `<p>${esc(a.teaser)}</p>`, date_published: a.datum, date_modified: a.aktualisiert || a.datum, ...(a.bild ? { image: abs(a.bild.src) } : {}), tags: [a.ressortLabel, ORTSTEILE[a.ortsteil] || 'Region', ...a.themen.map((t) => t.label)] }));
+    alt.items = feedArtikel.slice(0, 30).map((a) => ({ id: abs(a.url), url: abs(a.url), title: a.titel, summary: a.teaser, content_html: `<p>${esc(a.teaser)}</p>`, date_published: feedZeit(a), date_modified: a.aktualisiert || feedZeit(a), ...(a.bild ? { image: abs(a.bild.src) } : {}), tags: [a.ressortLabel, ORTSTEILE[a.ortsteil] || 'Region', ...a.themen.map((t) => t.label)] }));
     schreibe(rel, JSON.stringify(alt, null, 2) + '\n');
   }
 }
@@ -213,6 +320,39 @@ for (const ort of Object.keys(ORTSTEILE)) ersetzeBlock(`${ort}/feed.xml`, '<item
   schreibe('news-sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${urls.join('\n')}\n</urlset>\n`);
   const alle = artikel.map((a) => `<url><loc>${abs(a.url)}</loc><lastmod>${x(a.aktualisiert || a.datum)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>${a.bild ? `<image:image><image:loc>${x(abs(a.bild.src))}</image:loc><image:title>${x(a.bild.alt)}</image:title></image:image>` : ''}</url>`);
   schreibe('sitemap-artikel.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${alle.join('\n')}\n</urlset>\n`);
+}
+
+// ------------------------------------------------- Bestand auf der Konsole
+// Nach jedem Lauf soll die Redaktion sehen, was die Seite wirklich hat: je
+// Ressort und je Ortsteil die Anzahl, und fuer jeden leeren Bereich eine
+// eigene Warnzeile. Bewusst console.log und kein Fehler-Exit: ein leerer
+// Bereich ist keine kaputte Seite, sondern eine redaktionelle Luecke.
+{
+  const listeZusatz = (basis) => {
+    const l = bestandListen[basis];
+    if (!l) return 'keine Liste';
+    if (l.liste === 'keine Seite') return 'keine Seite vorhanden';
+    if (l.liste === 'kein Feed') return 'Seite ohne Meldungsliste';
+    return `Liste ${basis} mit ${l.anzahl}`;
+  };
+  // Die Warnzeile sagt nicht nur die Zahl, sondern was daraus auf der Seite wird.
+  const warnZusatz = (basis) => {
+    const l = bestandListen[basis];
+    if (!l) return 'es gibt dafuer keine Liste';
+    if (l.liste === 'keine Seite') return 'es gibt dafuer keine Seite';
+    if (l.liste === 'kein Feed') return `die Seite ${basis} fuehrt keine Meldungsliste`;
+    return `die Liste ${basis} zeigt den Leerzustand`;
+  };
+  const zeile = (art, name, anzahl, zusatz) => `  ${`${art} ${name}`.padEnd(24)}${String(anzahl).padStart(3)} Meldung${anzahl === 1 ? ' ' : 'en'}  ${zusatz}`;
+  console.log(`Bestand: ${artikel.length} Meldungen.`);
+  for (const r of RESSORT_ORDNUNG) {
+    const zusatz = r === ARCHIV_RESSORT ? `Gesamtarchiv, ${listeZusatz(`/${r}/`)}` : listeZusatz(`/${r}/`);
+    console.log(zeile('Ressort', r, bestandRessort[r], zusatz));
+  }
+  for (const o of ORT_ORDNUNG) console.log(zeile('Ortsteil', o, bestandOrt[o], listeZusatz(`/${o}/`)));
+  for (const r of leerRessorts) console.log(`  Warnung: Ressort ${r} hat 0 Meldungen, ${warnZusatz(`/${r}/`)}.`);
+  for (const o of leerOrte) console.log(`  Warnung: Ortsteil ${o} hat 0 Meldungen, ${warnZusatz(`/${o}/`)}.`);
+  if (!leerRessorts.length && !leerOrte.length) console.log('  Kein Bereich ohne Meldung.');
 }
 
 console.log(`Inhaltsindex: ${artikel.length} Artikel, Stand ${neuester}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}${geloescht.length ? `, ${geloescht.length} Seitenordner ${nurPruefen ? 'ueberzaehlig' : 'entfernt'}` : ''}.`);

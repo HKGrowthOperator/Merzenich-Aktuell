@@ -43,7 +43,7 @@
 (() => {
   if (document.querySelector('script[data-ma-startbilder]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/bild-fallbacks.js?v=2ccb15da72';
+  script.src = '/assets/bild-fallbacks.js?v=b5065bee27';
   script.async = false;
   script.dataset.maStartbilder = '1';
   document.head.append(script);
@@ -59,7 +59,7 @@
   }
   if (!document.querySelector('script[data-ma-home-polish]')) {
     const script = document.createElement('script');
-    script.src = '/assets/homepage-polish.js?v=0b63c29ad9';
+    script.src = '/assets/homepage-polish.js?v=5174c2bc37';
     script.async = false;
     script.dataset.maHomePolish = '1';
     document.head.append(script);
@@ -69,7 +69,7 @@
 (() => {
   if (document.querySelector('script[data-ma-content-refresh]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/content-refresh-2026-09-17.js?v=fd8dd27040';
+  script.src = '/assets/content-refresh-2026-09-17.js?v=3e02d9c2c7';
   script.async = false;
   script.dataset.maContentRefresh = '1';
   document.head.append(script);
@@ -85,7 +85,7 @@
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=b315cc8b7c';
+    script.src = '/assets/editorial-audit.js?v=672b5cbfc7';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);

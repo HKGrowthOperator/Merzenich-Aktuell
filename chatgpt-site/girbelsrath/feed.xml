@@ -12,6 +12,17 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/girbelsrath/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
+<title>Mehr Platz für die Girbelsrather Vereine</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/939564298cdfdc-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Drei neue Seecontainer vor der Maarhalle in Girbelsrath</media:description></media:content>
+</item>
+<item>
 <title>Unklare Rauchentwicklung am Roßpfad in Girbelsrath</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-118-rosspfad/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-118-rosspfad/</guid>
@@ -21,17 +32,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Feuerwehr Merzenich wurde am 14. August zu einer unklaren Rauchentwicklung ins Gebiet Am Roßpfad gerufen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/2abe68e61e85d1-526.webp" medium="image"><media:credit>Freiwillige Feuerwehr Merzenich</media:credit><media:description>Rauchwolke über Feldern bei Girbelsrath</media:description></media:content>
-</item>
-<item>
-<title>Mehr Platz für die Girbelsrather Vereine</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</guid>
-<pubDate>Fri, 14 Aug 2026 12:06:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/939564298cdfdc-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Drei neue Seecontainer vor der Maarhalle in Girbelsrath</media:description></media:content>
 </item>
 <item>
 <title>Flächenbrand Richtung Binsfeld: Feuerwehr am 10. August im Großeinsatz</title>

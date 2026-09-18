@@ -1,13 +1,22 @@
 /*
- * Merzenich Aktuell — globale Bild-Fallbacks und Symbolbild-Rotation.
+ * Merzenich Aktuell — Rückfall für Bilder, die im Browser nicht laden.
  *
- * Regeln:
- * 1. Vorhandene redaktionelle Originalbilder bleiben unangetastet.
- * 2. Fehlt ein Bild, bekommt der Beitrag automatisch ein thematisch passendes Symbolbild.
- * 3. Bereits als Symbolbild gekennzeichnete Markt-/Teaserbilder werden stabil variiert.
- * 4. Die Auswahl ist deterministisch pro Beitrag: kein Flackern bei Reloads.
+ * Harte Regel: Auf einer fehlerfrei geladenen Seite verändert dieses Skript kein
+ * einziges img-Element. Was ausgeliefert wurde, bleibt genau so stehen.
+ *
+ * 1. Ein vorhandenes, ladbares Bild wird niemals ersetzt — keine Rotation, keine
+ *    Variation, kein Austausch von Motiven.
+ * 2. Bilder werden nicht nachträglich in Teaser, Karten oder Artikel eingefügt.
+ *    Welches Bild zu einer Meldung gehört, entscheiden die Generatoren unter deploy/,
+ *    nicht der Browser. Vorher hat dieses Skript hier Motive nachgeschoben und dabei
+ *    unter eine Sportmeldung das Vereinsfoto einer anderen Meldung gesetzt.
+ * 3. Es bleibt genau eine Aufgabe: Lädt ein Bild nachweislich nicht (Fehlerereignis
+ *    oder complete mit naturalWidth 0), tritt ein Motiv aus dem passenden Pool an
+ *    seine Stelle — deterministisch pro Meldung, sichtbar als "Symbolbild".
+ * 4. Für polizei, feuerwehr und verkehr gilt weiterhin: kein Ortsmotiv als Rückfall,
+ *    dann lieber bildlos. Ein Dorffoto unter "Einbruch" behauptet still einen Tatort.
  * 5. Externe Commons-Dateien laufen über /api/bild; Quellenlinks bleiben sichtbar.
- * Rechte-Check fuer neu ergaenzte Commons-Motive: 17.09.2026.
+ * Rechte-Check für die Commons-Motive: 17.09.2026.
  */
 (() => {
   'use strict';
@@ -429,7 +438,7 @@
   }
 
   function macheSichtbar(img) {
-    const media = img.closest('.media,.markt-thumb,.ma-auto-thumb');
+    const media = img.closest('.media,.markt-thumb');
     if (media) media.hidden = false;
     const article = img.closest('article');
     if (article) article.classList.remove('no-image');
@@ -449,8 +458,8 @@
     img.decoding = 'async';
     if (!img.loading) img.loading = 'lazy';
 
-    const media = img.closest('.media,.markt-thumb,.ma-auto-thumb');
-    const badge = media?.querySelector('.badge,.markt-thumb__badge,.ma-auto-badge');
+    const media = img.closest('.media,.markt-thumb');
+    const badge = media?.querySelector('.badge,.markt-thumb__badge');
     if (badge) badge.textContent = 'Symbolbild';
 
     const figure = img.closest('.art-figure');
@@ -460,198 +469,38 @@
     requestAnimationFrame(() => macheSichtbar(img));
   }
 
-  function bildElement(bild, key, seed, eager = false) {
-    const img = document.createElement('img');
-    img.loading = eager ? 'eager' : 'lazy';
-    img.decoding = 'async';
-    if (eager) img.fetchPriority = 'high';
-    setzeBild(img, bild, key, seed, 0);
-    return img;
-  }
-
-  function badgeElement(klasse = 'badge') {
-    const badge = document.createElement('span');
-    badge.className = klasse;
-    badge.textContent = 'Symbolbild';
-    return badge;
-  }
-
-  function erzeugeArtikelFigure(bild, key, seed) {
-    const figure = document.createElement('figure');
-    figure.className = 'art-figure ma-symbolbild';
-    const media = document.createElement('div');
-    media.className = 'media';
-    media.append(bildElement(bild, key, seed, true));
-    figure.append(media);
-    setzeCaption(figure, bild);
-    return figure;
-  }
-
-  function artikelStartbild() {
-    if (document.documentElement.dataset.page !== 'article') return;
-    const body = document.querySelector('.article-body');
-    if (!body || body.querySelector('.art-figure')) return;
-    const key = bildKey(body);
-    const seed = seedFuer(body, 'article');
-    const { bild } = waehleBild(key, seed, 0, body);
-    const figure = erzeugeArtikelFigure(bild, key, seed);
-    const anker = body.querySelector('.facts,.prose,.source-box');
-    if (anker) body.insertBefore(figure, anker);
-    else body.prepend(figure);
-  }
-
-  function ergaenzeFeedBild(article) {
-    if (!(article instanceof HTMLElement)) return;
-    if (article.querySelector('.feed-img,.media img')) return;
-    const link = article.querySelector('h2 a,h3 a');
-    if (!link) return;
-
-    const key = bildKey(article);
-    const seed = seedFuer(article, 'feed');
-    const { bild } = waehleBild(key, seed, 0, article);
-    const a = document.createElement('a');
-    a.className = article.classList.contains('feed-lead') ? 'ma-feed-lead-image' : 'feed-img';
-    a.href = link.href;
-    a.tabIndex = -1;
-    a.setAttribute('aria-hidden', 'true');
-
-    const media = document.createElement('div');
-    media.className = 'media';
-    media.append(bildElement(bild, key, seed, article.classList.contains('feed-lead')));
-    media.append(badgeElement());
-    a.append(media);
-    article.prepend(a);
-
-    const copy = article.querySelector('.feed-copy,.lead-copy');
-    if (copy && !copy.querySelector('.creditline')) {
-      const credit = document.createElement('div');
-      credit.className = 'creditline';
-      const c = document.createElement('span');
-      c.textContent = bild.credit;
-      const q = document.createElement('span');
-      q.className = 'src';
-      q.append(quelleLink(bild));
-      credit.append(c, q);
-      copy.append(credit);
-    }
-  }
-
-  function ergaenzeTextStory(article) {
-    if (!(article instanceof HTMLElement) || article.dataset.maAutoImage === '1') return;
-    if (article.querySelector('img,.ma-auto-thumb')) return;
-    const link = article.querySelector('h2 a,h3 a');
-    if (!link) return;
-
-    const key = bildKey(article);
-    const seed = seedFuer(article, 'text-story');
-    const { bild } = waehleBild(key, seed, 0, article);
-
-    const copy = document.createElement('div');
-    copy.className = 'ma-auto-copy';
-    while (article.firstChild) copy.append(article.firstChild);
-
-    const a = document.createElement('a');
-    a.className = 'ma-auto-thumb';
-    a.href = link.href;
-    a.tabIndex = -1;
-    a.setAttribute('aria-hidden', 'true');
-    a.append(bildElement(bild, key, seed, false), badgeElement('ma-auto-badge'));
-
-    article.append(a, copy);
-    article.classList.add('ma-has-auto-image');
-    article.dataset.maAutoImage = '1';
-  }
-
-  function ergaenzeDeskCard(article) {
-    if (!(article instanceof HTMLElement) || article.dataset.maAutoImage === '1') return;
-    if (article.querySelector('img,.media')) return;
-    const link = article.querySelector('h2 a,h3 a');
-    if (!link) return;
-
-    const key = bildKey(article);
-    const seed = seedFuer(article, 'desk-card');
-    const { bild } = waehleBild(key, seed, 0, article);
-
-    const a = document.createElement('a');
-    a.className = 'ma-auto-card-image';
-    a.href = link.href;
-    a.tabIndex = -1;
-    a.setAttribute('aria-hidden', 'true');
-    const media = document.createElement('div');
-    media.className = 'media';
-    media.append(bildElement(bild, key, seed, false), badgeElement());
-    a.append(media);
-    article.prepend(a);
-    article.dataset.maAutoImage = '1';
-  }
-
-  function ergaenzeMarktBild(article) {
-    if (!(article instanceof HTMLElement)) return;
-    const link = article.querySelector('h3 a');
-    if (!link) return;
-
-    const existing = article.querySelector('.markt-thumb img');
-    if (existing) return;
-
-    const key = bildKey(article);
-    const seed = seedFuer(article, 'markt');
-    const { bild } = waehleBild(key, seed, 0, article);
-
-    const a = document.createElement('a');
-    a.className = 'markt-thumb';
-    a.href = link.href;
-    a.tabIndex = -1;
-    a.setAttribute('aria-hidden', 'true');
-    if (link.target) a.target = link.target;
-    if (link.rel) a.rel = link.rel;
-    a.append(bildElement(bild, key, seed, false), badgeElement('markt-thumb__badge'));
-
-    const marker = article.querySelector('.d');
-    if (marker?.nextSibling) article.insertBefore(a, marker.nextSibling);
-    else if (marker) article.append(a);
-    else article.prepend(a);
-
-    article.classList.add('markt-row--thumb');
-    article.dataset.maAutoImage = '1';
-  }
-
   function istSymbolbild(img) {
     if (!(img instanceof HTMLImageElement)) return false;
     if (img.dataset.maSymbolbild === '1') return true;
-    const box = img.closest('.media,.markt-thumb,.ma-auto-thumb');
-    const badge = box?.querySelector('.badge,.markt-thumb__badge,.ma-auto-badge');
+    const box = img.closest('.media,.markt-thumb');
+    const badge = box?.querySelector('.badge,.markt-thumb__badge');
     return /symbolbild/i.test(text(badge));
   }
 
-  function variiereSymbolbild(img) {
-    if (!(img instanceof HTMLImageElement) || img.dataset.maRotationDone === '1') return;
-    if (!istSymbolbild(img)) return;
-    const root = img.closest('article,.feed-row,.feed-lead,.markt-row') || document.body;
-    const key = bildKey(root);
-    const seed = seedFuer(root, 'rotation');
-    const { bild } = waehleBild(key, seed, 0, root);
-    img.dataset.maRotationDone = '1';
-    setzeBild(img, bild, key, seed, 0);
-  }
-
+  // Der einzige Eingriff dieses Skripts: ein Bild, das der Browser nicht laden konnte.
+  // Versuch 0 nimmt das Motiv, das deterministisch zur Meldung gehört; jeder weitere
+  // Versuch rückt eine Stelle im Pool weiter, bis der Pool durch ist. Danach bildlos.
   function ersetzeDefektesBild(img) {
     if (!(img instanceof HTMLImageElement)) return;
     const root = img.closest('article,.feed-row,.feed-lead,.markt-row') || document.body;
     const key = img.dataset.maFallbackKey || bildKey(root);
-    const seed = img.dataset.maFallbackSeed || seedFuer(root, 'broken');
+    const seed = img.dataset.maFallbackSeed || seedFuer(root, 'defekt');
     const pool = poolFuer(key);
-    const attempt = Number(img.dataset.maFallbackAttempt || 0) + 1;
+    // Fehlt der Zähler oder ist er beschädigt, beginnt die Kette sauber bei 0.
+    // Ohne diese Prüfung liefe ein NaN endlos durch dieselbe Ersetzung.
+    const gezaehlt = Number(img.dataset.maFallbackAttempt);
+    const versuch = Number.isFinite(gezaehlt) ? gezaehlt + 1 : 0;
 
-    if (attempt <= pool.length) {
-      const { bild } = waehleBild(key, seed, attempt, root);
-      setzeBild(img, bild, key, seed, attempt);
+    if (versuch < pool.length) {
+      const { bild } = waehleBild(key, seed, versuch, root);
+      setzeBild(img, bild, key, seed, versuch);
       return;
     }
 
-    img.dataset.maFallbackAttempt = String(attempt);
-    if (OHNE_ORTSMOTIV.has(key) || attempt > pool.length + 1) {
+    img.dataset.maFallbackAttempt = String(versuch);
+    if (OHNE_ORTSMOTIV.has(key) || key === 'default' || versuch > pool.length) {
       // Kein Motiv des Pools erreichbar: lieber bildlos als ein Dorffoto unter einer Einsatzmeldung.
-      const box = img.closest('.media,.markt-thumb,.ma-auto-thumb,.ma-auto-card-image,.feed-img,.art-figure');
+      const box = img.closest('.media,.markt-thumb,.feed-img,.art-figure');
       if (box) box.hidden = true;
       const article = img.closest('article');
       if (article) article.classList.add('no-image');
@@ -659,78 +508,13 @@
     }
 
     const { bild } = waehleBild('default', seed, 0, root);
-    setzeBild(img, bild, 'default', seed, attempt);
+    setzeBild(img, bild, 'default', seed, versuch);
   }
 
   function pruefeBereitsDefekteBilder(root = document) {
     root.querySelectorAll?.('img[data-editorial-image],img[data-ma-symbolbild="1"]').forEach((img) => {
       if (img.complete && img.naturalWidth === 0) ersetzeDefektesBild(img);
     });
-  }
-
-  function ergaenzeAlleTeaser(root = document) {
-    root.querySelectorAll?.('article.feed-row,article.feed-lead').forEach(ergaenzeFeedBild);
-    root.querySelectorAll?.('article.text-story').forEach(ergaenzeTextStory);
-    root.querySelectorAll?.('article.desk-card').forEach(ergaenzeDeskCard);
-    root.querySelectorAll?.('article.markt-row').forEach(ergaenzeMarktBild);
-
-    root.querySelectorAll?.('.markt-thumb img,.media img[data-ma-symbolbild="1"],.ma-auto-thumb img').forEach(variiereSymbolbild);
-    root.querySelectorAll?.('.markt-thumb img').forEach((img) => {
-      const badge = img.closest('.markt-thumb')?.querySelector('.markt-thumb__badge');
-      if (/symbolbild/i.test(text(badge))) variiereSymbolbild(img);
-    });
-  }
-
-  function styleEinbauen() {
-    if (document.querySelector('style[data-ma-fallback-style]')) return;
-    const style = document.createElement('style');
-    style.dataset.maFallbackStyle = '1';
-    style.textContent = `
-      article.text-story.ma-has-auto-image{
-        display:grid!important;
-        grid-template-columns:minmax(112px,160px) minmax(0,1fr);
-        gap:16px;
-        align-items:start;
-      }
-      .ma-auto-copy{min-width:0}
-      .ma-auto-thumb,.ma-auto-card-image{
-        display:block;
-        position:relative;
-        min-width:0;
-        overflow:hidden;
-        background:#eee9e3;
-        text-decoration:none;
-      }
-      .ma-auto-thumb{aspect-ratio:16/10}
-      .ma-auto-card-image{margin-bottom:12px}
-      .ma-auto-card-image .media{aspect-ratio:16/9}
-      .ma-auto-thumb img,.ma-auto-card-image img{
-        width:100%;
-        height:100%;
-        display:block;
-        object-fit:cover;
-      }
-      .ma-auto-badge{
-        position:absolute;
-        left:8px;
-        bottom:8px;
-        z-index:2;
-        padding:3px 6px;
-        background:rgba(20,20,20,.78);
-        color:#fff;
-        font-size:10px;
-        line-height:1.1;
-        letter-spacing:.04em;
-        text-transform:uppercase;
-      }
-      @media (max-width:640px){
-        article.text-story.ma-has-auto-image{
-          grid-template-columns:96px minmax(0,1fr);
-          gap:12px;
-        }
-      }
-    `;
-    document.head.append(style);
   }
 
   document.addEventListener('error', (event) => {
@@ -742,11 +526,13 @@
   }, true);
 
   function start() {
-    styleEinbauen();
-    artikelStartbild();
-    ergaenzeAlleTeaser();
+    // Nachzügler: Bilder, die schon vor dem Laden dieses Skripts gescheitert sind,
+    // feuern kein error-Ereignis mehr und fallen nur über diese Prüfung auf.
     pruefeBereitsDefekteBilder();
 
+    // Andere Skripte schreiben Listen per innerHTML neu. Der Beobachter prüft die
+    // nachgereichten Bilder auf denselben Defekt — mehr nicht. Laden sie, bleibt alles,
+    // wie es ausgeliefert wurde.
     const observer = new MutationObserver((mutations) => {
       let relevant = false;
       for (const mutation of mutations) {
@@ -756,10 +542,7 @@
         }
       }
       if (!relevant) return;
-      requestAnimationFrame(() => {
-        ergaenzeAlleTeaser();
-        pruefeBereitsDefekteBilder();
-      });
+      requestAnimationFrame(() => pruefeBereitsDefekteBilder());
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }
@@ -767,6 +550,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
 
+  // Bleibt unverändert: homepage-polish.js liest die Pools über diesen Zugang.
   window.MerzenichStartbilder = Object.freeze({
     checkedAt: '2026-09-17',
     pools: Object.freeze(Object.fromEntries(Object.entries(BILDER).map(([key, value]) => [key, value.length]))),

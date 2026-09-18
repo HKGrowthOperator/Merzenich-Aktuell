@@ -380,7 +380,27 @@ pruefeInterneLinks();
 pruefeInhalte();
 pruefeServiceInhalte();
 pruefeJavaScript();
+
+// ------------------------------------------ 9. Laufzeit-Umbau bleibt aus
+// Beschluss 17.09.: Der ausgelieferte Stand ist der sichtbare Stand. Die drei
+// Layer-Skripte duerfen kein Markup mehr umschreiben; ihr Schalter steht auf
+// false. Faellt er weg oder steht er auf true, sieht der Leser wieder etwas
+// anderes als im HTML steht - und genau das war die Ursache fuer wandernde
+// Bilder und doppelte Ueberschriften. Hinweis, kein Fehler: eine bewusste
+// Rueckkehr soll moeglich bleiben, aber nie unbemerkt.
+function pruefeLaufzeitUmbau() {
+  for (const datei of ['editorial-audit.js', 'homepage-polish.js', 'content-refresh-2026-09-17.js']) {
+    const rel = `chatgpt-site/assets/${datei}`;
+    if (!gibtEs(rel)) continue;
+    const text = lies(rel);
+    const m = /const\s+LAUFZEIT_UMBAU\s*=\s*(true|false)/.exec(text);
+    if (!m) hinweis('Laufzeit', `${datei}: Schalter LAUFZEIT_UMBAU fehlt - schreibt die Datei wieder Markup um?`);
+    else if (m[1] === 'true') hinweis('Laufzeit', `${datei}: LAUFZEIT_UMBAU steht auf true, der Browser weicht wieder vom ausgelieferten HTML ab.`);
+  }
+}
+
 pruefeOertlicheVerweise();
+pruefeLaufzeitUmbau();
 pruefePhp();
 pruefePlatzhalter();
 pruefePruefsummen();

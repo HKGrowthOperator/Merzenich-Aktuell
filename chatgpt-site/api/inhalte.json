@@ -1,6 +1,99 @@
 {
  "generated": "2026-09-16T15:48:00+02:00",
  "anzahl": 44,
+ "bestand": {
+  "gesamt": 44,
+  "ressorts": {
+   "nachrichten": 0,
+   "blaulicht": 17,
+   "sport": 5,
+   "rathaus": 7,
+   "leben": 7,
+   "wirtschaft": 6,
+   "menschen": 0,
+   "vereine": 2,
+   "kultur": 0
+  },
+  "ortsteile": {
+   "merzenich": 31,
+   "golzheim": 2,
+   "girbelsrath": 6,
+   "morschenich": 3,
+   "buergewald": 2,
+   "region": 0
+  },
+  "listen": {
+   "/nachrichten/": {
+    "anzahl": 44,
+    "liste": "gepflegt"
+   },
+   "/blaulicht/": {
+    "anzahl": 17,
+    "liste": "gepflegt"
+   },
+   "/sport/": {
+    "anzahl": 5,
+    "liste": "gepflegt"
+   },
+   "/rathaus/": {
+    "anzahl": 7,
+    "liste": "gepflegt"
+   },
+   "/leben/": {
+    "anzahl": 7,
+    "liste": "gepflegt"
+   },
+   "/wirtschaft/": {
+    "anzahl": 6,
+    "liste": "gepflegt"
+   },
+   "/menschen/": {
+    "anzahl": 0,
+    "liste": "gepflegt"
+   },
+   "/vereine/": {
+    "anzahl": 2,
+    "liste": "kein Feed"
+   },
+   "/kultur/": {
+    "anzahl": 0,
+    "liste": "keine Seite"
+   },
+   "/merzenich/": {
+    "anzahl": 31,
+    "liste": "gepflegt"
+   },
+   "/golzheim/": {
+    "anzahl": 2,
+    "liste": "gepflegt"
+   },
+   "/girbelsrath/": {
+    "anzahl": 6,
+    "liste": "gepflegt"
+   },
+   "/morschenich/": {
+    "anzahl": 3,
+    "liste": "gepflegt"
+   },
+   "/buergewald/": {
+    "anzahl": 2,
+    "liste": "gepflegt"
+   }
+  },
+  "leer": {
+   "ressorts": [
+    "menschen",
+    "kultur"
+   ],
+   "ortsteile": [
+    "region"
+   ],
+   "listen": [
+    "/menschen/",
+    "/kultur/"
+   ]
+  }
+ },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
   {
@@ -40,7 +133,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "SC 1919 Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-11-einbruch-arnoldsweilerweg",
@@ -75,7 +170,9 @@
     "badge": "Symbolbild",
     "credit": "IM NRW / Wikimedia Commons · CC0 1.0",
     "symbol": true
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-04-sc-merzenich-tabellenfuehrer",
@@ -114,7 +211,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "SC 1919 Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
@@ -153,7 +252,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "SC 1919 Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-04-sc-golzheim-nachbarschaftsduell",
@@ -196,7 +297,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "SC 1919 Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
@@ -235,85 +338,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "SC 1919 Merzenich / FUSSBALL.DE",
     "symbol": false
-   }
-  },
-  {
-   "id": "2026-09-01-kleidertreff-zehn-jahre",
-   "url": "/leben/kleidertreff-zehn-jahre/",
-   "titel": "Kleidertreff feiert seinen 10. Geburtstag",
-   "teaser": "Seit zehn Jahren gibt es an der Lindenstraße Kleidung, Schuhe und Spielsachen für einen kleinen Obolus. Ein elfköpfiges Team hält den Laden am Laufen.",
-   "kicker": "Soziales",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-09-01T10:46:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "kleidertreff",
-     "label": "Kleidertreff"
-    },
-    {
-     "slug": "ehrenamt",
-     "label": "Ehrenamt"
-    },
-    {
-     "slug": "lindenstrasse",
-     "label": "Lindenstraße"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/b02c3dd7c1ffdc-768.webp",
-    "srcset": "/assets/responsive/b02c3dd7c1ffdc-240.webp 240w, /assets/responsive/b02c3dd7c1ffdc-480.webp 480w, /assets/responsive/b02c3dd7c1ffdc-768.webp 768w",
-    "alt": "Jubiläum des Merzenicher Kleidertreffs an der Lindenstraße",
-    "width": 768,
-    "height": 576,
-    "fit": "",
-    "badge": "Originalbild",
-    "credit": "Gemeinde Merzenich",
-    "symbol": false
-   }
-  },
-  {
-   "id": "2026-09-01-seniorennachmittag-anmeldung",
-   "url": "/leben/seniorennachmittag-anmeldung/",
-   "titel": "Jetzt anmelden zum Seniorennachmittag",
-   "teaser": "Am Samstag, 17. Oktober 2026, lädt die Gemeinde in die Weinberghalle. Die Anmeldung läuft über einen Coupon, ein Fahrdienst ist möglich.",
-   "kicker": "Senioren",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-09-01T10:46:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "seniorennachmittag",
-     "label": "Seniorennachmittag"
-    },
-    {
-     "slug": "weinberghalle",
-     "label": "Weinberghalle"
-    },
-    {
-     "slug": "anmeldung",
-     "label": "Anmeldung"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/23c79c62d5d821-1440.webp",
-    "srcset": "/assets/responsive/23c79c62d5d821-240.webp 240w, /assets/responsive/23c79c62d5d821-480.webp 480w, /assets/responsive/23c79c62d5d821-800.webp 800w, /assets/responsive/23c79c62d5d821-1200.webp 1200w, /assets/responsive/23c79c62d5d821-1440.webp 1440w",
-    "alt": "Seniorennachmittag der Gemeinde Merzenich in der Weinberghalle",
-    "width": 1440,
-    "height": 372,
-    "fit": "",
-    "badge": "Offizielles Veranstaltungsbild",
-    "credit": "Gemeinde Merzenich",
-    "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-01-trauung-alte-kirche",
@@ -352,7 +379,9 @@
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-09-01-leader-reminder",
@@ -391,50 +420,9 @@
     "badge": "Quellenmotiv",
     "credit": "LAG Rheinisches Revier an Inde und Rur / Heimat-Info",
     "symbol": false
-   }
-  },
-  {
-   "id": "2026-09-01-stromtrasse-oberzier-blatzheim",
-   "url": "/wirtschaft/stromtrasse-oberzier-blatzheim/",
-   "titel": "Baustart für die neue Stromtrasse",
-   "teaser": "Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.",
-   "kicker": "Infrastruktur",
-   "ressort": "wirtschaft",
-   "ressortLabel": "Wirtschaft",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-09-01T10:00:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "amprion",
-     "label": "Amprion"
-    },
-    {
-     "slug": "stromnetz",
-     "label": "Stromnetz"
-    },
-    {
-     "slug": "rheinisches-revier",
-     "label": "Rheinisches Revier"
-    },
-    {
-     "slug": "baustelle",
-     "label": "Baustelle"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/e0224db1617810-1440.webp",
-    "srcset": "/assets/responsive/e0224db1617810-240.webp 240w, /assets/responsive/e0224db1617810-480.webp 480w, /assets/responsive/e0224db1617810-800.webp 800w, /assets/responsive/e0224db1617810-1200.webp 1200w, /assets/responsive/e0224db1617810-1440.webp 1440w",
-    "alt": "Neubau der Höchstspannungsleitung Oberzier–Blatzheim",
-    "width": 1440,
-    "height": 372,
-    "fit": "",
-    "badge": "Originalbild",
-    "credit": "Frank Peterschroeder / Amprion",
-    "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-31-fanclub-saisonauftakt",
@@ -473,7 +461,9 @@
     "badge": "Quellenmotiv",
     "credit": "1. FC Köln Fanclub Merzenich 1967 / Heimat-Info",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-31-buergersprechstunde-morschenich",
@@ -512,81 +502,9 @@
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
     "symbol": false
-   }
-  },
-  {
-   "id": "2026-08-31-rheinlandliegen-morschenich",
-   "url": "/leben/rheinlandliegen-morschenich/",
-   "titel": "Von Morschenich aus den Blick nach Köln genießen",
-   "teaser": "Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.",
-   "kicker": "Freizeit",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "morschenich",
-   "datum": "2026-08-31T09:20:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "heimatscheck",
-     "label": "Heimatscheck"
-    },
-    {
-     "slug": "freizeit",
-     "label": "Freizeit"
-    },
-    {
-     "slug": "inga-dohmes",
-     "label": "Inga Dohmes"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/4e012d0ce4b136-768.webp",
-    "srcset": "/assets/responsive/4e012d0ce4b136-240.webp 240w, /assets/responsive/4e012d0ce4b136-480.webp 480w, /assets/responsive/4e012d0ce4b136-768.webp 768w",
-    "alt": "Zwei Rheinlandliegen am Rundweg um Morschenich",
-    "width": 768,
-    "height": 576,
-    "fit": "",
-    "badge": "Originalbild",
-    "credit": "Gemeinde Merzenich",
-    "symbol": false
-   }
-  },
-  {
-   "id": "2026-08-31-masterplan-buergewald",
-   "url": "/wirtschaft/masterplan-buergewald/",
-   "titel": "Grünes Licht für den Masterplan Bürgewald",
-   "teaser": "Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.",
-   "kicker": "Strukturwandel",
-   "ressort": "wirtschaft",
-   "ressortLabel": "Wirtschaft",
-   "ort": "MERZENICH",
-   "ortsteil": "morschenich",
-   "datum": "2026-08-31T09:20:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "nrw-urban",
-     "label": "NRW.URBAN"
-    },
-    {
-     "slug": "masterplan",
-     "label": "Masterplan"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/37c79d0e603f3a-768.webp",
-    "srcset": "/assets/responsive/37c79d0e603f3a-240.webp 240w, /assets/responsive/37c79d0e603f3a-480.webp 480w, /assets/responsive/37c79d0e603f3a-768.webp 768w",
-    "alt": "Masterplanprozess für Morschenich-Alt im Bürgewald",
-    "width": 768,
-    "height": 428,
-    "fit": "",
-    "badge": "Quellenmotiv",
-    "credit": "Gemeinde Merzenich",
-    "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-29-e-tour-de-rur",
@@ -625,7 +543,9 @@
     "badge": "Quellenmotiv",
     "credit": "LAG Rheinisches Revier an Inde und Rur / Heimat-Info",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-27-faire-woche",
@@ -664,46 +584,9 @@
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
     "symbol": false
-   }
-  },
-  {
-   "id": "2026-08-26-jugendgremium-gewaehlt",
-   "url": "/rathaus/jugendgremium-gewaehlt/",
-   "titel": "Erstes Jugendgremium in Merzenich gewählt",
-   "teaser": "Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.",
-   "kicker": "Jugend",
-   "ressort": "rathaus",
-   "ressortLabel": "Rathaus & Politik",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-08-26T11:29:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "jugendgremium",
-     "label": "Jugendgremium"
-    },
-    {
-     "slug": "buergerhaus",
-     "label": "Bürgerhaus"
-    },
-    {
-     "slug": "beteiligung",
-     "label": "Beteiligung"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/574e8ee34ee536-768.webp",
-    "srcset": "/assets/responsive/574e8ee34ee536-240.webp 240w, /assets/responsive/574e8ee34ee536-480.webp 480w, /assets/responsive/574e8ee34ee536-768.webp 768w",
-    "alt": "Wahl des ersten Jugendgremiums in Merzenich",
-    "width": 768,
-    "height": 576,
-    "fit": "",
-    "badge": "Originalbild",
-    "credit": "Jugendgremium der Gemeinde Merzenich",
-    "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-26-ortsfest-standkarten",
@@ -742,7 +625,9 @@
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-17-feuerwehr-einsatzbilanz-sommer",
@@ -781,7 +666,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-16-einsatz-119-rauch-buergewald",
@@ -816,7 +703,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-14-einsatz-118-rosspfad",
@@ -847,46 +736,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
-  },
-  {
-   "id": "2026-08-14-container-girbelsrath",
-   "url": "/vereine/container-girbelsrath/",
-   "titel": "Mehr Platz für die Girbelsrather Vereine",
-   "teaser": "Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.",
-   "kicker": "Vereinsleben",
-   "ressort": "vereine",
-   "ressortLabel": "Vereine",
-   "ort": "MERZENICH",
-   "ortsteil": "girbelsrath",
-   "datum": "2026-08-14T14:06:00+02:00",
-   "aktualisiert": "2026-09-04T00:00:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "maarhalle",
-     "label": "Maarhalle"
-    },
-    {
-     "slug": "leader",
-     "label": "LEADER"
-    },
-    {
-     "slug": "vereine",
-     "label": "Vereine"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/939564298cdfdc-768.webp",
-    "srcset": "/assets/responsive/939564298cdfdc-240.webp 240w, /assets/responsive/939564298cdfdc-480.webp 480w, /assets/responsive/939564298cdfdc-768.webp 768w",
-    "alt": "Drei neue Seecontainer vor der Maarhalle in Girbelsrath",
-    "width": 768,
-    "height": 576,
-    "fit": "",
-    "badge": "Originalbild",
-    "credit": "Gemeinde Merzenich",
-    "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-13-flaechenbrand-l257",
@@ -925,7 +777,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-13-einsatz-115-bab4",
@@ -964,7 +818,9 @@
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-10-einsatz-112-girbelsrath-flaeche",
@@ -999,7 +855,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-10-flaechenbrand-girbelsrath",
@@ -1034,7 +892,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-08-03-einsatz-110-katze-klaeranlage",
@@ -1069,7 +929,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-30-einsatz-108-vu-l264",
@@ -1108,7 +970,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-29-einsatz-107-stoppelfeld",
@@ -1147,7 +1011,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-26-einsatz-104-bahnboeschung",
@@ -1186,7 +1052,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-22-einsatz-100-jubilaeum",
@@ -1221,7 +1089,9 @@
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-21-einsatz-99-fahrzeugbrand-a4",
@@ -1260,7 +1130,9 @@
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-20-einsatz-97-personenbefreiung",
@@ -1295,7 +1167,9 @@
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-07-15-einsatz-94-pkw-brand",
@@ -1334,7 +1208,9 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "2026-06-24-einsatz-77-person-im-aufzug",
@@ -1369,7 +1245,9 @@
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
-   }
+   },
+   "undatiert": false,
+   "abgerufen": ""
   },
   {
    "id": "-haushalt-2026-chronik",
@@ -1408,7 +1286,9 @@
     "badge": "Offizielles Vereinslogo",
     "credit": "Gemeinde Merzenich · Heimat-Info",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-heimat-info-app",
@@ -1451,7 +1331,50 @@
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Cosmema GmbH",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-jugendgremium-gewaehlt",
+   "url": "/rathaus/jugendgremium-gewaehlt/",
+   "titel": "Erstes Jugendgremium in Merzenich gewählt",
+   "teaser": "Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.",
+   "kicker": "Jugend",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "jugendgremium",
+     "label": "Jugendgremium"
+    },
+    {
+     "slug": "buergerhaus",
+     "label": "Bürgerhaus"
+    },
+    {
+     "slug": "beteiligung",
+     "label": "Beteiligung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/574e8ee34ee536-768.webp",
+    "srcset": "/assets/responsive/574e8ee34ee536-240.webp 240w, /assets/responsive/574e8ee34ee536-480.webp 480w, /assets/responsive/574e8ee34ee536-768.webp 768w",
+    "alt": "Wahl des ersten Jugendgremiums in Merzenich",
+    "width": 768,
+    "height": 576,
+    "fit": "",
+    "badge": "Originalbild",
+    "credit": "Jugendgremium der Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-nahverkehrsplan-beteiligung",
@@ -1494,7 +1417,9 @@
     "badge": "Quellenmotiv",
     "credit": "Buravleva stock / Shutterstock (Symbolbild)",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-neuer-gemeinderat",
@@ -1533,7 +1458,50 @@
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-kleidertreff-zehn-jahre",
+   "url": "/leben/kleidertreff-zehn-jahre/",
+   "titel": "Kleidertreff feiert seinen 10. Geburtstag",
+   "teaser": "Seit zehn Jahren gibt es an der Lindenstraße Kleidung, Schuhe und Spielsachen für einen kleinen Obolus. Ein elfköpfiges Team hält den Laden am Laufen.",
+   "kicker": "Soziales",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kleidertreff",
+     "label": "Kleidertreff"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    },
+    {
+     "slug": "lindenstrasse",
+     "label": "Lindenstraße"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/b02c3dd7c1ffdc-768.webp",
+    "srcset": "/assets/responsive/b02c3dd7c1ffdc-240.webp 240w, /assets/responsive/b02c3dd7c1ffdc-480.webp 480w, /assets/responsive/b02c3dd7c1ffdc-768.webp 768w",
+    "alt": "Jubiläum des Merzenicher Kleidertreffs an der Lindenstraße",
+    "width": 768,
+    "height": 576,
+    "fit": "",
+    "badge": "Originalbild",
+    "credit": "Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-maehroboter-igelschutz",
@@ -1576,7 +1544,91 @@
     "badge": "Quellenmotiv",
     "credit": "alexgo.photography / Shutterstock (Symbolbild)",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-rheinlandliegen-morschenich",
+   "url": "/leben/rheinlandliegen-morschenich/",
+   "titel": "Von Morschenich aus den Blick nach Köln genießen",
+   "teaser": "Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.",
+   "kicker": "Freizeit",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "heimatscheck",
+     "label": "Heimatscheck"
+    },
+    {
+     "slug": "freizeit",
+     "label": "Freizeit"
+    },
+    {
+     "slug": "inga-dohmes",
+     "label": "Inga Dohmes"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/4e012d0ce4b136-768.webp",
+    "srcset": "/assets/responsive/4e012d0ce4b136-240.webp 240w, /assets/responsive/4e012d0ce4b136-480.webp 480w, /assets/responsive/4e012d0ce4b136-768.webp 768w",
+    "alt": "Zwei Rheinlandliegen am Rundweg um Morschenich",
+    "width": 768,
+    "height": 576,
+    "fit": "",
+    "badge": "Originalbild",
+    "credit": "Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-seniorennachmittag-anmeldung",
+   "url": "/leben/seniorennachmittag-anmeldung/",
+   "titel": "Jetzt anmelden zum Seniorennachmittag",
+   "teaser": "Am Samstag, 17. Oktober 2026, lädt die Gemeinde in die Weinberghalle. Die Anmeldung läuft über einen Coupon, ein Fahrdienst ist möglich.",
+   "kicker": "Senioren",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "seniorennachmittag",
+     "label": "Seniorennachmittag"
+    },
+    {
+     "slug": "weinberghalle",
+     "label": "Weinberghalle"
+    },
+    {
+     "slug": "anmeldung",
+     "label": "Anmeldung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/23c79c62d5d821-1440.webp",
+    "srcset": "/assets/responsive/23c79c62d5d821-240.webp 240w, /assets/responsive/23c79c62d5d821-480.webp 480w, /assets/responsive/23c79c62d5d821-800.webp 800w, /assets/responsive/23c79c62d5d821-1200.webp 1200w, /assets/responsive/23c79c62d5d821-1440.webp 1440w",
+    "alt": "Seniorennachmittag der Gemeinde Merzenich in der Weinberghalle",
+    "width": 1440,
+    "height": 372,
+    "fit": "",
+    "badge": "Offizielles Veranstaltungsbild",
+    "credit": "Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-glasfaserausbau-soco",
@@ -1615,7 +1667,9 @@
     "badge": "Quellenmotiv",
     "credit": "Gemeinde Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-kommunale-waermeplanung",
@@ -1654,7 +1708,46 @@
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-masterplan-buergewald",
+   "url": "/wirtschaft/masterplan-buergewald/",
+   "titel": "Grünes Licht für den Masterplan Bürgewald",
+   "teaser": "Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.",
+   "kicker": "Strukturwandel",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "nrw-urban",
+     "label": "NRW.URBAN"
+    },
+    {
+     "slug": "masterplan",
+     "label": "Masterplan"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/37c79d0e603f3a-768.webp",
+    "srcset": "/assets/responsive/37c79d0e603f3a-240.webp 240w, /assets/responsive/37c79d0e603f3a-480.webp 480w, /assets/responsive/37c79d0e603f3a-768.webp 768w",
+    "alt": "Masterplanprozess für Morschenich-Alt im Bürgewald",
+    "width": 768,
+    "height": 428,
+    "fit": "",
+    "badge": "Quellenmotiv",
+    "credit": "Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   },
   {
    "id": "-poolplatz-foerderbescheid",
@@ -1693,7 +1786,95 @@
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
     "symbol": false
-   }
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-stromtrasse-oberzier-blatzheim",
+   "url": "/wirtschaft/stromtrasse-oberzier-blatzheim/",
+   "titel": "Baustart für die neue Stromtrasse",
+   "teaser": "Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.",
+   "kicker": "Infrastruktur",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "amprion",
+     "label": "Amprion"
+    },
+    {
+     "slug": "stromnetz",
+     "label": "Stromnetz"
+    },
+    {
+     "slug": "rheinisches-revier",
+     "label": "Rheinisches Revier"
+    },
+    {
+     "slug": "baustelle",
+     "label": "Baustelle"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/e0224db1617810-1440.webp",
+    "srcset": "/assets/responsive/e0224db1617810-240.webp 240w, /assets/responsive/e0224db1617810-480.webp 480w, /assets/responsive/e0224db1617810-800.webp 800w, /assets/responsive/e0224db1617810-1200.webp 1200w, /assets/responsive/e0224db1617810-1440.webp 1440w",
+    "alt": "Neubau der Höchstspannungsleitung Oberzier–Blatzheim",
+    "width": 1440,
+    "height": 372,
+    "fit": "",
+    "badge": "Originalbild",
+    "credit": "Frank Peterschroeder / Amprion",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
+  },
+  {
+   "id": "-container-girbelsrath",
+   "url": "/vereine/container-girbelsrath/",
+   "titel": "Mehr Platz für die Girbelsrather Vereine",
+   "teaser": "Drei Seecontainer an der Maarhalle schaffen Lagerraum für Tische, Technik und Kostüme. Die LEADER-Förderung deckt 70 Prozent.",
+   "kicker": "Vereinsleben",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "",
+   "aktualisiert": "2026-09-04T00:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "maarhalle",
+     "label": "Maarhalle"
+    },
+    {
+     "slug": "leader",
+     "label": "LEADER"
+    },
+    {
+     "slug": "vereine",
+     "label": "Vereine"
+    }
+   ],
+   "bild": {
+    "src": "/assets/responsive/939564298cdfdc-768.webp",
+    "srcset": "/assets/responsive/939564298cdfdc-240.webp 240w, /assets/responsive/939564298cdfdc-480.webp 480w, /assets/responsive/939564298cdfdc-768.webp 768w",
+    "alt": "Drei neue Seecontainer vor der Maarhalle in Girbelsrath",
+    "width": 768,
+    "height": 576,
+    "fit": "",
+    "badge": "Originalbild",
+    "credit": "Gemeinde Merzenich",
+    "symbol": false
+   },
+   "undatiert": true,
+   "abgerufen": "2026-09-04"
   }
  ]
 }

@@ -1,0 +1,110 @@
+/* ============================================================
+   Merzenich Aktuell - Fundament
+   Benannte Tokens fuer Abstand, Typografie, Radius, Breite.
+
+   WARUM DIESE DATEI: gemessen wurden im Bestand 49 verschiedene
+   px-Abstaende (31 davon nicht auf dem 4er-Raster) und 84 verschiedene
+   font-size-Werte ohne benannte Skala. Ohne Leiter entsteht jeder neue
+   Abstand per Augenmass, und der Seitenrhythmus franst weiter aus.
+
+   WAS DIESE DATEI IST: ausschliesslich Tokens. Sie enthaelt keinen
+   Selektor ausser :root, aendert keine bestehende Regel und veraendert
+   das heutige Aussehen an keiner Stelle. Erst spaetere Gewerke setzen
+   die Tokens an den Komponenten ein. Deshalb wird sie als erste der
+   Projektdateien geladen (vor style.css), damit alles danach sie kennt.
+
+   NUTZUNGSREGEL: Der Rhythmus zwischen Bloecken - Sektionen, Karten,
+   Listen, Spalten - kommt ausschliesslich aus der Leiter. Rohe
+   Zwischenwerte sind nur innerhalb einer Komponente erlaubt, also fuer
+   Feinheiten wie optischen Ausgleich an einer Ikone oder einem Rahmen.
+   Sobald ein Wert den Abstand zwischen zwei Bloecken bestimmt, gehoert
+   er auf eine Stufe. Das ist bei den Referenzen genauso: Guardian
+   erlaubt 62 rohe px-Werte innerhalb von Komponenten, der Blockrhythmus
+   laeuft aber vollstaendig ueber space[1..24].
+   ============================================================ */
+
+:root{
+
+  /* ---------- Abstandsleiter ----------
+     Zehn Stufen, hergeleitet aus zwei gemessenen Produktionsleitern:
+     Guardian source-foundations space.ts  -> 4 8 12 16 20 24 36 48 96
+     BBC GEL gel-foundations spacings.js   -> 4 8 12 16 24 32 40 48 56
+     Gemeinsamer Kern beider: 4 8 12 16 24 48. Dazu 20 (Guardian, und
+     zugleich die vorhandene Rinne der .shell), 32 (BBC), 64 und 96
+     (Guardian-Oberkante) fuer den grossen Seitenrhythmus.
+     Alles bleibt auf dem 4er-Raster. */
+  --s1:4px;
+  --s2:8px;
+  --s3:12px;
+  --s4:16px;
+  --s5:20px;
+  --s6:24px;
+  --s7:32px;
+  --s8:48px;
+  --s9:64px;
+  --s10:96px;
+
+  /* Sektionsrhythmus fliessend, nach Ghost-Vorbild (assets/built: der
+     Sektionsabstand ist dort clamp(24px, .., 48px), nicht fest). Ein
+     fester Sektionsabstand ist auf 360px zu gross und auf 1240px zu
+     klein; die beiden Werte skalieren zwischen zwei Stufen der Leiter. */
+  --sektion:clamp(32px,5vw,64px);        /* --s7 bis --s9  */
+  --sektion-gross:clamp(48px,7vw,96px);  /* --s8 bis --s10 */
+
+  /* ---------- Typo-Leiter ----------
+     Acht Stufen, benannt nach Verwendung statt nach Groesse. Hergeleitet
+     aus den 84 vorhandenen font-size-Werten in style.css und v19.css:
+     jede Stufe ist der dominante Wert ihres gemessenen Clusters.
+
+       Cluster  9  -12,5px (147 Treffer, davon 78 auf 12px)  -> meta
+       Cluster 13  -14,5px  (98 Treffer)                     -> klein
+       Cluster 15  -17,5px  (42 Treffer, body ist 16px)      -> text
+       Cluster 18  -21px    (43 Treffer)                     -> headline-s
+       Cluster 22  -28px    (32 Treffer)                     -> headline-m
+       Cluster 30  -38px    (20 Treffer)                     -> headline-l
+       Cluster 40  -58px    (11 Treffer)                     -> headline-xl
+
+     Die Schrittweite waechst nach oben (1,17 / 1,14 / 1,25 / 1,30 /
+     1,31 / 1,35) - eng bei Lesegroessen, weit bei Schaugroessen. Keine
+     Schriftaenderung: Inter (--sans) und Newsreader (--serif) bleiben.
+     Die Zeilenhoehen sind ebenfalls vorhandene Werte, kein neuer Satz. */
+  --t-meta:12px;        --lh-meta:1.4;        /* Kicker, Datum, Bildnachweis */
+  --t-klein:14px;       --lh-klein:1.45;      /* Teaser, Bildunterschrift    */
+  --t-text:16px;        --lh-text:1.55;       /* Lesetext, = body heute      */
+  --t-headline-s:20px;  --lh-headline-s:1.25; /* Listeneintrag, Karte        */
+  --t-headline-m:26px;  --lh-headline-m:1.2;  /* Sektionskopf                */
+  --t-headline-l:34px;  --lh-headline-l:1.15; /* Artikelkopf                 */
+  --t-headline-xl:46px; --lh-headline-xl:1.08;/* Aufmacher                   */
+
+  /* Achte Stufe: der Aufmacher der Startseite ist heute schon fliessend.
+     Jeder Teil ist gemessen - Untergrenze aus clamp(32px,4vw,54px)
+     (v19.css), Steigung 4vw ist die haeufigste im Bestand (4 von 7
+     clamps), Obergrenze aus clamp(36px,4vw,58px) (v19.css). Damit
+     bleibt eine spaetere Anwendung auf dem Telefon lesbar, statt eine
+     feste 46px-Zeile zu erzwingen. */
+  --t-display:clamp(32px,4vw,58px); --lh-display:1.05;
+
+  /* ---------- Radien ----------
+     --r0 fuer Kanten, die bewusst hart bleiben (Bild, Tabelle), --r1 fuer
+     Bedienelemente, --r2 fuer Flaechen. Das vorhandene --radius:3px in
+     style.css bleibt unangetastet; es wird hier nicht ueberschrieben. */
+  --r0:0;
+  --r1:6px;
+  --r2:12px;
+
+  /* ---------- Breiten und Rinne ----------
+     Uebernommen aus den vorhandenen Werten, damit Bestand und Leiter
+     denselben Rahmen meinen: --shell:1240px und --measure:680px aus
+     style.css, .narrow mit 800px, .shell mit padding 0 20px.
+     Eigene Namen, weil style.css nach dieser Datei laedt - --shell wird
+     hier bewusst NICHT neu gesetzt, es bleibt bei einer Quelle. */
+  --breite-shell:1240px;   /* Seitenbreite, = --shell   */
+  --breite-schmal:800px;   /* schmale Spalte, = .narrow */
+  --breite-text:680px;     /* Lesebreite, = --measure   */
+  --rinne:20px;            /* Seitenrand, = --s5        */
+}
+
+/* Kein Dunkelmodus-Block: diese Datei beschreibt ausschliesslich
+   Geometrie und Typografie. Beides ist in hell und dunkel identisch -
+   theme.css setzt im Dunkelmodus nur Farbvariablen um. Ein leerer
+   html[data-theme="dark"]-Block waere hier reine Attrappe. */

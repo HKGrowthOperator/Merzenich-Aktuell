@@ -12,43 +12,10 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/wirtschaft/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
-<title>LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</guid>
-<pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f507b5f3e2c7d3-360.webp" medium="image"><media:credit>LAG Rheinisches Revier an Inde und Rur / Heimat-Info</media:credit><media:description>Ankündigung des digitalen LEADER-Infoabends</media:description></media:content>
-</item>
-<item>
-<title>Baustart für die neue Stromtrasse</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</guid>
-<pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/e0224db1617810-1440.webp" medium="image"><media:credit>Frank Peterschroeder / Amprion</media:credit><media:description>Neubau der Höchstspannungsleitung Oberzier–Blatzheim</media:description></media:content>
-</item>
-<item>
-<title>Grünes Licht für den Masterplan Bürgewald</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</guid>
-<pubDate>Mon, 31 Aug 2026 07:20:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Morschenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/37c79d0e603f3a-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Masterplanprozess für Morschenich-Alt im Bürgewald</media:description></media:content>
-</item>
-<item>
 <title>Glasfaser: Ausbau läuft seit 2020 mit SOCO</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/</guid>
-<pubDate>Invalid Date</pubDate>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
@@ -59,7 +26,7 @@
 <title>Wärmeplanung: Merzenich gibt den Startschuss</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/</guid>
-<pubDate>Invalid Date</pubDate>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
@@ -67,15 +34,48 @@
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/49833d3edfa958-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Auftakt zur kommunalen Wärmeplanung in Merzenich</media:description></media:content>
 </item>
 <item>
+<title>Grünes Licht für den Masterplan Bürgewald</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/masterplan-buergewald/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Morschenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der dynamische Masterplan für den Ort der Zukunft wird abschließend überarbeitet. Danach werden die Planungen für die technische Infrastruktur konkretisiert.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/37c79d0e603f3a-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Masterplanprozess für Morschenich-Alt im Bürgewald</media:description></media:content>
+</item>
+<item>
 <title>Umbau des Poolplatzes startet im Frühjahr 2026</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/poolplatz-foerderbescheid/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/poolplatz-foerderbescheid/</guid>
-<pubDate>Invalid Date</pubDate>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
 <category>Wirtschaft</category>
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Das Land übergibt einen Förderbescheid über 5,1 Millionen Euro. Der zentrale Merzenicher Platz liegt in einer tektonischen Störzone und soll neu gestaltet werden.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/0f626136429ef9-768.webp" medium="image"><media:credit>Gemeinde Merzenich</media:credit><media:description>Übergabe des Förderbescheids für den Merzenicher Poolplatz</media:description></media:content>
+</item>
+<item>
+<title>Baustart für die neue Stromtrasse</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/stromtrasse-oberzier-blatzheim/</guid>
+<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Amprion baut zwischen Oberzier und Blatzheim eine Höchstspannungsleitung mit vier 380-Kilovolt-Stromkreisen. Im Gemeindegebiet haben die Arbeiten begonnen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/e0224db1617810-1440.webp" medium="image"><media:credit>Frank Peterschroeder / Amprion</media:credit><media:description>Neubau der Höchstspannungsleitung Oberzier–Blatzheim</media:description></media:content>
+</item>
+<item>
+<title>LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</guid>
+<pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f507b5f3e2c7d3-360.webp" medium="image"><media:credit>LAG Rheinisches Revier an Inde und Rur / Heimat-Info</media:credit><media:description>Ankündigung des digitalen LEADER-Infoabends</media:description></media:content>
 </item>
 </channel>
 </rss>
