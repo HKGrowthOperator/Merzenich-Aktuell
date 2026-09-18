@@ -43,7 +43,9 @@ Eine Identität, keine Ressortfarben. Ziel ist Newsroom und Wirtschaftsmagazin, 
 Ab Fassung 2: Weiß und Off-White als Fläche, Anthrazit für Text, Bordeaux als Marke, ein sehr dezentes
 neutrales Grau für Linien und Ruhezonen. Keine großen beigefarbenen Hintergründe. Gold höchstens als
 winziges Detail, wenn überhaupt, und nie für kleine Schrift, weil es den Kontrastwert verfehlt.
-Verteilung ungefähr 85 Prozent Weiß und Off-White, 13 Prozent Bordeaux und Anthrazit, 2 Prozent Akzent.
+Verteilung: Schwarz und Anthrazit als Primärfarbe für Text, Bordeaux als Marke, Weiß und sehr helles
+Grau als Fläche, Gold höchstens 5 Prozent des Erscheinungsbildes und nur für kleine Premiummarkierungen,
+besondere Linien und Sportdetails. Gold ist keine Designidentität.
 
 | Token | Hell | Dunkel | Verwendung |
 |---|---|---|---|
@@ -153,6 +155,85 @@ Rechts daneben läuft eine dichte redaktionelle Matrix, damit kein Weißraum ent
 sieben Servicepunkte stehen: ein Aufmacher mit großem Bild, zwei mittlere Meldungen nebeneinander,
 vier kompakte Meldungen, bei Bedarf eine Kurzmeldungsleiste. Die redaktionelle Fläche endet dadurch
 ungefähr auf derselben Höhe wie die Service-Spalte. Header und Footer bleiben unverändert.
+
+## 7b. Komposition der Startseite (V2, verbindlich)
+
+Grundsatz: Es wird keine Spalte gebaut, weil Platz da ist. Jede Fläche trägt Nachricht, Bild, Service
+oder Navigation. Tote Fläche gibt es nicht. Jede redaktionelle Meldung besteht aus Bild, Kategorie,
+Headline und Zeit, immer in derselben Komponente.
+
+### Obere Fläche
+
+Drei Spalten statt zwei. Links die Service-Spalte unverändert. Daneben eine große Top-Story mit echtem
+Bild, großer Headline und Teaser. Rechts daneben zwei Nebenmeldungen mit ebenfalls großem Bild, nicht
+vier winzige Teaser. Die Reihe endet ungefähr auf Höhe der Service-Spalte.
+
+Aus der oberen Fläche entfallen: die Datumszeile im Inhalt, weil das Datum im Kopf steht, und die
+Beschriftung "Weitere Nachrichten", weil sie generisch ist und nach Vorlage aussieht. An ihre Stelle
+treten echte Meldungen.
+
+### Abstände zwischen Sektionen
+
+Eine Sektion ist so hoch wie ihr Inhalt, plus ein definierter Abstand von 64 bis 80 Pixel zur nächsten.
+Kein Raster erzeugt mehr Lücken von 300 bis 500 Pixel. Ist eine Spalte kürzer als die andere, wird sie
+mit redaktionellem Inhalt gefüllt, nicht mit Leere.
+
+### Sektionsmuster
+
+Alle Ressortflächen folgen demselben Muster, nicht jede ein eigenes:
+
+- zwei große Meldungen nebeneinander, jede mit Bild, Headline und Teaser
+- darunter drei mittlere Meldungen nebeneinander, jede mit Bild
+- alternativ zwei Drittel Hauptmeldung plus ein Drittel mit zwei Nebenmeldungen
+
+Nicht mehr: ein riesiges Bild links und eine dünne Meldungsleiter rechts.
+
+### Sektionsköpfe
+
+Einheitlich in zwei Zeilen: darüber die Kategorienzeile in Versalien, darunter der Titel.
+
+| Kategorienzeile | Titel |
+|---|---|
+| AUS DER GEMEINDE | Nachrichten aus Merzenich |
+| FEUERWEHR · POLIZEI · VERKEHR | Blaulicht |
+| KREISLIGA · VEREINE · ERGEBNISSE | Sport vor Ort |
+| RATHAUS · BESCHLÜSSE · PROJEKTE | Politik & Gemeinde |
+
+### Sportzahlen
+
+Kein Kachel-Dashboard mit schwarzen Flächen. Weißer Grund, sehr große Serifenzahlen, dünne
+anthrazitfarbene Linien, darunter eine Zeile mit Liga, Kreis und Datenstand. Höchstens ein kleiner
+Akzent in Bordeaux.
+
+### Kompaktmarke beim Scrollen
+
+Im großen Kopf steht die vollständige Wortmarke. Beim Scrollen reduziert sie sich auf ein Monogramm in
+Serifenschrift, ohne goldene Linie und ohne Dekoration.
+
+### Reihenfolge der Startseite
+
+1. Großer Header
+2. Navigation
+3. Ortswahl
+4. Heute in Merzenich
+5. Service-Spalte links, große Redaktion rechts
+6. Kurzmeldungen, jetzt wichtig
+7. Nachrichten aus Merzenich
+8. Blaulicht
+9. Sport vor Ort
+10. Aus den Ortsteilen
+11. Rathaus & Politik
+12. Wirtschaft
+13. Vereine & Menschen
+14. Bürgewald
+15. bestehende untere Bereiche
+16. Footer
+
+### Bildzuweisung ist fest, nicht wechselnd
+
+Jeder Artikel hat genau ein zugewiesenes Bild. Es bleibt auf Startseite, Ressortseite, Suchseite und
+Artikelseite dasselbe. Keine Rotation, keine zufällige Auswahl, kein Wechsel nach Neuladen. Ein
+Vereinslogo füllt nie die Bildfläche; der Verein erscheint stattdessen als kleine Textmarke.
 
 ## 8. Komponenten
 

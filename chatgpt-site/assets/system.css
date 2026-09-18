@@ -7,11 +7,17 @@
    font-size-Werte ohne benannte Skala. Ohne Leiter entsteht jeder neue
    Abstand per Augenmass, und der Seitenrhythmus franst weiter aus.
 
-   WAS DIESE DATEI IST: ausschliesslich Tokens. Sie enthaelt keinen
-   Selektor ausser :root, aendert keine bestehende Regel und veraendert
-   das heutige Aussehen an keiner Stelle. Erst spaetere Gewerke setzen
-   die Tokens an den Komponenten ein. Deshalb wird sie als erste der
-   Projektdateien geladen (vor style.css), damit alles danach sie kennt.
+   WAS DIESE DATEI IST: zuerst die Tokens, danach ein einziger
+   Anwendungsblock - die Bildformate der Kartentypen (Gewerk 4). Bis
+   dahin galt hier die Regel "nur :root". Sie ist bewusst aufgegeben
+   worden, weil ein Bildformat nur an EINER Stelle stehen darf: sobald
+   dieselbe Karte in style.css, v19.css, v20.css und recovery.css je ein
+   eigenes Seitenverhaeltnis bekommt, gewinnt das letzte geladene, und
+   niemand sieht mehr, welches gemeint war. Der Block am Ende dieser
+   Datei ist deshalb die eine Quelle fuer Bildformate. Alle anderen
+   Gestaltungsfragen bleiben in ihren bisherigen Dateien.
+   Die Datei wird als erste der Projektdateien geladen (vor style.css),
+   damit alles danach die Tokens kennt.
 
    NUTZUNGSREGEL: Der Rhythmus zwischen Bloecken - Sektionen, Karten,
    Listen, Spalten - kommt ausschliesslich aus der Leiter. Rohe
@@ -102,9 +108,165 @@
   --breite-schmal:800px;   /* schmale Spalte, = .narrow */
   --breite-text:680px;     /* Lesebreite, = --measure   */
   --rinne:20px;            /* Seitenrand, = --s5        */
+
+  /* ---------- Bildformate ----------
+     WARUM: gemessen wurden ueber alle Stylesheets 16 verschiedene
+     Seitenverhaeltnisse fuer redaktionelle Teaserbilder - 1.15, 1.36,
+     1.44, 1.55, 1.7, 1.82, 1.9, 1.92, 1.95, 2.2, 16/9, 16/10, 3/2, 4/3,
+     2/1, auto. Jede Reihe bekam dadurch eine andere Bildhoehe, und in
+     derselben Reihe standen Karten mit unterschiedlich hohen Bildern
+     nebeneinander. Das liest sich nicht wie eine Redaktion, sondern wie
+     ein Layoutfehler.
+
+     WAS: fuenf Formate, mehr braucht die Seite nicht. Bewusst klein
+     gehalten - jedes zusaetzliche Format erzeugt wieder eine eigene
+     Bildhoehe. Die Werte sind keine Erfindung, sondern die im Bestand
+     bereits dominanten: 16/9 ist das haeufigste Teaserformat, 3/2 das
+     haeufigste Format der kompakten Zeilen, 4/3 sitzt schon auf
+     mosaic-compact und people-minor.
+
+     Gross und Karte tragen denselben Wert. Das ist Absicht und kein
+     Versehen: der Aufmacher soll GROESSER wirken, nicht ANDERS
+     geschnitten. Groesse kommt aus der Spaltenbreite, nicht aus einem
+     zweiten Seitenverhaeltnis. Getrennte Namen bleiben trotzdem, damit
+     eine spaetere Korrektur nur einen der beiden Faelle trifft. */
+  --bild-gross:16/9;     /* Aufmacher, grosse Karten, Lead einer Liste */
+  --bild-karte:16/9;     /* Standardkarte im Raster                    */
+  --bild-kompakt:3/2;    /* kompakte Zeile mit Thumbnail neben Text    */
+  --bild-person:4/3;     /* Portraet, Personenmeldung                  */
+  --bild-objekt:4/3;     /* Immobilie, Objektbild im Markt             */
 }
 
 /* Kein Dunkelmodus-Block: diese Datei beschreibt ausschliesslich
    Geometrie und Typografie. Beides ist in hell und dunkel identisch -
    theme.css setzt im Dunkelmodus nur Farbvariablen um. Ein leerer
    html[data-theme="dark"]-Block waere hier reine Attrappe. */
+
+/* ============================================================
+   BILDFORMATE DER KARTENTYPEN (Gewerk 4)
+
+   ZIEL: ein Kartentyp, ein Bildformat. In einer Reihe haben alle
+   Bilder dieselbe Hoehe, egal wie lang die Headline darunter ist.
+
+   ---------- Warum diese Selektoren so aussehen ----------
+   Diese Datei laedt ZUERST. Alles danach koennte sie ueberschreiben.
+   Gemessen wurde deshalb fuer jede Regel, was spaeter am selben Ziel
+   steht (Ladereihenfolge: system - style - v19 - v20 - recovery -
+   korrekturen - theme - homepage-polish - editorial-audit):
+
+     Ziel                Staerkster spaeterer Gegner        Gewicht
+     .front-lead .media  editorial-audit body.home ... !wichtig (0,3,1)
+     .front-brief .media editorial-audit body.home ... !wichtig (0,3,1)
+                         korrekturen .front-brief.editorial-secondary
+                         .secondary-lead .media                 (0,4,0)
+     .desk-card .media   v19 @640 .sport-stories .desk-card ... (0,3,0)
+     .feed-row .media    korrekturen .feed-row.editorial-current-row
+                         .media                                 (0,3,0)
+     .feed-lead .media   v20 .feed-lead .media                  (0,2,0)
+
+   Daraus folgt ein einheitlicher Anker: "html body" plus die
+   Kartenklasse DOPPELT geschrieben. Das ergibt (0,3,2) und schlaegt
+   jeden der obigen Gegner auf Spezifitaet allein - ohne !important,
+   ohne neue Klasse im Markup, ohne eine fremde Datei anzufassen. Die
+   doppelte Klasse ist kein Tippfehler, sie ist das Gewicht.
+
+   ZWEI AUSNAHMEN MIT !important, beide begruendet:
+   front-lead und front-brief. editorial-audit.css laedt zur Laufzeit
+   ALS LETZTE Datei und setzt dort aspect-ratio/width/height mit
+   !important. Gegen eine !important-Deklaration gewinnt Spezifitaet
+   allein nicht, nur ein !important mit hoeherer Spezifitaet. (0,3,2)
+   schlaegt die dortigen (0,3,1) und (0,3,0). Ueberall sonst steht
+   bewusst KEIN !important - es wird hier nicht gestreut, sondern
+   genau zweimal gesetzt, wo die Alternative "gar nicht wirken" waere.
+   ============================================================ */
+
+/* ---------- Aufmacher ----------
+   Nur das Seitenverhaeltnis. Breite und Hintergrund kommen weiter aus
+   den bestehenden Dateien; hier wird nur die Hoehe berechenbar. */
+html body .front-lead.front-lead .media{aspect-ratio:var(--bild-gross,16/9)!important}
+
+/* ---------- Kompakte Zeile in der rechten Spalte ----------
+   Hier reicht aspect-ratio allein NICHT: v20 setzt 112x84px,
+   editorial-audit 104x78px mit !important. Sind Breite UND Hoehe
+   gesetzt, ist die Box fest vermessen und aspect-ratio bleibt wirkungs-
+   los. Deshalb werden beide auf auto zurueckgestellt - die Breite kommt
+   dann aus der Rasterspalte der Karte (112px), die Hoehe aus dem
+   Format. Alle Briefs einer Spalte sind damit exakt gleich hoch. */
+html body .front-brief.front-brief .media{aspect-ratio:var(--bild-kompakt,3/2)!important;width:auto!important;height:auto!important}
+
+/* Der Secondary-Lead ist kein Thumbnail, sondern eine Karte ueber die
+   volle Breite der Service-Spalte. Er bekommt deshalb das grosse
+   Format statt des kompakten. Ersetzt das bisherige 2.2 aus
+   korrekturen.css - ein Verhaeltnis, das sonst nirgends vorkam. */
+html body .front-brief.secondary-lead .media{aspect-ratio:var(--bild-gross,16/9)!important}
+
+/* ---------- Standardkarte im Raster ---------- */
+html body .desk-card.desk-card .media{aspect-ratio:var(--bild-karte,16/9)}
+
+/* mosaic-compact ist trotz .desk-card eine kompakte Zeile: das Bild
+   sitzt in einer 120px-Spalte neben dem Text. 16/9 waere dort nur
+   67px hoch und wuerde neben zwei Textzeilen verschwinden. */
+html body .desk-card.mosaic-compact .media{aspect-ratio:var(--bild-kompakt,3/2)}
+
+/* ---------- Listenzeilen ---------- */
+html body .feed-row.feed-row .media{aspect-ratio:var(--bild-kompakt,3/2)}
+html body .feed-lead.feed-lead .media{aspect-ratio:var(--bild-gross,16/9)}
+
+/* ---------- Kartentypen aus Gewerk 1 ----------
+   ANMERKUNG: Gewerk 1 laeuft parallel, die endgueltigen Klassennamen
+   lagen hier noch nicht vor. Statt einen Namen zu raten, stehen hier
+   AUFSATZPUNKTE: eine Karte aus Gewerk 1 haengt sich eine dieser
+   Klassen an und hat damit das Format der Reihe. Bewusst KEIN
+   Teilstring-Selektor wie [class*="-kompakt"] - der wuerde auch
+   html.kopf-kompakt treffen, das kopf.js beim Scrollen setzt, und
+   damit jede Meldung der Seite umformatieren.
+   Die beiden Schreibweisen ma- und ma-- sind beide abgedeckt, weil im
+   Bestand ma- gilt (ma-no-image, ma-home-dateline) und der Auftrag von
+   ma-- spricht. */
+html body .ma-bild-gross .media,html body .ma--bild-gross .media,
+html body .ma-aufmacher .media,html body .ma--aufmacher .media{aspect-ratio:var(--bild-gross,16/9)}
+html body .ma-bild-karte .media,html body .ma--bild-karte .media,
+html body .ma-mittel .media,html body .ma--mittel .media{aspect-ratio:var(--bild-karte,16/9)}
+html body .ma-bild-kompakt .media,html body .ma--bild-kompakt .media,
+html body .ma-kompakt .media,html body .ma--kompakt .media{aspect-ratio:var(--bild-kompakt,3/2)}
+html body .ma-bild-person .media,html body .ma--bild-person .media{aspect-ratio:var(--bild-person,4/3)}
+html body .ma-bild-objekt .media,html body .ma--bild-objekt .media{aspect-ratio:var(--bild-objekt,4/3)}
+
+/* ---------- Gleiche Hoehe innerhalb einer Reihe ----------
+   Das Format allein genuegt nicht. Steht ein Raster auf
+   align-items:stretch (Voreinstellung), zieht die laengste Karte alle
+   anderen mit und die Bildflaechen beginnen nicht mehr auf derselben
+   Linie. start setzt jede Karte an die Oberkante ihrer Reihe; das Bild
+   liegt dann bei allen auf gleicher Hoehe und bekommt aus dem Format
+   dieselbe Hoehe. Das ist der einzige Eingriff in die Geometrie, den
+   Gewerk 4 ausserhalb der Bildbox macht. */
+html body .desk-cards,html body .sport-stories,
+html body .news-mosaic,html body .people-grid{align-items:start}
+html body .feed-lead.feed-lead{align-items:start}
+
+/* ---------- Headlines deckeln ----------
+   Ohne Deckel bestimmt die Ueberschrift die Kartenhoehe: drei Zeilen
+   neben einer Zeile ergibt zwei verschieden hohe Karten in derselben
+   Reihe. Drei Zeilen fuer Karten, vier fuer den Aufmacher - er darf
+   laenger sein, weil er allein in seiner Reihe steht.
+   line-clamp steht neben -webkit-line-clamp, weil die Eigenschaft
+   inzwischen ohne Praefix standardisiert ist; die Praefixform bleibt
+   fuer aeltere Browser. */
+html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+html body .front-brief.front-brief h2,html body .front-brief.front-brief h3,
+html body .desk-card.desk-card h3,
+html body .feed-row.feed-row h3,
+html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+
+/* ---------- Ein Sonderfall, der ohne Regel haesslich wuerde ----------
+   Unter 1200px klappt recovery.css ".portal-news .front-brief" auf
+   display:block um. Aus der kompakten Zeile mit Thumbnail wird dann
+   eine gestapelte Karte, deren Bild ueber die volle Spaltenbreite
+   laeuft. Mit dem kompakten 3/2 waere dieses Bild dort deutlich zu
+   hoch und wuerde die Service-Spalte auseinanderziehen. Sobald die
+   Karte gestapelt ist, ist sie keine kompakte Zeile mehr, sondern eine
+   Standardkarte - und bekommt deren Format. Die 1199px stammen nicht
+   von hier, sie sind der vorhandene Umbruch aus recovery.css. */
+@media (max-width:1199px){
+  html body .portal-news .front-brief.front-brief .media{aspect-ratio:var(--bild-karte,16/9)!important}
+}

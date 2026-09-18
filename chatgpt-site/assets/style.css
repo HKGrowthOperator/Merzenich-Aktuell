@@ -9,10 +9,28 @@
 
 :root{
   /* --muted seit baf1385 dunkler als v10-Entwurf: ≥5,5:1 auf paper/gold-wash für 9,5–12,5-px-Meta */
-  --paper:#f7f5f0;--card:#ffffff;--ink:#151412;--ink-soft:#3c3a36;--muted:#615d55;--line:#e4e0d5;--line-soft:#eeeae0;
+  /* 18.09.: Grundflaeche war #f7f5f0, also spuerbar beige. Die Seite soll wie ein
+     Newsroom wirken, nicht wie Lifestyle-Papier, darum Off-White ohne Gelbstich.
+     Linien ziehen mit: --line/--line-soft waren warm getoent und haben das Beige
+     ueber jede Tabelle und jede Karte weitergetragen; jetzt neutrales Grau. */
+  --paper:#fbfbfa;--card:#ffffff;--ink:#151412;--ink-soft:#3c3a36;--muted:#615d55;--line:#e3e3e1;--line-soft:#eeeeec;
   --red:#971725;--red-dark:#70111b;--red-surface:#971725;--red-surface-hover:#7c1220;--red-wash:#faf1f2;
-  --gold:#c8a24e;--gold-deep:#a8842f;--gold-text:#7a5e1c;--gold-wash:#f6efdd;--black:#0c0b0a;
-  --stage:#0c0b0a;--stage-2:#141210;--field-dark:#171512;--on-dark-strong:#fff;--on-dark:#e8e4da;--on-dark-soft:#b5b0a4;--on-dark-muted:#8f8a7e;--hairline-dark:#26231e;
+  /* 18.09.: Gold verliert seine Rolle. Die Tokennamen bleiben, weil theme.css und
+     die uebrigen Stylesheets sie referenzieren und hier nicht umbenannt werden
+     duerfen; die Werte tragen jetzt Bordeaux bzw. neutrales Grau. Damit wird aus
+     jedem alten Goldakzent ein Markenakzent, ohne 60 Regeln anzufassen.
+     Kontrast: #971725 auf --paper 8,23:1, auf --card 8,52:1, auf --gold-wash 7,74:1.
+     --gold-deep #70111b auf --paper 11,36:1. Alle ueber 4,5:1, also auch fuer
+     die kleinen Eyebrow-Labels tragfaehig. */
+  --gold:#971725;--gold-deep:#70111b;--gold-text:#971725;--gold-wash:#f4f4f3;--black:#0c0b0a;
+  /* Auf den dunklen Baendern (Topbar, Drawer, Footer, Ortsteil-Kacheln) traegt
+     Bordeaux nicht: #971725 auf --stage ergibt nur 2,31:1. Dort steht deshalb ein
+     neutrales Off-White als Akzent, 17,56:1 auf --stage, 16,69:1 auf --stage-2. */
+  --accent-dark:#f2f2f1;
+  /* 18.09.: die hellen Werte auf den dunklen Baendern waren warm getoent
+     (#e8e4da, #b5b0a4, #8f8a7e) und haben das Beige in den Footer gezogen.
+     Jetzt neutral; die Helligkeiten und damit alle Kontraste bleiben gleich. */
+  --stage:#0c0b0a;--stage-2:#141210;--field-dark:#171512;--on-dark-strong:#fff;--on-dark:#e7e7e5;--on-dark-soft:#b4b4b1;--on-dark-muted:#8e8e8b;--hairline-dark:#262626;
   --scrim:rgba(12,11,10,.78);--scrim-heavy:rgba(12,11,10,.55);--ok:#18794e;--ok-wash:#eef7f1;--wa:#25d366;--blue:#1d4f8f;
   --serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --shell:1240px;--measure:680px;--radius:3px;
@@ -34,7 +52,11 @@ input,select,textarea{font:inherit;color:inherit}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:absolute;left:-9999px;top:0;background:var(--red-surface);color:#fff;padding:10px 16px;z-index:99}.skip:focus{left:12px;top:12px;color:#fff}
 :focus-visible{outline:2px solid var(--red-dark);outline-offset:2px}
-.topbar :focus-visible,.masthead :focus-visible,.drawer :focus-visible,.section.dark :focus-visible,footer :focus-visible,.lightbox :focus-visible,.sidebox.dark :focus-visible,.mitmachen :focus-visible,.district-tile:focus-visible{outline-color:var(--gold)}
+/* 18.09.: Fokusring war Gold. Auf den dunklen Baendern traegt Bordeaux nicht,
+   dort steht das neutrale Off-White (17,56:1 auf --stage). Der Kopf ist seit
+   editorial-audit.css weiss, dort ist Bordeaux richtig und erreicht 8,52:1. */
+.topbar :focus-visible,.drawer :focus-visible,.section.dark :focus-visible,footer :focus-visible,.lightbox :focus-visible,.sidebox.dark :focus-visible,.mitmachen :focus-visible,.district-tile:focus-visible{outline-color:var(--accent-dark)}
+.masthead :focus-visible{outline-color:var(--red)}
 ::selection{background:var(--gold-wash)}
 .hp{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
 [hidden]{display:none!important}
@@ -45,7 +67,7 @@ input,select,textarea{font:inherit;color:inherit}
 .topbar{background:var(--stage);color:var(--on-dark);font-size:12.5px;overflow:hidden}
 .topbar .shell{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:36px}
 .topbar .date{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topbar b{color:var(--on-dark-strong);font-weight:600}.topbar .stand{color:var(--on-dark-muted);margin-left:10px}
-.toplinks{display:flex;gap:18px}.toplinks a{color:var(--on-dark);font-weight:500;display:inline-flex;align-items:center;min-height:36px}.toplinks a:hover{color:var(--gold)}
+.toplinks{display:flex;gap:18px}.toplinks a{color:var(--on-dark);font-weight:500;display:inline-flex;align-items:center;min-height:36px}.toplinks a:hover{color:var(--accent-dark)}
 .toplinks .wa::before{content:'●';color:var(--wa);margin-right:5px;font-size:9px;vertical-align:1px}
 .masthead{background:var(--stage);border-top:1px solid var(--hairline-dark);padding:18px 0 14px}
 .mast-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
@@ -59,7 +81,10 @@ input,select,textarea{font:inherit;color:inherit}
 .mast-line{background:var(--stage);padding:0 0 14px}
 .mast-line .shell{max-width:none;padding:0 max(20px,calc((100% - var(--shell))/2 + 20px)) 0 0}
 .brandline{display:flex;align-items:center;margin:0}.brandline i{flex:1;height:2px;background:var(--ink);display:block}.brandline svg{flex:none;width:118px;height:24px;display:block;color:var(--gold)}
-.mast-line .brandline i{background:var(--gold)}.brandline.thin{margin:0 0 18px}.brandline.thin i{height:1px;background:var(--ink)}.section.dark .brandline i{background:var(--on-dark-soft)}
+.mast-line .brandline i{background:var(--accent-dark)}
+/* 18.09.: die Wortmarken-Grafik steht in .mast-line auf --stage. Bordeaux waere
+   dort 2,31:1 und kaum sichtbar, darum der neutrale Hell-Akzent. */
+.mast-line .brandline svg{color:var(--accent-dark)}.brandline.thin{margin:0 0 18px}.brandline.thin i{height:1px;background:var(--ink)}.section.dark .brandline i{background:var(--on-dark-soft)}
 .mainnav{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .navrow{display:flex;align-items:center;gap:8px}
 .navscroll{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}.navscroll::-webkit-scrollbar{display:none}
@@ -85,8 +110,8 @@ input,select,textarea{font:inherit;color:inherit}
 .drawer-search input{flex:1;background:var(--field-dark);border:1px solid var(--hairline-dark);color:var(--on-dark-strong);padding:9px 12px;border-radius:var(--radius)}
 .drawer-search button{width:40px;border:1px solid var(--hairline-dark);border-radius:var(--radius);color:var(--on-dark)}.drawer-search svg{width:16px;height:16px;fill:currentColor}
 .drawer .panel a{display:block;padding:10px 0;font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline-dark);color:var(--on-dark)}
-.drawer .panel a:hover,.drawer .panel a[aria-current]{color:var(--gold)}
-.drawer .panel .grp{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:22px 0 4px}
+.drawer .panel a:hover,.drawer .panel a[aria-current]{color:var(--accent-dark)}
+.drawer .panel .grp{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin:22px 0 4px}
 
 /* ---------- Sektionen & Typen ---------- */
 main{display:block}
@@ -168,7 +193,9 @@ main{display:block}
 .wa-box>h3{border-bottom-color:var(--wa)}.wa-box>h3::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--wa);margin-right:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red-surface);color:#fff;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:var(--radius);text-align:center;line-height:1.2}
 .btn:hover{background:var(--red-surface-hover);color:#fff}.btn svg{width:16px;height:16px;fill:currentColor}
-.btn.gold{background:var(--gold);color:var(--black)}.btn.gold:hover{background:var(--gold-deep);color:var(--black)}
+/* 18.09.: Flaeche ist jetzt Bordeaux, darauf braucht es Weiss (8,52:1);
+   Schwarz auf Bordeaux waere 2,31:1 und damit unlesbar. */
+.btn.gold{background:var(--gold);color:var(--on-dark-strong)}.btn.gold:hover{background:var(--gold-deep);color:var(--on-dark-strong)}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink-soft)}.btn.ghost:hover{border-color:var(--red);color:var(--red);background:transparent}
 .btn.block{display:flex;width:100%}.btn.wa-btn{background:var(--wa);color:#0b2e1a}.btn.wa-btn:hover{background:#1fb955;color:#0b2e1a}
 .btn:disabled{opacity:.6;cursor:wait}
@@ -186,11 +213,11 @@ main{display:block}
 .ad a,.ad .ad-in{display:flex;align-items:center;justify-content:center;min-height:90px;border-top:2px solid var(--gold)}.ad-row.narrow .ad a,.ad-row.narrow .ad .ad-in{min-height:104px}
 .ad img{width:100%;height:auto;max-height:104px;object-fit:contain}.ad-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink-soft);letter-spacing:.01em;display:block;text-align:center}.ad-name small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .mitmachen{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;background:var(--stage);color:var(--on-dark);padding:40px 36px;border-radius:4px;margin-top:20px}
-.mitmachen h2{font-size:30px;color:var(--on-dark-strong);margin:6px 0 10px}.mitmachen .eyebrow{color:var(--gold)}.mitmachen p{color:var(--on-dark-soft);font-size:14.5px;max-width:52ch}
-.mm-actions{display:flex;flex-wrap:wrap;gap:10px}.mm-actions .btn.ghost{border-color:var(--hairline-dark);color:var(--on-dark)}.mm-actions .btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
-.btn.ghost.on-dark{border-color:var(--hairline-dark);color:var(--on-dark);margin-top:8px}.btn.ghost.on-dark:hover{border-color:var(--gold);color:var(--gold)}
+.mitmachen h2{font-size:30px;color:var(--on-dark-strong);margin:6px 0 10px}.mitmachen .eyebrow{color:var(--accent-dark)}.mitmachen p{color:var(--on-dark-soft);font-size:14.5px;max-width:52ch}
+.mm-actions{display:flex;flex-wrap:wrap;gap:10px}.mm-actions .btn.ghost{border-color:var(--hairline-dark);color:var(--on-dark)}.mm-actions .btn.ghost:hover{border-color:var(--accent-dark);color:var(--accent-dark)}
+.btn.ghost.on-dark{border-color:var(--hairline-dark);color:var(--on-dark);margin-top:8px}.btn.ghost.on-dark:hover{border-color:var(--accent-dark);color:var(--accent-dark)}
 .sc-box .sc-stand{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 4px}.sc-box .sc-stand span{background:var(--stage-2);color:var(--on-dark);border-radius:3px;padding:8px 4px;text-align:center;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
-.sc-box .sc-stand b{display:block;font-family:var(--serif);font-size:22px;color:var(--gold);letter-spacing:0;text-transform:none}
+.sc-box .sc-stand b{display:block;font-family:var(--serif);font-size:22px;color:var(--accent-dark);letter-spacing:0;text-transform:none}
 .undated{font-size:12.5px;color:var(--muted);font-style:italic}.sc-crest{display:flex;align-items:center;gap:14px;margin:0 0 18px}.sc-crest img{width:72px;height:72px;object-fit:contain}.sc-crest span{font-size:12px;color:var(--muted)}.plainlist .res{color:var(--red-dark);margin-left:6px}
 .job-d b{font-size:11px!important;letter-spacing:.06em;text-transform:uppercase;padding:4px 0}
 .src-line{font-size:12px;color:var(--muted);margin:8px 0 22px}.src-line a{color:var(--red-dark);font-weight:600}
@@ -201,14 +228,14 @@ main{display:block}
 
 /* ---------- Blaulicht-Bühne ---------- */
 .section.dark{background:var(--stage);color:var(--on-dark);padding:46px 0 52px;margin-top:36px}
-.section.dark .section-head h2{color:var(--on-dark-strong)}.section.dark .eyebrow{color:var(--gold)}
-.section.dark .section-head .more{color:var(--on-dark-soft)}.section.dark .section-head .more:hover{color:var(--gold)}
+.section.dark .section-head h2{color:var(--on-dark-strong)}.section.dark .eyebrow{color:var(--accent-dark)}
+.section.dark .section-head .more{color:var(--on-dark-soft)}.section.dark .section-head .more:hover{color:var(--accent-dark)}
 .fire-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:18px}
 .photo-story{position:relative;border-radius:4px;overflow:hidden;display:block;min-height:320px}
 .photo-story .media{position:absolute;inset:0;border-radius:0;aspect-ratio:auto}
 .photo-story .over{position:absolute;inset:auto 0 0 0;padding:70px 18px 16px;background:linear-gradient(180deg,transparent,rgba(6,5,4,.9) 62%);display:flex;flex-direction:column;gap:6px;z-index:2}
-.photo-story .over .eyebrow{color:var(--gold)}.photo-story h3{color:var(--on-dark-strong);font-size:22px;line-height:1.2}.photo-story.small h3{font-size:16.5px}
-.photo-story p{color:var(--on-dark);font-size:13.5px;line-height:1.45}.photo-story .photo-credit{font-size:11px;color:var(--on-dark-muted)}.photo-story:hover h3{color:var(--gold)}
+.photo-story .over .eyebrow{color:var(--accent-dark)}.photo-story h3{color:var(--on-dark-strong);font-size:22px;line-height:1.2}.photo-story.small h3{font-size:16.5px}
+.photo-story p{color:var(--on-dark);font-size:13.5px;line-height:1.45}.photo-story .photo-credit{font-size:11px;color:var(--on-dark-muted)}.photo-story:hover h3{color:var(--accent-dark)}
 
 /* ---------- Termine ---------- */
 .events-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -237,7 +264,7 @@ main{display:block}
 .past{margin-top:30px}.past summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--muted);padding:10px 0}
 .event-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 20px}
 .ef{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px}
-.ef-ic{width:36px;height:36px;border-radius:50%;background:var(--stage-2);color:var(--gold);display:grid;place-items:center;flex-shrink:0;font-weight:800}.ef-ic svg{width:18px;height:18px;fill:none;stroke:currentColor}
+.ef-ic{width:36px;height:36px;border-radius:50%;background:var(--stage-2);color:var(--accent-dark);display:grid;place-items:center;flex-shrink:0;font-weight:800}.ef-ic svg{width:18px;height:18px;fill:none;stroke:currentColor}
 .ef b{display:block;font-size:15px;line-height:1.3}.ef span{font-size:12.5px;color:var(--muted)}.ef a{color:var(--red-dark);font-weight:600}
 .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 26px}
 
@@ -254,10 +281,10 @@ main{display:block}
 .rblock-list{margin:12px 0 10px;border-top:1px solid var(--line)}.rblock-list li{padding:9px 0;border-bottom:1px solid var(--line-soft);font-size:14px;line-height:1.35}.rblock-list a{font-weight:650}.rblock-list a:hover{color:var(--red)}.rblock-list .meta{display:block;margin-top:2px;font-size:12px}
 .rblock>.more{font-size:13px;font-weight:700;color:var(--muted)}.rblock>.more:hover{color:var(--red)}.rblock>.more::after{content:' →';color:var(--gold-deep)}
 .district-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.district-tile{background:var(--stage-2);color:var(--on-dark);border-radius:0;border-top:3px solid var(--gold);padding:20px 18px 16px;display:flex;flex-direction:column;gap:8px;min-height:160px;position:relative;overflow:hidden}
-.district-tile::after{content:'';position:absolute;left:18px;right:18px;bottom:14px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.district-tile{background:var(--stage-2);color:var(--on-dark);border-radius:0;border-top:3px solid var(--accent-dark);padding:20px 18px 16px;display:flex;flex-direction:column;gap:8px;min-height:160px;position:relative;overflow:hidden}
+.district-tile::after{content:'';position:absolute;left:18px;right:18px;bottom:14px;height:1px;background:linear-gradient(90deg,var(--accent-dark),transparent)}
 .district-tile h3{font-size:20px;color:var(--on-dark-strong)}.district-tile p{font-size:12.5px;color:var(--on-dark-soft);line-height:1.5}
-.district-tile .n{color:var(--gold);font-size:12px;font-weight:700;margin-top:auto;padding-bottom:10px}.district-tile:hover h3{color:var(--gold)}
+.district-tile .n{color:var(--accent-dark);font-size:12px;font-weight:700;margin-top:auto;padding-bottom:10px}.district-tile:hover h3{color:var(--accent-dark)}
 .club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.club-grid.four{grid-template-columns:repeat(4,1fr)}
 .club-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);height:100%;position:relative}
 .club-card .cat{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
@@ -272,7 +299,7 @@ main{display:block}
 .article-head h1{font-size:clamp(30px,4.6vw,46px);font-weight:760;font-variation-settings:'wght' 760;max-width:900px;margin:10px 0 14px}
 .article-head .dek{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.45;color:var(--ink-soft);max-width:800px}
 .byline{display:flex;align-items:center;gap:14px;margin:22px 0 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--stage-2);color:var(--gold);display:grid;place-items:center;font-size:13px;font-weight:800;letter-spacing:.02em;flex-shrink:0}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--stage-2);color:var(--accent-dark);display:grid;place-items:center;font-size:13px;font-weight:800;letter-spacing:.02em;flex-shrink:0}
 .byline .who{font-size:13.5px;line-height:1.35}.byline .who b{font-weight:700}.byline .who span{display:block;color:var(--muted);font-size:12.5px}
 .byline .dates{margin-left:auto;text-align:right;font-size:12.5px;color:var(--muted);line-height:1.5}
 .share{display:flex;gap:8px;margin:0 0 18px}
@@ -363,11 +390,11 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:32px;padding:44px 0 30px}
 .foot-brand img{height:52px;width:auto;margin-bottom:14px}.foot-brand p{font-size:13px;line-height:1.6;max-width:320px}
 .foot-brand .sp{margin-top:14px;font-size:11.5px;color:var(--on-dark-muted)}.foot-brand .sp b{color:var(--on-dark);display:block;font-size:12px}
-.foot-social{display:flex;gap:14px;margin-top:14px;font-size:12.5px;font-weight:700}.foot-social a{color:var(--on-dark)}.foot-social a:hover{color:var(--gold)}
+.foot-social{display:flex;gap:14px;margin-top:14px;font-size:12.5px;font-weight:700}.foot-social a{color:var(--on-dark)}.foot-social a:hover{color:var(--accent-dark)}
 .foot-grid h3{font-family:var(--sans);color:var(--on-dark-strong);font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-.foot-grid ul li{margin-bottom:4px}.foot-grid ul a{display:inline-block;padding:4px 0}.foot-grid ul a{font-size:13.5px;color:var(--on-dark-soft)}.foot-grid ul a:hover{color:var(--gold)}
+.foot-grid ul li{margin-bottom:4px}.foot-grid ul a{display:inline-block;padding:4px 0}.foot-grid ul a{font-size:13.5px;color:var(--on-dark-soft)}.foot-grid ul a:hover{color:var(--accent-dark)}
 .foot-bottom{border-top:1px solid var(--hairline-dark);padding:16px 0 22px;display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--on-dark-muted);flex-wrap:wrap}
-.foot-bottom a{color:var(--on-dark-muted)}.foot-bottom a:hover{color:var(--gold)}
+.foot-bottom a{color:var(--on-dark-muted)}.foot-bottom a:hover{color:var(--accent-dark)}
 
 /* ---------- Wetter ---------- */
 .weather{display:flex;flex-direction:column;gap:12px}
@@ -389,18 +416,18 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
 .lightbox .lb-cap{color:var(--on-dark-soft);font-size:13px;text-align:center;max-width:70ch;padding:14px 0 0;line-height:1.5}
 .lightbox .lb-cap b{color:var(--on-dark);display:block;font-weight:600;margin-bottom:3px}.lightbox .lb-count{color:var(--on-dark-muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:8px;display:block}
 .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--scrim);color:var(--on-dark);display:grid;place-items:center;font-size:20px;border:1px solid var(--hairline-dark)}
-.lb-btn:hover{background:var(--gold);color:var(--stage);border-color:var(--gold)}.lb-prev{left:16px}.lb-next{right:16px}
+.lb-btn:hover{background:var(--accent-dark);color:var(--stage);border-color:var(--accent-dark)}.lb-prev{left:16px}.lb-next{right:16px}
 .lb-close{position:absolute;top:16px;right:16px;transform:none;width:40px;height:40px;font-size:17px}
 
 /* ---------- Service-Leiste, Kopfsuche, Monatskalender, Anzeigenmarkt ---------- */
-.toplinks .svc{display:flex;gap:0;margin-right:6px;padding-right:14px;border-right:1px solid var(--hairline-dark)}.toplinks .svc a{color:var(--on-dark-muted);font-weight:500;padding:0 8px}.toplinks .svc a:first-child{padding-left:0}.toplinks .svc a:hover{color:var(--gold)}
+.toplinks .svc{display:flex;gap:0;margin-right:6px;padding-right:14px;border-right:1px solid var(--hairline-dark)}.toplinks .svc a{color:var(--on-dark-muted);font-weight:500;padding:0 8px}.toplinks .svc a:first-child{padding-left:0}.toplinks .svc a:hover{color:var(--accent-dark)}
 .mast-search{display:flex;align-items:center;border:1px solid var(--hairline-dark);border-radius:22px;background:rgba(255,255,255,.04);height:40px;width:min(320px,26vw);overflow:hidden}
 .mast-search input{flex:1;min-width:0;background:transparent;border:0;color:var(--on-dark-strong);font:inherit;font-size:13.5px;padding:0 14px;outline:0}.mast-search input::placeholder{color:var(--on-dark-muted)}
 .mast-search button{width:40px;height:40px;border:0;background:transparent;color:var(--on-dark);display:grid;place-items:center;cursor:pointer}.mast-search button svg{width:17px;height:17px;fill:currentColor}.mast-search:focus-within{border-color:var(--gold)}
 .mast-weather{font-variant-numeric:tabular-nums}.mast-date{color:var(--on-dark)}
 .mcal{margin:8px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line)}.mcal-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12px;margin-bottom:8px}.mcal-head b{font-family:var(--serif);font-size:15px;color:var(--ink)}.mcal-head span{color:var(--muted);font-size:11px}
 .mcal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;font-size:12.5px;font-variant-numeric:tabular-nums}.mcal-grid i{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);padding-bottom:4px}
-.mcal-grid span,.mcal-grid a{display:grid;place-items:center;height:30px;border-radius:2px;color:var(--ink-soft)}.mcal-grid a.has{background:var(--gold-wash);color:var(--ink);font-weight:700;border-bottom:2px solid var(--gold)}.mcal-grid a.has:hover{background:var(--gold);color:var(--black)}.mcal-grid .today{box-shadow:inset 0 0 0 1.5px var(--red);color:var(--red);font-weight:700}
+.mcal-grid span,.mcal-grid a{display:grid;place-items:center;height:30px;border-radius:2px;color:var(--ink-soft)}.mcal-grid a.has{background:var(--gold-wash);color:var(--ink);font-weight:700;border-bottom:2px solid var(--gold)}.mcal-grid a.has:hover{background:var(--gold);color:var(--on-dark-strong)}.mcal-grid .today{box-shadow:inset 0 0 0 1.5px var(--red);color:var(--red);font-weight:700}
 .mcal-next summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--muted);padding:6px 0}
 .markt{padding-top:8px}.markt-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.markt-col .section-head{margin-bottom:12px}
 .markt-card{border:1px solid var(--line);background:var(--card);padding:16px 18px 14px;margin-bottom:12px}.markt-card .eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:6px}.markt-card h3{font-size:18px;line-height:1.25;margin-bottom:6px}.markt-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.5}.markt-card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--muted)}

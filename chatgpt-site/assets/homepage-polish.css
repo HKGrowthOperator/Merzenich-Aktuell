@@ -45,8 +45,13 @@
 .home .agenda-row{border-radius:0;background:transparent;box-shadow:none}
 .home .markt-mini{border-radius:0;background:transparent}
 
-/* Gute Bilder bekommen eine ruhige journalistische Flaeche. */
-.home .front-lead .media{aspect-ratio:16/10;overflow:hidden;background:#f2f2f0;border-radius:1px}
+/* Gute Bilder bekommen eine ruhige journalistische Flaeche.
+   Das Seitenverhaeltnis steht hier NICHT mehr: es kam bisher aus vier
+   Dateien mit vier verschiedenen Werten (16/10 hier, 16/9 in v20,
+   3/2 in recovery, 1.82 in v19). Ein Kartentyp hat ein Format, und das
+   Format steht jetzt allein in system.css als --bild-gross. Alles
+   andere an dieser Regel - Beschnitt, Flaeche, Radius - bleibt. */
+.home .front-lead .media{overflow:hidden;background:#f2f2f0;border-radius:1px}
 .home .front-lead .media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 190ms ease}
 .home .front-lead:hover .media img{transform:scale(1.012)}
 .home .front-lead .media.contain img{object-fit:contain;padding:18px;transform:none}
