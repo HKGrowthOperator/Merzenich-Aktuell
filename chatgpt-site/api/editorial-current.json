@@ -11,10 +11,17 @@
     "published": "2026-09-14T09:15:00+02:00",
     "timeLabel": "14.09. · 09:15 Uhr",
     "readTime": "2 Min. Lesezeit",
-    "image": "/assets/uploads/sc-1919-merzenich-logo.webp",
-    "imageAlt": "Vereinswappen des SC 1919 Merzenich",
-    "imageBadge": "Offizielles Vereinslogo",
-    "imageFit": "contain"
+    "image": "/assets/symbolbilder/sport/sport-05-ball.svg",
+    "imageAlt": "Fußball als neutrales Symbolbild",
+    "imageBadge": "Symbolbild",
+    "imageFit": "contain",
+    "imageCredit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "imageType": "symbol",
+    "imageId": "sport-05-ball",
+    "imagePool": "sport",
+    "imageSource": "Merzenich Aktuell / Editorial Image System V2",
+    "imageLicense": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "imageRightsCheckedAt": "2026-09-18"
   },
   "secondary": {
     "id": "2026-09-11-einbruch-arnoldsweilerweg",

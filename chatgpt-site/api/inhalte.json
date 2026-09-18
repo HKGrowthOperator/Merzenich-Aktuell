@@ -124,15 +124,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/uploads/sc-1919-merzenich-logo.webp",
+    "src": "/assets/symbolbilder/sport/sport-05-ball.svg",
     "srcset": "",
-    "alt": "Vereinswappen des SC 1919 Merzenich",
-    "width": 480,
-    "height": 479,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich",
-    "symbol": false
+    "alt": "Fußball als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -202,15 +202,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/c26fdf66828432-480.webp",
-    "srcset": "/assets/responsive/c26fdf66828432-240.webp 240w, /assets/responsive/c26fdf66828432-480.webp 480w",
-    "alt": "Vereinswappen des SC 1919 Merzenich",
-    "width": 480,
-    "height": 479,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich",
-    "symbol": false
+    "src": "/assets/symbolbilder/sport/sport-04-tor.svg",
+    "srcset": "",
+    "alt": "Fußballtor als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -243,15 +243,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/c26fdf66828432-480.webp",
-    "srcset": "/assets/responsive/c26fdf66828432-240.webp 240w, /assets/responsive/c26fdf66828432-480.webp 480w",
-    "alt": "Offizielles Vereinswappen des SC 1919 Merzenich",
-    "width": 480,
-    "height": 479,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich",
-    "symbol": false
+    "src": "/assets/symbolbilder/sport/sport-03-fussballplatz.svg",
+    "srcset": "",
+    "alt": "Fußballplatz als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -288,15 +288,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/c26fdf66828432-480.webp",
-    "srcset": "/assets/responsive/c26fdf66828432-240.webp 240w, /assets/responsive/c26fdf66828432-480.webp 480w",
-    "alt": "Offizielles Vereinswappen des SC 1919 Merzenich",
-    "width": 480,
-    "height": 479,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich",
-    "symbol": false
+    "src": "/assets/symbolbilder/sport/sport-02-zweikampf.svg",
+    "srcset": "",
+    "alt": "Zweikampf als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -329,15 +329,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/10c06ae559cf3c-890.webp",
-    "srcset": "/assets/responsive/10c06ae559cf3c-240.webp 240w, /assets/responsive/10c06ae559cf3c-480.webp 480w, /assets/responsive/10c06ae559cf3c-800.webp 800w, /assets/responsive/10c06ae559cf3c-890.webp 890w",
-    "alt": "Vereinslogo des SC 1919 Merzenich",
-    "width": 890,
-    "height": 500,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "SC 1919 Merzenich / FUSSBALL.DE",
-    "symbol": false
+    "src": "/assets/symbolbilder/sport/sport-01-spiel.svg",
+    "srcset": "",
+    "alt": "Fußballspiel als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1277,15 +1277,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial/gemeinde-merzenich.png",
+    "src": "/assets/symbolbilder/vereine/vereine-01-vereinsleben.svg",
     "srcset": "",
-    "alt": "Offizielles Zeichen der Gemeinde Merzenich",
+    "alt": "Vereinsleben als neutrales Symbolbild",
     "width": 1600,
     "height": 900,
-    "fit": "contain",
-    "badge": "Offizielles Vereinslogo",
-    "credit": "Gemeinde Merzenich · Heimat-Info",
-    "symbol": false
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"

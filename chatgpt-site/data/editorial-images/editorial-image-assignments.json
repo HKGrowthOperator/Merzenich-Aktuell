@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T13:38:43.676Z",
+  "updatedAt": "2026-09-18T13:42:09.267Z",
   "assignments": {
     "/blaulicht/einbruch-arnoldsweilerweg/": {
       "imageId": "polizei-08-einbruch",
@@ -12,6 +12,74 @@
         "polizei",
         "einbruch",
         "ermittlung"
+      ]
+    },
+    "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
+      "imageId": "sport-01-spiel",
+      "pool": "sport",
+      "assignedAt": "2026-09-18T13:42:09.264Z",
+      "articleId": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
+      "articleDate": "2026-09-01T13:59:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "spieltag"
+      ]
+    },
+    "/rathaus/haushalt-2026-chronik/": {
+      "imageId": "vereine-01-vereinsleben",
+      "pool": "vereine",
+      "assignedAt": "2026-09-18T13:42:09.265Z",
+      "articleId": "-haushalt-2026-chronik",
+      "articleDate": "2026-09-04",
+      "tagsMatched": [
+        "verein"
+      ]
+    },
+    "/sport/sc-golzheim-nachbarschaftsduell/": {
+      "imageId": "sport-02-zweikampf",
+      "pool": "sport",
+      "assignedAt": "2026-09-18T13:42:09.265Z",
+      "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
+      "articleDate": "2026-09-04T09:10:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "duell"
+      ]
+    },
+    "/sport/sc-merzenich-reserven-kreisliga-c/": {
+      "imageId": "sport-03-fussballplatz",
+      "pool": "sport",
+      "assignedAt": "2026-09-18T13:42:09.266Z",
+      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
+      "articleDate": "2026-09-04T09:20:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "platz",
+        "rasen"
+      ]
+    },
+    "/sport/sc-merzenich-tabellenfuehrer/": {
+      "imageId": "sport-04-tor",
+      "pool": "sport",
+      "assignedAt": "2026-09-18T13:42:09.266Z",
+      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
+      "articleDate": "2026-09-04T09:30:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "tor"
+      ]
+    },
+    "/sport/sc-merzenich-oberzier-3-2/": {
+      "imageId": "sport-05-ball",
+      "pool": "sport",
+      "assignedAt": "2026-09-18T13:42:09.267Z",
+      "articleId": "2026-09-14-sc-merzenich-oberzier-3-2",
+      "articleDate": "2026-09-14T09:15:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "ball"
       ]
     }
   }
