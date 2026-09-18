@@ -1,1 +1,286 @@
-{}
+{
+  "feuerwehr-01-loeschfahrzeug.svg": {
+    "id": "feuerwehr-01-loeschfahrzeug",
+    "alt": "Löschfahrzeug als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "fahrzeug",
+      "loeschfahrzeug"
+    ],
+    "checksum": "e877afbb220df91bb1d9a616a6f0ee011cb1f1341653d319b18c949a0cd084f6"
+  },
+  "feuerwehr-02-feuerwehrleute.svg": {
+    "id": "feuerwehr-02-feuerwehrleute",
+    "alt": "Feuerwehrkräfte als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "kraefte",
+      "feuerwehrleute"
+    ],
+    "checksum": "5d3ba2ab9b025380761bbe2f2e55f7c897ddfd98feb2614fe5dbd7882cbad51f"
+  },
+  "feuerwehr-03-atemschutz.svg": {
+    "id": "feuerwehr-03-atemschutz",
+    "alt": "Atemschutz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "atemschutz"
+    ],
+    "checksum": "add1ffaf875376e3b261686a6ba1a62a9958631e738837820a71a7d25afec252"
+  },
+  "feuerwehr-04-loeschschlauch.svg": {
+    "id": "feuerwehr-04-loeschschlauch",
+    "alt": "Löschschlauch als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "schlauch",
+      "loeschen",
+      "loeschschlauch"
+    ],
+    "checksum": "534bd72acb8160fb1ffc6ed81b67ff35780d94c2f30836f371e0e67e1f24bfaf"
+  },
+  "feuerwehr-05-drehleiter.svg": {
+    "id": "feuerwehr-05-drehleiter",
+    "alt": "Drehleiter als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "drehleiter"
+    ],
+    "checksum": "7e8b48520f09ce3f7387499a76fbf20edefd6666ef4de418f7b0155ed7d83eec"
+  },
+  "feuerwehr-06-blaulicht.svg": {
+    "id": "feuerwehr-06-blaulicht",
+    "alt": "Blaulicht der Feuerwehr als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "blaulicht"
+    ],
+    "checksum": "67b743b72d19ec85f35452b1f50df6884572a4a252f5ad49781cd3818da18667"
+  },
+  "feuerwehr-07-dtechnischehilfe.svg": {
+    "id": "feuerwehr-07-dtechnischehilfe",
+    "alt": "Technische Hilfeleistung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "technische",
+      "hilfe",
+      "dtechnischehilfe"
+    ],
+    "checksum": "ced06b24b410b7940a215e8989b782c9b0cbc68d25235fd418676badf6f46a32"
+  },
+  "feuerwehr-08-verkehrsunfallhilfe.svg": {
+    "id": "feuerwehr-08-verkehrsunfallhilfe",
+    "alt": "Hilfe nach Verkehrsunfall als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "unfall",
+      "hilfe",
+      "verkehrsunfallhilfe"
+    ],
+    "checksum": "c60cf9e33b48c70f8ecfa3da65913a16dc16d37498244a718de3f65e7cda5196"
+  },
+  "feuerwehr-09-einsatzabsicherung.svg": {
+    "id": "feuerwehr-09-einsatzabsicherung",
+    "alt": "Einsatzabsicherung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "absicherung",
+      "einsatzabsicherung"
+    ],
+    "checksum": "60886a7056dda7793d48ead5a937158f9d5213f909d2a9da1b11a0e73db904cb"
+  },
+  "feuerwehr-10-feuerwehrwache.svg": {
+    "id": "feuerwehr-10-feuerwehrwache",
+    "alt": "Feuerwehrwache als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "wache",
+      "feuerwehrwache"
+    ],
+    "checksum": "9383e9bd182d597eecd27af059318d67c0c113696a08d60c04e48ac530c0333e"
+  },
+  "feuerwehr-11-fahrzeughalle.svg": {
+    "id": "feuerwehr-11-fahrzeughalle",
+    "alt": "Fahrzeughalle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "halle",
+      "fahrzeuge",
+      "fahrzeughalle"
+    ],
+    "checksum": "284f5d7fe30f0b001652768b48a394bb4766699e123569582f8614a710689fa3"
+  },
+  "feuerwehr-12-rettungsgeraet.svg": {
+    "id": "feuerwehr-12-rettungsgeraet",
+    "alt": "Rettungsgerät als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "rettung",
+      "geraet",
+      "rettungsgeraet"
+    ],
+    "checksum": "608100a4d2e7db0fec26629f6f9f49cd30d6e028d5eb90503ff990c9465a0aa9"
+  },
+  "feuerwehr-13-ausruestung.svg": {
+    "id": "feuerwehr-13-ausruestung",
+    "alt": "Feuerwehrausrüstung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "ausruestung"
+    ],
+    "checksum": "b37792f1a46126ab023ee05738d0d96149bb7d003777a591de39e32736526b8a"
+  },
+  "feuerwehr-14-vegetationsbrand.svg": {
+    "id": "feuerwehr-14-vegetationsbrand",
+    "alt": "Vegetationsbrand-Kontext als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "vegetation",
+      "brand",
+      "vegetationsbrand"
+    ],
+    "checksum": "113857f5192688fc23c7e1c738b0679d84bf49aa86754b415ab7bbec264ca0ec"
+  },
+  "feuerwehr-15-nachteinsatz.svg": {
+    "id": "feuerwehr-15-nachteinsatz",
+    "alt": "Feuerwehreinsatz bei Nacht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "nacht",
+      "einsatz",
+      "nachteinsatz"
+    ],
+    "checksum": "dda4dd2b91b57c1c7c0dbc5f4762705667088cd182c8c8a19faa3a5bcac9cda3"
+  },
+  "feuerwehr-16-einsatzvorbereitung.svg": {
+    "id": "feuerwehr-16-einsatzvorbereitung",
+    "alt": "Einsatzvorbereitung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "vorbereitung",
+      "einsatzvorbereitung"
+    ],
+    "checksum": "3db4c578df78f00b31f30024cdee91963ffbadd770c511e6ae78357211369a80"
+  },
+  "feuerwehr-17-loeschangriff.svg": {
+    "id": "feuerwehr-17-loeschangriff",
+    "alt": "Löschangriff als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "loeschen",
+      "einsatz",
+      "loeschangriff"
+    ],
+    "checksum": "c1a2fb13c278f0570dceac1e310a151edd0db2c9212bfc2f47a9bd6628a916af"
+  },
+  "feuerwehr-18-gruppenbereitschaft.svg": {
+    "id": "feuerwehr-18-gruppenbereitschaft",
+    "alt": "Feuerwehrgruppe in Bereitschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "gruppe",
+      "bereitschaft",
+      "gruppenbereitschaft"
+    ],
+    "checksum": "2edaddda16bcc360e97ae97f30ba48ad806de4facce9a13e8c4b864ee0b84473"
+  },
+  "feuerwehr-19-fahrzeugkolonne.svg": {
+    "id": "feuerwehr-19-fahrzeugkolonne",
+    "alt": "Feuerwehrfahrzeuge als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "fahrzeuge",
+      "fahrzeugkolonne"
+    ],
+    "checksum": "c51832355ddda7d4ea75edd8e81f4bbc7ccabc734ad47073b9f40e0c20514fed"
+  },
+  "feuerwehr-20-einsatzstelle.svg": {
+    "id": "feuerwehr-20-einsatzstelle",
+    "alt": "Neutrale Einsatzstelle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "feuerwehr",
+      "einsatzstelle"
+    ],
+    "checksum": "53ed76ba82c73650b4ee017c0deb6c2cbd24d453fc3cc83e6139c9565ab77eae"
+  }
+}

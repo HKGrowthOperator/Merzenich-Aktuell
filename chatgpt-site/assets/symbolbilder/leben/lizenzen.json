@@ -1,1 +1,271 @@
-{}
+{
+  "leben-01-menschen.svg": {
+    "id": "leben-01-menschen",
+    "alt": "Menschen im Ort als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "menschen"
+    ],
+    "checksum": "5085159ea621d50aa30de11580cdae77cfa2ef7b51f09b3041ab1e6210e86678"
+  },
+  "leben-02-nachbarschaft.svg": {
+    "id": "leben-02-nachbarschaft",
+    "alt": "Nachbarschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "nachbarschaft"
+    ],
+    "checksum": "e99e994f15fc9e69fc3c10ef78cc209c7e847582b0306d93ca4dc0c88a7f5cf4"
+  },
+  "leben-03-begegnung.svg": {
+    "id": "leben-03-begegnung",
+    "alt": "Begegnung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "begegnung"
+    ],
+    "checksum": "9998a5c16d225899c0640c22d88f76e457c19b6c3358d6957c81a8196f2c9a05"
+  },
+  "leben-04-dorfleben.svg": {
+    "id": "leben-04-dorfleben",
+    "alt": "Dorfleben als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "ort",
+      "dorfleben"
+    ],
+    "checksum": "cdabcfc400ad9e52762f73026fa718da6fc353de67703c0a7b7751a8a3ec9340"
+  },
+  "leben-05-senioren.svg": {
+    "id": "leben-05-senioren",
+    "alt": "Seniorenleben als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "senioren"
+    ],
+    "checksum": "3be4b419489b2577cb3f7ddc4a9ba36d3da48bec12630c4ebd464593001e3c2d"
+  },
+  "leben-06-jugend.svg": {
+    "id": "leben-06-jugend",
+    "alt": "Jugend im Ort als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "jugend"
+    ],
+    "checksum": "839db5d4d8af1b0bf3a3d756700d38d46252349531d882fc4e86afd7182df923"
+  },
+  "leben-07-familienalltag.svg": {
+    "id": "leben-07-familienalltag",
+    "alt": "Familienalltag als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "familie",
+      "familienalltag"
+    ],
+    "checksum": "0de17dea24b5a2a03edb8f1c50d3702bfb7bde89374afb8cc99948e1efbc2130"
+  },
+  "leben-08-freizeit.svg": {
+    "id": "leben-08-freizeit",
+    "alt": "Freizeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "freizeit"
+    ],
+    "checksum": "c4bb87c2adbe8b0f5dcaeccdfce282c4dcce57b9def29d704b4fc8e2aac0fcc5"
+  },
+  "leben-09-spaziergang.svg": {
+    "id": "leben-09-spaziergang",
+    "alt": "Spaziergang als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "freizeit",
+      "spaziergang"
+    ],
+    "checksum": "9dd83a69fd232ec7d2051edaa5946671fc2b7d3103a2e48f82048aa87d189cc2"
+  },
+  "leben-10-park.svg": {
+    "id": "leben-10-park",
+    "alt": "Grünfläche als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "natur",
+      "park"
+    ],
+    "checksum": "cebbf968bc7018d845fde1abed55d300fb6f27d39848bd51ebf52e9d8cce42b5"
+  },
+  "leben-11-cafe.svg": {
+    "id": "leben-11-cafe",
+    "alt": "Café und Begegnung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "cafe"
+    ],
+    "checksum": "79e8d7f432707bde3d8de8ceaefa01e7172caa3ceeae69a26c1d1265f90862e8"
+  },
+  "leben-12-wochenmarkt.svg": {
+    "id": "leben-12-wochenmarkt",
+    "alt": "Wochenmarkt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "markt",
+      "wochenmarkt"
+    ],
+    "checksum": "ac4e1dee550f2239491064510f147aab7b5371c624e09f7209d04a33270fe779"
+  },
+  "leben-13-gespraech.svg": {
+    "id": "leben-13-gespraech",
+    "alt": "Lokales Gespräch als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "menschen",
+      "gespraech"
+    ],
+    "checksum": "e141cf322671fce2551aea1998b190beb1d2d064866848872001c8055e46d589"
+  },
+  "leben-14-engagement.svg": {
+    "id": "leben-14-engagement",
+    "alt": "Bürgerschaftliches Engagement als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "engagement"
+    ],
+    "checksum": "50b71da4b4c996b4edfdfa1619a4975bd76b86c25752b0b2cd2b5efa24f127e7"
+  },
+  "leben-15-gesundheit.svg": {
+    "id": "leben-15-gesundheit",
+    "alt": "Gesundheit im Alltag als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "gesundheit"
+    ],
+    "checksum": "3c8c98d8247f7ea3bb7872b3000fef3dc315b820c5b1b01dcd8b2816e42e5d09"
+  },
+  "leben-16-natur.svg": {
+    "id": "leben-16-natur",
+    "alt": "Natur rund um den Ort als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "natur"
+    ],
+    "checksum": "e1ae5642f53b471594b89e4ee1784b4e0c8201189ee295640ad16d90a5426301"
+  },
+  "leben-17-alltag.svg": {
+    "id": "leben-17-alltag",
+    "alt": "Alltag in der Gemeinde als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "alltag"
+    ],
+    "checksum": "18bc4f3146e552c9856bb7e768e30b95711adcd0886c2551116201e0e9471070"
+  },
+  "leben-18-ortsmitte.svg": {
+    "id": "leben-18-ortsmitte",
+    "alt": "Ortsmitte als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "ort",
+      "ortsmitte"
+    ],
+    "checksum": "5d7998332587bac4763883cc667ac6742b67e0f6306bdd54c153a8e3deb5532c"
+  },
+  "leben-19-community.svg": {
+    "id": "leben-19-community",
+    "alt": "Gemeinschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "gemeinschaft",
+      "community"
+    ],
+    "checksum": "d592bedaea9af25a6131eea78b65d2e457b34931d7b222553499ed60c6cd7398"
+  },
+  "leben-20-portraet.svg": {
+    "id": "leben-20-portraet",
+    "alt": "Neutrales Menschenporträt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "leben",
+      "menschen",
+      "portraet"
+    ],
+    "checksum": "40fb0d0dfccfd4c1b0119a404c1c86691190d23203dc2d1e37e3baacba8f5d38"
+  }
+}

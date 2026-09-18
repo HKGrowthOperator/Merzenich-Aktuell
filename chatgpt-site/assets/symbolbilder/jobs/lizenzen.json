@@ -1,1 +1,266 @@
-{}
+{
+  "jobs-01-buerojob.svg": {
+    "id": "jobs-01-buerojob",
+    "alt": "Büroarbeitsplatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "buero",
+      "buerojob"
+    ],
+    "checksum": "72e62bbb9a87bdd69e4e624e057367b68e323965f3cdfc97d827b6c53b7eeb53"
+  },
+  "jobs-02-handwerk.svg": {
+    "id": "jobs-02-handwerk",
+    "alt": "Handwerksarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "handwerk"
+    ],
+    "checksum": "71ca7c64a5d65a625b84013eb8e021b33fecd13da35eb33946c1ab194d5ef45b"
+  },
+  "jobs-03-werkstatt.svg": {
+    "id": "jobs-03-werkstatt",
+    "alt": "Werkstattarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "werkstatt"
+    ],
+    "checksum": "11eb6f1c851bcbb5ccaef5d82236aa9c19a10f9fc79878f9d20dc1ff4398aa26"
+  },
+  "jobs-04-produktion.svg": {
+    "id": "jobs-04-produktion",
+    "alt": "Produktionsarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "produktion"
+    ],
+    "checksum": "0d8a4b40ba66b5679c42a660388c7779adc07fae9a7179d103d5634c1cc541cf"
+  },
+  "jobs-05-verkauf.svg": {
+    "id": "jobs-05-verkauf",
+    "alt": "Verkauf als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "verkauf"
+    ],
+    "checksum": "5d8f8e7501f617a5968581c4c11b42f1a746012cf33b2e02721f20670fb1efee"
+  },
+  "jobs-06-pflege.svg": {
+    "id": "jobs-06-pflege",
+    "alt": "Pflegeberuf als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "pflege"
+    ],
+    "checksum": "c4d02d3dba549cc3ab9e618ed7bd310ef47eb23e44aecaee2d6b6071671b7d9e"
+  },
+  "jobs-07-it.svg": {
+    "id": "jobs-07-it",
+    "alt": "IT-Arbeitsplatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "it"
+    ],
+    "checksum": "f93f2daac704b42774cb9b2baeea93ded9edf3ca26425a9c0317c82106e584cc"
+  },
+  "jobs-08-verwaltung.svg": {
+    "id": "jobs-08-verwaltung",
+    "alt": "Verwaltungsarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "verwaltung"
+    ],
+    "checksum": "bfed83a1fe70a2719b82764bc2c93576f675d0a4e07c0b6c00418490bb8e7b16"
+  },
+  "jobs-09-lager.svg": {
+    "id": "jobs-09-lager",
+    "alt": "Lagerarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "lager"
+    ],
+    "checksum": "8b58244ad2f016f0bd08f3f9fa16404625b2aeba9c2928294495cc38a6357935"
+  },
+  "jobs-10-logistik.svg": {
+    "id": "jobs-10-logistik",
+    "alt": "Logistikarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "logistik"
+    ],
+    "checksum": "f7c075ad4d439c8c18928111d310b00763e887a128e9090c279560aa1fa8e05f"
+  },
+  "jobs-11-gastronomie.svg": {
+    "id": "jobs-11-gastronomie",
+    "alt": "Gastronomiearbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "gastronomie"
+    ],
+    "checksum": "84596bc3a9c9c035d11f3086349c58928dfc36033c0159a75598fe6f2adf70f5"
+  },
+  "jobs-12-bau.svg": {
+    "id": "jobs-12-bau",
+    "alt": "Bauarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "bau"
+    ],
+    "checksum": "e621f9bb0338ce4e4e38ee388123d3e12c6e41dccbf9f8ed0af9cf062571055b"
+  },
+  "jobs-13-ausbildung.svg": {
+    "id": "jobs-13-ausbildung",
+    "alt": "Ausbildung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "ausbildung"
+    ],
+    "checksum": "cdb009bb6d2e3ff1cbe89f9fd5c607644d0c09a70fdf7062fdcca61a73ddc5c5"
+  },
+  "jobs-14-teammeeting.svg": {
+    "id": "jobs-14-teammeeting",
+    "alt": "Teamarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "team",
+      "teammeeting"
+    ],
+    "checksum": "baf14aa0c735317660cd5aff73f7e379ccf9bdd9d89828bbab24d823c03b3a8d"
+  },
+  "jobs-15-bewerbung.svg": {
+    "id": "jobs-15-bewerbung",
+    "alt": "Bewerbung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "bewerbung"
+    ],
+    "checksum": "8864388d1cacb0728b2e7a8a36570eaf0765767840d5ce04d33fea16d3d446e6"
+  },
+  "jobs-16-schichtarbeit.svg": {
+    "id": "jobs-16-schichtarbeit",
+    "alt": "Schichtarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "schicht",
+      "schichtarbeit"
+    ],
+    "checksum": "2a3c4431a9344b27446a7b505975b1fee77200d27fd3c121187cf0aaefe92dfa"
+  },
+  "jobs-17-kundenservice.svg": {
+    "id": "jobs-17-kundenservice",
+    "alt": "Kundenservice als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "kundenservice"
+    ],
+    "checksum": "0bbce3ff26cc0eba2e2845350f91d55bf87b8e80427e03c1b0911b5d0aa448ff"
+  },
+  "jobs-18-technik.svg": {
+    "id": "jobs-18-technik",
+    "alt": "Technischer Beruf als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "technik"
+    ],
+    "checksum": "ff25201097389140dba106a8a367a74bad4ef0b1b03dda95bde7f83c5aca51cc"
+  },
+  "jobs-19-fahrer.svg": {
+    "id": "jobs-19-fahrer",
+    "alt": "Fahrdienst als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "fahrer"
+    ],
+    "checksum": "e67d7e93de96502e4bc0e5e3f11e3dc174dc81127e12391c126890a4fcb1fe65"
+  },
+  "jobs-20-sozialarbeit.svg": {
+    "id": "jobs-20-sozialarbeit",
+    "alt": "Soziale Arbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "jobs",
+      "sozial",
+      "sozialarbeit"
+    ],
+    "checksum": "ade74c0cbb2909e01175478586a1d7ae2198a8f93f2cb658c1ddb49a6e81e9bb"
+  }
+}

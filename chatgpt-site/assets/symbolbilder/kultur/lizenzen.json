@@ -1,0 +1,265 @@
+{
+  "kultur-01-theater.svg": {
+    "id": "kultur-01-theater",
+    "alt": "Theater als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "theater"
+    ],
+    "checksum": "1abf5ef48d42243029534952eecea200447352a5c170345264a7906532de5e9b"
+  },
+  "kultur-02-kunst.svg": {
+    "id": "kultur-02-kunst",
+    "alt": "Kunst als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "kunst"
+    ],
+    "checksum": "640402c75fb90202400866b09798a3e95c38c08a700ae9f860e0178f6e57d020"
+  },
+  "kultur-03-musik.svg": {
+    "id": "kultur-03-musik",
+    "alt": "Musik als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "musik"
+    ],
+    "checksum": "f81980992f0296fc3987cde4ac522a9288f23446c4dc97bc520d2fa238b90bb1"
+  },
+  "kultur-04-buch.svg": {
+    "id": "kultur-04-buch",
+    "alt": "Buch und Literatur als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "buch"
+    ],
+    "checksum": "c6e07625ac1adbe0b26687fc2dce3151ff1cac65033b26bdca4315d7ced0e88a"
+  },
+  "kultur-05-kino.svg": {
+    "id": "kultur-05-kino",
+    "alt": "Film und Kino als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "kino"
+    ],
+    "checksum": "4b6124ce94a953315c5ac534f67970eed84eecb7e1b59706c781d7902db287b2"
+  },
+  "kultur-06-ausstellung.svg": {
+    "id": "kultur-06-ausstellung",
+    "alt": "Ausstellung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "ausstellung"
+    ],
+    "checksum": "592f2e24b812b648072fe80737b5715c62a3a6019d0e4bd934d84ce2dbb78326"
+  },
+  "kultur-07-buehne.svg": {
+    "id": "kultur-07-buehne",
+    "alt": "Kulturbühne als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "buehne"
+    ],
+    "checksum": "91458130f07d8fb87d3377ef2597c7a4cf953883827195c1f5c7f803df0502b7"
+  },
+  "kultur-08-museum.svg": {
+    "id": "kultur-08-museum",
+    "alt": "Museum als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "museum"
+    ],
+    "checksum": "c65dd3f75820b552c09d8d598b1de731f688214ceabaf3fc68a4f6222d176905"
+  },
+  "kultur-09-fotografie.svg": {
+    "id": "kultur-09-fotografie",
+    "alt": "Fotografie als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "fotografie"
+    ],
+    "checksum": "98dff5d0de3473dc606d7053e250b9a2bdf2fdc64829bcb6aba4ee3da8f8946a"
+  },
+  "kultur-10-tanz.svg": {
+    "id": "kultur-10-tanz",
+    "alt": "Tanz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "tanz"
+    ],
+    "checksum": "2c85a047e523e1839e5cfa4f08358a6a3d90fa659b62643cc977fba8c51fb4e3"
+  },
+  "kultur-11-literatur.svg": {
+    "id": "kultur-11-literatur",
+    "alt": "Literatur als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "literatur"
+    ],
+    "checksum": "df2b1e1b13563672d04bc608d5456d273d9efbb03c79f9e6b3c98a49aa10cf9c"
+  },
+  "kultur-12-konzert.svg": {
+    "id": "kultur-12-konzert",
+    "alt": "Konzert als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "konzert"
+    ],
+    "checksum": "43148c1c9914e939b3df63619b5e0c82529000416f524c993aae49438119422d"
+  },
+  "kultur-13-kunsthandwerk.svg": {
+    "id": "kultur-13-kunsthandwerk",
+    "alt": "Kunsthandwerk als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "handwerk",
+      "kunsthandwerk"
+    ],
+    "checksum": "076f7efcffee3b99789c18e20019241174cf87e12a46ed43c5d20e40b6f31654"
+  },
+  "kultur-14-kulturhaus.svg": {
+    "id": "kultur-14-kulturhaus",
+    "alt": "Kulturhaus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "haus",
+      "kulturhaus"
+    ],
+    "checksum": "d9358c205db7d2f91a9a8fa930562c5c48cabe352ea971933b541c3f6655dcd2"
+  },
+  "kultur-15-kreativwerkstatt.svg": {
+    "id": "kultur-15-kreativwerkstatt",
+    "alt": "Kreativwerkstatt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "kreativ",
+      "kreativwerkstatt"
+    ],
+    "checksum": "1e47914b615bcf81a5a9ea519695303d05f9187887631071a667168e06fa779c"
+  },
+  "kultur-16-chor.svg": {
+    "id": "kultur-16-chor",
+    "alt": "Chor als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "chor"
+    ],
+    "checksum": "3ad57c1e1d058b27b468bec143b005293cde744801aa3a8179e9a3868991d59a"
+  },
+  "kultur-17-instrument.svg": {
+    "id": "kultur-17-instrument",
+    "alt": "Musikinstrument als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "instrument"
+    ],
+    "checksum": "4155b5363fafcaec6bec20bc329183b00841504e38d2ba4ab7539c4ec8d84a89"
+  },
+  "kultur-18-galerie.svg": {
+    "id": "kultur-18-galerie",
+    "alt": "Galerie als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "galerie"
+    ],
+    "checksum": "41d74a8c85e4b5ad285939b49101f321d74a523068a4d8696d5d16364c1704ba"
+  },
+  "kultur-19-lesung.svg": {
+    "id": "kultur-19-lesung",
+    "alt": "Lesung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "lesung"
+    ],
+    "checksum": "6867c031de06128259d4c6aac43105da2532d8d4b958dfa622630e794c166731"
+  },
+  "kultur-20-openair.svg": {
+    "id": "kultur-20-openair",
+    "alt": "Kultur unter freiem Himmel als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "kultur",
+      "openair"
+    ],
+    "checksum": "848dfaae0fd329d9434bf72319e25b707981ac734a6443c0a1268be6870c7880"
+  }
+}

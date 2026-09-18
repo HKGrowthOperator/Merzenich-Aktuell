@@ -1,1 +1,294 @@
-{}
+{
+  "vereine-01-vereinsleben.svg": {
+    "id": "vereine-01-vereinsleben",
+    "alt": "Vereinsleben als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "vereinsleben"
+    ],
+    "checksum": "37bd62f5bfdb8c67ae5e8f864742e608f90d31084e5e29698178bc23d34f36dc"
+  },
+  "vereine-02-ehrenamt.svg": {
+    "id": "vereine-02-ehrenamt",
+    "alt": "Ehrenamt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "ehrenamt"
+    ],
+    "checksum": "16ee346894d2d54b7f44d58e73007f6b7e698dc05de39c8f4e351d7d277b789c"
+  },
+  "vereine-03-vereinsheim.svg": {
+    "id": "vereine-03-vereinsheim",
+    "alt": "Vereinsheim als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "vereinsheim"
+    ],
+    "checksum": "deec7fbd3f7173b1dcbb5ecb20f950e7da1b5b99a6767f585f3d6f1f0b0bbbb3"
+  },
+  "vereine-04-versammlung.svg": {
+    "id": "vereine-04-versammlung",
+    "alt": "Vereinsversammlung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "versammlung"
+    ],
+    "checksum": "aa64a9079515d6bc03a23b1e19c0c50dd74943060907a271c893af1dd892d411"
+  },
+  "vereine-05-gruppe.svg": {
+    "id": "vereine-05-gruppe",
+    "alt": "Vereinsgruppe als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "gruppe"
+    ],
+    "checksum": "daa1f787064759de008bca598cff12efed3d03143f5d961c7dc6e4010d6f5ce9"
+  },
+  "vereine-06-gemeinschaft.svg": {
+    "id": "vereine-06-gemeinschaft",
+    "alt": "Gemeinschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "gemeinschaft"
+    ],
+    "checksum": "e873e568bc89046e20225a2cbfa6e1247b923e85faaeae8910b7c0569b390c3c"
+  },
+  "vereine-07-veranstaltung.svg": {
+    "id": "vereine-07-veranstaltung",
+    "alt": "Vereinsveranstaltung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "veranstaltung"
+    ],
+    "checksum": "17f79cc36e577ea72318d1329fd750b7c8eae87174fa9364806a0726a0a12a95"
+  },
+  "vereine-08-brauchtum.svg": {
+    "id": "vereine-08-brauchtum",
+    "alt": "Brauchtum als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "brauchtum"
+    ],
+    "checksum": "c2ed2323ed81a2ddf425cae03fe61fecd76a34602d40b776974954de51a20316"
+  },
+  "vereine-09-schuetzen.svg": {
+    "id": "vereine-09-schuetzen",
+    "alt": "Schützenwesen als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "schuetzen"
+    ],
+    "checksum": "b5fb87417be57e6b651c1fc536257d0f22e6926253f3031e4a41daef1c132865"
+  },
+  "vereine-10-karneval.svg": {
+    "id": "vereine-10-karneval",
+    "alt": "Karneval als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "karneval"
+    ],
+    "checksum": "f6bbc8ac99aaa8a27e6702e50b0540332265448983f9bc6752a4e9189e9261f0"
+  },
+  "vereine-11-musikverein.svg": {
+    "id": "vereine-11-musikverein",
+    "alt": "Musikverein als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "musik",
+      "musikverein"
+    ],
+    "checksum": "07741e1da07202b73f375be70ea88cb0532a23185076974c9a83597cc3415dc5"
+  },
+  "vereine-12-sportverein.svg": {
+    "id": "vereine-12-sportverein",
+    "alt": "Sportverein als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "sport",
+      "sportverein"
+    ],
+    "checksum": "a6bad1e12c7a45703e9dbe4c7fa647c1d93c53f2266f3bc4ce9c8049521edcad"
+  },
+  "vereine-13-buergerverein.svg": {
+    "id": "vereine-13-buergerverein",
+    "alt": "Bürgerverein als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "buergerverein"
+    ],
+    "checksum": "0d614e74348ec387dfdcb9a1fcca906cbc5ce227542704fae52487329a732fb1"
+  },
+  "vereine-14-jugendgruppe.svg": {
+    "id": "vereine-14-jugendgruppe",
+    "alt": "Jugendgruppe als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "jugend",
+      "jugendgruppe"
+    ],
+    "checksum": "a45d72e8dc21b62a9168f1ae55e5e24badd891eda8d3166aaad68dbb0c2c8475"
+  },
+  "vereine-15-vorstand.svg": {
+    "id": "vereine-15-vorstand",
+    "alt": "Vereinsvorstand als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "vorstand"
+    ],
+    "checksum": "071a9d2195e0212d5628995d043329533fb9b5b316e64751eb91c43f5173e6c8"
+  },
+  "vereine-16-freiwilligesengagement.svg": {
+    "id": "vereine-16-freiwilligesengagement",
+    "alt": "Freiwilliges Engagement als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "ehrenamt",
+      "engagement",
+      "freiwilligesengagement"
+    ],
+    "checksum": "36b0d6157415e8efb899d32e667bf691045e02054cb8538ece119c02095e3e04"
+  },
+  "vereine-17-gemeinschaftsarbeit.svg": {
+    "id": "vereine-17-gemeinschaftsarbeit",
+    "alt": "Gemeinschaftsarbeit als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "arbeit",
+      "engagement",
+      "gemeinschaftsarbeit"
+    ],
+    "checksum": "f4e9d3a2260e287a807ca596d5c7fbdc745776232c4cea374569366b370d3a46"
+  },
+  "vereine-18-festvorbereitung.svg": {
+    "id": "vereine-18-festvorbereitung",
+    "alt": "Festvorbereitung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "fest",
+      "vorbereitung",
+      "festvorbereitung"
+    ],
+    "checksum": "e35c839c56a6cf603d5a5c495e4882988d84c2f42cbd51de16c3f1fad20c0b5d"
+  },
+  "vereine-19-lokaleinitiative.svg": {
+    "id": "vereine-19-lokaleinitiative",
+    "alt": "Lokale Initiative als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "initiative",
+      "lokaleinitiative"
+    ],
+    "checksum": "8110504132a3300d2fa62792914f63b1b48548bdfd33f6b6ec56875e15220538"
+  },
+  "vereine-20-helferteam.svg": {
+    "id": "vereine-20-helferteam",
+    "alt": "Helferteam als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "vereine",
+      "verein",
+      "helfer",
+      "ehrenamt",
+      "helferteam"
+    ],
+    "checksum": "0f1201a455ab075d70b637e5c123d935d15eb68ddf0b29d9490217fa0b61224d"
+  }
+}

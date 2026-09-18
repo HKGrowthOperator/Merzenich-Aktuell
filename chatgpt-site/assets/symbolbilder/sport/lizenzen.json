@@ -1,1 +1,300 @@
-{}
+{
+  "sport-01-spiel.svg": {
+    "id": "sport-01-spiel",
+    "alt": "Fußballspiel als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "spiel",
+      "spieltag"
+    ],
+    "checksum": "411e18391a710f6ca32a30da49a126df244d6fa9e424602150df0f598221b15e"
+  },
+  "sport-02-zweikampf.svg": {
+    "id": "sport-02-zweikampf",
+    "alt": "Zweikampf als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "zweikampf",
+      "duell"
+    ],
+    "checksum": "173c204e4b30a1338772935bbe240b77378a6134b6734d542089050a39239664"
+  },
+  "sport-03-fussballplatz.svg": {
+    "id": "sport-03-fussballplatz",
+    "alt": "Fußballplatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "platz",
+      "rasen",
+      "fussballplatz"
+    ],
+    "checksum": "4c74084f00db0108015b0696fc15dc43ec30325a09332c767fc93f61c5ee0b66"
+  },
+  "sport-04-tor.svg": {
+    "id": "sport-04-tor",
+    "alt": "Fußballtor als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "tor"
+    ],
+    "checksum": "0a6b34bbe13d896bbc186250764fb4409e2146db50221e4f73bf60592bf59b28"
+  },
+  "sport-05-ball.svg": {
+    "id": "sport-05-ball",
+    "alt": "Fußball als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "ball"
+    ],
+    "checksum": "7fafd7785e219e3171ae0e5d1415d1c2749eb549b33a186aa9b606f7b8fa6cd5"
+  },
+  "sport-06-eckfahne.svg": {
+    "id": "sport-06-eckfahne",
+    "alt": "Eckfahne als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "ecke",
+      "eckfahne"
+    ],
+    "checksum": "f6ee9f8b2317b7b21ae3afafca1356ad220fbbbf4dbdc813d94d3913b39ab5cd"
+  },
+  "sport-07-torwart.svg": {
+    "id": "sport-07-torwart",
+    "alt": "Torwart als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "torwart"
+    ],
+    "checksum": "d3919e27be8ec1501b0aff9ef22ad89834486b9d40b07102ff575cef299c058c"
+  },
+  "sport-08-schiedsrichter.svg": {
+    "id": "sport-08-schiedsrichter",
+    "alt": "Schiedsrichter als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "schiedsrichter"
+    ],
+    "checksum": "bbe486e7403f869a43528b205cd11c471f3e30a1ed1bc73f9a2bff44cfddfeab"
+  },
+  "sport-09-trainerbank.svg": {
+    "id": "sport-09-trainerbank",
+    "alt": "Trainerbank als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "trainer",
+      "trainerbank"
+    ],
+    "checksum": "1a87f518eeed260644d706af6a8097dfcf9ede7327fea12f99557a2114c4ba31"
+  },
+  "sport-10-training.svg": {
+    "id": "sport-10-training",
+    "alt": "Fußballtraining als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "training"
+    ],
+    "checksum": "9de327f985f68b055344933ce65d09e70852bfdbbd7e730a6267195d5655e8d1"
+  },
+  "sport-11-mannschaft.svg": {
+    "id": "sport-11-mannschaft",
+    "alt": "Mannschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "mannschaft",
+      "team"
+    ],
+    "checksum": "1df7dd7dc0b474e1905a43b46c52a08573b675199290f1983e78245469edc691"
+  },
+  "sport-12-jugendfussball.svg": {
+    "id": "sport-12-jugendfussball",
+    "alt": "Jugendfußball als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "jugend",
+      "jugendfussball"
+    ],
+    "checksum": "84b15f60ec2d26b55209850f48b88c5af668e99798869fb4d1776061d68ded78"
+  },
+  "sport-13-amateurfussball.svg": {
+    "id": "sport-13-amateurfussball",
+    "alt": "Amateurfußball als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "amateur",
+      "kreisliga",
+      "amateurfussball"
+    ],
+    "checksum": "8adf940adbbf9e42881511a4547a215522b6b198894057084112c35cc7372ea7"
+  },
+  "sport-14-zuschauer.svg": {
+    "id": "sport-14-zuschauer",
+    "alt": "Zuschauer als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "zuschauer",
+      "fans"
+    ],
+    "checksum": "4b621b5367ee8b262c8bce739fa7042b582ff410e730fe9e5acaead85444511b"
+  },
+  "sport-15-tribuene.svg": {
+    "id": "sport-15-tribuene",
+    "alt": "Tribüne als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "tribuene",
+      "zuschauer"
+    ],
+    "checksum": "61f94de07c5c7e018c54e9f83f564d70e9a22c65192fc00c254f3e2cf0bb5e95"
+  },
+  "sport-16-flutlicht.svg": {
+    "id": "sport-16-flutlicht",
+    "alt": "Flutlicht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "flutlicht",
+      "nacht"
+    ],
+    "checksum": "d7c907d1bbdb0a3a2f6d5b032f437793f70eb98f1368473d62a3cc0705f94b41"
+  },
+  "sport-17-stadion.svg": {
+    "id": "sport-17-stadion",
+    "alt": "Stadion als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "stadion"
+    ],
+    "checksum": "9ef6e2f985fed7e0fb3bc9cdef3d3fb9a93599bc1df87d738bfc7890cbb4e30a"
+  },
+  "sport-18-fussballschuhe.svg": {
+    "id": "sport-18-fussballschuhe",
+    "alt": "Fußballschuhe als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "schuhe",
+      "fussballschuhe"
+    ],
+    "checksum": "737691c3b1de8a165dcadd41fb0e0611fdf04296813729de1962c551bd7b2522"
+  },
+  "sport-19-tornetz.svg": {
+    "id": "sport-19-tornetz",
+    "alt": "Tornetz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "tor",
+      "netz",
+      "tornetz"
+    ],
+    "checksum": "dbc3353fa109a722312f0993e43e6684ad8d11a305c9ba7d47c125a756b3e914"
+  },
+  "sport-20-spielvorbereitung.svg": {
+    "id": "sport-20-spielvorbereitung",
+    "alt": "Spielvorbereitung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "sport",
+      "fussball",
+      "vorbereitung",
+      "spieltag",
+      "spielvorbereitung"
+    ],
+    "checksum": "b6ce859993ce712ca3cf0663c53d3e67807c2761db5c8e5124bc1c5fb678d055"
+  }
+}

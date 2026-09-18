@@ -1,1 +1,278 @@
-{}
+{
+  "gemeinde-01-rathaus.svg": {
+    "id": "gemeinde-01-rathaus",
+    "alt": "Rathaus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "rathaus"
+    ],
+    "checksum": "657bdf89bfbba6065dfd5093e5e78721253671b2d191fd2e4966ffbbdd40f60d"
+  },
+  "gemeinde-02-gemeinderat.svg": {
+    "id": "gemeinde-02-gemeinderat",
+    "alt": "Gemeinderat als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "rat",
+      "gemeinderat"
+    ],
+    "checksum": "eda0289f4c5099bcd58fc53961c741264f3662da7d6fec38901596b0ba891923"
+  },
+  "gemeinde-03-sitzungssaal.svg": {
+    "id": "gemeinde-03-sitzungssaal",
+    "alt": "Sitzungssaal als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "sitzung",
+      "sitzungssaal"
+    ],
+    "checksum": "01f7b7e1f4090c2687608fd7cc63525d9f9d75f70e35bdfa1ca5fb0224c18d88"
+  },
+  "gemeinde-04-verwaltung.svg": {
+    "id": "gemeinde-04-verwaltung",
+    "alt": "Verwaltung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "verwaltung"
+    ],
+    "checksum": "8e82faa176a181308f4d02f841d77f4008e480477a7040cbe0dba32f091d8069"
+  },
+  "gemeinde-05-akten.svg": {
+    "id": "gemeinde-05-akten",
+    "alt": "Akten und Dokumente als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "dokumente",
+      "akten"
+    ],
+    "checksum": "166b2435f3c6e5ca24114ffc2c20ff04fcb890f71094fbfb2e55b92171816888"
+  },
+  "gemeinde-06-buergerbuero.svg": {
+    "id": "gemeinde-06-buergerbuero",
+    "alt": "Bürgerbüro als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "buergerbuero"
+    ],
+    "checksum": "b30b84bbfe87647d6a81cb38259060fcd65ede47343679f1c53a3e3ea3063e7c"
+  },
+  "gemeinde-07-gemeindegebaeude.svg": {
+    "id": "gemeinde-07-gemeindegebaeude",
+    "alt": "Gemeindegebäude als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "gebaeude",
+      "gemeindegebaeude"
+    ],
+    "checksum": "69c13452479d2c783a4c5a865ac788968b077011dc60486f1166605978777a78"
+  },
+  "gemeinde-08-ortsentwicklung.svg": {
+    "id": "gemeinde-08-ortsentwicklung",
+    "alt": "Ortsentwicklung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "entwicklung",
+      "ortsentwicklung"
+    ],
+    "checksum": "912473fd827aaaa1e45ba4551c6d6e06f9fdad23c85ba1e6c78866ded1c69706"
+  },
+  "gemeinde-09-infrastruktur.svg": {
+    "id": "gemeinde-09-infrastruktur",
+    "alt": "Kommunale Infrastruktur als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "infrastruktur"
+    ],
+    "checksum": "8d74e0bf771b47d966ecfa6f62987e1f6077afa71aa31b81155a6f1e66173bae"
+  },
+  "gemeinde-10-bauplanung.svg": {
+    "id": "gemeinde-10-bauplanung",
+    "alt": "Bauplanung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "bau",
+      "planung",
+      "bauplanung"
+    ],
+    "checksum": "5003130b977185ed849cbbaaa662d08a0eddd3a418d94ead27aff8a794aceb98"
+  },
+  "gemeinde-11-oeffentlichesitzung.svg": {
+    "id": "gemeinde-11-oeffentlichesitzung",
+    "alt": "Öffentliche Sitzung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "sitzung",
+      "rat",
+      "oeffentlichesitzung"
+    ],
+    "checksum": "26650aa9b9d508cbe15fc2c65b515de22cc9fa12e5ff10234e3d80149d2607c6"
+  },
+  "gemeinde-12-kommunalesprojekt.svg": {
+    "id": "gemeinde-12-kommunalesprojekt",
+    "alt": "Kommunales Projekt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "projekt",
+      "kommunalesprojekt"
+    ],
+    "checksum": "dab8da0f511427d2e801dafe6492481d87a3c888608d2b58189c8aff18b978e4"
+  },
+  "gemeinde-13-strassenbau.svg": {
+    "id": "gemeinde-13-strassenbau",
+    "alt": "Kommunaler Straßenbau als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "strassenbau"
+    ],
+    "checksum": "ff269b26737e7c171c0babdd052e2d6c05c8132a6ce5b21685a780ff2b6f0d38"
+  },
+  "gemeinde-14-oeffentlicheeinrichtung.svg": {
+    "id": "gemeinde-14-oeffentlicheeinrichtung",
+    "alt": "Öffentliche Einrichtung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "einrichtung",
+      "oeffentlicheeinrichtung"
+    ],
+    "checksum": "70973d33ef77b35bae6f7729aa203a25b2b05c00177947fb1a1e8bca7c717b00"
+  },
+  "gemeinde-15-buergermeisteramt.svg": {
+    "id": "gemeinde-15-buergermeisteramt",
+    "alt": "Bürgermeisteramt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "buergermeister",
+      "buergermeisteramt"
+    ],
+    "checksum": "b4524f9816f277b22b9007dd97f473205abe6298e370841dc5c2d2956545d064"
+  },
+  "gemeinde-16-politischeberatung.svg": {
+    "id": "gemeinde-16-politischeberatung",
+    "alt": "Kommunale Beratung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "beratung",
+      "politischeberatung"
+    ],
+    "checksum": "eb5c097f4b40374aa7ef0af5d31511614a3ab0126f478b9c88f55110be519f88"
+  },
+  "gemeinde-17-verwaltungsservice.svg": {
+    "id": "gemeinde-17-verwaltungsservice",
+    "alt": "Gemeindeverwaltung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "verwaltung",
+      "verwaltungsservice"
+    ],
+    "checksum": "2bd3d32f2c299b41ec3bd24979f052c8aae2e9f42a1139c3f67a75e03cf5d280"
+  },
+  "gemeinde-18-baugenehmigung.svg": {
+    "id": "gemeinde-18-baugenehmigung",
+    "alt": "Bauakte als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "bau",
+      "baugenehmigung"
+    ],
+    "checksum": "303826b2dd6cef25d158e2ebe70d7cdada8c0419f4fd6583e15c5098b40c40e7"
+  },
+  "gemeinde-19-haushalt.svg": {
+    "id": "gemeinde-19-haushalt",
+    "alt": "Gemeindehaushalt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "haushalt"
+    ],
+    "checksum": "a0df0847fd44ff342e747053389a9ab0da19f3cc67c4d24b9d1c2910162d0895"
+  },
+  "gemeinde-20-buergerinformation.svg": {
+    "id": "gemeinde-20-buergerinformation",
+    "alt": "Bürgerinformation als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "gemeinde",
+      "information",
+      "buergerinformation"
+    ],
+    "checksum": "3e95bda38fa07f35e7aa6c25dd7f28c5705b01ae03171db4c67da7de826d652a"
+  }
+}

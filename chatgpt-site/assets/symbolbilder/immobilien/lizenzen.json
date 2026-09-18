@@ -1,1 +1,264 @@
-{}
+{
+  "immobilien-01-wohnhaus.svg": {
+    "id": "immobilien-01-wohnhaus",
+    "alt": "Wohnhaus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "haus",
+      "wohnhaus"
+    ],
+    "checksum": "644b43c81c375c69865985d2708042bc2564898b9f28561f973f2365c10ce527"
+  },
+  "immobilien-02-wohnung.svg": {
+    "id": "immobilien-02-wohnung",
+    "alt": "Wohnung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "wohnung"
+    ],
+    "checksum": "f36bc116ed6782ae4c28f9a44dbc81829f16c54bd8571448e586983d8eeec95f"
+  },
+  "immobilien-03-mehrfamilienhaus.svg": {
+    "id": "immobilien-03-mehrfamilienhaus",
+    "alt": "Mehrfamilienhaus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "mehrfamilienhaus"
+    ],
+    "checksum": "cdddfa7128982629fa5bf57e00e2a44683db5d4e50a99b8bfdd7b2f09c8f213e"
+  },
+  "immobilien-04-schluessel.svg": {
+    "id": "immobilien-04-schluessel",
+    "alt": "Hausschlüssel als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "schluessel"
+    ],
+    "checksum": "8aca9e3dc3edc45e0dc3c7361f1281fe79d6896372ddfcf1d0e715f13767d2ce"
+  },
+  "immobilien-05-neubau.svg": {
+    "id": "immobilien-05-neubau",
+    "alt": "Neubau als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "neubau"
+    ],
+    "checksum": "3dac6fd5b635b564a4f7885bbb7ca008bc2456ab0aec090bea3f9c523757469d"
+  },
+  "immobilien-06-baustelle.svg": {
+    "id": "immobilien-06-baustelle",
+    "alt": "Wohnungsbaustelle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "baustelle"
+    ],
+    "checksum": "71a0d487143d4050a7e9c316a6297fecf97df8a1497a0c8974f259a1c1a88e36"
+  },
+  "immobilien-07-innenraum.svg": {
+    "id": "immobilien-07-innenraum",
+    "alt": "Innenraum als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "innenraum"
+    ],
+    "checksum": "3790817ac5813bdd066b753c4e7b93d0301737d7e640f6db049a3868d2365baf"
+  },
+  "immobilien-08-grundriss.svg": {
+    "id": "immobilien-08-grundriss",
+    "alt": "Grundriss als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "grundriss"
+    ],
+    "checksum": "6a02163264c67b22847c0918266da5eed1175cf9c6026b223ad27f30c16d26fa"
+  },
+  "immobilien-09-einfamilienhaus.svg": {
+    "id": "immobilien-09-einfamilienhaus",
+    "alt": "Einfamilienhaus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "haus",
+      "einfamilienhaus"
+    ],
+    "checksum": "1cf54dcec8eb72f46620f21861a0ca01f917927ce680e67f8f3182d50a9842a2"
+  },
+  "immobilien-10-balkon.svg": {
+    "id": "immobilien-10-balkon",
+    "alt": "Balkon als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "balkon"
+    ],
+    "checksum": "342e444e080d1e5b8a854faa939591b70cf3bd5698807c77913ff6a36f6a74b7"
+  },
+  "immobilien-11-kueche.svg": {
+    "id": "immobilien-11-kueche",
+    "alt": "Küche als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "kueche"
+    ],
+    "checksum": "1c80a515f9e8a9186d342ad4b6679e4c31e006cd42f351c13ea6be8d091bceea"
+  },
+  "immobilien-12-wohnzimmer.svg": {
+    "id": "immobilien-12-wohnzimmer",
+    "alt": "Wohnzimmer als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "wohnzimmer"
+    ],
+    "checksum": "bcad5d6d2eee40f13cfe036cd85abd3270f641347745d099a2c771f7c3dbf33f"
+  },
+  "immobilien-13-garten.svg": {
+    "id": "immobilien-13-garten",
+    "alt": "Garten als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "garten"
+    ],
+    "checksum": "6881619a298bc9a728774a9338f7883c9f598b46e429df1f4bdaadc088d96b05"
+  },
+  "immobilien-14-sanierung.svg": {
+    "id": "immobilien-14-sanierung",
+    "alt": "Sanierung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "sanierung"
+    ],
+    "checksum": "7b19a7164defdf573b5b169911ee9fe2c9cbe39cecde31b89ba116d7f23e58d4"
+  },
+  "immobilien-15-beratung.svg": {
+    "id": "immobilien-15-beratung",
+    "alt": "Immobilienberatung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "beratung"
+    ],
+    "checksum": "918e13fdcf8db1f78a3e7773a10bd193692734d96d50831d79577eee5a624066"
+  },
+  "immobilien-16-miete.svg": {
+    "id": "immobilien-16-miete",
+    "alt": "Mietwohnung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "miete"
+    ],
+    "checksum": "207cc6062b29e51a62f7f732b4e6fc4c3929b1f45c9fe4dd50b5af97ac9b9d3f"
+  },
+  "immobilien-17-eigentum.svg": {
+    "id": "immobilien-17-eigentum",
+    "alt": "Wohneigentum als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "eigentum"
+    ],
+    "checksum": "3b51be94376654b134517371fadd0573ce45c6e937757052f2a62a823f1926fb"
+  },
+  "immobilien-18-rohbau.svg": {
+    "id": "immobilien-18-rohbau",
+    "alt": "Rohbau als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "rohbau"
+    ],
+    "checksum": "83f4de061018cd3f87105c94629314e94998902e97f6f18befbe6d9dda37cbb2"
+  },
+  "immobilien-19-fassade.svg": {
+    "id": "immobilien-19-fassade",
+    "alt": "Hausfassade als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "fassade"
+    ],
+    "checksum": "101264d8010059fdffabdb85a9375f06c66d94f0a7368c05338f0f0da895d30e"
+  },
+  "immobilien-20-haustuer.svg": {
+    "id": "immobilien-20-haustuer",
+    "alt": "Haustür als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "immobilien",
+      "haustuer"
+    ],
+    "checksum": "bc7c986a485e4bdeb16d571a6eff9bc02b226e2766ba6d24e57af9d3ae80ee6f"
+  }
+}

@@ -1,1 +1,277 @@
-{}
+{
+  "polizei-01-streifenwagen.svg": {
+    "id": "polizei-01-streifenwagen",
+    "alt": "Streifenwagen als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "streifenwagen"
+    ],
+    "checksum": "680c510fb9abe97efd43245ee093fa8dd38fa66655d99754e7cabe4f44d99ac8"
+  },
+  "polizei-02-polizeibeamte.svg": {
+    "id": "polizei-02-polizeibeamte",
+    "alt": "Polizeibeamte als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "beamte",
+      "polizeibeamte"
+    ],
+    "checksum": "0d35f82031970e9720b9e86695a0637cb5471832304a8f4d2e1b4fa448084237"
+  },
+  "polizei-03-einsatz.svg": {
+    "id": "polizei-03-einsatz",
+    "alt": "Polizeieinsatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "einsatz"
+    ],
+    "checksum": "1119146fa0a705b9a989d831e2a8f97f06265877d9f1874943c0e6fc0bc0da31"
+  },
+  "polizei-04-blaulicht.svg": {
+    "id": "polizei-04-blaulicht",
+    "alt": "Blaulicht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "blaulicht",
+      "einsatz"
+    ],
+    "checksum": "0ca8a1e9cf19e5e2ea763c0d26b22d9df0321c0b4781ff55569002b059092228"
+  },
+  "polizei-05-absperrung.svg": {
+    "id": "polizei-05-absperrung",
+    "alt": "Absperrung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "absperrung"
+    ],
+    "checksum": "309353a910fade9a0a0e9740649787841785b66cbb6af230dce6652a70c8b8fa"
+  },
+  "polizei-06-polizeiband.svg": {
+    "id": "polizei-06-polizeiband",
+    "alt": "Polizeiband als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "absperrung",
+      "band",
+      "polizeiband"
+    ],
+    "checksum": "ee6fcb98ff612a7f08c117174c5de801a13e79406420af23a55e88dd3632875d"
+  },
+  "polizei-07-spurensicherung.svg": {
+    "id": "polizei-07-spurensicherung",
+    "alt": "Spurensicherung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "spurensicherung",
+      "kripo"
+    ],
+    "checksum": "01cb79bd6ff38f29b59a3280a03f4a90cebc413106dfc4fee301e4082a2b4f08"
+  },
+  "polizei-08-einbruch.svg": {
+    "id": "polizei-08-einbruch",
+    "alt": "Einbruchermittlung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "einbruch",
+      "ermittlung"
+    ],
+    "checksum": "ef9c4f4470b2c196c083f96e2e2ba3e961ad255406560b5d5af0b4001f5fe571"
+  },
+  "polizei-09-tatort.svg": {
+    "id": "polizei-09-tatort",
+    "alt": "Neutraler Tatortkontext als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "tatort",
+      "ermittlung"
+    ],
+    "checksum": "8f59013b3d65dd3d29f1076c9729dcd40b5332df614be8a4084fbc0ace306667"
+  },
+  "polizei-10-verkehrskontrolle.svg": {
+    "id": "polizei-10-verkehrskontrolle",
+    "alt": "Verkehrskontrolle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "verkehrskontrolle"
+    ],
+    "checksum": "dde528165354adcb17e12f0b42d125fd7aaea2fd20929ef31a9f9c70738fc024"
+  },
+  "polizei-11-unfallaufnahme.svg": {
+    "id": "polizei-11-unfallaufnahme",
+    "alt": "Unfallaufnahme als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "unfall",
+      "aufnahme",
+      "unfallaufnahme"
+    ],
+    "checksum": "d80ef3fe4bd6d160ab763b73914c8ed9184c3ae2f35e44135ee70b80d7ba97b6"
+  },
+  "polizei-12-polizeiwache.svg": {
+    "id": "polizei-12-polizeiwache",
+    "alt": "Polizeiwache als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "wache",
+      "polizeiwache"
+    ],
+    "checksum": "0106115d6829e55efca1203521cbeec05149f9a1152dba8e46563bdc3cad5875"
+  },
+  "polizei-13-fussstreife.svg": {
+    "id": "polizei-13-fussstreife",
+    "alt": "Fußstreife als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "fussstreife"
+    ],
+    "checksum": "19a2dfe35f3536c9de487753bd2491a674a00d5d5afab8392d15a54779755c01"
+  },
+  "polizei-14-funk.svg": {
+    "id": "polizei-14-funk",
+    "alt": "Polizeifunk als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "funk"
+    ],
+    "checksum": "11c256ae97f663504580323af566fb057aca2f10d12656d6e27a5026624a17a5"
+  },
+  "polizei-15-ausruestung.svg": {
+    "id": "polizei-15-ausruestung",
+    "alt": "Polizeiausrüstung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "ausruestung"
+    ],
+    "checksum": "2f791e24bac1067593d4986d69871f291326a0761f6173ba1f234ad2497a97a5"
+  },
+  "polizei-16-kriminalpolizei.svg": {
+    "id": "polizei-16-kriminalpolizei",
+    "alt": "Kriminalpolizei-Kontext als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "kripo",
+      "ermittlung",
+      "kriminalpolizei"
+    ],
+    "checksum": "ff0b2b954b7110b1a3cbe4633353932b9b0b2c16534187e544e432e91192a3a5"
+  },
+  "polizei-17-nachteinsatz.svg": {
+    "id": "polizei-17-nachteinsatz",
+    "alt": "Polizeieinsatz bei Nacht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "nacht",
+      "einsatz",
+      "nachteinsatz"
+    ],
+    "checksum": "fb19d2daf8510e9717a1dcc456b7ae173bca40a7f308f1dea4f509587085a955"
+  },
+  "polizei-18-kontrolle.svg": {
+    "id": "polizei-18-kontrolle",
+    "alt": "Polizeiliche Kontrolle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "kontrolle"
+    ],
+    "checksum": "fa192ceb59e5ae64364bb7690995bf0d99a7ab92a076e88f32af1875e014003b"
+  },
+  "polizei-19-zeugenaufruf.svg": {
+    "id": "polizei-19-zeugenaufruf",
+    "alt": "Zeugenaufruf als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "zeugen",
+      "zeugenaufruf"
+    ],
+    "checksum": "4a35d1271f2e4a43e42490090f695d28eedb2aa2b1f89a273ba4e4e373c0d808"
+  },
+  "polizei-20-fahndung.svg": {
+    "id": "polizei-20-fahndung",
+    "alt": "Fahndung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "polizei",
+      "fahndung"
+    ],
+    "checksum": "a9d0867d3cd81bc63f0845ed0fafa50ccc9f6e86aceba9c9b9e3b58b8ccf2842"
+  }
+}

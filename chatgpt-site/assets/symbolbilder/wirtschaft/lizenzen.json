@@ -1,1 +1,266 @@
-{}
+{
+  "wirtschaft-01-betrieb.svg": {
+    "id": "wirtschaft-01-betrieb",
+    "alt": "Betrieb als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "betrieb"
+    ],
+    "checksum": "604316ef9194d13ca7343572235dfb12b388b97ecf1e822693b98626e36386f7"
+  },
+  "wirtschaft-02-buero.svg": {
+    "id": "wirtschaft-02-buero",
+    "alt": "Büro als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "buero"
+    ],
+    "checksum": "9c7d2d051819ad4c4a3302412efb996e6be927788106b36b1fe9fee1674606e9"
+  },
+  "wirtschaft-03-handwerk.svg": {
+    "id": "wirtschaft-03-handwerk",
+    "alt": "Handwerk als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "handwerk"
+    ],
+    "checksum": "10942b34d7fc7b26e6b44b696cdcf48af394add825fd5a92cb00d94e021492c8"
+  },
+  "wirtschaft-04-produktion.svg": {
+    "id": "wirtschaft-04-produktion",
+    "alt": "Produktion als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "produktion"
+    ],
+    "checksum": "03457954080ea9a5bace41108ae47564a1994e7a2cfdbbea9a91056c2aa0df7f"
+  },
+  "wirtschaft-05-gewerbe.svg": {
+    "id": "wirtschaft-05-gewerbe",
+    "alt": "Gewerbe als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "gewerbe"
+    ],
+    "checksum": "17eadd9a2bdd0c3d305c168b1ee4fd78ad8e48c7ff85df6bbad4e4ec46638a1c"
+  },
+  "wirtschaft-06-logistik.svg": {
+    "id": "wirtschaft-06-logistik",
+    "alt": "Logistik als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "logistik"
+    ],
+    "checksum": "d34514168647602208c6680c41c574c8f5262a1ed7c3f8515d910848b8481b64"
+  },
+  "wirtschaft-07-arbeitsplatz.svg": {
+    "id": "wirtschaft-07-arbeitsplatz",
+    "alt": "Arbeitsplatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "arbeit",
+      "arbeitsplatz"
+    ],
+    "checksum": "3187de5084e0465c3c8dd2958f02160fbb50accfa4c01f0238bc2705b93ac5cb"
+  },
+  "wirtschaft-08-werkstatt.svg": {
+    "id": "wirtschaft-08-werkstatt",
+    "alt": "Werkstatt als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "werkstatt"
+    ],
+    "checksum": "52fc8464d570bea5cc7b73e3fc2786fb514273ca7dc5c5ad7786c81714c1b0d5"
+  },
+  "wirtschaft-09-lager.svg": {
+    "id": "wirtschaft-09-lager",
+    "alt": "Lager als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "lager"
+    ],
+    "checksum": "183fe6545e6a7dfb5056d9a1dde45087f5d254b7fdcad04eadde6da43b31e428"
+  },
+  "wirtschaft-10-lieferung.svg": {
+    "id": "wirtschaft-10-lieferung",
+    "alt": "Lieferung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "lieferung"
+    ],
+    "checksum": "0aedd7eb9771fc5afc1d237a30cb3c8b8351de73fba938d207193c3a5ed97dfb"
+  },
+  "wirtschaft-11-maschinen.svg": {
+    "id": "wirtschaft-11-maschinen",
+    "alt": "Maschinen als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "maschinen"
+    ],
+    "checksum": "0269f592eddac63eb2674c6656099ef13a5f89a7bc4829b76c00cb9c0b6e4e6a"
+  },
+  "wirtschaft-12-einzelhandel.svg": {
+    "id": "wirtschaft-12-einzelhandel",
+    "alt": "Einzelhandel als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "handel",
+      "einzelhandel"
+    ],
+    "checksum": "5c14b8fa9033621aa5c7cad442c226d30eed013200f8e4b2bc6eddf923d4df2b"
+  },
+  "wirtschaft-13-dienstleistung.svg": {
+    "id": "wirtschaft-13-dienstleistung",
+    "alt": "Dienstleistung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "dienstleistung"
+    ],
+    "checksum": "ba942f5febcbf0698a4c9bffc92e08f251ea921b08d200d2aed74c73526ee3de"
+  },
+  "wirtschaft-14-gruendung.svg": {
+    "id": "wirtschaft-14-gruendung",
+    "alt": "Gründung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "gruendung"
+    ],
+    "checksum": "7b5bdebb8011bf573a5c9993da1657b3bb0394217ac628fba19349ba12a43bb5"
+  },
+  "wirtschaft-15-meeting.svg": {
+    "id": "wirtschaft-15-meeting",
+    "alt": "Geschäftliches Meeting als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "meeting"
+    ],
+    "checksum": "e6ef04413239f3c6d9fb5246282e13925615ece8b7702f96c977a5bd3255b3c1"
+  },
+  "wirtschaft-16-digitalisierung.svg": {
+    "id": "wirtschaft-16-digitalisierung",
+    "alt": "Digitalisierung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "digital",
+      "digitalisierung"
+    ],
+    "checksum": "56b679872c9ca7398d05f37f784bee8d9dbbf24483e6a4dd555b34f6924809eb"
+  },
+  "wirtschaft-17-energie.svg": {
+    "id": "wirtschaft-17-energie",
+    "alt": "Energie und Betrieb als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "energie"
+    ],
+    "checksum": "a48cc5ca80d961ae2e181bd529addaf0aa919fda4591ebf31251fa28845acdaf"
+  },
+  "wirtschaft-18-bauunternehmen.svg": {
+    "id": "wirtschaft-18-bauunternehmen",
+    "alt": "Bauunternehmen als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "bau",
+      "bauunternehmen"
+    ],
+    "checksum": "36980d631aa85c750d2af617a5c0ec17f5ba9b59d3d731ccc9233a570b38df9e"
+  },
+  "wirtschaft-19-landwirtschaft.svg": {
+    "id": "wirtschaft-19-landwirtschaft",
+    "alt": "Landwirtschaft als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "landwirtschaft"
+    ],
+    "checksum": "3b62529dc7e8424c1746b3fb07c290003be492b7644c2f8c956387b7bcfdb2ac"
+  },
+  "wirtschaft-20-industrie.svg": {
+    "id": "wirtschaft-20-industrie",
+    "alt": "Industrie als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "wirtschaft",
+      "industrie"
+    ],
+    "checksum": "0c759a17b6059dde5f6147445841b655e3606e19d47674b71e2c3c7a81f9825d"
+  }
+}

@@ -25,13 +25,16 @@
     "location": "MERZENICH",
     "published": "2026-09-11T08:45:00+02:00",
     "timeLabel": "11.09. · 08:45 Uhr",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Streifenwagen%20f%C3%BCr%20die%20Polizei%20vorgestellt.jpg?width=1600",
-    "imageAlt": "Streifenwagen der Polizei Nordrhein-Westfalen",
+    "image": "/assets/symbolbilder/polizei/polizei-08-einbruch.svg",
+    "imageAlt": "Einbruchermittlung als neutrales Symbolbild",
     "imageBadge": "Symbolbild",
-    "imageCredit": "Symbolbild · IM NRW / Wikimedia Commons · CC0 1.0",
+    "imageCredit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "imageType": "symbol",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Neue_Streifenwagen_f%C3%BCr_die_Polizei_vorgestellt.jpg",
-    "imageLicense": "CC0 1.0",
-    "imageRightsCheckedAt": "2026-09-16"
+    "imageLicense": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "imageRightsCheckedAt": "2026-09-18",
+    "imageId": "polizei-08-einbruch",
+    "imagePool": "polizei",
+    "imageSource": "Merzenich Aktuell / Editorial Image System V2"
   }
 }

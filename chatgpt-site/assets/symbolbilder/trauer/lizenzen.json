@@ -1,1 +1,273 @@
-{}
+{
+  "trauer-01-kerze.svg": {
+    "id": "trauer-01-kerze",
+    "alt": "Kerze als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "kerze"
+    ],
+    "checksum": "95c353a68b7e2d242bb0a032ccf0a4d9753925c34506d233ab7fd8a45f902cdf"
+  },
+  "trauer-02-gedenkkerze.svg": {
+    "id": "trauer-02-gedenkkerze",
+    "alt": "Gedenkkerze als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "gedenken",
+      "kerze",
+      "gedenkkerze"
+    ],
+    "checksum": "c6864a8734b2b5ffecdb55ec5193ae0bf5548bcf7281d2cb0826aaa8bfb5bf5f"
+  },
+  "trauer-03-kirche.svg": {
+    "id": "trauer-03-kirche",
+    "alt": "Kirchenraum in stiller Atmosphäre als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "kirche"
+    ],
+    "checksum": "1e22d085cdcf11fee266d79c1848f89cf93fcfb4cf46f475a76bc2f30a02b578"
+  },
+  "trauer-04-friedhof.svg": {
+    "id": "trauer-04-friedhof",
+    "alt": "Friedhof als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "friedhof"
+    ],
+    "checksum": "09f0e587e254fc9707fce944a1ed8d645cfe32deed1d3d30964dc7b42e83d725"
+  },
+  "trauer-05-blumen.svg": {
+    "id": "trauer-05-blumen",
+    "alt": "Blumen der Erinnerung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "blumen"
+    ],
+    "checksum": "dd1e735959328ee95692c1041f8e31a2eba3fd521197d806a04a4c6906f1bd3d"
+  },
+  "trauer-06-erinnerung.svg": {
+    "id": "trauer-06-erinnerung",
+    "alt": "Erinnerung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "erinnerung"
+    ],
+    "checksum": "50a069dd6d6a0ce980fdf5245f53ad19309bd64a23e4410e6a71eaf0e808df89"
+  },
+  "trauer-07-trauerflor.svg": {
+    "id": "trauer-07-trauerflor",
+    "alt": "Trauerflor als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "flor",
+      "trauerflor"
+    ],
+    "checksum": "8e83bef357e2a2d230b872bc0df964dec6957d0d393986d2afd7e188e1ab6e1b"
+  },
+  "trauer-08-rose.svg": {
+    "id": "trauer-08-rose",
+    "alt": "Rose als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "rose"
+    ],
+    "checksum": "c7384ff9d87f2dd8c81594cf2c52e57e6a35dbda6d8885ce450f8eb55ba9a13b"
+  },
+  "trauer-09-stilleslicht.svg": {
+    "id": "trauer-09-stilleslicht",
+    "alt": "Stilles Licht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "licht",
+      "stilleslicht"
+    ],
+    "checksum": "d51fcce5e1b94d20b181884400c7a23fc284a7da6129a6d8112e39e113d27d7d"
+  },
+  "trauer-10-gedenkplatz.svg": {
+    "id": "trauer-10-gedenkplatz",
+    "alt": "Gedenkplatz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "gedenken",
+      "gedenkplatz"
+    ],
+    "checksum": "f8b00a023b5eb0d8b2606658e9fa5a4123e4b7f5344cd60133a87aefc280cd29"
+  },
+  "trauer-11-kreuz.svg": {
+    "id": "trauer-11-kreuz",
+    "alt": "Neutrales Kreuzsymbol als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "kreuz"
+    ],
+    "checksum": "4c21ee7568b4887121cb10c478900390bbb34f8f52c466ea89b11d8ad25fde65"
+  },
+  "trauer-12-kondolenz.svg": {
+    "id": "trauer-12-kondolenz",
+    "alt": "Kondolenz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "kondolenz"
+    ],
+    "checksum": "02126143f1c57caa2c268fae5c9e7d88768a0fa5b53d353f953e251068e0aaaf"
+  },
+  "trauer-13-erinnerungsbuch.svg": {
+    "id": "trauer-13-erinnerungsbuch",
+    "alt": "Buch der Erinnerung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "buch",
+      "erinnerung",
+      "erinnerungsbuch"
+    ],
+    "checksum": "15eea7c4d44447a01bd85f07caea1b79c46ed229604a8964fd92eaa2b36d773c"
+  },
+  "trauer-14-friedhofstor.svg": {
+    "id": "trauer-14-friedhofstor",
+    "alt": "Friedhofstor als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "friedhof",
+      "friedhofstor"
+    ],
+    "checksum": "ec561f5a1b49cd4b779d1233e23eb96512d9d44e1d89add35fee64cfd531bd64"
+  },
+  "trauer-15-grablicht.svg": {
+    "id": "trauer-15-grablicht",
+    "alt": "Grablicht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "grablicht"
+    ],
+    "checksum": "a62f61e3c9de9dcf06d912361d851caf0c8b8fcd5a33415e715436379b73ff77"
+  },
+  "trauer-16-stille.svg": {
+    "id": "trauer-16-stille",
+    "alt": "Stille als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "stille"
+    ],
+    "checksum": "1a5d1498c4b7e2095a5190334ac1baa76b35789623b7586e8a640253833f75cd"
+  },
+  "trauer-17-abschied.svg": {
+    "id": "trauer-17-abschied",
+    "alt": "Abschied als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "abschied"
+    ],
+    "checksum": "a5eb85931c50b634e674b17e066463558adea73291f58daa86de081ac899d269"
+  },
+  "trauer-18-trauerkarte.svg": {
+    "id": "trauer-18-trauerkarte",
+    "alt": "Trauerkarte als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "karte",
+      "trauerkarte"
+    ],
+    "checksum": "70a2c01196feee1ba1c6450b0d3f7a35a28f2d2c8b5de8c5ecb2fead0a0472d3"
+  },
+  "trauer-19-kranz.svg": {
+    "id": "trauer-19-kranz",
+    "alt": "Trauerkranz als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "kranz"
+    ],
+    "checksum": "fabf7a9280d19b662fb8a8e1223b9d908b28afffbb90e1a5e81983a6d09a523b"
+  },
+  "trauer-20-abendlicht.svg": {
+    "id": "trauer-20-abendlicht",
+    "alt": "Ruhiges Abendlicht als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "trauer",
+      "licht",
+      "erinnerung",
+      "abendlicht"
+    ],
+    "checksum": "da0228410b068682b83ba086ad192fb9fc2331682a9a0e2246fed2ccf288a673"
+  }
+}

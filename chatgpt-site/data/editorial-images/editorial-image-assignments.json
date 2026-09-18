@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "updatedAt": "2026-09-18T13:38:43.676Z",
+  "assignments": {
+    "/blaulicht/einbruch-arnoldsweilerweg/": {
+      "imageId": "polizei-08-einbruch",
+      "pool": "polizei",
+      "assignedAt": "2026-09-18T13:38:43.676Z",
+      "articleId": "2026-09-11-einbruch-arnoldsweilerweg",
+      "articleDate": "2026-09-11T08:45:00+02:00",
+      "tagsMatched": [
+        "polizei",
+        "einbruch",
+        "ermittlung"
+      ]
+    }
+  }
+}

@@ -1,1 +1,272 @@
-{}
+{
+  "verkehr-01-strasse.svg": {
+    "id": "verkehr-01-strasse",
+    "alt": "Straße als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "strasse"
+    ],
+    "checksum": "0ef81bf100ca5d80c81ba646813438da7c325c3e3190a1c57301a91b68f48ca1"
+  },
+  "verkehr-02-baustelle.svg": {
+    "id": "verkehr-02-baustelle",
+    "alt": "Baustelle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "baustelle"
+    ],
+    "checksum": "649ca2168ee17c64e60ee07598fb9f84cf0eadbb9c5d8a712bf73852dd296fe9"
+  },
+  "verkehr-03-sperrung.svg": {
+    "id": "verkehr-03-sperrung",
+    "alt": "Straßensperrung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "sperrung"
+    ],
+    "checksum": "b9ee1ac5fe5ae088365e1e4ccaa23796c9eff7a5129acaf6d2735550d590dfcc"
+  },
+  "verkehr-04-umleitung.svg": {
+    "id": "verkehr-04-umleitung",
+    "alt": "Umleitung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "umleitung"
+    ],
+    "checksum": "71bfd99fd3889d79d1d89b8a6c74afa1ece61b8f78ad4f5688df1c4c36ba37c3"
+  },
+  "verkehr-05-baustellenampel.svg": {
+    "id": "verkehr-05-baustellenampel",
+    "alt": "Baustellenampel als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "ampel",
+      "baustelle",
+      "baustellenampel"
+    ],
+    "checksum": "0e6c42a5aa1e91e1b00ed9a53fbf1e8ea6e0fd0f426e200d661d60e5d0fd316b"
+  },
+  "verkehr-06-verkehrsschild.svg": {
+    "id": "verkehr-06-verkehrsschild",
+    "alt": "Verkehrsschild als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "schild",
+      "verkehrsschild"
+    ],
+    "checksum": "9c65fbed237c1e7efebf1375dc045f46dea6d4c7247d43a26aa76c764bdbfbc2"
+  },
+  "verkehr-07-fahrbahn.svg": {
+    "id": "verkehr-07-fahrbahn",
+    "alt": "Fahrbahn als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "fahrbahn"
+    ],
+    "checksum": "0502d6103543e091f839eb01104f81f34e7541fbb6665d6cc840e92e949d42b5"
+  },
+  "verkehr-08-strassenarbeiten.svg": {
+    "id": "verkehr-08-strassenarbeiten",
+    "alt": "Straßenarbeiten als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "strassenbau",
+      "arbeiten",
+      "strassenarbeiten"
+    ],
+    "checksum": "37ccdf0f179c5b1512172408bbe86a28a3d151c993fbff7101213a9e9600e3fd"
+  },
+  "verkehr-09-baustellenfahrzeug.svg": {
+    "id": "verkehr-09-baustellenfahrzeug",
+    "alt": "Baustellenfahrzeug als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "baustelle",
+      "fahrzeug",
+      "baustellenfahrzeug"
+    ],
+    "checksum": "89131f0c5118aa01662fc6e6325bf143596ebb3076b29d42c388cb3658855af0"
+  },
+  "verkehr-10-stau.svg": {
+    "id": "verkehr-10-stau",
+    "alt": "Stau als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "stau"
+    ],
+    "checksum": "a2df0a950769704f8989c887f5477e3d7a94c293b2c8d061bf9549b779b7ba16"
+  },
+  "verkehr-11-autobahn.svg": {
+    "id": "verkehr-11-autobahn",
+    "alt": "Autobahn als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "autobahn"
+    ],
+    "checksum": "7c3d050d094920ef7b71b8b175842976141068b1a951da7738a17246615a633f"
+  },
+  "verkehr-12-landstrasse.svg": {
+    "id": "verkehr-12-landstrasse",
+    "alt": "Landstraße als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "landstrasse"
+    ],
+    "checksum": "ba6957ecd852419037c0f2e96cb4f2bbd60c0b6c5c6ba340c1700952484d5448"
+  },
+  "verkehr-13-kreuzung.svg": {
+    "id": "verkehr-13-kreuzung",
+    "alt": "Kreuzung als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "kreuzung"
+    ],
+    "checksum": "9adffa2815d275afb3c001e4d3e9aad6dd4f3196db65014d7f0b525c13276fb3"
+  },
+  "verkehr-14-verkehrsfluss.svg": {
+    "id": "verkehr-14-verkehrsfluss",
+    "alt": "Fließender Verkehr als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "autos",
+      "verkehrsfluss"
+    ],
+    "checksum": "01d49bb337cdb6491cbf7660717d3d4ca17e4bd4fd0012305d02f55572b4b0f6"
+  },
+  "verkehr-15-opnv.svg": {
+    "id": "verkehr-15-opnv",
+    "alt": "ÖPNV als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "oepnv",
+      "opnv"
+    ],
+    "checksum": "34290d4917721c823e5344e1b528274e27f2df2f016c4e8a8e5662b9e3a3fb34"
+  },
+  "verkehr-16-bus.svg": {
+    "id": "verkehr-16-bus",
+    "alt": "Bus als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "bus"
+    ],
+    "checksum": "532975307f90cfe4d312fb46e5e4c2dc2a86e9b250f9a0ecabae6e5a3cc6cc49"
+  },
+  "verkehr-17-haltestelle.svg": {
+    "id": "verkehr-17-haltestelle",
+    "alt": "Haltestelle als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "haltestelle",
+      "bus"
+    ],
+    "checksum": "8d918fbfdedfc4aa59ff8b0855f4b41e3ebb81386001c0c6c1f7e2f73fff5197"
+  },
+  "verkehr-18-bahn.svg": {
+    "id": "verkehr-18-bahn",
+    "alt": "Bahn als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "bahn"
+    ],
+    "checksum": "3a6d8555e4271092210ec376131b83cdcf556aebe6fad5aa243be91fc6c9a19f"
+  },
+  "verkehr-19-bahnuebergang.svg": {
+    "id": "verkehr-19-bahnuebergang",
+    "alt": "Bahnübergang als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "bahnuebergang"
+    ],
+    "checksum": "9611db25f15fe1a7bbaa29a66a4ed9870a1af229c46979813fbd13c8028ba002"
+  },
+  "verkehr-20-strassenschaden.svg": {
+    "id": "verkehr-20-strassenschaden",
+    "alt": "Straßenschaden als neutrales Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
+    "source": "Merzenich Aktuell / Editorial Image System V2",
+    "license": "Projektasset – Nutzung durch Merzenich Aktuell",
+    "rightsCheckedAt": "2026-09-18",
+    "tags": [
+      "verkehr",
+      "strassenschaden"
+    ],
+    "checksum": "9a7fb50942821255725db767f74147df8f5af4730edb3cb5005cb0f5fd16d25d"
+  }
+}

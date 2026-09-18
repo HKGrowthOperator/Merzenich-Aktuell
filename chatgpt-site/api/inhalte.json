@@ -161,14 +161,14 @@
     }
    ],
    "bild": {
-    "src": "/api/bild?u=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FSpecial%3AFilePath%2FNeue%2520Streifenwagen%2520f%25C3%25BCr%2520die%2520Polizei%2520vorgestellt.jpg%3Fwidth%3D1600",
+    "src": "/assets/symbolbilder/polizei/polizei-08-einbruch.svg",
     "srcset": "",
-    "alt": "Streifenwagen der Polizei Nordrhein-Westfalen",
-    "width": 0,
-    "height": 0,
+    "alt": "Einbruchermittlung als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "IM NRW / Wikimedia Commons · CC0 1.0",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
     "symbol": true
    },
    "undatiert": false,
