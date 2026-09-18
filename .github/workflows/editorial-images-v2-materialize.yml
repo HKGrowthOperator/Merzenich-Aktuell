@@ -1,0 +1,86 @@
+name: Materialize Editorial Image System V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/lib-symbolbilder.mjs'
+      - 'deploy/symbolbilder.mjs'
+      - 'deploy/markt-prerender.mjs'
+      - 'chatgpt-site/assets/bild-fallbacks.js'
+      - '.github/workflows/editorial-images-v2-materialize.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: editorial-images-v2
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate image library and article assignments
+        run: |
+          node deploy/symbolbilder.mjs
+          node deploy/markt-prerender.mjs
+          node deploy/sport-prerender.mjs
+          node deploy/suche-index.mjs
+          node deploy/thema-prerender.mjs
+          node deploy/inhaltsindex.mjs
+          node deploy/termine-prerender.mjs
+          node deploy/kopf-theme-einbinden.mjs
+
+      - name: Verify hard image-system invariants
+        run: |
+          node deploy/symbolbilder.mjs --check
+          node --check chatgpt-site/assets/bild-fallbacks.js
+          node qa/pruefung.mjs
+          python3 - <<'PY'
+          import json, pathlib, collections, sys
+          root = pathlib.Path('chatgpt-site')
+          lib = json.loads((root/'data/editorial-images/editorial-images.json').read_text())
+          images = lib['images']
+          required = ['sport','polizei','feuerwehr','verkehr','vereine','gemeinde','veranstaltungen','leben','wirtschaft','jobs','immobilien','familie','trauer','kultur','schule','kirche']
+          counts = collections.Counter(x['pool'] for x in images)
+          for pool in required:
+              assert counts[pool] >= 20, (pool, counts[pool])
+          assert len(images) == 320, len(images)
+          for x in images:
+              for key in ['id','pool','src','alt','credit','source','license','rightsCheckedAt','tags','checksum']:
+                  assert x.get(key), (x.get('id'), key)
+              assert (root/x['src'].lstrip('/')).is_file(), x['src']
+          ids = [x['id'] for x in images]
+          assert len(ids) == len(set(ids)), 'duplicate ids'
+          checksums = [x['checksum'] for x in images]
+          assert len(checksums) == len(set(checksums)), 'exact image duplicate'
+          assignments = json.loads((root/'data/editorial-images/editorial-image-assignments.json').read_text())['assignments']
+          print('POOL COUNTS', dict(counts))
+          print('TOTAL', len(images))
+          print('ASSIGNMENTS', len(assignments))
+          PY
+
+      - name: Commit generated delivery state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A chatgpt-site
+          if git diff --cached --quiet; then
+            echo 'Nothing to materialize.'
+            exit 0
+          fi
+          git commit -m 'build: materialize editorial image system v2 [skip ci]'
+          git fetch origin main
+          git rebase -X theirs origin/main
+          git push origin HEAD:main
