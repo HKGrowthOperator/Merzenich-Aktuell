@@ -190,51 +190,135 @@ index.bestand = {
   listen: bestandListen,
   leer: { ressorts: leerRessorts, ortsteile: leerOrte, listen: leerListen },
 };
-schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
 
 // ----------------------------------------------------------- Startseite
+// Die obere Flaeche wird als Ganzes zwischen zwei Markern geschrieben.
+// Vorher ersetzte eine Regex den Aufmacher und ein Index-Scan die rechte
+// Leiste; beides brach still, sobald sich das Markup daneben aenderte. Die
+// Startseite fror dann auf dem letzten Treffer ein (Audit 18.09.).
 {
   const rel = 'index.html'; const alt = readFileSync(join(site, rel), 'utf8'); let html = alt;
   const ed = JSON.parse(readFileSync(join(site, 'api', 'editorial-current.json'), 'utf8'));
-  const h = ed.hero;
-  // Ein Vereinslogo oder Wappen taugt nicht als Aufmacherbild (Regel in homepage-polish.js:
-  // "logo-not-hero"); dann lieber gleich ein Text-Aufmacher ohne leere Bildflaeche.
-  const heroLogo = !!(h && h.image && (h.imageFit === 'contain' || /logo|wappen/i.test(`${h.imageBadge || ''} ${h.imageAlt || ''} ${h.image}`)));
-  if (h && heroLogo) console.log('Startseite: Aufmacher ohne Foto (Bild ist ein Logo): ' + h.url);
-  if (h && h.url && h.title) {
-    const hero = `<article class="front-lead${h.image && !heroLogo ? '' : ' no-media ma-no-image'}" data-story="${esc(h.id || '')}"${heroLogo ? ' data-image-removed="logo-not-hero"' : ''}>${h.image && !heroLogo ? `<a href="${esc(h.url)}" tabindex="-1" aria-hidden="true"><div class="media${h.imageFit === 'contain' ? ' contain' : ''}"><img src="${esc(h.image)}"${h.imageSrcset ? ` srcset="${esc(h.imageSrcset)}"` : ''}${h.imageSizes ? ` sizes="${esc(h.imageSizes)}"` : ''} alt="${esc(h.imageAlt || h.title)}"${h.imageWidth && h.imageHeight ? ` width="${h.imageWidth}" height="${h.imageHeight}"` : ''} loading="eager" fetchpriority="high" decoding="async" data-editorial-image class="">${h.imageBadge ? `<span class="badge">${esc(h.imageBadge)}</span>` : ''}</div></a>` : ''}<div class="front-lead-copy"><div class="location-line"><span class="location-brand">${esc(h.location || 'MERZENICH')}</span></div><span class="kicker">${esc(h.kicker || 'Aktuell')}</span>${h.eyebrow ? `<span class="eyebrow">${esc(h.eyebrow)}</span>` : ''}<h1><a href="${esc(h.url)}">${esc(h.title)}</a></h1><p>${esc(h.teaser || '')}</p><div class="meta"><time datetime="${esc(h.published || '')}">${esc(h.timeLabel || kurzZeit(h.published))}</time>${h.readTime ? `<span>${esc(h.readTime)}</span>` : ''}</div><div class="story-actions"><a class="read-more" href="${esc(h.url)}">Mehr lesen<span class="sr-only">: ${esc(h.title)}</span></a></div></div></article>`;
-    // Der Aufmacher traegt seit dem Text-Aufmacher Zusatzklassen ("no-media
-  // ma-no-image"). Eine Regex auf class="front-lead" exakt trifft ihn dann nie
-  // mehr, und die Startseite friert still auf dem letzten Treffer ein. Deshalb
-  // Zusatzklassen zulassen - und pruefen, ob wirklich ersetzt wurde.
-  // Gefragt ist, ob die Regel ueberhaupt greift - nicht, ob sich der Text
-  // aendert. Ein identischer Ersatz ist der Normalfall und kein Fehler.
-  const aufmacherRe = /<article class="front-lead[^"]*"[\s\S]*?<\/article>/;
-  if (!aufmacherRe.test(html)) { console.error('Startseite: Aufmacher nicht gefunden, Markup geaendert?'); process.exitCode = 2; }
-  else html = html.replace(aufmacherRe, () => hero);
-  }
-  const s = ed.secondary;
-  const brief = (a) => `<article class="front-brief ${a.bild ? 'secondary-lead' : ''}" data-story="${esc(a.id)}">${a.bild ? `<a class="brief-image" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${a.bild.fit ? ' contain' : ''}">${imgHtml(a.bild, '120px', false)}${badgeHtml(a.bild)}</div></a>` : ''}<div>${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><div class="meta">${zeitHtml(a, kurzZeit)}</div>${mehr(a)}</div></article>`;
-  const sekundaer = s && s.url && s.title ? `<article class="front-brief editorial-secondary${s.image ? ' secondary-lead' : ''}" data-editorial-secondary="" data-story="${esc(s.id || '')}">${s.image ? `<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit === 'contain' ? ' contain' : ''}"><img src="${esc(s.image)}" alt="${esc(s.imageAlt || s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge ? `<span class="badge">${esc(s.imageBadge)}</span>` : ''}</div></a>` : ''}<div><div class="location-line"><span class="location-brand">${esc(s.location || 'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker || 'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser || '')}</p><div class="meta"><time datetime="${esc(s.published || '')}">${esc(s.timeLabel || '')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div></article>` : '';
-  const ausgeschlossen = new Set([h && h.url, s && s.url].filter(Boolean));
-  const weitere = artikel.filter((a) => !ausgeschlossen.has(a.url)).slice(0, 3);
-  // Das Raster ist aus dem Inhaltsindex gebaut und damit verifiziert; ChatGPTs
-  // editorial-audit.js ersetzt es sonst zur Laufzeit durch bildlose Zeilen.
-  html = html.replace(/<(div|section) class="([^"]*\bfrontpage-grid\b[^"]*)"( data-editorial-verified="1")?([^>]*)>/, (m, tag, cls, _v, rest) => `<${tag} class="${cls}" data-editorial-verified="1"${rest}>`);
-  const start = html.indexOf('<div class="front-side">');
-  if (start >= 0) {
-    let pos = start + '<div class="front-side">'.length;
-    for (;;) {
-      const rest = html.slice(pos); const ws = rest.match(/^\s*/)[0].length; const r = rest.slice(ws);
-      if (r.startsWith('<span class="eyebrow">')) { pos += ws + r.indexOf('</span>') + 7; continue; }
-      if (r.startsWith('<article')) { pos += ws + r.indexOf('</article>') + 10; continue; }
-      break;
+  const nachUrl = new Map(artikel.map((a) => [a.url, a]));
+
+  // Groesste ausgelieferte Bildvariante. Der Schwellwert je Platz ergibt sich
+  // aus der Breite der Flaeche, nicht aus Geschmack: ein 300px-Motiv auf 780px
+  // hochgezogen sieht aus wie ein Fehler. Externe Motive ueber /api/bild
+  // tragen ihre Breite im Abfrageteil der URL statt als Attribut.
+  const BREITE_XL = 768;  // Aufmacherflaeche rund 780 CSS-Pixel
+  const BREITE_M = 360;   // Nebenmeldung rund 360 CSS-Pixel
+  const bildBreite = (b) => {
+    if (!b) return 0;
+    const ausSrcset = (String(b.srcset || '').match(/(\d+)w/g) || []).map((s) => parseInt(s, 10));
+    const ausUrl = /width(?:%3D|=)(\d+)/i.exec(String(b.src || ''));
+    return Math.max(b.width || 0, 0, ausUrl ? parseInt(ausUrl[1], 10) : 0, ...ausSrcset);
+  };
+  // Ein Vereinslogo oder Wappen fuellt nie eine Bildflaeche (Designstandard 7b).
+  // Solche Artikel bekommen keinen Bildplatz, bis ein Symbolbild vorliegt.
+  // Die Symbolbild-Pools unter assets/symbolbilder tragen derzeit Farbverlaeufe
+  // mit aufgedrucktem Wort: 20 Dateien je Pool teilen sich drei Strukturen, der
+  // Sport-Pool laeuft auf Gold, Gemeinde und Wirtschaft auf Beige (gemessen
+  // 19.09.). Als Aufmacher oder Nebenmeldung taugt das nicht, sonst steht ein
+  // goldenes Rechteck an der wichtigsten Stelle der Seite. Die Zeile entfaellt,
+  // sobald der Pool unterscheidbare Motive enthaelt (docs/SYMBOLBILDER-ANFORDERUNG.md).
+  const VERLAUFSPOOL = /\/assets\/symbolbilder\//;
+  const echtesBild = (a) => {
+    const b = a && a.bild;
+    if (!b || !b.src) return false;
+    if (b.fit === 'contain') return false;
+    if (VERLAUFSPOOL.test(b.src)) return false;
+    return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
+  };
+
+  // Aufmacher: redaktionell gesetzt schlaegt automatisch - aber nur mit echtem
+  // Bild. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
+  // die Mitte der Startseite leer aussehen lassen.
+  function aufmacherWaehlen() {
+    const gesetzt = ed.hero && ed.hero.url ? nachUrl.get(ed.hero.url) : null;
+    if (ed.hero && ed.hero.url) {
+      if (!gesetzt) {
+        console.error(`Startseite: Aufmacher ${ed.hero.url} steht nicht im Inhaltsindex.`);
+        process.exitCode = 2;
+      } else if (!echtesBild(gesetzt)) {
+        console.error(`Startseite: Aufmacher ${ed.hero.url} hat kein echtes Bild (Logo, Wappen oder Verlaufs-Symbolbild). editorial-current.json korrigieren oder Eintrag entfernen.`);
+        process.exitCode = 2;
+      } else {
+        return gesetzt;
+      }
     }
-    const schluss = html.indexOf('</div>', pos);
-    html = html.slice(0, start) + '<div class="front-side"><span class="eyebrow">Weitere Nachrichten</span>' + sekundaer + weitere.map(brief).join('') + html.slice(schluss);
+    return artikel.find((a) => freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_XL)
+      || artikel.find((a) => freiOben(a) && echtesBild(a))
+      || null;
   }
+
+  const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${badgeHtml(a.bild)}</div></a>`;
+
+  // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
+  function karte(a, groesse) {
+    if (groesse === 'xl') {
+      return `<article class="front-lead" data-story="${esc(a.id)}">`
+        + bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true)
+        + `<div class="front-lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
+        + `<p>${esc(a.teaser)}</p>`
+        + `<div class="meta">${zeitHtml(a, kurzZeit)}${a.lesezeit ? `<span>${esc(a.lesezeit)}</span>` : ''}</div>`
+        + `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`
+        + `</div></article>`;
+    }
+    if (groesse === 'm') {
+      return `<article class="front-neben-story" data-story="${esc(a.id)}">`
+        + bildFlaeche(a, '(max-width: 1100px) 46vw, 360px', false)
+        + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
+        + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
+        + `</div></article>`;
+    }
+    return `<article class="front-zeile" data-story="${esc(a.id)}">`
+      + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+      + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
+      + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
+      + `</div></article>`;
+  }
+
+  // Unterhalb der Markierung stehen noch die handgepflegten Ressortflaechen.
+  // Eine Meldung, die dort schon steht, darf nicht zusaetzlich oben erscheinen -
+  // sonst liest sich dieselbe Geschichte zweimal auf einem Bildschirm (Audit
+  // 19.09.: der Aufmacher stand zugleich als fire-major im Blaulicht-Block).
+  // Sobald die Sektionen erzeugt werden, waechst diese Menge einfach mit.
+  const nachMarker = html.slice(html.indexOf('<!-- start:oben:end -->') + 1);
+  const schonUnten = new Set([...nachMarker.matchAll(/data-story="([^"]+)"/g)].map((m) => m[1]));
+  const freiOben = (a) => !schonUnten.has(a.id);
+
+  const aufmacher = aufmacherWaehlen();
+  if (!aufmacher) { console.error('Startseite: kein Artikel mit echtem Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
+  const vergeben = new Set(aufmacher ? [aufmacher.url] : []);
+  // Zwei Nebenmeldungen, beide mit ordentlich grossem Bild. Keine vier
+  // Miniteaser mehr am Rand.
+  const neben = artikel.filter((a) => !vergeben.has(a.url) && freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
+  for (const a of neben) vergeben.add(a.url);
+
+  const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
+    + (neben.length ? `<div class="front-neben">${neben.map((a) => karte(a, 'm')).join('')}</div>` : '');
+  const oben = '<!-- start:oben:start -->'
+    + `<section class="shell frontpage-grid" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">${inhaltOben}</section>`
+    + '<!-- start:oben:end -->';
+
+  const MARKER_OBEN = /<!-- start:oben:start -->[\s\S]*?<!-- start:oben:end -->/;
+  if (!MARKER_OBEN.test(html)) { console.error('Startseite: Marker start:oben fehlt in index.html.'); process.exitCode = 2; }
+  else html = html.replace(MARKER_OBEN, () => oben);
+
+  // Der Aufmacher steht im Index. Die Sichtpruefung in der CI vergleicht die
+  // ausgelieferte Seite dagegen, nicht gegen editorial-current.json - sonst
+  // schlaegt sie an, sobald der Aufmacher automatisch gewaehlt wurde.
+  index.aufmacher = aufmacher ? { id: aufmacher.id, url: aufmacher.url, titel: aufmacher.titel } : null;
+  index.nebenmeldungen = neben.map((a) => ({ id: a.id, url: a.url, titel: a.titel }));
+
   if (html !== alt) schreibe(rel, html);
 }
+
+// Der Index wird nach der Startseite geschrieben: er traegt den gewaehlten
+// Aufmacher, damit die Sichtpruefung die ausgelieferte Seite dagegen haelt.
+schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
 
 // --------------------------------------------------------- Archiv /archiv/
 {

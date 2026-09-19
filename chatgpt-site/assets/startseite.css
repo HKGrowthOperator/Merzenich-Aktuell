@@ -1,0 +1,199 @@
+/* Startseite – obere Fläche.
+ *
+ * Diese Datei ist die einzige Besitzerin der Startseiten-Fläche. Vorher setzten
+ * sechs Dateien dasselbe Raster: v19, v20, recovery, korrekturen, homepage-polish
+ * und editorial-audit definierten .frontpage-grid je eigenständig, zuletzt
+ * gewann die per JavaScript nachgeladene Datei mit !important. Ergebnis waren
+ * unbenutzte Spalten, eine leere Anzeigenspur und Löcher von mehreren hundert
+ * Pixeln (Audit 18.09.2026).
+ *
+ * Sie wird blockierend im Kopf geladen, nach theme.css, und benutzt die Token
+ * aus system.css. Kein !important: wenn hier etwas nicht greift, gehört die
+ * widersprechende Altregel gelöscht, nicht überschrieben.
+ *
+ * Aufbau der Reihe: Service-Spalte | Aufmacher | zwei Nebenmeldungen.
+ * Erzeugt wird sie von deploy/inhaltsindex.mjs zwischen den Markern
+ * <!-- start:oben:start --> und <!-- start:oben:end -->.
+ */
+
+/* ---------------------------------------------------------------- Reihe */
+
+body.home .portal-top{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:var(--s6);
+  align-items:start;
+}
+
+/* Die Anzeigenspalte bekommt nur dann eine Spur, wenn wirklich Werbung läuft.
+   Bei data-werbung="aus" belegte sie bisher 280 Pixel Raster und blieb leer. */
+html[data-werbung="aus"] body.home .portal-ads{display:none}
+
+@media (min-width:960px){
+  body.home .portal-top{
+    grid-template-columns:minmax(230px,280px) minmax(0,1fr);
+    gap:var(--s7);
+  }
+  html[data-werbung="an"] body.home .portal-top.has-ads{
+    grid-template-columns:minmax(230px,280px) minmax(0,1fr) 280px;
+  }
+  /* Die Service-Spalte läuft beim Scrollen mit, solange sie kürzer ist als
+     die Redaktionsfläche daneben. */
+  body.home .portal-service{position:sticky;top:72px;min-width:0}
+  body.home .portal-news{min-width:0}
+}
+
+/* .frontpage-grid trägt zugleich die Klasse .shell. Innerhalb der Spalte darf
+   sie keine eigene Seitenbreite und keine Innenabstände mehr setzen. */
+body.home .portal-news>.shell{width:100%;max-width:none;padding:0;margin:0}
+
+/* ------------------------------------------------- Aufmacher + Nebenreihe */
+
+body.home .frontpage-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:var(--s7);
+  align-items:start;
+}
+
+@media (min-width:1040px){
+  body.home .frontpage-grid{grid-template-columns:minmax(0,1.62fr) minmax(300px,1fr)}
+}
+
+body.home .front-neben{display:grid;gap:var(--s6);min-width:0}
+
+@media (min-width:600px) and (max-width:1039px){
+  body.home .front-neben{grid-template-columns:1fr 1fr}
+}
+
+/* ------------------------------------------------------------ Bildflächen */
+
+body.home .karte-bild{display:block;text-decoration:none}
+body.home .karte-bild .media{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  border-radius:var(--r1);
+  background:var(--ma-warm,#f2f2f0);
+}
+body.home .karte-bild .media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  padding:0;
+}
+body.home .front-lead .media{aspect-ratio:var(--bild-gross)}
+body.home .front-neben-story .media{aspect-ratio:var(--bild-kompakt)}
+body.home .karte-bild .badge{
+  position:absolute;
+  left:var(--s2);
+  bottom:var(--s2);
+  top:auto;
+  padding:4px 7px;
+  border-radius:var(--r1);
+  background:rgba(23,25,27,.78);
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* ------------------------------------------------------------- Aufmacher */
+
+body.home .front-lead{margin:0;padding:0;border:0;background:transparent;box-shadow:none;min-width:0}
+body.home .front-lead-copy{padding-top:var(--s4)}
+body.home .front-lead .location-line{margin:0 0 var(--s1)}
+body.home .front-lead .location-brand{
+  color:var(--ma-red,#971725);
+  font-size:var(--t-meta);
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+body.home .front-lead .kicker{
+  display:inline-block;
+  margin-right:var(--s2);
+  color:var(--ma-muted,#6b6660);
+  font-size:var(--t-meta);
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body.home .front-lead h1{
+  max-width:18ch;
+  margin:var(--s2) 0 var(--s3);
+  font-family:Newsreader,Georgia,serif;
+  font-size:clamp(32px,3.4vw,var(--t-headline-xl));
+  line-height:var(--lh-headline-xl,1.08);
+  font-weight:680;
+  letter-spacing:-.03em;
+}
+body.home .front-lead h1 a{text-decoration:none;color:var(--ma-ink,#17191b)}
+body.home .front-lead p{
+  max-width:62ch;
+  margin:0;
+  color:var(--ma-muted,#5e5953);
+  font-size:var(--t-text);
+  line-height:var(--lh-text);
+}
+body.home .front-lead .meta{margin-top:var(--s3);color:var(--ma-muted,#807a73);font-size:var(--t-meta)}
+body.home .front-lead .story-actions{margin-top:var(--s4)}
+
+/* ---------------------------------------------------------- Nebenmeldung */
+
+body.home .front-neben-story{margin:0;padding:0;border:0;background:transparent;min-width:0}
+body.home .front-neben-story .karte-text{padding-top:var(--s3)}
+body.home .front-neben-story .location-line{margin:0 0 2px}
+body.home .front-neben-story .location-brand{
+  color:var(--ma-red,#971725);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+body.home .front-neben-story .kicker{
+  display:inline-block;
+  margin-right:var(--s2);
+  color:var(--ma-muted,#6b6660);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+body.home .front-neben-story h2{
+  margin:var(--s1) 0 var(--s1);
+  font-family:Newsreader,Georgia,serif;
+  font-size:var(--t-headline-s);
+  line-height:var(--lh-headline-s,1.25);
+  font-weight:640;
+  letter-spacing:-.012em;
+}
+body.home .front-neben-story h2 a{color:var(--ma-ink,#17191b);text-decoration:none}
+body.home .front-neben-story .meta{color:var(--ma-muted,#817b73);font-size:11px}
+
+/* -------------------------------------------------------- Meldung ohne Bild */
+/* Ein Beitrag ohne verwendbares Motiv bekommt keine leere Bildfläche, sondern
+   eine kompakte Zeile. Ein Vereinswappen füllt nie die Bildfläche (Standard 7b). */
+
+body.home .front-zeile{margin:0;padding:var(--s3) 0;border-top:1px solid var(--ma-line,#e3e3e0)}
+body.home .front-zeile h2{
+  margin:var(--s1) 0 var(--s1);
+  font-family:Newsreader,Georgia,serif;
+  font-size:var(--t-headline-s);
+  line-height:1.2;
+  font-weight:640;
+}
+body.home .front-zeile h2 a{color:var(--ma-ink,#17191b);text-decoration:none}
+body.home .front-zeile .location-brand{color:var(--ma-red,#971725);font-size:11px;font-weight:800;letter-spacing:.09em}
+body.home .front-zeile .kicker{margin-left:var(--s2);color:var(--ma-muted,#6b6660);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+body.home .front-zeile .meta{color:var(--ma-muted,#817b73);font-size:11px}
+
+/* ------------------------------------------------------------- Dunkelmodus */
+
+html[data-theme="dark"] body.home .front-lead h1 a,
+html[data-theme="dark"] body.home .front-neben-story h2 a,
+html[data-theme="dark"] body.home .front-zeile h2 a{color:#f1f1f0}
+html[data-theme="dark"] body.home .front-lead p{color:#bebebb}
+html[data-theme="dark"] body.home .karte-bild .media{background:#26282a}

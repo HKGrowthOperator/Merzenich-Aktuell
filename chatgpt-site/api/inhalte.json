@@ -1876,5 +1876,22 @@
    "undatiert": true,
    "abgerufen": "2026-09-04"
   }
+ ],
+ "aufmacher": {
+  "id": "2026-08-10-flaechenbrand-girbelsrath",
+  "url": "/blaulicht/flaechenbrand-girbelsrath/",
+  "titel": "Rund 30 Hektar betroffen: Flächenbrand bei Girbelsrath"
+ },
+ "nebenmeldungen": [
+  {
+   "id": "2026-09-01-trauung-alte-kirche",
+   "url": "/leben/trauung-alte-kirche/",
+   "titel": "Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar"
+  },
+  {
+   "id": "2026-09-01-leader-reminder",
+   "url": "/wirtschaft/leader-reminder/",
+   "titel": "LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region"
+  }
  ]
 }

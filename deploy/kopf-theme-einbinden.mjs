@@ -53,6 +53,9 @@ const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
 const INLINE = '<script>try{document.documentElement.dataset.theme=localStorage.getItem("merzenich-theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>';
 const SYSTEM = `<link rel="stylesheet" href="/assets/system.css?${V}">`;
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
+// startseite.css besitzt die obere Flaeche der Startseite und laedt blockierend
+// nach theme.css. Sie gilt nur dort, wo body.home steht - also auf index.html.
+const STARTSEITE = `<link rel="stylesheet" href="/assets/startseite.css?${V}">`;
 const JS = `<script src="/assets/kopf.js?${V}" defer></script><script src="/assets/theme.js?${V}" defer></script>`;
 const KOMMENTARE = `<script src="/assets/kommentare.js?${V}" defer></script>`;
 const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script><script src="/assets/werbefrei.js?${V}" defer></script>`;
@@ -99,6 +102,10 @@ for (const pfad of seiten) {
     html = html.replace(SYSTEM_ANKER, (m) => SYSTEM + m);
   }
   if (!html.includes('/assets/theme.css')) html = html.replace(CSS_ANKER, (m) => m + CSS);
+  // Nur die Startseite: erkannt am ausgelieferten Markup, nicht am Dateinamen.
+  if (/<body[^>]*class="[^"]*\bhome\b/.test(html) && !html.includes('/assets/startseite.css')) {
+    html = html.replace(/<link rel="stylesheet" href="\/assets\/theme\.css[^"]*">/, (m) => m + STARTSEITE);
+  }
   if (!html.includes('merzenich-theme')) html = html.replace('<head>', '<head>' + INLINE);
   if (!html.includes('/assets/kopf.js')) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }

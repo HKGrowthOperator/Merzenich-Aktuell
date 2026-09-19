@@ -18,23 +18,8 @@
 
 /* Kleine Datums-/Ausgabezeile wie bei einer Zeitung, ohne Banneroptik. */
 .home .edition-label{padding-top:15px;padding-bottom:8px;border-bottom:0;color:#777;font-size:10px;font-weight:750;letter-spacing:.11em;text-transform:uppercase}
-.ma-home-dateline{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:2px;margin-bottom:18px;padding-top:14px;padding-bottom:13px;border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc)}
-.ma-home-dateline__copy{min-width:0}
-.ma-home-dateline__eyebrow{display:block;margin-bottom:4px;color:var(--brand-red,#c71920);font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-.ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{margin:0;font-family:Newsreader,Georgia,serif;font-size:30px;line-height:1.02;font-weight:650;letter-spacing:-.025em;color:var(--ink,#17191b)}
-.ma-home-dateline time{flex:0 0 auto;color:#666;font-size:12px;font-weight:650;white-space:nowrap}
 
 /* Homepage: klassische Zeitungsspalten mit dominanter Redaktion. */
-@media (min-width:1180px){
-  .portal-top.has-ads{grid-template-columns:260px minmax(0,1fr) 280px;gap:28px;align-items:start}
-  .portal-top.has-ads .portal-news .frontpage-grid{grid-template-columns:minmax(0,1.62fr) minmax(250px,.78fr);gap:30px}
-  .portal-top.has-ads .front-side{display:block;padding-left:26px;border-left:1px solid var(--line,#dcdedc)}
-}
-@media (min-width:901px) and (max-width:1179px){
-  .portal-top.has-ads{grid-template-columns:230px minmax(0,1fr);gap:28px}
-  .portal-top.has-ads .portal-ads{grid-column:1/-1}
-  .portal-top.has-ads .portal-news .frontpage-grid{grid-template-columns:minmax(0,1.45fr) minmax(230px,.85fr);gap:24px}
-}
 
 /* Service bleibt vorhanden, tritt aber gegen die Nachrichten optisch zurueck. */
 .home .portal-service{min-width:0}
@@ -43,42 +28,21 @@
 .home .service-accordion>summary{min-height:44px;padding:12px 2px;font-size:12px;font-weight:780;letter-spacing:.025em}
 .home .service-accordion>div{padding:2px 2px 14px}
 .home .agenda-row{border-radius:0;background:transparent;box-shadow:none}
-.home .markt-mini{border-radius:0;background:transparent}
-
-/* Gute Bilder bekommen eine ruhige journalistische Flaeche.
+.home .markt-mini{border-radius:0;background:transparent}/* Gute Bilder bekommen eine ruhige journalistische Flaeche.
    Das Seitenverhaeltnis steht hier NICHT mehr: es kam bisher aus vier
-   Dateien mit vier verschiedenen Werten (16/10 hier, 16/9 in v20,
-   3/2 in recovery, 1.82 in v19). Ein Kartentyp hat ein Format, und das
+   Dateien mit vier verschiedenen Werten (16/10 hier,16/9 in v20,3/2 in recovery,1.82 in v19). Ein Kartentyp hat ein Format,und das
    Format steht jetzt allein in system.css als --bild-gross. Alles
-   andere an dieser Regel - Beschnitt, Flaeche, Radius - bleibt. */
-.home .front-lead .media{overflow:hidden;background:#f2f2f0;border-radius:1px}
-.home .front-lead .media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 190ms ease}
-.home .front-lead:hover .media img{transform:scale(1.012)}
-.home .front-lead .media.contain img{object-fit:contain;padding:18px;transform:none}
-.home .front-brief .media,.home .news-mosaic .desk-card .media,.home .people-grid .desk-card .media,.home .fire-desk .media{overflow:hidden;background:#f2f2f0;border-radius:1px}
-.home .front-brief .media img,.home .news-mosaic .desk-card .media img,.home .people-grid .desk-card .media img,.home .fire-desk .media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 190ms ease}
+   andere an dieser Regel - Beschnitt,Flaeche,.home .news-mosaic .desk-card .media,.home .people-grid .desk-card .media,.home .fire-desk .media{overflow:hidden;background:#f2f2f0;border-radius:1px}.home .news-mosaic .desk-card .media img,.home .people-grid .desk-card .media img,.home .fire-desk .media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 190ms ease}
 .home article:hover>.media img,.home article:hover>a>.media img{transform:scale(1.012)}
 .home .media.contain img{object-fit:contain;transform:none!important}
-.home .front-brief{border-top:1px solid var(--line,#dedede)}
-.home .front-side>.eyebrow+.front-brief{border-top:0}
 
 /* Redaktionelle Flaechen: keine SaaS-Karten, keine weichen App-Container. */
-.home .front-lead,.home .front-brief,.home .desk-card,.home .mosaic-lead,.home .mosaic-compact,.home .people-major,.home .people-minor,.home .fire-major{background:transparent!important;box-shadow:none!important;border-radius:0!important}
-.home .front-lead-copy{padding-top:14px}
-.home .front-lead h1{max-width:18ch;margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:clamp(35px,3.25vw,48px);line-height:.99;font-weight:650;letter-spacing:-.035em}
-.home .front-lead p{max-width:62ch;font-size:16px;line-height:1.55;color:#555}
-.home .front-brief h2,.home .front-brief h3{font-family:Newsreader,Georgia,serif;line-height:1.08;letter-spacing:-.018em}
 .home .location-line,.home .kicker,.home .eyebrow{letter-spacing:.09em}
 
 /* Zu kleine Quellenbilder fliegen komplett raus. Die Meldung bleibt bewusst als
    Textmeldung stehen statt ein 300px-Bild auf 500px hochzuziehen. */
-article.ma-no-image>.media,article.ma-no-image>a>.media{display:none!important}
-.home .front-brief.ma-no-image,.front-brief.ma-no-image{grid-template-columns:1fr!important}
-.home .front-brief.ma-no-image>div,.front-brief.ma-no-image>div{grid-column:1!important;grid-row:auto!important}
 .home .desk-card.ma-no-image,.home .mosaic-lead.ma-no-image,.home .mosaic-compact.ma-no-image,.home .people-major.ma-no-image,.home .people-minor.ma-no-image{display:block!important}
 .home .desk-card.ma-no-image>div{padding-top:0!important}
-.feed-row.ma-no-image,.feed-lead.ma-no-image{grid-template-columns:1fr!important}
-.feed-row.ma-no-image>.feed-copy,.feed-lead.ma-no-image>.lead-copy{grid-column:1!important}
 
 /* Text-only Meldungen sichtbar als bewusster Nachrichtentyp. */
 .home .text-story{position:relative;padding-top:17px;border-top:2px solid var(--ink,#17191b)}
@@ -109,14 +73,8 @@ html[data-theme="dark"] .districtbar{background:#0d0d0d;border-color:#303030}
 html[data-theme="dark"] .districtbar a{color:#f3f3f3}
 html[data-theme="dark"] .districtbar a+a:before{background:#343434}
 html[data-theme="dark"] .districtbar .lbl{color:#aaa}
-html[data-theme="dark"] .ma-home-dateline{border-color:#333;border-top-color:#f1f1f1}
-html[data-theme="dark"] .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{color:#f3f3f3}
-html[data-theme="dark"] .ma-home-dateline time{color:#aaa}
 html[data-theme="dark"] .home .portal-service .service-title{border-color:#f1f1f1}
 html[data-theme="dark"] .home .service-accordion{border-color:#333}
-html[data-theme="dark"] .home .front-side{border-color:#333}
-html[data-theme="dark"] .home .front-brief{border-color:#333}
-html[data-theme="dark"] .home .front-lead p{color:#bbb}
 html[data-theme="dark"] .home .text-story{border-color:#eee}
 html[data-theme="dark"] .home .reader-note{border-color:#333;border-top-color:#eee}
 html[data-theme="dark"] .ma-ad-booking-slot{background:#151515;border-color:#383838;color:#f3f3f3}
@@ -133,10 +91,6 @@ html[data-theme="dark"] .ma-ad-booking-slot__body small{border-color:#444}
   .ma-home-dateline{margin-top:0;margin-bottom:13px;padding-top:11px;padding-bottom:10px;align-items:flex-start}
   .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{font-size:27px}
   .ma-home-dateline time{padding-top:4px;font-size:11px}
-  .portal-top.has-ads{display:flex!important;flex-direction:column!important;gap:28px!important}
-  .portal-top.has-ads .portal-news{order:1;width:100%}
-  .portal-top.has-ads .portal-service{order:2;width:100%}
-  .portal-top.has-ads .portal-ads{order:3;width:100%}
   .home .portal-service{border-top:3px solid var(--ink,#17191b);padding-top:12px}
   .home .portal-service .service-title{font-size:24px}
   .portal-ads{display:block}
@@ -147,11 +101,6 @@ html[data-theme="dark"] .ma-ad-booking-slot__body small{border-color:#444}
   .districtbar .lbl{font-size:9px}
   .districtbar a{font-size:12px;padding-inline:13px}
   .home .edition-label{padding-top:10px;padding-bottom:5px}
-  .ma-home-dateline{display:block}
-  .ma-home-dateline h1,.ma-home-dateline .ma-home-dateline__title{font-size:25px}
-  .ma-home-dateline time{display:block;margin-top:6px;padding:0}
-  .home .front-lead h1{font-size:clamp(31px,9vw,36px);line-height:1.01}
-  .home .front-lead p{font-size:15px;line-height:1.52}
   .ma-ad-booking-slot{min-height:160px}
   .ma-ad-booking-slot__body{padding:20px 18px}
   .ma-ad-booking-slot__body strong{font-size:22px}

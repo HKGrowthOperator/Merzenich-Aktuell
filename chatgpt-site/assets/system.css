@@ -31,6 +31,26 @@
 
 :root{
 
+
+  /* ---------- Markenfarben ----------
+     Bis 18.09. standen diese Token in editorial-audit.css, die per JavaScript
+     nachgeladen wird. Damit haetten Farben erst nach DOM-ready gegolten. Sie
+     gehoeren in die Tokendatei, die blockierend zuerst laedt.
+     Gold ist bewusst keine eigene Farbe mehr: --ma-gold traegt Bordeaux, weil
+     das alte #a58035 nur 3,66:1 auf Weiss erreichte und zugleich Ortsmarke,
+     Eyebrows, Ressortbalken und Kompaktkopf faerbte. */
+  --ma-red:#971725;
+  --ma-red-dark:#77101b;
+  --ma-gold:#971725;
+  --ma-gold-soft:#f4f4f3;
+  --ma-ink:#171513;
+  --ma-text:#4f4d49;
+  --ma-muted:#77736d;
+  --ma-paper:#fff;
+  --ma-warm:#f4f4f3;
+  --ma-line:#e3e3e1;
+  --ma-radius:10px;
+
   /* ---------- Abstandsleiter ----------
      Zehn Stufen, hergeleitet aus zwei gemessenen Produktionsleitern:
      Guardian source-foundations space.ts  -> 4 8 12 16 20 24 36 48 96
@@ -270,3 +290,5 @@ html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertica
 @media (max-width:1199px){
   html body .portal-news .front-brief.front-brief .media{aspect-ratio:var(--bild-karte,16/9)!important}
 }
+
+html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-text:#d4d4d2;--ma-muted:#a6a6a2;--ma-line:#2f2f2e}

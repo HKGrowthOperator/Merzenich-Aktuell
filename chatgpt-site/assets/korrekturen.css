@@ -68,13 +68,6 @@
 @media (max-width:560px){.ad-row-body{grid-template-columns:1fr;gap:14px}}
 @media (max-width:560px){.portal-ads{grid-template-columns:1fr}}
 
-/* recovery.css teilt .front-side bei aktiven Anzeigen in zwei Spalten.
-   Die Regel hat keine Ruecksetzung fuer schmale Fenster; dort laeuft die
-   Ortsmarke aus der Karte heraus. Der Anzeigenpfad war bisher nie aktiv. */
-@media (max-width:900px){
-  .portal-top.has-ads .front-side{grid-template-columns:1fr}
-}
-
 /* Vorgefunden, nicht durch die Anzeigen verursacht: auf /thema/ ist der body
    ein Flex-Container, und die Navigationsleiste kann als Flex-Element nicht
    schrumpfen. Dadurch wird das Dokument dort 760px breit und die Seite laesst
@@ -98,12 +91,6 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .weather-days>div{padding:9px 0;border-bottom:1px solid var(--line,#dedede);font-size:13px;line-height:1.4}
 .weather-days>div:last-child{border-bottom:0}
 .weather-days small{display:block;margin-top:2px;color:#686868}
-
-/* Aktuelle Blaulicht-Zweitmeldung hat bewusst kein beliebiges Symbol- oder
-   Archivbild. Ohne Bild nutzt der bestehende Front-Side-Slot die volle Breite. */
-.front-brief.editorial-secondary:not(.secondary-lead){grid-template-columns:1fr}
-.front-brief.editorial-secondary:not(.secondary-lead)>div{grid-column:1;grid-row:1}
-.front-brief.editorial-secondary h3{margin-top:4px}
 
 /* Markt (Stellen, Immobilien): vorab gerendert aus market.json, siehe deploy/markt-prerender.mjs */
 .markt-stand{border-top:3px solid var(--ink,#161616);border-bottom:1px solid var(--line,#d9d9d9);padding:14px 0 16px;margin:0 0 8px}
@@ -134,9 +121,7 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 @media (max-width:760px){.markt-ort{font-size:20px}.markt-row .act{flex-direction:column;gap:6px}}
 /* Mobil: die 44px-Etikettspalte ist fuer "Ausbildung" zu schmal - die Art wandert in die Kopfzeile. */
 .markt-art{display:none;font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#3e3e3e}
-@media (max-width:760px){.markt-row{grid-template-columns:minmax(0,1fr)}.markt-row .d{display:none}.markt-row .act{grid-column:1}.markt-art{display:inline}}
-/* Aufmacher: Kicker und Eyebrow sind zwei Zeilen, auch mobil. Vorher klebten sie zusammen ("KREISLIGA AAKTUELL"). */
-.front-lead-copy .kicker{display:block}
+@media (max-width:760px){.markt-row{grid-template-columns:minmax(0,1fr)}.markt-row .d{display:none}.markt-row .act{grid-column:1}.markt-art{display:inline}}/* Aufmacher: Kicker und Eyebrow sind zwei Zeilen{display:block}
 
 /* Kopf klappt beim Scrollen ein (Desktop): kopf.js setzt html.kopf-kompakt.
    Der grosse Kopf schiebt sich weg, die Ressortleiste bleibt oben und zeigt
@@ -158,12 +143,7 @@ body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
 .markt-thumb__badge{position:absolute;left:6px;bottom:6px;padding:2px 6px;border-radius:3px;background:rgba(0,0,0,.62);color:#fff;font-size:10px;letter-spacing:.04em}
 .markt-row--thumb .act{grid-column:3}
 @media (max-width:760px){.markt-row--thumb{grid-template-columns:minmax(0,1fr)}.markt-thumb{max-width:220px;margin-bottom:10px}.markt-row--thumb .act{grid-column:1}}
-.feed-row.editorial-current-row .media{aspect-ratio:1.44}
-/* Zweitkarte mit Bild nutzt das vorhandene secondary-lead-Layout (Bild oben, Text darunter). */
-.front-brief.editorial-secondary.secondary-lead{display:block}
-.front-brief.editorial-secondary.secondary-lead>.brief-image{display:block;width:100%}
-.front-brief.editorial-secondary.secondary-lead .media{width:100%;height:auto;aspect-ratio:2.2}
-.front-brief.editorial-secondary.secondary-lead>div{padding-top:12px}
+.feed-row.editorial-current-row .media{aspect-ratio:1.44}/* Zweitkarte mit Bild nutzt das vorhandene secondary-lead-Layout (Bild oben{display:block}
 
 /* Kommentare und Diskussion (assets/kommentare.js) */
 .kommentare{max-width:760px;margin:40px 0 0;padding-top:24px;border-top:2px solid var(--ink,#161616)}
@@ -217,8 +197,6 @@ html[data-theme="dark"] .diskussion__neu{background:#1b1b1b;border-color:#353535
 /* Werbung global aus (html[data-werbung="aus"]) oder Werbefrei-Abo aktiv (html[data-werbefrei="ja"]) */
 html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[data-werbung="aus"] .managed-ad,html[data-werbung="aus"] .ma-display-ad,html[data-werbung="aus"] .ma-ad-booking,html[data-werbung="aus"] .native-ad,html[data-werbung="aus"] .ad,html[data-werbung="aus"] .ma-ad,
 html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,html[data-werbefrei="ja"] .managed-ad,html[data-werbefrei="ja"] .ma-display-ad,html[data-werbefrei="ja"] .ma-ad-booking,html[data-werbefrei="ja"] .native-ad,html[data-werbefrei="ja"] .ad,html[data-werbefrei="ja"] .ma-ad{display:none!important}
-@media (min-width:1180px){html[data-werbung="aus"] .portal-top.has-ads,html[data-werbefrei="ja"] .portal-top.has-ads{grid-template-columns:260px minmax(0,1fr)}}
-@media (min-width:901px) and (max-width:1179px){html[data-werbung="aus"] .portal-top.has-ads,html[data-werbefrei="ja"] .portal-top.has-ads{grid-template-columns:230px minmax(0,1fr)}}
 
 /* Externe Bilder ohne Einwilligung: neutraler Platzhalter */
 
@@ -283,9 +261,4 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 .tag-az ul{list-style:none;margin:0;padding:0;columns:2;column-gap:32px}
 @media (min-width:768px){.tag-az ul{columns:4}}
 .tag-az li{break-inside:avoid;padding:4px 0;font-size:15px}
-.tag-az small{color:var(--muted,#666);font-size:12px}
-
-/* Aufmacher ohne Foto (z. B. nur Vereinslogo): keine leere Bildflaeche, Text fuellt die Spalte */
-.frontpage-grid>.front-lead.no-media{align-self:start;display:block;padding-top:6px}
-.frontpage-grid>.front-lead.no-media h1{font-size:clamp(34px,4.2vw,58px);line-height:1.05;margin:10px 0 18px}
-.frontpage-grid>.front-lead.no-media .front-lead-copy>p{font-size:clamp(17px,1.5vw,21px);line-height:1.5;max-width:56ch}
+.tag-az small{color:var(--muted,#666);font-size:12px}/* Aufmacher ohne Foto (z. B. nur Vereinslogo): keine leere Bildflaeche{align-self:start;display:block;padding-top:6px}
