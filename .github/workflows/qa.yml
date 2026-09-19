@@ -194,11 +194,13 @@ jobs:
           import { chromium } from 'playwright';
           import { readFileSync } from 'node:fs';
 
-          // Der Aufmacher wird redaktionell in api/editorial-current.json gesetzt;
-          // der Test erwartet genau diesen Titel und keinen fest verdrahteten.
-          const editorial = JSON.parse(readFileSync('chatgpt-site/api/editorial-current.json', 'utf8'));
-          const expectedHero = String(editorial.hero?.title || '').trim();
-          if (!expectedHero) throw new Error('editorial-current.json: hero.title fehlt');
+          // Der Aufmacher wird von deploy/inhaltsindex.mjs gewaehlt: ein Eintrag in
+          // api/editorial-current.json gewinnt, sonst die juengste bebilderte Meldung.
+          // Geprueft wird deshalb gegen api/inhalte.json, den Index, den derselbe
+          // Lauf geschrieben hat - nicht gegen die optionale Uebersteuerung.
+          const index = JSON.parse(readFileSync('chatgpt-site/api/inhalte.json', 'utf8'));
+          const expectedHero = String(index.aufmacher?.titel || '').trim();
+          if (!expectedHero) throw new Error('inhalte.json: aufmacher.titel fehlt');
 
           const browser = await chromium.launch({ headless: true });
           const base = 'http://127.0.0.1:4173';
@@ -225,6 +227,42 @@ jobs:
             if (title !== expectedHero) throw new Error(`Homepage hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
             const unavailable = await page.getByText('Wetterdaten sind derzeit nicht verfügbar.').count();
             if (unavailable) throw new Error('Homepage still shows weather unavailable fallback');
+            // Regel aus dem Designstandard 7b: der Aufmacher ist nie bildlos. Vorher
+            // wurde ein Logo-Aufmacher still zum Textblock, und die Mitte sah leer aus.
+            const heroBild = await page.evaluate(() => {
+              const i = document.querySelector('.front-lead .media img');
+              return i ? { da: true, geladen: i.complete && i.naturalWidth > 0 } : { da: false };
+            });
+            if (!heroBild.da) throw new Error('Aufmacher ohne Bildflaeche');
+            if (!heroBild.geladen) throw new Error('Aufmacher: Bild laedt nicht');
+            // Regel aus dem Designstandard 7b: eine Sektion ist so hoch wie ihr Inhalt
+            // plus definierter Abstand. Gemessen am 18.09. standen dort 300 bis 500 px.
+            const luecke = await page.evaluate(() => {
+              const s = [...document.querySelectorAll('main > section, main > div')];
+              let groesste = 0, wo = '';
+              for (let i = 1; i < s.length; i++) {
+                const a = s[i - 1].getBoundingClientRect(), b = s[i].getBoundingClientRect();
+                if (!a.height || !b.height) continue;
+                const d = Math.round(b.top - a.bottom);
+                if (d > groesste) { groesste = d; wo = (s[i].className || s[i].tagName).slice(0, 40); }
+              }
+              return { groesste, wo };
+            });
+            if (luecke.groesste > 96) throw new Error(`Luecke zwischen zwei Sektionen: ${luecke.groesste} px vor ${luecke.wo}`);
+            // Keine Meldung steht zweimal auf der Seite, kein Motiv oefter als zweimal.
+            const wiederholung = await page.evaluate(() => {
+              const ids = [...document.querySelectorAll('main article')].map((a) => a.dataset.story).filter(Boolean);
+              const doppelt = ids.filter((x, i) => ids.indexOf(x) !== i);
+              const z = {};
+              for (const i of document.querySelectorAll('main img')) {
+                const s = i.getAttribute('src') || '';
+                if (/logo|favicon|avatar/i.test(s)) continue;
+                z[s] = (z[s] || 0) + 1;
+              }
+              return { doppelt: [...new Set(doppelt)], motive: Object.entries(z).filter(([, n]) => n > 2).map(([s2, n]) => `${s2.slice(-40)} x${n}`) };
+            });
+            if (wiederholung.doppelt.length) throw new Error(`Meldung doppelt auf der Startseite: ${wiederholung.doppelt.join(', ')}`);
+            if (wiederholung.motive.length) throw new Error(`Motiv mehr als zweimal: ${wiederholung.motive.join(', ')}`);
             const top = await page.locator('.masthead').evaluate(el => el.getBoundingClientRect().top);
             if (Math.abs(top) > 1) throw new Error(`Masthead not attached to browser edge: ${top}`);
             await page.evaluate(() => window.scrollTo(0, 320));
