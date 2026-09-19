@@ -11,6 +11,7 @@
 //   node qa/pruefung.mjs --json     maschinenlesbar
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { join, dirname, resolve, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -442,10 +443,47 @@ function pruefeBildwiederholung() {
   }
 }
 
+// -------------------------------- 12. Ein Pool braucht unterscheidbare Motive
+// Gemessen am 19.09.: 320 Dateien in 16 Pools, je 20. Nach Normalisierung von
+// Text, Farbwerten und Zahlen teilen sich die 20 Dateien eines Pools drei
+// Strukturen - es sind Farbverlaeufe mit aufgedrucktem Wort. Vier Blaulicht-
+// meldungen untereinander bekaemen vier gleiche blaue Flaechen. Die Zaehlung
+// laesst sich nicht mit einem anderen Wort im Bild oder einem anderen Farbton
+// bestehen, genau darum wird beides vor der Pruefsumme entfernt.
+// Anforderung: docs/SYMBOLBILDER-ANFORDERUNG.md
+function pruefeMotivvielfalt() {
+  const wurzelPool = join(wurzel, 'chatgpt-site', 'assets', 'symbolbilder');
+  if (!existsSync(wurzelPool)) return;
+  const ANTEIL = 0.6;
+  for (const eintrag of readdirSync(wurzelPool, { withFileTypes: true })) {
+    if (!eintrag.isDirectory()) continue;
+    const pfad = join(wurzelPool, eintrag.name);
+    const dateien = readdirSync(pfad).filter((f) => f.endsWith('.svg'));
+    if (dateien.length < 4) continue;
+    const strukturen = new Set();
+    for (const f of dateien) {
+      const roh = readFileSync(join(pfad, f), 'utf8')
+        .replace(/>[^<]*</g, '><')             // Beschriftung raus
+        .replace(/#[0-9a-fA-F]{3,8}\b/g, '')   // Farbwerte raus
+        .replace(/[0-9.]+/g, '');              // Koordinaten und Groessen raus
+      strukturen.add(createHash('sha256').update(roh).digest('hex'));
+    }
+    const anteil = strukturen.size / dateien.length;
+    if (anteil < ANTEIL) {
+      // Bewusst Hinweis, nicht Fehler: der Befund ist gemeldet und im Generator
+      // bereits entschaerft (VERLAUFSPOOL schliesst die Motive von Aufmacher und
+      // Nebenmeldung aus). Ein roter Lauf wuerde nur unbeteiligte Arbeit
+      // blockieren. Sobald die Pools ausgetauscht sind, wird daraus fehler().
+      hinweis('Symbolbilder', `Pool ${eintrag.name}: ${dateien.length} Dateien, aber nur ${strukturen.size} verschiedene Motive (${Math.round(anteil * 100)} %). Siehe docs/SYMBOLBILDER-ANFORDERUNG.md.`);
+    }
+  }
+}
+
 pruefeOertlicheVerweise();
 pruefeLaufzeitUmbau();
 await pruefeSymbolbilder();
 pruefeBildwiederholung();
+pruefeMotivvielfalt();
 pruefePhp();
 pruefePlatzhalter();
 pruefePruefsummen();
