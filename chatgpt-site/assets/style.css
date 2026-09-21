@@ -91,11 +91,6 @@ input,select,textarea{font:inherit;color:inherit}
 .navscroll a{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);padding:14px 12px 12px;border-bottom:2px solid transparent;white-space:nowrap}
 .navscroll a:hover{color:var(--red)}.navscroll a[aria-current]{color:var(--red);border-bottom-color:var(--red)}
 .nav-search{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;padding:8px 2px}.nav-search:hover{color:var(--red)}
-.districtbar{background:var(--paper);border-bottom:1px solid var(--line)}
-.districtbar .shell{display:flex;align-items:center;gap:8px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
-.districtbar .lbl{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-right:4px}
-.districtbar a{font-size:13px;font-weight:600;color:var(--ink-soft);padding:6px 14px;min-height:32px;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--card)}
-.districtbar a:hover{border-color:var(--gold);color:var(--ink)}.districtbar a[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .ticker{background:var(--red);color:var(--on-dark-strong)}
 .ticker .shell{display:flex;align-items:center;gap:14px;min-height:40px;font-size:14px}
 .ticker .tag{background:#fff;color:var(--red-surface);font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:3px 9px;border-radius:2px;flex-shrink:0}
@@ -453,8 +448,7 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
   .foot-grid{grid-template-columns:1fr 1fr 1fr}.foot-brand{grid-column:1/-1}
 }
 @media (max-width:640px){
-  body{font-size:15.5px}.weekbar{grid-template-columns:repeat(2,1fr)}.wb-cta{grid-column:1/-1}.districtbar a,.chip{min-height:40px}.linklist li,.termin{padding:11px 0}.navscroll a{padding:13px 10px 11px;font-size:12.5px}.nav-search{display:none}
-  .districtbar .shell{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.districtbar .shell::-webkit-scrollbar{display:none}.districtbar a{white-space:nowrap}
+  body{font-size:15.5px}.weekbar{grid-template-columns:repeat(2,1fr)}.wb-cta{grid-column:1/-1}.chip{min-height:40px}.linklist li,.termin{padding:11px 0}.navscroll a{padding:13px 10px 11px;font-size:12.5px}.nav-search{display:none}
   .feed-row{grid-template-columns:1fr;gap:10px}.side-stack{grid-template-columns:1fr}.fire-grid{grid-template-columns:1fr}.photo-story{min-height:240px}
   .events-grid{grid-template-columns:1fr}.cards-3,.club-grid,.club-grid.four,.rblock-grid{grid-template-columns:1fr}.district-grid{grid-template-columns:1fr 1fr}
   .quickline .shell{grid-template-columns:1fr}.quick-item{border-right:0;border-bottom:1px solid var(--line-soft);margin-right:0}
@@ -464,4 +458,4 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
   .lightbox .lb-stage{padding:52px 12px 12px}.lb-btn{width:38px;height:38px}.lb-prev{left:6px}.lb-next{right:6px}.weather-now .temp{font-size:31px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-@media print{.topbar,.mainnav,.districtbar,.ticker,.share,.sidebar,footer,.drawer,.readbar,.cta-row,.ad-row,.mitmachen,.markt,.menu-btn,.mast-search,.search-btn{display:none!important}.shell{max-width:none}body{background:#fff;color:#000}a{color:#000;text-decoration:none}.article-body{font-size:11.5pt}.mast-meta,.mast-left{display:none}.brandline i{background:none;height:0;border-top:2px solid #000}.brandline{color:#000}.prose p,.info-prose p,.info-prose li{font-size:11.5pt;line-height:1.5}}
+@media print{.topbar,.mainnav,.ticker,.share,.sidebar,footer,.drawer,.readbar,.cta-row,.ad-row,.mitmachen,.markt,.menu-btn,.mast-search,.search-btn{display:none!important}.shell{max-width:none}body{background:#fff;color:#000}a{color:#000;text-decoration:none}.article-body{font-size:11.5pt}.mast-meta,.mast-left{display:none}.brandline i{background:none;height:0;border-top:2px solid #000}.brandline{color:#000}.prose p,.info-prose p,.info-prose li{font-size:11.5pt;line-height:1.5}}

@@ -93,32 +93,12 @@
 .mainnav .compact-brand img{display:none!important}
 .mainnav.is-scrolled .compact-brand,html.kopf-kompakt .mainnav .compact-brand{display:flex!important}
 .mainnav .compact-brand::before{content:"M";font-family:Newsreader,Georgia,serif;font-weight:750;font-size:30px;line-height:1;color:var(--ma-ink)}
-.mainnav .compact-brand::after{content:"";position:absolute;left:7px;bottom:5px;width:29px;height:7px;background-repeat:no-repeat;background-size:100% 100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 14'%3E%3Cpath d='M1 8h20l3-3 3 5 4-8 4 10 3-5 3 2h16' fill='none' stroke='%23971725' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
-
-/* =========================
+.mainnav .compact-brand::after{content:"";position:absolute;left:7px;bottom:5px;width:29px;height:7px;background-repeat:no-repeat;background-size:100% 100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 14'%3E%3Cpath d='M1 8h20l3-3 3 5 4-8 4 10 3-5 3 2h16' fill='none' stroke='%23971725' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}/* =========================
    EINKLAPPBARE ORTSLEISTE
    ========================= */
 /* 18.09.: Ortsleiste war beige (#f8f5ef) mit beigebraunem Schalter (#6d6251).
-   Jetzt neutrale Ruhezone, Schalter in Anthrazit, 8,08:1. */
-.districtbar{background:#f4f4f3!important;border:0!important;box-shadow:none!important;transition:background .2s ease}
-.districtbar>.shell{min-height:45px!important;display:flex!important;align-items:center!important;gap:0!important;overflow:hidden!important;white-space:nowrap!important}
-.district-toggle{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;height:45px;padding:0 22px 0 0;border:0;background:transparent;color:#4a4a47;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-.district-pin{width:12px;height:15px;display:block;position:relative}
-.district-pin::before{content:"";position:absolute;left:2px;top:1px;width:8px;height:8px;border:2px solid var(--ma-gold);border-radius:50%}
-.district-pin::after{content:"";position:absolute;left:5px;top:9px;width:3px;height:5px;background:var(--ma-gold);clip-path:polygon(50% 100%,0 0,100% 0)}
+   Jetzt neutrale Ruhezone,Schalter in Anthrazit,8{background:#f4f4f3!important;border:0!important;box-shadow:none!important;transition:background .2s ease}
 .district-chevron{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .18s ease}
-.districtbar.is-collapsed .district-chevron{transform:rotate(-45deg) translate(-1px,1px)}
-.districtbar a{flex:0 0 auto!important;min-height:45px!important;display:flex!important;align-items:center!important;padding:0 22px!important;color:#2a2723!important;font-size:13px!important;font-weight:620!important;text-decoration:none!important;border:0!important}
-.districtbar a:hover{color:var(--ma-red)!important}
-.districtbar a+a::before{display:none!important}
-.districtbar.is-collapsed a{display:none!important}
-.districtbar.is-collapsed>.shell{min-height:39px!important}
-.districtbar.is-collapsed .district-toggle{height:39px}
-
-/* =========================
-   HOMEPAGE — EIN SYSTEM
-   ========================= */
-body.home .edition-label{padding:13px 0 4px!important;margin:0!important;border:0!important;color:#827a70!important;font-size:10px!important;letter-spacing:.12em!important}
 
 /* Vor-Ort-Rail: kompakt, weich, nicht voller Trennlinien. */
 body.home .portal-service{padding:16px 15px 14px;background:var(--ma-warm);border-radius:12px}
@@ -174,7 +154,6 @@ body.home .text-story::before{display:none!important}/* Article/Listen behalten 
 }
 @media (max-width:700px){
   .mast-inner{min-height:72px!important}.masthead .logo img{width:190px!important}.header-local{display:none!important}.theme-toggle{width:38px;height:38px}
-  .districtbar>.shell{padding-inline:15px!important}.district-toggle{padding-right:0!important}
   body.home .portal-service .agenda-list{grid-template-columns:1fr}
 }
 
@@ -187,5 +166,4 @@ html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-
 html[data-theme="dark"] .masthead,html[data-theme="dark"] .mainnav{background:#111!important;border-color:#2e2c29!important}
 html[data-theme="dark"] .mast-search{background:#191816!important;border-color:#39352f!important}
 html[data-theme="dark"] .mast-search input{color:#f1f1f0!important}html[data-theme="dark"] .mast-search button,html[data-theme="dark"] .theme-toggle{color:#f1f1f0!important}
-html[data-theme="dark"] .districtbar{background:#171717!important}html[data-theme="dark"] .districtbar a{color:#eaeae8!important}
 html[data-theme="dark"] body.home .portal-service{background:#181818!important}html[data-theme="dark"] body.home .agenda-row{background:#1f1f1f!important}

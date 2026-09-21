@@ -13,6 +13,7 @@
  *   - feed.xml, atom.xml, feed.json, Ressort-/Ortsfeeds, news-sitemap.xml,
  *     sitemap-artikel.xml
  *   - Sidebox "Neueste Meldungen" auf allen Seiten
+ *   - Ortswahl unter dem Kopf auf allen Seiten
  * Der Index traegt zusaetzlich den Bestand: je Ressort und je Ortsteil die
  * echte Anzahl der Meldungen und den Zustand der zugehoerigen Listenseite.
  * Damit muss niemand nachzaehlen - weder ein spaeterer Generator noch die
@@ -350,6 +351,69 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
   // Sidebox unveraendert und der Lauf sagt es auf der Konsole.
   if (!top) console.log('Warnung: keine Meldung vorhanden - Sidebox "Neueste Meldungen" bleibt unveraendert.');
   else (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); if (statSync(p).isDirectory()) lauf(p); else if (e.endsWith('.html')) { const alt = readFileSync(p, 'utf8'); if (re.test(alt)) { re.lastIndex = 0; const n = alt.replace(re, () => neu); if (n !== alt) schreibe(p.slice(site.length + 1), n); } re.lastIndex = 0; } } })(site);
+}
+
+// ------------------------------------------------ Ortswahl auf allen Seiten
+// Vorher stand unter dem Kopf eine flache Reihe mit fuenf gleich grossen
+// Ortslinks, auf 214 Seiten in sechs handgepflegten Varianten, die sich nur im
+// aria-current unterschieden. Sie las sich wie eine zweite Hauptnavigation und
+// versprach fuenf gleich volle Orte; tatsaechlich haben vier davon zwei bis
+// sechs Meldungen. Jetzt ein geschlossener Schalter mit der aktuellen Ausgabe,
+// aufklappbar, mit den echten Zahlen aus dem Bestand.
+// Bewusst <details>: Tastatur, Screenreader und Seiten ohne JavaScript
+// funktionieren dadurch ohne Zutun. JS ergaenzt nur das Schliessen bei Klick
+// daneben und mit Escape.
+{
+  const ORTSWAHL_RE = /<nav class="(?:districtbar|ortswahl)"[\s\S]*?<\/nav>/;
+  const EDITION_RE = /<div class="shell edition-label">[\s\S]*?<\/div>/g;
+  const orte = Object.entries(ORTSTEILE)
+    .map(([slug, label]) => ({ slug, label, anzahl: bestandOrt[slug] || 0 }))
+    .filter((o) => o.anzahl > 0);
+  const ohne = Object.keys(ORTSTEILE).filter((s) => !(bestandOrt[s] > 0));
+  for (const s of ohne) console.log(`Ortswahl: ${ORTSTEILE[s]} hat keine Meldung und erscheint nicht in der Liste.`);
+
+  // Die Gruppe "Nachbarschaft" erscheint erst, wenn ein Nachbarort eine
+  // veroeffentlichte Meldung hat. Heute erscheint sie nicht (Standard 2).
+  const nachbarn = [];
+
+  function ortswahlHtml(aktuellSlug) {
+    const aktuell = ORTSTEILE[aktuellSlug] || ORTSTEILE.merzenich;
+    const zeile = (o) => `<a href="/${o.slug}/"${o.slug === aktuellSlug ? ' aria-current="page"' : ''}><span class="ortswahl-name">${esc(o.label)}</span><span class="ortswahl-zahl">${o.anzahl} Meldung${o.anzahl === 1 ? '' : 'en'}</span></a>`;
+    const gruppe = (titel, liste) => (liste.length ? `<p class="ortswahl-gruppe">${esc(titel)}</p>${liste.map(zeile).join('')}` : '');
+    return '<nav class="ortswahl" aria-label="Ausgabe waehlen"><div class="shell">'
+      + '<details class="ortswahl-schalter">'
+      + `<summary><span class="ortswahl-marke">Ausgabe</span><span class="ortswahl-aktuell">${esc(aktuell)}</span><svg class="ortswahl-pfeil" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>`
+      + `<div class="ortswahl-liste">${gruppe('Gemeinde Merzenich', orte)}${gruppe('Nachbarschaft', nachbarn)}</div>`
+      + '</details></div></nav>';
+  }
+
+  // Welche Ausgabe die Seite zeigt, steht im Pfad. Eine Artikelseite gehoert
+  // zur Gemeinde, auch wenn die Meldung aus einem Ortsteil kommt: die Ausgabe
+  // ist die Gemeinde, gefiltert wird nichts (Standard 2).
+  const ortAusPfad = (rel) => {
+    const erstes = rel.split('/')[0];
+    return Object.prototype.hasOwnProperty.call(ORTSTEILE, erstes) ? erstes : 'merzenich';
+  };
+
+  let gesetzt = 0, ohneLeiste = 0;
+  (function lauf(d) {
+    for (const e of readdirSync(d)) {
+      const p = join(d, e);
+      if (statSync(p).isDirectory()) { lauf(p); continue; }
+      if (!e.endsWith('.html')) continue;
+      const rel = p.slice(site.length + 1);
+      const alt = readFileSync(p, 'utf8');
+      if (!ORTSWAHL_RE.test(alt)) { ohneLeiste++; continue; }
+      let neu = alt.replace(ORTSWAHL_RE, () => ortswahlHtml(ortAusPfad(rel)));
+      // "Merzenich & seine Ortsteile / Die lokale Ausgabe" war eine eigene
+      // Zwischenebene ueber dem Inhalt. Die Aussage steckt jetzt im Wort
+      // "Ausgabe" im Schalter darueber; die Zeile kostete rund 40 px.
+      neu = neu.replace(EDITION_RE, '');
+      if (neu !== alt) schreibe(rel, neu);
+      gesetzt++;
+    }
+  })(site);
+  console.log(`Ortswahl: ${gesetzt} Seiten, ${orte.length} Orte gelistet, ${ohneLeiste} Seiten ohne Leiste.`);
 }
 
 // ----------------------------------------------------------- latest.json

@@ -61,8 +61,6 @@ html[data-theme="dark"] .navscroll a,
 html[data-theme="dark"] .nav-more summary{color:var(--ink)}
 html[data-theme="dark"] .more-links{background:#151515;border-color:#4a4a4a;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 html[data-theme="dark"] .more-links a:hover{background:#222}
-html[data-theme="dark"] .districtbar{background:#161616;border-color:#2e2e2e}
-html[data-theme="dark"] .districtbar a{background:transparent;color:var(--ink)}
 html[data-theme="dark"] .ticker,
 html[data-theme="dark"] .ticker .tag{background:#161616;color:var(--ink)}
 
@@ -77,13 +75,7 @@ html[data-theme="dark"] .form select,
 html[data-theme="dark"] .form textarea{background:#1b1b1b;color:var(--ink);border-color:#3a3a3a}
 html[data-theme="dark"] .read-more:hover,
 html[data-theme="dark"] .read-more:focus-visible,
-html[data-theme="dark"] .btn.ghost:hover{background:var(--red);color:#fff;border-color:var(--red)}
-html[data-theme="dark"] .media,
-html[data-theme="dark"] .media.contain,
-html[data-theme="dark"] .media.contain img,
-html[data-theme="dark"] .front-lead .media.contain,
-html[data-theme="dark"] .front-lead .media.contain img,
-html[data-theme="dark"] .place-feature{background:#1e1e1e}
+html[data-theme="dark"] .btn.ghost:hover{background:var(--red);color:#fff;border-color:var(--red)}html[data-theme="dark"] .media,html[data-theme="dark"] .media.contain,html[data-theme="dark"] .media.contain img,html[data-theme="dark"] .place-feature{background:#1e1e1e}
 html[data-theme="dark"] .facts,
 html[data-theme="dark"] .source-box,
 html[data-theme="dark"] .agenda-desk,

@@ -205,21 +205,6 @@
    den bestehenden Dateien; hier wird nur die Hoehe berechenbar. */
 html body .front-lead.front-lead .media{aspect-ratio:var(--bild-gross,16/9)!important}
 
-/* ---------- Kompakte Zeile in der rechten Spalte ----------
-   Hier reicht aspect-ratio allein NICHT: v20 setzt 112x84px,
-   editorial-audit 104x78px mit !important. Sind Breite UND Hoehe
-   gesetzt, ist die Box fest vermessen und aspect-ratio bleibt wirkungs-
-   los. Deshalb werden beide auf auto zurueckgestellt - die Breite kommt
-   dann aus der Rasterspalte der Karte (112px), die Hoehe aus dem
-   Format. Alle Briefs einer Spalte sind damit exakt gleich hoch. */
-html body .front-brief.front-brief .media{aspect-ratio:var(--bild-kompakt,3/2)!important;width:auto!important;height:auto!important}
-
-/* Der Secondary-Lead ist kein Thumbnail, sondern eine Karte ueber die
-   volle Breite der Service-Spalte. Er bekommt deshalb das grosse
-   Format statt des kompakten. Ersetzt das bisherige 2.2 aus
-   korrekturen.css - ein Verhaeltnis, das sonst nirgends vorkam. */
-html body .front-brief.secondary-lead .media{aspect-ratio:var(--bild-gross,16/9)!important}
-
 /* ---------- Standardkarte im Raster ---------- */
 html body .desk-card.desk-card .media{aspect-ratio:var(--bild-karte,16/9)}
 
@@ -272,23 +257,6 @@ html body .feed-lead.feed-lead{align-items:start}
    line-clamp steht neben -webkit-line-clamp, weil die Eigenschaft
    inzwischen ohne Praefix standardisiert ist; die Praefixform bleibt
    fuer aeltere Browser. */
-html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
-html body .front-brief.front-brief h2,html body .front-brief.front-brief h3,
-html body .desk-card.desk-card h3,
-html body .feed-row.feed-row h3,
-html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
-
-/* ---------- Ein Sonderfall, der ohne Regel haesslich wuerde ----------
-   Unter 1200px klappt recovery.css ".portal-news .front-brief" auf
-   display:block um. Aus der kompakten Zeile mit Thumbnail wird dann
-   eine gestapelte Karte, deren Bild ueber die volle Spaltenbreite
-   laeuft. Mit dem kompakten 3/2 waere dieses Bild dort deutlich zu
-   hoch und wuerde die Service-Spalte auseinanderziehen. Sobald die
-   Karte gestapelt ist, ist sie keine kompakte Zeile mehr, sondern eine
-   Standardkarte - und bekommt deren Format. Die 1199px stammen nicht
-   von hier, sie sind der vorhandene Umbruch aus recovery.css. */
-@media (max-width:1199px){
-  html body .portal-news .front-brief.front-brief .media{aspect-ratio:var(--bild-karte,16/9)!important}
-}
+html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .desk-card.desk-card h3,html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 
 html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-text:#d4d4d2;--ma-muted:#a6a6a2;--ma-line:#2f2f2e}

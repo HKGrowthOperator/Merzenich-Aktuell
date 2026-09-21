@@ -66,15 +66,12 @@
 
 @media (max-width:900px){.portal-ads{grid-template-columns:1fr 1fr;gap:16px}}
 @media (max-width:560px){.ad-row-body{grid-template-columns:1fr;gap:14px}}
-@media (max-width:560px){.portal-ads{grid-template-columns:1fr}}
-
-/* Vorgefunden, nicht durch die Anzeigen verursacht: auf /thema/ ist der body
-   ein Flex-Container, und die Navigationsleiste kann als Flex-Element nicht
+@media (max-width:560px){.portal-ads{grid-template-columns:1fr}}/* Vorgefunden,nicht durch die Anzeigen verursacht: auf /thema/ ist der body
+   ein Flex-Container,und die Navigationsleiste kann als Flex-Element nicht
    schrumpfen. Dadurch wird das Dokument dort 760px breit und die Seite laesst
    sich auf dem Telefon seitlich schieben. min-width:0 gibt das Schrumpfen frei;
    der Streifen scrollt wie vorgesehen in sich selbst. */
-body>.nav-anchor,body>.mainnav,body>.districtbar{min-width:0}
-.mainnav .navrow,.mainnav .navscroll,.districtbar>.shell{min-width:0}
+body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{min-width:0}
 
 /* Recovery-Pass 16.09.: exakt der bestehende Kopf, nur funktional sauber.
    Die Masthead-Zeile bleibt am Browserrand; die vorhandene Ressortzeile
@@ -262,3 +259,47 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 @media (min-width:768px){.tag-az ul{columns:4}}
 .tag-az li{break-inside:avoid;padding:4px 0;font-size:15px}
 .tag-az small{color:var(--muted,#666);font-size:12px}/* Aufmacher ohne Foto (z. B. nur Vereinslogo): keine leere Bildflaeche{align-self:start;display:block;padding-top:6px}
+
+/* Ortswahl unter dem Kopf (deploy/inhaltsindex.mjs).
+   Ersetzt die flache Reihe mit fuenf gleich grossen Ortslinks, die wie eine
+   zweite Hauptnavigation gelesen wurde und fuenf gleich volle Orte versprach.
+   Geschlossener Grundzustand, echte Meldungszahlen aus dem Bestand.
+   Bewusst <details>: Tastatur und Seiten ohne JavaScript funktionieren ohne
+   Zutun. Kein Gold, Bordeaux nur fuer die aktuelle Ausgabe. */
+.ortswahl{border-top:1px solid var(--ma-line,#e3e3e1);border-bottom:1px solid var(--ma-line,#e3e3e1);background:var(--ma-paper,#fff)}
+.ortswahl>.shell{padding-block:0}
+.ortswahl-schalter{position:relative}
+/* inline-flex, damit der Fokusrahmen den Schalter umschliesst und nicht die
+   ganze Zeilenbreite. */
+.ortswahl-schalter>summary{display:inline-flex;align-items:center;gap:var(--s2,8px);min-height:44px;padding-right:var(--s1,4px);list-style:none;cursor:pointer}
+.ortswahl-schalter>summary::-webkit-details-marker{display:none}
+.ortswahl-schalter>summary::marker{content:""}
+.ortswahl-marke{color:var(--ma-muted,#77736d);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.ortswahl-aktuell{font-family:Newsreader,Georgia,serif;font-size:17px;font-weight:620;color:var(--ma-ink,#171513)}
+.ortswahl-pfeil{width:16px;height:16px;color:var(--ma-muted,#77736d);transition:transform 160ms ease-out}
+.ortswahl-schalter[open] .ortswahl-pfeil{transform:rotate(180deg)}
+.ortswahl-schalter>summary:focus-visible{outline:2px solid var(--ma-red,#971725);outline-offset:3px}
+
+/* Chromium verbirgt den Inhalt eines geschlossenen <details> ueber
+   content-visibility. Ein absolut positioniertes Kind entkommt dem und blieb
+   sichtbar - gemessen 21.09., die Liste stand offen unter der Zeile. Deshalb
+   ausdruecklich ausblenden. */
+.ortswahl-schalter:not([open]) .ortswahl-liste{display:none}
+.ortswahl-liste{position:absolute;z-index:60;top:100%;left:0;min-width:280px;padding:var(--s3,12px) 0 var(--s2,8px);background:var(--ma-paper,#fff);border:1px solid var(--ma-line,#e3e3e1);border-radius:var(--r1,6px);box-shadow:0 10px 28px rgba(23,21,19,.10)}
+.ortswahl-gruppe{margin:0 var(--s4,16px) var(--s2,8px);color:var(--ma-muted,#77736d);font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
+.ortswahl-liste a{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s5,20px);padding:9px var(--s4,16px);color:var(--ma-ink,#171513);text-decoration:none}
+.ortswahl-liste a:hover,.ortswahl-liste a:focus-visible{background:var(--ma-warm,#f4f4f3)}
+.ortswahl-name{font-family:Newsreader,Georgia,serif;font-size:16px;font-weight:600}
+.ortswahl-zahl{color:var(--ma-muted,#77736d);font-size:11px;white-space:nowrap}
+.ortswahl-liste a[aria-current="page"] .ortswahl-name{color:var(--ma-red,#971725)}
+.ortswahl-liste a[aria-current="page"]::before{content:"";position:absolute;left:0;width:3px;height:20px;margin-top:2px;background:var(--ma-red,#971725)}
+.ortswahl-liste a{position:relative}
+
+@media (max-width:560px){
+  .ortswahl-liste{position:static;min-width:0;margin-bottom:var(--s3,12px);box-shadow:none}
+  .ortswahl-aktuell{font-size:16px}
+}
+
+@media (prefers-reduced-motion:reduce){.ortswahl-pfeil{transition:none}}
+
+html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;box-shadow:0 10px 28px rgba(0,0,0,.45)}

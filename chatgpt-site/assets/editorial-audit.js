@@ -75,21 +75,9 @@
    * laesst die Navigation sichtbar springen. */
   if (LAUFZEIT_UMBAU) simplifyNav();
 
-  /* 2b) Ortsteile sind eine echte einklappbare Navigation, keine starre Linkleiste. */
-  function setupDistrictToggle(){
-    qa('.districtbar').forEach(bar=>{
-      if(q('.district-toggle',bar))return;
-      const shell=q('.shell',bar), old=q('.lbl',shell);if(!shell||!old)return;
-      const button=document.createElement('button');
-      button.type='button';button.className='district-toggle';button.innerHTML='<span class="district-pin" aria-hidden="true"></span><span>Ortsteile</span><span class="district-chevron" aria-hidden="true"></span>';
-      button.setAttribute('aria-expanded',String(innerWidth>700));
-      old.replaceWith(button);
-      const setCollapsed=collapsed=>{bar.classList.toggle('is-collapsed',collapsed);button.setAttribute('aria-expanded',String(!collapsed))};
-      setCollapsed(innerWidth<=700);
-      button.addEventListener('click',()=>setCollapsed(!bar.classList.contains('is-collapsed')));
-    });
-  }
-  setupDistrictToggle();
+  /* 2b) Die Ortswahl kommt seit 20.09. fertig aus deploy/inhaltsindex.mjs:
+   * ein <details> mit den echten Meldungszahlen, das ohne JavaScript
+   * funktioniert. Der frueher hier gebaute Toggle ist ersatzlos entfallen. */
 
   /* 3) Homepage: ein Content-Index, ein Hero und bebilderte Nebenmeldungen. */
   async function verifiedHomepage(){

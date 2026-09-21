@@ -131,6 +131,10 @@ body.home .front-lead h1{
   letter-spacing:-.03em;
 }
 body.home .front-lead h1 a{text-decoration:none;color:var(--ma-ink,#17191b)}
+/* Eine sehr lange Schlagzeile darf die Bildflaeche daneben nicht nach unten
+   schieben. Vier Zeilen sind die Grenze; stand vorher mit !important und
+   doppelter Klassenangabe in der Tokendatei. */
+body.home .front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
 body.home .front-lead p{
   max-width:62ch;
   margin:0;

@@ -479,11 +479,45 @@ function pruefeMotivvielfalt() {
   }
 }
 
+// -------------------------------------------- 13. Ortswahl auf jeder Seite
+// Vorher stand die Ortsleiste auf 214 Seiten in sechs handgepflegten
+// Varianten, die sich nur im aria-current unterschieden, und niemand zog sie
+// nach. Jetzt erzeugt sie deploy/inhaltsindex.mjs. Geprueft wird, dass genau
+// eine Wahl je Seite steht, genau eine Ausgabe als aktuell markiert ist und
+// jede angezeigte Zahl mit dem Bestand uebereinstimmt.
+function pruefeOrtswahl() {
+  const indexPfad = join(wurzel, 'chatgpt-site', 'api', 'inhalte.json');
+  if (!existsSync(indexPfad)) { fehler('Ortswahl', 'api/inhalte.json fehlt, Zahlen nicht pruefbar.'); return; }
+  const bestand = JSON.parse(readFileSync(indexPfad, 'utf8')).bestand?.ortsteile || {};
+  let mitWahl = 0;
+  for (const datei of dateienUnter('chatgpt-site', '.html')) {
+    const name = datei.replace(wurzel + '/', '');
+    const html = lies(datei);
+    if (/class="districtbar"/.test(html)) fehler('Ortswahl', `${name}: alte districtbar wieder im Markup.`);
+    if (/class="shell edition-label"/.test(html)) fehler('Ortswahl', `${name}: Zwischenzeile edition-label wieder im Markup.`);
+    const wahlen = html.match(/<nav class="ortswahl"/g) || [];
+    if (!wahlen.length) continue;
+    mitWahl++;
+    if (wahlen.length > 1) fehler('Ortswahl', `${name}: ${wahlen.length} Ortswahlen auf einer Seite.`);
+    const block = /<nav class="ortswahl"[\s\S]*?<\/nav>/.exec(html)[0];
+    const aktuell = block.match(/aria-current="page"/g) || [];
+    if (aktuell.length !== 1) fehler('Ortswahl', `${name}: ${aktuell.length} Eintraege als aktuelle Ausgabe markiert, erwartet genau einer.`);
+    for (const m of block.matchAll(/href="\/([a-z]+)\/"[^>]*><span class="ortswahl-name">[^<]*<\/span><span class="ortswahl-zahl">(\d+) Meldung/g)) {
+      const [, ort, gezeigt] = m;
+      const echt = bestand[ort];
+      if (echt === undefined) fehler('Ortswahl', `${name}: Ort ${ort} steht in der Wahl, aber nicht im Bestand.`);
+      else if (Number(gezeigt) !== echt) fehler('Ortswahl', `${name}: ${ort} zeigt ${gezeigt}, der Bestand sagt ${echt}.`);
+    }
+  }
+  if (!mitWahl) fehler('Ortswahl', 'Keine einzige Seite traegt eine Ortswahl.');
+}
+
 pruefeOertlicheVerweise();
 pruefeLaufzeitUmbau();
 await pruefeSymbolbilder();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();
+pruefeOrtswahl();
 pruefePhp();
 pruefePlatzhalter();
 pruefePruefsummen();

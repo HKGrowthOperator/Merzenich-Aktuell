@@ -53,7 +53,7 @@
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=c5d6eea8b3';
+    style.href = '/assets/homepage-polish.css?v=1f36ac510d';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
@@ -79,15 +79,29 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=c3d22c287f';
+    style.href = '/assets/editorial-audit.css?v=3694c0d173';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=672b5cbfc7';
+    script.src = '/assets/editorial-audit.js?v=09ba7ce9a9';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);
+  }
+  // Ortswahl: das Aufklappen kann <details> allein. JavaScript ergaenzt nur,
+  // was ohne Skript niemand erwartet - Schliessen bei Klick daneben und mit
+  // Escape. Faellt das Skript aus, bleibt die Wahl voll bedienbar.
+  {
+    const wahl = document.querySelector('.ortswahl-schalter');
+    if (wahl) {
+      document.addEventListener('click', (e) => { if (wahl.open && !wahl.contains(e.target)) wahl.open = false; });
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape' || !wahl.open) return;
+        wahl.open = false;
+        const s = wahl.querySelector('summary'); if (s) s.focus();
+      });
+    }
   }
 })();
