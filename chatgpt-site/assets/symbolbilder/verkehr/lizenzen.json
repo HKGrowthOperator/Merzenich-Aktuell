@@ -5,12 +5,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "strasse"
     ],
-    "checksum": "0ef81bf100ca5d80c81ba646813438da7c325c3e3190a1c57301a91b68f48ca1"
+    "checksum": "7a1df4f27ec639809f3dda947c4ea56c5f3bcf40ff372cf506ee9eebdd3cffde"
   },
   "verkehr-02-baustelle.svg": {
     "id": "verkehr-02-baustelle",
@@ -18,12 +18,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "baustelle"
     ],
-    "checksum": "649ca2168ee17c64e60ee07598fb9f84cf0eadbb9c5d8a712bf73852dd296fe9"
+    "checksum": "1fa19df4e73dc07ad2be9e6b152ed314634f1c37b16844988fed9c06aaad3769"
   },
   "verkehr-03-sperrung.svg": {
     "id": "verkehr-03-sperrung",
@@ -31,12 +31,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "sperrung"
     ],
-    "checksum": "b9ee1ac5fe5ae088365e1e4ccaa23796c9eff7a5129acaf6d2735550d590dfcc"
+    "checksum": "f8b2fc4837a3198ec69bf4c057bd64d89ea2d838e7f9620baa0da8cbd5eed7f9"
   },
   "verkehr-04-umleitung.svg": {
     "id": "verkehr-04-umleitung",
@@ -44,12 +44,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "umleitung"
     ],
-    "checksum": "71bfd99fd3889d79d1d89b8a6c74afa1ece61b8f78ad4f5688df1c4c36ba37c3"
+    "checksum": "b7015bd330136611ae2821096eeb97344f163e1d9d108b9815e0c9913b73be3a"
   },
   "verkehr-05-baustellenampel.svg": {
     "id": "verkehr-05-baustellenampel",
@@ -57,14 +57,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "ampel",
       "baustelle",
       "baustellenampel"
     ],
-    "checksum": "0e6c42a5aa1e91e1b00ed9a53fbf1e8ea6e0fd0f426e200d661d60e5d0fd316b"
+    "checksum": "7210906eef6b19376febd7d895ceee9115faf33344cbbfcf731fac85373fd726"
   },
   "verkehr-06-verkehrsschild.svg": {
     "id": "verkehr-06-verkehrsschild",
@@ -72,13 +72,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "schild",
       "verkehrsschild"
     ],
-    "checksum": "9c65fbed237c1e7efebf1375dc045f46dea6d4c7247d43a26aa76c764bdbfbc2"
+    "checksum": "cbb971648cff17b7a0cae6d18ec4a7b836548f697c7b9843b46c0ad7b74b5243"
   },
   "verkehr-07-fahrbahn.svg": {
     "id": "verkehr-07-fahrbahn",
@@ -86,12 +86,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "fahrbahn"
     ],
-    "checksum": "0502d6103543e091f839eb01104f81f34e7541fbb6665d6cc840e92e949d42b5"
+    "checksum": "ab46b85e7ffb28bab68b0d4a20161c57106fa777c8503f2d736fc37257ec1206"
   },
   "verkehr-08-strassenarbeiten.svg": {
     "id": "verkehr-08-strassenarbeiten",
@@ -99,14 +99,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "strassenbau",
       "arbeiten",
       "strassenarbeiten"
     ],
-    "checksum": "37ccdf0f179c5b1512172408bbe86a28a3d151c993fbff7101213a9e9600e3fd"
+    "checksum": "1a5ba4028ad167c640eb7bd261e1841fa0413114d8d5cd619bc5580c98724160"
   },
   "verkehr-09-baustellenfahrzeug.svg": {
     "id": "verkehr-09-baustellenfahrzeug",
@@ -114,14 +114,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "baustelle",
       "fahrzeug",
       "baustellenfahrzeug"
     ],
-    "checksum": "89131f0c5118aa01662fc6e6325bf143596ebb3076b29d42c388cb3658855af0"
+    "checksum": "d17eb551ceaca82de33d94c96205536dfb8ce6d82f25c0e41ebd45b898c8f233"
   },
   "verkehr-10-stau.svg": {
     "id": "verkehr-10-stau",
@@ -129,12 +129,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "stau"
     ],
-    "checksum": "a2df0a950769704f8989c887f5477e3d7a94c293b2c8d061bf9549b779b7ba16"
+    "checksum": "548efdf03278d57ef605258e8f90efb0e5ba0014ce9164aafb15c326d8b6939b"
   },
   "verkehr-11-autobahn.svg": {
     "id": "verkehr-11-autobahn",
@@ -142,12 +142,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "autobahn"
     ],
-    "checksum": "7c3d050d094920ef7b71b8b175842976141068b1a951da7738a17246615a633f"
+    "checksum": "53af08b9623cf4317d4d7af1201f93185d23ae5c68a5a42740844960c537a48c"
   },
   "verkehr-12-landstrasse.svg": {
     "id": "verkehr-12-landstrasse",
@@ -155,12 +155,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "landstrasse"
     ],
-    "checksum": "ba6957ecd852419037c0f2e96cb4f2bbd60c0b6c5c6ba340c1700952484d5448"
+    "checksum": "4f72307853a55020c2c7365e4cb6537de9290df877c5bf7cf2098f4c18b77315"
   },
   "verkehr-13-kreuzung.svg": {
     "id": "verkehr-13-kreuzung",
@@ -168,12 +168,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "kreuzung"
     ],
-    "checksum": "9adffa2815d275afb3c001e4d3e9aad6dd4f3196db65014d7f0b525c13276fb3"
+    "checksum": "6285740406f31d6f1cabe9206c14c340ffcaa02788f85f3119a369bf9e84ae8e"
   },
   "verkehr-14-verkehrsfluss.svg": {
     "id": "verkehr-14-verkehrsfluss",
@@ -181,13 +181,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "autos",
       "verkehrsfluss"
     ],
-    "checksum": "01d49bb337cdb6491cbf7660717d3d4ca17e4bd4fd0012305d02f55572b4b0f6"
+    "checksum": "24d33cc229ec14630dcce26e2fd602ad728e2f4367f5822a55ecad6f11035901"
   },
   "verkehr-15-opnv.svg": {
     "id": "verkehr-15-opnv",
@@ -195,13 +195,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "oepnv",
       "opnv"
     ],
-    "checksum": "34290d4917721c823e5344e1b528274e27f2df2f016c4e8a8e5662b9e3a3fb34"
+    "checksum": "235e90e45bd8ff8e3301f0ecf6146180b5ec542980a19232487cb135be6cc6bd"
   },
   "verkehr-16-bus.svg": {
     "id": "verkehr-16-bus",
@@ -209,12 +209,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "bus"
     ],
-    "checksum": "532975307f90cfe4d312fb46e5e4c2dc2a86e9b250f9a0ecabae6e5a3cc6cc49"
+    "checksum": "355ec4065c58b82f3f4b9d967ab5bb30acdacf497b530f02ef4091c336df5aa7"
   },
   "verkehr-17-haltestelle.svg": {
     "id": "verkehr-17-haltestelle",
@@ -222,13 +222,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "haltestelle",
       "bus"
     ],
-    "checksum": "8d918fbfdedfc4aa59ff8b0855f4b41e3ebb81386001c0c6c1f7e2f73fff5197"
+    "checksum": "5fb632437746aba1c4f969caaefd0ae7cfa2ec2cf16f3dc43d4908d7ffc948fb"
   },
   "verkehr-18-bahn.svg": {
     "id": "verkehr-18-bahn",
@@ -236,12 +236,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "bahn"
     ],
-    "checksum": "3a6d8555e4271092210ec376131b83cdcf556aebe6fad5aa243be91fc6c9a19f"
+    "checksum": "4fb48eae6a0e383b551f10b3f189e5ce846801939df2a961dffc2ad11e696077"
   },
   "verkehr-19-bahnuebergang.svg": {
     "id": "verkehr-19-bahnuebergang",
@@ -249,12 +249,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "bahnuebergang"
     ],
-    "checksum": "9611db25f15fe1a7bbaa29a66a4ed9870a1af229c46979813fbd13c8028ba002"
+    "checksum": "14adcb491a1143a9373b75a4b05207dc4ae926f69edf23ba15d5dd29e988ac50"
   },
   "verkehr-20-strassenschaden.svg": {
     "id": "verkehr-20-strassenschaden",
@@ -262,11 +262,11 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "verkehr",
       "strassenschaden"
     ],
-    "checksum": "9a7fb50942821255725db767f74147df8f5af4730edb3cb5005cb0f5fd16d25d"
+    "checksum": "b759d3e5a04745c418be8db526390df0ccab0042e8d12c9bf6085cc956dfd788"
   }
 }

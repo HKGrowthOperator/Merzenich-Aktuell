@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'deploy/lib-symbolbilder.mjs'
+      - 'deploy/lib-motiv-formen.mjs'
+      - 'deploy/lib-motiv-szenen.mjs'
       - 'deploy/symbolbilder.mjs'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/bild-fallbacks.js'

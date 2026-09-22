@@ -5,13 +5,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "fahrzeug",
       "loeschfahrzeug"
     ],
-    "checksum": "e877afbb220df91bb1d9a616a6f0ee011cb1f1341653d319b18c949a0cd084f6"
+    "checksum": "bd167c3f3d68674cab00dd637f4b39bc860aaac1e940b09d9b3f081da93f95da"
   },
   "feuerwehr-02-feuerwehrleute.svg": {
     "id": "feuerwehr-02-feuerwehrleute",
@@ -19,13 +19,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "kraefte",
       "feuerwehrleute"
     ],
-    "checksum": "5d3ba2ab9b025380761bbe2f2e55f7c897ddfd98feb2614fe5dbd7882cbad51f"
+    "checksum": "18b49c2f79743f0e1f3fb6a7f2498e29f18c09bd0737326c270cc794a4bc4bb7"
   },
   "feuerwehr-03-atemschutz.svg": {
     "id": "feuerwehr-03-atemschutz",
@@ -33,12 +33,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "atemschutz"
     ],
-    "checksum": "add1ffaf875376e3b261686a6ba1a62a9958631e738837820a71a7d25afec252"
+    "checksum": "de76e63b954136d5381bc36c35861ad40ab3c88b8c9a15de0377937df4eb771c"
   },
   "feuerwehr-04-loeschschlauch.svg": {
     "id": "feuerwehr-04-loeschschlauch",
@@ -46,14 +46,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "schlauch",
       "loeschen",
       "loeschschlauch"
     ],
-    "checksum": "534bd72acb8160fb1ffc6ed81b67ff35780d94c2f30836f371e0e67e1f24bfaf"
+    "checksum": "fa823d7ae4ebee6359967f8472a95148cbeec1cf68bb5da96ac473d3416f6c56"
   },
   "feuerwehr-05-drehleiter.svg": {
     "id": "feuerwehr-05-drehleiter",
@@ -61,12 +61,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "drehleiter"
     ],
-    "checksum": "7e8b48520f09ce3f7387499a76fbf20edefd6666ef4de418f7b0155ed7d83eec"
+    "checksum": "bc249872e55e94750b38ba713285cc99706adbae03c1b46cda85318f6c0b0f66"
   },
   "feuerwehr-06-blaulicht.svg": {
     "id": "feuerwehr-06-blaulicht",
@@ -74,12 +74,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "blaulicht"
     ],
-    "checksum": "67b743b72d19ec85f35452b1f50df6884572a4a252f5ad49781cd3818da18667"
+    "checksum": "b711c6f2a549ace3c505c9003ed01e4805d0c807595979750a754a323acc71c4"
   },
   "feuerwehr-07-dtechnischehilfe.svg": {
     "id": "feuerwehr-07-dtechnischehilfe",
@@ -87,14 +87,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "technische",
       "hilfe",
       "dtechnischehilfe"
     ],
-    "checksum": "ced06b24b410b7940a215e8989b782c9b0cbc68d25235fd418676badf6f46a32"
+    "checksum": "ed5e2567be5118f8426fc9c6d9257c556ec9f39076916f6b0adce0e80e21edc1"
   },
   "feuerwehr-08-verkehrsunfallhilfe.svg": {
     "id": "feuerwehr-08-verkehrsunfallhilfe",
@@ -102,14 +102,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "unfall",
       "hilfe",
       "verkehrsunfallhilfe"
     ],
-    "checksum": "c60cf9e33b48c70f8ecfa3da65913a16dc16d37498244a718de3f65e7cda5196"
+    "checksum": "1cd6d115a7c53dd2705927816aafc24d846bdc4cbf2828e2cd9a082d68836314"
   },
   "feuerwehr-09-einsatzabsicherung.svg": {
     "id": "feuerwehr-09-einsatzabsicherung",
@@ -117,13 +117,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "absicherung",
       "einsatzabsicherung"
     ],
-    "checksum": "60886a7056dda7793d48ead5a937158f9d5213f909d2a9da1b11a0e73db904cb"
+    "checksum": "a6886f662e827de63ac307ff23402cb756de307d10b8f887b53e23a24c57d801"
   },
   "feuerwehr-10-feuerwehrwache.svg": {
     "id": "feuerwehr-10-feuerwehrwache",
@@ -131,13 +131,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "wache",
       "feuerwehrwache"
     ],
-    "checksum": "9383e9bd182d597eecd27af059318d67c0c113696a08d60c04e48ac530c0333e"
+    "checksum": "ed0915803b0e6a650bbf6ef6304aa71f713425c4c766ae5101d9f12aad00e0b9"
   },
   "feuerwehr-11-fahrzeughalle.svg": {
     "id": "feuerwehr-11-fahrzeughalle",
@@ -145,14 +145,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "halle",
       "fahrzeuge",
       "fahrzeughalle"
     ],
-    "checksum": "284f5d7fe30f0b001652768b48a394bb4766699e123569582f8614a710689fa3"
+    "checksum": "732b9d01a2c1d8541d808c9cb5dad53f535616142c36692dcad18f6d21f118aa"
   },
   "feuerwehr-12-rettungsgeraet.svg": {
     "id": "feuerwehr-12-rettungsgeraet",
@@ -160,14 +160,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "rettung",
       "geraet",
       "rettungsgeraet"
     ],
-    "checksum": "608100a4d2e7db0fec26629f6f9f49cd30d6e028d5eb90503ff990c9465a0aa9"
+    "checksum": "b2a1514f5057401c44a92240b5aa8ca92f1d4d2a78910bdce23133dbf9fc0f3b"
   },
   "feuerwehr-13-ausruestung.svg": {
     "id": "feuerwehr-13-ausruestung",
@@ -175,12 +175,12 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "ausruestung"
     ],
-    "checksum": "b37792f1a46126ab023ee05738d0d96149bb7d003777a591de39e32736526b8a"
+    "checksum": "ba91e54ecfece96b611720ef06484368370174df540e606533c0f960bf304e6a"
   },
   "feuerwehr-14-vegetationsbrand.svg": {
     "id": "feuerwehr-14-vegetationsbrand",
@@ -188,14 +188,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "vegetation",
       "brand",
       "vegetationsbrand"
     ],
-    "checksum": "113857f5192688fc23c7e1c738b0679d84bf49aa86754b415ab7bbec264ca0ec"
+    "checksum": "8492a78fc40f5f95fb166a23545f9da63ee4f92cadb27067db7885d7e04a2acd"
   },
   "feuerwehr-15-nachteinsatz.svg": {
     "id": "feuerwehr-15-nachteinsatz",
@@ -203,14 +203,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "nacht",
       "einsatz",
       "nachteinsatz"
     ],
-    "checksum": "dda4dd2b91b57c1c7c0dbc5f4762705667088cd182c8c8a19faa3a5bcac9cda3"
+    "checksum": "86f7193d98112cfe4229377b49c0ce609c15305061957656530c05a45b18b38b"
   },
   "feuerwehr-16-einsatzvorbereitung.svg": {
     "id": "feuerwehr-16-einsatzvorbereitung",
@@ -218,13 +218,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "vorbereitung",
       "einsatzvorbereitung"
     ],
-    "checksum": "3db4c578df78f00b31f30024cdee91963ffbadd770c511e6ae78357211369a80"
+    "checksum": "d188fd214f6bd7c55bfafcb649e85b8ad01463e49b68611ae4706f6a37e9e685"
   },
   "feuerwehr-17-loeschangriff.svg": {
     "id": "feuerwehr-17-loeschangriff",
@@ -232,14 +232,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "loeschen",
       "einsatz",
       "loeschangriff"
     ],
-    "checksum": "c1a2fb13c278f0570dceac1e310a151edd0db2c9212bfc2f47a9bd6628a916af"
+    "checksum": "e462187806cabeca45b38bea970d606510a26c2b26c846c2187caf19e59665d8"
   },
   "feuerwehr-18-gruppenbereitschaft.svg": {
     "id": "feuerwehr-18-gruppenbereitschaft",
@@ -247,14 +247,14 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "gruppe",
       "bereitschaft",
       "gruppenbereitschaft"
     ],
-    "checksum": "2edaddda16bcc360e97ae97f30ba48ad806de4facce9a13e8c4b864ee0b84473"
+    "checksum": "cdc4fd2f3fa0973fef062a9b8de955e30458f17286a324a47b135a82222eb0ed"
   },
   "feuerwehr-19-fahrzeugkolonne.svg": {
     "id": "feuerwehr-19-fahrzeugkolonne",
@@ -262,13 +262,13 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "fahrzeuge",
       "fahrzeugkolonne"
     ],
-    "checksum": "c51832355ddda7d4ea75edd8e81f4bbc7ccabc734ad47073b9f40e0c20514fed"
+    "checksum": "4cd0dc9d5e4cfe6feb381d8cecb82a36145bcbac23449f22c14b2778544a84cd"
   },
   "feuerwehr-20-einsatzstelle.svg": {
     "id": "feuerwehr-20-einsatzstelle",
@@ -276,11 +276,11 @@
     "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik",
     "source": "Merzenich Aktuell / Editorial Image System V2",
     "license": "Projektasset – Nutzung durch Merzenich Aktuell",
-    "rightsCheckedAt": "2026-09-18",
+    "rightsCheckedAt": "2026-09-22",
     "tags": [
       "feuerwehr",
       "einsatzstelle"
     ],
-    "checksum": "53ed76ba82c73650b4ee017c0deb6c2cbd24d453fc3cc83e6139c9565ab77eae"
+    "checksum": "13e67aebfcc7121fae570e8ef972afa69c356b4d1c2ef9e503cc05a084432d21"
   }
 }

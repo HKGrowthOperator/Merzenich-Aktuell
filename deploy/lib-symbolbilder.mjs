@@ -1,12 +1,13 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, statSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { createHash } from 'node:crypto';
+import { motivSvg, pruefeEindeutigkeit } from './lib-motiv-szenen.mjs';
 
 export const SYMBOL_WURZEL = 'chatgpt-site/assets/symbolbilder';
 export const DATEN_WURZEL = 'chatgpt-site/data/editorial-images';
 export const BIBLIOTHEK_DATEI = `${DATEN_WURZEL}/editorial-images.json`;
 export const ZUORDNUNGEN_DATEI = `${DATEN_WURZEL}/editorial-image-assignments.json`;
-export const RECHTE_GEPRUEFT_AM = '2026-09-18';
+export const RECHTE_GEPRUEFT_AM = '2026-09-22';
 export const MINDEST_POOL = 20;
 export const KATEGORIEN = [
   'sport', 'polizei', 'feuerwehr', 'verkehr', 'vereine', 'gemeinde',
@@ -21,17 +22,13 @@ const LABELS = {
   familie: 'Familie', trauer: 'Trauer', kultur: 'Kultur / Freizeit', schule: 'Schule / Bildung', kirche: 'Kirche / religiöses Leben',
 };
 
-const PALETTEN = {
-  sport: ['#143b2d','#d6b56d','#f5f4ef'], polizei: ['#16324b','#5ba0d0','#eef3f7'], feuerwehr: ['#5a1717','#d54d3f','#f8efeb'],
-  verkehr: ['#373a40','#f2b84b','#f5f5f2'], vereine: ['#49364b','#c28f5a','#f6f1ec'], gemeinde: ['#4d1525','#c7a85d','#f6f2ec'],
-  veranstaltungen: ['#4b2142','#d58b60','#f6efe8'], leben: ['#29433d','#8ab3a0','#f4f3ee'], wirtschaft: ['#26394a','#9d8257','#f3f1ed'],
-  jobs: ['#2d3542','#cf9a57','#f5f2ed'], immobilien: ['#4a3a32','#b99168','#f5f1ec'], familie: ['#6d3544','#d7a0a9','#f9f0f2'],
-  trauer: ['#2b2b30','#8e8a83','#f0efec'], kultur: ['#3d2b52','#d29b55','#f5f0e8'], schule: ['#25485a','#75a8ba','#f0f5f6'], kirche: ['#403b49','#b7a07c','#f5f1eb'],
-};
 
 // 20 eigenständige Motive je Pool. Jeder Eintrag: slug|sichtbare Motivbezeichnung|Such-Tags.
 // Die Grafiken sind bewusst neutrale redaktionelle Symbolgrafiken: kein reales Ereignis,
 // keine erkennbare Person, kein Kennzeichen, kein Vereinslogo, keine fremde Ortsaufnahme.
+// Reihenfolge und Slugs sind fest: die Motiv-IDs entstehen aus Position und Slug, und
+// editorial-image-assignments.json bindet Artikel dauerhaft an diese IDs. Das gezeichnete
+// Bild zu jedem Slug steht in lib-motiv-szenen.mjs.
 const RAW = {
   sport: `spiel|Fußballspiel|fussball,spiel,spieltag
 zweikampf|Zweikampf|fussball,zweikampf,duell
@@ -364,15 +361,14 @@ const entries = (pool) => RAW[pool].trim().split('\n').map((line, i) => {
   return { id: `${pool}-${String(i + 1).padStart(2, '0')}-${slug}`, pool, slug, name, tags };
 });
 
-function svgFuer(e, index) {
-  const [dunkel, akzent, hell] = PALETTEN[e.pool];
-  const h = parseInt(sha(e.id).slice(0, 8), 16);
-  const v = index % 5;
-  const x1 = 180 + (h % 360), y1 = 140 + ((h >>> 4) % 260), r1 = 110 + ((h >>> 9) % 120);
-  const x2 = 980 + ((h >>> 13) % 320), y2 = 170 + ((h >>> 17) % 320), r2 = 90 + ((h >>> 21) % 160);
-  const linie = v === 0 ? `M120 680 C420 520 820 760 1480 500` : v === 1 ? `M80 500 L1520 250` : v === 2 ? `M160 710 Q800 280 1450 620` : v === 3 ? `M120 360 Q650 760 1500 430` : `M140 610 C520 240 1040 280 1480 640`;
-  const kurz = LABELS[e.pool].toUpperCase();
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d"><title id="t">${xml(e.name)}</title><desc id="d">Neutrales redaktionelles Symbolbild für ${xml(LABELS[e.pool])}: ${xml(e.name)}. Kein Foto eines konkreten Ereignisses.</desc><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${dunkel}"/><stop offset="1" stop-color="${akzent}"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><circle cx="${x1}" cy="${y1}" r="${r1}" fill="${hell}" opacity=".13"/><circle cx="${x2}" cy="${y2}" r="${r2}" fill="${hell}" opacity=".09"/><path d="${linie}" fill="none" stroke="${hell}" stroke-width="18" opacity=".18"/><rect x="90" y="90" width="1420" height="720" rx="42" fill="none" stroke="${hell}" stroke-width="3" opacity=".28"/><rect x="115" y="120" width="185" height="42" rx="21" fill="${hell}" opacity=".92"/><text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${dunkel}">SYMBOLBILD</text><text x="120" y="575" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="3" fill="${hell}" opacity=".78">${xml(kurz)}</text><text x="120" y="665" font-family="Arial,sans-serif" font-size="68" font-weight="800" fill="${hell}">${xml(e.name)}</text><text x="120" y="730" font-family="Arial,sans-serif" font-size="24" fill="${hell}" opacity=".82">MERZENICH AKTUELL · Redaktionelle Symbolgrafik</text></svg>`;
+/**
+ * Gezeichnetes Motiv aus lib-motiv-szenen.mjs: Linienzeichnung in Anthrazit auf
+ * Weiss, ein Bordeaux-Akzent, erkennbarer Gegenstand statt Flaeche
+ * (docs/SYMBOLBILDER-ANFORDERUNG.md). Kein Zeilenumbruch am Ende, die
+ * Checksumme in der Bibliothek wird ueber genau diesen String gebildet.
+ */
+function svgFuer(e) {
+  return motivSvg(e.pool, e.slug, e.name, LABELS[e.pool]);
 }
 
 function schreibeWennAnders(pfad, inhalt, schreiben, geaendert) {
@@ -385,12 +381,15 @@ function schreibeWennAnders(pfad, inhalt, schreiben, geaendert) {
 export function bibliothekErzeugen(wurzel, { schreiben = true } = {}) {
   const geaendert = [];
   const alle = [];
+  // Jedes der 320 Motive muss eine eigene Elementfolge haben; wirft sonst, bevor
+  // irgendetwas geschrieben wird.
+  pruefeEindeutigkeit(Object.fromEntries(KATEGORIEN.map((k) => [k, entries(k)])));
   for (const pool of KATEGORIEN) {
     const liz = {};
-    entries(pool).forEach((e, index) => {
+    entries(pool).forEach((e) => {
       const datei = `${e.id}.svg`;
       const rel = `${SYMBOL_WURZEL}/${pool}/${datei}`;
-      const svg = svgFuer(e, index);
+      const svg = svgFuer(e);
       const record = {
         id: e.id, pool, src: `/${rel.replace(/^chatgpt-site\//, '')}`, alt: `${e.name} als neutrales Symbolbild`,
         credit: 'Merzenich Aktuell · redaktionelle Symbolgrafik', source: 'Merzenich Aktuell / Editorial Image System V2',

@@ -177,27 +177,9 @@ body.home .front-neben-story h2{
 body.home .front-neben-story h2 a{color:var(--ma-ink,#17191b);text-decoration:none}
 body.home .front-neben-story .meta{color:var(--ma-muted,#817b73);font-size:11px}
 
-/* -------------------------------------------------------- Meldung ohne Bild */
-/* Ein Beitrag ohne verwendbares Motiv bekommt keine leere Bildfläche, sondern
-   eine kompakte Zeile. Ein Vereinswappen füllt nie die Bildfläche (Standard 7b). */
-
-body.home .front-zeile{margin:0;padding:var(--s3) 0;border-top:1px solid var(--ma-line,#e3e3e0)}
-body.home .front-zeile h2{
-  margin:var(--s1) 0 var(--s1);
-  font-family:Newsreader,Georgia,serif;
-  font-size:var(--t-headline-s);
-  line-height:1.2;
-  font-weight:640;
-}
-body.home .front-zeile h2 a{color:var(--ma-ink,#17191b);text-decoration:none}
-body.home .front-zeile .location-brand{color:var(--ma-red,#971725);font-size:11px;font-weight:800;letter-spacing:.09em}
-body.home .front-zeile .kicker{margin-left:var(--s2);color:var(--ma-muted,#6b6660);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
-body.home .front-zeile .meta{color:var(--ma-muted,#817b73);font-size:11px}
-
 /* ------------------------------------------------------------- Dunkelmodus */
 
 html[data-theme="dark"] body.home .front-lead h1 a,
-html[data-theme="dark"] body.home .front-neben-story h2 a,
-html[data-theme="dark"] body.home .front-zeile h2 a{color:#f1f1f0}
+html[data-theme="dark"] body.home .front-neben-story h2 a{color:#f1f1f0}
 html[data-theme="dark"] body.home .front-lead p{color:#bebebb}
 html[data-theme="dark"] body.home .karte-bild .media{background:#26282a}

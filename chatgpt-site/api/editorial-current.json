@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-19T00:00:00+02:00",
-  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. Steht hier kein hero, waehlt deploy/inhaltsindex.mjs die juengste Meldung mit echtem Bild. Ein gesetzter hero gewinnt, muss aber ein echtes Bild haben: ein Vereinslogo, ein Wappen oder ein Symbolbild aus assets/symbolbilder laesst den Build scheitern, statt das Bild still zu entfernen. Felder: hero {url}, secondary [{url},{url}].",
+  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. Steht hier kein hero, waehlt deploy/inhaltsindex.mjs die juengste Meldung mit echtem Foto; nur wenn keine existiert, die juengste mit Symbolbild. Ein gesetzter hero gewinnt, muss aber ein echtes Foto haben: ein Vereinslogo, ein Wappen oder ein Symbolbild aus assets/symbolbilder laesst den Build scheitern, statt das Bild still zu entfernen. Felder: hero {url}, secondary [{url},{url}].",
   "hero": null,
   "secondary": null
 }

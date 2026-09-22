@@ -215,46 +215,46 @@ index.bestand = {
     return Math.max(b.width || 0, 0, ausUrl ? parseInt(ausUrl[1], 10) : 0, ...ausSrcset);
   };
   // Ein Vereinslogo oder Wappen fuellt nie eine Bildflaeche (Designstandard 7b).
-  // Solche Artikel bekommen keinen Bildplatz, bis ein Symbolbild vorliegt.
-  // Die Symbolbild-Pools unter assets/symbolbilder tragen derzeit Farbverlaeufe
-  // mit aufgedrucktem Wort: 20 Dateien je Pool teilen sich drei Strukturen, der
-  // Sport-Pool laeuft auf Gold, Gemeinde und Wirtschaft auf Beige (gemessen
-  // 19.09.). Als Aufmacher oder Nebenmeldung taugt das nicht, sonst steht ein
-  // goldenes Rechteck an der wichtigsten Stelle der Seite. Die Zeile entfaellt,
-  // sobald der Pool unterscheidbare Motive enthaelt (docs/SYMBOLBILDER-ANFORDERUNG.md).
-  const VERLAUFSPOOL = /\/assets\/symbolbilder\//;
-  const echtesBild = (a) => {
+  // Ein Symbolbild aus assets/symbolbilder ist seit dem Austausch der Pools
+  // (22.09., docs/SYMBOLBILDER-ANFORDERUNG.md) eine gueltige Bildflaeche fuer
+  // Nebenmeldungen. Der Aufmacher bevorzugt weiterhin die juengste Meldung mit
+  // echtem Foto; ein Symbolbild kommt dort nur hin, wenn keine existiert.
+  const SYMBOLPOOL = /\/assets\/symbolbilder\//;
+  const bildOk = (a) => {
     const b = a && a.bild;
     if (!b || !b.src) return false;
     if (b.fit === 'contain') return false;
-    if (VERLAUFSPOOL.test(b.src)) return false;
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
+  const istSymbol = (a) => Boolean(a && a.bild && (a.bild.symbol || SYMBOLPOOL.test(a.bild.src || '')));
+  const echtesFoto = (a) => bildOk(a) && !istSymbol(a);
 
   // Aufmacher: redaktionell gesetzt schlaegt automatisch - aber nur mit echtem
-  // Bild. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
-  // die Mitte der Startseite leer aussehen lassen.
+  // Foto. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
+  // die Mitte der Startseite leer aussehen lassen. Automatisch: juengste Meldung
+  // mit Foto, sonst juengste mit Symbolbild in Aufmacherbreite.
   function aufmacherWaehlen() {
     const gesetzt = ed.hero && ed.hero.url ? nachUrl.get(ed.hero.url) : null;
     if (ed.hero && ed.hero.url) {
       if (!gesetzt) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} steht nicht im Inhaltsindex.`);
         process.exitCode = 2;
-      } else if (!echtesBild(gesetzt)) {
-        console.error(`Startseite: Aufmacher ${ed.hero.url} hat kein echtes Bild (Logo, Wappen oder Verlaufs-Symbolbild). editorial-current.json korrigieren oder Eintrag entfernen.`);
+      } else if (!echtesFoto(gesetzt)) {
+        console.error(`Startseite: Aufmacher ${ed.hero.url} hat kein echtes Foto (Logo, Wappen oder Symbolbild). editorial-current.json korrigieren oder Eintrag entfernen.`);
         process.exitCode = 2;
       } else {
         return gesetzt;
       }
     }
-    return artikel.find((a) => freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_XL)
-      || artikel.find((a) => freiOben(a) && echtesBild(a))
+    return artikel.find((a) => freiOben(a) && echtesFoto(a) && bildBreite(a.bild) >= BREITE_XL)
+      || artikel.find((a) => freiOben(a) && echtesFoto(a))
+      || artikel.find((a) => freiOben(a) && bildOk(a) && bildBreite(a.bild) >= BREITE_XL)
       || null;
   }
 
   const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${badgeHtml(a.bild)}</div></a>`;
 
-  // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
+  // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In zwei Groessen.
   function karte(a, groesse) {
     if (groesse === 'xl') {
       return `<article class="front-lead" data-story="${esc(a.id)}">`
@@ -274,11 +274,7 @@ index.bestand = {
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
         + `</div></article>`;
     }
-    return `<article class="front-zeile" data-story="${esc(a.id)}">`
-      + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
-      + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
-      + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
-      + `</div></article>`;
+    throw new Error(`Startseite: unbekannte Kartengroesse ${groesse}`);
   }
 
   // Unterhalb der Markierung stehen noch die handgepflegten Ressortflaechen.
@@ -291,11 +287,11 @@ index.bestand = {
   const freiOben = (a) => !schonUnten.has(a.id);
 
   const aufmacher = aufmacherWaehlen();
-  if (!aufmacher) { console.error('Startseite: kein Artikel mit echtem Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
+  if (!aufmacher) { console.error('Startseite: kein Artikel mit Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
   const vergeben = new Set(aufmacher ? [aufmacher.url] : []);
   // Zwei Nebenmeldungen, beide mit ordentlich grossem Bild. Keine vier
   // Miniteaser mehr am Rand.
-  const neben = artikel.filter((a) => !vergeben.has(a.url) && freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
+  const neben = artikel.filter((a) => !vergeben.has(a.url) && freiOben(a) && bildOk(a) && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
   for (const a of neben) vergeben.add(a.url);
 
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
