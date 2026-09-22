@@ -6,11 +6,11 @@
 /* 18.09.: die Standzahl stand auf Gold (#c8a24e), das Label auf Beigegrau
    (#cfcbc2). Auf der dunklen Kachel #17191b traegt Bordeaux nicht, darum
    neutrales Off-White (15,73:1) und neutrales Hellgrau (10,62:1). */
-.sc-stand{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
-.sc-stand .sc-kachel{background:#17191b;color:#fff;border-radius:4px;padding:16px 12px;text-align:center}
-.sc-stand .sc-wert{display:block;font-family:Newsreader,Georgia,serif;font-size:30px;line-height:1;font-weight:600;color:#f2f2f1}
-.sc-stand .sc-label{display:block;margin-top:7px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c9c9c6}
-.sc-stand-quelle{font-size:12px;color:#666;margin:-8px 0 20px}
+
+
+
+
+
 
 /* Offene Begegnung: schliesst die Luecke zwischen letztem und naechstem Spiel,
    ohne ein Ergebnis zu behaupten, das nicht bestaetigt ist. */
@@ -31,12 +31,7 @@
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media (max-width:900px){.district-text{-webkit-line-clamp:2;font-size:13px}}
 
-@media (max-width:640px){
-  .sc-stand{grid-template-columns:repeat(3,1fr);gap:7px}
-  .sc-stand .sc-kachel{padding:12px 6px}
-  .sc-stand .sc-wert{font-size:24px}
-  .sc-stand .sc-label{font-size:10px;letter-spacing:.1em}
-}
+
 
 /* Wortmarke im Kopf. Die Groesse wird in style.css, v19.css, v20.css und
    recovery.css insgesamt elfmal gesetzt; durchgesetzt hat sich zuletzt

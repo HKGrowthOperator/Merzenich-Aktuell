@@ -15,26 +15,16 @@
    Das Seitenverhaeltnis steht hier NICHT mehr: es kam bisher aus vier
    Dateien mit vier verschiedenen Werten (16/10 hier,16/9 in v20,3/2 in recovery,1.82 in v19). Ein Kartentyp hat ein Format,und das
    Format steht jetzt allein in system.css als --bild-gross. Alles
-   andere an dieser Regel - Beschnitt,Flaeche,.home .news-mosaic .desk-card .media,.home .people-grid .desk-card .media,.home .fire-desk .media{overflow:hidden;background:#f2f2f0;border-radius:1px}.home .news-mosaic .desk-card .media img,.home .people-grid .desk-card .media img,.home .fire-desk .media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 190ms ease}
+   andere an dieser Regel - Beschnitt,Flaeche{overflow:hidden;background:#f2f2f0;border-radius:1px}
 .home article:hover>.media img,.home article:hover>a>.media img{transform:scale(1.012)}
 .home .media.contain img{object-fit:contain;transform:none!important}
 
 /* Redaktionelle Flaechen: keine SaaS-Karten, keine weichen App-Container. */
 .home .location-line,.home .kicker,.home .eyebrow{letter-spacing:.09em}
 
-/* Zu kleine Quellenbilder fliegen komplett raus. Die Meldung bleibt bewusst als
-   Textmeldung stehen statt ein 300px-Bild auf 500px hochzuziehen. */
-.home .desk-card.ma-no-image,.home .mosaic-lead.ma-no-image,.home .mosaic-compact.ma-no-image,.home .people-major.ma-no-image,.home .people-minor.ma-no-image{display:block!important}
-.home .desk-card.ma-no-image>div{padding-top:0!important}
-
-/* Text-only Meldungen sichtbar als bewusster Nachrichtentyp. */
-.home .text-story{position:relative;padding-top:17px;border-top:2px solid var(--ink,#17191b)}
-.home .text-story:before{content:"Kurzmeldung";display:block;margin-bottom:7px;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#777}
-
 /* Ressortbloecke wirken wie Zeitungsteile statt Kartenraster. */
 .home main>section:not(.reader-note){scroll-margin-top:110px}
 .home .section-head,.home .block-head{border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc);padding-top:10px;padding-bottom:9px}
-.home .news-mosaic,.home .people-grid,.home .fire-desk{gap:22px}
 
 /* Werbung: solange kein echtes Creative im CMS hinterlegt ist, steht nur ein
    sauberer buchbarer Display-Slot da. Kein Fake-Unternehmen, kein KI-Motiv. */
@@ -52,7 +42,6 @@
 .home .reader-note{border-radius:0!important;box-shadow:none!important;border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc);background:transparent!important}/* Dunkelmodus: gleiche Sprache{background:#0d0d0d;border-color:#303030}
 html[data-theme="dark"] .home .portal-service .service-title{border-color:#f1f1f1}
 html[data-theme="dark"] .home .service-accordion{border-color:#333}
-html[data-theme="dark"] .home .text-story{border-color:#eee}
 html[data-theme="dark"] .home .reader-note{border-color:#333;border-top-color:#eee}
 html[data-theme="dark"] .ma-ad-booking-slot{background:#151515;border-color:#383838;color:#f3f3f3}
 html[data-theme="dark"] .ma-ad-booking-slot__label{border-color:#383838;color:#aaa}

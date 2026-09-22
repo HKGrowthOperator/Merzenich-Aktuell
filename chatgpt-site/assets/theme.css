@@ -75,15 +75,7 @@ html[data-theme="dark"] .form select,
 html[data-theme="dark"] .form textarea{background:#1b1b1b;color:var(--ink);border-color:#3a3a3a}
 html[data-theme="dark"] .read-more:hover,
 html[data-theme="dark"] .read-more:focus-visible,
-html[data-theme="dark"] .btn.ghost:hover{background:var(--red);color:#fff;border-color:var(--red)}html[data-theme="dark"] .media,html[data-theme="dark"] .media.contain,html[data-theme="dark"] .media.contain img,html[data-theme="dark"] .place-feature{background:#1e1e1e}
-html[data-theme="dark"] .facts,
-html[data-theme="dark"] .source-box,
-html[data-theme="dark"] .agenda-desk,
-html[data-theme="dark"] .score-result,
-html[data-theme="dark"] .fire-desk,
-html[data-theme="dark"] .event-facts,
-html[data-theme="dark"] .ad-example,
-html[data-theme="dark"] .markt-empty{background:#1a1a1a;border-color:#333}
+html[data-theme="dark"] .btn.ghost:hover{background:var(--red);color:#fff;border-color:var(--red)}html[data-theme="dark"] .media,html[data-theme="dark"] .media.contain,html[data-theme="dark"] .media.contain img,html[data-theme="dark"] .place-feature{background:#1e1e1e}html[data-theme="dark"] .facts,html[data-theme="dark"] .source-box,html[data-theme="dark"] .agenda-desk,html[data-theme="dark"] .score-result,html[data-theme="dark"] .event-facts,html[data-theme="dark"] .ad-example,html[data-theme="dark"] .markt-empty{background:#1a1a1a;border-color:#333}
 html[data-theme="dark"] .review-notice,
 html[data-theme="dark"] .editorial-mode{background:#2a2416;color:var(--ink)}
 html[data-theme="dark"] .league-table thead th{background:#1e1e1e;color:var(--ink)}

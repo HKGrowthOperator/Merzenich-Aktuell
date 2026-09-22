@@ -512,8 +512,78 @@ function pruefeOrtswahl() {
   if (!mitWahl) fehler('Ortswahl', 'Keine einzige Seite traegt eine Ortswahl.');
 }
 
+// ------------------------------------------ 14. Ressortflaechen der Startseite
+// Vorher war die Flaeche unter dem Aufmacher handgepflegtes Markup: die
+// juengste Meldung dort war vom 04.09., sechs Karten standen ohne Bild, und
+// eine Sektion zeigte ein riesiges Bild neben einer duennen Textleiter. Jetzt
+// erzeugt sie deploy/inhaltsindex.mjs zwischen Markern. Geprueft wird, was
+// beim Bauen tatsaechlich schiefgegangen ist:
+//   - zu jedem Startmarker ein Endmarker,
+//   - keine Meldung zweimal auf der Seite,
+//   - keine grosse Reihe mit nur einer Karte (die halbe leere Reihe),
+//   - keine geschriebene Sektion ohne Inhalt.
+// Was hier bewusst NICHT geprueft wird: dass eine Sektion nie aelter ist als
+// die darueber. Bei ressortgebundenen Sektionen geht das nicht auf - Blaulicht
+// reicht bis 21.07. zurueck, waehrend Rathaus darunter den 31.08. traegt, weil
+// beide nur aus ihrem eigenen Ressort schoepfen.
+function pruefeSektionen() {
+  const pfad = join(wurzel, 'chatgpt-site', 'index.html');
+  if (!existsSync(pfad)) { fehler('Sektionen', 'chatgpt-site/index.html fehlt.'); return; }
+  const html = lies(pfad);
+  const starts = [...html.matchAll(/<!-- start:([a-z]+):start -->/g)].map((m) => m[1]);
+  if (!starts.length) { fehler('Sektionen', 'Kein einziger Sektionsmarker in index.html.'); return; }
+  for (const id of starts) {
+    if (!html.includes(`<!-- start:${id}:end -->`)) fehler('Sektionen', `Marker start:${id} hat kein Gegenstueck.`);
+  }
+  const gesehen = new Map();
+  for (const m of html.matchAll(/<!-- start:([a-z]+):start -->([\s\S]*?)<!-- start:\1:end -->/g)) {
+    const [, id, rumpf] = m;
+    const karten = [...rumpf.matchAll(/data-story="([^"]+)"/g)].map((x) => x[1]);
+    for (const k of karten) {
+      if (gesehen.has(k)) fehler('Sektionen', `Meldung ${k} steht in ${gesehen.get(k)} und noch einmal in ${id}.`);
+      else gesehen.set(k, id);
+    }
+    if (/<section/.test(rumpf) && !karten.length) fehler('Sektionen', `Sektion ${id} ist geschrieben, enthaelt aber keine Meldung.`);
+    const reihen = [...rumpf.matchAll(/<div class="desk-(gross|mittel|zeilen)">/g)];
+    reihen.forEach((r, i) => {
+      const bis = i + 1 < reihen.length ? reihen[i + 1].index : rumpf.length;
+      const anzahl = (rumpf.slice(r.index, bis).match(/data-story="/g) || []).length;
+      if (r[1] === 'gross' && anzahl === 1) fehler('Sektionen', `Sektion ${id}: grosse Reihe mit nur einer Karte, die halbe Reihe bliebe leer.`);
+      if (!anzahl) fehler('Sektionen', `Sektion ${id}: Reihe desk-${r[1]} steht leer im Markup.`);
+    });
+  }
+}
+
+// ------------------------------------------- 15. Stylesheets sind lesbar
+// Der Selektor-Entferner in deploy/ schneidet ueberholte Regeln aus den
+// Stylesheets. Am 22.09. liess er in style.css zwei Selektoren ohne Rumpf
+// stehen (".sc-box .sc-box" und ".sc-box"). Ein CSS-Parser verschluckt dann
+// die naechste Regel mit - hier waeren .undated, .sc-crest und .plainlist
+// stumm ausgefallen. Nichts hat angeschlagen: die Seite rendert weiter, nur
+// eben falsch. Darum zwei harte Zusicherungen je Stylesheet: ausgeglichene
+// Klammern und keine Zeile, die nur aus einem Selektor besteht.
+function pruefeStylesheets() {
+  const ordner = join(wurzel, 'chatgpt-site', 'assets');
+  if (!existsSync(ordner)) { fehler('Stylesheet', 'chatgpt-site/assets fehlt.'); return; }
+  for (const datei of readdirSync(ordner).filter((n) => n.endsWith('.css'))) {
+    const text = lies(join(ordner, datei)).replace(/\/\*[\s\S]*?\*\//g, '');
+    const auf = (text.match(/\{/g) || []).length;
+    const zu = (text.match(/\}/g) || []).length;
+    if (auf !== zu) fehler('Stylesheet', `${datei}: ${auf} oeffnende gegen ${zu} schliessende Klammern.`);
+    text.split('\n').forEach((zeile, i) => {
+      const k = zeile.trim();
+      if (!k || /[{}]/.test(k) || /^@/.test(k)) return;
+      if (/[,;]$/.test(k)) return;      // mehrzeiliger Selektor oder Deklaration
+      if (/^[^:]*:[^:]/.test(k)) return; // Deklaration ohne abschliessendes Semikolon
+      fehler('Stylesheet', `${datei}:${i + 1}: Selektor ohne Rumpf - "${k.slice(0, 50)}". Die naechste Regel faellt damit aus.`);
+    });
+  }
+}
+
 pruefeOertlicheVerweise();
 pruefeLaufzeitUmbau();
+pruefeSektionen();
+pruefeStylesheets();
 await pruefeSymbolbilder();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();

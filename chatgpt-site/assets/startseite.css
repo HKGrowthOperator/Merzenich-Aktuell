@@ -201,3 +201,160 @@ html[data-theme="dark"] body.home .front-neben-story h2 a,
 html[data-theme="dark"] body.home .front-zeile h2 a{color:#f1f1f0}
 html[data-theme="dark"] body.home .front-lead p{color:#bebebb}
 html[data-theme="dark"] body.home .karte-bild .media{background:#26282a}
+
+/* ------------------------------------------------------ Ressortflaechen */
+/* Ein Muster fuer alle Sektionen: zwei grosse Meldungen nebeneinander,
+   darunter drei mittlere, darunter bei Bedarf kompakte Zeilen fuer Meldungen
+   ohne verwendbares Motiv. Vorher hatte jede Sektion ihr eigenes Raster, meist
+   ein riesiges Bild links neben einer duennen Textleiter. */
+
+body.home main > section + section{margin-top:clamp(var(--s7,32px), 4vw, var(--s9,64px))}
+body.home .desk{padding-top:0}
+
+body.home .desk-heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:var(--s5,20px);
+  margin-bottom:var(--s6,24px);
+  padding-bottom:var(--s3,12px);
+  border-bottom:1px solid var(--ma-line,#e3e3e1);
+}
+body.home .desk-heading .eyebrow{
+  display:block;
+  margin-bottom:var(--s1,4px);
+  color:var(--ma-muted,#77736d);
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+body.home .desk-heading h2{
+  margin:0;
+  font-family:Newsreader,Georgia,serif;
+  font-size:var(--t-headline-l,34px);
+  line-height:var(--lh-headline-l,1.15);
+  font-weight:640;
+  letter-spacing:-.02em;
+  color:var(--ma-ink,#171513);
+}
+body.home .desk-more{
+  flex:0 0 auto;
+  color:var(--ma-red,#971725);
+  font-size:13px;
+  font-weight:650;
+  text-decoration:none;
+  white-space:nowrap;
+}
+body.home .desk-more:hover{text-decoration:underline}
+
+body.home .desk-gross{display:grid;grid-template-columns:1fr;gap:var(--s7,32px)}
+body.home .desk-mittel{display:grid;grid-template-columns:1fr;gap:var(--s6,24px);margin-top:var(--s7,32px)}
+body.home .desk-zeilen{margin-top:var(--s6,24px)}
+
+@media (min-width:760px){
+  body.home .desk-gross{grid-template-columns:1fr 1fr}
+  body.home .desk-mittel{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:560px) and (max-width:759px){
+  body.home .desk-mittel{grid-template-columns:1fr 1fr}
+}
+
+body.home .desk-karte{margin:0;padding:0;border:0;background:transparent;min-width:0}
+body.home .desk-karte .karte-text{padding-top:var(--s3,12px)}
+body.home .desk-karte--gross .media{aspect-ratio:var(--bild-gross,16/9)}
+body.home .desk-karte--mittel .media{aspect-ratio:var(--bild-kompakt,3/2)}
+body.home .desk-karte .location-line{margin:0 0 2px}
+body.home .desk-karte .location-brand{
+  color:var(--ma-red,#971725);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+body.home .desk-karte .kicker{
+  display:inline-block;
+  margin-right:var(--s2,8px);
+  color:var(--ma-muted,#77736d);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+body.home .desk-karte h3{
+  margin:var(--s1,4px) 0 var(--s2,8px);
+  font-family:Newsreader,Georgia,serif;
+  font-weight:640;
+  letter-spacing:-.014em;
+}
+body.home .desk-karte--gross h3{font-size:var(--t-headline-m,26px);line-height:var(--lh-headline-m,1.2)}
+body.home .desk-karte--mittel h3{font-size:var(--t-headline-s,20px);line-height:var(--lh-headline-s,1.25)}
+body.home .desk-karte h3 a{color:var(--ma-ink,#171513);text-decoration:none}
+body.home .desk-karte .dek{
+  margin:0;
+  color:var(--ma-text,#4f4d49);
+  font-size:15px;
+  line-height:1.5;
+}
+body.home .desk-karte .meta{margin-top:var(--s2,8px);color:var(--ma-muted,#817b73);font-size:11px}
+
+html[data-theme="dark"] body.home .desk-karte h3 a{color:#f1f1f0}
+html[data-theme="dark"] body.home .desk-karte .dek{color:#bebebb}
+html[data-theme="dark"] body.home .desk-heading{border-color:#2f2f2e}
+
+/* --------------------------------------------------------- Sportzahlen */
+/* Vorher drei schwarze Kacheln (#17191b, weiße Schrift) - das las sich wie ein
+   generisches Dashboard, nicht wie eine Sportredaktion. Jetzt weißer Grund,
+   sehr große Serifenzahlen, dünne anthrazitfarbene Trennlinien. Bordeaux nur
+   als schmaler Akzent über der Reihe. */
+
+body.home .sc-stand{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin:0 0 var(--s3,12px);
+  padding-top:var(--s4,16px);
+  border-top:2px solid var(--ma-red,#971725);
+  background:var(--ma-paper,#fff);
+}
+body.home .sc-stand .sc-kachel{
+  padding:var(--s3,12px) var(--s4,16px);
+  background:transparent;
+  border-left:1px solid var(--ma-line,#e3e3e1);
+  border-radius:0;
+  text-align:left;
+}
+body.home .sc-stand .sc-kachel:first-child{border-left:0;padding-left:0}
+body.home .sc-stand .sc-wert{
+  display:block;
+  font-family:Newsreader,Georgia,serif;
+  font-size:clamp(34px,4.4vw,var(--t-display,58px));
+  line-height:1;
+  font-weight:620;
+  letter-spacing:-.02em;
+  color:var(--ma-ink,#171513);
+  font-variant-numeric:lining-nums tabular-nums;
+}
+body.home .sc-stand .sc-label{
+  display:block;
+  margin-top:var(--s2,8px);
+  color:var(--ma-muted,#77736d);
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+body.home .sc-stand-quelle{
+  margin:0 0 var(--s6,24px);
+  color:var(--ma-muted,#77736d);
+  font-size:12px;
+}
+
+@media (max-width:520px){
+  body.home .sc-stand .sc-kachel{padding-inline:var(--s2,8px)}
+  body.home .sc-stand .sc-label{font-size:10px;letter-spacing:.09em}
+}
+
+html[data-theme="dark"] body.home .sc-stand{background:transparent}
+html[data-theme="dark"] body.home .sc-stand .sc-kachel{border-color:#2f2f2e}
+html[data-theme="dark"] body.home .sc-stand .sc-wert{color:#f1f1f0}

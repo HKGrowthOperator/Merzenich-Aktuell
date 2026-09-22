@@ -194,6 +194,33 @@ Alle Ressortflächen folgen demselben Muster, nicht jede ein eigenes:
 
 Nicht mehr: ein riesiges Bild links und eine dünne Meldungsleiter rechts.
 
+Eine Reihe wird ganz gebaut oder gar nicht. Zwei große Karten heißt zwei, nicht eine; drei mittlere
+heißt drei. Reicht der Bestand nur für eine der beiden Reihen, baut die Sektion die, die aufgeht, und
+drei mittlere gehen vor zwei großen, weil drei Motive mehr Meldungen zeigen. Der Rest wird zur
+kompakten Zeile ohne Bildfläche, höchstens zwei je Sektion.
+
+### Welches Motiv auf welchen Platz
+
+Jede Bildfläche schneidet auf Querformat zu: die große Karte auf 16:9, die mittlere auf 3:2. Zwei
+Motivsorten überleben das nicht und bekommen deshalb keinen zuschneidenden Platz, sondern die kompakte
+Zeile:
+
+- **Plakate, Flyer, Veranstaltungsgrafiken und Werbebanner.** Sie tragen Schrift, und der Zuschnitt
+  schneidet Sätze mitten durch.
+- **Hochformat in der großen Karte.** Bei 16:9 bliebe von einem 768 × 1098 großen Motiv gut ein Drittel
+  der Höhe übrig. In der mittleren Karte bei 3:2 ist der Beschnitt normaler redaktioneller Zuschnitt;
+  dort bleibt Hochformat erlaubt.
+
+Unverändert gilt: kein Vereinslogo und kein Wappen füllt eine Bildfläche, und solange die Symbolbild-
+Pools Farbverläufe sind (`docs/SYMBOLBILDER-ANFORDERUNG.md`), zählen sie nicht als Motiv.
+
+### Mischung der Leitsektion
+
+"Nachrichten aus Merzenich" zieht aus allen Ressorts und ist die Mischung, nicht das stärkste Ressort.
+Höchstens drei Meldungen aus demselben Ressort. Die ressortgebundenen Sektionen bekommen ihre Meldungen
+zuerst zugeteilt, weil sie nur aus ihrem eigenen Ressort schöpfen können; die Leitsektion nimmt danach
+aus dem Rest. Geschrieben wird trotzdem in Seitenreihenfolge.
+
 ### Sektionsköpfe
 
 Einheitlich in zwei Zeilen: darüber die Kategorienzeile in Versalien, darunter der Titel.

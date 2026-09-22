@@ -125,13 +125,7 @@ body.home .agenda-row p{margin:0!important;color:#77716a!important;font-size:11p
 body.home .desk,body.home .section{padding-top:clamp(54px,6vw,86px)!important}
 body.home .desk-heading,body.home .section-head,body.home .block-head{position:relative!important;margin-bottom:24px!important;padding:0 0 0 16px!important;border:0!important;display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:20px!important}
 body.home .desk-heading::before,body.home .section-head::before,body.home .block-head::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;border-radius:2px;background:var(--ma-gold)}
-body.home .desk-heading h2,body.home .section-head h2,body.home .block-head h2{margin:0!important;font-family:Newsreader,Georgia,serif!important;font-size:clamp(27px,2.6vw,38px)!important;line-height:1!important;letter-spacing:-.03em!important}
-body.home .desk-card,body.home .mosaic-lead,body.home .mosaic-compact,body.home .people-major,body.home .people-minor,body.home .fire-major,body.home .fire-minor{border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important}
-body.home .news-mosaic,body.home .people-grid,body.home .fire-stories{gap:24px 30px!important}
-body.home .desk-card .media,body.home .mosaic-lead .media,body.home .mosaic-compact .media,body.home .people-major .media,body.home .people-minor .media,body.home .fire-major .media,body.home .fire-minor .media{border-radius:9px!important;overflow:hidden!important;background:#ececea!important}
-body.home .desk-card h3,body.home .mosaic-lead h3,body.home .mosaic-compact h3,body.home .people-major h3,body.home .people-minor h3,body.home .fire-major h3,body.home .fire-minor h3{font-family:Newsreader,Georgia,serif!important;letter-spacing:-.025em!important}
-body.home .text-story{padding:0!important;border:0!important}
-body.home .text-story::before{display:none!important}/* Article/Listen behalten Transparenz,.news-mosaic,.fire-stories,.cards-3,.club-grid,.events-grid{align-items:start}
+body.home .desk-heading h2,body.home .section-head h2,body.home .block-head h2{margin:0!important;font-family:Newsreader,Georgia,serif!important;font-size:clamp(27px,2.6vw,38px)!important;line-height:1!important;letter-spacing:-.03em!important}/* Article/Listen behalten Transparenz,.cards-3,.club-grid,.events-grid{align-items:start}
 .media img:not(.logo):not([alt*="Logo"]){width:100%;height:100%;object-fit:cover}
 .media.contain img,.brief-image .media.contain img,[alt*="Logo"]{object-fit:contain!important}
 .figure-badge,.media>.badge{font-size:.65rem;line-height:1.2;padding:4px 6px;letter-spacing:.02em}

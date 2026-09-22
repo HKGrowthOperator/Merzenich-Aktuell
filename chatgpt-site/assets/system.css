@@ -205,14 +205,6 @@
    den bestehenden Dateien; hier wird nur die Hoehe berechenbar. */
 html body .front-lead.front-lead .media{aspect-ratio:var(--bild-gross,16/9)!important}
 
-/* ---------- Standardkarte im Raster ---------- */
-html body .desk-card.desk-card .media{aspect-ratio:var(--bild-karte,16/9)}
-
-/* mosaic-compact ist trotz .desk-card eine kompakte Zeile: das Bild
-   sitzt in einer 120px-Spalte neben dem Text. 16/9 waere dort nur
-   67px hoch und wuerde neben zwei Textzeilen verschwinden. */
-html body .desk-card.mosaic-compact .media{aspect-ratio:var(--bild-kompakt,3/2)}
-
 /* ---------- Listenzeilen ---------- */
 html body .feed-row.feed-row .media{aspect-ratio:var(--bild-kompakt,3/2)}
 html body .feed-lead.feed-lead .media{aspect-ratio:var(--bild-gross,16/9)}
@@ -236,17 +228,6 @@ html body .ma-bild-kompakt .media,html body .ma--bild-kompakt .media,
 html body .ma-kompakt .media,html body .ma--kompakt .media{aspect-ratio:var(--bild-kompakt,3/2)}
 html body .ma-bild-person .media,html body .ma--bild-person .media{aspect-ratio:var(--bild-person,4/3)}
 html body .ma-bild-objekt .media,html body .ma--bild-objekt .media{aspect-ratio:var(--bild-objekt,4/3)}
-
-/* ---------- Gleiche Hoehe innerhalb einer Reihe ----------
-   Das Format allein genuegt nicht. Steht ein Raster auf
-   align-items:stretch (Voreinstellung), zieht die laengste Karte alle
-   anderen mit und die Bildflaechen beginnen nicht mehr auf derselben
-   Linie. start setzt jede Karte an die Oberkante ihrer Reihe; das Bild
-   liegt dann bei allen auf gleicher Hoehe und bekommt aus dem Format
-   dieselbe Hoehe. Das ist der einzige Eingriff in die Geometrie, den
-   Gewerk 4 ausserhalb der Bildbox macht. */
-html body .desk-cards,html body .sport-stories,
-html body .news-mosaic,html body .people-grid{align-items:start}
 html body .feed-lead.feed-lead{align-items:start}
 
 /* ---------- Headlines deckeln ----------
@@ -257,6 +238,6 @@ html body .feed-lead.feed-lead{align-items:start}
    line-clamp steht neben -webkit-line-clamp, weil die Eigenschaft
    inzwischen ohne Praefix standardisiert ist; die Praefixform bleibt
    fuer aeltere Browser. */
-html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .desk-card.desk-card h3,html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 
 html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-text:#d4d4d2;--ma-muted:#a6a6a2;--ma-line:#2f2f2e}

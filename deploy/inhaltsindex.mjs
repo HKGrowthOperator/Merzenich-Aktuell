@@ -231,6 +231,31 @@ index.bestand = {
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
 
+  // Jede Bildflaeche schneidet auf Querformat zu: die grosse Karte auf 16:9,
+  // die mittlere auf 3:2. Zwei Motivsorten ueberleben das nicht.
+  //
+  // Erstens Plakate und Veranstaltungsgrafiken. Sie tragen Schrift, und der
+  // Zuschnitt schneidet Saetze mitten durch. Gemessen am 22.09. stand das
+  // Ortsfest-Plakat ("Samstag, 3. Oktober 2026") in der Sektion Gemeinde mit
+  // abgeschnittener Zeile; dasselbe gilt fuer den 1440x372 breiten Banner zum
+  // Seniorennachmittag, bei dem 16:9 die Raender wegnimmt. Solche Motive
+  // bekommen keinen zuschneidenden Platz, sondern die kompakte Zeile.
+  //
+  // Zweitens hochkant aufgenommene Motive in der grossen Karte: bei 16:9
+  // bliebe von einem 768x1098-Motiv gut ein Drittel der Hoehe uebrig. In der
+  // mittleren Karte bei 3:2 ist der Beschnitt normaler redaktioneller
+  // Zuschnitt, dort bleibt Hochformat erlaubt.
+  const PLAKAT_RE = /veranstaltungsbild|plakat|flyer|banner/i;
+  const seitenverhaeltnis = (b) => (b && b.width && b.height ? b.width / b.height : 0);
+  const passtInPlatz = (a, groesse) => {
+    const b = a && a.bild;
+    if (!b) return false;
+    if (PLAKAT_RE.test(String(b.badge || ''))) return false;
+    if (groesse !== 'l') return true;
+    const v = seitenverhaeltnis(b);
+    return v === 0 || v >= 1.2;
+  };
+
   // Aufmacher: redaktionell gesetzt schlaegt automatisch - aber nur mit echtem
   // Bild. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
   // die Mitte der Startseite leer aussehen lassen.
@@ -247,15 +272,16 @@ index.bestand = {
         return gesetzt;
       }
     }
-    return artikel.find((a) => freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_XL)
-      || artikel.find((a) => freiOben(a) && echtesBild(a))
+    return artikel.find((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || artikel.find((a) => echtesBild(a) && passtInPlatz(a, 'l'))
+      || artikel.find((a) => echtesBild(a))
       || null;
   }
 
   const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${badgeHtml(a.bild)}</div></a>`;
 
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
-  function karte(a, groesse) {
+  function karte(a, groesse, tag) {
     if (groesse === 'xl') {
       return `<article class="front-lead" data-story="${esc(a.id)}">`
         + bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true)
@@ -266,36 +292,44 @@ index.bestand = {
         + `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`
         + `</div></article>`;
     }
-    if (groesse === 'm') {
-      return `<article class="front-neben-story" data-story="${esc(a.id)}">`
-        + bildFlaeche(a, '(max-width: 1100px) 46vw, 360px', false)
+    // In einer Sektion steht ein h2 als Sektionstitel, die Karten darunter
+    // muessen deshalb h3 tragen. Im Aufmacherblock gibt es keinen Sektionskopf.
+    const h = tag || 'h2';
+    const kopf = (a2) => `<${h}><a href="${esc(a2.url)}">${esc(a2.titel)}</a></${h}>`;
+    if (groesse === 'l') {
+      return `<article class="desk-karte desk-karte--gross" data-story="${esc(a.id)}">`
+        + bildFlaeche(a, '(max-width: 900px) 100vw, 600px', false)
         + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
-        + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
+        + kopf(a)
+        + `<p class="dek">${esc(a.teaser)}</p>`
+        + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
+        + `</div></article>`;
+    }
+    if (groesse === 'm') {
+      return `<article class="${tag ? 'desk-karte desk-karte--mittel' : 'front-neben-story'}" data-story="${esc(a.id)}">`
+        + bildFlaeche(a, '(max-width: 1100px) 46vw, 390px', false)
+        + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + kopf(a)
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
         + `</div></article>`;
     }
     return `<article class="front-zeile" data-story="${esc(a.id)}">`
       + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
-      + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
+      + kopf(a)
       + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
       + `</div></article>`;
   }
 
-  // Unterhalb der Markierung stehen noch die handgepflegten Ressortflaechen.
-  // Eine Meldung, die dort schon steht, darf nicht zusaetzlich oben erscheinen -
-  // sonst liest sich dieselbe Geschichte zweimal auf einem Bildschirm (Audit
-  // 19.09.: der Aufmacher stand zugleich als fire-major im Blaulicht-Block).
-  // Sobald die Sektionen erzeugt werden, waechst diese Menge einfach mit.
-  const nachMarker = html.slice(html.indexOf('<!-- start:oben:end -->') + 1);
-  const schonUnten = new Set([...nachMarker.matchAll(/data-story="([^"]+)"/g)].map((m) => m[1]));
-  const freiOben = (a) => !schonUnten.has(a.id);
-
+  // Eine Meldung steht hoechstens einmal auf der Seite. Solange die Sektionen
+  // handgepflegt waren, musste der Aufmacher ausweichen; jetzt greift die obere
+  // Flaeche zuerst und die Sektionen nehmen, was uebrig ist. Das haelt die
+  // Reihenfolge von oben nach unten aktuell.
   const aufmacher = aufmacherWaehlen();
   if (!aufmacher) { console.error('Startseite: kein Artikel mit echtem Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
   const vergeben = new Set(aufmacher ? [aufmacher.url] : []);
   // Zwei Nebenmeldungen, beide mit ordentlich grossem Bild. Keine vier
   // Miniteaser mehr am Rand.
-  const neben = artikel.filter((a) => !vergeben.has(a.url) && freiOben(a) && echtesBild(a) && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
+  const neben = artikel.filter((a) => !vergeben.has(a.url) && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
   for (const a of neben) vergeben.add(a.url);
 
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
@@ -307,6 +341,135 @@ index.bestand = {
   const MARKER_OBEN = /<!-- start:oben:start -->[\s\S]*?<!-- start:oben:end -->/;
   if (!MARKER_OBEN.test(html)) { console.error('Startseite: Marker start:oben fehlt in index.html.'); process.exitCode = 2; }
   else html = html.replace(MARKER_OBEN, () => oben);
+
+
+  // ----------------------------------------------------- Ressortflaechen
+  // Vorher war die Flaeche unter dem Aufmacher handgepflegtes Markup: kein
+  // Generator zog sie nach, die juengste Meldung dort war vom 04.09., sechs
+  // Karten standen ohne Bild, und eine Sektion zeigte ein riesiges Bild links
+  // neben einer duennen Textleiter. Jetzt erzeugt sie derselbe Index wie alles
+  // andere, im immer gleichen Muster: zwei grosse Meldungen nebeneinander,
+  // darunter drei mittlere (Designstandard 7b).
+  const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
+  const SEKTIONEN = [
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: () => true, jeRessort: 3, fenster: 44, zuletzt: true },
+    { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
+    { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
+    { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
+    { id: 'vereine', kat: 'Gemeinschaft · Kultur · Engagement', titel: 'Vereine & Menschen', mehr: '/vereine/', mehrText: 'Zu den Vereinen', nimm: (a) => a.ressort === 'vereine' || a.ressort === 'menschen' },
+  ];
+
+  function sektionHtml(s, gross, mittel, zeilen) {
+    const kopf = '<div class="desk-heading"><div>'
+      + `<span class="eyebrow">${esc(s.kat)}</span><h2>${esc(s.titel)}</h2>`
+      + `</div><a class="desk-more" href="${esc(s.mehr)}">${esc(s.mehrText)}</a></div>`;
+    const reiheGross = gross.length ? `<div class="desk-gross">${gross.map((a) => karte(a, 'l', 'h3')).join('')}</div>` : '';
+    const reiheMittel = mittel.length ? `<div class="desk-mittel">${mittel.map((a) => karte(a, 'm', 'h3')).join('')}</div>` : '';
+    const reiheZeilen = zeilen.length ? `<div class="desk-zeilen">${zeilen.map((a) => karte(a, 's', 'h3')).join('')}</div>` : '';
+    return `<section class="desk shell" data-sektion="${esc(s.id)}">${kopf}${reiheGross}${reiheMittel}${reiheZeilen}</section>`;
+  }
+
+  // Vergeben und rendern sind zwei Durchgaenge. Gerendert wird in
+  // Seitenreihenfolge, vergeben aber zuerst an die ressortgebundenen
+  // Sektionen: sie koennen nur aus ihrem eigenen Ressort schoepfen, waehrend
+  // "Nachrichten aus Merzenich" aus allen greift. Lief die Leitsektion zuerst,
+  // nahm sie am 22.09. die letzten drei Rathausmotive mit, und "Politik &
+  // Gemeinde" blieb mit zwei Textzeilen stehen.
+  const vergabeReihe = [...SEKTIONEN].sort((a, b) => (a.zuletzt ? 1 : 0) - (b.zuletzt ? 1 : 0));
+  const belegung = new Map();
+  for (const s of vergabeReihe) {
+    // Erst die juengsten Meldungen der Sektion auswaehlen, dann innerhalb dieser
+    // Auswahl die Plaetze nach Bildgroesse verteilen. Andersherum bestimmt das
+    // Bild die Reihenfolge: gemessen am 22.09. stand eine Meldung vom 13.08.
+    // oben und die vom 14.09. als Zeile darunter, weil nur die aeltere ein
+    // grosses Motiv hatte. Die Auswahl bleibt dadurch auf sieben Meldungen
+    // begrenzt, der Abstand zwischen erster und letzter Karte klein.
+    // Zwoelf statt sieben, weil sonst eine Sektion leer bliebe, sobald die
+    // juengsten Meldungen nur Verlaufs-Platzhalter tragen: gemessen am 22.09.
+    // fiel "Nachrichten aus Merzenich" dadurch auf zwei Zeilen ohne Bild
+    // zusammen. Die Zeilen unten nehmen trotzdem die juengsten Meldungen.
+    // Das Fenster begrenzt, wie weit eine Sektion zurueckgreift. Zwanzig reicht
+    // einem Ressort. "Nachrichten aus Merzenich" braucht mehr: unter den
+    // juengsten zwanzig Meldungen stehen zehn Blaulicht-Meldungen, fuenf
+    // Sport-Meldungen mit Verlaufs-Platzhalter und fuenf weitere ohne
+    // brauchbares Motiv (gemessen 22.09.). Mit Ressortgrenze und kleinem
+    // Fenster fiele die Leitsektion auf zwei Karten zusammen.
+    const frei = artikel.filter((a) => !vergeben.has(a.url) && s.nimm(a)).slice(0, s.fenster || 20);
+
+    // "Nachrichten aus Merzenich" zieht aus allen Ressorts.
+    // Ohne Obergrenze nahm sie am 22.09. sechs von sieben Karten aus dem
+    // Blaulicht - direkt ueber der Sektion Blaulicht. Die Leitsektion ist aber
+    // die Mischung, nicht das staerkste Ressort. Drei ist die gemessene Grenze:
+    // bei zwei reicht es nicht mehr fuer die grosse Reihe, bei vier kippt die
+    // Sektion wieder ins Blaulicht. Die Grenze zaehlt erst beim
+    // Belegen eines Platzes, nicht beim Vorsortieren: sonst verbraucht sie sich
+    // an den juengsten Meldungen, und die tragen derzeit Verlaufs-Platzhalter.
+    const jeRessort = new Map();
+    const passtInsRessort = (a) => !s.jeRessort || (jeRessort.get(a.ressort) || 0) < s.jeRessort;
+    const belege = (liste) => { for (const a of liste) { jeRessort.set(a.ressort, (jeRessort.get(a.ressort) || 0) + 1); vergeben.add(a.url); } };
+    // Waehlt der Reihe nach so viele aus, wie die Reihe braucht, und haelt dabei
+    // die Ressortgrenze ein - ohne sie zu belegen, denn die Reihe wird nur
+    // gebaut, wenn sie voll wird.
+    const waehle = (pool, anzahl, schon) => {
+      const gezaehlt = new Map(jeRessort);
+      for (const a of schon) gezaehlt.set(a.ressort, (gezaehlt.get(a.ressort) || 0) + 1);
+      const raus = [];
+      for (const a of pool) {
+        if (raus.length >= anzahl) break;
+        if (schon.includes(a)) continue;
+        if (s.jeRessort && (gezaehlt.get(a.ressort) || 0) >= s.jeRessort) continue;
+        gezaehlt.set(a.ressort, (gezaehlt.get(a.ressort) || 0) + 1);
+        raus.push(a);
+      }
+      return raus;
+    };
+
+    // Nur vollstaendige Reihen. Gemessen am 22.09.: "Nachrichten aus Merzenich"
+    // hatte eine grosse Reihe mit einer Karte, "Politik & Gemeinde" eine
+    // mittlere Reihe mit einer von drei - in beiden Faellen stand der Rest der
+    // Reihe leer. Tote Flaeche ist genau das, was die Startseite nicht mehr
+    // haben soll. Also: entweder die Reihe ist voll, oder sie wird nicht
+    // gebaut. Reicht es nicht fuer beide, baut die Sektion die Reihe, die
+    // aufgeht - drei mittlere schlagen zwei grosse, weil drei Motive mehr
+    // Meldungen zeigen als zwei.
+    const lFaehig = frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_L);
+    const mFaehig = frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M);
+    let gross = waehle(lFaehig, 2, []);
+    let mittel = gross.length === 2 ? waehle(mFaehig, 3, gross) : [];
+    if (gross.length !== 2 || mittel.length !== 3) {
+      const nurMittel = waehle(mFaehig, 3, []);
+      if (nurMittel.length === 3) { gross = []; mittel = nurMittel; }
+      else if (gross.length === 2) { mittel = []; }
+      else { gross = []; mittel = []; }
+    }
+    belege(gross);
+    belege(mittel);
+    // Meldungen ohne verwendbares Motiv bekommen keine leere Bildflaeche,
+    // sondern eine kompakte Zeile. Hoechstens zwei, sonst waechst die Sektion
+    // zu einer Liste aus, die niemand zu Ende liest.
+    const zeilen = frei.filter((a) => !vergeben.has(a.url)).slice(0, 2);
+    for (const a of zeilen) vergeben.add(a.url);
+
+    belegung.set(s.id, { gross, mittel, zeilen });
+  }
+
+  // Zweiter Durchgang: schreiben in Seitenreihenfolge.
+  let sektionenGeschrieben = 0;
+  for (const s of SEKTIONEN) {
+    const MARKER = new RegExp(`<!-- start:${s.id}:start -->[\\s\\S]*?<!-- start:${s.id}:end -->`);
+    if (!MARKER.test(html)) { console.error(`Startseite: Marker start:${s.id} fehlt in index.html.`); process.exitCode = 2; continue; }
+    const { gross, mittel, zeilen } = belegung.get(s.id) || { gross: [], mittel: [], zeilen: [] };
+    if (!(gross.length + mittel.length + zeilen.length)) {
+      // Keine Meldung, keine Flaeche. Der Leerzustand ist das Weglassen.
+      html = html.replace(MARKER, () => `<!-- start:${s.id}:start --><!-- start:${s.id}:end -->`);
+      console.log(`Sektion ${s.id}: keine Meldung uebrig, Sektion entfaellt.`);
+      continue;
+    }
+    html = html.replace(MARKER, () => `<!-- start:${s.id}:start -->${sektionHtml(s, gross, mittel, zeilen)}<!-- start:${s.id}:end -->`);
+    sektionenGeschrieben++;
+    console.log(`Sektion ${s.id}: ${gross.length} gross, ${mittel.length} mittel, ${zeilen.length} Zeile(n).`);
+  }
+  console.log(`Startseite: ${sektionenGeschrieben} von ${SEKTIONEN.length} Sektionen gefuellt, ${vergeben.size} Meldungen vergeben.`);
 
   // Der Aufmacher steht im Index. Die Sichtpruefung in der CI vergleicht die
   // ausgelieferte Seite dagegen, nicht gegen editorial-current.json - sonst
