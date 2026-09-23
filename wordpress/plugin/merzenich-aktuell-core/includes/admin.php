@@ -19,6 +19,13 @@ function ma_dashboard(): void {
     $old = $hero ? (time() - get_post_time('U', true, $hero)) > 7 * DAY_IN_SECONDS : false;
     $events = ma_upcoming_events(6);
     $weather = ma_get_weather();
+    $pending_comments = (int)get_comments(['status'=>'hold','count'=>true]);
+    $partner_q = new WP_Query([
+        'post_type'=>['post','ma_property','ma_business','ma_ad'],
+        'post_status'=>'pending','posts_per_page'=>1,'fields'=>'ids',
+        'meta_query'=>[['key'=>'_ma_partner_submission','value'=>'1']],
+    ]);
+    $pending_partner = (int)$partner_q->found_posts;
 
     echo '<div class="wrap"><h1>Merzenich Aktuell – Aktualitätscheck</h1><table class="widefat striped"><tbody>';
     echo '<tr><th>Letzter News-Check</th><td>'.esc_html((string)get_option('ma_last_news_check','nicht dokumentiert')).'</td></tr>';
@@ -28,6 +35,8 @@ function ma_dashboard(): void {
     echo '<tr><th>Wetter</th><td>'.($weather?'OK · '.esc_html($weather['updated_at']??''):'Kein valider Datenstand – Frontend blendet Modul aus').'</td></tr>';
     echo '<tr><th>Beiträge ohne Bild</th><td>'.esc_html((string)ma_count_posts_without_thumbnail()).'</td></tr>';
     echo '<tr><th>Unreviewed Drafts</th><td>'.esc_html((string)ma_count_unreviewed()).'</td></tr>';
+    echo '<tr><th>Partner-Einreichungen</th><td><strong>'.esc_html((string)$pending_partner).'</strong> · <a href="'.esc_url(admin_url('users.php?page=ma-partner-zugaenge')).'">prüfen</a></td></tr>';
+    echo '<tr><th>Kommentare zur Freigabe</th><td><strong>'.esc_html((string)$pending_comments).'</strong> · <a href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Sammelfreigabe</a></td></tr>';
     echo '</tbody></table></div>';
 }
 
