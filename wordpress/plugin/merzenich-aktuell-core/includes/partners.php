@@ -38,7 +38,7 @@ function ma_partner_policies(): array {
         'ma_wirtschaft_partner' => [
             'label' => 'Unternehmens-Partner',
             'description' => 'Unternehmen / Sponsor / Werbekunde',
-            'post_types' => ['post','ma_business','ma_ad'],
+            'post_types' => ['post','ma_business','ma_tip','ma_ad'],
             'categories' => ['wirtschaft'],
         ],
         'ma_immobilien_partner' => [
@@ -104,7 +104,7 @@ function ma_register_partner_hooks(): void {
     add_action('pre_get_posts', 'ma_partner_admin_own_content');
     add_action('admin_notices', 'ma_partner_admin_notice');
 
-    foreach (['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_ad'] as $type) {
+    foreach (['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_tip','ma_ad'] as $type) {
         add_filter('rest_pre_insert_'.$type, 'ma_partner_rest_guard', 10, 2);
     }
 }
@@ -206,7 +206,7 @@ function ma_partner_admin_menu(): void {
     }
 
     $allowed = $policy['post_types'];
-    $all = ['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_ad'];
+    $all = ['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_tip','ma_ad'];
     foreach ($all as $type) {
         if (in_array($type, $allowed, true)) continue;
         remove_menu_page($type === 'post' ? 'edit.php' : 'edit.php?post_type='.$type);
@@ -321,7 +321,7 @@ function ma_partner_admin_page(): void {
     echo '<h2>Offene Partner-Einreichungen</h2>';
     if($partner_users){
         $pending_q=new WP_Query([
-            'post_type'=>['post','ma_property','ma_business','ma_ad'],
+            'post_type'=>['post','ma_property','ma_business','ma_tip','ma_ad'],
             'post_status'=>'pending','author__in'=>array_map('intval',$partner_users),
             'posts_per_page'=>50,'orderby'=>'date','order'=>'ASC'
         ]);
