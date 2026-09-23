@@ -21,7 +21,7 @@ function ma_dashboard(): void {
     $weather = ma_get_weather();
     $pending_comments = (int)get_comments(['status'=>'hold','count'=>true]);
     $partner_q = new WP_Query([
-        'post_type'=>['post','ma_property','ma_business','ma_ad'],
+        'post_type'=>['post','ma_property','ma_business','ma_tip','ma_ad'],
         'post_status'=>'pending','posts_per_page'=>1,'fields'=>'ids',
         'meta_query'=>[['key'=>'_ma_partner_submission','value'=>'1']],
     ]);
