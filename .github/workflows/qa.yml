@@ -42,6 +42,9 @@ jobs:
           node --check app-fixes.js
           node --check chatgpt-site/assets/app.js
           node --check chatgpt-site/assets/v20.js
+          node --check site-source/src/templates/pages.mjs
+          node --check site-source/src/templates/layout.mjs
+          node --check site-source/src/templates/components.mjs
 
       - name: Validate JSON content
         run: |
@@ -158,6 +161,9 @@ jobs:
           curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
           curl --fail 'http://127.0.0.1:4173/api/kommentare/liste?thema=/sport/sc-merzenich-oberzier-3-2/' | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"] and isinstance(d["kommentare"], list)'
           curl --fail http://127.0.0.1:4173/diskussion/ | grep -q 'id="diskussion-app"'
+          curl --fail http://127.0.0.1:4173/tipp/ | grep -q 'Tipp · Sponsoring'
+          curl --fail http://127.0.0.1:4173/ | grep -q 'href="/tipp/"'
+          if curl --fail --silent http://127.0.0.1:4173/ | grep -q '<h2>Sport vor Ort</h2>'; then echo 'Sportblock ist wieder auf der Startseite' && exit 1; fi
           curl --fail http://127.0.0.1:4173/ | grep -q 'data-werbung='
           # Tagesdatum per nginx-SSI in Ortszeit, interne Bereiche gesperrt, Ort-Themen umgeleitet
           curl --fail --silent http://127.0.0.1:4173/ | grep -q "data-today[^>]*>$(TZ=Europe/Berlin date +%d.%m.)<" || (echo 'SSI-Datum fehlt' && exit 1)
