@@ -53,6 +53,11 @@ function ma_field(string $label,string $name,string $type='text',string $descrip
 }
 
 function ma_check(string $label,string $name): void {
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    if ($partner && in_array($name, ['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed','ma_top_pinned'], true)) {
+        echo '<p><strong>'.esc_html($label).':</strong> <span class="description">wird von der Redaktion geprüft</span></p>';
+        return;
+    }
     $v=(string)get_post_meta(get_the_ID(),$name,true);
     echo '<p><label><input type="checkbox" name="'.esc_attr($name).'" value="1" '.checked($v,'1',false).'> '.esc_html($label).'</label></p>';
 }
@@ -121,12 +126,17 @@ function ma_save_editorial_meta(int $post_id): void {
     foreach($url as $k){$v=isset($_POST[$k])?esc_url_raw(wp_unslash($_POST[$k])):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($datetime as $k){$v=isset($_POST[$k])?ma_editorial_datetime_value($_POST[$k]):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($number as $k){$v=isset($_POST[$k])?max(0,min(100,(int)$_POST[$k])):0;update_post_meta($post_id,$k,(string)$v);}
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     foreach($checks as $k) {
         // Nur Felder anfassen, die das abgeschickte Formular auch kennt. Die
         // Service-Metabox zeigt allein die Bildrechte; wuerde man hier pauschal
         // auf '0' setzen, loeschte das Speichern einer Immobilie die
         // redaktionellen Freigaben eines Beitrags-Workflows mit.
         if ($typ !== 'post' && $k !== 'ma_image_rights_verified') continue;
+        if ($partner && in_array($k, ['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed','ma_top_pinned'], true)) {
+            delete_post_meta($post_id,$k);
+            continue;
+        }
         update_post_meta($post_id,$k,isset($_POST[$k])?'1':'0');
     }
 }
