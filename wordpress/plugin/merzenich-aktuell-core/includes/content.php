@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 function ma_register_content_types(): void {
-    register_taxonomy('ma_location', ['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business'], [
+    register_taxonomy('ma_location', ['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_tip'], [
         'labels' => ['name'=>'Orte','singular_name'=>'Ort'],
         'public'=>true,
         'hierarchical'=>true,
@@ -18,6 +18,7 @@ function ma_register_content_types(): void {
         'ma_family_notice' => ['Familienanzeigen','Familienanzeige','familienanzeigen','dashicons-groups'],
         'ma_club' => ['Vereine','Verein','vereine','dashicons-groups'],
         'ma_business' => ['Betriebe','Betrieb','betriebe','dashicons-store'],
+        'ma_tip' => ['Tipps','Tipp','tipp','dashicons-star-filled'],
         'ma_ad' => ['Werbung','Werbemittel','werbung','dashicons-megaphone'],
     ];
 
@@ -89,7 +90,7 @@ function ma_upcoming_events(int $limit=6): array {
 }
 
 function ma_active_market_items(string $type, int $limit=3): array {
-    $allowed=['ma_property','ma_job','ma_obituary','ma_family_notice'];
+    $allowed=['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'];
     if (!in_array($type,$allowed,true)) return [];
 
     $now=current_time('Y-m-d H:i:s');
@@ -119,7 +120,7 @@ function ma_filter_public_service_archives(WP_Query $query): void {
     $post_type=$query->get('post_type');
     if (is_array($post_type)) return;
 
-    if (in_array($post_type,['ma_property','ma_job','ma_obituary','ma_family_notice'],true) || $query->is_post_type_archive(['ma_property','ma_job','ma_obituary','ma_family_notice'])) {
+    if (in_array($post_type,['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'],true) || $query->is_post_type_archive(['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'])) {
         $now=current_time('Y-m-d H:i:s');
         $query->set('meta_query',[
             'relation'=>'AND',
