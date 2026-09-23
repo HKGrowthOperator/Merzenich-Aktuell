@@ -26,13 +26,9 @@ Bestehende gute Komponenten schützen. Änderungen klein, nachvollziehbar und ge
 
 ## Darstellung — verbindlich
 
-- Standardansicht ist **Hell**.
-- Es gibt genau zwei manuell wählbare Modi: **Hell** und **Dunkel**.
-- Die Umschaltung ist oben über **Darstellung / Einstellungen** erreichbar; im Einstellungs-Panel steht sie an erster Stelle.
-- Auswahl wird lokal auf dem Gerät gespeichert.
-- Hellmodus: weißer Header und helle redaktionelle Seite.
-- Dunkelmodus: schwarzer Header, dunkle Seite und schwarzer Footer mit entsprechend angepassten Kontrasten.
-- Kein automatischer Systemmodus als Standard. Nutzerentscheidung hat Vorrang.
+- Es gibt ab 23.09.2026 **nur noch den Hellmodus**.
+- Dunkelmodus, Theme-Toggle, Theme-Einstellungen und gespeicherte Dunkelmodus-Zustände werden vollständig entfernt bzw. ignoriert.
+- Kein Werbefrei-Abo und keine „Werbefrei lesen“-Navigation auf der Website.
 
 ## Header — verbindlich
 
@@ -50,26 +46,32 @@ Bestehende gute Komponenten schützen. Änderungen klein, nachvollziehbar und ge
 
 ## Homepage
 
+Verbindlicher Stand aus dem KBS/Ordin-Feedback vom 23.09.2026:
+
+- Sport erscheint **nicht mehr als Inhaltsblock auf der Startseite**. Sport bleibt als eigener Menüpunkt und eigene Unterseite bestehen.
+- Der erste Bildschirm muss deutlich dichter, bildstärker und moderner sein. Ziel ist ein eigener Blue-Ocean-Charakter statt einer normalen Lokalzeitungs-Startseite.
+- Oben steht eine große Highlight-News. Darum/rechts/unten stehen **fünf kleinere Highlight-News mit sichtbaren, größeren Bildflächen**.
+- Jede redaktionelle Karte, bei der ein verifiziertes Bild oder ein freigegebenes Symbolbild verfügbar ist, zeigt ein Bild. Bildlose Textflächen dürfen nicht das Gesamtbild dominieren.
+- Weißraum reduzieren: kompaktere vertikale Abstände, mehr redaktioneller Inhalt oberhalb der Falz, weiterhin klare Typografie.
+- Zwischen den redaktionellen Kategorien sind horizontale Werbebanner-/Sponsorflächen vorgesehen. Kampagnen dürfen sich wiederholen; verschiedene Motive/Kunden sind möglich. Redaktion und Werbung bleiben sichtbar getrennt und als Anzeige/Sponsoring gekennzeichnet.
+- Neue Rubrik **Foto des Tages**; täglich wechselnd, mit Bildcredit und redaktioneller Freigabe.
+- Neue bezahlbare Rubrik **Tipp** für Vereine, Unternehmen und Sponsoren. Bezahlte Platzierungen werden eindeutig als Anzeige/Sponsored gekennzeichnet.
+- WhatsApp-Kanal und Instagram werden als Social-Kanäle vorgesehen.
+- Die Startseite darf keine Sport-Ergebnisse, Sporttabellen oder Sport-Aufmacher als eigene Sektion enthalten.
+
 Desktop-Ziel:
-
-- links 250–270px Service
-- Mitte flexibel und dominant
-- rechts 260–300px Werbung / Zusatzmodule
-- Gap 24–32px
-
-Tablet:
-
-- rechte Spalte unter Content verschieben
+- links Service
+- Mitte redaktionell dominant
+- rechte Zusatz-/Werbeflächen nur dann, wenn sie belegt sind
+- keine tote leere Spalte
 
 Mobile-Reihenfolge:
-
 1. Header
-2. Top News
+2. Highlight-Bühne
 3. weitere wichtige News
-4. Veranstaltungen
-5. Service
-6. Werbung
-7. weitere Ressorts
+4. Veranstaltungen/Service
+5. Werbe-/Tippflächen
+6. weitere Ressorts
 
 ## Service
 
@@ -180,11 +182,50 @@ Sportdaten immer als eine Einheit aktualisieren:
 
 ## Kommentare
 
-Die Frontend-Preview rendert den Kommentarbereich. Persistente Kommentare gehören in die produktive Hosting-/WordPress-Schicht. Solange kein echter Backend-Endpunkt verbunden und getestet ist, **nicht als funktional PASS kennzeichnen**.
+Produktiv in WordPress:
+- **Jeder neue Kommentar ist zunächst „wartet auf Freigabe“** und wird niemals automatisch veröffentlicht.
+- Redaktion/Admin sieht eine Moderationsliste mit Mehrfachauswahl.
+- Workflow: unerwünschte Kommentare abwählen/ablehnen, anschließend **„Alle ausgewählten genehmigen“** bzw. „Alle genehmigen“ für den verbleibenden Satz.
+- Einzelgenehmigung und Einzelablehnung bleiben möglich.
+- Nach Genehmigung erhält der Verfasser eine E-Mail an die beim Kommentar angegebene Adresse, sofern eine E-Mail angegeben wurde.
+- Die E-Mail-Adresse wird niemals öffentlich angezeigt.
+- Spam-/Melde-/Rate-Limit-Schutz bleibt erhalten.
+- Die statische Preview darf diesen produktiven Workflow nicht als funktionsfähig behaupten, solange kein WordPress-Backend angeschlossen ist.
 
 ## Werbung
 
-Frontend darf nur aktive Slots rendern. Inaktive Slots erzeugen keinen Leerraum. Produktiv müssen globaler Schalter, Slot-Schalter, Laufzeit, Bild/Ziel und Kennzeichnung administrierbar sein.
+- Startseite: Werbebanner zwischen redaktionellen Kategorien als klar getrennte, gekennzeichnete Slots.
+- Kampagnen können auf mehreren Slots wiederholt werden.
+- Werbekunden sollen im WordPress-Zielsystem begrenzte eigene Zugänge erhalten können; Veröffentlichung/Änderung bleibt redaktionell freigabepflichtig.
+- Wirtschaft kann zusätzlich Unternehmens-/Partnerprofile aufnehmen.
+- Inaktive Slots erzeugen keinen unnötigen Leerraum.
+- Kein Werbefrei-Abo.
+
+## WordPress Rollen & Freigabe
+
+Für den späteren WordPress-Go-live ist ein Contributor-/Approval-Modell verbindlich:
+
+- **Polizei/Feuerwehr → Blaulicht**
+- **Sportverein(e) → Sport**
+- **Gemeinde/Rathaus → Rathaus & Politik**
+- **Vereine → Vereinsnews**
+- **Unternehmen/Partner → Wirtschaft und freigegebene Werbeflächen**
+- **Immobilien-Verantwortliche → Immobilienanzeigen**
+
+Externe Nutzer dürfen nur ihre zugewiesenen Inhaltsarten/Kategorien sehen und bearbeiten. Sie dürfen Entwürfe einreichen, aber **nicht selbst veröffentlichen**. Jede Einreichung geht als Freigabeanfrage an Redaktion/Admin. Redaktion genehmigt, bearbeitet oder lehnt ab. Rechte werden nach dem Least-Privilege-Prinzip vergeben.
+
+## Navigation
+
+- Desktop-Ressorts bleiben sichtbar.
+- Sport erhält eine größere ausfahrende Untermenü-/Megamenü-Fläche nach dem Vorbild großer Lokalportale, ohne das Layout von Oberberg Aktuell zu kopieren.
+- Untermenüs können Vereinskanäle, Tabellen/Spielplan, Sportmeldungen und relevante Unterrubriken zeigen.
+
+## Anzeigen-/Marktführung
+
+- Immobilien: „Anzeige aufgeben“ muss prominent und früh sichtbar sein.
+- Beim Erstellen einer Anzeige wird zuerst visuell gewählt, **was** aufgegeben werden soll; Auswahlkarten enthalten ein passendes Bild/Icon und kurze Erklärung.
+- Immobilien, Trauer, Familienanzeigen und Werbung verwenden eine geführte Schrittfolge statt unübersichtlicher Unterpunkte.
+- Ziel: Nutzer verstehen ohne Erklärung, welchen Weg sie für ihren Inhalt wählen.
 
 ## Typografie / Gestaltung
 
