@@ -49,6 +49,12 @@ function ma_admin_select(string $name, string $label, string $value, array $opti
 }
 
 function ma_admin_checkbox(string $name, string $label, bool $checked, string $description='', string $check_text='Aktiv'): void {
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    if ($partner && in_array($name, ['ma_release_confirmed','ma_ad_active'], true)) {
+        echo '<tr><th scope="row">'.esc_html($label).'</th><td><strong>Freigabe durch Redaktion</strong>';
+        echo '<p class="description">Dieser Partner-Zugang kann die Veröffentlichung nicht selbst freigeben.</p></td></tr>';
+        return;
+    }
     echo '<tr><th scope="row">'.esc_html($label).'</th><td><label><input type="checkbox" name="'.esc_attr($name).'" value="1" '.checked($checked,true,false).'> '.esc_html($check_text).'</label>';
     if ($description!=='') echo '<p class="description">'.esc_html($description).'</p>';
     echo '</td></tr>';
@@ -206,7 +212,12 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
     if (!current_user_can('edit_post',$post_id)) return;
     if (!isset($_POST['ma_content_admin_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_content_admin_nonce'])),'ma_save_content_admin')) return;
 
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     foreach ($schema as $key=>$type) {
+        if ($partner && in_array($key, ['ma_release_confirmed','ma_ad_active'], true)) {
+            delete_post_meta($post_id,$key);
+            continue;
+        }
         $raw = $type==='bool' ? isset($_POST[$key]) : ($_POST[$key] ?? '');
         $value = ma_sanitize_content_admin_value($type,$raw);
         if ($value==='') delete_post_meta($post_id,$key);
