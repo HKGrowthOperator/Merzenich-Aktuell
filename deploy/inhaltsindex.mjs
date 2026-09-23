@@ -225,18 +225,18 @@ index.bestand = {
   };
   // Ein Vereinslogo oder Wappen fuellt nie eine Bildflaeche (Designstandard 7b).
   // Solche Artikel bekommen keinen Bildplatz, bis ein Symbolbild vorliegt.
-  // Die Symbolbild-Pools unter assets/symbolbilder tragen derzeit Farbverlaeufe
-  // mit aufgedrucktem Wort: 20 Dateien je Pool teilen sich drei Strukturen, der
-  // Sport-Pool laeuft auf Gold, Gemeinde und Wirtschaft auf Beige (gemessen
-  // 19.09.). Als Aufmacher oder Nebenmeldung taugt das nicht, sonst steht ein
-  // goldenes Rechteck an der wichtigsten Stelle der Seite. Die Zeile entfaellt,
-  // sobald der Pool unterscheidbare Motive enthaelt (docs/SYMBOLBILDER-ANFORDERUNG.md).
-  const VERLAUFSPOOL = /\/assets\/symbolbilder\//;
+  //
+  // Die Symbolbilder aus assets/symbolbilder waren hier bis zum 23.09.
+  // gesperrt, weil sie Farbverlaeufe mit aufgedrucktem Wort sind. Der
+  // Ausschluss ist auf Ansage raus: keine Meldung bleibt ohne Bild, auch nicht
+  // auf dem wichtigsten Platz. Mit der Sperre stand der Aufmacher auf dem
+  // 17.08., weil alle juengeren Meldungen Symbolbilder tragen. Wie gut die
+  // Pools aussehen, entscheidet sich in den Pools selbst
+  // (docs/SYMBOLBILDER-ANFORDERUNG.md), nicht hier.
   const echtesBild = (a) => {
     const b = a && a.bild;
     if (!b || !b.src) return false;
     if (b.fit === 'contain') return false;
-    if (VERLAUFSPOOL.test(b.src)) return false;
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
 
