@@ -99,6 +99,7 @@ function ma_register_partner_hooks(): void {
     add_filter('wp_insert_post_data', 'ma_partner_force_pending', 5, 2);
     add_action('save_post', 'ma_partner_enforce_assignment', 100, 3);
     add_action('admin_menu', 'ma_partner_admin_menu', 100);
+    add_action('admin_init', 'ma_partner_admin_route_guard', 5);
     add_action('pre_get_posts', 'ma_partner_admin_own_content');
     add_action('admin_notices', 'ma_partner_admin_notice');
 
@@ -193,6 +194,20 @@ function ma_partner_admin_menu(): void {
     remove_menu_page('edit-comments.php');
     remove_menu_page('tools.php');
 }
+
+function ma_partner_admin_route_guard(): void {
+    $policy = ma_current_partner_policy();
+    if (!$policy) return;
+
+    global $pagenow;
+    if (!in_array($pagenow, ['edit.php','post-new.php'], true)) return;
+
+    $type = isset($_GET['post_type']) ? sanitize_key(wp_unslash($_GET['post_type'])) : 'post';
+    if (!in_array($type, $policy['post_types'], true)) {
+        wp_die('Dieser Partner-Zugang darf diesen Inhaltstyp nicht bearbeiten.', 'Keine Berechtigung', ['response'=>403]);
+    }
+}
+
 
 function ma_partner_admin_notice(): void {
     $policy = ma_current_partner_policy();
