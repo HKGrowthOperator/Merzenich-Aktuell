@@ -51,6 +51,13 @@ pruefe('Sport-Partner erkannt',$p['role']??'','ma_sport_partner');
 pruefe('Sport-Partner darf nur post', $p['post_types'], ['post']);
 pruefe('Sport-Kategorie festgelegt', $p['categories'], ['sport']);
 
+$GLOBALS['user']=new WP_User(8,['ma_wirtschaft_partner']);
+$p=ma_current_partner_policy();
+pruefe('Unternehmens-Partner erkannt',$p['role']??'','ma_wirtschaft_partner');
+pruefe('Unternehmens-Partner darf Tipp einreichen',in_array('ma_tip',$p['post_types']??[],true),true);
+pruefe('Unternehmens-Partner darf Werbemittel einreichen',in_array('ma_ad',$p['post_types']??[],true),true);
+
+$GLOBALS['user']=new WP_User(7,['ma_sport_partner']);
 echo "\nStatus-Gate\n";
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],[]);
 pruefe('Partner-Publish wird pending',$d['post_status'],'pending');
