@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * Bindet Fundament-Tokens (system.css, vor allen Projektdateien),
- * Darstellung (theme.css/theme.js), einklappenden Kopf (kopf.js) und
- * Kommentare (kommentare.js) in alle Seiten von chatgpt-site/ ein, die
+ * den reinen Hellmodus, einklappenden Kopf (kopf.js) und Kommentare
+ * (kommentare.js) in alle Seiten von chatgpt-site/ ein, die
  * korrekturen.css laden, und setzt den Link zur Diskussion ins Mehr-Menue.
  * Idempotent: was schon drin ist, wird nicht doppelt eingefuegt.
  * Aufruf: node deploy/kopf-theme-einbinden.mjs [--check]
@@ -50,16 +50,15 @@ const CSS_ANKER = /<link rel="stylesheet" href="\/assets\/korrekturen\.css[^"]*"
 // die erste Projektdatei - und damit der verlaessliche Anker zum Davorhaengen.
 const SYSTEM_ANKER = /<link rel="stylesheet" href="\/assets\/style\.css[^"]*">/;
 const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
-const INLINE = '<script>try{document.documentElement.dataset.theme=localStorage.getItem("merzenich-theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>';
+const INLINE = '<script>document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";try{localStorage.removeItem("merzenich-theme")}catch(e){}</script>';
 const SYSTEM = `<link rel="stylesheet" href="/assets/system.css?${V}">`;
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
 // startseite.css besitzt die obere Flaeche der Startseite und laedt blockierend
 // nach theme.css. Sie gilt nur dort, wo body.home steht - also auf index.html.
 const STARTSEITE = `<link rel="stylesheet" href="/assets/startseite.css?${V}">`;
-const JS = `<script src="/assets/kopf.js?${V}" defer></script><script src="/assets/theme.js?${V}" defer></script>`;
+const JS = `<script src="/assets/kopf.js?${V}" defer></script>`;
 const KOMMENTARE = `<script src="/assets/kommentare.js?${V}" defer></script>`;
-const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script><script src="/assets/werbefrei.js?${V}" defer></script>`;
-const LINK_WERBEFREI = '<a href="/werbefrei/">Werbefrei lesen</a>';
+const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script>`;
 const LINK_MEHR = '<a href="/kontakt/">Kontakt</a>';
 const LINK_DISKUSSION = '<a href="/diskussion/">Diskussion</a>';
 
@@ -111,11 +110,13 @@ for (const pfad of seiten) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }
     html = html.replace(JS_ANKER, (m) => m + JS);
   }
-  if (!html.includes('/assets/kommentare.js')) html = html.replace(/<script src="\/assets\/theme\.js[^"]*" defer><\/script>/, (m) => m + KOMMENTARE);
+  if (!html.includes('/assets/kommentare.js')) html = html.replace(/<script src="\/assets\/kopf\.js[^"]*" defer><\/script>/, (m) => m + KOMMENTARE);
   // "Diskussion" im Mehr-Menue und in der Schublade, direkt hinter Kontakt.
   if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (!html.includes('/assets/einwilligung.js')) html = html.replace(/<script src="\/assets\/kommentare\.js[^"]*" defer><\/script>/, (m) => m + EINWILLIGUNG);
-  if (!html.includes('href="/werbefrei/"')) html = html.split(LINK_DISKUSSION).join(LINK_DISKUSSION + LINK_WERBEFREI);
+  // KBS/Ordin 23.09.2026: Werbefrei-Abo und Dunkelmodus sind vollständig entfernt.
+  html = html.replace(/<a href="\/werbefrei\/">Werbefrei lesen<\/a>/g, '');
+  html = html.replace(/<script src="\/assets\/(?:theme|werbefrei)\.js[^"]*" defer><\/script>/g, '');
   // Werbeschalter am <html>
   html = html.replace(/<html\b[^>]*>/, (m) => m.replace(/\s+data-werbung="[^"]*"/g, '').replace(/>$/, ` data-werbung="${WERBUNG_AN ? 'an' : 'aus'}">`));
   // Tagesdatum im Kopf: nginx rendert es serverseitig (SSI, Ortszeit); JS
