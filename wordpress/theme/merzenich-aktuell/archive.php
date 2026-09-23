@@ -23,7 +23,7 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
   <?php
   $queried_type=get_query_var('post_type');
   if(is_array($queried_type)) $queried_type=reset($queried_type);
-  if(in_array($queried_type,['ma_property','ma_obituary','ma_family_notice'],true)):
+  if(in_array($queried_type,['ma_property','ma_obituary','ma_family_notice','ma_tip'],true)):
       echo ma_theme_publish_guide((string)$queried_type);
   endif;
   ?>
@@ -33,6 +33,8 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
       <?php $type=get_post_type(); ?>
       <?php if($type==='ma_event'): ?>
         <?php get_template_part('template-parts/event-card'); ?>
+      <?php elseif($type==='ma_tip'): ?>
+        <?php get_template_part('template-parts/tip-card'); ?>
       <?php elseif(in_array($type,$market_types,true)): ?>
         <?php get_template_part('template-parts/market-card'); ?>
       <?php else: ?>
@@ -46,7 +48,7 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
   <?php the_posts_pagination(); ?>
 
   <?php
-  $form_types=['ma_property'=>'immobilie','ma_obituary'=>'trauer','ma_family_notice'=>'familie'];
+  $form_types=['ma_property'=>'immobilie','ma_obituary'=>'trauer','ma_family_notice'=>'familie','ma_tip'=>'werbung'];
   if(isset($form_types[$queried_type])):
   ?>
     <section id="anzeige-aufgeben" class="archive-submit">
