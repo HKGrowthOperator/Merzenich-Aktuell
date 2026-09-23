@@ -87,8 +87,8 @@ jobs:
       - name: Symbolbilder fuer Meldungen ohne Foto aktuell?
         run: node deploy/symbolbilder.mjs --check
 
-      - name: Freigabe- und Sport-Logik pruefen
-        run: php qa/wordpress/freigabe-test.php && php qa/wordpress/sport-test.php
+      - name: Freigabe-, Partner-, Kommentar- und Sport-Logik pruefen
+        run: php qa/wordpress/freigabe-test.php && php qa/wordpress/partner-kommentar-test.php && php qa/wordpress/sport-test.php
 
       - name: Lint versioned WordPress source
         run: |
