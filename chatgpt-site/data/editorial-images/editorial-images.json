@@ -23,7 +23,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "411e18391a710f6ca32a30da49a126df244d6fa9e424602150df0f598221b15e"
+      "checksum": "f105a234583a3f2d4da8a345670b3a16d2e8959611ab2f28c2258dd804aee4a8"
     },
     {
       "id": "sport-02-zweikampf",
@@ -44,7 +44,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "173c204e4b30a1338772935bbe240b77378a6134b6734d542089050a39239664"
+      "checksum": "e15fce378dece4bde5fc9164b2b405cc8560b00b05845682e3597fca1fe5b35a"
     },
     {
       "id": "sport-03-fussballplatz",
@@ -66,7 +66,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "4c74084f00db0108015b0696fc15dc43ec30325a09332c767fc93f61c5ee0b66"
+      "checksum": "f254ea56d62e76ddaed4d69c5ccfa9751e1b8c3dfe75a2239d12e328690677c3"
     },
     {
       "id": "sport-04-tor",
@@ -86,7 +86,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "0a6b34bbe13d896bbc186250764fb4409e2146db50221e4f73bf60592bf59b28"
+      "checksum": "59c0f83b4d26fc5ad5d614b305982e59a18c93a8d7e793b7baccb5889904e445"
     },
     {
       "id": "sport-05-ball",
@@ -106,7 +106,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "7fafd7785e219e3171ae0e5d1415d1c2749eb549b33a186aa9b606f7b8fa6cd5"
+      "checksum": "381ab07489e8ed6d2d95968ae1f50fc1497d32fe6982804465096f576521b47c"
     },
     {
       "id": "sport-06-eckfahne",
@@ -229,7 +229,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "1df7dd7dc0b474e1905a43b46c52a08573b675199290f1983e78245469edc691"
+      "checksum": "cafc29fd89990edb979b4a6f87d509c1f98b1379814c01dc3d640a1283221412"
     },
     {
       "id": "sport-12-jugendfussball",
@@ -272,7 +272,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "8adf940adbbf9e42881511a4547a215522b6b198894057084112c35cc7372ea7"
+      "checksum": "34a89c8d132d9c2fa81b4a26281ab88c58bdd5be328d058a62875459451048fe"
     },
     {
       "id": "sport-14-zuschauer",
@@ -398,7 +398,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "dbc3353fa109a722312f0993e43e6684ad8d11a305c9ba7d47c125a756b3e914"
+      "checksum": "be37c7c2e15b389db5844b2f7c6a8fd4e037f18c7e3a3d39b286429faa85abcb"
     },
     {
       "id": "sport-20-spielvorbereitung",
@@ -459,7 +459,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "0d35f82031970e9720b9e86695a0637cb5471832304a8f4d2e1b4fa448084237"
+      "checksum": "07ca11bd07c0eb455cc875274fad1acca5d3f6f490faf8bc0a23bfe58088c548"
     },
     {
       "id": "polizei-03-einsatz",
@@ -578,7 +578,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "ef9c4f4470b2c196c083f96e2e2ba3e961ad255406560b5d5af0b4001f5fe571"
+      "checksum": "ec5622f67175718637ef95458f250065602cc0df84d52d51003616049b7e7178"
     },
     {
       "id": "polizei-09-tatort",
@@ -1017,7 +1017,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "9383e9bd182d597eecd27af059318d67c0c113696a08d60c04e48ac530c0333e"
+      "checksum": "3f423ed8e99f12ee022d224d68f9a5fb78bf241d155f96c62656ca6644f70961"
     },
     {
       "id": "feuerwehr-11-fahrzeughalle",
@@ -1240,7 +1240,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "0ef81bf100ca5d80c81ba646813438da7c325c3e3190a1c57301a91b68f48ca1"
+      "checksum": "23d8411f37a656da735c01f9f70c36b58055f040ea0bb38cc5d35ab02463fa09"
     },
     {
       "id": "verkehr-02-baustelle",
@@ -2480,7 +2480,7 @@
       "height": 900,
       "format": "svg",
       "symbol": true,
-      "checksum": "1a54f7f36ac555add521fc4033882b80be625870c7751cbc246137df0dc9dc57"
+      "checksum": "c3bf2570856103b9473e96dd6064bcf0f63f740d172535fc9da1bb7725f7aed7"
     },
     {
       "id": "veranstaltungen-04-markt",

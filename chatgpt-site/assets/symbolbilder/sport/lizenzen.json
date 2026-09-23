@@ -12,7 +12,7 @@
       "spiel",
       "spieltag"
     ],
-    "checksum": "411e18391a710f6ca32a30da49a126df244d6fa9e424602150df0f598221b15e"
+    "checksum": "f105a234583a3f2d4da8a345670b3a16d2e8959611ab2f28c2258dd804aee4a8"
   },
   "sport-02-zweikampf.svg": {
     "id": "sport-02-zweikampf",
@@ -27,7 +27,7 @@
       "zweikampf",
       "duell"
     ],
-    "checksum": "173c204e4b30a1338772935bbe240b77378a6134b6734d542089050a39239664"
+    "checksum": "e15fce378dece4bde5fc9164b2b405cc8560b00b05845682e3597fca1fe5b35a"
   },
   "sport-03-fussballplatz.svg": {
     "id": "sport-03-fussballplatz",
@@ -43,7 +43,7 @@
       "rasen",
       "fussballplatz"
     ],
-    "checksum": "4c74084f00db0108015b0696fc15dc43ec30325a09332c767fc93f61c5ee0b66"
+    "checksum": "f254ea56d62e76ddaed4d69c5ccfa9751e1b8c3dfe75a2239d12e328690677c3"
   },
   "sport-04-tor.svg": {
     "id": "sport-04-tor",
@@ -57,7 +57,7 @@
       "fussball",
       "tor"
     ],
-    "checksum": "0a6b34bbe13d896bbc186250764fb4409e2146db50221e4f73bf60592bf59b28"
+    "checksum": "59c0f83b4d26fc5ad5d614b305982e59a18c93a8d7e793b7baccb5889904e445"
   },
   "sport-05-ball.svg": {
     "id": "sport-05-ball",
@@ -71,7 +71,7 @@
       "fussball",
       "ball"
     ],
-    "checksum": "7fafd7785e219e3171ae0e5d1415d1c2749eb549b33a186aa9b606f7b8fa6cd5"
+    "checksum": "381ab07489e8ed6d2d95968ae1f50fc1497d32fe6982804465096f576521b47c"
   },
   "sport-06-eckfahne.svg": {
     "id": "sport-06-eckfahne",
@@ -158,7 +158,7 @@
       "mannschaft",
       "team"
     ],
-    "checksum": "1df7dd7dc0b474e1905a43b46c52a08573b675199290f1983e78245469edc691"
+    "checksum": "cafc29fd89990edb979b4a6f87d509c1f98b1379814c01dc3d640a1283221412"
   },
   "sport-12-jugendfussball.svg": {
     "id": "sport-12-jugendfussball",
@@ -189,7 +189,7 @@
       "kreisliga",
       "amateurfussball"
     ],
-    "checksum": "8adf940adbbf9e42881511a4547a215522b6b198894057084112c35cc7372ea7"
+    "checksum": "34a89c8d132d9c2fa81b4a26281ab88c58bdd5be328d058a62875459451048fe"
   },
   "sport-14-zuschauer.svg": {
     "id": "sport-14-zuschauer",
@@ -279,7 +279,7 @@
       "netz",
       "tornetz"
     ],
-    "checksum": "dbc3353fa109a722312f0993e43e6684ad8d11a305c9ba7d47c125a756b3e914"
+    "checksum": "be37c7c2e15b389db5844b2f7c6a8fd4e037f18c7e3a3d39b286429faa85abcb"
   },
   "sport-20-spielvorbereitung.svg": {
     "id": "sport-20-spielvorbereitung",

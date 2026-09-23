@@ -364,6 +364,169 @@ const entries = (pool) => RAW[pool].trim().split('\n').map((line, i) => {
   return { id: `${pool}-${String(i + 1).padStart(2, '0')}-${slug}`, pool, slug, name, tags };
 });
 
+// ---------------------------------------------------------------- Motive
+// Bis zum 23.09. zeichnete svgFuer() kein Motiv: Farbverlauf, zwei Kreise, eine
+// geschwungene Linie, darauf der Name als Text. Auf der Seite sah das aus wie
+// eine leere Flaeche mit einem Wort - zu Recht beanstandet. Die Motive hier
+// zeichnen, was draufsteht. Wo eines fehlt, bleibt die bisherige Flaeche.
+// Erkennbare Motive statt Farbverlauf. Gezeichnet auf 1600x900, Ursprung des
+// Motivs bei 800/450, damit jede Zeichnung mittig sitzt. d = dunkel, a = Akzent,
+// h = hell (aus der Pool-Palette).
+const MOTIVE = {
+  'sport-tor': (d,a,h) => `
+    <rect x="300" y="250" width="1000" height="420" rx="6" fill="none" stroke="${h}" stroke-width="22"/>
+    <path d="M300 250 L360 190 L1240 190 L1300 250" fill="none" stroke="${h}" stroke-width="18" opacity=".7"/>
+    <path d="M1240 190 L1240 610 M360 190 L360 610 M360 610 L1240 610" fill="none" stroke="${h}" stroke-width="12" opacity=".5"/>
+    <g stroke="${h}" stroke-width="4" opacity=".45">
+      ${Array.from({length:11},(_,i)=>`<line x1="${330+i*90}" y1="250" x2="${330+i*90}" y2="670"/>`).join('')}
+      ${Array.from({length:5},(_,i)=>`<line x1="300" y1="${300+i*80}" x2="1300" y2="${300+i*80}"/>`).join('')}
+    </g>
+    <circle cx="800" cy="720" r="52" fill="${h}"/>
+    <path d="M800 690 l28 20 -11 33 h-34 l-11 -33z" fill="${d}"/>
+    <rect x="200" y="768" width="1200" height="10" rx="5" fill="${h}" opacity=".55"/>`,
+
+  'sport-tornetz': (d,a,h) => `
+    <rect x="260" y="230" width="1080" height="450" rx="6" fill="none" stroke="${h}" stroke-width="24"/>
+    <g stroke="${h}" stroke-width="5" opacity=".5">
+      ${Array.from({length:13},(_,i)=>`<line x1="${290+i*82}" y1="230" x2="${290+i*82}" y2="680"/>`).join('')}
+      ${Array.from({length:6},(_,i)=>`<line x1="260" y1="${272+i*72}" x2="1340" y2="${272+i*72}"/>`).join('')}
+    </g>
+    <path d="M260 230 L340 160 L1260 160 L1340 230" fill="none" stroke="${h}" stroke-width="18" opacity=".65"/>
+    <rect x="180" y="770" width="1240" height="10" rx="5" fill="${h}" opacity=".55"/>`,
+
+  'sport-ball': (d,a,h) => `
+    <circle cx="800" cy="440" r="240" fill="${h}"/>
+    <path d="M800 260 l112 82 -43 132 h-138 l-43 -132z" fill="${d}"/>
+    <path d="M800 200 l0 60 M560 420 l82 26 M1040 420 l-82 26 M672 668 l44 -58 M928 668 l-44 -58"
+      stroke="${d}" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <circle cx="800" cy="440" r="240" fill="none" stroke="${d}" stroke-width="14" opacity=".35"/>
+    <ellipse cx="800" cy="742" rx="250" ry="26" fill="${h}" opacity=".3"/>`,
+
+  'sport-fussballplatz': (d,a,h) => `
+    <rect x="180" y="200" width="1240" height="520" rx="10" fill="none" stroke="${h}" stroke-width="16"/>
+    <line x1="800" y1="200" x2="800" y2="720" stroke="${h}" stroke-width="12"/>
+    <circle cx="800" cy="460" r="118" fill="none" stroke="${h}" stroke-width="12"/>
+    <circle cx="800" cy="460" r="16" fill="${h}"/>
+    <rect x="180" y="330" width="150" height="260" fill="none" stroke="${h}" stroke-width="12"/>
+    <rect x="1270" y="330" width="150" height="260" fill="none" stroke="${h}" stroke-width="12"/>
+    <rect x="180" y="398" width="62" height="124" fill="none" stroke="${h}" stroke-width="10" opacity=".7"/>
+    <rect x="1358" y="398" width="62" height="124" fill="none" stroke="${h}" stroke-width="10" opacity=".7"/>
+    <g fill="${h}" opacity=".18">${Array.from({length:8},(_,i)=>`<rect x="${180+i*155}" y="200" width="78" height="520"/>`).join('')}</g>`,
+
+  'sport-zweikampf': (d,a,h) => `
+    <g fill="${h}">
+      <circle cx="600" cy="250" r="54"/>
+      <path d="M600 316 c-58 0 -96 40 -104 96 l-20 150 h46 l18 -120 12 0 -14 244 h50 l26 -206 12 0 26 206 h50 l-14 -244 12 0 18 120 h46 l-20 -150 c-8 -56 -46 -96 -104 -96z" opacity=".95"/>
+    </g>
+    <g fill="${h}" opacity=".62">
+      <circle cx="1000" cy="270" r="50"/>
+      <path d="M1000 332 c54 0 90 38 98 90 l18 140 h-44 l-16 -112 -12 0 13 228 h-46 l-24 -192 -12 0 -24 192 h-46 l13 -228 -12 0 -16 112 h-44 l18 -140 c8 -52 44 -90 98 -90z"/>
+    </g>
+    <circle cx="800" cy="600" r="62" fill="${h}"/>
+    <path d="M800 562 l30 22 -12 36 h-36 l-12 -36z" fill="${d}"/>
+    <rect x="200" y="792" width="1200" height="10" rx="5" fill="${h}" opacity=".5"/>`,
+
+  'sport-spiel': (d,a,h) => `
+    <rect x="200" y="210" width="1200" height="500" rx="10" fill="none" stroke="${h}" stroke-width="14"/>
+    <line x1="800" y1="210" x2="800" y2="710" stroke="${h}" stroke-width="10"/>
+    <circle cx="800" cy="460" r="104" fill="none" stroke="${h}" stroke-width="10"/>
+    <g fill="${h}">
+      <circle cx="470" cy="386" r="34"/><path d="M470 428 c-34 0 -56 22 -60 56 l-10 78h28l10-62h6l-8 132h30l14-108h6l14 108h30l-8-132h6l10 62h28l-10-78c-4-34-26-56-60-56z"/>
+      <circle cx="1130" cy="540" r="34" opacity=".72"/><path d="M1130 582 c-34 0 -56 22 -60 56l-10 78h28l10-62h6l-8 132h30l14-108h6l14 108h30l-8-132h6l10 62h28l-10-78c-4-34-26-56-60-56z" opacity=".72"/>
+    </g>
+    <circle cx="800" cy="460" r="40" fill="${h}"/>
+    <path d="M800 436 l19 14 -8 23h-22l-8-23z" fill="${d}"/>`,
+
+  'sport-mannschaft': (d,a,h) => `
+    <g fill="${h}">
+      ${[[380,.95],[590,.88],[800,1],[1010,.88],[1220,.95]].map(([x,o],i)=>`
+      <g opacity="${o}" transform="translate(${x-800},${i===2?-30:0})">
+        <circle cx="800" cy="300" r="52"/>
+        <path d="M800 364 c-52 0 -86 34 -92 86 l-16 122h42l14-96h8l-10 200h44l22-160h8l22 160h44l-10-200h8l14 96h42l-16-122c-6-52-40-86-92-86z"/>
+      </g>`).join('')}
+    </g>
+    <rect x="180" y="790" width="1240" height="10" rx="5" fill="${h}" opacity=".5"/>`,
+
+  'sport-amateurfussball': (d,a,h) => `
+    <rect x="200" y="230" width="1200" height="470" rx="10" fill="none" stroke="${h}" stroke-width="14"/>
+    <circle cx="800" cy="465" r="96" fill="none" stroke="${h}" stroke-width="10"/>
+    <line x1="800" y1="230" x2="800" y2="700" stroke="${h}" stroke-width="10"/>
+    <g fill="${h}"><circle cx="560" cy="400" r="40"/>
+      <path d="M560 450 c-40 0 -66 26 -71 66l-12 92h33l12-73h7l-10 156h36l16-128h7l16 128h36l-10-156h7l12 73h33l-12-92c-5-40-31-66-71-66z"/></g>
+    <circle cx="1050" cy="560" r="54" fill="${h}"/>
+    <path d="M1050 528 l26 19 -10 31h-32l-10-31z" fill="${d}"/>`,
+
+  'polizei-polizeibeamte': (d,a,h) => `
+    <g fill="${h}">
+      <circle cx="660" cy="270" r="58"/>
+      <path d="M660 340 c-64 0 -106 44 -112 108l-20 172h50l18-132h8l-14 268h56l26-220h8l26 220h56l-14-268h8l18 132h50l-20-172c-6-64-48-108-112-108z"/>
+      <path d="M592 228 h136 l-12-34 h-112z"/>
+    </g>
+    <g fill="${h}" opacity=".6">
+      <circle cx="1000" cy="290" r="54"/>
+      <path d="M1000 356 c-60 0 -99 41 -105 101l-19 161h47l17-124h7l-13 251h52l25-206h7l25 206h52l-13-251h7l17 124h47l-19-161c-6-60-45-101-105-101z"/>
+      <path d="M936 250 h128 l-11-32 h-106z"/>
+    </g>
+    <rect x="210" y="792" width="1180" height="10" rx="5" fill="${h}" opacity=".5"/>`,
+
+  'polizei-einbruch': (d,a,h) => `
+    <rect x="430" y="180" width="740" height="560" rx="12" fill="none" stroke="${h}" stroke-width="20"/>
+    <rect x="530" y="290" width="240" height="200" rx="6" fill="none" stroke="${h}" stroke-width="14"/>
+    <line x1="650" y1="290" x2="650" y2="490" stroke="${h}" stroke-width="10"/>
+    <line x1="530" y1="390" x2="770" y2="390" stroke="${h}" stroke-width="10"/>
+    <path d="M540 300 L760 480 M760 300 L540 480" stroke="${h}" stroke-width="12" opacity=".8"/>
+    <rect x="900" y="330" width="170" height="410" rx="8" fill="none" stroke="${h}" stroke-width="14"/>
+    <circle cx="936" cy="540" r="16" fill="${h}"/>
+    <path d="M300 760 h1000" stroke="${h}" stroke-width="14" opacity=".5"/>
+    <g stroke="${h}" stroke-width="16" opacity=".85">
+      <path d="M1180 560 l190 -110"/><path d="M1370 450 l-44 -10 m44 10 l-10 44"/>
+    </g>`,
+
+  'feuerwehr-feuerwehrwache': (d,a,h) => `
+    <path d="M250 400 L800 180 L1350 400" fill="none" stroke="${h}" stroke-width="24" stroke-linejoin="round"/>
+    <rect x="310" y="400" width="980" height="360" fill="none" stroke="${h}" stroke-width="20"/>
+    <rect x="400" y="480" width="230" height="280" rx="6" fill="none" stroke="${h}" stroke-width="14"/>
+    <rect x="690" y="480" width="230" height="280" rx="6" fill="none" stroke="${h}" stroke-width="14"/>
+    <rect x="980" y="480" width="230" height="280" rx="6" fill="none" stroke="${h}" stroke-width="14"/>
+    <g stroke="${h}" stroke-width="8" opacity=".5">
+      ${Array.from({length:4},(_,i)=>`<line x1="400" y1="${536+i*56}" x2="630" y2="${536+i*56}"/><line x1="690" y1="${536+i*56}" x2="920" y2="${536+i*56}"/><line x1="980" y1="${536+i*56}" x2="1210" y2="${536+i*56}"/>`).join('')}
+    </g>
+    <circle cx="800" cy="300" r="34" fill="${h}"/>
+    <rect x="200" y="782" width="1200" height="12" rx="6" fill="${h}" opacity=".55"/>`,
+
+  'verkehr-strasse': (d,a,h) => `
+    <path d="M620 800 L740 240 L860 240 L980 800 Z" fill="${h}" opacity=".9"/>
+    <g fill="${d}">
+      ${Array.from({length:5},(_,i)=>{const t=i/5,b=(i+.42)/5;
+        const y1=240+t*560, y2=240+b*560;
+        const w1=14+t*46, w2=14+b*46;
+        return `<path d="M${800-w1} ${y1} L${800+w1} ${y1} L${800+w2} ${y2} L${800-w2} ${y2} Z"/>`;}).join('')}
+    </g>
+    <path d="M300 800 Q420 520 520 300" fill="none" stroke="${h}" stroke-width="10" opacity=".35"/>
+    <path d="M1300 800 Q1180 520 1080 300" fill="none" stroke="${h}" stroke-width="10" opacity=".35"/>
+    <circle cx="1210" cy="250" r="94" fill="none" stroke="${h}" stroke-width="16" opacity=".55"/>
+    <path d="M1210 190 v70 l44 26" fill="none" stroke="${h}" stroke-width="14" stroke-linecap="round" opacity=".55"/>`,
+
+  'veranstaltungen-konzert': (d,a,h) => `
+    <g fill="${h}">
+      <path d="M690 200 L1010 152 v56 L690 256 Z"/>
+      <rect x="690" y="200" width="26" height="250"/>
+      <rect x="984" y="152" width="26" height="250"/>
+      <ellipse cx="646" cy="454" rx="72" ry="54" transform="rotate(-18 646 454)"/>
+      <ellipse cx="940" cy="406" rx="72" ry="54" transform="rotate(-18 940 406)"/>
+    </g>
+    <g stroke="${h}" stroke-width="11" fill="none" opacity=".5">
+      <path d="M1130 300 q54 -66 108 0 t108 0"/>
+      <path d="M1130 380 q54 -66 108 0 t108 0"/>
+      <path d="M300 330 q54 -66 108 0 t108 0"/>
+    </g>
+    <g fill="${h}" opacity=".42">
+      ${[[270,690],[400,724],[530,690],[660,728],[790,690],[920,728],[1050,690],[1180,724],[1310,690]].map(([x,y])=>`
+      <circle cx="${x}" cy="${y}" r="36"/><path d="M${x} ${y+42} c-36 0 -58 24 -62 60l-9 62h142l-9-62c-4-36-26-60-62-60z"/>`).join('')}
+    </g>
+    <rect x="200" y="826" width="1200" height="10" rx="5" fill="${h}" opacity=".35"/>`,
+};
+
 function svgFuer(e, index) {
   const [dunkel, akzent, hell] = PALETTEN[e.pool];
   const h = parseInt(sha(e.id).slice(0, 8), 16);
@@ -372,6 +535,20 @@ function svgFuer(e, index) {
   const x2 = 980 + ((h >>> 13) % 320), y2 = 170 + ((h >>> 17) % 320), r2 = 90 + ((h >>> 21) % 160);
   const linie = v === 0 ? `M120 680 C420 520 820 760 1480 500` : v === 1 ? `M80 500 L1520 250` : v === 2 ? `M160 710 Q800 280 1450 620` : v === 3 ? `M120 360 Q650 760 1500 430` : `M140 610 C520 240 1040 280 1480 640`;
   const kurz = LABELS[e.pool].toUpperCase();
+  const motiv = MOTIVE[`${e.pool}-${e.slug}`];
+  if (motiv) {
+    // Ruhiger Grund, damit die Zeichnung traegt: ein flacher Verlauf ohne
+    // Kreise und ohne Schwungliniengeklingel, dazu die Textmarke und der Name.
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d">`
+      + `<title id="t">${xml(e.name)}</title><desc id="d">Redaktionelles Symbolbild für ${xml(LABELS[e.pool])}: ${xml(e.name)}. Kein Foto eines konkreten Ereignisses.</desc>`
+      + `<defs><linearGradient id="g" x1="0" y1="0" x2=".35" y2="1"><stop stop-color="${dunkel}"/><stop offset="1" stop-color="${akzent}" stop-opacity=".55"/></linearGradient></defs>`
+      + `<rect width="1600" height="900" fill="url(#g)"/>`
+      + `<g transform="translate(0,-24)">${motiv(dunkel, akzent, hell)}</g>`
+      + `<rect x="115" y="120" width="185" height="42" rx="21" fill="${hell}" opacity=".92"/>`
+      + `<text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${dunkel}">SYMBOLBILD</text>`
+      + `<text x="1480" y="838" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="${hell}" opacity=".72">${xml(kurz)} · ${xml(e.name.toUpperCase())}</text>`
+      + `</svg>`;
+  }
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d"><title id="t">${xml(e.name)}</title><desc id="d">Neutrales redaktionelles Symbolbild für ${xml(LABELS[e.pool])}: ${xml(e.name)}. Kein Foto eines konkreten Ereignisses.</desc><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${dunkel}"/><stop offset="1" stop-color="${akzent}"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><circle cx="${x1}" cy="${y1}" r="${r1}" fill="${hell}" opacity=".13"/><circle cx="${x2}" cy="${y2}" r="${r2}" fill="${hell}" opacity=".09"/><path d="${linie}" fill="none" stroke="${hell}" stroke-width="18" opacity=".18"/><rect x="90" y="90" width="1420" height="720" rx="42" fill="none" stroke="${hell}" stroke-width="3" opacity=".28"/><rect x="115" y="120" width="185" height="42" rx="21" fill="${hell}" opacity=".92"/><text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${dunkel}">SYMBOLBILD</text><text x="120" y="575" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="3" fill="${hell}" opacity=".78">${xml(kurz)}</text><text x="120" y="665" font-family="Arial,sans-serif" font-size="68" font-weight="800" fill="${hell}">${xml(e.name)}</text><text x="120" y="730" font-family="Arial,sans-serif" font-size="24" fill="${hell}" opacity=".82">MERZENICH AKTUELL · Redaktionelle Symbolgrafik</text></svg>`;
 }
 
