@@ -153,6 +153,11 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Slot in Merzenich Aktuell → Werbung aktiviert sein.');
     $slots = ma_ad_slots();
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    if ($partner && ($partner['role'] ?? '') === 'ma_wirtschaft_partner') {
+        $erlaubt = ['homepage_sidebar_top','homepage_sidebar_middle','homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4','homepage_tip'];
+        $slots = array_values(array_intersect($slots,$erlaubt));
+    }
     ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),array_combine($slots,$slots));
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
     ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
@@ -220,6 +225,10 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         }
         $raw = $type==='bool' ? isset($_POST[$key]) : ($_POST[$key] ?? '');
         $value = ma_sanitize_content_admin_value($type,$raw);
+        if ($partner && $post->post_type === 'ma_ad' && $key === 'ma_ad_slot') {
+            $allowed_partner_slots = ['homepage_sidebar_top','homepage_sidebar_middle','homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4','homepage_tip'];
+            if (!in_array($value,$allowed_partner_slots,true)) $value = '';
+        }
         if ($value==='') delete_post_meta($post_id,$key);
         else update_post_meta($post_id,$key,$value);
     }
