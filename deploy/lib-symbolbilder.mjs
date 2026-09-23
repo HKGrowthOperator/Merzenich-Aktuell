@@ -82,7 +82,7 @@ blaulicht|Blaulicht der Feuerwehr|feuerwehr,blaulicht
 dtechnischehilfe|Technische Hilfeleistung|feuerwehr,technische,hilfe
 verkehrsunfallhilfe|Hilfe nach Verkehrsunfall|feuerwehr,unfall,hilfe
 einsatzabsicherung|Einsatzabsicherung|feuerwehr,absicherung
-feuerwehrwache|Feuerwehrwache|feuerwehr,wache
+feuerwehrwache|Feuerwehrwache|feuerwehr,wache,geraetehaus,jubilaeum
 fahrzeughalle|Fahrzeughalle|feuerwehr,halle,fahrzeuge
 rettungsgeraet|Rettungsgerät|feuerwehr,rettung,geraet
 ausruestung|Feuerwehrausrüstung|feuerwehr,ausruestung
