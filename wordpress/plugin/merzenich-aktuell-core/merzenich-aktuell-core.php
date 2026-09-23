@@ -45,6 +45,9 @@ register_activation_hook(__FILE__, function () {
     foreach (['Merzenich'=>'merzenich','Golzheim'=>'golzheim','Girbelsrath'=>'girbelsrath','Morschenich'=>'morschenich','Bürgewald'=>'buergewald'] as $name=>$slug) {
         if (!term_exists($slug,'ma_location')) wp_insert_term($name,'ma_location',['slug'=>$slug]);
     }
+    foreach (['Blaulicht'=>'blaulicht','Sport'=>'sport','Rathaus & Politik'=>'rathaus','Vereine'=>'vereine','Wirtschaft'=>'wirtschaft'] as $name=>$slug) {
+        if (!term_exists($slug,'category')) wp_insert_term($name,'category',['slug'=>$slug]);
+    }
     foreach (['Neu','Prüfen','Übernommen','Ignoriert','Duplikat'] as $status) {
         if (!term_exists($status,'ma_source_status')) wp_insert_term($status,'ma_source_status');
     }
