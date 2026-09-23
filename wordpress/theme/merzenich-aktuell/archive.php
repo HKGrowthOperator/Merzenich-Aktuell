@@ -20,6 +20,14 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
     <?php endif; ?>
   </header>
 
+  <?php
+  $queried_type=get_query_var('post_type');
+  if(is_array($queried_type)) $queried_type=reset($queried_type);
+  if(in_array($queried_type,['ma_property','ma_obituary','ma_family_notice'],true)):
+      echo ma_theme_publish_guide((string)$queried_type);
+  endif;
+  ?>
+
   <div class="archive-content-list">
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <?php $type=get_post_type(); ?>
@@ -36,5 +44,17 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
   </div>
 
   <?php the_posts_pagination(); ?>
+
+  <?php
+  $form_types=['ma_property'=>'immobilie','ma_obituary'=>'trauer','ma_family_notice'=>'familie'];
+  if(isset($form_types[$queried_type])):
+  ?>
+    <section id="anzeige-aufgeben" class="archive-submit">
+      <div class="eyebrow">Einreichung</div>
+      <h2>Anzeige an die Redaktion senden</h2>
+      <p>Die Einreichung wird nicht automatisch veröffentlicht. Die Redaktion prüft Inhalt, Freigaben und Darstellung.</p>
+      <?php echo do_shortcode('[ma_formular typ="'.esc_attr($form_types[$queried_type]).'"]'); ?>
+    </section>
+  <?php endif; ?>
 </div>
 <?php get_footer(); ?>
