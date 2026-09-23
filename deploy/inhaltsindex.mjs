@@ -280,6 +280,13 @@ index.bestand = {
   // Aufmacher: redaktionell gesetzt schlaegt automatisch - aber nur mit echtem
   // Bild. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
   // die Mitte der Startseite leer aussehen lassen.
+  const ORTSANSICHT = {
+    merzenich: { alt: 'Historisches Fachwerkhaus im Ortskern', credit: 'Karl-Heinz Meurer / Wikimedia Commons' },
+    golzheim: { alt: 'Blick über den Wenauer Hof auf St. Gregorius', credit: 'Karl-Heinz Meurer / Wikimedia Commons' },
+    girbelsrath: { alt: 'Denkmalgeschütztes Fachwerkhaus', credit: 'Käthe und Bernd Limburg / Wikimedia Commons' },
+    morschenich: { alt: 'Archivaufnahme vom Aufbau des neuen Ortes', credit: 'Papa1234 / Wikimedia Commons' },
+    buergewald: { alt: 'Luftbild des früheren Morschenich-Alt', credit: 'Antisyntagmatarchos / Wikimedia Commons' },
+  };
   function aufmacherWaehlen() {
     const gesetzt = ed.hero && ed.hero.url ? nachUrl.get(ed.hero.url) : null;
     if (ed.hero && ed.hero.url) {
@@ -295,6 +302,26 @@ index.bestand = {
       } else {
         return gesetzt;
       }
+    }
+    // Stil B (Freigabe 23.09.2026): Der Aufmacher ist hoechstens sieben Tage
+    // aelter als die juengste Meldung. Gemessen am 23.09. stand dort eine
+    // Bilanz vom 17.08., weil nur sie ein grosses echtes Foto hatte; die
+    // Meldungen des Tages lagen darunter. Gibt es in dieser Woche kein echtes
+    // Foto, traegt die juengste Meldung die Ortsansicht ihres Ortes - ein
+    // echtes Foto mit Nachweis, als "Ortsansicht" beschriftet, nie ein
+    // Symbolbild. Bezugspunkt ist die juengste Meldung, nicht die Uhr: so
+    // bleibt der Lauf wiederholbar (--check).
+    const grenze = new Date(new Date(neuester).getTime() - 7 * 864e5).toISOString();
+    const frisch = redaktionell
+      .filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
+      .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
+    const frischMitFoto = frisch.find((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
+    if (frischMitFoto) return frischMitFoto;
+    if (frisch.length) {
+      const a = frisch[0]; const o = ORTSANSICHT[a.ortsteil] || ORTSANSICHT.merzenich;
+      const slug = ORTSANSICHT[a.ortsteil] ? a.ortsteil : 'merzenich';
+      console.log(`Startseite: Aufmacher ${a.url} ohne eigenes grosses Foto, traegt die Ortsansicht ${ORTSTEILE[slug]}.`);
+      return { ...a, bild: { src: `/assets/places/${slug}-1440.webp`, srcset: `/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w`, width: 1440, height: 960, alt: `Ortsansicht ${ORTSTEILE[slug]}: ${o.alt}`, badge: `Ortsansicht · Foto: ${o.credit}` } };
     }
     return redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l'))
@@ -390,8 +417,17 @@ index.bestand = {
       return true;
     });
   for (const a of gesetzteNeben) vergeben.add(a.url);
+  // Hoechstens zwei Blaulichtmeldungen unter den ersten sechs (Aufmacher plus
+  // fuenf Nebenmeldungen). Am 23.09. waren es vier von sechs, die Seite las
+  // sich wie ein Polizeiticker (Critique 23.09., Freigabe Stil B).
+  let blaulicht = aufmacher && aufmacher.ressort === 'blaulicht' ? 1 : 0;
+  for (const a of gesetzteNeben) if (a.ressort === 'blaulicht') blaulicht++;
   const neben = gesetzteNeben.concat(
-    redaktionell.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M),
+    redaktionell.filter((a) => {
+      if (vergeben.has(a.url) || a.ressort === 'sport' || !echtesBild(a) || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
+      if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
+      return true;
+    }),
   ).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
   if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
