@@ -327,9 +327,10 @@ index.bestand = {
   const aufmacher = aufmacherWaehlen();
   if (!aufmacher) { console.error('Startseite: kein Artikel mit echtem Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
   const vergeben = new Set(aufmacher ? [aufmacher.url] : []);
-  // Zwei Nebenmeldungen, beide mit ordentlich grossem Bild. Keine vier
-  // Miniteaser mehr am Rand.
-  const neben = artikel.filter((a) => !vergeben.has(a.url) && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 2);
+  // KBS/Ordin 23.09.2026: Der erste Blick soll deutlich dichter werden.
+  // Eine grosse Highlight-News wird von fuenf kleineren Bildmeldungen rechts
+  // und darunter ergaenzt. Keine Sportmeldung darf in dieser Startbuehne landen.
+  const neben = artikel.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
 
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
@@ -352,7 +353,7 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: () => true, jeRessort: 3, fenster: 44, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport', jeRessort: 3, fenster: 44, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
