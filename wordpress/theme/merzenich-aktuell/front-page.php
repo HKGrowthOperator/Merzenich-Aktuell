@@ -8,6 +8,16 @@ $market_sections=[
   'ma_family_notice'=>'Familienanzeigen',
 ];
 $sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_top').ma_render_ad('homepage_sidebar_middle') : '';
+$exclude_categories=ma_theme_home_excluded_category_ids();
+$highlight_query=new WP_Query([
+  'post_type'=>'post','post_status'=>'publish','posts_per_page'=>5,
+  'post__not_in'=>$hero?[$hero->ID]:[],
+  'category__not_in'=>$exclude_categories,
+  'orderby'=>'date','order'=>'DESC',
+]);
+$highlights=$highlight_query->posts;
+$highlight_ids=array_map(static fn($p)=>(int)$p->ID,$highlights);
+$photo_day=ma_theme_photo_of_day();
 ?>
 <div class="wrap home-grid">
   <aside class="service-column">
@@ -84,13 +94,21 @@ $sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_to
 
     <div class="news-list">
       <?php
-      $exclude=$hero?[$hero->ID]:[];
-      $news=new WP_Query(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>10,'post__not_in'=>$exclude]);
+      $exclude=array_merge($hero?[$hero->ID]:[],$highlight_ids);
+      $news=new WP_Query([
+        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>10,
+        'post__not_in'=>$exclude,'category__not_in'=>$exclude_categories,
+        'orderby'=>'date','order'=>'DESC'
+      ]);
       $index=0;
       while($news->have_posts()):$news->the_post();
         get_template_part('template-parts/card');
         $index++;
-        if($index===4) ma_theme_ad('homepage_feed_1');
+        if($index===2) ma_theme_ad('homepage_band_1');
+        if($index===4) ma_theme_ad('homepage_band_2');
+        if($index===6) ma_theme_ad('homepage_band_3');
+        if($index===8) ma_theme_ad('homepage_band_4');
+        if($index===10) ma_theme_ad('homepage_feed_1');
       endwhile;
       wp_reset_postdata();
       ?>
@@ -98,12 +116,42 @@ $sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_to
   </section>
 
   <aside class="home-aside">
+    <?php if($highlights): ?>
+      <div class="sidebar-heading">Weitere Highlights</div>
+      <div class="home-highlights">
+        <?php foreach($highlights as $item): setup_postdata($GLOBALS['post']=$item); $bild=ma_content_image($item,'medium_large'); ?>
+          <article class="home-highlight-card">
+            <a class="home-highlight-card__image" href="<?php echo esc_url(get_permalink($item)); ?>">
+              <img src="<?php echo esc_url($bild['url']); ?>" alt="<?php echo esc_attr($bild['alt']); ?>" loading="lazy" decoding="async">
+            </a>
+            <div class="eyebrow"><?php echo ma_theme_location_label((int)$item->ID); ?> · <?php $cats=get_the_category((int)$item->ID); echo esc_html($cats[0]->name??'Aktuell'); ?></div>
+            <h2><a href="<?php echo esc_url(get_permalink($item)); ?>"><?php echo esc_html(get_the_title($item)); ?></a></h2>
+          </article>
+        <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+    <?php endif; ?>
+
     <?php if($sidebar_ads!==''): ?>
       <div class="sidebar-heading">Lokale Anzeigen</div>
       <?php echo $sidebar_ads; ?>
     <?php endif; ?>
-    <div class="sidebar-heading">Sport</div>
-    <?php echo do_shortcode('[ma_sport]'); ?>
+
+    <?php if($photo_day): $foto_post=$photo_day['post']; $foto=$photo_day['bild']; ?>
+      <section class="photo-day">
+        <div class="sidebar-heading">Foto des Tages</div>
+        <a href="<?php echo esc_url(get_permalink($foto_post)); ?>"><img src="<?php echo esc_url($foto['url']); ?>" alt="<?php echo esc_attr($foto['alt']); ?>" loading="lazy" decoding="async"></a>
+        <p class="image-credit"><?php echo esc_html(ma_image_caption($foto)); ?></p>
+        <h3><a href="<?php echo esc_url(get_permalink($foto_post)); ?>"><?php echo esc_html(get_the_title($foto_post)); ?></a></h3>
+      </section>
+    <?php endif; ?>
+
+    <section class="home-tip">
+      <div class="sidebar-heading">Tipp · Sponsoring</div>
+      <?php $tip=function_exists('ma_render_ad')?ma_render_ad('homepage_tip'):''; ?>
+      <?php if($tip!==''): echo $tip; else: ?>
+        <a class="home-tip__cta" href="<?php echo esc_url(home_url('/werben/')); ?>"><strong>Ihr Tipp aus Merzenich</strong><span>Vereine, Unternehmen und Sponsoren können Veranstaltungen, Projekte und Angebote sichtbar platzieren.</span></a>
+      <?php endif; ?>
+    </section>
   </aside>
 </div>
 <?php get_footer(); ?>
