@@ -98,6 +98,7 @@ function ma_register_partner_hooks(): void {
     add_filter('map_meta_cap', 'ma_partner_map_meta_cap', 20, 4);
     add_filter('wp_insert_post_data', 'ma_partner_force_pending', 5, 2);
     add_action('save_post', 'ma_partner_enforce_assignment', 100, 3);
+    add_action('transition_post_status', 'ma_partner_submission_notification', 20, 3);
     add_action('admin_menu', 'ma_partner_admin_menu', 100);
     add_action('admin_init', 'ma_partner_admin_route_guard', 5);
     add_action('pre_get_posts', 'ma_partner_admin_own_content');
@@ -166,6 +167,25 @@ function ma_partner_enforce_assignment(int $post_id, WP_Post $post, bool $update
     update_post_meta($post_id, '_ma_partner_submission', '1');
     update_post_meta($post_id, '_ma_partner_role', $policy['role']);
     update_post_meta($post_id, '_ma_partner_submitted_by', (string)get_current_user_id());
+}
+
+function ma_partner_submission_notification(string $new_status, string $old_status, WP_Post $post): void {
+    if ($new_status !== 'pending' || $old_status === 'pending') return;
+    $author = get_userdata((int)$post->post_author);
+    $policy = $author ? ma_current_partner_policy($author) : null;
+    if (!$policy) return;
+
+    $to = sanitize_email((string)get_option('ma_editorial_email', get_option('admin_email')));
+    if (!$to || !is_email($to)) return;
+
+    $subject = '[Merzenich Aktuell] Neue Partner-Einreichung zur Freigabe';
+    $body = "Neue Einreichung wartet auf redaktionelle Freigabe.\n\n";
+    $body .= 'Partner: '.($author->display_name ?: $author->user_login)."\n";
+    $body .= 'Rolle: '.$policy['label']."\n";
+    $body .= 'Inhaltstyp: '.$post->post_type."\n";
+    $body .= 'Titel: '.$post->post_title."\n\n";
+    $body .= 'Prüfen: '.admin_url('post.php?post='.$post->ID.'&action=edit')."\n";
+    wp_mail($to, $subject, $body);
 }
 
 function ma_partner_admin_own_content(WP_Query $query): void {
