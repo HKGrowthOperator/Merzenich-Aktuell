@@ -207,3 +207,90 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     window.location.href=form.getAttribute('action')+'?subject='+encodeURIComponent('Merzenich Aktuell · '+form.name)+'&body='+encodeURIComponent(lines.join('\n\n'));
   });
 });
+
+
+/* KBS / Ordin 23.09.2026 – globale Portal-UX */
+(function(){
+  'use strict';
+
+  /* Hellmodus-only + Werbefrei komplett aus der sichtbaren Site entfernen. */
+  document.documentElement.dataset.theme='light';
+  document.documentElement.style.colorScheme='light';
+  try{localStorage.removeItem('merzenich-theme')}catch(e){}
+  document.querySelectorAll('a[href="/werbefrei/"],.theme-toggle,.darstellung-knopf,.einstellungen,.einstellungen-schleier').forEach(function(el){el.remove()});
+
+  /* Sport-Megamenue: Unterthemen direkt am Ressort statt leerer Einzellink. */
+  var nav=document.querySelector('.mainnav');
+  var sport=nav&&nav.querySelector('.navscroll a[href="/sport/"]');
+  if(nav&&sport&&!nav.querySelector('.sport-mega')){
+    sport.classList.add('has-mega');
+    sport.setAttribute('aria-haspopup','true');
+    var mega=document.createElement('div');
+    mega.className='sport-mega';
+    mega.innerHTML='<div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div>';
+    nav.appendChild(mega);
+    var closeTimer;
+    function open(){clearTimeout(closeTimer);mega.classList.add('is-open');sport.setAttribute('aria-expanded','true')}
+    function close(){closeTimer=setTimeout(function(){mega.classList.remove('is-open');sport.setAttribute('aria-expanded','false')},120)}
+    sport.addEventListener('mouseenter',open); sport.addEventListener('focus',open);
+    mega.addEventListener('mouseenter',open); mega.addEventListener('mouseleave',close);
+    sport.addEventListener('mouseleave',close);
+    nav.addEventListener('focusout',function(e){if(!nav.contains(e.relatedTarget))close()});
+  }
+
+  /* Foto des Tages: tägliche, deterministische Rotation aus bereits
+     dokumentierten lokalen Projektbildern – mit sichtbarem Credit. */
+  var foto=document.getElementById('foto-des-tages-bild');
+  var credit=document.getElementById('foto-des-tages-credit');
+  if(foto&&credit){
+    var pool=[
+      ['/assets/places/merzenich-1440.webp','Historisches Fachwerkhaus im Ortskern von Merzenich','Karl-Heinz Meurer / Wikimedia Commons'],
+      ['/assets/places/golzheim-1440.webp','Blick über den Wenauer Hof auf St. Gregorius in Golzheim','Karl-Heinz Meurer / Wikimedia Commons'],
+      ['/assets/places/girbelsrath-1440.webp','Fachwerkhaus an der Hauptstraße in Girbelsrath','Käthe und Bernd Limburg / Wikimedia Commons'],
+      ['/assets/places/morschenich-1440.webp','Archivblick auf Morschenich','Papa1234 / Wikimedia Commons'],
+      ['/assets/places/buergewald-1440.webp','Luftbild von Bürgewald','Antisyntagmatarchos / Wikimedia Commons']
+    ];
+    var now=new Date(), start=new Date(now.getFullYear(),0,0);
+    var day=Math.floor((now-start)/86400000);
+    var pick=pool[day%pool.length];
+    foto.src=pick[0]; foto.alt=pick[1]; credit.textContent='Foto: '+pick[2];
+  }
+
+  /* Geführter Einstieg für Anzeigen und Immobilien. */
+  function icon(type){
+    if(type==='haus')return '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 25 32 7l24 18v18H39V31H25v12H8Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>';
+    if(type==='kerze')return '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M28 18h8v25h-8zM32 5c6 6 6 10 0 14-6-4-6-8 0-14Z" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>';
+    if(type==='megafon')return '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 22h12l28-12v28L20 28H8zM20 28l6 14h8l-5-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>';
+    if(type==='familie')return '<svg viewBox="0 0 64 48" aria-hidden="true"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="42" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 42c1-11 7-16 14-16s13 5 14 16M34 42c1-8 5-12 10-12 6 0 10 4 11 12" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>';
+    return '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="8" y="10" width="48" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14 18h36M14 25h24M14 32h18" stroke="currentColor" stroke-width="2.4"/></svg>';
+  }
+  function guided(title,intro,cards){
+    return '<section class="publish-guide"><div class="publish-guide__head"><span class="eyebrow">Einfach veröffentlichen</span><h2>'+title+'</h2><p>'+intro+'</p></div><div class="publish-guide__grid">'+cards.map(function(c){return '<a class="publish-card" href="'+c.href+'"><span class="publish-card__visual">'+icon(c.icon)+'</span><span class="publish-card__copy"><strong>'+c.title+'</strong><small>'+c.text+'</small></span></a>'}).join('')+'</div></section>';
+  }
+  var path=location.pathname.replace(/\/+$/,'/') ;
+  if(path==='/immobilien/'){
+    var host=document.querySelector('main .content-grid, main .shell .content-grid, main section .shell');
+    if(host&&!document.querySelector('.publish-guide')){
+      var wrap=document.createElement('div');
+      wrap.innerHTML=guided('Immobilienanzeige aufgeben','Wählen Sie zuerst, was Sie anbieten möchten. Danach führt Sie die Redaktion durch die benötigten Angaben.',[
+        {icon:'haus',title:'Immobilie verkaufen',text:'Haus, Wohnung, Grundstück oder Gewerbeobjekt.',href:'/kontakt/?thema=immobilie&art=verkauf'},
+        {icon:'haus',title:'Immobilie vermieten',text:'Wohnung, Haus oder Gewerbefläche zur Miete.',href:'/kontakt/?thema=immobilie&art=miete'},
+        {icon:'megafon',title:'Makler & Partner',text:'Mehrere Objekte oder regelmäßige Veröffentlichung.',href:'/werben/?thema=immobilien'}
+      ]);
+      host.insertBefore(wrap.firstElementChild,host.firstChild);
+    }
+  }
+  if(path==='/anzeigen/'){
+    var main=document.querySelector('main .shell')||document.querySelector('main');
+    if(main&&!document.querySelector('.publish-guide')){
+      var wrap2=document.createElement('div');
+      wrap2.innerHTML=guided('Was möchten Sie veröffentlichen?','Ein Bereich, ein klarer Weg. Wählen Sie die passende Anzeigenart.',[
+        {icon:'haus',title:'Immobilien',text:'Verkauf, Vermietung und gewerbliche Objekte.',href:'/immobilien/'},
+        {icon:'kerze',title:'Traueranzeige',text:'Trauerfall würdevoll veröffentlichen.',href:'/traueranzeigen/'},
+        {icon:'familie',title:'Familienanzeige',text:'Geburt, Hochzeit, Jubiläum und weitere Anlässe.',href:'/familienanzeigen/'},
+        {icon:'megafon',title:'Werbung',text:'Banner, Sponsoring, Tipp und Unternehmenspräsenz.',href:'/werben/'}
+      ]);
+      main.insertBefore(wrap2.firstElementChild,main.firstChild);
+    }
+  }
+})();
