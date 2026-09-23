@@ -23,6 +23,9 @@ function bildzeile(a) {
 /* ============================================================ Startseite */
 export function homePage(ctx) {
   const { site, articles, events } = ctx;
+  // Sport bleibt ein eigener Kanal; bezahlte Tipp-Inhalte bleiben strikt
+  // ausserhalb der redaktionellen Homepage-Auswahl.
+  const homeArticles = articles.filter(a => !['sport','tipp'].includes(a.ressort));
 
   // Jeder Block zieht aus demselben Bestand. Ohne Register zeigte die Startseite
   // 14 Schlagzeilen doppelt, waehrend 17 Meldungen gar nicht vorkamen: der
@@ -34,7 +37,7 @@ export function homePage(ctx) {
   const vergeben = new Set();
   const nimm = (anzahl, passt = () => true) => {
     const treffer = [];
-    for (const a of articles) {
+    for (const a of homeArticles) {
       if (treffer.length >= anzahl) break;
       if (vergeben.has(a) || !passt(a)) continue;
       treffer.push(a);
@@ -55,18 +58,16 @@ export function homePage(ctx) {
     return treffer;
   };
 
-  const lead = C.waehleAufmacher(articles, { erzwingen: true });
+  const lead = C.waehleAufmacher(homeArticles, { erzwingen: true });
   vergeben.add(lead);
 
-  // Zwei Nebenmeldungen, nicht drei: mit drei lief die Nebenspalte fast doppelt
-  // so hoch wie die Aufmacherspalte und hinterliess rund 640 px Leerraum unter
-  // dem Aufmacher. Die WordPress-Fassung nutzt an dieser Stelle ohnehin zwei.
-  const side = nimmBebildert(2);
+  // KBS/Ordin 23.09.2026: eine grosse Highlight-News plus fuenf kleinere
+  // bildstarke Highlights im ersten Blick.
+  const side = nimmBebildert(5);
   const quick = nimm(4);
   const kurz = nimm(6, a => a.format === 'kurz');
   const feed = nimm(12);
   const blaulicht = nimm(3, a => a.ressort === 'blaulicht');
-  const sport = nimm(3, a => ['sport', 'vereine'].includes(a.ressort));
   const leben = nimm(3, a => ['leben', 'menschen', 'wirtschaft', 'rathaus'].includes(a.ressort));
   const tipps = nimm(5, a => a.featured);
   const businesses = ctx.businesses.slice(0, 4);
@@ -95,7 +96,6 @@ ${kurz.length ? `<section class="section kurz-section"><div class="shell">
     <div class="feed">${feed.slice(0, 4).map(a => C.feedRow(a, ctx)).join('')}${feed.length > 4 ? C.nativeAd(site) : ''}${feed.slice(4).map(a => C.feedRow(a, ctx)).join('')}${feed.length ? `<a class="btn ghost block feed-more" href="/nachrichten/">Ältere Meldungen im Archiv</a>` : ''}</div>
     <aside class="sidebar">
       ${C.weatherBox()}
-      ${fussballBox(ctx)}
       ${C.terminBox(events, ctx.now)}
       ${C.whatsappBox(site)}
       ${tipps.length ? C.rankedBox('Lesetipps der Redaktion', tipps) : ''}
@@ -120,10 +120,6 @@ ${blaulicht.length ? `<section class="section dark"><div class="shell">
 
 <div class="shell">${C.adSlot('home_mid', site)}</div>
 
-${sport.length ? `<section class="section"><div class="shell">
-  ${C.sectionHead('Sport & Vereine', 'Aus dem Vereinsleben', '/vereine/', 'Vereinsverzeichnis')}
-  <div class="cards-3">${sport.map(a => C.card(a, ctx)).join('')}</div>
-</div></section>` : ''}
 
 <section class="section"><div class="shell">
   ${C.sectionHead('Ressorts', 'Rathaus, Wirtschaft, Leben', '/nachrichten/', 'Alle Meldungen')}
@@ -158,7 +154,7 @@ ${businesses.length ? `<section class="section"><div class="shell">
   const ld = [{
     '@context': 'https://schema.org', '@type': 'CollectionPage', name: site.name, url: site.url + '/', description: site.claim,
     isPartOf: { '@id': site.url + '/#website' },
-    mainEntity: { '@type': 'ItemList', itemListElement: articles.slice(0, 10).map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: site.url + a.url, name: a.title })) }
+    mainEntity: { '@type': 'ItemList', itemListElement: homeArticles.slice(0, 10).map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: site.url + a.url, name: a.title })) }
   }];
   return layout(site, ctx, { title: '', description: site.description, url: '/', image: lead.image && lead.image.src ? lead.image.src : undefined, imageAlt: lead.image && lead.image.alt, jsonld: ld, bodyClass: 'home', nav: '/nachrichten/' , preloadImage: null }, content);
 }
