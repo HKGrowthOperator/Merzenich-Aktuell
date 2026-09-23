@@ -4,50 +4,310 @@
  "saison": "2026/2027",
  "quelle": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
  "vereinUrl": "https://www.fussball.de/verein/sc-merzenich-mittelrhein/-/id/00ES8GN9A0000054VV0AG08LVUPGND5I",
- "stand": "2026-09-16",
+ "stand": "2026-09-23",
  "logo": "/assets/uploads/sc-1919-merzenich-logo.webp",
  "logoCredit": "SC 1919 Merzenich",
  "hinweis": "Ergebnisse, Spielplan und Tabelle werden gemeinsam aus dem zuletzt redaktionell geprüften FUSSBALL.DE-Datenstand gepflegt.",
  "tabelleVollstaendig": true,
  "tabelle": [
-  {"platz":1,"team":"SC Jülich 1910/97/Hoengen e.V.","spiele":4,"siege":3,"unentschieden":1,"niederlagen":0,"tore":"13:2","diff":11,"punkte":10},
-  {"platz":2,"team":"FC Golzheim","spiele":4,"siege":3,"unentschieden":1,"niederlagen":0,"tore":"9:4","diff":5,"punkte":10},
-  {"platz":3,"team":"SV Grün-Weiß Welldorf-Güsten","spiele":4,"siege":3,"unentschieden":0,"niederlagen":1,"tore":"17:8","diff":9,"punkte":9},
-  {"platz":4,"team":"Spvg. SW 1896 Düren","spiele":4,"siege":3,"unentschieden":0,"niederlagen":1,"tore":"14:7","diff":7,"punkte":9},
-  {"platz":5,"team":"SC 1919 Merzenich","spiele":4,"siege":3,"unentschieden":0,"niederlagen":1,"tore":"12:8","diff":4,"punkte":9,"wir":true},
-  {"platz":6,"team":"BC Oberzier","spiele":4,"siege":2,"unentschieden":1,"niederlagen":1,"tore":"10:3","diff":7,"punkte":7},
-  {"platz":7,"team":"SV Siersdorf","spiele":4,"siege":2,"unentschieden":1,"niederlagen":1,"tore":"5:7","diff":-2,"punkte":7},
-  {"platz":8,"team":"JSV Frenz","spiele":3,"siege":2,"unentschieden":0,"niederlagen":1,"tore":"11:8","diff":3,"punkte":6},
-  {"platz":9,"team":"Hambacher Spielverein 1","spiele":4,"siege":1,"unentschieden":1,"niederlagen":2,"tore":"5:10","diff":-5,"punkte":4},
-  {"platz":10,"team":"SV SW Huchem-Stammeln","spiele":2,"siege":1,"unentschieden":0,"niederlagen":1,"tore":"5:1","diff":4,"punkte":3},
-  {"platz":11,"team":"Jugendsport Wenau","spiele":4,"siege":1,"unentschieden":0,"niederlagen":3,"tore":"8:11","diff":-3,"punkte":3},
-  {"platz":12,"team":"SG Nörvenich-Hochkirchen","spiele":4,"siege":1,"unentschieden":0,"niederlagen":3,"tore":"4:10","diff":-6,"punkte":3},
-  {"platz":13,"team":"Borussia Freialdenhoven","spiele":4,"siege":1,"unentschieden":0,"niederlagen":3,"tore":"8:18","diff":-10,"punkte":3},
-  {"platz":14,"team":"SC Salingia 08 Barmen","spiele":4,"siege":0,"unentschieden":1,"niederlagen":3,"tore":"2:13","diff":-11,"punkte":1},
-  {"platz":15,"team":"SV Viktoria Koslar","spiele":3,"siege":0,"unentschieden":0,"niederlagen":3,"tore":"2:7","diff":-5,"punkte":0},
-  {"platz":16,"team":"FC Düren 77 e.V.","spiele":2,"siege":0,"unentschieden":0,"niederlagen":2,"tore":"2:10","diff":-8,"punkte":0}
+  {
+   "platz": 1,
+   "team": "SC Jülich 1910/97/Hoengen e.V.",
+   "spiele": 5,
+   "siege": 4,
+   "unentschieden": 1,
+   "niederlagen": 0,
+   "tore": "15:3",
+   "diff": 12,
+   "punkte": 13
+  },
+  {
+   "platz": 2,
+   "team": "FC Golzheim",
+   "spiele": 5,
+   "siege": 4,
+   "unentschieden": 1,
+   "niederlagen": 0,
+   "tore": "12:4",
+   "diff": 8,
+   "punkte": 13
+  },
+  {
+   "platz": 3,
+   "team": "Spvg. SW 1896 Düren",
+   "spiele": 5,
+   "siege": 4,
+   "unentschieden": 0,
+   "niederlagen": 1,
+   "tore": "23:7",
+   "diff": 16,
+   "punkte": 12
+  },
+  {
+   "platz": 4,
+   "team": "SV Grün-Weiß Welldorf-Güsten",
+   "spiele": 5,
+   "siege": 4,
+   "unentschieden": 0,
+   "niederlagen": 1,
+   "tore": "23:11",
+   "diff": 12,
+   "punkte": 12
+  },
+  {
+   "platz": 5,
+   "team": "BC Oberzier",
+   "spiele": 5,
+   "siege": 3,
+   "unentschieden": 1,
+   "niederlagen": 1,
+   "tore": "11:3",
+   "diff": 8,
+   "punkte": 10
+  },
+  {
+   "platz": 6,
+   "team": "SV Siersdorf",
+   "spiele": 5,
+   "siege": 3,
+   "unentschieden": 1,
+   "niederlagen": 1,
+   "tore": "7:7",
+   "diff": 0,
+   "punkte": 10
+  },
+  {
+   "platz": 7,
+   "team": "SC 1919 Merzenich",
+   "spiele": 5,
+   "siege": 3,
+   "unentschieden": 0,
+   "niederlagen": 2,
+   "tore": "13:10",
+   "diff": 3,
+   "punkte": 9,
+   "wir": true
+  },
+  {
+   "platz": 8,
+   "team": "SV SW Huchem-Stammeln",
+   "spiele": 3,
+   "siege": 2,
+   "unentschieden": 0,
+   "niederlagen": 1,
+   "tore": "9:4",
+   "diff": 5,
+   "punkte": 6
+  },
+  {
+   "platz": 9,
+   "team": "JSV Frenz",
+   "spiele": 4,
+   "siege": 2,
+   "unentschieden": 0,
+   "niederlagen": 2,
+   "tore": "14:14",
+   "diff": 0,
+   "punkte": 6
+  },
+  {
+   "platz": 10,
+   "team": "SG Nörvenich-Hochkirchen",
+   "spiele": 5,
+   "siege": 2,
+   "unentschieden": 0,
+   "niederlagen": 3,
+   "tore": "6:11",
+   "diff": -5,
+   "punkte": 6
+  },
+  {
+   "platz": 11,
+   "team": "Hambacher Spielverein 1",
+   "spiele": 5,
+   "siege": 1,
+   "unentschieden": 1,
+   "niederlagen": 3,
+   "tore": "5:13",
+   "diff": -8,
+   "punkte": 4
+  },
+  {
+   "platz": 12,
+   "team": "Jugendsport Wenau",
+   "spiele": 5,
+   "siege": 1,
+   "unentschieden": 0,
+   "niederlagen": 4,
+   "tore": "8:12",
+   "diff": -4,
+   "punkte": 3
+  },
+  {
+   "platz": 13,
+   "team": "Borussia Freialdenhoven",
+   "spiele": 5,
+   "siege": 1,
+   "unentschieden": 0,
+   "niederlagen": 4,
+   "tore": "8:20",
+   "diff": -12,
+   "punkte": 3
+  },
+  {
+   "platz": 14,
+   "team": "SC Salingia 08 Barmen",
+   "spiele": 5,
+   "siege": 0,
+   "unentschieden": 1,
+   "niederlagen": 4,
+   "tore": "3:15",
+   "diff": -12,
+   "punkte": 1
+  },
+  {
+   "platz": 15,
+   "team": "SV Viktoria Koslar",
+   "spiele": 4,
+   "siege": 0,
+   "unentschieden": 0,
+   "niederlagen": 4,
+   "tore": "5:11",
+   "diff": -6,
+   "punkte": 0
+  },
+  {
+   "platz": 16,
+   "team": "FC Düren 77 e.V.",
+   "spiele": 3,
+   "siege": 0,
+   "unentschieden": 0,
+   "niederlagen": 3,
+   "tore": "2:19",
+   "diff": -17,
+   "punkte": 0
+  }
  ],
  "spiele": [
-  {"datum":"2026-09-18T19:30:00+02:00","gegner":"SC Jülich 1910/97/Hoengen e.V.","heim":false,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-09-27T15:00:00+02:00","gegner":"SG Nörvenich-Hochkirchen","heim":true,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-10-02T19:00:00+02:00","gegner":"SC Salingia 08 Barmen","heim":false,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-10-09T19:30:00+02:00","gegner":"Borussia Freialdenhoven","heim":false,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-10-18T15:00:00+02:00","gegner":"Jugendsport Wenau","heim":true,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-10-25T15:00:00+01:00","gegner":"Hambacher Spielverein 1","heim":false,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-11-08T15:00:00+01:00","gegner":"FC Düren 77 e.V.","heim":true,"wettbewerb":"Kreisliga A"},
-  {"datum":"2026-11-15T15:00:00+01:00","gegner":"JSV Frenz","heim":false,"wettbewerb":"Kreisliga A"}
+  {
+   "datum": "2026-09-27T15:00:00+02:00",
+   "gegner": "SG Nörvenich-Hochkirchen",
+   "heim": true,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-10-02T19:00:00+02:00",
+   "gegner": "SC Salingia 08 Barmen",
+   "heim": false,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-10-09T19:30:00+02:00",
+   "gegner": "Borussia Freialdenhoven",
+   "heim": false,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-10-18T15:00:00+02:00",
+   "gegner": "Jugendsport Wenau",
+   "heim": true,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-10-25T15:00:00+01:00",
+   "gegner": "Hambacher Spielverein 1",
+   "heim": false,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-11-08T15:00:00+01:00",
+   "gegner": "FC Düren 77 e.V.",
+   "heim": true,
+   "wettbewerb": "Kreisliga A"
+  },
+  {
+   "datum": "2026-11-15T15:00:00+01:00",
+   "gegner": "JSV Frenz",
+   "heim": false,
+   "wettbewerb": "Kreisliga A"
+  }
  ],
  "gespielt": [
-  {"start":"2026-08-23T17:30:00+02:00","gegner":"SC Alemannia Lendersdorf","heim":true,"wettbewerb":"Kreispokal","nr":"280078008"},
-  {"start":"2026-08-30T15:00:00+02:00","gegner":"Spvg. SW 1896 Düren","heim":true,"wettbewerb":"Kreisliga A","nr":"230517005","ergebnis":"5:2"},
-  {"start":"2026-09-02T19:30:00+02:00","gegner":"SV Grün-Weiß Welldorf-Güsten","heim":false,"wettbewerb":"Kreisliga A","nr":"230517012","ergebnis":"0:2"},
-  {"start":"2026-09-06T15:00:00+02:00","gegner":"FC Golzheim","heim":false,"wettbewerb":"Kreisliga A","ergebnis":"4:2"},
-  {"start":"2026-09-13T15:00:00+02:00","gegner":"BC Oberzier","heim":true,"wettbewerb":"Kreisliga A","ergebnis":"3:2","bericht":"https://www.fussball.de/mgc.newsdetail/-/article-uuid/03231KINE0000000VS5489BVVSHTTO0V"}
+  {
+   "start": "2026-08-23T17:30:00+02:00",
+   "gegner": "SC Alemannia Lendersdorf",
+   "heim": true,
+   "wettbewerb": "Kreispokal",
+   "nr": "280078008"
+  },
+  {
+   "start": "2026-08-30T15:00:00+02:00",
+   "gegner": "Spvg. SW 1896 Düren",
+   "heim": true,
+   "wettbewerb": "Kreisliga A",
+   "nr": "230517005",
+   "ergebnis": "5:2"
+  },
+  {
+   "start": "2026-09-02T19:30:00+02:00",
+   "gegner": "SV Grün-Weiß Welldorf-Güsten",
+   "heim": false,
+   "wettbewerb": "Kreisliga A",
+   "nr": "230517012",
+   "ergebnis": "0:2"
+  },
+  {
+   "start": "2026-09-06T15:00:00+02:00",
+   "gegner": "FC Golzheim",
+   "heim": false,
+   "wettbewerb": "Kreisliga A",
+   "ergebnis": "4:2"
+  },
+  {
+   "start": "2026-09-13T15:00:00+02:00",
+   "gegner": "BC Oberzier",
+   "heim": true,
+   "wettbewerb": "Kreisliga A",
+   "ergebnis": "3:2",
+   "bericht": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/03231KINE0000000VS5489BVVSHTTO0V"
+  },
+  {
+   "start": "2026-09-18T19:30:00+02:00",
+   "gegner": "SC Jülich 1910/97/Hoengen e.V.",
+   "heim": false,
+   "wettbewerb": "Kreisliga A",
+   "ergebnis": "2:1",
+   "bericht": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/0324N1D8OC000000VS5489C0VSHMK3LU"
+  }
  ],
  "weitere": [
-  {"team":"SC 1919 Merzenich II","liga":"Kreisliga C, Staffel 2","stand":"Platz 8 · 6 Punkte · 12:13","url":"https://www.fussball.de/mannschaft/sc-1919-merzenich-2-sc-merzenich-mittelrhein/-/saison/2627/team-id/02BDRS8RDG000000VS5489B2VU21J0QC","naechstes":{"start":"2026-09-18T19:00:00+02:00","gegner":"FC Borussia Derichsweiler I","heim":false}},
-  {"team":"SC 1919 Merzenich III","liga":"Kreisliga C, Staffel 1","stand":"Platz 9 · 4 Punkte · 7:21","url":"https://www.fussball.de/mannschaft/sc-1919-merzenich-3-sc-merzenich-mittelrhein/-/saison/2627/team-id/0316V67EV8000000VS5489BSVSCPI5U4","naechstes":{"start":"2026-09-20T12:30:00+02:00","gegner":"SV SW Huchem-Stammeln II","heim":false}},
-  {"team":"Juniorenmannschaften","liga":"Jugend","stand":"14 Teams"}
+  {
+   "team": "SC 1919 Merzenich II",
+   "liga": "Kreisliga C, Staffel 2",
+   "stand": "Platz 6 · 7 Punkte · 17:18",
+   "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-2-sc-merzenich-mittelrhein/-/saison/2627/team-id/02BDRS8RDG000000VS5489B2VU21J0QC",
+   "naechstes": {
+    "start": "2026-10-02T19:30:00+02:00",
+    "gegner": "JVC Columbia 03 Drove II",
+    "heim": false
+   }
+  },
+  {
+   "team": "SC 1919 Merzenich III",
+   "liga": "Kreisliga C, Staffel 1",
+   "stand": "Platz 12 · 4 Punkte · 9:25",
+   "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-3-sc-merzenich-mittelrhein/-/saison/2627/team-id/0316V67EV8000000VS5489BSVSCPI5U4",
+   "naechstes": {
+    "start": "2026-09-27T11:30:00+02:00",
+    "gegner": "SV Siersdorf II",
+    "heim": false
+   }
+  },
+  {
+   "team": "Juniorenmannschaften",
+   "liga": "Jugend",
+   "stand": "14 Teams"
+  }
  ],
  "teamsGesamt": 17
 }
