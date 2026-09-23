@@ -293,4 +293,43 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
       main.insertBefore(wrap2.firstElementChild,main.firstChild);
     }
   }
+
+  if(path==='/traueranzeigen/'){
+    var trauer=document.querySelector('main .shell')||document.querySelector('main');
+    if(trauer&&!document.querySelector('.publish-guide')){
+      var w3=document.createElement('div');
+      w3.innerHTML=guided('Traueranzeige aufgeben','Wählen Sie zuerst die passende Form. Die Redaktion prüft sensible Angaben vor der Veröffentlichung.',[
+        {icon:'kerze',title:'Traueranzeige',text:'Einen Trauerfall würdevoll veröffentlichen.',href:'/kontakt/?thema=trauer&art=traueranzeige'},
+        {icon:'kerze',title:'Danksagung',text:'Für Anteilnahme und Unterstützung danken.',href:'/kontakt/?thema=trauer&art=danksagung'},
+        {icon:'kerze',title:'Jahrgedächtnis',text:'Erinnerung an einen verstorbenen Menschen.',href:'/kontakt/?thema=trauer&art=jahrgedaechtnis'}
+      ]);
+      trauer.insertBefore(w3.firstElementChild,trauer.firstChild);
+    }
+  }
+
+  if(path==='/familienanzeigen/'){
+    var familie=document.querySelector('main .shell')||document.querySelector('main');
+    if(familie&&!document.querySelector('.publish-guide')){
+      var w4=document.createElement('div');
+      w4.innerHTML=guided('Familienanzeige aufgeben','Anlass wählen und anschließend die Angaben an die Redaktion senden.',[
+        {icon:'familie',title:'Geburt',text:'Willkommen heißen und Freude teilen.',href:'/kontakt/?thema=familie&art=geburt'},
+        {icon:'familie',title:'Hochzeit',text:'Hochzeit oder Verlobung veröffentlichen.',href:'/kontakt/?thema=familie&art=hochzeit'},
+        {icon:'familie',title:'Jubiläum',text:'Geburtstag, Hochzeitstag oder Jubiläum.',href:'/kontakt/?thema=familie&art=jubilaeum'}
+      ]);
+      familie.insertBefore(w4.firstElementChild,familie.firstChild);
+    }
+  }
+
+  if(path==='/werben/'){
+    var werben=document.querySelector('main .shell')||document.querySelector('main');
+    if(werben&&!document.querySelector('.publish-guide')){
+      var w5=document.createElement('div');
+      w5.innerHTML=guided('Wie möchten Sie sichtbar werden?','Wählen Sie die passende Werbeform. Jede Schaltung wird vor Veröffentlichung redaktionell geprüft.',[
+        {icon:'megafon',title:'Werbebanner',text:'Klassische Werbeflächen zwischen redaktionellen Bereichen.',href:'/kontakt/?thema=werbung&art=banner'},
+        {icon:'megafon',title:'Tipp / Sponsoring',text:'Eigene Tipp-Rubrik für Vereine, Unternehmen und Sponsoren.',href:'/kontakt/?thema=werbung&art=tipp'},
+        {icon:'haus',title:'Unternehmensprofil',text:'Dauerhafte lokale Präsenz im Wirtschaftsbereich.',href:'/kontakt/?thema=werbung&art=unternehmen'}
+      ]);
+      werben.insertBefore(w5.firstElementChild,werben.firstChild);
+    }
+  }
 })();
