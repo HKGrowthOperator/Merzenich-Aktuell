@@ -412,3 +412,17 @@ body.home .desk-zeilen{margin-top:16px}
 .photo-day figcaption{margin-top:6px;color:var(--ma-muted,#6f6a63);font-size:11px}
 @media(max-width:900px){.home-specials{grid-template-columns:1fr}.home-tipp-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.home-tipp-grid{grid-template-columns:1fr}.home-tipp-card{min-height:145px}}
+
+
+/* KBS 23.09.2026 – kompakte Meldungen ebenfalls bildgeführt */
+body.home .front-zeile--bild{
+  display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:18px;
+  align-items:start;padding:16px 0
+}
+body.home .front-zeile--bild .karte-bild .media{aspect-ratio:16/10}
+body.home .front-zeile--bild .karte-text{padding-top:2px}
+body.home .front-zeile--bild h3{margin:5px 0 6px;font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.18}
+@media(max-width:560px){
+  body.home .front-zeile--bild{grid-template-columns:112px minmax(0,1fr);gap:12px}
+  body.home .front-zeile--bild h3{font-size:18px}
+}
