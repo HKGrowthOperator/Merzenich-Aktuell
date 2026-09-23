@@ -1,6 +1,13 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
-function ma_ad_slots(): array { return ['homepage_sidebar_top','homepage_sidebar_middle','homepage_feed_1','article_inline_1','article_sidebar','header_billboard']; }
+function ma_ad_slots(): array {
+    return [
+        'homepage_sidebar_top','homepage_sidebar_middle',
+        'homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4',
+        'homepage_tip','homepage_feed_1',
+        'article_inline_1','article_sidebar','header_billboard'
+    ];
+}
 function ma_register_ads_hooks(): void { add_shortcode('ma_ad','ma_ad_shortcode'); }
 function ma_active_ad(string $slot): ?WP_Post {
     if (!get_option('ma_ads_enabled',0)) return null;
