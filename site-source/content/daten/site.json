@@ -53,6 +53,10 @@
       "href": "/wirtschaft/"
     },
     {
+      "label": "Tipp",
+      "href": "/tipp/"
+    },
+    {
       "label": "Menschen",
       "href": "/menschen/"
     }
@@ -97,6 +101,11 @@
       "name": "Menschen",
       "long": "Menschen aus Merzenich",
       "desc": "Jubiläen, Hochzeiten, Ehrungen, Nachrufe und Porträts: die Menschen hinter den Meldungen."
+    },
+    "tipp": {
+      "name": "Tipp",
+      "long": "Tipps aus Merzenich",
+      "desc": "Bezahlte und gesponserte Platzierungen von Vereinen, Unternehmen und Partnern aus Merzenich und der Region. Jede Platzierung wird klar als Tipp, Anzeige oder Sponsoring gekennzeichnet."
     }
   },
   "orte": [
