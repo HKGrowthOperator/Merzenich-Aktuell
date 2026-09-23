@@ -10,6 +10,7 @@
    "rathaus": 7,
    "leben": 9,
    "wirtschaft": 6,
+   "tipp": 0,
    "menschen": 0,
    "vereine": 3,
    "kultur": 0
@@ -47,6 +48,10 @@
     "anzahl": 6,
     "liste": "gepflegt"
    },
+   "/tipp/": {
+    "anzahl": 0,
+    "liste": "keine Seite"
+   },
    "/menschen/": {
     "anzahl": 0,
     "liste": "gepflegt"
@@ -82,6 +87,7 @@
   },
   "leer": {
    "ressorts": [
+    "tipp",
     "menschen",
     "kultur"
    ],
@@ -89,6 +95,7 @@
     "region"
    ],
    "listen": [
+    "/tipp/",
     "/menschen/",
     "/kultur/"
    ]
