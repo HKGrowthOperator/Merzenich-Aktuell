@@ -13,6 +13,7 @@ function ma_add_content_meta_boxes(): void {
     add_meta_box('ma-job-details', 'Stellendaten', 'ma_render_job_meta_box', 'ma_job', 'normal', 'high');
     add_meta_box('ma-obituary-details', 'Traueranzeige', 'ma_render_obituary_meta_box', 'ma_obituary', 'normal', 'high');
     add_meta_box('ma-family-details', 'Familienanzeige', 'ma_render_family_meta_box', 'ma_family_notice', 'normal', 'high');
+    add_meta_box('ma-tip-details', 'Tipp / Sponsoring', 'ma_render_tip_meta_box', 'ma_tip', 'normal', 'high');
     add_meta_box('ma-ad-details', 'Werbeschaltung', 'ma_render_ad_meta_box', 'ma_ad', 'normal', 'high');
 }
 
@@ -149,6 +150,19 @@ function ma_render_family_meta_box(WP_Post $post): void {
     ma_admin_meta_box_end();
 }
 
+function ma_render_tip_meta_box(WP_Post $post): void {
+    ma_admin_meta_box_start();
+    ma_admin_select('ma_tip_kind','Kennzeichnung',ma_admin_field_value($post->ID,'ma_tip_kind'),[
+        'tipp'=>'Tipp','sponsoring'=>'Sponsoring','anzeige'=>'Anzeige'
+    ]);
+    ma_admin_input('ma_tip_sponsor','Sponsor / Auftraggeber',ma_admin_field_value($post->ID,'ma_tip_sponsor'),'text','Unternehmen / Verein');
+    ma_admin_input('ma_tip_url','Partner-Link',ma_admin_field_value($post->ID,'ma_tip_url'),'url','https://...');
+    ma_admin_input('ma_tip_start','Start der Platzierung',ma_admin_field_value($post->ID,'ma_tip_start'),'datetime-local');
+    ma_admin_input('ma_end_at','Platzierung endet',ma_admin_field_value($post->ID,'ma_end_at'),'datetime-local');
+    ma_admin_checkbox('ma_release_confirmed','Freigabe',ma_admin_field_value($post->ID,'ma_release_confirmed')==='1','Erst nach dokumentierter redaktioneller und kaufmännischer Freigabe veröffentlichen.','Freigabe dokumentiert');
+    ma_admin_meta_box_end();
+}
+
 function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Slot in Merzenich Aktuell → Werbung aktiviert sein.');
@@ -186,6 +200,9 @@ function ma_content_admin_schema(string $post_type): array {
         ]),
         'ma_family_notice'=>array_merge($common_end,[
             'ma_family_kind'=>'text','ma_family_date'=>'date','ma_family_place'=>'text','ma_family_contact'=>'text',
+        ]),
+        'ma_tip'=>array_merge($common_end,[
+            'ma_tip_kind'=>'text','ma_tip_sponsor'=>'text','ma_tip_url'=>'url','ma_tip_start'=>'datetime',
         ]),
         'ma_ad'=>[
             'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'number',
@@ -240,7 +257,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
 }
 
 function ma_market_publication_gate(array $data,array $postarr): array {
-    $gated=['ma_property','ma_job','ma_obituary','ma_family_notice'];
+    $gated=['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'];
     if (!in_array($data['post_type']??'',$gated,true) || ($data['post_status']??'')!=='publish') return $data;
 
     $post_id=(int)($postarr['ID']??0);
