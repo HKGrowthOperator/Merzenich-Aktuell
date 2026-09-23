@@ -100,7 +100,9 @@ function vereinskanal() {
 const MODUL_RE = /<div class="sports-module"[^>]*>[\s\S]*?<\/section><\/div>/;
 const KACHEL_RE = /<div class="sc-stand"[\s\S]*?<\/div><p class="sc-stand-quelle">[\s\S]*?<\/p>/;
 let geaendert = 0, fehler = 0;
-for (const rel of ['index.html', 'sport/index.html']) {
+// KBS/Ordin 23.09.2026: Sportdaten werden nur noch auf der Sport-Unterseite
+// aktualisiert. Die Startseite darf kein Sportmodul mehr enthalten.
+for (const rel of ['sport/index.html']) {
   const pfad = join(site, rel);
   const alt = readFileSync(pfad, 'utf8');
   if (!MODUL_RE.test(alt)) { fehler++; console.error(`${rel}: kein Sportmodul gefunden`); continue; }
