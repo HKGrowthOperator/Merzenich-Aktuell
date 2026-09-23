@@ -250,29 +250,96 @@ function ma_partner_rest_guard($prepared_post, WP_REST_Request $request) {
     return $prepared_post;
 }
 
+function ma_partner_create_account(): string {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['ma_create_partner'])) return '';
+    if (!current_user_can('manage_options')) return '';
+    check_admin_referer('ma_create_partner');
+
+    $name = sanitize_text_field(wp_unslash($_POST['partner_name'] ?? ''));
+    $email = sanitize_email(wp_unslash($_POST['partner_email'] ?? ''));
+    $role = sanitize_key(wp_unslash($_POST['partner_role'] ?? ''));
+    $policies = ma_partner_policies();
+
+    if ($name === '' || !$email || !is_email($email) || !isset($policies[$role])) return 'Bitte Name, gültige E-Mail und Rolle vollständig angeben.';
+    if (email_exists($email)) return 'Für diese E-Mail-Adresse existiert bereits ein WordPress-Zugang.';
+
+    $base = sanitize_user((string)strstr($email, '@', true), true);
+    if ($base === '') $base = 'partner';
+    $login = $base; $i = 2;
+    while (username_exists($login)) { $login = $base.'-'.$i; $i++; }
+
+    $user_id = wp_insert_user([
+        'user_login'=>$login,
+        'user_email'=>$email,
+        'display_name'=>$name,
+        'user_pass'=>wp_generate_password(24, true, true),
+        'role'=>$role,
+    ]);
+    if (is_wp_error($user_id)) return 'Zugang konnte nicht angelegt werden: '.$user_id->get_error_message();
+
+    if (function_exists('wp_send_new_user_notifications')) wp_send_new_user_notifications((int)$user_id, 'user');
+    else wp_new_user_notification((int)$user_id, null, 'user');
+
+    return 'Partner-Zugang für '.$name.' angelegt. Die Einladung wurde an '.$email.' gesendet.';
+}
+
 function ma_partner_admin_page(): void {
     if (!current_user_can('manage_options')) return;
     $policies = ma_partner_policies();
-    echo '<div class="wrap"><h1>Partner-Zugänge</h1>';
-    echo '<p>Neue Zugänge unter <a href="'.esc_url(admin_url('user-new.php')).'">Benutzer → Neu hinzufügen</a> anlegen und eine der Rollen unten zuweisen. Partner reichen ausschließlich Entwürfe zur Freigabe ein.</p>';
-    echo '<table class="widefat striped"><thead><tr><th>Rolle</th><th>Für</th><th>Erlaubte Inhalte</th><th>Offene Einreichungen</th></tr></thead><tbody>';
+    $meldung = ma_partner_create_account();
+
+    echo '<div class="wrap"><h1>Partner-Zugänge & Freigaben</h1>';
+    echo '<p>Polizei, Feuerwehr, Vereine, Rathaus, Unternehmen und Immobilienpartner erhalten nur ihren eigenen Arbeitsbereich. Veröffentlichung bleibt immer bei der Redaktion.</p>';
+    if ($meldung !== '') echo '<div class="notice notice-info"><p>'.esc_html($meldung).'</p></div>';
+
+    echo '<div style="display:grid;grid-template-columns:minmax(320px,520px) minmax(0,1fr);gap:28px;align-items:start">';
+    echo '<section style="padding:20px;background:#fff;border:1px solid #dcdcde"><h2 style="margin-top:0">Partner-Zugang anlegen</h2><form method="post">';
+    wp_nonce_field('ma_create_partner');
+    echo '<p><label><strong>Name / Organisation</strong><br><input class="regular-text" name="partner_name" required></label></p>';
+    echo '<p><label><strong>E-Mail</strong><br><input class="regular-text" type="email" name="partner_email" required></label></p>';
+    echo '<p><label><strong>Rolle</strong><br><select name="partner_role" required><option value="">Bitte wählen</option>';
+    foreach($policies as $role=>$p) echo '<option value="'.esc_attr($role).'">'.esc_html($p['label'].' – '.$p['description']).'</option>';
+    echo '</select></label></p><p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen & Einladung senden</button></p></form></section>';
+
+    echo '<section><h2 style="margin-top:0">Rollen</h2><table class="widefat striped"><thead><tr><th>Rolle</th><th>Für</th><th>Offen</th></tr></thead><tbody>';
     foreach ($policies as $role=>$p) {
-        $types = implode(', ', array_map('esc_html', $p['post_types']));
         $users = get_users(['role'=>$role,'fields'=>'ID']);
         $pending = 0;
         if ($users) {
             $q = new WP_Query([
-                'post_type'=>$p['post_types'],
-                'post_status'=>'pending',
-                'author__in'=>array_map('intval',$users),
-                'posts_per_page'=>1,
-                'fields'=>'ids',
+                'post_type'=>$p['post_types'],'post_status'=>'pending',
+                'author__in'=>array_map('intval',$users),'posts_per_page'=>1,'fields'=>'ids'
             ]);
             $pending = (int)$q->found_posts;
         }
-        echo '<tr><td><strong>'.esc_html($p['label']).'</strong></td><td>'.esc_html($p['description']).'</td><td>'.esc_html($types).'</td><td>'.esc_html((string)$pending).'</td></tr>';
+        echo '<tr><td><strong>'.esc_html($p['label']).'</strong><br><small>'.esc_html(implode(', ',$p['post_types'])).'</small></td><td>'.esc_html($p['description']).'</td><td>'.esc_html((string)$pending).'</td></tr>';
     }
-    echo '</tbody></table>';
-    echo '<p><a class="button button-primary" href="'.esc_url(admin_url('edit.php?post_status=pending&post_type=post')).'">Offene Nachrichten prüfen</a> ';
-    echo '<a class="button" href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Kommentar-Freigabe</a></p></div>';
+    echo '</tbody></table></section></div>';
+
+    $role_names=array_keys($policies);
+    $partner_users=get_users(['role__in'=>$role_names,'fields'=>'ID']);
+    echo '<h2>Offene Partner-Einreichungen</h2>';
+    if($partner_users){
+        $pending_q=new WP_Query([
+            'post_type'=>['post','ma_property','ma_business','ma_ad'],
+            'post_status'=>'pending','author__in'=>array_map('intval',$partner_users),
+            'posts_per_page'=>50,'orderby'=>'date','order'=>'ASC'
+        ]);
+    } else $pending_q=null;
+
+    if($pending_q && $pending_q->posts){
+        echo '<table class="widefat striped"><thead><tr><th>Titel</th><th>Partner</th><th>Rolle</th><th>Typ</th><th>Eingang</th><th></th></tr></thead><tbody>';
+        foreach($pending_q->posts as $item){
+            $author=get_userdata((int)$item->post_author);
+            $policy=$author?ma_current_partner_policy($author):null;
+            echo '<tr><td><strong>'.esc_html($item->post_title?:'(ohne Titel)').'</strong></td><td>'.esc_html($author?($author->display_name?:$author->user_login):'').'</td><td>'.esc_html($policy['label']??'').'</td><td>'.esc_html($item->post_type).'</td><td>'.esc_html(get_the_date('d.m.Y H:i',$item)).'</td><td><a class="button button-small" href="'.esc_url(get_edit_post_link($item->ID)).'">Prüfen</a></td></tr>';
+        }
+        echo '</tbody></table>';
+    } else {
+        echo '<div class="notice notice-info inline"><p>Aktuell warten keine Partner-Einreichungen auf Freigabe.</p></div>';
+    }
+
+    echo '<p><a class="button button-primary" href="'.esc_url(admin_url('edit.php?post_status=pending&post_type=post')).'">Alle offenen Nachrichten</a> ';
+    echo '<a class="button" href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Kommentar-Sammelfreigabe</a> ';
+    echo '<a class="button" href="'.esc_url(admin_url('users.php')).'">Alle Benutzer</a></p></div>';
 }
