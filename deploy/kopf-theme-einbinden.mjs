@@ -114,6 +114,8 @@ for (const pfad of seiten) {
   // "Diskussion" im Mehr-Menue und in der Schublade, direkt hinter Kontakt.
   if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (!html.includes('/assets/einwilligung.js')) html = html.replace(/<script src="\/assets\/kommentare\.js[^"]*" defer><\/script>/, (m) => m + EINWILLIGUNG);
+  // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
+  html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/tipp\/")/g, '$1<a href="/tipp/">Tipp</a>');
   // KBS/Ordin 23.09.2026: Werbefrei-Abo und Dunkelmodus sind vollständig entfernt.
   html = html.replace(/<a href="\/werbefrei\/">Werbefrei lesen<\/a>/g, '');
   html = html.replace(/<script src="\/assets\/(?:theme|werbefrei)\.js[^"]*" defer><\/script>/g, '');
