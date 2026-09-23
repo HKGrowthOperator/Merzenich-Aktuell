@@ -313,7 +313,8 @@ index.bestand = {
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
         + `</div></article>`;
     }
-    return `<article class="front-zeile" data-story="${esc(a.id)}">`
+    return `<article class="front-zeile front-zeile--bild" data-story="${esc(a.id)}">`
+      + bildFlaeche(a, '(max-width: 640px) 120px, 220px', false)
       + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
       + kopf(a)
       + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
@@ -445,8 +446,8 @@ index.bestand = {
     }
     belege(gross);
     belege(mittel);
-    // Meldungen ohne verwendbares Motiv bekommen keine leere Bildflaeche,
-    // sondern eine kompakte Zeile. Hoechstens zwei, sonst waechst die Sektion
+    // Kompakte Meldungen behalten ebenfalls ihr zugewiesenes Bild (inklusive
+    // verifiziertem Symbolbild). Hoechstens zwei, sonst waechst die Sektion
     // zu einer Liste aus, die niemand zu Ende liest.
     const zeilen = frei.filter((a) => !vergeben.has(a.url)).slice(0, 2);
     for (const a of zeilen) vergeben.add(a.url);
