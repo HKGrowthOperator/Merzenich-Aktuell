@@ -631,6 +631,61 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
   console.log(`Ortswahl: ${gesetzt} Seiten, ${orte.length} Orte gelistet, ${ohneLeiste} Seiten ohne Leiste.`);
 }
 
+// ------------------------------- Vereinslogos raus aus den Bildflaechen
+// Designstandard 7b: ein Vereinslogo oder Wappen fuellt nie eine Bildflaeche,
+// der Verein erscheint als kleine Textmarke. Gemessen am 23.09. standen 17
+// solche Flaechen auf sechs Seiten, alle mit demselben SC-Logo. Sie stammen aus
+// der Zeit, als die betroffenen Sportmeldungen noch kein eigenes Motiv hatten -
+// heute tragen sie ein Symbolbild aus dem Sport-Pool. Der Schritt setzt das
+// Bild ein, das im Index zum verlinkten Artikel steht.
+{
+  const nachUrlAlle = new Map(artikel.map((a) => [a.url, a]));
+  // Die Aufmacherzeile der Themenseiten (article.feed-lead) traegt ihren Link
+  // ohne Klasse; ein Muster auf feed-img/karte-bild allein liess sie stehen.
+  // Deshalb ueber jeden Link, der direkt eine .media-Flaeche umschliesst.
+  const LOGO_FLAECHE = /<a ([^>]*?)href="([^"]+)"([^>]*)><div class="media[^"]*">[\s\S]*?<\/div><\/a>/g;
+  const klasseVon = (vor, nach) => (/class="([^"]*)"/.exec(`${vor} ${nach}`) || [, ''])[1];
+  // "media contain" heisst nur "nicht beschneiden" und steht auch an Plakaten
+  // und Veranstaltungsbildern - als Kriterium war es falsch und hat beim ersten
+  // Versuch 31 statt 17 Flaechen erwischt. Entscheidend ist, was das Bild
+  // zeigt: Vereinslogo, Vereinswappen oder das Zeichen der Gemeinde.
+  const LOGO_MOTIV = /vereinslogo|vereinswappen|\bwappen\b|zeichen der gemeinde/i;
+  const istLogo = (t) => {
+    const badge = /<span class="badge">([^<]*)<\/span>/.exec(t);
+    const alt = /\salt="([^"]*)"/.exec(t);
+    return LOGO_MOTIV.test(`${badge ? badge[1] : ''} ${alt ? alt[1] : ''}`);
+  };
+  let ersetzt = 0, ohneErsatz = 0;
+  (function lauf(d) {
+    for (const e of readdirSync(d)) {
+      const p = join(d, e);
+      if (statSync(p).isDirectory()) { lauf(p); continue; }
+      if (!e.endsWith('.html')) continue;
+      const rel = p.slice(site.length + 1);
+      const alt = readFileSync(p, 'utf8');
+      if (!/logo|wappen|media contain/i.test(alt)) continue;
+      const neu = alt.replace(LOGO_FLAECHE, (treffer, vor, url, nach) => {
+        const klasse = klasseVon(vor, nach);
+        if (!istLogo(treffer)) return treffer;
+        const a = nachUrlAlle.get(url);
+        const b = a && a.bild;
+        // Ohne Ersatzmotiv bleibt das Markup stehen: lieber ein Logo als ein
+        // Loch. Die Zeile faellt dann in der Zaehlung auf.
+        if (!b || !b.src || LOGO_MOTIV.test(`${b.badge || ''} ${b.alt || ''}`)) { ohneErsatz++; return treffer; }
+        ersetzt++;
+        const srcset = b.srcset ? ` srcset="${esc(b.srcset)}"` : '';
+        const masse = b.width && b.height ? ` width="${b.width}" height="${b.height}"` : '';
+        const badge = b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '';
+        return `<a${klasse ? ` class="${klasse}"` : ''} href="${esc(url)}" tabindex="-1" aria-hidden="true"><div class="media">`
+          + `<img src="${esc(b.src)}"${srcset} sizes="(max-width: 640px) 120px, 240px" alt="${esc(b.alt || '')}"${masse}`
+          + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
+      });
+      if (neu !== alt) schreibe(rel, neu);
+    }
+  })(site);
+  console.log(`Vereinslogos: ${ersetzt} Bildflaeche(n) durch das Artikelbild ersetzt, ${ohneErsatz} ohne Ersatzmotiv belassen.`);
+}
+
 // ----------------------------------------------------------- latest.json
 {
   const rel = 'api/latest.json'; const alt = JSON.parse(readFileSync(join(site, rel), 'utf8'));
