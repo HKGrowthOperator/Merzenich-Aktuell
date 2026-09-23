@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 16 Sep 2026 13:48:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 23 Sep 2026 09:20:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Golzheim</title><link>https://merzenichaktuell.hk-growthoperator.de/golzheim/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/golzheim/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>FC Golzheim bleibt ungeschlagen und schlägt Hambach 3:0</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/fc-golzheim-hambach-3-0/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/fc-golzheim-hambach-3-0/</guid>
+<pubDate>Wed, 23 Sep 2026 09:00:00 GMT</pubDate>
+<category>Sport</category>
+<category>Golzheim</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der FC Golzheim gewinnt zuhause 3:0 gegen den Hambacher Spielverein und bleibt nach fünf Ligaspielen ungeschlagen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/symbolbilder/sport/sport-13-amateurfussball.svg" medium="image"><media:credit>Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell</media:credit><media:description>Amateurfußball als neutrales Symbolbild</media:description></media:content>
+</item>
 <item>
 <title>Nachbarschaftsduell: SC Merzenich beim FC Golzheim</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/sport/sc-golzheim-nachbarschaftsduell/</link>

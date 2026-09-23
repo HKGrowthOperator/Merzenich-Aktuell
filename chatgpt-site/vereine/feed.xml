@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 16 Sep 2026 13:48:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 23 Sep 2026 09:20:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Vereine</title><link>https://merzenichaktuell.hk-growthoperator.de/vereine/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/vereine/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Löschgruppe Girbelsrath feiert zehnjähriges Bestehen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/feuerwehr-girbelsrath-10-jahre/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/feuerwehr-girbelsrath-10-jahre/</guid>
+<pubDate>Wed, 23 Sep 2026 09:16:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Löschgruppe Girbelsrath wird zehn Jahre alt. Am Samstag, 26. September, lädt sie ab 11 Uhr zur Jubiläumsfeier am Gerätehaus ein.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/symbolbilder/familie/familie-06-feier.svg" medium="image"><media:credit>Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell</media:credit><media:description>Familienfeier als neutrales Symbolbild</media:description></media:content>
+</item>
 <item>
 <title>Mehr Platz für die Girbelsrather Vereine</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/vereine/container-girbelsrath/</link>

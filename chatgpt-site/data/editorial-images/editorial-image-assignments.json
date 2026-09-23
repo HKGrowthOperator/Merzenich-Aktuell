@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T13:46:14.364Z",
+  "updatedAt": "2026-09-23T09:38:05.499Z",
   "assignments": {
     "/blaulicht/einbruch-arnoldsweilerweg/": {
       "imageId": "polizei-08-einbruch",
@@ -70,6 +70,82 @@
       "tagsMatched": [
         "fussball",
         "ball"
+      ]
+    },
+    "/sport/sv-morschenich-sportfreunde-dueren-5-3/": {
+      "imageId": "sport-11-mannschaft",
+      "pool": "sport",
+      "assignedAt": "2026-09-23T09:38:05.497Z",
+      "articleId": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
+      "articleDate": "2026-09-23T10:56:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "mannschaft",
+        "team"
+      ]
+    },
+    "/sport/fc-golzheim-hambach-3-0/": {
+      "imageId": "sport-13-amateurfussball",
+      "pool": "sport",
+      "assignedAt": "2026-09-23T09:38:05.498Z",
+      "articleId": "2026-09-23-fc-golzheim-hambach-3-0",
+      "articleDate": "2026-09-23T11:00:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "kreisliga"
+      ]
+    },
+    "/sport/sc-merzenich-juelich-2-1/": {
+      "imageId": "sport-19-tornetz",
+      "pool": "sport",
+      "assignedAt": "2026-09-23T09:38:05.498Z",
+      "articleId": "2026-09-23-sc-merzenich-juelich-2-1",
+      "articleDate": "2026-09-23T11:04:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "tor"
+      ]
+    },
+    "/leben/fahrrad-reparaturstationen/": {
+      "imageId": "verkehr-01-strasse",
+      "pool": "verkehr",
+      "assignedAt": "2026-09-23T09:38:05.498Z",
+      "articleId": "2026-09-23-fahrrad-reparaturstationen",
+      "articleDate": "2026-09-23T11:08:00+02:00",
+      "tagsMatched": [
+        "strasse"
+      ]
+    },
+    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
+      "imageId": "polizei-02-polizeibeamte",
+      "pool": "polizei",
+      "assignedAt": "2026-09-23T09:38:05.498Z",
+      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+      "articleDate": "2026-09-23T11:12:00+02:00",
+      "tagsMatched": [
+        "polizei",
+        "beamte"
+      ]
+    },
+    "/vereine/feuerwehr-girbelsrath-10-jahre/": {
+      "imageId": "familie-06-feier",
+      "pool": "familie",
+      "assignedAt": "2026-09-23T09:38:05.499Z",
+      "articleId": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
+      "articleDate": "2026-09-23T11:16:00+02:00",
+      "tagsMatched": [
+        "feier"
+      ]
+    },
+    "/leben/oldieabend-ortsfest-2026/": {
+      "imageId": "verkehr-02-baustelle",
+      "pool": "verkehr",
+      "assignedAt": "2026-09-23T09:38:05.499Z",
+      "articleId": "2026-09-23-oldieabend-ortsfest-2026",
+      "articleDate": "2026-09-23T11:20:00+02:00",
+      "tagsMatched": [
+        "verkehr"
       ]
     }
   }

@@ -1,38 +1,38 @@
 {
- "generated": "2026-09-16T15:48:00+02:00",
- "anzahl": 44,
+ "generated": "2026-09-23T11:20:00+02:00",
+ "anzahl": 51,
  "bestand": {
-  "gesamt": 44,
+  "gesamt": 51,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 17,
-   "sport": 5,
+   "blaulicht": 18,
+   "sport": 8,
    "rathaus": 7,
-   "leben": 7,
+   "leben": 9,
    "wirtschaft": 6,
    "menschen": 0,
-   "vereine": 2,
+   "vereine": 3,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 31,
-   "golzheim": 2,
-   "girbelsrath": 6,
-   "morschenich": 3,
+   "merzenich": 35,
+   "golzheim": 3,
+   "girbelsrath": 7,
+   "morschenich": 4,
    "buergewald": 2,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 44,
+    "anzahl": 51,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 17,
+    "anzahl": 18,
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 5,
+    "anzahl": 8,
     "liste": "gepflegt"
    },
    "/rathaus/": {
@@ -40,7 +40,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 7,
+    "anzahl": 9,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -52,7 +52,7 @@
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 2,
+    "anzahl": 3,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -60,19 +60,19 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 31,
+    "anzahl": 35,
     "liste": "gepflegt"
    },
    "/golzheim/": {
-    "anzahl": 2,
+    "anzahl": 3,
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 6,
+    "anzahl": 7,
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 3,
+    "anzahl": 4,
     "liste": "gepflegt"
    },
    "/buergewald/": {
@@ -96,6 +96,325 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-09-23-oldieabend-ortsfest-2026",
+   "url": "/leben/oldieabend-ortsfest-2026/",
+   "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober",
+   "teaser": "Live-Musik am Freitag, Trödelmarkt und Familienprogramm am Samstag: Die Gemeinde hat das Programm für das Ortsfest-Wochenende veröffentlicht.",
+   "kicker": "Ortsfest 2026",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-23T11:20:00+02:00",
+   "aktualisiert": "2026-09-23T11:20:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "ortsfest",
+     "label": "Ortsfest"
+    },
+    {
+     "slug": "oldieabend",
+     "label": "Oldieabend"
+    },
+    {
+     "slug": "veranstaltungen",
+     "label": "Veranstaltungen"
+    },
+    {
+     "slug": "lindenplatz",
+     "label": "Lindenplatz"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/verkehr/verkehr-02-baustelle.svg",
+    "srcset": "",
+    "alt": "Baustelle als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
+   "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
+   "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen",
+   "teaser": "Die Löschgruppe Girbelsrath wird zehn Jahre alt. Am Samstag, 26. September, lädt sie ab 11 Uhr zur Jubiläumsfeier am Gerätehaus ein.",
+   "kicker": "Feuerwehr",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-09-23T11:16:00+02:00",
+   "aktualisiert": "2026-09-23T11:16:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    },
+    {
+     "slug": "jubilaeum",
+     "label": "Jubiläum"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/familie/familie-06-feier.svg",
+    "srcset": "",
+    "alt": "Familienfeier als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
+   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt",
+   "teaser": "Viertklässler der Grundschule Merzenich unterstützten Polizei und Ordnungsamt bei einer Geschwindigkeitskontrolle. 37 zu schnelle Fahrer erhielten eine Zitrone, in drei weiteren Fällen wurden Verwarngelder erhoben.",
+   "kicker": "Verkehrssicherheit",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-23T11:12:00+02:00",
+   "aktualisiert": "2026-09-23T11:12:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "grundschule",
+     "label": "Grundschule"
+    },
+    {
+     "slug": "verkehrssicherheit",
+     "label": "Verkehrssicherheit"
+    },
+    {
+     "slug": "geschwindigkeit",
+     "label": "Geschwindigkeit"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/polizei/polizei-02-polizeibeamte.svg",
+    "srcset": "",
+    "alt": "Polizeibeamte als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-fahrrad-reparaturstationen",
+   "url": "/leben/fahrrad-reparaturstationen/",
+   "titel": "Vier neue Fahrrad-Reparaturstationen in der Gemeinde Merzenich",
+   "teaser": "Merzenich, Golzheim, Girbelsrath und Morschenich haben neue öffentliche Reparaturstationen für Fahrräder erhalten.",
+   "kicker": "Mobilität",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-23T11:08:00+02:00",
+   "aktualisiert": "2026-09-23T11:08:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fahrrad",
+     "label": "Fahrrad"
+    },
+    {
+     "slug": "mobilitaet",
+     "label": "Mobilität"
+    },
+    {
+     "slug": "golzheim",
+     "label": "Golzheim"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/verkehr/verkehr-01-strasse.svg",
+    "srcset": "",
+    "alt": "Straße als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-sc-merzenich-juelich-2-1",
+   "url": "/sport/sc-merzenich-juelich-2-1/",
+   "titel": "SC Merzenich verliert in Jülich knapp mit 1:2",
+   "teaser": "Nach torloser erster Halbzeit unterliegt der SC 1919 Merzenich beim SC Jülich mit 1:2. In der aktuellen Tabelle steht Merzenich auf Rang sieben.",
+   "kicker": "Kreisliga A",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-23T11:04:00+02:00",
+   "aktualisiert": "2026-09-23T11:04:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "sc-1919-merzenich",
+     "label": "SC 1919 Merzenich"
+    },
+    {
+     "slug": "kreisliga-a",
+     "label": "Kreisliga A"
+    },
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "sc-juelich",
+     "label": "SC Jülich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/sport/sport-19-tornetz.svg",
+    "srcset": "",
+    "alt": "Tornetz als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-fc-golzheim-hambach-3-0",
+   "url": "/sport/fc-golzheim-hambach-3-0/",
+   "titel": "FC Golzheim bleibt ungeschlagen und schlägt Hambach 3:0",
+   "teaser": "Der FC Golzheim gewinnt zuhause 3:0 gegen den Hambacher Spielverein und bleibt nach fünf Ligaspielen ungeschlagen.",
+   "kicker": "Kreisliga A",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-09-23T11:00:00+02:00",
+   "aktualisiert": "2026-09-23T11:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fc-golzheim",
+     "label": "FC Golzheim"
+    },
+    {
+     "slug": "kreisliga-a",
+     "label": "Kreisliga A"
+    },
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "golzheim",
+     "label": "Golzheim"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/sport/sport-13-amateurfussball.svg",
+    "srcset": "",
+    "alt": "Amateurfußball als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
+   "url": "/sport/sv-morschenich-sportfreunde-dueren-5-3/",
+   "titel": "SV Morschenich gewinnt 5:3 und bleibt Tabellenführer",
+   "teaser": "Der SV Morschenich setzt sich in einem torreichen Heimspiel mit 5:3 gegen Sportfreunde Düren II durch und führt weiter die Kreisliga B Staffel 2 an.",
+   "kicker": "Kreisliga B",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-09-23T10:56:00+02:00",
+   "aktualisiert": "2026-09-23T10:56:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "sv-morschenich",
+     "label": "SV Morschenich"
+    },
+    {
+     "slug": "kreisliga-b",
+     "label": "Kreisliga B"
+    },
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/symbolbilder/sport/sport-11-mannschaft.svg",
+    "srcset": "",
+    "alt": "Mannschaft als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-09-14-sc-merzenich-oberzier-3-2",
    "url": "/sport/sc-merzenich-oberzier-3-2/",
