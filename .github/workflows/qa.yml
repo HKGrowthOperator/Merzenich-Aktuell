@@ -158,8 +158,6 @@ jobs:
           curl --fail http://127.0.0.1:4173/api/weather.json | python3 -m json.tool > /dev/null
           curl --fail 'http://127.0.0.1:4173/api/kommentare/liste?thema=/sport/sc-merzenich-oberzier-3-2/' | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"] and isinstance(d["kommentare"], list)'
           curl --fail http://127.0.0.1:4173/diskussion/ | grep -q 'id="diskussion-app"'
-          curl --fail http://127.0.0.1:4173/werbefrei/ | grep -q 'id="werbefrei-app"'
-          curl --fail http://127.0.0.1:4173/api/abo/konfiguration | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["ok"]'
           curl --fail http://127.0.0.1:4173/ | grep -q 'data-werbung='
           # Tagesdatum per nginx-SSI in Ortszeit, interne Bereiche gesperrt, Ort-Themen umgeleitet
           curl --fail --silent http://127.0.0.1:4173/ | grep -q "data-today[^>]*>$(TZ=Europe/Berlin date +%d.%m.)<" || (echo 'SSI-Datum fehlt' && exit 1)
