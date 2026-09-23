@@ -438,7 +438,13 @@ export function poolsLesen(wurzel) {
 
 export function kategorieFuer(a) {
   const pfad = String(a?.url || '').toLowerCase();
-  const text = norm(`${a?.kicker || ''} ${a?.titel || ''} ${a?.teaser || ''} ${(a?.themen || []).map((t) => t.label || t).join(' ')} ${a?.text || ''}`);
+  const kopftext = norm(`${a?.kicker || ''} ${a?.titel || ''} ${a?.teaser || ''} ${(a?.themen || []).map((t) => t.label || t).join(' ')}`);
+  const text = norm(`${kopftext} ${a?.text || ''}`);
+  // Dominante redaktionelle Themen im Titel/Teaser schlagen beiläufige Wörter
+  // im Fließtext. So landet z. B. ein Feuerwehr-Jubiläum nicht im Familien-
+  // Pool und ein Ortsfest mit Verkehrshinweis nicht im Verkehrs-Pool.
+  if (/feuerwehr|loeschgruppe|loeschzug|brandwehr/.test(kopftext)) return 'feuerwehr';
+  if (pfad.includes('/termine/') || /oldieabend|ortsfest|veranstaltung|konzert|kirmes|dorffest|strassenfest/.test(kopftext)) return 'veranstaltungen';
   if (pfad.includes('/traueranzeigen/') || /\btrauer|nachruf|gedenk|verstorben|kondolenz/.test(text)) return 'trauer';
   if (pfad.includes('/familienanzeigen/') || /hochzeit|trauung|heirat|geburt|jubilaum|familienanzeige/.test(text)) return 'familie';
   if (pfad.includes('/jobs/') || /stellenmarkt|stellenangebot|ausbildung|vollzeit|teilzeit|karriere/.test(text)) return 'jobs';
