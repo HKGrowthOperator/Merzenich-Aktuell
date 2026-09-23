@@ -52,7 +52,7 @@
   letter-spacing:.14em;text-transform:uppercase;color:#727272;background:none;padding:0}
 .managed-ad>a,.managed-ad>.ad-in{display:flex;align-items:center;justify-content:center;
   min-height:96px;border-top:2px solid var(--gold,#971725);padding-top:12px;text-decoration:none}
-.managed-ad .ad-name{font-family:Newsreader,Georgia,serif;font-size:18px;font-weight:600;
+.managed-ad .ad-name{font-family:var(--serif);font-size:18px;font-weight:600;
   color:#2b2b2b;text-align:center;line-height:1.25}
 .managed-ad .ad-name small{display:block;margin-top:5px;font-family:inherit;font-size:10px;
   font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#727272}
@@ -270,7 +270,7 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 .ortswahl-schalter>summary::-webkit-details-marker{display:none}
 .ortswahl-schalter>summary::marker{content:""}
 .ortswahl-marke{color:var(--ma-muted,#77736d);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.ortswahl-aktuell{font-family:Newsreader,Georgia,serif;font-size:17px;font-weight:620;color:var(--ma-ink,#171513)}
+.ortswahl-aktuell{font-family:var(--serif);font-size:17px;font-weight:620;color:var(--ma-ink,#171513)}
 .ortswahl-pfeil{width:16px;height:16px;color:var(--ma-muted,#77736d);transition:transform 160ms ease-out}
 .ortswahl-schalter[open] .ortswahl-pfeil{transform:rotate(180deg)}
 .ortswahl-schalter>summary:focus-visible{outline:2px solid var(--ma-red,#971725);outline-offset:3px}
@@ -284,7 +284,7 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 .ortswahl-gruppe{margin:0 var(--s4,16px) var(--s2,8px);color:var(--ma-muted,#77736d);font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
 .ortswahl-liste a{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s5,20px);padding:9px var(--s4,16px);color:var(--ma-ink,#171513);text-decoration:none}
 .ortswahl-liste a:hover,.ortswahl-liste a:focus-visible{background:var(--ma-warm,#f4f4f3)}
-.ortswahl-name{font-family:Newsreader,Georgia,serif;font-size:16px;font-weight:600}
+.ortswahl-name{font-family:var(--serif);font-size:16px;font-weight:600}
 .ortswahl-zahl{color:var(--ma-muted,#77736d);font-size:11px;white-space:nowrap}
 .ortswahl-liste a[aria-current="page"] .ortswahl-name{color:var(--ma-red,#971725)}
 .ortswahl-liste a[aria-current="page"]::before{content:"";position:absolute;left:0;width:3px;height:20px;margin-top:2px;background:var(--ma-red,#971725)}

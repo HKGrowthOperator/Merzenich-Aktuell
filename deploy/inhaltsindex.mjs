@@ -302,14 +302,26 @@ index.bestand = {
       || null;
   }
 
-  const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${badgeHtml(a.bild)}</div></a>`;
+  // Stil B (23.09.2026): Ein Hinweisschild steht nur, wo das Bild nicht das
+  // eigene Foto der Meldung ist. "Originalbild" auf jedem Foto war Rauschen
+  // (Critique 23.09.), und interne Begriffe wie "Quellenmotiv" versteht kein
+  // Leser. Die Artikelseiten behalten ihre Angaben unveraendert.
+  const HINWEIS_START = { Originalbild: '', Quellenmotiv: 'Bild: Quelle', 'Offizielles Veranstaltungsbild': 'Bild: Veranstalter' };
+  const hinweisStart = (b) => {
+    const t = Object.prototype.hasOwnProperty.call(HINWEIS_START, b.badge || '') ? HINWEIS_START[b.badge] : (b.badge || '');
+    return t ? `<span class="badge">${esc(t)}</span>` : '';
+  };
+  const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${hinweisStart(a.bild)}</div></a>`;
+  // Eine ruhige Ortsmarke statt zweier Versalienzeilen (Ort, Kicker): der Ort
+  // in Bordeaux, dahinter das Ressort. Die Zeit steht wie bisher in .meta.
+  const markeHtml = (a) => `<p class="marke"><span class="marke-ort">${esc(ORTSTEILE[a.ortsteil] || 'Merzenich')}</span> · ${esc(a.ressortLabel || a.kicker)}</p>`;
 
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
   function karte(a, groesse, tag) {
     if (groesse === 'xl') {
       return `<article class="front-lead" data-story="${esc(a.id)}">`
         + bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true)
-        + `<div class="front-lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + `<div class="front-lead-copy">${markeHtml(a)}`
         + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
         + `<p>${esc(a.teaser)}</p>`
         + `<div class="meta">${zeitHtml(a, kurzZeit)}${a.lesezeit ? `<span>${esc(a.lesezeit)}</span>` : ''}</div>`
@@ -323,7 +335,7 @@ index.bestand = {
     if (groesse === 'l') {
       return `<article class="desk-karte desk-karte--gross" data-story="${esc(a.id)}">`
         + bildFlaeche(a, '(max-width: 900px) 100vw, 600px', false)
-        + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + `<div class="karte-text">${markeHtml(a)}`
         + kopf(a)
         + `<p class="dek">${esc(a.teaser)}</p>`
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
@@ -332,14 +344,14 @@ index.bestand = {
     if (groesse === 'm') {
       return `<article class="${tag ? 'desk-karte desk-karte--mittel' : 'front-neben-story'}" data-story="${esc(a.id)}">`
         + bildFlaeche(a, '(max-width: 1100px) 46vw, 390px', false)
-        + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+        + `<div class="karte-text">${markeHtml(a)}`
         + kopf(a)
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
         + `</div></article>`;
     }
     return `<article class="front-zeile front-zeile--bild" data-story="${esc(a.id)}">`
       + bildFlaeche(a, '(max-width: 640px) 120px, 220px', false)
-      + `<div class="karte-text">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>`
+      + `<div class="karte-text">${markeHtml(a)}`
       + kopf(a)
       + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
       + `</div></article>`;
@@ -395,6 +407,37 @@ index.bestand = {
   else html = html.replace(MARKER_OBEN, () => oben);
 
 
+  // ---------------------------------------------------------- Orte-Buehne
+  // Stil B (23.09.2026): Die fuenf Orte stehen direkt unter der oberen Flaeche
+  // als Bildbuehne, nicht mehr als handgepflegte Kacheln fuenf Bildschirme
+  // tiefer. Zahl und juengste Meldung kommen aus demselben Index wie die
+  // Ortswahl - vorher zeigte die Kachel 29/2/6/3/2, die Ortswahl 35/3/7/4/2.
+  // Die Ortsfotos sind echte Aufnahmen mit Nachweis (Wikimedia Commons).
+  const ORTE_BUEHNE = [
+    ['merzenich', 'Hauptort mit Rathaus, St. Laurentius und S-Bahn-Halt an der Strecke Köln–Aachen.', 'Historisches Fachwerkhaus im Ortskern von Merzenich', 'Karl-Heinz Meurer / Wikimedia Commons', '6% 50%'],
+    ['golzheim', 'Im Norden der Gemeinde, mit St. Gregorius, Grundschule und Schützenbruderschaft.', 'Blick über den Wenauer Hof auf St. Gregorius in Golzheim', 'Karl-Heinz Meurer / Wikimedia Commons', '50% 50%'],
+    ['girbelsrath', 'Im Süden, mit St. Amandus, eigener Löschgruppe und Karnevalsverein.', 'Denkmalgeschütztes Fachwerkhaus in Girbelsrath', 'Käthe und Bernd Limburg / Wikimedia Commons', '50% 50%'],
+    ['morschenich', 'Der Umsiedlungsort „Zwischen den Höfen“, bis Juli 2024 Morschenich-Neu.', 'Archivaufnahme vom Aufbau des neuen Morschenich', 'Papa1234 / Wikimedia Commons', '50% 50%'],
+    ['buergewald', 'Das alte Morschenich am Hambacher Forst, seit Juli 2024 Bürgewald.', 'Luftbild von Bürgewald, dem früheren Morschenich-Alt', 'Antisyntagmatarchos / Wikimedia Commons', '50% 50%'],
+  ];
+  const datumOrt = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: 'numeric', month: 'long' }).format(new Date(iso));
+  const neuesteImOrt = (slug) => redaktionell
+    .filter((a) => a.ortsteil === slug && a.ressort !== 'sport' && a.datum && !a.undatiert)
+    .sort((x, y) => String(y.datum).localeCompare(String(x.datum)))[0];
+  const orteHtml = '<section class="orte-buehne" aria-labelledby="orte-titel"><div class="shell orte-kopf"><h2 id="orte-titel">Ihre fünf Orte</h2></div><div class="orte-reihe">'
+    + ORTE_BUEHNE.map(([slug, zeile, alt, credit, fokus]) => {
+      const n = bestandOrt[slug] || 0; const j = neuesteImOrt(slug);
+      return `<a class="ort" href="/${slug}/">`
+        + `<span class="ort-bild"><img src="/assets/places/${slug}-720.webp" srcset="/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 20vw" width="1440" height="960" loading="lazy" decoding="async" alt="${esc(alt)}"${fokus !== '50% 50%' ? ` style="object-position:${fokus}"` : ''}><span class="ort-credit">Foto: ${esc(credit)}</span></span>`
+        + `<span class="ort-name">${esc(ORTSTEILE[slug])}</span><span class="ort-zeile">${esc(zeile)}</span>`
+        + (j ? `<span class="ort-neu"><em>Zuletzt am ${esc(datumOrt(j.datum))}</em>${esc(j.titel)}</span>` : '')
+        + `<span class="ort-zahl">${n} Meldung${n === 1 ? '' : 'en'}</span></a>`;
+    }).join('')
+    + '</div><p class="shell orte-foto"><a href="/meldung-senden/#formular">Ihr Foto aus einem der fünf Orte an die Redaktion senden</a></p></section>';
+  const MARKER_ORTE = /<!-- start:orte:start -->[\s\S]*?<!-- start:orte:end -->/;
+  if (!MARKER_ORTE.test(html)) { console.error('Startseite: Marker start:orte fehlt in index.html.'); process.exitCode = 2; }
+  else html = html.replace(MARKER_ORTE, () => `<!-- start:orte:start -->${orteHtml}<!-- start:orte:end -->`);
+
   // ----------------------------------------------------- Ressortflaechen
   // Vorher war die Flaeche unter dem Aufmacher handgepflegtes Markup: kein
   // Generator zog sie nach, die juengste Meldung dort war vom 04.09., sechs
@@ -412,8 +455,10 @@ index.bestand = {
   ];
 
   function sektionHtml(s, gross, mittel, zeilen) {
+    // Ohne dreiteilige Ueberzeile ("Feuerwehr · Polizei · Verkehr"): das war
+    // eine Schreibgewohnheit, keine Information (Critique 23.09.).
     const kopf = '<div class="desk-heading"><div>'
-      + `<span class="eyebrow">${esc(s.kat)}</span><h2>${esc(s.titel)}</h2>`
+      + `<h2>${esc(s.titel)}</h2>`
       + `</div><a class="desk-more" href="${esc(s.mehr)}">${esc(s.mehrText)}</a></div>`;
     const reiheGross = gross.length ? `<div class="desk-gross">${gross.map((a) => karte(a, 'l', 'h3')).join('')}</div>` : '';
     const reiheMittel = mittel.length ? `<div class="desk-mittel">${mittel.map((a) => karte(a, 'm', 'h3')).join('')}</div>` : '';

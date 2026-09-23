@@ -1,11 +1,12 @@
 /* ============================================================
    Merzenich Aktuell v9 – Design System
    Wortmarke: MERZENICH (dunkel) / AKTUELL (bordeaux) / Puls (gold)
-   Newsreader (Serif, Überschriften/Lesetext) + Inter (Sans, UI)
+   Hanken Grotesk fuer Ueberschriften, Lesetext und Bedienung (Stil B, 23.09.2026).
+   Newsreader und Inter stehen auf der Liste der Allerwelts-Schriften, die den
+   KI-Zeitungslook ausmachen (Critique 23.09.). Eine Familie, bewusst gewaehlt.
    ============================================================ */
-@font-face{font-family:'Newsreader';src:url('fonts/newsreader-latin-wght-normal.woff2') format('woff2-variations');font-weight:200 800;font-style:normal;font-display:swap;}
-@font-face{font-family:'Newsreader';src:url('fonts/newsreader-latin-wght-italic.woff2') format('woff2-variations');font-weight:200 800;font-style:italic;font-display:swap;}
-@font-face{font-family:'Inter';src:url('fonts/inter-latin-wght-normal.woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Hanken Grotesk';src:url('fonts/hanken-grotesk-latin-wght-normal.woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Hanken Grotesk';src:url('fonts/hanken-grotesk-latin-wght-italic.woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap;}
 
 :root{
   /* --muted seit baf1385 dunkler als v10-Entwurf: ≥5,5:1 auf paper/gold-wash für 9,5–12,5-px-Meta */
@@ -32,7 +33,7 @@
      Jetzt neutral; die Helligkeiten und damit alle Kontraste bleiben gleich. */
   --stage:#0c0b0a;--stage-2:#141210;--field-dark:#171512;--on-dark-strong:#fff;--on-dark:#e7e7e5;--on-dark-soft:#b4b4b1;--on-dark-muted:#8e8e8b;--hairline-dark:#262626;
   --scrim:rgba(12,11,10,.78);--scrim-heavy:rgba(12,11,10,.55);--ok:#18794e;--ok-wash:#eef7f1;--wa:#25d366;--blue:#1d4f8f;
-  --serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --serif:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --shell:1240px;--measure:680px;--radius:3px;
   --shadow:0 1px 2px rgba(21,20,18,.05),0 8px 28px -12px rgba(21,20,18,.14);--shadow-lift:0 2px 4px rgba(21,20,18,.06),0 18px 44px -16px rgba(21,20,18,.22);
 }
@@ -472,7 +473,7 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
   gap:36px;align-items:center
 }
 .sport-mega__eyebrow{display:block;margin-bottom:5px;color:var(--red,#971725);font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-.sport-mega__inner>div>strong{font-family:Newsreader,Georgia,serif;font-size:27px;line-height:1.05}
+.sport-mega__inner>div>strong{font-family:var(--serif);font-size:27px;line-height:1.05}
 .sport-mega nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}
 .sport-mega nav a{padding:12px 14px;border:1px solid var(--line,#deddd9);font-size:13px;font-weight:700;text-decoration:none;background:#fff}
 .sport-mega nav a:hover,.sport-mega nav a:focus-visible{border-color:var(--red,#971725);color:var(--red,#971725);outline:none}
@@ -483,7 +484,7 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
 }
 .publish-guide__head{max-width:720px}
 .publish-guide__head .eyebrow{display:block;color:var(--red,#971725);font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-.publish-guide__head h2{margin:5px 0 6px;font-family:Newsreader,Georgia,serif;font-size:clamp(28px,3vw,38px);line-height:1.08}
+.publish-guide__head h2{margin:5px 0 6px;font-family:var(--serif);font-size:clamp(28px,3vw,38px);line-height:1.08}
 .publish-guide__head p{margin:0;color:var(--muted,#6e6962);line-height:1.55}
 .publish-guide__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
 .publish-card{
@@ -494,7 +495,7 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
 .publish-card__visual{width:74px;height:58px;display:flex;align-items:center;color:var(--red,#971725)}
 .publish-card__visual svg{width:64px;height:48px}
 .publish-card__copy{display:flex;flex-direction:column;gap:5px}
-.publish-card__copy strong{font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.1}
+.publish-card__copy strong{font-family:var(--serif);font-size:21px;line-height:1.1}
 .publish-card__copy small{font-size:12.5px;line-height:1.45;color:var(--muted,#6e6962)}
 @media(max-width:900px){.publish-guide__grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.publish-guide{padding:18px}.publish-guide__grid{grid-template-columns:1fr}.publish-card{min-height:135px}}

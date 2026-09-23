@@ -26,7 +26,7 @@
 .ma-ad-booking-slot{display:flex;flex-direction:column;min-height:232px;border:1px solid #d8d8d4;background:#f7f7f5;color:var(--ink,#17191b);text-decoration:none}
 .ma-ad-booking-slot__label{display:block;padding:8px 10px;border-bottom:1px solid #dededb;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#777}
 .ma-ad-booking-slot__body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 22px}
-.ma-ad-booking-slot__body strong{font-family:Newsreader,Georgia,serif;font-size:26px;line-height:1.05;font-weight:600;letter-spacing:-.015em}
+.ma-ad-booking-slot__body strong{font-family:var(--serif);font-size:26px;line-height:1.05;font-weight:600;letter-spacing:-.015em}
 .ma-ad-booking-slot__body span{display:block;margin-top:9px;max-width:210px;font-size:12px;line-height:1.5;color:#666}
 .ma-ad-booking-slot__body small{display:block;margin-top:20px;padding-top:10px;border-top:1px solid #cfcfcb;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-red,#c71920)}
 .ma-ad-booking-slot:hover,.ma-ad-booking-slot:focus-visible{border-color:#aaa;background:#fff}

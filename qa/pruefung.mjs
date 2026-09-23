@@ -543,6 +543,13 @@ function pruefeSektionen() {
       if (gesehen.has(k)) fehler('Sektionen', `Meldung ${k} steht in ${gesehen.get(k)} und noch einmal in ${id}.`);
       else gesehen.set(k, id);
     }
+    // Die Orte-Buehne (Stil B) traegt keine Meldungskarten, sondern die fuenf
+    // Orte. Sie ist dann vollstaendig, wenn jeder Ort seine Flaeche hat.
+    if (id === 'orte') {
+      const orte = (rumpf.match(/<a class="ort" href="\/[a-z]+\/">/g) || []).length;
+      if (/<section/.test(rumpf) && orte !== 5) fehler('Sektionen', `Orte-Buehne zeigt ${orte} statt 5 Orte.`);
+      continue;
+    }
     if (/<section/.test(rumpf) && !karten.length) fehler('Sektionen', `Sektion ${id} ist geschrieben, enthaelt aber keine Meldung.`);
     const reihen = [...rumpf.matchAll(/<div class="desk-(gross|mittel|zeilen)">/g)];
     reihen.forEach((r, i) => {

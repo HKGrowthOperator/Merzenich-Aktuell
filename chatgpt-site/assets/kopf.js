@@ -37,7 +37,7 @@
   if (!document.querySelector('link[data-ma-home-polish]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/homepage-polish.css?v=247b9e8d1b';
+    style.href = '/assets/homepage-polish.css?v=e5229c53bf';
     style.dataset.maHomePolish = '1';
     document.head.append(style);
   }
@@ -63,7 +63,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=b47e161e01';
+    style.href = '/assets/editorial-audit.css?v=9985bfebfe';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }

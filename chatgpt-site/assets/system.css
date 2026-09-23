@@ -92,7 +92,7 @@
 
      Die Schrittweite waechst nach oben (1,17 / 1,14 / 1,25 / 1,30 /
      1,31 / 1,35) - eng bei Lesegroessen, weit bei Schaugroessen. Keine
-     Schriftaenderung: Inter (--sans) und Newsreader (--serif) bleiben.
+     Schrift seit 23.09.2026 (Stil B): Hanken Grotesk fuer --sans und --serif.
      Die Zeilenhoehen sind ebenfalls vorhandene Werte, kein neuer Satz. */
   --t-meta:12px;        --lh-meta:1.4;        /* Kicker, Datum, Bildnachweis */
   --t-klein:14px;       --lh-klein:1.45;      /* Teaser, Bildunterschrift    */
