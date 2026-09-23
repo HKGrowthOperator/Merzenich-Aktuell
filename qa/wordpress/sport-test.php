@@ -38,20 +38,23 @@ pruefe('ohne Daten: Leerzustand statt Block', strpos(ma_sport_shortcode(), 'ma-e
 
 echo "\nImport aus sport-current.json\n";
 $json = file_get_contents(__DIR__ . '/../../chatgpt-site/api/sport-current.json');
+$fixture = json_decode($json, true);
 $r = ma_sport_import_from_json($json);
+$lastDate = new DateTimeImmutable($fixture['lastMatch']['date']);
+$lastDate = $lastDate->setTimezone(new DateTimeZone('Europe/Berlin'));
 pruefe('Import liefert Array', is_array($r), true);
-pruefe('bestaetigtes Ergebnis wird letztes Spiel', $r['last_match']['score'] ?? null, '2 : 1');
-pruefe('Datum lesbar formatiert', $r['last_match']['date'] ?? null, '18.09.2026 · 19:30 Uhr');
-pruefe('naechstes Spiel uebernommen', $r['next_match']['home'] ?? null, 'SC Merzenich');
-pruefe('Tabelle: 16 Zeilen', count($r['table']), 16);
-pruefe('Tabellenzeile traegt rank/points/goals', isset($r['table'][4]['rank'], $r['table'][4]['points'], $r['table'][4]['goals']), true);
+pruefe('bestaetigtes Ergebnis wird letztes Spiel', $r['last_match']['score'] ?? null, $fixture['lastMatch']['score'] ?? null);
+pruefe('Datum lesbar formatiert', $r['last_match']['date'] ?? null, $lastDate->format('d.m.Y · H:i') . ' Uhr');
+pruefe('naechstes Spiel uebernommen', $r['next_match']['home'] ?? null, $fixture['nextMatch']['home'] ?? null);
+pruefe('Tabelle: alle Zeilen', count($r['table']), count($fixture['table'] ?? []));
+pruefe('Tabellenzeile traegt rank/points/goals', isset($r['table'][0]['rank'], $r['table'][0]['points'], $r['table'][0]['goals']), true);
 pruefe('Quelle uebernommen', $r['source_url'] !== '', true);
 
 echo "\nUnbestaetigtes Ergebnis wird offenes Spiel\n";
-$j = json_decode($json, true); $j['lastMatch']['confirmed'] = false;
+$j = $fixture; $j['lastMatch']['confirmed'] = false;
 $r2 = ma_sport_import_from_json(json_encode($j));
 pruefe('kein letztes Spiel', $r2['last_match'], []);
-pruefe('sondern pending', $r2['pending_match']['home'] ?? null, 'SC Jülich 1910/97/Hoengen');
+pruefe('sondern pending', $r2['pending_match']['home'] ?? null, $fixture['lastMatch']['home'] ?? null);
 pruefe('pending traegt kein Ergebnis', array_key_exists('score', $r2['pending_match']), false);
 
 echo "\nFehlerfaelle\n";

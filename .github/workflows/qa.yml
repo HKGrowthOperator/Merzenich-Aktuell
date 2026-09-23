@@ -202,6 +202,17 @@ jobs:
           const expectedHero = String(index.aufmacher?.titel || '').trim();
           if (!expectedHero) throw new Error('inhalte.json: aufmacher.titel fehlt');
 
+          // Sport-QA folgt dem versionierten Datenstand statt historischen
+          // Einzelwerten. So bleibt die visuelle Pruefung auch nach einem
+          // redaktionellen Ergebnis-/Tabellen-Refresh aussagekraeftig.
+          const sportExpected = JSON.parse(readFileSync('chatgpt-site/api/sport-current.json', 'utf8'));
+          const expectedScore = String(sportExpected.lastMatch?.score || '').trim();
+          const expectedSportDate = new Intl.DateTimeFormat('de-DE', {
+            timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit', year: 'numeric'
+          }).format(new Date(sportExpected.lastMatch?.date));
+          const expectedHomeRow = sportExpected.table?.find((r) => r.homeTeam || /Merzenich/i.test(r.team || ''));
+          if (!expectedScore || !expectedHomeRow) throw new Error('sport-current.json: erwartete QA-Daten fehlen');
+
           const browser = await chromium.launch({ headless: true });
           const base = 'http://127.0.0.1:4173';
 
@@ -287,9 +298,16 @@ jobs:
           await shot('article-desktop', '/blaulicht/einbruch-arnoldsweilerweg/', { width: 1440, height: 1000 }, '.article-head h1');
 
           await shot('sport-desktop', '/sport/', { width: 1440, height: 1000 }, '.sports-module', async page => {
-            await page.waitForFunction(() => document.querySelector('.sports-module')?.textContent?.includes('3 : 2'));
+            await page.waitForFunction(
+              (score) => document.querySelector('.sports-module')?.textContent?.includes(score),
+              expectedScore
+            );
             const text = await page.locator('.sports-module').textContent() || '';
-            if (!text.includes('13.09.2026') || !text.includes('9') || !text.includes('12:8')) throw new Error('Sport module not synchronized to current data');
+            if (!text.includes(expectedSportDate)
+              || !text.includes(String(expectedHomeRow.points))
+              || !text.includes(String(expectedHomeRow.goals))) {
+              throw new Error('Sport module not synchronized to sport-current.json');
+            }
           });
 
           await shot('events-desktop', '/termine/', { width: 1440, height: 1000 }, 'main', async page => {
