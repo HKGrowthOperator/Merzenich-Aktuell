@@ -339,9 +339,12 @@ index.bestand = {
     return t ? `<span class="badge">${esc(t)}</span>` : '';
   };
   const bildFlaeche = (a, sizes, eager) => `<a class="karte-bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">${imgHtml(a.bild, sizes, eager)}${hinweisStart(a.bild)}</div></a>`;
-  // Eine ruhige Ortsmarke statt zweier Versalienzeilen (Ort, Kicker): der Ort
-  // in Bordeaux, dahinter das Ressort. Die Zeit steht wie bisher in .meta.
-  const markeHtml = (a) => `<p class="marke"><span class="marke-ort">${esc(ORTSTEILE[a.ortsteil] || 'Merzenich')}</span> · ${esc(a.ressortLabel || a.kicker)}</p>`;
+  // Ortsmarke nach Anhang A3: MERZENICH als wiederkehrender Bordeaux-Marker,
+  // der Ortsteil zurueckhaltend dahinter, die Rubrik in normaler Schreibung.
+  // Eine Zeile statt zweier Versalienzeilen (Ort, Kicker). Die Zeit steht in .meta.
+  const markeHtml = (a) => `<p class="marke"><span class="marke-ort">Merzenich</span>`
+    + (a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil] ? `<span class="marke-teil"> · ${esc(ORTSTEILE[a.ortsteil])}</span>` : '')
+    + `<span class="marke-rubrik">${esc(a.ressortLabel || a.kicker)}</span></p>`;
 
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
   function karte(a, groesse, tag) {
@@ -352,7 +355,6 @@ index.bestand = {
         + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
         + `<p>${esc(a.teaser)}</p>`
         + `<div class="meta">${zeitHtml(a, kurzZeit)}${a.lesezeit ? `<span>${esc(a.lesezeit)}</span>` : ''}</div>`
-        + `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`
         + `</div></article>`;
     }
     // In einer Sektion steht ein h2 als Sektionstitel, die Karten darunter
@@ -432,8 +434,12 @@ index.bestand = {
   for (const a of neben) vergeben.add(a.url);
   if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
 
+  // Buehne nach Anhang A4.4: rechts oben die zweite Meldung groesser, darunter
+  // vier kompakte im 2x2. Keine kuenstliche Gleichheit der fuenf Highlights.
+  const [zweit, ...vier] = neben;
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
-    + (neben.length ? `<div class="front-neben">${neben.map((a) => karte(a, 'm')).join('')}</div>` : '');
+    + (zweit ? `<div class="front-neben">${karte(zweit, 'm').replace('class="front-neben-story"', 'class="front-neben-story front-zweit"')}`
+      + (vier.length ? `<div class="front-vier">${vier.map((a) => karte(a, 'm')).join('')}</div>` : '') + '</div>' : '');
   const oben = '<!-- start:oben:start -->'
     + `<section class="shell frontpage-grid" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">${inhaltOben}</section>`
     + '<!-- start:oben:end -->';
@@ -672,7 +678,26 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
   // veroeffentlichte Meldung hat. Heute erscheint sie nicht (Standard 2).
   const nachbarn = [];
 
-  function ortswahlHtml(aktuellSlug) {
+  // MERZENICH · JETZT (Anhang A4.3): eine Zeile rechts neben der Ortswahl,
+  // nur auf der Startseite. Aus dem Index steht hier die juengste Meldung
+  // (ohne Sport und Tipp, wie die Startseite) und die Zeitpunkte der letzten
+  // Meldungen; kopf.js rechnet daraus "vor 18 Min." und "heute: 3 neue" und
+  // setzt den naechsten Termin aus der Servicespalte ein. Fehlt ein Wert,
+  // bleibt das Feld verborgen.
+  const jetztBasis = redaktionell.filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert)
+    .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
+  const jetztHtml = () => {
+    const n = jetztBasis[0];
+    if (!n) return '';
+    return '<div class="jetzt" role="group" aria-label="Merzenich jetzt">'
+      + '<span class="jetzt-marke"><span class="jetzt-punkt" aria-hidden="true"></span>Merzenich · Jetzt</span>'
+      + `<span class="jetzt-feld jetzt-neu">Neu <time datetime="${esc(n.datum)}">${esc(kurzZeit(n.datum))}</time> <a href="${esc(n.url)}">${esc(n.titel)}</a></span>`
+      + `<span class="jetzt-feld jetzt-heute" data-daten="${esc(jetztBasis.slice(0, 12).map((a) => a.datum).join(' '))}" hidden></span>`
+      + '<span class="jetzt-feld jetzt-termin" hidden></span>'
+      + '</div>';
+  };
+
+  function ortswahlHtml(aktuellSlug, mitJetzt) {
     const aktuell = ORTSTEILE[aktuellSlug] || ORTSTEILE.merzenich;
     const zeile = (o) => `<a href="/${o.slug}/"${o.slug === aktuellSlug ? ' aria-current="page"' : ''}><span class="ortswahl-name">${esc(o.label)}</span><span class="ortswahl-zahl">${o.anzahl} Meldung${o.anzahl === 1 ? '' : 'en'}</span></a>`;
     const gruppe = (titel, liste) => (liste.length ? `<p class="ortswahl-gruppe">${esc(titel)}</p>${liste.map(zeile).join('')}` : '');
@@ -680,7 +705,7 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
       + '<details class="ortswahl-schalter">'
       + `<summary><span class="ortswahl-marke">Ausgabe</span><span class="ortswahl-aktuell">${esc(aktuell)}</span><svg class="ortswahl-pfeil" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>`
       + `<div class="ortswahl-liste">${gruppe('Gemeinde Merzenich', orte)}${gruppe('Nachbarschaft', nachbarn)}</div>`
-      + '</details></div></nav>';
+      + '</details>' + (mitJetzt ? jetztHtml() : '') + '</div></nav>';
   }
 
   // Welche Ausgabe die Seite zeigt, steht im Pfad. Eine Artikelseite gehoert
@@ -700,7 +725,7 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
       const rel = p.slice(site.length + 1);
       const alt = readFileSync(p, 'utf8');
       if (!ORTSWAHL_RE.test(alt)) { ohneLeiste++; continue; }
-      let neu = alt.replace(ORTSWAHL_RE, () => ortswahlHtml(ortAusPfad(rel)));
+      let neu = alt.replace(ORTSWAHL_RE, () => ortswahlHtml(ortAusPfad(rel), rel === 'index.html'));
       // "Merzenich & seine Ortsteile / Die lokale Ausgabe" war eine eigene
       // Zwischenebene ueber dem Inhalt. Die Aussage steckt jetzt im Wort
       // "Ausgabe" im Schalter darueber; die Zeile kostete rund 40 px.

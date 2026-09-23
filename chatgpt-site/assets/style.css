@@ -1,10 +1,12 @@
 /* ============================================================
    Merzenich Aktuell v9 – Design System
    Wortmarke: MERZENICH (dunkel) / AKTUELL (bordeaux) / Puls (gold)
-   Hanken Grotesk fuer Ueberschriften, Lesetext und Bedienung (Stil B, 23.09.2026).
-   Newsreader und Inter stehen auf der Liste der Allerwelts-Schriften, die den
-   KI-Zeitungslook ausmachen (Critique 23.09.). Eine Familie, bewusst gewaehlt.
+   Anhang A (23.09.2026): Serif fuer Geschichten und Ueberschriften (Newsreader),
+   Sans fuer Navigation, Ort, Zeit, Service und Metadaten (Hanken Grotesk,
+   ersetzt Inter seit Stil B). Zwei Rollen, zwei Familien, keine weitere.
    ============================================================ */
+@font-face{font-family:'Newsreader';src:url('fonts/newsreader-latin-wght-normal.woff2') format('woff2-variations');font-weight:200 800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Newsreader';src:url('fonts/newsreader-latin-wght-italic.woff2') format('woff2-variations');font-weight:200 800;font-style:italic;font-display:swap;}
 @font-face{font-family:'Hanken Grotesk';src:url('fonts/hanken-grotesk-latin-wght-normal.woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Hanken Grotesk';src:url('fonts/hanken-grotesk-latin-wght-italic.woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap;}
 
@@ -33,7 +35,7 @@
      Jetzt neutral; die Helligkeiten und damit alle Kontraste bleiben gleich. */
   --stage:#0c0b0a;--stage-2:#141210;--field-dark:#171512;--on-dark-strong:#fff;--on-dark:#e7e7e5;--on-dark-soft:#b4b4b1;--on-dark-muted:#8e8e8b;--hairline-dark:#262626;
   --scrim:rgba(12,11,10,.78);--scrim-heavy:rgba(12,11,10,.55);--ok:#18794e;--ok-wash:#eef7f1;--wa:#25d366;--blue:#1d4f8f;
-  --serif:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --shell:1240px;--measure:680px;--radius:3px;
   --shadow:0 1px 2px rgba(21,20,18,.05),0 8px 28px -12px rgba(21,20,18,.14);--shadow-lift:0 2px 4px rgba(21,20,18,.06),0 18px 44px -16px rgba(21,20,18,.22);
 }

@@ -61,7 +61,11 @@
         </div>`;
     }
 
-    const service = q('.portal-service');
+    // Die Terminliste der Startseite schreibt deploy/termine-prerender.mjs aus den
+    // echten Terminseiten. Das fest eingetragene Ersatzprogramm unten ueberschrieb
+    // sie im Browser mit einem Stand vom 17.09. (gefunden 23.09.). Es bleibt nur
+    // aktiv, wenn dieser Layer die Startseite ausdruecklich uebernehmen soll.
+    const service = STARTSEITE_AUS_LAYER ? q('.portal-service') : null;
     if (service) {
       const events = q('.agenda-list', service);
       if (events) events.innerHTML = `

@@ -53,7 +53,7 @@
 (() => {
   if (document.querySelector('script[data-ma-content-refresh]')) return;
   const script = document.createElement('script');
-  script.src = '/assets/content-refresh-2026-09-17.js?v=3e02d9c2c7';
+  script.src = '/assets/content-refresh-2026-09-17.js?v=9e2ce18de7';
   script.async = false;
   script.dataset.maContentRefresh = '1';
   document.head.append(script);
@@ -63,7 +63,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=9985bfebfe';
+    style.href = '/assets/editorial-audit.css?v=7960d60219';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
@@ -87,5 +87,47 @@
         const s = wahl.querySelector('summary'); if (s) s.focus();
       });
     }
+  }
+})();
+
+// MERZENICH · JETZT (Anhang A4.3): Die Zeile steht fertig im HTML (juengste
+// Meldung mit Uhrzeit). Hier kommen nur die zeitabhaengigen Teile dazu:
+// relative Zeit, Zahl der Meldungen von heute und der naechste Termin aus der
+// Servicespalte. Ohne Skript bleibt die ausgelieferte Zeile stehen.
+(() => {
+  const zeile = document.querySelector('.jetzt');
+  if (!zeile) return;
+  const tag = (d) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
+  const jetzt = new Date();
+  const zeit = zeile.querySelector('.jetzt-neu time');
+  if (zeit) {
+    const d = new Date(zeit.dateTime); const min = Math.round((jetzt - d) / 60000);
+    if (Number.isFinite(min) && min >= 0) {
+      if (min < 60) zeit.textContent = `vor ${Math.max(min, 1)} Min.`;
+      else if (min < 24 * 60) zeit.textContent = `vor ${Math.round(min / 60)} Std.`;
+    }
+  }
+  const heute = zeile.querySelector('.jetzt-heute');
+  if (heute) {
+    const n = (heute.dataset.daten || '').split(' ').filter((iso) => iso && tag(new Date(iso)) === tag(jetzt)).length;
+    if (n) { heute.textContent = `Heute ${n} ${n === 1 ? 'neue Meldung' : 'neue Meldungen'}`; heute.hidden = false; }
+  }
+  const termin = zeile.querySelector('.jetzt-termin');
+  const reihe = [...document.querySelectorAll('.portal-service .agenda-row')]
+    .find((r) => !r.hidden && !(Date.parse(r.dataset.eventEnd || '') < jetzt.getTime()));
+  const titel = reihe && reihe.querySelector('h3 a, h3');
+  const wann = reihe && reihe.querySelector('p');
+  if (termin && titel) {
+    const a = document.createElement('a');
+    a.href = titel.getAttribute('href') || '/termine/';
+    a.textContent = titel.textContent.trim();
+    termin.textContent = 'Nächster Termin ';
+    termin.append(a);
+    const erst = wann ? wann.textContent.trim().split(' · ')[0] : '';
+    const datum = reihe.querySelector('.agenda-date');
+    const tagText = datum ? `${(datum.querySelector('b') || {}).textContent || ''}. ${(datum.querySelector('span') || {}).textContent || ''}`.trim() : '';
+    const angabe = /^bis /.test(erst) ? erst : [tagText, erst].filter(Boolean).join(', ');
+    if (angabe) termin.append(` · ${angabe}`);
+    termin.hidden = false;
   }
 })();

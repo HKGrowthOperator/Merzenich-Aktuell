@@ -75,12 +75,12 @@
 .mainnav{background:var(--ma-paper)!important;border:0!important;border-bottom:1px solid #e6e6e4!important;box-shadow:none!important}
 .mainnav .navrow{min-height:56px!important;height:56px!important;gap:24px!important}
 .mainnav .navscroll{gap:clamp(24px,2.8vw,42px)!important}
-.mainnav .navscroll>a{font-family:var(--serif);font-size:17px!important;font-weight:600!important;letter-spacing:-.01em!important;padding:18px 0 15px!important;border-bottom:3px solid transparent!important}
+.mainnav .navscroll>a{font-family:var(--sans);font-size:17px!important;font-weight:600!important;letter-spacing:-.01em!important;padding:18px 0 15px!important;border-bottom:3px solid transparent!important}
 .mainnav .navscroll>a[aria-current]{color:var(--ma-red)!important;border-bottom-color:var(--ma-red)!important}
 .mainnav .navscroll>a:hover{color:var(--ma-red)!important;border-bottom-color:transparent!important}
 
 /* „Mehr“ ohne Standard-Dreieck. */
-.nav-more>summary{list-style:none!important;display:flex!important;align-items:center!important;gap:10px!important;font-family:var(--serif);font-size:16px!important;font-weight:600!important;cursor:pointer!important}
+.nav-more>summary{list-style:none!important;display:flex!important;align-items:center!important;gap:10px!important;font-family:var(--sans);font-size:16px!important;font-weight:600!important;cursor:pointer!important}
 .nav-more>summary::-webkit-details-marker{display:none!important}
 .nav-more>summary::marker{content:""}
 .nav-more>summary::after{content:"";width:17px;height:12px;display:inline-block;background:linear-gradient(currentColor,currentColor) 0 1px/17px 1.5px no-repeat,linear-gradient(currentColor,currentColor) 0 5px/17px 1.5px no-repeat,linear-gradient(currentColor,currentColor) 0 9px/17px 1.5px no-repeat;opacity:.78}

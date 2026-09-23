@@ -539,95 +539,138 @@ body.home .front-zeile--bild h3{margin:5px 0 6px;font-family:var(--serif);font-s
 }
 
 /* ================================================================
-   Stil B (Freigabe 23.09.2026, Entwurf "Fünf Orte")
-   Uebernommen: Schrift (Hanken Grotesk, siehe style.css), ruhige Farben,
-   Ortsmarke statt Versalienzeilen, grosse Ueberschriften, die fuenf Orte
-   als Bildbuehne direkt unter der oberen Flaeche. NICHT uebernommen: der
-   Aufmacher als breites Titelbild. Er bleibt in seiner Spalte zwischen
-   Servicespalte und Nebenmeldungen (Wunsch KBS, 23.09.).
+   Anhang A (verbindlich seit 23.09.2026) - erster Bildschirm
+   Raster und Tokens: docs/STARTSEITE-RASTER.md. Serif erzaehlt, Sans
+   informiert. Bordeaux nur als Signal. Radius 0-3 px, keine Schatten.
    ================================================================ */
-body.home{--b-grund:#f6f5f2;--b-flaeche:#fdfcfa;--b-ton:#ece8e1;--b-tinte:#1b1a18;--b-text:#34312d;--b-leise:#5f5a54;--b-linie:#dad5cd;--b-rot:#971725;--b-rot-tief:#6e0f1a;--b-dunkel:#161412;--b-hell:#fbfaf7;background:var(--b-grund);color:var(--b-tinte)}
-body.home main{background:var(--b-grund)}
-body.home .marke{margin:0 0 6px;font-size:17px;line-height:1.35;color:var(--b-leise)}
-body.home .marke-ort{color:var(--b-rot);font-weight:700}
-body.home .karte-bild .media{border-radius:6px}
-body.home .karte-bild .badge{left:10px;bottom:10px;top:auto;right:auto;background:rgba(22,20,18,.72);color:#f3f1ec;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;padding:2px 8px;border-radius:4px}
-/* Aufmacher: bleibt in seiner Spalte, bekommt die Schrift und Groesse von B */
-body.home .front-lead h1{font-weight:800;letter-spacing:-.025em;line-height:1.03;font-size:clamp(34px,3.1vw,48px)}
-body.home .front-lead h1 a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
-body.home .front-lead p{font-size:19px;line-height:1.5;color:var(--b-text)}
-body.home .front-lead .meta{font-size:16px;color:var(--b-leise)}
-body.home .front-lead .read-more{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:0;border-radius:99px;background:var(--b-rot);color:var(--b-hell);font-weight:700;font-size:17px;text-decoration:none}
-body.home .front-lead .read-more:hover{background:var(--b-rot-tief);color:var(--b-hell)}
-body.home .front-neben-story h2{font-weight:750;letter-spacing:-.015em;line-height:1.18}
-body.home .front-neben-story .marke,body.home .front-zeile .marke{font-size:16px}
-body.home .front-neben-story .meta,body.home .desk-karte .meta,body.home .front-zeile .meta{font-size:15px;color:var(--b-leise)}
-/* Servicespalte: gleiche Ordnung, lesbare Groessen */
-body.home .portal-service .agenda-row p{font-size:15px;line-height:1.35;color:var(--b-leise)}
-body.home .portal-service .markt-mini strong{font-size:16px;line-height:1.3}
-body.home .portal-service .markt-mini span{font-size:15px;color:var(--b-leise)}
-/* Ressortflaechen */
-body.home .desk-karte h3{font-weight:750;letter-spacing:-.015em}
-body.home .desk-karte .dek{font-size:18px;line-height:1.5;color:var(--b-text)}
-body.home .desk-more{color:var(--b-rot);font-weight:700;font-size:17px}
-/* Die fuenf Orte als Bildbuehne */
+body.home{--a-grund:#fdfdfc;--a-flaeche:#f5f4f1;--a-tinte:#171513;--a-text:#34312d;--a-leise:#5f5b55;--a-linie:#e3e1dd;--a-rot:#971725;--a-rot-tief:#77101b;background:var(--a-grund);color:var(--a-tinte)}
+body.home main{background:var(--a-grund)}
+
+/* Ortsmarke A3: MERZENICH in Bordeaux, Ortsteil zurueckhaltend, Rubrik normal */
+body.home .marke{margin:0 0 8px;font-family:var(--sans);font-size:12.5px;line-height:1.3;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:var(--a-leise)}
+body.home .marke-ort{color:var(--a-rot)}
+body.home .marke-teil{color:var(--a-leise)}
+body.home .marke-rubrik{margin-left:10px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--a-leise)}
+
+/* Ortswahl und MERZENICH · JETZT in einer Zeile */
+body.home .ortswahl>.shell{display:flex;align-items:center;gap:24px;min-width:0}
+body.home .jetzt{flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:0;font-family:var(--sans);font-size:13px;line-height:1.3;color:var(--a-leise);white-space:nowrap}
+body.home .jetzt-marke{display:inline-flex;align-items:center;gap:8px;padding-right:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--a-tinte)}
+body.home .jetzt-punkt{width:7px;height:7px;border-radius:50%;background:var(--a-rot)}
+body.home .jetzt-feld{padding:0 16px;border-left:1px solid var(--a-linie)}
+body.home .jetzt-feld:last-child{padding-right:0}
+body.home .jetzt-neu{min-width:0;overflow:hidden;text-overflow:ellipsis}
+body.home .jetzt-neu time{font-weight:700;color:var(--a-rot);margin-right:4px}
+body.home .jetzt a{color:var(--a-tinte);text-decoration:none}
+body.home .jetzt a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Buehne A4.4: Aufmacher rund 61 %, rechts Zweitmeldung und 2x2 */
+body.home .frontpage-grid{padding-top:24px;padding-bottom:40px}
+body.home .karte-bild .media{border-radius:2px}
+body.home .karte-bild .media img{transition:transform .18s ease-out}
+body.home article:hover .karte-bild .media img{transform:scale(1.02)}
+body.home .karte-bild .badge{left:8px;bottom:8px;padding:3px 6px;border-radius:2px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.05em}
+body.home .front-lead h1{max-width:20ch;margin:4px 0 12px;font-family:var(--serif);font-size:clamp(32px,3.3vw,48px);line-height:1.06;font-weight:600;letter-spacing:-.02em}
+body.home .front-lead h1 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+body.home .front-lead-copy{padding-top:16px}
+body.home .front-lead-copy>p:not(.marke){max-width:60ch;margin:0 0 12px;font-family:var(--sans);font-size:17px;line-height:1.55;color:var(--a-text)}
+body.home .front-lead .meta,body.home .front-neben-story .meta{font-family:var(--sans);font-size:13px;color:var(--a-leise)}
+body.home .front-neben-story .karte-text{padding-top:10px}
+body.home .front-neben-story h2{margin:0 0 6px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.15;font-size:19px}
+body.home .front-neben-story h2 a{color:var(--a-tinte);text-decoration:none}
+body.home .front-neben-story h2 a:hover{text-decoration:underline;text-underline-offset:4px}
+body.home .front-zweit h2{font-size:clamp(22px,1.8vw,26px)}
+@media (min-width:1100px){
+  body.home .frontpage-grid{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;align-items:stretch}
+  body.home .front-lead{display:flex;flex-direction:column}
+  body.home .front-lead>.karte-bild{flex:1 1 auto;display:flex;min-height:420px}
+  body.home .front-lead>.karte-bild .media{flex:1;height:auto;aspect-ratio:auto}
+  body.home .front-neben{display:flex;flex-direction:column;gap:24px}
+  body.home .front-zweit .media{aspect-ratio:2/1}
+  body.home .front-vier{display:grid;grid-template-columns:1fr 1fr;gap:24px 20px}
+  body.home .front-vier .media{aspect-ratio:16/10}
+}
+@media (min-width:760px) and (max-width:1099px){
+  body.home .front-lead .media{aspect-ratio:16/9}
+  body.home .front-neben{display:grid;grid-template-columns:1fr 1fr;gap:24px 20px}
+  body.home .front-zweit{grid-column:1/-1}
+  body.home .front-zweit .media{aspect-ratio:2/1}
+  body.home .front-vier{display:contents}
+  body.home .front-vier .media{aspect-ratio:16/10}
+}
+/* Telefon A16: Aufmacher, dann die fuenf Highlights als Wischreihe ohne Pfeile */
+@media (max-width:759px){
+  body.home .ortswahl>.shell{flex-wrap:wrap;row-gap:4px}
+  body.home .jetzt{flex-basis:100%;justify-content:flex-start;padding-bottom:6px}
+  body.home .jetzt-heute,body.home .jetzt-termin{display:none}
+  body.home .front-lead .media{aspect-ratio:4/3}
+  body.home .front-lead h1{font-size:31px}
+  body.home .front-neben{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gutter,18px));padding-inline:var(--gutter,18px);scrollbar-width:none}
+  body.home .front-neben::-webkit-scrollbar{display:none}
+  body.home .front-vier{display:contents}
+  body.home .front-neben-story{flex:0 0 78%;scroll-snap-align:start}
+  body.home .front-neben-story .media{aspect-ratio:3/2}
+  body.home .front-zweit h2{font-size:21px}
+}
+
+/* Nach der Buehne A4.7: Vor Ort links, Hauptstrom daneben */
+body.home .portal-top{padding-top:32px;border-top:1px solid var(--a-linie)}
+body.home .portal-strom{min-width:0}
+body.home .portal-strom>.desk{max-width:none;margin:0;padding:0!important}
+body.home .portal-strom .desk-heading{margin-bottom:20px!important}
+body.home .portal-service{background:var(--a-flaeche);border-radius:2px}
+body.home .portal-service .agenda-row p{font-size:14px;line-height:1.35;color:var(--a-leise)}
+body.home .portal-service .markt-mini strong{font-size:15px;line-height:1.3}
+body.home .portal-service .markt-mini span{font-size:13.5px;color:var(--a-leise)}
+body.home .portal-service .service-links a{font-size:14px;min-height:40px;color:var(--a-text)}
+
+/* Ressortkoepfe und Karten: Serif fuer Geschichten */
+body.home .desk-karte h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+body.home .desk-karte .dek{font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--a-text)}
+body.home .desk-karte .meta,body.home .front-zeile .meta{font-family:var(--sans);font-size:13px;color:var(--a-leise)}
+body.home .desk-more{font-family:var(--sans);color:var(--a-rot);font-weight:700;font-size:14px}
+
+/* Die fuenf Orte: Bildbuehne weiter unten (Entscheidung 23.09.) */
 body.home .orte-buehne{padding:clamp(48px,5vw,72px) 0 0;margin:0}
-body.home .orte-kopf h2{margin:0 0 24px;font-size:clamp(32px,3.2vw,48px);line-height:1.02;font-weight:800;letter-spacing:-.025em}
-body.home .orte-reihe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;background:var(--b-dunkel)}
-body.home .ort{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;min-height:clamp(480px,62vh,620px);padding:28px 24px;color:var(--b-hell);text-decoration:none;overflow:hidden;isolation:isolate}
+body.home .orte-kopf h2{margin:0 0 20px;font-family:var(--serif);font-size:clamp(30px,2.6vw,36px);line-height:1.05;font-weight:600;letter-spacing:-.02em}
+body.home .orte-reihe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:#161412}
+body.home .ort{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;min-height:clamp(420px,52vh,540px);padding:24px 20px;color:#fbfaf7;text-decoration:none;overflow:hidden;isolation:isolate}
 body.home .ort-bild{position:absolute;inset:0;z-index:-1}
-body.home .ort-bild img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+body.home .ort-bild img{width:100%;height:100%;object-fit:cover;transition:transform .18s ease-out}
 body.home .ort-bild::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,20,18,.05) 20%,rgba(22,20,18,.5) 52%,rgba(22,20,18,.92) 100%)}
-body.home .ort:hover .ort-bild img,body.home .ort:focus-visible .ort-bild img{transform:scale(1.06)}
-body.home .ort-credit{position:absolute;top:12px;left:14px;right:14px;font-size:13px;line-height:1.3;color:#edeae5;text-shadow:0 1px 2px rgba(0,0,0,.8)}
-body.home .ort-name{font-size:clamp(28px,2.3vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
-body.home .ort:hover .ort-name,body.home .ort:focus-visible .ort-name{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
-body.home .ort-zeile{font-size:17px;line-height:1.4;color:#e4e0da;margin-bottom:10px}
-body.home .ort-neu{font-size:17px;line-height:1.3;font-weight:650;padding-top:12px;border-top:1px solid rgba(251,250,247,.35)}
-body.home .ort-neu em{display:block;font-style:normal;font-weight:500;font-size:16px;color:#ffd2d7;margin-bottom:2px}
-body.home .ort-zahl{font-size:16px;color:#cfcac3}
-body.home .ort:focus-visible{outline:3px solid var(--b-hell);outline-offset:-6px}
-body.home .orte-foto{margin:0;padding-top:14px;padding-bottom:0;font-size:17px}
-body.home .orte-foto a{color:var(--b-rot);font-weight:700}
-body.home .orte-foto a::after{content:" →"}
-body.home .home-special-heading h2{font-weight:800;letter-spacing:-.02em}
+body.home .ort:hover .ort-bild img{transform:scale(1.02)}
+body.home .ort-credit{position:absolute;top:10px;left:12px;right:12px;font-family:var(--sans);font-size:12px;line-height:1.3;color:#edeae5;text-shadow:0 1px 2px rgba(0,0,0,.8)}
+body.home .ort-name{font-family:var(--serif);font-size:clamp(26px,2.1vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1}
+body.home .ort:hover .ort-name,body.home .ort:focus-visible .ort-name{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+body.home .ort-zeile{font-family:var(--sans);font-size:14px;line-height:1.4;color:#e4e0da;margin-bottom:8px}
+body.home .ort-neu{font-family:var(--sans);font-size:15px;line-height:1.3;font-weight:650;padding-top:10px;border-top:1px solid rgba(251,250,247,.35)}
+body.home .ort-neu em{display:block;font-style:normal;font-weight:500;font-size:13px;color:#ffd2d7;margin-bottom:2px}
+body.home .ort-zahl{font-family:var(--sans);font-size:13px;color:#cfcac3}
+body.home .ort:focus-visible{outline:3px solid #fbfaf7;outline-offset:-6px}
+body.home .orte-foto{margin:0;padding-top:12px;font-family:var(--sans);font-size:14px}
+body.home .orte-foto a{color:var(--a-rot);font-weight:700}
 @media (max-width:1100px){body.home .orte-reihe{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:760px){
-  body.home .orte-reihe{grid-template-columns:1fr}
-  body.home .ort{min-height:300px;padding:22px 18px}
-  body.home .ort-name{font-size:36px}
-  body.home .front-lead p{font-size:18px}
+@media (max-width:759px){body.home .orte-reihe{grid-template-columns:1fr}body.home .ort{min-height:280px;padding:20px 18px}}
+@media (prefers-reduced-motion:reduce){body.home .karte-bild .media img,body.home .ort-bild img{transition:none}}
+/* Korrekturen nach Sichtpruefung 23.09. */
+body.home .front-vier .front-neben-story:first-child{grid-column:auto}
+@media (min-width:1100px){
+  body.home .frontpage-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px}
+  body.home .front-lead>.karte-bild{min-height:400px}
+  body.home .front-zweit .media{aspect-ratio:16/9}
+  body.home .front-vier{gap:20px 18px}
+  body.home .front-vier .media,body.home .front-vier .front-neben-story:first-child .media{aspect-ratio:16/10}
+  body.home .front-vier h2{font-size:17.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+  body.home .front-vier .meta{display:none}
+  body.home .front-vier .karte-text{padding-top:8px}
 }
-@media (prefers-reduced-motion:reduce){body.home .ort-bild img{transition:none}}
-/* Servicespalte in Stil B: groessere, lesbare Schrift braucht Platz. Damit die
-   Spalte nicht laenger wird als Aufmacher und Nebenmeldungen (CI-Regel: hoechstens
-   96 px Rest), zeigt sie oben drei Termine und je zwei Angebote. Alle weiteren
-   stehen einen Klick entfernt unter "Alle Veranstaltungen" und in den Maerkten. */
-@media (min-width:761px){
-  body.home .portal-service .agenda-list .agenda-row:nth-of-type(n+4),
-  body.home .portal-service .markt-mini:nth-of-type(n+3){display:none}
+@media (max-width:1099px){
+  body.home .ortswahl>.shell{flex-wrap:wrap;row-gap:4px}
+  body.home .jetzt{flex-basis:100%;justify-content:flex-start;padding-bottom:6px}
+  body.home .jetzt-marke{padding-left:0}
 }
-body.home .portal-service .service-links a{font-size:16px;min-height:44px;color:var(--b-text)}
-/* Telefon: Aufmacher, dann sofort die Servicespalte, dann die Nebenmeldungen
-   (Freigabe 23.09.: "Direkt nach dem Titel"). Aufmacher und Nebenmeldungen
-   stehen im Markup gemeinsam in .frontpage-grid; display:contents loest die
-   Huellen auf, damit die Reihenfolge ohne doppeltes Markup gelingt. */
-@media (max-width:959px){
-  body.home .portal-top{display:flex;flex-direction:column;gap:28px}
-  body.home .portal-news,body.home .portal-news>.shell,body.home .frontpage-grid{display:contents}
-  body.home .front-lead{order:1}
-  body.home .portal-service{order:2}
-  body.home .front-neben{order:3}
-  body.home .portal-ads{order:4}
-}
-@media (max-width:959px){
-  body.home .portal-service .agenda-list .agenda-row:nth-of-type(n+3),
-  body.home .portal-service .markt-mini:nth-of-type(n+3){display:none}
-}
-/* Trauer- und Familienanzeigen nebeneinander: spart eine Zeile, damit die
-   Servicespalte auch mit Wetterfeld nicht laenger wird als die Nachrichten
-   (CI 23.09.: 116 px Rest mit Wetter, erlaubt 96). */
-@media (min-width:960px){
-  body.home .portal-service .service-links{grid-template-columns:1fr 1fr;column-gap:12px}
-  body.home .portal-service .agenda-row{padding-top:6px;padding-bottom:6px}
+@media (min-width:1100px){
+  body.home .front-zweit .media{aspect-ratio:2.2/1}
+  body.home .front-zweit h2{font-size:clamp(20px,1.6vw,23px)}
+  body.home .front-vier .media,body.home .front-vier .front-neben-story:first-child .media{aspect-ratio:2/1}
 }
