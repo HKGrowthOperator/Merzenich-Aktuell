@@ -84,10 +84,89 @@ function ma_theme_is_local_post(int $post_id): bool {
     return false;
 }
 
+function ma_theme_home_excluded_category_ids(): array {
+    $ids=[];
+    foreach(['sport'] as $slug){
+        $term=get_category_by_slug($slug);
+        if($term) $ids[]=(int)$term->term_id;
+    }
+    return $ids;
+}
+
+function ma_theme_photo_of_day(): ?array {
+    $q=new WP_Query([
+        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>20,
+        'category__not_in'=>ma_theme_home_excluded_category_ids(),
+        'meta_query'=>[
+            'relation'=>'AND',
+            ['key'=>'_thumbnail_id','compare'=>'EXISTS'],
+            ['key'=>'ma_image_rights_verified','value'=>'1','compare'=>'='],
+        ],
+        'orderby'=>'date','order'=>'DESC',
+    ]);
+    if(!$q->posts) return null;
+    $index=(int)wp_date('z') % count($q->posts);
+    $post=$q->posts[$index];
+    $bild=ma_content_image($post,'large');
+    if(empty($bild['url'])) return null;
+    return ['post'=>$post,'bild'=>$bild];
+}
+
+function ma_theme_guide_icon(string $kind): string {
+    $icons=[
+        'haus'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 25 32 7l24 18v18H39V31H25v12H8Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+        'kerze'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M28 18h8v25h-8zM32 5c6 6 6 10 0 14-6-4-6-8 0-14Z" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
+        'familie'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="42" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 42c1-11 7-16 14-16s13 5 14 16M34 42c1-8 5-12 10-12 6 0 10 4 11 12" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
+        'werbung'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 22h12l28-12v28L20 28H8zM20 28l6 14h8l-5-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+    ];
+    return $icons[$kind]??$icons['werbung'];
+}
+
+function ma_theme_publish_guide(string $type): string {
+    $config=[
+        'ma_property'=>[
+            'title'=>'Immobilienanzeige aufgeben','intro'=>'Wählen Sie zuerst, was Sie veröffentlichen möchten. Danach führt das Formular durch die Einreichung.',
+            'form'=>'immobilie','cards'=>[
+                ['haus','Immobilie verkaufen','Haus, Wohnung, Grundstück oder Gewerbeobjekt.','verkauf'],
+                ['haus','Immobilie vermieten','Wohnung, Haus oder Gewerbefläche zur Miete.','vermietung'],
+                ['haus','Immobilie suchen','Gesuch für Kauf oder Miete.','gesuch'],
+            ],
+        ],
+        'ma_obituary'=>[
+            'title'=>'Traueranzeige aufgeben','intro'=>'Wählen Sie die passende Form. Die Redaktion prüft sensible Angaben vor der Veröffentlichung.',
+            'form'=>'trauer','cards'=>[
+                ['kerze','Traueranzeige','Einen Trauerfall würdevoll veröffentlichen.','traueranzeige'],
+                ['kerze','Danksagung','Für Anteilnahme und Unterstützung danken.','danksagung'],
+                ['kerze','Jahrgedächtnis','Erinnerung an einen verstorbenen Menschen.','jahrgedaechtnis'],
+            ],
+        ],
+        'ma_family_notice'=>[
+            'title'=>'Familienanzeige aufgeben','intro'=>'Geburt, Hochzeit, Jubiläum oder Glückwunsch – zuerst Anlass wählen, dann Daten übermitteln.',
+            'form'=>'familie','cards'=>[
+                ['familie','Geburt','Willkommen heißen und Freude teilen.','geburt'],
+                ['familie','Hochzeit','Hochzeit oder Verlobung veröffentlichen.','hochzeit'],
+                ['familie','Jubiläum','Geburtstag, Hochzeitstag oder Vereinsjubiläum.','jubilaeum'],
+            ],
+        ],
+    ];
+    if(!isset($config[$type])) return '';
+    $c=$config[$type];
+    $base=get_post_type_archive_link($type)?:home_url('/');
+    $html='<section class="publish-guide"><div class="publish-guide__head"><span class="eyebrow">Anzeige aufgeben</span><h2>'.esc_html($c['title']).'</h2><p>'.esc_html($c['intro']).'</p></div><div class="publish-guide__grid">';
+    foreach($c['cards'] as $card){
+        [$icon,$title,$text,$art]=$card;
+        $url=add_query_arg('art',$art,$base).'#anzeige-aufgeben';
+        $html.='<a class="publish-card" href="'.esc_url($url).'"><span class="publish-card__visual">'.ma_theme_guide_icon($icon).'</span><span class="publish-card__copy"><strong>'.esc_html($title).'</strong><small>'.esc_html($text).'</small></span></a>';
+    }
+    $html.='</div></section>';
+    return $html;
+}
+
 function ma_theme_hero_post(): ?WP_Post {
     $now=current_time('Y-m-d H:i:s');
     $pinned=new WP_Query([
         'post_type'=>'post','post_status'=>'publish','posts_per_page'=>1,'orderby'=>'date','order'=>'DESC',
+        'category__not_in'=>ma_theme_home_excluded_category_ids(),
         'meta_query'=>[
             'relation'=>'AND',
             ['key'=>'ma_top_pinned','value'=>'1'],
@@ -104,6 +183,7 @@ function ma_theme_hero_post(): ?WP_Post {
     $since=gmdate('Y-m-d H:i:s',time()-7*DAY_IN_SECONDS);
     $q=new WP_Query([
         'post_type'=>'post','post_status'=>'publish','posts_per_page'=>20,
+        'category__not_in'=>ma_theme_home_excluded_category_ids(),
         'date_query'=>[['after'=>$since,'inclusive'=>true]],'orderby'=>'date','order'=>'DESC',
     ]);
     if(!$q->posts) return null;
