@@ -258,6 +258,21 @@ jobs:
               return { groesste, wo };
             });
             if (luecke.groesste > 96) throw new Error(`Luecke zwischen zwei Sektionen: ${luecke.groesste} px vor ${luecke.wo}`);
+            // Die Lueckenpruefung oben sieht nur ZWISCHEN Sektionen. Am 22.09.
+            // stand die tote Flaeche INNERHALB der oberen Flaeche: 981 px hohe
+            // Redaktionsspalte neben 458 px Servicespalte. Derselbe
+            // Schwellwert, andere Achse.
+            const oben = await page.evaluate(() => {
+              const t = document.querySelector('.portal-top');
+              if (!t) return null;
+              const tr = t.getBoundingClientRect();
+              const spalten = [...t.children]
+                .map((c) => ({ was: (c.className || c.tagName).split(' ')[0], hoehe: Math.round(c.getBoundingClientRect().height), rest: Math.round(tr.bottom - c.getBoundingClientRect().bottom) }))
+                .filter((c) => c.hoehe > 0);
+              return { spalten, groesster: spalten.reduce((a, c) => (c.rest > a.rest ? c : a), { rest: 0, was: '-' }) };
+            });
+            if (!oben) throw new Error('Obere Flaeche .portal-top nicht gefunden');
+            if (oben.groesster.rest > 96) throw new Error(`Tote Flaeche in der oberen Flaeche: ${oben.groesster.rest} px unter ${oben.groesster.was} (${JSON.stringify(oben.spalten)})`);
             // Keine Meldung steht zweimal auf der Seite, kein Motiv oefter als zweimal.
             const wiederholung = await page.evaluate(() => {
               const ids = [...document.querySelectorAll('main article')].map((a) => a.dataset.story).filter(Boolean);

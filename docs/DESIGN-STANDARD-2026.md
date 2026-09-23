@@ -178,6 +178,22 @@ Aus der oberen Fläche entfallen: die Datumszeile im Inhalt, weil das Datum im K
 Beschriftung "Weitere Nachrichten", weil sie generisch ist und nach Vorlage aussieht. An ihre Stelle
 treten echte Meldungen.
 
+### Die Service-Spalte trägt Inhalt, nicht Verweise
+
+Die Spalte endet ungefähr auf Höhe der redaktionellen Reihe daneben: höchstens 64 bis 96 Pixel
+Unterschied, gemessen an der kürzeren der beiden Spalten. Am 22.09. standen dort 315 Pixel leer, weil
+vier der sechs Felder zugeklappt waren.
+
+- **Termine werden erzeugt, nicht gepflegt.** Die Liste kommt aus den Terminseiten selbst
+  (`deploy/termine-prerender.mjs`). Eine handgepflegte Liste kann nur schrumpfen: die Generatoren
+  nehmen abgelaufene Zeilen heraus, niemand setzt neue ein.
+- **Ein Klappfeld, das sich auf einen einzigen Link öffnet, gibt es nicht.** Das Pluszeichen
+  verspricht Inhalt. Solche Verweise stehen als schlichte Zeilen am Fuß der Spalte.
+- **Mindestens ein Marktfeld steht offen**, solange die Spalte sonst kürzer bliebe als die Reihe
+  daneben. Welches und mit wie vielen Einträgen, entscheidet die Messung, nicht der Geschmack.
+- Überschriften in der Spalte sind auf zwei Zeilen begrenzt. Sonst schwankt die Höhe der Spalte mit
+  jedem Marktabgleich.
+
 ### Abstände zwischen Sektionen
 
 Eine Sektion ist so hoch wie ihr Inhalt, plus ein definierter Abstand von 64 bis 80 Pixel zur nächsten.

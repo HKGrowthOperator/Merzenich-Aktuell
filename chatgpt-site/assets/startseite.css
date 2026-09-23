@@ -37,15 +37,126 @@ html[data-werbung="aus"] body.home .portal-ads{display:none}
   html[data-werbung="an"] body.home .portal-top.has-ads{
     grid-template-columns:minmax(230px,280px) minmax(0,1fr) 280px;
   }
-  /* Die Service-Spalte läuft beim Scrollen mit, solange sie kürzer ist als
-     die Redaktionsfläche daneben. */
-  body.home .portal-service{position:sticky;top:72px;min-width:0}
+  /* position:sticky stand hier, solange die Service-Spalte kuerzer war als die
+     Redaktionsflaeche daneben. Seit sie echten Inhalt traegt, ist der
+     Hoehenunterschied klein und es bleibt kein Weg zum Kleben. */
+  body.home .portal-service{min-width:0}
   body.home .portal-news{min-width:0}
 }
 
 /* .frontpage-grid trägt zugleich die Klasse .shell. Innerhalb der Spalte darf
    sie keine eigene Seitenbreite und keine Innenabstände mehr setzen. */
 body.home .portal-news>.shell{width:100%;max-width:none;padding:0;margin:0}
+
+/* ------------------------------------------------------- Service-Spalte */
+/* Vorher gestalteten vier Stylesheets dieselbe Spalte: startseite.css das
+   Raster, homepage-polish.css Titel und Klappfelder, editorial-audit.css
+   dasselbe noch einmal mit rund zwanzig !important, recovery.css ein drittes
+   Mal in einer minifizierten Zeile. Durchgesetzt hat sich editorial-audit.css,
+   also steht hier dessen wirksamer Stand - einmal, ohne !important. Die
+   Farbwerte sind der ausgelieferte Bestand und gehören in den Farbblock, nicht
+   hierher. */
+body.home .portal-service{
+  min-width:0;
+  padding:var(--s4,16px) 15px 14px;
+  background:var(--ma-warm,#f4f4f3);
+  border-radius:12px;
+}
+body.home .portal-service .service-title{
+  margin:0 0 var(--s3,12px);
+  padding:0;
+  border:0;
+  font-family:Inter,Arial,sans-serif;
+  font-size:14px;
+  font-weight:820;
+  line-height:1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ma-red,#971725);
+}
+body.home .portal-service .service-accordion{border:0;border-radius:0;background:transparent;box-shadow:none;margin:0}
+body.home .portal-service .service-accordion>summary{
+  min-height:36px;
+  padding:4px 0 10px;
+  border:0;
+  font-size:12px;
+  font-weight:720;
+  letter-spacing:.025em;
+  color:#4e4a44;
+  list-style:none;
+  cursor:pointer;
+}
+body.home .portal-service .service-accordion>summary::-webkit-details-marker{display:none}
+body.home .portal-service .service-accordion>summary::marker{content:""}
+body.home .portal-service .service-accordion>summary::after{content:"+";float:right;font-size:16px;font-weight:400;color:#8f877b}
+body.home .portal-service .service-accordion[open]>summary::after{content:"−"}
+body.home .portal-service .service-accordion>div{padding:0}
+body.home .portal-service .service-accordion>div>a:not(.markt-mini){display:inline-block;margin-top:var(--s3,12px);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+
+/* Termine */
+body.home .portal-service .agenda-list{display:grid;gap:9px}
+body.home .portal-service .agenda-row{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  margin:0;
+  padding:9px 10px;
+  border:0;
+  border-radius:9px;
+  background:#fff;
+  box-shadow:none;
+}
+/* v19.css gestaltet .agenda-date unscoped mit min-height:59px und flex - das
+   gilt fuer /termine/ weiter, hier aber nicht: der Datumsblock traegt 41 px
+   Inhalt und zog jede Zeile um 18 px auf. */
+body.home .portal-service .agenda-date{display:block;width:38px;min-height:0;padding:0;border:0;background:transparent;text-align:center}
+body.home .portal-service .agenda-date b{display:block;font-size:22px;line-height:.95;font-weight:680}
+body.home .portal-service .agenda-date span{display:block;margin-top:3px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ma-red,#971725)}
+body.home .portal-service .agenda-row .eyebrow,
+body.home .portal-service .agenda-row .calendar-save{display:none}
+/* Zwei Zeilen, damit eine lange Überschrift die Zeile nicht auf drei Zeilen
+   aufzieht. Vier Termine sind sonst 459 Pixel hoch statt rund 330 - gemessen
+   am 23.09. */
+body.home .portal-service .agenda-row h3{
+  margin:0 0 3px;
+  font-family:Newsreader,Georgia,serif;
+  font-size:14.5px;
+  line-height:1.15;
+  font-weight:650;
+  letter-spacing:-.02em;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+body.home .portal-service .agenda-row p{margin:0;font-size:11px;line-height:1.3;color:#77716a}
+
+/* Markt-Zeilen */
+body.home .portal-service .markt-mini{display:block;padding:8px 0;border-top:1px solid #ececec;border-radius:0;background:transparent;color:inherit;text-decoration:none}
+body.home .portal-service .markt-mini:first-of-type{border-top:0}
+body.home .portal-service .markt-mini strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;line-height:1.28;font-weight:700}
+body.home .portal-service .markt-mini span{display:block;margin-top:2px;font-size:11.5px;color:var(--muted,#65696c)}
+body.home .portal-service .markt-mini:hover strong{text-decoration:underline;text-underline-offset:2px}
+
+/* Zwei Zeilen am Fuß, keine Klappfelder: beide öffneten sich auf genau einen
+   Link. Ein Pluszeichen verspricht dann Inhalt, den es nicht gibt. */
+body.home .portal-service .service-links{display:grid;gap:2px;margin-top:var(--s3,12px);padding-top:var(--s3,12px);border-top:1px solid #e3e1dd}
+body.home .portal-service .service-links a{font-size:12px;font-weight:720;color:#4e4a44;text-decoration:none;padding:6px 0;min-height:32px;display:flex;align-items:center}
+body.home .portal-service .service-links a:hover{color:var(--ma-red,#971725);text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:959px){
+  body.home .portal-service{order:2;width:100%;position:static;padding:15px}
+  body.home .portal-service .agenda-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:700px){
+  body.home .portal-service .agenda-list{grid-template-columns:1fr}
+}
+html[data-theme="dark"] body.home .portal-service{background:#181818}
+html[data-theme="dark"] body.home .portal-service .agenda-row{background:#1f1f1f}
+html[data-theme="dark"] body.home .portal-service .markt-mini{border-color:#2f2f2e}
+html[data-theme="dark"] body.home .portal-service .service-links{border-color:#333}
+html[data-theme="dark"] body.home .portal-service .service-links a{color:#c9c9c6}
 
 /* ------------------------------------------------- Aufmacher + Nebenreihe */
 

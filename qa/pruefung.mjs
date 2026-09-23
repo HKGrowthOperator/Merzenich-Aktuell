@@ -582,8 +582,52 @@ function pruefeStylesheets() {
 
 pruefeOertlicheVerweise();
 pruefeLaufzeitUmbau();
+// --------------------------------------- 16. Servicespalte der Startseite
+// Vorher war die obere Flaeche 773 px hoch und die Servicespalte 458 px:
+// 315 px standen leer, weil vier der sechs Felder zugeklappt waren und die
+// Terminliste von Hand gepflegt wurde - termine-prerender.mjs entfernte
+// abgelaufene Zeilen, setzte aber nie neue ein. Jetzt schreibt derselbe
+// Generator die Liste zwischen Markern. Geprueft wird, was dabei kaputtgehen
+// kann.
+function pruefeServicespalte() {
+  const pfad = join(wurzel, 'chatgpt-site', 'index.html');
+  if (!existsSync(pfad)) { fehler('Servicespalte', 'chatgpt-site/index.html fehlt.'); return; }
+  const html = lies(pfad);
+
+  const starts = (html.match(/<!-- start:termine:start -->/g) || []).length;
+  const enden = (html.match(/<!-- start:termine:end -->/g) || []).length;
+  if (starts !== 1 || enden !== 1) { fehler('Servicespalte', `Terminmarker ${starts}x start, ${enden}x end, erwartet je einmal.`); return; }
+
+  const block = /<!-- start:termine:start -->([\s\S]*?)<!-- start:termine:end -->/.exec(html)[1];
+  const zeilen = [...block.matchAll(/data-event-end="([^"]+)"/g)].map((m) => m[1]);
+  if (!zeilen.length) fehler('Servicespalte', 'Keine Termine in der Spalte. Entweder ist der Bestand leer oder der Generator lief nicht.');
+  // Abgelaufene Termine sind ein Hinweis, kein Fehler: deploy.yml prueft den
+  // eingecheckten Stand, ohne die Generatoren vorher laufen zu lassen, und
+  // qa.yml zieht ihn einmal taeglich nach. Dazwischen kann ein Termin ablaufen,
+  // ohne dass jemand etwas falsch gemacht hat.
+  const jetzt = Date.now();
+  for (const e of zeilen) {
+    const t = Date.parse(e);
+    if (Number.isFinite(t) && t < jetzt) hinweis('Servicespalte', `Termin bis ${e.slice(0, 10)} ist abgelaufen; der naechste Lauf von termine-prerender.mjs nimmt ihn heraus.`);
+  }
+
+  const spalte = /<aside class="portal-service"[\s\S]*?<\/aside>/.exec(html);
+  if (!spalte) { fehler('Servicespalte', 'Kein <aside class="portal-service"> auf der Startseite.'); return; }
+  // Ein Klappfeld, das sich auf einen einzigen Link oeffnet, verspricht Inhalt,
+  // den es nicht gibt. Trauer- und Familienanzeigen waren genau das und sind
+  // jetzt zwei schlichte Zeilen.
+  for (const m of spalte[0].matchAll(/<details[^>]*class="service-accordion"[^>]*>\s*<summary>([^<]*)<\/summary>([\s\S]*?)<\/details>/g)) {
+    const [, titel, rumpf] = m;
+    if (/hidden/.test(m[0])) continue; // Wetter wird zur Laufzeit gefuellt
+    const links = (rumpf.match(/<a\b/g) || []).length;
+    const andere = rumpf.replace(/<a\b[\s\S]*?<\/a>/g, '').replace(/<[^>]*>/g, '').trim();
+    if (links <= 1 && !andere) fehler('Servicespalte', `Klappfeld "${titel}" oeffnet sich auf einen einzigen Link. Als schlichte Zeile fuehrt es nicht in die Irre.`);
+  }
+}
+
 pruefeSektionen();
 pruefeStylesheets();
+pruefeServicespalte();
 await pruefeSymbolbilder();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();

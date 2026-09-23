@@ -100,25 +100,6 @@
    Jetzt neutrale Ruhezone,Schalter in Anthrazit,8{background:#f4f4f3!important;border:0!important;box-shadow:none!important;transition:background .2s ease}
 .district-chevron{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .18s ease}
 
-/* Vor-Ort-Rail: kompakt, weich, nicht voller Trennlinien. */
-body.home .portal-service{padding:16px 15px 14px;background:var(--ma-warm);border-radius:12px}
-body.home .portal-service .service-title{margin:0 0 12px!important;padding:0!important;border:0!important;font-family:Inter,Arial,sans-serif!important;font-size:14px!important;font-weight:820!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:var(--ma-red)!important}
-body.home .portal-service .service-accordion{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;margin:0!important}
-body.home .portal-service .service-accordion>summary{min-height:36px!important;padding:4px 0 10px!important;border:0!important;font-size:12px!important;font-weight:720!important;color:#4e4a44!important;list-style:none!important}
-body.home .portal-service .service-accordion>summary::-webkit-details-marker{display:none!important}
-body.home .portal-service .service-accordion>summary::marker{content:""}
-body.home .portal-service .service-accordion>summary::after{content:"+";float:right;font-size:16px;font-weight:400;color:#8f877b}
-body.home .portal-service .service-accordion[open]>summary::after{content:"−"}
-body.home .portal-service .service-accordion>div{padding:0!important}
-body.home .agenda-list{display:grid;gap:9px}
-body.home .agenda-row{display:grid!important;grid-template-columns:43px minmax(0,1fr)!important;gap:11px!important;align-items:center!important;padding:10px!important;margin:0!important;border:0!important;border-radius:9px!important;background:#fff!important;box-shadow:none!important}
-body.home .agenda-row .calendar-save{display:none!important}
-body.home .agenda-date{border:0!important;padding:0!important;background:transparent!important;align-items:center!important;text-align:center!important}
-body.home .agenda-date b{font-size:24px!important;line-height:.95!important;font-weight:680!important}
-body.home .agenda-date span{margin-top:4px!important;font-size:12px!important;letter-spacing:.08em!important;color:var(--ma-red)!important}
-body.home .agenda-row .eyebrow{display:none!important}
-body.home .agenda-row h3{margin:0 0 4px!important;font-family:Newsreader,Georgia,serif!important;font-size:15px!important;line-height:1.13!important;font-weight:650!important}
-body.home .agenda-row p{margin:0!important;color:#77716a!important;font-size:11px!important;line-height:1.35!important}
 
 
 /* Untere Homepage: keine generischen Vollbreiten-Linien. */
@@ -143,12 +124,9 @@ body.home .desk-heading h2,body.home .section-head h2,body.home .block-head h2{m
 }
 @media (max-width:959px){
   .mast-search{display:none!important}
-  body.home .portal-service{order:2!important;width:100%!important;position:static!important;padding:15px!important}
-  body.home .portal-service .agenda-list{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:700px){
   .mast-inner{min-height:72px!important}.masthead .logo img{width:190px!important}.header-local{display:none!important}.theme-toggle{width:38px;height:38px}
-  body.home .portal-service .agenda-list{grid-template-columns:1fr}
 }
 
 /* Dunkelmodus folgt derselben Hierarchie. */
@@ -160,4 +138,4 @@ html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-
 html[data-theme="dark"] .masthead,html[data-theme="dark"] .mainnav{background:#111!important;border-color:#2e2c29!important}
 html[data-theme="dark"] .mast-search{background:#191816!important;border-color:#39352f!important}
 html[data-theme="dark"] .mast-search input{color:#f1f1f0!important}html[data-theme="dark"] .mast-search button,html[data-theme="dark"] .theme-toggle{color:#f1f1f0!important}
-html[data-theme="dark"] body.home .portal-service{background:#181818!important}html[data-theme="dark"] body.home .agenda-row{background:#1f1f1f!important}
+
