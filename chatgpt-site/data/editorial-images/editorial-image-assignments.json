@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-23T09:41:58.979Z",
+  "updatedAt": "2026-09-23T09:42:10.411Z",
   "assignments": {
     "/blaulicht/einbruch-arnoldsweilerweg/": {
       "imageId": "polizei-08-einbruch",
@@ -131,7 +131,7 @@
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "feuerwehr-15-nachteinsatz",
       "pool": "feuerwehr",
-      "assignedAt": "2026-09-23T09:41:58.978Z",
+      "assignedAt": "2026-09-23T09:42:10.411Z",
       "articleId": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
       "articleDate": "2026-09-23T11:16:00+02:00",
       "tagsMatched": [
@@ -142,7 +142,7 @@
     "/leben/oldieabend-ortsfest-2026/": {
       "imageId": "veranstaltungen-03-konzert",
       "pool": "veranstaltungen",
-      "assignedAt": "2026-09-23T09:41:58.978Z",
+      "assignedAt": "2026-09-23T09:42:10.411Z",
       "articleId": "2026-09-23-oldieabend-ortsfest-2026",
       "articleDate": "2026-09-23T11:20:00+02:00",
       "tagsMatched": [
