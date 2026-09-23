@@ -232,6 +232,18 @@ index.bestand = {
   // goldenes Rechteck an der wichtigsten Stelle der Seite. Die Zeile entfaellt,
   // sobald der Pool unterscheidbare Motive enthaelt (docs/SYMBOLBILDER-ANFORDERUNG.md).
   const VERLAUFSPOOL = /\/assets\/symbolbilder\//;
+  // Was die Redaktion selbst setzt, prueft der Generator nicht nach Geschmack:
+  // ein Symbolbild aus dem passenden Pool ist eine bewusste Entscheidung. Nur
+  // ein Vereinslogo oder Wappen bleibt gesperrt, das fuellt keine Bildflaeche.
+  // Die Automatik weiter unten waehlt dagegen nur echte Fotos - sonst stuende
+  // ein Farbverlauf an der wichtigsten Stelle, ohne dass es jemand wollte.
+  const redaktionellBebildert = (a) => {
+    const b = a && a.bild;
+    if (!b || !b.src) return false;
+    if (b.fit === 'contain') return false;
+    return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
+  };
+
   const echtesBild = (a) => {
     const b = a && a.bild;
     if (!b || !b.src) return false;
@@ -277,8 +289,8 @@ index.bestand = {
       } else if (gesetzt.ressort === 'sport' || gesetzt.ressort === 'tipp') {
         console.error(`Startseite: Aufmacher ${ed.hero.url} gehoert zu ${gesetzt.ressort} und darf nicht auf die Startseite.`);
         process.exitCode = 2;
-      } else if (!echtesBild(gesetzt)) {
-        console.error(`Startseite: Aufmacher ${ed.hero.url} hat kein echtes Bild (Logo, Wappen oder Verlaufs-Symbolbild). editorial-current.json korrigieren oder Eintrag entfernen.`);
+      } else if (!redaktionellBebildert(gesetzt)) {
+        console.error(`Startseite: Aufmacher ${ed.hero.url} traegt ein Logo oder Wappen als Bild. editorial-current.json korrigieren oder Eintrag entfernen.`);
         process.exitCode = 2;
       } else {
         return gesetzt;
@@ -343,8 +355,34 @@ index.bestand = {
   // KBS/Ordin 23.09.2026: Der erste Blick soll deutlich dichter werden.
   // Eine grosse Highlight-News wird von fuenf kleineren Bildmeldungen rechts
   // und darunter ergaenzt. Keine Sportmeldung darf in dieser Startbuehne landen.
-  const neben = redaktionell.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 5);
+  // Redaktionell gesetzte Nebenmeldungen stehen vorne und in ihrer Reihenfolge.
+  // Das Feld lag in editorial-current.json, wurde aber seit dem Umbau der
+  // oberen Flaeche nicht mehr gelesen - die Fixierung war damit wirkungslos.
+  // Es nimmt ein einzelnes Objekt oder eine Liste, jeweils mit url.
+  const gesetzteNeben = []
+    .concat(ed.secondary || [])
+    .map((e) => (e && e.url ? nachUrl.get(e.url) : null))
+    .filter((a, i, alle) => {
+      if (!a) return false;
+      if (vergeben.has(a.url) || alle.indexOf(a) !== i) return false;
+      if (a.ressort === 'sport' || a.ressort === 'tipp') {
+        console.error(`Startseite: Nebenmeldung ${a.url} gehoert zu ${a.ressort} und darf nicht auf die Startseite.`);
+        process.exitCode = 2;
+        return false;
+      }
+      if (!redaktionellBebildert(a)) {
+        console.error(`Startseite: Nebenmeldung ${a.url} traegt ein Logo oder Wappen als Bild.`);
+        process.exitCode = 2;
+        return false;
+      }
+      return true;
+    });
+  for (const a of gesetzteNeben) vergeben.add(a.url);
+  const neben = gesetzteNeben.concat(
+    redaktionell.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M),
+  ).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
+  if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
 
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
     + (neben.length ? `<div class="front-neben">${neben.map((a) => karte(a, 'm')).join('')}</div>` : '');

@@ -1,6 +1,8 @@
 {
-  "generated": "2026-09-19T00:00:00+02:00",
-  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. Steht hier kein hero, waehlt deploy/inhaltsindex.mjs die juengste Meldung mit echtem Bild. Ein gesetzter hero gewinnt, muss aber ein echtes Bild haben: ein Vereinslogo, ein Wappen oder ein Symbolbild aus assets/symbolbilder laesst den Build scheitern, statt das Bild still zu entfernen. Felder: hero {url}, secondary [{url},{url}].",
+  "generated": "2026-09-23T00:00:00+02:00",
+  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. hero {url} setzt den Aufmacher, secondary [{url}] die Nebenmeldungen in dieser Reihenfolge; der Rest wird aufgefuellt. Was hier steht, gewinnt gegen die Automatik - auch mit einem Symbolbild aus dem passenden Pool, denn das ist eine redaktionelle Entscheidung. Gesperrt bleiben nur Logo und Wappen als Bild sowie die Ressorts sport und tipp, die nicht auf die Startseite gehoeren.",
   "hero": null,
-  "secondary": null
+  "secondary": [
+    { "url": "/blaulicht/einbruch-arnoldsweilerweg/" }
+  ]
 }
