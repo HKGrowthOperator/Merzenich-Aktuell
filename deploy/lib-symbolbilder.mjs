@@ -440,17 +440,24 @@ export function kategorieFuer(a) {
   const pfad = String(a?.url || '').toLowerCase();
   const text = norm(`${a?.kicker || ''} ${a?.titel || ''} ${a?.teaser || ''} ${(a?.themen || []).map((t) => t.label || t).join(' ')} ${a?.text || ''}`);
   if (pfad.includes('/traueranzeigen/') || /\btrauer|nachruf|gedenk|verstorben|kondolenz/.test(text)) return 'trauer';
+
+  // Starker redaktioneller Kontext schlägt allgemeine Wörter wie „Jubiläum“.
+  // Sonst landet z.B. ein Feuerwehr-Jubiläum im Familien-Pool.
+  if (/feuerwehr|loschgruppe|loschfahrzeug|drehleiter|tierrettung|brandbekampfung|technische hilfe/.test(text)) return 'feuerwehr';
+
   if (pfad.includes('/familienanzeigen/') || /hochzeit|trauung|heirat|geburt|jubilaum|familienanzeige/.test(text)) return 'familie';
   if (pfad.includes('/jobs/') || /stellenmarkt|stellenangebot|ausbildung|vollzeit|teilzeit|karriere/.test(text)) return 'jobs';
   if (pfad.includes('/immobilien/') || /immobil|kaltmiete|wohnfl|grundst|wohnung|wohnhaus/.test(text)) return 'immobilien';
-  if (pfad.includes('/blaulicht/')) {
-    if (/feuerwehr|losch|brand|brennt|rauch|drehleiter|tierrettung|technische hilfe/.test(text)) return 'feuerwehr';
-    return 'polizei';
-  }
+  if (pfad.includes('/blaulicht/')) return 'polizei';
+
+  // Ein klar benanntes Fest bleibt eine Veranstaltung, auch wenn der Text
+  // zusätzlich Sperrungen oder Verkehrsregeln für den Veranstaltungsbereich nennt.
+  if (pfad.includes('/termine/') || /\b(oldieabend|ortsfest|trodelmarkt|flohmarkt|kirmes|konzert|festwochenende)\b/.test(text)) return 'veranstaltungen';
+
   if (/verkehr|sperrung|baustelle|umleitung|strasse|bahn|bus|opnv|fahrbahn/.test(text)) return 'verkehr';
   if (pfad.includes('/sport/') || /fussball|kreisliga|spieltag|tabelle|sc 1919|fc golzheim/.test(text)) return 'sport';
   if (pfad.includes('/vereine/') || /verein|schutzen|karneval|fanclub|ehrenamt/.test(text)) return 'vereine';
-  if (pfad.includes('/termine/') || /veranstaltung|fest|konzert|markt|wochenende|kirmes/.test(text)) return 'veranstaltungen';
+  if (/veranstaltung|fest|konzert|markt|wochenende|kirmes/.test(text)) return 'veranstaltungen';
   if (pfad.includes('/kultur/') || /kultur|theater|ausstellung|lesung|museum|kunst/.test(text)) return 'kultur';
   if (/schule|kita|kindergarten|unterricht|bildung|schuler/.test(text)) return 'schule';
   if (/kirche|gottesdienst|pfarr|gemeindehaus|konfirmation|seelsorge/.test(text)) return 'kirche';
@@ -534,7 +541,27 @@ export function selbsttest() {
   for (const a of artikel) if (zwei.zuordnung.get(a.url)?.id !== altMap[a.url]) throw new Error('Persistente Zuordnung wurde durch neue Meldung verschoben.');
   const drei = vergibSymbolbilder([...artikel].reverse(), { sport: pool }, eins.state);
   for (const a of artikel) if (drei.zuordnung.get(a.url)?.id !== altMap[a.url]) throw new Error('Reload/Build-Reihenfolge ändert eine bestehende Zuordnung.');
-  return { meldungen: artikel.length, motive: pool.length, unterschiedlicheMotive: verschiedene.size, stableAssignment: true };
+
+  // Regressionen aus dem Content-Refresh 23.09.2026:
+  // Fachkontext muss generische Wörter wie „Jubiläum“ bzw. „Verkehr“ überstimmen.
+  const feuerwehrJubilaeum = {
+    url:'/vereine/feuerwehr-girbelsrath-10-jahre/',
+    kicker:'Feuerwehr',
+    titel:'Löschgruppe Girbelsrath feiert zehnjähriges Bestehen',
+    teaser:'Jubiläum der Löschgruppe mit ehrenamtlichem Engagement',
+  };
+  if (kategorieFuer(feuerwehrJubilaeum) !== 'feuerwehr') throw new Error('Feuerwehr-Jubiläum wird nicht dem Feuerwehr-Pool zugeordnet.');
+
+  const ortsfestMitSperrung = {
+    url:'/leben/oldieabend-ortsfest-2026/',
+    kicker:'Ortsfest 2026',
+    titel:'Oldieabend und Ortsfest',
+    teaser:'Fest mit Musik, Markt und Familienprogramm',
+    text:'Für den Veranstaltungsbereich gelten Sperrungen und geänderte Verkehrsregeln.',
+  };
+  if (kategorieFuer(ortsfestMitSperrung) !== 'veranstaltungen') throw new Error('Ortsfest mit Verkehrshinweis wird nicht dem Veranstaltungs-Pool zugeordnet.');
+
+  return { meldungen: artikel.length, motive: pool.length, unterschiedlicheMotive: verschiedene.size, stableAssignment: true, categoryPriority: true };
 }
 
 export function bibliothekAudit(wurzel) {
