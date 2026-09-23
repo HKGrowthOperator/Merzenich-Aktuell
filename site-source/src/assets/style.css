@@ -164,7 +164,7 @@ main{display:block}
 
 /* ---------- Aufmacher ---------- */
 .hero{padding:30px 0 10px}
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(420px,.92fr);gap:28px;align-items:start}
 /* Ein Vereinswappen ist kein Ereignisfoto. Auf der vollen 16:9-Buehne des
    Aufmachers stand es 446px hoch und schob die Schlagzeile bis auf 108px
    an die Falz. Als flaches Emblemfeld bleibt die Herkunft sichtbar, und
@@ -176,8 +176,8 @@ main{display:block}
 .lead-copy h1,.lead-copy h2{font-size:clamp(28px,4vw,44px);font-weight:760;font-variation-settings:'wght' 760}
 .lead-copy h1 a:hover,.lead-copy h2 a:hover{color:var(--red-dark)}
 .lead-copy .dek{font-family:var(--serif);font-size:var(--t-xl);line-height:1.5;color:var(--ink-soft);max-width:660px}
-.side-stack{display:flex;flex-direction:column;gap:20px}
-.side-card{display:grid;gap:9px;padding-bottom:18px;border-bottom:1px solid var(--line)}.side-card:last-child{border-bottom:0}
+.side-stack{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.side-card{display:grid;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--line)}.side-card:first-child{grid-column:1/-1}.side-card:last-child{border-bottom:0}.side-card .media{aspect-ratio:16/10}.side-card:first-child .media{aspect-ratio:2/1}.side-card p{display:none}
 .side-card h3{font-size:var(--t-xl);line-height:1.22}.side-card h3 a:hover{color:var(--red-dark)}.side-card p{font-size:var(--t-s);color:var(--muted);line-height:1.5}
 .quickline{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);margin-top:26px}
 .quickline .shell{display:grid;grid-template-columns:auto repeat(4,1fr)}
@@ -510,7 +510,7 @@ footer{background:var(--stage);color:var(--on-dark-soft);margin-top:56px}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1100px){
-  .hero-grid{grid-template-columns:1fr 320px}.content-grid,.place-grid{grid-template-columns:minmax(0,1fr) 300px}.article-grid{grid-template-columns:minmax(0,1fr) 290px;gap:32px}
+  .hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(360px,.9fr)}.content-grid,.place-grid{grid-template-columns:minmax(0,1fr) 300px}.article-grid{grid-template-columns:minmax(0,1fr) 290px;gap:32px}
   .fire-grid{grid-template-columns:1fr 1fr}.photo-story:first-child{grid-column:1/-1}.events-grid{grid-template-columns:repeat(2,1fr)}.district-grid{grid-template-columns:repeat(3,1fr)}
   .club-grid.four{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}
   .toplinks .svc{display:none}.mast-search{width:200px}
