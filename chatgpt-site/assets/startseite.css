@@ -57,13 +57,18 @@ body.home .frontpage-grid{
 }
 
 @media (min-width:1040px){
-  body.home .frontpage-grid{grid-template-columns:minmax(0,1.62fr) minmax(300px,1fr)}
+  body.home .frontpage-grid{grid-template-columns:minmax(0,1.28fr) minmax(420px,.92fr);gap:var(--s6)}
 }
 
-body.home .front-neben{display:grid;gap:var(--s6);min-width:0}
+body.home .front-neben{display:grid;grid-template-columns:1fr;gap:var(--s4);min-width:0}
 
 @media (min-width:600px) and (max-width:1039px){
   body.home .front-neben{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1040px){
+  body.home .front-neben{grid-template-columns:1fr 1fr;gap:var(--s4)}
+  body.home .front-neben-story:first-child{grid-column:1 / -1}
+  body.home .front-neben-story:first-child .media{aspect-ratio:2.1/1}
 }
 
 /* ------------------------------------------------------------ Bildflächen */
@@ -194,21 +199,13 @@ body.home .front-zeile .location-brand{color:var(--ma-red,#971725);font-size:11p
 body.home .front-zeile .kicker{margin-left:var(--s2);color:var(--ma-muted,#6b6660);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
 body.home .front-zeile .meta{color:var(--ma-muted,#817b73);font-size:11px}
 
-/* ------------------------------------------------------------- Dunkelmodus */
-
-html[data-theme="dark"] body.home .front-lead h1 a,
-html[data-theme="dark"] body.home .front-neben-story h2 a,
-html[data-theme="dark"] body.home .front-zeile h2 a{color:#f1f1f0}
-html[data-theme="dark"] body.home .front-lead p{color:#bebebb}
-html[data-theme="dark"] body.home .karte-bild .media{background:#26282a}
-
 /* ------------------------------------------------------ Ressortflaechen */
 /* Ein Muster fuer alle Sektionen: zwei grosse Meldungen nebeneinander,
    darunter drei mittlere, darunter bei Bedarf kompakte Zeilen fuer Meldungen
    ohne verwendbares Motiv. Vorher hatte jede Sektion ihr eigenes Raster, meist
    ein riesiges Bild links neben einer duennen Textleiter. */
 
-body.home main > section + section{margin-top:clamp(var(--s7,32px), 4vw, var(--s9,64px))}
+body.home main > section + section{margin-top:clamp(24px,3vw,44px)}
 body.home .desk{padding-top:0}
 
 body.home .desk-heading{
@@ -358,3 +355,60 @@ body.home .sc-stand-quelle{
 html[data-theme="dark"] body.home .sc-stand{background:transparent}
 html[data-theme="dark"] body.home .sc-stand .sc-kachel{border-color:#2f2f2e}
 html[data-theme="dark"] body.home .sc-stand .sc-wert{color:#f1f1f0}
+
+
+/* ---------------------------------------------------------------------------
+   KBS / Ordin 23.09.2026 – Startseite: dichter erster Blick, Werbebänder,
+   Tipp und Foto des Tages.
+--------------------------------------------------------------------------- */
+body.home .portal-top{margin-top:18px;margin-bottom:26px}
+body.home .frontpage-grid{padding-bottom:8px}
+body.home .front-neben-story .media{aspect-ratio:16/10}
+body.home .front-neben-story h2{font-size:clamp(17px,1.35vw,21px)}
+body.home .front-neben-story .karte-text{padding-top:10px}
+body.home .desk-heading{margin-bottom:18px}
+body.home .desk-mittel{margin-top:22px}
+body.home .desk-zeilen{margin-top:16px}
+
+.home-ad-band{
+  position:relative;
+  margin-top:30px!important;
+  margin-bottom:30px;
+  border-block:1px solid var(--ma-line,#deddd9);
+  padding:12px 0;
+}
+.home-ad-band__label{
+  position:absolute;top:-8px;left:0;background:var(--paper,#fff);padding-right:10px;
+  color:var(--ma-muted,#79736c);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase
+}
+.home-ad-band__items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.home-ad-band__item{
+  min-height:86px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--ma-warm,#f4f1eb);border:1px solid var(--ma-line,#deddd9);text-decoration:none
+}
+.home-ad-band__item strong{font-family:Newsreader,Georgia,serif;font-size:20px;line-height:1.15}
+.home-ad-band__item span{margin-top:5px;color:var(--ma-muted,#6f6a63);font-size:12px}
+.home-ad-band__item:hover{border-color:var(--ma-red,#971725)}
+@media(max-width:700px){.home-ad-band__items{grid-template-columns:1fr}.home-ad-band__item{min-height:72px}}
+
+.home-specials{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.78fr);gap:28px;
+  margin-top:38px!important;padding-top:28px;border-top:1px solid var(--ma-line,#deddd9)
+}
+.home-special-heading .eyebrow{display:block;margin-bottom:5px;color:var(--ma-red,#971725);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.home-special-heading h2{margin:0;font-family:Newsreader,Georgia,serif;font-size:clamp(28px,3vw,38px);line-height:1.05}
+.home-special-heading p{margin:7px 0 0;color:var(--ma-muted,#6f6a63);max-width:60ch}
+.home-tipp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.home-tipp-card{
+  min-height:180px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;
+  border:1px solid var(--ma-line,#deddd9);background:linear-gradient(180deg,#f7f4ed 0%,#eee8dc 100%);text-decoration:none
+}
+.home-tipp-card>span{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ma-red,#971725)}
+.home-tipp-card strong{margin-top:8px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.05}
+.home-tipp-card small{margin-top:8px;color:var(--ma-muted,#6f6a63);font-size:13px;line-height:1.45}
+.home-tipp-card:hover{border-color:var(--ma-red,#971725)}
+.photo-day figure{margin:18px 0 10px}
+.photo-day figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.photo-day figcaption{margin-top:6px;color:var(--ma-muted,#6f6a63);font-size:11px}
+@media(max-width:900px){.home-specials{grid-template-columns:1fr}.home-tipp-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.home-tipp-grid{grid-template-columns:1fr}.home-tipp-card{min-height:145px}}
