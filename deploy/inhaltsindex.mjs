@@ -93,14 +93,15 @@ const index = { generated: neuester, anzahl: artikel.length, bestand: null, hinw
 const locHtml = (a) => `<div class="location-line"><span class="location-brand">${esc(a.ort)}</span>${a.ortsteilLabel ? ' · ' + esc(a.ortsteilLabel) : ''}</div>`;
 const imgHtml = (b, sizes, eager) => `<img src="${esc(b.src)}"${b.srcset ? ` srcset="${esc(b.srcset)}"` : ''} sizes="${sizes}" alt="${esc(b.alt)}"${b.width && b.height ? ` width="${b.width}" height="${b.height}"` : ''} loading="${eager ? 'eager' : 'lazy'}"${eager ? ' fetchpriority="high"' : ''} decoding="async" data-editorial-image class="">`;
 const badgeHtml = (b) => (b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '');
+const disclosureHtml = (a) => a.ressort === 'tipp' ? '<span class="fbadge anzeige">Bezahlte Platzierung</span>' : '';
 const mehr = (a) => `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`;
 function leadHtml(a) {
   const b = a.bild;
-  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
+  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
 }
 function rowHtml(a) {
   const b = a.bild;
-  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
+  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>${disclosureHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
 }
 /**
  * Leerzustand einer Liste: Ueberschrift, ein Satz, was hier erscheinen wird,
@@ -116,6 +117,9 @@ function rowHtml(a) {
  * den Block beim naechsten Lauf wiederfindet (Idempotenz).
  */
 function leerHtml(html, basis) {
+  if (basis === '/tipp/') {
+    return '<div data-leerzustand="/tipp/" class="facts"><h2>Aktuell keine gebuchte Tipp-Platzierung</h2><p>Sobald ein freigegebener Tipp vorliegt, erscheint er hier. Bezahlte Inhalte werden klar als Tipp, Anzeige oder Sponsoring gekennzeichnet.</p><p><a href="/werben/">Tipp oder Sponsoring anfragen</a>.</p></div>';
+  }
   const desc = seitenText(html, /<p class="desc">([\s\S]*?)<\/p>/);
   const satz = (desc ? esc(desc) + ' ' : '') + 'Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.';
   return `<div data-leerzustand="${esc(basis)}" class="facts"><h2>Noch keine Meldung</h2><p>${satz}</p><p>Sie haben einen Hinweis für die Redaktion? <a href="/meldung-senden/">Meldung senden</a>.</p></div>`;
@@ -137,7 +141,9 @@ function ersetzeFeed(html, neuInnen) {
   const praefix = (marken.length ? innen.slice(0, Math.min(...marken)) : innen).replace(/\s+$/, '');
   return html.slice(0, start) + '<div class="feed">' + praefix + neuInnen + '\n    ' + html.slice(schluss);
 }
-const zaehler = (html, n) => html.replace(/<p class="count-line">\d+ Meldung(?:en)?/, `<p class="count-line">${n} Meldung${n === 1 ? '' : 'en'}`);
+const zaehler = (html, n, basis='') => basis === '/tipp/'
+  ? html.replace(/<p class="count-line">[^<]*/, `<p class="count-line">${n} Platzierung${n === 1 ? '' : 'en'}`)
+  : html.replace(/<p class="count-line">\d+ Meldung(?:en)?/, `<p class="count-line">${n} Meldung${n === 1 ? '' : 'en'}`);
 
 function listeSchreiben(basis, items, { seiten = true } = {}) {
   const rel1 = basis.replace(/^\//, '') + 'index.html';
@@ -151,7 +157,7 @@ function listeSchreiben(basis, items, { seiten = true } = {}) {
   const k = seiten ? Math.max(1, Math.ceil(items.length / SEITENGROESSE)) : 1;
   const seite1 = items.length ? (seiten ? items.slice(0, SEITENGROESSE) : items) : [];
   const innen1 = seite1.length ? '\n      ' + leadHtml(seite1[0]) + seite1.slice(1).map((a) => '\n      ' + rowHtml(a)).join('') + (k > 1 ? '\n      ' + paginationHtml(basis, 1, k) : '') : '\n      ' + leerHtml(html1, basis);
-  const neu1 = ersetzeFeed(zaehler(html1, items.length), innen1); if (neu1) schreibe(rel1, neu1);
+  const neu1 = ersetzeFeed(zaehler(html1, items.length, basis), innen1); if (neu1) schreibe(rel1, neu1);
   if (!seiten) return;
   const vorlagePfad = join(site, basis.replace(/^\//, ''), 'seite', '2', 'index.html');
   const vorlage = existsSync(vorlagePfad) ? readFileSync(vorlagePfad, 'utf8') : html1.replace(/<title>([^<|]*?)\s*\|/, '<title>$1 – Seite 2 |').replace(/(<link rel="canonical" href="[^"]*?)("\s*>)/, '$1seite/2/$2');
@@ -159,7 +165,7 @@ function listeSchreiben(basis, items, { seiten = true } = {}) {
     const teil = items.slice((n - 1) * SEITENGROESSE, n * SEITENGROESSE);
     const innen = teil.map((a) => '\n      ' + rowHtml(a)).join('') + '\n      ' + paginationHtml(basis, n, k);
     let html = vorlage.replace(/seite\/2\//g, `seite/${n}/`).replace(/Seite 2\b/g, `Seite ${n}`);
-    html = ersetzeFeed(zaehler(html, items.length), innen); if (html) schreibe(`${basis.replace(/^\//, '')}seite/${n}/index.html`, html);
+    html = ersetzeFeed(zaehler(html, items.length, basis), innen); if (html) schreibe(`${basis.replace(/^\//, '')}seite/${n}/index.html`, html);
   }
   const seitenDir = join(site, basis.replace(/^\//, ''), 'seite');
   if (existsSync(seitenDir)) for (const d of readdirSync(seitenDir)) {
