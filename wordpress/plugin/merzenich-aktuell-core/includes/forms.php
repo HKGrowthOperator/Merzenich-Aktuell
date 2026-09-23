@@ -8,13 +8,28 @@ function ma_register_form_hooks(): void {
 function ma_form_shortcode($atts): string {
     $a=shortcode_atts(['typ'=>'kontakt'],$atts);
     $type=sanitize_key($a['typ']);
-    $allowed=['kontakt','meldung','termin','verein','werbung']; if(!in_array($type,$allowed,true)) $type='kontakt';
+    $allowed=['kontakt','meldung','termin','verein','werbung','immobilie','trauer','familie']; if(!in_array($type,$allowed,true)) $type='kontakt';
     ob_start(); ?>
     <form class="ma-public-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" enctype="multipart/form-data">
       <input type="hidden" name="action" value="ma_form_submit"><input type="hidden" name="type" value="<?php echo esc_attr($type); ?>"><input type="hidden" name="started" value="<?php echo esc_attr(time()); ?>"><?php wp_nonce_field('ma_form_submit_'.$type,'ma_form_nonce'); ?>
       <p style="position:absolute;left:-9999px"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></p>
+      <?php
+      $arten=[
+        'immobilie'=>['verkauf'=>'Immobilie verkaufen','vermietung'=>'Immobilie vermieten','gesuch'=>'Immobilie suchen','gewerbe'=>'Gewerbeobjekt'],
+        'trauer'=>['traueranzeige'=>'Traueranzeige','danksagung'=>'Danksagung','jahrgedaechtnis'=>'Jahrgedächtnis'],
+        'familie'=>['geburt'=>'Geburt','hochzeit'=>'Hochzeit','jubilaeum'=>'Jubiläum','glueckwunsch'=>'Glückwunsch'],
+        'werbung'=>['banner'=>'Werbebanner','tipp'=>'Tipp / Sponsoring','unternehmen'=>'Unternehmensprofil'],
+      ];
+      if(isset($arten[$type])):
+        $vorauswahl=sanitize_key($_GET['art']??'');
+      ?>
+        <p><label>Was möchten Sie veröffentlichen?<br><select name="listing_kind" required>
+          <option value="">Bitte wählen</option>
+          <?php foreach($arten[$type] as $key=>$label): ?><option value="<?php echo esc_attr($key); ?>" <?php selected($vorauswahl,$key); ?>><?php echo esc_html($label); ?></option><?php endforeach; ?>
+        </select></label></p>
+      <?php endif; ?>
       <p><label>Name<br><input name="name" required maxlength="120"></label></p><p><label>E-Mail<br><input name="email" type="email" required maxlength="190"></label></p><p><label>Betreff<br><input name="subject" required maxlength="180"></label></p><p><label>Nachricht<br><textarea name="message" rows="7" required maxlength="8000"></textarea></label></p>
-      <?php if(in_array($type,['meldung','termin','verein'],true)): ?><p><label>Datei (optional, JPG/PNG/PDF, max. 5 MB)<br><input type="file" name="attachment" accept="image/jpeg,image/png,application/pdf"></label></p><?php endif; ?>
+      <?php if(in_array($type,['meldung','termin','verein','werbung','immobilie','trauer','familie'],true)): ?><p><label>Datei / Bild (optional, JPG/PNG/PDF, max. 5 MB)<br><input type="file" name="attachment" accept="image/jpeg,image/png,application/pdf"></label></p><?php endif; ?>
       <p><button type="submit">Absenden</button></p><p class="ma-form-note">Einsendungen werden redaktionell geprüft und nicht automatisch veröffentlicht.</p>
     </form><?php return (string)ob_get_clean();
 }
@@ -32,7 +47,8 @@ function ma_form_submit(): void {
         $upload=wp_handle_upload($_FILES['attachment'],['test_form'=>false,'mimes'=>['jpg|jpeg'=>'image/jpeg','png'=>'image/png','pdf'=>'application/pdf']]);
         if(isset($upload['file'])) $attachments[]=$upload['file']; else wp_die('Datei konnte nicht verarbeitet werden.',400);
     }
-    $body="Typ: {$type}\nName: {$name}\nE-Mail: {$email}\n\n{$message}";
+    $kind=sanitize_text_field(wp_unslash($_POST['listing_kind']??''));
+    $body="Typ: {$type}\n".($kind!==''?"Art: {$kind}\n":'')."Name: {$name}\nE-Mail: {$email}\n\n{$message}";
     wp_mail($to,'[Merzenich Aktuell] '.$subject,$body,['Reply-To: '.$name.' <'.$email.'>'],$attachments);
     foreach($attachments as $f) @unlink($f);
     wp_safe_redirect(add_query_arg('gesendet','1',wp_get_referer()?:home_url('/'))); exit;
