@@ -36,7 +36,7 @@ const SEITENGROESSE = 12;
 // Alle Ressorts, die die Seite anbietet - auch die ohne eigene Meldung. Nur so
 // faellt auf, wenn ein Bereich etwas verspricht, das es redaktionell nicht gibt.
 // Reihenfolge = Reihenfolge der Navigation.
-const RESSORT_ORDNUNG = ['nachrichten', 'blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine', 'kultur'];
+const RESSORT_ORDNUNG = ['nachrichten', 'blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'tipp', 'menschen', 'vereine', 'kultur'];
 // /nachrichten/ ist das Gesamtarchiv und sammelt alle Meldungen; unter dem
 // Ordner selbst liegt kein Beitrag. Ein Zaehlerstand 0 ist dort also richtig
 // und keine Luecke - die Liste fuehrt trotzdem alle Meldungen.
@@ -69,6 +69,9 @@ const kurzZeit = (iso) => { const d = new Date(iso); return new Intl.DateTimeFor
 
 // ------------------------------------------------------------------ Index
 const artikel = artikelSammeln(site);
+// Bezahlte Tipp-Inhalte sind ein eigener, klar gekennzeichneter Kanal und
+// werden nicht als redaktionelle Nachrichten in Homepage/Newsfeed vermischt.
+const redaktionell = artikel.filter((a) => a.ressort !== 'tipp');
 const neuester = artikel.reduce((m, a) => (a.aktualisiert || a.datum) > m ? (a.aktualisiert || a.datum) : m, '');
 // Bestand je Ressort und je Ortsteil: einmal zaehlen, in den Index schreiben.
 // Unbekannte Schluessel werden mitgezaehlt statt verschluckt, damit die Summe
@@ -171,7 +174,7 @@ const ressorts = [...new Set(artikel.map((a) => a.ressort))];
 // Jedes Ressort laeuft durch listeSchreiben(), auch eines ohne Seite: die
 // Funktion bricht selbst ab und vermerkt den Zustand im Bestand.
 for (const r of RESSORT_ORDNUNG) {
-  listeSchreiben(`/${r}/`, r === ARCHIV_RESSORT ? artikel : artikel.filter((a) => a.ressort === r));
+  listeSchreiben(`/${r}/`, r === ARCHIV_RESSORT ? redaktionell : artikel.filter((a) => a.ressort === r));
 }
 for (const ort of Object.keys(ORTSTEILE)) listeSchreiben(`/${ort}/`, artikel.filter((a) => a.ortsteil === ort), { seiten: false });
 
@@ -265,6 +268,9 @@ index.bestand = {
       if (!gesetzt) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} steht nicht im Inhaltsindex.`);
         process.exitCode = 2;
+      } else if (gesetzt.ressort === 'sport' || gesetzt.ressort === 'tipp') {
+        console.error(`Startseite: Aufmacher ${ed.hero.url} gehoert zu ${gesetzt.ressort} und darf nicht auf die Startseite.`);
+        process.exitCode = 2;
       } else if (!echtesBild(gesetzt)) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} hat kein echtes Bild (Logo, Wappen oder Verlaufs-Symbolbild). editorial-current.json korrigieren oder Eintrag entfernen.`);
         process.exitCode = 2;
@@ -272,9 +278,9 @@ index.bestand = {
         return gesetzt;
       }
     }
-    return artikel.find((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || artikel.find((a) => echtesBild(a) && passtInPlatz(a, 'l'))
-      || artikel.find((a) => echtesBild(a))
+    return redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l'))
+      || redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a))
       || null;
   }
 
@@ -331,7 +337,7 @@ index.bestand = {
   // KBS/Ordin 23.09.2026: Der erste Blick soll deutlich dichter werden.
   // Eine grosse Highlight-News wird von fuenf kleineren Bildmeldungen rechts
   // und darunter ergaenzt. Keine Sportmeldung darf in dieser Startbuehne landen.
-  const neben = artikel.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 5);
+  const neben = redaktionell.filter((a) => !vergeben.has(a.url) && a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
 
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
@@ -354,7 +360,7 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport', jeRessort: 3, fenster: 44, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
@@ -623,20 +629,20 @@ function ersetzeBlock(rel, tagStart, tagEnde, items, datumTag) {
   const neu = kopf.replace(/\s*$/, '\n') + items.join('\n') + '\n' + fuss.replace(/^\s*/, '');
   schreibe(rel, neu);
 }
-ersetzeBlock('feed.xml', '<item>', '</item>', feedArtikel.slice(0, 30).map(rssItem), 'rss');
-ersetzeBlock('atom.xml', '<entry>', '</entry>', feedArtikel.slice(0, 30).map(atomEntry), 'atom');
-ersetzeBlock('nachrichten/feed.xml', '<item>', '</item>', feedArtikel.slice(0, 30).map(rssItem), 'rss');
+ersetzeBlock('feed.xml', '<item>', '</item>', feedArtikel.filter((a) => a.ressort !== 'tipp').slice(0, 30).map(rssItem), 'rss');
+ersetzeBlock('atom.xml', '<entry>', '</entry>', feedArtikel.filter((a) => a.ressort !== 'tipp').slice(0, 30).map(atomEntry), 'atom');
+ersetzeBlock('nachrichten/feed.xml', '<item>', '</item>', feedArtikel.filter((a) => a.ressort !== 'tipp').slice(0, 30).map(rssItem), 'rss');
 for (const r of ressorts) ersetzeBlock(`${r}/feed.xml`, '<item>', '</item>', feedArtikel.filter((a) => a.ressort === r).slice(0, 30).map(rssItem), 'rss');
 for (const ort of Object.keys(ORTSTEILE)) ersetzeBlock(`${ort}/feed.xml`, '<item>', '</item>', feedArtikel.filter((a) => a.ortsteil === ort).slice(0, 30).map(rssItem), 'rss');
 {
   const rel = 'feed.json'; if (existsSync(join(site, rel))) {
     const alt = JSON.parse(readFileSync(join(site, rel), 'utf8'));
-    alt.items = feedArtikel.slice(0, 30).map((a) => ({ id: abs(a.url), url: abs(a.url), title: a.titel, summary: a.teaser, content_html: `<p>${esc(a.teaser)}</p>`, date_published: feedZeit(a), date_modified: a.aktualisiert || feedZeit(a), ...(a.bild ? { image: abs(a.bild.src) } : {}), tags: [a.ressortLabel, ORTSTEILE[a.ortsteil] || 'Region', ...a.themen.map((t) => t.label)] }));
+    alt.items = feedArtikel.filter((a) => a.ressort !== 'tipp').slice(0, 30).map((a) => ({ id: abs(a.url), url: abs(a.url), title: a.titel, summary: a.teaser, content_html: `<p>${esc(a.teaser)}</p>`, date_published: feedZeit(a), date_modified: a.aktualisiert || feedZeit(a), ...(a.bild ? { image: abs(a.bild.src) } : {}), tags: [a.ressortLabel, ORTSTEILE[a.ortsteil] || 'Region', ...a.themen.map((t) => t.label)] }));
     schreibe(rel, JSON.stringify(alt, null, 2) + '\n');
   }
 }
 {
-  const frisch = artikel.filter((a) => Date.parse(neuester) - Date.parse(a.datum) <= 2 * 86400e3);
+  const frisch = redaktionell.filter((a) => Date.parse(neuester) - Date.parse(a.datum) <= 2 * 86400e3);
   const urls = frisch.map((a) => `<url><loc>${abs(a.url)}</loc><news:news><news:publication><news:name>Merzenich Aktuell</news:name><news:language>de</news:language></news:publication><news:publication_date>${x(a.datum)}</news:publication_date><news:title>${x(a.titel)}</news:title></news:news></url>`);
   schreibe('news-sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${urls.join('\n')}\n</urlset>\n`);
   const alle = artikel.map((a) => `<url><loc>${abs(a.url)}</loc><lastmod>${x(a.aktualisiert || a.datum)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>${a.bild ? `<image:image><image:loc>${x(abs(a.bild.src))}</image:loc><image:title>${x(a.bild.alt)}</image:title></image:image>` : ''}</url>`);
