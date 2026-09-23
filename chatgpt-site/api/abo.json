@@ -1,6 +1,0 @@
-{
-  "hinweis": "Werbefrei-Abo. Der Zahlungslink wird im Container als Umgebungsvariable ABO_ZAHLUNGSLINK gesetzt (z. B. ein Stripe Payment Link mit Erfolgs-URL https://merzenichaktuell.hk-growthoperator.de/werbefrei/?session_id={CHECKOUT_SESSION_ID}). Diese Datei dokumentiert nur Preis und Ablauf; die live gueltige Konfiguration liefert /api/abo/konfiguration.",
-  "preis": "2,50 € im Monat",
-  "laufzeit": "monatlich kuendbar",
-  "freischaltung": "pro Geraet, per Zahlung (Stripe Checkout Session) oder Einloesecode der Redaktion"
-}

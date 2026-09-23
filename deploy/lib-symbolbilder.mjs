@@ -456,6 +456,19 @@ const MOTIVE = {
     <circle cx="1050" cy="560" r="54" fill="${h}"/>
     <path d="M1050 528 l26 19 -10 31h-32l-10-31z" fill="${d}"/>`,
 
+  // Vereinsleben: Menschen unter einer Wimpelkette, kein Sportbezug.
+  'vereine-vereinsleben': (d,a,h) => `
+    <path d="M240 190 Q800 300 1360 190" fill="none" stroke="${h}" stroke-width="8" opacity=".7"/>
+    <g fill="${h}" opacity=".85">${[330,470,610,750,890,1030,1170].map((x)=>{const t=(x-240)/1120, y=190+220*t*(1-t);return `<path d="M${x-34} ${y-6} L${x+34} ${y-6} L${x} ${y+62} Z"/>`;}).join('')}</g>
+    <g fill="${h}">
+      ${[[520,.9,20],[800,1,-10],[1080,.9,20]].map(([x,o,dy])=>`
+      <g opacity="${o}" transform="translate(${x-800},${dy+90})">
+        <circle cx="800" cy="300" r="52"/>
+        <path d="M800 364 c-52 0 -86 34 -92 86 l-16 122h42l14-96h8l-10 200h44l22-160h8l22 160h44l-10-200h8l14 96h42l-16-122c-6-52-40-86-92-86z"/>
+      </g>`).join('')}
+    </g>
+    <rect x="260" y="880" width="1080" height="10" rx="5" fill="${h}" opacity=".5"/>`,
+
   'polizei-polizeibeamte': (d,a,h) => `
     <g fill="${h}">
       <circle cx="660" cy="270" r="58"/>

@@ -2,7 +2,7 @@
  * Einwilligung (Datenschutz, lokale Speicherung, externe Inhalte, Live-Meldungen).
  *
  * Die Seite setzt keine Tracking-Cookies. Im Browser gespeichert werden nur:
- * Darstellung (hell/dunkel), der Kommentarname, der Werbefrei-Nachweis und
+ * Darstellung, der Kommentarname und
  * diese Einwilligung. Was eine Zustimmung braucht:
  *   - (externeBilder entfaellt: Symbolbilder laufen ueber /api/bild, den
  *     eigenen Bildproxy; das Feld bleibt im Speicherformat, wird ignoriert.)
@@ -101,7 +101,6 @@
         <button type="button" class="btn ghost" data-ew="auswahl">${details ? 'Auswahl speichern' : 'Nur notwendige'}</button>
         ${details ? '' : '<button type="button" class="einwilligung__mehr" data-ew="details">Auswählen</button>'}
       </div>
-      <p class="einwilligung__werbefrei"><strong>Werbung entfernen</strong> · Merzenich Aktuell ohne Anzeigen für 2,50 € im Monat, monatlich kündbar. <a href="/werbefrei/">Werbefrei lesen</a></p>
       <p class="einwilligung__fuss"><a href="/datenschutz/">Datenschutzerklärung</a> · <a href="/impressum/">Impressum</a> · Änderbar jederzeit unten auf jeder Seite unter „Datenschutz-Einstellungen“.</p>
     </div>`;
   }

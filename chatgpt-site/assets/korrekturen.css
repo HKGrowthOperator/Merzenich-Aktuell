@@ -211,20 +211,6 @@ html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,htm
 @media (max-width:640px){.einwilligung{padding:0}.einwilligung__box{border-left:0;border-right:0;padding:14px 16px 12px}}
 html[data-theme="dark"] .einwilligung__box{background:#1b1b1b;border-color:#353535}
 
-/* Werbefrei (assets/werbefrei.js) */
-.werbefrei .info-prose{max-width:none}
-.werbefrei__abschnitt{padding:20px 0;border-top:1px solid var(--line,#e3e3e1)}
-.werbefrei__abschnitt h2{margin:0 0 10px;font-size:20px}
-.werbefrei__abschnitt ul{margin:0 0 16px;padding-left:20px;line-height:1.55}
-.werbefrei__klein{font-size:13.5px;color:var(--muted,#666);line-height:1.5}
-.werbefrei__status{margin:0 0 18px;padding:14px 16px;border:1px solid var(--line,#e3e3e1);background:var(--card,#fff);font-size:14px}
-.werbefrei__status.is-aktiv{border-color:#25684a;background:#eef7f1}
-.werbefrei__status.is-fehler{border-color:var(--red,#971725)}
-.werbefrei__ab{appearance:none;border:0;background:none;padding:0;margin-left:8px;color:var(--muted,#666);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
-.werbefrei__code{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
-.werbefrei__code label{display:grid;gap:5px;font-size:13px;font-weight:600}
-.werbefrei__code input{padding:9px 11px;border:1px solid #bdbdbd;border-radius:4px;font:inherit;font-size:15px;background:var(--card,#fff);color:var(--ink,#161616)}
-.werbefrei__meldung{flex-basis:100%;font-size:13px;color:var(--muted,#666)}
 html[data-theme="dark"] .werbefrei__status{background:#1b1b1b;border-color:#353535}
 html[data-theme="dark"] .werbefrei__status.is-aktiv{background:#16261c}
 

@@ -778,15 +778,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/responsive/c87735f6d1ed7e-340.webp",
-    "srcset": "/assets/responsive/c87735f6d1ed7e-240.webp 240w, /assets/responsive/c87735f6d1ed7e-340.webp 340w",
-    "alt": "Saisonauftakt des FC-Fanclubs Merzenich",
-    "width": 340,
-    "height": 340,
+    "src": "/assets/symbolbilder/vereine/vereine-01-vereinsleben.svg",
+    "srcset": "",
+    "alt": "Vereinsleben als neutrales Symbolbild",
+    "width": 1600,
+    "height": 900,
     "fit": "",
-    "badge": "Quellenmotiv",
-    "credit": "1. FC Köln Fanclub Merzenich 1967 / Heimat-Info",
-    "symbol": false
+    "badge": "Symbolbild",
+    "credit": "Merzenich Aktuell · redaktionelle Symbolgrafik · Projektasset – Nutzung durch Merzenich Aktuell",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""

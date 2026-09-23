@@ -458,8 +458,8 @@ index.bestand = {
   const ORTE_BUEHNE = [
     ['merzenich', 'Hauptort mit Rathaus, St. Laurentius und S-Bahn-Halt an der Strecke Köln–Aachen.', 'Historisches Fachwerkhaus im Ortskern von Merzenich', 'Karl-Heinz Meurer / Wikimedia Commons', '6% 50%'],
     ['golzheim', 'Im Norden der Gemeinde, mit St. Gregorius, Grundschule und Schützenbruderschaft.', 'Blick über den Wenauer Hof auf St. Gregorius in Golzheim', 'Karl-Heinz Meurer / Wikimedia Commons', '50% 50%'],
-    ['girbelsrath', 'Im Süden, mit St. Amandus, eigener Löschgruppe und Karnevalsverein.', 'Denkmalgeschütztes Fachwerkhaus in Girbelsrath', 'Käthe und Bernd Limburg / Wikimedia Commons', '50% 50%'],
-    ['morschenich', 'Der Umsiedlungsort „Zwischen den Höfen“, bis Juli 2024 Morschenich-Neu.', 'Archivaufnahme vom Aufbau des neuen Morschenich', 'Papa1234 / Wikimedia Commons', '50% 50%'],
+    ['girbelsrath', 'Im Süden, mit St. Amandus, eigener Löschgruppe und Karnevalsverein.', 'Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath', 'Käthe und Bernd Limburg / Wikimedia Commons', '50% 50%'],
+    ['morschenich', 'Der Umsiedlungsort „Zwischen den Höfen“, bis Juli 2024 Morschenich-Neu.', 'Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015', 'Papa1234 / Wikimedia Commons', '50% 50%'],
     ['buergewald', 'Das alte Morschenich am Hambacher Forst, seit Juli 2024 Bürgewald.', 'Luftbild von Bürgewald, dem früheren Morschenich-Alt', 'Antisyntagmatarchos / Wikimedia Commons', '50% 50%'],
   ];
   const datumOrt = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: 'numeric', month: 'long' }).format(new Date(iso));

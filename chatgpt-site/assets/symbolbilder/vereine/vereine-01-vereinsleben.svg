@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d"><title id="t">Vereinsleben</title><desc id="d">Neutrales redaktionelles Symbolbild für Vereine / Ehrenamt: Vereinsleben. Kein Foto eines konkreten Ereignisses.</desc><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#49364b"/><stop offset="1" stop-color="#c28f5a"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><circle cx="329" cy="364" r="185" fill="#f6f1ec" opacity=".13"/><circle cx="1152" cy="460" r="208" fill="#f6f1ec" opacity=".09"/><path d="M120 680 C420 520 820 760 1480 500" fill="none" stroke="#f6f1ec" stroke-width="18" opacity=".18"/><rect x="90" y="90" width="1420" height="720" rx="42" fill="none" stroke="#f6f1ec" stroke-width="3" opacity=".28"/><rect x="115" y="120" width="185" height="42" rx="21" fill="#f6f1ec" opacity=".92"/><text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#49364b">SYMBOLBILD</text><text x="120" y="575" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="3" fill="#f6f1ec" opacity=".78">VEREINE / EHRENAMT</text><text x="120" y="665" font-family="Arial,sans-serif" font-size="68" font-weight="800" fill="#f6f1ec">Vereinsleben</text><text x="120" y="730" font-family="Arial,sans-serif" font-size="24" fill="#f6f1ec" opacity=".82">MERZENICH AKTUELL · Redaktionelle Symbolgrafik</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d"><title id="t">Vereinsleben</title><desc id="d">Redaktionelles Symbolbild für Vereine / Ehrenamt: Vereinsleben. Kein Foto eines konkreten Ereignisses.</desc><defs><linearGradient id="g" x1="0" y1="0" x2=".35" y2="1"><stop stop-color="#49364b"/><stop offset="1" stop-color="#c28f5a" stop-opacity=".55"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><g transform="translate(0,-24)">
+    <path d="M240 190 Q800 300 1360 190" fill="none" stroke="#f6f1ec" stroke-width="8" opacity=".7"/>
+    <g fill="#f6f1ec" opacity=".85"><path d="M296 200.2579719387755 L364 200.2579719387755 L330 268.25797193877554 Z"/><path d="M436 219.90082908163265 L504 219.90082908163265 L470 287.90082908163265 Z"/><path d="M576 232.66868622448982 L644 232.66868622448982 L610 300.6686862244898 Z"/><path d="M716 238.56154336734696 L784 238.56154336734696 L750 306.561543367347 Z"/><path d="M856 237.5794005102041 L924 237.5794005102041 L890 305.5794005102041 Z"/><path d="M996 229.7222576530612 L1064 229.7222576530612 L1030 297.7222576530612 Z"/><path d="M1136 214.99011479591837 L1204 214.99011479591837 L1170 282.9901147959184 Z"/></g>
+    <g fill="#f6f1ec">
+      
+      <g opacity="0.9" transform="translate(-280,110)">
+        <circle cx="800" cy="300" r="52"/>
+        <path d="M800 364 c-52 0 -86 34 -92 86 l-16 122h42l14-96h8l-10 200h44l22-160h8l22 160h44l-10-200h8l14 96h42l-16-122c-6-52-40-86-92-86z"/>
+      </g>
+      <g opacity="1" transform="translate(0,80)">
+        <circle cx="800" cy="300" r="52"/>
+        <path d="M800 364 c-52 0 -86 34 -92 86 l-16 122h42l14-96h8l-10 200h44l22-160h8l22 160h44l-10-200h8l14 96h42l-16-122c-6-52-40-86-92-86z"/>
+      </g>
+      <g opacity="0.9" transform="translate(280,110)">
+        <circle cx="800" cy="300" r="52"/>
+        <path d="M800 364 c-52 0 -86 34 -92 86 l-16 122h42l14-96h8l-10 200h44l22-160h8l22 160h44l-10-200h8l14 96h42l-16-122c-6-52-40-86-92-86z"/>
+      </g>
+    </g>
+    <rect x="260" y="880" width="1080" height="10" rx="5" fill="#f6f1ec" opacity=".5"/></g><rect x="115" y="120" width="185" height="42" rx="21" fill="#f6f1ec" opacity=".92"/><text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#49364b">SYMBOLBILD</text><text x="1480" y="838" text-anchor="end" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#f6f1ec" opacity=".72">VEREINE / EHRENAMT · VEREINSLEBEN</text></svg>
