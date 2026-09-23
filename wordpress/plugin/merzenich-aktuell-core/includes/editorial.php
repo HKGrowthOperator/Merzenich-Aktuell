@@ -8,7 +8,7 @@ function ma_register_editorial_hooks(): void {
 }
 
 /** Inhalte mit Bild brauchen Bildherkunft - nicht nur Beitraege. */
-const MA_IMAGE_PROVENANCE_TYPES = ['ma_property','ma_job','ma_event','ma_club','ma_business','ma_family_notice'];
+const MA_IMAGE_PROVENANCE_TYPES = ['ma_property','ma_job','ma_event','ma_club','ma_business','ma_family_notice','ma_tip'];
 
 function ma_editorial_boxes(): void {
     add_meta_box('ma_editorial','Redaktion & Quelle','ma_editorial_box','post','normal','high');
