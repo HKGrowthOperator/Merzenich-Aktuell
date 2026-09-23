@@ -71,6 +71,9 @@ export function homePage(ctx) {
   const leben = nimm(3, a => ['leben', 'menschen', 'wirtschaft', 'rathaus'].includes(a.ressort));
   const tipps = nimm(5, a => a.featured);
   const businesses = ctx.businesses.slice(0, 4);
+  const paidTips = articles.filter(a => a.ressort === 'tipp').slice(0, 3);
+  const photoPool = homeArticles.filter(hatBild);
+  const photoDay = photoPool.length ? photoPool[Math.floor(ctx.now.getTime() / 86400000) % photoPool.length] : null;
 
   const content = `
 <section class="hero"><div class="shell hero-grid">
@@ -107,10 +110,14 @@ ${kurz.length ? `<section class="section kurz-section"><div class="shell">
   </div>
 </div></section>
 
+<div class="shell">${C.adSlot('home_band_1', site)}</div>
+
 ${blaulicht.length ? `<section class="section dark"><div class="shell">
   ${C.sectionHead('Blaulicht', 'Einsätze mit Originalbildern', '/blaulicht/', 'Alle Einsätze')}
   <div class="fire-grid">${blaulicht.map((a, i) => C.photoStory(a, ctx, i > 0)).join('')}</div>
 </div></section>` : ''}
+
+<div class="shell">${C.adSlot('home_band_2', site)}</div>
 
 <section class="section"><div class="shell">
   ${C.sectionHead('Kalender', 'Was als Nächstes ansteht', '/termine/', 'Alle Termine')}
@@ -118,12 +125,27 @@ ${blaulicht.length ? `<section class="section dark"><div class="shell">
   <p class="section-note">Vereine und Veranstalter tragen ihre Termine selbst ein: <a href="/termine/melden/">Termin melden</a>. Jeder Termin ist als Kalenderdatei abrufbar.</p>
 </div></section>
 
-<div class="shell">${C.adSlot('home_mid', site)}</div>
+<div class="shell">${C.adSlot('home_band_3', site)}</div>
 
 
 <section class="section"><div class="shell">
   ${C.sectionHead('Ressorts', 'Rathaus, Wirtschaft, Leben', '/nachrichten/', 'Alle Meldungen')}
   <div class="rblock-grid">${['rathaus', 'wirtschaft', 'leben'].map(k => C.ressortBlock(k, ctx, vergeben)).join('')}</div>
+</div></section>
+
+<div class="shell">${C.adSlot('home_band_4', site)}</div>
+
+<section class="section home-specials-source"><div class="shell">
+  <div class="markt-grid">
+    <div class="markt-col">
+      ${C.sectionHead('Tipp · Sponsoring', 'Empfohlen aus Merzenich', '/tipp/', 'Alle Tipps')}
+      ${paidTips.length ? paidTips.map(a => C.card({ ...a, sponsored: true, format: 'anzeige' }, ctx)).join('') : '<div class="markt-empty"><p>Aktuell gibt es keine gebuchte Tipp-Platzierung. Bezahlte Inhalte werden immer klar als Tipp, Anzeige oder Sponsoring gekennzeichnet.</p><a class="btn-sm" href="/werben/">Tipp oder Sponsoring anfragen</a></div>'}
+    </div>
+    <div class="markt-col">
+      ${C.sectionHead('Täglich neu', 'Foto des Tages', '/meldung-senden/', 'Foto einsenden')}
+      ${photoDay ? C.photoStory(photoDay, ctx) : '<div class="markt-empty"><p>Aktuell steht kein redaktionell freigegebenes Bild für das Foto des Tages bereit.</p></div>'}
+    </div>
+  </div>
 </div></section>
 
   <section class="section markt"><div class="shell">
