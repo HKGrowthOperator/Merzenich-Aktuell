@@ -20,10 +20,27 @@ for (const a of artikelSammeln(site)) for (const t of a.themen) {
   if (!themen.has(t.slug)) themen.set(t.slug, { label: t.label, artikel: [] });
   themen.get(t.slug).artikel.push(a);
 }
-const zeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row no-media no-image"><div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(a.ort)}</span></div><span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
+// Bildflaeche wie in den bestehenden Zeilen der Themenseiten: a.feed-img mit
+// .media und Badge. Nachgetragene Zeilen standen bis zum 23.09. pauschal auf
+// "no-media no-image" - gemessen 34 von 73 Karten auf den Themenseiten ohne
+// Bild, obwohl jeder Artikel ein Motiv hat. Ein Vereinslogo oder Wappen fuellt
+// keine Bildflaeche (Designstandard 7b), dort bleibt die Zeile textlich.
+const nurLogo = (b) => !b || !b.src || b.fit === 'contain' || /logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
+const bildFlaeche = (a) => {
+  const b = a.bild;
+  if (nurLogo(b)) return '';
+  const srcset = b.srcset ? ` srcset="${esc(b.srcset)}"` : '';
+  const masse = b.width && b.height ? ` width="${b.width}" height="${b.height}"` : '';
+  const badge = b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '';
+  return `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">`
+    + `<img src="${esc(b.src)}"${srcset} sizes="(max-width: 640px) 120px, 240px" alt="${esc(b.alt || '')}"${masse}`
+    + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
+};
+
+const zeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row${nurLogo(a.bild) ? ' no-media no-image' : ''}">${bildFlaeche(a)}<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(a.ort)}</span></div><span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
 const zaehler = (html, n) => html.replace(/<p class="count-line">\d+ Meldung(?:en)?<\/p>/, `<p class="count-line">${n} Meldung${n === 1 ? '' : 'en'}</p>`);
 
-let neuAngelegt = 0, nachgetragen = 0;
+let neuAngelegt = 0, nachgetragen = 0, bebildert = 0;
 for (const [slug, { label, artikel }] of themen) {
   const ordner = join(site, 'thema', slug), pfad = join(ordner, 'index.html');
   if (!existsSync(pfad)) {
@@ -42,11 +59,30 @@ for (const [slug, { label, artikel }] of themen) {
   const feedStart = alt.indexOf('<div class="feed">'), feedEnde = alt.indexOf('<aside class="sidebar">');
   if (feedStart < 0 || feedEnde < 0) continue;
   const feed = alt.slice(feedStart, feedEnde);
-  const fehlend = artikel.filter((a) => !feed.includes(`href="${a.url}"`));
+  // Bildlose Zeilen nachziehen: bis zum 23.09. bekam jede nachgetragene Zeile
+  // "no-media no-image", auch wenn der Artikel ein Motiv hat. Der Schritt
+  // ersetzt genau diese Zeilen und laesst handgepflegte Zeilen mit Bild in Ruhe.
+  let feedNeu = feed;
+  let nachgezogen = 0;
+  for (const a of artikel) {
+    if (nurLogo(a.bild)) continue;
+    const muster = new RegExp(`<article[^>]*data-story="${a.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*class="feed-row no-media no-image"[\\s\\S]*?<\\/article>`);
+    if (!muster.test(feedNeu)) continue;
+    feedNeu = feedNeu.replace(muster, () => zeile(a));
+    nachgezogen++;
+  }
+  const fehlend = artikel.filter((a) => !feedNeu.includes(`href="${a.url}"`));
+  if (nachgezogen && !fehlend.length) {
+    const neu = alt.slice(0, feedStart) + feedNeu + alt.slice(feedEnde);
+    if (!nurPruefen) writeFileSync(pfad, neu);
+    bebildert += nachgezogen; console.log(`bebildert: /thema/${slug}/ ${nachgezogen} Zeile(n)`);
+    continue;
+  }
+  if (nachgezogen) bebildert += nachgezogen;
   if (!fehlend.length) continue;
-  const lead = /<\/article>/.exec(feed);
+  const lead = /<\/article>/.exec(feedNeu);
   const einfuegen = '\n      ' + fehlend.map(zeile).join('\n      ');
-  const neuerFeed = lead && feed.includes('class="feed-lead"') ? feed.slice(0, lead.index + lead[0].length) + einfuegen + feed.slice(lead.index + lead[0].length) : feed.replace('<div class="feed">', '<div class="feed">' + einfuegen);
+  const neuerFeed = lead && feedNeu.includes('class="feed-lead"') ? feedNeu.slice(0, lead.index + lead[0].length) + einfuegen + feedNeu.slice(lead.index + lead[0].length) : feedNeu.replace('<div class="feed">', '<div class="feed">' + einfuegen);
   const anzahl = new Set([...neuerFeed.matchAll(/<h[23]><a href="([^"]+)"/g)].map((m) => m[1])).size;
   const neu = zaehler(alt.slice(0, feedStart) + neuerFeed + alt.slice(feedEnde), anzahl);
   if (!nurPruefen) writeFileSync(pfad, neu);
@@ -70,5 +106,5 @@ let uebersicht = 0;
     if (neu !== alt) { uebersicht = 1; if (!nurPruefen) writeFileSync(pfad, neu); }
   }
 }
-console.log(`Themen: ${themen.size} Tags, Uebersicht ${uebersicht ? (nurPruefen ? 'nicht aktuell' : 'aktualisiert') : 'aktuell'}, ${neuAngelegt} Seiten ${nurPruefen ? 'fehlen' : 'neu'}, ${nachgetragen} Seiten ${nurPruefen ? 'nicht aktuell' : 'nachgetragen'}.`);
-if (nurPruefen && (neuAngelegt || nachgetragen || uebersicht)) process.exit(2);
+console.log(`Themen: ${themen.size} Tags, Uebersicht ${uebersicht ? (nurPruefen ? 'nicht aktuell' : 'aktualisiert') : 'aktuell'}, ${neuAngelegt} Seiten ${nurPruefen ? 'fehlen' : 'neu'}, ${nachgetragen} Seiten ${nurPruefen ? 'nicht aktuell' : 'nachgetragen'}, ${bebildert} Zeile(n) ${nurPruefen ? 'ohne Bild' : 'bebildert'}.`);
+if (nurPruefen && (neuAngelegt || nachgetragen || uebersicht || bebildert)) process.exit(2);
