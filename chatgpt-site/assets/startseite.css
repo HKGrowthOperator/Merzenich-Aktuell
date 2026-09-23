@@ -624,3 +624,10 @@ body.home .portal-service .service-links a{font-size:16px;min-height:44px;color:
   body.home .portal-service .agenda-list .agenda-row:nth-of-type(n+3),
   body.home .portal-service .markt-mini:nth-of-type(n+3){display:none}
 }
+/* Trauer- und Familienanzeigen nebeneinander: spart eine Zeile, damit die
+   Servicespalte auch mit Wetterfeld nicht laenger wird als die Nachrichten
+   (CI 23.09.: 116 px Rest mit Wetter, erlaubt 96). */
+@media (min-width:960px){
+  body.home .portal-service .service-links{grid-template-columns:1fr 1fr;column-gap:12px}
+  body.home .portal-service .agenda-row{padding-top:6px;padding-bottom:6px}
+}
