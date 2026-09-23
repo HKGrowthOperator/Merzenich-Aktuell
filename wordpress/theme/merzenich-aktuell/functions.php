@@ -67,6 +67,7 @@ function ma_theme_primary_nav(): void {
         'Rathaus & Politik'=>'/category/rathaus/',
         'Leben'=>'/category/leben/',
         'Wirtschaft'=>'/category/wirtschaft/',
+        'Tipp'=>'/tipp/',
         'Menschen'=>'/category/menschen/',
     ];
     if (has_nav_menu('primary')) {
@@ -77,6 +78,16 @@ function ma_theme_primary_nav(): void {
     foreach($fallback as $label=>$url) echo '<li><a href="'.esc_url(home_url($url)).'">'.esc_html($label).'</a></li>';
     echo '</ul>';
 }
+
+/* Auch ein manuell gepflegtes WordPress-Menue darf den verbindlichen Tipp-Kanal
+   nicht verlieren. Falls er fehlt, wird er nach Wirtschaft ergaenzt. */
+add_filter('wp_nav_menu_items', function(string $items, stdClass $args): string {
+    if (($args->theme_location ?? '') !== 'primary' || str_contains($items,'/tipp/')) return $items;
+    $link='<li class="menu-item ma-menu-tipp"><a href="'.esc_url(home_url('/tipp/')).'">Tipp</a></li>';
+    $pattern='~(<li[^>]*>\s*<a[^>]+href="[^"]*/(?:category/)?wirtschaft/?"[^>]*>Wirtschaft</a>\s*</li>)~i';
+    if (preg_match($pattern,$items)) return preg_replace($pattern,'$1'.$link,$items,1) ?: $items.$link;
+    return $items.$link;
+},20,2);
 
 function ma_theme_is_local_post(int $post_id): bool {
     $local_slugs=['merzenich','golzheim','girbelsrath','morschenich','buergewald','bürgewald'];
@@ -146,6 +157,14 @@ function ma_theme_publish_guide(string $type): string {
                 ['familie','Geburt','Willkommen heißen und Freude teilen.','geburt'],
                 ['familie','Hochzeit','Hochzeit oder Verlobung veröffentlichen.','hochzeit'],
                 ['familie','Jubiläum','Geburtstag, Hochzeitstag oder Vereinsjubiläum.','jubilaeum'],
+            ],
+        ],
+        'ma_tip'=>[
+            'title'=>'Tipp / Sponsoring platzieren','intro'=>'Bezahlte Platzierungen bleiben von redaktionellen Nachrichten getrennt und werden sichtbar gekennzeichnet.',
+            'form'=>'werbung','cards'=>[
+                ['werbung','Tipp','Projekt, Veranstaltung oder Angebot als Tipp platzieren.','tipp'],
+                ['werbung','Sponsoring','Eine klar gekennzeichnete Sponsorplatzierung buchen.','sponsoring'],
+                ['werbung','Unternehmensprofil','Dauerhafte lokale Präsenz im Wirtschafts- und Partnerumfeld.','unternehmen'],
             ],
         ],
     ];
@@ -284,7 +303,7 @@ function ma_theme_market_meta(int $post_id=0): array {
 function ma_theme_market_type_label(string $post_type=''): string {
     $post_type=$post_type?:get_post_type();
     $labels=[
-        'ma_property'=>'Immobilien','ma_job'=>'Stellen','ma_obituary'=>'Traueranzeigen','ma_family_notice'=>'Familienanzeigen',
+        'ma_property'=>'Immobilien','ma_job'=>'Stellen','ma_obituary'=>'Traueranzeigen','ma_family_notice'=>'Familienanzeigen','ma_tip'=>'Tipp · Anzeige',
     ];
     return $labels[$post_type]??'Anzeigen';
 }
