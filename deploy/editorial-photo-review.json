@@ -2817,6 +2817,76 @@
       "titel": "File:GNT YS2019 a set of participants.jpg",
       "grund": "Beifang ohne Bezug (Ausstellung, Zug, Flugzeug)",
       "runde": 12
+    },
+    {
+      "pool": "verkehr",
+      "nr": 6,
+      "titel": "File:Fahrradreparaturstation Rathaus Neukölln Berlin.jpg",
+      "grund": "Stadtschild Berlin",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 15,
+      "titel": "File:ADAC Fahrradreparaturstation Neustadt-Weinstraße.jpg",
+      "grund": "Firmenschild ADAC",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 5,
+      "titel": "File:Fahrradreparaturstation in Überlingen.jpg",
+      "grund": "Stadtlogo auf der Station",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 17,
+      "titel": "File:20260802 xl 1855-Öffentliche Fahrradreparaturstation, Eggersdorf, am Seeschloss, Bötzsee.jpg",
+      "grund": "Collage",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 14,
+      "titel": "File:Fahrradreparaturstation Neustadt Hambach.jpg",
+      "grund": "Station schlecht erkennbar",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 8,
+      "titel": "File:20241009 xl 1738-Öffentliche Fahrradreparaturstation Strausberg Vorstadt.jpg",
+      "grund": "Station klein, Bahnhof dominiert",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 18,
+      "titel": "File:20260802 xl 1855-Öffentliche Fahrradreparaturstation, Eggersdorf, am Seeschloss, Bötzsee (89510).jpg",
+      "grund": "Serie, Station nur angeschnitten",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 20,
+      "titel": "File:Bike repair station.jpg",
+      "grund": "dunkle Unterführung",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 1,
+      "titel": "File:Radarfalle, Blitzer auf der BAB A8 - panoramio.jpg",
+      "grund": "Blitzer nicht erkennbar",
+      "runde": 13
+    },
+    {
+      "pool": "verkehr",
+      "nr": 2,
+      "titel": "File:Radarfalle (4413514500).jpg",
+      "grund": "Kennzeichen lesbar",
+      "runde": 13
     }
   ],
   "freigegeben": [
@@ -3054,6 +3124,14 @@
     "File:Mobilny fotoradar w Hanowerze (2025(.jpg",
     "File:Arndtstraße Ecke Am Klagesmarkt Blitzer in Richtung Schlosswender Straße.jpg",
     "File:Starenkasten Rotlichtüberwachung 1557.jpg",
-    "File:RheinEnergieStadion Köln 001.jpg"
+    "File:RheinEnergieStadion Köln 001.jpg",
+    "File:Fahrradreparaturstation Multscherschule P1078288.jpg",
+    "File:Fahrradreparaturstation Muenchner Str Ulm P1078520.jpg",
+    "File:Fahrradreparaturstation am Isarradweg Bad Tölz 2025-04-17.jpg",
+    "File:Bernkastel-Kues, Fahrradreparaturstation, Karlsbader Platz.jpg",
+    "File:Tübingen 2022 - Selbstbedienungs-Fahrradreparaturstation - by-RaBoe 004.jpg",
+    "File:Fahrradreparaturstation am Volkspark (Mainz).jpg",
+    "File:Fahrradreparaturstation.jpg",
+    "File:Brand Hotel Knoche4.jpg"
   ]
 }

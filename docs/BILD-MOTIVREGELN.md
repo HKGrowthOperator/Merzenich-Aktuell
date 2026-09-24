@@ -70,5 +70,5 @@ vor Polizei, Fanclub vor Fußball, Reparaturstation vor Fahrrad.
   Girbelsrath (Feuerwehrhaus Drove, Kreis Düren), Ortsfest (Dorfkirmes),
   Geschwindigkeitskontrolle (Blitzer-Kasten), Einbruch (Polizeimotorrad NRW),
   FC-Fanclub (RheinEnergieStadion).
-- Ohne Bild, bis ein Foto gesichtet ist: Fahrrad-Reparaturstationen.
+- Fahrrad-Reparaturstationen: gesichtete Fotos von Stationen in Tübingen, Ulm, Bad Tölz, Bernkastel-Kues und Mainz (Runde 13).
 - Alle übrigen Meldungen tragen eigene Fotos.
