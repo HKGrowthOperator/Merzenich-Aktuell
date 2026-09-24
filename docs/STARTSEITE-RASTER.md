@@ -54,6 +54,20 @@ Höchstens zweimal je Seite: über dem Fuß (`.merzenich-linie`, eingesetzt von
 `deploy/kopf-theme-einbinden.mjs`) und unter der Überschrift von
 „Weiterlesen“ in Artikeln (`.brandline.thin`).
 
+## Kopf: Mega-Menü „Mehr“ und Sport-Untermenü
+
+„Mehr“ öffnet ab 768 px ein Panel über die volle Breite (Vorbild Oberberg
+Aktuell): Ressorts, Orte, Anzeigen & Service, Redaktion, darunter „Anzeige
+aufgeben · Meldung senden · Termin melden“. Das Panel und das Sport-Untermenü
+stehen fertig im HTML (`MEGA`, `SPORT_MEGA` in `deploy/kopf-theme-einbinden.mjs`),
+v20.js verschiebt keine Links mehr. Unter 768 px bleibt die Schublade.
+
+## Sportseite: rechte Ecke
+
+`/sport/` zeigt neben der Überschrift Platz, Punkte, Tore und das nächste Spiel
+des SC 1919 Merzenich mit Datenstand und Quelle FUSSBALL.DE
+(`ecke()` in `deploy/sport-prerender.mjs`, Daten aus `api/sport-current.json`).
+
 ## Tokens
 
 | Rolle | Wert |

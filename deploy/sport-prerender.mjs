@@ -59,6 +59,30 @@ function kacheln() {
   return `<div class="sc-stand" aria-label="Tabellenstand SC 1919 Merzenich"><div class="sc-kachel"><span class="sc-wert">${heim.place}.</span><span class="sc-label">Platz</span></div><div class="sc-kachel"><span class="sc-wert">${heim.points}</span><span class="sc-label">Punkte</span></div><div class="sc-kachel"><span class="sc-wert">${esc(heim.goals)}</span><span class="sc-label">Tore</span></div></div><p class="sc-stand-quelle">Kreisliga A, Kreis Düren · ${stand} · Quelle ${esc(quelle)}</p>`;
 }
 
+// ------------------------------------------------ /sport/: rechte Ecke im Seitenkopf
+// Tabellenplatz, Punkte, Tore und das naechste Spiel des SC 1919 Merzenich neben
+// der Ueberschrift, aus derselben JSON wie das Sportmodul. Fehlt die Mannschaft
+// in der Tabelle, bleibt die Ecke weg.
+const tagZeit = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'short', day: '2-digit', month: '2-digit' }).format(new Date(iso)) + ', ' + hm(iso);
+function ecke() {
+  const heim = daten.table.find((r) => r.homeTeam || /Merzenich/i.test(r.team));
+  if (!heim) return '';
+  const n = daten.nextMatch && new Date(daten.nextMatch.date) > new Date(daten.generated) ? daten.nextMatch : null;
+  const kachel = (wert, label) => `<div class="sc-kachel"><span class="sc-wert">${wert}</span><span class="sc-label">${label}</span></div>`;
+  return `<aside class="sport-ecke" aria-label="SC 1919 Merzenich in der Kreisliga A"><p class="sport-ecke-kopf"><a href="/sc-1919-merzenich/">${esc(heim.team)}</a><span>Kreisliga A</span></p>`
+    + `<div class="sc-stand">${kachel(`${heim.place}.`, 'Platz')}${kachel(heim.points, 'Punkte')}${kachel(esc(heim.goals), 'Tore')}</div>`
+    + (n ? `<p class="sport-ecke-spiel"><b>Nächstes Spiel</b> <time datetime="${esc(n.date)}">${tagZeit(n.date)}</time><br>${esc(n.home)} gegen ${esc(n.away)}</p>` : '')
+    + `<p class="sport-ecke-quelle">${stand} · Quelle ${esc(quelle)}</p><!--/sport-ecke--></aside>`;
+}
+const ECKE_RE = /<aside class="sport-ecke"[\s\S]*?<!--\/sport-ecke--><\/aside>/;
+const KOPF_RE = /<div class="page-head"><div class="shell">([\s\S]*?)<\/div><\/div>/;
+function mitEcke(html) {
+  const e = ecke();
+  if (ECKE_RE.test(html)) return html.replace(ECKE_RE, () => e);
+  if (!e) return html;
+  return html.replace(KOPF_RE, (m, innen) => `<div class="page-head mit-ecke"><div class="shell"><div class="page-head-text">${innen}</div>${e}</div></div>`);
+}
+
 // ------------------------------------------------ Vereinskanal /sc-1919-merzenich/
 // Kacheln, komplette Tabelle, Datenstand und Spielplan (gespielte Partien wandern
 // mit Ergebnis in "Gespielte Partien") aus derselben JSON.
@@ -109,6 +133,7 @@ for (const rel of ['sport/index.html']) {
   let neu = alt.replace(MODUL_RE, () => modul);
   const k = kacheln();
   if (k && KACHEL_RE.test(neu)) neu = neu.replace(KACHEL_RE, () => k);
+  neu = mitEcke(neu);
   if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, neu); }
 }
 if (vereinskanal()) geaendert++;

@@ -91,6 +91,24 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
   if (neu === alt && !alt.includes(`'${version}'`)) { fehler++; console.error('sw.js: keine Zeile "const VERSION = \'...\';" gefunden'); }
   else if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(sw, neu); }
 }
+// Mega-Menue "Mehr" (Anhang A, Vorbild Oberberg Aktuell): ein festes Panel ueber
+// die volle Breite statt einer Linkliste, die v20.js zur Laufzeit befuellt.
+// Vier Spalten wie die Schublade auf dem Telefon, darunter die drei Wege, etwas
+// an die Redaktion zu geben. Unter 768 px bleibt es bei der Schublade.
+const MEGA_SPALTEN = [
+  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
+  ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
+  ['Anzeigen & Service', [['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
+  ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen']]],
+];
+const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-senden/', 'Meldung senden'], ['/termine/melden/', 'Termin melden']];
+const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="mega-panel"><div class="mega-spalten">'
+  + MEGA_SPALTEN.map(([titel, links]) => `<div class="mega-spalte"><p class="mega-titel">${esc(titel)}</p><ul>${links.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join('')}</ul></div>`).join('')
+  + `</div><p class="mega-wege"><span class="mega-titel">Für die Redaktion</span>${MEGA_WEGE.map(([u, t], i) => `<a class="${i ? 'mega-weg' : 'mega-weg primaer'}" href="${u}">${esc(t)}</a>`).join('')}</p></div></details>`;
+// Sport-Untermenue: stand bisher nur zur Laufzeit (app.js), jetzt im HTML.
+const SPORT_MEGA = '<div class="sport-mega"><div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div></div><!--/sport-mega-->';
+const MEHR_RE = /<details class="nav-more[^"]*">[\s\S]*?<\/details>/;
+const SPORT_RE = /<div class="sport-mega">[\s\S]*?<!--\/sport-mega-->/;
 const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
 for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
@@ -137,6 +155,15 @@ for (const pfad of seiten) {
   html = html.replace(/<details class="service-accordion"(?: hidden)?><summary>Wetter<\/summary><div><p>[^<]*<\/p><\/div><\/details>/g, '<details class="service-accordion" hidden><summary>Wetter</summary><div><p>Wetter wird geladen …</p></div></details>');
   // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
   html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
+  // Mega-Menue und Sport-Untermenue (siehe MEGA): nur im Kopf mit Ressortleiste.
+  if (MEHR_RE.test(html) && html.includes('<nav class="mainnav"')) {
+    html = html.replace(MEHR_RE, () => MEGA);
+    html = html.replace(SPORT_RE, '');
+    const i = html.indexOf('<details class="nav-more mega">');
+    const ende = html.indexOf('</div></nav>', i);
+    if (ende < 0) { fehler++; console.error('Ressortleiste ohne Abschluss: ' + pfad); continue; }
+    html = html.slice(0, ende + 6) + SPORT_MEGA + html.slice(ende + 6);
+  }
   // Merzenich-Linie (Anhang A): die Pulslinie aus dem Logo als ruhige Trennung
   // ueber dem Fuss. Ein Element, einmal je Seite, keine Animation.
   if (!html.includes('class="merzenich-linie"')) html = html.replace('<footer class="compact-footer">', LINIE + '<footer class="compact-footer">');

@@ -226,13 +226,18 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
   /* Sport-Megamenue: Unterthemen direkt am Ressort statt leerer Einzellink. */
   var nav=document.querySelector('.mainnav');
   var sport=nav&&nav.querySelector('.navscroll a[href="/sport/"]');
-  if(nav&&sport&&!nav.querySelector('.sport-mega')){
+  // Das Panel steht seit 24.09. im HTML (deploy/kopf-theme-einbinden.mjs);
+  // gebaut wird es hier nur noch fuer Seiten ohne diesen Kopf.
+  var mega=nav&&nav.querySelector('.sport-mega');
+  if(nav&&sport){
     sport.classList.add('has-mega');
     sport.setAttribute('aria-haspopup','true');
-    var mega=document.createElement('div');
+    if(!mega){
+    mega=document.createElement('div');
     mega.className='sport-mega';
     mega.innerHTML='<div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div>';
     nav.appendChild(mega);
+    }
     var closeTimer;
     function open(){clearTimeout(closeTimer);mega.classList.add('is-open');sport.setAttribute('aria-expanded','true')}
     function close(){closeTimer=setTimeout(function(){mega.classList.remove('is-open');sport.setAttribute('aria-expanded','false')},120)}
