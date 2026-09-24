@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2404,6 +2404,76 @@
       "titel": "File:26-01 Bücherschrank Rewe Zülpich.jpg",
       "grund": "Markenetikett oder Werbeschriftzug im Bild",
       "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:THW Bagger bei Grossbrand in Blomberg 2.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:THW Bagger bei Grossbrand in Blomberg 3.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Am Richtsberg 88.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Am Richtsberg 88 quer.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Veoki põleng Tartu maanteel 2021. aasta juunis.png",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (1).jpg",
+      "grund": "Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen",
+      "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (2).jpg",
+      "grund": "Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen",
+      "runde": 7
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Sepeda Tua dari Tasikmalaya.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 7
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:20220924 Soccer match artificial turf field Bethany Lutheran College Mankato Minnesota.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 7
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:26-01 Marti Faber Zugvögel 2004 Zülpich 01.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 7
     }
   ],
   "freigegeben": [
@@ -2624,6 +2694,11 @@
     "File:THW Bagger bei Grossbrand in Blomberg.jpg",
     "File:Haus am Dorfplatz-01.jpg",
     "File:Artificial grass playground – Brezovec - Dolný Kubín 05.jpg",
-    "File:Artificial turf on Straße des 17. Juni in Berlin 2024-05-24 03.jpg"
+    "File:Artificial turf on Straße des 17. Juni in Berlin 2024-05-24 03.jpg",
+    "File:Ambulance in a town of North Rhine-Westphalia inside (2024).jpg",
+    "File:Rettungshubschrauber Christoph 45 Ochsenhausen.JPG",
+    "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 041.jpg",
+    "File:Wohnungsbrand-Dortmund.jpg",
+    "File:Lagerhaus der Gemeinde neben Bushalt und Wartehäuschen, Am Dorfplatz bzw. Schulgasse, Possendorf, 99428 Weimar, Germany,.jpg"
   ]
 }

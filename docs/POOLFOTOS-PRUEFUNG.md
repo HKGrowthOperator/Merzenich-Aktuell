@@ -1,14 +1,14 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Freigegeben sind 218 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Runde 7: 10 ausgeschlossen. Freigegeben sind 223 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
 | Grund | Anzahl |
 |---|---|
-| Motiv passt nicht zum Pool | 78 |
-| Militär- oder Auslandsmotiv | 45 |
-| Fast gleiches Motiv wie ein anderes Bild im Pool | 40 |
+| Motiv passt nicht zum Pool | 81 |
+| Militär- oder Auslandsmotiv | 48 |
+| Fast gleiches Motiv wie ein anderes Bild im Pool | 42 |
 | Lesbares Kfz-Kennzeichen | 34 |
 | Ortsfremder Name, Schild oder Tafel lesbar | 23 |
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
@@ -25,6 +25,7 @@ Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Co
 | Graffiti mit lesbarer Schrift | 4 |
 | Ortsfremdes Wahrzeichen | 2 |
 | Extremes Panoramaformat, taugt nicht für Bildflächen | 2 |
+| Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen | 2 |
 | Unfallstelle mit Personen | 1 |
 | Transparent mit politischer Parole | 1 |
 
@@ -156,7 +157,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
 | 4 | 12 | Übungsspange außen.jpg | Lesbares Kfz-Kennzeichen |
 
-### Brand: 85 entfernt
+### Brand: 92 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -245,8 +246,15 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 6 | 16 | Großbrand im Wellseer Moor (Kiel 66.011).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
 | 6 | 17 | Großbrand im Wellseer Moor (Kiel 66.012).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
 | 6 | 18 | Großbrand auf dem Schrottplatz der Firma Michael Radomski am Poppenbrügger Weg in Wellsee (Kiel 67.381).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 7 | 09 | THW Bagger bei Grossbrand in Blomberg 2.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 7 | 12 | THW Bagger bei Grossbrand in Blomberg 3.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 7 | 14 | Am Richtsberg 88.jpg | Motiv passt nicht zum Pool |
+| 7 | 15 | Am Richtsberg 88 quer.jpg | Motiv passt nicht zum Pool |
+| 7 | 16 | Veoki põleng Tartu maanteel 2021. aasta juunis.png | Militär- oder Auslandsmotiv |
+| 7 | 17 | Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (1).jpg | Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen |
+| 7 | 18 | Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (2).jpg | Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen |
 
-### Sport: 48 entfernt
+### Sport: 50 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -298,6 +306,8 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 5 | 20 | FMF Beach Soccer Arena artificial turf.jpg | Militär- oder Auslandsmotiv |
 | 6 | 08 | Artificial grass playground – Brezovec - Dolný Kubín 04.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 6 | 20 | Eichstätt - Kunstrasenplatz Schottenau 23.10.2024.jpg | Unscharf oder ohne Bildaussage |
+| 7 | 08 | Sepeda Tua dari Tasikmalaya.jpg | Militär- oder Auslandsmotiv |
+| 7 | 20 | 20220924 Soccer match artificial turf field Bethany Lutheran College Mankato Minnesota.jpg | Militär- oder Auslandsmotiv |
 
 ### Termine: 4 entfernt
 
@@ -308,7 +318,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 1 | 13 | Münster, Domplatz, Wochenmarkt -- 2019 -- 2648.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 2 | 04 | Münster, St.-Paulus-Dom -- 2019 -- 2698.jpg | Ortsfremdes Wahrzeichen |
 
-### Vereine: 37 entfernt
+### Vereine: 38 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -349,6 +359,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 4 | 14 | 26-01 Bücherschrank Weilerswist 01.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 5 | 02 | Krippken Mettingen 7.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 6 | 02 | 26-01 Bücherschrank Rewe Zülpich.jpg | Markenetikett oder Werbeschriftzug im Bild |
+| 7 | 02 | 26-01 Marti Faber Zugvögel 2004 Zülpich 01.jpg | Motiv passt nicht zum Pool |
 
 ### Leben: 39 entfernt
 
