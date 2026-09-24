@@ -1,20 +1,22 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-09-24T12:48:31.935Z",
+ "abgerufen": "2026-09-24T13:14:57.693Z",
  "listen": [
   {
-   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=1&angebotsart=1",
-   "abgerufen": "2026-09-24T12:48:30.166Z",
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?wo=Merzenich&umkreis=25&size=100&page=1&angebotsart=1",
+   "abgerufen": "2026-09-24T13:14:55.825Z",
    "status": 403,
    "gesamt": null,
-   "stellen": []
+   "stellen": [],
+   "fehlertext": "pc/v4/jobs 403:   | app/jobs 403:  "
   },
   {
-   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=1&angebotsart=4",
-   "abgerufen": "2026-09-24T12:48:31.135Z",
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?wo=Merzenich&umkreis=25&size=100&page=1&angebotsart=4",
+   "abgerufen": "2026-09-24T13:14:56.893Z",
    "status": 403,
    "gesamt": null,
-   "stellen": []
+   "stellen": [],
+   "fehlertext": "pc/v4/jobs 403:   | app/jobs 403:  "
   }
  ]
 }
