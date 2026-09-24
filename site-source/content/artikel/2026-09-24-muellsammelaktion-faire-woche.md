@@ -17,7 +17,7 @@ sources:
   - title: "Gemeinde Merzenich – Müll gesammelt für eine saubere Gemeinde"
     url: "https://www.heimat-info.de/beitraege/239f654b-c021-4ae4-94e7-b44b1611fcc9"
     stand: 2026-09-23
-tags: ["Faire Woche", "Ehrenamt", "Nachhaltigkeit", "Saubere Gemeinde"]
+tags: ["Faire Woche", "Ehrenamt", "Müllsammelaktion", "Umwelt"]
 ---
 
 Mehr als 40 Kinder und Erwachsene haben sich an einer Müllsammelaktion in der Gemeinde Merzenich beteiligt. Ausgestattet mit Warnwesten, Müllzangen und Beuteln sammelten sie Abfälle von Bürgersteigen und entlang der Wege.
