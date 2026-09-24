@@ -376,7 +376,25 @@ function pruefeInterneLinks() {
   for (const [h, seiten] of [...tot.entries()].slice(0, 40)) fehler('Links', `${h} fuehrt ins Leere (${seiten.length}x, z. B. ${seiten[0]}).`);
 }
 
+// ------------------------------------------------ 9b. Ein Einsatz, eine Meldung
+// 24.09.: Zwei Redaktionswege (inhalte/meldungen und site-source) schrieben
+// dieselben Feuerwehreinsaetze doppelt. Massgeblich ist die Einsatznummer im
+// Kasten "Das Wichtigste in Kuerze" (erster Punkt mit "Einsatz(nummer) NNN/JJ").
+function pruefeDoppelteEinsaetze() {
+  const nachNummer = new Map();
+  for (const datei of dateienUnter('chatgpt-site/blaulicht', '.html')) {
+    const html = lies(datei);
+    const kasten = /<div class="facts">[\s\S]*?<\/ul>/.exec(html)?.[0] || '';
+    const nr = /<li>\s*Einsatz(?:nummer)?\s+(\d{1,3}\/\d{2})\b/.exec(kasten)?.[1];
+    if (!nr) continue;
+    if (!nachNummer.has(nr)) nachNummer.set(nr, []);
+    nachNummer.get(nr).push(datei.replace(wurzel + '/', '').replace(/\/index\.html$/, '/'));
+  }
+  for (const [nr, seiten] of nachNummer) if (seiten.length > 1) fehler('Inhalte', `Einsatz ${nr} steht ${seiten.length}-mal auf der Seite: ${seiten.join(', ')}. Zusammenfuehren, alte Adresse per _redirects umleiten.`);
+}
+
 pruefeMarkupGegenCode();
+pruefeDoppelteEinsaetze();
 pruefeInterneLinks();
 pruefeInhalte();
 pruefeServiceInhalte();
