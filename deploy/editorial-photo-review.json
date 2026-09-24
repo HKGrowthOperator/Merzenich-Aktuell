@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2474,6 +2474,48 @@
       "titel": "File:26-01 Marti Faber Zugvögel 2004 Zülpich 01.jpg",
       "grund": "Motiv passt nicht zum Pool",
       "runde": 7
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Pictures in Tunku Abdul Rahman's book \"May 13 Before and After\".png",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 8
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Waldbrand im Hürtgenwald (Jüngersdorf) 2026-08-14-02.jpg",
+      "grund": "Transparent oder Schild mit Schrift",
+      "runde": 8
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-01.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 8
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Waldbrand im Hürtgenwald (Jüngersdorf) 2026-08-14-01.jpg",
+      "grund": "Transparent oder Schild mit Schrift",
+      "runde": 8
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:VfB Eichstätt Kunstrasenplatz Südseite.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 8
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:Moning Halle Bünde.jpg",
+      "grund": "Extremes Panoramaformat, taugt nicht für Bildflächen",
+      "runde": 8
     }
   ],
   "freigegeben": [
@@ -2699,6 +2741,9 @@
     "File:Rettungshubschrauber Christoph 45 Ochsenhausen.JPG",
     "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 041.jpg",
     "File:Wohnungsbrand-Dortmund.jpg",
-    "File:Lagerhaus der Gemeinde neben Bushalt und Wartehäuschen, Am Dorfplatz bzw. Schulgasse, Possendorf, 99428 Weimar, Germany,.jpg"
+    "File:Lagerhaus der Gemeinde neben Bushalt und Wartehäuschen, Am Dorfplatz bzw. Schulgasse, Possendorf, 99428 Weimar, Germany,.jpg",
+    "File:Luftaufnahme Waldbrand im Hürtgenwald (Schlich) 2026-08-14-03.jpg",
+    "File:Luftaufnahme Waldbrand im Hürtgenwald (Schlich) 2026-08-14-02.jpg",
+    "File:Luftaufnahme Waldbrand im Hürtgenwald (Schlich) 2026-08-14-01.jpg"
   ]
 }

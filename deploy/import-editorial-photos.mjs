@@ -55,7 +55,7 @@ const POOLS = {
     tags: ['brand','feuer','rauch','loeschen'],
     // Deutsche Fachwoerter stehen in den Dateititeln deutscher Fotografen;
     // die Kategoriesuche ueber "Fires" lief ueber Flammen zu Kerzen.
-    queries: ['Dachstuhlbrand', 'Scheunenbrand', 'Wohnhausbrand', 'Großbrand Feuerwehr', 'Wohnungsbrand', 'Lagerhallenbrand', 'Kellerbrand', 'Fahrzeugbrand', 'PKW-Brand', 'Flächenbrand Feuerwehr', 'Waldbrand Nordrhein-Westfalen', 'Brandeinsatz', 'Löscharbeiten', 'Feuerwehreinsatz Brand', 'Brandruine']
+    queries: ['Waldbrand Hürtgenwald', 'Brand Kreis Düren', 'Feuerwehr Düren Brand', 'Dachstuhlbrand', 'Scheunenbrand', 'Wohnhausbrand', 'Großbrand Feuerwehr', 'Wohnungsbrand', 'Lagerhallenbrand', 'Kellerbrand', 'Fahrzeugbrand', 'PKW-Brand', 'Flächenbrand Feuerwehr', 'Waldbrand Nordrhein-Westfalen', 'Brandeinsatz', 'Löscharbeiten', 'Feuerwehreinsatz Brand', 'Brandruine']
   },
   sport: {
     tags: ['sport','fussball','amateur','spiel','platz'],

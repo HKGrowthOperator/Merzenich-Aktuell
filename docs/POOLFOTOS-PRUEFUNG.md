@@ -1,20 +1,20 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Runde 7: 10 ausgeschlossen. Freigegeben sind 223 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Runde 7: 10 ausgeschlossen. Runde 8: 6 ausgeschlossen. Freigegeben sind 226 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
 | Grund | Anzahl |
 |---|---|
 | Motiv passt nicht zum Pool | 81 |
-| Militär- oder Auslandsmotiv | 48 |
+| Militär- oder Auslandsmotiv | 49 |
 | Fast gleiches Motiv wie ein anderes Bild im Pool | 42 |
-| Lesbares Kfz-Kennzeichen | 34 |
+| Lesbares Kfz-Kennzeichen | 35 |
 | Ortsfremder Name, Schild oder Tafel lesbar | 23 |
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
 | Abzeichen, Wappen oder Logo als Motiv | 20 |
 | Grafik, Karte oder Satellitenbild statt Foto | 19 |
-| Unscharf oder ohne Bildaussage | 15 |
+| Unscharf oder ohne Bildaussage | 16 |
 | Erkennbare Personen als Hauptmotiv | 12 |
 | Erkennbare Personen des öffentlichen Lebens | 11 |
 | Historische Aufnahme, taugt nicht als heutiges Symbolbild | 10 |
@@ -23,9 +23,10 @@ Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Co
 | Markenetikett oder Werbeschriftzug im Bild | 8 |
 | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ | 4 |
 | Graffiti mit lesbarer Schrift | 4 |
+| Extremes Panoramaformat, taugt nicht für Bildflächen | 3 |
 | Ortsfremdes Wahrzeichen | 2 |
-| Extremes Panoramaformat, taugt nicht für Bildflächen | 2 |
 | Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen | 2 |
+| Transparent oder Schild mit Schrift | 2 |
 | Unfallstelle mit Personen | 1 |
 | Transparent mit politischer Parole | 1 |
 
@@ -157,7 +158,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
 | 4 | 12 | Übungsspange außen.jpg | Lesbares Kfz-Kennzeichen |
 
-### Brand: 92 entfernt
+### Brand: 96 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -253,8 +254,12 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 7 | 16 | Veoki põleng Tartu maanteel 2021. aasta juunis.png | Militär- oder Auslandsmotiv |
 | 7 | 17 | Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (1).jpg | Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen |
 | 7 | 18 | Kibbutz Be'eri after the massacre, the remains of a vehicle of Hamas terrorists in the kibbutz, surrounded by yellow ribbon (2).jpg | Kriegs- oder Anschlagsmotiv, als Symbolbild ausgeschlossen |
+| 8 | 09 | Pictures in Tunku Abdul Rahman's book "May 13 Before and After".png | Militär- oder Auslandsmotiv |
+| 8 | 16 | Waldbrand im Hürtgenwald (Jüngersdorf) 2026-08-14-02.jpg | Transparent oder Schild mit Schrift |
+| 8 | 17 | Waldbrand im Hürtgenwald (Birgel) 2026-08-14-01.jpg | Lesbares Kfz-Kennzeichen |
+| 8 | 18 | Waldbrand im Hürtgenwald (Jüngersdorf) 2026-08-14-01.jpg | Transparent oder Schild mit Schrift |
 
-### Sport: 50 entfernt
+### Sport: 52 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -308,6 +313,8 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 6 | 20 | Eichstätt - Kunstrasenplatz Schottenau 23.10.2024.jpg | Unscharf oder ohne Bildaussage |
 | 7 | 08 | Sepeda Tua dari Tasikmalaya.jpg | Militär- oder Auslandsmotiv |
 | 7 | 20 | 20220924 Soccer match artificial turf field Bethany Lutheran College Mankato Minnesota.jpg | Militär- oder Auslandsmotiv |
+| 8 | 08 | VfB Eichstätt Kunstrasenplatz Südseite.jpg | Unscharf oder ohne Bildaussage |
+| 8 | 20 | Moning Halle Bünde.jpg | Extremes Panoramaformat, taugt nicht für Bildflächen |
 
 ### Termine: 4 entfernt
 
