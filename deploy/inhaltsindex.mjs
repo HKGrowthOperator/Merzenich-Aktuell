@@ -497,7 +497,7 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 3, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
@@ -592,9 +592,10 @@ index.bestand = {
     belege(gross);
     belege(mittel);
     // Kompakte Meldungen behalten ebenfalls ihr zugewiesenes Bild (inklusive
-    // verifiziertem Symbolbild). Hoechstens zwei, sonst waechst die Sektion
-    // zu einer Liste aus, die niemand zu Ende liest.
-    const zeilen = frei.filter((a) => !vergeben.has(a.url)).slice(0, 2);
+    // verifiziertem Symbolbild). Standard sind zwei. Die Leitsektion darf drei
+    // zeigen: Sie steht neben dem umfangreichen Vor-Ort-Service und braucht
+    // dort bewusst etwas mehr aktuelle redaktionelle Dichte statt Leerraum.
+    const zeilen = frei.filter((a) => !vergeben.has(a.url)).slice(0, s.zeilen || 2);
     for (const a of zeilen) vergeben.add(a.url);
 
     belegung.set(s.id, { gross, mittel, zeilen });
