@@ -41,7 +41,7 @@ const POOLS = {
   },
   blaulicht: {
     tags: ['blaulicht','einsatz','rettung','notfall'],
-    queries: ['Rundumkennleuchte', 'Blaulicht Einsatzfahrzeug Nahaufnahme', 'Rettungswache Nordrhein-Westfalen', 'Rettungshubschrauber Nordrhein-Westfalen', 'Rettungswagen Nordrhein-Westfalen', 'Rettungsdienst Kreis Düren', 'Rettungsdienst Nordrhein-Westfalen', 'Einsatzfahrzeug Nordrhein-Westfalen']
+    queries: ['deepcat:"Ambulances in North Rhine-Westphalia"', 'deepcat:"Emergency medical services in North Rhine-Westphalia"', 'deepcat:"Ambulances in Germany"', 'Rettungswache Nordrhein-Westfalen', 'Rettungswagen Nordrhein-Westfalen', 'Rettungshubschrauber Nordrhein-Westfalen', 'Rettungsdienst Kreis Düren', 'Notarzteinsatzfahrzeug Deutschland']
   },
   polizei: {
     tags: ['polizei','streifenwagen','einsatz','kontrolle'],
@@ -53,11 +53,11 @@ const POOLS = {
   },
   brand: {
     tags: ['brand','feuer','rauch','loeschen'],
-    queries: ['Feuerwehreinsatz Brand Nordrhein-Westfalen', 'Brandeinsatz Feuerwehr', 'Löscharbeiten Feuerwehr', 'Brandbekämpfung Feuerwehr', 'Drehleiter Brandeinsatz', 'Löschangriff Feuerwehr', 'Brandruine', 'Brandschaden Haus', 'Feuerwehr Brand Deutschland']
+    queries: ['deepcat:"Fires in North Rhine-Westphalia"', 'deepcat:"Structure fires in Germany"', 'deepcat:"Fires in Germany"', 'Dachstuhlbrand Feuerwehr', 'Wohnhausbrand Feuerwehr', 'Großbrand Feuerwehr Nordrhein-Westfalen', 'Brandeinsatz Feuerwehr Deutschland', 'Löscharbeiten Feuerwehr']
   },
   sport: {
     tags: ['sport','fussball','amateur','spiel','platz'],
-    queries: ['Sportplatz Kreis Düren', 'Sportplatz Nordrhein-Westfalen', 'Fußballplatz Nordrhein-Westfalen', 'Kunstrasenplatz Nordrhein-Westfalen', 'Sporthalle Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
+    queries: ['deepcat:"Football venues in North Rhine-Westphalia"', 'deepcat:"Association football pitches in Germany"', 'Fußballplatz Nordrhein-Westfalen', 'Kunstrasenplatz', 'Sporthalle Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
   },
   termine: {
     tags: ['termine','veranstaltung','event','fest','markt'],
@@ -88,9 +88,13 @@ const POOLS = {
 
 const BAD_TITLE = /(logo|wappen|coat of arms|flag|karte|map of|locator|diagram|poster|plakat|flyer|icon|scan|seite \d|page \d|screenshot|symbol|svg)/i;
 // Strengere Filter nach der Sichtprüfung vom 24.09.2026.
-const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|unfall|accident|crash|pride|parade|b[aä]ckerei|bakery)/i;
+const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|unfall|accident|crash|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
 const BAD_KATEGORIE = /(portrait|people of|politicians|athletes|players|footballers|musicians|actors|soldiers|military|united states army|demonstrations|protests|satellite|maps of|logos|coats of arms|patches|license plates|vehicle registration|paintings|diagrams|charts|crowds|children)/i;
-const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester)/i;
+const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea)/i;
+// Titel in nicht-lateinischer Schrift stammen fast immer aus dem Ausland.
+const FREMDE_SCHRIFT = /[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
+// Sportplatz-Suchen treffen Wegekreuze "hinter dem Sportplatz".
+const SPORT_FREMD = /(bildstock|wegekreuz|kreuz|kapelle|denkmal|gedenk|heiligenh)/i;
 // Einsatzkräfte tragen je Bundesland eigene Farben und Wappen.
 const ANDERES_LAND = /(baden-württemberg|baden-wuerttemberg|bayern|bavaria|hessen|hamburg|saarland|niedersachsen|berlin|sachsen|thüringen|brandenburg|rheinland-pfalz|schleswig|mecklenburg|bremen|heidelberg|karlsruhe|stuttgart|münchen|munich|fulda)/i;
 const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand']);
@@ -176,7 +180,8 @@ function usable(c, pool) {
   const text = [c.title, c.description, c.categories].join(' ');
   if (BAD_TITLE_STRENG.test(c.title) || BAD_TITLE_STRENG.test(c.description)) return false;
   if (BAD_KATEGORIE.test(c.categories)) return false;
-  if (AUSLAND.test(text)) return false;
+  if (AUSLAND.test(text) || FREMDE_SCHRIFT.test(c.title)) return false;
+  if (pool === 'sport' && SPORT_FREMD.test(c.title)) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
   if (pool === 'aktuell' && !['Merzenich', 'Kreis Düren'].includes(localityFor(text))) return false;

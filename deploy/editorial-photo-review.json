@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos. Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -955,6 +955,622 @@
       "nr": 19,
       "titel": "File:Preparation area between the open pit mine Hambach and the Hambach forest 11.jpg",
       "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 2,
+      "titel": "File:Ashikaga Bank Automated teller machine.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 3,
+      "titel": "File:ORBIS3（Rear）.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 4,
+      "titel": "File:A Dosimeter in Japan.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 5,
+      "titel": "File:Sound level meter in Japan.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 6,
+      "titel": "File:Drehspiegelleuchte Innenansicht.jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 7,
+      "titel": "File:Sound level meter in Japan (4464526592).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 8,
+      "titel": "File:緊急時 避難壕 44 第一機械リース (5693044604).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 9,
+      "titel": "File:危険ゼロ 戸田建設 (14208257443).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 10,
+      "titel": "File:Model car of Minato 303.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 11,
+      "titel": "File:Model car of Minato 302.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 12,
+      "titel": "File:Model car of Nissan LEOPARD Ultima MY1987 ver.Saraba Abunai Deka.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 13,
+      "titel": "File:Nissan LEOPARD ULTIMA MY1987 Ver.Saraba Abunai Deka (1).JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 14,
+      "titel": "File:Nissan LEOPARD ULTIMA MY1987 Ver.Saraba Abunai Deka.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 16,
+      "titel": "File:Nissan LEOPARD ULTIMA MY1987 Ver.Saraba Abunai Deka (2).JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 17,
+      "titel": "File:1500円床屋 (14430674608).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 18,
+      "titel": "File:Before you go on the tour, leave you cell phone and camera in one of these lockers. (30252631372).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 19,
+      "titel": "File:Osaka Den Den Town lighting fixture shop. (26155362333).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 1,
+      "titel": "File:Brand Waldschlag(40938214984).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 2,
+      "titel": "File:Brand Waldschlag(40757854275).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 4,
+      "titel": "File:2024-03-22 FF Redlham Frühjahrsübung (84) (53603386567).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 5,
+      "titel": "File:PV Seibersdorf 1 (54374923374).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 6,
+      "titel": "File:PV Seibersdorf 2 (54375116470).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 7,
+      "titel": "File:PV Seibersdorf 3 (54374959628).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 8,
+      "titel": "File:ABI Konrad PV Seibersdorf 4 (54373846232).jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Brand Hotel Knoche1.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:Brand in der Maschinenfabrik Buckau R. Wolf AG in der Werftstraße 214-216 (Kiel 32.283).jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 13,
+      "titel": "File:Brand in der Maschinenfabrik Buckau R. Wolf AG in der Werftstraße 214-216 (Kiel 32.284).jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Landesweite Zivilschutzübung \"Orkan 67\", 07. - 08.10.1967 (Kiel 42.072).jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Halon fire suppression warning sign.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Argonite automatic fire suppression system server room.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Fire suppression agent 3.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Controls for FM-200 fire suppression system at NERSC.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 19,
+      "titel": "File:FM-200 fire suppression system at NERSC.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "brand",
+      "nr": 20,
+      "titel": "File:I-DPCN at work 03 (4203528315).jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 8,
+      "titel": "File:Recke Feuerwehrhaus 01.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv",
+      "runde": 2
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 12,
+      "titel": "File:Borken, Burlo -- 2014 -- 2282.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 13,
+      "titel": "File:Altes Feuerwehrgerätehaus.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild",
+      "runde": 2
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 20,
+      "titel": "File:Unterrichtsraum Münster.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 3,
+      "titel": "File:Steinsfeld, Am Dorfplatz 1, 002.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 6,
+      "titel": "File:Hausdülmen, E-Bike-Ladestation am Dorfplatz -- 2014 -- 0132.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 7,
+      "titel": "File:Hausdülmen, E-Bike-Ladestation am Dorfplatz -- 2014 -- 0133.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 11,
+      "titel": "File:Am Dorfplatz 5 Rockau 2.JPG",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 12,
+      "titel": "File:Am Dorfplatz 5 Rockau 1.JPG",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 14,
+      "titel": "File:Scheune mit angrenzendem Wohnhaus am Dorfplatz 23 in Meimersdorf (Kiel 56.737).jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 17,
+      "titel": "File:Helfenberg Am Dorfplatz 5 2019-06-20 (6).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 18,
+      "titel": "File:Helfenberg Am Dorfplatz 5 2019-06-20 (7).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "leben",
+      "nr": 20,
+      "titel": "File:Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Nordosten.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 2,
+      "titel": "File:Münster, Park Sentmaring -- 2015 -- 01058.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 6,
+      "titel": "File:Dülmen, Skulpturen im Bendixpark -- 2015 -- 8519.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 9,
+      "titel": "File:Dülmen, Parkbank am Wildpark -- 2016 -- 0349-55.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 10,
+      "titel": "File:Dülmen, Parkbank am Wildpark -- 2016 -- 0356-62.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 11,
+      "titel": "File:Münster, Park Sentmaring -- 2016 -- 0786.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "menschen",
+      "nr": 12,
+      "titel": "File:Münster, Fürstbischöfliches Schloss -- 2026 -- 0742-8.jpg",
+      "grund": "Ortsfremdes Wahrzeichen",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 3,
+      "titel": "File:Rheinberg, Kirchplatz, 2014-08 CN-01.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 4,
+      "titel": "File:Rheinberg, Polizeiwache, 2014-08 CN-01.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 6,
+      "titel": "File:Münster, Julius-Voos-Gasse, Konventsgebäude -- 2017 -- 9802.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 10,
+      "titel": "File:Aussetzen einer Belohnung Verbrechen in der Silvesternacht 2015-2016 Köln -4597.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 12,
+      "titel": "File:2019 Polizei NRW Koeln im Gespraech.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 15,
+      "titel": "File:Frank-Arno Richter.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 18,
+      "titel": "File:Polizeihubschrauber (10566995274).jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 2
+    },
+    {
+      "pool": "polizei",
+      "nr": 20,
+      "titel": "File:Bell 47J Polizeifliegerstaffel Nordrhein-Westfalen.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 1,
+      "titel": "File:Vettweiß-Gladbach Denkmal-Nr. Gla-10, Mersheim -Ecke Sportplatz (1819).jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 2,
+      "titel": "File:Vettweiß-Kelz Denkmal-Nr. Kel-01, Mühlenweg (1839).jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 3,
+      "titel": "File:Hürtgen WK an Wegekreuz südl. vom Sportplatz.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 5,
+      "titel": "File:Hürtgen WK an Wegekreuz südl. vom Sportplatz-Infotafel.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 6,
+      "titel": "File:Bergstein Bildstock hinter dem Sportplatz.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Bergstein Bildstock hinter dem Sportplatz - Infotafel.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 9,
+      "titel": "File:Luftaufnahme Langerwehe 2025-06-04.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 10,
+      "titel": "File:Luftaufnahme Langerwehe 2025-06-03.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 11,
+      "titel": "File:Luftaufnahme Langerwehe 2025-06-02.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 12,
+      "titel": "File:Buscherheide Kapelle am Sportplatz Altar.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 14,
+      "titel": "File:Buscherheide Kapelle am Sportplatz Ansicht.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 15,
+      "titel": "File:Buscherheide Kapelle am Sportplatz Gitter.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:Beckwitz Am Sportplatz 15-02.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "termine",
+      "nr": 4,
+      "titel": "File:Münster, St.-Paulus-Dom -- 2019 -- 2698.jpg",
+      "grund": "Ortsfremdes Wahrzeichen",
+      "runde": 2
+    },
+    {
+      "pool": "tipp",
+      "nr": 1,
+      "titel": "File:Sophienhöhe l.JPG",
+      "grund": "Extremes Panoramaformat, taugt nicht für Bildflächen",
+      "runde": 2
+    },
+    {
+      "pool": "tipp",
+      "nr": 8,
+      "titel": "File:Sophienpanorama.jpg",
+      "grund": "Extremes Panoramaformat, taugt nicht für Bildflächen",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:Krippken Mettingen 2.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 3,
+      "titel": "File:Krippken Mettingen 3.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 7,
+      "titel": "File:Mettingen Krippken 06.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 8,
+      "titel": "File:Dülmen, Annette-von-Droste-Hülshoff-Gymnasium (Spinnerei Bendix) -- 2013 -- 00071.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 9,
+      "titel": "File:Dülmen, Annette-von-Droste-Hülshoff-Gymnasium -- 2015 -- 4927.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 11,
+      "titel": "File:Verl-Alter-Postweg-Schuützenhalle-Kaunitz-2026-08-03.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 14,
+      "titel": "File:Laggenbeck 01.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 16,
+      "titel": "File:Laggenbeck Dorfgemeinschaftshaus 02.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 19,
+      "titel": "File:Hausdülmen, Dorfplatz -- 2012 -- 3779 (bw).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "vereine",
+      "nr": 20,
+      "titel": "File:Hausdülmen, Maibaum -- 2014 -- 0134.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 2
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 5,
+      "titel": "File:RWE security point at the Hambach forest 09.jpg",
+      "grund": "Transparent mit politischer Parole",
+      "runde": 2
     }
   ],
   "freigegeben": [
@@ -1038,6 +1654,77 @@
     "File:Preparation area between the open pit mine Hambach and the Hambach forest 06.jpg",
     "File:Preparation area between the open pit mine Hambach and the Hambach forest 08.jpg",
     "File:Preparation area between the open pit mine Hambach and the Hambach forest 09.jpg",
-    "File:Preparation area between the open pit mine Hambach and the Hambach forest 12.jpg"
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 12.jpg",
+    "File:Merzenich-Golzheim Denkmal-Nr. 28, Hunsgasse 7 (1246).jpg",
+    "File:Heiligenhäuschen Golzheim (Gemeinde Merzenich) P1320310 0 1 2 3 4 5 6 fused.jpg",
+    "File:Walze Löhr Rückansicht.jpg",
+    "File:DB Regio 146 275 (50866042278).jpg",
+    "File:Rundumkennleuchte blau.jpg",
+    "File:Rotary Beacon Light by ARROW 20161225.jpg",
+    "File:Brand Hotel Knoche2.jpg",
+    "File:Brand Hotel Knoche3.jpg",
+    "File:Recke Feuerwehrhaus 02.jpg",
+    "File:Riesenbeck Feuerwache 01.jpg",
+    "File:Feuerwehr, 1, Anton-Wattendorff-Straße 14, Borghorst, Steinfurt, Landkreis Steinfurt.jpg",
+    "File:Feuerwehr, 2, Anton-Wattendorff-Straße 14, Borghorst, Steinfurt, Landkreis Steinfurt.jpg",
+    "File:Diex - Bildstock am Dorfplatz.jpg",
+    "File:Steinsfeld, Am Dorfplatz 1, 001.jpg",
+    "File:Steinsfeld, Am Dorfplatz 1, 003.jpg",
+    "File:Hausdülmen, E-Bike-Ladestation am Dorfplatz -- 2014 -- 0131.jpg",
+    "File:Hausdülmen, Dorfplatz -- 2014 -- 8968.jpg",
+    "File:Karlstadt, Stadelhofen, Am Dorfplatz 8-001.jpg",
+    "File:Am Dorfplatz 5 Rockau 3.JPG",
+    "File:Hausdülmen, Dorfplatz -- 2012 -- 3779.jpg",
+    "File:Dülmen, Hausdülmen, Maibaum auf dem Dorfplatz -- 2018 -- 0055.jpg",
+    "File:Helfenberg Am Dorfplatz 5 2019-06-20 (5).jpg",
+    "File:Hausdülmen, Gänsebrunnen auf dem Dorfplatz -- 2012 -- 3783.jpg",
+    "File:Falk Oberdorf Parkbank.JPG",
+    "File:Münster, Park Sentmaring, Naturdenkmal -- 2015 -- 5660.jpg",
+    "File:Dülmen, Hausdülmen, Friedhof, Parkbank -- 2015 -- 7348.jpg",
+    "File:Dülmen, Skulpturen im Bendixpark -- 2015 -- 8515.jpg",
+    "File:Dülmen, Skulpturen im Bendixpark -- 2015 -- 8523.jpg",
+    "File:Dülmen, Parkbank am Wildpark -- 2016 -- 0327.jpg",
+    "File:Bürgerhaus Elsen.jpg",
+    "File:Preußisch Oldendorf Mai 2009 164.jpg",
+    "File:Buergerhaus Ibbenbueren 1.jpg",
+    "File:Buergerhaus Ibbenbueren 2.jpg",
+    "File:Ibbenbueren Buergerhaus Grosse Strasse 28.jpg",
+    "File:Rathaus Recke 1.jpg",
+    "File:Recke OEDZ 1.jpg",
+    "File:Bürgerhaus Leichlingen Eingang.JPG",
+    "File:Rheinberg, Polizeiwache, 2011-12 CN-01.jpg",
+    "File:Münster, Dominikanerkirche (und Polizeiwache) -- 2014 -- 4631.jpg",
+    "File:Polizei-kalk.jpg",
+    "File:Köln-Kalk Polizeipräsidium Rückansicht.JPG",
+    "File:Polizeipräsidium in Essen-Rüttenscheid.jpg",
+    "File:Polizeipräsidium Köln, Walter-Pauli-Ring 2-6 Köln-4591.jpg",
+    "File:Polizeipräsidium Essen.jpg",
+    "File:Polizeipräsidium Köln Kalk.jpg",
+    "File:Polizeihubschrauber (10567007824).jpg",
+    "File:Polizeihubschrauber (10566908725).jpg",
+    "File:Münster, Sportplatz -Sentruper Höhe- -- 2014 -- 8360.jpg",
+    "File:Münster, Nienberge, Sportplatz -- 2014 -- 9889.jpg",
+    "File:Borken, Burlo, Sportplatz -- 2014 -- 2288.jpg",
+    "File:Münster, Schlossplatz, Frühjahrssend -- 2019 -- 4106.jpg",
+    "File:Münster, Schlossplatz, Frühjahrssend -- 2019 -- 4107.jpg",
+    "File:Meilensteine sh.jpg",
+    "File:Meilensteine sh4.jpg",
+    "File:Aussichtsturm sh.jpg",
+    "File:RingbahnHerzogenrath–Alsdorf–Stolberg07.jpg",
+    "File:Absetzer auf der Sophienhöhe.jpg",
+    "File:Sophienhoehe-suedseite.jpg",
+    "File:Höller Horn.jpg",
+    "File:Krippken Mettingen 1.jpg",
+    "File:Mettingen Krippken 07.jpg",
+    "File:Mettingen Krippken 04.jpg",
+    "File:Todtenhausen Dorfgemeinschaftshaus.jpg",
+    "File:Dorfgemeinschaftshaus Everssche Muehle Schale.jpg",
+    "File:Laggenbeck Dorfgemeinschaftshaus 01.jpg",
+    "File:Börninghausen Mai 2009 119.jpg",
+    "File:Recke Haus Struebbe Maibaum 01.jpg",
+    "File:RWE security point at the Hambach forest 05.jpg",
+    "File:Blick in den Tagebau Hambach.jpg",
+    "File:Schaufelradbagger im Tagebau Hambach bei Nacht.jpg",
+    "File:Tagebau Hambach.jpg"
   ]
 }
