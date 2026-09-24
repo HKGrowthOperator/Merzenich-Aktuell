@@ -297,3 +297,28 @@ html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;
 /* Seitenleiste "Sie wissen etwas?": v20.css gibt .btn.ghost einen weissen Grund,
    die helle Schrift von .on-dark verschwand darauf (weiss auf weiss). */
 .sidebox.dark .btn.ghost.on-dark{background:transparent;color:var(--on-dark,#e7e7e5)}
+
+/* Ortsmarke A3.1 auf allen Seiten (bisher nur body.home, startseite.css).
+   MERZENICH in Bordeaux, Ortsteil zurueckhaltend, Rubrik in normaler Schreibung. */
+:root{--marke-rot:#971725;--marke-leise:#5f5b55;--marke-linie:#e3e1dd}
+.marke{margin:0 0 8px;font-family:var(--sans);font-size:12.5px;line-height:1.3;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:var(--marke-leise)}
+.marke-ort{color:var(--marke-rot)}
+.marke-teil{color:var(--marke-leise)}
+.marke-rubrik{margin-left:10px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--marke-leise)}
+.feed-copy>.marke,.lead-copy>.marke{margin:0 0 6px}
+/* Artikelkopf: dieselbe Marke. Das Markup bleibt (lib-artikel.mjs liest daraus Ort und Dachzeile). */
+.article-head .kick-row{gap:0 10px;align-items:baseline;margin:0 0 8px}
+.article-head .kick-row .location-line{margin:0;font-family:var(--sans);font-size:12.5px;line-height:1.3;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:var(--marke-leise)}
+.article-head .kick-row .location-brand{color:var(--marke-rot)}
+.article-head .kick-row .kicker{font-family:var(--sans);font-size:12.5px;line-height:1.3;font-weight:500;letter-spacing:0;text-transform:none;color:var(--marke-leise);background:none;padding:0}
+
+/* Merzenich-Linie: Pulslinie aus dem Logo, zweimal je Seite hoechstens -
+   ueber dem Fuss und vor "Weiterlesen" unter Artikeln. */
+.merzenich-linie{display:flex;align-items:center;gap:16px;max-width:var(--shell,1240px);margin:56px auto 0;padding:0 20px;color:var(--marke-rot)}
+.merzenich-linie i{flex:1;height:1px;background:var(--marke-linie)}
+.merzenich-linie svg{flex:none;width:72px;height:15px;display:block}
+.merzenich-linie+.compact-footer{margin-top:24px}
+.section .brandline.thin{display:flex!important;gap:16px;margin:0 0 20px;color:var(--marke-rot)}
+.section .brandline.thin i{height:1px;background:var(--marke-linie)}
+.section .brandline.thin svg{width:72px;height:15px;color:var(--marke-rot)}
+.result>.marke{font-size:12.5px;line-height:1.3;margin:0 0 6px}

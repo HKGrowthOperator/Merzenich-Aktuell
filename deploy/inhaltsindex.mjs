@@ -27,7 +27,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL } from './lib-artikel.mjs';
+import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -90,18 +90,17 @@ const index = { generated: neuester, anzahl: artikel.length, bestand: null, hinw
 // welche Listenseite der Generator wirklich gepflegt hat.
 
 // ------------------------------------------------------------ Bausteine
-const locHtml = (a) => `<div class="location-line"><span class="location-brand">${esc(a.ort)}</span>${a.ortsteilLabel ? ' · ' + esc(a.ortsteilLabel) : ''}</div>`;
 const imgHtml = (b, sizes, eager) => `<img src="${esc(b.src)}"${b.srcset ? ` srcset="${esc(b.srcset)}"` : ''} sizes="${sizes}" alt="${esc(b.alt)}"${b.width && b.height ? ` width="${b.width}" height="${b.height}"` : ''} loading="${eager ? 'eager' : 'lazy'}"${eager ? ' fetchpriority="high"' : ''} decoding="async" data-editorial-image class="">`;
 const badgeHtml = (b) => (b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '');
 const disclosureHtml = (a) => a.ressort === 'tipp' ? '<span class="fbadge anzeige">Bezahlte Platzierung</span>' : '';
 const mehr = (a) => `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`;
 function leadHtml(a) {
   const b = a.bild;
-  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
+  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${ortsmarke(a)}${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
 }
 function rowHtml(a) {
   const b = a.bild;
-  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${locHtml(a)}<span class="kicker">${esc(a.kicker)}</span>${disclosureHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
+  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${ortsmarke(a)}${disclosureHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
 }
 /**
  * Leerzustand einer Liste: Ueberschrift, ein Satz, was hier erscheinen wird,
@@ -358,9 +357,7 @@ index.bestand = {
   // Ortsmarke nach Anhang A3: MERZENICH als wiederkehrender Bordeaux-Marker,
   // der Ortsteil zurueckhaltend dahinter, die Rubrik in normaler Schreibung.
   // Eine Zeile statt zweier Versalienzeilen (Ort, Kicker). Die Zeit steht in .meta.
-  const markeHtml = (a) => `<p class="marke"><span class="marke-ort">Merzenich</span>`
-    + (a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil] ? `<span class="marke-teil"> · ${esc(ORTSTEILE[a.ortsteil])}</span>` : '')
-    + `<span class="marke-rubrik">${esc(a.ressortLabel || a.kicker)}</span></p>`;
+  const markeHtml = (a) => ortsmarke(a, { rubrik: 'ressort' });
 
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
   function karte(a, groesse, tag) {
@@ -646,8 +643,10 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
     const alt = readFileSync(pfad, 'utf8'); let html = alt;
     const monate = new Map();
     for (const a of artikel) { const k = String(a.datum || '').slice(0, 7); if (!/^\d{4}-\d{2}$/.test(k)) continue; if (!monate.has(k)) monate.set(k, []); monate.get(k).push(a); }
-    const kurz = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(new Date(iso)) + '.';
-    const li = (a) => `<li><time datetime="${esc(a.datum)}">${kurz(a.datum)}</time><a href="${esc(a.url)}">${esc(a.titel)}</a><span class="rs">${esc(a.ressortLabel)}</span></li>`;
+    // Intl liefert "23.09." schon mit Punkt; frueher stand "23.09.." im Archiv.
+    const kurz = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(new Date(iso)).replace(/\.?$/, '.');
+    const teil = (a) => (a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil] ? `${ORTSTEILE[a.ortsteil]} · ` : '');
+    const li = (a) => `<li><time datetime="${esc(a.datum)}">${kurz(a.datum)}</time><a href="${esc(a.url)}">${esc(a.titel)}</a><span class="rs">${esc(teil(a) + a.ressortLabel)}</span></li>`;
     for (const [k, liste] of [...monate.entries()].sort((a, b) => b[0].localeCompare(a[0]))) {
       const n = liste.length; const block = `<div class="archive-month" id="${k}"><h3>${new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', month: 'long', year: 'numeric' }).format(new Date(k + '-15T12:00:00+02:00'))}<small>${n} Meldung${n === 1 ? '' : 'en'}</small></h3><ul class="archive-list">${liste.map(li).join('')}</ul></div>`;
       const re = new RegExp(`<div class="archive-month" id="${k}">[\\s\\S]*?<\\/ul><\\/div>`);

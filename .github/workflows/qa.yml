@@ -74,6 +74,7 @@ jobs:
           node deploy/suche-index.mjs
           node deploy/thema-prerender.mjs
           node deploy/teaser-bilder.mjs
+          node deploy/ortsmarke.mjs
           node deploy/inhaltsindex.mjs
           node deploy/termine-prerender.mjs
           node deploy/kopf-theme-einbinden.mjs
@@ -86,6 +87,7 @@ jobs:
           node deploy/suche-index.mjs --check
           node deploy/thema-prerender.mjs --check
           node deploy/teaser-bilder.mjs --check
+          node deploy/ortsmarke.mjs --check
           node deploy/inhaltsindex.mjs --check
           node deploy/kopf-theme-einbinden.mjs --check
 

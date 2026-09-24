@@ -50,6 +50,7 @@ jobs:
           node deploy/suche-index.mjs
           node deploy/thema-prerender.mjs
           node deploy/teaser-bilder.mjs
+          node deploy/ortsmarke.mjs
           node deploy/inhaltsindex.mjs
           node deploy/termine-prerender.mjs
           node deploy/kopf-theme-einbinden.mjs
@@ -62,6 +63,7 @@ jobs:
         run: |
           node deploy/symbolbilder.mjs --check
           node deploy/teaser-bilder.mjs --check
+          node deploy/ortsmarke.mjs --check
           python3 deploy/pool-varianten.py --check
           node --check chatgpt-site/assets/bild-fallbacks.js
           node qa/pruefung.mjs

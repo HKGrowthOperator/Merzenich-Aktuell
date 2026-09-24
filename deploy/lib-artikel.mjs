@@ -15,6 +15,18 @@ const text = (html) => entschaerfen(String(html ?? '').replace(/<[^>]+>/g, ' '))
 const erstes = (re, s) => { const m = re.exec(s); return m ? m[1] : ''; };
 
 export const ORTSTEILE = { merzenich: 'Merzenich', golzheim: 'Golzheim', girbelsrath: 'Girbelsrath', morschenich: 'Morschenich', buergewald: 'Bürgewald' };
+// Ortsmarke nach Anhang A3.1: "MERZENICH · GOLZHEIM  Rubrik". MERZENICH in
+// Bordeaux, der Ortsteil zurueckhaltend, die Rubrik in normaler Schreibung.
+// Eine Komponente fuer Startseite, Listen, Thema-Seiten und Suche. rubrik:
+// 'kicker' zeigt die Dachzeile der Meldung (Listen, in denen das Ressort
+// ohnehin feststeht), 'ressort' das Ressort (Startseite, gemischte Listen).
+export function markeHtml(a, { rubrik = 'kicker' } = {}) {
+  const teil = a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil] ? ORTSTEILE[a.ortsteil] : '';
+  const r = rubrik === 'ressort' ? (a.ressortLabel || a.kicker) : (a.kicker || a.ressortLabel);
+  return `<p class="marke"><span class="marke-ort">Merzenich</span>`
+    + (teil ? `<span class="marke-teil"> · ${esc(teil)}</span>` : '')
+    + (r ? `<span class="marke-rubrik">${esc(r)}</span>` : '') + '</p>';
+}
 export const ortSlug = (t) => String(t || '').toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z]/g, '');
 export const SITE_URL = JSON.parse(readFileSync(new URL('./site.json', import.meta.url), 'utf8')).url.replace(/\/$/, '');
 function bildAus(main) {

@@ -35,7 +35,24 @@ Aufmacher; Vor Ort und Hauptstrom untereinander, Hauptstrom zuerst.
 
 `MERZENICH · GOLZHEIM   Vereine`. Versalien, 12,5 px, stark gesperrt:
 MERZENICH in Bordeaux, der Ortsteil zurückhaltend, die Rubrik in normaler
-Schreibung dahinter. Sans. Dieselbe Marke auf allen Karten der Startseite.
+Schreibung dahinter. Sans. Seit 24.09. dieselbe Marke auf allen Seiten:
+Startseite, Ressortlisten, Archiv, Thema-Seiten, Weiterlesen-Blöcke, Vereins-
+und Autorenseiten, Suchtreffer (Meldungen) und Artikelköpfe.
+
+- Baustein: `markeHtml()` in `deploy/lib-artikel.mjs`; Generatoren schreiben
+  ihn selbst, `deploy/ortsmarke.mjs` zieht ältere Karten nach (`--check` in CI).
+- Artikelköpfe behalten das Markup `location-line` + `kicker`, weil
+  `lib-artikel.mjs` daraus Ort und Dachzeile liest; `korrekturen.css` setzt sie
+  im Stil der Marke.
+- Suchtreffer: Feld `o` (Ortsteil) im Suchindex, geschrieben von
+  `deploy/suche-index.mjs`.
+
+## Merzenich-Linie
+
+Die Pulslinie aus dem Logo, Bordeaux, Haarlinie `#e3e1dd`, keine Animation.
+Höchstens zweimal je Seite: über dem Fuß (`.merzenich-linie`, eingesetzt von
+`deploy/kopf-theme-einbinden.mjs`) und unter der Überschrift von
+„Weiterlesen“ in Artikeln (`.brandline.thin`).
 
 ## Tokens
 

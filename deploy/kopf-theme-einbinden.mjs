@@ -91,6 +91,7 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
   if (neu === alt && !alt.includes(`'${version}'`)) { fehler++; console.error('sw.js: keine Zeile "const VERSION = \'...\';" gefunden'); }
   else if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(sw, neu); }
 }
+const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
 for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
   if (!CSS_ANKER.test(html)) { uebersprungen++; continue; }
@@ -136,6 +137,9 @@ for (const pfad of seiten) {
   html = html.replace(/<details class="service-accordion"(?: hidden)?><summary>Wetter<\/summary><div><p>[^<]*<\/p><\/div><\/details>/g, '<details class="service-accordion" hidden><summary>Wetter</summary><div><p>Wetter wird geladen …</p></div></details>');
   // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
   html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
+  // Merzenich-Linie (Anhang A): die Pulslinie aus dem Logo als ruhige Trennung
+  // ueber dem Fuss. Ein Element, einmal je Seite, keine Animation.
+  if (!html.includes('class="merzenich-linie"')) html = html.replace('<footer class="compact-footer">', LINIE + '<footer class="compact-footer">');
   html = versioniere(html);
   if (html !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, html); }
 }

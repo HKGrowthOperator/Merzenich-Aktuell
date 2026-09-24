@@ -28,7 +28,7 @@
     const section = document.querySelector('meta[property="article:section"]')?.content || '';
     const keywords = document.querySelector('meta[name="news_keywords"]')?.content || '';
     const heading = text(root?.querySelector?.('h1,h2,h3')) || document.title;
-    const kicker = text(root?.querySelector?.('.kicker,.eyebrow,.markt-art'));
+    const kicker = text(root?.querySelector?.('.kicker,.marke-rubrik,.eyebrow,.markt-art'));
     const body = text(root?.querySelector?.('.dek,.prose,.ev-desc,.meta,.location-line'));
     return norm(`${section} ${keywords} ${heading} ${kicker} ${body} ${location.pathname}`);
   }

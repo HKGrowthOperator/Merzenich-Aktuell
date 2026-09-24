@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, esc, dmyLang } from './lib-artikel.mjs';
+import { artikelSammeln, esc, dmyLang, markeHtml } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -37,7 +37,7 @@ const bildFlaeche = (a) => {
     + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
 };
 
-const zeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row${nurLogo(a.bild) ? ' no-media no-image' : ''}">${bildFlaeche(a)}<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(a.ort)}</span></div><span class="kicker">${esc(a.kicker)}</span><h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
+const zeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row${nurLogo(a.bild) ? ' no-media no-image' : ''}">${bildFlaeche(a)}<div class="feed-copy">${markeHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
 const zaehler = (html, n) => html.replace(/<p class="count-line">\d+ Meldung(?:en)?<\/p>/, `<p class="count-line">${n} Meldung${n === 1 ? '' : 'en'}</p>`);
 
 let neuAngelegt = 0, nachgetragen = 0, bebildert = 0;

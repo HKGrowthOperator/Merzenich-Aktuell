@@ -135,7 +135,11 @@
       if (!hits.length) { outEl.innerHTML = '<p class="no-result">Keine Treffer für „' + esc(input.value) + '“. Versuchen Sie ein anderes Stichwort, zum Beispiel Feuerwehr, Ortsfest oder Schützen.</p>'; return; }
       outEl.innerHTML = '<p class="count-line">' + hits.length + ' Treffer</p>' + hits.slice(0, 50).map(function (h) {
         var it = h.it;
-        return '<article class="result"><span class="kicker">' + esc(it.typ) + (it.k && it.k !== it.typ ? ' · ' + esc(it.k) : '') + (it.dt ? '<span class="dist">' + esc(it.dt) + '</span>' : '') + '</span><h3><a href="' + esc(it.u) + '">' + highlight(it.t) + '</a></h3><p>' + highlight(it.d) + '</p></article>';
+        // Meldungen tragen die Ortsmarke (A3.1) wie auf allen Listen, andere Typen die Dachzeile.
+        var kopf = it.typ === 'Meldung'
+          ? '<p class="marke"><span class="marke-ort">Merzenich</span>' + (it.o ? '<span class="marke-teil"> · ' + esc(it.o) + '</span>' : '') + (it.k ? '<span class="marke-rubrik">' + esc(it.k) + '</span>' : '') + (it.dt ? '<span class="marke-rubrik">' + esc(it.dt) + '</span>' : '') + '</p>'
+          : '<span class="kicker">' + esc(it.typ) + (it.k && it.k !== it.typ ? ' · ' + esc(it.k) : '') + (it.dt ? '<span class="dist">' + esc(it.dt) + '</span>' : '') + '</span>';
+        return '<article class="result">' + kopf + '<h3><a href="' + esc(it.u) + '">' + highlight(it.t) + '</a></h3><p>' + highlight(it.d) + '</p></article>';
       }).join('');
     }
     fetch('/suche-index.json').then(function (r) { if(!r.ok)throw new Error('search');return r.json(); }).then(function (j) { idx = j; run(); }).catch(function () { searchFailed=true;idx = []; run(); });

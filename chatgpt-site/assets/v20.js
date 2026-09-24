@@ -112,6 +112,7 @@
   const read=hero.querySelector('.meta span');if(read&&h.readTime)read.textContent=h.readTime;
   const more=hero.querySelector('.read-more');if(more){more.href=h.url;more.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent='Mehr lesen';});const sr=more.querySelector('.sr-only');if(sr)sr.textContent=': '+h.title;}
  }
+ const marke=(s)=>{const teil=String(s.location||'').split('·')[1]?.trim()||'';const t=teil?teil.charAt(0)+teil.slice(1).toLowerCase():'';return `<p class="marke"><span class="marke-ort">Merzenich</span>${t?`<span class="marke-teil"> · ${esc(t)}</span>`:''}<span class="marke-rubrik">${esc(s.kicker||'Aktuell')}</span></p>`;};
  function applySecondary(s){
   if(!s?.url||!s?.title)return;
   const side=document.querySelector('.front-side');if(!side)return;
@@ -119,7 +120,7 @@
   if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
   card.dataset.story=s.id||'';card.classList.toggle('secondary-lead',!!s.image);
   const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img ${externAttr(s.image)} alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
-  card.innerHTML=`${bild}<div><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
+  card.innerHTML=`${bild}<div>${marke(s)}<h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
  }
  fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
 })();
@@ -134,19 +135,20 @@
  const feed=document.querySelector('.content-grid .feed');if(!feed)return;
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const externAttr=(u)=>(/^https?:\/\//i.test(u)&&window.maExtern)?window.maExtern.attribute(u):`src="${esc(u)}"`;const externSetze=(img,u)=>{if(/^https?:\/\//i.test(u)&&window.maExtern)window.maExtern.setze(img,u);else img.src=u;};
+ const marke=(s)=>{const teil=String(s.location||'').split('·')[1]?.trim()||'';const t=teil?teil.charAt(0)+teil.slice(1).toLowerCase():'';return `<p class="marke"><span class="marke-ort">Merzenich</span>${t?`<span class="marke-teil"> · ${esc(t)}</span>`:''}<span class="marke-rubrik">${esc(s.kicker||'Aktuell')}</span></p>`;};
  function updateLead(s){
   const lead=feed.querySelector('.feed-lead');if(!lead||!s?.url||!s?.title)return false;
   lead.dataset.story=s.id||'';
   const mediaLink=lead.querySelector(':scope > a');if(mediaLink)mediaLink.href=s.url;
   const media=lead.querySelector('.media');if(media&&s.image){media.classList.toggle('contain',s.imageFit==='contain');const img=media.querySelector('img');if(img){externSetze(img,s.image);img.removeAttribute('srcset');img.removeAttribute('sizes');img.alt=s.imageAlt||s.title;img.removeAttribute('width');img.removeAttribute('height');}const badge=media.querySelector('.badge');if(badge&&s.imageBadge)badge.textContent=s.imageBadge;}
-  const copy=lead.querySelector('.lead-copy');if(copy){const loc=copy.querySelector('.location-line');if(loc)loc.innerHTML=`<span class="location-brand">${esc(s.location||'MERZENICH')}</span>`;const kicker=copy.querySelector('.kicker');if(kicker)kicker.textContent=s.kicker||'Aktuell';const a=copy.querySelector('h2 a');if(a){a.href=s.url;a.textContent=s.title;}const dek=copy.querySelector('.dek');if(dek)dek.textContent=s.teaser||'';const time=copy.querySelector('.meta time');if(time){time.dateTime=s.published||'';time.textContent=s.timeLabel||'';}}
+  const copy=lead.querySelector('.lead-copy');if(copy){const alt=copy.querySelector('.marke')||copy.querySelector('.location-line');if(alt){copy.querySelector('.location-line + .kicker')?.remove();alt.outerHTML=marke(s);}const a=copy.querySelector('h2 a');if(a){a.href=s.url;a.textContent=s.title;}const dek=copy.querySelector('.dek');if(dek)dek.textContent=s.teaser||'';const time=copy.querySelector('.meta time');if(time){time.dateTime=s.published||'';time.textContent=s.timeLabel||'';}}
   return true;
  }
  function row(s){
   if(!s?.url||!s?.title||feed.querySelector(`a[href="${CSS.escape(s.url)}"]`))return null;
   const el=document.createElement('article');el.className='feed-row editorial-current-row'+(s.image?'':' no-media no-image');el.dataset.story=s.id||'';
   const bild=s.image?`<a href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img ${externAttr(s.image)} alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
-  el.innerHTML=`${bild}<div class="feed-copy"><div class="location-line"><span class="location-brand">${esc(s.location||'MERZENICH')}</span></div><span class="kicker">${esc(s.kicker||'Aktuell')}</span><h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
+  el.innerHTML=`${bild}<div class="feed-copy">${marke(s)}<h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p class="dek">${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
   return el;
  }
  function bumpCount(add){const c=document.querySelector('.count-line');if(!c||!add)return;const m=c.textContent.match(/^\s*(\d+)/);if(!m)return;c.firstChild.textContent=c.firstChild.textContent.replace(m[1],String(Number(m[1])+add));}
