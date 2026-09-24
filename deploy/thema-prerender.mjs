@@ -71,7 +71,21 @@ for (const [slug, { label, artikel }] of themen) {
     feedNeu = feedNeu.replace(muster, () => zeile(a));
     nachgezogen++;
   }
+  // Zeilen, deren Artikel es nicht mehr gibt (geloescht, zusammengefuehrt),
+  // fallen heraus; sonst fuehren sie ins Leere.
+  let entfernt = 0;
+  feedNeu = feedNeu.replace(/\s*<article\b[^>]*>[\s\S]*?<\/article>/g, (block) => {
+    const ziel = /<h[23]><a href="(\/[^"#?]+\/)"/.exec(block)?.[1];
+    if (!ziel || existsSync(join(site, ziel, 'index.html'))) return block;
+    entfernt++; return '';
+  });
+  if (entfernt) { nachgetragen++; console.log(`bereinigt: /thema/${slug}/ - ${entfernt} Zeile(n) ohne Artikel`); }
   const fehlend = artikel.filter((a) => !feedNeu.includes(`href="${a.url}"`));
+  if (entfernt && !fehlend.length && !nachgezogen) {
+    const anzahl = new Set([...feedNeu.matchAll(/<h[23]><a href="([^"]+)"/g)].map((m) => m[1])).size;
+    if (!nurPruefen) writeFileSync(pfad, zaehler(alt.slice(0, feedStart) + feedNeu + alt.slice(feedEnde), anzahl));
+    continue;
+  }
   if (nachgezogen && !fehlend.length) {
     const neu = alt.slice(0, feedStart) + feedNeu + alt.slice(feedEnde);
     if (!nurPruefen) writeFileSync(pfad, neu);

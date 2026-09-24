@@ -743,6 +743,12 @@ function treffer(m, text) { return (m.tags || []).reduce((n, t) => n + (text.inc
 // Fanclub vor Fussball, Reparaturstation vor Fahrrad).
 export const MOTIVREGELN = [
   { id: 'geschwindigkeit', wenn: /geschwindigkeit|blitzer|radarkontrolle|tempo ?(?:30|50)\b|zu schnell|raser/, motive: ['geschwindigkeitsmessung'] },
+  // Ereignis vor Akteur (V3): Oelspur, Tier, Brandmelder und E-Call zeigen ein
+  // Ereignis, kein Feuerwehrhaus. Ohne gesichtetes Foto dieses Motivs: kein Bild.
+  { id: 'oelspur', wenn: /olspur|hydraulikol|betriebsstoffe|olschaden|bindemittel/, motive: ['oelspur'] },
+  { id: 'tierrettung', wenn: /tierrettung|tier in not|tierfang|katze|\bhund\b|\btaube\b/, motive: ['tierrettung'] },
+  { id: 'brandmelder', wenn: /brandmeldeanlage|rauchmelder|rauchwarnmelder/, motive: ['brandmeldeanlage', 'rauchmelder'] },
+  { id: 'ecall', wenn: /\be-?call\b/, motive: ['rettungswagen'] },
   { id: 'polizeihubschrauber', wenn: /polizeihubschrauber|hubschrauber der polizei/, motive: ['polizeihubschrauber'] },
   { id: 'rettungshubschrauber', wenn: /rettungshubschrauber|christoph \d/, motive: ['rettungshubschrauber'] },
   { id: 'brand', wenn: /\bbrand|brennt|rauchentwicklung|\brauch\b|flammen|loscharbeiten/, motive: ['brand', 'gebaeudebrand'] },

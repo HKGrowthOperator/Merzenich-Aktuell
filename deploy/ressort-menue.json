@@ -98,12 +98,20 @@
               "/thema/hilfeleistung/"
             ],
             [
+              "Ölspur",
+              "/thema/oelspur/"
+            ],
+            [
               "Personenbefreiung",
               "/thema/personenbefreiung/"
             ],
             [
               "Tier in Not",
               "/thema/tierrettung/"
+            ],
+            [
+              "Brandmeldeanlage & Rauchmelder",
+              "/thema/brandmeldeanlage/"
             ]
           ]
         },
@@ -115,8 +123,16 @@
               "/thema/polizei/"
             ],
             [
+              "Zeugenaufrufe",
+              "/thema/zeugenaufruf/"
+            ],
+            [
               "Einbruch",
               "/thema/einbruch/"
+            ],
+            [
+              "Diebstahl",
+              "/thema/diebstahl/"
             ]
           ]
         },
@@ -142,13 +158,16 @@
             [
               "L 264",
               "/thema/l264/"
+            ],
+            [
+              "B 264",
+              "/thema/b264/"
             ]
           ]
         }
       ],
       "offen": [
         "Unwetter",
-        "Zeugenaufrufe",
         "Straßensperrungen"
       ]
     },

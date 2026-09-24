@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=7fa26cb833';
+  const MENUE_URL = '/assets/ressort-menue.json?v=b972b8f12c';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -19,51 +19,9 @@
     '/menschen/': 'Porträts, Ehrungen, Jubiläen und Geschichten aus der Gemeinde.'
   };
 
-  // Jeder Ressort-Teaser bekommt ein Bild. Fehlt beim aktuellen Beitrag ein
-  // eigenes Foto, kommt ein freigegebenes Motiv aus dem passenden Editorial-Pool.
-  const FALLBACK_IMAGES = {
-    '/nachrichten/': [
-      ['/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp', 'Aktuelle Meldungen aus Merzenich'],
-      ['/assets/places/merzenich-720.webp', 'Merzenich und seine Ortsteile']
-    ],
-    '/blaulicht/': [
-      ['/assets/editorial-pools/blaulicht/blaulicht-01-77105a0ca0-480.webp', 'Blaulicht'],
-      ['/assets/editorial-pools/polizei/polizei-01-975326909c-480.webp', 'Polizei und Sicherheit']
-    ],
-    '/sport/': [
-      ['/assets/editorial-pools/sport/sport-01-4ab6e95eab-480.webp', 'Sport'],
-      ['/assets/editorial-pools/sport/sport-02-11b84171a8-480.webp', 'Fußball und Vereine']
-    ],
-    '/termine/': [
-      ['/assets/editorial-pools/termine/termine-01-3e5529edd1-480.webp', 'Termine'],
-      ['/assets/editorial-pools/termine/termine-02-1278784fc5-480.webp', 'Veranstaltungen']
-    ],
-    '/vereine/': [
-      ['/assets/editorial-pools/vereine/vereine-01-9c345e6bd7-480.webp', 'Vereinsleben'],
-      ['/assets/editorial-pools/vereine/vereine-02-51d0635a6b-480.webp', 'Ehrenamt und Gemeinschaft']
-    ],
-    '/rathaus/': [
-      ['/assets/places/merzenich-720.webp', 'Gemeinde Merzenich'],
-      ['/assets/uploads/buergersprechstunde.webp', 'Bürgerservice und Beteiligung']
-    ],
-    '/leben/': [
-      ['/assets/editorial-pools/leben/leben-01-1091fb6a9c-480.webp', 'Leben in der Gemeinde'],
-      ['/assets/editorial-pools/leben/leben-02-87ffe0734e-480.webp', 'Freizeit und Alltag']
-    ],
-    '/wirtschaft/': [
-      ['/assets/editorial-pools/wirtschaft/wirtschaft-01-561359542b-480.webp', 'Wirtschaft'],
-      ['/assets/editorial-pools/wirtschaft/wirtschaft-02-d6eb71c3ef-480.webp', 'Infrastruktur und Wandel']
-    ],
-    '/tipp/': [
-      ['/assets/editorial-pools/tipp/tipp-01-b85a6ff84c-480.webp', 'Tipps aus der Region'],
-      ['/assets/editorial-pools/tipp/tipp-02-3752acb551-480.webp', 'Freizeit und Ausflüge']
-    ],
-    '/menschen/': [
-      ['/assets/editorial-pools/menschen/menschen-01-686bb6fb4c-480.webp', 'Menschen aus der Gemeinde'],
-      ['/assets/editorial-pools/menschen/menschen-02-7999ac1cce-480.webp', 'Ehrenamt und Geschichten']
-    ]
-  };
-
+  // Bilder nur vom Beitrag selbst: Ohne eigenes, passendes Bild steht der Teaser
+  // als Text (Editorial Image System V3, docs/BILD-MOTIVREGELN.md). Die
+  // Auswahl bebilderter Beitraege trifft deploy/ressort-menue.mjs.
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
     '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
   }[c]));
@@ -90,18 +48,15 @@
     }).format(d);
   }
 
-  function story(route, item, index) {
-    const fallback = (FALLBACK_IMAGES[route] || [])[index] || (FALLBACK_IMAGES[route] || [])[0] || ['', ''];
-    const src = item && item.bild && item.bild.src ? item.bild.src : fallback[0];
-    const alt = item && item.bild && item.bild.alt ? item.bild.alt : fallback[1];
-    const title = item && item.titel ? item.titel : (fallback[1] || 'Mehr aus dem Ressort');
-    const url = item && item.url ? item.url : route;
-    const meta = [item && item.ort, fmtDate(item && item.datum, !!(item && item.termin))].filter(Boolean).join(' · ');
-    return '<a class="ressort-dropdown__story" href="' + esc(url) + '">' +
-      '<span class="ressort-dropdown__story-image"><img src="' + esc(src) + '" alt="' + esc(alt) + '" width="480" height="270" loading="eager" decoding="async"></span>' +
+  function story(item) {
+    const bild = item.bild && item.bild.src
+      ? '<span class="ressort-dropdown__story-image"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async"></span>'
+      : '';
+    const meta = [item.ort, fmtDate(item.datum, !!item.termin)].filter(Boolean).join(' · ');
+    return '<a class="ressort-dropdown__story' + (bild ? '' : ' ohne-bild') + '" href="' + esc(item.url) + '">' + bild +
       '<span class="ressort-dropdown__story-copy">' +
         (meta ? '<span class="ressort-dropdown__story-meta">' + esc(meta) + '</span>' : '') +
-        '<strong>' + esc(title) + '</strong>' +
+        '<strong>' + esc(item.titel) + '</strong>' +
       '</span>' +
     '</a>';
   }
@@ -117,7 +72,8 @@
       '</section>'
     ).join('');
 
-    const newest = [0, 1].map((i) => story(route, (def.neu || [])[i] || null, i)).join('');
+    // Nur echte Beitraege; ohne Beitraege bleibt die Spalte weg.
+    const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 2).map(story).join('');
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
@@ -126,10 +82,10 @@
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
       '</div>' +
       '<div class="ressort-dropdown__groups">' + groups + '</div>' +
-      '<aside class="ressort-dropdown__latest" aria-label="Neu im Ressort">' +
+      (newest ? '<aside class="ressort-dropdown__latest" aria-label="Neu im Ressort">' +
         '<span class="ressort-dropdown__eyebrow">Neu im Ressort</span>' +
         newest +
-      '</aside>';
+      '</aside>' : '');
   }
 
   async function start() {
@@ -166,8 +122,9 @@
         location.href = link.href;
         return;
       }
+      // Zweiter Klick auf das offene Ressort: Ressortseite oeffnen.
       if (active === link && !panel.hidden) {
-        close();
+        location.href = link.href;
         return;
       }
       if (active) {
@@ -210,11 +167,52 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && active) close({ focus: true });
     });
+    nav.addEventListener('focusout', (e) => {
+      if (active && e.relatedTarget && !nav.contains(e.relatedTarget)) close();
+    });
     addEventListener('resize', () => {
       if (!desktop()) close();
     }, { passive: true });
 
     nav.classList.add('ressort-dropdowns-ready');
+    drawerAkkordeon(data);
+  }
+
+  // Mobil: im Menue-Drawer klappt jedes Ressort als Akkordeon auf (Link bleibt
+  // Link, der Knopf daneben oeffnet die Unterseiten). Immer nur eines offen.
+  function drawerAkkordeon(data) {
+    const gruppe = document.querySelector('[data-drawer] .drawer-group');
+    if (!gruppe || gruppe.querySelector('.drawer-ressort')) return;
+    let n = 0;
+    for (const a of [...gruppe.querySelectorAll(':scope > a')]) {
+      const def = data[a.getAttribute('href')];
+      if (!def) continue;
+      const id = 'drawer-ressort-' + (++n);
+      const zeile = document.createElement('div');
+      zeile.className = 'drawer-ressort';
+      a.replaceWith(zeile);
+      const knopf = document.createElement('button');
+      knopf.type = 'button';
+      knopf.className = 'drawer-ressort__auf';
+      knopf.setAttribute('aria-expanded', 'false');
+      knopf.setAttribute('aria-controls', id);
+      knopf.innerHTML = '<span class="sr-only">' + esc(def.titel) + ': Unterseiten</span>';
+      const liste = document.createElement('div');
+      liste.className = 'drawer-ressort__liste';
+      liste.id = id;
+      liste.hidden = true;
+      liste.innerHTML = (def.gruppen || []).map((g) => '<div class="drawer-ressort__gruppe">' + esc(g.titel) + '</div>' +
+        (g.links || []).map((l) => '<a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a>').join('')).join('');
+      zeile.append(a, knopf, liste);
+      knopf.addEventListener('click', () => {
+        const auf = knopf.getAttribute('aria-expanded') !== 'true';
+        for (const k of gruppe.querySelectorAll('.drawer-ressort__auf[aria-expanded="true"]')) {
+          if (k !== knopf) { k.setAttribute('aria-expanded', 'false'); document.getElementById(k.getAttribute('aria-controls')).hidden = true; }
+        }
+        knopf.setAttribute('aria-expanded', String(auf));
+        liste.hidden = !auf;
+      });
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });

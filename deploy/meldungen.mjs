@@ -184,7 +184,10 @@ for (const m of meldungen) {
     const alt = readFileSync(pfad, 'utf8');
     const marke = /<article class="article" data-meldung="([0-9a-f]+)"/.exec(alt);
     if (!marke) throw new Error(`${m.ressort}/${m.slug}: Seite existiert und stammt nicht aus inhalte/meldungen, wird nicht ueberschrieben`);
-    if (marke[1] === m.hash) { aktuell++; continue; }
+    // Weiterlesen-Karten auf Artikel, die es nicht mehr gibt: Seite neu schreiben.
+    const weiter = alt.slice(alt.indexOf('<div class="cards-3">') >>> 0);
+    const tot = alt.includes('<div class="cards-3">') && [...weiter.matchAll(/<h3><a href="(\/[^"#?]+\/)"/g)].some((x) => !existsSync(join(site, x[1], 'index.html')));
+    if (marke[1] === m.hash && !tot) { aktuell++; continue; }
   }
   veraltet.push(`${m.ressort}/${m.slug}`);
   if (nurPruefen) continue;

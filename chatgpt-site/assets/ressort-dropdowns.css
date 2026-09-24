@@ -56,6 +56,7 @@
     color:var(--ink);text-decoration:none
   }
   .ressort-dropdown__story:last-child{margin-bottom:0}
+  .ressort-dropdown__story.ohne-bild{grid-template-columns:1fr}
   .ressort-dropdown__story-image{
     display:block;aspect-ratio:16/9;overflow:hidden;background:#ece9e3
   }
@@ -90,3 +91,17 @@
   .ressort-dropdown__story{grid-template-columns:1fr;gap:7px}
 }
 @media (max-width:767px){.ressort-dropdown{display:none!important}}
+
+/* Drawer (mobil, dunkler Grund, Raster aus v20.css): jedes Ressort als volle
+   Zeile, Link links, Aufklapper rechts, Unterseiten eingerueckt darunter. */
+.drawer-group .drawer-ressort{grid-column:1/-1;display:grid;grid-template-columns:1fr 48px;align-items:center;border-bottom:1px solid #2b2e31}
+.drawer-ressort>a{min-width:0}
+.drawer-ressort__auf{width:48px;height:44px;border:0;background:none;cursor:pointer;position:relative;color:#fff}
+.drawer-ressort__auf::before{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translate(-50%,-70%) rotate(45deg);transition:transform .18s cubic-bezier(.22,1,.36,1)}
+.drawer-ressort__auf[aria-expanded="true"]::before{transform:translate(-50%,-30%) rotate(225deg)}
+.drawer-ressort__auf:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.drawer-ressort__liste{grid-column:1/-1;padding:0 0 12px 14px;margin:0 0 4px 2px;border-left:1px solid rgba(255,255,255,.28)}
+.drawer-ressort__liste[hidden]{display:none}
+.drawer-ressort__gruppe{margin:12px 0 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a9a49b}
+.drawer-group .drawer-ressort__liste a{min-height:40px;padding:6px 0;font-size:15px;color:#e9e6e0}
+@media (prefers-reduced-motion:reduce){.drawer-ressort__auf::before{transition:none}}

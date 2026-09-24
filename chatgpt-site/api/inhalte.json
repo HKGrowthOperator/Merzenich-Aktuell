@@ -1,11 +1,11 @@
 {
  "generated": "2026-09-24T14:20:00+02:00",
- "anzahl": 77,
+ "anzahl": 75,
  "bestand": {
-  "gesamt": 77,
+  "gesamt": 75,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 41,
+   "blaulicht": 39,
    "sport": 8,
    "rathaus": 7,
    "leben": 12,
@@ -18,18 +18,18 @@
   "ortsteile": {
    "merzenich": 49,
    "golzheim": 4,
-   "girbelsrath": 12,
-   "morschenich": 6,
+   "girbelsrath": 11,
+   "morschenich": 5,
    "buergewald": 6,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 77,
+    "anzahl": 75,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 41,
+    "anzahl": 39,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -73,11 +73,11 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 12,
+    "anzahl": 11,
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 6,
+    "anzahl": 5,
     "liste": "gepflegt"
    },
    "/buergewald/": {
@@ -192,17 +192,7 @@
      "label": "Hilfeleistung"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg",
-    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg 1600w",
-    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
-    "width": 1600,
-    "height": 950,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -229,17 +219,7 @@
      "label": "Tierrettung"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg",
-    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg 1600w",
-    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
-    "width": 1600,
-    "height": 1200,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "TUBS / Wikimedia Commons · Public domain",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -263,88 +243,6 @@
     }
    ],
    "bild": null,
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-09-24-oelspur-girbelsrath",
-   "url": "/blaulicht/oelspur-girbelsrath/",
-   "titel": "Ölspur in Girbelsrath: Feuerwehr beseitigt Verunreinigung in der Dechant-Fabry-Straße",
-   "teaser": "Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.",
-   "kicker": "Feuerwehr",
-   "ressort": "blaulicht",
-   "ressortLabel": "Blaulicht",
-   "ort": "MERZENICH",
-   "ortsteil": "girbelsrath",
-   "datum": "2026-09-24T14:10:00+02:00",
-   "aktualisiert": "2026-09-24T14:10:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "feuerwehr",
-     "label": "Feuerwehr"
-    },
-    {
-     "slug": "girbelsrath",
-     "label": "Girbelsrath"
-    },
-    {
-     "slug": "hilfeleistung",
-     "label": "Hilfeleistung"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 1067,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-09-24-ecall-morschenich",
-   "url": "/blaulicht/ecall-morschenich/",
-   "titel": "Automatischer eCall alarmiert Feuerwehr nach Morschenich – kein Unfall gefunden",
-   "teaser": "Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.",
-   "kicker": "Feuerwehr",
-   "ressort": "blaulicht",
-   "ressortLabel": "Blaulicht",
-   "ort": "MERZENICH",
-   "ortsteil": "morschenich",
-   "datum": "2026-09-24T14:08:00+02:00",
-   "aktualisiert": "2026-09-24T14:08:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "feuerwehr",
-     "label": "Feuerwehr"
-    },
-    {
-     "slug": "morschenich",
-     "label": "Morschenich"
-    },
-    {
-     "slug": "hilfeleistung",
-     "label": "Hilfeleistung"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 1063,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -711,10 +609,6 @@
     {
      "slug": "feuerwehr",
      "label": "Feuerwehr"
-    },
-    {
-     "slug": "morschenich",
-     "label": "Morschenich"
     }
    ],
    "bild": {
@@ -3074,9 +2968,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-24-oelspur-windmuehle",
-  "url": "/blaulicht/oelspur-windmuehle/",
-  "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
+  "id": "2026-09-23-oldieabend-ortsfest-2026",
+  "url": "/leben/oldieabend-ortsfest-2026/",
+  "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
  },
  "nebenmeldungen": [
   {
@@ -3085,14 +2979,14 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
-   "id": "2026-09-23-oldieabend-ortsfest-2026",
-   "url": "/leben/oldieabend-ortsfest-2026/",
-   "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
-  },
-  {
    "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
    "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
    "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
+  },
+  {
+   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
+   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt"
   },
   {
    "id": "2026-09-23-fahrrad-reparaturstationen",

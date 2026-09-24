@@ -5,7 +5,7 @@
  * Artikel-Eintraegen zieht es nur Ortsteil (o) und Ortswort (g) nach.
  * Idempotent. Aufruf: [--check]
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { artikelSammeln, dmyKurz, ORTSTEILE } from './lib-artikel.mjs';
@@ -14,7 +14,11 @@ const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
 const site = join(wurzel, 'chatgpt-site');
 const pfad = join(site, 'suche-index.json');
-const index = JSON.parse(readFileSync(pfad, 'utf8'));
+const roh = JSON.parse(readFileSync(pfad, 'utf8'));
+// Eintraege auf Seiten, die es nicht mehr gibt (geloescht, zusammengefuehrt), fallen heraus.
+const seiteDa = (u) => typeof u !== 'string' || !/^\/[^#?]*\/$/.test(u) || existsSync(join(site, u, 'index.html'));
+const index = roh.filter((e) => seiteDa(e.u));
+const verwaist = roh.filter((e) => !seiteDa(e.u)).map((e) => e.u);
 const bekannt = new Set(index.map((e) => e.u));
 const artikel = artikelSammeln(site);
 const teilVon = (a) => (a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil]) || '';
@@ -35,7 +39,8 @@ for (const e of index) {
   if (teilVon(a)) e.o = teilVon(a); else delete e.o;
   if (JSON.stringify(e) !== vorher) nachgezogen++;
 }
-if ((neu.length || nachgezogen) && !nurPruefen) writeFileSync(pfad, JSON.stringify([...neu, ...index], null, 0).replace(/\},\{/g, '},\n{') + '\n');
+if ((neu.length || nachgezogen || verwaist.length) && !nurPruefen) writeFileSync(pfad, JSON.stringify([...neu, ...index], null, 0).replace(/\},\{/g, '},\n{') + '\n');
 if (nachgezogen) console.log(`Suchindex: ${nachgezogen} Eintraege ${nurPruefen ? 'veraltet' : 'nachgezogen'} (Ortsteil, Ortswort).`);
 console.log(`Suchindex: ${index.length} Eintraege, ${neu.length} ${nurPruefen ? 'fehlen' : 'ergaenzt'}${neu.length ? ': ' + neu.map((e) => e.u).join(', ') : ''}.`);
-if (nurPruefen && (neu.length || nachgezogen)) process.exit(2);
+if (verwaist.length) console.log(`Suchindex: ${verwaist.length} Eintraege ohne Seite ${nurPruefen ? 'vorhanden' : 'entfernt'}: ${verwaist.join(', ')}`);
+if (nurPruefen && (neu.length || nachgezogen || verwaist.length)) process.exit(2);

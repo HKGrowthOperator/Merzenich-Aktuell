@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T13:08:37.998Z",
+  "updatedAt": "2026-09-24T13:06:58.159Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -215,42 +215,6 @@
       "assignedAt": "2026-09-24T13:00:44.477Z",
       "articleId": "2026-08-12-unfall-pkw-fahrrad-am-rosspfad",
       "articleDate": "2026-08-12T13:17:00+02:00"
-    },
-    "/blaulicht/ecall-morschenich/": {
-      "imageId": "web-blaulicht-12-37672c02",
-      "pool": "blaulicht",
-      "motiv": "rettungswagen",
-      "regel": "rettung",
-      "assignedAt": "2026-09-24T13:08:37.997Z",
-      "articleId": "2026-09-24-ecall-morschenich",
-      "articleDate": "2026-09-24T14:08:00+02:00"
-    },
-    "/blaulicht/oelspur-girbelsrath/": {
-      "imageId": "web-blaulicht-13-f2236bb0",
-      "pool": "blaulicht",
-      "motiv": "feuerwehrhaus",
-      "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:37.997Z",
-      "articleId": "2026-09-24-oelspur-girbelsrath",
-      "articleDate": "2026-09-24T14:10:00+02:00"
-    },
-    "/blaulicht/katze-baum-vogelrute/": {
-      "imageId": "web-feuerwehr-05-64a62b43",
-      "pool": "feuerwehr",
-      "motiv": "feuerwehrhaus",
-      "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:37.998Z",
-      "articleId": "2026-09-24-katze-baum-vogelrute",
-      "articleDate": "2026-09-24T14:14:00+02:00"
-    },
-    "/blaulicht/oelspur-windmuehle/": {
-      "imageId": "web-feuerwehr-06-4cdb4dc3",
-      "pool": "feuerwehr",
-      "motiv": "feuerwehrhaus",
-      "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:37.998Z",
-      "articleId": "2026-09-24-oelspur-windmuehle",
-      "articleDate": "2026-09-24T14:16:00+02:00"
     }
   }
 }

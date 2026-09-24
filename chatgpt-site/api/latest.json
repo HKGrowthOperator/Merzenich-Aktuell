@@ -27,7 +27,7 @@
       "ressort": "blaulicht",
       "ort": "merzenich",
       "teaser": "Die Feuerwehr Merzenich rückte am 21. September zu einer Ölspur im Bereich An der Windmühle aus. Die Verunreinigung wurde abgestreut und aufgenommen.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg"
+      "image": null
     },
     {
       "title": "Katze in der Vogelrute auf Baum – Feuerwehr rückt zur Tierrettung aus",
@@ -36,7 +36,7 @@
       "ressort": "blaulicht",
       "ort": "merzenich",
       "teaser": "Eine Katze saß in der Vogelrute auf einem Baum fest. Als die Feuerwehr eine Leiter bereitstellte, kam das Tier selbst herunter und lief davon.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg"
+      "image": null
     },
     {
       "title": "Vortrag beleuchtet Zwangsarbeit in Merzenich",
@@ -46,24 +46,6 @@
       "ort": "merzenich",
       "teaser": "Historikerin Inga Mehlert-Garms stellt am 15. Oktober neue Forschungen zur Zwangsarbeit in Merzenich vor. Der Eintritt ins Pfarrheim ist frei.",
       "image": null
-    },
-    {
-      "title": "Ölspur in Girbelsrath: Feuerwehr beseitigt Verunreinigung in der Dechant-Fabry-Straße",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/oelspur-girbelsrath/",
-      "date": "2026-09-24T14:10:00+02:00",
-      "ressort": "blaulicht",
-      "ort": "girbelsrath",
-      "teaser": "Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg"
-    },
-    {
-      "title": "Automatischer eCall alarmiert Feuerwehr nach Morschenich – kein Unfall gefunden",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/ecall-morschenich/",
-      "date": "2026-09-24T14:08:00+02:00",
-      "ressort": "blaulicht",
-      "ort": "morschenich",
-      "teaser": "Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg"
     },
     {
       "title": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober",
@@ -181,6 +163,24 @@
       "ort": "merzenich",
       "teaser": "Nach einem Einbruch in ein Einfamilienhaus im Arnoldsweilerweg in Merzenich sucht die Polizei Düren nach Zeugen.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg"
+    },
+    {
+      "title": "„Person hinter Tür“ am Steinpfahl: Bewohner öffnet selbst",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+      "date": "2026-09-05T06:28:00+02:00",
+      "ressort": "blaulicht",
+      "ort": "merzenich",
+      "teaser": "Ein Pflegedienst hatte am frühen Samstagmorgen, 5. September, die Feuerwehr gerufen. Beim Eintreffen öffnete der Bewohner die Haustür.",
+      "image": null
+    },
+    {
+      "title": "Nach zwei Spielen: SC Merzenich stand an der Tabellenspitze",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-tabellenfuehrer/",
+      "date": "2026-09-04T09:30:00+02:00",
+      "ressort": "sport",
+      "ort": "merzenich",
+      "teaser": "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg"
     }
   ],
   "events": [

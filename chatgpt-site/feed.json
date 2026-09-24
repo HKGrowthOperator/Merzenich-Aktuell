@@ -55,7 +55,6 @@
       "content_html": "<p>Die Feuerwehr Merzenich rückte am 21. September zu einer Ölspur im Bereich An der Windmühle aus. Die Verunreinigung wurde abgestreut und aufgenommen.</p>",
       "date_published": "2026-09-24T14:16:00+02:00",
       "date_modified": "2026-09-24T14:16:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg",
       "tags": [
         "Blaulicht",
         "Merzenich",
@@ -71,7 +70,6 @@
       "content_html": "<p>Eine Katze saß in der Vogelrute auf einem Baum fest. Als die Feuerwehr eine Leiter bereitstellte, kam das Tier selbst herunter und lief davon.</p>",
       "date_published": "2026-09-24T14:14:00+02:00",
       "date_modified": "2026-09-24T14:14:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg",
       "tags": [
         "Blaulicht",
         "Merzenich",
@@ -91,40 +89,6 @@
         "Leben",
         "Merzenich",
         "Veranstaltungen"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/oelspur-girbelsrath/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/oelspur-girbelsrath/",
-      "title": "Ölspur in Girbelsrath: Feuerwehr beseitigt Verunreinigung in der Dechant-Fabry-Straße",
-      "summary": "Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.",
-      "content_html": "<p>Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.</p>",
-      "date_published": "2026-09-24T14:10:00+02:00",
-      "date_modified": "2026-09-24T14:10:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg",
-      "tags": [
-        "Blaulicht",
-        "Girbelsrath",
-        "Feuerwehr",
-        "Girbelsrath",
-        "Hilfeleistung"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/ecall-morschenich/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/ecall-morschenich/",
-      "title": "Automatischer eCall alarmiert Feuerwehr nach Morschenich – kein Unfall gefunden",
-      "summary": "Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.",
-      "content_html": "<p>Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.</p>",
-      "date_published": "2026-09-24T14:08:00+02:00",
-      "date_modified": "2026-09-24T14:08:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg",
-      "tags": [
-        "Blaulicht",
-        "Morschenich",
-        "Feuerwehr",
-        "Morschenich",
-        "Hilfeleistung"
       ]
     },
     {
@@ -281,8 +245,7 @@
       "tags": [
         "Blaulicht",
         "Morschenich",
-        "Feuerwehr",
-        "Morschenich"
+        "Feuerwehr"
       ]
     },
     {
@@ -517,6 +480,41 @@
         "Kleidertreff",
         "Ehrenamt",
         "Lindenstraße"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/maehroboter-igelschutz/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/maehroboter-igelschutz/",
+      "title": "Mähroboter dürfen abends nicht mehr raus",
+      "summary": "Der Kreis Düren untersagt den Betrieb von Mährobotern in der Dämmerung und nachts. Igel sind dann besonders aktiv.",
+      "content_html": "<p>Der Kreis Düren untersagt den Betrieb von Mährobotern in der Dämmerung und nachts. Igel sind dann besonders aktiv.</p>",
+      "date_published": "2026-09-04T00:00:00+02:00",
+      "date_modified": "2026-09-04T00:00:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/c77cce903e4a1f-1440.webp",
+      "tags": [
+        "Leben",
+        "Merzenich",
+        "Igel",
+        "Mähroboter",
+        "Kreis Düren",
+        "Naturschutz"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/",
+      "title": "Von Morschenich aus den Blick nach Köln genießen",
+      "summary": "Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.",
+      "content_html": "<p>Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.</p>",
+      "date_published": "2026-09-04T00:00:00+02:00",
+      "date_modified": "2026-09-04T00:00:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/4e012d0ce4b136-768.webp",
+      "tags": [
+        "Leben",
+        "Morschenich",
+        "Heimatscheck",
+        "Freizeit",
+        "Inga Dohmes"
       ]
     }
   ]
