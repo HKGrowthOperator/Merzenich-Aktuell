@@ -147,7 +147,7 @@
   }
   if (!document.querySelector('script[data-ma-ad-rotation]')) {
     const script = document.createElement('script');
-    script.src = '/assets/anzeigen-rotation.js?v=4761832afe';
+    script.src = '/assets/anzeigen-rotation.js?v=24888326f6';
     script.async = false;
     script.dataset.maAdRotation = '1';
     document.head.append(script);
@@ -165,7 +165,7 @@
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=9e4c710a74';
+    script.src = '/assets/ressort-dropdowns.js?v=aa200cf5df';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);
