@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T18:32:41.684Z",
+  "updatedAt": "2026-09-24T18:51:24.110Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -351,15 +351,6 @@
       "articleId": "2026-03-13-unfall-kreuzung-b264-l264-rotlicht",
       "articleDate": "2026-03-13T10:42:00+01:00"
     },
-    "/blaulicht/frontalzusammenstoss-b264-verlorene-ladung/": {
-      "imageId": "web-blaulicht-05-ec25c697",
-      "pool": "blaulicht",
-      "motiv": "rettungswagen",
-      "regel": "verkehr.unfall.rettung",
-      "assignedAt": "2026-09-24T18:32:41.681Z",
-      "articleId": "2026-03-19-frontalzusammenstoss-b264-verlorene-ladung",
-      "articleDate": "2026-03-19T12:30:00+01:00"
-    },
     "/blaulicht/unfall-l264-am-rosspfad-gegenverkehr/": {
       "imageId": "web-blaulicht-10-85fcb93e",
       "pool": "blaulicht",
@@ -368,6 +359,15 @@
       "assignedAt": "2026-09-24T18:32:41.681Z",
       "articleId": "2026-03-30-unfall-l264-am-rosspfad-gegenverkehr",
       "articleDate": "2026-03-30T12:55:00+02:00"
+    },
+    "/blaulicht/auffahrunfall-b264-schwer-verletzt-mai/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-09-24T18:51:24.108Z",
+      "articleId": "2026-05-05-auffahrunfall-b264-schwer-verletzt-mai",
+      "articleDate": "2026-05-05T13:07:00+02:00"
     }
   }
 }

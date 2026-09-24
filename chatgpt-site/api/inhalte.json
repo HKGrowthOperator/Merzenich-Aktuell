@@ -2976,7 +2976,17 @@
      "label": "B264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 2134,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3115,15 +3125,15 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 2134,
+    "src": "/assets/quellbilder/6238991-4.jpg",
+    "srcset": "",
+    "alt": "Die verlorene Rolle Maschendrahtzaun auf der B264, dahinter die Unfallstelle",
+    "width": 630,
+    "height": 420,
     "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
-    "symbol": true
+    "badge": "Originalbild",
+    "credit": "Polizei Düren / Presseportal (ots)",
+    "symbol": false
    },
    "undatiert": false,
    "abgerufen": ""
