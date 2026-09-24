@@ -1,34 +1,35 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1: alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; 159 ausgeschlossen. Runde 2: die 159 Ersatzfotos; 88 ausgeschlossen. Freigegeben sind 152 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie in einer weiteren Sichtprüfung freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Freigegeben sind 184 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
 | Grund | Anzahl |
 |---|---|
-| Motiv passt nicht zum Pool | 49 |
-| Militär- oder Auslandsmotiv | 28 |
-| Fast gleiches Motiv wie ein anderes Bild im Pool | 21 |
+| Motiv passt nicht zum Pool | 75 |
+| Militär- oder Auslandsmotiv | 29 |
+| Fast gleiches Motiv wie ein anderes Bild im Pool | 27 |
+| Lesbares Kfz-Kennzeichen | 24 |
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
-| Abzeichen, Wappen oder Logo als Motiv | 19 |
+| Abzeichen, Wappen oder Logo als Motiv | 20 |
 | Grafik, Karte oder Satellitenbild statt Foto | 19 |
-| Lesbares Kfz-Kennzeichen | 18 |
-| Ortsfremder Name, Schild oder Tafel lesbar | 16 |
+| Ortsfremder Name, Schild oder Tafel lesbar | 18 |
 | Erkennbare Personen des öffentlichen Lebens | 11 |
+| Erkennbare Personen als Hauptmotiv | 10 |
+| Unscharf oder ohne Bildaussage | 10 |
 | Demonstration mit Parolen und erkennbaren Personen | 9 |
 | Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland) | 8 |
-| Unscharf oder ohne Bildaussage | 8 |
-| Erkennbare Personen als Hauptmotiv | 7 |
+| Markenetikett oder Werbeschriftzug im Bild | 6 |
 | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ | 4 |
-| Markenetikett oder Werbeschriftzug im Bild | 4 |
 | Ortsfremdes Wahrzeichen | 2 |
 | Extremes Panoramaformat, taugt nicht für Bildflächen | 2 |
+| Graffiti mit lesbarer Schrift | 2 |
 | Unfallstelle mit Personen | 1 |
 | Transparent mit politischer Parole | 1 |
 
 Wichtigster Befund: Es gibt einen zweiten Ort Merzenich, einen Stadtteil von Zülpich (Kreis Euskirchen), und in Köln die Bäckereikette „Merzenich“. Die Suche nach „Merzenich Germany“ hat beides als Gemeinde Merzenich markiert. Der ganze Pool „Leben“ (St. Severinus in Zülpich-Merzenich) und zwei Bilder in „Aktuell“ zeigten deshalb den falschen Ort. Der Importer erkennt Zülpich, Euskirchen und Köln jetzt und verortet solche Treffer nicht mehr in Merzenich.
 
-In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan, für Brand aus Österreich und für Sport Wegekreuze „hinter dem Sportplatz“. Diese Pools suchen seit Runde 3 über Commons-Kategorien (`deepcat:`), dazu kommen Filter gegen Auslandsmotive und nicht-lateinische Titel.
+Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht lieferte Motive aus Japan, Brand aus Österreich und später Kerzen, Sport Wegekreuze „hinter dem Sportplatz“. Der Importer sucht deshalb über Commons-Kategorien oder deutsche Fachwörter und filtert Auslandsmotive, nicht-lateinische Titel, Wegekreuze (Sport) sowie Kerzen und Kirchen (Brand).
 
 ## Je Pool
 
@@ -41,7 +42,7 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 1 | 19 | Wohn- und Geschäftshaus Eigelstein 89-91, Köln-4719.jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 | 1 | 20 | Köln (Germany) (23573767200).jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 
-### Blaulicht: 36 entfernt
+### Blaulicht: 45 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -81,8 +82,17 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 17 | 1500円床屋 (14430674608).jpg | Militär- oder Auslandsmotiv |
 | 2 | 18 | Before you go on the tour, leave you cell phone and camera in one of these lockers. (30252631372).jpg | Militär- oder Auslandsmotiv |
 | 2 | 19 | Osaka Den Den Town lighting fixture shop. (26155362333).jpg | Militär- oder Auslandsmotiv |
+| 3 | 02 | DortmundRTW2.jpg | Lesbares Kfz-Kennzeichen |
+| 3 | 03 | ELW LNA.JPG | Lesbares Kfz-Kennzeichen |
+| 3 | 05 | NKTWMTF.JPG | Lesbares Kfz-Kennzeichen |
+| 3 | 08 | Itw-münster.jpg | Lesbares Kfz-Kennzeichen |
+| 3 | 10 | Wuppertal - Highland games 2011 54 ies.jpg | Erkennbare Personen als Hauptmotiv |
+| 3 | 12 | Bochum - Brandwacht - Hauptfeuer- und Rettungswache 06 ies.jpg | Lesbares Kfz-Kennzeichen |
+| 3 | 14 | Schwelm - Heimatfest 2012 357 ies.jpg | Erkennbare Personen als Hauptmotiv |
+| 3 | 16 | Schwelm - Heimatfest 2012 359 ies.jpg | Lesbares Kfz-Kennzeichen |
+| 3 | 19 | Wuppertal August-Bebel-Straße 2013 004.JPG | Unscharf oder ohne Bildaussage |
 
-### Polizei: 26 entfernt
+### Polizei: 28 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -112,8 +122,10 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 15 | Frank-Arno Richter.jpg | Erkennbare Personen des öffentlichen Lebens |
 | 2 | 18 | Polizeihubschrauber (10566995274).jpg | Erkennbare Personen als Hauptmotiv |
 | 2 | 20 | Bell 47J Polizeifliegerstaffel Nordrhein-Westfalen.jpg | Abzeichen, Wappen oder Logo als Motiv |
+| 3 | 03 | Polizei Nordrhein-Westfalen 7641.jpg | Abzeichen, Wappen oder Logo als Motiv |
+| 3 | 06 | Duisburg, Innenhafen, 2020-03 CN-02.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
-### Feuerwehr: 12 entfernt
+### Feuerwehr: 15 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -129,8 +141,11 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 12 | Borken, Burlo -- 2014 -- 2282.jpg | Motiv passt nicht zum Pool |
 | 2 | 13 | Altes Feuerwehrgerätehaus.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 2 | 20 | Unterrichtsraum Münster.jpg | Motiv passt nicht zum Pool |
+| 3 | 12 | Teekueche.jpg | Motiv passt nicht zum Pool |
+| 3 | 13 | Fitnessraum IdF.jpg | Motiv passt nicht zum Pool |
+| 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
 
-### Brand: 36 entfernt
+### Brand: 53 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -170,8 +185,25 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 18 | Controls for FM-200 fire suppression system at NERSC.jpg | Motiv passt nicht zum Pool |
 | 2 | 19 | FM-200 fire suppression system at NERSC.jpg | Motiv passt nicht zum Pool |
 | 2 | 20 | I-DPCN at work 03 (4203528315).jpg | Militär- oder Auslandsmotiv |
+| 3 | 01 | Kevelaer, Kerzenkapelle -- 2014 -- 00721.jpg | Motiv passt nicht zum Pool |
+| 3 | 02 | Dülmen, Kirchspiel, Kerzen in der Marienkapelle -- 2015 -- 8724.jpg | Motiv passt nicht zum Pool |
+| 3 | 04 | Dülmen, Rathaus, Trauzimmer -- 2017 -- 9623-9.jpg | Motiv passt nicht zum Pool |
+| 3 | 05 | Münster, St.-Paulus-Dom -- 2018 -- 0496.jpg | Motiv passt nicht zum Pool |
+| 3 | 06 | Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0580.jpg | Motiv passt nicht zum Pool |
+| 3 | 07 | Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0583.jpg | Motiv passt nicht zum Pool |
+| 3 | 08 | Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0650.jpg | Motiv passt nicht zum Pool |
+| 3 | 09 | Dülmen, Heilig-Kreuz-Kirche, Krypta -- 2018 -- 1402.jpg | Motiv passt nicht zum Pool |
+| 3 | 12 | Dülmen, Heilig-Kreuz-Kirche, Krypta -- 2018 -- 1405.jpg | Motiv passt nicht zum Pool |
+| 3 | 13 | Dülmen, Heilig-Kreuz-Kirche, Innenansicht -- 2019 -- 3099.jpg | Motiv passt nicht zum Pool |
+| 3 | 14 | Münster, St.-Paulus-Dom, Grabstätte der Bischöfe -- 2019 -- 3886.jpg | Motiv passt nicht zum Pool |
+| 3 | 15 | Münster, St.-Paulus-Dom, Grabstätte der Bischöfe -- 2019 -- 3887.jpg | Motiv passt nicht zum Pool |
+| 3 | 16 | Dülmen, Hausdülmen, St.-Mauritius-Kirche, Innenansicht -- 2020 -- 0364-8.jpg | Motiv passt nicht zum Pool |
+| 3 | 17 | Kerze -- 2021 -- 5334-8.jpg | Motiv passt nicht zum Pool |
+| 3 | 18 | Kerze -- 2021 -- 5335.jpg | Motiv passt nicht zum Pool |
+| 3 | 19 | Kerzen -- 2021 -- 5553.jpg | Motiv passt nicht zum Pool |
+| 3 | 20 | Dülmen, Kreuzkapelle, Kerzen -- 2021 -- 7126.jpg | Motiv passt nicht zum Pool |
 
-### Sport: 29 entfernt
+### Sport: 36 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -204,6 +236,13 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 14 | Buscherheide Kapelle am Sportplatz Ansicht.jpg | Motiv passt nicht zum Pool |
 | 2 | 15 | Buscherheide Kapelle am Sportplatz Gitter.jpg | Motiv passt nicht zum Pool |
 | 2 | 20 | Beckwitz Am Sportplatz 15-02.jpg | Motiv passt nicht zum Pool |
+| 3 | 02 | Artificial Turf of Iran University of Science and Technology 01.JPG | Militär- oder Auslandsmotiv |
+| 3 | 05 | Astroturf at the Bahá'í gardens - Sarah Stierch.jpg | Motiv passt nicht zum Pool |
+| 3 | 06 | Artificial turf green.JPG | Motiv passt nicht zum Pool |
+| 3 | 08 | Artificial turf and natural flowers.jpg | Motiv passt nicht zum Pool |
+| 3 | 12 | Eichstätt Schottenau -Kunstrasenplatz Spielfeld (2018-07 1).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
+| 3 | 14 | Eichstätt Schottenau -Kunstrasenplatz Zugang (2018-07 1).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
+| 3 | 20 | Abandoned artificial turf in Hermanninranta, Helsinki, Finland, 2021.jpg | Motiv passt nicht zum Pool |
 
 ### Termine: 4 entfernt
 
@@ -214,7 +253,7 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 1 | 13 | Münster, Domplatz, Wochenmarkt -- 2019 -- 2648.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 2 | 04 | Münster, St.-Paulus-Dom -- 2019 -- 2698.jpg | Ortsfremdes Wahrzeichen |
 
-### Vereine: 28 entfernt
+### Vereine: 33 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -246,8 +285,13 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 16 | Laggenbeck Dorfgemeinschaftshaus 02.jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 | 2 | 19 | Hausdülmen, Dorfplatz -- 2012 -- 3779 (bw).jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 2 | 20 | Hausdülmen, Maibaum -- 2014 -- 0134.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 3 | 02 | Krippken Mettingen 4.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 3 | 07 | Hausdülmen, Maibaum -- 2014 -- 0135.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 3 | 14 | Bücherschrank Overath (4).JPG | Erkennbare Personen als Hauptmotiv |
+| 3 | 16 | RWE Buecherschrank Schale 01.jpg | Markenetikett oder Werbeschriftzug im Bild |
+| 3 | 19 | RWE Buecherschrank Schale 02.jpg | Markenetikett oder Werbeschriftzug im Bild |
 
-### Leben: 29 entfernt
+### Leben: 33 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -280,6 +324,10 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 17 | Helfenberg Am Dorfplatz 5 2019-06-20 (6).jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 2 | 18 | Helfenberg Am Dorfplatz 5 2019-06-20 (7).jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 2 | 20 | Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Nordosten.jpg | Lesbares Kfz-Kennzeichen |
+| 3 | 06 | Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Norden.jpg | Motiv passt nicht zum Pool |
+| 3 | 07 | Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Nordwesten.jpg | Motiv passt nicht zum Pool |
+| 3 | 17 | Goeda Hodzij Am Dorfplatz 17 Detail.jpg | Unscharf oder ohne Bildaussage |
+| 3 | 18 | Am Dorfplatz 17 Goeda Hodzij.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
 ### Wirtschaft: 6 entfernt
 
@@ -308,7 +356,7 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 01 | Sophienhöhe l.JPG | Extremes Panoramaformat, taugt nicht für Bildflächen |
 | 2 | 08 | Sophienpanorama.jpg | Extremes Panoramaformat, taugt nicht für Bildflächen |
 
-### Menschen: 26 entfernt
+### Menschen: 30 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -338,4 +386,8 @@ In Runde 2 lieferte die Volltextsuche für Blaulicht vor allem Motive aus Japan,
 | 2 | 10 | Dülmen, Parkbank am Wildpark -- 2016 -- 0356-62.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 2 | 11 | Münster, Park Sentmaring -- 2016 -- 0786.jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 | 2 | 12 | Münster, Fürstbischöfliches Schloss -- 2026 -- 0742-8.jpg | Ortsfremdes Wahrzeichen |
+| 3 | 02 | Dülmen, Skulpturen im Bendixpark -- 2015 -- 8530.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 3 | 06 | Münster, Park Sentmaring, Skulptur -- 2017 -- 4257.jpg | Graffiti mit lesbarer Schrift |
+| 3 | 09 | Münster, Park Sentmaring -- 2018 -- 0002.jpg | Graffiti mit lesbarer Schrift |
+| 3 | 12 | Buergerhaus Ibbenbueren 01.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 

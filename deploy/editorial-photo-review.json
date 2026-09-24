@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -1571,6 +1571,363 @@
       "titel": "File:RWE security point at the Hambach forest 09.jpg",
       "grund": "Transparent mit politischer Parole",
       "runde": 2
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 2,
+      "titel": "File:DortmundRTW2.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 3,
+      "titel": "File:ELW LNA.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 5,
+      "titel": "File:NKTWMTF.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 8,
+      "titel": "File:Itw-münster.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 10,
+      "titel": "File:Wuppertal - Highland games 2011 54 ies.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 12,
+      "titel": "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 06 ies.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 14,
+      "titel": "File:Schwelm - Heimatfest 2012 357 ies.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 16,
+      "titel": "File:Schwelm - Heimatfest 2012 359 ies.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 3
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 19,
+      "titel": "File:Wuppertal August-Bebel-Straße 2013 004.JPG",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 1,
+      "titel": "File:Kevelaer, Kerzenkapelle -- 2014 -- 00721.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 2,
+      "titel": "File:Dülmen, Kirchspiel, Kerzen in der Marienkapelle -- 2015 -- 8724.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 4,
+      "titel": "File:Dülmen, Rathaus, Trauzimmer -- 2017 -- 9623-9.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 5,
+      "titel": "File:Münster, St.-Paulus-Dom -- 2018 -- 0496.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 6,
+      "titel": "File:Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0580.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 7,
+      "titel": "File:Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0583.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 8,
+      "titel": "File:Dülmen, St.-Viktor-Kirche, Innenansicht -- 2018 -- 0650.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Dülmen, Heilig-Kreuz-Kirche, Krypta -- 2018 -- 1402.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:Dülmen, Heilig-Kreuz-Kirche, Krypta -- 2018 -- 1405.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 13,
+      "titel": "File:Dülmen, Heilig-Kreuz-Kirche, Innenansicht -- 2019 -- 3099.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Münster, St.-Paulus-Dom, Grabstätte der Bischöfe -- 2019 -- 3886.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Münster, St.-Paulus-Dom, Grabstätte der Bischöfe -- 2019 -- 3887.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Dülmen, Hausdülmen, St.-Mauritius-Kirche, Innenansicht -- 2020 -- 0364-8.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Kerze -- 2021 -- 5334-8.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Kerze -- 2021 -- 5335.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 19,
+      "titel": "File:Kerzen -- 2021 -- 5553.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "brand",
+      "nr": 20,
+      "titel": "File:Dülmen, Kreuzkapelle, Kerzen -- 2021 -- 7126.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 12,
+      "titel": "File:Teekueche.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 13,
+      "titel": "File:Fitnessraum IdF.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 20,
+      "titel": "File:Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "leben",
+      "nr": 6,
+      "titel": "File:Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Norden.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "leben",
+      "nr": 7,
+      "titel": "File:Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Nordwesten.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "leben",
+      "nr": 17,
+      "titel": "File:Goeda Hodzij Am Dorfplatz 17 Detail.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 3
+    },
+    {
+      "pool": "leben",
+      "nr": 18,
+      "titel": "File:Am Dorfplatz 17 Goeda Hodzij.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "menschen",
+      "nr": 2,
+      "titel": "File:Dülmen, Skulpturen im Bendixpark -- 2015 -- 8530.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "menschen",
+      "nr": 6,
+      "titel": "File:Münster, Park Sentmaring, Skulptur -- 2017 -- 4257.jpg",
+      "grund": "Graffiti mit lesbarer Schrift",
+      "runde": 3
+    },
+    {
+      "pool": "menschen",
+      "nr": 9,
+      "titel": "File:Münster, Park Sentmaring -- 2018 -- 0002.jpg",
+      "grund": "Graffiti mit lesbarer Schrift",
+      "runde": 3
+    },
+    {
+      "pool": "menschen",
+      "nr": 12,
+      "titel": "File:Buergerhaus Ibbenbueren 01.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "polizei",
+      "nr": 3,
+      "titel": "File:Polizei Nordrhein-Westfalen 7641.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv",
+      "runde": 3
+    },
+    {
+      "pool": "polizei",
+      "nr": 6,
+      "titel": "File:Duisburg, Innenhafen, 2020-03 CN-02.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 2,
+      "titel": "File:Artificial Turf of Iran University of Science and Technology 01.JPG",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 5,
+      "titel": "File:Astroturf at the Bahá'í gardens - Sarah Stierch.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 6,
+      "titel": "File:Artificial turf green.JPG",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Artificial turf and natural flowers.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 12,
+      "titel": "File:Eichstätt Schottenau -Kunstrasenplatz Spielfeld (2018-07 1).jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 14,
+      "titel": "File:Eichstätt Schottenau -Kunstrasenplatz Zugang (2018-07 1).jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 3
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:Abandoned artificial turf in Hermanninranta, Helsinki, Finland, 2021.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 3
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:Krippken Mettingen 4.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "vereine",
+      "nr": 7,
+      "titel": "File:Hausdülmen, Maibaum -- 2014 -- 0135.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 3
+    },
+    {
+      "pool": "vereine",
+      "nr": 14,
+      "titel": "File:Bücherschrank Overath (4).JPG",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 3
+    },
+    {
+      "pool": "vereine",
+      "nr": 16,
+      "titel": "File:RWE Buecherschrank Schale 01.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild",
+      "runde": 3
+    },
+    {
+      "pool": "vereine",
+      "nr": 19,
+      "titel": "File:RWE Buecherschrank Schale 02.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild",
+      "runde": 3
     }
   ],
   "freigegeben": [
@@ -1725,6 +2082,38 @@
     "File:RWE security point at the Hambach forest 05.jpg",
     "File:Blick in den Tagebau Hambach.jpg",
     "File:Schaufelradbagger im Tagebau Hambach bei Nacht.jpg",
-    "File:Tagebau Hambach.jpg"
+    "File:Tagebau Hambach.jpg",
+    "File:Einsatzfahrzeuge.jpg",
+    "File:Wuppertal Briller Str 0024.jpg",
+    "File:Witten rescue station DLRG Bochum-Langendreer Werne.jpg",
+    "File:Rettungsmittel.jpg",
+    "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 05 ies.jpg",
+    "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 07 ies.jpg",
+    "File:Wuppertal - Friedrich-Engels-Allee - Karneval 010 ies.jpg",
+    "File:Wuppertal - Friedrich-Engels-Allee - Karneval 022 ies.jpg",
+    "File:Planspielraum.jpg",
+    "File:Steinsfeld, Am Dorfplatz 1, 004.jpg",
+    "File:Traubeneiche Dorfplatz Gräbendorf 2021-08-07 2.jpg",
+    "File:Am Dorfplatz, Kiel-Meimersdorf.jpg",
+    "File:Goeda Hodzij Am Dorfplatz 17.jpg",
+    "File:Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 2.jpg",
+    "File:Bürgerhaus Leichlingen Rückseite b.JPG",
+    "File:Bürgerhaus Leichlingen 02b.JPG",
+    "File:Duisburg, Innenhafen, 2020-03 CN-01.jpg",
+    "File:Playground with artificial turf of ZŠ Kpt. Jaroše in Třebíč, Třebíč District.jpg",
+    "File:Skagerak Arena turf.jpg",
+    "File:Artificial turf field in Balassagyarmat.jpg",
+    "File:Artificial Turf Football Field at Regent's International School Bangkok.jpg",
+    "File:Artificial turf (5064316111).jpg",
+    "File:Artificial turf at a stadium.jpg",
+    "File:Münster, Schlossplatz, Frühjahrssend -- 2019 -- 4145.jpg",
+    "File:Region Aachen (9338893882).jpg",
+    "File:LSG Im noerdlichen Teil des Kreises Dueren Sophienhöhe Karl-Heinz-Prichalweg und Römerturm DE-NW.JPG",
+    "File:Krippken Mettingen 5.jpg",
+    "File:Dülmen, Merfeld, Maibaum am Von-Galen-Platz -- 2015 -- 5996.jpg",
+    "File:Geilenkirchen Maibaum.jpg",
+    "File:Bücherschrank Hoffnungsthal.JPG",
+    "File:Bücherschrank in Welver - panoramio.jpg",
+    "File:Düren (DE), Tagebau Hambach, Schaufelradbagger 286 -- 2023 -- 0431.jpg"
   ]
 }
