@@ -12,6 +12,7 @@
  *                   + Pressemitteilungen (Text, Bild-URLs mit Bildhinweis)
  *   gemeinde.json   "Aktuelles" der Gemeinde Merzenich + Beitraege
  *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
+ *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen)
  *   jobs.json       Jobboerse der Bundesagentur, Umkreis 25 km um Merzenich
  *
  * Je Seite: URL, Abrufzeit, HTTP-Status, Titel, Text (ohne Skripte, Stil,
@@ -124,6 +125,13 @@ const QUELLEN = {
   gemeinde: () => listeMitDetails({
     listen: ['https://www.gemeinde-merzenich.de/aktuelles/index.php', 'https://www.gemeinde-merzenich.de/aktuelles/'],
     detail: /^https:\/\/www\.gemeinde-merzenich\.de\/aktuelles\/[^?#]+\.php$/, max: 40,
+  }),
+  // Die Website der Gemeinde sperrt Abrufe aus GitHub Actions ("403: Zugriff
+  // verweigert"). Dieselben Mitteilungen stehen in der Heimat-Info-App der
+  // Gemeinde, dort auch Vereine, Schulen, Feuerwehr.
+  heimatinfo: () => listeMitDetails({
+    listen: ['https://www.heimat-info.de/gemeinden/merzenich', 'https://www.heimat-info.de/gemeinden/merzenich/organisationen/gemeinde-merzenich', 'https://www.heimat-info.de/gemeinden/merzenich/organisationen'],
+    detail: /^https:\/\/www\.heimat-info\.de\/beitraege\/[0-9a-f-]{36}$/, max: 60,
   }),
   schulen: () => listeMitDetails({
     listen: ['https://kgs.gemeinde-merzenich.de/aktuelles/index.php', 'https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php'],
