@@ -1,112 +1,7 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-23T18:14:10.998Z",
+  "updatedAt": "2026-09-24T06:45:45.521Z",
   "assignments": {
-    "/blaulicht/einbruch-arnoldsweilerweg/": {
-      "imageId": "polizei-08-einbruch",
-      "pool": "polizei",
-      "assignedAt": "2026-09-18T13:38:43.676Z",
-      "articleId": "2026-09-11-einbruch-arnoldsweilerweg",
-      "articleDate": "2026-09-11T08:45:00+02:00",
-      "tagsMatched": [
-        "polizei",
-        "einbruch",
-        "ermittlung"
-      ]
-    },
-    "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
-      "imageId": "sport-01-spiel",
-      "pool": "sport",
-      "assignedAt": "2026-09-18T13:42:11.342Z",
-      "articleId": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
-      "articleDate": "2026-09-01T13:59:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "spieltag"
-      ]
-    },
-    "/sport/sc-golzheim-nachbarschaftsduell/": {
-      "imageId": "sport-02-zweikampf",
-      "pool": "sport",
-      "assignedAt": "2026-09-18T13:42:11.343Z",
-      "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
-      "articleDate": "2026-09-04T09:10:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "duell"
-      ]
-    },
-    "/sport/sc-merzenich-reserven-kreisliga-c/": {
-      "imageId": "sport-03-fussballplatz",
-      "pool": "sport",
-      "assignedAt": "2026-09-18T13:42:11.343Z",
-      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
-      "articleDate": "2026-09-04T09:20:00+02:00",
-      "tagsMatched": [
-        "sport",
-        "fussball",
-        "platz",
-        "rasen"
-      ]
-    },
-    "/sport/sc-merzenich-tabellenfuehrer/": {
-      "imageId": "sport-04-tor",
-      "pool": "sport",
-      "assignedAt": "2026-09-18T13:42:11.344Z",
-      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
-      "articleDate": "2026-09-04T09:30:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "tor"
-      ]
-    },
-    "/sport/sc-merzenich-oberzier-3-2/": {
-      "imageId": "sport-05-ball",
-      "pool": "sport",
-      "assignedAt": "2026-09-18T13:42:11.344Z",
-      "articleId": "2026-09-14-sc-merzenich-oberzier-3-2",
-      "articleDate": "2026-09-14T09:15:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "ball"
-      ]
-    },
-    "/sport/sv-morschenich-sportfreunde-dueren-5-3/": {
-      "imageId": "sport-11-mannschaft",
-      "pool": "sport",
-      "assignedAt": "2026-09-23T09:38:05.497Z",
-      "articleId": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
-      "articleDate": "2026-09-23T10:56:00+02:00",
-      "tagsMatched": [
-        "sport",
-        "fussball",
-        "mannschaft",
-        "team"
-      ]
-    },
-    "/sport/fc-golzheim-hambach-3-0/": {
-      "imageId": "sport-13-amateurfussball",
-      "pool": "sport",
-      "assignedAt": "2026-09-23T09:38:05.498Z",
-      "articleId": "2026-09-23-fc-golzheim-hambach-3-0",
-      "articleDate": "2026-09-23T11:00:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "kreisliga"
-      ]
-    },
-    "/sport/sc-merzenich-juelich-2-1/": {
-      "imageId": "sport-19-tornetz",
-      "pool": "sport",
-      "assignedAt": "2026-09-23T09:38:05.498Z",
-      "articleId": "2026-09-23-sc-merzenich-juelich-2-1",
-      "articleDate": "2026-09-23T11:04:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "tor"
-      ]
-    },
     "/leben/fahrrad-reparaturstationen/": {
       "imageId": "verkehr-01-strasse",
       "pool": "verkehr",
@@ -117,51 +12,160 @@
         "strasse"
       ]
     },
-    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
-      "imageId": "polizei-02-polizeibeamte",
-      "pool": "polizei",
-      "assignedAt": "2026-09-23T09:38:05.498Z",
-      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-      "articleDate": "2026-09-23T11:12:00+02:00",
-      "tagsMatched": [
-        "polizei",
-        "beamte"
-      ]
-    },
-    "/vereine/feuerwehr-girbelsrath-10-jahre/": {
-      "imageId": "feuerwehr-10-feuerwehrwache",
-      "pool": "feuerwehr",
-      "assignedAt": "2026-09-23T09:45:00.000Z",
-      "articleId": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
-      "articleDate": "2026-09-23T11:16:00+02:00",
-      "tagsMatched": [
-        "feuerwehr",
-        "wache",
-        "geraetehaus",
-        "jubilaeum"
-      ]
-    },
     "/leben/oldieabend-ortsfest-2026/": {
-      "imageId": "veranstaltungen-03-konzert",
-      "pool": "veranstaltungen",
-      "assignedAt": "2026-09-23T09:42:10.411Z",
+      "imageId": "web-termine-01-3e5529ed",
+      "pool": "termine",
+      "assignedAt": "2026-09-24T06:45:45.521Z",
       "articleId": "2026-09-23-oldieabend-ortsfest-2026",
       "articleDate": "2026-09-23T11:20:00+02:00",
       "tagsMatched": [
-        "veranstaltungen",
         "veranstaltung",
-        "musik"
+        "event",
+        "fest",
+        "markt"
       ]
     },
     "/vereine/fanclub-saisonauftakt/": {
-      "imageId": "vereine-01-vereinsleben",
+      "imageId": "web-vereine-01-4cbef12e",
       "pool": "vereine",
-      "assignedAt": "2026-09-23T18:14:10.997Z",
+      "assignedAt": "2026-09-24T06:45:45.510Z",
       "articleId": "2026-08-31-fanclub-saisonauftakt",
       "articleDate": "2026-08-31T12:00:00+02:00",
       "tagsMatched": [
         "vereine",
         "verein"
+      ]
+    },
+    "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
+      "imageId": "web-sport-01-96d22546",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.511Z",
+      "articleId": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
+      "articleDate": "2026-09-01T13:59:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sc-golzheim-nachbarschaftsduell/": {
+      "imageId": "web-sport-02-a1698323",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.512Z",
+      "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
+      "articleDate": "2026-09-04T09:10:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sc-merzenich-reserven-kreisliga-c/": {
+      "imageId": "web-sport-11-e56028f3",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.513Z",
+      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
+      "articleDate": "2026-09-04T09:20:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "platz",
+        "fußballplatz"
+      ]
+    },
+    "/sport/sc-merzenich-tabellenfuehrer/": {
+      "imageId": "web-sport-03-71ef7104",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.514Z",
+      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
+      "articleDate": "2026-09-04T09:30:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/blaulicht/einbruch-arnoldsweilerweg/": {
+      "imageId": "web-polizei-01-97532690",
+      "pool": "polizei",
+      "assignedAt": "2026-09-24T06:45:45.515Z",
+      "articleId": "2026-09-11-einbruch-arnoldsweilerweg",
+      "articleDate": "2026-09-11T08:45:00+02:00",
+      "tagsMatched": [
+        "polizei"
+      ]
+    },
+    "/sport/sc-merzenich-oberzier-3-2/": {
+      "imageId": "web-sport-04-d72d5754",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.517Z",
+      "articleId": "2026-09-14-sc-merzenich-oberzier-3-2",
+      "articleDate": "2026-09-14T09:15:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sv-morschenich-sportfreunde-dueren-5-3/": {
+      "imageId": "web-sport-05-2871089e",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.518Z",
+      "articleId": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
+      "articleDate": "2026-09-23T10:56:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/fc-golzheim-hambach-3-0/": {
+      "imageId": "web-sport-06-f02920e2",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.519Z",
+      "articleId": "2026-09-23-fc-golzheim-hambach-3-0",
+      "articleDate": "2026-09-23T11:00:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "amateur",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sc-merzenich-juelich-2-1/": {
+      "imageId": "web-sport-07-3b5e30ce",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T06:45:45.520Z",
+      "articleId": "2026-09-23-sc-merzenich-juelich-2-1",
+      "articleDate": "2026-09-23T11:04:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
+      "imageId": "web-polizei-02-7b659987",
+      "pool": "polizei",
+      "assignedAt": "2026-09-24T06:45:45.520Z",
+      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+      "articleDate": "2026-09-23T11:12:00+02:00",
+      "tagsMatched": [
+        "polizei",
+        "kontrolle"
+      ]
+    },
+    "/vereine/feuerwehr-girbelsrath-10-jahre/": {
+      "imageId": "web-feuerwehr-01-cacd4041",
+      "pool": "feuerwehr",
+      "assignedAt": "2026-09-24T06:45:45.521Z",
+      "articleId": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
+      "articleDate": "2026-09-23T11:16:00+02:00",
+      "tagsMatched": [
+        "feuerwehr",
+        "einsatz",
+        "gerätehaus"
       ]
     }
   }
