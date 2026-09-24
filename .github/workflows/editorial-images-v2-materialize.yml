@@ -55,6 +55,7 @@ jobs:
           node deploy/ortsmarke.mjs
           node deploy/inhaltsindex.mjs
           node deploy/termine-prerender.mjs
+          node deploy/ressort-menue.mjs
           node deploy/kopf-theme-einbinden.mjs
           # Nachgelagerte Prerender-Schritte können Artikelseiten neu schreiben.
           # Deshalb das Bildsystem am Ende noch einmal materialisieren, damit
@@ -67,6 +68,7 @@ jobs:
           node deploy/teaser-bilder.mjs --check
           node deploy/ortsmarke.mjs --check
           node deploy/marke.mjs --check
+          node deploy/ressort-menue.mjs --check
           python3 deploy/pool-varianten.py --check
           node --check chatgpt-site/assets/bild-fallbacks.js
           node qa/pruefung.mjs
