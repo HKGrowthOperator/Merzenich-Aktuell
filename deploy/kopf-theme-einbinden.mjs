@@ -107,6 +107,12 @@ const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="
   + `</div><p class="mega-wege"><span class="mega-titel">Für die Redaktion</span>${MEGA_WEGE.map(([u, t], i) => `<a class="${i ? 'mega-weg' : 'mega-weg primaer'}" href="${u}">${esc(t)}</a>`).join('')}</p></div></details>`;
 // Sport-Untermenue: stand bisher nur zur Laufzeit (app.js), jetzt im HTML.
 const SPORT_MEGA = '<div class="sport-mega"><div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div></div><!--/sport-mega-->';
+// Scroll-Kopf: das Monogramm aus der Wortmarke (deploy/marke.mjs) statt des
+// verkleinerten Logos bzw. eines Schrift-M. Der Link traegt den Namen, das
+// Bild ist Schmuck (alt=""), damit Screenreader nicht doppelt vorlesen.
+const MONO_V = (() => { const h = assetHash('/assets/marke/monogramm.svg'); return h ? `?v=${h}` : ''; })();
+const MONOGRAMM_LINK = `<a class="compact-brand" href="/" aria-label="Merzenich Aktuell – Startseite"><img class="ma-monogramm" src="/assets/marke/monogramm.svg${MONO_V}" width="35" height="35" alt=""></a>`;
+const MONOGRAMM_RE = /<a class="compact-brand" href="\/"(?: aria-label="[^"]*")?>\s*<img\b[^>]*>\s*<\/a>/;
 const MEHR_RE = /<details class="nav-more[^"]*">[\s\S]*?<\/details>/;
 const SPORT_RE = /<div class="sport-mega">[\s\S]*?<!--\/sport-mega-->/;
 const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
@@ -155,6 +161,7 @@ for (const pfad of seiten) {
   html = html.replace(/<details class="service-accordion"(?: hidden)?><summary>Wetter<\/summary><div><p>[^<]*<\/p><\/div><\/details>/g, '<details class="service-accordion" hidden><summary>Wetter</summary><div><p>Wetter wird geladen …</p></div></details>');
   // Aeltere Seiten: Einwilligungs-Platzhalter auf den Bildproxy umstellen.
   html = html.replace(/src="\/assets\/img\/extern-platzhalter\.svg" data-extern-src="([^"]*)"(?: class="extern-gesperrt")?/g, (m, u) => `src="${esc(bildUrl(u.replace(/&amp;/g, '&')))}"`);
+  if (MONOGRAMM_RE.test(html)) html = html.replace(MONOGRAMM_RE, () => MONOGRAMM_LINK);
   // Mega-Menue und Sport-Untermenue (siehe MEGA): nur im Kopf mit Ressortleiste.
   if (MEHR_RE.test(html) && html.includes('<nav class="mainnav"')) {
     html = html.replace(MEHR_RE, () => MEGA);

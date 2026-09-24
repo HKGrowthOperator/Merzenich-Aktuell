@@ -1,8 +1,8 @@
 /*
  * Kopf klappt beim Scrollen ein (Desktop): Der grosse Kopf mit Logo, Suche
  * und Uhrzeit schiebt sich nach oben weg, die Ressortleiste bleibt oben.
- * Im kompakten Zustand rendert der Design-Layer nur das M-Monogramm mit
- * goldener Signatur. Mobil bleibt der Kopf kompakt.
+ * Im kompakten Zustand steht links das Monogramm (assets/marke/monogramm.svg).
+ * Mobil bleibt der Kopf kompakt.
  */
 (() => {
   const html = document.documentElement;
@@ -63,7 +63,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=7960d60219';
+    style.href = '/assets/editorial-audit.css?v=b5014d4090';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }

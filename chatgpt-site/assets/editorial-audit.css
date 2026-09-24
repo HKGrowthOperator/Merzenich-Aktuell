@@ -90,10 +90,8 @@
 
 /* Sticky-Zustand: nur M + goldene Signatur statt vollem Logo. */
 .mainnav .compact-brand{position:relative!important;width:42px!important;height:48px!important;flex:0 0 42px!important;align-items:center!important;justify-content:center!important;text-decoration:none!important}
-.mainnav .compact-brand img{display:none!important}
 .mainnav.is-scrolled .compact-brand,html.kopf-kompakt .mainnav .compact-brand{display:flex!important}
-.mainnav .compact-brand::before{content:"M";font-family:var(--serif);font-weight:750;font-size:30px;line-height:1;color:var(--ma-ink)}
-.mainnav .compact-brand::after{content:"";position:absolute;left:7px;bottom:5px;width:29px;height:7px;background-repeat:no-repeat;background-size:100% 100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 14'%3E%3Cpath d='M1 8h20l3-3 3 5 4-8 4 10 3-5 3 2h16' fill='none' stroke='%23971725' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}/* =========================
+/* =========================
    EINKLAPPBARE ORTSLEISTE
    ========================= */
 /* 18.09.: Ortsleiste war beige (#f8f5ef) mit beigebraunem Schalter (#6d6251).

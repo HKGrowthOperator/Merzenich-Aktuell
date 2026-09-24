@@ -116,7 +116,6 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 .kopf-kompakt .masthead{transform:translateY(-100%);opacity:0;pointer-events:none}
 .kopf-kompakt .mainnav.is-scrolled{top:0}
 .kopf-kompakt .mainnav.is-scrolled .compact-brand{display:flex;align-items:center;flex:0 0 auto;margin-right:12px}
-.kopf-kompakt .mainnav.is-scrolled .compact-brand img{width:118px;height:auto;display:block}
 @media (prefers-reduced-motion:reduce){.masthead,.mainnav.is-scrolled{transition:none}}
 
 /* Symbolbilder (deploy/symbolbilder.mjs): gekennzeichnet, mit Quelle. */
@@ -373,3 +372,26 @@ html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;
    volle Breite statt schmaler Spalte neben leerer Bildflaeche. */
 .feed-lead.no-media{display:block}
 .feed-lead.no-media .lead-copy{max-width:68ch;padding:0}
+
+/* MA Editorial System 1.0: Scroll-Monogramm. Das M aus der Wortmarke mit
+   Merzenich-Linie und Bordeaux-Punkt (assets/marke/monogramm.svg, erzeugt von
+   deploy/marke.mjs). Es erscheint in 200 ms über Deckkraft und Massstab
+   0,96 zu 1, ohne Bewegung für Nutzer, die weniger Bewegung wünschen.
+   !important nur, weil editorial-audit.css (per kopf.js geladen) den
+   Kompaktzustand ebenfalls mit !important setzt. */
+.mainnav .compact-brand{width:auto!important;flex:0 0 auto!important;height:56px!important;margin-right:6px}
+.mainnav .compact-brand img.ma-monogramm{display:block!important;width:35px!important;height:35px!important;max-width:none}
+@keyframes ma-monogramm-ein{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:no-preference){
+  html.kopf-kompakt .mainnav .compact-brand img.ma-monogramm,.mainnav.is-scrolled .compact-brand img.ma-monogramm{animation:ma-monogramm-ein 200ms cubic-bezier(.22,1,.36,1) both;transform-origin:50% 60%}
+}
+
+/* Merzenich-Linie der Navigation: 1 px Unterkante, der aktuelle Ressortabschnitt
+   liegt als Bordeaux-Segment genau auf dieser Linie statt darunter zu hängen.
+   Zeile und Links sind dafür 57 px hoch (56 px Zeile + 1 px Linie). */
+@media(min-width:768px){
+  .mainnav .navrow{overflow:visible}
+  .mainnav .navscroll{height:57px!important;align-self:flex-start}
+  .mainnav .navrow .navscroll>a{box-sizing:border-box;height:57px;display:inline-flex!important;align-items:center;padding:0!important;border-bottom:2px solid transparent!important}
+  .mainnav .navrow .navscroll>a[aria-current]{border-bottom-color:var(--ma-red,#971725)!important}
+}

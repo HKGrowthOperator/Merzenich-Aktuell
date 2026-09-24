@@ -5,8 +5,8 @@
  "start_url": "/?source=pwa",
  "scope": "/",
  "display": "standalone",
- "background_color": "#0c0b0a",
- "theme_color": "#0c0b0a",
+ "background_color": "#fdfdfc",
+ "theme_color": "#fdfdfc",
  "lang": "de",
  "categories": [
   "news"

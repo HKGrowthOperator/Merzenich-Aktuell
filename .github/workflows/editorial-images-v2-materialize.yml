@@ -45,6 +45,7 @@ jobs:
 
       - name: Generate image library and article assignments
         run: |
+          node deploy/marke.mjs
           node deploy/symbolbilder.mjs
           node deploy/markt-prerender.mjs
           node deploy/sport-prerender.mjs
@@ -65,6 +66,7 @@ jobs:
           node deploy/symbolbilder.mjs --check
           node deploy/teaser-bilder.mjs --check
           node deploy/ortsmarke.mjs --check
+          node deploy/marke.mjs --check
           python3 deploy/pool-varianten.py --check
           node --check chatgpt-site/assets/bild-fallbacks.js
           node qa/pruefung.mjs
