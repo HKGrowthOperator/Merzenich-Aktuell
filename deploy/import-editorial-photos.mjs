@@ -41,7 +41,7 @@ const POOLS = {
   },
   blaulicht: {
     tags: ['blaulicht','einsatz','rettung','notfall'],
-    queries: ['deepcat:"Ambulances in North Rhine-Westphalia"', 'deepcat:"Rescue stations in North Rhine-Westphalia"', 'Rettungshubschrauber Christoph', 'Notarzt Nordrhein-Westfalen', 'deepcat:"Emergency medical services in North Rhine-Westphalia"', 'deepcat:"Ambulances in Germany"', 'Rettungswache Nordrhein-Westfalen', 'Rettungswagen Nordrhein-Westfalen', 'Rettungshubschrauber Nordrhein-Westfalen', 'Rettungsdienst Kreis Düren', 'Notarzteinsatzfahrzeug Deutschland']
+    queries: ['deepcat:"Ambulances in North Rhine-Westphalia"', 'deepcat:"Rescue stations in North Rhine-Westphalia"', 'Rettungshubschrauber Christoph', 'Notarzt Nordrhein-Westfalen', 'Rettungswache Kreis Düren', 'Rettungswache Köln', 'Rettungswagen Seitenansicht', 'Notarztwagen', 'deepcat:"Emergency medical services in North Rhine-Westphalia"', 'deepcat:"Ambulances in Germany"', 'Rettungswache Nordrhein-Westfalen', 'Rettungswagen Nordrhein-Westfalen', 'Rettungshubschrauber Nordrhein-Westfalen', 'Rettungsdienst Kreis Düren', 'Notarzteinsatzfahrzeug Deutschland']
   },
   polizei: {
     tags: ['polizei','streifenwagen','einsatz','kontrolle'],
@@ -100,6 +100,8 @@ const SPORT_FREMD = /(bildstock|wegekreuz|kreuz|kapelle|denkmal|gedenk|heiligenh
 const BRAND_FREMD = /(kerze|candle|kapelle|kirche|church|dom\b|grabst|tabernakel|advent|osterfeuer|lagerfeuer|campfire|grill)/i;
 // Deutsche Brandfotos tragen deutsche Titel; "Fire in ..." war stets Ausland.
 // Jahreszahlen bis 1969 im Titel sind historische Aufnahmen.
+// Kieler Stadtarchiv ("(Kiel 57.459)") und Schwarzweiss sind historische Aufnahmen.
+const ARCHIV = /(\(kiel \d|stadtarchiv|black and white|schwarzwei)/i;
 const BRAND_TITEL_FREMD = /(\bfire\b|incendi|incendie|\bbrann|\b1[89]\d\d\b(?<!\b19[7-9]\d)(?<!\b20\d\d))/i;
 // Einsatzkräfte tragen je Bundesland eigene Farben und Wappen.
 const ANDERES_LAND = /(baden-württemberg|baden-wuerttemberg|bayern|bavaria|hessen|hamburg|saarland|niedersachsen|berlin|sachsen|thüringen|brandenburg|rheinland-pfalz|schleswig|mecklenburg|bremen|heidelberg|karlsruhe|stuttgart|münchen|munich|fulda)/i;
@@ -188,7 +190,7 @@ function usable(c, pool) {
   if (BAD_KATEGORIE.test(c.categories)) return false;
   if (AUSLAND.test(text) || FREMDE_SCHRIFT.test(c.title)) return false;
   if (pool === 'sport' && SPORT_FREMD.test(c.title)) return false;
-  if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title))) return false;
+  if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title) || ARCHIV.test(text))) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
   if (pool === 'aktuell' && !['Merzenich', 'Kreis Düren'].includes(localityFor(text))) return false;

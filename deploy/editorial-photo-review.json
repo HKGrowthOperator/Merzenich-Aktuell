@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2299,6 +2299,111 @@
       "titel": "File:Krippken Mettingen 7.jpg",
       "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
       "runde": 5
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 5,
+      "titel": "File:Solingen Rettungswagen.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 6
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 19,
+      "titel": "File:Mercedes Sprinter Ambulance (49761337746).jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 6,
+      "titel": "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 036.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.459).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:Großbrand im Gewerbegebiet Ihlberg in Russee (Kiel 53.840).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 13,
+      "titel": "File:Großbrand im Wohn- und Wirtschaftsgebäude am Kieler Weg 22 in Meimersdorf (Kiel 57.346).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.460).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Großbrand im Wellseer Moor (Kiel 66.010).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Großbrand im Wellseer Moor (Kiel 66.011).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Großbrand im Wellseer Moor (Kiel 66.012).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Großbrand auf dem Schrottplatz der Firma Michael Radomski am Poppenbrügger Weg in Wellsee (Kiel 67.381).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 6
+    },
+    {
+      "pool": "leben",
+      "nr": 17,
+      "titel": "File:Haus am Dorfplatz-02.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 6
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Artificial grass playground – Brezovec - Dolný Kubín 04.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 6
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:Eichstätt - Kunstrasenplatz Schottenau 23.10.2024.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 6
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:26-01 Bücherschrank Rewe Zülpich.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild",
+      "runde": 6
     }
   ],
   "freigegeben": [
@@ -2514,6 +2619,11 @@
     "File:Rorup, Bürgerhaus -- 2013 -- 9865 (bw).jpg",
     "File:Eichstätt Schottenau -Kunstrasenplatz Spielfeld (2018-07 2).jpg",
     "File:Artificial grass playground – Brezovec - Dolný Kubín 02.jpg",
-    "File:26-01 Öffentlicher Bücherschrank Vettweiß 03.jpg"
+    "File:26-01 Öffentlicher Bücherschrank Vettweiß 03.jpg",
+    "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 032.jpg",
+    "File:THW Bagger bei Grossbrand in Blomberg.jpg",
+    "File:Haus am Dorfplatz-01.jpg",
+    "File:Artificial grass playground – Brezovec - Dolný Kubín 05.jpg",
+    "File:Artificial turf on Straße des 17. Juni in Berlin 2024-05-24 03.jpg"
   ]
 }

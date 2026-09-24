@@ -1,6 +1,6 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Freigegeben sind 213 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Freigegeben sind 218 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
@@ -8,23 +8,23 @@ Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Co
 |---|---|
 | Motiv passt nicht zum Pool | 78 |
 | Militär- oder Auslandsmotiv | 45 |
-| Fast gleiches Motiv wie ein anderes Bild im Pool | 37 |
-| Lesbares Kfz-Kennzeichen | 32 |
+| Fast gleiches Motiv wie ein anderes Bild im Pool | 40 |
+| Lesbares Kfz-Kennzeichen | 34 |
 | Ortsfremder Name, Schild oder Tafel lesbar | 23 |
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
 | Abzeichen, Wappen oder Logo als Motiv | 20 |
 | Grafik, Karte oder Satellitenbild statt Foto | 19 |
-| Unscharf oder ohne Bildaussage | 14 |
+| Unscharf oder ohne Bildaussage | 15 |
 | Erkennbare Personen als Hauptmotiv | 12 |
 | Erkennbare Personen des öffentlichen Lebens | 11 |
+| Historische Aufnahme, taugt nicht als heutiges Symbolbild | 10 |
 | Demonstration mit Parolen und erkennbaren Personen | 9 |
 | Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland) | 8 |
-| Markenetikett oder Werbeschriftzug im Bild | 7 |
+| Markenetikett oder Werbeschriftzug im Bild | 8 |
 | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ | 4 |
 | Graffiti mit lesbarer Schrift | 4 |
 | Ortsfremdes Wahrzeichen | 2 |
 | Extremes Panoramaformat, taugt nicht für Bildflächen | 2 |
-| Historische Aufnahme, taugt nicht als heutiges Symbolbild | 2 |
 | Unfallstelle mit Personen | 1 |
 | Transparent mit politischer Parole | 1 |
 
@@ -43,7 +43,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 1 | 19 | Wohn- und Geschäftshaus Eigelstein 89-91, Köln-4719.jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 | 1 | 20 | Köln (Germany) (23573767200).jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 
-### Blaulicht: 52 entfernt
+### Blaulicht: 54 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -99,6 +99,8 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 4 | 19 | Wuppertal Nevigeser Straße 2015 081.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 5 | 05 | Wuppertal August-Bebel-Straße 2013 020.JPG | Lesbares Kfz-Kennzeichen |
 | 5 | 19 | GER Wuppertal Universität 089 2016 - Streetfood-Event.jpg | Lesbares Kfz-Kennzeichen |
+| 6 | 05 | Solingen Rettungswagen.jpg | Lesbares Kfz-Kennzeichen |
+| 6 | 19 | Mercedes Sprinter Ambulance (49761337746).jpg | Lesbares Kfz-Kennzeichen |
 
 ### Polizei: 28 entfernt
 
@@ -154,7 +156,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
 | 4 | 12 | Übungsspange außen.jpg | Lesbares Kfz-Kennzeichen |
 
-### Brand: 76 entfernt
+### Brand: 85 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -234,8 +236,17 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 5 | 17 | Witten Feuerwehr Acetylenflasche.jpg | Motiv passt nicht zum Pool |
 | 5 | 18 | Großbrand im Barackenlager an der Friedhofstraße in Neumühlen-Dietrichsdorf (Kiel 56.437).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
 | 5 | 20 | Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.458).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 06 | Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 036.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 6 | 09 | Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.459).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 12 | Großbrand im Gewerbegebiet Ihlberg in Russee (Kiel 53.840).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 13 | Großbrand im Wohn- und Wirtschaftsgebäude am Kieler Weg 22 in Meimersdorf (Kiel 57.346).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 14 | Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.460).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 15 | Großbrand im Wellseer Moor (Kiel 66.010).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 16 | Großbrand im Wellseer Moor (Kiel 66.011).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 17 | Großbrand im Wellseer Moor (Kiel 66.012).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
+| 6 | 18 | Großbrand auf dem Schrottplatz der Firma Michael Radomski am Poppenbrügger Weg in Wellsee (Kiel 67.381).jpg | Historische Aufnahme, taugt nicht als heutiges Symbolbild |
 
-### Sport: 46 entfernt
+### Sport: 48 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -285,6 +296,8 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 5 | 08 | Artificial grass playground – Brezovec - Dolný Kubín 03.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 5 | 14 | Eichstätt Kunstrasenplatz Schottenau 2019.jpg | Unscharf oder ohne Bildaussage |
 | 5 | 20 | FMF Beach Soccer Arena artificial turf.jpg | Militär- oder Auslandsmotiv |
+| 6 | 08 | Artificial grass playground – Brezovec - Dolný Kubín 04.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 6 | 20 | Eichstätt - Kunstrasenplatz Schottenau 23.10.2024.jpg | Unscharf oder ohne Bildaussage |
 
 ### Termine: 4 entfernt
 
@@ -295,7 +308,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 1 | 13 | Münster, Domplatz, Wochenmarkt -- 2019 -- 2648.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 2 | 04 | Münster, St.-Paulus-Dom -- 2019 -- 2698.jpg | Ortsfremdes Wahrzeichen |
 
-### Vereine: 36 entfernt
+### Vereine: 37 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -335,8 +348,9 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 4 | 02 | Krippken Mettingen 6.jpg | Motiv passt nicht zum Pool |
 | 4 | 14 | 26-01 Bücherschrank Weilerswist 01.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 5 | 02 | Krippken Mettingen 7.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 6 | 02 | 26-01 Bücherschrank Rewe Zülpich.jpg | Markenetikett oder Werbeschriftzug im Bild |
 
-### Leben: 38 entfernt
+### Leben: 39 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -378,6 +392,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 4 | 17 | Gasthaus und Bauernhof, Am Dorfplatz 6 (Pfünz).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 | 5 | 07 | Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 9.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 5 | 17 | Haus am Dorfplatz-03-Schild.jpg | Ortsfremder Name, Schild oder Tafel lesbar |
+| 6 | 17 | Haus am Dorfplatz-02.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
 ### Wirtschaft: 6 entfernt
 
