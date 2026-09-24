@@ -1,0 +1,19 @@
+{
+ "quelle": "gemeinde",
+ "abgerufen": "2026-09-24T12:48:25.517Z",
+ "listen": [
+  {
+   "url": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
+   "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
+   "abgerufen": "2026-09-24T12:48:22.994Z",
+   "status": 302
+  },
+  {
+   "url": "https://www.gemeinde-merzenich.de/aktuelles/",
+   "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/",
+   "abgerufen": "2026-09-24T12:48:24.316Z",
+   "status": 302
+  }
+ ],
+ "details": []
+}

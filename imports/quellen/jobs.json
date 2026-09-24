@@ -1,0 +1,20 @@
+{
+ "quelle": "jobs",
+ "abgerufen": "2026-09-24T12:48:31.935Z",
+ "listen": [
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=1&angebotsart=1",
+   "abgerufen": "2026-09-24T12:48:30.166Z",
+   "status": 403,
+   "gesamt": null,
+   "stellen": []
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=1&angebotsart=4",
+   "abgerufen": "2026-09-24T12:48:31.135Z",
+   "status": 403,
+   "gesamt": null,
+   "stellen": []
+  }
+ ]
+}
