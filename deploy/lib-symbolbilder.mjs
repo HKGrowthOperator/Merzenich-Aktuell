@@ -13,6 +13,9 @@ export const KATEGORIEN = [
   'veranstaltungen', 'leben', 'wirtschaft', 'jobs', 'immobilien', 'familie',
   'trauer', 'kultur', 'schule', 'kirche',
 ];
+export const FOTO_KATEGORIEN = ['aktuell', 'blaulicht', 'brand', 'termine', 'tipp', 'menschen'];
+export const ALLE_KATEGORIEN = [...KATEGORIEN, ...FOTO_KATEGORIEN];
+export const FOTO_MANIFEST_DATEI = `${DATEN_WURZEL}/editorial-photo-pools.json`;
 
 const LABELS = {
   sport: 'Sport / Fußball', polizei: 'Polizei', feuerwehr: 'Feuerwehr', verkehr: 'Verkehr',
@@ -358,6 +361,20 @@ festgottesdienst|Festgottesdienst|kirche,gottesdienst,fest`,
 const xml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;' }[c]));
 const norm = (s) => String(s || '').toLocaleLowerCase('de-DE').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
 const sha = (s) => createHash('sha256').update(s).digest('hex');
+const shaDatei = (pfad, format = '') => {
+  const inhalt = readFileSync(pfad);
+  return format === 'svg' ? sha(inhalt.toString('utf8').trimEnd()) : createHash('sha256').update(inhalt).digest('hex');
+};
+function fotoManifestLesen(wurzel) {
+  const pfad = join(wurzel, FOTO_MANIFEST_DATEI);
+  if (!existsSync(pfad)) return { version: 1, generated: '', images: [] };
+  try {
+    const x = JSON.parse(readFileSync(pfad, 'utf8'));
+    return { version: x.version || 1, generated: x.generated || '', images: Array.isArray(x.images) ? x.images : [] };
+  } catch {
+    return { version: 1, generated: '', images: [] };
+  }
+}
 const entries = (pool) => RAW[pool].trim().split('\n').map((line, i) => {
   const [slug, name, tagRoh = ''] = line.split('|');
   const tags = [...new Set([pool, ...tagRoh.split(',').map((x) => x.trim()).filter(Boolean), ...slug.split('-')])];
@@ -593,7 +610,13 @@ export function bibliothekErzeugen(wurzel, { schreiben = true } = {}) {
     });
     schreibeWennAnders(join(wurzel, SYMBOL_WURZEL, pool, 'lizenzen.json'), JSON.stringify(liz, null, 2) + '\n', schreiben, geaendert);
   }
-  const payload = { version: 2, generated: RECHTE_GEPRUEFT_AM, minimumPerPool: MINDEST_POOL, sourceOfTruth: 'deploy/lib-symbolbilder.mjs', images: alle };
+  const fotoManifest = fotoManifestLesen(wurzel);
+  for (const m of fotoManifest.images || []) {
+    const pfad = join(wurzel, 'chatgpt-site', String(m.src || '').replace(/^\//, ''));
+    if (!m?.id || !m?.pool || !existsSync(pfad)) continue;
+    alle.push(m);
+  }
+  const payload = { version: 2, generated: RECHTE_GEPRUEFT_AM, minimumPerPool: MINDEST_POOL, sourceOfTruth: 'deploy/lib-symbolbilder.mjs + deploy/import-editorial-photos.mjs', images: alle };
   schreibeWennAnders(join(wurzel, BIBLIOTHEK_DATEI), JSON.stringify(payload, null, 2) + '\n', schreiben, geaendert);
   return { geaendert, library: payload };
 }
@@ -612,7 +635,7 @@ export function poolLesen(wurzel, kategorie) {
     const fehlt = ['id','src','alt','credit','source','license','rightsCheckedAt','tags'].filter((k) => !m[k] || (k === 'tags' && !Array.isArray(m[k])));
     if (fehlt.length) { uebersprungen.push(`${m.id || kategorie}: Metadaten fehlen: ${fehlt.join(', ')}`); continue; }
     if (!existsSync(pfad)) { uebersprungen.push(`${m.id}: Datei fehlt (${m.src})`); continue; }
-    const inhalt = readFileSync(pfad, 'utf8'); const check = sha(inhalt.trimEnd());
+    const check = shaDatei(pfad, m.format);
     if (m.checksum && m.checksum !== check) { uebersprungen.push(`${m.id}: Checksumme passt nicht`); continue; }
     if (hashes.has(check)) { uebersprungen.push(`${m.id}: exakte Bilddublette im Pool`); continue; }
     hashes.add(check); motive.push(m);
@@ -622,7 +645,7 @@ export function poolLesen(wurzel, kategorie) {
 
 export function poolsLesen(wurzel) {
   const pools = {}; const hinweise = [];
-  for (const k of KATEGORIEN) { const { motive, uebersprungen } = poolLesen(wurzel, k); pools[k] = motive; hinweise.push(...uebersprungen); }
+  for (const k of ALLE_KATEGORIEN) { const { motive, uebersprungen } = poolLesen(wurzel, k); pools[k] = motive; hinweise.push(...uebersprungen); }
   return { pools, hinweise };
 }
 
@@ -633,26 +656,32 @@ export function kategorieFuer(a) {
   // Dominante redaktionelle Themen im Titel/Teaser schlagen beiläufige Wörter
   // im Fließtext. So landet z. B. ein Feuerwehr-Jubiläum nicht im Familien-
   // Pool und ein Ortsfest mit Verkehrshinweis nicht im Verkehrs-Pool.
+  if (pfad.includes('/blaulicht/') && /\bbrand|brennt|rauch|feuer\b/.test(kopftext)) return 'brand';
   if (/feuerwehr|loeschgruppe|loeschzug|brandwehr/.test(kopftext)) return 'feuerwehr';
-  if (pfad.includes('/termine/') || /oldieabend|ortsfest|veranstaltung|konzert|kirmes|dorffest|strassenfest/.test(kopftext)) return 'veranstaltungen';
+  if (pfad.includes('/termine/') || /oldieabend|ortsfest|veranstaltung|konzert|kirmes|dorffest|strassenfest/.test(kopftext)) return 'termine';
   if (pfad.includes('/traueranzeigen/') || /\btrauer|nachruf|gedenk|verstorben|kondolenz/.test(text)) return 'trauer';
   if (pfad.includes('/familienanzeigen/') || /hochzeit|trauung|heirat|geburt|jubilaum|familienanzeige/.test(text)) return 'familie';
   if (pfad.includes('/jobs/') || /stellenmarkt|stellenangebot|ausbildung|vollzeit|teilzeit|karriere/.test(text)) return 'jobs';
   if (pfad.includes('/immobilien/') || /immobil|kaltmiete|wohnfl|grundst|wohnung|wohnhaus/.test(text)) return 'immobilien';
   if (pfad.includes('/blaulicht/')) {
-    if (/feuerwehr|losch|brand|brennt|rauch|drehleiter|tierrettung|technische hilfe/.test(text)) return 'feuerwehr';
-    return 'polizei';
+    if (/\bbrand|brennt|rauch|feuer\b/.test(text)) return 'brand';
+    if (/feuerwehr|losch|drehleiter|tierrettung|technische hilfe/.test(text)) return 'feuerwehr';
+    if (/polizei|einbruch|tatort|fahndung|zeugen|kontrolle|kripo|diebstahl|unfallflucht/.test(text)) return 'polizei';
+    return 'blaulicht';
   }
   if (/verkehr|sperrung|baustelle|umleitung|strasse|bahn|bus|opnv|fahrbahn/.test(text)) return 'verkehr';
   if (pfad.includes('/sport/') || /fussball|kreisliga|spieltag|tabelle|sc 1919|fc golzheim/.test(text)) return 'sport';
   if (pfad.includes('/vereine/') || /verein|schutzen|karneval|fanclub|ehrenamt/.test(text)) return 'vereine';
-  if (pfad.includes('/termine/') || /veranstaltung|fest|konzert|markt|wochenende|kirmes/.test(text)) return 'veranstaltungen';
+  if (pfad.includes('/menschen/') || /portraet|portrait|interview|person der woche|menschen aus/.test(kopftext)) return 'menschen';
+  if (pfad.includes('/tipp/') || pfad.includes('/freizeit/') || /ausflug|wandern|radweg|freizeittipp|wochenendtipp/.test(kopftext)) return 'tipp';
+  if (pfad.includes('/termine/') || /veranstaltung|fest|konzert|markt|wochenende|kirmes/.test(text)) return 'termine';
   if (pfad.includes('/kultur/') || /kultur|theater|ausstellung|lesung|museum|kunst/.test(text)) return 'kultur';
   if (/schule|kita|kindergarten|unterricht|bildung|schuler/.test(text)) return 'schule';
   if (/kirche|gottesdienst|pfarr|gemeindehaus|konfirmation|seelsorge/.test(text)) return 'kirche';
-  if (pfad.includes('/wirtschaft/') || /unternehmen|betrieb|gewerbe|forderung|wirtschaft/.test(text)) return 'wirtschaft';
+  if (pfad.includes('/wirtschaft/') || /unternehmen|betrieb|gewerbe|forderung|wirtschaft|handel|strukturwandel/.test(text)) return 'wirtschaft';
   if (pfad.includes('/rathaus/') || /gemeinde|rat|verwaltung|burgermeister|beschluss/.test(text)) return 'gemeinde';
-  return 'leben';
+  if (pfad.includes('/leben/')) return 'leben';
+  return 'aktuell';
 }
 
 export function istUnzulaessigesLogo(a) {
@@ -690,9 +719,11 @@ function treffer(m, text) { return (m.tags || []).reduce((n, t) => n + (text.inc
 export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }) {
   const alt = bestand?.assignments || {}; const assignments = { ...alt };
   const gueltig = new Map(); for (const [pool, motive] of Object.entries(pools)) for (const m of motive) gueltig.set(m.id, m);
+  const poolHatFoto = new Set(Object.entries(pools).filter(([, motive]) => motive.some((m) => m.photo === true || (m.format && m.format !== 'svg'))).map(([pool]) => pool));
   const usage = new Map();
   for (const [k, z] of Object.entries(assignments)) {
-    const m = gueltig.get(z.imageId); if (!m || z.pool !== m.pool) { delete assignments[k]; continue; }
+    const m = gueltig.get(z.imageId);
+    if (!m || z.pool !== m.pool || (m.format === 'svg' && poolHatFoto.has(m.pool))) { delete assignments[k]; continue; }
     usage.set(m.id, (usage.get(m.id) || 0) + 1);
   }
   let dirty = JSON.stringify(assignments) !== JSON.stringify(alt);
@@ -706,8 +737,8 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     if (vorhanden && vorhanden.pool === pool && gueltig.has(vorhanden.imageId)) { zuordnung.set(key, gueltig.get(vorhanden.imageId)); continue; }
     const text = artikelText(a);
     const kandidaten = [...liste].sort((x, y) => {
-      const sx = treffer(x, text) * 3 - (usage.get(x.id) || 0) * 4;
-      const sy = treffer(y, text) * 3 - (usage.get(y.id) || 0) * 4;
+      const sx = (x.photo === true ? 1000 : 0) + treffer(x, text) * 3 - (usage.get(x.id) || 0) * 4;
+      const sy = (y.photo === true ? 1000 : 0) + treffer(y, text) * 3 - (usage.get(y.id) || 0) * 4;
       return sy - sx || (usage.get(x.id) || 0) - (usage.get(y.id) || 0) || x.id.localeCompare(y.id);
     });
     const m = kandidaten[0]; usage.set(m.id, (usage.get(m.id) || 0) + 1);
@@ -735,7 +766,7 @@ export function selbsttest() {
 
 export function bibliothekAudit(wurzel) {
   const { pools, hinweise } = poolsLesen(wurzel); const fehler = [...hinweise]; const status = {};
-  for (const k of KATEGORIEN) { const n = pools[k]?.length || 0; status[k] = n; if (n < MINDEST_POOL) fehler.push(`Pool ${k}: ${n} gültige Motive, benötigt mindestens ${MINDEST_POOL}`); }
+  for (const k of ALLE_KATEGORIEN) { const n = pools[k]?.length || 0; status[k] = n; if (n < MINDEST_POOL) fehler.push(`Pool ${k}: ${n} gültige Motive, benötigt mindestens ${MINDEST_POOL}`); }
   const sport = pools.sport || []; if (sport.some((m) => /logo|wappen/i.test(`${m.id} ${m.alt} ${(m.tags || []).join(' ')}`))) fehler.push('Sport-Pool enthält ein Vereinslogo/Wappen.');
   return { pools, status, fehler };
 }

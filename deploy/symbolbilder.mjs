@@ -18,7 +18,7 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { artikelSammeln, esc, SITE_URL } from './lib-artikel.mjs';
 import {
-  RECHTE_GEPRUEFT_AM, KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
+  RECHTE_GEPRUEFT_AM, KATEGORIEN, ALLE_KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
   bibliothekErzeugen, bibliothekAudit, zuordnungenLesen, zuordnungenSchreiben,
   vergibSymbolbilder, selbsttest, kategorieFuer,
 } from './lib-symbolbilder.mjs';
@@ -160,7 +160,7 @@ function sichtbareDublettenzahl() {
   let n = 0;
   for (const pfad of htmlDateien(site)) {
     const html = readFileSync(pfad, 'utf8'); const z = new Map();
-    for (const m of html.matchAll(/<img\b[^>]*src="(\/assets\/symbolbilder\/[^\"]+)"/g)) z.set(m[1], (z.get(m[1]) || 0) + 1);
+    for (const m of html.matchAll(/<img\b[^>]*src="(\/assets\/(?:symbolbilder|editorial-pools)\/[^\"]+)"/g)) z.set(m[1], (z.get(m[1]) || 0) + 1);
     for (const c of z.values()) if (c > 1) n += c - 1;
   }
   return n;
@@ -183,7 +183,8 @@ function contentAudit() {
     if (istAllgemeinesVereinslogo(a)) { count.logos++; fehler.push(`${a.url}: Vereinslogo/Wappen wird als allgemeines Newsfoto verwendet`); }
     if (a.bild?.symbol) {
       const pool = kategorieFuer(a);
-      if (!String(a.bild.src).includes(`/assets/symbolbilder/${pool}/`)) fehler.push(`${a.url}: Symbolbild stammt nicht aus erwartetem Pool ${pool}`);
+      const ok = String(a.bild.src).includes(`/assets/symbolbilder/${pool}/`) || String(a.bild.src).includes(`/assets/editorial-pools/${pool}/`);
+      if (!ok) fehler.push(`${a.url}: Symbolbild stammt nicht aus erwartetem Pool ${pool}`);
     }
   }
   return count;
@@ -233,7 +234,7 @@ if (duplicates > 0) console.log(`Hinweis: ${duplicates} sichtbare Wiederholung(e
 
 // 5) Bericht: nur echte, gültige und eindeutige Motive zählen.
 console.log('EDITORIAL IMAGE LIBRARY');
-for (const k of KATEGORIEN) console.log(`${k.padEnd(18)} ${String(audit.status[k] || 0).padStart(2)} ${(audit.status[k] || 0) >= MINDEST_POOL ? 'PASS' : 'FAIL'}`);
+for (const k of ALLE_KATEGORIEN) console.log(`${k.padEnd(18)} ${String(audit.status[k] || 0).padStart(2)} ${(audit.status[k] || 0) >= MINDEST_POOL ? 'PASS' : 'FAIL'}`);
 console.log(`Gesamt              ${Object.values(audit.status).reduce((a,b) => a+b,0)}`);
 console.log('ROTATION');
 console.log('neue Meldungen:       ' + (fehler.some((x) => x.includes('Rotation/Selftest')) ? 'FAIL' : 'PASS'));
