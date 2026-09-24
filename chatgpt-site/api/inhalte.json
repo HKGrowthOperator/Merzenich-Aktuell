@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-23T11:20:00+02:00",
- "anzahl": 51,
+ "generated": "2026-09-24T14:20:00+02:00",
+ "anzahl": 58,
  "bestand": {
-  "gesamt": 51,
+  "gesamt": 58,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 18,
+   "blaulicht": 22,
    "sport": 8,
    "rathaus": 7,
-   "leben": 9,
+   "leben": 12,
    "wirtschaft": 6,
    "tipp": 0,
    "menschen": 0,
@@ -16,20 +16,20 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 35,
-   "golzheim": 3,
-   "girbelsrath": 7,
-   "morschenich": 4,
+   "merzenich": 39,
+   "golzheim": 4,
+   "girbelsrath": 8,
+   "morschenich": 5,
    "buergewald": 2,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 51,
+    "anzahl": 58,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 18,
+    "anzahl": 22,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 9,
+    "anzahl": 12,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,19 +65,19 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 35,
+    "anzahl": 39,
     "liste": "gepflegt"
    },
    "/golzheim/": {
-    "anzahl": 3,
+    "anzahl": 4,
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 7,
+    "anzahl": 8,
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 4,
+    "anzahl": 5,
     "liste": "gepflegt"
    },
    "/buergewald/": {
@@ -103,6 +103,251 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-09-24-grundschulen-tag-offene-tuer",
+   "url": "/leben/grundschulen-tag-offene-tuer/",
+   "titel": "Grundschulen in Golzheim und Merzenich öffnen am Samstag ihre Türen",
+   "teaser": "Die beiden Grundschulen laden am 26. September zum Tag der offenen Tür ein. In Golzheim startet das Programm um 8 Uhr, in Merzenich um 9 Uhr.",
+   "kicker": "Schule",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-09-24T14:20:00+02:00",
+   "aktualisiert": "2026-09-24T14:20:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "grundschule",
+     "label": "Grundschule"
+    },
+    {
+     "slug": "golzheim",
+     "label": "Golzheim"
+    },
+    {
+     "slug": "faire-woche",
+     "label": "Faire Woche"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-muellsammelaktion-faire-woche",
+   "url": "/leben/muellsammelaktion-faire-woche/",
+   "titel": "Mehr als 40 Helfer sammeln Müll in der Gemeinde Merzenich",
+   "teaser": "Bei einer Aktion im Rahmen der Fairen Woche haben mehr als 40 Kinder und Erwachsene Wege und Bürgersteige in der Gemeinde von Müll befreit.",
+   "kicker": "Faire Woche",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T14:18:00+02:00",
+   "aktualisiert": "2026-09-24T14:18:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "faire-woche",
+     "label": "Faire Woche"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    },
+    {
+     "slug": "muellsammelaktion",
+     "label": "Müllsammelaktion"
+    },
+    {
+     "slug": "umwelt",
+     "label": "Umwelt"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-oelspur-windmuehle",
+   "url": "/blaulicht/oelspur-windmuehle/",
+   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz",
+   "teaser": "Die Feuerwehr Merzenich rückte am 21. September zu einer Ölspur im Bereich An der Windmühle aus. Die Verunreinigung wurde abgestreut und aufgenommen.",
+   "kicker": "Feuerwehr",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T14:16:00+02:00",
+   "aktualisiert": "2026-09-24T14:16:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "hilfeleistung",
+     "label": "Hilfeleistung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg 1600w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1600,
+    "height": 950,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-katze-baum-vogelrute",
+   "url": "/blaulicht/katze-baum-vogelrute/",
+   "titel": "Katze in der Vogelrute auf Baum – Feuerwehr rückt zur Tierrettung aus",
+   "teaser": "Eine Katze saß in der Vogelrute auf einem Baum fest. Als die Feuerwehr eine Leiter bereitstellte, kam das Tier selbst herunter und lief davon.",
+   "kicker": "Tierrettung",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T14:14:00+02:00",
+   "aktualisiert": "2026-09-24T14:14:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "tierrettung",
+     "label": "Tierrettung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg 1600w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "TUBS / Wikimedia Commons · Public domain",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-vortrag-zwangsarbeit-merzenich",
+   "url": "/leben/vortrag-zwangsarbeit-merzenich/",
+   "titel": "Vortrag beleuchtet Zwangsarbeit in Merzenich",
+   "teaser": "Historikerin Inga Mehlert-Garms stellt am 15. Oktober neue Forschungen zur Zwangsarbeit in Merzenich vor. Der Eintritt ins Pfarrheim ist frei.",
+   "kicker": "Ortsgeschichte",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T14:12:00+02:00",
+   "aktualisiert": "2026-09-24T14:12:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "veranstaltungen",
+     "label": "Veranstaltungen"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-oelspur-girbelsrath",
+   "url": "/blaulicht/oelspur-girbelsrath/",
+   "titel": "Ölspur in Girbelsrath: Feuerwehr beseitigt Verunreinigung in der Dechant-Fabry-Straße",
+   "teaser": "Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.",
+   "kicker": "Feuerwehr",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-09-24T14:10:00+02:00",
+   "aktualisiert": "2026-09-24T14:10:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    },
+    {
+     "slug": "hilfeleistung",
+     "label": "Hilfeleistung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-ecall-morschenich",
+   "url": "/blaulicht/ecall-morschenich/",
+   "titel": "Automatischer eCall alarmiert Feuerwehr nach Morschenich – kein Unfall gefunden",
+   "teaser": "Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.",
+   "kicker": "Feuerwehr",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-09-24T14:08:00+02:00",
+   "aktualisiert": "2026-09-24T14:08:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    },
+    {
+     "slug": "hilfeleistung",
+     "label": "Hilfeleistung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-09-23-oldieabend-ortsfest-2026",
    "url": "/leben/oldieabend-ortsfest-2026/",
@@ -2204,9 +2449,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-23-oldieabend-ortsfest-2026",
-  "url": "/leben/oldieabend-ortsfest-2026/",
-  "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
+  "id": "2026-09-24-oelspur-windmuehle",
+  "url": "/blaulicht/oelspur-windmuehle/",
+  "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
  },
  "nebenmeldungen": [
   {
@@ -2215,14 +2460,14 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
+   "id": "2026-09-23-oldieabend-ortsfest-2026",
+   "url": "/leben/oldieabend-ortsfest-2026/",
+   "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
+  },
+  {
    "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
    "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
    "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
-  },
-  {
-   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
-   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt"
   },
   {
    "id": "2026-09-23-fahrrad-reparaturstationen",

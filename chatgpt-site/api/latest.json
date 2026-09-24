@@ -1,7 +1,70 @@
 {
-  "generated": "2026-09-23T11:20:00+02:00",
-  "stand": "2026-09-23T11:20:00+02:00",
+  "generated": "2026-09-24T14:20:00+02:00",
+  "stand": "2026-09-24T14:20:00+02:00",
   "items": [
+    {
+      "title": "Grundschulen in Golzheim und Merzenich öffnen am Samstag ihre Türen",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/grundschulen-tag-offene-tuer/",
+      "date": "2026-09-24T14:20:00+02:00",
+      "ressort": "leben",
+      "ort": "golzheim",
+      "teaser": "Die beiden Grundschulen laden am 26. September zum Tag der offenen Tür ein. In Golzheim startet das Programm um 8 Uhr, in Merzenich um 9 Uhr.",
+      "image": null
+    },
+    {
+      "title": "Mehr als 40 Helfer sammeln Müll in der Gemeinde Merzenich",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/muellsammelaktion-faire-woche/",
+      "date": "2026-09-24T14:18:00+02:00",
+      "ressort": "leben",
+      "ort": "merzenich",
+      "teaser": "Bei einer Aktion im Rahmen der Fairen Woche haben mehr als 40 Kinder und Erwachsene Wege und Bürgersteige in der Gemeinde von Müll befreit.",
+      "image": null
+    },
+    {
+      "title": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/oelspur-windmuehle/",
+      "date": "2026-09-24T14:16:00+02:00",
+      "ressort": "blaulicht",
+      "ort": "merzenich",
+      "teaser": "Die Feuerwehr Merzenich rückte am 21. September zu einer Ölspur im Bereich An der Windmühle aus. Die Verunreinigung wurde abgestreut und aufgenommen.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg"
+    },
+    {
+      "title": "Katze in der Vogelrute auf Baum – Feuerwehr rückt zur Tierrettung aus",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/katze-baum-vogelrute/",
+      "date": "2026-09-24T14:14:00+02:00",
+      "ressort": "blaulicht",
+      "ort": "merzenich",
+      "teaser": "Eine Katze saß in der Vogelrute auf einem Baum fest. Als die Feuerwehr eine Leiter bereitstellte, kam das Tier selbst herunter und lief davon.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg"
+    },
+    {
+      "title": "Vortrag beleuchtet Zwangsarbeit in Merzenich",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/vortrag-zwangsarbeit-merzenich/",
+      "date": "2026-09-24T14:12:00+02:00",
+      "ressort": "leben",
+      "ort": "merzenich",
+      "teaser": "Historikerin Inga Mehlert-Garms stellt am 15. Oktober neue Forschungen zur Zwangsarbeit in Merzenich vor. Der Eintritt ins Pfarrheim ist frei.",
+      "image": null
+    },
+    {
+      "title": "Ölspur in Girbelsrath: Feuerwehr beseitigt Verunreinigung in der Dechant-Fabry-Straße",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/oelspur-girbelsrath/",
+      "date": "2026-09-24T14:10:00+02:00",
+      "ressort": "blaulicht",
+      "ort": "girbelsrath",
+      "teaser": "Die Tagesalarmgruppe der Feuerwehr Merzenich beseitigte am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg"
+    },
+    {
+      "title": "Automatischer eCall alarmiert Feuerwehr nach Morschenich – kein Unfall gefunden",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/ecall-morschenich/",
+      "date": "2026-09-24T14:08:00+02:00",
+      "ressort": "blaulicht",
+      "ort": "morschenich",
+      "teaser": "Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg"
+    },
     {
       "title": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober",
       "url": "https://merzenichaktuell.hk-growthoperator.de/leben/oldieabend-ortsfest-2026/",
@@ -118,69 +181,6 @@
       "ort": "merzenich",
       "teaser": "Die aktuelle Kreisliga-A-Tabelle führt den SC 1919 Merzenich nach einem Spiel mit drei Punkten und 5:2 Toren auf Platz zwei.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-13-fee5d2ea04.jpg"
-    },
-    {
-      "title": "Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/trauung-alte-kirche/",
-      "date": "2026-09-01T10:46:00+02:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Michaela Bauer und Karl-Heinz Mai haben am 21. August in der Alten Kirche geheiratet. Die Gemeinde veröffentlichte ein Foto der Trauung.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/c41a77e5b7b78b-520.webp"
-    },
-    {
-      "title": "LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/",
-      "date": "2026-09-01T10:00:00+02:00",
-      "ressort": "wirtschaft",
-      "ort": "merzenich",
-      "teaser": "Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f507b5f3e2c7d3-360.webp"
-    },
-    {
-      "title": "FC-Fanclub startet mit knapp 30 Gästen in die neue Bundesliga-Saison",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/fanclub-saisonauftakt/",
-      "date": "2026-08-31T12:00:00+02:00",
-      "ressort": "vereine",
-      "ort": "merzenich",
-      "teaser": "Der 1. FC Köln Fanclub Merzenich 1967 traf sich zum Saisonauftakt in der Soccerhalle. Gemeinsam wurde der 3:2-Sieg gegen Hoffenheim verfolgt.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg"
-    },
-    {
-      "title": "Bürgermeister-Sprechstunde am Freitag in Morschenich",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/buergersprechstunde-morschenich/",
-      "date": "2026-08-31T09:20:00+02:00",
-      "ressort": "rathaus",
-      "ort": "morschenich",
-      "teaser": "Georg Gelhausen beantwortet am 4. September von 18 bis 19 Uhr Fragen im Bürgewaldzentrum. Eine Anmeldung ist nicht erforderlich.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/aa69fa186a0719-360.webp"
-    },
-    {
-      "title": "E-Tour de Rur: LEADER-Region wirbt für Ausflüge mit dem E-Bike",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/e-tour-de-rur/",
-      "date": "2026-08-29T10:02:00+02:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Die LAG weist auf E-Bike-Mietstationen und Ziele wie Schloss Kellenberg und die Alte Synagoge Rödingen hin.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/0d1318d52ebcdf-300.webp"
-    },
-    {
-      "title": "Faire Woche: Müllsammelaktion und Naturangebote im September",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/faire-woche/",
-      "date": "2026-08-27T09:32:00+02:00",
-      "ressort": "rathaus",
-      "ort": "merzenich",
-      "teaser": "Merzenich beteiligt sich vom 11. bis 25. September an der Fairen Woche. Für den 20. September ist eine gemeindeweite Müllsammelaktion geplant.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/6dbd3a8d61b0e6-360.webp"
-    },
-    {
-      "title": "Ortsfest 2026: Standkarten für den Trödelmarkt am 16. September",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/ortsfest-standkarten/",
-      "date": "2026-08-26T11:29:00+02:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Die Gemeinde vergibt die Standkarten am 16. September von 14:30 bis 17 Uhr im Bürgerhaus. Das Ortsfest findet am 3. Oktober statt.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/72e73e505ae221-360.webp"
     }
   ],
   "events": [
