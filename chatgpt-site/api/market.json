@@ -3,23 +3,89 @@
     "checkedAt": "2026-09-16T19:32:00+02:00",
     "scope": "Merzenich und direkt angrenzende Kommunen",
     "primaryMunicipality": "Merzenich",
-    "municipalDistricts": ["Merzenich", "Golzheim", "Girbelsrath", "Morschenich", "Bürgewald"],
-    "adjacentMunicipalities": ["Düren", "Niederzier", "Nörvenich", "Elsdorf", "Kerpen"],
-    "methodNote": "Redaktionell geprüfte Einzelangebote plus Links zu laufenden Marktübersichten. Verfügbarkeit, Preise und Fristen können sich beim Anbieter kurzfristig ändern. Maßgeblich ist die verlinkte Originalquelle."
+    "municipalDistricts": [
+      "Merzenich",
+      "Golzheim",
+      "Girbelsrath",
+      "Morschenich",
+      "Bürgewald"
+    ],
+    "adjacentMunicipalities": [
+      "Düren",
+      "Niederzier",
+      "Nörvenich",
+      "Elsdorf",
+      "Kerpen"
+    ],
+    "methodNote": "Redaktionell geprüfte Einzelangebote plus Links zu laufenden Marktübersichten. Verfügbarkeit, Preise und Fristen können sich beim Anbieter kurzfristig ändern. Maßgeblich ist die verlinkte Originalquelle.",
+    "jobsCheckedAt": "2026-09-24T13:53:32+02:00",
+    "jobsRemoved": [
+      {
+        "id": "rewe-frischetheke-merzenich",
+        "title": "Verkäufer als Fachkraft / Quereinsteiger Frischetheke (m/w/d)",
+        "employer": "REWE",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "netto-ausbildung-einzelhandel-2026",
+        "title": "Ausbildung Kaufmann im Einzelhandel (m/w/d)",
+        "employer": "Netto Marken-Discount",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "schall-industriekaufmann-2026",
+        "title": "Ausbildung Industriekaufmann/-frau (m/w/d)",
+        "employer": "M. Schall GmbH & Co. KG",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "schall-maschinen-anlagenfuehrer-2026",
+        "title": "Ausbildung Maschinen- und Anlagenführer/in (m/w/d)",
+        "employer": "M. Schall GmbH & Co. KG",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "schall-technischer-konfektionaer-2026",
+        "title": "Ausbildung Technische/r Konfektionär/in (m/w/d)",
+        "employer": "M. Schall GmbH & Co. KG",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "timetable-betriebsschlosser-merzenich",
+        "title": "Betriebsschlosser (m/w/d)",
+        "employer": "timetable Fachpersonal GmbH",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "dm-warenverraeumer-niederzier",
+        "title": "Warenverräumer (w/m/d)",
+        "employer": "dm-drogerie markt",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "oehmichen-sps-kerpen",
+        "title": "SPS-Programmierer Regalbediengeräte (m/w/d)",
+        "employer": "Oehmichen & Bürgers Industrieplanung GmbH",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      },
+      {
+        "id": "herrmann-cnc-kerpen",
+        "title": "Maschinenführer CNC (m/w/d)",
+        "employer": "Herrmann Personaldienste GmbH",
+        "removedAt": "2026-09-24T13:53:32+02:00",
+        "status": 404
+      }
+    ]
   },
   "jobs": [
-    {
-      "id": "rewe-frischetheke-merzenich",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Verkäufer als Fachkraft / Quereinsteiger Frischetheke (m/w/d)",
-      "employer": "REWE",
-      "employment": "Vollzeit · unbefristet · ab sofort",
-      "details": "Job-ID 940986",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12608-1344713-22553-1-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
     {
       "id": "rewe-schliessfunktion-merzenich",
       "municipality": "Merzenich",
@@ -30,7 +96,7 @@
       "details": "Verkauf / Markt",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12608-1441113-22553-1-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "kleins-filialleitung-merzenich",
@@ -42,7 +108,7 @@
       "details": "Am Merzpark / Rather Straße, Merzenich",
       "sourceName": "Klein’s Backstube Karriere",
       "sourceUrl": "https://karriere.kleinsbackstube.de/jobs/62261459/Filialleitung-m-w-d-in-Merzenich/",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "zahnarzt-ausbildung-zfa-2027",
@@ -54,7 +120,7 @@
       "details": "Bahnstraße 55, Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207883584-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "rewe-ausbildung-einzelhandel-2027",
@@ -66,55 +132,7 @@
       "details": "Burgstraße 1, Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12608-1436688-22553-1-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "netto-ausbildung-einzelhandel-2026",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Ausbildung Kaufmann im Einzelhandel (m/w/d)",
-      "employer": "Netto Marken-Discount",
-      "employment": "Ausbildung 2026",
-      "details": "Valdersweg 97, Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/18279-15-6750-A1970-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "schall-industriekaufmann-2026",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Ausbildung Industriekaufmann/-frau (m/w/d)",
-      "employer": "M. Schall GmbH & Co. KG",
-      "employment": "Ausbildung 2026 · ab sofort",
-      "details": "Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003534055-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "schall-maschinen-anlagenfuehrer-2026",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Ausbildung Maschinen- und Anlagenführer/in (m/w/d)",
-      "employer": "M. Schall GmbH & Co. KG",
-      "employment": "Ausbildung 2026 · ab sofort",
-      "details": "Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003533685-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "schall-technischer-konfektionaer-2026",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Ausbildung Technische/r Konfektionär/in (m/w/d)",
-      "employer": "M. Schall GmbH & Co. KG",
-      "employment": "Ausbildung 2026 · ab sofort",
-      "details": "Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003533699-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "schall-konstruktionsmechaniker-2027",
@@ -126,7 +144,7 @@
       "details": "Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003605308-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "gms-land-baumaschinenmechatroniker-2026",
@@ -138,7 +156,7 @@
       "details": "Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1204273058-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "akp-cnc-dreher-merzenich",
@@ -150,7 +168,7 @@
       "details": "Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003582358-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "randstad-linienleiter-merzenich",
@@ -162,19 +180,7 @@
       "details": "Merzenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003652760-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "timetable-betriebsschlosser-merzenich",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Betriebsschlosser (m/w/d)",
-      "employer": "timetable Fachpersonal GmbH",
-      "employment": "Facharbeit",
-      "details": "Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1002763493-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "puro-it-techniker-dueren",
@@ -186,7 +192,7 @@
       "details": "Düren",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/13669-O7I7Y2KWLP6H6E2F-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "kuvag-cnc-dueren",
@@ -198,19 +204,7 @@
       "details": "Düren",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/19146-100014886891-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "dm-warenverraeumer-niederzier",
-      "municipality": "Niederzier",
-      "district": "",
-      "title": "Warenverräumer (w/m/d)",
-      "employer": "dm-drogerie markt",
-      "employment": "Minijob / Teilzeit · 3–6 Std. pro Woche",
-      "details": "Niederzier",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12787-267877210826-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "timepartner-hochregal-niederzier",
@@ -222,7 +216,7 @@
       "details": "Niederzier",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11852-965678329-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "lvr-pflegefachkraft-noervenich",
@@ -234,7 +228,7 @@
       "details": "Bewerbungsfrist laut Anzeige: 30.09.2026",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/15699-1623354-1-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "strabag-baugeraetefuehrer-noervenich",
@@ -246,7 +240,7 @@
       "details": "Golzheimer Straße 1, Nörvenich",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003646839-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "tritec-elektroniker-elsdorf",
@@ -258,7 +252,7 @@
       "details": "Laut Anzeige 22–24 € / Stunde",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14014-13851686-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     },
     {
       "id": "tritec-maschinenbediener-elsdorf",
@@ -270,40 +264,46 @@
       "details": "Laut Anzeige 20–23 € / Stunde",
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14014-13851687-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "oehmichen-sps-kerpen",
-      "municipality": "Kerpen",
-      "district": "",
-      "title": "SPS-Programmierer Regalbediengeräte (m/w/d)",
-      "employer": "Oehmichen & Bürgers Industrieplanung GmbH",
-      "employment": "Automatisierungstechnik",
-      "details": "Laut Anzeige 70.000–87.000 € Jahresgehalt",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14603-13861615-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
-    },
-    {
-      "id": "herrmann-cnc-kerpen",
-      "municipality": "Kerpen",
-      "district": "",
-      "title": "Maschinenführer CNC (m/w/d)",
-      "employer": "Herrmann Personaldienste GmbH",
-      "employment": "Produktion / CNC",
-      "details": "Laut Anzeige 21–23 € / Stunde",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11119-4933233837-S",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-24T13:53:32+02:00"
     }
   ],
   "jobSources": [
-    {"municipality":"Merzenich","label":"Weitere Stellen in Merzenich","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=Merzenich%2C+Kreis+D%C3%BCren"},
-    {"municipality":"Düren","label":"Weitere Stellen in Düren","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=D%C3%BCren%2C+Rheinland"},
-    {"municipality":"Niederzier","label":"Weitere Stellen in Niederzier","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=Niederzier"},
-    {"municipality":"Nörvenich","label":"Weitere Stellen in Nörvenich","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=N%C3%B6rvenich"},
-    {"municipality":"Elsdorf","label":"Weitere Stellen in Elsdorf","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=Elsdorf%2C+Rheinland"},
-    {"municipality":"Kerpen","label":"Weitere Stellen in Kerpen","sourceName":"Bundesagentur für Arbeit","sourceUrl":"https://www.arbeitsagentur.de/jobsuche/suche?wo=Kerpen%2C+Rheinland"}
+    {
+      "municipality": "Merzenich",
+      "label": "Weitere Stellen in Merzenich",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Merzenich%2C+Kreis+D%C3%BCren"
+    },
+    {
+      "municipality": "Düren",
+      "label": "Weitere Stellen in Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=D%C3%BCren%2C+Rheinland"
+    },
+    {
+      "municipality": "Niederzier",
+      "label": "Weitere Stellen in Niederzier",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Niederzier"
+    },
+    {
+      "municipality": "Nörvenich",
+      "label": "Weitere Stellen in Nörvenich",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=N%C3%B6rvenich"
+    },
+    {
+      "municipality": "Elsdorf",
+      "label": "Weitere Stellen in Elsdorf",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Elsdorf%2C+Rheinland"
+    },
+    {
+      "municipality": "Kerpen",
+      "label": "Weitere Stellen in Kerpen",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Kerpen%2C+Rheinland"
+    }
   ],
   "properties": [
     {
@@ -512,17 +512,77 @@
     }
   ],
   "propertySources": [
-    {"municipality":"Merzenich","label":"Alle Kaufangebote in Merzenich","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/merzenich-52399/ad08de2200"},
-    {"municipality":"Merzenich","label":"Alle Mietangebote in Merzenich","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/merzenich-52399/ad08de2200"},
-    {"municipality":"Düren","label":"Kaufangebote in Düren","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/duren-52349/ad08de2192"},
-    {"municipality":"Düren","label":"Mietangebote in Düren","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/duren-52349/ad08de2192"},
-    {"municipality":"Niederzier","label":"Kaufangebote in Niederzier","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/niederzier-52382/ad08de2202"},
-    {"municipality":"Niederzier","label":"Mietangebote in Niederzier","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/wohnung/nordrhein-westfalen/niederzier-52382/ad08de2202"},
-    {"municipality":"Nörvenich","label":"Kaufangebote in Nörvenich","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/norvenich-52388/ad08de2203"},
-    {"municipality":"Nörvenich","label":"Mietangebote in Nörvenich","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/norvenich-52388/ad08de2203"},
-    {"municipality":"Elsdorf","label":"Kaufangebote in Elsdorf","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/elsdorf-50189/ad08de2209"},
-    {"municipality":"Elsdorf","label":"Mietangebote in Elsdorf","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/elsdorf-50189/ad08de2209"},
-    {"municipality":"Kerpen","label":"Kaufangebote in Kerpen","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/kerpen-50169/ad08de2213"},
-    {"municipality":"Kerpen","label":"Mietangebote in Kerpen","sourceName":"immowelt","sourceUrl":"https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/kerpen-50169/ad08de2213"}
+    {
+      "municipality": "Merzenich",
+      "label": "Alle Kaufangebote in Merzenich",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/merzenich-52399/ad08de2200"
+    },
+    {
+      "municipality": "Merzenich",
+      "label": "Alle Mietangebote in Merzenich",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/merzenich-52399/ad08de2200"
+    },
+    {
+      "municipality": "Düren",
+      "label": "Kaufangebote in Düren",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/duren-52349/ad08de2192"
+    },
+    {
+      "municipality": "Düren",
+      "label": "Mietangebote in Düren",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/duren-52349/ad08de2192"
+    },
+    {
+      "municipality": "Niederzier",
+      "label": "Kaufangebote in Niederzier",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/niederzier-52382/ad08de2202"
+    },
+    {
+      "municipality": "Niederzier",
+      "label": "Mietangebote in Niederzier",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/wohnung/nordrhein-westfalen/niederzier-52382/ad08de2202"
+    },
+    {
+      "municipality": "Nörvenich",
+      "label": "Kaufangebote in Nörvenich",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/norvenich-52388/ad08de2203"
+    },
+    {
+      "municipality": "Nörvenich",
+      "label": "Mietangebote in Nörvenich",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/norvenich-52388/ad08de2203"
+    },
+    {
+      "municipality": "Elsdorf",
+      "label": "Kaufangebote in Elsdorf",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/elsdorf-50189/ad08de2209"
+    },
+    {
+      "municipality": "Elsdorf",
+      "label": "Mietangebote in Elsdorf",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/elsdorf-50189/ad08de2209"
+    },
+    {
+      "municipality": "Kerpen",
+      "label": "Kaufangebote in Kerpen",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/kerpen-50169/ad08de2213"
+    },
+    {
+      "municipality": "Kerpen",
+      "label": "Mietangebote in Kerpen",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/kerpen-50169/ad08de2213"
+    }
   ]
 }
