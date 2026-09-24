@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T11:59:23.463Z",
+  "updatedAt": "2026-09-24T12:12:17.699Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -107,6 +107,33 @@
       "assignedAt": "2026-09-24T11:57:11.113Z",
       "articleId": "2026-09-23-oldieabend-ortsfest-2026",
       "articleDate": "2026-09-23T11:20:00+02:00"
+    },
+    "/vereine/fanclub-saisonauftakt/": {
+      "imageId": "web-vereine-02-51d0635a",
+      "pool": "vereine",
+      "motiv": "stadion",
+      "regel": "fanclub",
+      "assignedAt": "2026-09-24T12:12:17.698Z",
+      "articleId": "2026-08-31-fanclub-saisonauftakt",
+      "articleDate": "2026-08-31T12:00:00+02:00"
+    },
+    "/blaulicht/einbruch-arnoldsweilerweg/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei",
+      "assignedAt": "2026-09-24T12:12:17.698Z",
+      "articleId": "2026-09-11-einbruch-arnoldsweilerweg",
+      "articleDate": "2026-09-11T08:45:00+02:00"
+    },
+    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
+      "imageId": "web-verkehr-04-d2c81be6",
+      "pool": "verkehr",
+      "motiv": "geschwindigkeitsmessung",
+      "regel": "geschwindigkeit",
+      "assignedAt": "2026-09-24T12:12:17.699Z",
+      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+      "articleDate": "2026-09-23T11:12:00+02:00"
     }
   }
 }

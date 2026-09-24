@@ -224,7 +224,17 @@
      "label": "Geschwindigkeit"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/verkehr/verkehr-04-d2c81be688.jpg",
+    "srcset": "/assets/editorial-pools/verkehr/verkehr-04-d2c81be688-480.webp 480w, /assets/editorial-pools/verkehr/verkehr-04-d2c81be688-800.webp 800w, /assets/editorial-pools/verkehr/verkehr-04-d2c81be688-1200.webp 1200w, /assets/editorial-pools/verkehr/verkehr-04-d2c81be688.jpg 1600w",
+    "alt": "Starenkasten zur Überwachung einer Fußgängerampel vor der Grundschule an der Boschetsrieder Straße, München-Thalkirchen",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Henning Schlottmann (User:H-stt) / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -466,7 +476,17 @@
      "label": "Einbruch"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1600w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -747,7 +767,17 @@
      "label": "Soccerhalle"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg",
+    "srcset": "/assets/editorial-pools/vereine/vereine-02-51d0635a6b-480.webp 480w, /assets/editorial-pools/vereine/vereine-02-51d0635a6b-800.webp 800w, /assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg 1600w",
+    "alt": "Treffpunkt des Vereinslebens im Dorf",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Urheber siehe Quelldatei / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2170,9 +2200,19 @@
  },
  "nebenmeldungen": [
   {
+   "id": "2026-09-11-einbruch-arnoldsweilerweg",
+   "url": "/blaulicht/einbruch-arnoldsweilerweg/",
+   "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
+  },
+  {
    "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
    "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
    "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
+  },
+  {
+   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
+   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt"
   },
   {
    "id": "2026-09-01-trauung-alte-kirche",
@@ -2183,16 +2223,6 @@
    "id": "2026-09-01-leader-reminder",
    "url": "/wirtschaft/leader-reminder/",
    "titel": "LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region"
-  },
-  {
-   "id": "2026-08-17-feuerwehr-einsatzbilanz-sommer",
-   "url": "/blaulicht/feuerwehr-einsatzbilanz-sommer/",
-   "titel": "119 Einsätze bis Mitte August"
-  },
-  {
-   "id": "2026-08-16-einsatz-119-rauch-buergewald",
-   "url": "/blaulicht/einsatz-119-rauch-buergewald/",
-   "titel": "Rauch im Bürgewald: Feuerwehr rückt aus"
   }
  ]
 }
