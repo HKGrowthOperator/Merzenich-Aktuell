@@ -1,69 +1,70 @@
-/* Merzenich Aktuell – Ressort-Dropdowns (assets/ressort-dropdowns.js).
-   Klick öffnet das Menü direkt unter der Leiste: oben die Unterwelten des
-   Ressorts in Spalten, darunter die zwei neuesten Beiträge. Ruhig, Papier,
-   eine Bordeaux-Linie; keine Schatten-Kaskade, kein Karten-Raster. */
+/* Merzenich Aktuell – Ressort-Dropdowns, 24.09.2026
+   Klickbasiertes Desktop-Menue mit zwei echten Bildflaechen je Ressort.
+   Die Ressortnamen bleiben typografisch sauber: keine Pfeile oder Chevron-Icons. */
 @media (min-width:768px){
   .mainnav{position:relative;overflow:visible}
   .mainnav.ressort-dropdowns-ready .sport-mega{display:none!important}
-  .navscroll>a[aria-haspopup="true"]{position:relative}
-  .navscroll>a[aria-haspopup="true"]::after{
-    content:"";position:absolute;right:6px;top:50%;width:6px;height:6px;
-    border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
-    transform:translateY(-65%) rotate(45deg);transition:transform .18s cubic-bezier(.22,1,.36,1)
-  }
-  .navscroll>a.ressort-open{color:var(--red)}
-  .navscroll>a.ressort-open::after{transform:translateY(-25%) rotate(225deg)}
-
+  .navscroll>a[aria-haspopup="true"]{position:relative;padding-right:0!important}
+  .navscroll>a[aria-haspopup="true"]::after{content:none!important;display:none!important}
+  .navscroll>a.ressort-open{color:var(--red);border-bottom-color:var(--red)}
   .ressort-dropdown{
-    position:absolute;left:0;right:0;top:100%;z-index:80;background:#fdfdfc;
-    border-bottom:1px solid #d9d6d0;box-shadow:0 22px 36px -24px rgba(23,21,19,.28);
-    opacity:0;transform:translateY(-4px);transition:opacity .18s cubic-bezier(.22,1,.36,1),transform .18s cubic-bezier(.22,1,.36,1)
+    position:absolute;left:0;right:0;top:100%;z-index:80;background:#fff;
+    border-top:1px solid rgba(18,22,25,.09);border-bottom:1px solid rgba(18,22,25,.15);
+    box-shadow:0 18px 40px rgba(18,22,25,.14);opacity:0;transform:translateY(-6px);
+    transition:opacity .14s ease,transform .14s ease
   }
   .ressort-dropdown[hidden]{display:none}
   .ressort-dropdown.is-open{opacity:1;transform:none}
-  .ressort-dropdown__inner{padding-top:22px;padding-bottom:26px}
-
-  .rd-kopf{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid #e6e3de}
-  .rd-ressort{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-  .ressort-dropdown__all{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:1px}
-  .ressort-dropdown__all::after{content:" →"}
-
-  .ressort-dropdown__groups{display:grid;grid-template-columns:repeat(var(--rd-spalten,3),minmax(0,1fr));gap:12px 40px}
-  .ressort-dropdown__groups h3,.rd-neu h3{margin:0 0 8px;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6b6760}
-  .ressort-dropdown__groups ul,.rd-neu ul{list-style:none;margin:0;padding:0}
-  .ressort-dropdown__groups li a{display:block;padding:6px 0;font-family:var(--sans);font-size:15px;font-weight:600;line-height:1.3;color:var(--ink);text-decoration:none}
-  .ressort-dropdown a:hover,.ressort-dropdown a:focus-visible{color:var(--red)}
-  .ressort-dropdown a:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:2px}
-
-  .rd-neu{margin-top:22px;padding-top:18px;border-top:1px solid #e6e3de}
-  .rd-neu ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
-  .rd-beitrag{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;text-decoration:none;color:var(--ink)}
-  .rd-beitrag.ohne-bild{grid-template-columns:1fr}
-  .rd-beitrag img{width:96px;height:64px;object-fit:cover;display:block;background:#eeebe6}
-  .rd-text{display:flex;flex-direction:column;gap:3px;min-width:0}
-  .rd-marke{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#3c3a36}
-  .rd-marke b{color:var(--red);font-weight:800}
-  .rd-marke time{margin-left:8px;color:#6b6760;font-weight:600;letter-spacing:0;text-transform:none}
-  .rd-titel{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.25;color:var(--ink)}
-  .rd-beitrag:hover .rd-titel,.rd-beitrag:focus-visible .rd-titel{color:var(--red)}
-  .rd-wo{font-family:var(--sans);font-size:13px;color:#6b6760}
+  .ressort-dropdown__inner{
+    display:grid;grid-template-columns:minmax(220px,.58fr) minmax(0,1.75fr);
+    gap:38px;padding-top:24px;padding-bottom:28px
+  }
+  .ressort-dropdown__head{padding-right:30px;border-right:1px solid rgba(18,22,25,.1)}
+  .ressort-dropdown__head>div{display:flex;flex-direction:column;gap:2px}
+  .ressort-dropdown__head span,.ressort-dropdown__groups h3{
+    margin:0 0 10px;font-size:11px;line-height:1.2;font-weight:800;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--red)
+  }
+  .ressort-dropdown__head strong{font-family:var(--serif);font-size:30px;line-height:1.05;color:var(--ink)}
+  .ressort-dropdown__head p{margin:11px 0 16px;max-width:34ch;font-size:14px;line-height:1.45;color:var(--ink-soft)}
+  .ressort-dropdown__all{
+    display:inline-flex;font-size:13px;font-weight:800;color:var(--ink);text-decoration:none;
+    border-bottom:1px solid var(--red);padding-bottom:2px
+  }
+  .ressort-dropdown__groups{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px
+  }
+  .ressort-dropdown__groups section{min-width:0}
+  .ressort-dropdown__visual{
+    display:grid;grid-template-columns:minmax(118px,42%) minmax(0,1fr);gap:13px;align-items:center;
+    margin:0 0 14px;padding:0;text-decoration:none;color:var(--ink)
+  }
+  .ressort-dropdown__image{
+    display:block;aspect-ratio:16/9;overflow:hidden;background:#ece9e3
+  }
+  .ressort-dropdown__image img{
+    display:block;width:100%;height:100%;object-fit:cover;transition:transform .18s ease
+  }
+  .ressort-dropdown__visual-label{
+    font-family:var(--serif);font-size:18px;line-height:1.08;font-weight:700;color:var(--ink)
+  }
+  .ressort-dropdown__visual:hover .ressort-dropdown__image img,
+  .ressort-dropdown__visual:focus-visible .ressort-dropdown__image img{transform:scale(1.025)}
+  .ressort-dropdown__visual:hover .ressort-dropdown__visual-label,
+  .ressort-dropdown__visual:focus-visible .ressort-dropdown__visual-label{color:var(--red)}
+  .ressort-dropdown__links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+  .ressort-dropdown__links a{
+    display:block;padding:9px 0;border-bottom:1px solid rgba(18,22,25,.08);
+    font-size:14px;font-weight:700;line-height:1.25;color:var(--ink);text-decoration:none
+  }
+  .ressort-dropdown__links a:hover,.ressort-dropdown__links a:focus-visible,
+  .ressort-dropdown__all:hover,.ressort-dropdown__all:focus-visible{color:var(--red)}
 }
-@media (max-width:980px) and (min-width:768px){
-  .ressort-dropdown__groups{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:1080px) and (min-width:768px){
+  .ressort-dropdown__inner{grid-template-columns:190px minmax(0,1fr);gap:24px}
+  .ressort-dropdown__head{padding-right:22px}
+  .ressort-dropdown__visual{grid-template-columns:1fr;gap:8px}
+  .ressort-dropdown__visual-label{font-size:16px}
+  .ressort-dropdown__links{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){.ressort-dropdown,.navscroll>a[aria-haspopup="true"]::after{transition:none}}
 @media (max-width:767px){.ressort-dropdown{display:none!important}}
-
-/* Drawer (mobil, dunkler Grund, Raster aus v20.css): jedes Ressort als volle
-   Zeile, Link links, Aufklapper rechts, Unterseiten eingerückt darunter. */
-.drawer-group .drawer-ressort{grid-column:1/-1;display:grid;grid-template-columns:1fr 48px;align-items:center;border-bottom:1px solid #2b2e31}
-.drawer-ressort>a{min-width:0}
-.drawer-ressort__auf{width:48px;height:44px;border:0;background:none;cursor:pointer;position:relative;color:#fff}
-.drawer-ressort__auf::before{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translate(-50%,-70%) rotate(45deg);transition:transform .18s cubic-bezier(.22,1,.36,1)}
-.drawer-ressort__auf[aria-expanded="true"]::before{transform:translate(-50%,-30%) rotate(225deg)}
-.drawer-ressort__auf:focus-visible{outline:2px solid #fff;outline-offset:-4px}
-.drawer-ressort__liste{grid-column:1/-1;padding:0 0 12px 14px;margin:0 0 4px 2px;border-left:1px solid rgba(255,255,255,.28)}
-.drawer-ressort__liste[hidden]{display:none}
-.drawer-ressort__gruppe{margin:12px 0 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a9a49b}
-.drawer-group .drawer-ressort__liste a{min-height:40px;padding:6px 0;font-size:15px;color:#e9e6e0}
-@media (prefers-reduced-motion:reduce){.drawer-ressort__auf::before{transition:none}}

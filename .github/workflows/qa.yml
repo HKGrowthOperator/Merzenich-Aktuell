@@ -42,6 +42,7 @@ jobs:
           node --check app-fixes.js
           node --check chatgpt-site/assets/app.js
           node --check chatgpt-site/assets/v20.js
+          node --check chatgpt-site/assets/ressort-dropdowns.js
           node --check site-source/src/templates/pages.mjs
           node --check site-source/src/templates/layout.mjs
           node --check site-source/src/templates/components.mjs
@@ -315,6 +316,31 @@ jobs:
             if (!kompakt.klasse) throw new Error('Kopf klappt beim Scrollen nicht ein (html.kopf-kompakt fehlt)');
             if (Math.abs(kompakt.leiste) > 1) throw new Error(`Ressortleiste nicht oben: ${kompakt.leiste}`);
             if (kompakt.logo === 'none' || kompakt.logo === 'fehlt') throw new Error(`Kleines Logo in der Leiste nicht sichtbar: ${kompakt.logo}`);
+
+            // Ressort-Dropdowns: keine Pfeile/Chevrons im Namen. Beim Oeffnen
+            // muessen zwei echte, geladene Bildflaechen vorhanden sein.
+            await page.evaluate(() => window.scrollTo(0, 0));
+            await page.waitForSelector('.navscroll > a[aria-haspopup="true"]', { timeout: 5000 });
+            const dropdown = await page.evaluate(async () => {
+              const link = document.querySelector('.navscroll > a[href="/nachrichten/"]');
+              if (!link) return { fehler: 'Aktuell-Link fehlt' };
+              const pseudo = getComputedStyle(link, '::after').content;
+              link.click();
+              await new Promise((r) => setTimeout(r, 220));
+              const panel = document.querySelector('.ressort-dropdown');
+              const bilder = [...(panel?.querySelectorAll('.ressort-dropdown__visual img') || [])];
+              return {
+                pseudo,
+                offen: !!panel && !panel.hidden && panel.classList.contains('is-open'),
+                bilder: bilder.length,
+                geladen: bilder.every((img) => img.complete && img.naturalWidth > 0)
+              };
+            });
+            if (dropdown.fehler) throw new Error(dropdown.fehler);
+            if (!['none','normal','""'].includes(dropdown.pseudo)) throw new Error('Ressort-Dropdown hat wieder einen Pfeil im Namen: ' + dropdown.pseudo);
+            if (!dropdown.offen) throw new Error('Ressort-Dropdown oeffnet nicht');
+            if (dropdown.bilder < 2) throw new Error('Ressort-Dropdown ohne zwei Bildflaechen: ' + dropdown.bilder);
+            if (!dropdown.geladen) throw new Error('Mindestens ein Bild im Ressort-Dropdown laedt nicht');
           });
 
           await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
