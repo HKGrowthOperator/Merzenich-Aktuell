@@ -7,10 +7,32 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 24 Sep 2026 12:20:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 24 Sep 2026 14:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Damen 30 des SC Merzenich schaffen den Aufstieg</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-tennis-damen30-aufstieg/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-tennis-damen30-aufstieg/</guid>
+<pubDate>Thu, 24 Sep 2026 14:27:00 GMT</pubDate>
+<category>Sport</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Mit einem 5:1-Heimsieg gegen den VfL Bardenberg beendeten die Damen 30 des SC Merzenich ihre Saison auf Rang zwei und sicherten sich damit nach Vereinsangaben den Aufstieg.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-18-80141c600e.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
+<item>
+<title>SC 1919 Merzenich empfängt am Sonntag SG Nörvenich-Hochkirchen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-noervenich-vorschau/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-noervenich-vorschau/</guid>
+<pubDate>Thu, 24 Sep 2026 14:26:00 GMT</pubDate>
+<category>Sport</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der SC 1919 Merzenich bestreitet am 27. September sein nächstes Kreisliga-A-Spiel zuhause. Anstoß gegen die SG Nörvenich-Hochkirchen ist um 15 Uhr.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-16-74d277b05b.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
 <item>
 <title>Mehr als 40 Helfer sammeln Müll in der Gemeinde Merzenich</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/muellsammelaktion-faire-woche/</link>
@@ -314,28 +336,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die aktuelle Kreisliga-A-Tabelle führt den SC 1919 Merzenich nach einem Spiel mit drei Punkten und 5:2 Toren auf Platz zwei.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-13-fee5d2ea04.jpg" medium="image"><media:credit>BikeMike / Wikimedia Commons · CC0</media:credit><media:description>Fußballplatz</media:description></media:content>
-</item>
-<item>
-<title>Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/trauung-alte-kirche/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/trauung-alte-kirche/</guid>
-<pubDate>Tue, 01 Sep 2026 08:46:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Michaela Bauer und Karl-Heinz Mai haben am 21. August in der Alten Kirche geheiratet. Die Gemeinde veröffentlichte ein Foto der Trauung.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/c41a77e5b7b78b-520.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Trauung in der Alten Kirche Merzenich</media:description></media:content>
-</item>
-<item>
-<title>LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-reminder/</guid>
-<pubDate>Tue, 01 Sep 2026 08:00:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Region kündigte einen Online-Infoabend für den 2. September an. Genannt werden Fördersätze von 70 Prozent bis maximal 250.000 Euro.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f507b5f3e2c7d3-360.webp" medium="image"><media:credit>LAG Rheinisches Revier an Inde und Rur / Heimat-Info</media:credit><media:description>Ankündigung des digitalen LEADER-Infoabends</media:description></media:content>
 </item>
 </channel>
 </rss>

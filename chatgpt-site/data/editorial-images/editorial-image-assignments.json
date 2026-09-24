@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T13:17:21.432Z",
+  "updatedAt": "2026-09-24T14:41:55.245Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -260,6 +260,42 @@
       "assignedAt": "2026-09-24T13:17:21.431Z",
       "articleId": "2026-09-24-oelspur-windmuehle",
       "articleDate": "2026-09-24T14:16:00+02:00"
+    },
+    "/sport/sc-merzenich-noervenich-vorschau/": {
+      "imageId": "web-sport-16-74d277b0",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:41:55.245Z",
+      "articleId": "2026-09-24-sc-merzenich-noervenich-vorschau",
+      "articleDate": "2026-09-24T16:26:00+02:00"
+    },
+    "/sport/sc-merzenich-tennis-damen30-aufstieg/": {
+      "imageId": "web-sport-18-80141c60",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:41:55.245Z",
+      "articleId": "2026-09-24-sc-merzenich-tennis-damen30-aufstieg",
+      "articleDate": "2026-09-24T16:27:00+02:00"
+    },
+    "/sport/fc-golzheim-e-jugend-neue-trikots/": {
+      "imageId": "web-sport-02-11b84171",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:41:55.245Z",
+      "articleId": "2026-09-24-fc-golzheim-e-jugend-neue-trikots",
+      "articleDate": "2026-09-24T16:28:00+02:00"
+    },
+    "/sport/fc-golzheim-auswaerts-dueren-77/": {
+      "imageId": "web-sport-09-edd5b8c9",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:41:55.245Z",
+      "articleId": "2026-09-24-fc-golzheim-auswaerts-dueren-77",
+      "articleDate": "2026-09-24T16:29:00+02:00"
     }
   }
 }
