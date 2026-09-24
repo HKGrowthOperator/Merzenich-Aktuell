@@ -1,0 +1,155 @@
+#!/usr/bin/env node
+/**
+ * Merzenich Aktuell - Quellen abrufen (Recherche-Rohdaten).
+ *
+ * Holt die oeffentlichen Seiten der Quellen, aus denen die Redaktion schreibt,
+ * und legt sie als Beleg unter imports/quellen/ ab. Veroeffentlicht nichts:
+ * Meldungen, Stellen und Zuordnungen zu Ortsteilen entstehen erst daraus,
+ * mit Quellenlink.
+ *
+ *   feuerwehr.json  Einsatzliste der Freiwilligen Feuerwehr Merzenich + Einsatzseiten
+ *   polizei.json    Presseportal Blaulicht, Suche nach Ort (Merzenich + Ortsteile)
+ *                   + Pressemitteilungen (Text, Bild-URLs mit Bildhinweis)
+ *   gemeinde.json   "Aktuelles" der Gemeinde Merzenich + Beitraege
+ *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
+ *   jobs.json       Jobboerse der Bundesagentur, Umkreis 25 km um Merzenich
+ *
+ * Je Seite: URL, Abrufzeit, HTTP-Status, Titel, Text (ohne Skripte, Stil,
+ * Navigation), Links, Bilder mit alt-Text. Keine Auswertung, keine Annahmen
+ * ueber den Seitenaufbau: Die Auswertung folgt, wenn die echten Seiten
+ * vorliegen.
+ *
+ * Laeuft nur in GitHub Actions (der Container der Redaktion erreicht die
+ * Quellen nicht). Aufruf: node deploy/quellen-abruf.mjs [--nur=feuerwehr,...]
+ */
+import { writeFileSync, mkdirSync } from 'node:fs';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const ziel = join(wurzel, 'imports', 'quellen');
+const UA = 'MerzenichAktuell-Recherche/1.0 (+https://merzenichaktuell.hk-growthoperator.de; Lokalredaktion)';
+const nur = (process.argv.find((a) => a.startsWith('--nur=')) || '').slice(6).split(',').filter(Boolean);
+const ORTE = ['Merzenich', 'Golzheim', 'Girbelsrath', 'Morschenich', 'Bürgewald'];
+const pause = (ms) => new Promise((ok) => setTimeout(ok, ms));
+
+async function holen(url, accept = 'text/html') {
+  for (let versuch = 1; versuch <= 2; versuch++) {
+    try {
+      // Die Bundesagentur verlangt ihren oeffentlichen Schluessel als Kopfzeile.
+      const ba = url.startsWith('https://rest.arbeitsagentur.de/') ? { 'X-API-Key': 'jobboerse-jobsuche' } : {};
+      const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: accept, 'Accept-Language': 'de-DE,de;q=0.9', ...ba }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
+      const text = await r.text();
+      if (r.status >= 500 && versuch === 1) { await pause(2000); continue; }
+      return { status: r.status, url: r.url, text };
+    } catch (e) {
+      if (versuch === 2) return { status: 'fehler: ' + (e.cause?.code || e.name), url, text: '' };
+      await pause(2000);
+    }
+  }
+}
+
+const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', shy: '', auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä', Ouml: 'Ö', Uuml: 'Ü', szlig: 'ß', ndash: '–', mdash: '—', bdquo: '„', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', euro: '€', eacute: 'é' };
+const entschluesseln = (s) => String(s).replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => e[0] === '#' ? String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : (ENT[e] ?? m));
+const attr = (tag, name) => { const m = new RegExp(`\\b${name}\\s*=\\s*("([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i').exec(tag); return m ? entschluesseln(m[2] ?? m[3] ?? m[4] ?? '') : null; };
+const absolut = (href, basis) => { try { return new URL(href, basis).href; } catch { return null; } };
+
+// Seite zerlegen: Titel, Metadaten, Haupttext, Links, Bilder.
+function zerlegen(html, basis) {
+  const titel = entschluesseln((/<title[^>]*>([\s\S]*?)<\/title>/i.exec(html) || [])[1] || '').replace(/\s+/g, ' ').trim();
+  const meta = {};
+  for (const m of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const k = attr(m[0], 'property') || attr(m[0], 'name');
+    const v = attr(m[0], 'content');
+    if (k && v && /^(og:|article:|description$|date$|dc\.|author$|keywords$)/i.test(k)) meta[k] = v;
+  }
+  // Inhalt: <main> oder <article>, sonst body; Navigation, Kopf und Fuss raus.
+  let teil = (/<main\b[\s\S]*?<\/main>/i.exec(html) || /<article\b[\s\S]*<\/article>/i.exec(html) || /<body\b[\s\S]*<\/body>/i.exec(html) || [html])[0];
+  teil = teil.replace(/<(script|style|noscript|svg|nav|header|footer|form|iframe)\b[\s\S]*?<\/\1>/gi, ' ');
+  const links = [];
+  for (const m of teil.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const href = absolut(attr('<a ' + m[1] + '>', 'href') || '', basis);
+    const text = entschluesseln(m[2].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    if (href && /^https?:/.test(href)) links.push({ text: text.slice(0, 200), href });
+  }
+  const bilder = [];
+  for (const m of teil.matchAll(/<img\b[^>]*>/gi)) {
+    const src = absolut(attr(m[0], 'src') || attr(m[0], 'data-src') || '', basis);
+    if (src && !/^data:/.test(src)) bilder.push({ src, alt: attr(m[0], 'alt') || '', title: attr(m[0], 'title') || '' });
+  }
+  const text = entschluesseln(teil
+    .replace(/<br\s*\/?>/gi, '\n').replace(/<\/(p|div|li|h[1-6]|tr|section|article|dd|dt)>/gi, '\n')
+    .replace(/<[^>]+>/g, ' '))
+    .split('\n').map((z) => z.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n');
+  return { titel, meta, text: text.slice(0, 40000), links: links.slice(0, 400), bilder: bilder.slice(0, 60) };
+}
+
+async function seite(url) {
+  const r = await holen(url);
+  const eintrag = { url, endUrl: r.url, abgerufen: new Date().toISOString(), status: r.status };
+  if (r.status === 200) Object.assign(eintrag, zerlegen(r.text, r.url));
+  await pause(1200);
+  return eintrag;
+}
+
+// Liste abrufen, passende Unterseiten folgen (hoechstens max, ohne Dubletten).
+async function listeMitDetails({ listen, detail, max }) {
+  const seiten = [];
+  for (const u of listen) seiten.push(await seite(u));
+  const ziele = [...new Set(seiten.flatMap((s) => (s.links || []).map((l) => l.href.split('#')[0])).filter((h) => detail.test(h)))].slice(0, max);
+  const details = [];
+  for (const u of ziele) details.push(await seite(u));
+  return { listen: seiten, details };
+}
+
+const QUELLEN = {
+  feuerwehr: () => listeMitDetails({
+    listen: ['https://feuerwehr-merzenich.de/einsaetze', 'https://feuerwehr-merzenich.de/einsaetze?page=1', 'https://feuerwehr-merzenich.de/einsaetze?page=2'],
+    detail: /^https:\/\/(www\.)?feuerwehr-merzenich\.de\/einsaetze\/[^?#/]+/, max: 40,
+  }),
+  polizei: () => listeMitDetails({
+    listen: ORTE.map((o) => `https://www.presseportal.de/blaulicht/r/${encodeURIComponent(o)}`),
+    detail: /^https:\/\/www\.presseportal\.de\/blaulicht\/pm\/\d+\/\d+/, max: 60,
+  }),
+  gemeinde: () => listeMitDetails({
+    listen: ['https://www.gemeinde-merzenich.de/aktuelles/index.php', 'https://www.gemeinde-merzenich.de/aktuelles/'],
+    detail: /^https:\/\/www\.gemeinde-merzenich\.de\/aktuelles\/[^?#]+\.php$/, max: 40,
+  }),
+  schulen: () => listeMitDetails({
+    listen: ['https://kgs.gemeinde-merzenich.de/aktuelles/index.php', 'https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php'],
+    detail: /^https:\/\/kgs(-golzheim)?\.gemeinde-merzenich\.de\/aktuelles\/[^?#]+\.php$/, max: 20,
+  }),
+  // Jobboerse der Bundesagentur: Arbeit (angebotsart 1) und Ausbildung (4).
+  jobs: async () => {
+    const seiten = [];
+    for (const art of [1, 4]) {
+      let gesammelt = 0;
+      for (let page = 1; page <= 4; page++) {
+        const url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=${page}&angebotsart=${art}`;
+        const r = await holen(url, 'application/json');
+        let daten = null;
+        try { daten = JSON.parse(r.text); } catch { /* bleibt null, der Status sagt warum */ }
+        const stellen = daten?.stellenangebote ?? [];
+        seiten.push({ url, abgerufen: new Date().toISOString(), status: r.status, gesamt: daten?.maxErgebnisse ?? null, stellen });
+        gesammelt += stellen.length;
+        await pause(800);
+        if (!stellen.length || gesammelt >= (Number(daten?.maxErgebnisse) || 0)) break;
+      }
+    }
+    return { listen: seiten };
+  },
+};
+
+mkdirSync(ziel, { recursive: true });
+let fehlerQuellen = 0;
+for (const [name, lauf] of Object.entries(QUELLEN)) {
+  if (nur.length && !nur.includes(name)) continue;
+  const start = Date.now();
+  const ergebnis = await lauf();
+  const alle = [...(ergebnis.listen || []), ...(ergebnis.details || [])];
+  const ok = alle.filter((s) => s.status === 200).length;
+  if (!ok) fehlerQuellen++;
+  writeFileSync(join(ziel, `${name}.json`), JSON.stringify({ quelle: name, abgerufen: new Date().toISOString(), ...ergebnis }, null, 1) + '\n');
+  console.log(`${name.padEnd(10)} ${ok}/${alle.length} Seiten ok, ${ergebnis.details?.length ?? 0} Unterseiten, ${Math.round((Date.now() - start) / 1000)} s; Status: ${[...new Set(alle.map((s) => s.status))].join(', ')}`);
+}
+if (fehlerQuellen) console.log(`${fehlerQuellen} Quelle(n) ohne eine einzige erreichbare Seite.`);

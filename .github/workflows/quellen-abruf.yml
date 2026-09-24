@@ -1,0 +1,50 @@
+name: Quellen abrufen (Recherche)
+
+# Holt Feuerwehr-Einsaetze, Presseportal (Polizei), Gemeinde, Schulen und die
+# Jobboerse der Bundesagentur als Rohdaten nach imports/quellen/
+# (deploy/quellen-abruf.mjs). Veroeffentlicht nichts auf der Seite.
+on:
+  schedule:
+    - cron: '10 5 * * *'
+  workflow_dispatch:
+    inputs:
+      nur:
+        description: 'Nur diese Quellen (kommagetrennt: feuerwehr,polizei,gemeinde,schulen,jobs), leer = alle'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quellen-abruf
+  cancel-in-progress: false
+
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Quellen abrufen
+        run: node deploy/quellen-abruf.mjs ${{ inputs.nur && format('--nur={0}', inputs.nur) || '' }}
+
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add imports/quellen
+          if git diff --cached --quiet; then echo 'Nichts zu aendern.'; exit 0; fi
+          git commit -m 'recherche: Quellen abgerufen [skip ci]'
+          for versuch in 1 2 3 4; do
+            git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && exit 0
+            sleep $((versuch * 7))
+          done
+          exit 1
