@@ -136,7 +136,9 @@ function ersetzeFeed(html, neuInnen) {
   const innen = html.slice(start + '<div class="feed">'.length, schluss);
   // '<p class="empty"' ist der alte, einzeilige Leerzustand: die Marke bleibt,
   // damit er beim ersten Lauf ersetzt und nicht als Vorspann bewahrt wird.
-  const marken = ['<article class="feed-lead"', '<article data-story=', '<div data-leerzustand', '<p class="empty"', '<nav class="pagination"'].map((m) => innen.indexOf(m)).filter((i) => i >= 0);
+  // '<article class="feed-lead' ohne schliessendes Anfuehrungszeichen: auch
+  // 'feed-lead no-media' (Aufmacher ohne passendes Bild) ist ein Artikel.
+  const marken = ['<article class="feed-lead', '<article data-story=', '<div data-leerzustand', '<p class="empty"', '<nav class="pagination"'].map((m) => innen.indexOf(m)).filter((i) => i >= 0);
   const praefix = (marken.length ? innen.slice(0, Math.min(...marken)) : innen).replace(/\s+$/, '');
   return html.slice(0, start) + '<div class="feed">' + praefix + neuInnen + '\n    ' + html.slice(schluss);
 }
