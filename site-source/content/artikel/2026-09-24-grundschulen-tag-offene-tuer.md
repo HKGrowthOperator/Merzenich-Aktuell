@@ -17,7 +17,7 @@ sources:
   - title: "Gemeinde Merzenich – Open House bei den Grundschulen"
     url: "https://www.heimat-info.de/beitraege/75e65817-29aa-476c-ab0c-832ca24dd106"
     stand: 2026-09-24
-tags: ["Grundschule", "Golzheim", "Merzenich", "Faire Woche"]
+tags: ["Grundschule", "Golzheim", "Faire Woche"]
 ---
 
 Die Grundschulen in Golzheim und Merzenich öffnen am Samstag, 26. September, ihre Türen. Die Gemeinde kündigt beide Termine als Teil der Fairen Woche an.
