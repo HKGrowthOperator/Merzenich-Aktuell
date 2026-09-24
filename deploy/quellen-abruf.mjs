@@ -205,9 +205,13 @@ if (!nur.length || nur.includes('quellbilder')) {
     let bildinfo = [];
     if (fotos.length) {
       const r = await holen(d.url);
-      const roh = entschluesseln(String(r.text || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
-      const re = /(Rechteinhaber|Bildrechte|Urheber|Quelle:|Copyright|©|honorarfrei|Verwendung|Nutzung|Weiterverwendung|redaktionell)/gi;
-      let t; while ((t = re.exec(roh)) && bildinfo.length < 12) { bildinfo.push(roh.slice(Math.max(0, t.index - 160), t.index + 240).trim()); re.lastIndex = t.index + 240; }
+      const html = String(r.text || '');
+      // Rohes Markup um jede Fundstelle des Bildnamens (inkl. Attribute wie
+      // data-copyright, Bild-Info-Dialog), dazu Stellen mit Rechte-Stichworten.
+      const namen = fotos.map((b) => b.src.split('/').pop().replace(/\.[a-z]+$/i, '')).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      for (const n of namen) { const re = new RegExp(n, 'g'); let t; let k = 0; while ((t = re.exec(html)) && k++ < 3) bildinfo.push(html.slice(Math.max(0, t.index - 700), t.index + 900).replace(/\s+/g, ' ')); }
+      const re = /(Rechteinhaber|Bildrechte|Urheber|copyright|Copyright|©|honorarfrei|Bild-Info|Bildinfo|image-info|license)/g;
+      let t; while ((t = re.exec(html)) && bildinfo.length < 24) { bildinfo.push(html.slice(Math.max(0, t.index - 300), t.index + 500).replace(/\s+/g, ' ')); re.lastIndex = t.index + 500; }
       if (!bildinfo.length) bildinfo = [`kein Bildhinweis im HTML gefunden (Status ${r.status})`];
     }
     for (const [i, b] of fotos.entries()) {
