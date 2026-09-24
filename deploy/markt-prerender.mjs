@@ -24,13 +24,10 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { bibliothekLesen } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
 const site = join(wurzel, 'chatgpt-site');
-const imageLibrary = bibliothekLesen(wurzel);
-const JOB_SYMBOLE = (imageLibrary.images || []).filter((m) => m.pool === 'jobs');
 
 const ORTE = ['Merzenich', 'Düren', 'Niederzier', 'Nörvenich', 'Elsdorf', 'Kerpen'];
 const ORTSTEILE = ['Merzenich', 'Golzheim', 'Girbelsrath', 'Morschenich', 'Bürgewald'];
@@ -69,25 +66,24 @@ function kurzArt(item, art) {
   return String(item.offerType || 'Immobilie');
 }
 
-function zeile(item, art, bildIndex = 0) {
+function zeile(item, art) {
   const url = sichereUrl(item.sourceUrl);
   const p = datum(item.checkedAt);
   const job = art === 'jobs';
   const haupt = job ? item.employer : item.price;
   const fakten = job ? item.employment : item.details;
   const details = job ? item.details : '';
-  // Stellen bekommen verschiedene neutrale Motive aus demselben zentralen V2-Pool.
-  // Immobilien bewusst nicht: ein konkretes Haus neben einem Inserat liest sich als das Objekt.
-  const symbol = job && JOB_SYMBOLE.length ? JOB_SYMBOLE[bildIndex % JOB_SYMBOLE.length] : null;
-  const thumb = symbol ? `<a class="markt-thumb" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow" tabindex="-1" aria-hidden="true" data-editorial-pool="jobs" data-editorial-image-id="${esc(symbol.id)}"><img src="${esc(symbol.src)}" alt="" loading="lazy" decoding="async" data-editorial-image data-editorial-pool="jobs" data-editorial-image-id="${esc(symbol.id)}"><span class="markt-thumb__badge">Symbolbild</span></a>` : '';
-  return `<article class="event-row job-row markt-row${symbol ? ' markt-row--thumb' : ''}">` +
-    `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` + thumb +
+  // Kein Bild neben Inseraten (24.09.): ein Arbeitsplatzfoto laese sich als der
+  // Betrieb des Anbieters, ein Haus als das Objekt. Die gezeichneten Motive
+  // passten nicht zur Stelle ("Bueroarbeitsplatz" neben einer Verkaeuferstelle).
+  return '<article class="event-row job-row markt-row">' +
+    `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` +
     `<div class="info">` +
       `<span class="eyebrow"><span class="markt-art">${esc(kurzArt(item, art))} · </span>${ortZeile(item)}</span>` +
       `<h3><a href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">${esc(item.title)}</a></h3>` +
       (haupt ? `<p class="markt-haupt">${esc(haupt)}</p>` : '') +
       `<div class="meta">${fakten ? `<span>${esc(fakten)}</span>` : ''}${details ? `<span>${esc(details)}</span>` : ''}${p.tag ? `<span>Geprüft ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</span>` : ''}</div>` +
-      `<p class="ev-desc">Quelle: ${esc(item.sourceName || 'Originalquelle')} · Angaben laut Anbieter, maßgeblich ist die Originalanzeige.${symbol ? ` Symbolbild: ${esc(symbol.credit)} · ${esc(symbol.license)}.` : ''}</p>` +
+      `<p class="ev-desc">Quelle: ${esc(item.sourceName || 'Originalquelle')} · Angaben laut Anbieter, maßgeblich ist die Originalanzeige.</p>` +
     `</div>` +
     `<div class="act"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">Originalanzeige öffnen</a></div>` +
   `</article>`;
@@ -98,7 +94,8 @@ function liste(daten, art) {
   const quellen = daten[art === 'jobs' ? 'jobSources' : 'propertySources'] || [];
   const uebersprungen = alle.filter((i) => !sichereUrl(i.sourceUrl) || istSuchseite(i.sourceUrl));
   const items = alle.filter((i) => !uebersprungen.includes(i));
-  const p = datum(daten.meta?.checkedAt);
+  // Stellen gleicht deploy/markt-abgleich.mjs taeglich ab (jobsCheckedAt), Immobilien nicht.
+  const p = datum(art === 'jobs' ? (daten.meta?.jobsCheckedAt || daten.meta?.checkedAt) : daten.meta?.checkedAt);
   const teile = [];
 
   teile.push(`<div class="markt-stand"><strong>Markt geprüft: ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</strong>` +
@@ -114,7 +111,7 @@ function liste(daten, art) {
     teile.push(`<p class="markt-hinweis">${istMerzenich
       ? 'Einschließlich Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'
       : esc(ort) + ' gehört zum direkten Umkreis. Diese Angebote liegen ausdrücklich nicht in Merzenich.'}</p>`);
-    teile.push(hier.length ? hier.map((i) => zeile(i, art, Math.max(0, items.indexOf(i)))).join('\n') : '<p class="empty">Derzeit kein einzelnes Angebot geprüft.</p>');
+    teile.push(hier.length ? hier.map((i) => zeile(i, art)).join('\n') : '<p class="empty">Derzeit kein einzelnes Angebot geprüft.</p>');
     if (hierQuellen.length) {
       teile.push(`<p class="markt-quellen"><strong>Laufende Übersicht:</strong> ${hierQuellen.map((q) =>
         `<a href="${esc(sichereUrl(q.sourceUrl))}" target="_blank" rel="noopener noreferrer nofollow">${esc(q.label)}</a> <small>(${esc(q.sourceName)})</small>`).join(' · ')}</p>`);
