@@ -31,7 +31,7 @@
 
 import http from 'node:http';
 import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync, appendFileSync } from 'node:fs';
-import { createHash, createHmac, randomUUID, randomBytes, timingSafeEqual } from 'node:crypto';
+import { createHash, randomUUID, randomBytes, timingSafeEqual } from 'node:crypto';
 import { join } from 'node:path';
 
 const PORT = Number(process.env.KOMMENTARE_PORT || 8787);
@@ -41,13 +41,6 @@ const DATA_DIR = persistent ? PERSISTENT_DIR : '/tmp/merzenich-kommentare';
 const DATEI = join(DATA_DIR, 'kommentare.json');
 const ADMIN_TOKEN = String(process.env.KOMMENTARE_ADMIN_TOKEN || '');
 const SALZ = process.env.KOMMENTARE_SALZ || randomBytes(16).toString('hex');
-// Werbefrei-Abo: signierte Nachweise. Ohne festes ABO_GEHEIMNIS gelten sie nur
-// bis zum naechsten Neustart - deshalb in Coolify setzen.
-const ABO_GEHEIMNIS = process.env.ABO_GEHEIMNIS || SALZ;
-const STRIPE_KEY = String(process.env.STRIPE_SECRET_KEY || '');
-const ABO_ZAHLUNGSLINK = String(process.env.ABO_ZAHLUNGSLINK || '');
-const ABO_CODES = String(process.env.ABO_CODES || '').split(',').map((c) => c.trim()).filter(Boolean);
-const ABO_PREIS = String(process.env.ABO_PREIS || '2,50 € im Monat');
 const WETTER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=50.8317&longitude=6.5361&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FBerlin&forecast_days=3';
 
 const GRENZEN = { name: [2, 40], text: [3, 2000], titel: [5, 120], proStunde: 6, meldungenBisVerborgen: 3, maxLinks: 2, body: 32 * 1024 };
@@ -133,26 +126,6 @@ function pruefeBeitrag(b) {
   const email = saeubere(b.email, 120).replace(/\n/g, '');
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw { code: 400, meldung: 'Die E-Mail-Adresse sieht nicht gültig aus.', feld: 'email' };
   return { name, text, email };
-}
-
-// ------------------------------------------------------------------ Abo
-const b64u = (buf) => Buffer.from(buf).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-function aboToken(bis, quelle) {
-  const nutz = b64u(JSON.stringify({ v: 1, bis, quelle }));
-  return nutz + '.' + b64u(createHmac('sha256', ABO_GEHEIMNIS).update(nutz).digest());
-}
-function aboPruefen(token) {
-  const [nutz, sig] = String(token || '').split('.');
-  if (!nutz || !sig) return { gueltig: false };
-  const soll = b64u(createHmac('sha256', ABO_GEHEIMNIS).update(nutz).digest());
-  if (soll.length !== sig.length || !timingSafeEqual(Buffer.from(soll), Buffer.from(sig))) return { gueltig: false };
-  try { const d = JSON.parse(Buffer.from(nutz.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf8')); return { gueltig: Date.parse(d.bis) > Date.now(), bis: d.bis, quelle: d.quelle }; } catch { return { gueltig: false }; }
-}
-function inTagen(n) { return new Date(Date.now() + n * 86400 * 1000).toISOString(); }
-async function stripeSession(id) {
-  const r = await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(id)}?expand[]=subscription`, { headers: { Authorization: `Bearer ${STRIPE_KEY}` } });
-  if (!r.ok) throw { code: 400, meldung: 'Die Zahlung konnte beim Zahlungsanbieter nicht gefunden werden.' };
-  return r.json();
 }
 
 // ------------------------------------------------------------------ Wetter
@@ -377,30 +350,6 @@ const server = http.createServer(async (req, res) => {
     if (bereich === 'weather' || (bereich === 'wetter')) {
       try { const body = await wetter(); res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=600, stale-while-revalidate=1800', 'X-Content-Type-Options': 'nosniff' }); return res.end(body); }
       catch (e) { if (wetterCache.body) { res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); return res.end(wetterCache.body); } console.error('wetter:', e.message); return fehler(res, 502, 'Wetterdienst nicht erreichbar.'); }
-    }
-    if (bereich === 'abo') {
-      if (req.method === 'GET' && pfad === 'konfiguration') return antwort(res, 200, { ok: true, konfiguration: { zahlungslink: ABO_ZAHLUNGSLINK, preis: ABO_PREIS, stripe: STRIPE_KEY !== '', codes: ABO_CODES.length > 0 } });
-      if (req.method === 'POST' && pfad === 'status') { const b = await leseBody(req); return antwort(res, 200, { ok: true, ...aboPruefen(b.token) }); }
-      if (req.method === 'POST' && pfad === 'code') {
-        const b = await leseBody(req); const code = String(b.code || '').trim();
-        const hash = absenderHash(req);
-        if (!code) return fehler(res, 400, 'Bitte einen Code eingeben.');
-        if (!ABO_CODES.length) return fehler(res, 503, 'Einlösecodes sind noch nicht eingerichtet.');
-        const ok = ABO_CODES.some((c) => c.length === code.length && timingSafeEqual(Buffer.from(c), Buffer.from(code)));
-        if (!ok) { console.log(`abo code abgelehnt ${hash}`); return fehler(res, 400, 'Dieser Code ist nicht gültig.'); }
-        return antwort(res, 200, { ok: true, token: aboToken(inTagen(365), 'code') });
-      }
-      if (req.method === 'GET' && pfad === 'pruefen') {
-        const id = String(url.searchParams.get('session') || '');
-        if (!/^cs_[A-Za-z0-9_]+$/.test(id)) return fehler(res, 400, 'Ungültige Zahlungs-Sitzung.');
-        if (!STRIPE_KEY) return fehler(res, 503, 'Die Zahlungsanbindung ist noch nicht eingerichtet (STRIPE_SECRET_KEY).');
-        const sess = await stripeSession(id);
-        if (sess.payment_status !== 'paid') return fehler(res, 402, 'Die Zahlung ist noch nicht abgeschlossen.');
-        const ende = sess.subscription && sess.subscription.current_period_end ? new Date(sess.subscription.current_period_end * 1000 + 3 * 86400 * 1000).toISOString() : inTagen(34);
-        console.log(`abo freigeschaltet bis ${ende} (${id.slice(0, 12)}…)`);
-        return antwort(res, 200, { ok: true, token: aboToken(ende, 'stripe') });
-      }
-      return fehler(res, 404, 'Unbekannter Endpunkt.');
     }
     if (bereich !== 'kommentare') return fehler(res, 404, 'Unbekannter Endpunkt.');
     if (req.method === 'GET' && pfad === 'status') {

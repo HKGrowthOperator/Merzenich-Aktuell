@@ -7,11 +7,6 @@
    (#cfcbc2). Auf der dunklen Kachel #17191b traegt Bordeaux nicht, darum
    neutrales Off-White (15,73:1) und neutrales Hellgrau (10,62:1). */
 
-
-
-
-
-
 /* Offene Begegnung: schliesst die Luecke zwischen letztem und naechstem Spiel,
    ohne ein Ergebnis zu behaupten, das nicht bestaetigt ist. */
 /* 18.09.: die offene Begegnung war in Goldbraun (#a8842f) auf Beige (#f6efdd)
@@ -30,8 +25,6 @@
   color:rgba(255,255,255,.9);text-shadow:0 1px 3px rgba(0,0,0,.65);
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media (max-width:900px){.district-text{-webkit-line-clamp:2;font-size:13px}}
-
-
 
 /* Wortmarke im Kopf. Die Groesse wird in style.css, v19.css, v20.css und
    recovery.css insgesamt elfmal gesetzt; durchgesetzt hat sich zuletzt
@@ -186,9 +179,8 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 html[data-theme="dark"] .kommentar-form input:not([type=checkbox]),html[data-theme="dark"] .kommentar-form textarea{background:#1b1b1b;border-color:#4a4a4a}
 html[data-theme="dark"] .diskussion__neu{background:#1b1b1b;border-color:#353535}
 
-/* Werbung global aus (html[data-werbung="aus"]) oder Werbefrei-Abo aktiv (html[data-werbefrei="ja"]) */
+/* Werbung global aus (html[data-werbung="aus"]) */
 html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[data-werbung="aus"] .managed-ad,html[data-werbung="aus"] .ma-display-ad,html[data-werbung="aus"] .ma-ad-booking,html[data-werbung="aus"] .native-ad,html[data-werbung="aus"] .ad,html[data-werbung="aus"] .ma-ad,
-html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,html[data-werbefrei="ja"] .managed-ad,html[data-werbefrei="ja"] .ma-display-ad,html[data-werbefrei="ja"] .ma-ad-booking,html[data-werbefrei="ja"] .native-ad,html[data-werbefrei="ja"] .ad,html[data-werbefrei="ja"] .ma-ad{display:none!important}
 
 /* Externe Bilder ohne Einwilligung: neutraler Platzhalter */
 
@@ -211,16 +203,8 @@ html[data-werbefrei="ja"] .ad-row-body,html[data-werbefrei="ja"] .portal-ads,htm
 @media (max-width:640px){.einwilligung{padding:0}.einwilligung__box{border-left:0;border-right:0;padding:14px 16px 12px}}
 html[data-theme="dark"] .einwilligung__box{background:#1b1b1b;border-color:#353535}
 
-html[data-theme="dark"] .werbefrei__status{background:#1b1b1b;border-color:#353535}
-html[data-theme="dark"] .werbefrei__status.is-aktiv{background:#16261c}
-
 /* Tabellenauszug: Luecke zwischen Spitzengruppe und SC Merzenich */
 .league-table .league-gap td{text-align:center;padding:4px 14px;color:#8a8781;letter-spacing:.2em}
-
-/* Datenschutz-Banner: Hinweis auf das Werbefrei-Abo */
-.einwilligung__werbefrei{margin:10px 0 0;padding:10px 12px;border:1px solid #e3e3e1;border-radius:6px;background:#fbfbfa;font-size:14px;line-height:1.45}
-.einwilligung__werbefrei a{font-weight:600;text-decoration:underline;text-underline-offset:2px}
-html[data-theme="dark"] .einwilligung__werbefrei{background:#1f1f1f;border-color:#3a3a3a}
 
 /* Formulare: Rueckmeldung nach fehlgeschlagener Einsendung (app.js, ?fehler=) */
 .form-fehler{margin:0 0 16px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:#fbf1f1;color:#5a1a1f;font-size:15px;line-height:1.45}
