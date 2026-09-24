@@ -360,14 +360,19 @@ jobs:
             echo 'Nichts nachzuziehen.'
           else
             git commit -m 'ci: generierte Ansichten, abgelaufene Termine und QA-Screenshots nachgezogen [skip ci]'
-            git fetch origin main
             # Bei Konflikten an den Screenshots gewinnt der frische Stand dieses
             # Laufs (-X theirs = der eingespielte Commit). Schlaegt der Rebase
-            # trotzdem fehl, wird er abgebrochen und nicht der QA-Lauf.
-            if git rebase -X theirs origin/main; then
-              git push origin HEAD:main
-            else
-              git rebase --abort
-              echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
-            fi
+            # trotzdem fehl, wird er abgebrochen und nicht der QA-Lauf. Materialize
+            # und der Marktabgleich schreiben parallel auf main: ein abgelehnter
+            # Push wird mit frischem Stand bis zu viermal wiederholt.
+            for versuch in 1 2 3 4; do
+              git fetch origin main
+              if ! git rebase -X theirs origin/main; then
+                git rebase --abort
+                echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
+                break
+              fi
+              if git push origin HEAD:main; then break; fi
+              sleep $((versuch * 7))
+            done
           fi

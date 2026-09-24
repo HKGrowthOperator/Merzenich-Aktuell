@@ -104,6 +104,9 @@ jobs:
             exit 0
           fi
           git commit -m 'build: materialize editorial image system v2 [skip ci]'
-          git fetch origin main
-          git rebase -X theirs origin/main
-          git push origin HEAD:main
+          # QA schreibt parallel auf main; bei abgelehntem Push neu holen und wiederholen.
+          for versuch in 1 2 3 4; do
+            git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && exit 0
+            sleep $((versuch * 7))
+          done
+          exit 1
