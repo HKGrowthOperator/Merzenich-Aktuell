@@ -261,6 +261,11 @@ const dateiDa = (x) => existsSync(join(SITE, String(x.src || '').replace(/^\//, 
 const existing = loadExisting();
 const finalImages = [];
 const usedTitles = new Set();
+// Titel und Pruefsummen aller behaltenen Fotos vorab, ueber alle Pools: sonst
+// laedt ein frueher bearbeiteter Pool dieselbe Datei, die ein spaeterer behaelt.
+const behalten = REFRESH ? [] : existing.images.filter((x) => !AUSGESCHLOSSEN.has(x.sourceTitle) && dateiDa(x));
+behalten.forEach((x) => x.sourceTitle && usedTitles.add(x.sourceTitle));
+const belegteSummen = new Set(behalten.map((x) => x.checksum).filter(Boolean));
 
 for (const pool of Object.keys(POOLS)) {
   const eigene = REFRESH ? [] : existing.images.filter((x) => x.pool === pool);
@@ -296,14 +301,14 @@ for (const pool of Object.keys(POOLS)) {
     }
     for (const candidate of candidates) {
       // Reserve für verworfene Downloads.
-      if (chosen.length >= fehlend + 4) break;
+      if (chosen.length >= fehlend + 8) break;
       if (!usable(candidate, pool) || usedTitles.has(candidate.title) || chosen.some((x) => x.title === candidate.title)) continue;
       const s = serie(candidate.title);
       if ((serien.get(s) || 0) >= SERIE_MAX) continue;
       serien.set(s, (serien.get(s) || 0) + 1);
       chosen.push(candidate);
     }
-    if (chosen.length >= fehlend + 4) break;
+    if (chosen.length >= fehlend + 8) break;
     await sleep(180);
   }
 
@@ -320,7 +325,7 @@ for (const pool of Object.keys(POOLS)) {
       console.warn(pool + ': Download verworfen ' + candidate.title + ': ' + e.message);
       continue;
     }
-    if (finalImages.some((x) => x.checksum === record.checksum)) {
+    if (belegteSummen.has(record.checksum) || finalImages.some((x) => x.checksum === record.checksum)) {
       unlinkSync(join(SITE, record.src.replace(/^\//, '')));
       console.warn(pool + ': Dublette verworfen ' + candidate.title);
       continue;
