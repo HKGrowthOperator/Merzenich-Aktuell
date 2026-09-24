@@ -1,31 +1,31 @@
 {
  "generated": "2026-09-24T16:30:00+02:00",
- "anzahl": 80,
+ "anzahl": 86,
  "bestand": {
-  "gesamt": 80,
+  "gesamt": 86,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 39,
-   "sport": 12,
+   "sport": 13,
    "rathaus": 7,
-   "leben": 12,
+   "leben": 15,
    "wirtschaft": 6,
    "tipp": 0,
    "menschen": 0,
-   "vereine": 4,
+   "vereine": 6,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 51,
+   "merzenich": 55,
    "golzheim": 7,
    "girbelsrath": 11,
-   "morschenich": 5,
+   "morschenich": 7,
    "buergewald": 6,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 80,
+    "anzahl": 86,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -33,7 +33,7 @@
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 12,
+    "anzahl": 13,
     "liste": "gepflegt"
    },
    "/rathaus/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 12,
+    "anzahl": 15,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -57,7 +57,7 @@
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 4,
+    "anzahl": 6,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 51,
+    "anzahl": 55,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -77,7 +77,7 @@
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 5,
+    "anzahl": 7,
     "liste": "gepflegt"
    },
    "/buergewald/": {
@@ -170,14 +170,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3-480.webp 480w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-800.webp 800w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-1200.webp 1200w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-12-b44d17430f.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-12-b44d17430f-480.webp 480w, /assets/editorial-pools/sport/sport-12-b44d17430f-800.webp 800w, /assets/editorial-pools/sport/sport-12-b44d17430f-1200.webp 1200w, /assets/editorial-pools/sport/sport-12-b44d17430f.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
     "height": 900,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Bálint Sallói / Wikimedia Commons · CC BY-SA 4.0",
+    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true
    },
    "undatiert": false,
@@ -211,14 +211,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-02-11b84171a8-480.webp 480w, /assets/editorial-pools/sport/sport-02-11b84171a8-800.webp 800w, /assets/editorial-pools/sport/sport-02-11b84171a8-1200.webp 1200w, /assets/editorial-pools/sport/sport-02-11b84171a8.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-11-b83e938f96.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-11-b83e938f96-480.webp 480w, /assets/editorial-pools/sport/sport-11-b83e938f96-800.webp 800w, /assets/editorial-pools/sport/sport-11-b83e938f96-1200.webp 1200w, /assets/editorial-pools/sport/sport-11-b83e938f96.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1200,
+    "height": 1067,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "WaldiWuff / Wikimedia Commons · CC0",
+    "credit": "Håkan Dahlström from Malmö, Sweden / Wikimedia Commons · CC BY 2.0",
     "symbol": true
    },
    "undatiert": false,
@@ -244,14 +244,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-18-80141c600e.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-18-80141c600e-480.webp 480w, /assets/editorial-pools/sport/sport-18-80141c600e-800.webp 800w, /assets/editorial-pools/sport/sport-18-80141c600e-1200.webp 1200w, /assets/editorial-pools/sport/sport-18-80141c600e.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3-480.webp 480w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-800.webp 800w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-1200.webp 1200w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1067,
+    "height": 900,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "credit": "Bálint Sallói / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true
    },
    "undatiert": false,
@@ -281,6 +281,111 @@
     }
    ],
    "bild": {
+    "src": "/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-02-11b84171a8-480.webp 480w, /assets/editorial-pools/sport/sport-02-11b84171a8-800.webp 800w, /assets/editorial-pools/sport/sport-02-11b84171a8-1200.webp 1200w, /assets/editorial-pools/sport/sport-02-11b84171a8.jpg 1600w",
+    "alt": "Fußballplatz",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "WaldiWuff / Wikimedia Commons · CC0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-sv-morschenich-auswaerts-sv-merken",
+   "url": "/sport/sv-morschenich-auswaerts-sv-merken/",
+   "titel": "SV Morschenich am Sonntag auswärts beim SV Merken",
+   "teaser": "Nach dem 5:3-Heimsieg gegen Sportfreunde Düren II steht für den SV Morschenich am 27. September das nächste Kreisliga-B-Spiel an. Anstoß beim SV Merken ist um 15 Uhr.",
+   "kicker": "Kreisliga B",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-09-24T16:25:00+02:00",
+   "aktualisiert": "2026-09-24T16:25:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "kreisliga-b",
+     "label": "Kreisliga B"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/sport/sport-18-80141c600e.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-18-80141c600e-480.webp 480w, /assets/editorial-pools/sport/sport-18-80141c600e-800.webp 800w, /assets/editorial-pools/sport/sport-18-80141c600e-1200.webp 1200w, /assets/editorial-pools/sport/sport-18-80141c600e.jpg 1600w",
+    "alt": "Fußballplatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-vhs-oldschool-merzenich",
+   "url": "/leben/vhs-oldschool-merzenich/",
+   "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking",
+   "teaser": "Das Projekt „Oldschool“ der VHS Rur-Eifel machte am 21. September zum zweiten Mal in Merzenich Station. Im Mittelpunkt standen Smartphones, Tablets, Apps, digitale Sicherheit und Online-Banking.",
+   "kicker": "Digitalbildung",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T16:24:00+02:00",
+   "aktualisiert": "2026-09-24T16:24:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "digitalisierung",
+     "label": "Digitalisierung"
+    },
+    {
+     "slug": "faire-woche",
+     "label": "Faire Woche"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-jonge-vom-berg-vortanzen",
+   "url": "/vereine/jonge-vom-berg-vortanzen/",
+   "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen",
+   "teaser": "Im Kalender der KG Jonge vom Berg steht für Montag, 28. September, ein Vortanzen. Der Termin ist von 17:30 bis 19 Uhr angesetzt.",
+   "kicker": "Vereinskalender",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T16:23:00+02:00",
+   "aktualisiert": "2026-09-24T16:23:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "vereine",
+     "label": "Vereine"
+    },
+    {
+     "slug": "veranstaltungen",
+     "label": "Veranstaltungen"
+    }
+   ],
+   "bild": {
     "src": "/assets/editorial-pools/sport/sport-16-74d277b05b.jpg",
     "srcset": "/assets/editorial-pools/sport/sport-16-74d277b05b-480.webp 480w, /assets/editorial-pools/sport/sport-16-74d277b05b-800.webp 800w, /assets/editorial-pools/sport/sport-16-74d277b05b-1200.webp 1200w, /assets/editorial-pools/sport/sport-16-74d277b05b.jpg 1600w",
     "alt": "Fußballplatz",
@@ -291,6 +396,115 @@
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true
    },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-st-lambertus-patrozinium-morschenich",
+   "url": "/leben/st-lambertus-patrozinium-morschenich/",
+   "titel": "St. Lambertus in Morschenich lud zum Patrozinium",
+   "teaser": "Die St.-Lambertus-Kapelle in Morschenich hatte für den 19. September zu einem Wortgottesdienst mit Kommunionausteilung anlässlich ihres Patroziniums eingeladen.",
+   "kicker": "Kirche",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-09-24T16:22:00+02:00",
+   "aktualisiert": "2026-09-24T16:22:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kirche",
+     "label": "Kirche"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-fanclub-merzenich-muengersdorf",
+   "url": "/vereine/fanclub-merzenich-muengersdorf/",
+   "titel": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf",
+   "teaser": "Zwölf Mitglieder des 1. FC Köln Fanclubs Merzenich 1967 machten sich am 12. September gemeinsam auf den Weg zum Heimspiel des 1. FC Köln gegen Werder Bremen.",
+   "kicker": "Fanclub",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T16:21:00+02:00",
+   "aktualisiert": "2026-09-24T16:21:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fanclub",
+     "label": "Fanclub"
+    },
+    {
+     "slug": "1-fc-koeln",
+     "label": "1. FC Köln"
+    },
+    {
+     "slug": "vereine",
+     "label": "Vereine"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg",
+    "srcset": "/assets/editorial-pools/vereine/vereine-02-51d0635a6b-480.webp 480w, /assets/editorial-pools/vereine/vereine-02-51d0635a6b-800.webp 800w, /assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg 1600w",
+    "alt": "Treffpunkt des Vereinslebens im Dorf",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Urheber siehe Quelldatei / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-24-faire-woche-nistkasten-workshop",
+   "url": "/leben/faire-woche-nistkasten-workshop/",
+   "titel": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag",
+   "teaser": "Zum Abschluss der Fairen Woche ist für Montag, 28. September, eine Exkursion mit anschließendem Workshop angekündigt. Gemeinsam mit der Biologischen Station Düren sollen unter anderem Nistkästen gebaut werden.",
+   "kicker": "Natur & Jugend",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-24T16:20:00+02:00",
+   "aktualisiert": "2026-09-24T16:20:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "faire-woche",
+     "label": "Faire Woche"
+    },
+    {
+     "slug": "naturschutz",
+     "label": "Naturschutz"
+    },
+    {
+     "slug": "klimaschutz",
+     "label": "Klimaschutz"
+    }
+   ],
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3209,9 +3423,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-23-oldieabend-ortsfest-2026",
-  "url": "/leben/oldieabend-ortsfest-2026/",
-  "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
+  "id": "2026-09-24-jonge-vom-berg-vortanzen",
+  "url": "/vereine/jonge-vom-berg-vortanzen/",
+  "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen"
  },
  "nebenmeldungen": [
   {
@@ -3220,24 +3434,24 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
+   "id": "2026-09-24-st-lambertus-patrozinium-morschenich",
+   "url": "/leben/st-lambertus-patrozinium-morschenich/",
+   "titel": "St. Lambertus in Morschenich lud zum Patrozinium"
+  },
+  {
+   "id": "2026-09-24-fanclub-merzenich-muengersdorf",
+   "url": "/vereine/fanclub-merzenich-muengersdorf/",
+   "titel": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf"
+  },
+  {
    "id": "2026-09-24-oelspur-windmuehle",
    "url": "/blaulicht/oelspur-windmuehle/",
    "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
   },
   {
-   "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
-   "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
-   "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
-  },
-  {
-   "id": "2026-09-23-fahrrad-reparaturstationen",
-   "url": "/leben/fahrrad-reparaturstationen/",
-   "titel": "Vier neue Fahrrad-Reparaturstationen in der Gemeinde Merzenich"
-  },
-  {
-   "id": "2026-09-01-trauung-alte-kirche",
-   "url": "/leben/trauung-alte-kirche/",
-   "titel": "Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar"
+   "id": "2026-09-23-oldieabend-ortsfest-2026",
+   "url": "/leben/oldieabend-ortsfest-2026/",
+   "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
   }
  ]
 }

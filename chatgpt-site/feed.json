@@ -39,7 +39,7 @@
       "content_html": "<p>Nach dem 3:0-Heimsieg gegen Hambach steht für den FC Golzheim am 27. September das nächste Kreisliga-A-Spiel an. Anstoß beim FC Düren 77 ist um 15 Uhr.</p>",
       "date_published": "2026-09-24T16:29:00+02:00",
       "date_modified": "2026-09-24T16:29:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-12-b44d17430f.jpg",
       "tags": [
         "Sport",
         "Golzheim",
@@ -57,7 +57,7 @@
       "content_html": "<p>Die E-Jugend des FC Golzheim hat in Winden erstmals ihre neuen Trikots getragen. Auf der Brust wird auf den Förderkreis Hilfe für krebskranke Kinder Aachen aufmerksam gemacht.</p>",
       "date_published": "2026-09-24T16:28:00+02:00",
       "date_modified": "2026-09-24T16:28:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-11-b83e938f96.jpg",
       "tags": [
         "Sport",
         "Golzheim",
@@ -74,7 +74,7 @@
       "content_html": "<p>Mit einem 5:1-Heimsieg gegen den VfL Bardenberg beendeten die Damen 30 des SC Merzenich ihre Saison auf Rang zwei und sicherten sich damit nach Vereinsangaben den Aufstieg.</p>",
       "date_published": "2026-09-24T16:27:00+02:00",
       "date_modified": "2026-09-24T16:27:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-18-80141c600e.jpg",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
       "tags": [
         "Sport",
         "Merzenich",
@@ -89,12 +89,109 @@
       "content_html": "<p>Der SC 1919 Merzenich bestreitet am 27. September sein nächstes Kreisliga-A-Spiel zuhause. Anstoß gegen die SG Nörvenich-Hochkirchen ist um 15 Uhr.</p>",
       "date_published": "2026-09-24T16:26:00+02:00",
       "date_modified": "2026-09-24T16:26:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-16-74d277b05b.jpg",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
       "tags": [
         "Sport",
         "Merzenich",
         "Fußball",
         "Kreisliga A"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/sport/sv-morschenich-auswaerts-sv-merken/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sv-morschenich-auswaerts-sv-merken/",
+      "title": "SV Morschenich am Sonntag auswärts beim SV Merken",
+      "summary": "Nach dem 5:3-Heimsieg gegen Sportfreunde Düren II steht für den SV Morschenich am 27. September das nächste Kreisliga-B-Spiel an. Anstoß beim SV Merken ist um 15 Uhr.",
+      "content_html": "<p>Nach dem 5:3-Heimsieg gegen Sportfreunde Düren II steht für den SV Morschenich am 27. September das nächste Kreisliga-B-Spiel an. Anstoß beim SV Merken ist um 15 Uhr.</p>",
+      "date_published": "2026-09-24T16:25:00+02:00",
+      "date_modified": "2026-09-24T16:25:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-18-80141c600e.jpg",
+      "tags": [
+        "Sport",
+        "Morschenich",
+        "Fußball",
+        "Kreisliga B",
+        "Morschenich"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-merzenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-merzenich/",
+      "title": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking",
+      "summary": "Das Projekt „Oldschool“ der VHS Rur-Eifel machte am 21. September zum zweiten Mal in Merzenich Station. Im Mittelpunkt standen Smartphones, Tablets, Apps, digitale Sicherheit und Online-Banking.",
+      "content_html": "<p>Das Projekt „Oldschool“ der VHS Rur-Eifel machte am 21. September zum zweiten Mal in Merzenich Station. Im Mittelpunkt standen Smartphones, Tablets, Apps, digitale Sicherheit und Online-Banking.</p>",
+      "date_published": "2026-09-24T16:24:00+02:00",
+      "date_modified": "2026-09-24T16:24:00+02:00",
+      "tags": [
+        "Leben",
+        "Merzenich",
+        "Digitalisierung",
+        "Faire Woche"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/jonge-vom-berg-vortanzen/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/jonge-vom-berg-vortanzen/",
+      "title": "KG Jonge vom Berg lädt am Montag zum Vortanzen",
+      "summary": "Im Kalender der KG Jonge vom Berg steht für Montag, 28. September, ein Vortanzen. Der Termin ist von 17:30 bis 19 Uhr angesetzt.",
+      "content_html": "<p>Im Kalender der KG Jonge vom Berg steht für Montag, 28. September, ein Vortanzen. Der Termin ist von 17:30 bis 19 Uhr angesetzt.</p>",
+      "date_published": "2026-09-24T16:23:00+02:00",
+      "date_modified": "2026-09-24T16:23:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-16-74d277b05b.jpg",
+      "tags": [
+        "Vereine",
+        "Merzenich",
+        "Vereine",
+        "Veranstaltungen"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/st-lambertus-patrozinium-morschenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/st-lambertus-patrozinium-morschenich/",
+      "title": "St. Lambertus in Morschenich lud zum Patrozinium",
+      "summary": "Die St.-Lambertus-Kapelle in Morschenich hatte für den 19. September zu einem Wortgottesdienst mit Kommunionausteilung anlässlich ihres Patroziniums eingeladen.",
+      "content_html": "<p>Die St.-Lambertus-Kapelle in Morschenich hatte für den 19. September zu einem Wortgottesdienst mit Kommunionausteilung anlässlich ihres Patroziniums eingeladen.</p>",
+      "date_published": "2026-09-24T16:22:00+02:00",
+      "date_modified": "2026-09-24T16:22:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+      "tags": [
+        "Leben",
+        "Morschenich",
+        "Kirche",
+        "Morschenich"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/fanclub-merzenich-muengersdorf/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/fanclub-merzenich-muengersdorf/",
+      "title": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf",
+      "summary": "Zwölf Mitglieder des 1. FC Köln Fanclubs Merzenich 1967 machten sich am 12. September gemeinsam auf den Weg zum Heimspiel des 1. FC Köln gegen Werder Bremen.",
+      "content_html": "<p>Zwölf Mitglieder des 1. FC Köln Fanclubs Merzenich 1967 machten sich am 12. September gemeinsam auf den Weg zum Heimspiel des 1. FC Köln gegen Werder Bremen.</p>",
+      "date_published": "2026-09-24T16:21:00+02:00",
+      "date_modified": "2026-09-24T16:21:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/vereine/vereine-02-51d0635a6b.jpg",
+      "tags": [
+        "Vereine",
+        "Merzenich",
+        "Fanclub",
+        "1. FC Köln",
+        "Vereine"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/faire-woche-nistkasten-workshop/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/faire-woche-nistkasten-workshop/",
+      "title": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag",
+      "summary": "Zum Abschluss der Fairen Woche ist für Montag, 28. September, eine Exkursion mit anschließendem Workshop angekündigt. Gemeinsam mit der Biologischen Station Düren sollen unter anderem Nistkästen gebaut werden.",
+      "content_html": "<p>Zum Abschluss der Fairen Woche ist für Montag, 28. September, eine Exkursion mit anschließendem Workshop angekündigt. Gemeinsam mit der Biologischen Station Düren sollen unter anderem Nistkästen gebaut werden.</p>",
+      "date_published": "2026-09-24T16:20:00+02:00",
+      "date_modified": "2026-09-24T16:20:00+02:00",
+      "tags": [
+        "Leben",
+        "Merzenich",
+        "Faire Woche",
+        "Naturschutz",
+        "Klimaschutz"
       ]
     },
     {
@@ -410,110 +507,6 @@
         "Merzenich",
         "Feuerwehr",
         "Hilfeleistung"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-tabellenfuehrer/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-tabellenfuehrer/",
-      "title": "Nach zwei Spielen: SC Merzenich stand an der Tabellenspitze",
-      "summary": "Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim.",
-      "content_html": "<p>Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim.</p>",
-      "date_published": "2026-09-04T09:30:00+02:00",
-      "date_modified": "2026-09-09T10:15:14+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
-      "tags": [
-        "Sport",
-        "Merzenich",
-        "SC 1919 Merzenich",
-        "Kreisliga A",
-        "Fußball"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-reserven-kreisliga-c/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-reserven-kreisliga-c/",
-      "title": "Zweite und dritte Mannschaft suchen den Anschluss",
-      "summary": "Beim Datenstand vom 4. September führte die Erste die Kreisliga A an; stehen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am Sonntag sind beide im Einsatz.",
-      "content_html": "<p>Beim Datenstand vom 4. September führte die Erste die Kreisliga A an; stehen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am Sonntag sind beide im Einsatz.</p>",
-      "date_published": "2026-09-04T09:20:00+02:00",
-      "date_modified": "2026-09-04T09:20:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
-      "tags": [
-        "Sport",
-        "Merzenich",
-        "SC 1919 Merzenich",
-        "Kreisliga C",
-        "Fußball"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-golzheim-nachbarschaftsduell/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-golzheim-nachbarschaftsduell/",
-      "title": "Nachbarschaftsduell: SC Merzenich beim FC Golzheim",
-      "summary": "Am Sonntag um 15 Uhr treffen die beiden Gemeindevereine in der Kreisliga A aufeinander. Merzenich reist als Tabellenführer an, Golzheim hat erst einmal gespielt.",
-      "content_html": "<p>Am Sonntag um 15 Uhr treffen die beiden Gemeindevereine in der Kreisliga A aufeinander. Merzenich reist als Tabellenführer an, Golzheim hat erst einmal gespielt.</p>",
-      "date_published": "2026-09-04T09:10:00+02:00",
-      "date_modified": "2026-09-04T09:10:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-17-a456559897.jpg",
-      "tags": [
-        "Sport",
-        "Golzheim",
-        "SC 1919 Merzenich",
-        "Kreisliga A",
-        "Fußball",
-        "FC Golzheim"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/",
-      "title": "Die Chronik des 2026er-Gemeindehaushalts",
-      "summary": "Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.",
-      "content_html": "<p>Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial/gemeinde-merzenich.png",
-      "tags": [
-        "Rathaus & Politik",
-        "Merzenich",
-        "Haushalt",
-        "Haushaltssicherung",
-        "Kreis Düren"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/heimat-info-app/",
-      "title": "Die ganze Gemeinde in einer App",
-      "summary": "Die Heimat-Info App bündelt Veranstaltungen, Bekanntmachungen und Warnmeldungen. Vereine können eigene Inhalte veröffentlichen.",
-      "content_html": "<p>Die Heimat-Info App bündelt Veranstaltungen, Bekanntmachungen und Warnmeldungen. Vereine können eigene Inhalte veröffentlichen.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/9dcc2811fc8f96-768.webp",
-      "tags": [
-        "Rathaus & Politik",
-        "Merzenich",
-        "Heimat-Info",
-        "App",
-        "Vereine",
-        "Digitalisierung"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-gewaehlt/",
-      "title": "Erstes Jugendgremium in Merzenich gewählt",
-      "summary": "Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.",
-      "content_html": "<p>Knapp 30 Wählerinnen und Wähler haben abgestimmt. Alle aufgestellten Jugendlichen sind gewählt, die konstituierende Sitzung ist terminiert.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/574e8ee34ee536-768.webp",
-      "tags": [
-        "Rathaus & Politik",
-        "Merzenich",
-        "Jugendgremium",
-        "Bürgerhaus",
-        "Beteiligung"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T14:41:55.245Z",
+  "updatedAt": "2026-09-24T14:43:26.718Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -261,39 +261,75 @@
       "articleId": "2026-09-24-oelspur-windmuehle",
       "articleDate": "2026-09-24T14:16:00+02:00"
     },
-    "/sport/sc-merzenich-noervenich-vorschau/": {
+    "/vereine/fanclub-merzenich-muengersdorf/": {
+      "imageId": "web-vereine-02-51d0635a",
+      "pool": "vereine",
+      "motiv": "stadion",
+      "regel": "fanclub",
+      "assignedAt": "2026-09-24T14:43:26.717Z",
+      "articleId": "2026-09-24-fanclub-merzenich-muengersdorf",
+      "articleDate": "2026-09-24T16:21:00+02:00"
+    },
+    "/leben/st-lambertus-patrozinium-morschenich/": {
+      "imageId": "web-aktuell-04-01b3540d",
+      "pool": "aktuell",
+      "motiv": "kirche-merzenich",
+      "regel": "kirche",
+      "assignedAt": "2026-09-24T14:43:26.717Z",
+      "articleId": "2026-09-24-st-lambertus-patrozinium-morschenich",
+      "articleDate": "2026-09-24T16:22:00+02:00"
+    },
+    "/vereine/jonge-vom-berg-vortanzen/": {
       "imageId": "web-sport-16-74d277b0",
       "pool": "sport",
       "motiv": "fussball",
       "regel": "fussball",
-      "assignedAt": "2026-09-24T14:41:55.245Z",
-      "articleId": "2026-09-24-sc-merzenich-noervenich-vorschau",
-      "articleDate": "2026-09-24T16:26:00+02:00"
+      "assignedAt": "2026-09-24T14:43:26.717Z",
+      "articleId": "2026-09-24-jonge-vom-berg-vortanzen",
+      "articleDate": "2026-09-24T16:23:00+02:00"
     },
-    "/sport/sc-merzenich-tennis-damen30-aufstieg/": {
+    "/sport/sv-morschenich-auswaerts-sv-merken/": {
       "imageId": "web-sport-18-80141c60",
       "pool": "sport",
       "motiv": "fussball",
       "regel": "fussball",
-      "assignedAt": "2026-09-24T14:41:55.245Z",
-      "articleId": "2026-09-24-sc-merzenich-tennis-damen30-aufstieg",
-      "articleDate": "2026-09-24T16:27:00+02:00"
+      "assignedAt": "2026-09-24T14:43:26.717Z",
+      "articleId": "2026-09-24-sv-morschenich-auswaerts-sv-merken",
+      "articleDate": "2026-09-24T16:25:00+02:00"
     },
-    "/sport/fc-golzheim-e-jugend-neue-trikots/": {
+    "/sport/sc-merzenich-noervenich-vorschau/": {
       "imageId": "web-sport-02-11b84171",
       "pool": "sport",
       "motiv": "fussball",
       "regel": "fussball",
-      "assignedAt": "2026-09-24T14:41:55.245Z",
-      "articleId": "2026-09-24-fc-golzheim-e-jugend-neue-trikots",
-      "articleDate": "2026-09-24T16:28:00+02:00"
+      "assignedAt": "2026-09-24T14:43:26.717Z",
+      "articleId": "2026-09-24-sc-merzenich-noervenich-vorschau",
+      "articleDate": "2026-09-24T16:26:00+02:00"
     },
-    "/sport/fc-golzheim-auswaerts-dueren-77/": {
+    "/sport/sc-merzenich-tennis-damen30-aufstieg/": {
       "imageId": "web-sport-09-edd5b8c9",
       "pool": "sport",
       "motiv": "fussball",
       "regel": "fussball",
-      "assignedAt": "2026-09-24T14:41:55.245Z",
+      "assignedAt": "2026-09-24T14:43:26.718Z",
+      "articleId": "2026-09-24-sc-merzenich-tennis-damen30-aufstieg",
+      "articleDate": "2026-09-24T16:27:00+02:00"
+    },
+    "/sport/fc-golzheim-e-jugend-neue-trikots/": {
+      "imageId": "web-sport-11-b83e938f",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:43:26.718Z",
+      "articleId": "2026-09-24-fc-golzheim-e-jugend-neue-trikots",
+      "articleDate": "2026-09-24T16:28:00+02:00"
+    },
+    "/sport/fc-golzheim-auswaerts-dueren-77/": {
+      "imageId": "web-sport-12-b44d1743",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T14:43:26.718Z",
       "articleId": "2026-09-24-fc-golzheim-auswaerts-dueren-77",
       "articleDate": "2026-09-24T16:29:00+02:00"
     }
