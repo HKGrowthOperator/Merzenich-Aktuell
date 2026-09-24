@@ -19,7 +19,7 @@ export const ALLE_KATEGORIEN = [...KATEGORIEN, ...FOTO_KATEGORIEN];
 // Brandmelder, Tierrettung, Unfallstelle, Flaechenbrand ...). Sie fuellen nur
 // Luecken der Klassen, haben deshalb keine Mindestgroesse und stehen nicht im
 // Pool-Audit; jedes Foto braucht wie ueberall Sichtung und Motiv.
-export const EREIGNIS_KATEGORIEN = ['technik', 'rettung', 'unfall', 'flaeche'];
+export const EREIGNIS_KATEGORIEN = ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail'];
 export const FOTO_MANIFEST_DATEI = `${DATEN_WURZEL}/editorial-photo-pools.json`;
 
 const LABELS = {
@@ -756,8 +756,13 @@ export const MOTIVREGELN = [
   { id: 'polizei', wenn: /polizei|einbruch|eingebrochen|diebstahl|zeugen|fahndung|tatort|kripo/, motive: ['streifenwagen', 'polizeimotorrad', 'polizeiwache'] },
   { id: 'rettung', wenn: /rettungsdienst|rettungswagen|notarzt|reanimation/, motive: ['rettungswagen', 'rettungswache'] },
   { id: 'feuerwehr', wenn: /feuerwehr|loschgruppe|loschzug/, motive: ['feuerwehrhaus', 'feuerwehreinsatz'] },
+  { id: 'tennis', wenn: /tennis|damen ?30|herren ?30/, motive: ['tennisplatz'] },
+  { id: 'tanz', wenn: /vortanz|tanzgruppe|tanzsport|garde(?:tanz)?/, motive: ['tanzsaal'] },
+  { id: 'digitalbildung', wenn: /oldschool|smartphone|tablet|online-banking|digitalbildung|digitalkurs/, motive: ['senior-smartphone'] },
+  { id: 'nistkasten', wenn: /nistkasten|nistkaesten|nistkaestenbau|vogelkasten/, motive: ['nistkasten'] },
+  { id: 'vereinsheim', wenn: /sportlerheim|vereinsheim|clubhaus|clubheim/, motive: ['vereinsheim'] },
   { id: 'fanclub', wenn: /fanclub|bundesliga|1\. fc koln|effzeh/, motive: ['stadion'] },
-  { id: 'fussball', wenn: /fussball|kreisliga|bezirksliga|kreispokal|spieltag|tabellenspitze|tabellenfuhr|\b\d{1,2}:\d{1,2}\b/, motive: ['fussball'] },
+  { id: 'fussball', wenn: /fussball|kreisliga|bezirksliga|kreispokal|spieltag|tabellenspitze|tabellenfuhr/, motive: ['fussball'] },
   { id: 'hallensport', wenn: /tischtennis|handball|volleyball|turnhalle|sporthalle/, motive: ['sporthalle'] },
   { id: 'fest', wenn: /ortsfest|kirmes|dorffest|oldieabend|trodel|schutzenfest|volksfest|pfarrfest/, motive: ['kirmes', 'trodelmarkt'] },
   { id: 'wochenmarkt', wenn: /wochenmarkt|bauernmarkt/, motive: ['wochenmarkt'] },
@@ -767,7 +772,8 @@ export const MOTIVREGELN = [
   { id: 'sophienhoehe', wenn: /sophienhohe/, motive: ['sophienhoehe'] },
   { id: 'bahn', wenn: /s-bahn|\bs ?12\b|bahnhof|haltepunkt|bahnstrecke|regionalbahn/, motive: ['bahnhof-merzenich', 'zug'] },
   { id: 'rathaus', wenn: /rathaus|gemeinderat|burgermeister|ratssitzung|gemeindeverwaltung|haushalt/, motive: ['rathaus-merzenich'] },
-  { id: 'kirche', wenn: /pfarrkirche|gottesdienst|pfarrgemeinde|kirchengemeinde|laurentius/, motive: ['kirche-merzenich'] },
+  { id: 'kirche-merzenich', wenn: /st\.? laurentius|pfarrkirche st\.? laurentius|alte pfarrkirche merzenich/, motive: ['kirche-merzenich'] },
+  { id: 'kirche', wenn: /pfarrkirche|gottesdienst|pfarrgemeinde|kirchengemeinde|patrozinium|kapelle|lambertus/, motive: ['kirchenfenster'] },
   { id: 'buecherschrank', wenn: /bucherschrank/, motive: ['buecherschrank'] },
   { id: 'maibaum', wenn: /maibaum/, motive: ['maibaum'] },
   { id: 'dorfgemeinschaftshaus', wenn: /dorfgemeinschaftshaus/, motive: ['dorfgemeinschaftshaus'] },

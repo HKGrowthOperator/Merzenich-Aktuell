@@ -119,6 +119,42 @@
         "unfallstelle",
         "rettungswagen"
       ]
+    },
+    "sport.tennis": {
+      "titel": "Tennis, Mannschaft oder Spielbetrieb",
+      "motive": [
+        "tennisplatz"
+      ]
+    },
+    "leben.digitalbildung": {
+      "titel": "Digitale Bildung, Smartphone und Tablet",
+      "motive": [
+        "senior-smartphone"
+      ]
+    },
+    "vereine.tanz": {
+      "titel": "Tanz, Vortanzen und Tanzgruppe",
+      "motive": [
+        "tanzsaal"
+      ]
+    },
+    "leben.nistkasten": {
+      "titel": "Nistkasten, Vogelschutz und Workshop",
+      "motive": [
+        "nistkasten"
+      ]
+    },
+    "vereine.vereinsheim": {
+      "titel": "Vereinsheim, Sportlerheim und Vereinsinfrastruktur",
+      "motive": [
+        "vereinsheim"
+      ]
+    },
+    "kirche.gottesdienst": {
+      "titel": "Gottesdienst und kirchliches Leben ohne lokales Originalfoto",
+      "motive": [
+        "kirchenfenster"
+      ]
     }
   }
 }

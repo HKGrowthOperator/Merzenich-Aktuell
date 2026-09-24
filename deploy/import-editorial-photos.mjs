@@ -62,6 +62,42 @@ const POOLS = {
     tags: ['sport','fussball','amateur','spiel','platz'],
     queries: ['deepcat:"Football venues in North Rhine-Westphalia"', 'deepcat:"Association football pitches in Germany"', 'Fußballplatz Nordrhein-Westfalen', 'Kunstrasenplatz', 'Sporthalle Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
   },
+  tennisdetail: {
+    tags: ['sport','tennis','tennisplatz'],
+    max: 4,
+    pflicht: /tennis/i,
+    queries: ['Dülmen Tenniszentrum Süd 2014 7786', 'Tennisplätze Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
+  },
+  digitaldetail: {
+    tags: ['digital','smartphone','senioren','bildung'],
+    max: 4,
+    pflicht: /(senior.*smartphone|smartphone.*senior|xl-viewer|phone for seniors)/i,
+    queries: ['Senior smartphone XL-Viewer 5000', 'Doro phone for seniors']
+  },
+  tanzdetail: {
+    tags: ['tanz','vortanzen','tanzsaal'],
+    max: 4,
+    pflicht: /(tanzhaus|tanzsaal|dance hall)/i,
+    queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner', 'Uetzing Tanzsaal']
+  },
+  naturdetail: {
+    tags: ['natur','nistkasten','voegel'],
+    max: 4,
+    pflicht: /(nistkasten|nestbox|birdhouse)/i,
+    queries: ['Nistkasten mit Marderschutz', 'Nistkasten Holz Deutschland']
+  },
+  vereinsdetail: {
+    tags: ['verein','vereinsheim','sportlerheim'],
+    max: 4,
+    pflicht: /(vereinsheim|clubhouse|club house)/i,
+    queries: ['Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck', 'Vereinsheim Nordrhein-Westfalen']
+  },
+  kirchedetail: {
+    tags: ['kirche','gottesdienst','kirchenfenster'],
+    max: 4,
+    pflicht: /(kirchenfenster|church window)/i,
+    queries: ['Kirchenfenster Der Herr ist mein Hirte', 'Kirchenfenster Deutschland']
+  },
   termine: {
     tags: ['termine','veranstaltung','event','fest','markt'],
     queries: ['Dorffest Nordrhein-Westfalen', 'Kirmes Nordrhein-Westfalen', 'Weihnachtsmarkt Nordrhein-Westfalen', 'Schützenfest Nordrhein-Westfalen', 'Martinsfeuer Nordrhein-Westfalen', 'Veranstaltung Deutschland']

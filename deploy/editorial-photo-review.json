@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -3528,6 +3528,12 @@
     "File:Prodex firescape fire alarm panel.jpg",
     "File:Hedengren Security Rebranded Kac fire alarm call point.jpg",
     "File:Prodex Firescape Fire alarm panel made by Hedengren security.jpg",
-    "File:Trier-Ehrang, Fußgängerüberführung zur Pfeiffersbrücke 20130527.jpg"
+    "File:Trier-Ehrang, Fußgängerüberführung zur Pfeiffersbrücke 20130527.jpg",
+    "File:Dülmen, Tenniszentrum Süd -- 2014 -- 7786.jpg",
+    "File:Senior smartphone XL-Viewer 5000.jpg",
+    "File:Tanzhaus nrw Großer Saal Foto2 Katja Illner.jpg",
+    "File:Nistkasten mit Marderschutz.JPG",
+    "File:Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck.JPG",
+    "File:Kirchenfenster- Der Herr ist mein Hirte.jpg"
   ]
 }
