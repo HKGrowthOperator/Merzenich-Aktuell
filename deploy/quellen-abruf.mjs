@@ -202,27 +202,32 @@ if (!nur.length || nur.includes('quellbilder')) {
     const fotos = [...new Map((d.bilder || []).filter((b) => /\/thumbnail\/highlight\//.test(b.src)).map((b) => [b.src, b])).values()];
     // Bildhinweis (Rechteinhaber, Nutzungsbedingung) steht nur im HTML der
     // Mitteilung, nicht im Lesetext: Fundstellen woertlich mitschreiben.
-    let bildinfo = [];
+    // Bildhinweis (Rechteinhaber, Nutzung) liefert das Presseportal je Foto
+    // ueber /api/image_info.htx; die id steht im Markup der Mitteilung
+    // (data-id + data-name). Text woertlich mitschreiben.
+    const bildinfo = {};
     if (fotos.length) {
-      const r = await holen(d.url);
-      const html = String(r.text || '');
-      // Rohes Markup um jede Fundstelle des Bildnamens (inkl. Attribute wie
-      // data-copyright, Bild-Info-Dialog), dazu Stellen mit Rechte-Stichworten.
-      const namen = fotos.map((b) => b.src.split('/').pop().replace(/\.[a-z]+$/i, '')).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-      for (const n of namen) { const re = new RegExp(n, 'g'); let t; let k = 0; while ((t = re.exec(html)) && k++ < 3) bildinfo.push(html.slice(Math.max(0, t.index - 700), t.index + 900).replace(/\s+/g, ' ')); }
-      const re = /(Rechteinhaber|Bildrechte|Urheber|copyright|Copyright|©|honorarfrei|Bild-Info|Bildinfo|image-info|license)/g;
-      let t; while ((t = re.exec(html)) && bildinfo.length < 24) { bildinfo.push(html.slice(Math.max(0, t.index - 300), t.index + 500).replace(/\s+/g, ' ')); re.lastIndex = t.index + 500; }
-      if (!bildinfo.length) bildinfo = [`kein Bildhinweis im HTML gefunden (Status ${r.status})`];
+      const html = String((await holen(d.url)).text || '');
+      for (const b of fotos) {
+        const name = b.src.split('/').pop();
+        const id = new RegExp(`data-id="([0-9a-f]{16,})" data-name="${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`).exec(html)?.[1];
+        if (!id) { bildinfo[b.src] = { fehler: 'id im Markup nicht gefunden' }; continue; }
+        const url = `https://www.presseportal.de/api/image_info.htx?id=${id}&story_id=${pm}&render=html`;
+        const r = await holen(url);
+        const text = entschluesseln(String(r.text || '').replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<(br|\/p|\/div|\/li|\/dt|\/dd|\/tr)\b[^>]*>/gi, '\n').replace(/<[^>]+>/g, ' ')).replace(/[ \t]+/g, ' ').replace(/\n\s*/g, '\n').trim();
+        bildinfo[b.src] = { url, status: r.status, text: text.slice(0, 2000) };
+        await pause(400);
+      }
     }
     for (const [i, b] of fotos.entries()) {
       const name = `${pm}-${i + 1}.jpg`;
-      if (index[name] && existsSync(join(bildOrdner, name))) { index[name].bildinfo = bildinfo; continue; }
+      if (index[name] && existsSync(join(bildOrdner, name))) { index[name].bildinfo = bildinfo[b.src]; continue; }
       try {
         const r = await fetch(b.src, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(25000) });
         if (r.status !== 200 || !/^image\//.test(r.headers.get('content-type') || '')) { fehler++; index[name] = { quelle: d.url, src: b.src, status: r.status }; continue; }
         const daten = Buffer.from(await r.arrayBuffer());
         writeFileSync(join(bildOrdner, name), daten);
-        index[name] = { quelle: d.url, src: b.src, alt: b.alt || '', bytes: daten.length, abgerufen: new Date().toISOString(), bildinfo };
+        index[name] = { quelle: d.url, src: b.src, alt: b.alt || '', bytes: daten.length, abgerufen: new Date().toISOString(), bildinfo: bildinfo[b.src] };
         neu++;
       } catch (e) { fehler++; index[name] = { quelle: d.url, src: b.src, status: 'fehler: ' + (e.cause?.code || e.name) }; }
       await pause(500);
