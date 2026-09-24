@@ -141,13 +141,13 @@
   if (!document.querySelector('link[data-ma-ad-rotation]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/anzeigen-rotation.css?v=20260924a';
+    style.href = '/assets/anzeigen-rotation.css?v=d4f00696f7';
     style.dataset.maAdRotation = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-ad-rotation]')) {
     const script = document.createElement('script');
-    script.src = '/assets/anzeigen-rotation.js?v=20260924a';
+    script.src = '/assets/anzeigen-rotation.js?v=24888326f6';
     script.async = false;
     script.dataset.maAdRotation = '1';
     document.head.append(script);
