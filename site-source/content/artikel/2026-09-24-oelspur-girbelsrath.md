@@ -17,7 +17,7 @@ sources:
   - title: "Freiwillige Feuerwehr Merzenich – Einsatz 127/26"
     url: "https://www.heimat-info.de/beitraege/32e22503-139a-44de-9a90-ff874823c427"
     stand: 2026-09-14
-tags: ["Feuerwehr", "Girbelsrath", "Ölspur", "Dechant-Fabry-Straße"]
+tags: ["Feuerwehr", "Girbelsrath", "Hilfeleistung"]
 ---
 
 Die Tagesalarmgruppe der Feuerwehr Merzenich hat am 14. September eine Ölspur in der Dechant-Fabry-Straße in Girbelsrath beseitigt. Der Einsatz wird von der Feuerwehr unter der Nummer 127/26 geführt.
