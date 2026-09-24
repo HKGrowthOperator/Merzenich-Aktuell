@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T13:06:34.589Z",
+  "updatedAt": "2026-09-24T13:08:06.923Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -149,7 +149,7 @@
       "pool": "blaulicht",
       "motiv": "rettungswagen",
       "regel": "rettung",
-      "assignedAt": "2026-09-24T13:06:34.588Z",
+      "assignedAt": "2026-09-24T13:08:06.923Z",
       "articleId": "2026-09-24-ecall-morschenich",
       "articleDate": "2026-09-24T14:08:00+02:00"
     },
@@ -158,7 +158,7 @@
       "pool": "blaulicht",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:06:34.588Z",
+      "assignedAt": "2026-09-24T13:08:06.923Z",
       "articleId": "2026-09-24-oelspur-girbelsrath",
       "articleDate": "2026-09-24T14:10:00+02:00"
     },
@@ -167,7 +167,7 @@
       "pool": "feuerwehr",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:06:34.589Z",
+      "assignedAt": "2026-09-24T13:08:06.923Z",
       "articleId": "2026-09-24-katze-baum-vogelrute",
       "articleDate": "2026-09-24T14:14:00+02:00"
     },
@@ -176,7 +176,7 @@
       "pool": "feuerwehr",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:06:34.589Z",
+      "assignedAt": "2026-09-24T13:08:06.923Z",
       "articleId": "2026-09-24-oelspur-windmuehle",
       "articleDate": "2026-09-24T14:16:00+02:00"
     }
