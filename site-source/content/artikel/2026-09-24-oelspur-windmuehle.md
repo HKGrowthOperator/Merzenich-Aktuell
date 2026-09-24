@@ -17,7 +17,7 @@ sources:
   - title: "Freiwillige Feuerwehr Merzenich – Einsatz 129/26"
     url: "https://www.heimat-info.de/beitraege/a7a08151-b07a-4a71-b26b-1649a82be635"
     stand: 2026-09-22
-tags: ["Feuerwehr", "Ölspur", "An der Windmühle", "Einsatz"]
+tags: ["Feuerwehr", "Hilfeleistung"]
 ---
 
 Die Tagesalarmgruppe der Feuerwehr Merzenich ist am 21. September zu einer Ölspur im Bereich An der Windmühle ausgerückt. Die Feuerwehr führt den Einsatz unter der Nummer 129/26.
