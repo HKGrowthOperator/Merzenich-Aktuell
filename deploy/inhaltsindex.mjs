@@ -902,6 +902,19 @@ for (const ort of Object.keys(ORTSTEILE)) ersetzeBlock(`${ort}/feed.xml`, '<item
   if (!leerRessorts.length && !leerOrte.length) console.log('  Kein Bereich ohne Meldung.');
 }
 
+// 404-Seite: "Neueste Meldungen" aus demselben Index statt einer Liste von Hand
+// (stand bis 24.09. auf dem Stand vom 4. September).
+{
+  const rel = '404.html';
+  const alt = existsSync(join(site, rel)) ? readFileSync(join(site, rel), 'utf8') : '';
+  const NEUESTE_RE = /(<h2>Neueste Meldungen<\/h2>)<ul>[\s\S]*?<\/ul>/;
+  if (NEUESTE_RE.test(alt)) {
+    const liste = [...artikel].sort((a, b) => String(b.datum).localeCompare(String(a.datum))).slice(0, 6)
+      .map((a) => `<li><a href="${x(a.url)}">${x(a.titel)}</a></li>`).join('');
+    schreibe(rel, alt.replace(NEUESTE_RE, (m, h) => `${h}<ul>${liste}</ul>`));
+  }
+}
+
 console.log(`Inhaltsindex: ${artikel.length} Artikel, Stand ${neuester}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}${geloescht.length ? `, ${geloescht.length} Seitenordner ${nurPruefen ? 'ueberzaehlig' : 'entfernt'}` : ''}.`);
 if (geaendert.length && geaendert.length <= 40) console.log('  ' + geaendert.join('\n  '));
 if (nurPruefen && (geaendert.length || geloescht.length)) process.exit(2);
