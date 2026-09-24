@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T06:45:45.521Z",
+  "updatedAt": "2026-09-24T09:10:48.016Z",
   "assignments": {
     "/leben/fahrrad-reparaturstationen/": {
       "imageId": "verkehr-01-strasse",
@@ -25,66 +25,6 @@
         "markt"
       ]
     },
-    "/vereine/fanclub-saisonauftakt/": {
-      "imageId": "web-vereine-01-4cbef12e",
-      "pool": "vereine",
-      "assignedAt": "2026-09-24T06:45:45.510Z",
-      "articleId": "2026-08-31-fanclub-saisonauftakt",
-      "articleDate": "2026-08-31T12:00:00+02:00",
-      "tagsMatched": [
-        "vereine",
-        "verein"
-      ]
-    },
-    "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
-      "imageId": "web-sport-01-96d22546",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.511Z",
-      "articleId": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
-      "articleDate": "2026-09-01T13:59:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
-    "/sport/sc-golzheim-nachbarschaftsduell/": {
-      "imageId": "web-sport-02-a1698323",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.512Z",
-      "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
-      "articleDate": "2026-09-04T09:10:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
-    "/sport/sc-merzenich-reserven-kreisliga-c/": {
-      "imageId": "web-sport-11-e56028f3",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.513Z",
-      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
-      "articleDate": "2026-09-04T09:20:00+02:00",
-      "tagsMatched": [
-        "sport",
-        "fussball",
-        "platz",
-        "fußballplatz"
-      ]
-    },
-    "/sport/sc-merzenich-tabellenfuehrer/": {
-      "imageId": "web-sport-03-71ef7104",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.514Z",
-      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
-      "articleDate": "2026-09-04T09:30:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
     "/blaulicht/einbruch-arnoldsweilerweg/": {
       "imageId": "web-polizei-01-97532690",
       "pool": "polizei",
@@ -107,32 +47,6 @@
         "platz"
       ]
     },
-    "/sport/sv-morschenich-sportfreunde-dueren-5-3/": {
-      "imageId": "web-sport-05-2871089e",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.518Z",
-      "articleId": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
-      "articleDate": "2026-09-23T10:56:00+02:00",
-      "tagsMatched": [
-        "sport",
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
-    "/sport/fc-golzheim-hambach-3-0/": {
-      "imageId": "web-sport-06-f02920e2",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.519Z",
-      "articleId": "2026-09-23-fc-golzheim-hambach-3-0",
-      "articleDate": "2026-09-23T11:00:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "amateur",
-        "spiel",
-        "platz"
-      ]
-    },
     "/sport/sc-merzenich-juelich-2-1/": {
       "imageId": "web-sport-07-3b5e30ce",
       "pool": "sport",
@@ -145,17 +59,6 @@
         "platz"
       ]
     },
-    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
-      "imageId": "web-polizei-02-7b659987",
-      "pool": "polizei",
-      "assignedAt": "2026-09-24T06:45:45.520Z",
-      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-      "articleDate": "2026-09-23T11:12:00+02:00",
-      "tagsMatched": [
-        "polizei",
-        "kontrolle"
-      ]
-    },
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
       "pool": "feuerwehr",
@@ -166,6 +69,102 @@
         "feuerwehr",
         "einsatz",
         "gerätehaus"
+      ]
+    },
+    "/vereine/fanclub-saisonauftakt/": {
+      "imageId": "web-vereine-06-fdd8619f",
+      "pool": "vereine",
+      "assignedAt": "2026-09-24T09:10:48.006Z",
+      "articleId": "2026-08-31-fanclub-saisonauftakt",
+      "articleDate": "2026-08-31T12:00:00+02:00",
+      "tagsMatched": [
+        "vereine",
+        "verein",
+        "düren"
+      ]
+    },
+    "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
+      "imageId": "web-sport-13-fee5d2ea",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.008Z",
+      "articleId": "2026-09-01-sc-merzenich-5-2-auftakt-rang-zwei",
+      "articleDate": "2026-09-01T13:59:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sc-golzheim-nachbarschaftsduell/": {
+      "imageId": "web-sport-17-a4565598",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.009Z",
+      "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
+      "articleDate": "2026-09-04T09:10:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sc-merzenich-reserven-kreisliga-c/": {
+      "imageId": "web-sport-04-d72d5754",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.011Z",
+      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
+      "articleDate": "2026-09-04T09:20:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "platz"
+      ]
+    },
+    "/sport/sc-merzenich-tabellenfuehrer/": {
+      "imageId": "web-sport-07-3b5e30ce",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.013Z",
+      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
+      "articleDate": "2026-09-04T09:30:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/sv-morschenich-sportfreunde-dueren-5-3/": {
+      "imageId": "web-sport-13-fee5d2ea",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.014Z",
+      "articleId": "2026-09-23-sv-morschenich-sportfreunde-dueren-5-3",
+      "articleDate": "2026-09-23T10:56:00+02:00",
+      "tagsMatched": [
+        "sport",
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/sport/fc-golzheim-hambach-3-0/": {
+      "imageId": "web-sport-17-a4565598",
+      "pool": "sport",
+      "assignedAt": "2026-09-24T09:10:48.015Z",
+      "articleId": "2026-09-23-fc-golzheim-hambach-3-0",
+      "articleDate": "2026-09-23T11:00:00+02:00",
+      "tagsMatched": [
+        "fussball",
+        "spiel",
+        "platz"
+      ]
+    },
+    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
+      "imageId": "web-polizei-14-a8c27b85",
+      "pool": "polizei",
+      "assignedAt": "2026-09-24T09:10:48.016Z",
+      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
+      "articleDate": "2026-09-23T11:12:00+02:00",
+      "tagsMatched": [
+        "polizei",
+        "kontrolle"
       ]
     }
   }
