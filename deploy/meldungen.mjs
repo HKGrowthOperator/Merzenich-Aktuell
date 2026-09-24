@@ -41,6 +41,28 @@ const datumKurz = (iso) => new Intl.DateTimeFormat('de-DE', { ...tz, day: '2-dig
 const lesezeit = (m) => `${Math.max(1, Math.round([m.dek, ...m.absaetze].join(' ').split(/\s+/).length / 200))} Min. Lesezeit`;
 const jsonLd = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 
+// Foto aus der Quelle (Presseportal der Polizei): nur nach Sichtung auf
+// Kennzeichen und Gesichter (quellbild.freigegeben) und mit dem woertlichen
+// Bildhinweis der Quelle (quellbild.lizenz). Die Datei liegt unter
+// imports/quellen/bilder (CI-Abruf) und wird nach assets/quellbilder kopiert.
+const QUELLBILDER = join(wurzel, 'imports', 'quellen', 'bilder');
+const quellbildFrei = (m) => (m.quellbild?.freigegeben ? m.quellbild : null);
+const quellbildUrl = (q) => `/assets/quellbilder/${q.datei}`;
+function jpegMasse(pfad) {
+  const b = readFileSync(pfad);
+  for (let i = 2; i + 9 < b.length;) {
+    if (b[i] !== 0xff) { i++; continue; }
+    const typ = b[i + 1]; const laenge = b.readUInt16BE(i + 2);
+    if (typ >= 0xc0 && typ <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(typ)) return { hoehe: b.readUInt16BE(i + 5), breite: b.readUInt16BE(i + 7) };
+    i += 2 + laenge;
+  }
+  throw new Error(`${pfad}: keine JPEG-Masse`);
+}
+function quellbildFigur(q) {
+  const { breite, hoehe } = jpegMasse(join(QUELLBILDER, q.datei));
+  return `<figure class="art-figure"><div class="media"><img src="${esc(quellbildUrl(q))}" alt="${esc(q.alt)}" width="${breite}" height="${hoehe}" loading="eager" fetchpriority="high" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Originalbild</span> · ${esc(q.alt)}</span><span>Bild: ${esc(q.credit)}</span></figcaption></figure>`;
+}
+
 function meldungenLesen() {
   const ordner = join(wurzel, 'inhalte', 'meldungen');
   if (!existsSync(ordner)) return [];
@@ -54,6 +76,12 @@ function meldungenLesen() {
       if (Number.isNaN(new Date(m.datum).getTime())) throw new Error(`${datei} / ${m.slug}: Datum ungueltig`);
       if (!bildklassenLesen().klassen[m.bildklasse]) throw new Error(`${datei} / ${m.slug}: Bildklasse ${m.bildklasse} fehlt in deploy/bildklassen.json`);
       if (!/^https:\/\//.test(m.quelle.url || '')) throw new Error(`${datei} / ${m.slug}: Quelle ohne https-Link`);
+      if (m.quellbild) {
+        const q = m.quellbild; const fehltQ = ['datei', 'alt', 'credit', 'lizenz'].filter((k) => !q[k]);
+        if (fehltQ.length) throw new Error(`${datei} / ${m.slug}: quellbild ohne ${fehltQ.join(', ')}`);
+        if (!existsSync(join(QUELLBILDER, q.datei))) throw new Error(`${datei} / ${m.slug}: quellbild ${q.datei} fehlt in imports/quellen/bilder`);
+        if (typeof q.freigegeben !== 'boolean') throw new Error(`${datei} / ${m.slug}: quellbild.freigegeben muss true oder false sein (Sichtung)`);
+      }
       alle.push({ ...m, datei });
     }
   }
@@ -113,7 +141,7 @@ function hauptteil(m, index) {
   </div>
 </div></div>
 <div class="shell article-grid">
-  <div class="article-body" data-readable>
+  <div class="article-body" data-readable>${quellbildFrei(m) ? quellbildFigur(quellbildFrei(m)) : ''}
     ${teilenBlock(m)}
     ${fakten}
     <div class="prose">${m.absaetze.map((p) => `<p>${esc(p)}</p>`).join('\n')}
@@ -133,7 +161,7 @@ function kopf(vorlage, m) {
   const url = `${SITE_URL}/${m.ressort}/${m.slug}/`;
   const teil = m.ortsteil !== 'merzenich' ? ORTSTEILE[m.ortsteil] : '';
   const labels = m.themen.map(([, l]) => l).concat(teil ? [teil] : []);
-  const og = `${SITE_URL}/assets/img/og-default.jpg`;
+  const og = quellbildFrei(m) ? `${SITE_URL}${quellbildUrl(quellbildFrei(m))}` : `${SITE_URL}/assets/img/og-default.jpg`;
   const ersetze = (s, re, neu) => { if (!re.test(s)) throw new Error(`Vorlage: ${re} nicht gefunden`); return s.replace(re, () => neu); };
   let h = vorlage;
   h = ersetze(h, /<title>[^<]*<\/title>/, `<title>${esc(m.titel)} | Merzenich Aktuell</title>`);
@@ -180,6 +208,14 @@ for (const m of meldungen) {
   const { datei, ...kern } = m;
   m.hash = createHash('sha256').update(JSON.stringify(kern)).digest('hex').slice(0, 12);
   const pfad = join(site, m.ressort, m.slug, 'index.html');
+  const q = quellbildFrei(m);
+  if (q) {
+    const ziel = join(site, quellbildUrl(q).slice(1)); const quelle = readFileSync(join(QUELLBILDER, q.datei));
+    if (!existsSync(ziel) || !readFileSync(ziel).equals(quelle)) {
+      veraltet.push(quellbildUrl(q));
+      if (!nurPruefen) { mkdirSync(dirname(ziel), { recursive: true }); writeFileSync(ziel, quelle); }
+    }
+  }
   if (existsSync(pfad)) {
     const alt = readFileSync(pfad, 'utf8');
     const marke = /<article class="article" data-meldung="([0-9a-f]+)"/.exec(alt);
