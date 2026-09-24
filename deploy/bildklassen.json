@@ -32,6 +32,12 @@
         "gebaeudebrand"
       ]
     },
+    "blaulicht.feuer.innen": {
+      "titel": "Brand in einem Raum oder Anbau, ohne Großlage",
+      "motive": [
+        "brandschaden-innen"
+      ]
+    },
     "blaulicht.feuer.klein": {
       "titel": "Kleinbrand (Mülleimer, Gulli, Unrat)",
       "motive": [
@@ -74,6 +80,31 @@
         "oelspur"
       ]
     },
+    "kirche.gottesdienst": {
+      "titel": "Gottesdienst und kirchliches Leben ohne lokales Originalfoto",
+      "motive": [
+        "kirchenfenster"
+      ]
+    },
+    "leben.digitalbildung": {
+      "titel": "Digitale Bildung, Smartphone und Tablet",
+      "motive": [
+        "senior-smartphone"
+      ]
+    },
+    "leben.nistkasten": {
+      "titel": "Nistkasten, Vogelschutz und Workshop",
+      "motive": [
+        "nistkasten"
+      ]
+    },
+    "polizei.diebstahl": {
+      "titel": "Diebstahl aus Fahrzeugen, Werkzeugdiebstahl",
+      "motive": [
+        "streifenwagen",
+        "polizeimotorrad"
+      ]
+    },
     "polizei.diebstahl.kfz": {
       "titel": "Fahrzeug gestohlen",
       "motive": [
@@ -89,10 +120,35 @@
         "streifenwagen"
       ]
     },
+    "polizei.festnahme": {
+      "titel": "Festnahme, Ermittlungserfolg",
+      "motive": [
+        "streifenwagen",
+        "polizeimotorrad"
+      ]
+    },
     "polizei.zeugenaufruf.bruecke": {
       "titel": "Gefährlicher Eingriff, Gegenstände von Brücke",
       "motive": [
         "fussgaengerbruecke"
+      ]
+    },
+    "sport.tennis": {
+      "titel": "Tennis, Mannschaft oder Spielbetrieb",
+      "motive": [
+        "tennisplatz"
+      ]
+    },
+    "vereine.tanz": {
+      "titel": "Tanz, Vortanzen und Tanzgruppe",
+      "motive": [
+        "tanzsaal"
+      ]
+    },
+    "vereine.vereinsheim": {
+      "titel": "Vereinsheim, Sportlerheim und Vereinsinfrastruktur",
+      "motive": [
+        "vereinsheim"
       ]
     },
     "verkehr.radar": {
@@ -118,42 +174,6 @@
       "motive": [
         "unfallstelle",
         "rettungswagen"
-      ]
-    },
-    "sport.tennis": {
-      "titel": "Tennis, Mannschaft oder Spielbetrieb",
-      "motive": [
-        "tennisplatz"
-      ]
-    },
-    "leben.digitalbildung": {
-      "titel": "Digitale Bildung, Smartphone und Tablet",
-      "motive": [
-        "senior-smartphone"
-      ]
-    },
-    "vereine.tanz": {
-      "titel": "Tanz, Vortanzen und Tanzgruppe",
-      "motive": [
-        "tanzsaal"
-      ]
-    },
-    "leben.nistkasten": {
-      "titel": "Nistkasten, Vogelschutz und Workshop",
-      "motive": [
-        "nistkasten"
-      ]
-    },
-    "vereine.vereinsheim": {
-      "titel": "Vereinsheim, Sportlerheim und Vereinsinfrastruktur",
-      "motive": [
-        "vereinsheim"
-      ]
-    },
-    "kirche.gottesdienst": {
-      "titel": "Gottesdienst und kirchliches Leben ohne lokales Originalfoto",
-      "motive": [
-        "kirchenfenster"
       ]
     }
   }

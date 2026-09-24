@@ -48,3 +48,9 @@ Zwei Redaktionswege schreiben Meldungen: `inhalte/meldungen/*.json`
 (→ `site-source/build.mjs`, lokal). Doppelte werden zusammengeführt, die alte
 Adresse per `chatgpt-site/_redirects` umgeleitet und
 `node deploy/coolify/erzeuge-nginx-conf.mjs` neu erzeugt.
+
+## Fotos der Polizei (Presseportal)
+
+`quellen-abruf.mjs` lädt zu jeder Meldung aus `inhalte/meldungen/`, deren Quelle eine Presseportal-Mitteilung ist, die Fotos der Mitteilung (Fassung „highlight“) nach `imports/quellen/bilder/<pm>-<n>.jpg`; `bilder/index.json` nennt Quelle und alt-Text. Der Container der Redaktion erreicht `cache.pressmailing.net` nicht, deshalb nur über CI. Auf die Seite kommt ein Foto erst nach Sichtung (Kennzeichen, Gesichter), Credit „Polizei Düren / Presseportal“.
+
+QA sperrt doppelte Meldungen zur selben Pressemitteilung (erster Link der Quellenbox) wie doppelte Einsatznummern.

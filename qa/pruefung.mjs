@@ -385,12 +385,17 @@ function pruefeDoppelteEinsaetze() {
   for (const datei of dateienUnter('chatgpt-site/blaulicht', '.html')) {
     const html = lies(datei);
     const kasten = /<div class="facts">[\s\S]*?<\/ul>/.exec(html)?.[0] || '';
+    // Einsatznummer der Feuerwehr aus dem Kasten, Pressemitteilung der Polizei
+    // aus dem ersten Link der Quellenbox (die Grundlage der Meldung).
     const nr = /<li>\s*Einsatz(?:nummer)?\s+(\d{1,3}\/\d{2})\b/.exec(kasten)?.[1];
-    if (!nr) continue;
-    if (!nachNummer.has(nr)) nachNummer.set(nr, []);
-    nachNummer.get(nr).push(datei.replace(wurzel + '/', '').replace(/\/index\.html$/, '/'));
+    const box = /<div class="source-box">[\s\S]*?<\/div>/.exec(html)?.[0] || '';
+    const pm = /href="https:\/\/www\.presseportal\.de\/blaulicht\/pm\/\d+\/(\d+)"/.exec(box)?.[1];
+    for (const schluessel of [nr && `Einsatz ${nr}`, pm && `Pressemitteilung ${pm}`].filter(Boolean)) {
+      if (!nachNummer.has(schluessel)) nachNummer.set(schluessel, []);
+      nachNummer.get(schluessel).push(datei.replace(wurzel + '/', '').replace(/\/index\.html$/, '/'));
+    }
   }
-  for (const [nr, seiten] of nachNummer) if (seiten.length > 1) fehler('Inhalte', `Einsatz ${nr} steht ${seiten.length}-mal auf der Seite: ${seiten.join(', ')}. Zusammenfuehren, alte Adresse per _redirects umleiten.`);
+  for (const [nr, seiten] of nachNummer) if (seiten.length > 1) fehler('Inhalte', `${nr} steht ${seiten.length}-mal auf der Seite: ${seiten.join(', ')}. Zusammenfuehren, alte Adresse per _redirects umleiten.`);
 }
 
 pruefeMarkupGegenCode();

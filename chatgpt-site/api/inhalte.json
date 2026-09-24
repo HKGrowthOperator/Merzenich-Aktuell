@@ -1,11 +1,11 @@
 {
  "generated": "2026-09-24T16:30:00+02:00",
- "anzahl": 86,
+ "anzahl": 104,
  "bestand": {
-  "gesamt": 86,
+  "gesamt": 104,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 39,
+   "blaulicht": 57,
    "sport": 13,
    "rathaus": 7,
    "leben": 15,
@@ -16,20 +16,20 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 55,
+   "merzenich": 70,
    "golzheim": 7,
-   "girbelsrath": 11,
+   "girbelsrath": 14,
    "morschenich": 7,
    "buergewald": 6,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 86,
+    "anzahl": 104,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 39,
+    "anzahl": 57,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 55,
+    "anzahl": 70,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -73,7 +73,7 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 11,
+    "anzahl": 14,
     "liste": "gepflegt"
    },
    "/morschenich/": {
@@ -2060,17 +2060,7 @@
      "label": "Fahrrad"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 1067,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2101,17 +2091,7 @@
      "label": "B264"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 1200,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2773,17 +2753,7 @@
      "label": "Polizei"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg 1600w",
-    "alt": "Rettungswagen im Einsatz",
-    "width": 1600,
-    "height": 1200,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2821,6 +2791,600 @@
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
     "symbol": false
    },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-06-23-abbiegeunfall-b264-muehlenstrasse",
+   "url": "/blaulicht/abbiegeunfall-b264-muehlenstrasse/",
+   "titel": "Abbiegeunfall an der B264/Mühlenstraße: Feuerwehr befreit verletzte Fahrerin",
+   "teaser": "Ein 69-Jähriger übersah am 22. Juni beim Linksabbiegen eine entgegenkommende 22-Jährige.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-06-23T09:30:00+02:00",
+   "aktualisiert": "2026-06-23T09:30:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-06-17-festnahmen-serie-pkw-aufbrueche",
+   "url": "/blaulicht/festnahmen-serie-pkw-aufbrueche/",
+   "titel": "Serie von Autoaufbrüchen, auch in Merzenich: drei Verdächtige in Untersuchungshaft",
+   "teaser": "Die Polizei ordnet den Festgenommenen eine hohe zweistellige Zahl an Aufbrüchen in Düren, Langerwehe und Merzenich zu.",
+   "kicker": "Polizei · Festnahme",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-06-17T13:32:00+02:00",
+   "aktualisiert": "2026-06-17T13:32:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "diebstahl",
+     "label": "Diebstahl"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-06-05-abgelenkt-auffahrunfall-l264-drei-autos",
+   "url": "/blaulicht/abgelenkt-auffahrunfall-l264-drei-autos/",
+   "titel": "Zigarettenpackung aufgehoben: Auffahrunfall mit drei Autos auf der L264",
+   "teaser": "Ein 60-Jähriger war am 3. Juni kurz vor einem Kreisverkehr abgelenkt. Zwei Menschen wurden leicht verletzt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-06-05T11:55:00+02:00",
+   "aktualisiert": "2026-06-05T11:55:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-06-02-unfallflucht-radfahrer-bahnstrasse",
+   "url": "/blaulicht/unfallflucht-radfahrer-bahnstrasse/",
+   "titel": "Unfallflucht an der Bahnstraße: 14-jähriger Radfahrer verletzt",
+   "teaser": "Ein grauer SUV, möglicherweise ein Audi, streifte den Jungen am 1. Juni und fuhr weiter.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-06-02T09:45:00+02:00",
+   "aktualisiert": "2026-06-02T09:45:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "fahrrad",
+     "label": "Fahrrad"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-05-27-gestohlenes-auto-ueberschlagen-festnahme",
+   "url": "/blaulicht/gestohlenes-auto-ueberschlagen-festnahme/",
+   "titel": "In Merzenich gestohlenes Auto überschlägt sich: Fahrer (18) festgenommen",
+   "teaser": "Drei Insassen flüchteten in der Nacht zum 26. Mai nach dem Unfall auf der Nordstraße zu Fuß. Einen fasste die Polizei in Birkesdorf.",
+   "kicker": "Polizei · Festnahme",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-05-27T09:55:00+02:00",
+   "aktualisiert": "2026-05-27T09:55:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "diebstahl",
+     "label": "Diebstahl"
+    },
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-05-05-auffahrunfall-b264-schwer-verletzt-mai",
+   "url": "/blaulicht/auffahrunfall-b264-schwer-verletzt-mai/",
+   "titel": "Auffahrunfall auf der B264: Frau schwer verletzt",
+   "teaser": "Eine 54-Jährige bemerkte am 4. Mai zu spät, dass der Wagen vor ihr bremste.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-05-05T13:07:00+02:00",
+   "aktualisiert": "2026-05-05T13:07:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-04-07-motorradfahrer-stuerzt-beim-abbiegen-b264",
+   "url": "/blaulicht/motorradfahrer-stuerzt-beim-abbiegen-b264/",
+   "titel": "Motorradfahrer stürzt beim Abbiegen an der Kreuzung B264/L264",
+   "teaser": "Der 35-Jährige aus Bornheim verlor am 6. April die Kontrolle und wurde leicht verletzt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-04-07T12:07:00+02:00",
+   "aktualisiert": "2026-04-07T12:07:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-04-02-motorroller-gestohlen-am-fronhof",
+   "url": "/blaulicht/motorroller-gestohlen-am-fronhof/",
+   "titel": "Motorroller unter Carport Am Fronhof gestohlen",
+   "teaser": "Der ältere Honda-Roller verschwand am 1. April tagsüber in Girbelsrath. Die Polizei bittet um Hinweise.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-04-02T12:00:00+02:00",
+   "aktualisiert": "2026-04-02T12:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "diebstahl",
+     "label": "Diebstahl"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-03-30-unfall-l264-am-rosspfad-gegenverkehr",
+   "url": "/blaulicht/unfall-l264-am-rosspfad-gegenverkehr/",
+   "titel": "Auf die Gegenfahrbahn geraten: Unfall auf der L264 am Roßpfad",
+   "teaser": "Zwei junge Menschen aus Merzenich wurden am 27. März leicht verletzt. Ob ein medizinischer Notfall die Ursache war, wird geprüft.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-03-30T12:55:00+02:00",
+   "aktualisiert": "2026-03-30T12:55:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-03-19-frontalzusammenstoss-b264-verlorene-ladung",
+   "url": "/blaulicht/frontalzusammenstoss-b264-verlorene-ladung/",
+   "titel": "Verlorener Maschendrahtzaun löst Frontalzusammenstoß auf der B264 aus",
+   "teaser": "Drei Menschen wurden am 18. März zwischen Merzenich und Golzheim verletzt. Die Polizei sucht den Fahrer eines Klein-Lkw.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-03-19T12:30:00+01:00",
+   "aktualisiert": "2026-03-19T12:30:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 2134,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-03-17-einbruch-buirer-strasse-waffenschrank",
+   "url": "/blaulicht/einbruch-buirer-strasse-waffenschrank/",
+   "titel": "Einbrecher brechen Waffenschrank auf, Waffen bleiben zurück",
+   "teaser": "An der Buirer Straße nahmen Unbekannte am 16. März Bargeld und den aufgebrochenen Schrank mit.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-03-17T09:30:00+01:00",
+   "aktualisiert": "2026-03-17T09:30:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "einbruch",
+     "label": "Einbruch"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-03-13-unfall-kreuzung-b264-l264-rotlicht",
+   "url": "/blaulicht/unfall-kreuzung-b264-l264-rotlicht/",
+   "titel": "Über Rot in die Kreuzung B264/L264: drei Verletzte, ein Auto brennt",
+   "teaser": "Bei dem Unfall am 12. März entstand nach Angaben der Polizei ein Schaden von rund 100.000 Euro.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-03-13T10:42:00+01:00",
+   "aktualisiert": "2026-03-13T10:42:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-02-25-werkzeug-aus-transporter-in-der-lohe",
+   "url": "/blaulicht/werkzeug-aus-transporter-in-der-lohe/",
+   "titel": "Werkzeug aus Transporter In der Lohe gestohlen",
+   "teaser": "In der Nacht zum 24. Februar räumten Unbekannte einen Mercedes Vito aus. Der Schaden liegt im mittleren fünfstelligen Bereich.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-02-25T09:20:00+01:00",
+   "aktualisiert": "2026-02-25T09:20:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "diebstahl",
+     "label": "Diebstahl"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-02-23-brand-schuetzenstrasse-waeschetrockner",
+   "url": "/blaulicht/brand-schuetzenstrasse-waeschetrockner/",
+   "titel": "Wäschetrockner brennt im Anbau eines Hauses an der Schützenstraße",
+   "teaser": "Der Bewohner roch am 20. Februar Rauch und rief die Feuerwehr. Verletzt wurde niemand.",
+   "kicker": "Polizei · Brand",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-02-23T10:29:00+01:00",
+   "aktualisiert": "2026-02-23T10:29:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "brand",
+     "label": "Brand"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-02-20-einbruch-arnoldsweilerweg-februar",
+   "url": "/blaulicht/einbruch-arnoldsweilerweg-februar/",
+   "titel": "Einbruch am Arnoldsweilerweg im Februar: Polizei sucht Zeugen",
+   "teaser": "Unbekannte brachen am 19. Februar tagsüber in ein Einfamilienhaus ein und durchsuchten mehrere Räume.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-02-20T10:35:00+01:00",
+   "aktualisiert": "2026-02-20T10:35:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "einbruch",
+     "label": "Einbruch"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-02-17-alkoholunfall-l264-rosenmontag",
+   "url": "/blaulicht/alkoholunfall-l264-rosenmontag/",
+   "titel": "Mit 1,7 Promille in den Grünstreifen: Unfall auf der L264 bei Girbelsrath",
+   "teaser": "Ein 29-Jähriger kam an Rosenmontag zwischen Girbelsrath und Ellen von der Fahrbahn ab. Sein Führerschein ist sichergestellt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-02-17T11:23:00+01:00",
+   "aktualisiert": "2026-02-17T11:23:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 2134,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-01-30-einbruch-marienstrasse",
+   "url": "/blaulicht/einbruch-marienstrasse/",
+   "titel": "Einbruch in Einfamilienhaus an der Marienstraße",
+   "teaser": "Unbekannte drangen am 29. Januar tagsüber gewaltsam ein und durchwühlten Schränke. Die Polizei sucht Zeugen.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-01-30T10:30:00+01:00",
+   "aktualisiert": "2026-01-30T10:30:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "einbruch",
+     "label": "Einbruch"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-01-23-betrueger-burgstrasse-gestellt",
+   "url": "/blaulicht/betrueger-burgstrasse-gestellt/",
+   "titel": "Handy-Betrug: Zivilpolizisten stellen Verdächtigen in der Burgstraße",
+   "teaser": "Ein betrogener Käufer aus Aachen hatte die Täter erneut angeschrieben. Beim vereinbarten Treffen warteten Zivilbeamte.",
+   "kicker": "Polizei · Festnahme",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-01-23T12:00:00+01:00",
+   "aktualisiert": "2026-01-23T12:00:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },

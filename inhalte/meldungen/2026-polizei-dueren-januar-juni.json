@@ -1,0 +1,719 @@
+{
+  "hinweis": "Pressemitteilungen der Polizei Düren (Presseportal) Januar bis Juni 2026, abgerufen am 24.09.2026 (imports/quellen/polizei.json). Nur was in der Mitteilung steht. Zeit = Veroeffentlichung der Mitteilung.",
+  "meldungen": [
+    {
+      "slug": "betrueger-burgstrasse-gestellt",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Festnahme",
+      "titel": "Handy-Betrug: Zivilpolizisten stellen Verdächtigen in der Burgstraße",
+      "dek": "Ein betrogener Käufer aus Aachen hatte die Täter erneut angeschrieben. Beim vereinbarten Treffen warteten Zivilbeamte.",
+      "datum": "2026-01-23T12:00:00+01:00",
+      "fakten": [
+        "Donnerstagabend, 22. Januar 2026",
+        "Treffpunkt in der Burgstraße",
+        "Ein Verdächtiger auf der Flucht gestellt",
+        "Schaden des Geschädigten laut Polizei im vierstelligen Bereich"
+      ],
+      "absaetze": [
+        "Zivilkräfte der Polizei haben am späten Donnerstagabend, 22. Januar, in der Burgstraße einen mutmaßlichen Betrüger gestellt. Den Hinweis gab ein 30-Jähriger aus Aachen, der zuvor selbst betrogen worden war.",
+        "Nach Angaben der Polizei hatten ihm Betrüger über eine Online-Verkaufsplattform ein gefälschtes Smartphone verkauft. Er erstattete Anzeige, fand die Täter auf der Plattform wieder und vereinbarte unter einem anderen Konto ein neues Treffen. Die Polizei übernahm: Zivilbeamte gingen als Kaufinteressenten zum Treffpunkt.",
+        "Als sich dort zwei Verdächtige näherten und zu Fuß flüchteten, wurde einer von ihnen gestellt und zur Wache nach Düren gebracht. Die Beamten stellten Beweismittel sicher. Den Verdächtigen erwarten Strafverfahren wegen Betrugs."
+      ],
+      "themen": [
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.festnahme",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 23.01.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6202595",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einbruch-marienstrasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Einbruch in Einfamilienhaus an der Marienstraße",
+      "dek": "Unbekannte drangen am 29. Januar tagsüber gewaltsam ein und durchwühlten Schränke. Die Polizei sucht Zeugen.",
+      "datum": "2026-01-30T10:30:00+01:00",
+      "fakten": [
+        "Donnerstag, 29. Januar 2026, zwischen 8:30 und 19 Uhr",
+        "Einfamilienhaus in der Marienstraße",
+        "Kriminalpolizei hat Spuren gesichert",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte sind am Donnerstag, 29. Januar, zwischen 8:30 und 19 Uhr in ein Einfamilienhaus in der Marienstraße eingebrochen. Mindestens ein Täter verschaffte sich gewaltsam Zutritt.",
+        "Im Haus betraten der oder die Einbrecher mehrere Räume und durchwühlten Schränke und Kommoden. Ob etwas gestohlen wurde, war bei der Anzeige noch unklar. Die Kriminalpolizei sicherte Spuren.",
+        "Wer in dieser Zeit verdächtige Personen oder Fahrzeuge an der Marienstraße gesehen hat, meldet sich unter 02421 949-0."
+      ],
+      "themen": [
+        [
+          "einbruch",
+          "Einbruch"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.einbruch",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 30.01.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6207195",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "alkoholunfall-l264-rosenmontag",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Mit 1,7 Promille in den Grünstreifen: Unfall auf der L264 bei Girbelsrath",
+      "dek": "Ein 29-Jähriger kam an Rosenmontag zwischen Girbelsrath und Ellen von der Fahrbahn ab. Sein Führerschein ist sichergestellt.",
+      "datum": "2026-02-17T11:23:00+01:00",
+      "fakten": [
+        "Montag, 16. Februar 2026, gegen 16:30 Uhr",
+        "L264 zwischen Girbelsrath und Ellen, Höhe Morschenicher Straße",
+        "Fahrer (29) leicht verletzt, Atemalkohol 1,7 Promille",
+        "Schaden laut Polizei rund 3.400 Euro"
+      ],
+      "absaetze": [
+        "Ein 29-jähriger Autofahrer aus Langerwehe ist an Rosenmontag, 16. Februar, auf der L264 zwischen Girbelsrath und Ellen verunglückt. Er fuhr gegen 16:30 Uhr aus Richtung Girbelsrath in Richtung Ellen.",
+        "Nach Angaben eines Zeugen kam er etwa in Höhe der Einmündung Morschenicher Straße zuerst nach links von der Fahrbahn ab, lenkte gegen und landete im rechten Grünstreifen. Dabei streifte er einen Leitpfosten.",
+        "Bei der Unfallaufnahme stellte die Polizei fest, dass er vor der Fahrt getrunken hatte: Der Atemalkoholtest ergab 1,7 Promille. Ein Rettungswagen brachte den leicht verletzten Mann ins Krankenhaus, wo ihm eine Blutprobe entnommen wurde. Sein Führerschein wurde sichergestellt. Den Schaden schätzt die Polizei auf rund 3.400 Euro."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 17.02.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6218373",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einbruch-arnoldsweilerweg-februar",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Einbruch am Arnoldsweilerweg im Februar: Polizei sucht Zeugen",
+      "dek": "Unbekannte brachen am 19. Februar tagsüber in ein Einfamilienhaus ein und durchsuchten mehrere Räume.",
+      "datum": "2026-02-20T10:35:00+01:00",
+      "fakten": [
+        "Donnerstag, 19. Februar 2026, zwischen 8:15 und 15:15 Uhr",
+        "Einfamilienhaus im Arnoldsweilerweg",
+        "Kriminalpolizei ermittelt",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte sind am Donnerstag, 19. Februar, zwischen 8:15 und 15:15 Uhr gewaltsam in ein Einfamilienhaus im Arnoldsweilerweg eingedrungen und haben mehrere Räume durchsucht. Ob etwas fehlt, war bei der Anzeige noch nicht klar.",
+        "Die Kriminalpolizei war am Tatort und ermittelt. Wer in dieser Zeit verdächtige Personen oder Fahrzeuge am Arnoldsweilerweg gesehen hat, meldet sich unter 02421 949-0.",
+        "Im September meldete die Polizei einen weiteren Einbruch in derselben Straße."
+      ],
+      "themen": [
+        [
+          "einbruch",
+          "Einbruch"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.einbruch",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 20.02.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6220661",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "brand-schuetzenstrasse-waeschetrockner",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Brand",
+      "titel": "Wäschetrockner brennt im Anbau eines Hauses an der Schützenstraße",
+      "dek": "Der Bewohner roch am 20. Februar Rauch und rief die Feuerwehr. Verletzt wurde niemand.",
+      "datum": "2026-02-23T10:29:00+01:00",
+      "fakten": [
+        "Freitag, 20. Februar 2026, gegen 18 Uhr",
+        "Anbau eines Reiheneinfamilienhauses in der Schützenstraße",
+        "Ursache laut Polizei vermutlich technischer Defekt am Wäschetrockner",
+        "Niemand verletzt"
+      ],
+      "absaetze": [
+        "Im Anbau eines Reiheneinfamilienhauses in der Schützenstraße hat es am Freitag, 20. Februar, gebrannt. Gegen 18 Uhr bemerkte der Bewohner Brandgeruch und fand heraus, dass er aus dem Badezimmer im Anbau kam. Er alarmierte sofort die Feuerwehr.",
+        "Die Feuerwehr sperrte den Brandort ab und löschte das Feuer. Nach dem Stand der Ermittlungen hat ein technischer Defekt am Wäschetrockner den Brand ausgelöst. Die Kriminalpolizei beschlagnahmte den Brandort. Verletzt wurde niemand."
+      ],
+      "themen": [
+        [
+          "brand",
+          "Brand"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer.innen",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 23.02.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6221790",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "werkzeug-aus-transporter-in-der-lohe",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Werkzeug aus Transporter In der Lohe gestohlen",
+      "dek": "In der Nacht zum 24. Februar räumten Unbekannte einen Mercedes Vito aus. Der Schaden liegt im mittleren fünfstelligen Bereich.",
+      "datum": "2026-02-25T09:20:00+01:00",
+      "fakten": [
+        "Nacht von Montag auf Dienstag, 23. auf 24. Februar 2026",
+        "Mercedes Vito auf einem Parkplatz In der Lohe",
+        "Schaden laut Polizei im mittleren fünfstelligen Bereich",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte haben in der Nacht von Montag, 23. Februar, auf Dienstag Werkzeug aus einem Mercedes Vito gestohlen, der auf einem Parkplatz In der Lohe abgestellt war. Den Schaden schätzt die Polizei auf eine mittlere fünfstellige Summe.",
+        "In derselben Nacht brachen Unbekannte in Düren einen Ford Transit in einer Garage an der Rurstraße auf und nahmen ebenfalls Werkzeug mit. Wer in dieser Nacht an einem der Tatorte etwas Verdächtiges bemerkt hat, meldet sich unter 02421 949-0."
+      ],
+      "themen": [
+        [
+          "diebstahl",
+          "Diebstahl"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.diebstahl",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 25.02.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6223425",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "unfall-kreuzung-b264-l264-rotlicht",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Über Rot in die Kreuzung B264/L264: drei Verletzte, ein Auto brennt",
+      "dek": "Bei dem Unfall am 12. März entstand nach Angaben der Polizei ein Schaden von rund 100.000 Euro.",
+      "datum": "2026-03-13T10:42:00+01:00",
+      "fakten": [
+        "Donnerstag, 12. März 2026, gegen 20:15 Uhr",
+        "Kreuzung B264/L264",
+        "Drei Fahrer leicht verletzt, ein Auto fing Feuer",
+        "Fahrzeug- und Umweltschäden laut Polizei rund 100.000 Euro"
+      ],
+      "absaetze": [
+        "Drei Autos sind am Donnerstagabend, 12. März, gegen 20:15 Uhr an der Kreuzung B264/L264 zusammengestoßen. Alle drei Fahrer wurden leicht verletzt.",
+        "Nach Stand der Ermittlungen fuhr ein 63-Jähriger aus Eschweiler auf der B264 aus Richtung Golzheim bei Rot in die Kreuzung. Gleichzeitig querte ein 30-Jähriger, ebenfalls aus Eschweiler, auf der L264 aus Merzenich in Richtung Girbelsrath bei Grün. Die beiden Autos stießen in der Mitte der Kreuzung zusammen. Der Wagen des 63-Jährigen wurde gegen das Auto einer 46-jährigen Merzenicherin geschleudert, die auf der B264 an der roten Ampel wartete.",
+        "Das Auto des 30-Jährigen fing Feuer, die Polizei löschte es. Rettungswagen brachten alle drei in Krankenhäuser. Wegen auslaufender Betriebsstoffe wurden Feuerwehr und Umweltamt informiert. Das Verkehrskommissariat ermittelt."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "b264",
+          "B264"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 13.03.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6235029",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einbruch-buirer-strasse-waffenschrank",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Einbrecher brechen Waffenschrank auf, Waffen bleiben zurück",
+      "dek": "An der Buirer Straße nahmen Unbekannte am 16. März Bargeld und den aufgebrochenen Schrank mit.",
+      "datum": "2026-03-17T09:30:00+01:00",
+      "fakten": [
+        "Montag, 16. März 2026, zwischen 9:20 und 12:05 Uhr",
+        "Einfamilienhaus in der Buirer Straße",
+        "Bargeld gestohlen, keine Waffen erbeutet",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte sind am Montag, 16. März, zwischen 9:20 und 12:05 Uhr in ein Einfamilienhaus an der Buirer Straße eingebrochen. Mindestens ein Täter verschaffte sich gewaltsam Zugang.",
+        "Im Büro durchwühlten die Täter alles nach Beute. Einen Waffenschrank brachen sie mit Werkzeug auf, das sie im Haus gefunden hatten. Nach Angaben der Polizei nahmen sie Bargeld und das Werkzeug mit; Waffen erbeuteten sie nicht.",
+        "Wer in dieser Zeit verdächtige Personen oder Fahrzeuge an der Buirer Straße gesehen hat, meldet sich unter 02421 949-0."
+      ],
+      "themen": [
+        [
+          "einbruch",
+          "Einbruch"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.einbruch",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 17.03.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6237118",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "frontalzusammenstoss-b264-verlorene-ladung",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Verlorener Maschendrahtzaun löst Frontalzusammenstoß auf der B264 aus",
+      "dek": "Drei Menschen wurden am 18. März zwischen Merzenich und Golzheim verletzt. Die Polizei sucht den Fahrer eines Klein-Lkw.",
+      "datum": "2026-03-19T12:30:00+01:00",
+      "fakten": [
+        "Mittwoch, 18. März 2026, gegen 15:20 Uhr",
+        "B264 zwischen Golzheim und Merzenich, bis zum Abend gesperrt",
+        "Zwei Fahrer leicht, eine Beifahrerin schwer verletzt",
+        "Gesucht: Fahrer eines Klein-Lkw oder Transporters mit Ladefläche, Hinweise an 02421 949-0"
+      ],
+      "absaetze": [
+        "Bei einem Unfall auf der B264 zwischen Golzheim und Merzenich sind am Mittwochnachmittag, 18. März, drei Menschen verletzt worden, eine davon schwer. Die Strecke war bis in die Abendstunden gesperrt.",
+        "Nach Angaben der Polizei verlor gegen 15:20 Uhr ein Klein-Lkw, der aus Richtung Golzheim nach Merzenich fuhr, auf gerader Strecke einen Teil seiner Ladung: eine Rolle Maschendrahtzaun. Eine 48-jährige Autofahrerin aus Kerpen bremste stark. Ein 41-jähriger Merzenicher hinter ihr konnte nicht mehr rechtzeitig bremsen, wich auf die Gegenfahrbahn aus und stieß frontal mit dem Wagen eines 51-Jährigen aus Hürth zusammen.",
+        "Beide Fahrer wurden leicht verletzt. Die 43-jährige Beifahrerin des Hürthers war eingeklemmt; die Feuerwehr befreite sie, der Rettungsdienst brachte sie schwer verletzt ins Krankenhaus. Im Einsatz waren Rettungsdienst, ein Großaufgebot der Feuerwehr und ein Unfallaufnahmeteam der Polizei Aachen. Den Sachschaden beziffert die Polizei auf 35.000 Euro.",
+        "Der Klein-Lkw fuhr nach Zeugenangaben weiter Richtung Merzenich; möglicherweise stammt er aus dem Garten- oder Landschaftsbau. Die Polizei hält es für möglich, dass der Fahrer den Ladungsverlust nicht bemerkt hat, und bittet ihn und weitere Zeugen, sich unter 02421 949-0 zu melden."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "b264",
+          "B264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 19.03.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6238991",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "unfall-l264-am-rosspfad-gegenverkehr",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Auf die Gegenfahrbahn geraten: Unfall auf der L264 am Roßpfad",
+      "dek": "Zwei junge Menschen aus Merzenich wurden am 27. März leicht verletzt. Ob ein medizinischer Notfall die Ursache war, wird geprüft.",
+      "datum": "2026-03-30T12:55:00+02:00",
+      "fakten": [
+        "Freitag, 27. März 2026, gegen 17:20 Uhr",
+        "L264 in Höhe der Einmündung Am Roßpfad",
+        "Zwei Leichtverletzte, beide ins Krankenhaus gebracht",
+        "Sachschaden laut Polizei rund 21.000 Euro"
+      ],
+      "absaetze": [
+        "Auf der L264 in Höhe der Einmündung Am Roßpfad sind am Freitag, 27. März, zwei Autos zusammengestoßen. Beide Fahrer wurden leicht verletzt.",
+        "Ein 22-jähriger Merzenicher fuhr nach Angaben der Polizei gegen 17:20 Uhr aus Merzenich in Richtung Girbelsrath und geriet auf die Gegenfahrbahn. Dort streifte er das Auto einer 21-jährigen Merzenicherin, die aus Richtung Girbelsrath kam. Ihr Wagen drehte sich und blieb stehen.",
+        "Rettungswagen brachten beide in Krankenhäuser. Der Sachschaden liegt bei rund 21.000 Euro. Das Verkehrskommissariat prüft, ob ein medizinischer Notfall des jungen Fahrers den Unfall ausgelöst hat."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 30.03.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6246258",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "motorroller-gestohlen-am-fronhof",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Motorroller unter Carport Am Fronhof gestohlen",
+      "dek": "Der ältere Honda-Roller verschwand am 1. April tagsüber in Girbelsrath. Die Polizei bittet um Hinweise.",
+      "datum": "2026-04-02T12:00:00+02:00",
+      "fakten": [
+        "Mittwoch, 1. April 2026, zwischen 10:45 und 15 Uhr",
+        "Carport in der Straße Am Fronhof, Girbelsrath",
+        "Honda DYLAN 125, Kennzeichen DN-MA 42, mit Lenkradschloss gesichert",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte haben am Mittwoch, 1. April, in Girbelsrath einen Motorroller gestohlen. Der ältere Honda DYLAN 125 stand wie immer unter einem Carport in der Straße Am Fronhof und war mit dem Lenkradschloss gesichert.",
+        "Nach Angaben des 62-jährigen Besitzers verschwand der Roller zwischen 10:45 und 15 Uhr. Er trug das Kennzeichen DN-MA 42.",
+        "Wer etwas zur Tat, zu den Tätern oder zu verdächtigen Beobachtungen rund um den Tatort sagen kann, meldet sich unter 02421 949-0."
+      ],
+      "themen": [
+        [
+          "diebstahl",
+          "Diebstahl"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.diebstahl.kfz",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 02.04.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6248735",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "motorradfahrer-stuerzt-beim-abbiegen-b264",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Motorradfahrer stürzt beim Abbiegen an der Kreuzung B264/L264",
+      "dek": "Der 35-Jährige aus Bornheim verlor am 6. April die Kontrolle und wurde leicht verletzt.",
+      "datum": "2026-04-07T12:07:00+02:00",
+      "fakten": [
+        "Montag, 6. April 2026, gegen 15:15 Uhr",
+        "Kreuzung B264/L264",
+        "Motorradfahrer (35) leicht verletzt",
+        "Sachschaden laut Polizei rund 200 Euro"
+      ],
+      "absaetze": [
+        "Ein 35-jähriger Motorradfahrer aus Bornheim ist am Montagnachmittag, 6. April, an der Kreuzung B264/L264 gestürzt. Er kam gegen 15:15 Uhr auf der B264 aus Düren und wollte rechts auf die L264 abbiegen.",
+        "Beim Abbiegen verlor er nach Stand der Ermittlungen die Kontrolle über sein Motorrad, stürzte und rutschte einige Meter über die Fahrbahn. Er wurde leicht verletzt ins Krankenhaus gebracht. Der Sachschaden liegt bei rund 200 Euro."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "b264",
+          "B264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 07.04.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6250459",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "auffahrunfall-b264-schwer-verletzt-mai",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Auffahrunfall auf der B264: Frau schwer verletzt",
+      "dek": "Eine 54-Jährige bemerkte am 4. Mai zu spät, dass der Wagen vor ihr bremste.",
+      "datum": "2026-05-05T13:07:00+02:00",
+      "fakten": [
+        "Montag, 4. Mai 2026, gegen 8 Uhr",
+        "B264 zwischen Golzheim und Merzenich",
+        "Fahrerin (54) schwer verletzt, anderer Fahrer unverletzt",
+        "Sachschaden laut Polizei rund 16.000 Euro"
+      ],
+      "absaetze": [
+        "Auf der B264 zwischen Golzheim und Merzenich ist am Montagmorgen, 4. Mai, eine Autofahrerin bei einem Auffahrunfall schwer verletzt worden.",
+        "Nach Angaben der Polizei fuhr die 54-Jährige aus Kerpen gegen 8 Uhr aus Richtung Golzheim in Richtung Merzenich. Vor ihr musste ein 25-jähriger Merzenicher wegen eines weiteren Autos abbremsen. Die Frau bemerkte das nach eigenen Angaben zu spät und fuhr auf.",
+        "Ein Rettungswagen brachte sie ins Krankenhaus. Der 25-Jährige blieb unverletzt. Der Sachschaden liegt bei rund 16.000 Euro."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "b264",
+          "B264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 05.05.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6269070",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "gestohlenes-auto-ueberschlagen-festnahme",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Festnahme",
+      "titel": "In Merzenich gestohlenes Auto überschlägt sich: Fahrer (18) festgenommen",
+      "dek": "Drei Insassen flüchteten in der Nacht zum 26. Mai nach dem Unfall auf der Nordstraße zu Fuß. Einen fasste die Polizei in Birkesdorf.",
+      "datum": "2026-05-27T09:55:00+02:00",
+      "fakten": [
+        "Nacht zu Dienstag, 26. Mai 2026, gegen 4:50 Uhr",
+        "Unfall auf der Nordstraße, Festnahme in Birkesdorf",
+        "Das Auto war zuvor in Merzenich gestohlen worden",
+        "Niemand verletzt, Sachschaden laut Polizei rund 13.000 Euro"
+      ],
+      "absaetze": [
+        "Ein zuvor in Merzenich gestohlenes Auto hat sich in der Nacht zum Dienstag, 26. Mai, gegen 4:50 Uhr auf der Nordstraße überschlagen. Es hatte ein geparktes Auto gestreift und blieb auf dem Dach liegen. Drei Insassen flüchteten zu Fuß.",
+        "Bei der Fahndung trafen Beamte der Wache Düren in Birkesdorf einen 18-jährigen Dürener, auf den die Beschreibung passte. Nach Angaben der Polizei gestand er, gefahren zu sein, und räumte ein, das Auto mit zwei weiteren Personen in Merzenich gestohlen zu haben. Einen Führerschein hat er nicht, er stand unter dem Einfluss berauschender Mittel.",
+        "Der junge Mann wurde vorläufig festgenommen. Ihn erwartet unter anderem ein Verfahren wegen Autodiebstahls und Unfallflucht. Verletzt wurde niemand; beide Autos mussten abgeschleppt werden."
+      ],
+      "themen": [
+        [
+          "diebstahl",
+          "Diebstahl"
+        ],
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.festnahme",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 27.05.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6282600",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "unfallflucht-radfahrer-bahnstrasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Unfallflucht an der Bahnstraße: 14-jähriger Radfahrer verletzt",
+      "dek": "Ein grauer SUV, möglicherweise ein Audi, streifte den Jungen am 1. Juni und fuhr weiter.",
+      "datum": "2026-06-02T09:45:00+02:00",
+      "fakten": [
+        "Montag, 1. Juni 2026, gegen 18:50 Uhr",
+        "Kreuzung Bahnstraße / Gartenstraße",
+        "Grauer SUV, möglicherweise Audi, weiter Richtung Distelrather Weg",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Ein 14-jähriger Radfahrer aus Düren ist am Montag, 1. Juni, an der Kreuzung Bahnstraße / Gartenstraße von einem Auto gestreift worden. Der Fahrer fuhr weiter, ohne anzuhalten. Der Jugendliche erstattete am Abend mit seiner Mutter Anzeige.",
+        "Nach seinen Angaben fuhr er gegen 18:50 Uhr auf der Bahnstraße in Richtung Dürener Straße, als ihn ein Auto mit der Front touchierte. Es soll sich um einen grauen SUV gehandelt haben, möglicherweise ein Audi, der danach in Richtung Distelrather Weg fuhr.",
+        "Der 14-Jährige wurde leicht verletzt und ging selbst ins Krankenhaus. Die Polizei bittet den Fahrer und Zeugen, sich unter 02421 949-0 zu melden."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "fahrrad",
+          "Fahrrad"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 02.06.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6286506",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "abgelenkt-auffahrunfall-l264-drei-autos",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Zigarettenpackung aufgehoben: Auffahrunfall mit drei Autos auf der L264",
+      "dek": "Ein 60-Jähriger war am 3. Juni kurz vor einem Kreisverkehr abgelenkt. Zwei Menschen wurden leicht verletzt.",
+      "datum": "2026-06-05T11:55:00+02:00",
+      "fakten": [
+        "Mittwoch, 3. Juni 2026, gegen 15:15 Uhr",
+        "L264 aus Richtung Niederzier, kurz vor einem Kreisverkehr",
+        "Zwei Leichtverletzte, alle drei Autos abgeschleppt",
+        "Sachschaden laut Polizei rund 4.100 Euro"
+      ],
+      "absaetze": [
+        "Drei Autos sind am Mittwoch, 3. Juni, gegen 15:15 Uhr auf der L264 in Fahrtrichtung Merzenich aufeinandergefahren. Zwei Menschen wurden leicht verletzt.",
+        "Nach Angaben der Polizei fuhren ein 37-jähriger Dürener, ein 39-Jähriger aus Krefeld und ein 60-jähriger Dürener hintereinander aus Richtung Niederzier. Kurz vor einem Kreisverkehr mussten die beiden vorderen anhalten. Der 60-Jährige hatte eine Zigarettenpackung in den Fußraum fallen lassen und wollte sie aufheben. Er bemerkte das Anhalten zu spät und fuhr auf; der mittlere Wagen wurde auf den vorderen geschoben.",
+        "Die beiden vorderen Fahrer kamen leicht verletzt ins Krankenhaus, der 60-Jährige blieb unverletzt. Alle drei Autos mussten abgeschleppt werden."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 05.06.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6288735",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "festnahmen-serie-pkw-aufbrueche",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Festnahme",
+      "titel": "Serie von Autoaufbrüchen, auch in Merzenich: drei Verdächtige in Untersuchungshaft",
+      "dek": "Die Polizei ordnet den Festgenommenen eine hohe zweistellige Zahl an Aufbrüchen in Düren, Langerwehe und Merzenich zu.",
+      "datum": "2026-06-17T13:32:00+02:00",
+      "fakten": [
+        "Festnahmen am 11. und 16. Juni 2026",
+        "Zwei 18-jährige Dürener und ein 31-Jähriger aus Langerwehe",
+        "Serie von Pkw-Aufbrüchen in Düren, Langerwehe und Merzenich",
+        "Gegen alle drei Untersuchungshaft angeordnet"
+      ],
+      "absaetze": [
+        "Nach einer Serie von Autoaufbrüchen in Düren sowie in Langerwehe und Merzenich hat die Polizei drei Tatverdächtige festgenommen. Gegen alle drei wurde Untersuchungshaft angeordnet.",
+        "Im Mai waren zwei 18-jährige Dürener ins Visier der Kriminalpolizei geraten. Einer wurde am 11. Juni festgenommen, der zweite am 16. Juni, nachdem er bei einem Ladendiebstahl erwischt worden war; dorthin war er nach Angaben der Polizei mit einem gestohlenen E-Bike gekommen.",
+        "In einer zweiten Serie in Langerwehe und Düren fiel einer Streife der Wache Düren am frühen Morgen des 16. Juni ein 31-Jähriger aus Langerwehe auf, der Aufbruchwerkzeug bei sich trug. Den drei Männern werden nach aktuellem Stand eine hohe zweistellige Zahl von Autoaufbrüchen und weitere Straftaten zugeordnet. Die Ermittlungen dauern an."
+      ],
+      "themen": [
+        [
+          "diebstahl",
+          "Diebstahl"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.festnahme",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 17.06.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6296383",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "abbiegeunfall-b264-muehlenstrasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Abbiegeunfall an der B264/Mühlenstraße: Feuerwehr befreit verletzte Fahrerin",
+      "dek": "Ein 69-Jähriger übersah am 22. Juni beim Linksabbiegen eine entgegenkommende 22-Jährige.",
+      "datum": "2026-06-23T09:30:00+02:00",
+      "fakten": [
+        "Montag, 22. Juni 2026, gegen 8:25 Uhr",
+        "Einmündung B264 / Mühlenstraße",
+        "Fahrerin (22) schwer verletzt, von der Feuerwehr befreit",
+        "Sachschaden laut Polizei rund 22.000 Euro"
+      ],
+      "absaetze": [
+        "An der Einmündung B264 / Mühlenstraße sind am Montagmorgen, 22. Juni, zwei Autos zusammengestoßen. Eine 22-jährige Fahrerin aus Vettweiß wurde schwer verletzt.",
+        "Nach Angaben der Polizei kam ein 69-Jähriger aus Hürtgenwald gegen 8:25 Uhr auf der B264 aus Richtung Düren und wollte links in die Mühlenstraße abbiegen. Dabei übersah er nach eigenen Angaben die entgegenkommende, vorfahrtsberechtigte Frau.",
+        "Die Feuerwehr befreite sie aus ihrem Auto, ein Rettungswagen brachte sie zur stationären Behandlung ins Krankenhaus. Der 69-Jährige blieb unverletzt. Für die Unfallaufnahme sperrte die Polizei die Kreuzung."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "b264",
+          "B264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 23.06.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6300033",
+        "stand": "2026-09-24"
+      }
+    }
+  ]
+}

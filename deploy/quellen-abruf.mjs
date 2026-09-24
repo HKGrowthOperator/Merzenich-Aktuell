@@ -14,6 +14,10 @@
  *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
  *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen)
  *   jobs.json       Jobboerse der Bundesagentur, Umkreis 25 km um Merzenich
+ *   bilder/         Fotos der Polizei zu Meldungen aus inhalte/meldungen
+ *                   (Presseportal, "highlight"-Fassung) zur Sichtung;
+ *                   bilder/index.json nennt Quelle, alt-Text und Groesse.
+ *                   Auf die Seite kommt ein Foto erst mit quellbild.freigegeben.
  *
  * Je Seite: URL, Abrufzeit, HTTP-Status, Titel, Text (ohne Skripte, Stil,
  * Navigation), Links, Bilder mit alt-Text. Keine Auswertung, keine Annahmen
@@ -23,7 +27,7 @@
  * Laeuft nur in GitHub Actions (der Container der Redaktion erreicht die
  * Quellen nicht). Aufruf: node deploy/quellen-abruf.mjs [--nur=feuerwehr,...]
  */
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -174,3 +178,42 @@ for (const [name, lauf] of Object.entries(QUELLEN)) {
   console.log(`${name.padEnd(10)} ${ok}/${alle.length} Seiten ok, ${ergebnis.details?.length ?? 0} Unterseiten, ${Math.round((Date.now() - start) / 1000)} s; Status: ${[...new Set(alle.map((s) => s.status))].join(', ')}`);
 }
 if (fehlerQuellen) console.log(`${fehlerQuellen} Quelle(n) ohne eine einzige erreichbare Seite.`);
+
+// Fotos zu Polizeimeldungen, die als Meldung erscheinen: nur die Bilder der
+// Mitteilung selbst ("highlight", keine Logos, kein "story_big"-Kachelbild),
+// je Datei einmal. Sichtung auf Kennzeichen und Gesichter von Hand.
+if (!nur.length || nur.includes('quellbilder')) {
+  const bildOrdner = join(ziel, 'bilder');
+  mkdirSync(bildOrdner, { recursive: true });
+  const indexPfad = join(bildOrdner, 'index.json');
+  const index = existsSync(indexPfad) ? JSON.parse(readFileSync(indexPfad, 'utf8')) : {};
+  const polizei = JSON.parse(readFileSync(join(ziel, 'polizei.json'), 'utf8'));
+  const gesucht = new Set();
+  for (const datei of readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter((d) => d.endsWith('.json'))) {
+    for (const m of JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', datei), 'utf8')).meldungen || []) {
+      const pm = /presseportal\.de\/blaulicht\/pm\/\d+\/(\d+)/.exec(m.quelle?.url || '');
+      if (pm) gesucht.add(pm[1]);
+    }
+  }
+  let neu = 0, fehler = 0;
+  for (const d of polizei.details || []) {
+    const pm = /\/pm\/\d+\/(\d+)/.exec(d.url)?.[1];
+    if (!pm || !gesucht.has(pm)) continue;
+    const fotos = [...new Map((d.bilder || []).filter((b) => /\/thumbnail\/highlight\//.test(b.src)).map((b) => [b.src, b])).values()];
+    for (const [i, b] of fotos.entries()) {
+      const name = `${pm}-${i + 1}.jpg`;
+      if (index[name] && existsSync(join(bildOrdner, name))) continue;
+      try {
+        const r = await fetch(b.src, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(25000) });
+        if (r.status !== 200 || !/^image\//.test(r.headers.get('content-type') || '')) { fehler++; index[name] = { quelle: d.url, src: b.src, status: r.status }; continue; }
+        const daten = Buffer.from(await r.arrayBuffer());
+        writeFileSync(join(bildOrdner, name), daten);
+        index[name] = { quelle: d.url, src: b.src, alt: b.alt || '', bytes: daten.length, abgerufen: new Date().toISOString() };
+        neu++;
+      } catch (e) { fehler++; index[name] = { quelle: d.url, src: b.src, status: 'fehler: ' + (e.cause?.code || e.name) }; }
+      await pause(500);
+    }
+  }
+  writeFileSync(indexPfad, JSON.stringify(index, null, 1) + '\n');
+  console.log(`quellbilder ${neu} neu, ${fehler} Fehler, ${Object.keys(index).length} im Index (${gesucht.size} Mitteilungen gesucht)`);
+}

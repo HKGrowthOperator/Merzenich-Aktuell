@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben. Runde 15 (24.09.): alle 10 Rettungswagen-Fotos einzeln auf Kennzeichen, Gesichter und fremde Ortsaufschriften geprüft, 8 ausgeschlossen, 2 bleiben (Innenraum, Malteser ohne Ortsbezug).",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -3277,6 +3277,54 @@
       "nr": 16,
       "titel": "File:De Brandweer blust ook containerbranden.jpg",
       "grund": "Ausland (Niederlande)"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 2,
+      "titel": "File:Wuppertal August-Bebel-Straße 2013 021.JPG",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Kennzeichen lesbar (W-RD …), Wuppertaler Fahrzeug"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 14,
+      "titel": "File:Wuppertal - Siegelberg - Himmelfahrtsprozession 43 ies.jpg",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Kennzeichen lesbar (W-SK …, W-SZ …), Personen im Fahrerhaus erkennbar"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 11,
+      "titel": "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 05 ies.jpg",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Kennzeichen lesbar (BO-SV …), Besatzung im Fahrerhaus"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 6,
+      "titel": "File:Wuppertal Briller Str 0024.jpg",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Kennzeichen parkender Autos, Passantin, Wuppertaler Straßenzug"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 12,
+      "titel": "File:Feuertal 2013 Mittelaltermarkt 017.JPG",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Aufschrift ASB Regionalverband Bergisch Land: fremde Organisation mit Ortsbezug, Passanten"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 16,
+      "titel": "File:Feuertal 2013 Mittelaltermarkt 240.JPG",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Aufschrift ASB Regionalverband Bergisch Land: fremde Organisation mit Ortsbezug"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 17,
+      "titel": "File:Wuppertal - Friedrich-Engels-Allee - Karneval 010 ies.jpg",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Johanniter mit Wuppertaler Rufnummer (0202), Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 15,
+      "titel": "File:Deutsches Rotes Kreuz (Illingen) 2023-07-02 (01).jpg",
+      "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Aufschrift DRK Ortsverein Illingen und Plakat Illingen: fremder Ort, Personen"
     }
   ],
   "freigegeben": [
@@ -3296,7 +3344,6 @@
     "File:Merzenich, P ^ R, Haltepunkt S12 - panoramio.jpg",
     "File:S12 Haltepunkt Merzenich, Bahnsteig - panoramio.jpg",
     "File:S12 Haltepunkt Merzenich, P ^ R und B ^ R, 2012 - panoramio.jpg",
-    "File:Deutsches Rotes Kreuz (Illingen) 2023-07-02 (01).jpg",
     "File:Drehleiter im Einsatz (36098426426).jpg",
     "File:Feuerwehr-Gerätehaus Drove, Wehrstraße, Kreuzau-5979.jpg",
     "File:Übungsobjekt Düren.jpg",
@@ -3432,12 +3479,9 @@
     "File:Schaufelradbagger im Tagebau Hambach bei Nacht.jpg",
     "File:Tagebau Hambach.jpg",
     "File:Einsatzfahrzeuge.jpg",
-    "File:Wuppertal Briller Str 0024.jpg",
     "File:Witten rescue station DLRG Bochum-Langendreer Werne.jpg",
     "File:Rettungsmittel.jpg",
-    "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 05 ies.jpg",
     "File:Bochum - Brandwacht - Hauptfeuer- und Rettungswache 07 ies.jpg",
-    "File:Wuppertal - Friedrich-Engels-Allee - Karneval 010 ies.jpg",
     "File:Wuppertal - Friedrich-Engels-Allee - Karneval 022 ies.jpg",
     "File:Planspielraum.jpg",
     "File:Steinsfeld, Am Dorfplatz 1, 004.jpg",
@@ -3465,8 +3509,6 @@
     "File:Düren (DE), Tagebau Hambach, Schaufelradbagger 286 -- 2023 -- 0431.jpg",
     "File:Wuppertal August-Bebel-Straße 2013 016.JPG",
     "File:Wuppertal Briller Straße 2013 080.JPG",
-    "File:Feuertal 2013 Mittelaltermarkt 017.JPG",
-    "File:Feuertal 2013 Mittelaltermarkt 240.JPG",
     "File:Dachstuhlbrand Försterstraße 26, Ecke Ehrenfeldgürtel, Köln-9535.jpg",
     "File:Dachstuhlbrand Försterstraße 26, Ecke Ehrenfeldgürtel, Köln-9538.jpg",
     "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 008.jpg",
@@ -3479,9 +3521,7 @@
     "File:26-01 Bücherschrank Weilerswist 02.jpg",
     "File:26-01 Öffentlicher Bücherschrank Vettweiß 01.jpg",
     "File:26-01 Öffentlicher Bücherschrank Vettweiß 02.jpg",
-    "File:Wuppertal August-Bebel-Straße 2013 021.JPG",
     "File:Wuppertal - Beyenburger Freiheit - Himmelfahrtsprozession 01 ies.jpg",
-    "File:Wuppertal - Siegelberg - Himmelfahrtsprozession 43 ies.jpg",
     "File:Dachstuhlbrand Försterstraße 26, Ecke Ehrenfeldgürtel, Köln-9541.jpg",
     "File:Luftbild Außengelaende.jpg",
     "File:Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 8.jpg",

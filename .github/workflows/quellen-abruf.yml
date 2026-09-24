@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       nur:
-        description: 'Nur diese Quellen (kommagetrennt: feuerwehr,polizei,gemeinde,heimatinfo,schulen,jobs), leer = alle'
+        description: 'Nur diese Quellen (kommagetrennt: feuerwehr,polizei,gemeinde,heimatinfo,schulen,jobs,quellbilder), leer = alle'
         type: string
         default: ''
 
