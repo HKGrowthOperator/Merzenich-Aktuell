@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2530,6 +2530,13 @@
       "titel": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121100.jpg",
       "grund": "Unscharf oder ohne Bildaussage",
       "runde": 9
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121113.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 10
     }
   ],
   "freigegeben": [
@@ -2762,6 +2769,7 @@
     "File:Waldbrand im Hürtgenwald (Derichsweiler) 2026-08-14-01.jpg",
     "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-04.jpg",
     "File:Sporthalle Ennigloh.jpg",
-    "File:Berentelghalle Mettingen 1.jpg"
+    "File:Berentelghalle Mettingen 1.jpg",
+    "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-05.jpg"
   ]
 }

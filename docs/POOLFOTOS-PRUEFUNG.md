@@ -1,6 +1,6 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Runde 7: 10 ausgeschlossen. Runde 8: 6 ausgeschlossen. Runde 9: 2 ausgeschlossen. Freigegeben sind 230 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Runde 5: 20 ausgeschlossen. Runde 6: 15 ausgeschlossen. Runde 7: 10 ausgeschlossen. Runde 8: 6 ausgeschlossen. Runde 9: 2 ausgeschlossen. Runde 10: 1 ausgeschlossen. Freigegeben sind 231 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
@@ -14,7 +14,7 @@ Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Co
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
 | Abzeichen, Wappen oder Logo als Motiv | 20 |
 | Grafik, Karte oder Satellitenbild statt Foto | 19 |
-| Unscharf oder ohne Bildaussage | 17 |
+| Unscharf oder ohne Bildaussage | 18 |
 | Erkennbare Personen als Hauptmotiv | 12 |
 | Erkennbare Personen des öffentlichen Lebens | 11 |
 | Historische Aufnahme, taugt nicht als heutiges Symbolbild | 10 |
@@ -158,7 +158,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
 | 4 | 12 | Übungsspange außen.jpg | Lesbares Kfz-Kennzeichen |
 
-### Brand: 98 entfernt
+### Brand: 99 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -260,6 +260,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 8 | 18 | Waldbrand im Hürtgenwald (Jüngersdorf) 2026-08-14-01.jpg | Transparent oder Schild mit Schrift |
 | 9 | 16 | Waldbrand im Hürtgenwald (Derichsweiler) 2026-08-14-02.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 | 9 | 18 | Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121100.jpg | Unscharf oder ohne Bildaussage |
+| 10 | 18 | Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121113.jpg | Unscharf oder ohne Bildaussage |
 
 ### Sport: 52 entfernt
 
