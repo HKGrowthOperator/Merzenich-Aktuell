@@ -18,7 +18,9 @@
   "bytes": 178821,
   "abgerufen": "2026-09-24T18:36:03.632Z",
   "bildinfo": {
-   "fehler": "id im Markup nicht gefunden"
+   "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde6c270000fd2c03d158&story_id=6238991&render=html",
+   "status": 200,
+   "text": "Bildunterschrift:\nVerkehrsunfall B264"
   }
  },
  "6238991-3.jpg": {
@@ -28,7 +30,9 @@
   "bytes": 125163,
   "abgerufen": "2026-09-24T18:36:04.381Z",
   "bildinfo": {
-   "fehler": "id im Markup nicht gefunden"
+   "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde6b270000fd2c03d145&story_id=6238991&render=html",
+   "status": 200,
+   "text": "Bildunterschrift:\nVerkehrsunfall B264"
   }
  },
  "6238991-4.jpg": {
@@ -38,7 +42,9 @@
   "bytes": 115027,
   "abgerufen": "2026-09-24T18:36:05.107Z",
   "bildinfo": {
-   "fehler": "id im Markup nicht gefunden"
+   "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde68270000fd2c03d11a&story_id=6238991&render=html",
+   "status": 200,
+   "text": "Bildunterschrift:\nVerkehrsunfall B264"
   }
  }
 }
