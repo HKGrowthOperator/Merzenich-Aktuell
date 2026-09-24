@@ -55,7 +55,7 @@ const POOLS = {
     tags: ['brand','feuer','rauch','loeschen'],
     // Deutsche Fachwoerter stehen in den Dateititeln deutscher Fotografen;
     // die Kategoriesuche ueber "Fires" lief ueber Flammen zu Kerzen.
-    queries: ['Dachstuhlbrand', 'Scheunenbrand', 'Wohnhausbrand', 'Großbrand Feuerwehr', 'Wohnungsbrand', 'Lagerhallenbrand', 'Brandeinsatz', 'Löscharbeiten', 'Feuerwehreinsatz Brand', 'Brandruine']
+    queries: ['Dachstuhlbrand', 'Scheunenbrand', 'Wohnhausbrand', 'Großbrand Feuerwehr', 'Wohnungsbrand', 'Lagerhallenbrand', 'Kellerbrand', 'Fahrzeugbrand', 'PKW-Brand', 'Flächenbrand Feuerwehr', 'Waldbrand Nordrhein-Westfalen', 'Brandeinsatz', 'Löscharbeiten', 'Feuerwehreinsatz Brand', 'Brandruine']
   },
   sport: {
     tags: ['sport','fussball','amateur','spiel','platz'],
@@ -98,6 +98,9 @@ const FREMDE_SCHRIFT = /[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u3040-\u30ff\u3
 // Sportplatz-Suchen treffen Wegekreuze "hinter dem Sportplatz".
 const SPORT_FREMD = /(bildstock|wegekreuz|kreuz|kapelle|denkmal|gedenk|heiligenh)/i;
 const BRAND_FREMD = /(kerze|candle|kapelle|kirche|church|dom\b|grabst|tabernakel|advent|osterfeuer|lagerfeuer|campfire|grill)/i;
+// Deutsche Brandfotos tragen deutsche Titel; "Fire in ..." war stets Ausland.
+// Jahreszahlen bis 1969 im Titel sind historische Aufnahmen.
+const BRAND_TITEL_FREMD = /(\bfire\b|incendi|incendie|\bbrann|\b1[89]\d\d\b(?<!\b19[7-9]\d)(?<!\b20\d\d))/i;
 // Einsatzkräfte tragen je Bundesland eigene Farben und Wappen.
 const ANDERES_LAND = /(baden-württemberg|baden-wuerttemberg|bayern|bavaria|hessen|hamburg|saarland|niedersachsen|berlin|sachsen|thüringen|brandenburg|rheinland-pfalz|schleswig|mecklenburg|bremen|heidelberg|karlsruhe|stuttgart|münchen|munich|fulda)/i;
 const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand']);
@@ -185,7 +188,7 @@ function usable(c, pool) {
   if (BAD_KATEGORIE.test(c.categories)) return false;
   if (AUSLAND.test(text) || FREMDE_SCHRIFT.test(c.title)) return false;
   if (pool === 'sport' && SPORT_FREMD.test(c.title)) return false;
-  if (pool === 'brand' && BRAND_FREMD.test(text)) return false;
+  if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title))) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
   if (pool === 'aktuell' && !['Merzenich', 'Kreis Düren'].includes(localityFor(text))) return false;

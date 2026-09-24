@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2159,6 +2159,146 @@
       "titel": "File:26-01 Bücherschrank Weilerswist 01.jpg",
       "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
       "runde": 4
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 5,
+      "titel": "File:Wuppertal August-Bebel-Straße 2013 020.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 5
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 19,
+      "titel": "File:GER Wuppertal Universität 089 2016 - Streetfood-Event.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 5,
+      "titel": "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 017.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 6,
+      "titel": "File:Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 024.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Fire In Rosarito.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:Incendio manaure.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 13,
+      "titel": "File:Fire Engines at a Fire on 1st Avenue South and 2nd St. - DPLA - e7e4e019fb51e5b6e1d54ec406e1d423.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Washburn Crosby 'A' Mill Fire - DPLA - a2a0331d4a76d2632ffc54bd4936fcba.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Fire in Cebu.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Fire philippines cebu 2025.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Witten Feuerwehr Acetylenflasche.jpg",
+      "grund": "Motiv passt nicht zum Pool",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Großbrand im Barackenlager an der Friedhofstraße in Neumühlen-Dietrichsdorf (Kiel 56.437).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 5
+    },
+    {
+      "pool": "brand",
+      "nr": 20,
+      "titel": "File:Großbrand auf dem Schrottplatz der Firma Zerssen zwischen Werftstraße und Hörn (Kiel 57.458).jpg",
+      "grund": "Historische Aufnahme, taugt nicht als heutiges Symbolbild",
+      "runde": 5
+    },
+    {
+      "pool": "leben",
+      "nr": 7,
+      "titel": "File:Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 9.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 5
+    },
+    {
+      "pool": "leben",
+      "nr": 17,
+      "titel": "File:Haus am Dorfplatz-03-Schild.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 5
+    },
+    {
+      "pool": "sport",
+      "nr": 5,
+      "titel": "File:Artificial grass playground – Brezovec - Dolný Kubín 01.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar",
+      "runde": 5
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Artificial grass playground – Brezovec - Dolný Kubín 03.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 5
+    },
+    {
+      "pool": "sport",
+      "nr": 14,
+      "titel": "File:Eichstätt Kunstrasenplatz Schottenau 2019.jpg",
+      "grund": "Unscharf oder ohne Bildaussage",
+      "runde": 5
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:FMF Beach Soccer Arena artificial turf.jpg",
+      "grund": "Militär- oder Auslandsmotiv",
+      "runde": 5
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:Krippken Mettingen 7.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool",
+      "runde": 5
     }
   ],
   "freigegeben": [
@@ -2361,6 +2501,19 @@
     "File:Kunstrasenplatz Buchen 2022 00.jpg",
     "File:26-01 Bücherschrank Weilerswist 02.jpg",
     "File:26-01 Öffentlicher Bücherschrank Vettweiß 01.jpg",
-    "File:26-01 Öffentlicher Bücherschrank Vettweiß 02.jpg"
+    "File:26-01 Öffentlicher Bücherschrank Vettweiß 02.jpg",
+    "File:Wuppertal August-Bebel-Straße 2013 021.JPG",
+    "File:Wuppertal - Beyenburger Freiheit - Himmelfahrtsprozession 01 ies.jpg",
+    "File:Wuppertal - Siegelberg - Himmelfahrtsprozession 43 ies.jpg",
+    "File:Dachstuhlbrand Försterstraße 26, Ecke Ehrenfeldgürtel, Köln-9541.jpg",
+    "File:Luftbild Außengelaende.jpg",
+    "File:Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 8.jpg",
+    "File:Dülmen, Skulpturen im Bendixpark -- 2015 -- 8535.jpg",
+    "File:Buergerhaus Ibbenbueren 02.jpg",
+    "File:Recke Rathaus 07.jpg",
+    "File:Rorup, Bürgerhaus -- 2013 -- 9865 (bw).jpg",
+    "File:Eichstätt Schottenau -Kunstrasenplatz Spielfeld (2018-07 2).jpg",
+    "File:Artificial grass playground – Brezovec - Dolný Kubín 02.jpg",
+    "File:26-01 Öffentlicher Bücherschrank Vettweiß 03.jpg"
   ]
 }
