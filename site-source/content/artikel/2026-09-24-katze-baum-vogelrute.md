@@ -17,7 +17,7 @@ sources:
   - title: "Freiwillige Feuerwehr Merzenich – Einsatz 128/26"
     url: "https://www.heimat-info.de/beitraege/3f08fd31-7f69-4676-8f64-1dd32ded09b2"
     stand: 2026-09-22
-tags: ["Feuerwehr", "Tierrettung", "Vogelrute", "Katze"]
+tags: ["Feuerwehr", "Tierrettung"]
 ---
 
 Zu einer Tierrettung ist die Feuerwehr Merzenich am 21. September in die Vogelrute alarmiert worden. Eine Katze war auf einen Baum geklettert und schien nach Angaben der Feuerwehr zunächst nicht mehr selbst herunterzukommen.
