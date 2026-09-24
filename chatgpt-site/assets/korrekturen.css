@@ -394,6 +394,4 @@ html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;
   .mainnav .navscroll{height:57px!important;align-self:flex-start}
   .mainnav .navrow .navscroll>a{box-sizing:border-box;height:57px;display:inline-flex!important;align-items:center;padding:0!important;border-bottom:2px solid transparent!important}
   .mainnav .navrow .navscroll>a[aria-current],.mainnav .navrow .navscroll>a.ressort-open{border-bottom-color:var(--ma-red,#971725)!important}
-  /* Platz für den Pfeil der Ressort-Dropdowns (ressort-dropdowns.css). */
-  .mainnav .navrow .navscroll>a[aria-haspopup="true"]{padding-right:20px!important}
 }
