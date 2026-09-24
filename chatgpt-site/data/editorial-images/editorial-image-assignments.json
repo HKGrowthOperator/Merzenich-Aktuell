@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T13:06:58.159Z",
+  "updatedAt": "2026-09-24T13:17:21.432Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -215,6 +215,51 @@
       "assignedAt": "2026-09-24T13:00:44.477Z",
       "articleId": "2026-08-12-unfall-pkw-fahrrad-am-rosspfad",
       "articleDate": "2026-08-12T13:17:00+02:00"
+    },
+    "/blaulicht/einsatz-121-brandmeldeanlage-steinpfahl/": {
+      "imageId": "web-technik-18-1eea3512",
+      "pool": "technik",
+      "motiv": "brandmeldeanlage",
+      "regel": "blaulicht.alarm.brandmeldeanlage",
+      "assignedAt": "2026-09-24T13:17:21.429Z",
+      "articleId": "2026-08-20-einsatz-121-brandmeldeanlage-steinpfahl",
+      "articleDate": "2026-08-20T12:39:00+02:00"
+    },
+    "/blaulicht/gegenstaende-fussgaengerbruecke-l264/": {
+      "imageId": "web-unfall-13-dddcf86b",
+      "pool": "unfall",
+      "motiv": "fussgaengerbruecke",
+      "regel": "polizei.zeugenaufruf.bruecke",
+      "assignedAt": "2026-09-24T13:17:21.430Z",
+      "articleId": "2026-09-02-gegenstaende-fussgaengerbruecke-l264",
+      "articleDate": "2026-09-02T08:20:00+02:00"
+    },
+    "/blaulicht/einsatz-124-hydraulikoel-muehlenstrasse/": {
+      "imageId": "web-technik-05-81cd88e9",
+      "pool": "technik",
+      "motiv": "oelspur",
+      "regel": "blaulicht.technik.oelspur",
+      "assignedAt": "2026-09-24T13:17:21.430Z",
+      "articleId": "2026-09-11-einsatz-124-hydraulikoel-muehlenstrasse",
+      "articleDate": "2026-09-11T11:01:00+02:00"
+    },
+    "/blaulicht/einsatz-127-oelspur-girbelsrath/": {
+      "imageId": "web-technik-07-c67b4064",
+      "pool": "technik",
+      "motiv": "oelspur",
+      "regel": "blaulicht.technik.oelspur",
+      "assignedAt": "2026-09-24T13:17:21.430Z",
+      "articleId": "2026-09-14-einsatz-127-oelspur-girbelsrath",
+      "articleDate": "2026-09-14T12:26:00+02:00"
+    },
+    "/blaulicht/oelspur-windmuehle/": {
+      "imageId": "web-technik-05-81cd88e9",
+      "pool": "technik",
+      "motiv": "oelspur",
+      "regel": "oelspur",
+      "assignedAt": "2026-09-24T13:17:21.431Z",
+      "articleId": "2026-09-24-oelspur-windmuehle",
+      "articleDate": "2026-09-24T14:16:00+02:00"
     }
   }
 }

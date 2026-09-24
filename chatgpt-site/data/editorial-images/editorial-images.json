@@ -12548,7 +12548,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "1c5f8b8faaa68a7f3270dcb201977acbe848c089746e4f2e4df62ea4679bfb9b"
     },
     {
@@ -12604,7 +12604,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "650e3956eefef65dba9f801e1506878a0742c95838c5567c5db42a92b4d8c315"
     },
     {
@@ -12930,7 +12930,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "68277a2710711b8d70bb6bb47243b31e29eb17eebcfb26d72d46fbdd962e8c86"
     },
     {
@@ -13020,7 +13020,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "1c96cd84d2d7348cce497f3b6144c322c0d1de9fb6ad9ae29fbc76f4bd1b7eba"
     },
     {
@@ -13053,7 +13053,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "bd8eacb197c6ad64709794fb7eb5eafed9ca42b36316a96b98a745f4555bba02"
     },
     {
@@ -14037,7 +14037,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "8a459befd4d2928c51b56876c0bce4ad13c63f7c5d39bf326633fb5ddc8869ab"
     },
     {

@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -2887,6 +2887,396 @@
       "titel": "File:Radarfalle (4413514500).jpg",
       "grund": "Kennzeichen lesbar",
       "runde": 13
+    },
+    {
+      "pool": "technik",
+      "nr": 1,
+      "titel": "File:Beseitigung einer Ölspur am Westring, Ecke Eckernförder Straße durch die Feuerwehr (Kiel 54.695).jpg",
+      "grund": "historisches Foto mit erkennbaren Personen"
+    },
+    {
+      "pool": "technik",
+      "nr": 2,
+      "titel": "File:Ölspur-Mureck-20210104 110509 (50799906661).jpg",
+      "grund": "Ausland (Mureck, Steiermark)"
+    },
+    {
+      "pool": "technik",
+      "nr": 3,
+      "titel": "File:Ölspur-Mureck-20210104 110634 (50799906256).jpg",
+      "grund": "Ausland (Mureck, Steiermark)"
+    },
+    {
+      "pool": "technik",
+      "nr": 4,
+      "titel": "File:Ölspur-Mureck-20210104 110154 (50800019557).jpg",
+      "grund": "Ausland (Mureck, Steiermark)"
+    },
+    {
+      "pool": "technik",
+      "nr": 6,
+      "titel": "File:Ölspur - 02.jpg",
+      "grund": "passt zu keinem Ereignismotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 8,
+      "titel": "File:Fire Alarm (45674884582).jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 9,
+      "titel": "File:Talk back speaker in a Fire Alarm Systems .jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 10,
+      "titel": "File:Fire Alarm Systems .jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 11,
+      "titel": "File:Fire Alarm Systems 2.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 12,
+      "titel": "File:Fire Alarm Systems 3.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 13,
+      "titel": "File:Fire Alarm Annunciator.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 14,
+      "titel": "File:Fire alarm with smashed glass.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 15,
+      "titel": "File:Fire Alarm pull station inside.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 16,
+      "titel": "File:Fire Alarm in residential area.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 17,
+      "titel": "File:SMS Senator Fire Alarm Control Panel.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 19,
+      "titel": "File:Fire Alarm (7817360530).jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 20,
+      "titel": "File:Fire Alarm (26141344784).jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 23,
+      "titel": "File:Dust on fire alarm bell.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "technik",
+      "nr": 24,
+      "titel": "File:A picture of a Fire alarm Pull Station.jpg",
+      "grund": "englische Beschriftung oder kein Brandmelder erkennbar"
+    },
+    {
+      "pool": "rettung",
+      "nr": 1,
+      "titel": "File:Mercedes-Benz Sprinter Tierrettungs-Krankenwagen, Tag der Feuerwehr, 2024 Stadtwäldchen.jpg",
+      "grund": "Vereins-/Firmenaufschrift mit Name und Telefonnummer auf dem Fahrzeug"
+    },
+    {
+      "pool": "rettung",
+      "nr": 2,
+      "titel": "File:Mobiler Leitstellenanhänger, Tierrettungs-Liga, Tag der Feuerwehr, 2024 Stadtwäldchen.jpg",
+      "grund": "Vereins-/Firmenaufschrift mit Name und Telefonnummer auf dem Fahrzeug"
+    },
+    {
+      "pool": "rettung",
+      "nr": 3,
+      "titel": "File:FEMA - 37715 - Animal rescue volunteers prepare in Louisiana.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 4,
+      "titel": "File:FEMA - 34511 - Large animal rescue workers in Missouri.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 5,
+      "titel": "File:FEMA - 34513 - Large animal rescue workers in Missouri.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 6,
+      "titel": "File:FEMA - 34525 - Large Animal rescue group prepare their boat for a rescue in Missouri.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 7,
+      "titel": "File:Pennine Pen Animal Rescue (3467442333).jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 8,
+      "titel": "File:AIMG 4305 Buga 2019 Tierrettung Unterland.jpg",
+      "grund": "Vereins-/Firmenaufschrift mit Name und Telefonnummer auf dem Fahrzeug"
+    },
+    {
+      "pool": "rettung",
+      "nr": 9,
+      "titel": "File:WVS, formerly the International Animal Rescue, shifted from Saligao to Assagao.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 10,
+      "titel": "File:Early International Animal Rescue volunteers in Goa, circa late 1990s.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 11,
+      "titel": "File:An animal rescue facility - geograph.org.uk - 3635819.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 12,
+      "titel": "File:Emergency animal rescue car.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 13,
+      "titel": "File:Lion in Sudan Animal Rescue.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 14,
+      "titel": "File:Lion in Sudan Animal Rescue 2.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 15,
+      "titel": "File:Lion in Sudan Animal Rescue 3.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "rettung",
+      "nr": 16,
+      "titel": "File:Sudan animal Rescue.jpg",
+      "grund": "Ausland"
+    },
+    {
+      "pool": "unfall",
+      "nr": 1,
+      "titel": "File:Fußgängerbrücke über den Rhein-Herne-Kanal – an der Obermeidericher Straße - panoramio.jpg",
+      "grund": "Bruecke ueber Kanal, nicht ueber eine Fahrbahn"
+    },
+    {
+      "pool": "unfall",
+      "nr": 2,
+      "titel": "File:GER Wuppertal, Fußgängerbrücke Bundesallee 0004.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 3,
+      "titel": "File:GER Wuppertal, Fußgängerbrücke Bundesallee 0005.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 4,
+      "titel": "File:GER Wuppertal, Fußgängerbrücke Bundesallee, Aussicht 0008.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 5,
+      "titel": "File:Bad Honnef Fußgängerbrücke Lohfelder Straße.jpg",
+      "grund": "Bruecke nicht als Ueberfuehrung einer Fahrbahn erkennbar oder Luftbild"
+    },
+    {
+      "pool": "unfall",
+      "nr": 6,
+      "titel": "File:Bad Honnef Rheinpromenade Fußgängerbrücke.jpg",
+      "grund": "Bruecke nicht als Ueberfuehrung einer Fahrbahn erkennbar oder Luftbild"
+    },
+    {
+      "pool": "unfall",
+      "nr": 7,
+      "titel": "File:Bad Honnef Fußgängerbrücke Honnef-Süd August-Lepper-Straße.jpg",
+      "grund": "Bruecke nicht als Ueberfuehrung einer Fahrbahn erkennbar oder Luftbild"
+    },
+    {
+      "pool": "unfall",
+      "nr": 8,
+      "titel": "File:Bad Honnef Fußgängerbrücke Honnef-Süd Lohfelder Straße.jpg",
+      "grund": "geparktes Auto, Kennzeichen im Original womoeglich lesbar"
+    },
+    {
+      "pool": "unfall",
+      "nr": 9,
+      "titel": "File:Billerbeck, Fußgängerüberführung Bockelsdorfer Weg -- 2014 -- 7583.jpg",
+      "grund": "Bruecke nicht als Ueberfuehrung einer Fahrbahn erkennbar oder Luftbild"
+    },
+    {
+      "pool": "unfall",
+      "nr": 10,
+      "titel": "File:Königsbrücker Straße Dresden von Fußgängerüberführung.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 11,
+      "titel": "File:Königsbrücker Straße Dresden von Fußgängerüberführung 2.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 12,
+      "titel": "File:Königsbrücker Straße Dresden von Fußgängerüberführung 3.jpg",
+      "grund": "Bruecke selbst nicht im Bild (vom Steg aus fotografiert)"
+    },
+    {
+      "pool": "unfall",
+      "nr": 14,
+      "titel": "File:1995 01 29 OG Freiburgerstrasse und altes Fernmeldeamt von 1964 von Fussgaengerbruecke aus.jpg",
+      "grund": "Bruecke nicht als Ueberfuehrung einer Fahrbahn erkennbar oder Luftbild"
+    },
+    {
+      "pool": "unfall",
+      "nr": 15,
+      "titel": "File:Trier-Ehrang, Fußgängerüberführung zur Pfeiffersbrücke 20130527 (bearb Sp).jpg",
+      "grund": "passt zu keinem Ereignismotiv"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 1,
+      "titel": "File:Stolpersteine Bremerhaven – Konrad Feldbrand.JPG",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 2,
+      "titel": "File:Stolpersteine Bremerhaven – Frieda Feldbrand.JPG",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 3,
+      "titel": "File:Stolpersteine Bremerhaven – Esther Feldbrand.JPG",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 4,
+      "titel": "File:Stolpersteine Bremerhaven – Adele Feldbrand.JPG",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 5,
+      "titel": "File:Temporär installierte Geschwindigkeitsanzeigeanlage an der Straßen Am Feldbrand in Bochum-Linden.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 6,
+      "titel": "File:Lindener Straße – Blick nach Südwesten – Höhe Einmündung Am Feldbrand.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 7,
+      "titel": "File:Hummeln auf Sonnenblumenblüte an der Straße Am Feldbrand.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 8,
+      "titel": "File:Hummel auf Sonnenblumenblüte an der Straße Am Feldbrand 2.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 9,
+      "titel": "File:Hummel auf Sonnenblumenblüte an der Straße Am Feldbrand.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 10,
+      "titel": "File:Hummel auf Sonnenblumenblüte an der Straße Am Feldbrand 1.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 11,
+      "titel": "File:Vorgarten an der Straße Am Feldbrand.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 12,
+      "titel": "File:Straßenbahnhaltestelle Am Feldbrand, 1, Linden, Bochum.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 13,
+      "titel": "File:Straßenbahnhaltestelle Am Feldbrand, 2, Linden, Bochum.jpg",
+      "grund": "Beifang: Strassenname oder Nachname \"Feldbrand\", kein Flaechenbrand"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 14,
+      "titel": "File:Trier, rauchverhangener Himmel durch den Vegetationsbrand im Hohen Venn 20260815.jpg",
+      "grund": "nur Dunst, kein Brand erkennbar"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 15,
+      "titel": "File:PCD-Containerbrand.jpg",
+      "grund": "Herkunft unklar, Personen in Uniform"
+    },
+    {
+      "pool": "flaeche",
+      "nr": 16,
+      "titel": "File:De Brandweer blust ook containerbranden.jpg",
+      "grund": "Ausland (Niederlande)"
     }
   ],
   "freigegeben": [
@@ -3132,6 +3522,12 @@
     "File:Tübingen 2022 - Selbstbedienungs-Fahrradreparaturstation - by-RaBoe 004.jpg",
     "File:Fahrradreparaturstation am Volkspark (Mainz).jpg",
     "File:Fahrradreparaturstation.jpg",
-    "File:Brand Hotel Knoche4.jpg"
+    "File:Brand Hotel Knoche4.jpg",
+    "File:Ölspur - 01.jpg",
+    "File:Ölspur - 03.jpg",
+    "File:Prodex firescape fire alarm panel.jpg",
+    "File:Hedengren Security Rebranded Kac fire alarm call point.jpg",
+    "File:Prodex Firescape Fire alarm panel made by Hedengren security.jpg",
+    "File:Trier-Ehrang, Fußgängerüberführung zur Pfeiffersbrücke 20130527.jpg"
   ]
 }

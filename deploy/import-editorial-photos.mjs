@@ -229,6 +229,8 @@ function usable(c, pool) {
   // ohne Pflichtwort im Titel kam Beifang wie 'GNT'-Ausstellungen und Zuege.
   if (pool === 'verkehr' && !VERKEHR_PFLICHT.test(c.title)) return false;
   if (POOLS[pool].pflicht && !POOLS[pool].pflicht.test(c.title)) return false;
+  // "Feldbrand" ist auch Strassen- und Nachname (Stolpersteine, Strasse Am Feldbrand).
+  if (pool === 'flaeche' && /(stolperstein|am feldbrand|strassenbahnhaltestelle|hummel)/i.test(c.title)) return false;
   if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title) || ARCHIV.test(text))) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;

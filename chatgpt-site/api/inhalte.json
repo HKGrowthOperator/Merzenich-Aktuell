@@ -192,7 +192,17 @@
      "label": "Hilfeleistung"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/technik/technik-05-81cd88e925.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-05-81cd88e925-480.webp 480w, /assets/editorial-pools/technik/technik-05-81cd88e925-800.webp 800w, /assets/editorial-pools/technik/technik-05-81cd88e925-1200.webp 1200w, /assets/editorial-pools/technik/technik-05-81cd88e925.jpg 1600w",
+    "alt": "Ein Schild der Feuerwehr, welches vor einer Ölspur warnt",
+    "width": 1600,
+    "height": 2133,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -588,7 +598,17 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/technik/technik-07-c67b406470.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-07-c67b406470-480.webp 480w, /assets/editorial-pools/technik/technik-07-c67b406470-800.webp 800w, /assets/editorial-pools/technik/technik-07-c67b406470-1200.webp 1200w, /assets/editorial-pools/technik/technik-07-c67b406470.jpg 1600w",
+    "alt": "Ein Schild der Feuerwehr, welches vor einer Ölspur warnt",
+    "width": 1600,
+    "height": 2133,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -716,7 +736,17 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/technik/technik-05-81cd88e925.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-05-81cd88e925-480.webp 480w, /assets/editorial-pools/technik/technik-05-81cd88e925-800.webp 800w, /assets/editorial-pools/technik/technik-05-81cd88e925-1200.webp 1200w, /assets/editorial-pools/technik/technik-05-81cd88e925.jpg 1600w",
+    "alt": "Ein Schild der Feuerwehr, welches vor einer Ölspur warnt",
+    "width": 1600,
+    "height": 2133,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -938,7 +968,17 @@
      "label": "L264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/unfall/unfall-13-dddcf86b1e.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-13-dddcf86b1e-480.webp 480w, /assets/editorial-pools/unfall/unfall-13-dddcf86b1e-800.webp 800w, /assets/editorial-pools/unfall/unfall-13-dddcf86b1e-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-13-dddcf86b1e.jpg 1600w",
+    "alt": "Die Pfeiffersbrücke (nicht im Bild) wurde im Sommer 2013 erneuert, die hier zu sehende Fußgängerüberführung dabei aber zurückgebaut. Der historische Treppenaufgang steht noch",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "P170 / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1293,7 +1333,17 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/technik/technik-18-1eea351292.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-18-1eea351292-480.webp 480w, /assets/editorial-pools/technik/technik-18-1eea351292-800.webp 800w, /assets/editorial-pools/technik/technik-18-1eea351292-1200.webp 1200w, /assets/editorial-pools/technik/technik-18-1eea351292.jpg 1600w",
+    "alt": "This is the Prodex firescape, addressable firealarm panel. It is made by Hedegren security",
+    "width": 1600,
+    "height": 2133,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "TWGThewikiguy / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2979,14 +3029,14 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
+   "id": "2026-09-24-oelspur-windmuehle",
+   "url": "/blaulicht/oelspur-windmuehle/",
+   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
+  },
+  {
    "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
    "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
    "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
-  },
-  {
-   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
-   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt"
   },
   {
    "id": "2026-09-23-fahrrad-reparaturstationen",
