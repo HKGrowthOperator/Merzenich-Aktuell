@@ -328,7 +328,7 @@ jobs:
               link.click();
               await new Promise((r) => setTimeout(r, 220));
               const panel = document.querySelector('.ressort-dropdown');
-              const bilder = [...(panel?.querySelectorAll('.ressort-dropdown__visual img') || [])];
+              const bilder = [...(panel?.querySelectorAll('.ressort-dropdown__story img') || [])];
               return {
                 pseudo,
                 offen: !!panel && !panel.hidden && panel.classList.contains('is-open'),
@@ -339,7 +339,7 @@ jobs:
             if (dropdown.fehler) throw new Error(dropdown.fehler);
             if (!['none','normal','""'].includes(dropdown.pseudo)) throw new Error('Ressort-Dropdown hat wieder einen Pfeil im Namen: ' + dropdown.pseudo);
             if (!dropdown.offen) throw new Error('Ressort-Dropdown oeffnet nicht');
-            if (dropdown.bilder < 2) throw new Error('Ressort-Dropdown ohne zwei Bildflaechen: ' + dropdown.bilder);
+            if (dropdown.bilder < 2) throw new Error('Ressort-Dropdown ohne zwei bebilderte Teaser: ' + dropdown.bilder);
             if (!dropdown.geladen) throw new Error('Mindestens ein Bild im Ressort-Dropdown laedt nicht');
           });
 
