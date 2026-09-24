@@ -33,20 +33,30 @@ const nur = (process.argv.find((a) => a.startsWith('--nur=')) || '').slice(6).sp
 const ORTE = ['Merzenich', 'Golzheim', 'Girbelsrath', 'Morschenich', 'Bürgewald'];
 const pause = (ms) => new Promise((ok) => setTimeout(ok, ms));
 
+// Weiterleitungen von Hand, mit Cookies: Die Seiten der Gemeinde setzen beim
+// ersten Aufruf ein Cookie und leiten auf sich selbst weiter; fetch mit
+// redirect:'follow' gab dort nur 302 zurueck.
 async function holen(url, accept = 'text/html') {
-  for (let versuch = 1; versuch <= 2; versuch++) {
+  const cookies = new Map();
+  let ziel = url, letzte = null;
+  for (let schritt = 0; schritt < 8; schritt++) {
+    const ba = ziel.startsWith('https://rest.arbeitsagentur.de/') ? { 'X-API-Key': 'jobboerse-jobsuche' } : {};
+    const kekse = [...cookies].map(([k, v]) => `${k}=${v}`).join('; ');
+    let r;
     try {
-      // Die Bundesagentur verlangt ihren oeffentlichen Schluessel als Kopfzeile.
-      const ba = url.startsWith('https://rest.arbeitsagentur.de/') ? { 'X-API-Key': 'jobboerse-jobsuche' } : {};
-      const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: accept, 'Accept-Language': 'de-DE,de;q=0.9', ...ba }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
-      const text = await r.text();
-      if (r.status >= 500 && versuch === 1) { await pause(2000); continue; }
-      return { status: r.status, url: r.url, text };
+      r = await fetch(ziel, { headers: { 'User-Agent': UA, Accept: accept, 'Accept-Language': 'de-DE,de;q=0.9', ...(kekse ? { Cookie: kekse } : {}), ...ba }, redirect: 'manual', signal: AbortSignal.timeout(25000) });
     } catch (e) {
-      if (versuch === 2) return { status: 'fehler: ' + (e.cause?.code || e.name), url, text: '' };
-      await pause(2000);
+      if (schritt === 0 && !letzte) { await pause(2000); letzte = 'fehler'; schritt--; continue; }
+      return { status: 'fehler: ' + (e.cause?.code || e.name), url: ziel, text: '' };
     }
+    for (const c of r.headers.getSetCookie?.() || []) { const [kv] = c.split(';'); const i = kv.indexOf('='); if (i > 0) cookies.set(kv.slice(0, i).trim(), kv.slice(i + 1).trim()); }
+    const ort = r.headers.get('location');
+    if (r.status >= 300 && r.status < 400 && ort) { ziel = new URL(ort, ziel).href; letzte = r.status; continue; }
+    const text = await r.text();
+    // Fehlerseiten kurz mitschreiben, damit der naechste Lauf den Grund zeigt.
+    return { status: r.status, url: ziel, text, weiterleitungen: schritt, ...(r.status !== 200 ? { fehlertext: text.slice(0, 400) } : {}) };
   }
+  return { status: 'zu viele Weiterleitungen', url: ziel, text: '' };
 }
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', shy: '', auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä', Ouml: 'Ö', Uuml: 'Ü', szlig: 'ß', ndash: '–', mdash: '—', bdquo: '„', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', euro: '€', eacute: 'é' };
@@ -86,7 +96,7 @@ function zerlegen(html, basis) {
 
 async function seite(url) {
   const r = await holen(url);
-  const eintrag = { url, endUrl: r.url, abgerufen: new Date().toISOString(), status: r.status };
+  const eintrag = { url, endUrl: r.url, abgerufen: new Date().toISOString(), status: r.status, ...(r.fehlertext ? { fehlertext: r.fehlertext } : {}) };
   if (r.status === 200) Object.assign(eintrag, zerlegen(r.text, r.url));
   await pause(1200);
   return eintrag;
@@ -125,12 +135,15 @@ const QUELLEN = {
     for (const art of [1, 4]) {
       let gesammelt = 0;
       for (let page = 1; page <= 4; page++) {
-        const url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?wo=52399%20Merzenich&umkreis=25&size=100&page=${page}&angebotsart=${art}`;
-        const r = await holen(url, 'application/json');
+        const frage = `wo=Merzenich&umkreis=25&size=100&page=${page}&angebotsart=${art}`;
+        let url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?${frage}`;
+        let r = await holen(url, 'application/json');
+        // Zweiter bekannter Pfad der Schnittstelle (App-Variante).
+        if (r.status !== 200) { const erst = r; url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?${frage}`; r = await holen(url, 'application/json'); if (r.status !== 200) r.fehlertext = `pc/v4/jobs ${erst.status}: ${erst.fehlertext || ''} | app/jobs ${r.status}: ${r.fehlertext || ''}`; }
         let daten = null;
         try { daten = JSON.parse(r.text); } catch { /* bleibt null, der Status sagt warum */ }
         const stellen = daten?.stellenangebote ?? [];
-        seiten.push({ url, abgerufen: new Date().toISOString(), status: r.status, gesamt: daten?.maxErgebnisse ?? null, stellen });
+        seiten.push({ url, abgerufen: new Date().toISOString(), status: r.status, gesamt: daten?.maxErgebnisse ?? null, stellen, ...(r.fehlertext ? { fehlertext: r.fehlertext } : {}) });
         gesammelt += stellen.length;
         await pause(800);
         if (!stellen.length || gesammelt >= (Number(daten?.maxErgebnisse) || 0)) break;
