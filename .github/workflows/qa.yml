@@ -69,6 +69,7 @@ jobs:
         # Commit-Schritt unten schreibt das Ergebnis nach main zurueck. Alle
         # Generatoren sind idempotent; der zweite Lauf darf nichts mehr aendern.
         run: |
+          node deploy/meldungen.mjs
           node deploy/marke.mjs
           node deploy/symbolbilder.mjs
           node deploy/markt-prerender.mjs
@@ -91,6 +92,7 @@ jobs:
           node deploy/thema-prerender.mjs --check
           node deploy/teaser-bilder.mjs --check
           node deploy/ortsmarke.mjs --check
+          node deploy/meldungen.mjs --check
           node deploy/marke.mjs --check
           node deploy/ressort-menue.mjs --check
           node deploy/inhaltsindex.mjs --check

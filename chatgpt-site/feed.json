@@ -118,7 +118,7 @@
       "content_html": "<p>Ein ausgelöster Fahrzeug-eCall führte Feuerwehr und Rettungsdienst am 14. September in die Obere Straße. Vor Ort wurde kein Unfall festgestellt.</p>",
       "date_published": "2026-09-24T14:08:00+02:00",
       "date_modified": "2026-09-24T14:08:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg",
       "tags": [
         "Blaulicht",
         "Morschenich",
@@ -255,6 +255,37 @@
       ]
     },
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-127-oelspur-girbelsrath/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-127-oelspur-girbelsrath/",
+      "title": "Ölspur in der Dechant-Fabry-Straße in Girbelsrath beseitigt",
+      "summary": "Direkt nach einem Einsatz in Morschenich streute die Tagesalarmgruppe am 14. September eine Ölspur in Girbelsrath ab.",
+      "content_html": "<p>Direkt nach einem Einsatz in Morschenich streute die Tagesalarmgruppe am 14. September eine Ölspur in Girbelsrath ab.</p>",
+      "date_published": "2026-09-14T12:26:00+02:00",
+      "date_modified": "2026-09-14T12:26:00+02:00",
+      "tags": [
+        "Blaulicht",
+        "Girbelsrath",
+        "Ölspur",
+        "Feuerwehr"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-126-ecall-morschenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-126-ecall-morschenich/",
+      "title": "E-Call aus einem Auto in Morschenich: Einsatzkräfte finden keinen Unfall",
+      "summary": "Das automatische Notrufsystem eines Pkw hatte am 14. September Feuerwehr und Rettungsdienst in die Obere Straße gerufen.",
+      "content_html": "<p>Das automatische Notrufsystem eines Pkw hatte am 14. September Feuerwehr und Rettungsdienst in die Obere Straße gerufen.</p>",
+      "date_published": "2026-09-14T11:07:00+02:00",
+      "date_modified": "2026-09-14T11:07:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+      "tags": [
+        "Blaulicht",
+        "Morschenich",
+        "Feuerwehr",
+        "Morschenich"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-oberzier-3-2/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-oberzier-3-2/",
       "title": "SC Merzenich gewinnt 3:2 gegen BC Oberzier",
@@ -272,6 +303,36 @@
       ]
     },
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-125-rauchmelder-buergewald/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-125-rauchmelder-buergewald/",
+      "title": "Rauchmelder piept in Bürgewald: Feuerwehr kontrolliert das Haus",
+      "summary": "Am Samstagabend, 12. September, war ein ausgelöster Heimrauchmelder in der Oberstraße schon von draußen zu hören. Feuer fanden die Einsatzkräfte nicht.",
+      "content_html": "<p>Am Samstagabend, 12. September, war ein ausgelöster Heimrauchmelder in der Oberstraße schon von draußen zu hören. Feuer fanden die Einsatzkräfte nicht.</p>",
+      "date_published": "2026-09-12T21:59:00+02:00",
+      "date_modified": "2026-09-12T21:59:00+02:00",
+      "tags": [
+        "Blaulicht",
+        "Bürgewald",
+        "Rauchmelder",
+        "Feuerwehr"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-124-hydraulikoel-muehlenstrasse/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-124-hydraulikoel-muehlenstrasse/",
+      "title": "Hydrauliköl auf der Mühlenstraße: Spezialfirma reinigt die Fahrbahn",
+      "summary": "Die Feuerwehr sicherte am 11. September eine Ölspur in Merzenich ab, bis eine Firma für Ölschadenbeseitigung übernahm.",
+      "content_html": "<p>Die Feuerwehr sicherte am 11. September eine Ölspur in Merzenich ab, bis eine Firma für Ölschadenbeseitigung übernahm.</p>",
+      "date_published": "2026-09-11T11:01:00+02:00",
+      "date_modified": "2026-09-11T11:01:00+02:00",
+      "tags": [
+        "Blaulicht",
+        "Merzenich",
+        "Ölspur",
+        "Feuerwehr"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einbruch-arnoldsweilerweg/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einbruch-arnoldsweilerweg/",
       "title": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen",
@@ -285,6 +346,21 @@
         "Merzenich",
         "Polizei",
         "Einbruch"
+      ]
+    },
+    {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+      "title": "„Person hinter Tür“ am Steinpfahl: Bewohner öffnet selbst",
+      "summary": "Ein Pflegedienst hatte am frühen Samstagmorgen, 5. September, die Feuerwehr gerufen. Beim Eintreffen öffnete der Bewohner die Haustür.",
+      "content_html": "<p>Ein Pflegedienst hatte am frühen Samstagmorgen, 5. September, die Feuerwehr gerufen. Beim Eintreffen öffnete der Bewohner die Haustür.</p>",
+      "date_published": "2026-09-05T06:28:00+02:00",
+      "date_modified": "2026-09-05T06:28:00+02:00",
+      "tags": [
+        "Blaulicht",
+        "Merzenich",
+        "Feuerwehr",
+        "Hilfeleistung"
       ]
     },
     {
@@ -441,92 +517,6 @@
         "Kleidertreff",
         "Ehrenamt",
         "Lindenstraße"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/maehroboter-igelschutz/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/maehroboter-igelschutz/",
-      "title": "Mähroboter dürfen abends nicht mehr raus",
-      "summary": "Der Kreis Düren untersagt den Betrieb von Mährobotern in der Dämmerung und nachts. Igel sind dann besonders aktiv.",
-      "content_html": "<p>Der Kreis Düren untersagt den Betrieb von Mährobotern in der Dämmerung und nachts. Igel sind dann besonders aktiv.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/c77cce903e4a1f-1440.webp",
-      "tags": [
-        "Leben",
-        "Merzenich",
-        "Igel",
-        "Mähroboter",
-        "Kreis Düren",
-        "Naturschutz"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/rheinlandliegen-morschenich/",
-      "title": "Von Morschenich aus den Blick nach Köln genießen",
-      "summary": "Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.",
-      "content_html": "<p>Zwei Rheinlandliegen stehen jetzt am Rundweg um Morschenich. Finanziert wurden sie über einen Heimatscheck des Landes.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/4e012d0ce4b136-768.webp",
-      "tags": [
-        "Leben",
-        "Morschenich",
-        "Heimatscheck",
-        "Freizeit",
-        "Inga Dohmes"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/seniorennachmittag-anmeldung/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/seniorennachmittag-anmeldung/",
-      "title": "Jetzt anmelden zum Seniorennachmittag",
-      "summary": "Am Samstag, 17. Oktober 2026, lädt die Gemeinde in die Weinberghalle. Die Anmeldung läuft über einen Coupon, ein Fahrdienst ist möglich.",
-      "content_html": "<p>Am Samstag, 17. Oktober 2026, lädt die Gemeinde in die Weinberghalle. Die Anmeldung läuft über einen Coupon, ein Fahrdienst ist möglich.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/23c79c62d5d821-1440.webp",
-      "tags": [
-        "Leben",
-        "Merzenich",
-        "Seniorennachmittag",
-        "Weinberghalle",
-        "Anmeldung"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/glasfaserausbau-soco/",
-      "title": "Glasfaser: Ausbau läuft seit 2020 mit SOCO",
-      "summary": "Die Gemeinde setzt den Breitbandausbau gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions um. Für die Gemeinde entstehen dabei keine Kosten.",
-      "content_html": "<p>Die Gemeinde setzt den Breitbandausbau gemeinsam mit dem Dürener Unternehmen SOCO Network Solutions um. Für die Gemeinde entstehen dabei keine Kosten.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/5191bb10b6a3de-768.webp",
-      "tags": [
-        "Wirtschaft",
-        "Merzenich",
-        "Glasfaser",
-        "SOCO",
-        "Breitband"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/kommunale-waermeplanung/",
-      "title": "Wärmeplanung: Merzenich gibt den Startschuss",
-      "summary": "Gemeinsam mit dem Netzbetreiber Leitungspartner und dem Planungsbüro SME erstellt die Gemeinde ihr kommunales Wärmekonzept.",
-      "content_html": "<p>Gemeinsam mit dem Netzbetreiber Leitungspartner und dem Planungsbüro SME erstellt die Gemeinde ihr kommunales Wärmekonzept.</p>",
-      "date_published": "2026-09-04T00:00:00+02:00",
-      "date_modified": "2026-09-04T00:00:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/responsive/49833d3edfa958-768.webp",
-      "tags": [
-        "Wirtschaft",
-        "Merzenich",
-        "Wärmeplanung",
-        "Klimaschutz",
-        "Leitungspartner"
       ]
     }
   ]

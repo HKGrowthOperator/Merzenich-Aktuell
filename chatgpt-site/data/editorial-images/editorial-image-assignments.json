@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T13:08:06.923Z",
+  "updatedAt": "2026-09-24T13:08:37.998Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -144,12 +144,84 @@
       "articleId": "2026-09-23-fahrrad-reparaturstationen",
       "articleDate": "2026-09-23T11:08:00+02:00"
     },
-    "/blaulicht/ecall-morschenich/": {
+    "/blaulicht/e-scooter-auffahrunfall-duerener-strasse/": {
       "imageId": "web-blaulicht-02-1f415bea",
       "pool": "blaulicht",
       "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-09-24T12:59:13.814Z",
+      "articleId": "2026-07-14-e-scooter-auffahrunfall-duerener-strasse",
+      "articleDate": "2026-07-14T09:45:00+02:00"
+    },
+    "/blaulicht/radfahrerinnen-kollidieren-duerener-strasse/": {
+      "imageId": "web-tipp-02-3752acb5",
+      "pool": "tipp",
+      "motiv": "radweg",
+      "regel": "verkehr.unfall.rad",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-07-29-radfahrerinnen-kollidieren-duerener-strasse",
+      "articleDate": "2026-07-29T11:44:00+02:00"
+    },
+    "/blaulicht/einbruch-mittelstrasse-girbelsrath/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.einbruch",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-07-31-einbruch-mittelstrasse-girbelsrath",
+      "articleDate": "2026-07-31T10:00:00+02:00"
+    },
+    "/blaulicht/pkw-ueberschlagen-l264-auf-der-heide/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-07-31-pkw-ueberschlagen-l264-auf-der-heide",
+      "articleDate": "2026-07-31T10:00:00+02:00"
+    },
+    "/blaulicht/pkw-gestohlen-bergstrasse/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.diebstahl.kfz",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-08-03-pkw-gestohlen-bergstrasse",
+      "articleDate": "2026-08-03T11:30:00+02:00"
+    },
+    "/blaulicht/einsatz-114-unfall-b264-valdersweg/": {
+      "imageId": "web-blaulicht-06-7ae20816",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-08-11-einsatz-114-unfall-b264-valdersweg",
+      "articleDate": "2026-08-11T16:12:00+02:00"
+    },
+    "/blaulicht/einsatz-126-ecall-morschenich/": {
+      "imageId": "web-blaulicht-10-85fcb93e",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "blaulicht.technik.ecall",
+      "assignedAt": "2026-09-24T12:59:13.815Z",
+      "articleId": "2026-09-14-einsatz-126-ecall-morschenich",
+      "articleDate": "2026-09-14T11:07:00+02:00"
+    },
+    "/blaulicht/unfall-pkw-fahrrad-am-rosspfad/": {
+      "imageId": "web-blaulicht-11-d7d05a5b",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-09-24T13:00:44.477Z",
+      "articleId": "2026-08-12-unfall-pkw-fahrrad-am-rosspfad",
+      "articleDate": "2026-08-12T13:17:00+02:00"
+    },
+    "/blaulicht/ecall-morschenich/": {
+      "imageId": "web-blaulicht-12-37672c02",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
       "regel": "rettung",
-      "assignedAt": "2026-09-24T13:08:06.923Z",
+      "assignedAt": "2026-09-24T13:08:37.997Z",
       "articleId": "2026-09-24-ecall-morschenich",
       "articleDate": "2026-09-24T14:08:00+02:00"
     },
@@ -158,7 +230,7 @@
       "pool": "blaulicht",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:06.923Z",
+      "assignedAt": "2026-09-24T13:08:37.997Z",
       "articleId": "2026-09-24-oelspur-girbelsrath",
       "articleDate": "2026-09-24T14:10:00+02:00"
     },
@@ -167,7 +239,7 @@
       "pool": "feuerwehr",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:06.923Z",
+      "assignedAt": "2026-09-24T13:08:37.998Z",
       "articleId": "2026-09-24-katze-baum-vogelrute",
       "articleDate": "2026-09-24T14:14:00+02:00"
     },
@@ -176,7 +248,7 @@
       "pool": "feuerwehr",
       "motiv": "feuerwehrhaus",
       "regel": "feuerwehr",
-      "assignedAt": "2026-09-24T13:08:06.923Z",
+      "assignedAt": "2026-09-24T13:08:37.998Z",
       "articleId": "2026-09-24-oelspur-windmuehle",
       "articleDate": "2026-09-24T14:16:00+02:00"
     }

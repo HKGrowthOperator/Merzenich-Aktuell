@@ -9,6 +9,8 @@ on:
       - 'deploy/import-editorial-photos.mjs'
       - 'deploy/editorial-photo-review.json'
       - 'deploy/bildmotive.json'
+      - 'deploy/bildklassen.json'
+      - 'inhalte/meldungen/**'
       - 'deploy/pool-varianten.py'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/bild-fallbacks.js'
@@ -45,6 +47,7 @@ jobs:
 
       - name: Generate image library and article assignments
         run: |
+          node deploy/meldungen.mjs
           node deploy/marke.mjs
           node deploy/symbolbilder.mjs
           node deploy/markt-prerender.mjs
@@ -67,6 +70,7 @@ jobs:
           node deploy/symbolbilder.mjs --check
           node deploy/teaser-bilder.mjs --check
           node deploy/ortsmarke.mjs --check
+          node deploy/meldungen.mjs --check
           node deploy/marke.mjs --check
           node deploy/ressort-menue.mjs --check
           python3 deploy/pool-varianten.py --check

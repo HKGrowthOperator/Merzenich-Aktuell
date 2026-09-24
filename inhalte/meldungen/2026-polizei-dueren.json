@@ -1,0 +1,284 @@
+{
+  "hinweis": "Pressemitteilungen der Polizei Düren (Presseportal), abgerufen am 24.09.2026 (imports/quellen/polizei.json). Nur was in der Mitteilung steht. Zeit = Veroeffentlichung der Pressemitteilung. Seiten erzeugt von deploy/meldungen.mjs.",
+  "meldungen": [
+    {
+      "slug": "gegenstaende-fussgaengerbruecke-l264",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Gegenstände von Fußgängerbrücke über die L264 geworfen: Polizei sucht Zeugen",
+      "dek": "Jugendliche sollen am 1. September am Gewerbering Gegenstände auf die Fahrbahn geworfen haben. Ein Autofahrer musste ausweichen.",
+      "datum": "2026-09-02T08:20:00+02:00",
+      "fakten": [
+        "Dienstag, 1. September 2026, gegen 15:55 Uhr",
+        "Fußgängerbrücke über die L264 am Gewerbering",
+        "Nach Zeugenangaben drei bis vier Jugendliche",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Am Dienstag, 1. September, haben sich nach Angaben der Polizei gegen 15:55 Uhr Jugendliche auf der Fußgängerbrücke über die L264 am Gewerbering aufgehalten und Gegenstände auf die Fahrbahn darunter geworfen. Mehrere Verkehrsteilnehmer meldeten das der Polizei. Ein Zeuge sprach von drei bis vier Jugendlichen.",
+        "Ein Autofahrer musste nach eigenen Angaben etwa einen Meter nach links ausweichen. Welche Gegenstände geworfen wurden, ist unklar: Als die Polizei eintraf, war niemand mehr auf oder an der Brücke, und weder auf der Fahrbahn noch auf der Brücke lagen entsprechende Gegenstände. Eine Fahndung in der Umgebung blieb ohne Erfolg.",
+        "Die Polizei wertet den Vorfall als gefährlichen Eingriff in den Straßenverkehr und sucht Zeugen, vor allem Autofahrer, die gefährdet wurden. Hinweise nimmt sie unter 02421 949-0 entgegen.",
+        "Die Polizei bittet Eltern, mit ihren Kindern über die Gefahr zu sprechen: Auch ein vermeintlicher Streich kann Bremsmanöver und damit einen schweren Unfall auslösen."
+      ],
+      "themen": [
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "polizei.zeugenaufruf.bruecke",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 02.09.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6344030",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "unfall-pkw-fahrrad-am-rosspfad",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Auto erfasst Radfahrer an der Einmündung Am Roßpfad",
+      "dek": "Ein 60-Jähriger aus Vettweiß wurde am 11. August leicht verletzt. Er hatte Vorfahrt.",
+      "datum": "2026-08-12T13:17:00+02:00",
+      "fakten": [
+        "Dienstag, 11. August 2026, gegen 18:15 Uhr",
+        "Einmündung Am Roßpfad / Merzenicher Weg",
+        "Radfahrer (60) leicht verletzt, Autofahrer (42) unverletzt",
+        "Sachschaden laut Polizei rund 15.000 Euro"
+      ],
+      "absaetze": [
+        "An der Einmündung Am Roßpfad / Merzenicher Weg sind am Dienstag, 11. August, ein Auto und ein Fahrrad zusammengestoßen.",
+        "Nach Angaben der Polizei fuhr ein 42-jähriger Mann aus Kerpen gegen 18:15 Uhr mit seinem Wagen auf der Straße Am Roßpfad in Richtung Merzenicher Weg. Gleichzeitig war ein 60-jähriger Radfahrer aus Vettweiß auf dem Merzenicher Weg aus Richtung Merzenich in Richtung Mathias-von-den-Driesch-Straße unterwegs. Er hatte Vorfahrt. In der Einmündung stießen beide zusammen.",
+        "Der Radfahrer wurde leicht verletzt, ein Rettungswagen brachte ihn in ein Krankenhaus. Der Autofahrer blieb unverletzt. Den Sachschaden schätzt die Polizei auf rund 15.000 Euro."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "fahrrad",
+          "Fahrrad"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 12.08.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6332060",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "pkw-gestohlen-bergstrasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Schlüssel steckte: Schwarzer VW Lupo in der Bergstraße gestohlen",
+      "dek": "Unbekannte nahmen den Wagen in der Nacht zum 1. August mit. Die Polizei bittet um Hinweise.",
+      "datum": "2026-08-03T11:30:00+02:00",
+      "fakten": [
+        "Samstag, 1. August 2026, zwischen 0 und 10 Uhr",
+        "Bergstraße, am Fahrbahnrand geparkt",
+        "Schwarzer VW Lupo, Kennzeichen DN-MG 238",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte haben in der Nacht zum Samstag, 1. August, einen in der Bergstraße abgestellten Wagen gestohlen. Der Besitzer hatte nach eigenen Angaben vergessen, den Schlüssel abzuziehen.",
+        "Er hatte den schwarzen VW Lupo mit dem Kennzeichen DN-MG 238 gegen Mitternacht am Fahrbahnrand geparkt. Gegen 10 Uhr morgens bemerkte er, dass das Auto weg war.",
+        "Die Polizei bittet alle, die etwas zur Tat, zu den Tätern oder zu verdächtigen Beobachtungen rund um den Tatort sagen können, sich unter 02421 949-0 zu melden."
+      ],
+      "themen": [
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "diebstahl",
+          "Diebstahl"
+        ]
+      ],
+      "bildklasse": "polizei.diebstahl.kfz",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 03.08.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6326148",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einbruch-mittelstrasse-girbelsrath",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Polizei · Zeugenaufruf",
+      "titel": "Einbruch am Tag in Girbelsrath: Polizei bittet um Hinweise",
+      "dek": "Unbekannte drangen am 30. Juli gewaltsam in ein Einfamilienhaus in der Mittelstraße ein, während die Bewohner unterwegs waren.",
+      "datum": "2026-07-31T10:00:00+02:00",
+      "fakten": [
+        "Donnerstag, 30. Juli 2026, zwischen 7:10 und 18:30 Uhr",
+        "Einfamilienhaus in der Mittelstraße",
+        "Kriminalpolizei hat Spuren gesichert",
+        "Hinweise an die Polizei Düren: 02421 949-0"
+      ],
+      "absaetze": [
+        "Unbekannte sind am Donnerstag, 30. Juli, gewaltsam in ein Einfamilienhaus in der Mittelstraße in Girbelsrath eingedrungen und unerkannt geflüchtet.",
+        "Die Bewohner hatten das Haus gegen 7:10 Uhr verlassen. Als sie zurückkamen, stellten sie fest, dass mehrere Räume betreten und durchsucht worden waren. Gegen 18:30 Uhr riefen sie die Polizei. Was fehlt, war zum Zeitpunkt der Pressemitteilung noch nicht klar.",
+        "Die Kriminalpolizei hat Spuren gesichert und ermittelt. Wer etwas zur Tat, zu den Tätern oder zu verdächtigen Beobachtungen rund um den Tatort sagen kann, meldet sich unter 02421 949-0.",
+        "Die Polizei empfiehlt eine Liste der eigenen Wertgegenstände. Eine Vorlage bietet die Polizeiliche Kriminalprävention unter polizei-beratung.de."
+      ],
+      "themen": [
+        [
+          "einbruch",
+          "Einbruch"
+        ],
+        [
+          "zeugenaufruf",
+          "Zeugenaufruf"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "polizei.einbruch",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 31.07.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6324911",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "pkw-ueberschlagen-l264-auf-der-heide",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Auto prallt an der L264 gegen Ampelmast und überschlägt sich",
+      "dek": "Ein 73-Jähriger kam am 30. Juli an der Kreuzung Auf der Heide / Steinweg von der Fahrbahn ab. Er wurde leicht verletzt.",
+      "datum": "2026-07-31T10:00:00+02:00",
+      "fakten": [
+        "Donnerstag, 30. Juli 2026, gegen 13:25 Uhr",
+        "L264, Kreuzung Auf der Heide / Steinweg",
+        "Fahrer (73) leicht verletzt, keine weiteren Beteiligten",
+        "Schaden laut Polizei rund 25.000 Euro"
+      ],
+      "absaetze": [
+        "Ein 73-jähriger Autofahrer aus Hürtgenwald ist am Donnerstagnachmittag, 30. Juli, auf der L264 verunglückt. Er war gegen 13:25 Uhr aus Richtung Arnoldsweiler in Richtung Merzenich unterwegs.",
+        "An der Kreuzung Auf der Heide / Steinweg kam er nach Angaben der Polizei aus bisher ungeklärter Ursache nach rechts von der Fahrbahn ab und prallte gegen den Mast der Ampel. Der Wagen überschlug sich und blieb im Straßengraben liegen. Andere Verkehrsteilnehmer waren nicht betroffen.",
+        "Der Rettungsdienst brachte den leicht verletzten Mann in ein Krankenhaus. Ein Abschleppdienst barg das Auto. Den Schaden schätzt die Polizei auf rund 25.000 Euro."
+      ],
+      "hinweisQuelle": "Die Pressemitteilung vom 31.07.2026 spricht von „gestern Nachmittag“, nennt im Klammerdatum aber den 30.08.2026. Gemeint ist der 30. Juli.",
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 31.07.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6324912",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "radfahrerinnen-kollidieren-duerener-strasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Zwei Radfahrerinnen stoßen auf dem Radweg der Dürener Straße zusammen",
+      "dek": "Beide wichen am 28. Juli in dieselbe Richtung aus. Die 15- und die 58-Jährige wurden leicht verletzt.",
+      "datum": "2026-07-29T11:44:00+02:00",
+      "fakten": [
+        "Dienstag, 28. Juli 2026, gegen 18:50 Uhr",
+        "Radweg an der Dürener Straße",
+        "Zwei Radfahrerinnen aus Merzenich leicht verletzt",
+        "Kein nennenswerter Sachschaden"
+      ],
+      "absaetze": [
+        "Auf dem Radweg an der Dürener Straße sind am Dienstagabend, 28. Juli, zwei Radfahrerinnen zusammengestoßen.",
+        "Eine 15-Jährige fuhr nach Angaben der Polizei gegen 18:50 Uhr auf dem links der Straße gelegenen Radweg in Richtung Düren. Eine 58-Jährige kam ihr auf demselben Weg entgegen. Als die Jugendliche das andere Rad bemerkte, waren sich beide schon sehr nahe. Beide wichen gleichzeitig in dieselbe Richtung auf eine Grünfläche aus und stießen dort zusammen.",
+        "Die beiden Frauen aus Merzenich wurden leicht verletzt. Die Jugendliche ging selbst zum Arzt, die 58-Jährige brauchte keine sofortige Behandlung. Nennenswerten Sachschaden gab es nicht."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "fahrrad",
+          "Fahrrad"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rad",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 29.07.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6323527",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "e-scooter-auffahrunfall-duerener-strasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "E-Scooter fährt auf Transporter auf: 18-Jähriger schwer verletzt",
+      "dek": "Der junge Mann aus Merzenich konnte am 13. Juli auf der Dürener Straße nicht mehr rechtzeitig bremsen.",
+      "datum": "2026-07-14T09:45:00+02:00",
+      "fakten": [
+        "Montag, 13. Juli 2026, gegen 19:35 Uhr",
+        "Dürener Straße, Fahrtrichtung Bergstraße",
+        "E-Scooter-Fahrer (18) schwer verletzt, stationär im Krankenhaus",
+        "Sachschaden laut Polizei rund 1.200 Euro"
+      ],
+      "absaetze": [
+        "Ein 18-Jähriger aus Merzenich ist am Montagabend, 13. Juli, mit seinem E-Scooter auf der Dürener Straße schwer verunglückt.",
+        "Er fuhr nach Angaben der Polizei gegen 19:35 Uhr in Richtung Bergstraße hinter einem Kleintransporter her, den ein 31-Jähriger aus Merzenich steuerte. Der Transporter bremste bis zum Stillstand. Der 18-Jährige sah das nach eigenen Angaben, konnte aber nicht mehr rechtzeitig bremsen und fuhr auf.",
+        "Er stürzte und wurde schwer verletzt. Der Rettungsdienst brachte ihn zur stationären Behandlung in ein Krankenhaus. Den Sachschaden schätzt die Polizei auf rund 1.200 Euro."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 14.07.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6314046",
+        "stand": "2026-09-24"
+      }
+    }
+  ]
+}

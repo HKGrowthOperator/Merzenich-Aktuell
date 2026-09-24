@@ -1,11 +1,11 @@
 {
  "generated": "2026-09-24T14:20:00+02:00",
- "anzahl": 58,
+ "anzahl": 77,
  "bestand": {
-  "gesamt": 58,
+  "gesamt": 77,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 22,
+   "blaulicht": 41,
    "sport": 8,
    "rathaus": 7,
    "leben": 12,
@@ -16,20 +16,20 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 39,
+   "merzenich": 49,
    "golzheim": 4,
-   "girbelsrath": 8,
-   "morschenich": 5,
-   "buergewald": 2,
+   "girbelsrath": 12,
+   "morschenich": 6,
+   "buergewald": 6,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 58,
+    "anzahl": 77,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 22,
+    "anzahl": 41,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 39,
+    "anzahl": 49,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -73,15 +73,15 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 8,
+    "anzahl": 12,
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 5,
+    "anzahl": 6,
     "liste": "gepflegt"
    },
    "/buergewald/": {
-    "anzahl": 2,
+    "anzahl": 6,
     "liste": "gepflegt"
    }
   },
@@ -335,11 +335,11 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg",
-    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg 1600w",
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-12-37672c02c8.jpg 1600w",
     "alt": "Rettungswagen im Einsatz",
     "width": 1600,
-    "height": 1200,
+    "height": 1063,
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
@@ -668,6 +668,70 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-09-14-einsatz-127-oelspur-girbelsrath",
+   "url": "/blaulicht/einsatz-127-oelspur-girbelsrath/",
+   "titel": "Ölspur in der Dechant-Fabry-Straße in Girbelsrath beseitigt",
+   "teaser": "Direkt nach einem Einsatz in Morschenich streute die Tagesalarmgruppe am 14. September eine Ölspur in Girbelsrath ab.",
+   "kicker": "Feuerwehr · 127/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-09-14T12:26:00+02:00",
+   "aktualisiert": "2026-09-14T12:26:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "oelspur",
+     "label": "Ölspur"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-14-einsatz-126-ecall-morschenich",
+   "url": "/blaulicht/einsatz-126-ecall-morschenich/",
+   "titel": "E-Call aus einem Auto in Morschenich: Einsatzkräfte finden keinen Unfall",
+   "teaser": "Das automatische Notrufsystem eines Pkw hatte am 14. September Feuerwehr und Rettungsdienst in die Obere Straße gerufen.",
+   "kicker": "Feuerwehr · 126/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-09-14T11:07:00+02:00",
+   "aktualisiert": "2026-09-14T11:07:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "morschenich",
+     "label": "Morschenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-09-14-sc-merzenich-oberzier-3-2",
    "url": "/sport/sc-merzenich-oberzier-3-2/",
    "titel": "SC Merzenich gewinnt 3:2 gegen BC Oberzier",
@@ -709,6 +773,60 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-09-12-einsatz-125-rauchmelder-buergewald",
+   "url": "/blaulicht/einsatz-125-rauchmelder-buergewald/",
+   "titel": "Rauchmelder piept in Bürgewald: Feuerwehr kontrolliert das Haus",
+   "teaser": "Am Samstagabend, 12. September, war ein ausgelöster Heimrauchmelder in der Oberstraße schon von draußen zu hören. Feuer fanden die Einsatzkräfte nicht.",
+   "kicker": "Feuerwehr · 125/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "buergewald",
+   "datum": "2026-09-12T21:59:00+02:00",
+   "aktualisiert": "2026-09-12T21:59:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "rauchmelder",
+     "label": "Rauchmelder"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-11-einsatz-124-hydraulikoel-muehlenstrasse",
+   "url": "/blaulicht/einsatz-124-hydraulikoel-muehlenstrasse/",
+   "titel": "Hydrauliköl auf der Mühlenstraße: Spezialfirma reinigt die Fahrbahn",
+   "teaser": "Die Feuerwehr sicherte am 11. September eine Ölspur in Merzenich ab, bis eine Firma für Ölschadenbeseitigung übernahm.",
+   "kicker": "Feuerwehr · 124/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-11T11:01:00+02:00",
+   "aktualisiert": "2026-09-11T11:01:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "oelspur",
+     "label": "Ölspur"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-09-11-einbruch-arnoldsweilerweg",
    "url": "/blaulicht/einbruch-arnoldsweilerweg/",
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen",
@@ -742,6 +860,33 @@
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true
    },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-05-einsatz-123-person-hinter-tuer-steinpfahl",
+   "url": "/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+   "titel": "„Person hinter Tür“ am Steinpfahl: Bewohner öffnet selbst",
+   "teaser": "Ein Pflegedienst hatte am frühen Samstagmorgen, 5. September, die Feuerwehr gerufen. Beim Eintreffen öffnete der Bewohner die Haustür.",
+   "kicker": "Feuerwehr · 123/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-05T06:28:00+02:00",
+   "aktualisiert": "2026-09-05T06:28:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "hilfeleistung",
+     "label": "Hilfeleistung"
+    }
+   ],
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -869,6 +1014,37 @@
     "credit": "BikeMike / Wikimedia Commons · CC0",
     "symbol": true
    },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-02-gegenstaende-fussgaengerbruecke-l264",
+   "url": "/blaulicht/gegenstaende-fussgaengerbruecke-l264/",
+   "titel": "Gegenstände von Fußgängerbrücke über die L264 geworfen: Polizei sucht Zeugen",
+   "teaser": "Jugendliche sollen am 1. September am Gewerbering Gegenstände auf die Fahrbahn geworfen haben. Ein Autofahrer musste ausweichen.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-02T08:20:00+02:00",
+   "aktualisiert": "2026-09-02T08:20:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1201,6 +1377,64 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-08-20-einsatz-121-brandmeldeanlage-steinpfahl",
+   "url": "/blaulicht/einsatz-121-brandmeldeanlage-steinpfahl/",
+   "titel": "Angebranntes Essen löst Brandmeldeanlage am Steinpfahl aus",
+   "teaser": "Die Feuerwehr rückte am 20. August mit Vollalarm zu einer Wohnanlage aus. Ursache war ein Topf auf dem Herd.",
+   "kicker": "Feuerwehr · 121/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-08-20T12:39:00+02:00",
+   "aktualisiert": "2026-08-20T12:39:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "brandmeldeanlage",
+     "label": "Brandmeldeanlage"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-20-einsatz-120-hund-l264",
+   "url": "/blaulicht/einsatz-120-hund-l264/",
+   "titel": "Freilaufender Hund an der L264: Feuerwehr bringt ihn ins Tierheim",
+   "teaser": "Passanten hatten den Hund am 20. August gesichert. Über den Chip ließ sich kein Halter finden.",
+   "kicker": "Feuerwehr · 120/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "buergewald",
+   "datum": "2026-08-20T11:41:00+02:00",
+   "aktualisiert": "2026-08-20T11:41:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "tierrettung",
+     "label": "Tierrettung"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-08-17-feuerwehr-einsatzbilanz-sommer",
    "url": "/blaulicht/feuerwehr-einsatzbilanz-sommer/",
    "titel": "119 Einsätze bis Mitte August",
@@ -1282,7 +1516,7 @@
    "id": "2026-08-14-einsatz-118-rosspfad",
    "url": "/blaulicht/einsatz-118-rosspfad/",
    "titel": "Unklare Rauchentwicklung am Roßpfad in Girbelsrath",
-   "teaser": "Die Feuerwehr Merzenich wurde am 14. August zu einer unklaren Rauchentwicklung ins Gebiet Am Roßpfad gerufen.",
+   "teaser": "Eine Ursache fand die Feuerwehr am 14. August im Gewerbegebiet Girbelsrath nicht. Der Rauch kam vermutlich vom Waldbrand im Hürtgenwald.",
    "kicker": "Feuerwehr · 118/26",
    "ressort": "blaulicht",
    "ressortLabel": "Blaulicht",
@@ -1308,6 +1542,33 @@
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
    },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-13-einsatz-117-boeschungsbrand-buergewald",
+   "url": "/blaulicht/einsatz-117-boeschungsbrand-buergewald/",
+   "titel": "Zweites Feuer am 13. August: Böschungsbrand in Bürgewald",
+   "teaser": "Während des Großeinsatzes an der L257 ging ein weiterer Notruf aus Bürgewald ein. Rund 100 Quadratmeter Böschung brannten.",
+   "kicker": "Feuerwehr · 117/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "buergewald",
+   "datum": "2026-08-13T17:10:00+02:00",
+   "aktualisiert": "2026-08-13T17:10:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "brand",
+     "label": "Brand"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1394,6 +1655,115 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-08-12-unfall-pkw-fahrrad-am-rosspfad",
+   "url": "/blaulicht/unfall-pkw-fahrrad-am-rosspfad/",
+   "titel": "Auto erfasst Radfahrer an der Einmündung Am Roßpfad",
+   "teaser": "Ein 60-Jähriger aus Vettweiß wurde am 11. August leicht verletzt. Er hatte Vorfahrt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-08-12T13:17:00+02:00",
+   "aktualisiert": "2026-08-12T13:17:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "fahrrad",
+     "label": "Fahrrad"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-11-d7d05a5b5b.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-11-einsatz-114-unfall-b264-valdersweg",
+   "url": "/blaulicht/einsatz-114-unfall-b264-valdersweg/",
+   "titel": "Unfall auf der B264 am Valdersweg: zwei Verletzte",
+   "teaser": "Zwei Autos stießen am 11. August zusammen. Der Rettungsdienst brachte zwei Menschen ins Krankenhaus, die Feuerwehr streute auslaufende Betriebsmittel ab.",
+   "kicker": "Feuerwehr · 114/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-08-11T16:12:00+02:00",
+   "aktualisiert": "2026-08-11T16:12:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "b264",
+     "label": "B264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-06-7ae2081673.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-10-einsatz-113-glutnester-girbelsrath",
+   "url": "/blaulicht/einsatz-113-glutnester-girbelsrath/",
+   "titel": "Nach dem Flächenbrand: Glutnester am Feld Richtung Binsfeld abgelöscht",
+   "teaser": "Am Abend des 10. August rückte die Löschgruppe Girbelsrath erneut zur Brandstelle vom Nachmittag aus.",
+   "kicker": "Feuerwehr · 113/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-08-10T19:59:00+02:00",
+   "aktualisiert": "2026-08-10T19:59:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "flaechenbrand",
+     "label": "Flächenbrand"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-08-10-einsatz-112-girbelsrath-flaeche",
    "url": "/blaulicht/einsatz-112-girbelsrath-flaeche/",
    "titel": "Flächenbrand Richtung Binsfeld: Feuerwehr am 10. August im Großeinsatz",
@@ -1468,6 +1838,74 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-08-06-einsatz-111-tierfang-buergewald",
+   "url": "/blaulicht/einsatz-111-tierfang-buergewald/",
+   "titel": "Taube im Zaun verfangen: Hilfe kam in Bürgewald zu spät",
+   "teaser": "Die Löschgruppe Morschenich wurde am 6. August zu einem Tierfang in die Unterstraße gerufen.",
+   "kicker": "Feuerwehr · 111/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "buergewald",
+   "datum": "2026-08-06T18:27:00+02:00",
+   "aktualisiert": "2026-08-06T18:27:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "tierrettung",
+     "label": "Tierrettung"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-03-pkw-gestohlen-bergstrasse",
+   "url": "/blaulicht/pkw-gestohlen-bergstrasse/",
+   "titel": "Schlüssel steckte: Schwarzer VW Lupo in der Bergstraße gestohlen",
+   "teaser": "Unbekannte nahmen den Wagen in der Nacht zum 1. August mit. Die Polizei bittet um Hinweise.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-08-03T11:30:00+02:00",
+   "aktualisiert": "2026-08-03T11:30:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "diebstahl",
+     "label": "Diebstahl"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1600w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-08-03-einsatz-110-katze-klaeranlage",
    "url": "/blaulicht/einsatz-110-katze-klaeranlage/",
    "titel": "Tierrettung in Girbelsrath: Feuerwehr befreit Katze aus der Kläranlage",
@@ -1500,6 +1938,115 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-08-01-einsatz-109-gullibrand-valdersweg",
+   "url": "/blaulicht/einsatz-109-gullibrand-valdersweg/",
+   "titel": "Brennender Unrat im Gulli am Valdersweg",
+   "teaser": "Anwohner hatten das Feuer am 1. August schon gelöscht, bevor die Löschgruppe Merzenich eintraf.",
+   "kicker": "Feuerwehr · 109/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-08-01T17:23:00+02:00",
+   "aktualisiert": "2026-08-01T17:23:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "brand",
+     "label": "Brand"
+    },
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-07-31-einbruch-mittelstrasse-girbelsrath",
+   "url": "/blaulicht/einbruch-mittelstrasse-girbelsrath/",
+   "titel": "Einbruch am Tag in Girbelsrath: Polizei bittet um Hinweise",
+   "teaser": "Unbekannte drangen am 30. Juli gewaltsam in ein Einfamilienhaus in der Mittelstraße ein, während die Bewohner unterwegs waren.",
+   "kicker": "Polizei · Zeugenaufruf",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-07-31T10:00:00+02:00",
+   "aktualisiert": "2026-07-31T10:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "einbruch",
+     "label": "Einbruch"
+    },
+    {
+     "slug": "zeugenaufruf",
+     "label": "Zeugenaufruf"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1600w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-07-31-pkw-ueberschlagen-l264-auf-der-heide",
+   "url": "/blaulicht/pkw-ueberschlagen-l264-auf-der-heide/",
+   "titel": "Auto prallt an der L264 gegen Ampelmast und überschlägt sich",
+   "teaser": "Ein 73-Jähriger kam am 30. Juli an der Kreuzung Auf der Heide / Steinweg von der Fahrbahn ab. Er wurde leicht verletzt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-07-31T10:00:00+02:00",
+   "aktualisiert": "2026-07-31T10:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 2134,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1582,6 +2129,47 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-07-29-radfahrerinnen-kollidieren-duerener-strasse",
+   "url": "/blaulicht/radfahrerinnen-kollidieren-duerener-strasse/",
+   "titel": "Zwei Radfahrerinnen stoßen auf dem Radweg der Dürener Straße zusammen",
+   "teaser": "Beide wichen am 28. Juli in dieselbe Richtung aus. Die 15- und die 58-Jährige wurden leicht verletzt.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-07-29T11:44:00+02:00",
+   "aktualisiert": "2026-07-29T11:44:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "fahrrad",
+     "label": "Fahrrad"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/tipp/tipp-02-3752acb551.jpg",
+    "srcset": "/assets/editorial-pools/tipp/tipp-02-3752acb551-480.webp 480w, /assets/editorial-pools/tipp/tipp-02-3752acb551-800.webp 800w, /assets/editorial-pools/tipp/tipp-02-3752acb551-1200.webp 1200w, /assets/editorial-pools/tipp/tipp-02-3752acb551.jpg 1600w",
+    "alt": "Rad- und Wanderweg",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Markus Schweiss / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1779,6 +2367,43 @@
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
     "symbol": false
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-07-14-e-scooter-auffahrunfall-duerener-strasse",
+   "url": "/blaulicht/e-scooter-auffahrunfall-duerener-strasse/",
+   "titel": "E-Scooter fährt auf Transporter auf: 18-Jähriger schwer verletzt",
+   "teaser": "Der junge Mann aus Merzenich konnte am 13. Juli auf der Dürener Straße nicht mehr rechtzeitig bremsen.",
+   "kicker": "Polizei · Verkehrsunfall",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-07-14T09:45:00+02:00",
+   "aktualisiert": "2026-07-14T09:45:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehrsunfall",
+     "label": "Verkehrsunfall"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-02-1f415beacf.jpg 1600w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Atamari / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
    },
    "undatiert": false,
    "abgerufen": ""

@@ -1,0 +1,438 @@
+{
+  "hinweis": "Einsatzberichte der Freiwilligen Feuerwehr Merzenich, abgerufen am 24.09.2026 (imports/quellen/feuerwehr.json). Nur was im Bericht steht. Zeit = Alarmierung laut Feuerwehr. Seiten erzeugt von deploy/meldungen.mjs.",
+  "meldungen": [
+    {
+      "slug": "einsatz-127-oelspur-girbelsrath",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Feuerwehr · 127/26",
+      "titel": "Ölspur in der Dechant-Fabry-Straße in Girbelsrath beseitigt",
+      "dek": "Direkt nach einem Einsatz in Morschenich streute die Tagesalarmgruppe am 14. September eine Ölspur in Girbelsrath ab.",
+      "datum": "2026-09-14T12:26:00+02:00",
+      "fakten": [
+        "Einsatznummer 127/26",
+        "Stichwort: Abstreuen von Ölspur",
+        "Alarmierung am 14. September 2026 um 12:26 Uhr",
+        "Im Einsatz: Tagesalarmgruppe der Feuerwehr Merzenich"
+      ],
+      "absaetze": [
+        "Im Anschluss an den Einsatz 126/26 in Morschenich hat die Tagesalarmgruppe der Feuerwehr Merzenich am Montagmittag, 14. September, eine Ölspur im Bereich der Dechant-Fabry-Straße in Girbelsrath beseitigt.",
+        "Nach etwa 30 Minuten war der Einsatz beendet."
+      ],
+      "themen": [
+        [
+          "oelspur",
+          "Ölspur"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.technik.oelspur",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 127/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12726-girbelsrtath-dechant-fabry-strasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-126-ecall-morschenich",
+      "ressort": "blaulicht",
+      "ortsteil": "morschenich",
+      "kicker": "Feuerwehr · 126/26",
+      "titel": "E-Call aus einem Auto in Morschenich: Einsatzkräfte finden keinen Unfall",
+      "dek": "Das automatische Notrufsystem eines Pkw hatte am 14. September Feuerwehr und Rettungsdienst in die Obere Straße gerufen.",
+      "datum": "2026-09-14T11:07:00+02:00",
+      "fakten": [
+        "Einsatznummer 126/26",
+        "Auslöser: E-Call eines Pkw",
+        "Alarmierung am 14. September 2026 um 11:07 Uhr",
+        "Im Einsatz: Löschgruppen Morschenich und Golzheim, Tagesalarm, Rettungsdienst Kreis Düren"
+      ],
+      "absaetze": [
+        "Am Montagvormittag, 14. September, ist die Feuerwehr Merzenich zu einem ausgelösten E-Call eines Pkw in der Ortslage Morschenich alarmiert worden. Der E-Call ist das automatische Notrufsystem, das Neuwagen bei einem Unfall selbst absetzen.",
+        "Die Einsatzkräfte kontrollierten den gemeldeten Bereich an der Oberen Straße. Ein Unfall war dort nicht zu finden, weitere Feststellungen gab es nicht. Der Einsatz wurde daraufhin ohne weitere Maßnahmen abgebrochen.",
+        "Neben den Löschgruppen Morschenich und Golzheim und der Tagesalarmgruppe war der Rettungsdienst des Kreises Düren alarmiert."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "morschenich",
+          "Morschenich"
+        ]
+      ],
+      "bildklasse": "blaulicht.technik.ecall",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 126/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12626-morschenich-obere-strasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-125-rauchmelder-buergewald",
+      "ressort": "blaulicht",
+      "ortsteil": "buergewald",
+      "kicker": "Feuerwehr · 125/26",
+      "titel": "Rauchmelder piept in Bürgewald: Feuerwehr kontrolliert das Haus",
+      "dek": "Am Samstagabend, 12. September, war ein ausgelöster Heimrauchmelder in der Oberstraße schon von draußen zu hören. Feuer fanden die Einsatzkräfte nicht.",
+      "datum": "2026-09-12T21:59:00+02:00",
+      "fakten": [
+        "Einsatznummer 125/26",
+        "Auslöser: Heimrauchmelder",
+        "Alarmierung am 12. September 2026 um 21:59 Uhr",
+        "Im Einsatz: Löschgruppen Morschenich und Golzheim"
+      ],
+      "absaetze": [
+        "Die Löschgruppen Morschenich und Golzheim sind am Samstagabend, 12. September, zu einem ausgelösten Heimrauchmelder in die Oberstraße nach Bürgewald alarmiert worden.",
+        "Als die ersten Kräfte eintrafen, war der Melder bereits von außen zu hören. Rauch oder Flammen waren nicht zu sehen. Die Feuerwehr wartete deshalb auf die Polizei, verschaffte sich dann Zugang zum Gebäude und kontrollierte es. Dabei stellten die Einsatzkräfte nichts fest.",
+        "Sie schalteten den Rauchmelder stromlos und übergaben die Einsatzstelle an die Polizei."
+      ],
+      "themen": [
+        [
+          "rauchmelder",
+          "Rauchmelder"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.alarm.rauchmelder",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 125/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12526-burgewald-oberstrasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-124-hydraulikoel-muehlenstrasse",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 124/26",
+      "titel": "Hydrauliköl auf der Mühlenstraße: Spezialfirma reinigt die Fahrbahn",
+      "dek": "Die Feuerwehr sicherte am 11. September eine Ölspur in Merzenich ab, bis eine Firma für Ölschadenbeseitigung übernahm.",
+      "datum": "2026-09-11T11:01:00+02:00",
+      "fakten": [
+        "Einsatznummer 124/26",
+        "Ausgelaufenes Hydrauliköl auf der Mühlenstraße",
+        "Alarmierung am 11. September 2026 um 11:01 Uhr",
+        "Im Einsatz: Löschgruppe Merzenich, dazu eine Fachfirma für Ölschadenbeseitigung"
+      ],
+      "absaetze": [
+        "Am Freitagvormittag, 11. September, ist die Feuerwehr Merzenich zu einer Ölspur auf der Mühlenstraße alarmiert worden. Vor Ort stellte sich heraus, dass Hydrauliköl ausgelaufen war.",
+        "Die Löschgruppe Merzenich sicherte die Einsatzstelle ab. Für die Reinigung der Fahrbahn wurde eine Spezialfirma hinzugezogen. Die Einsatzkräfte warteten auf die Firma und übergaben ihr anschließend die Einsatzstelle."
+      ],
+      "themen": [
+        [
+          "oelspur",
+          "Ölspur"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.technik.oelspur",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 124/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12426-mereznich-muhlenstrasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-123-person-hinter-tuer-steinpfahl",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 123/26",
+      "titel": "„Person hinter Tür“ am Steinpfahl: Bewohner öffnet selbst",
+      "dek": "Ein Pflegedienst hatte am frühen Samstagmorgen, 5. September, die Feuerwehr gerufen. Beim Eintreffen öffnete der Bewohner die Haustür.",
+      "datum": "2026-09-05T06:28:00+02:00",
+      "fakten": [
+        "Einsatznummer 123/26",
+        "Stichwort: Person hinter Tür",
+        "Alarmierung am 5. September 2026 um 06:28 Uhr",
+        "Im Einsatz: Löschgruppen Merzenich und Morschenich, Feuerschutztechnisches Zentrum, Rettungsdienst Kreis Düren"
+      ],
+      "absaetze": [
+        "Am frühen Samstagmorgen, 5. September, hat ein Pflegedienst die Feuerwehr Merzenich zum Steinpfahl gerufen. Das Stichwort lautete „Person hinter Tür“: Jemand ist womöglich hilflos in seiner Wohnung und öffnet nicht.",
+        "Als die erste Einheit eintraf, öffnete der Bewohner die Haustür doch selbst. Alle Kräfte konnten den Einsatz abbrechen."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "hilfeleistung",
+          "Hilfeleistung"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 123/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12326-merzenich-steinpfahl",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-121-brandmeldeanlage-steinpfahl",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 121/26",
+      "titel": "Angebranntes Essen löst Brandmeldeanlage am Steinpfahl aus",
+      "dek": "Die Feuerwehr rückte am 20. August mit Vollalarm zu einer Wohnanlage aus. Ursache war ein Topf auf dem Herd.",
+      "datum": "2026-08-20T12:39:00+02:00",
+      "fakten": [
+        "Einsatznummer 121/26",
+        "Auslöser: Brandmeldeanlage einer Wohnanlage",
+        "Alarmierung am 20. August 2026 um 12:39 Uhr",
+        "Im Einsatz: Vollalarm Feuerwehr Merzenich, Feuerschutztechnisches Zentrum, Rettungsdienst Kreis Düren"
+      ],
+      "absaetze": [
+        "Am Mittag des 20. August ist die Feuerwehr Merzenich zu einer ausgelösten Brandmeldeanlage in einer Wohnanlage am Steinpfahl alarmiert worden.",
+        "Bei der Erkundung stellte sich heraus, dass angebranntes Essen auf einem Herd die Anlage ausgelöst hatte. Die Einsatzkräfte lüfteten die betroffene Wohnung. Weitere Maßnahmen waren nicht nötig."
+      ],
+      "themen": [
+        [
+          "brandmeldeanlage",
+          "Brandmeldeanlage"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.alarm.brandmeldeanlage",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 121/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12126-merzenich-steinpfahl",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-120-hund-l264",
+      "ressort": "blaulicht",
+      "ortsteil": "buergewald",
+      "kicker": "Feuerwehr · 120/26",
+      "titel": "Freilaufender Hund an der L264: Feuerwehr bringt ihn ins Tierheim",
+      "dek": "Passanten hatten den Hund am 20. August gesichert. Über den Chip ließ sich kein Halter finden.",
+      "datum": "2026-08-20T11:41:00+02:00",
+      "fakten": [
+        "Einsatznummer 120/26",
+        "Stichwort: Tierfang, herrenloses Tier",
+        "Alarmierung am 20. August 2026 um 11:41 Uhr",
+        "Einsatzort laut Bericht: L264 in Höhe eines Gewerbebetriebs; die Feuerwehr führt den Einsatz unter Bürgewald / L257"
+      ],
+      "absaetze": [
+        "Die Tagesalarmgruppe der Feuerwehr Merzenich ist am Mittag des 20. August zur L264 gerufen worden. Passanten hatten dort einen freilaufenden Hund gesichert.",
+        "Die Einsatzkräfte versuchten, den Hund über seinen Chip einem Halter zuzuordnen. Das gelang nicht. Der Hund kam deshalb ins Tierheim Düren.",
+        "Wer einen Hund vermisst, kann sich dort melden."
+      ],
+      "themen": [
+        [
+          "tierrettung",
+          "Tierrettung"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "l264",
+          "L264"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tier",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 120/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/12026-burgewald-l257",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-117-boeschungsbrand-buergewald",
+      "ressort": "blaulicht",
+      "ortsteil": "buergewald",
+      "kicker": "Feuerwehr · 117/26",
+      "titel": "Zweites Feuer am 13. August: Böschungsbrand in Bürgewald",
+      "dek": "Während des Großeinsatzes an der L257 ging ein weiterer Notruf aus Bürgewald ein. Rund 100 Quadratmeter Böschung brannten.",
+      "datum": "2026-08-13T17:10:00+02:00",
+      "fakten": [
+        "Einsatznummer 117/26",
+        "Böschungsbrand, etwa 100 Quadratmeter",
+        "Alarmierung am 13. August 2026 um 17:10 Uhr",
+        "Im Einsatz: Löschgruppe Morschenich, Löschzug Buir (Kerpen)"
+      ],
+      "absaetze": [
+        "Während die Feuerwehr am 13. August gegen den Flächenbrand an der L257 kämpfte (Einsatz 116/26), ging bei der Leitstelle ein weiterer Notruf aus Bürgewald ein: Im Bereich der Unterstraße in Richtung Flugplatz brannte eine Böschung.",
+        "Ein Fahrzeug der Feuerwehr Merzenich wurde aus dem laufenden Waldbrandeinsatz herausgelöst und dorthin geschickt. Die Besatzung meldete ein etwa 100 Quadratmeter großes Feuer. Für die Löscharbeiten wurde der Löschzug Buir nachgefordert.",
+        "Nach etwa einer Stunde meldete die Feuerwehr „Feuer aus“."
+      ],
+      "themen": [
+        [
+          "brand",
+          "Brand"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer.flaeche",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 117/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/11726-burgewald-unterstrasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-114-unfall-b264-valdersweg",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 114/26",
+      "titel": "Unfall auf der B264 am Valdersweg: zwei Verletzte",
+      "dek": "Zwei Autos stießen am 11. August zusammen. Der Rettungsdienst brachte zwei Menschen ins Krankenhaus, die Feuerwehr streute auslaufende Betriebsmittel ab.",
+      "datum": "2026-08-11T16:12:00+02:00",
+      "fakten": [
+        "Einsatznummer 114/26",
+        "Stichwort: Technische Hilfe nach Verkehrsunfall",
+        "Alarmierung am 11. August 2026 um 16:12 Uhr",
+        "Zwei Pkw beteiligt, zwei Personen verletzt"
+      ],
+      "absaetze": [
+        "Die Löschgruppe Merzenich ist am Nachmittag des 11. August zu einem Verkehrsunfall auf der B264 im Bereich Valdersweg alarmiert worden. Beteiligt waren zwei Autos.",
+        "Zwei Personen wurden verletzt. Der Rettungsdienst sichtete sie und brachte sie zur weiteren Versorgung in ein Krankenhaus.",
+        "Aus den Fahrzeugen liefen Betriebsmittel aus. Die Feuerwehr streute sie ab und nahm sie auf. Danach übergab sie die Einsatzstelle an die Polizei."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "b264",
+          "B264"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 114/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/11426-merzenich-b264valdersweg",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-113-glutnester-girbelsrath",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Feuerwehr · 113/26",
+      "titel": "Nach dem Flächenbrand: Glutnester am Feld Richtung Binsfeld abgelöscht",
+      "dek": "Am Abend des 10. August rückte die Löschgruppe Girbelsrath erneut zur Brandstelle vom Nachmittag aus.",
+      "datum": "2026-08-10T19:59:00+02:00",
+      "fakten": [
+        "Einsatznummer 113/26",
+        "Nachlöscharbeiten nach dem Flächenbrand 112/26",
+        "Alarmierung am 10. August 2026 um 19:59 Uhr",
+        "Im Einsatz: Löschgruppe Girbelsrath"
+      ],
+      "absaetze": [
+        "Gegen 20 Uhr ist die Löschgruppe Girbelsrath am 10. August noch einmal zum Feld Richtung Binsfeld alarmiert worden, auf dem es am Nachmittag gebrannt hatte (Einsatz 112/26).",
+        "Vor Ort fanden die Einsatzkräfte vereinzelte Glutnester und löschten sie mit dem Schnellangriff ab. Mit einer Wärmebildkamera kontrollierten sie die Fläche abschließend, um weitere Glutnester auszuschließen. Danach war der Einsatz beendet."
+      ],
+      "themen": [
+        [
+          "flaechenbrand",
+          "Flächenbrand"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer.nachloeschen",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 113/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/11326-girbelsrath-feld-richtung-binsfeld",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-111-tierfang-buergewald",
+      "ressort": "blaulicht",
+      "ortsteil": "buergewald",
+      "kicker": "Feuerwehr · 111/26",
+      "titel": "Taube im Zaun verfangen: Hilfe kam in Bürgewald zu spät",
+      "dek": "Die Löschgruppe Morschenich wurde am 6. August zu einem Tierfang in die Unterstraße gerufen.",
+      "datum": "2026-08-06T18:27:00+02:00",
+      "fakten": [
+        "Einsatznummer 111/26",
+        "Stichwort: Tierfang",
+        "Alarmierung am 6. August 2026 um 18:27 Uhr",
+        "Im Einsatz: Löschgruppe Morschenich"
+      ],
+      "absaetze": [
+        "Die Löschgruppe Morschenich ist am 6. August zu einem Tierfang nach Bürgewald alarmiert worden. In der Unterstraße hatte sich eine Taube in einem Zaun verfangen.",
+        "Für das Tier kam jede Hilfe zu spät. Die Einsatzkräfte entfernten es aus dem Zaun."
+      ],
+      "themen": [
+        [
+          "tierrettung",
+          "Tierrettung"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tier",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 111/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
+        "stand": "2026-09-24"
+      }
+    },
+    {
+      "slug": "einsatz-109-gullibrand-valdersweg",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 109/26",
+      "titel": "Brennender Unrat im Gulli am Valdersweg",
+      "dek": "Anwohner hatten das Feuer am 1. August schon gelöscht, bevor die Löschgruppe Merzenich eintraf.",
+      "datum": "2026-08-01T17:23:00+02:00",
+      "fakten": [
+        "Einsatznummer 109/26",
+        "Brennender Unrat in einem Gulli",
+        "Alarmierung am 1. August 2026 um 17:23 Uhr",
+        "Im Einsatz: Löschgruppe Merzenich"
+      ],
+      "absaetze": [
+        "Am Samstagnachmittag, 1. August, ist die Löschgruppe Merzenich zu brennendem Unrat in einem Gulli am Valdersweg alarmiert worden.",
+        "Anwohner hatten den Brand bereits gelöscht, bevor die Einsatzkräfte eintrafen. Zur Sicherheit kippte die Feuerwehr den Schlammfänger des Gullis aus und löschte nach."
+      ],
+      "themen": [
+        [
+          "brand",
+          "Brand"
+        ],
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer.klein",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 109/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg",
+        "stand": "2026-09-24"
+      }
+    }
+  ]
+}
