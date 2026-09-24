@@ -120,7 +120,7 @@ for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
   if (!CSS_ANKER.test(html)) { uebersprungen++; continue; }
   const alt = html;
-  // Fundament zuerst: vor style.css, nicht dahinter (siehe SYSTEM_ANKER).
+  // FAVICON-PNG-FALLBACK: aktuelles M.-Markenzeichen aus der Wortmarke.\n  // SVG + PNG werden ueber ihren Inhalts-Hash versioniert, damit Safari/Chrome/Google\n  // nach Markenupdates nicht ein altes, lang gecachtes Icon behalten.\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/avatar-1024\\.png(?:\\?[^"]*)?" type="image\\/png" sizes="1024x1024">\\s*/g, '');\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/favicon\\.svg(?:\\?[^"]*)?" type="image\\/svg\\+xml"(?: sizes="any")?>/, '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" sizes="any">\\n<link rel="icon" href="/assets/img/avatar-1024.png" type="image/png" sizes="1024x1024">');\n  // Fundament zuerst: vor style.css, nicht dahinter (siehe SYSTEM_ANKER).
   if (!html.includes('/assets/system.css')) {
     if (!SYSTEM_ANKER.test(html)) { fehler++; console.error('kein style.css-Anker: ' + pfad); continue; }
     html = html.replace(SYSTEM_ANKER, (m) => SYSTEM + m);

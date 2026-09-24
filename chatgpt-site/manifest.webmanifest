@@ -13,13 +13,13 @@
  ],
  "icons": [
   {
-   "src": "/assets/img/avatar-1024.png",
+   "src": "/assets/img/avatar-1024.png?v=d3c365657e",
    "sizes": "1024x1024",
    "type": "image/png",
    "purpose": "any"
   },
   {
-   "src": "/assets/img/avatar-1024.png",
+   "src": "/assets/img/avatar-1024.png?v=d3c365657e",
    "sizes": "1024x1024",
    "type": "image/png",
    "purpose": "maskable"
