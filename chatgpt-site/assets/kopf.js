@@ -131,3 +131,25 @@
     termin.hidden = false;
   }
 })();
+
+
+/* Anzeigenrotation: eigener Layer, damit Content-Rebuilds die Werbelogik nicht
+ * ueberschreiben. Auf Unterseiten wird nichts geladen. */
+(() => {
+  const seite = document.documentElement.dataset.page || '';
+  if (!seite.split(/\s+/).includes('home')) return;
+  if (!document.querySelector('link[data-ma-ad-rotation]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/assets/anzeigen-rotation.css?v=20260924a';
+    style.dataset.maAdRotation = '1';
+    document.head.append(style);
+  }
+  if (!document.querySelector('script[data-ma-ad-rotation]')) {
+    const script = document.createElement('script');
+    script.src = '/assets/anzeigen-rotation.js?v=20260924a';
+    script.async = false;
+    script.dataset.maAdRotation = '1';
+    document.head.append(script);
+  }
+})();
