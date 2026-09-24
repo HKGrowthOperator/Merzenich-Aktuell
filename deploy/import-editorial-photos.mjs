@@ -83,7 +83,7 @@ const POOLS = {
     // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
     // und Schilder ohne Kennzeichen, Reparaturstationen fuer Fahrraeder.
     tags: ['verkehr','geschwindigkeit','blitzer','fahrrad','reparaturstation','strasse'],
-    queries: ['Starenkasten', 'Blitzer Nordrhein-Westfalen', 'Geschwindigkeitsmessanlage', 'Geschwindigkeitsüberwachung Deutschland', 'Radarfalle Deutschland', 'Fahrradreparaturstation', 'Fahrrad-Reparaturstation', 'Radservicestation', 'Fahrradreparatursäule', 'Tempo 30 Zone Schild']
+    queries: ['Starenkasten', 'Blitzer Nordrhein-Westfalen', 'Geschwindigkeitsmessanlage', 'Geschwindigkeitsüberwachung Deutschland', 'Radarfalle Deutschland', 'Fahrradreparaturstation', 'Fahrrad-Reparaturstation', 'Fahrradservicestation', 'bicycle repair station', 'bike repair station Germany', 'Fahrrad Reparatursäule', 'Radservicestation']
   },
   tipp: {
     tags: ['tipp','freizeit','ausflug','wandern','radfahren','natur'],
@@ -117,6 +117,7 @@ const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand']);
 // Namensgleichheit: Merzenich bei Zülpich und die Kölner Bäckerei „Merzenich“.
 const FALSCHES_MERZENICH = /(z[uü]e?lpich|euskirchen|k[oö]ln|cologne|eigelstein|schildergasse)/i;
 
+const VERKEHR_PFLICHT = /(blitzer|starenkasten|geschwindigkeitsmess|radarfalle|radarkontrolle|speed camera|traffic enforcement camera|fotoradar|fahrrad.?reparatur|reparaturstation|bicycle repair|bike repair|repair station|servicestation|fahrradservice)/i;
 const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -198,6 +199,9 @@ function usable(c, pool) {
   if (BAD_KATEGORIE.test(c.categories)) return false;
   if (AUSLAND.test(text) || FREMDE_SCHRIFT.test(c.title)) return false;
   if (pool === 'sport' && SPORT_FREMD.test(c.title)) return false;
+  // Pool verkehr bedient nur die Motivregeln geschwindigkeit und fahrrad-reparatur;
+  // ohne Pflichtwort im Titel kam Beifang wie 'GNT'-Ausstellungen und Zuege.
+  if (pool === 'verkehr' && !VERKEHR_PFLICHT.test(c.title)) return false;
   if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title) || ARCHIV.test(text))) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
