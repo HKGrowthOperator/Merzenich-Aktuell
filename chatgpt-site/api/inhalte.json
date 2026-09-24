@@ -137,7 +137,7 @@
    "bild": {
     "src": "/assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd.jpg",
     "srcset": "/assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-480.webp 480w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-800.webp 800w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-1200.webp 1200w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd.jpg 1600w",
-    "alt": "Vereinsheim des KGV Knipprather Busch 1969 eV in der Loheck in Monheim-Baumberg",
+    "alt": "Vereinsheim",
     "width": 1600,
     "height": 1200,
     "fit": "",
@@ -253,7 +253,17 @@
      "label": "Vereine"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/tennisdetail/tennisdetail-01-6f3e50d69c.jpg",
+    "srcset": "/assets/editorial-pools/tennisdetail/tennisdetail-01-6f3e50d69c-480.webp 480w, /assets/editorial-pools/tennisdetail/tennisdetail-01-6f3e50d69c-800.webp 800w, /assets/editorial-pools/tennisdetail/tennisdetail-01-6f3e50d69c-1200.webp 1200w, /assets/editorial-pools/tennisdetail/tennisdetail-01-6f3e50d69c.jpg 1600w",
+    "alt": "Tennisplatz",
+    "width": 1600,
+    "height": 1067,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -361,7 +371,7 @@
    "bild": {
     "src": "/assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5.jpg",
     "srcset": "/assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5-480.webp 480w, /assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5-800.webp 800w, /assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5-1200.webp 1200w, /assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5.jpg 1600w",
-    "alt": "Senior smartphone",
+    "alt": "Smartphone für ältere Menschen",
     "width": 1600,
     "height": 1767,
     "fit": "",
@@ -395,7 +405,17 @@
      "label": "Veranstaltungen"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a.jpg",
+    "srcset": "/assets/editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a-480.webp 480w, /assets/editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a-800.webp 800w, /assets/editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a-1200.webp 1200w, /assets/editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a.jpg 1600w",
+    "alt": "Tanzsaal",
+    "width": 1600,
+    "height": 1065,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Tanzhaus nrw / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -422,7 +442,17 @@
      "label": "Morschenich"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg",
+    "srcset": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-480.webp 480w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-800.webp 800w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-1200.webp 1200w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg 1600w",
+    "alt": "Kirchenfenster",
+    "width": 1600,
+    "height": 2139,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -497,7 +527,7 @@
    "bild": {
     "src": "/assets/editorial-pools/naturdetail/naturdetail-01-0a789f9162.jpg",
     "srcset": "/assets/editorial-pools/naturdetail/naturdetail-01-0a789f9162-480.webp 480w, /assets/editorial-pools/naturdetail/naturdetail-01-0a789f9162-800.webp 800w, /assets/editorial-pools/naturdetail/naturdetail-01-0a789f9162-1200.webp 1200w, /assets/editorial-pools/naturdetail/naturdetail-01-0a789f9162.jpg 1600w",
-    "alt": "Nistkasten aus Holz mit Marderschutz",
+    "alt": "Nistkasten",
     "width": 1600,
     "height": 1200,
     "fit": "",
@@ -3423,9 +3453,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-24-fanclub-merzenich-muengersdorf",
-  "url": "/vereine/fanclub-merzenich-muengersdorf/",
-  "titel": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf"
+  "id": "2026-09-24-fc-golzheim-sportlerheim-erweiterung",
+  "url": "/vereine/fc-golzheim-sportlerheim-erweiterung/",
+  "titel": "FC Golzheim erweitert sein Sportlerheim – viel Eigenleistung auf der Baustelle"
  },
  "nebenmeldungen": [
   {
@@ -3434,24 +3464,24 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
-   "id": "2026-09-24-oelspur-windmuehle",
-   "url": "/blaulicht/oelspur-windmuehle/",
-   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
+   "id": "2026-09-24-vhs-oldschool-merzenich",
+   "url": "/leben/vhs-oldschool-merzenich/",
+   "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
   },
   {
-   "id": "2026-09-23-oldieabend-ortsfest-2026",
-   "url": "/leben/oldieabend-ortsfest-2026/",
-   "titel": "Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober"
+   "id": "2026-09-24-jonge-vom-berg-vortanzen",
+   "url": "/vereine/jonge-vom-berg-vortanzen/",
+   "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen"
   },
   {
-   "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
-   "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
-   "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
+   "id": "2026-09-24-st-lambertus-patrozinium-morschenich",
+   "url": "/leben/st-lambertus-patrozinium-morschenich/",
+   "titel": "St. Lambertus in Morschenich lud zum Patrozinium"
   },
   {
-   "id": "2026-09-23-fahrrad-reparaturstationen",
-   "url": "/leben/fahrrad-reparaturstationen/",
-   "titel": "Vier neue Fahrrad-Reparaturstationen in der Gemeinde Merzenich"
+   "id": "2026-09-24-fanclub-merzenich-muengersdorf",
+   "url": "/vereine/fanclub-merzenich-muengersdorf/",
+   "titel": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T14:56:49.708Z",
+  "updatedAt": "2026-09-24T14:58:26.594Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -305,6 +305,60 @@
       "assignedAt": "2026-09-24T14:43:26.718Z",
       "articleId": "2026-09-24-fc-golzheim-auswaerts-dueren-77",
       "articleDate": "2026-09-24T16:29:00+02:00"
+    },
+    "/leben/faire-woche-nistkasten-workshop/": {
+      "imageId": "web-naturdetail-01-0a789f91",
+      "pool": "naturdetail",
+      "motiv": "nistkasten",
+      "regel": "leben.nistkasten",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-faire-woche-nistkasten-workshop",
+      "articleDate": "2026-09-24T16:20:00+02:00"
+    },
+    "/leben/st-lambertus-patrozinium-morschenich/": {
+      "imageId": "web-kirchedetail-01-995c6c09",
+      "pool": "kirchedetail",
+      "motiv": "kirchenfenster",
+      "regel": "kirche.gottesdienst",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-st-lambertus-patrozinium-morschenich",
+      "articleDate": "2026-09-24T16:22:00+02:00"
+    },
+    "/vereine/jonge-vom-berg-vortanzen/": {
+      "imageId": "web-tanzdetail-01-f2d17e65",
+      "pool": "tanzdetail",
+      "motiv": "tanzsaal",
+      "regel": "vereine.tanz",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-jonge-vom-berg-vortanzen",
+      "articleDate": "2026-09-24T16:23:00+02:00"
+    },
+    "/leben/vhs-oldschool-merzenich/": {
+      "imageId": "web-digitaldetail-01-8758d856",
+      "pool": "digitaldetail",
+      "motiv": "senior-smartphone",
+      "regel": "leben.digitalbildung",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-vhs-oldschool-merzenich",
+      "articleDate": "2026-09-24T16:24:00+02:00"
+    },
+    "/sport/sc-merzenich-tennis-damen30-aufstieg/": {
+      "imageId": "web-tennisdetail-01-6f3e50d6",
+      "pool": "tennisdetail",
+      "motiv": "tennisplatz",
+      "regel": "sport.tennis",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-sc-merzenich-tennis-damen30-aufstieg",
+      "articleDate": "2026-09-24T16:27:00+02:00"
+    },
+    "/vereine/fc-golzheim-sportlerheim-erweiterung/": {
+      "imageId": "web-vereinsdetail-01-53ce1cd2",
+      "pool": "vereinsdetail",
+      "motiv": "vereinsheim",
+      "regel": "vereine.vereinsheim",
+      "assignedAt": "2026-09-24T14:58:26.594Z",
+      "articleId": "2026-09-24-fc-golzheim-sportlerheim-erweiterung",
+      "articleDate": "2026-09-24T16:30:00+02:00"
     }
   }
 }
