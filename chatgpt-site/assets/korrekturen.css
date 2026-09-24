@@ -268,3 +268,32 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 @media (prefers-reduced-motion:reduce){.ortswahl-pfeil{transition:none}}
 
 html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;box-shadow:0 10px 28px rgba(0,0,0,.45)}
+
+/* Anzeige aufgeben (/anzeigen/aufgeben/): drei Schritte, Art als Bildkarte */
+.anz-form{max-width:none;gap:24px}
+.anz-form fieldset{border:0;margin:0;padding:0;min-width:0}
+.anz-schritt{display:flex;flex-direction:column;gap:14px;padding-top:20px;border-top:1px solid var(--line,#e3e1dd)}
+.anz-schritt:first-of-type{padding-top:0;border-top:0}
+.anz-schritt>legend{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:0;font-family:var(--serif);font-size:24px;line-height:1.2;color:var(--ink,#171513)}
+.anz-nr{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--ink,#171513);border-radius:50%;font-family:var(--sans);font-size:14px;font-weight:700}
+.anz-arten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.anz-arten{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.anz-form .anz-art{position:relative;display:flex;margin:0;flex-direction:column;gap:6px;padding:0 0 12px;border:1px solid var(--line,#e3e1dd);border-radius:3px;background:var(--paper,#fdfdfc);cursor:pointer;transition:border-color .18s ease-out,background-color .18s ease-out}
+.anz-art input{position:absolute;opacity:0;pointer-events:none}
+.anz-art__bild{display:block;aspect-ratio:3/2;overflow:hidden;border-radius:3px 3px 0 0;background:#f5f4f1}
+.anz-art__bild img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .18s ease-out}
+.anz-art:hover .anz-art__bild img{transform:scale(1.02)}
+.anz-art__titel,.anz-art__text,.anz-art__credit{display:block}
+.anz-art__titel{padding:4px 12px 0;font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.2;color:var(--ink,#171513)}
+.anz-art__text{padding:0 12px;font-size:14px;font-weight:400;line-height:1.4;color:#5f5b55}
+.anz-art__credit{padding:0 12px;margin-top:auto;font-size:11px;font-weight:400;line-height:1.3;color:#6f6a63}
+.anz-art:has(input:checked){border-color:var(--ink,#171513);background:#f5f4f1;outline:1px solid var(--ink,#171513);outline-offset:-2px}
+.anz-art:has(input:focus-visible){outline:2px solid var(--red-dark,#7a111c);outline-offset:2px}
+.anz-form .anz-teil{display:flex;flex-direction:column;gap:14px;padding:16px;border:1px solid var(--line,#e3e1dd)!important;border-radius:3px;background:#f5f4f1}
+.anz-form .anz-teil[hidden]{display:none}
+.anz-teil>legend{padding:0 6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5f5b55}
+@media (max-width:640px){.anz-form .grid2{grid-template-columns:1fr}}
+
+/* Seitenleiste "Sie wissen etwas?": v20.css gibt .btn.ghost einen weissen Grund,
+   die helle Schrift von .on-dark verschwand darauf (weiss auf weiss). */
+.sidebox.dark .btn.ghost.on-dark{background:transparent;color:var(--on-dark,#e7e7e5)}

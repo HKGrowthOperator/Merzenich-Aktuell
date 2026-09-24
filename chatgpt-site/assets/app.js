@@ -279,8 +279,8 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     if(host&&!document.querySelector('.publish-guide')){
       var wrap=document.createElement('div');
       wrap.innerHTML=guided('Immobilienanzeige aufgeben','Wählen Sie zuerst, was Sie anbieten möchten. Danach führt Sie die Redaktion durch die benötigten Angaben.',[
-        {icon:'haus',title:'Immobilie verkaufen',text:'Haus, Wohnung, Grundstück oder Gewerbeobjekt.',href:'/kontakt/?thema=immobilie&art=verkauf'},
-        {icon:'haus',title:'Immobilie vermieten',text:'Wohnung, Haus oder Gewerbefläche zur Miete.',href:'/kontakt/?thema=immobilie&art=miete'},
+        {icon:'haus',title:'Immobilie verkaufen',text:'Haus, Wohnung, Grundstück oder Gewerbeobjekt.',href:'/anzeigen/aufgeben/?art=Immobilie&angebot=Verkauf'},
+        {icon:'haus',title:'Immobilie vermieten',text:'Wohnung, Haus oder Gewerbefläche zur Miete.',href:'/anzeigen/aufgeben/?art=Immobilie&angebot=Vermietung'},
         {icon:'megafon',title:'Makler & Partner',text:'Mehrere Objekte oder regelmäßige Veröffentlichung.',href:'/werben/?thema=immobilien'}
       ]);
       host.insertBefore(wrap.firstElementChild,host.firstChild);
@@ -305,9 +305,9 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     if(trauer&&!document.querySelector('.publish-guide')){
       var w3=document.createElement('div');
       w3.innerHTML=guided('Traueranzeige aufgeben','Wählen Sie zuerst die passende Form. Die Redaktion prüft sensible Angaben vor der Veröffentlichung.',[
-        {icon:'kerze',title:'Traueranzeige',text:'Einen Trauerfall würdevoll veröffentlichen.',href:'/kontakt/?thema=trauer&art=traueranzeige'},
-        {icon:'kerze',title:'Danksagung',text:'Für Anteilnahme und Unterstützung danken.',href:'/kontakt/?thema=trauer&art=danksagung'},
-        {icon:'kerze',title:'Jahrgedächtnis',text:'Erinnerung an einen verstorbenen Menschen.',href:'/kontakt/?thema=trauer&art=jahrgedaechtnis'}
+        {icon:'kerze',title:'Traueranzeige',text:'Einen Trauerfall würdevoll veröffentlichen.',href:'/anzeigen/aufgeben/?art=Traueranzeige&trauerform=Traueranzeige'},
+        {icon:'kerze',title:'Danksagung',text:'Für Anteilnahme und Unterstützung danken.',href:'/anzeigen/aufgeben/?art=Traueranzeige&trauerform=Danksagung'},
+        {icon:'kerze',title:'Jahrgedächtnis',text:'Erinnerung an einen verstorbenen Menschen.',href:'/anzeigen/aufgeben/?art=Traueranzeige&trauerform=Jahrged%C3%A4chtnis'}
       ]);
       trauer.insertBefore(w3.firstElementChild,trauer.firstChild);
     }
@@ -318,11 +318,28 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     if(familie&&!document.querySelector('.publish-guide')){
       var w4=document.createElement('div');
       w4.innerHTML=guided('Familienanzeige aufgeben','Anlass wählen und anschließend die Angaben an die Redaktion senden.',[
-        {icon:'familie',title:'Geburt',text:'Willkommen heißen und Freude teilen.',href:'/kontakt/?thema=familie&art=geburt'},
-        {icon:'familie',title:'Hochzeit',text:'Hochzeit oder Verlobung veröffentlichen.',href:'/kontakt/?thema=familie&art=hochzeit'},
-        {icon:'familie',title:'Jubiläum',text:'Geburtstag, Hochzeitstag oder Jubiläum.',href:'/kontakt/?thema=familie&art=jubilaeum'}
+        {icon:'familie',title:'Geburt',text:'Willkommen heißen und Freude teilen.',href:'/anzeigen/aufgeben/?art=Familienanzeige&anlass=Geburt'},
+        {icon:'familie',title:'Hochzeit',text:'Hochzeit oder Verlobung veröffentlichen.',href:'/anzeigen/aufgeben/?art=Familienanzeige&anlass=Hochzeit'},
+        {icon:'familie',title:'Jubiläum',text:'Geburtstag, Hochzeitstag oder Jubiläum.',href:'/anzeigen/aufgeben/?art=Familienanzeige&anlass=Jubil%C3%A4um'}
       ]);
       familie.insertBefore(w4.firstElementChild,familie.firstChild);
+    }
+  }
+
+  /* Anzeige aufgeben: Art aus dem Link vorwählen, nur den passenden Teil zeigen. */
+  if(path==='/anzeigen/aufgeben/'){
+    var af=document.querySelector('.anz-form');
+    if(af){
+      var q=new URLSearchParams(location.search);
+      var teile=af.querySelectorAll('.anz-teil');
+      var zeig=function(){
+        var gew=af.querySelector('input[name="art"]:checked');
+        teile.forEach(function(t){var an=!gew||t.getAttribute('data-art')===gew.value;t.hidden=!an;t.disabled=!an;});
+      };
+      if(q.get('art')){var r=af.querySelector('input[name="art"][value="'+q.get('art').replace(/"/g,'')+'"]');if(r)r.checked=true;}
+      ['angebot','trauerform','anlass','format'].forEach(function(k){var v=q.get(k),sel=af.querySelector('select[name="'+k+'"]');if(v&&sel)Array.prototype.forEach.call(sel.options,function(o){if(o.value===v)sel.value=v;});});
+      af.addEventListener('change',function(e){if(e.target&&e.target.name==='art')zeig();});
+      zeig();
     }
   }
 
@@ -331,9 +348,9 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     if(werben&&!document.querySelector('.publish-guide')){
       var w5=document.createElement('div');
       w5.innerHTML=guided('Wie möchten Sie sichtbar werden?','Wählen Sie die passende Werbeform. Jede Schaltung wird vor Veröffentlichung redaktionell geprüft.',[
-        {icon:'megafon',title:'Werbebanner',text:'Klassische Werbeflächen zwischen redaktionellen Bereichen.',href:'/kontakt/?thema=werbung&art=banner'},
-        {icon:'megafon',title:'Tipp / Sponsoring',text:'Eigene Tipp-Rubrik für Vereine, Unternehmen und Sponsoren.',href:'/kontakt/?thema=werbung&art=tipp'},
-        {icon:'haus',title:'Unternehmensprofil',text:'Dauerhafte lokale Präsenz im Wirtschaftsbereich.',href:'/kontakt/?thema=werbung&art=unternehmen'}
+        {icon:'megafon',title:'Werbebanner',text:'Klassische Werbeflächen zwischen redaktionellen Bereichen.',href:'/anzeigen/aufgeben/?art=Werbung&format=Werbebanner'},
+        {icon:'megafon',title:'Tipp / Sponsoring',text:'Eigene Tipp-Rubrik für Vereine, Unternehmen und Sponsoren.',href:'/anzeigen/aufgeben/?art=Werbung&format=Tipp%20(bezahlter%20Beitrag)'},
+        {icon:'haus',title:'Unternehmensprofil',text:'Dauerhafte lokale Präsenz im Wirtschaftsbereich.',href:'/anzeigen/aufgeben/?art=Werbung&format=Unternehmenspr%C3%A4senz'}
       ]);
       werben.insertBefore(w5.firstElementChild,werben.firstChild);
     }

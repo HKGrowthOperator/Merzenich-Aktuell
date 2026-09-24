@@ -210,6 +210,7 @@ const FORMULARE = {
   betrieb: ['betrieb', 'branche', 'adresse', 'ortsteil', 'text', 'email', 'einwilligung'],
   kontakt: ['name', 'text', 'email', 'einwilligung'],
   werbung: ['firma', 'name', 'format', 'email', 'einwilligung'],
+  anzeige: ['art', 'text', 'name', 'email', 'einwilligung'],
 };
 const FORM_WEBHOOK = process.env.FORMULAR_WEBHOOK || '';
 const formLetzte = new Map(); // hash -> Zeit (Doppelversand)
