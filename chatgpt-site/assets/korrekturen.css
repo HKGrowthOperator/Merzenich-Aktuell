@@ -368,3 +368,8 @@ html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;
 @media(min-width:768px){
   .mainnav .navscroll{flex-wrap:wrap;align-content:flex-start;overflow:hidden;height:62px;row-gap:0}
 }
+
+/* Aufmacher einer Liste ohne passendes Bild (Motivregeln): Text ueber die
+   volle Breite statt schmaler Spalte neben leerer Bildflaeche. */
+.feed-lead.no-media{display:block}
+.feed-lead.no-media .lead-copy{max-width:68ch;padding:0}

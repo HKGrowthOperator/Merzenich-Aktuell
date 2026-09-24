@@ -96,7 +96,7 @@ const disclosureHtml = (a) => a.ressort === 'tipp' ? '<span class="fbadge anzeig
 const mehr = (a) => `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`;
 function leadHtml(a) {
   const b = a.bild;
-  return `<article class="feed-lead" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${ortsmarke(a)}${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
+  return `<article class="feed-lead${b ? '' : ' no-media'}" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${ortsmarke(a)}${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
 }
 function rowHtml(a) {
   const b = a.bild;
