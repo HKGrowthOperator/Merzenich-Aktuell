@@ -126,7 +126,10 @@ export function artikelSammeln(site) {
         // undatiert/abgerufen: Beitraege, deren Quelle kein Veroeffentlichungsdatum
         // nennt. Sie bleiben ohne datum und gelten damit nirgends als aktuell.
         datum, zeitLabel, undatiert, abgerufen, themen,
-        text: text(body).slice(0, 700),
+        // Ohne Bildunterschrift: Sie beschreibt das Motiv, nicht die Meldung.
+        // Mit ihr bestimmte der Alt-Text eines zugewiesenen Symbolbilds die
+        // Themenerkennung (kategorieFuer) und damit den naechsten Bildpool.
+        text: text(body.replace(/<figure[\s\S]*?<\/figure>/g, ' ')).slice(0, 700),
         id: `${(datum || '').slice(0, 10)}-${slug}`,
       });
     }

@@ -64,8 +64,16 @@ function writeIfChanged(pfad, inhalt) {
   return true;
 }
 
+// Poolfotos tragen Urheber und Lizenz schon im credit ("Symbolbild · Name /
+// Wikimedia Commons · CC BY-SA 4.0"). Ohne diese Pruefung stand die Lizenz
+// doppelt und "Symbolbild" zweimal in der Bildzeile.
+const nachweis = (m) => {
+  const c = String(m.credit || '').replace(/^Symbolbild\s*·\s*/, '');
+  return m.license && !c.includes(m.license) ? `${c} · ${m.license}` : c;
+};
+
 function figureHtml(m) {
-  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}" alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(m.credit)} · ${esc(m.license)}</span></figcaption></figure>`;
+  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}" alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }
@@ -108,7 +116,7 @@ function metadataAufSymbolbild(html, m) {
   // Den kompletten bisherigen Bildnachweis ersetzen. Der alte Ausdruck endete
   // am ersten Punkt und war damit bei Lizenzen wie "CC BY-SA 4.0" nicht
   // idempotent (z. B. blieb ".DE." stehen und wuchs bei jedem Build weiter).
-  const bildMeta = ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}. `;
+  const bildMeta = ` Bildtyp: Symbolbild. Bild: ${nachweis(m)}. `;
   neu = neu.replace(
     /\s*Bildtyp:\s*(?:Offizielles Vereinslogo|Symbolbild)\.\s*(?:Foto|Bild):\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i,
     bildMeta
