@@ -72,3 +72,39 @@ vor Polizei, Fanclub vor Fußball, Reparaturstation vor Fahrrad.
   FC-Fanclub (RheinEnergieStadion).
 - Fahrrad-Reparaturstationen: gesichtete Fotos von Stationen in Tübingen, Ulm, Bad Tölz, Bernkastel-Kues und Mainz (Runde 13).
 - Alle übrigen Meldungen tragen eigene Fotos.
+
+## V3: Bildklassen (ab 24.09.2026)
+
+Die Stichwortregel ordnete nach dem Akteur zu („Feuerwehr“ → Feuerwehrhaus,
+„Polizei“ → Polizeifahrzeug). Das passte nicht: Brandmeldeanlage mit Foto
+eines Dachstuhlbrands, Taube im Zaun mit Rettungswagen, Glutnester auf dem
+Feld mit einem Brand in Köln-Ehrenfeld. V3 ordnet nach dem **Ereignis**.
+
+1. **Jede recherchierte Meldung trägt eine Bildklasse** (`bildklasse` in
+   `inhalte/meldungen/*.json`, im HTML `<meta name="ma:bildklasse">`), z. B.
+   `blaulicht.technik.oelspur`, `blaulicht.alarm.rauchmelder`,
+   `verkehr.unfall.rettung`, `polizei.einbruch`. Alle Klassen mit ihren Motiven:
+   `deploy/bildklassen.json`.
+2. **Die Klasse nennt die Motive, die das Ereignis zeigen.** Ohne gesichtetes
+   Foto mit diesem Motiv: kein Bild. Die Elternklasse zählt nur mit
+   `eltern: true`, also nur, wenn ihr Motiv die Aussage noch zeigt.
+3. **Ein Foto trägt höchstens drei Meldungen** (`maxJeFoto`), damit keine Liste
+   achtmal dasselbe Bild zeigt.
+4. **Motive sind feiner:** `brand` ist aufgeteilt in `gebaeudebrand`,
+   `waldbrand`, `feuerwehr-anfahrt` (Bildtext nennt einen Waldbrand, deshalb
+   nirgends sonst), dazu `flaechenbrand`, `kleinbrand`, `oelspur`,
+   `brandmeldeanlage`, `rauchmelder`, `tueroeffnung`, `tierrettung`,
+   `unfallstelle`, `fussgaengerbruecke`.
+5. **Meldungen ohne Klasse** laufen über die Stichwortregeln; auch dort gilt
+   jetzt Ereignis vor Akteur (Ölspur, Tierrettung, Brandmelder, E-Call stehen
+   vor Feuerwehr und Polizei).
+6. **Kein Ersatzbild an anderer Stelle:** Das Ressort-Menü zeigt nur das Bild
+   der Meldung selbst; ohne Bild steht der Teaser als Text.
+
+Neue Fotos für die Lücken holt der Importer aus den Ereignis-Pools `technik`,
+`rettung`, `unfall` und `flaeche` (Pflichtwort im Dateititel). Sie kommen
+ungesichtet herein und werden erst nach Sichtung mit Motiv in
+`deploy/bildmotive.json` vergeben.
+
+Offen: Bildstufen A/B/C (Aufmacher nur A). Heute gilt bereits: Der Aufmacher
+der Startseite nimmt nur eigene oder Quellfotos, nie ein Poolfoto.
