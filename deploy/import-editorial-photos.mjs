@@ -79,6 +79,32 @@ const POOLS = {
     tags: ['wirtschaft','handel','strukturwandel','gewerbe','handwerk','industrie'],
     queries: ['Tagebau Hambach', 'Wirtschaft Düren', 'Gewerbegebiet Kreis Düren', 'Handwerk Nordrhein-Westfalen', 'Einzelhandel Deutschland', 'Industrie Nordrhein-Westfalen']
   },
+  // Editorial Image System V3: Ereignis-Pools. Pflichtwort im Dateititel, sonst
+  // kommt Beifang; Sichtung und Motiv (deploy/bildmotive.json) wie bei allen.
+  technik: {
+    tags: ['feuerwehr','technische-hilfe','einsatz'],
+    max: 24,
+    pflicht: /(ölspur|oelspur|ölbinde|oelbinde|bindemittel|ölsperre|hydrauliköl|brandmelde|brandmelder|rauchmelder|rauchwarnmelder|smoke detector|fire alarm)/i,
+    queries: ['Ölspur Feuerwehr', 'Ölbindemittel', 'Ölspur Straße', 'Bindemittel Feuerwehr', 'Brandmeldeanlage', 'Brandmelder', 'Brandmeldezentrale', 'Rauchmelder', 'Rauchwarnmelder', 'smoke detector ceiling']
+  },
+  rettung: {
+    tags: ['feuerwehr','rettung','tier','tuer'],
+    max: 16,
+    pflicht: /(tierrettung|tier in not|tierfang|katze.*(baum|feuerwehr)|türöffnung|tueroeffnung|wohnungsöffnung|animal rescue)/i,
+    queries: ['Tierrettung Feuerwehr', 'Tierrettung', 'Tierfang Feuerwehr', 'Katze Feuerwehr Drehleiter', 'Türöffnung Feuerwehr', 'Wohnungsöffnung Feuerwehr', 'animal rescue fire brigade Germany']
+  },
+  unfall: {
+    tags: ['verkehr','unfall','einsatz'],
+    max: 20,
+    pflicht: /(verkehrsunfall|unfallstelle|unfall|absperrung|fußgängerbrücke|fussgaengerbruecke|fußgängerüberführung|footbridge)/i,
+    queries: ['Verkehrsunfall Feuerwehr Nordrhein-Westfalen', 'Unfallstelle Absperrung', 'Verkehrsunfall Absicherung', 'Unfallstelle Polizei', 'Fußgängerbrücke Landstraße', 'Fußgängerbrücke Nordrhein-Westfalen', 'Fußgängerüberführung Straße']
+  },
+  flaeche: {
+    tags: ['brand','feld','flaeche'],
+    max: 20,
+    pflicht: /(feldbrand|flächenbrand|flaechenbrand|stoppelfeld|böschungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|mülleimerbrand|muelleimerbrand|containerbrand)/i,
+    queries: ['Feldbrand', 'Flächenbrand', 'Stoppelfeldbrand', 'Böschungsbrand', 'Strohballenbrand', 'Vegetationsbrand', 'Grasbrand Feuerwehr', 'Containerbrand', 'Mülleimerbrand']
+  },
   verkehr: {
     // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
     // und Schilder ohne Kennzeichen, Reparaturstationen fuer Fahrraeder.
@@ -113,7 +139,7 @@ const ARCHIV = /(\(kiel \d|stadtarchiv|black and white|schwarzwei)/i;
 const BRAND_TITEL_FREMD = /(\bfire\b|incendi|incendie|\bbrann|\b1[89]\d\d\b(?<!\b19[7-9]\d)(?<!\b20\d\d))/i;
 // Einsatzkräfte tragen je Bundesland eigene Farben und Wappen.
 const ANDERES_LAND = /(baden-württemberg|baden-wuerttemberg|bayern|bavaria|hessen|hamburg|saarland|niedersachsen|berlin|sachsen|thüringen|brandenburg|rheinland-pfalz|schleswig|mecklenburg|bremen|heidelberg|karlsruhe|stuttgart|münchen|munich|fulda)/i;
-const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand']);
+const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand', 'technik', 'rettung', 'unfall', 'flaeche']);
 // Namensgleichheit: Merzenich bei Zülpich und die Kölner Bäckerei „Merzenich“.
 const FALSCHES_MERZENICH = /(z[uü]e?lpich|euskirchen|k[oö]ln|cologne|eigelstein|schildergasse)/i;
 
@@ -202,6 +228,7 @@ function usable(c, pool) {
   // Pool verkehr bedient nur die Motivregeln geschwindigkeit und fahrrad-reparatur;
   // ohne Pflichtwort im Titel kam Beifang wie 'GNT'-Ausstellungen und Zuege.
   if (pool === 'verkehr' && !VERKEHR_PFLICHT.test(c.title)) return false;
+  if (POOLS[pool].pflicht && !POOLS[pool].pflicht.test(c.title)) return false;
   if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title) || ARCHIV.test(text))) return false;
   if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
@@ -297,18 +324,18 @@ for (const pool of Object.keys(POOLS)) {
       console.log(pool + ': entfernt ' + x.sourceTitle + ' (' + AUSGESCHLOSSEN.get(x.sourceTitle) + ')');
       continue;
     }
-    if (!dateiDa(x) || keep.length >= PRO_POOL) continue;
+    if (!dateiDa(x) || keep.length >= (POOLS[pool].max || PRO_POOL)) continue;
     const text = [x.sourceTitle, x.alt].join(' ');
     keep.push({ ...x, locality: localityFor(text), geprueft: FREIGEGEBEN.has(x.sourceTitle) });
   }
   keep.forEach((x) => x.sourceTitle && usedTitles.add(x.sourceTitle));
   finalImages.push(...keep);
-  if (keep.length >= PRO_POOL) {
+  if (keep.length >= (POOLS[pool].max || PRO_POOL)) {
     console.log(pool + ': vorhandene ' + keep.length + ' Fotos bleiben bestehen');
     continue;
   }
 
-  const fehlend = PRO_POOL - keep.length;
+  const fehlend = (POOLS[pool].max || PRO_POOL) - keep.length;
   const serien = new Map();
   for (const x of keep) serien.set(serie(x.sourceTitle), (serien.get(serie(x.sourceTitle)) || 0) + 1);
   const chosen = [];

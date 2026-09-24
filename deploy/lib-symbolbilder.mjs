@@ -15,6 +15,11 @@ export const KATEGORIEN = [
 ];
 export const FOTO_KATEGORIEN = ['aktuell', 'blaulicht', 'brand', 'termine', 'tipp', 'menschen'];
 export const ALLE_KATEGORIEN = [...KATEGORIEN, ...FOTO_KATEGORIEN];
+// Editorial Image System V3: Ereignis-Pools fuer einzelne Bildklassen (Oelspur,
+// Brandmelder, Tierrettung, Unfallstelle, Flaechenbrand ...). Sie fuellen nur
+// Luecken der Klassen, haben deshalb keine Mindestgroesse und stehen nicht im
+// Pool-Audit; jedes Foto braucht wie ueberall Sichtung und Motiv.
+export const EREIGNIS_KATEGORIEN = ['technik', 'rettung', 'unfall', 'flaeche'];
 export const FOTO_MANIFEST_DATEI = `${DATEN_WURZEL}/editorial-photo-pools.json`;
 
 const LABELS = {
@@ -645,7 +650,7 @@ export function poolLesen(wurzel, kategorie) {
 
 export function poolsLesen(wurzel) {
   const pools = {}; const hinweise = [];
-  for (const k of ALLE_KATEGORIEN) { const { motive, uebersprungen } = poolLesen(wurzel, k); pools[k] = motive; hinweise.push(...uebersprungen); }
+  for (const k of [...ALLE_KATEGORIEN, ...EREIGNIS_KATEGORIEN]) { const { motive, uebersprungen } = poolLesen(wurzel, k); pools[k] = motive; hinweise.push(...uebersprungen); }
   return { pools, hinweise };
 }
 
@@ -740,7 +745,7 @@ export const MOTIVREGELN = [
   { id: 'geschwindigkeit', wenn: /geschwindigkeit|blitzer|radarkontrolle|tempo ?(?:30|50)\b|zu schnell|raser/, motive: ['geschwindigkeitsmessung'] },
   { id: 'polizeihubschrauber', wenn: /polizeihubschrauber|hubschrauber der polizei/, motive: ['polizeihubschrauber'] },
   { id: 'rettungshubschrauber', wenn: /rettungshubschrauber|christoph \d/, motive: ['rettungshubschrauber'] },
-  { id: 'brand', wenn: /\bbrand|brennt|rauchentwicklung|\brauch\b|flammen|loscharbeiten/, motive: ['brand'] },
+  { id: 'brand', wenn: /\bbrand|brennt|rauchentwicklung|\brauch\b|flammen|loscharbeiten/, motive: ['brand', 'gebaeudebrand'] },
   { id: 'gefahrgut', wenn: /gefahrgut|chemikalie|gasaustritt|gasgeruch/, motive: ['gefahrgut'] },
   { id: 'polizei', wenn: /polizei|einbruch|eingebrochen|diebstahl|zeugen|fahndung|tatort|kripo/, motive: ['streifenwagen', 'polizeimotorrad', 'polizeiwache'] },
   { id: 'rettung', wenn: /rettungsdienst|rettungswagen|notarzt|reanimation/, motive: ['rettungswagen', 'rettungswache'] },
@@ -764,7 +769,32 @@ export const MOTIVREGELN = [
 ];
 
 const regelText = (a) => norm(`${a?.url || ''} ${a?.kicker || ''} ${a?.titel || ''} ${a?.teaser || ''} ${(a?.themen || []).map((t) => t.label || t).join(' ')}`);
-export function motivregelFuer(a) { const t = regelText(a); return MOTIVREGELN.find((r) => r.wenn.test(t)) || null; }
+// Editorial Image System V3: ausdrueckliche Bildklasse der Meldung vor der
+// Stichwortregel (deploy/bildklassen.json). Die Elternklasse zaehlt nur mit
+// eltern:true, sonst bleibt die Meldung ohne passendes Motiv ohne Bild.
+let bildklassen = null;
+export function bildklassenLesen() {
+  if (bildklassen) return bildklassen;
+  const pfad = new URL('./bildklassen.json', import.meta.url);
+  bildklassen = existsSync(pfad) ? JSON.parse(readFileSync(pfad, 'utf8')) : { klassen: {}, maxJeFoto: 0 };
+  return bildklassen;
+}
+function klassenRegel(id) {
+  const { klassen } = bildklassenLesen();
+  if (!klassen[id]) throw new Error(`Bildklasse unbekannt: ${id} (deploy/bildklassen.json)`);
+  const motive = [...klassen[id].motive];
+  for (let k = klassen[id], teil = id; k?.eltern && teil.includes('.');) {
+    teil = teil.slice(0, teil.lastIndexOf('.'));
+    const e = klassen[teil]; if (!e) break;
+    for (const mt of e.motive) if (!motive.includes(mt)) motive.push(mt);
+    k = e;
+  }
+  return { id, motive, klasse: true };
+}
+export function motivregelFuer(a) {
+  if (a?.bildklasse) return klassenRegel(a.bildklasse);
+  const t = regelText(a); return MOTIVREGELN.find((r) => r.wenn.test(t)) || null;
+}
 
 let motivKarte = null;
 function motivKarteLesen() {
@@ -808,7 +838,11 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     if (!erlaubt.length) { bildlos.push({ url: key, regel: regel ? regel.id : null, motive: regel ? regel.motive : [] }); continue; }
     // Erstes Motiv der Regel zuerst, lokale Fotos vor fremden, dann Rotation.
     const lokal = (m) => (['Merzenich', 'Kreis Düren'].includes(m.locality) ? 0 : 1);
-    const k = [...erlaubt].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0].m;
+    // Hoechstens maxJeFoto Meldungen je Foto (neue Zuordnungen), damit eine Liste nicht achtmal dasselbe Bild zeigt.
+    const grenze = bildklassenLesen().maxJeFoto || Infinity;
+    const frei = erlaubt.filter((e) => (usage.get(e.m.id) || 0) < grenze);
+    if (!frei.length) { bildlos.push({ url: key, regel: regel.id, motive: regel.motive, grund: `alle passenden Fotos schon ${grenze}-mal vergeben` }); continue; }
+    const k = [...frei].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0].m;
     usage.set(k.id, (usage.get(k.id) || 0) + 1);
     assignments[key] = { imageId: k.id, pool: k.pool, motiv: motivFuer(k), regel: regel.id, assignedAt: new Date().toISOString(), articleId: a.id || '', articleDate: a.datum || a.abgerufen || '' };
     zuordnung.set(key, k); dirty = true;

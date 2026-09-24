@@ -1,0 +1,124 @@
+{
+  "hinweis": "Editorial Image System V3: Bildklassen. Eine Meldung traegt ihre Klasse ausdruecklich (inhalte/meldungen: bildklasse -> <meta name=\"ma:bildklasse\">). Die Klasse nennt die Motive, die das Ereignis zeigen (Motiv je Foto: deploy/bildmotive.json). Ohne passendes Foto bleibt die Meldung ohne Bild. Die Elternklasse (Teil vor dem letzten Punkt) gilt nur, wenn die Klasse eltern:true setzt, also wenn das Elternmotiv die Aussage noch zeigt. Meldungen ohne Klasse laufen weiter ueber MOTIVREGELN in lib-symbolbilder.mjs.",
+  "maxJeFoto": 3,
+  "klassen": {
+    "blaulicht.alarm.brandmeldeanlage": {
+      "titel": "Brandmeldeanlage ausgelöst",
+      "motive": [
+        "brandmeldeanlage"
+      ]
+    },
+    "blaulicht.alarm.rauchmelder": {
+      "titel": "Heimrauchmelder ausgelöst",
+      "motive": [
+        "rauchmelder"
+      ]
+    },
+    "blaulicht.feuer": {
+      "titel": "Brand, Löscheinsatz (ohne nähere Angabe)",
+      "motive": [
+        "brand"
+      ]
+    },
+    "blaulicht.feuer.flaeche": {
+      "titel": "Flächen-, Feld-, Böschungsbrand",
+      "motive": [
+        "flaechenbrand"
+      ]
+    },
+    "blaulicht.feuer.gebaeude": {
+      "titel": "Gebäude-, Dachstuhl-, Wohnungsbrand",
+      "motive": [
+        "gebaeudebrand"
+      ]
+    },
+    "blaulicht.feuer.klein": {
+      "titel": "Kleinbrand (Mülleimer, Gulli, Unrat)",
+      "motive": [
+        "kleinbrand"
+      ]
+    },
+    "blaulicht.feuer.nachloeschen": {
+      "titel": "Nachlöscharbeiten, Glutnester auf Flächen",
+      "motive": [
+        "flaechenbrand"
+      ]
+    },
+    "blaulicht.feuer.wald": {
+      "titel": "Waldbrand",
+      "motive": [
+        "waldbrand"
+      ]
+    },
+    "blaulicht.rettung.tier": {
+      "titel": "Tier in Not, Tierfang",
+      "motive": [
+        "tierrettung"
+      ]
+    },
+    "blaulicht.rettung.tuer": {
+      "titel": "Person hinter Tür, Türöffnung",
+      "motive": [
+        "tueroeffnung"
+      ]
+    },
+    "blaulicht.technik.ecall": {
+      "titel": "Automatischer Notruf aus einem Auto",
+      "motive": [
+        "rettungswagen"
+      ]
+    },
+    "blaulicht.technik.oelspur": {
+      "titel": "Ölspur, ausgelaufene Betriebsstoffe",
+      "motive": [
+        "oelspur"
+      ]
+    },
+    "polizei.diebstahl.kfz": {
+      "titel": "Fahrzeug gestohlen",
+      "motive": [
+        "streifenwagen",
+        "polizeimotorrad"
+      ]
+    },
+    "polizei.einbruch": {
+      "titel": "Einbruch, Zeugensuche",
+      "motive": [
+        "einbruch",
+        "polizeimotorrad",
+        "streifenwagen"
+      ]
+    },
+    "polizei.zeugenaufruf.bruecke": {
+      "titel": "Gefährlicher Eingriff, Gegenstände von Brücke",
+      "motive": [
+        "fussgaengerbruecke"
+      ]
+    },
+    "verkehr.radar": {
+      "titel": "Geschwindigkeitskontrolle",
+      "motive": [
+        "geschwindigkeitsmessung"
+      ]
+    },
+    "verkehr.unfall": {
+      "titel": "Verkehrsunfall",
+      "motive": [
+        "unfallstelle"
+      ]
+    },
+    "verkehr.unfall.rad": {
+      "titel": "Unfall auf dem Radweg",
+      "motive": [
+        "radweg"
+      ]
+    },
+    "verkehr.unfall.rettung": {
+      "titel": "Verkehrsunfall mit Verletzten, Rettungsdienst",
+      "motive": [
+        "unfallstelle",
+        "rettungswagen"
+      ]
+    }
+  }
+}

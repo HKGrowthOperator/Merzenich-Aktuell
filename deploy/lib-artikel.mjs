@@ -138,6 +138,8 @@ export function artikelSammeln(site) {
         // undatiert/abgerufen: Beitraege, deren Quelle kein Veroeffentlichungsdatum
         // nennt. Sie bleiben ohne datum und gelten damit nirgends als aktuell.
         datum, zeitLabel, undatiert, abgerufen, themen,
+        // Editorial Image System V3: ausdrueckliche Bildklasse (deploy/bildklassen.json), sonst leer.
+        bildklasse: erstes(/<meta name="ma:bildklasse" content="([^"]+)">/, html),
         // Ohne Bildunterschrift: Sie beschreibt das Motiv, nicht die Meldung.
         // Mit ihr bestimmte der Alt-Text eines zugewiesenen Symbolbilds die
         // Themenerkennung (kategorieFuer) und damit den naechsten Bildpool.
