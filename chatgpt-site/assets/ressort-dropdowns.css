@@ -1,0 +1,46 @@
+/* Merzenich Aktuell – Ressort-Dropdowns, 24.09.2026
+   Klickbasiertes Desktop-Menü nach dem Interaktionsprinzip großer Lokalportale.
+   Eigenes Merzenich-Design; keine visuelle Kopie einer Referenzseite. */
+@media (min-width:768px){
+  .mainnav{position:relative;overflow:visible}
+  .mainnav.ressort-dropdowns-ready .sport-mega{display:none!important}
+  .navscroll>a[aria-haspopup="true"]{position:relative;padding-right:24px}
+  .navscroll>a[aria-haspopup="true"]::after{
+    content:"";position:absolute;right:9px;top:50%;width:6px;height:6px;
+    border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+    transform:translateY(-65%) rotate(45deg);transition:transform .16s ease
+  }
+  .navscroll>a.ressort-open{color:var(--red);border-bottom-color:var(--red)}
+  .navscroll>a.ressort-open::after{transform:translateY(-25%) rotate(225deg)}
+  .ressort-dropdown{
+    position:absolute;left:0;right:0;top:100%;z-index:80;background:#fff;
+    border-top:1px solid rgba(18,22,25,.09);border-bottom:1px solid rgba(18,22,25,.15);
+    box-shadow:0 18px 40px rgba(18,22,25,.14);opacity:0;transform:translateY(-6px);
+    transition:opacity .14s ease,transform .14s ease
+  }
+  .ressort-dropdown[hidden]{display:none}
+  .ressort-dropdown.is-open{opacity:1;transform:none}
+  .ressort-dropdown__inner{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(520px,1.8fr);gap:42px;padding-top:26px;padding-bottom:30px}
+  .ressort-dropdown__head{padding-right:34px;border-right:1px solid rgba(18,22,25,.1)}
+  .ressort-dropdown__head>div{display:flex;flex-direction:column;gap:2px}
+  .ressort-dropdown__head span,.ressort-dropdown__groups h3{
+    margin:0 0 10px;font-size:11px;line-height:1.2;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--red)
+  }
+  .ressort-dropdown__head strong{font-family:var(--serif);font-size:30px;line-height:1.05;color:var(--ink)}
+  .ressort-dropdown__head p{margin:11px 0 16px;max-width:34ch;font-size:14px;line-height:1.45;color:var(--ink-soft)}
+  .ressort-dropdown__all{display:inline-flex;font-size:13px;font-weight:800;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:2px}
+  .ressort-dropdown__groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+  .ressort-dropdown__groups section{min-width:0}
+  .ressort-dropdown__links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+  .ressort-dropdown__links a{
+    display:block;padding:10px 0;border-bottom:1px solid rgba(18,22,25,.08);
+    font-size:14px;font-weight:700;line-height:1.25;color:var(--ink);text-decoration:none
+  }
+  .ressort-dropdown__links a:hover,.ressort-dropdown__links a:focus-visible,
+  .ressort-dropdown__all:hover,.ressort-dropdown__all:focus-visible{color:var(--red)}
+}
+@media (max-width:980px) and (min-width:768px){
+  .ressort-dropdown__inner{grid-template-columns:230px 1fr;gap:26px}
+  .ressort-dropdown__links{grid-template-columns:1fr}
+}
+@media (max-width:767px){.ressort-dropdown{display:none!important}}
