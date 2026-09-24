@@ -200,15 +200,25 @@ if (!nur.length || nur.includes('quellbilder')) {
     const pm = /\/pm\/\d+\/(\d+)/.exec(d.url)?.[1];
     if (!pm || !gesucht.has(pm)) continue;
     const fotos = [...new Map((d.bilder || []).filter((b) => /\/thumbnail\/highlight\//.test(b.src)).map((b) => [b.src, b])).values()];
+    // Bildhinweis (Rechteinhaber, Nutzungsbedingung) steht nur im HTML der
+    // Mitteilung, nicht im Lesetext: Fundstellen woertlich mitschreiben.
+    let bildinfo = [];
+    if (fotos.length) {
+      const r = await holen(d.url);
+      const roh = entschluesseln(String(r.text || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
+      const re = /(Rechteinhaber|Bildrechte|Urheber|Quelle:|Copyright|©|honorarfrei|Verwendung|Nutzung|Weiterverwendung|redaktionell)/gi;
+      let t; while ((t = re.exec(roh)) && bildinfo.length < 12) { bildinfo.push(roh.slice(Math.max(0, t.index - 160), t.index + 240).trim()); re.lastIndex = t.index + 240; }
+      if (!bildinfo.length) bildinfo = [`kein Bildhinweis im HTML gefunden (Status ${r.status})`];
+    }
     for (const [i, b] of fotos.entries()) {
       const name = `${pm}-${i + 1}.jpg`;
-      if (index[name] && existsSync(join(bildOrdner, name))) continue;
+      if (index[name] && existsSync(join(bildOrdner, name))) { index[name].bildinfo = bildinfo; continue; }
       try {
         const r = await fetch(b.src, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(25000) });
         if (r.status !== 200 || !/^image\//.test(r.headers.get('content-type') || '')) { fehler++; index[name] = { quelle: d.url, src: b.src, status: r.status }; continue; }
         const daten = Buffer.from(await r.arrayBuffer());
         writeFileSync(join(bildOrdner, name), daten);
-        index[name] = { quelle: d.url, src: b.src, alt: b.alt || '', bytes: daten.length, abgerufen: new Date().toISOString() };
+        index[name] = { quelle: d.url, src: b.src, alt: b.alt || '', bytes: daten.length, abgerufen: new Date().toISOString(), bildinfo };
         neu++;
       } catch (e) { fehler++; index[name] = { quelle: d.url, src: b.src, status: 'fehler: ' + (e.cause?.code || e.name) }; }
       await pause(500);
