@@ -210,7 +210,9 @@ if (!nur.length || nur.includes('quellbilder')) {
       const html = String((await holen(d.url)).text || '');
       for (const b of fotos) {
         const name = b.src.split('/').pop();
-        const id = new RegExp(`data-id="([0-9a-f]{16,})" data-name="${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`).exec(html)?.[1];
+        // data-name steht im Markup ohne Pfad; die id steht davor im selben div.
+        const stelle = html.indexOf(`data-name="${name}"`);
+        const id = stelle > 0 ? /data-id="([0-9a-f]{16,})"[^>]*$/.exec(html.slice(Math.max(0, stelle - 400), stelle))?.[1] : null;
         if (!id) { bildinfo[b.src] = { fehler: 'id im Markup nicht gefunden' }; continue; }
         const url = `https://www.presseportal.de/api/image_info.htx?id=${id}&story_id=${pm}&render=html`;
         const r = await holen(url);
@@ -233,6 +235,9 @@ if (!nur.length || nur.includes('quellbilder')) {
       await pause(500);
     }
   }
+  // Nutzungsbedingungen des Presseportals: Grundlage fuer die Verwendung der Fotos.
+  const nb = await seite('https://www.presseportal.de/nutzungsbedingungen');
+  writeFileSync(join(bildOrdner, 'presseportal-nutzungsbedingungen.json'), JSON.stringify(nb, null, 1) + '\n');
   writeFileSync(indexPfad, JSON.stringify(index, null, 1) + '\n');
   console.log(`quellbilder ${neu} neu, ${fehler} Fehler, ${Object.keys(index).length} im Index (${gesucht.size} Mitteilungen gesucht)`);
 }
