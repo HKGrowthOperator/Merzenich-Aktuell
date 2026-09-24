@@ -45,6 +45,10 @@ jobs:
           node deploy/inhaltsindex.mjs
           node deploy/termine-prerender.mjs
           node deploy/kopf-theme-einbinden.mjs
+          # Nachgelagerte Prerender-Schritte können Artikelseiten neu schreiben.
+          # Deshalb das Bildsystem am Ende noch einmal materialisieren, damit
+          # der finale Stand idempotent ist und die Foto-Zuordnung erhalten bleibt.
+          node deploy/symbolbilder.mjs
 
       - name: Verify hard image-system invariants
         run: |
