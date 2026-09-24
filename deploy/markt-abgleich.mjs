@@ -2,7 +2,7 @@
 /**
  * Merzenich Aktuell - Stellenmarkt abgleichen.
  *
- * Die Stellen in chatgpt-site/api/market.json sind redaktionell ausgewaehlt
+ * Die Stellen in market.json (Wurzelverzeichnis) sind redaktionell ausgewaehlt
  * (Stand 16.09.2026). Dieses Skript prueft jede einzelne Stelle bei ihrer
  * Quelle nach und nimmt keine neuen auf:
  *
@@ -25,7 +25,8 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const pfad = join(wurzel, 'chatgpt-site', 'api', 'market.json');
+// Quelle ist market.json im Wurzelverzeichnis; markt-prerender kopiert sie nach /api/.
+const pfad = join(wurzel, 'market.json');
 const trocken = process.argv.includes('--dry');
 const BA = 'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobdetails/';
 // Oeffentlicher Schluessel der Jobboerse (dokumentiert u. a. bei bund.dev).
