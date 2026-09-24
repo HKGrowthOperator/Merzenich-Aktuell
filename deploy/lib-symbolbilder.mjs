@@ -719,47 +719,107 @@ const artikelText = (a) => norm(`${a?.titel || ''} ${a?.teaser || ''} ${a?.kicke
 
 function treffer(m, text) { return (m.tags || []).reduce((n, t) => n + (text.includes(norm(t)) ? 1 : 0), 0); }
 
+// ------------------------------------------------------------------------
+// Motivregeln (Triggerpoints), KBS 24.09.2026: "Die Bilder muessen immer zur
+// Aussage passen." Vorher waehlte die Vergabe nur den Pool (z. B. polizei) und
+// nahm daraus irgendein Foto: Geschwindigkeitskontrolle bekam eine Polizeiwache,
+// die wie ein Wohnhaus aussah, ein Einbruch den Polizeihubschrauber, der
+// FC-Fanclub eine Dampflok.
+//
+// Jetzt gilt:
+//  1. Jede Meldung bekommt hoechstens eine Regel, die erste passende von oben.
+//     Geprueft wird Pfad, Dachzeile, Titel, Teaser und Themen, nicht der
+//     Fliesstext (dort stehen beilaeufige Woerter).
+//  2. Die Regel nennt die Motive, die die Aussage zeigen. Welches Motiv ein
+//     Foto zeigt, steht ausdruecklich in deploy/bildmotive.json (gesichtet).
+//  3. Passt keine Regel oder hat kein Foto das Motiv, bekommt die Meldung kein
+//     Poolfoto. Lieber kein Bild als ein falsches.
+// Reihenfolge: speziell vor allgemein (Geschwindigkeitskontrolle vor Polizei,
+// Fanclub vor Fussball, Reparaturstation vor Fahrrad).
+export const MOTIVREGELN = [
+  { id: 'geschwindigkeit', wenn: /geschwindigkeit|blitzer|radarkontrolle|tempo ?(?:30|50)\b|zu schnell|raser/, motive: ['geschwindigkeitsmessung'] },
+  { id: 'polizeihubschrauber', wenn: /polizeihubschrauber|hubschrauber der polizei/, motive: ['polizeihubschrauber'] },
+  { id: 'rettungshubschrauber', wenn: /rettungshubschrauber|christoph \d/, motive: ['rettungshubschrauber'] },
+  { id: 'brand', wenn: /\bbrand|brennt|rauchentwicklung|\brauch\b|flammen|loscharbeiten/, motive: ['brand'] },
+  { id: 'gefahrgut', wenn: /gefahrgut|chemikalie|gasaustritt|gasgeruch/, motive: ['gefahrgut'] },
+  { id: 'polizei', wenn: /polizei|einbruch|eingebrochen|diebstahl|zeugen|fahndung|tatort|kripo/, motive: ['streifenwagen', 'polizeiwache'] },
+  { id: 'rettung', wenn: /rettungsdienst|rettungswagen|notarzt|reanimation/, motive: ['rettungswagen', 'rettungswache'] },
+  { id: 'feuerwehr', wenn: /feuerwehr|loschgruppe|loschzug/, motive: ['feuerwehrhaus', 'feuerwehreinsatz'] },
+  { id: 'fanclub', wenn: /fanclub|bundesliga|1\. fc koln|effzeh/, motive: ['stadion'] },
+  { id: 'fussball', wenn: /fussball|kreisliga|bezirksliga|kreispokal|spieltag|tabellenspitze|tabellenfuhr|\b\d{1,2}:\d{1,2}\b/, motive: ['fussball'] },
+  { id: 'hallensport', wenn: /tischtennis|handball|volleyball|turnhalle|sporthalle/, motive: ['sporthalle'] },
+  { id: 'fest', wenn: /ortsfest|kirmes|dorffest|oldieabend|trodel|schutzenfest|volksfest|pfarrfest/, motive: ['kirmes', 'trodelmarkt'] },
+  { id: 'wochenmarkt', wenn: /wochenmarkt|bauernmarkt/, motive: ['wochenmarkt'] },
+  { id: 'fahrrad-reparatur', wenn: /reparaturstation|fahrradreparatur|reparatursaule/, motive: ['fahrrad-reparaturstation'] },
+  { id: 'fahrrad', wenn: /fahrrad|radweg|e-bike|radtour|radfahr/, motive: ['radweg'] },
+  { id: 'tagebau', wenn: /tagebau|braunkohle|schaufelradbagger/, motive: ['tagebau'] },
+  { id: 'sophienhoehe', wenn: /sophienhohe/, motive: ['sophienhoehe'] },
+  { id: 'bahn', wenn: /s-bahn|\bs ?12\b|bahnhof|haltepunkt|bahnstrecke|regionalbahn/, motive: ['bahnhof-merzenich', 'zug'] },
+  { id: 'rathaus', wenn: /rathaus|gemeinderat|burgermeister|ratssitzung|gemeindeverwaltung|haushalt/, motive: ['rathaus-merzenich'] },
+  { id: 'kirche', wenn: /pfarrkirche|gottesdienst|pfarrgemeinde|kirchengemeinde|laurentius/, motive: ['kirche-merzenich'] },
+  { id: 'buecherschrank', wenn: /bucherschrank/, motive: ['buecherschrank'] },
+  { id: 'maibaum', wenn: /maibaum/, motive: ['maibaum'] },
+  { id: 'dorfgemeinschaftshaus', wenn: /dorfgemeinschaftshaus/, motive: ['dorfgemeinschaftshaus'] },
+  { id: 'windmuehle', wenn: /windmuhle/, motive: ['windmuehle-merzenich'] },
+];
+
+const regelText = (a) => norm(`${a?.url || ''} ${a?.kicker || ''} ${a?.titel || ''} ${a?.teaser || ''} ${(a?.themen || []).map((t) => t.label || t).join(' ')}`);
+export function motivregelFuer(a) { const t = regelText(a); return MOTIVREGELN.find((r) => r.wenn.test(t)) || null; }
+
+let motivKarte = null;
+function motivKarteLesen() {
+  if (motivKarte) return motivKarte;
+  const pfad = new URL('./bildmotive.json', import.meta.url);
+  motivKarte = existsSync(pfad) ? (JSON.parse(readFileSync(pfad, 'utf8')).motive || {}) : {};
+  return motivKarte;
+}
+// Motiv eines Fotos: ausdruecklich gesetzt (Selbsttest) oder aus bildmotive.json.
+export function motivFuer(m) { return m?.motiv || motivKarteLesen()[m?.sourceTitle] || null; }
+
 export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }) {
   const alt = bestand?.assignments || {}; const assignments = { ...alt };
-  const gueltig = new Map(); for (const [pool, motive] of Object.entries(pools)) for (const m of motive) gueltig.set(m.id, m);
-  // Fotos verdrängen die Symbolgrafiken nur, wenn der Pool genug Fotos für eine
-  // Rotation hat. Sonst tragen wenige Fotos jede Meldung des Ressorts.
   const istFoto = (m) => m.photo === true || (m.format && m.format !== 'svg');
-  const poolHatFoto = new Set(Object.entries(pools).filter(([, motive]) => motive.filter(istFoto).length >= MINDEST_POOL / 2).map(([pool]) => pool));
-  // Gesichtete Fotos zuerst, neu geladene erst nach der nächsten Sichtprüfung voll.
-  const fotoBonus = (m) => (istFoto(m) && poolHatFoto.has(m.pool) ? (m.geprueft === false ? 500 : 1000) : 0);
+  // Nur Fotos mit gesichtetem Motiv kommen in Frage, egal aus welchem Pool.
+  const nachMotiv = new Map(); const gueltig = new Map();
+  for (const motive of Object.values(pools)) for (const m of motive) {
+    const motiv = istFoto(m) && m.geprueft !== false ? motivFuer(m) : null;
+    if (!motiv) continue;
+    gueltig.set(m.id, m);
+    if (!nachMotiv.has(motiv)) nachMotiv.set(motiv, []);
+    nachMotiv.get(motiv).push(m);
+  }
   const usage = new Map();
   for (const [k, z] of Object.entries(assignments)) {
     const m = gueltig.get(z.imageId);
-    if (!m || z.pool !== m.pool || (m.format === 'svg' && poolHatFoto.has(m.pool))) { delete assignments[k]; continue; }
+    if (!m) { delete assignments[k]; continue; }
     usage.set(m.id, (usage.get(m.id) || 0) + 1);
   }
   let dirty = JSON.stringify(assignments) !== JSON.stringify(alt);
-  const zuordnung = new Map(); const warnungen = [];
+  const zuordnung = new Map(); const warnungen = []; const bildlos = [];
   const sortiert = [...artikel].sort((a, b) => String(a.datum || a.abgerufen || '').localeCompare(String(b.datum || b.abgerufen || '')) || keyFuer(a).localeCompare(keyFuer(b)));
   for (const a of sortiert) {
     if (!brauchtSymbolbild(a)) continue;
-    const key = keyFuer(a); const pool = kategorieFuer(a); const liste = pools[pool] || [];
-    if (!liste.length) { warnungen.push(`${key}: Pool ${pool} ist leer`); continue; }
+    const key = keyFuer(a); const regel = motivregelFuer(a);
+    const erlaubt = regel ? regel.motive.flatMap((mt, rang) => (nachMotiv.get(mt) || []).map((m) => ({ m, rang }))) : [];
     const vorhanden = assignments[key];
-    if (vorhanden && vorhanden.pool === pool && gueltig.has(vorhanden.imageId)) { zuordnung.set(key, gueltig.get(vorhanden.imageId)); continue; }
-    const text = artikelText(a);
-    const kandidaten = [...liste].sort((x, y) => {
-      const sx = fotoBonus(x) + treffer(x, text) * 3 - (usage.get(x.id) || 0) * 4;
-      const sy = fotoBonus(y) + treffer(y, text) * 3 - (usage.get(y.id) || 0) * 4;
-      return sy - sx || (usage.get(x.id) || 0) - (usage.get(y.id) || 0) || x.id.localeCompare(y.id);
-    });
-    const m = kandidaten[0]; usage.set(m.id, (usage.get(m.id) || 0) + 1);
-    assignments[key] = { imageId: m.id, pool, assignedAt: new Date().toISOString(), articleId: a.id || '', articleDate: a.datum || a.abgerufen || '', tagsMatched: (m.tags || []).filter((t) => text.includes(norm(t))).slice(0, 6) };
-    zuordnung.set(key, m); dirty = true;
+    const bleibt = vorhanden && erlaubt.find((e) => e.m.id === vorhanden.imageId);
+    if (bleibt) { zuordnung.set(key, bleibt.m); continue; }
+    if (vorhanden) { usage.set(vorhanden.imageId, Math.max(0, (usage.get(vorhanden.imageId) || 1) - 1)); delete assignments[key]; dirty = true; }
+    if (!erlaubt.length) { bildlos.push({ url: key, regel: regel ? regel.id : null, motive: regel ? regel.motive : [] }); continue; }
+    // Erstes Motiv der Regel zuerst, lokale Fotos vor fremden, dann Rotation.
+    const lokal = (m) => (['Merzenich', 'Kreis Düren'].includes(m.locality) ? 0 : 1);
+    const k = [...erlaubt].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0].m;
+    usage.set(k.id, (usage.get(k.id) || 0) + 1);
+    assignments[key] = { imageId: k.id, pool: k.pool, motiv: motivFuer(k), regel: regel.id, assignedAt: new Date().toISOString(), articleId: a.id || '', articleDate: a.datum || a.abgerufen || '' };
+    zuordnung.set(key, k); dirty = true;
   }
   // Echte Bilder gewinnen dauerhaft. Eine alte Symbolzuordnung wird entfernt, sobald ein echtes Bild vorhanden ist.
   for (const a of artikel) { const key = keyFuer(a); if (!brauchtSymbolbild(a) && assignments[key]) { delete assignments[key]; dirty = true; } }
-  return { zuordnung, state: { version: 2, updatedAt: dirty ? new Date().toISOString() : (bestand?.updatedAt || ''), assignments }, dirty, warnungen };
+  return { zuordnung, bildlos, state: { version: 2, updatedAt: dirty ? new Date().toISOString() : (bestand?.updatedAt || ''), assignments }, dirty, warnungen };
 }
 
 export function selbsttest() {
-  const pool = Array.from({ length: 5 }, (_, i) => ({ id:`sport-${i}`, pool:'sport', src:`/m${i}.svg`, alt:`M${i}`, credit:'Test', source:'Test', license:'Test', rightsCheckedAt:RECHTE_GEPRUEFT_AM, tags:['sport','fussball'] }));
+  const pool = Array.from({ length: 5 }, (_, i) => ({ id:`sport-${i}`, pool:'sport', src:`/m${i}.jpg`, alt:`M${i}`, credit:'Test', source:'Test', license:'Test', rightsCheckedAt:RECHTE_GEPRUEFT_AM, tags:['sport','fussball'], photo:true, format:'jpg', geprueft:true, motiv:'fussball' }));
   const artikel = Array.from({ length: 8 }, (_, i) => ({ id:`a${i}`, url:`/sport/a${i}/`, datum:`2026-09-${String(i+1).padStart(2,'0')}T10:00:00+02:00`, titel:'Fußball Spieltag' }));
   const eins = vergibSymbolbilder(artikel, { sport: pool }, { assignments:{} });
   const verschiedene = new Set([...eins.zuordnung.values()].map((m) => m.id));
@@ -769,7 +829,10 @@ export function selbsttest() {
   for (const a of artikel) if (zwei.zuordnung.get(a.url)?.id !== altMap[a.url]) throw new Error('Persistente Zuordnung wurde durch neue Meldung verschoben.');
   const drei = vergibSymbolbilder([...artikel].reverse(), { sport: pool }, eins.state);
   for (const a of artikel) if (drei.zuordnung.get(a.url)?.id !== altMap[a.url]) throw new Error('Reload/Build-Reihenfolge ändert eine bestehende Zuordnung.');
-  return { meldungen: artikel.length, motive: pool.length, unterschiedlicheMotive: verschiedene.size, stableAssignment: true };
+  // Motivregel: eine Polizeimeldung darf kein Fussballfoto bekommen, nur weil es da ist.
+  const fremd = vergibSymbolbilder([{ id:'p', url:'/blaulicht/einbruch/', datum:'2026-09-01T10:00:00+02:00', titel:'Einbruch: Polizei sucht Zeugen' }], { sport: pool }, { assignments:{} });
+  if (fremd.zuordnung.size || fremd.bildlos.length !== 1) throw new Error('Motivregel: Meldung ohne passendes Motiv bekam trotzdem ein Foto.');
+  return { meldungen: artikel.length, motive: pool.length, unterschiedlicheMotive: verschiedene.size, stableAssignment: true, motivregel: true };
 }
 
 export function bibliothekAudit(wurzel) {

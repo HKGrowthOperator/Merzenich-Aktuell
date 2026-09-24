@@ -45,7 +45,8 @@ const POOLS = {
   },
   polizei: {
     tags: ['polizei','streifenwagen','einsatz','kontrolle'],
-    queries: ['Polizeiwache Nordrhein-Westfalen', 'Polizeipräsidium Nordrhein-Westfalen', 'Polizeihubschrauber Nordrhein-Westfalen', 'Polizei Düren', 'Polizei Nordrhein-Westfalen Streifenwagen', 'Polizei Nordrhein-Westfalen']
+    // Motivregeln (24.09.): Streifenwagen zuerst; Wachen lesen sich oft als Wohnhaus.
+    queries: ['Funkstreifenwagen Nordrhein-Westfalen', 'Streifenwagen Polizei Nordrhein-Westfalen', 'Polizeifahrzeug Nordrhein-Westfalen', 'Polizeiwache Nordrhein-Westfalen', 'Polizeipräsidium Nordrhein-Westfalen', 'Polizeihubschrauber Nordrhein-Westfalen', 'Polizei Düren', 'Polizei Nordrhein-Westfalen Streifenwagen', 'Polizei Nordrhein-Westfalen']
   },
   feuerwehr: {
     tags: ['feuerwehr','loeschfahrzeug','einsatz','rettung'],
@@ -67,7 +68,8 @@ const POOLS = {
   },
   vereine: {
     tags: ['vereine','verein','ehrenamt','gemeinschaft'],
-    queries: ['Vereinsheim Nordrhein-Westfalen', 'Schützenhalle Nordrhein-Westfalen', 'Dorfgemeinschaftshaus Nordrhein-Westfalen', 'Maibaum Nordrhein-Westfalen', 'Karnevalswagen Nordrhein-Westfalen', 'Bücherschrank Nordrhein-Westfalen']
+    // Stadion fuer Fanclub-Meldungen (Motivregel fanclub).
+    queries: ['RheinEnergieStadion', 'Müngersdorfer Stadion', 'Vereinsheim Nordrhein-Westfalen', 'Schützenhalle Nordrhein-Westfalen', 'Dorfgemeinschaftshaus Nordrhein-Westfalen', 'Maibaum Nordrhein-Westfalen', 'Karnevalswagen Nordrhein-Westfalen', 'Bücherschrank Nordrhein-Westfalen']
   },
   leben: {
     tags: ['leben','dorfleben','alltag','nachbarschaft','familie'],
@@ -76,6 +78,12 @@ const POOLS = {
   wirtschaft: {
     tags: ['wirtschaft','handel','strukturwandel','gewerbe','handwerk','industrie'],
     queries: ['Tagebau Hambach', 'Wirtschaft Düren', 'Gewerbegebiet Kreis Düren', 'Handwerk Nordrhein-Westfalen', 'Einzelhandel Deutschland', 'Industrie Nordrhein-Westfalen']
+  },
+  verkehr: {
+    // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
+    // und Schilder ohne Kennzeichen, Reparaturstationen fuer Fahrraeder.
+    tags: ['verkehr','geschwindigkeit','blitzer','fahrrad','reparaturstation','strasse'],
+    queries: ['Starenkasten', 'Blitzer Nordrhein-Westfalen', 'Geschwindigkeitsmessanlage', 'Geschwindigkeitsüberwachung Deutschland', 'Radarfalle Deutschland', 'Fahrradreparaturstation', 'Fahrrad-Reparaturstation', 'Radservicestation', 'Fahrradreparatursäule', 'Tempo 30 Zone Schild']
   },
   tipp: {
     tags: ['tipp','freizeit','ausflug','wandern','radfahren','natur'],

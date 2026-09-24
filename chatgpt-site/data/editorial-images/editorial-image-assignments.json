@@ -1,65 +1,7 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T11:24:44.237Z",
+  "updatedAt": "2026-09-24T11:59:23.463Z",
   "assignments": {
-    "/leben/fahrrad-reparaturstationen/": {
-      "imageId": "web-tipp-14-5cb898c4",
-      "pool": "tipp",
-      "assignedAt": "2026-09-24T11:24:44.237Z",
-      "articleId": "2026-09-23-fahrrad-reparaturstationen",
-      "articleDate": "2026-09-23T11:08:00+02:00",
-      "tagsMatched": [
-        "tipp",
-        "strasse"
-      ]
-    },
-    "/leben/oldieabend-ortsfest-2026/": {
-      "imageId": "web-termine-01-3e5529ed",
-      "pool": "termine",
-      "assignedAt": "2026-09-24T06:45:45.521Z",
-      "articleId": "2026-09-23-oldieabend-ortsfest-2026",
-      "articleDate": "2026-09-23T11:20:00+02:00",
-      "tagsMatched": [
-        "veranstaltung",
-        "event",
-        "fest",
-        "markt"
-      ]
-    },
-    "/blaulicht/einbruch-arnoldsweilerweg/": {
-      "imageId": "web-polizei-01-97532690",
-      "pool": "polizei",
-      "assignedAt": "2026-09-24T06:45:45.515Z",
-      "articleId": "2026-09-11-einbruch-arnoldsweilerweg",
-      "articleDate": "2026-09-11T08:45:00+02:00",
-      "tagsMatched": [
-        "polizei"
-      ]
-    },
-    "/sport/sc-merzenich-oberzier-3-2/": {
-      "imageId": "web-sport-04-d72d5754",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.517Z",
-      "articleId": "2026-09-14-sc-merzenich-oberzier-3-2",
-      "articleDate": "2026-09-14T09:15:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
-    "/sport/sc-merzenich-juelich-2-1/": {
-      "imageId": "web-sport-07-3b5e30ce",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T06:45:45.520Z",
-      "articleId": "2026-09-23-sc-merzenich-juelich-2-1",
-      "articleDate": "2026-09-23T11:04:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
       "pool": "feuerwehr",
@@ -70,18 +12,6 @@
         "feuerwehr",
         "einsatz",
         "gerätehaus"
-      ]
-    },
-    "/vereine/fanclub-saisonauftakt/": {
-      "imageId": "web-vereine-06-fdd8619f",
-      "pool": "vereine",
-      "assignedAt": "2026-09-24T09:10:48.006Z",
-      "articleId": "2026-08-31-fanclub-saisonauftakt",
-      "articleDate": "2026-08-31T12:00:00+02:00",
-      "tagsMatched": [
-        "vereine",
-        "verein",
-        "düren"
       ]
     },
     "/sport/sc-merzenich-5-2-auftakt-rang-zwei/": {
@@ -102,30 +32,6 @@
       "assignedAt": "2026-09-24T09:10:48.009Z",
       "articleId": "2026-09-04-sc-golzheim-nachbarschaftsduell",
       "articleDate": "2026-09-04T09:10:00+02:00",
-      "tagsMatched": [
-        "fussball",
-        "spiel",
-        "platz"
-      ]
-    },
-    "/sport/sc-merzenich-reserven-kreisliga-c/": {
-      "imageId": "web-sport-04-d72d5754",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T09:10:48.011Z",
-      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
-      "articleDate": "2026-09-04T09:20:00+02:00",
-      "tagsMatched": [
-        "sport",
-        "fussball",
-        "platz"
-      ]
-    },
-    "/sport/sc-merzenich-tabellenfuehrer/": {
-      "imageId": "web-sport-07-3b5e30ce",
-      "pool": "sport",
-      "assignedAt": "2026-09-24T09:10:48.013Z",
-      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
-      "articleDate": "2026-09-04T09:30:00+02:00",
       "tagsMatched": [
         "fussball",
         "spiel",
@@ -157,16 +63,50 @@
         "platz"
       ]
     },
-    "/blaulicht/grundschule-geschwindigkeitskontrolle/": {
-      "imageId": "web-polizei-14-a8c27b85",
-      "pool": "polizei",
-      "assignedAt": "2026-09-24T09:10:48.016Z",
-      "articleId": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-      "articleDate": "2026-09-23T11:12:00+02:00",
-      "tagsMatched": [
-        "polizei",
-        "kontrolle"
-      ]
+    "/sport/sc-merzenich-reserven-kreisliga-c/": {
+      "imageId": "web-sport-02-11b84171",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T11:57:11.113Z",
+      "articleId": "2026-09-04-sc-merzenich-reserven-kreisliga-c",
+      "articleDate": "2026-09-04T09:20:00+02:00"
+    },
+    "/sport/sc-merzenich-tabellenfuehrer/": {
+      "imageId": "web-sport-09-edd5b8c9",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T11:57:11.113Z",
+      "articleId": "2026-09-04-sc-merzenich-tabellenfuehrer",
+      "articleDate": "2026-09-04T09:30:00+02:00"
+    },
+    "/sport/sc-merzenich-oberzier-3-2/": {
+      "imageId": "web-sport-11-b83e938f",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T11:57:11.113Z",
+      "articleId": "2026-09-14-sc-merzenich-oberzier-3-2",
+      "articleDate": "2026-09-14T09:15:00+02:00"
+    },
+    "/sport/sc-merzenich-juelich-2-1/": {
+      "imageId": "web-sport-12-b44d1743",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "fussball",
+      "assignedAt": "2026-09-24T11:57:11.113Z",
+      "articleId": "2026-09-23-sc-merzenich-juelich-2-1",
+      "articleDate": "2026-09-23T11:04:00+02:00"
+    },
+    "/leben/oldieabend-ortsfest-2026/": {
+      "imageId": "web-termine-03-00d15809",
+      "pool": "termine",
+      "motiv": "kirmes",
+      "regel": "fest",
+      "assignedAt": "2026-09-24T11:57:11.113Z",
+      "articleId": "2026-09-23-oldieabend-ortsfest-2026",
+      "articleDate": "2026-09-23T11:20:00+02:00"
     }
   }
 }

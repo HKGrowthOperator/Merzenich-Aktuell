@@ -244,17 +244,9 @@ index.bestand = {
   };
 
   // Fotos aus den Commons-Pools (assets/editorial-pools) sind Symbolbilder.
-  // Aufmacher nach KBS-Entscheid 24.09.: eigenes Foto > Ortsansicht > lokales
-  // Poolfoto. Lokal heisst: das Manifest verortet das Foto in der Gemeinde
-  // Merzenich oder im Kreis Dueren, und es hat die Sichtpruefung bestanden.
-  // Nebenmeldungen und Ressortflaechen duerfen jedes Poolfoto tragen.
+  // Aufmacher: eigenes Foto vor Poolfoto. Poolfotos tragen seit den
+  // Motivregeln (24.09.) nur Meldungen, deren Aussage sie zeigen.
   const POOLFOTO = /\/assets\/editorial-pools\//;
-  const poolManifest = join(site, 'data', 'editorial-images', 'editorial-photo-pools.json');
-  const POOL_EINTRAG = new Map(existsSync(poolManifest) ? (JSON.parse(readFileSync(poolManifest, 'utf8')).images || []).map((x) => [x.src, x]) : []);
-  const lokalesPoolfoto = (a) => {
-    const m = a && a.bild && POOL_EINTRAG.get(a.bild.src);
-    return !!m && m.geprueft === true && ['Merzenich', 'Kreis Düren'].includes(m.locality);
-  };
 
   const echtesBild = (a) => {
     const b = a && a.bild;
@@ -264,7 +256,10 @@ index.bestand = {
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
   const eigenesFoto = (a) => echtesBild(a) && !POOLFOTO.test(a.bild.src);
-  const aufmacherBild = (a) => eigenesFoto(a) || (echtesBild(a) && lokalesPoolfoto(a));
+  // Seit den Motivregeln (24.09.) traegt jede Meldung nur noch ein Poolfoto,
+  // das ihre Aussage zeigt. Damit darf auch der Aufmacher es tragen; eine
+  // Ortsansicht (Fachwerkhaus zum Ortsfest) sagt dagegen nichts zur Meldung.
+  const aufmacherBild = (a) => eigenesFoto(a) || echtesBild(a);
 
   // Jede Bildflaeche schneidet auf Querformat zu: die grosse Karte auf 16:9,
   // die mittlere auf 3:2. Zwei Motivsorten ueberleben das nicht.
@@ -294,13 +289,6 @@ index.bestand = {
   // Aufmacher: redaktionell gesetzt schlaegt automatisch - aber nur mit echtem
   // Bild. Frueher wurde ein Logo-Aufmacher still zum Textblock; genau das hat
   // die Mitte der Startseite leer aussehen lassen.
-  const ORTSANSICHT = {
-    merzenich: { alt: 'Historisches Fachwerkhaus im Ortskern', credit: 'Karl-Heinz Meurer / Wikimedia Commons' },
-    golzheim: { alt: 'Blick über den Wenauer Hof auf St. Gregorius', credit: 'Karl-Heinz Meurer / Wikimedia Commons' },
-    girbelsrath: { alt: 'Denkmalgeschütztes Fachwerkhaus', credit: 'Käthe und Bernd Limburg / Wikimedia Commons' },
-    morschenich: { alt: 'Archivaufnahme vom Aufbau des neuen Ortes', credit: 'Papa1234 / Wikimedia Commons' },
-    buergewald: { alt: 'Luftbild des früheren Morschenich-Alt', credit: 'Antisyntagmatarchos / Wikimedia Commons' },
-  };
   function aufmacherWaehlen() {
     const gesetzt = ed.hero && ed.hero.url ? nachUrl.get(ed.hero.url) : null;
     if (ed.hero && ed.hero.url) {
@@ -331,12 +319,9 @@ index.bestand = {
       .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
     const frischMitFoto = frisch.find((a) => eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
     if (frischMitFoto) return frischMitFoto;
-    if (frisch.length) {
-      const a = frisch[0]; const o = ORTSANSICHT[a.ortsteil] || ORTSANSICHT.merzenich;
-      const slug = ORTSANSICHT[a.ortsteil] ? a.ortsteil : 'merzenich';
-      console.log(`Startseite: Aufmacher ${a.url} ohne eigenes grosses Foto, traegt die Ortsansicht ${ORTSTEILE[slug]}.`);
-      return { ...a, bild: { src: `/assets/places/${slug}-1440.webp`, srcset: `/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w`, width: 1440, height: 960, alt: `Ortsansicht ${ORTSTEILE[slug]}: ${o.alt}`, badge: `Ortsansicht · Foto: ${o.credit}` } };
-    }
+    const frischMitMotiv = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l'));
+    if (frischMitMotiv) return frischMitMotiv;
     return redaktionell.find((a) => a.ressort !== 'sport' && eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l'))
@@ -391,8 +376,10 @@ index.bestand = {
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
         + `</div></article>`;
     }
-    return `<article class="front-zeile front-zeile--bild" data-story="${esc(a.id)}">`
-      + bildFlaeche(a, '(max-width: 640px) 120px, 220px', false)
+    // Meldungen ohne passendes Bild (Motivregeln) stehen als reine Textzeile.
+    const mitBild = !!(a.bild && a.bild.src);
+    return `<article class="front-zeile${mitBild ? ' front-zeile--bild' : ''}" data-story="${esc(a.id)}">`
+      + (mitBild ? bildFlaeche(a, '(max-width: 640px) 120px, 220px', false) : '')
       + `<div class="karte-text">${markeHtml(a)}`
       + kopf(a)
       + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
@@ -422,6 +409,12 @@ index.bestand = {
       if (a.ressort === 'sport' || a.ressort === 'tipp') {
         console.error(`Startseite: Nebenmeldung ${a.url} gehoert zu ${a.ressort} und darf nicht auf die Startseite.`);
         process.exitCode = 2;
+        return false;
+      }
+      if (!a.bild || !a.bild.src) {
+        // Kein passendes Motiv (Motivregeln in lib-symbolbilder.mjs): die Meldung
+        // steht in ihrer Ressortflaeche als Textzeile, nicht in der Buehne.
+        console.log(`Startseite: Nebenmeldung ${a.url} hat kein passendes Bild und bleibt aus der Buehne.`);
         return false;
       }
       if (!redaktionellBebildert(a)) {

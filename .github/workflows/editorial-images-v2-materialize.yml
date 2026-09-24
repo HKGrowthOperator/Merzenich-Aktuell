@@ -8,6 +8,7 @@ on:
       - 'deploy/symbolbilder.mjs'
       - 'deploy/import-editorial-photos.mjs'
       - 'deploy/editorial-photo-review.json'
+      - 'deploy/bildmotive.json'
       - 'deploy/pool-varianten.py'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/bild-fallbacks.js'

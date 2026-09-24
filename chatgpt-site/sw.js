@@ -1,5 +1,5 @@
 /* Merzenich Aktuell – Service Worker: Offline-Fallback und Cache für Assets. Netzwerk zuerst für HTML. */
-const VERSION = 'a-da2acd25195b';
+const VERSION = 'a-b7e50016c578';
 const STATIC = 'ma-static-' + VERSION;
 const PAGES = 'ma-pages-' + VERSION;
 const PRECACHE = [
@@ -67,7 +67,10 @@ self.addEventListener('fetch', e => {
 
   if (/\.(css|js)$/.test(url.pathname)) {
     e.respondWith(
-      caches.match(req, { ignoreSearch: true }).then(async cached => {
+      // Exakt mit Query: jedes Asset traegt ?v=<Inhalts-Hash>. Mit ignoreSearch
+      // lieferte der alte Worker nach einem Deploy altes CSS zu neuem HTML
+      // (gemeldet 24.09.: Ortsmarke ohne Abstand).
+      caches.match(req).then(async cached => {
         if (cached) return cached;
         const fresh = await fetch(req, { cache: 'reload' });
         if (fresh.ok) {

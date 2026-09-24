@@ -20,7 +20,7 @@ import { artikelSammeln, esc, SITE_URL } from './lib-artikel.mjs';
 import {
   RECHTE_GEPRUEFT_AM, KATEGORIEN, ALLE_KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
   bibliothekErzeugen, bibliothekAudit, zuordnungenLesen, zuordnungenSchreiben,
-  vergibSymbolbilder, selbsttest, kategorieFuer,
+  vergibSymbolbilder, selbsttest, kategorieFuer, motivregelFuer, motivFuer,
 } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -177,6 +177,22 @@ function ersetzeArtikelbild(a, m) {
   writeIfChanged(pfad, neu);
 }
 
+// Meldung ohne passendes Motiv (Motivregeln): das Symbolbild faellt ersatzlos
+// weg, Teilen zeigt das Standardbild. Echte Fotos fasst das nicht an.
+function entferneSymbolbild(a) {
+  const pfad = artikelPfad(a); if (!existsSync(pfad)) { fehler.push(`${a.url}: Artikelseite fehlt`); return; }
+  const html = readFileSync(pfad, 'utf8');
+  const standard = `${SITE_URL}/assets/img/og-default.jpg`;
+  const POOLBILD = /\/assets\/(?:editorial-pools|symbolbilder)\//;
+  let neu = html.replace(/<figure class="art-figure art-figure--symbol"[^>]*>[\s\S]*?<\/figure>/, '');
+  neu = neu.replace(/<meta property="og:image" content="([^"]*)">/, (m, u) => (POOLBILD.test(u) ? `<meta property="og:image" content="${standard}">` : m));
+  neu = neu.replace(/<meta property="og:image:alt" content="[^"]*">/, (m) => (neu.includes(`content="${standard}"`) ? '<meta property="og:image:alt" content="Merzenich Aktuell">' : m));
+  neu = neu.replace(/<meta name="twitter:image" content="([^"]*)">/, (m, u) => (POOLBILD.test(u) ? `<meta name="twitter:image" content="${standard}">` : m));
+  neu = neu.replace(/("@type":"(?:NewsArticle|Article)"[\s\S]*?"image":)"([^"]*)"/, (m, v, u) => (POOLBILD.test(u) ? `${v}"${standard}"` : m));
+  neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*Bild:\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i, ' ');
+  writeIfChanged(pfad, neu);
+}
+
 function aktualisiereEditorialCurrent(artikel, zuordnung) {
   const pfad = join(site, 'api', 'editorial-current.json'); if (!existsSync(pfad)) return;
   const roh = readFileSync(pfad, 'utf8'); let d;
@@ -227,13 +243,14 @@ function contentAudit() {
   const artikel = artikelSammeln(site); const count = { checked: artikel.length, original:0, official:0, archive:0, symbol:0, none:0, missingCredits:0, logos:0 };
   for (const a of artikel) {
     const t = klassifiziere(a.bild); count[t]++;
-    if (!a.bild?.src) fehler.push(`${a.url}: normaler Beitrag ist bildlos`);
+    if (!a.bild?.src && !BILDLOS.has(a.url)) fehler.push(`${a.url}: normaler Beitrag ist bildlos`);
     if (a.bild?.src && !a.bild?.credit) { count.missingCredits++; fehler.push(`${a.url}: Bildnachweis/Credit fehlt`); }
     if (istAllgemeinesVereinslogo(a)) { count.logos++; fehler.push(`${a.url}: Vereinslogo/Wappen wird als allgemeines Newsfoto verwendet`); }
     if (a.bild?.symbol) {
-      const pool = kategorieFuer(a);
-      const ok = String(a.bild.src).includes(`/assets/symbolbilder/${pool}/`) || String(a.bild.src).includes(`/assets/editorial-pools/${pool}/`);
-      if (!ok) fehler.push(`${a.url}: Symbolbild stammt nicht aus erwartetem Pool ${pool}`);
+      // Motivregel: das Symbolbild muss genau das Motiv zeigen, das die Aussage verlangt.
+      const regel = motivregelFuer(a); const eintrag = BIBLIOTHEK_NACH_SRC.get(a.bild.src); const motiv = eintrag && motivFuer(eintrag);
+      if (!regel) fehler.push(`${a.url}: Symbolbild ohne Motivregel (${a.bild.src})`);
+      else if (!regel.motive.includes(motiv)) fehler.push(`${a.url}: Symbolbild zeigt ${motiv || 'kein gesichtetes Motiv'}, Regel ${regel.id} verlangt ${regel.motive.join('/')}`);
     }
   }
   return count;
@@ -271,10 +288,12 @@ if (vergabe.dirty) {
 }
 for (const a of artikelVorher) {
   if (!brauchtV2Symbol(a)) continue;
-  const m = vergabe.zuordnung.get(a.url); if (!m) { fehler.push(`${a.url}: keine gültige Symbolbild-Zuordnung`); continue; }
-  ersetzeArtikelbild(a, m);
+  const m = vergabe.zuordnung.get(a.url);
+  if (m) ersetzeArtikelbild(a, m); else entferneSymbolbild(a);
 }
 aktualisiereEditorialCurrent(artikelFuerVergabe, vergabe.zuordnung);
+const BILDLOS = new Set(vergabe.bildlos.map((b) => b.url));
+const BIBLIOTHEK_NACH_SRC = new Map(Object.values(audit.pools).flat().map((m) => [m.src, m]));
 
 // 4) Nach dem Schreiben tatsächlichen ausgelieferten Stand prüfen.
 const content = contentAudit();
@@ -297,6 +316,7 @@ console.log(`Official:              ${content.official}`);
 console.log(`Archive:               ${content.archive}`);
 console.log(`Symbol:                ${content.symbol}`);
 console.log(`Bildlos:               ${content.none}`);
+for (const b of vergabe.bildlos) console.log(`  ohne Bild: ${b.url} (${b.regel ? `Regel ${b.regel}, kein gesichtetes Foto mit Motiv ${b.motive.join('/')}` : 'keine Motivregel'})`);
 console.log(`Fehlende Credits:      ${content.missingCredits}`);
 console.log(`Falsche Vereinslogos:  ${content.logos}`);
 console.log(`Rechte geprüft am:     ${RECHTE_GEPRUEFT_AM}`);

@@ -135,14 +135,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/termine/termine-01-3e5529edd1.jpg",
-    "srcset": "/assets/editorial-pools/termine/termine-01-3e5529edd1-480.webp 480w, /assets/editorial-pools/termine/termine-01-3e5529edd1-800.webp 800w, /assets/editorial-pools/termine/termine-01-3e5529edd1-1200.webp 1200w, /assets/editorial-pools/termine/termine-01-3e5529edd1.jpg 1600w",
+    "src": "/assets/editorial-pools/termine/termine-03-00d15809a6.jpg",
+    "srcset": "/assets/editorial-pools/termine/termine-03-00d15809a6-480.webp 480w, /assets/editorial-pools/termine/termine-03-00d15809a6-800.webp 800w, /assets/editorial-pools/termine/termine-03-00d15809a6-1200.webp 1200w, /assets/editorial-pools/termine/termine-03-00d15809a6.jpg 1600w",
     "alt": "Kirmes und Markt",
     "width": 1600,
-    "height": 1067,
+    "height": 1096,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "credit": "Jan-Herm Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true
    },
    "undatiert": false,
@@ -224,17 +224,7 @@
      "label": "Geschwindigkeit"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/polizei/polizei-14-a8c27b853a.jpg",
-    "srcset": "/assets/editorial-pools/polizei/polizei-14-a8c27b853a-480.webp 480w, /assets/editorial-pools/polizei/polizei-14-a8c27b853a-800.webp 800w, /assets/editorial-pools/polizei/polizei-14-a8c27b853a-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-14-a8c27b853a.jpg 1600w",
-    "alt": "Polizeiwache in Nordrhein-Westfalen",
-    "width": 1600,
-    "height": 1097,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -273,17 +263,7 @@
      "label": "Morschenich"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/tipp/tipp-14-5cb898c448.jpg",
-    "srcset": "/assets/editorial-pools/tipp/tipp-14-5cb898c448-480.webp 480w, /assets/editorial-pools/tipp/tipp-14-5cb898c448-800.webp 800w, /assets/editorial-pools/tipp/tipp-14-5cb898c448-1200.webp 1200w, /assets/editorial-pools/tipp/tipp-14-5cb898c448.jpg 1600w",
-    "alt": "Rad- und Wanderweg",
-    "width": 1600,
-    "height": 809,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -319,14 +299,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-07-3b5e30ce33.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-07-3b5e30ce33-480.webp 480w, /assets/editorial-pools/sport/sport-07-3b5e30ce33-800.webp 800w, /assets/editorial-pools/sport/sport-07-3b5e30ce33.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-12-b44d17430f.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-12-b44d17430f-480.webp 480w, /assets/editorial-pools/sport/sport-12-b44d17430f-800.webp 800w, /assets/editorial-pools/sport/sport-12-b44d17430f-1200.webp 1200w, /assets/editorial-pools/sport/sport-12-b44d17430f.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1066,
+    "height": 900,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Mike Pennington / Wikimedia Commons · CC BY-SA 2.0",
+    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true
    },
    "undatiert": false,
@@ -450,14 +430,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-04-d72d57542f.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-04-d72d57542f-480.webp 480w, /assets/editorial-pools/sport/sport-04-d72d57542f-800.webp 800w, /assets/editorial-pools/sport/sport-04-d72d57542f-1200.webp 1200w, /assets/editorial-pools/sport/sport-04-d72d57542f.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-11-b83e938f96.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-11-b83e938f96-480.webp 480w, /assets/editorial-pools/sport/sport-11-b83e938f96-800.webp 800w, /assets/editorial-pools/sport/sport-11-b83e938f96-1200.webp 1200w, /assets/editorial-pools/sport/sport-11-b83e938f96.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1071,
+    "height": 1067,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Arne List from Kiel, Germany / Wikimedia Commons · CC BY-SA 2.0",
+    "credit": "Håkan Dahlström from Malmö, Sweden / Wikimedia Commons · CC BY 2.0",
     "symbol": true
    },
    "undatiert": false,
@@ -486,17 +466,7 @@
      "label": "Einbruch"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/polizei/polizei-01-975326909c.jpg",
-    "srcset": "/assets/editorial-pools/polizei/polizei-01-975326909c-480.webp 480w, /assets/editorial-pools/polizei/polizei-01-975326909c-800.webp 800w, /assets/editorial-pools/polizei/polizei-01-975326909c-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-01-975326909c.jpg 1600w",
-    "alt": "Polizeiwache in Nordrhein-Westfalen",
-    "width": 1600,
-    "height": 977,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Photographer: Arcturus / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -528,14 +498,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-07-3b5e30ce33.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-07-3b5e30ce33-480.webp 480w, /assets/editorial-pools/sport/sport-07-3b5e30ce33-800.webp 800w, /assets/editorial-pools/sport/sport-07-3b5e30ce33.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-09-edd5b8c9c3-480.webp 480w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-800.webp 800w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3-1200.webp 1200w, /assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1066,
+    "height": 900,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Mike Pennington / Wikimedia Commons · CC BY-SA 2.0",
+    "credit": "Bálint Sallói / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true
    },
    "undatiert": false,
@@ -569,14 +539,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/sport/sport-04-d72d57542f.jpg",
-    "srcset": "/assets/editorial-pools/sport/sport-04-d72d57542f-480.webp 480w, /assets/editorial-pools/sport/sport-04-d72d57542f-800.webp 800w, /assets/editorial-pools/sport/sport-04-d72d57542f-1200.webp 1200w, /assets/editorial-pools/sport/sport-04-d72d57542f.jpg 1600w",
+    "src": "/assets/editorial-pools/sport/sport-02-11b84171a8.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-02-11b84171a8-480.webp 480w, /assets/editorial-pools/sport/sport-02-11b84171a8-800.webp 800w, /assets/editorial-pools/sport/sport-02-11b84171a8-1200.webp 1200w, /assets/editorial-pools/sport/sport-02-11b84171a8.jpg 1600w",
     "alt": "Fußballplatz",
     "width": 1600,
-    "height": 1071,
+    "height": 1200,
     "fit": "",
     "badge": "Symbolbild",
-    "credit": "Arne List from Kiel, Germany / Wikimedia Commons · CC BY-SA 2.0",
+    "credit": "WaldiWuff / Wikimedia Commons · CC0",
     "symbol": true
    },
    "undatiert": false,
@@ -777,17 +747,7 @@
      "label": "Soccerhalle"
     }
    ],
-   "bild": {
-    "src": "/assets/editorial-pools/vereine/vereine-06-fdd8619fd5.jpg",
-    "srcset": "/assets/editorial-pools/vereine/vereine-06-fdd8619fd5-480.webp 480w, /assets/editorial-pools/vereine/vereine-06-fdd8619fd5-800.webp 800w, /assets/editorial-pools/vereine/vereine-06-fdd8619fd5-1200.webp 1200w, /assets/editorial-pools/vereine/vereine-06-fdd8619fd5.jpg 1600w",
-    "alt": "Treffpunkt des Vereinslebens im Dorf",
-    "width": 1600,
-    "height": 1075,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "KlausMiniwolf / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
-   },
+   "bild": null,
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2210,29 +2170,29 @@
  },
  "nebenmeldungen": [
   {
-   "id": "2026-09-11-einbruch-arnoldsweilerweg",
-   "url": "/blaulicht/einbruch-arnoldsweilerweg/",
-   "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
-  },
-  {
    "id": "2026-09-23-feuerwehr-girbelsrath-10-jahre",
    "url": "/vereine/feuerwehr-girbelsrath-10-jahre/",
    "titel": "Löschgruppe Girbelsrath feiert zehnjähriges Bestehen"
   },
   {
-   "id": "2026-09-23-grundschule-geschwindigkeitskontrolle",
-   "url": "/blaulicht/grundschule-geschwindigkeitskontrolle/",
-   "titel": "37 Zitronen bei Geschwindigkeitskontrolle in Merzenich verteilt"
-  },
-  {
-   "id": "2026-09-23-fahrrad-reparaturstationen",
-   "url": "/leben/fahrrad-reparaturstationen/",
-   "titel": "Vier neue Fahrrad-Reparaturstationen in der Gemeinde Merzenich"
-  },
-  {
    "id": "2026-09-01-trauung-alte-kirche",
    "url": "/leben/trauung-alte-kirche/",
    "titel": "Ja-Wort in der Alten Kirche: Gemeinde gratuliert Merzenicher Paar"
+  },
+  {
+   "id": "2026-09-01-leader-reminder",
+   "url": "/wirtschaft/leader-reminder/",
+   "titel": "LEADER-Infoabend am 2. September: Fördermöglichkeiten für die Region"
+  },
+  {
+   "id": "2026-08-17-feuerwehr-einsatzbilanz-sommer",
+   "url": "/blaulicht/feuerwehr-einsatzbilanz-sommer/",
+   "titel": "119 Einsätze bis Mitte August"
+  },
+  {
+   "id": "2026-08-16-einsatz-119-rauch-buergewald",
+   "url": "/blaulicht/einsatz-119-rauch-buergewald/",
+   "titel": "Rauch im Bürgewald: Feuerwehr rückt aus"
   }
  ]
 }
