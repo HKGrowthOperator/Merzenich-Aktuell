@@ -244,6 +244,19 @@ index.bestand = {
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
 
+  // Fotos aus den Commons-Pools (assets/editorial-pools) sind Symbolbilder.
+  // Aufmacher nach KBS-Entscheid 24.09.: eigenes Foto > Ortsansicht > lokales
+  // Poolfoto. Lokal heisst: das Manifest verortet das Foto in der Gemeinde
+  // Merzenich oder im Kreis Dueren, und es hat die Sichtpruefung bestanden.
+  // Nebenmeldungen und Ressortflaechen duerfen jedes Poolfoto tragen.
+  const POOLFOTO = /\/assets\/editorial-pools\//;
+  const poolManifest = join(site, 'data', 'editorial-images', 'editorial-photo-pools.json');
+  const POOL_EINTRAG = new Map(existsSync(poolManifest) ? (JSON.parse(readFileSync(poolManifest, 'utf8')).images || []).map((x) => [x.src, x]) : []);
+  const lokalesPoolfoto = (a) => {
+    const m = a && a.bild && POOL_EINTRAG.get(a.bild.src);
+    return !!m && m.geprueft === true && ['Merzenich', 'Kreis Düren'].includes(m.locality);
+  };
+
   const echtesBild = (a) => {
     const b = a && a.bild;
     if (!b || !b.src) return false;
@@ -251,6 +264,8 @@ index.bestand = {
     if (VERLAUFSPOOL.test(b.src)) return false;
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
+  const eigenesFoto = (a) => echtesBild(a) && !POOLFOTO.test(a.bild.src);
+  const aufmacherBild = (a) => eigenesFoto(a) || (echtesBild(a) && lokalesPoolfoto(a));
 
   // Jede Bildflaeche schneidet auf Querformat zu: die grosse Karte auf 16:9,
   // die mittlere auf 3:2. Zwei Motivsorten ueberleben das nicht.
@@ -315,7 +330,7 @@ index.bestand = {
     const frisch = redaktionell
       .filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
       .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
-    const frischMitFoto = frisch.find((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
+    const frischMitFoto = frisch.find((a) => eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
     if (frischMitFoto) return frischMitFoto;
     if (frisch.length) {
       const a = frisch[0]; const o = ORTSANSICHT[a.ortsteil] || ORTSANSICHT.merzenich;
@@ -323,9 +338,10 @@ index.bestand = {
       console.log(`Startseite: Aufmacher ${a.url} ohne eigenes grosses Foto, traegt die Ortsansicht ${ORTSTEILE[slug]}.`);
       return { ...a, bild: { src: `/assets/places/${slug}-1440.webp`, srcset: `/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w`, width: 1440, height: 960, alt: `Ortsansicht ${ORTSTEILE[slug]}: ${o.alt}`, badge: `Ortsansicht · Foto: ${o.credit}` } };
     }
-    return redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a) && passtInPlatz(a, 'l'))
-      || redaktionell.find((a) => a.ressort !== 'sport' && echtesBild(a))
+    return redaktionell.find((a) => a.ressort !== 'sport' && eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l'))
+      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a))
       || null;
   }
 

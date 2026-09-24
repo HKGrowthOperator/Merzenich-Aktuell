@@ -1,0 +1,1043 @@
+{
+  "geprueftAm": "2026-09-24",
+  "hinweis": "Sichtprüfung aller Poolfotos. Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft.",
+  "ausgeschlossen": [
+    {
+      "pool": "aktuell",
+      "nr": 2,
+      "titel": "File:Merzenich zülpich.JPG",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "aktuell",
+      "nr": 15,
+      "titel": "File:Merzenich (Zülpich) 001x.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "aktuell",
+      "nr": 19,
+      "titel": "File:Wohn- und Geschäftshaus Eigelstein 89-91, Köln-4719.jpg",
+      "grund": "Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“"
+    },
+    {
+      "pool": "aktuell",
+      "nr": 20,
+      "titel": "File:Köln (Germany) (23573767200).jpg",
+      "grund": "Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 1,
+      "titel": "File:Bundespolizei (Deutschland) – Einsatzfahrzeug Volkswagen T5, Kennz. BG34-71 (Aufnahmejahr 2006).jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 2,
+      "titel": "File:Polizeistern Baden-Württemberg-Fahrzeug.JPG",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 3,
+      "titel": "File:Einsatzfahrzeug Polizei Baden-Württemberg.JPG",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 4,
+      "titel": "File:Einsatzfahrzeug Polizei auf dem Neckar.JPG",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 5,
+      "titel": "File:Einsatzfahrzeug Berufsfeuerwehr Heidelberg Übungseinsatz.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 6,
+      "titel": "File:Ziegler Feuerwehrfahrzeug HD.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 7,
+      "titel": "File:Übungseinsatz Heidelberger Berufsfeuerwehr.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 8,
+      "titel": "File:Feuerwehr Plankstadt Einsatzfahrzeug MAN Ziegler.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 9,
+      "titel": "File:MAN Ziegler 49 Feuerwehr Plankstadt.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 10,
+      "titel": "File:Plankstadt Feuerwehr Ziegler 49.JPG",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 11,
+      "titel": "File:Juni 2012 Einsatzfahrzeug THW Fulda.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 12,
+      "titel": "File:Karlsruhe Einsatzfahrzeug Polizei Juli 2012.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 13,
+      "titel": "File:Hamburg, Ausnahmegenehmigung NDR NIK 8024.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 14,
+      "titel": "File:Bergwacht Bayern 6987.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 16,
+      "titel": "File:Feuerwehr Illingen (2023-08-15) 01.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 17,
+      "titel": "File:Deutsches Rotes Kreuz Landesverband Saarland (2023-08-15) 01.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 18,
+      "titel": "File:Unimog Sanitaeter.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 19,
+      "titel": "File:Zepper-BK 117-C2-(EC145)-SchweizerischeRettungsflugwacht.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "blaulicht",
+      "nr": 20,
+      "titel": "File:KTW 4 breit.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "brand",
+      "nr": 1,
+      "titel": "File:Fire in a tire depot - 2012 April 27th - Mörfelden-Walldorf -7.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "brand",
+      "nr": 2,
+      "titel": "File:Schöne Eiche bei Endlichhofen.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "brand",
+      "nr": 4,
+      "titel": "File:Great Fire London.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "brand",
+      "nr": 5,
+      "titel": "File:Fighting fire and smoke.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv"
+    },
+    {
+      "pool": "brand",
+      "nr": 6,
+      "titel": "File:German military fire engine at Camp Marmal.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "brand",
+      "nr": 7,
+      "titel": "File:Smoke On The Water, Fire In The Sky - panoramio.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "brand",
+      "nr": 8,
+      "titel": "File:Levada do Norte mirroring forest fire smoke (38095309461).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "brand",
+      "nr": 9,
+      "titel": "File:Pagami smoke plumes.png",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 10,
+      "titel": "File:Thomas Fire smoke plume 16 Dec Aqua MODIS nat (25236397938).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 11,
+      "titel": "File:Thomas Fire smoke plume 16 Dec Aqua MODIS nat NIR SWIR (39102612851).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 12,
+      "titel": "File:Thomas Fire smoke plume 15 Dec S3 OLCI 764 (38367402104).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 13,
+      "titel": "File:Thomas Fire smoke plume 14 Dec S3 OLCI 764 (24202237697).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 14,
+      "titel": "File:Thomas Fire smoke plume 12 Dec Suomi NPP VIIRS (39019370261).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 15,
+      "titel": "File:Thomas Fire smoke plume 11 Dec S3 OLCI 764 (38110587015).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 16,
+      "titel": "File:Thomas Fire smoke plume 10 Dec S3 OLCI 764 (38946055042).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 17,
+      "titel": "File:Smoke of a possible oil fire (46340055041).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Camp Fire smoke plume Aqua Nov 12 nat (45809607862).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 19,
+      "titel": "File:Camp Fire smoke plume Aqua Nov 12 nat IR (45809607382).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "brand",
+      "nr": 20,
+      "titel": "File:McCash Fire, River Complex 2021, Monument Fire, smoke-filled valleys, California, USA - September 4th, 2021 (51427680005).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 6,
+      "titel": "File:Feuerwehr Bünde (5).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 8,
+      "titel": "File:Feuerwehr Bünde (4).jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 10,
+      "titel": "File:Feuerwehr Bünde (6).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 12,
+      "titel": "File:Feuerwehr Bünde (8).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 13,
+      "titel": "File:Feuerwehr Bünde (7).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 15,
+      "titel": "File:12-12-15 Feuerwehr Köttingen.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 16,
+      "titel": "File:Freiwillige Feuerwehr Werl Westoennen 01.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "feuerwehr",
+      "nr": 20,
+      "titel": "File:Dülmen, Hausdülmen, Feuerwehr, Eingang -- 2013 -- 00082.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "leben",
+      "nr": 1,
+      "titel": "File:Köln (Germany) (22860737980).jpg",
+      "grund": "Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“"
+    },
+    {
+      "pool": "leben",
+      "nr": 2,
+      "titel": "File:Köln (Germany) (19732049521).jpg",
+      "grund": "Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“"
+    },
+    {
+      "pool": "leben",
+      "nr": 3,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 02.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 4,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 01.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 5,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 03.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 6,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 04.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 7,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 05.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 8,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 07.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 9,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 08.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 10,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 09.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 11,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 06.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 12,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 10.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 13,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 11.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 14,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 12.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 15,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 13.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 16,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 14.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 17,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 15.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 18,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 17.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 19,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 18.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "leben",
+      "nr": 20,
+      "titel": "File:St. Severinus (Merzenich, Zülpich) 16.jpg",
+      "grund": "Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich"
+    },
+    {
+      "pool": "menschen",
+      "nr": 1,
+      "titel": "File:Upholstering the seats of your own car, Margarita Island, Venezuela.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 2,
+      "titel": "File:Informal settlement where people now have community ablution blocks (8152040443).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 3,
+      "titel": "File:Cologne Germany Cologne-Gay-Pride-2015 Parade-03.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 4,
+      "titel": "File:Beach, New Brighton, New Zealand 06.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "menschen",
+      "nr": 5,
+      "titel": "File:2022-07-03 Basketball, Männer, European Qualifiers, Deutschland - Polen 1DX 1281 by Stepro.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 6,
+      "titel": "File:2022-07-03 Basketball, Männer, European Qualifiers, Deutschland - Polen 1DX 1386 by Stepro.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 7,
+      "titel": "File:Dülmen, Jüdischer Friedhof -- 2023 -- 6451 (bw).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "menschen",
+      "nr": 8,
+      "titel": "File:2022-08-19 European Championships 2022 – Table Tennis by Sandro Halank–007.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 9,
+      "titel": "File:The community of Israeli Jews originally born in Hamburg, Germany holding a meeting in Tel Aviv attended by the German Ambassador to Israel Niels Hansen (FL45851174).jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 10,
+      "titel": "File:After a 36 year break from Germany, new LRC director is back to support Stuttgart community (7131116).jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 11,
+      "titel": "File:LRC Stuttgart employee with important family commitments in U S says she’ll miss the Stuttgart community, people (7088057).jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 12,
+      "titel": "File:Home Secretary Yvette Cooper signs landmark plan with German Federal Minister of the Interior and Community Nancy Faeser to break the business model of people smuggling gangs on 9 December 2024 - 1.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 13,
+      "titel": "File:Home Secretary Yvette Cooper signs landmark plan with German Federal Minister of the Interior and Community Nancy Faeser to break the business model of people smuggling gangs on 9 December 2024 - 2.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 14,
+      "titel": "File:Home Secretary Yvette Cooper signs landmark plan with German Federal Minister of the Interior and Community Nancy Faeser to break the business model of people smuggling gangs on 9 December 2024 - 3.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "menschen",
+      "nr": 15,
+      "titel": "File:Wiesbaden community takes back the night (5809869).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 16,
+      "titel": "File:Wiesbaden community takes back the night (5809872).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 17,
+      "titel": "File:Wiesbaden community takes back the night (5809875).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 18,
+      "titel": "File:Wiesbaden community takes back the night (5809878).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 19,
+      "titel": "File:Wiesbaden community takes back the night (5809880).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "menschen",
+      "nr": 20,
+      "titel": "File:Wiesbaden community takes back the night (5809881).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 2,
+      "titel": "File:North Rhine-Westphalia Police Patch.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 3,
+      "titel": "File:VW Passat Variant B6 Type 3C since 2005 Polizei NRW Germany backright 2008-03-27 A.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 4,
+      "titel": "File:VW Passat Variant B6 Type 3C since 2005 Polizei NRW Germany frontleft 2008-03-27 A.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 5,
+      "titel": "File:20090720 VW Passat Variant FuStW Polizei NRW PB LED.JPG",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 6,
+      "titel": "File:Landesleitstelle Polizei NRW 18 08 11 (1).JPG",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 7,
+      "titel": "File:Landesleitstelle Polizei NRW 18 08 11 (2).JPG",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 8,
+      "titel": "File:Germany - Polizei Nordrhein-Westfalen (4518423229).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 9,
+      "titel": "File:Germany - Polizei Nordrhein Westfalen Marine WSP (woven) (4518428099).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 10,
+      "titel": "File:Germany - Polizei Nordrhein Westfalen (green felt) (5406219030).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 11,
+      "titel": "File:Germany - Polizei Nordrhein Westfalen (woven)(yellow text) (5406221022).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 12,
+      "titel": "File:Germany - Polizei Nordrhein Westfalen (old style) (5406220796).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 13,
+      "titel": "File:Germany - Polizei Nordrhein Westfalen (black felt)(WSP Wasserschutz Polizei Marine) (5406224108).jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 15,
+      "titel": "File:Verkehrsunfall Willich-Neersen 2014-10-06 005.jpg",
+      "grund": "Unfallstelle mit Personen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 16,
+      "titel": "File:Fachhochschule für öffentliche Verwaltung Nordrhein-Westfalen, Köln-8556.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 17,
+      "titel": "File:Germany license plate of the polizei in Nordrhein-Westfalen.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 18,
+      "titel": "File:Fachhochschule für öffentliche Verwaltung Nordrhein-Westfalen, Erna-Scheffler-Straße 4, 51103 Köln-4403.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 19,
+      "titel": "File:Fachhochschule für öffentliche Verwaltung Nordrhein-Westfalen, Erna-Scheffler-Straße 4, 51103 Köln-4404.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 20,
+      "titel": "File:Fachhochschule für öffentliche Verwaltung Nordrhein-Westfalen, Erna-Scheffler-Straße 4, 51103 Köln-4589.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 1,
+      "titel": "File:Nationalspielerinnen-Debutalter.PNG",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "sport",
+      "nr": 2,
+      "titel": "File:Kanone4.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 3,
+      "titel": "File:DFB-Mitglieder.jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "sport",
+      "nr": 5,
+      "titel": "File:National Football Museum Manchester 5697 (14180312576).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 6,
+      "titel": "File:CINvPGH 2018-04-21 - Kevin Kerr (26993231997) (cropped).jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "sport",
+      "nr": 8,
+      "titel": "File:Suburban football field – Preview (Grzegorz Wronkowski via Poly Haven).png",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "sport",
+      "nr": 9,
+      "titel": "File:Suburban football field – Panorama (Grzegorz Wronkowski via Poly Haven).jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "sport",
+      "nr": 10,
+      "titel": "File:Cancha de Balompié del COS Sports Plaza.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 11,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-wegweiser-fingerpost-putokaz-1.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "sport",
+      "nr": 12,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen- wegweiser-fingerpost-putokaz-2.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "sport",
+      "nr": 14,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-gerade-trainerbänke-dugouts-10.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 15,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-gerade-trainerbänke-dugouts-11.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 16,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-gerade-trainerbänke-dugouts-14.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "sport",
+      "nr": 18,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen- vereinsgebäude-klubhaus-kabinen-3.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "sport",
+      "nr": 19,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen- vereinsgebäude-klubhaus-kabinen-1.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "sport",
+      "nr": 20,
+      "titel": "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen- vereinsgebäude-klubhaus-kabinen-4.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "termine",
+      "nr": 4,
+      "titel": "File:Hopsten Kirmes 2014 Pharaos Rache 01.JPG",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "termine",
+      "nr": 11,
+      "titel": "File:D-NW-LIP-Bad Salzuflen-Wüsten - Kirmes 1970-001.jpg",
+      "grund": "Erkennbare Personen als Hauptmotiv"
+    },
+    {
+      "pool": "termine",
+      "nr": 13,
+      "titel": "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2648.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "tipp",
+      "nr": 1,
+      "titel": "File:Dueren Stefan-Schwer-Strasse 4-6 City Archive.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    },
+    {
+      "pool": "tipp",
+      "nr": 3,
+      "titel": "File:Roedinghausen Radnetz.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "tipp",
+      "nr": 7,
+      "titel": "File:Recke Poggenpaettken 04.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "tipp",
+      "nr": 8,
+      "titel": "File:Recke Poggenpaettken 05.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "tipp",
+      "nr": 9,
+      "titel": "File:Recke Poggenpaettken 07.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "tipp",
+      "nr": 16,
+      "titel": "File:Toeddenland Radweg Mettingen Haus Telsemeyer 01.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "tipp",
+      "nr": 17,
+      "titel": "File:Toeddenland Radweg Mettingen Brenninckhof 01.jpg",
+      "grund": "Ortsfremder Name, Schild oder Tafel lesbar"
+    },
+    {
+      "pool": "tipp",
+      "nr": 19,
+      "titel": "File:Wildgänse auf dem Radweg an der Ruhr - panoramio (1).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "tipp",
+      "nr": 20,
+      "titel": "File:00 7344 Köln - Hohenzollernbrücke.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 1,
+      "titel": "File:Düren Denkmal-Nr. 1-120, Meckerstraße 7 b (298).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 2,
+      "titel": "File:Bad Godesberg Bürgerstraße 2 1890.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 3,
+      "titel": "File:2014-03-30 10-43-34 RX100 3287 Zerkall A1x2.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 4,
+      "titel": "File:2018-10-07 17-01-06 kW-S7 Obermaubach A1x2 Hm5HTm10.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 7,
+      "titel": "File:2019-11-01-heimbach-abtei-mariawald-01.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 8,
+      "titel": "File:2019-11-01-heimbach-abtei-mariawald-02.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 9,
+      "titel": "File:2019-11-01-heimbach-abtei-mariawald-03.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 10,
+      "titel": "File:2019-11-01-heimbach-abtei-mariawald-04.jpg",
+      "grund": "Abzeichen, Wappen oder Logo als Motiv"
+    },
+    {
+      "pool": "vereine",
+      "nr": 11,
+      "titel": "File:2019-11-01-heimbach-abtei-mariawald-05.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "vereine",
+      "nr": 12,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 01.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 13,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 03.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 14,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 02.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 15,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 04.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 16,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 05.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 17,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 06.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 18,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 07.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 19,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 08.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "vereine",
+      "nr": 20,
+      "titel": "File:Ibbenbueren Unterer Markt Mittwochsdemonstration KJS Steinfurt Tecklenburg 09.JPG",
+      "grund": "Demonstration mit Parolen und erkennbaren Personen"
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 4,
+      "titel": "File:Hambach surface mine and Hambach Forest.png",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 5,
+      "titel": "File:Tagebau Hambach und Hambacher Forst 2018.jpg",
+      "grund": "Grafik, Karte oder Satellitenbild statt Foto"
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 12,
+      "titel": "File:Preparation area between the open pit mine Hambach and the Hambach forest 02.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 16,
+      "titel": "File:Preparation area between the open pit mine Hambach and the Hambach forest 07.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "wirtschaft",
+      "nr": 19,
+      "titel": "File:Preparation area between the open pit mine Hambach and the Hambach forest 11.jpg",
+      "grund": "Lesbares Kfz-Kennzeichen"
+    }
+  ],
+  "freigegeben": [
+    "File:Merzenich Rathaus.JPG",
+    "File:Merzenich Fachwerkhaus.jpg",
+    "File:Merzenich Alte Pfarrkirche.jpg",
+    "File:Merzenich Rathaus HDR.jpg",
+    "File:Merzenich Walze Löhr HDR.jpg",
+    "File:Merzenich Windmühle Wasserturm HDR.jpg",
+    "File:Merzenich-Girbelsrath Denkmal-Nr. 3, Hauptstraße 58 (1213).jpg",
+    "File:Merzenich Denkmal-Nr. 16, Bergstraße 1 (1232).jpg",
+    "File:Merzenich Denkmal-Nr. 20, Lindenplatz 5 (1238).jpg",
+    "File:Merzenich Denkmal-Nr. 30, Lindenstraße 23 (1250).jpg",
+    "File:Backstein - Hofanlage, Merzenich-Golzheim Denkmal-Nr. 35, Aachener Straße 1 (1259).jpg",
+    "File:Kath. Pfarrkirche St. Laurentius, Merzenich.jpg",
+    "File:DKB Bahnhof Merzenich Strassenseite Bus 2014.jpg",
+    "File:Merzenich, P ^ R, Haltepunkt S12 - panoramio.jpg",
+    "File:S12 Haltepunkt Merzenich, Bahnsteig - panoramio.jpg",
+    "File:S12 Haltepunkt Merzenich, P ^ R und B ^ R, 2012 - panoramio.jpg",
+    "File:Deutsches Rotes Kreuz (Illingen) 2023-07-02 (01).jpg",
+    "File:Drehleiter im Einsatz (36098426426).jpg",
+    "File:Feuerwehr-Gerätehaus Drove, Wehrstraße, Kreuzau-5979.jpg",
+    "File:Übungsobjekt Düren.jpg",
+    "File:Csa notfall.jpg",
+    "File:Institut der Feuerwehr.JPG",
+    "File:Feuerwehr Bünde (1).jpg",
+    "File:Feuerwehr Bünde (3).jpg",
+    "File:Feuerwehr Bünde (2).jpg",
+    "File:Feuerwehr Bünde.jpg",
+    "File:Steinbeck Freiwillige Feuerwehr 1.jpg",
+    "File:Freiwillige Feuerwehr Werl Westoennen 02.jpg",
+    "File:Übungshalle IdF.JPG",
+    "File:Dülmen, Feuerwehr -- 2013 -- 0155.jpg",
+    "File:BK-117 Polizei-NRW D-HNWL.jpg",
+    "File:Saerbeck Rathaus Polizei 01.jpg",
+    "File:Nolsoy football pitch.jpg",
+    "File:Daisies on Baltasound football pitch - geograph.org.uk - 4997333.jpg",
+    "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-gerade-trainerbänke-dugouts-9.jpg",
+    "File:20100819-fußballplatz-soccer-football-ground-nogometno-igralište-trnoc-čakovečka-školska-stadion-nk-podturen-gerade-trainerbänke-dugouts-23.jpg",
+    "File:Dülmen, Viktorkirmes auf dem Overbergplatz -- 2014 -- 3738 (2).jpg",
+    "File:Dülmen, Viktorkirmes auf dem Overbergplatz -- 2014 -- 3738.jpg",
+    "File:Hopsten Kirmes 2014 03.JPG",
+    "File:Hopsten Kirmes 2014 Pferdchenkarussell 02.JPG",
+    "File:Hopsten Kirmes 2014 Pferdchenkarussell 01.JPG",
+    "File:Hopsten Kirmes 2014 Airgate 01.JPG",
+    "File:Hopsten Kirmes 2014 02.JPG",
+    "File:Münster, Send -- 2018 -- 1746.jpg",
+    "File:Münster, Send -- 2018 -- 1756.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2644.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2650.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2651.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2655.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2658.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2663.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2691.jpg",
+    "File:Münster, Domplatz, Wochenmarkt -- 2019 -- 2704.jpg",
+    "File:Ruhrtalradweg01.jpg",
+    "File:Todtenhausen Radweg an der Weser.jpg",
+    "File:Recke Poggenpaettken 01.jpg",
+    "File:Recke Poggenpaettken 03.jpg",
+    "File:Recke Poggenpaettken 08.jpg",
+    "File:Recke Poggenpaettken 09.jpg",
+    "File:Recke Langenacker 05.jpg",
+    "File:Pengel-03.jpg",
+    "File:Bockraden Alte Bockradener Strasse 01.jpg",
+    "File:Bockraden Alte Bockradener Strasse 02.jpg",
+    "File:Wildgänse auf dem Radweg an der Ruhr - panoramio.jpg",
+    "File:Öffentlicher Bücherschrank in Heimbach-Eifel - 152505.jpg",
+    "File:Dampflok Baureihe 64 im Düren.jpg",
+    "File:Surface Mining Hambach 200800806.jpg",
+    "File:Absetzer im Tagebau Hambach.jpg",
+    "File:TagebauHambach.jpg",
+    "File:Open pit mine Hambach from south 03.jpg",
+    "File:Open pit mine Hambach from south 10.jpg",
+    "File:Open pit mine Hambach from south 13.jpg",
+    "File:Open pit mine Hambach from south 14.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 01.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 03.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 05.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 04.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 06.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 08.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 09.jpg",
+    "File:Preparation area between the open pit mine Hambach and the Hambach forest 12.jpg"
+  ]
+}

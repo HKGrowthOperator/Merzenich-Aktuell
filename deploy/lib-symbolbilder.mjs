@@ -719,7 +719,12 @@ function treffer(m, text) { return (m.tags || []).reduce((n, t) => n + (text.inc
 export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }) {
   const alt = bestand?.assignments || {}; const assignments = { ...alt };
   const gueltig = new Map(); for (const [pool, motive] of Object.entries(pools)) for (const m of motive) gueltig.set(m.id, m);
-  const poolHatFoto = new Set(Object.entries(pools).filter(([, motive]) => motive.some((m) => m.photo === true || (m.format && m.format !== 'svg'))).map(([pool]) => pool));
+  // Fotos verdrängen die Symbolgrafiken nur, wenn der Pool genug Fotos für eine
+  // Rotation hat. Sonst tragen wenige Fotos jede Meldung des Ressorts.
+  const istFoto = (m) => m.photo === true || (m.format && m.format !== 'svg');
+  const poolHatFoto = new Set(Object.entries(pools).filter(([, motive]) => motive.filter(istFoto).length >= MINDEST_POOL / 2).map(([pool]) => pool));
+  // Gesichtete Fotos zuerst, neu geladene erst nach der nächsten Sichtprüfung voll.
+  const fotoBonus = (m) => (istFoto(m) && poolHatFoto.has(m.pool) ? (m.geprueft === false ? 500 : 1000) : 0);
   const usage = new Map();
   for (const [k, z] of Object.entries(assignments)) {
     const m = gueltig.get(z.imageId);
@@ -737,8 +742,8 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     if (vorhanden && vorhanden.pool === pool && gueltig.has(vorhanden.imageId)) { zuordnung.set(key, gueltig.get(vorhanden.imageId)); continue; }
     const text = artikelText(a);
     const kandidaten = [...liste].sort((x, y) => {
-      const sx = (x.photo === true ? 1000 : 0) + treffer(x, text) * 3 - (usage.get(x.id) || 0) * 4;
-      const sy = (y.photo === true ? 1000 : 0) + treffer(y, text) * 3 - (usage.get(y.id) || 0) * 4;
+      const sx = fotoBonus(x) + treffer(x, text) * 3 - (usage.get(x.id) || 0) * 4;
+      const sy = fotoBonus(y) + treffer(y, text) * 3 - (usage.get(y.id) || 0) * 4;
       return sy - sx || (usage.get(x.id) || 0) - (usage.get(y.id) || 0) || x.id.localeCompare(y.id);
     });
     const m = kandidaten[0]; usage.set(m.id, (usage.get(m.id) || 0) + 1);

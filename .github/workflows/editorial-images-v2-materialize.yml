@@ -7,6 +7,7 @@ on:
       - 'deploy/lib-symbolbilder.mjs'
       - 'deploy/symbolbilder.mjs'
       - 'deploy/import-editorial-photos.mjs'
+      - 'deploy/editorial-photo-review.json'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/bild-fallbacks.js'
       - '.github/workflows/editorial-images-v2-materialize.yml'
