@@ -9,13 +9,32 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
+// Hochzaehlen, wenn Rollen dazukommen: add_role laeuft dann beim naechsten Aufruf.
+if (!defined('MA_PARTNER_ROLES_VERSION')) define('MA_PARTNER_ROLES_VERSION', '2');
+
 function ma_partner_policies(): array {
     return [
-        'ma_blaulicht_partner' => [
-            'label' => 'Blaulicht-Partner',
-            'description' => 'Polizei / Feuerwehr',
+        'ma_polizei_partner' => [
+            'label' => 'Polizei-Partner',
+            'description' => 'Polizei / Kreispolizeibehörde',
             'post_types' => ['post'],
             'categories' => ['blaulicht'],
+        ],
+        'ma_feuerwehr_partner' => [
+            'label' => 'Feuerwehr-Partner',
+            'description' => 'Feuerwehr / Löschgruppe',
+            'post_types' => ['post'],
+            'categories' => ['blaulicht'],
+        ],
+        // Bis 1.3.0 teilten sich Polizei und Feuerwehr diese Rolle. Sie bleibt,
+        // damit bestehende Zugaenge weiter funktionieren; neue Zugaenge bekommen
+        // eine der beiden Rollen oben.
+        'ma_blaulicht_partner' => [
+            'label' => 'Blaulicht-Partner (alt)',
+            'description' => 'Polizei / Feuerwehr (bisherige gemeinsame Rolle)',
+            'post_types' => ['post'],
+            'categories' => ['blaulicht'],
+            'veraltet' => true,
         ],
         'ma_sport_partner' => [
             'label' => 'Sport-Partner',
@@ -73,7 +92,7 @@ function ma_register_partner_roles(): void {
         $obj->remove_cap('delete_posts');
         $obj->remove_cap('delete_published_posts');
     }
-    update_option('ma_partner_roles_version', '1');
+    update_option('ma_partner_roles_version', MA_PARTNER_ROLES_VERSION);
 }
 
 function ma_current_partner_policy(?WP_User $user=null): ?array {
@@ -92,7 +111,7 @@ function ma_is_partner_user(?WP_User $user=null): bool {
 
 function ma_register_partner_hooks(): void {
     add_action('init', function () {
-        if (get_option('ma_partner_roles_version') !== '1') ma_register_partner_roles();
+        if (get_option('ma_partner_roles_version') !== MA_PARTNER_ROLES_VERSION) ma_register_partner_roles();
     }, 30);
 
     add_filter('map_meta_cap', 'ma_partner_map_meta_cap', 20, 4);
@@ -260,7 +279,7 @@ function ma_partner_create_account(): string {
     $role = sanitize_key(wp_unslash($_POST['partner_role'] ?? ''));
     $policies = ma_partner_policies();
 
-    if ($name === '' || !$email || !is_email($email) || !isset($policies[$role])) return 'Bitte Name, gültige E-Mail und Rolle vollständig angeben.';
+    if ($name === '' || !$email || !is_email($email) || !isset($policies[$role]) || !empty($policies[$role]['veraltet'])) return 'Bitte Name, gültige E-Mail und Rolle vollständig angeben.';
     if (email_exists($email)) return 'Für diese E-Mail-Adresse existiert bereits ein WordPress-Zugang.';
 
     $base = sanitize_user((string)strstr($email, '@', true), true);
@@ -298,7 +317,7 @@ function ma_partner_admin_page(): void {
     echo '<p><label><strong>Name / Organisation</strong><br><input class="regular-text" name="partner_name" required></label></p>';
     echo '<p><label><strong>E-Mail</strong><br><input class="regular-text" type="email" name="partner_email" required></label></p>';
     echo '<p><label><strong>Rolle</strong><br><select name="partner_role" required><option value="">Bitte wählen</option>';
-    foreach($policies as $role=>$p) echo '<option value="'.esc_attr($role).'">'.esc_html($p['label'].' – '.$p['description']).'</option>';
+    foreach($policies as $role=>$p) if (empty($p['veraltet'])) echo '<option value="'.esc_attr($role).'">'.esc_html($p['label'].' – '.$p['description']).'</option>';
     echo '</select></label></p><p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen & Einladung senden</button></p></form></section>';
 
     echo '<section><h2 style="margin-top:0">Rollen</h2><table class="widefat striped"><thead><tr><th>Rolle</th><th>Für</th><th>Offen</th></tr></thead><tbody>';

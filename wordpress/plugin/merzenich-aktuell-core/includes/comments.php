@@ -37,7 +37,42 @@ function ma_comment_approval_mail(string $new_status, string $old_status, WP_Com
     if ($title !== '') $body .= ' zum Beitrag „'.$title.'“';
     $body .= " wurde von der Redaktion freigegeben und ist jetzt sichtbar.\n\n";
     $body .= $link."\n\nMerzenich Aktuell";
-    wp_mail($email, $subject, $body);
+    // Ohne eingerichteten Mailversand (SMTP) liefert wp_mail false. Die
+    // Sammelfreigabe zaehlt das und zeigt es an, statt still zu scheitern.
+    if (!wp_mail($email, $subject, $body)) $GLOBALS['ma_comment_mail_fehler'] = (int)($GLOBALS['ma_comment_mail_fehler'] ?? 0) + 1;
+}
+
+// Seitengroesse der Sammelfreigabe.
+if (!defined('MA_COMMENT_PAGE_SIZE')) define('MA_COMMENT_PAGE_SIZE', 100);
+
+function ma_comment_mail_hinweis(): string {
+    $n = (int)($GLOBALS['ma_comment_mail_fehler'] ?? 0);
+    if ($n === 0) return '';
+    return ' '.$n.' Benachrichtigung'.($n===1?'':'en').' per E-Mail konnte'.($n===1?'':'n').' nicht versendet werden (Mailversand/SMTP prüfen).';
+}
+
+function ma_comment_approve_ids(array $ids): int {
+    $done = 0;
+    foreach ($ids as $id) {
+        $comment = get_comment($id);
+        if (!$comment || (string)$comment->comment_approved !== '0') continue;
+        if (wp_set_comment_status($id, 'approve', true)) $done++;
+    }
+    return $done;
+}
+
+// Genehmigt alle wartenden Kommentare, unabhaengig von der Auswahl auf der
+// aktuellen Seite. Arbeitet in Paketen, damit auch mehr als eine Seite geht.
+function ma_comment_approve_all(): int {
+    $done = 0;
+    for ($runde = 0; $runde < 50; $runde++) {
+        $ids = get_comments(['status'=>'hold','number'=>MA_COMMENT_PAGE_SIZE,'fields'=>'ids','orderby'=>'comment_date_gmt','order'=>'ASC']);
+        if (!$ids) break;
+        $n = ma_comment_approve_ids(array_map('intval', (array)$ids));
+        $done += $n;
+        if ($n === 0) break;
+    }
+    return $done;
 }
 
 function ma_comment_moderation_menu(): void {
@@ -55,19 +90,19 @@ function ma_comment_moderation_process(): string {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') return '';
     check_admin_referer('ma_comment_bulk');
 
+    if (isset($_POST['approve_all'])) {
+        $done = ma_comment_approve_all();
+        return $done.' wartende'.($done===1?'r':'').' Kommentar'.($done===1?'':'e').' genehmigt.'.ma_comment_mail_hinweis();
+    }
+
     $ids = isset($_POST['comment_ids']) && is_array($_POST['comment_ids'])
         ? array_values(array_unique(array_filter(array_map('intval', $_POST['comment_ids']))))
         : [];
     if (!$ids) return 'Keine Kommentare ausgewählt.';
 
     if (isset($_POST['approve_selected'])) {
-        $done = 0;
-        foreach ($ids as $id) {
-            $comment = get_comment($id);
-            if (!$comment || (string)$comment->comment_approved !== '0') continue;
-            if (wp_set_comment_status($id, 'approve', true)) $done++;
-        }
-        return $done.' Kommentar'.($done===1?'':'e').' genehmigt.';
+        $done = ma_comment_approve_ids($ids);
+        return $done.' Kommentar'.($done===1?'':'e').' genehmigt.'.ma_comment_mail_hinweis();
     }
 
     if (isset($_POST['trash_selected'])) {
@@ -86,9 +121,13 @@ function ma_comment_moderation_process(): string {
 function ma_comment_moderation_page(): void {
     if (!current_user_can('moderate_comments')) return;
     $meldung = ma_comment_moderation_process();
+    $gesamt = (int)get_comments(['status'=>'hold','count'=>true]);
+    $seiten = max(1, (int)ceil($gesamt / MA_COMMENT_PAGE_SIZE));
+    $seite = min($seiten, max(1, (int)($_GET['paged'] ?? 1)));
     $comments = get_comments([
         'status'=>'hold',
-        'number'=>100,
+        'number'=>MA_COMMENT_PAGE_SIZE,
+        'offset'=>($seite - 1) * MA_COMMENT_PAGE_SIZE,
         'orderby'=>'comment_date_gmt',
         'order'=>'ASC',
     ]);
@@ -102,6 +141,7 @@ function ma_comment_moderation_page(): void {
         return;
     }
 
+    echo '<p>'.esc_html($gesamt.' Kommentar'.($gesamt===1?'':'e').' warten auf Freigabe'.($seiten > 1 ? ', Seite '.$seite.' von '.$seiten : '').'.').'</p>';
     echo '<form method="post">'; wp_nonce_field('ma_comment_bulk');
     echo '<p><label><input type="checkbox" id="ma-comment-all" checked> Alle auswählen / abwählen</label></p>';
     echo '<table class="widefat striped"><thead><tr><th style="width:36px"></th><th>Kommentar</th><th>Verfasser</th><th>Beitrag</th><th>Eingang</th></tr></thead><tbody>';
@@ -120,7 +160,16 @@ function ma_comment_moderation_page(): void {
     }
     echo '</tbody></table>';
     echo '<p style="display:flex;gap:10px;align-items:center"><button class="button button-primary button-hero" name="approve_selected" value="1">Alle ausgewählten genehmigen</button>';
-    echo '<button class="button" name="trash_selected" value="1" onclick="return confirm(\'Ausgewählte Kommentare wirklich ablehnen?\')">Ausgewählte ablehnen</button></p>';
+    echo '<button class="button" name="trash_selected" value="1" onclick="return confirm(\'Ausgewählte Kommentare wirklich ablehnen?\')">Ausgewählte ablehnen</button>';
+    echo '<button class="button" name="approve_all" value="1" onclick="return confirm(\'Wirklich alle '.esc_attr((string)$gesamt).' wartenden Kommentare genehmigen, auch die auf anderen Seiten?\')">Alle wartenden genehmigen</button></p>';
+    if ($seiten > 1) {
+        echo '<p class="tablenav-pages">';
+        for ($i = 1; $i <= $seiten; $i++) {
+            if ($i === $seite) echo '<strong>'.$i.'</strong> ';
+            else echo '<a href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe&paged='.$i)).'">'.$i.'</a> ';
+        }
+        echo '</p>';
+    }
     echo '</form>';
     echo '<script>document.getElementById("ma-comment-all")?.addEventListener("change",function(){document.querySelectorAll(".ma-comment-check").forEach((c)=>c.checked=this.checked);});</script>';
     echo '</div>';

@@ -80,7 +80,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); const b = leseFormular(form); zeigeStatus(form, 'Wird gesendet …');
       form.querySelector('button[type=submit]').disabled = true;
-      try { await api('neu', { ...b, thema }); merkeName(b.name); form.reset(); form.querySelector('[name=name]').value = b.name; zeigeStatus(form, 'Danke. Ihr Kommentar wartet auf Freigabe durch die Redaktion.'); }
+      try { await api('neu', { ...b, thema }); merkeName(b.name); form.reset(); form.querySelector('[name=name]').value = b.name; zeigeStatus(form, 'Danke. Ihr Kommentar ist veröffentlicht. Die Redaktion prüft gemeldete Beiträge.'); try { render((await api('liste?thema=' + encodeURIComponent(thema))).kommentare); } catch (_) { /* Liste bleibt, bis die Seite neu lädt */ } }
       catch (err) { zeigeStatus(form, err.message, true, err.feld); }
       form.querySelector('button[type=submit]').disabled = false;
     });
@@ -106,13 +106,13 @@
       const form = e.target.closest('form'); if (!form) return; e.preventDefault();
       const det = form.closest('details.thema'), b = leseFormular(form), kl = det.querySelector('.kommentare__liste');
       zeigeStatus(form, 'Wird gesendet …'); form.querySelector('button[type=submit]').disabled = true;
-      try { await api('neu', { ...b, thema: det.dataset.id }); merkeName(b.name); form.reset(); form.querySelector('[name=name]').value = b.name; zeigeStatus(form, 'Danke. Ihre Antwort wartet auf Freigabe durch die Redaktion.'); }
+      try { await api('neu', { ...b, thema: det.dataset.id }); merkeName(b.name); form.reset(); form.querySelector('[name=name]').value = b.name; zeigeStatus(form, 'Danke. Ihre Antwort ist veröffentlicht. Die Redaktion prüft gemeldete Beiträge.'); }
       catch (err) { zeigeStatus(form, err.message, true, err.feld); }
       form.querySelector('button[type=submit]').disabled = false;
     });
     neuForm.addEventListener('submit', async (e) => {
       e.preventDefault(); const b = leseFormular(neuForm); zeigeStatus(neuForm, 'Wird gesendet …'); neuForm.querySelector('button[type=submit]').disabled = true;
-      try { await api('thema', b); merkeName(b.name); neuForm.reset(); neuForm.querySelector('[name=name]').value = b.name; zeigeStatus(neuForm, 'Danke. Ihr Thema wartet auf Freigabe durch die Redaktion.'); }
+      try { await api('thema', b); merkeName(b.name); neuForm.reset(); neuForm.querySelector('[name=name]').value = b.name; zeigeStatus(neuForm, 'Danke. Ihr Thema ist eröffnet. Die Redaktion prüft gemeldete Beiträge.'); }
       catch (err) { zeigeStatus(neuForm, err.message, true, err.feld); }
       neuForm.querySelector('button[type=submit]').disabled = false;
     });
