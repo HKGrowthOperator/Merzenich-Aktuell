@@ -17,7 +17,7 @@ sources:
   - title: "Freiwillige Feuerwehr Merzenich – Einsatz 126/26"
     url: "https://www.heimat-info.de/beitraege/e3cdbce7-e171-4c13-8e5e-b2533575d52e"
     stand: 2026-09-14
-tags: ["Feuerwehr", "Morschenich", "eCall", "Obere Straße"]
+tags: ["Feuerwehr", "Morschenich", "Hilfeleistung"]
 ---
 
 Ein automatisch ausgelöster eCall eines Pkw hat am 14. September Feuerwehr und Rettungsdienst nach Morschenich geführt. Als Einsatzort war die Obere Straße gemeldet.
