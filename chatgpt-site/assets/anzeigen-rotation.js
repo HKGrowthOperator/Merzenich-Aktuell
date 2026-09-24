@@ -1,5 +1,5 @@
 /*
- * Merzenich Aktuell – Demo-Anzeigenrotation 24.09.2026
+ * Merzenich Aktuell – Anzeigenrotation 24.09.2026 (aus, bis echte Kunden eingetragen sind)
  *
  * Werbung belegt nur bereits vorhandene Werbeflaechen oder echten Restplatz.
  * Sie ersetzt keine redaktionellen Bilder und erzeugt keine dritte Desktop-
@@ -16,46 +16,13 @@
     const ROTATION_MS = 14000;
     const REDUCED_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* Spaeter nur neue Eintraege ergaenzen. Alle Motive werden automatisch
-       auf die verfuegbaren Slots verteilt. */
-    const MOTIVE = [
-      {
-        id: 'probebank-x-01', kunde: 'Probebank X', typ: 'bank',
-        eyebrow: 'Probebank X · Merzenich', headline: 'Ihre Bank vor Ort',
-        text: 'Persönliche Beratung. Faire Finanzierung. Digitale Lösungen.',
-        cta: 'Termin vereinbaren', ziel: '/werben/'
-      },
-      {
-        id: 'sportverein-merzenich-01', kunde: 'Sportverein Merzenich', typ: 'sport',
-        eyebrow: 'Sportverein Merzenich', headline: 'Fußball. Gemeinschaft. Leidenschaft.',
-        text: 'Jetzt Teil unseres Vereins werden.',
-        cta: 'Jetzt informieren', ziel: '/werben/'
-      },
-      {
-        id: 'probebank-x-02', kunde: 'Probebank X', typ: 'bank',
-        eyebrow: 'Probebank X · Regional', headline: 'Finanzierung, die zu Merzenich passt.',
-        text: 'Klare Wege, persönliche Ansprechpartner und digitale Services.',
-        cta: 'Beratung anfragen', ziel: '/werben/'
-      },
-      {
-        id: 'sportverein-merzenich-02', kunde: 'Sportverein Merzenich', typ: 'sport',
-        eyebrow: 'Sportverein Merzenich', headline: 'Dein Verein. Dein Platz. Dein Team.',
-        text: 'Für alle Altersklassen und alle, die gemeinsam etwas bewegen wollen.',
-        cta: 'Verein entdecken', ziel: '/werben/'
-      },
-      {
-        id: 'probebank-x-03', kunde: 'Probebank X', typ: 'bank',
-        eyebrow: 'Probebank X · Vor Ort', headline: 'Regional denken. Einfach digital handeln.',
-        text: 'Banking für den Alltag – persönlich in der Region und digital erreichbar.',
-        cta: 'Mehr erfahren', ziel: '/werben/'
-      },
-      {
-        id: 'sportverein-merzenich-03', kunde: 'Sportverein Merzenich', typ: 'sport',
-        eyebrow: 'Sportverein Merzenich', headline: 'Mehr als 90 Minuten.',
-        text: 'Jugend, Ehrenamt und echtes Teamgefühl in Merzenich.',
-        cta: 'Mitmachen', ziel: '/werben/'
-      }
-    ];
+    /* Nur echte, gebuchte Werbekunden eintragen (KBS 24.09.: keine
+       erfundenen Demo-Kunden auf der Live-Seite). Solange die Liste leer ist,
+       bleibt die Rotation aus und die Werbebaender zeigen unveraendert KBS
+       Management und AJ Sports. Format je Eintrag:
+       { id, kunde, typ: 'bank'|'sport', eyebrow, headline, text, cta, ziel } */
+    const MOTIVE = [];
+    if (!MOTIVE.length) return;
 
     const slots = new Map();
     let letzterTakt = -1;
@@ -72,7 +39,6 @@
     }
 
     function motivHtml(motiv, format) {
-      const kompakt = format === 'gap';
       return `<a class="ma-ad-card ma-ad-card--${esc(format)} ma-ad-theme--${esc(motiv.typ)}" href="${esc(motiv.ziel)}" data-ma-ad-id="${esc(motiv.id)}" aria-label="Anzeige: ${esc(motiv.kunde)} – ${esc(motiv.headline)}">`
         + `${kunst(motiv.typ)}`
         + '<span class="ma-ad-copy">'
@@ -80,7 +46,6 @@
         + `<strong>${esc(motiv.headline)}</strong>`
         + `<span class="ma-ad-text">${esc(motiv.text)}</span>`
         + `<span class="ma-ad-cta">${esc(motiv.cta)}</span>`
-        + (kompakt ? '<span class="ma-ad-muster">Musteranzeige</span>' : '')
         + '</span></a>';
     }
 
@@ -125,7 +90,7 @@
     const band = document.querySelector('[data-kbs-ad-band]');
     if (band) {
       band.classList.add('ma-ad-band');
-      band.innerHTML = '<span class="home-ad-band__label">Anzeige · Demo</span><div class="ma-ad-rotator ma-ad-rotator--band" data-ma-ad-slot="band"></div>';
+      band.innerHTML = '<span class="home-ad-band__label">Anzeige</span><div class="ma-ad-rotator ma-ad-rotator--band" data-ma-ad-slot="band"></div>';
       const root = band.querySelector('[data-ma-ad-slot="band"]');
       if (root) slots.set('band', { root, format: 'band', offset: 0 });
     }
@@ -167,8 +132,8 @@
         gapWrap = document.createElement('div');
         gapWrap.className = 'ma-service-gap-ad';
         gapWrap.setAttribute('role', 'group');
-        gapWrap.setAttribute('aria-label', 'Anzeige · Demo');
-        gapWrap.innerHTML = '<span class="ma-service-gap-ad__label">Anzeige · Demo</span><div class="ma-ad-rotator ma-ad-rotator--gap" data-ma-ad-slot="service-gap"></div>';
+        gapWrap.setAttribute('aria-label', 'Anzeige');
+        gapWrap.innerHTML = '<span class="ma-service-gap-ad__label">Anzeige</span><div class="ma-ad-rotator ma-ad-rotator--gap" data-ma-ad-slot="service-gap"></div>';
         service.append(gapWrap);
         gapRoot = gapWrap.querySelector('[data-ma-ad-slot="service-gap"]');
       }
