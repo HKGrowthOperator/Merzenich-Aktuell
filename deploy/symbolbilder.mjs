@@ -105,8 +105,14 @@ function metadataAufSymbolbild(html, m) {
   // NewsArticle und Article werden beide verwendet. Nur der redaktionelle
   // Artikelknoten wird angefasst, nicht Organization/WebSite-JSON-LD.
   neu = neu.replace(/("@type":"(?:NewsArticle|Article)"[\s\S]*?"image":)"[^"]*"/, `$1"${absolute}"`);
-  neu = neu.replace(/\s*Bildtyp:\s*Offizielles Vereinslogo\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
-  neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*(?:Foto|Bild):\s*[^<.]+\.?/i, ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}.`);
+  // Den kompletten bisherigen Bildnachweis ersetzen. Der alte Ausdruck endete
+  // am ersten Punkt und war damit bei Lizenzen wie "CC BY-SA 4.0" nicht
+  // idempotent (z. B. blieb ".DE." stehen und wuchs bei jedem Build weiter).
+  const bildMeta = ` Bildtyp: Symbolbild. Bild: ${m.credit} · ${m.license}. `;
+  neu = neu.replace(
+    /\s*Bildtyp:\s*(?:Offizielles Vereinslogo|Symbolbild)\.\s*(?:Foto|Bild):\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i,
+    bildMeta
+  );
   return neu;
 }
 
