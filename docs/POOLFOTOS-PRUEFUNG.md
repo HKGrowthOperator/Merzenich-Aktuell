@@ -1,29 +1,29 @@
 # Sichtprüfung der Commons-Poolfotos
 
-Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Freigegeben sind 184 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
+Stand 2026-09-24. Runde 1 prüfte alle 240 Fotos, die am 24.09. aus Wikimedia Commons in die zwölf Pools geladen wurden; jede weitere Runde prüft die Ersatzfotos der vorigen. Runde 1: 159 ausgeschlossen. Runde 2: 88 ausgeschlossen. Runde 3: 51 ausgeschlossen. Runde 4: 33 ausgeschlossen. Freigegeben sind 200 Fotos. Maßgeblich ist `deploy/editorial-photo-review.json`; der Importer (`deploy/import-editorial-photos.mjs`) löscht ausgeschlossene Dateien, lädt sie nie wieder und füllt die Lücken aus Commons auf. Neu geladene Fotos gelten als ungeprüft (`geprueft: false`) und werden bei der Bildvergabe nachrangig behandelt, bis sie freigegeben sind.
 
 ## Gründe
 
 | Grund | Anzahl |
 |---|---|
-| Motiv passt nicht zum Pool | 75 |
-| Militär- oder Auslandsmotiv | 29 |
-| Fast gleiches Motiv wie ein anderes Bild im Pool | 27 |
-| Lesbares Kfz-Kennzeichen | 24 |
+| Motiv passt nicht zum Pool | 77 |
+| Militär- oder Auslandsmotiv | 38 |
+| Fast gleiches Motiv wie ein anderes Bild im Pool | 34 |
+| Lesbares Kfz-Kennzeichen | 30 |
+| Ortsfremder Name, Schild oder Tafel lesbar | 21 |
 | Falscher Ort: Merzenich bei Zülpich (Kreis Euskirchen), nicht Gemeinde Merzenich | 20 |
 | Abzeichen, Wappen oder Logo als Motiv | 20 |
 | Grafik, Karte oder Satellitenbild statt Foto | 19 |
-| Ortsfremder Name, Schild oder Tafel lesbar | 18 |
+| Unscharf oder ohne Bildaussage | 13 |
 | Erkennbare Personen des öffentlichen Lebens | 11 |
 | Erkennbare Personen als Hauptmotiv | 10 |
-| Unscharf oder ohne Bildaussage | 10 |
 | Demonstration mit Parolen und erkennbaren Personen | 9 |
 | Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland) | 8 |
-| Markenetikett oder Werbeschriftzug im Bild | 6 |
+| Markenetikett oder Werbeschriftzug im Bild | 7 |
 | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ | 4 |
+| Graffiti mit lesbarer Schrift | 4 |
 | Ortsfremdes Wahrzeichen | 2 |
 | Extremes Panoramaformat, taugt nicht für Bildflächen | 2 |
-| Graffiti mit lesbarer Schrift | 2 |
 | Unfallstelle mit Personen | 1 |
 | Transparent mit politischer Parole | 1 |
 
@@ -42,7 +42,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 1 | 19 | Wohn- und Geschäftshaus Eigelstein 89-91, Köln-4719.jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 | 1 | 20 | Köln (Germany) (23573767200).jpg | Falscher Ort: Köln, Firmenschriftzug Bäckerei „Merzenich“ |
 
-### Blaulicht: 45 entfernt
+### Blaulicht: 50 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -91,6 +91,11 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 14 | Schwelm - Heimatfest 2012 357 ies.jpg | Erkennbare Personen als Hauptmotiv |
 | 3 | 16 | Schwelm - Heimatfest 2012 359 ies.jpg | Lesbares Kfz-Kennzeichen |
 | 3 | 19 | Wuppertal August-Bebel-Straße 2013 004.JPG | Unscharf oder ohne Bildaussage |
+| 4 | 02 | Wuppertal August-Bebel-Straße 2013 018.JPG | Lesbares Kfz-Kennzeichen |
+| 4 | 05 | Wuppertal August-Bebel-Straße 2013 017.JPG | Lesbares Kfz-Kennzeichen |
+| 4 | 10 | Wuppertal - Haspeler Straße 01 ies.jpg | Lesbares Kfz-Kennzeichen |
+| 4 | 14 | Feuertal 2013 Mittelaltermarkt 016.JPG | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 19 | Wuppertal Nevigeser Straße 2015 081.jpg | Markenetikett oder Werbeschriftzug im Bild |
 
 ### Polizei: 28 entfernt
 
@@ -125,7 +130,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 03 | Polizei Nordrhein-Westfalen 7641.jpg | Abzeichen, Wappen oder Logo als Motiv |
 | 3 | 06 | Duisburg, Innenhafen, 2020-03 CN-02.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
-### Feuerwehr: 15 entfernt
+### Feuerwehr: 16 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -144,8 +149,9 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 12 | Teekueche.jpg | Motiv passt nicht zum Pool |
 | 3 | 13 | Fitnessraum IdF.jpg | Motiv passt nicht zum Pool |
 | 3 | 20 | Sporthalle Institut der Feuerwehr Nordrhein-Westfalen.jpg | Motiv passt nicht zum Pool |
+| 4 | 12 | Übungsspange außen.jpg | Lesbares Kfz-Kennzeichen |
 
-### Brand: 53 entfernt
+### Brand: 65 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -202,8 +208,20 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 18 | Kerze -- 2021 -- 5335.jpg | Motiv passt nicht zum Pool |
 | 3 | 19 | Kerzen -- 2021 -- 5553.jpg | Motiv passt nicht zum Pool |
 | 3 | 20 | Dülmen, Kreuzkapelle, Kerzen -- 2021 -- 7126.jpg | Motiv passt nicht zum Pool |
+| 4 | 02 | Dachstuhlbrand Försterstraße 26, Ecke Ehrenfeldgürtel, Köln-9537.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 05 | Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 002.jpg | Lesbares Kfz-Kennzeichen |
+| 4 | 06 | Feuerwehr-Einsatz bei Dachstuhlbrand in der Kronenstraße in Tübingen am 21.12.2019 - 001.jpg | Lesbares Kfz-Kennzeichen |
+| 4 | 09 | Poeville Fire 01.jpg | Militär- oder Auslandsmotiv |
+| 4 | 12 | Poeville Fire 02.jpg | Militär- oder Auslandsmotiv |
+| 4 | 13 | Goose Creek Fire from Papoose - June 28th.jpg | Militär- oder Auslandsmotiv |
+| 4 | 14 | Sand Creek Fire on the afternoon of June 18.jpg | Militär- oder Auslandsmotiv |
+| 4 | 15 | Good fire behavior - Mangum Fire.jpg | Militär- oder Auslandsmotiv |
+| 4 | 16 | Fire behavior on the Mangum Fire.jpg | Militär- oder Auslandsmotiv |
+| 4 | 17 | Mangum Fire burned area near 89A.jpg | Militär- oder Auslandsmotiv |
+| 4 | 18 | Bush Fire from Fountain Hills.jpg | Militär- oder Auslandsmotiv |
+| 4 | 20 | The-great-oil-fire-in-Nynashamn-1956-142347139668.jpg | Militär- oder Auslandsmotiv |
 
-### Sport: 36 entfernt
+### Sport: 42 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -243,6 +261,12 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 12 | Eichstätt Schottenau -Kunstrasenplatz Spielfeld (2018-07 1).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 | 3 | 14 | Eichstätt Schottenau -Kunstrasenplatz Zugang (2018-07 1).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 | 3 | 20 | Abandoned artificial turf in Hermanninranta, Helsinki, Finland, 2021.jpg | Motiv passt nicht zum Pool |
+| 4 | 02 | Eichstätt Schottenau -Kunstrasenplatz Zugang (2018-07 2).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
+| 4 | 05 | Articial grass.jpg | Unscharf oder ohne Bildaussage |
+| 4 | 06 | Artificial turf.jpg | Motiv passt nicht zum Pool |
+| 4 | 08 | Kunstrasenplatz Buchen 2022 01.jpg | Ortsfremder Name, Schild oder Tafel lesbar |
+| 4 | 14 | Eichstätt - Kunstrasenplatz Schottenau 26.11.2022 1.jpg | Unscharf oder ohne Bildaussage |
+| 4 | 20 | Eichstätt - Kunstrasenplatz Schottenau 26.11.2022 2.jpg | Unscharf oder ohne Bildaussage |
 
 ### Termine: 4 entfernt
 
@@ -253,7 +277,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 1 | 13 | Münster, Domplatz, Wochenmarkt -- 2019 -- 2648.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 2 | 04 | Münster, St.-Paulus-Dom -- 2019 -- 2698.jpg | Ortsfremdes Wahrzeichen |
 
-### Vereine: 33 entfernt
+### Vereine: 35 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -290,8 +314,10 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 14 | Bücherschrank Overath (4).JPG | Erkennbare Personen als Hauptmotiv |
 | 3 | 16 | RWE Buecherschrank Schale 01.jpg | Markenetikett oder Werbeschriftzug im Bild |
 | 3 | 19 | RWE Buecherschrank Schale 02.jpg | Markenetikett oder Werbeschriftzug im Bild |
+| 4 | 02 | Krippken Mettingen 6.jpg | Motiv passt nicht zum Pool |
+| 4 | 14 | 26-01 Bücherschrank Weilerswist 01.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
-### Leben: 33 entfernt
+### Leben: 36 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -328,6 +354,9 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 07 | Gasthaus eines ehemaligen Vierseithofes Am Dorfplatz 3 Oberuttlau Haarbach Ansicht von Nordwesten.jpg | Motiv passt nicht zum Pool |
 | 3 | 17 | Goeda Hodzij Am Dorfplatz 17 Detail.jpg | Unscharf oder ohne Bildaussage |
 | 3 | 18 | Am Dorfplatz 17 Goeda Hodzij.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 06 | Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 3.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 07 | Öffentlicher Bücherschrank am Dorfplatz Gamburg (Werbach) 4.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 17 | Gasthaus und Bauernhof, Am Dorfplatz 6 (Pfünz).jpg | Ortsfremder Name, Schild oder Tafel lesbar |
 
 ### Wirtschaft: 6 entfernt
 
@@ -356,7 +385,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 2 | 01 | Sophienhöhe l.JPG | Extremes Panoramaformat, taugt nicht für Bildflächen |
 | 2 | 08 | Sophienpanorama.jpg | Extremes Panoramaformat, taugt nicht für Bildflächen |
 
-### Menschen: 30 entfernt
+### Menschen: 34 entfernt
 
 | Runde | Nr. | Commons-Datei | Grund |
 |---|---|---|---|
@@ -390,4 +419,8 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 3 | 06 | Münster, Park Sentmaring, Skulptur -- 2017 -- 4257.jpg | Graffiti mit lesbarer Schrift |
 | 3 | 09 | Münster, Park Sentmaring -- 2018 -- 0002.jpg | Graffiti mit lesbarer Schrift |
 | 3 | 12 | Buergerhaus Ibbenbueren 01.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 02 | Dülmen, Skulpturen im Bendixpark -- 2015 -- 8533.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
+| 4 | 06 | Münster, Park Sentmaring, Parkbank -- 2021 -- 9124.jpg | Graffiti mit lesbarer Schrift |
+| 4 | 09 | Münster, Park Sentmaring, Parkbank -- 2021 -- 9129.jpg | Graffiti mit lesbarer Schrift |
+| 4 | 12 | Buergerhaus Ibbenbueren 03.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
