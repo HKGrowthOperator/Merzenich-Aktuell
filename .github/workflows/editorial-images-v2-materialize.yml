@@ -8,6 +8,7 @@ on:
       - 'deploy/symbolbilder.mjs'
       - 'deploy/import-editorial-photos.mjs'
       - 'deploy/editorial-photo-review.json'
+      - 'deploy/pool-varianten.py'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/bild-fallbacks.js'
       - '.github/workflows/editorial-images-v2-materialize.yml'
@@ -36,6 +37,11 @@ jobs:
       - name: Import freely licensed editorial photos
         run: node deploy/import-editorial-photos.mjs
 
+      - name: WebP-Varianten der Poolfotos (480/800/1200 px)
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check pillow
+          python3 deploy/pool-varianten.py
+
       - name: Generate image library and article assignments
         run: |
           node deploy/symbolbilder.mjs
@@ -43,6 +49,7 @@ jobs:
           node deploy/sport-prerender.mjs
           node deploy/suche-index.mjs
           node deploy/thema-prerender.mjs
+          node deploy/teaser-bilder.mjs
           node deploy/inhaltsindex.mjs
           node deploy/termine-prerender.mjs
           node deploy/kopf-theme-einbinden.mjs
@@ -54,6 +61,8 @@ jobs:
       - name: Verify hard image-system invariants
         run: |
           node deploy/symbolbilder.mjs --check
+          node deploy/teaser-bilder.mjs --check
+          python3 deploy/pool-varianten.py --check
           node --check chatgpt-site/assets/bild-fallbacks.js
           node qa/pruefung.mjs
           python3 - <<'PY'

@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T09:10:48.016Z",
+  "updatedAt": "2026-09-24T11:24:44.237Z",
   "assignments": {
     "/leben/fahrrad-reparaturstationen/": {
-      "imageId": "verkehr-01-strasse",
-      "pool": "verkehr",
-      "assignedAt": "2026-09-23T09:38:05.498Z",
+      "imageId": "web-tipp-14-5cb898c4",
+      "pool": "tipp",
+      "assignedAt": "2026-09-24T11:24:44.237Z",
       "articleId": "2026-09-23-fahrrad-reparaturstationen",
       "articleDate": "2026-09-23T11:08:00+02:00",
       "tagsMatched": [
+        "tipp",
         "strasse"
       ]
     },

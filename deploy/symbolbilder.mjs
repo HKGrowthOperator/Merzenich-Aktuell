@@ -72,8 +72,43 @@ const nachweis = (m) => {
   return m.license && !c.includes(m.license) ? `${c} · ${m.license}` : c;
 };
 
+// WebP-Fassungen aus deploy/pool-varianten.py (480/800/1200 px) neben dem
+// Poolfoto. Nur was auf der Platte liegt, kommt ins srcset.
+const VARIANTEN = [480, 800, 1200];
+function srcsetFuer(m) {
+  if (!/^\/assets\/editorial-pools\/.+\.(jpe?g|png)$/i.test(String(m.src || ''))) return '';
+  const basis = m.src.replace(/\.[^.]+$/, '');
+  const teile = VARIANTEN.filter((w) => existsSync(join(site, `${basis}-${w}.webp`.replace(/^\//, '')))).map((w) => `${basis}-${w}.webp ${w}w`);
+  if (!teile.length) return '';
+  return [...teile, `${m.src} ${m.width || 1600}w`].join(', ');
+}
+
+// Bildbeschreibung fuer Poolfotos. Die Commons-Beschreibungen sind oft
+// englisch oder nennen fremde Orte ("Dachstuhlbrand ... Koeln"); neben einer
+// Merzenicher Meldung verwirrt das. Lokale Fotos (Merzenich, Kreis Dueren)
+// behalten ihre deutsche Beschreibung, alle anderen bekommen eine neutrale
+// deutsche Motivangabe ihres Pools.
+const POOL_MOTIV = {
+  aktuell: 'Ortsansicht aus der Gemeinde Merzenich', blaulicht: 'Rettungswagen im Einsatz',
+  polizei: 'Polizeiwache in Nordrhein-Westfalen', feuerwehr: 'Feuerwehrhaus mit Einsatzfahrzeugen',
+  brand: 'Feuerwehr beim Löschen eines Brandes', sport: 'Fußballplatz', termine: 'Kirmes und Markt',
+  vereine: 'Treffpunkt des Vereinslebens im Dorf', leben: 'Dorfplatz', wirtschaft: 'Tagebau Hambach',
+  tipp: 'Rad- und Wanderweg', menschen: 'Treffpunkt im Ort',
+};
+const ENGLISCH = /\b(the|of|and|with|street|near|view|house|church|road|square|germany|north rhine|open pit|mine|from)\b/i;
+const FREMDSCHRIFT = /[^\u0000-\u024f\u2000-\u206f\u20ac]/;
+function altFuer(m) {
+  if (m.photo !== true) return m.alt;
+  const lokal = ['Merzenich', 'Kreis Düren'].includes(m.locality);
+  const alt = String(m.alt || '').replace(/\s+([,.;:])/g, '$1').replace(/\s*\.\s*$/, '').trim();
+  if (lokal && alt && !ENGLISCH.test(alt) && !FREMDSCHRIFT.test(alt) && alt.length <= 140) return alt;
+  return POOL_MOTIV[m.pool] || alt;
+}
+
 function figureHtml(m) {
-  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}" alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
+  const srcset = srcsetFuer(m);
+  m = { ...m, alt: altFuer(m) };
+  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }

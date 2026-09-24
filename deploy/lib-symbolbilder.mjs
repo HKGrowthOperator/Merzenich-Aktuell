@@ -669,6 +669,9 @@ export function kategorieFuer(a) {
     if (/polizei|einbruch|tatort|fahndung|zeugen|kontrolle|kripo|diebstahl|unfallflucht/.test(text)) return 'polizei';
     return 'blaulicht';
   }
+  // Fahrrad-Themen bekommen die gesichteten Radweg-Fotos aus dem Pool "tipp"
+  // statt der gezeichneten Strasse aus "verkehr" (Fahrrad-Reparaturstationen).
+  if (/fahrrad|radweg|e-bike|radfahr|radtour/.test(kopftext)) return 'tipp';
   if (/verkehr|sperrung|baustelle|umleitung|strasse|bahn|bus|opnv|fahrbahn/.test(text)) return 'verkehr';
   if (pfad.includes('/sport/') || /fussball|kreisliga|spieltag|tabelle|sc 1919|fc golzheim/.test(text)) return 'sport';
   if (pfad.includes('/vereine/') || /verein|schutzen|karneval|fanclub|ehrenamt/.test(text)) return 'vereine';
