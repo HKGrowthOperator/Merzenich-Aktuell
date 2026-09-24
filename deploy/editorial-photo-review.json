@@ -2544,6 +2544,153 @@
       "titel": "File:Rheinberg, Polizeiwache, 2011-12 CN-01.jpg",
       "grund": "Kennzeichen des Streifenwagens lesbar; das Gebäude liest sich als Wohnhaus",
       "runde": 11
+    },
+    {
+      "pool": "polizei",
+      "nr": 2,
+      "titel": "File:Merfeld, Wildpferdefang -- 2014 -- 7901.jpg",
+      "grund": "Kennzeichen der Streifenwagen lesbar",
+      "runde": 11
+    },
+    {
+      "pool": "polizei",
+      "nr": 3,
+      "titel": "File:Buldern, Schloss Buldern -- 2014 -- 9232 -- Ausschnitt.jpg",
+      "grund": "Schloss, keine Polizei",
+      "runde": 11
+    },
+    {
+      "pool": "polizei",
+      "nr": 6,
+      "titel": "File:Münster, Lambertikirchplatz, Häuserzeile -- 2019 -- 3591.jpg",
+      "grund": "Häuserzeile, Polizei nur klein am Rand",
+      "runde": 11
+    },
+    {
+      "pool": "brand",
+      "nr": 18,
+      "titel": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-122052.jpg",
+      "grund": "Rauchwolke kaum erkennbar, Wohnhäuser im Bild",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 1,
+      "titel": "File:Starenkasten B191 9413.jpg",
+      "grund": "Blitzer kaum zu sehen, Auto im Vordergrund",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 2,
+      "titel": "File:Don't say they didn't warn you - Flickr - Highway Patrol Images.jpg",
+      "grund": "englisches Schild",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 3,
+      "titel": "File:Starenkasten - panoramio.jpg",
+      "grund": "Blitzer kaum zu sehen",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 5,
+      "titel": "File:Starenkasten Rotlichtüberwachung 1556.jpg",
+      "grund": "Auto mit Kennzeichen im Vordergrund",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 6,
+      "titel": "File:Starenkasten Rotlichtüberwachung 1558.jpg",
+      "grund": "Auto im Vordergrund",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 7,
+      "titel": "File:Separate traffic signals for frontage road; photo enforcement warning sign (18518189836).jpg",
+      "grund": "Ausland, Blitzer nicht erkennbar",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 8,
+      "titel": "File:D-Armor - NovoaGlobal Photo Enforcement Camera.jpg",
+      "grund": "wirkt wie Überwachungskamera, kein Blitzer",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 9,
+      "titel": "File:Speed camera, Petőfi Sándor Street, 2020 Diósd.jpg",
+      "grund": "Ausland (Ungarn), Blitzer klein",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 11,
+      "titel": "File:Blitzer-Ampel Bad Mergentheim 2.jpg",
+      "grund": "Blitzer nicht erkennbar",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 12,
+      "titel": "File:Blitzer-Ampel Bad Mergentheim 3.jpg",
+      "grund": "Blitzer nicht erkennbar",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 13,
+      "titel": "File:TRAFFIPAX IV, Radar de tráfico, 01.jpg",
+      "grund": "Messgerät als Ausstellungsstück",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 14,
+      "titel": "File:TRAFFIPAX IV, Radar de tráfico, 02.jpg",
+      "grund": "Messgerät als Ausstellungsstück",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 15,
+      "titel": "File:B 290 in Edelfingen, beidseitiger fester Blitzer 3.jpg",
+      "grund": "Blitzer nicht erkennbar",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 16,
+      "titel": "File:Traffic Enforcement Camera sign.jpg",
+      "grund": "englisches Schild",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 17,
+      "titel": "File:Santo Pipó - Km 1415 · Radar sentido descendente (velocidad máxima 80 km-h) sobre Ruta Nacional 12.jpg",
+      "grund": "Ausland (Argentinien)",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 18,
+      "titel": "File:Santo Pipó - Km 1415 · Cartel \"Atención a 1000 metros radar vigila\" sobre Ruta Nacional 12.jpg",
+      "grund": "Ausland, spanisches Schild",
+      "runde": 11
+    },
+    {
+      "pool": "verkehr",
+      "nr": 20,
+      "titel": "File:Königswinter, Petersberg- Blick vom Petersberg, bei Nacht, mit Blitz - LABW - Staatsarchiv Freiburg W 134 Nr. 065513c.jpg",
+      "grund": "Gewitter, kein Bezug",
+      "runde": 11
     }
   ],
   "freigegeben": [
@@ -2776,6 +2923,11 @@
     "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-04.jpg",
     "File:Sporthalle Ennigloh.jpg",
     "File:Berentelghalle Mettingen 1.jpg",
-    "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-05.jpg"
+    "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-05.jpg",
+    "File:Münster, Lambertikirchplatz, Motorrad -- 2019 -- 3594.jpg",
+    "File:Mobilny fotoradar w Hanowerze (2025(.jpg",
+    "File:Arndtstraße Ecke Am Klagesmarkt Blitzer in Richtung Schlosswender Straße.jpg",
+    "File:Starenkasten Rotlichtüberwachung 1557.jpg",
+    "File:RheinEnergieStadion Köln 001.jpg"
   ]
 }

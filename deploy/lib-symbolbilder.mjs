@@ -742,7 +742,7 @@ export const MOTIVREGELN = [
   { id: 'rettungshubschrauber', wenn: /rettungshubschrauber|christoph \d/, motive: ['rettungshubschrauber'] },
   { id: 'brand', wenn: /\bbrand|brennt|rauchentwicklung|\brauch\b|flammen|loscharbeiten/, motive: ['brand'] },
   { id: 'gefahrgut', wenn: /gefahrgut|chemikalie|gasaustritt|gasgeruch/, motive: ['gefahrgut'] },
-  { id: 'polizei', wenn: /polizei|einbruch|eingebrochen|diebstahl|zeugen|fahndung|tatort|kripo/, motive: ['streifenwagen', 'polizeiwache'] },
+  { id: 'polizei', wenn: /polizei|einbruch|eingebrochen|diebstahl|zeugen|fahndung|tatort|kripo/, motive: ['streifenwagen', 'polizeimotorrad', 'polizeiwache'] },
   { id: 'rettung', wenn: /rettungsdienst|rettungswagen|notarzt|reanimation/, motive: ['rettungswagen', 'rettungswache'] },
   { id: 'feuerwehr', wenn: /feuerwehr|loschgruppe|loschzug/, motive: ['feuerwehrhaus', 'feuerwehreinsatz'] },
   { id: 'fanclub', wenn: /fanclub|bundesliga|1\. fc koln|effzeh/, motive: ['stadion'] },
