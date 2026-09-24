@@ -2776,8 +2776,8 @@
       "format": "jpg",
       "symbol": true,
       "photo": true,
-      "locality": "NRW",
-      "geprueft": false,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
       "checksum": "b1799dba4bc3eed8709f08f19f38837ada8769ec68d5f4551a7eb7b0858f3c53"
     },
     {
@@ -2812,15 +2812,15 @@
       "checksum": "1426f894e06080729cac7e5d8f612ac5867b82ba1359dd13d90ff31ea18f34b2"
     },
     {
-      "id": "web-brand-18-92fba8f6",
+      "id": "web-brand-18-5ed7e908",
       "pool": "brand",
-      "src": "/assets/editorial-pools/brand/brand-18-92fba8f6a0.jpg",
-      "alt": "Blick auf Ortslage Swisttal von Osten, Rhein-Sieg-Kreis, mit sichtbaren Rauchwolken Richtung Westen, die mutmaßlich aus dem Waldbrand in Hürtgenwald (ca. 40 km Entfernung) stammen",
+      "src": "/assets/editorial-pools/brand/brand-18-5ed7e908bd.jpg",
+      "alt": "Blick aus der Ortslage Swisttal-Odendorf, Rhein-Sieg-Kreis, mit sichtbaren Rauchwolken Richtung Westen, die mutmaßlich aus dem Waldbrand in Hürtgenwald (ca. 40 km Entfernung) stamm",
       "credit": "Symbolbild · Elke Wetzig ( User:Elya ) / Wikimedia Commons · CC BY-SA 4.0",
       "source": "Wikimedia Commons",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg",
-      "sourceTitle": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121113.jpg",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg/1920px-Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-122052.jpg",
+      "sourceTitle": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-122052.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-122052.jpg/1920px-Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-122052.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "rightsCheckedAt": "2026-09-24",
@@ -2834,7 +2834,7 @@
         "rauchwolken",
         "rhein",
         "kreis",
-        "121113"
+        "122052"
       ],
       "width": 1600,
       "height": 1200,
@@ -2843,7 +2843,7 @@
       "photo": true,
       "locality": "Deutschland / überregional",
       "geprueft": false,
-      "checksum": "6f704f94ce761374e1da59ed7bd7d37a27cfd7b7800f48f6b71ac509f138e950"
+      "checksum": "7f7c083db30660551bd142d42acaca3c49cc6b2d2b709e8b9c3e8697b0b3147c"
     },
     {
       "id": "web-brand-19-6a048a0c",
