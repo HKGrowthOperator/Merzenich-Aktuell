@@ -147,7 +147,7 @@
   }
   if (!document.querySelector('script[data-ma-ad-rotation]')) {
     const script = document.createElement('script');
-    script.src = '/assets/anzeigen-rotation.js?v=4761832afe';
+    script.src = '/assets/anzeigen-rotation.js?v=24888326f6';
     script.async = false;
     script.dataset.maAdRotation = '1';
     document.head.append(script);
