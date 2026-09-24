@@ -17,7 +17,7 @@ sources:
   - title: "Gemeinde Merzenich – Vortrag Zwangsarbeit in Merzenich"
     url: "https://www.heimat-info.de/beitraege/ef604500-2e9b-4077-965e-384cdc9891b0"
     stand: 2026-09-22
-tags: ["Ortsgeschichte", "Zwangsarbeit", "Vortrag", "St. Laurentius"]
+tags: ["Veranstaltungen"]
 ---
 
 Die Historikerin Inga Mehlert-Garms stellt am 15. Oktober neue Forschungen zur Zwangsarbeit in Merzenich vor. Der Vortrag beginnt um 19 Uhr im Pfarrheim an der Schulstraße 4a.
