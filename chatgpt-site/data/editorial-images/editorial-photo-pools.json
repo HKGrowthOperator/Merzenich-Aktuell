@@ -2559,8 +2559,8 @@
       "format": "jpg",
       "symbol": true,
       "photo": true,
-      "locality": "NRW",
-      "geprueft": false,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
       "checksum": "bcc685021b01c28fbc39cf84001cf765b4778fa391a19965f3da83f526c55bb9"
     },
     {
@@ -2750,15 +2750,15 @@
       "checksum": "452e4c4c35052a06eb1c76e15d1737ac7f6bcbf1aff33e657a57b73065f001e9"
     },
     {
-      "id": "web-brand-16-689b6475",
+      "id": "web-brand-16-05c46db7",
       "pool": "brand",
-      "src": "/assets/editorial-pools/brand/brand-16-689b647539.jpg",
-      "alt": "Anrückende Einsatzfahrzeuge beim Waldbrand im Hürtgenwald in Derichsweiler",
+      "src": "/assets/editorial-pools/brand/brand-16-05c46db79b.jpg",
+      "alt": "Anrückende Einsatzfahrzeuge beim Waldbrand im Hürtgenwald in Birgel",
       "credit": "Symbolbild · User:RoterPanda86 / Wikimedia Commons · CC BY-SA 4.0",
       "source": "Wikimedia Commons",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_im_H%C3%BCrtgenwald_(Derichsweiler)_2026-08-14-02.jpg",
-      "sourceTitle": "File:Waldbrand im Hürtgenwald (Derichsweiler) 2026-08-14-02.jpg",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Waldbrand_im_H%C3%BCrtgenwald_%28Derichsweiler%29_2026-08-14-02.jpg/1920px-Waldbrand_im_H%C3%BCrtgenwald_%28Derichsweiler%29_2026-08-14-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_im_H%C3%BCrtgenwald_(Birgel)_2026-08-14-05.jpg",
+      "sourceTitle": "File:Waldbrand im Hürtgenwald (Birgel) 2026-08-14-05.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Waldbrand_im_H%C3%BCrtgenwald_%28Birgel%29_2026-08-14-05.jpg/1920px-Waldbrand_im_H%C3%BCrtgenwald_%28Birgel%29_2026-08-14-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "rightsCheckedAt": "2026-09-24",
@@ -2769,7 +2769,7 @@
         "loeschen",
         "waldbrand",
         "hürtgenwald",
-        "derichsweiler"
+        "birgel"
       ],
       "width": 1600,
       "height": 1067,
@@ -2778,7 +2778,7 @@
       "photo": true,
       "locality": "NRW",
       "geprueft": false,
-      "checksum": "d1ad38b519e981ae80e8bf7fecd523835d29ad47ee9a425a46e97716d7bc617d"
+      "checksum": "b1799dba4bc3eed8709f08f19f38837ada8769ec68d5f4551a7eb7b0858f3c53"
     },
     {
       "id": "web-brand-17-a6ce1640",
@@ -2807,20 +2807,20 @@
       "format": "jpg",
       "symbol": true,
       "photo": true,
-      "locality": "NRW",
-      "geprueft": false,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
       "checksum": "1426f894e06080729cac7e5d8f612ac5867b82ba1359dd13d90ff31ea18f34b2"
     },
     {
-      "id": "web-brand-18-b5fde901",
+      "id": "web-brand-18-92fba8f6",
       "pool": "brand",
-      "src": "/assets/editorial-pools/brand/brand-18-b5fde901c9.jpg",
+      "src": "/assets/editorial-pools/brand/brand-18-92fba8f6a0.jpg",
       "alt": "Blick auf Ortslage Swisttal von Osten, Rhein-Sieg-Kreis, mit sichtbaren Rauchwolken Richtung Westen, die mutmaßlich aus dem Waldbrand in Hürtgenwald (ca. 40 km Entfernung) stammen",
       "credit": "Symbolbild · Elke Wetzig ( User:Elya ) / Wikimedia Commons · CC BY-SA 4.0",
       "source": "Wikimedia Commons",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121100.jpg",
-      "sourceTitle": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121100.jpg",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121100.jpg/1920px-Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWaldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg",
+      "sourceTitle": "File:Waldbrand Hürtgenwald, Rauchwolken Rhein-Sieg-Kreis 2026-08-15-121113.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg/1920px-Waldbrand_H%C3%BCrtgenwald%2C_Rauchwolken_Rhein-Sieg-Kreis_2026-08-15-121113.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "license": "CC BY-SA 4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "rightsCheckedAt": "2026-09-24",
@@ -2834,16 +2834,16 @@
         "rauchwolken",
         "rhein",
         "kreis",
-        "121100"
+        "121113"
       ],
       "width": 1600,
-      "height": 900,
+      "height": 1200,
       "format": "jpg",
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
       "geprueft": false,
-      "checksum": "160c477f6ade28dbaa6053dd93695aa8a7de7a00d6ff005e35a811ee23e93df9"
+      "checksum": "6f704f94ce761374e1da59ed7bd7d37a27cfd7b7800f48f6b71ac509f138e950"
     },
     {
       "id": "web-brand-19-6a048a0c",
@@ -3162,7 +3162,7 @@
       "symbol": true,
       "photo": true,
       "locality": "NRW",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "33080f133ee44f88230e6db9750e9e9b1293bffa4421ed713096198873466de1"
     },
     {
@@ -3556,7 +3556,7 @@
       "symbol": true,
       "photo": true,
       "locality": "NRW",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "a2c7bd676e5b8faa6652c8e2dd43464bca36686c78d85bf5fd7ba0017415b6d0"
     },
     {
