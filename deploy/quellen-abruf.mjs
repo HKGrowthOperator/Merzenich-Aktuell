@@ -119,8 +119,9 @@ async function listeMitDetails({ listen, detail, max }) {
 
 const QUELLEN = {
   feuerwehr: () => listeMitDetails({
-    listen: ['https://feuerwehr-merzenich.de/einsaetze', 'https://feuerwehr-merzenich.de/einsaetze?page=1', 'https://feuerwehr-merzenich.de/einsaetze?page=2'],
-    detail: /^https:\/\/(www\.)?feuerwehr-merzenich\.de\/einsaetze\/[^?#/]+/, max: 40,
+    // Seiten 0 bis 8: reicht zurueck bis zu den aelteren Einsaetzen des Jahres (Abgleich der Einsatzseiten).
+    listen: ['https://feuerwehr-merzenich.de/einsaetze', ...Array.from({ length: 8 }, (_, i) => `https://feuerwehr-merzenich.de/einsaetze?page=${i + 1}`)],
+    detail: /^https:\/\/(www\.)?feuerwehr-merzenich\.de\/einsaetze\/[^?#/]+/, max: 90,
   }),
   polizei: () => listeMitDetails({
     listen: ORTE.map((o) => `https://www.presseportal.de/blaulicht/r/${encodeURIComponent(o)}`),
