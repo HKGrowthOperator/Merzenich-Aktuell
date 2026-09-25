@@ -1,18 +1,18 @@
 {
  "quelle": "schulen",
- "abgerufen": "2026-09-24T13:14:54.307Z",
+ "abgerufen": "2026-09-25T10:14:31.621Z",
  "listen": [
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-09-24T13:14:51.243Z",
+   "abgerufen": "2026-09-25T10:14:28.533Z",
    "status": 302,
    "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
   },
   {
    "url": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
    "endUrl": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
-   "abgerufen": "2026-09-24T13:14:53.106Z",
+   "abgerufen": "2026-09-25T10:14:30.421Z",
    "status": 302,
    "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
   }

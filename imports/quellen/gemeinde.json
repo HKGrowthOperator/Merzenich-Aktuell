@@ -1,18 +1,18 @@
 {
  "quelle": "gemeinde",
- "abgerufen": "2026-09-24T13:14:50.766Z",
+ "abgerufen": "2026-09-25T10:14:06.031Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-09-24T13:14:48.271Z",
+   "abgerufen": "2026-09-25T10:14:03.532Z",
    "status": 302,
    "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
   },
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/",
-   "abgerufen": "2026-09-24T13:14:49.566Z",
+   "abgerufen": "2026-09-25T10:14:04.830Z",
    "status": 302,
    "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
   }
