@@ -508,7 +508,7 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 3, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 2, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
