@@ -1,11 +1,11 @@
 {
  "quelle": "feuerwehr",
- "abgerufen": "2026-09-24T13:13:39.723Z",
+ "abgerufen": "2026-09-25T09:30:08.815Z",
  "listen": [
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze",
-   "abgerufen": "2026-09-24T13:13:04.782Z",
+   "abgerufen": "2026-09-25T09:27:45.012Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -164,7 +164,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=1",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=1",
-   "abgerufen": "2026-09-24T13:13:06.576Z",
+   "abgerufen": "2026-09-25T09:27:46.861Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -323,7 +323,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=2",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=2",
-   "abgerufen": "2026-09-24T13:13:08.464Z",
+   "abgerufen": "2026-09-25T09:27:48.675Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -482,13 +482,987 @@
      "title": ""
     }
    ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=3",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=3",
+   "abgerufen": "2026-09-25T09:27:50.510Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n108/26 Merzenich - L264\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n30.07.2026 / 13:38 Uhr\nAm heutigen Donnerstag wurde die Feuerwehr Merzenich zu einem Verkehrs...\nMehr erfahren\n107/26 Merzenich - Händelstraße\nBDW1 / Flächenbrand\n29.07.2026 / 16:28 Uhr\nAm heutigen Tag wurde die Feuerwehr Merzenich zu einem Flächenbrand...\nMehr erfahren\n106/26 Golzheim - B264\nBD1 / Brand\n28.07.2026 / 14:26 Uhr\nNach der Erkundung stellte sich heraus, dass die Rauchentwicklung von...\nMehr erfahren\n105/26 Merzenich - Distelrather Weg\nBD / Brand\n27.07.2026 / 16:26 Uhr\nDie Löschgruppe Merzenich wurde gestern Abend zu einem Flächenbrand im...\nMehr erfahren\n104/26 Merzenich - Steinweg_Bahnanlage\nBD1 / Brand\n26.07.2026 / 17:41 Uhr\nDie Feuerwehr Merzenich wurde zu einer unklaren Rauchentwicklung im...\nMehr erfahren\n103/26 Merzenich - Auf der Heide\nBD1 / Brand\n25.07.2026 / 23:03 Uhr\nIn der Nacht von Samstag auf Sonntag wurde die Feuerwehr Merzenich z...\nMehr erfahren\n102/26 Morschenich - ludwig-Rixen-Straße\nPET / Eingeschlossene Person\n25.07.2026 / 16:01 Uhr\nZu einer Person hinter Tür wurden am Samstag Nachmittag die Löschgrupp...\nMehr erfahren\n101/26 Merzenich - L264\nOES / Abstreuen von Ölspur\n24.07.2026 / 16:49 Uhr\nZu einem etwa 10 m² großen Ölfleck wurde die Feuerwehr am späten Freit...\nMehr erfahren\n100/26 Golzheim - Kölner Straße\nBD / Brand\n22.07.2026 / 16:56 Uhr\nAm gestrigen Nachmittag wurde die Feuerwehr Merzenich zu ihrem 100. Ei...\nMehr erfahren\nShowing\n19\nto\n27\nof\n853\nresults\n&lsaquo;\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "108/26 Merzenich - L264 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 30.07.2026 / 13:38 Uhr Am heutigen Donnerstag wurde die Feuerwehr Merzenich zu einem Verkehrs... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264"
+    },
+    {
+     "text": "107/26 Merzenich - Händelstraße BDW1 / Flächenbrand 29.07.2026 / 16:28 Uhr Am heutigen Tag wurde die Feuerwehr Merzenich zu einem Flächenbrand... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse"
+    },
+    {
+     "text": "106/26 Golzheim - B264 BD1 / Brand 28.07.2026 / 14:26 Uhr Nach der Erkundung stellte sich heraus, dass die Rauchentwicklung von... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264"
+    },
+    {
+     "text": "105/26 Merzenich - Distelrather Weg BD / Brand 27.07.2026 / 16:26 Uhr Die Löschgruppe Merzenich wurde gestern Abend zu einem Flächenbrand im... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg"
+    },
+    {
+     "text": "104/26 Merzenich - Steinweg_Bahnanlage BD1 / Brand 26.07.2026 / 17:41 Uhr Die Feuerwehr Merzenich wurde zu einer unklaren Rauchentwicklung im... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage"
+    },
+    {
+     "text": "103/26 Merzenich - Auf der Heide BD1 / Brand 25.07.2026 / 23:03 Uhr In der Nacht von Samstag auf Sonntag wurde die Feuerwehr Merzenich z... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide"
+    },
+    {
+     "text": "102/26 Morschenich - ludwig-Rixen-Straße PET / Eingeschlossene Person 25.07.2026 / 16:01 Uhr Zu einer Person hinter Tür wurden am Samstag Nachmittag die Löschgrupp... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse"
+    },
+    {
+     "text": "101/26 Merzenich - L264 OES / Abstreuen von Ölspur 24.07.2026 / 16:49 Uhr Zu einem etwa 10 m² großen Ölfleck wurde die Feuerwehr am späten Freit... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264"
+    },
+    {
+     "text": "100/26 Golzheim - Kölner Straße BD / Brand 22.07.2026 / 16:56 Uhr Am gestrigen Nachmittag wurde die Feuerwehr Merzenich zu ihrem 100. Ei... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "4",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    },
+    {
+     "text": "5",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "6",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "7",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "8",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=3#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/30%20VU%20L264/02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/30%20VU%20L264/02.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/02.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/26%20Bahnb%C3%B6schung/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/26%20Bahnb%C3%B6schung/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/neues%20HLF%20Ger%C3%A4tef%C3%A4cher.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/neues%20HLF%20Ger%C3%A4tef%C3%A4cher.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/89839451_1306893499496161_2649051200137199616_n.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/89839451_1306893499496161_2649051200137199616_n.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=4",
+   "abgerufen": "2026-09-25T09:27:52.333Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n99/26 BAB4\nFZB / Fahrzeugbrand\n21.07.2026 / 17:58 Uhr\nAm heutigen späten Nachmittag wurden die Löschgruppen Merzenich und Gi...\nMehr erfahren\n98/26 Golzheim - B264\nBD1 / Brand\n20.07.2026 / 18:17 Uhr\nAm späten Montagnachmittag wurde die Feuerwehr Merzenich zu einer un...\nMehr erfahren\n97/26 Girbelsrath - Dechant-Fabry-Straße\nPE1 / Personenbefreiung\n20.07.2026 / 08:19 Uhr\nDie Löschgruppen Golzheim und Girbelsrath, sowie die Tagesalarmgrupp...\nMehr erfahren\n96/26 BAB4\nBD / Brand\n19.07.2026 / 06:08 Uhr\nAm Sonntagmorgen wurde die Löschgruppe Merzenich zu einem gemeldeten F...\nMehr erfahren\n95/26 Morschenich\nBD1 / Brand\n17.07.2026 / 02:22 Uhr\nIn der Nacht zu Freitag wurden die Löschgruppen Morschenich und Merz...\nMehr erfahren\n94/26 Merzenich - L264\nFZB / Fahrzeugbrand\n15.07.2026 / 14:09 Uhr\nDie Feuerwehr Merzenich wurde am Dienstag Nachmittag zu einem PKW-Br...\nMehr erfahren\n93/26 Golzheim - B264\nBD / Brand\n14.07.2026 / 17:31 Uhr\nDie Löschgruppe Golzheim wurde am Dienstag Nachmittag zu einem gemelde...\nMehr erfahren\n92/26 Girbelsrath - Matthias von der Driesch Straße\nMDL / Brandmeldeanlage\n14.07.2026 / 13:21 Uhr\nZu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag...\nMehr erfahren\n91/26 Merzenich - Valdersweg\nBD1 / Brand\n12.07.2026 / 15:15 Uhr\nZu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag...\nMehr erfahren\nShowing\n28\nto\n36\nof\n853\nresults\n&lsaquo;\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "99/26 BAB4 FZB / Fahrzeugbrand 21.07.2026 / 17:58 Uhr Am heutigen späten Nachmittag wurden die Löschgruppen Merzenich und Gi... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4"
+    },
+    {
+     "text": "98/26 Golzheim - B264 BD1 / Brand 20.07.2026 / 18:17 Uhr Am späten Montagnachmittag wurde die Feuerwehr Merzenich zu einer un... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264"
+    },
+    {
+     "text": "97/26 Girbelsrath - Dechant-Fabry-Straße PE1 / Personenbefreiung 20.07.2026 / 08:19 Uhr Die Löschgruppen Golzheim und Girbelsrath, sowie die Tagesalarmgrupp... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse"
+    },
+    {
+     "text": "96/26 BAB4 BD / Brand 19.07.2026 / 06:08 Uhr Am Sonntagmorgen wurde die Löschgruppe Merzenich zu einem gemeldeten F... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4"
+    },
+    {
+     "text": "95/26 Morschenich BD1 / Brand 17.07.2026 / 02:22 Uhr In der Nacht zu Freitag wurden die Löschgruppen Morschenich und Merz... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich"
+    },
+    {
+     "text": "94/26 Merzenich - L264 FZB / Fahrzeugbrand 15.07.2026 / 14:09 Uhr Die Feuerwehr Merzenich wurde am Dienstag Nachmittag zu einem PKW-Br... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264"
+    },
+    {
+     "text": "93/26 Golzheim - B264 BD / Brand 14.07.2026 / 17:31 Uhr Die Löschgruppe Golzheim wurde am Dienstag Nachmittag zu einem gemelde... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264"
+    },
+    {
+     "text": "92/26 Girbelsrath - Matthias von der Driesch Straße MDL / Brandmeldeanlage 14.07.2026 / 13:21 Uhr Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse"
+    },
+    {
+     "text": "91/26 Merzenich - Valdersweg BD1 / Brand 12.07.2026 / 15:15 Uhr Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=3"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "3",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=3"
+    },
+    {
+     "text": "5",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "6",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "7",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "8",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=4#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/98097102_1366223200229857_3164337208530305024_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/98097102_1366223200229857_3164337208530305024_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/83390300_1275538995964945_8300940566368092160_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/83390300_1275538995964945_8300940566368092160_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Pumpneraum%20HLF.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Pumpneraum%20HLF.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/PA%20in%20Halterung.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/PA%20in%20Halterung.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/BMA/IMG-20210603-WA0001.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/BMA/IMG-20210603-WA0001.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/12%20Kanal/02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/12%20Kanal/02.jpg",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=5",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=5",
+   "abgerufen": "2026-09-25T09:27:54.215Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n90/26 Merzenich - B264\nOES / Abstreuen von Ölspur\n10.07.2026 / 07:56 Uhr\nAm Freitag Morgen wurde die Löschgruppe Merzenich zur B264 alarmiert....\nMehr erfahren\n89/26 Merzenich -B264\nBD / Brand\n07.07.2026 / 18:44 Uhr\nEin weiterer kleinerer Flächenbrand wurde der Leitstelle am Abend auf...\nMehr erfahren\n88/26 Golzheim - Kölner Straße\nBD / Brand\n07.07.2026 / 11:51 Uhr\nAm Dienstag Mittag wurde die Löschgruppe Golzheim, zusammen mit dem Ta...\nMehr erfahren\n87/26 merzenich - Grünstraße\nTIF / Herrenloses Tier\n03.07.2026 / 20:02 Uhr\nAm Freitagabend wurde die Löschgruppe Merzenich zu einem Tierfang alar...\nMehr erfahren\n86/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n03.07.2026 / 07:56 Uhr\nEtwa eine Stunde nach dem vorherigen Einsatz rückte die Feuerwehr Merz...\nMehr erfahren\n85/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n03.07.2026 / 06:33 Uhr\nErneut wurde die Feuerwehr Merzenich am Morgen zu einem Verkehrsunfall...\nMehr erfahren\n84/26 Merzenich - Schützenstraße\nPET / Eingeschlossene Person\n03.07.2026 / 02:21 Uhr\nIn der Nacht zu Freitag wurde die Einheit Merzenich gemeinsam mit dem...\nMehr erfahren\n83/26 BAB4\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n01.07.2026 / 15:00 Uhr\nZeitgleich zum Einsatz des Verkehrsunfall (Einsatz 82/26) ereignete si...\nMehr erfahren\n82/26 BAB4\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n01.07.2026 / 14:36 Uhr\nVergangenen Mittwoch Nachmittag wurde die Feuerwehr Merzenich auf di...\nMehr erfahren\nShowing\n37\nto\n45\nof\n853\nresults\n&lsaquo;\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "90/26 Merzenich - B264 OES / Abstreuen von Ölspur 10.07.2026 / 07:56 Uhr Am Freitag Morgen wurde die Löschgruppe Merzenich zur B264 alarmiert.... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264"
+    },
+    {
+     "text": "89/26 Merzenich -B264 BD / Brand 07.07.2026 / 18:44 Uhr Ein weiterer kleinerer Flächenbrand wurde der Leitstelle am Abend auf... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264"
+    },
+    {
+     "text": "88/26 Golzheim - Kölner Straße BD / Brand 07.07.2026 / 11:51 Uhr Am Dienstag Mittag wurde die Löschgruppe Golzheim, zusammen mit dem Ta... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse"
+    },
+    {
+     "text": "87/26 merzenich - Grünstraße TIF / Herrenloses Tier 03.07.2026 / 20:02 Uhr Am Freitagabend wurde die Löschgruppe Merzenich zu einem Tierfang alar... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse"
+    },
+    {
+     "text": "86/26 BAB 4 RD-BAB / Unterstützung Rettungsdienst auf Autobahn 03.07.2026 / 07:56 Uhr Etwa eine Stunde nach dem vorherigen Einsatz rückte die Feuerwehr Merz... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4"
+    },
+    {
+     "text": "85/26 BAB 4 RD-BAB / Unterstützung Rettungsdienst auf Autobahn 03.07.2026 / 06:33 Uhr Erneut wurde die Feuerwehr Merzenich am Morgen zu einem Verkehrsunfall... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4"
+    },
+    {
+     "text": "84/26 Merzenich - Schützenstraße PET / Eingeschlossene Person 03.07.2026 / 02:21 Uhr In der Nacht zu Freitag wurde die Einheit Merzenich gemeinsam mit dem... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse"
+    },
+    {
+     "text": "83/26 BAB4 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 01.07.2026 / 15:00 Uhr Zeitgleich zum Einsatz des Verkehrsunfall (Einsatz 82/26) ereignete si... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4"
+    },
+    {
+     "text": "82/26 BAB4 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 01.07.2026 / 14:36 Uhr Vergangenen Mittwoch Nachmittag wurde die Feuerwehr Merzenich auf di... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "3",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=3"
+    },
+    {
+     "text": "4",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    },
+    {
+     "text": "6",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "7",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "8",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=5#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/Abstreuen%C3%96lspur.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/Abstreuen%C3%96lspur.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%2BHaspeln.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%2BHaspeln.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/03%20Katzen/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/03%20Katzen/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/109708605_1414631802055663_2985371165164598599_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/109708605_1414631802055663_2985371165164598599_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/01%20VU%20BAB/02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/07/01%20VU%20BAB/02.jpg",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=6",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=6",
+   "abgerufen": "2026-09-25T09:27:56.068Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n81/26 Merzenich - Bergstraße\nPET / Eingeschlossene Person\n28.06.2026 / 13:34 Uhr\nAm Sonntagnachmittag wurde die Feuerwehr Merzenich zu einem Einsatz mi...\nMehr erfahren\n80/26 Girbelsrath - L264\nTIF / Herrenloses Tier\n28.06.2026 / 03:17 Uhr\nIn der Nacht wurde die Feuerwehr zu einem Tierfang alarmiert. Ein frei...\nMehr erfahren\n79/26 Merzenich - Händelstraße\nPET / Eingeschlossene Person\n27.06.2026 / 22:19 Uhr\nErneut musste die Löschgruppe Merzenich zu einer Türöffnung bei einem...\nMehr erfahren\n78/26 Merzenich - Mühlenstraße\nTIF / Herrenloses Tier\n25.06.2026 / 23:47 Uhr\nGemeldet wurde kurz vor Mitternacht eine angefahrene Katze im Bereich...\nMehr erfahren\n77/26 Merzenich - In den Weingärten\nPerson in Aufzug / Person in Aufzug\n24.06.2026 / 14:26 Uhr\nDie Feuerwehr wurde zu einem steckengebliebenen Aufzug in den Weingä...\nMehr erfahren\n76/26 - Girbelsrath L264\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n24.06.2026 / 07:43 Uhr\nErneut ereignete sich ein Verkehrsunfall im Gemeindegebiet Merzenich...\nMehr erfahren\n75/26 - B264\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n22.06.2026 / 08:26 Uhr\nDie Feuerwehr wurde am Montag zu einem Verkehrsunfall im Kreuzungsbere...\nMehr erfahren\n74/26 Merzenich - Valdersweg\nRD-TH / Unterstützung Rettungsdienst\n21.06.2026 / 18:21 Uhr\nAm späten Sonntag Nachmittag wurde die Feuerwehr Merzenich zur Unterst...\nMehr erfahren\n73/26 Merzenich - Erlenweg\nTH / Technische Hilfe\n20.06.2026 / 14:22 Uhr\nAm vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg...\nMehr erfahren\nShowing\n46\nto\n54\nof\n853\nresults\n&lsaquo;\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "81/26 Merzenich - Bergstraße PET / Eingeschlossene Person 28.06.2026 / 13:34 Uhr Am Sonntagnachmittag wurde die Feuerwehr Merzenich zu einem Einsatz mi... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse"
+    },
+    {
+     "text": "80/26 Girbelsrath - L264 TIF / Herrenloses Tier 28.06.2026 / 03:17 Uhr In der Nacht wurde die Feuerwehr zu einem Tierfang alarmiert. Ein frei... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264"
+    },
+    {
+     "text": "79/26 Merzenich - Händelstraße PET / Eingeschlossene Person 27.06.2026 / 22:19 Uhr Erneut musste die Löschgruppe Merzenich zu einer Türöffnung bei einem... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse"
+    },
+    {
+     "text": "78/26 Merzenich - Mühlenstraße TIF / Herrenloses Tier 25.06.2026 / 23:47 Uhr Gemeldet wurde kurz vor Mitternacht eine angefahrene Katze im Bereich... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse"
+    },
+    {
+     "text": "77/26 Merzenich - In den Weingärten Person in Aufzug / Person in Aufzug 24.06.2026 / 14:26 Uhr Die Feuerwehr wurde zu einem steckengebliebenen Aufzug in den Weingä... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten"
+    },
+    {
+     "text": "76/26 - Girbelsrath L264 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 24.06.2026 / 07:43 Uhr Erneut ereignete sich ein Verkehrsunfall im Gemeindegebiet Merzenich... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264"
+    },
+    {
+     "text": "75/26 - B264 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 22.06.2026 / 08:26 Uhr Die Feuerwehr wurde am Montag zu einem Verkehrsunfall im Kreuzungsbere... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7526-b264"
+    },
+    {
+     "text": "74/26 Merzenich - Valdersweg RD-TH / Unterstützung Rettungsdienst 21.06.2026 / 18:21 Uhr Am späten Sonntag Nachmittag wurde die Feuerwehr Merzenich zur Unterst... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg"
+    },
+    {
+     "text": "73/26 Merzenich - Erlenweg TH / Technische Hilfe 20.06.2026 / 14:22 Uhr Am vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "3",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=3"
+    },
+    {
+     "text": "4",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    },
+    {
+     "text": "5",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "7",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "8",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=6#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Lindenstra%C3%9Fe.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Lindenstra%C3%9Fe.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/116938322_1427208500797993_1497150135831870710_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/116938322_1427208500797993_1497150135831870710_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Aufzugt%C3%BCr.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Aufzugt%C3%BCr.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/24%20VU%20L264/03.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/06/24%20VU%20L264/03.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/22%20VU%20B264/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/06/22%20VU%20B264/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Motors%C3%A4ge/Motors%C3%A4ge_Helm.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Motors%C3%A4ge/Motors%C3%A4ge_Helm.jpg",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=7",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=7",
+   "abgerufen": "2026-09-25T09:27:57.897Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n72/26 Merzenich - Valdersweg\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n19.06.2026 / 17:30 Uhr\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsb...\nMehr erfahren\n71/26 Golzheim - Buirer Straße\nPET / Eingeschlossene Person\n14.06.2026 / 00:29 Uhr\nKurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath z...\nMehr erfahren\n70/26 Merzenich - Im Ehrenfeld\nTIF / Herrenloses Tier\n13.06.2026 / 14:23 Uhr\nSamstag Nachmittag wurde die Löschgruppe Merzenich zu einem Tiereinsat...\nMehr erfahren\n69/26 Merzenich - Lindenstraße\nPET / Eingeschlossene Person\n08.06.2026 / 10:15 Uhr\nZu einer \"Person hinter Tür\" wurde die Feuerwehr und der Rettungsdiens...\nMehr erfahren\n68/26 Merzenich - Steinweg\nPET / Eingeschlossene Person\n07.06.2026 / 00:26 Uhr\nKurz nach Mitternacht wurde die Löschgruppe Merzenich zu einer \"Person...\nMehr erfahren\n67/26 Merzenich - Steinpfahl\nPET / Eingeschlossene Person\n04.06.2026 / 13:00 Uhr\nDie Feuerwehr Merzenich wurde am Donnerstag Mittag zur Unterstützung d...\nMehr erfahren\n66/26 L264\nTechnische Hilfeleistung nach Verkehrsunfall / TH-VU\n03.06.2026 / 15:24 Uhr\nZu einem Verkehrsunfall mit insgesamt drei Fahrzeugen wurde am Mittwoc...\nMehr erfahren\n65/26 BAB 4\nFZB / Fahrzeugbrand\n02.06.2026 / 15:26 Uhr\nAm Nachmittag wurde der Leitstelle ein Fahrzeugbrand auf der BAB4 in F...\nMehr erfahren\n64/26 Bürgewald - Unterstraße\nBD1 / Brand\n01.06.2026 / 20:45 Uhr\nAm Abend nahmen Anwohner einen Feuerschein im Bereich Bürgewald war. N...\nMehr erfahren\nShowing\n55\nto\n63\nof\n853\nresults\n&lsaquo;\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "72/26 Merzenich - Valdersweg Technische Hilfeleistung nach Verkehrsunfall / TH-VU 19.06.2026 / 17:30 Uhr Die Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsb... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg"
+    },
+    {
+     "text": "71/26 Golzheim - Buirer Straße PET / Eingeschlossene Person 14.06.2026 / 00:29 Uhr Kurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath z... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse"
+    },
+    {
+     "text": "70/26 Merzenich - Im Ehrenfeld TIF / Herrenloses Tier 13.06.2026 / 14:23 Uhr Samstag Nachmittag wurde die Löschgruppe Merzenich zu einem Tiereinsat... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld"
+    },
+    {
+     "text": "69/26 Merzenich - Lindenstraße PET / Eingeschlossene Person 08.06.2026 / 10:15 Uhr Zu einer \"Person hinter Tür\" wurde die Feuerwehr und der Rettungsdiens... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse"
+    },
+    {
+     "text": "68/26 Merzenich - Steinweg PET / Eingeschlossene Person 07.06.2026 / 00:26 Uhr Kurz nach Mitternacht wurde die Löschgruppe Merzenich zu einer \"Person... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg"
+    },
+    {
+     "text": "67/26 Merzenich - Steinpfahl PET / Eingeschlossene Person 04.06.2026 / 13:00 Uhr Die Feuerwehr Merzenich wurde am Donnerstag Mittag zur Unterstützung d... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6726-merzenich-steinpfahl"
+    },
+    {
+     "text": "66/26 L264 Technische Hilfeleistung nach Verkehrsunfall / TH-VU 03.06.2026 / 15:24 Uhr Zu einem Verkehrsunfall mit insgesamt drei Fahrzeugen wurde am Mittwoc... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6626-l264"
+    },
+    {
+     "text": "65/26 BAB 4 FZB / Fahrzeugbrand 02.06.2026 / 15:26 Uhr Am Nachmittag wurde der Leitstelle ein Fahrzeugbrand auf der BAB4 in F... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6526-bab-4"
+    },
+    {
+     "text": "64/26 Bürgewald - Unterstraße BD1 / Brand 01.06.2026 / 20:45 Uhr Am Abend nahmen Anwohner einen Feuerschein im Bereich Bürgewald war. N... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6426-burgewald-unterstrasse"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "3",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=3"
+    },
+    {
+     "text": "4",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=4"
+    },
+    {
+     "text": "5",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "6",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "8",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=8"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=7#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Weste%20HLF.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Weste%20HLF.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/94869029_1348632858655558_6841563709148495872_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/94869029_1348632858655558_6841563709148495872_o.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/03%20VU%20L264/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/06/03%20VU%20L264/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/02%20PKW%20BAB%20%C3%96lverlust/01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/06/02%20PKW%20BAB%20%C3%96lverlust/01.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze?page=8",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=8",
+   "abgerufen": "2026-09-25T09:27:59.704Z",
+   "status": 200,
+   "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze",
+    "og:type": "website",
+    "og:title": "Einsätze | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Auf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze. Bild- und Videoaufnahmen werden erst gema...",
+    "og:image": "https://feuerwehr-merzenich.de/images/logo/logo.png"
+   },
+   "text": "Einsätze der Feuerwehr Merzenich\nAuf unserer Internetseite berichten wir ausführlich (dies beinhaltet Bild- und Videomaterial) über unsere Einsätze.\nBild- und Videoaufnahmen werden erst gemacht, wenn das Einsatzgeschehen dies zulässt. Desweiteren werden keine Bilder von verletzten Menschen oder Tieren gemacht beziehungsweise hier veröffentlicht.\nSollten Sie Einwände oder Beschwerden gegen die hier veröffentlichen Fotos, Videos oder Berichte haben, verwenden Sie bitte unser Kontaktformular .\n63/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n28.05.2026 / 16:04 Uhr\nAm Nachmittagkam es auf der Autobahn in Fahrtrichtung Köln zu einem Re...\nMehr erfahren\n62/26 BAB 4\nPE1 / Personenbefreiung\n28.05.2026 / 02:20 Uhr\nIn der Nacht kam es auf der BAB 4 zwischen Elsdorf und Merzenich zu ei...\nMehr erfahren\n61/26 Merzenich S-Bahnhaltepunkt\nBD / Brand\n27.05.2026 / 15:26 Uhr\nAm Nachmittag wurde der Polizei ein brennender Mülleimer am S-Bahnhalt...\nMehr erfahren\n60/26 Girbelsrath - Mathias- von den- Driesch-Straße\nMDL / Brandmeldeanlage\n27.05.2026 / 09:23 Uhr\nAm Morgen wurden die Einsatzkräfte der Feuerwehr Merzenich durch eine...\nMehr erfahren\n59/26 Merzenich - Hamweg\nPET / Eingeschlossene Person\n25.05.2026 / 17:32 Uhr\nBeim gestrigen Einsatz wurde die Feuerwehr gemeinsam mit dem Rettungsd...\nMehr erfahren\n58/26 Girbelsrath - Mittelstraße\nTIF / Herrenloses Tier\n23.05.2026 / 22:38 Uhr\nFast zeitgleich mit dem Mülleimerbrand in Merzenich wurde die Löschgru...\nMehr erfahren\n57/26 Merzenich - Valdersweg\nBD / Brand\n23.05.2026 / 22:36 Uhr\nSamstag Abend wurde die Löschgruppe Merzenich zu einem Mülleimerbrand...\nMehr erfahren\n56/26 Morschenich - Ellener Allee\nBD / Brand\n17.05.2026 / 18:19 Uhr\nAm frühen Abend wurden die Löschgruppen Morschenich und Merzenich zur...\nMehr erfahren\n55/26 Golzheim - Marienstraße\nPET / Eingeschlossene Person\n12.05.2026 / 12:47 Uhr\nBei der Einsatzmeldung \"Person hinter Tür\" in Golzheim musste am Diens...\nMehr erfahren\nShowing\n64\nto\n72\nof\n853\nresults\n&lsaquo;\n1\n2\n...\n5\n6\n7\n8\n9\n10\n11\n...\n94\n95\n&rsaquo;",
+   "links": [
+    {
+     "text": "Kontaktformular",
+     "href": "https://feuerwehr-merzenich.de/kontakt/create"
+    },
+    {
+     "text": "63/26 BAB 4 RD-BAB / Unterstützung Rettungsdienst auf Autobahn 28.05.2026 / 16:04 Uhr Am Nachmittagkam es auf der Autobahn in Fahrtrichtung Köln zu einem Re... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6326-bab-4"
+    },
+    {
+     "text": "62/26 BAB 4 PE1 / Personenbefreiung 28.05.2026 / 02:20 Uhr In der Nacht kam es auf der BAB 4 zwischen Elsdorf und Merzenich zu ei... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6226-bab-4"
+    },
+    {
+     "text": "61/26 Merzenich S-Bahnhaltepunkt BD / Brand 27.05.2026 / 15:26 Uhr Am Nachmittag wurde der Polizei ein brennender Mülleimer am S-Bahnhalt... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6126-merzenich-s-bahnhaltepunkt"
+    },
+    {
+     "text": "60/26 Girbelsrath - Mathias- von den- Driesch-Straße MDL / Brandmeldeanlage 27.05.2026 / 09:23 Uhr Am Morgen wurden die Einsatzkräfte der Feuerwehr Merzenich durch eine... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/6026-girbelsrath-mathias-von-den-driesch-strasse"
+    },
+    {
+     "text": "59/26 Merzenich - Hamweg PET / Eingeschlossene Person 25.05.2026 / 17:32 Uhr Beim gestrigen Einsatz wurde die Feuerwehr gemeinsam mit dem Rettungsd... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/5926-merzenich-hamweg"
+    },
+    {
+     "text": "58/26 Girbelsrath - Mittelstraße TIF / Herrenloses Tier 23.05.2026 / 22:38 Uhr Fast zeitgleich mit dem Mülleimerbrand in Merzenich wurde die Löschgru... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/5826-girbelsrath-mittelstrasse"
+    },
+    {
+     "text": "57/26 Merzenich - Valdersweg BD / Brand 23.05.2026 / 22:36 Uhr Samstag Abend wurde die Löschgruppe Merzenich zu einem Mülleimerbrand... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/5726-merzenich-valdersweg"
+    },
+    {
+     "text": "56/26 Morschenich - Ellener Allee BD / Brand 17.05.2026 / 18:19 Uhr Am frühen Abend wurden die Löschgruppen Morschenich und Merzenich zur... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/5626-morschenich-ellener-allee"
+    },
+    {
+     "text": "55/26 Golzheim - Marienstraße PET / Eingeschlossene Person 12.05.2026 / 12:47 Uhr Bei der Einsatzmeldung \"Person hinter Tür\" in Golzheim musste am Diens... Mehr erfahren",
+     "href": "https://feuerwehr-merzenich.de/einsaetze/5526-golzheim-marienstrasse"
+    },
+    {
+     "text": "&lsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "1",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=1"
+    },
+    {
+     "text": "2",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=2"
+    },
+    {
+     "text": "5",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=5"
+    },
+    {
+     "text": "6",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=6"
+    },
+    {
+     "text": "7",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=7"
+    },
+    {
+     "text": "9",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    },
+    {
+     "text": "10",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=10"
+    },
+    {
+     "text": "11",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=11"
+    },
+    {
+     "text": "94",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=94"
+    },
+    {
+     "text": "95",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=95"
+    },
+    {
+     "text": "&rsaquo;",
+     "href": "https://feuerwehr-merzenich.de/einsaetze?page=9"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze?page=8#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/04.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/04.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/S_Bahnhof.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/S_Bahnhof.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/05/27%20Absaugung%20SONOCO/04%20Absaugung.png",
+     "alt": "https://feuerwehr-merzenich.de/uploads/2026/05/27%20Absaugung%20SONOCO/04%20Absaugung.png",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/TIF/Tierfangboxen.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/TIF/Tierfangboxen.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Melder%20EinsatzAbbrechen.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Melder%20EinsatzAbbrechen.jpg",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg",
+     "alt": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg",
+     "title": ""
+    }
+   ]
   }
  ],
  "details": [
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12726-girbelsrtath-dechant-fabry-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12726-girbelsrtath-dechant-fabry-strasse",
-   "abgerufen": "2026-09-24T13:13:10.173Z",
+   "abgerufen": "2026-09-25T09:28:01.490Z",
    "status": 200,
    "titel": "127/26 Girbelsrtath - Dechant Fabry Strasse | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -513,7 +1487,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12626-morschenich-obere-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12626-morschenich-obere-strasse",
-   "abgerufen": "2026-09-24T13:13:11.833Z",
+   "abgerufen": "2026-09-25T09:28:03.261Z",
    "status": 200,
    "titel": "126/26 Morschenich - Obere Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -538,7 +1512,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12526-burgewald-oberstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12526-burgewald-oberstrasse",
-   "abgerufen": "2026-09-24T13:13:13.494Z",
+   "abgerufen": "2026-09-25T09:28:05.045Z",
    "status": 200,
    "titel": "125/26 Bürgewald - Oberstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -563,7 +1537,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12426-mereznich-muhlenstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12426-mereznich-muhlenstrasse",
-   "abgerufen": "2026-09-24T13:13:15.155Z",
+   "abgerufen": "2026-09-25T09:28:06.822Z",
    "status": 200,
    "titel": "124/26 Mereznich - Mühlenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -593,7 +1567,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12326-merzenich-steinpfahl",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12326-merzenich-steinpfahl",
-   "abgerufen": "2026-09-24T13:13:16.777Z",
+   "abgerufen": "2026-09-25T09:28:08.610Z",
    "status": 200,
    "titel": "123/26 Merzenich - Steinpfahl | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -618,7 +1592,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12126-merzenich-steinpfahl",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12126-merzenich-steinpfahl",
-   "abgerufen": "2026-09-24T13:13:18.449Z",
+   "abgerufen": "2026-09-25T09:28:10.372Z",
    "status": 200,
    "titel": "121/26 Merzenich - Steinpfahl | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -643,7 +1617,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12026-burgewald-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12026-burgewald-l257",
-   "abgerufen": "2026-09-24T13:13:20.044Z",
+   "abgerufen": "2026-09-25T09:28:12.156Z",
    "status": 200,
    "titel": "120/26 Bürgewald - L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -673,7 +1647,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257",
-   "abgerufen": "2026-09-24T13:13:21.698Z",
+   "abgerufen": "2026-09-25T09:28:13.939Z",
    "status": 200,
    "titel": "119/26 Bürgewald - L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -698,7 +1672,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11826-girbelsrath-am-rosspfad",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11826-girbelsrath-am-rosspfad",
-   "abgerufen": "2026-09-24T13:13:23.364Z",
+   "abgerufen": "2026-09-25T09:28:15.711Z",
    "status": 200,
    "titel": "118/26 Girbelsrath - Am Roßpfad | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -723,7 +1697,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11726-burgewald-unterstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11726-burgewald-unterstrasse",
-   "abgerufen": "2026-09-24T13:13:25.083Z",
+   "abgerufen": "2026-09-25T09:28:17.499Z",
    "status": 200,
    "titel": "117/26 Bürgewald - Unterstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -748,7 +1722,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11626-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11626-l257",
-   "abgerufen": "2026-09-24T13:13:26.777Z",
+   "abgerufen": "2026-09-25T09:28:19.274Z",
    "status": 200,
    "titel": "116/26 L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -853,7 +1827,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11526-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11526-bab4",
-   "abgerufen": "2026-09-24T13:13:28.457Z",
+   "abgerufen": "2026-09-25T09:28:21.058Z",
    "status": 200,
    "titel": "115/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -878,7 +1852,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11426-merzenich-b264valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11426-merzenich-b264valdersweg",
-   "abgerufen": "2026-09-24T13:13:30.136Z",
+   "abgerufen": "2026-09-25T09:28:22.841Z",
    "status": 200,
    "titel": "114/26 Merzenich B264/Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -903,7 +1877,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11326-girbelsrath-feld-richtung-binsfeld",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11326-girbelsrath-feld-richtung-binsfeld",
-   "abgerufen": "2026-09-24T13:13:31.804Z",
+   "abgerufen": "2026-09-25T09:28:24.496Z",
    "status": 200,
    "titel": "113/26 Girbelsrath - Feld Richtung Binsfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -928,7 +1902,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
-   "abgerufen": "2026-09-24T13:13:33.513Z",
+   "abgerufen": "2026-09-25T09:28:26.308Z",
    "status": 200,
    "titel": "112/26 Girbelsrath - Feld Richtung Binsfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -997,7 +1971,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
-   "abgerufen": "2026-09-24T13:13:35.168Z",
+   "abgerufen": "2026-09-25T09:28:28.059Z",
    "status": 200,
    "titel": "111/26 Bürgewald - Unterstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1022,7 +1996,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11026-girbelsrath-matthias-von-den-driesch-str",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11026-girbelsrath-matthias-von-den-driesch-str",
-   "abgerufen": "2026-09-24T13:13:36.864Z",
+   "abgerufen": "2026-09-25T09:28:29.837Z",
    "status": 200,
    "titel": "110/26 Girbelsrath - Matthias von den Driesch-Str. | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1052,7 +2026,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg",
-   "abgerufen": "2026-09-24T13:13:38.523Z",
+   "abgerufen": "2026-09-25T09:28:31.621Z",
    "status": 200,
    "titel": "109/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1069,6 +2043,1455 @@
    "bilder": [
     {
      "src": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
+   "abgerufen": "2026-09-25T09:28:33.404Z",
+   "status": 200,
+   "titel": "108/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am heutigen Donnerstag wurde die Feuerwehr Merzenich zu einem Verkehrsunfall auf die L264 im Kreuzungsbereich „Auf der Heide“ alarmiert.\r\nGemeldet wurde ein...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
+    "og:type": "website",
+    "og:title": "108/26 Merzenich - L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am heutigen Donnerstag wurde die Feuerwehr Merzenich zu einem Verkehrsunfall auf die L264 im Kreuzungsbereich „Auf der Heide“ alarmiert.\r\nGemeldet wurde ein...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/30%20VU%20L264/02.jpg"
+   },
+   "text": "108/26 Merzenich - L264\nTH-VU / TH-VU\n30.07.2026 / 13:38 Uhr\nAm heutigen Donnerstag wurde die Feuerwehr Merzenich zu einem Verkehrsunfall auf die L264 im Kreuzungsbereich „Auf der Heide“ alarmiert.\nGemeldet wurde ein Alleinunfall mit einem überschlagenen Pkw.\nBeim Eintreffen der Einsatzkräfte befand sich das Fahrzeug auf der Seite. Der Fahrer hatte den Pkw bereits verlassen und wurde durch den Rettungsdienst medizinisch versorgt.\nDie Feuerwehr sicherte die Einsatzstelle ab und unterstützte die Polizei bei der Unfallaufnahme.\nNach Abschluss der Maßnahmen wurde die Einsatzstelle an die Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nRettungsdienst Kreis Düren\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/30%20VU%20L264/01.jpg",
+     "alt": "01",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
+   "abgerufen": "2026-09-25T09:28:35.175Z",
+   "status": 200,
+   "titel": "107/26 Merzenich - Händelstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nAm heutigen Tag wurde die Feuerwehr Merzenich zu einem Flächenbrand an der Händelstraße alarmiert.\r\nIm Einsatz befanden sich die Löschgruppen Merzenich und...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
+    "og:type": "website",
+    "og:title": "107/26 Merzenich - Händelstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nAm heutigen Tag wurde die Feuerwehr Merzenich zu einem Flächenbrand an der Händelstraße alarmiert.\r\nIm Einsatz befanden sich die Löschgruppen Merzenich und...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/02.jpg"
+   },
+   "text": "107/26 Merzenich - Händelstraße\nWaldbrand 1 / Flächenbrand\n29.07.2026 / 16:28 Uhr\nAm heutigen Tag wurde die Feuerwehr Merzenich zu einem Flächenbrand an der Händelstraße alarmiert.\nIm Einsatz befanden sich die Löschgruppen Merzenich und Morschenich, sowie das FTZ Stockheim mit einem Abrollbehälter Wasser.\nBeim Eintreffen stand ein Teil eines Stoppelfeldes in Brand. Das Feuer hatte sich auf eine Fläche von rund 400 Quadratmetern und einem angrenzenden Spielplatz ausgebreitet.\nZur Brandbekämpfung wurden zwei Strahlrohre vorgenommen. Zusätzlich wurde ein örtlicher Landwirt mit einem Grubber angefordert, um eine weitere Brandausbreitung zu verhindern.\nDurch das schnelle Eingreifen der Einsatzkräfte konnte der Brand zügig unter Kontrolle gebracht und anschließend vollständig abgelöscht werden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nFeuerschutztechnisches Zentrum",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/01.jpg",
+     "alt": "01",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/03.jpg",
+     "alt": "03",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/29%20Stoppelfeld/04.jpg",
+     "alt": "04",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264",
+   "abgerufen": "2026-09-25T09:28:36.871Z",
+   "status": 200,
+   "titel": "106/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Nach der Erkundung stellte sich heraus, dass die Rauchentwicklung von Arbeiten auf einem Feld verursacht wurde und kein Schadfeuer vorlag.\r\nDennoch wurde der...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264",
+    "og:type": "website",
+    "og:title": "106/26 Golzheim - B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Nach der Erkundung stellte sich heraus, dass die Rauchentwicklung von Arbeiten auf einem Feld verursacht wurde und kein Schadfeuer vorlag.\r\nDennoch wurde der...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg"
+   },
+   "text": "106/26 Golzheim - B264\nBrand 1 / Brand\n28.07.2026 / 14:26 Uhr\nNach der Erkundung stellte sich heraus, dass die Rauchentwicklung von Arbeiten auf einem Feld verursacht wurde und kein Schadfeuer vorlag.\nDennoch wurde der angrenzende Bereich noch einmal großräumig kontrolliert, ein weiteres Eingreifen der Feuerwehr war jedoch nicht erforderlich.\nDer Einsatz konnte daraufhin abgebrochen werden.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg",
+   "abgerufen": "2026-09-25T09:28:38.629Z",
+   "status": 200,
+   "titel": "105/26 Merzenich - Distelrather Weg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Die Löschgruppe Merzenich wurde gestern Abend zu einem Flächenbrand im Bereich Distelrather Weg gerufen.\r\nVor Ort hatten etwa 50 m Böschung gebrannt, die bei...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg",
+    "og:type": "website",
+    "og:title": "105/26 Merzenich - Distelrather Weg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Die Löschgruppe Merzenich wurde gestern Abend zu einem Flächenbrand im Bereich Distelrather Weg gerufen.\r\nVor Ort hatten etwa 50 m Böschung gebrannt, die bei...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg"
+   },
+   "text": "105/26 Merzenich - Distelrather Weg\nBrand / Brand\n27.07.2026 / 16:26 Uhr\nDie Löschgruppe Merzenich wurde gestern Abend zu einem Flächenbrand im Bereich Distelrather Weg gerufen.\nVor Ort hatten etwa 50 m Böschung gebrannt, die beim Eintreffen bereits gelöscht war.\nEs wurden noch Nachlöscharbeiten durchgeführt um letzte Glutnester auszuschließen.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
+   "abgerufen": "2026-09-25T09:28:40.406Z",
+   "status": 200,
+   "titel": "104/26 Merzenich - Steinweg_Bahnanlage | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Feuerwehr Merzenich wurde zu einer unklaren Rauchentwicklung im Bereich Steinweg alarmiert. Bei der Erkundung stellte sich heraus, dass es im Bereich d...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
+    "og:type": "website",
+    "og:title": "104/26 Merzenich - Steinweg_Bahnanlage | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Feuerwehr Merzenich wurde zu einer unklaren Rauchentwicklung im Bereich Steinweg alarmiert. Bei der Erkundung stellte sich heraus, dass es im Bereich d...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/26%20Bahnb%C3%B6schung/01.jpg"
+   },
+   "text": "104/26 Merzenich - Steinweg_Bahnanlage\nBrand 1 / Brand\n26.07.2026 / 17:41 Uhr\nDie Feuerwehr Merzenich wurde zu einer unklaren Rauchentwicklung im Bereich Steinweg alarmiert. Bei der Erkundung stellte sich heraus, dass es im Bereich der Gleisanlage entlang der Bahnstrecke zu einem Brand gekommen war.\nBetroffen waren rund 200 Quadratmeter Unterholz sowie die Böschung. Nach der Freigabe der Einsatzstelle durch den Notfallmanager der Deutschen Bahn konnten die Löschmaßnahmen aufgenommen werden. Das Feuer wurde zügig unter Kontrolle gebracht und vollständig abgelöscht.\nDer Einsatz dauerte insgesamt etwa eine Stunde.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/26%20Bahnb%C3%B6schung/02.jpg",
+     "alt": "02",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide",
+   "abgerufen": "2026-09-25T09:28:42.195Z",
+   "status": 200,
+   "titel": "103/26 Merzenich - Auf der Heide | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nIn der Nacht von Samstag auf Sonntag wurde die Feuerwehr Merzenich zu einem unklaren Brandgeruch in den Bereich „Auf der Heide“ alarmiert.\r\n\r\n\r\nDie Einsatz...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide",
+    "og:type": "website",
+    "og:title": "103/26 Merzenich - Auf der Heide | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nIn der Nacht von Samstag auf Sonntag wurde die Feuerwehr Merzenich zu einem unklaren Brandgeruch in den Bereich „Auf der Heide“ alarmiert.\r\n\r\n\r\nDie Einsatz...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/neues%20HLF%20Ger%C3%A4tef%C3%A4cher.jpg"
+   },
+   "text": "103/26 Merzenich - Auf der Heide\nBrand 1 / Brand\n25.07.2026 / 23:03 Uhr\nIn der Nacht von Samstag auf Sonntag wurde die Feuerwehr Merzenich zu einem unklaren Brandgeruch in den Bereich „Auf der Heide“ alarmiert.\nDie Einsatzkräfte suchten den betroffenen Bereich weiträumig ab. Während der Erkundung war ein Brandgeruch wahrnehmbar, jedoch konnte trotz intensiver Suche keine Ursache festgestellt werden.\nDa keine Feststellung gemacht werden konnte, wurde der Einsatz schließlich abgebrochen.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse",
+   "abgerufen": "2026-09-25T09:28:43.977Z",
+   "status": 200,
+   "titel": "102/26 Morschenich - ludwig-Rixen-Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einer Person hinter Tür wurden am Samstag Nachmittag die Löschgruppen Morschenich und Merzenich, gemeinsam mit dem Rettungsdienst entsandt.\r\nVor Ort konnt...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse",
+    "og:type": "website",
+    "og:title": "102/26 Morschenich - ludwig-Rixen-Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einer Person hinter Tür wurden am Samstag Nachmittag die Löschgruppen Morschenich und Merzenich, gemeinsam mit dem Rettungsdienst entsandt.\r\nVor Ort konnt...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg"
+   },
+   "text": "102/26 Morschenich - ludwig-Rixen-Straße\nPerson hinter Tür / Eingeschlossene Person\n25.07.2026 / 16:01 Uhr\nZu einer Person hinter Tür wurden am Samstag Nachmittag die Löschgruppen Morschenich und Merzenich, gemeinsam mit dem Rettungsdienst entsandt.\nVor Ort konnte ein gewaltfreier Zugang über die Terrasse geschaffen werden. Der Patient wurde an den Rettungsdienst übergeben und in ein Krankenhaus gebracht .\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264",
+   "abgerufen": "2026-09-25T09:28:45.931Z",
+   "status": 200,
+   "titel": "101/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einem etwa 10 m² großen Ölfleck wurde die Feuerwehr am späten Freitag Nachmittag in den Bereich der L264 alarmiert.\r\nVor Ort wurde der Fleck mittels Ölbin...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264",
+    "og:type": "website",
+    "og:title": "101/26 Merzenich - L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einem etwa 10 m² großen Ölfleck wurde die Feuerwehr am späten Freitag Nachmittag in den Bereich der L264 alarmiert.\r\nVor Ort wurde der Fleck mittels Ölbin...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/89839451_1306893499496161_2649051200137199616_n.jpg"
+   },
+   "text": "101/26 Merzenich - L264\nÖlspur / Abstreuen von Ölspur\n24.07.2026 / 16:49 Uhr\nZu einem etwa 10 m² großen Ölfleck wurde die Feuerwehr am späten Freitag Nachmittag in den Bereich der L264 alarmiert.\nVor Ort wurde der Fleck mittels Ölbindemittel abgebunden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
+   "abgerufen": "2026-09-25T09:28:47.720Z",
+   "status": 200,
+   "titel": "100/26 Golzheim - Kölner Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am gestrigen Nachmittag wurde die Feuerwehr Merzenich zu ihrem 100. Einsatz des Jahres alarmiert.\r\nDie Löschgruppe Golzheim rückte zu einem gemeldeten brenne...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
+    "og:type": "website",
+    "og:title": "100/26 Golzheim - Kölner Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am gestrigen Nachmittag wurde die Feuerwehr Merzenich zu ihrem 100. Einsatz des Jahres alarmiert.\r\nDie Löschgruppe Golzheim rückte zu einem gemeldeten brenne...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG"
+   },
+   "text": "100/26 Golzheim - Kölner Straße\nBrand / Brand\n22.07.2026 / 16:56 Uhr\nAm gestrigen Nachmittag wurde die Feuerwehr Merzenich zu ihrem 100. Einsatz des Jahres alarmiert.\nDie Löschgruppe Golzheim rückte zu einem gemeldeten brennenden Grünstreifen an der Kölner Straße aus.\nBeim Eintreffen der Einsatzkräfte war das Feuer bereits erloschen. Zur Sicherheit wurde der Bereich bewässert, um ein erneutes Aufflammen auszuschließen.\nEingesetzte Kräfte\nLöschgruppe Golzheim",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
+   "abgerufen": "2026-09-25T09:28:49.392Z",
+   "status": 200,
+   "titel": "99/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am heutigen späten Nachmittag wurden die Löschgruppen Merzenich und Girbelsrath zu einem gemeldeten Brand eines Transporter auf die Autobahn in Fahrtrichtung...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
+    "og:type": "website",
+    "og:title": "99/26 BAB4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am heutigen späten Nachmittag wurden die Löschgruppen Merzenich und Girbelsrath zu einem gemeldeten Brand eines Transporter auf die Autobahn in Fahrtrichtung...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg"
+   },
+   "text": "99/26 BAB4\nFahrzeugbrand / Fahrzeugbrand\n21.07.2026 / 17:58 Uhr\nAm heutigen späten Nachmittag wurden die Löschgruppen Merzenich und Girbelsrath zu einem gemeldeten Brand eines Transporter auf die Autobahn in Fahrtrichtung Düren alarmiert.\nDa die genaue Lage unklar war, kontrollierten die Einsatzkräfte zuerst den Autobahnabschnitt bis Düren und anschließend auch noch bis Langerwehe. Trotz intensiver Erkundung konnte kein brennendes Fahrzeug oder sonstiges Schadensereignis festgestellt werden.\nDer Einsatz wurde daraufhin beendet und die Einsatzkräfte kehrten zu ihren Standorten zurück .\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264",
+   "abgerufen": "2026-09-25T09:28:51.180Z",
+   "status": 200,
+   "titel": "98/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nAm späten Montagnachmittag wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung im Bereich der B264 bei Golzheim alarmiert.\r\nNach weiteren Erke...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264",
+    "og:type": "website",
+    "og:title": "98/26 Golzheim - B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nAm späten Montagnachmittag wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung im Bereich der B264 bei Golzheim alarmiert.\r\nNach weiteren Erke...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/98097102_1366223200229857_3164337208530305024_o.jpg"
+   },
+   "text": "98/26 Golzheim - B264\nBrand 1 / Brand\n20.07.2026 / 18:17 Uhr\nAm späten Montagnachmittag wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung im Bereich der B264 bei Golzheim alarmiert.\nNach weiteren Erkenntnissen stellte sich heraus, dass sich die Einsatzstelle auf Kerpener Stadtgebiet befand.\nFür die Feuerwehr Merzenich war daher kein Eingreifen erforderlich und der Einsatz konnte noch vor dem Ausrücken der ersten Kräfte abgebrochen werden.\nDer Grund für die Rauchentwicklung war ein PKW Brand auf der B264 in Höhe Blatzheim.\nWeiteres dazu auf der Seite der Feuerwehr Kerpen\nhttps://www.facebook.com/share/p/1E7UEb34nn/\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim",
+   "links": [
+    {
+     "text": "Feuerwehr Kerpen",
+     "href": "https://www.facebook.com/FeuerwehrKerpen?__cft__[0]=AZYvGnZ06aHOtiHgAOEfa5VvLw6pQXRUEDFAEmQ5grDPA2TF_LV9Y9r7Qfux0CeJe4lpXy-oWBEQLi2IT7egUuQ4JCQ4B3HdVA_kJ6_Pv7EcqelteUbef3BA0doGojw3GFMMq7vl9lDX-m8GbFlihaJf&__tn__=-]K-R"
+    },
+    {
+     "text": "https://www.facebook.com/share/p/1E7UEb34nn/",
+     "href": "https://www.facebook.com/FeuerwehrKerpen/posts/pfbid02G2DQK65tS2FFGczcCVRadAvUt5tdzrnwccmuwDQc78TmrVxhi5aeELpRcEghLbHul?__cft__[0]=AZYvGnZ06aHOtiHgAOEfa5VvLw6pQXRUEDFAEmQ5grDPA2TF_LV9Y9r7Qfux0CeJe4lpXy-oWBEQLi2IT7egUuQ4JCQ4B3HdVA_kJ6_Pv7EcqelteUbef3BA0doGojw3GFMMq7vl9lDX-m8GbFlihaJf&__tn__=-UK-R"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
+   "abgerufen": "2026-09-25T09:28:52.964Z",
+   "status": 200,
+   "titel": "97/26 Girbelsrath - Dechant-Fabry-Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Löschgruppen Golzheim und Girbelsrath, sowie die Tagesalarmgruppe wurden am Montag Morgen zu einer gemeldeten eingeschlossenen Person in die Ortslage G...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
+    "og:type": "website",
+    "og:title": "97/26 Girbelsrath - Dechant-Fabry-Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Löschgruppen Golzheim und Girbelsrath, sowie die Tagesalarmgruppe wurden am Montag Morgen zu einer gemeldeten eingeschlossenen Person in die Ortslage G...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/83390300_1275538995964945_8300940566368092160_o.jpg"
+   },
+   "text": "97/26 Girbelsrath - Dechant-Fabry-Straße\nPersonenbefreiung / Personenbefreiung\n20.07.2026 / 08:19 Uhr\nDie Löschgruppen Golzheim und Girbelsrath, sowie die Tagesalarmgruppe wurden am Montag Morgen zu einer gemeldeten eingeschlossenen Person in die Ortslage Girbelsrath alarmiert.\nNach ersten Informationen befand sich ein 12 Monate altes Kind in einem verschlossenen Pkw. Die Mutter hatte zuvor vergeblich versucht, das Fahrzeug zu öffnen.\nNoch vor dem Eintreffen der Feuerwehr schlug ein Passant eine Seitenscheibe des Fahrzeugs ein und befreite das Kind aus dem Pkw.\nDas Kind war wohlauf, sodass kein weiteres Eingreifen der Feuerwehr erforderlich war.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4",
+   "abgerufen": "2026-09-25T09:28:54.886Z",
+   "status": 200,
+   "titel": "96/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Sonntagmorgen wurde die Löschgruppe Merzenich zu einem gemeldeten Flächenbrand auf die Autobahn in Fahrtrichtung Düren alarmiert.\r\nNach der ersten Erkundu...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4",
+    "og:type": "website",
+    "og:title": "96/26 BAB4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Sonntagmorgen wurde die Löschgruppe Merzenich zu einem gemeldeten Flächenbrand auf die Autobahn in Fahrtrichtung Düren alarmiert.\r\nNach der ersten Erkundu...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Pumpneraum%20HLF.jpg"
+   },
+   "text": "96/26 BAB4\nBrand / Brand\n19.07.2026 / 06:08 Uhr\nAm Sonntagmorgen wurde die Löschgruppe Merzenich zu einem gemeldeten Flächenbrand auf die Autobahn in Fahrtrichtung Düren alarmiert.\nNach der ersten Erkundung stellte sich heraus, dass sich die Einsatzstelle nicht in der gemeldeten Fahrtrichtung, sondern oberhalb der Gegenfahrbahn befand. Aufgrund der örtlichen Zuständigkeit wurde die Feuerwehr Düren zur Einsatzstelle nachalarmiert.\nNach einer gemeinsamen Lageerkundung wurde die Einsatzstelle an die Feuerwehr Düren übergeben. Für die Löschgruppe Merzenich war der Einsatz damit beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nDüren Hauptwache",
+   "links": [
+    {
+     "text": "Feuerwehr Düren",
+     "href": "https://www.facebook.com/IhreFeuerwehrDueren?__cft__[0]=AZYn8kZo-6mgmdeQfv6uQnsSS8xlvfhYHDlTqIESCbWH7zIlFUnXbb3LDYFh6b2VM5QsjezaorcXeaTZPhZ3ijm9TBc6A1bv716Bp__WBdMf59iraa_m_bYyM9t--AaZfi6eFTRW6tL5fEJEeUlswD6B&__tn__=-]K-R"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich",
+   "abgerufen": "2026-09-25T09:28:56.673Z",
+   "status": 200,
+   "titel": "95/26 Morschenich | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nIn der Nacht zu Freitag wurden die Löschgruppen Morschenich und Merzenich aufgrund eines unklaren Brandgeruchs in die Ortslage Morschenich, sowie in den Be...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich",
+    "og:type": "website",
+    "og:title": "95/26 Morschenich | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nIn der Nacht zu Freitag wurden die Löschgruppen Morschenich und Merzenich aufgrund eines unklaren Brandgeruchs in die Ortslage Morschenich, sowie in den Be...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/PA%20in%20Halterung.jpg"
+   },
+   "text": "95/26 Morschenich\nBrand 1 / Brand\n17.07.2026 / 02:22 Uhr\nIn der Nacht zu Freitag wurden die Löschgruppen Morschenich und Merzenich aufgrund eines unklaren Brandgeruchs in die Ortslage Morschenich, sowie in den Bereich der L264 alarmiert.\nDie Einsatzkräfte kontrollierten die betroffenen Bereiche umfassend. Zwar war ein Brandgeruch zwischendurch deutlich wahrnehmbar, jedoch konnte trotz intensiver Erkundung keine Brandstelle oder sonstige Ursache festgestellt werden.\nNach Abschluss der Kontrollmaßnahmen wird davon ausgegangen, dass der Geruch von einem Brandereignis in einer Nachbarkommune stammte.\nDer Einsatz wurde ohne weitere Maßnahmen beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
+   "abgerufen": "2026-09-25T09:28:58.423Z",
+   "status": 200,
+   "titel": "94/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Feuerwehr Merzenich wurde am Dienstag Nachmittag zu einem PKW-Brand auf die L264 alarmiert.\r\nBeim Eintreffen der Einsatzkräfte stand der Motorraum des...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
+    "og:type": "website",
+    "og:title": "94/26 Merzenich - L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Feuerwehr Merzenich wurde am Dienstag Nachmittag zu einem PKW-Brand auf die L264 alarmiert.\r\nBeim Eintreffen der Einsatzkräfte stand der Motorraum des...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/01.jpg"
+   },
+   "text": "94/26 Merzenich - L264\nFahrzeugbrand / Fahrzeugbrand\n15.07.2026 / 14:09 Uhr\nDie Feuerwehr Merzenich wurde am Dienstag Nachmittag zu einem PKW-Brand auf die L264 alarmiert.\nBeim Eintreffen der Einsatzkräfte stand der Motorraum des Fahrzeugs in Brand.\nEin Trupp unter Atemschutz leitete umgehend die Brandbekämpfung mit dem Schnellangriff ein. Zuerst wurde das Fahrzeug mit Wasser soweit heruntergekühlt, um anschließend verbleibende Glutnester mithilfe einer Schaumpistole abzulöschen.\nImmer wieder kontrollierten die Einsatzkräfte das Fahrzeug mit einer Wärmebildkamera, um verbliebene Hitzequellen auszuschließen.\nFür die Dauer der Löscharbeiten musste die L264 vollständig gesperrt werden. Nach Abschluss der Maßnahmen wurde die Einsatzstelle an die Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/02.jpg",
+     "alt": "02",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/03.jpg",
+     "alt": "03",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/15%20PKW_Brand/04.jpg",
+     "alt": "04",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264",
+   "abgerufen": "2026-09-25T09:29:00.206Z",
+   "status": 200,
+   "titel": "93/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Die Löschgruppe Golzheim wurde am Dienstag Nachmittag zu einem gemeldeten Flächenbrand alarmiert. Vor Ort stellte sich heraus, dass die gemeldete Rauchentwic...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264",
+    "og:type": "website",
+    "og:title": "93/26 Golzheim - B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Die Löschgruppe Golzheim wurde am Dienstag Nachmittag zu einem gemeldeten Flächenbrand alarmiert. Vor Ort stellte sich heraus, dass die gemeldete Rauchentwic...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg"
+   },
+   "text": "93/26 Golzheim - B264\nBrand / Brand\n14.07.2026 / 17:31 Uhr\nDie Löschgruppe Golzheim wurde am Dienstag Nachmittag zu einem gemeldeten Flächenbrand alarmiert. Vor Ort stellte sich heraus, dass die gemeldete Rauchentwicklung durch Staub verursacht wurde, der bei Mäharbeiten mit einem Mähdrescher aufgewirbelt worden war.\nEs handelte sich um einen Fehlalarm.\nEingesetzte Kräfte\nLöschgruppe Golzheim",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse",
+   "abgerufen": "2026-09-25T09:29:01.886Z",
+   "status": 200,
+   "titel": "92/26 Girbelsrath - Matthias von der Driesch Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\r\nVor Eintreffen der Einsatzkräfte wurd...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse",
+    "og:type": "website",
+    "og:title": "92/26 Girbelsrath - Matthias von der Driesch Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\r\nVor Eintreffen der Einsatzkräfte wurd...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/BMA/IMG-20210603-WA0001.jpg"
+   },
+   "text": "92/26 Girbelsrath - Matthias von der Driesch Straße\nAutomatischer Brandalarm / Brandmeldeanlage\n14.07.2026 / 13:21 Uhr\nZu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\nVor Eintreffen der Einsatzkräfte wurde der Brand schon von Passanten gelöscht. Es wurden noch Nachlöscharbeiten durchgeführt.\nEingesetzte Kräfte\nFeuerschutztechnisches Zentrum\nLöschgruppe Eschweiler über Feld\nVollalarm Feuerwehr Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg",
+   "abgerufen": "2026-09-25T09:29:03.583Z",
+   "status": 200,
+   "titel": "91/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\r\nVor Eintreffen der Einsatzkräfte wurd...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg",
+    "og:type": "website",
+    "og:title": "91/26 Merzenich - Valdersweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\r\nVor Eintreffen der Einsatzkräfte wurd...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/12%20Kanal/02.jpg"
+   },
+   "text": "91/26 Merzenich - Valdersweg\nBrand 1 / Brand\n12.07.2026 / 15:15 Uhr\nZu einer unbekannten Rauchentwicklung aus einem Kanal wurde am Sonntag Nachmittag die Löschgruppe Merzenich alarmiert.\nVor Eintreffen der Einsatzkräfte wurde der Brand schon von Passanten gelöscht. Es wurden noch Nachlöscharbeiten durchgeführt.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264",
+   "abgerufen": "2026-09-25T09:29:05.354Z",
+   "status": 200,
+   "titel": "90/26 Merzenich - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Freitag Morgen wurde die Löschgruppe Merzenich zur B264 alarmiert. Im Bereich der Bushaltestelle wurden Ölflecken gemeldet. Diese wurden mittels Bindemitt...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264",
+    "og:type": "website",
+    "og:title": "90/26 Merzenich - B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Freitag Morgen wurde die Löschgruppe Merzenich zur B264 alarmiert. Im Bereich der Bushaltestelle wurden Ölflecken gemeldet. Diese wurden mittels Bindemitt...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/OES/Abstreuen%C3%96lspur.jpg"
+   },
+   "text": "90/26 Merzenich - B264\nÖlspur / Abstreuen von Ölspur\n10.07.2026 / 07:56 Uhr\nAm Freitag Morgen wurde die Löschgruppe Merzenich zur B264 alarmiert. Im Bereich der Bushaltestelle wurden Ölflecken gemeldet. Diese wurden mittels Bindemittel abgestreut.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264",
+   "abgerufen": "2026-09-25T09:29:07.142Z",
+   "status": 200,
+   "titel": "89/26 Merzenich -B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Ein weiterer kleinerer Flächenbrand wurde der Leitstelle am Abend auf der B264 in Richtung Golzheim gemeldet.\r\nDieser wurde mit einem Kleinlöschgerät abgelös...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264",
+    "og:type": "website",
+    "og:title": "89/26 Merzenich -B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Ein weiterer kleinerer Flächenbrand wurde der Leitstelle am Abend auf der B264 in Richtung Golzheim gemeldet.\r\nDieser wurde mit einem Kleinlöschgerät abgelös...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%2BHaspeln.jpg"
+   },
+   "text": "89/26 Merzenich -B264\nBrand / Brand\n07.07.2026 / 18:44 Uhr\nEin weiterer kleinerer Flächenbrand wurde der Leitstelle am Abend auf der B264 in Richtung Golzheim gemeldet.\nDieser wurde mit einem Kleinlöschgerät abgelöscht.\nDie Einsatzdauer betrug auch hier etwa 30 min.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse",
+   "abgerufen": "2026-09-25T09:29:08.790Z",
+   "status": 200,
+   "titel": "88/26 Golzheim - Kölner Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Dienstag Mittag wurde die Löschgruppe Golzheim, zusammen mit dem Tagesalarm zu einem Flächenbrand auf die B264 in Richtung Blatzheim alarmiert.\r\nNoch vor...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse",
+    "og:type": "website",
+    "og:title": "88/26 Golzheim - Kölner Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Dienstag Mittag wurde die Löschgruppe Golzheim, zusammen mit dem Tagesalarm zu einem Flächenbrand auf die B264 in Richtung Blatzheim alarmiert.\r\nNoch vor...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Golz.JPG"
+   },
+   "text": "88/26 Golzheim - Kölner Straße\nBrand / Brand\n07.07.2026 / 11:51 Uhr\nAm Dienstag Mittag wurde die Löschgruppe Golzheim, zusammen mit dem Tagesalarm zu einem Flächenbrand auf die B264 in Richtung Blatzheim alarmiert.\nNoch vor dem Eintreffen hatten Verkehrsteilnehmer den etwa 1 qm Grünstreifen abgelöscht.\nDurch die Feuerwehr wurden noch einmal Nachlöscharbeiten durchgeführt.\nNach etwa 30 Minuten konnte der Einsatz beendet werden.\nEingesetzte Kräfte\nLöschgruppe Golzheim\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse",
+   "abgerufen": "2026-09-25T09:29:10.468Z",
+   "status": 200,
+   "titel": "87/26 merzenich - Grünstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Freitagabend wurde die Löschgruppe Merzenich zu einem Tierfang alarmiert. Vor Ort befanden sich fünf junge Katzen (Kitten) in einem Keller.\r\nDie Tiere wur...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse",
+    "og:type": "website",
+    "og:title": "87/26 merzenich - Grünstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Freitagabend wurde die Löschgruppe Merzenich zu einem Tierfang alarmiert. Vor Ort befanden sich fünf junge Katzen (Kitten) in einem Keller.\r\nDie Tiere wur...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/03%20Katzen/01.jpg"
+   },
+   "text": "87/26 merzenich - Grünstraße\nTierfang / Herrenloses Tier\n03.07.2026 / 20:02 Uhr\nAm Freitagabend wurde die Löschgruppe Merzenich zu einem Tierfang alarmiert. Vor Ort befanden sich fünf junge Katzen (Kitten) in einem Keller.\nDie Tiere wurden durch die Einsatzkräfte gesichert und anschließend wohlbehalten zu einer Pflegestelle Tiernothilfe Niederzier e.V. gebracht, wo sie nun versorgt werden.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [
+    {
+     "text": "Tiernothilfe Niederzier e.V.",
+     "href": "https://www.facebook.com/groups/741261482638875/?__cft__[0]=AZZJdlPB2QJ_D4uwlwHhNipYLrcX13S0E0X2xhOplS294FvMfZA3QtHJIp8nOH7AuAYyyx_3-tIAVEkfmPBtHbJqUcLv1kf4HE3chgInB9nesF8hpkg2CvhIhO5-E1IguxgxuKfkiJ5ivIpZhwk-RE0w09d9xAghX9BgLopqSbxk8w&__tn__=-UK-R"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4",
+   "abgerufen": "2026-09-25T09:29:12.251Z",
+   "status": 200,
+   "titel": "86/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Etwa eine Stunde nach dem vorherigen Einsatz rückte die Feuerwehr Merzenich erneut auf die Autobahn aus.\r\nGemeldet war auch hier wieder ein Verkehrsunfall mi...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4",
+    "og:type": "website",
+    "og:title": "86/26 BAB 4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Etwa eine Stunde nach dem vorherigen Einsatz rückte die Feuerwehr Merzenich erneut auf die Autobahn aus.\r\nGemeldet war auch hier wieder ein Verkehrsunfall mi...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg"
+   },
+   "text": "86/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n03.07.2026 / 07:56 Uhr\nEtwa eine Stunde nach dem vorherigen Einsatz rückte die Feuerwehr Merzenich erneut auf die Autobahn aus.\nGemeldet war auch hier wieder ein Verkehrsunfall mit zwei beteiligten Pkw aus Fahrtrichtung Kerpen kommend.\nDa sich die Einsatzstelle auf der Gegenfahrbahn befand und bereits durch die Feuerwehr Kerpen übernommen worden war, konnte die Anfahrt für die Feuerwehr Merzenich abgebrochen werden.\nBei dem Unfall wurde eine Person verletzt und durch den Rettungsdienst versorgt.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath\nRettungsdienst Kreis Düren\nLöschzug Kerpen",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4",
+   "abgerufen": "2026-09-25T09:29:14.024Z",
+   "status": 200,
+   "titel": "85/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Erneut wurde die Feuerwehr Merzenich am Morgen zu einem Verkehrsunfall auf die Autobahn in Fahrtrichtung Kerpen alarmiert.\r\nAuch hier wurde aufgrund der Baus...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4",
+    "og:type": "website",
+    "og:title": "85/26 BAB 4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Erneut wurde die Feuerwehr Merzenich am Morgen zu einem Verkehrsunfall auf die Autobahn in Fahrtrichtung Kerpen alarmiert.\r\nAuch hier wurde aufgrund der Baus...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg"
+   },
+   "text": "85/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n03.07.2026 / 06:33 Uhr\nErneut wurde die Feuerwehr Merzenich am Morgen zu einem Verkehrsunfall auf die Autobahn in Fahrtrichtung Kerpen alarmiert.\nAuch hier wurde aufgrund der Baustellensituation, die vorab zwischen Kerpen und Merzenich abgestimmte Parallelalarmierung der Feuerwehren durchgeführt.\nDie Löschgruppen Merzenich und Girbelsrath sicherte bei Eintreffen die Unfallstelle ab und betreuten die insgesamt fünf beteiligten Personen. Nach einer medizinischen Untersuchung durch den Rettungsdienst konnte festgestellt werden, dass niemand verletzt wurde.\nDie Feuerwehr Kerpen konnte den Einsatz abbrechen.\nNach Abschluss der Maßnahmen wurde die Einsatzstelle an die Autobahnpolizei übergeben. Anschließend konnten auch die eingesetzten Kräfte aus Merzenich den Einsatz beenden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse",
+   "abgerufen": "2026-09-25T09:29:15.803Z",
+   "status": 200,
+   "titel": "84/26 Merzenich - Schützenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "In der Nacht zu Freitag wurde die Einheit Merzenich gemeinsam mit dem Rettungsdienst zu einem ausgelösten Hausnotruf alarmiert.\r\nNoch während der Anfahrt mel...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse",
+    "og:type": "website",
+    "og:title": "84/26 Merzenich - Schützenstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "In der Nacht zu Freitag wurde die Einheit Merzenich gemeinsam mit dem Rettungsdienst zu einem ausgelösten Hausnotruf alarmiert.\r\nNoch während der Anfahrt mel...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg"
+   },
+   "text": "84/26 Merzenich - Schützenstraße\nPerson hinter Tür / Eingeschlossene Person\n03.07.2026 / 02:21 Uhr\nIn der Nacht zu Freitag wurde die Einheit Merzenich gemeinsam mit dem Rettungsdienst zu einem ausgelösten Hausnotruf alarmiert.\nNoch während der Anfahrt meldete sich die betroffene Bewohnerin telefonisch bei der Leitstelle und teilte mit, dass es ihr und ihrem Mann gut gehe und der Hausnotruf versehentlich ausgelöst worden sei.\nDaraufhin konnte der Einsatz für die Feuerwehr Merzenich sowie den Rettungsdienst abgebrochen werden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4",
+   "abgerufen": "2026-09-25T09:29:17.591Z",
+   "status": 200,
+   "titel": "83/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zeitgleich zum Einsatz des Verkehrsunfall (Einsatz 82/26) ereignete sich im Rückstau ein weiterer Notfall.\r\nEine Frau geriet mit ihrem Fuß unter ihren PKW de...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4",
+    "og:type": "website",
+    "og:title": "83/26 BAB4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zeitgleich zum Einsatz des Verkehrsunfall (Einsatz 82/26) ereignete sich im Rückstau ein weiterer Notfall.\r\nEine Frau geriet mit ihrem Fuß unter ihren PKW de...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/109708605_1414631802055663_2985371165164598599_o.jpg"
+   },
+   "text": "83/26 BAB4\nTH-VU / TH-VU\n01.07.2026 / 15:00 Uhr\nZeitgleich zum Einsatz des Verkehrsunfall (Einsatz 82/26) ereignete sich im Rückstau ein weiterer Notfall.\nEine Frau geriet mit ihrem Fuß unter ihren PKW der sich aus ungeklärter Ursache in Bewegung gesetzt hatte.\nMit dem Stichwort \"Person eingeklemmt\" wurden nun auch noch die beiden Löschgruppen Golzheim und Morschenich auf die Autobahn entsandt. Da die Autobahn noch gesperrt war, konnten die anfahrenden Kräfte entgegen der Fahrtrichtung auffahren.\nBereits vor Eintreffen der Feuerwehr wurde die Frau durch andere Verkehrsteilnehmer aus ihrer Lage befreit.\nDer Rettungsdienst brachte die Patientin in ein Krankenhaus.\nEingesetzte Kräfte\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren\nVollalarm Feuerwehr Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4",
+   "abgerufen": "2026-09-25T09:29:19.375Z",
+   "status": 200,
+   "titel": "82/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nVergangenen Mittwoch Nachmittag wurde die Feuerwehr Merzenich auf die Autobahn alarmiert.\r\nIn Fahrtrichtung Elsdorf ereignete sich ein Verkehrsunfall zwisc...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4",
+    "og:type": "website",
+    "og:title": "82/26 BAB4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nVergangenen Mittwoch Nachmittag wurde die Feuerwehr Merzenich auf die Autobahn alarmiert.\r\nIn Fahrtrichtung Elsdorf ereignete sich ein Verkehrsunfall zwisc...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/07/01%20VU%20BAB/02.jpg"
+   },
+   "text": "82/26 BAB4\nTH-VU / TH-VU\n01.07.2026 / 14:36 Uhr\nVergangenen Mittwoch Nachmittag wurde die Feuerwehr Merzenich auf die Autobahn alarmiert.\nIn Fahrtrichtung Elsdorf ereignete sich ein Verkehrsunfall zwischen einem LKW und mehreren PKWs.\nAuf Grund der aktuellen Baustellensituation wurde ebenfalls die Feuerwehr Kerpen aus der Gegenrichtung entsandt.\nDa für die Einsatzkräfte aus Merzenich etwa 1,5 km vor der Einsatzstelle kein Durchkommen mehr war, übernahmen die Kollegen aus Kerpen den Einsatz.\nEinen ausführlichen Bericht gibt es auf der Seite der Feuerwehr Kerpen\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath\nRettungsdienst Kreis Düren\nRettungsdienst Rhein-Erft-Kreis\nTagesalarm\nLöschzug Kerpen",
+   "links": [
+    {
+     "text": "Feuerwehr Kerpen",
+     "href": "https://www.facebook.com/FeuerwehrKerpen?__cft__[0]=AZZyhnJONxH2RrcW5eRNRWGpmVRgYkglSL3j3nHQnWxlw_kDWlbT07jTZO95jvQGqAKZ2IIfnMQUFuBzwjxItLfWnsCybAqzkJNaqXCJNQcL7yR71DIRb0keIRukhG53m7MsjOXNRpVPtc2pJ6pEVbs9E1GxwMDKWzrO7GM3GtroNrav-xCT6ClpHpD9Wk6Lr9I&__tn__=-]K-R"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/07/01%20VU%20BAB/01.jpg",
+     "alt": "01",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse",
+   "abgerufen": "2026-09-25T09:29:21.171Z",
+   "status": 200,
+   "titel": "81/26 Merzenich - Bergstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Sonntagnachmittag wurde die Feuerwehr Merzenich zu einem Einsatz mit dem Stichwort „Person hinter verschlossener Tür“ alarmiert.\r\nNach dem Eintreffen an d...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse",
+    "og:type": "website",
+    "og:title": "81/26 Merzenich - Bergstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Sonntagnachmittag wurde die Feuerwehr Merzenich zu einem Einsatz mit dem Stichwort „Person hinter verschlossener Tür“ alarmiert.\r\nNach dem Eintreffen an d...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/HLF%20Lindenstra%C3%9Fe.jpg"
+   },
+   "text": "81/26 Merzenich - Bergstraße\nPerson hinter Tür / Eingeschlossene Person\n28.06.2026 / 13:34 Uhr\nAm Sonntagnachmittag wurde die Feuerwehr Merzenich zu einem Einsatz mit dem Stichwort „Person hinter verschlossener Tür“ alarmiert.\nNach dem Eintreffen an der Einsatzstelle verschafften sich die Einsatzkräfte gewaltfrei Zugang zur Wohnung.\nDie betroffene Person wurde bis zum Eintreffen des Rettungsdienstes durch die Feuerwehr betreut.\nAnschließend wurde der Patient an den Rettungsdienst übergeben.\nNach Abschluss aller Maßnahmen war der Einsatz für die Feuerwehr beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264",
+   "abgerufen": "2026-09-25T09:29:22.827Z",
+   "status": 200,
+   "titel": "80/26 Girbelsrath - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "In der Nacht wurde die Feuerwehr zu einem Tierfang alarmiert. Ein freilaufender Hund konnte durch die Einsatzkräfte gesichert werden.\r\nNoch während der Fests...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264",
+    "og:type": "website",
+    "og:title": "80/26 Girbelsrath - L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "In der Nacht wurde die Feuerwehr zu einem Tierfang alarmiert. Ein freilaufender Hund konnte durch die Einsatzkräfte gesichert werden.\r\nNoch während der Fests...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/116938322_1427208500797993_1497150135831870710_o.jpg"
+   },
+   "text": "80/26 Girbelsrath - L264\nTierfang / Herrenloses Tier\n28.06.2026 / 03:17 Uhr\nIn der Nacht wurde die Feuerwehr zu einem Tierfang alarmiert. Ein freilaufender Hund konnte durch die Einsatzkräfte gesichert werden.\nNoch während der Feststellung über die Herkunft des Tieres traf der Besitzer an der Einsatzstelle ein.\nSomit konnte der Hund wohlbehalten an seinen Besitzer übergeben und der Einsatz beendet werden.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse",
+   "abgerufen": "2026-09-25T09:29:24.599Z",
+   "status": 200,
+   "titel": "79/26 Merzenich - Händelstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Erneut musste die Löschgruppe Merzenich zu einer Türöffnung bei einem medizinischen Notfall ausrücken.\r\nVor Ort konnte die Türe gewaltfrei geöffnet und dem R...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse",
+    "og:type": "website",
+    "og:title": "79/26 Merzenich - Händelstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Erneut musste die Löschgruppe Merzenich zu einer Türöffnung bei einem medizinischen Notfall ausrücken.\r\nVor Ort konnte die Türe gewaltfrei geöffnet und dem R...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg"
+   },
+   "text": "79/26 Merzenich - Händelstraße\nPerson hinter Tür / Eingeschlossene Person\n27.06.2026 / 22:19 Uhr\nErneut musste die Löschgruppe Merzenich zu einer Türöffnung bei einem medizinischen Notfall ausrücken.\nVor Ort konnte die Türe gewaltfrei geöffnet und dem Rettungsdienst Zugang zum Patienten gegeben werden.\nNach der Sichtung durch das medizinische Personal wurde durch die Feuerwehr noch Tragehilfe geleistet und im Anschluß der Einsatz beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse",
+   "abgerufen": "2026-09-25T09:29:26.268Z",
+   "status": 200,
+   "titel": "78/26 Merzenich - Mühlenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Gemeldet wurde kurz vor Mitternacht eine angefahrene Katze im Bereich der Mühlenstraße Ecke B264. Noch vor dem Eintreffen der Einsatzkräfte hatte sich das Ti...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse",
+    "og:type": "website",
+    "og:title": "78/26 Merzenich - Mühlenstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Gemeldet wurde kurz vor Mitternacht eine angefahrene Katze im Bereich der Mühlenstraße Ecke B264. Noch vor dem Eintreffen der Einsatzkräfte hatte sich das Ti...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/95193296_1348553025330208_5945839461999837184_o.jpg"
+   },
+   "text": "78/26 Merzenich - Mühlenstraße\nTierfang / Herrenloses Tier\n25.06.2026 / 23:47 Uhr\nGemeldet wurde kurz vor Mitternacht eine angefahrene Katze im Bereich der Mühlenstraße Ecke B264. Noch vor dem Eintreffen der Einsatzkräfte hatte sich das Tier jedoch entfernt und konnte nicht mehr angetroffen werden.\nDie Suche mit einer Passantin im Nahbereich blieb ohne Erfolg. Der Einsatz wurde beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
+   "abgerufen": "2026-09-25T09:29:28.053Z",
+   "status": 200,
+   "titel": "77/26 Merzenich - In den Weingärten | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Feuerwehr wurde zu einem steckengebliebenen Aufzug in den Weingärten alarmiert. Beim Eintreffen der Einsatzkräfte befanden sich eine Frau, ein Kind, so...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
+    "og:type": "website",
+    "og:title": "77/26 Merzenich - In den Weingärten | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Feuerwehr wurde zu einem steckengebliebenen Aufzug in den Weingärten alarmiert. Beim Eintreffen der Einsatzkräfte befanden sich eine Frau, ein Kind, so...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Aufzugt%C3%BCr.jpg"
+   },
+   "text": "77/26 Merzenich - In den Weingärten\nPEA / Person in Aufzug\n24.06.2026 / 14:26 Uhr\nDie Feuerwehr wurde zu einem steckengebliebenen Aufzug in den Weingärten alarmiert. Beim Eintreffen der Einsatzkräfte befanden sich eine Frau, ein Kind, sowie ein Hund in der Aufzugskabine.\nDie Einsatzkräfte öffneten den Aufzug und befreiten die eingeschlossenen Personen. Alle Insassen waren wohlauf und blieben unverletzt.\nNach der Rettung wurde der Aufzug gegen eine weitere Inbetriebnahme gesichert. Anschließend wurde die Anlage dem Hauseigentümer übergeben.\nDer Feuerwehreinsatz konnte danach beendet werden .\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264",
+   "abgerufen": "2026-09-25T09:29:29.841Z",
+   "status": 200,
+   "titel": "76/26 - Girbelsrath L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nErneut ereignete sich ein Verkehrsunfall im Gemeindegebiet Merzenich. Diesmal auf der L264 in Höhe Einfahrt Girbelsrath, wozu die Löschgruppen Girbelsrath...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264",
+    "og:type": "website",
+    "og:title": "76/26 - Girbelsrath L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nErneut ereignete sich ein Verkehrsunfall im Gemeindegebiet Merzenich. Diesmal auf der L264 in Höhe Einfahrt Girbelsrath, wozu die Löschgruppen Girbelsrath...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/06/24%20VU%20L264/03.jpg"
+   },
+   "text": "76/26 - Girbelsrath L264\nTH-VU / TH-VU\n24.06.2026 / 07:43 Uhr\nErneut ereignete sich ein Verkehrsunfall im Gemeindegebiet Merzenich. Diesmal auf der L264 in Höhe Einfahrt Girbelsrath, wozu die Löschgruppen Girbelsrath und Golzheim alarmiert wurden.\nIn den Unfall waren drei Pkw verwickelt, wovon einer abseits der Straße im Graben landete. Insgesamt waren sieben Personen beteiligt. Alle Betroffenen wurden durch den Rettungsdienst gesichtet. Zwei Personen, darunter ein Kleinkind, mussten zur weiteren Behandlung in ein Krankenhaus transportiert werden.\nDie Feuerwehr sicherte die Einsatzstelle ab, stellte den Brandschutz sicher und nahm auslaufende Betriebsstoffe auf.\nNach Abschluss aller Maßnahmen wurde die Einsatzstelle an die Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/24%20VU%20L264/04.jpg",
+     "alt": "04",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7526-b264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7526-b264",
+   "abgerufen": "2026-09-25T09:29:31.625Z",
+   "status": 200,
+   "titel": "75/26 - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Die Feuerwehr wurde am Montag zu einem Verkehrsunfall im Kreuzungsbereich B264 / Mühlenstraße in Merzenich alarmiert.\r\nAn dem Unfall waren zwei Pkw beteiligt...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7526-b264",
+    "og:type": "website",
+    "og:title": "75/26 - B264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Die Feuerwehr wurde am Montag zu einem Verkehrsunfall im Kreuzungsbereich B264 / Mühlenstraße in Merzenich alarmiert.\r\nAn dem Unfall waren zwei Pkw beteiligt...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/06/22%20VU%20B264/01.jpg"
+   },
+   "text": "75/26 - B264\nTH-VU / TH-VU\n22.06.2026 / 08:26 Uhr\nDie Feuerwehr wurde am Montag zu einem Verkehrsunfall im Kreuzungsbereich B264 / Mühlenstraße in Merzenich alarmiert.\nAn dem Unfall waren zwei Pkw beteiligt. Insgesamt wurden drei Personen verletzt, davon zwei leicht und eine mittelschwer.\nIn Absprache mit dem Notarzt wurde, bei dem Unfallfahrzeug mit der mittelschwer verletzten Person, eine patientenorientierte Rettung durchgeführt. Hierzu wurde das Dach des betroffenen Fahrzeugs abgetrennt, um die Person schonend zu befreien.\nNach der Rettung wurde die verletzte Person an den Rettungsdienst zur weiteren medizinischen Versorgung übergeben.\nDie Einsatzstelle wurde abgesichert und der Brandschutz sichergestellt. Auslaufende Betriebsstoffe wurden aufgefangen und mit Bindemittel abgestreut.\nNach Abschluss aller Maßnahmen wurde die Einsatzstelle an die zuständigen Behörden übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7526-b264#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/22%20VU%20B264/02.jpg",
+     "alt": "02",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg",
+   "abgerufen": "2026-09-25T09:29:33.375Z",
+   "status": 200,
+   "titel": "74/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am späten Sonntag Nachmittag wurde die Feuerwehr Merzenich zur Unterstützung bei einem medizinischen Notfall in den Arnoldsweilerweg alarmiert.\r\nVor Ort benö...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg",
+    "og:type": "website",
+    "og:title": "74/26 Merzenich - Valdersweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am späten Sonntag Nachmittag wurde die Feuerwehr Merzenich zur Unterstützung bei einem medizinischen Notfall in den Arnoldsweilerweg alarmiert.\r\nVor Ort benö...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/86969610_1288989971286514_1745764752530866176_o.jpg"
+   },
+   "text": "74/26 Merzenich - Valdersweg\nUnterstützung Rettungsdienst / Unterstützung Rettungsdienst\n21.06.2026 / 18:21 Uhr\nAm späten Sonntag Nachmittag wurde die Feuerwehr Merzenich zur Unterstützung bei einem medizinischen Notfall in den Arnoldsweilerweg alarmiert.\nVor Ort benötigten die Kollegen des Rettungsdienst Tragehilfe für den Transport eines Patienten aus seiner Wohnung zum Rettungswagen. Die Kameraden der Löschgruppe Merzenich unterstützten tatkräftig.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
+   "abgerufen": "2026-09-25T09:29:35.148Z",
+   "status": 200,
+   "titel": "73/26 Merzenich - Erlenweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\r\nEin maroder Baum war auf die Straße gekippt\r\nDer Baum wurde mit einer Motorke...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
+    "og:type": "website",
+    "og:title": "73/26 Merzenich - Erlenweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\r\nEin maroder Baum war auf die Straße gekippt\r\nDer Baum wurde mit einer Motorke...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Motors%C3%A4ge/Motors%C3%A4ge_Helm.jpg"
+   },
+   "text": "73/26 Merzenich - Erlenweg\nTechnische Hilfe / Technische Hilfe\n20.06.2026 / 14:22 Uhr\nAm vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\nEin maroder Baum war auf die Straße gekippt\nDer Baum wurde mit einer Motorkettensäge zerkleinert und von der Fahrbahn entfernt. Zum Abschluss reinigten die Einsatzkräfte die Straße grob von Ästen und Holzresten.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
+   "abgerufen": "2026-09-25T09:29:36.931Z",
+   "status": 200,
+   "titel": "72/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidie...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
+    "og:type": "website",
+    "og:title": "72/26 Merzenich - Valdersweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidie...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Weste%20HLF.jpg"
+   },
+   "text": "72/26 Merzenich - Valdersweg\nTH-VU / TH-VU\n19.06.2026 / 17:30 Uhr\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidiert. Glücklicherweise wurde bei dem Unfall niemand verletzt.\nDie Einsatzkräfte sicherten die Unfallstelle ab und stellten den Brandschutz sicher. Zudem traten aus den beschädigten Fahrzeugen Betriebsstoffe aus, die sich auf einer Fläche von etwa zehn Quadratmetern auf der Fahrbahn verteilten.\nNach Rücksprache mit der Polizei wurde eine Spezialfirma zur fachgerechten Beseitigung der Verunreinigung angefordert.\nNachdem die Gefahrenstelle gesichert und die weiteren Maßnahmen abgestimmt waren, konnte die Feuerwehr ihren Einsatz beenden und die Einsatzstelle an die Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
+   "abgerufen": "2026-09-25T09:29:38.718Z",
+   "status": 200,
+   "titel": "71/26 Golzheim - Buirer Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Kurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\r\nEine ältere Person hatte den Hausnotruf ausgelö...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
+    "og:type": "website",
+    "og:title": "71/26 Golzheim - Buirer Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Kurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\r\nEine ältere Person hatte den Hausnotruf ausgelö...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg"
+   },
+   "text": "71/26 Golzheim - Buirer Straße\nPerson hinter Tür / Eingeschlossene Person\n14.06.2026 / 00:29 Uhr\nKurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\nEine ältere Person hatte den Hausnotruf ausgelöst, der bei einer Hilfsorganisation aufläuft. Sie klagte über Schmerzen, sowie Schwindel und gab an selbst nicht die Haustüre öffnen zu können, worauf der Mitarbeiter des Hausnotrufdienst über die 112 einen Notruf absetzte.\nDurch die Leitstelle wurden der Rettungsdienst und die Feuerwehr alarmiert.\nVon den Einsatzkräften vor Ort wurde die Haustüre geöffnet und der Patient dem Rettungsdienst übergeben.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld",
+   "abgerufen": "2026-09-25T09:29:40.495Z",
+   "status": 200,
+   "titel": "70/26 Merzenich - Im Ehrenfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Samstag Nachmittag wurde die Löschgruppe Merzenich zu einem Tiereinsatz alarmiert. Durch Passanten wurde eine verletzte Katze im Ehrenfeld gefunden.\r\nDurch d...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld",
+    "og:type": "website",
+    "og:title": "70/26 Merzenich - Im Ehrenfeld | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Samstag Nachmittag wurde die Löschgruppe Merzenich zu einem Tiereinsatz alarmiert. Durch Passanten wurde eine verletzte Katze im Ehrenfeld gefunden.\r\nDurch d...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/94869029_1348632858655558_6841563709148495872_o.jpg"
+   },
+   "text": "70/26 Merzenich - Im Ehrenfeld\nTierfang / Herrenloses Tier\n13.06.2026 / 14:23 Uhr\nSa mstag Nachmittag wurde die Löschgruppe Merzenich zu einem Tiereinsatz alarmiert. Durch Passanten wurde eine verletzte Katze im Ehrenfeld gefunden.\nDurch die Einsatzkräfte wurde die Katze zum Tierärztliche Notdienst gebracht.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse",
+   "abgerufen": "2026-09-25T09:29:42.278Z",
+   "status": 200,
+   "titel": "69/26 Merzenich - Lindenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einer \"Person hinter Tür\" wurde die Feuerwehr und der Rettungsdienst in die Lindenstraße alarmiert.\r\nVor Ort wurde sich Zugang ins Haus verschafft und die...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse",
+    "og:type": "website",
+    "og:title": "69/26 Merzenich - Lindenstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einer \"Person hinter Tür\" wurde die Feuerwehr und der Rettungsdienst in die Lindenstraße alarmiert.\r\nVor Ort wurde sich Zugang ins Haus verschafft und die...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg"
+   },
+   "text": "69/26 Merzenich - Lindenstraße\nPerson hinter Tür / Eingeschlossene Person\n08.06.2026 / 10:15 Uhr\nZu einer \"Person hinter Tür\" wurde die Feuerwehr und der Rettungsdienst in die Lindenstraße alarmiert.\nVor Ort wurde sich Zugang ins Haus verschafft und die Person dem Rettungsdienst übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg",
+   "abgerufen": "2026-09-25T09:29:44.029Z",
+   "status": 200,
+   "titel": "68/26 Merzenich - Steinweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Kurz nach Mitternacht wurde die Löschgruppe Merzenich zu einer \"Person hinter verschlossener Tür\" alarmiert. Eine ältere Person hatte den Hausnotruf ausgelös...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg",
+    "og:type": "website",
+    "og:title": "68/26 Merzenich - Steinweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Kurz nach Mitternacht wurde die Löschgruppe Merzenich zu einer \"Person hinter verschlossener Tür\" alarmiert. Eine ältere Person hatte den Hausnotruf ausgelös...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Blaulichtsockel.jpg"
+   },
+   "text": "68/26 Merzenich - Steinweg\nPerson hinter Tür / Eingeschlossene Person\n07.06.2026 / 00:26 Uhr\nKurz nach Mitternacht wurde die Löschgruppe Merzenich zu einer \"Person hinter verschlossener Tür\" alarmiert. Eine ältere Person hatte den Hausnotruf ausgelöst, der bei einer Hilfsorganisation aufläuft. Da zu der Person keine Sprechverbindung zustande kam, setzte der Mitarbeiter der Hilfsorganisation über die 112 einen Notruf ab. Durch die Leitstelle wurden ein Rettungswagen und die Löschgruppe Merzenich alarmiert. Noch vor dem Eintreffen stellte sich jedoch heraus, dass der Hausnotruf irrtümlich ausgelöst worden war, so dass die Einsatzkräfte die Anfahrt abbrechen konnten.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6726-merzenich-steinpfahl",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6726-merzenich-steinpfahl",
+   "abgerufen": "2026-09-25T09:29:45.943Z",
+   "status": 200,
+   "titel": "67/26 Merzenich - Steinpfahl | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Die Feuerwehr Merzenich wurde am Donnerstag Mittag zur Unterstützung des Rettungsdienstes alarmiert. Vor Ort befand sich eine Person hinter verschlossener Wo...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6726-merzenich-steinpfahl",
+    "og:type": "website",
+    "og:title": "67/26 Merzenich - Steinpfahl | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Die Feuerwehr Merzenich wurde am Donnerstag Mittag zur Unterstützung des Rettungsdienstes alarmiert. Vor Ort befand sich eine Person hinter verschlossener Wo...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/Sperrwerkzeug.jpg"
+   },
+   "text": "67/26 Merzenich - Steinpfahl\nPerson hinter Tür / Eingeschlossene Person\n04.06.2026 / 13:00 Uhr\nDie Feuerwehr Merzenich wurde am Donnerstag Mittag zur Unterstützung des Rettungsdienstes alarmiert. Vor Ort befand sich eine Person hinter verschlossener Wohnungstür.\nDie Wohnungstür wurde durch die Feuerwehr gewaltfrei geöffnet. Anschließend wurde der Patient an den Rettungsdienst übergeben.\nDer Einsatz für die Feuerwehr war damit beendet.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6726-merzenich-steinpfahl#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6626-l264",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6626-l264",
+   "abgerufen": "2026-09-25T09:29:47.721Z",
+   "status": 200,
+   "titel": "66/26 L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Zu einem Verkehrsunfall mit insgesamt drei Fahrzeugen wurde am Mittwoch Nachmittag die Feuerwehr, sowie der Rettungsdienst auf die L264 alarmiert.\r\nVor Ort w...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6626-l264",
+    "og:type": "website",
+    "og:title": "66/26 L264 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Zu einem Verkehrsunfall mit insgesamt drei Fahrzeugen wurde am Mittwoch Nachmittag die Feuerwehr, sowie der Rettungsdienst auf die L264 alarmiert.\r\nVor Ort w...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/06/03%20VU%20L264/01.jpg"
+   },
+   "text": "66/26 L264\nTH-VU / TH-VU\n03.06.2026 / 15:24 Uhr\nZu einem Verkehrsunfall mit insgesamt drei Fahrzeugen wurde am Mittwoch Nachmittag die Feuerwehr, sowie der Rettungsdienst auf die L264 alarmiert.\nVor Ort wurden alle beteiligte Insassen durch den Rettungsdienst gesichtet. Zwei Personen mussten leicht verletzt in umliegende Krankenhäuser transportiert werden.\nDurch die Feuerwehr wurde der Bereich abgesichert. Nach dem Abstreuen auslaufender Betriebsstoffe wurde die Einsatzstelle der Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6626-l264#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/06/03%20VU%20L264/02.jpg",
+     "alt": "02",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6526-bab-4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6526-bab-4",
+   "abgerufen": "2026-09-25T09:29:49.506Z",
+   "status": 200,
+   "titel": "65/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Nachmittag wurde der Leitstelle ein Fahrzeugbrand auf der BAB4 in Fahrtrichtung Köln gemeldet. Beim Eintreffen der ersten Kräfte stellte sich heraus, dass...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6526-bab-4",
+    "og:type": "website",
+    "og:title": "65/26 BAB 4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Nachmittag wurde der Leitstelle ein Fahrzeugbrand auf der BAB4 in Fahrtrichtung Köln gemeldet. Beim Eintreffen der ersten Kräfte stellte sich heraus, dass...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/06/02%20PKW%20BAB%20%C3%96lverlust/01.jpg"
+   },
+   "text": "65/26 BAB 4\nFahrzeugbrand / Fahrzeugbrand\n02.06.2026 / 15:26 Uhr\nAm Nachmittag wurde der Leitstelle ein Fahrzeugbrand auf der BAB4 in Fahrtrichtung Köln gemeldet. Beim Eintreffen der ersten Kräfte stellte sich heraus, dass das Fahrzeug auf dem Pannenstreifen stand und Öl verloren hatte. Das Öl verdampfte wohl teilweise am heißen Motor, so dass für den Notrufer, der nicht angehalten hat, offenbar der Eindruck von Brandrauch entstanden war. Durch unsere Einsatzkräfte wurde das restliche Öl auf dem Asphalt abgebunden.\nEingesetzte Kräfte\nAutobahnpolizei\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6526-bab-4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6426-burgewald-unterstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6426-burgewald-unterstrasse",
+   "abgerufen": "2026-09-25T09:29:51.294Z",
+   "status": 200,
+   "titel": "64/26 Bürgewald - Unterstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Abend nahmen Anwohner einen Feuerschein im Bereich Bürgewald war. Nach umfassender Erkundung konnte ein Nutzfeuer festgestellt werden.\r\nDa die genaue Lage...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6426-burgewald-unterstrasse",
+    "og:type": "website",
+    "og:title": "64/26 Bürgewald - Unterstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Abend nahmen Anwohner einen Feuerschein im Bereich Bürgewald war. Nach umfassender Erkundung konnte ein Nutzfeuer festgestellt werden.\r\nDa die genaue Lage...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/83508312_1273068566211988_6333724903463714816_o.jpg"
+   },
+   "text": "64/26 Bürgewald - Unterstraße\nBrand 1 / Brand\n01.06.2026 / 20:45 Uhr\nAm Abend nahmen Anwohner einen Feuerschein im Bereich Bürgewald war. Nach umfassender Erkundung konnte ein Nutzfeuer festgestellt werden.\nDa die genaue Lage zunächst unklar war, wurde auch durch die Feuerwehr Kerpen erkundet.\nEingesetzte Kräfte\nLöschgruppe Morschenich\nLöschgruppe Golzheim\nLöschzug Kerpen",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6426-burgewald-unterstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6326-bab-4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6326-bab-4",
+   "abgerufen": "2026-09-25T09:29:53.075Z",
+   "status": 200,
+   "titel": "63/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Nachmittagkam es auf der Autobahn in Fahrtrichtung Köln zu einem Rettungsdiensteinsatz . Die Fahrerin eines PKW wurde durch den Rettungsdienst der Stadt K...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6326-bab-4",
+    "og:type": "website",
+    "og:title": "63/26 BAB 4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Nachmittagkam es auf der Autobahn in Fahrtrichtung Köln zu einem Rettungsdiensteinsatz . Die Fahrerin eines PKW wurde durch den Rettungsdienst der Stadt K...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Schilderbr%C3%BCcke%20A4/100.jpg"
+   },
+   "text": "63/26 BAB 4\nRD-BAB / Unterstützung Rettungsdienst auf Autobahn\n28.05.2026 / 16:04 Uhr\nAm Nachmittagkam es auf der Autobahn in Fahrtrichtung Köln zu einem Rettungsdiensteinsatz . Die Fahrerin eines PKW wurde durch den Rettungsdienst der Stadt Kerpen versorgt und in ein Krankenhaus gebracht. Die Einsatzkräfte der Feuerwehr Merzenich sicherten die Unfallstelle ab und verbrachten den PKW, nachdem die Frau im Rettungswagen war, auf den Standstreifen der Autobahn.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath\nRettungsdienst Rhein-Erft-Kreis",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6326-bab-4#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6226-bab-4",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6226-bab-4",
+   "abgerufen": "2026-09-25T09:29:55.247Z",
+   "status": 200,
+   "titel": "62/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "In der Nacht kam es auf der BAB 4 zwischen Elsdorf und Merzenich zu einem schweren LKW-Unfall. Beide Insassen des LKW blieben dabei unverletzt.\r\nDerzeit werd...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6226-bab-4",
+    "og:type": "website",
+    "og:title": "62/26 BAB 4 | Freiwillige Feuerwehr Merzenich",
+    "og:description": "In der Nacht kam es auf der BAB 4 zwischen Elsdorf und Merzenich zu einem schweren LKW-Unfall. Beide Insassen des LKW blieben dabei unverletzt.\r\nDerzeit werd...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/04.jpg"
+   },
+   "text": "62/26 BAB 4\nPersonenbefreiung / Personenbefreiung\n28.05.2026 / 02:20 Uhr\nIn der Nacht kam es auf der BAB 4 zwischen Elsdorf und Merzenich zu einem schweren LKW-Unfall. Beide Insassen des LKW blieben dabei unverletzt.\nDerzeit werden auf der BAB4 Sanierungsmassnahmen durchgeführt. Der Verkehr wird daher seit mehreren Wochen im Bereich von Buir jeweils zweispurig über die Spur Köln - Aachen gelenkt. Dabei ist auch der Standstreifen mit einbezogen. Am gestrigen Mittag hatte Die Autobahn GmbH mitgeteilt, dass der Standstreifen in Fahrtrichtung Merzenich beschädigt ist und daher gesperrt werden muß. Somit steht in Fahrtrichtung Merzenich nur noch eine Spur für den Verkehr zur Verfügung. Im Laufe des Nachmittages wurden entsprechende Verkehrslenkungsmaßnahmen eingeleitet.\nGegen 02:20 kollidierte ein Autotransporter mit einem Warnfahrzeug der Die Autobahn GmbH. Das Warnfahrzeug war mit einem Verkehrssicherungsanhänger ausgestattet und sollte den Standstreifen sperren. Bedingt durch die Baustelle werden bei Unfällen auf diesem Teilstück sowohl Einheiten der Feuerwehr Kerpen als auch der Feuerwehr Merzenich alarmiert. Im vorliegenden Fall erwies sich diese Maßnahme als richtig, da die Kräfte der Feuerwehr Kerpen durch den Rückstau keine Möglichkeit hatten, bis an die Einsatzstelle zu gelangen.\nObwohl der LKW erheblich beschädigt wurde, blieben die beiden Insassen unverletzt. Durch die Feuerwehr Merzenich wurden auslaufende Betriebsmittel aufgefangen. An beiden Fahrzeugen entstand erheblicher Sachschaden.\nDie Autobahn ist zum derzeitigen Zeitpunkt noch voll gesperrt.\nEingesetzte Kräfte\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren\nVollalarm Feuerwehr Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6226-bab-4#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/01.jpg",
+     "alt": "01",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/02.jpg",
+     "alt": "02",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/05/28%20VU%20BAB/03.jpg",
+     "alt": "03",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6126-merzenich-s-bahnhaltepunkt",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6126-merzenich-s-bahnhaltepunkt",
+   "abgerufen": "2026-09-25T09:29:57.154Z",
+   "status": 200,
+   "titel": "61/26 Merzenich S-Bahnhaltepunkt | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Nachmittag wurde der Polizei ein brennender Mülleimer am S-Bahnhaltepunkt in Merzenich gemeldet. Daraufhin wurden die Kräfte der Löschgruppe Merzenich ala...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6126-merzenich-s-bahnhaltepunkt",
+    "og:type": "website",
+    "og:title": "61/26 Merzenich S-Bahnhaltepunkt | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Nachmittag wurde der Polizei ein brennender Mülleimer am S-Bahnhaltepunkt in Merzenich gemeldet. Daraufhin wurden die Kräfte der Löschgruppe Merzenich ala...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/S_Bahnhof.jpg"
+   },
+   "text": "61/26 Merzenich S-Bahnhaltepunkt\nBrand / Brand\n27.05.2026 / 15:26 Uhr\nAm Nachmittag wurde der Polizei ein brennender Mülleimer am S-Bahnhaltepunkt in Merzenich gemeldet. Daraufhin wurden die Kräfte der Löschgruppe Merzenich alarmiert. Diese konnten den Brand mittels eines Kleinlöschgerätes schnell bekämpfen.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6126-merzenich-s-bahnhaltepunkt#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/6026-girbelsrath-mathias-von-den-driesch-strasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6026-girbelsrath-mathias-von-den-driesch-strasse",
+   "abgerufen": "2026-09-25T09:29:58.938Z",
+   "status": 200,
+   "titel": "60/26 Girbelsrath - Mathias- von den- Driesch-Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am Morgen wurden die Einsatzkräfte der Feuerwehr Merzenich durch eine Brandmeldeanlage zu einem Gewerbebetrieb alarmiert. In einer Werkhalle hatten sich Papi...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/6026-girbelsrath-mathias-von-den-driesch-strasse",
+    "og:type": "website",
+    "og:title": "60/26 Girbelsrath  - Mathias- von den- Driesch-Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am Morgen wurden die Einsatzkräfte der Feuerwehr Merzenich durch eine Brandmeldeanlage zu einem Gewerbebetrieb alarmiert. In einer Werkhalle hatten sich Papi...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/05/27%20Absaugung%20SONOCO/04%20Absaugung.png"
+   },
+   "text": "60/26 Girbelsrath - Mathias- von den- Driesch-Straße\nAutomatischer Brandalarm / Brandmeldeanlage\n27.05.2026 / 09:23 Uhr\nAm Morgen wurden die Einsatzkräfte der Feuerwehr Merzenich durch eine Brandmeldeanlage zu einem Gewerbebetrieb alarmiert. In einer Werkhalle hatten sich Papierspäne in einer mobilen Absauganlage entzündet. Durch die Mitarbeiter wurde eine geräteinterne kleine Löschanlage ausglöst und das Geräte geistesgegenwärtig ins Freie gebracht. Die Einsatzkräfte demontierten dort den Deckel und löschten letzte Glutnester im Filterbereich des Gerätes ab. Innerhalb der Halle wurden schwelende Papierschnipsel mit einem Kleinlöschgerät abgelöscht.\nEingesetzte Kräfte\nFeuerschutztechnisches Zentrum\nLöschgruppe Eschweiler über Feld\nVollalarm Feuerwehr Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/6026-girbelsrath-mathias-von-den-driesch-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/5926-merzenich-hamweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/5926-merzenich-hamweg",
+   "abgerufen": "2026-09-25T09:30:00.726Z",
+   "status": 200,
+   "titel": "59/26 Merzenich - Hamweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Beim gestrigen Einsatz wurde die Feuerwehr gemeinsam mit dem Rettungsdienst zu einem medizinischen Notfall alarmiert.\r\nVor Ort befand sich eine hilflose Pers...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/5926-merzenich-hamweg",
+    "og:type": "website",
+    "og:title": "59/26 Merzenich - Hamweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Beim gestrigen Einsatz wurde die Feuerwehr gemeinsam mit dem Rettungsdienst zu einem medizinischen Notfall alarmiert.\r\nVor Ort befand sich eine hilflose Pers...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer02.jpg"
+   },
+   "text": "59/26 Merzenich - Hamweg\nPerson hinter Tür / Eingeschlossene Person\n25.05.2026 / 17:32 Uhr\nBeim gestrigen Einsatz wurde die Feuerwehr gemeinsam mit dem Rettungsdienst zu einem medizinischen Notfall alarmiert.\nVor Ort befand sich eine hilflose Person hinter verschlossener Tür.\nDie Einsatzkräfte der Feuerwehr konnten vor Ort die Wohnungstür mittels zwischenzeitig vorhandenem Schlüssel öffnen, sodass der Rettungsdienst umgehend Zugang zur betroffenen Person erhielt.\nNach der medizinischen Erstversorgung wurde die Person zur weiteren Behandlung in ein Krankenhaus gebracht.\nDer Einsatz konnte anschließend beendet werden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/5926-merzenich-hamweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/5826-girbelsrath-mittelstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/5826-girbelsrath-mittelstrasse",
+   "abgerufen": "2026-09-25T09:30:02.428Z",
+   "status": 200,
+   "titel": "58/26 Girbelsrath - Mittelstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Fast zeitgleich mit dem Mülleimerbrand in Merzenich wurde die Löschgruppe Girbelsrath gestern Abend in die Mittelstraße zu einem Tierfang alarmiert.\r\nAuf Gru...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/5826-girbelsrath-mittelstrasse",
+    "og:type": "website",
+    "og:title": "58/26 Girbelsrath - Mittelstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Fast zeitgleich mit dem Mülleimerbrand in Merzenich wurde die Löschgruppe Girbelsrath gestern Abend in die Mittelstraße zu einem Tierfang alarmiert.\r\nAuf Gru...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/TIF/Tierfangboxen.jpg"
+   },
+   "text": "58/26 Girbelsrath - Mittelstraße\nTierfang / Herrenloses Tier\n23.05.2026 / 22:38 Uhr\nFast zeitgleich mit dem Mülleimerbrand in Merzenich wurde die Löschgruppe Girbelsrath gestern Abend in die Mittelstraße zu einem Tierfang alarmiert.\nAuf Grund eines medizinischen Notfalls musste der Hund des Patienten durch die Feuerwehr gesichert und ins @tierheim_dueren gebracht werden.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/5826-girbelsrath-mittelstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/5726-merzenich-valdersweg",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/5726-merzenich-valdersweg",
+   "abgerufen": "2026-09-25T09:30:04.178Z",
+   "status": 200,
+   "titel": "57/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Samstag Abend wurde die Löschgruppe Merzenich zu einem Mülleimerbrand in den Valdersweg gerufen.\r\nMit einem Kleinlöschgerät wurde das Feuer schnell gelöscht.",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/5726-merzenich-valdersweg",
+    "og:type": "website",
+    "og:title": "57/26 Merzenich - Valdersweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Samstag Abend wurde die Löschgruppe Merzenich zu einem Mülleimerbrand in den Valdersweg gerufen.\r\nMit einem Kleinlöschgerät wurde das Feuer schnell gelöscht.",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/FB_IMG_1598484083565.jpg"
+   },
+   "text": "57/26 Merzenich - Valdersweg\nBrand / Brand\n23.05.2026 / 22:36 Uhr\nSamstag Abend wurde die Löschgruppe Merzenich zu einem Mülleimerbrand in den Valdersweg gerufen.\nMit einem Kleinlöschgerät wurde das Feuer schnell gelöscht.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/5726-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/5626-morschenich-ellener-allee",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/5626-morschenich-ellener-allee",
+   "abgerufen": "2026-09-25T09:30:05.956Z",
+   "status": 200,
+   "titel": "56/26 Morschenich - Ellener Allee | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am frühen Abend wurden die Löschgruppen Morschenich und Merzenich zur Ellener Allee alarmiert. Passanten hatten Feuerschein auf einem Betriebsgelände gesehen...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/5626-morschenich-ellener-allee",
+    "og:type": "website",
+    "og:title": "56/26 Morschenich - Ellener Allee | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am frühen Abend wurden die Löschgruppen Morschenich und Merzenich zur Ellener Allee alarmiert. Passanten hatten Feuerschein auf einem Betriebsgelände gesehen...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Melder%20EinsatzAbbrechen.jpg"
+   },
+   "text": "56/26 Morschenich - Ellener Allee\nBrand / Brand\n17.05.2026 / 18:19 Uhr\nAm frühen Abend wurden die Löschgruppen Morschenich und Merzenich zur Ellener Allee alarmiert. Passanten hatten Feuerschein auf einem Betriebsgelände gesehen und vermutet, dass ein Wohnwagen brennen würde. Beim Eintreffen der ersten Einsatzkräfte stelte sich heraus, dass es sich um ein Nutzfeuer in einer Feuerschale handelte. Der Einsatz konnte daraufhin abgebrochen werden.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Morschenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/5626-morschenich-ellener-allee#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
+  },
+  {
+   "url": "https://feuerwehr-merzenich.de/einsaetze/5526-golzheim-marienstrasse",
+   "endUrl": "https://feuerwehr-merzenich.de/einsaetze/5526-golzheim-marienstrasse",
+   "abgerufen": "2026-09-25T09:30:07.615Z",
+   "status": 200,
+   "titel": "55/26 Golzheim - Marienstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Bei der Einsatzmeldung \"Person hinter Tür\" in Golzheim musste am Dienstag Mittag durch die Feuerwehr ein Zugang zu einer Wohnung geschaffen werden.\r\nNach der...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/5526-golzheim-marienstrasse",
+    "og:type": "website",
+    "og:title": "55/26 Golzheim - Marienstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Bei der Einsatzmeldung \"Person hinter Tür\" in Golzheim musste am Dienstag Mittag durch die Feuerwehr ein Zugang zu einer Wohnung geschaffen werden.\r\nNach der...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg"
+   },
+   "text": "55/26 Golzheim - Marienstraße\nPerson hinter Tür / Eingeschlossene Person\n12.05.2026 / 12:47 Uhr\nBei der Einsatzmeldung \"Person hinter Tür\" in Golzheim musste am Dienstag Mittag durch die Feuerwehr ein Zugang zu einer Wohnung geschaffen werden.\nNach der gewaltsamen Öffnung einer Türe wurde der Patient dem Rettungsdienst und die Einsatzstelle der Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren\nTagesalarm",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/5526-golzheim-marienstrasse#",
      "alt": "#",
      "title": ""
     }
