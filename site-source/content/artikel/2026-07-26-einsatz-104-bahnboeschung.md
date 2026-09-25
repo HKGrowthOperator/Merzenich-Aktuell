@@ -1,8 +1,8 @@
 ---
-title: "Rauch an der Bahnanlage am Steinweg: Feuerwehr erkundet Böschungsbrand"
+title: "Brand an der Bahnstrecke am Steinweg: Unterholz und Böschung betroffen"
 slug: einsatz-104-bahnboeschung
 kicker: "Feuerwehr · 104/26"
-teaser: "Ende Juli wurde die Feuerwehr Merzenich zu einer unklaren Rauchentwicklung an der Bahnanlage am Steinweg gerufen."
+teaser: "Am 26. Juli brannten entlang der Bahnstrecke am Steinweg rund 200 Quadratmeter Unterholz. Gelöscht wurde nach Freigabe durch die Deutsche Bahn."
 ressort: blaulicht
 ort: merzenich
 date: 2026-07-26T17:41:00+02:00
@@ -15,8 +15,9 @@ image:
   type: original
 facts:
   - "Einsatznummer 104/26"
-  - "Stichwort BD1 / Brand"
+  - "Stichwort Brand 1 / Brand"
   - "Alarmierung am 26. Juli 2026 um 17:41 Uhr"
+  - "Im Einsatz: Löschgruppe Merzenich"
 sources:
   - title: "Freiwillige Feuerwehr Merzenich"
     url: "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage"
@@ -25,8 +26,8 @@ tags: ["Feuerwehr", "Bahn", "Brand"]
 legacy: ["/einsatz-104-bahnboeschung/", "/artikel-einsatz-104-bahnboeschung.html"]
 ---
 
-Am 26. Juli rückte die Feuerwehr Merzenich um 17:41 Uhr zu einer unklaren Rauchentwicklung im Bereich der Bahnanlage am Steinweg aus.
+Die Feuerwehr Merzenich ist am 26. Juli um 17:41 Uhr zu einer unklaren Rauchentwicklung im Bereich Steinweg alarmiert worden. Bei der Erkundung stellte sich heraus, dass es an der Gleisanlage entlang der Bahnstrecke brannte.
 
-Bahnböschungen sind im Sommer besonders anfällig für Brände. Einsätze in Gleisnähe erfordern eine Abstimmung mit dem Bahnbetrieb, bevor Kräfte in den Gleisbereich vorgehen.
+Betroffen waren nach Angaben der Feuerwehr rund 200 Quadratmeter Unterholz und die Böschung. Gelöscht werden konnte, nachdem der Notfallmanager der Deutschen Bahn die Einsatzstelle freigegeben hatte. Dann war das Feuer schnell unter Kontrolle und vollständig gelöscht.
 
-Der Bericht mit Originalbildern steht auf der Einsatzseite der Wehr.
+Der Einsatz dauerte etwa eine Stunde.

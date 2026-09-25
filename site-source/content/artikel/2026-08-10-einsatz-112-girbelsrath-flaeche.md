@@ -1,8 +1,8 @@
 ---
-title: "Flächenbrand Richtung Binsfeld: Feuerwehr am 10. August im Großeinsatz"
+title: "Flächenbrand zwischen Girbelsrath und Binsfeld: rund 30 Hektar verbrannt"
 slug: einsatz-112-girbelsrath-flaeche
 kicker: "Feuerwehr · 112/26"
-teaser: "Am Montagnachmittag rückte die Feuerwehr Merzenich zu einem Flächenbrand auf einem Feld Richtung Binsfeld aus."
+teaser: "Am 10. August brannten zwischen Girbelsrath und Binsfeld rund 30 Hektar Vegetation. Landwirte halfen mit ihren Maschinen beim Eindämmen."
 ressort: blaulicht
 ort: girbelsrath
 date: 2026-08-10T13:33:00+02:00
@@ -15,8 +15,10 @@ image:
   type: original
 facts:
   - "Einsatznummer 112/26"
-  - "Stichwort BDW2 / Flächenbrand"
+  - "Stichwort Waldbrand 2 / Flächenbrand"
   - "Alarmierung am 10. August 2026 um 13:33 Uhr"
+  - "Im Einsatz: Vollalarm Feuerwehr Merzenich, Löschgruppen Nörvenich, Binsfeld und Eschweiler über Feld, Feuerschutztechnisches Zentrum"
+  - "„Feuer aus“ gegen 15:30 Uhr"
 sources:
   - title: "Freiwillige Feuerwehr Merzenich"
     url: "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld"
@@ -25,8 +27,8 @@ tags: ["Feuerwehr", "Girbelsrath", "Flächenbrand"]
 legacy: ["/einsatz-112-girbelsrath-flaeche/", "/artikel-einsatz-112-girbelsrath-flaeche.html"]
 ---
 
-Gegen 13:30 Uhr wurde die Feuerwehr Merzenich am 10. August zu einem Flächenbrand auf einem Feld in Richtung Binsfeld gerufen. Das Alarmstichwort „BDW2“ steht für einen ausgedehnten Flächenbrand mit erhöhtem Kräftebedarf.
+Die Feuerwehr Merzenich ist am 10. August gegen 13:30 Uhr zu einem Flächenbrand zwischen Girbelsrath und Binsfeld alarmiert worden. Kurz nach dem Eintreffen der ersten Kräfte wurde wegen der schnellen Ausbreitung Vollalarm ausgelöst. Die Flammen hatten bereits eine Hecke an einem Industriebetrieb und die angrenzende Fläche des Sportplatzes erfasst.
 
-Am selben Abend folgte um 19:59 Uhr ein weiterer Einsatz im selben Bereich (113/26), diesmal unter dem Stichwort „BD / Brand“.
+Zur Unterstützung kamen zwei Wasserbehälter des Feuerwehrtechnischen Zentrums, außerdem forderte die Wehr Einheiten der Feuerwehr Nörvenich an. So verhinderten die Einsatzkräfte, dass das Feuer auf ein angrenzendes Waldstück übergriff. Landwirte aus dem Ort halfen mit ihren Maschinen, das Feuer einzudämmen; die Feuerwehr dankt ihnen ausdrücklich.
 
-Die Wehr dokumentiert den Einsatz mit Originalbildern auf ihrer Internetseite.
+Gegen 15:30 Uhr meldete die Feuerwehr „Feuer aus“. Insgesamt brannten rund 30 Hektar Vegetation. Den Grundschutz für das Gemeindegebiet stellte während des Einsatzes die Löschgruppe Ellen der Feuerwehr Niederzier sicher.

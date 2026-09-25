@@ -1,8 +1,8 @@
 ---
-title: "Rauch im Bürgewald: Feuerwehr rückt aus"
+title: "Rauch an der L257: Glutnester vom Waldbrand, RWE übernimmt die Kontrolle"
 slug: einsatz-119-rauch-buergewald
 kicker: "Feuerwehr · 119/26"
-teaser: "Am Sonntagmorgen alarmierte die Leitstelle die Feuerwehr Merzenich wegen einer gemeldeten Rauchentwicklung an der L257."
+teaser: "Am 16. August stieg an der L257 an der Hambachbahn Rauch aus dem Waldboden, vermutlich aus Glutnestern des Waldbrands vom Donnerstag zuvor."
 ressort: blaulicht
 ort: buergewald
 date: 2026-08-16T09:05:00+02:00
@@ -15,8 +15,9 @@ image:
   type: original
 facts:
   - "Einsatznummer 119/26"
-  - "Stichwort BD / Brand"
+  - "Stichwort Brand"
   - "Alarmierung am 16. August 2026 um 09:05 Uhr"
+  - "Im Einsatz: Löschgruppen Morschenich und Golzheim"
 sources:
   - title: "Freiwillige Feuerwehr Merzenich"
     url: "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257"
@@ -25,8 +26,8 @@ tags: ["Feuerwehr", "Bürgewald", "L257"]
 legacy: ["/einsatz-119-rauch-buergewald/", "/artikel-einsatz-119-rauch-buergewald.html"]
 ---
 
-Die Feuerwehr Merzenich ist am Sonntagmorgen zu einer gemeldeten Rauchentwicklung im Bereich der L257 im Bürgewald ausgerückt. Die Alarmierung erfolgte um 09:05 Uhr unter dem Stichwort „BD / Brand“.
+Die Feuerwehr Merzenich ist am Sonntagmorgen, 16. August, wegen einer gemeldeten Rauchentwicklung an der L257 an der Hambachbahn alarmiert worden.
 
-Der Einsatz trägt die laufende Nummer 119/26. Es war damit bereits der 119. Einsatz der Wehr im laufenden Jahr.
+Vor Ort stieg an einigen Stellen leichter Rauch aus dem Waldboden. Nach Einschätzung der Feuerwehr kam er vermutlich aus Glutnestern des Waldbrands vom vorangegangenen Donnerstag.
 
-Den vollständigen Bericht mit den Originalbildern veröffentlicht die Freiwillige Feuerwehr Merzenich auf ihrer Einsatzseite.
+Nach einer Absprache vom Freitag kontrolliert RWE den Bereich engmaschig und wässert ihn selbst. Die Feuerwehr Merzenich musste deshalb nichts weiter tun und übergab die Einsatzstelle an die Werksfeuerwehr von RWE.

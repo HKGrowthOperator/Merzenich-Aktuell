@@ -1,8 +1,8 @@
 ---
-title: "PKW-Brand auf der L264 Mitte Juli"
+title: "Motorraum in Flammen: Autobrand auf der L264"
 slug: einsatz-94-pkw-brand
 kicker: "Feuerwehr · 94/26"
-teaser: "Die Feuerwehr Merzenich löschte am 15. Juli einen brennenden Personenwagen auf der L264."
+teaser: "Am 15. Juli brannte auf der L264 der Motorraum eines Autos. Während der Löscharbeiten war die Straße voll gesperrt."
 ressort: blaulicht
 ort: merzenich
 date: 2026-07-15T14:09:00+02:00
@@ -15,8 +15,9 @@ image:
   type: original
 facts:
   - "Einsatznummer 94/26"
-  - "Stichwort FZB / Fahrzeugbrand"
+  - "Stichwort Fahrzeugbrand"
   - "Alarmierung am 15. Juli 2026 um 14:09 Uhr"
+  - "Im Einsatz: Löschgruppen Merzenich und Morschenich, Tagesalarm"
 sources:
   - title: "Freiwillige Feuerwehr Merzenich"
     url: "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264"
@@ -25,8 +26,8 @@ tags: ["Feuerwehr", "L264", "Fahrzeugbrand"]
 legacy: ["/einsatz-94-pkw-brand/", "/artikel-einsatz-94-pkw-brand.html"]
 ---
 
-Am Dienstagnachmittag des 15. Juli wurde die Feuerwehr Merzenich zu einem brennenden Personenwagen auf der L264 alarmiert.
+Die Feuerwehr Merzenich ist am Nachmittag des 15. Juli zu einem brennenden Auto auf der L264 alarmiert worden. Beim Eintreffen stand der Motorraum in Flammen.
 
-Der Einsatz lief unter dem Stichwort „FZB / Fahrzeugbrand“ und trägt die Nummer 94/26.
+Ein Trupp unter Atemschutz löschte mit dem Schnellangriff: Zuerst kühlten die Einsatzkräfte das Fahrzeug mit Wasser herunter, dann löschten sie die verbliebenen Glutnester mit einer Schaumpistole ab. Mit einer Wärmebildkamera prüften sie mehrmals, ob noch Hitzequellen vorhanden waren.
 
-Originalbilder des Einsatzes veröffentlicht die Wehr auf ihrer Internetseite.
+Für die Dauer der Löscharbeiten war die L264 voll gesperrt. Danach übergab die Feuerwehr die Einsatzstelle an die Polizei.
