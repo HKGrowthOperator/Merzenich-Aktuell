@@ -107,10 +107,10 @@ function altFuer(m) {
   return POOL_MOTIV[m.pool] || alt;
 }
 
-function figureHtml(m) {
+function figureHtml(m, stufe = 'B') {
   const srcset = srcsetFuer(m);
   m = { ...m, alt: altFuer(m) };
-  return `<figure class="art-figure art-figure--symbol" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
+  return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }
@@ -161,10 +161,10 @@ function metadataAufSymbolbild(html, m) {
   return neu;
 }
 
-function ersetzeArtikelbild(a, m) {
+function ersetzeArtikelbild(a, m, stufe) {
   const pfad = artikelPfad(a); if (!existsSync(pfad)) { fehler.push(`${a.url}: Artikelseite fehlt`); return; }
   const html = readFileSync(pfad, 'utf8');
-  const neuFig = figureHtml(m);
+  const neuFig = figureHtml(m, stufe);
   const bodyMarker = '<div class="article-body" data-readable>';
   const figRe = /<figure class="art-figure[^"]*"[^>]*>[\s\S]*?<\/figure>/;
   let neu = html;
@@ -291,7 +291,7 @@ if (vergabe.dirty) {
 for (const a of artikelVorher) {
   if (!brauchtV2Symbol(a)) continue;
   const m = vergabe.zuordnung.get(a.url);
-  if (m) ersetzeArtikelbild(a, m); else entferneSymbolbild(a);
+  if (m) ersetzeArtikelbild(a, m, vergabe.stufen.get(a.url)); else entferneSymbolbild(a);
 }
 aktualisiereEditorialCurrent(artikelFuerVergabe, vergabe.zuordnung);
 const BILDLOS = new Set(vergabe.bildlos.map((b) => b.url));

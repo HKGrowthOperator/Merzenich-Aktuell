@@ -253,14 +253,20 @@ jobs:
             if (title !== expectedHero) throw new Error(`Homepage hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
             const unavailable = await page.getByText('Wetterdaten sind derzeit nicht verfügbar.').count();
             if (unavailable) throw new Error('Homepage still shows weather unavailable fallback');
-            // Regel aus dem Designstandard 7b: der Aufmacher ist nie bildlos. Vorher
-            // wurde ein Logo-Aufmacher still zum Textblock, und die Mitte sah leer aus.
+            // Designstandard 7b: der Aufmacher ist nie versehentlich bildlos. Seit den
+            // Bildstufen (KBS 25.09.2026) gibt es genau eine gewollte Ausnahme, den
+            // Text-Aufmacher (.front-lead--text), wenn es diese Woche kein eigenes
+            // Foto gibt. Ein Aufmacher mit Bild traegt nie ein Poolfoto (Stufe A).
             const heroBild = await page.evaluate(() => {
+              const lead = document.querySelector('.front-lead');
               const i = document.querySelector('.front-lead .media img');
-              return i ? { da: true, geladen: i.complete && i.naturalWidth > 0 } : { da: false };
+              return { text: !!(lead && lead.classList.contains('front-lead--text')), da: !!i, geladen: !!(i && i.complete && i.naturalWidth > 0), src: i ? i.getAttribute('src') : '' };
             });
-            if (!heroBild.da) throw new Error('Aufmacher ohne Bildflaeche');
-            if (!heroBild.geladen) throw new Error('Aufmacher: Bild laedt nicht');
+            if (!heroBild.text) {
+              if (!heroBild.da) throw new Error('Aufmacher ohne Bildflaeche');
+              if (!heroBild.geladen) throw new Error('Aufmacher: Bild laedt nicht');
+              if (/\/assets\/(editorial-pools|symbolbilder)\//.test(heroBild.src)) throw new Error('Aufmacher traegt ein Symbolbild (nur Stufe A erlaubt): ' + heroBild.src);
+            } else if (heroBild.da) throw new Error('Text-Aufmacher mit Bild');
             // Regel aus dem Designstandard 7b: eine Sektion ist so hoch wie ihr Inhalt
             // plus definierter Abstand. Gemessen am 18.09. standen dort 300 bis 500 px.
             const luecke = await page.evaluate(() => {

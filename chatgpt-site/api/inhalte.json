@@ -143,7 +143,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "noebse / Wikimedia Commons · CC BY-SA 2.5",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -188,7 +189,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -229,7 +231,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Håkan Dahlström from Malmö, Sweden / Wikimedia Commons · CC BY 2.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -262,7 +265,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -299,7 +303,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "WaldiWuff / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -340,7 +345,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -377,7 +383,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "8080 / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -414,7 +421,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Tanzhaus nrw / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -451,7 +459,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -492,7 +501,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Urheber siehe Quelldatei / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -533,7 +543,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "3268zauber / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -636,7 +647,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -731,7 +743,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Jan-Herm Janßen / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -776,7 +789,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -821,7 +835,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Henning Schlottmann (User:H-stt) / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -870,7 +885,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "StagiaireMGIMO / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -915,7 +931,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -960,7 +977,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "BikeMike / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1005,7 +1023,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "BikeMike / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1042,7 +1061,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1075,7 +1095,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1116,7 +1137,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Håkan Dahlström from Malmö, Sweden / Wikimedia Commons · CC BY 2.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1180,7 +1202,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1217,7 +1240,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1285,7 +1309,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Bálint Sallói / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1326,7 +1351,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "WaldiWuff / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1371,7 +1397,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "BikeMike / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1412,7 +1439,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "P170 / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1453,7 +1481,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "BikeMike / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1494,7 +1523,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1535,7 +1565,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "LAG Rheinisches Revier an Inde und Rur / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1576,7 +1607,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Urheber siehe Quelldatei / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1617,7 +1649,8 @@
     "fit": "",
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1658,7 +1691,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "LAG Rheinisches Revier an Inde und Rur / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1699,7 +1733,8 @@
     "fit": "contain",
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1740,7 +1775,8 @@
     "fit": "",
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich / Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1777,7 +1813,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "TWGThewikiguy / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1849,7 +1886,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1886,7 +1924,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1919,7 +1958,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1987,7 +2027,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2028,7 +2069,8 @@
     "fit": "",
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2154,7 +2196,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2191,7 +2234,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2259,7 +2303,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2296,7 +2341,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2364,7 +2410,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2405,7 +2452,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2446,7 +2494,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2487,7 +2536,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2528,7 +2578,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Markus Schweiss / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2569,7 +2620,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2606,7 +2658,8 @@
     "fit": "",
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2647,7 +2700,8 @@
     "fit": "",
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2711,7 +2765,8 @@
     "fit": "",
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2752,7 +2807,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Freiwillige Feuerwehr Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2816,7 +2872,8 @@
     "fit": "",
     "badge": "Archivbild",
     "credit": "Freiwillige Feuerwehr Merzenich (Beispielbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3039,7 +3096,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3142,7 +3200,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3187,7 +3246,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Polizei Düren / Presseportal (ots)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3290,7 +3350,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3420,7 +3481,8 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
-    "symbol": true
+    "symbol": true,
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3515,7 +3577,8 @@
     "fit": "contain",
     "badge": "Offizielles Quellenmotiv",
     "credit": "Gemeinde Merzenich · Heimat-Info",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3560,7 +3623,8 @@
     "fit": "",
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Cosmema GmbH",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3601,7 +3665,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Jugendgremium der Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3646,7 +3711,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "Buravleva stock / Shutterstock (Symbolbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3687,7 +3753,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3728,7 +3795,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3773,7 +3841,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "alexgo.photography / Shutterstock (Symbolbild)",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3814,7 +3883,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3855,7 +3925,8 @@
     "fit": "",
     "badge": "Offizielles Veranstaltungsbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3896,7 +3967,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3937,7 +4009,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -3974,7 +4047,8 @@
     "fit": "",
     "badge": "Quellenmotiv",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -4015,7 +4089,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -4060,7 +4135,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Frank Peterschroeder / Amprion",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"
@@ -4101,7 +4177,8 @@
     "fit": "",
     "badge": "Originalbild",
     "credit": "Gemeinde Merzenich",
-    "symbol": false
+    "symbol": false,
+    "stufe": "A"
    },
    "undatiert": true,
    "abgerufen": "2026-09-04"

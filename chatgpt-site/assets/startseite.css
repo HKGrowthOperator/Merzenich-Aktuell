@@ -748,3 +748,11 @@ body.home .ansichten-senden{grid-column:3;grid-row:1 / span 3;align-self:end;fon
   body.home .ansichten-beschreibung{margin-top:8px}
   body.home .ansichten-senden{display:inline-block;margin-top:10px}
 }
+
+/* Text-Aufmacher (Bildstufen V3, KBS 25.09.2026): Gibt es in den letzten sieben
+   Tagen kein eigenes Foto, steht die juengste Meldung ohne Bild oben. Die
+   Schlagzeile traegt die Flaeche allein, die Bordeaux-Linie markiert den Platz. */
+body.home .front-lead--text{border-top:4px solid var(--ma-red,#971725);padding-top:var(--s5);align-self:start}
+body.home .front-lead--text .front-lead-copy{padding-top:0}
+body.home .front-lead--text h1{max-width:20ch;font-size:clamp(36px,4.6vw,64px);-webkit-line-clamp:5;line-clamp:5;margin-top:var(--s3)}
+body.home .front-lead--text p{max-width:56ch;font-size:calc(var(--t-text) * 1.15)}

@@ -261,7 +261,11 @@ index.bestand = {
   // Seit den Motivregeln (24.09.) traegt jede Meldung nur noch ein Poolfoto,
   // das ihre Aussage zeigt. Damit darf auch der Aufmacher es tragen; eine
   // Ortsansicht (Fachwerkhaus zum Ortsfest) sagt dagegen nichts zur Meldung.
-  const aufmacherBild = (a) => eigenesFoto(a) || echtesBild(a);
+  // Editorial Image System V3 (Bildstufen): Den Aufmacher traegt nur Stufe A,
+  // das eigene Foto vom Ereignis. Ein Poolfoto (B/C) ist ein Symbolbild und
+  // steht an der wichtigsten Stelle der Seite nicht.
+  const stufe = (a) => (a && a.bild && a.bild.stufe) || (a && a.bild && a.bild.symbol ? 'B' : 'A');
+  const aufmacherBild = (a) => eigenesFoto(a) && stufe(a) === 'A';
 
   // Jede Bildflaeche schneidet auf Querformat zu: die grosse Karte auf 16:9,
   // die mittlere auf 3:2. Zwei Motivsorten ueberleben das nicht.
@@ -303,6 +307,8 @@ index.bestand = {
       } else if (!redaktionellBebildert(gesetzt)) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} traegt ein Logo oder Wappen als Bild. editorial-current.json korrigieren oder Eintrag entfernen.`);
         process.exitCode = 2;
+      } else if (stufe(gesetzt) !== 'A') {
+        console.log(`Startseite: gesetzter Aufmacher ${ed.hero.url} hat nur ein Symbolbild (Stufe ${stufe(gesetzt)}); Aufmacher braucht ein eigenes Foto, Automatik waehlt.`);
       } else {
         return gesetzt;
       }
@@ -319,12 +325,17 @@ index.bestand = {
     const frisch = redaktionell
       .filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
       .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
-    const frischMitFoto = frisch.find((a) => eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
+    const frischMitFoto = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
     if (frischMitFoto) return frischMitFoto;
     const frischMitMotiv = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l'));
     if (frischMitMotiv) return frischMitMotiv;
-    return redaktionell.find((a) => a.ressort !== 'sport' && eigenesFoto(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+    // Kein eigenes Foto in dieser Woche (Entscheidung KBS 25.09.2026): die
+    // juengste Meldung steht als Text-Aufmacher, ohne Bild. Aktuell bleibt
+    // wichtiger als ein Foto, und ein Symbolbild gehoert nicht an diese Stelle.
+    const textAufmacher = frisch.find((a) => a.ressort !== 'tipp');
+    if (textAufmacher) { console.log(`Startseite: kein eigenes Foto in den letzten 7 Tagen, Text-Aufmacher ${textAufmacher.url}.`); return { ...textAufmacher, textAufmacher: true }; }
+    return redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
       || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l'))
       || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a))
@@ -349,8 +360,8 @@ index.bestand = {
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
   function karte(a, groesse, tag) {
     if (groesse === 'xl') {
-      return `<article class="front-lead" data-story="${esc(a.id)}">`
-        + bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true)
+      return `<article class="front-lead${a.textAufmacher ? ' front-lead--text' : ''}" data-story="${esc(a.id)}">`
+        + (a.textAufmacher ? '' : bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true))
         + `<div class="front-lead-copy">${markeHtml(a)}`
         + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
         + `<p>${esc(a.teaser)}</p>`
@@ -434,7 +445,7 @@ index.bestand = {
   for (const a of gesetzteNeben) if (a.ressort === 'blaulicht') blaulicht++;
   const neben = gesetzteNeben.concat(
     redaktionell.filter((a) => {
-      if (vergeben.has(a.url) || a.ressort === 'sport' || !echtesBild(a) || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
+      if (vergeben.has(a.url) || a.ressort === 'sport' || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
       if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
       return true;
     }),

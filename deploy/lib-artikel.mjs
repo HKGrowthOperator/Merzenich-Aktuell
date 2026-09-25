@@ -30,8 +30,16 @@ export function markeHtml(a, { rubrik = 'kicker' } = {}) {
 export const ortSlug = (t) => String(t || '').toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z]/g, '');
 export const SITE_URL = JSON.parse(readFileSync(new URL('./site.json', import.meta.url), 'utf8')).url.replace(/\/$/, '');
 function bildAus(main) {
-  const fig = /<figure class="(art-figure[^"]*)"[^>]*>([\s\S]*?)<\/figure>/.exec(main);
+  const fig = /<figure class="(art-figure[^"]*)"([^>]*)>([\s\S]*?)<\/figure>/.exec(main);
   if (!fig) return null;
+  // Bildstufe (V3): Symbolbilder tragen sie am figure-Tag (symbolbilder.mjs),
+  // ein eigenes Foto ist Stufe A.
+  const symbol = fig[1].includes('art-figure--symbol');
+  // Archiv- und Beispielbilder zeigen nicht das Ereignis: Stufe B.
+  const badgeRoh = (/<span class="figure-badge">([^<]*)<\/span>/.exec(fig[3]) || [])[1] || '';
+  const stufe = (/data-bildstufe="([ABC])"/.exec(fig[2]) || [])[1]
+    || (symbol || /archivbild|beispielbild|ortsansicht/i.test(badgeRoh) ? 'B' : 'A');
+  fig.splice(2, 1);
   const img = /<img\b([^>]*)>/.exec(fig[2]); if (!img) return null;
   const attr = (n) => { const m = new RegExp(`\\b${n}="([^"]*)"`).exec(img[1]); return m ? entschaerfen(m[1]) : ''; };
   const src = attr('src'); if (!src) return null;
@@ -40,7 +48,7 @@ function bildAus(main) {
     fit: /class="media contain"/.test(fig[2]) ? 'contain' : '',
     badge: text(erstes(/<span class="figure-badge">([^<]*)<\/span>/, fig[2])),
     credit: text(erstes(/<span>Bild: ([\s\S]*?)<\/span>/, fig[2])).replace(/\s*·\s*Bildquelle\s*$/, ''),
-    symbol: fig[1].includes('art-figure--symbol'),
+    symbol, stufe,
   };
 }
 /**

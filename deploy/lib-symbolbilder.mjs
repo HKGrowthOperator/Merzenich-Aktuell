@@ -801,7 +801,24 @@ function klassenRegel(id) {
     for (const mt of e.motive) if (!motive.includes(mt)) motive.push(mt);
     k = e;
   }
-  return { id, motive, klasse: true };
+  return { id, motive, eigene: klassen[id].motive.length, klasse: true };
+}
+
+/**
+ * Bildstufe (Editorial Image System V3):
+ *   A  eigenes Foto vom Ereignis (Quelle, Feuerwehr, Polizei, Redaktion).
+ *      Nur A darf den Aufmacher der Startseite tragen.
+ *   B  Poolfoto mit einem Motiv der eigenen Bildklasse (bzw. der Motivregel).
+ *   C  Poolfoto nur ueber die Elternklasse, oder kleiner als 800 px Breite.
+ *      C steht auf der Artikelseite und in Listen, nie in der Startbuehne.
+ * Poolfotos sind immer Symbolbilder, deshalb nie A.
+ */
+export const STUFE_MIN_BREITE = 800;
+export function stufeFuer(regel, rang, m) {
+  if (m?.stufe === 'C') return 'C';
+  if (m?.width && m.width < STUFE_MIN_BREITE) return 'C';
+  if (regel?.klasse && rang >= (regel.eigene ?? Infinity)) return 'C';
+  return 'B';
 }
 export function motivregelFuer(a) {
   if (a?.bildklasse) return klassenRegel(a.bildklasse);
@@ -837,7 +854,7 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     usage.set(m.id, (usage.get(m.id) || 0) + 1);
   }
   let dirty = JSON.stringify(assignments) !== JSON.stringify(alt);
-  const zuordnung = new Map(); const warnungen = []; const bildlos = [];
+  const zuordnung = new Map(); const stufen = new Map(); const warnungen = []; const bildlos = [];
   const sortiert = [...artikel].sort((a, b) => String(a.datum || a.abgerufen || '').localeCompare(String(b.datum || b.abgerufen || '')) || keyFuer(a).localeCompare(keyFuer(b)));
   for (const a of sortiert) {
     if (!brauchtSymbolbild(a)) continue;
@@ -845,7 +862,7 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     const erlaubt = regel ? regel.motive.flatMap((mt, rang) => (nachMotiv.get(mt) || []).map((m) => ({ m, rang }))) : [];
     const vorhanden = assignments[key];
     const bleibt = vorhanden && erlaubt.find((e) => e.m.id === vorhanden.imageId);
-    if (bleibt) { zuordnung.set(key, bleibt.m); continue; }
+    if (bleibt) { zuordnung.set(key, bleibt.m); stufen.set(key, stufeFuer(regel, bleibt.rang, bleibt.m)); continue; }
     if (vorhanden) { usage.set(vorhanden.imageId, Math.max(0, (usage.get(vorhanden.imageId) || 1) - 1)); delete assignments[key]; dirty = true; }
     if (!erlaubt.length) { bildlos.push({ url: key, regel: regel ? regel.id : null, motive: regel ? regel.motive : [] }); continue; }
     // Erstes Motiv der Regel zuerst, lokale Fotos vor fremden, dann Rotation.
@@ -854,14 +871,15 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     const grenze = bildklassenLesen().maxJeFoto || Infinity;
     const frei = erlaubt.filter((e) => (usage.get(e.m.id) || 0) < grenze);
     if (!frei.length) { bildlos.push({ url: key, regel: regel.id, motive: regel.motive, grund: `alle passenden Fotos schon ${grenze}-mal vergeben` }); continue; }
-    const k = [...frei].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0].m;
+    const wahl = [...frei].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0];
+    const k = wahl.m; stufen.set(key, stufeFuer(regel, wahl.rang, k));
     usage.set(k.id, (usage.get(k.id) || 0) + 1);
     assignments[key] = { imageId: k.id, pool: k.pool, motiv: motivFuer(k), regel: regel.id, assignedAt: new Date().toISOString(), articleId: a.id || '', articleDate: a.datum || a.abgerufen || '' };
     zuordnung.set(key, k); dirty = true;
   }
   // Echte Bilder gewinnen dauerhaft. Eine alte Symbolzuordnung wird entfernt, sobald ein echtes Bild vorhanden ist.
   for (const a of artikel) { const key = keyFuer(a); if (!brauchtSymbolbild(a) && assignments[key]) { delete assignments[key]; dirty = true; } }
-  return { zuordnung, bildlos, state: { version: 2, updatedAt: dirty ? new Date().toISOString() : (bestand?.updatedAt || ''), assignments }, dirty, warnungen };
+  return { zuordnung, stufen, bildlos, state: { version: 2, updatedAt: dirty ? new Date().toISOString() : (bestand?.updatedAt || ''), assignments }, dirty, warnungen };
 }
 
 export function selbsttest() {

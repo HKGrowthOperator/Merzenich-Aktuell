@@ -108,3 +108,15 @@ ungesichtet herein und werden erst nach Sichtung mit Motiv in
 
 Offen: Bildstufen A/B/C (Aufmacher nur A). Heute gilt bereits: Der Aufmacher
 der Startseite nimmt nur eigene oder Quellfotos, nie ein Poolfoto.
+
+## Bildstufen A/B/C (V3, 25.09.2026)
+
+| Stufe | Was | Wo erlaubt |
+|---|---|---|
+| A | Eigenes Foto vom Ereignis (Originalbild, Quellenmotiv, Foto der Polizei/Feuerwehr) | überall, **einzige Stufe für den Aufmacher** |
+| B | Poolfoto mit einem Motiv der eigenen Bildklasse (oder Motivregel); Archiv- und Beispielbilder | Artikel, Listen, Nebenmeldungen der Startbühne |
+| C | Poolfoto nur über die Elternklasse, oder schmaler als 800 px | Artikel und Listen, nie in der Startbühne |
+
+- Berechnet in `deploy/lib-symbolbilder.mjs` (`stufeFuer`), am Symbolbild als `data-bildstufe`, gelesen in `lib-artikel.mjs` (`bild.stufe` im Inhaltsindex).
+- Aufmacher (`deploy/inhaltsindex.mjs`): jüngste Meldung der letzten 7 Tage mit Stufe A. Gibt es keine, steht die jüngste Meldung als **Text-Aufmacher** ohne Bild (`.front-lead--text`, Entscheidung KBS 25.09.2026). Nie ein Symbolbild an dieser Stelle.
+- QA (`qa.yml`) bricht ab, wenn der Aufmacher ein Poolfoto trägt oder ein Text-Aufmacher doch ein Bild hat.
