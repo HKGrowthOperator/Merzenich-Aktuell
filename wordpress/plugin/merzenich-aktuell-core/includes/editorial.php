@@ -32,6 +32,7 @@ function ma_image_type_field(): void {
         echo '<option value="'.esc_attr($k).'" '.selected($wert,$k,false).'>'.esc_html($label).'</option>';
     }
     echo '</select></label><br><span class="description">Ohne gepruefte Bildrechte oder eingetragene Lizenz liefert die Seite statt des Bildes die gekennzeichnete Ersatzgrafik aus.</span></p>';
+    if (function_exists('ma_partner_rights_field')) ma_partner_rights_field((int)get_the_ID());
 }
 
 function ma_image_provenance_box(): void {

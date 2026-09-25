@@ -109,6 +109,35 @@ pruefe('Feuerwehr-Beitrag wird pending',$d['post_status'],'pending');
 $GLOBALS['user']=new WP_User(10,['ma_blaulicht_partner']);
 pruefe('Bestehender Blaulicht-Zugang funktioniert weiter',ma_current_partner_policy()['role']??'','ma_blaulicht_partner');
 
+echo "\nFotoerlaubnis der Partner\n";
+$GLOBALS['meta']=[]; $GLOBALS['thumb']=[];
+if(!function_exists('get_post_meta')){ function get_post_meta($id,$k,$single=false){ return $GLOBALS['meta'][$id][$k] ?? ''; } }
+if(!function_exists('update_post_meta')){ function update_post_meta($id,$k,$v){ $GLOBALS['meta'][$id][$k]=$v; return true; } }
+if(!function_exists('delete_post_meta')){ function delete_post_meta($id,$k){ unset($GLOBALS['meta'][$id][$k]); return true; } }
+if(!function_exists('has_post_thumbnail')){ function has_post_thumbnail($id){ return !empty($GLOBALS['thumb'][$id]); } }
+$GLOBALS['user']=new WP_User(9,['ma_feuerwehr_partner']);
+$_POST=[];
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>50,'_thumbnail_id'=>12]);
+pruefe('Mit Bild ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+pruefe('Grund wird fuer den Hinweis vermerkt',$GLOBALS['meta'][50][MA_PARTNER_RIGHTS_MISSING_META]??'','1');
+$_POST=['ma_editorial_nonce'=>'x', MA_PARTNER_RIGHTS_META=>'1'];
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>50,'_thumbnail_id'=>12]);
+pruefe('Mit Bild und Erklaerung wird pending',$d['post_status'],'pending');
+pruefe('Hinweis verschwindet',isset($GLOBALS['meta'][50][MA_PARTNER_RIGHTS_MISSING_META]),false);
+$_POST=['ma_editorial_nonce'=>'x'];
+$GLOBALS['meta'][51][MA_PARTNER_RIGHTS_META]='1'; $GLOBALS['thumb'][51]=true;
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>51]);
+pruefe('Abgewaehlter Haken zaehlt, nicht der alte Stand',$d['post_status'],'draft');
+$_POST=[];
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>51]);
+pruefe('Ohne Formular gilt der gespeicherte Stand',$d['post_status'],'pending');
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>52,'_thumbnail_id'=>0]);
+pruefe('Ohne Bild keine Erklaerung noetig',$d['post_status'],'pending');
+$GLOBALS['user']=new WP_User(11,['ma_immobilien_partner']);
+$d=ma_partner_force_pending(['post_type'=>'ma_property','post_status'=>'publish'],['ID'=>53,'_thumbnail_id'=>7]);
+pruefe('Makler: Inserat mit Bild ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+$_POST=[];
+
 echo "\nAlle wartenden genehmigen (ueber mehrere Seiten)\n";
 $GLOBALS['can_moderate']=true; $GLOBALS['mail']=[];
 $_SERVER['REQUEST_METHOD']='POST'; $_POST=['approve_all'=>'1'];

@@ -117,6 +117,7 @@ function ma_register_partner_hooks(): void {
     add_filter('map_meta_cap', 'ma_partner_map_meta_cap', 20, 4);
     add_filter('wp_insert_post_data', 'ma_partner_force_pending', 5, 2);
     add_action('save_post', 'ma_partner_enforce_assignment', 100, 3);
+    add_action('save_post', 'ma_partner_save_rights', 20);
     add_action('transition_post_status', 'ma_partner_submission_notification', 20, 3);
     add_action('admin_menu', 'ma_partner_admin_menu', 100);
     add_action('admin_init', 'ma_partner_admin_route_guard', 5);
@@ -143,6 +144,72 @@ function ma_partner_map_meta_cap(array $caps, string $cap, int $user_id, array $
     return $caps;
 }
 
+/*
+ * Fotoerlaubnis: Partner (Feuerwehr, Polizei, Makler, Vereine ...) laden eigene
+ * Fotos hoch. Bevor ein Beitrag mit Bild zur Freigabe geht, bestaetigen sie,
+ * dass sie die Fotos veroeffentlichen duerfen und dass nichts Identifizierendes
+ * zu sehen ist. Die Redaktion sieht die Erklaerung (wer, wann) und setzt danach
+ * selbst "Bildrechte geprueft". Ohne Erklaerung bleibt der Beitrag Entwurf.
+ */
+const MA_PARTNER_RIGHTS_META = 'ma_partner_rights_declared';
+const MA_PARTNER_RIGHTS_MISSING_META = '_ma_partner_rights_missing';
+
+function ma_partner_rights_text(): string {
+    return 'Wir haben die Fotos selbst aufgenommen oder dürfen sie veröffentlichen. Kennzeichen, erkennbare Gesichter und Hausnummern sind nicht zu sehen oder unkenntlich gemacht.';
+}
+
+/** Hat der Beitrag ein Bild? Formularwert vor gespeichertem Stand. */
+function ma_partner_has_image(int $post_id, array $postarr): bool {
+    if (array_key_exists('_thumbnail_id', $postarr)) return (int)$postarr['_thumbnail_id'] > 0;
+    return $post_id > 0 && function_exists('has_post_thumbnail') && has_post_thumbnail($post_id);
+}
+
+/**
+ * Liegt die Erklaerung vor? Kommt das Redaktionsformular mit, zaehlt nur der
+ * Haken darin (abgewaehlt heisst abgewaehlt); sonst der gespeicherte Stand.
+ */
+function ma_partner_rights_declared(int $post_id): bool {
+    if (isset($_POST['ma_editorial_nonce'])) return isset($_POST[MA_PARTNER_RIGHTS_META]);
+    return $post_id > 0 && (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) === '1';
+}
+
+/** Haken fuer Partner, Nachweis fuer die Redaktion (im Feld "Bildtyp"). */
+function ma_partner_rights_field(int $post_id): void {
+    if (ma_current_partner_policy()) {
+        $v = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true);
+        echo '<p><label><input type="checkbox" name="'.esc_attr(MA_PARTNER_RIGHTS_META).'" value="1" '.checked($v, '1', false).'> <strong>Fotoerlaubnis:</strong> '.esc_html(ma_partner_rights_text()).'</label>';
+        echo '<br><span class="description">Pflicht, wenn der Beitrag ein Bild hat. Ohne diesen Haken bleibt er Entwurf.</span></p>';
+        return;
+    }
+    if ((string)get_post_meta($post_id, '_ma_partner_submission', true) !== '1') return;
+    if ((string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) === '1') {
+        $wer = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by', true);
+        $wann = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at', true);
+        echo '<p><strong>Fotoerlaubnis des Partners:</strong> erteilt'.($wer !== '' ? ' von '.esc_html($wer) : '').($wann !== '' ? ' am '.esc_html($wann) : '').'.<br><span class="description">'.esc_html(ma_partner_rights_text()).' Das Foto trotzdem ansehen, dann „Bildrechte geprüft“ setzen.</span></p>';
+    } else {
+        echo '<p><strong>Fotoerlaubnis des Partners:</strong> nicht erteilt. Bild nicht verwenden, bis sie vorliegt.</p>';
+    }
+}
+
+/** Speichern: nur ein Partner selbst kann die Erklaerung abgeben oder zuruecknehmen. */
+function ma_partner_save_rights(int $post_id): void {
+    if (!ma_current_partner_policy() || !isset($_POST['ma_editorial_nonce'])) return;
+    if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])), 'ma_editorial_save')) return;
+    if (wp_is_post_revision($post_id) || !current_user_can('edit_post', $post_id)) return;
+    if (isset($_POST[MA_PARTNER_RIGHTS_META])) {
+        if ((string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) !== '1') {
+            $user = wp_get_current_user();
+            update_post_meta($post_id, MA_PARTNER_RIGHTS_META, '1');
+            update_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by', (string)($user->display_name ?? '') ?: (string)($user->user_login ?? ''));
+            update_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at', function_exists('current_time') ? current_time('d.m.Y H:i') : date('d.m.Y H:i'));
+        }
+    } else {
+        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META);
+        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by');
+        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at');
+    }
+}
+
 function ma_partner_force_pending(array $data, array $postarr): array {
     $policy = ma_current_partner_policy();
     if (!$policy) return $data;
@@ -155,6 +222,17 @@ function ma_partner_force_pending(array $data, array $postarr): array {
 
     if (!in_array((string)($data['post_status'] ?? ''), ['draft','auto-draft','inherit'], true)) {
         $data['post_status'] = 'pending';
+    }
+
+    // Mit Bild nur nach Fotoerlaubnis zur Freigabe.
+    $post_id = (int)($postarr['ID'] ?? 0);
+    if ($data['post_status'] === 'pending') {
+        if (ma_partner_has_image($post_id, $postarr) && !ma_partner_rights_declared($post_id)) {
+            $data['post_status'] = 'draft';
+            if ($post_id) update_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, '1');
+        } elseif ($post_id) {
+            delete_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META);
+        }
     }
     return $data;
 }
@@ -253,6 +331,11 @@ function ma_partner_admin_notice(): void {
     if (!$policy) return;
     echo '<div class="notice notice-info"><p><strong>'.esc_html($policy['label']).':</strong> ';
     echo 'Sie können eigene Inhalte erstellen und zur Freigabe einreichen. Veröffentlichung und redaktionelle Prüfhaken übernimmt ausschließlich die Redaktion.</p></div>';
+    $post_id = (int)(($GLOBALS['post']->ID ?? 0));
+    if ($post_id && (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, true) === '1') {
+        echo '<div class="notice notice-warning"><p><strong>Noch nicht eingereicht.</strong> Der Beitrag hat ein Bild, aber die Fotoerlaubnis fehlt. ';
+        echo 'Setzen Sie im Kasten „Bildherkunft“ bzw. „Redaktion &amp; Quelle“ den Haken „Fotoerlaubnis“ und reichen Sie erneut ein.</p></div>';
+    }
 }
 
 function ma_partner_rest_guard($prepared_post, WP_REST_Request $request) {
