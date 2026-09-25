@@ -134,10 +134,22 @@ const QUELLEN = {
   // Die Website der Gemeinde sperrt Abrufe aus GitHub Actions ("403: Zugriff
   // verweigert"). Dieselben Mitteilungen stehen in der Heimat-Info-App der
   // Gemeinde, dort auch Vereine, Schulen, Feuerwehr.
-  heimatinfo: () => listeMitDetails({
-    listen: ['https://www.heimat-info.de/gemeinden/merzenich', 'https://www.heimat-info.de/gemeinden/merzenich/organisationen/gemeinde-merzenich', 'https://www.heimat-info.de/gemeinden/merzenich/organisationen'],
-    detail: /^https:\/\/www\.heimat-info\.de\/beitraege\/[0-9a-f-]{36}$/, max: 60,
-  }),
+  // Heimat-Info: Startseite zeigt nur die neuesten zehn Beitraege. Deshalb
+  // zusaetzlich die Beitragsliste jeder Organisation (Vereine, Schulen, Kirche,
+  // Oeffentliches; ohne Gewerbe), aus den Links der Startseite ermittelt.
+  heimatinfo: async () => {
+    const basis = 'https://www.heimat-info.de/gemeinden/merzenich';
+    const start = await seite(basis);
+    const orgs = [...new Map((start.links || [])
+      .filter((l) => /\/gemeinden\/merzenich\/organisationen\/[a-z0-9-]+$/.test(l.href) && !/\bGewerbe\b/.test(l.text || ''))
+      .map((l) => [l.href, l])).keys()];
+    const listen = [start];
+    for (const o of orgs) listen.push(await seite(`${o}/beitraege`));
+    const ziele = [...new Set(listen.flatMap((s) => (s.links || []).map((l) => l.href.split('#')[0])).filter((h) => /^https:\/\/www\.heimat-info\.de\/beitraege\/[0-9a-f-]{36}$/.test(h)))].slice(0, 200);
+    const details = [];
+    for (const u of ziele) details.push(await seite(u));
+    return { organisationen: orgs, listen, details };
+  },
   schulen: () => listeMitDetails({
     listen: ['https://kgs.gemeinde-merzenich.de/aktuelles/index.php', 'https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php'],
     detail: /^https:\/\/kgs(-golzheim)?\.gemeinde-merzenich\.de\/aktuelles\/[^?#]+\.php$/, max: 20,
