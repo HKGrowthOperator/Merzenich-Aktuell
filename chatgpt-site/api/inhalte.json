@@ -1,22 +1,22 @@
 {
  "generated": "2026-09-24T16:30:00+02:00",
- "anzahl": 104,
+ "anzahl": 107,
  "bestand": {
-  "gesamt": 104,
+  "gesamt": 107,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 57,
-   "sport": 13,
+   "sport": 14,
    "rathaus": 7,
-   "leben": 15,
+   "leben": 16,
    "wirtschaft": 6,
    "tipp": 0,
    "menschen": 0,
-   "vereine": 6,
+   "vereine": 7,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 70,
+   "merzenich": 73,
    "golzheim": 7,
    "girbelsrath": 14,
    "morschenich": 7,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 104,
+    "anzahl": 107,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -33,7 +33,7 @@
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 13,
+    "anzahl": 14,
     "liste": "gepflegt"
    },
    "/rathaus/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 15,
+    "anzahl": 16,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -57,7 +57,7 @@
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 6,
+    "anzahl": 7,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 70,
+    "anzahl": 73,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -2653,6 +2653,33 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-07-21-tagespflege-fak-merzenich-25-jahre",
+   "url": "/leben/tagespflege-fak-merzenich-25-jahre/",
+   "titel": "25 Jahre Tagespflege: F.A.K. Merzenich feiert Sommerfest",
+   "teaser": "Mit Gästen, Angehörigen und Bürgermeister Georg Gelhausen feierte die Tagespflege am 18. Juli ihr Jubiläum. Interessierte können das Haus kostenlos kennenlernen.",
+   "kicker": "Tagespflege · Jubiläum",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-07-21T13:36:00+02:00",
+   "aktualisiert": "2026-07-21T13:36:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "jubilaeum",
+     "label": "Jubiläum"
+    },
+    {
+     "slug": "senioren",
+     "label": "Senioren"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-07-20-einsatz-97-personenbefreiung",
    "url": "/blaulicht/einsatz-97-personenbefreiung/",
    "titel": "Kind im verschlossenen Auto: Passant befreit es in Girbelsrath vor Eintreffen der Feuerwehr",
@@ -2919,6 +2946,33 @@
    "abgerufen": ""
   },
   {
+   "id": "2026-05-30-pfadfinder-merzenich-pfingsten-westernohe",
+   "url": "/vereine/pfadfinder-merzenich-pfingsten-westernohe/",
+   "titel": "Pfingsten in Westernohe: Merzenicher Pfadfinder unter 4000 anderen",
+   "teaser": "Die Jüngsten bekamen beim Stufenwechsel ihr blaues Halstuch, die Älteren wanderten rund 50 Kilometer bis zur Burg Greifenstein und zurück.",
+   "kicker": "Pfadfinder · Zeltlager",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-05-30T16:38:00+02:00",
+   "aktualisiert": "2026-05-30T16:38:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "pfadfinder",
+     "label": "Pfadfinder"
+    },
+    {
+     "slug": "vereine",
+     "label": "Vereine"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-05-27-gestohlenes-auto-ueberschlagen-festnahme",
    "url": "/blaulicht/gestohlenes-auto-ueberschlagen-festnahme/",
    "titel": "In Merzenich gestohlenes Auto überschlägt sich: Fahrer (18) festgenommen",
@@ -3163,6 +3217,33 @@
     {
      "slug": "polizei",
      "label": "Polizei"
+    }
+   ],
+   "bild": null,
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-03-13-bsc-merzenich-la-rocca-europameister",
+   "url": "/sport/bsc-merzenich-la-rocca-europameister/",
+   "titel": "Gold in Antalya: Luigi La Rocca vom BSC Merzenich ist Europameister",
+   "teaser": "Mit der Nationalmannschaft gewann der Merzenicher Billardspieler im 5 Pin die Europameisterschaft. Im Finale wurde Dänemark 4:1 geschlagen.",
+   "kicker": "Billard · Europameisterschaft",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-03-13T14:43:00+01:00",
+   "aktualisiert": "2026-03-13T14:43:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "billard",
+     "label": "Billard"
+    },
+    {
+     "slug": "vereine",
+     "label": "Vereine"
     }
    ],
    "bild": null,

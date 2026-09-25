@@ -1,0 +1,58 @@
+{
+  "hinweis": "Beitraege von Vereinen und Einrichtungen in der Heimat-Info-App der Gemeinde Merzenich, abgerufen am 25.09.2026 (imports/quellen/heimatinfo.json). Nur was im Beitrag steht. Zeit = Veroeffentlichung des Beitrags. Fotos der Beitraege werden nicht uebernommen (keine Nutzungsfreigabe).",
+  "meldungen": [
+    {
+      "slug": "bsc-merzenich-la-rocca-europameister",
+      "ressort": "sport",
+      "ortsteil": "merzenich",
+      "kicker": "Billard · Europameisterschaft",
+      "titel": "Gold in Antalya: Luigi La Rocca vom BSC Merzenich ist Europameister",
+      "dek": "Mit der Nationalmannschaft gewann der Merzenicher Billardspieler im 5 Pin die Europameisterschaft. Im Finale wurde Dänemark 4:1 geschlagen.",
+      "datum": "2026-03-13T14:43:00+01:00",
+      "fakten": ["Europameisterschaft 5 Pin in Antalya (Türkei)", "Finale am 11. März 2026: Nationalmannschaft gegen Dänemark 4:1", "Luigi La Rocca spielt für den Billardsportclub Merzenich 1970 e.V."],
+      "absaetze": [
+        "Luigi La Rocca vom Billardsportclub Merzenich hat mit der Nationalmannschaft die Europameisterschaft im 5 Pin gewonnen. Das meldet der Verein. Das Finale in Antalya in der Türkei ging am 11. März mit 4:1 gegen Dänemark an die deutsche Mannschaft.",
+        "Nach Angaben des BSC hatte La Rocca am Sieg im Finale einen entscheidenden Anteil. Der Verein sieht Merzenich damit erneut auf der Billardlandkarte, national wie international."
+      ],
+      "themen": [["billard", "Billard"], ["vereine", "Vereine"]],
+      "bildklasse": "sport.billard",
+      "quelle": { "name": "Billardsportclub Merzenich 1970 e.V., Beitrag in der Heimat-Info-App vom 13.03.2026", "url": "https://www.heimat-info.de/beitraege/df9a9f6f-a7f3-4e32-b3bb-6d032443c0da", "stand": "2026-09-25" }
+    },
+    {
+      "slug": "tagespflege-fak-merzenich-25-jahre",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Tagespflege · Jubiläum",
+      "titel": "25 Jahre Tagespflege: F.A.K. Merzenich feiert Sommerfest",
+      "dek": "Mit Gästen, Angehörigen und Bürgermeister Georg Gelhausen feierte die Tagespflege am 18. Juli ihr Jubiläum. Interessierte können das Haus kostenlos kennenlernen.",
+      "datum": "2026-07-21T13:36:00+02:00",
+      "fakten": ["Sommerfest und 25-jähriges Jubiläum am Samstag, 18. Juli 2026", "Träger: Freie Alten- und Krankenpflege e.V. (F.A.K.)", "Kostenloser Besuchstag auf Anfrage"],
+      "absaetze": [
+        "Die Tagespflege der Freien Alten- und Krankenpflege (F.A.K.) in Merzenich hat am Samstag, 18. Juli, ihr Sommerfest und zugleich ihr 25-jähriges Bestehen gefeiert. Das Team bedankt sich bei Gästen, Angehörigen und Besuchern sowie bei Bürgermeister Georg Gelhausen für den Besuch.",
+        "Wer die Einrichtung kennenlernen möchte, kann nach Angaben der F.A.K. einen kostenlosen Besuchstag im Haus in Merzenich vereinbaren. Das Team steht auch für Fragen zur Verfügung."
+      ],
+      "themen": [["jubilaeum", "Jubiläum"], ["senioren", "Senioren"]],
+      "bildklasse": "leben.senioren",
+      "quelle": { "name": "Freie Alten- und Krankenpflege e.V. Tagespflege Merzenich, Beitrag in der Heimat-Info-App vom 21.07.2026", "url": "https://www.heimat-info.de/beitraege/b91da1a1-acd4-42a9-bb9e-f00bac115441", "stand": "2026-09-25" }
+    },
+    {
+      "slug": "pfadfinder-merzenich-pfingsten-westernohe",
+      "ressort": "vereine",
+      "ortsteil": "merzenich",
+      "kicker": "Pfadfinder · Zeltlager",
+      "titel": "Pfingsten in Westernohe: Merzenicher Pfadfinder unter 4000 anderen",
+      "dek": "Die Jüngsten bekamen beim Stufenwechsel ihr blaues Halstuch, die Älteren wanderten rund 50 Kilometer bis zur Burg Greifenstein und zurück.",
+      "datum": "2026-05-30T16:38:00+02:00",
+      "fakten": ["Pfingstlager im Bundeszentrum der DPSG in Westernohe (Westerwald)", "Rund 4000 Pfadfinderinnen und Pfadfinder, Merzenich gemeinsam mit Düren", "Gruppenstunde: sonntags ab 10:30 Uhr am Pfarrheim neben der Kirche in Merzenich"],
+      "absaetze": [
+        "Die Pfadfinder des DPSG-Stammes St. Laurentius Merzenich waren über Pfingsten im Bundeszentrum ihres Verbandes in Westernohe im Westerwald. Nach Angaben des Stammes treffen sich dort jedes Jahr etwa 4000 Pfadfinderinnen und Pfadfinder. Die Merzenicher bezogen gemeinsam mit den Pfadfindern aus Düren die Zelte, die ein Vortrupp aufgebaut hatte.",
+        "Für die Jüngsten war der Stufenwechsel der Höhepunkt: Sie starteten als Wölflinge, lösten bei einer Schnitzeljagd Aufgaben und bekamen danach das blaue Halstuch der Jungpfadfinder. Die Jugendlichen und jungen Erwachsenen wanderten am Samstag mit Gepäck etwa 25 Kilometer bis zur Burg Greifenstein, bekamen dort eine Führung und zelteten innerhalb der Burgmauern. Insgesamt kamen hin und zurück rund 50 Kilometer zusammen.",
+        "Am Sonntagabend stand der Pfingstgottesdienst mit dem Bischof von Fulda auf dem Programm, danach wurde das große Lagerfeuer entzündet. Am Montag bauten die Gruppen ab und fuhren zurück.",
+        "Der Stamm trifft sich nach eigenen Angaben zurzeit sonntags ab 10:30 Uhr am Pfarrheim neben der Kirche in Merzenich. Willkommen sind Kinder ab etwa sechs Jahren, Jugendliche und Erwachsene, auch als Gruppenleitung."
+      ],
+      "themen": [["pfadfinder", "Pfadfinder"], ["vereine", "Vereine"]],
+      "bildklasse": "vereine.jugend",
+      "quelle": { "name": "Pfadfinder Merzenich (DPSG St. Laurentius), Beitrag in der Heimat-Info-App vom 30.05.2026", "url": "https://www.heimat-info.de/beitraege/f3dea129-e750-4f34-a7a8-2f5df90e99f6", "stand": "2026-09-25" }
+    }
+  ]
+}

@@ -98,6 +98,10 @@
         "nistkasten"
       ]
     },
+    "leben.senioren": {
+      "titel": "Tagespflege, Senioren, Feiern in Einrichtungen",
+      "motive": []
+    },
     "polizei.diebstahl": {
       "titel": "Diebstahl aus Fahrzeugen, Werkzeugdiebstahl",
       "motive": [
@@ -133,11 +137,19 @@
         "fussgaengerbruecke"
       ]
     },
+    "sport.billard": {
+      "titel": "Billard, Vereinssport in der Halle",
+      "motive": []
+    },
     "sport.tennis": {
       "titel": "Tennis, Mannschaft oder Spielbetrieb",
       "motive": [
         "tennisplatz"
       ]
+    },
+    "vereine.jugend": {
+      "titel": "Jugendarbeit, Pfadfinder, Zeltlager",
+      "motive": []
     },
     "vereine.tanz": {
       "titel": "Tanz, Vortanzen und Tanzgruppe",
