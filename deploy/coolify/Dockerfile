@@ -13,7 +13,8 @@
 # In Coolify: Build Pack = Dockerfile, Dockerfile Location = deploy/coolify/Dockerfile,
 # Base Directory = / (Repository-Wurzel), Port = 80.
 # Fuer Kommentare zusaetzlich: Persistent Storage /data und die Umgebungsvariable
-# KOMMENTARE_ADMIN_TOKEN (siehe README.md).
+# KOMMENTARE_ADMIN_TOKEN (siehe README.md), fuer Freigabe-Mails SMTP_* (siehe
+# docs/KOMMENTARE-MODERATION.md).
 
 FROM nginx:1.27-alpine
 
@@ -25,7 +26,9 @@ COPY deploy/coolify/nginx.conf /etc/nginx/conf.d/merzenich.conf
 COPY deploy/coolify/kommentare-location.conf /tmp/kommentare-location.conf
 COPY deploy/coolify/40-resolver.sh /docker-entrypoint.d/40-resolver.sh
 COPY deploy/coolify/50-kommentare.sh /docker-entrypoint.d/50-kommentare.sh
-COPY deploy/coolify/kommentare/server.mjs /opt/kommentare/server.mjs
+# Ganzer Ordner: server.mjs, smtp.mjs (Mailversand) und die Freigabeseite
+# (moderation.html, moderation.js). Gestartet wird weiter /opt/kommentare/server.mjs.
+COPY deploy/coolify/kommentare/ /opt/kommentare/
 COPY chatgpt-site/ /usr/share/nginx/html/
 
 # Kommentar-, Abo- und Wetter-Weiterleitung (alle zum Node-Dienst) unmittelbar

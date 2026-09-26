@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Kommentar-Freigabe | Merzenich Aktuell</title>
+<style>
+:root { color-scheme: light; --text: #1a1a1a; --leise: #595959; --linie: #d6d4cf; --grund: #f7f6f3; --akzent: #0b5394; --gut: #1e6b34; --schlecht: #a3161a; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--text); background: #fff; }
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 .5rem; }
+p { margin: .5rem 0; }
+a { color: var(--akzent); }
+.leise { color: var(--leise); }
+label { font-weight: 600; }
+input[type=password] { font: inherit; padding: .5rem .6rem; border: 1px solid #8a8781; border-radius: 4px; width: min(100%, 28rem); display: block; margin: .3rem 0 .6rem; }
+button { font: inherit; padding: .5rem .9rem; border-radius: 4px; border: 1px solid #8a8781; background: #fff; color: var(--text); cursor: pointer; }
+button:hover { background: var(--grund); }
+button:disabled { opacity: .6; cursor: wait; }
+button.haupt { background: var(--akzent); border-color: var(--akzent); color: #fff; font-weight: 600; }
+button.haupt:hover { background: #083d6e; }
+:focus-visible { outline: 3px solid #f0b400; outline-offset: 2px; }
+.leiste { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .75rem 0; }
+.leiste .rechts { margin-left: auto; }
+.meldung { padding: .75rem 1rem; border-radius: 4px; border: 1px solid var(--linie); background: var(--grund); margin: 1rem 0; white-space: pre-line; }
+.meldung.fehler { border-color: var(--schlecht); background: #fdf0f0; color: var(--schlecht); }
+.meldung.erfolg { border-color: var(--gut); background: #eef7f0; color: var(--gut); }
+.meldung:empty { display: none; }
+ol.liste { list-style: none; padding: 0; margin: 0; }
+ol.liste > li { border: 1px solid var(--linie); border-left: 6px solid var(--gut); border-radius: 4px; padding: .75rem 1rem; margin: 0 0 .75rem; }
+ol.liste > li.abgewaehlt { border-left-color: var(--schlecht); background: #fdf7f7; }
+.auswahl { display: flex; gap: .5rem; align-items: center; font-weight: 600; }
+.auswahl input { width: 1.3rem; height: 1.3rem; margin: 0; }
+.zustand { font-weight: 400; color: var(--leise); }
+.kopf { margin: .35rem 0; color: var(--leise); font-size: .95rem; }
+.kopf strong { color: var(--text); }
+.text { white-space: pre-wrap; overflow-wrap: anywhere; margin: .5rem 0 0; padding: .5rem .75rem; background: var(--grund); border-radius: 4px; }
+.zaehler { font-weight: 600; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+<h1>Kommentar-Freigabe</h1>
+<p class="leise">Merzenich Aktuell · Jeder Kommentar erscheint erst nach Freigabe. Alle wartenden Kommentare sind vorausgewählt. Wählen Sie ab, was abgelehnt werden soll, und bestätigen Sie dann einmal unten.</p>
+
+<section id="anmeldung" aria-labelledby="anmeldung-titel" hidden>
+  <h2 id="anmeldung-titel">Anmelden</h2>
+  <form id="anmeldung-form">
+    <label for="token">Admin-Token</label>
+    <input id="token" name="token" type="password" autocomplete="current-password" required>
+    <button type="submit" class="haupt">Anmelden</button>
+  </form>
+  <p class="leise">Das Token bleibt nur in diesem Browserfenster gespeichert (sessionStorage) und wird beim Schließen des Fensters vergessen.</p>
+</section>
+
+<div id="meldung" class="meldung" role="status" aria-live="polite"></div>
+
+<section id="bereich" aria-labelledby="bereich-titel" hidden>
+  <div class="leiste">
+    <h2 id="bereich-titel">Wartende Kommentare <span id="anzahl"></span></h2>
+    <span class="rechts"><button type="button" id="neu-laden">Neu laden</button> <button type="button" id="abmelden">Abmelden</button></span>
+  </div>
+  <p id="mail-hinweis" class="leise" hidden></p>
+  <div id="werkzeug" hidden>
+    <div class="leiste">
+      <button type="button" id="alle">Alle auswählen</button>
+      <button type="button" id="keine">Keine auswählen</button>
+      <span id="zaehler" class="zaehler" aria-live="polite"></span>
+    </div>
+    <ol id="liste" class="liste"></ol>
+    <div class="leiste">
+      <button type="button" id="absenden" class="haupt">Ausgewählte freigeben, abgewählte ablehnen</button>
+    </div>
+  </div>
+  <p id="leer" class="leise" hidden>Keine wartenden Kommentare.</p>
+</section>
+<noscript><p>Für die Freigabe muss JavaScript aktiviert sein.</p></noscript>
+</main>
+<script src="/api/kommentare/moderation.js" defer></script>
+</body>
+</html>

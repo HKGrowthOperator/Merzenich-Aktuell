@@ -80,6 +80,9 @@ jobs:
       - name: Freigabe-, Partner-, Kommentar- und Sport-Logik pruefen
         run: for t in qa/wordpress/*-test.php; do echo "== $t"; php "$t" || exit 1; done
 
+      - name: "Kommentardienst: Vorab-Freigabe und Freigabe-Mail"
+        run: node qa/dienst/kommentare.test.mjs
+
       - name: Lint versioned WordPress source
         run: |
           PHP_COUNT=$(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' | wc -l)

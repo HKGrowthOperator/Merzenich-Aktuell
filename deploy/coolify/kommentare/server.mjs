@@ -11,13 +11,31 @@
  * Endpunkte (alle unter /api/kommentare/, Antworten JSON):
  *   GET  status                       Zustand, Zaehler, ob Speicher persistent
  *   GET  themen                       Diskussionsthemen, neueste Aktivitaet zuerst
- *   GET  liste?thema=<id>             sichtbare Kommentare eines Themas
- *   POST neu     {thema,name,text,email?,regeln,hp}   Kommentar
- *   POST thema   {titel,name,text,regeln,hp}          neues Diskussionsthema
+ *   GET  liste?thema=<id>             freigegebene Kommentare eines Themas
+ *   POST neu     {thema,name,text,email?,regeln,hp}   Kommentar (wartet auf Freigabe)
+ *   POST thema   {titel,name,text,regeln,hp}          neues Diskussionsthema (dito)
  *   POST melden  {id}                                  Kommentar melden
- *   GET  admin/liste                  alles, auch verborgen   (X-Admin-Token)
- *   POST admin/status {id,status}     sichtbar|verborgen|geloescht (X-Admin-Token)
- *   POST admin/thema-status {id,status}  offen|geschlossen        (X-Admin-Token)
+ *   GET  moderation                   Freigabeseite fuer die Redaktion (HTML)
+ *   GET  moderation.js                Skript der Freigabeseite
+ *   GET  admin/liste[?status=wartend] Kommentare mit Themenbezug, ohne E-Mail  (Admin)
+ *   POST admin/freigabe {freigeben:[ids],ablehnen:[ids]}   Sammelfreigabe  (Admin)
+ *   POST admin/status {id,status}     sichtbar|wartend|abgelehnt|verborgen|geloescht (Admin)
+ *   POST admin/thema-status {id,status}  offen|geschlossen        (Admin)
+ *
+ * Admin = Kopfzeile "Authorization: Bearer <KOMMENTARE_ADMIN_TOKEN>" (oder wie
+ * bisher "X-Admin-Token: <token>"). Ohne gesetztes Token antworten die
+ * Admin-Endpunkte mit 503.
+ *
+ * Vorab-Freigabe: Jeder neue Kommentar (auch der Eroeffnungsbeitrag eines
+ * Diskussionsthemas) wird mit Status "wartend" gespeichert und erst nach
+ * Freigabe durch die Redaktion oeffentlich ("sichtbar" = freigegeben).
+ * Gespeicherte Kommentare ohne Status gelten als freigegeben. Ein neues
+ * Diskussionsthema erscheint erst, wenn sein Eroeffnungsbeitrag freigegeben ist.
+ * Wer eine E-Mail-Adresse angegeben hat, bekommt bei der Freigabe eine Mail
+ * (smtp.mjs, Umgebungsvariablen SMTP_*). Ohne SMTP klappt die Freigabe
+ * trotzdem; im Log steht dann, dass keine Mail verschickt wurde. Optional
+ * REDAKTION_MAIL: Hinweis an die Redaktion, wenn etwas auf Freigabe wartet
+ * (hoechstens eine Mail je 10 Minuten).
  *
  * Themen-IDs: Artikelpfad (z. B. /sport/sc-merzenich-oberzier-3-2/) oder
  * eine zufaellige ID fuer Diskussionsthemen.
@@ -32,7 +50,9 @@
 import http from 'node:http';
 import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync, appendFileSync } from 'node:fs';
 import { createHash, randomUUID, randomBytes, timingSafeEqual } from 'node:crypto';
-import { join } from 'node:path';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { sendeMail, smtpKonfiguriert } from './smtp.mjs';
 
 const PORT = Number(process.env.KOMMENTARE_PORT || 8787);
 const PERSISTENT_DIR = process.env.KOMMENTARE_DATA || '/data';
@@ -44,7 +64,12 @@ const SALZ = process.env.KOMMENTARE_SALZ || randomBytes(16).toString('hex');
 const WETTER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=50.8317&longitude=6.5361&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FBerlin&forecast_days=3';
 
 const GRENZEN = { name: [2, 40], text: [3, 2000], titel: [5, 120], proStunde: 6, meldungenBisVerborgen: 3, maxLinks: 2, body: 32 * 1024 };
-const STATUS_KOMMENTAR = new Set(['sichtbar', 'verborgen', 'geloescht']);
+// "sichtbar" ist der freigegebene Zustand; "freigegeben" wird als gleichbedeutend angenommen.
+const STATUS_KOMMENTAR = new Set(['sichtbar', 'freigegeben', 'wartend', 'abgelehnt', 'verborgen', 'geloescht']);
+const SEITE_URL = String(process.env.KOMMENTARE_SEITE_URL || 'https://merzenichaktuell.hk-growthoperator.de').replace(/\/+$/, '');
+const REDAKTION_MAIL = String(process.env.REDAKTION_MAIL || '').trim();
+const ADMIN_FEHLVERSUCHE = { max: 10, fenster: 15 * 60 * 1000 };
+const MAX_FREIGABE_IDS = 500;
 const STATUS_THEMA = new Set(['offen', 'geschlossen']);
 const ARTIKELPFAD = /^\/[a-z0-9-]+\/[a-z0-9-]+\/$/;
 
@@ -55,6 +80,9 @@ function laden() {
     if (existsSync(DATEI)) {
       const d = JSON.parse(readFileSync(DATEI, 'utf8'));
       if (d && typeof d === 'object' && Array.isArray(d.kommentare)) daten = { version: 1, themen: d.themen || {}, kommentare: d.kommentare };
+      // Aeltere Eintraege ohne Status stammen aus der Zeit vor der Vorab-Freigabe
+      // und waren oeffentlich. Sie bleiben es.
+      for (const k of daten.kommentare) { if (!k.status) k.status = 'sichtbar'; if (!Array.isArray(k.gemeldetVon)) k.gemeldetVon = []; }
     }
   } catch (e) { console.error('kommentare: Ablage nicht lesbar, starte leer:', e.message); }
 }
@@ -83,8 +111,17 @@ function absenderHash(req) {
   return createHash('sha256').update(`${SALZ}|${tag}|${ip}`).digest('hex').slice(0, 24);
 }
 function oeffentlich(k) { return { id: k.id, thema: k.thema, name: k.name, text: k.text, erstellt: k.erstellt }; }
+/** Status mit Rueckfall: ohne Status = freigegeben ("sichtbar"), "freigegeben" = "sichtbar". */
+function statusVon(k) { const s = k.status || 'sichtbar'; return s === 'freigegeben' ? 'sichtbar' : s; }
+const istOeffentlich = (k) => statusVon(k) === 'sichtbar';
+/** Diskussionsthemen erscheinen erst, wenn ihr Eroeffnungsbeitrag freigegeben ist. Aeltere Themen ohne "start" bleiben sichtbar. */
+function themaSichtbar(t) {
+  if (!t || t.art !== 'diskussion' || !t.start) return Boolean(t);
+  const k = daten.kommentare.find((x) => x.id === t.start);
+  return Boolean(k && istOeffentlich(k));
+}
 function themaOeffentlich(t) {
-  const sichtbar = daten.kommentare.filter((k) => k.thema === t.id && k.status === 'sichtbar');
+  const sichtbar = daten.kommentare.filter((k) => k.thema === t.id && istOeffentlich(k));
   const letzter = sichtbar.length ? sichtbar[sichtbar.length - 1].erstellt : t.erstellt;
   return { id: t.id, titel: t.titel, art: t.art, url: t.url || null, name: t.name, erstellt: t.erstellt, status: t.status, anzahl: sichtbar.length, letzter };
 }
@@ -107,7 +144,36 @@ function leseBody(req) {
     req.on('error', () => reject({ code: 400, meldung: 'Ungültige Anfrage.' }));
   });
 }
-function istAdmin(req) { return ADMIN_TOKEN !== '' && String(req.headers['x-admin-token'] || '') === ADMIN_TOKEN; }
+// Admin-Zugang: Bearer-Token (oder X-Admin-Token), Vergleich ueber gleich lange
+// SHA-256-Werte mit timingSafeEqual, damit weder Inhalt noch Laenge durch
+// Laufzeitunterschiede erkennbar sind. Fehlversuche werden je Absender gezaehlt
+// (X-Real-IP setzt nginx selbst, deshalb nicht vom Client faelschbar).
+const adminFehlversuche = new Map(); // absender -> [Zeiten]
+function adminAbsender(req) {
+  const ip = String(req.headers['x-real-ip'] || req.socket.remoteAddress || '');
+  return createHash('sha256').update(`${SALZ}|admin|${ip}`).digest('hex').slice(0, 24);
+}
+function tokenAusAnfrage(req) {
+  const auth = String(req.headers.authorization || '');
+  const m = /^Bearer\s+(\S+)\s*$/i.exec(auth);
+  return m ? m[1] : String(req.headers['x-admin-token'] || '');
+}
+function tokenGleich(geliefert) {
+  const a = createHash('sha256').update(String(geliefert)).digest();
+  const b = createHash('sha256').update(ADMIN_TOKEN).digest();
+  return timingSafeEqual(a, b);
+}
+/** Gibt null zurueck, wenn der Zugriff erlaubt ist, sonst {code, meldung}. */
+function adminPruefung(req) {
+  if (ADMIN_TOKEN === '') return { code: 503, meldung: 'Moderation nicht eingerichtet: Die Umgebungsvariable KOMMENTARE_ADMIN_TOKEN ist nicht gesetzt.' };
+  const wer = adminAbsender(req); const seit = Date.now() - ADMIN_FEHLVERSUCHE.fenster;
+  const versuche = (adminFehlversuche.get(wer) || []).filter((t) => t > seit);
+  if (versuche.length >= ADMIN_FEHLVERSUCHE.max) return { code: 429, meldung: 'Zu viele Fehlversuche. Bitte in 15 Minuten erneut versuchen.' };
+  const geliefert = tokenAusAnfrage(req);
+  if (geliefert && tokenGleich(geliefert)) return null;
+  versuche.push(Date.now()); adminFehlversuche.set(wer, versuche);
+  return { code: 401, meldung: geliefert ? 'Admin-Token ist falsch.' : 'Admin-Token fehlt (Kopfzeile Authorization: Bearer <Token>).' };
+}
 function limitErreicht(hash) {
   const seit = Date.now() - 3600 * 1000;
   return daten.kommentare.filter((k) => k.absender === hash && Date.parse(k.erstellt) > seit).length >= GRENZEN.proStunde;
@@ -126,6 +192,131 @@ function pruefeBeitrag(b) {
   const email = saeubere(b.email, 120).replace(/\n/g, '');
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw { code: 400, meldung: 'Die E-Mail-Adresse sieht nicht gültig aus.', feld: 'email' };
   return { name, text, email };
+}
+
+// -------------------------------------------------------- Freigabe und Mail
+// Versand strikt nacheinander in einer Warteschlange im Hintergrund: Eine
+// Sammelfreigabe wartet nicht auf den Mailserver, und ein Mailfehler stoert
+// nie den Dienst. Ohne SMTP wird nur protokolliert, dass nichts verschickt wurde.
+let mailKette = Promise.resolve();
+function mailEinreihen(nachricht, beschreibung, danach) {
+  if (!smtpKonfiguriert()) { console.log(`kommentare: SMTP nicht eingerichtet, keine Mail verschickt (${beschreibung})`); return false; }
+  mailKette = mailKette
+    .then(() => sendeMail(nachricht))
+    .then(() => { console.log(`kommentare: Mail verschickt (${beschreibung})`); if (danach) danach(); })
+    .catch((e) => console.error(`kommentare: Mail fehlgeschlagen (${beschreibung}): ${e.message}`));
+  return true;
+}
+function themaLink(t, id) {
+  if (t && t.art === 'diskussion') return `${SEITE_URL}/diskussion/#thema=${encodeURIComponent(t.id)}`;
+  return `${SEITE_URL}${ARTIKELPFAD.test(id) ? id : '/'}#kommentare`;
+}
+/** Freigabe-Mail an die angegebene Adresse, hoechstens einmal je Kommentar. Rueckgabe: eingereiht | ohneAdresse | nichtKonfiguriert. */
+function freigabeMail(k) {
+  if (!k.email) return 'ohneAdresse';
+  if (k.benachrichtigt) return 'bereitsBenachrichtigt';
+  const t = daten.themen[k.thema];
+  const wo = t && t.art === 'diskussion' ? ` im Diskussionsthema „${t.titel}“` : '';
+  const text = [
+    `Guten Tag ${k.name},`,
+    '',
+    `Ihr Kommentar${wo} auf Merzenich Aktuell wurde von der Redaktion freigegeben und ist jetzt öffentlich sichtbar:`,
+    '',
+    themaLink(t, k.thema),
+    '',
+    'Sie erhalten diese Nachricht, weil Sie beim Kommentieren Ihre E-Mail-Adresse angegeben haben. Die Adresse wird nicht veröffentlicht.',
+    '',
+    'Merzenich Aktuell',
+  ].join('\n');
+  const ok = mailEinreihen({ an: k.email, betreff: 'Ihr Kommentar auf Merzenich Aktuell ist freigegeben', text }, `Freigabe ${k.id}`, () => { k.benachrichtigt = jetzt(); speichern(); });
+  return ok ? 'eingereiht' : 'nichtKonfiguriert';
+}
+function kommentarFreigeben(k) {
+  if (istOeffentlich(k) || statusVon(k) === 'geloescht') return null;
+  k.status = 'sichtbar'; k.freigegeben = jetzt();
+  return freigabeMail(k);
+}
+function kommentarAblehnen(k) {
+  if (statusVon(k) === 'geloescht' || statusVon(k) === 'abgelehnt') return false;
+  k.status = 'abgelehnt'; k.abgelehnt = jetzt();
+  return true;
+}
+
+// Hinweis an die Redaktion (REDAKTION_MAIL), dass etwas wartet. Gebuendelt:
+// hoechstens eine Mail je 10 Minuten, mit allen dann wartenden Beitraegen.
+const REDAKTION_ABSTAND = 10 * 60 * 1000;
+let redaktionLetzte = 0; let redaktionTimer = null;
+function redaktionHinweis() {
+  if (!REDAKTION_MAIL || redaktionTimer) return;
+  const warte = Math.max(0, redaktionLetzte + REDAKTION_ABSTAND - Date.now());
+  redaktionTimer = setTimeout(() => {
+    redaktionTimer = null;
+    const offen = daten.kommentare.filter((k) => statusVon(k) === 'wartend');
+    if (!offen.length) return;
+    redaktionLetzte = Date.now();
+    const zeilen = offen.slice(-10).map((k) => {
+      const t = daten.themen[k.thema];
+      const wo = t && t.art === 'diskussion' ? `Diskussion „${t.titel}“` : k.thema;
+      return `- ${k.name} zu ${wo}: ${k.text.replace(/\s+/g, ' ').slice(0, 160)}`;
+    });
+    const text = [
+      offen.length === 1 ? 'Ein Kommentar wartet auf Freigabe.' : `${offen.length} Kommentare warten auf Freigabe.`,
+      '',
+      ...zeilen,
+      ...(offen.length > 10 ? [`… und ${offen.length - 10} weitere.`] : []),
+      '',
+      `Freigabe: ${SEITE_URL}/api/kommentare/moderation`,
+      '',
+      'Automatischer Hinweis des Kommentar-Dienstes von Merzenich Aktuell.',
+    ].join('\n');
+    mailEinreihen({ an: REDAKTION_MAIL, betreff: `Merzenich Aktuell: ${offen.length === 1 ? 'Ein Kommentar wartet' : `${offen.length} Kommentare warten`} auf Freigabe`, text }, 'Hinweis an die Redaktion');
+  }, warte);
+  redaktionTimer.unref();
+}
+
+// ------------------------------------------------------------- Moderation
+// Freigabeseite unter /api/kommentare/moderation. Kein Inline-Skript: das
+// Skript kommt aus moderation.js; der <style>-Block ist per Hash in der CSP
+// erlaubt. Das Token bleibt im sessionStorage des Browsers.
+const HIER = dirname(fileURLToPath(import.meta.url));
+function leseNebenDatei(name) {
+  try { return readFileSync(join(HIER, name), 'utf8'); } catch (e) { console.error(`kommentare: ${name} fehlt:`, e.message); return ''; }
+}
+const MODERATION_HTML = leseNebenDatei('moderation.html');
+const MODERATION_JS = leseNebenDatei('moderation.js');
+const MODERATION_STIL = (/<style>([\s\S]*?)<\/style>/.exec(MODERATION_HTML) || [])[1] || '';
+const MODERATION_CSP = `default-src 'none'; script-src 'self'; style-src 'sha256-${createHash('sha256').update(MODERATION_STIL, 'utf8').digest('base64')}'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`;
+function moderationAusliefern(req, res, istSkript) {
+  const body = istSkript ? MODERATION_JS : MODERATION_HTML;
+  if (!body) return fehler(res, 500, 'Freigabeseite fehlt im Container.');
+  res.writeHead(200, {
+    'Content-Type': istSkript ? 'text/javascript; charset=utf-8' : 'text/html; charset=utf-8',
+    'Cache-Control': 'no-store',
+    'X-Content-Type-Options': 'nosniff',
+    'X-Robots-Tag': 'noindex, nofollow',
+    'Referrer-Policy': 'no-referrer',
+    ...(istSkript ? {} : { 'Content-Security-Policy': MODERATION_CSP, 'X-Frame-Options': 'DENY' }),
+  });
+  return res.end(req.method === 'HEAD' ? undefined : body);
+}
+/** Kommentar fuer die Admin-Liste: ohne E-Mail und Absender, dafuer mit Themenbezug. */
+function adminKommentar(k) {
+  const { email, absender, gemeldetVon, ...rest } = k;
+  const t = daten.themen[k.thema];
+  return {
+    ...rest,
+    status: statusVon(k),
+    meldungen: Array.isArray(gemeldetVon) ? gemeldetVon.length : 0,
+    hatEmail: Boolean(email),
+    themaInfo: t ? { id: t.id, art: t.art, titel: t.art === 'diskussion' ? t.titel : null, status: t.status, eroeffnung: t.start === k.id } : { id: k.thema, art: 'artikel', titel: null },
+    link: themaLink(t, k.thema).replace(SEITE_URL, ''),
+  };
+}
+/** Liste von Kommentar-IDs aus dem JSON-Body; wirft bei falschem Format. */
+function idListe(x, feld) {
+  if (x === undefined || x === null) return [];
+  if (!Array.isArray(x) || x.some((v) => typeof v !== 'string' || v.length > 64)) throw { code: 400, meldung: `${feld} muss eine Liste von Kommentar-IDs sein.` };
+  return [...new Set(x)];
 }
 
 // ------------------------------------------------------------------ Wetter
@@ -353,18 +544,19 @@ const server = http.createServer(async (req, res) => {
       catch (e) { if (wetterCache.body) { res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); return res.end(wetterCache.body); } console.error('wetter:', e.message); return fehler(res, 502, 'Wetterdienst nicht erreichbar.'); }
     }
     if (bereich !== 'kommentare') return fehler(res, 404, 'Unbekannter Endpunkt.');
+    if ((req.method === 'GET' || req.method === 'HEAD') && (pfad === 'moderation' || pfad === 'moderation.js')) return moderationAusliefern(req, res, pfad === 'moderation.js');
     if (req.method === 'GET' && pfad === 'status') {
-      return antwort(res, 200, { ok: true, persistent, speicher: DATA_DIR, themen: Object.keys(daten.themen).length, kommentare: daten.kommentare.filter((k) => k.status === 'sichtbar').length, hinweis: persistent ? null : 'KEIN persistenter Speicher unter /data - Kommentare gehen beim naechsten Deploy verloren.' });
+      return antwort(res, 200, { ok: true, persistent, speicher: DATA_DIR, themen: Object.keys(daten.themen).length, kommentare: daten.kommentare.filter(istOeffentlich).length, wartend: daten.kommentare.filter((k) => statusVon(k) === 'wartend').length, vorabFreigabe: true, hinweis: persistent ? null : 'KEIN persistenter Speicher unter /data - Kommentare gehen beim naechsten Deploy verloren.' });
     }
     if (req.method === 'GET' && pfad === 'themen') {
-      const liste = Object.values(daten.themen).filter((t) => t.art === 'diskussion').map(themaOeffentlich).sort((a, b) => b.letzter.localeCompare(a.letzter));
+      const liste = Object.values(daten.themen).filter((t) => t.art === 'diskussion' && themaSichtbar(t)).map(themaOeffentlich).sort((a, b) => b.letzter.localeCompare(a.letzter));
       return antwort(res, 200, { ok: true, themen: liste });
     }
     if (req.method === 'GET' && pfad === 'liste') {
       const id = String(url.searchParams.get('thema') || '');
       if (!id) return fehler(res, 400, 'thema fehlt.');
-      const thema = daten.themen[id] || null;
-      const kommentare = daten.kommentare.filter((k) => k.thema === id && k.status === 'sichtbar').map(oeffentlich);
+      const thema = themaSichtbar(daten.themen[id]) ? daten.themen[id] : null;
+      const kommentare = thema || !daten.themen[id] ? daten.kommentare.filter((k) => k.thema === id && istOeffentlich(k)).map(oeffentlich) : [];
       return antwort(res, 200, { ok: true, thema: thema ? themaOeffentlich(thema) : null, kommentare });
     }
     if (req.method === 'POST' && pfad === 'neu') {
@@ -372,15 +564,17 @@ const server = http.createServer(async (req, res) => {
       const id = String(b.thema || '');
       const thema = daten.themen[id];
       if (!thema && !ARTIKELPFAD.test(id)) return fehler(res, 400, 'Unbekanntes Thema.');
+      if (thema && !themaSichtbar(thema)) return fehler(res, 400, 'Unbekanntes Thema.');
       if (thema && thema.status === 'geschlossen') return fehler(res, 403, 'Dieses Thema ist geschlossen.');
       const { name, text, email } = pruefeBeitrag(b);
       const hash = absenderHash(req);
       if (limitErreicht(hash)) return fehler(res, 429, 'Zu viele Beiträge in kurzer Zeit. Bitte später noch einmal.');
       if (!thema) daten.themen[id] = { id, titel: id, art: 'artikel', url: id, name: '', erstellt: jetzt(), status: 'offen' };
-      const k = { id: randomUUID(), thema: id, name, text, email, erstellt: jetzt(), status: 'sichtbar', meldungen: 0, gemeldetVon: [], absender: hash };
-      daten.kommentare.push(k); speichern();
-      console.log(`kommentar neu ${id} von ${name}`);
-      return antwort(res, 201, { ok: true, kommentar: oeffentlich(k) });
+      const k = { id: randomUUID(), thema: id, name, text, email, erstellt: jetzt(), status: 'wartend', meldungen: 0, gemeldetVon: [], absender: hash };
+      daten.kommentare.push(k); speichern(); redaktionHinweis();
+      console.log(`kommentar neu ${id} von ${name} (wartet auf Freigabe)`);
+      // Bewusst ohne den Kommentar selbst: Er ist noch nicht oeffentlich.
+      return antwort(res, 201, { ok: true, id: k.id, status: 'wartend', benachrichtigung: Boolean(email) });
     }
     if (req.method === 'POST' && pfad === 'thema') {
       const b = await leseBody(req);
@@ -391,16 +585,17 @@ const server = http.createServer(async (req, res) => {
       const hash = absenderHash(req);
       if (limitErreicht(hash)) return fehler(res, 429, 'Zu viele Beiträge in kurzer Zeit. Bitte später noch einmal.');
       const t = { id: randomUUID(), titel, art: 'diskussion', url: null, name, erstellt: jetzt(), status: 'offen' };
+      const k = { id: randomUUID(), thema: t.id, name, text, email, erstellt: t.erstellt, status: 'wartend', meldungen: 0, gemeldetVon: [], absender: hash };
+      t.start = k.id; // Thema erscheint erst mit der Freigabe dieses Beitrags
       daten.themen[t.id] = t;
-      const k = { id: randomUUID(), thema: t.id, name, text, email, erstellt: t.erstellt, status: 'sichtbar', meldungen: 0, gemeldetVon: [], absender: hash };
-      daten.kommentare.push(k); speichern();
-      console.log(`thema neu "${titel}" von ${name}`);
-      return antwort(res, 201, { ok: true, thema: themaOeffentlich(t), kommentar: oeffentlich(k) });
+      daten.kommentare.push(k); speichern(); redaktionHinweis();
+      console.log(`thema neu "${titel}" von ${name} (wartet auf Freigabe)`);
+      return antwort(res, 201, { ok: true, thema: t.id, id: k.id, status: 'wartend', benachrichtigung: Boolean(email) });
     }
     if (req.method === 'POST' && pfad === 'melden') {
       const b = await leseBody(req);
       const k = daten.kommentare.find((x) => x.id === String(b.id || ''));
-      if (!k || k.status !== 'sichtbar') return fehler(res, 404, 'Kommentar nicht gefunden.');
+      if (!k || !istOeffentlich(k)) return fehler(res, 404, 'Kommentar nicht gefunden.');
       const hash = absenderHash(req);
       if (!k.gemeldetVon.includes(hash)) { k.gemeldetVon.push(hash); k.meldungen += 1; }
       if (k.meldungen >= GRENZEN.meldungenBisVerborgen) k.status = 'verborgen';
@@ -409,17 +604,51 @@ const server = http.createServer(async (req, res) => {
       return antwort(res, 200, { ok: true, verborgen: k.status === 'verborgen' });
     }
     if (pfad.startsWith('admin/')) {
-      if (!istAdmin(req)) return fehler(res, ADMIN_TOKEN ? 403 : 503, ADMIN_TOKEN ? 'Kein Zugriff.' : 'Kein Admin-Token gesetzt (KOMMENTARE_ADMIN_TOKEN).');
+      const verweigert = adminPruefung(req);
+      if (verweigert) {
+        if (req.method === 'POST') req.resume();
+        return antwort(res, verweigert.code, { ok: false, fehler: verweigert.meldung }, verweigert.code === 401 ? { 'WWW-Authenticate': 'Bearer realm="kommentare"' } : {});
+      }
       if (req.method === 'GET' && pfad === 'admin/liste') {
-        return antwort(res, 200, { ok: true, themen: Object.values(daten.themen).map(themaOeffentlich), kommentare: daten.kommentare.map(({ email, absender, gemeldetVon, ...rest }) => ({ ...rest, meldungen: gemeldetVon.length })) });
+        let filter = String(url.searchParams.get('status') || '');
+        if (filter === 'freigegeben') filter = 'sichtbar';
+        if (filter && !STATUS_KOMMENTAR.has(filter)) return fehler(res, 400, 'Unbekannter Status.');
+        const liste = daten.kommentare.filter((k) => !filter || statusVon(k) === filter).map(adminKommentar);
+        return antwort(res, 200, { ok: true, mail: smtpKonfiguriert(), anzahl: liste.length, themen: Object.values(daten.themen).map(themaOeffentlich), kommentare: liste });
+      }
+      if (req.method === 'POST' && pfad === 'admin/freigabe') {
+        const b = await leseBody(req);
+        const freigeben = idListe(b.freigeben, 'freigeben'), ablehnen = idListe(b.ablehnen, 'ablehnen');
+        if (freigeben.length + ablehnen.length === 0) return fehler(res, 400, 'Keine Kommentare angegeben.');
+        if (freigeben.length + ablehnen.length > MAX_FREIGABE_IDS) return fehler(res, 400, `Höchstens ${MAX_FREIGABE_IDS} Kommentare auf einmal.`);
+        if (freigeben.some((id) => ablehnen.includes(id))) return fehler(res, 400, 'Ein Kommentar kann nicht zugleich freigegeben und abgelehnt werden.');
+        const ergebnis = { freigegeben: 0, abgelehnt: 0, unveraendert: 0, unbekannt: [], mails: { eingereiht: 0, ohneAdresse: 0, nichtKonfiguriert: 0, bereitsBenachrichtigt: 0 } };
+        const finde = (id) => daten.kommentare.find((x) => x.id === id);
+        for (const id of freigeben) {
+          const k = finde(id); if (!k) { ergebnis.unbekannt.push(id); continue; }
+          const mail = kommentarFreigeben(k);
+          if (mail === null) { ergebnis.unveraendert += 1; continue; }
+          ergebnis.freigegeben += 1; ergebnis.mails[mail] += 1;
+        }
+        for (const id of ablehnen) {
+          const k = finde(id); if (!k) { ergebnis.unbekannt.push(id); continue; }
+          if (kommentarAblehnen(k)) ergebnis.abgelehnt += 1; else ergebnis.unveraendert += 1;
+        }
+        speichern();
+        console.log(`kommentare: Sammelfreigabe ${ergebnis.freigegeben} freigegeben, ${ergebnis.abgelehnt} abgelehnt, ${ergebnis.mails.eingereiht} Mail(s) eingereiht`);
+        if (ergebnis.mails.nichtKonfiguriert) console.log(`kommentare: ${ergebnis.mails.nichtKonfiguriert} Freigabe-Mail(s) nicht verschickt, SMTP ist nicht eingerichtet`);
+        return antwort(res, 200, { ok: true, mail: smtpKonfiguriert(), ...ergebnis });
       }
       if (req.method === 'POST' && pfad === 'admin/status') {
         const b = await leseBody(req);
         const k = daten.kommentare.find((x) => x.id === String(b.id || ''));
         if (!k) return fehler(res, 404, 'Kommentar nicht gefunden.');
-        if (!STATUS_KOMMENTAR.has(b.status)) return fehler(res, 400, 'status muss sichtbar, verborgen oder geloescht sein.');
-        k.status = b.status; if (b.status === 'geloescht') { k.text = ''; k.email = ''; }
-        speichern(); return antwort(res, 200, { ok: true });
+        if (!STATUS_KOMMENTAR.has(b.status)) return fehler(res, 400, 'status muss sichtbar, wartend, abgelehnt, verborgen oder geloescht sein.');
+        const neu = b.status === 'freigegeben' ? 'sichtbar' : b.status;
+        // Freigabe auf diesem Weg verschickt dieselbe Mail wie die Sammelfreigabe.
+        const mail = neu === 'sichtbar' ? kommentarFreigeben(k) : null;
+        k.status = neu; if (neu === 'geloescht') { k.text = ''; k.email = ''; }
+        speichern(); return antwort(res, 200, { ok: true, ...(mail ? { mail } : {}) });
       }
       if (req.method === 'POST' && pfad === 'admin/thema-status') {
         const b = await leseBody(req);
