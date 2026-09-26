@@ -1,7 +1,9 @@
 # Verhältnis zum ausgelieferten Stand
 
-Dieser Ordner ist der Generator, aus dem `chatgpt-site/` entstanden ist.
-`chatgpt-site/` ist die Ausgabe, hier liegt die Quelle.
+> **Produktionsregel:** `site-source/dist/` ist ausschließlich lokaler, wegwerfbarer Build-Output. Der Ordner ist per `.gitignore` ausgeschlossen, wird von Coolify nicht kopiert und darf niemals editiert, committed oder als Produktionsstand behandelt werden.
+
+Dieser Ordner enthält den historischen statischen Generator, aus dem `chatgpt-site/` ursprünglich entstanden ist.
+Der versionierte und von Coolify ausgelieferte Produktionsstand liegt in `chatgpt-site/`; Änderungen an `site-source/dist/` haben keinerlei Wirkung auf die Live-Seite.
 
 ## Gemessene Deckung
 
