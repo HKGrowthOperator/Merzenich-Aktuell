@@ -1,0 +1,14 @@
+{
+  "_hinweis": "Merzenich-Cockpit auf der Startseite (KBS 26.09.2026: mehr auf den ersten Blick, Blue-Ocean-Element). Nur echte Daten. Oeffnungszeiten des Rathauses wie auf /service/ ('Oeffnungszeiten laut Gemeinde'); Feiertage kennt das Cockpit nicht und sagt das. Wochentage 1 = Montag ... 7 = Sonntag.",
+  "rathaus": {
+    "quelle": "Öffnungszeiten laut Gemeinde, ohne Feiertage",
+    "link": "/service/",
+    "zeiten": {
+      "1": [["08:00", "12:30"], ["14:00", "16:30"]],
+      "2": [["08:00", "12:30"]],
+      "3": [["08:00", "12:30"], ["14:00", "16:00"]],
+      "4": [["08:00", "12:30"], ["14:00", "17:00"]],
+      "5": [["08:00", "12:30"]]
+    }
+  }
+}

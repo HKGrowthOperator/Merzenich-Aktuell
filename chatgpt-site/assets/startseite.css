@@ -827,3 +827,35 @@ html body.home .desk-heading{margin-bottom:18px!important}
 
 /* Orte-Buehne kompakt (26.09.): 280 statt 540 px hohe Kacheln. */
 html body.home .ort{min-height:clamp(240px,26vh,300px)}
+
+/* ============================================================
+   MERZENICH JETZT (Cockpit, KBS/Ordin 26.09.2026)
+   Eine Leiste unter der Buehne: Rathaus offen?, Wetter, naechster
+   Termin, letzter Feuerwehreinsatz, Notruf. Nur echte Daten.
+   ============================================================ */
+body.home .cockpit{display:block;margin-top:0}
+body.home .cockpit-innen{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:stretch;border-top:2px solid var(--a-tinte);border-bottom:1px solid var(--a-linie)}
+body.home .cockpit-titel{display:flex;flex-direction:column;justify-content:center;margin:0;padding:12px 22px 12px 0;font-family:var(--serif);font-size:22px;font-weight:700;line-height:1;letter-spacing:-.01em;color:var(--a-tinte);border-right:1px solid var(--a-linie)}
+body.home .cockpit-titel span{margin-top:4px;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--a-rot)}
+body.home .cockpit-reihe{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+body.home .cockpit-kachel{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;padding:12px 18px;border-right:1px solid var(--a-linie);color:var(--a-tinte);text-decoration:none}
+body.home .cockpit-kachel[hidden]{display:none}
+body.home .cockpit-kachel:last-child{border-right:0}
+body.home a.cockpit-kachel:hover .cockpit-wert{text-decoration:underline;text-underline-offset:3px}
+body.home .cockpit-label{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--a-leise)}
+body.home .cockpit-wert{font-size:15px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.home .cockpit-klein{font-size:12px;color:var(--a-leise);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.home .cockpit-kachel[data-cockpit="rathaus"] .cockpit-wert::before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:#8f8a83;vertical-align:1px}
+body.home .cockpit-kachel.ist-offen .cockpit-wert::before{background:#2f7d4a}
+body.home .cockpit-kachel--notruf .cockpit-wert a{color:var(--a-rot);text-decoration:none;margin-right:10px;font-size:17px}
+@media (max-width:1100px){
+  body.home .cockpit-innen{grid-template-columns:1fr}
+  body.home .cockpit-titel{flex-direction:row;align-items:baseline;gap:8px;padding:10px 0;border-right:0;border-bottom:1px solid var(--a-linie)}
+  body.home .cockpit-reihe{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+  body.home .cockpit-kachel{border-bottom:1px solid var(--a-linie)}
+}
+@media (max-width:640px){
+  body.home .cockpit-reihe{grid-template-columns:1fr 1fr}
+  body.home .cockpit-kachel{padding:10px 10px 10px 0}
+  body.home .cockpit-wert{white-space:normal;font-size:14px}
+}
