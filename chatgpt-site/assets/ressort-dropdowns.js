@@ -103,7 +103,7 @@
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
     let active = null;
-    let schwebeAuf = 0, schwebeZu = 0;
+    let schwebeAuf = 0, schwebeZu = 0, schwebeGeoeffnet = 0;
 
     function close(options = {}) {
       if (!active) return;
@@ -149,17 +149,25 @@
       link.addEventListener('click', (e) => {
         if (!desktop()) return;
         e.preventDefault();
+        // Ein Klick ist eine klare Absicht: ein laufendes Schliessen nach dem
+        // Verlassen mit der Maus wird verworfen.
+        clearTimeout(schwebeZu);
+        // Gerade per Ueberfahren geoeffnet: der Klick bestaetigt nur, er fuehrt
+        // nicht sofort auf die Ressortseite (sonst wirkt der erste Klick wie ein zweiter).
+        if (active === link && !panel.hidden && Date.now() - schwebeGeoeffnet < 800) { schwebeGeoeffnet = 0; return; }
         open(link);
       });
       // Oeffnen beim Ueberfahren mit kurzer Verzoegerung (KBS 26.09.2026, wie
       // Oberberg Aktuell); wer nur ueber die Leiste streicht, loest nichts aus.
-      link.addEventListener('mouseenter', () => {
+      // Nur echte Mausbewegung zaehlt: rollt die Seite den Link unter den
+      // ruhenden Zeiger, oeffnet nichts.
+      link.addEventListener('pointermove', (e) => {
+        if (e.pointerType !== 'mouse' || schwebeAuf || active === link) return;
         if (!desktop() || !matchMedia('(hover: hover)').matches || !data[link.getAttribute('href')]) return;
         clearTimeout(schwebeZu);
-        clearTimeout(schwebeAuf);
-        schwebeAuf = setTimeout(() => { if (active !== link) open(link); }, active ? 60 : 180);
+        schwebeAuf = setTimeout(() => { schwebeAuf = 0; if (active !== link) { open(link); schwebeGeoeffnet = Date.now(); } }, active ? 60 : 180);
       });
-      link.addEventListener('mouseleave', () => { clearTimeout(schwebeAuf); });
+      link.addEventListener('mouseleave', () => { clearTimeout(schwebeAuf); schwebeAuf = 0; });
       link.addEventListener('keydown', (e) => {
         if (!desktop() || e.key !== 'ArrowDown') return;
         e.preventDefault();
@@ -177,7 +185,7 @@
       el.addEventListener('mouseleave', (e) => {
         if (!desktop() || !matchMedia('(hover: hover)').matches) return;
         if (bereich.some((x) => x.contains(e.relatedTarget))) return;
-        clearTimeout(schwebeAuf);
+        clearTimeout(schwebeAuf); schwebeAuf = 0;
         schwebeZu = setTimeout(() => close(), 260);
       });
       el.addEventListener('mouseenter', () => clearTimeout(schwebeZu));
