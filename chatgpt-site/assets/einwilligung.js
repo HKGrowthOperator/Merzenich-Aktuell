@@ -2,7 +2,7 @@
  * Einwilligung (Datenschutz, lokale Speicherung, externe Inhalte, Live-Meldungen).
  *
  * Die Seite setzt keine Tracking-Cookies. Im Browser gespeichert werden nur:
- * Darstellung, der Kommentarname und
+ * der Kommentarname und
  * diese Einwilligung. Was eine Zustimmung braucht:
  *   - (externeBilder entfaellt: Symbolbilder laufen ueber /api/bild, den
  *     eigenen Bildproxy; das Feld bleibt im Speicherformat, wird ignoriert.)
@@ -91,9 +91,9 @@
   function bannerHtml(details) {
     return `<div class="einwilligung__box" role="dialog" aria-modal="false" aria-labelledby="einwilligung-titel">
       <h2 id="einwilligung-titel">Datenschutz und Einstellungen</h2>
-      <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Darstellung, Kommentarname, diese Auswahl). Symbolbilder laden wir über unseren eigenen Server, nicht von Dritten. Eine Funktion braucht Ihre Zustimmung, weil Ihr Browser Sie dabei benachrichtigt:</p>
+      <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Kommentarname, diese Auswahl). Symbolbilder laden wir über unseren eigenen Server, nicht von Dritten. Eine Funktion braucht Ihre Zustimmung, weil Ihr Browser Sie dabei benachrichtigt:</p>
       <form class="einwilligung__form">
-        <label><input type="checkbox" checked disabled> <span><strong>Notwendig</strong> · Darstellung, Kommentare, diese Einstellung. Immer aktiv.</span></label>
+        <label><input type="checkbox" checked disabled> <span><strong>Notwendig</strong> · Kommentare, diese Einstellung. Immer aktiv.</span></label>
         <label><input type="checkbox" name="liveMeldungen" ${details ? '' : 'checked'}> <span><strong>Live-Meldungen</strong> · Neue Meldungen erscheinen automatisch, solange die Seite offen ist, auf Wunsch als Browser-Benachrichtigung. Abgefragt wird nur unser eigener Server.</span></label>
       </form>
       <div class="einwilligung__aktionen">

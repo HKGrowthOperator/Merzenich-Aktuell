@@ -78,52 +78,8 @@
  }).catch(()=>{});
 })();
 
-// Homepage-Priorisierung: kein neues Layout, nur Inhalt der bestehenden Slots.
-// Ein Hero, der aelter als sieben Tage ist, wird mit dem aktuellen redaktionell
-// geprueften Prioritaetsdatensatz ersetzt. Schlaegt der Abruf fehl, bleibt das
-// ausgelieferte HTML unveraendert als stabiler Fallback stehen.
-(()=>{
- 'use strict';
- if(!document.body.classList.contains('home'))return;
- const hero=document.querySelector('.front-lead');
- if(!hero)return;
- const safe=s=>String(s??'');
- // safe() ist fuer textContent gedacht und darf dort nicht escapen. Wo unten
- // innerHTML geschrieben wird, braucht es die escapende Fassung - die beiden
- // anderen Bloecke dieser Datei fuehren sie bereits unter demselben Namen.
- const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const staticTime=hero.querySelector('.meta time');
- const staticDate=staticTime?.dateTime?new Date(staticTime.dateTime):null;
- const stale=!staticDate||!Number.isFinite(+staticDate)||(Date.now()-staticDate.getTime())>7*86400000;
- const setText=(selector,value)=>{const el=hero.querySelector(selector);if(el&&value!=null)el.textContent=safe(value);};
- const externAttr=(u)=>(/^https?:\/\//i.test(u)&&window.maExtern)?window.maExtern.attribute(u):`src="${esc(u)}"`;const externSetze=(img,u)=>{if(/^https?:\/\//i.test(u)&&window.maExtern)window.maExtern.setze(img,u);else img.src=u;};
- function applyHero(h){
-  if(!h?.url||!h?.title||!h?.published)return;
-  hero.dataset.story=h.id||'';
-  const mediaLink=hero.querySelector(':scope > a');
-  if(mediaLink)mediaLink.href=h.url;
-  const media=hero.querySelector('.media');
-  if(media){media.classList.toggle('contain',h.imageFit==='contain');const img=media.querySelector('img');if(img&&h.image){externSetze(img,h.image);img.alt=h.imageAlt||h.title;if(h.imageSrcset){img.srcset=h.imageSrcset;if(h.imageSizes)img.sizes=h.imageSizes;}else{img.removeAttribute('srcset');img.removeAttribute('sizes');}if(h.imageWidth&&h.imageHeight){img.width=h.imageWidth;img.height=h.imageHeight;}else{img.removeAttribute('width');img.removeAttribute('height');}}const badge=media.querySelector('.badge');if(badge){if(h.imageBadge){badge.textContent=h.imageBadge;badge.hidden=false;}else badge.hidden=true;}}
-  const location=hero.querySelector('.location-line');if(location&&h.location)location.innerHTML=`<span class="location-brand">${esc(h.location)}</span>`;
-  setText('.kicker',h.kicker);setText('.eyebrow',h.eyebrow);
-  const title=hero.querySelector('h1 a');if(title){title.textContent=h.title;title.href=h.url;}
-  const teaser=hero.querySelector('.front-lead-copy > p');if(teaser)teaser.textContent=h.teaser||'';
-  const time=hero.querySelector('.meta time');if(time){time.dateTime=h.published;time.textContent=h.timeLabel||new Intl.DateTimeFormat('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(h.published))+' Uhr';}
-  const read=hero.querySelector('.meta span');if(read&&h.readTime)read.textContent=h.readTime;
-  const more=hero.querySelector('.read-more');if(more){more.href=h.url;more.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent='Mehr lesen';});const sr=more.querySelector('.sr-only');if(sr)sr.textContent=': '+h.title;}
- }
- const marke=(s)=>{const teil=String(s.location||'').split('·')[1]?.trim()||'';const t=teil?teil.charAt(0)+teil.slice(1).toLowerCase():'';return `<p class="marke"><span class="marke-ort">Merzenich</span>${t?`<span class="marke-teil"> · ${esc(t)}</span>`:''}<span class="marke-rubrik">${esc(s.kicker||'Aktuell')}</span></p>`;};
- function applySecondary(s){
-  if(!s?.url||!s?.title)return;
-  const side=document.querySelector('.front-side');if(!side)return;
-  let card=side.querySelector('[data-editorial-secondary]');
-  if(!card){card=document.createElement('article');card.className='front-brief editorial-secondary';card.dataset.editorialSecondary='';const marker=side.querySelector(':scope > .eyebrow');marker?.insertAdjacentElement('afterend',card);}
-  card.dataset.story=s.id||'';card.classList.toggle('secondary-lead',!!s.image);
-  const bild=s.image?`<a class="brief-image" href="${esc(s.url)}" tabindex="-1" aria-hidden="true"><div class="media${s.imageFit==='contain'?' contain':''}"><img ${externAttr(s.image)} alt="${esc(s.imageAlt||s.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${s.imageBadge?`<span class="badge">${esc(s.imageBadge)}</span>`:''}</div></a>`:'';
-  card.innerHTML=`${bild}<div>${marke(s)}<h3><a href="${esc(s.url)}">${esc(s.title)}</a></h3><p>${esc(s.teaser||'')}</p><div class="meta"><time datetime="${esc(s.published||'')}">${esc(s.timeLabel||'')}</time></div><div class="story-actions"><a class="read-more" href="${esc(s.url)}">Mehr lesen<span class="sr-only">: ${esc(s.title)}</span></a></div></div>`;
- }
- fetch('/api/editorial-current.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('editorial '+r.status);return r.json();}).then(data=>{if(stale&&data.hero)applyHero(data.hero);if(data.secondary)applySecondary(data.secondary);}).catch(()=>{});
-})();
+// Aufmacher und Nebenmeldungen entscheidet seit 26.09. allein der Build
+// (deploy/inhaltsindex.mjs); kein Austausch mehr zur Laufzeit.
 
 // Archive-Priorisierung: dieselben redaktionell geprueften Meldungen muessen
 // nach dem Refresh nicht nur auf der Startseite, sondern auch in den echten

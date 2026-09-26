@@ -160,3 +160,27 @@ export function artikelSammeln(site) {
 }
 export const dmyKurz = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(d) + '.'; };
 export const dmyLang = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit', year: 'numeric' }).format(d) + ' · ' + new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit' }).format(d) + ' Uhr'; };
+
+// Sportbezug (Entscheidung KBS 26.09.2026: Startseite komplett sportfrei).
+// Rubrik Sport ist immer Sport; Blaulicht, Rathaus und Wirtschaft nie. In allen
+// anderen Rubriken entscheidet ein Muster ueber Titel, Teaser, Kicker und Themen
+// (Sportlerheim-Ausbau, Fanclub-Fahrt usw.). Ausnahmen per URL in deploy/startseite.json.
+const STARTSEITE = JSON.parse(readFileSync(new URL('./startseite.json', import.meta.url), 'utf8'));
+export const SPORT_MUSTER = /fu(?:ß|ss)ball|kreisliga|bezirksliga|landesliga|bundesliga|sc 1919|sc merzenich|fc golzheim|sv morschenich|rhenania|fan-?club|fc-fanclub|1\. fc k(?:ö|oe)ln|sportlerheim|sportplatz|kunstrasen|tennis|tischtennis|billard|badminton|tv merzenich|turnverein|handball|volleyball|leichtathlet|sportverein|e-jugend|d-jugend|c-jugend|spieltag|\bsport\b/i;
+const NIE_SPORT_RESSORTS = new Set(['blaulicht', 'rathaus', 'wirtschaft']);
+export function sportBezug(a) {
+  if (!a) return false;
+  const url = a.url || '';
+  if (STARTSEITE.sport.nieSport.includes(url)) return false;
+  if (STARTSEITE.sport.immerSport.includes(url)) return true;
+  if (a.ressort === 'sport' || /^\/sport\//.test(url) || /^\/sc-1919-merzenich\//.test(url)) return true;
+  if (NIE_SPORT_RESSORTS.has(a.ressort)) return false;
+  const text = [a.titel, a.teaser, a.kicker, (a.themen || []).map((t) => `${t.label} ${t.slug}`).join(' ')].join(' | ');
+  return SPORT_MUSTER.test(text);
+}
+// Termine: gleiches Muster ueber Titel, Kategorie und Veranstalter.
+export function sportTermin(t) {
+  if (!t) return false;
+  const text = [t.titel, t.title, t.kategorie, t.category, t.veranstalter, t.organizer, t.name].filter(Boolean).join(' | ');
+  return SPORT_MUSTER.test(text);
+}

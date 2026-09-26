@@ -158,10 +158,6 @@
   --bild-objekt:4/3;     /* Immobilie, Objektbild im Markt             */
 }
 
-/* Kein Dunkelmodus-Block: diese Datei beschreibt ausschliesslich
-   Geometrie und Typografie. Beides ist in hell und dunkel identisch -
-   theme.css setzt im Dunkelmodus nur Farbvariablen um. Ein leerer
-   html[data-theme="dark"]-Block waere hier reine Attrappe. */
 
 /* ============================================================
    BILDFORMATE DER KARTENTYPEN (Gewerk 4)
@@ -241,4 +237,3 @@ html body .feed-lead.feed-lead{align-items:start}
    fuer aeltere Browser. */
 html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 
-html[data-theme="dark"]{--ma-paper:#111;--ma-warm:#181818;--ma-ink:#f1f1f0;--ma-text:#d4d4d2;--ma-muted:#a6a6a2;--ma-line:#2f2f2e}

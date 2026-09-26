@@ -4185,20 +4185,15 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-24-fc-golzheim-sportlerheim-erweiterung",
-  "url": "/vereine/fc-golzheim-sportlerheim-erweiterung/",
-  "titel": "FC Golzheim erweitert sein Sportlerheim – viel Eigenleistung auf der Baustelle"
+  "id": "2026-09-24-vhs-oldschool-merzenich",
+  "url": "/leben/vhs-oldschool-merzenich/",
+  "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
  },
  "nebenmeldungen": [
   {
    "id": "2026-09-11-einbruch-arnoldsweilerweg",
    "url": "/blaulicht/einbruch-arnoldsweilerweg/",
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
-  },
-  {
-   "id": "2026-09-24-vhs-oldschool-merzenich",
-   "url": "/leben/vhs-oldschool-merzenich/",
-   "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
   },
   {
    "id": "2026-09-24-jonge-vom-berg-vortanzen",
@@ -4211,9 +4206,14 @@
    "titel": "St. Lambertus in Morschenich lud zum Patrozinium"
   },
   {
-   "id": "2026-09-24-fanclub-merzenich-muengersdorf",
-   "url": "/vereine/fanclub-merzenich-muengersdorf/",
-   "titel": "Merzenicher FC-Fanclub reist mit zwölf Mitgliedern nach Müngersdorf"
+   "id": "2026-09-24-faire-woche-nistkasten-workshop",
+   "url": "/leben/faire-woche-nistkasten-workshop/",
+   "titel": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag"
+  },
+  {
+   "id": "2026-09-24-oelspur-windmuehle",
+   "url": "/blaulicht/oelspur-windmuehle/",
+   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
   }
  ]
 }

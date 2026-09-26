@@ -175,11 +175,9 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 .thema__meta{font-size:12.5px;color:var(--muted,#666)}
 .thema__body{padding:0 0 22px 18px;border-left:3px solid var(--line,#e3e3e1);margin-bottom:14px}
 @media (max-width:640px){.kommentar-form__zeile{grid-template-columns:1fr}.thema__body{padding-left:12px}}
-html[data-theme="dark"] .kommentar-form input:not([type=checkbox]),html[data-theme="dark"] .kommentar-form textarea{background:#1b1b1b;border-color:#4a4a4a}
-html[data-theme="dark"] .diskussion__neu{background:#1b1b1b;border-color:#353535}
 
 /* Werbung global aus (html[data-werbung="aus"]) */
-html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[data-werbung="aus"] .managed-ad,html[data-werbung="aus"] .ma-display-ad,html[data-werbung="aus"] .ma-ad-booking,html[data-werbung="aus"] .native-ad,html[data-werbung="aus"] .ad,html[data-werbung="aus"] .ma-ad,
+html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[data-werbung="aus"] .managed-ad,html[data-werbung="aus"] .ma-display-ad,html[data-werbung="aus"] .ma-ad-booking,html[data-werbung="aus"] .native-ad,html[data-werbung="aus"] .ad,html[data-werbung="aus"] .ma-ad{display:none!important}
 
 /* Externe Bilder ohne Einwilligung: neutraler Platzhalter */
 
@@ -200,14 +198,12 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
 .live-hinweis a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .live-hinweis button{margin-left:auto;appearance:none;border:0;background:none;color:#fff;font-size:22px;line-height:1;cursor:pointer}
 @media (max-width:640px){.einwilligung{padding:0}.einwilligung__box{border-left:0;border-right:0;padding:14px 16px 12px}}
-html[data-theme="dark"] .einwilligung__box{background:#1b1b1b;border-color:#353535}
 
 /* Tabellenauszug: Luecke zwischen Spitzengruppe und SC Merzenich */
 .league-table .league-gap td{text-align:center;padding:4px 14px;color:#8a8781;letter-spacing:.2em}
 
 /* Formulare: Rueckmeldung nach fehlgeschlagener Einsendung (app.js, ?fehler=) */
 .form-fehler{margin:0 0 16px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:#fbf1f1;color:#5a1a1f;font-size:15px;line-height:1.45}
-html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 
 /* Ladezustand ohne JS-Erfolg: nach 8 s wird aus "Wird geladen" ein Hinweis mit Neuladen (reines CSS, kein Skript noetig) */
 .laden .laden__fehler{display:block;opacity:0;max-height:0;overflow:hidden;animation:ladenFehler .3s 8s forwards}
@@ -266,7 +262,6 @@ html[data-theme="dark"] .form-fehler{background:#2a1c1c;color:#f3d6d6}
 
 @media (prefers-reduced-motion:reduce){.ortswahl-pfeil{transition:none}}
 
-html[data-theme="dark"] .ortswahl-liste{background:#181818;border-color:#2f2f2e;box-shadow:0 10px 28px rgba(0,0,0,.45)}
 
 /* Anzeige aufgeben (/anzeigen/aufgeben/): drei Schritte, Art als Bildkarte */
 .anz-form{max-width:none;gap:24px}

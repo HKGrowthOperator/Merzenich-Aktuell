@@ -69,40 +69,16 @@ jobs:
         # Commit-Schritt unten schreibt das Ergebnis nach main zurueck. Alle
         # Generatoren sind idempotent; der zweite Lauf darf nichts mehr aendern.
         run: |
-          node deploy/meldungen.mjs
-          node deploy/marke.mjs
-          node deploy/symbolbilder.mjs
-          node deploy/markt-prerender.mjs
-          node deploy/sport-prerender.mjs
-          node deploy/suche-index.mjs
-          node deploy/thema-prerender.mjs
-          node deploy/teaser-bilder.mjs
-          node deploy/ortsmarke.mjs
-          node deploy/inhaltsindex.mjs
-          node deploy/termine-prerender.mjs
-          node deploy/ressort-menue.mjs
-          node deploy/kopf-theme-einbinden.mjs
+          node deploy/kette.mjs
           echo '--- nachgezogen:'; git status --short | head -40
       - name: Generatoren idempotent (zweiter Lauf aendert nichts)
-        run: |
-          node deploy/symbolbilder.mjs --check
-          node deploy/markt-prerender.mjs --check
-          node deploy/sport-prerender.mjs --check
-          node deploy/suche-index.mjs --check
-          node deploy/thema-prerender.mjs --check
-          node deploy/teaser-bilder.mjs --check
-          node deploy/ortsmarke.mjs --check
-          node deploy/meldungen.mjs --check
-          node deploy/marke.mjs --check
-          node deploy/ressort-menue.mjs --check
-          node deploy/inhaltsindex.mjs --check
-          node deploy/kopf-theme-einbinden.mjs --check
+        run: node deploy/kette.mjs --check
 
       - name: Symbolbilder fuer Meldungen ohne Foto aktuell?
         run: node deploy/symbolbilder.mjs --check
 
       - name: Freigabe-, Partner-, Kommentar- und Sport-Logik pruefen
-        run: php qa/wordpress/freigabe-test.php && php qa/wordpress/partner-kommentar-test.php && php qa/wordpress/sport-test.php
+        run: for t in qa/wordpress/*-test.php; do echo "== $t"; php "$t" || exit 1; done
 
       - name: Lint versioned WordPress source
         run: |

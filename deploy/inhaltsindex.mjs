@@ -27,7 +27,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke } from './lib-artikel.mjs';
+import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke, sportBezug } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -301,7 +301,7 @@ index.bestand = {
       if (!gesetzt) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} steht nicht im Inhaltsindex.`);
         process.exitCode = 2;
-      } else if (gesetzt.ressort === 'sport' || gesetzt.ressort === 'tipp') {
+      } else if (sportBezug(gesetzt) || gesetzt.ressort === 'tipp') {
         console.error(`Startseite: Aufmacher ${ed.hero.url} gehoert zu ${gesetzt.ressort} und darf nicht auf die Startseite.`);
         process.exitCode = 2;
       } else if (!redaktionellBebildert(gesetzt)) {
@@ -323,7 +323,7 @@ index.bestand = {
     // bleibt der Lauf wiederholbar (--check).
     const grenze = new Date(new Date(neuester).getTime() - 7 * 864e5).toISOString();
     const frisch = redaktionell
-      .filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
+      .filter((a) => !sportBezug(a) && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
       .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
     const frischMitFoto = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
     if (frischMitFoto) return frischMitFoto;
@@ -335,10 +335,10 @@ index.bestand = {
     // wichtiger als ein Foto, und ein Symbolbild gehoert nicht an diese Stelle.
     const textAufmacher = frisch.find((a) => a.ressort !== 'tipp');
     if (textAufmacher) { console.log(`Startseite: kein eigenes Foto in den letzten 7 Tagen, Text-Aufmacher ${textAufmacher.url}.`); return { ...textAufmacher, textAufmacher: true }; }
-    return redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a) && passtInPlatz(a, 'l'))
-      || redaktionell.find((a) => a.ressort !== 'sport' && aufmacherBild(a))
+    return redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
+      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l'))
+      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a))
       || null;
   }
 
@@ -419,7 +419,7 @@ index.bestand = {
     .filter((a, i, alle) => {
       if (!a) return false;
       if (vergeben.has(a.url) || alle.indexOf(a) !== i) return false;
-      if (a.ressort === 'sport' || a.ressort === 'tipp') {
+      if (sportBezug(a) || a.ressort === 'tipp') {
         console.error(`Startseite: Nebenmeldung ${a.url} gehoert zu ${a.ressort} und darf nicht auf die Startseite.`);
         process.exitCode = 2;
         return false;
@@ -445,7 +445,7 @@ index.bestand = {
   for (const a of gesetzteNeben) if (a.ressort === 'blaulicht') blaulicht++;
   const neben = gesetzteNeben.concat(
     redaktionell.filter((a) => {
-      if (vergeben.has(a.url) || a.ressort === 'sport' || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
+      if (vergeben.has(a.url) || sportBezug(a) || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
       if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
       return true;
     }),
@@ -483,7 +483,7 @@ index.bestand = {
   ];
   const datumOrt = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: 'numeric', month: 'long' }).format(new Date(iso));
   const neuesteImOrt = (slug) => redaktionell
-    .filter((a) => a.ortsteil === slug && a.ressort !== 'sport' && a.datum && !a.undatiert)
+    .filter((a) => a.ortsteil === slug && !sportBezug(a) && a.datum && !a.undatiert)
     .sort((x, y) => String(y.datum).localeCompare(String(x.datum)))[0];
   const orteHtml = '<section class="orte-buehne" aria-labelledby="orte-titel"><div class="shell orte-kopf"><h2 id="orte-titel">Ihre fünf Orte</h2></div><div class="orte-reihe">'
     + ORTE_BUEHNE.map(([slug, zeile, alt, credit, fokus]) => {
@@ -508,11 +508,11 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => a.ressort !== 'sport' && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 2, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => !sportBezug(a) && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 2, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
-    { id: 'vereine', kat: 'Gemeinschaft · Kultur · Engagement', titel: 'Vereine & Menschen', mehr: '/vereine/', mehrText: 'Zu den Vereinen', nimm: (a) => a.ressort === 'vereine' || a.ressort === 'menschen' },
+    { id: 'vereine', kat: 'Gemeinschaft · Kultur · Engagement', titel: 'Vereine & Menschen', mehr: '/vereine/', mehrText: 'Zu den Vereinen', nimm: (a) => (a.ressort === 'vereine' || a.ressort === 'menschen') && !sportBezug(a) },
   ];
 
   function sektionHtml(s, gross, mittel, zeilen) {
@@ -706,7 +706,7 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
   // Meldungen; kopf.js rechnet daraus "vor 18 Min." und "heute: 3 neue" und
   // setzt den naechsten Termin aus der Servicespalte ein. Fehlt ein Wert,
   // bleibt das Feld verborgen.
-  const jetztBasis = redaktionell.filter((a) => a.ressort !== 'sport' && a.datum && !a.undatiert)
+  const jetztBasis = redaktionell.filter((a) => !sportBezug(a) && a.datum && !a.undatiert)
     .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
   const jetztHtml = () => {
     const n = jetztBasis[0];

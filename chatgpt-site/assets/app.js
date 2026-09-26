@@ -217,36 +217,6 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
 (function(){
   'use strict';
 
-  /* Hellmodus-only + Werbefrei komplett aus der sichtbaren Site entfernen. */
-  document.documentElement.dataset.theme='light';
-  document.documentElement.style.colorScheme='light';
-  try{localStorage.removeItem('merzenich-theme')}catch(e){}
-  document.querySelectorAll('a[href="/werbefrei/"],.theme-toggle,.darstellung-knopf,.einstellungen,.einstellungen-schleier').forEach(function(el){el.remove()});
-
-  /* Sport-Megamenue: Unterthemen direkt am Ressort statt leerer Einzellink. */
-  var nav=document.querySelector('.mainnav');
-  var sport=nav&&nav.querySelector('.navscroll a[href="/sport/"]');
-  // Das Panel steht seit 24.09. im HTML (deploy/kopf-theme-einbinden.mjs);
-  // gebaut wird es hier nur noch fuer Seiten ohne diesen Kopf.
-  var mega=nav&&nav.querySelector('.sport-mega');
-  if(nav&&sport){
-    sport.classList.add('has-mega');
-    sport.setAttribute('aria-haspopup','true');
-    if(!mega){
-    mega=document.createElement('div');
-    mega.className='sport-mega';
-    mega.innerHTML='<div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div>';
-    nav.appendChild(mega);
-    }
-    var closeTimer;
-    function open(){clearTimeout(closeTimer);mega.classList.add('is-open');sport.setAttribute('aria-expanded','true')}
-    function close(){closeTimer=setTimeout(function(){mega.classList.remove('is-open');sport.setAttribute('aria-expanded','false')},120)}
-    sport.addEventListener('mouseenter',open); sport.addEventListener('focus',open);
-    mega.addEventListener('mouseenter',open); mega.addEventListener('mouseleave',close);
-    sport.addEventListener('mouseleave',close);
-    nav.addEventListener('focusout',function(e){if(!nav.contains(e.relatedTarget))close()});
-  }
-
   /* Foto des Tages: tägliche, deterministische Rotation aus bereits
      dokumentierten lokalen Projektbildern – mit sichtbarem Credit. */
   var foto=document.getElementById('foto-des-tages-bild');

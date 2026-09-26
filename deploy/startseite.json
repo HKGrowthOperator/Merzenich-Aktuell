@@ -1,0 +1,7 @@
+{
+  "_hinweis": "Regeln fuer die Startseite. Entscheidung KBS 26.09.2026: Startseite komplett sportfrei (auch Vereins- und Fanclub-Meldungen mit Sportbezug, Termine, Menue). Sport bleibt unter /sport/ und auf den Ortsteilseiten. sportBezug() in deploy/lib-artikel.mjs liest diese Datei. Ausnahmen per Artikel-URL.",
+  "sport": {
+    "immerSport": [],
+    "nieSport": []
+  }
+}

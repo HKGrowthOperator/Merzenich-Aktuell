@@ -33,12 +33,7 @@
 .ma-ad-booking-slot:hover small,.ma-ad-booking-slot:focus-visible small{text-decoration:underline;text-underline-offset:3px}
 
 /* Leser-Hinweis als redaktioneller Abschluss, nicht als Marketing-CTA. */
-.home .reader-note{border-radius:0!important;box-shadow:none!important;border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc);background:transparent!important}/* Dunkelmodus: gleiche Sprache{background:#0d0d0d;border-color:#303030}
-html[data-theme="dark"] .home .reader-note{border-color:#333;border-top-color:#eee}
-html[data-theme="dark"] .ma-ad-booking-slot{background:#151515;border-color:#383838;color:#f3f3f3}
-html[data-theme="dark"] .ma-ad-booking-slot__label{border-color:#383838;color:#aaa}
-html[data-theme="dark"] .ma-ad-booking-slot__body span{color:#bbb}
-html[data-theme="dark"] .ma-ad-booking-slot__body small{border-color:#444}
+.home .reader-note{border-radius:0!important;box-shadow:none!important;border-top:3px solid var(--ink,#17191b);border-bottom:1px solid var(--line,#dcdedc);background:transparent!important}
 
 /* Mobile ist bewusst News-first: Meldungen vor Service und Werbung. */
 @media (max-width:900px){

@@ -50,7 +50,10 @@ const CSS_ANKER = /<link rel="stylesheet" href="\/assets\/korrekturen\.css[^"]*"
 // die erste Projektdatei - und damit der verlaessliche Anker zum Davorhaengen.
 const SYSTEM_ANKER = /<link rel="stylesheet" href="\/assets\/style\.css[^"]*">/;
 const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
-const INLINE = '<script>document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";try{localStorage.removeItem("merzenich-theme")}catch(e){}</script>';
+// Frueher stand hier ein Inline-Skript, das den Hellmodus erzwang. Die CSP
+// (script-src 'self') blockierte es ohnehin; seit 26.09. gibt es keinen
+// Dunkelmodus mehr, das Skript wird von allen Seiten entfernt.
+const ALT_INLINE_RE = /<script>document\.documentElement\.dataset\.theme="light";[^<]*<\/script>/g;
 const SYSTEM = `<link rel="stylesheet" href="/assets/system.css?${V}">`;
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
 // startseite.css besitzt die obere Flaeche der Startseite und laedt blockierend
@@ -105,8 +108,8 @@ const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-sende
 const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="mega-panel"><div class="mega-spalten">'
   + MEGA_SPALTEN.map(([titel, links]) => `<div class="mega-spalte"><p class="mega-titel">${esc(titel)}</p><ul>${links.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join('')}</ul></div>`).join('')
   + `</div><p class="mega-wege"><span class="mega-titel">Für die Redaktion</span>${MEGA_WEGE.map(([u, t], i) => `<a class="${i ? 'mega-weg' : 'mega-weg primaer'}" href="${u}">${esc(t)}</a>`).join('')}</p></div></details>`;
-// Sport-Untermenue: stand bisher nur zur Laufzeit (app.js), jetzt im HTML.
-const SPORT_MEGA = '<div class="sport-mega"><div class="shell sport-mega__inner"><div><span class="sport-mega__eyebrow">Sport in Merzenich</span><strong>Vereine, Spiele und Ergebnisse</strong></div><nav aria-label="Sport Untermenü"><a href="/sport/">Alle Sportmeldungen</a><a href="/sc-1919-merzenich/">SC 1919 Merzenich</a><a href="/vereine/">Vereine</a><a href="/meldung-senden/">Sportmeldung senden</a></nav></div></div><!--/sport-mega-->';
+// Das alte Sport-Untermenue (.sport-mega) ist seit 26.09. ersetzt durch die
+// Ressort-Dropdowns (deploy/ressort-menue.mjs) und wird aus allen Seiten entfernt.
 // Scroll-Kopf: das Monogramm aus der Wortmarke (deploy/marke.mjs) statt des
 // verkleinerten Logos bzw. eines Schrift-M. Der Link traegt den Namen, das
 // Bild ist Schmuck (alt=""), damit Screenreader nicht doppelt vorlesen.
@@ -130,7 +133,7 @@ for (const pfad of seiten) {
   if (/<body[^>]*class="[^"]*\bhome\b/.test(html) && !html.includes('/assets/startseite.css')) {
     html = html.replace(/<link rel="stylesheet" href="\/assets\/theme\.css[^"]*">/, (m) => m + STARTSEITE);
   }
-  if (!html.includes('merzenich-theme')) html = html.replace('<head>', '<head>' + INLINE);
+  html = html.replace(ALT_INLINE_RE, '');
   if (!html.includes('/assets/kopf.js')) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }
     html = html.replace(JS_ANKER, (m) => m + JS);
@@ -165,12 +168,8 @@ for (const pfad of seiten) {
   // Mega-Menue und Sport-Untermenue (siehe MEGA): nur im Kopf mit Ressortleiste.
   if (MEHR_RE.test(html) && html.includes('<nav class="mainnav"')) {
     html = html.replace(MEHR_RE, () => MEGA);
-    html = html.replace(SPORT_RE, '');
-    const i = html.indexOf('<details class="nav-more mega">');
-    const ende = html.indexOf('</div></nav>', i);
-    if (ende < 0) { fehler++; console.error('Ressortleiste ohne Abschluss: ' + pfad); continue; }
-    html = html.slice(0, ende + 6) + SPORT_MEGA + html.slice(ende + 6);
   }
+  html = html.replace(SPORT_RE, '');
   // Merzenich-Linie (Anhang A): die Pulslinie aus dem Logo als ruhige Trennung
   // ueber dem Fuss. Ein Element, einmal je Seite, keine Animation.
   if (!html.includes('class="merzenich-linie"')) html = html.replace('<footer class="compact-footer">', LINIE + '<footer class="compact-footer">');

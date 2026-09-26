@@ -22,6 +22,7 @@ const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(wurzel, 'chatgpt-site');
 const nurPruefen = process.argv.includes('--check');
 const quelle = JSON.parse(readFileSync(join(wurzel, 'deploy', 'ressort-menue.json'), 'utf8'));
+import { sportBezug } from './lib-artikel.mjs';
 const inhalte = JSON.parse(readFileSync(join(site, 'api', 'inhalte.json'), 'utf8'));
 const latest = JSON.parse(readFileSync(join(site, 'api', 'latest.json'), 'utf8'));
 
@@ -58,7 +59,7 @@ for (const r of quelle.ressorts) {
   if (!zielDa(r.href)) fehler.push(`${r.titel}: Ressortseite ${r.href} fehlt`);
   for (const g of r.gruppen) for (const [label, href] of g.links) if (!zielDa(href)) fehler.push(`${r.titel} / ${g.titel}: "${label}" -> ${href} fehlt`);
   const neu = r.href === '/termine/' ? termine
-    : bebildertZuerst(artikel.filter((a) => r.href === '/nachrichten/' || a.ressort === RESSORT[r.href]).slice(0, 10)).slice(0, 2).map(beitrag);
+    : bebildertZuerst(artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]).slice(0, 10)).slice(0, 2).map(beitrag);
   ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }

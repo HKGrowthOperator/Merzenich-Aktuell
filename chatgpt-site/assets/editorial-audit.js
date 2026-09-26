@@ -147,7 +147,7 @@
 
   /* 6) Ladefehler bekommen einen echten Zustand. */
   setTimeout(()=>{
-    if(!['/diskussion','/werbefrei'].includes(path))return;
+    if(path!=='/diskussion')return;
     qa('main p, main div').forEach(el=>{if(el.children.length)return;if(!/^\s*(wird geladen|die diskussion wird geladen)[….\.]*\s*$/i.test(el.textContent||''))return;const box=document.createElement('div');box.className='editorial-error';box.innerHTML='<h2>Inhalt konnte nicht geladen werden</h2><p>Die Verbindung zum Dienst ist gerade nicht verfügbar. Die übrige Website funktioniert weiter.</p><button type="button">Erneut versuchen</button>';q('button',box).addEventListener('click',()=>location.reload());el.replaceWith(box)});
   },8000);
 

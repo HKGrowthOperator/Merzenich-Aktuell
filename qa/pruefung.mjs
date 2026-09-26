@@ -646,11 +646,21 @@ function pruefeStylesheets() {
   const ordner = join(wurzel, 'chatgpt-site', 'assets');
   if (!existsSync(ordner)) { fehler('Stylesheet', 'chatgpt-site/assets fehlt.'); return; }
   for (const datei of readdirSync(ordner).filter((n) => n.endsWith('.css'))) {
-    const text = lies(join(ordner, datei)).replace(/\/\*[\s\S]*?\*\//g, '');
+    const text = lies(join(ordner, datei)).replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, ''));
     const auf = (text.match(/\{/g) || []).length;
     const zu = (text.match(/\}/g) || []).length;
     if (auf !== zu) fehler('Stylesheet', `${datei}: ${auf} oeffnende gegen ${zu} schliessende Klammern.`);
-    text.split('\n').forEach((zeile, i) => {
+    const zeilen = text.split('\n');
+    // 26.09.: korrekturen.css endete eine Selektorliste mit Komma, danach nur
+    // ein Kommentar. Die naechste Regel (.einwilligung{position:fixed})
+    // galt damit auch fuer alle Werbeflaechen. Eine Liste, die mit Komma
+    // endet, muss in der naechsten Zeile weitergehen.
+    zeilen.forEach((zeile, i) => {
+      if (/,\s*$/.test(zeile) && !/[{}]/.test(zeile) && !(zeilen[i + 1] || '').trim()) {
+        fehler('Stylesheet', `${datei}:${i + 1}: Selektorliste endet mit Komma, danach eine Leerzeile. Die naechste Regel gilt dann auch fuer diese Selektoren.`);
+      }
+    });
+    zeilen.forEach((zeile, i) => {
       const k = zeile.trim();
       if (!k || /[{}]/.test(k) || /^@/.test(k)) return;
       if (/[,;]$/.test(k)) return;      // mehrzeiliger Selektor oder Deklaration
@@ -708,7 +718,31 @@ function pruefeServicespalte() {
 pruefeSektionen();
 pruefeStylesheets();
 pruefeServicespalte();
+// ------------------------------------------- Startseite sportfrei, nur Hellmodus
+// Entscheidung KBS 26.09.2026: Die Startseite zeigt keinen Sport (auch keine
+// Vereins- oder Fanclub-Meldung mit Sportbezug, keinen Sporttermin, keinen Sport
+// in der Beschreibung). Sport bleibt unter /sport/. Der Dunkelmodus ist entfernt.
+async function pruefeSportfreieStartseite() {
+  const { sportBezug, SPORT_MUSTER } = await import('../deploy/lib-artikel.mjs');
+  const html = lies('chatgpt-site/index.html');
+  const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  const links = new Set([...main.matchAll(/href="(\/[a-z0-9-]+\/[a-z0-9-]+\/)"/g)].map((m) => m[1]));
+  for (const a of idx.artikel || []) if (sportBezug(a) && links.has(a.url)) fehler('Sportfrei', `Startseite verlinkt Sportmeldung ${a.url}.`);
+  const termine = (/<!-- start:termine:start -->([\s\S]*?)<!-- start:termine:end -->/.exec(html) || [])[1] || '';
+  for (const m of termine.matchAll(/<h3><a href="([^"]+)">([^<]*)<\/a>/g)) if (SPORT_MUSTER.test(m[2])) fehler('Sportfrei', `Sporttermin auf der Startseite: ${m[2]}.`);
+  const beschr = (/<meta name="description" content="([^"]*)"/.exec(html) || [])[1] || '';
+  if (/\bSport\b/.test(beschr)) fehler('Sportfrei', 'Meta-Beschreibung der Startseite nennt Sport.');
+  if (html.includes('class="sport-mega"')) fehler('Sportfrei', 'Altes Sport-Untermenue (.sport-mega) steht noch im Kopf.');
+  const ordner = join(wurzel, 'chatgpt-site', 'assets');
+  for (const datei of readdirSync(ordner).filter((n) => /\.(css|js)$/.test(n))) {
+    if (/data-theme="dark"|merzenich-theme/.test(lies(join(ordner, datei)))) fehler('Hellmodus', `${datei} enthaelt noch Dunkelmodus-Code.`);
+  }
+  if (/dataset\.theme|merzenich-theme/.test(html)) fehler('Hellmodus', 'Startseite traegt noch das alte Theme-Skript.');
+}
+
 await pruefeSymbolbilder();
+await pruefeSportfreieStartseite();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();
 pruefeOrtswahl();

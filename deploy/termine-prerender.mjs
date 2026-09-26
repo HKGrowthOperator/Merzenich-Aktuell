@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from '
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { sportTermin } from './lib-artikel.mjs';
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
 const site = join(wurzel, 'chatgpt-site');
@@ -140,8 +141,9 @@ function agendaZeile(t) {
     process.exitCode = 2;
     return;
   }
+  // Startseite sportfrei (KBS 26.09.): Sporttermine stehen nur unter /sport/ und /termine/.
   const kuenftig = termineLesen()
-    .filter((t) => t.ende.getTime() >= jetzt)
+    .filter((t) => t.ende.getTime() >= jetzt && !sportTermin(t))
     .sort((a, b) => a.start - b.start)
     .slice(0, HOECHSTENS);
   // Kein Termin, keine Liste. Der Leerzustand ist das Weglassen, wie bei den

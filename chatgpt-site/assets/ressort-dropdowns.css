@@ -3,7 +3,6 @@
    aktuelle Teaser; fehlende Artikelbilder werden aus dem Editorial-Pool ersetzt. */
 @media (min-width:768px){
   .mainnav{position:relative;overflow:visible}
-  .mainnav.ressort-dropdowns-ready .sport-mega{display:none!important}
 
   .navscroll>a[aria-haspopup="true"]{position:relative;padding-right:0!important}
   .navscroll>a[aria-haspopup="true"]::after{content:none!important;display:none!important}

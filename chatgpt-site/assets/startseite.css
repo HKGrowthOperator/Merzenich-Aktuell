@@ -152,11 +152,6 @@ body.home .portal-service .service-links a:hover{color:var(--ma-red,#971725);tex
 @media (max-width:700px){
   body.home .portal-service .agenda-list{grid-template-columns:1fr}
 }
-html[data-theme="dark"] body.home .portal-service{background:#181818}
-html[data-theme="dark"] body.home .portal-service .agenda-row{background:#1f1f1f}
-html[data-theme="dark"] body.home .portal-service .markt-mini{border-color:#2f2f2e}
-html[data-theme="dark"] body.home .portal-service .service-links{border-color:#333}
-html[data-theme="dark"] body.home .portal-service .service-links a{color:#c9c9c6}
 
 /* ------------------------------------------------- Aufmacher + Nebenreihe */
 
@@ -406,9 +401,6 @@ body.home .desk-karte .dek{
 }
 body.home .desk-karte .meta{margin-top:var(--s2,8px);color:var(--ma-muted,#817b73);font-size:11px}
 
-html[data-theme="dark"] body.home .desk-karte h3 a{color:#f1f1f0}
-html[data-theme="dark"] body.home .desk-karte .dek{color:#bebebb}
-html[data-theme="dark"] body.home .desk-heading{border-color:#2f2f2e}
 
 /* --------------------------------------------------------- Sportzahlen */
 /* Vorher drei schwarze Kacheln (#17191b, weiße Schrift) - das las sich wie ein
@@ -463,9 +455,6 @@ body.home .sc-stand-quelle{
   body.home .sc-stand .sc-label{font-size:10px;letter-spacing:.09em}
 }
 
-html[data-theme="dark"] body.home .sc-stand{background:transparent}
-html[data-theme="dark"] body.home .sc-stand .sc-kachel{border-color:#2f2f2e}
-html[data-theme="dark"] body.home .sc-stand .sc-wert{color:#f1f1f0}
 
 
 /* ---------------------------------------------------------------------------
