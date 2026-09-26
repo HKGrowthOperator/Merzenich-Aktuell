@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-25",
+  "generated": "2026-09-26",
   "source": "Wikimedia Commons",
   "minimumPerPool": 20,
   "pools": {
@@ -21,7 +21,7 @@
     "leben": 20,
     "wirtschaft": 20,
     "technik": 24,
-    "rettung": 11,
+    "rettung": 12,
     "unfall": 3,
     "flaeche": 0,
     "verkehr": 20,
@@ -7657,6 +7657,40 @@
       "locality": "Deutschland / überregional",
       "geprueft": false,
       "checksum": "3e4548d833b60ee39912522d332a4f78f9757bd1337b340be1a4b38217fe02a5"
+    },
+    {
+      "id": "web-rettung-12-14e7393e",
+      "pool": "rettung",
+      "src": "/assets/editorial-pools/rettung/rettung-12-14e7393e50.jpg",
+      "alt": "Eureka, MO, 03/23/2008 -- Members of the Missouri Humane Society along with a volunteer large animal rescue group, Missouri Emergency Response Service, on a mission to rescue 13 ca",
+      "credit": "Symbolbild · Jocelyn Augustino / Wikimedia Commons · Public domain",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFEMA_-_34520_-_Large_animal_rescue_worker_in_Missouri.jpg",
+      "sourceTitle": "File:FEMA - 34520 - Large animal rescue worker in Missouri.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/FEMA_-_34520_-_Large_animal_rescue_worker_in_Missouri.jpg/1920px-FEMA_-_34520_-_Large_animal_rescue_worker_in_Missouri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "rightsCheckedAt": "2026-09-26",
+      "tags": [
+        "feuerwehr",
+        "rettung",
+        "tier",
+        "tuer",
+        "34520",
+        "large",
+        "animal",
+        "rescue",
+        "worker",
+        "missouri"
+      ],
+      "width": 1600,
+      "height": 2667,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "Deutschland / überregional",
+      "geprueft": false,
+      "checksum": "5d8eb3464aca8ce234c19603d795b9bfbd60d24d657d6056e83734d1db34bc23"
     },
     {
       "id": "web-unfall-01-6e9563e3",
