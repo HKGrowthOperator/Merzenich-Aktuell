@@ -10,6 +10,7 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 - Branch: `main`
 - Source of Truth für Änderungen: dieses GitHub-Repository auf `main`
 - Öffentlich ausgelieferter statischer Stand: `chatgpt-site/` (der Ordnername ist nur ein historischer technischer Name; es gibt keine separate ChatGPT-Seite mehr)
+- `site-source/dist/` ist **nur lokaler, wegwerfbarer Build-Output** des historischen Generators: per `.gitignore` ausgeschlossen, nicht Teil des Deployments und niemals Source of Truth. Änderungen dort sind ungültig; produktive Änderungen müssen in versionierten Quellen/Generatoren erfolgen und im ausgelieferten `chatgpt-site/` materialisiert sein.
 - Coolify-Auslieferung: `deploy/coolify/Dockerfile` kopiert `chatgpt-site/` nach nginx
 - Repository-Root enthält weiterhin Preview-/Kompatibilitätsdateien, ist aber nicht der aktuell von Coolify ausgelieferte HTML-Bestand
 - Öffentliche Deploy-/Kontroll-URL: `https://merzenichaktuell.hk-growthoperator.de`
