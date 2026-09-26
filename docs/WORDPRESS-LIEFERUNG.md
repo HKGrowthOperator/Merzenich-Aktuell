@@ -1,6 +1,8 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-24. September 2026 · Theme 20.4.0 · Core-Plugin 1.4.0
+26. September 2026 · Theme 20.5.0 · Core-Plugin 1.6.0
+
+Neu in 1.6.0 (Rückmeldung KBS 26.09.): Partner-Zugänge mit Freigabe-Mail und Ablehnungsgrund, Werbe-Kontingente für Unternehmen, Unternehmensprofile mit Einwilligung, Zugangsantrag per Shortcode `[ma_partner_antrag]`, rotierende Anzeigen je Werbeplatz und eine sportfreie Startseite. Einrichtung und Abläufe: `docs/PARTNER-ZUGAENGE.md`.
 
 ## Was erhalten und verbessert wurde
 
@@ -36,9 +38,9 @@ Das Theme enthält Präsentation und Vorlagen. Dauerhafte Inhalte und Funktionen
 
 ### Werbeplätze
 
-`homepage_sidebar_top`, `homepage_sidebar_middle`, `homepage_feed`, `article_inline`, `article_sidebar`, `header_billboard`.
+Werbebänder zwischen den Rubriken der Startseite: `homepage_band_1` bis `homepage_band_6`. Weitere Plätze: `homepage_sidebar_top`, `homepage_sidebar_middle`, `homepage_tip`, `homepage_feed_1`, `article_inline_1`, `article_sidebar`, `header_billboard`.
 
-Alle zunächst aus. Nachrichtenstrom frühestens nach vier Beiträgen. Keine Dummy-Kampagnen und keine erfundenen Reichweiten. Tracking-Kennungen sind interne Bezeichnungen, keine aktivierten Impression-/Klickzähler.
+Je Platz rotieren alle aktiven, freigegebenen Anzeigen (`ma_active_ads()`); `ma_active_ad()` liefert weiterhin die erste. Alle Plätze zunächst aus. Nachrichtenstrom frühestens nach vier Beiträgen. Keine Dummy-Kampagnen und keine erfundenen Reichweiten. Tracking-Kennungen sind interne Bezeichnungen, keine aktivierten Impression-/Klickzähler.
 
 ### KI-Transparenz
 
