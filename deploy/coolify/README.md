@@ -180,6 +180,10 @@ gibt es dafuer keinen Einwilligungs-Punkt mehr. Erlaubt sind nur
 zum Erweitern). Ohne Persistent Storage `/data` wird nach jedem Deploy neu geladen,
 was funktioniert, aber langsamer ist.
 
+## Kommentare: Vorab-Freigabe
+
+Seit 26.09.2026 erscheinen Kommentare und Diskussionsbeiträge erst nach Freigabe. Freigabeseite, Umgebungsvariablen (`KOMMENTARE_ADMIN_TOKEN`, `SMTP_*`, `REDAKTION_MAIL`) und Ablauf: `docs/KOMMENTARE-MODERATION.md`.
+
 ## Redaktionsformulare
 
 Die sieben Formulare (Korrektur, Meldung senden, Termin melden, Verein eintragen,
