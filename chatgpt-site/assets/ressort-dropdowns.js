@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=54c1a37cd1';
+  const MENUE_URL = '/assets/ressort-menue.json?v=6252047433';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -73,7 +73,7 @@
     ).join('');
 
     // Nur echte Beitraege; ohne Beitraege bleibt die Spalte weg.
-    const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 2).map(story).join('');
+    const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 4).map(story).join('');
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
@@ -103,6 +103,7 @@
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
     let active = null;
+    let schwebeAuf = 0, schwebeZu = 0;
 
     function close(options = {}) {
       if (!active) return;
@@ -150,6 +151,15 @@
         e.preventDefault();
         open(link);
       });
+      // Oeffnen beim Ueberfahren mit kurzer Verzoegerung (KBS 26.09.2026, wie
+      // Oberberg Aktuell); wer nur ueber die Leiste streicht, loest nichts aus.
+      link.addEventListener('mouseenter', () => {
+        if (!desktop() || !matchMedia('(hover: hover)').matches || !data[link.getAttribute('href')]) return;
+        clearTimeout(schwebeZu);
+        clearTimeout(schwebeAuf);
+        schwebeAuf = setTimeout(() => { if (active !== link) open(link); }, active ? 60 : 180);
+      });
+      link.addEventListener('mouseleave', () => { clearTimeout(schwebeAuf); });
       link.addEventListener('keydown', (e) => {
         if (!desktop() || e.key !== 'ArrowDown') return;
         e.preventDefault();
@@ -161,6 +171,17 @@
     panel.addEventListener('click', (e) => {
       if (e.target.closest('a')) close();
     });
+    // Verlaesst die Maus Leiste und Panel, schliesst es nach einer Pause.
+    const bereich = [nav, panel];
+    for (const el of bereich) {
+      el.addEventListener('mouseleave', (e) => {
+        if (!desktop() || !matchMedia('(hover: hover)').matches) return;
+        if (bereich.some((x) => x.contains(e.relatedTarget))) return;
+        clearTimeout(schwebeAuf);
+        schwebeZu = setTimeout(() => close(), 260);
+      });
+      el.addEventListener('mouseenter', () => clearTimeout(schwebeZu));
+    }
     document.addEventListener('click', (e) => {
       if (active && !nav.contains(e.target)) close();
     });

@@ -12,7 +12,8 @@ import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE_URL } from './lib-artikel.mjs';
-const KONTAKT_MAIL = JSON.parse(readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '..'), 'deploy', 'site.json'), 'utf8')).kontaktMail;
+const SITE = JSON.parse(readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '..'), 'deploy', 'site.json'), 'utf8'));
+const KONTAKT_MAIL = SITE.kontaktMail;
 const KONTAKT_SEITEN = ['kontakt', 'ueber-uns', 'meldung-senden', 'korrekturen', 'redaktion'];
 const ALTE_DOMAIN = 'https://merzenich-aktuell.de';
 const SSI_DATUM = '<time data-today datetime="<!--# config timefmt="%Y-%m-%dT%H:%M:%S%z" --><!--# echo var="date_local" -->"><!--# config timefmt="%d.%m." --><!--# echo var="date_local" --></time>';
@@ -67,6 +68,16 @@ const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script>
 // Verweise im Kopf statt nachgeladen - so springt beim Laden nichts.
 const WERBUNG_CSS = `<link rel="stylesheet" href="/assets/werbung.css?${V}">`;
 const WERBUNG_JS = `<script src="/assets/werbung.js?${V}" defer></script>`;
+// KBS/Ordin 26.09.2026: "Anzeige aufgeben" muss leicht zu finden sein - im Kopf
+// jeder Seite (Desktop Text, mobil Symbol 44x44), oben in der Schublade und im Fuss.
+const KNOPF_ANZEIGE = '<a class="kopf-anzeige" href="/anzeigen/aufgeben/" aria-label="Anzeige aufgeben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Anzeige aufgeben</span></a>';
+const DRAWER_ANZEIGE = '<a class="drawer-anzeige" href="/anzeigen/aufgeben/">Anzeige aufgeben</a>';
+const FUSS_ANZEIGE = '<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a>';
+// WhatsApp und Instagram: nur mit eingetragenem Link (deploy/site.json social).
+const SOCIAL = [['whatsapp', 'WhatsApp-Kanal', '<path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>'], ['instagram', 'Instagram', '<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/>']]
+  .filter(([k]) => /^https:\/\//.test((SITE.social || {})[k] || ''));
+const SOCIAL_HTML = SOCIAL.length ? `<div class="social-links" aria-label="Merzenich Aktuell in sozialen Medien">${SOCIAL.map(([k, name, pfad]) => `<a href="${esc(SITE.social[k])}" target="_blank" rel="noopener" aria-label="${name}"><svg viewBox="0 0 24 24" aria-hidden="true">${pfad}</svg><span>${name}</span></a>`).join('')}</div><!--/social-->` : '';
+const SOCIAL_RE = /<div class="social-links"[\s\S]*?<!--\/social-->/g;
 const LINK_MEHR = '<a href="/kontakt/">Kontakt</a>';
 const LINK_DISKUSSION = '<a href="/diskussion/">Diskussion</a>';
 
@@ -151,6 +162,14 @@ for (const pfad of seiten) {
   if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (!html.includes('/assets/einwilligung.js')) html = html.replace(/<script src="\/assets\/kommentare\.js[^"]*" defer><\/script>/, (m) => m + EINWILLIGUNG);
   if (!html.includes('/assets/werbung.css')) html = html.replace(CSS_ANKER, (m) => m + WERBUNG_CSS);
+  if (!html.includes('class="kopf-anzeige"')) html = html.replace('<div class="mast-actions">', '<div class="mast-actions">' + KNOPF_ANZEIGE);
+  if (!html.includes('class="drawer-anzeige"')) html = html.replace(/(<div class="panel-top">[\s\S]*?<\/button><\/div>)/, (m) => m + DRAWER_ANZEIGE);
+  if (!html.includes('<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a><a href="/anzeigen/">')) html = html.replace('<h3>Service</h3><a href="/anzeigen/">', '<h3>Service</h3>' + FUSS_ANZEIGE + '<a href="/anzeigen/">');
+  html = html.replace(SOCIAL_RE, '');
+  if (SOCIAL_HTML) {
+    html = html.replace('<div class="foot-bottom">', SOCIAL_HTML + '<div class="foot-bottom">');
+    html = html.replace(/(<div class="drawer-group"><div class="grp">Ressorts<\/div>)/, (m) => SOCIAL_HTML + m);
+  }
   if (!html.includes('/assets/werbung.js')) html = html.replace(/<script src="\/assets\/einwilligung\.js[^"]*" defer><\/script>/, (m) => m + WERBUNG_JS);
   // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
   html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/tipp\/")/g, '$1<a href="/tipp/">Tipp</a>');

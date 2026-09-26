@@ -390,3 +390,16 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
   .mainnav .navrow .navscroll>a{box-sizing:border-box;height:57px;display:inline-flex!important;align-items:center;padding:0!important;border-bottom:2px solid transparent!important}
   .mainnav .navrow .navscroll>a[aria-current],.mainnav .navrow .navscroll>a.ressort-open{border-bottom-color:var(--ma-red,#971725)!important}
 }
+
+/* Anzeige aufgeben im Kopf (KBS/Ordin 26.09.2026): jederzeit sichtbar.
+   Desktop mit Text, unter 768 px als Symbol mit 44 px Trefferflaeche. */
+.kopf-anzeige{display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border:1px solid var(--red,#971725);background:var(--red,#971725);color:#fdfbf8;font-family:var(--sans);font-size:13.5px;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;flex:none}
+.kopf-anzeige svg{width:16px;height:16px}
+.kopf-anzeige:hover{background:#77101b;border-color:#77101b;color:#fdfbf8}
+.kopf-anzeige:focus-visible{outline:2px solid var(--ink,#161616);outline-offset:2px}
+@media (max-width:767px){.kopf-anzeige{width:44px;height:44px;padding:0;justify-content:center}.kopf-anzeige span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.kopf-anzeige svg{width:20px;height:20px}}
+.drawer-anzeige{display:block;margin:12px 16px 4px;padding:13px 16px;background:var(--red,#971725);color:#fdfbf8!important;font-weight:700;text-align:center;text-decoration:none}
+.social-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.social-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--line,#ddd);text-decoration:none;font-weight:600;font-size:14px}
+.social-links svg{width:20px;height:20px}
+@media (min-width:768px) and (max-width:1180px){.mast-actions .header-local{display:none!important}}

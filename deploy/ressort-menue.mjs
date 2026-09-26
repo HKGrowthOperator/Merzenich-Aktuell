@@ -48,7 +48,7 @@ const heute = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).fo
 const termine = (latest.events || [])
   .filter((e) => String(e.start || '').slice(0, 10) >= heute)
   .sort((x, y) => String(x.start).localeCompare(String(y.start)))
-  .slice(0, 2)
+  .slice(0, 4)
   .map((e) => ({ titel: e.title, url: new URL(e.url, 'https://x/').pathname, ort: e.location || null, datum: e.start, bild: null, termin: true }));
 
 // Aus den zehn neuesten Beitraegen zuerst die mit eigenem Bild, sonst die
@@ -59,7 +59,7 @@ for (const r of quelle.ressorts) {
   if (!zielDa(r.href)) fehler.push(`${r.titel}: Ressortseite ${r.href} fehlt`);
   for (const g of r.gruppen) for (const [label, href] of g.links) if (!zielDa(href)) fehler.push(`${r.titel} / ${g.titel}: "${label}" -> ${href} fehlt`);
   const neu = r.href === '/termine/' ? termine
-    : bebildertZuerst(artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]).slice(0, 10)).slice(0, 2).map(beitrag);
+    : bebildertZuerst(artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]).slice(0, 12)).slice(0, 4).map(beitrag);
   ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }

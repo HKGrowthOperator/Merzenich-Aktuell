@@ -104,3 +104,13 @@
 .drawer-ressort__gruppe{margin:12px 0 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a9a49b}
 .drawer-group .drawer-ressort__liste a{min-height:40px;padding:6px 0;font-size:15px;color:#e9e6e0}
 @media (prefers-reduced-motion:reduce){.drawer-ressort__auf::before{transition:none}}
+
+/* Grosses Aufklappmenue wie bei Oberberg Aktuell (KBS/Ordin 26.09.2026):
+   vier Bildteaser je Ressort im 2x2-Raster, Bild ueber der Zeile. */
+@media (min-width:1121px){
+  .ressort-dropdown__inner{grid-template-columns:200px minmax(300px,1fr) minmax(460px,1.35fr);gap:32px;padding-top:26px;padding-bottom:30px}
+  .ressort-dropdown__latest{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-content:start}
+  .ressort-dropdown__latest>.ressort-dropdown__eyebrow{grid-column:1/-1;margin-bottom:0}
+  .ressort-dropdown__story{grid-template-columns:1fr;gap:8px;padding:0;margin:0;border-bottom:0}
+  .ressort-dropdown__story-copy strong{font-size:15.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+}
