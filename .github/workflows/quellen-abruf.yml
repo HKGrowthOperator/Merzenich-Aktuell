@@ -1,15 +1,20 @@
 name: Quellen abrufen (Recherche)
 
-# Holt Feuerwehr-Einsaetze, Presseportal (Polizei), Gemeinde, Schulen und die
-# Jobboerse der Bundesagentur als Rohdaten nach imports/quellen/
+# Holt Feuerwehr-Einsaetze, Presseportal (Polizei), Gemeinde, Schulen,
+# regionale/offizielle Stellenquellen und Trauer-Recherchequellen als Rohdaten nach imports/quellen/
 # (deploy/quellen-abruf.mjs). Veroeffentlicht nichts auf der Seite.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/quellen-abruf.mjs'
+      - '.github/workflows/quellen-abruf.yml'
   schedule:
     - cron: '10 5 * * *'
   workflow_dispatch:
     inputs:
       nur:
-        description: 'Nur diese Quellen (kommagetrennt: feuerwehr,polizei,gemeinde,heimatinfo,schulen,jobs,quellbilder), leer = alle'
+        description: 'Nur diese Quellen (kommagetrennt: feuerwehr,polizei,gemeinde,heimatinfo,schulen,jobs,trauer,quellbilder), leer = alle'
         type: string
         default: ''
 
