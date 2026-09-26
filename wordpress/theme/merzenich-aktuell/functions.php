@@ -104,6 +104,30 @@ function ma_theme_home_excluded_category_ids(): array {
     return $ids;
 }
 
+/**
+ * Startseite ohne Sport (Entscheidung KBS 26.09.2026). Die Rubrik Sport
+ * faellt schon per category__not_in heraus; die Regel des Core-Plugins
+ * (ma_is_sport_post) erkennt zusaetzlich Sportmeldungen in anderen Rubriken,
+ * etwa eine Fanclub-Fahrt unter Vereine. Blaulicht, Rathaus und Wirtschaft
+ * gelten nie als Sport. Ohne Plugin bleibt es beim Kategorieausschluss.
+ */
+function ma_theme_is_sport_post($post): bool {
+    return function_exists('ma_is_sport_post') ? ma_is_sport_post($post) : false;
+}
+
+function ma_theme_without_sport(array $posts): array {
+    return array_values(array_filter($posts,static fn($p)=>$p instanceof WP_Post && !ma_theme_is_sport_post($p)));
+}
+
+/** Holt mehr als noetig, filtert Sport heraus und kuerzt auf $want. */
+function ma_theme_home_posts(array $args,int $want): array {
+    $args['posts_per_page']=max($want*3,$want+10);
+    $args['no_found_rows']=true;
+    $args['category__not_in']=array_values(array_unique(array_merge((array)($args['category__not_in']??[]),ma_theme_home_excluded_category_ids())));
+    $q=new WP_Query($args);
+    return array_slice(ma_theme_without_sport((array)$q->posts),0,$want);
+}
+
 function ma_theme_photo_of_day(): ?array {
     $q=new WP_Query([
         'post_type'=>'post','post_status'=>'publish','posts_per_page'=>20,
@@ -115,9 +139,10 @@ function ma_theme_photo_of_day(): ?array {
         ],
         'orderby'=>'date','order'=>'DESC',
     ]);
-    if(!$q->posts) return null;
-    $index=(int)wp_date('z') % count($q->posts);
-    $post=$q->posts[$index];
+    $posts=ma_theme_without_sport((array)$q->posts);
+    if(!$posts) return null;
+    $index=(int)wp_date('z') % count($posts);
+    $post=$posts[$index];
     $bild=ma_content_image($post,'large');
     if(empty($bild['url'])) return null;
     return ['post'=>$post,'bild'=>$bild];
@@ -184,7 +209,7 @@ function ma_theme_publish_guide(string $type): string {
 function ma_theme_hero_post(): ?WP_Post {
     $now=current_time('Y-m-d H:i:s');
     $pinned=new WP_Query([
-        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>1,'orderby'=>'date','order'=>'DESC',
+        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>5,'orderby'=>'date','order'=>'DESC',
         'category__not_in'=>ma_theme_home_excluded_category_ids(),
         'meta_query'=>[
             'relation'=>'AND',
@@ -197,7 +222,8 @@ function ma_theme_hero_post(): ?WP_Post {
             ],
         ],
     ]);
-    if($pinned->posts) return $pinned->posts[0];
+    $pinned_posts=ma_theme_without_sport((array)$pinned->posts);
+    if($pinned_posts) return $pinned_posts[0];
 
     $since=gmdate('Y-m-d H:i:s',time()-7*DAY_IN_SECONDS);
     $q=new WP_Query([
@@ -205,10 +231,11 @@ function ma_theme_hero_post(): ?WP_Post {
         'category__not_in'=>ma_theme_home_excluded_category_ids(),
         'date_query'=>[['after'=>$since,'inclusive'=>true]],'orderby'=>'date','order'=>'DESC',
     ]);
-    if(!$q->posts) return null;
+    $candidates=ma_theme_without_sport((array)$q->posts);
+    if(!$candidates) return null;
 
     $best=null;$best_score=-INF;$now_ts=time();
-    foreach($q->posts as $post){
+    foreach($candidates as $post){
         $age=max(0,($now_ts-get_post_time('U',true,$post))/DAY_IN_SECONDS);
         $fresh=max(0,100-($age/7*100));
         $local=ma_theme_is_local_post((int)$post->ID)?100:75;

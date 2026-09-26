@@ -392,6 +392,7 @@ function ma_partner_admin_page(): void {
 
     echo '<div class="wrap"><h1>Partner-Zugänge & Freigaben</h1>';
     echo '<p>Polizei, Feuerwehr, Vereine, Rathaus, Unternehmen und Immobilienpartner erhalten nur ihren eigenen Arbeitsbereich. Veröffentlichung bleibt immer bei der Redaktion.</p>';
+    echo '<p class="description">Anträge aus dem Formular <code>[ma_partner_antrag]</code> kommen per E-Mail an die Administrationsadresse; ein Konto entsteht erst hier. Werbekontingente der Unternehmen stehen am jeweiligen Benutzerprofil. Freigaben und Ablehnungen melden sich per E-Mail beim Partner.</p>';
     if ($meldung !== '') echo '<div class="notice notice-info"><p>'.esc_html($meldung).'</p></div>';
 
     echo '<div style="display:grid;grid-template-columns:minmax(320px,520px) minmax(0,1fr);gap:28px;align-items:start">';

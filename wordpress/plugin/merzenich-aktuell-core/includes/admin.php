@@ -91,7 +91,8 @@ function ma_ads_settings_page(): void {
     echo '<div class="wrap"><h1>Werbung</h1><p>Werbemittel selbst unter <strong>Werbung</strong> anlegen. Ohne aktive Kampagne wird kein leerer Platz ausgegeben.</p><form method="post">';
     wp_nonce_field('ma_ads_save');
     echo '<p><label><input type="checkbox" name="global" '.checked($enabled,1,false).'> Werbung global AN</label></p>';
-    foreach(ma_ad_slots() as $s) echo '<p><label><input type="checkbox" name="slot['.esc_attr($s).']" '.checked($slots[$s]??0,1,false).'> '.esc_html($s).'</label></p>';
+    echo '<p class="description">Mehrere laufende Anzeigen auf demselben Platz wechseln sich ab (Rotation). Die Werbebänder 1 bis 6 stehen auf der Startseite zwischen den Meldungsblöcken. Kontingente der Unternehmen: am jeweiligen Benutzerprofil.</p>';
+    foreach(ma_ad_slots() as $s) echo '<p><label><input type="checkbox" name="slot['.esc_attr($s).']" '.checked($slots[$s]??0,1,false).'> '.esc_html(ma_ad_slot_label($s)).' <code>'.esc_html($s).'</code></label></p>';
     echo '<p><button class="button button-primary" name="ma_ads_save">Speichern</button></p></form></div>';
 }
 

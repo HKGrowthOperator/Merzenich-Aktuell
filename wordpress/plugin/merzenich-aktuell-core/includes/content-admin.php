@@ -166,13 +166,17 @@ function ma_render_tip_meta_box(WP_Post $post): void {
 function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Slot in Merzenich Aktuell → Werbung aktiviert sein.');
-    $slots = ma_ad_slots();
-    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
-    if ($partner && ($partner['role'] ?? '') === 'ma_wirtschaft_partner') {
-        $erlaubt = ['homepage_sidebar_top','homepage_sidebar_middle','homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4','homepage_tip'];
-        $slots = array_values(array_intersect($slots,$erlaubt));
+    // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
+    // (Benutzerprofil, Voreinstellung: alle Werbebaender der Startseite).
+    $slots = function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : ma_ad_slots();
+    $options = ['' => 'Bitte wählen'];
+    foreach ($slots as $slot) $options[$slot] = ma_ad_slot_label($slot);
+    ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),$options);
+    if (function_exists('ma_ad_quota_applies') && ma_ad_quota_applies()) {
+        $quota = ma_ad_quota_for_user((int)get_current_user_id());
+        echo '<tr><th scope="row">Ihr Kontingent</th><td>'.esc_html((string)$quota['max']).' gleichzeitig laufende oder eingereichte Anzeige'.($quota['max'] === 1 ? '' : 'n').'.';
+        echo '<p class="description">Jede Anzeige wird vor der Veröffentlichung von der Redaktion geprüft. Mehr Plätze: Preis auf Anfrage bei der Redaktion.</p></td></tr>';
     }
-    ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),array_combine($slots,$slots));
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
     ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
@@ -243,7 +247,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         $raw = $type==='bool' ? isset($_POST[$key]) : ($_POST[$key] ?? '');
         $value = ma_sanitize_content_admin_value($type,$raw);
         if ($partner && $post->post_type === 'ma_ad' && $key === 'ma_ad_slot') {
-            $allowed_partner_slots = ['homepage_sidebar_top','homepage_sidebar_middle','homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4','homepage_tip'];
+            $allowed_partner_slots = function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : [];
             if (!in_array($value,$allowed_partner_slots,true)) $value = '';
         }
         if ($value==='') delete_post_meta($post_id,$key);

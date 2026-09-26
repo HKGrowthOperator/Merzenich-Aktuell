@@ -17,7 +17,9 @@ function ma_register_content_types(): void {
         'ma_obituary' => ['Traueranzeigen','Traueranzeige','traueranzeigen','dashicons-heart'],
         'ma_family_notice' => ['Familienanzeigen','Familienanzeige','familienanzeigen','dashicons-groups'],
         'ma_club' => ['Vereine','Verein','vereine','dashicons-groups'],
-        'ma_business' => ['Betriebe','Betrieb','betriebe','dashicons-store'],
+        // Beschriftung "Unternehmen" wie in der Navigation; die Adresse
+        // /betriebe/ bleibt, damit bestehende Links weiter funktionieren.
+        'ma_business' => ['Unternehmen','Unternehmen','betriebe','dashicons-store'],
         'ma_tip' => ['Tipps','Tipp','tipp','dashicons-star-filled'],
         'ma_ad' => ['Werbung','Werbemittel','werbung','dashicons-megaphone'],
     ];

@@ -9,13 +9,14 @@ $market_sections=[
 ];
 $sidebar_ads=function_exists('ma_render_ad') ? ma_render_ad('homepage_sidebar_top').ma_render_ad('homepage_sidebar_middle') : '';
 $exclude_categories=ma_theme_home_excluded_category_ids();
-$highlight_query=new WP_Query([
-  'post_type'=>'post','post_status'=>'publish','posts_per_page'=>5,
+// Startseite ohne Sport (KBS 26.09.2026): Rubrik Sport und Sportmeldungen
+// aus anderen Rubriken fallen heraus, siehe ma_theme_home_posts().
+$highlights=ma_theme_home_posts([
+  'post_type'=>'post','post_status'=>'publish',
   'post__not_in'=>$hero?[$hero->ID]:[],
   'category__not_in'=>$exclude_categories,
   'orderby'=>'date','order'=>'DESC',
-]);
-$highlights=$highlight_query->posts;
+],5);
 $highlight_ids=array_map(static fn($p)=>(int)$p->ID,$highlights);
 $photo_day=ma_theme_photo_of_day();
 ?>
@@ -95,22 +96,23 @@ $photo_day=ma_theme_photo_of_day();
     <div class="news-list">
       <?php
       $exclude=array_merge($hero?[$hero->ID]:[],$highlight_ids);
-      $news=new WP_Query([
-        'post_type'=>'post','post_status'=>'publish','posts_per_page'=>10,
+      $news=ma_theme_home_posts([
+        'post_type'=>'post','post_status'=>'publish',
         'post__not_in'=>$exclude,'category__not_in'=>$exclude_categories,
         'orderby'=>'date','order'=>'DESC'
-      ]);
+      ],12);
+      // Werbebaender 1 bis 6: je eines nach zwei Meldungen. Laufen auf einem
+      // Band mehrere Anzeigen, wechseln sie sich ab (Rotation im Plugin).
+      $bands=['homepage_band_1','homepage_band_2','homepage_band_3','homepage_band_4','homepage_band_5','homepage_band_6'];
       $index=0;
-      while($news->have_posts()):$news->the_post();
+      foreach($news as $news_post):
+        setup_postdata($GLOBALS['post']=$news_post);
         get_template_part('template-parts/card');
         $index++;
-        if($index===2) ma_theme_ad('homepage_band_1');
-        if($index===4) ma_theme_ad('homepage_band_2');
-        if($index===6) ma_theme_ad('homepage_band_3');
-        if($index===8) ma_theme_ad('homepage_band_4');
-        if($index===10) ma_theme_ad('homepage_feed_1');
-      endwhile;
+        if($index%2===0 && isset($bands[$index/2-1])) ma_theme_ad($bands[$index/2-1]);
+      endforeach;
       wp_reset_postdata();
+      ma_theme_ad('homepage_feed_1');
       ?>
     </div>
   </section>
