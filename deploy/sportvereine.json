@@ -1,0 +1,18 @@
+{
+  "_hinweis": "Sportvereine der Gemeinde Merzenich fuer die rechte Spalte von /sport/. Quelle: Vereinsverzeichnis der Heimat-Info-App der Gemeinde (imports/quellen/heimatinfo.json, abgerufen 26.09.2026). Name wie dort angegeben; Ort nur, wenn er im Vereinsnamen steht. seite: eigene Seite auf Merzenich Aktuell, sonst der Eintrag bei Heimat-Info.",
+  "quelle": "Heimat-Info Merzenich",
+  "abgerufen": "2026-09-26",
+  "vereine": [
+    {"name": "SC 1919 Merzenich e.V.", "sport": "Fußball", "ort": "Merzenich", "seite": "/sc-1919-merzenich/", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc1919merzenich-e-v"},
+    {"name": "SC Merzenich Tennisabteilung", "sport": "Tennis", "ort": "Merzenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc-merzenich-tennisabteilung"},
+    {"name": "SCM Badminton Merzenich", "sport": "Badminton", "ort": "Merzenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/scm-badminton-merzenich"},
+    {"name": "FC Golzheim 1928 e.V.", "sport": "Fußball", "ort": "Golzheim", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-golzheim-1928-e-v"},
+    {"name": "FC Rhenania Girbelsrath 1931 e.V.", "sport": "Fußball", "ort": "Girbelsrath", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-rhenania-girbelsrath-1931-e-v"},
+    {"name": "TV Merzenich 1882 e.V.", "sport": "Turnverein", "ort": "Merzenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv-merzenich-1882-e-v"},
+    {"name": "TV 1910 e.V. Girbelsrath", "sport": "Turnverein", "ort": "Girbelsrath", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv1910e-v-girbelsrath"},
+    {"name": "Billardsportclub Merzenich 1970 e.V.", "sport": "Billard", "ort": "Merzenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/billardsportclub-merzenich-1970-e-v"},
+    {"name": "Gut Schuss Merzenich", "sport": "Schießsport", "ort": "Merzenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gut-schuss-merzenich"},
+    {"name": "KK Klub Waldesgrün Morschenich 1973 e.V.", "sport": "Schießsport", "ort": "Morschenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kk-klub-waldesgrun"},
+    {"name": "UL-Aero-Club Morschenich e.V.", "sport": "Luftsport", "ort": "Morschenich", "heimatinfo": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/ul-aero-club-morschenich-e-v"}
+  ]
+}

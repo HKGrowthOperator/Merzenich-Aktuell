@@ -9,6 +9,8 @@
  * Idempotent. Aufruf: node deploy/sport-prerender.mjs [--check]
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { termineAusSeiten } from './lib-termine.mjs';
+import { sportTermin } from './lib-artikel.mjs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -121,6 +123,43 @@ function vereinskanal() {
   return false;
 }
 
+
+// ------------------------------------------------ /sport/: rechte Spalte
+// KBS/Ordin 26.09.2026: "rechts ist es leer". Unter "Sport-Service" folgen
+// naechste Spiele und Sporttermine, die Sportvereine der Gemeinde (deploy/
+// sportvereine.json, Quelle Heimat-Info) und eine klebende Werbeflaeche.
+// Nur echte Daten; ohne kuenftige Termine entfaellt die Liste.
+const VEREINE = JSON.parse(readFileSync(join(wurzel, 'deploy', 'sportvereine.json'), 'utf8'));
+const LEISTE_RE = /<!-- sport:leiste:start -->[\s\S]*?<!-- sport:leiste:end -->/;
+function leiste() {
+  const jetzt = new Date(daten.generated);
+  const spiele = [];
+  const n = daten.nextMatch && new Date(daten.nextMatch.date) > jetzt ? daten.nextMatch : null;
+  if (n) spiele.push(`<li><time datetime="${esc(n.date)}">${tagZeit(n.date)}</time><a href="/sc-1919-merzenich/">${esc(n.home)} – ${esc(n.away)}</a><small>Kreisliga A · Quelle ${esc(quelle)}</small></li>`);
+  const heute = new Date();
+  for (const t of termineAusSeiten(site).filter((x) => sportTermin(x) && x.ende >= heute).sort((a, b) => a.start - b.start).slice(0, 4)) {
+    spiele.push(`<li><time datetime="${t.start.toISOString()}">${tagZeit(t.start.toISOString())}</time><a href="/termine/${esc(t.slug)}/">${esc(t.titel)}</a>${t.ort ? `<small>${esc(t.ort)}</small>` : ''}</li>`);
+  }
+  const vereine = VEREINE.vereine.map((v) => {
+    const ziel = v.seite || v.heimatinfo;
+    const extern = !v.seite;
+    return `<li><a href="${esc(ziel)}"${extern ? ' target="_blank" rel="noopener"' : ''}>${esc(v.name)}</a><small>${esc(v.sport)} · ${esc(v.ort)}</small></li>`;
+  }).join('');
+  return '<!-- sport:leiste:start -->'
+    + (spiele.length ? `<div class="sidebox sport-leiste"><h3>Nächste Spiele</h3><ol class="sport-termine">${spiele.join('')}</ol><p><a href="/termine/">Alle Termine</a></p></div>` : '')
+    + `<div class="sidebox sport-leiste"><h3>Sportvereine in der Gemeinde</h3><ul class="sport-vereine">${vereine}</ul><p class="sport-leiste-quelle">Verzeichnis: ${esc(VEREINE.quelle)}, Stand ${dmy(`${VEREINE.abgerufen}T12:00:00+02:00`)}</p></div>`
+    + '<!-- sport:leiste:end -->';
+}
+function mitLeiste(html) {
+  const l = leiste();
+  if (LEISTE_RE.test(html)) return html.replace(LEISTE_RE, () => l);
+  const i = html.indexOf('<aside class="sidebar">');
+  const j = i >= 0 ? html.indexOf('</aside>', i) : -1;
+  if (j < 0) { console.error('sport/index.html: rechte Spalte fehlt'); return html; }
+  // Die Werbeflaeche steht hinter der Leiste und wird von deploy/anzeigen.mjs gefuellt.
+  return html.slice(0, j) + l + '<!-- werbung:sport:start --><!-- werbung:sport:end -->' + html.slice(j);
+}
+
 const MODUL_RE = /<div class="sports-module"[^>]*>[\s\S]*?<\/section><\/div>/;
 const KACHEL_RE = /<div class="sc-stand"[\s\S]*?<\/div><p class="sc-stand-quelle">[\s\S]*?<\/p>/;
 let geaendert = 0, fehler = 0;
@@ -134,6 +173,7 @@ for (const rel of ['sport/index.html']) {
   const k = kacheln();
   if (k && KACHEL_RE.test(neu)) neu = neu.replace(KACHEL_RE, () => k);
   neu = mitEcke(neu);
+  neu = mitLeiste(neu);
   if (neu !== alt) { geaendert++; if (!nurPruefen) writeFileSync(pfad, neu); }
 }
 if (vereinskanal()) geaendert++;
