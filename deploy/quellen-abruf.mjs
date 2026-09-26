@@ -13,7 +13,8 @@
  *   gemeinde.json   "Aktuelles" der Gemeinde Merzenich + Beitraege
  *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
  *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen)
- *   jobs.json       Jobboerse der Bundesagentur, Umkreis 25 km um Merzenich
+ *   jobs.json       Offizielle/regionale Stellenquellen (Gemeinde, Kreis Düren, jobsDN)
+ *   trauer.json     Trauer-Recherchequellen; keine automatische Veröffentlichung von Namen
  *   bilder/         Fotos der Polizei zu Meldungen aus inhalte/meldungen
  *                   (Presseportal, "highlight"-Fassung) zur Sichtung;
  *                   bilder/index.json nennt Quelle, alt-Text und Groesse.
@@ -154,27 +155,40 @@ const QUELLEN = {
     listen: ['https://kgs.gemeinde-merzenich.de/aktuelles/index.php', 'https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php'],
     detail: /^https:\/\/kgs(-golzheim)?\.gemeinde-merzenich\.de\/aktuelles\/[^?#]+\.php$/, max: 20,
   }),
-  // Jobboerse der Bundesagentur: Arbeit (angebotsart 1) und Ausbildung (4).
+  // Stellen-Recherche: Die BA-Listenschnittstelle antwortet aus GitHub Actions
+  // seit September 2026 mit 403. Die Einzelstellen-Prüfung in
+  // deploy/markt-abgleich.mjs bleibt bewusst bestehen, weil deren Jobdetail-
+  // Endpunkt weiterhin funktioniert. Neue Stellen werden stattdessen über
+  // offizielle und regionale, öffentlich erreichbare Quellen recherchiert.
   jobs: async () => {
-    const seiten = [];
-    for (const art of [1, 4]) {
-      let gesammelt = 0;
-      for (let page = 1; page <= 4; page++) {
-        const frage = `wo=Merzenich&umkreis=25&size=100&page=${page}&angebotsart=${art}`;
-        let url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs?${frage}`;
-        let r = await holen(url, 'application/json');
-        // Zweiter bekannter Pfad der Schnittstelle (App-Variante).
-        if (r.status !== 200) { const erst = r; url = `https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?${frage}`; r = await holen(url, 'application/json'); if (r.status !== 200) r.fehlertext = `pc/v4/jobs ${erst.status}: ${erst.fehlertext || ''} | app/jobs ${r.status}: ${r.fehlertext || ''}`; }
-        let daten = null;
-        try { daten = JSON.parse(r.text); } catch { /* bleibt null, der Status sagt warum */ }
-        const stellen = daten?.stellenangebote ?? [];
-        seiten.push({ url, abgerufen: new Date().toISOString(), status: r.status, gesamt: daten?.maxErgebnisse ?? null, stellen, ...(r.fehlertext ? { fehlertext: r.fehlertext } : {}) });
-        gesammelt += stellen.length;
-        await pause(800);
-        if (!stellen.length || gesammelt >= (Number(daten?.maxErgebnisse) || 0)) break;
-      }
-    }
-    return { listen: seiten };
+    const listen = [];
+    for (const url of [
+      'https://www.gemeinde-merzenich.de/politik/stellenanngebote.php',
+      'https://www.kreis-dueren.de/karriere',
+      'https://www.jobsdn.de/jobportal',
+    ]) listen.push(await seite(url));
+    return {
+      listen,
+      details: [],
+      hinweis: 'Recherche ohne BA-Listen-API; Einzelstellen werden separat an ihrer Originalquelle geprüft.',
+    };
+  },
+
+  // Traueranzeigen sind sensibel. Die Trefferlisten dienen ausschließlich als
+  // Recherchehinweis. Die Suche nach "Merzenich" kann auch den Familiennamen
+  // Merzenich außerhalb der Gemeinde treffen. Deshalb werden hier keine
+  // Personen oder Datumsangaben automatisch extrahiert oder publiziert.
+  trauer: async () => {
+    const listen = [];
+    for (const url of [
+      'https://www.wirtrauern.de/traueranzeigen-suche/merzenich',
+      'https://www.bestattungen-kick.de/',
+    ]) listen.push(await seite(url));
+    return {
+      listen,
+      details: [],
+      hinweis: 'Keine automatische Veröffentlichung; jeder Treffer benötigt redaktionelle Orts- und Quellenprüfung.',
+    };
   },
 };
 
