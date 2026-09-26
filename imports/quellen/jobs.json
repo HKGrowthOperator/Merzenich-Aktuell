@@ -1,22 +1,167 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-09-25T10:14:34.588Z",
+ "abgerufen": "2026-09-26T09:25:59.852Z",
  "listen": [
   {
-   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?wo=Merzenich&umkreis=25&size=100&page=1&angebotsart=1",
-   "abgerufen": "2026-09-25T10:14:32.662Z",
-   "status": 403,
-   "gesamt": null,
-   "stellen": [],
-   "fehlertext": "pc/v4/jobs 403:   | app/jobs 403:  "
+   "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
+   "endUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
+   "abgerufen": "2026-09-26T09:25:54.652Z",
+   "status": 302,
+   "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
   },
   {
-   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/app/jobs?wo=Merzenich&umkreis=25&size=100&page=1&angebotsart=4",
-   "abgerufen": "2026-09-25T10:14:33.787Z",
-   "status": 403,
-   "gesamt": null,
-   "stellen": [],
-   "fehlertext": "pc/v4/jobs 403:   | app/jobs 403:  "
+   "url": "https://www.kreis-dueren.de/karriere",
+   "endUrl": "https://www.kreis-dueren.de/karriere",
+   "abgerufen": "2026-09-26T09:25:56.874Z",
+   "status": 200,
+   "titel": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS | Kreis Düren",
+   "meta": {
+    "og:title": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS",
+    "og:type": "website",
+    "og:url": "http://www.kreis-dueren.de/karriere",
+    "og:image": "http://www.kreis-dueren.de/openGraph-200x200.png",
+    "og:site_name": "Kreis Düren",
+    "og:locale": "de_DE",
+    "og:description": "Dein JOB unser KREIS Aktuelle Stellenangebote - Jetzt online bewerben!"
+   },
+   "text": "Der Kreis Düren steht vor einem spannenden Wandel. Auf den Flächen der Braunkohletagebauen im Kreisgebiet Düren entsteht eine der größten Seenlandschaften Deutschlands, die viele Touristen und Wassersportler anziehen wird. Gleichzeitig sind die Metropolen Köln, Düsseldorf und Aachen nur eine halbe Autostunde entfernt. Diesen Mix aus Großstadtnähe und ländlicher Verbundenheit schätzen heute schon 282.000 Menschen in 15 Städten und Gemeinden. Und künftig werden es noch mehr sein, für die WIR zusammen sorgen.\nDabei schätzen unsere rd. 1.400 Mitarbeitenden das sichere Arbeitsumfeld, in dem sich Berufs- und Privatleben leicht vereinbaren lassen - und das in einer Region mit erschwinglichem Bauland und bezahlbarer Kita-Betreuung. Interessiert, den Wandel mitzugestalten? Freie Jobs an unseren Standorten Düren und Jülich finden Sie unter ...\nWir bieten Arbeit, die buchstäblich Sinn-voll ist, dabei lassen wir uns von Werten wie Vertrauen und Verlässlichkeit leiten. Ein familiärer Umgang wie im Familienbetrieb plus vielseitige Aufgaben und Perspektiven wie im Konzern – das sind die Stärken des Arbeitgebers Kreis Düren!\nUnsere aktuellen Stellenausschreibungen\nBewerberportal Onlyfy\nWeitere Stellenausschreibungen\nPDF -Datei 1,41 MB\n2026_09_23 Stellenausschreibung_Ausbildung_Berufspraktikum\nBewerbungsfrist: 25.10.2026\nPDF -Datei 1,18 MB\n2026_09_24 Stellenausschreibung_Ausbildung_PIA\nBewerbungsfrist: 25.10.2026\nPDF -Datei 1,41 MB\n2026_09_24 Stellenausschreibung_Ausbildung_Berufspraktikum\nBewerbungsfrist: 25.10.2026\nPDF -Datei 1,18 MB\n2026_09_24 Stellenausschreibung_Ausbildung_PIA\nBewerbungsfrist: 25.10.2026\nPDF -Datei 226,10 kB\n2026_09_21 Stellenausschreibung_Pädagogische Leitung_Düren\nBewerbungsfrist: 09.10.2026\nPDF -Datei 231,43 kB\n2026_09_21 Stellenausschreibung_Stellvertretende Kita-Leitung_Villa Käferkinder_Linnich.pdf\nBewerbungsfrist: 04.10.2026\nPDF -Datei 279,93 kB\nStellenausschreibung GIS: Stellv. Hausmeister/-in \"Berufskolleg Kaufmännische Schulen Düren\" (m/w/d)\nBewerbungsfrist: 30.09.2026\nPDF -Datei 277,23 kB\nStellenausschreibung GIS: Techn. Sachbearbeiter/-in \"Systemadministration digitale Zutrittssysteme\" (m/w/d)\nBewerbungsfrist: 30.09.2026\nPDF -Datei 653,88 kB\nStellenausschreibung der Rettungsdienst Kreis Düren AöR RDKD: Notfallsanitäter/-innen (m/w/d)\nPDF -Datei 677,43 kB\nStellenausschreibung der Rettungsdienst Kreis Düren AöR RDKD: Rettungssanitäter/-innen (m/w/d)\nPDF -Datei 71,06 kB\nAusschreibung Bundesfreiwilligendienst an den Förderschulen des Förderschulzweckverbandes im Kreis Düren\nArbeitgeber Kreis Düren\nJobs & Karriere\nArbeitgeber Kreis Düren\nWir suchen Sie! Mit all Ihren Ideen und Talenten.\nArbeitgeber Kreis Düren\nDuales Studium und Ausbildung\nJetzt informieren und bewerben.\nJobs & Karriere\nKreisverwaltung Düren vorgestellt\nWas sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...\nDownloads\nLeitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB\nKontakt\nPersonalservice und zentrale Verwaltungsaufgaben\nE-Mail\nOrt\nZeiten\nKontakt\nOrt\nPersonalservice und zentrale Verwaltungsaufgaben\nKreisverwaltung Düren\nBismarckstr. 16\n52351 Düren\nKarte öffnen (Google Maps) (Öffnet in einem neuen Tab)\nPostanschrift\nKreis Düren\nPostfach\n52348 Düren\nErreichbarkeit Barrierefreier Zugang\nZeiten\nMo bis Do: 8 bis 16 Uhr\nFr: 8 bis 13 Uhr\nKontakt\nE-Mailadresse\nwww.kreis-dueren.de (Öffnet in einem neuen Tab)\nweitere Informationen\nAmtsleitung\nHerr Grau\nAmtsleitung\nAnruf E-Mail\nOrt\nZeiten\nKontakt\nOrt\nHerr Grau\nAmtsleitung\nRaum Zimmer 241 (Haus A)\nBismarckstr. 16\n52351 Düren\nKarte öffnen (Google Maps) (Öffnet in einem neuen Tab)\nPostanschrift\nKreis Düren\nPostfach\n52348 Düren\nZeiten\nMo bis Do: 8 bis 16 Uhr\nFr: 8 bis 13 Uhr\nKontakt\n02421 221011001\nE-Mailadresse\nwww.kreis-dueren.de (Öffnet in einem neuen Tab)\nweitere Informationen\nAnsprechpartnerin\nFrau Sutter\nSachgebietsleitung\nAnruf E-Mail\nOrt\nZeiten\nKontakt\nOrt\nFrau Sutter\nSachgebietsleitung\nRaum Zimmer 240 (Haus A)\nBismarckstr. 16\n52351 Düren\nKarte öffnen (Google Maps) (Öffnet in einem neuen Tab)\nPostanschrift\nKreis Düren\nPostfach\n52348 Düren\nZeiten\nMo bis Do: 8 bis 16 Uhr\nFr: 8 bis 13 Uhr\nKontakt\n02421 221011100\nE-Mailadresse\nwww.kreis-dueren.de (Öffnet in einem neuen Tab)\nweitere Informationen",
+   "links": [
+    {
+     "text": "",
+     "href": "https://www.kreis-dueren.de/karriere#MzI0MDk3MDc1"
+    },
+    {
+     "text": "PDF -Datei 1,41 MB 2026_09_23 Stellenausschreibung_Ausbildung_Berufspraktikum Bewerbungsfrist: 25.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/2026_09_23-Stellenausschreibung_Ausbildung_Berufspraktikum.pdf"
+    },
+    {
+     "text": "PDF -Datei 1,18 MB 2026_09_24 Stellenausschreibung_Ausbildung_PIA Bewerbungsfrist: 25.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/2026_09_23-Stellenausschreibung_Ausbildung_PIA.pdf"
+    },
+    {
+     "text": "PDF -Datei 1,41 MB 2026_09_24 Stellenausschreibung_Ausbildung_Berufspraktikum Bewerbungsfrist: 25.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/nachwunchkraefte/2026_09_23-Stellenausschreibung_Ausbildung_Berufspraktikum.pdf"
+    },
+    {
+     "text": "PDF -Datei 1,18 MB 2026_09_24 Stellenausschreibung_Ausbildung_PIA Bewerbungsfrist: 25.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/nachwunchkraefte/2026_09_23-Stellenausschreibung_Ausbildung_PIA.pdf"
+    },
+    {
+     "text": "PDF -Datei 226,10 kB 2026_09_21 Stellenausschreibung_Pädagogische Leitung_Düren Bewerbungsfrist: 09.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/2026_09_08-Stellenausschreibung_paed.Leitung_Vollzeit_befristet.pdf"
+    },
+    {
+     "text": "PDF -Datei 231,43 kB 2026_09_21 Stellenausschreibung_Stellvertretende Kita-Leitung_Villa Käferkinder_Linnich.pdf Bewerbungsfrist: 04.10.2026",
+     "href": "https://www.kreis-dueren.de/microsite/kreismaeuse/medien-kreismaeuse/downloads/stellenausschreibungen/2026_09_21-Stellenausschreibung_Stellv.Leitung-Villa-Kaeferkinder-Linnich.pdf"
+    },
+    {
+     "text": "PDF -Datei 279,93 kB Stellenausschreibung GIS: Stellv. Hausmeister/-in \"Berufskolleg Kaufmännische Schulen Düren\" (m/w/d) Bewerbungsfrist: 30.09.2026",
+     "href": "https://www.kreis-dueren.de/wirtschaft/gesellschaften/gis/stellenausschreibungen/Stellenausschreibung_Hausmeister_Gruenpflege.pdf"
+    },
+    {
+     "text": "PDF -Datei 277,23 kB Stellenausschreibung GIS: Techn. Sachbearbeiter/-in \"Systemadministration digitale Zutrittssysteme\" (m/w/d) Bewerbungsfrist: 30.09.2026",
+     "href": "https://www.kreis-dueren.de/wirtschaft/gesellschaften/gis/stellenausschreibungen/Stellenausschreibung_Sachbearbeiterin_Systemadministration_digitale-Zutrittssysteme.pdf"
+    },
+    {
+     "text": "PDF -Datei 653,88 kB Stellenausschreibung der Rettungsdienst Kreis Düren AöR RDKD: Notfallsanitäter/-innen (m/w/d)",
+     "href": "https://www.kreis-dueren.de/aktuelles/stellenausschreibungen/Stellenausschreibung-Notsan-mwd.pdf"
+    },
+    {
+     "text": "PDF -Datei 677,43 kB Stellenausschreibung der Rettungsdienst Kreis Düren AöR RDKD: Rettungssanitäter/-innen (m/w/d)",
+     "href": "https://www.kreis-dueren.de/aktuelles/stellenausschreibungen/Stellenausschreibung-Rettsan-06-2026-mwd.pdf"
+    },
+    {
+     "text": "PDF -Datei 71,06 kB Ausschreibung Bundesfreiwilligendienst an den Förderschulen des Förderschulzweckverbandes im Kreis Düren",
+     "href": "https://www.kreis-dueren.de/aktuelles/stellenausschreibungen/Bundesfreiwilligendienst_Foerderschulzweckverband2022.pdf"
+    },
+    {
+     "text": "Jobs & Karriere Arbeitgeber Kreis Düren Wir suchen Sie! Mit all Ihren Ideen und Talenten.",
+     "href": "https://www.kreis-dueren.de/kreishaus/amt/amt11/arbeitgeber/arbeitgeber_Kreis_DN.php"
+    },
+    {
+     "text": "",
+     "href": "https://www.kreis-dueren.de/karriere#OTM2ODU5NTQ1"
+    },
+    {
+     "text": "Arbeitgeber Kreis Düren Duales Studium und Ausbildung Jetzt informieren und bewerben.",
+     "href": "https://www.kreis-dueren.de/kreishaus/amt/amt11/arbeitgeber/ausbildung.php"
+    },
+    {
+     "text": "",
+     "href": "https://www.kreis-dueren.de/karriere#MTAyNDU5MzA2NQ"
+    },
+    {
+     "text": "Jobs & Karriere Kreisverwaltung Düren vorgestellt Was sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...",
+     "href": "https://www.kreis-dueren.de/kreishaus/amt/amt11/arbeitgeber/Kreisverwaltung-Dueren-vorgestellt.php"
+    },
+    {
+     "text": "",
+     "href": "https://www.kreis-dueren.de/karriere#NzIwNjMzODA3"
+    },
+    {
+     "text": "Leitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB",
+     "href": "https://www.kreis-dueren.de/kreishaus/amt/amt11/pdf/Kreis-Dueren-Leitbild-2024.pdf"
+    },
+    {
+     "text": "Karte öffnen (Google Maps) (Öffnet in einem neuen Tab)",
+     "href": "https://www.google.com/maps/search/?api=1&query=Bismarckstr.+16%2C52351+D%C3%BCren%2CDeutschland"
+    },
+    {
+     "text": "www.kreis-dueren.de (Öffnet in einem neuen Tab)",
+     "href": "https://www.kreis-dueren.de/"
+    },
+    {
+     "text": "weitere Informationen",
+     "href": "https://www.kreis-dueren.de/vv/oe/d1/11/index.php"
+    },
+    {
+     "text": "Karte öffnen (Google Maps) (Öffnet in einem neuen Tab)",
+     "href": "https://www.google.com/maps/search/?api=1&query=Bismarckstr.+16%2C52351+D%C3%BCren%2CDeutschland"
+    },
+    {
+     "text": "www.kreis-dueren.de (Öffnet in einem neuen Tab)",
+     "href": "https://www.kreis-dueren.de/"
+    },
+    {
+     "text": "weitere Informationen",
+     "href": "https://www.kreis-dueren.de/vv/personen/dezernat_1/11_personalservice_und_zentrale_verwaltungsaufgaben/Grau.gu-v-M.php"
+    },
+    {
+     "text": "Karte öffnen (Google Maps) (Öffnet in einem neuen Tab)",
+     "href": "https://www.google.com/maps/search/?api=1&query=Bismarckstr.+16%2C52351+D%C3%BCren%2CDeutschland"
+    },
+    {
+     "text": "www.kreis-dueren.de (Öffnet in einem neuen Tab)",
+     "href": "https://www.kreis-dueren.de/"
+    },
+    {
+     "text": "weitere Informationen",
+     "href": "https://www.kreis-dueren.de/vv/personen/dezernat_1/11_personalservice_und_zentrale_verwaltungsaufgaben/Sutter.ko-v-N.php"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://www.jobsdn.de/jobportal",
+   "endUrl": "https://www.jobsdn.de/jobportal",
+   "abgerufen": "2026-09-26T09:25:58.652Z",
+   "status": 200,
+   "titel": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
+   "meta": {
+    "description": "Das Stellenportal für den Kreis Düren: freie Stellen, Ausbildungsplätze und Weiterbildungen aus der Region – kostenlos suchen, ohne Anmeldung, täglich aktuell.",
+    "og:title": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
+    "og:description": "Das Stellenportal für den Kreis Düren: freie Stellen, Ausbildungsplätze und Weiterbildungen aus der Region – kostenlos suchen, ohne Anmeldung, täglich aktuell.",
+    "og:site_name": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
+    "og:locale": "de_DE",
+    "og:type": "website",
+    "og:url": "https://www.jobsdn.de/",
+    "og:image": "https://www.jobsdn.de/api/branding/og-image"
+   },
+   "text": "",
+   "links": [],
+   "bilder": []
   }
- ]
+ ],
+ "details": [],
+ "hinweis": "Recherche ohne BA-Listen-API; Einzelstellen werden separat an ihrer Originalquelle geprüft."
 }
