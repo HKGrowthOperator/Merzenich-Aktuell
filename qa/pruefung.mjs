@@ -748,7 +748,8 @@ async function pruefeSportfreieStartseite() {
 function pruefeWerbung() {
   const html = lies('chatgpt-site/index.html');
   const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
-  if (!main.includes('<!-- start:oben:end --><!-- werbung:band-1:start -->')) fehler('Werbung', 'Kein Werbeband direkt nach der Buehne.');
+  // Zwischen Buehne und erstem Band darf nur das Cockpit (Merzenich jetzt) stehen.
+  if (!/<!-- start:oben:end -->(?:<!-- cockpit:start -->[\s\S]*?<!-- cockpit:end -->)?<!-- werbung:band-1:start -->/.test(main)) fehler('Werbung', 'Kein Werbeband direkt nach der Buehne.');
   for (const [id, n] of [['blaulicht', 3], ['rathaus', 4], ['wirtschaft', 5], ['vereine', 6]]) {
     if (!main.includes(`<!-- start:${id}:end --><!-- werbung:band-${n}:start -->`)) fehler('Werbung', `Kein Werbeband direkt nach der Rubrik ${id}.`);
   }
