@@ -319,7 +319,7 @@ function pruefeServiceInhalte() {
     }
     if (zeilen === 0) hinweis('Service', 'termine/: keine data-event-row gefunden - Terminliste leer oder Markup geaendert.');
   }
-  for (const datei of ['chatgpt-site/index.html', termine, 'chatgpt-site/immobilien/index.html', 'chatgpt-site/jobs/index.html']) {
+  for (const datei of ['chatgpt-site/index.html', termine, 'chatgpt-site/immobilien/index.html', 'chatgpt-site/jobs/index.html', 'chatgpt-site/traueranzeigen/index.html']) {
     if (!gibtEs(datei)) continue;
     const text = lies(datei);
     for (const [muster, label] of DEMO_MARKER) if (muster.test(text)) fehler('Service', `${datei} enthaelt ${label}.`);
@@ -341,6 +341,55 @@ function pruefeServiceInhalte() {
     } catch { /* oben gemeldet */ }
   }
 }
+
+// ----------------------------------------------- 7b. Produktionsquelle
+// Der historische Generator darf seinen lokalen dist-Ordner niemals wieder
+// als Produktionsquelle etablieren. Coolify und Deploy muessen chatgpt-site/
+// ausliefern; dist bleibt unversionierter, lokaler Build-Output.
+function pruefeProduktionsquelle() {
+  const docker = 'deploy/coolify/Dockerfile';
+  const workflow = '.github/workflows/deploy.yml';
+  const ignore = 'site-source/.gitignore';
+
+  if (!gibtEs(docker)) fehler('Deployment', `${docker} fehlt.`);
+  else {
+    const text = lies(docker);
+    if (!/COPY\s+chatgpt-site\/\s+\/usr\/share\/nginx\/html\//.test(text)) {
+      fehler('Deployment', 'Coolify kopiert nicht eindeutig chatgpt-site/ als Produktionsstand.');
+    }
+    if (/site-source\/dist/.test(text)) {
+      fehler('Deployment', 'Coolify referenziert den veralteten lokalen Build site-source/dist/.');
+    }
+  }
+
+  if (!gibtEs(workflow)) fehler('Deployment', `${workflow} fehlt.`);
+  else {
+    const text = lies(workflow);
+    if (!/chatgpt-site/.test(text)) fehler('Deployment', 'Deploy-Workflow referenziert chatgpt-site/ nicht.');
+    if (/site-source\/dist/.test(text)) fehler('Deployment', 'Deploy-Workflow referenziert site-source/dist/.');
+  }
+
+  if (!gibtEs(ignore) || !/(^|\n)dist\/\s*($|\n)/.test(lies(ignore))) {
+    fehler('Deployment', 'site-source/dist/ ist nicht über site-source/.gitignore ausgeschlossen.');
+  }
+
+  try {
+    const tracked = execFileSync('git', ['ls-files', 'site-source/dist'], { cwd: wurzel }).toString().trim();
+    if (tracked) fehler('Deployment', 'Dateien unter site-source/dist/ sind versioniert: ' + tracked.split('\n').slice(0, 5).join(', '));
+  } catch {
+    hinweis('Deployment', 'Konnte git ls-files für site-source/dist/ nicht ausführen.');
+  }
+
+  // Externe Trauersuche ist nur Recherche. Einzelanzeigen duerfen nicht
+  // automatisiert direkt auf der oeffentlichen Seite landen.
+  if (gibtEs('chatgpt-site/traueranzeigen/index.html')) {
+    const html = lies('chatgpt-site/traueranzeigen/index.html');
+    if (/wirtrauern\.de\/traueranzeige\//i.test(html)) {
+      fehler('Service', 'Trauerseite enthält automatisch übernommene Einzelanzeige von WirTrauern; nur redaktionell verifizierte Einträge dürfen veröffentlicht werden.');
+    }
+  }
+}
+
 
 // ------------------------------------------------------------ 8. JavaScript
 function pruefeJavaScript() {
@@ -403,6 +452,7 @@ pruefeDoppelteEinsaetze();
 pruefeInterneLinks();
 pruefeInhalte();
 pruefeServiceInhalte();
+pruefeProduktionsquelle();
 pruefeJavaScript();
 
 // ------------------------------------------ 9. Laufzeit-Umbau bleibt aus
