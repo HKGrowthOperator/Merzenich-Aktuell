@@ -270,39 +270,51 @@
   "jobSources": [
     {
       "municipality": "Merzenich",
-      "label": "Weitere Stellen in Merzenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Merzenich%2C+Kreis+D%C3%BCren"
+      "label": "Stellenangebote der Gemeinde Merzenich",
+      "sourceName": "Gemeinde Merzenich",
+      "sourceUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php"
+    },
+    {
+      "municipality": "Merzenich",
+      "label": "Weitere Stellen im Kreis Düren",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     },
     {
       "municipality": "Düren",
-      "label": "Weitere Stellen in Düren",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=D%C3%BCren%2C+Rheinland"
+      "label": "Karriere beim Kreis Düren",
+      "sourceName": "Kreis Düren",
+      "sourceUrl": "https://www.kreis-dueren.de/karriere"
+    },
+    {
+      "municipality": "Düren",
+      "label": "Weitere Stellen im Kreis Düren",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     },
     {
       "municipality": "Niederzier",
-      "label": "Weitere Stellen in Niederzier",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Niederzier"
+      "label": "Weitere Stellen in der Region",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     },
     {
       "municipality": "Nörvenich",
-      "label": "Weitere Stellen in Nörvenich",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=N%C3%B6rvenich"
+      "label": "Weitere Stellen in der Region",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     },
     {
       "municipality": "Elsdorf",
-      "label": "Weitere Stellen in Elsdorf",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Elsdorf%2C+Rheinland"
+      "label": "Weitere regionale Stellen",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     },
     {
       "municipality": "Kerpen",
-      "label": "Weitere Stellen in Kerpen",
-      "sourceName": "Bundesagentur für Arbeit",
-      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/suche?wo=Kerpen%2C+Rheinland"
+      "label": "Weitere regionale Stellen",
+      "sourceName": "jobsDN",
+      "sourceUrl": "https://www.jobsdn.de/jobportal"
     }
   ],
   "properties": [
