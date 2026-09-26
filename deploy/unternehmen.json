@@ -1,0 +1,12 @@
+{
+  "_hinweis": "Unternehmen aus Merzenich (/unternehmen/, Vorbild Oberberg Aktuell; KBS 26.09.2026: Geruest mit freien Plaetzen, keine erfundenen Firmen). Ein Eintrag nur mit schriftlicher Einwilligung des Betriebs. Felder: name, branche, ortsteil, adresse, telefon, website (https://), oeffnungszeiten, text, bild (/assets/...), bildnachweis, einwilligung (Datum JJJJ-MM-TT), quelle. plaetze: so viele Kacheln stehen insgesamt da; freie werden als 'Ihr Unternehmen hier' gezeigt.",
+  "plaetze": 8,
+  "unternehmen": [],
+  "angebote": [
+    {"bild": "tipp", "titel": "Tipp-Beitrag", "text": "Ein bezahlter, als Tipp gekennzeichneter Beitrag über Ihr Angebot, Ihre Aktion oder Ihre Veranstaltung.", "format": "Tipp (bezahlter Beitrag)"},
+    {"bild": "banner", "titel": "Werbeband", "text": "Ihre Anzeige in den Werbebändern zwischen den Rubriken, im Wechsel mit anderen Anzeigen.", "format": "Werbebanner"},
+    {"bild": "sponsoring", "titel": "Rubrik-Sponsoring", "text": "Sie präsentieren eine Rubrik, zum Beispiel Termine oder das Foto des Tages.", "format": "Sponsoring einer Rubrik"},
+    {"bild": "laden", "titel": "Unternehmensporträt", "text": "Ihr Betrieb unter „Unternehmen aus Merzenich“: Porträt, Öffnungszeiten, Kontakt.", "format": "Unternehmenspräsenz"},
+    {"bild": "familie", "titel": "Vereins-Veranstaltungstipp", "text": "Ihr Fest, Turnier oder Jubiläum als hervorgehobener Tipp vor dem Termin.", "format": "Tipp (bezahlter Beitrag)"}
+  ]
+}

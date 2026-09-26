@@ -414,3 +414,77 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
 .sport-leiste small{font-size:12px;color:var(--muted,#5f5b55)}
 .sport-leiste-quelle{margin:8px 0 0;font-size:11.5px;color:var(--muted,#5f5b55)}
 .sidebar .werbung--sport{margin-top:24px}
+
+/* Anzeige-Assistent (26.09.2026): fuenf Schritte, jede Auswahl als Bildkarte. */
+.anz-fortschritt{display:flex;gap:6px;margin:0 0 6px;padding:0;list-style:none;counter-reset:none}
+.anz-fortschritt li{flex:1;display:flex;align-items:center;gap:8px;padding:10px 0 0;border-top:3px solid var(--line,#e3e1dd);font-size:13px;font-weight:650;color:#6f6a63}
+.anz-fortschritt li span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid currentColor;font-size:12px}
+.anz-fortschritt li.ist-fertig{border-top-color:#5f5b55;color:#34312d}
+.anz-fortschritt li.ist-aktuell{border-top-color:var(--red,#971725);color:var(--red,#971725)}
+.anz-fortschritt li.ist-aktuell span{background:var(--red,#971725);border-color:var(--red,#971725);color:#fdfbf8}
+@media (max-width:640px){.anz-fortschritt li{font-size:0;gap:0;justify-content:center}.anz-fortschritt li span{font-size:12px}}
+.anz-assistent .anz-schritt[hidden]{display:none}
+.anz-assistent.ist-assistent .anz-schritt{padding-top:6px;border-top:0}
+.anz-karten{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.anz-karten--gross{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:760px){.anz-karten--gross{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.anz-form .anz-karte{position:relative;display:flex;flex-direction:column;gap:6px;margin:0;padding:0 0 14px;border:1px solid var(--line,#e3e1dd);background:#fdfdfc;cursor:pointer;min-height:100%;transition:border-color .15s ease-out,background-color .15s ease-out}
+.anz-karte input{position:absolute;opacity:0;pointer-events:none}
+.anz-karte__bild{display:grid;place-items:center;aspect-ratio:16/10;background:#f3ede6;color:var(--red,#971725)}
+.anz-karte__bild svg{width:46%;height:auto;max-height:80%}
+.anz-karten--gross .anz-karte__bild svg{width:40%}
+.anz-karte__titel{display:block;padding:4px 12px 0;font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.2;color:var(--ink,#171513)}
+.anz-karte__text{display:block;padding:0 12px;font-size:13.5px;line-height:1.4;color:#5f5b55}
+.anz-form .anz-karte:hover{border-color:#8f8a83}
+.anz-form .anz-karte:has(input:checked){border-color:var(--red,#971725);outline:2px solid var(--red,#971725);outline-offset:-2px;background:#fbf6f2}
+.anz-karte:has(input:checked) .anz-karte__bild{background:var(--red,#971725);color:#fdfbf8}
+.anz-karte:has(input:focus-visible){outline:3px solid var(--ink,#171513);outline-offset:2px}
+.anz-gruppe{margin:0 0 18px!important}
+.anz-gruppe>legend{margin:0 0 10px;padding:0;font-size:16px;font-weight:700;color:var(--ink,#171513)}
+.anz-teil__titel{margin:0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5f5b55}
+.anz-assistent .anz-teil{background:transparent;border:0!important;padding:0}
+.anz-hinweis{margin:0;font-size:13.5px;color:#5f5b55}
+.anz-fehler{margin:6px 0 0;padding:10px 12px;background:#fbeceb;color:#77101b;font-size:14px;font-weight:600}
+.anz-navigation{display:flex;justify-content:space-between;gap:12px;margin-top:8px;padding-top:16px;border-top:1px solid var(--line,#e3e1dd)}
+.anz-navigation [hidden]{display:none}
+.anz-navigation [data-weiter]{margin-left:auto}
+.anz-uebersicht{padding:14px 16px;background:#f5f4f1;border:1px solid var(--line,#e3e1dd)}
+.anz-uebersicht__titel{margin:0 0 8px;font-weight:700}
+.anz-uebersicht dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0;font-size:14px}
+.anz-uebersicht dt{color:#5f5b55}
+.anz-uebersicht dd{margin:0;font-weight:600}
+
+/* Unternehmen aus Merzenich (/unternehmen/) und Angebote unter /tipp/ (26.09.2026) */
+.firmen{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.firma{display:flex;flex-direction:column;border:1px solid var(--line,#e3e1dd);background:#fdfdfc}
+.firma-bild{aspect-ratio:16/10;overflow:hidden;background:#f3ede6}
+.firma-bild img{width:100%;height:100%;object-fit:cover;display:block}
+.firma-bild--zeichen,.firma-bild--frei{display:grid;place-items:center;color:var(--red,#971725);font-family:var(--serif);font-size:40px;font-weight:700}
+.firma-bild--frei .anz-karte__bild{display:grid;place-items:center;width:100%;height:100%;background:transparent}
+.firma-bild--frei svg{width:34%;height:auto}
+.firma-text{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px}
+.firma-text h2{margin:0;font-family:var(--serif);font-size:21px;line-height:1.2}
+.firma-text p{margin:0;font-size:14.5px;line-height:1.45;color:#34312d}
+.firma-branche{font-size:12px!important;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red,#971725)!important}
+.firma--frei{border-style:dashed;background:transparent}
+.firma-daten{display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;margin:4px 0 0;font-size:14px}
+.firma-daten dt{color:#5f5b55}.firma-daten dd{margin:0}
+.firma-kennung,.firma-nachweis{font-size:12px!important;color:#5f5b55!important}
+.firmen-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.firmen-filter a{padding:8px 12px;border:1px solid var(--line,#e3e1dd);text-decoration:none;font-size:14px;font-weight:600}
+.firmen-weg{margin-top:36px;padding:22px 24px;background:#f5f4f1}
+.firmen-weg h2{margin:0 0 10px;font-family:var(--serif);font-size:24px}
+.firmen-weg ol{margin:0 0 14px;padding-left:20px;line-height:1.55}
+.angebote{margin:0 0 28px}
+.angebote h2{margin:0 0 6px;font-family:var(--serif);font-size:26px}
+.angebote-intro{margin:0 0 14px;color:#34312d}
+.angebote-liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.angebot{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start;padding:14px;border:1px solid var(--line,#e3e1dd);background:#fdfdfc;color:var(--ink,#171513);text-decoration:none}
+.angebot:hover{border-color:var(--red,#971725)}
+.angebot-zeichen{display:grid;place-items:center;width:64px;height:56px;background:#f3ede6;color:var(--red,#971725)}
+.angebot-zeichen svg{width:44px;height:auto}
+.angebot-text{display:grid;gap:4px}
+.angebot-text strong{font-family:var(--serif);font-size:18px;line-height:1.2}
+.angebot-text span{font-size:14px;line-height:1.4;color:#5f5b55}
+.angebot-text em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--red,#971725)}
+.angebote-mehr{margin:12px 0 0;font-size:14px}

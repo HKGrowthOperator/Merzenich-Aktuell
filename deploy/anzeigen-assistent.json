@@ -1,0 +1,56 @@
+{
+  "_hinweis": "Anzeige-Assistent /anzeigen/aufgeben/ (KBS/Ordin 26.09.2026: gefuehrt, uebersichtlich, zu jeder Auswahl ein passendes Bild). deploy/anzeigen-assistent.mjs rendert daraus das Formular. Feldnamen und Werte bleiben die, die /api/formular seit dem ersten Formular kennt (art, angebot, objekt, trauerform, anlass, format ...). bild = Schluessel eines Piktogramms im Generator.",
+  "arten": [
+    {
+      "wert": "Immobilie", "bild": "haus", "titel": "Immobilie", "text": "Haus, Wohnung, Grundstück oder Gewerbe verkaufen oder vermieten.",
+      "auswahl": [
+        {"feld": "angebot", "frage": "Verkaufen oder vermieten?", "optionen": [
+          {"wert": "Verkauf", "bild": "preisschild", "titel": "Verkaufen", "text": "Sie bieten die Immobilie zum Kauf an."},
+          {"wert": "Vermietung", "bild": "schluessel", "titel": "Vermieten", "text": "Sie suchen Mieterinnen oder Mieter."}
+        ]},
+        {"feld": "objekt", "frage": "Was bieten Sie an?", "optionen": [
+          {"wert": "Haus", "bild": "haus", "titel": "Haus"},
+          {"wert": "Wohnung", "bild": "wohnung", "titel": "Wohnung"},
+          {"wert": "Grundstück", "bild": "grundstueck", "titel": "Grundstück"},
+          {"wert": "Gewerbefläche", "bild": "gewerbe", "titel": "Gewerbefläche"},
+          {"wert": "Sonstiges", "bild": "sonstiges", "titel": "Sonstiges"}
+        ]}
+      ]
+    },
+    {
+      "wert": "Traueranzeige", "bild": "kerze", "titel": "Traueranzeige", "text": "Einen Trauerfall bekannt geben, danken oder erinnern.",
+      "auswahl": [
+        {"feld": "trauerform", "frage": "Welche Form?", "optionen": [
+          {"wert": "Traueranzeige", "bild": "kerze", "titel": "Traueranzeige", "text": "Den Tod eines Menschen bekannt geben."},
+          {"wert": "Danksagung", "bild": "danke", "titel": "Danksagung", "text": "Für Anteilnahme und Unterstützung danken."},
+          {"wert": "Jahrgedächtnis", "bild": "erinnerung", "titel": "Jahrgedächtnis", "text": "An einen verstorbenen Menschen erinnern."}
+        ]}
+      ]
+    },
+    {
+      "wert": "Familienanzeige", "bild": "familie", "titel": "Familienanzeige", "text": "Geburt, Hochzeit, Jubiläum oder Geburtstag teilen.",
+      "auswahl": [
+        {"feld": "anlass", "frage": "Welcher Anlass?", "optionen": [
+          {"wert": "Geburt", "bild": "geburt", "titel": "Geburt"},
+          {"wert": "Hochzeit", "bild": "ringe", "titel": "Hochzeit"},
+          {"wert": "Verlobung", "bild": "ring", "titel": "Verlobung"},
+          {"wert": "Jubiläum", "bild": "jubilaeum", "titel": "Jubiläum"},
+          {"wert": "Geburtstag", "bild": "torte", "titel": "Geburtstag"},
+          {"wert": "Sonstiges", "bild": "sonstiges", "titel": "Anderer Anlass"}
+        ]}
+      ]
+    },
+    {
+      "wert": "Werbung", "bild": "megafon", "titel": "Werbung", "text": "Betrieb oder Verein bekannt machen. Preis auf Anfrage.",
+      "auswahl": [
+        {"feld": "format", "frage": "Welche Werbeform?", "optionen": [
+          {"wert": "Werbebanner", "bild": "banner", "titel": "Werbebanner", "text": "Ihre Anzeige in den Werbebändern der Seite."},
+          {"wert": "Tipp (bezahlter Beitrag)", "bild": "tipp", "titel": "Tipp", "text": "Bezahlter, gekennzeichneter Beitrag in der Rubrik Tipp."},
+          {"wert": "Sponsoring einer Rubrik", "bild": "sponsoring", "titel": "Rubrik-Sponsoring", "text": "Präsentieren Sie eine Rubrik, zum Beispiel Termine."},
+          {"wert": "Unternehmenspräsenz", "bild": "laden", "titel": "Unternehmensporträt", "text": "Ihr Betrieb mit Porträt, Öffnungszeiten und Kontakt."},
+          {"wert": "Noch offen, bitte beraten", "bild": "beratung", "titel": "Beratung", "text": "Sie wissen es noch nicht? Wir melden uns."}
+        ]}
+      ]
+    }
+  ]
+}

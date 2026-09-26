@@ -283,22 +283,7 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     }
   }
 
-  /* Anzeige aufgeben: Art aus dem Link vorwählen, nur den passenden Teil zeigen. */
-  if(path==='/anzeigen/aufgeben/'){
-    var af=document.querySelector('.anz-form');
-    if(af){
-      var q=new URLSearchParams(location.search);
-      var teile=af.querySelectorAll('.anz-teil');
-      var zeig=function(){
-        var gew=af.querySelector('input[name="art"]:checked');
-        teile.forEach(function(t){var an=!gew||t.getAttribute('data-art')===gew.value;t.hidden=!an;t.disabled=!an;});
-      };
-      if(q.get('art')){var r=af.querySelector('input[name="art"][value="'+q.get('art').replace(/"/g,'')+'"]');if(r)r.checked=true;}
-      ['angebot','trauerform','anlass','format'].forEach(function(k){var v=q.get(k),sel=af.querySelector('select[name="'+k+'"]');if(v&&sel)Array.prototype.forEach.call(sel.options,function(o){if(o.value===v)sel.value=v;});});
-      af.addEventListener('change',function(e){if(e.target&&e.target.name==='art')zeig();});
-      zeig();
-    }
-  }
+  /* Anzeige aufgeben: seit 26.09. assets/anzeigen-assistent.js. */
 
   if(path==='/werben/'){
     var werben=document.querySelector('main .shell')||document.querySelector('main');

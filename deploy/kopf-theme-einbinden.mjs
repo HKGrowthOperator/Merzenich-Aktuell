@@ -117,7 +117,7 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
 const MEGA_SPALTEN = [
   ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
   ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
-  ['Anzeigen & Service', [['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
+  ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/unternehmen/', 'Unternehmen'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
   ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen']]],
 ];
 const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-senden/', 'Meldung senden'], ['/termine/melden/', 'Termin melden']];
@@ -165,6 +165,7 @@ for (const pfad of seiten) {
   if (!html.includes('class="kopf-anzeige"')) html = html.replace('<div class="mast-actions">', '<div class="mast-actions">' + KNOPF_ANZEIGE);
   if (!html.includes('class="drawer-anzeige"')) html = html.replace(/(<div class="panel-top">[\s\S]*?<\/button><\/div>)/, (m) => m + DRAWER_ANZEIGE);
   if (!html.includes('<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a><a href="/anzeigen/">')) html = html.replace('<h3>Service</h3><a href="/anzeigen/">', '<h3>Service</h3>' + FUSS_ANZEIGE + '<a href="/anzeigen/">');
+  if (!html.includes('<a href="/unternehmen/">Unternehmen</a><a href="/werben/">')) html = html.replace('<a href="/werben/">Werben</a><a href="/unterstuetzen/">', '<a href="/unternehmen/">Unternehmen</a><a href="/werben/">Werben</a><a href="/unterstuetzen/">');
   html = html.replace(SOCIAL_RE, '');
   if (SOCIAL_HTML) {
     html = html.replace('<div class="foot-bottom">', SOCIAL_HTML + '<div class="foot-bottom">');
