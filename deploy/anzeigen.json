@@ -1,0 +1,63 @@
+{
+  "_hinweis": "Werbesystem (KBS/Ordin 26.09.2026). Jede Werbeflaeche der Website wird aus dieser Datei gefuellt (deploy/anzeigen.mjs). Motive duerfen sich wiederholen und rotieren; benachbarte Baender zeigen versetzte Motive. Nur echte Angaben: Kunden stehen mit Name, Sitz und - falls bekannt - ihrer Website. Neue Werbemittel eines Kunden als weiteres Motiv eintragen. Keine Euro-Betraege (Preis auf Anfrage). art: kunde | eigen. Eigenwerbung ist die Werbung von Merzenich Aktuell in eigener Sache.",
+  "werbungAn": true,
+  "rotationSekunden": 12,
+  "motive": [
+    {
+      "id": "kbs-management",
+      "art": "kunde",
+      "kunde": "KBS Management GmbH",
+      "zeichen": "KBS",
+      "titel": "KBS Management GmbH",
+      "text": "Merzenich · Kreis Düren. Herausgeber von Merzenich Aktuell.",
+      "cta": "kbs-management.tv",
+      "ziel": "https://kbs-management.tv/"
+    },
+    {
+      "id": "eigen-werben",
+      "art": "eigen",
+      "kunde": "Merzenich Aktuell",
+      "titel": "Hier steht Ihre Anzeige",
+      "text": "Werbung für Betriebe aus Merzenich und der Umgebung. Preis auf Anfrage.",
+      "cta": "Werbung anfragen",
+      "ziel": "/werben/"
+    },
+    {
+      "id": "aj-sports",
+      "art": "kunde",
+      "kunde": "AJ Sports Entertainment",
+      "zeichen": "AJ",
+      "titel": "AJ Sports Entertainment",
+      "text": "Merzenich · Kreis Düren. Partner von Merzenich Aktuell.",
+      "cta": "",
+      "ziel": ""
+    },
+    {
+      "id": "eigen-anzeige",
+      "art": "eigen",
+      "kunde": "Merzenich Aktuell",
+      "titel": "Anzeige aufgeben",
+      "text": "Immobilie, Familienanzeige oder Traueranzeige: Schritt für Schritt online.",
+      "cta": "Jetzt aufgeben",
+      "ziel": "/anzeigen/aufgeben/"
+    },
+    {
+      "id": "eigen-unternehmen",
+      "art": "eigen",
+      "kunde": "Merzenich Aktuell",
+      "titel": "Ihr Betrieb auf Merzenich Aktuell",
+      "text": "Porträt mit Öffnungszeiten und Kontakt, geprüft von der Redaktion. Preis auf Anfrage.",
+      "cta": "Platz anfragen",
+      "ziel": "/werben/"
+    },
+    {
+      "id": "eigen-verein",
+      "art": "eigen",
+      "kunde": "Merzenich Aktuell",
+      "titel": "Neues aus Ihrem Verein?",
+      "text": "Termine, Ergebnisse und Neuigkeiten an die Redaktion senden.",
+      "cta": "Meldung senden",
+      "ziel": "/meldung-senden/"
+    }
+  ]
+}

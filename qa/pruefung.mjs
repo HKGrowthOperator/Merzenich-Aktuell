@@ -741,7 +741,38 @@ async function pruefeSportfreieStartseite() {
   if (/dataset\.theme|merzenich-theme/.test(html)) fehler('Hellmodus', 'Startseite traegt noch das alte Theme-Skript.');
 }
 
+// ------------------------------------------- Werbung (KBS 26.09.2026)
+// Nach der Buehne und nach jeder Rubrik steht genau ein Werbeband; benachbarte
+// Baender zeigen verschiedene Motive; keine Demo-Motive, keine Preise; jede
+// Werbeflaeche ist als "Anzeige" gekennzeichnet; externe Kundenlinks sponsored.
+function pruefeWerbung() {
+  const html = lies('chatgpt-site/index.html');
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  if (!main.includes('<!-- start:oben:end --><!-- werbung:band-1:start -->')) fehler('Werbung', 'Kein Werbeband direkt nach der Buehne.');
+  for (const [id, n] of [['blaulicht', 3], ['rathaus', 4], ['wirtschaft', 5], ['vereine', 6]]) {
+    if (!main.includes(`<!-- start:${id}:end --><!-- werbung:band-${n}:start -->`)) fehler('Werbung', `Kein Werbeband direkt nach der Rubrik ${id}.`);
+  }
+  const baender = [...main.matchAll(/<!-- werbung:(band-\d):start -->([\s\S]*?)<!-- werbung:\1:end -->/g)];
+  if (baender.length !== 6) fehler('Werbung', `Startseite hat ${baender.length} statt 6 Werbebaender.`);
+  const ersteMotive = baender.map((b) => [...b[2].matchAll(/data-motiv="([^"]+)"/g)].map((m) => m[1]));
+  for (let i = 1; i < ersteMotive.length; i++) {
+    if (ersteMotive[i].some((m) => ersteMotive[i - 1].includes(m))) fehler('Werbung', `Band ${i} und ${i + 1} zeigen dasselbe Motiv.`);
+  }
+  for (const b of baender) {
+    if (!b[2].includes('<span class="werbung-label">Anzeige</span>')) fehler('Werbung', `${b[1]} ohne Kennzeichnung "Anzeige".`);
+    if (!/data-motiv=/.test(b[2])) fehler('Werbung', `${b[1]} ist leer.`);
+  }
+  const alle = [...html.matchAll(/<aside class="werbung[\s\S]*?<\/aside>/g)].map((m) => m[0]).join('');
+  if (/probebank|musteranzeige|anzeige · demo/i.test(html)) fehler('Werbung', 'Demo-Motive auf der Startseite.');
+  if (/€/.test(alle)) fehler('Werbung', 'Preis in einem Werbemotiv (Preis auf Anfrage).');
+  for (const m of alle.matchAll(/<a class="werbemotiv werbemotiv--kunde" href="(https:[^"]+)"([^>]*)>/g)) {
+    if (!/rel="[^"]*sponsored/.test(m[2])) fehler('Werbung', `Kundenlink ${m[1]} ohne rel=sponsored.`);
+  }
+  if (!/<html[^>]*data-werbung="an"/.test(html)) hinweis('Werbung', 'Werbung ist in deploy/anzeigen.json ausgeschaltet.');
+}
+
 await pruefeSymbolbilder();
+pruefeWerbung();
 await pruefeSportfreieStartseite();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();

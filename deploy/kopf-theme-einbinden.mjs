@@ -29,8 +29,9 @@ const bildUrl = (u) => {
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
 const V = 'v=20260916b';
-// Werbung global aus (Entscheidung 17.09.): html[data-werbung="aus"] blendet alle Anzeigenflaechen aus.
-const WERBUNG_AN = false;
+// Werbung an/aus steht in deploy/anzeigen.json (werbungAn). Aus: html[data-werbung="aus"]
+// blendet alle Anzeigenflaechen aus. KBS/Ordin 26.09.2026: Werbung ist an.
+const WERBUNG_AN = JSON.parse(readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '..'), 'deploy', 'anzeigen.json'), 'utf8')).werbungAn === true;
 // Assets werden ein Jahr 'immutable' gecacht - deshalb traegt jeder lokale
 // Asset-Link einen Inhalts-Hash. Aendert sich die Datei, aendert sich die URL.
 const hashCache = new Map();
@@ -62,6 +63,10 @@ const STARTSEITE = `<link rel="stylesheet" href="/assets/startseite.css?${V}">`;
 const JS = `<script src="/assets/kopf.js?${V}" defer></script>`;
 const KOMMENTARE = `<script src="/assets/kommentare.js?${V}" defer></script>`;
 const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script>`;
+// Werbesystem (deploy/anzeigen.mjs): Stil und Rotation auf jeder Seite, als echte
+// Verweise im Kopf statt nachgeladen - so springt beim Laden nichts.
+const WERBUNG_CSS = `<link rel="stylesheet" href="/assets/werbung.css?${V}">`;
+const WERBUNG_JS = `<script src="/assets/werbung.js?${V}" defer></script>`;
 const LINK_MEHR = '<a href="/kontakt/">Kontakt</a>';
 const LINK_DISKUSSION = '<a href="/diskussion/">Diskussion</a>';
 
@@ -130,6 +135,9 @@ for (const pfad of seiten) {
   }
   if (!html.includes('/assets/theme.css')) html = html.replace(CSS_ANKER, (m) => m + CSS);
   // Nur die Startseite: erkannt am ausgelieferten Markup, nicht am Dateinamen.
+  if (/<body[^>]*class="[^"]*\bhome\b/.test(html) && !html.includes('/assets/foto-des-tages.js')) {
+    html = html.replace(/<script src="\/assets\/kopf\.js[^"]*" defer><\/script>/, (m) => m + `<script src="/assets/foto-des-tages.js?${V}" defer></script>`);
+  }
   if (/<body[^>]*class="[^"]*\bhome\b/.test(html) && !html.includes('/assets/startseite.css')) {
     html = html.replace(/<link rel="stylesheet" href="\/assets\/theme\.css[^"]*">/, (m) => m + STARTSEITE);
   }
@@ -142,6 +150,8 @@ for (const pfad of seiten) {
   // "Diskussion" im Mehr-Menue und in der Schublade, direkt hinter Kontakt.
   if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (!html.includes('/assets/einwilligung.js')) html = html.replace(/<script src="\/assets\/kommentare\.js[^"]*" defer><\/script>/, (m) => m + EINWILLIGUNG);
+  if (!html.includes('/assets/werbung.css')) html = html.replace(CSS_ANKER, (m) => m + WERBUNG_CSS);
+  if (!html.includes('/assets/werbung.js')) html = html.replace(/<script src="\/assets\/einwilligung\.js[^"]*" defer><\/script>/, (m) => m + WERBUNG_JS);
   // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
   html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/tipp\/")/g, '$1<a href="/tipp/">Tipp</a>');
   // KBS/Ordin 23.09.2026: Werbefrei-Abo und Dunkelmodus sind vollständig entfernt.

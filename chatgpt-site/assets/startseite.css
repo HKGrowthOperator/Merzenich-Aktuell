@@ -741,7 +741,89 @@ body.home .ansichten-senden{grid-column:3;grid-row:1 / span 3;align-self:end;fon
 /* Text-Aufmacher (Bildstufen V3, KBS 25.09.2026): Gibt es in den letzten sieben
    Tagen kein eigenes Foto, steht die juengste Meldung ohne Bild oben. Die
    Schlagzeile traegt die Flaeche allein, die Bordeaux-Linie markiert den Platz. */
-body.home .front-lead--text{border-top:4px solid var(--ma-red,#971725);padding-top:var(--s5);align-self:start}
-body.home .front-lead--text .front-lead-copy{padding-top:0}
-body.home .front-lead--text h1{max-width:20ch;font-size:clamp(36px,4.6vw,64px);-webkit-line-clamp:5;line-clamp:5;margin-top:var(--s3)}
-body.home .front-lead--text p{max-width:56ch;font-size:calc(var(--t-text) * 1.15)}
+
+/* ============================================================
+   BUEHNE (KBS/Ordin 26.09.2026)
+   Eine grosse Highlight-Meldung, zwei Karten rechts, drei darunter.
+   Alle mit grossem Bild. Die Schlagzeile des Aufmachers steht ab
+   760 px auf einem Verlauf im Bild. Mobil: Aufmacher 4:3, danach
+   fuenf Zeilen mit Vorschaubild. Ersetzt .frontpage-grid/.front-vier.
+   ============================================================ */
+body.home .buehne{display:grid;gap:0;padding-top:20px;padding-bottom:24px}
+body.home .buehne .front-lead{margin-bottom:14px}
+body.home .buehne .front-lead{position:relative;margin:0;min-width:0;display:block}
+body.home .buehne .front-lead .karte-bild{display:block}
+html body.home .buehne .front-lead.front-lead .media{position:relative;aspect-ratio:4/3!important;height:auto;overflow:hidden;background:#221e1b}
+body.home .buehne .front-lead .media img{width:100%;height:100%;object-fit:cover;display:block}
+body.home .buehne .front-lead-copy{padding-top:14px}
+body.home .buehne .front-lead h1{max-width:none;margin:4px 0 8px;font-family:var(--serif);font-weight:600;letter-spacing:-.018em;line-height:1.08;font-size:clamp(27px,7vw,34px);-webkit-line-clamp:4;line-clamp:4}
+body.home .buehne .front-lead h1 a{color:var(--a-tinte);text-decoration:none}
+body.home .buehne .front-lead-copy>p:not(.marke){margin:0 0 8px;font-size:16px;line-height:1.5;color:var(--a-text);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+body.home .buehne .front-lead .meta{font-size:13px;color:var(--a-leise)}
+
+body.home .buehne-rechts,body.home .buehne-unten{display:grid;gap:0;min-width:0}
+body.home .buehne-karte{margin:0;min-width:0;display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--a-linie)}
+body.home .buehne-karte .karte-bild{display:block}
+html body.home .buehne-karte .media{aspect-ratio:4/3!important;overflow:hidden;background:#e9e6e1}
+body.home .buehne-karte .media img{width:100%;height:100%;object-fit:cover;display:block}
+body.home .buehne-karte .karte-text{padding-top:0!important}
+body.home .buehne-karte .marke{margin:0 0 4px;font-size:11.5px}
+body.home .buehne-karte h2{margin:0 0 4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.18;font-size:17.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+body.home .buehne-karte h2 a{color:var(--a-tinte);text-decoration:none}
+body.home .buehne-karte h2 a:hover,body.home .buehne .front-lead h1 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+body.home .buehne-karte .meta{font-size:12px;color:var(--a-leise)}
+body.home .buehne-karte .karte-bild .badge{font-size:9.5px;padding:2px 5px;left:6px;bottom:6px}
+
+@media (min-width:760px){
+  body.home .buehne{grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 20px;padding-top:22px}
+  body.home .buehne .front-lead{grid-column:1/-1;margin-bottom:0}
+  html body.home .buehne .front-lead.front-lead .media{aspect-ratio:16/9!important}
+  /* Schlagzeile im Bild, auf einem Verlauf von unten. */
+  body.home .buehne .front-lead-copy{position:absolute;left:0;right:0;bottom:0;padding:120px 28px 24px;background:linear-gradient(180deg,rgba(18,14,12,0) 0%,rgba(18,14,12,.62) 42%,rgba(18,14,12,.9) 100%);pointer-events:none}
+  body.home .buehne .front-lead-copy a{pointer-events:auto}
+  body.home .buehne .front-lead .marke,body.home .buehne .front-lead .marke-teil,body.home .buehne .front-lead .marke-rubrik{color:#f3eee8}
+  body.home .buehne .front-lead .marke-ort{display:inline-block;padding:3px 7px 2px;background:var(--a-rot);color:#fdfbf8}
+  body.home .buehne .front-lead h1{font-size:clamp(30px,3.3vw,46px);max-width:24ch;-webkit-line-clamp:3;line-clamp:3}
+  body.home .buehne .front-lead h1 a{color:#fdfbf8}
+  body.home .buehne .front-lead-copy>p:not(.marke){max-width:62ch;color:rgba(253,251,248,.88);-webkit-line-clamp:2;line-clamp:2}
+  body.home .buehne .front-lead .meta{color:rgba(253,251,248,.78)}
+  body.home .buehne .front-lead .karte-bild .badge{top:14px;left:14px;bottom:auto}
+  body.home .buehne-rechts,body.home .buehne-unten{display:contents}
+  body.home .buehne-karte{grid-column:span 3;display:block;padding:0;border-top:0}
+  body.home .buehne-karte--u{grid-column:span 2}
+  html body.home .buehne-karte .media{aspect-ratio:16/10!important}
+  body.home .buehne-karte .karte-text{padding-top:10px!important}
+  body.home .buehne-karte h2{font-size:clamp(18px,1.45vw,21px)}
+  html body.home .buehne-karte--r .media{aspect-ratio:2/1!important}
+  body.home .buehne-karte .karte-bild .badge{font-size:10px;left:8px;bottom:8px}
+}
+@media (min-width:1100px){
+  /* Aufmacher 8 von 12 Spalten, rechts zwei Karten, darunter drei. */
+  body.home .buehne{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto;gap:24px 24px}
+  body.home .buehne .front-lead{grid-column:1/9;grid-row:1}
+  body.home .buehne .front-lead .karte-bild{height:100%}
+  html body.home .buehne .front-lead.front-lead .media{aspect-ratio:auto!important;height:100%;min-height:440px}
+  body.home .buehne-rechts{display:grid;grid-column:9/13;grid-row:1;grid-template-rows:1fr 1fr;gap:20px}
+  body.home .buehne-rechts .buehne-karte{grid-column:auto}
+  html body.home .buehne-rechts .buehne-karte .media{aspect-ratio:2/1!important}
+  body.home .buehne-unten{display:grid;grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  body.home .buehne-unten .buehne-karte{grid-column:auto}
+  html body.home .buehne-unten .buehne-karte .media{aspect-ratio:16/9!important}
+}
+
+/* ============================================================
+   RHYTHMUS (KBS/Ordin 26.09.2026: "zu viel Weissraum")
+   Ein Abstandstakt fuer die ganze Startseite statt 44-166 px je Sektion.
+   Nach jeder Rubrik steht ein Werbeband; es traegt den Abstand nach oben.
+   ============================================================ */
+body.home{--home-takt:clamp(20px,2.2vw,30px)}
+html body.home main > .desk{margin-top:0!important;padding-top:var(--home-takt)!important}
+html body.home main > .werbung--band{margin-top:var(--home-takt);margin-bottom:0}
+html body.home main > .portal-top{margin-top:var(--home-takt)!important;margin-bottom:0!important;padding-top:0!important}
+html body.home main > .orte-buehne{padding-top:var(--home-takt)!important;margin-top:0!important}
+html body.home main > .ansichten{margin-top:var(--home-takt)!important}
+html body.home main > .reader-note{margin-top:var(--home-takt)!important}
+html body.home .desk-heading{margin-bottom:18px!important}
+
+/* Orte-Buehne kompakt (26.09.): 280 statt 540 px hohe Kacheln. */
+html body.home .ort{min-height:clamp(240px,26vh,300px)}

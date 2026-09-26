@@ -146,7 +146,7 @@ function hauptteil(m, index) {
     ${fakten}
     <div class="prose">${m.absaetze.map((p) => `<p>${esc(p)}</p>`).join('\n')}
 </div>
-    <div class="ad-row-body" aria-label="Anzeigen"><div class="managed-ad"><span class="ad-label">Anzeige</span><a href="https://kbs-management.tv/" target="_blank" rel="noopener sponsored"><span class="ad-name">KBS Management GmbH<small>Merzenich · Kreis Düren</small></span></a></div><div class="managed-ad"><span class="ad-label">Anzeige</span><div class="ad-in"><span class="ad-name">AJ Sports Entertainment<small>Merzenich · Kreis Düren</small></span></div></div></div><div class="source-box"><b>Quelle & Transparenz</b> Grundlage dieser Meldung: <a href="${esc(m.quelle.url)}" target="_blank" rel="noopener nofollow">${esc(m.quelle.name)} ↗</a>. <span class="stand">Abgerufen am ${esc(datumKurz(m.quelle.stand))}.</span>${hinweis} Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="/korrekturen/">Fehler melden</a></div>
+    <!-- werbung:artikel:start --><!-- werbung:artikel:end -->
     <div class="tags">${tags}</div>
     <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="/autor/redaktion/">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
     <div class="cta-row"><a class="btn ghost" href="/meldung-senden/">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="/korrekturen/">Fehler melden</a></div>

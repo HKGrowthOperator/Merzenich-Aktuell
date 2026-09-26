@@ -113,6 +113,42 @@ function figureHtml(m, stufe = 'B') {
   return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }
 
+// Ortsansichten (Bildstufe O, Entscheidung KBS 26.09.2026): Jede Meldung ohne
+// passendes Motiv traegt eine gesichtete Ansicht ihres Ortsteils, klar als
+// "Ortsansicht" gekennzeichnet. Quelle: deploy/ortsbilder.json.
+const ORTSBILDER = JSON.parse(readFileSync(join(wurzel, 'deploy', 'ortsbilder.json'), 'utf8'));
+const ORT_SLUGS = new Set(['merzenich', 'golzheim', 'girbelsrath', 'morschenich', 'buergewald']);
+function ortsansichtenAufloesen(pools) {
+  const nachId = new Map(Object.values(pools).flat().map((m) => [m.id, m]));
+  return ORTSBILDER.ansichten.map((o) => {
+    if (!o.pool) return { ...o, nachweis: `${o.credit} · ${o.lizenz}` };
+    const m = nachId.get(o.pool);
+    if (!m) { fehler.push(`ortsbilder.json: ${o.id} verweist auf fehlendes Poolfoto ${o.pool}`); return null; }
+    return { ...o, src: m.src, srcset: srcsetFuer(m), width: m.width, height: m.height, nachweis: `${o.credit} · ${o.lizenz}` };
+  }).filter(Boolean);
+}
+// Innerhalb eines Ortsteils reihum nach Datum (neueste zuerst): benachbarte
+// Meldungen in Listen zeigen so verschiedene Ansichten. Die Reihenfolge haengt
+// nur am Bestand, der Lauf bleibt wiederholbar.
+const ortVon = (a) => (ORT_SLUGS.has(a.ortsteil) ? a.ortsteil : 'merzenich');
+function ortsansichtenVerteilen(artikel, ansichten) {
+  const zuordnung = new Map();
+  const zaehler = new Map();
+  const sortiert = [...artikel].sort((x, y) => String(y.datum || '').localeCompare(String(x.datum || '')) || x.url.localeCompare(y.url));
+  for (const a of sortiert) {
+    const ort = ortVon(a);
+    const liste = ansichten.filter((o) => o.ortsteil === ort);
+    const auswahl = liste.length ? liste : ansichten.filter((o) => o.ortsteil === 'merzenich');
+    if (!auswahl.length) continue;
+    const i = zaehler.get(ort) || 0; zaehler.set(ort, i + 1);
+    zuordnung.set(a.url, auswahl[i % auswahl.length]);
+  }
+  return zuordnung;
+}
+function ortsansichtFigure(o) {
+  return `<figure class="art-figure art-figure--symbol art-figure--ortsansicht" data-bildstufe="O" data-ortsansicht="${esc(o.id)}"><div class="media"><img src="${esc(o.src)}"${o.srcset ? ` srcset="${esc(o.srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(o.alt)}" width="${o.width || 1440}" height="${o.height || 960}" loading="eager" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Ortsansicht</span> · ${esc(o.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(o.nachweis)}</span></figcaption></figure>`;
+}
+
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }
 
 /**
@@ -141,7 +177,7 @@ function repariereOffiziellesGemeindebild() {
   writeIfChanged(pfad, neu);
 }
 
-function metadataAufSymbolbild(html, m) {
+function metadataAufSymbolbild(html, m, typ = 'Symbolbild') {
   const absolute = `${SITE_URL}${m.src}`;
   let neu = html;
   neu = neu.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${esc(absolute)}">`);
@@ -153,18 +189,18 @@ function metadataAufSymbolbild(html, m) {
   // Den kompletten bisherigen Bildnachweis ersetzen. Der alte Ausdruck endete
   // am ersten Punkt und war damit bei Lizenzen wie "CC BY-SA 4.0" nicht
   // idempotent (z. B. blieb ".DE." stehen und wuchs bei jedem Build weiter).
-  const bildMeta = ` Bildtyp: Symbolbild. Bild: ${nachweis(m)}. `;
+  const bildMeta = ` Bildtyp: ${typ}. Bild: ${nachweis(m)}. `;
   neu = neu.replace(
-    /\s*Bildtyp:\s*(?:Offizielles Vereinslogo|Symbolbild)\.\s*(?:Foto|Bild):\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i,
+    /\s*Bildtyp:\s*(?:Offizielles Vereinslogo|Symbolbild|Ortsansicht)\.\s*(?:Foto|Bild):\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i,
     bildMeta
   );
   return neu;
 }
 
-function ersetzeArtikelbild(a, m, stufe) {
+function ersetzeArtikelbild(a, m, stufe, ortsansicht = false) {
   const pfad = artikelPfad(a); if (!existsSync(pfad)) { fehler.push(`${a.url}: Artikelseite fehlt`); return; }
   const html = readFileSync(pfad, 'utf8');
-  const neuFig = figureHtml(m, stufe);
+  const neuFig = ortsansicht ? ortsansichtFigure(m) : figureHtml(m, stufe);
   const bodyMarker = '<div class="article-body" data-readable>';
   const figRe = /<figure class="art-figure[^"]*"[^>]*>[\s\S]*?<\/figure>/;
   let neu = html;
@@ -175,7 +211,7 @@ function ersetzeArtikelbild(a, m, stufe) {
     if (neu.includes(bodyMarker)) neu = neu.replace(bodyMarker, bodyMarker + neuFig);
     else fehler.push(`${a.url}: article-body fehlt, Symbolbild kann nicht eingesetzt werden`);
   }
-  neu = metadataAufSymbolbild(neu, m);
+  neu = metadataAufSymbolbild(neu, m, ortsansicht ? 'Ortsansicht' : 'Symbolbild');
   writeIfChanged(pfad, neu);
 }
 
@@ -191,7 +227,7 @@ function entferneSymbolbild(a) {
   neu = neu.replace(/<meta property="og:image:alt" content="[^"]*">/, (m) => (neu.includes(`content="${standard}"`) ? '<meta property="og:image:alt" content="Merzenich Aktuell">' : m));
   neu = neu.replace(/<meta name="twitter:image" content="([^"]*)">/, (m, u) => (POOLBILD.test(u) ? `<meta name="twitter:image" content="${standard}">` : m));
   neu = neu.replace(/("@type":"(?:NewsArticle|Article)"[\s\S]*?"image":)"([^"]*)"/, (m, v, u) => (POOLBILD.test(u) ? `${v}"${standard}"` : m));
-  neu = neu.replace(/\s*Bildtyp:\s*Symbolbild\.\s*Bild:\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i, ' ');
+  neu = neu.replace(/\s*Bildtyp:\s*(?:Symbolbild|Ortsansicht)\.\s*Bild:\s*[^<]*(?=(?:<a\b[^>]*href="\/korrekturen\/"|<\/div>))/i, ' ');
   writeIfChanged(pfad, neu);
 }
 
@@ -248,7 +284,10 @@ function contentAudit() {
     if (!a.bild?.src && !BILDLOS.has(a.url)) fehler.push(`${a.url}: normaler Beitrag ist bildlos`);
     if (a.bild?.src && !a.bild?.credit) { count.missingCredits++; fehler.push(`${a.url}: Bildnachweis/Credit fehlt`); }
     if (istAllgemeinesVereinslogo(a)) { count.logos++; fehler.push(`${a.url}: Vereinslogo/Wappen wird als allgemeines Newsfoto verwendet`); }
-    if (a.bild?.symbol) {
+    if (a.bild?.stufe === 'O') {
+      // Ortsansicht: nur gesichtete Ansichten aus deploy/ortsbilder.json.
+      if (!ORTSANSICHTEN.some((o) => o.src === a.bild.src)) fehler.push(`${a.url}: Ortsansicht ${a.bild.src} steht nicht in deploy/ortsbilder.json`);
+    } else if (a.bild?.symbol) {
       // Motivregel: das Symbolbild muss genau das Motiv zeigen, das die Aussage verlangt.
       const regel = motivregelFuer(a); const eintrag = BIBLIOTHEK_NACH_SRC.get(a.bild.src); const motiv = eintrag && motivFuer(eintrag);
       if (!regel) fehler.push(`${a.url}: Symbolbild ohne Motivregel (${a.bild.src})`);
@@ -288,10 +327,16 @@ if (vergabe.dirty) {
   if (nurPruefen) geaendert.push(ZUORDNUNGEN_DATEI);
   else if (zuordnungenSchreiben(wurzel, vergabe.state)) geaendert.push(ZUORDNUNGEN_DATEI);
 }
+const ORTSANSICHTEN = ortsansichtenAufloesen(audit.pools);
+let ortsansichtenGesetzt = 0;
+const ORTSANSICHT_FUER = ortsansichtenVerteilen(artikelVorher.filter((a) => brauchtV2Symbol(a) && !vergabe.zuordnung.get(a.url)), ORTSANSICHTEN);
 for (const a of artikelVorher) {
   if (!brauchtV2Symbol(a)) continue;
   const m = vergabe.zuordnung.get(a.url);
-  if (m) ersetzeArtikelbild(a, m, vergabe.stufen.get(a.url)); else entferneSymbolbild(a);
+  if (m) { ersetzeArtikelbild(a, m, vergabe.stufen.get(a.url)); continue; }
+  const o = ORTSANSICHT_FUER.get(a.url);
+  if (o) { ersetzeArtikelbild(a, { ...o, credit: o.nachweis, license: '' }, 'O', true); ortsansichtenGesetzt++; }
+  else entferneSymbolbild(a);
 }
 aktualisiereEditorialCurrent(artikelFuerVergabe, vergabe.zuordnung);
 const BILDLOS = new Set(vergabe.bildlos.map((b) => b.url));
@@ -318,7 +363,8 @@ console.log(`Official:              ${content.official}`);
 console.log(`Archive:               ${content.archive}`);
 console.log(`Symbol:                ${content.symbol}`);
 console.log(`Bildlos:               ${content.none}`);
-for (const b of vergabe.bildlos) console.log(`  ohne Bild: ${b.url} (${b.regel ? `Regel ${b.regel}, kein gesichtetes Foto mit Motiv ${b.motive.join('/')}` : 'keine Motivregel'})`);
+console.log(`Ortsansichten:         ${ortsansichtenGesetzt} (Meldungen ohne passendes Motiv, Stufe O)`);
+for (const b of vergabe.bildlos) console.log(`  ohne Motiv, Ortsansicht: ${b.url} (${b.regel ? `Regel ${b.regel}, kein gesichtetes Foto mit Motiv ${b.motive.join('/')}` : 'keine Motivregel'})`);
 console.log(`Fehlende Credits:      ${content.missingCredits}`);
 console.log(`Falsche Vereinslogos:  ${content.logos}`);
 console.log(`Rechte geprüft am:     ${RECHTE_GEPRUEFT_AM}`);

@@ -1,0 +1,4 @@
+{
+  "_hinweis": "Foto des Tages (Wunsch KBS 26.09.2026, taeglich neu). eintraege: freigegebene Leserfotos fuer ein bestimmtes Datum (datum JJJJ-MM-TT, src unter /assets/, alt, ort, credit, lizenz; das Foto muss den Bildregeln entsprechen und die Einsenderin/der Einsender muss der Veroeffentlichung zugestimmt haben). Ohne Eintrag fuer den Tag wechselt taeglich eine gesichtete Ortsansicht aus deploy/ortsbilder.json.",
+  "eintraege": []
+}

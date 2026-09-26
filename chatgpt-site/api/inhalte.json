@@ -576,7 +576,18 @@
      "label": "Faire Woche"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/golzheim-1440.webp",
+    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
+    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -611,7 +622,18 @@
      "label": "Umwelt"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -676,7 +698,18 @@
      "label": "Tierrettung"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -699,7 +732,18 @@
      "label": "Veranstaltungen"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1166,7 +1210,18 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/buergewald-1440.webp",
+    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
+    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1269,7 +1324,18 @@
      "label": "Hilfeleistung"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1600w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1846,7 +1912,18 @@
      "label": "L264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/buergewald-1440.webp",
+    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
+    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -1987,7 +2064,18 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/buergewald-1440.webp",
+    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
+    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2102,7 +2190,18 @@
      "label": "Fahrrad"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/girbelsrath-1440.webp",
+    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet: Hausnummer unkenntlich) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2133,7 +2232,18 @@
      "label": "B264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2160,7 +2270,18 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/girbelsrath-1440.webp",
+    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet: Hausnummer unkenntlich) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2263,7 +2384,18 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/buergewald-1440.webp",
+    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
+    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2370,7 +2502,18 @@
      "label": "Feuerwehr"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2729,7 +2872,18 @@
      "label": "Senioren"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2836,7 +2990,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1600w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2905,7 +3070,18 @@
      "label": "B264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2932,7 +3108,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2963,7 +3150,18 @@
      "label": "L264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -2998,7 +3196,18 @@
      "label": "Fahrrad"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1600w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3025,7 +3234,18 @@
      "label": "Vereine"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3056,7 +3276,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3129,7 +3360,18 @@
      "label": "B264"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3160,7 +3402,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/girbelsrath-1440.webp",
+    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet: Hausnummer unkenntlich) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3279,7 +3532,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1600w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3306,7 +3570,18 @@
      "label": "Vereine"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3383,7 +3658,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3410,7 +3696,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1600w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3441,7 +3738,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1600w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3514,7 +3822,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -3537,7 +3856,18 @@
      "label": "Polizei"
     }
    ],
-   "bild": null,
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1600w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1600,
+    "height": 1044,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
    "undatiert": false,
    "abgerufen": ""
   },
@@ -4185,9 +4515,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-24-vhs-oldschool-merzenich",
-  "url": "/leben/vhs-oldschool-merzenich/",
-  "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
+  "id": "2026-09-24-jonge-vom-berg-vortanzen",
+  "url": "/vereine/jonge-vom-berg-vortanzen/",
+  "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen"
  },
  "nebenmeldungen": [
   {
@@ -4196,9 +4526,9 @@
    "titel": "Einbruch im Arnoldsweilerweg: Polizei sucht Zeugen"
   },
   {
-   "id": "2026-09-24-jonge-vom-berg-vortanzen",
-   "url": "/vereine/jonge-vom-berg-vortanzen/",
-   "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen"
+   "id": "2026-09-24-vhs-oldschool-merzenich",
+   "url": "/leben/vhs-oldschool-merzenich/",
+   "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
   },
   {
    "id": "2026-09-24-st-lambertus-patrozinium-morschenich",

@@ -101,7 +101,7 @@
 
 
 /* Untere Homepage: keine generischen Vollbreiten-Linien. */
-body.home .desk,body.home .section{padding-top:clamp(54px,6vw,86px)!important}
+/* 26.09.: Abstand der Sektionen steht jetzt zentral als --home-takt in startseite.css. */
 body.home .desk-heading,body.home .section-head,body.home .block-head{position:relative!important;margin-bottom:24px!important;padding:0!important;border:0!important;display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:20px!important}
 /* Stil B 23.09.2026: kein farbiger Strich mehr vor den Sektionskoepfen (verbotenes Seitenstreifen-Muster, Critique 23.09.). */
 body.home .desk-heading h2,body.home .section-head h2,body.home .block-head h2{margin:0!important;font-family:var(--serif)!important;font-size:clamp(32px,3.2vw,48px)!important;font-weight:800!important;line-height:1.02!important;letter-spacing:-.025em!important}/* Article/Listen behalten Transparenz,.cards-3,.club-grid,.events-grid{align-items:start}

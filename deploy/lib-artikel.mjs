@@ -37,7 +37,7 @@ function bildAus(main) {
   const symbol = fig[1].includes('art-figure--symbol');
   // Archiv- und Beispielbilder zeigen nicht das Ereignis: Stufe B.
   const badgeRoh = (/<span class="figure-badge">([^<]*)<\/span>/.exec(fig[3]) || [])[1] || '';
-  const stufe = (/data-bildstufe="([ABC])"/.exec(fig[2]) || [])[1]
+  const stufe = (/data-bildstufe="([ABCO])"/.exec(fig[2]) || [])[1]
     || (symbol || /archivbild|beispielbild|ortsansicht/i.test(badgeRoh) ? 'B' : 'A');
   fig.splice(2, 1);
   const img = /<img\b([^>]*)>/.exec(fig[2]); if (!img) return null;

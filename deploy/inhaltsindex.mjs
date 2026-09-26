@@ -258,6 +258,7 @@ index.bestand = {
     return !/logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
   };
   const eigenesFoto = (a) => echtesBild(a) && !POOLFOTO.test(a.bild.src);
+  const echtesBildOderOrt = echtesBild;
   // Seit den Motivregeln (24.09.) traegt jede Meldung nur noch ein Poolfoto,
   // das ihre Aussage zeigt. Damit darf auch der Aufmacher es tragen; eine
   // Ortsansicht (Fachwerkhaus zum Ortsfest) sagt dagegen nichts zur Meldung.
@@ -265,7 +266,6 @@ index.bestand = {
   // das eigene Foto vom Ereignis. Ein Poolfoto (B/C) ist ein Symbolbild und
   // steht an der wichtigsten Stelle der Seite nicht.
   const stufe = (a) => (a && a.bild && a.bild.stufe) || (a && a.bild && a.bild.symbol ? 'B' : 'A');
-  const aufmacherBild = (a) => eigenesFoto(a) && stufe(a) === 'A';
 
   // Jede Bildflaeche schneidet auf Querformat zu: die grosse Karte auf 16:9,
   // die mittlere auf 3:2. Zwei Motivsorten ueberleben das nicht.
@@ -307,8 +307,6 @@ index.bestand = {
       } else if (!redaktionellBebildert(gesetzt)) {
         console.error(`Startseite: Aufmacher ${ed.hero.url} traegt ein Logo oder Wappen als Bild. editorial-current.json korrigieren oder Eintrag entfernen.`);
         process.exitCode = 2;
-      } else if (stufe(gesetzt) !== 'A') {
-        console.log(`Startseite: gesetzter Aufmacher ${ed.hero.url} hat nur ein Symbolbild (Stufe ${stufe(gesetzt)}); Aufmacher braucht ein eigenes Foto, Automatik waehlt.`);
       } else {
         return gesetzt;
       }
@@ -325,21 +323,18 @@ index.bestand = {
     const frisch = redaktionell
       .filter((a) => !sportBezug(a) && a.datum && !a.undatiert && new Date(a.datum).toISOString() >= grenze)
       .sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
-    const frischMitFoto = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL);
-    if (frischMitFoto) return frischMitFoto;
-    const frischMitMotiv = frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || frisch.find((a) => aufmacherBild(a) && passtInPlatz(a, 'l'));
-    if (frischMitMotiv) return frischMitMotiv;
-    // Kein eigenes Foto in dieser Woche (Entscheidung KBS 25.09.2026): die
-    // juengste Meldung steht als Text-Aufmacher, ohne Bild. Aktuell bleibt
-    // wichtiger als ein Foto, und ein Symbolbild gehoert nicht an diese Stelle.
-    const textAufmacher = frisch.find((a) => a.ressort !== 'tipp');
-    if (textAufmacher) { console.log(`Startseite: kein eigenes Foto in den letzten 7 Tagen, Text-Aufmacher ${textAufmacher.url}.`); return { ...textAufmacher, textAufmacher: true }; }
-    return redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_XL)
-      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a) && passtInPlatz(a, 'l'))
-      || redaktionell.find((a) => !sportBezug(a) && aufmacherBild(a))
-      || null;
+    // Entscheidung KBS 26.09.2026: Der Aufmacher hat immer ein grosses Bild.
+    // Unter den Meldungen der letzten sieben Tage gewinnt die hoechste
+    // Bildstufe (A eigenes Foto > B passendes Symbolbild > C > O Ortsansicht),
+    // bei gleicher Stufe die neueste. Nie Logo, nie Plakat, mindestens 768 px.
+    const RANG = { A: 0, B: 1, C: 2, O: 3 };
+    const tauglich = (a) => a.ressort !== 'tipp' && echtesBildOderOrt(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= 768;
+    const beste = (liste) => liste.filter(tauglich)
+      .sort((x, y) => (RANG[stufe(x)] ?? 9) - (RANG[stufe(y)] ?? 9) || String(y.datum).localeCompare(String(x.datum)))[0];
+    const ausWoche = beste(frisch);
+    if (ausWoche) return ausWoche;
+    console.log('Startseite: keine bebilderte Meldung in den letzten 7 Tagen, Aufmacher aus dem Bestand.');
+    return beste(redaktionell.filter((a) => !sportBezug(a) && a.datum && !a.undatiert)) || null;
   }
 
   // Stil B (23.09.2026): Ein Hinweisschild steht nur, wo das Bild nicht das
@@ -360,8 +355,8 @@ index.bestand = {
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
   function karte(a, groesse, tag) {
     if (groesse === 'xl') {
-      return `<article class="front-lead${a.textAufmacher ? ' front-lead--text' : ''}" data-story="${esc(a.id)}">`
-        + (a.textAufmacher ? '' : bildFlaeche(a, '(max-width: 760px) 100vw, 780px', true))
+      return `<article class="front-lead" data-story="${esc(a.id)}">`
+        + bildFlaeche(a, '(max-width: 760px) 100vw, 860px', true)
         + `<div class="front-lead-copy">${markeHtml(a)}`
         + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
         + `<p>${esc(a.teaser)}</p>`
@@ -443,24 +438,35 @@ index.bestand = {
   // sich wie ein Polizeiticker (Critique 23.09., Freigabe Stil B).
   let blaulicht = aufmacher && aufmacher.ressort === 'blaulicht' ? 1 : 0;
   for (const a of gesetzteNeben) if (a.ressort === 'blaulicht') blaulicht++;
-  const neben = gesetzteNeben.concat(
-    redaktionell.filter((a) => {
-      if (vergeben.has(a.url) || sportBezug(a) || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
-      if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
-      return true;
-    }),
-  ).slice(0, 5);
+  // Erst Meldungen mit eigenem Foto oder passendem Symbolbild, dann - falls
+  // die Buehne sonst nicht voll wird - solche mit Ortsansicht (Stufe O).
+  const nebenKandidat = (a, mitOrt) => {
+    if (vergeben.has(a.url) || sportBezug(a) || a.ressort === 'tipp' || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
+    if (!mitOrt && stufe(a) === 'O') return false;
+    if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
+    return true;
+  };
+  const nebenErst = redaktionell.filter((a) => nebenKandidat(a, false)).slice(0, Math.max(0, 5 - gesetzteNeben.length));
+  for (const a of nebenErst) vergeben.add(a.url);
+  const nebenOrt = redaktionell.filter((a) => nebenKandidat(a, true));
+  const neben = gesetzteNeben.concat(nebenErst, nebenOrt).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
   if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
 
-  // Buehne nach Anhang A4.4: rechts oben die zweite Meldung groesser, darunter
-  // vier kompakte im 2x2. Keine kuenstliche Gleichheit der fuenf Highlights.
-  const [zweit, ...vier] = neben;
+  // Buehne (KBS/Ordin 26.09.2026): eine grosse Highlight-Meldung, zwei Karten
+  // rechts daneben, drei darunter - alle mit grossem Bild. Die Schlagzeile des
+  // Aufmachers steht auf einem Verlauf im Bild. Mobil: Aufmacher 4:3, dann fuenf
+  // Zeilen mit Vorschaubild.
+  const buehneKarte = (a, groesse) => `<article class="front-neben-story buehne-karte buehne-karte--${groesse}" data-story="${esc(a.id)}">`
+    + bildFlaeche(a, groesse === 'r' ? '(max-width: 760px) 132px, (max-width: 1100px) 50vw, 460px' : '(max-width: 760px) 132px, (max-width: 1100px) 33vw, 440px', false)
+    + `<div class="karte-text">${markeHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
+    + `<div class="meta">${zeitHtml(a, kurzZeit)}</div></div></article>`;
+  const rechts = neben.slice(0, 2), unten = neben.slice(2, 5);
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
-    + (zweit ? `<div class="front-neben">${karte(zweit, 'm').replace('class="front-neben-story"', 'class="front-neben-story front-zweit"')}`
-      + (vier.length ? `<div class="front-vier">${vier.map((a) => karte(a, 'm')).join('')}</div>` : '') + '</div>' : '');
+    + (rechts.length ? `<div class="buehne-rechts">${rechts.map((a) => buehneKarte(a, 'r')).join('')}</div>` : '')
+    + (unten.length ? `<div class="buehne-unten">${unten.map((a) => buehneKarte(a, 'u')).join('')}</div>` : '');
   const oben = '<!-- start:oben:start -->'
-    + `<section class="shell frontpage-grid" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">${inhaltOben}</section>`
+    + `<section class="shell buehne" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">${inhaltOben}</section>`
     + '<!-- start:oben:end -->';
 
   const MARKER_OBEN = /<!-- start:oben:start -->[\s\S]*?<!-- start:oben:end -->/;
@@ -508,7 +514,7 @@ index.bestand = {
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => !sportBezug(a) && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 2, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => !sportBezug(a) && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 3, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
@@ -590,8 +596,11 @@ index.bestand = {
     // gebaut. Reicht es nicht fuer beide, baut die Sektion die Reihe, die
     // aufgeht - drei mittlere schlagen zwei grosse, weil drei Motive mehr
     // Meldungen zeigen als zwei.
-    const lFaehig = frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_L);
-    const mFaehig = frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M);
+    // Ortsansichten (Stufe O) zeigen nicht das Ereignis: grosse und mittlere
+    // Karten nehmen zuerst Meldungen mit eigenem Foto oder passendem Motiv.
+    const ortZuletzt = (liste) => [...liste.filter((a) => stufe(a) !== 'O'), ...liste.filter((a) => stufe(a) === 'O')];
+    const lFaehig = ortZuletzt(frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'l') && bildBreite(a.bild) >= BREITE_L));
+    const mFaehig = ortZuletzt(frei.filter((a) => echtesBild(a) && passtInPlatz(a, 'm') && bildBreite(a.bild) >= BREITE_M));
     let gross = waehle(lFaehig, 2, []);
     let mittel = gross.length === 2 ? waehle(mFaehig, 3, gross) : [];
     if (gross.length !== 2 || mittel.length !== 3) {

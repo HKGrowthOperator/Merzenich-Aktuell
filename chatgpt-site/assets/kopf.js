@@ -63,7 +63,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=09c06f38c2';
+    style.href = '/assets/editorial-audit.css?v=4e7a3dd037';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
@@ -133,26 +133,7 @@
 })();
 
 
-/* Anzeigenrotation: eigener Layer, damit Content-Rebuilds die Werbelogik nicht
- * ueberschreiben. Auf Unterseiten wird nichts geladen. */
-(() => {
-  const seite = document.documentElement.dataset.page || '';
-  if (!seite.split(/\s+/).includes('home')) return;
-  if (!document.querySelector('link[data-ma-ad-rotation]')) {
-    const style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = '/assets/anzeigen-rotation.css?v=d4f00696f7';
-    style.dataset.maAdRotation = '1';
-    document.head.append(style);
-  }
-  if (!document.querySelector('script[data-ma-ad-rotation]')) {
-    const script = document.createElement('script');
-    script.src = '/assets/anzeigen-rotation.js?v=24888326f6';
-    script.async = false;
-    script.dataset.maAdRotation = '1';
-    document.head.append(script);
-  }
-})();
+/* Anzeigenrotation: seit 26.09. assets/werbung.js, im Kopf jeder Seite (deploy/kopf-theme-einbinden.mjs). */
 
 
 (() => {
@@ -165,7 +146,7 @@
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=85204ff04d';
+    script.src = '/assets/ressort-dropdowns.js?v=840e52d068';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);

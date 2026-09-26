@@ -1,0 +1,43 @@
+/* Werbesystem (KBS/Ordin 26.09.2026), gefuellt von deploy/anzeigen.mjs,
+   rotiert von assets/werbung.js. Feste Hoehen: beim Motivwechsel springt nichts.
+   Baender: zwei Motive nebeneinander (mobil eines). Spalte: ein Motiv, klebt. */
+.werbung{--w-linie:#e3e1dd;--w-tinte:#171513;--w-leise:#5f5b55;--w-rot:#971725;--w-grund:#fdfdfc;position:relative;font-family:var(--sans,system-ui,sans-serif);color:var(--w-tinte)}
+.werbung-label{display:block;margin:0 0 6px;font-size:10.5px;font-weight:700;line-height:1;letter-spacing:.12em;text-transform:uppercase;color:var(--w-leise)}
+.werbung-flaeche{display:grid;gap:12px;transition:opacity .22s cubic-bezier(.25,1,.5,1)}
+.werbung-flaeche.wechselt{opacity:0}
+.werbemotiv{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;min-width:0;height:100%;padding:14px 18px;border:1px solid var(--w-linie);background:var(--w-grund);color:var(--w-tinte);text-decoration:none;overflow:hidden}
+a.werbemotiv:hover{border-color:var(--w-tinte)}
+a.werbemotiv:focus-visible{outline:2px solid var(--w-rot);outline-offset:2px}
+.werbemotiv-zeichen{display:grid;place-items:center;width:62px;height:62px;flex:none;background:var(--w-rot);color:#fdfbf8;font-family:var(--serif,Georgia,serif);font-size:21px;font-weight:700;letter-spacing:.02em}
+.werbemotiv-text{min-width:0}
+.werbemotiv-text strong{display:block;font-family:var(--serif,Georgia,serif);font-size:19px;font-weight:600;line-height:1.15;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.werbemotiv-text span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;margin-top:4px;font-size:13px;line-height:1.38;color:var(--w-leise)}
+.werbemotiv-cta{padding:8px 12px;border:1px solid currentColor;font-size:12.5px;font-weight:700;line-height:1;white-space:nowrap}
+/* Eigenwerbung: die Hausfarbe traegt die Flaeche. */
+.werbemotiv--eigen{border-color:var(--w-rot);background:var(--w-rot);color:#fdfbf8}
+.werbemotiv--eigen .werbemotiv-text span{color:rgba(253,251,248,.86)}
+.werbemotiv--eigen .werbemotiv-zeichen{background:#fdfbf8;color:var(--w-rot)}
+a.werbemotiv--eigen:hover{border-color:#5e0c15;background:#86131f}
+
+.werbung--band{margin-top:32px;margin-bottom:8px}
+.werbung--band .werbung-flaeche{grid-template-columns:repeat(2,minmax(0,1fr));height:100px}
+.werbung--artikel{margin:28px 0}
+.werbung--artikel .werbung-flaeche{height:100px}
+.werbung--spalte,.werbung--sport{position:sticky;top:96px;margin-top:22px}
+.werbung--spalte .werbung-flaeche,.werbung--sport .werbung-flaeche{height:250px}
+.werbung--spalte .werbemotiv,.werbung--sport .werbemotiv{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;align-items:start;gap:12px;padding:20px}
+.werbung--spalte .werbemotiv-text strong,.werbung--sport .werbemotiv-text strong{white-space:normal;font-size:21px}
+.werbung--spalte .werbemotiv-text span,.werbung--sport .werbemotiv-text span{-webkit-line-clamp:3;line-clamp:3}
+.werbung--spalte .werbemotiv-cta,.werbung--sport .werbemotiv-cta{justify-self:start}
+@media (max-width:760px){
+  .werbung--band .werbung-flaeche{grid-template-columns:1fr;height:112px}
+  .werbung--band .werbemotiv:nth-child(n+2){display:none}
+  .werbemotiv{gap:12px;padding:12px 14px}
+  .werbemotiv-zeichen{width:48px;height:48px;font-size:17px}
+  .werbemotiv-cta{display:none}
+  .werbemotiv-text strong{font-size:17px}
+  .werbung--spalte,.werbung--sport{position:static}
+  .werbung--spalte .werbung-flaeche,.werbung--sport .werbung-flaeche{height:auto;min-height:160px}
+}
+html[data-werbung="aus"] .werbung{display:none!important}
+@media (prefers-reduced-motion:reduce){.werbung-flaeche{transition:none}}

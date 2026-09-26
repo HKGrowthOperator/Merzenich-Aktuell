@@ -217,29 +217,7 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
 (function(){
   'use strict';
 
-  /* Foto des Tages: tägliche, deterministische Rotation aus bereits
-     dokumentierten lokalen Projektbildern – mit sichtbarem Credit. */
-  var foto=document.getElementById('foto-des-tages-bild');
-  var credit=document.getElementById('foto-des-tages-credit');
-  if(foto&&credit){
-    var pool=[
-      ['/assets/places/merzenich-1440.webp','Historisches Fachwerkhaus im Ortskern von Merzenich','Karl-Heinz Meurer / Wikimedia Commons'],
-      ['/assets/places/golzheim-1440.webp','Blick über den Wenauer Hof auf St. Gregorius in Golzheim','Karl-Heinz Meurer / Wikimedia Commons'],
-      ['/assets/places/girbelsrath-1440.webp','Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath','Käthe und Bernd Limburg / Wikimedia Commons'],
-      ['/assets/places/morschenich-1440.webp','Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015','Papa1234 / Wikimedia Commons'],
-      ['/assets/places/buergewald-1440.webp','Luftbild von Bürgewald, dem früheren Morschenich-Alt','Antisyntagmatarchos / Wikimedia Commons']
-    ];
-    var now=new Date(), start=new Date(now.getFullYear(),0,0);
-    var day=Math.floor((now-start)/86400000);
-    var pick=pool[day%pool.length];
-    foto.src=pick[0]; foto.alt=pick[1]; credit.textContent='Foto: '+pick[2];
-    /* Ansichten aus der Gemeinde (Anhang A7): Ort und Beschreibung zum Bild. */
-    var orte={merzenich:'Merzenich',golzheim:'Golzheim',girbelsrath:'Girbelsrath',morschenich:'Morschenich',buergewald:'Bürgewald'};
-    var slug=(pick[0].match(/places\/([a-z]+)-/)||[])[1];
-    var ortEl=document.querySelector('[data-ansicht-ort]'), textEl=document.querySelector('[data-ansicht-text]');
-    if(ortEl&&orte[slug])ortEl.textContent=orte[slug];
-    if(textEl)textEl.textContent=pick[1]+'.';
-  }
+  /* Foto des Tages: seit 26.09. assets/foto-des-tages.js (deploy/foto-des-tages.mjs). */
 
   /* Geführter Einstieg für Anzeigen und Immobilien. */
   function icon(type){
