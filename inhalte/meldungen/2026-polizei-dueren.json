@@ -1,6 +1,51 @@
 {
-  "hinweis": "Pressemitteilungen der Polizei Düren (Presseportal), abgerufen am 24.09.2026 (imports/quellen/polizei.json). Nur was in der Mitteilung steht. Zeit = Veroeffentlichung der Pressemitteilung. Seiten erzeugt von deploy/meldungen.mjs.",
+  "hinweis": "Pressemitteilungen der Polizei Düren (Presseportal), abgerufen/ergänzt bis 27.09.2026 (imports/quellen/polizei.json). Nur was in der Mitteilung steht. Zeit = Veroeffentlichung der Pressemitteilung. Seiten erzeugt von deploy/meldungen.mjs.",
   "meldungen": [
+    {
+      "slug": "abbiegeunfall-motorradfahrer-steinweg",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Verkehrsunfall",
+      "titel": "Abbiegeunfall am Steinweg: Motorradfahrer schwer verletzt",
+      "dek": "Ein 47-jähriger Motorradfahrer wurde am Freitagabend in Merzenich schwer verletzt. Nach Polizeiangaben übersah ein abbiegender Autofahrer den entgegenkommenden Zweiradfahrer.",
+      "datum": "2026-09-26T07:20:00+02:00",
+      "fakten": [
+        "Unfall am Abend des 25. September 2026 in Merzenich",
+        "Pkw wollte nach links auf den Steinweg in Richtung S-Bahn-Haltestelle abbiegen",
+        "Motorradfahrer (47) schwer verletzt, Pkw-Fahrer (36) unverletzt",
+        "Beide Fahrzeuge nicht mehr fahrbereit; Gesamtschaden laut Polizei rund 7.000 Euro"
+      ],
+      "absaetze": [
+        "Bei einem Verkehrsunfall am Freitagabend, 25. September, ist in Merzenich ein 47-jähriger Motorradfahrer schwer verletzt worden.",
+        "Nach ersten Erkenntnissen der Polizei wollte ein 36-jähriger Autofahrer aus Zülpich nach links auf den Steinweg in Richtung S-Bahn-Haltestelle abbiegen. Dabei übersah er den entgegenkommenden Motorradfahrer. Im Einmündungsbereich kam es zur Kollision.",
+        "Der Motorradfahrer wurde mehrere Meter durch die Luft geschleudert und stürzte auf die Fahrbahn. Ersthelfer, darunter ein Arzt, kümmerten sich um ihn. Ein Rettungswagen brachte ihn anschließend in ein Krankenhaus. Der Autofahrer blieb unverletzt.",
+        "Beide Fahrzeuge waren nach Angaben der Polizei nicht mehr fahrbereit. Den Gesamtschaden beziffert die Polizei auf rund 7.000 Euro. Während der Unfallaufnahme und der anschließenden Reinigung wegen ausgelaufener Betriebsstoffe blieb die Unfallstelle gesperrt."
+      ],
+      "themen": [
+        [
+          "verkehrsunfall",
+          "Verkehrsunfall"
+        ],
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "motorrad",
+          "Motorrad"
+        ],
+        [
+          "steinweg",
+          "Steinweg"
+        ]
+      ],
+      "bildklasse": "verkehr",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 26.09.2026 (Presseportal)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6359466",
+        "stand": "2026-09-27"
+      }
+    },
     {
       "slug": "gegenstaende-fussgaengerbruecke-l264",
       "ressort": "blaulicht",
