@@ -39,7 +39,7 @@
           "Steinweg"
         ]
       ],
-      "bildklasse": "verkehr",
+      "bildklasse": "verkehr.unfall.rettung",
       "quelle": {
         "name": "Polizei Düren, Pressemitteilung vom 26.09.2026 (Presseportal)",
         "url": "https://www.presseportal.de/blaulicht/pm/8/6359466",
