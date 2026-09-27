@@ -9,10 +9,10 @@
  * (Servicespalte der Startseite, klebt beim Scrollen), sport (rechte Spalte der
  * Sportseite) oder artikel (Artikel- und uebrige Seiten).
  *
- * - Ein Band zeigt zwei Motive nebeneinander (mobil eines), jede andere Flaeche
- *   eines. Benachbarte Flaechen beginnen versetzt, damit nicht zweimal
- *   hintereinander dasselbe Motiv steht. Wiederholungen ueber die Seite sind
- *   erlaubt (Wunsch KBS).
+ * - Jede Flaeche zeigt ein Motiv der Anzeigenrotation vom 24.09.2026 in deren
+ *   Gestaltung (Wunsch Auftraggeber 27.09.: in allen Flaechen). Benachbarte
+ *   Flaechen beginnen versetzt, damit nicht zweimal hintereinander dasselbe
+ *   Motiv steht. Wiederholungen ueber die Seite sind erlaubt.
  * - Das HTML traegt den Startzustand, damit ohne JavaScript Werbung steht.
  *   assets/werbung.js rotiert danach alle Flaechen im selben Takt.
  * - Alte Werbebloecke (.ad-row-body mit den zwei Textkaesten, .home-ad-band)
@@ -38,10 +38,9 @@ const ids = new Set();
 for (const m of daten.motive) {
   if (!m.id || ids.has(m.id)) fehler.push(`Motiv ohne oder mit doppelter id: ${m.id}`);
   ids.add(m.id);
-  if (!['kunde', 'eigen'].includes(m.art)) fehler.push(`${m.id}: art muss kunde oder eigen sein`);
-  if (!m.titel || !m.kunde) fehler.push(`${m.id}: titel und kunde sind Pflicht`);
-  if (/€|\bEUR\b|\d+\s*Euro/i.test(`${m.titel} ${m.text} ${m.cta}`)) fehler.push(`${m.id}: keine Preise in Motiven (Preis auf Anfrage)`);
-  if (/probebank|musteranzeige|demo/i.test(`${m.id} ${m.kunde} ${m.titel} ${m.text}`)) fehler.push(`${m.id}: Demo-Motive gehoeren nicht auf die Website`);
+  if (!['bank', 'sport'].includes(m.typ)) fehler.push(`${m.id}: typ muss bank oder sport sein`);
+  for (const f of ['kunde', 'eyebrow', 'headline', 'text', 'cta', 'ziel']) if (!m[f]) fehler.push(`${m.id}: ${f} fehlt`);
+  if (/€|\bEUR\b|\d+\s*Euro/i.test(`${m.headline} ${m.text} ${m.cta}`)) fehler.push(`${m.id}: keine Preise in Motiven (Preis auf Anfrage)`);
   if (m.ziel && !/^(https:\/\/|\/)/.test(m.ziel)) fehler.push(`${m.id}: ziel muss https:// oder / sein`);
   if (m.ziel && m.ziel.startsWith('/')) {
     const pfad = m.ziel.split(/[?#]/)[0];
@@ -49,29 +48,35 @@ for (const m of daten.motive) {
   }
 }
 const MOTIVE = daten.motive;
+const LABEL = daten.label || 'Anzeige';
 if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert nichts');
 
 // ------------------------------------------------------------------ Rendering
-function motivHtml(m) {
-  const extern = /^https:\/\//.test(m.ziel || '');
-  const zeichen = m.art === 'kunde'
-    ? `<span class="werbemotiv-zeichen" aria-hidden="true">${esc(m.zeichen || m.kunde.slice(0, 2))}</span>`
-    : '<span class="werbemotiv-zeichen werbemotiv-zeichen--eigen" aria-hidden="true">MA</span>';
-  const innen = zeichen
-    + `<span class="werbemotiv-text"><strong>${esc(m.titel)}</strong>${m.text ? `<span>${esc(m.text)}</span>` : ''}</span>`
-    + (m.cta && m.ziel ? `<span class="werbemotiv-cta">${esc(m.cta)}</span>` : '');
-  const klasse = `werbemotiv werbemotiv--${m.art}`;
-  if (!m.ziel) return `<div class="${klasse}" data-motiv="${esc(m.id)}">${innen}</div>`;
-  const rel = extern ? ' target="_blank" rel="sponsored noopener"' : (m.art === 'kunde' ? ' rel="sponsored"' : '');
-  return `<a class="${klasse}" href="${esc(m.ziel)}"${rel} data-motiv="${esc(m.id)}">${innen}</a>`;
+// Markup und Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a):
+// Text links, Farbflaeche rechts (Bank blau mit X, Verein gruen mit Spielfeld).
+// Format band: Werbebaender und Artikelseiten. Format gap: hochkant in Spalten.
+function kunst(typ) {
+  if (typ === 'sport') return '<span class="ma-ad-art ma-ad-art--sport" aria-hidden="true"><span class="ma-ad-ball"></span><span class="ma-ad-art-word">SV</span></span>';
+  return '<span class="ma-ad-art ma-ad-art--bank" aria-hidden="true"><span class="ma-ad-x"></span><span class="ma-ad-art-word">X</span></span>';
+}
+function motivHtml(m, format) {
+  const extern = /^https:\/\//.test(m.ziel);
+  const rel = extern ? ' target="_blank" rel="sponsored noopener"' : '';
+  return `<a class="ma-ad-card ma-ad-card--${format} ma-ad-theme--${esc(m.typ)}" href="${esc(m.ziel)}"${rel} data-motiv="${esc(m.id)}" aria-label="Anzeige: ${esc(m.kunde)} – ${esc(m.headline)}">`
+    + kunst(m.typ)
+    + '<span class="ma-ad-copy">'
+    + `<span class="ma-ad-eyebrow">${esc(m.eyebrow)}</span>`
+    + `<strong>${esc(m.headline)}</strong>`
+    + `<span class="ma-ad-text">${esc(m.text)}</span>`
+    + `<span class="ma-ad-cta">${esc(m.cta)}</span>`
+    + (format === 'gap' ? '<span class="ma-ad-muster">Musteranzeige</span>' : '')
+    + '</span></a>';
 }
 
-// Startversatz je Flaeche. Baender zeigen zwei Motive; der Versatz um zwei
-// sorgt dafuer, dass zwei aufeinanderfolgende Baender verschiedene Motive tragen.
-const ANZAHL = { band: 2 };
+// Startversatz je Flaeche: benachbarte Baender beginnen mit verschiedenen Motiven.
 function versatz(slot) {
   const band = /^band-(\d+)$/.exec(slot);
-  if (band) return (Number(band[1]) - 1) * 2;
+  if (band) return Number(band[1]) - 1;
   if (slot === 'spalte') return 1;
   if (slot === 'sport') return 3;
   // artikel: fester Start. Listen-Folgeseiten sind Kopien ihrer Ressortseite
@@ -80,11 +85,10 @@ function versatz(slot) {
 }
 function slotHtml(slot) {
   const art = slot.startsWith('band-') ? 'band' : slot;
-  const n = ANZAHL[art] || 1;
-  const o = versatz(slot);
-  const motive = Array.from({ length: n }, (_, i) => MOTIVE[(o + i) % MOTIVE.length]);
-  return `<aside class="werbung werbung--${art}${art === 'band' ? ' shell' : ''}" data-werbung="${art}" data-versatz="${o % MOTIVE.length}" data-anzahl="${n}" aria-label="Anzeige">`
-    + `<span class="werbung-label">Anzeige</span><div class="werbung-flaeche">${motive.map(motivHtml).join('')}</div></aside>`;
+  const format = art === 'spalte' || art === 'sport' ? 'gap' : 'band';
+  const o = versatz(slot) % MOTIVE.length;
+  return `<aside class="werbung werbung--${art}${art === 'band' ? ' shell' : ''}" data-werbung="${art}" data-format="${format}" data-versatz="${o}" data-anzahl="1" aria-label="${esc(LABEL)}">`
+    + `<span class="werbung-label">${esc(LABEL)}</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--${format}">${motivHtml(MOTIVE[o], format)}</div></aside>`;
 }
 
 // ------------------------------------------------------------------ Migration
@@ -111,7 +115,7 @@ for (const pfad of seiten) {
 
 // Laufzeitdaten fuer die Rotation.
 {
-  const json = JSON.stringify({ rotationSekunden: daten.rotationSekunden || 12, motive: MOTIVE.map((m) => ({ id: m.id, html: motivHtml(m) })) }) + '\n';
+  const json = JSON.stringify({ rotationSekunden: daten.rotationSekunden || 12, motive: MOTIVE.map((m) => ({ id: m.id, band: motivHtml(m, 'band'), gap: motivHtml(m, 'gap') })) }) + '\n';
   const ziel = join(site, 'assets', 'werbung.json');
   if (!existsSync(ziel) || readFileSync(ziel, 'utf8') !== json) { veraltet.push('/assets/werbung.json'); if (!nurPruefen) writeFileSync(ziel, json); }
 }

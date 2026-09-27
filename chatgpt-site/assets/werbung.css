@@ -1,43 +1,212 @@
-/* Werbesystem (KBS/Ordin 26.09.2026), gefuellt von deploy/anzeigen.mjs,
-   rotiert von assets/werbung.js. Feste Hoehen: beim Motivwechsel springt nichts.
-   Baender: zwei Motive nebeneinander (mobil eines). Spalte: ein Motiv, klebt. */
-.werbung{--w-linie:#e3e1dd;--w-tinte:#171513;--w-leise:#5f5b55;--w-rot:#971725;--w-grund:#fdfdfc;position:relative;font-family:var(--sans,system-ui,sans-serif);color:var(--w-tinte)}
-.werbung-label{display:block;margin:0 0 6px;font-size:10.5px;font-weight:700;line-height:1;letter-spacing:.12em;text-transform:uppercase;color:var(--w-leise)}
-.werbung-flaeche{display:grid;gap:12px;transition:opacity .22s cubic-bezier(.25,1,.5,1)}
-.werbung-flaeche.wechselt{opacity:0}
-.werbemotiv{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;min-width:0;height:100%;padding:14px 18px;border:1px solid var(--w-linie);background:var(--w-grund);color:var(--w-tinte);text-decoration:none;overflow:hidden}
-a.werbemotiv:hover{border-color:var(--w-tinte)}
-a.werbemotiv:focus-visible{outline:2px solid var(--w-rot);outline-offset:2px}
-.werbemotiv-zeichen{display:grid;place-items:center;width:62px;height:62px;flex:none;background:var(--w-rot);color:#fdfbf8;font-family:var(--serif,Georgia,serif);font-size:21px;font-weight:700;letter-spacing:.02em}
-.werbemotiv-text{min-width:0}
-.werbemotiv-text strong{display:block;font-family:var(--serif,Georgia,serif);font-size:19px;font-weight:600;line-height:1.15;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.werbemotiv-text span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;margin-top:4px;font-size:13px;line-height:1.38;color:var(--w-leise)}
-.werbemotiv-cta{padding:8px 12px;border:1px solid currentColor;font-size:12.5px;font-weight:700;line-height:1;white-space:nowrap}
-/* Eigenwerbung: die Hausfarbe traegt die Flaeche. */
-.werbemotiv--eigen{border-color:var(--w-rot);background:var(--w-rot);color:#fdfbf8}
-.werbemotiv--eigen .werbemotiv-text span{color:rgba(253,251,248,.86)}
-.werbemotiv--eigen .werbemotiv-zeichen{background:#fdfbf8;color:var(--w-rot)}
-a.werbemotiv--eigen:hover{border-color:#5e0c15;background:#86131f}
-
+/* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
+   anzeigen-rotation.css), auf Wunsch des Auftraggebers unveraendert in allen
+   Werbeflaechen (27.09.2026). Gefuellt von deploy/anzeigen.mjs, rotiert von
+   assets/werbung.js. Band = Werbebaender und Artikelseiten, gap = Spalten.
+   Feste Hoehen: beim Motivwechsel springt nichts. */
+.werbung{position:relative}
+.werbung--band,.werbung--artikel{box-sizing:border-box;padding:12px 0;border-top:1px solid var(--ma-line,#deddd9)}
 .werbung--band{margin-top:32px;margin-bottom:8px}
-.werbung--band .werbung-flaeche{grid-template-columns:repeat(2,minmax(0,1fr));height:100px}
 .werbung--artikel{margin:28px 0}
-.werbung--artikel .werbung-flaeche{height:100px}
-.werbung--spalte,.werbung--sport{position:sticky;top:96px;margin-top:22px}
-.werbung--spalte .werbung-flaeche,.werbung--sport .werbung-flaeche{height:250px}
-.werbung--spalte .werbemotiv,.werbung--sport .werbemotiv{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;align-items:start;gap:12px;padding:20px}
-.werbung--spalte .werbemotiv-text strong,.werbung--sport .werbemotiv-text strong{white-space:normal;font-size:21px}
-.werbung--spalte .werbemotiv-text span,.werbung--sport .werbemotiv-text span{-webkit-line-clamp:3;line-clamp:3}
-.werbung--spalte .werbemotiv-cta,.werbung--sport .werbemotiv-cta{justify-self:start}
-@media (max-width:760px){
-  .werbung--band .werbung-flaeche{grid-template-columns:1fr;height:112px}
-  .werbung--band .werbemotiv:nth-child(n+2){display:none}
-  .werbemotiv{gap:12px;padding:12px 14px}
-  .werbemotiv-zeichen{width:48px;height:48px;font-size:17px}
-  .werbemotiv-cta{display:none}
-  .werbemotiv-text strong{font-size:17px}
-  .werbung--spalte,.werbung--sport{position:static}
-  .werbung--spalte .werbung-flaeche,.werbung--sport .werbung-flaeche{height:auto;min-height:160px}
+.werbung-label{display:block;margin-bottom:8px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6f6a63}
+.werbung--spalte .werbung-label,.werbung--sport .werbung-label{margin-bottom:7px;color:#77716a;font-size:9px;font-weight:800;letter-spacing:.13em}
+.ma-ad-rotator{
+  min-width:0;
+  opacity:1;
+  transition:opacity 180ms ease;
 }
+.ma-ad-rotator.is-changing{opacity:0}
+.ma-ad-rotator--band{height:86px}
+
+.ma-ad-card{
+  height:100%;
+  min-width:0;
+  display:grid;
+  color:#17191b;
+  background:#fff;
+  border:1px solid var(--ma-line,#deddd9);
+  border-radius:2px;
+  overflow:hidden;
+  text-decoration:none;
+}
+.ma-ad-card--band{
+  grid-template-columns:minmax(0,1fr) minmax(180px,31%);
+}
+.ma-ad-copy{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:11px 16px;
+}
+.ma-ad-eyebrow{
+  flex:0 0 auto;
+  color:#6f6a63;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.ma-ad-copy strong{
+  min-width:0;
+  font-family:var(--serif);
+  font-size:clamp(18px,1.7vw,24px);
+  font-weight:650;
+  line-height:1.05;
+  letter-spacing:-.01em;
+}
+.ma-ad-text{
+  min-width:0;
+  color:#5f5b56;
+  font-size:12px;
+  line-height:1.35;
+}
+.ma-ad-cta{
+  flex:0 0 auto;
+  padding:8px 10px;
+  border:1px solid currentColor;
+  border-radius:2px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.ma-ad-muster{display:none}
+
+.ma-ad-art{
+  position:relative;
+  grid-column:2;
+  grid-row:1;
+  overflow:hidden;
+  min-width:0;
+}
+.ma-ad-card--band .ma-ad-copy{grid-column:1;grid-row:1}
+.ma-ad-art-word{
+  position:absolute;
+  right:13px;
+  bottom:7px;
+  color:rgba(255,255,255,.92);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.14em;
+}
+
+.ma-ad-art--bank{background:#0d5cab}
+.ma-ad-x,
+.ma-ad-x::before{
+  position:absolute;
+  content:"";
+  width:76px;
+  height:18px;
+  top:34px;
+  left:50%;
+  margin-left:-38px;
+  background:#fff;
+  transform:rotate(42deg);
+  opacity:.95;
+}
+.ma-ad-x::before{top:0;left:0;margin:0;transform:rotate(96deg)}
+.ma-ad-theme--bank .ma-ad-cta{color:#0d5cab}
+
+.ma-ad-art--sport{background:#096b43}
+.ma-ad-art--sport::before{
+  content:"";
+  position:absolute;
+  inset:13px 18px;
+  border:1px solid rgba(255,255,255,.74);
+}
+.ma-ad-art--sport::after{
+  content:"";
+  position:absolute;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.74);
+  border-radius:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+.ma-ad-ball{
+  position:absolute;
+  width:25px;
+  height:25px;
+  left:24px;
+  bottom:15px;
+  border:2px solid #fff;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:inset 0 0 0 7px #096b43;
+}
+.ma-ad-theme--sport .ma-ad-cta{color:#096b43}
+.ma-ad-card:hover,
+.ma-ad-card:focus-visible{border-color:#8e8a84}
+.ma-ad-card:hover .ma-ad-cta,
+.ma-ad-card:focus-visible .ma-ad-cta{text-decoration:underline;text-underline-offset:2px}
+
+.ma-ad-rotator--gap{height:260px}
+.ma-ad-card--gap{
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+}
+.ma-ad-card--gap .ma-ad-art{
+  flex:1 1 46%;
+  width:100%;
+  min-height:72px;
+}
+.ma-ad-card--gap .ma-ad-copy{
+  flex:1 1 54%;
+  display:block;
+  padding:10px 11px;
+}
+.ma-ad-card--gap .ma-ad-eyebrow,
+.ma-ad-card--gap .ma-ad-copy strong,
+.ma-ad-card--gap .ma-ad-text,
+.ma-ad-card--gap .ma-ad-cta,
+.ma-ad-card--gap .ma-ad-muster{display:block}
+.ma-ad-card--gap .ma-ad-eyebrow{font-size:8px}
+.ma-ad-card--gap .ma-ad-copy strong{margin-top:4px;font-size:18px;line-height:1.05}
+.ma-ad-card--gap .ma-ad-text{margin-top:5px;font-size:10px;line-height:1.3}
+.ma-ad-card--gap .ma-ad-cta{display:inline-block;margin-top:8px;padding:5px 7px;font-size:8px}
+.ma-ad-card--gap .ma-ad-muster{margin-top:6px;color:#8b857d;font-size:8px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Artikelseiten: die Textspalte ist schmal (~720px), dort gilt die kompakte
+   Bandfassung des Originals (wie unter 900px Fensterbreite). */
+@media (min-width:561px){
+  .werbung--artikel .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 118px}
+  .werbung--artikel .ma-ad-copy{gap:8px;padding:9px 11px}
+  .werbung--artikel .ma-ad-eyebrow{display:none}
+  .werbung--artikel .ma-ad-copy strong{font-size:18px}
+  .werbung--artikel .ma-ad-text{font-size:11px}
+  .werbung--artikel .ma-ad-cta{padding:6px 7px;font-size:9px}
+}
+
+@media (max-width:900px){
+  .werbung--band,.werbung--artikel{margin-top:24px!important;margin-bottom:24px}
+  .ma-ad-rotator--band{height:78px}
+  .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 118px}
+  .ma-ad-copy{gap:8px;padding:9px 11px}
+  .ma-ad-eyebrow{display:none}
+  .ma-ad-copy strong{font-size:18px}
+  .ma-ad-text{font-size:11px}
+  .ma-ad-cta{padding:6px 7px;font-size:9px}
+  .werbung--spalte,.werbung--sport{display:none}
+}
+
+@media (max-width:560px){
+  .werbung--band,.werbung--artikel{margin-top:20px!important;margin-bottom:20px;padding-block:10px}
+  .ma-ad-rotator--band{height:74px}
+  .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 86px}
+  .ma-ad-copy{display:block;padding:8px 10px}
+  .ma-ad-copy strong{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ma-ad-text{display:block;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:10px}
+  .ma-ad-cta{display:none}
+  .ma-ad-art-word{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ma-ad-rotator{transition:none}
+}
+
+.werbung--spalte,.werbung--sport{position:sticky;top:96px;margin-top:14px;border-top:1px solid #d4d1cb;padding-top:10px;box-sizing:border-box}
 html[data-werbung="aus"] .werbung{display:none!important}
-@media (prefers-reduced-motion:reduce){.werbung-flaeche{transition:none}}

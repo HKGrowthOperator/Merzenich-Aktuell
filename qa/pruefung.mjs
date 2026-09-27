@@ -321,7 +321,8 @@ function pruefeServiceInhalte() {
   }
   for (const datei of ['chatgpt-site/index.html', termine, 'chatgpt-site/immobilien/index.html', 'chatgpt-site/jobs/index.html', 'chatgpt-site/traueranzeigen/index.html']) {
     if (!gibtEs(datei)) continue;
-    const text = lies(datei);
+    // Werbeflaechen sind gekennzeichnete Anzeigen, keine Daten ("Anzeige · Demo").
+    const text = lies(datei).replace(/<!-- werbung:([a-z0-9-]+):start -->[\s\S]*?<!-- werbung:\1:end -->/g, '');
     for (const [muster, label] of DEMO_MARKER) if (muster.test(text)) fehler('Service', `${datei} enthaelt ${label}.`);
   }
   for (const datei of dateienUnter('chatgpt-site/api', '.json')) {
@@ -743,8 +744,9 @@ async function pruefeSportfreieStartseite() {
 
 // ------------------------------------------- Werbung (KBS 26.09.2026)
 // Nach der Buehne und nach jeder Rubrik steht genau ein Werbeband; benachbarte
-// Baender zeigen verschiedene Motive; keine Demo-Motive, keine Preise; jede
-// Werbeflaeche ist als "Anzeige" gekennzeichnet; externe Kundenlinks sponsored.
+// Baender zeigen verschiedene Motive; keine Preise; jede Werbeflaeche ist als
+// "Anzeige" gekennzeichnet; externe Kundenlinks sponsored. Die Motive sind die
+// Demo-Anzeigen des Auftraggebers vom 24.09. (Entscheidung 27.09.2026).
 function pruefeWerbung() {
   const html = lies('chatgpt-site/index.html');
   const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
@@ -760,13 +762,12 @@ function pruefeWerbung() {
     if (ersteMotive[i].some((m) => ersteMotive[i - 1].includes(m))) fehler('Werbung', `Band ${i} und ${i + 1} zeigen dasselbe Motiv.`);
   }
   for (const b of baender) {
-    if (!b[2].includes('<span class="werbung-label">Anzeige</span>')) fehler('Werbung', `${b[1]} ohne Kennzeichnung "Anzeige".`);
+    if (!/<span class="werbung-label">Anzeige\b/.test(b[2])) fehler('Werbung', `${b[1]} ohne Kennzeichnung "Anzeige".`);
     if (!/data-motiv=/.test(b[2])) fehler('Werbung', `${b[1]} ist leer.`);
   }
   const alle = [...html.matchAll(/<aside class="werbung[\s\S]*?<\/aside>/g)].map((m) => m[0]).join('');
-  if (/probebank|musteranzeige|anzeige · demo/i.test(html)) fehler('Werbung', 'Demo-Motive auf der Startseite.');
   if (/€/.test(alle)) fehler('Werbung', 'Preis in einem Werbemotiv (Preis auf Anfrage).');
-  for (const m of alle.matchAll(/<a class="werbemotiv werbemotiv--kunde" href="(https:[^"]+)"([^>]*)>/g)) {
+  for (const m of alle.matchAll(/<a class="ma-ad-card[^"]*" href="(https:[^"]+)"([^>]*)>/g)) {
     if (!/rel="[^"]*sponsored/.test(m[2])) fehler('Werbung', `Kundenlink ${m[1]} ohne rel=sponsored.`);
   }
   if (!/<html[^>]*data-werbung="an"/.test(html)) hinweis('Werbung', 'Werbung ist in deploy/anzeigen.json ausgeschaltet.');

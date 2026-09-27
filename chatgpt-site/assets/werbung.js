@@ -1,12 +1,14 @@
-/* Werbesystem (KBS/Ordin 26.09.2026): rotiert alle Werbeflaechen einer Seite im
- * selben Takt. Motive und Takt kommen aus /assets/werbung.json (deploy/anzeigen.mjs).
- * Das ausgelieferte HTML traegt den Startzustand; ohne JavaScript bleibt er stehen.
+/* Werbesystem: rotiert alle Werbeflaechen einer Seite im selben Takt, mit den
+ * Motiven und der Gestaltung der Anzeigenrotation vom 24.09.2026. Motive und
+ * Takt kommen aus /assets/werbung.json (deploy/anzeigen.mjs), je Motiv als
+ * fertiges HTML fuer das Format band (Baender, Artikel) und gap (Spalten).
+ * Der Takt ist zeitbasiert: Ein Reload beginnt nicht wieder bei Motiv 1.
  * Eine Flaeche pausiert, solange die Maus darauf steht oder ein Link darin den
- * Fokus hat. Unsichtbare Flaechen wechseln ohne Ueberblendung. */
+ * Fokus hat. Ohne JavaScript bleibt das Startmotiv aus dem HTML stehen. */
 (() => {
   'use strict';
   if (document.documentElement.dataset.werbung === 'aus') return;
-  const flaechen = [...document.querySelectorAll('[data-werbung]')];
+  const flaechen = [...document.querySelectorAll('aside[data-werbung]')];
   if (!flaechen.length) return;
   const ruhig = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   fetch('/assets/werbung.json', { credentials: 'same-origin' })
@@ -14,39 +16,37 @@
     .then((d) => {
       const motive = Array.isArray(d.motive) ? d.motive : [];
       if (motive.length < 2) return;
-      const takt = Math.max(6, Number(d.rotationSekunden) || 12) * 1000;
-      const start = Math.floor(Date.now() / takt);
+      const takt = Math.max(6, Number(d.rotationSekunden) || 14) * 1000;
       const zustand = flaechen.map((el) => ({
         el, flaeche: el.querySelector('.werbung-flaeche'),
-        versatz: Number(el.dataset.versatz) || 0, anzahl: Number(el.dataset.anzahl) || 1,
-        sichtbar: false, pause: false, schritt: 0,
+        format: el.dataset.format === 'gap' ? 'gap' : 'band',
+        versatz: Number(el.dataset.versatz) || 0, pause: false, aktuell: '',
       })).filter((z) => z.flaeche);
-      const beobachter = 'IntersectionObserver' in window
-        ? new IntersectionObserver((e) => e.forEach((x) => { const z = zustand.find((y) => y.el === x.target); if (z) z.sichtbar = x.isIntersecting; }), { threshold: 0.2 })
-        : null;
       for (const z of zustand) {
-        if (beobachter) beobachter.observe(z.el); else z.sichtbar = true;
+        const erstes = z.flaeche.querySelector('[data-motiv]');
+        z.aktuell = erstes ? erstes.dataset.motiv : '';
         z.el.addEventListener('mouseenter', () => { z.pause = true; });
         z.el.addEventListener('mouseleave', () => { z.pause = false; });
         z.el.addEventListener('focusin', () => { z.pause = true; });
         z.el.addEventListener('focusout', () => { z.pause = false; });
       }
-      const html = (z, schritt) => Array.from({ length: z.anzahl }, (_, i) => motive[(z.versatz + schritt * z.anzahl + i) % motive.length].html).join('');
-      function zeige(z, schritt) {
-        if (z.schritt === schritt) return;
-        z.schritt = schritt;
-        const neu = html(z, schritt);
-        if (!z.sichtbar || ruhig) { z.flaeche.innerHTML = neu; return; }
-        z.flaeche.classList.add('wechselt');
-        setTimeout(() => { z.flaeche.innerHTML = neu; requestAnimationFrame(() => z.flaeche.classList.remove('wechselt')); }, 230);
+      function zeige(z, schritt, sofort) {
+        const m = motive[((schritt + z.versatz) % motive.length + motive.length) % motive.length];
+        if (!m || m.id === z.aktuell) return;
+        z.aktuell = m.id;
+        const html = m[z.format] || m.band;
+        if (sofort || ruhig) { z.flaeche.innerHTML = html; return; }
+        z.flaeche.classList.add('is-changing');
+        setTimeout(() => { z.flaeche.innerHTML = html; requestAnimationFrame(() => z.flaeche.classList.remove('is-changing')); }, 180);
       }
-      function weiter() {
+      function weiter(sofort) {
         if (document.hidden) return;
-        const schritt = Math.floor(Date.now() / takt) - start;
-        for (const z of zustand) if (!z.pause) zeige(z, schritt);
+        const schritt = Math.floor(Date.now() / takt);
+        for (const z of zustand) if (!z.pause) zeige(z, schritt, sofort);
       }
-      setTimeout(() => { weiter(); setInterval(weiter, takt); }, takt - (Date.now() % takt) + 40);
-      document.addEventListener('visibilitychange', weiter);
+      weiter(true);
+      setTimeout(() => { weiter(false); setInterval(() => weiter(false), takt); }, takt - (Date.now() % takt) + 30);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) weiter(true); });
     })
-    .catch(() => { /* Startzustand aus dem HTML bleibt stehen */ });
+    .catch(() => { /* Startmotiv aus dem HTML bleibt stehen */ });
 })();
