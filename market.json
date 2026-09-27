@@ -1,6 +1,6 @@
 {
   "meta": {
-    "checkedAt": "2026-09-16T19:32:00+02:00",
+    "checkedAt": "2026-09-27T11:46:00+02:00",
     "scope": "Merzenich und direkt angrenzende Kommunen",
     "primaryMunicipality": "Merzenich",
     "municipalDistricts": [
@@ -18,7 +18,7 @@
       "Kerpen"
     ],
     "methodNote": "Redaktionell geprüfte Einzelangebote plus Links zu laufenden Marktübersichten. Verfügbarkeit, Preise und Fristen können sich beim Anbieter kurzfristig ändern. Maßgeblich ist die verlinkte Originalquelle.",
-    "jobsCheckedAt": "2026-09-26T11:22:43+02:00",
+    "jobsCheckedAt": "2026-09-27T11:46:00+02:00",
     "jobsRemoved": [
       {
         "id": "rewe-frischetheke-merzenich",
@@ -83,9 +83,94 @@
         "removedAt": "2026-09-24T13:53:32+02:00",
         "status": 404
       }
-    ]
+    ],
+    "marketExpansionNote": "Content-Refresh 27.09.2026: neue Einzelangebote in Merzenich sowie Düren, Niederzier, Nörvenich, Elsdorf und Kerpen ergänzt; reine Suchseiten bleiben nur Marktquellen."
   },
   "jobs": [
+    {
+      "id": "schall-industriekaufmann-2027",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Ausbildung Industriekaufmann/-frau (m/w/d) – Ausbildungsjahr 2027",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · Start 01.08.2027",
+      "details": "Am Roßpfad 1–3, Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/ausbildung-industriekaufmann-industriekauffrau-m-w-d-ausbildungsjahr-2027-praktikum-moeglich/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-technischer-konfektionaer-2027",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Ausbildung Technischer Konfektionär (m/w/d) – 2027",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · Start 01.08.2027",
+      "details": "52399 Merzenich · Praktikum möglich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/ausbildung-technischer-konfektionaer-m-w-d-ausbildung-2026-praktikum-moeglich/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-maschinen-anlagenfuehrer-2027",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Ausbildung Maschinen- und Anlagenführer (m/w/d) – 2027",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · Start 01.08.2027",
+      "details": "Metall-/Kunststofftechnik und Textilverarbeitung · Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/ausbildung-zum-maschinen-und-anlagenfuehrer-m-w-d-praktikum-moeglich/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-lagerleiter",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Lagerleiter (m/w/d)",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Vollzeit · unbefristet · ab sofort · 39 Std./Woche",
+      "details": "Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/karriere/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-servicetechniker-zeltsysteme",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Servicetechniker – Militärische Zeltsysteme (m/w/d)",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Vollzeit oder Teilzeit · unbefristet · ab sofort",
+      "details": "Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/karriere/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-technische-konfektionaere",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Technische Konfektionäre (m/w/d)",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Vollzeit · unbefristet · ab sofort · 39 Std./Woche",
+      "details": "Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/technische-konfektionaere-m-w-d-2/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "schall-industriemechaniker-schlosser",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "Industriemechaniker / Schlosser (m/w/d)",
+      "employer": "M. Schall GmbH & Co. KG",
+      "employment": "Vollzeit · unbefristet · ab sofort · 39 Std./Woche",
+      "details": "Merzenich",
+      "sourceName": "M. Schall Karriere",
+      "sourceUrl": "https://mschall.de/industriemechaniker-schlosser-m-w-d/",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
     {
       "id": "rewe-schliessfunktion-merzenich",
       "municipality": "Merzenich",
@@ -183,6 +268,66 @@
       "checkedAt": "2026-09-26T11:22:43+02:00"
     },
     {
+      "id": "seybold-industriekaufmann-2026",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Ausbildung 2026 – Industriekaufmann/-frau (m/w/x)",
+      "employer": "H. Seybold GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Dr.-Christian-Seybold-Str. 4, Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207771477-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "seybold-bueromanagement-2026",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Ausbildung 2026 – Kaufmann/-frau für Büromanagement (m/w/x)",
+      "employer": "H. Seybold GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Dr.-Christian-Seybold-Str. 4, Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207770487-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "huelden-grosshandel-2026",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Ausbildung Kaufmann/-frau Groß- und Außenhandelsmanagement (m/w/d)",
+      "employer": "Aug. Huelden GmbH & Co. KG",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Dr.-Chr.-Seybold-Str. 10, Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1203888949-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "alfood-lagerist-dueren",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Lagerist / Fachkraft Lagerlogistik (m/w/d)",
+      "employer": "AL-Food GmbH",
+      "employment": "Vollzeit · ab Oktober 2026 · Quereinstieg möglich",
+      "details": "Arnoldsweilerweg 142, Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207850610-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "gkd-industriekaufmann-2027",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Ausbildung Industriekaufmann/-frau (m/w/d) – 2027",
+      "employer": "GKD – Gebr. Kufferath AG",
+      "employment": "Ausbildung · Vollzeit · Start 01.08.2027",
+      "details": "Düren",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17124-00098700278001-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
       "id": "puro-it-techniker-dueren",
       "municipality": "Düren",
       "district": "",
@@ -207,6 +352,42 @@
       "checkedAt": "2026-09-26T11:22:43+02:00"
     },
     {
+      "id": "loewenkamp-zerspanung-2026",
+      "municipality": "Niederzier",
+      "district": "Niederzier",
+      "title": "Ausbildung 2026 – Zerspanungsmechaniker (m/w/d)",
+      "employer": "Heinrich Löwenkamp Maschinenbau GmbH",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Neue Straße 28, Niederzier · Praktikum möglich",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1204502484-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "loewenkamp-zerspanung-2027",
+      "municipality": "Niederzier",
+      "district": "Niederzier",
+      "title": "Ausbildung 2027 – Zerspanungsmechaniker (m/w/d)",
+      "employer": "Heinrich Löwenkamp Maschinenbau GmbH",
+      "employment": "Ausbildung · Vollzeit · Start 2027",
+      "details": "Neue Straße 28, Niederzier · Praktikum möglich",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1208003477-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "hornbach-einzelhandel-2026",
+      "municipality": "Niederzier",
+      "district": "Niederzier",
+      "title": "Ausbildung Kaufmann im Einzelhandel (gn) – 2026",
+      "employer": "HORNBACH Baumarkt AG",
+      "employment": "Ausbildung · Vollzeit · Start 01.10.2026",
+      "details": "Industriestraße 19 / Rurbenden, Niederzier",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1001752589-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
       "id": "timepartner-hochregal-niederzier",
       "municipality": "Niederzier",
       "district": "",
@@ -217,6 +398,30 @@
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11852-965678329-S",
       "checkedAt": "2026-09-26T11:22:43+02:00"
+    },
+    {
+      "id": "arwa-koch-grosskueche-noervenich",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Koch Großküche (m/w/d)",
+      "employer": "ARWA Personaldienstleistungen GmbH",
+      "employment": "Vollzeit · ab sofort · Arbeitnehmerüberlassung",
+      "details": "Nörvenich · laut Anzeige 18,09–25,00 € / Stunde",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14385-410-2626319-26-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "arwa-koch-truppenkueche-noervenich",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Koch Truppenküche (m/w/d)",
+      "employer": "ARWA Personaldienstleistungen GmbH",
+      "employment": "Vollzeit · ab sofort · Arbeitnehmerüberlassung",
+      "details": "Nörvenich · laut Anzeige 18,09–25,00 € / Stunde",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14385-410-2626698-26-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "lvr-pflegefachkraft-noervenich",
@@ -243,6 +448,18 @@
       "checkedAt": "2026-09-26T11:22:43+02:00"
     },
     {
+      "id": "netmarket-lagerlogistik-elsdorf",
+      "municipality": "Elsdorf",
+      "district": "Elsdorf",
+      "title": "Ausbildung Fachkraft für Lagerlogistik (m/w/d) – 2026",
+      "employer": "NetMarket PMS GmbH",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Elsdorf, Rheinland",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1002745330-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
       "id": "tritec-elektroniker-elsdorf",
       "municipality": "Elsdorf",
       "district": "",
@@ -265,6 +482,78 @@
       "sourceName": "Bundesagentur für Arbeit",
       "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14014-13851687-S",
       "checkedAt": "2026-09-26T11:22:43+02:00"
+    },
+    {
+      "id": "spie-leitungsbauer-kerpen-2027",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Ausbildung Leitungsbauer für Infrastrukturtechnik (m/w/d) – 2027",
+      "employer": "SPIE",
+      "employment": "Ausbildung · Start 02.08.2027",
+      "details": "Kerpen",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003765416-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "lastrada-servicekraft-kerpen",
+      "municipality": "Kerpen",
+      "district": "Sindorf",
+      "title": "Servicekraft (m/w/d)",
+      "employer": "La Strada",
+      "employment": "Vollzeit oder Teilzeit · Start 05.10.2026",
+      "details": "Kerpen-Sindorf",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207954757-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "chateauform-fruehstueckskoch-kerpen",
+      "municipality": "Kerpen",
+      "district": "Horrem",
+      "title": "Frühstückskoch (m/w/d)",
+      "employer": "Châteauform Burg Hemmersbach",
+      "employment": "Teilzeit · Vormittag · ab sofort",
+      "details": "Kerpen-Horrem · laut Anzeige befristet bis 31.10.2026",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207871943-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "klueppelberg-feinwerkmechaniker-2026",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Ausbildung Feinwerkmechaniker (m/w/d) – 2026",
+      "employer": "Klüppelberg GmbH & Co. KG Industriemontage",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Kerpen · Praktikum möglich",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1205866279-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "heums-shk-kerpen-2026",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Ausbildung Anlagenmechaniker SHK (m/w/d) – 2026",
+      "employer": "HEUMS",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Kerpen",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1202659534-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "over-dach-dachdecker-kerpen-2026",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Ausbildung Dachdecker (m/w/d) – 2026",
+      "employer": "Over Dach",
+      "employment": "Ausbildung · Vollzeit · ab sofort",
+      "details": "Kerpen",
+      "sourceName": "Bundesagentur für Arbeit",
+      "sourceUrl": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1204821535-S",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     }
   ],
   "jobSources": [
@@ -318,6 +607,78 @@
     }
   ],
   "properties": [
+    {
+      "id": "golzheim-dachgeschoss-miete-700",
+      "municipality": "Merzenich",
+      "district": "Golzheim",
+      "title": "4-Zimmer-Dachgeschosswohnung in Golzheim",
+      "offerType": "Miete",
+      "price": "700 € Kaltmiete",
+      "details": "100 m² · 4 Zimmer · Im Hoverfeld 8 · verfügbar seit 23.08.2026",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/170213703",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "merzenich-eg-terrasse-miete-900",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "3-Zimmer-Erdgeschosswohnung mit Terrasse",
+      "offerType": "Miete",
+      "price": "900 € Kaltmiete",
+      "details": "90 m² · 3 Zimmer · 1.160 € Warmmiete laut Anzeige · Erstbezug nach Renovierung",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/170734472",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "golzheim-wohnung-miete-550",
+      "municipality": "Merzenich",
+      "district": "Golzheim",
+      "title": "Renovierte 3-Zimmer-Wohnung in Golzheim",
+      "offerType": "Miete",
+      "price": "550 € Kaltmiete",
+      "details": "70 m² · 3 Zimmer · Aachener Straße 20 · verfügbar ab 01.11.2026",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/170617136",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "merzenich-wohnung-miete-660",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "3-Zimmer-Wohnung in Merzenich",
+      "offerType": "Miete",
+      "price": "660 € Kaltmiete",
+      "details": "81 m² · 3 Zimmer",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/168796072",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "merzenich-wohnung-miete-630",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "1-Zimmer-Wohnung in Merzenich",
+      "offerType": "Miete",
+      "price": "630 € Kaltmiete",
+      "details": "35 m² · 1 Zimmer",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/170048595",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "merzenich-wbs-wohnung-miete-490",
+      "municipality": "Merzenich",
+      "district": "Merzenich",
+      "title": "3-Zimmer-Wohnung mit WBS",
+      "offerType": "Miete",
+      "price": "490 € Kaltmiete",
+      "details": "61 m² · 3 Zimmer · Wohnberechtigungsschein erforderlich",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/169006140",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
     {
       "id": "golzheim-wohnung-miete-880",
       "municipality": "Merzenich",
@@ -403,6 +764,18 @@
       "checkedAt": "2026-09-16T19:32:00+02:00"
     },
     {
+      "id": "dueren-dhh-519900",
+      "municipality": "Düren",
+      "district": "Düren",
+      "title": "Doppelhaushälfte",
+      "offerType": "Kauf",
+      "price": "519.900 €",
+      "details": "103,3 m² Wohnfläche · 4 Zimmer · laut Exposé verfügbar ab 01.07.2029",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/86ad8a97-0100-44fa-8b9f-72124e650506",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
       "id": "dueren-wohnung-kauf-145000",
       "municipality": "Düren",
       "district": "Düren-Ost",
@@ -427,6 +800,30 @@
       "checkedAt": "2026-09-16T19:32:00+02:00"
     },
     {
+      "id": "niederzier-hambach-efh-399000",
+      "municipality": "Niederzier",
+      "district": "Hambach",
+      "title": "Einfamilienhaus in Hambach",
+      "offerType": "Kauf",
+      "price": "399.000 €",
+      "details": "180 m² Wohnfläche · 12 Zimmer · 907 m² Grundstück · verfügbar ab 01.10.2026",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/35c57e19-2798-4d88-831c-de4153b45122",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "niederzier-ellen-efh-zwang-550000",
+      "municipality": "Niederzier",
+      "district": "Ellen",
+      "title": "Einfamilienhaus – Zwangsversteigerung",
+      "offerType": "Kauf",
+      "price": "550.000 €",
+      "details": "197 m² Wohnfläche · 598 m² Grundstück · Angaben laut Exposé",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/0ee9239e-e9c9-4c84-ada2-c1e005dd5dec",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
       "id": "niederzier-wohnung-miete-950",
       "municipality": "Niederzier",
       "district": "Huchem-Stammeln",
@@ -449,6 +846,66 @@
       "sourceName": "immowelt Marktübersicht",
       "sourceUrl": "https://www.immowelt.de/suche/kaufen/immobilien/nordrhein-westfalen/niederzier-52382/ad08de2202",
       "checkedAt": "2026-09-16T19:32:00+02:00"
+    },
+    {
+      "id": "noervenich-villa-neubau-685900",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Projektierte Neubau-Villa",
+      "offerType": "Kauf",
+      "price": "685.900 €",
+      "details": "126 m² Wohnfläche · 806 m² Grundstück · KfW-40-Angabe laut Exposé",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/d1c926f1-7575-4045-b731-9f7915903327",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "noervenich-wohnung-ahornweg-458800",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Neubauwohnung am Ahornweg",
+      "offerType": "Kauf",
+      "price": "458.800 €",
+      "details": "124 m² · Neubau 2026 · verfügbar ab 15.01.2027",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/a1db1fa4-9f67-42a5-86a2-8e9a00fa2e3b",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "noervenich-reihenendhaus-428000",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Reihenendhaus / Doppelhaushälfte",
+      "offerType": "Kauf",
+      "price": "428.000 €",
+      "details": "130 m² Wohnfläche · 4 Zimmer · 274 m² Grundstück",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/daf6f00b-c2df-4492-b312-7fe7869f1cbe",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "noervenich-wohnung-ahornweg-395500",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "Neubauwohnung mit 4 Zimmern",
+      "offerType": "Kauf",
+      "price": "395.500 €",
+      "details": "113 m² · 4 Zimmer · Ahornweg · Neubau 2026",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/94563d79-caca-49e1-a069-053fa6b08fd8",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "noervenich-wohnung-miete-1155",
+      "municipality": "Nörvenich",
+      "district": "Nörvenich",
+      "title": "2-Zimmer-Wohnung am Ahornweg",
+      "offerType": "Miete",
+      "price": "1.155 € Kaltmiete",
+      "details": "77 m² · 2 Zimmer · Ahornweg 19",
+      "sourceName": "ImmobilienScout24",
+      "sourceUrl": "https://www.immobilienscout24.de/expose/169921563",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "noervenich-terrassenwohnung-419000",
@@ -497,6 +954,78 @@
       "sourceName": "immowelt Marktübersicht",
       "sourceUrl": "https://www.immowelt.de/suche/mieten/immobilien/nordrhein-westfalen/elsdorf-50189/ad08de2209",
       "checkedAt": "2026-09-16T19:32:00+02:00"
+    },
+    {
+      "id": "kerpen-horrem-efh-497000",
+      "municipality": "Kerpen",
+      "district": "Horrem",
+      "title": "Einfamilienhaus in Horrem",
+      "offerType": "Kauf",
+      "price": "497.000 €",
+      "details": "152 m² Wohnfläche · 6 Zimmer · 216 m² Grundstück · verfügbar ab 01.12.2026",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/5fba96e7-6e3a-4b84-96ed-32666cb756c7",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "kerpen-haus-ausbau-289000",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Wohnhaus mit weiterem Ausbaubedarf",
+      "offerType": "Kauf",
+      "price": "289.000 €",
+      "details": "141 m² Wohnfläche · Fertigstellung/Restarbeiten laut Exposé durch Käufer",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/8d69c447-8366-4236-9023-6b2874aad1f8",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "kerpen-dhh-539000",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Doppelhaushälfte auf großem Grundstück",
+      "offerType": "Kauf",
+      "price": "539.000 €",
+      "details": "100 m² Wohnfläche · 1.295 m² Grundstück",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/cadaa792-caea-4ab3-8890-df9c7b3e321d",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "kerpen-moedrath-wohnen-gewerbe-495000",
+      "municipality": "Kerpen",
+      "district": "Mödrath",
+      "title": "Wohn- und Gewerbeimmobilie",
+      "offerType": "Kauf",
+      "price": "495.000 €",
+      "details": "207 m² Wohnfläche · 7 Zimmer · verfügbar ab 01.10.2026",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/2b3d6a70-9b03-4fe2-95cb-74586924ff57",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "kerpen-wohnung-miete-730",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Mietwohnung mit 70 m²",
+      "offerType": "Miete",
+      "price": "730 € Kaltmiete",
+      "details": "70 m² · verfügbar ab 01.12.2026",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/ca0f5f6b-b5a5-4e5f-80bc-3c22907f9219",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
+    },
+    {
+      "id": "kerpen-dhh-399000",
+      "municipality": "Kerpen",
+      "district": "Kerpen",
+      "title": "Doppelhaushälfte",
+      "offerType": "Kauf",
+      "price": "399.000 €",
+      "details": "129,2 m² Wohnfläche · 340 m² Grundstück · verfügbar ab 01.03.2027",
+      "sourceName": "immowelt",
+      "sourceUrl": "https://www.immowelt.de/expose/2783fc24-3b0f-4a2c-a850-319b98744f9f",
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "kerpen-horrem-bungalow-399000",
