@@ -210,3 +210,65 @@
 
 .werbung--spalte,.werbung--sport{position:sticky;top:96px;margin-top:14px;border-top:1px solid #d4d1cb;padding-top:10px;box-sizing:border-box}
 html[data-werbung="aus"] .werbung{display:none!important}
+
+
+/* Werben-Seite 28.09.2026: echte Fotografie + reale Platzierungsdemo */
+.ma-ad-art{background:#eceae6;isolation:isolate}
+.ma-ad-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.ma-ad-art--bank{background:#eceae6 url('/assets/editorial-pools/wirtschaft/wirtschaft-01-561359542b-800.webp') center/cover no-repeat}
+.ma-ad-art--sport{background:#e7e9e6 url('/assets/editorial-pools/sport/sport-01-4ab6e95eab-800.webp') center/cover no-repeat}
+.ma-ad-x,.ma-ad-ball,.ma-ad-art-word,.ma-ad-art--sport::before,.ma-ad-art--sport::after{display:none!important}
+.ma-ad-theme--bank .ma-ad-cta,.ma-ad-theme--sport .ma-ad-cta{color:#9b2929}
+
+.werben-entry{padding:38px 0 4px}
+.werben-entry__panel{border:1px solid var(--ma-line,#deddd9);background:#fbfaf7;padding:28px 30px 30px}
+.werben-entry__head{max-width:820px;margin-bottom:22px}
+.werben-entry__head .eyebrow{display:block;margin-bottom:7px}
+.werben-entry__head h2{margin:0;font-family:var(--serif);font-size:clamp(30px,3vw,43px);line-height:1.03;letter-spacing:-.025em}
+.werben-entry__head p{margin:10px 0 0;color:#69645e;font-size:17px;line-height:1.55}
+.werben-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.werben-choice{display:block;min-width:0;border:1px solid #d7d4ce;background:#fff;color:#17191b;text-decoration:none;overflow:hidden;transition:border-color 180ms ease,transform 180ms ease}
+.werben-choice:hover,.werben-choice:focus-visible{border-color:#9b2929;transform:translateY(-2px)}
+.werben-choice__media{display:block;height:150px;overflow:hidden;background:#eceae6}
+.werben-choice__media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 180ms ease}
+.werben-choice:hover .werben-choice__media img,.werben-choice:focus-visible .werben-choice__media img{transform:scale(1.02)}
+.werben-choice__body{display:block;padding:17px 18px 19px}
+.werben-choice__body strong{display:block;font-family:var(--serif);font-size:25px;line-height:1.08}
+.werben-choice__body span{display:block;margin-top:7px;color:#716d67;font-size:14px;line-height:1.45}
+.werben-choice__cta{color:#9b2929!important;font-weight:750!important;font-size:12px!important;letter-spacing:.03em!important;text-transform:uppercase}
+
+.media-kit-intro{max-width:850px;margin:0 0 24px}
+.media-kit-intro h2{margin:0;font-family:var(--serif);font-size:clamp(29px,2.8vw,40px);line-height:1.08}
+.media-kit-intro p{margin:9px 0 0;color:#67625c;font-size:16px;line-height:1.55}
+.media-formats--real{grid-template-columns:repeat(3,minmax(0,1fr))}
+.media-formats--real .media-format{min-width:0}
+.media-slot-preview{display:flex;align-items:center;min-height:192px;margin-bottom:13px;padding:18px;background:#f4f4f2;border:1px solid #ebe9e5;box-sizing:border-box}
+.media-slot-preview--sidebar{align-items:flex-start;justify-content:center;min-height:315px}
+.media-slot-preview .werbung{width:100%;margin:0!important;padding:0!important;border:0!important;position:relative!important;top:auto!important}
+.media-slot-preview .werbung-label{margin:0 0 7px}
+.media-slot-preview--sidebar .werbung{max-width:260px}
+.media-slot-preview--sidebar .ma-ad-rotator--gap{height:245px}
+.media-format__meta{display:block;margin-top:11px;color:#817a72;font-size:12px;line-height:1.4}
+.werben-demo-note{margin:20px 0 0;padding:12px 14px;border-left:3px solid #9b2929;background:#faf8f4;color:#5e5953;font-size:13px;line-height:1.5}
+
+@media(max-width:900px){
+  .werben-entry{padding-top:26px}
+  .werben-entry__panel{padding:22px}
+  .werben-choice-grid{grid-template-columns:1fr}
+  .werben-choice{display:grid;grid-template-columns:180px minmax(0,1fr)}
+  .werben-choice__media{height:100%}
+  .media-formats--real{grid-template-columns:1fr}
+  .media-slot-preview--sidebar{display:none}
+  .media-formats--real .media-format--desktop-only{display:none}
+}
+@media(max-width:560px){
+  .werben-entry__panel{padding:17px}
+  .werben-choice{display:block}
+  .werben-choice__media{height:132px}
+  .werben-choice__body{padding:14px}
+  .werben-choice__body strong{font-size:22px}
+  .media-slot-preview{min-height:128px;padding:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .werben-choice,.werben-choice__media img{transition:none}
+}
