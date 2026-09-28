@@ -13,7 +13,7 @@
 
 import net from 'node:net';
 import { spawn } from 'node:child_process';
-import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -251,6 +251,25 @@ async function main() {
   pruefe(n1.status === 503 && /KOMMENTARE_ADMIN_TOKEN/.test(n1.json.fehler), 'Admin-Endpunkt ohne gesetztes Token -> 503 mit Hinweis', n1.json);
   const n2 = await anfrage(n.basis, 'admin/freigabe', { methode: 'POST', body: { freigeben: [] } });
   pruefe(n2.status === 503, 'Freigabe ohne gesetztes Token -> 503', n2.status);
+
+  console.log('\n[7] Sicherheit: HTML bleibt Text, E-Mail nie oeffentlich, Laengengrenze');
+  const x = await starteDienst({ vars: { KOMMENTARE_ADMIN_TOKEN: TOKEN } });
+  const boese = '<img src=x onerror=alert(1)><script>alert(2)</script> Test';
+  const x1 = await anfrage(x.basis, 'neu', { methode: 'POST', body: kommentar('<b>Mallory</b>', boese, 'mallory@example.org') });
+  pruefe(x1.status === 201, 'Kommentar mit HTML wird angenommen (als Text)', x1.json);
+  const fx = await anfrage(x.basis, 'admin/freigabe', { methode: 'POST', token: TOKEN, body: { freigeben: [x1.json.id], ablehnen: [] } });
+  pruefe(fx.status === 200, 'Freigabe ok', fx.json);
+  const lx = await anfrage(x.basis, 'liste?thema=' + encodeURIComponent(ARTIKEL));
+  const kx = (lx.json.kommentare || []).find((k) => k.id === x1.json.id);
+  pruefe(kx && kx.text.includes('<script>') && kx.name.includes('<b>'), 'Dienst liefert den Text unveraendert als JSON-String (Escaping im Client)', kx);
+  pruefe(!lx.text.includes('mallory@example.org') && !(kx && 'email' in kx) && !(kx && 'absender' in kx), 'oeffentliche Liste enthaelt weder E-Mail noch Absender-Hash', kx);
+  const zulang = await anfrage(x.basis, 'neu', { methode: 'POST', body: kommentar('Lang Test', 'x'.repeat(2501), '') });
+  const lang = zulang.status === 201 ? (await anfrage(x.basis, 'admin/liste?status=wartend', { token: TOKEN })).json.kommentare.find((k) => k.id === zulang.json.id) : null;
+  pruefe(zulang.status === 400 || (lang && lang.text.length <= 2000), 'Text ueber 2000 Zeichen wird abgelehnt oder gekuerzt', { status: zulang.status, laenge: lang && lang.text.length });
+  // Client: jede Nutzerangabe laeuft durch esc() (chatgpt-site/assets/kommentare.js).
+  const client = readFileSync(join(WURZEL, 'chatgpt-site', 'assets', 'kommentare.js'), 'utf8');
+  pruefe(/\$\{esc\(k\.name\)\}/.test(client) && /absaetze\(k\.text\)/.test(client) && /const absaetze = \(t\) => esc\(t\)/.test(client), 'Client escaped Name und Text vor dem Einfuegen');
+  pruefe(/\$\{esc\(t\.titel\)\}/.test(client) && /\$\{esc\(t\.name\)\}/.test(client), 'Client escaped Thementitel und Namen');
 
   smtp.server.close();
 }
