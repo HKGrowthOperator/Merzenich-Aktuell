@@ -587,6 +587,29 @@ function svgFuer(e, index) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="t d"><title id="t">${xml(e.name)}</title><desc id="d">Neutrales redaktionelles Symbolbild für ${xml(LABELS[e.pool])}: ${xml(e.name)}. Kein Foto eines konkreten Ereignisses.</desc><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${dunkel}"/><stop offset="1" stop-color="${akzent}"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><circle cx="${x1}" cy="${y1}" r="${r1}" fill="${hell}" opacity=".13"/><circle cx="${x2}" cy="${y2}" r="${r2}" fill="${hell}" opacity=".09"/><path d="${linie}" fill="none" stroke="${hell}" stroke-width="18" opacity=".18"/><rect x="90" y="90" width="1420" height="720" rx="42" fill="none" stroke="${hell}" stroke-width="3" opacity=".28"/><rect x="115" y="120" width="185" height="42" rx="21" fill="${hell}" opacity=".92"/><text x="207" y="148" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="${dunkel}">SYMBOLBILD</text><text x="120" y="575" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="3" fill="${hell}" opacity=".78">${xml(kurz)}</text><text x="120" y="665" font-family="Arial,sans-serif" font-size="68" font-weight="800" fill="${hell}">${xml(e.name)}</text><text x="120" y="730" font-family="Arial,sans-serif" font-size="24" fill="${hell}" opacity=".82">MERZENICH AKTUELL · Redaktionelle Symbolgrafik</text></svg>`;
 }
 
+/** Pixelmasse aus dem Dateikopf (JPEG, PNG, WebP), ohne Abhaengigkeit. */
+export function bildGroesse(pfad) {
+  let b;
+  try { b = readFileSync(pfad); } catch { return null; }
+  if (b.length > 24 && b.readUInt32BE(0) === 0x89504e47) return { breite: b.readUInt32BE(16), hoehe: b.readUInt32BE(20) };
+  if (b.length > 30 && b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+    const art = b.toString('ascii', 12, 16);
+    if (art === 'VP8X') return { breite: 1 + b.readUIntLE(24, 3), hoehe: 1 + b.readUIntLE(27, 3) };
+    if (art === 'VP8 ') return { breite: b.readUInt16LE(26) & 0x3fff, hoehe: b.readUInt16LE(28) & 0x3fff };
+    if (art === 'VP8L') { const n = b.readUInt32LE(21); return { breite: (n & 0x3fff) + 1, hoehe: ((n >> 14) & 0x3fff) + 1 }; }
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const marke = b[i + 1];
+      if (marke >= 0xc0 && marke <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marke)) return { hoehe: b.readUInt16BE(i + 5), breite: b.readUInt16BE(i + 7) };
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+
 function schreibeWennAnders(pfad, inhalt, schreiben, geaendert) {
   const alt = existsSync(pfad) ? readFileSync(pfad, 'utf8') : null;
   if (alt === inhalt) return;
@@ -619,7 +642,11 @@ export function bibliothekErzeugen(wurzel, { schreiben = true } = {}) {
   for (const m of fotoManifest.images || []) {
     const pfad = join(wurzel, 'chatgpt-site', String(m.src || '').replace(/^\//, ''));
     if (!m?.id || !m?.pool || !existsSync(pfad)) continue;
-    alle.push(m);
+    // Breite und Hoehe aus der Datei, nicht aus dem Manifest: dort stand fuer
+    // alle Poolfotos 1600, tatsaechlich sind sie 1024 bis 1920 px breit
+    // (Audit 28.09.2026). srcset und die Aufmacher-Mindestbreite haengen daran.
+    const g = bildGroesse(pfad);
+    alle.push(g ? { ...m, width: g.breite, height: g.hoehe } : m);
   }
   const payload = { version: 2, generated: RECHTE_GEPRUEFT_AM, minimumPerPool: MINDEST_POOL, sourceOfTruth: 'deploy/lib-symbolbilder.mjs + deploy/import-editorial-photos.mjs', images: alle };
   schreibeWennAnders(join(wurzel, BIBLIOTHEK_DATEI), JSON.stringify(payload, null, 2) + '\n', schreiben, geaendert);
