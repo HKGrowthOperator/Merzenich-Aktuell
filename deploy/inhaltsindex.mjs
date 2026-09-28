@@ -515,31 +515,30 @@ index.bestand = {
 
   // ---------------------------------------------------------- Orte-Buehne
   // Stil B (23.09.2026): Die fuenf Orte stehen direkt unter der oberen Flaeche
-  // als Bildbuehne, nicht mehr als handgepflegte Kacheln fuenf Bildschirme
-  // tiefer. Zahl und juengste Meldung kommen aus demselben Index wie die
-  // Ortswahl - vorher zeigte die Kachel 29/2/6/3/2, die Ortswahl 35/3/7/4/2.
-  // Die Ortsfotos sind echte Aufnahmen mit Nachweis (Wikimedia Commons).
+  // als Bildbuehne. Entscheidung 28.09.: Die Kacheln dienen nur dem
+  // Ortsverstaendnis (Bild, Name, eine Zeile). Keine juengste Meldung, keine
+  // Zahl, kein Credit im Bild; die Urheberangaben (Pflicht nach CC BY/BY-SA)
+  // stehen gesammelt in einer Zeile unter der Reihe, aus deploy/ortsbilder.json.
   const ORTE_BUEHNE = [
-    ['merzenich', 'Hauptort mit Rathaus, St. Laurentius und S-Bahn-Halt an der Strecke Köln–Aachen.', 'Historisches Fachwerkhaus im Ortskern von Merzenich', 'Karl-Heinz Meurer / Wikimedia Commons', '6% 50%'],
-    ['golzheim', 'Im Norden der Gemeinde, mit St. Gregorius, Grundschule und Schützenbruderschaft.', 'Blick über den Wenauer Hof auf St. Gregorius in Golzheim', 'Karl-Heinz Meurer / Wikimedia Commons', '50% 50%'],
-    ['girbelsrath', 'Im Süden, mit St. Amandus, eigener Löschgruppe und Karnevalsverein.', 'Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath', 'Käthe und Bernd Limburg / Wikimedia Commons', '50% 50%'],
-    ['morschenich', 'Der Umsiedlungsort „Zwischen den Höfen“, bis Juli 2024 Morschenich-Neu.', 'Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015', 'Papa1234 / Wikimedia Commons', '50% 50%'],
-    ['buergewald', 'Das alte Morschenich am Hambacher Forst, seit Juli 2024 Bürgewald.', 'Luftbild von Bürgewald, dem früheren Morschenich-Alt', 'Antisyntagmatarchos / Wikimedia Commons', '50% 50%'],
+    ['merzenich', 'Hauptort mit Rathaus, St. Laurentius und S-Bahn-Halt an der Strecke Köln–Aachen.', 'Historisches Fachwerkhaus im Ortskern von Merzenich', '6% 50%'],
+    ['golzheim', 'Im Norden der Gemeinde, mit St. Gregorius, Grundschule und Schützenbruderschaft.', 'Blick über den Wenauer Hof auf St. Gregorius in Golzheim', '50% 50%'],
+    ['girbelsrath', 'Im Süden, mit St. Amandus, eigener Löschgruppe und Karnevalsverein.', 'Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath', '50% 50%'],
+    ['morschenich', 'Der Umsiedlungsort „Zwischen den Höfen“, bis Juli 2024 Morschenich-Neu.', 'Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015', '50% 50%'],
+    ['buergewald', 'Das alte Morschenich am Hambacher Forst, seit Juli 2024 Bürgewald.', 'Luftbild von Bürgewald, dem früheren Morschenich-Alt', '50% 50%'],
   ];
-  const datumOrt = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: 'numeric', month: 'long' }).format(new Date(iso));
-  const neuesteImOrt = (slug) => redaktionell
-    .filter((a) => a.ortsteil === slug && !sportBezug(a) && a.datum && !a.undatiert)
-    .sort((x, y) => String(y.datum).localeCompare(String(x.datum)))[0];
+  const ortsbilder = JSON.parse(readFileSync(join(wurzel, 'deploy', 'ortsbilder.json'), 'utf8')).ansichten;
+  const nachweis = ORTE_BUEHNE.map(([slug]) => {
+    const b = ortsbilder.find((x) => x.src === `/assets/places/${slug}-1440.webp`);
+    if (!b?.credit || !b.lizenz || !b.quelle) throw new Error(`Orte-Buehne: kein Bildnachweis fuer ${slug} in deploy/ortsbilder.json`);
+    const urheber = b.credit.replace(/ \/ Wikimedia Commons/, '').replace(/\(bearbeitet:[^)]*\)/, '(bearbeitet)');
+    return `${esc(ORTSTEILE[slug])}: <a href="${esc(b.quelle)}" target="_blank" rel="noopener">${esc(urheber)}, ${esc(b.lizenz)}</a>`;
+  }).join(' · ');
   const orteHtml = '<section class="orte-buehne" aria-labelledby="orte-titel"><div class="shell orte-kopf"><h2 id="orte-titel">Ihre fünf Orte</h2></div><div class="orte-reihe">'
-    + ORTE_BUEHNE.map(([slug, zeile, alt, credit, fokus]) => {
-      const n = bestandOrt[slug] || 0; const j = neuesteImOrt(slug);
-      return `<a class="ort" href="/${slug}/">`
-        + `<span class="ort-bild"><img src="/assets/places/${slug}-720.webp" srcset="/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 20vw" width="1440" height="960" loading="lazy" decoding="async" alt="${esc(alt)}"${fokus !== '50% 50%' ? ` style="object-position:${fokus}"` : ''}><span class="ort-credit">Foto: ${esc(credit)}</span></span>`
-        + `<span class="ort-name">${esc(ORTSTEILE[slug])}</span><span class="ort-zeile">${esc(zeile)}</span>`
-        + (j ? `<span class="ort-neu"><em>Zuletzt am ${esc(datumOrt(j.datum))}</em>${esc(j.titel)}</span>` : '')
-        + `<span class="ort-zahl">${n} Meldung${n === 1 ? '' : 'en'}</span></a>`;
-    }).join('')
-    + '</div><p class="shell orte-foto"><a href="/meldung-senden/#formular">Ihr Foto aus einem der fünf Orte an die Redaktion senden</a></p></section>';
+    + ORTE_BUEHNE.map(([slug, zeile, alt, fokus]) => `<a class="ort" href="/${slug}/">`
+      + `<span class="ort-bild"><img src="/assets/places/${slug}-720.webp" srcset="/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 20vw" width="1440" height="960" loading="lazy" decoding="async" alt="${esc(alt)}"${fokus !== '50% 50%' ? ` style="object-position:${fokus}"` : ''}></span>`
+      + `<span class="ort-name">${esc(ORTSTEILE[slug])}</span><span class="ort-zeile">${esc(zeile)}</span></a>`).join('')
+    + `</div><p class="shell orte-foto"><a href="/meldung-senden/#formular">Ihr Foto aus einem der fünf Orte an die Redaktion senden</a></p>`
+    + `<p class="shell orte-nachweis">Fotos via Wikimedia Commons: ${nachweis}</p></section>`;
   const MARKER_ORTE = /<!-- start:orte:start -->[\s\S]*?<!-- start:orte:end -->/;
   if (!MARKER_ORTE.test(html)) { console.error('Startseite: Marker start:orte fehlt in index.html.'); process.exitCode = 2; }
   else html = html.replace(MARKER_ORTE, () => `<!-- start:orte:start -->${orteHtml}<!-- start:orte:end -->`);
