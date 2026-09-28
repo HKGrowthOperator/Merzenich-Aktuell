@@ -40,6 +40,28 @@ function istUnbrauchbar(u) {
   const s = String(u || '').toLowerCase();
   return !u || /favicon|sprite|spacer|pixel|tracking|transparent|placeholder|blank\.|\/icon[-_/]|logo(?:[-_.\/]|$)/i.test(s) || /\.svg(?:\?|$)/i.test(s);
 }
+function gleicheRessource(a, b) {
+  try {
+    const x = new URL(a), y = new URL(b);
+    const norm = (u) => (u.origin + u.pathname).replace(/\/+$/, '').toLowerCase();
+    return norm(x) === norm(y);
+  } catch { return false; }
+}
+async function istEchtesBild(url) {
+  if (!/^https?:\/\//i.test(String(url || ''))) return false;
+  // Bekannte Bild-CDNs sind eindeutig; ein zusätzlicher HEAD-Request wird dort
+  // häufig absichtlich geblockt und würde echte Inseratsbilder verwerfen.
+  if (/pictures\.immobilienscout24\.de|mms\.immowelt\.|softgarden\.de\/uploads\//i.test(url)) return true;
+  try {
+    const r = await fetch(url, {
+      method: 'HEAD',
+      headers: { 'User-Agent': UA, Accept: 'image/avif,image/webp,image/*,*/*;q=0.5' },
+      redirect: 'follow',
+      signal: AbortSignal.timeout(8000)
+    });
+    return r.ok && /^image\//i.test(r.headers.get('content-type') || '');
+  } catch { return false; }
+}
 function metaWert(html, schluessel) {
   for (const tag of String(html).match(/<meta\b[^>]*>/gi) || []) {
     const prop = /\b(?:property|name)\s*=\s*["']([^"']+)["']/i.exec(tag)?.[1]?.toLowerCase();
@@ -109,7 +131,8 @@ function bestesBild(html, basis, sourceName) {
     metaWert(html, 'og:image:secure_url'), metaWert(html, 'og:image'),
     metaWert(html, 'twitter:image'), metaWert(html, 'twitter:image:src')
   ].map((x) => absUrl(x, basis)).filter((u) => u && !istUnbrauchbar(u));
-  const kandidaten = [...meta, ...jsonLdBilder(html, basis), ...htmlBilder(html, basis)];
+  const kandidaten = [...meta, ...jsonLdBilder(html, basis), ...htmlBilder(html, basis)]
+    .filter((u, i, a) => !gleicheRessource(u, basis) && a.indexOf(u) === i);
   if (!kandidaten.length) return null;
   const objekt = kandidaten.find((u) => /pictures\.immobilienscout24\.de|mms\.immowelt\./i.test(u));
   return objekt ? { url: objekt, art: 'original' } : { url: kandidaten[0], art: 'source' };
@@ -136,7 +159,7 @@ async function bildFuer(item) {
   const seite = await abruf(sourceUrl);
   if (!seite) return null;
   const bild = bestesBild(seite.html, seite.endUrl, item.sourceName);
-  if (!bild?.url) return null;
+  if (!bild?.url || gleicheRessource(bild.url, sourceUrl) || !(await istEchtesBild(bild.url))) return null;
   return {
     imageUrl: bild.url,
     imageKind: bild.art,

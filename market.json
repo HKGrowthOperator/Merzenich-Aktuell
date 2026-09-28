@@ -91,7 +91,9 @@
         "status": 404
       }
     ],
-    "marketExpansionNote": "Content-Refresh 27.09.2026: neue Einzelangebote in Merzenich sowie Düren, Niederzier, Nörvenich, Elsdorf und Kerpen ergänzt; reine Suchseiten bleiben nur Marktquellen."
+    "marketExpansionNote": "Content-Refresh 27.09.2026: neue Einzelangebote in Merzenich sowie Düren, Niederzier, Nörvenich, Elsdorf und Kerpen ergänzt; reine Suchseiten bleiben nur Marktquellen.",
+    "marketImagesSeededAt": "2026-09-28T15:45:00+02:00",
+    "marketImagesSeededNote": "Verifizierte Originalbilder konkreter ImmobilienScout24-Exposés; automatischer Bildabgleich ergänzt weitere Quellen."
   },
   "jobs": [
     {
@@ -612,7 +614,12 @@
       "details": "100 m² · 4 Zimmer · Im Hoverfeld 8 · verfügbar seit 23.08.2026",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170213703",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/34399ed8-e114-49ac-8942-da69f2ab4438-2079341548.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170213703",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "merzenich-eg-terrasse-miete-900",
@@ -624,7 +631,12 @@
       "details": "90 m² · 3 Zimmer · 1.160 € Warmmiete laut Anzeige · Erstbezug nach Renovierung",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170734472",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/963ec6a8-33ef-4820-994b-3c259194bea6-2090513455.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170734472",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "golzheim-wohnung-miete-550",
@@ -636,7 +648,12 @@
       "details": "70 m² · 3 Zimmer · Aachener Straße 20 · verfügbar ab 01.11.2026",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170617136",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/7f46e866-56f9-43d1-b9ce-07df21b9cdb1-2088109462.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170617136",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "merzenich-wohnung-miete-660",
@@ -648,7 +665,12 @@
       "details": "81 m² · 3 Zimmer",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/168796072",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/da851194-6ec8-4afc-a1c8-365d5e9a4d1b-2076182044.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/168796072",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "merzenich-wohnung-miete-630",
@@ -660,7 +682,12 @@
       "details": "35 m² · 1 Zimmer",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170048595",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/a878288f-e88f-45df-a864-49dc19c83129-2075757860.jpeg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170048595",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "merzenich-wbs-wohnung-miete-490",
@@ -672,7 +699,12 @@
       "details": "61 m² · 3 Zimmer · Wohnberechtigungsschein erforderlich",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/169006140",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/ef21aa22-7a86-4fc3-a6de-21e0d73bf8f6-2052690691.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/169006140",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "golzheim-wohnung-miete-880",
@@ -708,7 +740,12 @@
       "details": "123 m² Wohnfläche · 5 Zimmer · 168 m² Grundstück",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170489597",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/da83b774-e28a-4b9e-8c9d-01c695cf5b1b-2085227281.png/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170489597",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "merzenich-reihenendhaus-425000",
@@ -780,7 +817,12 @@
       "details": "68 m² · 3 Zimmer · vermietet · provisionsfrei laut Anzeige",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170587584",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/2702ebc4-0b29-424e-8b19-c88617ec2f87-2095293304.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170587584",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "dueren-penthouse-miete-1202",
@@ -900,7 +942,12 @@
       "details": "77 m² · 2 Zimmer · Ahornweg 19",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/169921563",
-      "checkedAt": "2026-09-27T11:46:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/d53e5a2b-1d15-474b-91b7-c4eb893f946b-2072872534.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/169921563",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "noervenich-terrassenwohnung-419000",
@@ -1032,7 +1079,12 @@
       "details": "126 m² Wohnfläche · 3 Zimmer · 670 m² Grundstück · renovierungsbedürftig",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170490920",
-      "checkedAt": "2026-09-16T19:32:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00",
+      "imageUrl": "https://pictures.immobilienscout24.de/listings/6d15fff2-df14-484e-94d8-900944d58a7f-2085253238.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
+      "imageKind": "original",
+      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170490920",
+      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
     },
     {
       "id": "kerpen-buir-wohnung-miete-1732",
