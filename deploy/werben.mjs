@@ -49,12 +49,16 @@ const haupt = `<main id="main">
 ${form[0]}</div></section>
 `;
 
-let neu = alt.replace(/<main id="main">[\s\S]*?(?=<!-- werbung:artikel:start -->)/, haupt);
-if (neu === alt) {
+const mainTag = alt.match(/<main[^>]*id="main"[^>]*>/);
+const start = mainTag ? alt.indexOf(mainTag[0]) : -1;
+const marker = start >= 0 ? alt.indexOf('<!-- werbung:artikel:start -->', start) : -1;
+const mainEnd = start >= 0 ? alt.indexOf('</main>', start) : -1;
+const ende = marker >= 0 ? marker : mainEnd;
+if (start < 0 || ende < 0) {
   console.error('Werben: Hauptbereich konnte nicht ersetzt werden.');
   process.exit(2);
 }
-neu = neu.replace(/\/assets\/werbung\.css\?v=[^"]+/, '/assets/werbung.css?v=20260928-photo1');
+let neu = alt.slice(0, start) + haupt + alt.slice(ende);
 const geaendert = neu !== alt;
 if (geaendert && !nurPruefen) writeFileSync(pfad, neu);
 console.log(`Werben: reale Formate + Foto-Vorschauen ${geaendert ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}.`);
