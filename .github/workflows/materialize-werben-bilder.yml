@@ -1,0 +1,41 @@
+name: Materialize Werben Images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/werben-bilder.json'
+      - 'deploy/werben-bilder.mjs'
+      - '.github/workflows/materialize-werben-bilder.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-werben-images
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Kuratierte Commons-Bilder lokal materialisieren
+        run: node deploy/werben-bilder.mjs
+      - name: Bildset pruefen
+        run: node deploy/werben-bilder.mjs --check
+      - name: Assets committen
+        run: |
+          if git diff --quiet -- chatgpt-site/assets/werben/; then
+            echo "Keine Aenderungen."
+            exit 0
+          fi
+          git config user.name "Merzenich Aktuell Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add chatgpt-site/assets/werben/
+          git commit -m "Werben: kuratierte Bildassets materialisieren"
+          git push

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "rightsCheckedAt": "2026-09-28",
+  "note": "Kuratiertes Bildset fuer die Vermarktungsseite. Nur reale, frei lizenzierte Fotografien; keine Marken werden als echte Werbekunden dargestellt.",
+  "images": [
+    {
+      "id": "werbebanner",
+      "sourceTitle": "File:Café Zartl Innen.jpg",
+      "output": "werbebanner.jpg",
+      "alt": "Helles Café-Interieur mit Tischen und Sitzplätzen",
+      "purpose": "Auswahlkarte Werbebanner",
+      "expectedLicense": "CC0"
+    },
+    {
+      "id": "tipp-sponsoring",
+      "sourceTitle": "File:Münster, Schlossplatz, Frühjahrssend -- 2019 -- 4106.jpg",
+      "output": "tipp-sponsoring.jpg",
+      "alt": "Jahrmarkt mit Fahrgeschäften als Symbolfoto für Veranstaltung und Sponsoring",
+      "purpose": "Auswahlkarte Tipp und Sponsoring",
+      "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "unternehmensprofil",
+      "sourceTitle": "File:CBR Building co-working space interior.jpg",
+      "output": "unternehmensprofil.jpg",
+      "alt": "Modernes Büro- und Coworking-Interieur als Symbolfoto für ein Unternehmensprofil",
+      "purpose": "Auswahlkarte Unternehmensprofil",
+      "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "format-startseitenband",
+      "sourceTitle": "File:Interior of bakery in Kraków, 2023.jpg",
+      "output": "format-startseitenband.jpg",
+      "alt": "Professionelles Laden-Interieur als Beispielmotiv für eine lokale Werbekampagne",
+      "purpose": "Demo Startseiten-Werbeband",
+      "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "format-artikelanzeige",
+      "sourceTitle": "File:Small workshop - Panorama (Poly haven).jpg",
+      "output": "format-artikelanzeige.jpg",
+      "alt": "Werkstatt mit Werkbank und Werkzeugen als Beispielmotiv für einen Handwerksbetrieb",
+      "purpose": "Demo Artikelanzeige",
+      "expectedLicense": "CC0"
+    },
+    {
+      "id": "format-sidebar",
+      "sourceTitle": "File:German House.jpg",
+      "output": "format-sidebar.jpg",
+      "alt": "Modernes Wohnhaus in Deutschland als Beispielmotiv für eine Immobilienanzeige",
+      "purpose": "Demo Sidebar-Anzeige",
+      "expectedLicense": "CC BY-SA 4.0"
+    }
+  ]
+}
