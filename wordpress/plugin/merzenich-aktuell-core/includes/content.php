@@ -11,9 +11,11 @@ function ma_register_content_types(): void {
     ]);
 
     $types = [
-        'ma_event' => ['Veranstaltungen','Veranstaltung','veranstaltungen','dashicons-calendar-alt'],
+        // Adressen wie im statischen Stand: /termine/<slug>/ und /jobs/
+        // (Audit 28.09.2026, includes/permalinks.php).
+        'ma_event' => ['Veranstaltungen','Veranstaltung','termine','dashicons-calendar-alt'],
         'ma_property' => ['Immobilien','Immobilie','immobilien','dashicons-building'],
-        'ma_job' => ['Stellen','Stelle','stellen','dashicons-businessperson'],
+        'ma_job' => ['Stellen','Stelle','jobs','dashicons-businessperson'],
         'ma_obituary' => ['Traueranzeigen','Traueranzeige','traueranzeigen','dashicons-heart'],
         'ma_family_notice' => ['Familienanzeigen','Familienanzeige','familienanzeigen','dashicons-groups'],
         'ma_club' => ['Vereine','Verein','vereine','dashicons-groups'],

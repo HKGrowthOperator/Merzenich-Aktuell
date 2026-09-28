@@ -17,7 +17,7 @@ function ma_weather_code_label(int $code): array {
     return ['🌡️','Wetter'];
 }
 function ma_get_weather(bool $force=false): ?array {
-    $s = wp_parse_args((array)get_option('ma_weather_settings',[]),['enabled'=>1,'latitude'=>'50.826813','longitude'=>'6.524935','cache_minutes'=>20]);
+    $s = wp_parse_args((array)get_option('ma_weather_settings',[]),['enabled'=>1,'latitude'=>'50.8317','longitude'=>'6.5361','cache_minutes'=>10]);
     if (empty($s['enabled'])) return null;
     $cache_key='ma_weather_current_v2';
     if (!$force && ($cached=get_transient($cache_key))) return $cached;

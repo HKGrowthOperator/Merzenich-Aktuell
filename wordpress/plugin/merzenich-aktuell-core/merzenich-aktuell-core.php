@@ -2,16 +2,17 @@
 /**
  * Plugin Name: Merzenich Aktuell Core
  * Description: Redaktion, Orte, Termine, Wetter, Märkte, Werbung, Sport und Transparenz für Merzenich Aktuell.
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: Merzenich Aktuell
  * Requires PHP: 8.1
  */
 if (!defined('ABSPATH')) { exit; }
-define('MA_CORE_VERSION', '1.6.0');
+define('MA_CORE_VERSION', '1.7.0');
 define('MA_CORE_PATH', plugin_dir_path(__FILE__));
 define('MA_CORE_URL', plugin_dir_url(__FILE__));
 
 require_once MA_CORE_PATH . 'includes/content.php';
+require_once MA_CORE_PATH . 'includes/permalinks.php';
 require_once MA_CORE_PATH . 'includes/images.php';
 require_once MA_CORE_PATH . 'includes/orte.php';
 require_once MA_CORE_PATH . 'includes/content-admin.php';
@@ -27,6 +28,7 @@ require_once MA_CORE_PATH . 'includes/partner-notify.php';
 require_once MA_CORE_PATH . 'includes/partner-antrag.php';
 require_once MA_CORE_PATH . 'includes/startseite.php';
 require_once MA_CORE_PATH . 'includes/sport.php';
+require_once MA_CORE_PATH . 'includes/gemeinde.php';
 require_once MA_CORE_PATH . 'includes/forms.php';
 require_once MA_CORE_PATH . 'includes/radar.php';
 require_once MA_CORE_PATH . 'includes/admin.php';
@@ -43,6 +45,7 @@ add_action('plugins_loaded', function () {
     ma_register_ad_quota_hooks();
     ma_register_business_hooks();
     ma_register_sport_hooks();
+    ma_register_gemeinde_hooks();
     ma_register_form_hooks();
     ma_register_radar_hooks();
     ma_register_admin_hooks();
@@ -68,15 +71,18 @@ register_activation_hook(__FILE__, function () {
     if (get_option('ma_weather_settings', null) === null) {
         update_option('ma_weather_settings', [
             'enabled' => 1,
-            'latitude' => '50.826813',
-            'longitude' => '6.524935',
-            'cache_minutes' => 20,
+            // Wie der statische Stand (deploy/coolify/kommentare/server.mjs):
+            // Ortsmitte Merzenich, zehn Minuten Cache.
+            'latitude' => '50.8317',
+            'longitude' => '6.5361',
+            'cache_minutes' => 10,
         ]);
     }
     if (get_option('ma_ads_enabled', null) === null) {
         update_option('ma_ads_enabled', 0);
         update_option('ma_ad_slots', []);
     }
+    ma_permalinks_standard();
     flush_rewrite_rules();
 });
 

@@ -67,12 +67,12 @@ function ma_weather_settings_page(): void {
             'enabled'=>isset($_POST['enabled'])?1:0,
             'latitude'=>sanitize_text_field(wp_unslash($_POST['latitude']??'')),
             'longitude'=>sanitize_text_field(wp_unslash($_POST['longitude']??'')),
-            'cache_minutes'=>max(10,min(30,(int)($_POST['cache_minutes']??20))),
+            'cache_minutes'=>max(10,min(30,(int)($_POST['cache_minutes']??10))),
         ]);
         delete_transient('ma_weather_current_v2');
         echo '<div class="notice notice-success"><p>Gespeichert.</p></div>';
     }
-    $s=wp_parse_args((array)get_option('ma_weather_settings',[]),['enabled'=>1,'latitude'=>'50.826813','longitude'=>'6.524935','cache_minutes'=>20]);
+    $s=wp_parse_args((array)get_option('ma_weather_settings',[]),['enabled'=>1,'latitude'=>'50.8317','longitude'=>'6.5361','cache_minutes'=>10]);
     echo '<div class="wrap"><h1>Wetter</h1><form method="post">'; wp_nonce_field('ma_weather_save');
     echo '<p><label><input type="checkbox" name="enabled" '.checked($s['enabled'],1,false).'> Wetter aktiv</label></p><p>Breite <input name="latitude" value="'.esc_attr($s['latitude']).'"> Länge <input name="longitude" value="'.esc_attr($s['longitude']).'"></p><p>Cache (10–30 Min.) <input type="number" min="10" max="30" name="cache_minutes" value="'.esc_attr($s['cache_minutes']).'"></p><p><button class="button button-primary" name="ma_weather_save">Speichern</button></p></form></div>';
 }

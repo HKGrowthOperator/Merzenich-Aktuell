@@ -62,7 +62,7 @@ function ma_theme_primary_nav(): void {
         'Aktuell'=>'/category/nachrichten/',
         'Blaulicht'=>'/category/blaulicht/',
         'Sport'=>'/sport/',
-        'Termine'=>'/veranstaltungen/',
+        'Termine'=>'/termine/',
         'Vereine'=>'/vereine/',
         'Rathaus & Politik'=>'/category/rathaus/',
         'Leben'=>'/category/leben/',
