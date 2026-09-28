@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /redaktionshandbuch/
 Disallow: /*/danke/
 
 Sitemap: https://merzenichaktuell.hk-growthoperator.de/sitemap.xml

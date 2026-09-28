@@ -99,6 +99,9 @@ out.push('  ssi_last_modified on;');
 // Interne Bereiche (Decap-Admin, Redaktionshandbuch) sind nicht Teil der oeffentlichen Seite.
 out.push('  location ^~ /admin/ { return 404; }');
 out.push('  location ^~ /redaktion/ { return 404; }');
+// Redaktionshandbuch: intern (Entscheidung Betreiber 28.09.2026), robots.txt ist kein Zugriffsschutz.
+out.push('  location ^~ /redaktionshandbuch/ { return 404; }');
+out.push('  location = /redaktionshandbuch { return 404; }');
 out.push('  gzip on;');
 out.push('  gzip_vary on;');
 out.push('  gzip_min_length 512;');
