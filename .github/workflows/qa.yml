@@ -392,7 +392,11 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           # Abgelaufene Termine aus Startseite und Terminliste nehmen (Ortszeit); laeuft
           # taeglich per schedule, damit der Stand im Repo nicht veraltet.
-          git add -A qa/after chatgpt-site
+          # Generatorausgaben ausserhalb von chatgpt-site (deploy/kette.mjs) mit
+          # aufnehmen; alles andere, was die QA-Schritte schreiben (z. B.
+          # qa/routen.json), stellt --autostash beim Rebase beiseite. Vorher
+          # brach der Rebase an ungestageten Dateien ab (QA #415/#416).
+          git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data
           if git diff --cached --quiet; then
             echo 'Nichts nachzuziehen.'
           else
@@ -404,8 +408,8 @@ jobs:
             # Push wird mit frischem Stand bis zu viermal wiederholt.
             for versuch in 1 2 3 4; do
               git fetch origin main
-              if ! git rebase -X theirs origin/main; then
-                git rebase --abort
+              if ! git rebase --autostash -X theirs origin/main; then
+                git rebase --abort || true
                 echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
                 break
               fi
