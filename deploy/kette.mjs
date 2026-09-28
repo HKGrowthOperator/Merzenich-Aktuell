@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const pruefen = process.argv.includes('--check');
 const SCHREIBEN = ['meldungen', 'marke', 'symbolbilder', 'markt-prerender', 'sport-prerender', 'suche-index', 'thema-prerender',
-  'teaser-bilder', 'ortsmarke', 'inhaltsindex', 'termine-prerender', 'ressort-menue', 'cockpit', 'unternehmen', 'werben', 'anzeigen', 'foto-des-tages', 'anzeigen-assistent', 'kopf-theme-einbinden'];
+  'teaser-bilder', 'ortsmarke', 'inhaltsindex', 'termine-prerender', 'ressort-menue', 'cockpit', 'unternehmen', 'anzeigen', 'werben', 'foto-des-tages', 'anzeigen-assistent', 'kopf-theme-einbinden'];
 const PRUEFEN = ['symbolbilder', 'markt-prerender', 'sport-prerender', 'suche-index', 'thema-prerender', 'teaser-bilder', 'ortsmarke',
   'meldungen', 'marke', 'ressort-menue', 'inhaltsindex', 'termine-prerender', 'cockpit', 'unternehmen', 'werben', 'anzeigen', 'foto-des-tages', 'anzeigen-assistent', 'kopf-theme-einbinden'];
 
