@@ -51,15 +51,6 @@
 })();
 
 (() => {
-  if (document.querySelector('script[data-ma-content-refresh]')) return;
-  const script = document.createElement('script');
-  script.src = '/assets/content-refresh-2026-09-17.js?v=9e2ce18de7';
-  script.async = false;
-  script.dataset.maContentRefresh = '1';
-  document.head.append(script);
-})();
-
-(() => {
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
@@ -146,7 +137,7 @@
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=5d113ff511';
+    script.src = '/assets/ressort-dropdowns.js?v=eca56710e8';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);

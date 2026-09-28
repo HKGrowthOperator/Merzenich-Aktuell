@@ -56,6 +56,9 @@ const JS_ANKER = /<script src="\/assets\/v20\.js[^"]*" defer><\/script>/;
 // (script-src 'self') blockierte es ohnehin; seit 26.09. gibt es keinen
 // Dunkelmodus mehr, das Skript wird von allen Seiten entfernt.
 const ALT_INLINE_RE = /<script>document\.documentElement\.dataset\.theme="light";[^<]*<\/script>/g;
+// Aeltere Seitengeneration: Theme aus localStorage (Dunkelmodus, seit 26.09. entfernt).
+// Wirkungslos unter script-src 'self', aber toter Code in jeder Seite.
+const ALT_THEME_RE = /<script>try\{document\.documentElement\.dataset\.theme=localStorage\.getItem\("merzenich-theme"\)[^<]*<\/script>/g;
 const SYSTEM = `<link rel="stylesheet" href="/assets/system.css?${V}">`;
 const CSS = `<link rel="stylesheet" href="/assets/theme.css?${V}">`;
 // startseite.css besitzt die obere Flaeche der Startseite und laedt blockierend
@@ -153,6 +156,7 @@ for (const pfad of seiten) {
     html = html.replace(/<link rel="stylesheet" href="\/assets\/theme\.css[^"]*">/, (m) => m + STARTSEITE);
   }
   html = html.replace(ALT_INLINE_RE, '');
+  html = html.replace(ALT_THEME_RE, '');
   if (!html.includes('/assets/kopf.js')) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }
     html = html.replace(JS_ANKER, (m) => m + JS);
