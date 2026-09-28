@@ -18,7 +18,7 @@ Seitentypen: seite 45, system 2, danke 8, artikel 111, pagination 17, termin 15,
 | `/betriebe/eintragen/danke/` | danke | noindex | ok | 1 | eigen | 0 | 121 | – | ok |
 | `/blaulicht/` | seite | ja | ok | 1 | eigen | 12 | 163 | sitemap-seiten.xml | ok |
 | `/blaulicht/abbiegeunfall-b264-muehlenstrasse/` | artikel | ja | ok | 1 | eigen | 3 | 138 | sitemap-artikel.xml | ok |
-| `/blaulicht/abbiegeunfall-motorradfahrer-steinweg/` | artikel | ja | ok | 1 | eigen | 4 | 139 | sitemap-artikel.xml | ok |
+| `/blaulicht/abbiegeunfall-motorradfahrer-steinweg/` | artikel | ja | ok | 1 | eigen | 4 | 140 | sitemap-artikel.xml | ok |
 | `/blaulicht/abgelenkt-auffahrunfall-l264-drei-autos/` | artikel | ja | ok | 1 | eigen | 3 | 138 | sitemap-artikel.xml | ok |
 | `/blaulicht/alkoholunfall-l264-rosenmontag/` | artikel | ja | ok | 1 | eigen | 3 | 140 | sitemap-artikel.xml | ok |
 | `/blaulicht/auffahrunfall-b264-schwer-verletzt-mai/` | artikel | ja | ok | 1 | eigen | 3 | 138 | sitemap-artikel.xml | ok |
@@ -51,8 +51,8 @@ Seitentypen: seite 45, system 2, danke 8, artikel 111, pagination 17, termin 15,
 | `/blaulicht/einsatz-125-rauchmelder-buergewald/` | artikel | ja | ok | 1 | eigen | 2 | 138 | sitemap-artikel.xml | ok |
 | `/blaulicht/einsatz-126-ecall-morschenich/` | artikel | ja | ok | 1 | eigen | 2 | 137 | sitemap-artikel.xml | ok |
 | `/blaulicht/einsatz-127-oelspur-girbelsrath/` | artikel | ja | ok | 1 | eigen | 2 | 138 | sitemap-artikel.xml | ok |
-| `/blaulicht/einsatz-130-person-hinter-tuer-golzheim/` | artikel | ja | ok | 1 | eigen | 4 | 140 | sitemap-artikel.xml | ok |
-| `/blaulicht/einsatz-131-unfall-b264-l264/` | artikel | ja | ok | 1 | eigen | 4 | 138 | sitemap-artikel.xml | ok |
+| `/blaulicht/einsatz-130-person-hinter-tuer-golzheim/` | artikel | ja | ok | 1 | eigen | 4 | 141 | sitemap-artikel.xml | ok |
+| `/blaulicht/einsatz-131-unfall-b264-l264/` | artikel | ja | ok | 1 | eigen | 4 | 139 | sitemap-artikel.xml | ok |
 | `/blaulicht/einsatz-77-person-im-aufzug/` | artikel | ja | ok | 1 | eigen | 4 | 143 | sitemap-artikel.xml | ok |
 | `/blaulicht/einsatz-94-pkw-brand/` | artikel | ja | ok | 1 | eigen | 4 | 144 | sitemap-artikel.xml | ok |
 | `/blaulicht/einsatz-97-personenbefreiung/` | artikel | ja | ok | 1 | eigen | 4 | 142 | sitemap-artikel.xml | ok |
@@ -135,7 +135,7 @@ Seitentypen: seite 45, system 2, danke 8, artikel 111, pagination 17, termin 15,
 | `/rathaus/` | seite | ja | ok | 1 | eigen | 8 | 150 | sitemap-seiten.xml | ok |
 | `/rathaus/buergersprechstunde-morschenich/` | artikel | ja | ok | 1 | eigen | 4 | 141 | sitemap-artikel.xml | ok |
 | `/rathaus/faire-woche/` | artikel | ja | ok | 1 | eigen | 4 | 146 | sitemap-artikel.xml | ok |
-| `/rathaus/gemeinderat-7-sitzung-2026-09-30/` | artikel | ja | ok | 1 | eigen | 3 | 134 | news-sitemap.xml, sitemap-artikel.xml | ok |
+| `/rathaus/gemeinderat-7-sitzung-2026-09-30/` | artikel | ja | ok | 1 | eigen | 3 | 135 | news-sitemap.xml, sitemap-artikel.xml | ok |
 | `/rathaus/haushalt-2026-chronik/` | artikel | ja | ok | 1 | eigen | 4 | 144 | sitemap-artikel.xml | ok |
 | `/rathaus/heimat-info-app/` | artikel | ja | ok | 1 | eigen | 4 | 145 | sitemap-artikel.xml | ok |
 | `/rathaus/jugendgremium-gewaehlt/` | artikel | ja | ok | 1 | eigen | 4 | 144 | sitemap-artikel.xml | ok |
