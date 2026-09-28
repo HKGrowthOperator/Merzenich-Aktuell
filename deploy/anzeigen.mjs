@@ -9,8 +9,8 @@
  * (Servicespalte der Startseite, klebt beim Scrollen), sport (rechte Spalte der
  * Sportseite) oder artikel (Artikel- und uebrige Seiten).
  *
- * - Jede Flaeche zeigt ein Motiv der Anzeigenrotation vom 24.09.2026 in deren
- *   Gestaltung (Wunsch Auftraggeber 27.09.: in allen Flaechen). Benachbarte
+ * - Jede Flaeche zeigt ein Demo-Motiv mit echter, bereits freigegebener Fotografie.
+ *   Benachbarte
  *   Flaechen beginnen versetzt, damit nicht zweimal hintereinander dasselbe
  *   Motiv steht. Wiederholungen ueber die Seite sind erlaubt.
  * - Das HTML traegt den Startzustand, damit ohne JavaScript Werbung steht.
@@ -39,7 +39,8 @@ for (const m of daten.motive) {
   if (!m.id || ids.has(m.id)) fehler.push(`Motiv ohne oder mit doppelter id: ${m.id}`);
   ids.add(m.id);
   if (!['bank', 'sport'].includes(m.typ)) fehler.push(`${m.id}: typ muss bank oder sport sein`);
-  for (const f of ['kunde', 'eyebrow', 'headline', 'text', 'cta', 'ziel']) if (!m[f]) fehler.push(`${m.id}: ${f} fehlt`);
+  for (const f of ['kunde', 'eyebrow', 'headline', 'text', 'cta', 'ziel', 'bild', 'bildAlt']) if (!m[f]) fehler.push(`${m.id}: ${f} fehlt`);
+  if (m.bild && !/^\/assets\//.test(m.bild)) fehler.push(`${m.id}: bild muss unter /assets/ liegen`);
   if (/€|\bEUR\b|\d+\s*Euro/i.test(`${m.headline} ${m.text} ${m.cta}`)) fehler.push(`${m.id}: keine Preise in Motiven (Preis auf Anfrage)`);
   if (m.ziel && !/^(https:\/\/|\/)/.test(m.ziel)) fehler.push(`${m.id}: ziel muss https:// oder / sein`);
   if (m.ziel && m.ziel.startsWith('/')) {
@@ -52,18 +53,19 @@ const LABEL = daten.label || 'Anzeige';
 if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert nichts');
 
 // ------------------------------------------------------------------ Rendering
-// Markup und Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a):
-// Text links, Farbflaeche rechts (Bank blau mit X, Verein gruen mit Spielfeld).
-// Format band: Werbebaender und Artikelseiten. Format gap: hochkant in Spalten.
-function kunst(typ) {
-  if (typ === 'sport') return '<span class="ma-ad-art ma-ad-art--sport" aria-hidden="true"><span class="ma-ad-ball"></span><span class="ma-ad-art-word">SV</span></span>';
-  return '<span class="ma-ad-art ma-ad-art--bank" aria-hidden="true"><span class="ma-ad-x"></span><span class="ma-ad-art-word">X</span></span>';
+// Markup der Anzeigenrotation: Text plus echte Fotografie aus den vorhandenen
+// freigegebenen Editorial-Pools. Format band: Werbebaender und Artikelseiten.
+// Format gap: hochkant in Spalten.
+function kunst(m) {
+  return '<span class="ma-ad-art ma-ad-art--' + esc(m.typ) + '">'
+    + '<img src="' + esc(m.bild) + '" alt="' + esc(m.bildAlt) + '" loading="lazy" decoding="async">'
+    + '</span>';
 }
 function motivHtml(m, format) {
   const extern = /^https:\/\//.test(m.ziel);
   const rel = extern ? ' target="_blank" rel="sponsored noopener"' : '';
   return `<a class="ma-ad-card ma-ad-card--${format} ma-ad-theme--${esc(m.typ)}" href="${esc(m.ziel)}"${rel} data-motiv="${esc(m.id)}" aria-label="Anzeige: ${esc(m.kunde)} – ${esc(m.headline)}">`
-    + kunst(m.typ)
+    + kunst(m)
     + '<span class="ma-ad-copy">'
     + `<span class="ma-ad-eyebrow">${esc(m.eyebrow)}</span>`
     + `<strong>${esc(m.headline)}</strong>`
