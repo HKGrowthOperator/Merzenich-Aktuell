@@ -30,7 +30,7 @@ jobs:
         run: node deploy/werben-bilder.mjs --check
       - name: Assets committen
         run: |
-          if git diff --quiet -- chatgpt-site/assets/werben/; then
+          if [ -z "$(git status --porcelain -- chatgpt-site/assets/werben/)" ]; then
             echo "Keine Aenderungen."
             exit 0
           fi
