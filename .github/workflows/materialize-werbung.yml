@@ -1,0 +1,53 @@
+name: Materialize Werbung
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/anzeigen.json'
+      - 'deploy/anzeigen.mjs'
+      - 'deploy/werben.mjs'
+      - 'deploy/werben-bilder.json'
+      - 'chatgpt-site/assets/werbung.css'
+      - '.github/workflows/materialize-werbung.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-werbung
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Kuratierte Werbebilder pruefen
+        run: node deploy/werben-bilder.mjs --check
+      - name: Werbeflaechen und Werben-Seite materialisieren
+        run: |
+          node deploy/anzeigen.mjs
+          node deploy/werben.mjs
+          node deploy/kopf-theme-einbinden.mjs
+      - name: Generatoren pruefen
+        run: |
+          node deploy/anzeigen.mjs --check
+          node deploy/werben.mjs --check
+          node deploy/kopf-theme-einbinden.mjs --check
+      - name: Generierten Live-Stand committen
+        run: |
+          if [ -z "$(git status --porcelain -- chatgpt-site/)" ]; then
+            echo "Keine generierten Aenderungen."
+            exit 0
+          fi
+          git config user.name "Merzenich Aktuell Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add chatgpt-site/
+          git commit -m "Werbung: kuratierte Fotomotive live materialisieren"
+          git pull --rebase origin main
+          git push

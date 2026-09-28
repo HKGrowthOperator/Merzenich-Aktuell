@@ -38,9 +38,10 @@ const ids = new Set();
 for (const m of daten.motive) {
   if (!m.id || ids.has(m.id)) fehler.push(`Motiv ohne oder mit doppelter id: ${m.id}`);
   ids.add(m.id);
-  if (!['bank', 'sport'].includes(m.typ)) fehler.push(`${m.id}: typ muss bank oder sport sein`);
+  if (!/^[a-z0-9-]+$/.test(m.typ || '')) fehler.push(`${m.id}: typ muss ein sicherer CSS-Schluessel sein`);
   for (const f of ['kunde', 'eyebrow', 'headline', 'text', 'cta', 'ziel', 'bild', 'bildAlt']) if (!m[f]) fehler.push(`${m.id}: ${f} fehlt`);
   if (m.bild && !/^\/assets\//.test(m.bild)) fehler.push(`${m.id}: bild muss unter /assets/ liegen`);
+  if (m.bild && /^\/assets\//.test(m.bild) && !existsSync(join(site, m.bild.replace(/^\//, '')))) fehler.push(`${m.id}: Bilddatei fehlt: ${m.bild}`);
   if (/€|\bEUR\b|\d+\s*Euro/i.test(`${m.headline} ${m.text} ${m.cta}`)) fehler.push(`${m.id}: keine Preise in Motiven (Preis auf Anfrage)`);
   if (m.ziel && !/^(https:\/\/|\/)/.test(m.ziel)) fehler.push(`${m.id}: ziel muss https:// oder / sein`);
   if (m.ziel && m.ziel.startsWith('/')) {
@@ -53,8 +54,8 @@ const LABEL = daten.label || 'Anzeige';
 if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert nichts');
 
 // ------------------------------------------------------------------ Rendering
-// Markup der Anzeigenrotation: Text plus echte Fotografie aus den vorhandenen
-// freigegebenen Editorial-Pools. Format band: Werbebaender und Artikelseiten.
+// Markup der Anzeigenrotation: Text plus kuratierte, lokal materialisierte
+// Werbe-Fotografie. Format band: Werbebaender und Artikelseiten.
 // Format gap: hochkant in Spalten.
 function kunst(m) {
   return '<span class="ma-ad-art ma-ad-art--' + esc(m.typ) + '">'

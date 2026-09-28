@@ -215,10 +215,9 @@ html[data-werbung="aus"] .werbung{display:none!important}
 /* Werben-Seite 28.09.2026: echte Fotografie + reale Platzierungsdemo */
 .ma-ad-art{background:#eceae6;isolation:isolate}
 .ma-ad-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-.ma-ad-art--bank{background:#eceae6 url('/assets/editorial-pools/wirtschaft/wirtschaft-01-561359542b-800.webp') center/cover no-repeat}
-.ma-ad-art--sport{background:#e7e9e6 url('/assets/editorial-pools/sport/sport-01-4ab6e95eab-800.webp') center/cover no-repeat}
+.ma-ad-art--bank,.ma-ad-art--sport{background:#eceae6}
 .ma-ad-x,.ma-ad-ball,.ma-ad-art-word,.ma-ad-art--sport::before,.ma-ad-art--sport::after{display:none!important}
-.ma-ad-theme--bank .ma-ad-cta,.ma-ad-theme--sport .ma-ad-cta{color:#9b2929}
+.ma-ad-card .ma-ad-cta{color:#9b2929}
 
 .werben-entry{padding:38px 0 4px}
 .werben-entry__panel{border:1px solid var(--ma-line,#deddd9);background:#fbfaf7;padding:28px 30px 30px}
@@ -229,8 +228,8 @@ html[data-werbung="aus"] .werbung{display:none!important}
 .werben-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .werben-choice{display:block;min-width:0;border:1px solid #d7d4ce;background:#fff;color:#17191b;text-decoration:none;overflow:hidden;transition:border-color 180ms ease,transform 180ms ease}
 .werben-choice:hover,.werben-choice:focus-visible{border-color:#9b2929;transform:translateY(-2px)}
-.werben-choice__media{display:block;height:150px;overflow:hidden;background:#eceae6}
-.werben-choice__media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 180ms ease}
+.werben-choice__media{position:relative;display:block;height:184px;overflow:hidden;background:#eceae6}
+.werben-choice__media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 180ms ease}
 .werben-choice:hover .werben-choice__media img,.werben-choice:focus-visible .werben-choice__media img{transform:scale(1.02)}
 .werben-choice__body{display:block;padding:17px 18px 19px}
 .werben-choice__body strong{display:block;font-family:var(--serif);font-size:25px;line-height:1.08}
@@ -250,6 +249,11 @@ html[data-werbung="aus"] .werbung{display:none!important}
 .media-slot-preview--sidebar .ma-ad-rotator--gap{height:245px}
 .media-format__meta{display:block;margin-top:11px;color:#817a72;font-size:12px;line-height:1.4}
 .werben-demo-note{margin:20px 0 0;padding:12px 14px;border-left:3px solid #9b2929;background:#faf8f4;color:#5e5953;font-size:13px;line-height:1.5}
+.werben-bildnachweise{margin-top:12px;border-top:1px solid #e3e0da;padding-top:10px;color:#6c665f;font-size:12px}
+.werben-bildnachweise summary{cursor:pointer;font-weight:750;color:#554f49}
+.werben-bildnachweise__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 20px;margin-top:9px}
+.werben-bildnachweise__grid p{margin:0;line-height:1.5}
+.werben-bildnachweise a{color:#8f2525;text-underline-offset:2px}
 
 @media(max-width:900px){
   .werben-entry{padding-top:26px}
@@ -264,11 +268,15 @@ html[data-werbung="aus"] .werbung{display:none!important}
 @media(max-width:560px){
   .werben-entry__panel{padding:17px}
   .werben-choice{display:block}
-  .werben-choice__media{height:132px}
+  .werben-choice__media{height:152px}
   .werben-choice__body{padding:14px}
   .werben-choice__body strong{font-size:22px}
   .media-slot-preview{min-height:128px;padding:12px}
 }
 @media(prefers-reduced-motion:reduce){
   .werben-choice,.werben-choice__media img{transition:none}
+}
+
+@media(max-width:700px){
+  .werben-bildnachweise__grid{grid-template-columns:1fr}
 }
