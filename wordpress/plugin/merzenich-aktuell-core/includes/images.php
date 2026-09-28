@@ -18,6 +18,7 @@ const MA_IMAGE_TYPES = [
     'official'  => 'Offizielles Bild',
     'licensed'  => 'Lizenziertes Bild',
     'symbol'    => 'Symbolbild',
+    'place'     => 'Ortsansicht',
 ];
 
 /**
@@ -108,9 +109,15 @@ function ma_content_image($post = null, string $size = 'large'): array {
     $nutzbar = $url !== '' && ($verified || $license !== '');
 
     if ($nutzbar) {
-        if (!isset(MA_IMAGE_TYPES[$type]) || $type === 'symbol') {
+        if (!isset(MA_IMAGE_TYPES[$type])) {
             $type = $license !== '' && !$verified ? 'licensed' : 'original';
         }
+        // Symbolbild und Ortsansicht bleiben als solche gekennzeichnet, auch
+        // wenn das Foto lizenziert ist (statischer Stand: "Kein Foto vom
+        // Ereignis"). Vorher wurde ein Symbolbild mit Lizenz zu "Lizenziertes
+        // Bild" und verlor den Hinweis.
+        $hinweis = $type === 'symbol' ? ma_image_fallback_disclaimer(ma_image_fallback_kind($post))
+            : ($type === 'place' ? 'Ortsansicht. Kein Foto vom Ereignis.' : '');
         return [
             'url'         => $url,
             'type'        => $type,
@@ -120,7 +127,7 @@ function ma_content_image($post = null, string $size = 'large'): array {
             'license'     => $license,
             'source_url'  => $source_url,
             'is_fallback' => false,
-            'disclaimer'  => '',
+            'disclaimer'  => $hinweis,
         ];
     }
 
@@ -187,7 +194,8 @@ function ma_image_caption(array $bild): string {
             $teile[] = 'Merzenich Aktuell';
         }
     } else {
-        if ($bild['type_label'] !== '') $teile[] = $bild['type_label'] . '.';
+        if ($bild['disclaimer'] !== '')     $teile[] = $bild['disclaimer'];
+        elseif ($bild['type_label'] !== '') $teile[] = $bild['type_label'] . '.';
         if ($bild['credit'] !== '')     $teile[] = 'Foto: ' . $bild['credit'];
         if ($bild['license'] !== '')    $teile[] = $bild['license'];
     }
