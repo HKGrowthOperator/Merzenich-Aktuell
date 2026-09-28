@@ -448,8 +448,23 @@ function pruefeDoppelteEinsaetze() {
   for (const [nr, seiten] of nachNummer) if (seiten.length > 1) fehler('Inhalte', `${nr} steht ${seiten.length}-mal auf der Seite: ${seiten.join(', ')}. Zusammenfuehren, alte Adresse per _redirects umleiten.`);
 }
 
+// ------------------------------------------------ 9c. Jede Meldung nennt ihre Quelle
+// 28.09.: Die Meldungsvorlage hatte den Kasten "Quelle & Transparenz" beim
+// Werbeumbau am 26.09. verloren; vier neue Meldungen erschienen ohne Quelle.
+function pruefeQuellenkasten() {
+  const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
+  const ohne = [];
+  for (const a of idx.artikel || []) {
+    const html = lies(`chatgpt-site${a.url}index.html`);
+    const box = /<div class="source-box">[\s\S]*?<\/div>/.exec(html)?.[0] || '';
+    if (!/href="https?:\/\//.test(box)) ohne.push(a.url);
+  }
+  if (ohne.length) fehler('Inhalte', `${ohne.length} Meldung(en) ohne Kasten "Quelle & Transparenz" mit Link: ${ohne.slice(0, 8).join(', ')}.`);
+}
+
 pruefeMarkupGegenCode();
 pruefeDoppelteEinsaetze();
+pruefeQuellenkasten();
 pruefeInterneLinks();
 pruefeInhalte();
 pruefeServiceInhalte();

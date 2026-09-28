@@ -147,7 +147,7 @@ function hauptteil(m, index) {
     ${fakten}
     <div class="prose">${m.absaetze.map((p) => `<p>${esc(p)}</p>`).join('\n')}
 </div>
-    <!-- werbung:artikel:start --><!-- werbung:artikel:end -->
+    <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Quelle & Transparenz</b> Grundlage dieser Meldung: <a href="${esc(m.quelle.url)}" target="_blank" rel="noopener nofollow">${esc(m.quelle.name)} ↗</a>. <span class="stand">Abgerufen am ${esc(datumKurz(m.quelle.stand))}.</span>${hinweis} Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="/korrekturen/">Fehler melden</a></div>
     <div class="tags">${tags}</div>
     <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="/autor/redaktion/">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
     <div class="cta-row"><a class="btn ghost" href="/meldung-senden/">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="/korrekturen/">Fehler melden</a></div>
@@ -224,7 +224,9 @@ for (const m of meldungen) {
     // Weiterlesen-Karten auf Artikel, die es nicht mehr gibt: Seite neu schreiben.
     const weiter = alt.slice(alt.indexOf('<div class="cards-3">') >>> 0);
     const tot = alt.includes('<div class="cards-3">') && [...weiter.matchAll(/<h3><a href="(\/[^"#?]+\/)"/g)].some((x) => !existsSync(join(site, x[1], 'index.html')));
-    if (marke[1] === m.hash && !tot) { aktuell++; continue; }
+    // Seiten ohne Quellenkasten (Vorlage vom 26.09. hatte ihn verloren) neu schreiben.
+    const ohneQuelle = !alt.includes('<div class="source-box">');
+    if (marke[1] === m.hash && !tot && !ohneQuelle) { aktuell++; continue; }
   }
   veraltet.push(`${m.ressort}/${m.slug}`);
   if (nurPruefen) continue;
