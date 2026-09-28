@@ -7,6 +7,7 @@ on:
       - 'deploy/trauer-prerender.mjs'
       - 'traueranzeigen.json'
       - '.github/workflows/traueranzeigen.yml'
+      - 'qa/pruefung.mjs'
   schedule:
     - cron: '40 5 * * *'
   workflow_dispatch:

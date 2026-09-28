@@ -381,12 +381,30 @@ function pruefeProduktionsquelle() {
     hinweis('Deployment', 'Konnte git ls-files für site-source/dist/ nicht ausführen.');
   }
 
-  // Externe Trauersuche ist nur Recherche. Einzelanzeigen duerfen nicht
-  // automatisiert direkt auf der oeffentlichen Seite landen.
+  // Externe Trauersuche ist nur Recherche. Einzelanzeigen duerfen erst nach
+  // redaktioneller Ortspruefung erscheinen. Freigaben stehen explizit in
+  // traueranzeigen.json mit verifiedLocal:true; blosses Vorkommen in einer
+  // Suchtrefferliste reicht nie.
   if (gibtEs('chatgpt-site/traueranzeigen/index.html')) {
     const html = lies('chatgpt-site/traueranzeigen/index.html');
-    if (/wirtrauern\.de\/traueranzeige\//i.test(html)) {
-      fehler('Service', 'Trauerseite enthält automatisch übernommene Einzelanzeige von WirTrauern; nur redaktionell verifizierte Einträge dürfen veröffentlicht werden.');
+    let erlaubt = new Set();
+    if (gibtEs('traueranzeigen.json')) {
+      try {
+        const t = JSON.parse(lies('traueranzeigen.json'));
+        erlaubt = new Set((t.notices || [])
+          .filter((n) => n && n.verifiedLocal === true && /^https?:\/\//i.test(String(n.sourceUrl || '')))
+          .map((n) => String(n.sourceUrl).replace(/\/$/, '')));
+      } catch {
+        fehler('Service', 'traueranzeigen.json ist nicht lesbar; Trauer-Freigaben können nicht geprüft werden.');
+      }
+    }
+    const einzelanzeigen = [...html.matchAll(/href="(https?:\/\/(?:www\.)?(?:wirtrauern\.de|aachen-gedenkt\.de)\/traueranzeige\/[^"#?]+[^"]*)"/gi)]
+      .map((m) => String(m[1]).replace(/&amp;/g, '&').replace(/\/$/, ''));
+    for (const url of new Set(einzelanzeigen)) {
+      const basis = url.split('?')[0].replace(/\/$/, '');
+      if (![...erlaubt].some((e) => e.split('?')[0].replace(/\/$/, '') === basis)) {
+        fehler('Service', `Trauerseite enthält eine nicht freigegebene Einzelanzeige: ${url}. Erst verifiedLocal:true nach redaktioneller Ortsprüfung setzen.`);
+      }
     }
   }
 }
