@@ -1,0 +1,27 @@
+{
+  "_hinweis": "Eine Quelle fuer Gemeindedaten (Audit 28.09.2026: /service/ und das Startseiten-Cockpit nannten verschiedene Rathauszeiten, Donnerstag bis 17 statt 18 Uhr, Dienstag geoeffnet statt geschlossen). deploy/gemeinde.mjs schreibt daraus die Bloecke auf /service/, deploy/cockpit.mjs die Rathaus-Kachel. Wochentage 1 = Montag ... 7 = Sonntag; ein fehlender Tag ist geschlossen. Nur Angaben der Gemeinde, mit Quelle und Stand.",
+  "rathaus": {
+    "adresse": "Valdersweg 1, 52399 Merzenich",
+    "telefon": "02421 399-0",
+    "telefonLink": "024213990",
+    "web": "https://www.gemeinde-merzenich.de",
+    "zeiten": {
+      "1": [["08:00", "12:30"], ["14:00", "16:30"]],
+      "3": [["08:00", "12:30"], ["14:00", "16:00"]],
+      "4": [["08:00", "12:30"], ["14:00", "18:00"]],
+      "5": [["08:00", "12:30"]]
+    },
+    "hinweis": "Dienstags ist das Rathaus ganztägig für Besucher geschlossen. Für Bürgerbüro und Meldeamt gelten eigene Regelungen; Termine lassen sich online buchen.",
+    "termineOnline": "https://www.gemeinde-merzenich.de/rathaus/termine-online.php",
+    "quelle": { "name": "Gemeinde Merzenich, Öffnungszeiten", "url": "https://www.gemeinde-merzenich.de/aktuelles/info-texte/uebersicht-oeffnungszeiten.php", "stand": "2026-09-28" }
+  },
+  "abfall": {
+    "text": "Bei Problemen mit der Leerung der Müllgefäße ist laut Gemeinde der Entsorger Schönmackers Umweltdienste GmbH & Co. KG zuständig.",
+    "entsorger": "Schönmackers Umweltdienste GmbH & Co. KG",
+    "telefon": "02237 9742-4502",
+    "telefonLink": "0223797424502",
+    "beratung": "Abfallberatung der Gemeinde Merzenich: Telefon 02421 399-143, 399-141 oder 399-206.",
+    "kalender": "https://www.gemeinde-merzenich.de/rathaus/abfallentsorgung.php",
+    "quelle": { "name": "Gemeinde Merzenich, Müllentsorgung", "url": "https://www.gemeinde-merzenich.de/aktuelles/info-texte/muellabfuhr-gemeinde-merzenich.php", "stand": "2026-09-28" }
+  }
+}
