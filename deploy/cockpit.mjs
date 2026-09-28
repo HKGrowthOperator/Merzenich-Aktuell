@@ -2,7 +2,7 @@
 /**
  * Merzenich-Cockpit (KBS/Ordin 26.09.2026): eine Leiste direkt unter der Buehne
  * mit dem, was man in Merzenich gerade wissen will - nur echte Daten:
- *   Rathaus geoeffnet/geschlossen (Zeiten laut Gemeinde, deploy/cockpit.json),
+ *   Rathaus geoeffnet/geschlossen (Zeiten laut Gemeinde, deploy/gemeinde.json),
  *   Wetter (dieselbe Quelle wie im Kopf, /api/weather.json),
  *   naechster Termin (Terminseiten, ohne Sport),
  *   letzter gemeldeter Feuerwehreinsatz (Einsatzmeldungen im Inhaltsindex),
@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { termineAusSeiten } from './lib-termine.mjs';
+import { GEMEINDE } from './lib-gemeinde.mjs';
 import { sportTermin, ORTSTEILE } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -39,7 +40,7 @@ const kachel = (art, label, wert, klein, href, extra = '') => `${href ? `<a clas
   + `<span class="cockpit-label">${esc(label)}</span><strong class="cockpit-wert" data-cockpit-wert>${wert}</strong><small class="cockpit-klein" data-cockpit-klein>${klein}</small>${href ? '</a>' : '</div>'}`;
 
 const teile = [];
-teile.push(kachel('rathaus', 'Rathaus', 'Öffnungszeiten', esc(cfg.rathaus.quelle), cfg.rathaus.link, ` data-zeiten="${esc(JSON.stringify(cfg.rathaus.zeiten))}"`));
+teile.push(kachel('rathaus', 'Rathaus', 'Öffnungszeiten', esc(cfg.rathaus.quelle), cfg.rathaus.link, ` data-zeiten="${esc(JSON.stringify(GEMEINDE.rathaus.zeiten))}"`));
 teile.push(kachel('wetter', 'Wetter in Merzenich', '–', 'Open-Meteo', '/service/', ' hidden'));
 if (termin) teile.push(kachel('termin', 'Nächster Termin', esc(termin.titel), `${esc(tag(termin.start.toISOString()))}, ${esc(uhr(termin.start.toISOString()))} Uhr`, `/termine/${termin.slug}/`, ` data-start="${termin.start.toISOString()}"`));
 if (einsatz) {
