@@ -11,6 +11,7 @@ on:
       - 'chatgpt-site/assets/korrekturen.css'
       - 'chatgpt-site/assets/startseite.css'
       - '.github/workflows/markt-abgleich.yml'
+      - 'qa/pruefung.mjs'
   schedule:
     - cron: '20 4 * * *'
   workflow_dispatch:
