@@ -14,7 +14,10 @@
       "sourceUrl": "https://www.aachen-gedenkt.de/traueranzeige/josef-wirtz-1935-20111935",
       "verificationSourceName": "Gemeinde Merzenich · Heimat-Info",
       "verificationSourceUrl": "https://www.heimat-info.de/beitraege/93ddd6bf-112b-4388-8478-95faa0c10dc7",
-      "verifiedLocal": true
+      "verifiedLocal": true,
+      "imageUrl": "https://www.aachen-gedenkt.de/MEDIASERVER/content/LH222/photo/josef-wirtz-98ec1b7d-3b9f-444b-884d-b5ded332ec7b.jpg?tick=639262072353742699",
+      "imageCredit": "Bild: Aachen gedenkt · Zeitung am Sonntag · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T13:47:15.611Z"
     },
     {
       "id": "siegfried-ziebell-2025",
@@ -27,8 +30,9 @@
       "verificationSourceName": "Nachruf Wanderclub Merzenich · Amtsblatt Zülpich",
       "verificationSourceUrl": "https://www.zuelpich.de/medien/downloads/amtsblatt/Zuelpich_02_2025-web.pdf",
       "verifiedLocal": true,
-      "imageUrl": "https://www.wirtrauern.de/MEDIASERVER/content/LH15/obi_new/2025_1/siegfried-ziebell-traueranzeige-1b1b3695-5407-4c02-ae1a-b4a5c62c49f5.jpg",
-      "imageCredit": "Bild: WirTrauern · Originalanzeige"
+      "imageUrl": "https://www.wirtrauern.de/MEDIASERVER/content/LH15/photo/siegfried-ziebell-a918ebfb-febc-4261-b2bf-aa30c676cfad.jpg?tick=639262072361755453",
+      "imageCredit": "Bild: WirTrauern · Blickpunkt Euskirchen · Originalanzeige",
+      "imageCheckedAt": "2026-09-28T13:47:16.398Z"
     }
   ]
 }
