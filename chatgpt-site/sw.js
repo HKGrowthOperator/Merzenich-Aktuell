@@ -1,21 +1,12 @@
 /* Merzenich Aktuell – Service Worker: Offline-Fallback und Cache für Assets. Netzwerk zuerst für HTML. */
-const VERSION = 'a-4e41239d34bd';
+const VERSION = 'a-bae909baebee';
 const STATIC = 'ma-static-' + VERSION;
 const PAGES = 'ma-pages-' + VERSION;
+// Nur die Offline-Seite und das Symbol: Seiten laden CSS/JS mit ?v=<Hash>;
+// unversionierte Kopien vorab zu laden kostete nur doppelte Downloads
+// (Audit 28.09.2026). HTML geht immer zuerst ans Netz, JSON wird nicht gecacht.
 const PRECACHE = [
-  '/',
   '/offline/',
-  '/assets/style.css',
-  '/assets/v19.css',
-  '/assets/v20.css',
-  '/assets/recovery.css',
-  '/assets/korrekturen.css',
-  '/assets/theme.css',
-  '/assets/v20.js',
-  '/assets/app.js',
-  '/assets/kopf.js',
-  '/assets/homepage-polish.css',
-  '/assets/homepage-polish.js',
   '/assets/img/favicon.svg'
 ];
 

@@ -735,8 +735,10 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
 // ------------------------------------------------------------- Sidebox
 {
   const top = artikel.slice(0, 5).map((a) => `<li><a href="${esc(a.url)}">${esc(a.titel)}</a></li>`).join('');
-  const re = /<div class="sidebox"><h3>(?:Aus den Ortsteilen|Neueste Meldungen)<a href="\/nachrichten\/">alle<\/a><\/h3><ol class="ranked">[\s\S]*?<\/ol><\/div>/g;
-  const neu = `<div class="sidebox"><h3>Neueste Meldungen<a href="/nachrichten/">alle</a></h3><ol class="ranked">${top}</ol></div>`;
+  const re = /<div class="sidebox"><h3>(?:Aus den Ortsteilen|Neueste Meldungen(?: aus allen Ressorts)?)<a href="\/nachrichten\/">alle<\/a><\/h3><ol class="ranked">[\s\S]*?<\/ol><\/div>/g;
+  // "aus allen Ressorts": auf /menschen/ (noch ohne eigene Meldung) sah die Liste
+  // sonst aus wie Menschen-Meldungen (Audit 28.09.2026).
+  const neu = `<div class="sidebox"><h3>Neueste Meldungen aus allen Ressorts<a href="/nachrichten/">alle</a></h3><ol class="ranked">${top}</ol></div>`;
   // Ohne Meldung bliebe auf jeder Seite eine leere <ol> stehen - genau die
   // leere Flaeche, die dieser Umbau abschafft. Dann bleibt die vorhandene
   // Sidebox unveraendert und der Lauf sagt es auf der Konsole.

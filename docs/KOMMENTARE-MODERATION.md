@@ -75,12 +75,11 @@ curl -s -X POST $B/admin/freigabe -H "$H" -H 'Content-Type: application/json' \
 Die Admin-Liste enthält Name, Text, Datum, Artikel bzw. Thema und ob eine
 E-Mail-Adresse hinterlegt ist (`hatEmail`), aber nie die Adresse selbst.
 
-## Noch zu erledigen (Redaktion)
+## Datenschutz (Stand 28.09.2026)
 
-- Die Datenschutzerklärung (`/datenschutz/#kommentare`) nennt als Zweck der
-  E-Mail-Adresse bisher nur Rückfragen der Redaktion. Sie sollte um die
-  Benachrichtigung bei Freigabe ergänzt werden, und, falls der Mailversand
-  über einen externen Anbieter läuft, um diesen Anbieter.
+Die Datenschutzerklärung (`/datenschutz/#kommentare`) nennt jetzt beide Zwecke der E-Mail-Adresse: Rückfragen der Redaktion und die einmalige Nachricht nach der Freigabe. Außerdem steht dort, dass diese Nachricht über den SMTP-Server des Redaktionspostfachs geht und der E-Mail-Anbieter dafür Adresse und Nachrichtentext erhält.
+
+**Offen für den Betreiber (juristische Endprüfung):** Den tatsächlich genutzten E-Mail-Anbieter mit Namen und Sitz ergänzen, sobald `SMTP_HOST` in Coolify gesetzt ist, und die gesamte Datenschutzerklärung rechtlich prüfen lassen.
 
 ## Test
 

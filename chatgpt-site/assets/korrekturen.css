@@ -488,3 +488,16 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
 .angebot-text span{font-size:14px;line-height:1.4;color:#5f5b55}
 .angebot-text em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--red,#971725)}
 .angebote-mehr{margin:12px 0 0;font-size:14px}
+
+/* Audit 28.09.2026: horizontaler Overflow bei schmalen Breiten.
+   Archiv: das Grid wuchs auf die Mindestbreite langer Titel (413 px bei 320 px Fenster). */
+.archive-year,.archive-month{grid-template-columns:minmax(0,1fr)}
+@media (min-width:768px){.archive-year{grid-template-columns:120px minmax(0,1fr)}.archive-month{grid-template-columns:150px minmax(0,1fr)}}
+.archive-list a{overflow-wrap:anywhere}
+/* Ortsmarke mit langer Rubrik (Ort · Ortsteil · Rubrik) bricht um statt ueberzustehen. */
+.marke{overflow-wrap:anywhere}
+/* "Merzenich jetzt"-Zeile: bis 1100 px umbrechen, der Termin-Text ist lang. */
+@media (max-width:1100px){html body.home .jetzt{flex-wrap:wrap;row-gap:4px;white-space:normal}html body.home .jetzt-feld{min-width:0}}
+/* Lange Komposita ("Geschwindigkeitskontrolle") in schmalen Karten: trennen statt ueberstehen. */
+h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+@media (max-width:767px){.archive-list li{flex-wrap:wrap}.archive-list .rs{margin-left:0}}

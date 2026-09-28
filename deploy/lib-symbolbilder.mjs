@@ -648,7 +648,9 @@ export function bibliothekErzeugen(wurzel, { schreiben = true } = {}) {
     const g = bildGroesse(pfad);
     alle.push(g ? { ...m, width: g.breite, height: g.hoehe } : m);
   }
-  const payload = { version: 2, generated: RECHTE_GEPRUEFT_AM, minimumPerPool: MINDEST_POOL, sourceOfTruth: 'deploy/lib-symbolbilder.mjs + deploy/import-editorial-photos.mjs', images: alle };
+  // minimumPerPool gilt fuer die Hauptpools; Detailpools (EREIGNIS_KATEGORIEN) sind
+  // kleine semantische Spezialpools ohne Mindestgroesse (docs/EDITORIAL-PHOTO-POOLS.md).
+  const payload = { version: 2, generated: RECHTE_GEPRUEFT_AM, minimumPerPool: MINDEST_POOL, minimumGiltFuer: ALLE_KATEGORIEN, detailPools: EREIGNIS_KATEGORIEN, sourceOfTruth: 'deploy/lib-symbolbilder.mjs + deploy/import-editorial-photos.mjs', images: alle };
   schreibeWennAnders(join(wurzel, BIBLIOTHEK_DATEI), JSON.stringify(payload, null, 2) + '\n', schreiben, geaendert);
   return { geaendert, library: payload };
 }
