@@ -40,13 +40,26 @@ if (!reihe.length) fehler.push('keine Ortsansichten fuer die taegliche Reihe');
 const berlinDatum = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).format(d);
 const tagesnummer = (iso) => Math.floor(Date.parse(`${iso}T00:00:00Z`) / 864e5);
 const heute = berlinDatum(new Date());
-const fotoFuer = (iso) => eintraege.find((e) => e.datum === iso) || reihe[tagesnummer(iso) % reihe.length];
+// Die Reihe ueberspringt Motive, die schon auf der Startseite stehen
+// (api/inhalte.json, startseitenMotive aus inhaltsindex.mjs): das Foto des
+// Tages soll nicht die Ortsansicht wiederholen, die eine Meldung oder eine
+// Ortskachel bereits zeigt (CI 28.09.: golzheim-1440 dreimal sichtbar).
+const motivSchluessel = (src) => String(src || '').split(/[?#]/)[0].replace(/^.*?\/assets\//, '').replace(/-\d{3,4}(?=\.[a-z0-9]+$)/i, '').replace(/\.[a-z0-9]+$/i, '');
+// Frei ist ein Motiv, das nicht in der Buehne steht und auf der Seite noch
+// unter der Obergrenze liegt (eine Ortskachel allein sperrt ihr Motiv nicht).
+const idx = (() => { try { return JSON.parse(readFileSync(join(site, 'api', 'inhalte.json'), 'utf8')); } catch { return {}; } })();
+const zaehler = idx.startseitenMotive || {};
+const buehne = idx.buehnenMotive || [];
+const max = idx.motivMax || 2;
+const freieReihe = reihe.filter((r) => { const k = motivSchluessel(r.src); return !buehne.includes(k) && (zaehler[k] || 0) < max; });
+if (!freieReihe.length) { console.error('Foto des Tages: keine freie Ortsansicht (alle stehen in der Buehne oder schon zweimal auf der Startseite).'); process.exit(2); }
+const fotoFuer = (iso) => eintraege.find((e) => e.datum === iso) || freieReihe[tagesnummer(iso) % freieReihe.length];
 const f = fotoFuer(heute);
 const datumText = new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(`${heute}T12:00:00Z`));
 
 const geaendert = [];
 {
-  const json = JSON.stringify({ eintraege, reihe }) + '\n';
+  const json = JSON.stringify({ eintraege, reihe: freieReihe }) + '\n';
   const ziel = join(site, 'assets', 'foto-des-tages.json');
   if (!existsSync(ziel) || readFileSync(ziel, 'utf8') !== json) { geaendert.push('assets/foto-des-tages.json'); if (!nurPruefen) writeFileSync(ziel, json); }
 }
@@ -77,5 +90,5 @@ const geaendert = [];
 }
 
 if (fehler.length) { console.error('Foto des Tages: ' + fehler.join('\n  ')); process.exit(2); }
-console.log(`Foto des Tages: ${eintraege.length} datierte Einsendung(en), ${reihe.length} Ortsansichten in der Reihe; heute ${f.ort || ''}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+console.log(`Foto des Tages: ${eintraege.length} datierte Einsendung(en), ${freieReihe.length} von ${reihe.length} Ortsansichten frei; heute ${f.ort || ''}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && geaendert.length) process.exit(2);

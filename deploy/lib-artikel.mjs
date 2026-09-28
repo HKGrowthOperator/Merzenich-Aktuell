@@ -158,6 +158,11 @@ export function artikelSammeln(site) {
   }
   return out.filter((a) => a.titel).sort((a, b) => (b.datum || '').localeCompare(a.datum || ''));
 }
+// Motiv eines Bildes unabhaengig von Groessenvariante und Format:
+// /assets/places/golzheim-1440.webp und -720.webp sind dasselbe Motiv, ebenso
+// ein Poolfoto als .jpg und als -800.webp. Die Startseite zaehlt Motive, nicht
+// URLs (CI: kein Motiv oefter als zweimal sichtbar).
+export const motivSchluessel = (src) => String(src || '').split(/[?#]/)[0].replace(/^.*?\/assets\//, '').replace(/-\d{3,4}(?=\.[a-z0-9]+$)/i, '').replace(/\.[a-z0-9]+$/i, '');
 export const dmyKurz = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' }).format(d) + '.'; };
 export const dmyLang = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit', year: 'numeric' }).format(d) + ' · ' + new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit' }).format(d) + ' Uhr'; };
 

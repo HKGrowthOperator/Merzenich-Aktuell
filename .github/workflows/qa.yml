@@ -279,10 +279,14 @@ jobs:
               const ids = [...document.querySelectorAll('main article')].map((a) => a.dataset.story).filter(Boolean);
               const doppelt = ids.filter((x, i) => ids.indexOf(x) !== i);
               const z = {};
+              // Gezaehlt wird das Motiv, nicht die URL: golzheim-720 und
+              // golzheim-1440 sind dasselbe Bild (deploy/lib-artikel.mjs motivSchluessel).
+              const motiv = (s) => s.split(/[?#]/)[0].replace(/^.*?\/assets\//, '').replace(/-\d{3,4}(?=\.[a-z0-9]+$)/i, '').replace(/\.[a-z0-9]+$/i, '');
               for (const i of document.querySelectorAll('main img')) {
                 const s = i.getAttribute('src') || '';
                 if (/logo|favicon|avatar/i.test(s)) continue;
-                z[s] = (z[s] || 0) + 1;
+                const k = motiv(s);
+                z[k] = (z[k] || 0) + 1;
               }
               return { doppelt: [...new Set(doppelt)], motive: Object.entries(z).filter(([, n]) => n > 2).map(([s2, n]) => `${s2.slice(-40)} x${n}`) };
             });

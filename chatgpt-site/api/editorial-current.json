@@ -1,8 +1,6 @@
 {
-  "generated": "2026-09-23T00:00:00+02:00",
-  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. hero {url} setzt den Aufmacher, secondary [{url}] die Nebenmeldungen in dieser Reihenfolge; der Rest wird aufgefuellt. Was hier steht, gewinnt gegen die Automatik - auch mit einem Symbolbild aus dem passenden Pool, denn das ist eine redaktionelle Entscheidung. Gesperrt bleiben nur Logo und Wappen als Bild sowie die Ressorts sport und tipp, die nicht auf die Startseite gehoeren.",
+  "generated": "2026-09-28T12:00:00+02:00",
+  "hinweis": "Redaktionelle Uebersteuerung der oberen Flaeche. hero {url} setzt den Aufmacher, secondary [{url}] die Nebenmeldungen in dieser Reihenfolge; der Rest wird aufgefuellt. Was hier steht, gewinnt gegen die Automatik - auch mit einem Symbolbild aus dem passenden Pool, denn das ist eine redaktionelle Entscheidung. Gesperrt bleiben nur Logo und Wappen als Bild sowie die Ressorts sport und tipp, die nicht auf die Startseite gehoeren. Jeder Eintrag laeuft ab: Feld \"bis\" (ISO-Zeit) oder ohne \"bis\" 72 Stunden nach \"generated\". Abgelaufene Setzungen wirken nicht mehr.",
   "hero": null,
-  "secondary": [
-    { "url": "/blaulicht/einbruch-arnoldsweilerweg/" }
-  ]
+  "secondary": []
 }

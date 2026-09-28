@@ -464,7 +464,7 @@ pruefeJavaScript();
 // Bilder und doppelte Ueberschriften. Hinweis, kein Fehler: eine bewusste
 // Rueckkehr soll moeglich bleiben, aber nie unbemerkt.
 function pruefeLaufzeitUmbau() {
-  for (const datei of ['editorial-audit.js', 'homepage-polish.js', 'content-refresh-2026-09-17.js']) {
+  for (const datei of ['editorial-audit.js', 'homepage-polish.js']) {
     const rel = `chatgpt-site/assets/${datei}`;
     if (!gibtEs(rel)) continue;
     const text = lies(rel);
@@ -515,6 +515,18 @@ function pruefeBildwiederholung() {
       if (n > GRENZE) hinweis('Bilder', `${name}: ein Motiv ${n} mal auf einer Seite (${src.slice(0, 60)}).`);
     }
   }
+  // Startseite: kein Motiv oefter als zweimal im Hauptbereich, gezaehlt nach
+  // Motiv statt URL (dieselbe Regel wie die Sichtpruefung in der CI). Das
+  // Foto des Tages wechselt im Browser taeglich und steht hier mit dem Bautag.
+  const motiv = (s) => s.split(/[?#]/)[0].replace(/^.*?\/assets\//, '').replace(/-\d{3,4}(?=\.[a-z0-9]+$)/i, '').replace(/\.[a-z0-9]+$/i, '');
+  const start = lies('chatgpt-site/index.html');
+  const main = start.slice(start.indexOf('<main'), start.indexOf('</main>'));
+  const z = new Map();
+  for (const m of main.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)) {
+    if (/logo|favicon|avatar/i.test(m[1])) continue;
+    const k = motiv(m[1]); z.set(k, (z.get(k) || 0) + 1);
+  }
+  for (const [k, n] of z) if (n > 2) fehler('Bilder', `Startseite: Motiv ${k} ${n} mal sichtbar (hoechstens zweimal).`);
 }
 
 // -------------------------------- 12. Ein Pool braucht unterscheidbare Motive
@@ -742,6 +754,29 @@ async function pruefeSportfreieStartseite() {
   if (/dataset\.theme|merzenich-theme/.test(html)) fehler('Hellmodus', 'Startseite traegt noch das alte Theme-Skript.');
 }
 
+// ------------------------------------ Aktualitaet (Audit 28.09.2026)
+// Redaktionelle Setzungen laufen ab, das naechste Spiel liegt nicht in der
+// Vergangenheit, der Terminzaehler stimmt mit den kommenden Zeilen ueberein.
+function pruefeAktualitaet() {
+  const jetzt = Date.now();
+  try {
+    const ed = JSON.parse(lies('chatgpt-site/api/editorial-current.json'));
+    const start = Date.parse(ed.generated || '') || 0;
+    for (const e of [ed.hero, ...[].concat(ed.secondary || [])].filter((x) => x && x.url)) {
+      const bis = e.bis ? Date.parse(e.bis) : start + 72 * 3600e3;
+      if (bis < jetzt) hinweis('Aktualitaet', `editorial-current.json: Setzung ${e.url} ist abgelaufen und wirkt nicht mehr; Eintrag entfernen.`);
+    }
+  } catch (e) { fehler('Aktualitaet', `editorial-current.json nicht lesbar (${e.message}).`); }
+  const sport = lies('chatgpt-site/sport/index.html');
+  for (const m of sport.matchAll(/<section class="match-panel[^"]*" aria-label="Nächstes Spiel"><div class="match-heading"><b>Nächstes Spiel<\/b><time datetime="([^"]+)"/g)) {
+    if (Date.parse(m[1]) < jetzt) fehler('Aktualitaet', `sport/: "Nächstes Spiel" am ${m[1]} liegt in der Vergangenheit.`);
+  }
+  const t = lies('chatgpt-site/termine/index.html');
+  const zeilen = [...t.matchAll(/<div data-event-row data-start="[^"]+" data-end="([^"]+)"/g)].filter((m) => Date.parse(m[1]) >= jetzt).length;
+  const zaehler = /data-event-count[^>]*>(\d+) Termin/.exec(t);
+  if (!zaehler || Number(zaehler[1]) !== zeilen) fehler('Aktualitaet', `termine/: Zaehler ${zaehler ? zaehler[1] : '-'} passt nicht zu ${zeilen} kommenden Terminen.`);
+}
+
 // ------------------------------------------- Werbung (KBS 26.09.2026)
 // Nach der Buehne und nach jeder Rubrik steht genau ein Werbeband; benachbarte
 // Baender zeigen verschiedene Motive; keine Preise; jede Werbeflaeche ist als
@@ -773,6 +808,7 @@ function pruefeWerbung() {
   if (!/<html[^>]*data-werbung="an"/.test(html)) hinweis('Werbung', 'Werbung ist in deploy/anzeigen.json ausgeschaltet.');
 }
 
+pruefeAktualitaet();
 await pruefeSymbolbilder();
 pruefeWerbung();
 await pruefeSportfreieStartseite();

@@ -27,7 +27,8 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke, sportBezug } from './lib-artikel.mjs';
+import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke, sportBezug, sportTermin, motivSchluessel } from './lib-artikel.mjs';
+import { termineAusSeiten } from './lib-termine.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -209,7 +210,21 @@ index.bestand = {
 // Startseite fror dann auf dem letzten Treffer ein (Audit 18.09.).
 {
   const rel = 'index.html'; const alt = readFileSync(join(site, rel), 'utf8'); let html = alt;
-  const ed = JSON.parse(readFileSync(join(site, 'api', 'editorial-current.json'), 'utf8'));
+  const edRoh = JSON.parse(readFileSync(join(site, 'api', 'editorial-current.json'), 'utf8'));
+  // Redaktionelle Setzungen laufen ab (Audit 28.09.2026: eine Nebenmeldung vom
+  // 11.09. stand zwei Wochen lang fest). Jeder Eintrag gilt bis zu seinem
+  // Feld "bis"; ohne "bis" 72 Stunden ab "generated". Abgelaufene Eintraege
+  // wirken nicht mehr und werden auf der Konsole genannt; die QA meldet sie.
+  const ED_TTL = 72 * 3600e3;
+  const edStart = Date.parse(edRoh.generated || '') || 0;
+  const gilt = (e) => {
+    if (!e || !e.url) return false;
+    const bis = e.bis ? Date.parse(e.bis) : edStart + ED_TTL;
+    if (Number.isFinite(bis) && bis >= Date.now()) return true;
+    console.log(`Startseite: redaktionelle Setzung ${e.url} ist abgelaufen (${e.bis || 'generated + 72 h'}) und wirkt nicht mehr.`);
+    return false;
+  };
+  const ed = { ...edRoh, hero: gilt(edRoh.hero) ? edRoh.hero : null, secondary: [].concat(edRoh.secondary || []).filter(gilt) };
   const nachUrl = new Map(artikel.map((a) => [a.url, a]));
 
   // Groesste ausgelieferte Bildvariante. Der Schwellwert je Platz ergibt sich
@@ -401,6 +416,23 @@ index.bestand = {
   const aufmacher = aufmacherWaehlen();
   if (!aufmacher) { console.error('Startseite: kein Artikel mit echtem Bild gefunden, Aufmacher nicht gebaut.'); process.exitCode = 2; }
   const vergeben = new Set(aufmacher ? [aufmacher.url] : []);
+  // Motive zaehlen seitenweit (CI 28.09.: golzheim-1440 dreimal sichtbar).
+  // Die fuenf Ortskacheln tragen je ein Ortsmotiv; eine Meldung mit derselben
+  // Ortsansicht zaehlt dazu. Kein Motiv oefter als MOTIV_MAX; das Foto des
+  // Tages nimmt danach nur ein Motiv, das noch gar nicht auf der Seite steht.
+  const MOTIV_MAX = 2;
+  const motive = new Map(Object.keys(ORTSTEILE).map((slug) => [`places/${slug}`, 1]));
+  // Werbefotos (deploy/anzeigen.json) rotieren durch die Baender und die
+  // Servicespalte; jedes kann dort zweimal gleichzeitig stehen. Eine Meldung
+  // mit demselben Poolfoto kaeme auf der Startseite dann auf drei.
+  try {
+    const werbung = JSON.parse(readFileSync(join(wurzel, 'deploy', 'anzeigen.json'), 'utf8'));
+    if (werbung.werbungAn) for (const m of werbung.motive || []) { const k = motivSchluessel(m.bild || m.foto || ''); if (k) motive.set(k, MOTIV_MAX); }
+  } catch { /* ohne Werbedaten keine Sperre */ }
+  const motivVon = (a) => motivSchluessel(a && a.bild && a.bild.src);
+  const motivFrei = (a, extra) => { const k = motivVon(a); return !k || ((motive.get(k) || 0) + ((extra && extra.get(k)) || 0)) < MOTIV_MAX; };
+  const motivBelegen = (a) => { const k = motivVon(a); if (k) motive.set(k, (motive.get(k) || 0) + 1); };
+  if (aufmacher) motivBelegen(aufmacher);
   // KBS/Ordin 23.09.2026: Der erste Blick soll deutlich dichter werden.
   // Eine grosse Highlight-News wird von fuenf kleineren Bildmeldungen rechts
   // und darunter ergaenzt. Keine Sportmeldung darf in dieser Startbuehne landen.
@@ -432,7 +464,7 @@ index.bestand = {
       }
       return true;
     });
-  for (const a of gesetzteNeben) vergeben.add(a.url);
+  for (const a of gesetzteNeben) { vergeben.add(a.url); motivBelegen(a); }
   // Hoechstens zwei Blaulichtmeldungen unter den ersten sechs (Aufmacher plus
   // fuenf Nebenmeldungen). Am 23.09. waren es vier von sechs, die Seite las
   // sich wie ein Polizeiticker (Critique 23.09., Freigabe Stil B).
@@ -443,12 +475,19 @@ index.bestand = {
   const nebenKandidat = (a, mitOrt) => {
     if (vergeben.has(a.url) || sportBezug(a) || a.ressort === 'tipp' || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
     if (!mitOrt && stufe(a) === 'O') return false;
+    if (!motivFrei(a)) return false;
     if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
     return true;
   };
   const nebenErst = redaktionell.filter((a) => nebenKandidat(a, false)).slice(0, Math.max(0, 5 - gesetzteNeben.length));
-  for (const a of nebenErst) vergeben.add(a.url);
-  const nebenOrt = redaktionell.filter((a) => nebenKandidat(a, true));
+  for (const a of nebenErst) { vergeben.add(a.url); motivBelegen(a); }
+  // Ortsansichten nacheinander pruefen: zwei Golzheim-Meldungen duerfen nicht
+  // beide die eine Golzheim-Ansicht in die Buehne bringen.
+  const nebenOrt = [];
+  for (const a of redaktionell) {
+    if (gesetzteNeben.length + nebenErst.length + nebenOrt.length >= 5) break;
+    if (nebenKandidat(a, true)) { nebenOrt.push(a); vergeben.add(a.url); motivBelegen(a); }
+  }
   const neben = gesetzteNeben.concat(nebenErst, nebenOrt).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);
   if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
@@ -513,8 +552,14 @@ index.bestand = {
   // andere, im immer gleichen Muster: zwei grosse Meldungen nebeneinander,
   // darunter drei mittlere (Designstandard 7b).
   const BREITE_L = 480; // grosse Karte rund 600 CSS-Pixel, zwei nebeneinander
+  // Die Leitsektion steht neben der Servicespalte; deren Hoehe waechst mit den
+  // Terminen (termine-prerender.mjs zeigt hoechstens vier). Je Termin eine
+  // Zeile, mindestens zwei, damit neben "Vor Ort" keine tote Flaeche bleibt
+  // (Sichtpruefung: hoechstens 96 px Rest). Gemessen 28.09.: 3 Termine + 3
+  // Zeilen, 4 Termine + 3 Zeilen liessen 129 px frei.
+  const ZEILEN_LEITSEKTION = Math.max(2, Math.min(4, termineAusSeiten(site).filter((t) => t.ende.getTime() >= Date.now() && !sportTermin(t)).length));
   const SEKTIONEN = [
-    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => !sportBezug(a) && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: 3, zuletzt: true },
+    { id: 'gemeinde', kat: 'Aus der Gemeinde', titel: 'Nachrichten aus Merzenich', mehr: '/nachrichten/', mehrText: 'Alle Meldungen', nimm: (a) => !sportBezug(a) && a.ressort !== 'tipp', jeRessort: 3, fenster: 44, zeilen: ZEILEN_LEITSEKTION, zuletzt: true },
     { id: 'blaulicht', kat: 'Feuerwehr · Polizei · Verkehr', titel: 'Blaulicht', mehr: '/blaulicht/', mehrText: 'Alle Einsatzmeldungen', nimm: (a) => a.ressort === 'blaulicht' },
     { id: 'rathaus', kat: 'Rathaus · Beschlüsse · Projekte', titel: 'Politik & Gemeinde', mehr: '/rathaus/', mehrText: 'Zum Rathaus', nimm: (a) => a.ressort === 'rathaus' },
     { id: 'wirtschaft', kat: 'Arbeit · Infrastruktur · Zukunft', titel: 'Wirtschaft', mehr: '/wirtschaft/', mehrText: 'Zur Wirtschaft', nimm: (a) => a.ressort === 'wirtschaft' },
@@ -570,7 +615,7 @@ index.bestand = {
     // an den juengsten Meldungen, und die tragen derzeit Verlaufs-Platzhalter.
     const jeRessort = new Map();
     const passtInsRessort = (a) => !s.jeRessort || (jeRessort.get(a.ressort) || 0) < s.jeRessort;
-    const belege = (liste) => { for (const a of liste) { jeRessort.set(a.ressort, (jeRessort.get(a.ressort) || 0) + 1); vergeben.add(a.url); } };
+    const belege = (liste) => { for (const a of liste) { jeRessort.set(a.ressort, (jeRessort.get(a.ressort) || 0) + 1); vergeben.add(a.url); motivBelegen(a); } };
     // Waehlt der Reihe nach so viele aus, wie die Reihe braucht, und haelt dabei
     // die Ressortgrenze ein - ohne sie zu belegen, denn die Reihe wird nur
     // gebaut, wenn sie voll wird.
@@ -578,11 +623,15 @@ index.bestand = {
       const gezaehlt = new Map(jeRessort);
       for (const a of schon) gezaehlt.set(a.ressort, (gezaehlt.get(a.ressort) || 0) + 1);
       const raus = [];
+      const motivExtra = new Map();
+      for (const a of schon) { const k = motivVon(a); if (k) motivExtra.set(k, (motivExtra.get(k) || 0) + 1); }
       for (const a of pool) {
         if (raus.length >= anzahl) break;
         if (schon.includes(a)) continue;
         if (s.jeRessort && (gezaehlt.get(a.ressort) || 0) >= s.jeRessort) continue;
+        if (!motivFrei(a, motivExtra)) continue;
         gezaehlt.set(a.ressort, (gezaehlt.get(a.ressort) || 0) + 1);
+        const k = motivVon(a); if (k) motivExtra.set(k, (motivExtra.get(k) || 0) + 1);
         raus.push(a);
       }
       return raus;
@@ -615,8 +664,12 @@ index.bestand = {
     // verifiziertem Symbolbild). Standard sind zwei. Die Leitsektion darf drei
     // zeigen: Sie steht neben dem umfangreichen Vor-Ort-Service und braucht
     // dort bewusst etwas mehr aktuelle redaktionelle Dichte statt Leerraum.
-    const zeilen = frei.filter((a) => !vergeben.has(a.url)).slice(0, s.zeilen || 2);
-    for (const a of zeilen) vergeben.add(a.url);
+    const zeilen = [];
+    for (const a of frei) {
+      if (zeilen.length >= (s.zeilen || 2)) break;
+      if (vergeben.has(a.url) || !motivFrei(a)) continue;
+      zeilen.push(a); vergeben.add(a.url); motivBelegen(a);
+    }
 
     belegung.set(s.id, { gross, mittel, zeilen });
   }
@@ -644,6 +697,11 @@ index.bestand = {
   // schlaegt sie an, sobald der Aufmacher automatisch gewaehlt wurde.
   index.aufmacher = aufmacher ? { id: aufmacher.id, url: aufmacher.url, titel: aufmacher.titel } : null;
   index.nebenmeldungen = neben.map((a) => ({ id: a.id, url: a.url, titel: a.titel }));
+  // Fuer das Foto des Tages (foto-des-tages.mjs): wie oft jedes Motiv schon auf
+  // der Startseite steht, und welche Motive in der Buehne (erster Blick) stehen.
+  index.startseitenMotive = Object.fromEntries([...motive.entries()].sort((x, y) => x[0].localeCompare(y[0])));
+  index.buehnenMotive = [aufmacher, ...neben].filter(Boolean).map(motivVon).filter(Boolean).sort();
+  index.motivMax = MOTIV_MAX;
 
   if (html !== alt) schreibe(rel, html);
 }
