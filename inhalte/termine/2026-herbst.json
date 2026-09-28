@@ -1,0 +1,39 @@
+{
+ "hinweis": "Termine aus recherchierten Quellen. deploy/termine.mjs erzeugt daraus die Terminseiten unter chatgpt-site/termine/<slug>/. Nur was in der Quelle steht; ohne bekanntes Ende bleibt ende leer. Von Hand geschriebene Terminseiten (ohne data-termin) werden nie ueberschrieben.",
+ "termine": [
+  {
+   "slug": "ratssitzung-2026-09-30",
+   "titel": "7. Sitzung des Gemeinderates",
+   "start": "2026-09-30T18:00:00+02:00",
+   "ort": "Ratssaal der Gemeinde Merzenich",
+   "adresse": "Valdersweg 1, 52399 Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Politik",
+   "veranstalter": "Gemeinde Merzenich",
+   "beschreibung": "Sitzung des Rates der Gemeinde Merzenich im Ratssaal am Valdersweg. Die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssystem.",
+   "absaetze": [
+    "Der Rat der Gemeinde Merzenich kommt am Mittwoch, 30. September 2026, um 18 Uhr zu seiner 7. Sitzung zusammen. Sitzungsort ist der Ratssaal der Gemeinde am Valdersweg 1.",
+    "Die Gemeinde hat die Sitzung öffentlich bekannt gemacht. Tagesordnung und Vorlagen stehen im Ratsinformationssystem der Gemeinde Merzenich."
+   ],
+   "links": [["Ratsinformationssystem der Gemeinde", "https://ratsinfo.gemeinde-merzenich.de/"]],
+   "quelle": { "name": "Gemeinde Merzenich, Öffentliche Bekanntmachungen", "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php", "stand": "2026-09-28" }
+  },
+  {
+   "slug": "vortrag-zwangsarbeit-2026",
+   "titel": "Vortrag „Zwangsarbeit in Merzenich“",
+   "start": "2026-10-15T19:00:00+02:00",
+   "ort": "Pfarrheim Merzenich",
+   "adresse": "Schulstraße 4a, 52399 Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Kultur",
+   "veranstalter": "Katholische Kirchengemeinde St. Laurentius Merzenich",
+   "beschreibung": "Die Historikerin Inga Mehlert-Garms stellt neue Forschungen zur Zwangsarbeit in Merzenich vor.",
+   "absaetze": [
+    "Auf Einladung der Katholischen Kirchengemeinde St. Laurentius Merzenich stellt die Historikerin Inga Mehlert-Garms am Donnerstag, 15. Oktober 2026, ihre neuesten Forschungen zur Zwangsarbeit in Merzenich vor. Der Vortrag beginnt um 19 Uhr im Pfarrheim an der Schulstraße 4a.",
+    "Die Gemeinde Merzenich hat den Termin in der Heimat-Info-App angekündigt."
+   ],
+   "artikel": "/leben/vortrag-zwangsarbeit-merzenich/",
+   "quelle": { "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 22.09.2026", "url": "https://www.heimat-info.de/beitraege/ef604500-2e9b-4077-965e-384cdc9891b0", "stand": "2026-09-27" }
+  }
+ ]
+}

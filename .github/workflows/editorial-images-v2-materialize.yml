@@ -47,19 +47,9 @@ jobs:
 
       - name: Generate image library and article assignments
         run: |
-          node deploy/meldungen.mjs
-          node deploy/marke.mjs
-          node deploy/symbolbilder.mjs
-          node deploy/markt-prerender.mjs
-          node deploy/sport-prerender.mjs
-          node deploy/suche-index.mjs
-          node deploy/thema-prerender.mjs
-          node deploy/teaser-bilder.mjs
-          node deploy/ortsmarke.mjs
-          node deploy/inhaltsindex.mjs
-          node deploy/termine-prerender.mjs
-          node deploy/ressort-menue.mjs
-          node deploy/kopf-theme-einbinden.mjs
+          # Dieselbe Kette wie qa.yml und lokal (deploy/kette.mjs), keine eigene Liste:
+          # eine Handliste hier lief der Kette hinterher (Termine, Werbung, Cockpit fehlten).
+          node deploy/kette.mjs
           # Nachgelagerte Prerender-Schritte können Artikelseiten neu schreiben.
           # Deshalb das Bildsystem am Ende noch einmal materialisieren, damit
           # der finale Stand idempotent ist und die Foto-Zuordnung erhalten bleibt.

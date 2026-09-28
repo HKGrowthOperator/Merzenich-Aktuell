@@ -37,10 +37,19 @@ export function termineAusSeiten(site) {
     if (ev.endDate && !Number.isNaN(new Date(ev.endDate).getTime())) ende = new Date(ev.endDate);
     else { const b = berliner(start); ende = new Date(`${b.jahr}-${b.monat}-${b.tag}T23:59:59+02:00`); }
     const kicker = /class="kicker"[^>]*>([^<]{1,40})</.exec(html);
+    const dist = /class="kicker"[^>]*>[^<]*<span class="dist">([^<]+)<\/span>/.exec(html);
+    const quelle = /<a class="btn ghost" href="([^"]+)"[^>]*>Quelle/.exec(html);
+    const stand = /Stand (\d{2})\.(\d{2})\.(\d{4})/.exec(html);
     raus.push({
       slug, titel: ev.name, start, ende,
+      ohneEnde: !ev.endDate,
       ort: (ev.location && ev.location.name) || '',
+      ortsteil: dist ? dist[1].trim() : '',
       kategorie: kicker ? kicker[1].trim() : '',
+      beschreibung: ev.description || '',
+      veranstalter: (ev.organizer && ev.organizer.name) || '',
+      quelle: quelle ? quelle[1].replace(/&amp;/g, '&') : '',
+      stand: stand ? `${stand[3]}-${stand[2]}-${stand[1]}` : '',
       ics: existsSync(join(ordner, slug, 'termin.ics')),
     });
   }
