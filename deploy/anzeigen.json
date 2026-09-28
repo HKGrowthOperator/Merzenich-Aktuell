@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Werbesystem. Jede Werbeflaeche der Website (Startseite Band 1-6, Servicespalte, Sportseite, Artikelseiten) wird aus dieser Datei gefuellt (deploy/anzeigen.mjs) und rotiert im gemeinsamen Takt (assets/werbung.js). Motive, Texte und Gestaltung sind die Demo-Anzeigen des Auftraggebers vom 24.09.2026 (Commit cab41c4a/5ea10cf8), auf dessen Wunsch unveraendert in allen Flaechen (Entscheidung 27.09.2026). typ: bank | sport bestimmt die Farbflaeche. Spaeter nur neue Eintraege ergaenzen; keine Euro-Betraege.",
+  "_hinweis": "Werbesystem. Die sichtbaren Demo-Anzeigen verwenden echte, bereits im freigegebenen Editorial-Image-System materialisierte Fotografien statt gezeichneter Werbegrafiken. Jede Werbeflaeche der Website wird aus dieser Datei gefuellt (deploy/anzeigen.mjs) und rotiert im gemeinsamen Takt (assets/werbung.js). Aktive Flaechen: Startseite Band 1-6, Servicespalte, Sportseite und Artikelseiten. Demo-Motive bleiben klar als Anzeige · Demo gekennzeichnet; keine Preise.",
   "werbungAn": true,
   "rotationSekunden": 14,
   "motive": [
@@ -11,7 +11,9 @@
       "headline": "Ihre Bank vor Ort",
       "text": "Persönliche Beratung. Faire Finanzierung. Digitale Lösungen.",
       "cta": "Termin vereinbaren",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/wirtschaft/wirtschaft-01-561359542b-800.webp",
+      "bildAlt": "Symbolfoto: lokaler Betrieb und Beratung"
     },
     {
       "id": "sportverein-merzenich-01",
@@ -21,7 +23,9 @@
       "headline": "Fußball. Gemeinschaft. Leidenschaft.",
       "text": "Jetzt Teil unseres Vereins werden.",
       "cta": "Jetzt informieren",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/sport/sport-01-4ab6e95eab-800.webp",
+      "bildAlt": "Symbolfoto: Fußball und Vereinsleben"
     },
     {
       "id": "probebank-x-02",
@@ -31,7 +35,9 @@
       "headline": "Finanzierung, die zu Merzenich passt.",
       "text": "Klare Wege, persönliche Ansprechpartner und digitale Services.",
       "cta": "Beratung anfragen",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/wirtschaft/wirtschaft-02-d6eb71c3ef-800.webp",
+      "bildAlt": "Symbolfoto: regionales Unternehmen"
     },
     {
       "id": "sportverein-merzenich-02",
@@ -41,7 +47,9 @@
       "headline": "Dein Verein. Dein Platz. Dein Team.",
       "text": "Für alle Altersklassen und alle, die gemeinsam etwas bewegen wollen.",
       "cta": "Verein entdecken",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/sport/sport-02-11b84171a8-800.webp",
+      "bildAlt": "Symbolfoto: Fußballplatz und Mannschaftssport"
     },
     {
       "id": "probebank-x-03",
@@ -51,7 +59,9 @@
       "headline": "Regional denken. Einfach digital handeln.",
       "text": "Banking für den Alltag – persönlich in der Region und digital erreichbar.",
       "cta": "Mehr erfahren",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/wirtschaft/wirtschaft-03-211646f469-800.webp",
+      "bildAlt": "Symbolfoto: Wirtschaft und persönlicher Service"
     },
     {
       "id": "sportverein-merzenich-03",
@@ -61,7 +71,9 @@
       "headline": "Mehr als 90 Minuten.",
       "text": "Jugend, Ehrenamt und echtes Teamgefühl in Merzenich.",
       "cta": "Mitmachen",
-      "ziel": "/werben/"
+      "ziel": "/werben/",
+      "bild": "/assets/editorial-pools/sport/sport-03-b779e06a71-800.webp",
+      "bildAlt": "Symbolfoto: lokaler Fußball"
     }
   ],
   "label": "Anzeige · Demo"
