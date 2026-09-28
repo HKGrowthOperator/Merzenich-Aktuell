@@ -53,7 +53,19 @@ function tabelle() {
   const beschreibung = heimAusserhalb ? 'erste fünf Mannschaften und SC 1919 Merzenich' : 'erste fünf Mannschaften';
   return `<section class="league-panel"><div class="league-heading"><h3>Kreisliga A · Tabellenauszug</h3><span>${stand}</span></div><div class="league-scroll" tabindex="0" role="region" aria-label="Fußballtabelle, horizontal scrollbar"><table class="league-table"><caption class="sr-only">Kreisliga A, ${beschreibung}. ${stand}</caption><thead><tr><th scope="col">Pl.</th><th scope="col">Mannschaft</th><th scope="col">Sp.</th><th scope="col">S</th><th scope="col">U</th><th scope="col">N</th><th scope="col">Tore</th><th scope="col">Diff.</th><th scope="col">Pkt.</th></tr></thead><tbody>${body}</tbody></table></div><a href="/sc-1919-merzenich/">Vollständige Tabelle &amp; Spielplan</a></section>`;
 }
-const modul = `<div class="sports-module" data-generated="${esc(daten.generated)}">${panelLetztes(daten.lastMatch)}${panelNaechstes(daten.nextMatch)}${tabelle()}</div>`;
+// Datenstand altert: liegt das "naechste Spiel" schon in der Vergangenheit und
+// ist sein Ergebnis nicht erfasst, steht es als offene Begegnung da ("Ergebnis
+// noch nicht bestaetigt") und das naechste Spiel ohne erfundenes Datum mit
+// Verweis auf den Spielplan (Audit 28.09.2026: naechstes Spiel 27.09. stand am
+// 28.09. noch als kommend). Tabelle und Spiele behalten ihren gemeinsamen Stand.
+const JETZT = new Date();
+const naechstesVorbei = daten.nextMatch && new Date(daten.nextMatch.date) < JETZT;
+// Offene Begegnung: das angesetzte Spiel ist vorbei, sein Ergebnis steht noch
+// nicht im Datenstand. Daneben bleibt das letzte bestaetigte Ergebnis stehen.
+const panelOffen = (m) => `<section class="match-panel offen" aria-label="Begegnung mit offenem Ergebnis"><div class="match-heading"><b>Ergebnis noch offen</b><time datetime="${esc(m.date)}">${dmy(m.date)} · ${hm(m.date)}</time></div><div class="match-grid">${team(m.home)} <span class="match-versus">gegen</span> ${team(m.away)}</div><span class="match-offen-hinweis">Ergebnis noch nicht bestätigt</span><a class="match-source" href="${esc(daten.sourceUrl || 'https://www.fussball.de/')}" target="_blank" rel="noopener">Ergebnis und Spielplan bei ${esc(quelle)}</a></section>`;
+const modul = naechstesVorbei
+  ? `<div class="sports-module" data-generated="${esc(daten.generated)}">${panelLetztes(daten.lastMatch)}${panelOffen(daten.nextMatch)}${tabelle()}</div>`
+  : `<div class="sports-module" data-generated="${esc(daten.generated)}">${panelLetztes(daten.lastMatch)}${panelNaechstes(daten.nextMatch)}${tabelle()}</div>`;
 
 function kacheln() {
   const heim = daten.table.find((r) => r.homeTeam || /Merzenich/i.test(r.team));
@@ -69,7 +81,7 @@ const tagZeit = (iso) => new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Be
 function ecke() {
   const heim = daten.table.find((r) => r.homeTeam || /Merzenich/i.test(r.team));
   if (!heim) return '';
-  const n = daten.nextMatch && new Date(daten.nextMatch.date) > new Date(daten.generated) ? daten.nextMatch : null;
+  const n = daten.nextMatch && new Date(daten.nextMatch.date) > JETZT ? daten.nextMatch : null;
   const kachel = (wert, label) => `<div class="sc-kachel"><span class="sc-wert">${wert}</span><span class="sc-label">${label}</span></div>`;
   return `<aside class="sport-ecke" aria-label="SC 1919 Merzenich in der Kreisliga A"><p class="sport-ecke-kopf"><a href="/sc-1919-merzenich/">${esc(heim.team)}</a><span>Kreisliga A</span></p>`
     + `<div class="sc-stand">${kachel(`${heim.place}.`, 'Platz')}${kachel(heim.points, 'Punkte')}${kachel(esc(heim.goals), 'Tore')}</div>`
@@ -132,9 +144,8 @@ function vereinskanal() {
 const VEREINE = JSON.parse(readFileSync(join(wurzel, 'deploy', 'sportvereine.json'), 'utf8'));
 const LEISTE_RE = /<!-- sport:leiste:start -->[\s\S]*?<!-- sport:leiste:end -->/;
 function leiste() {
-  const jetzt = new Date(daten.generated);
   const spiele = [];
-  const n = daten.nextMatch && new Date(daten.nextMatch.date) > jetzt ? daten.nextMatch : null;
+  const n = daten.nextMatch && new Date(daten.nextMatch.date) > JETZT ? daten.nextMatch : null;
   if (n) spiele.push(`<li><time datetime="${esc(n.date)}">${tagZeit(n.date)}</time><a href="/sc-1919-merzenich/">${esc(n.home)} – ${esc(n.away)}</a><small>Kreisliga A · Quelle ${esc(quelle)}</small></li>`);
   const heute = new Date();
   for (const t of termineAusSeiten(site).filter((x) => sportTermin(x) && x.ende >= heute).sort((a, b) => a.start - b.start).slice(0, 4)) {
