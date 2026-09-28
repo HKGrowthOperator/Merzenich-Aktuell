@@ -10,12 +10,13 @@ BEGIN:VEVENT
 UID:ttc-merzenich-birkesdorf@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260904T180000Z
-DTEND:20260904T200000Z
 SUMMARY:Tischtennis: TTC Merzenich – TV Birkesdorf
-DESCRIPTION:Heimspiel des TTC Merzenich.\nVeranstalter: TTC Merzenich\nht
- tps://merzenich-aktuell.de/termine/ttc-merzenich-birkesdorf/
+DESCRIPTION:Heimspiel des TTC Merzenich.\nVeranstalter: TTC Merzenich\nhttp
+ s://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-birkesdorf
+ /
 LOCATION:Turnhalle der Schule\, Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-birkesdorf/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-bir
+ kesdorf/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

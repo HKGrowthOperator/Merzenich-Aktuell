@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:7. Sitzung des Gemeinderates
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ratssitzung-2026-09-30@merzenich-aktuell.de
+DTSTAMP:20260928T060000Z
+DTSTART:20260930T160000Z
+SUMMARY:7. Sitzung des Gemeinderates
+DESCRIPTION:Sitzung des Rates der Gemeinde Merzenich im Ratssaal am Valders
+ weg. Die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssyst
+ em.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growtho
+ perator.de/termine/ratssitzung-2026-09-30/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ratssitzung-2026-
+ 09-30/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

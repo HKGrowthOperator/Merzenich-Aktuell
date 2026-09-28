@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 26 Sep 2026 07:36:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 28 Sep 2026 10:00:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Rathaus &amp; Politik</title><link>https://merzenichaktuell.hk-growthoperator.de/rathaus/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Gemeinderat kommt am 30. September zu seiner 7. Sitzung zusammen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/gemeinderat-7-sitzung-2026-09-30/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/gemeinderat-7-sitzung-2026-09-30/</guid>
+<pubDate>Mon, 28 Sep 2026 10:00:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Rat der Gemeinde Merzenich tagt am Mittwoch um 18 Uhr im Ratssaal am Valdersweg. Die Tagesordnung steht im Ratsinformationssystem.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>No machine-readable author provided. Papa1234 assumed (based on copyright claims). / Wikimedia Commons · Public domain</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Die Chronik des 2026er-Gemeindehaushalts</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</link>

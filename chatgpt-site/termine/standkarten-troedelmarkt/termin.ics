@@ -12,10 +12,12 @@ DTSTAMP:20260903T060000Z
 DTSTART:20260916T123000Z
 DTEND:20260916T150000Z
 SUMMARY:Standkartenvergabe Trödelmarkt Ortsfest
-DESCRIPTION:Persönliche Ausgabe der Standkarten.\nVeranstalter: Gemeinde 
- Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troedelmarkt/
+DESCRIPTION:Persönliche Ausgabe der Standkarten.\nVeranstalter: Gemeinde M
+ erzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/standkarte
+ n-troedelmarkt/
 LOCATION:Bürgerhaus Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troedelmarkt/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troed
+ elmarkt/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

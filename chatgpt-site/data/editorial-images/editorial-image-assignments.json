@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-24T18:51:24.110Z",
+  "updatedAt": "2026-09-28T10:44:01.863Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -368,6 +368,15 @@
       "assignedAt": "2026-09-24T18:51:24.108Z",
       "articleId": "2026-05-05-auffahrunfall-b264-schwer-verletzt-mai",
       "articleDate": "2026-05-05T13:07:00+02:00"
+    },
+    "/rathaus/gemeinderat-7-sitzung-2026-09-30/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-09-28T10:44:01.863Z",
+      "articleId": "2026-09-28-gemeinderat-7-sitzung-2026-09-30",
+      "articleDate": "2026-09-28T12:00:00+02:00"
     }
   }
 }

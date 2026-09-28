@@ -10,12 +10,12 @@ BEGIN:VEVENT
 UID:leader-infoabend@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260902T150000Z
-DTEND:20260902T170000Z
 SUMMARY:Digitaler LEADER-Infoabend
-DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Proze
- nt Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revie
- r an Inde und Rur\nhttps://merzenichaktuell.hk-growthoperator.de/termine/leader-infoabend/
-LOCATION:Online via Zoom
+DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Prozen
+ t Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revier
+  an Inde und Rur\nhttps://merzenichaktuell.hk-growthoperator.de/termine/le
+ ader-infoabend/
+LOCATION:
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/leader-infoabend/
 STATUS:CONFIRMED
 END:VEVENT

@@ -10,10 +10,9 @@ BEGIN:VEVENT
 UID:androcup@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260906T090000Z
-DTEND:20260906T110000Z
 SUMMARY:AndroCup in Merzenich
-DESCRIPTION:Hallenturnier.\nVeranstalter: Jonge vom Berg\nhttps://merzeni
- ch-aktuell.de/termine/androcup/
+DESCRIPTION:Hallenturnier.\nVeranstalter: Jonge vom Berg\nhttps://merzenich
+ aktuell.hk-growthoperator.de/termine/androcup/
 LOCATION:Halle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/androcup/
 STATUS:CONFIRMED

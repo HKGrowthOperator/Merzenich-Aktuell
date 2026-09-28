@@ -10,12 +10,12 @@ BEGIN:VEVENT
 UID:leader-infoabend@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260902T150000Z
-DTEND:20260902T170000Z
 SUMMARY:Digitaler LEADER-Infoabend
-DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Proze
- nt Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revie
- r an Inde und Rur\nhttps://merzenichaktuell.hk-growthoperator.de/termine/leader-infoabend/
-LOCATION:Online via Zoom
+DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Prozen
+ t Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revier
+  an Inde und Rur\nhttps://merzenichaktuell.hk-growthoperator.de/termine/le
+ ader-infoabend/
+LOCATION:
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/leader-infoabend/
 STATUS:CONFIRMED
 END:VEVENT
@@ -25,45 +25,47 @@ DTSTAMP:20260903T060000Z
 DTSTART:20260904T160000Z
 DTEND:20260904T170000Z
 SUMMARY:Bürgersprechstunde mit Bürgermeister Gelhausen
-DESCRIPTION:Offene Sprechstunde ohne Anmeldung.\nVeranstalter: Gemeinde M
- erzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/buergersprechstunde/
+DESCRIPTION:Offene Sprechstunde ohne Anmeldung.\nVeranstalter: Gemeinde Mer
+ zenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/buergersprec
+ hstunde/
 LOCATION:Bürgewaldzentrum Morschenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergersprechstunde/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergersprechstun
+ de/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ttc-merzenich-birkesdorf@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260904T180000Z
-DTEND:20260904T200000Z
 SUMMARY:Tischtennis: TTC Merzenich – TV Birkesdorf
-DESCRIPTION:Heimspiel des TTC Merzenich.\nVeranstalter: TTC Merzenich\nht
- tps://merzenich-aktuell.de/termine/ttc-merzenich-birkesdorf/
+DESCRIPTION:Heimspiel des TTC Merzenich.\nVeranstalter: TTC Merzenich\nhttp
+ s://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-birkesdorf
+ /
 LOCATION:Turnhalle der Schule\, Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-birkesdorf/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-bir
+ kesdorf/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:werwolfnacht-golzheim@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260905T150000Z
-DTEND:20260905T170000Z
 SUMMARY:BdSJ-Werwolfnacht
-DESCRIPTION:Spieleabend der Schützenjugend.\nVeranstalter: St. Sebastianu
- s Schützenbruderschaft Golzheim\nhttps://merzenichaktuell.hk-growthoperator.de/termine/wer
- wolfnacht-golzheim/
+DESCRIPTION:Spieleabend der Schützenjugend.\nVeranstalter: St. Sebastianus
+  Schützenbruderschaft Golzheim\nhttps://merzenichaktuell.hk-growthoperato
+ r.de/termine/werwolfnacht-golzheim/
 LOCATION:Schützenhalle Golzheim
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/werwolfnacht-golzheim/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/werwolfnacht-golz
+ heim/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:androcup@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260906T090000Z
-DTEND:20260906T110000Z
 SUMMARY:AndroCup in Merzenich
-DESCRIPTION:Hallenturnier.\nVeranstalter: Jonge vom Berg\nhttps://merzeni
- ch-aktuell.de/termine/androcup/
+DESCRIPTION:Hallenturnier.\nVeranstalter: Jonge vom Berg\nhttps://merzenich
+ aktuell.hk-growthoperator.de/termine/androcup/
 LOCATION:Halle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/androcup/
 STATUS:CONFIRMED
@@ -72,41 +74,41 @@ BEGIN:VEVENT
 UID:buergerpokalschiessen@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260909T163000Z
-DTEND:20260909T183000Z
 SUMMARY:32. Bürgerpokalschießen
-DESCRIPTION:Offenes Schießen um den Bürgerpokal\, Gäste willkommen.\nVera
- nstalter: St. Sebastianus Schützenbruderschaft Golzheim\nhttps://merzenic
- h-aktuell.de/termine/buergerpokalschiessen/
+DESCRIPTION:Offenes Schießen um den Bürgerpokal\, Gäste willkommen.\nVer
+ anstalter: St. Sebastianus Schützenbruderschaft Golzheim\nhttps://merzeni
+ chaktuell.hk-growthoperator.de/termine/buergerpokalschiessen/
 LOCATION:Schützenhalle Golzheim
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergerpokalschiessen/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergerpokalschie
+ ssen/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:faire-woche-2026@merzenich-aktuell.de
-DTSTAMP:20260827T073200Z
+DTSTAMP:20260827T060000Z
 DTSTART:20260910T220000Z
 DTEND:20260925T215900Z
 SUMMARY:Faire Woche in Merzenich
-DESCRIPTION:Die Gemeinde beteiligt sich an der bundesweiten Fairen Woche 
- mit Naturangeboten für Familien und Schulklassen und einer Müllsammelakti
- on am 20. September.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenich
- -aktuell.de/termine/faire-woche-2026/
+DESCRIPTION:Die Gemeinde beteiligt sich an der bundesweiten Fairen Woche mi
+ t Naturangeboten für Familien und Schulklassen und einer Müllsammelaktio
+ n am 20. September.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichak
+ tuell.hk-growthoperator.de/termine/faire-woche-2026/
 LOCATION:Gemeindegebiet
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/faire-woche-2026/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:denkmaltag-2026@merzenich-aktuell.de
-DTSTAMP:20260913T110000Z
+DTSTAMP:20260916T060000Z
 DTSTART:20260913T110000Z
 DTEND:20260913T150000Z
 SUMMARY:Heimatmuseum & Wasserturm: Tag des offenen Denkmals
-DESCRIPTION:Zwei Orte der Ortsgeschichte öffnen von 13 bis 17 Uhr. Im Hei
- matmuseum gibt es historische Bilder sowie Kaffee und Kuchen; der Wassert
- urm widmet sich der Neffel\nVeranstalter: Geschichts- und Heimatverein Me
- rzenich e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine/denkmaltag-2026/
-LOCATION:Heimatmuseum und Wasserturm\, Bergstraße 1 / Mühlenstraße 32\, M
- erzenich
+DESCRIPTION:Zwei Orte der Ortsgeschichte öffnen von 13 bis 17 Uhr. Im Heim
+ atmuseum gibt es historische Bilder sowie Kaffee und Kuchen\; der Wassertu
+ rm widmet sich der Neffel\nVeranstalter: Geschichts- und Heimatverein Merz
+ enich e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine/denkmalt
+ ag-2026/
+LOCATION:Heimatmuseum und Wasserturm
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/denkmaltag-2026/
 STATUS:CONFIRMED
 END:VEVENT
@@ -116,33 +118,49 @@ DTSTAMP:20260903T060000Z
 DTSTART:20260916T123000Z
 DTEND:20260916T150000Z
 SUMMARY:Standkartenvergabe Trödelmarkt Ortsfest
-DESCRIPTION:Persönliche Ausgabe der Standkarten.\nVeranstalter: Gemeinde 
- Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troedelmarkt/
+DESCRIPTION:Persönliche Ausgabe der Standkarten.\nVeranstalter: Gemeinde M
+ erzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/standkarte
+ n-troedelmarkt/
 LOCATION:Bürgerhaus Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troedelmarkt/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/standkarten-troed
+ elmarkt/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:muellsammelaktion@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260920T090000Z
-DTEND:20260920T110000Z
 SUMMARY:Müllsammelaktion zur Fairen Woche
-DESCRIPTION:Handschuhe und Säcke werden gestellt.\nVeranstalter: Gemeinde
-  Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/muellsammelaktion/
+DESCRIPTION:Handschuhe und Säcke werden gestellt.\nVeranstalter: Gemeinde 
+ Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/muellsamm
+ elaktion/
 LOCATION:Gesamtes Gemeindegebiet
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/muellsammelaktion/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/muellsammelaktion
+ /
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ratssitzung-2026-09-30@merzenich-aktuell.de
+DTSTAMP:20260928T060000Z
+DTSTART:20260930T160000Z
+SUMMARY:7. Sitzung des Gemeinderates
+DESCRIPTION:Sitzung des Rates der Gemeinde Merzenich im Ratssaal am Valders
+ weg. Die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssyst
+ em.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growtho
+ perator.de/termine/ratssitzung-2026-09-30/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ratssitzung-2026-
+ 09-30/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:oldieabend@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20261002T170000Z
-DTEND:20261002T190000Z
 SUMMARY:Oldieabend am Lindenplatz
-DESCRIPTION:Auftakt zum Ortsfest-Wochenende mit Musik der 60er bis 80er.\
- nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/o
- ldieabend/
+DESCRIPTION:Auftakt zum Ortsfest-Wochenende mit Musik der 60er bis 80er.\nV
+ eranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperato
+ r.de/termine/oldieabend/
 LOCATION:Lindenplatz Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/oldieabend/
 STATUS:CONFIRMED
@@ -151,12 +169,26 @@ BEGIN:VEVENT
 UID:ortsfest-2026@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20261003T090000Z
-DTEND:20261003T110000Z
 SUMMARY:Ortsfest Merzenich 2026
-DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalter
- : Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/ortsfest-2026/
+DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalte
+ r: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termi
+ ne/ortsfest-2026/
 LOCATION:Ortszentrum Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/ortsfest-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:vortrag-zwangsarbeit-2026@merzenich-aktuell.de
+DTSTAMP:20260927T060000Z
+DTSTART:20261015T170000Z
+SUMMARY:Vortrag „Zwangsarbeit in Merzenich“
+DESCRIPTION:Die Historikerin Inga Mehlert-Garms stellt neue Forschungen zur
+  Zwangsarbeit in Merzenich vor.\nVeranstalter: Katholische Kirchengemeinde
+  St. Laurentius Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/t
+ ermine/vortrag-zwangsarbeit-2026/
+LOCATION:Pfarrheim Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vortrag-zwangsarb
+ eit-2026/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -165,11 +197,12 @@ DTSTAMP:20260903T060000Z
 DTSTART:20261017T123000Z
 DTEND:20261017T153000Z
 SUMMARY:Seniorennachmittag der Gemeinde
-DESCRIPTION:Live-Musik\, Kaffee und Kuchen. Anmeldung per Coupon\, Eintri
- tt 5 Euro\, Fahrdienst auf Wunsch.\nVeranstalter: Gemeinde Merzenich\nhtt
- ps://merzenich-aktuell.de/termine/seniorennachmittag-2026/
+DESCRIPTION:Live-Musik\, Kaffee und Kuchen. Anmeldung per Coupon\, Eintritt
+  5 Euro\, Fahrdienst auf Wunsch.\nVeranstalter: Gemeinde Merzenich\nhttps:
+ //merzenichaktuell.hk-growthoperator.de/termine/seniorennachmittag-2026/
 LOCATION:Weinberghalle Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorennachmittag-2026/
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorennachmitta
+ g-2026/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

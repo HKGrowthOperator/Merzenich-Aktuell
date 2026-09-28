@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Vortrag „Zwangsarbeit in Merzenich“
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:vortrag-zwangsarbeit-2026@merzenich-aktuell.de
+DTSTAMP:20260927T060000Z
+DTSTART:20261015T170000Z
+SUMMARY:Vortrag „Zwangsarbeit in Merzenich“
+DESCRIPTION:Die Historikerin Inga Mehlert-Garms stellt neue Forschungen zur
+  Zwangsarbeit in Merzenich vor.\nVeranstalter: Katholische Kirchengemeinde
+  St. Laurentius Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/t
+ ermine/vortrag-zwangsarbeit-2026/
+LOCATION:Pfarrheim Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vortrag-zwangsarb
+ eit-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
