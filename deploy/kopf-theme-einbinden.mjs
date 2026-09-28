@@ -157,6 +157,15 @@ for (const pfad of seiten) {
   }
   html = html.replace(ALT_INLINE_RE, '');
   html = html.replace(ALT_THEME_RE, '');
+  // Vorschaubild fuer Teilen (Audit 28.09.2026: 32 Seiten ohne og:image, vor
+  // allem neu erzeugte Themenseiten). Artikel nehmen ihr Artikelbild, alle
+  // anderen das Standardbild; vorhandene Angaben bleiben unberuehrt.
+  if (/<meta property="og:title"/.test(html) && !/<meta property="og:image"/.test(html)) {
+    const fig = /<figure class="art-figure[^"]*"[\s\S]*?<img[^>]*\ssrc="(\/[^"]+)"/.exec(html);
+    const bild = SITE.url.replace(/\/$/, '') + (fig ? fig[1] : '/assets/img/og-default.jpg');
+    html = html.replace(/(<meta property="og:url" content="[^"]*">)/, `$1\n<meta property="og:image" content="${bild}">`);
+    if (!/<meta name="twitter:image"/.test(html)) html = html.replace(/(<meta name="twitter:card" content="[^"]*">)/, `$1\n<meta name="twitter:image" content="${bild}">`);
+  }
   if (!html.includes('/assets/kopf.js')) {
     if (!JS_ANKER.test(html)) { fehler++; console.error('kein v20.js-Anker: ' + pfad); continue; }
     html = html.replace(JS_ANKER, (m) => m + JS);

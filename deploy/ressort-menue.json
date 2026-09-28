@@ -180,7 +180,7 @@
           "titel": "Vereine",
           "links": [
             [
-              "SC 1919 Merzenich",
+              "SC 1919: Tabelle & Spielplan",
               "/sc-1919-merzenich/"
             ],
             [
@@ -230,8 +230,6 @@
       ],
       "offen": [
         "Ergebnisse",
-        "Tabelle",
-        "Spielplan",
         "weitere Sportarten"
       ]
     },
@@ -354,6 +352,10 @@
             [
               "Termin melden",
               "/termine/melden/"
+            ],
+            [
+              "Verein eintragen",
+              "/vereine/eintragen/"
             ]
           ]
         }
@@ -362,8 +364,7 @@
         "Vereine nach Ortsteil",
         "Schützen",
         "Karneval",
-        "Musik/Kultur",
-        "Verein melden"
+        "Musik/Kultur"
       ]
     },
     {
