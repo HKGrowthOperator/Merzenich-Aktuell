@@ -3,6 +3,14 @@ name: Stellenmarkt abgleichen
 # Prueft jede Stelle in market.json bei ihrer Quelle nach
 # (deploy/markt-abgleich.mjs). Neue Stellen nimmt der Lauf nicht auf.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/markt-bilder.mjs'
+      - 'deploy/markt-prerender.mjs'
+      - 'chatgpt-site/assets/korrekturen.css'
+      - 'chatgpt-site/assets/startseite.css'
+      - '.github/workflows/markt-abgleich.yml'
   schedule:
     - cron: '20 4 * * *'
   workflow_dispatch:
@@ -34,6 +42,10 @@ jobs:
       - name: Stellen bei der Quelle nachpruefen
         run: node deploy/markt-abgleich.mjs ${{ (github.event_name == 'workflow_dispatch' && inputs.trocken) && '--dry' || '' }}
 
+      - name: Bilder aus den Originalanzeigen ermitteln
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.trocken) }}
+        run: node deploy/markt-bilder.mjs
+
       - name: Seiten neu schreiben und pruefen
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.trocken) }}
         run: |
@@ -47,7 +59,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add market.json chatgpt-site/api/market.json chatgpt-site/jobs/index.html chatgpt-site/index.html
+          git add market.json chatgpt-site/api/market.json chatgpt-site/jobs/index.html chatgpt-site/immobilien/index.html chatgpt-site/index.html
           if git diff --cached --quiet; then echo 'Nichts zu aendern.'; exit 0; fi
           git commit -m 'markt: Stellen bei der Quelle abgeglichen [skip ci]'
           # QA schreibt parallel auf main; bei abgelehntem Push neu holen und wiederholen.

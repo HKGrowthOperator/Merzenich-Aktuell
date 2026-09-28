@@ -13,7 +13,7 @@
  * - Nur Einzelinserate mit eigener Quellen-URL. Eintraege, deren Quelle nur
  *   eine Portal-Suchseite ist, werden uebersprungen und gemeldet.
  * - Merzenich zuerst, danach der direkte Umkreis mit deutlicher Kennzeichnung.
- * - Kein Bild wird uebernommen. Jede Zeile traegt Quelle und Pruefdatum.
+ * - Jede Anzeige bekommt ein Bild: Originalbild der Quelle, wenn technisch\n *   verfuegbar; sonst ein klar gekennzeichnetes lokales Symbolbild.
  * - Idempotent: die Bloecke stehen zwischen Marker-Kommentaren und werden
  *   bei jedem Lauf ersetzt.
  *
@@ -35,6 +35,48 @@ const ORTSTEILE = ['Merzenich', 'Golzheim', 'Girbelsrath', 'Morschenich', 'Bürg
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sichereUrl = (u) => (/^https?:\/\//i.test(String(u || '')) ? String(u) : '');
 const istSuchseite = (u) => /\/suche\b|jobsuche\/suche/.test(String(u || ''));
+const JOB_BILDER = [
+  'jobs-01-buerojob.svg','jobs-02-handwerk.svg','jobs-03-werkstatt.svg','jobs-04-produktion.svg',
+  'jobs-05-verkauf.svg','jobs-06-pflege.svg','jobs-07-it.svg','jobs-08-verwaltung.svg',
+  'jobs-09-lager.svg','jobs-10-logistik.svg','jobs-11-gastronomie.svg','jobs-12-bau.svg',
+  'jobs-13-ausbildung.svg','jobs-14-teammeeting.svg','jobs-15-bewerbung.svg','jobs-16-schichtarbeit.svg',
+  'jobs-17-kundenservice.svg','jobs-18-technik.svg','jobs-19-fahrer.svg','jobs-20-sozialarbeit.svg'
+];
+const IMMOBILIEN_BILDER = [
+  'immobilien-01-wohnhaus.svg','immobilien-02-wohnung.svg','immobilien-03-mehrfamilienhaus.svg','immobilien-04-schluessel.svg',
+  'immobilien-05-neubau.svg','immobilien-06-baustelle.svg','immobilien-07-innenraum.svg','immobilien-08-grundriss.svg',
+  'immobilien-09-einfamilienhaus.svg','immobilien-10-balkon.svg','immobilien-11-kueche.svg','immobilien-12-wohnzimmer.svg',
+  'immobilien-13-garten.svg','immobilien-14-sanierung.svg','immobilien-15-beratung.svg','immobilien-16-miete.svg',
+  'immobilien-17-eigentum.svg','immobilien-18-rohbau.svg','immobilien-19-fassade.svg','immobilien-20-haustuer.svg'
+];
+function hashText(s) {
+  let h = 2166136261;
+  for (const c of String(s || '')) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function bildDaten(item, art) {
+  const extern = sichereUrl(item.imageUrl);
+  if (extern) return {
+    url: extern, extern: true,
+    label: item.imageCredit || `Bild: ${item.sourceName || 'Originalanzeige'}`,
+    kurz: item.sourceName || 'Originalanzeige'
+  };
+  const pool = art === 'jobs' ? JOB_BILDER : IMMOBILIEN_BILDER;
+  const ordner = art === 'jobs' ? 'jobs' : 'immobilien';
+  const datei = pool[hashText(item.id || item.title) % pool.length];
+  return {
+    url: `/assets/symbolbilder/${ordner}/${datei}`, extern: false,
+    label: 'Symbolbild · Merzenich Aktuell', kurz: 'Symbolbild'
+  };
+}
+function bildMarkup(item, art) {
+  const b = bildDaten(item, art);
+  const href = sichereUrl(item.sourceUrl);
+  return `<a class="markt-thumb${b.extern ? ' markt-thumb--original' : ' markt-thumb--symbol'}" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(item.title)} – Originalanzeige öffnen">` +
+    `<img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"${b.extern ? ' referrerpolicy="no-referrer"' : ''}>` +
+    `<span class="markt-thumb__badge">${esc(b.label)}</span></a>`;
+}
+
 
 function datum(iso) {
   const d = new Date(iso);
@@ -73,11 +115,9 @@ function zeile(item, art) {
   const haupt = job ? item.employer : item.price;
   const fakten = job ? item.employment : item.details;
   const details = job ? item.details : '';
-  // Kein Bild neben Inseraten (24.09.): ein Arbeitsplatzfoto laese sich als der
-  // Betrieb des Anbieters, ein Haus als das Objekt. Die gezeichneten Motive
-  // passten nicht zur Stelle ("Bueroarbeitsplatz" neben einer Verkaeuferstelle).
-  return '<article class="event-row job-row markt-row">' +
+  return '<article class="event-row job-row markt-row markt-row--thumb">' +
     `<span class="d job-d"><b>${esc(kurzArt(item, art))}</b></span>` +
+    bildMarkup(item, art) +
     `<div class="info">` +
       `<span class="eyebrow"><span class="markt-art">${esc(kurzArt(item, art))} · </span>${ortZeile(item)}</span>` +
       `<h3><a href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">${esc(item.title)}</a></h3>` +
@@ -99,7 +139,7 @@ function liste(daten, art) {
   const teile = [];
 
   teile.push(`<div class="markt-stand"><strong>Markt geprüft: ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</strong>` +
-    `<p>${esc(daten.meta?.methodNote || 'Maßgeblich ist die verlinkte Originalquelle.')} Bilder der Anbieter werden nicht übernommen.</p></div>`);
+    `<p>${esc(daten.meta?.methodNote || 'Maßgeblich ist die verlinkte Originalquelle.')} Bilder stammen – soweit technisch verfügbar – aus der verlinkten Originalanzeige und sind direkt im Bild gekennzeichnet. Andernfalls erscheint ein gekennzeichnetes Symbolbild.</p></div>`);
 
   for (const ort of ORTE) {
     const hier = items.filter((i) => i.municipality === ort);
@@ -124,8 +164,10 @@ function mini(items, art) {
   if (!items.length) return '<p class="markt-mini-leer">Derzeit kein einzelnes Angebot in Merzenich geprüft.</p>';
   return items.slice(0, 3).map((i) => {
     const haupt = art === 'jobs' ? i.employer : i.price;
-    return `<a class="markt-mini" href="${esc(sichereUrl(i.sourceUrl))}" target="_blank" rel="noopener noreferrer nofollow">` +
-      `<strong>${esc(i.title)}</strong><span>${esc([haupt, i.district && i.district !== 'Merzenich' ? i.district : 'Merzenich'].filter(Boolean).join(' · '))}</span></a>`;
+    const b = bildDaten(i, art);
+    return `<a class="markt-mini markt-mini--bild" href="${esc(sichereUrl(i.sourceUrl))}" target="_blank" rel="noopener noreferrer nofollow">` +
+      `<span class="markt-mini__bild"><img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"${b.extern ? ' referrerpolicy="no-referrer"' : ''}><span class="markt-mini__credit">${esc(b.kurz)}</span></span>` +
+      `<span class="markt-mini__copy"><strong>${esc(i.title)}</strong><span class="markt-mini__meta">${esc([haupt, i.district && i.district !== 'Merzenich' ? i.district : 'Merzenich'].filter(Boolean).join(' · '))}</span></span></a>`;
   }).join('');
 }
 

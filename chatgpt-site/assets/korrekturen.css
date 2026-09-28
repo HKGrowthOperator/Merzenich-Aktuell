@@ -501,3 +501,14 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
 /* Lange Komposita ("Geschwindigkeitskontrolle") in schmalen Karten: trennen statt ueberstehen. */
 h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 @media (max-width:767px){.archive-list li{flex-wrap:wrap}.archive-list .rs{margin-left:0}}
+
+
+/* Markt-Originalbilder V3 */
+.markt-thumb__badge{max-width:calc(100% - 12px);box-sizing:border-box;line-height:1.25;white-space:normal}
+.markt-thumb--original{background:#eceae6}
+.markt-thumb--original img{background:#eceae6}
+.markt-thumb--symbol img{object-fit:cover}
+@media (max-width:760px){
+  .markt-row--thumb .markt-thumb{max-width:none;width:100%;aspect-ratio:16/9;margin:0 0 2px}
+  .markt-row--thumb .info{min-width:0}
+}
