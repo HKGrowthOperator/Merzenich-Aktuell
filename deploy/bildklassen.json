@@ -187,6 +187,12 @@
         "unfallstelle",
         "rettungswagen"
       ]
+    },
+    "rathaus.rat": {
+      "titel": "Ratssitzungen, Ausschuesse, Bekanntmachungen der Gemeinde",
+      "motive": [
+        "rathaus-merzenich"
+      ]
     }
   }
 }

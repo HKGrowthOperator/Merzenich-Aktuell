@@ -92,7 +92,8 @@ function meldungenLesen() {
 
 // Weiterlesen: drei neueste andere Meldungen, zuerst aus demselben Ortsteil, dann aus dem Ressort.
 function weiterlesen(m, index) {
-  const andere = (index.artikel || []).filter((a) => a.url !== `/${m.ressort}/${m.slug}/`);
+  // Undatierte Seiten (Dossiers ohne Datum) koennen nicht als Weiterlesen mit Datum stehen.
+  const andere = (index.artikel || []).filter((a) => a.url !== `/${m.ressort}/${m.slug}/` && !a.undatiert && !Number.isNaN(Date.parse(a.datum)));
   const nach = (a, b) => String(b.datum).localeCompare(String(a.datum));
   const wahl = [...andere.filter((a) => a.ortsteil === m.ortsteil && a.ressort === m.ressort).sort(nach),
     ...andere.filter((a) => a.ressort === m.ressort).sort(nach)].filter((a, i, l) => l.findIndex((b) => b.url === a.url) === i).slice(0, 3);
