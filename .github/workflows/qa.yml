@@ -77,6 +77,9 @@ jobs:
       - name: Symbolbilder fuer Meldungen ohne Foto aktuell?
         run: node deploy/symbolbilder.mjs --check
 
+      - name: "Routenmatrix: jede Seite (Title, H1, Canonical, Links, Bilder, Sitemap)"
+        run: node qa/routen.mjs
+
       - name: Freigabe-, Partner-, Kommentar- und Sport-Logik pruefen
         run: for t in qa/wordpress/*-test.php; do echo "== $t"; php "$t" || exit 1; done
 
