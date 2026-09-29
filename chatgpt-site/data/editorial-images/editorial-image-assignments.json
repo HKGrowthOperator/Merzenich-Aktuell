@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-29T01:44:20.061Z",
+  "updatedAt": "2026-09-29T19:10:40.562Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -386,6 +386,33 @@
       "assignedAt": "2026-09-29T01:44:20.061Z",
       "articleId": "2026-09-25-vhs-oldschool-abschluss-rathaus",
       "articleDate": "2026-09-25T10:00:00+02:00"
+    },
+    "/rathaus/ortsfest-oldieabend-2026-sperrung/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-09-29T19:10:40.561Z",
+      "articleId": "2026-09-28-ortsfest-oldieabend-2026-sperrung",
+      "articleDate": "2026-09-28T10:07:00+02:00"
+    },
+    "/sport/rhenania-girbelsrath-neues-flutlicht/": {
+      "imageId": "web-vereinsdetail-01-53ce1cd2",
+      "pool": "vereinsdetail",
+      "motiv": "vereinsheim",
+      "regel": "vereine.vereinsheim",
+      "assignedAt": "2026-09-29T19:10:40.561Z",
+      "articleId": "2026-09-29-rhenania-girbelsrath-neues-flutlicht",
+      "articleDate": "2026-09-29T10:37:00+02:00"
+    },
+    "/leben/kleidertreff-keine-erwachsenenkleidung/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-09-29T19:10:40.561Z",
+      "articleId": "2026-09-29-kleidertreff-keine-erwachsenenkleidung",
+      "articleDate": "2026-09-29T10:56:00+02:00"
     }
   }
 }

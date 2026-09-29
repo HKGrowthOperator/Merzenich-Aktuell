@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-28T12:00:00+02:00",
- "anzahl": 114,
+ "generated": "2026-09-29T10:56:00+02:00",
+ "anzahl": 118,
  "bestand": {
-  "gesamt": 114,
+  "gesamt": 118,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 62,
-   "sport": 14,
-   "rathaus": 8,
-   "leben": 17,
+   "blaulicht": 63,
+   "sport": 15,
+   "rathaus": 9,
+   "leben": 18,
    "wirtschaft": 6,
    "tipp": 0,
    "menschen": 0,
@@ -16,32 +16,32 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 79,
+   "merzenich": 81,
    "golzheim": 8,
-   "girbelsrath": 14,
+   "girbelsrath": 15,
    "morschenich": 7,
-   "buergewald": 6,
+   "buergewald": 7,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 114,
+    "anzahl": 118,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 62,
+    "anzahl": 63,
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 14,
+    "anzahl": 15,
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 8,
+    "anzahl": 9,
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 17,
+    "anzahl": 18,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 79,
+    "anzahl": 81,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -73,7 +73,7 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 14,
+    "anzahl": 15,
     "liste": "gepflegt"
    },
    "/morschenich/": {
@@ -81,7 +81,7 @@
     "liste": "gepflegt"
    },
    "/buergewald/": {
-    "anzahl": 6,
+    "anzahl": 7,
     "liste": "gepflegt"
    }
   },
@@ -103,6 +103,120 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-09-29-kleidertreff-keine-erwachsenenkleidung",
+   "url": "/leben/kleidertreff-keine-erwachsenenkleidung/",
+   "titel": "Kleidertreff nimmt vorerst keine Kleidung für Erwachsene an",
+   "teaser": "Nach vielen Spenden in den vergangenen Wochen ist das Lager des Kleidertreffs in der Lindenstraße voll. Die Gemeinde bittet, derzeit keine Erwachsenenkleidung mehr abzugeben.",
+   "kicker": "Kleidertreff · Spenden",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-29T10:56:00+02:00",
+   "aktualisiert": "2026-09-29T10:56:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    },
+    {
+     "slug": "spenden",
+     "label": "Spenden"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "No machine-readable author provided. Papa1234 assumed (based on copyright claims). / Wikimedia Commons · Public domain",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-29-rhenania-girbelsrath-neues-flutlicht",
+   "url": "/sport/rhenania-girbelsrath-neues-flutlicht/",
+   "titel": "Neues Flutlicht für den FC Rhenania Girbelsrath",
+   "teaser": "Die Platzanlage der Rhenania hat neue, sparsamere Flutlichter bekommen. Finanziert wurde das Projekt über das Kommunale Energiekonzept von Westenergie.",
+   "kicker": "Fußball · Sportanlage",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-09-29T10:37:00+02:00",
+   "aktualisiert": "2026-09-29T10:37:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "rhenania-girbelsrath",
+     "label": "FC Rhenania Girbelsrath"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd.jpg",
+    "srcset": "/assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-480.webp 480w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-800.webp 800w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd-1200.webp 1200w, /assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd.jpg 1920w",
+    "alt": "Vereinsheim",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "noebse / Wikimedia Commons · CC BY-SA 2.5",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-28-einsatz-134-rauch-buergewald-am-kamp",
+   "url": "/blaulicht/einsatz-134-rauch-buergewald-am-kamp/",
+   "titel": "Rauch über Bürgewald: Zwei Nutzfeuer, Betreiber löschen selbst",
+   "teaser": "Eine unklare Rauchentwicklung am Kamp rief am Sonntag die Löschgruppen Morschenich und Golzheim nach Bürgewald. Vor Ort fanden sie zwei Nutzfeuer.",
+   "kicker": "Feuerwehr · 134/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "buergewald",
+   "datum": "2026-09-28T20:52:00+02:00",
+   "aktualisiert": "2026-09-28T20:52:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "brand",
+     "label": "Brand"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/buergewald-1440.webp",
+    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
+    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-09-28-gemeinderat-7-sitzung-2026-09-30",
    "url": "/rathaus/gemeinderat-7-sitzung-2026-09-30/",
@@ -135,6 +249,44 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "No machine-readable author provided. Papa1234 assumed (based on copyright claims). / Wikimedia Commons · Public domain",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-09-28-ortsfest-oldieabend-2026-sperrung",
+   "url": "/rathaus/ortsfest-oldieabend-2026-sperrung/",
+   "titel": "Oldieabend und Ortsfest: Ortskern von Freitag 16 Uhr bis Samstag 22 Uhr gesperrt",
+   "teaser": "Am 2. Oktober spielt „Eventuell eine Band“ auf dem Bürgerhausvorplatz, am 3. Oktober folgt das Ortsfest. Im Festbereich gilt ein Park-, Halte- und Durchfahrtsverbot.",
+   "kicker": "Ortsfest · Verkehr",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-09-28T10:07:00+02:00",
+   "aktualisiert": "2026-09-28T10:07:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "ortsfest",
+     "label": "Ortsfest"
+    },
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
     "stufe": "B"
    },
@@ -4801,11 +4953,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-09-28-gemeinderat-7-sitzung-2026-09-30",
-  "url": "/rathaus/gemeinderat-7-sitzung-2026-09-30/",
-  "titel": "Gemeinderat kommt am 30. September zu seiner 7. Sitzung zusammen"
+  "id": "2026-09-29-kleidertreff-keine-erwachsenenkleidung",
+  "url": "/leben/kleidertreff-keine-erwachsenenkleidung/",
+  "titel": "Kleidertreff nimmt vorerst keine Kleidung für Erwachsene an"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-09-28-ortsfest-oldieabend-2026-sperrung",
+   "url": "/rathaus/ortsfest-oldieabend-2026-sperrung/",
+   "titel": "Oldieabend und Ortsfest: Ortskern von Freitag 16 Uhr bis Samstag 22 Uhr gesperrt"
+  },
   {
    "id": "2026-09-25-vhs-oldschool-abschluss-rathaus",
    "url": "/leben/vhs-oldschool-abschluss-rathaus/",
@@ -4825,16 +4982,11 @@
    "id": "2026-09-24-faire-woche-nistkasten-workshop",
    "url": "/leben/faire-woche-nistkasten-workshop/",
    "titel": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag"
-  },
-  {
-   "id": "2026-09-24-oelspur-windmuehle",
-   "url": "/blaulicht/oelspur-windmuehle/",
-   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
   }
  ],
  "startseitenMotive": {
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
-  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
+  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91": 1,
   "editorial-pools/digitaldetail/digitaldetail-01-8758d856d5": 2,
@@ -4845,12 +4997,11 @@
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 2,
   "editorial-pools/technik/technik-07-c67b406470": 1,
-  "editorial-pools/technik/technik-18-1eea351292": 1,
   "editorial-pools/termine/termine-03-00d15809a6": 1,
   "editorial-pools/unfall/unfall-13-dddcf86b1e": 1,
   "editorial-pools/verkehr/verkehr-03-abdf91932e": 1,
   "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
-  "places/buergewald": 1,
+  "places/buergewald": 2,
   "places/girbelsrath": 1,
   "places/golzheim": 2,
   "places/merzenich": 2,
@@ -4864,7 +5015,6 @@
   "responsive/6dbd3a8d61b0e6": 1,
   "responsive/939564298cdfdc": 1,
   "responsive/aa69fa186a0719": 1,
-  "responsive/b301922570e52f": 1,
   "responsive/e0224db1617810": 1,
   "responsive/f507b5f3e2c7d3": 1,
   "werben/format-artikelanzeige": 2,
@@ -4876,11 +5026,11 @@
  },
  "buehnenMotive": [
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
+  "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/digitaldetail/digitaldetail-01-8758d856d5",
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
   "editorial-pools/naturdetail/naturdetail-01-0a789f9162",
-  "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a",
-  "editorial-pools/technik/technik-05-81cd88e925"
+  "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a"
  ],
  "motivMax": 2
 }
