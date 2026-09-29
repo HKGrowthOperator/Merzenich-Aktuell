@@ -4812,11 +4812,6 @@
    "titel": "VHS-Projekt „Oldschool“ endet vor dem Rathaus"
   },
   {
-   "id": "2026-09-24-vhs-oldschool-merzenich",
-   "url": "/leben/vhs-oldschool-merzenich/",
-   "titel": "Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking"
-  },
-  {
    "id": "2026-09-24-jonge-vom-berg-vortanzen",
    "url": "/vereine/jonge-vom-berg-vortanzen/",
    "titel": "KG Jonge vom Berg lädt am Montag zum Vortanzen"
@@ -4830,6 +4825,11 @@
    "id": "2026-09-24-faire-woche-nistkasten-workshop",
    "url": "/leben/faire-woche-nistkasten-workshop/",
    "titel": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag"
+  },
+  {
+   "id": "2026-09-24-oelspur-windmuehle",
+   "url": "/blaulicht/oelspur-windmuehle/",
+   "titel": "Ölspur an der Windmühle: Tagesalarmgruppe der Feuerwehr im Einsatz"
   }
  ],
  "startseitenMotive": {
@@ -4845,6 +4845,7 @@
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 2,
   "editorial-pools/technik/technik-07-c67b406470": 1,
+  "editorial-pools/technik/technik-18-1eea351292": 1,
   "editorial-pools/termine/termine-03-00d15809a6": 1,
   "editorial-pools/unfall/unfall-13-dddcf86b1e": 1,
   "editorial-pools/verkehr/verkehr-03-abdf91932e": 1,
@@ -4864,7 +4865,6 @@
   "responsive/939564298cdfdc": 1,
   "responsive/aa69fa186a0719": 1,
   "responsive/b301922570e52f": 1,
-  "responsive/c41a77e5b7b78b": 1,
   "responsive/e0224db1617810": 1,
   "responsive/f507b5f3e2c7d3": 1,
   "werben/format-artikelanzeige": 2,
@@ -4877,10 +4877,10 @@
  "buehnenMotive": [
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/digitaldetail/digitaldetail-01-8758d856d5",
-  "editorial-pools/digitaldetail/digitaldetail-01-8758d856d5",
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
   "editorial-pools/naturdetail/naturdetail-01-0a789f9162",
-  "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a"
+  "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a",
+  "editorial-pools/technik/technik-05-81cd88e925"
  ],
  "motivMax": 2
 }
