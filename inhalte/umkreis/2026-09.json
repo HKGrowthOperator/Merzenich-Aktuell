@@ -2,6 +2,22 @@
  "hinweis": "Meldungen aus den Nachbarorten fuer den Startseitenblock Direkter Umkreis (deploy/umkreis.mjs). Nur Einzelmeldungen mit Link auf die Originalquelle und Veroeffentlichungsdatum; Titel in eigenen Worten. Stand 29.09.2026: 13 Eintraege per Suche mit Adresse und Datum bestaetigt, dazu drei Eintraege vom 27.09. mit eigener Artikeladresse. Die uebrigen 14 Eintraege des alten, von Hand geschriebenen Blocks zeigten nur Uebersichtsseiten oder \"Aktuell\" statt Datum und wurden nicht uebernommen.",
  "eintraege": [
   {
+   "ort": "Niederzier",
+   "rubrik": "Polizei",
+   "titel": "Tageseinbruch in Einfamilienhaus in Niederzier: Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6361397",
+   "datum": "2026-09-29",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Nörvenich",
+   "rubrik": "Verkehr",
+   "titel": "Autofahrer prallt bei Nörvenich gegen Baum und wird schwer verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6361392",
+   "datum": "2026-09-29",
+   "quelle": "Polizei Düren"
+  },
+  {
    "ort": "Düren",
    "rubrik": "Verkehr",
    "titel": "15-Jähriger auf E-Scooter an der Pfalzstraße schwer verletzt",
