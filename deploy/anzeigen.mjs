@@ -59,7 +59,7 @@ function creditHtml(m) {
   if (!c) { fehler.push(`${m.id}: kein Eintrag in assets/werben/credits.json fuer ${m.bild}`); return ''; }
   if (!/^CC BY/i.test(c.license || '')) return '';
   if (!c.author || !c.sourceUrl || !c.licenseUrl) { fehler.push(`${m.id}: Urheber, Quelle oder Lizenzlink fehlt in credits.json`); return ''; }
-  return `Foto: <a href="${esc(c.sourceUrl)}" target="_blank" rel="noopener">${esc(c.author)}</a>, <a href="${esc(c.licenseUrl)}" target="_blank" rel="noopener license">${esc(c.license)}</a>`;
+  return `<span class="werbung-credit-vor">Foto: </span><a href="${esc(c.sourceUrl)}" target="_blank" rel="noopener">${esc(c.author)}</a>, <a href="${esc(c.licenseUrl)}" target="_blank" rel="noopener license">${esc(c.license)}</a>`;
 }
 const LABEL = daten.label || 'Anzeige';
 if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert nichts');

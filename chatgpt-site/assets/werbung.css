@@ -9,8 +9,15 @@
 .werbung--artikel{margin:28px 0}
 .werbung-label{display:block;margin-bottom:8px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6f6a63}
 .werbung--spalte .werbung-label,.werbung--sport .werbung-label{margin-bottom:7px;color:#77716a;font-size:9px;font-weight:800;letter-spacing:.13em}
-/* Fotonachweis unter der Werbeflaeche (CC BY-SA), ausserhalb der Anzeige; leer bei CC0 */
-.werbung-credit{display:block;margin-top:6px;font-family:var(--sans);font-size:11px;line-height:1.4;color:#6f6a63;text-align:right}
+/* Fotonachweis (CC BY-SA) rechts in der Zeile des Anzeigen-Labels, ausserhalb
+   der Anzeige und ohne zusaetzliche Hoehe (die Servicespalte der Startseite
+   darf nicht wachsen, QA "tote Flaeche"); leer bei CC0. */
+.werbung{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline}
+.werbung>.werbung-label{grid-column:1;grid-row:1}
+.werbung>.werbung-credit{grid-column:2;grid-row:1;margin:0 0 8px;font-family:var(--sans);font-size:11px;line-height:1.3;color:#6f6a63;text-align:right}
+.werbung>.werbung-flaeche{grid-column:1/-1;grid-row:2}
+.werbung--spalte>.werbung-credit,.werbung--sport>.werbung-credit{margin-bottom:7px;font-size:9px}
+.werbung--spalte .werbung-credit-vor,.werbung--sport .werbung-credit-vor{display:none}
 .werbung-credit:empty{display:none}
 .werbung-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ma-ad-rotator{
