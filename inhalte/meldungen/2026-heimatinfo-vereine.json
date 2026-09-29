@@ -2,6 +2,116 @@
  "hinweis": "Beitraege von Vereinen und Einrichtungen in der Heimat-Info-App der Gemeinde Merzenich, abgerufen/ergänzt bis 27.09.2026 (imports/quellen/heimatinfo.json). Nur was im Beitrag steht. Zeit = Veroeffentlichung des Beitrags. Fotos der Beitraege werden nicht uebernommen (keine Nutzungsfreigabe).",
  "meldungen": [
   {
+   "slug": "einsatz-133-unrat-a4-niederzier",
+   "ressort": "blaulicht",
+   "ortsteil": "merzenich",
+   "kicker": "Feuerwehr · 133/26",
+   "titel": "Brennender Unrat neben der A4: Feuerwehr Niederzier übernimmt",
+   "dek": "Die Löschgruppen Merzenich und Girbelsrath wurden am späten Samstagabend auf die A4 in Fahrtrichtung Düren alarmiert. Weil die Brandstelle von der Autobahn aus nicht erreichbar war, kam die Feuerwehr Niederzier dazu.",
+   "datum": "2026-09-27T20:31:00+02:00",
+   "fakten": [
+    "Einsatz 133/26 am Samstag, 26. September 2026, nachts",
+    "A4 in Fahrtrichtung Düren",
+    "Stichwort: Brand, Meldung: brennender Unrat",
+    "Im Einsatz: Löschgruppen Merzenich und Girbelsrath, Feuerwehr Niederzier"
+   ],
+   "absaetze": [
+    "Die Feuerwehr Merzenich ist am Samstag, 26. September, in der Nacht mit den Löschgruppen Merzenich und Girbelsrath zu brennendem Unrat an der A4 in Fahrtrichtung Düren alarmiert worden.",
+    "Die Einsatzstelle lag nach Angaben der Feuerwehr außerhalb der Autobahn, von der Fahrbahn aus kamen die Einsatzkräfte nicht heran. Der Einsatzleiter forderte deshalb die Feuerwehr Niederzier nach."
+   ],
+   "themen": [
+    [
+     "feuerwehr",
+     "Feuerwehr"
+    ],
+    [
+     "brand",
+     "Brand"
+    ],
+    [
+     "a4",
+     "A4"
+    ]
+   ],
+   "bildklasse": "blaulicht.feuer.klein",
+   "quelle": {
+    "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 27.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/a8bcb2f4-8d08-4666-8388-e2bb230911aa",
+    "stand": "2026-09-28"
+   }
+  },
+  {
+   "slug": "einsatz-132-unrat-aachener-strasse",
+   "ressort": "blaulicht",
+   "ortsteil": "merzenich",
+   "kicker": "Feuerwehr · 132/26",
+   "titel": "Papiertüten brennen im Feld an der Aachener Straße",
+   "dek": "Die Löschgruppe Golzheim löschte am Samstagvormittag brennenden Unrat im Bereich der Aachener Straße mit einem Kleinlöschgerät.",
+   "datum": "2026-09-27T20:06:00+02:00",
+   "fakten": [
+    "Einsatz 132/26 am Samstag, 26. September 2026, vormittags",
+    "Aachener Straße in Merzenich",
+    "Stichwort: Brand, Meldung: brennender Unrat",
+    "Im Einsatz: Löschgruppe Golzheim"
+   ],
+   "absaetze": [
+    "Die Löschgruppe Golzheim ist am Samstagvormittag, 26. September, zu brennendem Unrat im Bereich der Aachener Straße in Merzenich alarmiert worden.",
+    "Vor Ort brannten nach Angaben der Feuerwehr einige Papiertüten in einem Feld. Die Einsatzkräfte löschten sie mit einem Kleinlöschgerät ab."
+   ],
+   "themen": [
+    [
+     "feuerwehr",
+     "Feuerwehr"
+    ],
+    [
+     "brand",
+     "Brand"
+    ]
+   ],
+   "bildklasse": "blaulicht.feuer.klein",
+   "quelle": {
+    "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 27.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/3daf5ef2-58ca-44c7-bbc5-1c981d7b1336",
+    "stand": "2026-09-28"
+   }
+  },
+  {
+   "slug": "vhs-oldschool-abschluss-rathaus",
+   "ressort": "leben",
+   "ortsteil": "merzenich",
+   "kicker": "VHS · Digitales Lernen",
+   "titel": "VHS-Projekt „Oldschool“ endet vor dem Rathaus",
+   "dek": "Das mobile Klassenzimmer der VHS Rur-Eifel hat sein Projekt für ältere Menschen in Merzenich abgeschlossen. Bürgermeister Georg Gelhausen schaute sich das „Entwicklungsmobil“ an.",
+   "datum": "2026-09-25T10:00:00+02:00",
+   "fakten": [
+    "Abschluss des VHS-Projekts „Oldschool“ vor dem Rathaus Merzenich",
+    "Mobiles Klassenzimmer der VHS Rur-Eifel, unterstützt vom NRW-Ministerium für Kultur und Wissenschaft",
+    "Themen: digitale Gesundheitskarte, Online-Banking, digitale Terminbuchung, Kontakt mit Familie und Freunden",
+    "Teilnehmende meist zwischen 60 und 80 Jahre alt"
+   ],
+   "absaetze": [
+    "Die VHS Rur-Eifel hat ihr Projekt „Oldschool“ in Merzenich vor dem Rathaus abgeschlossen. Nach Angaben der Gemeinde informierte sich Bürgermeister Georg Gelhausen im sogenannten Entwicklungsmobil, einem mobilen Klassenzimmer, über die Initiative. Die Volkshochschule führte sie mit Unterstützung des NRW-Ministeriums für Kultur und Wissenschaft durch.",
+    "An mehreren Standorten im Kreis Düren übten ältere Menschen den Umgang mit digitalen Angeboten: mit der digitalen Gesundheitskarte, mit Online-Banking und mit der Online-Terminbuchung bei Behörden und Arztpraxen. Auch die Kommunikation mit Verwandten und Freunden stand auf dem Plan. Die Teilnehmenden waren laut Gemeinde meist zwischen 60 und 80 Jahre alt; vor Ort betreuten sie sogenannte Lotsen.",
+    "Bereits am 21. September hatte das mobile Klassenzimmer auf dem Bürgerhausvorplatz Station gemacht."
+   ],
+   "themen": [
+    [
+     "digitalisierung",
+     "Digitalisierung"
+    ],
+    [
+     "senioren",
+     "Senioren"
+    ]
+   ],
+   "bildklasse": "leben.digitalbildung",
+   "quelle": {
+    "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 25.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/270ab4f6-70f3-4f4b-bfde-02e3a824a0df",
+    "stand": "2026-09-28"
+   }
+  },
+  {
    "slug": "einsatz-130-person-hinter-tuer-golzheim",
    "ressort": "blaulicht",
    "ortsteil": "golzheim",
