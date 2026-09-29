@@ -1,38 +1,11 @@
 {
   "meta": {
-    "rule": "Nur redaktionell auf Merzenich/Golzheim/Girbelsrath/Morschenich/Bürgewald verifizierte Trauerfälle werden veröffentlicht. Jede veröffentlichte Karte hat Originalbild oder klar gekennzeichnetes Symbolbild.",
-    "updatedAt": "2026-09-28"
+    "rule": "Keine Einzelanzeigen aus fremden Portalen (Entscheidung 29.09.2026). Traueranzeigen gehören den Familien; Merzenich Aktuell verlinkt nur die Portale und veröffentlicht eigene Anzeigen ausschließlich mit Zustimmung über /anzeigen/aufgeben/. Die Einträge vom 28.09. wurden entfernt: Porträtfotos ohne Einwilligung, eine Anzeige betraf Zülpich-Merzenich (Kreis Euskirchen).",
+    "updatedAt": "2026-09-29"
   },
-  "notices": [
-    {
-      "id": "josef-wirtz-2026",
-      "name": "Josef Wirtz",
-      "born": "20.11.1935",
-      "died": "10.08.2026",
-      "published": "23.08.2026",
-      "sourceName": "Aachen gedenkt · Zeitung am Sonntag",
-      "sourceUrl": "https://www.aachen-gedenkt.de/traueranzeige/josef-wirtz-1935-20111935",
-      "verificationSourceName": "Gemeinde Merzenich · Heimat-Info",
-      "verificationSourceUrl": "https://www.heimat-info.de/beitraege/93ddd6bf-112b-4388-8478-95faa0c10dc7",
-      "verifiedLocal": true,
-      "imageUrl": "https://www.aachen-gedenkt.de/MEDIASERVER/content/LH222/photo/josef-wirtz-98ec1b7d-3b9f-444b-884d-b5ded332ec7b.jpg?tick=639262072353742699",
-      "imageCredit": "Bild: Aachen gedenkt · Zeitung am Sonntag · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T13:47:15.611Z"
-    },
-    {
-      "id": "siegfried-ziebell-2025",
-      "name": "Siegfried Ziebell",
-      "born": "12.07.1932",
-      "died": "28.12.2024",
-      "published": "01.02.2025",
-      "sourceName": "WirTrauern · Blickpunkt Euskirchen",
-      "sourceUrl": "https://www.wirtrauern.de/traueranzeige/siegfried-ziebell",
-      "verificationSourceName": "Nachruf Wanderclub Merzenich · Amtsblatt Zülpich",
-      "verificationSourceUrl": "https://www.zuelpich.de/medien/downloads/amtsblatt/Zuelpich_02_2025-web.pdf",
-      "verifiedLocal": true,
-      "imageUrl": "https://www.wirtrauern.de/MEDIASERVER/content/LH15/photo/siegfried-ziebell-a918ebfb-febc-4261-b2bf-aa30c676cfad.jpg?tick=639262072361755453",
-      "imageCredit": "Bild: WirTrauern · Blickpunkt Euskirchen · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T13:47:16.398Z"
-    }
-  ]
+  "portale": [
+    { "name": "Aachen gedenkt: Traueranzeigen mit Ortsbezug Merzenich", "url": "https://www.aachen-gedenkt.de/traueranzeigen-suche/merzenich", "hinweis": "Aachener Zeitung, Dürener Zeitung, Zeitung am Sonntag" },
+    { "name": "WirTrauern: Traueranzeigen mit Ortsbezug Merzenich", "url": "https://www.wirtrauern.de/traueranzeigen-suche/merzenich", "hinweis": "Achtung: auch Zülpich-Merzenich im Kreis Euskirchen" }
+  ],
+  "notices": []
 }

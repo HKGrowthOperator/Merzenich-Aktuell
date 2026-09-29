@@ -381,30 +381,24 @@ function pruefeProduktionsquelle() {
     hinweis('Deployment', 'Konnte git ls-files für site-source/dist/ nicht ausführen.');
   }
 
-  // Externe Trauersuche ist nur Recherche. Einzelanzeigen duerfen erst nach
-  // redaktioneller Ortspruefung erscheinen. Freigaben stehen explizit in
-  // traueranzeigen.json mit verifiedLocal:true; blosses Vorkommen in einer
-  // Suchtrefferliste reicht nie.
+  // Traueranzeigen (Entscheidung 29.09.2026): keine Einzelanzeigen und keine
+  // Bilder aus fremden Portalen. Am 28.09. war diese Sperre durch eine
+  // Freigabeliste ersetzt worden, die dieselben Commits selbst befuellten;
+  // eine der Anzeigen betraf Zuelpich-Merzenich. Erlaubt sind nur Links auf
+  // die Suchseiten der Portale und eigene Anzeigen (/anzeigen/aufgeben/).
   if (gibtEs('chatgpt-site/traueranzeigen/index.html')) {
     const html = lies('chatgpt-site/traueranzeigen/index.html');
-    let erlaubt = new Set();
-    if (gibtEs('traueranzeigen.json')) {
-      try {
-        const t = JSON.parse(lies('traueranzeigen.json'));
-        erlaubt = new Set((t.notices || [])
-          .filter((n) => n && n.verifiedLocal === true && /^https?:\/\//i.test(String(n.sourceUrl || '')))
-          .map((n) => String(n.sourceUrl).replace(/\/$/, '')));
-      } catch {
-        fehler('Service', 'traueranzeigen.json ist nicht lesbar; Trauer-Freigaben können nicht geprüft werden.');
-      }
-    }
-    const einzelanzeigen = [...html.matchAll(/href="(https?:\/\/(?:www\.)?(?:wirtrauern\.de|aachen-gedenkt\.de)\/traueranzeige\/[^"#?]+[^"]*)"/gi)]
-      .map((m) => String(m[1]).replace(/&amp;/g, '&').replace(/\/$/, ''));
-    for (const url of new Set(einzelanzeigen)) {
-      const basis = url.split('?')[0].replace(/\/$/, '');
-      if (![...erlaubt].some((e) => e.split('?')[0].replace(/\/$/, '') === basis)) {
-        fehler('Service', `Trauerseite enthält eine nicht freigegebene Einzelanzeige: ${url}. Erst verifiedLocal:true nach redaktioneller Ortsprüfung setzen.`);
-      }
+    const einzeln = [...html.matchAll(/href="(https?:\/\/[^"]*\/traueranzeige\/[^"]*)"/gi)].map((m) => m[1]);
+    if (einzeln.length) fehler('Service', `Trauerseite verlinkt Einzelanzeigen aus fremden Portalen: ${einzeln.slice(0, 3).join(', ')}. Nur Portalsuche und eigene Anzeigen.`);
+    const fremdeBilder = [...html.matchAll(/<img\b[^>]*\bsrc="(https?:\/\/[^"]+)"/gi)].map((m) => m[1]);
+    if (fremdeBilder.length) fehler('Service', `Trauerseite bindet fremde Bilder ein: ${fremdeBilder.slice(0, 3).join(', ')}.`);
+  }
+  if (gibtEs('traueranzeigen.json')) {
+    try {
+      const t = JSON.parse(lies('traueranzeigen.json'));
+      if ((t.notices || []).length) fehler('Service', `traueranzeigen.json enthaelt ${t.notices.length} Einzelanzeige(n); Einzelanzeigen aus fremden Portalen werden nicht veroeffentlicht.`);
+    } catch {
+      fehler('Service', 'traueranzeigen.json ist nicht lesbar.');
     }
   }
 }

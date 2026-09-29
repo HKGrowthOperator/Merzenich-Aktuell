@@ -11,9 +11,9 @@ import { fileURLToPath } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const pruefen = process.argv.includes('--check');
-const SCHREIBEN = ['meldungen', 'termine', 'gemeinde', 'marke', 'symbolbilder', 'markt-prerender', 'sport-prerender', 'suche-index', 'thema-prerender',
+const SCHREIBEN = ['meldungen', 'termine', 'gemeinde', 'marke', 'symbolbilder', 'markt-prerender', 'trauer-prerender', 'sport-prerender', 'suche-index', 'thema-prerender',
   'teaser-bilder', 'ortsmarke', 'inhaltsindex', 'termine-prerender', 'ressort-menue', 'cockpit', 'unternehmen', 'anzeigen', 'werben', 'foto-des-tages', 'anzeigen-assistent', 'kopf-theme-einbinden', 'sitemaps', 'wordpress-import'];
-const PRUEFEN = ['symbolbilder', 'markt-prerender', 'sport-prerender', 'suche-index', 'thema-prerender', 'teaser-bilder', 'ortsmarke',
+const PRUEFEN = ['symbolbilder', 'markt-prerender', 'trauer-prerender', 'sport-prerender', 'suche-index', 'thema-prerender', 'teaser-bilder', 'ortsmarke',
   'meldungen', 'termine', 'gemeinde', 'marke', 'ressort-menue', 'inhaltsindex', 'termine-prerender', 'cockpit', 'unternehmen', 'werben', 'anzeigen', 'foto-des-tages', 'anzeigen-assistent', 'kopf-theme-einbinden', 'sitemaps', 'wordpress-import'];
 
 for (const name of pruefen ? PRUEFEN : SCHREIBEN) {
