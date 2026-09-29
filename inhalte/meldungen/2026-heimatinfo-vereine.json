@@ -1,6 +1,146 @@
 {
- "hinweis": "Beitraege von Vereinen und Einrichtungen in der Heimat-Info-App der Gemeinde Merzenich, abgerufen/ergänzt bis 27.09.2026 (imports/quellen/heimatinfo.json). Nur was im Beitrag steht. Zeit = Veroeffentlichung des Beitrags. Fotos der Beitraege werden nicht uebernommen (keine Nutzungsfreigabe).",
+ "hinweis": "Beitraege von Vereinen und Einrichtungen in der Heimat-Info-App der Gemeinde Merzenich, abgerufen/ergänzt bis 29.09.2026 (imports/quellen/heimatinfo.json). Nur was im Beitrag steht. Zeit = Veroeffentlichung des Beitrags. Fotos der Beitraege werden nicht uebernommen (keine Nutzungsfreigabe).",
  "meldungen": [
+  {
+   "slug": "kleidertreff-keine-erwachsenenkleidung",
+   "ressort": "leben",
+   "ortsteil": "merzenich",
+   "kicker": "Kleidertreff · Spenden",
+   "titel": "Kleidertreff nimmt vorerst keine Kleidung für Erwachsene an",
+   "dek": "Nach vielen Spenden in den vergangenen Wochen ist das Lager des Kleidertreffs in der Lindenstraße voll. Die Gemeinde bittet, derzeit keine Erwachsenenkleidung mehr abzugeben.",
+   "datum": "2026-09-29T10:56:00+02:00",
+   "fakten": [
+    "Kleidertreff Merzenich, Lindenstraße",
+    "Kleidung für Erwachsene wird derzeit nicht angenommen",
+    "Grund: hohes Spendenaufkommen der letzten Zeit"
+   ],
+   "absaetze": [
+    "Der Kleidertreff in der Lindenstraße braucht zurzeit keine Kleidung für Erwachsene. Das haben die ehrenamtlichen Mitarbeiterinnen nach Angaben der Gemeinde Merzenich mitgeteilt. In letzter Zeit sei so viel gespendet worden, dass keine weiteren Spenden für Erwachsene angenommen werden können.",
+    "Die Gemeinde bittet, das zu beachten, und bedankt sich für die Unterstützung des Kleidertreffs."
+   ],
+   "themen": [
+    [
+     "ehrenamt",
+     "Ehrenamt"
+    ],
+    [
+     "spenden",
+     "Spenden"
+    ]
+   ],
+   "bildklasse": "rathaus.rat",
+   "quelle": {
+    "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 29.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/dcdd61d8-cd04-41c2-9325-76dc3733fc45",
+    "stand": "2026-09-29"
+   }
+  },
+  {
+   "slug": "rhenania-girbelsrath-neues-flutlicht",
+   "ressort": "sport",
+   "ortsteil": "girbelsrath",
+   "kicker": "Fußball · Sportanlage",
+   "titel": "Neues Flutlicht für den FC Rhenania Girbelsrath",
+   "dek": "Die Platzanlage der Rhenania hat neue, sparsamere Flutlichter bekommen. Finanziert wurde das Projekt über das Kommunale Energiekonzept von Westenergie.",
+   "datum": "2026-09-29T10:37:00+02:00",
+   "fakten": [
+    "Neue Flutlichtanlage auf dem Sportplatz des FC Rhenania Girbelsrath 1931 e.V.",
+    "Finanziert über das Kommunale Energiekonzept (KEK) von Westenergie",
+    "Koordination: Gebäudemanagement der Gemeinde Merzenich"
+   ],
+   "absaetze": [
+    "Der FC Rhenania Girbelsrath 1931 hat auf seiner Platzanlage neue Flutlichter bekommen. Nach Angaben der Gemeinde Merzenich leuchten sie heller und verbrauchen weniger Energie als die alte Anlage. Finanziert wurde das Projekt über das Kommunale Energiekonzept (KEK) von Westenergie, koordiniert hat es Andreas Isecke vom Gebäudemanagement der Gemeinde.",
+    "Die Anlage hat eine bewegte Geschichte: Vor gut vier Jahren wurde die Ertüchtigung der Fußballanlage abgeschlossen, zu großen Teilen in Eigenleistung der Mitglieder und mit Fördermitteln der Gemeinde. Zwei Jahre später brannte das frisch renovierte Clubheim, auch hier packten die Mitglieder beim Wiederaufbau mit an.",
+    "Bürgermeister Georg Gelhausen sagte laut Gemeinde, mit der neuen Beleuchtung könne der Verein den Trainingsbetrieb flexibler gestalten."
+   ],
+   "themen": [
+    [
+     "fussball",
+     "Fußball"
+    ],
+    [
+     "rhenania-girbelsrath",
+     "FC Rhenania Girbelsrath"
+    ]
+   ],
+   "bildklasse": "vereine.vereinsheim",
+   "quelle": {
+    "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 29.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/2e637826-875a-4079-9b92-717432f9fb97",
+    "stand": "2026-09-29"
+   }
+  },
+  {
+   "slug": "ortsfest-oldieabend-2026-sperrung",
+   "ressort": "rathaus",
+   "ortsteil": "merzenich",
+   "kicker": "Ortsfest · Verkehr",
+   "titel": "Oldieabend und Ortsfest: Ortskern von Freitag 16 Uhr bis Samstag 22 Uhr gesperrt",
+   "dek": "Am 2. Oktober spielt „Eventuell eine Band“ auf dem Bürgerhausvorplatz, am 3. Oktober folgt das Ortsfest. Im Festbereich gilt ein Park-, Halte- und Durchfahrtsverbot.",
+   "datum": "2026-09-28T10:07:00+02:00",
+   "fakten": [
+    "Oldieabend: Freitag, 2. Oktober 2026, ab 19 Uhr, Bürgerhausvorplatz, mit „Eventuell eine Band“",
+    "Ortsfest: Samstag, 3. Oktober 2026, 11 bis 18 Uhr, im gesamten Ortskern",
+    "Park-, Halte- und Durchfahrtsverbot im Veranstaltungsbereich von Freitag, 16 Uhr, bis Samstag, 22 Uhr",
+    "Verköstigung übernehmen die Vereine"
+   ],
+   "absaetze": [
+    "Die Gemeinde Merzenich lädt am ersten Oktoberwochenende zu zwei Veranstaltungen in den Ortskern ein. Am Freitag, 2. Oktober, spielt ab 19 Uhr die Band „Eventuell eine Band“ beim Oldieabend auf dem Bürgerhausvorplatz. Am Samstag, 3. Oktober, folgt von 11 bis 18 Uhr das Ortsfest mit Live-Musik, Trödelmarkt und Kunsthandwerk im gesamten Ortskern.",
+    "Wer mit dem Auto unterwegs ist, muss sich auf Einschränkungen einstellen: Von Freitag, 16 Uhr, bis Samstag, 22 Uhr, gilt im gesamten Veranstaltungsbereich ein Park-, Halte- und Durchfahrtsverbot. Die Gemeinde bittet, auf die Beschilderung zu achten.",
+    "Die Verköstigung übernehmen nach Angaben der Gemeinde wieder die Vereine. Unterstützt werden die Veranstaltungen von den Stadtwerken Düren (Oldieabend) und Westenergie (Ortsfest). Die Pfadfinder des Stammes St. Laurentius sind beim Ortsfest mit Zuckerwatte, Lagerfeuer und Stockbrot auf der Pfarrhauswiese neben der Kirche vertreten und nehmen dort Bestellungen für den Nikolausbesuch am Abend des 5. Dezember an."
+   ],
+   "themen": [
+    [
+     "ortsfest",
+     "Ortsfest"
+    ],
+    [
+     "verkehr",
+     "Verkehr"
+    ]
+   ],
+   "bildklasse": "rathaus.rat",
+   "quelle": {
+    "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 28.09.2026; Pfadfinder Merzenich (DPSG St. Laurentius), Beitrag vom 28.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/007941b0-50d1-49c9-ae16-88635b50bbe2",
+    "stand": "2026-09-29"
+   }
+  },
+  {
+   "slug": "einsatz-134-rauch-buergewald-am-kamp",
+   "ressort": "blaulicht",
+   "ortsteil": "buergewald",
+   "kicker": "Feuerwehr · 134/26",
+   "titel": "Rauch über Bürgewald: Zwei Nutzfeuer, Betreiber löschen selbst",
+   "dek": "Eine unklare Rauchentwicklung am Kamp rief am Sonntag die Löschgruppen Morschenich und Golzheim nach Bürgewald. Vor Ort fanden sie zwei Nutzfeuer.",
+   "datum": "2026-09-28T20:52:00+02:00",
+   "fakten": [
+    "Einsatz 134/26 am Sonntag, 27. September 2026",
+    "Bürgewald, Bereich „Am Kamp“",
+    "Stichwort: BD1, Meldung: unklare Rauchentwicklung",
+    "Im Einsatz: Löschgruppen Morschenich und Golzheim"
+   ],
+   "absaetze": [
+    "Die Feuerwehr Merzenich ist am Sonntag, 27. September, mit den Löschgruppen Morschenich und Golzheim nach Bürgewald alarmiert worden. Gemeldet war eine Rauchentwicklung unbekannter Ursache im Bereich „Am Kamp“.",
+    "Bei der Erkundung stießen die Einsatzkräfte auf zwei getrennte Stellen. An beiden brannte nach Angaben der Feuerwehr ein Nutzfeuer. Die Feuerwehr forderte die Betreiber auf, die Feuer selbst zu löschen. Weitere Maßnahmen waren nicht nötig, der Einsatz war danach beendet."
+   ],
+   "themen": [
+    [
+     "feuerwehr",
+     "Feuerwehr"
+    ],
+    [
+     "brand",
+     "Brand"
+    ]
+   ],
+   "bildklasse": "blaulicht.feuer.klein",
+   "quelle": {
+    "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 28.09.2026",
+    "url": "https://www.heimat-info.de/beitraege/447f5904-a382-4a9b-8514-47240446e1d2",
+    "stand": "2026-09-29"
+   }
+  },
   {
    "slug": "einsatz-133-unrat-a4-niederzier",
    "ressort": "blaulicht",
