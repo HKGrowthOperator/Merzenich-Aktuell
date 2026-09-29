@@ -508,9 +508,26 @@ function pruefeUmkreis() {
   if (uebersicht.length) fehler('Startseite', `Umkreis: ${uebersicht.length} Link(s) auf Uebersichtsseiten statt Einzelmeldung: ${uebersicht.slice(0, 2).join(', ')}.`);
 }
 
+// Ortsseiten und Vereinsverzeichnis (deploy/ortsseiten.mjs): Marker vorhanden,
+// interne Links fuehren auf existierende Seiten, externe nur auf Heimat-Info-Eintraege.
+function pruefeOrtsseiten() {
+  const bloecke = [...['merzenich', 'golzheim', 'girbelsrath', 'morschenich', 'buergewald'].map((o) => [`/${o}/`, `chatgpt-site/${o}/index.html`, 'ort:seitenleiste']),
+    ['/vereine/', 'chatgpt-site/vereine/index.html', 'vereine:weitere']];
+  for (const [route, datei, marke] of bloecke) {
+    const block = new RegExp(`<!-- ${marke}:start -->([\\s\\S]*?)<!-- ${marke}:end -->`).exec(lies(datei))?.[1];
+    if (!block) { fehler(route, `Block ${marke} fehlt oder ist leer (deploy/ortsseiten.mjs).`); continue; }
+    for (const [, href] of block.matchAll(/<a href="([^"]+)"/g)) {
+      if (href.startsWith('/')) {
+        if (!gibtEs(join('chatgpt-site', href.replace(/#.*$/, ''), 'index.html'))) fehler(route, `${marke}: Link ${href} fuehrt ins Leere.`);
+      } else if (!/^https:\/\/www\.heimat-info\.de\/gemeinden\/merzenich\/organisationen\/[a-z0-9-]+$/.test(href)) fehler(route, `${marke}: externer Link ${href} ist kein Heimat-Info-Vereinseintrag.`);
+    }
+  }
+}
+
 pruefeMarkupGegenCode();
 pruefeFremdbilder();
 pruefeUmkreis();
+pruefeOrtsseiten();
 // Buehne der Startseite: jedes Motiv nur einmal (29.09.: zweimal dasselbe Handyfoto).
 {
   const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
