@@ -244,7 +244,7 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
     }
   }
   if(path==='/anzeigen/'){
-    var main=document.querySelector('main .shell')||document.querySelector('main');
+    var main=document.querySelector('main .section .shell')||document.querySelector('main .shell')||document.querySelector('main');
     if(main&&!document.querySelector('.publish-guide')){
       var wrap2=document.createElement('div');
       wrap2.innerHTML=guided('Was möchten Sie veröffentlichen?','Ein Bereich, ein klarer Weg. Wählen Sie die passende Anzeigenart.',[
@@ -258,7 +258,7 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
   }
 
   if(path==='/traueranzeigen/'){
-    var trauer=document.querySelector('main .shell')||document.querySelector('main');
+    var trauer=document.querySelector('main .section .shell')||document.querySelector('main .shell')||document.querySelector('main');
     if(trauer&&!document.querySelector('.publish-guide')){
       var w3=document.createElement('div');
       w3.innerHTML=guided('Traueranzeige aufgeben','Wählen Sie zuerst die passende Form. Die Redaktion prüft sensible Angaben vor der Veröffentlichung.',[
@@ -271,7 +271,7 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
   }
 
   if(path==='/familienanzeigen/'){
-    var familie=document.querySelector('main .shell')||document.querySelector('main');
+    var familie=document.querySelector('main .section .shell')||document.querySelector('main .shell')||document.querySelector('main');
     if(familie&&!document.querySelector('.publish-guide')){
       var w4=document.createElement('div');
       w4.innerHTML=guided('Familienanzeige aufgeben','Anlass wählen und anschließend die Angaben an die Redaktion senden.',[

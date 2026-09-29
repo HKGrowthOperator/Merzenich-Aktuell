@@ -472,21 +472,27 @@ index.bestand = {
   for (const a of gesetzteNeben) if (a.ressort === 'blaulicht') blaulicht++;
   // Erst Meldungen mit eigenem Foto oder passendem Symbolbild, dann - falls
   // die Buehne sonst nicht voll wird - solche mit Ortsansicht (Stufe O).
+  // Innerhalb der Buehne jedes Motiv nur einmal (29.09.: zwei VHS-Meldungen
+  // mit demselben Handyfoto standen rechts uebereinander).
+  const buehnenMotiv = new Set([aufmacher, ...gesetzteNeben].filter(Boolean).map(motivVon).filter(Boolean));
   const nebenKandidat = (a, mitOrt) => {
     if (vergeben.has(a.url) || sportBezug(a) || a.ressort === 'tipp' || !echtesBild(a) || stufe(a) === 'C' || !passtInPlatz(a, 'm') || bildBreite(a.bild) < BREITE_M) return false;
     if (!mitOrt && stufe(a) === 'O') return false;
-    if (!motivFrei(a)) return false;
+    if (!motivFrei(a) || buehnenMotiv.has(motivVon(a))) return false;
     if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
     return true;
   };
-  const nebenErst = redaktionell.filter((a) => nebenKandidat(a, false)).slice(0, Math.max(0, 5 - gesetzteNeben.length));
-  for (const a of nebenErst) { vergeben.add(a.url); motivBelegen(a); }
+  const nebenErst = [];
+  for (const a of redaktionell) {
+    if (gesetzteNeben.length + nebenErst.length >= 5) break;
+    if (nebenKandidat(a, false)) { nebenErst.push(a); vergeben.add(a.url); motivBelegen(a); buehnenMotiv.add(motivVon(a)); }
+  }
   // Ortsansichten nacheinander pruefen: zwei Golzheim-Meldungen duerfen nicht
   // beide die eine Golzheim-Ansicht in die Buehne bringen.
   const nebenOrt = [];
   for (const a of redaktionell) {
     if (gesetzteNeben.length + nebenErst.length + nebenOrt.length >= 5) break;
-    if (nebenKandidat(a, true)) { nebenOrt.push(a); vergeben.add(a.url); motivBelegen(a); }
+    if (nebenKandidat(a, true)) { nebenOrt.push(a); vergeben.add(a.url); motivBelegen(a); buehnenMotiv.add(motivVon(a)); }
   }
   const neben = gesetzteNeben.concat(nebenErst, nebenOrt).slice(0, 5);
   for (const a of neben) vergeben.add(a.url);

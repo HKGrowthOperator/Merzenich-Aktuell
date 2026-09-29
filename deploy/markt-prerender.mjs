@@ -157,13 +157,20 @@ function liste(daten, art) {
   return { html: teile.join('\n'), anzahl: items.length, merzenich: items.filter((i) => i.municipality === 'Merzenich'), uebersprungen };
 }
 
+// Startseiten-Kaesten: statt einer auf 72 px beschnittenen Illustration mit
+// abgeschnittenem Etikett (29.09.) ein ruhiges Feld mit Linien-Icon wie im
+// Anzeigen-Assistenten. Ein Icon gibt sich nicht als Foto aus, braucht also
+// kein Etikett "Symbolbild".
+const MINI_ICON = {
+  properties: '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 25 32 7l24 18v18H39V31H25v12H8Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+  jobs: '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="10" y="15" width="44" height="27" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 15V9h16v6M10 27h44M29 27v4h6v-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+};
 function mini(items, art) {
   if (!items.length) return '<p class="markt-mini-leer">Derzeit kein einzelnes Angebot in Merzenich geprüft.</p>';
   return items.slice(0, 3).map((i) => {
     const haupt = art === 'jobs' ? i.employer : i.price;
-    const b = bildDaten(i, art);
     return `<a class="markt-mini markt-mini--bild" href="${esc(sichereUrl(i.sourceUrl))}" target="_blank" rel="noopener noreferrer nofollow">` +
-      `<span class="markt-mini__bild"><img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"><span class="markt-mini__credit">${esc(b.kurz)}</span></span>` +
+      `<span class="markt-mini__icon">${MINI_ICON[art]}</span>` +
       `<span class="markt-mini__copy"><strong>${esc(i.title)}</strong><span class="markt-mini__meta">${esc([haupt, i.district && i.district !== 'Merzenich' ? i.district : 'Merzenich'].filter(Boolean).join(' · '))}</span></span></a>`;
   }).join('');
 }

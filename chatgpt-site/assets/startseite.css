@@ -707,6 +707,9 @@ body.home .front-vier .front-neben-story:first-child{grid-column:auto}
   body.home .desk[data-sektion="vereine"] .desk-zeilen{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
   body.home .desk[data-sektion="vereine"] .front-zeile--bild{grid-template-columns:200px minmax(0,1fr)}
   body.home .desk[data-sektion="vereine"] .front-zeile--bild .media{aspect-ratio:1}
+
+  /* Direkter Umkreis: zwei Spalten statt einer langen Liste (29.09.) */
+  body.home .desk[data-sektion="umkreis"] .desk-zeilen{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
 }
 /* Zeilen ueberall: Ueberschrift als Geschichte, Serif */
 body.home .front-zeile--bild h3{font-family:var(--serif);font-weight:600}
@@ -862,6 +865,8 @@ body.home .cockpit-kachel--notruf .cockpit-wert a{color:var(--a-rot);text-decora
 
 /* Markt-Minis mit Bild V3 */
 body.home .portal-service .markt-mini--bild{display:grid;grid-template-columns:72px minmax(0,1fr);gap:9px;align-items:center}
+body.home .portal-service .markt-mini__icon{display:grid;place-items:center;aspect-ratio:4/3;border:1px solid #e3e0da;border-radius:5px;background:#f6f4f0;color:var(--a-rot)}
+body.home .portal-service .markt-mini__icon svg{width:34px;height:auto}
 body.home .portal-service .markt-mini__bild{position:relative;display:block;margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:5px;background:#e9e8e5}
 body.home .portal-service .markt-mini__bild img{display:block;width:100%;height:100%;object-fit:cover}
 body.home .portal-service .markt-mini__credit{position:absolute;left:4px;right:4px;bottom:4px;display:block;margin:0;padding:2px 4px;border-radius:3px;background:rgba(0,0,0,.68);color:#fff;font-size:8px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

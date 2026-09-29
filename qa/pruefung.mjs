@@ -511,6 +511,13 @@ function pruefeUmkreis() {
 pruefeMarkupGegenCode();
 pruefeFremdbilder();
 pruefeUmkreis();
+// Buehne der Startseite: jedes Motiv nur einmal (29.09.: zweimal dasselbe Handyfoto).
+{
+  const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
+  const m = idx.buehnenMotive || [];
+  const doppelt = m.filter((k, i) => m.indexOf(k) !== i);
+  if (doppelt.length) fehler('Startseite', `Bühne zeigt dasselbe Motiv mehrfach: ${[...new Set(doppelt)].join(', ')}.`);
+}
 pruefeDoppelteEinsaetze();
 pruefeQuellenkasten();
 pruefeInterneLinks();
