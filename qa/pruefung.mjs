@@ -494,8 +494,23 @@ function pruefeFremdbilder() {
   }
 }
 
+// ------------------------------------------------ 9e. Direkter Umkreis
+// 27.09.: Der Block stand von Hand in index.html, mit "Aktuell" statt Datum
+// und Links auf Uebersichtsseiten. Jetzt aus inhalte/umkreis/ (deploy/umkreis.mjs).
+function pruefeUmkreis() {
+  const html = lies('chatgpt-site/index.html');
+  const block = /<!-- umkreis:start -->([\s\S]*?)<!-- umkreis:end -->/.exec(html)?.[1];
+  if (block === undefined) return fehler('Startseite', 'Marker umkreis fehlt in index.html.');
+  const zeiten = [...block.matchAll(/<time datetime="([^"]*)">([^<]*)<\/time>/g)];
+  const ohneDatum = zeiten.filter((z) => !/^\d{4}-\d{2}-\d{2}$/.test(z[1]) || !/^\d{2}\.\d{2}\.$/.test(z[2]));
+  if (ohneDatum.length) fehler('Startseite', `Umkreis: ${ohneDatum.length} Eintrag/Eintraege ohne echtes Datum (z. B. "${ohneDatum[0][2]}").`);
+  const uebersicht = [...block.matchAll(/<h3><a href="([^"]+)"/g)].map((m) => m[1]).filter((u) => /(\/index\.php|\/presse|\/news|\/meldungen\.php|\/amtsblatt\.php|\/blaulicht\/nr\/\d+)\/?$|suche-none|sword_list/i.test(u));
+  if (uebersicht.length) fehler('Startseite', `Umkreis: ${uebersicht.length} Link(s) auf Uebersichtsseiten statt Einzelmeldung: ${uebersicht.slice(0, 2).join(', ')}.`);
+}
+
 pruefeMarkupGegenCode();
 pruefeFremdbilder();
+pruefeUmkreis();
 pruefeDoppelteEinsaetze();
 pruefeQuellenkasten();
 pruefeInterneLinks();

@@ -1,0 +1,133 @@
+{
+ "hinweis": "Meldungen aus den Nachbarorten fuer den Startseitenblock Direkter Umkreis (deploy/umkreis.mjs). Nur Einzelmeldungen mit Link auf die Originalquelle und Veroeffentlichungsdatum; Titel in eigenen Worten. Stand 29.09.2026: 13 Eintraege per Suche mit Adresse und Datum bestaetigt, dazu drei Eintraege vom 27.09. mit eigener Artikeladresse. Die uebrigen 14 Eintraege des alten, von Hand geschriebenen Blocks zeigten nur Uebersichtsseiten oder \"Aktuell\" statt Datum und wurden nicht uebernommen.",
+ "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "15-Jähriger auf E-Scooter an der Pfalzstraße schwer verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6360462",
+   "datum": "2026-09-28",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Mutmaßliches Diebes-Paar in Lagerhalle in Huchem-Stammeln festgenommen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6360490",
+   "datum": "2026-09-28",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Maschinenbrand in Niederauer Betrieb schnell eingedämmt",
+   "url": "https://www.presseportal.de/blaulicht/pm/134173/6359544",
+   "datum": "2026-09-26",
+   "quelle": "Feuerwehr Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Veranstaltungen",
+   "titel": "Dürener Herbstmarkt kommt am 11. Oktober mit neuem Konzept",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/duerener-herbstmarkt-2026-mit-neuem-termin-und-neuem-konzept",
+   "datum": "2026-09-25",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Polizei, Bundespolizei, Stadt und Bahn kontrollieren rund um den Dürener Bahnhof",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6359187",
+   "datum": "2026-09-25",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "E-Scooter-Unfall mit Bus am Hauptbahnhof: Polizei sucht Busfahrer",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6359185",
+   "datum": "2026-09-25",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Elsdorf",
+   "rubrik": "Kultur",
+   "titel": "Elsdorfer Krimi-Herbst startet am 1. Oktober in der Kulturkirche",
+   "url": "https://www.elsdorf.de/rathaus-service/verwaltung/aktuell/2689/wenn-die-kulturkirche-zum-tatort-wird",
+   "datum": "2026-09-24",
+   "quelle": "Stadt Elsdorf"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Streit am Friedrich-Ebert-Platz: Radfahrer mit Krücke geschlagen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6358303",
+   "datum": "2026-09-24",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Einbruch in Supermarkt am Heerweg: Zigaretten gestohlen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6357555",
+   "datum": "2026-09-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Auto auf der Kölnstraße gestohlen – Polizei bittet um Hinweise",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6357560",
+   "datum": "2026-09-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Anbau eines leerstehenden Hauses an der Paradiesstraße ausgebrannt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6357565",
+   "datum": "2026-09-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Radfahrer an Kreuzung Tivolistraße/Rurstraße leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6357570",
+   "datum": "2026-09-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Aggressiver Mann an der K2 bei Ellen in Gewahrsam, Hund ins Tierheim",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6357575",
+   "datum": "2026-09-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kerpen",
+   "rubrik": "Kultur",
+   "titel": "Jüdische Kulturwochen: Vier Veranstaltungen in Kerpen",
+   "url": "https://www.stadt-kerpen.de/aktuelles/pressemitteilungen/juedische-kulturwochen.php",
+   "datum": "2026-09-22",
+   "quelle": "Kolpingstadt Kerpen"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Frau am Chlodwigplatz Geldbörse geraubt – Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6356706",
+   "datum": "2026-09-22",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Einbruch in Restaurant an der Monschauer Landstraße",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6356707",
+   "datum": "2026-09-22",
+   "quelle": "Polizei Düren"
+  }
+ ]
+}
