@@ -1,5 +1,6 @@
 /* Werbesystem: rotiert alle Werbeflaechen einer Seite im selben Takt, mit den
- * Motiven und der Gestaltung der Anzeigenrotation vom 24.09.2026. Motive und
+ * Motiven und der Gestaltung der Anzeigenrotation vom 24.09.2026. Die
+ * Zeile .werbung-credit (Fotonachweis) wechselt mit. Motive und
  * Takt kommen aus /assets/werbung.json (deploy/anzeigen.mjs), je Motiv als
  * fertiges HTML fuer das Format band (Baender, Artikel) und gap (Spalten).
  * Der Takt ist zeitbasiert: Ein Reload beginnt nicht wieder bei Motiv 1.
@@ -18,7 +19,7 @@
       if (motive.length < 2) return;
       const takt = Math.max(6, Number(d.rotationSekunden) || 14) * 1000;
       const zustand = flaechen.map((el) => ({
-        el, flaeche: el.querySelector('.werbung-flaeche'),
+        el, flaeche: el.querySelector('.werbung-flaeche'), credit: el.querySelector('.werbung-credit'),
         format: el.dataset.format === 'gap' ? 'gap' : 'band',
         versatz: Number(el.dataset.versatz) || 0, pause: false, aktuell: '',
       })).filter((z) => z.flaeche);
@@ -35,6 +36,8 @@
         if (!m || m.id === z.aktuell) return;
         z.aktuell = m.id;
         const html = m[z.format] || m.band;
+        // Urhebernachweis des Fotos wechselt mit dem Motiv (CC BY-SA).
+        if (z.credit) z.credit.innerHTML = m.credit || '';
         if (sofort || ruhig) { z.flaeche.innerHTML = html; return; }
         z.flaeche.classList.add('is-changing');
         setTimeout(() => { z.flaeche.innerHTML = html; requestAnimationFrame(() => z.flaeche.classList.remove('is-changing')); }, 180);

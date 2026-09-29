@@ -50,6 +50,17 @@ for (const m of daten.motive) {
   }
 }
 const MOTIVE = daten.motive;
+// Urhebernachweis je Motiv (CC BY/BY-SA verlangt ihn dort, wo das Foto
+// erscheint). Er steht unter der Werbeflaeche, nicht in der Anzeige, und
+// wechselt mit der Rotation. CC0 und gemeinfreie Fotos brauchen keinen.
+const CREDITS = new Map(JSON.parse(readFileSync(join(site, 'assets', 'werben', 'credits.json'), 'utf8')).images.map((c) => [c.src, c]));
+function creditHtml(m) {
+  const c = CREDITS.get(m.bild);
+  if (!c) { fehler.push(`${m.id}: kein Eintrag in assets/werben/credits.json fuer ${m.bild}`); return ''; }
+  if (!/^CC BY/i.test(c.license || '')) return '';
+  if (!c.author || !c.sourceUrl || !c.licenseUrl) { fehler.push(`${m.id}: Urheber, Quelle oder Lizenzlink fehlt in credits.json`); return ''; }
+  return `Foto: <a href="${esc(c.sourceUrl)}" target="_blank" rel="noopener">${esc(c.author)}</a>, <a href="${esc(c.licenseUrl)}" target="_blank" rel="noopener license">${esc(c.license)}</a>`;
+}
 const LABEL = daten.label || 'Anzeige';
 if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert nichts');
 
@@ -91,7 +102,8 @@ function slotHtml(slot) {
   const format = art === 'spalte' || art === 'sport' ? 'gap' : 'band';
   const o = versatz(slot) % MOTIVE.length;
   return `<aside class="werbung werbung--${art}${art === 'band' ? ' shell' : ''}" data-werbung="${art}" data-format="${format}" data-versatz="${o}" data-anzahl="1" aria-label="${esc(LABEL)}">`
-    + `<span class="werbung-label">${esc(LABEL)}</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--${format}">${motivHtml(MOTIVE[o], format)}</div></aside>`;
+    + `<span class="werbung-label">${esc(LABEL)}</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--${format}">${motivHtml(MOTIVE[o], format)}</div>`
+    + `<span class="werbung-credit">${creditHtml(MOTIVE[o])}</span></aside>`;
 }
 
 // ------------------------------------------------------------------ Migration
@@ -118,7 +130,7 @@ for (const pfad of seiten) {
 
 // Laufzeitdaten fuer die Rotation.
 {
-  const json = JSON.stringify({ rotationSekunden: daten.rotationSekunden || 12, motive: MOTIVE.map((m) => ({ id: m.id, band: motivHtml(m, 'band'), gap: motivHtml(m, 'gap') })) }) + '\n';
+  const json = JSON.stringify({ rotationSekunden: daten.rotationSekunden || 12, motive: MOTIVE.map((m) => ({ id: m.id, band: motivHtml(m, 'band'), gap: motivHtml(m, 'gap'), credit: creditHtml(m) })) }) + '\n';
   const ziel = join(site, 'assets', 'werbung.json');
   if (!existsSync(ziel) || readFileSync(ziel, 'utf8') !== json) { veraltet.push('/assets/werbung.json'); if (!nurPruefen) writeFileSync(ziel, json); }
 }

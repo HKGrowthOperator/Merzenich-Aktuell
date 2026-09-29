@@ -15,6 +15,11 @@ const pfad = join(wurzel, 'chatgpt-site', 'werben', 'index.html');
 const nurPruefen = process.argv.includes('--check');
 const daten = JSON.parse(readFileSync(join(wurzel, 'deploy', 'anzeigen.json'), 'utf8'));
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Bildnachweise aus derselben Datei wie die Credits unter den Werbeflaechen
+// (deploy/werben-bilder.mjs schreibt sie), statt einer zweiten Handkopie.
+const credits = JSON.parse(readFileSync(join(wurzel, 'chatgpt-site', 'assets', 'werben', 'credits.json'), 'utf8')).images;
+const autor = (a) => String(a || '').replace(/\s*\(Photography\).*$/s, '').replace(/,\s*https?:\/\/\S+/g, '').trim();
+const bildnachweise = credits.map((c) => `<p><strong>${esc(String(c.purpose || c.id).replace(/^(Auswahlkarte|Demo) /, ''))}:</strong> ${esc(String(c.sourceTitle || '').replace(/^File:/, '').replace(/\.[a-z]+$/i, ''))} · ${esc(autor(c.author))} · <a href="${esc(c.sourceUrl)}" target="_blank" rel="noopener">${esc(c.source || 'Quelle')}</a> · <a href="${esc(c.licenseUrl)}" target="_blank" rel="noopener license">${esc(c.license)}</a>.</p>`).join('\n');
 
 function karte(m, format) {
   return `<a class="ma-ad-card ma-ad-card--${format} ma-ad-theme--${esc(m.typ)}" href="/anzeigen/aufgeben/" data-motiv="${esc(m.id)}" aria-label="Musteranzeige: ${esc(m.kunde)} – ${esc(m.headline)}"><span class="ma-ad-art ma-ad-art--${esc(m.typ)}"><img src="${esc(m.bild)}" alt="${esc(m.bildAlt)}" loading="lazy" decoding="async"></span><span class="ma-ad-copy"><span class="ma-ad-eyebrow">${esc(m.eyebrow)}</span><strong>${esc(m.headline)}</strong><span class="ma-ad-text">${esc(m.text)}</span><span class="ma-ad-cta">${esc(m.cta)}</span>${format === 'gap' ? '<span class="ma-ad-muster">Musteranzeige</span>' : ''}</span></a>`;
@@ -46,12 +51,7 @@ const haupt = `<main id="main">
 </div>
 <p class="werben-demo-note"><strong>Hinweis:</strong> Die gezeigten Unternehmen sind Musteranzeigen. Sie zeigen ausschließlich die spätere Darstellung. Echte Kampagnen erscheinen nur nach Buchung und redaktioneller Freigabe.</p>
 <details class="werben-bildnachweise"><summary>Bildnachweise der Musterfotos</summary><div class="werben-bildnachweise__grid">
-<p><strong>Werbebanner:</strong> Café Zartl Innen · Phi · <a href="https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Zartl_Innen.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC0.</p>
-<p><strong>Tipp / Sponsoring:</strong> Frühjahrssend Münster · Dietmar Rabich · <a href="https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Schlossplatz,_Fr%C3%BChjahrssend_--_2019_--_4106.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC BY-SA 4.0.</p>
-<p><strong>Unternehmensprofil:</strong> CBR Co-Working · MichaelHolemans · <a href="https://commons.wikimedia.org/wiki/File:CBR_Building_co-working_space_interior.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC BY-SA 4.0.</p>
-<p><strong>Startseitenband:</strong> Bakery Interior · Kgbo · <a href="https://commons.wikimedia.org/wiki/File:Interior_of_bakery_in_Krak%C3%B3w,_2023.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC BY-SA 4.0.</p>
-<p><strong>Artikelanzeige:</strong> Small Workshop · Dimitrios Savva / Jarod Guest · <a href="https://commons.wikimedia.org/wiki/File:Small_workshop_-_Panorama_(Poly_haven).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC0.</p>
-<p><strong>Sidebar:</strong> German House · Rüdiger Müller · <a href="https://commons.wikimedia.org/wiki/File:German_House.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · CC BY-SA 4.0.</p>
+${bildnachweise}
 </div></details>
 <div class="media-principles"><section><h2>Redaktion bleibt unabhängig.</h2><p>Werbung und Finanzierung bestimmen weder die Themenauswahl noch die Berichterstattung. Jede bezahlte Platzierung wird gekennzeichnet.</p><p>Merzenich Aktuell wird von KBS Management GmbH und AJ Sports Entertainment getragen. <a href="/ueber-uns/#finanzierung">Mehr zur Finanzierung</a></p></section><section><h2>Reichweite & Konditionen</h2><p>Für die Startphase liegen noch keine belastbaren Reichweitenzahlen vor. Wir nennen keine geschätzten Leserzahlen. Verfügbare Platzierungen und Konditionen erhalten Sie auf Anfrage.</p><p>Freie Werbeflächen werden nur dort angeboten, wo die Website bereits einen dafür vorgesehenen Platz hat.</p></section></div>
 ${form[0]}</div></section>
