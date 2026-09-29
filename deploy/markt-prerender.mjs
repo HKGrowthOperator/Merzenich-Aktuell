@@ -13,7 +13,10 @@
  * - Nur Einzelinserate mit eigener Quellen-URL. Eintraege, deren Quelle nur
  *   eine Portal-Suchseite ist, werden uebersprungen und gemeldet.
  * - Merzenich zuerst, danach der direkte Umkreis mit deutlicher Kennzeichnung.
- * - Jede Anzeige bekommt ein Bild: Originalbild der Quelle, wenn technisch\n *   verfuegbar; sonst ein klar gekennzeichnetes lokales Symbolbild.
+ * - Jede Anzeige bekommt ein klar gekennzeichnetes lokales Symbolbild. Fotos
+ *   aus den Originalanzeigen (Portale, Arbeitgeber) werden nicht eingebunden:
+ *   die Rechte liegen bei Maklern, Fotografen und Arbeitgebern (Entscheidung
+ *   29.09.2026; am 28.09. waren ImmobilienScout24-Fotos eingebunden worden).
  * - Idempotent: die Bloecke stehen zwischen Marker-Kommentaren und werden
  *   bei jedem Lauf ersetzt.
  *
@@ -55,25 +58,19 @@ function hashText(s) {
   return h >>> 0;
 }
 function bildDaten(item, art) {
-  const extern = sichereUrl(item.imageUrl);
-  if (extern) return {
-    url: extern, extern: true,
-    label: item.imageCredit || `Bild: ${item.sourceName || 'Originalanzeige'}`,
-    kurz: item.sourceName || 'Originalanzeige'
-  };
   const pool = art === 'jobs' ? JOB_BILDER : IMMOBILIEN_BILDER;
   const ordner = art === 'jobs' ? 'jobs' : 'immobilien';
   const datei = pool[hashText(item.id || item.title) % pool.length];
   return {
-    url: `/assets/symbolbilder/${ordner}/${datei}`, extern: false,
+    url: `/assets/symbolbilder/${ordner}/${datei}`,
     label: 'Symbolbild · Merzenich Aktuell', kurz: 'Symbolbild'
   };
 }
 function bildMarkup(item, art) {
   const b = bildDaten(item, art);
   const href = sichereUrl(item.sourceUrl);
-  return `<a class="markt-thumb${b.extern ? ' markt-thumb--original' : ' markt-thumb--symbol'}" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(item.title)} – Originalanzeige öffnen">` +
-    `<img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"${b.extern ? ' referrerpolicy="no-referrer"' : ''}>` +
+  return `<a class="markt-thumb markt-thumb--symbol" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(item.title)} – Originalanzeige öffnen">` +
+    `<img src="${esc(b.url)}" alt="" loading="lazy" decoding="async">` +
     `<span class="markt-thumb__badge">${esc(b.label)}</span></a>`;
 }
 
@@ -139,7 +136,7 @@ function liste(daten, art) {
   const teile = [];
 
   teile.push(`<div class="markt-stand"><strong>Markt geprüft: ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</strong>` +
-    `<p>${esc(daten.meta?.methodNote || 'Maßgeblich ist die verlinkte Originalquelle.')} Bilder stammen – soweit technisch verfügbar – aus der verlinkten Originalanzeige und sind direkt im Bild gekennzeichnet. Andernfalls erscheint ein gekennzeichnetes Symbolbild.</p></div>`);
+    `<p>${esc(daten.meta?.methodNote || 'Maßgeblich ist die verlinkte Originalquelle.')} Bilder der Anbieter werden nicht übernommen; jede Anzeige zeigt ein gekennzeichnetes Symbolbild.</p></div>`);
 
   for (const ort of ORTE) {
     const hier = items.filter((i) => i.municipality === ort);
@@ -166,7 +163,7 @@ function mini(items, art) {
     const haupt = art === 'jobs' ? i.employer : i.price;
     const b = bildDaten(i, art);
     return `<a class="markt-mini markt-mini--bild" href="${esc(sichereUrl(i.sourceUrl))}" target="_blank" rel="noopener noreferrer nofollow">` +
-      `<span class="markt-mini__bild"><img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"${b.extern ? ' referrerpolicy="no-referrer"' : ''}><span class="markt-mini__credit">${esc(b.kurz)}</span></span>` +
+      `<span class="markt-mini__bild"><img src="${esc(b.url)}" alt="" loading="lazy" decoding="async"><span class="markt-mini__credit">${esc(b.kurz)}</span></span>` +
       `<span class="markt-mini__copy"><strong>${esc(i.title)}</strong><span class="markt-mini__meta">${esc([haupt, i.district && i.district !== 'Merzenich' ? i.district : 'Merzenich'].filter(Boolean).join(' · '))}</span></span></a>`;
   }).join('');
 }

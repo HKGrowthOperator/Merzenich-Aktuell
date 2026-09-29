@@ -21,6 +21,20 @@
     "jobsCheckedAt": "2026-09-28T18:59:58+02:00",
     "jobsRemoved": [
       {
+        "id": "schall-servicetechniker-zeltsysteme",
+        "title": "Servicetechniker – Militärische Zeltsysteme (m/w/d)",
+        "employer": "M. Schall GmbH & Co. KG",
+        "removedAt": "2026-09-29T09:00:00+02:00",
+        "status": "keine Einzelanzeige (nur Karriereseite)"
+      },
+      {
+        "id": "schall-lagerleiter",
+        "title": "Lagerleiter (m/w/d)",
+        "employer": "M. Schall GmbH & Co. KG",
+        "removedAt": "2026-09-29T09:00:00+02:00",
+        "status": "keine Einzelanzeige (nur Karriereseite)"
+      },
+      {
         "id": "netmarket-lagerlogistik-elsdorf",
         "title": "Ausbildung Fachkraft für Lagerlogistik (m/w/d) – 2026",
         "employer": "NetMarket PMS GmbH",
@@ -92,10 +106,7 @@
       }
     ],
     "marketExpansionNote": "Content-Refresh 27.09.2026: neue Einzelangebote in Merzenich sowie Düren, Niederzier, Nörvenich, Elsdorf und Kerpen ergänzt; reine Suchseiten bleiben nur Marktquellen.",
-    "marketImagesSeededAt": "2026-09-28T15:45:00+02:00",
-    "marketImagesSeededNote": "Verifizierte Originalbilder konkreter ImmobilienScout24-Exposés; automatischer Bildabgleich ergänzt weitere Quellen.",
-    "marketImagesCheckedAt": "2026-09-28T19:00:47+02:00",
-    "marketImagesNote": "Originalbild der konkreten Anzeige, soweit technisch erreichbar; sonst gekennzeichnetes Symbolbild von Merzenich Aktuell."
+    "marketImagesNote": "Keine Bilder aus Fremdanzeigen (Entscheidung 29.09.2026): Fotos von Portalen und Arbeitgebern sind urheberrechtlich geschützt. Jede Anzeige zeigt ein gekennzeichnetes Symbolbild von Merzenich Aktuell und verlinkt die Originalanzeige."
   },
   "jobs": [
     {
@@ -108,12 +119,7 @@
       "details": "Am Roßpfad 1–3, Merzenich",
       "sourceName": "M. Schall Karriere",
       "sourceUrl": "https://mschall.de/ausbildung-industriekaufmann-industriekauffrau-m-w-d-ausbildungsjahr-2027-praktikum-moeglich/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/02/buero_stellenanzeigen-Kopie.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/ausbildung-industriekaufmann-industriekauffrau-m-w-d-ausbildungsjahr-2027-praktikum-moeglich/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "schall-technischer-konfektionaer-2027",
@@ -125,12 +131,7 @@
       "details": "52399 Merzenich · Praktikum möglich",
       "sourceName": "M. Schall Karriere",
       "sourceUrl": "https://mschall.de/ausbildung-technischer-konfektionaer-m-w-d-ausbildung-2026-praktikum-moeglich/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/02/konfektionaer_stellenanzeigen-Kopie.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/ausbildung-technischer-konfektionaer-m-w-d-ausbildung-2026-praktikum-moeglich/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "schall-maschinen-anlagenfuehrer-2027",
@@ -142,46 +143,7 @@
       "details": "Metall-/Kunststofftechnik und Textilverarbeitung · Merzenich",
       "sourceName": "M. Schall Karriere",
       "sourceUrl": "https://mschall.de/ausbildung-zum-maschinen-und-anlagenfuehrer-m-w-d-praktikum-moeglich/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/02/anlagenfuehrer_stellenanzeigen.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/ausbildung-zum-maschinen-und-anlagenfuehrer-m-w-d-praktikum-moeglich/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
-    },
-    {
-      "id": "schall-lagerleiter",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Lagerleiter (m/w/d)",
-      "employer": "M. Schall GmbH & Co. KG",
-      "employment": "Vollzeit · unbefristet · ab sofort · 39 Std./Woche",
-      "details": "Merzenich",
-      "sourceName": "M. Schall Karriere",
-      "sourceUrl": "https://mschall.de/karriere/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/06/lgz.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/karriere/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
-    },
-    {
-      "id": "schall-servicetechniker-zeltsysteme",
-      "municipality": "Merzenich",
-      "district": "Merzenich",
-      "title": "Servicetechniker – Militärische Zeltsysteme (m/w/d)",
-      "employer": "M. Schall GmbH & Co. KG",
-      "employment": "Vollzeit oder Teilzeit · unbefristet · ab sofort",
-      "details": "Merzenich",
-      "sourceName": "M. Schall Karriere",
-      "sourceUrl": "https://mschall.de/karriere/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/06/lgz.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/karriere/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "schall-technische-konfektionaere",
@@ -193,12 +155,7 @@
       "details": "Merzenich",
       "sourceName": "M. Schall Karriere",
       "sourceUrl": "https://mschall.de/technische-konfektionaere-m-w-d-2/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/02/konfektionaer_stellenanzeigen-Kopie.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/technische-konfektionaere-m-w-d-2/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "schall-industriemechaniker-schlosser",
@@ -210,12 +167,7 @@
       "details": "Merzenich",
       "sourceName": "M. Schall Karriere",
       "sourceUrl": "https://mschall.de/industriemechaniker-schlosser-m-w-d/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://mschall.de/wp-content/uploads/2026/02/schlosser_stellenanzeigen-Kopie.png",
-      "imageKind": "source",
-      "imageSourceUrl": "https://mschall.de/industriemechaniker-schlosser-m-w-d/",
-      "imageCredit": "Bild/Quelle: M. Schall Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "rewe-schliessfunktion-merzenich",
@@ -239,12 +191,7 @@
       "details": "Am Merzpark / Rather Straße, Merzenich",
       "sourceName": "Klein’s Backstube Karriere",
       "sourceUrl": "https://karriere.kleinsbackstube.de/jobs/62261459/Filialleitung-m-w-d-in-Merzenich/",
-      "checkedAt": "2026-09-28T18:59:58+02:00",
-      "imageUrl": "https://pcw-cdn.softgarden.de/uploads/kleinsbackstube/de/widget/seo/previewImageSocialMedia/previewImageSocialMedia_st34elz18p9yx?timestamp=1721909910204&width=1200&height=630&resizing_type=fill",
-      "imageKind": "source",
-      "imageSourceUrl": "https://karriere.kleinsbackstube.de/jobs/62261459/Filialleitung-m-w-d-in-Merzenich/",
-      "imageCredit": "Bild/Quelle: Klein’s Backstube Karriere",
-      "imageCheckedAt": "2026-09-28T19:00:47+02:00"
+      "checkedAt": "2026-09-28T18:59:58+02:00"
     },
     {
       "id": "zahnarzt-ausbildung-zfa-2027",
@@ -656,12 +603,7 @@
       "details": "100 m² · 4 Zimmer · Im Hoverfeld 8 · verfügbar seit 23.08.2026",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170213703",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/34399ed8-e114-49ac-8942-da69f2ab4438-2079341548.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170213703",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "merzenich-eg-terrasse-miete-900",
@@ -673,12 +615,7 @@
       "details": "90 m² · 3 Zimmer · 1.160 € Warmmiete laut Anzeige · Erstbezug nach Renovierung",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170734472",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/963ec6a8-33ef-4820-994b-3c259194bea6-2090513455.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170734472",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "golzheim-wohnung-miete-550",
@@ -690,12 +627,7 @@
       "details": "70 m² · 3 Zimmer · Aachener Straße 20 · verfügbar ab 01.11.2026",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170617136",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/7f46e866-56f9-43d1-b9ce-07df21b9cdb1-2088109462.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170617136",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "merzenich-wohnung-miete-660",
@@ -707,12 +639,7 @@
       "details": "81 m² · 3 Zimmer",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/168796072",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/da851194-6ec8-4afc-a1c8-365d5e9a4d1b-2076182044.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/168796072",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "merzenich-wohnung-miete-630",
@@ -724,12 +651,7 @@
       "details": "35 m² · 1 Zimmer",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170048595",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/a878288f-e88f-45df-a864-49dc19c83129-2075757860.jpeg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170048595",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "merzenich-wbs-wohnung-miete-490",
@@ -741,12 +663,7 @@
       "details": "61 m² · 3 Zimmer · Wohnberechtigungsschein erforderlich",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/169006140",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/ef21aa22-7a86-4fc3-a6de-21e0d73bf8f6-2052690691.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/169006140",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "golzheim-wohnung-miete-880",
@@ -782,12 +699,7 @@
       "details": "123 m² Wohnfläche · 5 Zimmer · 168 m² Grundstück",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170489597",
-      "checkedAt": "2026-09-16T19:32:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/da83b774-e28a-4b9e-8c9d-01c695cf5b1b-2085227281.png/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170489597",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00"
     },
     {
       "id": "merzenich-reihenendhaus-425000",
@@ -859,12 +771,7 @@
       "details": "68 m² · 3 Zimmer · vermietet · provisionsfrei laut Anzeige",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170587584",
-      "checkedAt": "2026-09-16T19:32:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/2702ebc4-0b29-424e-8b19-c88617ec2f87-2095293304.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170587584",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00"
     },
     {
       "id": "dueren-penthouse-miete-1202",
@@ -984,12 +891,7 @@
       "details": "77 m² · 2 Zimmer · Ahornweg 19",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/169921563",
-      "checkedAt": "2026-09-27T11:46:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/d53e5a2b-1d15-474b-91b7-c4eb893f946b-2072872534.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/169921563",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-27T11:46:00+02:00"
     },
     {
       "id": "noervenich-terrassenwohnung-419000",
@@ -1121,12 +1023,7 @@
       "details": "126 m² Wohnfläche · 3 Zimmer · 670 m² Grundstück · renovierungsbedürftig",
       "sourceName": "ImmobilienScout24",
       "sourceUrl": "https://www.immobilienscout24.de/expose/170490920",
-      "checkedAt": "2026-09-16T19:32:00+02:00",
-      "imageUrl": "https://pictures.immobilienscout24.de/listings/6d15fff2-df14-484e-94d8-900944d58a7f-2085253238.jpg/ORIG/resize/1106x830%3E/format/webp/quality/73",
-      "imageKind": "original",
-      "imageSourceUrl": "https://www.immobilienscout24.de/expose/170490920",
-      "imageCredit": "Bild: ImmobilienScout24 · Originalanzeige",
-      "imageCheckedAt": "2026-09-28T15:45:00+02:00"
+      "checkedAt": "2026-09-16T19:32:00+02:00"
     },
     {
       "id": "kerpen-buir-wohnung-miete-1732",

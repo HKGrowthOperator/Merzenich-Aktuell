@@ -6,7 +6,6 @@ on:
   push:
     branches: [main]
     paths:
-      - 'deploy/markt-bilder.mjs'
       - 'deploy/markt-prerender.mjs'
       - 'chatgpt-site/assets/korrekturen.css'
       - 'chatgpt-site/assets/startseite.css'
@@ -43,10 +42,6 @@ jobs:
       - name: Stellen bei der Quelle nachpruefen
         run: node deploy/markt-abgleich.mjs ${{ (github.event_name == 'workflow_dispatch' && inputs.trocken) && '--dry' || '' }}
 
-      - name: Bilder aus den Originalanzeigen ermitteln
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.trocken) }}
-        run: node deploy/markt-bilder.mjs
-
       - name: Seiten neu schreiben und pruefen
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.trocken) }}
         run: |
@@ -63,14 +58,13 @@ jobs:
           git add market.json chatgpt-site/api/market.json chatgpt-site/jobs/index.html chatgpt-site/immobilien/index.html chatgpt-site/index.html
           if git diff --cached --quiet; then echo 'Nichts zu aendern.'; exit 0; fi
           git commit -m 'markt: Stellen bei der Quelle abgeglichen [skip ci]'
-          # kopf-theme-einbinden.mjs berührt bewusst viele weitere Seiten. Für
-          # diesen Markt-Commit bleiben ausschließlich die oben ausgewählten
-          # Dateien erhalten; sonst blockiert git rebase wegen Dirty Working Tree.
-          git reset --hard HEAD
-          git clean -fd
-          # QA schreibt parallel auf main; bei abgelehntem Push neu holen und wiederholen.
+          # kopf-theme-einbinden.mjs beruehrt weitere Seiten; die bleiben in
+          # diesem Commit aussen vor und stellt --autostash beim Rebase beiseite
+          # (vorher git reset --hard und git clean -fd, die alles Ungestagete
+          # verwarfen). QA schreibt parallel auf main: bei abgelehntem Push neu
+          # holen und wiederholen.
           for versuch in 1 2 3 4; do
-            git fetch origin main && git rebase -X theirs origin/main && git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase --autostash -X theirs origin/main && git push origin HEAD:main && exit 0
             sleep $((versuch * 7))
           done
           exit 1

@@ -474,7 +474,28 @@ function pruefeQuellenkasten() {
   if (ohne.length) fehler('Inhalte', `${ohne.length} Meldung(en) ohne Kasten "Quelle & Transparenz" mit Link: ${ohne.slice(0, 8).join(', ')}.`);
 }
 
+// ------------------------------------------------ 9d. Keine fremd eingebundenen Bilder
+// 28.09.: Fotos von ImmobilienScout24, Arbeitgeberseiten und Traueranzeigen-
+// Portalen wurden per Hotlink eingebunden, ohne Nutzungsrecht. Jedes Bild
+// kommt von der eigenen Seite und hat einen Nachweis.
+function pruefeFremdbilder() {
+  const INTERN = /^chatgpt-site\/(admin|redaktion|redaktionshandbuch)\//;
+  const funde = [];
+  for (const datei of dateienUnter('chatgpt-site', '.html')) {
+    const rel = datei.replace(wurzel + '/', '');
+    if (INTERN.test(rel)) continue;
+    for (const m of lies(datei).matchAll(/<img\b[^>]*\bsrc="(https?:\/\/[^"]+)"/gi)) funde.push(`${rel.replace(/^chatgpt-site/, '').replace(/index\.html$/, '')}: ${m[1].slice(0, 80)}`);
+  }
+  if (funde.length) fehler('Bilder', `${funde.length} fremd eingebundene(s) Bild(er), z. B. ${funde.slice(0, 3).join(' | ')}. Bilder nur von der eigenen Seite, mit Nachweis.`);
+  if (gibtEs('market.json')) {
+    const m = JSON.parse(lies('market.json'));
+    const mitBild = [...(m.jobs || []), ...(m.properties || [])].filter((a) => a.imageUrl || a.imageSourceUrl);
+    if (mitBild.length) fehler('Bilder', `market.json: ${mitBild.length} Anzeige(n) mit Bild aus der Originalanzeige (${mitBild.slice(0, 3).map((a) => a.id).join(', ')}). Keine Fremdfotos im Markt.`);
+  }
+}
+
 pruefeMarkupGegenCode();
+pruefeFremdbilder();
 pruefeDoppelteEinsaetze();
 pruefeQuellenkasten();
 pruefeInterneLinks();
