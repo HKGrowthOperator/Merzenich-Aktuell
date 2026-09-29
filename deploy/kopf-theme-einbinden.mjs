@@ -71,9 +71,10 @@ const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script>
 // Verweise im Kopf statt nachgeladen - so springt beim Laden nichts.
 const WERBUNG_CSS = `<link rel="stylesheet" href="/assets/werbung.css?${V}">`;
 const WERBUNG_JS = `<script src="/assets/werbung.js?${V}" defer></script>`;
-// KBS/Ordin 26.09.2026: "Anzeige aufgeben" muss leicht zu finden sein - im Kopf
-// jeder Seite (Desktop Text, mobil Symbol 44x44), oben in der Schublade und im Fuss.
-const KNOPF_ANZEIGE = '<a class="kopf-anzeige" href="/anzeigen/aufgeben/" aria-label="Anzeige aufgeben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Anzeige aufgeben</span></a>';
+// KBS/Ordin 26.09.2026: "Anzeige aufgeben" muss leicht zu finden sein - oben in
+// der Schublade, im Mega-Menue und im Fuss. Den roten Knopf "+ Anzeige aufgeben"
+// im Kopf wollte der Betreiber am 29.09. nicht mehr; er wird entfernt.
+const KNOPF_ANZEIGE_RE = /<a class="kopf-anzeige"[^>]*>[\s\S]*?<\/a>/g;
 const DRAWER_ANZEIGE = '<a class="drawer-anzeige" href="/anzeigen/aufgeben/">Anzeige aufgeben</a>';
 const FUSS_ANZEIGE = '<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a>';
 // WhatsApp und Instagram: nur mit eingetragenem Link (deploy/site.json social).
@@ -175,7 +176,7 @@ for (const pfad of seiten) {
   if (!html.includes('href="/diskussion/"')) html = html.split(LINK_MEHR).join(LINK_MEHR + LINK_DISKUSSION);
   if (!html.includes('/assets/einwilligung.js')) html = html.replace(/<script src="\/assets\/kommentare\.js[^"]*" defer><\/script>/, (m) => m + EINWILLIGUNG);
   if (!html.includes('/assets/werbung.css')) html = html.replace(CSS_ANKER, (m) => m + WERBUNG_CSS);
-  if (!html.includes('class="kopf-anzeige"')) html = html.replace('<div class="mast-actions">', '<div class="mast-actions">' + KNOPF_ANZEIGE);
+  html = html.replace(KNOPF_ANZEIGE_RE, '');
   if (!html.includes('class="drawer-anzeige"')) html = html.replace(/(<div class="panel-top">[\s\S]*?<\/button><\/div>)/, (m) => m + DRAWER_ANZEIGE);
   if (!html.includes('<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a><a href="/anzeigen/">')) html = html.replace('<h3>Service</h3><a href="/anzeigen/">', '<h3>Service</h3>' + FUSS_ANZEIGE + '<a href="/anzeigen/">');
   if (!html.includes('<a href="/unternehmen/">Unternehmen</a><a href="/werben/">')) html = html.replace('<a href="/werben/">Werben</a><a href="/unterstuetzen/">', '<a href="/unternehmen/">Unternehmen</a><a href="/werben/">Werben</a><a href="/unterstuetzen/">');
