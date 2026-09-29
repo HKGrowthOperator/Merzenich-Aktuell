@@ -12,6 +12,17 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
+<title>VHS-Projekt „Oldschool“ endet vor dem Rathaus</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-abschluss-rathaus/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-abschluss-rathaus/</guid>
+<pubDate>Fri, 25 Sep 2026 08:00:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Das mobile Klassenzimmer der VHS Rur-Eifel hat sein Projekt für ältere Menschen in Merzenich abgeschlossen. Bürgermeister Georg Gelhausen schaute sich das „Entwicklungsmobil“ an.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5.jpg" medium="image"><media:credit>8080 / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Smartphone für ältere Menschen</media:description></media:content>
+</item>
+<item>
 <title>Mobiles VHS-Klassenzimmer bringt ältere Menschen in Merzenich an Smartphone und Online-Banking</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-merzenich/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/vhs-oldschool-merzenich/</guid>
@@ -64,7 +75,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Bei einer Aktion im Rahmen der Fairen Woche haben mehr als 40 Kinder und Erwachsene Wege und Bürgersteige in der Gemeinde von Müll befreit.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
 </item>
 <item>
 <title>Vortrag beleuchtet Zwangsarbeit in Merzenich</title>
@@ -75,7 +86,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Historikerin Inga Mehlert-Garms stellt am 15. Oktober neue Forschungen zur Zwangsarbeit in Merzenich vor. Der Eintritt ins Pfarrheim ist frei.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
 </item>
 <item>
 <title>Oldieabend und Ortsfest: Das Programm für den 2. und 3. Oktober</title>
@@ -185,7 +196,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Mit Gästen, Angehörigen und Bürgermeister Georg Gelhausen feierte die Tagespflege am 18. Juli ihr Jubiläum. Interessierte können das Haus kostenlos kennenlernen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

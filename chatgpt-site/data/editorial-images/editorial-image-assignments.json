@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-28T10:44:01.863Z",
+  "updatedAt": "2026-09-29T01:44:20.061Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -377,6 +377,15 @@
       "assignedAt": "2026-09-28T10:44:01.863Z",
       "articleId": "2026-09-28-gemeinderat-7-sitzung-2026-09-30",
       "articleDate": "2026-09-28T12:00:00+02:00"
+    },
+    "/leben/vhs-oldschool-abschluss-rathaus/": {
+      "imageId": "web-digitaldetail-01-8758d856",
+      "pool": "digitaldetail",
+      "motiv": "senior-smartphone",
+      "regel": "leben.digitalbildung",
+      "assignedAt": "2026-09-29T01:44:20.061Z",
+      "articleId": "2026-09-25-vhs-oldschool-abschluss-rathaus",
+      "articleDate": "2026-09-25T10:00:00+02:00"
     }
   }
 }
