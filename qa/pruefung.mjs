@@ -509,8 +509,12 @@ function pruefeUmkreis() {
 }
 
 // Ortsseiten und Vereinsverzeichnis (deploy/ortsseiten.mjs): Marker vorhanden,
-// interne Links fuehren auf existierende Seiten, externe nur auf Heimat-Info-Eintraege.
+// interne Links fuehren auf existierende Seiten, externe nur auf Vereinswebsites
+// und die Quelle aus deploy/vereinsverzeichnis.json.
 function pruefeOrtsseiten() {
+  // Externe Links nur auf Vereinswebsites und die Quelle aus dem Vereinsverzeichnis.
+  const vz = JSON.parse(lies('deploy/vereinsverzeichnis.json'));
+  const erlaubtExtern = new Set([vz.quelleUrl, ...vz.vereine.map((v) => v.website).filter(Boolean)].map((u) => u.replace(/&/g, '&amp;')).concat([vz.quelleUrl, ...vz.vereine.map((v) => v.website).filter(Boolean)]));
   const bloecke = [...['merzenich', 'golzheim', 'girbelsrath', 'morschenich', 'buergewald'].map((o) => [`/${o}/`, `chatgpt-site/${o}/index.html`, 'ort:seitenleiste']),
     ['/vereine/', 'chatgpt-site/vereine/index.html', 'vereine:weitere']];
   for (const [route, datei, marke] of bloecke) {
@@ -519,7 +523,7 @@ function pruefeOrtsseiten() {
     for (const [, href] of block.matchAll(/<a href="([^"]+)"/g)) {
       if (href.startsWith('/')) {
         if (!gibtEs(join('chatgpt-site', href.replace(/#.*$/, ''), 'index.html'))) fehler(route, `${marke}: Link ${href} fuehrt ins Leere.`);
-      } else if (!/^https:\/\/www\.heimat-info\.de\/gemeinden\/merzenich\/organisationen\/[a-z0-9-]+$/.test(href)) fehler(route, `${marke}: externer Link ${href} ist kein Heimat-Info-Vereinseintrag.`);
+      } else if (!erlaubtExtern.has(href)) fehler(route, `${marke}: externer Link ${href} steht nicht als Website oder Quelle in deploy/vereinsverzeichnis.json.`);
     }
   }
 }

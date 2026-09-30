@@ -139,9 +139,15 @@ function vereinskanal() {
 // ------------------------------------------------ /sport/: rechte Spalte
 // KBS/Ordin 26.09.2026: "rechts ist es leer". Unter "Sport-Service" folgen
 // naechste Spiele und Sporttermine, die Sportvereine der Gemeinde (deploy/
-// sportvereine.json, Quelle Heimat-Info) und eine klebende Werbeflaeche.
+// vereinsverzeichnis.json, alle Sportvereine der Gemeinde) und eine klebende Werbeflaeche.
 // Nur echte Daten; ohne kuenftige Termine entfaellt die Liste.
-const VEREINE = JSON.parse(readFileSync(join(wurzel, 'deploy', 'sportvereine.json'), 'utf8'));
+// Sportvereine aus dem Vereinsverzeichnis der Gemeinde (30.09.2026: alle Sportvereine in Merzenich).
+const VZ = JSON.parse(readFileSync(join(wurzel, 'deploy', 'vereinsverzeichnis.json'), 'utf8'));
+const ORTNAME = { merzenich: 'Merzenich', golzheim: 'Golzheim', girbelsrath: 'Girbelsrath', morschenich: 'Morschenich', buergewald: 'Bürgewald' };
+const VEREINE = { quelle: 'Vereinsverzeichnis der Gemeinde', stand: VZ.stand, vereine: VZ.vereine.filter((v) => v.kategorie === 'Sport').map((v) => ({
+  name: v.name, sport: v.sportart || 'Sport', ort: ORTNAME[v.ort] || 'Gemeinde',
+  seite: v.profil === 'sc-1919-merzenich' ? '/sc-1919-merzenich/' : v.profil ? `/vereine/${v.profil}/` : '', website: v.website || '',
+})) };
 const LEISTE_RE = /<!-- sport:leiste:start -->[\s\S]*?<!-- sport:leiste:end -->/;
 function leiste() {
   const spiele = [];
@@ -152,13 +158,13 @@ function leiste() {
     spiele.push(`<li><time datetime="${t.start.toISOString()}">${tagZeit(t.start.toISOString())}</time><a href="/termine/${esc(t.slug)}/">${esc(t.titel)}</a>${t.ort ? `<small>${esc(t.ort)}</small>` : ''}</li>`);
   }
   const vereine = VEREINE.vereine.map((v) => {
-    const ziel = v.seite || v.heimatinfo;
-    const extern = !v.seite;
-    return `<li><a href="${esc(ziel)}"${extern ? ' target="_blank" rel="noopener"' : ''}>${esc(v.name)}</a><small>${esc(v.sport)} · ${esc(v.ort)}</small></li>`;
+    const ziel = v.seite || v.website;
+    const name = ziel ? `<a href="${esc(ziel)}"${v.seite ? '' : ' target="_blank" rel="noopener"'}>${esc(v.name)}</a>` : `<span>${esc(v.name)}</span>`;
+    return `<li>${name}<small>${esc(v.sport)} · ${esc(v.ort)}</small></li>`;
   }).join('');
   return '<!-- sport:leiste:start -->'
     + (spiele.length ? `<div class="sidebox sport-leiste"><h3>Nächste Spiele</h3><ol class="sport-termine">${spiele.join('')}</ol><p><a href="/termine/">Alle Termine</a></p></div>` : '')
-    + `<div class="sidebox sport-leiste"><h3>Sportvereine in der Gemeinde</h3><ul class="sport-vereine">${vereine}</ul><p class="sport-leiste-quelle">Verzeichnis: ${esc(VEREINE.quelle)}, Stand ${dmy(`${VEREINE.abgerufen}T12:00:00+02:00`)}</p></div>`
+    + `<div class="sidebox sport-leiste"><h3>Sportvereine in der Gemeinde</h3><ul class="sport-vereine">${vereine}</ul><p class="sport-leiste-quelle">${VEREINE.vereine.length} Sportvereine und Abteilungen · ${esc(VEREINE.quelle)}, Stand ${dmy(`${VEREINE.stand}T12:00:00+02:00`)} · <a href="/vereine/eintragen/">Redaktionszugang für Vereine</a></p></div>`
     + '<!-- sport:leiste:end -->';
 }
 function mitLeiste(html) {

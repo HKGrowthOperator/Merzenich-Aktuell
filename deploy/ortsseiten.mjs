@@ -11,16 +11,16 @@
  * Jetzt:
  * - Ortsseiten: „Nächste Termine in <Ort>“ aus den Terminseiten
  *   (deploy/lib-termine.mjs, höchstens 4, nur laufende und kommende) und
- *   „Vereine in <Ort>“ aus den Profilen plus dem Vereinsverzeichnis der
- *   Heimat-Info-App der Gemeinde (imports/quellen/heimatinfo.json).
+ *   „Vereine in <Ort>“ aus den Profilen plus dem Vereinsverzeichnis
+ *   (deploy/vereinsverzeichnis.json, belegt aus Bürgerbroschüre, Amtsblättern,
+ *   Heimat-Info und Vereinswebsites).
  *   Zwischen <!-- ort:seitenleiste:start/end --> in der Seitenleiste.
- * - /vereine/: „Weitere Vereine im Gemeindeverzeichnis“, alle Heimat-Info-
- *   Vereine ohne eigenes Profil, nach Ort gruppiert, mit Link auf ihren
- *   Heimat-Info-Eintrag. Zwischen <!-- vereine:weitere:start/end -->.
+ * - /vereine/: „Weitere Vereine im Gemeindeverzeichnis“, alle Vereine ohne
+ *   eigenes Profil, nach Ort gruppiert, mit Link auf ihre Website.
+ *   Zwischen <!-- vereine:weitere:start/end -->.
  *
- * Ort eines Heimat-Info-Vereins nur, wenn er im Vereinsnamen steht; sonst
- * „gemeindeweit“. Keine Kontaktdaten, keine Beschreibungen: nur Name, Link
- * und (für Sportvereine aus deploy/sportvereine.json) die Sportart.
+ * Ort nur, wenn er belegt ist; sonst „gemeindeweit“. Keine Kontaktdaten:
+ * nur Name, Website und Art (bei Sportvereinen die Sportart).
  *
  * Aufruf: node deploy/ortsseiten.mjs [--check]
  */
@@ -34,19 +34,6 @@ const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(wurzel, 'chatgpt-site');
 const nurPruefen = process.argv.includes('--check');
 const ORTE = { merzenich: 'Merzenich', golzheim: 'Golzheim', girbelsrath: 'Girbelsrath', morschenich: 'Morschenich', buergewald: 'Bürgewald' };
-const DOERFER = Object.entries(ORTE).filter(([k]) => k !== 'merzenich');
-const HI_KATEGORIEN = ['Vereine', 'Jugend'];
-// Heimat-Info-Name -> eigenes Profil unter /vereine/<slug>/ (gleicher Verein).
-// „IG Golzheim Aktiv“ = Golzheim aktiv e.V. (golzheimaktiv.de führt den Kalender der IG).
-const PROFIL_FUER = {
-  '1.FC Köln Fanclub Merzenich 1967': 'fc-fanclub-merzenich-1967',
-  'Freiwillige Feuerwehr Merzenich': 'feuerwehr-merzenich',
-  'Geschichts- und Heimatverein Merzenich e.V.': 'ghv-merzenich',
-  'IG Golzheim Aktiv': 'golzheim-aktiv',
-  'KG Jonge vom Berg 1975 e.V.': 'kg-jonge-vom-berg',
-  'SC1919Merzenich e.V.': 'sc-1919-merzenich',
-  'St. Lambertus Schützenbruderschaft Morschenich e.V.': 'schuetzenbruderschaft-morschenich',
-};
 const vergleich = new Intl.Collator('de');
 
 // Profile: Frontmatter aus site-source/content/vereine, nur wenn die Seite existiert.
@@ -64,38 +51,31 @@ function profile() {
   return raus;
 }
 
-function ortAusName(name) {
-  const doerfer = DOERFER.filter(([, n]) => name.includes(n));
-  if (doerfer.length === 1 && !name.includes('Merzenich')) return doerfer[0][0];
-  if (!doerfer.length && name.includes('Merzenich')) return 'merzenich';
-  return '';
-}
-
-// Heimat-Info: Organisationsseiten der Kategorien Vereine und Jugend.
-function heimatinfo(profilSlugs) {
-  const hi = JSON.parse(readFileSync(join(wurzel, 'imports', 'quellen', 'heimatinfo.json'), 'utf8'));
-  const sport = new Map(JSON.parse(readFileSync(join(wurzel, 'deploy', 'sportvereine.json'), 'utf8')).vereine.map((v) => [v.heimatinfo, v.sport]));
+// Vereinsverzeichnis der Gemeinde (deploy/vereinsverzeichnis.json, 30.09.2026):
+// 63 belegte Vereine aus Bürgerbroschüre, Amtsblättern, Heimat-Info und
+// Vereinswebsites. Ersetzt die Heimat-Info-Liste allein (ihr fehlten u. a.
+// SV Morschenich, TTC, TV Golzheim, Schützen Merzenich).
+const VZ = JSON.parse(readFileSync(join(wurzel, 'deploy', 'vereinsverzeichnis.json'), 'utf8'));
+function verzeichnis(profilSlugs) {
   const raus = [];
-  for (const l of hi.listen || []) {
-    const m = /^(https:\/\/www\.heimat-info\.de\/gemeinden\/merzenich\/organisationen\/[a-z0-9-]+)\/beitraege\/?$/.exec(l.url || '');
-    if (!m || l.status !== 200) continue;
-    const [, name, kategorie] = (l.text || '').split('\n').map((z) => z.trim());
-    if (!name || !HI_KATEGORIEN.includes(kategorie)) continue;
-    const slug = PROFIL_FUER[name];
-    if (slug && !profilSlugs.has(slug)) throw new Error(`Vereinsverzeichnis: Profil ${slug} für "${name}" fehlt`);
-    raus.push({ name, ort: ortAusName(name), kategorie: sport.get(m[1]) || '', url: m[1], profil: slug || '' });
+  for (const v of VZ.vereine) {
+    if (v.ort && !ORTE[v.ort]) throw new Error(`Vereinsverzeichnis: "${v.name}" mit unbekanntem Ort ${v.ort}`);
+    if (!v.quelle) throw new Error(`Vereinsverzeichnis: "${v.name}" ohne Quelle`);
+    if (v.website && !/^https?:\/\/[^\s"<>]+$/.test(v.website)) throw new Error(`Vereinsverzeichnis: "${v.name}" website muss http(s):// sein`);
+    if (v.profil && !profilSlugs.has(v.profil)) throw new Error(`Vereinsverzeichnis: Profil ${v.profil} für "${v.name}" fehlt`);
+    raus.push({ name: v.name, ort: v.ort || '', kategorie: v.kategorie === 'Sport' && v.sportart ? v.sportart : v.kategorie, url: v.website || '', profil: v.profil || '' });
   }
-  return { liste: raus, stand: String(hi.abgerufen || '').slice(0, 10) };
+  return { liste: raus, stand: VZ.stand };
 }
 
 const prof = profile();
-const { liste: hiListe, stand } = heimatinfo(new Set(prof.map((p) => p.profil)));
-if (!/^\d{4}-\d{2}-\d{2}$/.test(stand)) throw new Error('heimatinfo.json: abgerufen fehlt');
+const { liste: hiListe, stand } = verzeichnis(new Set(prof.map((p) => p.profil)));
+if (!/^\d{4}-\d{2}-\d{2}$/.test(stand)) throw new Error('vereinsverzeichnis.json: stand fehlt');
 const standText = `${stand.slice(8, 10)}.${stand.slice(5, 7)}.${stand.slice(0, 4)}`;
 const ohneProfil = hiListe.filter((v) => !v.profil);
 const nachName = (a, b) => vergleich.compare(a.name, b.name);
 
-const extLink = (v) => `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.name)}</a>`;
+const extLink = (v) => (v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.name)}</a>` : `<span>${esc(v.name)}</span>`);
 const wochentag = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'short' });
 function terminZeit(t) {
   const b = berliner(t.start);
@@ -116,11 +96,11 @@ function seitenleiste(slug) {
     + '</div>';
   const vereine = [
     ...prof.filter((p) => p.ort === slug).sort(nachName).map((p) => `<li><a href="${esc(p.url)}">${esc(p.name)}</a><small>${esc(p.kategorie)}</small></li>`),
-    ...ohneProfil.filter((v) => v.ort === slug).sort(nachName).map((v) => `<li>${extLink(v)}<small>${v.kategorie ? `${esc(v.kategorie)} · ` : ''}Heimat-Info ↗</small></li>`),
+    ...ohneProfil.filter((v) => v.ort === slug).sort(nachName).map((v) => `<li>${extLink(v)}<small>${esc(v.kategorie)}${v.url ? ' · Website ↗' : ''}</small></li>`),
   ];
   const vereinBox = `<div class="sidebox ort-vereine"><h3>Vereine in ${esc(ort)}<a href="/vereine/">alle</a></h3>`
     + (vereine.length ? `<ul class="linklist">${vereine.join('')}</ul>` : `<p class="ort-leer">Noch kein Verein aus ${esc(ort)} im Verzeichnis.</p>`)
-    + `<p class="ort-leer">Einträge mit ↗ aus dem Vereinsverzeichnis der Heimat-Info-App, Stand ${standText}. <a href="/vereine/eintragen/">Verein eintragen</a></p></div>`;
+    + `<p class="ort-leer">Vereinsverzeichnis der Gemeinde, Stand ${standText}. ↗ führt zur Website des Vereins. <a href="/vereine/eintragen/">Verein eintragen</a></p></div>`;
   return terminBox + vereinBox;
 }
 
@@ -130,7 +110,7 @@ function weitereVereine() {
     .filter(([, l]) => l.length);
   return '<section class="vereine-weitere" aria-labelledby="vereine-weitere-titel">'
     + '<h2 id="vereine-weitere-titel">Weitere Vereine im Gemeindeverzeichnis</h2>'
-    + `<p class="vereine-weitere-dek">${ohneProfil.length} weitere Vereine und Gruppen stehen im Vereinsverzeichnis der Heimat-Info-App der Gemeinde Merzenich (Stand ${standText}). Die Links führen zu ihrem Eintrag dort. Ein Profil auf Merzenich Aktuell legen wir an, wenn der Verein es uns schickt: <a href="/vereine/eintragen/">Verein eintragen</a>.</p>`
+    + `<p class="vereine-weitere-dek">${ohneProfil.length} weitere Vereine und Gruppen aus der Gemeinde Merzenich (Stand ${standText}; Quelle: <a href="${esc(VZ.quelleUrl)}" target="_blank" rel="noopener">Bürgerbroschüre der Gemeinde</a>, Amtsblätter, Heimat-Info). Verlinkt ist die eigene Website des Vereins, wo es eine gibt. Jeder Verein bekommt auf Wunsch einen eigenen Redaktionszugang: Meldungen, Termine und Fotos einreichen, die Redaktion gibt frei. <a href="/vereine/eintragen/">Verein eintragen oder Zugang anfragen</a>.</p>`
     + `<div class="vereine-weitere-orte">${gruppen.map(([name, l]) => `<div><h3>${esc(name)}</h3><ul class="linklist">${l.map((v) => `<li>${extLink(v)}${v.kategorie ? `<small>${esc(v.kategorie)}</small>` : ''}</li>`).join('')}</ul></div>`).join('')}</div>`
     + '</section>';
 }
@@ -155,5 +135,5 @@ for (const slug of Object.keys(ORTE)) schreibe(join(site, slug, 'index.html'), '
 const leerZeile = '<p class="no-result" data-filter-empty hidden>Keine Einträge für diese Auswahl.</p>';
 schreibe(join(site, 'vereine', 'index.html'), 'vereine:weitere', weitereVereine(), (h) => h.replace(leerZeile, `${leerZeile}\n  <!-- vereine:weitere:start --><!-- vereine:weitere:end -->`));
 
-console.log(`Ortsseiten: ${prof.length} Profile, ${hiListe.length} Heimat-Info-Vereine (${ohneProfil.length} ohne Profil), ${termine.length} kommende Termine; ${geaendert} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+console.log(`Ortsseiten: ${prof.length} Profile, ${hiListe.length} Vereine im Verzeichnis (${ohneProfil.length} ohne Profil), ${termine.length} kommende Termine; ${geaendert} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && geaendert) process.exit(2);

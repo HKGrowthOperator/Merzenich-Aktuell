@@ -1,0 +1,572 @@
+{
+ "_hinweis": "Vereinsverzeichnis der Gemeinde Merzenich (Stand 30.09.2026). Grundlage: Bürgerbroschüre der Gemeinde, November 2025, S. 33-34 \"Vereine in der Gemeinde Merzenich\", ergänzt um Amtsblätter 2025/2026, Heimat-Info, fussball.de und Vereinswebsites; jede Zeile mit Quelle. Keine privaten E-Mail-Adressen (Vorstände). ort: Ortsteil-Slug, leer = gemeindeweit oder nicht belegt. profil: eigene Seite unter /vereine/<profil>/. Genutzt von deploy/ortsseiten.mjs (Verzeichnis, Ortsseiten) und deploy/sport-prerender.mjs (Sportvereine auf /sport/).",
+ "quelle": "Bürgerbroschüre Gemeinde Merzenich (Nov. 2025), Amtsblätter, Heimat-Info",
+ "quelleUrl": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+ "stand": "2026-09-30",
+ "vereine": [
+  {
+   "name": "SC 1919 Merzenich e.V.",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Fußball",
+   "website": "https://www.scmerzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "sc-1919-merzenich",
+   "hinweis": "Mehrspartenverein (Fußball, Tennis, Badminton, Jugend, Alte Herren, Freizeitmannschaft \"FZM Bosse Jonge ´85\"). Sportanlage am Bürgewaldzentrum Morschenich (Ellener Allee 1)."
+  },
+  {
+   "name": "SC 1919 Merzenich e.V. – Tennisabteilung",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Tennis",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Abteilung des SC 1919 Merzenich; Tennisanlage Bahnstraße 11a. Heimat-Info verlinkt nur eine Facebook-Seite."
+  },
+  {
+   "name": "SC 1919 Merzenich e.V. – Badmintonabteilung",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Badminton",
+   "website": "http://scm-badminton.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Abteilung des SC 1919 Merzenich; bei Heimat-Info als \"SCM Badminton Merzenich\". Website nur per http erreichbar (TLS-Fehler)."
+  },
+  {
+   "name": "FC Golzheim 1928 e.V.",
+   "ort": "golzheim",
+   "kategorie": "Sport",
+   "sportart": "Fußball",
+   "website": "https://golzheim1928.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Zweite Seite http://fc-golzheim.de/ (\"Offizielle Fc-Golzheim Seite\") existiert ebenfalls."
+  },
+  {
+   "name": "FC Golzheim 1928 e.V. – Tennisabteilung",
+   "ort": "golzheim",
+   "kategorie": "Sport",
+   "sportart": "Tennis",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Im Tennisverband Mittelrhein als \"FC Golzheim TA\" geführt; Gemeinde-Liste: \"FC Golzheim Tennis\"."
+  },
+  {
+   "name": "FC Rhenania Girbelsrath 1931 e.V.",
+   "ort": "girbelsrath",
+   "kategorie": "Sport",
+   "sportart": "Fußball",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Keine funktionierende eigene Website gefunden (rhenania-girbelsrath.de liefert ClubDesk-404). Hat eine Tennisabteilung (siehe eigener Eintrag)."
+  },
+  {
+   "name": "FC Rhenania Girbelsrath 1931 e.V. – Tennisabteilung",
+   "ort": "girbelsrath",
+   "kategorie": "Sport",
+   "sportart": "Tennis",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste nennt nur Ansprechpartner Achim Krop, keine E-Mail."
+  },
+  {
+   "name": "SV Morschenich 1925 e.V.",
+   "ort": "morschenich",
+   "kategorie": "Sport",
+   "sportart": "Fußball",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "sv-morschenich-1925",
+   "hinweis": "Nicht in deploy/sportvereine.json und nicht bei Heimat-Info. Die im Repo eingetragene Website sv-morschenich1925.de löst am 30.09.2026 nicht auf (DNS); Facebook: facebook.com/SVMorschenich."
+  },
+  {
+   "name": "SV Morschenich 1925 e.V. – Alte Herren",
+   "ort": "morschenich",
+   "kategorie": "Sport",
+   "sportart": "Fußball (Alte Herren)",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Abteilung des SV Morschenich; in der Gemeinde-Liste als \"Alte Herren SV Morschenich\"."
+  },
+  {
+   "name": "Tischtennisclub Merzenich 1972 e.V.",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Tischtennis",
+   "website": "https://ttc-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "ttc-merzenich",
+   "hinweis": "Kurzname TTC Merzenich (Gemeinde-Liste: \"Tischtennis Club Merzenich\"; legalName laut Website \"Tischtennisclub Merzenich 1972 e.V.\"). Nicht in deploy/sportvereine.json."
+  },
+  {
+   "name": "TV Merzenich 1882 e.V.",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Turnen/Breitensport",
+   "website": "http://www.tv-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Website nur per http erreichbar (TLS-Fehler bei https)."
+  },
+  {
+   "name": "Turnverein 1910 Girbelsrath e.V.",
+   "ort": "girbelsrath",
+   "kategorie": "Sport",
+   "sportart": "Turnen/Breitensport",
+   "website": "http://tv-girbelsrath.com/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Name laut Website-Titel; Heimat-Info: \"TV1910e.V.Girbelsrath\", Gemeinde-Liste: \"TV 1910 Girbelsrath\". Neues Angebot Hallenbosseln ab Oktober 2026."
+  },
+  {
+   "name": "TV Golzheim 1885 e.V.",
+   "ort": "golzheim",
+   "kategorie": "Sport",
+   "sportart": "Turnen/Breitensport (u. a. Kinderturnen, Badminton, Tischtennis)",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nicht im Repo und nicht bei Heimat-Info. Keine eigene Website verifiziert (Facebook-Seite vorhanden)."
+  },
+  {
+   "name": "Billardsportclub Merzenich 1970 e.V. (BSC Merzenich)",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Billard",
+   "website": "https://bsc-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Website-Titel: \"BSC Merzenich 1970 e.V.\"; Turnierstätte Lindenstraße 10."
+  },
+  {
+   "name": "Billard Sport Club 1962 Girbelsrath e.V.",
+   "ort": "girbelsrath",
+   "kategorie": "Sport",
+   "sportart": "Billard",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Billard Sport Club Girbelsrath\". Die bei RurWeb angegebene Domain bsc-girbelsrath.de löst nicht mehr auf."
+  },
+  {
+   "name": "Schachverein Turm 72 Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Sport",
+   "sportart": "Schach",
+   "website": "https://www.turm72merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Schachverein Turm Merzenich\"; Impressum: \"Schachclub Turm 72 Merzenich\". Spiellokal Gemeindehaus Burgstr. 9. Website nennt zusätzlich vorstand@turm72merzenich.de."
+  },
+  {
+   "name": "KK Klub Waldesgrün 1973 Morschenich e.V.",
+   "ort": "morschenich",
+   "kategorie": "Sport",
+   "sportart": "Sportschießen (Kleinkaliber)",
+   "website": "https://www.kkklub-morschenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Namensvarianten: Heimat-Info \"KK Klub Waldesgrün Morschenich 1973 e.V.\", Website-Titel \"KK Klub Waldesgrün 1973 Morschenich e.V.\"."
+  },
+  {
+   "name": "Sportschützen Gut Schuss Merzenich",
+   "kategorie": "Sport",
+   "sportart": "Sportschießen",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Heimat-Info nennt als Adresse Akazienstraße 15, 52353 Düren-Birkesdorf (außerhalb der Gemeinde); Ortsteil daher offen. Mitglied in RSB und DSB.",
+   "ort": ""
+  },
+  {
+   "name": "UL-Aero-Club Morschenich e.V.",
+   "ort": "morschenich",
+   "kategorie": "Sport",
+   "sportart": "Luftsport (Ultraleichtflug)",
+   "website": "https://ul-a-mo.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Flugplatz Morschenich, Verein gegründet 14.09.1986."
+  },
+  {
+   "name": "LDDF Lets Dance Discofox e.V. Merzenich",
+   "kategorie": "Sport",
+   "sportart": "Tanzsport (Discofox)",
+   "website": "https://lets-dance-discofox.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Let`s Dance Discofox\". Ortsteil nicht angegeben.",
+   "ort": ""
+  },
+  {
+   "name": "American Football Club Düren Demons e.V.",
+   "kategorie": "Sport",
+   "sportart": "American Football, Cheerleading",
+   "website": "https://www.demonsfootball.de/",
+   "quelle": "https://www.rurweb.de/verein/index.php?idkat=16000&name=Merzenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "NUR Vereinssitz in Merzenich (Vereinsanschrift laut Website: An der Vogelrute 9, 52399 Merzenich); Spielbetrieb/Heimstätte in Düren-Mariaweiler. Nicht in der Vereinsliste der Gemeinde. Redaktionell prüfen, ob aufnehmen.",
+   "ort": ""
+  },
+  {
+   "name": "KG Jonge vom Berg 1975 e.V.",
+   "ort": "merzenich",
+   "kategorie": "Karneval",
+   "website": "https://jonge-vom-berg.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "kg-jonge-vom-berg",
+   "hinweis": "Im Amtsblatt auch \"KG Jonge vom Berg Merzenich\" / \"K. G. Jonge vom Berg e. V.\"; im Repo \"KG Jonge vom Berg Merzenich 1975 e.V.\"."
+  },
+  {
+   "name": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "ort": "golzheim",
+   "kategorie": "Karneval",
+   "website": "https://kg-mir-hahle-poohl.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30"
+  },
+  {
+   "name": "Karnevals- und Bühnenfreunde Girbelsrath 1925 e.V.",
+   "ort": "girbelsrath",
+   "kategorie": "Karneval",
+   "website": "https://www.kfg-online.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "karnevals-und-buehnenfreunde-girbelsrath",
+   "hinweis": "Repo-Profil hat keine Website; kfg-online.de ist erreichbar (Titel \"Karnevals- und Bühnenfreunde Girbelsrath 1925 e. V.\"). Repo-Name \"Karnevals- und Bühnenfreunde 1925 e.V. Girbelsrath\" weicht in der Reihenfolge ab."
+  },
+  {
+   "name": "St.-Sebastianus-Schützenbruderschaft Merzenich gegr. vor 1531 e.V.",
+   "ort": "merzenich",
+   "kategorie": "Schützen",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nicht im Repo. Früher genutzte Domain schuetzen-merzenich.de ist am 30.09.2026 im DENIC-Transit (keine Website)."
+  },
+  {
+   "name": "Marianische Schützenbruderschaft Golzheim gegr. vor 1372 e.V.",
+   "ort": "golzheim",
+   "kategorie": "Schützen",
+   "website": "https://www.schuetzen-golzheim.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "schuetzenbruderschaft-golzheim",
+   "hinweis": "Im Repo nur als \"Schützenbruderschaft Golzheim\". Website existiert (Cloudflare-Schutz, Inhalt nicht abrufbar)."
+  },
+  {
+   "name": "St. Lambertus Schützenbruderschaft Morschenich e.V.",
+   "ort": "morschenich",
+   "kategorie": "Schützen",
+   "website": "https://schuetzen-morschenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "schuetzenbruderschaft-morschenich",
+   "hinweis": "E-Mail-Abweichung: Gemeinde-Liste michael.dohmes@web.de, Heimat-Info michael.dohmes@gmx.de. Hat Jungschützen und Tambourcorps."
+  },
+  {
+   "name": "Tambourcorps Spielvereinigung 1923 Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Musik",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Im Amtsblatt als \"Tambourcorps Merzenich\"."
+  },
+  {
+   "name": "Freunde der Musik Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Musik",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freunde-der-musik-merzenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "Bläser-Ensemble, gegründet 1970; probt mittwochs in der Mensa der Gesamtschule. Nicht in der Vereinsliste der Bürgerbroschüre."
+  },
+  {
+   "name": "Blechphonie",
+   "ort": "golzheim",
+   "kategorie": "Musik",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Im Kulturkalender als \"Golzheimer Blechphonie\"."
+  },
+  {
+   "name": "Gruppe Regenbogen (Chor)",
+   "ort": "merzenich",
+   "kategorie": "Musik",
+   "website": "https://www.g-r-m.net/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemischter Chor, probt donnerstags im Bürgerhaus Merzenich. Heimat-Info nennt als Kontakt uschi.knoch@t-online.de."
+  },
+  {
+   "name": "Gospelchor „Inspiration“",
+   "kategorie": "Musik",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Ortsteil nicht angegeben.",
+   "ort": ""
+  },
+  {
+   "name": "Kirchenchor St. Laurentius Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Kirche",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Kirchenchor Merzenich\". Probt dienstags im Pfarrheim, Schulstraße 4a."
+  },
+  {
+   "name": "School of Rock Band",
+   "kategorie": "Musik",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nur in der Vereinsliste der Gemeinde belegt; Ortsteil und Rechtsform unbekannt.",
+   "ort": ""
+  },
+  {
+   "name": "Musikschule der Gemeinde Merzenich",
+   "kategorie": "Musik",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "In der Vereinsliste der Gemeinde aufgeführt; Rechtsform (Verein oder Einrichtung) nicht belegt.",
+   "ort": ""
+  },
+  {
+   "name": "Geschichts- und Heimatverein Merzenich e.V.",
+   "ort": "merzenich",
+   "kategorie": "Heimat",
+   "website": "https://heimatmuseum-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "ghv-merzenich",
+   "hinweis": "Betreibt Heimatmuseum Bergstraße 1 und den Wasserturm."
+  },
+  {
+   "name": "Theatergruppe „Die Weinbergschnecken“",
+   "ort": "merzenich",
+   "kategorie": "Kultur",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Kindertheater in der Weinberghalle; spendet an den Förderverein der KGS Merzenich. Domain weinbergschnecken-merzenich.de hat keine erreichbare Website."
+  },
+  {
+   "name": "Theatergruppe „Kulturjedöns“",
+   "ort": "girbelsrath",
+   "kategorie": "Kultur",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_4_2026_web.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Spielt mit der Dorfwerkstatt Girbelsrath in der Maarhalle; Rechtsform/Eigenständigkeit nicht belegt."
+  },
+  {
+   "name": "Girbelsrath 2.0 – Die Dorfwerkstatt",
+   "ort": "girbelsrath",
+   "kategorie": "Heimat",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "In der Gemeinde-Liste doppelt (\"Die Dorfwerkstatt Girbelsrath 2.0\" und \"Girbelsrath 2.0 – Die Dorfwerkstatt\"), hier einmal geführt."
+  },
+  {
+   "name": "Golzheim aktiv e.V.",
+   "ort": "golzheim",
+   "kategorie": "Heimat",
+   "website": "https://golzheimaktiv.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "golzheim-aktiv",
+   "hinweis": "Bei Heimat-Info/Amtsblatt auch \"IG Golzheim aktiv\". Repo-Kategorie \"Soziales\"."
+  },
+  {
+   "name": "Dorfgemeinschaft Morschenich",
+   "ort": "morschenich",
+   "kategorie": "Heimat",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/dorfgemeinschaft-morschenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "Heimat-Info-Beschreibung nur \"Infokanal für die Einwohnerinnen und Einwohner von Morschenich\"; Rechtsform unbekannt."
+  },
+  {
+   "name": "Maigesellschaft Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Brauchtum",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Richtet den Tanz in den Mai auf dem Schützenplatz Bahnstraße aus."
+  },
+  {
+   "name": "Treckerfreunde Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Brauchtum/Hobby",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/treckerfreunde-merzenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "Traktorentreffen am alten Zeltplatz Mühlenstraße. Die bei Heimat-Info genannte Domain treckerfreunde-merzenich.de ist nur \"STRATO – Domain reserved\"."
+  },
+  {
+   "name": "1. FC Köln Fanclub Merzenich 1967",
+   "ort": "merzenich",
+   "kategorie": "Fanclub",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "profil": "fc-fanclub-merzenich-1967",
+   "hinweis": "Heimat-Info verlinkt nur eine Facebook-Seite; Kontaktadresse dort in Düren."
+  },
+  {
+   "name": "Merzenich Event",
+   "kategorie": "Veranstaltungen",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nur in der Vereinsliste der Gemeinde belegt; Zweck/Rechtsform unklar, Domain merzenich-event.de ohne Website.",
+   "ort": ""
+  },
+  {
+   "name": "Freiwillige Feuerwehr Merzenich",
+   "kategorie": "Feuerwehr",
+   "website": "https://feuerwehr-merzenich.de/",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich",
+   "geprueft": "2026-09-30",
+   "profil": "feuerwehr-merzenich",
+   "hinweis": "Gemeindeweit; öffentliche Einrichtung, kein Verein. Löschzug Merzenich, Löschgruppen Golzheim, Girbelsrath, Morschenich, Jugendfeuerwehr.",
+   "ort": ""
+  },
+  {
+   "name": "Förderverein Freiwillige Feuerwehr (Merzenich)",
+   "kategorie": "Förderverein",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Förderverein Freiwillige Feuerwehr\". Das Amtsblatt nennt einen \"Förderverein der Löschgruppe Merzenich\"; ob identisch, ist nicht belegt.",
+   "ort": ""
+  },
+  {
+   "name": "Förderverein der Löschgruppe Morschenich",
+   "ort": "morschenich",
+   "kategorie": "Förderverein",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_2_2026-web.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nur als Veranstalter (Fischessen) im Amtsblatt belegt."
+  },
+  {
+   "name": "Arbeiterwohlfahrt Ortsverein Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Soziales",
+   "website": "https://www.awo-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "awo-merzenich.de leitet auf awoovmerzenich.wordpress.com weiter."
+  },
+  {
+   "name": "Inklusives Soziales Miteinander Merzenich e.V. (ISM)",
+   "ort": "merzenich",
+   "kategorie": "Soziales",
+   "website": "https://www.ism-merzenich.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gegründet 1974."
+  },
+  {
+   "name": "Miteinander und Füreinander in Merzenich",
+   "kategorie": "Soziales",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nur in der Vereinsliste der Gemeinde belegt.",
+   "ort": ""
+  },
+  {
+   "name": "Freizeitgemeinschaft 55+",
+   "kategorie": "Senioren",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeindeweit; laut Amtsblatt eine \"Initiative\" der gemeindlichen Seniorenarbeit, kein e.V.",
+   "ort": ""
+  },
+  {
+   "name": "F.A.K. e.V. Düren – Tagespflegehaus Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Soziales",
+   "website": "https://fak-dueren.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Einrichtung (Tagespflege An der Windmühle 62) eines Dürener Vereins; in der Gemeinde-Liste als \"FAK e.V. Tagepflegehaus\"."
+  },
+  {
+   "name": "Ein Dach für Afrika e.V.",
+   "kategorie": "Soziales",
+   "website": "http://www.eindachfuerafrika.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Entwicklungszusammenarbeit (Elfenbeinküste). E-Mail wie in der Gemeinde-Liste abgedruckt; die Domain dort (eindachfuereafrika.de) weicht von der Website (eindachfuerafrika.de) ab und löst nicht auf, vermutlich Druckfehler.",
+   "ort": ""
+  },
+  {
+   "name": "LandFrauenverband e.V. – Kreisverband Düren-Jülich (Merzenich)",
+   "kategorie": "Soziales",
+   "website": "https://www.rheinische-landfrauen.de",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/landfrauenverband-ev-kreisverband-duren-julich-merzenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "Regionaler Verband mit Sitz in Düren; bei Heimat-Info Merzenich gelistet. Kontakt dort über eine Adresse der Landwirtschaftskammer, hier bewusst weggelassen.",
+   "ort": ""
+  },
+  {
+   "name": "LESEMENTOR Düren e.V. (Merzenich)",
+   "kategorie": "Bildung",
+   "website": "https://lesementor-dueren.de/",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lesementor-duren-e-v-merzenich",
+   "geprueft": "2026-09-30",
+   "hinweis": "Regionaler Verein mit Sitz in Düren, auch in Merzenich aktiv.",
+   "ort": ""
+  },
+  {
+   "name": "DPSG Pfadfinder – Stamm St. Laurentius Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Jugend",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Pfadfinder St. Georg – Stamm St. Laurentius\"; Heimat-Info: \"Pfadfinder Merzenich (DPSG St. Laurentius)\", Schulstraße 4."
+  },
+  {
+   "name": "Förderverein KGS Merzenich",
+   "ort": "merzenich",
+   "kategorie": "Förderverein",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Förderverein der Katholischen Grundschule Merzenich."
+  },
+  {
+   "name": "Vereinigung der Freunde und Förderer der Johann-Kasper-Kratz Grundschule Merzenich-Golzheim e.V.",
+   "ort": "golzheim",
+   "kategorie": "Förderverein",
+   "website": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/foeve.php",
+   "quelle": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/vereinigung-der-freunde-und-foerderer-der-johann-kasper-kratz-grundschule-merzenich--golzheim-e-v",
+   "geprueft": "2026-09-30",
+   "hinweis": "Website liegt hinter dem Bot-Schutz der Gemeinde-Seite, Inhalt nicht geprüft (Link laut Heimat-Info)."
+  },
+  {
+   "name": "Freie Gemeinde Apostolischer Christen e.V.",
+   "kategorie": "Kirche",
+   "website": "https://fgac-ew.de/",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Religionsgemeinschaft; Standort in der Gemeinde nicht belegt.",
+   "ort": ""
+  },
+  {
+   "name": "Kleingärtnerverein Merzenich e.V.",
+   "ort": "merzenich",
+   "kategorie": "Garten",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Gemeinde-Liste: \"Kleingartenverein Merzenich\"; Amtsblatt: \"Kleingärtnerverein Merzenich e.V.\"."
+  },
+  {
+   "name": "Vogelzuchtverein Merzenich 1961",
+   "ort": "merzenich",
+   "kategorie": "Tierzucht",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Buergerbroschuere-November-2025-36-Seiten.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Nur in der Vereinsliste der Gemeinde belegt."
+  },
+  {
+   "name": "Kaninchenzuchtverein R195 Golzheim",
+   "ort": "golzheim",
+   "kategorie": "Tierzucht",
+   "quelle": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+   "geprueft": "2026-09-30",
+   "hinweis": "Lokalschau 26./27.09.2026 in der Schützenhalle Golzheim."
+  }
+ ]
+}
