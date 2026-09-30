@@ -482,19 +482,22 @@ index.bestand = {
     if (a.ressort === 'blaulicht') { if (blaulicht >= 2) return false; blaulicht++; }
     return true;
   };
+  // Vier Nebenmeldungen: der dritte Platz unten gehoert seit 30.09. einer
+  // Anzeige in Kartengroesse (Wunsch Betreiber, Markierung im Screenshot).
+  const NEBEN = 4;
   const nebenErst = [];
   for (const a of redaktionell) {
-    if (gesetzteNeben.length + nebenErst.length >= 5) break;
+    if (gesetzteNeben.length + nebenErst.length >= NEBEN) break;
     if (nebenKandidat(a, false)) { nebenErst.push(a); vergeben.add(a.url); motivBelegen(a); buehnenMotiv.add(motivVon(a)); }
   }
   // Ortsansichten nacheinander pruefen: zwei Golzheim-Meldungen duerfen nicht
   // beide die eine Golzheim-Ansicht in die Buehne bringen.
   const nebenOrt = [];
   for (const a of redaktionell) {
-    if (gesetzteNeben.length + nebenErst.length + nebenOrt.length >= 5) break;
+    if (gesetzteNeben.length + nebenErst.length + nebenOrt.length >= NEBEN) break;
     if (nebenKandidat(a, true)) { nebenOrt.push(a); vergeben.add(a.url); motivBelegen(a); buehnenMotiv.add(motivVon(a)); }
   }
-  const neben = gesetzteNeben.concat(nebenErst, nebenOrt).slice(0, 5);
+  const neben = gesetzteNeben.concat(nebenErst, nebenOrt).slice(0, NEBEN);
   for (const a of neben) vergeben.add(a.url);
   if (gesetzteNeben.length) console.log(`Startseite: ${gesetzteNeben.length} Nebenmeldung(en) redaktionell gesetzt.`);
 
@@ -506,10 +509,14 @@ index.bestand = {
     + bildFlaeche(a, groesse === 'r' ? '(max-width: 760px) 132px, (max-width: 1100px) 50vw, 460px' : '(max-width: 760px) 132px, (max-width: 1100px) 33vw, 440px', false)
     + `<div class="karte-text">${markeHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
     + `<div class="meta">${zeitHtml(a, kurzZeit)}</div></div></article>`;
-  const rechts = neben.slice(0, 2), unten = neben.slice(2, 5);
+  const rechts = neben.slice(0, 2), unten = neben.slice(2, NEBEN);
+  // Die Anzeige fuellt deploy/anzeigen.mjs (laeuft nach diesem Skript). Ihr
+  // Inhalt wird hier uebernommen, sonst waere --check nie stabil.
+  const MARKER_ANZEIGE = /<!-- werbung:buehne:start -->[\s\S]*?<!-- werbung:buehne:end -->/;
+  const anzeigeBuehne = (MARKER_ANZEIGE.exec(html) || ['<!-- werbung:buehne:start --><!-- werbung:buehne:end -->'])[0];
   const inhaltOben = (aufmacher ? karte(aufmacher, 'xl') : '')
     + (rechts.length ? `<div class="buehne-rechts">${rechts.map((a) => buehneKarte(a, 'r')).join('')}</div>` : '')
-    + (unten.length ? `<div class="buehne-unten">${unten.map((a) => buehneKarte(a, 'u')).join('')}</div>` : '');
+    + `<div class="buehne-unten">${unten.map((a) => buehneKarte(a, 'u')).join('')}${anzeigeBuehne}</div>`;
   const oben = '<!-- start:oben:start -->'
     + `<section class="shell buehne" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">${inhaltOben}</section>`
     + '<!-- start:oben:end -->';

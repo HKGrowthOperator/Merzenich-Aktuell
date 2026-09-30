@@ -5,7 +5,8 @@
  *
  * Werbeflaechen sind Markierungen im HTML:
  *   <!-- werbung:SLOT:start --> ... <!-- werbung:SLOT:end -->
- * SLOT ist band-1 ... band-6 (Startseite, zwischen den Rubriken), spalte
+ * SLOT ist band-1 ... band-6 (Startseite, zwischen den Rubriken), buehne
+ * (dritte Karte unten in der Buehne, Kartengroesse), spalte
  * (Servicespalte der Startseite, klebt beim Scrollen), sport (rechte Spalte der
  * Sportseite) oder artikel (Artikel- und uebrige Seiten).
  *
@@ -92,6 +93,7 @@ function versatz(slot) {
   const band = /^band-(\d+)$/.exec(slot);
   if (band) return Number(band[1]) - 1;
   if (slot === 'spalte') return 1;
+  if (slot === 'buehne') return 2;
   if (slot === 'sport') return 3;
   // artikel: fester Start. Listen-Folgeseiten sind Kopien ihrer Ressortseite
   // (inhaltsindex.mjs); ein Versatz je Seite waere nicht wiederholbar.
@@ -99,7 +101,7 @@ function versatz(slot) {
 }
 function slotHtml(slot) {
   const art = slot.startsWith('band-') ? 'band' : slot;
-  const format = art === 'spalte' || art === 'sport' ? 'gap' : 'band';
+  const format = art === 'spalte' || art === 'sport' || art === 'buehne' ? 'gap' : 'band';
   const o = versatz(slot) % MOTIVE.length;
   return `<aside class="werbung werbung--${art}${art === 'band' ? ' shell' : ''}" data-werbung="${art}" data-format="${format}" data-versatz="${o}" data-anzahl="1" aria-label="${esc(LABEL)}">`
     + `<span class="werbung-label">${esc(LABEL)}</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--${format}">${motivHtml(MOTIVE[o], format)}</div>`
@@ -140,6 +142,7 @@ for (const pfad of seiten) {
   const start = readFileSync(join(site, 'index.html'), 'utf8');
   for (let i = 1; i <= 6; i++) if (!start.includes(`<!-- werbung:band-${i}:start -->`)) fehler.push(`Startseite: Werbeband band-${i} fehlt`);
   if (!start.includes('<!-- werbung:spalte:start -->')) fehler.push('Startseite: Werbeflaeche in der Servicespalte fehlt');
+  if (!start.includes('<!-- werbung:buehne:start -->')) fehler.push('Startseite: Anzeige in der Buehne (unten rechts) fehlt');
 }
 
 if (fehler.length) { console.error('Anzeigen: ' + fehler.join('\n  ')); process.exit(2); }

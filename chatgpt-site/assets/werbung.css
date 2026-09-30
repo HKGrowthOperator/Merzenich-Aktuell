@@ -291,3 +291,33 @@ html[data-werbung="aus"] .werbung{display:none!important}
 @media(max-width:700px){
   .werben-bildnachweise__grid{grid-template-columns:1fr}
 }
+
+/* Anzeige in der Buehne (30.09.2026): dritte Karte unten, gleiche Groesse und
+   gleicher Aufbau wie die Meldungen daneben (Bild, Kennzeichnung, Titel). */
+body.home .werbung--buehne{margin:0;min-width:0;padding:14px 0;border-top:1px solid var(--a-linie,#deddd9);align-content:start}
+body.home .werbung--buehne .werbung-label{margin-bottom:6px;font-size:9.5px;letter-spacing:.12em}
+body.home .werbung--buehne>.werbung-credit{margin-bottom:6px;font-size:9.5px}
+body.home .werbung--buehne .werbung-credit-vor{display:none}
+body.home .werbung--buehne .werbung-flaeche{grid-column:1/-1}
+body.home .werbung--buehne .ma-ad-rotator--gap{height:auto}
+body.home .werbung--buehne .ma-ad-card--gap{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:start;border:0;border-radius:0;background:none}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-art{grid-column:1;grid-row:1;aspect-ratio:4/3;min-height:0;background:#e9e6e1}
+body.home .werbung--buehne .ma-ad-art img{width:100%;height:100%;object-fit:cover;display:block}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy{grid-column:2;grid-row:1;padding:0}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow{font-size:10.5px;letter-spacing:.06em}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong{margin-top:4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;font-size:17.5px;line-height:1.18}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{margin-top:4px;font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-cta{font-size:10px;padding:5px 8px}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-muster{display:none}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow,body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong,body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{white-space:normal;overflow-wrap:break-word}
+@media (min-width:760px){
+  body.home .werbung--buehne{grid-column:span 2;padding:0;border-top:0}
+  body.home .werbung--buehne .ma-ad-card--gap{display:block}
+  body.home .werbung--buehne .ma-ad-card--gap .ma-ad-art{display:block;aspect-ratio:16/10}
+  body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy{display:block;padding-top:10px}
+  body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong{font-size:clamp(18px,1.45vw,21px)}
+}
+@media (min-width:1100px){
+  body.home .werbung--buehne{grid-column:auto}
+  body.home .werbung--buehne .ma-ad-card--gap .ma-ad-art{aspect-ratio:16/9}
+}
