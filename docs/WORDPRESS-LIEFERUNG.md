@@ -2,6 +2,25 @@
 
 28. September 2026 · Theme 20.5.1 · Core-Plugin 1.7.0
 
+## Installiert auf merzenich-aktuell.de (IONOS, 30.09.2026)
+
+WordPress 7.1.2, frisch installiert am 30.09. (nur Musterinhalte). Eingerichtet über das Konto „HK Growth“:
+
+| Schritt | Stand |
+|---|---|
+| Sicherung vorher | WordPress-Export aller Inhalte, abgelegt außerhalb des Repos |
+| Core-Plugin 1.7.0, Theme 20.5.1 | hochgeladen und aktiv (IONOS-Plugins und Theme „Extendable“ bleiben installiert) |
+| Import | WordPress-Importer; 118 Meldungen als **Entwurf**, 15 Termine veröffentlicht, 70 Bilder, Seite „Service“; Autor „HK Growth“ |
+| Permalinks | `/%category%/%postname%/`, Schlagwort-Basis `thema` |
+| Allgemein | Untertitel „Internet-Zeitung für die Gemeinde Merzenich und Umkreis.“, Zeitzone Europe/Berlin |
+| Geprüft | `/`, `/termine/`, `/termine/ortsfest-2026/`, `/service/`, `/blaulicht/`, `/merzenich/` → 301 `/ort/merzenich/`, je 1440 und 390 px ohne Überlauf |
+
+Beim Import aufgefallen und im Generator behoben: Termine trugen den Beginn als Beitragsdatum (WordPress setzte kommende Termine auf „Geplant“), und zwei Anhänge mit gleichem Titel wurden als Dublette übersprungen. Die fünf betroffenen Termine und das fehlende Beitragsbild wurden auf der Seite direkt korrigiert.
+
+Die Bilder lädt der Importer von der statischen Seite `merzenichaktuell.hk-growthoperator.de` (siehe `SITE_URL` in `deploy/wordpress-import.mjs`), nicht von merzenich-aktuell.de. Die Import-Anfrage läuft länger als 30 Sekunden; bricht der Browser ab, arbeitet der Server weiter (Anzahl unter Beiträge/Medien prüfen).
+
+Offen: Meldungen freigeben (Veröffentlichungssperre: Datum, Ort, Quelle und menschliche Prüfung je Beitrag), WordPress-Musterinhalte („Hello world!“, „Sample Page“), SMTP, Impressum und Datenschutz.
+
 ## Neu in 1.7.0: Parität mit dem statischen Stand (Audit 28.09.)
 
 **Import (`wordpress-delivery/merzenich-aktuell-import.xml`).** Erzeugt von `deploy/wordpress-import.mjs` als letzter Schritt von `node deploy/kette.mjs`, aus dem, was die ausgelieferte Seite zeigt. Nicht von Hand pflegen. Stand heute: 111 Meldungen, 15 Termine, 70 Bilder als Anhänge, 1 Seite (Service).
