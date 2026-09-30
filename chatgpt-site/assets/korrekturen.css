@@ -522,9 +522,15 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 /* Wetter ganz rechts im Kopf (30.09.2026): Handy- und Tabletkopf. Am Desktop
    steht es in .header-local; die Kopie nur dort, wo .header-local ausgeblendet ist. */
 .kopf-wetter{display:none;align-items:center;font-size:13px;font-weight:650;color:#242424;white-space:nowrap;font-variant-numeric:tabular-nums}
-@media (max-width:1180px){.mast-actions>.kopf-wetter{display:inline-flex}}
+@media (max-width:1180px){.mast-actions>.kopf-wetter{display:inline-flex;gap:8px}}
+.kopf-wetter-wert[hidden]{display:none}
+.kopf-datum{font-weight:500;color:#5f5b55}
+.kopf-wetter-wert:not([hidden])+.kopf-datum::before{content:"·";margin-right:8px;color:#9a948c}
+/* Handy: Wetter und Datum uebereinander, damit Logo, Suche und Menue Platz behalten. */
+@media (max-width:767px){.mast-actions>.kopf-wetter{flex-direction:column;align-items:flex-end;gap:1px;line-height:1.15}.mast-actions>.kopf-wetter .kopf-datum{font-size:12.5px}.kopf-wetter-wert:not([hidden])+.kopf-datum::before{content:none}}
 @media (max-width:767px){.masthead .mast-actions{gap:4px!important}.mast-actions>.kopf-wetter{font-size:14px;margin-right:4px}.kopf-wetter-icon{margin-right:3px}}
 @media (max-width:389px){.kopf-wetter-icon{display:none}.mast-actions>.kopf-wetter{font-size:13px}.masthead .logo img{height:auto!important;width:172px!important;max-width:172px!important}}
+@media (max-width:340px){.masthead .logo img{width:148px!important;max-width:148px!important}}
 /* Unternehmen (30.09.2026, Aufbau wie der Wirtschaftsbereich von Oberberg Aktuell):
    Karten je zwei nebeneinander, Bild oben, Kicker, Titel, Zeile mit Datum bzw.
    „Anzeige“, Anriss, Weiterlesen. Nachladen beim Scrollen (unternehmen.js). */
