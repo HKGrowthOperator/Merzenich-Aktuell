@@ -36,24 +36,47 @@ const einsatz = (idx.artikel || [])
   .filter((x) => x.m && x.a.datum)
   .sort((x, y) => String(y.a.datum).localeCompare(String(x.a.datum)))[0];
 
-const kachel = (art, label, wert, klein, href, extra = '') => `${href ? `<a class="cockpit-kachel" href="${esc(href)}"` : '<div class="cockpit-kachel"'} data-cockpit="${art}"${extra}>`
-  + `<span class="cockpit-label">${esc(label)}</span><strong class="cockpit-wert" data-cockpit-wert>${wert}</strong><small class="cockpit-klein" data-cockpit-klein>${klein}</small>${href ? '</a>' : '</div>'}`;
+// Gestaltung 30.09.2026 (Betreiber: „gut, aber zu generisch“): keine fuenf
+// gleichen Kacheln mehr. Links ein rotes Ortsschild mit Datum und Wetter als
+// grosser Zahl, in der Mitte drei kurze Saetze mit eigenem Zeichen (Rathaus,
+// Termin, Feuerwehr), rechts die Notrufnummern als echte Tasten. Nichts wird
+// abgeschnitten; Titel duerfen zwei Zeilen haben.
+const ZEICHEN = {
+  rathaus: '<path d="M3 20.5h18M5 20.5v-9M9.5 20.5v-9M14.5 20.5v-9M19 20.5v-9M3.5 11.5h17L12 4.5z"/>',
+  termin: '<rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h3v3H8z"/>',
+  einsatz: '<path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.6 3-5.6 3.6-9.4 2.4 1.5 3.6 3.8 3.6 5.9 1-.6 1.8-1.7 2-3.1 2 1.7 3.8 4 3.8 6.6 0 3.5-2.6 6.1-6.5 6.1z"/><path d="M12 21c-1.6 0-2.7-1.1-2.7-2.6 0-1.7 1.4-2.5 1.8-4.1 1.9 1.1 3.6 2.4 3.6 4.1 0 1.5-1.1 2.6-2.7 2.6z"/>',
+};
+const zeichen = (art) => `<svg class="mj-zeichen" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ZEICHEN[art]}</svg>`;
+const heuteText = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'long', day: 'numeric', month: 'long' }).format(jetzt);
+const uhrKurz = (iso) => uhr(iso).replace(/:00$/, '');
 
-const teile = [];
-teile.push(kachel('rathaus', 'Rathaus', 'Öffnungszeiten', esc(cfg.rathaus.quelle), cfg.rathaus.link, ` data-zeiten="${esc(JSON.stringify(GEMEINDE.rathaus.zeiten))}"`));
-teile.push(kachel('wetter', 'Wetter in Merzenich', '–', 'Open-Meteo', '/service/', ' hidden'));
-if (termin) teile.push(kachel('termin', 'Nächster Termin', esc(termin.titel), `${esc(tag(termin.start.toISOString()))}, ${esc(uhr(termin.start.toISOString()))} Uhr`, `/termine/${termin.slug}/`, ` data-start="${termin.start.toISOString()}"`));
+const eintraege = [];
+eintraege.push(`<a class="mj-eintrag" href="${esc(cfg.rathaus.link)}" data-cockpit="rathaus" data-zeiten="${esc(JSON.stringify(GEMEINDE.rathaus.zeiten))}">${zeichen('rathaus')}`
+  + '<span class="mj-text"><span class="mj-lead"><span class="mj-status" aria-hidden="true"></span><span data-cockpit-wert>Rathaus</span></span>'
+  + `<span class="mj-titel" data-cockpit-naechst>Öffnungszeiten der Gemeindeverwaltung</span><small class="mj-klein" data-cockpit-klein>${esc(cfg.rathaus.quelle)}</small></span></a>`);
+if (termin) {
+  const iso = termin.start.toISOString();
+  eintraege.push(`<a class="mj-eintrag" href="/termine/${esc(termin.slug)}/" data-cockpit="termin" data-start="${iso}">${zeichen('termin')}`
+    + `<span class="mj-text"><span class="mj-lead" data-cockpit-wert>${esc(tag(iso))}, ${esc(uhrKurz(iso))} Uhr</span>`
+    + `<span class="mj-titel">${esc(termin.titel)}</span><small class="mj-klein">${termin.ort ? esc(termin.ort) : 'Nächster Termin'}</small></span></a>`);
+}
 if (einsatz) {
   const a = einsatz.a;
   const jahr = String(new Date(a.datum).getFullYear()).slice(2);
   const kurz = a.titel.split(/[:–]/)[0].trim();
   const ort = ORTSTEILE[a.ortsteil] || 'Gemeinde Merzenich';
-  teile.push(kachel('einsatz', 'Feuerwehr · letzter Einsatz', `Nr. ${einsatz.m[1]}/${jahr}: ${esc(kurz)}`, `${esc(ort)} · ${esc(tag(a.datum))}`, a.url));
+  eintraege.push(`<a class="mj-eintrag" href="${esc(a.url)}" data-cockpit="einsatz">${zeichen('einsatz')}`
+    + `<span class="mj-text"><span class="mj-lead">Feuerwehr · Einsatz ${einsatz.m[1]}/${jahr}</span>`
+    + `<span class="mj-titel">${esc(kurz)}</span><small class="mj-klein">${esc(ort)} · ${esc(tag(a.datum))}</small></span></a>`);
 }
-teile.push('<div class="cockpit-kachel cockpit-kachel--notruf" data-cockpit="notruf"><span class="cockpit-label">Notruf</span><strong class="cockpit-wert"><a href="tel:112">112</a> <a href="tel:110">110</a></strong><small class="cockpit-klein">Feuerwehr, Rettung · Polizei</small></div>');
+const teile = eintraege;
 
-const block = '<!-- cockpit:start --><section class="cockpit shell" aria-label="Merzenich jetzt"><div class="cockpit-innen"><h2 class="cockpit-titel">Merzenich <span>jetzt</span></h2>'
-  + `<div class="cockpit-reihe">${teile.join('')}</div></div></section><!-- cockpit:end -->`;
+const block = '<!-- cockpit:start --><section class="cockpit mj shell" aria-labelledby="mj-titel"><div class="mj-innen">'
+  + `<div class="mj-schild"><div class="mj-kopf"><h2 class="mj-ort" id="mj-titel">Merzenich <span>jetzt</span></h2><p class="mj-datum" data-cockpit-datum>${esc(heuteText)}</p></div>`
+  + '<p class="mj-wetter" data-cockpit="wetter" hidden><span class="mj-grad" data-cockpit-wert>–</span><span class="mj-himmel" data-cockpit-klein>Open-Meteo</span></p></div>'
+  + `<div class="mj-liste">${eintraege.join('')}</div>`
+  + '<div class="mj-notruf" aria-label="Notruf"><a class="mj-taste" href="tel:112"><b>112</b><span>Feuerwehr, Rettung</span></a><a class="mj-taste" href="tel:110"><b>110</b><span>Polizei</span></a></div>'
+  + '</div></section><!-- cockpit:end -->';
 
 const pfad = join(site, 'index.html');
 const alt = readFileSync(pfad, 'utf8');
@@ -65,5 +88,5 @@ else { console.error('Cockpit: Anker start:oben fehlt'); process.exit(2); }
 if (!neu.includes('/assets/cockpit.js')) neu = neu.replace(/<script src="\/assets\/kopf\.js[^"]*" defer><\/script>/, (m) => m + '<script src="/assets/cockpit.js" defer></script>');
 const geaendert = neu !== alt;
 if (geaendert && !nurPruefen) writeFileSync(pfad, neu);
-console.log(`Cockpit: ${teile.length} Kacheln${termin ? `, Termin ${termin.slug}` : ''}${einsatz ? `, Einsatz ${einsatz.m[1]}` : ''}; ${geaendert ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}.`);
+console.log(`Cockpit: ${teile.length} Eintraege${termin ? `, Termin ${termin.slug}` : ''}${einsatz ? `, Einsatz ${einsatz.m[1]}` : ''}; ${geaendert ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}.`);
 if (nurPruefen && geaendert) process.exit(2);
