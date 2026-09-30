@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Merzenich Aktuell Core
  * Description: Redaktion, Orte, Termine, Wetter, Märkte, Werbung, Sport und Transparenz für Merzenich Aktuell.
- * Version: 1.9.1
+ * Version: 1.10.0
  * Author: Merzenich Aktuell
  * Requires PHP: 8.1
  */
 if (!defined('ABSPATH')) { exit; }
-define('MA_CORE_VERSION', '1.9.1');
+define('MA_CORE_VERSION', '1.10.0');
 define('MA_CORE_PATH', plugin_dir_path(__FILE__));
 define('MA_CORE_URL', plugin_dir_url(__FILE__));
 
@@ -20,6 +20,7 @@ require_once MA_CORE_PATH . 'includes/editorial.php';
 require_once MA_CORE_PATH . 'includes/freigabe.php';
 require_once MA_CORE_PATH . 'includes/sammel-freigabe.php';
 require_once MA_CORE_PATH . 'includes/startplatz.php';
+require_once MA_CORE_PATH . 'includes/relevanz.php';
 require_once MA_CORE_PATH . 'includes/partners.php';
 require_once MA_CORE_PATH . 'includes/comments.php';
 require_once MA_CORE_PATH . 'includes/weather.php';
@@ -32,6 +33,9 @@ require_once MA_CORE_PATH . 'includes/startseite.php';
 require_once MA_CORE_PATH . 'includes/sport.php';
 require_once MA_CORE_PATH . 'includes/gemeinde.php';
 require_once MA_CORE_PATH . 'includes/forms.php';
+require_once MA_CORE_PATH . 'includes/eingang.php';
+require_once MA_CORE_PATH . 'includes/statistik.php';
+require_once MA_CORE_PATH . 'includes/vereinszugaenge.php';
 require_once MA_CORE_PATH . 'includes/radar.php';
 require_once MA_CORE_PATH . 'includes/admin.php';
 

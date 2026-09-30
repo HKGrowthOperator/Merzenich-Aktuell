@@ -51,6 +51,9 @@ let start = zwischen('<main id="main">', '</main>', koerper).slice('<main id="ma
 // WordPress selbst baut; deshalb als eigene Vorlage.
 const anzeigeBuehne = (/<!-- werbung:buehne:start -->[\s\S]*?<!-- werbung:buehne:end -->/.exec(start) || [''])[0];
 if (!anzeigeBuehne) throw new Error('wp-theme: Anzeige werbung:buehne fehlt in index.html');
+// Werbeflaeche der Unternehmensseite (rechte Spalte), fuer theme/unternehmen.php.
+const anzeigeUnternehmen = (/<!-- werbung:unternehmen:start -->[\s\S]*?<!-- werbung:unternehmen:end -->/.exec(readFileSync(join(wurzel, 'chatgpt-site', 'unternehmen', 'index.html'), 'utf8')) || [''])[0];
+if (!anzeigeUnternehmen) throw new Error('wp-theme: Anzeige werbung:unternehmen fehlt in unternehmen/index.html');
 const SLOTS = ['oben', 'gemeinde', 'blaulicht', 'rathaus', 'wirtschaft', 'vereine'];
 for (const s of SLOTS) {
   const re = new RegExp(`<!-- start:${s}:start -->[\\s\\S]*?<!-- start:${s}:end -->`);
@@ -70,9 +73,15 @@ const dateien = {
   'fuss.html': fuss,
   'startseite.html': start,
   'werbung-buehne.html': anzeigeBuehne,
+  'werbung-unternehmen.html': anzeigeUnternehmen,
 };
+// Vereinsverzeichnis fuer die Vereinszugaenge im Plugin (includes/vereinszugaenge.php).
+const vzZiel = join(wurzel, 'wordpress', 'plugin', 'merzenich-aktuell-core', 'data', 'vereinsverzeichnis.json');
+const vzNeu = readFileSync(join(wurzel, 'deploy', 'vereinsverzeichnis.json'), 'utf8');
+let vzGeaendert = 0;
+if (!existsSync(vzZiel) || readFileSync(vzZiel, 'utf8') !== vzNeu) { vzGeaendert = 1; if (!nurPruefen) { mkdirSync(dirname(vzZiel), { recursive: true }); writeFileSync(vzZiel, vzNeu); } }
 if (!nurPruefen) mkdirSync(ziel, { recursive: true });
-let geaendert = 0;
+let geaendert = vzGeaendert;
 for (const [name, inhalt] of Object.entries(dateien)) {
   const pfad = join(ziel, name);
   const neu = inhalt + '\n';
@@ -80,5 +89,5 @@ for (const [name, inhalt] of Object.entries(dateien)) {
   geaendert++;
   if (!nurPruefen) writeFileSync(pfad, neu);
 }
-console.log(`WP-Theme: ${Object.keys(dateien).length} Vorlagen, ${geaendert} ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+console.log(`WP-Theme: ${Object.keys(dateien).length} Vorlagen + Vereinsverzeichnis, ${geaendert} ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && geaendert) process.exit(2);

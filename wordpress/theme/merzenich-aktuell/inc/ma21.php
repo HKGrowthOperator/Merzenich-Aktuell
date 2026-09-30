@@ -183,8 +183,10 @@ function ma21_startplatz(WP_Post $p): string {
 function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p); }
 
 /**
- * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, fünf
- * Nebenmeldungen (zwei rechts, drei darunter), dann die Rubrikflächen.
+ * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, vier
+ * Nebenmeldungen (zwei rechts, zwei darunter, daneben eine Anzeige), dann die
+ * Rubrikflächen. Die Relevanz 1–10 ordnet Aufmacher und Bühne und hält
+ * Meldungen mit 1–3 von der Startseite fern.
  * Gesetzte Plätze der Redaktion gehen vor; freie Plätze füllt die jüngste
  * passende Meldung. „aus“ = nur in der eigenen Rubrik, nie auf der Startseite.
  */
@@ -192,7 +194,16 @@ function ma21_startseite_belegung(): array {
     static $cache = null;
     if ($cache !== null) return $cache;
     $alle = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 120, 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false]);
-    $alle = array_values(array_filter($alle, fn($p) => ma21_startplatz($p) !== 'aus'));
+    // Relevanz 1–10 (Plugin, includes/relevanz.php): 1–3 nur Rubrik, 7–8 Bühne,
+    // 9–10 Aufmacher, jeweils solange frisch. Feste Plätze gehen vor.
+    $rel = fn($p) => function_exists('ma_relevanz') ? ma_relevanz($p) : 5;
+    $frisch = fn($p) => function_exists('ma_relevanz_frisch') ? ma_relevanz_frisch($p) : false;
+    $alle = array_values(array_filter($alle, fn($p) => ma21_startplatz($p) !== 'aus' && ($rel($p) > 3 || ma21_startplatz($p) !== 'auto')));
+    // Vorrang für Aufmacher und Bühne: frische Meldungen ab Relevanz 7 zuerst
+    // (höhere Relevanz vor niedrigerer, sonst die jüngere), dann alle übrigen.
+    $vorrang = $alle;
+    $gewicht = fn($p) => ($frisch($p) && $rel($p) >= 7) ? $rel($p) : 0;
+    usort($vorrang, fn($a, $b) => $gewicht($b) <=> $gewicht($a));
     $vergeben = []; $motive = []; $MOTIV_MAX = 2;
     $motiv = fn($p) => (int) get_post_thumbnail_id($p->ID);
     $motivFrei = function ($p, array $extra = []) use (&$motive, $motiv, $MOTIV_MAX) { $k = $motiv($p); return !$k || (($motive[$k] ?? 0) + ($extra[$k] ?? 0)) < $MOTIV_MAX; };
@@ -203,7 +214,7 @@ function ma21_startseite_belegung(): array {
     // Aufmacher: gesetzt, sonst jüngste bühnentaugliche Meldung mit großem Bild.
     $aufmacher = null;
     foreach ($alle as $p) if (ma21_startplatz($p) === 'aufmacher' && $buehnenTauglich($p)) { $aufmacher = $p; break; }
-    if (!$aufmacher) foreach ($alle as $p) if (ma21_startplatz($p) === 'auto' && $buehnenTauglich($p) && $breite($p) >= 480 && (ma21_bild($p)['typ'] ?? '') !== 'place') { $aufmacher = $p; break; }
+    if (!$aufmacher) foreach ($vorrang as $p) if (ma21_startplatz($p) === 'auto' && $buehnenTauglich($p) && $breite($p) >= 480 && (ma21_bild($p)['typ'] ?? '') !== 'place') { $aufmacher = $p; break; }
     if ($aufmacher) $belegen($aufmacher);
 
     // Nebenplätze 1–4 (der fünfte Platz unten rechts ist seit 30.09. eine
@@ -217,7 +228,7 @@ function ma21_startseite_belegung(): array {
     foreach ($neben as $p) if ($p && has_category('blaulicht', $p)) $blaulicht++;
     $bMotive = array_filter(array_map($motiv, array_filter(array_merge([$aufmacher], $neben))));
     foreach ([false, true] as $mitOrt) {
-        foreach ($alle as $p) {
+        foreach ($vorrang as $p) {
             if (!in_array(null, $neben, true)) break;
             if (isset($vergeben[$p->ID]) || ma21_startplatz($p) !== 'auto' || !$buehnenTauglich($p) || $breite($p) < 360) continue;
             $istOrt = (ma21_bild($p)['typ'] ?? '') === 'place';
@@ -371,8 +382,31 @@ add_action('init', function (): void {
     add_rewrite_rule('^nachrichten/?$', 'index.php?ma_alle=1', 'top');
     add_rewrite_rule('^nachrichten/page/([0-9]+)/?$', 'index.php?ma_alle=1&paged=$matches[1]', 'top');
     add_rewrite_rule('^api/weather\.json/?$', 'index.php?ma_api=weather', 'top');
+    // /unternehmen/ wie auf der statischen Seite (Aufbau wie Oberberg Aktuell, 30.09.2026).
+    add_rewrite_rule('^unternehmen/?$', 'index.php?ma_unternehmen=1', 'top');
 });
-add_filter('query_vars', function (array $v): array { $v[] = 'ma_alle'; $v[] = 'ma_api'; return $v; });
+add_filter('query_vars', function (array $v): array { $v[] = 'ma_alle'; $v[] = 'ma_api'; $v[] = 'ma_unternehmen'; return $v; });
+add_action('pre_get_posts', function (WP_Query $q): void {
+    if (is_admin() || !$q->is_main_query() || !$q->get('ma_unternehmen')) return;
+    $q->set('post_type', 'post'); $q->set('category_name', 'wirtschaft'); $q->set('posts_per_page', 60);
+    $q->is_home = false; $q->is_archive = true; $q->is_404 = false;
+});
+add_filter('template_include', fn($t) => get_query_var('ma_unternehmen') ? (locate_template('unternehmen.php') ?: $t) : $t);
+// Auch ohne Meldung ist /unternehmen/ eine Seite (Kanäle, Angebote), kein 404.
+add_filter('pre_handle_404', fn($stop, $q) => ($q->is_main_query() && $q->get('ma_unternehmen')) ? true : $stop, 10, 2);
+
+/** Karte der Unternehmensseite: Bild oben, Kicker, Titel, Zeile, Anriss, Weiterlesen. */
+function ma21_u_karte(WP_Post $p, int $i): string {
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+    $ort = ma21_ort($p);
+    return '<article class="u-karte' . ($b ? '' : ' u-karte--ohne-bild') . '"' . ($i >= 8 ? ' data-nachladen hidden' : '') . '>'
+        . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, '(max-width: 760px) 100vw, 380px', $i < 2) . ma21_badge($b, false) . '</a>' : '')
+        . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . '</p>'
+        . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
+        . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(get_the_date('d.m.Y, H:i', $p)) . ' Uhr</time></p>'
+        . '<p class="u-karte__teaser">' . ma21_e(ma21_teaser($p)) . '</p>'
+        . "<a class=\"u-karte__weiter\" href=\"{$url}\">Weiterlesen<span class=\"sr-only\">: {$titel}</span></a></article>";
+}
 // Keine Schrägstrich-Umleitung für /api/weather.json (die Skripte rufen genau diese Adresse).
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_api') ? false : $ziel);
 add_action('pre_get_posts', function (WP_Query $q): void {

@@ -63,7 +63,7 @@ function pruefe($name,$ist,$soll){ global $fehler; $ok=$ist===$soll; if(!$ok)$fe
 echo "Partner-Policies\n";
 $p=ma_current_partner_policy();
 pruefe('Sport-Partner erkannt',$p['role']??'','ma_sport_partner');
-pruefe('Sport-Partner darf nur post', $p['post_types'], ['post']);
+pruefe('Sport-Partner: Meldungen, Termine, Vereinsprofil', $p['post_types'], ['post','ma_event','ma_club']);
 pruefe('Sport-Kategorie festgelegt', $p['categories'], ['sport']);
 
 $GLOBALS['user']=new WP_User(8,['ma_wirtschaft_partner']);
@@ -133,6 +133,11 @@ $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'
 pruefe('Ohne Formular gilt der gespeicherte Stand',$d['post_status'],'pending');
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>52,'_thumbnail_id'=>0]);
 pruefe('Ohne Bild keine Erklaerung noetig',$d['post_status'],'pending');
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish','post_content'=>'<!-- wp:image {"id":5} --><figure><img src="x.jpg"></figure><!-- /wp:image -->'],['ID'=>54,'_thumbnail_id'=>0]);
+pruefe('Bild im Text ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish','post_content'=>'Nur Text ohne Bild.'],['ID'=>55,'_thumbnail_id'=>0]);
+pruefe('Text ohne Bild wird pending',$d['post_status'],'pending');
+pruefe('Erklaerung nennt Lizenzrechte und Verantwortung',str_contains(ma_partner_rights_text(),'Lizenzrechte') && str_contains(ma_partner_rights_text(),'selbst verantwortlich'),true);
 $GLOBALS['user']=new WP_User(11,['ma_immobilien_partner']);
 $d=ma_partner_force_pending(['post_type'=>'ma_property','post_status'=>'publish'],['ID'=>53,'_thumbnail_id'=>7]);
 pruefe('Makler: Inserat mit Bild ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');

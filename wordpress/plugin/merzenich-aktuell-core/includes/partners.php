@@ -4,6 +4,9 @@
  * Unternehmen/Werbung und Immobilien.
  *
  * Partner duerfen eigene Inhalte erstellen und zur Freigabe einreichen.
+ * Sport- und Vereins-Partner (seit 30.09.2026 ein Zugang je Verein, siehe
+ * vereinszugaenge.php) reichen neben Meldungen auch Termine und Ergaenzungen
+ * zum Vereinsprofil ein.
  * Sie duerfen niemals selbst veroeffentlichen, fremde Inhalte bearbeiten oder
  * redaktionelle Freigaben setzen.
  */
@@ -39,7 +42,7 @@ function ma_partner_policies(): array {
         'ma_sport_partner' => [
             'label' => 'Sport-Partner',
             'description' => 'Sportverein / Mannschaft',
-            'post_types' => ['post'],
+            'post_types' => ['post','ma_event','ma_club'],
             'categories' => ['sport'],
         ],
         'ma_rathaus_partner' => [
@@ -51,7 +54,7 @@ function ma_partner_policies(): array {
         'ma_vereine_partner' => [
             'label' => 'Vereins-Partner',
             'description' => 'Verein / Initiative',
-            'post_types' => ['post'],
+            'post_types' => ['post','ma_event','ma_club'],
             'categories' => ['vereine'],
         ],
         'ma_wirtschaft_partner' => [
@@ -155,11 +158,19 @@ const MA_PARTNER_RIGHTS_META = 'ma_partner_rights_declared';
 const MA_PARTNER_RIGHTS_MISSING_META = '_ma_partner_rights_missing';
 
 function ma_partner_rights_text(): string {
-    return 'Wir haben die Fotos selbst aufgenommen oder dürfen sie veröffentlichen. Kennzeichen, erkennbare Gesichter und Hausnummern sind nicht zu sehen oder unkenntlich gemacht.';
+    // Ausformuliert auf Wunsch des Betreibers (30.09.2026), gleicher Kern wie
+    // die Bildrechte-Erklaerung der Formulare auf der Website.
+    return 'Ich versichere, dass ich die Bilder in diesem Beitrag selbst aufgenommen habe oder alle nötigen Nutzungs- und Lizenzrechte daran besitze. '
+        . 'Erkennbar abgebildete Personen sind mit der Veröffentlichung einverstanden; Kennzeichen, Gesichter Unbeteiligter und Hausnummern sind nicht zu sehen oder unkenntlich gemacht. '
+        . 'Merzenich Aktuell darf die Bilder mit diesem Beitrag unentgeltlich online veröffentlichen. '
+        . 'Für die Rechte an den Bildern bin ich selbst verantwortlich: Macht ein Dritter Ansprüche wegen fehlender Rechte geltend, stelle ich Merzenich Aktuell davon frei.';
 }
 
 /** Hat der Beitrag ein Bild? Formularwert vor gespeichertem Stand. */
-function ma_partner_has_image(int $post_id, array $postarr): bool {
+function ma_partner_has_image(int $post_id, array $postarr, string $inhalt = ''): bool {
+    // Auch Bilder im Text zaehlen (Bild-, Galerie-, Medien-Text-Block, <img>).
+    if ($inhalt === '' && $post_id > 0 && function_exists('get_post_field')) $inhalt = (string)get_post_field('post_content', $post_id);
+    if (preg_match('/<img\b|<!-- wp:(image|gallery|media-text|cover)\b/i', $inhalt)) return true;
     if (array_key_exists('_thumbnail_id', $postarr)) return (int)$postarr['_thumbnail_id'] > 0;
     return $post_id > 0 && function_exists('has_post_thumbnail') && has_post_thumbnail($post_id);
 }
@@ -177,8 +188,8 @@ function ma_partner_rights_declared(int $post_id): bool {
 function ma_partner_rights_field(int $post_id): void {
     if (ma_current_partner_policy()) {
         $v = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true);
-        echo '<p><label><input type="checkbox" name="'.esc_attr(MA_PARTNER_RIGHTS_META).'" value="1" '.checked($v, '1', false).'> <strong>Fotoerlaubnis:</strong> '.esc_html(ma_partner_rights_text()).'</label>';
-        echo '<br><span class="description">Pflicht, wenn der Beitrag ein Bild hat. Ohne diesen Haken bleibt er Entwurf.</span></p>';
+        echo '<p><label><input type="checkbox" name="'.esc_attr(MA_PARTNER_RIGHTS_META).'" value="1" '.checked($v, '1', false).'> <strong>Bildrechte und Lizenzen:</strong> '.esc_html(ma_partner_rights_text()).'</label>';
+        echo '<br><span class="description">Pflicht, sobald der Beitrag ein Bild enthält (Beitragsbild oder Bild im Text). Ohne diesen Haken kann er nicht zur Freigabe geschickt werden und bleibt Entwurf.</span></p>';
         return;
     }
     if ((string)get_post_meta($post_id, '_ma_partner_submission', true) !== '1') return;
@@ -227,7 +238,7 @@ function ma_partner_force_pending(array $data, array $postarr): array {
     // Mit Bild nur nach Fotoerlaubnis zur Freigabe.
     $post_id = (int)($postarr['ID'] ?? 0);
     if ($data['post_status'] === 'pending') {
-        if (ma_partner_has_image($post_id, $postarr) && !ma_partner_rights_declared($post_id)) {
+        if (ma_partner_has_image($post_id, $postarr, (string)wp_unslash($data['post_content'] ?? '')) && !ma_partner_rights_declared($post_id)) {
             $data['post_status'] = 'draft';
             if ($post_id) update_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, '1');
         } elseif ($post_id) {
@@ -282,6 +293,7 @@ function ma_partner_submission_notification(string $new_status, string $old_stat
     $body .= 'Inhaltstyp: '.$post->post_type."\n";
     $body .= 'Titel: '.$post->post_title."\n\n";
     $body .= 'Prüfen: '.admin_url('post.php?post='.$post->ID.'&action=edit')."\n";
+    $body .= 'Freigeben mit Relevanz und Startseite: '.admin_url('admin.php?page=ma-freigaben')."\n";
     wp_mail($to, $subject, $body);
 }
 

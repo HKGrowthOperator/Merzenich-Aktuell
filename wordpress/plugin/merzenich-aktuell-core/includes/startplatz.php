@@ -3,7 +3,8 @@
  * Startplatz: Die Redaktion bestimmt, wo eine Meldung steht (30.09.2026).
  *
  * Meta ma_startplatz je Beitrag:
- *   auto        automatisch (jüngste passende Meldung füllt freie Plätze)
+ *   auto        automatisch nach Relevanz 1–10 (includes/relevanz.php), sonst
+ *               füllt die jüngste passende Meldung freie Plätze
  *   aufmacher   großer Aufmacher oben
  *   buehne-1…4  Bühne: 1–2 rechts neben dem Aufmacher, 3–4 darunter
  *               (der Platz unten rechts ist eine Anzeige)
@@ -73,6 +74,11 @@ function ma_startplatz_box(WP_Post $p): void {
         printf('<option value="%s"%s>%s%s</option>', esc_attr($wert), selected($jetzt, $wert, false), esc_html($label), esc_html($zusatz));
     }
     echo '</select><p class="description">Ein fester Platz verdrängt die Meldung, die dort stand; sie steht dann wieder in ihrer Rubrik. „Nur in der Rubrik“ hält die Meldung von der Startseite fern.</p>';
+    // Relevanz 1–10 (includes/relevanz.php): steuert „Automatisch“.
+    if (function_exists('ma_relevanz_auswahl')) {
+        echo '<p><strong>Relevanz</strong> <span class="description">(bei „Automatisch“)</span></p>';
+        echo ma_relevanz_auswahl('ma_relevanz', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true)));
+    }
     printf('<p><a href="%s">Alle Plätze der Startseite ansehen</a></p>', esc_url(admin_url('admin.php?page=ma-startseite')));
 }
 
@@ -82,6 +88,10 @@ add_action('save_post_post', function (int $post_id): void {
     if (!ma_startplatz_darf() || !current_user_can('edit_post', $post_id)) return;
     $platz = sanitize_key(wp_unslash($_POST['ma_startplatz'] ?? 'auto'));
     ma_startplatz_setzen($post_id, $platz);
+    if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_relevanz'])) {
+        $r = ma_relevanz_saeubern(wp_unslash($_POST['ma_relevanz']));
+        if ($r) update_post_meta($post_id, 'ma_relevanz', $r);
+    }
 }, 20);
 
 /* ---------------------------------------------------------- Spalte in der Beitragsliste */
