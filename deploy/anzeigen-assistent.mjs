@@ -38,6 +38,9 @@ const schritt = (n, titel, innen) => `<fieldset class="anz-schritt" data-schritt
 const fehler = [];
 for (const a of daten.arten) { if (!ANGABEN[a.wert]) fehler.push(`Angaben fuer ${a.wert} fehlen`); bild(a.bild); for (const g of a.auswahl) for (const o of g.optionen) bild(o.bild); }
 
+// Bildrechte: Pflicht, sobald ein Bild angehaengt ist (Betreiber 30.09.2026);
+// gleicher Wortlaut in allen Formularen mit Bild-Upload, geprueft auch im Dienst.
+const BILDRECHTE = '<label class="check bildrechte"><input type="checkbox" name="bildrechte" value="ja" data-bildrechte><span><strong>Bildrechte (Pflicht, wenn Sie ein Bild hochladen):</strong> Ich versichere, dass ich die hochgeladenen Bilder selbst aufgenommen habe oder alle nötigen Nutzungs- und Lizenzrechte daran besitze. Erkennbar abgebildete Personen sind mit der Veröffentlichung einverstanden. Ich erlaube Merzenich Aktuell, die Bilder im Zusammenhang mit dieser Einsendung unentgeltlich online zu veröffentlichen, mit meinem Namen als Bildnachweis. Für die Rechte an den Bildern bin ich selbst verantwortlich: Macht ein Dritter Ansprüche wegen fehlender Rechte geltend, stelle ich Merzenich Aktuell davon frei.</span></label>';
 const formular = '<!-- assistent:start -->'
   + '<form class="form anz-form anz-assistent" name="anzeige" method="POST" action="/api/formular" enctype="multipart/form-data" id="formular" data-assistent>'
   + '<input type="hidden" name="weiter" value="/anzeigen/aufgeben/danke/"><input type="hidden" name="form-name" value="anzeige">'
@@ -50,9 +53,9 @@ const formular = '<!-- assistent:start -->'
   + schritt(3, 'Angaben zur Anzeige', daten.arten.map((a) => `<div class="anz-teil" data-art="${esc(a.wert)}"><p class="anz-teil__titel">${esc(a.titel)}</p>${ANGABEN[a.wert]}</div>`).join(''))
   + schritt(4, 'Text und Bilder', '<label>Anzeigentext<textarea name="text" rows="7" required placeholder="Was soll in der Anzeige stehen? Bei Werbung: Was möchten Sie erreichen?"></textarea></label>'
       + '<div class="grid2"><label>Gewünschter Erscheinungstermin (optional)<input type="date" name="erscheinen"></label><label>Bilder (optional, bis zu drei, je höchstens 6 MB)<input type="file" name="bild" accept="image/*" multiple></label></div>'
-      + '<label class="check"><input type="checkbox" name="bildrechte" value="ja"><span>Ich besitze die Rechte an den Bildern und erlaube die Veröffentlichung in dieser Anzeige.</span></label>')
+      + BILDRECHTE)
   + schritt(5, 'Ihre Kontaktdaten', '<div class="grid2"><label>Ihr Name<input name="name" required autocomplete="name"></label><label>E-Mail<input type="email" name="email" required autocomplete="email"></label></div>'
-      + '<label>Telefon (optional, für Rückfragen)<input type="tel" name="telefon" autocomplete="tel"></label>'
+      + '<label>Telefon <span data-telefon-hinweis>(optional, für Rückfragen)</span><input type="tel" name="telefon" autocomplete="tel" pattern="[0-9 +()/-]{6,}" title="Bitte eine Telefonnummer mit mindestens sechs Ziffern angeben."></label>'
       + '<div class="anz-uebersicht" hidden aria-live="polite"></div>'
       + '<label class="check"><input type="checkbox" name="einwilligung" required value="ja"><span>Ich habe die <a href="/datenschutz/">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung meiner Anzeige einverstanden.</span></label>'
       + '<button class="btn" type="submit">Anzeige an die Redaktion senden</button>'

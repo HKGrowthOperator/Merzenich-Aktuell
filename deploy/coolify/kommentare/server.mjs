@@ -467,6 +467,11 @@ async function formularAnnehmen(req, res) {
   if (fehlend.length) return fehlschlag('felder', 'Bitte alle Pflichtfelder ausfüllen: ' + fehlend.join(', ') + '.');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(felder.email)) return fehlschlag('email', 'Bitte eine gültige E-Mail-Adresse angeben.');
   if (!/^(ja|on|true|1)$/i.test(felder.einwilligung)) return fehlschlag('einwilligung', 'Bitte der Verarbeitung zustimmen.');
+  // Bildrechte (Betreiber 30.09.2026): Wer ein Bild anhaengt, muss die
+  // Erklaerung zu Urheber- und Lizenzrechten bestaetigen.
+  if (dateien.length && !/^(ja|on|true|1)$/i.test(felder.bildrechte || '')) return fehlschlag('bildrechte', 'Sie haben ein Bild angehängt: Bitte bestätigen Sie die Bildrechte.');
+  // Traueranzeigen: Telefon ist Pflicht (E-Mail ist es fuer alle Formulare).
+  if (name === 'anzeige' && /^traueranzeige$/i.test(felder.art || '') && (String(felder.telefon || '').replace(/\D/g, '').length < 6)) return fehlschlag('telefon', 'Für Traueranzeigen brauchen wir eine Telefonnummer für Rückfragen.');
   for (const k of Object.keys(felder)) if (felder[k].length > 5000) felder[k] = felder[k].slice(0, 5000);
   const absender = formAbsender(req);
   const jetzt = Date.now();

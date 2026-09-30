@@ -61,13 +61,25 @@
 
   /* ---------- Formulare: Sende-Status ---------- */
   $$('form[action="/api/formular"]').forEach(function (form) {
+    // Bildrechte: Pflicht, sobald ein Bild ausgewaehlt ist (Betreiber 30.09.2026).
+    var rechte = $('[data-bildrechte]', form);
+    if (rechte) {
+      var pruefeRechte = function () {
+        var da = $$('input[type=file]', form).some(function (f) { return !f.disabled && f.files && f.files.length; });
+        rechte.required = da;
+        rechte.setCustomValidity(da && !rechte.checked ? 'Bitte bestätigen Sie die Bildrechte, bevor Sie das Bild senden.' : '');
+      };
+      $$('input[type=file]', form).forEach(function (f) { f.addEventListener('change', pruefeRechte); });
+      rechte.addEventListener('change', pruefeRechte);
+      pruefeRechte();
+    }
     form.addEventListener('submit', function () {
       var b = $('button[type=submit]', form); if (b) { b.disabled = true; b.dataset.label = b.textContent; b.textContent = 'Wird gesendet …'; }
     });
     // Der Dienst leitet bei einem Fehler mit ?fehler=<code> hierher zurueck.
     var code = new URLSearchParams(location.search).get('fehler');
     if (code) {
-      var texte = { felder: 'Bitte füllen Sie alle Pflichtfelder aus.', email: 'Bitte geben Sie eine gültige E-Mail-Adresse an.', einwilligung: 'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.', limit: 'Zu viele Einsendungen in kurzer Zeit. Bitte versuchen Sie es später noch einmal.', datei: 'Als Anhang sind nur Bilder möglich.', gross: 'Ein Bild ist zu groß (höchstens 6 MB).', unbekannt: 'Das Formular konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie der Redaktion.' };
+      var texte = { felder: 'Bitte füllen Sie alle Pflichtfelder aus.', email: 'Bitte geben Sie eine gültige E-Mail-Adresse an.', einwilligung: 'Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.', limit: 'Zu viele Einsendungen in kurzer Zeit. Bitte versuchen Sie es später noch einmal.', datei: 'Als Anhang sind nur Bilder möglich.', gross: 'Ein Bild ist zu groß (höchstens 6 MB).', bildrechte: 'Sie haben ein Bild angehängt: Bitte bestätigen Sie die Bildrechte.', telefon: 'Für Traueranzeigen brauchen wir eine Telefonnummer für Rückfragen.', unbekannt: 'Das Formular konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie der Redaktion.' };
       var p = document.createElement('p'); p.className = 'form-fehler'; p.setAttribute('role', 'alert'); p.textContent = texte[code] || texte.unbekannt;
       form.prepend(p); p.scrollIntoView({ block: 'center' });
     }

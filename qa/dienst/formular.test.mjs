@@ -51,6 +51,7 @@ for (const f of formulare) {
   pruefe(felder.has('bot-field'), `${f.seite}: Honeypot bot-field vorhanden`);
   pruefe(/method="POST"/i.test(f.html), `${f.seite}: method=POST`);
   if (/type="file"/.test(f.html)) pruefe(/enctype="multipart\/form-data"/.test(f.html), `${f.seite}: Datei-Upload mit multipart`);
+  if (/type="file"/.test(f.html)) pruefe(/name="bildrechte"[^>]*data-bildrechte/.test(f.html) && /Lizenzrechte/.test(f.html), `${f.seite}: Bild-Upload mit ausformulierter Bildrechte-Erklaerung`);
   if (weiter) {
     const danke = join(SITE, weiter, 'index.html');
     pruefe(existsSync(danke), `${f.seite}: Danke-Seite ${weiter} existiert`);
@@ -107,13 +108,29 @@ for (const name of Object.keys(FORMULARE)) {
   pruefe(w.status === 400 && w.json.grund === 'einwilligung', 'fehlende Einwilligung abgelehnt', w);
   const u = await sende({ 'form-name': 'unbekannt', ...beispiel('kontakt') });
   pruefe(u.status === 400, 'unbekannter Formulartyp abgelehnt', u);
-  const gross = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'grosses Bild' }, { dateien: [{ name: 'gross.jpg', typ: 'image/jpeg', inhalt: new Uint8Array(6 * 1024 * 1024 + 10) }] });
+  const gross = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'grosses Bild', bildrechte: 'ja' }, { dateien: [{ name: 'gross.jpg', typ: 'image/jpeg', inhalt: new Uint8Array(6 * 1024 * 1024 + 10) }] });
   pruefe(gross.status === 413 && gross.json.grund === 'gross', 'Bild ueber 6 MB abgelehnt', gross);
-  const typ = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'falscher Typ' }, { dateien: [{ name: 'skript.html', typ: 'text/html', inhalt: new TextEncoder().encode('<script>alert(1)</script>') }] });
+  const typ = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'falscher Typ', bildrechte: 'ja' }, { dateien: [{ name: 'skript.html', typ: 'text/html', inhalt: new TextEncoder().encode('<script>alert(1)</script>') }] });
   pruefe(typ.status === 400 && typ.json.grund === 'datei', 'Anhang, der kein Bild ist, abgelehnt', typ);
   pruefe(!existsSync(join(daten, 'formulare')) || !readdirSync(join(daten, 'formulare')).some((x) => /skript/.test(x)), 'abgelehnter Anhang nicht abgelegt');
-  const bild = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'mit Bild' }, { dateien: [{ name: 'foto.jpg', typ: 'image/jpeg', inhalt: new Uint8Array([0xff, 0xd8, 0xff, 0xd9]) }] });
+  const bild = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'mit Bild', bildrechte: 'ja' }, { dateien: [{ name: 'foto.jpg', typ: 'image/jpeg', inhalt: new Uint8Array([0xff, 0xd8, 0xff, 0xd9]) }] });
   pruefe(bild.json && bild.json.ok && gespeichert().some((x) => x.id === bild.json.id && x.dateien.length === 1), 'Bild angenommen und abgelegt', bild);
+  // Bildrechte (30.09.2026): mit Bild nur nach Bestaetigung.
+  const ohneRechte = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'Bild ohne Rechte' }, { dateien: [{ name: 'foto2.jpg', typ: 'image/jpeg', inhalt: new Uint8Array([0xff, 0xd8, 0xff, 0xd9]) }] });
+  pruefe(ohneRechte.status === 400 && ohneRechte.json.grund === 'bildrechte', 'Bild ohne Bestaetigung der Bildrechte abgelehnt', ohneRechte);
+  pruefe(!gespeichert().some((x) => x.felder.text === 'Bild ohne Rechte'), 'Bild ohne Bildrechte nicht gespeichert');
+  // Traueranzeige (30.09.2026): Telefon und E-Mail Pflicht.
+  const trauer = { 'form-name': 'anzeige', ...beispiel('anzeige'), art: 'Traueranzeige' };
+  const tOhne = await sende({ ...trauer, text: 'Trauer ohne Telefon' });
+  pruefe(tOhne.status === 400 && tOhne.json.grund === 'telefon', 'Traueranzeige ohne Telefon abgelehnt', tOhne);
+  const tKurz = await sende({ ...trauer, text: 'Trauer kurzes Telefon', telefon: '12' });
+  pruefe(tKurz.status === 400 && tKurz.json.grund === 'telefon', 'Traueranzeige mit zu kurzer Telefonnummer abgelehnt', tKurz);
+  const tMit = await sende({ ...trauer, text: 'Trauer mit Telefon', telefon: '02421 123456' });
+  pruefe(tMit.json && tMit.json.ok, 'Traueranzeige mit Telefon angenommen', tMit);
+  const tMail = await sende({ ...trauer, text: 'Trauer ohne Mail', telefon: '02421 123456', email: '' });
+  pruefe(tMail.status === 400 && tMail.json.grund === 'felder', 'Traueranzeige ohne E-Mail abgelehnt', tMail);
+  const werbung = await sende({ 'form-name': 'anzeige', ...beispiel('anzeige'), art: 'Werbung', text: 'Werbung ohne Telefon' });
+  pruefe(werbung.json && werbung.json.ok, 'andere Anzeigen ohne Telefon weiter moeglich', werbung);
   const umleitung = await sende({ 'form-name': 'meldung', ...beispiel('meldung'), text: 'Umleitung', weiter: '/meldung-senden/danke/' }, { json: false });
   pruefe(umleitung.status === 303 && umleitung.ort === '/meldung-senden/danke/', 'ohne JavaScript: 303 auf die Danke-Seite', umleitung);
   pruefe(!/[?&](email|name|text)=/.test(umleitung.ort || ''), 'Danke-URL enthaelt keine Formulardaten');

@@ -24,6 +24,12 @@
       t.hidden = !an;
       t.querySelectorAll('input,select,textarea').forEach((f) => { f.disabled = !an; });
     });
+    // Traueranzeige: Telefon und E-Mail sind Pflicht (Betreiber 30.09.2026).
+    const tel = form.querySelector('input[name="telefon"]');
+    const hinweis = form.querySelector('[data-telefon-hinweis]');
+    const trauer = a === 'Traueranzeige';
+    if (tel) tel.required = trauer;
+    if (hinweis) hinweis.textContent = trauer ? '(Pflicht bei Traueranzeigen, für Rückfragen)' : '(optional, für Rückfragen)';
   };
   const gruppenOffen = () => [...form.querySelectorAll(`.anz-teil[data-art="${CSS.escape(art())}"] .anz-gruppe`)]
     .filter((g) => !g.querySelector('input:checked'));
