@@ -1,5 +1,5 @@
 {
-  "hinweis": "Ressort-Dropdowns (deploy/ressort-menue.mjs). Nur Ziele, die es als Seite gibt; der Generator bricht ab, wenn eines fehlt. 'offen' sammelt gewuenschte Punkte ohne Seite: sie erscheinen erst, wenn es echte Inhalte dafuer gibt.",
+  "hinweis": "Ressort-Dropdowns (deploy/ressort-menue.mjs). Nur Ziele, die es als Seite gibt; der Generator bricht ab, wenn eines fehlt. 'offen' sammelt gewuenschte Punkte ohne Seite: sie erscheinen erst, wenn es echte Inhalte dafuer gibt. 'mehrBilder': weitere bebilderte Beitraege links unter dem Ressortnamen (Sport, Wunsch Betreiber 30.09.2026). 'werbung': Anzeige aus assets/werbung.json in der freien Flaeche rechts neben den Linkgruppen (Vereine, 30.09.2026).",
   "ressorts": [
     {
       "href": "/nachrichten/",
@@ -231,7 +231,8 @@
       "offen": [
         "Ergebnisse",
         "weitere Sportarten"
-      ]
+      ],
+      "mehrBilder": 2
     },
     {
       "href": "/termine/",
@@ -365,7 +366,8 @@
         "Schützen",
         "Karneval",
         "Musik/Kultur"
-      ]
+      ],
+      "werbung": true
     },
     {
       "href": "/rathaus/",
@@ -587,6 +589,56 @@
         "Gewerbe",
         "Energie"
       ]
+    },
+    {
+      "href": "/unternehmen/",
+      "titel": "Unternehmen",
+      "alle": "Alle Unternehmensmeldungen",
+      "gruppen": [
+        {
+          "titel": "Unternehmen",
+          "links": [
+            [
+              "Alle Unternehmensmeldungen",
+              "/unternehmen/"
+            ],
+            [
+              "Wirtschaft",
+              "/wirtschaft/"
+            ],
+            [
+              "Branchenbuch",
+              "/betriebe/"
+            ],
+            [
+              "Stellenmarkt",
+              "/jobs/"
+            ],
+            [
+              "Immobilienmarkt",
+              "/immobilien/"
+            ]
+          ]
+        },
+        {
+          "titel": "Für Unternehmen",
+          "links": [
+            [
+              "Unternehmenskanal anfragen",
+              "/anzeigen/aufgeben/"
+            ],
+            [
+              "Werben & Mediadaten",
+              "/werben/"
+            ],
+            [
+              "Betrieb eintragen",
+              "/betriebe/eintragen/"
+            ]
+          ]
+        }
+      ],
+      "offen": []
     },
     {
       "href": "/tipp/",

@@ -28,7 +28,7 @@ const latest = JSON.parse(readFileSync(join(site, 'api', 'latest.json'), 'utf8')
 
 const ORTSTEIL = { merzenich: 'Merzenich', golzheim: 'Golzheim', girbelsrath: 'Girbelsrath', morschenich: 'Morschenich', buergewald: 'Bürgewald' };
 // Ressortseite -> Schluessel im Inhaltsindex; /nachrichten/ zeigt alle.
-const RESSORT = { '/blaulicht/': 'blaulicht', '/sport/': 'sport', '/vereine/': 'vereine', '/rathaus/': 'rathaus', '/leben/': 'leben', '/wirtschaft/': 'wirtschaft', '/menschen/': 'menschen', '/tipp/': 'tipp' };
+const RESSORT = { '/blaulicht/': 'blaulicht', '/sport/': 'sport', '/vereine/': 'vereine', '/rathaus/': 'rathaus', '/leben/': 'leben', '/wirtschaft/': 'wirtschaft', '/unternehmen/': 'wirtschaft', '/menschen/': 'menschen', '/tipp/': 'tipp' };
 
 const fehler = [];
 const zielDa = (href) => {
@@ -58,9 +58,15 @@ const ressorts = {};
 for (const r of quelle.ressorts) {
   if (!zielDa(r.href)) fehler.push(`${r.titel}: Ressortseite ${r.href} fehlt`);
   for (const g of r.gruppen) for (const [label, href] of g.links) if (!zielDa(href)) fehler.push(`${r.titel} / ${g.titel}: "${label}" -> ${href} fehlt`);
+  const passend = artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]);
   const neu = r.href === '/termine/' ? termine
-    : bebildertZuerst(artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]).slice(0, 12)).slice(0, 4).map(beitrag);
-  ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu };
+    : bebildertZuerst(passend.slice(0, 12)).slice(0, 4).map(beitrag);
+  // Weitere Bildmeldungen links unter dem Ressortnamen: nur Beitraege mit
+  // eigenem Bild, die nicht schon rechts stehen.
+  const rechts = new Set(neu.map((x) => x.url));
+  const mehr = r.mehrBilder ? passend.filter((a) => a.bild?.src && !rechts.has(a.url)).slice(0, r.mehrBilder).map(beitrag) : [];
+  if (r.mehrBilder && mehr.length < r.mehrBilder) fehler.push(`${r.titel}: nur ${mehr.length} von ${r.mehrBilder} weiteren Bildmeldungen`);
+  ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu, ...(mehr.length ? { mehr } : {}), ...(r.werbung ? { werbung: true } : {}) };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }
 

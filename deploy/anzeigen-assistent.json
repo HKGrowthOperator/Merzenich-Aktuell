@@ -48,6 +48,7 @@
           {"wert": "Tipp (bezahlter Beitrag)", "bild": "tipp", "titel": "Tipp", "text": "Bezahlter, gekennzeichneter Beitrag in der Rubrik Tipp."},
           {"wert": "Sponsoring einer Rubrik", "bild": "sponsoring", "titel": "Rubrik-Sponsoring", "text": "Präsentieren Sie eine Rubrik, zum Beispiel Termine."},
           {"wert": "Unternehmenspräsenz", "bild": "laden", "titel": "Unternehmensporträt", "text": "Ihr Betrieb mit Porträt, Öffnungszeiten und Kontakt."},
+          {"wert": "Unternehmenskanal", "bild": "laden", "titel": "Unternehmenskanal", "text": "Eigene Seite unter „Unternehmen“ mit Ihren Beiträgen, jede als Anzeige gekennzeichnet."},
           {"wert": "Noch offen, bitte beraten", "bild": "beratung", "titel": "Beratung", "text": "Sie wissen es noch nicht? Wir melden uns."}
         ]}
       ]

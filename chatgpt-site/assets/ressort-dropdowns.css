@@ -114,3 +114,17 @@
   .ressort-dropdown__story{grid-template-columns:1fr;gap:8px;padding:0;margin:0;border-bottom:0}
   .ressort-dropdown__story-copy strong{font-size:15.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 }
+
+/* Wunsch Betreiber 30.09.2026: Sport zeigt links unter dem Ressortnamen zwei
+   weitere Bildmeldungen; Vereine fuellt die freie Flaeche rechts neben den
+   Linkgruppen mit einer Anzeige (Format wie die Spalten-Anzeigen). */
+@media (min-width:768px){
+  .ressort-dropdown__mehr{display:grid;gap:14px;margin-top:22px;padding-top:16px;border-top:1px solid rgba(18,22,25,.1)}
+  .ressort-dropdown__mehr .ressort-dropdown__story{grid-template-columns:1fr;gap:7px;padding:0;margin:0;border-bottom:0}
+  .ressort-dropdown__mehr .ressort-dropdown__story-copy strong{font-size:14.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+  .ressort-dropdown__werbung{grid-column:2;min-width:0;margin:0;padding:0;border:0;background:none}
+  .ressort-dropdown__werbung .werbung-label{display:block;margin:0 0 6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6d6860}
+  .ressort-dropdown__werbung .ma-ad-card{display:block;color:var(--ink);text-decoration:none}
+  .ressort-dropdown__werbung .werbung-credit{display:block;margin-top:6px;font-size:10px;color:#6d6860}
+  .ressort-dropdown__werbung .werbung-credit a{color:inherit}
+}

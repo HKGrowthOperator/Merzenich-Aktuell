@@ -119,9 +119,9 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
 // Vier Spalten wie die Schublade auf dem Telefon, darunter die drei Wege, etwas
 // an die Redaktion zu geben. Unter 768 px bleibt es bei der Schublade.
 const MEGA_SPALTEN = [
-  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
+  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
   ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
-  ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/unternehmen/', 'Unternehmen'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
+  ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
   ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen']]],
 ];
 const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-senden/', 'Meldung senden'], ['/termine/melden/', 'Termin melden']];
@@ -187,7 +187,8 @@ for (const pfad of seiten) {
   }
   if (!html.includes('/assets/werbung.js')) html = html.replace(/<script src="\/assets\/einwilligung\.js[^"]*" defer><\/script>/, (m) => m + WERBUNG_JS);
   // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
-  html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/tipp\/")/g, '$1<a href="/tipp/">Tipp</a>');
+  // Seit 30.09.2026 steht „Unternehmen“ dazwischen (deploy/unternehmen.mjs).
+  html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/(?:tipp|unternehmen)\/")/g, '$1<a href="/tipp/">Tipp</a>');
   // KBS/Ordin 23.09.2026: Werbefrei-Abo und Dunkelmodus sind vollständig entfernt.
   html = html.replace(/<a href="\/werbefrei\/">Werbefrei lesen<\/a>/g, '');
   html = html.replace(/<script src="\/assets\/(?:theme|werbefrei)\.js[^"]*" defer><\/script>/g, '');

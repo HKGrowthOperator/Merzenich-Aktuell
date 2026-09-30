@@ -519,3 +519,36 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 .vereine-weitere-orte h3{font-size:16px;margin:16px 0 4px}
 /* Ortsseiten: Termine und Vereine auch mobil zeigen (die allgemeine Seitenleiste bleibt dort aus). */
 @media (max-width:1023px){.content-grid>.sidebar:has(.ort-termine){display:block;margin-top:32px}}
+/* Wetter ganz rechts im Kopf (30.09.2026): Handy- und Tabletkopf. Am Desktop
+   steht es in .header-local; die Kopie nur dort, wo .header-local ausgeblendet ist. */
+.kopf-wetter{display:none;align-items:center;font-size:13px;font-weight:650;color:#242424;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (max-width:1180px){.mast-actions>.kopf-wetter{display:inline-flex}}
+@media (max-width:767px){.masthead .mast-actions{gap:4px!important}.mast-actions>.kopf-wetter{font-size:14px;margin-right:4px}.kopf-wetter-icon{margin-right:3px}}
+@media (max-width:389px){.kopf-wetter-icon{display:none}.mast-actions>.kopf-wetter{font-size:13px}.masthead .logo img{height:auto!important;width:172px!important;max-width:172px!important}}
+/* Unternehmen (30.09.2026, Aufbau wie der Wirtschaftsbereich von Oberberg Aktuell):
+   Karten je zwei nebeneinander, Bild oben, Kicker, Titel, Zeile mit Datum bzw.
+   „Anzeige“, Anriss, Weiterlesen. Nachladen beim Scrollen (unternehmen.js). */
+.u-karten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
+.u-karte{display:flex;flex-direction:column;min-width:0;border-bottom:1px solid var(--line);padding-bottom:22px}
+.u-karte[hidden]{display:none}
+.u-karte__bild{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:#ece9e3;margin-bottom:14px}
+.u-karte__bild img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.u-karte__bild:hover img{transform:scale(1.02)}
+.u-karte__bild .badge{position:absolute;left:8px;bottom:8px}
+.u-karte__kicker{margin:0 0 6px;font:800 11px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--red,#8c1c22)}
+.u-karte h2{margin:0 0 8px;font-family:var(--serif);font-size:24px;line-height:1.16;letter-spacing:-.01em}
+.u-karte h2 a{color:var(--ink);text-decoration:none}
+.u-karte h2 a:hover{color:var(--red,#8c1c22)}
+.u-karte__meta{margin:0 0 12px;font-size:12.5px;color:#5f5b55;font-style:italic}
+.u-karte__meta .fbadge{font-style:normal}
+.u-karte__teaser{margin:0 0 16px;font-size:15.5px;line-height:1.55;color:var(--ink)}
+.u-karte__weiter{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;background:var(--red,#8c1c22);color:#fff;font:700 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.u-karte__weiter:hover,.u-karte__weiter:focus-visible{background:var(--ink)}
+.u-mehr{text-align:center;margin:32px 0 0}
+.u-box .u-kanaele{list-style:none;margin:0 0 14px;padding:0}
+.u-box .u-kanaele li{padding:9px 0;border-bottom:1px solid var(--line)}
+.u-box .u-kanaele a{font-weight:700;color:var(--ink)}
+.u-box .u-kanaele small{display:block;font-size:12px;color:#5f5b55}
+.u-leer{font-size:14px;line-height:1.55;color:#5f5b55;margin:0 0 14px}
+.sidebar .werbung--unternehmen{margin-top:24px}
+@media (max-width:767px){.u-karten{grid-template-columns:1fr;gap:28px}.u-karte h2{font-size:21px}.content-grid>.sidebar:has(.u-box){display:block;margin-top:40px}}

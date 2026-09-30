@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=3366a6ebe9';
+  const MENUE_URL = '/assets/ressort-menue.json?v=18917f4892';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -15,6 +15,7 @@
     '/rathaus/': 'Verwaltung, Rat, Beteiligung und kommunale Entscheidungen.',
     '/leben/': 'Schule, Freizeit, Umwelt, Familie und Alltag in der Gemeinde.',
     '/wirtschaft/': 'Unternehmen, Infrastruktur und Strukturwandel rund um Merzenich.',
+    '/unternehmen/': 'Betriebe aus der Gemeinde, Unternehmenskanäle und Wirtschaftsmeldungen.',
     '/tipp/': 'Freizeitideen, Ausflüge und klar gekennzeichnete Empfehlungen.',
     '/menschen/': 'Porträts, Ehrungen, Jubiläen und Geschichten aus der Gemeinde.'
   };
@@ -61,6 +62,20 @@
     '</a>';
   }
 
+  let werbeDaten = null;
+  const werbePromise = document.documentElement.dataset.werbung === 'aus' ? Promise.resolve(null)
+    : fetch('/assets/werbung.json', { credentials: 'same-origin' }).then((r) => r.ok ? r.json() : null).catch(() => null);
+  werbePromise.then((d) => { werbeDaten = d; });
+  function werbungHtml() {
+    const motive = werbeDaten && Array.isArray(werbeDaten.motive) ? werbeDaten.motive : [];
+    if (!motive.length) return '';
+    const takt = Math.max(6, Number(werbeDaten.rotationSekunden) || 14) * 1000;
+    const m = motive[Math.floor(Date.now() / takt) % motive.length];
+    return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige"><span class="werbung-label">Anzeige</span>' +
+      '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + (m.gap || m.band) + '</div>' +
+      (m.credit ? '<span class="werbung-credit">' + m.credit + '</span>' : '') + '</aside>';
+  }
+
   function render(inner, link, def) {
     const route = link.getAttribute('href');
     const groups = (def.gruppen || []).map((g) =>
@@ -74,14 +89,20 @@
 
     // Nur echte Beitraege; ohne Beitraege bleibt die Spalte weg.
     const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 4).map(story).join('');
+    // Weitere Bildmeldungen links unter dem Ressortnamen (Sport).
+    const mehr = (def.mehr || []).filter((x) => x && x.url && x.titel && x.bild).map(story).join('');
+    // Anzeige in der freien Flaeche neben den Linkgruppen (Vereine). Motiv im
+    // selben Takt wie alle Werbeflaechen der Seite (assets/werbung.js).
+    const werbung = def.werbung ? werbungHtml() : '';
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
         '<strong>' + esc(def.titel || link.textContent.trim()) + '</strong>' +
         '<p>' + esc(INTROS[route] || '') + '</p>' +
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
+        (mehr ? '<div class="ressort-dropdown__mehr" aria-label="Weitere Meldungen">' + mehr + '</div>' : '') +
       '</div>' +
-      '<div class="ressort-dropdown__groups">' + groups + '</div>' +
+      '<div class="ressort-dropdown__groups' + (werbung ? ' mit-werbung' : '') + '">' + groups + werbung + '</div>' +
       (newest ? '<aside class="ressort-dropdown__latest" aria-label="Neu im Ressort">' +
         '<span class="ressort-dropdown__eyebrow">Neu im Ressort</span>' +
         newest +
@@ -102,6 +123,7 @@
     row.insertAdjacentElement('afterend', panel);
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
+    await werbePromise;
     let active = null;
     let schwebeAuf = 0, schwebeZu = 0, schwebeGeoeffnet = 0;
 

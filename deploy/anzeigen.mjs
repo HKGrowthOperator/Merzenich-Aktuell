@@ -8,7 +8,7 @@
  * SLOT ist band-1 ... band-6 (Startseite, zwischen den Rubriken), buehne
  * (dritte Karte unten in der Buehne, Kartengroesse), spalte
  * (Servicespalte der Startseite, klebt beim Scrollen), sport (rechte Spalte der
- * Sportseite) oder artikel (Artikel- und uebrige Seiten).
+ * Sportseite), unternehmen (rechte Spalte von /unternehmen/) oder artikel (Artikel- und uebrige Seiten).
  *
  * - Jede Flaeche zeigt ein Demo-Motiv mit echter, bereits freigegebener Fotografie.
  *   Benachbarte
@@ -95,13 +95,14 @@ function versatz(slot) {
   if (slot === 'spalte') return 1;
   if (slot === 'buehne') return 2;
   if (slot === 'sport') return 3;
+  if (slot === 'unternehmen') return 1;
   // artikel: fester Start. Listen-Folgeseiten sind Kopien ihrer Ressortseite
   // (inhaltsindex.mjs); ein Versatz je Seite waere nicht wiederholbar.
   return 0;
 }
 function slotHtml(slot) {
   const art = slot.startsWith('band-') ? 'band' : slot;
-  const format = art === 'spalte' || art === 'sport' || art === 'buehne' ? 'gap' : 'band';
+  const format = ['spalte', 'sport', 'buehne', 'unternehmen'].includes(art) ? 'gap' : 'band';
   const o = versatz(slot) % MOTIVE.length;
   return `<aside class="werbung werbung--${art}${art === 'band' ? ' shell' : ''}" data-werbung="${art}" data-format="${format}" data-versatz="${o}" data-anzahl="1" aria-label="${esc(LABEL)}">`
     + `<span class="werbung-label">${esc(LABEL)}</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--${format}">${motivHtml(MOTIVE[o], format)}</div>`
