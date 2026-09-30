@@ -4977,11 +4977,6 @@
    "id": "2026-09-24-st-lambertus-patrozinium-morschenich",
    "url": "/leben/st-lambertus-patrozinium-morschenich/",
    "titel": "St. Lambertus in Morschenich lud zum Patrozinium"
-  },
-  {
-   "id": "2026-09-24-faire-woche-nistkasten-workshop",
-   "url": "/leben/faire-woche-nistkasten-workshop/",
-   "titel": "Faire Woche: Exkursion und Nistkasten-Workshop am Montag"
   }
  ],
  "startseitenMotive": {
@@ -4999,7 +4994,6 @@
   "editorial-pools/technik/technik-07-c67b406470": 1,
   "editorial-pools/termine/termine-03-00d15809a6": 1,
   "editorial-pools/unfall/unfall-13-dddcf86b1e": 1,
-  "editorial-pools/verkehr/verkehr-03-abdf91932e": 1,
   "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
   "places/buergewald": 2,
   "places/girbelsrath": 1,
@@ -5029,7 +5023,6 @@
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/digitaldetail/digitaldetail-01-8758d856d5",
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
-  "editorial-pools/naturdetail/naturdetail-01-0a789f9162",
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a"
  ],
  "motivMax": 2
