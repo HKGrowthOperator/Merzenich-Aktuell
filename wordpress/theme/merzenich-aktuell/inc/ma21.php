@@ -170,7 +170,7 @@ function ma21_karte(WP_Post $p, string $g, string $tag = 'h3'): string {
 
 /* ------------------------------------------------------------ Startseite */
 
-/** Platzwahl der Redaktion (Metabox im Plugin): auto, aufmacher, buehne-1 … buehne-5, aus. */
+/** Platzwahl der Redaktion (Metabox im Plugin): auto, aufmacher, buehne-1 … buehne-4, aus. */
 function ma21_startplatz(WP_Post $p): string {
     $v = (string) get_post_meta($p->ID, 'ma_startplatz', true);
     if ($v === '' && get_post_meta($p->ID, 'ma_top_pinned', true) === '1') {
@@ -206,10 +206,11 @@ function ma21_startseite_belegung(): array {
     if (!$aufmacher) foreach ($alle as $p) if (ma21_startplatz($p) === 'auto' && $buehnenTauglich($p) && $breite($p) >= 480 && (ma21_bild($p)['typ'] ?? '') !== 'place') { $aufmacher = $p; break; }
     if ($aufmacher) $belegen($aufmacher);
 
-    // Nebenplätze 1–5: gesetzte zuerst auf ihren Platz, Rest automatisch.
-    $neben = array_fill(1, 5, null);
+    // Nebenplätze 1–4 (der fünfte Platz unten rechts ist seit 30.09. eine
+    // Anzeige): gesetzte zuerst auf ihren Platz, Rest automatisch.
+    $neben = array_fill(1, 4, null);
     foreach ($alle as $p) {
-        if (isset($vergeben[$p->ID]) || !preg_match('/^buehne-([1-5])$/', ma21_startplatz($p), $m) || !$buehnenTauglich($p)) continue;
+        if (isset($vergeben[$p->ID]) || !preg_match('/^buehne-([1-4])$/', ma21_startplatz($p), $m) || !$buehnenTauglich($p)) continue;
         if ($neben[(int) $m[1]] === null) { $neben[(int) $m[1]] = $p; $belegen($p); }
     }
     $blaulicht = ($aufmacher && has_category('blaulicht', $aufmacher)) ? 1 : 0;
@@ -281,10 +282,10 @@ function ma21_block(string $name): string {
     $b = ma21_startseite_belegung();
     if ($name === 'oben') {
         $neben = array_values(array_filter($b['neben']));
-        $rechts = array_slice($neben, 0, 2); $unten = array_slice($neben, 2, 3);
+        $rechts = array_slice($neben, 0, 2); $unten = array_slice($neben, 2, 2);
         $inhalt = ($b['aufmacher'] ? ma21_karte($b['aufmacher'], 'xl') : '')
             . ($rechts ? '<div class="buehne-rechts">' . implode('', array_map(fn($p) => ma21_karte($p, 'r'), $rechts)) . '</div>' : '')
-            . ($unten ? '<div class="buehne-unten">' . implode('', array_map(fn($p) => ma21_karte($p, 'u'), $unten)) . '</div>' : '');
+            . '<div class="buehne-unten">' . implode('', array_map(fn($p) => ma21_karte($p, 'u'), $unten)) . trim(ma21_vorlage('werbung-buehne.html')) . '</div>';
         return '<!-- start:oben:start --><section class="shell buehne" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">' . $inhalt . '</section><!-- start:oben:end -->';
     }
     $sek = $b['sektionen'][$name] ?? null;

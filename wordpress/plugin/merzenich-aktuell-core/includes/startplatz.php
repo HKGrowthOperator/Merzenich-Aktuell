@@ -5,7 +5,8 @@
  * Meta ma_startplatz je Beitrag:
  *   auto        automatisch (jüngste passende Meldung füllt freie Plätze)
  *   aufmacher   großer Aufmacher oben
- *   buehne-1…5  Bühne: 1–2 rechts neben dem Aufmacher, 3–5 darunter
+ *   buehne-1…4  Bühne: 1–2 rechts neben dem Aufmacher, 3–4 darunter
+ *               (der Platz unten rechts ist eine Anzeige)
  *   aus         nur in der eigenen Rubrik, nie auf der Startseite
  *
  * Jeder feste Platz hat genau eine Meldung. Wird er neu vergeben, fällt die
@@ -25,7 +26,6 @@ function ma_startplaetze(): array {
         'buehne-2' => 'Bühne 2 (rechts unten)',
         'buehne-3' => 'Bühne 3 (unten links)',
         'buehne-4' => 'Bühne 4 (unten Mitte)',
-        'buehne-5' => 'Bühne 5 (unten rechts)',
         'aus' => 'Nur in der Rubrik (nicht auf der Startseite)',
     ];
 }

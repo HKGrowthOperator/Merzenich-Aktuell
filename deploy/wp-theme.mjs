@@ -47,6 +47,10 @@ const fuss = koerper.slice(koerper.indexOf('</main>') + '</main>'.length).trim()
 
 // Startseite: Inhalt von <main>, Nachrichtenblöcke als Platzhalter.
 let start = zwischen('<main id="main">', '</main>', koerper).slice('<main id="main">'.length).trim();
+// Anzeige in der Buehne (dritte Karte unten): liegt im Block start:oben, den
+// WordPress selbst baut; deshalb als eigene Vorlage.
+const anzeigeBuehne = (/<!-- werbung:buehne:start -->[\s\S]*?<!-- werbung:buehne:end -->/.exec(start) || [''])[0];
+if (!anzeigeBuehne) throw new Error('wp-theme: Anzeige werbung:buehne fehlt in index.html');
 const SLOTS = ['oben', 'gemeinde', 'blaulicht', 'rathaus', 'wirtschaft', 'vereine'];
 for (const s of SLOTS) {
   const re = new RegExp(`<!-- start:${s}:start -->[\\s\\S]*?<!-- start:${s}:end -->`);
@@ -65,6 +69,7 @@ const dateien = {
   'kopf-seite.html': kopfSeite,
   'fuss.html': fuss,
   'startseite.html': start,
+  'werbung-buehne.html': anzeigeBuehne,
 };
 if (!nurPruefen) mkdirSync(ziel, { recursive: true });
 let geaendert = 0;
