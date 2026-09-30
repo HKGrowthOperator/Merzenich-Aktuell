@@ -161,8 +161,15 @@ const meta = (k, v) => `<wp:postmeta><wp:meta_key>${cdata(k)}</wp:meta_key><wp:m
 const zeile = (tag, v) => `<${tag}>${v}</${tag}>`;
 const items = [];
 
+// Der WordPress-Importer hält Anhänge mit gleichem Titel für schon vorhanden und
+// überspringt sie (30.09.: zwei verschiedene Feuerwehrfotos, eines fehlte). Doppelte
+// Titel bekommen deshalb eine Nummer; der Alt-Text bleibt unverändert.
+const titelZahl = new Map();
 for (const b of [...anhaenge.values()].sort((x, y) => x.id - y.id)) {
-  items.push(`<item>${zeile('title', cdata(b.titel))}${zeile('link', xmlEsc(b.url))}${zeile('dc:creator', cdata('redaktion'))}`
+  const n = (titelZahl.get(b.titel) || 0) + 1;
+  titelZahl.set(b.titel, n);
+  const titel = n > 1 ? `${b.titel} (Bild ${n})` : b.titel;
+  items.push(`<item>${zeile('title', cdata(titel))}${zeile('link', xmlEsc(b.url))}${zeile('dc:creator', cdata('redaktion'))}`
     + `<content:encoded>${cdata('')}</content:encoded><excerpt:encoded>${cdata(b.credit)}</excerpt:encoded>`
     + `${zeile('wp:post_id', b.id)}${zeile('wp:post_name', cdata(`bild-${b.id}`))}${zeile('wp:status', 'inherit')}${zeile('wp:post_parent', 0)}${zeile('wp:post_type', 'attachment')}`
     + `${zeile('wp:attachment_url', cdata(b.url))}`
@@ -197,7 +204,10 @@ for (const m of meldungen) {
 }
 
 for (const { t, id, inhalt, ort } of termine) {
-  const [lokal, gmt] = wpDatum(t.start);
+  // Beitragsdatum = Stand der Terminseite, nicht der Beginn: WordPress stellt ein
+  // veröffentlichtes Datum in der Zukunft auf „Geplant“ und zeigt den Termin nicht.
+  const veroeffentlicht = t.stand ? new Date(`${t.stand}T10:00:00Z`) : t.start;
+  const [lokal, gmt] = wpDatum(veroeffentlicht < t.start ? veroeffentlicht : t.start);
   items.push(`<item>${zeile('title', cdata(t.titel))}${zeile('link', xmlEsc(`${SITE_URL}/termine/${t.slug}/`))}${zeile('dc:creator', cdata('redaktion'))}`
     + `<content:encoded>${cdata(inhalt)}</content:encoded><excerpt:encoded>${cdata(t.beschreibung || '')}</excerpt:encoded>`
     + `${zeile('wp:post_id', id)}${zeile('wp:post_date', cdata(lokal))}${zeile('wp:post_date_gmt', cdata(gmt))}`
