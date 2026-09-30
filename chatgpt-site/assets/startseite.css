@@ -893,6 +893,13 @@ body.home .mj-taste span{font-size:13.5px;line-height:1.25;color:var(--a-text)}
   body.home .mj-himmel{align-items:flex-end}
   body.home .mj-taste{grid-template-columns:1fr;justify-items:start;gap:4px;padding:10px 12px}
 }
+/* Sehr schmale Telefone: Wetter unter Ort und Datum statt daneben. */
+@media (max-width:380px){
+  body.home .mj-schild{flex-direction:column;align-items:stretch;gap:14px}
+  body.home .mj-wetter{grid-template-columns:auto minmax(0,1fr);justify-items:start;text-align:left}
+  body.home .mj-himmel{align-items:flex-start}
+  body.home .mj-datum{white-space:normal}
+}
 @media (prefers-reduced-motion:reduce){body.home .mj-eintrag,body.home .mj-taste{transition:none}}
 
 
