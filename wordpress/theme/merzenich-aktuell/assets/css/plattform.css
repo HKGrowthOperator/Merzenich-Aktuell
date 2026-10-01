@@ -1,0 +1,20 @@
+/* Theme 21, Ergänzungen der WordPress-Plattform (01.10.2026): Bildraster der
+   Sportseite, Bilder im Vereinsprofil, Kennzeichnung gesponserter Beiträge,
+   Anzeigenplatz im Vereins-Menü. Tokens aus /assets/style.css (statische Seite). */
+.bildraster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.bildraster-karte{display:flex;flex-direction:column;min-width:0}
+.bildraster-bild .media{aspect-ratio:16/10;overflow:hidden;background:var(--line-soft)}
+.bildraster-bild img{width:100%;height:100%;object-fit:cover}
+.bildraster-text{display:flex;flex-direction:column;flex:1;padding-top:10px}
+.bildraster-text h3{font-size:19px;line-height:1.2;margin:4px 0 8px}
+.bildraster-text .meta{margin-top:auto;color:var(--muted);font-size:13px}
+@media (min-width:1101px){.bildraster{grid-template-columns:repeat(3,minmax(0,1fr))}.bildraster-text h3{font-size:18px}}
+@media (max-width:520px){.bildraster{grid-template-columns:1fr;gap:18px}.bildraster-karte{display:grid;grid-template-columns:132px minmax(0,1fr);gap:12px}.bildraster-bild .media{aspect-ratio:4/3}.bildraster-text{padding-top:0}.bildraster-text h3{font-size:17px}}
+.verein-galerie{margin:28px 0}
+.verein-galerie h2{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.verein-galerie__raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.verein-galerie__raster .media{aspect-ratio:1;overflow:hidden}
+.verein-galerie__raster img{width:100%;height:100%;object-fit:cover}
+@media (max-width:520px){.verein-galerie__raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.gesponsert{display:inline-block;margin-left:8px;padding:1px 6px;border:1px solid var(--ink-soft);font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);vertical-align:middle}
+.gesponsert-hinweis{margin:0 0 18px;padding:10px 14px;background:var(--gold-wash);border:1px solid var(--line);font-size:14px}

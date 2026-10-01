@@ -65,9 +65,8 @@ function ma_form_submit(): void {
     wp_safe_redirect(add_query_arg('gesendet','1',wp_get_referer()?:home_url('/'))); exit;
 }
 
-/** Bildrechte-Erklaerung, gleicher Wortlaut wie auf der Website (30.09.2026). */
+/** Bildrechte-Erklaerung: seit 01.10.2026 der verbindliche Wortlaut aus bildrechte.php (Version 2). */
 function ma_form_bildrechte_text(): string {
-    return 'Bildrechte (Pflicht, wenn Sie eine Datei hochladen): Ich versichere, dass ich die hochgeladenen Bilder selbst aufgenommen habe oder alle nötigen Nutzungs- und Lizenzrechte daran besitze. '
-        . 'Erkennbar abgebildete Personen sind mit der Veröffentlichung einverstanden. Ich erlaube Merzenich Aktuell, die Bilder im Zusammenhang mit dieser Einsendung unentgeltlich online zu veröffentlichen, mit meinem Namen als Bildnachweis. '
-        . 'Für die Rechte an den Bildern bin ich selbst verantwortlich: Macht ein Dritter Ansprüche wegen fehlender Rechte geltend, stelle ich Merzenich Aktuell davon frei.';
+    $text = function_exists('ma_bildrechte_text') ? ma_bildrechte_text() : 'Ich bestätige, dass ich für die hochgeladenen Bilder die erforderlichen Rechte besitze.';
+    return 'Bestätigung der Bild- und Nutzungsrechte (Pflicht, wenn Sie eine Datei hochladen): ' . $text . ' ' . (function_exists('ma_bildrechte_haken_text') ? ma_bildrechte_haken_text() : '');
 }

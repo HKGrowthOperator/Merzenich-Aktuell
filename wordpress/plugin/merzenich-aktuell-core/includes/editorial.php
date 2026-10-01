@@ -143,7 +143,8 @@ function ma_save_editorial_meta(int $post_id): void {
 }
 
 function ma_publication_gate(array $data,array $postarr): array {
-    if (($data['post_type']??'')!=='post' || ($data['post_status']??'')!=='publish') return $data;
+    // Auch eine geplante Veröffentlichung (future) braucht alle Freigaben.
+    if (($data['post_type']??'')!=='post' || !in_array(($data['post_status']??''),['publish','future'],true)) return $data;
     $post_id=(int)($postarr['ID']??0);
     if(!$post_id) return $data;
 

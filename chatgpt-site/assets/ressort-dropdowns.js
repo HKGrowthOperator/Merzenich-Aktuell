@@ -67,6 +67,17 @@
     : fetch('/assets/werbung.json', { credentials: 'same-origin' }).then((r) => r.ok ? r.json() : null).catch(() => null);
   werbePromise.then((d) => { werbeDaten = d; });
   function werbungHtml() {
+    // WordPress (merzenich-aktuell.de) liefert die Anzeigen dieses Platzes aus
+    // der Werbeverwaltung (Platz hero_clubs_expanded_right). Ohne laufende
+    // Anzeige bleibt die Flaeche weg, ohne Muster- oder Ersatzmotiv.
+    const wp = window.maWerbungPlaetze;
+    if (wp && typeof wp === 'object') {
+      const liste = Array.isArray(wp.hero_clubs_expanded_right) ? wp.hero_clubs_expanded_right : [];
+      if (!liste.length) return '';
+      const a = liste[Math.floor(Date.now() / 14000) % liste.length];
+      return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige" data-ma-anzeige="' + Number(a.id) + '" data-ma-platz="hero_clubs_expanded_right"><span class="werbung-label">Anzeige</span>' +
+        '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + a.html + '</div></aside>';
+    }
     const motive = werbeDaten && Array.isArray(werbeDaten.motive) ? werbeDaten.motive : [];
     if (!motive.length) return '';
     const takt = Math.max(6, Number(werbeDaten.rotationSekunden) || 14) * 1000;

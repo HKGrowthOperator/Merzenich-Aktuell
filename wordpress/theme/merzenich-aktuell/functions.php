@@ -14,7 +14,7 @@ add_action('wp_enqueue_scripts', function(){
     $version=wp_get_theme()->get('Version');
     // Theme 21: Stile der statischen Seite kommen aus vorlagen/kopf-assets.html.
     // Die alten Stile nur noch fuer Vorlagen mit altem Markup (ma21_legacy()).
-    if (!ma21_legacy()) return;
+    if (!ma21_legacy()) { wp_enqueue_style('ma-plattform', get_template_directory_uri() . '/assets/css/plattform.css', [], $version); return; }
     wp_enqueue_style('ma-style',get_stylesheet_uri(),[],$version);
     wp_enqueue_style('ma-service',get_template_directory_uri().'/assets/css/service.css',['ma-style'],$version);
     wp_enqueue_script('ma-site',get_template_directory_uri().'/assets/js/site.js',[],$version,true);

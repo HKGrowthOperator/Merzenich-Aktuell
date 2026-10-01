@@ -57,7 +57,9 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 /** Vorlagen mit eigenem, älterem Markup (Märkte, Anzeigen, Betriebe) brauchen noch die alten Stile. */
 function ma21_legacy(): bool {
+    // Vereinsprofile haben seit 01.10.2026 eine eigene Vorlage im neuen Markup (single-ma_club.php).
     $alt = ['ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice', 'ma_business', 'ma_tip', 'ma_event', 'ma_club'];
+    if (is_singular('ma_club')) return false;
     return is_singular($alt) || is_post_type_archive($alt);
 }
 
@@ -87,7 +89,9 @@ function ma21_marke(WP_Post $p, string $rubrik = 'ressort'): string {
     $label = $rubrik === 'kicker' ? (get_post_meta($p->ID, 'ma_kicker', true) ?: ma21_ressort($p)[1]) : ma21_ressort($p)[1];
     return '<p class="marke"><span class="marke-ort">Merzenich</span>'
         . ($ort !== 'merzenich' ? '<span class="marke-teil"> · ' . ma21_e(MA21_ORTE[$ort]) . '</span>' : '')
-        . '<span class="marke-rubrik">' . ma21_e($label) . '</span></p>';
+        . '<span class="marke-rubrik">' . ma21_e($label) . '</span>'
+        // Bezahlte Unternehmenspräsentation (Plugin, werbung-stat.php): immer gekennzeichnet.
+        . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>';
 }
 
 function ma21_zeit(WP_Post $p, bool $lang = false): string {
@@ -185,8 +189,8 @@ function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p); }
 /**
  * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, vier
  * Nebenmeldungen (zwei rechts, zwei darunter, daneben eine Anzeige), dann die
- * Rubrikflächen. Die Relevanz 1–10 ordnet Aufmacher und Bühne und hält
- * Meldungen mit 1–3 von der Startseite fern.
+ * Rubrikflächen. Die Startseiten-Freigabe entscheidet, ob eine Meldung
+ * erscheint; die Relevanz 1–10 (mit Aktualität) entscheidet, wo.
  * Gesetzte Plätze der Redaktion gehen vor; freie Plätze füllt die jüngste
  * passende Meldung. „aus“ = nur in der eigenen Rubrik, nie auf der Startseite.
  */
@@ -194,16 +198,18 @@ function ma21_startseite_belegung(): array {
     static $cache = null;
     if ($cache !== null) return $cache;
     $alle = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 120, 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false]);
-    // Relevanz 1–10 (Plugin, includes/relevanz.php): 1–3 nur Rubrik, 7–8 Bühne,
-    // 9–10 Aufmacher, jeweils solange frisch. Feste Plätze gehen vor.
-    $rel = fn($p) => function_exists('ma_relevanz') ? ma_relevanz($p) : 5;
-    $frisch = fn($p) => function_exists('ma_relevanz_frisch') ? ma_relevanz_frisch($p) : false;
-    $alle = array_values(array_filter($alle, fn($p) => ma21_startplatz($p) !== 'aus' && ($rel($p) > 3 || ma21_startplatz($p) !== 'auto')));
-    // Vorrang für Aufmacher und Bühne: frische Meldungen ab Relevanz 7 zuerst
-    // (höhere Relevanz vor niedrigerer, sonst die jüngere), dann alle übrigen.
+    // Startseiten-Freigabe und Relevanz 1–10 (Plugin, includes/relevanz.php):
+    // „Nur in der Rubrik“ (aus) bleibt draußen, alles andere sortiert die
+    // zentrale Relevanzlogik. Aufmacher und Bühne bekommen zuerst, was frisch
+    // die Schwellen erreicht (Zone hero, dann buehne), danach den höchsten Wert.
+    $alle = array_values(array_filter($alle, fn($p) => ma21_startplatz($p) !== 'aus'));
+    if (function_exists('ma_relevanz_sortieren')) $alle = ma_relevanz_sortieren($alle);
+    $zone = fn($p) => function_exists('ma_relevanz_zone') ? ma_relevanz_zone($p) : 'feed';
+    $rang = ['hero' => 0, 'buehne' => 1];
+    $pos = []; $z = [];
+    foreach ($alle as $i => $p) { $pos[$p->ID] = $i; $z[$p->ID] = $rang[$zone($p)] ?? 2; }
     $vorrang = $alle;
-    $gewicht = fn($p) => ($frisch($p) && $rel($p) >= 7) ? $rel($p) : 0;
-    usort($vorrang, fn($a, $b) => $gewicht($b) <=> $gewicht($a));
+    usort($vorrang, fn($a, $b) => [$z[$a->ID], $pos[$a->ID]] <=> [$z[$b->ID], $pos[$b->ID]]);
     $vergeben = []; $motive = []; $MOTIV_MAX = 2;
     $motiv = fn($p) => (int) get_post_thumbnail_id($p->ID);
     $motivFrei = function ($p, array $extra = []) use (&$motive, $motiv, $MOTIV_MAX) { $k = $motiv($p); return !$k || (($motive[$k] ?? 0) + ($extra[$k] ?? 0)) < $MOTIV_MAX; };
@@ -355,6 +361,46 @@ function ma21_feed_row(WP_Post $p): string {
         . "<div class=\"story-actions\"><a class=\"read-more\" href=\"{$url}\">Mehr lesen<span class=\"sr-only\">: {$titel}</span></a></div></div></article>";
 }
 
+/** Bildraster der Sportseite: gleich hohe Karten mit Bild, Marke, Titel, Zeit. */
+function ma21_bildraster(array $posts): string {
+    $h = '<div class="bildraster">';
+    foreach ($posts as $p) {
+        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+        $h .= '<article class="bildraster-karte" data-story="' . esc_attr(ma21_story_id($p)) . '">'
+            . "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, (max-width: 1100px) 45vw, 300px', false) . ma21_badge($b, false) . '</div></a>'
+            . '<div class="bildraster-text">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><div class=\"meta\">" . ma21_zeit($p) . '</div></div></article>';
+    }
+    return $h . '</div>';
+}
+
+/** Rechte Spalte der Listen: neueste Meldungen, bei Sport und Vereinen die Vereine der Gemeinde. */
+function ma21_liste_seitenspalte(): string {
+    $h = '';
+    $neu = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5]);
+    if ($neu) {
+        $h .= '<div class="sidebox"><h3>Neueste Meldungen aus allen Ressorts<a href="' . esc_url(home_url('/nachrichten/')) . '">alle</a></h3><ol class="ranked">';
+        foreach ($neu as $p) $h .= '<li><a href="' . esc_url(get_permalink($p)) . '">' . ma21_e(get_the_title($p)) . '</a></li>';
+        $h .= '</ol></div>';
+    }
+    $sport = is_category('sport'); $vereine = is_category('vereine');
+    if (($sport || $vereine) && function_exists('ma_vereine_struktur')) {
+        if ($sport) $h .= '<div class="sidebox sport-side-action"><h3>Sport direkt aus den Vereinen</h3><p>Vereine reichen Spielberichte, Ergebnisse, Termine und Mannschaftsfotos über ihren Redaktionszugang ein. Veröffentlicht wird nach Freigabe durch die Redaktion.</p><p><a class="read-more" href="' . esc_url(home_url('/meldung-senden/')) . '">Sportmeldung senden</a></p></div>';
+        $liste = ''; $n = 0;
+        foreach (ma_vereine_struktur() as $kurz => $e) {
+            $v = $e['verein'];
+            if ($sport !== (($v['kategorie'] ?? '') === 'Sport')) continue;
+            $profil = ma_verein_profil($kurz);
+            $sportarten = array_filter(array_merge([$v['sportart'] ?? ''], array_map(fn($a) => $a['sportart'] ?? '', $e['abteilungen'])));
+            $klein = implode(' · ', array_filter([$sportarten ? implode(', ', array_unique($sportarten)) : ($v['kategorie'] ?? ''), MA21_ORTE[$v['ort'] ?? ''] ?? 'Gemeinde']));
+            $name = ma21_e($v['name']);
+            $link = $profil && $profil->post_status === 'publish' ? '<a href="' . esc_url(get_permalink($profil)) . '">' . $name . '</a>' : (!empty($v['website']) ? '<a href="' . esc_url($v['website']) . '" target="_blank" rel="noopener">' . $name . '</a>' : '<span>' . $name . '</span>');
+            $liste .= '<li>' . $link . '<small>' . ma21_e($klein) . '</small></li>'; $n++;
+        }
+        if ($n) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">' . $n . ' Vereine · Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
+    }
+    return $h;
+}
+
 /** Kopf und Beschreibung je Liste, wie auf der statischen Seite. */
 function ma21_liste_kopf(): array {
     $o = get_queried_object();
@@ -401,7 +447,7 @@ function ma21_u_karte(WP_Post $p, int $i): string {
     $ort = ma21_ort($p);
     return '<article class="u-karte' . ($b ? '' : ' u-karte--ohne-bild') . '"' . ($i >= 8 ? ' data-nachladen hidden' : '') . '>'
         . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, '(max-width: 760px) 100vw, 380px', $i < 2) . ma21_badge($b, false) . '</a>' : '')
-        . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . '</p>'
+        . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>'
         . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
         . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(get_the_date('d.m.Y, H:i', $p)) . ' Uhr</time></p>'
         . '<p class="u-karte__teaser">' . ma21_e(ma21_teaser($p)) . '</p>'

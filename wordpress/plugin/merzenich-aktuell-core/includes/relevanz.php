@@ -1,47 +1,79 @@
 <?php
 /**
- * Relevanz 1–10 und Freigabe mit Startseiten-Wahl (30.09.2026).
+ * Relevanz 1–10 und Freigabe mit Startseiten-Wahl (30.09.2026, zehn Stufen
+ * seit 01.10.2026 nach Vorgabe des Betreibers).
  *
- * Wunsch Betreiber und Ordin: Wer im Backend eine Einreichung annimmt, wählt
- * gleich mit, ob sie auf die Startseite darf, und ordnet sie schnell mit einer
- * Zahl von 1 bis 10 ein. Die Zahl entscheidet nach festen Stufen, wo die
- * Meldung erscheint (ma_relevanz_stufen()). Das Theme liest dieselbe Tabelle
- * (ma21_startseite_belegung()).
+ * Wer im Backend eine Einreichung annimmt, wählt gleich mit, ob sie auf die
+ * Startseite darf, und ordnet sie mit einer Zahl von 1 bis 10 ein. Die
+ * Startseiten-Freigabe ist die übergeordnete Bedingung: ohne sie erscheint
+ * eine Meldung nie auf der Startseite, auch mit Relevanz 10. Mit ihr bestimmt
+ * die Relevanz die Position (ma_relevanz_stufen()):
  *
- *   9–10  Top-Thema   Aufmacher oben, solange frisch
- *   7–8   Wichtig     Bühne neben und unter dem Aufmacher, solange frisch
- *   4–6   Normal      Startseite in der Fläche ihrer Rubrik
- *   1–3   Nur Rubrik  nicht auf der Startseite
+ *   10  Kandidat für den Aufmacher (Haupt-Hero)
+ *    9  Aufmacher / oberster Nachrichtenbereich
+ *    8  Prominente Nachrichtenfläche (Bühne)
+ *    7  Oberer Nachrichtenbereich
+ *    6  Rubrikflächen, obere Position
+ *  4–5  Rubrikflächen
+ *    3  Unterer Teil der Rubrikflächen
+ *  1–2  Nachrangig (Zeilen am Ende)
  *
- * „Frisch“ heißt: jünger als MA_RELEVANZ_FRISCH_STUNDEN. Danach zählt eine
- * Meldung wie „Normal“ und rückt aus Aufmacher und Bühne. Ohne Angabe gilt 5.
+ * Sortierung (ma_relevanz_wert()): Relevanz minus Alter in Tagen mal
+ * Abklingfaktor, auf volle Stunden gerundet. Bei gleicher Relevanz steht die
+ * neuere Meldung vorn, und eine ältere 10 verdrängt nicht dauerhaft alles
+ * Neue. Aufmacher und Bühne verlangen zusätzlich „frisch“ (jünger als
+ * frisch_stunden). Die Werte stehen zentral in ma_relevanz_einstellung() und
+ * sind unter Merzenich Aktuell → Freigaben einstellbar; das Theme liest sie
+ * über dieselben Funktionen (ma21_startseite_belegung()).
  * Ein fester Startplatz (Box „Startseite“) geht der Relevanz immer vor.
+ * Ohne Angabe gilt 5, ohne Startseiten-Wahl gilt „auf die Startseite“.
  *
- * Bedienung:
- *  - Merzenich Aktuell → Freigaben: alle wartenden Einreichungen mit Bild,
- *    Absender, Relevanz, Haken „Auf die Startseite“ und Knopf „Freigeben“.
- *  - Beiträge → Alle Beiträge: Spalte „Relevanz“ mit Auswahl, speichert sofort.
- *  - Im Beitrag: Box „Startseite“ mit Relevanz und Platz.
  * Nur für Redaktion und Administration (edit_others_posts), nie für Partner.
  */
 if (!defined('ABSPATH')) { exit; }
 
-if (!defined('MA_RELEVANZ_FRISCH_STUNDEN')) define('MA_RELEVANZ_FRISCH_STUNDEN', 72);
 const MA_RELEVANZ_STANDARD = 5;
 
-/** Die vordefinierten Stufen: von, bis, Name, wohin. */
-function ma_relevanz_stufen(): array {
+/** Zentrale Einstellungen der Platzierung. */
+function ma_relevanz_einstellung(): array {
+    $e = function_exists('get_option') ? get_option('ma_relevanz_einstellung', []) : [];
+    $e = is_array($e) ? $e : [];
     return [
-        ['von' => 9, 'bis' => 10, 'name' => 'Top-Thema', 'wo' => 'Aufmacher oben auf der Startseite (solange frisch)'],
-        ['von' => 7, 'bis' => 8, 'name' => 'Wichtig', 'wo' => 'Bühne neben und unter dem Aufmacher (solange frisch)'],
-        ['von' => 4, 'bis' => 6, 'name' => 'Normal', 'wo' => 'Startseite in der Fläche der eigenen Rubrik'],
-        ['von' => 1, 'bis' => 3, 'name' => 'Nur Rubrik', 'wo' => 'nur in der eigenen Rubrik, nicht auf der Startseite'],
+        'frisch_stunden' => max(6, min(336, (int) ($e['frisch_stunden'] ?? 72))),
+        'abklingen' => max(0.0, min(5.0, (float) ($e['abklingen'] ?? 1.0))),
+        'hero_ab' => max(7, min(10, (int) ($e['hero_ab'] ?? 9))),
+        'buehne_ab' => max(6, min(10, (int) ($e['buehne_ab'] ?? 8))),
     ];
+}
+if (!defined('MA_RELEVANZ_FRISCH_STUNDEN')) define('MA_RELEVANZ_FRISCH_STUNDEN', 72);
+
+/** Die zehn Stufen: Bedeutung und Platz auf der Startseite. */
+function ma_relevanz_stufen(): array {
+    $t = [
+        10 => ['Höchste Relevanz', 'Kandidat für den Aufmacher (Haupt-Hero), solange frisch'],
+        9 => ['Sehr hohe Relevanz', 'Aufmacher oder oberster Nachrichtenbereich, solange frisch'],
+        8 => ['Hohe Relevanz', 'Prominente Nachrichtenfläche (Bühne), solange frisch'],
+        7 => ['Hohe lokale Bedeutung', 'Oberer Nachrichtenbereich der Startseite'],
+        6 => ['Relevante Nachricht', 'Rubrikflächen der Startseite, obere Position'],
+        5 => ['Normale Nachricht', 'Rubrikflächen der Startseite'],
+        4 => ['Lokales Thema', 'Rubrikflächen der Startseite'],
+        3 => ['Kleinere Nachricht', 'Unterer Teil der Rubrikflächen'],
+        2 => ['Vereins- oder Spezialmeldung', 'Nachrangig, Zeilen am Ende der Rubrikflächen'],
+        1 => ['Geringe allgemeine Relevanz', 'Nachrangig, Zeilen am Ende der Rubrikflächen'],
+    ];
+    $raus = [];
+    foreach ($t as $r => [$name, $wo]) $raus[] = ['von' => $r, 'bis' => $r, 'name' => $name, 'wo' => $wo];
+    return $raus;
 }
 
 function ma_relevanz_stufe(int $r): array {
     foreach (ma_relevanz_stufen() as $s) if ($r >= $s['von'] && $r <= $s['bis']) return $s;
-    return ma_relevanz_stufen()[2];
+    return ma_relevanz_stufe(MA_RELEVANZ_STANDARD);
+}
+
+/** Gruppe für die Farbe der Auswahlknöpfe. */
+function ma_relevanz_gruppe(int $r): string {
+    return $r >= 9 ? 'top-thema' : ($r >= 7 ? 'wichtig' : ($r >= 4 ? 'normal' : 'nur-rubrik'));
 }
 
 function ma_relevanz_saeubern($v): int {
@@ -61,8 +93,66 @@ function ma_relevanz_frisch($post, ?int $jetzt = null): bool {
     $p = $post instanceof WP_Post ? $post : get_post((int) $post);
     if (!$p) return false;
     $zeit = (int) get_post_time('U', true, $p);
-    return ($jetzt ?? time()) - $zeit <= MA_RELEVANZ_FRISCH_STUNDEN * HOUR_IN_SECONDS;
+    return ($jetzt ?? time()) - $zeit <= ma_relevanz_einstellung()['frisch_stunden'] * HOUR_IN_SECONDS;
 }
+
+/**
+ * Sortierwert: Relevanz minus Alter (Tage, auf volle Stunden) mal Abklingen.
+ * Stabil zwischen zwei Aufrufen derselben Stunde, ändert sich nur mit der Zeit
+ * oder einer neuen Relevanz.
+ */
+function ma_relevanz_wert($post, ?int $jetzt = null): float {
+    $p = $post instanceof WP_Post ? $post : get_post((int) $post);
+    if (!$p) return 0.0;
+    $stunden = intdiv(max(0, ($jetzt ?? time()) - (int) get_post_time('U', true, $p)), HOUR_IN_SECONDS);
+    return ma_relevanz($p) - ($stunden / 24) * ma_relevanz_einstellung()['abklingen'];
+}
+
+/** Darf die Meldung auf die Startseite? Die Startseiten-Wahl entscheidet. */
+function ma_relevanz_startseite($post): bool {
+    $id = $post instanceof WP_Post ? $post->ID : (int) $post;
+    return (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus';
+}
+
+/** Qualifiziert für Aufmacher bzw. Bühne (Startseite erlaubt, frisch, Schwelle erreicht)? */
+function ma_relevanz_zone($post, ?int $jetzt = null): string {
+    if (!ma_relevanz_startseite($post)) return 'aus';
+    $r = ma_relevanz($post); $e = ma_relevanz_einstellung(); $frisch = ma_relevanz_frisch($post, $jetzt);
+    if ($frisch && $r >= $e['hero_ab']) return 'hero';
+    if ($frisch && $r >= $e['buehne_ab']) return 'buehne';
+    if ($r >= 7) return 'oben';
+    if ($r >= 4) return 'feed';
+    if ($r === 3) return 'unten';
+    return 'nachrangig';
+}
+
+/** Sortiert Beiträge für die Startseite: höherer Wert zuerst, sonst der neuere. */
+function ma_relevanz_sortieren(array $posts, ?int $jetzt = null): array {
+    $jetzt = $jetzt ?? time();
+    $w = [];
+    foreach ($posts as $p) $w[$p->ID] = ma_relevanz_wert($p, $jetzt);
+    usort($posts, function ($a, $b) use ($w) {
+        if ($w[$a->ID] !== $w[$b->ID]) return $w[$b->ID] <=> $w[$a->ID];
+        return strcmp((string) $b->post_date_gmt, (string) $a->post_date_gmt);
+    });
+    return $posts;
+}
+
+/**
+ * Einmalige, sichere Umstellung: Bis 1.11 hieß Relevanz 1–3 „nur in der
+ * Rubrik“. Damit solche Meldungen nicht plötzlich auf die Startseite rücken,
+ * bekommen sie ausdrücklich „Nur in der Rubrik“. Es wird nichts gelöscht.
+ */
+add_action('admin_init', function (): void {
+    if (get_option('ma_relevanz_umstellung') === '2') return;
+    $ids = get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => -1, 'fields' => 'ids',
+        'meta_query' => [['key' => 'ma_relevanz', 'value' => [1, 2, 3], 'compare' => 'IN', 'type' => 'NUMERIC']]]);
+    foreach ($ids as $id) {
+        $platz = (string) get_post_meta($id, 'ma_startplatz', true);
+        if ($platz === '' || $platz === 'auto') { update_post_meta($id, 'ma_startplatz', 'aus'); if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Umstellung Relevanz: „Nur in der Rubrik“ übernommen', 'Bisherige Bedeutung von Relevanz 1–3', 0); }
+    }
+    update_option('ma_relevanz_umstellung', '2', false);
+});
 
 function ma_relevanz_darf(): bool {
     if (function_exists('ma_current_partner_policy') && ma_current_partner_policy()) return false;
@@ -82,7 +172,7 @@ function ma_relevanz_auswahl(string $name, int $wert): string {
     $h = '<fieldset class="ma-relevanz" data-ma-relevanz><legend class="screen-reader-text">Relevanz</legend><div class="ma-relevanz__reihe">';
     for ($i = 1; $i <= 10; $i++) {
         $h .= sprintf('<label class="ma-relevanz__knopf ma-relevanz__knopf--%s" title="%s"><input type="radio" name="%s" value="%d"%s><span>%d</span></label>',
-            esc_attr(sanitize_title(ma_relevanz_stufe($i)['name'])), esc_attr(ma_relevanz_stufe($i)['name'] . ': ' . ma_relevanz_stufe($i)['wo']),
+            esc_attr(ma_relevanz_gruppe($i)), esc_attr(ma_relevanz_stufe($i)['name'] . ': ' . ma_relevanz_stufe($i)['wo']),
             esc_attr($name), $i, checked($wert, $i, false), $i);
     }
     $s = ma_relevanz_stufe($wert ?: MA_RELEVANZ_STANDARD);
@@ -115,14 +205,14 @@ function ma_relevanz_css(): string {
     return '.ma-relevanz{border:0;margin:0 0 8px;padding:0}.ma-relevanz__reihe{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px}'
         . '.ma-relevanz__knopf{position:relative;display:block;cursor:pointer}.ma-relevanz__knopf input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}'
         . '.ma-relevanz__knopf span{display:block;text-align:center;padding:6px 0;border:1px solid #c3c4c7;border-radius:3px;font-weight:600;font-variant-numeric:tabular-nums;background:#fff}'
-        . '.ma-relevanz__knopf--nur-rubrik span{background:#f6f7f7}.ma-relevanz__knopf--wichtig span{background:#fcf0e3}.ma-relevanz__knopf--top-thema span{background:#fbe3e4}'
+        . '.ma-relevanz__knopf--nur-rubrik span{background:#f6f7f7}.ma-relevanz__knopf--normal span{background:#fff}.ma-relevanz__knopf--wichtig span{background:#fcf0e3}.ma-relevanz__knopf--top-thema span{background:#fbe3e4}'
         . '.ma-relevanz__knopf input:checked+span{background:#8c1c22;border-color:#8c1c22;color:#fff}.ma-relevanz__knopf input:focus-visible+span{outline:2px solid #2271b1;outline-offset:1px}'
         . '.ma-relevanz__wo{margin:6px 0 0;font-size:12px;color:#50575e}'
         . '.column-ma_relevanz{width:88px}.ma-relevanz-liste{max-width:84px}.ma-relevanz-ok{color:#008a20;margin-left:4px}'
         . '.ma-freigaben td{vertical-align:top}.ma-freigaben__bild{width:120px;height:68px;object-fit:cover;background:#f0f0f1;display:block}'
         . '.ma-freigaben__aktion{min-width:320px}.ma-freigaben__zeile{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}'
         . '.ma-freigaben__status{font-weight:600}.ma-freigaben__status.ist-fehler{color:#b32d2e}.ma-freigaben__status.ist-ok{color:#008a20}'
-        . '.ma-relevanz-stufen{border-collapse:collapse;margin:8px 0 18px}.ma-relevanz-stufen td,.ma-relevanz-stufen th{padding:4px 12px 4px 0;text-align:left}';
+        . '.ma-relevanz-stufen{border-collapse:collapse;margin:8px 0 18px}.ma-freigaben__typ{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#8c1c22}.ma-freigaben__aenderung{font-size:12px;color:#50575e}.ma-freigaben__planen{display:inline-flex;gap:4px;align-items:center}.ma-freigaben__ablehnen{color:#b32d2e!important}.ma-freigaben [data-ma-notiz]{width:100%;margin-top:8px}.ma-freigaben .button-link{margin-right:12px}.ma-freigaben__verlauf{margin-top:6px}.ma-freigaben__verlauf summary{cursor:pointer;color:#2271b1}.ma-relevanz-einstellung{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end}.ma-relevanz-einstellung label{display:flex;flex-direction:column;gap:4px}.ma-relevanz-einstellung input{width:120px}.ma-verlauf{margin:6px 0 0;padding:0;list-style:none}.ma-verlauf li{padding:4px 0;border-top:1px solid #f0f0f1;font-size:12px}.ma-verlauf__zeit,.ma-verlauf__wer{color:#646970}.ma-verlauf__notiz{display:block;white-space:pre-line}.ma-relevanz-stufen td,.ma-relevanz-stufen th{padding:4px 12px 4px 0;text-align:left}';
 }
 
 function ma_relevanz_js(): string {
@@ -137,18 +227,29 @@ function ma_relevanz_js(): string {
     var ok=sel.parentNode.querySelector('.ma-relevanz-ok');if(ok)ok.remove();
     post({action:'ma_relevanz_setzen',post:sel.dataset.post,relevanz:sel.value}).then(function(j){var s=document.createElement('span');s.className='ma-relevanz-ok';s.textContent=j&&j.success?'✓':'Fehler';s.title=j&&j.success?j.data.wo:'Nicht gespeichert';sel.after(s);});
   });});
-  // Freigabeseite: Freigeben mit Relevanz und Startseiten-Wahl.
+  // Freigabeseite: Freigeben, Planen und die übrigen Entscheidungen.
   document.querySelectorAll('[data-ma-freigabe]').forEach(function(box){
-    var knopf=box.querySelector('[data-ma-freigeben]'),status=box.querySelector('.ma-freigaben__status');
-    knopf.addEventListener('click',function(){
+    var status=box.querySelector('.ma-freigaben__status'),notiz=box.querySelector('[data-ma-notiz]');
+    function zeige(t,art){status.textContent=t;status.className='ma-freigaben__status'+(art?' ist-'+art:'');}
+    function knoepfe(an){box.querySelectorAll('button').forEach(function(b){b.disabled=!an;});}
+    function fertig(j){if(j&&j.success){zeige(j.data.meldung,'ok');box.closest('tr').style.opacity='.55';}else{zeige((j&&j.data&&j.data.meldung)||'Nicht gespeichert.','fehler');knoepfe(true);}}
+    function fehler(){zeige('Keine Verbindung. Bitte erneut versuchen.','fehler');knoepfe(true);}
+    function freigeben(zeit){
       var r=box.querySelector('input[type=radio]:checked');
-      if(!r){status.textContent='Bitte zuerst eine Relevanz von 1 bis 10 wählen.';status.className='ma-freigaben__status ist-fehler';return;}
-      knopf.disabled=true;status.textContent='Wird freigegeben …';status.className='ma-freigaben__status';
-      var br=box.querySelector('[data-ma-bildrechte]');post({action:'ma_schnellfreigabe',post:box.dataset.post,relevanz:r.value,startseite:box.querySelector('[data-ma-startseite]').checked?'1':'0',bildrechte:br&&br.checked?'1':'0'}).then(function(j){
-        if(j&&j.success){status.textContent=j.data.meldung;status.className='ma-freigaben__status ist-ok';box.closest('tr').style.opacity='.55';}
-        else{status.textContent=(j&&j.data&&j.data.meldung)||'Freigabe fehlgeschlagen.';status.className='ma-freigaben__status ist-fehler';knopf.disabled=false;}
-      }).catch(function(){status.textContent='Keine Verbindung. Bitte erneut versuchen.';status.className='ma-freigaben__status ist-fehler';knopf.disabled=false;});
-    });
+      if(box.dataset.meldung==='1'&&!r){zeige('Bitte zuerst eine Relevanz von 1 bis 10 wählen.','fehler');return;}
+      knoepfe(false);zeige(zeit?'Wird geplant …':'Wird freigegeben …');
+      var st=box.querySelector('[data-ma-startseite]'),br=box.querySelector('[data-ma-bildrechte]');
+      post({action:'ma_schnellfreigabe',post:box.dataset.post,relevanz:r?r.value:'0',startseite:st&&st.checked?'1':'0',bildrechte:br&&br.checked?'1':'0',zeit:zeit||''}).then(fertig).catch(fehler);
+    }
+    box.querySelector('[data-ma-freigeben]').addEventListener('click',function(){freigeben('');});
+    var pl=box.querySelector('[data-ma-planen]');if(pl)pl.addEventListener('click',function(){var z=box.querySelector('[data-ma-zeit]').value;if(!z){zeige('Bitte Datum und Uhrzeit wählen.','fehler');return;}freigeben(z);});
+    box.querySelectorAll('[data-ma-aktion]').forEach(function(k){k.addEventListener('click',function(){
+      var a=k.dataset.maAktion;
+      if((a==='aenderung'||a==='ablehnen')&&notiz.hidden){notiz.hidden=false;notiz.focus();zeige(a==='aenderung'?'Bitte notieren, was geändert werden soll, dann erneut „Änderungen anfordern“.':'Begründung eintragen (optional), dann erneut „Ablehnen“.');return;}
+      if(a==='aenderung'&&!notiz.value.trim()){zeige('Bitte kurz schreiben, was geändert werden soll.','fehler');notiz.focus();return;}
+      knoepfe(false);zeige('Wird gespeichert …');
+      post({action:'ma_redaktion_aktion',post:box.dataset.post,aktion:a,notiz:notiz.value}).then(fertig).catch(fehler);
+    });});
   });
 })();
 JS;
@@ -179,7 +280,9 @@ add_action('wp_ajax_ma_relevanz_setzen', function (): void {
     $id = (int) ($_POST['post'] ?? 0);
     if (!ma_relevanz_darf() || !$id || get_post_type($id) !== 'post' || !current_user_can('edit_post', $id)) wp_send_json_error(['meldung' => 'Keine Berechtigung.'], 403);
     $r = ma_relevanz_saeubern(wp_unslash($_POST['relevanz'] ?? 0));
+    $vorher = (int) get_post_meta($id, 'ma_relevanz', true);
     if ($r) update_post_meta($id, 'ma_relevanz', $r); else delete_post_meta($id, 'ma_relevanz');
+    if ($vorher !== $r && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Relevanz ' . ($r ?: 'ohne Angabe') . ($vorher ? ' (vorher ' . $vorher . ')' : ''));
     $s = ma_relevanz_stufe($r ?: MA_RELEVANZ_STANDARD);
     wp_send_json_success(['relevanz' => $r, 'wo' => $s['name'] . ': ' . $s['wo']]);
 });
@@ -188,80 +291,156 @@ add_action('wp_ajax_ma_relevanz_setzen', function (): void {
 
 /**
  * Nimmt eine Einreichung an: redaktionelle Prüfhaken mit Prüfer und Zeit,
- * Relevanz, Startseite ja/nein, veröffentlichen. Die Sperren (Bildrechte,
- * Pflichtangaben) bleiben wirksam; dann bleibt der Beitrag Entwurf und die
- * Antwort nennt den Grund.
+ * Relevanz, Startseite ja/nein, veröffentlichen oder (mit $zeit) planen.
+ * Änderungsvorschläge zu Veröffentlichtem werden ins Original übernommen.
+ * Termine und Vereinsprofile brauchen keine Relevanz. Die Sperren
+ * (Bildrechte, Pflichtangaben) bleiben wirksam; dann bleibt der Beitrag
+ * Entwurf und die Antwort nennt den Grund.
  */
-function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bildrechte = false): array {
-    if (get_post_type($id) !== 'post') return ['ok' => false, 'meldung' => 'Nur Beiträge lassen sich hier freigeben.'];
-    if (!$relevanz) return ['ok' => false, 'meldung' => 'Bitte eine Relevanz von 1 bis 10 wählen.'];
+function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bildrechte = false, string $zeit = ''): array {
+    $typ = (string) get_post_type($id);
+    if (!in_array($typ, ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'], true)) return ['ok' => false, 'meldung' => 'Dieser Inhalt lässt sich hier nicht freigeben.'];
     $wer = wp_get_current_user()->display_name;
-    foreach (['ma_source_verified', 'ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'] as $k) update_post_meta($id, $k, '1');
-    update_post_meta($id, 'ma_reviewed_by', $wer);
-    update_post_meta($id, 'ma_reviewed_at', current_time('mysql'));
-    update_post_meta($id, 'ma_relevanz', $relevanz);
+    // Änderungsvorschlag: ins Original übernehmen, die Kopie verschwindet. Relevanz
+    // und Startseite des Originals bleiben, wie sie sind.
+    if (function_exists('ma_aenderung_uebernehmen') && get_post_meta($id, '_ma_aenderung_von', true)) {
+        $orig = ma_aenderung_uebernehmen($id);
+        if ($orig && $bildrechte) update_post_meta($orig, 'ma_image_rights_verified', '1');
+        return $orig ? ['ok' => true, 'meldung' => 'Änderung übernommen. Die veröffentlichte Fassung ist aktualisiert.'] : ['ok' => false, 'meldung' => 'Original nicht gefunden.'];
+    }
+    if ($typ === 'post' && !$relevanz) return ['ok' => false, 'meldung' => 'Bitte eine Relevanz von 1 bis 10 wählen.'];
     // Bildrechte bestaetigt die Redaktion nur ausdruecklich (Haken in der Zeile).
     if ($bildrechte) update_post_meta($id, 'ma_image_rights_verified', '1');
-    // Startseite nein = nur Rubrik. Ja = nach Relevanz, ein fester Platz bleibt.
-    $platz = (string) get_post_meta($id, 'ma_startplatz', true);
-    if (!$startseite) update_post_meta($id, 'ma_startplatz', 'aus');
-    elseif ($platz === '' || $platz === 'aus') update_post_meta($id, 'ma_startplatz', 'auto');
-    if (get_post_status($id) !== 'publish') wp_update_post(['ID' => $id, 'post_status' => 'publish']);
+    if ($typ === 'post') {
+        foreach (['ma_source_verified', 'ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'] as $k) update_post_meta($id, $k, '1');
+        update_post_meta($id, 'ma_reviewed_by', $wer);
+        update_post_meta($id, 'ma_reviewed_at', current_time('mysql'));
+        $vorher = (int) get_post_meta($id, 'ma_relevanz', true);
+        update_post_meta($id, 'ma_relevanz', $relevanz);
+        // Startseite nein = nur Rubrik. Ja = nach Relevanz, ein fester Platz bleibt.
+        $platz = (string) get_post_meta($id, 'ma_startplatz', true);
+        if (!$startseite) update_post_meta($id, 'ma_startplatz', 'aus');
+        elseif ($platz === '' || $platz === 'aus') update_post_meta($id, 'ma_startplatz', 'auto');
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Relevanz ' . $relevanz . ($vorher && $vorher !== $relevanz ? ' (vorher ' . $vorher . ')' : '') . ', Startseite: ' . ($startseite ? 'ja' : 'nein'));
+    }
+    $ziel = ['ID' => $id, 'post_status' => 'publish'];
+    if ($zeit !== '') {
+        $t = strtotime($zeit . ' ' . wp_timezone_string());
+        if (!$t || $t <= time() + 60) return ['ok' => false, 'meldung' => 'Der geplante Zeitpunkt muss in der Zukunft liegen.'];
+        $ziel = ['ID' => $id, 'post_status' => 'future', 'post_date' => wp_date('Y-m-d H:i:s', $t), 'post_date_gmt' => gmdate('Y-m-d H:i:s', $t), 'edit_date' => true];
+    }
+    if (get_post_status($id) !== $ziel['post_status'] || $zeit !== '') wp_update_post($ziel);
     if (!in_array(get_post_status($id), ['publish', 'future'], true)) {
         $grund = (string) get_post_meta($id, '_ma_gate_reason', true);
-        return ['ok' => false, 'meldung' => 'Nicht veröffentlicht: ' . ($grund !== '' ? $grund : 'eine Pflichtangabe fehlt') . '. Bitte im Beitrag prüfen.'];
+        return ['ok' => false, 'meldung' => 'Nicht freigegeben: ' . ($grund !== '' ? str_replace('|', ', ', $grund) : 'eine Pflichtangabe fehlt') . '. Bitte im Beitrag prüfen.'];
     }
-    $s = ma_relevanz_stufe($relevanz);
-    $wo = $startseite ? ($relevanz <= 3 ? 'nur in der Rubrik (Relevanz ' . $relevanz . ')' : $s['wo']) : 'nur in der Rubrik';
-    return ['ok' => true, 'meldung' => 'Veröffentlicht. Steht: ' . $wo . '.'];
+    $plan = get_post_status($id) === 'future' ? 'Geplant für ' . get_post_time('d.m.Y H:i', false, $id) . ' Uhr. ' : 'Veröffentlicht. ';
+    if ($typ !== 'post') return ['ok' => true, 'meldung' => $plan];
+    $wo = $startseite ? ma_relevanz_stufe($relevanz)['wo'] : 'nur in der Rubrik, nicht auf der Startseite';
+    return ['ok' => true, 'meldung' => $plan . 'Steht: ' . $wo . '.'];
 }
 
 add_action('wp_ajax_ma_schnellfreigabe', function (): void {
     check_ajax_referer('ma_relevanz', 'nonce');
     $id = (int) ($_POST['post'] ?? 0);
     if (!ma_relevanz_darf() || !$id || !current_user_can('edit_post', $id) || !current_user_can('publish_posts')) wp_send_json_error(['meldung' => 'Keine Berechtigung.'], 403);
-    $e = ma_schnellfreigabe($id, ma_relevanz_saeubern(wp_unslash($_POST['relevanz'] ?? 0)), ($_POST['startseite'] ?? '') === '1', ($_POST['bildrechte'] ?? '') === '1');
+    $zeit = sanitize_text_field(wp_unslash($_POST['zeit'] ?? ''));
+    if ($zeit !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $zeit)) $zeit = '';
+    $e = ma_schnellfreigabe($id, ma_relevanz_saeubern(wp_unslash($_POST['relevanz'] ?? 0)), ($_POST['startseite'] ?? '') === '1', ($_POST['bildrechte'] ?? '') === '1', str_replace('T', ' ', $zeit));
     $e['ok'] ? wp_send_json_success($e) : wp_send_json_error($e);
 });
 
+/** Wartende Inhalte: eingereicht oder in Prüfung, dazu Partner-Entwürfe mit fehlender Fotoerlaubnis. */
+function ma_freigaben_wartend(): array {
+    $typen = ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'];
+    $l = get_posts(['post_type' => $typen, 'post_status' => ['pending', 'ma_in_pruefung'], 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'ASC']);
+    $entwuerfe = get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 40, 'orderby' => 'modified', 'order' => 'DESC',
+        'meta_query' => [['key' => '_ma_partner_rights_missing', 'value' => '1']]]);
+    $gesehen = [];
+    return array_values(array_filter(array_merge($l, $entwuerfe), function ($p) use (&$gesehen) { if (isset($gesehen[$p->ID])) return false; return $gesehen[$p->ID] = true; }));
+}
+
 add_action('admin_menu', function (): void {
-    $n = count(get_posts(['post_type' => 'post', 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
+    $n = count(get_posts(['post_type' => ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'], 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
     $titel = 'Freigaben' . ($n ? ' <span class="awaiting-mod count-' . $n . '"><span class="pending-count">' . $n . '</span></span>' : '');
     add_submenu_page('merzenich-aktuell', 'Freigaben', $titel, 'edit_others_posts', 'ma-freigaben', 'ma_freigaben_seite', 0);
 }, 20);
 
+add_action('admin_post_ma_relevanz_einstellung', function (): void {
+    if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.', 403);
+    check_admin_referer('ma_relevanz_einstellung');
+    $alt = ma_relevanz_einstellung();
+    update_option('ma_relevanz_einstellung', [
+        'frisch_stunden' => (int) ($_POST['frisch_stunden'] ?? 72), 'abklingen' => (float) str_replace(',', '.', (string) ($_POST['abklingen'] ?? '1')),
+        'hero_ab' => (int) ($_POST['hero_ab'] ?? 9), 'buehne_ab' => (int) ($_POST['buehne_ab'] ?? 8),
+    ], false);
+    $neu = ma_relevanz_einstellung();
+    update_option('ma_relevanz_einstellung_log', array_slice(array_merge((array) get_option('ma_relevanz_einstellung_log', []), [['t' => time(), 'u' => get_current_user_id(), 'alt' => $alt, 'neu' => $neu]]), -50), false);
+    wp_safe_redirect(admin_url('admin.php?page=ma-freigaben&gespeichert=1#einstellung')); exit;
+});
+
 function ma_freigaben_seite(): void {
     if (!ma_relevanz_darf()) wp_die('Keine Berechtigung.');
-    $wartend = get_posts(['post_type' => 'post', 'post_status' => ['pending', 'draft'], 'posts_per_page' => 60, 'orderby' => 'modified', 'order' => 'DESC',
-        'meta_query' => [['key' => '_ma_partner_submission', 'compare' => 'EXISTS']]]);
-    $wartend = array_merge(get_posts(['post_type' => 'post', 'post_status' => 'pending', 'posts_per_page' => 60, 'orderby' => 'date', 'order' => 'DESC']),
-        array_filter($wartend, fn($p) => $p->post_status === 'draft'));
-    $gesehen = []; $wartend = array_values(array_filter($wartend, function ($p) use (&$gesehen) { if (isset($gesehen[$p->ID])) return false; return $gesehen[$p->ID] = true; }));
-    echo '<div class="wrap"><h1>Freigaben</h1><p>Hier nimmst du Einreichungen an. Wähle die <strong>Relevanz von 1 bis 10</strong> und ob die Meldung <strong>auf die Startseite</strong> darf, dann „Freigeben“. Die Relevanz legt fest, wo sie steht:</p>';
-    echo '<table class="ma-relevanz-stufen"><thead><tr><th>Relevanz</th><th>Stufe</th><th>Wo die Meldung steht</th></tr></thead><tbody>';
-    foreach (ma_relevanz_stufen() as $s) printf('<tr><td>%d–%d</td><td><strong>%s</strong></td><td>%s</td></tr>', $s['von'], $s['bis'], esc_html($s['name']), esc_html($s['wo']));
-    printf('</tbody></table><p class="description">„Frisch“ heißt jünger als %d Stunden; danach rückt eine Meldung aus Aufmacher und Bühne und steht wie „Normal“. Ohne Angabe gilt %d. Ein fester Platz unter <a href="%s">Startseite</a> geht immer vor.</p>', MA_RELEVANZ_FRISCH_STUNDEN, MA_RELEVANZ_STANDARD, esc_url(admin_url('admin.php?page=ma-startseite')));
-    if (!$wartend) { echo '<p><strong>Keine Einreichungen warten.</strong></p></div>'; return; }
-    echo '<table class="widefat striped ma-freigaben"><thead><tr><th style="width:130px">Bild</th><th>Meldung</th><th>Von</th><th class="ma-freigaben__aktion">Relevanz und Startseite</th></tr></thead><tbody>';
-    foreach ($wartend as $p) {
-        $autor = get_userdata((int) $p->post_author);
-        $rolle = $autor && function_exists('ma_current_partner_policy') ? (ma_current_partner_policy($autor)['label'] ?? '') : '';
-        $bild = get_the_post_thumbnail_url($p, 'medium');
-        $rechte = (string) get_post_meta($p->ID, 'ma_partner_rights_declared', true) === '1';
-        $kats = implode(', ', array_map(fn($t) => $t->name, get_the_category($p->ID)));
-        $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
-        $aus = (string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus';
-        echo '<tr><td>' . ($bild ? '<img class="ma-freigaben__bild" src="' . esc_url($bild) . '" alt="">' : '<span class="description">kein Bild</span>') . '</td>';
-        printf('<td><strong><a href="%s">%s</a></strong><br><span class="description">%s · %s · %s</span>%s</td>',
-            esc_url(get_edit_post_link($p->ID)), esc_html(get_the_title($p) ?: '(ohne Titel)'), esc_html($kats ?: 'ohne Rubrik'),
-            esc_html($p->post_status === 'pending' ? 'wartet auf Freigabe' : 'Entwurf'), esc_html(get_the_modified_date('d.m.Y H:i', $p)),
-            $bild ? '<br><span class="description">Bildrechte des Einsenders: ' . ($rechte ? 'bestätigt' : '<strong>nicht bestätigt</strong>') . '</span>' : '');
-        printf('<td>%s<br><span class="description">%s</span></td>', esc_html($autor ? ($autor->display_name ?: $autor->user_login) : '–'), esc_html($rolle ?: 'Redaktion'));
-        echo '<td class="ma-freigaben__aktion"><div data-ma-freigabe data-post="' . (int) $p->ID . '">' . ma_relevanz_auswahl('ma_relevanz_' . $p->ID, $r)
-            . '<div class="ma-freigaben__zeile"><label><input type="checkbox" data-ma-startseite' . ($aus ? '' : ' checked') . '> Auf die Startseite</label>'
-            . ($bild ? '<label><input type="checkbox" data-ma-bildrechte' . ((string) get_post_meta($p->ID, 'ma_image_rights_verified', true) === '1' ? ' checked' : '') . '> Bildrechte geprüft</label>' : '')
-            . '<button type="button" class="button button-primary" data-ma-freigeben>Freigeben</button> <a class="button" href="' . esc_url(get_edit_post_link($p->ID)) . '">Bearbeiten</a></div>'
-            . '<p class="ma-freigaben__status" role="status" aria-live="polite"></p></div></td></tr>';
+    $wartend = ma_freigaben_wartend();
+    $e = ma_relevanz_einstellung();
+    echo '<div class="wrap"><h1>Freigaben</h1>';
+    if (!empty($_GET['gespeichert'])) echo '<div class="notice notice-success is-dismissible"><p>Einstellungen der Platzierung gespeichert.</p></div>';
+    echo '<p>Eingereichte Meldungen, Termine, Vereinsprofile und Änderungsvorschläge. Für Meldungen wählst du die <strong>Relevanz von 1 bis 10</strong> und ob sie <strong>auf die Startseite</strong> darf. Dann <strong>Freigeben</strong> (sofort) oder <strong>Planen</strong> (Zeitpunkt). Alternativ: in Prüfung nehmen, Änderungen anfordern oder ablehnen; der Einsender bekommt jeweils eine E-Mail.</p>';
+    if (!$wartend) echo '<p><strong>Keine Einreichungen warten.</strong></p>';
+    else {
+        echo '<table class="widefat striped ma-freigaben"><thead><tr><th style="width:130px">Bild</th><th>Einreichung</th><th>Von</th><th class="ma-freigaben__aktion">Entscheidung</th></tr></thead><tbody>';
+        foreach ($wartend as $p) echo ma_freigaben_zeile($p);
+        echo '</tbody></table>';
     }
-    echo '</tbody></table></div>';
+    echo '<h2 id="stufen" style="margin-top:28px">Die zehn Stufen</h2><table class="ma-relevanz-stufen"><thead><tr><th>Relevanz</th><th>Bedeutung</th><th>Platz auf der Startseite (mit Startseiten-Freigabe)</th></tr></thead><tbody>';
+    foreach (ma_relevanz_stufen() as $s) printf('<tr><td>%d</td><td><strong>%s</strong></td><td>%s</td></tr>', $s['von'], esc_html($s['name']), esc_html($s['wo']));
+    printf('</tbody></table><p class="description">Ohne Startseiten-Freigabe steht eine Meldung nur in ihrer Rubrik, auch mit Relevanz 10. „Frisch“ heißt jünger als %d Stunden. Sortiert wird nach Relevanz minus %s Punkt(e) je Tag Alter; bei gleichem Wert steht die neuere Meldung vorn. Ein fester Platz unter <a href="%s">Startseite</a> geht immer vor.</p>',
+        $e['frisch_stunden'], esc_html(number_format_i18n($e['abklingen'], 1)), esc_url(admin_url('admin.php?page=ma-startseite')));
+    if (current_user_can('manage_options')) {
+        echo '<h2 id="einstellung">Einstellungen der Platzierung</h2><form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" class="ma-relevanz-einstellung"><input type="hidden" name="action" value="ma_relevanz_einstellung">';
+        wp_nonce_field('ma_relevanz_einstellung');
+        printf('<label>Frisch für Aufmacher und Bühne (Stunden) <input type="number" name="frisch_stunden" min="6" max="336" value="%d"></label>', $e['frisch_stunden']);
+        printf('<label>Abklingen je Tag Alter (Punkte) <input type="number" name="abklingen" min="0" max="5" step="0.1" value="%s"></label>', esc_attr((string) $e['abklingen']));
+        printf('<label>Aufmacher ab Relevanz <input type="number" name="hero_ab" min="7" max="10" value="%d"></label>', $e['hero_ab']);
+        printf('<label>Bühne ab Relevanz <input type="number" name="buehne_ab" min="6" max="10" value="%d"></label>', $e['buehne_ab']);
+        echo '<button class="button">Speichern</button></form>';
+    }
+    echo '</div>';
+}
+
+function ma_freigaben_zeile(WP_Post $p): string {
+    $autor = get_userdata((int) $p->post_author);
+    $rolle = $autor && function_exists('ma_current_partner_policy') ? (ma_current_partner_policy($autor)['label'] ?? '') : '';
+    $verein = $autor ? (string) get_user_meta($autor->ID, 'ma_verein_name', true) : '';
+    $bild = get_the_post_thumbnail_url($p, 'medium');
+    $von = (int) get_post_meta($p->ID, '_ma_aenderung_von', true);
+    $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp'];
+    $istMeldung = $p->post_type === 'post';
+    $kats = $istMeldung ? implode(', ', array_map(fn($t) => $t->name, get_the_category($p->ID))) : '';
+    $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
+    $aus = (string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus';
+    $rechte = function_exists('ma_bildrechte_stand') ? ma_bildrechte_stand($p->ID) : ['noetig' => (bool) $bild, 'ok' => (string) get_post_meta($p->ID, 'ma_partner_rights_declared', true) === '1', 'text' => ''];
+    $h = '<tr><td>' . ($bild ? '<img class="ma-freigaben__bild" src="' . esc_url($bild) . '" alt="">' : '<span class="description">kein Bild</span>') . '</td>';
+    $h .= sprintf('<td><span class="ma-freigaben__typ">%s</span>%s<br><strong><a href="%s">%s</a></strong><br><span class="description">%s%s · %s</span>%s%s<details class="ma-freigaben__verlauf"><summary>Verlauf</summary>%s</details></td>',
+        esc_html($typen[$p->post_type] ?? $p->post_type), $von ? ' <span class="ma-freigaben__aenderung">Änderung an „<a href="' . esc_url(get_permalink($von)) . '" target="_blank">' . esc_html(get_the_title($von)) . '</a>“</span>' : '',
+        esc_url(get_edit_post_link($p->ID)), esc_html(get_the_title($p) ?: '(ohne Titel)'), $kats !== '' ? esc_html($kats) . ' · ' : '',
+        esc_html(function_exists('ma_status_name') ? ma_status_name($p->post_status) : $p->post_status), esc_html(get_the_modified_date('d.m.Y H:i', $p)),
+        $rechte['noetig'] ? '<br><span class="description">Bildrechte des Einsenders: ' . ($rechte['ok'] ? 'bestätigt' . ($rechte['text'] !== '' ? ' (' . esc_html($rechte['text']) . ')' : '') : '<strong>nicht bestätigt</strong>') . '</span>' : '',
+        $p->post_status === 'ma_in_pruefung' ? '<br><span class="description">In Prüfung bei ' . esc_html((get_userdata((int) get_post_meta($p->ID, '_ma_pruefer', true))->display_name ?? 'Redaktion')) . '</span>' : '',
+        function_exists('ma_verlauf_html') ? ma_verlauf_html($p->ID, 8) : '');
+    $h .= sprintf('<td>%s<br><span class="description">%s</span></td>', esc_html($autor ? ($autor->display_name ?: $autor->user_login) : '–'), esc_html(trim($rolle . ($verein !== '' && $verein !== ($autor->display_name ?? '') ? ' · ' . $verein : '')) ?: 'Redaktion'));
+    $h .= '<td class="ma-freigaben__aktion"><div data-ma-freigabe data-post="' . (int) $p->ID . '" data-meldung="' . ($istMeldung && !$von ? '1' : '0') . '">';
+    if ($istMeldung && !$von) $h .= ma_relevanz_auswahl('ma_relevanz_' . $p->ID, $r) . '<div class="ma-freigaben__zeile"><label><input type="checkbox" data-ma-startseite' . ($aus ? '' : ' checked') . '> Auf die Startseite</label>';
+    else $h .= '<div class="ma-freigaben__zeile">';
+    if ($bild) $h .= '<label><input type="checkbox" data-ma-bildrechte' . ((string) get_post_meta($p->ID, 'ma_image_rights_verified', true) === '1' ? ' checked' : '') . '> Bildrechte geprüft</label>';
+    $h .= '</div><div class="ma-freigaben__zeile"><button type="button" class="button button-primary" data-ma-freigeben>' . ($von ? 'Änderung übernehmen' : 'Freigeben') . '</button>';
+    if (!$von) $h .= '<span class="ma-freigaben__planen"><input type="datetime-local" data-ma-zeit aria-label="Veröffentlichung planen"><button type="button" class="button" data-ma-planen>Planen</button></span>';
+    $h .= '</div><div class="ma-freigaben__zeile">'
+        . ($p->post_status !== 'ma_in_pruefung' ? '<button type="button" class="button-link" data-ma-aktion="pruefen">In Prüfung nehmen</button>' : '')
+        . '<button type="button" class="button-link" data-ma-aktion="aenderung">Änderungen anfordern</button>'
+        . '<button type="button" class="button-link ma-freigaben__ablehnen" data-ma-aktion="ablehnen">Ablehnen</button>'
+        . '<a class="button-link" href="' . esc_url(get_edit_post_link($p->ID)) . '">Bearbeiten</a></div>'
+        . '<textarea data-ma-notiz rows="2" placeholder="Notiz an den Einsender (Pflicht bei „Änderungen anfordern“)" hidden></textarea>'
+        . '<p class="ma-freigaben__status" role="status" aria-live="polite"></p></div></td></tr>';
+    return $h;
 }

@@ -54,7 +54,10 @@ function check_admin_referer($a){ return true; }
 function sanitize_key($s){ return strtolower(preg_replace('/[^a-z0-9_\-]/i','',(string)$s)); }
 function wp_unslash($s){ return $s; }
 
+if(!function_exists('add_action')){ function add_action(...$a){} }
+if(!function_exists('add_filter')){ function add_filter(...$a){} }
 require __DIR__.'/../../wordpress/plugin/merzenich-aktuell-core/includes/partners.php';
+require __DIR__.'/../../wordpress/plugin/merzenich-aktuell-core/includes/bildrechte.php';
 require __DIR__.'/../../wordpress/plugin/merzenich-aktuell-core/includes/comments.php';
 
 $fehler=0;
@@ -109,38 +112,42 @@ pruefe('Feuerwehr-Beitrag wird pending',$d['post_status'],'pending');
 $GLOBALS['user']=new WP_User(10,['ma_blaulicht_partner']);
 pruefe('Bestehender Blaulicht-Zugang funktioniert weiter',ma_current_partner_policy()['role']??'','ma_blaulicht_partner');
 
-echo "\nFotoerlaubnis der Partner\n";
-$GLOBALS['meta']=[]; $GLOBALS['thumb']=[];
-if(!function_exists('get_post_meta')){ function get_post_meta($id,$k,$single=false){ return $GLOBALS['meta'][$id][$k] ?? ''; } }
+echo "\nBestaetigung der Bild- und Nutzungsrechte (Version 2)\n";
+$GLOBALS['meta']=[]; $GLOBALS['thumbid']=[]; $GLOBALS['inhalt']=[];
+if(!function_exists('get_post_meta')){ function get_post_meta($id,$k='',$single=false){ $v=$GLOBALS['meta'][$id][$k] ?? ($single?'':[]); return $v; } }
 if(!function_exists('update_post_meta')){ function update_post_meta($id,$k,$v){ $GLOBALS['meta'][$id][$k]=$v; return true; } }
 if(!function_exists('delete_post_meta')){ function delete_post_meta($id,$k){ unset($GLOBALS['meta'][$id][$k]); return true; } }
-if(!function_exists('has_post_thumbnail')){ function has_post_thumbnail($id){ return !empty($GLOBALS['thumb'][$id]); } }
+if(!function_exists('get_post_thumbnail_id')){ function get_post_thumbnail_id($id){ return $GLOBALS['thumbid'][$id] ?? 0; } }
+if(!function_exists('get_post_field')){ function get_post_field($f,$id){ return $GLOBALS['inhalt'][$id] ?? ''; } }
+$log=fn(array $m)=>['t'=>1,'u'=>9,'name'=>'Test','medien'=>$m,'version'=>MA_BILDRECHTE_VERSION];
 $GLOBALS['user']=new WP_User(9,['ma_feuerwehr_partner']);
 $_POST=[];
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>50,'_thumbnail_id'=>12]);
-pruefe('Mit Bild ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+pruefe('Mit Bild ohne Bestaetigung bleibt Entwurf',$d['post_status'],'draft');
 pruefe('Grund wird fuer den Hinweis vermerkt',$GLOBALS['meta'][50][MA_PARTNER_RIGHTS_MISSING_META]??'','1');
-$_POST=['ma_editorial_nonce'=>'x', MA_PARTNER_RIGHTS_META=>'1'];
+$_POST=['ma_editorial_nonce'=>'x','ma_bildrechte_haken'=>'1'];
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>50,'_thumbnail_id'=>12]);
-pruefe('Mit Bild und Erklaerung wird pending',$d['post_status'],'pending');
-pruefe('Hinweis verschwindet',isset($GLOBALS['meta'][50][MA_PARTNER_RIGHTS_MISSING_META]),false);
-$_POST=['ma_editorial_nonce'=>'x'];
-$GLOBALS['meta'][51][MA_PARTNER_RIGHTS_META]='1'; $GLOBALS['thumb'][51]=true;
-$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>51]);
-pruefe('Abgewaehlter Haken zaehlt, nicht der alte Stand',$d['post_status'],'draft');
+pruefe('Mit Haken im Formular wird pending',$d['post_status'],'pending');
 $_POST=[];
-$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>51]);
-pruefe('Ohne Formular gilt der gespeicherte Stand',$d['post_status'],'pending');
+$GLOBALS['meta'][51][MA_BILDRECHTE_LOG]=[$log([12])];
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>51,'_thumbnail_id'=>12]);
+pruefe('Bestaetigte Medien: pending',$d['post_status'],'pending');
+$d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish','post_content'=>'<!-- wp:image {"id":5} --><figure><img class="wp-image-5" src="x.jpg"></figure><!-- /wp:image -->'],['ID'=>51,'_thumbnail_id'=>12]);
+pruefe('Neues Bild braucht neue Bestaetigung',$d['post_status'],'draft');
+pruefe('Offene Medien = nur das neue Bild',ma_bildrechte_offen(51,[5,12]),[5]);
+$GLOBALS['meta'][51][MA_BILDRECHTE_LOG]=[['t'=>1,'u'=>9,'name'=>'Test','medien'=>[5,12],'version'=>'1']];
+pruefe('Bestaetigung einer alten Textfassung gilt nicht',ma_bildrechte_offen(51,[5,12]),[5,12]);
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],['ID'=>52,'_thumbnail_id'=>0]);
-pruefe('Ohne Bild keine Erklaerung noetig',$d['post_status'],'pending');
+pruefe('Ohne Bild keine Bestaetigung noetig',$d['post_status'],'pending');
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish','post_content'=>'<!-- wp:image {"id":5} --><figure><img src="x.jpg"></figure><!-- /wp:image -->'],['ID'=>54,'_thumbnail_id'=>0]);
-pruefe('Bild im Text ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+pruefe('Bild im Text ohne Bestaetigung bleibt Entwurf',$d['post_status'],'draft');
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish','post_content'=>'Nur Text ohne Bild.'],['ID'=>55,'_thumbnail_id'=>0]);
 pruefe('Text ohne Bild wird pending',$d['post_status'],'pending');
-pruefe('Erklaerung nennt Lizenzrechte und Verantwortung',str_contains(ma_partner_rights_text(),'Lizenzrechte') && str_contains(ma_partner_rights_text(),'selbst verantwortlich'),true);
+pruefe('Galerie-IDs werden erkannt',ma_bildrechte_medien_aus_text('<!-- wp:gallery {"ids":[31,32]} -->'),[31,32]);
+pruefe('Erklaerung im Wortlaut der Vorgabe',str_contains(ma_partner_rights_text(),'Urheber-, Persönlichkeits- oder Markenrechte') && str_contains(ma_partner_rights_text(),'Einwilligungen abgebildeter Personen'),true);
 $GLOBALS['user']=new WP_User(11,['ma_immobilien_partner']);
 $d=ma_partner_force_pending(['post_type'=>'ma_property','post_status'=>'publish'],['ID'=>53,'_thumbnail_id'=>7]);
-pruefe('Makler: Inserat mit Bild ohne Erklaerung bleibt Entwurf',$d['post_status'],'draft');
+pruefe('Makler: Inserat mit Bild ohne Bestaetigung bleibt Entwurf',$d['post_status'],'draft');
 $_POST=[];
 
 echo "\nAlle wartenden genehmigen (ueber mehrere Seiten)\n";

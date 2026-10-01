@@ -1,0 +1,149 @@
+{
+ "_hinweis": "Erzeugt aus site-source/content/vereine/*.md (deploy/wp-theme.mjs). Nicht von Hand ändern.",
+ "profile": {
+  "fc-fanclub-merzenich-1967": {
+   "name": "1. FC Köln Fanclub Merzenich 1967",
+   "kategorie": "Fanclub",
+   "beschreibung": "Einer der ältesten FC-Fanclubs im Kreis Düren, gemeinsame Spielabende in der Soccerhalle und Fahrten zu Heimspielen.",
+   "gegruendet": "1967",
+   "adresse": "",
+   "website": "https://www.heimat-info.de/beitraege/bb33f4b8-b853-408b-adff-0b22ff9cea4a",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": {
+    "src": "/assets/uploads/fanclub-saisonauftakt.webp",
+    "alt": "1. FC Köln Fanclub Merzenich 1967",
+    "credit": "1. FC Köln Fanclub Merzenich 1967",
+    "type": "logo",
+    "fit": "contain"
+   }
+  },
+  "feuerwehr-merzenich": {
+   "name": "Freiwillige Feuerwehr Merzenich",
+   "kategorie": "Feuerwehr",
+   "beschreibung": "Löschzug Merzenich und Löschgruppen in den Ortsteilen, darunter Girbelsrath und Morschenich. Veröffentlicht Einsatzberichte mit Originalbildern.",
+   "gegruendet": "",
+   "adresse": "",
+   "website": "https://feuerwehr-merzenich.de/",
+   "stand": "2026-09-01",
+   "text": "Die Einsatzberichte der Feuerwehr sind Grundlage des Ressorts [Blaulicht](/blaulicht/). Notruf: 112.",
+   "bild": null
+  },
+  "ghv-merzenich": {
+   "name": "Geschichts- und Heimatverein Merzenich e.V.",
+   "kategorie": "Heimat & Geschichte",
+   "beschreibung": "Gegründet am 6. Oktober 1983; betreibt das Heimatmuseum an der Bergstraße und das Ortsarchiv, richtet den Adventsmarkt am Museum aus.",
+   "gegruendet": "1983",
+   "adresse": "Heimatmuseum, Bergstraße, Merzenich",
+   "website": "https://heimatmuseum-merzenich.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "golzheim-aktiv": {
+   "name": "Golzheim aktiv e.V.",
+   "kategorie": "Soziales",
+   "beschreibung": "Verein, der Initiativen und Angebote im Dorf Golzheim bündelt, von Kita und Schule bis Dorfleben.",
+   "gegruendet": "",
+   "adresse": "",
+   "website": "https://golzheimaktiv.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "karnevals-und-buehnenfreunde-girbelsrath": {
+   "name": "Karnevals- und Bühnenfreunde 1925 e.V. Girbelsrath",
+   "kategorie": "Karneval",
+   "beschreibung": "Karnevalsverein in Girbelsrath.",
+   "gegruendet": "",
+   "adresse": "",
+   "website": "",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "kg-jonge-vom-berg": {
+   "name": "KG Jonge vom Berg Merzenich 1975 e.V.",
+   "kategorie": "Karneval",
+   "beschreibung": "Karnevalsgesellschaft mit Tanzsport, Sitzungen und dem Rosenmontagszug in Merzenich; pflegt einen Veranstaltungskalender für den Ort.",
+   "gegruendet": "1975",
+   "adresse": "",
+   "website": "https://jonge-vom-berg.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "kg-mir-hahle-poohl-golzheim": {
+   "name": "KG Mir hahle Poohl Golzheim",
+   "kategorie": "Karneval",
+   "beschreibung": "Karnevalsgesellschaft in Golzheim.",
+   "gegruendet": "",
+   "adresse": "",
+   "website": "",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "sc-1919-merzenich": {
+   "name": "SC 1919 Merzenich",
+   "kategorie": "Fußball",
+   "beschreibung": "Sportverein mit 17 Mannschaften, davon 14 im Juniorenbereich; die erste Mannschaft spielt in der Kreisliga A.",
+   "gegruendet": "1919",
+   "adresse": "",
+   "website": "https://www.scmerzenich.de/",
+   "stand": "2026-09-01",
+   "text": "Der SC 1919 Merzenich ist der größte Sportverein der Gemeinde. Der Verein hat 17 Mannschaften, davon 14 im Juniorenbereich; die erste Mannschaft spielt in der Kreisliga A. Spielberichte und Tabellen finden Sie im Ressort [Sport](/sport/).",
+   "bild": {
+    "src": "/assets/uploads/sc-1919-merzenich-logo.webp",
+    "alt": "SC 1919 Merzenich",
+    "credit": "SC 1919 Merzenich",
+    "type": "logo",
+    "fit": "contain"
+   }
+  },
+  "schuetzenbruderschaft-golzheim": {
+   "name": "Schützenbruderschaft Golzheim",
+   "kategorie": "Schützen",
+   "beschreibung": "Urkundlich vor 1372 belegte Bruderschaft mit eigener Schützenhalle (erbaut 1882), Luftgewehrschießstand, Bürgerpokalschießen und aktiver Schützenjugend (BdSJ). Schützenfest traditionell zu Pfingsten.",
+   "gegruendet": "vor 1372",
+   "adresse": "Schützenhalle Golzheim",
+   "website": "https://www.schuetzen-golzheim.de/",
+   "stand": "2026-09-01",
+   "text": "Die Bruderschaft feierte 2022 ihr 650-jähriges Bestehen. Die Schützenhalle wurde 1882 gebaut und 1987 sowie 1995 um einen Gesellschaftsraum und einen Luftgewehrschießstand mit sechs Bahnen erweitert. 2024 wurde mit Gerda Siefer erstmals eine Frau Schützenkönigin.",
+   "bild": null
+  },
+  "schuetzenbruderschaft-morschenich": {
+   "name": "St. Lambertus Schützenbruderschaft Morschenich e.V.",
+   "kategorie": "Schützen",
+   "beschreibung": "Schützenbruderschaft in Morschenich, benannt nach der Pfarrkirche St. Lambertus.",
+   "gegruendet": "",
+   "adresse": "",
+   "website": "https://schuetzen-morschenich.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "sv-morschenich-1925": {
+   "name": "SV Morschenich 1925 e.V.",
+   "kategorie": "Sport",
+   "beschreibung": "Sportverein in Morschenich, gegründet 1925.",
+   "gegruendet": "1925",
+   "adresse": "",
+   "website": "https://www.sv-morschenich1925.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  },
+  "ttc-merzenich": {
+   "name": "TTC Merzenich",
+   "kategorie": "Tischtennis",
+   "beschreibung": "Tischtennisclub, seit 1972 Mitglied im Westdeutschen Tischtennis-Verband. Heimspiele in der Turnhalle der Schule.",
+   "gegruendet": "1972",
+   "adresse": "",
+   "website": "https://ttc-merzenich.de/",
+   "stand": "2026-09-01",
+   "text": "",
+   "bild": null
+  }
+ }
+}

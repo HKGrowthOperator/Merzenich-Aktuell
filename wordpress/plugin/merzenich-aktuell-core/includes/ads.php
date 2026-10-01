@@ -22,7 +22,7 @@ function ma_ad_slots(): array {
     return array_merge(
         ['homepage_sidebar_top','homepage_sidebar_middle'],
         ma_ad_band_slots(),
-        ['homepage_tip','homepage_feed_1','article_inline_1','article_sidebar','header_billboard']
+        ['homepage_tip','homepage_feed_1','article_inline_1','article_sidebar','header_billboard','hero_clubs_expanded_right']
     );
 }
 
@@ -36,6 +36,7 @@ function ma_ad_slot_label(string $slot): string {
         'article_inline_1' => 'Artikel – im Text',
         'article_sidebar' => 'Artikel – Seitenspalte',
         'header_billboard' => 'Kopfbereich – Billboard',
+        'hero_clubs_expanded_right' => 'Menü „Vereine“ aufgeklappt – Fläche rechts',
     ];
     if (preg_match('/^homepage_band_(\d+)$/', $slot, $m)) return 'Startseite – Werbeband '.$m[1];
     return $labels[$slot] ?? $slot;
@@ -148,6 +149,13 @@ function ma_ads_rotate(array $ads, string $slot, ?int $seed = null): array {
     return array_merge(array_slice($ads, $offset), array_slice($ads, 0, $offset));
 }
 
+/** Alternativtext: Feld „Alternativtext“ am Werbebild, sonst der Titel der Anzeige. */
+function ma_ad_alt(WP_Post $ad): string {
+    $bild = (int)get_post_thumbnail_id($ad->ID);
+    $alt = $bild ? trim((string)get_post_meta($bild, '_wp_attachment_image_alt', true)) : '';
+    return $alt !== '' ? $alt : (string)get_the_title($ad);
+}
+
 function ma_render_ad_item(WP_Post $ad, bool $hidden = false): string {
     $url = esc_url((string)get_post_meta($ad->ID, 'ma_ad_url', true));
     $sponsor = esc_html((string)get_post_meta($ad->ID, 'ma_ad_sponsor', true));
@@ -157,10 +165,10 @@ function ma_render_ad_item(WP_Post $ad, bool $hidden = false): string {
     // Bild erscheint das Textmotiv - nie ein leerer Platz und nie ein
     // 'Platz frei'-Hinweis auf der Live-Seite.
     $body = $img
-        ? '<img src="'.esc_url($img).'" alt="'.esc_attr(get_the_title($ad)).'" loading="lazy" decoding="async">'
+        ? '<img src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async">'
         : '<span class="ma-ad__text">'.esc_html(get_the_title($ad)).'</span>';
     if ($url) $body = '<a href="'.$url.'" rel="sponsored noopener" target="_blank">'.$body.'</a>';
-    return '<div class="ma-ad__item" data-ma-ad-id="'.esc_attr((string)$ad->ID).'"'.($hidden ? ' hidden' : '').'>'.$body.($sponsor ? '<p>'.$sponsor.'</p>' : '').'</div>';
+    return '<div class="ma-ad__item" data-ma-ad-id="'.esc_attr((string)$ad->ID).'" data-ma-anzeige="'.esc_attr((string)$ad->ID).'"'.($hidden ? ' hidden' : '').'>'.$body.($sponsor ? '<p>'.$sponsor.'</p>' : '').'</div>';
 }
 
 /**

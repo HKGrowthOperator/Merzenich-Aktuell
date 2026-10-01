@@ -87,10 +87,14 @@ add_action('save_post_post', function (int $post_id): void {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!ma_startplatz_darf() || !current_user_can('edit_post', $post_id)) return;
     $platz = sanitize_key(wp_unslash($_POST['ma_startplatz'] ?? 'auto'));
+    $alt = (string) get_post_meta($post_id, 'ma_startplatz', true) ?: 'auto';
     ma_startplatz_setzen($post_id, $platz);
+    if ($alt !== $platz && isset(ma_startplaetze()[$platz]) && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Startseite: ' . ma_startplaetze()[$platz]);
     if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_relevanz'])) {
         $r = ma_relevanz_saeubern(wp_unslash($_POST['ma_relevanz']));
+        $vorher = (int) get_post_meta($post_id, 'ma_relevanz', true);
         if ($r) update_post_meta($post_id, 'ma_relevanz', $r);
+        if ($r && $r !== $vorher && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Relevanz ' . $r . ($vorher ? ' (vorher ' . $vorher . ')' : ''));
     }
 }, 20);
 

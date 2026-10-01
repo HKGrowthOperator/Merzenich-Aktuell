@@ -22,6 +22,7 @@ while (have_posts()): the_post();
   <div class="kick-row"><div class="location-line"><span class="location-brand">MERZENICH</span><?php if ($ort !== 'merzenich') echo ' · ' . esc_html(mb_strtoupper(MA21_ORTE[$ort])); ?></div><span class="kicker"><?php echo esc_html($kicker); ?></span></div>
   <h1><?php echo esc_html($titel); ?></h1>
   <?php if (has_excerpt()): ?><p class="dek"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
+  <?php if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)): $von = (string) get_post_meta($p->ID, 'ma_gesponsert_von', true); ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.</p><?php endif; ?>
   <div class="byline">
     <span class="avatar" aria-hidden="true">MA</span>
     <span class="who"><b><a href="<?php echo esc_url(home_url('/autor/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span>

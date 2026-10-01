@@ -19,7 +19,7 @@
  * Werbebänder, Orte, Umkreis, Foto des Tages) kommt unverändert mit.
  * Aufruf: node deploy/wp-theme.mjs [--check]
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -54,6 +54,12 @@ if (!anzeigeBuehne) throw new Error('wp-theme: Anzeige werbung:buehne fehlt in i
 // Werbeflaeche der Unternehmensseite (rechte Spalte), fuer theme/unternehmen.php.
 const anzeigeUnternehmen = (/<!-- werbung:unternehmen:start -->[\s\S]*?<!-- werbung:unternehmen:end -->/.exec(readFileSync(join(wurzel, 'chatgpt-site', 'unternehmen', 'index.html'), 'utf8')) || [''])[0];
 if (!anzeigeUnternehmen) throw new Error('wp-theme: Anzeige werbung:unternehmen fehlt in unternehmen/index.html');
+// Sportseite: Spielstand-Ecke und Spiel-/Tabellenmodul aus demselben Datenstand
+// wie die statische Seite (sport-prerender), fuer theme/archive.php (Kategorie sport).
+const sportSeite = readFileSync(join(wurzel, 'chatgpt-site', 'sport', 'index.html'), 'utf8');
+const sportEcke = (/<aside class="sport-ecke"[\s\S]*?<!--\/sport-ecke--><\/aside>/.exec(sportSeite) || [''])[0];
+const sportModul = (/<div class="sports-module"[\s\S]*?<\/section><\/div>(?=\s*<div class="content-grid">)/.exec(sportSeite) || [''])[0];
+if (!sportModul) throw new Error('wp-theme: sports-module fehlt in sport/index.html');
 const SLOTS = ['oben', 'gemeinde', 'blaulicht', 'rathaus', 'wirtschaft', 'vereine'];
 for (const s of SLOTS) {
   const re = new RegExp(`<!-- start:${s}:start -->[\\s\\S]*?<!-- start:${s}:end -->`);
@@ -74,12 +80,38 @@ const dateien = {
   'startseite.html': start,
   'werbung-buehne.html': anzeigeBuehne,
   'werbung-unternehmen.html': anzeigeUnternehmen,
+  'sport-ecke.html': sportEcke,
+  'sport-modul.html': sportModul,
 };
 // Vereinsverzeichnis fuer die Vereinszugaenge im Plugin (includes/vereinszugaenge.php).
 const vzZiel = join(wurzel, 'wordpress', 'plugin', 'merzenich-aktuell-core', 'data', 'vereinsverzeichnis.json');
 const vzNeu = readFileSync(join(wurzel, 'deploy', 'vereinsverzeichnis.json'), 'utf8');
 let vzGeaendert = 0;
 if (!existsSync(vzZiel) || readFileSync(vzZiel, 'utf8') !== vzNeu) { vzGeaendert = 1; if (!nurPruefen) { mkdirSync(dirname(vzZiel), { recursive: true }); writeFileSync(vzZiel, vzNeu); } }
+// Geprüfte Vereinsprofile der statischen Seite (site-source/content/vereine/*.md):
+// Beschreibung, Gründung, Adresse, Logo. Das Plugin übernimmt sie beim Anlegen
+// der WordPress-Profile (includes/vereine.php), passend über den Slug.
+const vpQuelle = join(wurzel, 'site-source', 'content', 'vereine');
+const vpProfile = {};
+for (const datei of existsSync(vpQuelle) ? readdirSync(vpQuelle).filter((d) => d.endsWith('.md')).sort() : []) {
+  const roh = readFileSync(join(vpQuelle, datei), 'utf8');
+  const m = roh.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!m) continue;
+  const fm = {}; let block = null;
+  for (const zeile of m[1].split('\n')) {
+    const tief = zeile.match(/^ {2}([a-z_]+):\s*(.*)$/);
+    const flach = zeile.match(/^([a-z_]+):\s*(.*)$/);
+    const wert = (v) => v.trim().replace(/^"(.*)"$/, '$1');
+    if (tief && block) fm[block][tief[1]] = wert(tief[2]);
+    else if (flach) { block = flach[2].trim() === '' ? flach[1] : null; fm[flach[1]] = block ? {} : wert(flach[2]); }
+  }
+  if (!fm.slug) continue;
+  vpProfile[fm.slug] = { name: fm.name || '', kategorie: fm.category || '', beschreibung: fm.description || '', gegruendet: fm.founded || '', adresse: fm.address || '',
+    website: fm.website || '', stand: fm.updated || '', text: m[2].trim(), bild: typeof fm.image === 'object' ? fm.image : null };
+}
+const vpZiel = join(wurzel, 'wordpress', 'plugin', 'merzenich-aktuell-core', 'data', 'vereinsprofile.json');
+const vpNeu = JSON.stringify({ _hinweis: 'Erzeugt aus site-source/content/vereine/*.md (deploy/wp-theme.mjs). Nicht von Hand ändern.', profile: vpProfile }, null, 1) + '\n';
+if (!existsSync(vpZiel) || readFileSync(vpZiel, 'utf8') !== vpNeu) { vzGeaendert++; if (!nurPruefen) writeFileSync(vpZiel, vpNeu); }
 if (!nurPruefen) mkdirSync(ziel, { recursive: true });
 let geaendert = vzGeaendert;
 for (const [name, inhalt] of Object.entries(dateien)) {

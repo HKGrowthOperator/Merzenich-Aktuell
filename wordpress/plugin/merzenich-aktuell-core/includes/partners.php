@@ -158,12 +158,8 @@ const MA_PARTNER_RIGHTS_META = 'ma_partner_rights_declared';
 const MA_PARTNER_RIGHTS_MISSING_META = '_ma_partner_rights_missing';
 
 function ma_partner_rights_text(): string {
-    // Ausformuliert auf Wunsch des Betreibers (30.09.2026), gleicher Kern wie
-    // die Bildrechte-Erklaerung der Formulare auf der Website.
-    return 'Ich versichere, dass ich die Bilder in diesem Beitrag selbst aufgenommen habe oder alle nötigen Nutzungs- und Lizenzrechte daran besitze. '
-        . 'Erkennbar abgebildete Personen sind mit der Veröffentlichung einverstanden; Kennzeichen, Gesichter Unbeteiligter und Hausnummern sind nicht zu sehen oder unkenntlich gemacht. '
-        . 'Merzenich Aktuell darf die Bilder mit diesem Beitrag unentgeltlich online veröffentlichen. '
-        . 'Für die Rechte an den Bildern bin ich selbst verantwortlich: Macht ein Dritter Ansprüche wegen fehlender Rechte geltend, stelle ich Merzenich Aktuell davon frei.';
+    // Seit 01.10.2026 die verbindliche Erklärung aus bildrechte.php (Version 2).
+    return function_exists('ma_bildrechte_text') ? ma_bildrechte_text() : '';
 }
 
 /** Hat der Beitrag ein Bild? Formularwert vor gespeichertem Stand. */
@@ -184,42 +180,26 @@ function ma_partner_rights_declared(int $post_id): bool {
     return $post_id > 0 && (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) === '1';
 }
 
-/** Haken fuer Partner, Nachweis fuer die Redaktion (im Feld "Bildtyp"). */
+/** Haken fuer Partner (nie vorausgewaehlt), Nachweis fuer die Redaktion (im Feld "Bildtyp"). */
 function ma_partner_rights_field(int $post_id): void {
+    $medien = function_exists('ma_bildrechte_medien') ? ma_bildrechte_medien($post_id) : [];
+    $offen = $medien ? ma_bildrechte_offen($post_id, $medien) : [];
     if (ma_current_partner_policy()) {
-        $v = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true);
-        echo '<p><label><input type="checkbox" name="'.esc_attr(MA_PARTNER_RIGHTS_META).'" value="1" '.checked($v, '1', false).'> <strong>Bildrechte und Lizenzen:</strong> '.esc_html(ma_partner_rights_text()).'</label>';
-        echo '<br><span class="description">Pflicht, sobald der Beitrag ein Bild enthält (Beitragsbild oder Bild im Text). Ohne diesen Haken kann er nicht zur Freigabe geschickt werden und bleibt Entwurf.</span></p>';
+        echo '<div class="ma-bildrechte-klassisch"><p><strong>Bestätigung der Bild- und Nutzungsrechte</strong></p><p class="description">'.esc_html(ma_partner_rights_text()).'</p>';
+        echo '<p><label><input type="checkbox" name="ma_bildrechte_haken" value="1"> '.esc_html(ma_bildrechte_haken_text()).'</label></p>';
+        echo '<p class="description">'.(!$medien ? 'Der Beitrag enthält zurzeit keine Bilder.' : ($offen ? count($offen).' Medium/Medien noch nicht bestätigt. Ohne Bestätigung bleibt der Beitrag Entwurf.' : 'Alle '.count($medien).' Medien sind bestätigt. Neue Bilder brauchen eine neue Bestätigung.')).'</p></div>';
         return;
     }
-    if ((string)get_post_meta($post_id, '_ma_partner_submission', true) !== '1') return;
-    if ((string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) === '1') {
-        $wer = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by', true);
-        $wann = (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at', true);
-        echo '<p><strong>Fotoerlaubnis des Partners:</strong> erteilt'.($wer !== '' ? ' von '.esc_html($wer) : '').($wann !== '' ? ' am '.esc_html($wann) : '').'.<br><span class="description">'.esc_html(ma_partner_rights_text()).' Das Foto trotzdem ansehen, dann „Bildrechte geprüft“ setzen.</span></p>';
-    } else {
-        echo '<p><strong>Fotoerlaubnis des Partners:</strong> nicht erteilt. Bild nicht verwenden, bis sie vorliegt.</p>';
-    }
+    $log = function_exists('ma_bildrechte_log') ? ma_bildrechte_log($post_id) : [];
+    if (!$log && (string)get_post_meta($post_id, '_ma_partner_submission', true) !== '1') return;
+    if (!$log) { echo '<p><strong>Bildrechte des Einsenders:</strong> nicht bestätigt. Bild nicht verwenden, bis die Bestätigung vorliegt.</p>'; return; }
+    echo '<p><strong>Bildrechte des Einsenders</strong> (Erklärung Version '.esc_html(MA_BILDRECHTE_VERSION).'):</p><ul style="margin:0 0 8px 16px;list-style:disc">';
+    foreach (array_reverse($log) as $e) echo '<li>'.esc_html($e['name'].', '.wp_date('d.m.Y H:i', (int)$e['t']).', '.count((array)$e['medien']).' Medium/Medien'.(($e['version'] ?? '') !== MA_BILDRECHTE_VERSION ? ' (ältere Fassung)' : '')).'</li>';
+    echo '</ul>'.($offen ? '<p><strong>'.count($offen).' Medium/Medien ohne Bestätigung.</strong></p>' : '').'<p class="description">Das Foto trotzdem ansehen, dann „Bildrechte geprüft“ setzen.</p>';
 }
 
-/** Speichern: nur ein Partner selbst kann die Erklaerung abgeben oder zuruecknehmen. */
-function ma_partner_save_rights(int $post_id): void {
-    if (!ma_current_partner_policy() || !isset($_POST['ma_editorial_nonce'])) return;
-    if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])), 'ma_editorial_save')) return;
-    if (wp_is_post_revision($post_id) || !current_user_can('edit_post', $post_id)) return;
-    if (isset($_POST[MA_PARTNER_RIGHTS_META])) {
-        if ((string)get_post_meta($post_id, MA_PARTNER_RIGHTS_META, true) !== '1') {
-            $user = wp_get_current_user();
-            update_post_meta($post_id, MA_PARTNER_RIGHTS_META, '1');
-            update_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by', (string)($user->display_name ?? '') ?: (string)($user->user_login ?? ''));
-            update_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at', function_exists('current_time') ? current_time('d.m.Y H:i') : date('d.m.Y H:i'));
-        }
-    } else {
-        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META);
-        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_by');
-        delete_post_meta($post_id, MA_PARTNER_RIGHTS_META.'_at');
-    }
-}
+/** Bisheriger Speicherweg ist ersetzt: bildrechte.php traegt die Bestaetigung nach dem Speichern ein. */
+function ma_partner_save_rights(int $post_id): void {}
 
 function ma_partner_force_pending(array $data, array $postarr): array {
     $policy = ma_current_partner_policy();
@@ -235,14 +215,17 @@ function ma_partner_force_pending(array $data, array $postarr): array {
         $data['post_status'] = 'pending';
     }
 
-    // Mit Bild nur nach Fotoerlaubnis zur Freigabe.
+    // Mit Bildern nur nach Bestaetigung der Bildrechte fuer genau diese Medien
+    // (bildrechte.php prueft nach dem Speichern noch einmal, auch ueber REST).
     $post_id = (int)($postarr['ID'] ?? 0);
-    if ($data['post_status'] === 'pending') {
-        if (ma_partner_has_image($post_id, $postarr, (string)wp_unslash($data['post_content'] ?? '')) && !ma_partner_rights_declared($post_id)) {
+    if ($data['post_status'] === 'pending' && $post_id && function_exists('ma_bildrechte_medien')) {
+        $bild = array_key_exists('_thumbnail_id', $postarr) ? (int)$postarr['_thumbnail_id'] : null;
+        $medien = ma_bildrechte_medien($post_id, (string)wp_unslash($data['post_content'] ?? ''), $bild);
+        $haken = isset($_POST['ma_bildrechte_haken']);
+        if ($medien && !$haken && ma_bildrechte_offen($post_id, $medien)) {
             $data['post_status'] = 'draft';
-            if ($post_id) update_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, '1');
-        } elseif ($post_id) {
-            delete_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META);
+            $GLOBALS['ma_einreichung_angehalten'][$post_id] = true;
+            update_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, '1');
         }
     }
     return $data;
@@ -345,8 +328,8 @@ function ma_partner_admin_notice(): void {
     echo 'Sie können eigene Inhalte erstellen und zur Freigabe einreichen. Veröffentlichung und redaktionelle Prüfhaken übernimmt ausschließlich die Redaktion.</p></div>';
     $post_id = (int)(($GLOBALS['post']->ID ?? 0));
     if ($post_id && (string)get_post_meta($post_id, MA_PARTNER_RIGHTS_MISSING_META, true) === '1') {
-        echo '<div class="notice notice-warning"><p><strong>Noch nicht eingereicht.</strong> Der Beitrag hat ein Bild, aber die Fotoerlaubnis fehlt. ';
-        echo 'Setzen Sie im Kasten „Bildherkunft“ bzw. „Redaktion &amp; Quelle“ den Haken „Fotoerlaubnis“ und reichen Sie erneut ein.</p></div>';
+        echo '<div class="notice notice-warning"><p><strong>Noch nicht eingereicht.</strong> Der Beitrag enthält Bilder, für die die Bestätigung der Bild- und Nutzungsrechte fehlt. ';
+        echo 'Bestätigen Sie im Kasten „Bild- und Nutzungsrechte“ (Seitenleiste) die Erklärung und reichen Sie erneut ein.</p></div>';
     }
 }
 

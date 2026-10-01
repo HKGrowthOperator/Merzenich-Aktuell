@@ -104,7 +104,8 @@ function ma_partner_mail_headers(): array {
  * Handelt der Partner selbst, geht keine Mail.
  */
 function ma_partner_decision_mail(string $new_status, string $old_status, WP_Post $post): void {
-    if ($new_status === $old_status || $old_status !== 'pending') return;
+    // Entscheidungen aus „Eingereicht“ und „In Prüfung“ (redaktion.php).
+    if ($new_status === $old_status || !in_array($old_status, ['pending', 'ma_in_pruefung'], true)) return;
     if (!in_array($post->post_type, ma_partner_notify_post_types(), true)) return;
     $freigabe = in_array($new_status, ['publish','future'], true);
     $ablehnung = in_array($new_status, [MA_REJECTED_STATUS, 'trash'], true);

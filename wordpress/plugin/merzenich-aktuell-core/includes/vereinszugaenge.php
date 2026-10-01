@@ -103,6 +103,8 @@ function ma_vereinszugaenge_seite(): void {
             $meldung = "$a Zugänge angelegt, $v waren schon da." . ($f ? ' Nicht angelegt: ' . implode('; ', $f) : '') . ' Es wurde keine E-Mail verschickt.';
         }
     }
+    if (!empty($_GET['ma_meldung'])) $meldung = sanitize_text_field(wp_unslash($_GET['ma_meldung']));
+    if (!empty($_GET['ma_profile'])) { [$pa, $pv] = array_map('intval', explode('-', sanitize_text_field(wp_unslash($_GET['ma_profile'])) . '-0')); $meldung = "$pa Vereinsprofile angelegt, $pv waren schon da."; }
     if (!empty($_GET['ma_eingeladen'])) $meldung = 'Einladung an ' . esc_html(get_userdata((int) $_GET['ma_eingeladen'])->user_email ?? '') . ' gesendet.';
     $vereine = ma_vereine_fuer_zugang();
     echo '<div class="wrap"><h1>Vereinszugänge</h1>';
@@ -113,16 +115,39 @@ function ma_vereinszugaenge_seite(): void {
     printf('<p><label><strong>E-Mail-Vorlage für neue Zugänge</strong><br><input class="regular-text" name="vorlage" value="%s" placeholder="info+{kurz}@ihre-domain.de" required></label><br><span class="description">{kurz} wird durch den Kurznamen des Vereins ersetzt. Die Adresse lässt sich später im Benutzerprofil auf die echte Vereinsadresse ändern.</span></p>',
         esc_attr((string) get_option('ma_vereinszugang_vorlage', '')));
     echo '<p><button class="button button-primary" name="ma_vereinszugaenge" value="1">Fehlende Zugänge anlegen (ohne E-Mail)</button></p></form>';
+    if (function_exists('ma_vereine_struktur')) {
+        $struktur = ma_vereine_struktur();
+        $mitProfil = count(array_filter(array_keys($struktur), fn($k) => ma_verein_profil($k)));
+        echo '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:16px;max-width:1100px">';
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" style="background:#fff;border:1px solid #dcdcde;padding:14px 16px"><input type="hidden" name="action" value="ma_vereinsprofile_anlegen">';
+        wp_nonce_field('ma_vereinsprofile_anlegen');
+        echo '<p><strong>Vereinsprofile</strong><br>' . (int) $mitProfil . ' von ' . count($struktur) . ' Vereinen haben ein Profil unter /vereine/…/. Abteilungen stehen im Profil ihres Hauptvereins.</p><p><button class="button">Fehlende Vereinsprofile anlegen</button></p><p class="description">Nur Angaben aus dem Verzeichnis (Name, Ortsteil, Kategorie, Sportarten, Abteilungen, Website). Beschreibung, Logo und Bilder ergänzt der Verein, die Redaktion gibt frei.</p></form>';
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" style="background:#fff;border:1px solid #dcdcde;padding:14px 16px"><input type="hidden" name="action" value="ma_verein_zugang"><input type="hidden" name="aktion" value="neu"><input type="hidden" name="user" value="0">';
+        wp_nonce_field('ma_verein_zugang_neu_0');
+        echo '<p><strong>Weiteren Redakteur für einen Verein anlegen</strong></p><p><select name="verein" required style="max-width:100%"><option value="">Verein wählen</option>';
+        foreach ($struktur as $k => $e) printf('<option value="%s">%s</option>', esc_attr($k), esc_html($e['verein']['name']));
+        echo '</select></p><p><input name="name" placeholder="Name der Person" required class="regular-text"> <input name="email" type="email" placeholder="E-Mail" required class="regular-text"></p><p><button class="button">Redakteur anlegen</button> <span class="description">Keine Mail; danach „Einladung senden“.</span></p></form></div>';
+    }
     echo '<table class="widefat striped" style="margin-top:18px"><thead><tr><th>Verein</th><th>Ort</th><th>Rolle</th><th>Zugang</th><th></th></tr></thead><tbody>';
     $orte = ['merzenich' => 'Merzenich', 'golzheim' => 'Golzheim', 'girbelsrath' => 'Girbelsrath', 'morschenich' => 'Morschenich', 'buergewald' => 'Bürgewald'];
     $mit = 0;
     foreach ($vereine as $v) {
         $u = ma_verein_benutzer(ma_verein_kurz($v['name']));
         if ($u) $mit++;
+        $weitere = function_exists('ma_verein_redakteure') && !ma_verein_ist_abteilung($v) ? array_filter(ma_verein_redakteure(ma_verein_kurz($v['name'])), fn($x) => !$u || $x->ID !== $u->ID) : [];
         $rolle = ma_verein_rolle($v) === 'ma_sport_partner' ? 'Sport-Partner' : 'Vereins-Partner';
         $einladen = $u ? '<a class="button" href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=ma_verein_einladen&user=' . $u->ID), 'ma_verein_einladen_' . $u->ID)) . '">Einladung senden</a>' : '';
         $eingeladen = $u ? (string) get_user_meta($u->ID, 'ma_verein_eingeladen', true) : '';
-        $status = $u ? '<a href="' . esc_url(get_edit_user_link($u->ID)) . '">' . esc_html($u->user_login) . '</a><br><span class="description">' . esc_html($u->user_email) . ($eingeladen !== '' ? ' · eingeladen ' . esc_html($eingeladen) : ' · noch nicht eingeladen') . '</span>' : '<em>noch kein Zugang</em>';
+        $zeile = function (WP_User $x) {
+            $ein = (string) get_user_meta($x->ID, 'ma_verein_eingeladen', true);
+            $gesperrt = function_exists('ma_zugang_gesperrt') && ma_zugang_gesperrt($x->ID);
+            return '<a href="' . esc_url(get_edit_user_link($x->ID)) . '">' . esc_html($x->user_login) . '</a>' . ($gesperrt ? ' <strong style="color:#b32d2e">deaktiviert</strong>' : '')
+                . '<br><span class="description">' . esc_html($x->user_email) . ($ein !== '' ? ' · eingeladen ' . esc_html($ein) : ' · noch nicht eingeladen') . '</span>'
+                . (function_exists('ma_verein_zugang_link') ? '<br><a href="' . esc_url(ma_verein_zugang_link($gesperrt ? 'freigeben' : 'sperren', $x->ID)) . '">' . ($gesperrt ? 'Aktivieren' : 'Deaktivieren') . '</a> · <a href="' . esc_url(ma_verein_zugang_link('passwort', $x->ID)) . '">Passwort-Link senden</a> · <a href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=ma_verein_einladen&user=' . $x->ID), 'ma_verein_einladen_' . $x->ID)) . '">Einladung senden</a>' : '');
+        };
+        $status = $u ? $zeile($u) : '<em>noch kein Zugang</em>';
+        foreach ($weitere as $w) $status .= '<hr style="margin:6px 0">' . $zeile($w);
+        $einladen = '';
         printf('<tr><td>%s%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>', esc_html($v['name']),
             !empty($v['website']) ? '<br><a class="description" href="' . esc_url($v['website']) . '" target="_blank" rel="noopener">' . esc_html(preg_replace('#^https?://#', '', rtrim($v['website'], '/'))) . '</a>' : '',
             esc_html($orte[$v['ort'] ?? ''] ?? 'gemeindeweit'), esc_html($rolle . (($v['sportart'] ?? '') ? ' · ' . $v['sportart'] : '')), $status, $einladen);

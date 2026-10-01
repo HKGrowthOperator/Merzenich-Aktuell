@@ -59,7 +59,7 @@ function ma_gate_record_reason(array $data, array $postarr): array {
     $post_id = (int)($postarr['ID'] ?? 0);
     if (!$post_id) return $data;
 
-    $angefragt = ($postarr['post_status'] ?? '') === 'publish';
+    $angefragt = in_array(($postarr['post_status'] ?? ''), ['publish', 'future'], true);
     if (!$angefragt) return $data;
 
     if (($data['post_status'] ?? '') === 'draft') {
