@@ -59,6 +59,10 @@ pruefe('Ältere Fassung erkannt', ma_seite_status('kontakt'), 'veraltet');
 ma_seiten_abgleichen();
 pruefe('Unveränderte ältere Fassung wird gehoben', ma_seite_status('kontakt'), 'aktuell');
 pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 17);
+// Neue Seite bei gleicher Fassung (Live-Befund 02.10.: /thema/ fehlte, weil der Guard schon stand): Anzahl-Guard greift.
+$GLOBALS['opt']['ma_seiten_anzahl'] = 16; unset($GLOBALS['posts'][ma_seite_seite('thema')->ID]);
+ma_seiten_abgleichen();
+pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 17]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-02';
+const MA_SEITEN_VERSION = '2026-10-02b';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -309,12 +309,13 @@ function ma_seite_schreiben(string $slug): int {
 }
 
 function ma_seiten_abgleichen(): void {
-    if (get_option('ma_seiten_geprueft') === MA_SEITEN_VERSION) return;
+    if (get_option('ma_seiten_geprueft') === MA_SEITEN_VERSION && (int) get_option('ma_seiten_anzahl', 0) === count(ma_seiten())) return;
     foreach (array_keys(ma_seiten()) as $slug) {
         $status = ma_seite_status($slug);
         if ($status === 'fehlt' || $status === 'veraltet') ma_seite_schreiben($slug);
     }
     update_option('ma_seiten_geprueft', MA_SEITEN_VERSION, false);
+    update_option('ma_seiten_anzahl', count(ma_seiten()), false);
 }
 add_action('admin_init', 'ma_seiten_abgleichen');
 
