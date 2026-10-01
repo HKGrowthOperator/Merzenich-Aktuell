@@ -1,0 +1,108 @@
+{
+  "_hinweis": "Aus offiziellen Vereinsseiten und Hallenplan (nicht als rechtlich separate Abteilungen ausgeben). Keine Uhrzeiten, da sie sich ändern können. Die Darstellung verknüpft diese Angebote nur mit dem im vorhandenen Vereinsverzeichnis belegten Hauptverein.",
+  "checkedAt": "2026-10-01",
+  "angebote": [
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Tischtennis",
+      "titel": "Fitness goes Tischtennis",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Badminton",
+      "titel": "Badminton",
+      "quelle": "https://www.tv-girbelsrath.com/"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Pickleball",
+      "titel": "Pickleball",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Boule",
+      "titel": "Boule",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Ju-Jutsu",
+      "titel": "Ju-Jutsu",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Schwimmen/Aquafitness",
+      "titel": "Aquafitness",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Qi Gong / Fitness",
+      "titel": "Qi Gong, Zumba & Gesundheit",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Wandern",
+      "titel": "Wandern",
+      "quelle": "https://www.tv-girbelsrath.com/hallenplan"
+    },
+    {
+      "verein": "Turnverein 1910 Girbelsrath e.V.",
+      "sportart": "Schach",
+      "titel": "Schach im Turnverein",
+      "quelle": "https://www.tv-girbelsrath.com/"
+    },
+    {
+      "verein": "TV Merzenich 1882 e.V.",
+      "sportart": "Schwimmen/Aquafitness",
+      "titel": "Schwimmen & Aquafitness",
+      "quelle": "https://www.tv-merzenich.de/TV_merzenich/aktuelles/"
+    },
+    {
+      "verein": "TV Merzenich 1882 e.V.",
+      "sportart": "Volleyball",
+      "titel": "Volleyball",
+      "quelle": "https://www.tv-merzenich.de/TV_merzenich/aktuelles/"
+    },
+    {
+      "verein": "TV Merzenich 1882 e.V.",
+      "sportart": "Fitness",
+      "titel": "Fitness, Rückengymnastik & Zumba",
+      "quelle": "https://www.tv-merzenich.de/TV_merzenich/aktuelles/"
+    },
+    {
+      "verein": "TV Golzheim 1885 e.V.",
+      "sportart": "Badminton",
+      "titel": "Badminton",
+      "quelle": "https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php"
+    },
+    {
+      "verein": "TV Golzheim 1885 e.V.",
+      "sportart": "Tischtennis",
+      "titel": "Tischtennis",
+      "quelle": "https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php"
+    },
+    {
+      "verein": "TV Golzheim 1885 e.V.",
+      "sportart": "Volleyball",
+      "titel": "Volleyball",
+      "quelle": "https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php"
+    },
+    {
+      "verein": "TV Golzheim 1885 e.V.",
+      "sportart": "Wandern",
+      "titel": "Wandern",
+      "quelle": "https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php"
+    },
+    {
+      "verein": "TV Golzheim 1885 e.V.",
+      "sportart": "Fitness",
+      "titel": "Fitness-Training",
+      "quelle": "https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php"
+    }
+  ]
+}

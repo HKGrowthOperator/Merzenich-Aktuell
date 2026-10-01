@@ -12,6 +12,16 @@ if (!defined('ABSPATH')) { exit; }
 
 function ma_sportart_schluessel(string $name): string {
     $n = strtolower(remove_accents($name));
+    // Mehrsparten-Bezeichnungen wie "Turnen/Breitensport (u. a. Tischtennis)"
+    // sind ein Vereinsprofil, kein separater Tischtennis-Eintrag.
+    if (str_contains($n, 'turnen') || str_contains($n, 'breitensport')) return 'breitensport';
+    if (str_contains($n, 'pickleball')) return 'pickleball';
+    if (str_contains($n, 'volleyball')) return 'volleyball';
+    if (str_contains($n, 'boule')) return 'boule';
+    if (str_contains($n, 'ju-jutsu') || str_contains($n, 'ju jutsu')) return 'ju-jutsu';
+    if (str_contains($n, 'aqua') || str_contains($n, 'schwimmen')) return 'wasser';
+    if (str_contains($n, 'fitness') || str_contains($n, 'gymnastik') || str_contains($n, 'zumba') || str_contains($n, 'qi gong')) return 'fitness';
+    if (str_contains($n, 'wandern')) return 'wandern';
     if (str_contains($n, 'tischtennis')) return 'tischtennis';
     if (str_contains($n, 'badminton')) return 'badminton';
     if (str_contains($n, 'tennis')) return 'tennis';
@@ -21,7 +31,6 @@ function ma_sportart_schluessel(string $name): string {
     if (str_contains($n, 'luftsport') || str_contains($n, 'ultraleicht')) return 'luftsport';
     if (str_contains($n, 'discofox') || str_contains($n, 'tanzsport')) return 'tanzsport';
     if (str_contains($n, 'american football')) return 'american-football';
-    if (str_contains($n, 'turnen') || str_contains($n, 'breitensport')) return 'breitensport';
     return '';
 }
 
@@ -32,6 +41,10 @@ function ma_sportart_titel(string $k): string {
         'schach' => 'Schach', 'breitensport' => 'Turnen & Breitensport',
         'schiesssport' => 'Sportschießen', 'tanzsport' => 'Tanzsport',
         'luftsport' => 'Luftsport', 'american-football' => 'American Football',
+        'pickleball' => 'Pickleball', 'volleyball' => 'Volleyball',
+        'boule' => 'Boule', 'ju-jutsu' => 'Ju-Jutsu',
+        'wasser' => 'Schwimmen & Aquafitness', 'fitness' => 'Fitness & Gesundheit',
+        'wandern' => 'Wandern',
     ];
     return $titel[$k] ?? 'Sport';
 }
@@ -119,8 +132,9 @@ function ma_sport_vereinsbild(string $kurz, string $art, ?WP_Post $profil): arra
 /** Integration in das vorhandene WP-Sportarchiv; bestehendes Fußballmodul bleibt. */
 function ma_sport_vereinsraster(): string {
     if (!function_exists('ma_vereine_struktur') || !function_exists('ma_verein_profil')) return '';
-    $reihenfolge = ['tischtennis', 'tennis', 'badminton', 'billard', 'schach',
-        'breitensport', 'schiesssport', 'tanzsport', 'luftsport', 'american-football'];
+    $reihenfolge = ['tischtennis', 'tennis', 'badminton', 'pickleball', 'volleyball',
+        'billard', 'boule', 'schach', 'ju-jutsu', 'breitensport', 'wasser', 'fitness',
+        'wandern', 'schiesssport', 'tanzsport', 'luftsport', 'american-football'];
     $gruppen = array_fill_keys($reihenfolge, []);
     $gesehen = [];
     $orte = ['merzenich'=>'Merzenich','golzheim'=>'Golzheim','girbelsrath'=>'Girbelsrath',
@@ -145,6 +159,33 @@ function ma_sport_vereinsraster(): string {
                 'hinweis' => $art === 'american-football' ? 'Vereinssitz in Merzenich · Spielbetrieb in Düren' : '',
                 'bild' => ma_sport_vereinsbild((string) $kurz, $art, $profil),
             ];
+        }
+    }
+    // Weitere im aktuellen Vereins-/Hallenplan ausdrücklich belegte Angebote
+    // (keine neuen Rechtsträger, keine künstlichen Untervereinsprofile).
+    $pfad = MA_CORE_PATH . 'data/sport-angebote.json';
+    $angeboteDaten = is_readable($pfad) ? json_decode((string) file_get_contents($pfad), true) : null;
+    $angebote = is_array($angeboteDaten['angebote'] ?? null) ? $angeboteDaten['angebote'] : [];
+    foreach ($angebote as $angebot) {
+        $vereinName = (string) ($angebot['verein'] ?? '');
+        $art = ma_sportart_schluessel((string) ($angebot['sportart'] ?? ''));
+        if (!$art || !isset($gruppen[$art]) || $vereinName === '') continue;
+        foreach (ma_vereine_struktur() as $kurz => $struktur) {
+            $haupt = $struktur['verein'] ?? [];
+            if (($haupt['name'] ?? '') !== $vereinName || ($haupt['kategorie'] ?? '') !== 'Sport') continue;
+            if (isset($gesehen[$kurz . '/' . $art])) break;
+            $gesehen[$kurz . '/' . $art] = true;
+            $profil = ma_verein_profil((string) $kurz);
+            $quelle = (string) ($angebot['quelle'] ?? '');
+            $url = $profil && $profil->post_status === 'publish' ? get_permalink($profil) : $quelle;
+            $gruppen[$art][] = [
+                'name' => (string) ($angebot['titel'] ?? ma_sportart_titel($art)) . ' · ' . $haupt['name'],
+                'ort' => $orte[$haupt['ort'] ?? ''] ?? 'Gemeinde Merzenich',
+                'url' => $url,
+                'hinweis' => 'Belegtes Sportangebot des Hauptvereins · keine eigenständige Vereinsabteilung',
+                'bild' => ma_sport_vereinsbild((string) $kurz, $art, $profil),
+            ];
+            break;
         }
     }
     $anzahl = array_sum(array_map('count', $gruppen));

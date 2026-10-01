@@ -67,3 +67,17 @@ Lizenz, Urheber, fremder Aufnahmeort und Originaldatei sind in
 `wordpress/plugin/merzenich-aktuell-core/data/sport-fotopool.json` hinterlegt.
 Direkt enthalten: Tennisplatz Dülmen, Tanzhaus NRW, Sporthalle Ennigloh in
 Bünde, Berentelghalle Mettingen. Es sind ausdrücklich Symbolbilder.
+
+## Vertiefung: belegte Sportangebote in bestehenden Turnvereinen (01.10.2026)
+Diese Angebote sind **keine neuen Vereine**; sie werden durch
+`data/sport-angebote.json` mit dem bestehenden Hauptvereinsprofil verbunden.
+- TV 1910 Girbelsrath: aktueller Hallenplan vom 03.03.2026, einschließlich
+  Tischtennis, Pickleball, Boule, Ju-Jutsu, Aquafitness, Zumba, Qi Gong und Wandern:
+  https://www.tv-girbelsrath.com/hallenplan ; Badminton und Schach auf der
+  Vereins-Startseite https://www.tv-girbelsrath.com/
+- TV Merzenich: Schwimmen, Aquafitness, Zumba, Fitness und Volleyball:
+  https://www.tv-merzenich.de/TV_merzenich/aktuelles/
+- TV Golzheim: Tischtennis, Badminton, Volleyball, Fitness und Wandern laut
+  https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php
+Aktuelle konkrete Trainingszeiten werden **nicht** aus alten Screenshots übernommen.
+Sieben zusätzliche eigene Symbolgrafiken sind im Theme enthalten.
