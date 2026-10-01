@@ -1,0 +1,44 @@
+{
+  "_hinweis": "Nur vorgeprüfte Commons-Fotos aus dem bestehenden Editorial-Image-Manifest (geprueft=true). Der Bildtext nennt immer Symbolbild, niemals Aufnahme des lokalen Vereins. Weitere Sportarten behalten bis zu rechtssicheren Fotos ein eigenes Motiv-SVG.",
+  "checkedAt": "2026-10-01",
+  "pools": {
+    "tennis": [
+      {
+        "datei": "tennisplatz-duelmen.webp",
+        "alt": "Symbolbild: Tennisplätze im Tenniszentrum Süd in Dülmen, nicht in Merzenich",
+        "credit": "Dietmar Rabich / Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AD%C3%BClmen%2C_Tenniszentrum_S%C3%BCd_--_2014_--_7786.jpg"
+      }
+    ],
+    "tanzsport": [
+      {
+        "datei": "tanzsaal-nrw.webp",
+        "alt": "Symbolbild: Großer Saal des Tanzhaus NRW, keine Aufnahme des Merzenicher Vereins",
+        "credit": "Tanzhaus nrw / Wikimedia Commons",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATanzhaus_nrw_Gro%C3%9Fer_Saal_Foto2_Katja_Illner.jpg"
+      }
+    ],
+    "breitensport": [
+      {
+        "datei": "sporthalle-ennigloh.webp",
+        "alt": "Symbolbild: Sporthalle Ennigloh in Bünde, nicht Merzenich",
+        "credit": "TUBS / Wikimedia Commons",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASporthalle_Ennigloh.jpg"
+      },
+      {
+        "datei": "sporthalle-mettingen.webp",
+        "alt": "Symbolbild: Berentelghalle in Mettingen, nicht Merzenich",
+        "credit": "J.-H. Janßen / Wikimedia Commons",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABerentelghalle_Mettingen_1.jpg"
+      }
+    ]
+  }
+}

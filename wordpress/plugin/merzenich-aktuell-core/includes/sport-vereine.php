@@ -86,6 +86,29 @@ function ma_sport_vereinsbild(string $kurz, string $art, ?WP_Post $profil): arra
             'type' => 'Symbolbild',
         ];
     }
+    // Zusätzlich fest im Theme mitgelieferte, bereits redaktionell gesichtete
+    // Commons-Fotos. Die Quelldateien und ihre Lizenz stehen im Manifest.
+    static $lieferfotos = null;
+    if ($lieferfotos === null) {
+        $datei = MA_CORE_PATH . 'data/sport-fotopool.json';
+        $json = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : [];
+        $lieferfotos = is_array($json['pools'] ?? null) ? $json['pools'] : [];
+    }
+    $auswahl = $lieferfotos[$art] ?? [];
+    if (is_array($auswahl) && $auswahl) {
+        $index = hexdec(substr(md5($kurz . ':' . $art), 0, 6)) % count($auswahl);
+        $foto = $auswahl[$index];
+        if (!empty($foto['datei']) && !empty($foto['license']) && !empty($foto['credit']) && !empty($foto['sourceUrl'])) {
+            return [
+                'src' => get_template_directory_uri() . '/assets/img/sportfotos/' . $foto['datei'],
+                'alt' => (string) ($foto['alt'] ?? ('Symbolbild: ' . ma_sportart_titel($art))),
+                'credit' => (string) $foto['credit'] . ' · ' . $foto['license'],
+                'source' => (string) $foto['sourceUrl'],
+                'license_url' => (string) ($foto['licenseUrl'] ?? ''),
+                'type' => 'Symbolbild / Archivfoto (kein Foto des Vereins)',
+            ];
+        }
+    }
     return [
         'src' => get_template_directory_uri() . '/assets/img/sportarten/' . $art . '.svg',
         'alt' => 'Symbolgrafik: ' . ma_sportart_titel($art),
@@ -148,6 +171,7 @@ function ma_sport_vereinsraster(): string {
                 <img src="<?php echo esc_url($bild['src']); ?>" alt="<?php echo esc_attr($bild['alt']); ?>" loading="lazy" decoding="async">
                 <figcaption><?php echo esc_html($bild['type']); ?> · <?php echo esc_html($bild['credit']); ?>
                   <?php if ($bild['source']): ?> · <a href="<?php echo esc_url($bild['source']); ?>" target="_blank" rel="noopener noreferrer">Bildquelle</a><?php endif; ?>
+                  <?php if (!empty($bild['license_url'])): ?> · <a href="<?php echo esc_url($bild['license_url']); ?>" target="_blank" rel="noopener noreferrer">Lizenz</a><?php endif; ?>
                 </figcaption>
               </figure>
               <div class="ma-sportverein__info">

@@ -58,3 +58,12 @@ eingebettet oder als eigene Lokalaufnahme ausgegeben.
 nicht automatisch Live-CMS-Inhalt. Die bestehende installierte WordPress-Instanz
 benötigt die aktuelle Theme-/Plugin-Version (ZIPs entstehen über CI beim Push).
 Originalfotos mit ungeklärten Rechten sind weiterhin ausdrücklich offen.
+
+## Vorab lizenzierte Bilder, mit WordPress-Theme ausgeliefert
+Die vier im bestehenden Repo-Manifest bereits als gesichtet markierten Wikimedia-Fotos
+wurden ohne erneutes Scraping direkt per identischer Git-Blob-SHA in
+`wordpress/theme/merzenich-aktuell/assets/img/sportfotos/` übernommen.
+Lizenz, Urheber, fremder Aufnahmeort und Originaldatei sind in
+`wordpress/plugin/merzenich-aktuell-core/data/sport-fotopool.json` hinterlegt.
+Direkt enthalten: Tennisplatz Dülmen, Tanzhaus NRW, Sporthalle Ennigloh in
+Bünde, Berentelghalle Mettingen. Es sind ausdrücklich Symbolbilder.
