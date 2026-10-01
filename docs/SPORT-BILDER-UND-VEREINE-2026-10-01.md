@@ -81,3 +81,13 @@ Diese Angebote sind **keine neuen Vereine**; sie werden durch
   https://www.gemeinde-merzenich.de/leben/vereinsverzeichnis.php
 Aktuelle konkrete Trainingszeiten werden **nicht** aus alten Screenshots übernommen.
 Sieben zusätzliche eigene Symbolgrafiken sind im Theme enthalten.
+
+## Mediathek-/Vereinsprofil-Pflege direkt in WordPress
+Das Plugin ergänzt im bestehenden Medien-Editor (keine konkurrierende Uploadstrecke)
+den Sport-Motivpool und die redaktionelle Freigabe. Die vorhandenen Medienfelder
+`ma_credit`, `ma_quelle`, `ma_nutzung` bleiben maßgeblich und werden beim
+Speichern in die von der Sportausgabe gelesenen Felder gespiegelt. Nur Admins
+können Bildrechte freigeben. Im `ma_club`-Editor können redaktionelle
+Bearbeiter aus freigegebenen Medien pro Sportart ein Vereinsfoto auswählen.
+Ohne geprüfte Rechte / Pflichtmetadaten wird keine externe Vereinsaufnahme
+automatisch freigeschaltet.
