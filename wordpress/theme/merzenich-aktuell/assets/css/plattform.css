@@ -18,3 +18,32 @@
 @media (max-width:520px){.verein-galerie__raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .gesponsert{display:inline-block;margin-left:8px;padding:1px 6px;border:1px solid var(--ink-soft);font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);vertical-align:middle}
 .gesponsert-hinweis{margin:0 0 18px;padding:10px 14px;background:var(--gold-wash);border:1px solid var(--line);font-size:14px}
+
+/* Gemeinsame bildstarke Übersicht: nicht-fußballbezogener Sport */
+.ma-breitensport{border-block:1px solid var(--line,#d9d9d9);margin:26px 0 32px;padding:22px 0}
+.ma-breitensport__kopf h2{font-family:Georgia,serif;font-size:clamp(27px,2.7vw,36px);letter-spacing:-.025em;line-height:1.13;margin:5px 0 9px}
+.ma-breitensport__kopf>p{max-width:840px;font-size:15px;color:var(--muted,#686868);margin:0 0 17px}
+.ma-breitensport__navigation{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 19px}
+.ma-breitensport__navigation a{border:1px solid var(--line,#d9d9d9);padding:6px 10px;font-size:12px;font-weight:700;text-decoration:none}
+.ma-breitensport__navigation a:hover,.ma-breitensport__navigation a:focus-visible{border-color:var(--red,#b71920);color:var(--red,#b71920)}
+.ma-breitensport__navigation small{font-size:10px;opacity:.7;padding-left:4px}
+.ma-sportart-block{padding:17px 0 18px;border-top:1px solid var(--line,#d9d9d9);scroll-margin-top:130px}
+.ma-sportart-block__kopf{display:flex;gap:10px;align-items:baseline;justify-content:space-between;margin-bottom:13px}
+.ma-sportart-block__kopf h3{font-size:20px;line-height:1.2;margin:0}
+.ma-sportart-block__kopf span{font-size:12px;color:var(--muted,#686868)}
+.ma-sportart-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ma-sportverein{border:1px solid var(--line,#d9d9d9);min-width:0;background:#fff}
+.ma-sportverein__bild{margin:0;background:#f4f0e9}
+.ma-sportverein__bild img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ma-sportverein__bild figcaption{padding:5px 9px;font-size:10px;line-height:1.35;color:var(--muted,#686868);overflow-wrap:anywhere}
+.ma-sportverein__bild figcaption a{text-decoration:underline}
+.ma-sportverein__info{padding:10px 11px 13px;border-top:1px solid var(--line,#d9d9d9)}
+.ma-sportverein__ort{font-size:10px;color:var(--red,#b71920);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.ma-sportverein__info h4{font-size:15px;line-height:1.3;margin:5px 0 0;overflow-wrap:anywhere}
+.ma-sportverein__info h4 a:hover{text-decoration:underline;text-decoration-color:var(--red,#b71920)}
+.ma-sportverein__info p{margin:7px 0 0;font-size:11px;color:var(--muted,#686868)}
+.ma-breitensport__quelle{font-size:12px;color:var(--muted,#686868);margin:12px 0 0}
+.ma-breitensport__quelle a{text-decoration:underline}
+@media(max-width:1100px){.ma-sportart-raster{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.ma-sportart-raster{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ma-sportart-block{scroll-margin-top:100px}.ma-sportverein__info{padding:8px}.ma-sportverein__info h4{font-size:13px}}
+@media(max-width:400px){.ma-sportart-raster{grid-template-columns:1fr}.ma-sportverein{display:grid;grid-template-columns:44% 56%}.ma-sportverein__info{border-top:0}.ma-sportverein__bild img{height:100%;min-height:105px;aspect-ratio:auto;object-fit:cover}}

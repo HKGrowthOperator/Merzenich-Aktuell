@@ -16,6 +16,7 @@ $ecke = $sport ? trim(ma21_vorlage('sport-ecke.html')) : '';
 
 <section class="section"><div class="shell">
   <?php if ($sport && !is_paged()) echo trim(ma21_vorlage('sport-modul.html')); ?>
+  <?php if ($sport && !is_paged() && function_exists('ma_sport_vereinsraster')) echo ma_sport_vereinsraster(); ?>
   <div class="content-grid">
     <div class="feed">
 <?php
