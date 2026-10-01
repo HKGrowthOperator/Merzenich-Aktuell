@@ -77,6 +77,12 @@ function ma_event_timestamp(int $post_id, string $kind='start'): int {
     }
 }
 
+/** Liegt der Termin (Ende, sonst Beginn) in der Vergangenheit? */
+function ma_event_vorbei(int $post_id): bool {
+    $ende = ma_event_timestamp($post_id, 'end');
+    return $ende > 0 && $ende < time();
+}
+
 function ma_upcoming_events(int $limit=6): array {
     $now = current_time('timestamp');
     $q = new WP_Query([
@@ -146,7 +152,9 @@ function ma_filter_public_service_archives(WP_Query $query): void {
         return;
     }
 
-    if ($post_type==='ma_event' || $query->is_post_type_archive('ma_event')) {
+    // Listen zeigen nur Kommendes; die Einzelansicht eines vergangenen Termins bleibt erreichbar
+    // (Archiv, Sitemap, Suchmaschinen; vorher 404 bei jedem alten Link).
+    if (($post_type==='ma_event' || $query->is_post_type_archive('ma_event')) && !$query->is_singular()) {
         $now=current_time('Y-m-d H:i:s');
         $query->set('posts_per_page',20);
         $query->set('meta_key','ma_event_start');

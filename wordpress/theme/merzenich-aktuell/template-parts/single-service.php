@@ -20,6 +20,7 @@ $source='';
       $source=(string)get_post_meta($post_id,'ma_event_source_url',true);
       if($source==='') $source=(string)get_post_meta($post_id,'ma_source_url',true);
     ?>
+    <?php if(function_exists('ma_event_vorbei') && ma_event_vorbei($post_id)): ?><p class="service-note service-note--vorbei"><strong>Dieser Termin ist vorbei.</strong> Kommende Veranstaltungen stehen unter <a href="<?php echo esc_url(home_url('/termine/')); ?>">Termine</a>.</p><?php endif; ?>
     <dl class="service-facts">
       <?php if($start): ?><div><dt>Beginn</dt><dd><?php echo esc_html(wp_date('d.m.Y · H:i',$start)); ?> Uhr</dd></div><?php endif; ?>
       <?php if($end && $end!==$start): ?><div><dt>Ende</dt><dd><?php echo esc_html(wp_date('d.m.Y · H:i',$end)); ?> Uhr</dd></div><?php endif; ?>

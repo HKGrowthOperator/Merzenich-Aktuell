@@ -8,6 +8,7 @@ define('ABSPATH', __DIR__); define('MA_CORE_VERSION', 'test');
 $GLOBALS['opt'] = ['ma_weather_settings' => ['latitude' => '50.8317', 'longitude' => '6.5361']];
 function add_action(...$a) {} function add_filter(...$a) {}
 function get_option($k, $d = false) { return $GLOBALS['opt'][$k] ?? $d; }
+function update_option($k, $v, $a = null) { $GLOBALS['opt'][$k] = $v; return true; }
 
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seo.php';
 
@@ -40,6 +41,15 @@ pruefe('Ressorts mit kurzer Adresse sind Kategorien', ma_seo_ressort_kategorien(
 foreach (ma_seo_ressorte() as $slug => $d) if (count($d) !== 3 || $d[2] === '' || mb_strlen($d[2]) > 200) $fehler++;
 pruefe('Jedes Ressort hat Label, Titel und Beschreibung ≤ 200 Zeichen', true, true);
 pruefe('Koordinaten nur mit Quelle (Golzheim, Girbelsrath), nicht für Morschenich/Bürgewald', [isset(ma_seo_orte()['golzheim']['lat']), isset(ma_seo_orte()['girbelsrath']['lat']), isset(ma_seo_orte()['morschenich']['lat']), isset(ma_seo_orte()['buergewald']['lat'])], [true, true, false, false]);
+
+pruefe('Startseite: Description ≤ 155 Zeichen, Titel mit „Nachrichten aus Merzenich“', [mb_strlen(MA_SEO_BESCHREIBUNG) <= 155, str_contains(MA_SEO_STARTTITEL, 'Nachrichten aus Merzenich'), mb_strlen(MA_SEO_STARTTITEL) < 100], [true, true, true]);
+pruefe('llms.txt nutzt die Langfassung', str_contains($l, 'Jede Meldung mit Quelle und Bildcredit'), true);
+
+echo "\nIndexNow\n";
+$key = ma_indexnow_key();
+pruefe('Schlüssel: 32 Hex, stabil', [preg_match('/^[a-f0-9]{32}$/', $key), ma_indexnow_key() === $key], [1, true]);
+$n = ma_indexnow_nutzlast('merzenich-aktuell.de', $key, ['https://merzenich-aktuell.de/blaulicht/a/', 'https://merzenich-aktuell.de/blaulicht/a/', 'https://fremd.example/x/', 'https://merzenich-aktuell.de/']);
+pruefe('Nutzlast: Host, Schlüsseldatei, nur eigene Adressen, ohne Doppelte', [$n['host'], $n['keyLocation'], $n['urlList']], ['merzenich-aktuell.de', 'https://merzenich-aktuell.de/' . $key . '.txt', ['https://merzenich-aktuell.de/blaulicht/a/', 'https://merzenich-aktuell.de/']]);
 
 echo "\nJSON-LD: Startseite\n";
 $g = ma_seo_graph(['typ' => 'start', 'titel' => 'Merzenich Aktuell', 'beschreibung' => MA_SEO_BESCHREIBUNG, 'url' => $HOME, 'bild' => ['url' => $ORG['bild'], 'w' => 1200, 'h' => 630, 'alt' => 'MA'], 'krumen' => []], $ORG);
@@ -76,6 +86,9 @@ $p = $finde($g, 'Place');
 pruefe('Ortsseite: Place Golzheim mit GeoNames-Koordinaten, Beschreibung, in der Gemeinde', $p['geo']['latitude'] === 50.83966 && str_contains($p['description'], 'St. Gregorius') && $p['containedInPlace']['name'] === 'Gemeinde Merzenich' && $finde($g, 'CollectionPage')['about'] === ['@id' => $p['@id']], true);
 $g = ma_seo_graph(['typ' => 'termin', 'titel' => 'Ratssitzung', 'beschreibung' => 'Sitzung.', 'url' => $HOME . 'termine/rat/', 'bild' => null, 'krumen' => [['Start', $HOME], ['Termine', $HOME . 'termine/'], ['Ratssitzung', null]], 'termin' => ['start' => '2026-09-30T18:00:00+02:00', 'ende' => '', 'ort' => 'Rathaus Merzenich', 'veranstalter' => 'Gemeinde Merzenich', 'preis' => 'kostenfrei']], $ORG);
 $e = $finde($g, 'Event');
+pruefe('Termin: geplant trägt eventStatus Scheduled', $e['eventStatus'] ?? '', 'https://schema.org/EventScheduled');
+$gv = ma_seo_graph(['typ' => 'termin', 'titel' => 'Alt', 'beschreibung' => 'x', 'url' => $HOME . 'termine/alt/', 'bild' => null, 'krumen' => [], 'termin' => ['start' => '2026-01-01T10:00:00+01:00', 'ende' => '', 'vorbei' => true, 'ort' => '', 'veranstalter' => '', 'preis' => '']], $ORG);
+pruefe('Vergangener Termin: Event ohne eventStatus, mit startDate', [isset($finde($gv, 'Event')['eventStatus']), $finde($gv, 'Event')['startDate']], [false, '2026-01-01T10:00:00+01:00']);
 pruefe('Termin: Event mit Beginn, Ort, Veranstalter, kostenfrei, ohne endDate', $e['startDate'] === '2026-09-30T18:00:00+02:00' && !isset($e['endDate']) && $e['location']['name'] === 'Rathaus Merzenich' && $e['organizer']['name'] === 'Gemeinde Merzenich' && $e['isAccessibleForFree'] === true, true);
 $g = ma_seo_graph(['typ' => 'verein', 'titel' => 'SC 1919 Merzenich', 'beschreibung' => 'Fußball.', 'url' => $HOME . 'vereine/sc/', 'bild' => null, 'ort' => 'merzenich', 'krumen' => [['Start', $HOME], ['Vereine', $HOME . 'vereine/'], ['SC', null]], 'verein' => ['adresse' => 'Sportplatz 1', 'website' => 'https://sc-merzenich.de', 'gegruendet' => '1919', 'sportarten' => 'Fußball', 'logo' => '']], $ORG);
 $v = $finde($g, 'SportsClub');

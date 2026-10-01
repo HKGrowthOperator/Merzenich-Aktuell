@@ -11,7 +11,7 @@
    "index": true,
    "title": 66,
    "desc": 246,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -23,9 +23,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/404.html",
@@ -53,7 +51,7 @@
    "index": true,
    "title": 28,
    "desc": 41,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -65,9 +63,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/anzeigen/aufgeben/",
@@ -75,7 +71,7 @@
    "index": true,
    "title": 36,
    "desc": 182,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -87,9 +83,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/anzeigen/aufgeben/danke/",
@@ -117,7 +111,7 @@
    "index": true,
    "title": 26,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -129,9 +123,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/autor/redaktion/",
@@ -139,7 +131,7 @@
    "index": true,
    "title": 64,
    "desc": 125,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -151,9 +143,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/betriebe/",
@@ -161,7 +151,7 @@
    "index": true,
    "title": 48,
    "desc": 175,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -173,9 +163,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/betriebe/eintragen/",
@@ -225,7 +213,7 @@
    "index": true,
    "title": 57,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -237,9 +225,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/blaulicht/abbiegeunfall-b264-muehlenstrasse/",
@@ -247,7 +233,7 @@
    "index": true,
    "title": 96,
    "desc": 88,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -269,7 +255,7 @@
    "index": true,
    "title": 77,
    "desc": 174,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -291,7 +277,7 @@
    "index": true,
    "title": 91,
    "desc": 107,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -313,7 +299,7 @@
    "index": true,
    "title": 93,
    "desc": 124,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -335,7 +321,7 @@
    "index": true,
    "title": 68,
    "desc": 75,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -357,7 +343,7 @@
    "index": true,
    "title": 88,
    "desc": 118,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -379,7 +365,7 @@
    "index": true,
    "title": 85,
    "desc": 86,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -401,7 +387,7 @@
    "index": true,
    "title": 84,
    "desc": 102,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -423,7 +409,7 @@
    "index": true,
    "title": 81,
    "desc": 101,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -445,7 +431,7 @@
    "index": true,
    "title": 70,
    "desc": 112,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -467,7 +453,7 @@
    "index": true,
    "title": 79,
    "desc": 94,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -489,7 +475,7 @@
    "index": true,
    "title": 67,
    "desc": 108,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -511,7 +497,7 @@
    "index": true,
    "title": 78,
    "desc": 126,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -533,7 +519,7 @@
    "index": true,
    "title": 101,
    "desc": 145,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -555,7 +541,7 @@
    "index": true,
    "title": 90,
    "desc": 143,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -577,7 +563,7 @@
    "index": true,
    "title": 85,
    "desc": 150,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -599,7 +585,7 @@
    "index": true,
    "title": 109,
    "desc": 125,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -621,7 +607,7 @@
    "index": true,
    "title": 59,
    "desc": 95,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -643,7 +629,7 @@
    "index": true,
    "title": 90,
    "desc": 142,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -665,7 +651,7 @@
    "index": true,
    "title": 75,
    "desc": 92,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -687,7 +673,7 @@
    "index": true,
    "title": 92,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -709,7 +695,7 @@
    "index": true,
    "title": 90,
    "desc": 101,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -731,7 +717,7 @@
    "index": true,
    "title": 69,
    "desc": 153,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -753,7 +739,7 @@
    "index": true,
    "title": 98,
    "desc": 99,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -775,7 +761,7 @@
    "index": true,
    "title": 76,
    "desc": 122,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -797,7 +783,7 @@
    "index": true,
    "title": 70,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -819,7 +805,7 @@
    "index": true,
    "title": 92,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -841,7 +827,7 @@
    "index": true,
    "title": 85,
    "desc": 94,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -863,7 +849,7 @@
    "index": true,
    "title": 78,
    "desc": 108,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -885,7 +871,7 @@
    "index": true,
    "title": 77,
    "desc": 134,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -907,7 +893,7 @@
    "index": true,
    "title": 87,
    "desc": 118,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -929,7 +915,7 @@
    "index": true,
    "title": 83,
    "desc": 151,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -951,7 +937,7 @@
    "index": true,
    "title": 92,
    "desc": 120,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -973,7 +959,7 @@
    "index": true,
    "title": 79,
    "desc": 117,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -995,7 +981,7 @@
    "index": true,
    "title": 87,
    "desc": 187,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1017,7 +1003,7 @@
    "index": true,
    "title": 95,
    "desc": 145,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1039,7 +1025,7 @@
    "index": true,
    "title": 70,
    "desc": 127,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1062,7 +1048,7 @@
    "index": true,
    "title": 81,
    "desc": 216,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1085,7 +1071,7 @@
    "index": true,
    "title": 82,
    "desc": 146,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1108,7 +1094,7 @@
    "index": true,
    "title": 100,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1130,7 +1116,7 @@
    "index": true,
    "title": 64,
    "desc": 115,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1152,7 +1138,7 @@
    "index": true,
    "title": 111,
    "desc": 145,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1174,7 +1160,7 @@
    "index": true,
    "title": 87,
    "desc": 123,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1196,7 +1182,7 @@
    "index": true,
    "title": 102,
    "desc": 118,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1218,7 +1204,7 @@
    "index": true,
    "title": 49,
    "desc": 134,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1240,7 +1226,7 @@
    "index": true,
    "title": 74,
    "desc": 141,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1262,7 +1248,7 @@
    "index": true,
    "title": 87,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1284,7 +1270,7 @@
    "index": true,
    "title": 89,
    "desc": 120,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1306,7 +1292,7 @@
    "index": true,
    "title": 96,
    "desc": 128,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1328,7 +1314,7 @@
    "index": true,
    "title": 92,
    "desc": 132,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1350,7 +1336,7 @@
    "index": true,
    "title": 83,
    "desc": 214,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -1372,7 +1358,7 @@
    "index": true,
    "title": 89,
    "desc": 142,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -1394,7 +1380,7 @@
    "index": true,
    "title": 81,
    "desc": 87,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1416,7 +1402,7 @@
    "index": true,
    "title": 66,
    "desc": 103,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1438,7 +1424,7 @@
    "index": true,
    "title": 86,
    "desc": 149,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -1460,7 +1446,7 @@
    "index": true,
    "title": 84,
    "desc": 91,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1482,7 +1468,7 @@
    "index": true,
    "title": 80,
    "desc": 119,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1504,7 +1490,7 @@
    "index": true,
    "title": 89,
    "desc": 101,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1636,7 +1622,7 @@
    "index": true,
    "title": 87,
    "desc": 95,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1658,7 +1644,7 @@
    "index": true,
    "title": 81,
    "desc": 129,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1680,7 +1666,7 @@
    "index": true,
    "title": 71,
    "desc": 84,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1702,7 +1688,7 @@
    "index": true,
    "title": 82,
    "desc": 88,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1724,7 +1710,7 @@
    "index": true,
    "title": 66,
    "desc": 126,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1746,7 +1732,7 @@
    "index": true,
    "title": 38,
    "desc": 169,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1758,9 +1744,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/datenschutz/",
@@ -1768,7 +1752,7 @@
    "index": true,
    "title": 39,
    "desc": 73,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1780,9 +1764,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/diskussion/",
@@ -1790,7 +1772,7 @@
    "index": true,
    "title": 30,
    "desc": 96,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1802,9 +1784,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/familienanzeigen/",
@@ -1812,7 +1792,7 @@
    "index": true,
    "title": 36,
    "desc": 42,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1824,9 +1804,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/girbelsrath/",
@@ -1834,7 +1812,7 @@
    "index": true,
    "title": 40,
    "desc": 159,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1846,9 +1824,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/golzheim/",
@@ -1856,7 +1832,7 @@
    "index": true,
    "title": 37,
    "desc": 166,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1868,9 +1844,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/grundsaetze/",
@@ -1878,7 +1852,7 @@
    "index": true,
    "title": 45,
    "desc": 135,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1890,9 +1864,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/immobilien/",
@@ -1900,7 +1872,7 @@
    "index": true,
    "title": 35,
    "desc": 49,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1912,9 +1884,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/impressum/",
@@ -1922,7 +1892,7 @@
    "index": true,
    "title": 29,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1934,9 +1904,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/jobs/",
@@ -1944,7 +1912,7 @@
    "index": true,
    "title": 51,
    "desc": 87,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1956,9 +1924,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/ki-redaktion/",
@@ -1966,7 +1932,7 @@
    "index": true,
    "title": 38,
    "desc": 54,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -1978,9 +1944,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/kommentarregeln/",
@@ -1988,7 +1952,7 @@
    "index": true,
    "title": 40,
    "desc": 42,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2000,9 +1964,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/kontakt/",
@@ -2010,7 +1972,7 @@
    "index": true,
    "title": 27,
    "desc": 95,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2022,9 +1984,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/korrekturen/",
@@ -2032,7 +1992,7 @@
    "index": true,
    "title": 31,
    "desc": 132,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2044,9 +2004,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/korrekturen/danke/",
@@ -2074,7 +2032,7 @@
    "index": true,
    "title": 41,
    "desc": 86,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2086,9 +2044,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/leben/e-tour-de-rur/",
@@ -2096,7 +2052,7 @@
    "index": true,
    "title": 82,
    "desc": 107,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2118,7 +2074,7 @@
    "index": true,
    "title": 82,
    "desc": 114,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2140,7 +2096,7 @@
    "index": true,
    "title": 76,
    "desc": 209,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2162,7 +2118,7 @@
    "index": true,
    "title": 87,
    "desc": 141,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2184,7 +2140,7 @@
    "index": true,
    "title": 79,
    "desc": 174,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2207,7 +2163,7 @@
    "index": true,
    "title": 61,
    "desc": 150,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2229,7 +2185,7 @@
    "index": true,
    "title": 60,
    "desc": 114,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2251,7 +2207,7 @@
    "index": true,
    "title": 77,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2273,7 +2229,7 @@
    "index": true,
    "title": 83,
    "desc": 141,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2295,7 +2251,7 @@
    "index": true,
    "title": 83,
    "desc": 130,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2317,7 +2273,7 @@
    "index": true,
    "title": 68,
    "desc": 118,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2361,7 +2317,7 @@
    "index": true,
    "title": 57,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2383,7 +2339,7 @@
    "index": true,
    "title": 68,
    "desc": 160,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2405,7 +2361,7 @@
    "index": true,
    "title": 76,
    "desc": 161,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2427,7 +2383,7 @@
    "index": true,
    "title": 85,
    "desc": 136,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2449,7 +2405,7 @@
    "index": true,
    "title": 65,
    "desc": 178,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2471,7 +2427,7 @@
    "index": true,
    "title": 114,
    "desc": 194,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2493,7 +2449,7 @@
    "index": true,
    "title": 64,
    "desc": 142,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -2515,7 +2471,7 @@
    "index": true,
    "title": 34,
    "desc": 169,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2527,9 +2483,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/meldung-senden/danke/",
@@ -2557,7 +2511,7 @@
    "index": true,
    "title": 42,
    "desc": 89,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2569,9 +2523,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/merzenich/",
@@ -2579,7 +2531,7 @@
    "index": true,
    "title": 38,
    "desc": 131,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2591,9 +2543,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/merzenich/seite/2/",
@@ -2645,7 +2595,7 @@
    "index": true,
    "title": 40,
    "desc": 188,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2657,9 +2607,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/nachrichten/",
@@ -2667,7 +2615,7 @@
    "index": true,
    "title": 48,
    "desc": 110,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2679,9 +2627,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/nachrichten/seite/10/",
@@ -2907,7 +2853,7 @@
    "index": true,
    "title": 52,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2919,9 +2865,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/rathaus/buergersprechstunde-morschenich/",
@@ -2929,7 +2873,7 @@
    "index": true,
    "title": 72,
    "desc": 128,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2951,7 +2895,7 @@
    "index": true,
    "title": 80,
    "desc": 142,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2973,7 +2917,7 @@
    "index": true,
    "title": 84,
    "desc": 134,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -2996,7 +2940,7 @@
    "index": true,
    "title": 60,
    "desc": 120,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3018,7 +2962,7 @@
    "index": true,
    "title": 51,
    "desc": 127,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3040,7 +2984,7 @@
    "index": true,
    "title": 61,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3062,7 +3006,7 @@
    "index": true,
    "title": 55,
    "desc": 141,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3084,7 +3028,7 @@
    "index": true,
    "title": 63,
    "desc": 124,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3106,7 +3050,7 @@
    "index": true,
    "title": 100,
    "desc": 165,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3129,7 +3073,7 @@
    "index": true,
    "title": 68,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3141,9 +3085,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/service/",
@@ -3151,7 +3093,7 @@
    "index": true,
    "title": 60,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3163,9 +3105,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/sport/",
@@ -3173,7 +3113,7 @@
    "index": true,
    "title": 41,
    "desc": 109,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3185,9 +3125,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/sport/bsc-merzenich-la-rocca-europameister/",
@@ -3195,7 +3133,7 @@
    "index": true,
    "title": 87,
    "desc": 139,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3217,7 +3155,7 @@
    "index": true,
    "title": 68,
    "desc": 151,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3239,7 +3177,7 @@
    "index": true,
    "title": 88,
    "desc": 175,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3261,7 +3199,7 @@
    "index": true,
    "title": 75,
    "desc": 114,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3283,7 +3221,7 @@
    "index": true,
    "title": 67,
    "desc": 151,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3306,7 +3244,7 @@
    "index": true,
    "title": 70,
    "desc": 161,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3328,7 +3266,7 @@
    "index": true,
    "title": 83,
    "desc": 124,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3350,7 +3288,7 @@
    "index": true,
    "title": 65,
    "desc": 144,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3372,7 +3310,7 @@
    "index": true,
    "title": 82,
    "desc": 147,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3394,7 +3332,7 @@
    "index": true,
    "title": 62,
    "desc": 147,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3416,7 +3354,7 @@
    "index": true,
    "title": 69,
    "desc": 190,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3438,7 +3376,7 @@
    "index": true,
    "title": 79,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3460,7 +3398,7 @@
    "index": true,
    "title": 67,
    "desc": 172,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3504,7 +3442,7 @@
    "index": true,
    "title": 69,
    "desc": 166,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3526,7 +3464,7 @@
    "index": true,
    "title": 72,
    "desc": 148,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -3568,7 +3506,7 @@
    "index": true,
    "title": 49,
    "desc": 93,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3580,9 +3518,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/termine/androcup/",
@@ -3590,7 +3526,7 @@
    "index": true,
    "title": 54,
    "desc": 127,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3612,7 +3548,7 @@
    "index": true,
    "title": 56,
    "desc": 149,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3634,7 +3570,7 @@
    "index": true,
    "title": 79,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3656,7 +3592,7 @@
    "index": true,
    "title": 88,
    "desc": 155,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3678,7 +3614,7 @@
    "index": true,
    "title": 57,
    "desc": 156,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3700,7 +3636,7 @@
    "index": true,
    "title": 59,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3722,7 +3658,7 @@
    "index": true,
    "title": 33,
    "desc": 153,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3734,9 +3670,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/termine/melden/danke/",
@@ -3764,7 +3698,7 @@
    "index": true,
    "title": 66,
    "desc": 154,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3786,7 +3720,7 @@
    "index": true,
    "title": 58,
    "desc": 153,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3808,7 +3742,7 @@
    "index": true,
    "title": 56,
    "desc": 160,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3830,7 +3764,7 @@
    "index": true,
    "title": 61,
    "desc": 214,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3852,7 +3786,7 @@
    "index": true,
    "title": 64,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3874,7 +3808,7 @@
    "index": true,
    "title": 72,
    "desc": 160,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3896,7 +3830,7 @@
    "index": true,
    "title": 75,
    "desc": 150,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3918,7 +3852,7 @@
    "index": true,
    "title": 68,
    "desc": 176,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3940,7 +3874,7 @@
    "index": true,
    "title": 50,
    "desc": 149,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3962,7 +3896,7 @@
    "index": true,
    "title": 26,
    "desc": 50,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3974,9 +3908,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/1-fc-koeln/",
@@ -3984,7 +3916,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -3996,9 +3928,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/a4/",
@@ -4006,7 +3936,7 @@
    "index": true,
    "title": 29,
    "desc": 55,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4018,9 +3948,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/alte-kirche/",
@@ -4028,7 +3956,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4040,9 +3968,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/amprion/",
@@ -4050,7 +3976,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4062,9 +3988,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/anmeldung/",
@@ -4072,7 +3996,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4084,9 +4008,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/app/",
@@ -4094,7 +4016,7 @@
    "index": true,
    "title": 30,
    "desc": 56,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4106,9 +4028,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/ausflug/",
@@ -4116,7 +4036,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4128,9 +4048,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/b264/",
@@ -4138,7 +4056,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4150,9 +4068,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/bahn/",
@@ -4160,7 +4076,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4172,9 +4088,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/baustelle/",
@@ -4182,7 +4096,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4194,9 +4108,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/beteiligung/",
@@ -4204,7 +4116,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4216,9 +4128,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/billard/",
@@ -4226,7 +4136,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4238,9 +4148,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/blaulicht/",
@@ -4248,7 +4156,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4260,9 +4168,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/brand/",
@@ -4270,7 +4176,7 @@
    "index": true,
    "title": 32,
    "desc": 58,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4282,9 +4188,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/brandmeldeanlage/",
@@ -4292,7 +4196,7 @@
    "index": true,
    "title": 43,
    "desc": 69,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4304,9 +4208,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/breitband/",
@@ -4314,7 +4216,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4326,9 +4228,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/buergerhaus/",
@@ -4336,7 +4236,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4348,9 +4248,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/buergermeister/",
@@ -4358,7 +4256,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4370,9 +4268,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/buergewaldzentrum/",
@@ -4380,7 +4276,7 @@
    "index": true,
    "title": 43,
    "desc": 69,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4392,9 +4288,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/diebstahl/",
@@ -4402,7 +4296,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4414,9 +4308,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/digitalisierung/",
@@ -4424,7 +4316,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4436,9 +4328,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/e-bike/",
@@ -4446,7 +4336,7 @@
    "index": true,
    "title": 33,
    "desc": 59,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4458,9 +4348,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/ehrenamt/",
@@ -4468,7 +4356,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4480,9 +4368,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/einbruch/",
@@ -4490,7 +4376,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4502,9 +4388,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/einsatzbilanz/",
@@ -4512,7 +4396,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4524,9 +4408,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/ernte/",
@@ -4534,7 +4416,7 @@
    "index": true,
    "title": 32,
    "desc": 58,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4546,9 +4428,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/fahrrad/",
@@ -4556,7 +4436,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4568,9 +4448,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/fahrzeugbrand/",
@@ -4578,7 +4456,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4590,9 +4468,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/faire-woche/",
@@ -4600,7 +4476,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4612,9 +4488,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/fanclub/",
@@ -4622,7 +4496,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4634,9 +4508,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/fc-golzheim/",
@@ -4644,7 +4516,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4656,9 +4528,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/feuerwehr/",
@@ -4666,7 +4536,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4678,9 +4548,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/flaechenbrand/",
@@ -4688,7 +4556,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4700,9 +4568,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/foerderung/",
@@ -4710,7 +4576,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4722,9 +4588,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/freizeit/",
@@ -4732,7 +4596,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4744,9 +4608,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/fussball/",
@@ -4754,7 +4616,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4766,9 +4628,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/gemeinderat/",
@@ -4776,7 +4636,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4788,9 +4648,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/georg-gelhausen/",
@@ -4798,7 +4656,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4810,9 +4668,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/geschwindigkeit/",
@@ -4820,7 +4676,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4832,9 +4688,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/girbelsrath/",
@@ -4842,7 +4696,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4854,9 +4708,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/glasfaser/",
@@ -4864,7 +4716,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4876,9 +4728,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/golzheim/",
@@ -4886,7 +4736,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4898,9 +4748,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/grundschule/",
@@ -4908,7 +4756,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4920,9 +4768,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/haushalt/",
@@ -4930,7 +4776,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4942,9 +4788,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/haushaltssicherung/",
@@ -4952,7 +4796,7 @@
    "index": true,
    "title": 45,
    "desc": 71,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4964,9 +4808,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/heimat-info/",
@@ -4974,7 +4816,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -4986,9 +4828,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/heimatscheck/",
@@ -4996,7 +4836,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5008,9 +4848,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/hilfeleistung/",
@@ -5018,7 +4856,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5030,9 +4868,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/hochzeit/",
@@ -5040,7 +4876,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5052,9 +4888,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/igel/",
@@ -5062,7 +4896,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5074,9 +4908,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/inga-dohmes/",
@@ -5084,7 +4916,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5096,9 +4928,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/jubilaeum/",
@@ -5106,7 +4936,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5118,9 +4948,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/jugendgremium/",
@@ -5128,7 +4956,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5140,9 +4968,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kirche/",
@@ -5150,7 +4976,7 @@
    "index": true,
    "title": 33,
    "desc": 59,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5162,9 +4988,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kleidertreff/",
@@ -5172,7 +4996,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5184,9 +5008,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/klimaschutz/",
@@ -5194,7 +5016,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5206,9 +5028,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kommunalpolitik/",
@@ -5216,7 +5036,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5228,9 +5048,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kreis-dueren/",
@@ -5238,7 +5056,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5250,9 +5068,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kreisliga-a/",
@@ -5260,7 +5076,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5272,9 +5088,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kreisliga-b/",
@@ -5282,7 +5096,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5294,9 +5108,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/kreisliga-c/",
@@ -5304,7 +5116,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5316,9 +5128,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/l257/",
@@ -5326,7 +5136,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5338,9 +5148,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/l264/",
@@ -5348,7 +5156,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5360,9 +5168,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/leader/",
@@ -5370,7 +5176,7 @@
    "index": true,
    "title": 33,
    "desc": 59,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5382,9 +5188,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/leitungspartner/",
@@ -5392,7 +5196,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5404,9 +5208,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/lindenplatz/",
@@ -5414,7 +5216,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5426,9 +5228,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/lindenstrasse/",
@@ -5436,7 +5236,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5448,9 +5248,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/maarhalle/",
@@ -5458,7 +5256,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5470,9 +5268,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/maehroboter/",
@@ -5480,7 +5276,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5492,9 +5288,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/masterplan/",
@@ -5502,7 +5296,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5514,9 +5308,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/mobilitaet/",
@@ -5524,7 +5316,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5536,9 +5328,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/morschenich/",
@@ -5546,7 +5336,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5558,9 +5348,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/motorrad/",
@@ -5568,7 +5356,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5580,9 +5368,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/muellsammelaktion/",
@@ -5590,7 +5376,7 @@
    "index": true,
    "title": 43,
    "desc": 69,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5602,9 +5388,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/nahverkehrsplan/",
@@ -5612,7 +5396,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5624,9 +5408,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/naturschutz/",
@@ -5634,7 +5416,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5646,9 +5428,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/nrw-urban/",
@@ -5656,7 +5436,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5668,9 +5448,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/oelspur/",
@@ -5678,7 +5456,7 @@
    "index": true,
    "title": 33,
    "desc": 59,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5690,9 +5468,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/oepnv/",
@@ -5700,7 +5476,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5712,9 +5488,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/oldieabend/",
@@ -5722,7 +5496,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5734,9 +5508,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/ortsfest/",
@@ -5744,7 +5516,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5756,9 +5528,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/personenbefreiung/",
@@ -5766,7 +5536,7 @@
    "index": true,
    "title": 44,
    "desc": 70,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5778,9 +5548,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/pfadfinder/",
@@ -5788,7 +5556,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5800,9 +5568,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/polizei/",
@@ -5810,7 +5576,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5822,9 +5588,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/poolplatz/",
@@ -5832,7 +5596,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5844,9 +5608,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rathaus/",
@@ -5854,7 +5616,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5866,9 +5628,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rauchmelder/",
@@ -5876,7 +5636,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5888,9 +5648,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rettungsdienst/",
@@ -5898,7 +5656,7 @@
    "index": true,
    "title": 41,
    "desc": 67,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5910,9 +5668,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rheinisches-revier/",
@@ -5920,7 +5676,7 @@
    "index": true,
    "title": 45,
    "desc": 71,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5932,9 +5688,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rhenania-girbelsrath/",
@@ -5942,7 +5696,7 @@
    "index": true,
    "title": 50,
    "desc": 76,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5954,9 +5708,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/rur/",
@@ -5964,7 +5716,7 @@
    "index": true,
    "title": 30,
    "desc": 56,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5976,9 +5728,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/sc-1919-merzenich/",
@@ -5986,7 +5736,7 @@
    "index": true,
    "title": 44,
    "desc": 70,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -5998,9 +5748,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/sc-juelich/",
@@ -6008,7 +5756,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6020,9 +5768,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/senioren/",
@@ -6030,7 +5776,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6042,9 +5788,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/seniorennachmittag/",
@@ -6052,7 +5796,7 @@
    "index": true,
    "title": 45,
    "desc": 71,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6064,9 +5808,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/soccerhalle/",
@@ -6074,7 +5816,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6086,9 +5828,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/soco/",
@@ -6096,7 +5836,7 @@
    "index": true,
    "title": 31,
    "desc": 57,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6108,9 +5848,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/spenden/",
@@ -6118,7 +5856,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6130,9 +5868,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/sprechstunde/",
@@ -6140,7 +5876,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6152,9 +5888,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/staedtebaufoerderung/",
@@ -6162,7 +5896,7 @@
    "index": true,
    "title": 45,
    "desc": 71,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6174,9 +5908,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/standesamt/",
@@ -6184,7 +5916,7 @@
    "index": true,
    "title": 37,
    "desc": 63,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6196,9 +5928,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/steinweg/",
@@ -6206,7 +5936,7 @@
    "index": true,
    "title": 35,
    "desc": 61,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6218,9 +5948,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/stromnetz/",
@@ -6228,7 +5956,7 @@
    "index": true,
    "title": 36,
    "desc": 62,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6240,9 +5968,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/strukturwandel/",
@@ -6250,7 +5976,7 @@
    "index": true,
    "title": 41,
    "desc": 67,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6262,9 +5988,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/sv-morschenich/",
@@ -6272,7 +5996,7 @@
    "index": true,
    "title": 41,
    "desc": 67,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6284,9 +6008,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/tierrettung/",
@@ -6294,7 +6016,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6306,9 +6028,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/troedelmarkt/",
@@ -6316,7 +6036,7 @@
    "index": true,
    "title": 38,
    "desc": 64,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6328,9 +6048,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/umwelt/",
@@ -6338,7 +6056,7 @@
    "index": true,
    "title": 33,
    "desc": 59,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6350,9 +6068,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/veranstaltungen/",
@@ -6360,7 +6076,7 @@
    "index": true,
    "title": 42,
    "desc": 68,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6372,9 +6088,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/vereine/",
@@ -6382,7 +6096,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6394,9 +6108,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/verkehr/",
@@ -6404,7 +6116,7 @@
    "index": true,
    "title": 34,
    "desc": 60,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6416,9 +6128,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/verkehrssicherheit/",
@@ -6426,7 +6136,7 @@
    "index": true,
    "title": 45,
    "desc": 71,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6438,9 +6148,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/verkehrsunfall/",
@@ -6448,7 +6156,7 @@
    "index": true,
    "title": 41,
    "desc": 67,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6460,9 +6168,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/waermeplanung/",
@@ -6470,7 +6176,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6482,9 +6188,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/weinberghalle/",
@@ -6492,7 +6196,7 @@
    "index": true,
    "title": 40,
    "desc": 66,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6504,9 +6208,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/thema/zeugenaufruf/",
@@ -6514,7 +6216,7 @@
    "index": true,
    "title": 39,
    "desc": 65,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6526,9 +6228,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/tipp/",
@@ -6536,7 +6236,7 @@
    "index": true,
    "title": 39,
    "desc": 134,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6548,9 +6248,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/traueranzeigen/",
@@ -6558,7 +6256,7 @@
    "index": true,
    "title": 34,
    "desc": 20,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6570,9 +6268,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/ueber-uns/",
@@ -6580,7 +6276,7 @@
    "index": true,
    "title": 28,
    "desc": 153,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6592,9 +6288,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/ueber-uns/danke/",
@@ -6622,7 +6316,7 @@
    "index": true,
    "title": 31,
    "desc": 158,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6634,9 +6328,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/unterstuetzen/",
@@ -6644,7 +6336,7 @@
    "index": true,
    "title": 50,
    "desc": 155,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6656,9 +6348,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/",
@@ -6666,7 +6356,7 @@
    "index": true,
    "title": 53,
    "desc": 180,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6678,9 +6368,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/container-girbelsrath/",
@@ -6688,7 +6376,7 @@
    "index": true,
    "title": 60,
    "desc": 125,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6752,7 +6440,7 @@
    "index": true,
    "title": 87,
    "desc": 157,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -6774,7 +6462,7 @@
    "index": true,
    "title": 88,
    "desc": 141,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6796,7 +6484,7 @@
    "index": true,
    "title": 53,
    "desc": 116,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6808,9 +6496,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/fc-golzheim-sportlerheim-erweiterung/",
@@ -6818,7 +6504,7 @@
    "index": true,
    "title": 98,
    "desc": 157,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -6840,7 +6526,7 @@
    "index": true,
    "title": 72,
    "desc": 132,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -6862,7 +6548,7 @@
    "index": true,
    "title": 51,
    "desc": 144,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6874,9 +6560,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/ghv-merzenich/",
@@ -6884,7 +6568,7 @@
    "index": true,
    "title": 63,
    "desc": 133,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6896,9 +6580,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/golzheim-aktiv/",
@@ -6906,7 +6588,7 @@
    "index": true,
    "title": 39,
    "desc": 97,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6918,9 +6600,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/jonge-vom-berg-vortanzen/",
@@ -6928,7 +6608,7 @@
    "index": true,
    "title": 66,
    "desc": 128,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": false,
@@ -6950,7 +6630,7 @@
    "index": true,
    "title": 70,
    "desc": 31,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6962,9 +6642,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/kg-jonge-vom-berg/",
@@ -6972,7 +6650,7 @@
    "index": true,
    "title": 57,
    "desc": 133,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -6984,9 +6662,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/meldungen/",
@@ -7016,7 +6692,7 @@
    "index": true,
    "title": 86,
    "desc": 138,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7038,7 +6714,7 @@
    "index": true,
    "title": 37,
    "desc": 109,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7050,9 +6726,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/schuetzenbruderschaft-golzheim/",
@@ -7060,7 +6734,7 @@
    "index": true,
    "title": 49,
    "desc": 199,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7072,9 +6746,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/schuetzenbruderschaft-morschenich/",
@@ -7082,7 +6754,7 @@
    "index": true,
    "title": 71,
    "desc": 80,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7094,9 +6766,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/sv-morschenich-1925/",
@@ -7104,7 +6774,7 @@
    "index": true,
    "title": 44,
    "desc": 43,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7116,9 +6786,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/vereine/ttc-merzenich/",
@@ -7126,7 +6794,7 @@
    "index": true,
    "title": 33,
    "desc": 113,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7138,9 +6806,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-verzeichnis.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/werben/",
@@ -7148,7 +6814,7 @@
    "index": true,
    "title": 48,
    "desc": 162,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7160,9 +6826,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/werben/danke/",
@@ -7190,7 +6854,7 @@
    "index": true,
    "title": 34,
    "desc": 153,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7202,9 +6866,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/wirtschaft/",
@@ -7212,7 +6874,7 @@
    "index": true,
    "title": 57,
    "desc": 126,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7224,9 +6886,7 @@
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
-   "sitemap": [
-    "sitemap-seiten.xml"
-   ]
+   "sitemap": []
   },
   {
    "route": "/wirtschaft/glasfaserausbau-soco/",
@@ -7234,7 +6894,7 @@
    "index": true,
    "title": 62,
    "desc": 150,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7256,7 +6916,7 @@
    "index": true,
    "title": 64,
    "desc": 123,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7278,7 +6938,7 @@
    "index": true,
    "title": 88,
    "desc": 135,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7300,7 +6960,7 @@
    "index": true,
    "title": 61,
    "desc": 157,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7322,7 +6982,7 @@
    "index": true,
    "title": 66,
    "desc": 162,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,
@@ -7344,7 +7004,7 @@
    "index": true,
    "title": 53,
    "desc": 155,
-   "canonical": "eigen",
+   "canonical": "live",
    "h1": 1,
    "og": true,
    "twitter": true,

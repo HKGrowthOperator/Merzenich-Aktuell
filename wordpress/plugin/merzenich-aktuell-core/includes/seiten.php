@@ -39,6 +39,7 @@ function ma_seiten(): array {
         'aufgeben' => ['titel' => 'Anzeige aufgeben', 'eyebrow' => 'Anzeigen', 'anriss' => 'Werbung, Immobilie, Traueranzeige oder Familienanzeige aufgeben: Angaben, Bild und Kontakt in einem Formular, Prüfung durch die Redaktion.', 'html' => 'ma_seite_aufgeben', 'eltern' => 'anzeigen'],
         'archiv' => ['titel' => 'Archiv', 'eyebrow' => 'Archiv', 'anriss' => 'Alle Meldungen von Merzenich Aktuell nach Monat.', 'html' => 'ma_seite_archiv'],
         'diskussion' => ['titel' => 'Diskussion', 'eyebrow' => 'Mitreden', 'anriss' => 'Die jüngsten Kommentare aus allen Meldungen von Merzenich Aktuell.', 'html' => 'ma_seite_diskussion'],
+        'thema' => ['titel' => 'Themen', 'eyebrow' => 'Themen', 'anriss' => 'Alle Themen und Schlagworte auf Merzenich Aktuell, nach Zahl der Meldungen.', 'html' => 'ma_seite_themen'],
         'whatsapp' => ['titel' => 'WhatsApp-Kanal', 'eyebrow' => 'Immer informiert', 'anriss' => 'Eilmeldungen, Blaulicht und die wichtigsten Termine aus der Gemeinde Merzenich als Broadcast direkt aufs Handy. Kein Gruppenchat, keine sichtbare Nummer.', 'html' => 'ma_seite_whatsapp'],
     ];
 }
@@ -181,6 +182,10 @@ function ma_seite_diskussion(): string {
     return '<p>Kommentare gibt es unter jeder Meldung; sie erscheinen nach Prüfung durch die Redaktion (<a href="/kommentarregeln/">Kommentarrichtlinien</a>). Hier stehen die jüngsten freigegebenen Kommentare aller Meldungen.</p>[ma_diskussion]';
 }
 
+function ma_seite_themen(): string {
+    return '<p>Jede Meldung trägt Schlagworte. Hier stehen alle Themen mit der Zahl ihrer Meldungen; die Ortsteile haben eigene Seiten: <a href="/ort/merzenich/">Merzenich</a>, <a href="/ort/golzheim/">Golzheim</a>, <a href="/ort/girbelsrath/">Girbelsrath</a>, <a href="/ort/morschenich/">Morschenich</a>, <a href="/ort/buergewald/">Bürgewald</a>.</p>[ma_themen]';
+}
+
 function ma_seite_whatsapp(): string {
     return '<h2 id="was-im-kanal-geplant-ist">Was im Kanal geplant ist</h2>'
         . '<p>Der Kanal ist noch nicht gestartet. Die folgenden Punkte beschreiben, was er bringen soll; verschickt wird noch nichts.</p><ul>'
@@ -198,6 +203,7 @@ add_action('init', function (): void {
     add_shortcode('ma_archiv', 'ma_seite_archiv_liste');
     add_shortcode('ma_diskussion', 'ma_seite_diskussion_liste');
     add_shortcode('ma_redaktion_meldungen', 'ma_seite_redaktion_liste');
+    add_shortcode('ma_themen', 'ma_seite_themen_liste');
 });
 
 /** Monatsliste aller Meldungen: Datum, Titel, Ressort. */
@@ -229,6 +235,15 @@ function ma_seite_diskussion_liste(): string {
         $h .= '<li><p><strong>' . esc_html($c->comment_author) . '</strong> <time datetime="' . esc_attr(get_comment_date('c', $c)) . '">' . esc_html(get_comment_date('d.m.Y · H:i', $c)) . ' Uhr</time> zu <a href="' . esc_url(get_comment_link($c)) . '">' . esc_html(get_the_title((int) $c->comment_post_ID)) . '</a></p>'
             . '<p>' . esc_html(wp_trim_words(wp_strip_all_tags($c->comment_content), 60, ' …')) . '</p></li>';
     }
+    return $h . '</ul>';
+}
+
+/** Alle Schlagworte mit Anzahl, die häufigsten zuerst (Seite /thema/). */
+function ma_seite_themen_liste(): string {
+    $tags = get_terms(['taxonomy' => 'post_tag', 'hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC', 'number' => 300]);
+    if (!is_array($tags) || !$tags) return '<p>Noch keine Themen.</p>';
+    $h = '<ul class="themen-liste">';
+    foreach ($tags as $t) $h .= '<li><a href="' . esc_url(get_term_link($t)) . '">' . esc_html($t->name) . '</a> <span class="rs">' . (int) $t->count . '</span></li>';
     return $h . '</ul>';
 }
 

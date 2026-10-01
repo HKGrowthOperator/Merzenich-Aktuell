@@ -29,6 +29,24 @@ export function markeHtml(a, { rubrik = 'kicker' } = {}) {
 }
 export const ortSlug = (t) => String(t || '').toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z]/g, '');
 export const SITE_URL = JSON.parse(readFileSync(new URL('./site.json', import.meta.url), 'utf8')).url.replace(/\/$/, '');
+/**
+ * Original-Adresse einer Vorschauseite (deploy/site.json canonicalUrl, seit
+ * 02.10.2026 die WordPress-Installation). Pfade, die WordPress anders fuehrt,
+ * werden abgebildet; Blaetterseiten und Seiten ohne Live-Pendant behalten ihre
+ * eigene Adresse (Google soll nicht auf eine fremde Seite verwiesen werden).
+ */
+export const CANONICAL_URL = (JSON.parse(readFileSync(new URL('./site.json', import.meta.url), 'utf8')).canonicalUrl || '').replace(/\/$/, '') || SITE_URL;
+const OHNE_LIVE = [/^\/.+\/seite\/\d+\/$/, /^\/(?:betriebe|vereine)\/eintragen\/$/, /^\/vereine\/meldungen\/$/, /^\/unternehmen\/[^/]+\/$/, /^\/(?:suche|offline|redaktionshandbuch|admin|redaktion)\/$/, /\/danke\/$/];
+export function liveUrl(pfad) {
+  const r = '/' + String(pfad || '/').replace(/^\/+/, '');
+  if (CANONICAL_URL === SITE_URL || OHNE_LIVE.some((re) => re.test(r))) return SITE_URL + r;
+  let m;
+  if ((m = /^\/(merzenich|golzheim|girbelsrath|morschenich|buergewald)\/$/.exec(r))) return `${CANONICAL_URL}/ort/${m[1]}/`;
+  if (r === '/autor/redaktion/') return `${CANONICAL_URL}/redaktion/`;
+  if (r === '/termine/melden/') return `${CANONICAL_URL}/termin-melden/`;
+  if (r === '/sc-1919-merzenich/') return `${CANONICAL_URL}/vereine/sc-1919-merzenich/`;
+  return CANONICAL_URL + r;
+}
 function bildAus(main) {
   const fig = /<figure class="(art-figure[^"]*)"([^>]*)>([\s\S]*?)<\/figure>/.exec(main);
   if (!fig) return null;

@@ -27,10 +27,10 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 echo "Inhalt\n";
 $alle = '';
 foreach (ma_seiten() as $slug => $s) { $h = ma_seite_html($slug); $alle .= $h; if ($h === '' || $s['anriss'] === '' || $s['eyebrow'] === '') { $fehler++; echo "  FEHLER: $slug leer\n"; } }
-pruefe('16 Seiten mit Text, Anriss und Eyebrow', count(ma_seiten()), 16);
+pruefe('17 Seiten mit Text, Anriss und Eyebrow', count(ma_seiten()), 17);
 pruefe('Keine Vorschau-Domain, kein Netlify-Formular, kein TODO', str_contains($alle, 'hk-growthoperator') || str_contains($alle, '/api/formular') || str_contains($alle, 'TODO') || str_contains($alle, 'kalender.ics'), false);
 pruefe('Formulare: Kontakt, Meldung, Termin, Werbung, Korrektur, Immobilie, Trauer, Familie', [str_contains(ma_seite_kontakt(), '[ma_formular typ="kontakt"]'), str_contains(ma_seite_meldung_senden(), 'typ="meldung"'), str_contains(ma_seite_termin_melden(), 'typ="termin"'), str_contains(ma_seite_werben(), 'typ="werbung"'), str_contains(ma_seite_korrekturen(), 'typ="korrektur"'), substr_count(ma_seite_aufgeben(), '[ma_formular') ], [true, true, true, true, true, 4]);
-pruefe('Archiv, Diskussion und Redaktion nutzen ihre Shortcodes', [str_contains(ma_seite_archiv(), '[ma_archiv]'), str_contains(ma_seite_diskussion(), '[ma_diskussion]'), str_contains(ma_seite_redaktion(), '[ma_redaktion_meldungen]')], [true, true, true]);
+pruefe('Archiv, Diskussion, Redaktion und Themen nutzen ihre Shortcodes', [str_contains(ma_seite_archiv(), '[ma_archiv]'), str_contains(ma_seite_diskussion(), '[ma_diskussion]'), str_contains(ma_seite_redaktion(), '[ma_redaktion_meldungen]'), str_contains(ma_seite_themen(), '[ma_themen]')], [true, true, true, true]);
 pruefe('Kommentarregeln beschreiben WordPress-Moderation, keinen Melden-Knopf', str_contains(ma_seite_kommentarregeln(), 'vor der Veröffentlichung von der Redaktion geprüft') && str_contains(ma_seite_kommentarregeln(), 'IP-Adresse wird beim Kommentieren nicht gespeichert') && !str_contains(ma_seite_kommentarregeln(), 'Melden“-Knopf'), true);
 pruefe('Über uns ohne Behauptung laufender Bannerkunden; Finanzierung und Grundsätze verlinkt', !str_contains(ma_seite_ueber_uns(), 'AJ Sports') && str_contains(ma_seite_ueber_uns(), 'id="finanzierung"') && str_contains(ma_seite_ueber_uns(), '/grundsaetze/'), true);
 pruefe('Grundsätze mit Ankern ethik und vielfalt (Organisations-Schema)', str_contains(ma_seite_grundsaetze(), 'id="ethik"') && str_contains(ma_seite_grundsaetze(), 'id="vielfalt"'), true);
@@ -58,7 +58,7 @@ $GLOBALS['opt']['ma_seiten_stand']['kontakt']['version'] = '2026-01-01'; unset($
 pruefe('Ältere Fassung erkannt', ma_seite_status('kontakt'), 'veraltet');
 ma_seiten_abgleichen();
 pruefe('Unveränderte ältere Fassung wird gehoben', ma_seite_status('kontakt'), 'aktuell');
-pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 16);
+pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 17);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

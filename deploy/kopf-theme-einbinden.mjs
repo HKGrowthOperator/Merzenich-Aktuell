@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from '
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE_URL } from './lib-artikel.mjs';
+import { SITE_URL, liveUrl } from './lib-artikel.mjs';
 const SITE = JSON.parse(readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '..'), 'deploy', 'site.json'), 'utf8'));
 const KONTAKT_MAIL = SITE.kontaktMail;
 const KONTAKT_SEITEN = ['kontakt', 'ueber-uns', 'meldung-senden', 'korrekturen', 'redaktion'];
@@ -202,6 +202,15 @@ for (const pfad of seiten) {
   html = html.replace(/<time data-clock(?: [^>]*)?>[^<]*<\/time>/g, '');
   // Oeffentliche Adresse: canonical, og:url, JSON-LD, Feedlinks auf die Live-URL (deploy/site.json).
   html = html.split(ALTE_DOMAIN).join(SITE_URL);
+  // Original-Adresse (deploy/site.json canonicalUrl, seit 02.10.2026 die WordPress-Installation):
+  // canonical und og:url jeder indexierbaren Seite nennen die Live-Seite, abgeleitet aus dem
+  // Dateipfad (lib-artikel.mjs liveUrl); so bleibt der Lauf idempotent.
+  if (!/<meta name="robots" content="[^"]*noindex/.test(html)) {
+    const route = pfad.slice(join(wurzel, 'chatgpt-site').length).replace(/\\/g, '/').replace(/index\.html$/, '');
+    const original = liveUrl(route);
+    html = html.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${original}">`);
+    html = html.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${original}">`);
+  }
   // Eine Redaktionsadresse nach aussen (deploy/site.json), nur auf den Redaktionsseiten;
   // das Impressum behaelt die Adresse der Gesellschaft.
   if (KONTAKT_SEITEN.some((k) => pfad.includes(`/chatgpt-site/${k}/`))) html = html.split('redaktion@merzenich-aktuell.de').join(KONTAKT_MAIL).split('info@kbs-management.tv').join(KONTAKT_MAIL);

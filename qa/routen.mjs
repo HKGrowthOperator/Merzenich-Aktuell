@@ -22,6 +22,7 @@ import { fileURLToPath } from 'node:url';
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(wurzel, 'chatgpt-site');
 const SITE_URL = JSON.parse(readFileSync(join(wurzel, 'deploy', 'site.json'), 'utf8')).url.replace(/\/$/, '');
+const { liveUrl } = await import(join(wurzel, 'deploy', 'lib-artikel.mjs'));
 const bericht = process.argv.includes('--bericht');
 const nurJson = process.argv.includes('--json');
 
@@ -109,7 +110,7 @@ for (const { route, datei } of routen) {
   const platzhalter = PLATZHALTER.filter((r) => r.test(inhalt)).map((r) => r.source);
   const zeitwort = typ === 'artikel' && ZEITWORT.test(text((/<div class="prose[^"]*">([\s\S]*?)<\/div>/.exec(html) || [])[1] || '')) ? (ZEITWORT.exec(inhalt) || [''])[0] : '';
   const inSitemap = sitemapUrls.get(route) || [];
-  const zeile = { route, typ, index: !noindex, title: title.length, desc: desc.length, canonical: canonical === SITE_URL + route ? 'eigen' : canonical ? 'fremd' : 'fehlt', h1, og: !!meta('og:title') && !!meta('og:image'), twitter: !!meta('twitter:card'), jsonld: [...new Set(ld)].join('+'), bilder: bilder.length, ohneAlt, fehlendeBilder, links: links.length, tot, platzhalter, zeitwort, sitemap: inSitemap };
+  const zeile = { route, typ, index: !noindex, title: title.length, desc: desc.length, canonical: canonical === SITE_URL + route ? 'eigen' : canonical === liveUrl(route) ? 'live' : canonical ? 'fremd' : 'fehlt', h1, og: !!meta('og:title') && !!meta('og:image'), twitter: !!meta('twitter:card'), jsonld: [...new Set(ld)].join('+'), bilder: bilder.length, ohneAlt, fehlendeBilder, links: links.length, tot, platzhalter, zeitwort, sitemap: inSitemap };
   matrix.push(zeile);
 
   const f = (text2) => befunde.push({ route, schwere: 'fehler', text: text2 });
@@ -124,6 +125,7 @@ for (const { route, datei } of routen) {
     if (!title) f('Title fehlt');
     if (!desc) f('Description fehlt');
     if (zeile.canonical === 'fehlt') f('Canonical fehlt');
+    if (zeile.canonical === 'fremd') f(`Canonical zeigt auf eine fremde Adresse: ${canonical}`);
     if (h1 !== 1) f(`${h1} H1 statt genau einer`);
     if (!zeile.og) h('OG-Titel oder -Bild fehlt');
     if (zeile.canonical === 'eigen' && !inSitemap.length) f('indexierbar, aber in keiner Sitemap');

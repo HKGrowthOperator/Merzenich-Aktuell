@@ -29,7 +29,10 @@ if (!defined('ABSPATH')) { exit; }
 
 const MA_SEO_MARKE = 'Merzenich Aktuell';
 const MA_SEO_UNTERTITEL = 'Lokalzeitung online für die Gemeinde Merzenich';
-const MA_SEO_BESCHREIBUNG = 'Merzenich Aktuell ist die Lokalzeitung online für die Gemeinde Merzenich im Kreis Düren: Nachrichten, Blaulicht, Termine, Vereine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Jede Meldung mit Quelle und Bildcredit.';
+const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald';
+// Startseiten-Description: Google zeigt rund 155 Zeichen; die Langfassung steht in llms.txt.
+const MA_SEO_BESCHREIBUNG = 'Lokalzeitung für die Gemeinde Merzenich: Nachrichten, Blaulicht, Termine und Vereine aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.';
+const MA_SEO_BESCHREIBUNG_LANG = 'Merzenich Aktuell ist die Lokalzeitung online für die Gemeinde Merzenich im Kreis Düren: Nachrichten, Blaulicht, Termine, Vereine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Jede Meldung mit Quelle und Bildcredit.';
 const MA_SEO_PLZ = '52399';
 const MA_SEO_GEBIET = 'Gemeinde Merzenich, Kreis Düren, Nordrhein-Westfalen';
 
@@ -191,7 +194,9 @@ function ma_seo_graph(array $k, array $o): array {
             break;
         case 'termin':
             $t = $k['termin'] ?? [];
-            $e = ['@type' => 'Event', '@id' => $url . '#event', 'name' => $k['titel'], 'url' => $url, 'description' => $k['beschreibung'], 'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode', 'eventStatus' => 'https://schema.org/EventScheduled', 'inLanguage' => 'de-DE'];
+            $e = ['@type' => 'Event', '@id' => $url . '#event', 'name' => $k['titel'], 'url' => $url, 'description' => $k['beschreibung'], 'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode', 'inLanguage' => 'de-DE'];
+            // Vergangene Termine bleiben erreichbar (Archiv), tragen aber keinen Status „geplant“.
+            if (empty($t['vorbei'])) $e['eventStatus'] = 'https://schema.org/EventScheduled';
             if (!empty($t['start'])) $e['startDate'] = $t['start'];
             if (!empty($t['ende'])) $e['endDate'] = $t['ende'];
             if (!empty($t['ort'])) $e['location'] = ['@type' => 'Place', 'name' => $t['ort'], 'address' => $adresse];
@@ -235,7 +240,7 @@ function ma_seo_itemlist(array $liste): array {
 
 /** llms.txt: Überblick für KI-Suchen aus Ressorts, Orten, Seiten und Anbieterin. $seiten: [[name, url, beschreibung]]. */
 function ma_seo_llms_txt(string $home, array $seiten): string {
-    $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG . "\n\n";
+    $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\n";
     $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, info@kbs-management.tv. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
     $t .= "## Ressorts\n\n";
     foreach (ma_seo_ressorte() as $slug => [$name, $titel, $desc]) $t .= "- [{$name}]({$home}{$slug}/): {$desc}\n";
@@ -300,7 +305,7 @@ function ma_seo_kontext(): array {
     $k = ['typ' => 'liste', 'titel' => '', 'beschreibung' => '', 'url' => '', 'index' => true, 'og' => 'website', 'krumen' => [['Start', $home]], 'ort' => 'merzenich', 'bild' => ma_seo_standardbild(), 'liste' => [], 'tags' => [], 'veroeffentlicht' => '', 'geaendert' => '', 'ressort' => ''];
     $o = get_queried_object();
     if (is_front_page()) {
-        $k = array_merge($k, ['typ' => 'start', 'titel' => MA_SEO_MARKE . ' · ' . MA_SEO_UNTERTITEL, 'beschreibung' => MA_SEO_BESCHREIBUNG, 'url' => $home, 'krumen' => []]);
+        $k = array_merge($k, ['typ' => 'start', 'titel' => MA_SEO_STARTTITEL, 'beschreibung' => MA_SEO_BESCHREIBUNG, 'url' => $home, 'krumen' => []]);
     } elseif (is_singular('post') && $o instanceof WP_Post) {
         [$rs, $rl] = ma_seo_ressort_von($o);
         $ort = ma_seo_ort_von($o);
@@ -321,7 +326,7 @@ function ma_seo_kontext(): array {
         $text = trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: ('Termin' . ($start ? ' am ' . wp_date('d.m.Y', $start) : '') . ($platz ? ' in ' . $platz : '') . ', Gemeinde Merzenich.'));
         $k = array_merge($k, ['typ' => 'termin', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen($text), 'url' => get_permalink($o), 'og' => 'article', 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
             'krumen' => [['Start', $home], ['Termine', $home . 'termine/'], [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null]], 'geaendert' => get_post_modified_time('c', false, $o),
-            'termin' => ['start' => $start ? ma_seo_zeit($start) : '', 'ende' => $ende && $ende !== $start ? ma_seo_zeit($ende) : '', 'ort' => $platz, 'veranstalter' => (string) get_post_meta($o->ID, 'ma_event_organizer', true), 'preis' => (string) get_post_meta($o->ID, 'ma_event_price', true)]]);
+            'termin' => ['start' => $start ? ma_seo_zeit($start) : '', 'ende' => $ende && $ende !== $start ? ma_seo_zeit($ende) : '', 'vorbei' => function_exists('ma_event_vorbei') && ma_event_vorbei($o->ID), 'ort' => $platz, 'veranstalter' => (string) get_post_meta($o->ID, 'ma_event_organizer', true), 'preis' => (string) get_post_meta($o->ID, 'ma_event_price', true)]]);
     } elseif (is_singular('ma_club') && $o instanceof WP_Post) {
         $logo = (string) get_post_meta($o->ID, 'ma_club_logo', true);
         $k = array_merge($k, ['typ' => 'verein', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: get_the_title($o) . ': Verein in der Gemeinde Merzenich mit Meldungen und Terminen auf Merzenich Aktuell.')), 'url' => get_permalink($o), 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
@@ -445,15 +450,16 @@ add_action('init', function (): void {
     add_rewrite_rule('^news-sitemap\.xml$', 'index.php?ma_seo=news', 'top');
     add_rewrite_rule('^llms\.txt$', 'index.php?ma_seo=llms', 'top');
     add_rewrite_rule('^suche/?$', 'index.php?ma_seo=suche', 'top');
+    add_rewrite_rule('^([a-f0-9]{32})\.txt$', 'index.php?ma_seo=indexnow&ma_key=$matches[1]', 'top');
 }, 5);
-add_filter('query_vars', function (array $v): array { $v[] = 'ma_seo'; return $v; });
+add_filter('query_vars', function (array $v): array { $v[] = 'ma_seo'; $v[] = 'ma_key'; return $v; });
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_seo') ? false : $ziel);
 
 /* Nach einem Plugin-Update die Regeln einmal neu schreiben (Theme macht dasselbe für seine Adressen). */
 add_action('init', function (): void {
-    if (get_option('ma_seo_regeln') === MA_CORE_VERSION . '-2') return;
+    if (get_option('ma_seo_regeln') === MA_CORE_VERSION . '-3') return;
     flush_rewrite_rules(false);
-    update_option('ma_seo_regeln', MA_CORE_VERSION . '-2', false);
+    update_option('ma_seo_regeln', MA_CORE_VERSION . '-3', false);
 }, 99);
 
 add_action('template_redirect', function (): void {
@@ -483,6 +489,10 @@ add_action('template_redirect', function (): void {
     if ($was === 'news') {
         nocache_headers(); header('Content-Type: application/xml; charset=utf-8'); header('Cache-Control: public, max-age=600');
         echo ma_seo_news_sitemap_xml(ma_seo_news_eintraege()); exit;
+    }
+    if ($was === 'indexnow') {
+        if ((string) get_query_var('ma_key') !== ma_indexnow_key()) { status_header(404); exit; }
+        header('Content-Type: text/plain; charset=utf-8'); echo ma_indexnow_key(); exit;
     }
     if ($was === 'llms') {
         header('Content-Type: text/plain; charset=utf-8'); header('Cache-Control: public, max-age=3600');
@@ -524,6 +534,59 @@ function ma_seo_orte_beschreiben(): void {
 }
 add_action('admin_init', 'ma_seo_orte_beschreiben');
 
+/* Ressort „Menschen“: die Navigation verlinkt /menschen/, die Kategorie fehlte auf der Installation (404). Einmalig anlegen. */
+function ma_seo_menschen_anlegen(): void {
+    if (get_option('ma_seo_menschen_115') === '1') return;
+    if (!term_exists('menschen', 'category')) wp_insert_term('Menschen', 'category', ['slug' => 'menschen', 'description' => ma_seo_ressorte()['menschen'][2]]);
+    update_option('ma_seo_menschen_115', '1', false);
+}
+add_action('admin_init', 'ma_seo_menschen_anlegen');
+
+/* ------------------------------------------------------------ IndexNow (Bing, DuckDuckGo, Ecosia, Yandex; Google nimmt es nicht an) */
+
+/** Schlüssel (32 Hex), einmal erzeugt; die Schlüsseldatei liegt unter /{key}.txt (Rewrite ma_seo=indexnow). */
+function ma_indexnow_key(): string {
+    $k = (string) get_option('ma_indexnow_key', '');
+    if (!preg_match('/^[a-f0-9]{32}$/', $k)) { $k = bin2hex(random_bytes(16)); update_option('ma_indexnow_key', $k, false); }
+    return $k;
+}
+
+/** Nutzlast für api.indexnow.org (reine Funktion). */
+function ma_indexnow_nutzlast(string $host, string $key, array $urls): array {
+    $urls = array_values(array_unique(array_filter(array_map('strval', $urls), fn($u) => str_starts_with($u, 'https://' . $host . '/') || str_starts_with($u, 'http://' . $host . '/'))));
+    return ['host' => $host, 'key' => $key, 'keyLocation' => 'https://' . $host . '/' . $key . '.txt', 'urlList' => array_slice($urls, 0, 10000)];
+}
+
+/** Adressen sammeln und am Ende der Anfrage einmal melden (nicht in der Testinstanz ohne öffentlichen Host). */
+function ma_indexnow_merken(string $url): void {
+    static $gemerkt = [];
+    if ($url === '' || isset($gemerkt[$url])) return;
+    $gemerkt[$url] = true;
+    $GLOBALS['ma_indexnow_urls'][] = $url;
+    if (!has_action('shutdown', 'ma_indexnow_senden')) add_action('shutdown', 'ma_indexnow_senden');
+}
+
+function ma_indexnow_senden(): void {
+    $urls = (array) ($GLOBALS['ma_indexnow_urls'] ?? []);
+    if (!$urls) return;
+    $host = (string) parse_url(home_url('/'), PHP_URL_HOST);
+    $nutzlast = ma_indexnow_nutzlast($host, ma_indexnow_key(), $urls);
+    if (!$nutzlast['urlList'] || in_array($host, ['localhost', '127.0.0.1'], true) || str_ends_with($host, '.local')) return;
+    $antwort = wp_remote_post('https://api.indexnow.org/indexnow', ['timeout' => 5, 'headers' => ['Content-Type' => 'application/json; charset=utf-8'], 'body' => wp_json_encode($nutzlast)]);
+    $status = is_wp_error($antwort) ? $antwort->get_error_message() : (string) wp_remote_retrieve_response_code($antwort);
+    update_option('ma_indexnow_letzter', ['zeit' => time(), 'anzahl' => count($nutzlast['urlList']), 'status' => $status, 'url' => $nutzlast['urlList'][0]], false);
+}
+
+/** Veröffentlichte Meldungen, Seiten, Termine und Vereinsprofile melden: beim Veröffentlichen und bei jeder Änderung. */
+add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
+    if (!in_array($p->post_type, ['post', 'page', 'ma_event', 'ma_club'], true)) return;
+    if ($neu === 'publish' || $alt === 'publish') ma_indexnow_merken((string) get_permalink($p));
+    if ($neu === 'publish' && $alt !== 'publish') ma_indexnow_merken(home_url('/'));
+}, 10, 3);
+add_action('post_updated', function (int $id, WP_Post $nach): void {
+    if ($nach->post_status === 'publish' && in_array($nach->post_type, ['post', 'page', 'ma_event', 'ma_club'], true)) ma_indexnow_merken((string) get_permalink($nach));
+}, 10, 2);
+
 /* ------------------------------------------------------------ Backend: Merzenich Aktuell → SEO */
 
 add_action('admin_menu', function (): void {
@@ -558,5 +621,8 @@ function ma_seo_seite_admin(): void {
     }
     echo '</ul><p>Strukturierte Daten einer Meldung prüfen: <a href="https://search.google.com/test/rich-results" target="_blank">Google Rich-Results-Test</a> oder <a href="https://validator.schema.org/" target="_blank">validator.schema.org</a> mit der Adresse der Meldung.</p>';
     echo '<p>Ortsmitte Merzenich für Geo-Angaben: ' . esc_html($lat . ', ' . $lon) . ' (aus den Wetter-Einstellungen). Ortsteil-Koordinaten für Golzheim und Girbelsrath stammen aus GeoNames; für Morschenich und Bürgewald werden keine ausgegeben, weil dort keine verlässliche Quelle vorliegt.</p>';
+    $letzter = (array) get_option('ma_indexnow_letzter', []);
+    echo '<h2>IndexNow (Bing, DuckDuckGo, Ecosia)</h2><p>Jede Veröffentlichung und Änderung wird automatisch gemeldet. Schlüsseldatei: <a href="' . esc_url($home . ma_indexnow_key() . '.txt') . '" target="_blank"><code>/' . esc_html(ma_indexnow_key()) . '.txt</code></a>. '
+        . ($letzter ? 'Letzte Meldung: ' . esc_html(wp_date('d.m.Y H:i', (int) $letzter['zeit'])) . ', ' . (int) $letzter['anzahl'] . ' Adresse(n), Antwort ' . esc_html((string) $letzter['status']) . ' (200 und 202 heißen angenommen).' : 'Noch keine Meldung verschickt.') . ' Google nimmt IndexNow nicht an; dort gilt die Search Console.</p>';
     echo '<h2>Nach dem Einspielen</h2><ol><li>Search Console: Property für ' . esc_html($home) . ' anlegen, Code oben eintragen, dann <code>wp-sitemap.xml</code> und <code>news-sitemap.xml</code> einreichen.</li><li>Google Publisher Center: Publikation „Merzenich Aktuell“ mit der Startseite anlegen (nur der Betreiber kann das).</li><li>Offizielle Profile oben eintragen, sobald sie bestehen.</li></ol></div>';
 }

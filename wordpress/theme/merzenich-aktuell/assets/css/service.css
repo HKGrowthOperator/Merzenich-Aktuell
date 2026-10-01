@@ -41,3 +41,5 @@
 .ma-partner-antrag input:not([type=checkbox]),.ma-partner-antrag textarea,.ma-partner-antrag select{width:100%;max-width:680px;padding:10px;border:1px solid #aaa;background:#fff;font:inherit}
 .ma-partner-antrag__consent label{font-weight:400}.ma-partner-antrag__consent input{margin-right:6px}.ma-partner-antrag button{background:#b71920;color:#fff;border:0;padding:10px 16px;font-weight:700;cursor:pointer}
 .ma-partner-antrag__fehler{padding:10px 12px;border-left:3px solid #b71920;background:#fff;color:#151515}.ma-partner-antrag--danke h2{margin:0 0 6px;font-family:Georgia,'Times New Roman',serif}
+/* Vergangener Termin (02.10.2026): Einzelansicht bleibt erreichbar, Hinweis oben. */
+.service-note--vorbei{border:1px solid var(--line,#e3e3e1);background:var(--card,#fff);padding:12px 16px;margin:0 0 18px}

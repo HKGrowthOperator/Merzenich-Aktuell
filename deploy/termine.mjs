@@ -20,7 +20,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { esc, SITE_URL, ortSlug } from './lib-artikel.mjs';
+import { esc, SITE_URL, ortSlug, liveUrl } from './lib-artikel.mjs';
 import { termineAusSeiten, berliner } from './lib-termine.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -96,8 +96,8 @@ function seiteAusDaten(t) {
     .replace(/(<meta name="twitter:description" content=")[^"]*"/, `$1${esc(desc)}"`)
     .replace(/(<meta property="og:title" content=")[^"]*"/, `$1${esc(titel)}"`)
     .replace(/(<meta name="twitter:title" content=")[^"]*"/, `$1${esc(titel)}"`)
-    .replace(/(<link rel="canonical" href=")[^"]*"/, `$1${url}"`)
-    .replace(/(<meta property="og:url" content=")[^"]*"/, `$1${url}"`)
+    .replace(/(<link rel="canonical" href=")[^"]*"/, `$1${liveUrl(`/termine/${t.slug}/`)}"`)
+    .replace(/(<meta property="og:url" content=")[^"]*"/, `$1${liveUrl(`/termine/${t.slug}/`)}"`)
     .replace(/<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"Event"[\s\S]*?<\/script>/, () => `<script type="application/ld+json">${JSON.stringify(ld)}</script>`)
     .replace(/<article class="article event-page"[\s\S]*?<\/article>/, () => artikel);
   // Breadcrumb-JSON-LD der Vorlage nennt den Vorlagentermin.

@@ -2,6 +2,22 @@
 
 2. Oktober 2026 · Theme 21.5.0 · Core-Plugin 1.13.0 (Historie unten)
 
+## Neu in 1.15.0 / Theme 21.7.0 (02.10.2026): Indexierung vorbereitet, Vorschau zeigt auf die Live-Seite, IndexNow, WebP
+
+**Befund.** Google kannte am 02.10. weder `merzenich-aktuell.de` noch die Vorschau `merzenichaktuell.hk-growthoperator.de` (`site:`-Abfragen leer); für „Merzenich Aktuell“ erscheinen Aachener Zeitung, presseportal.de, gemeinde-merzenich.de und dn-news.de. Die Live-Seite ist seit 30.09. online und bei keiner Suchmaschine angemeldet. Die Vorschau trug Canonical auf sich selbst, `index,follow` und eigene Sitemaps und hätte mit der Live-Seite konkurriert.
+
+**Vorschau verweist auf die Live-Seite.** `deploy/site.json` → `canonicalUrl`; `deploy/lib-artikel.mjs` `liveUrl()` bildet Pfade ab, die WordPress anders führt (`/golzheim/` → `/ort/golzheim/`, `/autor/redaktion/` → `/redaktion/`, `/termine/melden/` → `/termin-melden/`, `/sc-1919-merzenich/` → `/vereine/sc-1919-merzenich/`). Blätterseiten, `/suche/`, `/vereine/eintragen/`, `/betriebe/eintragen/`, `/vereine/meldungen/` und `/unternehmen/<slug>/` behalten ihr eigenes Canonical (kein Live-Pendant). Jede indexierbare Vorschauseite nennt in `canonical` und `og:url` die Live-Adresse (`kopf-theme-einbinden.mjs`, abgeleitet aus dem Dateipfad; `meldungen.mjs`, `termine.mjs`, `unternehmen.mjs` schreiben dasselbe), JSON-LD bleibt die Vorschau-Entität. `robots.txt` der Vorschau nennt keine Sitemaps mehr; `sitemap-seiten.xml` enthält nur noch Seiten mit eigenem Canonical. `qa/routen.mjs` kennt den Wert `live`. **Wirkung erst nach Coolify-Redeploy.**
+
+**WordPress.** Kategorie „Menschen“ wird einmalig angelegt (`/menschen/` war 404, die Navigation verlinkt sie). Themenübersicht `/thema/` als Redaktionsseite mit `[ma_themen]` (17 Seiten). Vergangene Termine: Einzelansicht bleibt erreichbar (vorher 404 bei jedem alten Link und in der Sitemap), mit Hinweis „Dieser Termin ist vorbei“, ohne `eventStatus` „geplant“; die Terminliste zeigt weiter nur Kommendes (`ma_filter_public_service_archives` filtert nicht mehr `is_singular`). Startseite: Titel „Merzenich Aktuell: Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald“, Description 149 Zeichen (vorher ~250; Google zeigt ~155), die Langfassung bleibt in `llms.txt`.
+
+**IndexNow.** Schlüssel `ma_indexnow_key` (32 Hex) einmalig erzeugt, Schlüsseldatei `/{key}.txt` per Rewrite; beim Veröffentlichen und Ändern von Meldungen, Seiten, Terminen und Vereinsprofilen meldet das Plugin die Adressen am Ende der Anfrage an `api.indexnow.org` (Bing, DuckDuckGo, Ecosia, Yandex; Google nimmt IndexNow nicht an). Letzte Antwort unter SEO & Geo. Kein Versand bei lokalem Host.
+
+**WebP.** `image_editor_output_format` JPEG → WebP für neue Bildgrößen (Original bleibt JPEG), nur wenn die PHP-Installation WebP kann (`wp_image_editor_supports`). Vorhandene Anhänge werden beim Admin-Aufruf gestückelt nachgezogen (20 je Aufruf, Guard `ma_webp_fertig`, Sperre 120 s). Das Theme liest `srcset` aus den Metadaten und bekommt die WebP-Größen automatisch.
+
+**Geprüft:** `php qa/wordpress/seo-test.php` (IndexNow-Nutzlast, Titel/Description, vergangener Termin), `seiten-test.php` (17 Seiten) und alle übrigen Tests; Playground-Integration; `kette.mjs` zweimal + `--check`, `qa/routen.mjs` 335 Routen ohne Fehler; Live-Prüfung.
+
+**Nur der Betreiber kann:** Google Search Console (Property, Code unter SEO & Geo, Sitemaps einreichen, Startseite „Indexierung beantragen“), Bing Webmaster Tools, Google News Publisher Center, Links von gemeinde-merzenich.de und den Vereinen, namentliche Redaktion, regelmäßiges Veröffentlichen. Kein Google-Unternehmensprofil (keine Anschrift in Merzenich; Betreiber 02.10.2026).
+
 ## Neu in 1.14.0 / Theme 21.6.0 (02.10.2026): SEO und Geo, Redaktionsseiten, Kopfdatum
 
 **Was fehlte.** WordPress gab nur den Titel und auf Einzelseiten ein Canonical aus: keine Description, kein Open Graph, keine strukturierten Daten, keine Geo-Angaben. Die Sitemap nannte Benutzer (Anmeldenamen) und die langen Kategorie-Adressen, Autorenarchive waren erreichbar, `/blaulicht/page/2/` und `/blaulicht/feed/` liefen auf 404, und jede Meldung sowie die Fußzeile verlinkten rund 15 Seiten, die es auf WordPress nicht gab (`/ueber-uns/`, `/grundsaetze/`, `/korrekturen/`, `/kontakt/`, `/meldung-senden/` …). Im Kopf standen SSI-Reste im `datetime`-Attribut.

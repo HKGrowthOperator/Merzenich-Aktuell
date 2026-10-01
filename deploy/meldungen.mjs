@@ -23,7 +23,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { esc, ORTSTEILE, SITE_URL } from './lib-artikel.mjs';
+import { esc, ORTSTEILE, SITE_URL, liveUrl } from './lib-artikel.mjs';
 import { bildklassenLesen } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -167,11 +167,13 @@ function kopf(vorlage, m) {
   let h = vorlage;
   h = ersetze(h, /<title>[^<]*<\/title>/, `<title>${esc(m.titel)} | Merzenich Aktuell</title>`);
   h = ersetze(h, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(m.dek)}">`);
-  h = ersetze(h, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`);
+  // Canonical und og:url nennen die Live-Seite (lib-artikel.mjs liveUrl); JSON-LD bleibt die Vorschau-Entitaet.
+  const original = liveUrl(`/${m.ressort}/${m.slug}/`);
+  h = ersetze(h, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${original}">`);
   h = ersetze(h, /<meta name="news_keywords" content="[^"]*">/, `<meta name="news_keywords" content="${esc(labels.join(', '))}">\n<meta name="ma:bildklasse" content="${esc(m.bildklasse)}">`);
   h = ersetze(h, /<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(m.titel)}">`);
   h = ersetze(h, /<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(m.dek)}">`);
-  h = ersetze(h, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`);
+  h = ersetze(h, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${original}">`);
   h = ersetze(h, /<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${og}">`);
   h = h.replace(/\n?<meta property="og:image:alt" content="[^"]*">/, '');
   h = ersetze(h, /<meta property="article:published_time" content="[^"]*">/, `<meta property="article:published_time" content="${esc(m.datum)}">`);

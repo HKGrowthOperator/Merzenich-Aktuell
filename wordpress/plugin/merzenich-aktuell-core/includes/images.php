@@ -211,3 +211,48 @@ function ma_the_content_image($post = null, string $size = 'large', array $attr 
     $html .= $bild['is_fallback'] ? ' class="is-symbol"' : '';
     echo $html . '>';
 }
+
+/* ------------------------------------------------------------ WebP (02.10.2026)
+ * Neue Bildgroessen als WebP (WordPress-Core-Filter; das Original bleibt JPEG).
+ * Fuer vorhandene Anhaenge laeuft die Erzeugung gestueckelt beim Admin-Aufruf
+ * nach (20 je Aufruf, Guard-Option), damit Zeitlimits des Hosters nicht reissen.
+ * Kann die PHP-Installation kein WebP, passiert nichts und das Backend sagt es.
+ */
+function ma_webp_moeglich(): bool {
+    return function_exists('wp_image_editor_supports') && wp_image_editor_supports(['mime_type' => 'image/webp']);
+}
+add_filter('image_editor_output_format', function (array $formate): array {
+    if (ma_webp_moeglich()) $formate['image/jpeg'] = 'image/webp';
+    return $formate;
+});
+
+/** Anhaenge, deren Groessen noch kein WebP sind. */
+function ma_webp_offen(int $limit = 20): array {
+    $ids = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => 'image/jpeg', 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC']);
+    $offen = [];
+    foreach ($ids as $id) {
+        $meta = wp_get_attachment_metadata($id);
+        $sizes = is_array($meta) ? ($meta['sizes'] ?? []) : [];
+        $hatWebp = false;
+        foreach ($sizes as $sz) if (($sz['mime-type'] ?? '') === 'image/webp') { $hatWebp = true; break; }
+        if (!$hatWebp) $offen[] = (int) $id;
+        if (count($offen) >= $limit) break;
+    }
+    return $offen;
+}
+
+function ma_webp_nachlauf(): void {
+    if (!ma_webp_moeglich() || get_option('ma_webp_fertig') === '1' || get_transient('ma_webp_lauf')) return;
+    set_transient('ma_webp_lauf', 1, 120);
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    $offen = ma_webp_offen(20);
+    foreach ($offen as $id) {
+        $datei = get_attached_file($id);
+        if (!$datei || !file_exists($datei)) continue;
+        $meta = wp_generate_attachment_metadata($id, $datei);
+        if (is_array($meta) && $meta) wp_update_attachment_metadata($id, $meta);
+    }
+    if (count($offen) < 20) update_option('ma_webp_fertig', '1', false);
+    delete_transient('ma_webp_lauf');
+}
+add_action('admin_init', 'ma_webp_nachlauf', 20);

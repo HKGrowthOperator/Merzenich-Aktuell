@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSy
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bild } from './lib-piktogramme.mjs';
-import { SITE_URL } from './lib-artikel.mjs';
+import { SITE_URL, liveUrl } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(wurzel, 'chatgpt-site');
@@ -102,8 +102,8 @@ const kanalSeiten = kanaele.map((k) => {
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(beschreibung)}">`)
     .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(beschreibung)}">`)
     .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${esc(beschreibung)}">`)
-    .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${SITE_URL}/unternehmen/">`)
-    .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${SITE_URL}/unternehmen/">`)
+    .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${liveUrl('/unternehmen/')}">`)
+    .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${liveUrl('/unternehmen/')}">`)
     .replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="Unternehmen in Merzenich">')
     .replace(/<meta name="twitter:title" content="[^"]*">/, '<meta name="twitter:title" content="Unternehmen in Merzenich">')
     .replace(/<script type="application\/ld\+json">(?:(?!<\/script>)[\s\S])*?"@type":"(?:WebPage|BreadcrumbList|CollectionPage)"[\s\S]*?<\/script>/g, '');
@@ -128,8 +128,8 @@ const kanalSeiten = kanaele.map((k) => {
     const titel = `${k.name} | Unternehmen | Merzenich Aktuell`;
     let html = (vorlage.slice(0, i) + main + vorlage.slice(j))
       .replace(/<title>[^<]*<\/title>/, `<title>${esc(titel)}</title>`)
-      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${SITE_URL}/unternehmen/${esc(k.slug)}/">`)
-      .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${SITE_URL}/unternehmen/${esc(k.slug)}/">`);
+      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${liveUrl(`/unternehmen/${esc(k.slug)}/`)}">`)
+      .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${liveUrl(`/unternehmen/${esc(k.slug)}/`)}">`);
     const w = alt && (/<!-- werbung:unternehmen:start -->[\s\S]*?<!-- werbung:unternehmen:end -->/.exec(alt) || [])[0];
     if (w) html = html.replace(/<!-- werbung:unternehmen:start -->[\s\S]*?<!-- werbung:unternehmen:end -->/, w);
     if (html !== alt) { geaendert.push(`unternehmen/${k.slug}/index.html`); if (!nurPruefen) { mkdirSync(dirname(ziel), { recursive: true }); writeFileSync(ziel, html); } }
