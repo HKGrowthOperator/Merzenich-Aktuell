@@ -2,6 +2,14 @@
 
 2. Oktober 2026 · Theme 21.5.0 · Core-Plugin 1.13.0 (Historie unten)
 
+## Neu in 1.16.0 (02.10.2026): Nachrichtendienste und Browser-Hinweise automatisch beliefern
+
+**Was eine neue Meldung jetzt von selbst auslöst** (`includes/feeds.php`): Der RSS-Feed (`/feed/`, Ressort-Feeds, Atom) trägt das Beitragsbild als `enclosure` und `media:content` mit Bildnachweis (nur Bilder mit geklärten Rechten, möglichst ≥ 1200 px), das Bild steht zusätzlich oben im Volltext, der Autor heißt „Redaktion Merzenich Aktuell“ statt des Anmeldenamens, der Feedtitel ist „Merzenich Aktuell“ bzw. „Blaulicht | Merzenich Aktuell“ (vorher „Archiv | …“). Der Feed nennt den WebSub-Hub `pubsubhubbub.appspot.com`; bei jeder Veröffentlichung und Änderung meldet das Plugin Haupt-, Atom- und Ressort-Feed dem Hub, Feed-Dienste (Feedly, Inoreader, NewsBlur und andere) laden sofort nach. Dazu IndexNow (1.15.0) und die News-Sitemap (1.14.0). `/api/latest.json` liefert die neuesten 20 Meldungen in der Form der statischen Datei; `einwilligung.js` (schon im Theme-Fuß) fragt sie alle fünf Minuten ab und zeigt mit Einwilligung eine Browser-Benachrichtigung, vorher 404. Vorschaubilder (`og:image`, JSON-LD) nehmen die größte Größe ab 1200 px (Google-Discover-Vorgabe).
+
+**Was nur der Betreiber beantragen kann** (Backend SEO & Geo nennt die Schritte und Adressen): Google News über das Publisher Center (Website über die Search Console bestätigen, Feed `/feed/` eintragen), Microsoft Start Partner Hub (Edge-Startseite, Bing News), Apple News Publisher. Google Discover braucht keine Anmeldung, nur Indexierung und große Bilder.
+
+**Geprüft:** `php qa/wordpress/feeds-test.php` und alle übrigen Tests; Playground (Feed mit Media-RSS, Hub, Autor, Titel; `/api/latest.json`; `og:image` ≥ 1200 px; Backend); Live-Prüfung.
+
 ## Neu in 1.15.0 / Theme 21.7.0 (02.10.2026): Indexierung vorbereitet, Vorschau zeigt auf die Live-Seite, IndexNow, WebP
 
 **Befund.** Google kannte am 02.10. weder `merzenich-aktuell.de` noch die Vorschau `merzenichaktuell.hk-growthoperator.de` (`site:`-Abfragen leer); für „Merzenich Aktuell“ erscheinen Aachener Zeitung, presseportal.de, gemeinde-merzenich.de und dn-news.de. Die Live-Seite ist seit 30.09. online und bei keiner Suchmaschine angemeldet. Die Vorschau trug Canonical auf sich selbst, `index,follow` und eigene Sitemaps und hätte mit der Live-Seite konkurriert.

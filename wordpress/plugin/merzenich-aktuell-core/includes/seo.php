@@ -264,7 +264,9 @@ function ma_seo_bild($post): array {
     if (!$post || !has_post_thumbnail($post)) return ma_seo_standardbild();
     if (function_exists('ma_content_image') && !empty(ma_content_image($post, 'large')['is_fallback'])) return ma_seo_standardbild();
     $id = (int) get_post_thumbnail_id($post);
-    $src = wp_get_attachment_image_src($id, 'large');
+    // Google Discover verlangt Bilder ab 1200 px Breite: die größte verfügbare Größe nehmen.
+    $src = null;
+    foreach (['1536x1536', 'full', 'large'] as $g) { $s = wp_get_attachment_image_src($id, $g); if ($s && (int) $s[1] >= 1200) { $src = $s; break; } if (!$src && $s) $src = $s; }
     if (!$src) return ma_seo_standardbild();
     $alt = (string) get_post_meta($id, '_wp_attachment_image_alt', true);
     return ['url' => $src[0], 'w' => (int) $src[1], 'h' => (int) $src[2], 'alt' => $alt !== '' ? $alt : get_the_title($post)];
@@ -372,6 +374,7 @@ function ma_seo_kontext(): array {
 
 add_filter('document_title_separator', fn() => '|');
 add_filter('document_title_parts', function (array $teile): array {
+    if (is_feed()) return $teile;
     $k = ma_seo_kontext();
     if ($k['typ'] === 'start') return ['title' => $k['titel']];
     $teile['title'] = $k['titel'];
@@ -624,5 +627,14 @@ function ma_seo_seite_admin(): void {
     $letzter = (array) get_option('ma_indexnow_letzter', []);
     echo '<h2>IndexNow (Bing, DuckDuckGo, Ecosia)</h2><p>Jede Veröffentlichung und Änderung wird automatisch gemeldet. Schlüsseldatei: <a href="' . esc_url($home . ma_indexnow_key() . '.txt') . '" target="_blank"><code>/' . esc_html(ma_indexnow_key()) . '.txt</code></a>. '
         . ($letzter ? 'Letzte Meldung: ' . esc_html(wp_date('d.m.Y H:i', (int) $letzter['zeit'])) . ', ' . (int) $letzter['anzahl'] . ' Adresse(n), Antwort ' . esc_html((string) $letzter['status']) . ' (200 und 202 heißen angenommen).' : 'Noch keine Meldung verschickt.') . ' Google nimmt IndexNow nicht an; dort gilt die Search Console.</p>';
+    $ws = (array) get_option('ma_websub_letzter', []);
+    echo '<h2>Google News, Discover, Microsoft Start, Apple News</h2>';
+    echo '<p>Technisch ist alles vorbereitet: Feed mit Bildern und Bildnachweis (<a href="' . esc_url($home . 'feed/') . '" target="_blank"><code>/feed/</code></a>), News-Sitemap, strukturierte Daten, Vorschaubilder ab 1200 px, IndexNow. Jede Veröffentlichung meldet den Feed außerdem an den WebSub-Hub (' . esc_html(MA_WEBSUB_HUB) . '), damit Feed-Dienste sofort nachladen. '
+        . ($ws ? 'Letzte Hub-Meldung: ' . esc_html(wp_date('d.m.Y H:i', (int) $ws['zeit'])) . ', ' . (int) $ws['anzahl'] . ' Feed(s), Antwort ' . esc_html((string) $ws['status']) . ' (204 heißt angenommen).' : 'Noch keine Hub-Meldung verschickt.') . '</p>';
+    echo '<p>Die Aufnahme selbst kann nur der Betreiber beantragen; danach läuft alles automatisch:</p><ol>'
+        . '<li><strong>Google News:</strong> <a href="https://publishercenter.google.com/" target="_blank">Publisher Center</a> → Publikation „Merzenich Aktuell“ anlegen, Website ' . esc_html($home) . ' bestätigen (geht über die Search Console), unter „Inhalte“ den Feed <code>' . esc_html($home . 'feed/') . '</code> eintragen, Logo hochladen, Prüfung beantragen. Google Discover (die Nachrichten im Chrome-Startbildschirm und in der Google-App) braucht keine Anmeldung, nur die Indexierung und große Bilder.</li>'
+        . '<li><strong>Microsoft Start / Edge-Startseite / Bing News:</strong> <a href="https://partnerhub.microsoftstart.com/" target="_blank">Microsoft Start Partner Hub</a>, Feed <code>' . esc_html($home . 'feed/') . '</code> angeben; IndexNow ist schon aktiv.</li>'
+        . '<li><strong>Apple News:</strong> <a href="https://www.icloud.com/newspublisher/" target="_blank">Apple News Publisher</a> mit Apple-ID, Kanal mit demselben Feed anlegen.</li>'
+        . '<li><strong>Browser-Benachrichtigungen für Leser:</strong> laufen bereits über <code>/api/latest.json</code> (Datenschutz-Einstellungen → „Live-Meldungen“ auf der Seite); keine Anmeldung nötig.</li></ol>';
     echo '<h2>Nach dem Einspielen</h2><ol><li>Search Console: Property für ' . esc_html($home) . ' anlegen, Code oben eintragen, dann <code>wp-sitemap.xml</code> und <code>news-sitemap.xml</code> einreichen.</li><li>Google Publisher Center: Publikation „Merzenich Aktuell“ mit der Startseite anlegen (nur der Betreiber kann das).</li><li>Offizielle Profile oben eintragen, sobald sie bestehen.</li></ol></div>';
 }
