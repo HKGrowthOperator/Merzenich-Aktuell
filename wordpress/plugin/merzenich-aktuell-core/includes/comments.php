@@ -6,11 +6,15 @@
  * kompakten Liste alle unkritischen Kommentare vorausgewaehlt lassen,
  * problematische abwaehlen und den Rest in einem Schritt genehmigen.
  * Nach Genehmigung erhaelt der Verfasser eine E-Mail, sofern eine gueltige
- * E-Mail-Adresse angegeben wurde.
+ * E-Mail-Adresse angegeben wurde. Die IP-Adresse der Kommentierenden wird
+ * nicht gespeichert (pre_comment_user_ip).
  */
 if (!defined('ABSPATH')) { exit; }
 
 function ma_register_comment_moderation_hooks(): void {
+    // Keine IP-Adresse am Kommentar speichern (Datenschutzerklärung 02.10.2026):
+    // Schutz vor Missbrauch leistet die Vorabmoderation, nicht die Adresse.
+    add_filter('pre_comment_user_ip', '__return_empty_string');
     add_filter('pre_comment_approved', 'ma_comments_force_moderation', 20, 2);
     add_action('transition_comment_status', 'ma_comment_approval_mail', 10, 3);
     add_action('admin_menu', 'ma_comment_moderation_menu');

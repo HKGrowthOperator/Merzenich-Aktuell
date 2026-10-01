@@ -46,6 +46,7 @@ while (have_posts()): the_post();
   </div>
   <?php if ($fakten): ?><div class="facts"><h2>Das Wichtigste in Kürze</h2><ul><?php foreach ($fakten as $f) echo '<li>' . esc_html($f) . '</li>'; ?></ul></div><?php endif; ?>
     <div class="prose"><?php the_content(); ?></div>
+    <?php echo ma21_werbung('artikel'); ?>
   <?php if ($q_url): ?>
     <div class="source-box"><b>Quelle &amp; Transparenz</b> Grundlage dieser Meldung: <a href="<?php echo esc_url($q_url); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html($q_name ?: parse_url($q_url, PHP_URL_HOST)); ?> ↗</a>.<?php if ($q_stand): ?> <span class="stand">Abgerufen am <?php echo esc_html(wp_date('d.m.Y', strtotime($q_stand))); ?>.</span><?php endif; ?> Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
   <?php endif; ?>

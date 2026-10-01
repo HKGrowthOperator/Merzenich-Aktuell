@@ -40,7 +40,9 @@ function ma_register_content_types(): void {
             'has_archive'=>$slug !== 'ma_ad' ? $d[2] : false,
             'rewrite'=>$slug !== 'ma_ad' ? ['slug'=>$d[2]] : false,
             'menu_icon'=>$d[3],
-            'supports'=>['title','editor','excerpt','thumbnail','author'],
+            // Werbemittel (02.10.2026): kein Inhaltsfeld, kein Block-Editor. Die Anzeige
+            // besteht aus Titel, Bild, Kurztext und den Feldern der Werbeschaltung.
+            'supports'=>$slug === 'ma_ad' ? ['title','excerpt','thumbnail','author'] : ['title','editor','excerpt','thumbnail','author'],
         ]);
     }
 
@@ -52,6 +54,9 @@ function ma_register_content_types(): void {
     ]);
 }
 add_action('init','ma_register_content_types');
+// Anzeigen im klassischen Formular auf einem Bildschirm, nie im Block-Editor.
+add_filter('use_block_editor_for_post_type', fn($use, $typ) => $typ === 'ma_ad' ? false : $use, 10, 2);
+add_filter('enter_title_here', fn($t, $p) => $p instanceof WP_Post && $p->post_type === 'ma_ad' ? 'Name der Anzeige (intern; dient als Alternativtext, wenn keiner gesetzt ist)' : $t, 10, 2);
 
 function ma_meta(string $key, int $post_id = 0, $default = '') {
     $post_id = $post_id ?: get_the_ID();

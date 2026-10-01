@@ -139,35 +139,42 @@ function ma21_badge(array $b, bool $start): string {
 
 function ma21_story_id(WP_Post $p): string { return get_post_time('Y-m-d', false, $p) . '-' . $p->post_name; }
 
-function ma21_bildflaeche(WP_Post $p, array $b, string $sizes, bool $eager): string {
+function ma21_bildflaeche(WP_Post $p, ?array $b, string $sizes, bool $eager): string {
+    if (!$b) return '';
     return '<a class="karte-bild" href="' . esc_url(get_permalink($p)) . '" tabindex="-1" aria-hidden="true"><div class="media">'
         . ma21_img($b, $sizes, $eager) . ma21_badge($b, true) . '</div></a>';
 }
 
+/** Datenattribute einer Karte für den Bearbeitungsmodus (includes/layout-front.php): Beitrag, Platz, fest. */
+function ma21_karte_attr(WP_Post $p, string $slot = '', bool $fest = false): string {
+    return ' data-story="' . esc_attr(ma21_story_id($p)) . '" data-post="' . (int) $p->ID . '"' . ($slot !== '' ? ' data-slot="' . esc_attr($slot) . '"' : '') . ($fest ? ' data-fest="1"' : '');
+}
+
 /** Startseitenkarte in den Größen xl (Aufmacher), r/u (Bühne), l, m, s (Rubrikflächen). */
-function ma21_karte(WP_Post $p, string $g, string $tag = 'h3'): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p); $id = esc_attr(ma21_story_id($p));
+function ma21_karte(WP_Post $p, string $g, string $tag = 'h3', string $slot = '', bool $fest = false): string {
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p); $attr = ma21_karte_attr($p, $slot, $fest);
     $kopf = "<{$tag}><a href=\"{$url}\">{$titel}</a></{$tag}>";
     if ($g === 'xl') {
-        return "<article class=\"front-lead\" data-story=\"{$id}\">" . ($b ? ma21_bildflaeche($p, $b, '(max-width: 760px) 100vw, 860px', true) : '')
+        return "<article class=\"front-lead\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 760px) 100vw, 860px', true)
             . '<div class="front-lead-copy">' . ma21_marke($p) . "<h1><a href=\"{$url}\">{$titel}</a></h1><p>" . ma21_e(ma21_teaser($p)) . '</p>'
             . '<div class="meta">' . ma21_zeit($p) . '<span>' . ma21_lesezeit($p) . ' Min. Lesezeit</span></div></div></article>';
     }
     if ($g === 'r' || $g === 'u') {
         $sizes = $g === 'r' ? '(max-width: 760px) 132px, (max-width: 1100px) 50vw, 460px' : '(max-width: 760px) 132px, (max-width: 1100px) 33vw, 440px';
-        return "<article class=\"front-neben-story buehne-karte buehne-karte--{$g}\" data-story=\"{$id}\">" . ($b ? ma21_bildflaeche($p, $b, $sizes, false) : '')
+        return "<article class=\"front-neben-story buehne-karte buehne-karte--{$g}\"{$attr}>" . ma21_bildflaeche($p, $b, $sizes, false)
             . '<div class="karte-text">' . ma21_marke($p) . "<h2><a href=\"{$url}\">{$titel}</a></h2><div class=\"meta\">" . ma21_zeit($p) . '</div></div></article>';
     }
+    // Feste Plätze dürfen auch ohne Bild belegt sein (Layout-Karte): dann ohne Bildfläche.
     if ($g === 'l') {
-        return "<article class=\"desk-karte desk-karte--gross\" data-story=\"{$id}\">" . ma21_bildflaeche($p, $b, '(max-width: 900px) 100vw, 600px', false)
+        return "<article class=\"desk-karte desk-karte--gross" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 900px) 100vw, 600px', false)
             . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<p class="dek">' . ma21_e(ma21_teaser($p)) . '</p><div class="meta">' . ma21_zeit($p) . '</div></div></article>';
     }
     if ($g === 'm') {
-        return "<article class=\"desk-karte desk-karte--mittel\" data-story=\"{$id}\">" . ma21_bildflaeche($p, $b, '(max-width: 1100px) 46vw, 390px', false)
+        return "<article class=\"desk-karte desk-karte--mittel" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 1100px) 46vw, 390px', false)
             . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<div class="meta">' . ma21_zeit($p) . '</div></div></article>';
     }
     $mitBild = ma21_echtes_bild($b);
-    return '<article class="front-zeile' . ($mitBild ? ' front-zeile--bild' : '') . "\" data-story=\"{$id}\">"
+    return '<article class="front-zeile' . ($mitBild ? ' front-zeile--bild' : '') . "\"{$attr}>"
         . ($mitBild ? ma21_bildflaeche($p, $b, '(max-width: 640px) 120px, 220px', false) : '')
         . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<div class="meta">' . ma21_zeit($p) . '</div></div></article>';
 }
@@ -191,12 +198,14 @@ function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p); }
  * Nebenmeldungen (zwei rechts, zwei darunter, daneben eine Anzeige), dann die
  * Rubrikflächen. Die Startseiten-Freigabe entscheidet, ob eine Meldung
  * erscheint; die Relevanz 1–10 (mit Aktualität) entscheidet, wo.
- * Gesetzte Plätze der Redaktion gehen vor; freie Plätze füllt die jüngste
- * passende Meldung. „aus“ = nur in der eigenen Rubrik, nie auf der Startseite.
+ * Feste Plätze der Redaktion (Layout-Karte, Plugin includes/layout.php) gehen
+ * vor, auch gegen die Bildregeln; freie Plätze füllt die jüngste passende
+ * Meldung. „aus“ = nur in der eigenen Rubrik, nie auf der Startseite.
+ * $neu = true leert den Zwischenspeicher (nach einer Änderung im Bearbeitungsmodus).
  */
-function ma21_startseite_belegung(): array {
+function ma21_startseite_belegung(bool $neu = false): array {
     static $cache = null;
-    if ($cache !== null) return $cache;
+    if ($cache !== null && !$neu) return $cache;
     $alle = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 120, 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false]);
     // Startseiten-Freigabe und Relevanz 1–10 (Plugin, includes/relevanz.php):
     // „Nur in der Rubrik“ (aus) bleibt draußen, alles andere sortiert die
@@ -210,42 +219,6 @@ function ma21_startseite_belegung(): array {
     foreach ($alle as $i => $p) { $pos[$p->ID] = $i; $z[$p->ID] = $rang[$zone($p)] ?? 2; }
     $vorrang = $alle;
     usort($vorrang, fn($a, $b) => [$z[$a->ID], $pos[$a->ID]] <=> [$z[$b->ID], $pos[$b->ID]]);
-    $vergeben = []; $motive = []; $MOTIV_MAX = 2;
-    $motiv = fn($p) => (int) get_post_thumbnail_id($p->ID);
-    $motivFrei = function ($p, array $extra = []) use (&$motive, $motiv, $MOTIV_MAX) { $k = $motiv($p); return !$k || (($motive[$k] ?? 0) + ($extra[$k] ?? 0)) < $MOTIV_MAX; };
-    $belegen = function ($p) use (&$motive, &$vergeben, $motiv) { $vergeben[$p->ID] = true; $k = $motiv($p); if ($k) $motive[$k] = ($motive[$k] ?? 0) + 1; };
-    $buehnenTauglich = fn($p) => !ma21_ist_sport($p) && !has_category('tipp', $p) && ma21_echtes_bild(ma21_bild($p));
-    $breite = fn($p) => (ma21_bild($p)['w'] ?? 0);
-
-    // Aufmacher: gesetzt, sonst jüngste bühnentaugliche Meldung mit großem Bild.
-    $aufmacher = null;
-    foreach ($alle as $p) if (ma21_startplatz($p) === 'aufmacher' && $buehnenTauglich($p)) { $aufmacher = $p; break; }
-    if (!$aufmacher) foreach ($vorrang as $p) if (ma21_startplatz($p) === 'auto' && $buehnenTauglich($p) && $breite($p) >= 480 && (ma21_bild($p)['typ'] ?? '') !== 'place') { $aufmacher = $p; break; }
-    if ($aufmacher) $belegen($aufmacher);
-
-    // Nebenplätze 1–4 (der fünfte Platz unten rechts ist seit 30.09. eine
-    // Anzeige): gesetzte zuerst auf ihren Platz, Rest automatisch.
-    $neben = array_fill(1, 4, null);
-    foreach ($alle as $p) {
-        if (isset($vergeben[$p->ID]) || !preg_match('/^buehne-([1-4])$/', ma21_startplatz($p), $m) || !$buehnenTauglich($p)) continue;
-        if ($neben[(int) $m[1]] === null) { $neben[(int) $m[1]] = $p; $belegen($p); }
-    }
-    $blaulicht = ($aufmacher && has_category('blaulicht', $aufmacher)) ? 1 : 0;
-    foreach ($neben as $p) if ($p && has_category('blaulicht', $p)) $blaulicht++;
-    $bMotive = array_filter(array_map($motiv, array_filter(array_merge([$aufmacher], $neben))));
-    foreach ([false, true] as $mitOrt) {
-        foreach ($vorrang as $p) {
-            if (!in_array(null, $neben, true)) break;
-            if (isset($vergeben[$p->ID]) || ma21_startplatz($p) !== 'auto' || !$buehnenTauglich($p) || $breite($p) < 360) continue;
-            $istOrt = (ma21_bild($p)['typ'] ?? '') === 'place';
-            if (!$mitOrt && $istOrt) continue;
-            if (!$motivFrei($p) || in_array($motiv($p), $bMotive, true)) continue;
-            if (has_category('blaulicht', $p)) { if ($blaulicht >= 2) continue; $blaulicht++; }
-            $platz = array_search(null, $neben, true); $neben[$platz] = $p; $belegen($p); $bMotive[] = $motiv($p);
-        }
-    }
-
-    // Rubrikflächen: erst die ressortgebundenen, dann die Leitsektion.
     $termine = function_exists('ma21_kommende_termine') ? count(ma21_kommende_termine(4)) : 3;
     $SEK = [
         'blaulicht' => ['titel' => 'Blaulicht', 'mehr' => '/blaulicht/', 'mehrText' => 'Alle Einsatzmeldungen', 'nimm' => fn($p) => has_category('blaulicht', $p)],
@@ -254,55 +227,57 @@ function ma21_startseite_belegung(): array {
         'vereine' => ['titel' => 'Vereine & Menschen', 'mehr' => '/vereine/', 'mehrText' => 'Zu den Vereinen', 'nimm' => fn($p) => (has_category('vereine', $p) || has_category('menschen', $p)) && !ma21_ist_sport($p)],
         'gemeinde' => ['titel' => 'Nachrichten aus Merzenich', 'mehr' => '/nachrichten/', 'mehrText' => 'Alle Meldungen', 'nimm' => fn($p) => !ma21_ist_sport($p) && !has_category('tipp', $p), 'jeRessort' => 3, 'fenster' => 44, 'zeilen' => max(2, min(4, $termine))],
     ];
-    $belegung = [];
-    foreach ($SEK as $id => $s) {
-        $frei = array_slice(array_values(array_filter($alle, fn($p) => !isset($vergeben[$p->ID]) && $s['nimm']($p))), 0, $s['fenster'] ?? 20);
-        $jeRessort = [];
-        $waehle = function (array $pool, int $n, array $schon) use ($s, &$jeRessort, $motiv, $motivFrei) {
-            $gez = $jeRessort; $extra = []; $raus = [];
-            foreach ($schon as $a) { $r = ma21_ressort($a)[0]; $gez[$r] = ($gez[$r] ?? 0) + 1; $k = $motiv($a); if ($k) $extra[$k] = ($extra[$k] ?? 0) + 1; }
-            foreach ($pool as $a) {
-                if (count($raus) >= $n) break;
-                if (in_array($a, $schon, true)) continue;
-                $r = ma21_ressort($a)[0];
-                if (!empty($s['jeRessort']) && ($gez[$r] ?? 0) >= $s['jeRessort']) continue;
-                if (!$motivFrei($a, $extra)) continue;
-                $gez[$r] = ($gez[$r] ?? 0) + 1; $k = $motiv($a); if ($k) $extra[$k] = ($extra[$k] ?? 0) + 1;
-                $raus[] = $a;
-            }
-            return $raus;
-        };
-        $ortZuletzt = fn(array $l) => array_merge(array_filter($l, fn($a) => (ma21_bild($a)['typ'] ?? '') !== 'place'), array_filter($l, fn($a) => (ma21_bild($a)['typ'] ?? '') === 'place'));
-        $lF = $ortZuletzt(array_filter($frei, function ($a) use ($breite) { $b = ma21_bild($a); return ma21_echtes_bild($b) && $breite($a) >= 480 && (!$b['h'] || $b['w'] / $b['h'] >= 1.2); }));
-        $mF = $ortZuletzt(array_filter($frei, fn($a) => ma21_echtes_bild(ma21_bild($a)) && $breite($a) >= 360));
-        $gross = $waehle($lF, 2, []);
-        $mittel = count($gross) === 2 ? $waehle($mF, 3, $gross) : [];
-        if (count($gross) !== 2 || count($mittel) !== 3) {
-            $nurMittel = $waehle($mF, 3, []);
-            if (count($nurMittel) === 3) { $gross = []; $mittel = $nurMittel; }
-            elseif (count($gross) === 2) { $mittel = []; }
-            else { $gross = []; $mittel = []; }
-        }
-        foreach (array_merge($gross, $mittel) as $a) { $r = ma21_ressort($a)[0]; $jeRessort[$r] = ($jeRessort[$r] ?? 0) + 1; $belegen($a); }
-        $zeilen = [];
-        foreach ($frei as $a) {
-            if (count($zeilen) >= ($s['zeilen'] ?? 2)) break;
-            if (isset($vergeben[$a->ID]) || !$motivFrei($a)) continue;
-            $zeilen[] = $a; $belegen($a);
-        }
-        $belegung[$id] = ['s' => $s, 'gross' => $gross, 'mittel' => $mittel, 'zeilen' => $zeilen];
+    $regeln = [
+        'vorrang' => $vorrang,
+        'buehnenTauglich' => fn($p) => !ma21_ist_sport($p) && !has_category('tipp', $p) && ma21_echtes_bild(ma21_bild($p)),
+        'breite' => fn($p) => (ma21_bild($p)['w'] ?? 0),
+        'motiv' => fn($p) => (int) get_post_thumbnail_id($p->ID),
+        'bildtyp' => fn($p) => (string) (ma21_bild($p)['typ'] ?? ''),
+        'bild' => fn($p) => ma21_bild($p),
+        'echtesBild' => fn($p) => ma21_echtes_bild(ma21_bild($p)),
+        'ressort' => fn($p) => ma21_ressort($p)[0],
+        'kategorie' => fn($p, $slug) => has_category($slug, $p),
+        'sektionen' => $SEK,
+        'holen' => fn($id) => get_post($id) ?: null,
+    ];
+    if (function_exists('ma_layout_aufloesen')) return $cache = ma_layout_aufloesen('startseite', ma_layout_feste_plaetze('startseite'), $alle, $regeln);
+    return $cache = ma21_belegung_ohne_plugin($alle, $regeln);
+}
+
+/** Notnagel ohne Plugin: Aufmacher und Bühne nach Reihenfolge, keine Rubrikflächen. Die Seite bleibt lesbar. */
+function ma21_belegung_ohne_plugin(array $alle, array $r): array {
+    $aufmacher = null; $neben = array_fill(1, 4, null); $pl = [];
+    foreach ($r['vorrang'] as $p) {
+        if (!$r['buehnenTauglich']($p)) continue;
+        if (!$aufmacher && $r['breite']($p) >= 480) { $aufmacher = $p; $pl['aufmacher'] = ['post' => $p->ID, 'fest' => false, 'warnungen' => []]; continue; }
+        $i = array_search(null, $neben, true);
+        if ($i === false) break;
+        $neben[$i] = $p; $pl["buehne-$i"] = ['post' => $p->ID, 'fest' => false, 'warnungen' => []];
     }
-    return $cache = ['aufmacher' => $aufmacher, 'neben' => $neben, 'sektionen' => $belegung];
+    return ['aufmacher' => $aufmacher, 'neben' => $neben, 'sektionen' => [], 'plaetze' => $pl];
+}
+
+/** Werbefläche der Vorlage; mit laufender Anzeige aus der Werbeverwaltung ersetzt sie das Muster (Plugin, includes/ads.php). */
+function ma21_werbung(string $marker): string {
+    if (function_exists('ma_render_werbeplatz') && function_exists('ma_ad_marker_slot')) {
+        $slot = ma_ad_marker_slot($marker);
+        if ($slot !== '' && ma_active_ads($slot)) { $echt = ma_render_werbeplatz($slot, $marker); if ($echt !== '') return $echt; }
+    }
+    return trim(ma21_vorlage("werbung-{$marker}.html"));
 }
 
 function ma21_block(string $name): string {
     $b = ma21_startseite_belegung();
+    $pl = $b['plaetze'] ?? [];
+    $fest = fn(string $slot) => !empty($pl[$slot]['fest']);
     if ($name === 'oben') {
-        $neben = array_values(array_filter($b['neben']));
-        $rechts = array_slice($neben, 0, 2); $unten = array_slice($neben, 2, 2);
-        $inhalt = ($b['aufmacher'] ? ma21_karte($b['aufmacher'], 'xl') : '')
-            . ($rechts ? '<div class="buehne-rechts">' . implode('', array_map(fn($p) => ma21_karte($p, 'r'), $rechts)) . '</div>' : '')
-            . '<div class="buehne-unten">' . implode('', array_map(fn($p) => ma21_karte($p, 'u'), $unten)) . trim(ma21_vorlage('werbung-buehne.html')) . '</div>';
+        $n = $b['neben'];
+        // Jeder Platz bleibt, wo er ist: Bühne 1–2 rechts, 3–4 unten. Leere Plätze rutschen nicht.
+        $rechts = ''; foreach ([1, 2] as $i) if (!empty($n[$i])) $rechts .= ma21_karte($n[$i], 'r', 'h3', "buehne-$i", $fest("buehne-$i"));
+        $unten = ''; foreach ([3, 4] as $i) if (!empty($n[$i])) $unten .= ma21_karte($n[$i], 'u', 'h3', "buehne-$i", $fest("buehne-$i"));
+        $inhalt = ($b['aufmacher'] ? ma21_karte($b['aufmacher'], 'xl', 'h3', 'aufmacher', $fest('aufmacher')) : '')
+            . ($rechts !== '' ? '<div class="buehne-rechts">' . $rechts . '</div>' : '')
+            . '<div class="buehne-unten">' . $unten . ma21_werbung('buehne') . '</div>';
         return '<!-- start:oben:start --><section class="shell buehne" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">' . $inhalt . '</section><!-- start:oben:end -->';
     }
     $sek = $b['sektionen'][$name] ?? null;
@@ -310,14 +285,24 @@ function ma21_block(string $name): string {
     if (!$sek || !($sek['gross'] || $sek['mittel'] || $sek['zeilen'])) return $rahmen('');
     $s = $sek['s'];
     $kopf = '<div class="desk-heading"><div><h2>' . ma21_e($s['titel']) . '</h2></div><a class="desk-more" href="' . esc_url(home_url($s['mehr'])) . '">' . ma21_e($s['mehrText']) . '</a></div>';
-    $reihe = fn($klasse, $l, $g) => $l ? "<div class=\"{$klasse}\">" . implode('', array_map(fn($p) => ma21_karte($p, $g), $l)) . '</div>' : '';
-    return $rahmen("<section class=\"desk shell\" data-sektion=\"{$name}\">{$kopf}" . $reihe('desk-gross', $sek['gross'], 'l') . $reihe('desk-mittel', $sek['mittel'], 'm') . $reihe('desk-zeilen', $sek['zeilen'], 's') . '</section>');
+    // Platz je Karte aus der Belegung (bei festen Plätzen kann die Reihe Lücken haben).
+    $slotVon = function (string $art, WP_Post $p, int $i) use ($pl, $name): string {
+        foreach ($pl as $slot => $e) if ($e['post'] === $p->ID && str_starts_with($slot, "{$name}.{$art}.")) return $slot;
+        return "{$name}.{$art}." . ($i + 1);
+    };
+    $reihe = function (string $klasse, array $l, string $g, string $art) use ($slotVon, $fest): string {
+        if (!$l) return '';
+        $h = '';
+        foreach (array_values($l) as $i => $p) { $slot = $slotVon($art, $p, $i); $h .= ma21_karte($p, $g, 'h3', $slot, $fest($slot)); }
+        return "<div class=\"{$klasse}\">{$h}</div>";
+    };
+    return $rahmen("<section class=\"desk shell\" data-sektion=\"{$name}\">{$kopf}" . $reihe('desk-gross', $sek['gross'], 'l', 'gross') . $reihe('desk-mittel', $sek['mittel'], 'm', 'mittel') . $reihe('desk-zeilen', $sek['zeilen'], 's', 'zeilen') . '</section>');
 }
 
-/** Startseite: Vorlage mit gefüllten Nachrichtenblöcken. */
+/** Startseite: Vorlage mit gefüllten Nachrichtenblöcken und Werbeflächen. */
 function ma21_startseite(): string {
     $html = ma21_vorlage('startseite.html');
-    return preg_replace_callback('/\{\{ma:([a-z]+)\}\}/', fn($m) => ma21_block($m[1]), $html);
+    return preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
 }
 
 /** Kommende Termine (ma_event), nach Beginn sortiert. */
@@ -344,34 +329,89 @@ function ma21_news_card(WP_Post $p): string {
 }
 
 /** Erste Meldung einer Liste (Rubrik, Ort, Thema). */
-function ma21_feed_lead(WP_Post $p): string {
+function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-    return '<article class="feed-lead" data-story="' . esc_attr(ma21_story_id($p)) . '">'
+    return '<article class="feed-lead"' . ma21_karte_attr($p, $slot, $fest) . '>'
         . ($b ? "<a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, 800px', true) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="lead-copy">' . ma21_marke($p, 'kicker') . "<h2><a href=\"{$url}\">{$titel}</a></h2><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div></div></article>';
 }
 
-function ma21_feed_row(WP_Post $p): string {
+function ma21_feed_row(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-    return '<article data-story="' . esc_attr(ma21_story_id($p)) . '" class="feed-row">'
+    return '<article' . ma21_karte_attr($p, $slot, $fest) . ' class="feed-row">'
         . ($b ? "<a class=\"feed-img\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 120px, 240px', false) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="feed-copy">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div>'
         . "<div class=\"story-actions\"><a class=\"read-more\" href=\"{$url}\">Mehr lesen<span class=\"sr-only\">: {$titel}</span></a></div></div></article>";
 }
 
-/** Bildraster der Sportseite: gleich hohe Karten mit Bild, Marke, Titel, Zeit. */
-function ma21_bildraster(array $posts): string {
+/** Bildraster der Sportseite: gleich hohe Karten mit Bild, Marke, Titel, Zeit. $plaetze: je Karte [Platz, fest]. */
+function ma21_bildraster(array $posts, array $plaetze = []): string {
     $h = '<div class="bildraster">';
-    foreach ($posts as $p) {
+    foreach (array_values($posts) as $i => $p) {
         $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-        $h .= '<article class="bildraster-karte" data-story="' . esc_attr(ma21_story_id($p)) . '">'
-            . "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, (max-width: 1100px) 45vw, 300px', false) . ma21_badge($b, false) . '</div></a>'
+        [$slot, $fest] = $plaetze[$i] ?? ['', false];
+        $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
+            . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, (max-width: 1100px) 45vw, 300px', false) . ma21_badge($b, false) . '</div></a>' : '')
             . '<div class="bildraster-text">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><div class=\"meta\">" . ma21_zeit($p) . '</div></div></article>';
     }
     return $h . '</div>';
 }
+
+/** Schlüssel der Layout-Karte für die aktuelle Liste ('' = nicht anordenbar). */
+function ma21_ressort_schluessel(): string {
+    if (!function_exists('ma_layout_seite_gueltig')) return '';
+    if (get_query_var('ma_alle')) return 'ressort-nachrichten';
+    if (is_category()) { $o = get_queried_object(); if ($o instanceof WP_Term && ma_layout_seite_gueltig('ressort-' . $o->slug)) return 'ressort-' . $o->slug; }
+    return '';
+}
+
+/** Beiträge der ersten Seite einer Ressortliste (für das Neu-Rendern im Bearbeitungsmodus). */
+function ma21_ressort_beitraege(string $seite): array {
+    $slug = substr($seite, 8);
+    $q = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => $slug === 'nachrichten' ? 20 : max(1, (int) get_option('posts_per_page', 10)), 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false];
+    if ($slug !== 'nachrichten') $q['category_name'] = $slug;
+    return get_posts($q);
+}
+
+/** Belegung einer Ressortseite: Aufmacher, Bildraster (Sport), Reihen; feste Plätze aus der Layout-Karte. */
+function ma21_ressort_belegung(string $seite, array $posts): array {
+    $sport = $seite === 'ressort-sport';
+    if (function_exists('ma_layout_aufloesen')) {
+        return ma_layout_aufloesen($seite, ma_layout_feste_plaetze($seite), $posts, ['raster' => $sport, 'echtesBild' => fn($p) => ma21_echtes_bild(ma21_bild($p)), 'holen' => fn($id) => get_post($id) ?: null]);
+    }
+    $lead = array_shift($posts); $raster = []; $reihen = [];
+    foreach ($posts as $p) { if ($sport && count($raster) < 6 && ma21_echtes_bild(ma21_bild($p))) $raster[] = $p; else $reihen[] = $p; }
+    return ['lead' => $lead, 'raster' => $raster, 'reihen' => $reihen, 'plaetze' => []];
+}
+
+/** Liste einer Ressortseite als HTML (erste Seite: nach Layout-Karte; weitere Seiten: nur Reihen). */
+function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
+    if (!$posts) return '<p class="no-result">Hier gibt es noch keine Meldung. Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.</p>';
+    if (!$ersteSeite) return implode("\n", array_map(fn($p) => ma21_feed_row($p), $posts));
+    $b = ma21_ressort_belegung($seite, $posts);
+    $pl = $b['plaetze'];
+    $slotVon = function (WP_Post $p, string $art) use ($pl): array {
+        foreach ($pl as $slot => $e) if ($e['post'] === $p->ID && str_starts_with($slot, $art)) return [$slot, !empty($e['fest'])];
+        return ['', false];
+    };
+    $h = '';
+    if ($b['lead']) { [$slot, $fest] = $slotVon($b['lead'], 'lead'); $h .= ma21_feed_lead($b['lead'], $slot, $fest) . "\n"; }
+    if ($b['raster']) $h .= ma21_bildraster($b['raster'], array_map(fn($p) => $slotVon($p, 'raster.'), $b['raster'])) . "\n";
+    foreach ($b['reihen'] as $p) { [$slot, $fest] = $slotVon($p, 'reihe.'); $h .= ma21_feed_row($p, $slot, $fest) . "\n"; }
+    return $h;
+}
+
+/* Bearbeitungsmodus und Board (Plugin): Blöcke neu rendern und Belegung lesen. */
+add_filter('ma_layout_block_html', function ($html, string $seite, string $block): string {
+    if ($seite === 'startseite') return ma21_block($block); // Belegung vorher über ma_layout_belegung auffrischen.
+    return $block === 'feed' ? ma21_feed_html($seite, ma21_ressort_beitraege($seite), true) : (string) $html;
+}, 10, 3);
+add_filter('ma_layout_belegung', function ($b, string $seite): array {
+    if ($seite === 'startseite') return ma21_startseite_belegung(true)['plaetze'] ?? [];
+    return ma21_ressort_belegung($seite, ma21_ressort_beitraege($seite))['plaetze'] ?? [];
+}, 10, 2);
 
 /** Rechte Spalte der Listen: neueste Meldungen, bei Sport und Vereinen die Vereine der Gemeinde. */
 function ma21_liste_seitenspalte(): string {

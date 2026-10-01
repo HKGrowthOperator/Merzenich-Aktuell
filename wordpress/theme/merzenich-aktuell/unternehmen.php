@@ -22,7 +22,7 @@ $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawu
   else: ?><p class="u-leer">Noch kein Unternehmen hat ein Profil. Hier erscheinen Unternehmen aus der Gemeinde mit Porträt und Beiträgen; bezahlte Präsentationen sind als Anzeige gekennzeichnet.</p><?php endif; ?>
   <p><a class="btn" href="<?php echo esc_url($assistent('Unternehmenskanal')); ?>">Eigenes Profil anfragen</a></p></div>
   <div class="sidebox u-box"><h3>Für Unternehmen</h3><ul class="linklist"><li><a href="<?php echo esc_url(home_url('/werben/')); ?>">Werben &amp; Mediadaten</a></li><li><a href="<?php echo esc_url($assistent('Unternehmenspräsenz')); ?>">Unternehmensporträt</a><small>Porträt mit Bild, Öffnungszeiten und Kontakt</small></li><li><a href="<?php echo esc_url(home_url('/betriebe/')); ?>">Branchenbuch: lokale Betriebe</a><small>einfacher Eintrag kostenlos</small></li><li><a href="<?php echo esc_url(home_url('/jobs/')); ?>">Stellenmarkt</a></li><li><a href="<?php echo esc_url(home_url('/immobilien/')); ?>">Immobilienmarkt</a></li></ul></div>
-  <?php echo trim(ma21_vorlage('werbung-unternehmen.html')); ?>
+  <?php echo ma21_werbung('unternehmen'); ?>
 </aside></div></section>
 <script src="<?php echo esc_url(home_url('/assets/unternehmen.js')); ?>" defer></script>
 <?php get_footer();

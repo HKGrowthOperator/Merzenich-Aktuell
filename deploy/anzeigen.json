@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Werbesystem fuer echte, vorhandene Werbeflaechen. Die Demo-Kampagnen verwenden ein eigens kuratiertes, lokal gespeichertes Bildset unter /assets/werben/ statt zufaelliger Ressortbilder. Sie sind keine realen Werbekunden und bleiben ueberall als Anzeige · Demo bzw. Musteranzeige gekennzeichnet. Aktive Flaechen: Startseite Band 1-6, Servicespalte, Sportseite und Artikelseiten. Keine Preise.",
+  "_hinweis": "Werbesystem fuer echte, vorhandene Werbeflaechen. Die Demo-Kampagnen verwenden ein eigens kuratiertes, lokal gespeichertes Bildset unter /assets/werben/ statt zufaelliger Ressortbilder. Sie sind keine realen Werbekunden und bleiben ueberall als Musteranzeige gekennzeichnet (Entscheidung Betreiber 02.10.2026); auf WordPress ersetzt eine laufende Anzeige der Werbeverwaltung das Muster je Platz. Aktive Flaechen: Startseite Band 1-6, Servicespalte, Sportseite und Artikelseiten. Keine Preise.",
   "werbungAn": true,
   "rotationSekunden": 14,
   "motive": [
@@ -76,5 +76,5 @@
       "bildAlt": "Café-Interieur als Muster für eine lokale Handels- und Gastronomiekampagne"
     }
   ],
-  "label": "Anzeige · Demo"
+  "label": "Musteranzeige"
 }

@@ -47,3 +47,11 @@
 @media(max-width:1100px){.ma-sportart-raster{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.ma-sportart-raster{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ma-sportart-block{scroll-margin-top:100px}.ma-sportverein__info{padding:8px}.ma-sportverein__info h4{font-size:13px}}
 @media(max-width:400px){.ma-sportart-raster{grid-template-columns:1fr}.ma-sportverein{display:grid;grid-template-columns:44% 56%}.ma-sportverein__info{border-top:0}.ma-sportverein__bild img{height:100%;min-height:105px;aspect-ratio:auto;object-fit:cover}}
+/* Layout-Karte (02.10.2026): feste Plätze dürfen ohne Bild belegt sein. */
+.desk-karte--ohne-bild .karte-text{padding-top:0;border-top:3px solid var(--ink)}
+.desk-karte--ohne-bild .karte-text h3{margin-top:8px}
+.bildraster-karte--ohne-bild .bildraster-text{padding-top:0;border-top:3px solid var(--ink)}
+/* Angemeldete Redaktion: die WordPress-Leiste liegt über dem Seitenkopf; der klebende Kopf rückt nach. */
+body.admin-bar .masthead{top:32px}
+body.admin-bar .mainnav.is-scrolled{top:116px}
+@media (max-width:782px){body.admin-bar .masthead{top:46px}body.admin-bar .mainnav.is-scrolled{top:130px}}

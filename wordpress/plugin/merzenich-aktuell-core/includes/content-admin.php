@@ -15,7 +15,26 @@ function ma_add_content_meta_boxes(): void {
     add_meta_box('ma-family-details', 'Familienanzeige', 'ma_render_family_meta_box', 'ma_family_notice', 'normal', 'high');
     add_meta_box('ma-tip-details', 'Tipp / Sponsoring', 'ma_render_tip_meta_box', 'ma_tip', 'normal', 'high');
     add_meta_box('ma-ad-details', 'Werbeschaltung', 'ma_render_ad_meta_box', 'ma_ad', 'normal', 'high');
+    // Anzeige anlegen auf einem Bildschirm: Werbeschaltung, dann das Werbemittel
+    // (Bild) direkt darunter; Permalink, Kommentare und Trackbacks gibt es nicht.
+    remove_meta_box('postimagediv', 'ma_ad', 'side');
+    add_meta_box('postimagediv', 'Werbemittel (Bild)', 'post_thumbnail_meta_box', 'ma_ad', 'normal', 'high');
+    foreach (['slugdiv', 'commentstatusdiv', 'commentsdiv', 'trackbacksdiv', 'postcustom'] as $box) remove_meta_box($box, 'ma_ad', 'normal');
 }
+add_filter('admin_post_thumbnail_html', function (string $html, $post_id): string {
+    if (get_post_type((int) $post_id) !== 'ma_ad') return $html;
+    $slot = (string) get_post_meta((int) $post_id, 'ma_ad_slot', true);
+    $hinweis = str_starts_with($slot, 'homepage_band_') || $slot === 'article_inline_1' ? 'Querformat, mindestens 1200 × 400 px (Werbeband).' : 'Hochformat oder 4:3, mindestens 600 × 600 px (Spaltenplatz).';
+    return '<p class="description">' . esc_html($hinweis) . ' Ohne Bild erscheint der Titel als Textanzeige.</p>' . $html;
+}, 10, 2);
+add_filter('gettext', function (string $t, string $orig, string $domain): string {
+    if ($domain !== 'default' || !function_exists('get_current_screen')) return $t;
+    $screen = get_current_screen();
+    if (!$screen || $screen->post_type !== 'ma_ad') return $t;
+    if ($orig === 'Excerpt') return 'Kurztext (optional, erscheint im Menü „Vereine“ und auf Spaltenplätzen)';
+    if (str_starts_with($orig, 'Excerpts are optional hand-crafted summaries')) return 'Ein Satz zur Anzeige, zum Beispiel das Angebot oder der Anlass.';
+    return $t;
+}, 10, 3);
 
 function ma_admin_field_value(int $post_id, string $key): string {
     return (string)get_post_meta($post_id, $key, true);
@@ -165,7 +184,10 @@ function ma_render_tip_meta_box(WP_Post $post): void {
 
 function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
-    ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Slot in Merzenich Aktuell → Werbung aktiviert sein.');
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    echo '<tr><td colspan="2" style="padding:0 0 8px"><p class="description" style="margin:0">Alles auf einer Seite: Titel oben, hier Platz und Laufzeit, darunter das Bild. ' . ($partner ? 'Nach dem Einreichen prüft die Redaktion und schaltet die Anzeige frei.' : 'Veröffentlichen + „Schaltung aktiv“ = die Anzeige läuft; sie ersetzt auf ihrem Platz die Musteranzeige.') . '</p></td></tr>';
+    if (function_exists('ma_render_ad_item') && has_post_thumbnail($post)) echo '<tr><th scope="row">Vorschau</th><td><div class="ma-ad ma-ad--vorschau" style="max-width:420px;border:1px solid #dcdcde;padding:8px;background:#fff">' . ma_render_ad_item($post) . '</div></td></tr>';
+    ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Platz unter Werbung → Werbeplätze eingeschaltet sein.');
     // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
     // (Benutzerprofil, Voreinstellung: alle Werbebaender der Startseite).
     $slots = function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : ma_ad_slots();
@@ -182,6 +204,13 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
     ma_admin_input('ma_ad_priority','Priorität',ma_admin_field_value($post->ID,'ma_ad_priority'),'number','10','Höhere Zahl gewinnt innerhalb desselben Slots.');
+    $bild = (int) get_post_thumbnail_id($post->ID);
+    ma_admin_input('ma_ad_alt','Alternativtext des Bildes',$bild ? (string) get_post_meta($bild, '_wp_attachment_image_alt', true) : '','text','Was zeigt das Werbemittel? Für Screenreader.','Leer = Titel der Anzeige.');
+    if ($partner && function_exists('ma_partner_rights_field')) {
+        // Partner reichen Anzeigen mit Bild nur mit bestätigten Bildrechten ein (partners.php, bildrechte.php).
+        wp_nonce_field('ma_editorial_save', 'ma_editorial_nonce');
+        echo '<tr><th scope="row">Bildrechte</th><td>'; ma_partner_rights_field($post->ID); echo '</td></tr>';
+    }
     ma_admin_meta_box_end();
 }
 
@@ -257,6 +286,11 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
     if ($post->post_type === 'ma_event') {
         $source = (string)get_post_meta($post_id,'ma_event_source_url',true);
         if ($source !== '') update_post_meta($post_id,'ma_source_url',$source);
+    }
+    if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_alt'])) {
+        $bild = (int) get_post_thumbnail_id($post_id);
+        $alt = sanitize_text_field(wp_unslash((string)$_POST['ma_ad_alt']));
+        if ($bild && current_user_can('edit_post', $bild)) { $alt === '' ? delete_post_meta($bild, '_wp_attachment_image_alt') : update_post_meta($bild, '_wp_attachment_image_alt', $alt); }
     }
 }
 

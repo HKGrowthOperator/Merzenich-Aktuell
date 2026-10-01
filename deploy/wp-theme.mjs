@@ -16,7 +16,8 @@
  *                              (theme/inc/startseite.php)
  *
  * Alles andere auf der Startseite (Merzenich jetzt, Servicespalte, Märkte,
- * Werbebänder, Orte, Umkreis, Foto des Tages) kommt unverändert mit.
+ * Orte, Umkreis, Foto des Tages) kommt unverändert mit. Die Werbeflächen
+ * werden zu Platzhaltern {{ma:werbung:…}} mit dem Muster als eigener Vorlage.
  * Aufruf: node deploy/wp-theme.mjs [--check]
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
@@ -60,6 +61,18 @@ const sportSeite = readFileSync(join(wurzel, 'chatgpt-site', 'sport', 'index.htm
 const sportEcke = (/<aside class="sport-ecke"[\s\S]*?<!--\/sport-ecke--><\/aside>/.exec(sportSeite) || [''])[0];
 const sportModul = (/<div class="sports-module"[\s\S]*?<\/section><\/div>(?=\s*<div class="content-grid">)/.exec(sportSeite) || [''])[0];
 if (!sportModul) throw new Error('wp-theme: sports-module fehlt in sport/index.html');
+// Werbeflächen der Startseite (Bänder 1–6, Servicespalte): als Platzhalter
+// {{ma:werbung:<marker>}}; das Muster-HTML wird je Fläche Vorlage, damit
+// WordPress dort eine laufende Anzeige der Werbeverwaltung zeigen kann und
+// sonst die Musteranzeige (theme/inc/ma21.php, ma21_werbung()).
+const werbeVorlagen = {};
+start = start.replace(/<!-- werbung:(band-[1-6]|spalte):start -->[\s\S]*?<!-- werbung:\1:end -->/g, (m, marker) => { werbeVorlagen[`werbung-${marker}.html`] = m; return `{{ma:werbung:${marker}}}`; });
+for (const marker of ['band-1', 'band-2', 'band-3', 'band-4', 'band-5', 'band-6', 'spalte']) if (!werbeVorlagen[`werbung-${marker}.html`]) throw new Error(`wp-theme: Werbefläche werbung:${marker} fehlt in index.html`);
+// Werbefläche der Sportseite (Seitenspalte) und der Meldungsseiten (unter dem Text).
+const anzeigeSport = (/<!-- werbung:sport:start -->[\s\S]*?<!-- werbung:sport:end -->/.exec(readFileSync(join(wurzel, 'chatgpt-site', 'sport', 'index.html'), 'utf8')) || [''])[0];
+if (!anzeigeSport) throw new Error('wp-theme: Anzeige werbung:sport fehlt in sport/index.html');
+const anzeigeArtikel = (/<!-- werbung:artikel:start -->[\s\S]*?<!-- werbung:artikel:end -->/.exec(readFileSync(join(wurzel, 'chatgpt-site', 'blaulicht', 'einsatz-118-rosspfad', 'index.html'), 'utf8')) || [''])[0];
+if (!anzeigeArtikel) throw new Error('wp-theme: Anzeige werbung:artikel fehlt in blaulicht/einsatz-118-rosspfad/index.html');
 const SLOTS = ['oben', 'gemeinde', 'blaulicht', 'rathaus', 'wirtschaft', 'vereine'];
 for (const s of SLOTS) {
   const re = new RegExp(`<!-- start:${s}:start -->[\\s\\S]*?<!-- start:${s}:end -->`);
@@ -80,6 +93,9 @@ const dateien = {
   'startseite.html': start,
   'werbung-buehne.html': anzeigeBuehne,
   'werbung-unternehmen.html': anzeigeUnternehmen,
+  'werbung-sport.html': anzeigeSport,
+  'werbung-artikel.html': anzeigeArtikel,
+  ...werbeVorlagen,
   'sport-ecke.html': sportEcke,
   'sport-modul.html': sportModul,
 };

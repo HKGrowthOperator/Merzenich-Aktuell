@@ -1,6 +1,7 @@
 <?php
 /**
- * Startplatz: Die Redaktion bestimmt, wo eine Meldung steht (30.09.2026).
+ * Startplatz: Die Redaktion bestimmt, wo eine Meldung steht (30.09.2026,
+ * seit 02.10.2026 über die Layout-Karte in includes/layout.php).
  *
  * Meta ma_startplatz je Beitrag:
  *   auto        automatisch nach Relevanz 1–10 (includes/relevanz.php), sonst
@@ -10,12 +11,13 @@
  *               (der Platz unten rechts ist eine Anzeige)
  *   aus         nur in der eigenen Rubrik, nie auf der Startseite
  *
- * Jeder feste Platz hat genau eine Meldung. Wird er neu vergeben, fällt die
- * bisherige Meldung auf „automatisch“ zurück und steht wieder in ihrer
- * Rubrik (Theme: ma21_startseite_belegung()).
+ * Die Karte (ma_layout_*) ist die Wahrheit für feste Plätze, auch für die
+ * Rubrikflächen und die Ressortseiten; das Meta spiegelt Aufmacher und Bühne
+ * und trägt den Ausschluss „aus“. Jeder feste Platz hat genau eine Meldung.
  *
- * Bedienung: Box „Startseite“ im Beitrag und die Übersicht
- * Merzenich Aktuell → Startseite. Partner sehen beides nicht.
+ * Bedienung: Box „Startseite“ im Beitrag und das Board
+ * Merzenich Aktuell → Startseite & Ressorts (includes/layout-admin.php).
+ * Partner sehen beides nicht.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -36,26 +38,42 @@ function ma_startplatz_darf(): bool {
     return current_user_can('edit_others_posts');
 }
 
-/** Wer steht gerade auf einem festen Platz? */
+/** Wer steht gerade auf einem festen Platz der Startseite? */
 function ma_startplatz_inhaber(string $platz): ?WP_Post {
-    $q = get_posts(['post_type' => 'post', 'post_status' => ['publish', 'future', 'draft', 'pending'], 'posts_per_page' => 1,
-        'meta_key' => 'ma_startplatz', 'meta_value' => $platz, 'orderby' => 'modified', 'order' => 'DESC']);
-    return $q[0] ?? null;
+    $id = ma_layout_feste_plaetze('startseite')[$platz] ?? 0;
+    return $id ? (get_post($id) ?: null) : null;
 }
 
-/** Platz setzen und den bisherigen Inhaber auf „automatisch“ zurückstellen. */
+/** Auf welchem Platz der Startseite steht der Beitrag (erster Treffer), sonst Meta (auto/aus). */
+function ma_startplatz_von(int $post_id): string {
+    $slots = array_keys(array_filter(ma_layout_get('startseite')['slots'], fn($e) => $e['post'] === $post_id));
+    if ($slots) return $slots[0];
+    $v = (string) get_post_meta($post_id, 'ma_startplatz', true);
+    return $v === 'aus' ? 'aus' : 'auto';
+}
+
+/**
+ * Platz setzen: fester Platz in die Karte (der bisherige Inhaber wird frei),
+ * „auto“ nimmt den Beitrag von allen festen Plätzen der Startseite, „aus“
+ * schließt ihn aus. Ein noch nicht veröffentlichter Beitrag merkt sich den
+ * Platz im Meta und kommt beim Veröffentlichen darauf (includes/layout.php).
+ */
 function ma_startplatz_setzen(int $post_id, string $platz): void {
-    if (!isset(ma_startplaetze()[$platz])) return;
-    if (str_starts_with($platz, 'aufmacher') || str_starts_with($platz, 'buehne-')) {
-        $alte = get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => -1, 'fields' => 'ids',
-            'meta_key' => 'ma_startplatz', 'meta_value' => $platz, 'post__not_in' => [$post_id]]);
-        foreach ($alte as $id) update_post_meta($id, 'ma_startplatz', 'auto');
-        if ($platz === 'aufmacher') {
-            // Die alte Fixierung (ma_top_pinned) darf den neuen Aufmacher nicht überstimmen.
-            foreach (get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => -1, 'fields' => 'ids', 'meta_key' => 'ma_top_pinned', 'meta_value' => '1', 'post__not_in' => [$post_id]]) as $id) update_post_meta($id, 'ma_top_pinned', '0');
-        }
+    $slots = ma_layout_slots('startseite');
+    if ($platz === 'auto' || $platz === 'aus') {
+        ma_layout_post_entfernen($post_id, 'startseite', true);
+        update_post_meta($post_id, 'ma_startplatz', $platz);
+        return;
     }
-    update_post_meta($post_id, 'ma_startplatz', $platz);
+    if (!isset($slots[$platz])) return;
+    if (get_post_status($post_id) !== 'publish') {
+        if (isset(ma_startplaetze()[$platz])) update_post_meta($post_id, 'ma_startplatz', $platz);
+        return;
+    }
+    if ((string) get_post_meta($post_id, 'ma_startplatz', true) === 'aus') update_post_meta($post_id, 'ma_startplatz', 'auto');
+    $jetzt = ma_startplatz_von($post_id);
+    if ($jetzt !== 'auto' && $jetzt !== 'aus' && $jetzt !== $platz) ma_layout_entfernen('startseite', $jetzt, 0, true);
+    ma_layout_set('startseite', $platz, $post_id, ['still' => true]);
 }
 
 /* ---------------------------------------------------------- Box im Beitrag */
@@ -64,32 +82,74 @@ add_action('add_meta_boxes_post', function (): void {
     add_meta_box('ma-startplatz', 'Startseite', 'ma_startplatz_box', 'post', 'side', 'high');
 });
 
+/** Ressortseite des Beitrags (erste Rubrik mit Layout-Karte). */
+function ma_startplatz_ressort(int $post_id): string {
+    foreach (get_the_category($post_id) as $c) if (ma_layout_seite_gueltig('ressort-' . $c->slug)) return 'ressort-' . $c->slug;
+    return '';
+}
+
 function ma_startplatz_box(WP_Post $p): void {
     wp_nonce_field('ma_startplatz', 'ma_startplatz_nonce');
-    $jetzt = (string) get_post_meta($p->ID, 'ma_startplatz', true) ?: 'auto';
+    $jetzt = ma_startplatz_von($p->ID);
+    if ($jetzt === 'auto') $jetzt = (string) get_post_meta($p->ID, 'ma_startplatz', true) ?: 'auto';
+    if (!isset(ma_layout_slots('startseite')[$jetzt]) && $jetzt !== 'aus') $jetzt = 'auto';
+    $fest = ma_layout_feste_plaetze('startseite');
+    $zusatz = function (string $wert) use ($fest, $p): string {
+        $id = $fest[$wert] ?? 0;
+        return $id && $id !== $p->ID ? ' – jetzt: ' . wp_trim_words(get_the_title($id), 6, '…') : '';
+    };
     echo '<p><label for="ma_startplatz"><strong>Wo steht diese Meldung?</strong></label></p><select id="ma_startplatz" name="ma_startplatz" style="width:100%">';
     foreach (ma_startplaetze() as $wert => $label) {
-        $inhaber = ($wert !== 'auto' && $wert !== 'aus' && $wert !== $jetzt) ? ma_startplatz_inhaber($wert) : null;
-        $zusatz = $inhaber ? ' – jetzt: ' . wp_trim_words(get_the_title($inhaber), 6, '…') : '';
-        printf('<option value="%s"%s>%s%s</option>', esc_attr($wert), selected($jetzt, $wert, false), esc_html($label), esc_html($zusatz));
+        if ($wert === 'aus') continue;
+        printf('<option value="%s"%s>%s%s</option>', esc_attr($wert), selected($jetzt, $wert, false), esc_html($label), esc_html($wert === 'auto' ? '' : $zusatz($wert)));
     }
+    echo '<optgroup label="Rubrikflächen">';
+    foreach (ma_layout_slots('startseite') as $wert => $label) {
+        if (isset(ma_startplaetze()[$wert])) continue;
+        printf('<option value="%s"%s>%s%s</option>', esc_attr($wert), selected($jetzt, $wert, false), esc_html($label), esc_html($zusatz($wert)));
+    }
+    echo '</optgroup>';
+    printf('<option value="aus"%s>%s</option>', selected($jetzt, 'aus', false), esc_html(ma_startplaetze()['aus']));
     echo '</select><p class="description">Ein fester Platz verdrängt die Meldung, die dort stand; sie steht dann wieder in ihrer Rubrik. „Nur in der Rubrik“ hält die Meldung von der Startseite fern.</p>';
+    $ressort = ma_startplatz_ressort($p->ID);
+    if ($ressort !== '') {
+        $slotsR = ma_layout_slots($ressort);
+        $jetztR = 'auto';
+        foreach (array_keys(array_filter(ma_layout_get($ressort)['slots'], fn($e) => $e['post'] === $p->ID)) as $s) { $jetztR = $s; break; }
+        printf('<p><label for="ma_ressortplatz"><strong>Auf der Seite „%s“</strong></label></p><select id="ma_ressortplatz" name="ma_ressortplatz" style="width:100%%"><option value="auto"%s>Automatisch (nach Datum)</option>', esc_html(ma_layout_seiten()[$ressort]), selected($jetztR, 'auto', false));
+        foreach ($slotsR as $wert => $label) printf('<option value="%s"%s>%s</option>', esc_attr($wert), selected($jetztR, $wert, false), esc_html($label));
+        echo '</select><input type="hidden" name="ma_ressortplatz_seite" value="' . esc_attr($ressort) . '">';
+    }
     // Relevanz 1–10 (includes/relevanz.php): steuert „Automatisch“.
     if (function_exists('ma_relevanz_auswahl')) {
         echo '<p><strong>Relevanz</strong> <span class="description">(bei „Automatisch“)</span></p>';
         echo ma_relevanz_auswahl('ma_relevanz', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true)));
     }
-    printf('<p><a href="%s">Alle Plätze der Startseite ansehen</a></p>', esc_url(admin_url('admin.php?page=ma-startseite')));
+    printf('<p><a href="%s">Startseite &amp; Ressorts anordnen</a></p>', esc_url(admin_url('admin.php?page=ma-startseite')));
 }
 
 add_action('save_post_post', function (int $post_id): void {
     if (!isset($_POST['ma_startplatz_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_startplatz_nonce'])), 'ma_startplatz')) return;
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!ma_startplatz_darf() || !current_user_can('edit_post', $post_id)) return;
-    $platz = sanitize_key(wp_unslash($_POST['ma_startplatz'] ?? 'auto'));
-    $alt = (string) get_post_meta($post_id, 'ma_startplatz', true) ?: 'auto';
-    ma_startplatz_setzen($post_id, $platz);
-    if ($alt !== $platz && isset(ma_startplaetze()[$platz]) && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Startseite: ' . ma_startplaetze()[$platz]);
+    $platz = sanitize_text_field(wp_unslash($_POST['ma_startplatz'] ?? 'auto'));
+    $alt = ma_startplatz_von($post_id);
+    if ($alt === 'auto') $alt = (string) get_post_meta($post_id, 'ma_startplatz', true) ?: 'auto';
+    if ($platz === 'auto' || $platz === 'aus' || isset(ma_layout_slots('startseite')[$platz])) {
+        ma_startplatz_setzen($post_id, $platz);
+        if ($alt !== $platz && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Startseite: ' . (ma_startplaetze()[$platz] ?? ma_layout_slots('startseite')[$platz] ?? $platz));
+    }
+    $seite = sanitize_key(wp_unslash($_POST['ma_ressortplatz_seite'] ?? ''));
+    if ($seite !== '' && ma_layout_seite_gueltig($seite) && isset($_POST['ma_ressortplatz'])) {
+        $pr = sanitize_text_field(wp_unslash($_POST['ma_ressortplatz']));
+        $altR = 'auto';
+        foreach (array_keys(array_filter(ma_layout_get($seite)['slots'], fn($e) => $e['post'] === $post_id)) as $s) { $altR = $s; break; }
+        if ($pr !== $altR) {
+            if ($pr === 'auto') ma_layout_post_entfernen($post_id, $seite, true);
+            elseif (isset(ma_layout_slots($seite)[$pr]) && get_post_status($post_id) === 'publish') { if ($altR !== 'auto') ma_layout_entfernen($seite, $altR, 0, true); ma_layout_set($seite, $pr, $post_id, ['still' => true]); }
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, ma_layout_seiten()[$seite] . ': ' . ($pr === 'auto' ? 'automatisch' : (ma_layout_slots($seite)[$pr] ?? $pr)));
+        }
+    }
     if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_relevanz'])) {
         $r = ma_relevanz_saeubern(wp_unslash($_POST['ma_relevanz']));
         $vorher = (int) get_post_meta($post_id, 'ma_relevanz', true);
@@ -107,45 +167,6 @@ add_filter('manage_post_posts_columns', function (array $c): array {
 });
 add_action('manage_post_posts_custom_column', function (string $spalte, int $id): void {
     if ($spalte !== 'ma_startplatz') return;
-    $v = (string) get_post_meta($id, 'ma_startplatz', true) ?: 'auto';
-    echo esc_html(ma_startplaetze()[$v] ?? 'Automatisch');
+    $v = ma_startplatz_von($id);
+    echo esc_html(ma_startplaetze()[$v] ?? ma_layout_slots('startseite')[$v] ?? 'Automatisch');
 }, 10, 2);
-
-/* ---------------------------------------------------------- Übersicht Merzenich Aktuell -> Startseite */
-add_action('admin_menu', function (): void {
-    add_submenu_page('merzenich-aktuell', 'Startseite', 'Startseite', 'edit_others_posts', 'ma-startseite', 'ma_startseite_seite', 1);
-}, 20);
-
-function ma_startseite_seite(): void {
-    if (!ma_startplatz_darf()) wp_die('Keine Berechtigung.');
-    if (isset($_POST['ma_startseite_nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_startseite_nonce'])), 'ma_startseite')) {
-        foreach (ma_startplaetze() as $platz => $label) {
-            if ($platz === 'auto' || $platz === 'aus' || !isset($_POST['platz'][$platz])) continue;
-            $id = (int) $_POST['platz'][$platz];
-            $bisher = ma_startplatz_inhaber($platz);
-            if ($id && (!$bisher || $bisher->ID !== $id)) ma_startplatz_setzen($id, $platz);
-            if (!$id && $bisher) update_post_meta($bisher->ID, 'ma_startplatz', 'auto');
-        }
-        echo '<div class="notice notice-success is-dismissible"><p>Startseite gespeichert. Verdrängte Meldungen stehen wieder in ihrer Rubrik.</p></div>';
-    }
-    $auswahl = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 80, 'orderby' => 'date', 'order' => 'DESC']);
-    echo '<div class="wrap"><h1>Startseite</h1><p>Hier legst du fest, welche Meldung auf welchem Platz der Startseite steht. Leere Plätze füllt automatisch die jüngste passende Meldung. Die gleiche Auswahl gibt es in jeder Meldung in der Box „Startseite“.</p>';
-    echo '<form method="post">';
-    wp_nonce_field('ma_startseite', 'ma_startseite_nonce');
-    echo '<table class="widefat striped" style="max-width:980px"><thead><tr><th>Platz</th><th>Meldung</th><th></th></tr></thead><tbody>';
-    foreach (ma_startplaetze() as $platz => $label) {
-        if ($platz === 'auto' || $platz === 'aus') continue;
-        $inhaber = ma_startplatz_inhaber($platz);
-        printf('<tr><td><strong>%s</strong></td><td><select name="platz[%s]" style="max-width:640px;width:100%%"><option value="0">– automatisch –</option>', esc_html($label), esc_attr($platz));
-        foreach ($auswahl as $p) printf('<option value="%d"%s>%s · %s</option>', $p->ID, selected($inhaber ? $inhaber->ID : 0, $p->ID, false), esc_html(get_the_date('d.m.', $p)), esc_html(wp_trim_words(get_the_title($p), 12, '…')));
-        echo '</select></td><td>' . ($inhaber ? '<a href="' . esc_url(get_edit_post_link($inhaber->ID)) . '">Bearbeiten</a>' : '') . '</td></tr>';
-    }
-    echo '</tbody></table><p><button class="button button-primary">Startseite speichern</button> <a class="button" href="' . esc_url(home_url('/')) . '" target="_blank">Startseite ansehen</a></p></form>';
-    $aus = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 30, 'meta_key' => 'ma_startplatz', 'meta_value' => 'aus']);
-    if ($aus) {
-        echo '<h2>Nur in der Rubrik</h2><ul>';
-        foreach ($aus as $p) printf('<li><a href="%s">%s</a></li>', esc_url(get_edit_post_link($p->ID)), esc_html(get_the_title($p)));
-        echo '</ul>';
-    }
-    echo '</div>';
-}

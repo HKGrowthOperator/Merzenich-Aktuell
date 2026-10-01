@@ -299,7 +299,7 @@ add_action('wp_ajax_ma_relevanz_setzen', function (): void {
  */
 function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bildrechte = false, string $zeit = ''): array {
     $typ = (string) get_post_type($id);
-    if (!in_array($typ, ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'], true)) return ['ok' => false, 'meldung' => 'Dieser Inhalt lässt sich hier nicht freigeben.'];
+    if (!in_array($typ, ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'], true)) return ['ok' => false, 'meldung' => 'Dieser Inhalt lässt sich hier nicht freigeben.'];
     $wer = wp_get_current_user()->display_name;
     // Änderungsvorschlag: ins Original übernehmen, die Kopie verschwindet. Relevanz
     // und Startseite des Originals bleiben, wie sie sind.
@@ -319,9 +319,15 @@ function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bild
         update_post_meta($id, 'ma_relevanz', $relevanz);
         // Startseite nein = nur Rubrik. Ja = nach Relevanz, ein fester Platz bleibt.
         $platz = (string) get_post_meta($id, 'ma_startplatz', true);
-        if (!$startseite) update_post_meta($id, 'ma_startplatz', 'aus');
+        if (!$startseite) { update_post_meta($id, 'ma_startplatz', 'aus'); if (function_exists('ma_layout_post_entfernen')) ma_layout_post_entfernen($id, 'startseite', true); }
         elseif ($platz === '' || $platz === 'aus') update_post_meta($id, 'ma_startplatz', 'auto');
         if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Relevanz ' . $relevanz . ($vorher && $vorher !== $relevanz ? ' (vorher ' . $vorher . ')' : '') . ', Startseite: ' . ($startseite ? 'ja' : 'nein'));
+    }
+    if ($typ === 'ma_ad') {
+        // Anzeige schalten: veröffentlicht + „Schaltung aktiv“ (beides setzt nur die Redaktion).
+        if ((string) get_post_meta($id, 'ma_ad_slot', true) === '') return ['ok' => false, 'meldung' => 'Die Anzeige hat noch keinen Werbeplatz. Bitte im Formular wählen.'];
+        update_post_meta($id, 'ma_ad_active', '1');
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Anzeige freigegeben: ' . (function_exists('ma_ad_slot_label') ? ma_ad_slot_label((string) get_post_meta($id, 'ma_ad_slot', true)) : ''));
     }
     $ziel = ['ID' => $id, 'post_status' => 'publish'];
     if ($zeit !== '') {
@@ -335,6 +341,10 @@ function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bild
         return ['ok' => false, 'meldung' => 'Nicht freigegeben: ' . ($grund !== '' ? str_replace('|', ', ', $grund) : 'eine Pflichtangabe fehlt') . '. Bitte im Beitrag prüfen.'];
     }
     $plan = get_post_status($id) === 'future' ? 'Geplant für ' . get_post_time('d.m.Y H:i', false, $id) . ' Uhr. ' : 'Veröffentlicht. ';
+    if ($typ === 'ma_ad') {
+        $von = (string) get_post_meta($id, 'ma_ad_start', true); $bis = (string) get_post_meta($id, 'ma_ad_end', true);
+        return ['ok' => true, 'meldung' => $plan . 'Anzeige läuft auf „' . (function_exists('ma_ad_slot_label') ? ma_ad_slot_label((string) get_post_meta($id, 'ma_ad_slot', true)) : '') . '“' . ($von !== '' || $bis !== '' ? ' (' . ($von !== '' ? 'ab ' . mysql2date('d.m.Y H:i', $von) : '') . ($von !== '' && $bis !== '' ? ', ' : '') . ($bis !== '' ? 'bis ' . mysql2date('d.m.Y H:i', $bis) : '') . ')' : '') . '.' . (get_option('ma_ads_enabled') ? '' : ' Hinweis: Werbung ist unter Werbung → Werbeplätze global ausgeschaltet.')];
+    }
     if ($typ !== 'post') return ['ok' => true, 'meldung' => $plan];
     $wo = $startseite ? ma_relevanz_stufe($relevanz)['wo'] : 'nur in der Rubrik, nicht auf der Startseite';
     return ['ok' => true, 'meldung' => $plan . 'Steht: ' . $wo . '.'];
@@ -352,7 +362,7 @@ add_action('wp_ajax_ma_schnellfreigabe', function (): void {
 
 /** Wartende Inhalte: eingereicht oder in Prüfung, dazu Partner-Entwürfe mit fehlender Fotoerlaubnis. */
 function ma_freigaben_wartend(): array {
-    $typen = ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'];
+    $typen = ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'];
     $l = get_posts(['post_type' => $typen, 'post_status' => ['pending', 'ma_in_pruefung'], 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'ASC']);
     $entwuerfe = get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 40, 'orderby' => 'modified', 'order' => 'DESC',
         'meta_query' => [['key' => '_ma_partner_rights_missing', 'value' => '1']]]);
@@ -361,7 +371,7 @@ function ma_freigaben_wartend(): array {
 }
 
 add_action('admin_menu', function (): void {
-    $n = count(get_posts(['post_type' => ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip'], 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
+    $n = count(get_posts(['post_type' => ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'], 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
     $titel = 'Freigaben' . ($n ? ' <span class="awaiting-mod count-' . $n . '"><span class="pending-count">' . $n . '</span></span>' : '');
     add_submenu_page('merzenich-aktuell', 'Freigaben', $titel, 'edit_others_posts', 'ma-freigaben', 'ma_freigaben_seite', 0);
 }, 20);
@@ -414,9 +424,14 @@ function ma_freigaben_zeile(WP_Post $p): string {
     $verein = $autor ? (string) get_user_meta($autor->ID, 'ma_verein_name', true) : '';
     $bild = get_the_post_thumbnail_url($p, 'medium');
     $von = (int) get_post_meta($p->ID, '_ma_aenderung_von', true);
-    $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp'];
+    $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp', 'ma_ad' => 'Anzeige'];
     $istMeldung = $p->post_type === 'post';
     $kats = $istMeldung ? implode(', ', array_map(fn($t) => $t->name, get_the_category($p->ID))) : '';
+    if ($p->post_type === 'ma_ad') {
+        $slot = (string) get_post_meta($p->ID, 'ma_ad_slot', true); $sponsor = (string) get_post_meta($p->ID, 'ma_ad_sponsor', true);
+        $von = (string) get_post_meta($p->ID, 'ma_ad_start', true); $bis = (string) get_post_meta($p->ID, 'ma_ad_end', true);
+        $kats = ($slot !== '' && function_exists('ma_ad_slot_label') ? ma_ad_slot_label($slot) : 'ohne Werbeplatz') . ($sponsor !== '' ? ' · ' . $sponsor : '') . ($von !== '' ? ' · ab ' . mysql2date('d.m.Y', $von) : '') . ($bis !== '' ? ' · bis ' . mysql2date('d.m.Y', $bis) : '');
+    }
     $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
     $aus = (string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus';
     $rechte = function_exists('ma_bildrechte_stand') ? ma_bildrechte_stand($p->ID) : ['noetig' => (bool) $bild, 'ok' => (string) get_post_meta($p->ID, 'ma_partner_rights_declared', true) === '1', 'text' => ''];

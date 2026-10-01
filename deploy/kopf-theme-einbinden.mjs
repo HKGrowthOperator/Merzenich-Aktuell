@@ -198,6 +198,8 @@ for (const pfad of seiten) {
   // (homepage-polish) aktualisiert es zusaetzlich. Vorher stand ein fester
   // Bauzeitpunkt ("16.09.") im HTML, sichtbar fuer alle ohne JS und in Crawlern.
   html = html.replace(/<time data-today(?: datetime="[^"]*")?>[^<]*<\/time>/g, SSI_DATUM);
+  // Keine Uhrzeit im Kopf (Betreiber 02.10.2026): Wettersymbol · Merzenich · Temperatur · Datum.
+  html = html.replace(/<time data-clock(?: [^>]*)?>[^<]*<\/time>/g, '');
   // Oeffentliche Adresse: canonical, og:url, JSON-LD, Feedlinks auf die Live-URL (deploy/site.json).
   html = html.split(ALTE_DOMAIN).join(SITE_URL);
   // Eine Redaktionsadresse nach aussen (deploy/site.json), nur auf den Redaktionsseiten;

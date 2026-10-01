@@ -18,25 +18,18 @@ $ecke = $sport ? trim(ma21_vorlage('sport-ecke.html')) : '';
   <?php if ($sport && !is_paged()) echo trim(ma21_vorlage('sport-modul.html')); ?>
   <?php if ($sport && !is_paged() && function_exists('ma_sport_vereinsraster')) echo ma_sport_vereinsraster(); ?>
   <div class="content-grid">
-    <div class="feed">
+    <div class="feed"<?php $seiteKey = ma21_ressort_schluessel(); if ($seiteKey !== '' && !is_paged()) echo ' data-ma-seite="' . esc_attr($seiteKey) . '"'; ?>>
 <?php
-$i = 0; $raster = [];
-if (have_posts()): while (have_posts()): the_post();
-    $p = get_post();
-    if ($i === 0 && !is_paged()) echo ma21_feed_lead($p);
-    // Sport: die nächsten Meldungen mit Bild als Bildraster (gleich hohe Karten).
-    elseif ($sport && !is_paged() && count($raster) < 6 && ma21_echtes_bild(ma21_bild($p))) $raster[] = $p;
-    else { if ($raster) { echo ma21_bildraster($raster); $raster = []; } echo ma21_feed_row($p); }
-    echo "\n";
-    $i++;
-endwhile;
-    echo $raster ? ma21_bildraster($raster) : "";
-else: ?>
-      <p class="no-result">Hier gibt es noch keine Meldung. Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.</p>
-<?php endif; ?>
+// Erste Seite nach der Layout-Karte (Aufmacher, Sport-Bildraster, Reihen; feste
+// Plätze der Redaktion), weitere Seiten als Reihen. Ohne Layout-Schlüssel
+// (Ort, Thema, Suche) wie bisher: erster Beitrag als Aufmacher, Rest Reihen.
+global $wp_query;
+$posts = array_values(array_filter((array) $wp_query->posts, fn($p) => $p instanceof WP_Post));
+echo ma21_feed_html($seiteKey !== '' ? $seiteKey : ($sport ? 'ressort-sport' : 'liste'), $posts, !is_paged());
+?>
       <?php the_posts_pagination(['mid_size' => 1, 'prev_text' => '‹ Neuere', 'next_text' => 'Ältere ›']); ?>
     </div>
-    <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><?php echo ma21_liste_seitenspalte(); ?></aside>
+    <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><?php echo ma21_liste_seitenspalte(); if ($sport) echo ma21_werbung('sport'); ?></aside>
   </div>
 </div></section>
 <?php get_footer();

@@ -67,12 +67,15 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 @media (min-width:768px){
   .masthead{position:sticky;top:0;z-index:70;margin:0;box-shadow:none}
   .mainnav.is-scrolled{top:84px}
-  .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:12px}
+  .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:0}
   .header-local [data-today]{flex-basis:auto;text-align:right}
+  /* Wettersymbol · Merzenich · Temperatur · Datum, ohne Uhrzeit (02.10.2026): ein Punkt trennt die Teile. */
+  .header-local>*+*::before{content:"·";margin:0 7px;color:#9a948c;font-weight:400}
 }
 
 /* Wetter bleibt bewusst ein schlichter Serviceblock und keine Dashboard-Card. */
-.header-weather{font-weight:650;color:#242424}
+.header-weather{display:inline-flex;align-items:center;gap:6px;font-weight:650;color:#242424;font-variant-numeric:tabular-nums}
+.header-weather-ort{font-weight:650}
 .weather-days>div{padding:9px 0;border-bottom:1px solid var(--line,#dedede);font-size:13px;line-height:1.4}
 .weather-days>div:last-child{border-bottom:0}
 .weather-days small{display:block;margin-top:2px;color:#686868}
@@ -529,7 +532,10 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 /* Handy: Wetter und Datum uebereinander, damit Logo, Suche und Menue Platz behalten. */
 @media (max-width:767px){.mast-actions>.kopf-wetter{flex-direction:column;align-items:flex-end;gap:1px;line-height:1.15}.mast-actions>.kopf-wetter .kopf-datum{font-size:12.5px}.kopf-wetter-wert:not([hidden])+.kopf-datum::before{content:none}}
 @media (max-width:767px){.masthead .mast-actions{gap:4px!important}.mast-actions>.kopf-wetter{font-size:14px;margin-right:4px}.kopf-wetter-icon{margin-right:3px}}
-@media (max-width:389px){.kopf-wetter-icon{display:none}.mast-actions>.kopf-wetter{font-size:13px}.masthead .logo img{height:auto!important;width:172px!important;max-width:172px!important}}
+/* Wettersymbol · Merzenich · Temperatur (02.10.2026): Ortsname mit Punkt vor der Temperatur. */
+.kopf-wetter-ort{margin-right:2px}.kopf-wetter-ort::after{content:" ·";color:#9a948c;font-weight:400;margin-right:2px}
+/* Schmale Handys: das Wort „Merzenich“ fällt weg, Symbol und Temperatur bleiben. */
+@media (max-width:389px){.kopf-wetter-ort{display:none}.mast-actions>.kopf-wetter{font-size:13px}.masthead .logo img{height:auto!important;width:172px!important;max-width:172px!important}}
 @media (max-width:340px){.masthead .logo img{width:148px!important;max-width:148px!important}}
 /* Unternehmen (30.09.2026, Aufbau wie der Wirtschaftsbereich von Oberberg Aktuell):
    Karten je zwei nebeneinander, Bild oben, Kicker, Titel, Zeile mit Datum bzw.

@@ -321,7 +321,7 @@ function pruefeServiceInhalte() {
   }
   for (const datei of ['chatgpt-site/index.html', termine, 'chatgpt-site/immobilien/index.html', 'chatgpt-site/jobs/index.html', 'chatgpt-site/traueranzeigen/index.html']) {
     if (!gibtEs(datei)) continue;
-    // Werbeflaechen sind gekennzeichnete Anzeigen, keine Daten ("Anzeige · Demo").
+    // Werbeflaechen sind gekennzeichnete Anzeigen, keine Daten ("Musteranzeige").
     const text = lies(datei).replace(/<!-- werbung:([a-z0-9-]+):start -->[\s\S]*?<!-- werbung:\1:end -->/g, '');
     for (const [muster, label] of DEMO_MARKER) if (muster.test(text)) fehler('Service', `${datei} enthaelt ${label}.`);
   }
@@ -888,7 +888,7 @@ function pruefeWerbung() {
     if (ersteMotive[i].some((m) => ersteMotive[i - 1].includes(m))) fehler('Werbung', `Band ${i} und ${i + 1} zeigen dasselbe Motiv.`);
   }
   for (const b of baender) {
-    if (!/<span class="werbung-label">Anzeige\b/.test(b[2])) fehler('Werbung', `${b[1]} ohne Kennzeichnung "Anzeige".`);
+    if (!/<span class="werbung-label">(?:Muster)?[Aa]nzeige\b/.test(b[2])) fehler('Werbung', `${b[1]} ohne Kennzeichnung "Anzeige" oder "Musteranzeige".`);
     if (!/data-motiv=/.test(b[2])) fehler('Werbung', `${b[1]} ist leer.`);
   }
   const alle = [...html.matchAll(/<aside class="werbung[\s\S]*?<\/aside>/g)].map((m) => m[0]).join('');

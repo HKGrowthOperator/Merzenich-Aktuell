@@ -52,7 +52,6 @@
   function refreshClock(){
     const p=berlinParts(), short=`${p.day}.${p.month}.`, full=`${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}:00+02:00`;
     qa('[data-today]').forEach(el=>{el.textContent=short;el.setAttribute('datetime',full)});
-    qa('[data-clock]').forEach(el=>{el.textContent=`${p.hour}:${p.minute} Uhr`;el.setAttribute('datetime',full)});
   }
   refreshClock(); setInterval(refreshClock,60000);
 

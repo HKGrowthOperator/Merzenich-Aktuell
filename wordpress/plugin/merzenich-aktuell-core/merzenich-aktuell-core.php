@@ -2,14 +2,20 @@
 /**
  * Plugin Name: Merzenich Aktuell Core
  * Description: Redaktion, Orte, Termine, Wetter, Märkte, Werbung, Sport und Transparenz für Merzenich Aktuell.
- * Version: 1.12.4
+ * Version: 1.13.0
  * Author: Merzenich Aktuell
  * Requires PHP: 8.1
  */
 if (!defined('ABSPATH')) { exit; }
-define('MA_CORE_VERSION', '1.12.4');
+define('MA_CORE_VERSION', '1.13.0');
 define('MA_CORE_PATH', plugin_dir_path(__FILE__));
 define('MA_CORE_URL', plugin_dir_url(__FILE__));
+
+// IONOS-Designbibliothek und KI-Werkzeuge (Plugin Extendify) bleiben aus:
+// kein Vorlagen-Fenster und kein leerer Block-Editor beim Anlegen von
+// Inhalten (Vorgabe Betreiber 02.10.2026). Extendify prüft diesen Filter in
+// plugins_loaded und lädt dann nichts. Die IONOS-Plugins bleiben installiert.
+add_filter('extendify_load_library', '__return_false');
 
 require_once MA_CORE_PATH . 'includes/content.php';
 require_once MA_CORE_PATH . 'includes/permalinks.php';
@@ -19,6 +25,10 @@ require_once MA_CORE_PATH . 'includes/content-admin.php';
 require_once MA_CORE_PATH . 'includes/editorial.php';
 require_once MA_CORE_PATH . 'includes/freigabe.php';
 require_once MA_CORE_PATH . 'includes/sammel-freigabe.php';
+require_once MA_CORE_PATH . 'includes/layout.php';
+require_once MA_CORE_PATH . 'includes/layout-rest.php';
+require_once MA_CORE_PATH . 'includes/layout-admin.php';
+require_once MA_CORE_PATH . 'includes/layout-front.php';
 require_once MA_CORE_PATH . 'includes/startplatz.php';
 require_once MA_CORE_PATH . 'includes/relevanz.php';
 require_once MA_CORE_PATH . 'includes/partners.php';
@@ -44,6 +54,7 @@ require_once MA_CORE_PATH . 'includes/sport-bilder-admin.php';
 require_once MA_CORE_PATH . 'includes/werbung-stat.php';
 require_once MA_CORE_PATH . 'includes/vereinszugaenge.php';
 require_once MA_CORE_PATH . 'includes/radar.php';
+require_once MA_CORE_PATH . 'includes/rechtstexte.php';
 require_once MA_CORE_PATH . 'includes/admin.php';
 
 add_action('plugins_loaded', function () {
