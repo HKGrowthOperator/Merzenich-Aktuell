@@ -57,6 +57,7 @@ add_action('rest_api_init', function (): void {
             if ($art === 'post' && (!$id || get_post_status($id) !== 'publish')) return new WP_REST_Response(null, 204);
             if ($art !== 'post' && $art !== 'seite') $id = 0;
             ma_statistik_zaehlen($id, $art);
+            if (function_exists('ma_live_erfassen')) ma_live_erfassen($r, $d, 1);
             return new WP_REST_Response(null, 204);
         },
     ]);
@@ -69,9 +70,13 @@ add_action('wp_footer', function (): void {
     $art = is_front_page() ? 'start' : (is_singular('post') ? 'post' : (is_singular() ? 'seite' : 'liste'));
     $id = is_singular() ? (int) get_queried_object_id() : 0;
     $url = esc_url_raw(rest_url('ma/v1/aufruf'));
-    // Ein Aufruf je Seitenaufbau, ohne Cookie und ohne Speicherung im Browser.
-    printf('<script>(function(){try{var b=JSON.stringify({id:%d,art:%s});if(navigator.sendBeacon)navigator.sendBeacon(%s,new Blob([b],{type:"application/json"}));}catch(e){}})();</script>',
-        $id, wp_json_encode($art), wp_json_encode($url));
+    $puls = esc_url_raw(rest_url('ma/v1/puls'));
+    // Ein Aufruf je Seitenaufbau, danach ein Puls alle 30 Sekunden, solange der
+    // Tab sichtbar ist (Live-Anzeige im Backend, includes/live.php). Ohne Cookie,
+    // ohne Speicherung im Browser; vom Verweis wird nur der Hostname gesendet.
+    printf('<script>(function(){try{if(!navigator.sendBeacon)return;var p=location.pathname,s=function(u,o){navigator.sendBeacon(u,new Blob([JSON.stringify(o)],{type:"application/json"}));},r="";try{r=document.referrer?new URL(document.referrer).hostname:"";}catch(e){}'
+        . 's(%s,{id:%d,art:%s,pfad:p,titel:document.title,ref:r});setInterval(function(){if(document.visibilityState==="visible")s(%s,{pfad:p});},30000);}catch(e){}})();</script>',
+        wp_json_encode($url), $id, wp_json_encode($art), wp_json_encode($puls));
 }, 99);
 
 /* ---------------------------------------------------------- Auswertung */
@@ -146,6 +151,7 @@ function ma_statistik_seite(): void {
     $partner30 = count(get_posts(['post_type' => 'any', 'post_status' => ['pending', 'publish', 'draft', (defined('MA_REJECTED_STATUS') ? MA_REJECTED_STATUS : 'ma_rejected')], 'posts_per_page' => -1, 'fields' => 'ids', 'meta_key' => '_ma_partner_submission', 'meta_value' => '1', 'date_query' => [['after' => $seit30]]]));
 
     echo '<div class="wrap ma-stat"><h1>Statistik</h1>';
+    if (function_exists('ma_live_html')) { ma_live_assets(); echo '<div class="ma-stat__box ma-stat__live">' . ma_live_html(true) . '</div>'; }
     echo '<style>.ma-stat__kacheln{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin:16px 0 24px}.ma-stat__kachel{background:#fff;border:1px solid #dcdcde;padding:14px 16px}.ma-stat__kachel strong{display:block;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}.ma-stat__kachel span{color:#50575e}.ma-stat__raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}.ma-stat__box{background:#fff;border:1px solid #dcdcde;padding:14px 16px}.ma-stat__box h2{margin-top:0;font-size:15px}.ma-stat__box table{width:100%;border-collapse:collapse}.ma-stat__box td{padding:5px 0;border-top:1px solid #f0f0f1}.ma-stat__box td:last-child{text-align:right;font-variant-numeric:tabular-nums}</style>';
     echo '<div class="ma-stat__kacheln">'
         . $kachel(ma_statistik_summe(1), 'Aufrufe heute')
@@ -181,5 +187,5 @@ function ma_statistik_seite(): void {
         foreach (get_terms(['taxonomy' => 'ma_location', 'hide_empty' => true]) as $t) printf('<tr><td>%s</td><td>%s</td></tr>', esc_html($t->name), esc_html(number_format_i18n($t->count)));
         echo '</table></div>';
     }
-    echo '</div><p class="description" style="margin-top:18px">Gezählt wird ohne Cookies, ohne IP-Adresse und ohne Speicherung im Browser, nur als Summe je Tag und Meldung. Suchmaschinen-Bots und angemeldete Redakteure zählen nicht mit. Die Zählung läuft seit der Installation dieser Version (Plugin ' . esc_html(MA_CORE_VERSION) . ').</p></div>';
+    echo '</div><p class="description" style="margin-top:18px">Gezählt wird ohne Cookies und ohne Speicherung im Browser. Aufrufe werden nur als Summe je Tag und Meldung gespeichert. Für die Besucherzahl und die Live-Anzeige wird ein Besucher nur innerhalb eines Tages wiedererkannt: über einen Prüfwert aus IP-Adresse, Browserkennung und einem täglich neuen Zufallswert. Die IP-Adresse selbst wird nicht gespeichert, die Besuchsdaten werden nach 40 Tagen gelöscht. Suchmaschinen-Bots und angemeldete Redakteure zählen nicht mit. Die Zählung läuft seit der Installation dieser Version (Plugin ' . esc_html(MA_CORE_VERSION) . ').</p></div>';
 }
