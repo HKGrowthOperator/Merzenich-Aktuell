@@ -55,3 +55,15 @@
 body.admin-bar .masthead{top:32px}
 body.admin-bar .mainnav.is-scrolled{top:116px}
 @media (max-width:782px){body.admin-bar .masthead{top:46px}body.admin-bar .mainnav.is-scrolled{top:130px}}
+
+/* Redaktionsseiten (Plugin includes/seiten.php): Archiv nach Monat, Diskussion, Redaktionsmeldungen. */
+.info-prose .archive-list{list-style:none;padding:0;margin:0 0 28px}
+.info-prose .archive-list li{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line,#e3e3e1)}
+.info-prose .archive-list time{flex:0 0 5.5em;font-variant-numeric:tabular-nums;color:var(--muted,#666);font-size:14px}
+.info-prose .archive-list .rs{margin-left:auto;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted,#666);white-space:nowrap}
+.info-prose h2 small{font-weight:400;font-size:.6em;color:var(--muted,#666);margin-left:8px}
+.info-prose .diskussion-liste{list-style:none;padding:0;margin:0}
+.info-prose .diskussion-liste li{padding:14px 0;border-bottom:1px solid var(--line,#e3e3e1)}
+.info-prose .diskussion-liste li p{margin:0 0 6px}
+.info-prose .diskussion-liste time{color:var(--muted,#666);font-size:14px;margin:0 6px}
+.info-prose .ma-public-form{margin-top:24px}

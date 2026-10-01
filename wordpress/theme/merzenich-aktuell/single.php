@@ -25,7 +25,7 @@ while (have_posts()): the_post();
   <?php if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)): $von = (string) get_post_meta($p->ID, 'ma_gesponsert_von', true); ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.</p><?php endif; ?>
   <div class="byline">
     <span class="avatar" aria-hidden="true">MA</span>
-    <span class="who"><b><a href="<?php echo esc_url(home_url('/autor/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span>
+    <span class="who"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span>
     <span class="dates">Veröffentlicht <?php echo ma21_zeit($p, true); ?><br><span class="readtime"><?php echo ma21_lesezeit($p); ?> Min. Lesezeit</span></span>
   </div>
 </div></div>
@@ -52,7 +52,7 @@ while (have_posts()): the_post();
   <?php endif; ?>
     <div class="tags"><?php foreach ((get_the_tags() ?: []) as $t) printf('<a href="%s" rel="tag">%s</a>', esc_url(get_tag_link($t)), esc_html($t->name));
       if ($ort !== 'merzenich') printf('<a href="%s" rel="tag">%s</a>', esc_url(home_url("/{$ort}/")), esc_html(MA21_ORTE[$ort])); ?></div>
-    <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="<?php echo esc_url(home_url('/autor/redaktion/')); ?>">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
+    <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
     <div class="cta-row"><a class="btn ghost" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
     <?php if (comments_open() || get_comments_number()) comments_template(); ?>
   </div>

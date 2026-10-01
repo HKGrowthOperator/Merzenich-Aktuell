@@ -44,6 +44,10 @@ const assets = [...head.matchAll(/<link rel="(?:preload|icon|apple-touch-icon|st
 // Kopf: vom Masthead bis vor <main>. Fuß: nach </main> bis vor </body>.
 const koerper = zwischen('<body', '</body>');
 const kopf = zwischen('<header class="masthead"', '<main id="main">', koerper).trim();
+// Tagesdatum im Kopf: die statische Seite laesst nginx das Datum per SSI
+// einsetzen; auf WordPress fuellt es theme/inc/ma21.php (ma21_kopf) zur
+// Laufzeit. Der SSI-Block wird zum Platzhalter {{ma:datum}}.
+const ohneSsiDatum = (h) => h.replace(/<time data-today datetime="<!--#[\s\S]*?<\/time>/g, '{{ma:datum}}');
 const fuss = koerper.slice(koerper.indexOf('</main>') + '</main>'.length).trim();
 
 // Startseite: Inhalt von <main>, Nachrichtenblöcke als Platzhalter.
@@ -87,8 +91,8 @@ const kopfSeite = zwischen('<header class="masthead"', '<main id="main">', zwisc
 
 const dateien = {
   'kopf-assets.html': assets,
-  'kopf.html': kopf,
-  'kopf-seite.html': kopfSeite,
+  'kopf.html': ohneSsiDatum(kopf),
+  'kopf-seite.html': ohneSsiDatum(kopfSeite),
   'fuss.html': fuss,
   'startseite.html': start,
   'werbung-buehne.html': anzeigeBuehne,

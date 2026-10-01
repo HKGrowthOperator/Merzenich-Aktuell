@@ -170,8 +170,4 @@ function ma_filter_public_service_archives(WP_Query $query): void {
 }
 add_action('pre_get_posts','ma_filter_public_service_archives');
 
-add_action('wp_head', function () {
-    if (is_singular(['ma_obituary','ma_family_notice'])) {
-        echo "<meta name=\"robots\" content=\"noindex,follow\">\n";
-    }
-}, 1);
+// Trauer- und Familienanzeigen: noindex kommt aus includes/seo.php (Robots-Regel je Seitentyp).

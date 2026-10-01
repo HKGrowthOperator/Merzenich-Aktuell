@@ -34,6 +34,12 @@ function ma21_vorlage(string $name): string {
     return $cache[$name];
 }
 
+/** Kopf (Masthead) mit Tagesdatum: der Platzhalter {{ma:datum}} (deploy/wp-theme.mjs) wird serverseitig in Ortszeit gefüllt. */
+function ma21_kopf(string $name): string {
+    $datum = '<time data-today datetime="' . esc_attr((string) wp_date('c')) . '">' . esc_html((string) wp_date('d.m.')) . '</time>';
+    return str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
+}
+
 /* /assets/ -> Theme-Verzeichnis static/, sonst Umleitung auf die statische Seite. */
 add_filter('mod_rewrite_rules', function (string $regeln): string {
     $dir = trailingslashit(get_template_directory()) . 'static/';

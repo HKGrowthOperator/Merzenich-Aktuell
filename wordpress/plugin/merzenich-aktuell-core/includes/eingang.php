@@ -24,7 +24,7 @@ add_action('init', function (): void {
     }
 });
 
-const MA_EINGANG_TYPEN = ['kontakt' => 'Kontakt', 'meldung' => 'Meldung', 'termin' => 'Termin', 'verein' => 'Verein', 'werbung' => 'Werbung', 'immobilie' => 'Immobilie', 'trauer' => 'Traueranzeige', 'familie' => 'Familienanzeige', 'partner' => 'Partner-Antrag'];
+const MA_EINGANG_TYPEN = ['kontakt' => 'Kontakt', 'meldung' => 'Meldung', 'termin' => 'Termin', 'verein' => 'Verein', 'werbung' => 'Werbung', 'immobilie' => 'Immobilie', 'trauer' => 'Traueranzeige', 'familie' => 'Familienanzeige', 'partner' => 'Partner-Antrag', 'korrektur' => 'Korrektur'];
 
 /** Legt eine Einsendung ab. $dateien: Pfade aus wp_handle_upload. Gibt die ID zurück (0 bei Fehler). */
 function ma_eingang_speichern(array $f, array $dateien = []): int {

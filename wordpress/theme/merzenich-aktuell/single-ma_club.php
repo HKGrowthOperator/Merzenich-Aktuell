@@ -68,7 +68,7 @@ while (have_posts()): the_post();
       <?php if ($mail !== '' && is_email($mail)): ?><li><span class="k">E-Mail</span><span class="v"><a href="mailto:<?php echo esc_attr($mail); ?>"><?php echo esc_html($mail); ?></a></span></li><?php endif; ?>
     </ul></div>
     <?php if ($hatOrt): ?><div class="sidebox"><h3><?php echo esc_html(MA21_ORTE[$ort]); ?></h3><a class="btn ghost block" href="<?php echo esc_url(home_url('/' . $ort . '/')); ?>">Zur Ortsteilseite</a></div><?php endif; ?>
-    <div class="sidebox dark"><h3>Neues aus dem Verein?</h3><p>Meldung, Termin, Foto vom Fest: Die Redaktion prüft jede Einsendung und veröffentlicht mit Quelle.</p><a class="btn gold block" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Meldung senden</a><a class="btn ghost block on-dark" href="<?php echo esc_url(home_url('/termine/melden/')); ?>">Termin melden</a></div>
+    <div class="sidebox dark"><h3>Neues aus dem Verein?</h3><p>Meldung, Termin, Foto vom Fest: Die Redaktion prüft jede Einsendung und veröffentlicht mit Quelle.</p><a class="btn gold block" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Meldung senden</a><a class="btn ghost block on-dark" href="<?php echo esc_url(home_url('/termin-melden/')); ?>">Termin melden</a></div>
   </aside>
 </div>
 </article>

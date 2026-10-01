@@ -8,9 +8,9 @@ function ma_register_form_hooks(): void {
 function ma_form_shortcode($atts): string {
     $a=shortcode_atts(['typ'=>'kontakt'],$atts);
     $type=sanitize_key($a['typ']);
-    $allowed=['kontakt','meldung','termin','verein','werbung','immobilie','trauer','familie']; if(!in_array($type,$allowed,true)) $type='kontakt';
+    $allowed=['kontakt','meldung','termin','verein','werbung','immobilie','trauer','familie','korrektur']; if(!in_array($type,$allowed,true)) $type='kontakt';
     ob_start(); ?>
-    <form class="ma-public-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" enctype="multipart/form-data">
+    <form class="ma-public-form form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" enctype="multipart/form-data">
       <input type="hidden" name="action" value="ma_form_submit"><input type="hidden" name="type" value="<?php echo esc_attr($type); ?>"><input type="hidden" name="started" value="<?php echo esc_attr(time()); ?>"><?php wp_nonce_field('ma_form_submit_'.$type,'ma_form_nonce'); ?>
       <p style="position:absolute;left:-9999px"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></p>
       <?php
@@ -33,7 +33,7 @@ function ma_form_shortcode($atts): string {
       <?php if(in_array($type,['meldung','termin','verein','werbung','immobilie','trauer','familie'],true)): ?><p><label>Datei / Bild (optional, JPG/PNG/PDF, max. 5 MB)<br><input type="file" name="attachment" accept="image/jpeg,image/png,application/pdf" data-ma-datei></label></p>
       <p class="ma-bildrechte"><label><input type="checkbox" name="bildrechte" value="1" data-ma-bildrechte> <?php echo esc_html(ma_form_bildrechte_text()); ?></label></p>
       <script>(function(f){var d=f.querySelector('[data-ma-datei]'),c=f.querySelector('[data-ma-bildrechte]');if(!d||!c)return;function p(){c.required=!!(d.files&&d.files.length);}d.addEventListener('change',p);p();})(document.currentScript.closest('form'));</script><?php endif; ?>
-      <p><button type="submit">Absenden</button></p><p class="ma-form-note">Einsendungen werden redaktionell geprüft und nicht automatisch veröffentlicht.</p>
+      <p><button type="submit" class="btn">Absenden</button></p><p class="ma-form-note">Einsendungen werden redaktionell geprüft und nicht automatisch veröffentlicht.</p>
     </form><?php return (string)ob_get_clean();
 }
 function ma_form_submit(): void {

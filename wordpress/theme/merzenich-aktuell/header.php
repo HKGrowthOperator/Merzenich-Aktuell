@@ -12,5 +12,5 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php echo ma21_vorlage(is_front_page() ? 'kopf.html' : 'kopf-seite.html'); ?>
+<?php echo ma21_kopf(is_front_page() ? 'kopf.html' : 'kopf-seite.html'); ?>
 <main id="main">
