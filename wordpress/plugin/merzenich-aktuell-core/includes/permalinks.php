@@ -77,6 +77,14 @@ add_action('template_redirect', function (): void {
 
 /** /vereine/<slug>/ ohne Vereinsprofil, aber mit Meldung: Meldung zeigen. */
 function ma_vereine_anfrage(array $q): array {
+    // /vereine/ bleibt die Liste der Vereinsmeldungen (Kategorie), auch seit es
+    // Vereinsprofile gibt (01.10.2026); die Profile stehen dort in der rechten Spalte.
+    if (($q['post_type'] ?? '') === 'ma_club' && empty($q['ma_club']) && empty($q['name']) && empty($q['p'])) {
+        $neu = ['category_name' => 'vereine'];
+        if (!empty($q['paged'])) $neu['paged'] = $q['paged'];
+        if (!empty($q['feed'])) $neu['feed'] = $q['feed'];
+        return $neu;
+    }
     $slug = isset($q['ma_club']) ? (string)$q['ma_club'] : '';
     if ($slug === '' || str_contains($slug, '/')) return $q;
     if (get_page_by_path($slug, OBJECT, 'ma_club')) return $q;

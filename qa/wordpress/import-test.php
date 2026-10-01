@@ -95,6 +95,8 @@ pruefe('Unbekanntes: nichts', ma_legacy_weiterleitung_fuer('/gibt-es-nicht/'), '
 pruefe('Fremde Zeichen: nichts', ma_legacy_weiterleitung_fuer('/<script>/'), '');
 pruefe('/vereine/<profil>/ bleibt Vereinsprofil', ma_vereine_anfrage(['ma_club' => 'sc-1919', 'post_type' => 'ma_club']), ['ma_club' => 'sc-1919', 'post_type' => 'ma_club']);
 pruefe('/vereine/<meldung>/ zeigt die Meldung', ma_vereine_anfrage(['ma_club' => 'meldung-x', 'post_type' => 'ma_club']), ['name' => 'meldung-x']);
+pruefe('/vereine/ bleibt die Liste der Vereinsmeldungen', ma_vereine_anfrage(['post_type' => 'ma_club']), ['category_name' => 'vereine']);
+pruefe('/vereine/page/2/ blättert in den Vereinsmeldungen', ma_vereine_anfrage(['post_type' => 'ma_club', 'paged' => '2']), ['category_name' => 'vereine', 'paged' => '2']);
 ma_permalinks_standard();
 pruefe('Aktivierung: Permalinks /%category%/%postname%/', get_option('permalink_structure'), '/%category%/%postname%/');
 pruefe('Aktivierung: Schlagwort-Basis thema', get_option('tag_base'), 'thema');
