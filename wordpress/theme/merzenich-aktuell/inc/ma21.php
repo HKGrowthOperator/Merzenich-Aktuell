@@ -22,6 +22,43 @@ const MA21_RESSORT = ['blaulicht' => 'Blaulicht', 'sport' => 'Sport', 'rathaus' 
 const MA21_HINWEIS_START = ['symbol' => 'Symbolbild', 'place' => 'Ortsansicht', 'original' => '', 'official' => 'Bild: Quelle', 'licensed' => 'Archivbild'];
 const MA21_HINWEIS = ['symbol' => 'Symbolbild', 'place' => 'Ortsansicht', 'original' => 'Originalbild', 'official' => 'Quellenmotiv', 'licensed' => 'Archivbild'];
 
+/**
+ * sizes-Angaben der Bildkarten (02.10.2026), gemessen an den gerenderten
+ * Breiten bei 390/560/760/1100/1280/1440 px. Dieselbe Tabelle steht in
+ * deploy/lib-artikel.mjs (SIZES) fuer die statische Seite. Vorher stammten die
+ * Werte aus Schaetzungen; das Handy lud etwa fuer ein 120-px-Vorschaubild die
+ * Breite 100vw (Lighthouse „uses-responsive-images“, rund 2 MB je Seite).
+ */
+const MA21_SIZES = [
+    'xl' => '(max-width: 1099px) 100vw, (max-width: 1439px) 62vw, 845px',
+    'r' => '(max-width: 759px) 132px, (max-width: 1099px) 46vw, (max-width: 1439px) 31vw, 411px',
+    'u' => '(max-width: 759px) 132px, (max-width: 1439px) 31vw, 411px',
+    'l' => '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 34vw, 468px',
+    'l-vereine' => '(max-width: 759px) 100vw, (max-width: 1439px) 46vw, 624px',
+    'l-blaulicht' => '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 55vw, 749px',
+    'l-blaulicht-klein' => '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, 132px',
+    'l-rathaus' => '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 18vw, 241px',
+    'l-wirtschaft' => '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 18vw, 240px',
+    'm' => '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 22.5vw, 307px',
+    'm-blaulicht' => '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, 132px',
+    'm-rathaus' => '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 31vw, 411px',
+    'm-vereine' => '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 31vw, 411px',
+    'm-wirtschaft' => '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 18vw, 240px',
+    's' => '(max-width: 759px) 112px, 220px',
+    's-vereine' => '(max-width: 759px) 112px, (max-width: 1099px) 220px, 200px',
+    'feed-lead' => '(max-width: 1099px) 120px, (max-width: 1439px) 30.5vw, 419px',
+    'feed-row' => '(max-width: 1099px) 120px, (max-width: 1439px) 210px, 240px',
+    'news-card' => '(max-width: 1099px) 120px, (max-width: 1439px) 30vw, 405px',
+    'raster' => '(max-width: 559px) 132px, (max-width: 1099px) 46vw, (max-width: 1279px) 31vw, 300px',
+    'unternehmen' => '(max-width: 1099px) 100vw, (max-width: 1439px) 32vw, 450px',
+    'figur' => '(max-width: 1099px) 100vw, 720px',
+];
+/** sizes einer Sektionskarte: Blaulicht, Rathaus und Wirtschaft ordnen ab 1100 px anders an (startseite.css). */
+function ma21_sizes(string $g, string $sektion = '', int $i = 0): string {
+    if ($g === 'l' && $sektion === 'blaulicht') return $i === 0 ? MA21_SIZES['l-blaulicht'] : MA21_SIZES['l-blaulicht-klein'];
+    return MA21_SIZES["{$g}-{$sektion}"] ?? MA21_SIZES[$g] ?? '';
+}
+
 /* ------------------------------------------------------------ Vorlagen */
 
 /** Vorlage aus vorlagen/ lesen (von deploy/wp-theme.mjs erzeugt). */
@@ -33,6 +70,21 @@ function ma21_vorlage(string $name): string {
     }
     return $cache[$name];
 }
+
+/** Kopf-Assets: Icons, Schrift-Preloads und das CSS-Buendel (deploy/css-bundle.mjs). bundle-start.css nur auf der Startseite, bundle.css sonst; die Vorlage traegt beide (data-ma-css, deploy/wp-theme.mjs). */
+function ma21_kopf_assets(): string {
+    $weg = is_front_page() ? 'seite' : 'start';
+    return (string) preg_replace('/<link rel="stylesheet"[^>]*data-ma-css="' . $weg . '"[^>]*>\n?/', '', ma21_vorlage('kopf-assets.html'));
+}
+
+/* LCP-Bild vorladen (wp_head, frueh): Aufmacher der Startseite, Bild einer Meldung oder eines Vereinsprofils, mit denselben srcset/sizes wie das <img>. */
+add_action('wp_head', function (): void {
+    $b = null; $sizes = '';
+    if (is_front_page()) { $a = ma21_startseite_belegung()['aufmacher'] ?? null; if ($a instanceof WP_Post) { $b = ma21_bild($a); $sizes = MA21_SIZES['xl']; } }
+    elseif (is_singular(['post', 'ma_club'])) { $p = get_queried_object(); if ($p instanceof WP_Post) { $b = ma21_bild($p); $sizes = MA21_SIZES['figur']; } }
+    if (!$b || !ma21_echtes_bild($b)) return;
+    echo '<link rel="preload" as="image" href="' . esc_url($b['src']) . '"' . ($b['srcset'] ? ' imagesrcset="' . esc_attr($b['srcset']) . '" imagesizes="' . esc_attr($sizes) . '"' : '') . ' fetchpriority="high">' . "\n";
+}, 2);
 
 /** Kopf (Masthead) mit Tagesdatum: der Platzhalter {{ma:datum}} (deploy/wp-theme.mjs) wird serverseitig in Ortszeit gefüllt. */
 function ma21_kopf(string $name): string {
@@ -124,7 +176,7 @@ function ma21_bild(WP_Post $p): ?array {
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
     $typ = get_post_meta($p->ID, 'ma_image_type', true) ?: get_post_meta($id, 'ma_image_type', true);
     return ['id' => $id, 'src' => $voll[0], 'w' => (int) $voll[1], 'h' => (int) $voll[2], 'srcset' => (string) wp_get_attachment_image_srcset($id, 'full'),
-        'alt' => $alt, 'typ' => (string) $typ, 'credit' => (string) get_post_meta($p->ID, 'ma_image_credit', true)];
+        'alt' => $alt, 'typ' => (string) $typ, 'credit' => ma_credit_kurz((string) get_post_meta($p->ID, 'ma_image_credit', true), (string) get_post_meta($p->ID, 'ma_image_license', true))];
 }
 
 /** Echtes, redaktionell nutzbares Bild: kein Logo, kein Wappen. */
@@ -157,31 +209,30 @@ function ma21_karte_attr(WP_Post $p, string $slot = '', bool $fest = false): str
 }
 
 /** Startseitenkarte in den Größen xl (Aufmacher), r/u (Bühne), l, m, s (Rubrikflächen). */
-function ma21_karte(WP_Post $p, string $g, string $tag = 'h3', string $slot = '', bool $fest = false): string {
+function ma21_karte(WP_Post $p, string $g, string $tag = 'h3', string $slot = '', bool $fest = false, string $sektion = '', int $i = 0): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p); $attr = ma21_karte_attr($p, $slot, $fest);
     $kopf = "<{$tag}><a href=\"{$url}\">{$titel}</a></{$tag}>";
     if ($g === 'xl') {
-        return "<article class=\"front-lead\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 760px) 100vw, 860px', true)
+        return "<article class=\"front-lead\"{$attr}>" . ma21_bildflaeche($p, $b, MA21_SIZES['xl'], true)
             . '<div class="front-lead-copy">' . ma21_marke($p) . "<h1><a href=\"{$url}\">{$titel}</a></h1><p>" . ma21_e(ma21_teaser($p)) . '</p>'
             . '<div class="meta">' . ma21_zeit($p) . '<span>' . ma21_lesezeit($p) . ' Min. Lesezeit</span></div></div></article>';
     }
     if ($g === 'r' || $g === 'u') {
-        $sizes = $g === 'r' ? '(max-width: 760px) 132px, (max-width: 1100px) 50vw, 460px' : '(max-width: 760px) 132px, (max-width: 1100px) 33vw, 440px';
-        return "<article class=\"front-neben-story buehne-karte buehne-karte--{$g}\"{$attr}>" . ma21_bildflaeche($p, $b, $sizes, false)
+        return "<article class=\"front-neben-story buehne-karte buehne-karte--{$g}\"{$attr}>" . ma21_bildflaeche($p, $b, MA21_SIZES[$g], false)
             . '<div class="karte-text">' . ma21_marke($p) . "<h2><a href=\"{$url}\">{$titel}</a></h2><div class=\"meta\">" . ma21_zeit($p) . '</div></div></article>';
     }
     // Feste Plätze dürfen auch ohne Bild belegt sein (Layout-Karte): dann ohne Bildfläche.
     if ($g === 'l') {
-        return "<article class=\"desk-karte desk-karte--gross" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 900px) 100vw, 600px', false)
+        return "<article class=\"desk-karte desk-karte--gross" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, ma21_sizes('l', $sektion, $i), false)
             . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<p class="dek">' . ma21_e(ma21_teaser($p)) . '</p><div class="meta">' . ma21_zeit($p) . '</div></div></article>';
     }
     if ($g === 'm') {
-        return "<article class=\"desk-karte desk-karte--mittel" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, '(max-width: 1100px) 46vw, 390px', false)
+        return "<article class=\"desk-karte desk-karte--mittel" . ($b ? '' : ' desk-karte--ohne-bild') . "\"{$attr}>" . ma21_bildflaeche($p, $b, ma21_sizes('m', $sektion, $i), false)
             . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<div class="meta">' . ma21_zeit($p) . '</div></div></article>';
     }
     $mitBild = ma21_echtes_bild($b);
     return '<article class="front-zeile' . ($mitBild ? ' front-zeile--bild' : '') . "\"{$attr}>"
-        . ($mitBild ? ma21_bildflaeche($p, $b, '(max-width: 640px) 120px, 220px', false) : '')
+        . ($mitBild ? ma21_bildflaeche($p, $b, ma21_sizes('s', $sektion, $i), false) : '')
         . '<div class="karte-text">' . ma21_marke($p) . $kopf . '<div class="meta">' . ma21_zeit($p) . '</div></div></article>';
 }
 
@@ -296,10 +347,10 @@ function ma21_block(string $name): string {
         foreach ($pl as $slot => $e) if ($e['post'] === $p->ID && str_starts_with($slot, "{$name}.{$art}.")) return $slot;
         return "{$name}.{$art}." . ($i + 1);
     };
-    $reihe = function (string $klasse, array $l, string $g, string $art) use ($slotVon, $fest): string {
+    $reihe = function (string $klasse, array $l, string $g, string $art) use ($slotVon, $fest, $name): string {
         if (!$l) return '';
         $h = '';
-        foreach (array_values($l) as $i => $p) { $slot = $slotVon($art, $p, $i); $h .= ma21_karte($p, $g, 'h3', $slot, $fest($slot)); }
+        foreach (array_values($l) as $i => $p) { $slot = $slotVon($art, $p, $i); $h .= ma21_karte($p, $g, 'h3', $slot, $fest($slot), $name, $i); }
         return "<div class=\"{$klasse}\">{$h}</div>";
     };
     return $rahmen("<section class=\"desk shell\" data-sektion=\"{$name}\">{$kopf}" . $reihe('desk-gross', $sek['gross'], 'l', 'gross') . $reihe('desk-mittel', $sek['mittel'], 'm', 'mittel') . $reihe('desk-zeilen', $sek['zeilen'], 's', 'zeilen') . '</section>');
@@ -329,7 +380,7 @@ function ma21_kommende_termine(int $n): array {
 /** Karte im „Weiterlesen“-Block unter einer Meldung. */
 function ma21_news_card(WP_Post $p): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-    return '<article class="news-card">' . ($b ? "\n  <a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, 400px', false) . ma21_badge($b, false) . '</div></a>' : '')
+    return '<article class="news-card">' . ($b ? "\n  <a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['news-card'], false) . ma21_badge($b, false) . '</div></a>' : '')
         . "\n  <div class=\"news-card-body\">\n    " . ma21_marke($p, 'kicker') . "\n    <h3><a href=\"{$url}\">{$titel}</a></h3>\n    <p class=\"dek\">" . ma21_e(ma21_teaser($p)) . "</p>\n    <div class=\"meta\">" . ma21_zeit($p, true) . '</div>'
         . "<div class=\"story-actions\"><a class=\"read-more\" href=\"{$url}\">Mehr lesen<span class=\"sr-only\">: {$titel}</span></a></div>\n  </div>\n</article>";
 }
@@ -338,7 +389,7 @@ function ma21_news_card(WP_Post $p): string {
 function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
     return '<article class="feed-lead"' . ma21_karte_attr($p, $slot, $fest) . '>'
-        . ($b ? "<a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, 800px', true) . ma21_badge($b, false) . '</div></a>' : '')
+        . ($b ? "<a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-lead'], true) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="lead-copy">' . ma21_marke($p, 'kicker') . "<h2><a href=\"{$url}\">{$titel}</a></h2><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div></div></article>';
 }
@@ -346,7 +397,7 @@ function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): stri
 function ma21_feed_row(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
     return '<article' . ma21_karte_attr($p, $slot, $fest) . ' class="feed-row">'
-        . ($b ? "<a class=\"feed-img\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 120px, 240px', false) . ma21_badge($b, false) . '</div></a>' : '')
+        . ($b ? "<a class=\"feed-img\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-row'], false) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="feed-copy">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div>'
         . "<div class=\"story-actions\"><a class=\"read-more\" href=\"{$url}\">Mehr lesen<span class=\"sr-only\">: {$titel}</span></a></div></div></article>";
@@ -359,7 +410,7 @@ function ma21_bildraster(array $posts, array $plaetze = []): string {
         $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
         [$slot, $fest] = $plaetze[$i] ?? ['', false];
         $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
-            . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, '(max-width: 640px) 100vw, (max-width: 1100px) 45vw, 300px', false) . ma21_badge($b, false) . '</div></a>' : '')
+            . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['raster'], false) . ma21_badge($b, false) . '</div></a>' : '')
             . '<div class="bildraster-text">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><div class=\"meta\">" . ma21_zeit($p) . '</div></div></article>';
     }
     return $h . '</div>';
@@ -492,7 +543,7 @@ function ma21_u_karte(WP_Post $p, int $i): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
     $ort = ma21_ort($p);
     return '<article class="u-karte' . ($b ? '' : ' u-karte--ohne-bild') . '"' . ($i >= 8 ? ' data-nachladen hidden' : '') . '>'
-        . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, '(max-width: 760px) 100vw, 380px', $i < 2) . ma21_badge($b, false) . '</a>' : '')
+        . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, MA21_SIZES['unternehmen'], $i < 2) . ma21_badge($b, false) . '</a>' : '')
         . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>'
         . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
         . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(get_the_date('d.m.Y, H:i', $p)) . ' Uhr</time></p>'

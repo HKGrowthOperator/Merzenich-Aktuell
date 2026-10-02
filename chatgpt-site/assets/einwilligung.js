@@ -84,7 +84,11 @@
   function speichernUndAnwenden(externeBilder, liveMeldungen) {
     stand = { version: VERSION, zeit: new Date().toISOString(), notwendig: true, externeBilder: !!externeBilder, liveMeldungen: !!liveMeldungen };
     schreiben(stand); bilderAnwenden(); liveStarten();
-    if (stand.liveMeldungen && 'Notification' in window && Notification.permission === 'default') { try { Notification.requestPermission(); } catch (e) { /* egal */ } }
+    // Andere Skripte (WordPress: push.js, Benachrichtigungen aufs Handy) hoeren auf die Entscheidung.
+    const melden = () => { try { document.dispatchEvent(new CustomEvent('ma:einwilligung', { detail: stand })); } catch (e) { /* egal */ } };
+    if (stand.liveMeldungen && 'Notification' in window && Notification.permission === 'default') {
+      try { const p = Notification.requestPermission(); if (p && typeof p.then === 'function') p.then(melden, melden); else melden(); } catch (e) { melden(); }
+    } else melden();
     document.querySelector('.einwilligung')?.remove();
     document.body.classList.remove('einwilligung-offen');
   }
@@ -94,7 +98,7 @@
       <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Kommentarname, diese Auswahl). Symbolbilder laden wir über unseren eigenen Server, nicht von Dritten. Eine Funktion braucht Ihre Zustimmung, weil Ihr Browser Sie dabei benachrichtigt:</p>
       <form class="einwilligung__form">
         <label><input type="checkbox" checked disabled> <span><strong>Notwendig</strong> · Kommentare, diese Einstellung. Immer aktiv.</span></label>
-        <label><input type="checkbox" name="liveMeldungen" ${details ? '' : 'checked'}> <span><strong>Live-Meldungen</strong> · Neue Meldungen erscheinen automatisch, solange die Seite offen ist, auf Wunsch als Browser-Benachrichtigung. Abgefragt wird nur unser eigener Server.</span></label>
+        <label><input type="checkbox" name="liveMeldungen" ${details ? '' : 'checked'}> <span><strong>Live-Meldungen</strong> · Neue Meldungen erscheinen automatisch, solange die Seite offen ist, und auf Wunsch als Benachrichtigung Ihres Browsers, auch wenn die Seite geschlossen ist. Abgefragt wird nur unser eigener Server.</span></label>
       </form>
       <div class="einwilligung__aktionen">
         <button type="button" class="btn" data-ew="alle">Alle akzeptieren</button>

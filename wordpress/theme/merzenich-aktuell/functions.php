@@ -45,6 +45,9 @@ if(!function_exists('ma_content_image')){
 if(!function_exists('ma_image_caption')){
     function ma_image_caption(array $bild): string { return (string)($bild['credit']??''); }
 }
+if(!function_exists('ma_credit_kurz')){
+    function ma_credit_kurz(string $credit, string $lizenz=''): string { return $credit; }
+}
 
 function ma_theme_location_label(int $id=0): string {
     $id=$id?:get_the_ID();

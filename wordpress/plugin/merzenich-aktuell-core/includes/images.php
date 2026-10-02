@@ -82,6 +82,40 @@ function ma_image_fallback_url(string $kind, $post = null): string {
 }
 
 /**
+ * Kurzer Bildnachweis für Bildzeile, Karten und Feed (02.10.2026). Die
+ * Rohdaten in ma_image_credit bleiben, wie sie importiert wurden; gekürzt
+ * wird nur die Ausgabe: Commons-Floskeln („No machine-readable author
+ * provided. X assumed (based on copyright claims).“), Wohnort („from Malmö,
+ * Sweden“), Benutzerkonto („(User:H-stt)“), Diskussionslink, Web-Adressen
+ * und die Langform von „(bearbeitet: …)“. Die Lizenz steht genau einmal am
+ * Ende, „Public domain“ heißt „gemeinfrei“. Reine Funktion, ohne WordPress
+ * testbar (qa/wordpress/images-test.php).
+ */
+function ma_credit_kurz(string $credit, string $lizenz = ''): string {
+    $t = trim((string) preg_replace('/\s+/u', ' ', $credit));
+    if ($t === '') return '';
+    $t = (string) preg_replace('/^Symbolbild\s*·\s*/u', '', $t);
+    $t = (string) preg_replace('/No machine-readable author provided\.\s*(.+?)\s+assumed \(based on copyright claims\)\.?/u', '$1', $t);
+    $t = (string) preg_replace('/\(bearbeitet:[^)]*\)/u', '(bearbeitet)', $t);
+    $t = (string) preg_replace('/\s*\(\s*Diskussion\s*\)/u', '', $t);
+    $t = (string) preg_replace('/\s*\(User:[^)]*\)/u', '', $t);
+    $t = (string) preg_replace('/,?\s*(?:https?:\/\/|www\.)\S+/u', '', $t);
+    $t = (string) preg_replace('/ from [^\/·]+?(?= \/ Wikimedia)/u', '', $t);
+    $teile = array_map('trim', preg_split('/\s*·\s*/u', $t) ?: []);
+    $lz = '';
+    if (count($teile) > 1 && ma_credit_ist_lizenz((string) end($teile))) $lz = (string) array_pop($teile);
+    if ($lz === '' && ma_credit_ist_lizenz($lizenz)) $lz = trim($lizenz);
+    $t = implode(' · ', array_filter($teile, fn($s) => $s !== ''));
+    if (preg_match('/^public domain$/i', $lz)) $lz = 'gemeinfrei';
+    return $lz !== '' && $t !== '' ? $t . ' · ' . $lz : ($t !== '' ? $t : $lz);
+}
+
+/** Erkennt eine Lizenzangabe (CC BY-SA 4.0, CC0, Public domain, gemeinfrei). */
+function ma_credit_ist_lizenz(string $s): bool {
+    return (bool) preg_match('/^(CC[ -][A-Z0-9 .\-]+|CC0(?: 1\.0)?|Public domain|gemeinfrei)$/i', trim($s));
+}
+
+/**
  * Die eine Abfrage. Liefert immer ein anzeigbares Bild - notfalls das
  * gekennzeichnete Ersatzbild.
  *
@@ -122,7 +156,7 @@ function ma_content_image($post = null, string $size = 'large'): array {
             'url'         => $url,
             'type'        => $type,
             'type_label'  => MA_IMAGE_TYPES[$type],
-            'credit'      => $credit,
+            'credit'      => ma_credit_kurz($credit, $license),
             'alt'         => $alt !== '' ? $alt : get_the_title($id),
             'license'     => $license,
             'source_url'  => $source_url,
@@ -136,7 +170,7 @@ function ma_content_image($post = null, string $size = 'large'): array {
         'url'         => ma_image_fallback_url($kind, $post),
         'type'        => 'symbol',
         'type_label'  => MA_IMAGE_TYPES['symbol'],
-        'credit'      => $credit !== '' ? $credit : 'Symbolbild · Merzenich Aktuell',
+        'credit'      => $credit !== '' ? ma_credit_kurz($credit, $license) : 'Symbolbild · Merzenich Aktuell',
         'alt'         => ma_image_fallback_alt($kind),
         'license'     => $license,
         'source_url'  => '',
@@ -196,8 +230,10 @@ function ma_image_caption(array $bild): string {
     } else {
         if ($bild['disclaimer'] !== '')     $teile[] = $bild['disclaimer'];
         elseif ($bild['type_label'] !== '') $teile[] = $bild['type_label'] . '.';
+        // Die Lizenz steckt seit 1.17.0 im gekürzten Credit (ma_credit_kurz);
+        // vorher stand sie doppelt in der Bildzeile.
         if ($bild['credit'] !== '')     $teile[] = 'Foto: ' . $bild['credit'];
-        if ($bild['license'] !== '')    $teile[] = $bild['license'];
+        elseif ($bild['license'] !== '') $teile[] = $bild['license'];
     }
     return implode(' ', array_filter($teile));
 }
@@ -241,18 +277,55 @@ function ma_webp_offen(int $limit = 20): array {
     return $offen;
 }
 
-function ma_webp_nachlauf(): void {
-    if (!ma_webp_moeglich() || get_option('ma_webp_fertig') === '1' || get_transient('ma_webp_lauf')) return;
+/* ------------------------------------------------------------ Zwischengroessen (02.10.2026)
+ * WordPress liefert 300, 768, 1024, 1536 px. Vorschaubilder der Listen und
+ * Buehne sind 112 bis 240 px breit; ohne Zwischengroessen lud das Handy dafuer
+ * die 768er (Lighthouse „uses-responsive-images“, rund 2 MB je Seite). Die
+ * neuen Groessen haengen sich von selbst ins srcset (wp_get_attachment_image_srcset).
+ */
+const MA_GROESSEN = ['ma-480' => 480, 'ma-240' => 240];
+add_action('init', function (): void {
+    foreach (MA_GROESSEN as $name => $breite) add_image_size($name, $breite, 0, false);
+}, 5);
+
+/** Anhaenge, denen eine der Zwischengroessen fehlt (nur wo das Original breiter ist). */
+function ma_groessen_offen(int $limit = 20): array {
+    $ids = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'post_mime_type' => ['image/jpeg', 'image/png', 'image/webp'], 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC']);
+    $offen = [];
+    foreach ($ids as $id) {
+        $meta = wp_get_attachment_metadata($id);
+        if (!is_array($meta) || empty($meta['width'])) continue;
+        $sizes = (array) ($meta['sizes'] ?? []);
+        foreach (MA_GROESSEN as $name => $breite) if ((int) $meta['width'] > $breite && empty($sizes[$name])) { $offen[] = (int) $id; break; }
+        if (count($offen) >= $limit) break;
+    }
+    return $offen;
+}
+
+/**
+ * Nachlauf fuer vorhandene Anhaenge: WebP-Groessen (Guard ma_webp_fertig) und
+ * Zwischengroessen (Guard ma_groessen_117), 20 je Admin-Aufruf. Beide Guards
+ * fallen erst, wenn nichts mehr offen ist.
+ */
+function ma_bilder_nachlauf(): void {
+    if (get_transient('ma_webp_lauf')) return;
+    $webp = ma_webp_moeglich() && get_option('ma_webp_fertig') !== '1';
+    $groessen = get_option('ma_groessen_117') !== '1';
+    if (!$webp && !$groessen) return;
     set_transient('ma_webp_lauf', 1, 120);
     require_once ABSPATH . 'wp-admin/includes/image.php';
-    $offen = ma_webp_offen(20);
+    $offen = $webp ? ma_webp_offen(20) : [];
+    if ($groessen && count($offen) < 20) $offen = array_values(array_unique(array_merge($offen, ma_groessen_offen(20 - count($offen)))));
     foreach ($offen as $id) {
         $datei = get_attached_file($id);
         if (!$datei || !file_exists($datei)) continue;
         $meta = wp_generate_attachment_metadata($id, $datei);
         if (is_array($meta) && $meta) wp_update_attachment_metadata($id, $meta);
     }
-    if (count($offen) < 20) update_option('ma_webp_fertig', '1', false);
+    if ($webp && !ma_webp_offen(1)) update_option('ma_webp_fertig', '1', false);
+    if ($groessen && !ma_groessen_offen(1)) update_option('ma_groessen_117', '1', false);
     delete_transient('ma_webp_lauf');
 }
-add_action('admin_init', 'ma_webp_nachlauf', 20);
+/** Alter Name (1.15.0), falls ihn etwas aufruft. */
+function ma_webp_nachlauf(): void { ma_bilder_nachlauf(); }
+add_action('admin_init', 'ma_bilder_nachlauf', 20);

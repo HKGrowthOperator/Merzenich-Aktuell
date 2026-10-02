@@ -23,7 +23,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { esc, ORTSTEILE, SITE_URL, liveUrl } from './lib-artikel.mjs';
+import { esc, ORTSTEILE, SITE_URL, liveUrl, creditKurz, SIZES } from './lib-artikel.mjs';
 import { bildklassenLesen } from './lib-symbolbilder.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -60,7 +60,7 @@ function jpegMasse(pfad) {
 }
 function quellbildFigur(q) {
   const { breite, hoehe } = jpegMasse(join(QUELLBILDER, q.datei));
-  return `<figure class="art-figure"><div class="media"><img src="${esc(quellbildUrl(q))}" alt="${esc(q.alt)}" width="${breite}" height="${hoehe}" loading="eager" fetchpriority="high" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Originalbild</span> · ${esc(q.alt)}</span><span>Bild: ${esc(q.credit)}</span></figcaption></figure>`;
+  return `<figure class="art-figure"><div class="media"><img src="${esc(quellbildUrl(q))}" alt="${esc(q.alt)}" width="${breite}" height="${hoehe}" loading="eager" fetchpriority="high" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Originalbild</span> · ${esc(q.alt)}</span><span>Bild: ${esc(creditKurz(q.credit))}</span></figcaption></figure>`;
 }
 
 function meldungenLesen() {
@@ -98,7 +98,7 @@ function weiterlesen(m, index) {
   const wahl = [...andere.filter((a) => a.ortsteil === m.ortsteil && a.ressort === m.ressort).sort(nach),
     ...andere.filter((a) => a.ressort === m.ressort).sort(nach)].filter((a, i, l) => l.findIndex((b) => b.url === a.url) === i).slice(0, 3);
   return wahl.map((a) => {
-    const bild = a.bild?.src ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media"><img src="${esc(a.bild.src)}"${a.bild.srcset ? ` srcset="${esc(a.bild.srcset)}" sizes="(max-width: 640px) 100vw, 400px"` : ''} alt="${esc(a.bild.alt || '')}" width="${a.bild.width || 1600}" height="${a.bild.height || 1067}" loading="lazy" decoding="async" data-editorial-image class="">${a.bild.badge ? `<span class="badge">${esc(a.bild.badge)}</span>` : ''}</div></a>\n  ` : '';
+    const bild = a.bild?.src ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media"><img src="${esc(a.bild.src)}"${a.bild.srcset ? ` srcset="${esc(a.bild.srcset)}" sizes="${SIZES['news-card']}"` : ''} alt="${esc(a.bild.alt || '')}" width="${a.bild.width || 1600}" height="${a.bild.height || 1067}" loading="lazy" decoding="async" data-editorial-image class="">${a.bild.badge ? `<span class="badge">${esc(a.bild.badge)}</span>` : ''}</div></a>\n  ` : '';
     return `<article class="news-card">\n  ${bild}<div class="news-card-body">\n    <p class="marke"><span class="marke-ort">Merzenich</span>${a.ortsteil && a.ortsteil !== 'merzenich' && ORTSTEILE[a.ortsteil] ? `<span class="marke-teil"> · ${esc(ORTSTEILE[a.ortsteil])}</span>` : ''}<span class="marke-rubrik">${esc(a.kicker || a.ressortLabel)}</span></p>\n    <h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3>\n    <p class="dek">${esc(a.teaser)}</p>\n    <div class="meta"><time datetime="${esc(a.datum)}">${esc(datumLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>\n  </div>\n</article>`;
   }).join('');
 }

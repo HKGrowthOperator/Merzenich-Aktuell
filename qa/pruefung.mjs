@@ -903,6 +903,18 @@ pruefeAktualitaet();
 await pruefeSymbolbilder();
 pruefeWerbung();
 await pruefeSportfreieStartseite();
+// ------------------------------------ Bildnachweise kurz (02.10.2026)
+// Listen, Feeds und inhalte.json tragen den gekuerzten Nachweis (creditKurz in
+// lib-artikel.mjs, ma_credit_kurz im Plugin): keine Commons-Floskel, kein
+// Wohnort, kein Benutzerkonto, „Public domain“ heisst „gemeinfrei“.
+{
+  const { creditKurz } = await import('../deploy/lib-artikel.mjs');
+  if (creditKurz('No machine-readable author provided. Papa1234 assumed (based on copyright claims). / Wikimedia Commons · Public domain') !== 'Papa1234 / Wikimedia Commons · gemeinfrei') fehler('Bildnachweis', 'creditKurz kuerzt die Commons-Floskel nicht.');
+  const lang = /No machine-readable author|\(User:[^)]*\)|\( Diskussion \)| from [A-ZÅ][^/<"]* \/ Wikimedia|Public domain/;
+  for (const datei of ['chatgpt-site/api/inhalte.json', 'chatgpt-site/feed.xml', 'chatgpt-site/nachrichten/index.html', 'chatgpt-site/index.html']) {
+    if (existsSync(join(wurzel, datei)) && lang.test(lies(datei))) fehler('Bildnachweis', `${datei} traegt noch einen langen Wikimedia-Nachweis.`);
+  }
+}
 pruefeBildwiederholung();
 pruefeMotivvielfalt();
 pruefeOrtswahl();

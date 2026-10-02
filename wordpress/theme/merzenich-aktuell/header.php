@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
-<?php echo ma21_vorlage('kopf-assets.html'); ?>
+<?php echo ma21_kopf_assets(); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

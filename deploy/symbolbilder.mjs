@@ -16,7 +16,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, esc, SITE_URL } from './lib-artikel.mjs';
+import { artikelSammeln, esc, SITE_URL, creditKurz, SIZES } from './lib-artikel.mjs';
 import {
   RECHTE_GEPRUEFT_AM, KATEGORIEN, ALLE_KATEGORIEN, MINDEST_POOL, BIBLIOTHEK_DATEI, ZUORDNUNGEN_DATEI,
   bibliothekErzeugen, bibliothekAudit, zuordnungenLesen, zuordnungenSchreiben,
@@ -67,10 +67,9 @@ function writeIfChanged(pfad, inhalt) {
 // Poolfotos tragen Urheber und Lizenz schon im credit ("Symbolbild · Name /
 // Wikimedia Commons · CC BY-SA 4.0"). Ohne diese Pruefung stand die Lizenz
 // doppelt und "Symbolbild" zweimal in der Bildzeile.
-const nachweis = (m) => {
-  const c = String(m.credit || '').replace(/^Symbolbild\s*·\s*/, '');
-  return m.license && !c.includes(m.license) ? `${c} · ${m.license}` : c;
-};
+// Seit 02.10.2026 kuerzt creditKurz (lib-artikel.mjs) zusaetzlich die
+// Commons-Floskeln, wie ma_credit_kurz() im Plugin.
+const nachweis = (m) => creditKurz(String(m.credit || ''), String(m.license || ''));
 
 // WebP-Fassungen aus deploy/pool-varianten.py (480/800/1200 px) neben dem
 // Poolfoto. Nur was auf der Platte liegt, kommt ins srcset.
@@ -110,7 +109,7 @@ function altFuer(m) {
 function figureHtml(m, stufe = 'B') {
   const srcset = srcsetFuer(m);
   m = { ...m, alt: altFuer(m) };
-  return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
+  return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="${SIZES.figur}"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }
 
 // Ortsansichten (Bildstufe O, Entscheidung KBS 26.09.2026): Jede Meldung ohne
@@ -146,7 +145,7 @@ function ortsansichtenVerteilen(artikel, ansichten) {
   return zuordnung;
 }
 function ortsansichtFigure(o) {
-  return `<figure class="art-figure art-figure--symbol art-figure--ortsansicht" data-bildstufe="O" data-ortsansicht="${esc(o.id)}"><div class="media"><img src="${esc(o.src)}"${o.srcset ? ` srcset="${esc(o.srcset)}" sizes="(max-width: 760px) 100vw, 760px"` : ''} alt="${esc(o.alt)}" width="${o.width || 1440}" height="${o.height || 960}" loading="eager" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Ortsansicht</span> · ${esc(o.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(o.nachweis)}</span></figcaption></figure>`;
+  return `<figure class="art-figure art-figure--symbol art-figure--ortsansicht" data-bildstufe="O" data-ortsansicht="${esc(o.id)}"><div class="media"><img src="${esc(o.src)}"${o.srcset ? ` srcset="${esc(o.srcset)}" sizes="${SIZES.figur}"` : ''} alt="${esc(o.alt)}" width="${o.width || 1440}" height="${o.height || 960}" loading="eager" decoding="async" data-editorial-image></div><figcaption><span><span class="figure-badge">Ortsansicht</span> · ${esc(o.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(o.nachweis)}</span></figcaption></figure>`;
 }
 
 function artikelPfad(a) { return join(site, a.url.replace(/^\//, ''), 'index.html'); }

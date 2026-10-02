@@ -27,7 +27,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke, sportBezug, sportTermin, motivSchluessel } from './lib-artikel.mjs';
+import { artikelSammeln, entschaerfen, esc, dmyLang, ORTSTEILE, SITE_URL, markeHtml as ortsmarke, sportBezug, sportTermin, motivSchluessel, SIZES, sizesFuer } from './lib-artikel.mjs';
 import { termineAusSeiten } from './lib-termine.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -97,11 +97,11 @@ const disclosureHtml = (a) => a.ressort === 'tipp' ? '<span class="fbadge anzeig
 const mehr = (a) => `<div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div>`;
 function leadHtml(a) {
   const b = a.bild;
-  return `<article class="feed-lead${b ? '' : ' no-media'}" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 100vw, 800px', true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${ortsmarke(a)}${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
+  return `<article class="feed-lead${b ? '' : ' no-media'}" data-story="${esc(a.id)}">${b ? `<a href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, SIZES['feed-lead'], true)}${badgeHtml(b)}</div></a>` : ''}<div class="lead-copy">${ortsmarke(a)}${disclosureHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div></div></article>`;
 }
 function rowHtml(a) {
   const b = a.bild;
-  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, '(max-width: 640px) 120px, 240px', false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${ortsmarke(a)}${disclosureHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
+  return `<article data-story="${esc(a.id)}" class="feed-row${b ? '' : ' no-media no-image'}">${b ? `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media${b.fit ? ' contain' : ''}">${imgHtml(b, SIZES['feed-row'], false)}${badgeHtml(b)}</div></a>` : ''}<div class="feed-copy">${ortsmarke(a)}${disclosureHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta">${zeitHtml(a, dmyLang)}${a.lesezeit ? `<span class="readtime">${esc(a.lesezeit.replace(' Lesezeit', ''))}</span>` : ''}</div>${mehr(a)}${b && b.credit ? `<div class="creditline"><span>${esc(b.badge || 'Bild')} · ${esc(b.credit)}</span></div>` : ''}</div></article>`;
 }
 /**
  * Leerzustand einer Liste: Ueberschrift, ein Satz, was hier erscheinen wird,
@@ -368,10 +368,10 @@ index.bestand = {
   const markeHtml = (a) => ortsmarke(a, { rubrik: 'ressort' });
 
   // Eine einzige Komponente: Bild, Kategorie, Headline, Zeit. In drei Groessen.
-  function karte(a, groesse, tag) {
+  function karte(a, groesse, tag, sektion = '', i = 0) {
     if (groesse === 'xl') {
       return `<article class="front-lead" data-story="${esc(a.id)}">`
-        + bildFlaeche(a, '(max-width: 760px) 100vw, 860px', true)
+        + bildFlaeche(a, SIZES.xl, true)
         + `<div class="front-lead-copy">${markeHtml(a)}`
         + `<h1><a href="${esc(a.url)}">${esc(a.titel)}</a></h1>`
         + `<p>${esc(a.teaser)}</p>`
@@ -384,7 +384,7 @@ index.bestand = {
     const kopf = (a2) => `<${h}><a href="${esc(a2.url)}">${esc(a2.titel)}</a></${h}>`;
     if (groesse === 'l') {
       return `<article class="desk-karte desk-karte--gross" data-story="${esc(a.id)}">`
-        + bildFlaeche(a, '(max-width: 900px) 100vw, 600px', false)
+        + bildFlaeche(a, sizesFuer('l', sektion, i), false)
         + `<div class="karte-text">${markeHtml(a)}`
         + kopf(a)
         + `<p class="dek">${esc(a.teaser)}</p>`
@@ -393,7 +393,7 @@ index.bestand = {
     }
     if (groesse === 'm') {
       return `<article class="${tag ? 'desk-karte desk-karte--mittel' : 'front-neben-story'}" data-story="${esc(a.id)}">`
-        + bildFlaeche(a, '(max-width: 1100px) 46vw, 390px', false)
+        + bildFlaeche(a, sizesFuer('m', sektion, i), false)
         + `<div class="karte-text">${markeHtml(a)}`
         + kopf(a)
         + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
@@ -402,7 +402,7 @@ index.bestand = {
     // Meldungen ohne passendes Bild (Motivregeln) stehen als reine Textzeile.
     const mitBild = !!(a.bild && a.bild.src);
     return `<article class="front-zeile${mitBild ? ' front-zeile--bild' : ''}" data-story="${esc(a.id)}">`
-      + (mitBild ? bildFlaeche(a, '(max-width: 640px) 120px, 220px', false) : '')
+      + (mitBild ? bildFlaeche(a, sizesFuer('s', sektion, i), false) : '')
       + `<div class="karte-text">${markeHtml(a)}`
       + kopf(a)
       + `<div class="meta">${zeitHtml(a, kurzZeit)}</div>`
@@ -506,7 +506,7 @@ index.bestand = {
   // Aufmachers steht auf einem Verlauf im Bild. Mobil: Aufmacher 4:3, dann fuenf
   // Zeilen mit Vorschaubild.
   const buehneKarte = (a, groesse) => `<article class="front-neben-story buehne-karte buehne-karte--${groesse}" data-story="${esc(a.id)}">`
-    + bildFlaeche(a, groesse === 'r' ? '(max-width: 760px) 132px, (max-width: 1100px) 50vw, 460px' : '(max-width: 760px) 132px, (max-width: 1100px) 33vw, 440px', false)
+    + bildFlaeche(a, SIZES[groesse], false)
     + `<div class="karte-text">${markeHtml(a)}<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`
     + `<div class="meta">${zeitHtml(a, kurzZeit)}</div></div></article>`;
   const rechts = neben.slice(0, 2), unten = neben.slice(2, NEBEN);
@@ -548,7 +548,7 @@ index.bestand = {
   }).join(' · ');
   const orteHtml = '<section class="orte-buehne" aria-labelledby="orte-titel"><div class="shell orte-kopf"><h2 id="orte-titel">Ihre fünf Orte</h2></div><div class="orte-reihe">'
     + ORTE_BUEHNE.map(([slug, zeile, alt, fokus]) => `<a class="ort" href="/${slug}/">`
-      + `<span class="ort-bild"><img src="/assets/places/${slug}-720.webp" srcset="/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w" sizes="(max-width: 760px) 100vw, 20vw" width="1440" height="960" loading="lazy" decoding="async" alt="${esc(alt)}"${fokus !== '50% 50%' ? ` style="object-position:${fokus}"` : ''}></span>`
+      + `<span class="ort-bild"><img src="/assets/places/${slug}-720.webp" srcset="/assets/places/${slug}-720.webp 720w, /assets/places/${slug}-1440.webp 1440w" sizes="(max-width: 759px) 100vw, (max-width: 1100px) 34vw, 20vw" width="1440" height="960" loading="lazy" decoding="async" alt="${esc(alt)}"${fokus !== '50% 50%' ? ` style="object-position:${fokus}"` : ''}></span>`
       + `<span class="ort-name">${esc(ORTSTEILE[slug])}</span><span class="ort-zeile">${esc(zeile)}</span></a>`).join('')
     + `</div><p class="shell orte-foto"><a href="/meldung-senden/#formular">Ihr Foto aus einem der fünf Orte an die Redaktion senden</a></p>`
     + `<p class="shell orte-nachweis">Fotos via Wikimedia Commons: ${nachweis}</p></section>`;
@@ -584,9 +584,9 @@ index.bestand = {
     const kopf = '<div class="desk-heading"><div>'
       + `<h2>${esc(s.titel)}</h2>`
       + `</div><a class="desk-more" href="${esc(s.mehr)}">${esc(s.mehrText)}</a></div>`;
-    const reiheGross = gross.length ? `<div class="desk-gross">${gross.map((a) => karte(a, 'l', 'h3')).join('')}</div>` : '';
-    const reiheMittel = mittel.length ? `<div class="desk-mittel">${mittel.map((a) => karte(a, 'm', 'h3')).join('')}</div>` : '';
-    const reiheZeilen = zeilen.length ? `<div class="desk-zeilen">${zeilen.map((a) => karte(a, 's', 'h3')).join('')}</div>` : '';
+    const reiheGross = gross.length ? `<div class="desk-gross">${gross.map((a, i) => karte(a, 'l', 'h3', s.id, i)).join('')}</div>` : '';
+    const reiheMittel = mittel.length ? `<div class="desk-mittel">${mittel.map((a, i) => karte(a, 'm', 'h3', s.id, i)).join('')}</div>` : '';
+    const reiheZeilen = zeilen.length ? `<div class="desk-zeilen">${zeilen.map((a, i) => karte(a, 's', 'h3', s.id, i)).join('')}</div>` : '';
     return `<section class="desk shell" data-sektion="${esc(s.id)}">${kopf}${reiheGross}${reiheMittel}${reiheZeilen}</section>`;
   }
 
@@ -886,7 +886,7 @@ schreibe('api/inhalte.json', JSON.stringify(index, null, 1) + '\n');
         const masse = b.width && b.height ? ` width="${b.width}" height="${b.height}"` : '';
         const badge = b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '';
         return `<a${klasse ? ` class="${klasse}"` : ''} href="${esc(url)}" tabindex="-1" aria-hidden="true"><div class="media">`
-          + `<img src="${esc(b.src)}"${srcset} sizes="(max-width: 640px) 120px, 240px" alt="${esc(b.alt || '')}"${masse}`
+          + `<img src="${esc(b.src)}"${srcset} sizes="${SIZES['feed-row']}" alt="${esc(b.alt || '')}"${masse}`
           + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
       });
       if (neu !== alt) schreibe(rel, neu);

@@ -69,7 +69,7 @@ function ma_feed_bild(WP_Post $p): array {
     if (!$bytes && $datei && file_exists($datei) && str_ends_with($src[0], basename($datei))) $bytes = (int) filesize($datei);
     if (preg_match('/\.webp$/i', $src[0])) $mime = 'image/webp';
     return ['url' => $src[0], 'w' => (int) $src[1], 'h' => (int) $src[2], 'bytes' => $bytes, 'mime' => $mime ?: 'image/jpeg',
-        'alt' => (string) get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($p), 'credit' => (string) get_post_meta($p->ID, 'ma_image_credit', true)];
+        'alt' => (string) get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($p), 'credit' => ma_credit_kurz((string) get_post_meta($p->ID, 'ma_image_credit', true), (string) get_post_meta($p->ID, 'ma_image_license', true))];
 }
 
 add_action('rss2_ns', function (): void { echo 'xmlns:media="http://search.yahoo.com/mrss/"' . "\n"; });

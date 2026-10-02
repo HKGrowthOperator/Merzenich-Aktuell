@@ -42,7 +42,7 @@ while (have_posts()): the_post();
 <div class="shell article-grid">
   <div class="article-body">
     <?php if ($b): ?>
-    <figure class="art-figure"><div class="media"><?php echo ma21_img($b, '(max-width: 760px) 100vw, 760px', true); ?></div><?php if ($b['credit']): ?><figcaption><span><?php the_title(); ?></span><span>Bild: <?php echo esc_html($b['credit']); ?></span></figcaption><?php endif; ?></figure>
+    <figure class="art-figure"><div class="media"><?php echo ma21_img($b, MA21_SIZES['figur'], true); ?></div><?php if ($b['credit']): ?><figcaption><span><?php the_title(); ?></span><span>Bild: <?php echo esc_html($b['credit']); ?></span></figcaption><?php endif; ?></figure>
     <?php elseif ($logo !== ''): ?>
     <figure class="art-figure"><div class="media contain"><img src="<?php echo esc_url($logo); ?>" alt="<?php the_title_attribute(); ?>" loading="eager" decoding="async"></div><figcaption><span><?php the_title(); ?></span><?php $lc = (string) get_post_meta($p->ID, 'ma_club_logo_credit', true); if ($lc !== ''): ?><span>Bild: <?php echo esc_html($lc); ?></span><?php endif; ?></figcaption></figure>
     <?php endif; ?>

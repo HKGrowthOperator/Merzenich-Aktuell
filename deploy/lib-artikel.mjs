@@ -11,6 +11,69 @@ const RESSORTE = { nachrichten: 'Nachrichten', blaulicht: 'Blaulicht', sport: 'S
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', hellip: '…', laquo: '«', raquo: '»', bdquo: '„', ldquo: '“', rdquo: '”', sbquo: '‚', lsquo: '‘', rsquo: '’', shy: '' };
 export const entschaerfen = (t) => String(t ?? '').replace(/&#x([0-9a-f]+);/gi, (m, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (m, d) => String.fromCodePoint(Number(d))).replace(/&([a-z]+);/gi, (m, n) => (n in ENT ? ENT[n] : m));
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+/**
+ * Kurzer Bildnachweis (02.10.2026), dieselbe Regel wie ma_credit_kurz() im
+ * Plugin (includes/images.php): Commons-Floskeln, Wohnort, Benutzerkonto,
+ * Diskussionslink, Web-Adressen und die Langform von „(bearbeitet: …)“
+ * fallen weg; die Lizenz steht genau einmal am Ende, „Public domain“ heißt
+ * „gemeinfrei“.
+ */
+const LIZENZ_FORM = /^(CC[ -][A-Z0-9 .-]+|CC0(?: 1\.0)?|Public domain|gemeinfrei)$/i;
+/**
+ * sizes-Angaben der Bildkarten (02.10.2026), gemessen an den gerenderten
+ * Breiten bei 390/560/760/1100/1280/1440 px (scratchpad mess.mjs). Dieselbe
+ * Tabelle steht im Theme als MA21_SIZES (inc/ma21.php). Vorher stammten die
+ * Werte aus Schaetzungen und luden auf dem Handy bis zu 2 MB zu grosse Bilder
+ * (Lighthouse „uses-responsive-images“), etwa 100vw fuer ein 120-px-Vorschaubild.
+ */
+export const SIZES = {
+  xl: '(max-width: 1099px) 100vw, (max-width: 1439px) 62vw, 845px',
+  r: '(max-width: 759px) 132px, (max-width: 1099px) 46vw, (max-width: 1439px) 31vw, 411px',
+  u: '(max-width: 759px) 132px, (max-width: 1439px) 31vw, 411px',
+  l: '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 34vw, 468px',
+  'l-vereine': '(max-width: 759px) 100vw, (max-width: 1439px) 46vw, 624px',
+  'l-blaulicht': '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 55vw, 749px',
+  'l-blaulicht-klein': '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, 132px',
+  'l-rathaus': '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 18vw, 241px',
+  'l-wirtschaft': '(max-width: 759px) 100vw, (max-width: 1099px) 46vw, (max-width: 1439px) 18vw, 240px',
+  m: '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 22.5vw, 307px',
+  'm-blaulicht': '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, 132px',
+  'm-rathaus': '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 31vw, 411px',
+  'm-vereine': '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 31vw, 411px',
+  'm-wirtschaft': '(max-width: 559px) 100vw, (max-width: 759px) 45vw, (max-width: 1099px) 30vw, (max-width: 1439px) 18vw, 240px',
+  s: '(max-width: 759px) 112px, 220px',
+  's-vereine': '(max-width: 759px) 112px, (max-width: 1099px) 220px, 200px',
+  'feed-lead': '(max-width: 1099px) 120px, (max-width: 1439px) 30.5vw, 419px',
+  'feed-row': '(max-width: 1099px) 120px, (max-width: 1439px) 210px, 240px',
+  'news-card': '(max-width: 1099px) 120px, (max-width: 1439px) 30vw, 405px',
+  raster: '(max-width: 559px) 132px, (max-width: 1099px) 46vw, (max-width: 1279px) 31vw, 300px',
+  unternehmen: '(max-width: 1099px) 100vw, (max-width: 1439px) 32vw, 450px',
+  figur: '(max-width: 1099px) 100vw, 720px',
+};
+/** sizes einer Sektionskarte: Blaulicht, Rathaus und Wirtschaft ordnen ab 1100 px anders an (startseite.css). */
+export function sizesFuer(groesse, sektion = '', i = 0) {
+  if (groesse === 'l' && sektion === 'blaulicht') return i === 0 ? SIZES['l-blaulicht'] : SIZES['l-blaulicht-klein'];
+  return SIZES[`${groesse}-${sektion}`] || SIZES[groesse] || '';
+}
+
+export function creditKurz(credit, lizenz = '') {
+  let t = String(credit ?? '').replace(/\s+/g, ' ').trim();
+  if (!t) return '';
+  t = t.replace(/^Symbolbild\s*·\s*/, '')
+    .replace(/No machine-readable author provided\.\s*(.+?)\s+assumed \(based on copyright claims\)\.?/, '$1')
+    .replace(/\(bearbeitet:[^)]*\)/, '(bearbeitet)')
+    .replace(/\s*\(\s*Diskussion\s*\)/, '')
+    .replace(/\s*\(User:[^)]*\)/, '')
+    .replace(/,?\s*(?:https?:\/\/|www\.)\S+/, '')
+    .replace(/ from [^/·]+?(?= \/ Wikimedia)/, '');
+  const teile = t.split(/\s*·\s*/).map((s) => s.trim());
+  let lz = '';
+  if (teile.length > 1 && LIZENZ_FORM.test(teile[teile.length - 1])) lz = teile.pop();
+  if (!lz && LIZENZ_FORM.test(String(lizenz ?? '').trim())) lz = String(lizenz).trim();
+  if (/^public domain$/i.test(lz)) lz = 'gemeinfrei';
+  t = teile.filter(Boolean).join(' · ');
+  return lz && t ? `${t} · ${lz}` : (t || lz);
+}
 const text = (html) => entschaerfen(String(html ?? '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const erstes = (re, s) => { const m = re.exec(s); return m ? m[1] : ''; };
 
@@ -65,7 +128,7 @@ function bildAus(main) {
     src, srcset: attr('srcset'), alt: attr('alt'), width: Number(attr('width')) || 0, height: Number(attr('height')) || 0,
     fit: /class="media contain"/.test(fig[2]) ? 'contain' : '',
     badge: text(erstes(/<span class="figure-badge">([^<]*)<\/span>/, fig[2])),
-    credit: text(erstes(/<span>Bild: ([\s\S]*?)<\/span>/, fig[2])).replace(/\s*·\s*Bildquelle\s*$/, ''),
+    credit: creditKurz(text(erstes(/<span>Bild: ([\s\S]*?)<\/span>/, fig[2])).replace(/\s*·\s*Bildquelle\s*$/, '')),
     symbol, stufe,
   };
 }

@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSy
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bild } from './lib-piktogramme.mjs';
-import { SITE_URL, liveUrl } from './lib-artikel.mjs';
+import { SITE_URL, liveUrl, SIZES } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(wurzel, 'chatgpt-site');
@@ -59,7 +59,7 @@ const ERSTE = 8;
 function karte(a, i) {
   const k = kanalFuer.get(a.url);
   const b = a.bild;
-  const bildHtml = b && b.src ? `<a class="u-karte__bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><img src="${esc(b.src)}"${b.srcset ? ` srcset="${esc(b.srcset)}" sizes="(max-width: 760px) 100vw, 380px"` : ''} alt="${esc(b.alt || '')}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async">${b.badge ? `<span class="badge">${esc(b.badge)}</span>` : ''}</a>` : '';
+  const bildHtml = b && b.src ? `<a class="u-karte__bild" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><img src="${esc(b.src)}"${b.srcset ? ` srcset="${esc(b.srcset)}" sizes="${SIZES.unternehmen}"` : ''} alt="${esc(b.alt || '')}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async">${b.badge ? `<span class="badge">${esc(b.badge)}</span>` : ''}</a>` : '';
   return `<article class="u-karte${bildHtml ? '' : ' u-karte--ohne-bild'}"${i >= ERSTE ? ' data-nachladen hidden' : ''}>${bildHtml}`
     + `<p class="u-karte__kicker">${esc(k ? k.name : (ORTNAME[a.ortsteil] || a.ressortLabel || 'Wirtschaft'))}</p>`
     + `<h2><a href="${esc(a.url)}">${esc(a.titel)}</a></h2>`

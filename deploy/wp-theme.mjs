@@ -22,6 +22,8 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+import { BUNDLE_START_TEILE } from './css-bundle.mjs';
 import { fileURLToPath } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -39,7 +41,17 @@ const zwischen = (start, ende, text = html) => {
 // Kopf-Assets: Preloads, Icons, Stylesheets. Titel, Meta, JSON-LD und
 // Canonical setzt WordPress selbst (wp_head), sie hängen am Inhalt.
 const head = zwischen('<head>', '</head>');
-const assets = [...head.matchAll(/<link rel="(?:preload|icon|apple-touch-icon|stylesheet)"[^>]*>/g)].map((m) => m[0]).join('\n');
+// Stylesheets: WordPress laedt statt der neun Einzeldateien ein Buendel
+// (deploy/css-bundle.mjs): bundle.css auf Unterseiten, bundle-start.css auf der
+// Startseite. Beide stehen in der Vorlage, markiert mit data-ma-css; das Theme
+// (ma21_kopf_assets) laesst nur das passende stehen. Die Reihenfolge der
+// Einzeldateien in index.html muss der Buendelreihenfolge entsprechen, sonst
+// saehe WordPress anders aus als die statische Seite.
+const einzel = [...head.matchAll(/<link rel="stylesheet" href="\/assets\/([a-z0-9-]+\.css)(?:\?[^"]*)?"[^>]*>/g)].map((m) => m[1]);
+if (einzel.join(' ') !== BUNDLE_START_TEILE.join(' ')) throw new Error(`wp-theme: Stylesheets in index.html (${einzel.join(', ')}) passen nicht zum CSS-Buendel (${BUNDLE_START_TEILE.join(', ')})`);
+const hashVon = (name) => createHash('sha256').update(readFileSync(join(wurzel, 'chatgpt-site', 'assets', name))).digest('hex').slice(0, 10);
+const buendel = `<link rel="stylesheet" href="/assets/bundle.css?v=${hashVon('bundle.css')}" data-ma-css="seite">\n<link rel="stylesheet" href="/assets/bundle-start.css?v=${hashVon('bundle-start.css')}" data-ma-css="start">`;
+const assets = [...head.matchAll(/<link rel="(?:preload|icon|apple-touch-icon)"[^>]*>/g)].map((m) => m[0]).join('\n') + '\n' + buendel;
 
 // Kopf: vom Masthead bis vor <main>. Fuß: nach </main> bis vor </body>.
 const koerper = zwischen('<body', '</body>');
