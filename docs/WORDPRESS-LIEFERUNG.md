@@ -1,6 +1,32 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. Oktober 2026 · Theme 21.5.0 · Core-Plugin 1.13.0 (Historie unten)
+2. Oktober 2026 · Theme 21.8.0 · Core-Plugin 1.18.0 (Historie unten)
+
+## Neu in 1.18.0 (02.10.2026): Benachrichtigungen aufs Handy (Web Push, ohne Fremddienst)
+
+**Was Leser bekommen** (`includes/push.php`, `assets/push.js`, `/sw.js`): Wer in den Datenschutz-Einstellungen „Live-Meldungen“ erlaubt und die Browser-Nachfrage nach Benachrichtigungen bestätigt, bekommt jede neu veröffentlichte Meldung als Benachrichtigung auf Handy oder Rechner, auch bei geschlossenem Browser (Android: Chrome, Firefox, Edge; iPhone: Safari ab iOS 16.4, wenn die Seite zum Home-Bildschirm hinzugefügt ist). Tippen öffnet die Meldung. Der bisherige Hinweis bei offener Seite (`/api/latest.json`) bleibt.
+
+**Wie es läuft:** Das Plugin erzeugt einmalig ein VAPID-Schlüsselpaar (Option `ma_push_vapid`, privater Schlüssel bleibt auf dem Server). `push.js` registriert `/sw.js` (nur Push und Klick, kein Seiten-Cache), holt beim Browser das Push-Abo und meldet es an `ma/v1/push` (POST; DELETE beim Widerruf; höchstens 10 Anfragen je Abo und Stunde). Gespeichert werden in `{prefix}ma_push` nur Abo-Adresse (als Kennung ihr SHA-256), die zwei Schlüssel des Browsers, Zeitpunkte und ein Fehlerzähler; keine IP, kein User-Agent. Die erste Veröffentlichung einer Meldung (`transition_post_status`, nicht bei Änderungen) stößt per Cron-Einzelereignis den Versand an: Nutzlast Titel, Anriss (≤ 120 Zeichen), Link, Beitragsbild (nur mit Rechten, sonst Site-Icon), verschlüsselt nach RFC 8291 (aes128gcm) und signiert nach RFC 8292 (ES256), in Paketen zu 50 an den Push-Dienst des jeweiligen Browsers (Google, Mozilla, Apple). Antworten 404/410 löschen das Abo, nach 5 Fehlern ebenso. Ergebnis in `ma_push_letzter`, sichtbar im Backend SEO & Geo (Abonnenten, letzter Versand). Alles mit PHP-Bordmitteln (openssl, hash_hkdf); fehlt etwas davon, sagt das Backend es und das Skript wird nicht eingebunden.
+
+**Datenschutz** (`includes/rechtstexte.php`, Fassung 2026-10-03): Abschnitt „Live-Meldungen und Benachrichtigungen“ beschreibt das Push-Abo, die beteiligten Push-Dienste, die gespeicherten Daten, die Rechtsgrundlage (Einwilligung) und den Widerruf; „Technische Schnittstelle“ nennt die Abo-Verwaltung. Der Hinweistext der Einwilligung (`einwilligung.js`) sagt jetzt, dass Benachrichtigungen auch bei geschlossener Seite kommen.
+
+**Kein Testversand an Leser.** Der echte Empfang lässt sich nur auf einem Gerät prüfen: Betreiber erlaubt auf dem Handy „Live-Meldungen“ und die Benachrichtigungen; die nächste veröffentlichte Meldung ist der Test.
+
+**Geprüft:** `php qa/wordpress/push-test.php` (Base64url, VAPID-Schlüssel, JWT mit `openssl_verify`, Verschlüsselung mit Rückweg, Abo-Prüfung, Kopfzeilen, Nutzlast) und alle übrigen Tests; Playground (Abo per REST, Versand bei Erstveröffentlichung mit HTTP-Stub, keine zweite Sendung bei Änderung, 410 löscht, `/sw.js`, Backend, Datenschutz); Live-Prüfung (`/sw.js`, Skript mit Schlüssel, Backend-Abschnitt).
+
+## Neu in 1.17.0 / Theme 21.8.0 (02.10.2026): Ladezeit und Bilder, kurze Bildnachweise
+
+**Bilder in der richtigen Größe** (`theme/inc/ma21.php` `MA21_SIZES`, `deploy/lib-artikel.mjs` `SIZES`): Die `sizes`-Angaben aller Bildkarten sind an den gerenderten Breiten gemessen (390/560/760/1100/1280/1440 px) statt geschätzt. Vorher lud das Handy für das 120 px breite Vorschaubild einer Rubrikseite die Breite `100vw` (eager, `fetchpriority="high"`), für Blaulicht-, Rathaus- und Wirtschaftskarten ab 1100 px die 600er statt 130–240 px; Lighthouse zählte rund 2 MB zu große Bilder je Seite. Blaulicht, Rathaus und Wirtschaft haben eigene Werte, weil `startseite.css` sie ab 1100 px anders anordnet. Dieselbe Tabelle gilt auf der statischen Seite.
+
+**Zwischengrößen 480 und 240 px** (`includes/images.php` `MA_GROESSEN`): WordPress hatte nur 300, 768, 1024 und 1536 px; Vorschaubilder von 112 bis 240 px bekamen die 768er. Neue Uploads erhalten die Größen automatisch, vorhandene Anhänge zieht der bestehende Nachlauf nach (20 je Admin-Aufruf, Guard `ma_groessen_117`, zusammen mit der WebP-Erzeugung in `ma_bilder_nachlauf()`).
+
+**Ein Stylesheet statt neun** (`deploy/css-bundle.mjs`, `vorlagen/kopf-assets.html`, `ma21_kopf_assets()`): WordPress lädt `bundle.css` (Unterseiten) bzw. `bundle-start.css` (Startseite, zusätzlich `startseite.css`), unverändert aneinandergehängt in der bisherigen Reihenfolge, versioniert über den Inhalts-Hash. `startseite.css` (52 KB) lud vorher auf jeder Seite, obwohl sie nur `body.home` gestaltet. Die statische Seite bleibt bei den Einzeldateien; `deploy/wp-theme.mjs` prüft, dass ihre Reihenfolge zur Bündelreihenfolge passt.
+
+**LCP-Bild vorladen** (`wp_head`, Priorität 2): Startseite (Aufmacher), Meldung und Vereinsprofil geben `<link rel="preload" as="image" … imagesrcset imagesizes fetchpriority="high">` mit denselben Werten wie das `<img>` aus.
+
+**Kurze Bildnachweise** (`ma_credit_kurz()` in `includes/images.php`, `creditKurz()` in `deploy/lib-artikel.mjs`): Commons-Floskeln („No machine-readable author provided. Papa1234 assumed (based on copyright claims).“), Wohnort („from Malmö, Sweden“), Benutzerkonto („(User:H-stt)“), Diskussionslink und Web-Adressen fallen in der Ausgabe weg, „(bearbeitet: …)“ wird „(bearbeitet)“, die Lizenz steht genau einmal am Ende, „Public domain“ heißt „gemeinfrei“. Gilt für Bildzeile, Karten, Feed (`media:credit`) und `inhalte.json`; die Rohdaten in `ma_image_credit` bleiben unverändert. Die Bildzeile der Karten nannte die Lizenz vorher doppelt.
+
+**Geprüft:** `php qa/wordpress/images-test.php` (Kürzung mit echten Nachweisen, Nachlauf der Zwischengrößen) und alle übrigen Tests; `qa/pruefung.mjs` (keine lange Commons-Floskel mehr in Listen, Feeds, `inhalte.json`); Playground (sizes, srcset mit 480/240, Bündel, Preload, Pixelvergleich Bündel gegen Einzeldateien); Lighthouse mobil vor/nach dem Deploy; Live-Prüfung.
 
 ## Neu in 1.16.0 (02.10.2026): Nachrichtendienste und Browser-Hinweise automatisch beliefern
 

@@ -635,6 +635,14 @@ function ma_seo_seite_admin(): void {
         . '<li><strong>Google News:</strong> <a href="https://publishercenter.google.com/" target="_blank">Publisher Center</a> → Publikation „Merzenich Aktuell“ anlegen, Website ' . esc_html($home) . ' bestätigen (geht über die Search Console), unter „Inhalte“ den Feed <code>' . esc_html($home . 'feed/') . '</code> eintragen, Logo hochladen, Prüfung beantragen. Google Discover (die Nachrichten im Chrome-Startbildschirm und in der Google-App) braucht keine Anmeldung, nur die Indexierung und große Bilder.</li>'
         . '<li><strong>Microsoft Start / Edge-Startseite / Bing News:</strong> <a href="https://partnerhub.microsoftstart.com/" target="_blank">Microsoft Start Partner Hub</a>, Feed <code>' . esc_html($home . 'feed/') . '</code> angeben; IndexNow ist schon aktiv.</li>'
         . '<li><strong>Apple News:</strong> <a href="https://www.icloud.com/newspublisher/" target="_blank">Apple News Publisher</a> mit Apple-ID, Kanal mit demselben Feed anlegen.</li>'
-        . '<li><strong>Browser-Benachrichtigungen für Leser:</strong> laufen bereits über <code>/api/latest.json</code> (Datenschutz-Einstellungen → „Live-Meldungen“ auf der Seite); keine Anmeldung nötig.</li></ol>';
+        . '<li><strong>Benachrichtigungen für Leser:</strong> siehe Abschnitt „Push-Benachrichtigungen“ unten; keine Anmeldung bei einem Dienst nötig.</li></ol>';
+    if (function_exists('ma_push_moeglich')) {
+        $pl = (array) get_option('ma_push_letzter', []);
+        echo '<h2>Push-Benachrichtigungen (Web Push, ohne Fremddienst)</h2>';
+        if (!ma_push_moeglich()) echo '<p><strong>Nicht verfügbar:</strong> diese PHP-Installation hat kein OpenSSL mit P-256/AES-GCM oder kein hash_hkdf. Leser bekommen weiter die Hinweise bei offener Seite (/api/latest.json).</p>';
+        else echo '<p>Leser, die „Live-Meldungen“ erlauben und Benachrichtigungen zulassen, bekommen jede neu veröffentlichte Meldung aufs Handy oder den Rechner, auch bei geschlossenem Browser. Verschlüsselt und signiert mit dem Schlüssel dieser Seite; es gibt keinen Testversand an Leser.</p>'
+            . '<p>Abonnenten: <strong>' . (int) ma_push_abonnenten() . '</strong> · Öffentlicher Schlüssel: <code>' . esc_html(substr(ma_push_oeffentlich(), 0, 16)) . '…</code> · Service Worker: <a href="' . esc_url($home . 'sw.js') . '" target="_blank"><code>/sw.js</code></a><br>'
+            . ($pl ? 'Letzter Versand: ' . esc_html(wp_date('d.m.Y H:i', (int) $pl['zeit'])) . ' · „' . esc_html((string) $pl['titel']) . '“ · gesendet ' . (int) $pl['gesendet'] . ', gelöscht ' . (int) $pl['geloescht'] . ', Fehler ' . (int) $pl['fehler'] : 'Noch kein Versand (löst die erste Veröffentlichung einer Meldung aus).') . '</p>';
+    }
     echo '<h2>Nach dem Einspielen</h2><ol><li>Search Console: Property für ' . esc_html($home) . ' anlegen, Code oben eintragen, dann <code>wp-sitemap.xml</code> und <code>news-sitemap.xml</code> einreichen.</li><li>Google Publisher Center: Publikation „Merzenich Aktuell“ mit der Startseite anlegen (nur der Betreiber kann das).</li><li>Offizielle Profile oben eintragen, sobald sie bestehen.</li></ol></div>';
 }

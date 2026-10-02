@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-10-02';
+const MA_RECHTSTEXTE_VERSION = '2026-10-03';
 
 function ma_rechtstexte(): array {
     return [
@@ -83,11 +83,12 @@ function ma_rechtstext_datenschutz(): string {
         . '<h2 id="lokale-speicherung">Cookies und lokale Speicherung</h2>'
         . '<p>Für Leserinnen und Leser setzt die Seite keine Cookies. Ihr Browser speichert lokal, ohne Übertragung an uns oder Dritte: Ihre Auswahl im Datenschutz-Hinweis, das zuletzt empfangene Wetter und, wenn Sie Live-Meldungen zugestimmt haben, den Stand der zuletzt gesehenen Meldung. Sie können diese Einträge jederzeit über die Browser-Einstellungen löschen; die Auswahl ändern Sie über „Datenschutz-Einstellungen“ am Ende jeder Seite.</p>'
         . '<h2 id="live-meldungen">Live-Meldungen und Benachrichtigungen</h2>'
-        . '<p>Wenn Sie „Live-Meldungen“ zugestimmt haben, fragt Ihr Browser, solange die Seite geöffnet ist, alle fünf Minuten die Meldungsliste bei unserem Server ab. Erlauben Sie zusätzlich Browser-Benachrichtigungen, erscheinen neue Meldungen als Systemhinweis Ihres Browsers. Es sind keine Dritten beteiligt; die Zustimmung können Sie jederzeit in den Datenschutz-Einstellungen widerrufen.</p>'
+        . '<p>Wenn Sie „Live-Meldungen“ zugestimmt haben, fragt Ihr Browser, solange die Seite geöffnet ist, alle fünf Minuten die Meldungsliste bei unserem Server ab; daran sind keine Dritten beteiligt.</p>'
+        . '<p>Erlauben Sie zusätzlich Benachrichtigungen Ihres Browsers, richtet Ihr Browser ein Push-Abonnement ein, damit neue Meldungen Sie auch bei geschlossener Seite erreichen. Dafür erzeugt Ihr Browser eine Abo-Adresse beim Push-Dienst Ihres Browser-Herstellers (Google für Chrome und Edge, Mozilla für Firefox, Apple für Safari) und zwei Schlüssel. Wir speichern diese Abo-Adresse und die beiden Schlüssel, keine IP-Adresse und keine Gerätekennung, und übergeben jede Meldung verschlüsselt an den Push-Dienst; dieser leitet sie an Ihr Gerät weiter und kann die Nachricht nicht lesen. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie widerrufen sie jederzeit in den Datenschutz-Einstellungen oder in den Benachrichtigungs-Einstellungen Ihres Browsers; das Abonnement wird dann gelöscht, ebenso, wenn der Push-Dienst es als beendet meldet.</p>'
         . '<h2 id="externe-inhalte">Externe Links und Teilen</h2>'
         . '<p>Schriften, Skripte und Bilder liefert diese Website selbst aus. Die Teilen-Schaltflächen unter Meldungen sind einfache Links, die erst beim Anklicken WhatsApp, Facebook oder Ihr E-Mail-Programm öffnen; vorher wird nichts an diese Anbieter übertragen. Links auf fremde Websites, etwa Originalquellen, Vereins- oder Behördenseiten, führen Sie auf das Angebot des jeweiligen Anbieters; dort gelten dessen Datenschutzhinweise.</p>'
         . '<h2 id="schnittstelle">Technische Schnittstelle</h2>'
-        . '<p>Unter /wp-json/ stellt WordPress eine Schnittstelle bereit, über die die Seite selbst Aufrufe, Besuche und Anzeigenkontakte zählt und das Wetter ausliefert. Sie gibt nur veröffentlichte Inhalte aus.</p>'
+        . '<p>Unter /wp-json/ stellt WordPress eine Schnittstelle bereit, über die die Seite selbst Aufrufe, Besuche und Anzeigenkontakte zählt, das Wetter ausliefert und Push-Abonnements entgegennimmt oder löscht. Sie gibt nur veröffentlichte Inhalte aus.</p>'
         . '<h2 id="ihre-rechte">Ihre Rechte</h2>'
         . '<p>Im Rahmen der gesetzlichen Voraussetzungen bestehen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Eine Einwilligung können Sie für die Zukunft widerrufen. Sie können sich bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere der <a href="https://www.ldi.nrw.de/" target="_blank" rel="noopener">Landesbeauftragten für Datenschutz und Informationsfreiheit NRW</a>.</p>'
         . '<p>Stand: 2. Oktober 2026.</p>';
