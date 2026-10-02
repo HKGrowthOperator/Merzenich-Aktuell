@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. Oktober 2026 · Theme 21.8.0 · Core-Plugin 1.18.0 (Historie unten)
+2. Oktober 2026 · Theme 21.8.0 · Core-Plugin 1.18.1 (Historie unten)
+
+## Neu in 1.18.1 (02.10.2026): Google-Bestätigungsdatei
+
+Search Console, Methode „HTML-Datei“: Im Backend SEO & Geo den Dateinamen (`google…`) eintragen, das Plugin liefert `/google….html` mit dem verlangten Inhalt aus (`ma_seo_google_datei_name()`, `ma_seo_google_datei_inhalt()`, Rewrite `ma_seo=googledatei`). Nichts muss per FTP hochgeladen werden. Geprüft: `qa/wordpress/seo-test.php`, Live-Abruf der Datei.
 
 ## Neu in 1.18.0 (02.10.2026): Benachrichtigungen aufs Handy (Web Push, ohne Fremddienst)
 

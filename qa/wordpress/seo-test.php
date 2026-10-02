@@ -99,5 +99,9 @@ $g = ma_seo_graph(['typ' => 'seite', 'titel' => 'Über uns', 'beschreibung' => '
 pruefe('Seite: AboutPage mit dateModified und Brotkrumen', $finde($g, 'AboutPage')['dateModified'] === '2026-10-02T10:00:00+02:00' && $finde($g, 'BreadcrumbList') !== null, true);
 pruefe('Graph ist gültiges JSON ohne leere Werte', !str_contains(json_encode($g), '""') && !str_contains(json_encode($g), 'null'), true);
 
+echo "\nGoogle-Bestätigungsdatei\n";
+pruefe('Name aus Dateiname, mit .html, aus Adresse; Fremdes abgelehnt', [ma_seo_google_datei_name('googlef2b56ca4196206a7'), ma_seo_google_datei_name(' googlef2b56ca4196206a7.html '), ma_seo_google_datei_name('https://merzenich-aktuell.de/googlef2b56ca4196206a7.html'), ma_seo_google_datei_name('google123.html'), ma_seo_google_datei_name('')], ['googlef2b56ca4196206a7', 'googlef2b56ca4196206a7', 'googlef2b56ca4196206a7', '', '']);
+pruefe('Inhalt exakt wie von Google verlangt', ma_seo_google_datei_inhalt('googlef2b56ca4196206a7'), 'google-site-verification: googlef2b56ca4196206a7.html');
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

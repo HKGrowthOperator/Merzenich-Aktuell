@@ -117,6 +117,19 @@ function ma_seo_zeit(int $ts): string {
     return function_exists('wp_date') ? (string) wp_date('c', $ts) : date('c', $ts);
 }
 
+/**
+ * Google-Bestätigungsdatei (Search Console, Methode „HTML-Datei“, 02.10.2026):
+ * Google verlangt /google<16 Hex>.html mit genau dem Inhalt
+ * „google-site-verification: google<16 Hex>.html“. Der Name steht in der
+ * Option ma_seo_google_datei; ausgeliefert wird per Rewrite (ma_seo=googledatei),
+ * nichts muss auf den Server kopiert werden.
+ */
+function ma_seo_google_datei_name(string $eingabe): string {
+    $eingabe = trim($eingabe);
+    return preg_match('/(google[a-f0-9]{16})(?:\.html)?$/i', $eingabe, $m) ? strtolower($m[1]) : '';
+}
+function ma_seo_google_datei_inhalt(string $name): string { return 'google-site-verification: ' . $name . '.html'; }
+
 /** Zeilen für robots.txt: Suchseiten und Formular-Rückmeldungen nicht crawlen, News-Sitemap nennen. */
 function ma_seo_robots_txt(string $vorhanden, string $home): string {
     $zeilen = rtrim($vorhanden) . "\nDisallow: /?s=\nDisallow: /*?s=\nDisallow: /*?gesendet=\n";
@@ -454,6 +467,7 @@ add_action('init', function (): void {
     add_rewrite_rule('^llms\.txt$', 'index.php?ma_seo=llms', 'top');
     add_rewrite_rule('^suche/?$', 'index.php?ma_seo=suche', 'top');
     add_rewrite_rule('^([a-f0-9]{32})\.txt$', 'index.php?ma_seo=indexnow&ma_key=$matches[1]', 'top');
+    add_rewrite_rule('^(google[a-f0-9]{16})\.html$', 'index.php?ma_seo=googledatei&ma_key=$matches[1]', 'top');
 }, 5);
 add_filter('query_vars', function (array $v): array { $v[] = 'ma_seo'; $v[] = 'ma_key'; return $v; });
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_seo') ? false : $ziel);
@@ -496,6 +510,11 @@ add_action('template_redirect', function (): void {
     if ($was === 'indexnow') {
         if ((string) get_query_var('ma_key') !== ma_indexnow_key()) { status_header(404); exit; }
         header('Content-Type: text/plain; charset=utf-8'); echo ma_indexnow_key(); exit;
+    }
+    if ($was === 'googledatei') {
+        $name = ma_seo_google_datei_name((string) get_option('ma_seo_google_datei', ''));
+        if ($name === '' || (string) get_query_var('ma_key') !== $name) { status_header(404); exit; }
+        header('Content-Type: text/html; charset=utf-8'); echo ma_seo_google_datei_inhalt($name); exit;
     }
     if ($was === 'llms') {
         header('Content-Type: text/plain; charset=utf-8'); header('Cache-Control: public, max-age=3600');
@@ -602,6 +621,7 @@ add_action('admin_post_ma_seo_speichern', function (): void {
     $urls = array_values(array_filter(array_map(fn($u) => esc_url_raw(trim($u)), explode("\n", (string) wp_unslash($_POST['sameas'] ?? ''))), 'ma_seo_url_gueltig'));
     update_option('ma_seo_sameas', $urls, false);
     update_option('ma_seo_google', sanitize_text_field(wp_unslash($_POST['google'] ?? '')), false);
+    update_option('ma_seo_google_datei', ma_seo_google_datei_name(sanitize_text_field(wp_unslash($_POST['google_datei'] ?? ''))), false);
     update_option('ma_seo_bing', sanitize_text_field(wp_unslash($_POST['bing'] ?? '')), false);
     wp_safe_redirect(admin_url('admin.php?page=ma-seo&gespeichert=1')); exit;
 });
@@ -615,6 +635,8 @@ function ma_seo_seite_admin(): void {
     echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="ma_seo_speichern">'; wp_nonce_field('ma_seo_speichern');
     echo '<table class="form-table"><tr><th><label for="sameas">Offizielle Profile (sameAs)</label></th><td><textarea id="sameas" name="sameas" rows="4" class="large-text" placeholder="https://www.facebook.com/…&#10;https://www.instagram.com/…&#10;https://whatsapp.com/channel/…">' . esc_textarea(implode("\n", (array) get_option('ma_seo_sameas', []))) . '</textarea><p class="description">Eine Adresse je Zeile: Facebook, Instagram, WhatsApp-Kanal, YouTube. Erscheint in den strukturierten Daten der Organisation.</p></td></tr>';
     echo '<tr><th><label for="google">Google Search Console</label></th><td><input id="google" name="google" class="regular-text" value="' . esc_attr((string) get_option('ma_seo_google', '')) . '"><p class="description">Inhalt des HTML-Tags <code>google-site-verification</code> (nur der Code).</p></td></tr>';
+    $gd = ma_seo_google_datei_name((string) get_option('ma_seo_google_datei', ''));
+    echo '<tr><th><label for="google_datei">Google-Bestätigungsdatei</label></th><td><input id="google_datei" name="google_datei" class="regular-text" value="' . esc_attr($gd) . '" placeholder="google0123456789abcdef"><p class="description">Methode „HTML-Datei“ der Search Console: Dateiname ohne .html eintragen; die Datei liefert das Plugin dann unter ' . ($gd !== '' ? '<a href="' . esc_url($home . $gd . '.html') . '" target="_blank"><code>/' . esc_html($gd) . '.html</code></a>' : '<code>/google….html</code>') . ' aus.</p></td></tr>';
     echo '<tr><th><label for="bing">Bing Webmaster Tools</label></th><td><input id="bing" name="bing" class="regular-text" value="' . esc_attr((string) get_option('ma_seo_bing', '')) . '"><p class="description">Inhalt des Tags <code>msvalidate.01</code>.</p></td></tr></table>';
     submit_button('Speichern'); echo '</form>';
     [$lat, $lon] = ma_seo_mitte();
