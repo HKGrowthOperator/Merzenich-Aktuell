@@ -1,0 +1,74 @@
+{
+  "hinweis": "Amtliche Bekanntmachungen der Gemeinde Merzenich vom 02.10.2026, abgerufen 03.10.2026. Reine Sitzungshinweise; keine Aussagen über noch nicht gefasste Beschlüsse. Quellenlink an jeder Meldung.",
+  "meldungen": [
+    {
+      "slug": "rixen-stiftung-kuratorium-sitzung-2026-10-13",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Bekanntmachung · Gremien",
+      "titel": "Kuratorium der Rixen-Stiftung tagt am 13. Oktober im Rathaus",
+      "dek": "Die Gemeinde hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober, um 18 Uhr im Fraktionsraum A bekannt gemacht.",
+      "datum": "2026-10-03T18:30:00+02:00",
+      "fakten": [
+        "Dienstag, 13. Oktober 2026, 18 Uhr",
+        "Fraktionsraum A, Rathaus Merzenich, Valdersweg 1",
+        "Öffentliche Bekanntmachung vom 2. Oktober 2026"
+      ],
+      "absaetze": [
+        "Der Ausschuss „Kuratorium Rixen-Stiftung“ der Gemeinde Merzenich kommt laut der am 2. Oktober veröffentlichten amtlichen Bekanntmachung am Dienstag, 13. Oktober 2026, um 18 Uhr zusammen. Als Sitzungsort ist Fraktionsraum A im Rathaus am Valdersweg 1 angegeben.",
+        "Die Gemeinde veröffentlicht ihre amtlichen Bekanntmachungen einschließlich Sitzungshinweisen und Unterlagen auf ihrer Internetseite. Für die Tagesordnung und eventuelle Änderungen ist die dort verlinkte Originalbekanntmachung maßgeblich. Ein Beschluss oder ein Beratungsergebnis wird mit dieser Terminmeldung nicht vorweggenommen."
+      ],
+      "themen": [
+        [
+          "gemeinderat",
+          "Gemeinderat"
+        ],
+        [
+          "bekanntmachung",
+          "Bekanntmachungen"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "quelle": {
+        "name": "Gemeinde Merzenich, öffentliche Bekanntmachungen vom 02.10.2026",
+        "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
+        "stand": "2026-10-03"
+      }
+    },
+    {
+      "slug": "wirtschaftsausschuss-sitzung-2026-10-15",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Bekanntmachung · Gremien",
+      "titel": "Wirtschafts- und Strukturausschuss trifft sich am 15. Oktober",
+      "dek": "Die zweite Sitzung des Ausschusses für Wirtschaftsförderung und Strukturentwicklung ist für Donnerstag, 15. Oktober, 18 Uhr im Merzenicher Ratssaal angesetzt.",
+      "datum": "2026-10-03T18:29:00+02:00",
+      "fakten": [
+        "Donnerstag, 15. Oktober 2026, 18 Uhr",
+        "2. Sitzung des Ausschusses für Wirtschaftsförderung und Strukturentwicklung",
+        "Ratssaal, Rathaus Merzenich, Valdersweg 1",
+        "Amtliche Bekanntmachung vom 2. Oktober"
+      ],
+      "absaetze": [
+        "Der Ausschuss für Wirtschaftsförderung und Strukturentwicklung der Gemeinde Merzenich soll am Donnerstag, 15. Oktober 2026, um 18 Uhr zu seiner zweiten Sitzung zusammenkommen. Das geht aus einer öffentlichen Bekanntmachung der Gemeindeverwaltung vom 2. Oktober hervor.",
+        "Die Zusammenkunft ist im Ratssaal des Rathauses am Valdersweg 1 vorgesehen. Wer sich über die zu behandelnden Punkte informieren möchte, findet die amtliche Bekanntmachung mit den maßgeblichen Sitzungsunterlagen auf der Gemeindeseite. Über Ergebnisse dieser noch bevorstehenden Sitzung kann derzeit nicht berichtet werden."
+      ],
+      "themen": [
+        [
+          "gemeinderat",
+          "Gemeinderat"
+        ],
+        [
+          "wirtschaftsfoerderung",
+          "Wirtschaftsförderung"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "quelle": {
+        "name": "Gemeinde Merzenich, öffentliche Bekanntmachungen vom 02.10.2026",
+        "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
+        "stand": "2026-10-03"
+      }
+    }
+  ]
+}
