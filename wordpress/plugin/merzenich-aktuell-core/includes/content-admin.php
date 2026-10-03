@@ -194,6 +194,11 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     $options = ['' => 'Bitte wählen'];
     foreach ($slots as $slot) $options[$slot] = ma_ad_slot_label($slot);
     ma_admin_select('ma_ad_slot','Platzierung',ma_admin_field_value($post->ID,'ma_ad_slot'),$options);
+    // Kampagne über mehrere Plätze (03.10.2026): dasselbe Motiv zusätzlich auf weiteren Plätzen.
+    $weitere = array_map('strval', (array) get_post_meta($post->ID, 'ma_ad_slot_weitere'));
+    echo '<tr><th scope="row">Weitere Plätze (Kampagne)</th><td><input type="hidden" name="ma_ad_slot_weitere_feld" value="1"><div style="columns:2;max-width:640px">';
+    foreach ($slots as $slot) printf('<label style="display:block"><input type="checkbox" name="ma_ad_slot_weitere[]" value="%s"%s> %s</label>', esc_attr($slot), checked(in_array($slot, $weitere, true), true, false), esc_html(ma_ad_slot_label($slot)));
+    echo '</div><p class="description">Optional. Die Anzeige läuft zusätzlich zum Hauptplatz auf jedem gewählten Platz und wechselt sich dort mit anderen laufenden Anzeigen ab. Freigabe und Laufzeit gelten für alle Plätze.</p></td></tr>';
     if (function_exists('ma_ad_quota_applies') && ma_ad_quota_applies()) {
         $quota = ma_ad_quota_for_user((int)get_current_user_id());
         echo '<tr><th scope="row">Ihr Kontingent</th><td>'.esc_html((string)$quota['max']).' gleichzeitig laufende oder eingereichte Anzeige'.($quota['max'] === 1 ? '' : 'n').'.';
@@ -286,6 +291,14 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
     if ($post->post_type === 'ma_event') {
         $source = (string)get_post_meta($post_id,'ma_event_source_url',true);
         if ($source !== '') update_post_meta($post_id,'ma_source_url',$source);
+    }
+    if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_slot_weitere_feld'])) {
+        $erlaubt = $partner && function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : ma_ad_slots();
+        $haupt = (string) get_post_meta($post_id, 'ma_ad_slot', true);
+        $neu = array_values(array_unique(array_filter(array_map('sanitize_key', (array) wp_unslash($_POST['ma_ad_slot_weitere'] ?? [])), fn($s) => $s !== $haupt && in_array($s, $erlaubt, true))));
+        $alt = array_map('strval', (array) get_post_meta($post_id, 'ma_ad_slot_weitere'));
+        sort($neu); sort($alt);
+        if ($neu !== $alt) { delete_post_meta($post_id, 'ma_ad_slot_weitere'); foreach ($neu as $s) add_post_meta($post_id, 'ma_ad_slot_weitere', $s); }
     }
     if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_alt'])) {
         $bild = (int) get_post_thumbnail_id($post_id);

@@ -14,8 +14,10 @@
  * Partner-Rollen und bleibt hier außen vor.
  *
  * Benutzer → Vereinszugänge: fehlende Zugänge anlegen (E-Mail-Vorlage mit
- * {kurz}), Einladung je Verein einzeln senden. Ohne Einladung erfährt niemand
- * von seinem Zugang; das Passwort ist zufällig und niemandem bekannt.
+ * {kurz}). Eine Einladungsfunktion gibt es vorerst nicht (Entscheidung KBS,
+ * 03.10.2026: noch keine echten Vereinsadressen). Die Administration trägt die
+ * echte Adresse im Profil ein und setzt dort das Passwort bzw. schickt danach
+ * den Passwort-Link.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -79,16 +81,6 @@ add_action('admin_menu', function (): void {
     add_users_page('Vereinszugänge', 'Vereinszugänge', 'manage_options', 'ma-vereinszugaenge', 'ma_vereinszugaenge_seite');
 });
 
-add_action('admin_post_ma_verein_einladen', function (): void {
-    if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.', 403);
-    $id = (int) ($_GET['user'] ?? 0);
-    check_admin_referer('ma_verein_einladen_' . $id);
-    if ($id && get_user_meta($id, 'ma_verein_kurz', true)) {
-        wp_send_new_user_notifications($id, 'user');
-        update_user_meta($id, 'ma_verein_eingeladen', current_time('d.m.Y H:i'));
-    }
-    wp_safe_redirect(add_query_arg('ma_eingeladen', $id, admin_url('users.php?page=ma-vereinszugaenge'))); exit;
-});
 
 function ma_vereinszugaenge_seite(): void {
     if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
@@ -105,7 +97,6 @@ function ma_vereinszugaenge_seite(): void {
     }
     if (!empty($_GET['ma_meldung'])) $meldung = sanitize_text_field(wp_unslash($_GET['ma_meldung']));
     if (!empty($_GET['ma_profile'])) { [$pa, $pv] = array_map('intval', explode('-', sanitize_text_field(wp_unslash($_GET['ma_profile'])) . '-0')); $meldung = "$pa Vereinsprofile angelegt, $pv waren schon da."; }
-    if (!empty($_GET['ma_eingeladen'])) $meldung = 'Einladung an ' . esc_html(get_userdata((int) $_GET['ma_eingeladen'])->user_email ?? '') . ' gesendet.';
     $vereine = ma_vereine_fuer_zugang();
     echo '<div class="wrap"><h1>Vereinszugänge</h1>';
     echo '<p>Jeder Verein aus dem Vereinsverzeichnis der Gemeinde bekommt einen eigenen Redaktionszugang. Damit reicht er Meldungen, Termine, Fotos und Ergänzungen zu seinem Vereinsprofil ein. <strong>Veröffentlicht wird immer erst nach Freigabe</strong> unter <a href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Merzenich Aktuell → Freigaben</a>. Wer Fotos hochlädt, muss vorher die Bildrechte bestätigen.</p>';
@@ -126,7 +117,7 @@ function ma_vereinszugaenge_seite(): void {
         wp_nonce_field('ma_verein_zugang_neu_0');
         echo '<p><strong>Weiteren Redakteur für einen Verein anlegen</strong></p><p><select name="verein" required style="max-width:100%"><option value="">Verein wählen</option>';
         foreach ($struktur as $k => $e) printf('<option value="%s">%s</option>', esc_attr($k), esc_html($e['verein']['name']));
-        echo '</select></p><p><input name="name" placeholder="Name der Person" required class="regular-text"> <input name="email" type="email" placeholder="E-Mail" required class="regular-text"></p><p><button class="button">Redakteur anlegen</button> <span class="description">Keine Mail; danach „Einladung senden“.</span></p></form></div>';
+        echo '</select></p><p><input name="name" placeholder="Name der Person" required class="regular-text"> <input name="email" type="email" placeholder="E-Mail" required class="regular-text"></p><p><button class="button">Redakteur anlegen</button> <span class="description">Keine Mail. Passwort danach im Profil setzen.</span></p></form></div>';
     }
     echo '<table class="widefat striped" style="margin-top:18px"><thead><tr><th>Verein</th><th>Ort</th><th>Rolle</th><th>Zugang</th><th></th></tr></thead><tbody>';
     $orte = ['merzenich' => 'Merzenich', 'golzheim' => 'Golzheim', 'girbelsrath' => 'Girbelsrath', 'morschenich' => 'Morschenich', 'buergewald' => 'Bürgewald'];
@@ -136,14 +127,12 @@ function ma_vereinszugaenge_seite(): void {
         if ($u) $mit++;
         $weitere = function_exists('ma_verein_redakteure') && !ma_verein_ist_abteilung($v) ? array_filter(ma_verein_redakteure(ma_verein_kurz($v['name'])), fn($x) => !$u || $x->ID !== $u->ID) : [];
         $rolle = ma_verein_rolle($v) === 'ma_sport_partner' ? 'Sport-Partner' : 'Vereins-Partner';
-        $einladen = $u ? '<a class="button" href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=ma_verein_einladen&user=' . $u->ID), 'ma_verein_einladen_' . $u->ID)) . '">Einladung senden</a>' : '';
-        $eingeladen = $u ? (string) get_user_meta($u->ID, 'ma_verein_eingeladen', true) : '';
         $zeile = function (WP_User $x) {
             $ein = (string) get_user_meta($x->ID, 'ma_verein_eingeladen', true);
             $gesperrt = function_exists('ma_zugang_gesperrt') && ma_zugang_gesperrt($x->ID);
             return '<a href="' . esc_url(get_edit_user_link($x->ID)) . '">' . esc_html($x->user_login) . '</a>' . ($gesperrt ? ' <strong style="color:#b32d2e">deaktiviert</strong>' : '')
-                . '<br><span class="description">' . esc_html($x->user_email) . ($ein !== '' ? ' · eingeladen ' . esc_html($ein) : ' · noch nicht eingeladen') . '</span>'
-                . (function_exists('ma_verein_zugang_link') ? '<br><a href="' . esc_url(ma_verein_zugang_link($gesperrt ? 'freigeben' : 'sperren', $x->ID)) . '">' . ($gesperrt ? 'Aktivieren' : 'Deaktivieren') . '</a> · <a href="' . esc_url(ma_verein_zugang_link('passwort', $x->ID)) . '">Passwort-Link senden</a> · <a href="' . esc_url(wp_nonce_url(admin_url('admin-post.php?action=ma_verein_einladen&user=' . $x->ID), 'ma_verein_einladen_' . $x->ID)) . '">Einladung senden</a>' : '');
+                . '<br><span class="description">' . esc_html($x->user_email) . ($ein !== '' ? ' · eingeladen ' . esc_html($ein) : '') . '</span>'
+                . (function_exists('ma_verein_zugang_link') ? '<br><a href="' . esc_url(ma_verein_zugang_link($gesperrt ? 'freigeben' : 'sperren', $x->ID)) . '">' . ($gesperrt ? 'Aktivieren' : 'Deaktivieren') . '</a> · <a href="' . esc_url(ma_verein_zugang_link('passwort', $x->ID)) . '">Passwort-Link senden</a> <span class="description">(nur mit echter Adresse)</span> · <a href="' . esc_url(get_edit_user_link($x->ID) . '#password') . '">Passwort im Profil setzen</a>' : '');
         };
         $status = $u ? $zeile($u) : '<em>noch kein Zugang</em>';
         foreach ($weitere as $w) $status .= '<hr style="margin:6px 0">' . $zeile($w);

@@ -16,10 +16,11 @@ function ma_partner_antrag_typen(): array {
         'polizei' => 'Polizei',
         'feuerwehr' => 'Feuerwehr',
         'rathaus' => 'Rathaus',
-        'sport' => 'Sport (Fußballverein)',
+        'sport' => 'Sportverein (alle Sportarten)',
         'verein' => 'Verein',
         'immobilien' => 'Immobilien',
         'unternehmen' => 'Unternehmen',
+        'werbung' => 'Werbepartner',
     ];
 }
 
@@ -33,6 +34,7 @@ function ma_partner_antrag_rolle(string $typ): string {
         'verein' => 'ma_vereine_partner',
         'immobilien' => 'ma_immobilien_partner',
         'unternehmen' => 'ma_wirtschaft_partner',
+        'werbung' => 'ma_werbe_partner',
     ][$typ] ?? '';
 }
 

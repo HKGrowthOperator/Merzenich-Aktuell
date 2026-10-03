@@ -165,6 +165,7 @@ function ma_theme_guide_icon(string $kind): string {
         'kerze'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M28 18h8v25h-8zM32 5c6 6 6 10 0 14-6-4-6-8 0-14Z" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
         'familie'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="42" cy="18" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 42c1-11 7-16 14-16s13 5 14 16M34 42c1-8 5-12 10-12 6 0 10 4 11 12" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
         'werbung'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 22h12l28-12v28L20 28H8zM20 28l6 14h8l-5-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+        'arbeit'=>'<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M10 16h44v26H10zM24 16v-6h16v6M10 27h44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
     ];
     return $icons[$kind]??$icons['werbung'];
 }
@@ -177,6 +178,14 @@ function ma_theme_publish_guide(string $type): string {
                 ['haus','Immobilie verkaufen','Haus, Wohnung, Grundstück oder Gewerbeobjekt.','verkauf'],
                 ['haus','Immobilie vermieten','Wohnung, Haus oder Gewerbefläche zur Miete.','vermietung'],
                 ['haus','Immobilie suchen','Gesuch für Kauf oder Miete.','gesuch'],
+            ],
+        ],
+        'ma_job'=>[
+            'title'=>'Stellenanzeige aufgeben','intro'=>'Ausbildungsplatz, Stelle oder Minijob in der Gemeinde Merzenich. Die Redaktion prüft vor der Veröffentlichung.',
+            'form'=>'stelle','cards'=>[
+                ['arbeit','Ausbildungsplatz','Ausbildung oder duales Studium anbieten.','ausbildung'],
+                ['arbeit','Stelle','Voll- oder Teilzeitstelle ausschreiben.','vollzeit'],
+                ['arbeit','Minijob / Aushilfe','Aushilfe, Minijob oder Praktikum.','minijob'],
             ],
         ],
         'ma_obituary'=>[

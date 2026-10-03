@@ -13,7 +13,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 // Hochzaehlen, wenn Rollen dazukommen: add_role laeuft dann beim naechsten Aufruf.
-if (!defined('MA_PARTNER_ROLES_VERSION')) define('MA_PARTNER_ROLES_VERSION', '2');
+if (!defined('MA_PARTNER_ROLES_VERSION')) define('MA_PARTNER_ROLES_VERSION', '3');
 
 function ma_partner_policies(): array {
     return [
@@ -67,6 +67,14 @@ function ma_partner_policies(): array {
             'label' => 'Immobilien-Partner',
             'description' => 'Makler / Immobilien-Verantwortliche',
             'post_types' => ['ma_property'],
+            'categories' => [],
+        ],
+        // 03.10.2026 (KBS-Benutzergruppen): Werbekunden ohne eigenes
+        // Unternehmensprofil und ohne Meldungen, nur Werbemittel und Tipps.
+        'ma_werbe_partner' => [
+            'label' => 'Werbepartner',
+            'description' => 'Werbekunde / Agentur (Werbemittel, Tipp / Sponsoring)',
+            'post_types' => ['ma_ad', 'ma_tip'],
             'categories' => [],
         ],
     ];
@@ -409,10 +417,8 @@ function ma_partner_create_account(): string {
     ]);
     if (is_wp_error($user_id)) return 'Zugang konnte nicht angelegt werden: '.$user_id->get_error_message();
 
-    if (function_exists('wp_send_new_user_notifications')) wp_send_new_user_notifications((int)$user_id, 'user');
-    else wp_new_user_notification((int)$user_id, null, 'user');
-
-    return 'Partner-Zugang für '.$name.' angelegt. Die Einladung wurde an '.$email.' gesendet.';
+    // Keine Einladungs-Mail (Entscheidung KBS 03.10.2026: Einladungsfunktion vorerst nicht vorgesehen).
+    return 'Partner-Zugang für '.$name.' angelegt (Benutzername '.$login.'). Es wurde keine E-Mail verschickt. Passwort im Profil setzen und dem Partner persönlich mitteilen: '.admin_url('user-edit.php?user_id='.(int)$user_id.'#password');
 }
 
 function ma_partner_admin_page(): void {
@@ -432,7 +438,7 @@ function ma_partner_admin_page(): void {
     echo '<p><label><strong>E-Mail</strong><br><input class="regular-text" type="email" name="partner_email" required></label></p>';
     echo '<p><label><strong>Rolle</strong><br><select name="partner_role" required><option value="">Bitte wählen</option>';
     foreach($policies as $role=>$p) if (empty($p['veraltet'])) echo '<option value="'.esc_attr($role).'">'.esc_html($p['label'].' – '.$p['description']).'</option>';
-    echo '</select></label></p><p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen & Einladung senden</button></p></form></section>';
+    echo '</select></label></p><p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen (ohne E-Mail)</button></p></form></section>';
 
     echo '<section><h2 style="margin-top:0">Rollen</h2><table class="widefat striped"><thead><tr><th>Rolle</th><th>Für</th><th>Offen</th></tr></thead><tbody>';
     foreach ($policies as $role=>$p) {

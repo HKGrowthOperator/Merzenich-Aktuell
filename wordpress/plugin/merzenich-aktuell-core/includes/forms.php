@@ -8,7 +8,7 @@ function ma_register_form_hooks(): void {
 function ma_form_shortcode($atts): string {
     $a=shortcode_atts(['typ'=>'kontakt'],$atts);
     $type=sanitize_key($a['typ']);
-    $allowed=['kontakt','meldung','termin','verein','werbung','immobilie','trauer','familie','korrektur']; if(!in_array($type,$allowed,true)) $type='kontakt';
+    $allowed=['kontakt','meldung','termin','verein','werbung','immobilie','stelle','trauer','familie','korrektur']; if(!in_array($type,$allowed,true)) $type='kontakt';
     ob_start(); ?>
     <form class="ma-public-form form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" enctype="multipart/form-data">
       <input type="hidden" name="action" value="ma_form_submit"><input type="hidden" name="type" value="<?php echo esc_attr($type); ?>"><input type="hidden" name="started" value="<?php echo esc_attr(time()); ?>"><?php wp_nonce_field('ma_form_submit_'.$type,'ma_form_nonce'); ?>
@@ -16,6 +16,7 @@ function ma_form_shortcode($atts): string {
       <?php
       $arten=[
         'immobilie'=>['verkauf'=>'Immobilie verkaufen','vermietung'=>'Immobilie vermieten','gesuch'=>'Immobilie suchen','gewerbe'=>'Gewerbeobjekt'],
+        'stelle'=>['ausbildung'=>'Ausbildungsplatz','vollzeit'=>'Vollzeitstelle','teilzeit'=>'Teilzeitstelle','minijob'=>'Minijob / Aushilfe','praktikum'=>'Praktikum'],
         'trauer'=>['traueranzeige'=>'Traueranzeige','danksagung'=>'Danksagung','jahrgedaechtnis'=>'Jahrgedächtnis'],
         'familie'=>['geburt'=>'Geburt','hochzeit'=>'Hochzeit','jubilaeum'=>'Jubiläum','glueckwunsch'=>'Glückwunsch'],
         'werbung'=>['banner'=>'Werbebanner','tipp'=>'Tipp / Sponsoring','unternehmen'=>'Unternehmensprofil'],
@@ -30,7 +31,7 @@ function ma_form_shortcode($atts): string {
       <?php endif; ?>
       <p><label>Name<br><input name="name" required maxlength="120"></label></p><p><label>E-Mail<br><input name="email" type="email" required maxlength="190"></label></p>
       <p><label>Telefon<?php echo $type==='trauer' ? ' (Pflicht, für Rückfragen)' : ' (optional, für Rückfragen)'; ?><br><input name="telefon" type="tel" maxlength="40" pattern="[0-9 +()/-]{6,}" title="Bitte eine Telefonnummer mit mindestens sechs Ziffern angeben." autocomplete="tel"<?php echo $type==='trauer' ? ' required' : ''; ?>></label></p><p><label>Betreff<br><input name="subject" required maxlength="180"></label></p><p><label>Nachricht<br><textarea name="message" rows="7" required maxlength="8000"></textarea></label></p>
-      <?php if(in_array($type,['meldung','termin','verein','werbung','immobilie','trauer','familie'],true)): ?><p><label>Datei / Bild (optional, JPG/PNG/PDF, max. 5 MB)<br><input type="file" name="attachment" accept="image/jpeg,image/png,application/pdf" data-ma-datei></label></p>
+      <?php if(in_array($type,['meldung','termin','verein','werbung','immobilie','stelle','trauer','familie'],true)): ?><p><label>Datei / Bild (optional, JPG/PNG/PDF, max. 5 MB)<br><input type="file" name="attachment" accept="image/jpeg,image/png,application/pdf" data-ma-datei></label></p>
       <p class="ma-bildrechte"><label><input type="checkbox" name="bildrechte" value="1" data-ma-bildrechte> <?php echo esc_html(ma_form_bildrechte_text()); ?></label></p>
       <script>(function(f){var d=f.querySelector('[data-ma-datei]'),c=f.querySelector('[data-ma-bildrechte]');if(!d||!c)return;function p(){c.required=!!(d.files&&d.files.length);}d.addEventListener('change',p);p();})(document.currentScript.closest('form'));</script><?php endif; ?>
       <p><button type="submit" class="btn">Absenden</button></p><p class="ma-form-note">Einsendungen werden redaktionell geprüft und nicht automatisch veröffentlicht.</p>

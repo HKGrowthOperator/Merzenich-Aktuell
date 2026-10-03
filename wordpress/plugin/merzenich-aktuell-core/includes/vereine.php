@@ -182,7 +182,7 @@ add_action('admin_post_ma_verein_zugang', function (): void {
     $meldung = '';
     if ($aktion === 'neu') {
         $r = ma_verein_redakteur_anlegen(sanitize_key($_POST['verein'] ?? ''), (string) wp_unslash($_POST['name'] ?? ''), (string) wp_unslash($_POST['email'] ?? ''));
-        $meldung = is_wp_error($r) ? 'Nicht angelegt: ' . $r->get_error_message() : 'Redakteur angelegt. Mit „Einladung senden“ erhält er seinen Zugang.';
+        $meldung = is_wp_error($r) ? 'Nicht angelegt: ' . $r->get_error_message() : 'Redakteur angelegt, keine E-Mail verschickt. Passwort im Profil setzen und persönlich mitteilen.';
     } elseif ($uid && get_user_meta($uid, 'ma_verein_kurz', true)) {
         $u = get_userdata($uid);
         if ($aktion === 'sperren') { update_user_meta($uid, 'ma_zugang_gesperrt', '1'); WP_Session_Tokens::get_instance($uid)->destroy_all(); $meldung = 'Zugang von ' . $u->display_name . ' deaktiviert.'; }

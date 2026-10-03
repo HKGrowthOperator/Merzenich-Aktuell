@@ -411,7 +411,7 @@ function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bild
     $plan = get_post_status($id) === 'future' ? 'Geplant für ' . get_post_time('d.m.Y H:i', false, $id) . ' Uhr. ' : 'Veröffentlicht. ';
     if ($typ === 'ma_ad') {
         $von = (string) get_post_meta($id, 'ma_ad_start', true); $bis = (string) get_post_meta($id, 'ma_ad_end', true);
-        return ['ok' => true, 'meldung' => $plan . 'Anzeige läuft auf „' . (function_exists('ma_ad_slot_label') ? ma_ad_slot_label((string) get_post_meta($id, 'ma_ad_slot', true)) : '') . '“' . ($von !== '' || $bis !== '' ? ' (' . ($von !== '' ? 'ab ' . mysql2date('d.m.Y H:i', $von) : '') . ($von !== '' && $bis !== '' ? ', ' : '') . ($bis !== '' ? 'bis ' . mysql2date('d.m.Y H:i', $bis) : '') . ')' : '') . '.' . (get_option('ma_ads_enabled') ? '' : ' Hinweis: Werbung ist unter Werbung → Werbeplätze global ausgeschaltet.')];
+        return ['ok' => true, 'meldung' => $plan . 'Anzeige läuft auf „' . (function_exists('ma_ad_slot_label') ? implode('“, „', array_map('ma_ad_slot_label', function_exists('ma_ad_plaetze') ? ma_ad_plaetze($id) : [(string) get_post_meta($id, 'ma_ad_slot', true)])) : '') . '“' . ($von !== '' || $bis !== '' ? ' (' . ($von !== '' ? 'ab ' . mysql2date('d.m.Y H:i', $von) : '') . ($von !== '' && $bis !== '' ? ', ' : '') . ($bis !== '' ? 'bis ' . mysql2date('d.m.Y H:i', $bis) : '') . ')' : '') . '.' . (get_option('ma_ads_enabled') ? '' : ' Hinweis: Werbung ist unter Werbung → Werbeplätze global ausgeschaltet.')];
     }
     if ($typ !== 'post') return ['ok' => true, 'meldung' => $plan];
     $wo = $startseite ? ma_relevanz_stufe($relevanz)['wo'] : 'nur in der Rubrik, nicht auf der Startseite';
@@ -503,7 +503,7 @@ function ma_freigaben_zeile(WP_Post $p): string {
     if ($p->post_type === 'ma_ad') {
         $slot = (string) get_post_meta($p->ID, 'ma_ad_slot', true); $sponsor = (string) get_post_meta($p->ID, 'ma_ad_sponsor', true);
         $von = (string) get_post_meta($p->ID, 'ma_ad_start', true); $bis = (string) get_post_meta($p->ID, 'ma_ad_end', true);
-        $kats = ($slot !== '' && function_exists('ma_ad_slot_label') ? ma_ad_slot_label($slot) : 'ohne Werbeplatz') . ($sponsor !== '' ? ' · ' . $sponsor : '') . ($von !== '' ? ' · ab ' . mysql2date('d.m.Y', $von) : '') . ($bis !== '' ? ' · bis ' . mysql2date('d.m.Y', $bis) : '');
+        $kats = ($slot !== '' && function_exists('ma_ad_slot_label') ? implode(', ', array_map('ma_ad_slot_label', function_exists('ma_ad_plaetze') ? ma_ad_plaetze($p->ID) : [$slot])) : 'ohne Werbeplatz') . ($sponsor !== '' ? ' · ' . $sponsor : '') . ($von !== '' ? ' · ab ' . mysql2date('d.m.Y', $von) : '') . ($bis !== '' ? ' · bis ' . mysql2date('d.m.Y', $bis) : '');
     }
     $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
     $startJa = ma_startseite_freigabe($p) === 'ja';

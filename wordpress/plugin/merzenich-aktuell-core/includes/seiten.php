@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-02b';
+const MA_SEITEN_VERSION = '2026-10-03';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -170,6 +170,7 @@ function ma_seite_aufgeben(): string {
     return '<p>Wählen Sie unten die Art der Anzeige. Jede Einsendung wird redaktionell geprüft und nicht automatisch veröffentlicht; wir melden uns mit Rückfragen, Format und Preis. Bilder nur mit bestätigten Bildrechten.</p>'
         . '<h2 id="werbung">Werbung: Banner, Tipp, Unternehmensprofil</h2>[ma_formular typ="werbung"]'
         . '<h2 id="immobilie">Immobilie</h2>[ma_formular typ="immobilie"]'
+        . '<h2 id="stellenanzeige">Stellenanzeige</h2><p>Ausbildungsplatz, Voll- oder Teilzeitstelle, Minijob oder Praktikum in der Gemeinde Merzenich.</p>[ma_formular typ="stelle"]'
         . '<h2 id="traueranzeige">Traueranzeige</h2><p>Für Traueranzeigen brauchen wir E-Mail und Telefon für Rückfragen.</p>[ma_formular typ="trauer"]'
         . '<h2 id="familienanzeige">Familienanzeige</h2><p>Geburt, Hochzeit, Jubiläum oder Glückwunsch, bitte mit dem Einverständnis der Betroffenen.</p>[ma_formular typ="familie"]';
 }

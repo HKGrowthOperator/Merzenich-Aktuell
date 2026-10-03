@@ -96,6 +96,17 @@ function ma_ad_is_running(WP_Post $ad, string $now = ''): bool {
  *
  * @return WP_Post[]
  */
+/**
+ * Alle Plätze einer Anzeige (03.10.2026): Hauptplatz ma_ad_slot plus weitere
+ * Plätze einer Kampagne (ma_ad_slot_weitere, ein Meta-Eintrag je Platz). So
+ * läuft dasselbe Motiv, einmal gebucht und einmal freigegeben, auf mehreren
+ * Werbeplätzen; Rotation und Zählung bleiben je Platz.
+ */
+function ma_ad_plaetze(int $id): array {
+    $p = array_merge([(string) get_post_meta($id, 'ma_ad_slot', true)], array_map('strval', (array) get_post_meta($id, 'ma_ad_slot_weitere')));
+    return array_values(array_unique(array_filter($p, fn($s) => $s !== '' && in_array($s, ma_ad_slots(), true))));
+}
+
 function ma_active_ads(string $slot, int $limit = 0): array {
     if (!in_array($slot, ma_ad_slots(), true)) return [];
     if (!get_option('ma_ads_enabled', 0)) return [];
@@ -116,7 +127,7 @@ function ma_active_ads(string $slot, int $limit = 0): array {
             'orderby' => ['date' => 'DESC'],
             'meta_query' => [
                 'relation' => 'AND',
-                ['key' => 'ma_ad_slot', 'value' => $slot],
+                ['relation' => 'OR', ['key' => 'ma_ad_slot', 'value' => $slot], ['key' => 'ma_ad_slot_weitere', 'value' => $slot]],
                 ['key' => 'ma_ad_active', 'value' => '1'],
                 ['relation' => 'OR', ['key' => 'ma_ad_start', 'compare' => 'NOT EXISTS'], ['key' => 'ma_ad_start', 'value' => '', 'compare' => '='], ['key' => 'ma_ad_start', 'value' => $now, 'compare' => '<=', 'type' => 'DATETIME']],
                 ['relation' => 'OR', ['key' => 'ma_ad_end', 'compare' => 'NOT EXISTS'], ['key' => 'ma_ad_end', 'value' => '', 'compare' => '='], ['key' => 'ma_ad_end', 'value' => $now, 'compare' => '>=', 'type' => 'DATETIME']],
@@ -125,7 +136,7 @@ function ma_active_ads(string $slot, int $limit = 0): array {
         $ads = [];
         foreach ((array)$q->posts as $ad) {
             if (!$ad instanceof WP_Post) continue;
-            if ((string)get_post_meta($ad->ID, 'ma_ad_slot', true) !== $slot) continue;
+            if (!in_array($slot, ma_ad_plaetze($ad->ID), true)) continue;
             if (!ma_ad_is_running($ad, $now)) continue;
             $ads[] = $ad;
         }
