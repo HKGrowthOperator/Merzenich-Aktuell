@@ -193,6 +193,28 @@
       "motive": [
         "rathaus-merzenich"
       ]
+    },
+    "sport.spielbericht": {
+      "titel": "Fußballspiel und Ergebnisbericht mit neutralem Sportplatzmotiv",
+      "motive": [
+        "fussball"
+      ]
+    },
+    "gemeinde.herbstlaub": {
+      "titel": "Kommunaler Bürgerservice zur Laubannahme; statt einer falschen Laubaufnahme das echte Rathaus als Ortsmotiv",
+      "motive": [
+        "rathaus-merzenich"
+      ]
+    },
+    "gemeinde.stellenangebot": {
+      "titel": "Stellenangebot der Gemeindeverwaltung; Rathaus als erkennbares Symbolmotiv des Arbeitgebers",
+      "motive": [
+        "rathaus-merzenich"
+      ]
+    },
+    "vereine.erntedank": {
+      "titel": "Erntedankfest in Girbelsrath ohne freigegebenes Originalfoto; kein fremder Orts- oder Kirchenbezug",
+      "motive": []
     }
   }
 }
