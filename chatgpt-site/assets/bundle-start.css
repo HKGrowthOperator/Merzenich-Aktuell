@@ -1449,7 +1449,12 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 .kopf-wetter-ort{margin-right:2px}.kopf-wetter-ort::after{content:" ·";color:#9a948c;font-weight:400;margin-right:2px}
 /* Schmale Handys: das Wort „Merzenich“ fällt weg, Symbol und Temperatur bleiben. */
 @media (max-width:389px){.kopf-wetter-ort{display:none}.mast-actions>.kopf-wetter{font-size:13px}.masthead .logo img{height:auto!important;width:172px!important;max-width:172px!important}}
-@media (max-width:340px){.masthead .logo img{width:148px!important;max-width:148px!important}}
+/* Handykopf (03.10.2026): „Merzenich“ beim Wetter lief bei 360–479 px über das Logo.
+   Unter 480 px wieder wie am 30.09.: Symbol, Temperatur, Datum; unter 390 px ohne Symbol. */
+@media (max-width:479px){.kopf-wetter-ort{display:none}}
+@media (min-width:390px) and (max-width:409px){.masthead .logo img{height:auto!important;width:180px!important;max-width:180px!important}}
+@media (max-width:389px){.kopf-wetter-icon{display:none}}
+@media (max-width:340px){.masthead .logo img{width:140px!important;max-width:140px!important}}
 /* Unternehmen (30.09.2026, Aufbau wie der Wirtschaftsbereich von Oberberg Aktuell):
    Karten je zwei nebeneinander, Bild oben, Kicker, Titel, Zeile mit Datum bzw.
    „Anzeige“, Anriss, Weiterlesen. Nachladen beim Scrollen (unternehmen.js). */
@@ -1487,6 +1492,9 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 .werbung{position:relative}
 .werbung--band,.werbung--artikel{box-sizing:border-box;padding:12px 0;border-top:1px solid var(--ma-line,#deddd9)}
 .werbung--band{margin-top:32px;margin-bottom:8px}
+/* Band im Seitenraster (03.10.2026): padding:12px 0 nahm .shell den Seitenrand,
+   am Handy liefen Label, Linie und Anzeige randlos. So breit wie die Inhaltsspalten. */
+.werbung--band.shell{width:calc(100% - 2 * var(--gutter,20px));max-width:calc(var(--shell,1360px) - 2 * var(--gutter,20px))}
 .werbung--artikel{margin:28px 0}
 .werbung-label{display:block;margin-bottom:8px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6f6a63}
 .werbung--spalte .werbung-label,.werbung--sport .werbung-label,.werbung--unternehmen .werbung-label{margin-bottom:7px;color:#77716a;font-size:9px;font-weight:800;letter-spacing:.13em}
