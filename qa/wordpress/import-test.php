@@ -56,7 +56,8 @@ pruefe('jeder Termin mit alter Adresse /termine/<slug>/', count(array_filter($ev
 $roh = file_get_contents("$wurzel/wordpress-delivery/merzenich-aktuell-import.xml");
 // Auf Markup statt Teilwoerter pruefen: 'Bewerbungsmodalitaeten' enthaelt
 // 'werbung', ist aber regulaerer Redaktionstext einer Stellenmeldung.
-$werbemarker = preg_match('/<!--\\s*werbung:|\\bdata-werbung\\s*=|\\b(?:class|id)="[^"]*\\b(?:ma-ad-|ad-slot|werbung-slot|anzeige-slot)/i', $roh) === 1;\npruefe('keine Werbeflaechen im Import', $werbemarker, false);
+$werbemarker = preg_match('/<!--\\s*werbung:|\\bdata-werbung\\s*=|\\b(?:class|id)="[^"]*\\b(?:ma-ad-|ad-slot|werbung-slot|anzeige-slot)/i', $roh) === 1;
+pruefe('keine Werbeflaechen im Import', $werbemarker, false);
 pruefe('Gemeindedaten im Plugin = deploy/gemeinde.json', file_get_contents("$wurzel/wordpress/plugin/merzenich-aktuell-core/data/gemeinde.json"), file_get_contents("$wurzel/deploy/gemeinde.json"));
 
 // ------------------------------------------------------------------ Stubs
