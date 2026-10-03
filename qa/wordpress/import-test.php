@@ -54,7 +54,7 @@ pruefe('Rechte geprueft nur mit Lizenz oder Sichtung', count(array_filter($bilde
 pruefe('jeder Termin mit Beginn im Format datetime-local', count(array_filter($events, fn($e) => preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $e['meta']['ma_event_start'] ?? ''))), count($events));
 pruefe('jeder Termin mit alter Adresse /termine/<slug>/', count(array_filter($events, fn($e) => ($e['meta']['ma_legacy_url'] ?? '') === '/termine/' . $e['name'] . '/')), count($events));
 $roh = file_get_contents("$wurzel/wordpress-delivery/merzenich-aktuell-import.xml");
-pruefe('keine Werbeflaechen im Import', str_contains($roh, 'werbung') || str_contains($roh, 'ma-ad-'), false);
+// Auf Markup statt Teilwoerter pruefen: 'Bewerbungsmodalitaeten' enthaelt\n// 'werbung', ist aber regulaerer Redaktionstext einer Stellenmeldung.\n$werbemarker = preg_match('/<!--\\s*werbung:|\\bdata-werbung\\s*=|\\b(?:class|id)="[^"]*\\b(?:ma-ad-|ad-slot|werbung-slot|anzeige-slot)/i', $roh) === 1;\npruefe('keine Werbeflaechen im Import', $werbemarker, false);
 pruefe('Gemeindedaten im Plugin = deploy/gemeinde.json', file_get_contents("$wurzel/wordpress/plugin/merzenich-aktuell-core/data/gemeinde.json"), file_get_contents("$wurzel/deploy/gemeinde.json"));
 
 // ------------------------------------------------------------------ Stubs
