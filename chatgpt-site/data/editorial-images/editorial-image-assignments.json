@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-29T19:10:40.562Z",
+  "updatedAt": "2026-10-03T18:42:00.377Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -413,6 +413,87 @@
       "assignedAt": "2026-09-29T19:10:40.561Z",
       "articleId": "2026-09-29-kleidertreff-keine-erwachsenenkleidung",
       "articleDate": "2026-09-29T10:56:00+02:00"
+    },
+    "/vereine/fc-golzheim-sportlerheim-fundamente-betoniert-2026/": {
+      "imageId": "web-vereinsdetail-01-53ce1cd2",
+      "pool": "vereinsdetail",
+      "motiv": "vereinsheim",
+      "regel": "vereine.vereinsheim",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-26-fc-golzheim-sportlerheim-fundamente-betoniert-2026",
+      "articleDate": "2026-09-26T15:09:00+02:00"
+    },
+    "/sport/sv-morschenich-merken-0-1-2026-09-27/": {
+      "imageId": "web-sport-16-74d277b0",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-27-sv-morschenich-merken-0-1-2026-09-27",
+      "articleDate": "2026-09-27T19:15:00+02:00"
+    },
+    "/sport/fc-golzheim-dueren-77-3-1-2026-09-27/": {
+      "imageId": "web-sport-18-80141c60",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-27-fc-golzheim-dueren-77-3-1-2026-09-27",
+      "articleDate": "2026-09-27T20:12:00+02:00"
+    },
+    "/sport/sc-merzenich-noervenich-8-2-2026-09-27/": {
+      "imageId": "web-sport-09-edd5b8c9",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-28-sc-merzenich-noervenich-8-2-2026-09-27",
+      "articleDate": "2026-09-28T08:14:00+02:00"
+    },
+    "/sport/fc-golzheim-u15-saisonstart-2026/": {
+      "imageId": "web-sport-16-74d277b0",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-28-fc-golzheim-u15-saisonstart-2026",
+      "articleDate": "2026-09-28T14:12:00+02:00"
+    },
+    "/leben/herbstlaub-2026-abgabe-bauhof-girbelsrath/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "gemeinde.herbstlaub",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-09-30-herbstlaub-2026-abgabe-bauhof-girbelsrath",
+      "articleDate": "2026-09-30T10:46:00+02:00"
+    },
+    "/leben/kita-baerenstark-golzheim-erzieher-stelle-2026/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "gemeinde.stellenangebot",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-10-01-kita-baerenstark-golzheim-erzieher-stelle-2026",
+      "articleDate": "2026-10-01T11:09:00+02:00"
+    },
+    "/sport/sc-merzenich-barmen-5-0-2026-10-02/": {
+      "imageId": "web-sport-18-80141c60",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-10-02-sc-merzenich-barmen-5-0-2026-10-02",
+      "articleDate": "2026-10-02T21:04:00+02:00"
+    },
+    "/rathaus/wirtschaftsausschuss-sitzung-2026-10-15/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-03T18:42:00.377Z",
+      "articleId": "2026-10-03-wirtschaftsausschuss-sitzung-2026-10-15",
+      "articleDate": "2026-10-03T18:29:00+02:00"
     }
   }
 }

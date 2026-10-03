@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:2. Sitzung: Wirtschaftsförderung und Strukturentwicklung
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:wirtschaftsausschuss-2026-10-15@merzenich-aktuell.de
+DTSTAMP:20261003T060000Z
+DTSTART:20261015T160000Z
+SUMMARY:2. Sitzung: Wirtschaftsförderung und Strukturentwicklung
+DESCRIPTION:Zweite Sitzung des Ausschusses für Wirtschaftsförderung und S
+ trukturentwicklung\, Donnerstag\, 15. Oktober\, 18 Uhr im Ratssaal.\nVeran
+ stalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de
+ /termine/wirtschaftsausschuss-2026-10-15/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wirtschaftsaussch
+ uss-2026-10-15/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

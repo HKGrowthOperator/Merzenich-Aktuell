@@ -7,10 +7,32 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Tue, 29 Sep 2026 08:56:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 03 Oct 2026 16:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Vereine</title><link>https://merzenichaktuell.hk-growthoperator.de/vereine/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/vereine/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenicher Pfadfinder kündigen Teilnahme am Erntedankfest in Girbelsrath an</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/pfadfinder-erntedank-girbelsrath-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/pfadfinder-erntedank-girbelsrath-2026/</guid>
+<pubDate>Mon, 28 Sep 2026 16:06:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Nach ihrem Stand beim Merzenicher Ortsfest sind die Pfadfinder auch für Sonntag, 4. Oktober, beim Erntedankfest in Girbelsrath angekündigt.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/girbelsrath-1440.webp" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath</media:description></media:content>
+</item>
+<item>
+<title>Erweiterung des Golzheimer Sportlerheims: Streifenfundamente sind betoniert</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/fc-golzheim-sportlerheim-fundamente-betoniert-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/fc-golzheim-sportlerheim-fundamente-betoniert-2026/</guid>
+<pubDate>Sat, 26 Sep 2026 13:09:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Golzheim</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der FC Golzheim meldet den nächsten Bauabschnitt beim Erweiterungsprojekt seines Sportlerheims. Nach Schalung und Bewehrung wurden die Fundamente betoniert.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/vereinsdetail/vereinsdetail-01-53ce1cd2bd.jpg" medium="image"><media:credit>noebse / Wikimedia Commons · CC BY-SA 2.5</media:credit><media:description>Vereinsheim</media:description></media:content>
+</item>
 <item>
 <title>FC Golzheim erweitert sein Sportlerheim – viel Eigenleistung auf der Baustelle</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/vereine/fc-golzheim-sportlerheim-erweiterung/</link>
@@ -86,7 +108,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Jüngsten bekamen beim Stufenwechsel ihr blaues Halstuch, die Älteren wanderten rund 50 Kilometer bis zur Burg Greifenstein und zurück.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

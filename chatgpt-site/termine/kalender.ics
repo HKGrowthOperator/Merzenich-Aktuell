@@ -7,19 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:leader-infoabend@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20260902T150000Z
-SUMMARY:Digitaler LEADER-Infoabend
-DESCRIPTION:Förderbedingungen der aktuellen LEADER-Periode\, bis 70 Prozen
- t Förderung\, maximal 250.000 Euro.\nVeranstalter: LAG Rheinisches Revier
-  an Inde und Rur\nhttps://merzenichaktuell.hk-growthoperator.de/termine/le
- ader-infoabend/
-LOCATION:
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/leader-infoabend/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:buergersprechstunde@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260904T160000Z
@@ -175,6 +162,34 @@ DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalte
  ne/ortsfest-2026/
 LOCATION:Ortszentrum Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/ortsfest-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rixen-stiftung-kuratorium-2026@merzenich-aktuell.de
+DTSTAMP:20261003T060000Z
+DTSTART:20261013T160000Z
+SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung
+DESCRIPTION:Bekanntgemachte Sitzung des Ausschusses „Kuratorium Rixen-Sti
+ ftung“ am Dienstag\, 13. Oktober\, um 18 Uhr im Rathaus.\nVeranstalter: 
+ Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/
+ rixen-stiftung-kuratorium-2026/
+LOCATION:Fraktionsraum A\, Rathaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/rixen-stiftung-ku
+ ratorium-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:wirtschaftsausschuss-2026-10-15@merzenich-aktuell.de
+DTSTAMP:20261003T060000Z
+DTSTART:20261015T160000Z
+SUMMARY:2. Sitzung: Wirtschaftsförderung und Strukturentwicklung
+DESCRIPTION:Zweite Sitzung des Ausschusses für Wirtschaftsförderung und S
+ trukturentwicklung\, Donnerstag\, 15. Oktober\, 18 Uhr im Ratssaal.\nVeran
+ stalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de
+ /termine/wirtschaftsausschuss-2026-10-15/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wirtschaftsaussch
+ uss-2026-10-15/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
