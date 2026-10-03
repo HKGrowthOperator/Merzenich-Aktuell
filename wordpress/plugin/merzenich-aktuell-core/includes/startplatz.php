@@ -63,9 +63,13 @@ function ma_startplatz_setzen(int $post_id, string $platz): void {
     if ($platz === 'auto' || $platz === 'aus') {
         ma_layout_post_entfernen($post_id, 'startseite', true);
         update_post_meta($post_id, 'ma_startplatz', $platz);
+        // „Nur in der Rubrik“ ist die ausdrückliche Entscheidung gegen die Startseite.
+        if ($platz === 'aus' && function_exists('ma_startseite_freigabe') && ma_startseite_freigabe($post_id) !== 'nein') ma_startseite_freigabe_setzen($post_id, false, 'Nur in der Rubrik');
         return;
     }
     if (!isset($slots[$platz])) return;
+    // Ein fester Platz auf der Startseite ist die ausdrückliche Startseiten-Freigabe.
+    if (function_exists('ma_startseite_freigabe') && ma_startseite_freigabe($post_id) !== 'ja') ma_startseite_freigabe_setzen($post_id, true, 'fester Platz');
     if (get_post_status($post_id) !== 'publish') {
         if (isset(ma_startplaetze()[$platz])) update_post_meta($post_id, 'ma_startplatz', $platz);
         return;
@@ -98,7 +102,17 @@ function ma_startplatz_box(WP_Post $p): void {
         $id = $fest[$wert] ?? 0;
         return $id && $id !== $p->ID ? ' – jetzt: ' . wp_trim_words(get_the_title($id), 6, '…') : '';
     };
-    echo '<p><label for="ma_startplatz"><strong>Wo steht diese Meldung?</strong></label></p><select id="ma_startplatz" name="ma_startplatz" style="width:100%">';
+    // Zweite, eigene Freigabe (03.10.2026): ohne Vorauswahl, solange niemand entschieden hat.
+    if (function_exists('ma_startseite_freigabe')) {
+        $f = ma_startseite_freigabe($p);
+        $von = get_post_meta($p->ID, 'ma_startseite_freigabe_von', true);
+        echo '<fieldset style="margin:0 0 10px"><legend><strong>Startseiten-Freigabe</strong></legend>';
+        printf('<label style="margin-right:14px"><input type="radio" name="ma_startseite_freigabe" value="ja"%s> Ja, auf die Startseite</label>', checked($f, 'ja', false));
+        printf('<label><input type="radio" name="ma_startseite_freigabe" value="nein"%s> Nein, nur Rubrik</label>', checked($f, 'nein', false));
+        $u = is_array($von) && !empty($von['u']) ? get_userdata((int) $von['u']) : null;
+        echo '<p class="description" style="margin-top:4px">' . esc_html($f === '' ? 'Noch nicht entschieden: ' . ma_startseite_freigabe_text($p) . '. Veröffentlichen allein bringt eine neue Meldung nicht auf die Startseite.' : ($u ? 'Entschieden von ' . $u->display_name . ', ' . wp_date('d.m.Y H:i', (int) $von['t']) : '')) . '</p></fieldset>';
+    }
+    echo '<p><label for="ma_startplatz"><strong>Wo steht diese Meldung?</strong></label> <span class="description">(mit Startseiten-Freigabe)</span></p><select id="ma_startplatz" name="ma_startplatz" style="width:100%">';
     foreach (ma_startplaetze() as $wert => $label) {
         if ($wert === 'aus') continue;
         printf('<option value="%s"%s>%s%s</option>', esc_attr($wert), selected($jetzt, $wert, false), esc_html($label), esc_html($wert === 'auto' ? '' : $zusatz($wert)));
@@ -125,6 +139,9 @@ function ma_startplatz_box(WP_Post $p): void {
         echo '<p><strong>Relevanz</strong> <span class="description">(bei „Automatisch“)</span></p>';
         echo ma_relevanz_auswahl('ma_relevanz', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true)));
     }
+    if (function_exists('ma_prioritaet_auswahl')) {
+        echo '<p style="margin-bottom:4px"><strong>Priorität</strong> <span class="description">(ordnet innerhalb derselben Relevanz)</span></p>' . ma_prioritaet_auswahl('ma_prioritaet', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_prioritaet', true)), ' style="width:100%"');
+    }
     printf('<p><a href="%s">Startseite &amp; Ressorts anordnen</a></p>', esc_url(admin_url('admin.php?page=ma-startseite')));
 }
 
@@ -135,6 +152,18 @@ add_action('save_post_post', function (int $post_id): void {
     $platz = sanitize_text_field(wp_unslash($_POST['ma_startplatz'] ?? 'auto'));
     $alt = ma_startplatz_von($post_id);
     if ($alt === 'auto') $alt = (string) get_post_meta($post_id, 'ma_startplatz', true) ?: 'auto';
+    // Startseiten-Freigabe zuerst: Nein schlägt jede Platzwahl, Ja hebt „Nur in der Rubrik“ auf.
+    $freigabe = sanitize_key(wp_unslash($_POST['ma_startseite_freigabe'] ?? ''));
+    if (function_exists('ma_startseite_freigabe_setzen') && in_array($freigabe, ['ja', 'nein'], true)) {
+        if ($freigabe === 'nein') $platz = 'aus';
+        elseif ($platz === 'aus') $platz = 'auto';
+        if (ma_startseite_freigabe($post_id) !== $freigabe) ma_startseite_freigabe_setzen($post_id, $freigabe === 'ja', 'Box Startseite');
+    }
+    if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_prioritaet'])) {
+        $pr = ma_relevanz_saeubern(wp_unslash($_POST['ma_prioritaet']));
+        $prVorher = ma_relevanz_saeubern(get_post_meta($post_id, 'ma_prioritaet', true));
+        if ($pr !== $prVorher) { $pr ? update_post_meta($post_id, 'ma_prioritaet', $pr) : delete_post_meta($post_id, 'ma_prioritaet'); if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Priorität ' . ($pr ?: 'normal')); }
+    }
     if ($platz === 'auto' || $platz === 'aus' || isset(ma_layout_slots('startseite')[$platz])) {
         ma_startplatz_setzen($post_id, $platz);
         if ($alt !== $platz && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Startseite: ' . (ma_startplaetze()[$platz] ?? ma_layout_slots('startseite')[$platz] ?? $platz));
@@ -169,4 +198,14 @@ add_action('manage_post_posts_custom_column', function (string $spalte, int $id)
     if ($spalte !== 'ma_startplatz') return;
     $v = ma_startplatz_von($id);
     echo esc_html(ma_startplaetze()[$v] ?? ma_layout_slots('startseite')[$v] ?? 'Automatisch');
+    if (function_exists('ma_startseite_freigabe_text')) echo '<br><span class="description">Freigabe: ' . esc_html(ma_startseite_freigabe_text($id)) . '</span>';
+}, 10, 2);
+
+/* Fester Platz über Bearbeitungsmodus oder Board (ma_layout_set): ausdrückliche Startseiten-Freigabe. */
+add_action('ma_layout_gespeichert', function (string $seite, array $karte): void {
+    if ($seite !== 'startseite' || !function_exists('ma_startseite_freigabe_setzen') || !ma_startplatz_darf()) return;
+    foreach ((array) ($karte['slots'] ?? []) as $e) {
+        $id = (int) ($e['post'] ?? 0);
+        if ($id && ma_startseite_freigabe($id) !== 'ja' && (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus') ma_startseite_freigabe_setzen($id, true, 'fester Platz');
+    }
 }, 10, 2);

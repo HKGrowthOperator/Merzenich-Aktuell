@@ -22,6 +22,10 @@ function wp_update_post($a) {
     $GLOBALS['status'][$id] = $a['post_status']; return $id;
 }
 function wp_get_current_user() { return (object) ['display_name' => 'Redaktion Test']; }
+function get_current_user_id() { return 7; }
+$GLOBALS['opt'] = [];
+function get_option($k, $d = false) { return $GLOBALS['opt'][$k] ?? $d; }
+function update_option($k, $v, $a = null) { $GLOBALS['opt'][$k] = $v; return true; }
 function current_time($f) { return '2026-09-30 12:00:00'; }
 function get_post($id) { return $GLOBALS['posts'][$id] ?? null; }
 function get_post_time($f, $gmt, $p) { return strtotime($p->post_date_gmt . ' UTC'); }
@@ -66,6 +70,8 @@ pruefe('Prüfer vermerkt', get_post_meta(10, 'ma_reviewed_by'), 'Redaktion Test'
 pruefe('Meldung nennt den Platz (Bühne)', str_contains($e['meldung'], 'Bühne'), true);
 $e = ma_schnellfreigabe(11, 9, false);
 pruefe('Startseite nein = nur Rubrik', get_post_meta(11, 'ma_startplatz'), 'aus');
+pruefe('Startseiten-Freigabe als eigenes Feld: nein', get_post_meta(11, 'ma_startseite_freigabe'), 'nein');
+pruefe('Startseiten-Freigabe ja mit Person', [get_post_meta(10, 'ma_startseite_freigabe'), get_post_meta(10, 'ma_startseite_freigabe_von')['u'] ?? 0], ['ja', 7]);
 pruefe('Meldung sagt nur Rubrik', str_contains($e['meldung'], 'nur in der Rubrik'), true);
 update_post_meta(12, 'ma_startplatz', 'buehne-2');
 ma_schnellfreigabe(12, 5, true);
@@ -101,7 +107,16 @@ pruefe('Alte 10 verdrängt neue Meldungen nicht dauerhaft', array_map(fn($p) => 
 pruefe('Alte 10 ist kein Aufmacher mehr (nicht frisch)', ma_relevanz_zone(205, $jetzt), 'oben');
 $neu(207, 6, 'auto', 5); $neu(208, 6, 'auto', 1);
 pruefe('Gleiche Relevanz: die neuere zuerst', array_map(fn($p) => $p->ID, ma_relevanz_sortieren([$GLOBALS['posts'][207], $GLOBALS['posts'][208]], $jetzt)), [208, 207]);
-pruefe('ohne Startseiten-Wahl gilt Startseite ja', ma_relevanz_startseite(999), true);
+// Zwei getrennte Freigaben (KBS 01.10.2026): ohne Entscheidung nur Rubrik; Altbestand behält die bisherige Regel.
+$GLOBALS['opt']['ma_startseite_freigabe_seit'] = $jetzt - 3600;
+$neu(301, 6, '', 30); $neu(302, 6, '', 0);
+pruefe('Altbestand ohne Entscheidung: Startseite wie bisher', ma_relevanz_startseite(301), true);
+pruefe('neue Meldung ohne Entscheidung: nur Rubrik', ma_relevanz_startseite(302), false);
+update_post_meta(302, 'ma_startseite_freigabe', 'ja');
+pruefe('neue Meldung mit Startseiten-Freigabe: Startseite', ma_relevanz_startseite(302), true);
+update_post_meta(301, 'ma_startseite_freigabe', 'nein');
+pruefe('Altbestand mit „nein“: nur Rubrik', ma_relevanz_startseite(301), false);
+pruefe('nicht vorhandene Meldung: nie Startseite', ma_relevanz_startseite(999), false);
 
 echo $fehler ? "\n$fehler Fehler.\n" : "\nAlle Pruefungen bestanden.\n";
 exit($fehler ? 1 : 0);

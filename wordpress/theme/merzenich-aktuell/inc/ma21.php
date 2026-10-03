@@ -268,7 +268,8 @@ function ma21_startseite_belegung(bool $neu = false): array {
     // „Nur in der Rubrik“ (aus) bleibt draußen, alles andere sortiert die
     // zentrale Relevanzlogik. Aufmacher und Bühne bekommen zuerst, was frisch
     // die Schwellen erreicht (Zone hero, dann buehne), danach den höchsten Wert.
-    $alle = array_values(array_filter($alle, fn($p) => ma21_startplatz($p) !== 'aus'));
+    // Seit 03.10.2026 mit eigener Startseiten-Freigabe (ma_relevanz_startseite), ohne Plugin wie bisher.
+    $alle = array_values(array_filter($alle, fn($p) => function_exists('ma_relevanz_startseite') ? ma_relevanz_startseite($p) : ma21_startplatz($p) !== 'aus'));
     if (function_exists('ma_relevanz_sortieren')) $alle = ma_relevanz_sortieren($alle);
     $zone = fn($p) => function_exists('ma_relevanz_zone') ? ma_relevanz_zone($p) : 'feed';
     $rang = ['hero' => 0, 'buehne' => 1];

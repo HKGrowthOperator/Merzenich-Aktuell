@@ -26,7 +26,16 @@
  * sind unter Merzenich Aktuell → Freigaben einstellbar; das Theme liest sie
  * über dieselben Funktionen (ma21_startseite_belegung()).
  * Ein fester Startplatz (Box „Startseite“) geht der Relevanz immer vor.
- * Ohne Angabe gilt 5, ohne Startseiten-Wahl gilt „auf die Startseite“.
+ * Ohne Angabe gilt 5.
+ *
+ * Zwei getrennte Freigaben (03.10.2026, KBS 01.10.): Veröffentlichen heißt
+ * nicht Startseite. Die Startseiten-Freigabe ist ein eigenes Feld
+ * (ma_startseite_freigabe ja/nein, wer und wann in ma_startseite_freigabe_von),
+ * das nur Redaktion und Administration setzen. Ohne Entscheidung steht eine
+ * Meldung nur in ihrer Rubrik. Was vor der Umstellung veröffentlicht war (oder
+ * mit älterem Datum importiert wird), behält die bisherige Regel: Startseite,
+ * solange nicht „Nur in der Rubrik“ gewählt ist. Dazu Priorität 1–10
+ * (ma_prioritaet): ordnet innerhalb derselben Relevanz, höchstens ±0,45 Punkte.
  *
  * Nur für Redaktion und Administration (edit_others_posts), nie für Partner.
  */
@@ -96,8 +105,15 @@ function ma_relevanz_frisch($post, ?int $jetzt = null): bool {
     return ($jetzt ?? time()) - $zeit <= ma_relevanz_einstellung()['frisch_stunden'] * HOUR_IN_SECONDS;
 }
 
+/** Priorität 1–10 (ohne Angabe 5): Feinsortierung innerhalb derselben Relevanz. */
+function ma_prioritaet($post): int {
+    $id = $post instanceof WP_Post ? $post->ID : (int) $post;
+    $r = ma_relevanz_saeubern(get_post_meta($id, 'ma_prioritaet', true));
+    return $r ?: 5;
+}
+
 /**
- * Sortierwert: Relevanz minus Alter (Tage, auf volle Stunden) mal Abklingen.
+ * Sortierwert: Relevanz (plus Priorität) minus Alter (Tage, auf volle Stunden) mal Abklingen.
  * Stabil zwischen zwei Aufrufen derselben Stunde, ändert sich nur mit der Zeit
  * oder einer neuen Relevanz.
  */
@@ -105,13 +121,54 @@ function ma_relevanz_wert($post, ?int $jetzt = null): float {
     $p = $post instanceof WP_Post ? $post : get_post((int) $post);
     if (!$p) return 0.0;
     $stunden = intdiv(max(0, ($jetzt ?? time()) - (int) get_post_time('U', true, $p)), HOUR_IN_SECONDS);
-    return ma_relevanz($p) - ($stunden / 24) * ma_relevanz_einstellung()['abklingen'];
+    return ma_relevanz($p) + (ma_prioritaet($p) - 5) * 0.09 - ($stunden / 24) * ma_relevanz_einstellung()['abklingen'];
 }
 
-/** Darf die Meldung auf die Startseite? Die Startseiten-Wahl entscheidet. */
-function ma_relevanz_startseite($post): bool {
+/** Ab wann gilt die ausdrückliche Startseiten-Freigabe (erster Lauf dieser Version)? */
+function ma_startseite_freigabe_seit(): int {
+    $t = (int) get_option('ma_startseite_freigabe_seit', 0);
+    if (!$t) { $t = time(); update_option('ma_startseite_freigabe_seit', $t, false); }
+    return $t;
+}
+
+/** Ausdrückliche Entscheidung: 'ja', 'nein' oder '' (noch keine). */
+function ma_startseite_freigabe($post): string {
     $id = $post instanceof WP_Post ? $post->ID : (int) $post;
-    return (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus';
+    $v = (string) get_post_meta($id, 'ma_startseite_freigabe', true);
+    return in_array($v, ['ja', 'nein'], true) ? $v : '';
+}
+
+/** Darf die Meldung auf die Startseite? Nur mit Startseiten-Freigabe (Altbestand: bisherige Regel). */
+function ma_relevanz_startseite($post): bool {
+    $p = $post instanceof WP_Post ? $post : get_post((int) $post);
+    if (!$p) return false;
+    if ((string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus') return false;
+    $f = ma_startseite_freigabe($p);
+    if ($f !== '') return $f === 'ja';
+    return (int) get_post_time('U', true, $p) < ma_startseite_freigabe_seit();
+}
+
+/**
+ * Startseiten-Freigabe setzen (nur Redaktion): Feld, wer und wann, Verlauf.
+ * Nein nimmt die Meldung von allen festen Plätzen der Startseite („Nur in der
+ * Rubrik“), Ja hebt „Nur in der Rubrik“ auf (Platz dann nach Relevanz).
+ */
+function ma_startseite_freigabe_setzen(int $id, bool $ja, string $anlass = ''): void {
+    $vorher = ma_startseite_freigabe($id);
+    update_post_meta($id, 'ma_startseite_freigabe', $ja ? 'ja' : 'nein');
+    update_post_meta($id, 'ma_startseite_freigabe_von', ['u' => get_current_user_id(), 't' => time()]);
+    $platz = (string) get_post_meta($id, 'ma_startplatz', true);
+    if (!$ja && $platz !== 'aus') { update_post_meta($id, 'ma_startplatz', 'aus'); if (function_exists('ma_layout_post_entfernen')) ma_layout_post_entfernen($id, 'startseite', true); }
+    elseif ($ja && ($platz === '' || $platz === 'aus')) update_post_meta($id, 'ma_startplatz', 'auto');
+    if ($vorher !== ($ja ? 'ja' : 'nein') && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Startseiten-Freigabe: ' . ($ja ? 'ja' : 'nein') . ($anlass !== '' ? ' (' . $anlass . ')' : ''));
+}
+
+/** Kurztext für Listen und Freigabeseite. */
+function ma_startseite_freigabe_text($post): string {
+    $f = ma_startseite_freigabe($post);
+    if ($f === 'ja') return 'freigegeben';
+    if ($f === 'nein') return 'nicht freigegeben';
+    return ma_relevanz_startseite($post) ? 'ja (Altbestand)' : 'noch nicht entschieden';
 }
 
 /** Qualifiziert für Aufmacher bzw. Bühne (Startseite erlaubt, frisch, Schwelle erreicht)? */
@@ -165,6 +222,11 @@ add_action('init', function (): void {
         'sanitize_callback' => 'ma_relevanz_saeubern',
         'auth_callback' => fn() => ma_relevanz_darf(),
     ]);
+    register_post_meta('post', 'ma_prioritaet', [
+        'type' => 'integer', 'single' => true, 'show_in_rest' => true, 'default' => 0,
+        'sanitize_callback' => 'ma_relevanz_saeubern',
+        'auth_callback' => fn() => ma_relevanz_darf(),
+    ]);
 });
 
 /** Auswahl 1–10 als Knopfreihe (Box im Beitrag und Freigabeseite). */
@@ -178,6 +240,13 @@ function ma_relevanz_auswahl(string $name, int $wert): string {
     $s = ma_relevanz_stufe($wert ?: MA_RELEVANZ_STANDARD);
     $h .= '</div><p class="ma-relevanz__wo" data-ma-relevanz-wo><strong>' . esc_html($s['name']) . ':</strong> ' . esc_html($s['wo']) . '</p></fieldset>';
     return $h;
+}
+
+/** Priorität 1–10 als Auswahlliste (Box im Beitrag, Freigabeseite). */
+function ma_prioritaet_auswahl(string $name, int $wert, string $attr = ''): string {
+    $h = '<select name="' . esc_attr($name) . '"' . $attr . ' aria-label="Priorität 1 bis 10"><option value="0"' . selected($wert, 0, false) . '>Priorität: normal (5)</option>';
+    for ($i = 10; $i >= 1; $i--) $h .= '<option value="' . $i . '"' . selected($wert, $i, false) . '>Priorität ' . $i . ($i >= 8 ? ' · hoch' : ($i <= 3 ? ' · niedrig' : '')) . '</option>';
+    return $h . '</select>';
 }
 
 /** Stufen als JSON für die Live-Anzeige „landet in …“. */
@@ -238,8 +307,8 @@ function ma_relevanz_js(): string {
       var r=box.querySelector('input[type=radio]:checked');
       if(box.dataset.meldung==='1'&&!r){zeige('Bitte zuerst eine Relevanz von 1 bis 10 wählen.','fehler');return;}
       knoepfe(false);zeige(zeit?'Wird geplant …':'Wird freigegeben …');
-      var st=box.querySelector('[data-ma-startseite]'),br=box.querySelector('[data-ma-bildrechte]');
-      post({action:'ma_schnellfreigabe',post:box.dataset.post,relevanz:r?r.value:'0',startseite:st&&st.checked?'1':'0',bildrechte:br&&br.checked?'1':'0',zeit:zeit||''}).then(fertig).catch(fehler);
+      var st=box.querySelector('[data-ma-startseite]'),br=box.querySelector('[data-ma-bildrechte]'),pr=box.querySelector('[data-ma-prioritaet]');
+      post({action:'ma_schnellfreigabe',post:box.dataset.post,relevanz:r?r.value:'0',prioritaet:pr?pr.value:'0',startseite:st&&st.checked?'1':'0',bildrechte:br&&br.checked?'1':'0',zeit:zeit||''}).then(fertig).catch(fehler);
     }
     box.querySelector('[data-ma-freigeben]').addEventListener('click',function(){freigeben('');});
     var pl=box.querySelector('[data-ma-planen]');if(pl)pl.addEventListener('click',function(){var z=box.querySelector('[data-ma-zeit]').value;if(!z){zeige('Bitte Datum und Uhrzeit wählen.','fehler');return;}freigeben(z);});
@@ -297,9 +366,9 @@ add_action('wp_ajax_ma_relevanz_setzen', function (): void {
  * (Bildrechte, Pflichtangaben) bleiben wirksam; dann bleibt der Beitrag
  * Entwurf und die Antwort nennt den Grund.
  */
-function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bildrechte = false, string $zeit = ''): array {
+function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bildrechte = false, string $zeit = '', int $prioritaet = 0): array {
     $typ = (string) get_post_type($id);
-    if (!in_array($typ, ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'], true)) return ['ok' => false, 'meldung' => 'Dieser Inhalt lässt sich hier nicht freigeben.'];
+    if (!in_array($typ, ma_freigabe_typen(), true)) return ['ok' => false, 'meldung' => 'Dieser Inhalt lässt sich hier nicht freigeben.'];
     $wer = wp_get_current_user()->display_name;
     // Änderungsvorschlag: ins Original übernehmen, die Kopie verschwindet. Relevanz
     // und Startseite des Originals bleiben, wie sie sind.
@@ -317,11 +386,10 @@ function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bild
         update_post_meta($id, 'ma_reviewed_at', current_time('mysql'));
         $vorher = (int) get_post_meta($id, 'ma_relevanz', true);
         update_post_meta($id, 'ma_relevanz', $relevanz);
-        // Startseite nein = nur Rubrik. Ja = nach Relevanz, ein fester Platz bleibt.
-        $platz = (string) get_post_meta($id, 'ma_startplatz', true);
-        if (!$startseite) { update_post_meta($id, 'ma_startplatz', 'aus'); if (function_exists('ma_layout_post_entfernen')) ma_layout_post_entfernen($id, 'startseite', true); }
-        elseif ($platz === '' || $platz === 'aus') update_post_meta($id, 'ma_startplatz', 'auto');
-        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Relevanz ' . $relevanz . ($vorher && $vorher !== $relevanz ? ' (vorher ' . $vorher . ')' : '') . ', Startseite: ' . ($startseite ? 'ja' : 'nein'));
+        if ($prioritaet) update_post_meta($id, 'ma_prioritaet', $prioritaet); else delete_post_meta($id, 'ma_prioritaet');
+        // Zweite, eigene Entscheidung: Startseite ja = nach Relevanz (ein fester Platz bleibt), nein = nur Rubrik.
+        ma_startseite_freigabe_setzen($id, $startseite, 'Freigabe');
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Relevanz ' . $relevanz . ($vorher && $vorher !== $relevanz ? ' (vorher ' . $vorher . ')' : '') . ($prioritaet ? ', Priorität ' . $prioritaet : ''));
     }
     if ($typ === 'ma_ad') {
         // Anzeige schalten: veröffentlicht + „Schaltung aktiv“ (beides setzt nur die Redaktion).
@@ -356,13 +424,18 @@ add_action('wp_ajax_ma_schnellfreigabe', function (): void {
     if (!ma_relevanz_darf() || !$id || !current_user_can('edit_post', $id) || !current_user_can('publish_posts')) wp_send_json_error(['meldung' => 'Keine Berechtigung.'], 403);
     $zeit = sanitize_text_field(wp_unslash($_POST['zeit'] ?? ''));
     if ($zeit !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $zeit)) $zeit = '';
-    $e = ma_schnellfreigabe($id, ma_relevanz_saeubern(wp_unslash($_POST['relevanz'] ?? 0)), ($_POST['startseite'] ?? '') === '1', ($_POST['bildrechte'] ?? '') === '1', str_replace('T', ' ', $zeit));
+    $e = ma_schnellfreigabe($id, ma_relevanz_saeubern(wp_unslash($_POST['relevanz'] ?? 0)), ($_POST['startseite'] ?? '') === '1', ($_POST['bildrechte'] ?? '') === '1', str_replace('T', ' ', $zeit), ma_relevanz_saeubern(wp_unslash($_POST['prioritaet'] ?? 0)));
     $e['ok'] ? wp_send_json_success($e) : wp_send_json_error($e);
 });
 
+/** Inhaltsarten der Freigabeseite (03.10.2026: auch Immobilien, Stellen, Trauer- und Familienanzeigen). */
+function ma_freigabe_typen(): array {
+    return ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad', 'ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice'];
+}
+
 /** Wartende Inhalte: eingereicht oder in Prüfung, dazu Partner-Entwürfe mit fehlender Fotoerlaubnis. */
 function ma_freigaben_wartend(): array {
-    $typen = ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'];
+    $typen = ma_freigabe_typen();
     $l = get_posts(['post_type' => $typen, 'post_status' => ['pending', 'ma_in_pruefung'], 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'ASC']);
     $entwuerfe = get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 40, 'orderby' => 'modified', 'order' => 'DESC',
         'meta_query' => [['key' => '_ma_partner_rights_missing', 'value' => '1']]]);
@@ -371,7 +444,7 @@ function ma_freigaben_wartend(): array {
 }
 
 add_action('admin_menu', function (): void {
-    $n = count(get_posts(['post_type' => ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad'], 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
+    $n = count(get_posts(['post_type' => ma_freigabe_typen(), 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
     $titel = 'Freigaben' . ($n ? ' <span class="awaiting-mod count-' . $n . '"><span class="pending-count">' . $n . '</span></span>' : '');
     add_submenu_page('merzenich-aktuell', 'Freigaben', $titel, 'edit_others_posts', 'ma-freigaben', 'ma_freigaben_seite', 0);
 }, 20);
@@ -395,7 +468,7 @@ function ma_freigaben_seite(): void {
     $e = ma_relevanz_einstellung();
     echo '<div class="wrap"><h1>Freigaben</h1>';
     if (!empty($_GET['gespeichert'])) echo '<div class="notice notice-success is-dismissible"><p>Einstellungen der Platzierung gespeichert.</p></div>';
-    echo '<p>Eingereichte Meldungen, Termine, Vereinsprofile und Änderungsvorschläge. Für Meldungen wählst du die <strong>Relevanz von 1 bis 10</strong> und ob sie <strong>auf die Startseite</strong> darf. Dann <strong>Freigeben</strong> (sofort) oder <strong>Planen</strong> (Zeitpunkt). Alternativ: in Prüfung nehmen, Änderungen anfordern oder ablehnen; der Einsender bekommt jeweils eine E-Mail.</p>';
+    echo '<p>Eingereichte Meldungen, Termine, Vereins- und Unternehmensprofile, Anzeigen, Immobilien, Stellen, Trauer- und Familienanzeigen sowie Änderungsvorschläge. Für Meldungen triffst du zwei getrennte Entscheidungen: <strong>veröffentlichen</strong> und, eigens, <strong>Startseite ja oder nein</strong>; dazu die <strong>Relevanz von 1 bis 10</strong> und auf Wunsch eine <strong>Priorität 1 bis 10</strong> (ordnet innerhalb derselben Relevanz). Dann <strong>Freigeben</strong> (sofort) oder <strong>Planen</strong> (Zeitpunkt). Alternativ: in Prüfung nehmen, Änderungen anfordern oder ablehnen; der Einsender bekommt jeweils eine E-Mail.</p>';
     if (!$wartend) echo '<p><strong>Keine Einreichungen warten.</strong></p>';
     else {
         echo '<table class="widefat striped ma-freigaben"><thead><tr><th style="width:130px">Bild</th><th>Einreichung</th><th>Von</th><th class="ma-freigaben__aktion">Entscheidung</th></tr></thead><tbody>';
@@ -424,7 +497,7 @@ function ma_freigaben_zeile(WP_Post $p): string {
     $verein = $autor ? (string) get_user_meta($autor->ID, 'ma_verein_name', true) : '';
     $bild = get_the_post_thumbnail_url($p, 'medium');
     $von = (int) get_post_meta($p->ID, '_ma_aenderung_von', true);
-    $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp', 'ma_ad' => 'Anzeige'];
+    $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp', 'ma_ad' => 'Anzeige', 'ma_property' => 'Immobilie', 'ma_job' => 'Stelle', 'ma_obituary' => 'Traueranzeige', 'ma_family_notice' => 'Familienanzeige'];
     $istMeldung = $p->post_type === 'post';
     $kats = $istMeldung ? implode(', ', array_map(fn($t) => $t->name, get_the_category($p->ID))) : '';
     if ($p->post_type === 'ma_ad') {
@@ -433,7 +506,7 @@ function ma_freigaben_zeile(WP_Post $p): string {
         $kats = ($slot !== '' && function_exists('ma_ad_slot_label') ? ma_ad_slot_label($slot) : 'ohne Werbeplatz') . ($sponsor !== '' ? ' · ' . $sponsor : '') . ($von !== '' ? ' · ab ' . mysql2date('d.m.Y', $von) : '') . ($bis !== '' ? ' · bis ' . mysql2date('d.m.Y', $bis) : '');
     }
     $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
-    $aus = (string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus';
+    $startJa = ma_startseite_freigabe($p) === 'ja';
     $rechte = function_exists('ma_bildrechte_stand') ? ma_bildrechte_stand($p->ID) : ['noetig' => (bool) $bild, 'ok' => (string) get_post_meta($p->ID, 'ma_partner_rights_declared', true) === '1', 'text' => ''];
     $h = '<tr><td>' . ($bild ? '<img class="ma-freigaben__bild" src="' . esc_url($bild) . '" alt="">' : '<span class="description">kein Bild</span>') . '</td>';
     $h .= sprintf('<td><span class="ma-freigaben__typ">%s</span>%s<br><strong><a href="%s">%s</a></strong><br><span class="description">%s%s · %s</span>%s%s<details class="ma-freigaben__verlauf"><summary>Verlauf</summary>%s</details></td>',
@@ -445,7 +518,7 @@ function ma_freigaben_zeile(WP_Post $p): string {
         function_exists('ma_verlauf_html') ? ma_verlauf_html($p->ID, 8) : '');
     $h .= sprintf('<td>%s<br><span class="description">%s</span></td>', esc_html($autor ? ($autor->display_name ?: $autor->user_login) : '–'), esc_html(trim($rolle . ($verein !== '' && $verein !== ($autor->display_name ?? '') ? ' · ' . $verein : '')) ?: 'Redaktion'));
     $h .= '<td class="ma-freigaben__aktion"><div data-ma-freigabe data-post="' . (int) $p->ID . '" data-meldung="' . ($istMeldung && !$von ? '1' : '0') . '">';
-    if ($istMeldung && !$von) $h .= ma_relevanz_auswahl('ma_relevanz_' . $p->ID, $r) . '<div class="ma-freigaben__zeile"><label><input type="checkbox" data-ma-startseite' . ($aus ? '' : ' checked') . '> Auf die Startseite</label>';
+    if ($istMeldung && !$von) $h .= ma_relevanz_auswahl('ma_relevanz_' . $p->ID, $r) . '<div class="ma-freigaben__zeile"><label><input type="checkbox" data-ma-startseite' . ($startJa ? ' checked' : '') . '> Startseiten-Freigabe: auf die Startseite</label>' . ma_prioritaet_auswahl('ma_prioritaet_' . $p->ID, ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_prioritaet', true)), ' data-ma-prioritaet');
     else $h .= '<div class="ma-freigaben__zeile">';
     if ($bild) $h .= '<label><input type="checkbox" data-ma-bildrechte' . ((string) get_post_meta($p->ID, 'ma_image_rights_verified', true) === '1' ? ' checked' : '') . '> Bildrechte geprüft</label>';
     $h .= '</div><div class="ma-freigaben__zeile"><button type="button" class="button button-primary" data-ma-freigeben>' . ($von ? 'Änderung übernehmen' : 'Freigeben') . '</button>';

@@ -36,7 +36,7 @@ const MA_AENDERUNG_NOTIZ = '_ma_aenderung_notiz';
 
 /** Inhaltsarten mit redaktionellem Ablauf. */
 function ma_redaktion_typen(): array {
-    return ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_property', 'ma_ad'];
+    return ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_property', 'ma_ad', 'ma_job', 'ma_obituary', 'ma_family_notice'];
 }
 
 function ma_status_namen(): array {
@@ -317,6 +317,15 @@ function ma_redaktion_aktion(int $id, string $aktion, string $notiz = ''): array
         wp_update_post(['ID' => $id, 'post_status' => MA_STATUS_ARCHIV]);
         return ['ok' => true, 'meldung' => 'Archiviert. Der Beitrag ist nicht mehr öffentlich.'];
     }
+    if ($aktion === 'wiederherstellen') {
+        if ($p->post_status !== MA_STATUS_ARCHIV) return ['ok' => false, 'meldung' => 'Nur Archiviertes lässt sich wieder veröffentlichen.'];
+        wp_update_post(['ID' => $id, 'post_status' => 'publish']);
+        if (get_post_status($id) === 'publish') return ['ok' => true, 'meldung' => 'Wieder veröffentlicht.'];
+        // Sperre griff (Pflichtangabe fehlt): im Archiv lassen, nicht als Entwurf liegen lassen.
+        wp_update_post(['ID' => $id, 'post_status' => MA_STATUS_ARCHIV]);
+        $grund = (string) get_post_meta($id, '_ma_gate_reason', true);
+        return ['ok' => false, 'meldung' => 'Nicht veröffentlicht: ' . ($grund !== '' ? str_replace('|', ', ', $grund) : 'eine redaktionelle Prüfangabe fehlt') . '. Der Beitrag bleibt archiviert.'];
+    }
     return ['ok' => false, 'meldung' => 'Unbekannte Aktion.'];
 }
 
@@ -365,3 +374,29 @@ function ma_redaktion_meta_sperre($check, $id, $key) {
 function ma_redaktion_meta_loeschsperre($check, $id, $key) {
     return empty($GLOBALS['ma_system_raeumt']) ? ma_redaktion_meta_sperre($check, $id, $key) : $check;
 }
+
+/* Archivieren und Wiederherstellen direkt in der Liste (03.10.2026). */
+add_filter('post_row_actions', 'ma_redaktion_zeilenaktionen', 10, 2);
+add_filter('page_row_actions', 'ma_redaktion_zeilenaktionen', 10, 2);
+function ma_redaktion_zeilenaktionen(array $a, WP_Post $p): array {
+    if (!in_array($p->post_type, ma_redaktion_typen(), true) || !current_user_can('edit_others_posts') || !current_user_can('edit_post', $p->ID)) return $a;
+    if (function_exists('ma_current_partner_policy') && ma_current_partner_policy()) return $a;
+    $url = fn(string $aktion) => wp_nonce_url(admin_url('admin-post.php?action=ma_redaktion_status&aktion=' . $aktion . '&post=' . $p->ID), 'ma_redaktion_status_' . $p->ID);
+    if ($p->post_status === 'publish') $a['ma_archivieren'] = '<a href="' . esc_url($url('archivieren')) . '" onclick="return confirm(\'Archivieren? Der Beitrag ist danach nicht mehr öffentlich.\')">Archivieren</a>';
+    if ($p->post_status === MA_STATUS_ARCHIV) $a['ma_wiederherstellen'] = '<a href="' . esc_url($url('wiederherstellen')) . '">Wieder veröffentlichen</a>';
+    return $a;
+}
+add_action('admin_post_ma_redaktion_status', function (): void {
+    $id = (int) ($_GET['post'] ?? 0);
+    check_admin_referer('ma_redaktion_status_' . $id);
+    if (!$id || !current_user_can('edit_others_posts') || !current_user_can('edit_post', $id) || (function_exists('ma_current_partner_policy') && ma_current_partner_policy())) wp_die('Keine Berechtigung.', 403);
+    $aktion = sanitize_key(wp_unslash($_GET['aktion'] ?? ''));
+    if (!in_array($aktion, ['archivieren', 'wiederherstellen'], true)) wp_die('Unbekannte Aktion.', 400);
+    $e = ma_redaktion_aktion($id, $aktion);
+    $typ = (string) get_post_type($id);
+    wp_safe_redirect(add_query_arg(['ma_status_meldung' => rawurlencode($e['meldung']), 'ma_status_ok' => $e['ok'] ? '1' : '0'], admin_url('edit.php' . ($typ === 'post' ? '' : '?post_type=' . $typ)))); exit;
+});
+add_action('admin_notices', function (): void {
+    if (!isset($_GET['ma_status_meldung'])) return;
+    printf('<div class="notice notice-%s is-dismissible"><p>%s</p></div>', ($_GET['ma_status_ok'] ?? '') === '1' ? 'success' : 'warning', esc_html(sanitize_text_field(wp_unslash($_GET['ma_status_meldung']))));
+});
