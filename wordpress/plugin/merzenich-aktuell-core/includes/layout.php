@@ -109,10 +109,40 @@ function ma_layout_speichern(string $seite, array $karte): array {
     return $karte;
 }
 
-/** Steht der Beitrag öffentlich zur Verfügung (veröffentlicht, nicht „Nur Rubrik“)? */
+/** Steht der Beitrag öffentlich zur Verfügung (veröffentlicht, nicht „Nur Rubrik“, Hervorhebung nicht abgelaufen)? */
 function ma_layout_post_platzierbar(int $id): bool {
-    return $id > 0 && get_post_type($id) === 'post' && get_post_status($id) === 'publish' && (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus';
+    return $id > 0 && get_post_type($id) === 'post' && get_post_status($id) === 'publish' && (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus' && !ma_layout_hervorhebung_abgelaufen($id);
 }
+
+/** „Hervorhebung bis“ (ma_top_until, Ortszeit) überschritten? Leer = unbefristet. */
+function ma_layout_hervorhebung_abgelaufen(int $id, ?int $jetzt = null): bool {
+    $bis = (string) get_post_meta($id, 'ma_top_until', true);
+    if ($bis === '') return false;
+    $t = strtotime($bis . ' ' . (function_exists('wp_timezone_string') ? wp_timezone_string() : 'UTC'));
+    return $t !== false && $t <= ($jetzt ?? time());
+}
+
+/**
+ * Abgelaufene Hervorhebungen räumen (03.10.2026): höchstens stündlich
+ * verlassen Beiträge mit überschrittenem „Hervorhebung bis“ alle festen
+ * Plätze, mit Eintrag im Verlauf. Die Seite blendet sie schon vorher aus
+ * (ma_layout_post_platzierbar); hier wird die Karte bereinigt.
+ */
+function ma_layout_hervorhebungen_raeumen(): int {
+    $n = 0;
+    foreach (get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => 200, 'fields' => 'ids', 'meta_key' => 'ma_top_until', 'meta_compare' => '!=', 'meta_value' => '']) as $id) {
+        if (!ma_layout_hervorhebung_abgelaufen((int) $id) || !ma_layout_plaetze_von((int) $id)) continue;
+        ma_layout_post_entfernen((int) $id, '', true);
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen((int) $id, 'Hervorhebung abgelaufen: fester Platz beendet', '', 0);
+        $n++;
+    }
+    return $n;
+}
+add_action('init', function (): void {
+    if (wp_doing_ajax() || get_transient('ma_hervorhebung_geraeumt')) return;
+    set_transient('ma_hervorhebung_geraeumt', 1, HOUR_IN_SECONDS);
+    ma_layout_hervorhebungen_raeumen();
+}, 40);
 
 /** Feste Plätze einer Seite: Platz => Beitrags-ID, nur platzierbare Beiträge. */
 function ma_layout_feste_plaetze(string $seite): array {
@@ -260,6 +290,7 @@ function ma_layout_warnungen(string $seite, string $slot, int $post_id): array {
     $w = [];
     if (get_post_status($post_id) !== 'publish') $w[] = 'nicht-veroeffentlicht';
     if ((string) get_post_meta($post_id, 'ma_startplatz', true) === 'aus') $w[] = 'nur-rubrik';
+    if (ma_layout_hervorhebung_abgelaufen($post_id)) $w[] = 'hervorhebung-abgelaufen';
     $bild = (int) get_post_thumbnail_id($post_id);
     $src = $bild ? wp_get_attachment_image_src($bild, 'full') : false;
     $breite = $src ? (int) ($src[1] ?? 0) : 0;
@@ -276,7 +307,7 @@ function ma_layout_warnungen(string $seite, string $slot, int $post_id): array {
 }
 
 function ma_layout_warnung_text(string $w): string {
-    return ['nicht-veroeffentlicht' => 'Nicht veröffentlicht', 'nur-rubrik' => 'Steht auf „Nur in der Rubrik“', 'kein-bild' => 'Ohne Bild auf einem Bildplatz', 'logo-motiv' => 'Logo oder Wappen als Bild',
+    return ['nicht-veroeffentlicht' => 'Nicht veröffentlicht', 'nur-rubrik' => 'Steht auf „Nur in der Rubrik“', 'hervorhebung-abgelaufen' => 'Hervorhebung abgelaufen', 'kein-bild' => 'Ohne Bild auf einem Bildplatz', 'logo-motiv' => 'Logo oder Wappen als Bild',
         'bild-klein' => 'Bild zu klein für diesen Platz', 'sport' => 'Sportmeldung auf der Startseite', 'nicht-im-ressort' => 'Gehört nicht zu diesem Ressort', 'reihe-unvollstaendig' => 'Reihe nicht vollständig gefüllt'][$w] ?? $w;
 }
 

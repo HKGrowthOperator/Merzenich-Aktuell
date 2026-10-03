@@ -26,7 +26,7 @@ while (have_posts()): the_post();
   <div class="byline">
     <span class="avatar" aria-hidden="true">MA</span>
     <span class="who"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span>
-    <span class="dates">Veröffentlicht <?php echo ma21_zeit($p, true); ?><br><span class="readtime"><?php echo ma21_lesezeit($p); ?> Min. Lesezeit</span></span>
+    <span class="dates">Veröffentlicht <?php echo ma21_zeit($p, true); ?><?php $akt = (string) get_post_meta($p->ID, 'ma_aktualisiert', true); $aktT = $akt !== '' ? (int) mysql2date('U', $akt, false) - (int) (get_option('gmt_offset') * HOUR_IN_SECONDS) : 0; if ($aktT > (int) get_post_time('U', true, $p)): ?> · Aktualisiert <time datetime="<?php echo esc_attr(wp_date('c', $aktT)); ?>"><?php echo esc_html(wp_date('d.m.Y · H:i', $aktT)); ?> Uhr</time><?php endif; ?><br><span class="readtime"><?php echo ma21_lesezeit($p); ?> Min. Lesezeit</span></span>
   </div>
 </div></div>
 <div class="shell article-grid">

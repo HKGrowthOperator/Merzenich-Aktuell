@@ -356,7 +356,7 @@ add_action('wp_ajax_ma_redaktion_aktion', function (): void {
 function ma_redaktion_nur_felder(): array {
     return ['ma_editorial_priority', 'ma_top_until', 'ma_top_pinned', 'ma_reviewed_by', 'ma_reviewed_at', 'ma_editorial_responsibility', 'ma_relevanz', 'ma_startplatz', 'ma_gesponsert', 'ma_verein_kurz',
         // 03.10.2026: Startseiten-Freigabe, Priorität, Organisation, SEO und Werbeschaltung ebenfalls nur durch die Redaktion.
-        'ma_startseite_freigabe', 'ma_startseite_freigabe_von', 'ma_prioritaet', 'ma_organisation', 'ma_seo_titel', 'ma_seo_beschreibung', 'ma_ad_priority', 'ma_ad_active'];
+        'ma_startseite_freigabe', 'ma_startseite_freigabe_von', 'ma_prioritaet', 'ma_organisation', 'ma_seo_titel', 'ma_seo_beschreibung', 'ma_ad_priority', 'ma_ad_active', 'ma_aktualisiert'];
 }
 
 add_filter('update_post_metadata', 'ma_redaktion_meta_sperre', 5, 3);
@@ -366,7 +366,7 @@ add_filter('delete_post_metadata', 'ma_redaktion_meta_loeschsperre', 5, 3);
 function ma_redaktion_meta_sperre($check, $id, $key) {
     if (!in_array($key, ma_redaktion_nur_felder(), true) || !function_exists('ma_current_partner_policy') || !ma_current_partner_policy()) return $check;
     // Systemseitige Zuordnung (Vereinskennung einer Kopie oder eines neuen Beitrags) setzt ma_verein_kurz selbst.
-    if ($key === 'ma_verein_kurz' && !empty($GLOBALS['ma_system_schreibt'])) return $check;
+    if (in_array($key, ['ma_verein_kurz', 'ma_organisation'], true) && !empty($GLOBALS['ma_system_schreibt'])) return $check;
     return false;
 }
 

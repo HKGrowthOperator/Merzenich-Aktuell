@@ -65,12 +65,27 @@ function ma_check(string $label,string $name): void {
 
 function ma_editorial_box(): void {
     wp_nonce_field('ma_editorial_save','ma_editorial_nonce');
-    ma_field('Original Source URL','ma_source_url','url');
-    ma_field('Source Publisher','ma_source_publisher');
-    ma_field('Source Published At','ma_source_published_at','datetime-local');
-    ma_field('Last Checked At','ma_source_checked_at','datetime-local');
-    ma_field('Redaktionelle Priorität (0–100)','ma_editorial_priority','number','Beeinflusst zusammen mit Aktualität und lokaler Relevanz die automatische Homepage-Priorisierung.');
-    ma_field('Aufmacher fixiert bis','ma_top_until','datetime-local','Nur relevant, wenn „Top Story fixiert“ aktiviert ist. Danach soll die Fixierung auslaufen.');
+    $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    // Beitragsdaten (03.10.2026, KBS-Artikelvorlage): Quelle getrennt von der eigenen Veröffentlichung.
+    echo '<h4 style="margin:4px 0 0">Quelle</h4>';
+    ma_field('Quelle (Herausgeber, Stelle)','ma_source_publisher','text','z. B. Freiwillige Feuerwehr Merzenich, Gemeinde Merzenich, Kreispolizeibehörde Düren');
+    ma_field('Quellen-URL (Originalquelle)','ma_source_url','url');
+    ma_field('Quelldatum (ursprüngliche Information)','ma_source_published_at','datetime-local');
+    ma_field('Quelle zuletzt geprüft','ma_source_checked_at','datetime-local');
+    if (!$partner) {
+        echo '<h4 style="margin:14px 0 0">Beitrag</h4>';
+        ma_field('Dachzeile (Kicker)','ma_kicker','text','Kurze Zeile über der Überschrift. Leer = Name der Rubrik.');
+        ma_field('Organisation (einreichende Stelle)','ma_organisation','text','Bei Einreichungen über einen Partnerzugang automatisch gesetzt.');
+        ma_field('Aktualisiert am (öffentlich angezeigt)','ma_aktualisiert','datetime-local','Nur bei einer inhaltlichen Aktualisierung setzen. Erscheint auf der Meldung als „Aktualisiert“.');
+        ma_field('Hervorhebung bis','ma_top_until','datetime-local','Ein fester Platz (Aufmacher, Bühne, Rubrikfläche; Box „Startseite“) endet zu diesem Zeitpunkt automatisch. Leer = bis die Redaktion ihn ändert.');
+        echo '<h4 style="margin:14px 0 0">Suchmaschinen</h4>';
+        ma_field('SEO-Titel','ma_seo_titel','text','Leer = Überschrift. Höchstens etwa 60 Zeichen.');
+        $b=(string)get_post_meta(get_the_ID(),'ma_seo_beschreibung',true);
+        echo '<p><label><strong>SEO-Beschreibung</strong><br><textarea style="width:100%" rows="2" maxlength="300" name="ma_seo_beschreibung">'.esc_textarea($b).'</textarea></label><br><span class="description">Leer = Anriss. Etwa 150 Zeichen.</span></p>';
+    } elseif (($org = (string) get_post_meta(get_the_ID(), 'ma_organisation', true)) !== '') {
+        echo '<p><strong>Organisation:</strong> '.esc_html($org).'</p>';
+    }
+    echo '<h4 style="margin:14px 0 0">Bild und Prüfung</h4>';
     ma_image_type_field();
     ma_field('Bildcredit','ma_image_credit');
     ma_field('Bildlizenz / Freigabe','ma_image_license');
@@ -79,8 +94,7 @@ function ma_editorial_box(): void {
     ma_check('Datum geprüft','ma_date_verified');
     ma_check('Ort geprüft','ma_place_verified');
     ma_check('Bildrechte geprüft','ma_image_rights_verified');
-    ma_check('Human Review abgeschlossen','ma_human_reviewed');
-    ma_check('Top Story bewusst fixieren','ma_top_pinned');
+    ma_check('Redaktionelle Prüfung abgeschlossen','ma_human_reviewed');
 }
 
 function ma_ai_box(): void {
@@ -112,21 +126,24 @@ function ma_save_editorial_meta(int $post_id): void {
     if (!isset($_POST['ma_editorial_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])),'ma_editorial_save')) return;
     if (!current_user_can('edit_post',$post_id)) return;
 
-    $text=['ma_source_publisher','ma_image_credit','ma_image_license','ma_ai_use_type','ma_reviewed_by','ma_editorial_responsibility'];
+    $text=['ma_source_publisher','ma_image_credit','ma_image_license','ma_ai_use_type','ma_reviewed_by','ma_editorial_responsibility','ma_kicker','ma_organisation','ma_seo_titel'];
     // Bildtyp ist eine feste Auswahl. Alles ausserhalb der Liste wird verworfen,
     // damit der Resolver sich auf den Wert verlassen kann.
     $bildtyp = isset($_POST['ma_image_type']) ? sanitize_key(wp_unslash($_POST['ma_image_type'])) : '';
     if ($bildtyp !== '' && isset(MA_IMAGE_TYPES[$bildtyp])) update_post_meta($post_id,'ma_image_type',$bildtyp);
     elseif (isset($_POST['ma_image_type'])) delete_post_meta($post_id,'ma_image_type');
     $url=['ma_source_url','ma_image_original_url'];
-    $datetime=['ma_source_published_at','ma_source_checked_at','ma_top_until','ma_reviewed_at'];
+    $datetime=['ma_source_published_at','ma_source_checked_at','ma_top_until','ma_reviewed_at','ma_aktualisiert'];
     $number=['ma_editorial_priority'];
-    $checks=['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed','ma_top_pinned','ma_ai_used','ma_ai_generated_image','ma_ai_manipulated_image'];
+    $checks=['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed','ma_ai_used','ma_ai_generated_image','ma_ai_manipulated_image'];
 
-    foreach($text as $k){$v=isset($_POST[$k])?sanitize_text_field(wp_unslash($_POST[$k])):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
-    foreach($url as $k){$v=isset($_POST[$k])?esc_url_raw(wp_unslash($_POST[$k])):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
-    foreach($datetime as $k){$v=isset($_POST[$k])?ma_editorial_datetime_value($_POST[$k]):'';$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
-    foreach($number as $k){$v=isset($_POST[$k])?max(0,min(100,(int)$_POST[$k])):0;update_post_meta($post_id,$k,(string)$v);}
+    // Nur Felder, die das Formular mitschickt (03.10.2026): ein Feld, das der
+    // Kasten nicht zeigt (Partner, ältere Felder), wird nicht gelöscht oder genullt.
+    foreach($text as $k){if(!isset($_POST[$k]))continue;$v=sanitize_text_field(wp_unslash($_POST[$k]));$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
+    if(isset($_POST['ma_seo_beschreibung'])){$v=sanitize_textarea_field(wp_unslash($_POST['ma_seo_beschreibung']));$v===''?delete_post_meta($post_id,'ma_seo_beschreibung'):update_post_meta($post_id,'ma_seo_beschreibung',$v);}
+    foreach($url as $k){if(!isset($_POST[$k]))continue;$v=esc_url_raw(wp_unslash($_POST[$k]));$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
+    foreach($datetime as $k){if(!isset($_POST[$k]))continue;$v=ma_editorial_datetime_value($_POST[$k]);$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
+    foreach($number as $k){if(!isset($_POST[$k]))continue;$v=max(0,min(100,(int)$_POST[$k]));update_post_meta($post_id,$k,(string)$v);}
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     foreach($checks as $k) {
         // Nur Felder anfassen, die das abgeschickte Formular auch kennt. Die
@@ -134,7 +151,7 @@ function ma_save_editorial_meta(int $post_id): void {
         // auf '0' setzen, loeschte das Speichern einer Immobilie die
         // redaktionellen Freigaben eines Beitrags-Workflows mit.
         if ($typ !== 'post' && $k !== 'ma_image_rights_verified') continue;
-        if ($partner && in_array($k, ['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed','ma_top_pinned'], true)) {
+        if ($partner && in_array($k, ['ma_source_verified','ma_date_verified','ma_place_verified','ma_image_rights_verified','ma_human_reviewed'], true)) {
             delete_post_meta($post_id,$k);
             continue;
         }

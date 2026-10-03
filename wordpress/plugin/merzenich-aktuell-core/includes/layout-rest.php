@@ -83,7 +83,7 @@ function ma_layout_rest_auswahl(): array {
     return ['rubriken' => $rubriken, 'orte' => $orte, 'bildtypen' => $typen, 'bildrechte' => function_exists('ma_bildrechte_text') ? ma_bildrechte_text() : '',
         'bildrechteHaken' => function_exists('ma_bildrechte_haken_text') ? ma_bildrechte_haken_text() : 'Ich bestätige die Bild- und Nutzungsrechte.',
         'relevanz' => function_exists('ma_relevanz_js_daten') ? ma_relevanz_js_daten() : [], 'darfVeroeffentlichen' => current_user_can('publish_posts'),
-        'medien' => rest_url('wp/v2/media'), 'warnungen' => array_combine($w = ['nicht-veroeffentlicht', 'nur-rubrik', 'kein-bild', 'logo-motiv', 'bild-klein', 'sport', 'nicht-im-ressort', 'reihe-unvollstaendig'], array_map('ma_layout_warnung_text', $w))];
+        'medien' => rest_url('wp/v2/media'), 'warnungen' => array_combine($w = ['nicht-veroeffentlicht', 'nur-rubrik', 'hervorhebung-abgelaufen', 'kein-bild', 'logo-motiv', 'bild-klein', 'sport', 'nicht-im-ressort', 'reihe-unvollstaendig'], array_map('ma_layout_warnung_text', $w))];
 }
 
 function ma_layout_rest_url(string $seite): string {

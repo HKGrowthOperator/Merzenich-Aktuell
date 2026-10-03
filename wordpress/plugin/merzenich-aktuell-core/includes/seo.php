@@ -330,8 +330,12 @@ function ma_seo_kontext(): array {
         $krumen[] = [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null];
         $tags = array_map(fn($t) => $t->name, (array) (get_the_tags($o->ID) ?: []));
         if ($ort !== 'merzenich') $tags[] = ma_seo_orte()[$ort]['name'];
-        $k = array_merge($k, ['typ' => 'artikel', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen($text), 'url' => get_permalink($o), 'og' => 'article', 'krumen' => $krumen, 'ort' => $ort,
-            'bild' => ma_seo_bild($o), 'tags' => $tags, 'ressort' => $rl, 'veroeffentlicht' => get_post_time('c', false, $o), 'geaendert' => get_post_modified_time('c', false, $o),
+        // Redaktionell gepflegte SEO-Angaben (Kasten „Redaktion & Quelle“) gehen vor; sonst Überschrift und Anriss.
+        $seoTitel = trim((string) get_post_meta($o->ID, 'ma_seo_titel', true));
+        $seoText = trim((string) get_post_meta($o->ID, 'ma_seo_beschreibung', true));
+        $aktualisiert = (string) get_post_meta($o->ID, 'ma_aktualisiert', true);
+        $k = array_merge($k, ['typ' => 'artikel', 'titel' => $seoTitel !== '' ? $seoTitel : html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen($seoText !== '' ? $seoText : $text), 'url' => get_permalink($o), 'og' => 'article', 'krumen' => $krumen, 'ort' => $ort,
+            'bild' => ma_seo_bild($o), 'tags' => $tags, 'ressort' => $rl, 'veroeffentlicht' => get_post_time('c', false, $o), 'geaendert' => $aktualisiert !== '' ? (string) mysql2date('c', $aktualisiert, false) : get_post_modified_time('c', false, $o),
             'woerter' => str_word_count(strip_tags($o->post_excerpt . ' ' . $o->post_content)), 'quelle' => (string) get_post_meta($o->ID, 'ma_source_url', true),
             'gesponsert' => function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) ? ((string) get_post_meta($o->ID, 'ma_gesponsert_von', true) ?: 'Gesponsert') : '']);
     } elseif (is_singular('ma_event') && $o instanceof WP_Post) {

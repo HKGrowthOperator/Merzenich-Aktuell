@@ -284,6 +284,14 @@ function ma_partner_enforce_assignment(int $post_id, WP_Post $post, bool $update
 
     update_post_meta($post_id, '_ma_partner_submission', '1');
     update_post_meta($post_id, '_ma_partner_role', $policy['role']);
+    // Organisation (einreichende Stelle, KBS-Artikelvorlage): Verein bzw. Name des Zugangs, nur wenn noch leer.
+    if ((string) get_post_meta($post_id, 'ma_organisation', true) === '') {
+        $u = wp_get_current_user();
+        $org = trim((string) get_user_meta($u->ID, 'ma_verein_name', true)) ?: trim((string) $u->display_name) ?: (string) $policy['description'];
+        $GLOBALS['ma_system_schreibt'] = true;
+        update_post_meta($post_id, 'ma_organisation', $org);
+        unset($GLOBALS['ma_system_schreibt']);
+    }
     update_post_meta($post_id, '_ma_partner_submitted_by', (string)get_current_user_id());
 }
 
