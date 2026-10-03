@@ -51,6 +51,7 @@ require_once MA_CORE_PATH . 'includes/redaktion.php';
 require_once MA_CORE_PATH . 'includes/bildrechte.php';
 require_once MA_CORE_PATH . 'includes/vereine.php';
 require_once MA_CORE_PATH . 'includes/sport-bilder-admin.php';
+require_once MA_CORE_PATH . 'includes/bildpools.php';
 require_once MA_CORE_PATH . 'includes/werbung-stat.php';
 require_once MA_CORE_PATH . 'includes/vereinszugaenge.php';
 require_once MA_CORE_PATH . 'includes/radar.php';

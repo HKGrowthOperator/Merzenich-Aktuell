@@ -39,6 +39,9 @@ const site = join(wurzel, 'chatgpt-site');
 const nurPruefen = process.argv.includes('--check');
 const ZIEL = 'wordpress-delivery/merzenich-aktuell-import.xml';
 const GEMEINDE_KOPIE = 'wordpress/plugin/merzenich-aktuell-core/data/gemeinde.json';
+// Bildpools für WordPress (Plugin includes/bildpools.php, 03.10.2026): kompakte
+// Liste aus editorial-photo-pools.json mit der größten vorhandenen Bildgröße.
+const POOL_KOPIE = 'wordpress/plugin/merzenich-aktuell-core/data/bildpools.json';
 
 const lies = (rel) => readFileSync(join(wurzel, rel), 'utf8');
 const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
@@ -265,6 +268,17 @@ const schreibe = (rel, inhalt) => {
 };
 schreibe(ZIEL, xml);
 schreibe(GEMEINDE_KOPIE, lies('deploy/gemeinde.json'));
+{
+  const pools = JSON.parse(lies('chatgpt-site/data/editorial-images/editorial-photo-pools.json'));
+  const beste = (src) => {
+    for (const v of ['-1200.webp', '-800.webp']) { const k = src.replace(/\.(jpe?g|png|webp)$/i, v); if (existsSync(join(wurzel, 'chatgpt-site', k))) return k; }
+    return src;
+  };
+  const kopie = { stand: pools.generated, quelle: pools.source, mindest: pools.minimumPerPool, pools: pools.pools,
+    bilder: pools.images.map((b) => ({ id: b.id, pool: b.pool, datei: beste(b.src), alt: b.alt || '', credit: b.credit || '', quelle: b.sourceUrl || '',
+      titel: b.sourceTitle || '', lizenz: b.license || '', lizenzUrl: b.licenseUrl || '', geprueft: b.geprueft === true, geprueftAm: b.rightsCheckedAt || '', ort: b.locality || '' })) };
+  schreibe(POOL_KOPIE, JSON.stringify(kopie, null, 1) + '\n');
+}
 // docs/SHA256SUMS.txt: die Zeile der Importdatei gleich mitziehen, sonst meldet
 // qa/pruefung.mjs nach jeder neuen Meldung eine Abweichung. Die ZIP-Zeilen
 // schreibt weiter .github/workflows/build-wordpress-packages.yml.
