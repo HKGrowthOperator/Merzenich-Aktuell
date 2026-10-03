@@ -1,5 +1,5 @@
 {
-  "hinweis": "Regionaler Einsatzort ausdrücklich Heimbach; lokaler Bezug ausschließlich Wohnort der beteiligten Merzenicherin. Kein Originalfoto veröffentlicht; Verwendung des geprüften neutralen Verkehrsunfall-Motivs.",
+  "hinweis": "Regionaler Einsatzort ausdrücklich Heimbach; lokaler Bezug ausschließlich Wohnort der beteiligten Merzenicherin. Kein Originalfoto veröffentlicht; geprüftes neutrales Foto eines Ölspur-Warnschilds ist als Symbolbild zu verwenden.",
   "meldungen": [
     {
       "slug": "merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01",
@@ -30,7 +30,7 @@
           "Verkehr"
         ]
       ],
-      "bildklasse": "verkehr.unfall.rettung",
+      "bildklasse": "blaulicht.technik.oelspur",
       "quelle": {
         "name": "Polizei Düren, Pressemitteilung POL-DN vom 02.10.2026",
         "url": "https://www.presseportal.de/blaulicht/pm/8/6363781",
