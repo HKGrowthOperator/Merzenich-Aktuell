@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-03T18:42:52.712Z",
+  "updatedAt": "2026-10-03T18:45:19.034Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -494,6 +494,15 @@
       "assignedAt": "2026-10-03T18:42:52.712Z",
       "articleId": "2026-10-03-wirtschaftsausschuss-sitzung-2026-10-15",
       "articleDate": "2026-10-03T18:29:00+02:00"
+    },
+    "/blaulicht/merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01/": {
+      "imageId": "web-technik-07-c67b4064",
+      "pool": "technik",
+      "motiv": "oelspur",
+      "regel": "blaulicht.technik.oelspur",
+      "assignedAt": "2026-10-03T18:45:19.034Z",
+      "articleId": "2026-10-02-merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01",
+      "articleDate": "2026-10-02T12:00:00+02:00"
     }
   }
 }
