@@ -1,6 +1,24 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. Oktober 2026 · Theme 21.8.1 · Core-Plugin 1.18.2 (Historie unten)
+3. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.19.0 (Historie unten)
+
+## Neu in 1.19.0 / Theme 21.9.0 (03.10.2026): Backend nach den KBS-Anforderungen
+
+Vollständiger Abgleich je Anforderung: `docs/BACKEND-KBS-ABGLEICH.md`.
+
+- **Zwei getrennte Freigaben:** Startseiten-Freigabe als eigenes Feld (`ma_startseite_freigabe`, wer und wann). Ohne Entscheidung steht eine neue Meldung nur in ihrer Rubrik; was vor der Umstellung veröffentlicht war (`ma_startseite_freigabe_seit`) oder mit älterem Datum importiert wird, behält die bisherige Regel. Theme fragt `ma_relevanz_startseite()`. Priorität 1–10 (`ma_prioritaet`) ordnet innerhalb derselben Relevanz.
+- **Ablauf:** Archivieren / Wieder veröffentlichen als Zeilen- und Mehrfachaktion; Freigabeseite und Verlauf auch für Immobilien, Stellen, Trauer- und Familienanzeigen.
+- **Artikeldaten:** Organisation, Dachzeile, SEO-Titel und -Beschreibung, öffentliches „Aktualisiert am“; „Hervorhebung bis“ beendet feste Plätze (stündliches Räumen, Hinweis im Board). Speichern fasst nur mitgeschickte Felder an.
+- **Medien und Bildrechte:** Partner sehen nur eigene Medien; Rechteprüfung je Bild für die Redaktion; importierte Nachweise gehen beim Speichern leerer Felder nicht mehr verloren; Nachweis geht vom Bild an den Beitrag.
+- **Bildpools:** Taxonomie `ma_bildpool`, Medien → Bildpools, 308 Fotos aus `data/bildpools.json` (Übernahme in Paketen, `wp ma-bildpools importieren`), Symbolbild aus dem Pool bei Veröffentlichung ohne eigenes Bild.
+- **Einsendungen:** Stellen-Formular, Eingang mit Filter und „Als Entwurf übernehmen“.
+- **Werbung und Rollen:** Kampagne über mehrere Plätze (`ma_ad_slot_weitere`), Rolle Werbepartner (Rollen-Version 3), Werbe-Priorität und Schaltung nur Redaktion.
+- **Einladungsfunktion entfernt** (Entscheidung KBS): Zugänge ohne E-Mail.
+- **Sicherheit:** Redaktionsfelder für Partner auch nicht löschbar; Zähl-Schnittstellen je Besucher begrenzt.
+
+**Nach dem Update im Backend:** Medien → Bildpools → „Pools anlegen“, dann „Fotos übernehmen“ (läuft in Paketen von selbst weiter).
+
+**Geprüft:** lokales WordPress 7.1.2 (SQLite) mit importierten Inhalten: 112 Integrationsprüfungen (Medien und Rechte, Freigaben, Artikeldaten, Einsendungen und Werbung, Bildpools mit Übernahme aller 308 Fotos); Startseite vor und nach dem Update gleich (131 Meldungen, Aufmacher); `php qa/wordpress/*-test.php`, `kette.mjs --check`, Routenmatrix.
 
 ## Neu in 1.18.2 / Theme 21.8.1 (03.10.2026): Handyansicht wie am 30.09.
 
