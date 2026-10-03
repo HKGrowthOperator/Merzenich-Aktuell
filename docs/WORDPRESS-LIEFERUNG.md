@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. Oktober 2026 · Theme 21.8.0 · Core-Plugin 1.18.1 (Historie unten)
+3. Oktober 2026 · Theme 21.8.1 · Core-Plugin 1.18.2 (Historie unten)
+
+## Neu in 1.18.2 / Theme 21.8.1 (03.10.2026): Handyansicht wie am 30.09.
+
+Gemessen am Stand vom 30.09. (Theme 21.3.3) auf 320–1180 px Breite, statisch und live:
+
+- **Kopf:** Seit 01./02.10. steht beim Wetter „Merzenich“. Ausgeblendet war das Wort nur unter 390 px, bei 390–479 px (iPhone 12–16, gängige Androids) lief „Merzenich · 15 °C“ über das Logo. Jetzt unter 480 px wie am 30.09. nur Symbol, Temperatur, Datum (unter 390 px ohne Symbol), Logo bei 390–409 px 180 px breit. Abstand Logo–Wetter auf allen Breiten mindestens 14 px (`chatgpt-site/assets/korrekturen.css`).
+- **Werbebänder der Startseite:** `padding:12px 0` nahm `.shell` den Seitenrand; am Handy liefen Label, Linie und Anzeige randlos bis an den Bildschirmrand, am Desktop stand das Band 40 px links und rechts über den Inhaltsspalten. Jetzt so breit wie die Inhaltsspalten (`chatgpt-site/assets/werbung.css`).
+- **Sportseite:** Drei Sportgrafiken (`wasser.svg`, `fitness.svg`, `breitensport.svg`) enthielten ein unmaskiertes `&` und waren damit kein gültiges SVG; der Browser zeigte leere Flächen. `&amp;` gesetzt, alle SVGs im Repository parsen.
+- **Menü „SC 1919 Merzenich“** (`/sc-1919-merzenich/`) gab in WordPress 404, das Profil liegt unter `/vereine/sc-1919-merzenich/`. `ma_legacy_ziel()` leitet eine kurze Adresse jetzt per 301 auf das Vereinsprofil gleichen Namens (`qa/wordpress/import-test.php`).
+- **Alte Vorlage** (Termine, Märkte, Trauer-, Familienanzeigen, Tipps): Überschrift „Stellen“ statt „Archiv: Stellen“ (`get_the_archive_title_prefix`).
 
 ## Neu in 1.18.1 (02.10.2026): Google-Bestätigungsdatei
 

@@ -20,6 +20,9 @@ add_action('wp_enqueue_scripts', function(){
     wp_enqueue_script('ma-site',get_template_directory_uri().'/assets/js/site.js',[],$version,true);
 });
 
+// Listen der alten Vorlage (Termine, Märkte, Anzeigen, Tipps): „Stellen“ statt „Archiv: Stellen“ (03.10.2026).
+add_filter('get_the_archive_title_prefix', '__return_empty_string');
+
 /**
  * Notnagel ohne Plugin: Die Vorlagen rufen ma_content_image() ungeschuetzt
  * auf. Ist merzenich-aktuell-core deaktiviert, darf daraus kein Fatal Error

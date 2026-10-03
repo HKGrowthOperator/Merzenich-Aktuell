@@ -71,7 +71,8 @@ function get_permalink($id) { return $GLOBALS['permalinks'][$id] ?? ''; }
 function get_term_by($f, $slug, $tax) { return isset($GLOBALS['terme']["$tax:$slug"]) ? (object)['k' => "$tax:$slug"] : false; }
 function get_term_link($t) { return $GLOBALS['terme'][$t->k]; }
 function is_wp_error($x) { return false; }
-function get_page_by_path($slug, $o, $typ) { return in_array($slug, $GLOBALS['clubs'], true) ? (object)[] : null; }
+function get_page_by_path($slug, $o, $typ) { return in_array($slug, $GLOBALS['clubs'], true) ? (object)['ID' => 77] : null; }
+$GLOBALS['permalinks'][77] = 'https://merzenich-aktuell.de/vereine/sc-1919/';
 function add_action(...$a) {} function add_filter(...$a) {} function add_shortcode(...$a) {}
 $GLOBALS['opt'] = [];
 function get_option($k, $d = '') { return $GLOBALS['opt'][$k] ?? $d; }
@@ -91,6 +92,8 @@ pruefe('Meldung mit neuer Adresse: 301 dorthin', ma_legacy_weiterleitung_fuer('/
 pruefe('Ressort /blaulicht/ -> Kategorie', ma_legacy_weiterleitung_fuer('/blaulicht/'), 'https://merzenich-aktuell.de/category/blaulicht/');
 pruefe('Ortsteil /golzheim/ -> Ort', ma_legacy_weiterleitung_fuer('/golzheim/'), 'https://merzenich-aktuell.de/ort/golzheim/');
 pruefe('Thema bereits unter /thema/: keine Weiterleitung', ma_legacy_weiterleitung_fuer('/thema/feuerwehr/'), '');
+pruefe('Vereinsprofil /sc-1919/ -> /vereine/sc-1919/', ma_legacy_weiterleitung_fuer('/sc-1919/'), 'https://merzenich-aktuell.de/vereine/sc-1919/');
+pruefe('Vereinsprofil unter eigener Adresse: keine Schleife', ma_legacy_weiterleitung_fuer('/vereine/sc-1919/'), '');
 pruefe('Unbekanntes: nichts', ma_legacy_weiterleitung_fuer('/gibt-es-nicht/'), '');
 pruefe('Fremde Zeichen: nichts', ma_legacy_weiterleitung_fuer('/<script>/'), '');
 pruefe('/vereine/<profil>/ bleibt Vereinsprofil', ma_vereine_anfrage(['ma_club' => 'sc-1919', 'post_type' => 'ma_club']), ['ma_club' => 'sc-1919', 'post_type' => 'ma_club']);

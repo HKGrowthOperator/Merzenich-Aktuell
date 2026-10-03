@@ -54,6 +54,8 @@ function ma_legacy_ziel(string $pfad): string {
         $term = get_term_by('slug', $m[1], 'post_tag');
     } elseif (preg_match('~^/([a-z0-9-]+)/$~', $pfad, $m)) {
         $term = get_term_by('slug', $m[1], 'category') ?: get_term_by('slug', $m[1], 'ma_location');
+        // Vereinsprofil unter der kurzen Adresse des statischen Stands (Menü: /sc-1919-merzenich/).
+        if (!$term && ($club = get_page_by_path($m[1], OBJECT, 'ma_club'))) return (string)get_permalink($club->ID);
     }
     if (!$term) return '';
     $link = get_term_link($term);
