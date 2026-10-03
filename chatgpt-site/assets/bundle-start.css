@@ -1833,7 +1833,7 @@ body.home .portal-top{
   display:grid;
   grid-template-columns:minmax(0,1fr);
   gap:var(--s6);
-  align-items:start;
+  align-items:stretch;
 }
 
 /* Die Anzeigenspalte bekommt nur dann eine Spur, wenn wirklich Werbung läuft.
@@ -2416,6 +2416,15 @@ body.home .front-zweit h2{font-size:clamp(22px,1.8vw,26px)}
 /* Nach der Buehne A4.7: Vor Ort links, Hauptstrom daneben */
 body.home .portal-top{padding-top:32px;border-top:1px solid var(--a-linie)}
 body.home .portal-strom{min-width:0}
+/* Auf Desktop die Ressortbloecke in der Nachrichten-Spalte verteilen, statt
+   unter der laengeren Service-Spalte einen toten Streifen zu lassen. */
+@media (min-width:960px){
+  body.home .portal-strom{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+}
 body.home .portal-strom>.desk{max-width:none;margin:0;padding:0!important}
 body.home .portal-strom .desk-heading{margin-bottom:20px!important}
 body.home .portal-service{background:var(--a-flaeche);border-radius:2px}
