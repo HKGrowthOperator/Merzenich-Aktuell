@@ -1,0 +1,41 @@
+{
+  "hinweis": "Regionaler Einsatzort ausdrücklich Heimbach; lokaler Bezug ausschließlich Wohnort der beteiligten Merzenicherin. Kein Originalfoto veröffentlicht; Verwendung des geprüften neutralen Verkehrsunfall-Motivs.",
+  "meldungen": [
+    {
+      "slug": "merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Polizei · Region Heimbach",
+      "titel": "Ölspur auf L218: 18-jährige Autofahrerin aus Merzenich leicht verletzt",
+      "dek": "Auf der nassen Serpentinenstrecke bei Vlatten gerieten am 1. Oktober drei Autos ineinander. Die Polizei beziffert den Sachschaden auf rund 35.000 Euro.",
+      "datum": "2026-10-02T12:00:00+02:00",
+      "fakten": [
+        "Unfallort: L218 bei Vlatten im Stadtgebiet Heimbach, nicht in Merzenich",
+        "Donnerstag, 1. Oktober 2026, gegen 16:20 Uhr",
+        "18-jährige Autofahrerin aus Merzenich leicht verletzt",
+        "Drei Fahrzeuge beteiligt; Schaden nach Polizeiangaben rund 35.000 Euro"
+      ],
+      "absaetze": [
+        "Bei einem Verkehrsunfall auf der L218 zwischen Heimbach und Vlatten ist am Donnerstagnachmittag, 1. Oktober, eine 18-jährige Autofahrerin aus Merzenich leicht verletzt worden. Die Polizei Düren veröffentlichte den Bericht am folgenden Freitag. Der Unfall ereignete sich ausdrücklich im Bereich Heimbach, nicht auf Merzenicher Gemeindegebiet.",
+        "Nach Polizeiangaben fuhr die junge Frau gegen 16:20 Uhr auf der nassen Landstraße in Richtung Vlatten. In einer engen Rechtskurve verlor sie auf einer größeren Ölspur die Kontrolle über ihr Auto und rutschte gegen ein entgegenkommendes Fahrzeug eines Mannes aus Heimbach. Ein unmittelbar hinter ihr fahrender Autofahrer geriet ebenfalls ins Rutschen und kollidierte mit ihrem Wagen.",
+        "Die Polizei schätzt den gesamten Sachschaden auf etwa 35.000 Euro. Eine Spezialfirma reinigte die Fahrbahn; während der Unfallaufnahme und Reinigung waren Teile der L218 zeitweise komplett gesperrt. Nach Angaben der Polizei konnten die eingesetzten Beamten den Verursacher der Ölspur ermitteln. Angaben zu weiteren Verletzten machte die Mitteilung nicht."
+      ],
+      "themen": [
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "verkehr",
+          "Verkehr"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung POL-DN vom 02.10.2026",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6363781",
+        "stand": "2026-10-03"
+      }
+    }
+  ]
+}
