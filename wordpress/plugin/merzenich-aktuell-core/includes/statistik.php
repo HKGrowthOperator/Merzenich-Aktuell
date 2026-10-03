@@ -40,6 +40,23 @@ function ma_statistik_zaehlt(string $ua): bool {
     return !(function_exists('is_user_logged_in') && is_user_logged_in() && current_user_can('edit_posts'));
 }
 
+/**
+ * Bremse je Besucher (03.10.2026): höchstens $max Zählungen je festem Fenster von
+ * $sek Sekunden. Kennung wie in live.php (Tages-Salz, Hash aus Adresse und
+ * Browser), gespeichert wird nur der Zähler, keine IP-Adresse. Wer die Endpunkte
+ * in Schleifen anspricht, bläht Statistik und Impressionen nicht mehr auf.
+ */
+function ma_zaehl_bremse(string $art, int $max, int $sek, string $ua): bool {
+    $kennung = function_exists('ma_live_kennung') ? ma_live_kennung($ua) : substr(hash('sha256', $ua), 0, 16);
+    $k = 'ma_zb_' . sanitize_key($art) . '_' . $kennung;
+    $d = get_transient($k);
+    if (!is_array($d) || (int) ($d['bis'] ?? 0) <= time()) $d = ['n' => 0, 'bis' => time() + $sek];
+    if ((int) $d['n'] >= $max) return false;
+    $d['n'] = (int) $d['n'] + 1;
+    set_transient($k, $d, max(1, (int) $d['bis'] - time()));
+    return true;
+}
+
 function ma_statistik_zaehlen(int $objekt, string $art): void {
     global $wpdb;
     $wpdb->query($wpdb->prepare('INSERT INTO ' . ma_statistik_tabelle() . ' (tag, objekt, art, aufrufe) VALUES (%s, %d, %s, 1) ON DUPLICATE KEY UPDATE aufrufe = aufrufe + 1', current_time('Y-m-d'), $objekt, $art));
@@ -50,6 +67,7 @@ add_action('rest_api_init', function (): void {
         'methods' => 'POST', 'permission_callback' => '__return_true',
         'callback' => function (WP_REST_Request $r) {
             if (!ma_statistik_zaehlt((string) $r->get_header('user_agent'))) return new WP_REST_Response(null, 204);
+            if (!ma_zaehl_bremse('aufruf', 40, 5 * MINUTE_IN_SECONDS, (string) $r->get_header('user_agent'))) return new WP_REST_Response(null, 204);
             $d = json_decode((string) $r->get_body(), true) ?: [];
             $art = in_array($d['art'] ?? '', ['post', 'start', 'seite', 'liste'], true) ? $d['art'] : 'seite';
             $id = (int) ($d['id'] ?? 0);

@@ -187,7 +187,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     echo '<tr><td colspan="2" style="padding:0 0 8px"><p class="description" style="margin:0">Alles auf einer Seite: Titel oben, hier Platz und Laufzeit, darunter das Bild. ' . ($partner ? 'Nach dem Einreichen prüft die Redaktion und schaltet die Anzeige frei.' : 'Veröffentlichen + „Schaltung aktiv“ = die Anzeige läuft; sie ersetzt auf ihrem Platz die Musteranzeige.') . '</p></td></tr>';
     if (function_exists('ma_render_ad_item') && has_post_thumbnail($post)) echo '<tr><th scope="row">Vorschau</th><td><div class="ma-ad ma-ad--vorschau" style="max-width:420px;border:1px solid #dcdcde;padding:8px;background:#fff">' . ma_render_ad_item($post) . '</div></td></tr>';
-    ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Platz unter Werbung → Werbeplätze eingeschaltet sein.');
+    if (!$partner) ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Platz unter Werbung → Werbeplätze eingeschaltet sein.');
     // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
     // (Benutzerprofil, Voreinstellung: alle Werbebaender der Startseite).
     $slots = function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : ma_ad_slots();
@@ -203,7 +203,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
-    ma_admin_input('ma_ad_priority','Priorität',ma_admin_field_value($post->ID,'ma_ad_priority'),'number','10','Höhere Zahl gewinnt innerhalb desselben Slots.');
+    if (!$partner) ma_admin_input('ma_ad_priority','Priorität',ma_admin_field_value($post->ID,'ma_ad_priority'),'number','10','Höhere Zahl gewinnt innerhalb desselben Slots.');
     $bild = (int) get_post_thumbnail_id($post->ID);
     ma_admin_input('ma_ad_alt','Alternativtext des Bildes',$bild ? (string) get_post_meta($bild, '_wp_attachment_image_alt', true) : '','text','Was zeigt das Werbemittel? Für Screenreader.','Leer = Titel der Anzeige.');
     if ($partner && function_exists('ma_partner_rights_field')) {

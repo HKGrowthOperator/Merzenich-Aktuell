@@ -54,6 +54,8 @@ add_action('rest_api_init', function (): void {
             $d = json_decode((string) $r->get_body(), true) ?: [];
             $id = (int) ($d['id'] ?? 0); $platz = sanitize_key((string) ($d['platz'] ?? ''));
             $art = ($d['art'] ?? '') === 'k' ? 'k' : 'i';
+            // Bremse je Besucher (statistik.php): Impressionen und Klicks getrennt.
+            if (function_exists('ma_zaehl_bremse') && !ma_zaehl_bremse('werbung_' . $art, $art === 'k' ? 10 : 200, 10 * MINUTE_IN_SECONDS, (string) $r->get_header('user_agent'))) return new WP_REST_Response(null, 204);
             // Nur laufende Anzeigen der Werbeverwaltung auf ihrem Platz.
             $ad = $id ? get_post($id) : null;
             if (!$ad || !function_exists('ma_ad_is_running') || !ma_ad_is_running($ad) || (string) get_post_meta($id, 'ma_ad_slot', true) !== $platz) return new WP_REST_Response(null, 204);

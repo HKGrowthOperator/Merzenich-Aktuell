@@ -126,6 +126,10 @@ function ma_register_partner_hooks(): void {
     add_action('admin_init', 'ma_partner_admin_route_guard', 5);
     add_action('pre_get_posts', 'ma_partner_admin_own_content');
     add_action('admin_notices', 'ma_partner_admin_notice');
+    // Mediathek (03.10.2026): Partner sehen nur eigene Uploads, nicht die Fotos
+    // anderer Organisationen oder aus dem Eingang (Trauer, Familie).
+    add_filter('ajax_query_attachments_args', 'ma_partner_eigene_medien_args');
+    add_filter('rest_attachment_query', 'ma_partner_eigene_medien_args');
 
     foreach (['post','ma_event','ma_property','ma_job','ma_obituary','ma_family_notice','ma_club','ma_business','ma_tip','ma_ad'] as $type) {
         add_filter('rest_pre_insert_'.$type, 'ma_partner_rest_guard', 10, 2);
@@ -141,10 +145,31 @@ function ma_partner_map_meta_cap(array $caps, string $cap, int $user_id, array $
     $post = get_post((int)$args[0]);
     if (!$post) return $caps;
 
+    // Eigene Uploads: Nachweisfelder (Fotograf, Quelle, Nutzung) selbst pflegen,
+    // solange der zugehoerige Beitrag nicht veroeffentlicht ist. Fremde Medien
+    // nur ansehen, wenn sie ohnehin oeffentlich sind (Beitrag veroeffentlicht).
+    if ($post->post_type === 'attachment') return ma_partner_medium_caps($post, $cap, $user_id);
+
     if (!in_array($post->post_type, $policy['post_types'], true)) return ['do_not_allow'];
     if ((int)$post->post_author !== $user_id) return ['do_not_allow'];
     if ($post->post_status === 'publish' && $cap !== 'read_post') return ['do_not_allow'];
     return $caps;
+}
+
+/** Rechte eines Partners an einem Medium (map_meta_cap). */
+function ma_partner_medium_caps(WP_Post $medium, string $cap, int $user_id): array {
+    $eltern = $medium->post_parent ? get_post((int)$medium->post_parent) : null;
+    $oeffentlich = $eltern && $eltern->post_status === 'publish';
+    if ((int)$medium->post_author !== $user_id) return ($cap === 'read_post' && $oeffentlich) ? ['read'] : ['do_not_allow'];
+    if ($cap === 'delete_post') return ['do_not_allow'];
+    if ($cap === 'edit_post' && $oeffentlich) return ['do_not_allow'];
+    return ['read'];
+}
+
+/** Medienabfragen (Medien-Dialog, REST) fuer Partner auf eigene Uploads begrenzen. */
+function ma_partner_eigene_medien_args(array $args): array {
+    if (ma_current_partner_policy()) $args['author'] = get_current_user_id();
+    return $args;
 }
 
 /*
@@ -252,7 +277,9 @@ function ma_partner_enforce_assignment(int $post_id, WP_Post $post, bool $update
         'ma_source_verified','ma_date_verified','ma_place_verified','ma_human_reviewed',
         'ma_image_rights_verified','ma_top_pinned','ma_release_confirmed','ma_ad_active'
     ] as $key) {
+        $GLOBALS['ma_system_raeumt'] = true;
         delete_post_meta($post_id, $key);
+        unset($GLOBALS['ma_system_raeumt']);
     }
 
     update_post_meta($post_id, '_ma_partner_submission', '1');
@@ -286,7 +313,7 @@ function ma_partner_admin_own_content(WP_Query $query): void {
     if (!$policy) return;
 
     global $pagenow;
-    if ($pagenow !== 'edit.php') return;
+    if (!in_array($pagenow, ['edit.php', 'upload.php'], true)) return;
     $query->set('author', get_current_user_id());
 }
 
