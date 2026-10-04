@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-04T12:52:00+02:00",
- "anzahl": 144,
+ "generated": "2026-10-04T13:34:00+02:00",
+ "anzahl": 145,
  "bestand": {
-  "gesamt": 144,
+  "gesamt": 145,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 64,
    "sport": 26,
    "rathaus": 13,
    "leben": 24,
-   "wirtschaft": 6,
+   "wirtschaft": 7,
    "tipp": 0,
    "menschen": 0,
    "vereine": 11,
@@ -18,14 +18,14 @@
   "ortsteile": {
    "merzenich": 94,
    "golzheim": 14,
-   "girbelsrath": 18,
+   "girbelsrath": 19,
    "morschenich": 10,
    "buergewald": 8,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 144,
+    "anzahl": 145,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -45,7 +45,7 @@
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 6,
+    "anzahl": 7,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -73,7 +73,7 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 18,
+    "anzahl": 19,
     "liste": "gepflegt"
    },
    "/morschenich/": {
@@ -103,6 +103,52 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-04-stollenwerk-merzenich-girbelsrath-stellen-ausbildung-2026",
+   "url": "/wirtschaft/stollenwerk-merzenich-girbelsrath-stellen-ausbildung-2026/",
+   "titel": "Stollenwerk sucht am Stammwerk Merzenich in Produktion, Technik, Logistik und Verwaltung",
+   "teaser": "Im offiziellen Bewerberportal stehen derzeit zahlreiche Ausschreibungen für den Standort Merzenich. Gesucht werden Fachkräfte ebenso wie Auszubildende – vom Linienleiter bis zum Industriekaufmann.",
+   "kicker": "Arbeitsmarkt · Stollenwerk",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-10-04T13:34:00+02:00",
+   "aktualisiert": "2026-10-04T13:34:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "stollenwerk",
+     "label": "Stollenwerk"
+    },
+    {
+     "slug": "arbeitsmarkt",
+     "label": "Arbeitsmarkt"
+    },
+    {
+     "slug": "ausbildung",
+     "label": "Ausbildung"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/girbelsrath-1440.webp",
+    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-04-neues-buergerhaus-merzenich-bedarfsermittlung-2026",
    "url": "/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/",
