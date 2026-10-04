@@ -176,4 +176,7 @@ const kanalSeiten = kanaele.map((k) => {
 
 if (fehler.length) { console.error('Unternehmen: ' + fehler.join('\n  ')); process.exit(2); }
 console.log(`Unternehmen: ${meldungen.length} Meldungen, ${kanaele.length} Kanaele, ${daten.angebote.length} Angebote; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
-if (nurPruefen && geaendert.length) process.exit(2);
+if (nurPruefen && geaendert.length) {
+  console.error('Unternehmen nicht aktuell: ' + geaendert.join(', '));
+  process.exit(2);
+}
