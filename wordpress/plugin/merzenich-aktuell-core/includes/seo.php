@@ -211,10 +211,17 @@ function ma_seo_graph(array $k, array $o): array {
             // Vergangene Termine bleiben erreichbar (Archiv), tragen aber keinen Status „geplant“.
             if (empty($t['vorbei'])) $e['eventStatus'] = 'https://schema.org/EventScheduled';
             if (!empty($t['start'])) $e['startDate'] = $t['start'];
+            // Ohne bekanntes Ende endet der Termin am selben Tag (Search Console 04.10.2026: endDate empfohlen).
             if (!empty($t['ende'])) $e['endDate'] = $t['ende'];
+            elseif (!empty($t['start'])) $e['endDate'] = substr((string) $t['start'], 0, 10);
             if (!empty($t['ort'])) $e['location'] = ['@type' => 'Place', 'name' => $t['ort'], 'address' => $adresse];
-            if (!empty($t['veranstalter'])) $e['organizer'] = ['@type' => 'Organization', 'name' => $t['veranstalter']];
-            if (isset($t['preis']) && preg_match('/^(kostenlos|kostenfrei|frei|eintritt frei|0 ?€)/iu', (string) $t['preis'])) $e['isAccessibleForFree'] = true;
+            if (!empty($t['veranstalter'])) {
+                $e['organizer'] = ['@type' => 'Organization', 'name' => $t['veranstalter']];
+                $vu = ma_seo_veranstalter_url((string) $t['veranstalter']);
+                if ($vu !== '') $e['organizer']['url'] = $vu;
+            }
+            $angebot = ma_seo_angebot((string) ($t['preis'] ?? ''), $url);
+            if ($angebot) { $e['offers'] = $angebot; if ((string) $angebot['price'] === '0') $e['isAccessibleForFree'] = true; }
             if ($bild) $e['image'] = [$bild];
             $graph[] = $e;
             break;
@@ -369,7 +376,7 @@ function ma_seo_kontext(): array {
         $d = ma_seo_orte()[$o->slug] ?? ['name' => $o->name, 'beschreibung' => $o->description ?: 'Meldungen aus ' . $o->name . '.'];
         $k = array_merge($k, ['typ' => 'ort', 'ort' => isset(ma_seo_orte()[$o->slug]) ? $o->slug : 'merzenich', 'titel' => $d['name'] . ': Nachrichten aus dem Ortsteil der Gemeinde Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: $d['beschreibung']), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], [$d['name'], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_tag() && $o instanceof WP_Term) {
-        $k = array_merge($k, ['typ' => 'thema', 'titel' => $o->name . ': Meldungen aus Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: 'Alle Meldungen von Merzenich Aktuell zum Thema ' . $o->name . ' aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], ['Thema', null], [$o->name, null]], 'liste' => ma_seo_liste()]);
+        $k = array_merge($k, ['typ' => 'thema', 'titel' => $o->name . ': Meldungen aus Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: 'Alle Meldungen von Merzenich Aktuell zum Thema ' . $o->name . ' aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], ['Thema', $home . 'thema/'], [$o->name, null]], 'liste' => ma_seo_liste()]);
     } elseif (is_post_type_archive()) {
         $typ = (string) get_query_var('post_type'); if (is_array(get_query_var('post_type'))) $typ = (string) (get_query_var('post_type')[0] ?? '');
         $slug = ['ma_event' => 'termine', 'ma_tip' => 'tipp', 'ma_club' => 'vereine'][$typ] ?? '';
@@ -614,6 +621,40 @@ add_action('post_updated', function (int $id, WP_Post $nach): void {
 }, 10, 2);
 
 /* ------------------------------------------------------------ Backend: Merzenich Aktuell → SEO */
+
+/**
+ * Website eines Veranstalters, wenn sie bekannt ist: Gemeinde, Kreis oder ein
+ * Verein aus dem Vereinsverzeichnis (Name gleich oder enthalten, ohne „e.V.“).
+ * Sonst leer; nichts wird geraten.
+ */
+function ma_seo_veranstalter_url(string $name): string {
+    $norm = fn(string $x): string => trim(preg_replace('/\s+/', ' ', preg_replace('/\be\.? ?v\.?\b|[^\p{L}\p{N} ]/iu', ' ', mb_strtolower($x))));
+    $n = $norm($name);
+    if ($n === '') return '';
+    $fest = ['gemeinde merzenich' => 'https://www.gemeinde-merzenich.de/', 'kreis düren' => 'https://www.kreis-dueren.de/', 'kreis dueren' => 'https://www.kreis-dueren.de/', 'feuerwehr merzenich' => 'https://www.feuerwehr-merzenich.de/'];
+    foreach ($fest as $k => $u) if ($n === $k || str_starts_with($n, $k . ' ')) return $u;
+    if (!function_exists('ma_vereinsverzeichnis')) return '';
+    foreach (ma_vereinsverzeichnis() as $v) {
+        $w = (string) ($v['website'] ?? '');
+        if ($w === '' || !preg_match('#^https?://#', $w)) continue;
+        $vn = $norm((string) ($v['name'] ?? ''));
+        if ($vn === '') continue;
+        // Enthalten nur als ganze Wörter und ab 8 Zeichen, damit „Chor“ nicht auf „Chorfest“ passt.
+        $ganz = fn(string $lang, string $kurz): bool => mb_strlen($kurz) >= 8 && preg_match('/(^| )' . preg_quote($kurz, '/') . '( |$)/u', $lang) === 1;
+        if ($vn === $n || $ganz($vn, $n) || $ganz($n, $vn)) return $w;
+    }
+    return '';
+}
+
+/** Angebot aus dem Preisfeld: „frei/kostenlos/0 €“ oder eine Zahl mit Euro; sonst keins. */
+function ma_seo_angebot(string $preis, string $url): array {
+    $p = trim($preis);
+    if ($p === '') return [];
+    if (preg_match('/^(kostenlos|kostenfrei|frei|eintritt frei|gratis|0 ?(€|euro))/iu', $p)) $betrag = '0';
+    elseif (preg_match('/(\d+(?:[.,]\d{1,2})?)\s*(€|euro)/iu', $p, $m)) $betrag = str_replace(',', '.', $m[1]);
+    else return [];
+    return ['@type' => 'Offer', 'price' => $betrag, 'priceCurrency' => 'EUR', 'url' => $url, 'availability' => 'https://schema.org/InStock'];
+}
 
 /**
  * Offizielle Profile (sameAs): Option aus SEO & Geo; solange sie nie gespeichert

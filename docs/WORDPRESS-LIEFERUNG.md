@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.19.0 (Historie unten)
+4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.19.1 (Historie unten)
+
+## Neu in 1.19.1 (04.10.2026): Search-Console-Meldungen zu Navigationspfaden und Terminen
+
+Google Search Console (04.10.2026) meldete auf vier Themenseiten (`/thema/polizei/`, `/thema/ausflug/`, `/thema/buergermeister/`, `/thema/staedtebaufoerderung/`) den kritischen Fehler „Feld ‚item‘ fehlt (in itemListElement)“ und auf Terminseiten die Hinweise `endDate`, `organizer.url`, `offers` und `performer` fehlen.
+
+- **Navigationspfade:** Die Stufe „Thema“ verweist jetzt auf `/thema/` (Themenübersicht, erreichbar); nur die letzte Stufe bleibt ohne Link, wie bei allen anderen Seiten.
+- **Termine (Event):** Ohne eingetragenes Ende endet der Termin am Starttag (`endDate`). Der Veranstalter bekommt seine Website (`organizer.url`), wenn sie bekannt ist: Gemeinde Merzenich, Kreis Düren, Feuerwehr Merzenich oder ein Verein aus dem Vereinsverzeichnis (Name gleich oder als ganze Wörter enthalten, ab 8 Zeichen); nichts wird geraten. Aus dem Preisfeld entsteht ein Angebot (`offers`): „frei/kostenlos/0 €“ = Preis 0 und `isAccessibleForFree`, eine Zahl mit Euro = dieser Preis; andere Angaben („Spende erbeten“) ergeben kein Angebot. `performer` bleibt bewusst weg (für Ratssitzungen und Feste gibt es keinen Künstler).
+- **Danach in der Search Console:** bei beiden Meldungen „Fehlerbehebung überprüfen“ anklicken; Google prüft die Seiten dann innerhalb einiger Tage neu.
+
+**Geprüft:** `php qa/wordpress/seo-test.php` (neue Fälle: Thema-Brotkrumen, Termin ohne Ende, Veranstalter-Link, Preis 0 und 12,50 €, keine Angabe, Vereinsverzeichnis), alle `qa/wordpress/*-test.php`, `kette.mjs --check`.
 
 ## Neu in 1.19.0 / Theme 21.9.0 (03.10.2026): Backend nach den KBS-Anforderungen
 
