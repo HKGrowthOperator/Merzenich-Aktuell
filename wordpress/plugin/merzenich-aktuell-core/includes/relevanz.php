@@ -433,18 +433,24 @@ function ma_freigabe_typen(): array {
     return ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad', 'ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice'];
 }
 
-/** Wartende Inhalte: eingereicht oder in Prüfung, dazu Partner-Entwürfe mit fehlender Fotoerlaubnis. */
+/** Meldungen aus dem Abgleich (abgleich.php), die noch als Entwurf auf die Freigabe warten. */
+function ma_freigaben_abgleich(bool $nur_ids = false): array {
+    return get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'DESC', 'fields' => $nur_ids ? 'ids' : 'all',
+        'meta_query' => [['key' => '_ma_abgleich_hash', 'compare' => 'EXISTS']]]);
+}
+
+/** Wartende Inhalte: eingereicht oder in Prüfung, Partner-Entwürfe mit fehlender Fotoerlaubnis und (seit 1.20.4) die Entwürfe aus dem Abgleich. */
 function ma_freigaben_wartend(): array {
     $typen = ma_freigabe_typen();
     $l = get_posts(['post_type' => $typen, 'post_status' => ['pending', 'ma_in_pruefung'], 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'ASC']);
     $entwuerfe = get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 40, 'orderby' => 'modified', 'order' => 'DESC',
         'meta_query' => [['key' => '_ma_partner_rights_missing', 'value' => '1']]]);
     $gesehen = [];
-    return array_values(array_filter(array_merge($l, $entwuerfe), function ($p) use (&$gesehen) { if (isset($gesehen[$p->ID])) return false; return $gesehen[$p->ID] = true; }));
+    return array_values(array_filter(array_merge($l, $entwuerfe, ma_freigaben_abgleich()), function ($p) use (&$gesehen) { if (isset($gesehen[$p->ID])) return false; return $gesehen[$p->ID] = true; }));
 }
 
 add_action('admin_menu', function (): void {
-    $n = count(get_posts(['post_type' => ma_freigabe_typen(), 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
+    $n = count(get_posts(['post_type' => ma_freigabe_typen(), 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids'])) + count(ma_freigaben_abgleich(true));
     $titel = 'Freigaben' . ($n ? ' <span class="awaiting-mod count-' . $n . '"><span class="pending-count">' . $n . '</span></span>' : '');
     add_submenu_page('merzenich-aktuell', 'Freigaben', $titel, 'edit_others_posts', 'ma-freigaben', 'ma_freigaben_seite', 0);
 }, 20);
@@ -469,6 +475,8 @@ function ma_freigaben_seite(): void {
     echo '<div class="wrap"><h1>Freigaben</h1>';
     if (!empty($_GET['gespeichert'])) echo '<div class="notice notice-success is-dismissible"><p>Einstellungen der Platzierung gespeichert.</p></div>';
     echo '<p>Eingereichte Meldungen, Termine, Vereins- und Unternehmensprofile, Anzeigen, Immobilien, Stellen, Trauer- und Familienanzeigen sowie Änderungsvorschläge. Für Meldungen triffst du zwei getrennte Entscheidungen: <strong>veröffentlichen</strong> und, eigens, <strong>Startseite ja oder nein</strong>; dazu die <strong>Relevanz von 1 bis 10</strong> und auf Wunsch eine <strong>Priorität 1 bis 10</strong> (ordnet innerhalb derselben Relevanz). Dann <strong>Freigeben</strong> (sofort) oder <strong>Planen</strong> (Zeitpunkt). Alternativ: in Prüfung nehmen, Änderungen anfordern oder ablehnen; der Einsender bekommt jeweils eine E-Mail.</p>';
+    $abgleich = count(ma_freigaben_abgleich(true));
+    if ($abgleich) echo '<div class="notice notice-info inline"><p><strong>' . $abgleich . ($abgleich === 1 ? ' neue Meldung' : ' neue Meldungen') . ' aus dem <a href="' . esc_url(admin_url('admin.php?page=ma-abgleich')) . '">Abgleich</a></strong> warten unten als Entwurf. Relevanz wählen, Startseite ja oder nein, „Freigeben“: dann ist die Meldung online und steht in der News-Sitemap für Google.</p></div>';
     if (!$wartend) echo '<p><strong>Keine Einreichungen warten.</strong></p>';
     else {
         echo '<table class="widefat striped ma-freigaben"><thead><tr><th style="width:130px">Bild</th><th>Einreichung</th><th>Von</th><th class="ma-freigaben__aktion">Entscheidung</th></tr></thead><tbody>';
@@ -499,6 +507,7 @@ function ma_freigaben_zeile(WP_Post $p): string {
     $von = (int) get_post_meta($p->ID, '_ma_aenderung_von', true);
     $typen = ['post' => 'Meldung', 'ma_event' => 'Termin', 'ma_club' => 'Vereinsprofil', 'ma_business' => 'Unternehmensprofil', 'ma_tip' => 'Tipp', 'ma_ad' => 'Anzeige', 'ma_property' => 'Immobilie', 'ma_job' => 'Stelle', 'ma_obituary' => 'Traueranzeige', 'ma_family_notice' => 'Familienanzeige'];
     $istMeldung = $p->post_type === 'post';
+    if ($istMeldung && get_post_meta($p->ID, '_ma_abgleich_hash', true) !== '') $typen['post'] = 'Meldung aus dem Abgleich';
     $kats = $istMeldung ? implode(', ', array_map(fn($t) => $t->name, get_the_category($p->ID))) : '';
     if ($p->post_type === 'ma_ad') {
         $slot = (string) get_post_meta($p->ID, 'ma_ad_slot', true); $sponsor = (string) get_post_meta($p->ID, 'ma_ad_sponsor', true);

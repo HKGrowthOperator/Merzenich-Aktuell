@@ -87,10 +87,100 @@ add_action('wp_head', function (): void {
     echo '<link rel="preload" as="image" href="' . esc_url($b['src']) . '"' . ($b['srcset'] ? ' imagesrcset="' . esc_attr($b['srcset']) . '" imagesizes="' . esc_attr($sizes) . '"' : '') . ' fetchpriority="high">' . "\n";
 }, 2);
 
-/** Kopf (Masthead) mit Tagesdatum: der Platzhalter {{ma:datum}} (deploy/wp-theme.mjs) wird serverseitig in Ortszeit gefüllt. */
+/**
+ * Kopf (Masthead). Der Platzhalter {{ma:datum}} (deploy/wp-theme.mjs) wird in
+ * Ortszeit gefüllt. Seit 21.9.9 kommt auch der Rest aus WordPress statt aus dem
+ * Stand der Vorlage: die Ausgabe-Wahl mit der Zahl veröffentlichter Meldungen je
+ * Ort (Adressen /ort/…/, keine Umleitung mehr), die Zeile „Merzenich · Jetzt“
+ * mit der jüngsten veröffentlichten Meldung, den Meldungen von heute und dem
+ * nächsten Termin, und die Markierung der gerade besuchten Seite im Menü.
+ * (Vorher zeigte die Zeile einen Entwurf, der für Leser ein 404 war.)
+ */
 function ma21_kopf(string $name): string {
     $datum = '<time data-today datetime="' . esc_attr((string) wp_date('c')) . '">' . esc_html((string) wp_date('d.m.')) . '</time>';
-    return str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
+    $html = str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
+    $d = ma21_kopf_daten();
+    $html = ma21_kopf_aktuell($html);
+    $html = ma21_kopf_ortswahl($html, $d['zahlen']);
+    return ma21_kopf_jetzt($html, $d);
+}
+
+/** Zahlen und Meldungen für den Kopf, 10 Minuten zwischengespeichert (Reset bei jeder Statusänderung von Meldungen und Terminen). */
+function ma21_kopf_daten(): array {
+    $d = get_transient('ma21_kopf_daten');
+    if (is_array($d) && isset($d['zahlen'], $d['daten'])) return $d;
+    $d = ['zahlen' => [], 'neu' => null, 'daten' => [], 'termin' => null];
+    foreach (MA21_ORTE as $slug => $name) {
+        $t = get_term_by('slug', $slug, 'ma_location');
+        if (!$t instanceof WP_Term) { $d['zahlen'][$slug] = 0; continue; }
+        $q = new WP_Query(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => false,
+            'tax_query' => [['taxonomy' => 'ma_location', 'field' => 'term_id', 'terms' => (int) $t->term_id]]]);
+        $d['zahlen'][$slug] = (int) $q->found_posts;
+    }
+    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 30, 'orderby' => 'date', 'order' => 'DESC']);
+    foreach ($neueste as $i => $p) {
+        $iso = (string) get_post_time('c', false, $p);
+        $d['daten'][] = $iso;
+        if ($i === 0) $d['neu'] = ['iso' => $iso, 'zeit' => (string) get_post_time('d.m. · H:i', false, $p) . ' Uhr', 'url' => wp_make_link_relative(get_permalink($p)), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8')];
+    }
+    $jetzt = (string) current_time('Y-m-d\TH:i');
+    $t = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 1, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
+        'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
+    if ($t) {
+        $p = $t[0]; $start = strtotime((string) get_post_meta($p->ID, 'ma_event_start', true));
+        $wann = $start ? wp_date('d.m.', $start) . (wp_date('H:i', $start) !== '00:00' ? ', ' . wp_date('H:i', $start) . ' Uhr' : '') : '';
+        $d['termin'] = ['url' => wp_make_link_relative(get_permalink($p)), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'wann' => $wann];
+    }
+    set_transient('ma21_kopf_daten', $d, 10 * MINUTE_IN_SECONDS);
+    return $d;
+}
+add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
+    if (in_array($p->post_type, ['post', 'ma_event'], true) && ($neu === 'publish' || $alt === 'publish')) delete_transient('ma21_kopf_daten');
+}, 10, 3);
+
+/** Welche Seite gerade besucht wird: nur dieser Menüpunkt trägt aria-current (die Vorlage markiert immer „Aktuell“). */
+function ma21_kopf_aktuell(string $html): string {
+    $html = str_replace(' aria-current="page"', '', $html);
+    $pfad = '/' . trim((string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH), '/') . '/';
+    if ($pfad === '//') $pfad = '/';
+    if (is_singular('post')) { $o = get_queried_object(); if ($o instanceof WP_Post) $pfad = '/' . ma21_ressort($o)[0] . '/'; }
+    elseif (is_singular('ma_event') || is_post_type_archive('ma_event')) $pfad = '/termine/';
+    elseif (is_singular('ma_club') || is_post_type_archive('ma_club')) $pfad = '/vereine/';
+    if (!preg_match('#^/[a-z0-9-]+/$#', $pfad)) return $html;
+    return str_replace('<a href="' . $pfad . '">', '<a href="' . $pfad . '" aria-current="page">', $html);
+}
+
+/** Ausgabe-Wahl: Adressen /ort/…/, Zahl veröffentlichter Meldungen je Ort, besuchter Ort als Auswahl. */
+function ma21_kopf_ortswahl(string $html, array $zahlen): string {
+    $o = is_tax('ma_location') ? get_queried_object() : null;
+    $aktiv = $o instanceof WP_Term && isset(MA21_ORTE[$o->slug]) ? $o->slug : '';
+    foreach (MA21_ORTE as $slug => $name) {
+        $n = (int) ($zahlen[$slug] ?? 0);
+        $neu = '<a href="/ort/' . $slug . '/"' . ($aktiv === $slug ? ' aria-current="page"' : '') . '><span class="ortswahl-name">' . ma21_e($name) . '</span>'
+            . ($n > 0 ? '<span class="ortswahl-zahl">' . $n . ' ' . ($n === 1 ? 'Meldung' : 'Meldungen') . '</span>' : '') . '</a>';
+        $html = (string) preg_replace('#<a href="/' . $slug . '/"(?: aria-current="page")?><span class="ortswahl-name">[^<]*</span><span class="ortswahl-zahl">[^<]*</span></a>#u', $neu, $html, 1);
+    }
+    $html = (string) preg_replace('#href="/(' . implode('|', array_keys(MA21_ORTE)) . ')/"#', 'href="/ort/$1/"', $html);
+    if ($aktiv !== '') $html = str_replace('<span class="ortswahl-aktuell">Merzenich</span>', '<span class="ortswahl-aktuell">' . ma21_e(MA21_ORTE[$aktiv]) . '</span>', $html);
+    return $html;
+}
+
+/** „Merzenich · Jetzt“: jüngste veröffentlichte Meldung, Meldungen von heute, nächster Termin (assets/kopf.js macht daraus relative Zeiten). */
+function ma21_kopf_jetzt(string $html, array $d): string {
+    if (!str_contains($html, 'class="jetzt"')) return $html;
+    if (!empty($d['neu'])) {
+        $neu = '<span class="jetzt-feld jetzt-neu">Neu <time datetime="' . esc_attr($d['neu']['iso']) . '">' . ma21_e($d['neu']['zeit']) . '</time> <a href="' . esc_url($d['neu']['url']) . '">' . ma21_e($d['neu']['titel']) . '</a></span>';
+        $html = (string) preg_replace('#<span class="jetzt-feld jetzt-neu">.*?</span>#su', $neu, $html, 1);
+    } else {
+        $html = (string) preg_replace('#<span class="jetzt-feld jetzt-neu">.*?</span>#su', '<span class="jetzt-feld jetzt-neu" hidden></span>', $html, 1);
+    }
+    $heute = (string) wp_date('Y-m-d');
+    $n = count(array_filter($d['daten'], fn(string $iso): bool => str_starts_with($iso, $heute)));
+    $heuteHtml = '<span class="jetzt-feld jetzt-heute" data-daten="' . esc_attr(implode(' ', $d['daten'])) . '"' . ($n ? '>Heute ' . $n . ($n === 1 ? ' neue Meldung' : ' neue Meldungen') : ' hidden>') . '</span>';
+    $html = (string) preg_replace('#<span class="jetzt-feld jetzt-heute"[^>]*>(?:[^<]*)</span>#u', $heuteHtml, $html, 1);
+    $t = $d['termin'] ?? null;
+    $terminHtml = $t ? '<span class="jetzt-feld jetzt-termin">Nächster Termin <a href="' . esc_url($t['url']) . '">' . ma21_e($t['titel']) . '</a>' . ($t['wann'] !== '' ? ' · ' . ma21_e($t['wann']) : '') . '</span>' : '<span class="jetzt-feld jetzt-termin" hidden></span>';
+    return (string) preg_replace('#<span class="jetzt-feld jetzt-termin"[^>]*>(?:[^<]*)</span>#u', $terminHtml, $html, 1);
 }
 
 /* /assets/ -> Theme-Verzeichnis static/; das Ressort-Menü und alles, was dort
@@ -686,6 +776,8 @@ add_action('init', function (): void {
     add_rewrite_rule('^nachrichten/?$', 'index.php?ma_alle=1', 'top');
     add_rewrite_rule('^nachrichten/page/([0-9]+)/?$', 'index.php?ma_alle=1&paged=$matches[1]', 'top');
     add_rewrite_rule('^api/weather\.json/?$', 'index.php?ma_api=weather', 'top');
+    // Die beiden Abrufe aus assets/v20.js (Sportmodul, redaktionelle Übersteuerung) liefen auf WordPress ins Leere (404).
+    add_rewrite_rule('^api/(sport-current|editorial-current)\.json/?$', 'index.php?ma_api=$matches[1]', 'top');
     // /unternehmen/ wie auf der statischen Seite (Aufbau wie Oberberg Aktuell, 30.09.2026).
     add_rewrite_rule('^unternehmen/?$', 'index.php?ma_unternehmen=1', 'top');
 });
@@ -747,6 +839,41 @@ add_action('template_redirect', function (): void {
     nocache_headers();
     if (!$daten) { status_header(503); wp_send_json(['fehler' => 'Wetter nicht verfügbar']); }
     header('Content-Type: application/json; charset=utf-8');
+    echo $daten; exit;
+});
+
+/**
+ * /api/sport-current.json: der Spielstand des SC Merzenich, den die Kette
+ * (deploy/sport.mjs) nach chatgpt-site/api/ schreibt; von der Vorschauseite oder
+ * aus dem Repository geholt, 15 Minuten zwischengespeichert, mit Notkopie, falls
+ * beide Quellen gerade nicht antworten. /api/editorial-current.json: die
+ * redaktionelle Übersteuerung der statischen Startseite; auf WordPress entscheidet
+ * das Board „Startseite & Ressorts“, darum eine leere Antwort statt eines 404.
+ */
+add_action('template_redirect', function (): void {
+    $api = (string) get_query_var('ma_api');
+    if ($api === 'editorial-current') {
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: public, max-age=600');
+        echo wp_json_encode(['generated' => (string) wp_date('c'), 'hinweis' => 'Auf WordPress entscheidet die Redaktion im Board „Startseite & Ressorts“; diese Datei setzt hier nichts.', 'hero' => null, 'secondary' => []], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    if ($api !== 'sport-current') return;
+    $daten = get_transient('ma21_sport_current');
+    if (!is_string($daten) || $daten === '') {
+        $daten = '';
+        foreach ([ma21_statisch_erreichbar() ? MA21_STATISCH . '/api/sport-current.json' : '', MA21_REPO . '/api/sport-current.json'] as $url) {
+            if ($url === '') continue;
+            $r = wp_remote_get($url, ['timeout' => 6]);
+            $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
+            if ($body !== '' && is_array(json_decode($body, true))) { $daten = $body; break; }
+        }
+        if ($daten !== '') { set_transient('ma21_sport_current', $daten, 15 * MINUTE_IN_SECONDS); update_option('ma21_sport_current_kopie', $daten, false); }
+        else $daten = (string) get_option('ma21_sport_current_kopie', '');
+    }
+    if ($daten === '') { status_header(503); nocache_headers(); wp_send_json(['fehler' => 'Spielstand nicht verfügbar']); }
+    header('Content-Type: application/json; charset=utf-8');
+    header('Cache-Control: public, max-age=600');
     echo $daten; exit;
 });
 

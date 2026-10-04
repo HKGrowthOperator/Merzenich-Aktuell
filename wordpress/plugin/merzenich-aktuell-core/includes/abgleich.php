@@ -290,6 +290,31 @@ add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'Abgleich', 'Abgleich', 'manage_options', 'ma-abgleich', 'ma_abgleich_seite_admin', 2);
 }, 12);
 
+/* Dashboard-Kachel „Redaktion“ (1.20.4): was wartet, wann der Abgleich zuletzt lief, was zuletzt online ging. */
+add_action('wp_dashboard_setup', function (): void {
+    if (!current_user_can('edit_others_posts') || (function_exists('ma_current_partner_policy') && ma_current_partner_policy())) return;
+    wp_add_dashboard_widget('ma_redaktion_widget', 'Redaktion: Freigaben und Abgleich', 'ma_abgleich_dashboard_kachel');
+});
+function ma_abgleich_dashboard_kachel(): void {
+    $abgleich = function_exists('ma_freigaben_abgleich') ? count(ma_freigaben_abgleich(true)) : 0;
+    $eingereicht = count(get_posts(['post_type' => function_exists('ma_freigabe_typen') ? ma_freigabe_typen() : 'post', 'post_status' => 'pending', 'posts_per_page' => 99, 'fields' => 'ids']));
+    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC']);
+    $stand = get_option('ma_abgleich_stand', []);
+    $naechster = wp_next_scheduled(MA_ABGLEICH_CRON);
+    $freigaben = esc_url(admin_url('admin.php?page=ma-freigaben'));
+    echo '<ul style="margin:0">';
+    echo '<li>' . ($abgleich ? '<strong style="color:#b32d2e">' . $abgleich . ($abgleich === 1 ? ' neue Meldung' : ' neue Meldungen') . '</strong> aus dem Abgleich warten auf Freigabe · <a href="' . $freigaben . '">jetzt freigeben</a>' : 'Keine neue Meldung aus dem Abgleich wartet.') . '</li>';
+    echo '<li>' . ($eingereicht ? '<strong>' . $eingereicht . '</strong> ' . ($eingereicht === 1 ? 'Einreichung' : 'Einreichungen') . ' von Vereinen und Partnern · <a href="' . $freigaben . '">prüfen</a>' : 'Keine Einreichung wartet.') . '</li>';
+    echo '<li>Zuletzt online: ' . ($neueste ? '<a href="' . esc_url(get_permalink($neueste[0])) . '">' . esc_html(get_the_title($neueste[0])) . '</a> (' . esc_html(get_post_time('d.m.Y H:i', false, $neueste[0])) . ' Uhr)' : 'noch keine veröffentlichte Meldung') . '</li>';
+    if (is_array($stand) && $stand) {
+        echo '<li>Letzter Abgleich: ' . esc_html((string) ($stand['zeit'] ?? '')) . ' · ' . (int) ($stand['neu'] ?? 0) . ' neu, ' . (int) ($stand['aktualisiert'] ?? 0) . ' aktualisiert' . (!empty($stand['fehler']) ? ', <strong style="color:#b32d2e">' . count($stand['fehler']) . ' Fehler</strong>' : '') . ' · <a href="' . esc_url(admin_url('admin.php?page=ma-abgleich')) . '">Abgleich</a></li>';
+    } else {
+        echo '<li>Der Abgleich ist noch nicht gelaufen · <a href="' . esc_url(admin_url('admin.php?page=ma-abgleich')) . '">Abgleich</a></li>';
+    }
+    echo '<li>Nächster automatischer Lauf: ' . ($naechster ? esc_html(wp_date('d.m.Y H:i', $naechster)) . ' Uhr' : 'nicht geplant') . (ma_abgleich_aktiv() ? '' : ' (automatischer Abgleich ist aus)') . (ma_abgleich_sofort() ? ' · neue Meldungen gehen sofort online' : '') . '</li>';
+    echo '</ul>';
+}
+
 function ma_abgleich_seite_admin(): void {
     if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
     $hinweis = ''; $ergebnis = null;

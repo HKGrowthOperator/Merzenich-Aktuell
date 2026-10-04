@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.8 · Core-Plugin 1.20.3 (Historie unten)
+4. Oktober 2026 · Theme 21.9.9 · Core-Plugin 1.20.4 (Historie unten)
+
+## Neu in Theme 21.9.9 / Plugin 1.20.4 (04.10.2026): Kopfleiste aus WordPress, Freigaben mit Abgleich-Entwürfen, Dashboard-Kachel
+
+- **Kopf („Merzenich · Jetzt“, Ausgabe-Wahl):** Die Vorlage `vorlagen/kopf.html` trug den Stand der statischen Seite: feste Zahlen je Ortsteil („94 Meldungen“), Links `/merzenich/` (eine Umleitung je Klick) und als „Neu“ eine Meldung, die auf WordPress noch Entwurf war, für Leser also ein 404. `ma21_kopf()` füllt die Leiste jetzt aus WordPress: Zahl veröffentlichter Meldungen je Ort (`ma_location`), Adressen `/ort/…/`, jüngste veröffentlichte Meldung mit Uhrzeit, „Heute n neue Meldungen“, nächster veröffentlichter Termin; auf `/ort/golzheim/` zeigt die Wahl Golzheim. Alles 10 Minuten zwischengespeichert (`ma21_kopf_daten`), Reset bei jeder Veröffentlichung. Das Menü markiert die besuchte Seite (`aria-current`) statt immer „Aktuell“; bei Meldungen das Ressort, bei Terminen „Termine“, bei Vereinen „Vereine“.
+- **`/api/sport-current.json`, `/api/editorial-current.json`:** `assets/v20.js` ruft beide auf jeder Seite ab, auf WordPress liefen sie ins Leere (404 in der Konsole). Der Spielstand kommt jetzt von der Vorschauseite oder aus dem Repository (15 Minuten Cache, Notkopie in `ma21_sport_current_kopie`), das Sportmodul in `/sport/` zeigt damit frische Ergebnisse ohne Theme-Lieferung. Die redaktionelle Übersteuerung antwortet leer (`hero: null`), denn auf WordPress entscheidet das Board „Startseite & Ressorts“.
+- **Freigaben (Plugin):** Die Entwürfe aus dem Abgleich standen bisher nur unter „Beiträge → Entwürfe“; die Freigaben-Seite und der Zähler im Menü kannten sie nicht. Jetzt stehen sie dort mit Relevanz, Startseite ja/nein und „Freigeben“ (ein Klick, dann online und in der News-Sitemap), gekennzeichnet als „Meldung aus dem Abgleich“, mit Hinweis oben und im Menü-Zähler (`ma_freigaben_abgleich()`).
+- **Dashboard-Kachel „Redaktion: Freigaben und Abgleich“:** wartende Meldungen aus dem Abgleich, Einreichungen, zuletzt veröffentlichte Meldung, letzter und nächster Abgleich-Lauf, jeweils mit Link. Die Freigabelogik bleibt: nichts geht ohne Klick der Redaktion online.
+
+**Geprüft:** alle PHP-Tests, lokal (Kopfleiste, Ortswahl, `aria-current`, beide JSON-Adressen, Freigaben-Seite, Dashboard) und live nach dem Upload.
 
 ## Neu in Theme 21.9.8 / Plugin 1.20.3 (04.10.2026): Fehlerseite, Unternehmen nur mit Unternehmensbeiträgen, Kalenderdatei
 
