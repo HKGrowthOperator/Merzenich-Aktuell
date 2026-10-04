@@ -127,7 +127,9 @@ function ma21_kopf_daten(): array {
     $t = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 1, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
         'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
     if ($t) {
-        $p = $t[0]; $start = strtotime((string) get_post_meta($p->ID, 'ma_event_start', true));
+        // Beginn steht als Ortszeit ohne Zone in ma_event_start; strtotime() hätte sie als UTC gelesen (zwei Stunden zu spät).
+        $p = $t[0];
+        try { $start = (new DateTimeImmutable((string) get_post_meta($p->ID, 'ma_event_start', true), wp_timezone()))->getTimestamp(); } catch (Exception $e) { $start = 0; }
         $wann = $start ? wp_date('d.m.', $start) . (wp_date('H:i', $start) !== '00:00' ? ', ' . wp_date('H:i', $start) . ' Uhr' : '') : '';
         $d['termin'] = ['url' => wp_make_link_relative(get_permalink($p)), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'wann' => $wann];
     }
