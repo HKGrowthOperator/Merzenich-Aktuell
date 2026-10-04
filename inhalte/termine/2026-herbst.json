@@ -101,6 +101,86 @@
         "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
         "stand": "2026-10-03"
       }
+    },
+    {
+      "slug": "orte-von-kirche-merzenich-2026",
+      "titel": "Infoabend „Orte von Kirche“",
+      "start": "2026-10-08T19:30:00+02:00",
+      "ort": "Pfarrheim St. Laurentius Merzenich",
+      "adresse": "Schulstraße 4a, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Pastoraler Raum Merzenich–Niederzier–Nörvenich–Vettweiß / St. Laurentius Merzenich",
+      "beschreibung": "Informationsabend zur künftigen Gestaltung kirchlichen Lebens im Pastoralen Raum. Die Einladung steht unter dem Leitgedanken „Kommen – Mitreden – Mitgestalten“.",
+      "absaetze": [
+        "Am Donnerstag, 8. Oktober 2026, findet um 19:30 Uhr im Pfarrheim Merzenich an der Schulstraße 4a der Informationsabend „Orte von Kirche“ statt.",
+        "Die Veranstaltung gehört zur Reihe im Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß und lädt dazu ein, sich über die neue Struktur zu informieren und mitzudiskutieren."
+      ],
+      "artikel": "/leben/orte-von-kirche-infoabend-merzenich-2026/",
+      "links": [
+        [
+          "Originalankündigung bei Heimat-Info",
+          "https://www.heimat-info.de/beitraege/b8865e6b-3bc7-4b3b-823a-0ec6c959cb92"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarre St. Marien Vettweiß / Pastoraler Raum, Heimat-Info",
+        "url": "https://www.heimat-info.de/beitraege/b8865e6b-3bc7-4b3b-823a-0ec6c959cb92",
+        "stand": "2026-10-04"
+      }
+    },
+    {
+      "slug": "msg-hitnight-golzheim-2026",
+      "titel": "MSG Hitnight",
+      "start": "2026-10-10T19:00:00+02:00",
+      "ort": "Schützenhalle Golzheim",
+      "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich-Golzheim",
+      "ortsteil": "Golzheim",
+      "kategorie": "Vereine",
+      "veranstalter": "Marianische Schützenbruderschaft Golzheim",
+      "beschreibung": "Die Marianische Schützenbruderschaft Golzheim führt die MSG Hitnight für Samstag, 10. Oktober, ab 19 Uhr in ihrem Veranstaltungskalender.",
+      "absaetze": [
+        "Die Marianische Schützenbruderschaft Golzheim führt für Samstag, 10. Oktober 2026, die MSG Hitnight in ihrem offiziellen Terminkalender.",
+        "Beginn ist laut Vereinskalender um 19 Uhr in der Schützenhalle Golzheim an der Sankt-Sebastianus-Straße 42. Weitere Programmdetails nennt der öffentlich sichtbare Kalendereintrag derzeit nicht."
+      ],
+      "links": [
+        [
+          "Terminkalender der Marianischen Schützenbruderschaft Golzheim",
+          "https://www.schuetzen-golzheim.de/aktuelles/termine/"
+        ]
+      ],
+      "quelle": {
+        "name": "Marianische Schützenbruderschaft Golzheim, Terminkalender 2026",
+        "url": "https://www.schuetzen-golzheim.de/aktuelles/termine/",
+        "stand": "2026-10-04"
+      }
+    },
+    {
+      "slug": "fc-fanclub-59-bierabend-2026",
+      "titel": "59. Bierabend des 1. FC Köln Fanclubs Merzenich",
+      "start": "2026-10-31T19:48:00+01:00",
+      "ende": "2026-11-01T00:30:00+01:00",
+      "ort": "Weinberghalle Merzenich",
+      "adresse": "Schulstraße, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Vereine",
+      "veranstalter": "1. FC Köln Fanclub Merzenich 1967",
+      "beschreibung": "Der Merzenicher FC-Fanclub feiert seinen 59. Bierabend und zugleich sein 59-jähriges Bestehen. Angekündigt sind lokale Künstler, Tanzgruppen und Marita Köllner.",
+      "absaetze": [
+        "Am Samstag, 31. Oktober 2026, lädt der 1. FC Köln Fanclub Merzenich 1967 zum 59. Bierabend in die Weinberghalle ein. Der Veranstaltungsbeginn ist für 19:48 Uhr angegeben; eine frühere Vereinsankündigung nennt 19:15 Uhr als Einlass.",
+        "Angekündigt sind lokale Künstler, Tanzgruppen und als Top-Act Marita Köllner. Nach Angaben des Vereins sind Eintritt und Getränke in der Verzehrkarte enthalten."
+      ],
+      "links": [
+        [
+          "Veranstaltung bei Heimat-Info",
+          "https://www.heimat-info.de/veranstaltungen/efb93919-2d19-4892-a781-1f693bd73f45"
+        ]
+      ],
+      "quelle": {
+        "name": "1. FC Köln Fanclub Merzenich 1967, Heimat-Info",
+        "url": "https://www.heimat-info.de/veranstaltungen/efb93919-2d19-4892-a781-1f693bd73f45",
+        "stand": "2026-10-04"
+      }
     }
   ]
 }

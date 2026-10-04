@@ -1,0 +1,85 @@
+{
+  "hinweis": "Ergänzender Termin- und Vereinscheck am 04.10.2026. Bei der Schützenmeldung werden die voneinander abweichenden öffentlichen Zeitangaben ausdrücklich genannt; deshalb wird für das Kreismajestätenschießen bewusst kein Termin mit vermeintlich sicherer Uhrzeit erzeugt.",
+  "meldungen": [
+    {
+      "slug": "orte-von-kirche-infoabend-merzenich-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Kirche · Pastoraler Raum",
+      "titel": "„Orte von Kirche“: Infoabend am 8. Oktober im Pfarrheim Merzenich",
+      "dek": "Wie soll kirchliches Leben im neuen Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß künftig aussehen? Am Donnerstagabend lädt St. Laurentius zum Mitreden ins Pfarrheim ein.",
+      "datum": "2026-10-04T12:28:00+02:00",
+      "fakten": [
+        "Donnerstag, 8. Oktober 2026, 19:30 Uhr",
+        "Pfarrheim Merzenich, Schulstraße 4a",
+        "Informationsabend für St. Laurentius Merzenich",
+        "Thema: „Orte von Kirche“ im Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß"
+      ],
+      "absaetze": [
+        "Für Donnerstag, 8. Oktober, ist in Merzenich ein Informationsabend unter dem Titel „Orte von Kirche“ angekündigt. Beginn ist um 19:30 Uhr im Pfarrheim St. Laurentius an der Schulstraße 4a.",
+        "Die Veranstaltung gehört zu einer Reihe im Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß. Nach der veröffentlichten Einladung soll es darum gehen, was der Pastorale Raum bedeutet, warum künftig von „Orten von Kirche“ gesprochen wird und wie kirchliches Leben in der Region gemeinsam gestaltet werden kann. Die Einladung fasst das Ziel mit den Punkten Kommen, Mitreden und Mitgestalten zusammen.",
+        "Weitere Informationsabende der Reihe finden in Niederzier, Nörvenich und Vettweiß statt. Für Merzenich ist der Termin am 8. Oktober ausdrücklich St. Laurentius zugeordnet."
+      ],
+      "themen": [
+        [
+          "kirche",
+          "Kirche"
+        ],
+        [
+          "st-laurentius",
+          "St. Laurentius"
+        ],
+        [
+          "pastoraler-raum",
+          "Pastoraler Raum"
+        ]
+      ],
+      "bildklasse": "kirche.infoabend",
+      "quelle": {
+        "name": "Pfarre St. Marien Vettweiß / Pastoraler Raum, Heimat-Info vom 28.08.2026",
+        "url": "https://www.heimat-info.de/beitraege/b8865e6b-3bc7-4b3b-823a-0ec6c959cb92",
+        "stand": "2026-10-04"
+      }
+    },
+    {
+      "slug": "kreismajestaetenschiessen-morschenich-2026-zeitangaben",
+      "ressort": "vereine",
+      "ortsteil": "morschenich",
+      "kicker": "Schützen · Kreismajestätenschießen",
+      "titel": "Kreismajestätenschießen am 10. Oktober in Morschenich – Zeitangaben weichen ab",
+      "dek": "Die St. Lambertus-Schützen aus Morschenich kündigen das Kreismajestätenschießen für den 10. Oktober im Bürgewaldzentrum an. Zwei öffentlich zugängliche Kalender nennen allerdings unterschiedliche Uhrzeiten.",
+      "datum": "2026-10-04T12:26:00+02:00",
+      "fakten": [
+        "Samstag, 10. Oktober 2026",
+        "Veranstaltungsort laut aktuellem Morschenicher Eintrag: Bürgewaldzentrum (BWZ)",
+        "Heimat-Info-Eintrag der St. Lambertus-Schützen: 8:30 Uhr",
+        "Terminkalender der Marianischen Schützen Golzheim: Teilnahme ab 13:45 Uhr – deshalb Beginn vor Anfahrt prüfen"
+      ],
+      "absaetze": [
+        "Am Samstag, 10. Oktober, steht in Morschenich das Kreismajestätenschießen an. Die St. Lambertus Schützenbruderschaft Morschenich führt die Veranstaltung aktuell in Heimat-Info mit dem Bürgewaldzentrum als Ort und 8:30 Uhr als Zeitangabe.",
+        "Der Termin wird auch von anderen Schützenbruderschaften bestätigt. Im Kalender der Marianischen Schützenbruderschaft Golzheim steht für denselben Tag ausdrücklich „Kreismajestätenschießen in Morschenich“, dort wird für die eigene Teilnahme allerdings 13:45 Uhr genannt. Auch ein weiterer Schützenverein aus dem Kreis führt das Kreismajestätenschießen am 10. Oktober in Morschenich, ohne eine Uhrzeit zu nennen.",
+        "Damit sind Datum und Austragungsort gut belegt, der öffentlich relevante Startzeitpunkt ist in den zugänglichen Kalendern jedoch nicht einheitlich. Wer gezielt zum Wettkampf kommen möchte, sollte die genaue Uhrzeit deshalb unmittelbar bei der St. Lambertus Schützenbruderschaft Morschenich prüfen. Merzenich Aktuell trägt aus diesem Grund vorerst keinen festen Termin mit einer vermeintlich eindeutigen Uhrzeit in den eigenen Kalender ein."
+      ],
+      "themen": [
+        [
+          "schuetzen",
+          "Schützen"
+        ],
+        [
+          "morschenich",
+          "Morschenich"
+        ],
+        [
+          "kreismajestaeten",
+          "Kreismajestätenschießen"
+        ]
+      ],
+      "bildklasse": "vereine.schuetzen.kreis",
+      "quelle": {
+        "name": "St. Lambertus Schützenbruderschaft Morschenich e.V., aktueller Heimat-Info-Eintrag vom 03.10.2026",
+        "url": "https://www.heimat-info.de/gemeinden/merzenich",
+        "stand": "2026-10-04"
+      }
+    }
+  ]
+}
