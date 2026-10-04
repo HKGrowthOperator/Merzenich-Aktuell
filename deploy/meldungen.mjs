@@ -158,7 +158,7 @@ function hauptteil(m, index) {
     + (teil ? `<a href="${ORTSTEIL_SEITE[m.ortsteil]}" rel="tag">${esc(teil)}</a>` : '');
   const hinweis = m.hinweisQuelle ? ` ${esc(m.hinweisQuelle)}` : '';
   const quellen = [m.quelle, ...(m.weitereQuellen || [])];
-  const quellenLinks = quellen.map((q) => `<a href="${esc(q.url)}" target="_blank" rel="noopener nofollow">${esc(q.name)} ↗</a><span class="stand"> (abgerufen ${esc(datumKurz(q.stand))})</span>`).join('; ');
+  const quellenLinks = quellen.map((q, i) => `<a href="${esc(q.url)}" target="_blank" rel="noopener nofollow">${esc(q.name)} ↗</a>${i === 0 ? ` <span class="stand">Abgerufen am ${esc(datumKurz(q.stand))}.</span>` : ` <span class="stand">Stand ${esc(datumKurz(q.stand))}.</span>`}`).join('; ');
   const transparenz = quellen.length > 1
     ? `Die Redaktion hat ${quellen.length} Quellen abgeglichen und nur belegte Angaben in die Einordnung übernommen.`
     : 'Die Redaktion hat die Originalquelle geprüft und ergänzt nur belegbaren Kontext.';
