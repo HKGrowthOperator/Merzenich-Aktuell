@@ -1,8 +1,8 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.1 · Core-Plugin 1.20.1 (Historie unten)
+4. Oktober 2026 · Theme 21.9.2 · Core-Plugin 1.20.1 (Historie unten)
 
-## Neu in Theme 21.9.1 (04.10.2026): Bilder im Ressort-Menü, Menü aus eigenen Beiträgen
+## Neu in Theme 21.9.2 (04.10.2026): Bilder im Ressort-Menü, Menü aus eigenen Beiträgen
 
 Im aufgeklappten Ressort-Menü („Neu im Ressort“) fehlten die Bilder: Poolfotos liegen nicht im Theme, und der Server leitete jede fehlende `/assets/`-Datei auf die Vorschauseite um, die stundenlang nicht erreichbar war.
 

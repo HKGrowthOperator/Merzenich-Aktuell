@@ -109,10 +109,12 @@ add_filter('mod_rewrite_rules', function (string $regeln): string {
 /** Das Repository (Stand von main) als letzte Quelle für Dateien aus chatgpt-site/. */
 const MA21_REPO = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site';
 
+// Nach dem Registrieren von Beitragstypen und Taxonomien (init 10), sonst
+// liefert get_permalink() für Termine nur ?p= und ma_location fehlt.
 add_action('init', function (): void {
     if (!isset($_GET['ma_asset'])) return;
     ma21_asset((string) wp_unslash($_GET['ma_asset']));
-}, 1);
+}, 50);
 
 /**
  * Fehlende /assets/-Datei (04.10.2026: bis dahin Umleitung auf die Vorschauseite,
@@ -200,7 +202,7 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
         $l = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 4, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
         return array_map(function (WP_Post $p) use ($titel): array {
             $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
-            return ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (get_post_meta($p->ID, 'ma_event_place', true) ?: ma21_ort($p)), 'datum' => $start ? (string) wp_date('c', $start) : (string) get_post_meta($p->ID, 'ma_event_start', true), 'bild' => ma21_menue_bild($p), 'termin' => true];
+            return ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (get_post_meta($p->ID, 'ma_event_place', true) ?: (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p)))), 'datum' => $start ? (string) wp_date('c', $start) : (string) get_post_meta($p->ID, 'ma_event_start', true), 'bild' => ma21_menue_bild($p), 'termin' => true];
         }, $l);
     }
     $args = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 4, 'orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true];
@@ -215,7 +217,7 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
         }
         $args['category_name'] = $slug;
     }
-    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => ma21_ort($p), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)], get_posts($args));
+    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)], get_posts($args));
 }
 add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); });
 
