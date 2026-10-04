@@ -33,12 +33,25 @@ const VORLAGE = join(site, 'blaulicht', 'einsatz-118-rosspfad', 'index.html');
 const RESSORT = { blaulicht: 'Blaulicht', sport: 'Sport', rathaus: 'Rathaus & Politik', leben: 'Leben', wirtschaft: 'Wirtschaft', menschen: 'Menschen', vereine: 'Vereine' };
 const ORTSTEIL_SEITE = { merzenich: '/merzenich/', golzheim: '/golzheim/', girbelsrath: '/girbelsrath/', morschenich: '/morschenich/', buergewald: '/buergewald/' };
 const PFLICHT = ['slug', 'ressort', 'ortsteil', 'kicker', 'titel', 'dek', 'datum', 'absaetze', 'themen', 'quelle', 'bildklasse'];
+const MELDUNGEN_GENERATOR_VERSION = '2026-10-04-redaktion-v2.1';
 
 const tz = { timeZone: 'Europe/Berlin' };
 const datumLang = (iso) => new Intl.DateTimeFormat('de-DE', { ...tz, day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(iso))
   + ' · ' + new Intl.DateTimeFormat('de-DE', { ...tz, hour: '2-digit', minute: '2-digit' }).format(new Date(iso)) + ' Uhr';
 const datumKurz = (iso) => new Intl.DateTimeFormat('de-DE', { ...tz, day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(iso));
-const lesezeit = (m) => `${Math.max(1, Math.round([m.dek, ...m.absaetze].join(' ').split(/\s+/).length / 200))} Min. Lesezeit`;
+const wortzahl = (m) => [m.dek, ...(m.absaetze || [])].join(' ').trim().split(/\s+/).filter(Boolean).length;
+const lesezeit = (m) => `${Math.max(1, Math.round(wortzahl(m) / 200))} Min. Lesezeit`;
+
+// Redaktionsstandard V2: Eine kurze Service-/Eilmeldung darf kurz bleiben.
+// Normale Nachrichten muessen dagegen genug belegte Substanz fuer Kontext,
+// lokale Relevanz und den naechsten Schritt enthalten. So verhindert der Build,
+// dass wieder der gesamte Bestand aus austauschbaren 1-Minuten-Texten besteht.
+const ARTIKELTYPEN = {
+  kurzmeldung: { minWorte: 80, minAbsaetze: 2, minFakten: 2 },
+  standard: { minWorte: 300, minAbsaetze: 4, minFakten: 4 },
+  vertiefung: { minWorte: 450, minAbsaetze: 5, minFakten: 5 },
+  hintergrund: { minWorte: 700, minAbsaetze: 7, minFakten: 5 },
+};
 const jsonLd = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 
 // Foto aus der Quelle (Presseportal der Polizei): nur nach Sichtung auf
@@ -68,7 +81,13 @@ function meldungenLesen() {
   if (!existsSync(ordner)) return [];
   const alle = [];
   for (const datei of readdirSync(ordner).filter((f) => f.endsWith('.json')).sort()) {
-    for (const m of JSON.parse(readFileSync(join(ordner, datei), 'utf8')).meldungen || []) {
+    const paket = JSON.parse(readFileSync(join(ordner, datei), 'utf8'));
+    const redaktionsstandard = Number(paket.redaktionsstandard || 1);
+    const datierterNeustandard = /^\d{4}-\d{2}-\d{2}/.test(datei) && datei.slice(0, 10) >= '2026-10-04';
+    if (datierterNeustandard && redaktionsstandard < 2) {
+      throw new Error(`${datei}: neue Meldungspakete ab 04.10.2026 muessen redaktionsstandard: 2 tragen`);
+    }
+    for (const m of paket.meldungen || []) {
       const fehlt = PFLICHT.filter((k) => m[k] === undefined || m[k] === '' || (Array.isArray(m[k]) && !m[k].length));
       if (fehlt.length) throw new Error(`${datei} / ${m.slug || '?'}: Pflichtfelder fehlen: ${fehlt.join(', ')}`);
       if (!RESSORT[m.ressort]) throw new Error(`${datei} / ${m.slug}: unbekanntes Ressort ${m.ressort}`);
@@ -76,13 +95,27 @@ function meldungenLesen() {
       if (Number.isNaN(new Date(m.datum).getTime())) throw new Error(`${datei} / ${m.slug}: Datum ungueltig`);
       if (!bildklassenLesen().klassen[m.bildklasse]) throw new Error(`${datei} / ${m.slug}: Bildklasse ${m.bildklasse} fehlt in deploy/bildklassen.json`);
       if (!/^https:\/\//.test(m.quelle.url || '')) throw new Error(`${datei} / ${m.slug}: Quelle ohne https-Link`);
+      if (!m.quelle.stand) throw new Error(`${datei} / ${m.slug}: quelle.stand fehlt`);
+      for (const q of m.weitereQuellen || []) {
+        if (!q?.name || !/^https:\/\//.test(q.url || '') || !q.stand) {
+          throw new Error(`${datei} / ${m.slug}: weitereQuellen brauchen name, https-url und stand`);
+        }
+      }
+      if (redaktionsstandard >= 2) {
+        const typ = ARTIKELTYPEN[m.artikeltyp];
+        if (!typ) throw new Error(`${datei} / ${m.slug}: Redaktionsstandard V2 braucht artikeltyp (kurzmeldung, standard, vertiefung oder hintergrund)`);
+        const n = wortzahl(m);
+        if (n < typ.minWorte) throw new Error(`${datei} / ${m.slug}: ${m.artikeltyp} hat nur ${n} Woerter, mindestens ${typ.minWorte} erforderlich`);
+        if ((m.absaetze || []).length < typ.minAbsaetze) throw new Error(`${datei} / ${m.slug}: ${m.artikeltyp} braucht mindestens ${typ.minAbsaetze} Absaetze`);
+        if ((m.fakten || []).length < typ.minFakten) throw new Error(`${datei} / ${m.slug}: ${m.artikeltyp} braucht mindestens ${typ.minFakten} belegte Fakten im Kurzueberblick`);
+      }
       if (m.quellbild) {
         const q = m.quellbild; const fehltQ = ['datei', 'alt', 'credit', 'lizenz'].filter((k) => !q[k]);
         if (fehltQ.length) throw new Error(`${datei} / ${m.slug}: quellbild ohne ${fehltQ.join(', ')}`);
         if (!existsSync(join(QUELLBILDER, q.datei))) throw new Error(`${datei} / ${m.slug}: quellbild ${q.datei} fehlt in imports/quellen/bilder`);
         if (typeof q.freigegeben !== 'boolean') throw new Error(`${datei} / ${m.slug}: quellbild.freigegeben muss true oder false sein (Sichtung)`);
       }
-      alle.push({ ...m, datei });
+      alle.push({ ...m, datei, redaktionsstandard });
     }
   }
   const doppelt = alle.map((m) => m.slug).filter((s, i, a) => a.indexOf(s) !== i);
@@ -125,10 +158,15 @@ function hauptteil(m, index) {
   const tags = m.themen.map(([slug, label]) => `<a href="/thema/${esc(slug)}/" rel="tag">${esc(label)}</a>`).join('')
     + (teil ? `<a href="${ORTSTEIL_SEITE[m.ortsteil]}" rel="tag">${esc(teil)}</a>` : '');
   const hinweis = m.hinweisQuelle ? ` ${esc(m.hinweisQuelle)}` : '';
+  const quellen = [m.quelle, ...(m.weitereQuellen || [])];
+  const quellenLinks = quellen.map((q, i) => `<a href="${esc(q.url)}" target="_blank" rel="noopener nofollow">${esc(q.name)} ↗</a>${i === 0 ? ` <span class="stand">Abgerufen am ${esc(datumKurz(q.stand))}.</span>` : ` <span class="stand">Stand ${esc(datumKurz(q.stand))}.</span>`}`).join('; ');
+  const transparenz = quellen.length > 1
+    ? `Die Redaktion hat ${quellen.length} Quellen abgeglichen und nur belegte Angaben in die Einordnung übernommen.`
+    : 'Die Redaktion hat die Originalquelle geprüft und ergänzt nur belegbaren Kontext.';
   const karten = weiterlesen(m, index);
   return `<main id="main">
 
-<article class="article" data-meldung="${m.hash}">
+<article class="article" data-meldung="${m.hash}" data-artikeltyp="${esc(m.artikeltyp || 'legacy')}">
 
 <div class="article-head"><div class="shell">
   <nav class="crumbs" aria-label="Brotkrumen">${crumbs}</nav>
@@ -147,7 +185,7 @@ function hauptteil(m, index) {
     ${fakten}
     <div class="prose">${m.absaetze.map((p) => `<p>${esc(p)}</p>`).join('\n')}
 </div>
-    <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Quelle & Transparenz</b> Grundlage dieser Meldung: <a href="${esc(m.quelle.url)}" target="_blank" rel="noopener nofollow">${esc(m.quelle.name)} ↗</a>. <span class="stand">Abgerufen am ${esc(datumKurz(m.quelle.stand))}.</span>${hinweis} Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="/korrekturen/">Fehler melden</a></div>
+    <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Quelle & Transparenz</b> Grundlage dieser Meldung: ${quellenLinks}.${hinweis} ${transparenz} <a href="/korrekturen/">Fehler melden</a></div>
     <div class="tags">${tags}</div>
     <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="/autor/redaktion/">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
     <div class="cta-row"><a class="btn ghost" href="/meldung-senden/">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="/korrekturen/">Fehler melden</a></div>
@@ -189,10 +227,11 @@ function kopf(vorlage, m) {
     datePublished: m.datum, dateModified: m.datum,
     author: [{ '@type': 'Organization', name: 'Redaktion Merzenich Aktuell', url: `${SITE_URL}/autor/redaktion/` }],
     publisher: { '@id': `${SITE_URL}/#organization` }, isAccessibleForFree: true, inLanguage: 'de-DE', articleSection: RESSORT[m.ressort],
-    keywords: labels.join(', '), wordCount: [m.dek, ...m.absaetze].join(' ').split(/\s+/).length,
+    keywords: labels.join(', '), wordCount: wortzahl(m),
     contentLocation: { '@type': 'Place', name: teil || 'Merzenich', address: { '@type': 'PostalAddress', addressLocality: 'Merzenich', postalCode: '52399', addressCountry: 'DE' } },
     about: { '@type': 'Place', name: teil || 'Merzenich', url: `${SITE_URL}${ORTSTEIL_SEITE[m.ortsteil]}` },
-    citation: [m.quelle.url], isBasedOn: [m.quelle.url],
+    citation: [m.quelle, ...(m.weitereQuellen || [])].map((q) => q.url),
+    isBasedOn: [m.quelle, ...(m.weitereQuellen || [])].map((q) => q.url),
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.article-head h1', '.article-head .dek'] },
   };
   const krumen = [['Start', `${SITE_URL}/`], [RESSORT[m.ressort], `${SITE_URL}/${m.ressort}/`], ...(teil ? [[teil, `${SITE_URL}${ORTSTEIL_SEITE[m.ortsteil]}`]] : []), [m.titel]];
@@ -209,7 +248,7 @@ let neu = 0, aktuell = 0;
 const veraltet = [];
 for (const m of meldungen) {
   const { datei, ...kern } = m;
-  m.hash = createHash('sha256').update(JSON.stringify(kern)).digest('hex').slice(0, 12);
+  m.hash = createHash('sha256').update(MELDUNGEN_GENERATOR_VERSION + '\n' + JSON.stringify(kern)).digest('hex').slice(0, 12);
   const pfad = join(site, m.ressort, m.slug, 'index.html');
   const q = quellbildFrei(m);
   if (q) {

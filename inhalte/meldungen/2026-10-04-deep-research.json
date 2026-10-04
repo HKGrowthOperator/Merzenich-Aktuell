@@ -7,18 +7,22 @@
       "ortsteil": "buergewald",
       "kicker": "Kreis Düren · Strukturwandel",
       "titel": "Kreisjahrbuch 2026 nimmt Bürgewald und den Strukturwandel in den Blick",
-      "dek": "Das neue Kreisjahrbuch „Eine Region im Aufbruch“ beschäftigt sich mit dem Wandel im Kreis Düren. Einer der ausdrücklich genannten Beiträge führt nach Bürgewald in der Gemeinde Merzenich.",
+      "dek": "Das Kreisjahrbuch 2026 setzt den regionalen Wandel ins Zentrum – und nennt Bürgewald ausdrücklich als eines seiner Themen. Für Merzenich verbindet die Ausgabe damit Lokalgeschichte und die Frage, wie sich das Rheinische Revier nach dem Braunkohlezeitalter verändert.",
       "datum": "2026-10-04T12:18:00+02:00",
       "fakten": [
-        "Kreisjahrbuch 2026: „Eine Region im Aufbruch“",
-        "Herausgeber: Kreis Düren",
-        "Bürgewald in Merzenich gehört zu den ausdrücklich genannten Themen",
-        "Weitere Schwerpunkte: Strukturwandel, Tagebaue, Tourismus und Brainergy Park"
+        "Titel des Kreisjahrbuchs 2026: „Eine Region im Aufbruch“",
+        "Herausgeber ist der Kreis Düren; redaktionell verantwortlich sind Bernd Hahne und Guido von Büren",
+        "Bürgewald in der Gemeinde Merzenich gehört zu den ausdrücklich angekündigten Themen der Ausgabe",
+        "Weitere Schwerpunkte sind Strukturwandel, Tagebaue, touristische Entwicklungen und der Brainergy Park in Jülich",
+        "Das Jahrbuch enthält außerdem lokalhistorische Beiträge und eine Chronik wichtiger Ereignisse des zurückliegenden Jahres",
+        "Der Kreis Düren gibt sein Jahrbuch nach eigener Angabe seit 30 Jahren heraus"
       ],
       "absaetze": [
-        "Das Kreisjahrbuch 2026 des Kreises Düren ist erschienen. Unter dem Titel „Eine Region im Aufbruch“ bündelt es Beiträge zur Geschichte der Region und zu den Veränderungen, die der Strukturwandel mit sich bringt. Für die Gemeinde Merzenich ist dabei besonders interessant: Bürgewald wird vom Kreis ausdrücklich als eines der Themen des neuen Jahrbuchs genannt.",
-        "Nach Angaben des Kreises geht es in den Beiträgen unter anderem um touristische Entwicklungen, den Strukturwandel nach dem Kohleausstieg, die Tagebaue und den Brainergy Park in Jülich. Ergänzt wird das Jahrbuch durch lokalhistorische Themen sowie die Chronik des Kreises Düren mit wichtigen Ereignissen des zurückliegenden Jahres.",
-        "Redaktionell verantwortlich sind Bernd Hahne und Guido von Büren. Der Kreis gibt das Jahrbuch seit inzwischen 30 Jahren heraus. Erhältlich ist die neue Ausgabe nach Kreisangaben im Buchhandel sowie über den Dürener Verlag Hahne & Schloemer."
+        "Das Kreisjahrbuch 2026 des Kreises Düren ist erschienen und trägt den Titel „Eine Region im Aufbruch“. Schon die Themenauswahl zeigt, dass die Ausgabe nicht nur zurückblickt. Sie verbindet historische Beiträge mit den Veränderungen, die der Strukturwandel im Kreis auslöst. Für die Gemeinde Merzenich ist dabei ein Punkt besonders nah: Bürgewald wird vom Kreis ausdrücklich als eines der Themen des neuen Jahrbuchs genannt.",
+        "Damit bekommt ein Ortsteil Raum, dessen jüngere Geschichte eng mit dem Braunkohletagebau und den Veränderungen im Rheinischen Revier verbunden ist. Der Kreis nennt neben Bürgewald unter anderem Beiträge zu den Tagebauen, zum Strukturwandel nach dem Kohleausstieg, zu touristischen Entwicklungen und zum Brainergy Park in Jülich. Das Jahrbuch stellt diese Themen damit nicht isoliert nebeneinander, sondern ordnet sie in eine Region ein, die ihre wirtschaftliche, räumliche und gesellschaftliche Zukunft neu organisiert.",
+        "Der Strukturwandel ist für den Kreis Düren inzwischen ein eigenes dauerhaftes Arbeitsfeld. Auf seiner Informationsseite beschreibt der Kreis den Ausstieg aus der Braunkohleverstromung als Ausgangspunkt für einen tiefgreifenden Umbau und verweist auf Projekte aus Wirtschaft, Infrastruktur, Forschung und Flächenentwicklung. Für Leserinnen und Leser aus Merzenich liefert das einen zusätzlichen Kontext: Bürgewald ist nicht nur ein lokalhistorisches Thema, sondern Teil einer Entwicklung, die im gesamten Kreis neue Nutzungen, Arbeitsplätze und Perspektiven hervorbringen soll.",
+        "Das Jahrbuch bleibt dennoch auch ein klassisches regionalgeschichtliches Werk. Nach Angaben des Kreises enthält es weitere lokalhistorische Beiträge sowie die Chronik des Kreises Düren mit wichtigen Ereignissen des zurückliegenden Jahres. Diese Mischung ist gerade bei einem Thema wie Bürgewald relevant: Aktuelle Strukturentscheidungen lassen sich besser einordnen, wenn gleichzeitig dokumentiert wird, wie Orte und Landschaften durch frühere politische und wirtschaftliche Entscheidungen geprägt wurden.",
+        "Redaktionell verantwortlich sind Bernd Hahne und Guido von Büren. Der Kreis gibt das Jahrbuch nach eigener Darstellung seit inzwischen 30 Jahren heraus. Die Ausgabe ist im Buchhandel sowie über den Dürener Verlag Hahne & Schloemer erhältlich. Wer gezielt den Bürgewald-Beitrag lesen möchte, findet damit eine zusätzliche regionale Quelle neben den laufenden Projektmeldungen und politischen Beschlüssen zum Strukturwandel."
       ],
       "themen": [
         [
@@ -39,7 +43,15 @@
         "name": "Kreis Düren, „Kreisjahrbuch 2026 erschienen: Eine Region im Aufbruch“ vom 22.09.2026",
         "url": "https://kreis-dueren.de/presse/kreisjahrbuch_2026-09-22.php",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "standard",
+      "weitereQuellen": [
+        {
+          "name": "Kreis Düren – Strukturwandel im Rheinischen Revier",
+          "url": "https://kreis-dueren.de/kreishaus/amt/60/strukturwandel.php",
+          "stand": "2026-10-04"
+        }
+      ]
     },
     {
       "slug": "schnullersaeule-kita-st-marien-merzenich-oktober-2026",
@@ -79,7 +91,8 @@
         "name": "Kreis Düren, Frühe Hilfen – Schnullersäule",
         "url": "https://kreis-dueren.de/kreishaus/amt/amt51/fruehe_hilfen.php",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     },
     {
       "slug": "kgs-am-weinberg-schulanmeldung-2027-2028-oktober-2026",
@@ -119,7 +132,8 @@
         "name": "KGS Am Weinberg Merzenich, Terminübersicht",
         "url": "https://www.gemeinde-merzenich.de/microsites/kgs_merzenich/termine/index.php",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     },
     {
       "slug": "landfrauen-noervenich-merzenich-mitgliederversammlung-2026",
@@ -154,7 +168,9 @@
         "name": "Rheinischer LandFrauenverband, Termine Düren-Jülich",
         "url": "https://www.rheinische-landfrauen.de/kreisverbaende/dueren-juelich/termine",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     }
-  ]
+  ],
+  "redaktionsstandard": 2
 }

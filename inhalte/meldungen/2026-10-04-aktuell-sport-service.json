@@ -7,18 +7,22 @@
       "ortsteil": "golzheim",
       "kicker": "Fußball · Sonntagsspieltag",
       "titel": "FC Golzheim heute doppelt zuhause: Zweite um 12:45 Uhr, Erste um 15 Uhr",
-      "dek": "Am heutigen Sonntag stehen auf der Golzheimer Platzanlage zwei Herrenspiele an. Die Zweite empfängt Türkischer SV Düren II, anschließend spielt die Erste gegen JSV Frenz.",
+      "dek": "Golzheim erlebt am Sonntag einen Doppelspieltag der Herren. Schon um 12:45 Uhr ist die Zweite in der Kreisliga B gefordert, um 15 Uhr folgt die Erste gegen JSV Frenz – mit 16 Punkten und ohne Niederlage im bisherigen Kreisliga-A-Verlauf.",
       "datum": "2026-10-04T12:45:00+02:00",
       "fakten": [
-        "12:45 Uhr: FC Golzheim II – SG Türkischer SV Düren II",
-        "15:00 Uhr: FC Golzheim – JSV Frenz",
-        "Erste Mannschaft: Kreisliga A",
-        "FC Golzheim steht laut FUSSBALL.DE vor dem Spiel bei 16 Punkten auf Rang 3"
+        "12:45 Uhr: FC Golzheim II – SG Türkischer SV Düren II in der Kreisliga B, Staffel 2",
+        "15:00 Uhr: FC Golzheim – JSV Frenz in der Kreisliga A",
+        "Golzheims Erste steht nach sechs Spielen bei 16 Punkten und einem Torverhältnis von 15:5",
+        "Die Erste ist nach den aktuellen FUSSBALL.DE-Daten in der Liga noch ungeschlagen",
+        "JSV Frenz geht mit sieben Punkten aus fünf Spielen in den Spieltag",
+        "Golzheim gewann zuletzt 3:1 beim FC Düren 77; eine Woche zuvor gab es ein 3:0 gegen Hambach"
       ],
       "absaetze": [
-        "Fußballfans in Golzheim bekommen am Sonntag zwei Herrenspiele direkt hintereinander. Um 12:45 Uhr empfängt die zweite Mannschaft des FC Golzheim die SG Türkischer SV Düren II in der Kreisliga B.",
-        "Um 15 Uhr folgt das Spiel der ersten Mannschaft gegen JSV Frenz in der Kreisliga A. Nach den aktuellen Mannschaftsdaten von FUSSBALL.DE geht Golzheim mit 16 Punkten und Tabellenplatz drei in diesen Spieltag.",
-        "Das hier ist eine Spielvorschau. Ergebnisse werden auf Merzenich Aktuell erst ergänzt beziehungsweise als eigener Bericht veröffentlicht, wenn die Partie beendet und das Resultat in einer belastbaren Quelle bestätigt ist."
+        "Auf der Golzheimer Platzanlage stehen am Sonntag zwei Herrenspiele direkt hintereinander an. Den Auftakt macht um 12:45 Uhr die zweite Mannschaft des FC Golzheim gegen die SG Türkischer SV Düren II. Um 15 Uhr übernimmt die Erste und empfängt JSV Frenz. Für Zuschauer entsteht damit ein kompletter Fußballnachmittag mit zwei Meisterschaftsspielen aus unterschiedlichen Spielklassen.",
+        "Sportlich richtet sich der Blick vor allem auf die erste Mannschaft. FUSSBALL.DE führt Golzheim vor dem Spiel mit 16 Punkten aus sechs Partien und einem Torverhältnis von 15:5. Der Verein ist damit nach den veröffentlichten Ligadaten noch ungeschlagen. In den vergangenen beiden Meisterschaftsspielen holte Golzheim sechs Punkte: Zunächst gab es ein 3:0 gegen den Hambacher Spielverein, anschließend gewann die Mannschaft 3:1 beim FC Düren 77. Damit hat sich Golzheim früh in der Spitzengruppe der Kreisliga A festgesetzt.",
+        "Der Gegner aus Frenz kommt mit einer deutlich ausgeglicheneren Bilanz. In der Ligatabelle stehen für JSV Frenz vor diesem Spiel sieben Punkte aus fünf Begegnungen und 16:16 Tore. Die Ausgangslage ist damit klar: Golzheim kann den starken Saisonstart zuhause bestätigen, Frenz versucht, den Abstand zur oberen Tabellenhälfte zu verkürzen. Bei der Platzierung gibt es auf FUSSBALL.DE unterschiedliche Darstellungen zwischen Mannschaftsseite und Tabellenansicht; belastbar sind deshalb vor allem die Punkte- und Torwerte, nicht eine einzelne Rangangabe.",
+        "Auch das Vorspiel der zweiten Mannschaft hat tabellarische Bedeutung. Golzheim II ist in der Kreisliga B, Staffel 2, mit sieben Punkten aus drei Spielen gestartet, während Türkischer SV Düren II nach den veröffentlichten Daten drei Punkte aus sechs Spielen aufweist. Weil die Mannschaften unterschiedlich viele Partien absolviert haben, ist ein reiner Tabellenplatzvergleich nur begrenzt aussagekräftig. Entscheidend ist zunächst, dass Golzheims Zweite ihre bislang gute Punkteausbeute gegen einen Gegner aus dem unteren Tabellenbereich bestätigen kann.",
+        "Merzenich Aktuell veröffentlicht diese Meldung als Spielvorschau. Zwischenstände werden nicht aus einzelnen Social-Media-Posts oder unbestätigten Angaben übernommen. Ergebnisse und mögliche Auswirkungen auf die Tabellen werden erst nach Spielende ergänzt oder in einem eigenen Bericht aufgegriffen, sobald die offiziellen Ergebnisdaten vorliegen."
       ],
       "themen": [
         [
@@ -39,7 +43,20 @@
         "name": "FUSSBALL.DE, Vereins- und Mannschaftsspielplan FC Golzheim",
         "url": "https://www.fussball.de/verein/fc-golzheim-mittelrhein/-/id/00ES8GN9A000003SVV0AG08LVUPGND5I",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "standard",
+      "weitereQuellen": [
+        {
+          "name": "FUSSBALL.DE – Kreisliga A Kreis Düren, Tabelle und Spieltag",
+          "url": "https://www.fussball.de/spieltag/kreisliga-a-kreis-dueren-kreisliga-a-herren-saison2627-mittelrhein/-/spieldatum/2026-10-04/staffel/031GUU1ID8000004VS5489BUVSJ4CRAP-G",
+          "stand": "2026-10-04"
+        },
+        {
+          "name": "FUSSBALL.DE – JSV Frenz Herren",
+          "url": "https://www.fussball.de/mannschaft/jsv-frenz-jsv-frenz-mittelrhein/-/saison/2627/team-id/0133405F18000000VV0AG811VU5VDNJJ",
+          "stand": "2026-10-04"
+        }
+      ]
     },
     {
       "slug": "rhenania-girbelsrath-viktoria-schlich-04-10-2026",
@@ -47,17 +64,22 @@
       "ortsteil": "girbelsrath",
       "kicker": "Fußball · Kreisliga B",
       "titel": "Rhenania Girbelsrath empfängt heute Viktoria Schlich",
-      "dek": "Um 15 Uhr spielt die erste Mannschaft des FC Rhenania Girbelsrath zuhause gegen den FC Viktoria Schlich. Die Partie gehört zur Kreisliga B.",
+      "dek": "Rhenania Girbelsrath hat am Sonntag ein Heimspiel mit klarer Chance auf wichtige Punkte. Um 15 Uhr kommt Viktoria Schlich; die aktuellen Verbandsdaten zeigen beide Mannschaften nach wenigen Saisonspielen im unteren Teil der Kreisliga-B-Tabelle.",
       "datum": "2026-10-04T12:44:00+02:00",
       "fakten": [
         "FC Rhenania Girbelsrath – FC Viktoria Schlich",
         "Sonntag, 4. Oktober 2026, 15:00 Uhr",
-        "Kreisliga B"
+        "Kreisliga B, Staffel 2",
+        "Rhenania steht vor dem Spiel bei drei Punkten aus drei Partien und 10:10 Toren",
+        "Viktoria Schlich wird mit einem Punkt aus fünf Spielen und 8:25 Toren geführt",
+        "Die Zahl der absolvierten Spiele unterscheidet sich deutlich, deshalb ist der Tabellenplatz nur eingeschränkt vergleichbar"
       ],
       "absaetze": [
-        "Der FC Rhenania Girbelsrath hat am heutigen Sonntag ein Heimspiel. Um 15 Uhr ist der FC Viktoria Schlich zu Gast.",
-        "Die Begegnung ist im offiziellen FUSSBALL.DE-Spielplan der Rhenania als Meisterschaftsspiel der Kreisliga B für den 4. Oktober angesetzt.",
-        "Ein Ergebnis liegt zum Veröffentlichungszeitpunkt noch nicht vor. Merzenich Aktuell übernimmt deshalb keine Hochrechnung und keinen nicht bestätigten Zwischenstand."
+        "Der FC Rhenania Girbelsrath empfängt am Sonntag um 15 Uhr den FC Viktoria Schlich. Die Begegnung ist im offiziellen FUSSBALL.DE-Spielplan als Meisterschaftsspiel der Kreisliga B, Staffel 2, angesetzt. Für Rhenania ist es nach einem noch kurzen Saisonprogramm die Möglichkeit, zuhause weitere Punkte zu sammeln und sich in einer Tabelle zu orientieren, in der mehrere Vereine bislang unterschiedlich viele Spiele absolviert haben.",
+        "Vor der Partie weist die Staffelübersicht für Girbelsrath drei Punkte aus drei Spielen bei 10:10 Toren aus. Das bedeutet zugleich: Die bisherigen Rhenania-Partien waren torreich, die Bilanz ist aber noch zu klein, um daraus schon einen stabilen Saisontrend abzuleiten. Andere Mannschaften der Staffel haben bereits fünf oder sechs Begegnungen absolviert. Ein Blick nur auf den Tabellenrang würde deshalb ein verzerrtes Bild liefern.",
+        "Viktoria Schlich reist mit einem Punkt aus fünf Spielen und einem Torverhältnis von 8:25 an. Die Mannschaft hat damit bislang deutlich mehr Gegentore kassiert als Girbelsrath, zugleich aber auch zwei Partien mehr bestritten. Für Rhenania spricht die Ausgangslage auf dem Papier, doch gerade bei einer frühen Saisonphase sind Punktezahl und Tordifferenz nur ein Teil der Einordnung. Das direkte Spiel entscheidet, ob Girbelsrath aus den bisher wenigen Auftritten eine bessere Ausgangsposition machen kann.",
+        "Für die lokale Perspektive ist das Heimspiel auch deshalb interessant, weil Rhenania nach drei absolvierten Begegnungen noch Nachholbedarf im Kalender hat. Jede weitere Partie verändert die Tabelle stärker als bei Teams, die bereits sechs Spiele hinter sich haben. Ein Sieg würde daher nicht nur drei Punkte bringen, sondern die bisher schwer vergleichbare Saisonbilanz aussagekräftiger machen.",
+        "Zum Veröffentlichungszeitpunkt lag noch kein Ergebnis vor. Merzenich Aktuell übernimmt keine Zwischenstände aus nicht verifizierten Posts. Sobald das Spiel beendet und ein offizielles Resultat veröffentlicht ist, kann die Meldung aktualisiert oder durch einen Spielbericht ergänzt werden."
       ],
       "themen": [
         [
@@ -78,7 +100,20 @@
         "name": "FUSSBALL.DE, Vereinsseite FC Rhenania Girbelsrath",
         "url": "https://www.fussball.de/verein/fc-rhenania-girbelsrath-mittelrhein/-/id/00ES8GN9A000003QVV0AG08LVUPGND5I",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "standard",
+      "weitereQuellen": [
+        {
+          "name": "FUSSBALL.DE – FC Viktoria Schlich Herren",
+          "url": "https://www.fussball.de/mannschaft/fc-viktoria-schlich-fc-viktoria-schlich-mittelrhein/-/saison/2627/team-id/011MI90MUC000000VTVG0001VTR8C1K7",
+          "stand": "2026-10-04"
+        },
+        {
+          "name": "FUSSBALL.DE – Kreisliga B Staffel 2, Tabelle",
+          "url": "https://www.fussball.de/spieltag/kreisliga-b-staffel-2-kreis-dueren-kreisliga-b-herren-saison2627-mittelrhein/-/spieldatum/2026-09-25/staffel/031GUPK6AO000004VS5489BUVSJ4CRAP-G",
+          "stand": "2026-10-04"
+        }
+      ]
     },
     {
       "slug": "sv-morschenich-csv-dueren-04-10-2026",
@@ -86,18 +121,22 @@
       "ortsteil": "morschenich",
       "kicker": "Fußball · Kreisliga B",
       "titel": "SV Morschenich vor Heimspiel gegen CSV Düren",
-      "dek": "Nach dem knappen 0:1 in Merken wartet auf Morschenich heute das nächste Spitzenspiel. Um 15 Uhr kommt der CSV Düren an die Ellener Allee.",
+      "dek": "In Morschenich steht am Sonntag ein direktes Duell zweier Teams aus der Spitzengruppe an. Der SV empfängt um 15 Uhr den CSV Düren – nach fünf Spielen trennen beide Mannschaften nur zwei Punkte.",
       "datum": "2026-10-04T12:43:00+02:00",
       "fakten": [
         "SV Morschenich – CSV Düren",
         "Sonntag, 4. Oktober 2026, 15:00 Uhr",
         "Kreisliga B, Staffel 2",
-        "FUSSBALL.DE führt vor der Partie Morschenich auf Rang 3 mit 12 Punkten, CSV Düren auf Rang 4 mit 10 Punkten"
+        "Morschenich: zwölf Punkte aus fünf Spielen, 27:7 Tore",
+        "CSV Düren: zehn Punkte aus fünf Spielen, 19:5 Tore",
+        "Morschenich verlor zuletzt 0:1 beim SV Merken; CSV Düren geht mit einer der besten Defensivbilanzen der Staffel in die Partie"
       ],
       "absaetze": [
-        "Der SV Morschenich empfängt am heutigen Sonntag um 15 Uhr den CSV Düren. Nach den aktuellen FUSSBALL.DE-Daten treffen damit der Tabellendritte und der Tabellen-vierte der Kreisliga B, Staffel 2, aufeinander.",
-        "Morschenich geht mit zwölf Punkten in die Begegnung, der CSV Düren mit zehn Punkten. Für den SV folgt das Heimspiel auf die knappe 0:1-Niederlage beim SV Merken am 27. September.",
-        "Der Anstoß ist im offiziellen Mannschaftsspielplan für 15 Uhr angegeben. Ein Endergebnis wird erst nach Abschluss der Partie und Bestätigung durch eine Ergebnisquelle veröffentlicht."
+        "Der SV Morschenich bekommt am Sonntag um 15 Uhr Besuch vom CSV Düren. Nach den aktuellen Verbandsdaten ist das mehr als ein gewöhnliches Heimspiel: Beide Mannschaften gehören nach fünf absolvierten Partien zur Spitzengruppe der Kreisliga B, Staffel 2. Morschenich steht bei zwölf Punkten, der CSV bei zehn. Damit kann das direkte Duell die Reihenfolge im oberen Tabellenbereich unmittelbar verändern.",
+        "Auffällig ist vor allem die Morschenicher Offensive. FUSSBALL.DE weist für den SV nach fünf Spielen 27 erzielte Tore und nur sieben Gegentreffer aus. Vier der fünf bisherigen Begegnungen wurden gewonnen. Der erste Dämpfer kam am 27. September beim SV Merken, als Morschenich knapp mit 0:1 verlor. Nach dieser Partie bietet das Heimspiel gegen den CSV die direkte Gelegenheit zu zeigen, ob die Mannschaft den starken Saisonstart fortsetzen kann.",
+        "Der Gegner aus Düren bringt ebenfalls eine starke Bilanz mit. Der CSV steht bei zehn Punkten und 19:5 Toren. Mit nur fünf Gegentreffern gehört die Mannschaft in den aktuellen Daten zu den defensiv stabilsten Teams der Staffel. Damit treffen zwei unterschiedliche Stärken aufeinander: Morschenich hat bislang besonders häufig getroffen, der CSV hat nur wenige Gegentore zugelassen. Genau diese Konstellation macht die Begegnung sportlich interessanter als einen reinen Vergleich der Tabellenplätze.",
+        "Auch der Abstand zur Spitze bleibt überschaubar. Vor dem Spieltag führen Inden/Altdorf und Merken die veröffentlichten Daten mit jeweils 13 Punkten an. Morschenich liegt damit nur einen Punkt dahinter, der CSV drei Punkte. Weil alle vier Teams fünf Spiele absolviert haben, ist dieser Vergleich aussagekräftiger als in anderen Bereichen der Staffel, in denen die Zahl der Partien stärker auseinandergeht.",
+        "Der Anstoß ist im offiziellen Spielplan für 15 Uhr eingetragen. Merzenich Aktuell behandelt den Beitrag bis dahin als Vorschau. Ein Ergebnis wird erst übernommen, wenn die Partie beendet und das Resultat in einer belastbaren Ergebnisquelle bestätigt ist. Danach lässt sich auch seriös einordnen, wie sich das direkte Duell auf die Spitzengruppe ausgewirkt hat."
       ],
       "themen": [
         [
@@ -118,7 +157,20 @@
         "name": "FUSSBALL.DE, Mannschaftsseite SV Morschenich",
         "url": "https://www.fussball.de/mannschaft/sv-morschenich-sv-morschenich-mittelrhein/-/saison/2627/team-id/011MIEFL7S000000VTVG0001VTR8C1K7",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "standard",
+      "weitereQuellen": [
+        {
+          "name": "FUSSBALL.DE – CSV Düren Herren",
+          "url": "https://www.fussball.de/mannschaft/csv-dueren-csv-dueren-ev-mittelrhein/-/saison/2627/team-id/01A7N7TK9C000000VV0AG811VVR915Q9",
+          "stand": "2026-10-04"
+        },
+        {
+          "name": "FUSSBALL.DE – Kreisliga B Staffel 2, Tabelle",
+          "url": "https://www.fussball.de/spieltag/kreisliga-b-staffel-2-kreis-dueren-kreisliga-b-herren-saison2627-mittelrhein/-/spieldatum/2026-09-25/staffel/031GUPK6AO000004VS5489BUVSJ4CRAP-G",
+          "stand": "2026-10-04"
+        }
+      ]
     },
     {
       "slug": "amtsblatt-11-2026-abgabeschluss-6-oktober",
@@ -158,7 +210,9 @@
         "name": "Gemeinde Merzenich, Amtsblatt – Abgabe- und Erscheinungstermine 2026",
         "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     }
-  ]
+  ],
+  "redaktionsstandard": 2
 }

@@ -257,6 +257,10 @@
     "sport.tischtennis.ergebnis": {
       "titel": "Tischtennis-Ergebnisüberblick ohne passendes lokales Spiel-/Mannschaftsfoto; klar gekennzeichnete Ortsansicht statt fremdem Sportmotiv",
       "motive": []
+    },
+    "wirtschaft.arbeitgeber.stollenwerk": {
+      "titel": "Lokaler Arbeitgeber Stollenwerk in Girbelsrath; ohne freigegebenes Werksfoto Ortsansicht statt sachfremdem Wirtschaftsmotiv",
+      "motive": []
     }
   }
 }
