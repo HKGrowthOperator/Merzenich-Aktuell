@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 04 Oct 2026 10:18:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 04 Oct 2026 10:45:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Vereine</title><link>https://merzenichaktuell.hk-growthoperator.de/vereine/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/vereine/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Kreismajestätenschießen am 10. Oktober in Morschenich – Zeitangaben weichen ab</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/kreismajestaetenschiessen-morschenich-2026-zeitangaben/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/kreismajestaetenschiessen-morschenich-2026-zeitangaben/</guid>
+<pubDate>Sun, 04 Oct 2026 10:26:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Morschenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die St. Lambertus-Schützen aus Morschenich kündigen das Kreismajestätenschießen für den 10. Oktober im Bürgewaldzentrum an. Zwei öffentlich zugängliche Kalender nennen allerdings unterschiedliche Uhrzeiten.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/morschenich-1440.webp" medium="image"><media:credit>Papa1234 / Wikimedia Commons · CC BY 3.0</media:credit><media:description>Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015</media:description></media:content>
+</item>
 <item>
 <title>LandFrauen Nörvenich-Merzenich: Mitgliederversammlung mit Wahlen am 7. Oktober</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/vereine/landfrauen-noervenich-merzenich-mitgliederversammlung-2026/</link>
@@ -20,7 +31,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Ortsverband Nörvenich-Merzenich steht am Mittwoch im offiziellen Veranstaltungskalender des Rheinischen LandFrauenverbandes. Beginn ist um 15 Uhr; angekündigt sind Wahlen und ein Vortrag.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Rathaus Merzenich von der Straße aus</media:description></media:content>
 </item>
 <item>
 <title>Merzenicher Pfadfinder kündigen Teilnahme am Erntedankfest in Girbelsrath an</title>
@@ -119,7 +130,7 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Jüngsten bekamen beim Stufenwechsel ihr blaues Halstuch, die Älteren wanderten rund 50 Kilometer bis zur Burg Greifenstein und zurück.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

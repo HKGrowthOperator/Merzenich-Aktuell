@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-03T18:46:08.638Z",
+  "updatedAt": "2026-10-04T10:49:52.746Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -503,6 +503,69 @@
       "assignedAt": "2026-10-03T18:46:08.638Z",
       "articleId": "2026-10-02-merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01",
       "articleDate": "2026-10-02T12:00:00+02:00"
+    },
+    "/leben/orte-von-kirche-infoabend-merzenich-2026/": {
+      "imageId": "web-kirchedetail-01-995c6c09",
+      "pool": "kirchedetail",
+      "motiv": "kirchenfenster",
+      "regel": "kirche.infoabend",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-orte-von-kirche-infoabend-merzenich-2026",
+      "articleDate": "2026-10-04T12:28:00+02:00"
+    },
+    "/sport/wttv-cup-merzenich-2026-10-04/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-wttv-cup-merzenich-2026-10-04",
+      "articleDate": "2026-10-04T12:36:00+02:00"
+    },
+    "/sport/tv-golzheim-tischtennis-september-2026/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-tv-golzheim-tischtennis-september-2026",
+      "articleDate": "2026-10-04T12:37:00+02:00"
+    },
+    "/sport/ttc-merzenich-ergebnisse-september-2026/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-ttc-merzenich-ergebnisse-september-2026",
+      "articleDate": "2026-10-04T12:38:00+02:00"
+    },
+    "/sport/sv-morschenich-csv-dueren-04-10-2026/": {
+      "imageId": "web-sport-02-11b84171",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-sv-morschenich-csv-dueren-04-10-2026",
+      "articleDate": "2026-10-04T12:43:00+02:00"
+    },
+    "/sport/rhenania-girbelsrath-viktoria-schlich-04-10-2026/": {
+      "imageId": "web-sport-09-edd5b8c9",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-rhenania-girbelsrath-viktoria-schlich-04-10-2026",
+      "articleDate": "2026-10-04T12:44:00+02:00"
+    },
+    "/sport/fc-golzheim-spieltag-04-10-2026/": {
+      "imageId": "web-sport-11-b83e938f",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "articleId": "2026-10-04-fc-golzheim-spieltag-04-10-2026",
+      "articleDate": "2026-10-04T12:45:00+02:00"
     }
   }
 }
