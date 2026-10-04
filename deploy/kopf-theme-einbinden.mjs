@@ -82,6 +82,10 @@ const SOCIAL = [['whatsapp', 'WhatsApp-Kanal', '<path d="M12 3a9 9 0 0 0-7.8 13.
   .filter(([k]) => /^https:\/\//.test((SITE.social || {})[k] || ''));
 const SOCIAL_HTML = SOCIAL.length ? `<div class="social-links" aria-label="Merzenich Aktuell in sozialen Medien">${SOCIAL.map(([k, name, pfad]) => `<a href="${esc(SITE.social[k])}" target="_blank" rel="noopener" aria-label="${name}"><svg viewBox="0 0 24 24" aria-hidden="true">${pfad}</svg><span>${name}</span></a>`).join('')}</div><!--/social-->` : '';
 const SOCIAL_RE = /<div class="social-links"[\s\S]*?<!--\/social-->/g;
+// Dieselben Profile als sameAs im Organisations-Block der strukturierten Daten
+// (Suchmaschinen und Geo-Dienste verbinden Website und Profil, 04.10.2026).
+const SAMEAS = Object.values(SITE.social || {}).filter((u) => /^https:\/\//.test(u || ''));
+const SAMEAS_RE = /("@type":"NewsMediaOrganization","@id":"[^"]*","name":"Merzenich Aktuell")(,"sameAs":\[[^\]]*\])?/;
 const LINK_MEHR = '<a href="/kontakt/">Kontakt</a>';
 const LINK_DISKUSSION = '<a href="/diskussion/">Diskussion</a>';
 
@@ -181,6 +185,7 @@ for (const pfad of seiten) {
   if (!html.includes('<a href="/anzeigen/aufgeben/">Anzeige aufgeben</a><a href="/anzeigen/">')) html = html.replace('<h3>Service</h3><a href="/anzeigen/">', '<h3>Service</h3>' + FUSS_ANZEIGE + '<a href="/anzeigen/">');
   if (!html.includes('<a href="/unternehmen/">Unternehmen</a><a href="/werben/">')) html = html.replace('<a href="/werben/">Werben</a><a href="/unterstuetzen/">', '<a href="/unternehmen/">Unternehmen</a><a href="/werben/">Werben</a><a href="/unterstuetzen/">');
   html = html.replace(SOCIAL_RE, '');
+  html = html.replace(SAMEAS_RE, (m, kopf) => kopf + (SAMEAS.length ? `,"sameAs":${JSON.stringify(SAMEAS)}` : ''));
   if (SOCIAL_HTML) {
     html = html.replace('<div class="foot-bottom">', SOCIAL_HTML + '<div class="foot-bottom">');
     html = html.replace(/(<div class="drawer-group"><div class="grp">Ressorts<\/div>)/, (m) => SOCIAL_HTML + m);

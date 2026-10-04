@@ -57,7 +57,7 @@ Verbindlicher Stand aus dem KBS/Ordin-Feedback vom 23.09.2026:
 - Zwischen den redaktionellen Kategorien sind horizontale Werbebanner-/Sponsorflächen vorgesehen. Kampagnen dürfen sich wiederholen; verschiedene Motive/Kunden sind möglich. Redaktion und Werbung bleiben sichtbar getrennt und als Anzeige/Sponsoring gekennzeichnet.
 - Neue Rubrik **Foto des Tages**; täglich wechselnd, mit Bildcredit und redaktioneller Freigabe.
 - Neue bezahlbare Rubrik **Tipp** für Vereine, Unternehmen und Sponsoren. Bezahlte Platzierungen werden eindeutig als Anzeige/Sponsored gekennzeichnet.
-- WhatsApp-Kanal und Instagram werden als Social-Kanäle vorgesehen.
+- Social-Kanäle: Instagram ist seit 04.10.2026 eingerichtet (`@merzenichaktuell`, Link in `deploy/site.json`, Symbol in Fuß und Menü, `sameAs` in den strukturierten Daten; in WordPress unter SEO & Geo). Ein WhatsApp-Kanal ist vorgesehen.
 - Die Startseite darf keine Sport-Ergebnisse, Sporttabellen oder Sport-Aufmacher als eigene Sektion enthalten.
 
 Desktop-Ziel:

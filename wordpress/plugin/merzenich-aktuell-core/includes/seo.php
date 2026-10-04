@@ -446,7 +446,7 @@ function ma_seo_head(): void {
     }
     $z .= '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' . $e($titel) . '">' . ($k['beschreibung'] !== '' ? '<meta name="twitter:description" content="' . $e($k['beschreibung']) . '">' : '') . '<meta name="twitter:image" content="' . esc_url($b['url']) . '">' . "\n";
     if ($k['typ'] !== '404') {
-        $sameas = array_values(array_filter(array_map('trim', (array) get_option('ma_seo_sameas', [])), 'ma_seo_url_gueltig'));
+        $sameas = ma_seo_sameas();
         $graph = ma_seo_graph($k, ['home' => $home, 'logo' => home_url('/assets/img/logo-on-light.png'), 'bild' => ma_seo_standardbild()['url'], 'sameas' => $sameas, 'mitte' => ma_seo_mitte()]);
         $z .= '<script type="application/ld+json">' . wp_json_encode($graph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
     }
@@ -615,6 +615,17 @@ add_action('post_updated', function (int $id, WP_Post $nach): void {
 
 /* ------------------------------------------------------------ Backend: Merzenich Aktuell → SEO */
 
+/**
+ * Offizielle Profile (sameAs): Option aus SEO & Geo; solange sie nie gespeichert
+ * wurde, das Instagram-Profil des Betreibers (04.10.2026). Ein bewusst leeres
+ * Feld bleibt leer.
+ */
+function ma_seo_sameas(): array {
+    $o = get_option('ma_seo_sameas', null);
+    if ($o === null) $o = ['https://www.instagram.com/merzenichaktuell/'];
+    return array_values(array_filter(array_map('trim', (array) $o), 'ma_seo_url_gueltig'));
+}
+
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'SEO & Geo', 'SEO & Geo', 'manage_options', 'ma-seo', 'ma_seo_seite_admin');
 }, 31);
@@ -637,7 +648,7 @@ function ma_seo_seite_admin(): void {
     if (isset($_GET['gespeichert'])) echo '<div class="notice notice-success is-dismissible"><p>Gespeichert.</p></div>';
     echo '<p>Das Plugin gibt auf jeder Seite Titel, Description, Canonical, Open Graph, Geo-Angaben und strukturierte Daten aus; Sitemaps und robots.txt sind eingerichtet. Diese Angaben kann nur der Betreiber liefern:</p>';
     echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="ma_seo_speichern">'; wp_nonce_field('ma_seo_speichern');
-    echo '<table class="form-table"><tr><th><label for="sameas">Offizielle Profile (sameAs)</label></th><td><textarea id="sameas" name="sameas" rows="4" class="large-text" placeholder="https://www.facebook.com/…&#10;https://www.instagram.com/…&#10;https://whatsapp.com/channel/…">' . esc_textarea(implode("\n", (array) get_option('ma_seo_sameas', []))) . '</textarea><p class="description">Eine Adresse je Zeile: Facebook, Instagram, WhatsApp-Kanal, YouTube. Erscheint in den strukturierten Daten der Organisation.</p></td></tr>';
+    echo '<table class="form-table"><tr><th><label for="sameas">Offizielle Profile (sameAs)</label></th><td><textarea id="sameas" name="sameas" rows="4" class="large-text" placeholder="https://www.facebook.com/…&#10;https://www.instagram.com/…&#10;https://whatsapp.com/channel/…">' . esc_textarea(implode("\n", ma_seo_sameas())) . '</textarea><p class="description">Eine Adresse je Zeile: Facebook, Instagram, WhatsApp-Kanal, YouTube. Erscheint in den strukturierten Daten der Organisation.</p></td></tr>';
     echo '<tr><th><label for="google">Google Search Console</label></th><td><input id="google" name="google" class="regular-text" value="' . esc_attr((string) get_option('ma_seo_google', '')) . '"><p class="description">Inhalt des HTML-Tags <code>google-site-verification</code> (nur der Code).</p></td></tr>';
     $gd = ma_seo_google_datei_name((string) get_option('ma_seo_google_datei', ''));
     echo '<tr><th><label for="google_datei">Google-Bestätigungsdatei</label></th><td><input id="google_datei" name="google_datei" class="regular-text" value="' . esc_attr($gd) . '" placeholder="google0123456789abcdef"><p class="description">Methode „HTML-Datei“ der Search Console: Dateiname ohne .html eintragen; die Datei liefert das Plugin dann unter ' . ($gd !== '' ? '<a href="' . esc_url($home . $gd . '.html') . '" target="_blank"><code>/' . esc_html($gd) . '.html</code></a>' : '<code>/google….html</code>') . ' aus.</p></td></tr>';
