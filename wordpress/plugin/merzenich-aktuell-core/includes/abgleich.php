@@ -23,7 +23,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 const MA_ABGLEICH_WXR = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/wordpress-delivery/merzenich-aktuell-import.xml';
-const MA_ABGLEICH_REPO_SEITE = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site';
+if (!defined('MA_REPO_SEITE')) define('MA_REPO_SEITE', 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site');
 const MA_ABGLEICH_TYPEN = ['post', 'ma_event'];
 const MA_ABGLEICH_CRON = 'ma_abgleich_stuendlich';
 
@@ -37,7 +37,7 @@ function ma_abgleich_bildbasen(): array {
     $eigene = trim((string) get_option('ma_abgleich_bilder', ''));
     if ($eigene !== '') $b[] = rtrim($eigene, '/');
     if (function_exists('ma_bildpool_quelle')) $b[] = ma_bildpool_quelle();
-    $b[] = MA_ABGLEICH_REPO_SEITE;
+    $b[] = MA_REPO_SEITE;
     return array_values(array_unique($b));
 }
 
@@ -152,14 +152,11 @@ function ma_abgleich_bild(array $b, int $post_id, string &$fehler = ''): int {
     $kandidaten = [];
     if (!empty($b['url'])) $kandidaten[] = (string) $b['url'];
     if ($src !== '') foreach (ma_abgleich_bildbasen() as $basis) $kandidaten[] = $basis . $src;
-    $tmp = null; $gruende = []; $genutzt = '';
-    foreach (array_unique($kandidaten) as $url) {
-        $t = download_url($url, 30);
-        if (!is_wp_error($t)) { $tmp = $t; $genutzt = $url; break; }
-        $gruende[] = $url . ': ' . $t->get_error_message();
-    }
-    if ($tmp === null) { $fehler = $gruende ? implode(' | ', $gruende) : 'keine Bildadresse'; return 0; }
-    $name = sanitize_file_name(basename((string) parse_url($src !== '' ? $src : $genutzt, PHP_URL_PATH)));
+    $kandidaten = array_values(array_unique($kandidaten));
+    if (!$kandidaten) { $fehler = 'keine Bildadresse'; return 0; }
+    $tmp = ma_quelle_laden($kandidaten, $fehler);
+    if ($tmp === null) return 0;
+    $name = sanitize_file_name(basename((string) parse_url($src !== '' ? $src : $kandidaten[0], PHP_URL_PATH)));
     $id = media_handle_sideload(['name' => $name ?: 'bild.jpg', 'tmp_name' => $tmp], $post_id, (string) ($b['alt'] ?: $b['titel']), ['post_excerpt' => (string) $b['auszug']]);
     if (is_wp_error($id)) { @unlink($tmp); $fehler = $id->get_error_message(); return 0; }
     foreach ((array) $b['meta'] as $k => $v) if ($v !== '') update_post_meta($id, $k, $v);

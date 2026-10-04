@@ -55,6 +55,45 @@ function ma_bildpool_quelle(): string {
     return untrailingslashit((string) get_option('ma_bildpool_quelle', 'https://merzenichaktuell.hk-growthoperator.de'));
 }
 
+/** Das Repository auf GitHub (immer der Stand von main) als zweite Quelle für alles aus chatgpt-site/. */
+const MA_REPO_SEITE = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site';
+
+/** Quellen für Poolfotos in Reihenfolge der Versuche: Vorschauseite, dann Repository. */
+function ma_bildpool_quellen(): array {
+    return array_values(array_unique(apply_filters('ma_bildpool_quellen', [ma_bildpool_quelle(), MA_REPO_SEITE])));
+}
+
+/** Hosts, die in diesem Aufruf nicht erreichbar waren (5xx oder keine Verbindung); werden nicht erneut versucht. */
+function ma_quelle_ausgefallen(?string $host = null): array {
+    static $tot = [];
+    if ($host !== null && $host !== '') $tot[$host] = true;
+    return $tot;
+}
+
+/**
+ * Lädt eine Datei von der ersten erreichbaren Adresse. Rückgabe: temporärer Pfad
+ * oder null (Grund in $fehler). Ein Host, der 5xx liefert oder keine Verbindung
+ * annimmt, wird für den Rest des Aufrufs übersprungen (04.10.2026: die
+ * Vorschauseite war Stunden nicht erreichbar, und die Übernahme meldete 308-mal
+ * „Service Unavailable“, statt auf das Repository auszuweichen).
+ */
+function ma_quelle_laden(array $urls, string &$fehler = '', int $timeout = 30): ?string {
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    $gruende = [];
+    foreach ($urls as $url) {
+        $host = (string) parse_url($url, PHP_URL_HOST);
+        if (isset(ma_quelle_ausgefallen()[$host])) { $gruende[] = $host . ': nicht erreichbar'; continue; }
+        $t = download_url($url, $timeout);
+        if (!is_wp_error($t)) return $t;
+        $daten = $t->get_error_data();
+        $code = is_array($daten) ? (int) ($daten['code'] ?? 0) : 0;
+        if ($t->get_error_code() !== 'http_404' || $code >= 500) ma_quelle_ausgefallen($host);
+        $gruende[] = $host . ': ' . ($code ? 'HTTP ' . $code . ' ' : '') . $t->get_error_message();
+    }
+    $fehler = $gruende ? implode(' | ', $gruende) : 'keine Adresse';
+    return null;
+}
+
 add_action('init', function (): void {
     register_taxonomy(MA_BILDPOOL_TAX, 'attachment', [
         'labels' => ['name' => 'Bildpools', 'singular_name' => 'Bildpool', 'menu_name' => 'Bildpools', 'all_items' => 'Alle Bildpools', 'edit_item' => 'Bildpool bearbeiten', 'search_items' => 'Bildpools durchsuchen'],
@@ -88,11 +127,10 @@ function ma_bildpool_uebernehmen(array $b, string &$fehler = ''): int {
     require_once ABSPATH . 'wp-admin/includes/file.php';
     require_once ABSPATH . 'wp-admin/includes/media.php';
     require_once ABSPATH . 'wp-admin/includes/image.php';
-    $url = ma_bildpool_quelle() . $b['datei'];
-    $tmp = download_url($url, 30);
-    if (is_wp_error($tmp)) { $fehler = $tmp->get_error_message(); return 0; }
+    $tmp = ma_quelle_laden(array_map(fn(string $q): string => $q . $b['datei'], ma_bildpool_quellen()), $fehler);
+    if ($tmp === null) return 0;
     $credit = trim((string) preg_replace('/^Symbolbild\s*·\s*/u', '', (string) $b['credit']));
-    $id = media_handle_sideload(['name' => sanitize_file_name(basename(parse_url($url, PHP_URL_PATH))), 'tmp_name' => $tmp], 0, (string) ($b['alt'] ?: $b['titel']), ['post_excerpt' => $credit]);
+    $id = media_handle_sideload(['name' => sanitize_file_name(basename((string) parse_url((string) $b['datei'], PHP_URL_PATH))), 'tmp_name' => $tmp], 0, (string) ($b['alt'] ?: $b['titel']), ['post_excerpt' => $credit]);
     if (is_wp_error($id)) { @unlink($tmp); $fehler = $id->get_error_message(); return 0; }
     update_post_meta($id, 'ma_pool_id', (string) $b['id']);
     update_post_meta($id, '_wp_attachment_image_alt', (string) $b['alt']);
@@ -110,18 +148,31 @@ function ma_bildpool_uebernehmen(array $b, string &$fehler = ''): int {
     return (int) $id;
 }
 
-/** Übernimmt bis zu $max noch fehlende Fotos. @return array{neu:int,offen:int,fehler:array} */
+/**
+ * Übernimmt bis zu $max noch fehlende Fotos. Sind alle Quellen ausgefallen, bricht
+ * der Lauf nach dem ersten Fehler ab (eine Meldung statt 308).
+ * @return array{neu:int,offen:int,fehler:array,ausgefallen:array,hinweis:string}
+ */
 function ma_bildpools_importieren(int $max = 10): array {
     ma_bildpools_anlegen();
     if (function_exists('set_time_limit')) @set_time_limit(300);
-    $neu = 0; $fehler = []; $offen = 0;
+    $neu = 0; $fehler = []; $offen = 0; $abbruch = false;
+    $hosts = array_map(fn(string $q): string => (string) parse_url($q, PHP_URL_HOST), ma_bildpool_quellen());
     foreach ((array) (ma_bildpool_daten()['bilder'] ?? []) as $b) {
         if (ma_bildpool_medium((string) $b['id'])) continue;
-        if ($neu >= $max) { $offen++; continue; }
+        if ($neu >= $max || $abbruch) { $offen++; continue; }
         $f = '';
-        if (ma_bildpool_uebernehmen($b, $f)) $neu++; else { $fehler[] = $b['id'] . ': ' . $f; $offen++; }
+        if (ma_bildpool_uebernehmen($b, $f)) { $neu++; continue; }
+        $offen++;
+        $tot = ma_quelle_ausgefallen();
+        if (count(array_filter($hosts, fn(string $h): bool => isset($tot[$h]))) === count($hosts)) { $abbruch = true; $fehler[] = 'Keine Quelle erreichbar: ' . $f; }
+        else $fehler[] = $b['id'] . ': ' . $f;
     }
-    return ['neu' => $neu, 'offen' => $offen, 'fehler' => $fehler];
+    $ausgefallen = array_keys(ma_quelle_ausgefallen());
+    $hinweis = '';
+    if ($abbruch) $hinweis = 'Weder die Vorschauseite noch das Repository waren erreichbar. Bitte später erneut „Fotos übernehmen“ anklicken.';
+    elseif ($ausgefallen && $neu) $hinweis = 'Die Vorschauseite (' . implode(', ', $ausgefallen) . ') war nicht erreichbar; die Fotos kamen aus dem Repository.';
+    return ['neu' => $neu, 'offen' => $offen, 'fehler' => $fehler, 'ausgefallen' => $ausgefallen, 'hinweis' => $hinweis];
 }
 
 /** Stand je Pool: in WordPress, davon geprüft, laut Liste. */
@@ -148,7 +199,7 @@ add_action('admin_post_ma_bildpools', function (): void {
     $aktion = sanitize_key(wp_unslash($_POST['aktion'] ?? ''));
     $q = [];
     if ($aktion === 'anlegen') $q['ma_angelegt'] = ma_bildpools_anlegen();
-    if ($aktion === 'importieren') { $e = ma_bildpools_importieren(10); $q = ['ma_neu' => $e['neu'], 'ma_offen' => $e['offen'], 'ma_fehler' => count($e['fehler'])]; if ($e['fehler']) set_transient('ma_bildpool_fehler', array_slice($e['fehler'], 0, 10), 600); }
+    if ($aktion === 'importieren') { $e = ma_bildpools_importieren(10); $q = ['ma_neu' => $e['neu'], 'ma_offen' => $e['offen'], 'ma_fehler' => count($e['fehler'])]; set_transient('ma_bildpool_lauf', ['fehler' => array_slice($e['fehler'], 0, 3), 'hinweis' => $e['hinweis']], 600); }
     if ($aktion === 'auto' && current_user_can('manage_options')) update_option('ma_bildpool_auto', !empty($_POST['auto']) ? '1' : '0', false);
     wp_safe_redirect(add_query_arg($q, admin_url('upload.php?page=ma-bildpools'))); exit;
 });
@@ -163,9 +214,14 @@ function ma_bildpools_seite(): void {
     echo '<p>Gesichtete Symbolfotos je Thema (Quelle: Wikimedia Commons, Liste vom ' . esc_html((string) (ma_bildpool_daten()['stand'] ?? '')) . '). Ein Poolfoto ist immer ein <strong>Symbolbild</strong>, nie ein Foto vom Ereignis. Nur Fotos mit Rechteprüfung „geprüft“ werden verwendet.</p>';
     if (isset($_GET['ma_angelegt'])) echo '<div class="notice notice-success"><p>' . (int) $_GET['ma_angelegt'] . ' Pools angelegt.</p></div>';
     if (isset($_GET['ma_neu'])) {
-        echo '<div class="notice notice-' . (!empty($_GET['ma_fehler']) ? 'warning' : 'success') . '"><p>' . (int) $_GET['ma_neu'] . ' Fotos übernommen, noch ' . (int) $_GET['ma_offen'] . ' offen.' . (!empty($_GET['ma_fehler']) ? ' ' . (int) $_GET['ma_fehler'] . ' Fehler: ' . esc_html(implode('; ', (array) get_transient('ma_bildpool_fehler'))) : '') . '</p></div>';
-        // Weiter in Paketen, bis alle übernommen sind (ohne Fehler).
-        if ((int) $_GET['ma_neu'] > 0 && (int) $_GET['ma_offen'] > 0 && empty($_GET['ma_fehler'])) echo '<script>window.addEventListener("load",function(){var f=document.getElementById("ma-bildpools-import");if(f)setTimeout(function(){f.submit();},600);});</script>';
+        $lauf = get_transient('ma_bildpool_lauf'); $lauf = is_array($lauf) ? $lauf : ['fehler' => [], 'hinweis' => ''];
+        $nFehler = (int) ($_GET['ma_fehler'] ?? 0);
+        $text = (int) $_GET['ma_neu'] . ' Fotos übernommen, noch ' . (int) $_GET['ma_offen'] . ' offen.';
+        if ($lauf['hinweis'] !== '') $text .= ' ' . $lauf['hinweis'];
+        if ($nFehler) $text .= ' ' . $nFehler . ' Fehler' . ($lauf['fehler'] ? ', zum Beispiel: ' . implode('; ', $lauf['fehler']) : '') . ($nFehler > count($lauf['fehler']) && $lauf['fehler'] ? ' …' : '');
+        echo '<div class="notice notice-' . ($nFehler ? 'warning' : 'success') . '"><p>' . esc_html($text) . '</p></div>';
+        // Weiter in Paketen, solange der letzte Lauf etwas übernommen hat und noch Fotos offen sind.
+        if ((int) $_GET['ma_neu'] > 0 && (int) $_GET['ma_offen'] > 0) echo '<script>window.addEventListener("load",function(){var f=document.getElementById("ma-bildpools-import");if(f)setTimeout(function(){f.submit();},600);});</script>';
     }
     $form = function (string $aktion, string $knopf, string $extra = '', string $id = '') {
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" style="display:inline-block;margin:0 8px 8px 0"' . ($id ? ' id="' . esc_attr($id) . '"' : '') . '><input type="hidden" name="action" value="ma_bildpools"><input type="hidden" name="aktion" value="' . esc_attr($aktion) . '">';
@@ -264,7 +320,7 @@ if (defined('WP_CLI') && WP_CLI) {
         public function importieren($args, $assoc): void {
             $max = (int) ($assoc['max'] ?? 50);
             $e = ma_bildpools_importieren($max);
-            WP_CLI::log($e['neu'] . ' übernommen, ' . $e['offen'] . ' offen.' . ($e['fehler'] ? ' Fehler: ' . implode('; ', $e['fehler']) : ''));
+            WP_CLI::log($e['neu'] . ' übernommen, ' . $e['offen'] . ' offen.' . ($e['hinweis'] !== '' ? ' ' . $e['hinweis'] : '') . ($e['fehler'] ? ' Fehler: ' . implode('; ', array_slice($e['fehler'], 0, 10)) : ''));
         }
         /** Stand je Pool. */
         public function stand(): void {

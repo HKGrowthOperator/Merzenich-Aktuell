@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.20.0 (Historie unten)
+4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.20.1 (Historie unten)
+
+## Neu in 1.20.1 (04.10.2026): Bildpools laden aus dem Repository, wenn die Vorschauseite ausfällt
+
+Medien → Bildpools → „Fotos übernehmen“ meldete am 04.10. 308-mal „Service Unavailable“, weil die Fotos nur von der Vorschauseite (Coolify) geladen wurden und die stundenlang nicht erreichbar war.
+
+- **Zweite Quelle:** Jedes Poolfoto wird zuerst von der Vorschauseite, dann aus dem Repository auf GitHub (Stand von `main`, `chatgpt-site/`) geladen. Ein Host, der 5xx liefert oder keine Verbindung annimmt, wird im selben Lauf nicht noch einmal versucht. Der Abgleich (1.20.0) nutzt dieselbe Routine für Beitragsbilder.
+- **Meldung statt Fehlerliste:** Die Seite sagt jetzt „Die Vorschauseite war nicht erreichbar; die Fotos kamen aus dem Repository“ beziehungsweise „Weder die Vorschauseite noch das Repository waren erreichbar, später erneut“ und zeigt höchstens drei Beispiel-Fehler. Sind alle Quellen ausgefallen, bricht der Lauf nach dem ersten Fehler ab. Die Pakete laufen weiter, solange ein Lauf etwas übernommen hat.
+
+**Geprüft:** lokales WordPress mit ausgefallener Vorschauseite (Fotos kommen aus dem Repository, Nachweis und Rechteprüfung gesetzt), mit zwei toten Quellen (eine Meldung, Abbruch), alle `qa/wordpress/*-test.php`.
 
 ## Neu in 1.20.0 (04.10.2026): Abgleich mit dem redaktionellen Stand, Google News
 
