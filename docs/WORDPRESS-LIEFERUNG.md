@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.5 · Core-Plugin 1.20.1 (Historie unten)
+4. Oktober 2026 · Theme 21.9.5 · Core-Plugin 1.20.2 (Historie unten)
+
+## Neu in 1.20.2 (04.10.2026): Abgleich ohne falsches Änderungsdatum
+
+Ändern sich im redaktionellen Stand nur Importfelder oder Schlagworte (z. B. nach dem Wegfall des Kastens „Das Wichtigste in Kürze“ in der Import-Datei), speichert der Abgleich den Beitrag nicht neu: Änderungsdatum, „Aktualisiert am“, `dateModified` und Sitemap bleiben unberührt. Nur ein geänderter Titel, Text oder Auszug speichert den Beitrag neu. Lokal geprüft: 143 Beiträge mit geänderten Importfeldern, Änderungsdatum unverändert.
 
 ## Neu in Theme 21.9.3 bis 21.9.5 (04.10.2026): Kopf ohne Bruch beim Scrollen, Kasten „Das Wichtigste in Kürze“ entfernt
 

@@ -197,16 +197,28 @@ function ma_abgleich_anlegen(array $e, array $bilder, array &$fehler): int {
     return (int) $id;
 }
 
-/** Aktualisiert Titel, Text, Auszug, Schlagworte und Importfelder; Status und Freigaben bleiben. */
+/**
+ * Aktualisiert Titel, Text, Auszug, Schlagworte und Importfelder; Status und
+ * Freigaben bleiben. Haben sich nur Importfelder oder Schlagworte geändert,
+ * wird der Beitrag nicht neu gespeichert: Änderungsdatum („Aktualisiert am“,
+ * dateModified, Sitemap) bleibt dann unberührt.
+ */
 function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$fehler): bool {
     $meta = $e['meta'];
     unset($meta['ma_startseite_freigabe']);
-    $r = wp_update_post(wp_slash(['ID' => $id, 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'meta_input' => $meta]), true);
-    if (is_wp_error($r) || !$r) { $fehler[] = $e['titel'] . ': ' . (is_wp_error($r) ? $r->get_error_message() : 'nicht aktualisiert'); return false; }
+    $p = get_post($id);
+    if (!$p) return false;
+    $textNeu = ma_abgleich_texthash($e['titel'], $e['inhalt'], $e['auszug']) !== ma_abgleich_texthash($p->post_title, $p->post_content, $p->post_excerpt);
+    if ($textNeu) {
+        $r = wp_update_post(wp_slash(['ID' => $id, 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'meta_input' => $meta]), true);
+        if (is_wp_error($r) || !$r) { $fehler[] = $e['titel'] . ': ' . (is_wp_error($r) ? $r->get_error_message() : 'nicht aktualisiert'); return false; }
+    } else {
+        foreach ($meta as $k => $v) update_post_meta($id, $k, wp_slash($v));
+    }
     ma_abgleich_terme_setzen($id, $e['terme']);
     if ($e['bild'] && !has_post_thumbnail($id)) ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
     ma_abgleich_stand_merken($id, $e);
-    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Text aus dem redaktionellen Stand aktualisiert', 0);
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', $textNeu ? 'Text aus dem redaktionellen Stand aktualisiert' : 'Importfelder aus dem redaktionellen Stand aktualisiert', 0);
     return true;
 }
 
