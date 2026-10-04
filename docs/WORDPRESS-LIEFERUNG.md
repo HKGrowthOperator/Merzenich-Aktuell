@@ -1,6 +1,18 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.19.1 (Historie unten)
+4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.20.0 (Historie unten)
+
+## Neu in 1.20.0 (04.10.2026): Abgleich mit dem redaktionellen Stand, Google News
+
+Hintergrund in `docs/GOOGLE-NEWS.md`: Auf merzenich-aktuell.de war am 04.10. die neueste Meldung vom 29.09., weil die Import-Datei nur von Hand eingespielt wurde. Die News-Sitemap war leer; Google sah keine Nachrichtenseite.
+
+- **Abgleich (Merzenich Aktuell → Abgleich, `includes/abgleich.php`):** liest stündlich die Import-Datei `wordpress-delivery/merzenich-aktuell-import.xml` aus dem Repository (Stand von `main`), legt neue Meldungen als Entwurf in die Freigaben und neue Termine veröffentlicht an, übernimmt Beitragsbilder mit Nachweis, Lizenz und Rechteprüfung (von der Vorschauseite, ersatzweise aus dem Repository) und aktualisiert Titel, Text, Auszug, Schlagworte und Importfelder, wenn sich der Stand geändert hat. Was in WordPress von Hand geändert wurde, bleibt (Vergleich über Text-Prüfsumme); Status, Freigaben, Hervorhebungen und ein von Hand gesetztes Bild werden nie angefasst; Papierkorb bleibt Papierkorb; gelöscht wird nichts. Zuordnung über `ma_legacy_url`, ersatzweise Slug. Höchstens 20 neue Beiträge je Lauf, Rest beim nächsten.
+- **Einstellungen:** automatischer Abgleich an/aus, „Neue Meldungen sofort veröffentlichen“ (Standard aus: Entwurf in den Freigaben), eigene Adressen für Import-Datei und Bilder. Knopf „Jetzt abgleichen“, letzter Lauf mit Zahlen und Fehlern, Protokoll der letzten 20 Läufe. WP-CLI: `wp ma-abgleich lauf [--max=N]`, `wp ma-abgleich stand`. Jeder übernommene Beitrag bekommt einen Eintrag im Verlauf.
+- **Google News:** Schrittfolge für Search Console (News-Sitemap eintragen) und Publisher Center in `docs/GOOGLE-NEWS.md`; Transparenz-Markup (Grundsätze, Korrekturen, Ethik, Vielfalt, Finanzierung, Impressum, Kontakt) ist vollständig und zeigt auf vorhandene Seiten.
+
+**Nach dem Update im Backend:** Merzenich Aktuell → Abgleich → „Jetzt abgleichen“ (beim ersten Lauf werden alle vorhandenen Beiträge als bekannt übernommen, neue angelegt). Entscheiden, ob neue Meldungen sofort veröffentlicht werden sollen (siehe `docs/GOOGLE-NEWS.md`).
+
+**Geprüft:** `php qa/wordpress/abgleich-test.php` (Lesen der echten Import-Datei, Entscheidung je Beitrag, Status, Quellen) und alle `qa/wordpress/*-test.php`; lokales WordPress 7.1.2 mit dem Stand von merzenich-aktuell.de: erster Lauf 18 neu (14 Meldungen, 4 Termine), 147 übernommen, 10 s; zweiter Lauf unverändert; geänderter Stand → aktualisiert; von Hand geänderter Text → nicht überschrieben; Papierkorb → nicht neu angelegt; Bilder mit Nachweis, Lizenz, Quelle und Rechteprüfung in der Mediathek.
 
 ## Neu in 1.19.1 (04.10.2026): Search-Console-Meldungen zu Navigationspfaden und Terminen
 

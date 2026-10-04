@@ -16,6 +16,7 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 - Öffentliche Deploy-/Kontroll-URL: `https://merzenichaktuell.hk-growthoperator.de`
 - Frühere externe ChatGPT-Sites sind nur historische Altstände und dürfen nicht als Source of Truth verwendet werden.
 - WordPress Theme/Core sind ein **separater** Lieferstand unter `/wordpress-delivery` und dürfen nicht mit dem Frontend verwechselt werden.
+- Das Core-Plugin holt sich die Import-Datei `wordpress-delivery/merzenich-aktuell-import.xml` seit 1.20.0 stündlich selbst von GitHub (Backend: Merzenich Aktuell → Abgleich); neue Meldungen landen in den Freigaben oder, per Einstellung, sofort auf merzenich-aktuell.de. Hintergrund: `docs/GOOGLE-NEWS.md`.
 
 ## Grundregel
 
