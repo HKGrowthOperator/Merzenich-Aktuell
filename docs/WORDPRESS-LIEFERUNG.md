@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.7 · Core-Plugin 1.20.2 (Historie unten)
+4. Oktober 2026 · Theme 21.9.8 · Core-Plugin 1.20.3 (Historie unten)
+
+## Neu in Theme 21.9.8 / Plugin 1.20.3 (04.10.2026): Fehlerseite, Unternehmen nur mit Unternehmensbeiträgen, Kalenderdatei
+
+- **Fehlerseite:** Eine unbekannte Adresse zeigte bisher „Alle Meldungen“ mit leerer Liste und „1 Meldung“ (das Theme hatte keine `404.php`, `index.php` lud `archive.php`). Jetzt eine eigene Seite wie `/404.html` der statischen Seite: „Diese Seite gibt es nicht“, Suchfeld, neueste Meldungen, Ressorts, Status 404. WordPress rät außerdem keine ähnliche Adresse mehr (`/ausgabe/merzenich/` landete bei einem Vereinsprofil); alte Adressen werden weiter über `ma_legacy_url` und den genauen Slug aufgelöst.
+- **Unternehmen (`/unternehmen/`):** nur noch Beiträge der Unternehmen: gesponserte Beiträge (`ma_gesponsert`) und Beiträge der Unternehmens-Zugänge, höchstens vier je Unternehmen (Vorgabe Betreiber). Wirtschaftsnachrichten der Redaktion stehen nur noch unter `/wirtschaft/`. Das Ressort-Menü „Neu im Ressort“ für Unternehmen folgt derselben Regel. Solange kein Unternehmensbeitrag freigegeben ist, steht ein Hinweis mit den Unternehmensprofilen daneben.
+- **Fußlinks der statischen Seite:** `/vereine/eintragen/` → `/meldung-senden/`, `/betriebe/eintragen/` → Anzeigen-Assistent (Unternehmenskanal). `/termine/kalender.ics` liefert jetzt die kommenden Termine als Kalenderdatei (iCalendar, Zeiten in UTC, Ort, Link), abonnierbar in Kalender-Apps.
+
+**Geprüft:** `qa/wordpress/feeds-test.php` (Kalender), `seo-test.php` (Umleitungen), alle Tests; lokal und live: unbekannte Adresse → Fehlerseite mit Status 404, `/unternehmen/` ohne Wirtschaftsnachrichten, Kalenderdatei als `text/calendar`.
 
 ## Neu in Theme 21.9.7 (04.10.2026): Datenschutz-Dialog neu gestaltet
 

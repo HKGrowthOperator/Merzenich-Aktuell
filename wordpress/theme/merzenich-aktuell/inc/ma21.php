@@ -206,7 +206,8 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
         }, $l);
     }
     $args = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 4, 'orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true];
-    if ($slug !== 'nachrichten') {
+    if ($slug === 'unternehmen') { $ids = ma21_unternehmen_ids(); if (!$ids) return []; $args['post__in'] = $ids; }
+    elseif ($slug !== 'nachrichten') {
         if (!get_category_by_slug($slug)) {
             // Kein Ressort mit eigener Rubrik (z. B. Unternehmen): statische Liste, aber nur Beiträge, die hier veröffentlicht sind.
             return array_values(array_filter($statisch, function ($e): bool {
@@ -689,9 +690,23 @@ add_action('init', function (): void {
     add_rewrite_rule('^unternehmen/?$', 'index.php?ma_unternehmen=1', 'top');
 });
 add_filter('query_vars', function (array $v): array { $v[] = 'ma_alle'; $v[] = 'ma_api'; $v[] = 'ma_unternehmen'; return $v; });
+/**
+ * Beiträge der Unternehmen für /unternehmen/ (Vorgabe Betreiber 04.10.2026):
+ * gesponserte Beiträge (ma_gesponsert) und Beiträge der Unternehmens-Zugänge.
+ * Wirtschaftsnachrichten der Redaktion gehören nicht dazu, die stehen unter /wirtschaft/.
+ */
+function ma21_unternehmen_ids(): array {
+    static $ids = null;
+    if ($ids !== null) return $ids;
+    $a = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 200, 'fields' => 'ids', 'meta_key' => 'ma_gesponsert', 'meta_value' => '1']);
+    $nutzer = get_users(['role' => 'ma_wirtschaft_partner', 'fields' => 'ID']);
+    $b = $nutzer ? get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 200, 'fields' => 'ids', 'author__in' => array_map('intval', (array) $nutzer)]) : [];
+    return $ids = array_values(array_unique(array_map('intval', array_merge((array) $a, (array) $b))));
+}
 add_action('pre_get_posts', function (WP_Query $q): void {
     if (is_admin() || !$q->is_main_query() || !$q->get('ma_unternehmen')) return;
-    $q->set('post_type', 'post'); $q->set('category_name', 'wirtschaft'); $q->set('posts_per_page', 60);
+    $ids = ma21_unternehmen_ids();
+    $q->set('post_type', 'post'); $q->set('post__in', $ids ?: [0]); $q->set('posts_per_page', 60); $q->set('orderby', 'date'); $q->set('order', 'DESC');
     $q->is_home = false; $q->is_archive = true; $q->is_404 = false;
 });
 add_filter('template_include', fn($t) => get_query_var('ma_unternehmen') ? (locate_template('unternehmen.php') ?: $t) : $t);

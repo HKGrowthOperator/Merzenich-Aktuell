@@ -94,3 +94,8 @@ function ma_vereine_anfrage(array $q): array {
     return $ids ? ['name' => $slug] : $q;
 }
 add_filter('request', 'ma_vereine_anfrage');
+
+/* WordPress rät bei unbekannten Adressen sonst einen Beitrag mit ähnlichem Slug
+   (/ausgabe/merzenich/ landete bei einem Vereinsprofil). Alte Adressen werden
+   oben über ma_legacy_url und den genauen Slug aufgelöst; alles andere ist 404. */
+add_filter('do_redirect_guess_404_permalink', '__return_false');

@@ -10,6 +10,13 @@ require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/feeds
 $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-66s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
 
+echo "Kalender (termine/kalender.ics)\n";
+$ics = ma_ics_text([['start' => 1791055800, 'ende' => 0, 'titel' => 'Infoabend, Kirche', 'ort' => 'Pfarrheim; Merzenich', 'url' => 'https://merzenich-aktuell.de/termine/x/', 'beschreibung' => '', 'stand' => 1791000000], ['start' => 0, 'titel' => 'ohne Beginn']]);
+pruefe('VCALENDAR mit CRLF, ein Termin, Zeiten in UTC, Ende = Beginn + 2 h', [str_starts_with($ics, "BEGIN:VCALENDAR\r\nVERSION:2.0"), substr_count($ics, 'BEGIN:VEVENT'), str_contains($ics, "DTSTART:20261003T193000Z\r\n"), str_contains($ics, "DTEND:20261003T213000Z\r\n"), str_ends_with($ics, "END:VCALENDAR\r\n")], [true, 1, true, true, true]);
+pruefe('Komma und Semikolon maskiert, Ort und Adresse dabei', [str_contains($ics, 'SUMMARY:Infoabend\\, Kirche'), str_contains($ics, 'LOCATION:Pfarrheim\\; Merzenich'), str_contains($ics, 'URL:https://merzenich-aktuell.de/termine/x/')], [true, true, true]);
+$lang = ma_ics_text([['start' => 1791055800, 'titel' => str_repeat('Sehr langer Titel mit Umlauten äöü ', 6), 'url' => 'u']]);
+pruefe('Lange Zeilen auf 75 Oktette gefaltet', max(array_map('strlen', explode("\r\n", $lang))) <= 75 && str_contains($lang, "\r\n Sehr") || str_contains($lang, "\r\n "), true);
+
 echo "latest.json\n";
 $e = ma_latest_eintrag('Titel', 'https://merzenich-aktuell.de/leben/x/', '2026-09-29T10:56:00+02:00', 'leben', 'golzheim', 'Anriss', 'https://merzenich-aktuell.de/wp-content/uploads/a.webp');
 pruefe('Eintrag mit den Feldern der statischen Datei', array_keys($e), ['title', 'url', 'date', 'ressort', 'ort', 'teaser', 'image']);

@@ -152,6 +152,68 @@ function ma_latest_daten(): array {
     return ['generated' => current_time('c'), 'stand' => $stand, 'items' => $items];
 }
 
+/* ---------------------------------------------------------- Kalender /termine/kalender.ics (04.10.2026) */
+
+/**
+ * iCalendar-Text (RFC 5545) für Termine. Je Eintrag: start, ende (Unix, 0 = offen),
+ * titel, ort, url, beschreibung, stand. Zeiten in UTC, Zeilen auf 75 Oktette gefaltet.
+ * Ohne WordPress prüfbar (qa/wordpress/feeds-test.php).
+ */
+function ma_ics_text(array $termine): string {
+    $e = fn(string $x): string => str_replace(["\\", ';', ',', "\n"], ["\\\\", '\\;', '\\,', '\\n'], trim($x));
+    $z = fn(int $ts): string => gmdate('Ymd\THis\Z', $ts);
+    $zeilen = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Merzenich Aktuell//Termine//DE', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Termine Merzenich Aktuell', 'X-WR-TIMEZONE:Europe/Berlin'];
+    foreach ($termine as $t) {
+        $start = (int) ($t['start'] ?? 0);
+        if ($start <= 0 || empty($t['titel'])) continue;
+        $ende = (int) ($t['ende'] ?? 0);
+        $zeilen[] = 'BEGIN:VEVENT';
+        $zeilen[] = 'UID:' . md5((string) ($t['url'] ?? $t['titel'])) . '@merzenich-aktuell.de';
+        $zeilen[] = 'DTSTAMP:' . $z((int) ($t['stand'] ?? $start));
+        $zeilen[] = 'DTSTART:' . $z($start);
+        $zeilen[] = 'DTEND:' . $z($ende > $start ? $ende : $start + 7200);
+        $zeilen[] = 'SUMMARY:' . $e((string) $t['titel']);
+        if (!empty($t['ort'])) $zeilen[] = 'LOCATION:' . $e((string) $t['ort']);
+        if (!empty($t['beschreibung'])) $zeilen[] = 'DESCRIPTION:' . $e((string) $t['beschreibung']);
+        if (!empty($t['url'])) $zeilen[] = 'URL:' . (string) $t['url'];
+        $zeilen[] = 'END:VEVENT';
+    }
+    $zeilen[] = 'END:VCALENDAR';
+    $aus = [];
+    foreach ($zeilen as $l) {
+        if (strlen($l) <= 75) { $aus[] = $l; continue; }
+        $teil = ''; $teile = [];
+        foreach (mb_str_split($l) as $c) { if (strlen($teil . $c) > ($teile ? 74 : 75)) { $teile[] = $teil; $teil = ''; } $teil .= $c; }
+        if ($teil !== '') $teile[] = $teil;
+        $aus[] = implode("\r\n ", $teile);
+    }
+    return implode("\r\n", $aus) . "\r\n";
+}
+
+/** Kommende und laufende Termine (ab gestern) als Einträge für ma_ics_text(). */
+function ma_ics_termine(): array {
+    $von = (string) wp_date('Y-m-d\TH:i', time() - DAY_IN_SECONDS);
+    $l = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 200, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $von, 'compare' => '>=']]]);
+    $aus = [];
+    foreach ($l as $p) {
+        $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
+        $ende = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'end') : 0;
+        $aus[] = ['start' => $start, 'ende' => $ende, 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'ort' => (string) get_post_meta($p->ID, 'ma_event_place', true), 'url' => get_permalink($p), 'beschreibung' => wp_strip_all_tags((string) ($p->post_excerpt ?: '')), 'stand' => (int) get_post_modified_time('U', true, $p)];
+    }
+    return $aus;
+}
+
+add_action('init', function (): void {
+    add_rewrite_rule('^termine/kalender\.ics$', 'index.php?ma_api=kalender', 'top');
+});
+add_action('template_redirect', function (): void {
+    if (get_query_var('ma_api') !== 'kalender') return;
+    header('Content-Type: text/calendar; charset=utf-8');
+    header('Content-Disposition: inline; filename="merzenich-aktuell-termine.ics"');
+    header('Cache-Control: public, max-age=600');
+    echo ma_ics_text(ma_ics_termine()); exit;
+}, 0);
+
 add_action('template_redirect', function (): void {
     if (get_query_var('ma_api') !== 'latest') return;
     nocache_headers();

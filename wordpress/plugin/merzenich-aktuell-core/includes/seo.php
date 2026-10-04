@@ -77,6 +77,9 @@ function ma_seo_umleitungen(): array {
         '/feed.xml' => '/feed/',
         '/atom.xml' => '/feed/atom/',
         '/suche/' => '/?s=',
+        // Fußlinks der statischen Seite, die es hier als eigene Seite nicht gibt (04.10.2026).
+        '/vereine/eintragen/' => '/meldung-senden/',
+        '/betriebe/eintragen/' => '/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal',
     ];
 }
 

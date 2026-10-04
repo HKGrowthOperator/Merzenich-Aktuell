@@ -37,6 +37,7 @@ $l = ma_seo_llms_txt($HOME, [['Über uns', $HOME . 'ueber-uns/', 'Wer dahinterst
 pruefe('llms.txt: Marke, Ressorts, Orte, Seiten, Anbieterin, keine Vorschau-Domain', str_starts_with($l, '# Merzenich Aktuell') && str_contains($l, "[Blaulicht]({$HOME}blaulicht/)") && str_contains($l, "[Golzheim]({$HOME}ort/golzheim/)") && str_contains($l, '[Über uns]') && str_contains($l, 'KBS Management GmbH') && !str_contains($l, 'hk-growthoperator') && !str_contains($l, 'TODO'), true);
 pruefe('Profil-Adressen: nur mit Schema und Host', array_map('ma_seo_url_gueltig', ['https://www.facebook.com/x', 'http://kein-link', 'facebook.com/x', 'https://whatsapp.com/channel/abc']), [true, false, false, true]);
 pruefe('Umleitungen statischer Adressen', ma_seo_umleitungen()['/autor/redaktion/'] . ' ' . ma_seo_umleitungen()['/termine/melden/'] . ' ' . ma_seo_umleitungen()['/feed.xml'], '/redaktion/ /termin-melden/ /feed/');
+pruefe('Umleitungen der statischen Fußlinks (Verein, Betrieb eintragen)', [ma_seo_umleitungen()['/vereine/eintragen/'] ?? '', ma_seo_umleitungen()['/betriebe/eintragen/'] ?? ''], ['/meldung-senden/', '/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal']);
 pruefe('Ressorts mit kurzer Adresse sind Kategorien', ma_seo_ressort_kategorien(), ['blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine']);
 foreach (ma_seo_ressorte() as $slug => $d) if (count($d) !== 3 || $d[2] === '' || mb_strlen($d[2]) > 200) $fehler++;
 pruefe('Jedes Ressort hat Label, Titel und Beschreibung ≤ 200 Zeichen', true, true);
