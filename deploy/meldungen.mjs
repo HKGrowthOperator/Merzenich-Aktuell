@@ -82,6 +82,10 @@ function meldungenLesen() {
   for (const datei of readdirSync(ordner).filter((f) => f.endsWith('.json')).sort()) {
     const paket = JSON.parse(readFileSync(join(ordner, datei), 'utf8'));
     const redaktionsstandard = Number(paket.redaktionsstandard || 1);
+    const datierterNeustandard = /^\d{4}-\d{2}-\d{2}/.test(datei) && datei.slice(0, 10) >= '2026-10-04';
+    if (datierterNeustandard && redaktionsstandard < 2) {
+      throw new Error(`${datei}: neue Meldungspakete ab 04.10.2026 muessen redaktionsstandard: 2 tragen`);
+    }
     for (const m of paket.meldungen || []) {
       const fehlt = PFLICHT.filter((k) => m[k] === undefined || m[k] === '' || (Array.isArray(m[k]) && !m[k].length));
       if (fehlt.length) throw new Error(`${datei} / ${m.slug || '?'}: Pflichtfelder fehlen: ${fehlt.join(', ')}`);
