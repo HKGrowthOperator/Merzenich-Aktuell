@@ -140,15 +140,21 @@ const kanalSeiten = kanaele.map((k) => {
 // „Unternehmen“ steht als eigener Punkt nach „Wirtschaft“ in der Ressortleiste
 // und im Handymenue, auf jeder Seite (die Leiste ist in jede Seite gebacken).
 {
-  // Nur in Leiste und Schublade (dort folgt ein weiterer Link), nicht in den <li> des Mehr-Menues.
-  const NAV_RE = /(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?=<a href="\/tipp\/")/g;
+  // Nur in Ressortleiste und Ressort-Schublade, niemals in Breadcrumbs
+  // oder redaktionellen Links. Die fruehere globale Regex traf auch
+  // "Wirtschaft > Tipp" in Artikel-Brotkrumen und machte den Build dadurch
+  // nicht idempotent.
+  const NAV_RE = /(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?=<a href="\/tipp\/">)/g;
+  const navBereiche = (html, fn) => html
+    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, fn)
+    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, fn);
   const seiten = [];
   (function lauf(d) { for (const e of readdirSync(d)) { const p = join(d, e); if (statSync(p).isDirectory()) { if (!['admin', 'redaktion', 'node_modules'].includes(e)) lauf(p); } else if (e.endsWith('.html')) seiten.push(p); } })(site);
   for (const pfad of seiten) {
     const alt = readFileSync(pfad, 'utf8');
     if (!alt.includes('class="navscroll"')) continue;
     const hier = pfad.slice(site.length).replace(/\\/g, '/').startsWith('/unternehmen/');
-    let neu = alt.replace(NAV_RE, (m, w) => `${w}<a href="/unternehmen/"${hier ? ' aria-current="page"' : ''}>Unternehmen</a>`);
+    let neu = navBereiche(alt, (block) => block.replace(NAV_RE, (m, w) => `${w}<a href="/unternehmen/"${hier ? ' aria-current="page"' : ''}>Unternehmen</a>`));
     if (hier) neu = neu.replace(/(<div class="navscroll">(?:(?!<\/div>)[\s\S])*?)<a href="\/unternehmen\/">Unternehmen<\/a>/, '$1<a href="/unternehmen/" aria-current="page">Unternehmen</a>');
     if (!neu.includes('<a href="/unternehmen/"')) fehler.push(`${pfad.slice(site.length)}: Unternehmen fehlt in der Navigation`);
     if (neu !== alt) { geaendert.push(pfad.slice(site.length)); if (!nurPruefen) writeFileSync(pfad, neu); }
