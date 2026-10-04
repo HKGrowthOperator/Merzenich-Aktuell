@@ -36,7 +36,7 @@
           "Sport"
         ]
       ],
-      "bildklasse": "sport.tischtennis",
+      "bildklasse": "sport.tischtennis.ergebnis",
       "quelle": {
         "name": "WTTV click-TT, offizielle Vereins- und Ergebnisdaten TTC Merzenich",
         "url": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubInfoDisplay?club=8073",
@@ -76,7 +76,7 @@
           "Sport"
         ]
       ],
-      "bildklasse": "sport.tischtennis",
+      "bildklasse": "sport.tischtennis.ergebnis",
       "quelle": {
         "name": "WTTV click-TT, offizielle Vereins- und Ergebnisdaten TV Golzheim",
         "url": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubInfoDisplay?club=8036",

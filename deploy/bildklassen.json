@@ -253,6 +253,10 @@
       "motive": [
         "buergerhaus"
       ]
+    },
+    "sport.tischtennis.ergebnis": {
+      "titel": "Tischtennis-Ergebnisüberblick ohne passendes lokales Spiel-/Mannschaftsfoto; klar gekennzeichnete Ortsansicht statt fremdem Sportmotiv",
+      "motive": []
     }
   }
 }

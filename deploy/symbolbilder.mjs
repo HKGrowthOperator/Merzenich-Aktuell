@@ -90,11 +90,20 @@ function srcsetFuer(m) {
 const POOL_MOTIV = {
   aktuell: 'Ortsansicht aus der Gemeinde Merzenich', blaulicht: 'Rettungswagen im Einsatz',
   polizei: 'Polizeiwache in Nordrhein-Westfalen', feuerwehr: 'Feuerwehrhaus mit Einsatzfahrzeugen',
-  brand: 'Feuerwehr beim Löschen eines Brandes', sport: 'Fußballplatz', termine: 'Kirmes und Markt',
+  brand: 'Feuerwehr beim Löschen eines Brandes', sport: 'Sportmotiv', termine: 'Kirmes und Markt',
   vereine: 'Treffpunkt des Vereinslebens im Dorf', leben: 'Dorfplatz', wirtschaft: 'Tagebau Hambach',
   tipp: 'Rad- und Wanderweg', menschen: 'Treffpunkt im Ort',
   tennisdetail: 'Tennisplatz', digitaldetail: 'Smartphone für ältere Menschen', tanzdetail: 'Tanzsaal',
   naturdetail: 'Nistkasten', vereinsdetail: 'Vereinsheim', kirchedetail: 'Kirchenfenster',
+};
+const MOTIV_ALT = {
+  fussball: 'Fußballplatz',
+  sporthalle: 'Sporthalle',
+  tennisplatz: 'Tennisplatz',
+  stadion: 'Stadion',
+  rettungswagen: 'Rettungswagen',
+  oelspur: 'Warnschild vor einer Ölspur',
+  rathaus: 'Rathaus',
 };
 const ENGLISCH = /\b(the|of|and|with|street|near|view|house|church|road|square|germany|north rhine|open pit|mine|from)\b/i;
 const FREMDSCHRIFT = /[^\u0000-\u024f\u2000-\u206f\u20ac]/;
@@ -103,7 +112,7 @@ function altFuer(m) {
   const lokal = ['Merzenich', 'Kreis Düren'].includes(m.locality);
   const alt = String(m.alt || '').replace(/\s+([,.;:])/g, '$1').replace(/\s*\.\s*$/, '').trim();
   if (lokal && alt && !ENGLISCH.test(alt) && !FREMDSCHRIFT.test(alt) && alt.length <= 140) return alt;
-  return POOL_MOTIV[m.pool] || alt;
+  return MOTIV_ALT[motivFuer(m)] || POOL_MOTIV[m.pool] || alt;
 }
 
 function figureHtml(m, stufe = 'B') {
