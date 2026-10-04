@@ -1,0 +1,50 @@
+{
+  "hinweis": "Arbeitsmarkt-Recherche am 04.10.2026 auf Basis des offiziellen Bewerberportals der Stollenwerk-Gruppe. Stellenbestand kann sich laufend ändern; deshalb werden Kategorien und exemplarische Ausschreibungen genannt und auf das Live-Portal verwiesen.",
+  "meldungen": [
+    {
+      "slug": "stollenwerk-merzenich-girbelsrath-stellen-ausbildung-2026",
+      "ressort": "wirtschaft",
+      "ortsteil": "girbelsrath",
+      "kicker": "Arbeitsmarkt · Stollenwerk",
+      "titel": "Stollenwerk sucht am Stammwerk Merzenich in Produktion, Technik, Logistik und Verwaltung",
+      "dek": "Im offiziellen Bewerberportal stehen derzeit zahlreiche Ausschreibungen für den Standort Merzenich. Gesucht werden Fachkräfte ebenso wie Auszubildende – vom Linienleiter bis zum Industriekaufmann.",
+      "datum": "2026-10-04T13:34:00+02:00",
+      "fakten": [
+        "Stammwerk: J. & W. Stollenwerk oHG, Am Roßpfad 2, Merzenich-Girbelsrath",
+        "Aktuelle Merzenich-Ausschreibungen in Produktion, Technik, Logistik, Verwaltung und Ausbildung",
+        "Beispiele: Maschinen- und Anlagenführer, Linienleiter, Kesselwärter, Betriebselektriker, Mechatroniker/Instandhaltung, Disposition und Lager",
+        "Zusätzlich mehrere kaufmännische und technische Ausbildungsangebote"
+      ],
+      "absaetze": [
+        "Der Lebensmittelhersteller Stollenwerk sucht an seinem Stammwerk in Merzenich-Girbelsrath aktuell Personal in zahlreichen Bereichen. Das geht aus dem offiziellen Bewerberportal der Stollenwerk-Gruppe hervor. Der Standort am Roßpfad ist nach Unternehmensangaben das Stammwerk für Gemüse-, Obst- und Sauerkonserven.",
+        "Im technischen und produktionsnahen Bereich werden unter anderem Maschinen- und Anlagenführer, Linienleiter für die Lebensmittelproduktion, Kesselwärter, Betriebselektriker, Betriebsschlosser beziehungsweise Anlagenmechaniker, Schlossermeister sowie Mechatroniker oder Instandhaltungsmechaniker gesucht. Auch in der Logistik sind Stellen ausgeschrieben, etwa für Berufskraftfahrer, Disposition, Staplerfahrer und Lagerleitung.",
+        "Daneben führt das Portal mehrere Stellen in der Verwaltung, darunter Personalsachbearbeitung sowie verschiedene Positionen im Vertriebsinnendienst. Für Berufseinsteiger gibt es am Standort Merzenich mehrere Ausbildungsangebote, beispielsweise zum Industriekaufmann, Kaufmann für Digitalisierungsmanagement, zur Fachkraft für Lebensmitteltechnik, zum Maschinen- und Anlagenführer, Elektroniker für Betriebstechnik sowie in der Lagerlogistik.",
+        "Die einzelnen Ausschreibungen enthalten jeweils eigene Anforderungen, Arbeitszeiten und Ansprechpartner. Weil Stellen kurzfristig besetzt oder ergänzt werden können, ist für Bewerbungen der aktuelle Stand im offiziellen Stollenwerk-Portal maßgeblich."
+      ],
+      "themen": [
+        [
+          "stollenwerk",
+          "Stollenwerk"
+        ],
+        [
+          "arbeitsmarkt",
+          "Arbeitsmarkt"
+        ],
+        [
+          "ausbildung",
+          "Ausbildung"
+        ],
+        [
+          "girbelsrath",
+          "Girbelsrath"
+        ]
+      ],
+      "bildklasse": "wirtschaft.arbeitgeber.stollenwerk",
+      "quelle": {
+        "name": "Stollenwerk Gruppe, offizielles Bewerberportal – Stellenangebote",
+        "url": "https://jobs.stollenwerk-konserven.de/stellenangebote/",
+        "stand": "2026-10-04"
+      }
+    }
+  ]
+}
