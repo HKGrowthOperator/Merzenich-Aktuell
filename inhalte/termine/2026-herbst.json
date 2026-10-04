@@ -181,6 +181,33 @@
         "url": "https://www.heimat-info.de/veranstaltungen/efb93919-2d19-4892-a781-1f693bd73f45",
         "stand": "2026-10-04"
       }
+    },
+    {
+      "slug": "wttv-cup-merzenich-2026-10-04",
+      "titel": "andro WTTV-Cup in Merzenich",
+      "start": "2026-10-04T14:00:00+02:00",
+      "ort": "Turnhalle der Schule",
+      "adresse": "Schulstraße 4, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Sport",
+      "veranstalter": "TTC Merzenich / Westdeutscher Tischtennis-Verband",
+      "beschreibung": "TTR-relevantes Damen- und Herren-Einzel im Rahmen der andro WTTV-Cup-Serie. Meldeschluss war am 3. Oktober; Nachmeldungen sind laut Ausschreibung nicht möglich.",
+      "absaetze": [
+        "Am Sonntag, 4. Oktober 2026, beginnt um 14 Uhr in der Turnhalle an der Schulstraße 4 in Merzenich ein andro WTTV-Cup.",
+        "Das Einzelturnier ist TTR-relevant. Die Ausschreibung nennt 8 Euro Startgeld; der Meldeschluss war bereits am 3. Oktober um 18 Uhr, Nachmeldungen sind ausgeschlossen."
+      ],
+      "artikel": "/sport/wttv-cup-merzenich-2026-10-04/",
+      "links": [
+        [
+          "Turnierausschreibung bei myTischtennis",
+          "https://www.mytischtennis.de/turnierwelt/turniere/844140?origin=turnierserien"
+        ]
+      ],
+      "quelle": {
+        "name": "myTischtennis.de / andro WTTV-Cup 2026",
+        "url": "https://www.mytischtennis.de/turnierwelt/turniere/844140?origin=turnierserien",
+        "stand": "2026-10-04"
+      }
     }
   ]
 }

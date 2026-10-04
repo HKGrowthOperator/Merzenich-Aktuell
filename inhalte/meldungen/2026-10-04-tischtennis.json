@@ -1,0 +1,128 @@
+{
+  "hinweis": "Tischtennis-Nachtrag aus offiziellen bzw. verbandsnahen Ergebnisquellen, recherchiert am 04.10.2026. Ergebnisse werden nur für abgeschlossene Begegnungen übernommen; für laufende bzw. noch nicht bestätigte Spiele werden keine Resultate erfunden.",
+  "meldungen": [
+    {
+      "slug": "ttc-merzenich-ergebnisse-september-2026",
+      "ressort": "sport",
+      "ortsteil": "merzenich",
+      "kicker": "Tischtennis · TTC Merzenich",
+      "titel": "TTC Merzenich: Vier Siege in Serie, dann Pokal-Aus der Zweiten",
+      "dek": "Damen, zweite, dritte und vierte Mannschaft sammelten zwischen dem 20. und 23. September Siege. Im Pokal endete der Lauf der Zweiten am 30. September mit einem 0:4 in Jülich.",
+      "datum": "2026-10-04T12:38:00+02:00",
+      "fakten": [
+        "Damen: TTC Merzenich – TTC indeland Jülich II 8:2 am 20. September",
+        "4. Herren: TTC Merzenich IV – Sportfreunde Echtz 7:3 am 20. September",
+        "2. Herren: TTC Winden II – TTC Merzenich II 4:6 am 22. September",
+        "3. Herren: TTF Kreuzau VI – TTC Merzenich III 4:6 am 23. September",
+        "Pokal: TTC indeland Jülich III – TTC Merzenich II 4:0 am 30. September"
+      ],
+      "absaetze": [
+        "Der TTC Merzenich hat in der zweiten Septemberhälfte mehrere erfolgreiche Mannschaftsergebnisse verbucht. In den offiziellen Ergebnisdaten sind zwischen dem 20. und 23. September vier Siege verschiedener Teams verzeichnet.",
+        "Die Damen gewannen am 20. September ihr Heimspiel gegen die zweite Mannschaft des TTC indeland Jülich mit 8:2. Ebenfalls an diesem Tag setzte sich Merzenich IV mit 7:3 gegen die Sportfreunde Echtz durch. Zwei Tage später gewann die zweite Mannschaft 6:4 beim TTC Winden II, am 23. September folgte ein 6:4-Auswärtssieg der dritten Mannschaft bei TTF Kreuzau VI.",
+        "Im Pokal der 2. Bezirksklasse endete der September für die zweite Mannschaft dagegen mit einer Niederlage. Beim TTC indeland Jülich III verlor Merzenich II am 30. September mit 0:4. Für Merzenich spielten dort Frank Gillessen, Frank Spieß und Florian Lenzen.",
+        "Die Ergebnisse zeigen, dass der TTC Merzenich mit mehreren Erwachsenenmannschaften im laufenden Spielbetrieb vertreten ist. Neuere Resultate werden erst übernommen, sobald sie in den Verbandsdaten als abgeschlossen vorliegen."
+      ],
+      "themen": [
+        [
+          "tischtennis",
+          "Tischtennis"
+        ],
+        [
+          "ttc-merzenich",
+          "TTC Merzenich"
+        ],
+        [
+          "sport",
+          "Sport"
+        ]
+      ],
+      "bildklasse": "sport.tischtennis",
+      "quelle": {
+        "name": "WTTV click-TT, offizielle Vereins- und Ergebnisdaten TTC Merzenich",
+        "url": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubInfoDisplay?club=8073",
+        "stand": "2026-10-04"
+      }
+    },
+    {
+      "slug": "tv-golzheim-tischtennis-september-2026",
+      "ressort": "sport",
+      "ortsteil": "golzheim",
+      "kicker": "Tischtennis · TV Golzheim",
+      "titel": "10:0, 8:2 und 9:1: TV Golzheim mit drei deutlichen Tischtennis-Siegen",
+      "dek": "Die erste und zweite Tischtennis-Mannschaft des TV Golzheim haben Ende September klare Ergebnisse eingefahren. Die Erste gewann unter anderem 9:1 beim TTC indeland Jülich X.",
+      "datum": "2026-10-04T12:37:00+02:00",
+      "fakten": [
+        "TV Golzheim – SV Breinig III 10:0 am 21. September",
+        "TV Golzheim II – TV 1847 Düren VI 8:2 am 21. September",
+        "TTC indeland Jülich X – TV Golzheim 1:9 am 29. September"
+      ],
+      "absaetze": [
+        "Die Tischtennis-Abteilung des TV Golzheim hat Ende September mehrere deutliche Siege gefeiert. In den offiziellen WTTV-Ergebnisdaten sind für die erste und zweite Mannschaft drei klare Erfolge innerhalb von acht Tagen verzeichnet.",
+        "Am 21. September gewann die erste Mannschaft ihr Heimspiel gegen den SV Breinig III mit 10:0. Die zweite Mannschaft setzte sich am selben Tag mit 8:2 gegen die sechste Mannschaft des TV 1847 Düren durch.",
+        "Am 29. September folgte für die Erste ein weiterer klarer Erfolg: Beim TTC indeland Jülich X gewann Golzheim mit 9:1. Damit gehört neben dem Fußball auch Tischtennis zu den Sportarten, bei denen Mannschaften aus dem Gemeindegebiet regelmäßig im überörtlichen Spielbetrieb antreten.",
+        "Für die Einordnung gelten jeweils die veröffentlichten Verbandsdaten zum Abrufzeitpunkt. Tabellenstände werden nicht aus einzelnen Ergebnissen hochgerechnet."
+      ],
+      "themen": [
+        [
+          "tischtennis",
+          "Tischtennis"
+        ],
+        [
+          "tv-golzheim",
+          "TV Golzheim"
+        ],
+        [
+          "sport",
+          "Sport"
+        ]
+      ],
+      "bildklasse": "sport.tischtennis",
+      "quelle": {
+        "name": "WTTV click-TT, offizielle Vereins- und Ergebnisdaten TV Golzheim",
+        "url": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubInfoDisplay?club=8036",
+        "stand": "2026-10-04"
+      }
+    },
+    {
+      "slug": "wttv-cup-merzenich-2026-10-04",
+      "ressort": "sport",
+      "ortsteil": "merzenich",
+      "kicker": "Tischtennis · Turnier",
+      "titel": "WTTV-Cup heute ab 14 Uhr in Merzenich",
+      "dek": "In der Turnhalle an der Schulstraße wird am Sonntag ein andro WTTV-Cup ausgetragen. Das Einzelturnier ist TTR-relevant; Nachmeldungen sind laut Ausschreibung nicht möglich.",
+      "datum": "2026-10-04T12:36:00+02:00",
+      "fakten": [
+        "Sonntag, 4. Oktober 2026, Beginn 14:00 Uhr",
+        "Turnhalle der Schule, Schulstraße 4 in Merzenich",
+        "Damen/Herren Einzel, TTR-relevant",
+        "Startgeld laut Ausschreibung: 8 Euro",
+        "Meldeschluss war am 3. Oktober um 18 Uhr; keine Nachmeldungen"
+      ],
+      "absaetze": [
+        "Am heutigen Sonntag, 4. Oktober, wird in Merzenich ein andro WTTV-Cup ausgetragen. Das Turnier beginnt um 14 Uhr in der Turnhalle der Schule an der Schulstraße 4; als Zugang nennt die Ausschreibung den Eingang gegenüber der Kirche.",
+        "Gespielt wird ein Damen- und Herren-Einzel. Das Turnier ist TTR-relevant, die Ergebnisse fließen also in die entsprechenden Ranglistenwerte ein. Als Startgeld nennt die Turnierausschreibung 8 Euro.",
+        "Wer selbst noch kurzfristig mitspielen möchte, kann sich nicht mehr anmelden: Der Meldeschluss war am Samstag, 3. Oktober, um 18 Uhr, Nachmeldungen sind laut Ausschreibung ausgeschlossen. Als Kontakt ist beim Turnier Sven Winhuysen vom TTC Merzenich angegeben."
+      ],
+      "themen": [
+        [
+          "tischtennis",
+          "Tischtennis"
+        ],
+        [
+          "wttv-cup",
+          "WTTV-Cup"
+        ],
+        [
+          "ttc-merzenich",
+          "TTC Merzenich"
+        ]
+      ],
+      "bildklasse": "sport.tischtennis",
+      "quelle": {
+        "name": "myTischtennis.de / andro WTTV-Cup 2026, Turnier 844140",
+        "url": "https://www.mytischtennis.de/turnierwelt/turniere/844140?origin=turnierserien",
+        "stand": "2026-10-04"
+      }
+    }
+  ]
+}

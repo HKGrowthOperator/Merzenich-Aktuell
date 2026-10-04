@@ -241,6 +241,12 @@
     "vereine.schuetzen.kreis": {
       "titel": "Schützenwesen und Kreismajestätenschießen; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
       "motive": []
+    },
+    "sport.tischtennis": {
+      "titel": "Tischtennis, Mannschaftsspiel oder Turnier in der Halle",
+      "motive": [
+        "sporthalle"
+      ]
     }
   }
 }
