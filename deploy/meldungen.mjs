@@ -33,7 +33,7 @@ const VORLAGE = join(site, 'blaulicht', 'einsatz-118-rosspfad', 'index.html');
 const RESSORT = { blaulicht: 'Blaulicht', sport: 'Sport', rathaus: 'Rathaus & Politik', leben: 'Leben', wirtschaft: 'Wirtschaft', menschen: 'Menschen', vereine: 'Vereine' };
 const ORTSTEIL_SEITE = { merzenich: '/merzenich/', golzheim: '/golzheim/', girbelsrath: '/girbelsrath/', morschenich: '/morschenich/', buergewald: '/buergewald/' };
 const PFLICHT = ['slug', 'ressort', 'ortsteil', 'kicker', 'titel', 'dek', 'datum', 'absaetze', 'themen', 'quelle', 'bildklasse'];
-const MELDUNGEN_GENERATOR_VERSION = '2026-10-04-redaktion-v2.1';
+const MELDUNGEN_GENERATOR_VERSION = '2026-10-04-ohne-fakten';
 
 const tz = { timeZone: 'Europe/Berlin' };
 const datumLang = (iso) => new Intl.DateTimeFormat('de-DE', { ...tz, day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(iso))
@@ -154,7 +154,9 @@ function hauptteil(m, index) {
   const teil = m.ortsteil !== 'merzenich' ? ORTSTEILE[m.ortsteil] : '';
   const crumbs = `<a href="/">Start</a><span class="sep">›</span><a href="/${m.ressort}/">${esc(RESSORT[m.ressort])}</a><span class="sep">›</span>`
     + (teil ? `<a href="${ORTSTEIL_SEITE[m.ortsteil]}">${esc(teil)}</a><span class="sep">›</span>` : '') + `<span aria-current="page">${esc(m.titel)}</span>`;
-  const fakten = m.fakten?.length ? `<div class="facts"><h2>Das Wichtigste in Kürze</h2><ul>${m.fakten.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></div>` : '';
+  // Kasten „Das Wichtigste in Kürze“ seit 04.10.2026 nicht mehr auf der Seite (Wunsch des Auftraggebers);
+  // die belegten Fakten bleiben Pflicht in den Daten (Prüfung oben) und dienen der Redaktion.
+  const fakten = '';
   const tags = m.themen.map(([slug, label]) => `<a href="/thema/${esc(slug)}/" rel="tag">${esc(label)}</a>`).join('')
     + (teil ? `<a href="${ORTSTEIL_SEITE[m.ortsteil]}" rel="tag">${esc(teil)}</a>` : '');
   const hinweis = m.hinweisQuelle ? ` ${esc(m.hinweisQuelle)}` : '';

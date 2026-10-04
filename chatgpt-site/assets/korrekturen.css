@@ -569,3 +569,20 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 .u-leer{font-size:14px;line-height:1.55;color:#5f5b55;margin:0 0 14px}
 .sidebar .werbung--unternehmen{margin-top:24px}
 @media (max-width:767px){.u-karten{grid-template-columns:1fr;gap:28px}.u-karte h2{font-size:21px}.content-grid>.sidebar:has(.u-box){display:block;margin-top:40px}}
+
+/* 04.10.2026 (Auftraggeber): Der Kopf darf beim Scrollen keinen Bruch haben.
+   Vorher klebte der grosse Kopf erst am Browserrand, die Ressortleiste hing
+   84 px darunter, und nach wenigen Pixeln klappte der Kopf mit Animation weg
+   (kopf.js setzt html.kopf-kompakt). Jetzt scrollt der grosse Kopf wie Inhalt
+   weg, und die Ressortleiste klebt ohne Sprung ganz oben: sticky auf
+   .nav-anchor, dem direkten Kind von body, keine fixed-Umschaltung, keine
+   Animation. Das kleine Logo erscheint weiter ueber .is-scrolled. Mobil bleibt
+   der schmale Kopf oben, wie er ist. */
+@media (min-width:768px){
+  .masthead,.kopf-kompakt .masthead{position:static;transform:none;opacity:1;pointer-events:auto;transition:none}
+  body>.nav-anchor{position:sticky;top:0;z-index:70;height:auto;min-height:0}
+  .mainnav,.mainnav.is-scrolled,.kopf-kompakt .mainnav.is-scrolled{position:relative;top:0;left:auto;right:auto;transition:none}
+  /* Eingeloggt in WordPress: unter der Admin-Leiste bleiben. */
+  .admin-bar body>.nav-anchor,body.admin-bar>.nav-anchor{top:32px}
+}
+@media (min-width:768px) and (max-width:782px){.admin-bar body>.nav-anchor,body.admin-bar>.nav-anchor{top:46px}}

@@ -9,7 +9,7 @@ while (have_posts()): the_post();
     $titel = get_the_title($p);
     $kicker = get_post_meta($p->ID, 'ma_kicker', true) ?: $ressortLabel;
     $b = ma21_bild($p);
-    $fakten = array_filter(array_map('trim', explode(' · ', (string) get_post_meta($p->ID, 'ma_facts', true))));
+    // Kasten „Das Wichtigste in Kürze“ (ma_facts) wird seit 04.10.2026 nicht mehr gezeigt (Wunsch des Auftraggebers); das Feld bleibt im Backend.
     $q_url = get_post_meta($p->ID, 'ma_source_url', true);
     $q_name = get_post_meta($p->ID, 'ma_source_publisher', true);
     $q_stand = get_post_meta($p->ID, 'ma_source_checked_at', true);
@@ -44,7 +44,6 @@ while (have_posts()): the_post();
     <span class="sr-only" role="status" data-share-status></span>
     <button type="button" data-print aria-label="Drucken"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v5H6V3zm-2 6h16a2 2 0 012 2v6h-4v4H6v-4H2v-6a2 2 0 012-2zm4 6v4h8v-4H8z"/></svg></button>
   </div>
-  <?php if ($fakten): ?><div class="facts"><h2>Das Wichtigste in Kürze</h2><ul><?php foreach ($fakten as $f) echo '<li>' . esc_html($f) . '</li>'; ?></ul></div><?php endif; ?>
     <div class="prose"><?php the_content(); ?></div>
     <?php echo ma21_werbung('artikel'); ?>
   <?php if ($q_url): ?>
