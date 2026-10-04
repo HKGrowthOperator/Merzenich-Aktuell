@@ -247,6 +247,12 @@
       "motive": [
         "sporthalle"
       ]
+    },
+    "gemeinde.buergerhaus": {
+      "titel": "Neues Bürgerhaus, kommunales Bau- und Planungsprojekt",
+      "motive": [
+        "buergerhaus"
+      ]
     }
   }
 }
