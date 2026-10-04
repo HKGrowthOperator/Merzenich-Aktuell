@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-04T10:49:52.746Z",
+  "updatedAt": "2026-10-04T10:52:17.194Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -509,7 +509,7 @@
       "pool": "kirchedetail",
       "motiv": "kirchenfenster",
       "regel": "kirche.infoabend",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-orte-von-kirche-infoabend-merzenich-2026",
       "articleDate": "2026-10-04T12:28:00+02:00"
     },
@@ -518,7 +518,7 @@
       "pool": "sport",
       "motiv": "sporthalle",
       "regel": "sport.tischtennis",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-wttv-cup-merzenich-2026-10-04",
       "articleDate": "2026-10-04T12:36:00+02:00"
     },
@@ -527,7 +527,7 @@
       "pool": "sport",
       "motiv": "sporthalle",
       "regel": "sport.tischtennis",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-tv-golzheim-tischtennis-september-2026",
       "articleDate": "2026-10-04T12:37:00+02:00"
     },
@@ -536,7 +536,7 @@
       "pool": "sport",
       "motiv": "sporthalle",
       "regel": "sport.tischtennis",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-ttc-merzenich-ergebnisse-september-2026",
       "articleDate": "2026-10-04T12:38:00+02:00"
     },
@@ -545,7 +545,7 @@
       "pool": "sport",
       "motiv": "fussball",
       "regel": "sport.spielbericht",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-sv-morschenich-csv-dueren-04-10-2026",
       "articleDate": "2026-10-04T12:43:00+02:00"
     },
@@ -554,7 +554,7 @@
       "pool": "sport",
       "motiv": "fussball",
       "regel": "sport.spielbericht",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-rhenania-girbelsrath-viktoria-schlich-04-10-2026",
       "articleDate": "2026-10-04T12:44:00+02:00"
     },
@@ -563,9 +563,18 @@
       "pool": "sport",
       "motiv": "fussball",
       "regel": "sport.spielbericht",
-      "assignedAt": "2026-10-04T10:49:52.746Z",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
       "articleId": "2026-10-04-fc-golzheim-spieltag-04-10-2026",
       "articleDate": "2026-10-04T12:45:00+02:00"
+    },
+    "/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/": {
+      "imageId": "web-menschen-06-1835323b",
+      "pool": "menschen",
+      "motiv": "buergerhaus",
+      "regel": "gemeinde.buergerhaus",
+      "assignedAt": "2026-10-04T10:52:17.194Z",
+      "articleId": "2026-10-04-neues-buergerhaus-merzenich-bedarfsermittlung-2026",
+      "articleDate": "2026-10-04T12:52:00+02:00"
     }
   }
 }

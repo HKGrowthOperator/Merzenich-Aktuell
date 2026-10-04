@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 04 Oct 2026 10:45:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 04 Oct 2026 10:52:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Neues Bürgerhaus: Bedarfsermittlung soll Raumprogramm und Standort klären</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/</guid>
+<pubDate>Sun, 04 Oct 2026 10:52:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Für den Ersatz der Alten Musikschule wird die nächste Planungsgrundlage vorbereitet. Untersucht werden sollen Bedarf, Raumprogramm, mögliche Standorte und der Investitionsrahmen – unter Beteiligung lokaler Nutzer.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/menschen/menschen-06-1835323b3c.jpg" medium="image"><media:credit>J.-H. Janßen / Wikimedia Commons · CC0</media:credit><media:description>Treffpunkt im Ort</media:description></media:content>
+</item>
 <item>
 <title>FC Golzheim heute doppelt zuhause: Zweite um 12:45 Uhr, Erste um 15 Uhr</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/sport/fc-golzheim-spieltag-04-10-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Mit zwei Toren von Andre Hein und einem Treffer von Maurice Heyartz holte Golzheim am 27. September drei Auswärtspunkte. Der Verein meldete anschließend 16 Punkte nach sechs Spielen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-18-80141c600e.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
-</item>
-<item>
-<title>Papiertüten brennen im Feld an der Aachener Straße</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-132-unrat-aachener-strasse/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-132-unrat-aachener-strasse/</guid>
-<pubDate>Sun, 27 Sep 2026 18:06:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Löschgruppe Golzheim löschte am Samstagvormittag brennenden Unrat im Bereich der Aachener Straße mit einem Kleinlöschgerät.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

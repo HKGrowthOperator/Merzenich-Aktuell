@@ -1,7 +1,16 @@
 {
-  "generated": "2026-10-04T12:45:00+02:00",
-  "stand": "2026-10-04T12:45:00+02:00",
+  "generated": "2026-10-04T12:52:00+02:00",
+  "stand": "2026-10-04T12:52:00+02:00",
   "items": [
+    {
+      "title": "Neues Bürgerhaus: Bedarfsermittlung soll Raumprogramm und Standort klären",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/",
+      "date": "2026-10-04T12:52:00+02:00",
+      "ressort": "rathaus",
+      "ort": "merzenich",
+      "teaser": "Für den Ersatz der Alten Musikschule wird die nächste Planungsgrundlage vorbereitet. Untersucht werden sollen Bedarf, Raumprogramm, mögliche Standorte und der Investitionsrahmen – unter Beteiligung lokaler Nutzer.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/menschen/menschen-06-1835323b3c.jpg"
+    },
     {
       "title": "FC Golzheim heute doppelt zuhause: Zweite um 12:45 Uhr, Erste um 15 Uhr",
       "url": "https://merzenichaktuell.hk-growthoperator.de/sport/fc-golzheim-spieltag-04-10-2026/",
@@ -172,15 +181,6 @@
       "ort": "girbelsrath",
       "teaser": "Die Gemeinde nimmt Herbstlaub montags von 13 bis 17 Uhr in Girbelsrath an. Der bisherige Standort Jahnstraße entfällt. Dazu stehen mehr als 20 Laubkörbe bereit.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
-    },
-    {
-      "title": "Kleidertreff nimmt vorerst keine Kleidung für Erwachsene an",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/kleidertreff-keine-erwachsenenkleidung/",
-      "date": "2026-09-29T10:56:00+02:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Nach vielen Spenden in den vergangenen Wochen ist das Lager des Kleidertreffs in der Lindenstraße voll. Die Gemeinde bittet, derzeit keine Erwachsenenkleidung mehr abzugeben.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg"
     }
   ],
   "events": [
