@@ -11,7 +11,8 @@
  * Stylesheets, Skripte, Schriften und Bilder der statischen Seite liegen im
  * Theme unter static/ (beim Paketbau aus chatgpt-site/assets kopiert) und
  * werden unter /assets/ ausgeliefert (Rewrite in .htaccess). Fehlt eine Datei,
- * leitet der Server auf die statische Seite um.
+ * antwortet PHP aus der Mediathek, von der Vorschauseite oder aus dem Repository
+ * (ma21_asset); das Ressort-Menü wird aus den eigenen Beiträgen gefüllt.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -92,16 +93,130 @@ function ma21_kopf(string $name): string {
     return str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
 }
 
-/* /assets/ -> Theme-Verzeichnis static/, sonst Umleitung auf die statische Seite. */
+/* /assets/ -> Theme-Verzeichnis static/; das Ressort-Menü und alles, was dort
+   fehlt (Poolfotos, Quellen), beantwortet PHP: Mediathek, Vorschauseite, Repository. */
 add_filter('mod_rewrite_rules', function (string $regeln): string {
     $dir = trailingslashit(get_template_directory()) . 'static/';
     $rel = ltrim(str_replace(ABSPATH, '', $dir), '/');
     $block = "# BEGIN Merzenich Aktuell Assets\n<IfModule mod_rewrite.c>\nRewriteEngine On\n"
+        . "RewriteRule ^assets/ressort-menue\\.json$ index.php?ma_asset=ressort-menue.json [L,QSA]\n"
         . "RewriteCond {$dir}$1 -f\nRewriteRule ^assets/(.*)$ {$rel}$1 [L]\n"
-        . "RewriteRule ^assets/(.*)$ " . MA21_STATISCH . "/assets/$1 [R=302,L]\n"
+        . "RewriteRule ^assets/(.*)$ index.php?ma_asset=$1 [L,QSA]\n"
         . "</IfModule>\n# END Merzenich Aktuell Assets\n";
     return $block . $regeln;
 });
+
+/** Das Repository (Stand von main) als letzte Quelle für Dateien aus chatgpt-site/. */
+const MA21_REPO = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site';
+
+add_action('init', function (): void {
+    if (!isset($_GET['ma_asset'])) return;
+    ma21_asset((string) wp_unslash($_GET['ma_asset']));
+}, 1);
+
+/**
+ * Fehlende /assets/-Datei (04.10.2026: bis dahin Umleitung auf die Vorschauseite,
+ * die stundenlang nicht erreichbar war, also kaputte Bilder im Ressort-Menü):
+ * zuerst die Mediathek (ma_image_static_src, alle Poolfotos liegen dort), dann
+ * die Vorschauseite, wenn sie antwortet, sonst das Repository.
+ */
+function ma21_asset(string $pfad): void {
+    $pfad = '/' . ltrim((string) preg_replace('#/+#', '/', $pfad), '/');
+    if ($pfad === '/' || str_contains($pfad, '..') || !preg_match('#^/[\w./@%-]+$#u', $pfad)) { status_header(404); nocache_headers(); exit; }
+    if ($pfad === '/ressort-menue.json') ma21_ressort_menue_ausgeben();
+    $voll = '/assets' . $pfad;
+    $ziel = ma21_asset_lokal($voll);
+    if ($ziel === '') $ziel = (ma21_statisch_erreichbar() ? MA21_STATISCH : MA21_REPO) . $voll;
+    header('Cache-Control: public, max-age=3600');
+    wp_redirect($ziel, 302, 'Merzenich Aktuell');
+    exit;
+}
+
+/** Medium der Mediathek zu einem statischen Pfad (Größenendung -480/-800/… wird ignoriert), sonst leer. */
+function ma21_asset_lokal(string $pfad): string {
+    if (!preg_match('#^(/assets/[\w./-]+?)(?:-(\d{3,4}))?\.(webp|jpe?g|png)$#i', $pfad, $m)) return '';
+    global $wpdb;
+    $basis = $m[1]; $breite = (int) ($m[2] ?? 0);
+    $ids = $wpdb->get_col($wpdb->prepare("SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'ma_image_static_src' AND meta_value LIKE %s ORDER BY post_id ASC LIMIT 8", $wpdb->esc_like($basis) . '%'));
+    foreach ((array) $ids as $id) {
+        $src = (string) get_post_meta((int) $id, 'ma_image_static_src', true);
+        if (!preg_match('#^' . preg_quote($basis, '#') . '(?:-\d{3,4})?\.(webp|jpe?g|png)$#i', $src)) continue;
+        $datei = get_attached_file((int) $id);
+        if (!$datei || !file_exists($datei)) continue;
+        $groesse = !$breite || $breite > 1024 ? 'full' : ($breite <= 480 ? 'ma-480' : ($breite <= 768 ? 'medium_large' : 'large'));
+        $url = wp_get_attachment_image_url((int) $id, $groesse);
+        if ($url) return $url;
+    }
+    return '';
+}
+
+/** Antwortet die Vorschauseite? Alle fünf Minuten geprüft. */
+function ma21_statisch_erreichbar(): bool {
+    $t = get_transient('ma21_statisch_status');
+    if ($t !== false) return $t === 'ja';
+    $r = wp_remote_head(MA21_STATISCH . '/', ['timeout' => 3, 'redirection' => 2]);
+    $ok = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200;
+    set_transient('ma21_statisch_status', $ok ? 'ja' : 'nein', 5 * MINUTE_IN_SECONDS);
+    return $ok;
+}
+
+/**
+ * Ressort-Menü (assets/ressort-menue.json, liest ressort-dropdowns.js): Gruppen
+ * und Links aus der statischen Datei, „Neu im Ressort“ aus den veröffentlichten
+ * Beiträgen dieser WordPress-Installation. Vorher zeigte das Menü die neuesten
+ * Meldungen der Vorschauseite, auch wenn sie hier noch nicht freigegeben waren.
+ */
+function ma21_ressort_menue_ausgeben(): void {
+    $datei = trailingslashit(get_template_directory()) . 'static/ressort-menue.json';
+    $d = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
+    if (!is_array($d) || empty($d['ressorts']) || !is_array($d['ressorts'])) { status_header(404); nocache_headers(); exit; }
+    foreach ($d['ressorts'] as $pfad => &$r) {
+        if (!is_array($r)) continue;
+        $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
+    }
+    unset($r);
+    $d['standWordPress'] = (string) wp_date('c');
+    header('Content-Type: application/json; charset=utf-8');
+    header('Cache-Control: public, max-age=300');
+    echo wp_json_encode($d, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
+function ma21_menue_bild(WP_Post $p): ?array {
+    $id = (int) get_post_thumbnail_id($p->ID);
+    if (!$id) return null;
+    $url = wp_get_attachment_image_url($id, 'ma-480');
+    if (!$url) return null;
+    $typ = (string) (get_post_meta($p->ID, 'ma_image_type', true) ?: get_post_meta($id, 'ma_image_type', true));
+    return ['src' => $url, 'alt' => (string) (get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id)), 'symbol' => $typ === 'symbol'];
+}
+
+/** „Neu im Ressort“: Meldungen der Rubrik, alle Meldungen (Aktuell) oder kommende Termine; unbekannte Ressorts behalten die statische Liste. */
+function ma21_menue_neu(string $pfad, array $statisch): array {
+    $slug = trim($pfad, '/');
+    $titel = fn(WP_Post $p): string => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8');
+    if ($slug === 'termine') {
+        $jetzt = (string) current_time('Y-m-d\TH:i');
+        $l = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 4, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
+        return array_map(function (WP_Post $p) use ($titel): array {
+            $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
+            return ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (get_post_meta($p->ID, 'ma_event_place', true) ?: ma21_ort($p)), 'datum' => $start ? (string) wp_date('c', $start) : (string) get_post_meta($p->ID, 'ma_event_start', true), 'bild' => ma21_menue_bild($p), 'termin' => true];
+        }, $l);
+    }
+    $args = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 4, 'orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true];
+    if ($slug !== 'nachrichten') {
+        if (!get_category_by_slug($slug)) {
+            // Kein Ressort mit eigener Rubrik (z. B. Unternehmen): statische Liste, aber nur Beiträge, die hier veröffentlicht sind.
+            return array_values(array_filter($statisch, function ($e): bool {
+                if (!is_array($e) || empty($e['url'])) return false;
+                $id = url_to_postid(home_url((string) $e['url']));
+                return $id > 0 && get_post_status($id) === 'publish';
+            }));
+        }
+        $args['category_name'] = $slug;
+    }
+    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => ma21_ort($p), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)], get_posts($args));
+}
 add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); });
 
 /* Kopf aufräumen: WordPress-Blockstile und Emoji-Skripte gibt es auf der

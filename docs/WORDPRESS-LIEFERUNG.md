@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.0 · Core-Plugin 1.20.1 (Historie unten)
+4. Oktober 2026 · Theme 21.9.1 · Core-Plugin 1.20.1 (Historie unten)
+
+## Neu in Theme 21.9.1 (04.10.2026): Bilder im Ressort-Menü, Menü aus eigenen Beiträgen
+
+Im aufgeklappten Ressort-Menü („Neu im Ressort“) fehlten die Bilder: Poolfotos liegen nicht im Theme, und der Server leitete jede fehlende `/assets/`-Datei auf die Vorschauseite um, die stundenlang nicht erreichbar war.
+
+- **Fehlende `/assets/`-Dateien** beantwortet jetzt PHP (`ma21_asset`): zuerst die Mediathek (Medium mit passendem `ma_image_static_src`, Größenendung `-480/-800/-1200` wird auf die passende WordPress-Größe abgebildet; alle 308 Poolfotos liegen seit 1.20.1 dort), dann die Vorschauseite, wenn sie antwortet (alle fünf Minuten geprüft), sonst das Repository auf GitHub. Antwort ist eine Umleitung mit einer Stunde Cache. Dateien, die im Theme liegen, liefert weiterhin der Server direkt.
+- **Ressort-Menü aus WordPress:** `assets/ressort-menue.json` kommt jetzt aus PHP. Gruppen und Links bleiben die der statischen Datei, „Neu im Ressort“ sind die vier neuesten veröffentlichten Meldungen der Rubrik (Aktuell: alle Meldungen; Termine: die nächsten vier Termine; Ressorts ohne eigene Rubrik: statische Liste, aber nur hier veröffentlichte Beiträge). Vorher zeigte das Menü die neuesten Meldungen der Vorschauseite, auch wenn sie hier noch nicht freigegeben waren (Link ins Leere).
+- Nach dem Theme-Update schreibt das Theme die `.htaccess`-Regeln einmal neu (wie bisher bei jedem Versionswechsel).
+
+**Geprüft:** lokales WordPress: Poolfoto-Pfad → Umleitung auf das Medium der Mediathek, Original-Pfad (`.jpg`) → dasselbe Medium, unbekannte Datei → Repository (Vorschauseite nicht erreichbar), `..`-Pfade → 404; Menü-JSON mit Meldungen und Terminen aus WordPress.
 
 ## Neu in 1.20.1 (04.10.2026): Bildpools laden aus dem Repository, wenn die Vorschauseite ausfällt
 
