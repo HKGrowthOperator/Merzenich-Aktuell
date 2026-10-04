@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-04T10:52:40.920Z",
+  "updatedAt": "2026-10-04T10:56:24.800Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -521,24 +521,6 @@
       "assignedAt": "2026-10-04T10:52:40.920Z",
       "articleId": "2026-10-04-wttv-cup-merzenich-2026-10-04",
       "articleDate": "2026-10-04T12:36:00+02:00"
-    },
-    "/sport/tv-golzheim-tischtennis-september-2026/": {
-      "imageId": "web-sport-08-c10997cd",
-      "pool": "sport",
-      "motiv": "sporthalle",
-      "regel": "sport.tischtennis",
-      "assignedAt": "2026-10-04T10:52:40.920Z",
-      "articleId": "2026-10-04-tv-golzheim-tischtennis-september-2026",
-      "articleDate": "2026-10-04T12:37:00+02:00"
-    },
-    "/sport/ttc-merzenich-ergebnisse-september-2026/": {
-      "imageId": "web-sport-08-c10997cd",
-      "pool": "sport",
-      "motiv": "sporthalle",
-      "regel": "sport.tischtennis",
-      "assignedAt": "2026-10-04T10:52:40.920Z",
-      "articleId": "2026-10-04-ttc-merzenich-ergebnisse-september-2026",
-      "articleDate": "2026-10-04T12:38:00+02:00"
     },
     "/sport/sv-morschenich-csv-dueren-04-10-2026/": {
       "imageId": "web-sport-02-11b84171",
