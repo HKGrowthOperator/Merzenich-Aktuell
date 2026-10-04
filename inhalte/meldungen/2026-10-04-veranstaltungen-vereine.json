@@ -39,7 +39,8 @@
         "name": "Pfarre St. Marien Vettweiß / Pastoraler Raum, Heimat-Info vom 28.08.2026",
         "url": "https://www.heimat-info.de/beitraege/b8865e6b-3bc7-4b3b-823a-0ec6c959cb92",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     },
     {
       "slug": "kreismajestaetenschiessen-morschenich-2026-zeitangaben",
@@ -79,7 +80,9 @@
         "name": "St. Lambertus Schützenbruderschaft Morschenich e.V., aktueller Heimat-Info-Eintrag vom 03.10.2026",
         "url": "https://www.heimat-info.de/gemeinden/merzenich",
         "stand": "2026-10-04"
-      }
+      },
+      "artikeltyp": "kurzmeldung"
     }
-  ]
+  ],
+  "redaktionsstandard": 2
 }
