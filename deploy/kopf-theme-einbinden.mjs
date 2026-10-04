@@ -193,7 +193,20 @@ for (const pfad of seiten) {
   if (!html.includes('/assets/werbung.js')) html = html.replace(/<script src="\/assets\/einwilligung\.js[^"]*" defer><\/script>/, (m) => m + WERBUNG_JS);
   // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
   // Seit 30.09.2026 steht „Unternehmen“ dazwischen (deploy/unternehmen.mjs).
-  html = html.replace(/(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/(?:tipp|unternehmen)\/")/g, '$1<a href="/tipp/">Tipp</a>');
+  // Nur Ressortnavigationen bearbeiten: Die fruehere globale Ersetzung hat
+  // bei Wirtschaft-Artikeln "Tipp" in die Breadcrumbs eingeschoben.
+  const tippNachWirtschaft = (block) => block.replace(
+    /(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/(?:tipp|unternehmen)\/")/g,
+    '$1<a href="/tipp/">Tipp</a>'
+  );
+  html = html
+    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, tippNachWirtschaft)
+    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, tippNachWirtschaft);
+  // Altbestand aus der frueheren globalen Regel bereinigen.
+  html = html.replace(
+    /(<nav class="crumbs"[^>]*>[\s\S]*?<a href="\/wirtschaft\/">Wirtschaft<\/a>)(?:<a href="\/(?:unternehmen|tipp)\/">(?:Unternehmen|Tipp)<\/a>)+(?=<span class="sep">)/g,
+    '$1'
+  );
   // KBS/Ordin 23.09.2026: Werbefrei-Abo und Dunkelmodus sind vollständig entfernt.
   html = html.replace(/<a href="\/werbefrei\/">Werbefrei lesen<\/a>/g, '');
   html = html.replace(/<script src="\/assets\/(?:theme|werbefrei)\.js[^"]*" defer><\/script>/g, '');
