@@ -7,20 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:buergersprechstunde@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20260904T160000Z
-DTEND:20260904T170000Z
-SUMMARY:Bürgersprechstunde mit Bürgermeister Gelhausen
-DESCRIPTION:Offene Sprechstunde ohne Anmeldung.\nVeranstalter: Gemeinde Mer
- zenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/buergersprec
- hstunde/
-LOCATION:Bürgewaldzentrum Morschenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergersprechstun
- de/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:ttc-merzenich-birkesdorf@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260904T180000Z
