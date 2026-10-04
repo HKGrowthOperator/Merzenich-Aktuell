@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.6 · Core-Plugin 1.20.2 (Historie unten)
+4. Oktober 2026 · Theme 21.9.7 · Core-Plugin 1.20.2 (Historie unten)
+
+## Neu in Theme 21.9.7 (04.10.2026): Datenschutz-Dialog neu gestaltet
+
+Der Hinweis zu Datenschutz und Einstellungen (`assets/einwilligung.js`, Styles in `korrekturen.css`, gilt für Vorschauseite und WordPress) sah nach Formular aus. Jetzt: Karte mit Monogramm, Zeile „Datenschutz“, Serif-Titel „Ihre Daten bleiben bei uns“, kurzer Text, zwei gleich große Knöpfe „Alle akzeptieren“ und „Nur notwendige“ (Annehmen und Ablehnen gleich leicht), darunter „Einstellungen anpassen“. In den Einstellungen stehen die beiden Optionen als Schalter: „Notwendig“ (immer an) und „Live-Meldungen“ (aus, bis man zustimmt; vorher war das Häkchen vorangekreuzt). Auf dem Handy als Bogen vom unteren Rand mit gestapelten Knöpfen. Verhalten, Speicherformat, Fußlink „Datenschutz-Einstellungen“ und Ereignis für die Push-Benachrichtigungen unverändert. Geprüft lokal (Desktop, Handy, beide Ansichten, Speichern, Wiederöffnen) und live.
 
 ## Neu in Theme 21.9.6 (04.10.2026): Ortsseiten wie die statische Seite
 

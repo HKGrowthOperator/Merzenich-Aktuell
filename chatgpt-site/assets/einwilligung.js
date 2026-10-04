@@ -92,20 +92,25 @@
     document.querySelector('.einwilligung')?.remove();
     document.body.classList.remove('einwilligung-offen');
   }
+  // Neugestaltung 04.10.2026: Karte mit Marke, Serif-Titel, zwei gleich grosse
+  // Knoepfe (Annehmen und Ablehnen gleich leicht), Einstellungen als Schalter;
+  // optionale Zustimmung ist nie vorangekreuzt.
   function bannerHtml(details) {
-    return `<div class="einwilligung__box" role="dialog" aria-modal="false" aria-labelledby="einwilligung-titel">
-      <h2 id="einwilligung-titel">Datenschutz und Einstellungen</h2>
-      <p>Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre Einstellungen (Kommentarname, diese Auswahl). Symbolbilder laden wir über unseren eigenen Server, nicht von Dritten. Eine Funktion braucht Ihre Zustimmung, weil Ihr Browser Sie dabei benachrichtigt:</p>
-      <form class="einwilligung__form">
-        <label><input type="checkbox" checked disabled> <span><strong>Notwendig</strong> · Kommentare, diese Einstellung. Immer aktiv.</span></label>
-        <label><input type="checkbox" name="liveMeldungen" ${details ? '' : 'checked'}> <span><strong>Live-Meldungen</strong> · Neue Meldungen erscheinen automatisch, solange die Seite offen ist, und auf Wunsch als Benachrichtigung Ihres Browsers, auch wenn die Seite geschlossen ist. Abgefragt wird nur unser eigener Server.</span></label>
-      </form>
+    const live = stand ? !!stand.liveMeldungen : false;
+    const form = details ? `<form class="einwilligung__form">
+        <label class="einwilligung__option"><div><strong>Notwendig</strong><span>Kommentarname und diese Auswahl. Immer aktiv, keine Weitergabe an Dritte.</span></div><input class="einwilligung__schalter" type="checkbox" checked disabled aria-label="Notwendig, immer aktiv"></label>
+        <label class="einwilligung__option"><div><strong>Live-Meldungen</strong><span>Neue Meldungen erscheinen automatisch, solange die Seite offen ist, auf Wunsch als Benachrichtigung Ihres Browsers. Abgefragt wird nur unser eigener Server.</span></div><input class="einwilligung__schalter" type="checkbox" name="liveMeldungen"${live ? ' checked' : ''}></label>
+      </form>` : '';
+    return `<div class="einwilligung__box" role="dialog" aria-modal="false" aria-labelledby="einwilligung-titel" aria-describedby="einwilligung-text">
+      <div class="einwilligung__kopf"><span class="einwilligung__marke" aria-hidden="true"><img src="/assets/marke/monogramm.svg" alt="" width="22" height="22"></span><div><span class="einwilligung__eyebrow">Datenschutz</span><h2 id="einwilligung-titel">${details ? 'Ihre Einstellungen' : 'Ihre Daten bleiben bei uns'}</h2></div></div>
+      <p class="einwilligung__text" id="einwilligung-text">${details ? 'Wählen Sie, was diese Seite in Ihrem Browser tun darf. Ihre Auswahl gilt, bis Sie sie unten auf jeder Seite ändern.' : 'Diese Seite setzt keine Tracking-Cookies und keine Werbe-Tracker. Im Browser bleiben nur Ihre eigenen Einstellungen. Eine Funktion braucht Ihre Zustimmung: Live-Meldungen mit Benachrichtigung durch Ihren Browser.'}</p>
+      ${form}
       <div class="einwilligung__aktionen">
         <button type="button" class="btn" data-ew="alle">Alle akzeptieren</button>
         <button type="button" class="btn ghost" data-ew="auswahl">${details ? 'Auswahl speichern' : 'Nur notwendige'}</button>
-        ${details ? '' : '<button type="button" class="einwilligung__mehr" data-ew="details">Auswählen</button>'}
+        ${details ? '' : '<button type="button" class="einwilligung__mehr" data-ew="details">Einstellungen anpassen</button>'}
       </div>
-      <p class="einwilligung__fuss"><a href="/datenschutz/">Datenschutzerklärung</a> · <a href="/impressum/">Impressum</a> · Änderbar jederzeit unten auf jeder Seite unter „Datenschutz-Einstellungen“.</p>
+      <p class="einwilligung__fuss"><a href="/datenschutz/">Datenschutzerklärung</a> · <a href="/impressum/">Impressum</a> · Jederzeit änderbar unten auf jeder Seite unter „Datenschutz-Einstellungen“.</p>
     </div>`;
   }
   function bannerZeigen(details = false) {
