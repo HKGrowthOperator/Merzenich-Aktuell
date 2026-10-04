@@ -215,6 +215,22 @@
     "vereine.erntedank": {
       "titel": "Erntedankfest in Girbelsrath ohne freigegebenes Originalfoto; kein fremder Orts- oder Kirchenbezug",
       "motive": []
+    },
+    "leben.buergewald.jahrbuch": {
+      "titel": "Kreisgeschichte und Strukturwandel mit Bürgewald-Bezug; ohne passendes Ereignisfoto nur Ortsansicht",
+      "motive": []
+    },
+    "leben.familie.schnuller": {
+      "titel": "Familienangebot der Frühen Hilfen; ohne freigegebenes Foto der Schnullersäule nur Ortsansicht",
+      "motive": []
+    },
+    "leben.schule.anmeldung": {
+      "titel": "Schule, Anmeldung und Schulorganisation; ohne lokales Schulmotiv nur Ortsansicht",
+      "motive": []
+    },
+    "vereine.landfrauen": {
+      "titel": "LandFrauen und Mitgliederversammlung; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
+      "motive": []
     }
   }
 }

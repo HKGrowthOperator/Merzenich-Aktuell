@@ -1,0 +1,109 @@
+{
+  "hinweis": "Deep-Research-Update für den Direkten Umkreis, abgerufen 04.10.2026. Ausschließlich datierte Einzelmeldungen oder offizielle Veranstaltungs-/Behördenseiten. Keine Übersichtsseiten. Die Artikel bleiben externe Originalquellen; deploy/umkreis.mjs wählt daraus die letzten zehn Tage.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Radfahrer mit rund 1,8 Promille auf der Holzstraße kontrolliert",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364075",
+      "datum": "2026-10-03",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Pkw und Pedelec stoßen an der Willi-Bleicher-Straße zusammen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6363780",
+      "datum": "2026-10-02",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Gesundheit",
+      "titel": "VHS Rur-Eifel lädt am 10. Oktober zum Tag der Gesundheit",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/gesunder-geist-gesunder-koerper-tag-der-gesundheit-in-der-vhs-rur-eifel",
+      "datum": "2026-10-01",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Stadtleben",
+      "titel": "Mehr als 100 Gäste beim Dürener Empfang für Neubürgerinnen und Neubürger",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/viele-informationen-und-interessante-gespraeche-beim-empfang-der-stadt-dueren-fuer-neubuergerinnen-und-neubuerger-1",
+      "datum": "2026-10-02",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Verkehr",
+      "titel": "Neunjähriger bei Kollision mit Pkw in der Grabenstraße leicht verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6363013",
+      "datum": "2026-10-01",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Verkehr",
+      "titel": "Drei Leichtverletzte bei Unfall an der Einmündung K13/L12",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6363012",
+      "datum": "2026-10-01",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Verkehr",
+      "titel": "Kanalbau in Krauthausen: Aachener Straße ab 12. Oktober voll gesperrt",
+      "url": "https://www.heimat-info.de/beitraege/8b7a46f1-884b-466a-a92e-3662b2301046",
+      "datum": "2026-10-01",
+      "quelle": "Gemeinde Niederzier"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Wirtschaft",
+      "titel": "Fünftes Unternehmertreffen bringt Niederzierer Betriebe zusammen",
+      "url": "https://www.heimat-info.de/beitraege/adeccdc4-f84e-4a58-ac5d-0232c50271fa",
+      "datum": "2026-10-02",
+      "quelle": "Gemeinde Niederzier"
+    },
+    {
+      "ort": "Kerpen",
+      "rubrik": "Wirtschaft",
+      "titel": "Richtfest: NORMA-Logistikzentrum wächst um knapp 10.000 Quadratmeter",
+      "url": "https://www.presseportal.de/pm/62097/6363706",
+      "datum": "2026-10-02",
+      "quelle": "NORMA"
+    },
+    {
+      "ort": "Kerpen",
+      "rubrik": "Veranstaltungen",
+      "titel": "„Kerpen mobil“ informiert am 7. Oktober über Barrierefreiheit und Ehrenamt",
+      "url": "https://www.stadt-kerpen.de/aktuelles/pressemitteilungen/pm072_-kerpen-mobil-8.messe-fuer-jung-und-alt-rund-um-barrierefreiheit-freizeit-und-ehrenamt.php",
+      "datum": "2026-10-01",
+      "quelle": "Kolpingstadt Kerpen"
+    },
+    {
+      "ort": "Kerpen",
+      "rubrik": "Freizeit",
+      "titel": "Erftlagune erweitert in den Herbstferien die Öffnungszeiten und Angebote",
+      "url": "https://www.stadt-kerpen.de/aktuelles/pressemitteilungen/pm071_betrieb-der-kerpener-baeder-im-oktober-2026.php",
+      "datum": "2026-10-01",
+      "quelle": "Kolpingstadt Kerpen"
+    },
+    {
+      "ort": "Elsdorf",
+      "rubrik": "Vereine",
+      "titel": "Obstfreunde Elsdorf gewinnen den LokalStars-Award 2026",
+      "url": "https://www.elsdorf.de/rathaus-service/verwaltung/aktuell/2695/obstfreunde-elsdorf-belegen-ersten-platz",
+      "datum": "2026-10-02",
+      "quelle": "Stadt Elsdorf"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Verkehr",
+      "titel": "Polizei warnt bei organisierten E-Scooter-Ride-outs vor Regelverstößen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6363779",
+      "datum": "2026-10-02",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
