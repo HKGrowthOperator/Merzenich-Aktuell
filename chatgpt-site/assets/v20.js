@@ -6,7 +6,7 @@
  clock();setInterval(clock,60000);
  const motion=matchMedia('(prefers-reduced-motion: reduce)');motion.addEventListener('change',()=>{if(motion.matches)$$('.reveal-pending').forEach(el=>el.classList.remove('reveal-pending'));});
  const nav=$('.mainnav'),anchor=$('.nav-anchor');
- const updateNav=()=>{const compact=!!anchor&&innerWidth>767&&anchor.getBoundingClientRect().top<=0;nav?.classList.toggle('is-scrolled',compact);};
+ const updateNav=()=>{const compact=!!anchor&&innerWidth>767&&anchor.getBoundingClientRect().top<=(parseFloat(getComputedStyle(anchor).top)||0)+0.5;nav?.classList.toggle('is-scrolled',compact);};
  addEventListener('scroll',updateNav,{passive:true});addEventListener('resize',updateNav,{passive:true});updateNav();
  const filter=$('[data-event-filters]');
  if(filter){let period='all';const rows=$$('[data-event-row]'),place=$('[data-event-place]'),category=$('[data-event-category]');

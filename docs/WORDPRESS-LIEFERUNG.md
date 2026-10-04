@@ -1,12 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.3 · Core-Plugin 1.20.1 (Historie unten)
+4. Oktober 2026 · Theme 21.9.4 · Core-Plugin 1.20.1 (Historie unten)
 
-## Neu in Theme 21.9.3 (04.10.2026): Kopf ohne Bruch beim Scrollen, Kasten „Das Wichtigste in Kürze“ entfernt
+## Neu in Theme 21.9.3 / 21.9.4 (04.10.2026): Kopf ohne Bruch beim Scrollen, Kasten „Das Wichtigste in Kürze“ entfernt
 
 Beides Wunsch des Auftraggebers (04.10.2026), gilt für WordPress und die Vorschauseite (gemeinsames Stylesheet `assets/korrekturen.css`, Generator `deploy/meldungen.mjs`).
 
 - **Kopf:** Auf dem Desktop klebte der große Kopf beim Scrollen erst am Browserrand, die Ressortleiste hing 84 px darunter, und nach wenigen Pixeln klappte der Kopf mit Animation weg. Jetzt scrollt der große Kopf wie Inhalt weg, und die Ressortleiste bleibt ohne Sprung ganz oben kleben (sticky, kein Umschalten auf fixed, keine Animation); das kleine Logo erscheint wie bisher. Eingeloggt bleibt die Leiste unter der WordPress-Admin-Leiste. Auf dem Handy bleibt der schmale Kopf oben, wie er war.
+- **Kleines Logo auch eingeloggt (21.9.4):** Die Ressortleiste klebt unter der WordPress-Admin-Leiste bei 32 px; `v20.js` schaltet das kleine Logo jetzt an, sobald die Leiste an ihrer Klebekante steht (vorher nur bei 0 px, also nie für Eingeloggte).
 - **„Das Wichtigste in Kürze“** erscheint in keiner Meldung mehr (Theme `single.php`, statische Seiten). Das Feld `ma_facts` bleibt im Backend als Arbeitsgrundlage der Redaktion; auf der Vorschauseite bleiben belegte Fakten Pflicht in den Daten.
 
 **Geprüft:** Scrollfolge auf merzenich-aktuell.de (Desktop 1400 px: Leiste bei jeder Scrollposition ab 86 px bei y = 0, Inhalt ohne Sprung; Handy unverändert), Artikelseite ohne Kasten, `kette.mjs --check`, alle `qa/wordpress/*-test.php`.
