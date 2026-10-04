@@ -1,5 +1,5 @@
 {
-  "hinweis": "Deep-Research-Update für den Direkten Umkreis, abgerufen 04.10.2026. Ausschließlich datierte Einzelmeldungen oder offizielle Veranstaltungs-/Behördenseiten. Keine Übersichtsseiten. Die Artikel bleiben externe Originalquellen; deploy/umkreis.mjs wählt daraus die letzten zehn Tage.",
+  "hinweis": "Deep-Research-Update für den Direkten Umkreis, ergänzt bis 04.10.2026. Ausschließlich datierte Einzelmeldungen oder offizielle Veranstaltungs-/Behördenseiten. Die Artikel bleiben externe Originalquellen; deploy/umkreis.mjs wählt daraus die letzten zehn Tage und begrenzt die sichtbare Zahl je Ort.",
   "eintraege": [
     {
       "ort": "Düren",
@@ -104,6 +104,46 @@
       "url": "https://www.presseportal.de/blaulicht/pm/8/6363779",
       "datum": "2026-10-02",
       "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Klima",
+      "titel": "Kreis gibt wieder bis zu 25 Bäume und Hecken pro Antrag aus",
+      "url": "https://kreis-dueren.de/presse/baumausgabe_2026-09-28.php",
+      "datum": "2026-09-28",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Dorfentwicklung",
+      "titel": "„Unser Dorf hat Zukunft“: Kreis sucht schon jetzt interessierte Orte für 2027",
+      "url": "https://www.kreis-dueren.de/presse/unser-dorf-hat-zukunft_2026-10-01.php",
+      "datum": "2026-10-01",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Wirtschaft",
+      "titel": "„Café & Konzepte“ bietet am 14. Oktober kostenlose Beratung für Gründerinnen",
+      "url": "https://www.kreis-dueren.de/presse/cafe-und-konzepte_2026-10-01.php",
+      "datum": "2026-10-01",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Senioren",
+      "titel": "Seniorenweihnacht in der Arena: Restkarten für den 24. November erhältlich",
+      "url": "https://www.kreis-dueren.de/presse/seniorenweihnacht_2026-09-30.php",
+      "datum": "2026-09-30",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Senioren",
+      "titel": "Tagesfahrt zum Kölner Zoo startet am 14. Oktober über Merzenich",
+      "url": "https://www.heimat-info.de/veranstaltungen/b41684c7-936b-4f54-8106-a487cca6f230",
+      "datum": "2026-09-28",
+      "quelle": "Veranstaltungen Niederzier"
     }
   ]
 }
