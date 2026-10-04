@@ -215,6 +215,48 @@
     "vereine.erntedank": {
       "titel": "Erntedankfest in Girbelsrath ohne freigegebenes Originalfoto; kein fremder Orts- oder Kirchenbezug",
       "motive": []
+    },
+    "leben.buergewald.jahrbuch": {
+      "titel": "Kreisgeschichte und Strukturwandel mit Bürgewald-Bezug; ohne passendes Ereignisfoto nur Ortsansicht",
+      "motive": []
+    },
+    "leben.familie.schnuller": {
+      "titel": "Familienangebot der Frühen Hilfen; ohne freigegebenes Foto der Schnullersäule nur Ortsansicht",
+      "motive": []
+    },
+    "leben.schule.anmeldung": {
+      "titel": "Schule, Anmeldung und Schulorganisation; ohne lokales Schulmotiv nur Ortsansicht",
+      "motive": []
+    },
+    "vereine.landfrauen": {
+      "titel": "LandFrauen und Mitgliederversammlung; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
+      "motive": []
+    },
+    "kirche.infoabend": {
+      "titel": "Kirchlicher Informationsabend im Pfarrheim; neutrales Kirchenmotiv",
+      "motive": [
+        "kirchenfenster"
+      ]
+    },
+    "vereine.schuetzen.kreis": {
+      "titel": "Schützenwesen und Kreismajestätenschießen; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
+      "motive": []
+    },
+    "sport.tischtennis": {
+      "titel": "Tischtennis, Mannschaftsspiel oder Turnier in der Halle",
+      "motive": [
+        "sporthalle"
+      ]
+    },
+    "gemeinde.buergerhaus": {
+      "titel": "Neues Bürgerhaus, kommunales Bau- und Planungsprojekt",
+      "motive": [
+        "buergerhaus"
+      ]
+    },
+    "sport.tischtennis.ergebnis": {
+      "titel": "Tischtennis-Ergebnisüberblick ohne passendes lokales Spiel-/Mannschaftsfoto; klar gekennzeichnete Ortsansicht statt fremdem Sportmotiv",
+      "motive": []
     }
   }
 }

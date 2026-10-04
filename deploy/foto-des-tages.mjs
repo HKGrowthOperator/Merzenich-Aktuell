@@ -52,10 +52,14 @@ const zaehler = idx.startseitenMotive || {};
 const buehne = idx.buehnenMotive || [];
 const max = idx.motivMax || 2;
 const freieReihe = reihe.filter((r) => { const k = motivSchluessel(r.src); return !buehne.includes(k) && (zaehler[k] || 0) < max; });
-if (!freieReihe.length) { console.error('Foto des Tages: keine freie Ortsansicht (alle stehen in der Buehne oder schon zweimal auf der Startseite).'); process.exit(2); }
-const fotoFuer = (iso) => eintraege.find((e) => e.datum === iso) || freieReihe[tagesnummer(iso) % freieReihe.length];
+// "Foto des Tages" ist eine optionale Zusatzflaeche. Wenn alle gesichteten
+// Ortsansichten bereits in der Startbuehne bzw. bis zur Motiv-Obergrenze
+// verwendet werden, darf dieser Slot nicht den kompletten Nachrichten-Build
+// blockieren. Eine datierte Lesereinsendung fuer heute gewinnt weiterhin.
+const fotoFuer = (iso) => eintraege.find((e) => e.datum === iso)
+  || (freieReihe.length ? freieReihe[tagesnummer(iso) % freieReihe.length] : null);
 const f = fotoFuer(heute);
-const datumText = new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(`${heute}T12:00:00Z`));
+const datumText = f ? new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date(`${heute}T12:00:00Z`)) : '';
 
 const geaendert = [];
 {
@@ -67,7 +71,7 @@ const geaendert = [];
   const pfad = join(site, 'index.html');
   const alt = readFileSync(pfad, 'utf8');
   const MARKE = /<!-- fotodestages:start -->[\s\S]*?<!-- fotodestages:end -->/;
-  const block = '<!-- fotodestages:start -->'
+  const block = f ? '<!-- fotodestages:start -->'
     + '<section class="ansichten foto-des-tages" aria-labelledby="ansichten-titel" data-foto-des-tages>'
     + `<figure class="ansichten-bild shell"><img id="foto-des-tages-bild" src="${esc(f.src)}" alt="${esc(f.alt)}" width="1440" height="960" loading="lazy" decoding="async"></figure>`
     + '<div class="shell ansichten-text">'
@@ -76,7 +80,8 @@ const geaendert = [];
     + `<p class="ansichten-beschreibung" data-ansicht-text>${esc(f.alt)}.</p>`
     + `<p class="ansichten-credit" id="foto-des-tages-credit">Foto: ${esc(f.credit)}</p>`
     + '<a class="ansichten-senden" href="/meldung-senden/#formular">Ihr Foto des Tages einsenden</a>'
-    + '</div></section><!-- fotodestages:end -->';
+    + '</div></section><!-- fotodestages:end -->'
+    : '<!-- fotodestages:start --><!-- fotodestages:end -->';
   let neu = alt;
   if (MARKE.test(alt)) neu = alt.replace(MARKE, () => block);
   else {
@@ -90,5 +95,5 @@ const geaendert = [];
 }
 
 if (fehler.length) { console.error('Foto des Tages: ' + fehler.join('\n  ')); process.exit(2); }
-console.log(`Foto des Tages: ${eintraege.length} datierte Einsendung(en), ${freieReihe.length} von ${reihe.length} Ortsansichten frei; heute ${f.ort || ''}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+console.log(`Foto des Tages: ${eintraege.length} datierte Einsendung(en), ${freieReihe.length} von ${reihe.length} Ortsansichten frei; ${f ? `heute ${f.ort || 'Gemeinde Merzenich'}` : 'Slot mangels freiem Motiv ausgeblendet'}; ${geaendert.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && geaendert.length) process.exit(2);

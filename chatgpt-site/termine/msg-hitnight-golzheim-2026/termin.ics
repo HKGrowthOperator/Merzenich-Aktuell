@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MSG Hitnight
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:msg-hitnight-golzheim-2026@merzenich-aktuell.de
+DTSTAMP:20261004T060000Z
+DTSTART:20261010T170000Z
+SUMMARY:MSG Hitnight
+DESCRIPTION:Die Marianische Schützenbruderschaft Golzheim führt die MSG H
+ itnight für Samstag\, 10. Oktober\, ab 19 Uhr in ihrem Veranstaltungskale
+ nder.\nVeranstalter: Marianische Schützenbruderschaft Golzheim\nhttps://m
+ erzenichaktuell.hk-growthoperator.de/termine/msg-hitnight-golzheim-2026/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/msg-hitnight-golz
+ heim-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

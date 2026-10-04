@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:andro WTTV-Cup in Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:wttv-cup-merzenich-2026-10-04@merzenich-aktuell.de
+DTSTAMP:20261004T060000Z
+DTSTART:20261004T120000Z
+SUMMARY:andro WTTV-Cup in Merzenich
+DESCRIPTION:TTR-relevantes Damen- und Herren-Einzel im Rahmen der andro WTT
+ V-Cup-Serie. Meldeschluss war am 3. Oktober\; Nachmeldungen sind laut Auss
+ chreibung nicht möglich.\nVeranstalter: TTC Merzenich / Westdeutscher Tis
+ chtennis-Verband\nhttps://merzenichaktuell.hk-growthoperator.de/termine/wt
+ tv-cup-merzenich-2026-10-04/
+LOCATION:Turnhalle der Schule
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wttv-cup-merzenic
+ h-2026-10-04/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

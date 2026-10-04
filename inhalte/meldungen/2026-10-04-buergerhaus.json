@@ -1,0 +1,47 @@
+{
+  "hinweis": "Projekt- und Vergaberecherche vom 04.10.2026. Die Bedarfsermittlung wurde Mitte September ausgeschrieben; ihre Teilnahmefrist endete am 02.10.2026. Aus dem Ende der Frist wird kein Zuschlag abgeleitet.",
+  "meldungen": [
+    {
+      "slug": "neues-buergerhaus-merzenich-bedarfsermittlung-2026",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Ortsentwicklung · Bürgerhaus",
+      "titel": "Neues Bürgerhaus: Bedarfsermittlung soll Raumprogramm und Standort klären",
+      "dek": "Für den Ersatz der Alten Musikschule wird die nächste Planungsgrundlage vorbereitet. Untersucht werden sollen Bedarf, Raumprogramm, mögliche Standorte und der Investitionsrahmen – unter Beteiligung lokaler Nutzer.",
+      "datum": "2026-10-04T12:52:00+02:00",
+      "fakten": [
+        "Projekt: Neubau Bürgerhaus als Ersatz für die Alte Musikschule",
+        "Das frühere denkmalgeschützte Gebäude wurde nach bergbaubedingten Schäden im März 2024 zurückgebaut",
+        "Kommunales Grundstück im Ortskern: rund 923 Quadratmeter; zusätzlich sollen Alternativstandorte geprüft werden",
+        "Vorgesehen sind unter anderem Nutzungen für VHS, Musikschule, Geschichts- und Heimatverein, AWO und weitere gemeindliche Angebote",
+        "Die Bedarfsermittlung sieht Workshops mit Nutzergruppen, Vereinen sowie Verwaltung und Politik vor"
+      ],
+      "absaetze": [
+        "Die Planung für ein neues Bürgerhaus in Merzenich wird konkreter. Für das Projekt „Neubau Bürgerhaus (Alte Musikschule)“ wurde im September eine Bedarfsermittlung nach DIN 18205 ausgeschrieben. Die Teilnahmefrist des Verfahrens endete am 2. Oktober; daraus lässt sich noch kein Zuschlag oder Planungsauftrag an ein bestimmtes Büro ableiten.",
+        "NRW.URBAN beschreibt das Vorhaben als Ersatz für das denkmalgeschützte Gebäude im Ortskern, das wegen bergbaubedingter Schäden im März 2024 zurückgebaut werden musste. Das freigeräumte kommunale Grundstück umfasst rund 923 Quadratmeter. Neben diesem Standort sollen nach den Projektinformationen auch Alternativen im zentralen Ortsbereich untersucht werden.",
+        "Inhaltlich soll das Bürgerhaus mehrere heute verteilte Angebote zusammenführen. Genannt werden Räume für Volkshochschule, Musikschule, Geschichts- und Heimatverein, AWO sowie weitere gemeindliche beziehungsweise bürgerorientierte Nutzungen. Ziel ist ein barrierefreier und generationenübergreifender Treffpunkt.",
+        "Die ausgeschriebene Bedarfsermittlung soll unter anderem ein Funktions- und Raumprogramm, Layoutvarianten, eine Grundstücksanalyse und einen Investitionskostenrahmen liefern. Die Vergabeunterlagen sehen außerdem Workshops mit Nutzergruppen vor; in der veröffentlichten Leistungsbeschreibung ist von bis zu 27 Vereinen und Institutionen die Rede. Die Ergebnisse sollen später als Grundlage für Machbarkeits- und Standortentscheidungen dienen."
+      ],
+      "themen": [
+        [
+          "buergerhaus",
+          "Bürgerhaus"
+        ],
+        [
+          "ortsentwicklung",
+          "Ortsentwicklung"
+        ],
+        [
+          "strukturwandel",
+          "Strukturwandel"
+        ]
+      ],
+      "bildklasse": "gemeinde.buergerhaus",
+      "quelle": {
+        "name": "NRW.URBAN / bauhaus.nrw, Projekt „Merzenich: Neubau Bürgerhaus (Alte Musikschule)“",
+        "url": "https://www.bauhaus.nrw/projekte/merzenich-neubau-buergerhaus-alte-musikschule",
+        "stand": "2026-10-04"
+      }
+    }
+  ]
+}
