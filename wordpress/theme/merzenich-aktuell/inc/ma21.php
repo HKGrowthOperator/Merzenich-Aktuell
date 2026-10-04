@@ -597,6 +597,7 @@ function ma21_liste_seitenspalte(): string {
         foreach ($neu as $p) $h .= '<li><a href="' . esc_url(get_permalink($p)) . '">' . ma21_e(get_the_title($p)) . '</a></li>';
         $h .= '</ol></div>';
     }
+    if (is_tax('ma_location')) { $o = get_queried_object(); if ($o instanceof WP_Term) $h .= ma21_ort_seitenspalte($o); }
     $sport = is_category('sport'); $vereine = is_category('vereine');
     if (($sport || $vereine) && function_exists('ma_vereine_struktur')) {
         if ($sport) $h .= '<div class="sidebox sport-side-action"><h3>Sport direkt aus den Vereinen</h3><p>Vereine reichen Spielberichte, Ergebnisse, Termine und Mannschaftsfotos über ihren Redaktionszugang ein. Veröffentlicht wird nach Freigabe durch die Redaktion.</p><p><a class="read-more" href="' . esc_url(home_url('/meldung-senden/')) . '">Sportmeldung senden</a></p></div>';
@@ -612,6 +613,47 @@ function ma21_liste_seitenspalte(): string {
             $liste .= '<li>' . $link . '<small>' . ma21_e($klein) . '</small></li>'; $n++;
         }
         if ($n) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">' . $n . ' Vereine · Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
+    }
+    return $h;
+}
+
+/* Ortsseiten (/ort/<slug>/, 04.10.2026): In der Liste stehen nur Meldungen. Vorher
+   mischten sich Termine und Vereinsprofile chronologisch hinein, ohne Bild, und
+   verdrängten die Meldungen; die statische Ortsseite zeigt Termine und Vereine
+   des Orts in der Seitenleiste, so jetzt auch hier. */
+add_action('pre_get_posts', function (WP_Query $q): void {
+    if (is_admin() || !$q->is_main_query() || !$q->is_tax('ma_location')) return;
+    $q->set('post_type', 'post');
+});
+
+/** Seitenleiste der Ortsseite: nächste Termine und Vereine des Orts (Aufbau wie die statische Ortsseite). */
+function ma21_ort_seitenspalte(WP_Term $ort): string {
+    $h = '';
+    $termine = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 5, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
+        'meta_query' => [['key' => 'ma_event_start', 'value' => (string) current_time('Y-m-d\TH:i'), 'compare' => '>=']],
+        'tax_query' => [['taxonomy' => 'ma_location', 'field' => 'term_id', 'terms' => (int) $ort->term_id]]]);
+    if ($termine) {
+        $h .= '<div class="sidebox ort-termine"><h3>Nächste Termine in ' . ma21_e($ort->name) . '<a href="' . esc_url(home_url('/termine/')) . '">alle</a></h3><ul class="linklist">';
+        foreach ($termine as $t) {
+            $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($t->ID, 'start') : 0;
+            $wann = $start ? wp_date('D, d.m., H:i', $start) . ' Uhr' : '';
+            $platz = (string) get_post_meta($t->ID, 'ma_event_place', true);
+            $h .= '<li><a href="' . esc_url(get_permalink($t)) . '">' . ma21_e(get_the_title($t)) . '</a><small>' . ma21_e(implode(' · ', array_filter([$wann, $platz]))) . '</small></li>';
+        }
+        $h .= '</ul></div>';
+    }
+    if (function_exists('ma_vereine_struktur')) {
+        $liste = '';
+        foreach (ma_vereine_struktur() as $kurz => $e) {
+            $v = $e['verein'];
+            if (($v['ort'] ?? '') !== $ort->slug) continue;
+            $profil = function_exists('ma_verein_profil') ? ma_verein_profil($kurz) : null;
+            $name = ma21_e((string) $v['name']);
+            $link = $profil instanceof WP_Post && $profil->post_status === 'publish' ? '<a href="' . esc_url(get_permalink($profil)) . '">' . $name . '</a>' : (!empty($v['website']) ? '<a href="' . esc_url($v['website']) . '" target="_blank" rel="noopener">' . $name . '</a>' : $name);
+            $klein = (string) (($v['sportart'] ?? '') ?: ($v['kategorie'] ?? ''));
+            $liste .= '<li>' . $link . ($klein !== '' ? '<small>' . ma21_e($klein) . '</small>' : '') . '</li>';
+        }
+        if ($liste !== '') $h .= '<div class="sidebox ort-vereine"><h3>Vereine in ' . ma21_e($ort->name) . '<a href="' . esc_url(home_url('/vereine/')) . '">alle</a></h3><ul class="linklist">' . $liste . '</ul></div>';
     }
     return $h;
 }

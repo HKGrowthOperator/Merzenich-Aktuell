@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.5 · Core-Plugin 1.20.2 (Historie unten)
+4. Oktober 2026 · Theme 21.9.6 · Core-Plugin 1.20.2 (Historie unten)
+
+## Neu in Theme 21.9.6 (04.10.2026): Ortsseiten wie die statische Seite
+
+Auf `/ort/<ort>/` standen Termine und Vereinsprofile chronologisch in der Meldungsliste, ohne Bild, und verdrängten die Meldungen (Zähler „120 Meldungen“ zählte alles mit). Jetzt listet die Ortsseite nur Meldungen, mit Aufmacher und Bildern wie jede Ressortseite; die nächsten fünf Termine und die Vereine des Orts stehen wie auf der statischen Ortsseite in der Seitenleiste („Nächste Termine in …“, „Vereine in …“). Geprüft lokal und live auf `/ort/merzenich/` und `/ort/golzheim/`.
 
 ## Neu in 1.20.2 (04.10.2026): Abgleich ohne falsches Änderungsdatum
 
