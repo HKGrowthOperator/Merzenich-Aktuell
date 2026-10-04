@@ -52,9 +52,11 @@
 .desk-karte--ohne-bild .karte-text h3{margin-top:8px}
 .bildraster-karte--ohne-bild .bildraster-text{padding-top:0;border-top:3px solid var(--ink)}
 /* Angemeldete Redaktion: die WordPress-Leiste liegt über dem Seitenkopf; der klebende Kopf rückt nach. */
-body.admin-bar .masthead{top:32px}
-body.admin-bar .mainnav.is-scrolled{top:116px}
-@media (max-width:782px){body.admin-bar .masthead{top:46px}body.admin-bar .mainnav.is-scrolled{top:130px}}
+/* Eingeloggt (04.10.2026): Die Ressortleiste ist sticky auf .nav-anchor (korrekturen.css) und klebt unter der Admin-Leiste; der grosse Kopf scrollt weg. Mobil bleibt der schmale Kopf unter der Admin-Leiste kleben. */
+body.admin-bar>.nav-anchor{top:32px}
+body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
+@media (max-width:782px){body.admin-bar>.nav-anchor{top:46px}}
+@media (max-width:767px){body.admin-bar .masthead{top:46px}}
 
 /* Redaktionsseiten (Plugin includes/seiten.php): Archiv nach Monat, Diskussion, Redaktionsmeldungen. */
 .info-prose .archive-list{list-style:none;padding:0;margin:0 0 28px}
