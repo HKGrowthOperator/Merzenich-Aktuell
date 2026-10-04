@@ -33,6 +33,7 @@ const VORLAGE = join(site, 'blaulicht', 'einsatz-118-rosspfad', 'index.html');
 const RESSORT = { blaulicht: 'Blaulicht', sport: 'Sport', rathaus: 'Rathaus & Politik', leben: 'Leben', wirtschaft: 'Wirtschaft', menschen: 'Menschen', vereine: 'Vereine' };
 const ORTSTEIL_SEITE = { merzenich: '/merzenich/', golzheim: '/golzheim/', girbelsrath: '/girbelsrath/', morschenich: '/morschenich/', buergewald: '/buergewald/' };
 const PFLICHT = ['slug', 'ressort', 'ortsteil', 'kicker', 'titel', 'dek', 'datum', 'absaetze', 'themen', 'quelle', 'bildklasse'];
+const MELDUNGEN_GENERATOR_VERSION = '2026-10-04-redaktion-v2.1';
 
 const tz = { timeZone: 'Europe/Berlin' };
 const datumLang = (iso) => new Intl.DateTimeFormat('de-DE', { ...tz, day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(iso))
@@ -247,7 +248,7 @@ let neu = 0, aktuell = 0;
 const veraltet = [];
 for (const m of meldungen) {
   const { datei, ...kern } = m;
-  m.hash = createHash('sha256').update(JSON.stringify(kern)).digest('hex').slice(0, 12);
+  m.hash = createHash('sha256').update(MELDUNGEN_GENERATOR_VERSION + '\n' + JSON.stringify(kern)).digest('hex').slice(0, 12);
   const pfad = join(site, m.ressort, m.slug, 'index.html');
   const q = quellbildFrei(m);
   if (q) {
