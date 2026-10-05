@@ -198,13 +198,13 @@ function ma_sport_vereinsraster(): string {
         <p><?php echo esc_html($anzahl); ?> Vereins- und Abteilungsangebote aus Merzenich und seinen Ortsteilen. Originalfotos erscheinen nur nach geklärter Bildfreigabe; ansonsten zeigt die Karte ein gekennzeichnetes Sportmotiv.</p>
         <nav class="ma-breitensport__navigation" aria-label="Sportarten">
           <?php foreach ($reihenfolge as $art) if ($gruppen[$art]): ?>
-            <a href="#ma-sportart-<?php echo esc_attr($art); ?>"><?php echo esc_html(ma_sportart_titel($art)); ?> <small><?php echo count($gruppen[$art]); ?></small></a>
+            <a href="#ma-sportart-<?php echo esc_attr($art); ?>"><?php echo esc_html(ma_sportart_titel($art)); ?></a>
           <?php endif; ?>
         </nav>
       </div>
       <?php foreach ($reihenfolge as $art): if (!$gruppen[$art]) continue; ?>
       <div class="ma-sportart-block" id="ma-sportart-<?php echo esc_attr($art); ?>">
-        <div class="ma-sportart-block__kopf"><h3><?php echo esc_html(ma_sportart_titel($art)); ?></h3><span><?php echo count($gruppen[$art]); ?> <?php echo count($gruppen[$art]) === 1 ? 'Eintrag' : 'Einträge'; ?></span></div>
+        <div class="ma-sportart-block__kopf"><h3><?php echo esc_html(ma_sportart_titel($art)); ?></h3></div>
         <div class="ma-sportart-raster">
           <?php foreach ($gruppen[$art] as $v): $bild = $v['bild']; ?>
             <article class="ma-sportverein">

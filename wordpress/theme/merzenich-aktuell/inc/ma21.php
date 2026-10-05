@@ -89,10 +89,9 @@ add_action('wp_head', function (): void {
 /**
  * Kopf (Masthead). Der Platzhalter {{ma:datum}} (deploy/wp-theme.mjs) wird in
  * Ortszeit gefüllt. Seit 21.9.9 kommt auch der Rest aus WordPress statt aus dem
- * Stand der Vorlage: die Ausgabe-Wahl mit der Zahl veröffentlichter Meldungen je
- * Ort (Adressen /ort/…/, keine Umleitung mehr), die Zeile „Merzenich · Jetzt“
- * mit der jüngsten veröffentlichten Meldung, den Meldungen von heute und dem
- * nächsten Termin, und die Markierung der gerade besuchten Seite im Menü.
+ * Stand der Vorlage: die Ausgabe-Wahl (Adressen /ort/…/, keine Umleitung mehr,
+ * seit 21.10.2 ohne Zahlen), die Zeile „Merzenich · Jetzt“ mit der jüngsten
+ * veröffentlichten Meldung und dem nächsten Termin, und die Markierung der gerade besuchten Seite im Menü.
  * (Vorher zeigte die Zeile einen Entwurf, der für Leser ein 404 war.)
  */
 function ma21_kopf(string $name): string {
@@ -100,23 +99,17 @@ function ma21_kopf(string $name): string {
     $html = str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
     $d = ma21_kopf_daten();
     $html = ma21_kopf_aktuell($html);
-    $html = ma21_kopf_ortswahl($html, $d['zahlen']);
+    $html = ma21_kopf_ortswahl($html);
     return ma21_kopf_jetzt($html, $d);
 }
 
 /** Zahlen und Meldungen für den Kopf, 10 Minuten zwischengespeichert (Reset bei jeder Statusänderung von Meldungen und Terminen). */
 function ma21_kopf_daten(): array {
     $d = get_transient('ma21_kopf_daten');
-    if (is_array($d) && isset($d['zahlen'], $d['daten'])) return $d;
-    $d = ['zahlen' => [], 'neu' => null, 'daten' => [], 'termin' => null];
-    foreach (MA21_ORTE as $slug => $name) {
-        $t = get_term_by('slug', $slug, 'ma_location');
-        if (!$t instanceof WP_Term) { $d['zahlen'][$slug] = 0; continue; }
-        $q = new WP_Query(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => false,
-            'tax_query' => [['taxonomy' => 'ma_location', 'field' => 'term_id', 'terms' => (int) $t->term_id]]]);
-        $d['zahlen'][$slug] = (int) $q->found_posts;
-    }
-    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 30, 'orderby' => 'date', 'order' => 'DESC']);
+    if (is_array($d) && isset($d['daten'], $d['ohne_zahlen'])) return $d;
+    // Keine Zahlen auf der Seite (Vorgabe Betreiber 05.10.2026: „wie viele Meldungen es gibt, ist unprofessionell“).
+    $d = ['ohne_zahlen' => true, 'neu' => null, 'daten' => [], 'termin' => null];
+    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC']);
     foreach ($neueste as $i => $p) {
         $iso = (string) get_post_time('c', false, $p);
         $d['daten'][] = $iso;
@@ -151,14 +144,13 @@ function ma21_kopf_aktuell(string $html): string {
     return str_replace('<a href="' . $pfad . '">', '<a href="' . $pfad . '" aria-current="page">', $html);
 }
 
-/** Ausgabe-Wahl: Adressen /ort/…/, Zahl veröffentlichter Meldungen je Ort, besuchter Ort als Auswahl. */
-function ma21_kopf_ortswahl(string $html, array $zahlen): string {
+/** Ausgabe-Wahl: Adressen /ort/…/, besuchter Ort als Auswahl, keine Zahlen. */
+function ma21_kopf_ortswahl(string $html): string {
     $o = is_tax('ma_location') ? get_queried_object() : null;
     $aktiv = $o instanceof WP_Term && isset(MA21_ORTE[$o->slug]) ? $o->slug : '';
     foreach (MA21_ORTE as $slug => $name) {
-        $n = (int) ($zahlen[$slug] ?? 0);
         $neu = '<a href="/ort/' . $slug . '/"' . ($aktiv === $slug ? ' aria-current="page"' : '') . '><span class="ortswahl-name">' . ma21_e($name) . '</span>'
-            . ($n > 0 ? '<span class="ortswahl-zahl">' . $n . ' ' . ($n === 1 ? 'Meldung' : 'Meldungen') . '</span>' : '') . '</a>';
+            . '</a>';
         $html = (string) preg_replace('#<a href="/' . $slug . '/"(?: aria-current="page")?><span class="ortswahl-name">[^<]*</span><span class="ortswahl-zahl">[^<]*</span></a>#u', $neu, $html, 1);
     }
     $html = (string) preg_replace('#href="/(' . implode('|', array_keys(MA21_ORTE)) . ')/"#', 'href="/ort/$1/"', $html);
@@ -166,7 +158,7 @@ function ma21_kopf_ortswahl(string $html, array $zahlen): string {
     return $html;
 }
 
-/** „Merzenich · Jetzt“: jüngste veröffentlichte Meldung, Meldungen von heute, nächster Termin (assets/kopf.js macht daraus relative Zeiten). */
+/** „Merzenich · Jetzt“: jüngste veröffentlichte Meldung und nächster Termin, keine Zahlen (assets/kopf.js macht aus der Uhrzeit eine relative Zeit). */
 function ma21_kopf_jetzt(string $html, array $d): string {
     if (!str_contains($html, 'class="jetzt"')) return $html;
     if (!empty($d['neu'])) {
@@ -175,10 +167,8 @@ function ma21_kopf_jetzt(string $html, array $d): string {
     } else {
         $html = (string) preg_replace('#<span class="jetzt-feld jetzt-neu">.*?</span>#su', '<span class="jetzt-feld jetzt-neu" hidden></span>', $html, 1);
     }
-    $heute = (string) wp_date('Y-m-d');
-    $n = count(array_filter($d['daten'], fn(string $iso): bool => str_starts_with($iso, $heute)));
-    $heuteHtml = '<span class="jetzt-feld jetzt-heute" data-daten="' . esc_attr(implode(' ', $d['daten'])) . '"' . ($n ? '>Heute ' . $n . ($n === 1 ? ' neue Meldung' : ' neue Meldungen') : ' hidden>') . '</span>';
-    $html = (string) preg_replace('#<span class="jetzt-feld jetzt-heute"[^>]*>(?:[^<]*)</span>#u', $heuteHtml, $html, 1);
+    // „Heute n neue Meldungen“ entfällt (keine Zahlen auf der Seite); ohne das Feld rechnet assets/kopf.js auch nichts nach.
+    $html = (string) preg_replace('#<span class="jetzt-feld jetzt-heute"[^>]*>(?:[^<]*)</span>#u', '', $html, 1);
     $t = $d['termin'] ?? null;
     $terminHtml = $t ? '<span class="jetzt-feld jetzt-termin">Nächster Termin <a href="' . esc_url($t['url']) . '">' . ma21_e($t['titel']) . '</a>' . ($t['wann'] !== '' ? ' · ' . ma21_e($t['wann']) : '') . '</span>' : '<span class="jetzt-feld jetzt-termin" hidden></span>';
     return (string) preg_replace('#<span class="jetzt-feld jetzt-termin"[^>]*>(?:[^<]*)</span>#u', $terminHtml, $html, 1);
@@ -752,7 +742,7 @@ function ma21_liste_seitenspalte(): string {
             $link = $profil && $profil->post_status === 'publish' ? '<a href="' . esc_url(get_permalink($profil)) . '">' . $name . '</a>' : (!empty($v['website']) ? '<a href="' . esc_url($v['website']) . '" target="_blank" rel="noopener">' . $name . '</a>' : '<span>' . $name . '</span>');
             $liste .= '<li>' . $link . '<small>' . ma21_e($klein) . '</small></li>'; $n++;
         }
-        if ($n) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">' . $n . ' Vereine · Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
+        if ($n) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
     }
     return $h;
 }

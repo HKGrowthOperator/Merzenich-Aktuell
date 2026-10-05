@@ -217,7 +217,7 @@ function ma_seite_archiv_liste(): string {
     $h = '';
     foreach ($monate as $ym => $liste) {
         [$jahr, $monat] = explode('-', $ym);
-        $h .= '<h2 id="' . esc_attr($ym) . '">' . esc_html($namen[$monat] . ' ' . $jahr) . ' <small>' . count($liste) . ' ' . (count($liste) === 1 ? 'Meldung' : 'Meldungen') . '</small></h2><ul class="archive-list">';
+        $h .= '<h2 id="' . esc_attr($ym) . '">' . esc_html($namen[$monat] . ' ' . $jahr) . '</h2><ul class="archive-list">';
         foreach ($liste as $p) {
             $ressort = function_exists('ma_seo_ressort_von') ? ma_seo_ressort_von($p)[1] : '';
             $h .= '<li><time datetime="' . esc_attr(get_post_time('c', false, $p)) . '">' . esc_html(get_post_time('d.m.', false, $p)) . '</time> <a href="' . esc_url(get_permalink($p)) . '">' . esc_html(get_the_title($p)) . '</a>' . ($ressort ? ' <span class="rs">' . esc_html($ressort) . '</span>' : '') . '</li>';
@@ -263,7 +263,7 @@ function ma_seite_themen_liste(): string {
     $tags = get_terms(['taxonomy' => 'post_tag', 'hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC', 'number' => 300]);
     if (!is_array($tags) || !$tags) return '<p>Noch keine Themen.</p>';
     $h = '<ul class="themen-liste">';
-    foreach ($tags as $t) $h .= '<li><a href="' . esc_url(get_term_link($t)) . '">' . esc_html($t->name) . '</a> <span class="rs">' . (int) $t->count . '</span></li>';
+    foreach ($tags as $t) $h .= '<li><a href="' . esc_url(get_term_link($t)) . '">' . esc_html($t->name) . '</a></li>';
     return $h . '</ul>';
 }
 

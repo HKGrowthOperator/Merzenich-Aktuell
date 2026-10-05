@@ -34,7 +34,8 @@ function ma21_markt_block(string $art): string {
     $html = ma21_repo_datei($art . '/index.html', HOUR_IN_SECONDS);
     $q = preg_quote($art, '#');
     if (!preg_match('#<!-- markt:' . $q . ':start -->(.*?)<!-- markt:' . $q . ':end -->#s', $html, $m)) return '';
-    return trim(wp_kses_post($m[1]));
+    // Keine Zahlen auf der Seite: „13 Anzeigen“ je Ort entfällt.
+    return trim((string) preg_replace('#<span class="markt-ort-count">[^<]*</span>#', '', wp_kses_post($m[1])));
 }
 
 /** Zeile für eine hier aufgegebene Anzeige, im Markup des Marktüberblicks. */
@@ -55,14 +56,13 @@ function ma21_markt_seite(string $typ): void {
     $k = MA21_MARKT[$typ];
     $eigene = get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 50, 'orderby' => 'date', 'order' => 'DESC']);
     $block = ma21_markt_block($k['art']);
-    $n = count($eigene) + substr_count($block, '<article');
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html($k['crumb']) . '</span></nav>'
         . '<span class="eyebrow">' . esc_html($k['eyebrow']) . '</span><h1>' . esc_html($k['h1']) . '</h1><p class="desc">' . esc_html($k['desc']) . '</p>'
-        . ($n ? '<p class="count-line">' . $n . ' ' . esc_html($k['einheit'][$n === 1 ? 0 : 1]) . ' · <a href="' . esc_url(home_url($k['box'][2])) . '">' . esc_html($k['box'][0]) . '</a></p>' : '')
+        . '<p class="count-line"><a href="' . esc_url(home_url($k['box'][2])) . '">' . esc_html($k['box'][0]) . '</a></p>'
         . '</div></div>';
     echo '<section class="section"><div class="shell"><div class="content-grid"><div class="event-list markt-liste"><h2 class="sr-only">' . esc_html($k['einheit'][1]) . '</h2>';
     if ($eigene) {
-        echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Merzenich Aktuell</span>' . esc_html($k['eigene']) . '<span class="markt-ort-count">' . count($eigene) . ' ' . (count($eigene) === 1 ? 'Anzeige' : 'Anzeigen') . '</span></h2>';
+        echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Merzenich Aktuell</span>' . esc_html($k['eigene']) . '</h2>';
         foreach ($eigene as $p) echo ma21_markt_eigene_zeile($p, $typ);
     }
     if ($block !== '') echo $block;
@@ -112,7 +112,7 @@ function ma21_tipp_seite(): void {
             echo '<article class="event-row"><span class="d"><b>Tipp</b></span><div class="info"><span class="eyebrow">Anzeige · ' . esc_html(MA21_ORTE[ma21_ort($p)] ?? 'Merzenich') . '</span><h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2><p class="ev-desc">' . esc_html(wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 30, ' …')) . '</p></div><div class="act"><a href="' . $url . '">Ansehen</a></div></article>';
         }
     }
-    echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Redaktion</span>Unsere Tipps für die nächsten Tage<span class="markt-ort-count">' . count($termine) . ' ' . (count($termine) === 1 ? 'Termin' : 'Termine') . '</span></h2>';
+    echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Redaktion</span>Unsere Tipps für die nächsten Tage</h2>';
     if ($termine) foreach ($termine as $p) echo ma21_tipp_zeile($p);
     else echo '<p class="no-result">In den nächsten Tagen stehen keine Termine im Kalender. Alle Veranstaltungen: <a href="' . esc_url(home_url('/termine/')) . '">Termine</a>.</p>';
     echo '<p class="markt-quellen"><a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></p>';

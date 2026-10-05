@@ -27,25 +27,25 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf.html');
 pruefe('Vorlage hat Ortswahl, Jetzt-Zeile und Markierung', [str_contains($vorlage, 'class="ortswahl-zahl"'), str_contains($vorlage, 'class="jetzt-feld jetzt-neu"'), substr_count($vorlage, 'aria-current="page"') >= 1], [true, true, true]);
 
-echo "Ausgabe-Wahl\n";
-$h = ma21_kopf_ortswahl($vorlage, ['merzenich' => 86, 'golzheim' => 1, 'girbelsrath' => 0, 'morschenich' => 8, 'buergewald' => 7]);
-pruefe('Zahlen aus WordPress, Einzahl, Adressen /ort/…/', [str_contains($h, '<a href="/ort/merzenich/"><span class="ortswahl-name">Merzenich</span><span class="ortswahl-zahl">86 Meldungen</span></a>'), str_contains($h, '<span class="ortswahl-zahl">1 Meldung</span>')], [true, true]);
-pruefe('Ort ohne Meldung ohne Zahl, alte Zahlen und /merzenich/-Links weg', [str_contains($h, '<a href="/ort/girbelsrath/"><span class="ortswahl-name">Girbelsrath</span></a>'), str_contains($h, '94 Meldungen'), preg_match('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/"#', $h)], [true, false, 0]);
-pruefe('Schublade „Ortsteile“ zeigt auf /ort/…/', substr_count($h, 'href="/ort/golzheim/"') >= 2, true);
+echo "Ausgabe-Wahl (ohne Zahlen, Vorgabe Betreiber 05.10.2026)\n";
+$h = ma21_kopf_ortswahl($vorlage);
+pruefe('Adressen /ort/…/, Namen bleiben', str_contains($h, '<a href="/ort/merzenich/"><span class="ortswahl-name">Merzenich</span></a>'), true);
+pruefe('Keine Zahl mehr: kein ortswahl-zahl, kein „Meldungen“ in der Wahl', [str_contains($h, 'ortswahl-zahl'), (bool) preg_match('#ortswahl-liste.*?\d+ Meldung#s', $h)], [false, false]);
+pruefe('Keine alten /merzenich/-Links, Schublade zeigt auf /ort/…/', [preg_match('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/"#', $h), substr_count($h, 'href="/ort/golzheim/"') >= 2], [0, true]);
 $GLOBALS['t'] = ['tax' => true, 'obj' => new WP_Term('golzheim', 'Golzheim'), 'single' => '', 'archiv' => ''];
-$h = ma21_kopf_ortswahl($vorlage, ['golzheim' => 12]);
+$h = ma21_kopf_ortswahl($vorlage);
 pruefe('Auf /ort/golzheim/: Auswahl „Golzheim“, nur dieser Ort markiert', [str_contains($h, '<span class="ortswahl-aktuell">Golzheim</span>'), preg_match_all('#<a href="/ort/[a-z]+/" aria-current="page">#', $h), str_contains($h, '<a href="/ort/golzheim/" aria-current="page">')], [true, 1, true]);
 $GLOBALS['t'] = ['tax' => false, 'obj' => null, 'single' => '', 'archiv' => ''];
 
 echo "\nMerzenich · Jetzt\n";
-$d = ['neu' => ['iso' => '2026-10-03T14:02:00+02:00', 'zeit' => '03.10. · 14:02 Uhr', 'url' => '/leben/kirmes/', 'titel' => 'Kirmes & Markt'], 'daten' => ['2026-10-03T14:02:00+02:00', '2026-10-03T09:00:00+02:00', '2026-10-02T18:00:00+02:00'], 'termin' => ['url' => '/termine/kirmes/', 'titel' => 'Kirmes', 'wann' => '05.10., 14:00 Uhr']];
+$d = ['neu' => ['iso' => '2026-10-03T14:02:00+02:00', 'zeit' => '03.10. · 14:02 Uhr', 'url' => '/leben/kirmes/', 'titel' => 'Kirmes & Markt'], 'daten' => ['2026-10-03T14:02:00+02:00'], 'termin' => ['url' => '/termine/kirmes/', 'titel' => 'Kirmes', 'wann' => '05.10., 14:00 Uhr']];
 $h = ma21_kopf_jetzt($vorlage, $d);
 pruefe('Neu: jüngste veröffentlichte Meldung mit Uhrzeit, Titel maskiert', str_contains($h, '<span class="jetzt-feld jetzt-neu">Neu <time datetime="2026-10-03T14:02:00+02:00">03.10. · 14:02 Uhr</time> <a href="/leben/kirmes/">Kirmes &amp; Markt</a></span>'), true);
 pruefe('Entwurf der Vorlage (Stollenwerk) nicht mehr verlinkt', str_contains($h, 'stollenwerk'), false);
-pruefe('Heute 2 neue Meldungen, sichtbar, Daten für kopf.js', str_contains($h, '<span class="jetzt-feld jetzt-heute" data-daten="2026-10-03T14:02:00+02:00 2026-10-03T09:00:00+02:00 2026-10-02T18:00:00+02:00">Heute 2 neue Meldungen</span>'), true);
+pruefe('Kein „Heute n neue Meldungen“, kein Feld für kopf.js zum Zählen', [str_contains($h, 'jetzt-heute'), str_contains($h, 'neue Meldung')], [false, false]);
 pruefe('Nächster Termin mit Datum', str_contains($h, '<span class="jetzt-feld jetzt-termin">Nächster Termin <a href="/termine/kirmes/">Kirmes</a> · 05.10., 14:00 Uhr</span>'), true);
-$h = ma21_kopf_jetzt($vorlage, ['neu' => null, 'daten' => ['2026-09-30T10:00:00+02:00'], 'termin' => null]);
-pruefe('Ohne Meldung von heute und ohne Termin: Felder versteckt, kein Rest der Vorlage', [str_contains($h, '<span class="jetzt-feld jetzt-neu" hidden></span>'), str_contains($h, 'jetzt-heute" data-daten="2026-09-30T10:00:00+02:00" hidden></span>'), str_contains($h, '<span class="jetzt-feld jetzt-termin" hidden></span>'), str_contains($h, 'Stollenwerk')], [true, true, true, false]);
+$h = ma21_kopf_jetzt($vorlage, ['neu' => null, 'daten' => [], 'termin' => null]);
+pruefe('Ohne Meldung und Termin: Felder versteckt, kein Rest der Vorlage', [str_contains($h, '<span class="jetzt-feld jetzt-neu" hidden></span>'), str_contains($h, '<span class="jetzt-feld jetzt-termin" hidden></span>'), str_contains($h, 'Stollenwerk')], [true, true, false]);
 pruefe('Vorlage ohne Jetzt-Zeile bleibt unverändert', ma21_kopf_jetzt('<nav>x</nav>', $d), '<nav>x</nav>');
 
 echo "\nBesuchte Seite\n";

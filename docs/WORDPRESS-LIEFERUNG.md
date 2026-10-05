@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.1 · Core-Plugin 1.20.6 (Historie unten)
+5. Oktober 2026 · Theme 21.10.2 · Core-Plugin 1.20.7 (Historie unten)
+
+## Neu in Theme 21.10.2 / Plugin 1.20.7 (05.10.2026): keine Zahlen mehr auf der Seite
+
+Vorgabe Betreiber: Wie viele Meldungen es gibt, steht nirgends mehr („unprofessionell“). Entfernt:
+- Zählzeile „N Meldungen“ auf Rubriken, Ortsseiten, Suche und „Alle Meldungen“ (`archive.php`); Zahl in der Ausgabe-Wahl im Kopf und „Heute n neue Meldungen“ in der Zeile „Merzenich · Jetzt“ (`ma21_kopf_*`, das Feld fehlt, also rechnet `assets/kopf.js` auch nichts nach).
+- Stellen- und Immobilienmarkt: „32 Stellen“ und „13 Anzeigen“ je Ort (auch im Block aus dem Repository); Tipps: „6 Termine“; Unternehmen: Zählzeile.
+- Vereinsliste „42 Vereine“, Sportvereine „3 Einträge“ je Sportart (Plugin), Archiv „20 Meldungen“ je Monat, Themenliste mit Zahlen (Plugin), „0 Kommentare“ unter Artikeln (Überschrift heißt jetzt „Kommentare“).
+- `qa/wordpress/kopf-test.php` prüft, dass im Kopf keine Zahl steht.
 
 ## Neu in Theme 21.10.1 / Plugin 1.20.6 (05.10.2026): ohne Coolify, keine leeren Seiten mehr
 
