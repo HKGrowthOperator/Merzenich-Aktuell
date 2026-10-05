@@ -28,8 +28,16 @@ function ma_dashboard(): void {
     ]);
     $pending_partner = (int)$partner_q->found_posts;
 
+    // Redaktions-E-Mail (1.21.0): Empfänger für Formulare, Partner-Anträge und Partner-Hinweise; leer = Admin-E-Mail.
+    if (isset($_POST['ma_redaktion_mail_speichern']) && check_admin_referer('ma_redaktion_mail')) {
+        $mail = sanitize_email(wp_unslash((string)($_POST['ma_editorial_email'] ?? '')));
+        if ($mail === '') { delete_option('ma_editorial_email'); echo '<div class="notice notice-success"><p>Redaktions-E-Mail entfernt; es gilt die Admin-E-Mail.</p></div>'; }
+        elseif (is_email($mail)) { update_option('ma_editorial_email', $mail, false); echo '<div class="notice notice-success"><p>Redaktions-E-Mail gespeichert.</p></div>'; }
+        else echo '<div class="notice notice-error"><p>Das ist keine gültige E-Mail-Adresse.</p></div>';
+    }
+    $abgleich = (string)get_option('ma_abgleich_geprueft', '');
     echo '<div class="wrap"><h1>Merzenich Aktuell – Aktualitätscheck</h1><table class="widefat striped"><tbody>';
-    echo '<tr><th>Letzter News-Check</th><td>'.esc_html((string)get_option('ma_last_news_check','nicht dokumentiert')).'</td></tr>';
+    echo '<tr><th>Letzter Abgleich</th><td>'.esc_html($abgleich !== '' ? mysql2date('d.m.Y, H:i', $abgleich).' Uhr' : 'noch nicht gelaufen').'</td></tr>';
     echo '<tr><th>Aktueller Hero</th><td>'.($hero ? esc_html(get_the_title($hero)) : 'Kein veröffentlichter Beitrag').'</td></tr>';
     echo '<tr><th>Hero älter als 7 Tage</th><td>'.($old?'<strong style="color:#b71920">JA – prüfen</strong>':'Nein').'</td></tr>';
     echo '<tr><th>Kommende Events</th><td>'.count($events).'</td></tr>';
@@ -38,7 +46,11 @@ function ma_dashboard(): void {
     echo '<tr><th>Unreviewed Drafts</th><td>'.esc_html((string)ma_count_unreviewed()).'</td></tr>';
     echo '<tr><th>Partner-Einreichungen</th><td><strong>'.esc_html((string)$pending_partner).'</strong> · <a href="'.esc_url(admin_url('users.php?page=ma-partner-zugaenge')).'">prüfen</a></td></tr>';
     echo '<tr><th>Kommentare zur Freigabe</th><td><strong>'.esc_html((string)$pending_comments).'</strong> · <a href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Sammelfreigabe</a></td></tr>';
-    echo '</tbody></table></div>';
+    echo '</tbody></table>';
+    echo '<h2>Redaktions-E-Mail</h2><form method="post">';
+    wp_nonce_field('ma_redaktion_mail');
+    echo '<p>An diese Adresse gehen Einsendungen der Formulare, Partner-Anträge und Hinweise auf Beiträge von Partnern. Leer gilt die Admin-E-Mail (<code>'.esc_html((string)get_option('admin_email')).'</code>). Alles landet zusätzlich im <a href="'.esc_url(admin_url('edit.php?post_type=ma_eingang')).'">Eingang</a>.</p>';
+    echo '<p><input type="email" class="regular-text" name="ma_editorial_email" value="'.esc_attr((string)get_option('ma_editorial_email', '')).'" placeholder="redaktion@merzenich-aktuell.de"> <button class="button button-primary" name="ma_redaktion_mail_speichern" value="1">Speichern</button></p></form></div>';
 }
 
 function ma_count_posts_without_thumbnail(): int {
@@ -102,11 +114,13 @@ function ma_sport_match_from_request(string $prefix, bool $with_score=false): ar
     $away = sanitize_text_field(wp_unslash($_POST[$prefix.'_away'] ?? ''));
     $date = sanitize_text_field(wp_unslash($_POST[$prefix.'_date'] ?? ''));
     $score = $with_score ? sanitize_text_field(wp_unslash($_POST[$prefix.'_score'] ?? '')) : '';
+    $report = $with_score ? esc_url_raw(wp_unslash($_POST[$prefix.'_report'] ?? '')) : '';
 
     if ($home === '' && $away === '' && $date === '' && $score === '') return [];
 
     $match = ['home'=>$home,'away'=>$away,'date'=>$date];
     if ($with_score) $match['score']=$score;
+    if ($report !== '') $match['report']=$report;
     return $match;
 }
 
@@ -116,6 +130,8 @@ function ma_sport_table_from_request(): array {
     $played = isset($_POST['table_played']) && is_array($_POST['table_played']) ? $_POST['table_played'] : [];
     $points = isset($_POST['table_points']) && is_array($_POST['table_points']) ? $_POST['table_points'] : [];
     $goals = isset($_POST['table_goals']) && is_array($_POST['table_goals']) ? $_POST['table_goals'] : [];
+    $spalte = static fn(string $k): array => isset($_POST[$k]) && is_array($_POST[$k]) ? $_POST[$k] : [];
+    [$wins, $draws, $losses] = [$spalte('table_wins'), $spalte('table_draws'), $spalte('table_losses')];
     $table = [];
 
     for ($i=0; $i<16; $i++) {
@@ -125,6 +141,9 @@ function ma_sport_table_from_request(): array {
             'rank'=>sanitize_text_field(wp_unslash($ranks[$i] ?? '')),
             'team'=>$team,
             'played'=>sanitize_text_field(wp_unslash($played[$i] ?? '')),
+            'wins'=>sanitize_text_field(wp_unslash($wins[$i] ?? '')),
+            'draws'=>sanitize_text_field(wp_unslash($draws[$i] ?? '')),
+            'losses'=>sanitize_text_field(wp_unslash($losses[$i] ?? '')),
             'points'=>sanitize_text_field(wp_unslash($points[$i] ?? '')),
             'goals'=>sanitize_text_field(wp_unslash($goals[$i] ?? '')),
         ];
@@ -164,7 +183,10 @@ function ma_sport_settings_page(): void {
     $next = (array)($d['next_match'] ?? []);
     $table = array_values((array)($d['table'] ?? []));
 
-    echo '<div class="wrap"><h1>Sport</h1><p>Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden hier gemeinsam gepflegt. Keine JSON-Eingabe erforderlich.</p><form method="post">';
+    echo '<div class="wrap"><h1>Sport</h1><p>Ergebnis, offenes Spiel, nächstes Spiel und Tabelle des SC Merzenich werden hier gepflegt. Was hier steht, zeigen Sportseite, Sportmodul und Startseite (seit 1.21.0 die einzige Quelle; ohne Eintrag gilt der Stand aus dem Repository). Nach jedem Spieltag kurz eintragen, die Quelle ist <a href="https://www.fussball.de/" target="_blank" rel="noopener">FUSSBALL.DE</a>.</p>';
+    $offen = ma_sport_ueberfaellig();
+    if ($offen !== '') echo '<div class="notice notice-warning inline"><p>' . esc_html($offen) . '</p></div>';
+    echo '<form method="post">';
     wp_nonce_field('ma_sport_save');
 
     echo '<h2>Aus JSON übernehmen</h2><p>Denselben Datenstand, den die statische Seite unter <code>/api/sport-current.json</code> ausliefert, hier einfügen. Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden daraus gefüllt; ein unbestätigtes Ergebnis landet als offenes Spiel.</p>';
@@ -186,16 +208,18 @@ function ma_sport_settings_page(): void {
         if ($with_score) echo '<tr><th>Ergebnis</th><td><input class="regular-text" name="'.esc_attr($prefix).'_score" value="'.esc_attr((string)($match['score'] ?? '')).'" placeholder="2 : 1"></td></tr>';
         echo '<tr><th>Gast</th><td><input class="regular-text" name="'.esc_attr($prefix).'_away" value="'.esc_attr((string)($match['away'] ?? '')).'"></td></tr>';
         echo '<tr><th>Datum / Uhrzeit</th><td><input class="regular-text" name="'.esc_attr($prefix).'_date" value="'.esc_attr((string)($match['date'] ?? '')).'" placeholder="18.09.2026 · 19:30 Uhr"></td></tr>';
+        if ($with_score) echo '<tr><th>Spielbericht (Link)</th><td><input class="regular-text" type="url" name="'.esc_attr($prefix).'_report" value="'.esc_attr((string)($match['report'] ?? '')).'" placeholder="https://www.fussball.de/…"></td></tr>';
         echo '</table>';
     }
 
-    echo '<h2>Tabelle</h2><p>Nur Zeilen mit Mannschaft werden gespeichert.</p><div style="overflow:auto"><table class="widefat striped" style="max-width:900px"><thead><tr><th style="width:70px">Pl.</th><th>Mannschaft</th><th style="width:80px">Sp.</th><th style="width:80px">Pkt.</th><th style="width:120px">Tore</th></tr></thead><tbody>';
+    echo '<h2>Tabelle</h2><p>Nur Zeilen mit Mannschaft werden gespeichert.</p><div style="overflow:auto"><table class="widefat striped" style="max-width:900px"><thead><tr><th style="width:70px">Pl.</th><th>Mannschaft</th><th style="width:70px">Sp.</th><th style="width:60px">S</th><th style="width:60px">U</th><th style="width:60px">N</th><th style="width:70px">Pkt.</th><th style="width:110px">Tore</th></tr></thead><tbody>';
     for ($i=0; $i<16; $i++) {
         $row = (array)($table[$i] ?? []);
         echo '<tr>';
         echo '<td><input style="width:55px" name="table_rank['.$i.']" value="'.esc_attr((string)($row['rank'] ?? '')).'"></td>';
         echo '<td><input style="width:100%" name="table_team['.$i.']" value="'.esc_attr((string)($row['team'] ?? '')).'"></td>';
-        echo '<td><input style="width:65px" name="table_played['.$i.']" value="'.esc_attr((string)($row['played'] ?? '')).'"></td>';
+        echo '<td><input style="width:55px" name="table_played['.$i.']" value="'.esc_attr((string)($row['played'] ?? '')).'"></td>';
+        foreach (['wins', 'draws', 'losses'] as $k) echo '<td><input style="width:45px" name="table_'.$k.'['.$i.']" value="'.esc_attr((string)($row[$k] ?? '')).'"></td>';
         echo '<td><input style="width:65px" name="table_points['.$i.']" value="'.esc_attr((string)($row['points'] ?? '')).'"></td>';
         echo '<td><input style="width:100px" name="table_goals['.$i.']" value="'.esc_attr((string)($row['goals'] ?? '')).'" placeholder="12:8"></td>';
         echo '</tr>';

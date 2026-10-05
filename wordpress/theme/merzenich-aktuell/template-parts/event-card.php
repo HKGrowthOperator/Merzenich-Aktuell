@@ -14,7 +14,7 @@ $organizer=(string)get_post_meta(get_the_ID(),'ma_event_organizer',true);
     <div class="eyebrow"><?php echo ma_theme_location_label(); ?> · Termin</div>
     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <div class="event-card__meta">
-      <?php if($start): ?><span><?php echo esc_html(wp_date('d.m.Y · H:i',$start)); ?> Uhr<?php if($end && wp_date('Y-m-d',$end)===wp_date('Y-m-d',$start)): ?>–<?php echo esc_html(wp_date('H:i',$end)); ?> Uhr<?php endif; ?></span><?php endif; ?>
+      <?php if($start): ?><span><?php echo esc_html(wp_date('d.m.Y · H:i',$start)); ?> Uhr<?php if($end && $end>$start && wp_date('Y-m-d',$end)===wp_date('Y-m-d',$start)): ?>–<?php echo esc_html(wp_date('H:i',$end)); ?> Uhr<?php endif; ?></span><?php endif; ?>
       <?php if($place!==''): ?><span><?php echo esc_html($place); ?></span><?php endif; ?>
       <?php if($organizer!==''): ?><span><?php echo esc_html($organizer); ?></span><?php endif; ?>
     </div>

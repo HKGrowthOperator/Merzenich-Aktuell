@@ -1,6 +1,14 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
-function ma_register_sport_hooks(): void { add_shortcode('ma_sport','ma_sport_shortcode'); }
+function ma_register_sport_hooks(): void {
+    add_shortcode('ma_sport','ma_sport_shortcode');
+    // Dashboard-Hinweis, sobald ein Ergebnis fehlt (1.21.0).
+    add_action('admin_notices', function (): void {
+        if (!current_user_can('manage_options') || !function_exists('get_current_screen') || (get_current_screen()->id ?? '') !== 'dashboard') return;
+        $offen = ma_sport_ueberfaellig();
+        if ($offen !== '') echo '<div class="notice notice-warning"><p><strong>Sport:</strong> ' . esc_html($offen) . ' <a href="' . esc_url(admin_url('admin.php?page=ma-sport')) . '">Jetzt eintragen</a></p></div>';
+    });
+}
 /**
  * Der eine Datenstand. wp_parse_args fuellt fehlende Schluessel, prueft aber
  * keine Typen: ein kaputter Optionswert (String statt Array, Zeile ohne
@@ -47,7 +55,7 @@ function ma_sport_import_from_json(string $json) {
     $spiel = static function ($m, bool $mit_ergebnis) use ($datum): array {
         if (!is_array($m)) return [];
         $out = ['home'=>(string)($m['home'] ?? ''), 'away'=>(string)($m['away'] ?? ''), 'date'=>$datum($m['date'] ?? '')];
-        if ($mit_ergebnis) $out['score'] = (string)($m['score'] ?? '');
+        if ($mit_ergebnis) { $out['score'] = (string)($m['score'] ?? ''); if (!empty($m['reportUrl'])) $out['report'] = (string)$m['reportUrl']; }
         return ($out['home'] === '' && $out['away'] === '') ? [] : $out;
     };
 
@@ -61,6 +69,9 @@ function ma_sport_import_from_json(string $json) {
             'rank'   => (string)($row['place'] ?? $row['rank'] ?? ''),
             'team'   => (string)$row['team'],
             'played' => (string)($row['played'] ?? ''),
+            'wins'   => (string)($row['wins'] ?? ''),
+            'draws'  => (string)($row['draws'] ?? ''),
+            'losses' => (string)($row['losses'] ?? ''),
             'points' => (string)($row['points'] ?? ''),
             'goals'  => (string)($row['goals'] ?? ''),
         ];
@@ -78,6 +89,52 @@ function ma_sport_import_from_json(string $json) {
         'table'         => $tabelle,
     ];
 }
+/** Datum aus dem Backend („18.09.2026 · 19:30 Uhr“ oder ISO) als ISO 8601 in Berliner Zeit; '' wenn unlesbar. */
+function ma_sport_datum_iso(string $t): string {
+    $t = trim($t);
+    if ($t === '') return '';
+    $zone = new DateTimeZone('Europe/Berlin');
+    if (preg_match('/^(\d{1,2})\.(\d{1,2})\.(\d{4})(?:\D+(\d{1,2}):(\d{2}))?/', $t, $m)) {
+        if (!checkdate((int)$m[2], (int)$m[1], (int)$m[3])) return '';
+        return (new DateTimeImmutable(sprintf('%04d-%02d-%02d %02d:%02d', $m[3], $m[2], $m[1], (int)($m[4] ?? 0), (int)($m[5] ?? 0)), $zone))->format('c');
+    }
+    try { return (new DateTimeImmutable($t, $zone))->setTimezone($zone)->format('c'); } catch (Exception $e) { return ''; }
+}
+
+/**
+ * Backend-Datenstand im Format von /api/sport-current.json (liest assets/v20.js,
+ * Theme 21.11.0: eine Quelle für Sportseite, Startseite und [ma_sport]). null,
+ * solange im Backend nichts gepflegt ist; dann gilt der Stand im Repository.
+ */
+function ma_sport_als_json(): ?array {
+    $d = ma_sport_data();
+    if (!$d['last_match'] && !$d['pending_match'] && !$d['next_match'] && !$d['table']) return null;
+    $spiel = static fn(array $m): array => ['date' => ma_sport_datum_iso((string)($m['date'] ?? '')), 'home' => (string)($m['home'] ?? ''), 'away' => (string)($m['away'] ?? '')];
+    $last = null;
+    if ($d['last_match']) $last = $spiel($d['last_match']) + ['score' => (string)($d['last_match']['score'] ?? ''), 'confirmed' => true] + (!empty($d['last_match']['report']) ? ['reportUrl' => (string)$d['last_match']['report']] : []);
+    elseif ($d['pending_match']) $last = $spiel($d['pending_match']) + ['score' => '', 'confirmed' => false];
+    $zahl = static fn($v): int => (int)preg_replace('/[^0-9-]/', '', (string)$v);
+    $tabelle = array_map(static function (array $r) use ($zahl): array {
+        $tore = array_map('intval', array_pad(explode(':', str_replace(' ', '', (string)($r['goals'] ?? ''))), 2, 0));
+        return ['place' => $zahl($r['rank'] ?? ''), 'team' => (string)$r['team'], 'played' => $zahl($r['played'] ?? ''), 'wins' => $zahl($r['wins'] ?? ''), 'draws' => $zahl($r['draws'] ?? ''), 'losses' => $zahl($r['losses'] ?? ''),
+            'goals' => (string)($r['goals'] ?? ''), 'diff' => $tore[0] - $tore[1], 'points' => $zahl($r['points'] ?? ''), 'homeTeam' => (bool)preg_match('/merzenich/i', (string)$r['team'])];
+    }, $d['table']);
+    $host = (string)parse_url($d['source_url'], PHP_URL_HOST);
+    return ['generated' => ma_sport_datum_iso($d['checked_at']) ?: (string)wp_date('c'), 'source' => $host !== '' ? strtoupper((string)preg_replace('/^www\./', '', $host)) : 'Redaktion', 'sourceUrl' => $d['source_url'], 'quelle' => 'backend',
+        'lastMatch' => $last, 'nextMatch' => $d['next_match'] ? $spiel($d['next_match']) : null, 'table' => $tabelle];
+}
+
+/** Hinweis für die Redaktion: das nächste Spiel ist seit mehr als drei Stunden vorbei, ein neueres Ergebnis fehlt. '' = alles aktuell. */
+function ma_sport_ueberfaellig(?int $jetzt = null): string {
+    $d = ma_sport_data();
+    if (!$d['next_match']) return '';
+    $naechstes = ma_sport_datum_iso((string)($d['next_match']['date'] ?? ''));
+    if ($naechstes === '' || strtotime($naechstes) + 3 * 3600 > ($jetzt ?? time())) return '';
+    $letztes = $d['last_match'] ? ma_sport_datum_iso((string)($d['last_match']['date'] ?? '')) : '';
+    if ($letztes !== '' && strtotime($letztes) >= strtotime($naechstes)) return '';
+    return 'Das Spiel ' . trim(($d['next_match']['home'] ?? '') . ' – ' . ($d['next_match']['away'] ?? '')) . ' (' . ($d['next_match']['date'] ?? '') . ') ist vorbei. Bitte Ergebnis, nächstes Spiel und Tabelle eintragen.';
+}
+
 function ma_sport_shortcode(): string {
     $d=ma_sport_data();
     if (!$d['last_match'] && !$d['next_match'] && !$d['pending_match']) return '<p class="ma-empty">Sportdaten werden redaktionell gepflegt. Noch kein freigegebener Datenstand.</p>';

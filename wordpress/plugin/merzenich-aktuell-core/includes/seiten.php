@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-03';
+const MA_SEITEN_VERSION = '2026-10-05';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -125,8 +125,11 @@ function ma_seite_meldung_senden(): string {
         . '<p>Vereine, Gemeinde, Kirchen, Schulen und Leserinnen und Leser können Hinweise einsenden. Hilfreich sind: <strong>was</strong> passiert, <strong>wann</strong> und <strong>wo</strong>, <strong>wer</strong> der Veranstalter oder Ansprechpartner ist, eine Kontaktmöglichkeit für Rückfragen und, wenn vorhanden, ein Bild mit der Angabe, wer es aufgenommen hat.</p>'
         . '<p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Was wir nicht veröffentlichen: anonyme Vorwürfe gegen Einzelpersonen, Werbung ohne Kennzeichnung und Inhalte, deren Rechte nicht beim Einsender liegen.</p>'
         . '<p><strong>Familienanzeigen</strong> (Hochzeit, Geburt, Jubiläum, Nachruf) geben Sie bitte mit Foto und dem Einverständnis der Betroffenen über <a href="/anzeigen/aufgeben/">Anzeige aufgeben</a> auf.</p>'
-        . '<p>Lieber per E-Mail? <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>. Für Termine gibt es ein <a href="/termin-melden/">eigenes Formular</a>.</p>'
-        . '[ma_formular typ="meldung"]';
+        . '<p>Lieber per E-Mail? <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>. Für Termine gibt es ein <a href="/termin-melden/">eigenes Formular</a>, Fotos für das Foto des Tages schicken Sie <a href="#foto-des-tages">weiter unten</a>.</p>'
+        . '<div id="formular"></div>[ma_formular typ="meldung"]'
+        . '<h2 id="foto-des-tages">Foto des Tages einsenden</h2>'
+        . '<p>Ein schöner Blick auf Merzenich, Golzheim, Girbelsrath, Morschenich oder Bürgewald? Die Redaktion wählt aus den Einsendungen das Foto des Tages für die Startseite, mit Ihrem Namen im Bildnachweis. Am besten im Querformat und ohne erkennbare Personen.</p>'
+        . '[ma_formular typ="foto"]';
 }
 
 function ma_seite_termin_melden(): string {

@@ -66,6 +66,10 @@ function ma_partner_antrag_shortcode($atts): string {
     }
 
     $datenschutz = function_exists('get_privacy_policy_url') ? (string)get_privacy_policy_url() : '';
+    // Auf Unternehmensseiten (typ="unternehmen" usw.) nur die passenden Arten, nicht Polizei oder Feuerwehr.
+    $typen = ma_partner_antrag_typen();
+    $firma = ['unternehmen', 'immobilien', 'werbung'];
+    if (in_array(sanitize_key((string)$a['typ']), $firma, true)) $typen = array_intersect_key($typen, array_flip($firma));
     ob_start(); ?>
     <form class="ma-partner-antrag" id="partner-antrag" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
       <input type="hidden" name="action" value="ma_partner_antrag">
@@ -75,7 +79,7 @@ function ma_partner_antrag_shortcode($atts): string {
       <?php if ($status === 'fehler' && $fehler !== ''): ?><p class="ma-partner-antrag__fehler" role="alert"><?php echo esc_html($fehler); ?></p><?php endif; ?>
       <p><label for="ma-pa-organisation">Organisation / Unternehmen *</label><input id="ma-pa-organisation" name="organisation" required maxlength="160" autocomplete="organization"></p>
       <p><label for="ma-pa-typ">Art *</label><select id="ma-pa-typ" name="typ" required><option value="">Bitte wählen</option>
-        <?php foreach (ma_partner_antrag_typen() as $key => $label): ?><option value="<?php echo esc_attr($key); ?>" <?php selected($vorauswahl, $key); ?>><?php echo esc_html($label); ?></option><?php endforeach; ?>
+        <?php foreach ($typen as $key => $label): ?><option value="<?php echo esc_attr($key); ?>" <?php selected($vorauswahl, $key); ?>><?php echo esc_html($label); ?></option><?php endforeach; ?>
       </select></p>
       <p><label for="ma-pa-name">Ansprechperson *</label><input id="ma-pa-name" name="name" required maxlength="120" autocomplete="name"></p>
       <p><label for="ma-pa-email">E-Mail *</label><input id="ma-pa-email" name="email" type="email" required maxlength="190" autocomplete="email"></p>
@@ -113,8 +117,11 @@ function ma_partner_antrag_process(array $in): array {
     if ($org === '' || !isset($typen[$typ]) || $name === '' || !$email || !is_email($email)) return ['ok' => false, 'fehler' => 'felder'];
     if (empty($in['einwilligung'])) return ['ok' => false, 'fehler' => 'einwilligung'];
 
-    $to = sanitize_email((string)get_option('admin_email'));
-    if (!$to || !is_email($to)) return ['ok' => false, 'fehler' => 'versand'];
+    // Seit 1.21.0 auch im Eingang (nichts geht verloren, wenn der Mailversand fehlt).
+    $eingang = function_exists('ma_eingang_speichern') ? ma_eingang_speichern(['typ' => 'partner', 'art' => $typ, 'name' => $name, 'email' => $email, 'telefon' => $tel, 'betreff' => $org.' ('.$typen[$typ].')', 'text' => $text]) : 0;
+    $to = sanitize_email((string)get_option('ma_editorial_email', get_option('admin_email')));
+    if (!$to || !is_email($to)) $to = sanitize_email((string)get_option('admin_email'));
+    if (!$to || !is_email($to)) return $eingang ? ['ok' => true, 'fehler' => ''] : ['ok' => false, 'fehler' => 'versand'];
 
     $subject = '[Merzenich Aktuell] Antrag auf Partner-Zugang: '.$org.' ('.$typen[$typ].')';
     $body = "Neuer Antrag auf einen Partner-Zugang.\n\n";
@@ -134,7 +141,8 @@ function ma_partner_antrag_process(array $in): array {
     $body .= ":\n".admin_url('users.php?page=ma-partner-zugaenge')."\n";
 
     $headers = ['Reply-To: '.str_replace(["\r", "\n", '<', '>'], '', $name).' <'.$email.'>'];
-    if (!wp_mail($to, $subject, $body, $headers)) return ['ok' => false, 'fehler' => 'versand'];
+    if ($eingang) $body .= "\nIm Eingang: ".admin_url('post.php?post='.$eingang.'&action=edit')."\n";
+    if (!wp_mail($to, $subject, $body, $headers) && !$eingang) return ['ok' => false, 'fehler' => 'versand'];
     return ['ok' => true, 'fehler' => ''];
 }
 

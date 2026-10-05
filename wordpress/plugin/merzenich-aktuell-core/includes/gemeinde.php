@@ -65,9 +65,29 @@ function ma_gemeinde_shortcode($atts = []): string {
             . esc_html($r['hinweis'] ?? '') . ' <a href="' . esc_url($r['termineOnline'] ?? '') . '" target="_blank" rel="noopener">Termin online buchen</a>.</p>'
             . ma_gemeinde_quelle((array)($r['quelle'] ?? [])) . '</div>';
     }
+    if ($teil === 'notdienste') return ma_gemeinde_notdienste();
     return '';
+}
+
+/** Notrufe und Bereitschaftsdienste (bundesweit bzw. NRW), oben auf /service/ (1.21.0). */
+function ma_gemeinde_notdienste(): string {
+    $n = [
+        ['112', '112', 'Feuerwehr und Rettungsdienst', 'Notruf bei Feuer, Unfall und lebensbedrohlichen Notfällen'],
+        ['110', '110', 'Polizei', 'Notruf bei Straftaten und Gefahr'],
+        ['116 117', '116117', 'Ärztlicher Bereitschaftsdienst', 'Wenn die Hausarztpraxis geschlossen ist: abends, nachts, am Wochenende und an Feiertagen'],
+        ['0228 19240', '022819240', 'Giftnotruf NRW', 'Giftinformationszentrum Nordrhein-Westfalen in Bonn, rund um die Uhr'],
+        ['0800 111 0 111', '08001110111', 'Telefonseelsorge', 'Kostenlos und anonym, rund um die Uhr'],
+    ];
+    $h = '<div class="ma-gemeinde ma-gemeinde--notdienste"><ul class="ma-notdienste">';
+    foreach ($n as [$zeige, $tel, $titel, $text]) $h .= '<li><a href="tel:' . esc_attr($tel) . '"><b>' . esc_html($zeige) . '</b></a> <strong>' . esc_html($titel) . '</strong><br><span>' . esc_html($text) . '</span></li>';
+    return $h . '</ul><p>Dienstbereite Apotheke in der Nähe: <a href="https://www.aponet.de/apotheke/notdienstsuche" target="_blank" rel="noopener">Notdienstsuche der Apotheken (aponet.de)</a>.</p></div>';
 }
 
 function ma_register_gemeinde_hooks(): void {
     add_shortcode('ma_gemeinde', 'ma_gemeinde_shortcode');
+    // /service/ heißt im Menü „Notdienste & Rathaus“: Notrufe stehen oben, vor Rathaus und Abfall.
+    add_filter('the_content', function (string $c): string {
+        if (!is_page('service') || str_contains($c, 'ma-gemeinde--notdienste')) return $c;
+        return '<h2 id="notdienste">Notrufe und Notdienste</h2>' . ma_gemeinde_notdienste() . $c;
+    }, 12);
 }

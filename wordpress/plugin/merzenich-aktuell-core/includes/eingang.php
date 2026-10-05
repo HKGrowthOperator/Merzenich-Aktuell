@@ -24,7 +24,7 @@ add_action('init', function (): void {
     }
 });
 
-const MA_EINGANG_TYPEN = ['kontakt' => 'Kontakt', 'meldung' => 'Meldung', 'termin' => 'Termin', 'verein' => 'Verein', 'werbung' => 'Werbung', 'immobilie' => 'Immobilie', 'stelle' => 'Stellenanzeige', 'trauer' => 'Traueranzeige', 'familie' => 'Familienanzeige', 'partner' => 'Partner-Antrag', 'korrektur' => 'Korrektur'];
+const MA_EINGANG_TYPEN = ['kontakt' => 'Kontakt', 'meldung' => 'Meldung', 'termin' => 'Termin', 'verein' => 'Verein', 'werbung' => 'Werbung', 'immobilie' => 'Immobilie', 'stelle' => 'Stellenanzeige', 'trauer' => 'Traueranzeige', 'familie' => 'Familienanzeige', 'partner' => 'Partner-Antrag', 'korrektur' => 'Korrektur', 'foto' => 'Foto des Tages'];
 
 /** Legt eine Einsendung ab. $dateien: Pfade aus wp_handle_upload. Gibt die ID zurück (0 bei Fehler). */
 function ma_eingang_speichern(array $f, array $dateien = []): int {
@@ -32,7 +32,7 @@ function ma_eingang_speichern(array $f, array $dateien = []): int {
     $titel = (MA_EINGANG_TYPEN[$typ] ?? ucfirst($typ)) . ': ' . sanitize_text_field($f['betreff'] ?? '') . ' (' . sanitize_text_field($f['name'] ?? '') . ')';
     $id = wp_insert_post(['post_type' => 'ma_eingang', 'post_status' => 'ma_neu', 'post_title' => wp_strip_all_tags($titel), 'post_content' => sanitize_textarea_field($f['text'] ?? '')], true);
     if (is_wp_error($id) || !$id) return 0;
-    foreach (['typ', 'art', 'name', 'email', 'telefon', 'betreff', 'bildrechte'] as $k) if (isset($f[$k]) && $f[$k] !== '') update_post_meta($id, '_ma_eingang_' . $k, sanitize_text_field((string) $f[$k]));
+    foreach (['typ', 'art', 'name', 'email', 'telefon', 'betreff', 'bildrechte', 'fotograf', 'zustimmung'] as $k) if (isset($f[$k]) && $f[$k] !== '') update_post_meta($id, '_ma_eingang_' . $k, sanitize_text_field((string) $f[$k]));
     if ($dateien) {
         require_once ABSPATH . 'wp-admin/includes/image.php';
         foreach ($dateien as $pfad) {

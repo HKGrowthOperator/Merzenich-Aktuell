@@ -433,9 +433,9 @@ function ma_freigabe_typen(): array {
     return ['post', 'ma_event', 'ma_club', 'ma_business', 'ma_tip', 'ma_ad', 'ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice'];
 }
 
-/** Meldungen aus dem Abgleich (abgleich.php), die noch als Entwurf auf die Freigabe warten. */
+/** Meldungen und (seit 1.21.0) recherchierte Termine aus dem Abgleich (abgleich.php), die als Entwurf auf die Freigabe warten. */
 function ma_freigaben_abgleich(bool $nur_ids = false): array {
-    return get_posts(['post_type' => 'post', 'post_status' => 'draft', 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'DESC', 'fields' => $nur_ids ? 'ids' : 'all',
+    return get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'draft', 'posts_per_page' => 100, 'orderby' => 'date', 'order' => 'DESC', 'fields' => $nur_ids ? 'ids' : 'all',
         'meta_query' => [['key' => '_ma_abgleich_hash', 'compare' => 'EXISTS']]]);
 }
 

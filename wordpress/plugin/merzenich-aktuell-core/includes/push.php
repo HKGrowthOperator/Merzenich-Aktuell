@@ -260,6 +260,12 @@ function ma_push_nachricht_fuer(WP_Post $p): string {
 add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
     if ($p->post_type !== 'post' || $neu !== 'publish' || $alt === 'publish') return;
     if (!ma_push_moeglich() || get_post_meta($p->ID, 'ma_push_gesendet', true) !== '') return;
+    // Werbung bekommt keine Push-Nachricht (1.21.0).
+    if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) return;
+    // Bündeln: höchstens eine Nachricht je 10 Minuten, sonst schickt eine Sammelfreigabe
+    // für jede Meldung eine eigene (1.21.0).
+    if ((int) get_option('ma_push_zuletzt_geplant', 0) > time() - 10 * MINUTE_IN_SECONDS) { update_post_meta($p->ID, 'ma_push_gesendet', 'gebündelt'); return; }
+    update_option('ma_push_zuletzt_geplant', time(), false);
     update_post_meta($p->ID, 'ma_push_gesendet', current_time('mysql'));
     if (!wp_next_scheduled('ma_push_senden', [$p->ID])) wp_schedule_single_event(time() - 1, 'ma_push_senden', [$p->ID]);
     if (function_exists('spawn_cron')) spawn_cron();
@@ -270,6 +276,8 @@ add_action('ma_push_senden', 'ma_push_senden');
 function ma_push_senden(int $postId): void {
     $p = get_post($postId);
     if (!$p instanceof WP_Post || $p->post_status !== 'publish') return;
+    // Erst beim Speichern als Werbung gekennzeichnet (Kasten oder Unternehmens-Zugang): nicht senden.
+    if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) return;
     $k = ma_push_schluessel();
     if (!$k) return;
     global $wpdb; $t = ma_push_tabelle();

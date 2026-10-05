@@ -27,7 +27,7 @@
  *
  * Aufruf: node deploy/wordpress-import.mjs [--check]
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -222,6 +222,11 @@ for (const m of meldungen) {
     + '</item>');
 }
 
+// Recherchierte Termine mit "entwurf": true (inhalte/termine/*.json) kommen als
+// Entwurf in die Freigaben (Plugin, Freigaben-Seite); die Redaktion gibt sie frei.
+// Der Abgleich ändert den Status bestehender Termine nie.
+const entwurfTermine = new Set(readdirSync(join(wurzel, 'inhalte', 'termine')).filter((f) => f.endsWith('.json'))
+  .flatMap((f) => (JSON.parse(lies(`inhalte/termine/${f}`)).termine || []).filter((t) => t && t.entwurf === true).map((t) => t.slug)));
 for (const { t, id, inhalt, ort } of termine) {
   // Beitragsdatum = Stand der Terminseite, nicht der Beginn: WordPress stellt ein
   // veröffentlichtes Datum in der Zukunft auf „Geplant“ und zeigt den Termin nicht.
@@ -231,7 +236,7 @@ for (const { t, id, inhalt, ort } of termine) {
     + `<content:encoded>${cdata(inhalt)}</content:encoded><excerpt:encoded>${cdata(t.beschreibung || '')}</excerpt:encoded>`
     + `${zeile('wp:post_id', id)}${zeile('wp:post_date', cdata(lokal))}${zeile('wp:post_date_gmt', cdata(gmt))}`
     + `${zeile('wp:comment_status', 'closed')}${zeile('wp:ping_status', 'closed')}${zeile('wp:post_name', cdata(t.slug))}`
-    + `${zeile('wp:status', 'publish')}${zeile('wp:post_parent', 0)}${zeile('wp:post_type', 'ma_event')}${zeile('wp:is_sticky', 0)}`
+    + `${zeile('wp:status', entwurfTermine.has(t.slug) ? 'draft' : 'publish')}${zeile('wp:post_parent', 0)}${zeile('wp:post_type', 'ma_event')}${zeile('wp:is_sticky', 0)}`
     + (ort ? `<category domain="ma_location" nicename="${ort}">${cdata(ORTSTEILE[ort])}</category>` : '')
     + meta('ma_legacy_url', `/termine/${t.slug}/`)
     + meta('ma_event_start', lokalT(t.start)) + meta('ma_event_end', t.ohneEnde ? '' : lokalT(t.ende))

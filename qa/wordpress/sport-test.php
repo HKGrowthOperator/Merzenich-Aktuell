@@ -8,6 +8,7 @@ $GLOBALS['opt'] = [];
 function get_option($k, $d = []) { return $GLOBALS['opt'][$k] ?? $d; }
 function wp_parse_args($a, $d) { return array_merge($d, (array)$a); }
 function add_shortcode(...$a) {}
+function wp_date($f, $ts = null) { return (new DateTimeImmutable('@' . ($ts ?? time())))->setTimezone(new DateTimeZone('Europe/Berlin'))->format($f); }
 function esc_html($s) { return htmlspecialchars((string)$s, ENT_QUOTES); }
 function esc_url($s) { return (string)$s; }
 class WP_Error { public $m; function __construct($c, $m) { $this->m = $m; } function get_error_message() { return $this->m; } }
@@ -60,6 +61,30 @@ pruefe('pending traegt kein Ergebnis', array_key_exists('score', $r2['pending_ma
 echo "\nFehlerfaelle\n";
 pruefe('kaputtes JSON -> WP_Error', is_wp_error(ma_sport_import_from_json('{nein')), true);
 pruefe('leere Tabelle bleibt leer', ma_sport_import_from_json('{"table":"x"}')['table'], []);
+
+echo "\nBackend als einzige Quelle (1.21.0)\n";
+pruefe('Datum aus Backend-Text', ma_sport_datum_iso('27.09.2026 · 15:00 Uhr'), '2026-09-27T15:00:00+02:00');
+pruefe('Winterzeit', ma_sport_datum_iso('08.11.2026 · 14:30 Uhr'), '2026-11-08T14:30:00+01:00');
+pruefe('Unlesbares Datum', ma_sport_datum_iso('31.02.2026'), '');
+$GLOBALS['opt']['ma_sport_data'] = [];
+pruefe('Ohne Backend-Daten: null (Repository gilt)', ma_sport_als_json(), null);
+$GLOBALS['opt']['ma_sport_data'] = ['checked_at' => '05.10.2026 · 12:00 Uhr', 'source_url' => 'https://www.fussball.de/x',
+    'last_match' => ['home' => 'SC Merzenich', 'away' => 'SG Nörvenich-Hochkirchen', 'score' => '8 : 2', 'date' => '27.09.2026 · 15:00 Uhr', 'report' => 'https://www.fussball.de/bericht'],
+    'next_match' => ['home' => 'TuS Barmen', 'away' => 'SC Merzenich', 'date' => '04.10.2026 · 15:00 Uhr'],
+    'table' => [['rank' => '1', 'team' => 'SC Merzenich', 'played' => '7', 'wins' => '5', 'draws' => '1', 'losses' => '1', 'points' => '16', 'goals' => '25:8']]];
+$j = ma_sport_als_json();
+pruefe('Format wie sport-current.json: generated ISO', $j['generated'], '2026-10-05T12:00:00+02:00');
+pruefe('Letztes Spiel bestätigt mit Bericht', [$j['lastMatch']['score'], $j['lastMatch']['confirmed'], $j['lastMatch']['reportUrl']], ['8 : 2', true, 'https://www.fussball.de/bericht']);
+pruefe('Tabelle mit S/U/N, Differenz und Heimteam', [$j['table'][0]['wins'], $j['table'][0]['diff'], $j['table'][0]['homeTeam'], $j['table'][0]['place']], [5, 17, true, 1]);
+pruefe('Quelle FUSSBALL.DE', $j['source'], 'FUSSBALL.DE');
+pruefe('Spiel vom 04.10. ohne Ergebnis: Hinweis', ma_sport_ueberfaellig(strtotime('2026-10-05T10:00:00+02:00')) !== '', true);
+pruefe('Spiel läuft noch: kein Hinweis', ma_sport_ueberfaellig(strtotime('2026-10-04T16:00:00+02:00')), '');
+$GLOBALS['opt']['ma_sport_data']['last_match']['date'] = '04.10.2026 · 15:00 Uhr';
+pruefe('Ergebnis eingetragen: kein Hinweis', ma_sport_ueberfaellig(strtotime('2026-10-05T10:00:00+02:00')), '');
+$GLOBALS['opt']['ma_sport_data'] = ['pending_match' => ['home' => 'A', 'away' => 'B', 'date' => '04.10.2026 · 15:00 Uhr']];
+pruefe('Offenes Spiel: unbestätigt ohne Ergebnis', [ma_sport_als_json()['lastMatch']['confirmed'], ma_sport_als_json()['lastMatch']['score']], [false, '']);
+$r3 = ma_sport_import_from_json($json);
+pruefe('Import übernimmt S/U/N und Bericht', [isset($r3['table'][0]['wins']), ($r3['last_match']['report'] ?? '') !== ''], [true, true]);
 
 echo "\n" . ($fehler === 0 ? "Alle Pruefungen bestanden.\n" : "$fehler Pruefung(en) fehlgeschlagen.\n");
 exit($fehler === 0 ? 0 : 1);

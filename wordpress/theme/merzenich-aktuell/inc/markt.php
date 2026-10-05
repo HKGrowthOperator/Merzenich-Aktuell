@@ -19,7 +19,7 @@ const MA21_MARKT = [
         'art' => 'jobs', 'crumb' => 'Jobs', 'eyebrow' => 'Stellenmarkt', 'h1' => 'Jobs in Merzenich und Umgebung',
         'desc' => 'Stellen, Ausbildungsplätze und Minijobs von Betrieben, Gemeinde, Kitas und Vereinen aus der Gemeinde Merzenich und dem direkten Umkreis. Jede Anzeige führt zur Originalausschreibung.',
         'einheit' => ['Stelle', 'Stellen'], 'eigene' => 'Hier aufgegebene Stellen',
-        'box' => ['Stelle inserieren', 'Stellenanzeigen für Betriebe aus der Gemeinde: 30 Tage im Stellenmarkt und im Ressort Wirtschaft. Ehrenamt und gemeinnützige Träger kostenlos.', '/werben/', 'Anfrage senden'],
+        'box' => ['Stelle inserieren', 'Stellenanzeigen für Betriebe aus der Gemeinde: 30 Tage im Stellenmarkt und im Ressort Wirtschaft. Ehrenamt und gemeinnützige Träger kostenlos.', '/anzeigen/aufgeben/?art=Stellenanzeige', 'Stelle inserieren'],
     ],
     'ma_property' => [
         'art' => 'immobilien', 'crumb' => 'Immobilienmarkt', 'eyebrow' => 'Anzeigen', 'h1' => 'Immobilienmarkt',
@@ -186,7 +186,7 @@ function ma21_menue_firmen(): array {
             'meta_query' => [['key' => 'ma_gesponsert', 'value' => '1'], ['key' => 'ma_gesponsert_von', 'value' => $name]]]);
         $karten = array_map(fn(WP_Post $p): array => [
             'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'url' => wp_make_link_relative(get_permalink($p)),
-            'kicker' => (string) (MA21_ORTE[ma21_ort($p)] ?? $ort), 'meta' => 'Anzeige · ' . get_the_date('d.m.Y, H:i', $p) . ' Uhr',
+            'kicker' => (string) (MA21_ORTE[ma21_ort($p)] ?? $ort), 'meta' => 'Anzeige · ' . ma21_zeit_text($p, true, ', '),
             'anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8'), 'bild' => ma21_menue_bild($p), 'knopf' => 'Weiterlesen',
         ], $posts);
         if (!$karten) $karten[] = ['titel' => $name, 'url' => wp_make_link_relative(get_permalink($u)), 'kicker' => trim($branche . ' · ' . $ort, ' ·'),

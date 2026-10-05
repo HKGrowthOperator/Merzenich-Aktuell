@@ -113,7 +113,7 @@ function ma21_kopf_daten(): array {
     foreach ($neueste as $i => $p) {
         $iso = (string) get_post_time('c', false, $p);
         $d['daten'][] = $iso;
-        if ($i === 0) $d['neu'] = ['iso' => $iso, 'zeit' => (string) get_post_time('d.m. · H:i', false, $p) . ' Uhr', 'url' => wp_make_link_relative(get_permalink($p)), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8')];
+        if ($i === 0) $d['neu'] = ['iso' => $iso, 'zeit' => ma21_zeit_text($p), 'url' => wp_make_link_relative(get_permalink($p)), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8')];
     }
     $jetzt = (string) current_time('Y-m-d\TH:i');
     $t = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 1, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
@@ -325,6 +325,7 @@ function ma21_ressort_menue_ausgeben(): void {
         $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
         // Unternehmen: Firmenliste links, Beiträge rechts (wie Oberberg Aktuell).
         if ($pfad === '/unternehmen/' && function_exists('ma21_menue_firmen')) $r['firmen'] = ma21_menue_firmen();
+        $r['gruppen'] = ma21_menue_gruppen_pruefen((array) ($r['gruppen'] ?? []));
     }
     unset($r);
     $d['standWordPress'] = (string) wp_date('c');
@@ -332,6 +333,31 @@ function ma21_ressort_menue_ausgeben(): void {
     ma21_cache(300);
     echo wp_json_encode($d, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
+}
+
+/**
+ * Linkgruppen des Ressort-Menüs (Vorgabe Betreiber 05.10.2026): ein Thema
+ * (/thema/<slug>/) erscheint erst ab drei veröffentlichten Meldungen, leere
+ * Gruppen fallen weg. Ortsteil-Links zeigen direkt auf /ort/<slug>/.
+ */
+function ma21_menue_gruppen_pruefen(array $gruppen, int $mindestens = 3): array {
+    $raus = [];
+    foreach ($gruppen as $g) {
+        if (!is_array($g)) continue;
+        $links = [];
+        foreach ((array) ($g['links'] ?? []) as $l) {
+            if (!is_array($l) || count($l) < 2) continue;
+            $href = (string) $l[1];
+            if (preg_match('#^/(' . implode('|', array_keys(MA21_ORTE)) . ')/$#', $href, $m)) $l[1] = '/ort/' . $m[1] . '/';
+            if (preg_match('#^/thema/([^/]+)/$#', $href, $m)) {
+                $t = get_term_by('slug', $m[1], 'post_tag');
+                if (!$t || (int) $t->count < $mindestens) continue;
+            }
+            $links[] = $l;
+        }
+        if ($links) { $g['links'] = $links; $raus[] = $g; }
+    }
+    return $raus;
 }
 
 function ma21_menue_bild(WP_Post $p): ?array {
@@ -426,8 +452,14 @@ function ma21_marke(WP_Post $p, string $rubrik = 'ressort'): string {
 }
 
 function ma21_zeit(WP_Post $p, bool $lang = false): string {
-    $fmt = $lang ? 'd.m.Y · H:i' : 'd.m. · H:i';
-    return '<time datetime="' . esc_attr(get_post_time('c', false, $p)) . '">' . ma21_e(get_post_time($fmt, false, $p, true)) . ' Uhr</time>';
+    return '<time datetime="' . esc_attr(get_post_time('c', false, $p)) . '">' . ma21_e(ma21_zeit_text($p, $lang)) . '</time>';
+}
+
+/** „05.10. · 14:30 Uhr“; Meldungen ohne bekannte Uhrzeit (00:00, aus der Quelle nur das Datum) nur mit Datum. */
+function ma21_zeit_text(WP_Post $p, bool $lang = false, string $trenner = ' · '): string {
+    $datum = (string) get_post_time($lang ? 'd.m.Y' : 'd.m.', false, $p, true);
+    $uhr = (string) get_post_time('H:i', false, $p, true);
+    return $uhr === '00:00' ? $datum : $datum . $trenner . $uhr . ' Uhr';
 }
 
 function ma21_lesezeit(WP_Post $p): int {
@@ -635,7 +667,70 @@ function ma21_startseite(): string {
     $html = ma21_vorlage('startseite.html');
     $html = (string) preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
     // Foto des Tages wählt WordPress selbst (die Vorlage kann leer oder vom Bautag sein).
-    return (string) preg_replace_callback('#<!-- fotodestages:start -->.*?<!-- fotodestages:end -->#s', fn() => '<!-- fotodestages:start -->' . ma21_foto_des_tages() . '<!-- fotodestages:end -->', $html, 1);
+    $html = (string) preg_replace_callback('#<!-- fotodestages:start -->.*?<!-- fotodestages:end -->#s', fn() => '<!-- fotodestages:start -->' . ma21_foto_des_tages() . '<!-- fotodestages:end -->', $html, 1);
+    return ma21_startseite_bloecke($html);
+}
+
+/**
+ * Blöcke der Startseite, die in der Vorlage vom Bautag stehen und sonst
+ * veralten (Theme 21.11.0): die Terminspalte kommt aus WordPress (neue Termine
+ * erscheinen sofort), Umkreis sowie Stellen- und Immobilien-Teaser aus dem
+ * aktuellen Stand der Startseite im Repository (die Kette erneuert ihn täglich).
+ * Antwortet GitHub nicht, bleibt die letzte gute Kopie bzw. die Vorlage.
+ */
+function ma21_startseite_bloecke(string $html): string {
+    $html = (string) preg_replace_callback('#<!-- start:termine:start -->.*?<!-- start:termine:end -->#s', fn() => '<!-- start:termine:start -->' . ma21_agenda_zeilen(4) . '<!-- start:termine:end -->', $html, 1);
+    $repo = ma21_repo_datei('index.html', HOUR_IN_SECONDS);
+    foreach (['umkreis', 'markt:home-jobs', 'markt:home-immobilien'] as $k) {
+        $q = preg_quote($k, '#');
+        if ($repo === '' || !preg_match('#<!-- ' . $q . ':start -->(.*?)<!-- ' . $q . ':end -->#s', $repo, $m)) continue;
+        $neu = ma21_block_saeubern($m[1]);
+        $html = (string) preg_replace_callback('#<!-- ' . $q . ':start -->.*?<!-- ' . $q . ':end -->#s', fn() => "<!-- {$k}:start -->{$neu}<!-- {$k}:end -->", $html, 1);
+    }
+    return $html;
+}
+
+/** HTML aus dem Repository: nur erlaubte Tags (Beitrags-HTML plus die Symbole der Märkte). */
+function ma21_block_saeubern(string $html): string {
+    $svg = ['viewbox' => true, 'aria-hidden' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linecap' => true, 'stroke-linejoin' => true, 'class' => true];
+    $erlaubt = wp_kses_allowed_html('post') + [
+        'svg' => $svg, 'g' => $svg,
+        'path' => $svg + ['d' => true], 'rect' => $svg + ['x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true],
+        'circle' => $svg + ['cx' => true, 'cy' => true, 'r' => true], 'line' => $svg + ['x1' => true, 'y1' => true, 'x2' => true, 'y2' => true],
+        'time' => ['datetime' => true, 'class' => true],
+    ];
+    return wp_kses($html, $erlaubt);
+}
+
+/**
+ * Terminspalte der Startseite aus WordPress, im Markup der Vorlage
+ * (deploy/termine-prerender.mjs): Tag und Monat, Kategorie, Titel, Uhrzeit und
+ * Ort, Knopf „Im Kalender speichern“. Sporttermine stehen nur unter /sport/
+ * und /termine/ (Vorgabe KBS 26.09.2026).
+ */
+function ma21_agenda_zeilen(int $n): string {
+    $monate = ['Jan', 'Feb', 'Mrz', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+    $h = '';
+    foreach (ma21_kommende_termine(12) as $p) {
+        $kat = (string) get_post_meta($p->ID, 'ma_event_category', true);
+        if (strcasecmp($kat, 'Sport') === 0) continue;
+        $start = function_exists('ma_event_timestamp') ? ma_event_timestamp($p->ID, 'start') : 0;
+        if (!$start) continue;
+        $ende = (string) get_post_meta($p->ID, 'ma_event_end', true) !== '' ? ma_event_timestamp($p->ID, 'end') : 0;
+        $tagEnde = (new DateTimeImmutable('@' . max($start, $ende)))->setTimezone(wp_timezone())->setTime(23, 59, 59);
+        $mehrtaegig = $ende && wp_date('Ymd', $ende) !== wp_date('Ymd', $start);
+        $zeit = $mehrtaegig ? 'bis ' . wp_date('j.n.', $ende) : (wp_date('H:i', $start) === '00:00' ? 'Ganztägig' : wp_date('H:i', $start) . ' Uhr');
+        $zeile = implode(' · ', array_filter([$zeit, (string) get_post_meta($p->ID, 'ma_event_place', true)]));
+        $titel = html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8');
+        $url = wp_make_link_relative(get_permalink($p));
+        $h .= '<article class="agenda-row" data-event-end="' . esc_attr(gmdate('Y-m-d\TH:i:s.000\Z', $tagEnde->getTimestamp())) . '">'
+            . '<time class="agenda-date" datetime="' . esc_attr(gmdate('Y-m-d\TH:i:s.000\Z', $start)) . '"><b>' . esc_html(wp_date('j', $start)) . '</b><span>' . esc_html($monate[(int) wp_date('n', $start) - 1]) . '</span></time>'
+            . '<div>' . ($kat !== '' ? '<span class="eyebrow">' . esc_html($kat) . '</span>' : '')
+            . '<h3><a href="' . esc_url($url) . '">' . esc_html($titel) . '</a></h3><p>' . esc_html($zeile) . '</p></div>'
+            . '<a class="calendar-save" href="' . esc_url(trailingslashit($url) . 'termin.ics') . '" aria-label="' . esc_attr($titel . ' im Kalender speichern') . '" download><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></article>';
+        if (--$n <= 0) break;
+    }
+    return $h !== '' ? $h : '<p class="agenda-leer">Gerade sind keine Termine eingetragen. <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
 }
 
 /** Motiv eines Bildpfads ohne Breite und Endung (wie deploy/foto-des-tages.mjs): /assets/places/golzheim-1440.webp → places/golzheim. */
@@ -653,6 +748,9 @@ function ma21_motiv_schluessel(string $src): string {
  * alle belegt, gilt die volle Reihe. So fällt die Fläche nie weg.
  */
 function ma21_foto_des_tages_wahl(array $d, string $heute, array $belegt): ?array {
+    // Im Eingang eingeplantes Leserfoto (Plugin, foto-des-tages.php) geht vor.
+    $leser = function_exists('ma_foto_des_tages_eingeplant') ? ma_foto_des_tages_eingeplant($heute) : null;
+    if ($leser) return $leser;
     foreach ((array) ($d['eintraege'] ?? []) as $e) if (is_array($e) && ($e['datum'] ?? '') === $heute && !empty($e['src'])) return $e;
     $alle = array_values(array_filter((array) ($d['alle'] ?? $d['reihe'] ?? []), fn($r) => is_array($r) && !empty($r['src']) && !empty($r['alt'])));
     if (!$alle) return null;
@@ -710,7 +808,7 @@ function ma21_foto_des_tages(): string {
         . '<h2 id="ansichten-titel" data-ansicht-ort>' . ma21_e((string) (($f['ort'] ?? '') ?: 'Gemeinde Merzenich')) . '</h2>'
         . '<p class="ansichten-beschreibung" data-ansicht-text>' . ma21_e(rtrim((string) $f['alt'], '.')) . '.</p>'
         . '<p class="ansichten-credit" id="foto-des-tages-credit">Foto: ' . $credit . '</p>'
-        . '<a class="ansichten-senden" href="' . esc_url(home_url('/meldung-senden/#formular')) . '">Ihr Foto des Tages einsenden</a>'
+        . '<a class="ansichten-senden" href="' . esc_url(home_url('/meldung-senden/#foto-des-tages')) . '">Ihr Foto des Tages einsenden</a>'
         . '</div></section>';
 }
 
@@ -797,6 +895,7 @@ function ma21_ressort_belegung(string $seite, array $posts): array {
 
 /** Liste einer Ressortseite als HTML (erste Seite: nach Layout-Karte; weitere Seiten: nur Reihen). */
 function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
+    if (!$posts && is_search()) return '<p class="no-result">Keine Treffer für „' . esc_html(get_search_query(false)) . '“. Versuchen Sie einen anderen Begriff, einen Ortsteil wie „Golzheim“ oder ein Thema wie „Feuerwehr“, oder stöbern Sie in den <a href="' . esc_url(home_url('/nachrichten/')) . '">neuesten Nachrichten</a>.</p>';
     if (!$posts) return '<p class="no-result">Hier gibt es noch keine Meldung. Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.</p>';
     if (!$ersteSeite) return implode("\n", array_map(fn($p) => ma21_feed_row($p), $posts));
     $b = ma21_ressort_belegung($seite, $posts);
@@ -956,7 +1055,7 @@ function ma21_u_karte(WP_Post $p, int $i): string {
         . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, MA21_SIZES['unternehmen'], $i < 2) . ma21_badge($b, false) . '</a>' : '')
         . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>'
         . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
-        . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(get_the_date('d.m.Y, H:i', $p)) . ' Uhr</time></p>'
+        . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(ma21_zeit_text($p, true, ', ')) . '</time></p>'
         . '<p class="u-karte__teaser">' . ma21_e(ma21_teaser($p)) . '</p>'
         . "<a class=\"u-karte__weiter\" href=\"{$url}\">Weiterlesen<span class=\"sr-only\">: {$titel}</span></a></article>";
 }
@@ -986,8 +1085,8 @@ add_action('template_redirect', function (): void {
 });
 
 /**
- * /api/sport-current.json: der Spielstand des SC Merzenich, den die Kette
- * (deploy/sport.mjs) nach chatgpt-site/api/ schreibt; aus dem Repository geholt,
+ * /api/sport-current.json: der Spielstand des SC Merzenich. Zuerst der Stand aus
+ * dem Backend (Plugin, ma_sport_als_json), sonst der aus chatgpt-site/api/ im Repository geholte,
  * 15 Minuten zwischengespeichert, mit Notkopie, falls GitHub gerade nicht antwortet
  * (ma21_repo_datei). /api/editorial-current.json: die
  * redaktionelle Übersteuerung der statischen Startseite; auf WordPress entscheidet
@@ -1003,12 +1102,32 @@ add_action('template_redirect', function (): void {
     }
     if ($api !== 'sport-current') return;
     $daten = ma21_repo_datei('api/sport-current.json', 15 * MINUTE_IN_SECONDS);
+    // Seit 21.11.0: was die Redaktion im Backend (Merzenich Aktuell → Sport) pflegt,
+    // gilt, sobald es mindestens so neu ist wie der Stand im Repository.
+    $backend = function_exists('ma_sport_als_json') ? ma_sport_als_json() : null;
+    $repo = json_decode($daten, true);
+    if (is_array($backend) && (!is_array($repo) || strtotime((string) $backend['generated']) >= strtotime((string) ($repo['generated'] ?? '')))) {
+        header('Content-Type: application/json; charset=utf-8');
+        ma21_cache(300);
+        echo wp_json_encode($backend, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); exit;
+    }
     if (!is_array(json_decode($daten, true))) $daten = (string) get_option('ma21_sport_current_kopie', '');
     if ($daten === '') { status_header(503); nocache_headers(); wp_send_json(['fehler' => 'Spielstand nicht verfügbar']); }
     header('Content-Type: application/json; charset=utf-8');
     ma21_cache(600);
     echo $daten; exit;
 });
+
+/* Symbole und Feed (21.11.0): /favicon.ico zeigte das WordPress-Logo, /apple-touch-icon.png fehlte;
+   der RSS-Feed war im Seitenkopf nicht angemeldet. */
+add_action('do_faviconico', function (): void { wp_redirect(home_url('/assets/img/avatar-1024.png'), 301, 'Merzenich Aktuell'); exit; });
+add_action('template_redirect', function (): void {
+    $pfad = (string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
+    if (in_array($pfad, ['/apple-touch-icon.png', '/apple-touch-icon-precomposed.png'], true)) { wp_redirect(home_url('/assets/img/avatar-1024.png'), 301, 'Merzenich Aktuell'); exit; }
+}, 0);
+add_action('wp_head', function (): void {
+    echo '<link rel="alternate" type="application/rss+xml" title="Merzenich Aktuell" href="' . esc_url(home_url('/feed/')) . '">' . "\n";
+}, 2);
 
 /* Nach einem Theme-Update Regeln und .htaccess einmal neu schreiben (Assets, Adressen). */
 add_action('init', function (): void {

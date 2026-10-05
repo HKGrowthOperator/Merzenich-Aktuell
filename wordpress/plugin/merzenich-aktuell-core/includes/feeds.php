@@ -195,23 +195,40 @@ function ma_ics_termine(): array {
     $von = (string) wp_date('Y-m-d\TH:i', time() - DAY_IN_SECONDS);
     $l = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 200, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $von, 'compare' => '>=']]]);
     $aus = [];
-    foreach ($l as $p) {
-        $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
-        $ende = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'end') : 0;
-        $aus[] = ['start' => $start, 'ende' => $ende, 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'ort' => (string) get_post_meta($p->ID, 'ma_event_place', true), 'url' => get_permalink($p), 'beschreibung' => wp_strip_all_tags((string) ($p->post_excerpt ?: '')), 'stand' => (int) get_post_modified_time('U', true, $p)];
-    }
+    foreach ($l as $p) $aus[] = ma_ics_eintrag($p);
     return $aus;
+}
+
+/** Ein Termin als Eintrag für ma_ics_text(). */
+function ma_ics_eintrag(WP_Post $p): array {
+    $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
+    $ende = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'end') : 0;
+    return ['start' => $start, 'ende' => $ende, 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'ort' => (string) get_post_meta($p->ID, 'ma_event_place', true), 'url' => get_permalink($p), 'beschreibung' => wp_strip_all_tags((string) ($p->post_excerpt ?: '')), 'stand' => (int) get_post_modified_time('U', true, $p)];
 }
 
 add_action('init', function (): void {
     add_rewrite_rule('^termine/kalender\.ics$', 'index.php?ma_api=kalender', 'top');
+    // Einzelner Termin zum Speichern im Kalender (Knopf auf Startseite und Terminseite, 05.10.2026).
+    add_rewrite_rule('^termine/([^/]+)/termin\.ics$', 'index.php?ma_api=termin-ics&ma_termin=$matches[1]', 'top');
 });
+add_filter('query_vars', function (array $v): array { return array_values(array_unique(array_merge($v, ['ma_api', 'ma_termin']))); });
 add_action('template_redirect', function (): void {
-    if (get_query_var('ma_api') !== 'kalender') return;
+    $api = get_query_var('ma_api');
+    if ($api === 'kalender') {
+        header('Content-Type: text/calendar; charset=utf-8');
+        header('Content-Disposition: inline; filename="merzenich-aktuell-termine.ics"');
+        header('Cache-Control: public, max-age=600');
+        echo ma_ics_text(ma_ics_termine()); exit;
+    }
+    if ($api !== 'termin-ics') return;
+    $slug = sanitize_title((string) get_query_var('ma_termin'));
+    $p = $slug !== '' ? get_page_by_path($slug, OBJECT, 'ma_event') : null;
+    if (!$p instanceof WP_Post || $p->post_status !== 'publish') { status_header(404); nocache_headers(); echo 'Termin nicht gefunden'; exit; }
+    status_header(200);
     header('Content-Type: text/calendar; charset=utf-8');
-    header('Content-Disposition: inline; filename="merzenich-aktuell-termine.ics"');
+    header('Content-Disposition: attachment; filename="' . $slug . '.ics"');
     header('Cache-Control: public, max-age=600');
-    echo ma_ics_text(ma_ics_termine()); exit;
+    echo ma_ics_text([ma_ics_eintrag($p)]); exit;
 }, 0);
 
 add_action('template_redirect', function (): void {

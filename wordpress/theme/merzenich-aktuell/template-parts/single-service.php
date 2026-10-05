@@ -28,6 +28,7 @@ $source='';
       <?php if($organizer!==''): ?><div><dt>Veranstalter</dt><dd><?php echo esc_html($organizer); ?></dd></div><?php endif; ?>
       <?php if($price!==''): ?><div><dt>Eintritt</dt><dd><?php echo esc_html($price); ?></dd></div><?php endif; ?>
     </dl>
+    <?php if($start && !(function_exists('ma_event_vorbei') && ma_event_vorbei($post_id))): ?><p class="service-kalender"><a class="btn ghost" href="<?php echo esc_url(trailingslashit(get_permalink()) . 'termin.ics'); ?>" download>Im Kalender speichern</a></p><?php endif; ?>
     <?php if($registration!==''): ?><div class="service-note"><strong>Anmeldung / Hinweise</strong><p><?php echo nl2br(esc_html($registration)); ?></p></div><?php endif; ?>
 
   <?php elseif($type==='ma_property'): ?>

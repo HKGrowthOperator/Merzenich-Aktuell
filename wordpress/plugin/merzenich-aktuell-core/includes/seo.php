@@ -486,6 +486,14 @@ add_action('init', function (): void {
 add_filter('query_vars', function (array $v): array { $v[] = 'ma_seo'; $v[] = 'ma_key'; return $v; });
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_seo') ? false : $ziel);
 
+/* Benutzerliste der REST-Schnittstelle nur für Angemeldete (1.21.0): /wp-json/wp/v2/users
+   verriet Besuchern den Anmeldenamen „admin“. Der Editor (angemeldet) braucht sie weiter. */
+add_filter('rest_endpoints', function (array $e): array {
+    if (is_user_logged_in()) return $e;
+    foreach (array_keys($e) as $route) if (str_starts_with($route, '/wp/v2/users')) unset($e[$route]);
+    return $e;
+});
+
 /* Nach einem Plugin-Update die Regeln einmal neu schreiben (Theme macht dasselbe für seine Adressen). */
 add_action('init', function (): void {
     if (get_option('ma_seo_regeln') === MA_CORE_VERSION . '-3') return;

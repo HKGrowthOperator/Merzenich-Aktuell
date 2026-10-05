@@ -1,6 +1,28 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.6 · Core-Plugin 1.20.8 (Historie unten)
+5. Oktober 2026 · Theme 21.11.0 · Core-Plugin 1.21.0 (Historie unten)
+
+## Neu in Theme 21.11.0 / Plugin 1.21.0 (05.10.2026): Startseite aktuell, Sport aus dem Backend, Foto-Einsendungen, Feinschliff
+
+Ergebnis der Prüfung „Was fehlt noch“ (Live-Seite, Code, Doku). Zuerst, was kaputt war oder bald ausgelaufen wäre:
+- **Startseite veraltet nicht mehr.** Terminspalte, „Was rund um Merzenich passiert“ sowie Stellen- und Immobilien-Teaser standen als feste Kopie vom Bautag in `vorlagen/startseite.html`. `ma21_startseite_bloecke()` ersetzt sie zur Laufzeit: Termine aus WordPress (`ma21_agenda_zeilen`, ohne Sporttermine, „Ganztägig“, „bis …“ bei mehrtägigen), Umkreis und Märkte aus dem aktuellen `index.html` im Repository (`ma21_repo_datei`, nur erlaubtes HTML über `ma21_block_saeubern`). Neue Termine stehen sofort auf der Startseite.
+- **„Im Kalender speichern“** (vorher 404): `/termine/<slug>/termin.ics` (Plugin `feeds.php`, `ma_ics_eintrag`), Knopf auch auf der Terminseite. Termine ohne eigenes Ende zeigen nur den Beginn (vorher „19:30 Uhr–19:30 Uhr“).
+- **Sport aus dem Backend** (Merzenich Aktuell → Sport): Ergebnis mit Link zum Spielbericht, nächstes Spiel, Tabelle mit S/U/N. `ma_sport_als_json()` liefert dasselbe Format wie `/api/sport-current.json`; das Theme nimmt den Backend-Stand, sobald er mindestens so neu ist wie der im Repository. Hinweis im Dashboard, wenn ein Spiel seit drei Stunden vorbei ist und kein Ergebnis eingetragen wurde (`ma_sport_ueberfaellig`).
+- **Foto des Tages aus Leser-Einsendungen.** Auf „Meldung senden“ ein eigenes Formular (`[ma_formular typ="foto"]`, Ortsteil, Foto Pflicht, Bildrechte und Zustimmung zur Veröffentlichung mit Namen). Im Eingang plant die Redaktion das Foto für ein Datum ein (Kasten „Foto des Tages“, `includes/foto-des-tages.php`, Option `ma_foto_des_tages`); an diesem Tag zeigt die Startseite dieses Foto vor der Ortsreihe. Der Knopf „Ihr Foto des Tages einsenden“ führt jetzt dorthin.
+- **Recherchierte Termine als Entwurf.** `"entwurf": true` in `inhalte/termine/*.json` setzt den Termin im Import auf Entwurf; die Freigaben-Seite zeigt Abgleich-Entwürfe von Meldungen und Terminen (`ma_freigaben_abgleich`).
+
+Feinschliff:
+- Formulare: Nach dem Absenden steht eine Bestätigung über dem Formular (vorher nichts). Links wie `/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal`, `?art=Immobilie&angebot=Verkauf`, `?art=Traueranzeige&trauerform=…` wählen das passende Formular und die Art vor und springen dorthin (`ma_form_ziel_aus_link`). „Stelle inserieren“ führt zum Stellen-Formular. Der Partner-Antrag auf `/betriebe/` bietet nur Unternehmen, Immobilien, Werbepartner an und landet zusätzlich im Eingang.
+- Suche ohne Treffer: „Keine Treffer für …“ mit Vorschlägen statt „Hier gibt es noch keine Meldung“.
+- Meldungen ohne bekannte Uhrzeit (00:00) zeigen nur das Datum (`ma21_zeit_text`).
+- `/favicon.ico` und `/apple-touch-icon.png` zeigen auf das eigene Logo; RSS-Feed im Seitenkopf angemeldet.
+- Sicherheit: `/wp-json/wp/v2/users` nur noch für Angemeldete (verriet den Benutzernamen).
+- Werbung: Beiträge von Unternehmens-Zugängen sind automatisch „Anzeige · Gesponsert“; gesponserte Beiträge lösen keine Push-Nachricht aus; höchstens eine Push je 10 Minuten (Sammelfreigabe).
+- `/service/`: Notrufe und Notdienste oben (112, 110, 116 117, Giftnotruf NRW, Telefonseelsorge, Apotheken-Notdienst).
+- Ressort-Menü: Themenlinks erst ab drei Meldungen (vorher 27 Themen mit nur einer), Ortsteil-Links direkt auf `/ort/…/`.
+- Plugin-Übersicht: Feld „Redaktions-E-Mail“ (`ma_editorial_email`), „Letzter Abgleich“ statt eines nie gesetzten Werts. Altes `kommentare.js` aus dem Fuß entfernt.
+- Bewusst nicht geändert: `deploy/site.json` `url` (Adresse der früheren Vorschau). Der Wert steuert die Pfadumsetzung des WordPress-Imports (`liveUrl`); ein Umstellen würde Links im Import verändern, ohne dass WordPress ihn nutzt.
+- Tests: `qa/wordpress/formular-test.php` (neu), `sport-test.php` (Backend-Format, Hinweis), `foto-des-tages-test.php`.
 
 ## Neu in Theme 21.10.6 (05.10.2026): Foto des Tages immer auf der Startseite
 

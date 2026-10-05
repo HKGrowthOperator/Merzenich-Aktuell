@@ -130,6 +130,17 @@ add_action('save_post_post', function (int $id): void {
     $von !== '' ? update_post_meta($id, 'ma_gesponsert_von', $von) : delete_post_meta($id, 'ma_gesponsert_von');
 }, 20);
 
+/* Beiträge von Unternehmens-Zugängen sind Werbung (1.21.0): automatisch „Anzeige · Gesponsert“,
+   Auftraggeber ist das Unternehmen (änderbar). Läuft nach dem Kasten der Redaktion (20),
+   damit der Haken nicht vergessen werden kann. */
+add_action('save_post_post', function (int $id, WP_Post $p): void {
+    if (wp_is_post_revision($id) || wp_is_post_autosave($id)) return;
+    $u = get_userdata((int) $p->post_author);
+    if (!$u || !in_array('ma_wirtschaft_partner', (array) $u->roles, true)) return;
+    if ((string) get_post_meta($id, 'ma_gesponsert', true) !== '1') update_post_meta($id, 'ma_gesponsert', '1');
+    if ((string) get_post_meta($id, 'ma_gesponsert_von', true) === '') update_post_meta($id, 'ma_gesponsert_von', trim((string) $u->display_name));
+}, 30, 2);
+
 function ma_ist_gesponsert($post): bool {
     $id = $post instanceof WP_Post ? $post->ID : (int) $post;
     return (string) get_post_meta($id, 'ma_gesponsert', true) === '1';
