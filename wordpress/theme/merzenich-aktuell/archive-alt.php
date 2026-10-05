@@ -40,8 +40,14 @@ $market_types=['ma_property','ma_job','ma_obituary','ma_family_notice'];
       <?php else: ?>
         <?php get_template_part('template-parts/card'); ?>
       <?php endif; ?>
-    <?php endwhile; else: ?>
-      <div class="empty archive-empty">Aktuell liegen in diesem Bereich keine veröffentlichten Einträge vor.</div>
+    <?php endwhile; else:
+      // Vorgabe Betreiber 05.10.2026: keine leeren Sätze. Trauer- und Familienanzeigen geben nur Angehörige auf; bis dahin erklärt die Seite, was hier erscheint.
+      $leer = [
+        'ma_obituary' => 'Hier erscheinen Traueranzeigen, Danksagungen und Jahrgedächtnisse aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Angehörige geben sie über das Formular unten auf; die Redaktion prüft jede Anzeige behutsam vor der Veröffentlichung.',
+        'ma_family_notice' => 'Hier erscheinen Geburtsanzeigen, Hochzeiten, Jubiläen und Glückwünsche aus der Gemeinde. Familien geben sie über das Formular unten auf; die Redaktion prüft jede Anzeige vor der Veröffentlichung.',
+      ];
+    ?>
+      <div class="empty archive-empty"><?php echo esc_html($leer[$queried_type] ?? 'Hier erscheinen die Einträge dieses Bereichs, sobald die Redaktion sie freigegeben hat. Eigene Einträge nimmt sie über das Formular unten an.'); ?></div>
     <?php endif; ?>
   </div>
 
