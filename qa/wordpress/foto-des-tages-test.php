@@ -3,7 +3,8 @@
  * Foto des Tages auf der WordPress-Startseite (inc/ma21.php, Theme 21.10.6):
  * Wahl des Fotos ohne WordPress, geprüft an den echten Daten aus
  * chatgpt-site/assets/foto-des-tages.json (deploy/foto-des-tages.mjs).
- * Vorgabe Betreiber 05.10.2026: die Fläche fällt nie weg.
+ * Vorgabe Betreiber 05.10.2026: die Fläche fällt am Computer nie weg, auf dem
+ * Handy steht sie nicht (Theme 21.11.3, Handy wie vor 21.10.6).
  * Aufruf: php qa/wordpress/foto-des-tages-test.php
  */
 define('ABSPATH', __DIR__ . '/');
@@ -40,6 +41,11 @@ $mitLeser = $d + []; $mitLeser['eintraege'] = [['datum' => '2026-10-05', 'src' =
 pruefe('Datierte Leser-Einsendung geht vor', ma21_foto_des_tages_wahl($mitLeser, '2026-10-05', [])['src'], '/assets/leser/x.jpg');
 pruefe('Einsendung gilt nur an ihrem Tag', ma21_foto_des_tages_wahl($mitLeser, '2026-10-06', [])['src'], $b['src']);
 pruefe('Leere Daten: kein Foto, kein Fehler', ma21_foto_des_tages_wahl([], '2026-10-05', []), null);
+
+echo "\nHandy (Vorgabe Betreiber 05.10.2026: Handy wie vor 21.10.6)\n";
+$css = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/assets/css/plattform.css');
+pruefe('Unter 768 px ausgeblendet', (bool) preg_match('/@media \(max-width:767px\)\{body\.home \.ansichten\.foto-des-tages\{display:none!important\}\}/', $css), true);
+pruefe('Keine Regel blendet es am Computer aus', preg_match_all('/foto-des-tages\{display:none/', $css), 1);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.11.2 · Core-Plugin 1.21.1 (Historie unten)
+5. Oktober 2026 · Theme 21.11.3 · Core-Plugin 1.21.1 (Historie unten)
+
+## Neu in Theme 21.11.3 (05.10.2026): Handy wie heute Morgen
+
+Vorgabe Betreiber: Die Handy-Ansicht soll wieder so aussehen wie vor den Änderungen des Tages (Theme 21.10.4). Die Ausgabe-Wahl bleibt weg, am Computer bleibt alles wie es ist.
+- Vergleich auf 390 px: Theme 21.10.4 und 21.11.2 nebeneinander in der lokalen Testumgebung. Ergebnis: Unterschiede gibt es nur bei der Leiste unter der Ressortleiste und beim Foto des Tages.
+- **Foto des Tages:** Unter 768 px ausgeblendet (`plattform.css`). Am Computer und auf dem Tablet bleibt es, ebenso Einsendung und Einplanung im Backend.
+- **Leiste „Merzenich · Jetzt“:** Sie steht schon wie früher die zweite Zeile unter „Ausgabe“. Der Abstand oben (16 px) gleicht die Ressortleiste aus, die 11 px hineinragt; ohne ihn wäre „MERZENICH · JETZT“ angeschnitten. Unverändert.
+- Test: `qa/wordpress/foto-des-tages-test.php` prüft die Handy-Regel.
 
 ## Neu in Theme 21.11.2 / Plugin 1.21.1 (05.10.2026): Sportmodul „Nächstes Spiel“
 

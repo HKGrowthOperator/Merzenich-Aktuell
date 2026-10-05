@@ -115,9 +115,14 @@ body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
 
 /* Ohne Ausgabe-Wahl (Vorgabe Betreiber 05.10.2026) steht „Merzenich · Jetzt“
    allein in der Leiste: links beginnend, mit der Höhe der früheren Leiste. Am
-   Telefon ragt die Ressortleiste ein Stück hinein, daher Abstand oben. */
+   Telefon ragt die Ressortleiste 11 px hinein; der Abstand oben gleicht das aus,
+   so sitzt die Leiste wie früher die zweite Zeile unter „Ausgabe“. */
 body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-height:44px}
 @media (max-width:767px){body.home .ortswahl>.shell>.jetzt:first-child{min-height:0;padding-top:16px;padding-bottom:8px}}
+
+/* Handy wie vor 21.10.6: kein Foto des Tages, am Computer bleibt es
+   (Vorgabe Betreiber 05.10.2026). Das Bild lädt dann gar nicht (lazy). */
+@media (max-width:767px){body.home .ansichten.foto-des-tages{display:none!important}}
 
 /* Notrufe auf /service/ (21.11.0) */
 .ma-notdienste{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
