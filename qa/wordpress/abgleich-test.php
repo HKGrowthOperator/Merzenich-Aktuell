@@ -16,7 +16,12 @@ require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/abgle
 $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-70s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
 
-echo "Import-Datei lesen\n";
+echo "Abkürzung über den ETag der Import-Datei\n";
+pruefe('ETag ohne W/ und Anführungszeichen', [ma_abgleich_etag_norm('W/"abc123"'), ma_abgleich_etag_norm(' "abc123" '), ma_abgleich_etag_norm('')], ['abc123', 'abc123', '']);
+pruefe('Gleicher ETag, nichts offen, kein Fehler: voller Lauf entfällt', ma_abgleich_ueberspringen('W/"abc"', '"abc"', ['offen' => 0, 'fehler' => []]), true);
+pruefe('Anderer ETag, offene Beiträge oder Fehler oder kein ETag: voller Lauf', [ma_abgleich_ueberspringen('"neu"', '"abc"', []), ma_abgleich_ueberspringen('"abc"', '"abc"', ['offen' => 3]), ma_abgleich_ueberspringen('"abc"', '"abc"', ['fehler' => ['x']]), ma_abgleich_ueberspringen('', '', [])], [false, false, false, false]);
+
+echo "\nImport-Datei lesen\n";
 $xml = file_get_contents(__DIR__ . '/../../wordpress-delivery/merzenich-aktuell-import.xml');
 $d = ma_abgleich_lesen($xml);
 $typen = array_count_values(array_column($d['eintraege'], 'typ'));

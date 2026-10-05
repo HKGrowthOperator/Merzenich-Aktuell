@@ -10,7 +10,7 @@ Alles andere war schon da: NewsArticle-Daten je Meldung, News-Sitemap, RSS-Feed,
 
 ## Was seit 1.20.0 automatisch läuft: der Abgleich
 
-Das Plugin holt den redaktionellen Stand jetzt **stündlich** selbst (Backend: Merzenich Aktuell → Abgleich). Er liest die Import-Datei aus dem Repository (immer der Stand von `main`), legt neue Meldungen und Termine in WordPress an, übernimmt die Bilder mit Nachweis und Rechteprüfung und aktualisiert Texte, die auf der Vorschauseite nachgebessert wurden. Was in WordPress von Hand geändert wurde, bleibt unangetastet; was im Papierkorb liegt, kommt nicht wieder; gelöscht wird nichts.
+Das Plugin holt den redaktionellen Stand jetzt **stündlich** selbst (Backend: Merzenich Aktuell → Abgleich). Weil WordPress geplante Aufgaben nur bei Seitenaufrufen ausführt und das hinter dem Cache des Hosters ausbleiben kann (04.10.2026: zehn Stunden kein Lauf), stößt der GitHub-Workflow „WordPress-Abgleich anstoßen“ (`.github/workflows/wordpress-abgleich.yml`) den Lauf stündlich und nach jedem Build der Import-Datei an; unverändert gebliebene Import-Dateien kosten nur eine Kopfanfrage (ETag). Er liest die Import-Datei aus dem Repository (immer der Stand von `main`), legt neue Meldungen und Termine in WordPress an, übernimmt die Bilder mit Nachweis und Rechteprüfung und aktualisiert Texte, die auf der Vorschauseite nachgebessert wurden. Was in WordPress von Hand geändert wurde, bleibt unangetastet; was im Papierkorb liegt, kommt nicht wieder; gelöscht wird nichts.
 
 **Entscheidend für Google News ist eine Einstellung:**
 

@@ -226,9 +226,33 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
  * Ein Lauf: Import-Datei holen, neue Beiträge anlegen (höchstens $max je Lauf,
  * neueste zuerst), bestehende prüfen. Ergebnis wird als letzter Stand gespeichert.
  */
-function ma_abgleich_lauf(int $max = 20): array {
+/** ETag ohne Schwäche-Kennung und Anführungszeichen, damit HEAD und GET vergleichbar sind. */
+function ma_abgleich_etag_norm(string $etag): string {
+    return trim((string) preg_replace('#^W/#i', '', trim($etag)), '" ');
+}
+
+/**
+ * Kann der volle Lauf entfallen? Ja, wenn die Import-Datei denselben ETag hat wie
+ * beim letzten vollständigen Lauf und der nichts offen gelassen und keinen Fehler
+ * gemeldet hat. Ein stündlicher Lauf kostet dann eine Kopfanfrage statt 40 Sekunden.
+ */
+function ma_abgleich_ueberspringen(string $etagNeu, string $etagAlt, array $stand): bool {
+    $neu = ma_abgleich_etag_norm($etagNeu); $alt = ma_abgleich_etag_norm($etagAlt);
+    return $neu !== '' && $neu === $alt && empty($stand['offen']) && empty($stand['fehler']);
+}
+
+function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
     $t0 = microtime(true);
     if (function_exists('set_time_limit')) @set_time_limit(300);
+    if (!$erzwingen) {
+        $kopf = wp_remote_head(ma_abgleich_quelle(), ['timeout' => 15, 'user-agent' => 'Merzenich Aktuell Abgleich/' . MA_CORE_VERSION]);
+        $etag = !is_wp_error($kopf) && (int) wp_remote_retrieve_response_code($kopf) === 200 ? (string) wp_remote_retrieve_header($kopf, 'etag') : '';
+        $stand = get_option('ma_abgleich_stand', []);
+        if (ma_abgleich_ueberspringen($etag, (string) get_option('ma_abgleich_etag', ''), is_array($stand) ? $stand : [])) {
+            update_option('ma_abgleich_geprueft', current_time('mysql'), false);
+            return ['uebersprungen' => true, 'zeit' => current_time('mysql'), 'dauer' => round(microtime(true) - $t0, 1)];
+        }
+    }
     $erg = ['zeit' => current_time('mysql'), 'quelle' => ma_abgleich_quelle(), 'stand' => '', 'neu' => 0, 'aktualisiert' => 0, 'unveraendert' => 0, 'uebernommen' => 0, 'verworfen' => 0, 'von_hand' => [], 'offen' => 0, 'fehler' => [], 'neue' => [], 'dauer' => 0.0];
     $antwort = wp_remote_get($erg['quelle'], ['timeout' => 30, 'user-agent' => 'Merzenich Aktuell Abgleich/' . MA_CORE_VERSION]);
     if (is_wp_error($antwort) || (int) wp_remote_retrieve_response_code($antwort) !== 200) {
@@ -237,6 +261,8 @@ function ma_abgleich_lauf(int $max = 20): array {
     }
     $daten = ma_abgleich_lesen((string) wp_remote_retrieve_body($antwort));
     if (!$daten['eintraege']) { $erg['fehler'][] = 'Import-Datei ohne Meldungen (Format nicht erkannt)'; return ma_abgleich_abschliessen($erg, $t0); }
+    update_option('ma_abgleich_etag', ma_abgleich_etag_norm((string) wp_remote_retrieve_header($antwort, 'etag')), false);
+    update_option('ma_abgleich_geprueft', current_time('mysql'), false);
     $erg['stand'] = $daten['stand'];
     $vorhandene = ma_abgleich_vorhandene();
     $eintraege = $daten['eintraege'];
@@ -284,6 +310,37 @@ add_action('init', function (): void {
 add_action(MA_ABGLEICH_CRON, function (): void { if (ma_abgleich_aktiv()) ma_abgleich_lauf(); });
 register_deactivation_hook(MA_CORE_PATH . 'merzenich-aktuell-core.php', function (): void { wp_clear_scheduled_hook(MA_ABGLEICH_CRON); });
 
+/** Ist der automatische Lauf überfällig (geplanter Zeitpunkt mehr als 20 Minuten her)? WordPress führt geplante Aufgaben nur bei Seitenaufrufen aus. */
+function ma_abgleich_ueberfaellig(): bool {
+    $n = wp_next_scheduled(MA_ABGLEICH_CRON);
+    return $n !== false && $n < time() - 20 * MINUTE_IN_SECONDS;
+}
+function ma_abgleich_ueberfaellig_text(): string {
+    return '<strong style="color:#b32d2e">Der automatische Lauf ist überfällig.</strong> WordPress führt geplante Aufgaben nur bei Seitenaufrufen aus; der Anstoß aus GitHub (Workflow „WordPress-Abgleich anstoßen“, stündlich und nach jedem Build) holt das nach. Sofort: „Jetzt abgleichen“.';
+}
+
+/*
+ * Anstoß von außen (1.20.5, GitHub-Workflow wordpress-abgleich.yml): /?ma_api=abgleich-anstoss
+ * plant den nächsten Lauf auf jetzt und ruft den Cron an. Live lief der stündliche
+ * Lauf am 04.10.2026 zehn Stunden nicht (WordPress-Cron hängt an Seitenaufrufen, die
+ * hinter dem Cache des Hosters ausbleiben); ein Aufruf von wp-cron.php holte ihn nach.
+ * Ohne Geheimnis, dafür höchstens alle fünf Minuten, und der Lauf liest nur das Repository.
+ */
+add_filter('query_vars', function (array $v): array { if (!in_array('ma_api', $v, true)) $v[] = 'ma_api'; return $v; });
+add_action('template_redirect', function (): void {
+    if (get_query_var('ma_api') !== 'abgleich-anstoss') return;
+    nocache_headers();
+    $aus = ['aktiv' => ma_abgleich_aktiv(), 'angestossen' => false, 'naechster' => wp_next_scheduled(MA_ABGLEICH_CRON) ?: null, 'ueberfaellig' => ma_abgleich_ueberfaellig()];
+    if (ma_abgleich_aktiv() && get_transient('ma_abgleich_anstoss') === false) {
+        set_transient('ma_abgleich_anstoss', '1', 5 * MINUTE_IN_SECONDS);
+        $n = wp_next_scheduled(MA_ABGLEICH_CRON);
+        if ($n === false || $n - time() > 2 * MINUTE_IN_SECONDS) wp_schedule_single_event(time() - 1, MA_ABGLEICH_CRON);
+        if (function_exists('spawn_cron')) spawn_cron();
+        $aus['angestossen'] = true; $aus['naechster'] = wp_next_scheduled(MA_ABGLEICH_CRON) ?: null;
+    }
+    wp_send_json($aus);
+}, 0);
+
 /* ---------------------------------------------------------- Backend */
 
 add_action('admin_menu', function (): void {
@@ -312,6 +369,7 @@ function ma_abgleich_dashboard_kachel(): void {
         echo '<li>Der Abgleich ist noch nicht gelaufen · <a href="' . esc_url(admin_url('admin.php?page=ma-abgleich')) . '">Abgleich</a></li>';
     }
     echo '<li>Nächster automatischer Lauf: ' . ($naechster ? esc_html(wp_date('d.m.Y H:i', $naechster)) . ' Uhr' : 'nicht geplant') . (ma_abgleich_aktiv() ? '' : ' (automatischer Abgleich ist aus)') . (ma_abgleich_sofort() ? ' · neue Meldungen gehen sofort online' : '') . '</li>';
+    if (ma_abgleich_ueberfaellig()) echo '<li>' . ma_abgleich_ueberfaellig_text() . '</li>';
     echo '</ul>';
 }
 
@@ -328,7 +386,7 @@ function ma_abgleich_seite_admin(): void {
             update_option('ma_abgleich_bilder', esc_url_raw(trim((string) ($_POST['bilder'] ?? ''))));
             $hinweis = 'Einstellungen gespeichert.';
         } elseif ($aktion === 'lauf') {
-            $ergebnis = ma_abgleich_lauf(20);
+            $ergebnis = ma_abgleich_lauf(20, true);
             $hinweis = $ergebnis['fehler'] && !$ergebnis['neu'] ? 'Abgleich mit Fehlern, siehe unten.' : 'Abgleich gelaufen.';
         }
     }
@@ -339,7 +397,9 @@ function ma_abgleich_seite_admin(): void {
     if ($hinweis) echo '<div class="notice notice-info"><p>' . esc_html($hinweis) . '</p></div>';
     echo '<form method="post" style="margin:1em 0">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="lauf"><button class="button button-primary">Jetzt abgleichen</button> ';
-    echo '<span class="description">Nächster automatischer Lauf: ' . ($naechster ? esc_html(wp_date('d.m.Y H:i', $naechster)) . ' Uhr' : 'nicht geplant') . (ma_abgleich_aktiv() ? '' : ' (automatischer Abgleich ist aus)') . '</span></form>';
+    $geprueft = (string) get_option('ma_abgleich_geprueft', '');
+    echo '<span class="description">Nächster automatischer Lauf: ' . ($naechster ? esc_html(wp_date('d.m.Y H:i', $naechster)) . ' Uhr' : 'nicht geplant') . (ma_abgleich_aktiv() ? '' : ' (automatischer Abgleich ist aus)') . ($geprueft !== '' ? ' · zuletzt geprüft ' . esc_html(mysql2date('d.m.Y H:i', $geprueft)) . ' Uhr (ohne Änderung der Import-Datei entfällt der volle Lauf)' : '') . '</span></form>';
+    if (ma_abgleich_ueberfaellig()) echo '<div class="notice notice-warning"><p>' . ma_abgleich_ueberfaellig_text() . '</p></div>';
     if (is_array($stand) && $stand) {
         echo '<h2>Letzter Lauf</h2><table class="widefat striped" style="max-width:720px"><tbody>';
         foreach ([['Zeit', $stand['zeit'] ?? ''], ['Stand der Import-Datei', $stand['stand'] ?? ''], ['Neu angelegt', (string) ($stand['neu'] ?? 0)], ['Aktualisiert', (string) ($stand['aktualisiert'] ?? 0)], ['Unverändert', (string) (($stand['unveraendert'] ?? 0) + ($stand['uebernommen'] ?? 0))], ['Von Hand geändert, nicht überschrieben', (string) count($stand['von_hand'] ?? [])], ['Verworfen (Papierkorb, kommt nicht wieder)', (string) ($stand['verworfen'] ?? 0)], ['Noch offen (nächster Lauf)', (string) ($stand['offen'] ?? 0)], ['Dauer', ($stand['dauer'] ?? 0) . ' s']] as [$k, $v]) {

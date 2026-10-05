@@ -1,0 +1,47 @@
+name: WordPress-Abgleich anstoßen
+
+# WordPress führt geplante Aufgaben nur bei Seitenaufrufen aus; hinter dem Cache
+# des Hosters blieb der stündliche Abgleich am 04.10.2026 zehn Stunden liegen.
+# Dieser Workflow stößt ihn an: stündlich, nach jedem Build der Import-Datei
+# (QA und WordPress-Pakete) und von Hand. Ohne Geheimnis: die Anstoß-Adresse
+# plant nur den nächsten Lauf (höchstens alle fünf Minuten), der Lauf liest das
+# Repository. wp-cron.php führt danach alle fälligen Aufgaben aus.
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_run:
+    workflows: ["Merzenich Aktuell QA", "Build WordPress Delivery Packages"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: wordpress-abgleich
+  cancel-in-progress: false
+
+jobs:
+  anstossen:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Warten, bis GitHub die Import-Datei frisch ausliefert (raw-Cache fünf Minuten)
+        if: github.event_name == 'workflow_run'
+        run: sleep 330
+      - name: Nächsten Lauf auf jetzt planen
+        run: |
+          curl -sS -m 60 "https://merzenich-aktuell.de/?ma_api=abgleich-anstoss" || echo "Anstoß nicht erreichbar"
+          echo
+      - name: WordPress-Cron ausführen (fällige Aufgaben, darunter der Abgleich)
+        run: |
+          for i in 1 2 3; do
+            code=$(curl -sS -m 300 -o /dev/null -w '%{http_code}' "https://merzenich-aktuell.de/wp-cron.php?doing_wp_cron=$(date +%s.%N)" || echo 000)
+            echo "wp-cron.php: HTTP $code"
+            [ "$code" = "200" ] && exit 0
+            sleep 30
+          done
+          echo "wp-cron.php antwortet nicht" >&2
+          exit 1
