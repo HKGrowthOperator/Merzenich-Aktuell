@@ -1,11 +1,11 @@
 {
- "stand": "2026-10-04",
+ "stand": "2026-10-05",
  "quelle": "Wikimedia Commons",
  "mindest": 20,
  "pools": {
   "aktuell": 20,
   "blaulicht": 20,
-  "polizei": 13,
+  "polizei": 18,
   "feuerwehr": 20,
   "brand": 20,
   "sport": 20,
@@ -603,6 +603,34 @@
    "ort": "NRW"
   },
   {
+   "id": "web-polizei-02-2b6168e6",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-02-2b6168e683-1200.webp",
+   "alt": "Ballonfahrt Köln. Blick von Osten auf den südlichen Teil von Köln-Kalk - im Vordergrund das ehemalige Werksgelände der Traktorenwerke von Klöckner Humboldt Deutz, oben rechts das e",
+   "credit": "Symbolbild · Atamari / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABallonfahrt_K%C3%B6ln_20130810_653.JPG",
+   "titel": "File:Ballonfahrt Köln 20130810 653.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-05",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-polizei-03-c3764f68",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-03-c3764f680a-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7258.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7258.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-05",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-polizei-04-c44548ef",
    "pool": "polizei",
    "datei": "/assets/editorial-pools/polizei/polizei-04-c44548efb5-1200.webp",
@@ -629,6 +657,20 @@
    "geprueft": true,
    "geprueftAm": "2026-09-24",
    "ort": "NRW"
+  },
+  {
+   "id": "web-polizei-06-a9495499",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-06-a949549920-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7261.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7261.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-05",
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-polizei-07-8fce03b7",
@@ -701,6 +743,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-polizei-12-4bee95fe",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-12-4bee95fe02-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7263.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7263.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-05",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-polizei-13-2662d28b",
    "pool": "polizei",
    "datei": "/assets/editorial-pools/polizei/polizei-13-2662d28b4a-1200.webp",
@@ -727,6 +783,20 @@
    "geprueft": true,
    "geprueftAm": "2026-09-24",
    "ort": "NRW"
+  },
+  {
+   "id": "web-polizei-15-74cb77b8",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-15-74cb77b80b-1200.webp",
+   "alt": "Fahnen vor dem Polizeiprädisium Köln-Kalk",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahnen_vor_dem_Polizeipr%C3%A4sidium_K%C3%B6ln-Kalk-7324.jpg",
+   "titel": "File:Fahnen vor dem Polizeipräsidium Köln-Kalk-7324.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-05",
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-polizei-16-5202fd9e",
