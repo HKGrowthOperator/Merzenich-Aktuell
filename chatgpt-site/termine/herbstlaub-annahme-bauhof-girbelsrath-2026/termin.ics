@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Herbstlaub-Annahme am Bauhof Girbelsrath beginnt
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:herbstlaub-annahme-bauhof-girbelsrath-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261012T110000Z
+DTEND:20261012T150000Z
+SUMMARY:Herbstlaub-Annahme am Bauhof Girbelsrath beginnt
+DESCRIPTION:Ab Montag\, 12. Oktober\, nimmt der Bauhof jeden Montag von 13 
+ bis 17 Uhr Herbstlaub an\, bis einschließlich 7. Dezember. Neu ist der Or
+ t: Abgegeben wird am Bauhof in Girbelsrath\, nicht mehr an der Jahnstraße
+ .\nVeranstalter: Gemeinde Merzenich\, Bauhof\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/herbstlaub-annahme-bauhof-girbelsrath-2026/
+LOCATION:Bauhof der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/herbstlaub-annahm
+ e-bauhof-girbelsrath-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Senioren-Nachmittag im Evangelischen Gemeindehaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:senioren-nachmittag-ev-gemeindehaus-2026-10-14@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261014T130000Z
+DTEND:20261014T150000Z
+SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
+DESCRIPTION:Am Mittwoch\, 14. Oktober\, lädt die Evangelische Gemeinde von
+  15 bis 17 Uhr zum Senioren-Nachmittag ins Gemeindehaus an der Severin-Bö
+ hr-Straße ein.\nVeranstalter: Evangelische Gemeinde zu Düren\, Bezirk Me
+ rzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/senioren-na
+ chmittag-ev-gemeindehaus-2026-10-14/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/senioren-nachmitt
+ ag-ev-gemeindehaus-2026-10-14/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

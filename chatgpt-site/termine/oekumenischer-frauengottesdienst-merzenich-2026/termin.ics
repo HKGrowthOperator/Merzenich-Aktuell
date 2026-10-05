@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ökumenischer Frauengottesdienst „Gemeinsam Lasten tragen“
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:oekumenischer-frauengottesdienst-merzenich-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261016T160000Z
+SUMMARY:Ökumenischer Frauengottesdienst „Gemeinsam Lasten tragen“
+DESCRIPTION:Frauen aus beiden Konfessionen feiern am Freitag\, 16. Oktober\
+ , um 18 Uhr einen Gottesdienst im Evangelischen Gemeindehaus. Im Mittelpun
+ kt stehen die biblischen Frauen Ruth und Noomi.\nVeranstalter: Ökumenisch
+ e Vorbereitungsgruppe der katholischen und evangelischen Gemeinde\nhttps:/
+ /merzenichaktuell.hk-growthoperator.de/termine/oekumenischer-frauengottesd
+ ienst-merzenich-2026/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/oekumenischer-fra
+ uengottesdienst-merzenich-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

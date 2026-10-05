@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:4. Sitzung des Jugendgremiums
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261104T160000Z
+SUMMARY:4. Sitzung des Jugendgremiums
+DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoc
+ h\, 4. November\, um 17 Uhr im Bürgerhaus zu seiner 4. Sitzung.\nVeransta
+ lter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/jugendgremium-sitzung-2026-11-04/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
+ zung-2026-11-04/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

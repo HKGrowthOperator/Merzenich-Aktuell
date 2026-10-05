@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Schadstoffmobil am Schützenplatz Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:schadstoffmobil-merzenich-2026-10-08@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261008T140000Z
+DTEND:20261008T160000Z
+SUMMARY:Schadstoffmobil am Schützenplatz Merzenich
+DESCRIPTION:Am Donnerstag\, 8. Oktober\, steht das Schadstoffmobil von 16 b
+ is 18 Uhr an der Bahnstraße/Schützenplatz in Merzenich. Angenommen werde
+ n laut Amtsblatt auch Dispersionsfarbe und Elektrokleingeräte.\nVeranstal
+ ter: Schadstoffmobil (Auskunft: AWA-Abfallberatung)\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/schadstoffmobil-merzenich-2026-10-08/
+LOCATION:Bahnstraße / Schützenplatz Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/schadstoffmobil-m
+ erzenich-2026-10-08/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

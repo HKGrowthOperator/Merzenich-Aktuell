@@ -50,29 +50,33 @@
     },
     {
       "slug": "rixen-stiftung-kuratorium-2026",
-      "titel": "Sitzung des Kuratoriums Rixen-Stiftung",
+      "titel": "Sitzung des Kuratoriums Rixen-Stiftung (nicht öffentlich)",
       "start": "2026-10-13T18:00:00+02:00",
       "ort": "Fraktionsraum A, Rathaus Merzenich",
       "adresse": "Valdersweg 1, 52399 Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Politik",
       "veranstalter": "Gemeinde Merzenich",
-      "beschreibung": "Bekanntgemachte Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ am Dienstag, 13. Oktober, um 18 Uhr im Rathaus.",
+      "beschreibung": "Der Ausschuss „Kuratorium Rixen-Stiftung“ tagt am Dienstag, 13. Oktober, um 18 Uhr im Rathaus. Die Sitzung ist nicht öffentlich.",
       "absaetze": [
-        "Die Gemeinde Merzenich hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober 2026, 18 Uhr, bekannt gemacht. Treffpunkt ist der Fraktionsraum A, Valdersweg 1.",
-        "Sitzungsunterlagen, Tagesordnung und gegebenenfalls Aktualisierungen sind der offiziellen Bekanntmachung zu entnehmen."
+        "Die Gemeinde Merzenich hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober 2026, 18 Uhr, bekannt gemacht. Die Bekanntmachung nennt den Fraktionsraum A am Valdersweg 1, das Ratsinformationssystem das Dienstzimmer des Bürgermeisters (Zimmer 12) im Rathaus.",
+        "Laut Tagesordnung berät der Ausschuss alle Punkte in nichtöffentlicher Sitzung, unter anderem Zuschüsse zu Beerdigungskosten, zu Kinderferienerholung, zu Seniorenfahrten und zur „Nikolausrunde“ in Morschenich. Zuhörer sind deshalb nicht zugelassen."
       ],
       "artikel": "/rathaus/rixen-stiftung-kuratorium-sitzung-2026-10-13/",
       "links": [
+        [
+          "Sitzung im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUAmnp1neQUlQPp4aHzZjVM"
+        ],
         [
           "Amtliche Bekanntmachungen",
           "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php"
         ]
       ],
       "quelle": {
-        "name": "Gemeinde Merzenich, öffentliche Bekanntmachungen vom 02.10.2026",
-        "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
-        "stand": "2026-10-03"
+        "name": "Gemeinde Merzenich, Bekanntmachung vom 05.10.2026 und Ratsinformationssystem",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUAmnp1neQUlQPp4aHzZjVM",
+        "stand": "2026-10-05"
       }
     },
     {

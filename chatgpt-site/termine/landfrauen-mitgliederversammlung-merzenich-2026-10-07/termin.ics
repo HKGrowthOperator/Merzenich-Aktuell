@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:LandFrauen Nörvenich-Merzenich: Mitgliederversammlung mit Wah
+ len
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:landfrauen-mitgliederversammlung-merzenich-2026-10-07@merzenich-aktuell
+ .de
+DTSTAMP:20261005T060000Z
+DTSTART:20261007T130000Z
+SUMMARY:LandFrauen Nörvenich-Merzenich: Mitgliederversammlung mit Wahlen
+DESCRIPTION:Die LandFrauen aus Nörvenich und Merzenich wählen am Mittwoch
+ \, 7. Oktober\, um 15 Uhr im Bürgerhaus Merzenich einen neuen Ortsvorstan
+ d. Dazu gibt es einen Vortrag über Nahrungsergänzungsmittel.\nVeranstalt
+ er: LandFrauen\, Ortsverband Nörvenich-Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/landfrauen-mitgliederversammlung-merzenich-
+ 2026-10-07/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/landfrauen-mitgli
+ ederversammlung-merzenich-2026-10-07/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

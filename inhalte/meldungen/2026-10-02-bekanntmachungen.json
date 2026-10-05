@@ -6,17 +6,18 @@
       "ressort": "rathaus",
       "ortsteil": "merzenich",
       "kicker": "Bekanntmachung · Gremien",
-      "titel": "Kuratorium der Rixen-Stiftung tagt am 13. Oktober im Rathaus",
-      "dek": "Die Gemeinde hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober, um 18 Uhr im Fraktionsraum A bekannt gemacht.",
+      "titel": "Kuratorium der Rixen-Stiftung tagt am 13. Oktober nicht öffentlich",
+      "dek": "Die Gemeinde hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober, um 18 Uhr bekannt gemacht. Alle Punkte stehen im nichtöffentlichen Teil.",
       "datum": "2026-10-03T18:30:00+02:00",
       "fakten": [
         "Dienstag, 13. Oktober 2026, 18 Uhr",
-        "Fraktionsraum A, Rathaus Merzenich, Valdersweg 1",
-        "Öffentliche Bekanntmachung vom 2. Oktober 2026"
+        "Rathaus Merzenich (Bekanntmachung: Fraktionsraum A; Ratsinformationssystem: Dienstzimmer des Bürgermeisters, Zimmer 12)",
+        "Nichtöffentliche Sitzung"
       ],
       "absaetze": [
-        "Der Ausschuss „Kuratorium Rixen-Stiftung“ der Gemeinde Merzenich kommt laut der am 2. Oktober veröffentlichten amtlichen Bekanntmachung am Dienstag, 13. Oktober 2026, um 18 Uhr zusammen. Als Sitzungsort ist Fraktionsraum A im Rathaus am Valdersweg 1 angegeben.",
-        "Die Gemeinde veröffentlicht ihre amtlichen Bekanntmachungen einschließlich Sitzungshinweisen und Unterlagen auf ihrer Internetseite. Für die Tagesordnung und eventuelle Änderungen ist die dort verlinkte Originalbekanntmachung maßgeblich. Ein Beschluss oder ein Beratungsergebnis wird mit dieser Terminmeldung nicht vorweggenommen."
+        "Der Ausschuss „Kuratorium Rixen-Stiftung“ der Gemeinde Merzenich kommt am Dienstag, 13. Oktober 2026, um 18 Uhr im Rathaus zusammen. Die amtliche Bekanntmachung nennt als Sitzungsort den Fraktionsraum A am Valdersweg 1, das Ratsinformationssystem das Dienstzimmer des Bürgermeisters (Zimmer 12).",
+        "Laut Tagesordnung berät der Ausschuss alle Punkte in nichtöffentlicher Sitzung. Auf der Tagesordnung stehen unter anderem Zuschüsse zu Beerdigungskosten, zu Kinderferienerholungsmaßnahmen und zu Seniorenfahrten, Beihilfen an Kommunionkinder und Konfirmanden sowie Zuschüsse zu Seniorenfrühstücken und zur „Nikolausrunde“ in Morschenich.",
+        "Für die Tagesordnung und eventuelle Änderungen ist die Originalbekanntmachung maßgeblich. Ein Beschluss oder ein Beratungsergebnis wird mit dieser Terminmeldung nicht vorweggenommen."
       ],
       "themen": [
         [
@@ -30,9 +31,9 @@
       ],
       "bildklasse": "rathaus.rat",
       "quelle": {
-        "name": "Gemeinde Merzenich, öffentliche Bekanntmachungen vom 02.10.2026",
-        "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
-        "stand": "2026-10-03"
+        "name": "Gemeinde Merzenich, Bekanntmachung vom 05.10.2026 und Ratsinformationssystem",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUAmnp1neQUlQPp4aHzZjVM",
+        "stand": "2026-10-05"
       }
     },
     {

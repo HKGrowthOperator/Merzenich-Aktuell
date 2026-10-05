@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261126T170000Z
+SUMMARY:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
+DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
+ ag\, 26. November\, um 18 Uhr im Ratssaal zu seiner 6. Sitzung zusammen.\n
+ Veranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperat
+ or.de/termine/ausschuss-revitalisierung-buergewald-2026-11-26/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ausschuss-revital
+ isierung-buergewald-2026-11-26/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

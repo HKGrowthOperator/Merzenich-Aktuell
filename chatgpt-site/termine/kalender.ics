@@ -153,6 +153,86 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/wttv-cup-merzenic
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:blutspende-merzenich-2026-10-06@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261006T140000Z
+DTEND:20261006T180000Z
+SUMMARY:Blutspende im Bürgerhaus Merzenich
+DESCRIPTION:Der DRK-Blutspendedienst West lädt am Dienstag\, 6. Oktober\, 
+ von 16 bis 20 Uhr ins Bürgerhaus Merzenich ein. Der Blutspendedienst bitt
+ et darum\, vorab einen Termin zu reservieren.\nVeranstalter: DRK-Blutspend
+ edienst West\nhttps://merzenichaktuell.hk-growthoperator.de/termine/blutsp
+ ende-merzenich-2026-10-06/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/blutspende-merzen
+ ich-2026-10-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:friedensgebet-morschenich-2026-10-06@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261006T160000Z
+SUMMARY:Ökumenisches Friedensgebet in Morschenich
+DESCRIPTION:Am Dienstag\, 6. Oktober\, um 18 Uhr findet in Morschenich ein 
+ ökumenisches Friedensgebet statt. Der Chor „Spirits of HamONie“ gesta
+ ltet die Musik.\nVeranstalter: Katholische Pfarrgemeinden Merzenich und Ni
+ ederzier\nhttps://merzenichaktuell.hk-growthoperator.de/termine/friedensge
+ bet-morschenich-2026-10-06/
+LOCATION:Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/friedensgebet-mor
+ schenich-2026-10-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:landfrauen-mitgliederversammlung-merzenich-2026-10-07@merzenich-aktuell
+ .de
+DTSTAMP:20261005T060000Z
+DTSTART:20261007T130000Z
+SUMMARY:LandFrauen Nörvenich-Merzenich: Mitgliederversammlung mit Wahlen
+DESCRIPTION:Die LandFrauen aus Nörvenich und Merzenich wählen am Mittwoch
+ \, 7. Oktober\, um 15 Uhr im Bürgerhaus Merzenich einen neuen Ortsvorstan
+ d. Dazu gibt es einen Vortrag über Nahrungsergänzungsmittel.\nVeranstalt
+ er: LandFrauen\, Ortsverband Nörvenich-Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/landfrauen-mitgliederversammlung-merzenich-
+ 2026-10-07/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/landfrauen-mitgli
+ ederversammlung-merzenich-2026-10-07/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:seniorenfahrt-gasometer-oberhausen-2026-10-08@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261008T064500Z
+SUMMARY:Tagesfahrt der Freizeitgemeinschaft 55+ zum Gasometer Oberhausen
+DESCRIPTION:Die Freizeitgemeinschaft 55+ fährt am Donnerstag\, 8. Oktober\
+ , zur Ausstellung „Mythos Wald“ im Gasometer Oberhausen. Abfahrt ist u
+ m 8:45 Uhr am Parkplatz hinter dem Bürgerhaus.\nVeranstalter: Freizeitgem
+ einschaft 55+ / Offene Seniorenarbeit der Gemeinde Merzenich\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/seniorenfahrt-gasometer-oberhaus
+ en-2026-10-08/
+LOCATION:Abfahrt: Parkplatz hinter dem Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorenfahrt-gas
+ ometer-oberhausen-2026-10-08/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:schadstoffmobil-merzenich-2026-10-08@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261008T140000Z
+DTEND:20261008T160000Z
+SUMMARY:Schadstoffmobil am Schützenplatz Merzenich
+DESCRIPTION:Am Donnerstag\, 8. Oktober\, steht das Schadstoffmobil von 16 b
+ is 18 Uhr an der Bahnstraße/Schützenplatz in Merzenich. Angenommen werde
+ n laut Amtsblatt auch Dispersionsfarbe und Elektrokleingeräte.\nVeranstal
+ ter: Schadstoffmobil (Auskunft: AWA-Abfallberatung)\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/schadstoffmobil-merzenich-2026-10-08/
+LOCATION:Bahnstraße / Schützenplatz Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/schadstoffmobil-m
+ erzenich-2026-10-08/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:orte-von-kirche-merzenich-2026@merzenich-aktuell.de
 DTSTAMP:20261004T060000Z
 DTSTART:20261008T173000Z
@@ -183,17 +263,65 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/msg-hitnight-golz
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:herbstlaub-annahme-bauhof-girbelsrath-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261012T110000Z
+DTEND:20261012T150000Z
+SUMMARY:Herbstlaub-Annahme am Bauhof Girbelsrath beginnt
+DESCRIPTION:Ab Montag\, 12. Oktober\, nimmt der Bauhof jeden Montag von 13 
+ bis 17 Uhr Herbstlaub an\, bis einschließlich 7. Dezember. Neu ist der Or
+ t: Abgegeben wird am Bauhof in Girbelsrath\, nicht mehr an der Jahnstraße
+ .\nVeranstalter: Gemeinde Merzenich\, Bauhof\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/herbstlaub-annahme-bauhof-girbelsrath-2026/
+LOCATION:Bauhof der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/herbstlaub-annahm
+ e-bauhof-girbelsrath-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:rixen-stiftung-kuratorium-2026@merzenich-aktuell.de
-DTSTAMP:20261003T060000Z
+DTSTAMP:20261005T060000Z
 DTSTART:20261013T160000Z
-SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung
-DESCRIPTION:Bekanntgemachte Sitzung des Ausschusses „Kuratorium Rixen-Sti
- ftung“ am Dienstag\, 13. Oktober\, um 18 Uhr im Rathaus.\nVeranstalter: 
- Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/
- rixen-stiftung-kuratorium-2026/
+SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung (nicht öffentlich)
+DESCRIPTION:Der Ausschuss „Kuratorium Rixen-Stiftung“ tagt am Dienstag\
+ , 13. Oktober\, um 18 Uhr im Rathaus. Die Sitzung ist nicht öffentlich.\n
+ Veranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperat
+ or.de/termine/rixen-stiftung-kuratorium-2026/
 LOCATION:Fraktionsraum A\, Rathaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/rixen-stiftung-ku
  ratorium-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:vhs-vortrag-mietrecht-vermietende-2026-10-13@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261013T170000Z
+DTEND:20261013T183000Z
+SUMMARY:VHS-Vortrag „Mietrecht für Vermietende“
+DESCRIPTION:Eine Rechtsanwältin erklärt am Dienstag\, 13. Oktober\, Vermi
+ eterinnen und Vermietern die Grundlagen des Wohnraummietrechts. Die Verans
+ taltung der VHS Rur-Eifel ist kostenlos.\nVeranstalter: VHS Rur-Eifel in K
+ ooperation mit dem Familienzentrum Merzenich\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/vhs-vortrag-mietrecht-vermietende-2026-10-13/
+LOCATION:Familienzentrum Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-vortrag-mietr
+ echt-vermietende-2026-10-13/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:senioren-nachmittag-ev-gemeindehaus-2026-10-14@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261014T130000Z
+DTEND:20261014T150000Z
+SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
+DESCRIPTION:Am Mittwoch\, 14. Oktober\, lädt die Evangelische Gemeinde von
+  15 bis 17 Uhr zum Senioren-Nachmittag ins Gemeindehaus an der Severin-Bö
+ hr-Straße ein.\nVeranstalter: Evangelische Gemeinde zu Düren\, Bezirk Me
+ rzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/senioren-na
+ chmittag-ev-gemeindehaus-2026-10-14/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/senioren-nachmitt
+ ag-ev-gemeindehaus-2026-10-14/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -225,6 +353,22 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/vortrag-zwangsarb
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:oekumenischer-frauengottesdienst-merzenich-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261016T160000Z
+SUMMARY:Ökumenischer Frauengottesdienst „Gemeinsam Lasten tragen“
+DESCRIPTION:Frauen aus beiden Konfessionen feiern am Freitag\, 16. Oktober\
+ , um 18 Uhr einen Gottesdienst im Evangelischen Gemeindehaus. Im Mittelpun
+ kt stehen die biblischen Frauen Ruth und Noomi.\nVeranstalter: Ökumenisch
+ e Vorbereitungsgruppe der katholischen und evangelischen Gemeinde\nhttps:/
+ /merzenichaktuell.hk-growthoperator.de/termine/oekumenischer-frauengottesd
+ ienst-merzenich-2026/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/oekumenischer-fra
+ uengottesdienst-merzenich-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:seniorennachmittag-2026@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20261017T123000Z
@@ -236,6 +380,54 @@ DESCRIPTION:Live-Musik\, Kaffee und Kuchen. Anmeldung per Coupon\, Eintritt
 LOCATION:Weinberghalle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorennachmitta
  g-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-kartenvorverkauf-kostuemsitzung-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261018T080000Z
+DTEND:20261018T090000Z
+SUMMARY:Kartenvorverkauf für die Kostümsitzung der KG Golzheim
+DESCRIPTION:Die KG Mir hahle Poohl verkauft am Sonntag\, 18. Oktober\, von 
+ 10 bis 11 Uhr in der Turnhalle Golzheim die Karten für ihre Große Kostü
+ msitzung am 7. November.\nVeranstalter: KG Mir hahle Poohl Golzheim 1905 e
+ .V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kar
+ tenvorverkauf-kostuemsitzung-2026/
+LOCATION:Turnhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-karte
+ nvorverkauf-kostuemsitzung-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:open-house-kinder-buergerhaus-herbstferien-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261021T090000Z
+DTEND:20261022T140000Z
+SUMMARY:Open House für Kinder im Bürgerhaus
+DESCRIPTION:In den Herbstferien öffnet die Offene Kinder- und Jugendarbeit
+  am 21. und 22. Oktober jeweils von 11 bis 16 Uhr das Bürgerhaus für Kin
+ der von 6 bis 13 Jahren. Gebastelt und gekocht wird auch.\nVeranstalter: O
+ ffene Kinder- und Jugendarbeit der Gemeinde Merzenich\nhttps://merzenichak
+ tuell.hk-growthoperator.de/termine/open-house-kinder-buergerhaus-herbstfer
+ ien-2026/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/open-house-kinder
+ -buergerhaus-herbstferien-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:patrozinium-st-amandus-girbelsrath-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261024T143000Z
+SUMMARY:Messe zum Patrozinium von St. Amandus in Girbelsrath
+DESCRIPTION:Girbelsrath feiert am Samstag\, 24. Oktober\, um 16:30 Uhr eine
+  Messe zum Fest seines Pfarrpatrons\, des heiligen Amandus von Maastricht.
+  Ab 16 Uhr ist stille Anbetung.\nVeranstalter: Katholische Pfarrgemeinde S
+ t. Amandus Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/term
+ ine/patrozinium-st-amandus-girbelsrath-2026/
+LOCATION:St. Amandus Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/patrozinium-st-am
+ andus-girbelsrath-2026/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -252,6 +444,217 @@ DESCRIPTION:Der Merzenicher FC-Fanclub feiert seinen 59. Bierabend und zugl
 LOCATION:Weinberghalle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/fc-fanclub-59-bie
  rabend-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:allerheiligen-graebersegnung-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261101T083000Z
+SUMMARY:Allerheiligen: Gottesdienste und Gräbersegnungen in den Ortsteilen
+DESCRIPTION:An Allerheiligen\, Sonntag\, 1. November\, gibt es in vier Orts
+ teilen Gottesdienste mit anschließender Gräbersegnung. Den Anfang macht 
+ Merzenich um 9:30 Uhr.\nVeranstalter: Katholische Pfarrgemeinden Merzenich
+  und Niederzier\nhttps://merzenichaktuell.hk-growthoperator.de/termine/all
+ erheiligen-graebersegnung-2026/
+LOCATION:Kirchen und Friedhöfe in Merzenich\, Girbelsrath\, Morschenich un
+ d Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/allerheiligen-gra
+ ebersegnung-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261104T160000Z
+SUMMARY:4. Sitzung des Jugendgremiums
+DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoc
+ h\, 4. November\, um 17 Uhr im Bürgerhaus zu seiner 4. Sitzung.\nVeransta
+ lter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/jugendgremium-sitzung-2026-11-04/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
+ zung-2026-11-04/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261105T170000Z
+SUMMARY:2. Sitzung des Rechnungsprüfungsausschusses
+DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
+ er\, um 18 Uhr im Ratssaal zu seiner 2. Sitzung zusammen.\nVeranstalter: G
+ emeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/r
+ echnungspruefungsausschuss-2026-11-05/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/rechnungspruefung
+ sausschuss-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-kostuemsitzung-2026-11-07@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261107T191100Z
+SUMMARY:Große Kostümsitzung der KG Mir hahle Poohl Golzheim
+DESCRIPTION:Die KG Golzheim startet am Samstag\, 7. November\, mit ihrer Gr
+ oßen Kostümsitzung in der Schützenhalle in die Session 2026/27. Beginn 
+ ist um 20:11 Uhr\, Einlass ab 18:30 Uhr.\nVeranstalter: KG Mir hahle Poohl
+  Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /kg-golzheim-kostuemsitzung-2026-11-07/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kostu
+ emsitzung-2026-11-07/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buecher-spielemarkt-ig-golzheim-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261108T090000Z
+DTEND:20261108T150000Z
+SUMMARY:Bücher- und Spielemarkt der IG Golzheim aktiv
+DESCRIPTION:Mehr als 1000 Bücher\, über 100 Spiele und Puzzles sowie Medi
+ en aller Art: Die IG Golzheim aktiv lädt am Sonntag\, 8. November\, von 1
+ 0 bis 16 Uhr zum Bücher- und Spielemarkt ins Bürgerhaus Merzenich ein.\n
+ Veranstalter: IG Golzheim aktiv\nhttps://merzenichaktuell.hk-growthoperato
+ r.de/termine/buecher-spielemarkt-ig-golzheim-2026/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/buecher-spielemar
+ kt-ig-golzheim-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kindergottesdienst-ev-gemeindehaus-2026-11-08@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261108T100000Z
+SUMMARY:Kindergottesdienst im Evangelischen Gemeindehaus
+DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
+  Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich.\nVe
+ ranstalter: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeinde
+ haus-2026-11-08/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
+ t-ev-gemeindehaus-2026-11-08/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:vhs-bildvortrag-paris-marienhof-2026-11-10@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261110T143000Z
+DTEND:20261110T153000Z
+SUMMARY:VHS-Bildvortrag „Paris“ im Seniorenhaus Marienhof
+DESCRIPTION:Otmar Steinbicker nimmt das Publikum am Dienstag\, 10. November
+ \, mit auf einen Gang durch die Stadtteile von Paris. Der VHS-Vortrag im S
+ eniorenhaus Marienhof ist kostenlos.\nVeranstalter: VHS Rur-Eifel\nhttps:/
+ /merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-paris-marie
+ nhof-2026-11-10/
+LOCATION:Seniorenhaus Marienhof
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-p
+ aris-marienhof-2026-11-10/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261112T170000Z
+SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
+DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
+ 2. November\, um 18 Uhr im Ratssaal. Es ist seine 5. Sitzung.\nVeranstalte
+ r: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termi
+ ne/bauausschuss-sitzung-2026-11-12/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/bauausschuss-sitz
+ ung-2026-11-12/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261115T083000Z
+SUMMARY:Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weckmanns
+ chießen
+DESCRIPTION:Zum Volkstrauertag am Sonntag\, 15. November\, ist in Merzenich
+  nach der Messe um 9:30 Uhr eine Kranzniederlegung an der Alten Kirche ang
+ ekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.\nVerans
+ talter: Merzenicher Ortsvereine (Angaben laut Terminkalender der KG Jonge 
+ vom Berg)\nhttps://merzenichaktuell.hk-growthoperator.de/termine/volkstrau
+ ertag-merzenich-2026/
+LOCATION:Alte Kirche Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/volkstrauertag-me
+ rzenich-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ev-gottesdienst-gedenken-verstorbene-2026-11-15@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261115T090000Z
+SUMMARY:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
+DESCRIPTION:Am Sonntag\, 15. November\, feiert die Evangelische Gemeinde um
+  10 Uhr im Gemeindehaus Merzenich einen Gottesdienst mit Abendmahl\, in de
+ m sie der Verstorbenen gedenkt.\nVeranstalter: Evangelische Gemeinde zu D
+ üren\, Bezirk Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/ev-gottesdienst-gedenken-verstorbene-2026-11-15/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ev-gottesdienst-g
+ edenken-verstorbene-2026-11-15/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:taize-gottesdienst-morschenich-2026-11-15@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261115T160000Z
+SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
+DESCRIPTION:In der Lambertuskapelle Morschenich wird am Sonntag\, 15. Novem
+ ber\, um 17 Uhr ein Taizé-Gottesdienst gefeiert. Eingeladen hat Diakon Ra
+ ymund Schreinemacher.\nVeranstalter: Katholische Pfarrgemeinden Merzenich 
+ und Niederzier (Diakon Raymund Schreinemacher)\nhttps://merzenichaktuell.h
+ k-growthoperator.de/termine/taize-gottesdienst-morschenich-2026-11-15/
+LOCATION:Lambertuskapelle Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/taize-gottesdiens
+ t-morschenich-2026-11-15/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261119T090000Z
+DTEND:20261119T110000Z
+SUMMARY:Sprechstunde der Betreuungsbehörde im Rathaus
+DESCRIPTION:Die Betreuungsbehörde des Kreises Düren berät am Donnerstag\
+ , 19. November\, von 10 bis 12 Uhr im Rathaus Merzenich zu Betreuung\, Vor
+ sorgevollmacht und Patientenverfügung. Eine Anmeldung ist nötig.\nVerans
+ talter: Kreis Düren\, Betreuungsbehörde\nhttps://merzenichaktuell.hk-gro
+ wthoperator.de/termine/sprechstunde-betreuungsbehoerde-rathaus-2026-11-19/
+LOCATION:Rathaus Merzenich\, Fraktionsraum B
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/sprechstunde-betr
+ euungsbehoerde-rathaus-2026-11-19/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261119T170000Z
+SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
+DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
+ November\, um 18 Uhr im Ratssaal zu seiner 10. Sitzung.\nVeranstalter: Gem
+ einde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/hau
+ pt-finanzausschuss-sitzung-2026-11-19/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/haupt-finanzaussc
+ huss-sitzung-2026-11-19/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261126T170000Z
+SUMMARY:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
+DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
+ ag\, 26. November\, um 18 Uhr im Ratssaal zu seiner 6. Sitzung zusammen.\n
+ Veranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperat
+ or.de/termine/ausschuss-revitalisierung-buergewald-2026-11-26/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ausschuss-revital
+ isierung-buergewald-2026-11-26/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

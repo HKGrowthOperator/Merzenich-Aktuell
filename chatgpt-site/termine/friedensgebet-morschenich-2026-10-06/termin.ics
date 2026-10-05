@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Ökumenisches Friedensgebet in Morschenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:friedensgebet-morschenich-2026-10-06@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261006T160000Z
+SUMMARY:Ökumenisches Friedensgebet in Morschenich
+DESCRIPTION:Am Dienstag\, 6. Oktober\, um 18 Uhr findet in Morschenich ein 
+ ökumenisches Friedensgebet statt. Der Chor „Spirits of HamONie“ gesta
+ ltet die Musik.\nVeranstalter: Katholische Pfarrgemeinden Merzenich und Ni
+ ederzier\nhttps://merzenichaktuell.hk-growthoperator.de/termine/friedensge
+ bet-morschenich-2026-10-06/
+LOCATION:Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/friedensgebet-mor
+ schenich-2026-10-06/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

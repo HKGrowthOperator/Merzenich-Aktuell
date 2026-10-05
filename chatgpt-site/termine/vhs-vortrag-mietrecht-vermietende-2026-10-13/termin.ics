@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:VHS-Vortrag „Mietrecht für Vermietende“
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:vhs-vortrag-mietrecht-vermietende-2026-10-13@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261013T170000Z
+DTEND:20261013T183000Z
+SUMMARY:VHS-Vortrag „Mietrecht für Vermietende“
+DESCRIPTION:Eine Rechtsanwältin erklärt am Dienstag\, 13. Oktober\, Vermi
+ eterinnen und Vermietern die Grundlagen des Wohnraummietrechts. Die Verans
+ taltung der VHS Rur-Eifel ist kostenlos.\nVeranstalter: VHS Rur-Eifel in K
+ ooperation mit dem Familienzentrum Merzenich\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/vhs-vortrag-mietrecht-vermietende-2026-10-13/
+LOCATION:Familienzentrum Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-vortrag-mietr
+ echt-vermietende-2026-10-13/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:VHS-Bildvortrag „Paris“ im Seniorenhaus Marienhof
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:vhs-bildvortrag-paris-marienhof-2026-11-10@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261110T143000Z
+DTEND:20261110T153000Z
+SUMMARY:VHS-Bildvortrag „Paris“ im Seniorenhaus Marienhof
+DESCRIPTION:Otmar Steinbicker nimmt das Publikum am Dienstag\, 10. November
+ \, mit auf einen Gang durch die Stadtteile von Paris. Der VHS-Vortrag im S
+ eniorenhaus Marienhof ist kostenlos.\nVeranstalter: VHS Rur-Eifel\nhttps:/
+ /merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-paris-marie
+ nhof-2026-11-10/
+LOCATION:Seniorenhaus Marienhof
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-p
+ aris-marienhof-2026-11-10/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

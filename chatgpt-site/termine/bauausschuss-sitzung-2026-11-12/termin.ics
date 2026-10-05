@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261112T170000Z
+SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
+DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
+ 2. November\, um 18 Uhr im Ratssaal. Es ist seine 5. Sitzung.\nVeranstalte
+ r: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termi
+ ne/bauausschuss-sitzung-2026-11-12/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/bauausschuss-sitz
+ ung-2026-11-12/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:10. Sitzung des Haupt- und Finanzausschusses
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261119T170000Z
+SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
+DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
+ November\, um 18 Uhr im Ratssaal zu seiner 10. Sitzung.\nVeranstalter: Gem
+ einde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/hau
+ pt-finanzausschuss-sitzung-2026-11-19/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/haupt-finanzaussc
+ huss-sitzung-2026-11-19/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

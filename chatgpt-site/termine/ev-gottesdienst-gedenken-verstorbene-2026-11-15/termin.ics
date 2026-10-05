@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ev-gottesdienst-gedenken-verstorbene-2026-11-15@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261115T090000Z
+SUMMARY:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
+DESCRIPTION:Am Sonntag\, 15. November\, feiert die Evangelische Gemeinde um
+  10 Uhr im Gemeindehaus Merzenich einen Gottesdienst mit Abendmahl\, in de
+ m sie der Verstorbenen gedenkt.\nVeranstalter: Evangelische Gemeinde zu D
+ üren\, Bezirk Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/ev-gottesdienst-gedenken-verstorbene-2026-11-15/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ev-gottesdienst-g
+ edenken-verstorbene-2026-11-15/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

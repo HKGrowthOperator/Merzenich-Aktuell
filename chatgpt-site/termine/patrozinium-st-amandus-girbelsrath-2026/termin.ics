@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Messe zum Patrozinium von St. Amandus in Girbelsrath
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:patrozinium-st-amandus-girbelsrath-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261024T143000Z
+SUMMARY:Messe zum Patrozinium von St. Amandus in Girbelsrath
+DESCRIPTION:Girbelsrath feiert am Samstag\, 24. Oktober\, um 16:30 Uhr eine
+  Messe zum Fest seines Pfarrpatrons\, des heiligen Amandus von Maastricht.
+  Ab 16 Uhr ist stille Anbetung.\nVeranstalter: Katholische Pfarrgemeinde S
+ t. Amandus Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/term
+ ine/patrozinium-st-amandus-girbelsrath-2026/
+LOCATION:St. Amandus Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/patrozinium-st-am
+ andus-girbelsrath-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

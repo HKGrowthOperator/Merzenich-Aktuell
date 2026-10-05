@@ -3,18 +3,18 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Sitzung des Kuratoriums Rixen-Stiftung
+X-WR-CALNAME:Sitzung des Kuratoriums Rixen-Stiftung (nicht öffentlich)
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:rixen-stiftung-kuratorium-2026@merzenich-aktuell.de
-DTSTAMP:20261003T060000Z
+DTSTAMP:20261005T060000Z
 DTSTART:20261013T160000Z
-SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung
-DESCRIPTION:Bekanntgemachte Sitzung des Ausschusses „Kuratorium Rixen-Sti
- ftung“ am Dienstag\, 13. Oktober\, um 18 Uhr im Rathaus.\nVeranstalter: 
- Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/
- rixen-stiftung-kuratorium-2026/
+SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung (nicht öffentlich)
+DESCRIPTION:Der Ausschuss „Kuratorium Rixen-Stiftung“ tagt am Dienstag\
+ , 13. Oktober\, um 18 Uhr im Rathaus. Die Sitzung ist nicht öffentlich.\n
+ Veranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperat
+ or.de/termine/rixen-stiftung-kuratorium-2026/
 LOCATION:Fraktionsraum A\, Rathaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/rixen-stiftung-ku
  ratorium-2026/

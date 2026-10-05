@@ -1,0 +1,165 @@
+{
+  "hinweis": "Nachtrag für den Direkten Umkreis, recherchiert am 05.10.2026. Ausschließlich datierte Einzelmeldungen mit eigener Adresse, Titel in eigenen Worten, keine Dubletten zu 2026-09.json und 2026-10.json. deploy/umkreis.mjs nimmt als Ort nur Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren an. Meldungen aus Jülich, Langerwehe und Heimbach stehen deshalb unter Kreis Düren, der Ortsname steht am Anfang des Titels. Die Websites der Gemeinden Nörvenich, Niederzier und der Stadt Kerpen ließen sich am 05.10. wegen eines Schutzes gegen automatische Abrufe nicht öffnen, ihre Meldungen fehlen daher.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Polizei berät an den Wochenmärkten in Düren und Jülich zum Schutz vor Taschendieben",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6365151",
+      "datum": "2026-10-05",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "E-Scooter-Kontrollen in der Innenstadt: 49 Fahrzeuge geprüft, zahlreiche Verstöße",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364808",
+      "datum": "2026-10-05",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Einbrüche am Feiertag in Gürzenich, Jüngersdorf und Titz: Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364805",
+      "datum": "2026-10-05",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Leben",
+      "titel": "Stadtbücherei bietet Zeitschriften jetzt auch digital über sharemagazines an",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/sharemagazines-in-der-stadtbuecherei-dueren",
+      "datum": "2026-10-05",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Verkehr",
+      "titel": "Jülich: Zwei Verletzte bei Zusammenstoß an der Einmündung B55/L241",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364807",
+      "datum": "2026-10-05",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Radfahrer schwer verletzt, E-Scooter-Fahrer flüchtet von der Unfallstelle",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364806",
+      "datum": "2026-10-05",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Leben",
+      "titel": "LEADER-Projekt „Verbunden mit der Natur“ startet in den Bördedörfern an Inde und Rur",
+      "url": "https://www.juelich.de/aktuelles?news=Start_des_LEADER_Projektes_bdquo_Verbunden_mit_der_Natur_ldquo",
+      "datum": "2026-10-05",
+      "quelle": "Stadt Jülich"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Blaulicht",
+      "titel": "Autofahrer mit mehr als zwei Promille nach Hinweis eines Zeugen gestoppt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364292",
+      "datum": "2026-10-04",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Derichsweiler: Alkoholisierte Fahrerin stößt gegen eigenes Auto, Wagen nicht versichert",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6364268",
+      "datum": "2026-10-04",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Kultur",
+      "titel": "KG Frohsinn Oberzier eröffnet am 7. November die Session mit Dreigestirn-Proklamation",
+      "url": "https://www.heimat-info.de/veranstaltungen/940d1605-baa9-4150-a13f-c0f31c4e2ccd",
+      "datum": "2026-10-04",
+      "quelle": "KG Frohsinn 1971 Oberzier e.V."
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Sechsjähriger im Kindersitz bei Zusammenstoß an der Meckerstraße schwer verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6363778",
+      "datum": "2026-10-02",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Politik",
+      "titel": "Jülich: Grundstein für das neue Rathaus im Brainergy Park enthüllt",
+      "url": "https://www.juelich.de/aktuelles?news=bdquo_Ein_Ort_der_zusammen_und_voran_bringt_ldquo",
+      "datum": "2026-10-02",
+      "quelle": "Stadt Jülich"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Kultur",
+      "titel": "Kunstakademie Heimbach eröffnet am 11. Oktober ihre dritte Werkschau",
+      "url": "https://www.kreis-dueren.de/presse/werksschau_2026-10-02.php",
+      "datum": "2026-10-02",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Kultur",
+      "titel": "Vortrag und Diskussion zur Enzyklika „Magnifica Humanitas“ am 15. Oktober in der Stadtbücherei",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/vortrag-und-diskussion-zur-enzyklika-magnifica-humanitas",
+      "datum": "2026-10-01",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Politik",
+      "titel": "Langerwehe: Online-Umfrage zum Abschluss des Stadtterrassen-Experiments",
+      "url": "https://www.heimat-info.de/beitraege/b9f4f084-13b5-4c27-b607-fc31138b0bf7",
+      "datum": "2026-10-01",
+      "quelle": "Gemeinde Langerwehe"
+    },
+    {
+      "ort": "Kerpen",
+      "rubrik": "Blaulicht",
+      "titel": "62-Jähriger mit 2,4 Promille schlafend in seinem Auto angetroffen",
+      "url": "https://www.presseportal.de/blaulicht/pm/10374/6362210",
+      "datum": "2026-09-30",
+      "quelle": "Polizei Rhein-Erft-Kreis"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Neue Fußgängerampel an der Rütger-von-Scheven-Straße: Langenberger Straße rund drei Wochen gesperrt",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/neubau-einer-fugaengerampel-in-der-ruetger-von-scheven-strae",
+      "datum": "2026-09-29",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Kultur",
+      "titel": "Comiciade: Kostenlose Zeichen-Workshops in der Stadtbücherei vom 26. bis 30. Oktober",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/monster-tiere-sensationen-die-comiciade-in-dueren-ist-wieder-da",
+      "datum": "2026-09-29",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Verkehr",
+      "titel": "Langerwehe: 16-Jähriger auf Kleinkraftrad an der Eifelstraße schwer verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6361395",
+      "datum": "2026-09-29",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Polizei warnt vor Trickdieben, die sich als Wasserwerker ausgeben",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6361394",
+      "datum": "2026-09-29",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

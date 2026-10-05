@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Große Kostümsitzung der KG Mir hahle Poohl Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-kostuemsitzung-2026-11-07@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261107T191100Z
+SUMMARY:Große Kostümsitzung der KG Mir hahle Poohl Golzheim
+DESCRIPTION:Die KG Golzheim startet am Samstag\, 7. November\, mit ihrer Gr
+ oßen Kostümsitzung in der Schützenhalle in die Session 2026/27. Beginn 
+ ist um 20:11 Uhr\, Einlass ab 18:30 Uhr.\nVeranstalter: KG Mir hahle Poohl
+  Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /kg-golzheim-kostuemsitzung-2026-11-07/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kostu
+ emsitzung-2026-11-07/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

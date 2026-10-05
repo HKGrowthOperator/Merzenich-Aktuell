@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bücher- und Spielemarkt der IG Golzheim aktiv
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:buecher-spielemarkt-ig-golzheim-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261108T090000Z
+DTEND:20261108T150000Z
+SUMMARY:Bücher- und Spielemarkt der IG Golzheim aktiv
+DESCRIPTION:Mehr als 1000 Bücher\, über 100 Spiele und Puzzles sowie Medi
+ en aller Art: Die IG Golzheim aktiv lädt am Sonntag\, 8. November\, von 1
+ 0 bis 16 Uhr zum Bücher- und Spielemarkt ins Bürgerhaus Merzenich ein.\n
+ Veranstalter: IG Golzheim aktiv\nhttps://merzenichaktuell.hk-growthoperato
+ r.de/termine/buecher-spielemarkt-ig-golzheim-2026/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/buecher-spielemar
+ kt-ig-golzheim-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

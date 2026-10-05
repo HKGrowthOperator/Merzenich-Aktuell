@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tagesfahrt der Freizeitgemeinschaft 55+ zum Gasometer Oberhaus
+ en
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:seniorenfahrt-gasometer-oberhausen-2026-10-08@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261008T064500Z
+SUMMARY:Tagesfahrt der Freizeitgemeinschaft 55+ zum Gasometer Oberhausen
+DESCRIPTION:Die Freizeitgemeinschaft 55+ fährt am Donnerstag\, 8. Oktober\
+ , zur Ausstellung „Mythos Wald“ im Gasometer Oberhausen. Abfahrt ist u
+ m 8:45 Uhr am Parkplatz hinter dem Bürgerhaus.\nVeranstalter: Freizeitgem
+ einschaft 55+ / Offene Seniorenarbeit der Gemeinde Merzenich\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/seniorenfahrt-gasometer-oberhaus
+ en-2026-10-08/
+LOCATION:Abfahrt: Parkplatz hinter dem Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorenfahrt-gas
+ ometer-oberhausen-2026-10-08/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

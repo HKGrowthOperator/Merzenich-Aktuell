@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:2. Sitzung des Rechnungsprüfungsausschusses
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261105T170000Z
+SUMMARY:2. Sitzung des Rechnungsprüfungsausschusses
+DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
+ er\, um 18 Uhr im Ratssaal zu seiner 2. Sitzung zusammen.\nVeranstalter: G
+ emeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/r
+ echnungspruefungsausschuss-2026-11-05/
+LOCATION:Ratssaal der Gemeinde Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/rechnungspruefung
+ sausschuss-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

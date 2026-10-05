@@ -1,6 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.11.0 · Core-Plugin 1.21.0 (Historie unten)
+5. Oktober 2026 · Theme 21.11.1 · Core-Plugin 1.21.0 (Historie unten)
+
+## Neu in Theme 21.11.1 (05.10.2026): „Merzenich jetzt“ zeigt nur veröffentlichte Termine; neue Termine und Umkreis
+
+- Der Eintrag „Nächster Termin“ in „Merzenich jetzt“ auf der Startseite kommt aus WordPress (`ma21_cockpit_termin`), nicht mehr aus der Vorlage vom Bautag. Recherchierte Termine im Entwurf erscheinen dort nicht.
+- Inhalte (Recherche 05.10.2026, Quellen je Eintrag): 26 Termine vom 06.10. bis 26.11. in `inhalte/termine/2026-oktober-november.json`, alle als Entwurf in den Freigaben. 20 Umkreis-Meldungen in `inhalte/umkreis/2026-10-nachtrag.json`. Nicht aufgenommen wegen widersprüchlicher Quellen: Kreismajestätenschießen 10.10., Fatimatag Golzheim.
+- Korrektur: Die Sitzung des Kuratoriums Rixen-Stiftung am 13.10. ist laut Tagesordnung vollständig nichtöffentlich; Bekanntmachung (Fraktionsraum A) und Ratsinformationssystem (Dienstzimmer des Bürgermeisters, Zimmer 12) nennen verschiedene Räume. Termin und Meldung sagen das jetzt.
 
 ## Neu in Theme 21.11.0 / Plugin 1.21.0 (05.10.2026): Startseite aktuell, Sport aus dem Backend, Foto-Einsendungen, Feinschliff
 

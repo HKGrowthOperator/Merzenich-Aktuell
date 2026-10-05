@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weck
+ mannschießen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261115T083000Z
+SUMMARY:Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weckmanns
+ chießen
+DESCRIPTION:Zum Volkstrauertag am Sonntag\, 15. November\, ist in Merzenich
+  nach der Messe um 9:30 Uhr eine Kranzniederlegung an der Alten Kirche ang
+ ekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.\nVerans
+ talter: Merzenicher Ortsvereine (Angaben laut Terminkalender der KG Jonge 
+ vom Berg)\nhttps://merzenichaktuell.hk-growthoperator.de/termine/volkstrau
+ ertag-merzenich-2026/
+LOCATION:Alte Kirche Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/volkstrauertag-me
+ rzenich-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

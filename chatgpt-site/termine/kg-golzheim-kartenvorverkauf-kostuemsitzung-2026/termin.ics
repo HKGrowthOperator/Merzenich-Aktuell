@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kartenvorverkauf für die Kostümsitzung der KG Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-kartenvorverkauf-kostuemsitzung-2026@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261018T080000Z
+DTEND:20261018T090000Z
+SUMMARY:Kartenvorverkauf für die Kostümsitzung der KG Golzheim
+DESCRIPTION:Die KG Mir hahle Poohl verkauft am Sonntag\, 18. Oktober\, von 
+ 10 bis 11 Uhr in der Turnhalle Golzheim die Karten für ihre Große Kostü
+ msitzung am 7. November.\nVeranstalter: KG Mir hahle Poohl Golzheim 1905 e
+ .V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kar
+ tenvorverkauf-kostuemsitzung-2026/
+LOCATION:Turnhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-karte
+ nvorverkauf-kostuemsitzung-2026/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

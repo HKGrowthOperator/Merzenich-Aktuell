@@ -680,6 +680,8 @@ function ma21_startseite(): string {
  */
 function ma21_startseite_bloecke(string $html): string {
     $html = (string) preg_replace_callback('#<!-- start:termine:start -->.*?<!-- start:termine:end -->#s', fn() => '<!-- start:termine:start -->' . ma21_agenda_zeilen(4) . '<!-- start:termine:end -->', $html, 1);
+    // „Merzenich jetzt“: nächster Termin aus WordPress (nur veröffentlichte, Entwürfe aus der Recherche nie).
+    $html = (string) preg_replace_callback('#<a class="mj-eintrag"[^>]*data-cockpit="termin".*?</a>#s', fn() => ma21_cockpit_termin(), $html, 1);
     $repo = ma21_repo_datei('index.html', HOUR_IN_SECONDS);
     foreach (['umkreis', 'markt:home-jobs', 'markt:home-immobilien'] as $k) {
         $q = preg_quote($k, '#');
@@ -688,6 +690,24 @@ function ma21_startseite_bloecke(string $html): string {
         $html = (string) preg_replace_callback('#<!-- ' . $q . ':start -->.*?<!-- ' . $q . ':end -->#s', fn() => "<!-- {$k}:start -->{$neu}<!-- {$k}:end -->", $html, 1);
     }
     return $html;
+}
+
+/** Eintrag „Nächster Termin“ in „Merzenich jetzt“ (Markup wie deploy/cockpit.mjs, assets/cockpit.js passt die Zeile an). */
+function ma21_cockpit_termin(): string {
+    $tage = ['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.'];
+    $monate = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
+    foreach (ma21_kommende_termine(12) as $p) {
+        if (strcasecmp((string) get_post_meta($p->ID, 'ma_event_category', true), 'Sport') === 0) continue;
+        $start = function_exists('ma_event_timestamp') ? ma_event_timestamp($p->ID, 'start') : 0;
+        if (!$start) continue;
+        $uhr = wp_date('i', $start) === '00' ? wp_date('G', $start) : wp_date('G:i', $start);
+        $lead = $tage[(int) wp_date('w', $start)] . ', ' . wp_date('j', $start) . '. ' . $monate[(int) wp_date('n', $start) - 1] . ($uhr !== '0' ? ', ' . $uhr . ' Uhr' : '');
+        $ort = (string) get_post_meta($p->ID, 'ma_event_place', true);
+        return '<a class="mj-eintrag" href="' . esc_url(wp_make_link_relative(get_permalink($p))) . '" data-cockpit="termin" data-start="' . esc_attr(gmdate('Y-m-d\TH:i:s.000\Z', $start)) . '">'
+            . '<svg class="mj-zeichen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h3v3H8z"/></svg>'
+            . '<span class="mj-text"><span class="mj-lead" data-cockpit-wert>' . esc_html($lead) . '</span><span class="mj-titel">' . esc_html(html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8')) . '</span><small class="mj-klein">' . esc_html($ort !== '' ? $ort : 'Nächster Termin') . '</small></span></a>';
+    }
+    return '';
 }
 
 /** HTML aus dem Repository: nur erlaubte Tags (Beitrags-HTML plus die Symbole der Märkte). */

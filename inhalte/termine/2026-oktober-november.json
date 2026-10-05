@@ -1,0 +1,718 @@
+{
+  "hinweis": "Recherche vom 05.10.2026 für den Zeitraum 06.10. bis 30.11.2026. Alle Einträge sind Entwürfe (entwurf: true) und brauchen vor der Veröffentlichung eine redaktionelle Freigabe. Jede Angabe steht in der genannten Quelle. Ohne bekanntes Ende bleibt ende leer. Bei den geplanten Ausschusssitzungen lag am 05.10. noch keine Tagesordnung vor. deploy/termine.mjs baut für alle Einträge die Terminseiten; der WordPress-Import (deploy/wordpress-import.mjs) setzt Einträge mit entwurf: true auf Entwurf, sie erscheinen erst nach Freigabe (Freigaben-Seite).",
+  "termine": [
+    {
+      "slug": "blutspende-merzenich-2026-10-06",
+      "titel": "Blutspende im Bürgerhaus Merzenich",
+      "start": "2026-10-06T16:00:00+02:00",
+      "ende": "2026-10-06T20:00:00+02:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Info",
+      "veranstalter": "DRK-Blutspendedienst West",
+      "beschreibung": "Der DRK-Blutspendedienst West lädt am Dienstag, 6. Oktober, von 16 bis 20 Uhr ins Bürgerhaus Merzenich ein. Der Blutspendedienst bittet darum, vorab einen Termin zu reservieren.",
+      "absaetze": [
+        "Am Dienstag, 6. Oktober 2026, kann im Bürgerhaus Merzenich an der Burgstraße 9 Blut gespendet werden. Die Spende ist zwischen 16 und 20 Uhr möglich.",
+        "Der DRK-Blutspendedienst West bittet darum, vorab online einen Termin zu reservieren. Laut Terminliste des Blutspendedienstes ist der nächste Termin in Merzenich erst wieder am 19. Januar 2027."
+      ],
+      "links": [
+        [
+          "Termin beim DRK-Blutspendedienst West",
+          "https://www.blutspendedienst-west.de/blutspendetermine/termine/387601"
+        ],
+        [
+          "Alle Blutspendetermine in Merzenich",
+          "https://www.blutspendedienst-west.de/blutspendetermine/stadt/merzenich-05358040"
+        ]
+      ],
+      "quelle": {
+        "name": "DRK-Blutspendedienst West, Blutspendetermine Merzenich",
+        "url": "https://www.blutspendedienst-west.de/blutspendetermine/stadt/merzenich-05358040",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "friedensgebet-morschenich-2026-10-06",
+      "titel": "Ökumenisches Friedensgebet in Morschenich",
+      "start": "2026-10-06T18:00:00+02:00",
+      "ort": "Morschenich",
+      "ortsteil": "Morschenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinden Merzenich und Niederzier",
+      "beschreibung": "Am Dienstag, 6. Oktober, um 18 Uhr findet in Morschenich ein ökumenisches Friedensgebet statt. Der Chor „Spirits of HamONie“ gestaltet die Musik.",
+      "absaetze": [
+        "Laut Gottesdienstordnung im Pfarrbrief der Pfarrgemeinden Merzenich und Niederzier gibt es am Dienstag, 6. Oktober 2026, um 18 Uhr in Morschenich ein ökumenisches Friedensgebet. Es leitet Gemeindereferentin Manuela Althausen.",
+        "Für die Musik sorgt der Chor „Spirits of HamONie“. Den genauen Ort innerhalb von Morschenich nennt der Pfarrbrief nicht."
+      ],
+      "links": [
+        [
+          "Pfarrbrief Oktober 2026 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier, Ausgabe 08/26 (26.09. bis 02.11.2026)",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "landfrauen-mitgliederversammlung-merzenich-2026-10-07",
+      "titel": "LandFrauen Nörvenich-Merzenich: Mitgliederversammlung mit Wahlen",
+      "start": "2026-10-07T15:00:00+02:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Vereine",
+      "veranstalter": "LandFrauen, Ortsverband Nörvenich-Merzenich",
+      "beschreibung": "Die LandFrauen aus Nörvenich und Merzenich wählen am Mittwoch, 7. Oktober, um 15 Uhr im Bürgerhaus Merzenich einen neuen Ortsvorstand. Dazu gibt es einen Vortrag über Nahrungsergänzungsmittel.",
+      "absaetze": [
+        "Der Ortsverband Nörvenich-Merzenich der LandFrauen kommt am Mittwoch, 7. Oktober 2026, um 15 Uhr im Bürgerhaus Merzenich zur Mitgliederversammlung zusammen. Neben Informationen aus dem Verband steht in diesem Jahr die Neuwahl des Ortsvorstands an.",
+        "Ein Vortrag geht der Frage nach, ob Nahrungsergänzungsmittel sinnvoll sind. Für Informationen und Anmeldung nennt der Veranstaltungskalender des Verbands eine Ansprechpartnerin."
+      ],
+      "links": [
+        [
+          "Eintrag im Veranstaltungskalender der Rheinischen LandFrauen",
+          "https://www.rheinische-landfrauen.de/kreisverbaende/dueren-juelich/veranstaltungsshykalender/ansicht-veranstaltung?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=3525&cHash=a42170bdea746e7957d03ca7a6cb5930"
+        ]
+      ],
+      "quelle": {
+        "name": "Rheinischer LandFrauenverband, Kreisverband Düren-Jülich, Veranstaltungskalender",
+        "url": "https://www.rheinische-landfrauen.de/kreisverbaende/dueren-juelich/veranstaltungsshykalender/ansicht-veranstaltung?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=3525&cHash=a42170bdea746e7957d03ca7a6cb5930",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "seniorenfahrt-gasometer-oberhausen-2026-10-08",
+      "titel": "Tagesfahrt der Freizeitgemeinschaft 55+ zum Gasometer Oberhausen",
+      "start": "2026-10-08T08:45:00+02:00",
+      "ort": "Abfahrt: Parkplatz hinter dem Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Senioren",
+      "veranstalter": "Freizeitgemeinschaft 55+ / Offene Seniorenarbeit der Gemeinde Merzenich",
+      "beschreibung": "Die Freizeitgemeinschaft 55+ fährt am Donnerstag, 8. Oktober, zur Ausstellung „Mythos Wald“ im Gasometer Oberhausen. Abfahrt ist um 8:45 Uhr am Parkplatz hinter dem Bürgerhaus.",
+      "absaetze": [
+        "Die Planungsgruppe Tagestouren der Freizeitgemeinschaft 55+ besucht am Donnerstag, 8. Oktober 2026, die Ausstellung „Mythos Wald“ im Gasometer Oberhausen. Auf eine einstündige Führung folgt freie Zeit, danach geht es zum gemeinsamen Essen ins nahe Centro.",
+        "Abfahrt ist um 8:45 Uhr am Parkplatz hinter dem Bürgerhaus Merzenich. Der Kostenanteil für Fahrt, Eintritt und Führung liegt laut Amtsblatt bei 15 Euro. Eventuelle Restplätze werden nach Absprache vergeben."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 10/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 10 vom 18.09.2026, Rubrik Senioren",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "schadstoffmobil-merzenich-2026-10-08",
+      "titel": "Schadstoffmobil am Schützenplatz Merzenich",
+      "start": "2026-10-08T16:00:00+02:00",
+      "ende": "2026-10-08T18:00:00+02:00",
+      "ort": "Bahnstraße / Schützenplatz Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Umwelt",
+      "veranstalter": "Schadstoffmobil (Auskunft: AWA-Abfallberatung)",
+      "beschreibung": "Am Donnerstag, 8. Oktober, steht das Schadstoffmobil von 16 bis 18 Uhr an der Bahnstraße/Schützenplatz in Merzenich. Angenommen werden laut Amtsblatt auch Dispersionsfarbe und Elektrokleingeräte.",
+      "absaetze": [
+        "Das Schadstoffmobil hält am Donnerstag, 8. Oktober 2026, von 16 bis 18 Uhr an der Bahnstraße/Schützenplatz in Merzenich. Laut Amtsblatt nimmt das Fachpersonal an diesem Termin auch Dispersionsfarbe und Elektroschrott an.",
+        "Schadstoffe und Elektrokleingeräte dürfen nur direkt beim Personal abgegeben und nicht an der Haltestelle abgestellt werden. Kostenfrei sind bis zu 15 Kilogramm beziehungsweise Liter pro Anlieferung."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 10/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 10 vom 18.09.2026, Abfuhrtermine",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "herbstlaub-annahme-bauhof-girbelsrath-2026",
+      "titel": "Herbstlaub-Annahme am Bauhof Girbelsrath beginnt",
+      "start": "2026-10-12T13:00:00+02:00",
+      "ende": "2026-10-12T17:00:00+02:00",
+      "ort": "Bauhof der Gemeinde Merzenich",
+      "adresse": "Am Roßpfad 12, 52399 Merzenich-Girbelsrath",
+      "ortsteil": "Girbelsrath",
+      "kategorie": "Umwelt",
+      "veranstalter": "Gemeinde Merzenich, Bauhof",
+      "beschreibung": "Ab Montag, 12. Oktober, nimmt der Bauhof jeden Montag von 13 bis 17 Uhr Herbstlaub an, bis einschließlich 7. Dezember. Neu ist der Ort: Abgegeben wird am Bauhof in Girbelsrath, nicht mehr an der Jahnstraße.",
+      "absaetze": [
+        "Der Bauhof der Gemeinde Merzenich nimmt ab Montag, 12. Oktober 2026, wieder Herbstlaub an. Bis zum 7. Dezember ist das jeden Montag von 13 bis 17 Uhr möglich, auf dem Bauhof-Gelände Am Roßpfad 12 in Girbelsrath. Am früheren Standort an der Jahnstraße in Merzenich geht das nicht mehr.",
+        "Angenommen wird nur Laub, keine anderen Grünabfälle. Außerdem stellt die Gemeinde mehr als 20 Laubkörbe in den Ortsteilen auf, die das Bauhof-Team regelmäßig leert."
+      ],
+      "links": [
+        [
+          "Mitteilung der Gemeinde bei Heimat-Info",
+          "https://www.heimat-info.de/beitraege/f1fd1aac-74de-48a4-b030-cb23973fdcfb"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beitrag in der Heimat-Info-App vom 30.09.2026",
+        "url": "https://www.heimat-info.de/beitraege/f1fd1aac-74de-48a4-b030-cb23973fdcfb",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "vhs-vortrag-mietrecht-vermietende-2026-10-13",
+      "titel": "VHS-Vortrag „Mietrecht für Vermietende“",
+      "start": "2026-10-13T19:00:00+02:00",
+      "ende": "2026-10-13T20:30:00+02:00",
+      "ort": "Familienzentrum Merzenich",
+      "adresse": "Mozartstraße 19, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Info",
+      "veranstalter": "VHS Rur-Eifel in Kooperation mit dem Familienzentrum Merzenich",
+      "beschreibung": "Eine Rechtsanwältin erklärt am Dienstag, 13. Oktober, Vermieterinnen und Vermietern die Grundlagen des Wohnraummietrechts. Die Veranstaltung der VHS Rur-Eifel ist kostenlos.",
+      "absaetze": [
+        "Die VHS Rur-Eifel bietet am Dienstag, 13. Oktober 2026, von 19 bis 20:30 Uhr einen Vortrag mit Diskussion zum Mietrecht an. Er findet im Familienzentrum Merzenich an der Mozartstraße 19 statt, Referentin ist Rechtsanwältin Michaela Wenzel.",
+        "Es geht um Rechte und Pflichten von Vermietenden: von der Auswahl der Mieter über den Mietvertrag bis zur Beendigung des Mietverhältnisses. Die Teilnahme ist kostenlos, die Kursnummer lautet Y1315A."
+      ],
+      "links": [
+        [
+          "Kursseite der VHS Rur-Eifel",
+          "https://www.vhs-rur-eifel.de/kurssuche/kurs/Mietrecht-fuer-Vermietende/Y1315A"
+        ]
+      ],
+      "quelle": {
+        "name": "VHS Rur-Eifel, Kurs Y1315A; ergänzend Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://www.vhs-rur-eifel.de/kurssuche/kurs/Mietrecht-fuer-Vermietende/Y1315A",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "senioren-nachmittag-ev-gemeindehaus-2026-10-14",
+      "titel": "Senioren-Nachmittag im Evangelischen Gemeindehaus",
+      "start": "2026-10-14T15:00:00+02:00",
+      "ende": "2026-10-14T17:00:00+02:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Senioren",
+      "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
+      "beschreibung": "Am Mittwoch, 14. Oktober, lädt die Evangelische Gemeinde von 15 bis 17 Uhr zum Senioren-Nachmittag ins Gemeindehaus an der Severin-Böhr-Straße ein.",
+      "absaetze": [
+        "Die Evangelische Gemeinde lädt am Mittwoch, 14. Oktober 2026, von 15 bis 17 Uhr zum Senioren-Nachmittag ein. Treffpunkt ist das Gemeindehaus an der Severin-Böhr-Straße 15 in Merzenich.",
+        "Laut Ankündigung im Amtsblatt sind weitere Interessierte willkommen."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 10/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 10 vom 18.09.2026, Mitteilungen aus den Pfarrgemeinden",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "oekumenischer-frauengottesdienst-merzenich-2026",
+      "titel": "Ökumenischer Frauengottesdienst „Gemeinsam Lasten tragen“",
+      "start": "2026-10-16T18:00:00+02:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Ökumenische Vorbereitungsgruppe der katholischen und evangelischen Gemeinde",
+      "beschreibung": "Frauen aus beiden Konfessionen feiern am Freitag, 16. Oktober, um 18 Uhr einen Gottesdienst im Evangelischen Gemeindehaus. Im Mittelpunkt stehen die biblischen Frauen Ruth und Noomi.",
+      "absaetze": [
+        "Am Freitag, 16. Oktober 2026, um 18 Uhr feiern katholische und evangelische Frauen im Evangelischen Gemeindehaus an der Severin-Böhr-Straße 15 einen ökumenischen Gottesdienst. Das Thema lautet „Gemeinsam Lasten tragen“.",
+        "Es geht um Ruth und Noomi, zwei Frauen, die ihre Lasten gemeinsam tragen und einen neuen Weg gehen. Nach dem Gottesdienst ist Zeit für Begegnung. Eingeladen sind alle Frauen."
+      ],
+      "links": [
+        [
+          "Termine der Evangelischen Gemeinde, Bezirk Merzenich",
+          "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/"
+        ],
+        [
+          "Pfarrbrief Oktober 2026 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier 08/26; Evangelische Gemeinde zu Düren; Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "kg-golzheim-kartenvorverkauf-kostuemsitzung-2026",
+      "titel": "Kartenvorverkauf für die Kostümsitzung der KG Golzheim",
+      "start": "2026-10-18T10:00:00+02:00",
+      "ende": "2026-10-18T11:00:00+02:00",
+      "ort": "Turnhalle Golzheim",
+      "ortsteil": "Golzheim",
+      "kategorie": "Brauchtum",
+      "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+      "beschreibung": "Die KG Mir hahle Poohl verkauft am Sonntag, 18. Oktober, von 10 bis 11 Uhr in der Turnhalle Golzheim die Karten für ihre Große Kostümsitzung am 7. November.",
+      "absaetze": [
+        "Für die Große Kostümsitzung am 7. November beginnt der Kartenvorverkauf am Sonntag, 18. Oktober 2026. Die KG Mir hahle Poohl Golzheim verkauft die Karten von 10 bis 11 Uhr in der Turnhalle Golzheim.",
+        "Im Vorverkauf kostet eine Karte laut Verein 20 Euro, an der Abendkasse 22 Euro. Restkarten gibt es danach über den Verein."
+      ],
+      "links": [
+        [
+          "Veranstaltungsseite der KG",
+          "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/"
+        ]
+      ],
+      "quelle": {
+        "name": "KG Mir hahle Poohl Golzheim 1905 e.V., Veranstaltungsseite; ergänzend Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "open-house-kinder-buergerhaus-herbstferien-2026",
+      "titel": "Open House für Kinder im Bürgerhaus",
+      "start": "2026-10-21T11:00:00+02:00",
+      "ende": "2026-10-22T16:00:00+02:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Jugend",
+      "veranstalter": "Offene Kinder- und Jugendarbeit der Gemeinde Merzenich",
+      "beschreibung": "In den Herbstferien öffnet die Offene Kinder- und Jugendarbeit am 21. und 22. Oktober jeweils von 11 bis 16 Uhr das Bürgerhaus für Kinder von 6 bis 13 Jahren. Gebastelt und gekocht wird auch.",
+      "absaetze": [
+        "Die Offene Kinder- und Jugendarbeit Merzenich lädt in den Herbstferien zum „Open House“ ins Bürgerhaus ein. Geöffnet ist am Mittwoch, 21. Oktober, und am Donnerstag, 22. Oktober 2026, jeweils von 11 bis 16 Uhr.",
+        "Das Angebot richtet sich an Kinder von 6 bis 13 Jahren aus der Gemeinde Merzenich. Auf dem Programm stehen unter anderem Basteln und Kochen. Für Rückfragen nennt das Amtsblatt eine Ansprechpartnerin der Gemeinde."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 10/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 10 vom 18.09.2026, Familie, Kinder und Jugend",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "patrozinium-st-amandus-girbelsrath-2026",
+      "titel": "Messe zum Patrozinium von St. Amandus in Girbelsrath",
+      "start": "2026-10-24T16:30:00+02:00",
+      "ort": "St. Amandus Girbelsrath",
+      "ortsteil": "Girbelsrath",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinde St. Amandus Girbelsrath",
+      "beschreibung": "Girbelsrath feiert am Samstag, 24. Oktober, um 16:30 Uhr eine Messe zum Fest seines Pfarrpatrons, des heiligen Amandus von Maastricht. Ab 16 Uhr ist stille Anbetung.",
+      "absaetze": [
+        "Die Pfarrgemeinde St. Amandus in Girbelsrath feiert am Samstag, 24. Oktober 2026, das Patrozinium ihres Pfarrpatrons, des heiligen Amandus von Maastricht. Die Messe beginnt um 16:30 Uhr, in ihr wird auch ein Kind getauft.",
+        "Vorher ist ab 16 Uhr stille Anbetung vor dem Allerheiligsten. Die Messe wird laut Gottesdienstordnung für die verstorbenen ehemaligen Mitglieder von Kirchenvorstand und Pfarreirat gefeiert."
+      ],
+      "links": [
+        [
+          "Pfarrbrief Oktober 2026 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier, Ausgabe 08/26, Gottesdienstordnung",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "allerheiligen-graebersegnung-2026",
+      "titel": "Allerheiligen: Gottesdienste und Gräbersegnungen in den Ortsteilen",
+      "start": "2026-11-01T09:30:00+01:00",
+      "ort": "Kirchen und Friedhöfe in Merzenich, Girbelsrath, Morschenich und Golzheim",
+      "ortsteil": "Gemeinde",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinden Merzenich und Niederzier",
+      "beschreibung": "An Allerheiligen, Sonntag, 1. November, gibt es in vier Ortsteilen Gottesdienste mit anschließender Gräbersegnung. Den Anfang macht Merzenich um 9:30 Uhr.",
+      "absaetze": [
+        "In Merzenich beginnt die Messe zu Allerheiligen am Sonntag, 1. November 2026, um 9:30 Uhr. Anschließend werden die Gräber auf dem Friedhof Rather Straße gesegnet, danach lädt die Pfarrgemeinde zum Sonntagscafé ins Pfarrheim ein. In Girbelsrath (Messe) und Morschenich (Wortgottesdienst) beginnen die Feiern um 11 Uhr, jeweils mit Gräbersegnung auf dem Friedhof.",
+        "In Golzheim folgt um 15 Uhr eine Andacht zum Gedenken an die Verstorbenen mit anschließender Gräbersegnung. Dort gibt es außerdem am Samstag, 31. Oktober, um 18 Uhr eine Vorabendmesse zu Allerheiligen."
+      ],
+      "links": [
+        [
+          "Pfarrbrief Oktober 2026 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier, Ausgabe 08/26, Gottesdienstordnung",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "jugendgremium-sitzung-2026-11-04",
+      "titel": "4. Sitzung des Jugendgremiums",
+      "start": "2026-11-04T17:00:00+01:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoch, 4. November, um 17 Uhr im Bürgerhaus zu seiner 4. Sitzung.",
+      "absaetze": [
+        "Laut Sitzungskalender der Gemeinde trifft sich das Jugendgremium am Mittwoch, 4. November 2026, um 17 Uhr zu seiner 4. Sitzung. Tagungsort ist das Bürgerhaus Merzenich an der Burgstraße 9.",
+        "Am 5. Oktober lag im Ratsinformationssystem noch keine Tagesordnung vor."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfkxmXafKmQAUFs4nPrS_Ow",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "rechnungspruefungsausschuss-2026-11-05",
+      "titel": "2. Sitzung des Rechnungsprüfungsausschusses",
+      "start": "2026-11-05T18:00:00+01:00",
+      "ort": "Ratssaal der Gemeinde Merzenich",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Der Rechnungsprüfungsausschuss kommt am Donnerstag, 5. November, um 18 Uhr im Ratssaal zu seiner 2. Sitzung zusammen.",
+      "absaetze": [
+        "Der Sitzungskalender der Gemeinde führt die 2. Sitzung des Rechnungsprüfungsausschusses für Donnerstag, 5. November 2026, um 18 Uhr. Sie findet im Ratssaal des Rathauses am Valdersweg 1 statt.",
+        "Eine Tagesordnung war am 5. Oktober noch nicht veröffentlicht. Sie folgt im Ratsinformationssystem."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZb49y9iUHl1Shq5ZZTcHGHI",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "kg-golzheim-kostuemsitzung-2026-11-07",
+      "titel": "Große Kostümsitzung der KG Mir hahle Poohl Golzheim",
+      "start": "2026-11-07T20:11:00+01:00",
+      "ort": "Schützenhalle Golzheim",
+      "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich-Golzheim",
+      "ortsteil": "Golzheim",
+      "kategorie": "Brauchtum",
+      "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+      "beschreibung": "Die KG Golzheim startet am Samstag, 7. November, mit ihrer Großen Kostümsitzung in der Schützenhalle in die Session 2026/27. Beginn ist um 20:11 Uhr, Einlass ab 18:30 Uhr.",
+      "absaetze": [
+        "Die KG Mir hahle Poohl Golzheim feiert am Samstag, 7. November 2026, ihre Große Kostümsitzung in der Schützenhalle an der Sankt-Sebastianus-Straße 42. Einlass ist ab 18:30 Uhr, das Programm beginnt um 20:11 Uhr. Laut Amtsblatt ist der 7. November zugleich der Tag der Inthronisation von Prinzessin Alina I.",
+        "Karten kosten im Vorverkauf 20 Euro und an der Abendkasse 22 Euro. Der Vorverkauf ist am 18. Oktober von 10 bis 11 Uhr in der Turnhalle Golzheim."
+      ],
+      "links": [
+        [
+          "Veranstaltungsseite der KG",
+          "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/"
+        ]
+      ],
+      "quelle": {
+        "name": "KG Mir hahle Poohl Golzheim 1905 e.V., Veranstaltungsseite; ergänzend Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "buecher-spielemarkt-ig-golzheim-2026",
+      "titel": "Bücher- und Spielemarkt der IG Golzheim aktiv",
+      "start": "2026-11-08T10:00:00+01:00",
+      "ende": "2026-11-08T16:00:00+01:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Vereine",
+      "veranstalter": "IG Golzheim aktiv",
+      "beschreibung": "Mehr als 1000 Bücher, über 100 Spiele und Puzzles sowie Medien aller Art: Die IG Golzheim aktiv lädt am Sonntag, 8. November, von 10 bis 16 Uhr zum Bücher- und Spielemarkt ins Bürgerhaus Merzenich ein.",
+      "absaetze": [
+        "Die IG Golzheim aktiv veranstaltet am Sonntag, 8. November 2026, von 10 bis 16 Uhr einen Bücher- und Spielemarkt im Bürgerhaus Merzenich an der Burgstraße 9. Angeboten werden laut Ankündigung mehr als 1000 Bücher, über 100 Spiele und Puzzles sowie DVDs, CDs, Hörbücher und Konsolenspiele.",
+        "Für Kinder gibt es über den Tag verteilt Vorlesezeiten, eine Cafeteria bietet Kuchen und Getränke an. Der Eintritt ist frei, der Erlös fließt in die Veranstaltungen der Dorfgemeinschaft."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 10/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 10 vom 18.09.2026, Vereinsmitteilungen",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_10_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "kindergottesdienst-ev-gemeindehaus-2026-11-08",
+      "titel": "Kindergottesdienst im Evangelischen Gemeindehaus",
+      "start": "2026-11-08T11:00:00+01:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
+      "beschreibung": "Pfarrerin Karin Heucher feiert am Sonntag, 8. November, um 11 Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich.",
+      "absaetze": [
+        "Die Evangelische Gemeinde lädt am Sonntag, 8. November 2026, um 11 Uhr zum Kindergottesdienst ins Gemeindehaus Merzenich ein. Es leitet Pfarrerin Karin Heucher.",
+        "Der Termin steht im Veranstaltungskalender des Gemeindebezirks Merzenich/Niederzier der Evangelischen Gemeinde zu Düren."
+      ],
+      "links": [
+        [
+          "Termine der Evangelischen Gemeinde, Bezirk Merzenich",
+          "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/"
+        ]
+      ],
+      "quelle": {
+        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender",
+        "url": "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "vhs-bildvortrag-paris-marienhof-2026-11-10",
+      "titel": "VHS-Bildvortrag „Paris“ im Seniorenhaus Marienhof",
+      "start": "2026-11-10T15:30:00+01:00",
+      "ende": "2026-11-10T16:30:00+01:00",
+      "ort": "Seniorenhaus Marienhof",
+      "adresse": "Burgstraße 12, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kultur",
+      "veranstalter": "VHS Rur-Eifel",
+      "beschreibung": "Otmar Steinbicker nimmt das Publikum am Dienstag, 10. November, mit auf einen Gang durch die Stadtteile von Paris. Der VHS-Vortrag im Seniorenhaus Marienhof ist kostenlos.",
+      "absaetze": [
+        "Die VHS Rur-Eifel zeigt am Dienstag, 10. November 2026, von 15:30 bis 16:30 Uhr einen Vortrag über Paris. Er findet im Seniorenhaus Marienhof an der Burgstraße 12 in Merzenich statt, Referent ist Otmar Steinbicker.",
+        "Der Vortrag führt von der Île de la Cité über die Seine-Ufer und das Quartier Latin bis ins Marais und in die früheren Arbeiterviertel östlich des Canal Saint-Martin. Die Teilnahme ist kostenlos, die Kursnummer lautet Y1712A."
+      ],
+      "links": [
+        [
+          "Kursseite der VHS Rur-Eifel",
+          "https://www.vhs-rur-eifel.de/kurssuche/kurs/Paris/Y1712A"
+        ]
+      ],
+      "quelle": {
+        "name": "VHS Rur-Eifel, Kurs Y1712A",
+        "url": "https://www.vhs-rur-eifel.de/kurssuche/kurs/Paris/Y1712A",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "bauausschuss-sitzung-2026-11-12",
+      "titel": "5. Sitzung des Bau-, Planungs- und Umweltausschusses",
+      "start": "2026-11-12T18:00:00+01:00",
+      "ort": "Ratssaal der Gemeinde Merzenich",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Der Bau-, Planungs- und Umweltausschuss tagt am Donnerstag, 12. November, um 18 Uhr im Ratssaal. Es ist seine 5. Sitzung.",
+      "absaetze": [
+        "Laut Sitzungskalender kommt der Bau-, Planungs- und Umweltausschuss am Donnerstag, 12. November 2026, um 18 Uhr zu seiner 5. Sitzung zusammen. Sitzungsort ist der Ratssaal im Rathaus am Valdersweg 1.",
+        "Am 5. Oktober lag noch keine Tagesordnung vor. Sie wird im Ratsinformationssystem veröffentlicht."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "volkstrauertag-merzenich-2026",
+      "titel": "Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weckmannschießen",
+      "start": "2026-11-15T09:30:00+01:00",
+      "ort": "Alte Kirche Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Brauchtum",
+      "veranstalter": "Merzenicher Ortsvereine (Angaben laut Terminkalender der KG Jonge vom Berg)",
+      "beschreibung": "Zum Volkstrauertag am Sonntag, 15. November, ist in Merzenich nach der Messe um 9:30 Uhr eine Kranzniederlegung an der Alten Kirche angekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.",
+      "absaetze": [
+        "Der Volkstrauertag beginnt in Merzenich am Sonntag, 15. November 2026, mit der Messe um 9:30 Uhr. Danach werden an der Alten Kirche Kränze niedergelegt. Das steht im öffentlichen Terminkalender der KG Jonge vom Berg, die an dem Gedenken teilnimmt.",
+        "Um 11:30 Uhr folgt laut demselben Kalender das traditionelle Weckmannschießen auf dem Schießstand der Schützenbruderschaft in der Schule. Eine offizielle Ankündigung von Gemeinde oder Pfarrei lag am 5. Oktober noch nicht vor."
+      ],
+      "links": [
+        [
+          "Termin im Kalender der KG Jonge vom Berg",
+          "https://jonge-vom-berg.de/event/kranzniederlegung-und-weckmannschiessen/"
+        ]
+      ],
+      "quelle": {
+        "name": "KG Jonge vom Berg 1975 e.V., Terminkalender",
+        "url": "https://jonge-vom-berg.de/event/kranzniederlegung-und-weckmannschiessen/",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "ev-gottesdienst-gedenken-verstorbene-2026-11-15",
+      "titel": "Evangelischer Gottesdienst mit Gedenken an die Verstorbenen",
+      "start": "2026-11-15T10:00:00+01:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
+      "beschreibung": "Am Sonntag, 15. November, feiert die Evangelische Gemeinde um 10 Uhr im Gemeindehaus Merzenich einen Gottesdienst mit Abendmahl, in dem sie der Verstorbenen gedenkt.",
+      "absaetze": [
+        "Die Evangelische Gemeinde feiert am Sonntag, 15. November 2026, um 10 Uhr einen Gottesdienst mit Abendmahl im Gemeindehaus Merzenich. Im Mittelpunkt steht das Gedenken an die Verstorbenen. Es leitet Pfarrerin Karin Heucher.",
+        "Den Gottesdienst zum Totensonntag eine Woche später, am 22. November, feiert der Gemeindebezirk laut Kalender im Bürgerhaus Niederzier."
+      ],
+      "links": [
+        [
+          "Termine der Evangelischen Gemeinde, Bezirk Merzenich",
+          "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/"
+        ]
+      ],
+      "quelle": {
+        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender",
+        "url": "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "taize-gottesdienst-morschenich-2026-11-15",
+      "titel": "Taizé-Gottesdienst in der Lambertuskapelle Morschenich",
+      "start": "2026-11-15T17:00:00+01:00",
+      "ort": "Lambertuskapelle Morschenich",
+      "ortsteil": "Morschenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinden Merzenich und Niederzier (Diakon Raymund Schreinemacher)",
+      "beschreibung": "In der Lambertuskapelle Morschenich wird am Sonntag, 15. November, um 17 Uhr ein Taizé-Gottesdienst gefeiert. Eingeladen hat Diakon Raymund Schreinemacher.",
+      "absaetze": [
+        "Am Sonntag, 15. November 2026, um 17 Uhr gibt es in der Lambertuskapelle in Morschenich wieder einen Taizé-Gottesdienst. Diakon Raymund Schreinemacher lädt alle Interessierten ein.",
+        "Nach diesem Termin ist der nächste Taizé-Gottesdienst laut Pfarrbrief und Amtsblatt am 6. Dezember."
+      ],
+      "links": [
+        [
+          "Pfarrbrief Oktober 2026 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier 08/26; Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "sprechstunde-betreuungsbehoerde-rathaus-2026-11-19",
+      "titel": "Sprechstunde der Betreuungsbehörde im Rathaus",
+      "start": "2026-11-19T10:00:00+01:00",
+      "ende": "2026-11-19T12:00:00+01:00",
+      "ort": "Rathaus Merzenich, Fraktionsraum B",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Info",
+      "veranstalter": "Kreis Düren, Betreuungsbehörde",
+      "beschreibung": "Die Betreuungsbehörde des Kreises Düren berät am Donnerstag, 19. November, von 10 bis 12 Uhr im Rathaus Merzenich zu Betreuung, Vorsorgevollmacht und Patientenverfügung. Eine Anmeldung ist nötig.",
+      "absaetze": [
+        "Die Betreuungsbehörde des Kreises Düren bietet am Donnerstag, 19. November 2026, von 10 bis 12 Uhr eine Sprechstunde im Rathaus Merzenich an. Der Beratungsort hat sich laut Kreis geändert: Die Sprechstunde findet im Fraktionsraum B am Valdersweg 1 statt.",
+        "Beraten wird vertraulich und kostenlos zu gesetzlicher Betreuung, Vorsorgevollmachten und Patientenverfügungen. Eine vorherige Anmeldung ist erforderlich."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 8/2026 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_08_2026-web.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Amtsblatt der Gemeinde Merzenich Nr. 8 vom 24.07.2026, „Kreis berät in Merzenich“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_08_2026-web.pdf",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "haupt-finanzausschuss-sitzung-2026-11-19",
+      "titel": "10. Sitzung des Haupt- und Finanzausschusses",
+      "start": "2026-11-19T18:00:00+01:00",
+      "ort": "Ratssaal der Gemeinde Merzenich",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Der Haupt- und Finanzausschuss trifft sich am Donnerstag, 19. November, um 18 Uhr im Ratssaal zu seiner 10. Sitzung.",
+      "absaetze": [
+        "Der Haupt- und Finanzausschuss der Gemeinde Merzenich tagt laut Sitzungskalender am Donnerstag, 19. November 2026, um 18 Uhr. Es ist seine 10. Sitzung, Ort ist der Ratssaal am Valdersweg 1.",
+        "Am 5. Oktober war die Tagesordnung noch nicht veröffentlicht. Der Gemeinderat folgt laut Kalender am 3. Dezember."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "ausschuss-revitalisierung-buergewald-2026-11-26",
+      "titel": "6. Sitzung des Ausschusses für Revitalisierung Bürgewald",
+      "start": "2026-11-26T18:00:00+01:00",
+      "ort": "Ratssaal der Gemeinde Merzenich",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerstag, 26. November, um 18 Uhr im Ratssaal zu seiner 6. Sitzung zusammen.",
+      "absaetze": [
+        "Laut Sitzungskalender der Gemeinde tagt der Ausschuss für Revitalisierung Bürgewald am Donnerstag, 26. November 2026, um 18 Uhr im Ratssaal des Rathauses am Valdersweg 1. Es ist seine 6. Sitzung.",
+        "Eine Tagesordnung lag am 5. Oktober noch nicht vor. Sie erscheint im Ratsinformationssystem."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8",
+        "stand": "2026-10-05"
+      },
+      "entwurf": true
+    }
+  ]
+}

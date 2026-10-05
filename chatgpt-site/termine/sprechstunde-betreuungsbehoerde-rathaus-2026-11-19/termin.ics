@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sprechstunde der Betreuungsbehörde im Rathaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
+DTSTAMP:20261005T060000Z
+DTSTART:20261119T090000Z
+DTEND:20261119T110000Z
+SUMMARY:Sprechstunde der Betreuungsbehörde im Rathaus
+DESCRIPTION:Die Betreuungsbehörde des Kreises Düren berät am Donnerstag\
+ , 19. November\, von 10 bis 12 Uhr im Rathaus Merzenich zu Betreuung\, Vor
+ sorgevollmacht und Patientenverfügung. Eine Anmeldung ist nötig.\nVerans
+ talter: Kreis Düren\, Betreuungsbehörde\nhttps://merzenichaktuell.hk-gro
+ wthoperator.de/termine/sprechstunde-betreuungsbehoerde-rathaus-2026-11-19/
+LOCATION:Rathaus Merzenich\, Fraktionsraum B
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/sprechstunde-betr
+ euungsbehoerde-rathaus-2026-11-19/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
