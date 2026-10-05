@@ -230,11 +230,30 @@ function ma_seite_archiv_liste(): string {
 /** Die jüngsten freigegebenen Kommentare aller Meldungen. */
 function ma_seite_diskussion_liste(): string {
     $kommentare = get_comments(['status' => 'approve', 'number' => 30, 'post_status' => 'publish', 'type' => 'comment']);
-    if (!$kommentare) return '<p>Noch keine freigegebenen Kommentare. Schreiben Sie den ersten unter einer Meldung.</p>';
+    if (!$kommentare) return ma_seite_diskussion_einladung();
     $h = '<ul class="diskussion-liste">';
     foreach ($kommentare as $c) {
         $h .= '<li><p><strong>' . esc_html($c->comment_author) . '</strong> <time datetime="' . esc_attr(get_comment_date('c', $c)) . '">' . esc_html(get_comment_date('d.m.Y · H:i', $c)) . ' Uhr</time> zu <a href="' . esc_url(get_comment_link($c)) . '">' . esc_html(get_the_title((int) $c->comment_post_ID)) . '</a></p>'
             . '<p>' . esc_html(wp_trim_words(wp_strip_all_tags($c->comment_content), 60, ' …')) . '</p></li>';
+    }
+    return $h . '</ul>';
+}
+
+/**
+ * Noch kein freigegebener Kommentar: statt einer leeren Seite die jüngsten Meldungen
+ * mit offener Kommentarfunktion, jeweils mit Sprung zum Kommentarfeld (1.20.6,
+ * Vorgabe Betreiber 05.10.2026: keine leeren Seiten).
+ */
+function ma_seite_diskussion_einladung(): string {
+    $posts = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 8, 'orderby' => 'date', 'order' => 'DESC', 'comment_status' => 'open']);
+    $h = '<p>Noch hat niemand kommentiert. Schreiben Sie den ersten Kommentar: Jede Meldung hat am Ende ein Kommentarfeld, die Redaktion schaltet Beiträge nach den <a href="' . esc_url(home_url('/kommentarregeln/')) . '">Kommentarregeln</a> frei.</p>';
+    if (!$posts) return $h;
+    $h .= '<h2>Diskutieren Sie mit</h2><ul class="diskussion-liste diskussion-einladung">';
+    foreach ($posts as $p) {
+        $ressort = function_exists('ma_seo_ressort_von') ? ma_seo_ressort_von($p)[1] : '';
+        $h .= '<li><p><a href="' . esc_url(get_permalink($p)) . '"><strong>' . esc_html(get_the_title($p)) . '</strong></a></p>'
+            . '<p><time datetime="' . esc_attr(get_post_time('c', false, $p)) . '">' . esc_html(get_post_time('d.m.Y', false, $p)) . '</time>' . ($ressort !== '' ? ' · ' . esc_html($ressort) : '')
+            . ' · <a href="' . esc_url(get_permalink($p)) . '#respond">Kommentar schreiben</a></p></li>';
     }
     return $h . '</ul>';
 }

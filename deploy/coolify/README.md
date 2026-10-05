@@ -1,4 +1,9 @@
-# Coolify: Vorschau von Merzenich Aktuell
+# Coolify: Vorschau von Merzenich Aktuell (abgeschaltet)
+
+> **Seit 05.10.2026 abgeschaltet und gelöscht.** Ausgeliefert wird nur noch
+> WordPress auf https://merzenich-aktuell.de. Die Dateien hier bleiben, weil die
+> QA das Image als Test des statischen Bestands baut; nichts im Theme oder Plugin
+> hängt mehr an der Vorschauseite.
 
 Dient dazu, den Stand unter einer erreichbaren Adresse anzusehen, ohne auf
 GitHub Pages oder Cloudflare zu warten.

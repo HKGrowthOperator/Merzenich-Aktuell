@@ -13,7 +13,8 @@
  *    geprüft, Soll laut Liste, Warnung unter 20), „Pools anlegen“ und
  *    „Fotos übernehmen“ in Paketen. Quelle der Liste: data/bildpools.json
  *    (deploy/wordpress-import.mjs aus editorial-photo-pools.json), Dateien
- *    von der statischen Seite (Option ma_bildpool_quelle).
+ *    aus dem Repository (chatgpt-site/ auf GitHub; Option ma_bildpool_quelle
+ *    kann eine andere Quelle vorschalten).
  *  - Jedes übernommene Foto trägt Fotograf, Quelle, Lizenz und Prüfstand
  *    (Medienfelder aus bildrechte.php); „geprüft“ nur, was in der Liste
  *    gesichtet ist, alles andere bleibt „offen“ und wird nie automatisch
@@ -51,14 +52,21 @@ function ma_bildpool_daten(): array {
     return $d = is_array($j) ? $j : ['pools' => [], 'bilder' => [], 'mindest' => 20];
 }
 
+/**
+ * Erste Quelle für Poolfotos. Seit 05.10.2026 das Repository: die Vorschauseite
+ * auf Coolify ist abgeschaltet. Eine noch gespeicherte Adresse dieser Seite wird
+ * ignoriert, damit kein Lauf auf einen toten Server wartet.
+ */
 function ma_bildpool_quelle(): string {
-    return untrailingslashit((string) get_option('ma_bildpool_quelle', 'https://merzenichaktuell.hk-growthoperator.de'));
+    $q = untrailingslashit(trim((string) get_option('ma_bildpool_quelle', '')));
+    if ($q === '' || str_contains($q, 'merzenichaktuell.hk-growthoperator.de')) return MA_REPO_SEITE;
+    return $q;
 }
 
 /** Das Repository auf GitHub (immer der Stand von main) als zweite Quelle für alles aus chatgpt-site/. */
 const MA_REPO_SEITE = 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site';
 
-/** Quellen für Poolfotos in Reihenfolge der Versuche: Vorschauseite, dann Repository. */
+/** Quellen für Poolfotos in Reihenfolge der Versuche: eine vorgeschaltete Quelle, dann das Repository. */
 function ma_bildpool_quellen(): array {
     return array_values(array_unique(apply_filters('ma_bildpool_quellen', [ma_bildpool_quelle(), MA_REPO_SEITE])));
 }
@@ -170,8 +178,8 @@ function ma_bildpools_importieren(int $max = 10): array {
     }
     $ausgefallen = array_keys(ma_quelle_ausgefallen());
     $hinweis = '';
-    if ($abbruch) $hinweis = 'Weder die Vorschauseite noch das Repository waren erreichbar. Bitte später erneut „Fotos übernehmen“ anklicken.';
-    elseif ($ausgefallen && $neu) $hinweis = 'Die Vorschauseite (' . implode(', ', $ausgefallen) . ') war nicht erreichbar; die Fotos kamen aus dem Repository.';
+    if ($abbruch) $hinweis = 'Das Repository auf GitHub war nicht erreichbar. Bitte später erneut „Fotos übernehmen“ anklicken.';
+    elseif ($ausgefallen && $neu) $hinweis = 'Eine Quelle (' . implode(', ', $ausgefallen) . ') war nicht erreichbar; die Fotos kamen aus dem Repository.';
     return ['neu' => $neu, 'offen' => $offen, 'fehler' => $fehler, 'ausgefallen' => $ausgefallen, 'hinweis' => $hinweis];
 }
 

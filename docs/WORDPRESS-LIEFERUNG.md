@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. Oktober 2026 · Theme 21.9.10 · Core-Plugin 1.20.5 (Historie unten)
+5. Oktober 2026 · Theme 21.10.0 · Core-Plugin 1.20.6 (Historie unten)
+
+## Neu in Theme 21.10.0 / Plugin 1.20.6 (05.10.2026): ohne Coolify, keine leeren Seiten mehr
+
+- **Coolify abgeschaltet:** Die Vorschauseite `merzenichaktuell.hk-growthoperator.de` gibt es nicht mehr (Betreiber, 05.10.2026). Theme und Plugin hängen nicht mehr an ihr: keine Erreichbarkeitsprüfung, keine Umleitung dorthin. Fehlt eine Datei unter `/assets/`, holt der Server sie einmal aus dem Repository, legt sie unter `uploads/ma-assets/` ab und liefert sie danach selbst aus (eigene Regel in `.htaccess`); der Browser verbindet sich nie mit GitHub. Spielstand, Stellen- und Immobilienmarkt liest `ma21_repo_datei()` aus dem Repository, mit Zwischenspeicher und Notkopie. Poolfotos und Abgleich-Bilder kommen aus dem Repository; eine noch gespeicherte Adresse der Vorschauseite wird ignoriert. Datenschutzerklärung Fassung 2026-10-05 beschreibt das.
+- **Stellenmarkt `/jobs/` und Immobilienmarkt `/immobilien/`:** neue Vorlagen im aktuellen Design (`inc/markt.php`, `archive-ma_job.php`, `archive-ma_property.php`). Statt „keine veröffentlichten Einträge“ zeigen sie hier aufgegebene Anzeigen und den täglich geprüften Marktüberblick aus dem Repository (32 Stellen, 35 Immobilienangebote, jeweils mit Prüfdatum und Link zur Originalanzeige). Die Art der Anzeige steht in der Kopfzeile; die schmale Box daneben schnitt „Ausbildung“ ab.
+- **Tipps `/tipp/`:** „Unsere Tipps für die nächsten Tage“ aus den veröffentlichten Terminen der nächsten drei Wochen, darüber bezahlte Tipps als Anzeige gekennzeichnet; Seitenleiste mit Tipp-Anfrage und kostenloser Terminmeldung.
+- **Unternehmen `/unternehmen/`:** solange kein Unternehmensbeitrag freigegeben ist, steht dort das Angebot (Unternehmenskanal, drei Schritte, Knöpfe) statt einer leeren Liste. Untertitel passt zur Vorgabe „nur Beiträge der Unternehmen“.
+- **Diskussion `/diskussion/` (Plugin):** ohne freigegebene Kommentare die jüngsten Meldungen mit Sprung zum Kommentarfeld statt eines leeren Satzes.
+
+**Geprüft:** alle PHP-Tests (Rechtstexte-Test auf die neue Fassung angepasst), lokal `/jobs/` 32 und `/immobilien/` 35 Anzeigen, `/tipp/` 6 Termine, Nachladen einer fehlenden Datei aus dem Repository, Bildschirmfotos Desktop und Mobil; live nach dem Upload.
 
 ## Neu in Theme 21.9.10 / Plugin 1.20.5 (04.10.2026): Kopfleiste aus WordPress, Freigaben mit Abgleich-Entwürfen, Dashboard-Kachel, Abgleich zuverlässig angestoßen
 

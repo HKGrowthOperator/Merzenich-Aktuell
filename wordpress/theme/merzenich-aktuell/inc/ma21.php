@@ -11,12 +11,11 @@
  * Stylesheets, Skripte, Schriften und Bilder der statischen Seite liegen im
  * Theme unter static/ (beim Paketbau aus chatgpt-site/assets kopiert) und
  * werden unter /assets/ ausgeliefert (Rewrite in .htaccess). Fehlt eine Datei,
- * antwortet PHP aus der Mediathek, von der Vorschauseite oder aus dem Repository
- * (ma21_asset); das Ressort-Menü wird aus den eigenen Beiträgen gefüllt.
+ * antwortet PHP aus der Mediathek oder holt sie einmal aus dem Repository und legt
+ * sie hier ab (ma21_asset); das Ressort-Menü wird aus den eigenen Beiträgen gefüllt.
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA21_STATISCH = 'https://merzenichaktuell.hk-growthoperator.de';
 const MA21_ORTE = ['merzenich' => 'Merzenich', 'golzheim' => 'Golzheim', 'girbelsrath' => 'Girbelsrath', 'morschenich' => 'Morschenich', 'buergewald' => 'Bürgewald'];
 const MA21_RESSORT = ['blaulicht' => 'Blaulicht', 'sport' => 'Sport', 'rathaus' => 'Rathaus & Politik', 'leben' => 'Leben', 'wirtschaft' => 'Wirtschaft', 'menschen' => 'Menschen', 'vereine' => 'Vereine', 'tipp' => 'Tipp'];
 // Bildhinweis je Bildtyp: auf der Startseite (knapp) und in Listen/Artikeln.
@@ -185,14 +184,18 @@ function ma21_kopf_jetzt(string $html, array $d): string {
     return (string) preg_replace('#<span class="jetzt-feld jetzt-termin"[^>]*>(?:[^<]*)</span>#u', $terminHtml, $html, 1);
 }
 
-/* /assets/ -> Theme-Verzeichnis static/; das Ressort-Menü und alles, was dort
-   fehlt (Poolfotos, Quellen), beantwortet PHP: Mediathek, Vorschauseite, Repository. */
+/* /assets/ -> Theme-Verzeichnis static/, danach die einmal aus dem Repository
+   nachgeladenen Dateien (uploads/ma-assets/assets/); das Ressort-Menü und alles
+   Übrige (Poolfotos, Quellen) beantwortet PHP: Mediathek, sonst nachladen. */
 add_filter('mod_rewrite_rules', function (string $regeln): string {
     $dir = trailingslashit(get_template_directory()) . 'static/';
     $rel = ltrim(str_replace(ABSPATH, '', $dir), '/');
+    $nach = ma21_nachgeladen_verzeichnis() . '/assets/';
+    $nachRel = ltrim(str_replace(ABSPATH, '', $nach), '/');
     $block = "# BEGIN Merzenich Aktuell Assets\n<IfModule mod_rewrite.c>\nRewriteEngine On\n"
         . "RewriteRule ^assets/ressort-menue\\.json$ index.php?ma_asset=ressort-menue.json [L,QSA]\n"
         . "RewriteCond {$dir}$1 -f\nRewriteRule ^assets/(.*)$ {$rel}$1 [L]\n"
+        . "RewriteCond {$nach}$1 -f\nRewriteRule ^assets/(.*)$ {$nachRel}$1 [L]\n"
         . "RewriteRule ^assets/(.*)$ index.php?ma_asset=$1 [L,QSA]\n"
         . "</IfModule>\n# END Merzenich Aktuell Assets\n";
     return $block . $regeln;
@@ -209,10 +212,10 @@ add_action('init', function (): void {
 }, 50);
 
 /**
- * Fehlende /assets/-Datei (04.10.2026: bis dahin Umleitung auf die Vorschauseite,
- * die stundenlang nicht erreichbar war, also kaputte Bilder im Ressort-Menü):
- * zuerst die Mediathek (ma_image_static_src, alle Poolfotos liegen dort), dann
- * die Vorschauseite, wenn sie antwortet, sonst das Repository.
+ * Fehlende /assets/-Datei: zuerst die Mediathek (ma_image_static_src, alle
+ * Poolfotos liegen dort), sonst einmal aus dem Repository holen und hier ablegen.
+ * Die Vorschauseite auf Coolify gibt es seit 05.10.2026 nicht mehr; der Browser
+ * lädt nichts von GitHub, nur von dieser Domain.
  */
 function ma21_asset(string $pfad): void {
     $pfad = '/' . ltrim((string) preg_replace('#/+#', '/', $pfad), '/');
@@ -220,7 +223,8 @@ function ma21_asset(string $pfad): void {
     if ($pfad === '/ressort-menue.json') ma21_ressort_menue_ausgeben();
     $voll = '/assets' . $pfad;
     $ziel = ma21_asset_lokal($voll);
-    if ($ziel === '') $ziel = (ma21_statisch_erreichbar() ? MA21_STATISCH : MA21_REPO) . $voll;
+    if ($ziel === '') $ziel = ma21_asset_nachladen($voll);
+    if ($ziel === '') { status_header(404); nocache_headers(); exit; }
     header('Cache-Control: public, max-age=3600');
     wp_redirect($ziel, 302, 'Merzenich Aktuell');
     exit;
@@ -244,21 +248,62 @@ function ma21_asset_lokal(string $pfad): string {
     return '';
 }
 
-/** Antwortet die Vorschauseite? Alle fünf Minuten geprüft. */
-function ma21_statisch_erreichbar(): bool {
-    $t = get_transient('ma21_statisch_status');
-    if ($t !== false) return $t === 'ja';
-    $r = wp_remote_head(MA21_STATISCH . '/', ['timeout' => 3, 'redirection' => 2]);
-    $ok = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200;
-    set_transient('ma21_statisch_status', $ok ? 'ja' : 'nein', 5 * MINUTE_IN_SECONDS);
-    return $ok;
+/** Ablage der aus dem Repository nachgeladenen Dateien (uploads/ma-assets). */
+function ma21_nachgeladen_verzeichnis(): string {
+    return trailingslashit((string) wp_upload_dir(null, false)['basedir']) . 'ma-assets';
+}
+
+/** Ist der Pfad als nachladbare Datei erlaubt? Nur Medien, Stile, Skripte, Schriften und Daten; nie PHP. */
+function ma21_nachladbar(string $voll): bool {
+    return (bool) preg_match('#^/assets/[\w./@%-]+\.(webp|jpe?g|png|gif|svg|avif|ico|css|js|json|woff2?|ttf|txt|pdf)$#i', $voll) && !str_contains($voll, '..');
+}
+
+/**
+ * Holt eine fehlende Datei einmal aus dem Repository und legt sie unter
+ * uploads/ma-assets/ ab (danach liefert Apache sie direkt, siehe .htaccess).
+ * Rückgabe: ihre Adresse auf dieser Domain oder leer (dann 404). Fehlt die Datei
+ * auch im Repository, wird eine Stunde lang nicht erneut gefragt.
+ */
+function ma21_asset_nachladen(string $voll): string {
+    if (!ma21_nachladbar($voll)) return '';
+    $ziel = ma21_nachgeladen_verzeichnis() . $voll;
+    $url = trailingslashit((string) wp_upload_dir(null, false)['baseurl']) . 'ma-assets' . $voll;
+    if (is_file($ziel)) return $url;
+    $sperre = 'ma21_fehlt_' . md5($voll);
+    if (get_transient($sperre)) return '';
+    $r = wp_remote_get(MA21_REPO . $voll, ['timeout' => 10]);
+    $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
+    if ($body === '' || strlen($body) > 15 * MB_IN_BYTES) { set_transient($sperre, 1, HOUR_IN_SECONDS); return ''; }
+    if (!wp_mkdir_p(dirname($ziel)) || file_put_contents($ziel, $body) === false) return '';
+    return $url;
+}
+
+/**
+ * Datei aus chatgpt-site/ im Repository (Stand von main), zwischengespeichert;
+ * antwortet GitHub nicht, gilt die letzte gute Kopie. Für Daten, die die Kette
+ * laufend erneuert (Spielstand, Stellen- und Immobilienmarkt).
+ */
+function ma21_repo_datei(string $pfad, int $ttl = HOUR_IN_SECONDS): string {
+    $schluessel = 'ma21_repo_' . md5($pfad);
+    $t = get_transient($schluessel);
+    if (is_string($t) && $t !== '') return $t;
+    $r = wp_remote_get(MA21_REPO . '/' . ltrim($pfad, '/'), ['timeout' => 8]);
+    $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
+    if ($body !== '') {
+        set_transient($schluessel, $body, $ttl);
+        update_option($schluessel . '_kopie', $body, false);
+        return $body;
+    }
+    $kopie = (string) get_option($schluessel . '_kopie', '');
+    if ($kopie !== '') set_transient($schluessel, $kopie, 10 * MINUTE_IN_SECONDS);
+    return $kopie;
 }
 
 /**
  * Ressort-Menü (assets/ressort-menue.json, liest ressort-dropdowns.js): Gruppen
  * und Links aus der statischen Datei, „Neu im Ressort“ aus den veröffentlichten
- * Beiträgen dieser WordPress-Installation. Vorher zeigte das Menü die neuesten
- * Meldungen der Vorschauseite, auch wenn sie hier noch nicht freigegeben waren.
+ * Beiträgen dieser WordPress-Installation, nie aus dem redaktionellen Stand
+ * im Repository (dort stehen auch noch nicht freigegebene Meldungen).
  */
 function ma21_ressort_menue_ausgeben(): void {
     $datei = trailingslashit(get_template_directory()) . 'static/ressort-menue.json';
@@ -328,6 +373,8 @@ function ma21_legacy(): bool {
     // Vereinsprofile haben seit 01.10.2026 eine eigene Vorlage im neuen Markup (single-ma_club.php).
     $alt = ['ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice', 'ma_business', 'ma_tip', 'ma_event', 'ma_club'];
     if (is_singular('ma_club')) return false;
+    // Stellen, Immobilien und Tipps haben seit 21.10.0 eigene Übersichten im neuen Markup (inc/markt.php).
+    if (is_post_type_archive(['ma_job', 'ma_property', 'ma_tip'])) return false;
     return is_singular($alt) || is_post_type_archive($alt);
 }
 
@@ -846,9 +893,9 @@ add_action('template_redirect', function (): void {
 
 /**
  * /api/sport-current.json: der Spielstand des SC Merzenich, den die Kette
- * (deploy/sport.mjs) nach chatgpt-site/api/ schreibt; von der Vorschauseite oder
- * aus dem Repository geholt, 15 Minuten zwischengespeichert, mit Notkopie, falls
- * beide Quellen gerade nicht antworten. /api/editorial-current.json: die
+ * (deploy/sport.mjs) nach chatgpt-site/api/ schreibt; aus dem Repository geholt,
+ * 15 Minuten zwischengespeichert, mit Notkopie, falls GitHub gerade nicht antwortet
+ * (ma21_repo_datei). /api/editorial-current.json: die
  * redaktionelle Übersteuerung der statischen Startseite; auf WordPress entscheidet
  * das Board „Startseite & Ressorts“, darum eine leere Antwort statt eines 404.
  */
@@ -861,18 +908,8 @@ add_action('template_redirect', function (): void {
         exit;
     }
     if ($api !== 'sport-current') return;
-    $daten = get_transient('ma21_sport_current');
-    if (!is_string($daten) || $daten === '') {
-        $daten = '';
-        foreach ([ma21_statisch_erreichbar() ? MA21_STATISCH . '/api/sport-current.json' : '', MA21_REPO . '/api/sport-current.json'] as $url) {
-            if ($url === '') continue;
-            $r = wp_remote_get($url, ['timeout' => 6]);
-            $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
-            if ($body !== '' && is_array(json_decode($body, true))) { $daten = $body; break; }
-        }
-        if ($daten !== '') { set_transient('ma21_sport_current', $daten, 15 * MINUTE_IN_SECONDS); update_option('ma21_sport_current_kopie', $daten, false); }
-        else $daten = (string) get_option('ma21_sport_current_kopie', '');
-    }
+    $daten = ma21_repo_datei('api/sport-current.json', 15 * MINUTE_IN_SECONDS);
+    if (!is_array(json_decode($daten, true))) $daten = (string) get_option('ma21_sport_current_kopie', '');
     if ($daten === '') { status_header(503); nocache_headers(); wp_send_json(['fehler' => 'Spielstand nicht verfügbar']); }
     header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: public, max-age=600');

@@ -72,3 +72,27 @@ body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
 .info-prose .themen-liste{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 10px}
 .info-prose .themen-liste li{display:inline-flex;align-items:baseline;gap:6px;border:1px solid var(--line,#e3e3e1);border-radius:999px;padding:5px 12px;font-size:14px}
 .info-prose .themen-liste .rs{font-size:12px;color:var(--muted,#666)}
+
+/* /unternehmen/ ohne freigegebene Beiträge: das Angebot statt einer leeren Liste (21.10.0). */
+.u-angebot{background:var(--card,#fff);border:1px solid var(--line,#e2ddd3);border-top:3px solid var(--ma-red,#971725);border-radius:4px;padding:26px 28px;margin:0 0 24px}
+.u-angebot h2{font-size:clamp(22px,2.4vw,28px);line-height:1.2;margin:6px 0 12px}
+.u-angebot p{margin:0 0 14px;line-height:1.6}
+.u-schritte{margin:0 0 18px;padding:0;list-style:none;counter-reset:schritt;display:grid;gap:12px}
+.u-schritte li{counter-increment:schritt;position:relative;padding-left:44px;line-height:1.55}
+.u-schritte li::before{content:counter(schritt);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--stage-2,#1e2a36);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.u-angebot__knoepfe{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+@media (max-width:767px){.u-angebot{padding:20px 18px}}
+
+/* Stellen- und Immobilienmarkt (21.10.0): die Art (Ausbildung, Miete …) steht in der
+   Kopfzeile der Anzeige; die 44-px-Box daneben schnitt längere Wörter ab. */
+.markt-row--thumb{grid-template-columns:150px minmax(0,1fr) auto}
+.markt-row--thumb>.job-d{display:none}
+.markt-row--thumb .markt-thumb{grid-column:1}
+.markt-row--thumb .info{grid-column:2}
+.markt-row--thumb .act{grid-column:3}
+.markt-liste .markt-art{display:inline}
+.event-row .job-d b{hyphens:auto;overflow-wrap:break-word;letter-spacing:.02em}
+@media (max-width:760px){
+  .markt-row--thumb{grid-template-columns:minmax(0,1fr)}
+  .markt-row--thumb .markt-thumb,.markt-row--thumb .info,.markt-row--thumb .act{grid-column:1}
+}

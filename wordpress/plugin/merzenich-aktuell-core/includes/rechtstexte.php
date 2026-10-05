@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-10-03';
+const MA_RECHTSTEXTE_VERSION = '2026-10-05';
 
 function ma_rechtstexte(): array {
     return [
@@ -63,7 +63,7 @@ function ma_rechtstext_datenschutz(): string {
         . '<p>Kontakt für Datenschutzanliegen: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
         . '<h2 id="hosting">Hosting und Server-Protokolle</h2>'
         . '<p>Die Website läuft als WordPress-Installation bei der IONOS SE, Montabaur, als Auftragsverarbeiterin. Beim Abruf einer Seite verarbeitet der Webserver technisch notwendige Verbindungsdaten (IP-Adresse, Zeitpunkt, angeforderte Adresse, Browserkennung, verweisende Seite), um die Seite auszuliefern und den Betrieb abzusichern. Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe f DSGVO. Die Protokolle verwaltet der Hoster nach seinen Vorgaben; wir werten sie nicht aus.</p>'
-        . '<p>Fehlt eine Datei des Seitenlayouts (Stylesheet, Schrift, Bild) auf diesem Server, leitet er die Anfrage auf unseren eigenen Server unter merzenichaktuell.hk-growthoperator.de um; auch dort fallen nur die genannten Verbindungsdaten an.</p>'
+        . '<p>Fehlt eine Datei des Seitenlayouts (Stylesheet, Schrift, Bild) auf diesem Server, lädt unser Server sie einmal aus dem Quellcode-Archiv der Redaktion bei GitHub nach und liefert sie danach selbst aus. Ihr Browser verbindet sich dabei nicht mit GitHub; Daten über Sie werden nicht weitergegeben.</p>'
         . '<h2 id="reichweite">Reichweitenmessung ohne Cookies</h2>'
         . '<p>Wie viele Menschen welche Meldungen lesen, zählt die Seite selbst, ohne Cookies, ohne Dienste Dritter und ohne dauerhafte Wiedererkennung:</p><ul>'
         . '<li><strong>Seitenaufrufe:</strong> Jede Seite meldet beim Laden „einmal aufgerufen“ an unseren Server. Gespeichert wird nur die Summe je Tag und Meldung.</li>'

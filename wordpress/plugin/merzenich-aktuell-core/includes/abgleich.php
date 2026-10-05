@@ -2,9 +2,10 @@
 /**
  * Abgleich mit dem redaktionellen Stand (includes/abgleich.php, Plugin 1.20.0).
  *
- * Die Meldungen entstehen auf der Vorschauseite (Generatoren unter deploy/);
+ * Die Meldungen entstehen im Repository (inhalte/, Generatoren unter deploy/);
  * die CI schreibt daraus wordpress-delivery/merzenich-aktuell-import.xml nach
- * main. Bis 1.19 musste diese Datei von Hand importiert werden, und auf
+ * main. Eine eigene Vorschauseite gibt es seit 05.10.2026 nicht mehr
+ * (Coolify abgeschaltet); ausgeliefert wird nur noch WordPress. Bis 1.19 musste diese Datei von Hand importiert werden, und auf
  * merzenich-aktuell.de blieb der Stand tagelang stehen: Google sah keine
  * aktuelle Nachrichtenseite, die News-Sitemap war leer.
  *
@@ -18,7 +19,7 @@
  *     Hervorhebungen und ein von Hand gesetztes Bild fasst der Abgleich nie an,
  *   - löscht nichts.
  * Zuordnung über ma_legacy_url (setzt der Import), ersatzweise über den Slug.
- * Bilder kommen von der Vorschauseite; ist sie nicht erreichbar, vom Repository.
+ * Bilder kommen aus dem Repository (Option ma_abgleich_bilder kann eine andere Quelle vorschalten).
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -283,7 +284,7 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         elseif ($ent === 'unveraendert') $erg['unveraendert']++;
         elseif ($ent === 'aktualisieren') { if (ma_abgleich_aktualisieren($id, $e, $daten['bilder'], $erg['fehler'])) $erg['aktualisiert']++; }
         else $erg['von_hand'][] = $e['titel'];
-        // Fehlendes Beitragsbild nachholen, etwa wenn die Vorschauseite beim letzten Lauf nicht erreichbar war.
+        // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
         if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && !has_post_thumbnail($id)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
     }
     return ma_abgleich_abschliessen($erg, $t0);
@@ -393,7 +394,7 @@ function ma_abgleich_seite_admin(): void {
     $stand = $ergebnis ?? get_option('ma_abgleich_stand', []);
     $naechster = wp_next_scheduled(MA_ABGLEICH_CRON);
     echo '<div class="wrap"><h1>Abgleich mit dem redaktionellen Stand</h1>';
-    echo '<p>Die Meldungen entstehen auf der Vorschauseite. Dieser Abgleich holt sie stündlich nach WordPress: neue Meldungen landen als Entwurf in den <a href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Freigaben</a>, neue Termine werden veröffentlicht, Bilder kommen mit Nachweis mit. Was hier von Hand geändert wurde, bleibt unangetastet.</p>';
+    echo '<p>Die Meldungen entstehen im redaktionellen Stand auf GitHub. Dieser Abgleich holt sie stündlich nach WordPress: neue Meldungen landen als Entwurf in den <a href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Freigaben</a>, neue Termine werden veröffentlicht, Bilder kommen mit Nachweis mit. Was hier von Hand geändert wurde, bleibt unangetastet.</p>';
     if ($hinweis) echo '<div class="notice notice-info"><p>' . esc_html($hinweis) . '</p></div>';
     echo '<form method="post" style="margin:1em 0">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="lauf"><button class="button button-primary">Jetzt abgleichen</button> ';
@@ -416,7 +417,7 @@ function ma_abgleich_seite_admin(): void {
     echo '<tr><th>Automatischer Abgleich</th><td><label><input type="checkbox" name="aktiv" value="1"' . checked(ma_abgleich_aktiv(), true, false) . '> Stündlich laufen lassen</label></td></tr>';
     echo '<tr><th>Neue Meldungen</th><td><label><input type="checkbox" name="sofort" value="1"' . checked(ma_abgleich_sofort(), true, false) . '> Sofort veröffentlichen (ohne Freigabe; ausgeschaltet landen sie als Entwurf in den Freigaben)</label></td></tr>';
     echo '<tr><th><label for="ma-abgleich-quelle">Import-Datei</label></th><td><input type="url" class="large-text" id="ma-abgleich-quelle" name="quelle" value="' . esc_attr(ma_abgleich_quelle()) . '"><p class="description">Standard: die Datei im Repository auf GitHub (immer der Stand von main).</p></td></tr>';
-    echo '<tr><th><label for="ma-abgleich-bilder">Bilder zuerst von</label></th><td><input type="url" class="large-text" id="ma-abgleich-bilder" name="bilder" value="' . esc_attr((string) get_option('ma_abgleich_bilder', '')) . '" placeholder="leer = Vorschauseite, dann Repository"><p class="description">Reihenfolge der Versuche: ' . esc_html(implode(' → ', ma_abgleich_bildbasen())) . '</p></td></tr>';
+    echo '<tr><th><label for="ma-abgleich-bilder">Bilder zuerst von</label></th><td><input type="url" class="large-text" id="ma-abgleich-bilder" name="bilder" value="' . esc_attr((string) get_option('ma_abgleich_bilder', '')) . '" placeholder="leer = Repository auf GitHub"><p class="description">Reihenfolge der Versuche: ' . esc_html(implode(' → ', ma_abgleich_bildbasen())) . '</p></td></tr>';
     echo '</tbody></table><p><button class="button">Einstellungen speichern</button></p></form>';
     $protokoll = get_option('ma_abgleich_protokoll', []);
     if (is_array($protokoll) && $protokoll) echo '<h2>Protokoll</h2><ul style="font-family:monospace">' . implode('', array_map(fn($z) => '<li>' . esc_html((string) $z) . '</li>', array_reverse($protokoll))) . '</ul>';

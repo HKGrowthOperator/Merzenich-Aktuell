@@ -9,11 +9,11 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 - Repository: `HKGrowthOperator/Merzenich-Aktuell`
 - Branch: `main`
 - Source of Truth für Änderungen: dieses GitHub-Repository auf `main`
-- Öffentlich ausgelieferter statischer Stand: `chatgpt-site/` (der Ordnername ist nur ein historischer technischer Name; es gibt keine separate ChatGPT-Seite mehr)
+- **Ausgeliefert wird seit 05.10.2026 nur noch WordPress auf `https://merzenich-aktuell.de` (IONOS).** Die Vorschauseite auf Coolify (`merzenichaktuell.hk-growthoperator.de`) ist abgeschaltet und gelöscht; nichts darf mehr von ihr abhängen.
+- Redaktioneller Stand: `chatgpt-site/` mit den Quellen unter `inhalte/` und den Generatoren unter `deploy/` (der Ordnername ist nur ein historischer technischer Name). Daraus entstehen die Import-Datei für WordPress, die Vorlagen des Themes und die Daten, die das Theme zur Laufzeit aus dem Repository liest (Spielstand, Stellen- und Immobilienmarkt).
 - `site-source/dist/` ist **nur lokaler, wegwerfbarer Build-Output** des historischen Generators: per `.gitignore` ausgeschlossen, nicht Teil des Deployments und niemals Source of Truth. Änderungen dort sind ungültig; produktive Änderungen müssen in versionierten Quellen/Generatoren erfolgen und im ausgelieferten `chatgpt-site/` materialisiert sein.
-- Coolify-Auslieferung: `deploy/coolify/Dockerfile` kopiert `chatgpt-site/` nach nginx
-- Repository-Root enthält weiterhin Preview-/Kompatibilitätsdateien, ist aber nicht der aktuell von Coolify ausgelieferte HTML-Bestand
-- Öffentliche Deploy-/Kontroll-URL: `https://merzenichaktuell.hk-growthoperator.de`
+- `deploy/coolify/` ist nur noch ein historischer Stand; die QA baut das Image weiter als Test des statischen Bestands, ausgeliefert wird es nicht.
+- Öffentliche Kontroll-URL: `https://merzenich-aktuell.de` (WordPress)
 - Frühere externe ChatGPT-Sites sind nur historische Altstände und dürfen nicht als Source of Truth verwendet werden.
 - WordPress Theme/Core sind ein **separater** Lieferstand unter `/wordpress-delivery` und dürfen nicht mit dem Frontend verwechselt werden.
 - Das Core-Plugin holt sich die Import-Datei `wordpress-delivery/merzenich-aktuell-import.xml` seit 1.20.0 stündlich selbst von GitHub (Backend: Merzenich Aktuell → Abgleich); neue Meldungen landen in den Freigaben oder, per Einstellung, sofort auf merzenich-aktuell.de. Hintergrund: `docs/GOOGLE-NEWS.md`.
@@ -24,7 +24,7 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 
 Bestehende gute Komponenten schützen. Änderungen klein, nachvollziehbar und gezielt durchführen. Kein Parallelprojekt und keine v21/v22/v23-Kopie.
 
-**Jede wirksame Änderung an Content, Frontend, Bildern, Komponenten, Logik oder Dokumentation wird im Repository `HKGrowthOperator/Merzenich-Aktuell` auf dem vorgesehenen Branch umgesetzt und dorthin gepusht.** Die öffentliche Seite wird nach dem Deploy über `https://merzenichaktuell.hk-growthoperator.de` kontrolliert.
+**Jede wirksame Änderung an Content, Frontend, Bildern, Komponenten, Logik oder Dokumentation wird im Repository `HKGrowthOperator/Merzenich-Aktuell` auf dem vorgesehenen Branch umgesetzt und dorthin gepusht.** Die öffentliche Seite wird nach dem Upload von Theme und Plugin über `https://merzenich-aktuell.de` kontrolliert.
 
 ## Darstellung — verbindlich
 
