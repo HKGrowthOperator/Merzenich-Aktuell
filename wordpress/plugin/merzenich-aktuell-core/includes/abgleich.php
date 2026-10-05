@@ -394,7 +394,7 @@ function ma_abgleich_seite_admin(): void {
     $stand = $ergebnis ?? get_option('ma_abgleich_stand', []);
     $naechster = wp_next_scheduled(MA_ABGLEICH_CRON);
     echo '<div class="wrap"><h1>Abgleich mit dem redaktionellen Stand</h1>';
-    echo '<p>Die Meldungen entstehen im redaktionellen Stand auf GitHub. Dieser Abgleich holt sie stündlich nach WordPress: neue Meldungen landen als Entwurf in den <a href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Freigaben</a>, neue Termine werden veröffentlicht, Bilder kommen mit Nachweis mit. Was hier von Hand geändert wurde, bleibt unangetastet.</p>';
+    echo '<p>Die Meldungen entstehen im redaktionellen Stand auf GitHub. Dieser Abgleich holt sie stündlich nach WordPress: neue Meldungen landen als Entwurf in den <a href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Freigaben</a>, neue Termine werden veröffentlicht (recherchierte Termine mit Freigabe-Vermerk landen als Entwurf in den Freigaben), Bilder kommen mit Nachweis mit. Was hier von Hand geändert wurde, bleibt unangetastet.</p>';
     if ($hinweis) echo '<div class="notice notice-info"><p>' . esc_html($hinweis) . '</p></div>';
     echo '<form method="post" style="margin:1em 0">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="lauf"><button class="button button-primary">Jetzt abgleichen</button> ';

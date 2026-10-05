@@ -1,8 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.11.2 · Core-Plugin 1.21.0 (Historie unten)
+5. Oktober 2026 · Theme 21.11.2 · Core-Plugin 1.21.1 (Historie unten)
 
-## Neu in Theme 21.11.2 (05.10.2026): Sportmodul „Nächstes Spiel“
+## Neu in Theme 21.11.2 / Plugin 1.21.1 (05.10.2026): Sportmodul „Nächstes Spiel“
+
+Plugin 1.21.1: Die Abgleich-Seite sagt jetzt, dass recherchierte Termine mit Freigabe-Vermerk als Entwurf in die Freigaben kommen (26 Termine seit 05.10.2026).
 
 Sportdaten aus dem Backend eingetragen (FUSSBALL.DE, Stand 05.10.2026): letztes Spiel Barmen – Merzenich 0:5 (02.10.), nächstes Spiel Freialdenhoven – Merzenich (09.10., 19:30), Tabelle Kreisliga A. `assets/v20.js` beschriftet das zweite Feld des Sportmoduls als „Nächstes Spiel“, solange das Spiel noch nicht angepfiffen ist (die Vorlage vom Bautag sagte „Ergebnis noch offen“).
 
