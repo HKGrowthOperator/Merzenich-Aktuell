@@ -29,10 +29,11 @@ $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawu
   </div>
   <?php endif; ?>
 </div><aside class="sidebar">
-  <div class="sidebox u-box"><h3>Unternehmen nach Ortsteil</h3>
+  <?php echo ma21_musterprofile_html(count($profile), $assistent('Unternehmenspräsenz')); ?>
+  <?php if ($profile): ?><div class="sidebox u-box"><h3>Unternehmen nach Ortsteil</h3>
   <?php if ($profile): foreach ($nachOrt as $ortName => $liste): ?><p class="u-ort"><strong><?php echo esc_html($ortName); ?></strong></p><ul class="linklist"><?php foreach ($liste as $u): $branche = (string) get_post_meta($u->ID, 'ma_business_branche', true); ?><li><a href="<?php echo esc_url(get_permalink($u)); ?>"><?php echo esc_html(get_the_title($u)); ?></a><?php if ($branche !== ''): ?><small><?php echo esc_html($branche); ?></small><?php endif; ?></li><?php endforeach; ?></ul><?php endforeach;
-  else: ?><p class="u-leer">Unternehmen aus der Gemeinde stellen sich hier mit Porträt, Öffnungszeiten und Kontakt vor, nach Ortsteil geordnet. Bezahlte Präsentationen sind als Anzeige gekennzeichnet.</p><?php endif; ?>
-  <p><a class="btn" href="<?php echo esc_url($assistent('Unternehmenskanal')); ?>">Eigenes Profil anfragen</a></p></div>
+  endif; ?>
+  <p><a class="btn" href="<?php echo esc_url($assistent('Unternehmenskanal')); ?>">Eigenes Profil anfragen</a></p></div><?php endif; ?>
   <div class="sidebox u-box"><h3>Für Unternehmen</h3><ul class="linklist"><li><a href="<?php echo esc_url(home_url('/werben/')); ?>">Werben &amp; Mediadaten</a></li><li><a href="<?php echo esc_url($assistent('Unternehmenspräsenz')); ?>">Unternehmensporträt</a><small>Porträt mit Bild, Öffnungszeiten und Kontakt</small></li><li><a href="<?php echo esc_url(home_url('/betriebe/')); ?>">Branchenbuch: lokale Betriebe</a><small>einfacher Eintrag kostenlos</small></li><li><a href="<?php echo esc_url(home_url('/jobs/')); ?>">Stellenmarkt</a></li><li><a href="<?php echo esc_url(home_url('/immobilien/')); ?>">Immobilienmarkt</a></li></ul></div>
   <?php echo ma21_werbung('unternehmen'); ?>
 </aside></div></section>

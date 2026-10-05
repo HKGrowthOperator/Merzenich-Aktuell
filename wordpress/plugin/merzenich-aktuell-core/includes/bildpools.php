@@ -271,7 +271,7 @@ add_action('pre_get_posts', function (WP_Query $q): void {
 
 /** Passender Pool: Rubrik, bei Blaulicht nach Stichworten (Polizei, Brand, Verkehr). */
 function ma_bildpool_fuer(WP_Post $p): string {
-    if ($p->post_type === 'ma_event') return 'termine';
+    if ($p->post_type === 'ma_event') return ma_bildpool_fuer_termin($p->post_title . ' ' . (string) get_post_meta($p->ID, 'ma_event_place', true) . ' ' . wp_strip_all_tags($p->post_excerpt . ' ' . mb_substr($p->post_content, 0, 400)));
     $kats = array_map(fn($t) => $t->slug, (array) get_the_category($p->ID));
     $text = mb_strtolower($p->post_title . ' ' . wp_strip_all_tags($p->post_excerpt . ' ' . mb_substr($p->post_content, 0, 600)));
     if (in_array('blaulicht', $kats, true)) {
@@ -283,6 +283,21 @@ function ma_bildpool_fuer(WP_Post $p): string {
     }
     foreach (['sport' => 'sport', 'vereine' => 'vereine', 'leben' => 'leben', 'menschen' => 'menschen', 'wirtschaft' => 'wirtschaft', 'tipp' => 'tipp', 'rathaus' => 'aktuell'] as $kat => $pool) if (in_array($kat, $kats, true)) return $pool;
     return 'aktuell';
+}
+
+/**
+ * Pool für einen Termin nach seiner Art (1.20.8). Vorher bekam jeder Termin ein
+ * Kirmesfoto, auch eine Ausschusssitzung im Rathaus. Karneval vor „Sitzung“,
+ * weil auch die Kostümsitzung eine Sitzung ist.
+ */
+function ma_bildpool_fuer_termin(string $text): string {
+    $t = mb_strtolower($text);
+    // Ganze Wörter über \p{L}: \b allein trennt in UTF-8 an „ß“, „Fußball“ wäre sonst ein Ball.
+    if (preg_match('/karneval|kostümsitzung|kostuemsitzung|prunksitzung|kindersitzung|tanz|disco|party|hitnight|(?<!\p{L})ball(?!\p{L})|konzert/u', $t)) return 'tanzdetail';
+    if (preg_match('/sitzung|ausschuss|gemeinderat|\brat\b|kuratorium|bürgerversammlung|buergerversammlung|einwohnerversammlung|haushalt|rathaus/u', $t)) return 'aktuell';
+    if (preg_match('/kirche|gottesdienst|pfarr|messe\b|andacht|kommunion|firmung|pastoral|kapelle/u', $t)) return 'kirchedetail';
+    if (preg_match('/fußball|fussball|tischtennis|turnier|(?<!\p{L})cup(?!\p{L})|sportfest|(?<!\p{L})lauf(?!\p{L})|volkslauf|spendenlauf|staffellauf|tennis|handball|spieltag/u', $t)) return 'sport';
+    return 'termine';
 }
 
 /** Geprüftes Foto des Pools; nicht dasselbe wie bei den letzten acht Meldungen. 0 = keines. */
@@ -300,7 +315,10 @@ function ma_bildpool_waehlen(string $pool, int $post_id): int {
 function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
     if (has_post_thumbnail($p->ID) || !in_array($p->post_type, ['post', 'ma_event'], true)) return 0;
     $pool = ma_bildpool_fuer($p);
-    $bild = ma_bildpool_waehlen($pool, $p->ID) ?: ($pool !== 'aktuell' ? ma_bildpool_waehlen('aktuell', $p->ID) : 0);
+    $bild = ma_bildpool_waehlen($pool, $p->ID);
+    // Detailpools haben oft nur ein geprüftes Foto: Termine fallen auf den Terminpool zurück, alles auf „Aktuell“.
+    if (!$bild && $p->post_type === 'ma_event' && $pool !== 'termine') $bild = ma_bildpool_waehlen('termine', $p->ID);
+    if (!$bild && $pool !== 'aktuell') $bild = ma_bildpool_waehlen('aktuell', $p->ID);
     if (!$bild) return 0;
     set_post_thumbnail($p->ID, $bild);
     foreach (['ma_image_credit' => 'ma_image_credit', 'ma_image_license' => 'ma_image_license', 'ma_image_original_url' => 'ma_image_original_url'] as $von => $nach) {
@@ -320,6 +338,35 @@ add_action('transition_post_status', function (string $neu, string $alt, $p): vo
     if (defined('WP_IMPORTING') && WP_IMPORTING) return;
     ma_bildpool_symbolbild_setzen($p);
 }, 30, 3);
+
+/**
+ * Nachlauf (1.20.8): Termine und Meldungen, die vor dem Anlegen der Bildpools
+ * veröffentlicht wurden, haben kein Beitragsbild; im Ressort-Menü stand bei
+ * „Termine“ deshalb rechts kein einziges Bild. Einmal je Plugin-Version, 60 je
+ * Admin-Aufruf, bis keiner mehr fehlt.
+ */
+function ma_bildpool_nachziehen(int $max = 60): int {
+    $ids = get_posts(['post_type' => ['ma_event', 'post'], 'post_status' => 'publish', 'posts_per_page' => $max, 'fields' => 'ids', 'orderby' => 'date', 'order' => 'DESC',
+        'meta_query' => [['key' => '_thumbnail_id', 'compare' => 'NOT EXISTS']]]);
+    $n = 0;
+    // Automatisch gesetzte Termin-Bilder neu wählen, wenn die Art des Termins inzwischen
+    // einen anderen Pool ergibt (vorher bekam jeder Termin ein Kirmesfoto). Von Hand
+    // gesetzte Bilder tragen kein _ma_bildpool_auto und bleiben unberührt.
+    foreach (get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 200, 'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS']]]) as $p) {
+        $pool = ma_bildpool_fuer($p);
+        if ($pool === (string) get_post_meta($p->ID, '_ma_bildpool_auto', true)) continue;
+        delete_post_thumbnail($p->ID);
+        if (ma_bildpool_symbolbild_setzen($p)) $n++;
+        else update_post_meta($p->ID, '_ma_bildpool_auto', $pool);
+    }
+    foreach ($ids as $id) { $p = get_post((int) $id); if ($p && ma_bildpool_symbolbild_setzen($p)) $n++; }
+    return $n;
+}
+add_action('admin_init', function (): void {
+    if (get_option('ma_bildpool_auto', '1') !== '1' || get_option('ma_bildpool_nachgezogen') === MA_CORE_VERSION) return;
+    $n = ma_bildpool_nachziehen(60);
+    if ($n < 60) update_option('ma_bildpool_nachgezogen', MA_CORE_VERSION, false);
+});
 
 /* WP-CLI: wp ma-bildpools importieren [--max=50] */
 if (defined('WP_CLI') && WP_CLI) {

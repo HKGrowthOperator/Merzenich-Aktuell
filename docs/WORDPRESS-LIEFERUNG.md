@@ -1,6 +1,11 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.3 · Core-Plugin 1.20.7 (Historie unten)
+5. Oktober 2026 · Theme 21.10.4 · Core-Plugin 1.20.8 (Historie unten)
+
+## Neu in Theme 21.10.4 / Plugin 1.20.8 (05.10.2026): Bilder bei Terminen, Musterprofile bei Unternehmen
+
+- **Termine mit Bild (Plugin):** Im Ressort-Menü stand bei „Termine“ rechts unter „Neu im Ressort“ kein einziges Bild: die Termine kamen vor den Bildpools nach WordPress und hatten kein Beitragsbild. `ma_bildpool_nachziehen()` setzt einmal je Plugin-Version (60 je Admin-Aufruf) ein geprüftes Poolfoto für Termine und Meldungen ohne Bild. `ma_bildpool_fuer_termin()` wählt nach Art des Termins: Sitzungen und Rathaus `aktuell` (Merzenicher Ortsmotive), Kirche `kirchedetail`, Sport `sport`, Tanz, Party und Karneval `tanzdetail`, sonst `termine`; ganze Wörter über `\p{L}` („Fußball“ ist kein Ball). Automatisch gesetzte Termin-Bilder werden neu gewählt, wenn die Art ein anderes Motiv ergibt; von Hand gesetzte Bilder bleiben.
+- **Musterprofile auf `/unternehmen/` (Theme):** rechte Spalte „Unternehmen aus der Gemeinde“ wie bei Oberberg Aktuell: fünf ausgedachte Betriebe (Backstube, Café, Schreinerei, Steuerbüro, Immobilien) mit Foto, Branche, Ortsteil, Werbetext und Öffnungszeiten, jeder sichtbar als „Musterprofil“ gekennzeichnet, mit Hinweis „keine echten Unternehmen“ und Fotonachweis. Klick und Knopf „Eigenen Betrieb eintragen“ führen in den Anzeigen-Assistenten. Echte Betriebe nur mit Einwilligung; ab drei echten Profilen verschwinden die Muster (`ma21_musterprofile_html`, Daten in `MA21_MUSTERPROFILE`).
 
 ## Neu in Theme 21.10.3 (05.10.2026): Seiten immer frisch
 

@@ -96,3 +96,19 @@ body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
   .markt-row--thumb{grid-template-columns:minmax(0,1fr)}
   .markt-row--thumb .markt-thumb,.markt-row--thumb .info,.markt-row--thumb .act{grid-column:1}
 }
+
+/* Musterprofile in der rechten Spalte von /unternehmen/ (21.10.4). */
+.u-muster__hinweis{font-size:12.5px;line-height:1.5;color:var(--muted,#6b6b6b);margin:0 0 14px}
+.u-muster__karte{border-top:1px solid var(--line,#e2ddd3);padding:14px 0 12px}
+.u-muster__karte:first-of-type{border-top:0;padding-top:4px}
+.u-muster__link{display:grid;gap:4px;color:inherit;text-decoration:none}
+.u-muster__link:hover .u-muster__name,.u-muster__link:focus-visible .u-muster__name{text-decoration:underline;text-underline-offset:3px}
+.u-muster__bild{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:3px;margin-bottom:6px;background:#eee}
+.u-muster__bild img{width:100%;height:100%;object-fit:cover;display:block}
+.u-muster__marke{position:absolute;left:8px;top:8px;background:rgba(17,17,17,.78);color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px}
+.u-muster__eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ma-red,#971725)}
+.u-muster__name{font-size:17px;line-height:1.25}
+.u-muster__text{font-size:13.5px;line-height:1.5;color:var(--ink,#1d1d1d)}
+.u-muster__info{font-size:12px;color:var(--muted,#6b6b6b)}
+.u-muster__credit{display:block;margin-top:6px;font-size:10.5px;color:var(--muted,#8a857d)}
+.u-muster__credit a{color:inherit}

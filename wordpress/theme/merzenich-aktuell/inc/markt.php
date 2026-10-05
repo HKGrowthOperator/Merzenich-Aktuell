@@ -120,3 +120,41 @@ function ma21_tipp_seite(): void {
         . '<div class="sidebox"><h3>Kostenlos</h3><p class="p">Vereine, Kirchen und gemeinnützige Gruppen melden ihre Termine kostenlos. Die Redaktion prüft und veröffentlicht sie im Terminkalender.</p><a class="btn ghost block" href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></div></aside></div></div></section>';
     echo ma21_werbung('artikel');
 }
+
+/**
+ * Musterprofile für /unternehmen/ (Vorgabe Betreiber 05.10.2026: rechte Spalte
+ * mit Unternehmen, Bild und Werbetext wie bei Oberberg Aktuell). Echte Betriebe
+ * erscheinen nur mit Einwilligung (deploy/unternehmen.mjs); bis genug eigene
+ * Profile da sind, zeigen ausgedachte, sichtbar als „Musterprofil“
+ * gekennzeichnete Betriebe, wie ein Eintrag aussieht. Fotos: frei lizenziert,
+ * Nachweis in chatgpt-site/assets/werben/credits.json.
+ */
+const MA21_MUSTERPROFILE = [
+    ['name' => 'Muster-Backstube', 'branche' => 'Bäckerei', 'ort' => 'Merzenich', 'bild' => '/assets/werben/format-startseitenband.jpg', 'alt' => 'Verkaufstheke einer Bäckerei mit Brot und Gebäck', 'foto' => 'Kgbo', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
+        'text' => 'Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.', 'info' => 'Mo bis Sa 6 bis 18 Uhr, So 7 bis 11 Uhr'],
+    ['name' => 'Muster-Café am Markt', 'branche' => 'Café', 'ort' => 'Golzheim', 'bild' => '/assets/werben/werbebanner.jpg', 'alt' => 'Helles Café mit Tischen und Sitzplätzen', 'foto' => 'Phi', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
+        'text' => 'Kaffee aus der Region, Torten aus eigener Herstellung und ein Mittagstisch, der jeden Tag wechselt.', 'info' => 'Di bis So 9 bis 18 Uhr'],
+    ['name' => 'Muster-Schreinerei', 'branche' => 'Handwerk', 'ort' => 'Girbelsrath', 'bild' => '/assets/werben/format-artikelanzeige.jpg', 'alt' => 'Werkstatt mit Werkbank und Werkzeugen', 'foto' => 'Dimitrios Savva', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
+        'text' => 'Küchen, Treppen und Möbel nach Maß, gefertigt in der eigenen Werkstatt. Aufmaß und Beratung vor Ort.', 'info' => 'Termine nach Vereinbarung'],
+    ['name' => 'Muster-Steuerbüro', 'branche' => 'Beratung', 'ort' => 'Merzenich', 'bild' => '/assets/werben/unternehmensprofil.jpg', 'alt' => 'Modernes Büro mit Arbeitsplätzen', 'foto' => 'MichaelHolemans', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
+        'text' => 'Steuererklärung, Lohnabrechnung und Gründungsberatung, persönlich im Büro oder digital von zu Hause.', 'info' => 'Mo bis Fr 8 bis 17 Uhr'],
+    ['name' => 'Muster-Immobilien', 'branche' => 'Immobilien', 'ort' => 'Bürgewald', 'bild' => '/assets/werben/format-sidebar.jpg', 'alt' => 'Modernes Wohnhaus mit Garten', 'foto' => 'Rüdiger Müller', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
+        'text' => 'Wir bewerten Ihr Haus, finden passende Käufer und begleiten Sie bis zum Notartermin.', 'info' => 'Beratung auch am Wochenende'],
+];
+
+/** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). */
+function ma21_musterprofile_html(int $echte, string $anfrage): string {
+    if ($echte >= 3) return '';
+    $h = '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>'
+        . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Musterprofile, keine echten Unternehmen.</p>';
+    foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min($echte, 2)) as $m) {
+        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($anfrage) . '" aria-label="' . esc_attr($m['name'] . ': Musterprofil. Eigenes Profil anfragen') . '">'
+            . '<span class="u-muster__bild"><img src="' . esc_url(home_url($m['bild'])) . '" alt="' . esc_attr($m['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>'
+            . '<span class="u-muster__eyebrow">' . esc_html($m['branche'] . ' · ' . $m['ort']) . '</span>'
+            . '<strong class="u-muster__name">' . esc_html($m['name']) . '</strong>'
+            . '<span class="u-muster__text">' . esc_html($m['text']) . '</span>'
+            . '<span class="u-muster__info">' . esc_html($m['info']) . '</span></a>'
+            . '<span class="u-muster__credit">Foto: ' . esc_html($m['foto']) . ', <a href="' . esc_url($m['lizenz_url']) . '" target="_blank" rel="noopener license">' . esc_html($m['lizenz']) . '</a></span></article>';
+    }
+    return $h . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';
+}
