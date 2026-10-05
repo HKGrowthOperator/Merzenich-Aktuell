@@ -29,10 +29,13 @@ const eintraege = (fdt.eintraege || []).map((e) => {
   if (!e.alt || !e.credit) fehler.push(`${e.datum}: alt und credit sind Pflicht`);
   return { datum: e.datum, src: e.src, alt: e.alt, ort: e.ort || '', credit: [e.credit, e.lizenz].filter(Boolean).join(' · '), leser: true };
 });
-const reihe = orte.ansichten.map((o) => {
+// Gesichtete Ortsansichten und weitere gesichtete Ortsfotos (zusatz, Vorgabe
+// Betreiber 05.10.2026: das Foto des Tages muss immer da sein).
+const reihe = [...orte.ansichten, ...(fdt.zusatz || []).map((z, i) => ({ id: `zusatz-${i + 1}`, ...z }))].map((o) => {
   const m = o.pool ? nachId.get(o.pool) : null;
   if (o.pool && !m) { fehler.push(`${o.id}: Poolfoto ${o.pool} fehlt`); return null; }
-  return { src: m ? m.src : o.src, alt: o.alt, ort: ORTE[o.ortsteil] || '', credit: `${o.credit} · ${o.lizenz}` };
+  if (!o.alt || !o.credit || !o.lizenz) { fehler.push(`${o.id}: alt, credit und lizenz sind Pflicht`); return null; }
+  return { src: m ? m.src : o.src, ...(m ? {} : o.srcset ? { srcset: o.srcset } : {}), alt: o.alt, ort: ORTE[o.ortsteil] || '', credit: `${o.credit} · ${o.lizenz}`, ...(o.quelle ? { quelle: o.quelle } : {}) };
 }).filter(Boolean);
 if (!reihe.length) fehler.push('keine Ortsansichten fuer die taegliche Reihe');
 
@@ -63,7 +66,9 @@ const datumText = f ? new Intl.DateTimeFormat('de-DE', { timeZone: 'UTC', weekda
 
 const geaendert = [];
 {
-  const json = JSON.stringify({ eintraege, reihe: freieReihe }) + '\n';
+  // reihe: frei fuer die statische Startseite; alle: volle Reihe fuer WordPress
+  // (Theme, ma21_foto_des_tages), das selbst prueft, was dort schon zu sehen ist.
+  const json = JSON.stringify({ eintraege, reihe: freieReihe, alle: reihe }) + '\n';
   const ziel = join(site, 'assets', 'foto-des-tages.json');
   if (!existsSync(ziel) || readFileSync(ziel, 'utf8') !== json) { geaendert.push('assets/foto-des-tages.json'); if (!nurPruefen) writeFileSync(ziel, json); }
 }

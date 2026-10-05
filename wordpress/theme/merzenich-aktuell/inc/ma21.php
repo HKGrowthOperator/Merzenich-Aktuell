@@ -633,7 +633,85 @@ function ma21_block(string $name): string {
 /** Startseite: Vorlage mit gefüllten Nachrichtenblöcken und Werbeflächen. */
 function ma21_startseite(): string {
     $html = ma21_vorlage('startseite.html');
-    return preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
+    $html = (string) preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
+    // Foto des Tages wählt WordPress selbst (die Vorlage kann leer oder vom Bautag sein).
+    return (string) preg_replace_callback('#<!-- fotodestages:start -->.*?<!-- fotodestages:end -->#s', fn() => '<!-- fotodestages:start -->' . ma21_foto_des_tages() . '<!-- fotodestages:end -->', $html, 1);
+}
+
+/** Motiv eines Bildpfads ohne Breite und Endung (wie deploy/foto-des-tages.mjs): /assets/places/golzheim-1440.webp → places/golzheim. */
+function ma21_motiv_schluessel(string $src): string {
+    $s = (string) preg_replace('#[?\#].*$#', '', $src);
+    $s = (string) preg_replace('#^.*?/assets/#', '', $s);
+    $s = (string) preg_replace('#-\d{3,4}(?=\.[a-z0-9]+$)#i', '', $s);
+    return (string) preg_replace('#\.[a-z0-9]+$#i', '', $s);
+}
+
+/**
+ * Wahl des Fotos des Tages: datierte Leser-Einsendung für heute, sonst reihum
+ * nach Tag eine gesichtete Ortsansicht. Motive, die schon als Bild einer
+ * Meldung auf der Startseite stehen ($belegt), kommen erst später dran; sind
+ * alle belegt, gilt die volle Reihe. So fällt die Fläche nie weg.
+ */
+function ma21_foto_des_tages_wahl(array $d, string $heute, array $belegt): ?array {
+    foreach ((array) ($d['eintraege'] ?? []) as $e) if (is_array($e) && ($e['datum'] ?? '') === $heute && !empty($e['src'])) return $e;
+    $alle = array_values(array_filter((array) ($d['alle'] ?? $d['reihe'] ?? []), fn($r) => is_array($r) && !empty($r['src']) && !empty($r['alt'])));
+    if (!$alle) return null;
+    $frei = array_values(array_filter($alle, fn($r) => !in_array(ma21_motiv_schluessel((string) $r['src']), $belegt, true)));
+    $reihe = $frei ?: $alle;
+    return $reihe[intdiv((int) strtotime($heute . ' 00:00:00 UTC'), 86400) % count($reihe)];
+}
+
+/** Motive der Meldungsbilder auf der Startseite (Bühne und Rubrikflächen). */
+function ma21_startseite_motive(): array {
+    $b = ma21_startseite_belegung();
+    $posts = array_merge([$b['aufmacher'] ?? null], array_values((array) ($b['neben'] ?? [])));
+    foreach ((array) ($b['sektionen'] ?? []) as $sek) foreach (['gross', 'mittel', 'zeilen'] as $art) $posts = array_merge($posts, array_values((array) ($sek[$art] ?? [])));
+    $motive = [];
+    foreach ($posts as $p) {
+        if (!$p instanceof WP_Post) continue;
+        $src = (string) get_post_meta((int) get_post_thumbnail_id($p->ID), 'ma_image_static_src', true);
+        if ($src !== '') $motive[] = ma21_motiv_schluessel($src);
+    }
+    return array_values(array_unique($motive));
+}
+
+/**
+ * Foto des Tages auf der Startseite (Wunsch KBS 26.09.2026; Vorgabe Betreiber
+ * 05.10.2026: „muss auf jeden Fall mit rein“). Daten: static/foto-des-tages.json
+ * aus deploy/foto-des-tages.mjs. Poolfotos kommen aus der Mediathek, Ortsansichten
+ * aus /assets/. assets/foto-des-tages.js tauscht nur, wenn die Seite von gestern ist.
+ */
+function ma21_foto_des_tages(): string {
+    $datei = trailingslashit(get_template_directory()) . 'static/foto-des-tages.json';
+    $d = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
+    if (!is_array($d)) return '';
+    $heute = (string) wp_date('Y-m-d');
+    $f = ma21_foto_des_tages_wahl($d, $heute, ma21_startseite_motive());
+    if (!$f) return '';
+    $src = (string) $f['src']; $srcset = (string) ($f['srcset'] ?? '');
+    $mediathek = function_exists('ma21_asset_lokal') ? ma21_asset_lokal($src) : '';
+    if ($mediathek !== '') {
+        $id = attachment_url_to_postid($mediathek);
+        $src = $mediathek;
+        $srcset = $id ? (string) wp_get_attachment_image_srcset($id, 'full') : '';
+    }
+    $tage = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+    $monate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    $ts = (int) strtotime($heute . ' 12:00:00 UTC');
+    $datum = $tage[(int) gmdate('w', $ts)] . ', ' . gmdate('j', $ts) . '. ' . $monate[(int) gmdate('n', $ts) - 1];
+    $credit = ma21_e((string) ($f['credit'] ?? ''));
+    if (!empty($f['quelle'])) $credit = '<a href="' . esc_url((string) $f['quelle']) . '" target="_blank" rel="noopener">' . $credit . '</a>';
+    return '<section class="ansichten foto-des-tages" aria-labelledby="ansichten-titel" data-foto-des-tages>'
+        . '<figure class="ansichten-bild shell"><img id="foto-des-tages-bild" src="' . esc_url(str_starts_with($src, '/') ? home_url($src) : $src) . '"'
+        . ($srcset !== '' ? ' srcset="' . esc_attr(str_starts_with($srcset, '/') ? (string) preg_replace('#(^|,\s*)/#', '$1' . home_url('/'), $srcset) : $srcset) . '" sizes="(max-width: 1440px) 100vw, 1440px"' : '')
+        . ' alt="' . esc_attr((string) $f['alt']) . '" width="1440" height="960" loading="lazy" decoding="async"></figure>'
+        . '<div class="shell ansichten-text">'
+        . '<p class="ansichten-marke">Foto des Tages · <time id="foto-des-tages-datum" datetime="' . esc_attr($heute) . '">' . esc_html($datum) . '</time></p>'
+        . '<h2 id="ansichten-titel" data-ansicht-ort>' . ma21_e((string) (($f['ort'] ?? '') ?: 'Gemeinde Merzenich')) . '</h2>'
+        . '<p class="ansichten-beschreibung" data-ansicht-text>' . ma21_e(rtrim((string) $f['alt'], '.')) . '.</p>'
+        . '<p class="ansichten-credit" id="foto-des-tages-credit">Foto: ' . $credit . '</p>'
+        . '<a class="ansichten-senden" href="' . esc_url(home_url('/meldung-senden/#formular')) . '">Ihr Foto des Tages einsenden</a>'
+        . '</div></section>';
 }
 
 /** Kommende Termine (ma_event), nach Beginn sortiert. */

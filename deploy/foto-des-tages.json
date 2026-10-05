@@ -1,4 +1,14 @@
 {
-  "_hinweis": "Foto des Tages (Wunsch KBS 26.09.2026, taeglich neu). eintraege: freigegebene Leserfotos fuer ein bestimmtes Datum (datum JJJJ-MM-TT, src unter /assets/, alt, ort, credit, lizenz; das Foto muss den Bildregeln entsprechen und die Einsenderin/der Einsender muss der Veroeffentlichung zugestimmt haben). Ohne Eintrag fuer den Tag wechselt taeglich eine gesichtete Ortsansicht aus deploy/ortsbilder.json.",
-  "eintraege": []
+  "_hinweis": "Foto des Tages (Wunsch KBS 26.09.2026, taeglich neu). eintraege: freigegebene Leserfotos fuer ein bestimmtes Datum (datum JJJJ-MM-TT, src unter /assets/, alt, ort, credit, lizenz; das Foto muss den Bildregeln entsprechen und die Einsenderin/der Einsender muss der Veroeffentlichung zugestimmt haben). Ohne Eintrag fuer den Tag wechselt taeglich eine gesichtete Ortsansicht aus deploy/ortsbilder.json. zusatz: weitere gesichtete Ortsfotos aus der Bildbibliothek (pool = id in data/editorial-images, alt deutsch, ortsteil, credit, lizenz, quelle); nur Querformat, ohne erkennbare Gesichter, Kennzeichen und Hausnummern (docs/BILD-MOTIVREGELN.md).",
+  "eintraege": [],
+  "zusatz": [
+    {
+      "pool": "web-aktuell-15-51db2e9a",
+      "ortsteil": "golzheim",
+      "alt": "Heiligenhäuschen St. Florian an der Backsteinmauer in Golzheim",
+      "credit": "Charlie1965nrw / Wikimedia Commons",
+      "lizenz": "CC BY-SA 3.0 DE",
+      "quelle": "https://commons.wikimedia.org/wiki/File%3AHeiligenh%C3%A4uschen_Golzheim_(Gemeinde_Merzenich)_P1320310_0_1_2_3_4_5_6_fused.jpg"
+    }
+  ]
 }

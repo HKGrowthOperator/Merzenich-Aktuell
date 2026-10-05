@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.5 · Core-Plugin 1.20.8 (Historie unten)
+5. Oktober 2026 · Theme 21.10.6 · Core-Plugin 1.20.8 (Historie unten)
+
+## Neu in Theme 21.10.6 (05.10.2026): Foto des Tages immer auf der Startseite
+
+Vorgabe Betreiber: „Foto des Tages muss auf jeden Fall mit rein.“ Bisher füllte nur der statische Bau die Fläche, und der ließ sie weg, sobald jede Ortsansicht schon irgendwo auf der Startseite stand (zuletzt täglich). Jetzt wählt WordPress das Foto selbst (`ma21_foto_des_tages()`, Platz `<!-- fotodestages -->` in `ma21_startseite()`):
+- Reihenfolge: datierte Leser-Einsendung für heute (`deploy/foto-des-tages.json`, `eintraege`, nur mit Zustimmung), sonst täglich reihum eine gesichtete Ortsansicht aus der vollen Reihe `alle` in `assets/foto-des-tages.json` (acht Ortsansichten aus `deploy/ortsbilder.json` und neu `zusatz`: Heiligenhäuschen St. Florian in Golzheim, nur Querformat, ohne Gesichter, Kennzeichen und Hausnummern).
+- Motive, die schon als Bild einer Meldung auf der Startseite stehen (`ma_image_static_src` der Beitragsbilder), kommen später dran; sind alle belegt, gilt die volle Reihe. Die Fläche fällt nie mehr weg.
+- Poolfotos kommen aus der Mediathek (mit `srcset`), Ortsansichten aus `/assets/places/`. Fotonachweis mit Link zur Quelle, Datum auf Deutsch, Knopf „Ihr Foto des Tages einsenden“.
+- Test: `qa/wordpress/foto-des-tages-test.php`.
 
 ## Neu in Theme 21.10.5 (05.10.2026): Menü öffnet beim Überfahren, Firmenliste unter „Unternehmen“, keine Ausgabe-Wahl
 
