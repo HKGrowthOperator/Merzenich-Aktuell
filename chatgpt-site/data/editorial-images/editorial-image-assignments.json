@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-04T10:56:11.122Z",
+  "updatedAt": "2026-10-05T09:06:38.482Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -557,6 +557,24 @@
       "assignedAt": "2026-10-04T10:52:40.920Z",
       "articleId": "2026-10-04-neues-buergerhaus-merzenich-bedarfsermittlung-2026",
       "articleDate": "2026-10-04T12:52:00+02:00"
+    },
+    "/menschen/kg-golzheim-121-jahre-ehrungen-festkommers/": {
+      "imageId": "web-tanzdetail-01-f2d17e65",
+      "pool": "tanzdetail",
+      "motiv": "tanzsaal",
+      "regel": "vereine.tanz",
+      "assignedAt": "2026-10-05T09:06:38.479Z",
+      "articleId": "2026-09-18-kg-golzheim-121-jahre-ehrungen-festkommers",
+      "articleDate": "2026-09-18T12:00:00+02:00"
+    },
+    "/menschen/kg-golzheim-prinzessin-alina-i-2026-27/": {
+      "imageId": "web-tanzdetail-01-f2d17e65",
+      "pool": "tanzdetail",
+      "motiv": "tanzsaal",
+      "regel": "vereine.tanz",
+      "assignedAt": "2026-10-05T09:06:38.479Z",
+      "articleId": "2026-09-18-kg-golzheim-prinzessin-alina-i-2026-27",
+      "articleDate": "2026-09-18T12:00:00+02:00"
     }
   }
 }

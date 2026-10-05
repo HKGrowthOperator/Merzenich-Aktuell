@@ -31,7 +31,20 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE_URL, ORTSTEILE, ortSlug, entschaerfen } from './lib-artikel.mjs';
+import { SITE_URL, CANONICAL_URL, liveUrl, ORTSTEILE, ortSlug, entschaerfen } from './lib-artikel.mjs';
+
+/*
+ * Adressen in der Import-Datei zeigen auf WordPress (deploy/site.json canonicalUrl),
+ * nicht auf die statische Seite: die Vorschauseite auf Coolify ist seit 05.10.2026
+ * abgeschaltet, Links dorthin waren in sieben Live-Artikeln tot. Pfade, die
+ * WordPress anders führt, bildet liveUrl() ab; Bilder unter /assets/ liefert das
+ * Theme selbst aus.
+ */
+const WP_URL = CANONICAL_URL;
+const wpLink = (pfad) => {
+  const u = liveUrl(pfad);
+  return SITE_URL !== WP_URL && u.startsWith(SITE_URL) ? WP_URL + u.slice(SITE_URL.length) : u;
+};
 import { termineAusSeiten, berliner } from './lib-termine.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -88,7 +101,8 @@ const text = (h) => entschaerfen(String(h).replace(/<[^>]+>/g, '')).replace(/\s+
 const inhaltFuerWp = (h) => h
   .replace(/<!-- werbung:([a-z0-9-]+):start -->[\s\S]*?<!-- werbung:\1:end -->/g, '')
   .replace(/<!--[\s\S]*?-->/g, '')
-  .replace(/(href|src)="\/(?!\/)/g, `$1="${SITE_URL}/`)
+  .replace(/href="(\/(?!\/)[^"]*)"/g, (_, pfad) => `href="${wpLink(pfad)}"`)
+  .replace(/src="\/(?!\/)/g, `src="${WP_URL}/`)
   .trim();
 
 /** Quellenkasten der Seite: erster Link ist die Grundlage der Meldung. */
@@ -114,7 +128,7 @@ function anhang(bild) {
   const lizenz = m?.license || o?.lizenz || (LIZENZ_RE.exec(String(bild.credit || '').split(' · ').pop() || '')?.[0] ?? '');
   const a = {
     id: stabileId(2000000, `bild:${bild.src}`),
-    src: bild.src, url: SITE_URL + bild.src, alt: bild.alt || '',
+    src: bild.src, url: WP_URL + bild.src, alt: bild.alt || '',
     titel: (m?.sourceTitle || bild.alt || bild.src.split('/').pop()).replace(/^File:/, ''),
     credit: String(bild.credit || '').replace(/^Symbolbild · /, ''),
     lizenz, typ,
@@ -187,7 +201,7 @@ for (const m of meldungen) {
   const tax = `<category domain="category" nicename="${xmlEsc(a.ressort)}">${cdata(a.ressortLabel)}</category>`
     + `<category domain="ma_location" nicename="${xmlEsc(a.ortsteil)}">${cdata(ORTSTEILE[a.ortsteil] || a.ortsteil)}</category>`
     + (a.themen || []).map((t) => `<category domain="post_tag" nicename="${xmlEsc(t.slug)}">${cdata(t.label)}</category>`).join('');
-  items.push(`<item>${zeile('title', cdata(a.titel))}${zeile('link', xmlEsc(SITE_URL + a.url))}${zeile('dc:creator', cdata('redaktion'))}`
+  items.push(`<item>${zeile('title', cdata(a.titel))}${zeile('link', xmlEsc(wpLink(a.url)))}${zeile('dc:creator', cdata('redaktion'))}`
     + `<content:encoded>${cdata(m.prosa)}</content:encoded><excerpt:encoded>${cdata(a.teaser)}</excerpt:encoded>`
     + `${zeile('wp:post_id', m.id)}${zeile('wp:post_date', cdata(m.lokal))}${zeile('wp:post_date_gmt', cdata(m.gmt))}`
     + `${zeile('wp:comment_status', 'open')}${zeile('wp:ping_status', 'closed')}${zeile('wp:post_name', cdata(m.slug))}`
@@ -213,7 +227,7 @@ for (const { t, id, inhalt, ort } of termine) {
   // veröffentlichtes Datum in der Zukunft auf „Geplant“ und zeigt den Termin nicht.
   const veroeffentlicht = t.stand ? new Date(`${t.stand}T10:00:00Z`) : t.start;
   const [lokal, gmt] = wpDatum(veroeffentlicht < t.start ? veroeffentlicht : t.start);
-  items.push(`<item>${zeile('title', cdata(t.titel))}${zeile('link', xmlEsc(`${SITE_URL}/termine/${t.slug}/`))}${zeile('dc:creator', cdata('redaktion'))}`
+  items.push(`<item>${zeile('title', cdata(t.titel))}${zeile('link', xmlEsc(`${WP_URL}/termine/${t.slug}/`))}${zeile('dc:creator', cdata('redaktion'))}`
     + `<content:encoded>${cdata(inhalt)}</content:encoded><excerpt:encoded>${cdata(t.beschreibung || '')}</excerpt:encoded>`
     + `${zeile('wp:post_id', id)}${zeile('wp:post_date', cdata(lokal))}${zeile('wp:post_date_gmt', cdata(gmt))}`
     + `${zeile('wp:comment_status', 'closed')}${zeile('wp:ping_status', 'closed')}${zeile('wp:post_name', cdata(t.slug))}`
@@ -227,7 +241,7 @@ for (const { t, id, inhalt, ort } of termine) {
 }
 
 // Service-Seite: Rathaus und Abfall ueber den Shortcode, Daten im Plugin.
-items.push(`<item>${zeile('title', cdata('Service'))}${zeile('link', xmlEsc(`${SITE_URL}/service/`))}${zeile('dc:creator', cdata('redaktion'))}`
+items.push(`<item>${zeile('title', cdata('Service'))}${zeile('link', xmlEsc(`${WP_URL}/service/`))}${zeile('dc:creator', cdata('redaktion'))}`
   + `<content:encoded>${cdata('<h2>Rathaus Merzenich</h2>\n[ma_gemeinde teil="rathaus"]\n<h2>Abfall</h2>\n[ma_gemeinde teil="abfall"]')}</content:encoded><excerpt:encoded>${cdata('')}</excerpt:encoded>`
   + `${zeile('wp:post_id', stabileId(4000000, 'seite:service'))}${zeile('wp:comment_status', 'closed')}${zeile('wp:ping_status', 'closed')}`
   + `${zeile('wp:post_name', cdata('service'))}${zeile('wp:status', 'publish')}${zeile('wp:post_parent', 0)}${zeile('wp:post_type', 'page')}`
@@ -246,12 +260,12 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
 <channel>
 <title>Merzenich Aktuell</title>
-<link>${SITE_URL}</link>
+<link>${WP_URL}</link>
 <description>Internet-Zeitung für die Gemeinde Merzenich und Umkreis</description>
 <language>de-DE</language>
 <wp:wxr_version>1.2</wp:wxr_version>
-<wp:base_site_url>${SITE_URL}</wp:base_site_url>
-<wp:base_blog_url>${SITE_URL}</wp:base_blog_url>
+<wp:base_site_url>${WP_URL}</wp:base_site_url>
+<wp:base_blog_url>${WP_URL}</wp:base_blog_url>
 <wp:author><wp:author_id>1</wp:author_id><wp:author_login>${cdata('redaktion')}</wp:author_login><wp:author_email>${cdata('')}</wp:author_email><wp:author_display_name>${cdata('Redaktion Merzenich Aktuell')}</wp:author_display_name></wp:author>
 ${terme.join('\n')}
 ${items.join('\n')}
