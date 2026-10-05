@@ -144,17 +144,20 @@ function ma21_kopf_aktuell(string $html): string {
     return str_replace('<a href="' . $pfad . '">', '<a href="' . $pfad . '" aria-current="page">', $html);
 }
 
-/** Ausgabe-Wahl: Adressen /ort/…/, besuchter Ort als Auswahl, keine Zahlen. */
+/**
+ * Ausgabe-Wahl oben im Kopf entfällt (Vorgabe Betreiber 05.10.2026: alle fünf
+ * Orte sind Ortsteile der Gemeinde Merzenich; sie stehen weiter im Mehr-Menü,
+ * in der Schublade und im Fuß). Ortslinks zeigen auf /ort/<slug>/, auf einer
+ * Ortsseite ist ihr Ort markiert. Unterseiten ohne Jetzt-Zeile verlieren die
+ * dann leere Leiste ganz.
+ */
 function ma21_kopf_ortswahl(string $html): string {
-    $o = is_tax('ma_location') ? get_queried_object() : null;
-    $aktiv = $o instanceof WP_Term && isset(MA21_ORTE[$o->slug]) ? $o->slug : '';
-    foreach (MA21_ORTE as $slug => $name) {
-        $neu = '<a href="/ort/' . $slug . '/"' . ($aktiv === $slug ? ' aria-current="page"' : '') . '><span class="ortswahl-name">' . ma21_e($name) . '</span>'
-            . '</a>';
-        $html = (string) preg_replace('#<a href="/' . $slug . '/"(?: aria-current="page")?><span class="ortswahl-name">[^<]*</span><span class="ortswahl-zahl">[^<]*</span></a>#u', $neu, $html, 1);
-    }
+    $html = (string) preg_replace('#<details class="ortswahl-schalter">.*?</details>#su', '', $html);
+    $html = (string) preg_replace('#<nav class="ortswahl"[^>]*><div class="shell">\s*</div></nav>#u', '', $html);
+    $html = str_replace('<nav class="ortswahl" aria-label="Ausgabe waehlen">', '<nav class="ortswahl" aria-label="Merzenich jetzt">', $html);
     $html = (string) preg_replace('#href="/(' . implode('|', array_keys(MA21_ORTE)) . ')/"#', 'href="/ort/$1/"', $html);
-    if ($aktiv !== '') $html = str_replace('<span class="ortswahl-aktuell">Merzenich</span>', '<span class="ortswahl-aktuell">' . ma21_e(MA21_ORTE[$aktiv]) . '</span>', $html);
+    $o = is_tax('ma_location') ? get_queried_object() : null;
+    if ($o instanceof WP_Term && isset(MA21_ORTE[$o->slug])) $html = str_replace('<a href="/ort/' . $o->slug . '/">', '<a href="/ort/' . $o->slug . '/" aria-current="page">', $html);
     return $html;
 }
 
@@ -320,6 +323,8 @@ function ma21_ressort_menue_ausgeben(): void {
     foreach ($d['ressorts'] as $pfad => &$r) {
         if (!is_array($r)) continue;
         $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
+        // Unternehmen: Firmenliste links, Beiträge rechts (wie Oberberg Aktuell).
+        if ($pfad === '/unternehmen/' && function_exists('ma21_menue_firmen')) $r['firmen'] = ma21_menue_firmen();
     }
     unset($r);
     $d['standWordPress'] = (string) wp_date('c');
@@ -363,7 +368,10 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
         }
         $args['category_name'] = $slug;
     }
-    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)], get_posts($args));
+    // Anriss nur, wo das Menü Karten mit Text zeigt (Wirtschaft im Unternehmen-Menü).
+    $anriss = in_array($slug, ['wirtschaft', 'unternehmen'], true);
+    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)]
+        + ($anriss ? ['anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8')] : []), get_posts($args));
 }
 add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); });
 

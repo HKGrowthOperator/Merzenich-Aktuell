@@ -131,15 +131,20 @@ function ma21_tipp_seite(): void {
  */
 const MA21_MUSTERPROFILE = [
     ['name' => 'Muster-Backstube', 'branche' => 'Bäckerei', 'ort' => 'Merzenich', 'bild' => '/assets/werben/format-startseitenband.jpg', 'alt' => 'Verkaufstheke einer Bäckerei mit Brot und Gebäck', 'foto' => 'Kgbo', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.', 'info' => 'Mo bis Sa 6 bis 18 Uhr, So 7 bis 11 Uhr'],
+        'text' => 'Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.', 'info' => 'Mo bis Sa 6 bis 18 Uhr, So 7 bis 11 Uhr',
+        'beitrag' => ['titel' => 'Sonntags frisch: die Frühstückstüte zum Mitnehmen', 'text' => 'Brötchen, Croissants und Aufschnitt für zwei, bis Samstagabend vorbestellt und sonntags ab 7 Uhr abholbereit.']],
     ['name' => 'Muster-Café am Markt', 'branche' => 'Café', 'ort' => 'Golzheim', 'bild' => '/assets/werben/werbebanner.jpg', 'alt' => 'Helles Café mit Tischen und Sitzplätzen', 'foto' => 'Phi', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
-        'text' => 'Kaffee aus der Region, Torten aus eigener Herstellung und ein Mittagstisch, der jeden Tag wechselt.', 'info' => 'Di bis So 9 bis 18 Uhr'],
+        'text' => 'Kaffee aus der Region, Torten aus eigener Herstellung und ein Mittagstisch, der jeden Tag wechselt.', 'info' => 'Di bis So 9 bis 18 Uhr',
+        'beitrag' => ['titel' => 'Neuer Mittagstisch, jeden Tag ab 12 Uhr', 'text' => 'Suppe, Hauptgericht und Kaffee zum festen Preis. Die Karte der Woche hängt freitags im Schaufenster.']],
     ['name' => 'Muster-Schreinerei', 'branche' => 'Handwerk', 'ort' => 'Girbelsrath', 'bild' => '/assets/werben/format-artikelanzeige.jpg', 'alt' => 'Werkstatt mit Werkbank und Werkzeugen', 'foto' => 'Dimitrios Savva', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
-        'text' => 'Küchen, Treppen und Möbel nach Maß, gefertigt in der eigenen Werkstatt. Aufmaß und Beratung vor Ort.', 'info' => 'Termine nach Vereinbarung'],
+        'text' => 'Küchen, Treppen und Möbel nach Maß, gefertigt in der eigenen Werkstatt. Aufmaß und Beratung vor Ort.', 'info' => 'Termine nach Vereinbarung',
+        'beitrag' => ['titel' => 'Ausbildung zum Tischler: zwei Plätze frei', 'text' => 'Wer gern mit Holz arbeitet, lernt bei uns Möbelbau, Treppenbau und Montage. Schnuppertage sind jederzeit möglich.']],
     ['name' => 'Muster-Steuerbüro', 'branche' => 'Beratung', 'ort' => 'Merzenich', 'bild' => '/assets/werben/unternehmensprofil.jpg', 'alt' => 'Modernes Büro mit Arbeitsplätzen', 'foto' => 'MichaelHolemans', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Steuererklärung, Lohnabrechnung und Gründungsberatung, persönlich im Büro oder digital von zu Hause.', 'info' => 'Mo bis Fr 8 bis 17 Uhr'],
+        'text' => 'Steuererklärung, Lohnabrechnung und Gründungsberatung, persönlich im Büro oder digital von zu Hause.', 'info' => 'Mo bis Fr 8 bis 17 Uhr',
+        'beitrag' => ['titel' => 'Steuererklärung ohne Papierstapel', 'text' => 'Belege fotografieren, hochladen, fertig. In einer offenen Sprechstunde zeigen wir, wie das digitale Steuerbüro funktioniert.']],
     ['name' => 'Muster-Immobilien', 'branche' => 'Immobilien', 'ort' => 'Bürgewald', 'bild' => '/assets/werben/format-sidebar.jpg', 'alt' => 'Modernes Wohnhaus mit Garten', 'foto' => 'Rüdiger Müller', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Wir bewerten Ihr Haus, finden passende Käufer und begleiten Sie bis zum Notartermin.', 'info' => 'Beratung auch am Wochenende'],
+        'text' => 'Wir bewerten Ihr Haus, finden passende Käufer und begleiten Sie bis zum Notartermin.', 'info' => 'Beratung auch am Wochenende',
+        'beitrag' => ['titel' => 'Was ist mein Haus wert?', 'text' => 'Wir sehen uns Haus und Grundstück an und nennen einen realistischen Preis, unverbindlich und ohne Maklervertrag.']],
 ];
 
 /** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). */
@@ -157,4 +162,49 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
             . '<span class="u-muster__credit">Foto: ' . esc_html($m['foto']) . ', <a href="' . esc_url($m['lizenz_url']) . '" target="_blank" rel="noopener license">' . esc_html($m['lizenz']) . '</a></span></article>';
     }
     return $h . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';
+}
+
+/**
+ * Firmenliste im Aufklappmenü „Unternehmen“ (Vorgabe Betreiber 05.10.2026, wie
+ * Oberberg Aktuell unter „Wirtschaft“): links die Betriebe, rechts beim
+ * Überfahren ihre Beiträge. Echte Profile (ma_business, nur mit Einwilligung
+ * veröffentlicht) zuerst; solange weniger als drei da sind, füllen sichtbar
+ * gekennzeichnete Musterprofile auf (gleiche Regel wie die rechte Spalte).
+ */
+function ma21_menue_firmen(): array {
+    $anfrage = wp_make_link_relative(home_url('/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal'));
+    $echte = get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 8, 'orderby' => 'title', 'order' => 'ASC']);
+    $firmen = [];
+    foreach ($echte as $u) {
+        $name = html_entity_decode(get_the_title($u), ENT_QUOTES, 'UTF-8');
+        $ort = (string) get_post_meta($u->ID, 'ma_business_ortsteil', true);
+        $ort = MA21_ORTE[$ort] ?? ($ort !== '' ? ucfirst($ort) : 'Gemeinde Merzenich');
+        $branche = (string) get_post_meta($u->ID, 'ma_business_branche', true);
+        $bild = ma21_menue_bild($u);
+        // Beiträge des Betriebs: gesponserte Beiträge mit diesem Auftraggeber.
+        $posts = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC',
+            'meta_query' => [['key' => 'ma_gesponsert', 'value' => '1'], ['key' => 'ma_gesponsert_von', 'value' => $name]]]);
+        $karten = array_map(fn(WP_Post $p): array => [
+            'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'url' => wp_make_link_relative(get_permalink($p)),
+            'kicker' => (string) (MA21_ORTE[ma21_ort($p)] ?? $ort), 'meta' => 'Anzeige · ' . get_the_date('d.m.Y, H:i', $p) . ' Uhr',
+            'anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8'), 'bild' => ma21_menue_bild($p), 'knopf' => 'Weiterlesen',
+        ], $posts);
+        if (!$karten) $karten[] = ['titel' => $name, 'url' => wp_make_link_relative(get_permalink($u)), 'kicker' => trim($branche . ' · ' . $ort, ' ·'),
+            'meta' => 'Unternehmensprofil', 'anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($u), 170, ' …'), ENT_QUOTES, 'UTF-8'), 'bild' => $bild, 'knopf' => 'Zum Profil'];
+        $firmen[] = ['name' => $name, 'url' => wp_make_link_relative(get_permalink($u)), 'zeile' => trim($branche . ' · ' . $ort, ' ·'), 'logo' => $bild ? $bild['src'] : null, 'karten' => $karten];
+    }
+    if (count($echte) < 3) {
+        $platz = ['titel' => 'Ihr Betrieb an dieser Stelle', 'url' => $anfrage, 'kicker' => 'Für Unternehmen', 'meta' => 'Unternehmenskanal auf Merzenich Aktuell',
+            'anriss' => 'Eigene Beiträge, ein Profil mit Bild, Öffnungszeiten und Kontakt. Die Redaktion prüft jeden Beitrag vor der Veröffentlichung.', 'bild' => null, 'knopf' => 'Betrieb eintragen', 'platz' => true];
+        foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min(count($echte), 2)) as $m) {
+            $bild = ['src' => $m['bild'], 'alt' => $m['alt']];
+            $firmen[] = ['name' => $m['name'], 'url' => $anfrage, 'zeile' => $m['branche'] . ' · ' . $m['ort'], 'logo' => null, 'muster' => true, 'karten' => [
+                ['titel' => $m['beitrag']['titel'], 'url' => $anfrage, 'kicker' => $m['ort'], 'meta' => 'Musterbeitrag · Anzeige', 'anriss' => $m['beitrag']['text'], 'bild' => $bild, 'knopf' => 'Beitrag buchen', 'muster' => true,
+                    'credit' => 'Foto: ' . $m['foto'] . ', ' . $m['lizenz']],
+                ['titel' => $m['name'], 'url' => $anfrage, 'kicker' => $m['branche'] . ' · ' . $m['ort'], 'meta' => 'Musterprofil · ' . $m['info'], 'anriss' => $m['text'], 'bild' => null, 'knopf' => 'Profil anfragen', 'muster' => true],
+                $platz,
+            ]];
+        }
+    }
+    return $firmen;
 }

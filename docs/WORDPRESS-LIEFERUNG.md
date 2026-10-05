@@ -1,6 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.4 · Core-Plugin 1.20.8 (Historie unten)
+5. Oktober 2026 · Theme 21.10.5 · Core-Plugin 1.20.8 (Historie unten)
+
+## Neu in Theme 21.10.5 (05.10.2026): Menü öffnet beim Überfahren, Firmenliste unter „Unternehmen“, keine Ausgabe-Wahl
+
+- **Ressort-Menü (`assets/ressort-dropdowns.js`):** Mit Maus oder Trackpad öffnet das Menü beim Überfahren und schließt beim Verlassen; ein Klick auf das Ressort führt sofort auf die Ressortseite, ohne zweiten Klick. Bisher galt das Überfahren nur, wenn der Browser „hover: hover“ meldet. Das iPad mit Trackpad meldet das nicht, dort öffnete der erste Klick nur das Menü. Jetzt zählt die Zeigerart (`pointerType` „mouse“). Auf Touchscreens öffnet der erste Tipp das Menü, der zweite die Seite. Tastatur: Enter öffnet die Seite, Pfeil nach unten das Menü.
+- **„Unternehmen“ wie Oberberg Aktuell unter „Wirtschaft“:** links der Ressortkopf mit Service-Links, daneben auf grauem Grund die Betriebe (Kürzel oder Logo, Branche, Ortsteil), rechts drei Karten mit Bild, Kicker, Titel, Zeile, Anriss und Knopf. Ohne gewählten Betrieb stehen dort die neuesten Beiträge der Unternehmen, solange es keine gibt, die neuesten Wirtschaftsmeldungen der Redaktion. Überfahren (oder Fokus) eines Betriebs zeigt seine Beiträge: echte Profile (`ma_business`) mit ihren gesponserten Beiträgen (Auftraggeber = Profilname), sonst die Profilkarte. Solange weniger als drei echte Profile da sind, füllen die fünf Musterprofile auf, jedes mit „Musterbeitrag“, Profilkarte und Karte „Ihr Betrieb an dieser Stelle“, sichtbar als Muster gekennzeichnet, mit Hinweis „keine echten Unternehmen“ und Fotonachweis. Daten: `ma21_menue_firmen()` (inc/markt.php) im Ressort-Menü unter `firmen`; Wirtschaftsmeldungen bekommen dort einen `anriss`.
+- **Keine Ausgabe-Wahl mehr oben (`ma21_kopf_ortswahl`):** Der Schalter „Ausgabe Merzenich“ entfällt, alle fünf Orte sind Ortsteile der Gemeinde. Auf der Startseite bleibt die Zeile „Merzenich · Jetzt“ (links beginnend, eigener Abstand in `plattform.css`), auf Unterseiten verschwindet die dann leere Leiste. Die Ortsteile bleiben im Mehr-Menü, in der Schublade und im Fuß, auf einer Ortsseite markiert.
 
 ## Neu in Theme 21.10.4 / Plugin 1.20.8 (05.10.2026): Bilder bei Terminen, Musterprofile bei Unternehmen
 

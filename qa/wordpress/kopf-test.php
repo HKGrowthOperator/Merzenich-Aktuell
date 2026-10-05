@@ -1,6 +1,6 @@
 <?php
 /**
- * Kopf des Themes (inc/ma21.php, 21.9.9) ohne WordPress: Ausgabe-Wahl mit Zahlen,
+ * Kopf des Themes (inc/ma21.php, 21.10.5) ohne WordPress: keine Ausgabe-Wahl,
  * Zeile „Merzenich · Jetzt“ und Markierung der besuchten Seite, geprüft an der
  * echten Vorlage vorlagen/kopf.html (deploy/wp-theme.mjs). Bricht die Vorlage
  * das Markup, greifen die Ersetzungen nicht mehr: dann schlägt dieser Test an.
@@ -27,14 +27,17 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf.html');
 pruefe('Vorlage hat Ortswahl, Jetzt-Zeile und Markierung', [str_contains($vorlage, 'class="ortswahl-zahl"'), str_contains($vorlage, 'class="jetzt-feld jetzt-neu"'), substr_count($vorlage, 'aria-current="page"') >= 1], [true, true, true]);
 
-echo "Ausgabe-Wahl (ohne Zahlen, Vorgabe Betreiber 05.10.2026)\n";
+echo "Keine Ausgabe-Wahl oben (Vorgabe Betreiber 05.10.2026)\n";
 $h = ma21_kopf_ortswahl($vorlage);
-pruefe('Adressen /ort/…/, Namen bleiben', str_contains($h, '<a href="/ort/merzenich/"><span class="ortswahl-name">Merzenich</span></a>'), true);
-pruefe('Keine Zahl mehr: kein ortswahl-zahl, kein „Meldungen“ in der Wahl', [str_contains($h, 'ortswahl-zahl'), (bool) preg_match('#ortswahl-liste.*?\d+ Meldung#s', $h)], [false, false]);
-pruefe('Keine alten /merzenich/-Links, Schublade zeigt auf /ort/…/', [preg_match('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/"#', $h), substr_count($h, 'href="/ort/golzheim/"') >= 2], [0, true]);
+pruefe('Startseite: Wahl „Ausgabe“ weg, Jetzt-Zeile bleibt', [str_contains($h, 'ortswahl-schalter'), str_contains($h, '>Ausgabe<'), str_contains($h, 'Ausgabe waehlen'), str_contains($h, 'class="jetzt"')], [false, false, false, true]);
+pruefe('Keine Zahl: kein ortswahl-zahl, kein „Meldungen“ im Kopf', [str_contains($h, 'ortswahl-zahl'), (bool) preg_match('#\d+ Meldungen#', $h)], [false, false]);
+pruefe('Ortsteile bleiben (Mehr-Menü, Schublade) und zeigen auf /ort/…/', [preg_match('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/"#', $h), substr_count($h, 'href="/ort/golzheim/"') >= 2, substr_count($h, 'href="/ort/buergewald/"') >= 2], [0, true, true]);
+$seite = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf-seite.html');
+$h = ma21_kopf_ortswahl($seite);
+pruefe('Unterseite: leere Leiste ganz weg, Ortsteile bleiben', [str_contains($h, 'class="ortswahl"'), str_contains($h, 'Ausgabe'), substr_count($h, 'href="/ort/morschenich/"') >= 2], [false, false, true]);
 $GLOBALS['t'] = ['tax' => true, 'obj' => new WP_Term('golzheim', 'Golzheim'), 'single' => '', 'archiv' => ''];
 $h = ma21_kopf_ortswahl($vorlage);
-pruefe('Auf /ort/golzheim/: Auswahl „Golzheim“, nur dieser Ort markiert', [str_contains($h, '<span class="ortswahl-aktuell">Golzheim</span>'), preg_match_all('#<a href="/ort/[a-z]+/" aria-current="page">#', $h), str_contains($h, '<a href="/ort/golzheim/" aria-current="page">')], [true, 1, true]);
+pruefe('Auf /ort/golzheim/: nur Golzheim markiert', [preg_match_all('#<a href="/ort/(?!golzheim)[a-z]+/" aria-current="page">#', $h), substr_count($h, '<a href="/ort/golzheim/" aria-current="page">') >= 2], [0, true]);
 $GLOBALS['t'] = ['tax' => false, 'obj' => null, 'single' => '', 'archiv' => ''];
 
 echo "\nMerzenich · Jetzt\n";

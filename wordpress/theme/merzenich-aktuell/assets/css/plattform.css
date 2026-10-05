@@ -112,3 +112,9 @@ body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
 .u-muster__info{font-size:12px;color:var(--muted,#6b6b6b)}
 .u-muster__credit{display:block;margin-top:6px;font-size:10.5px;color:var(--muted,#8a857d)}
 .u-muster__credit a{color:inherit}
+
+/* Ohne Ausgabe-Wahl (Vorgabe Betreiber 05.10.2026) steht „Merzenich · Jetzt“
+   allein in der Leiste: links beginnend, mit der Höhe der früheren Leiste. Am
+   Telefon ragt die Ressortleiste ein Stück hinein, daher Abstand oben. */
+body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-height:44px}
+@media (max-width:767px){body.home .ortswahl>.shell>.jetzt:first-child{min-height:0;padding-top:16px;padding-bottom:8px}}
