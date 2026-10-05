@@ -174,6 +174,24 @@ function ma21_kopf_jetzt(string $html, array $d): string {
     return (string) preg_replace('#<span class="jetzt-feld jetzt-termin"[^>]*>(?:[^<]*)</span>#u', $terminHtml, $html, 1);
 }
 
+/*
+ * Zwischenspeicher (21.10.3): Der Server bei IONOS gibt HTML-Seiten eine Stunde
+ * Speicherzeit mit (mod_expires), JSON sogar 28 Tage. Browser und der
+ * Zwischenspeicher des Hosters zeigten dadurch bis zu eine Stunde alte Seiten:
+ * neue Meldungen fehlten, entfernte Angaben standen noch da (05.10.2026).
+ * Setzt PHP selbst Cache-Control und Expires, fügt mod_expires nichts hinzu.
+ * Seiten: jedes Mal frisch prüfen. Daten: kurze, ausdrückliche Speicherzeit.
+ */
+function ma21_cache(int $sekunden): void {
+    if (headers_sent()) return;
+    header('Cache-Control: ' . ($sekunden > 0 ? 'public, max-age=' . $sekunden : 'no-cache, max-age=0, must-revalidate'));
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + max(0, $sekunden)) . ' GMT');
+}
+add_action('send_headers', function (): void {
+    if (is_admin() || wp_doing_ajax() || wp_doing_cron() || (defined('REST_REQUEST') && REST_REQUEST)) return;
+    ma21_cache(0);
+});
+
 /* /assets/ -> Theme-Verzeichnis static/, danach die einmal aus dem Repository
    nachgeladenen Dateien (uploads/ma-assets/assets/); das Ressort-Menü und alles
    Übrige (Poolfotos, Quellen) beantwortet PHP: Mediathek, sonst nachladen. */
@@ -306,7 +324,7 @@ function ma21_ressort_menue_ausgeben(): void {
     unset($r);
     $d['standWordPress'] = (string) wp_date('c');
     header('Content-Type: application/json; charset=utf-8');
-    header('Cache-Control: public, max-age=300');
+    ma21_cache(300);
     echo wp_json_encode($d, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
@@ -893,7 +911,7 @@ add_action('template_redirect', function (): void {
     $api = (string) get_query_var('ma_api');
     if ($api === 'editorial-current') {
         header('Content-Type: application/json; charset=utf-8');
-        header('Cache-Control: public, max-age=600');
+        ma21_cache(600);
         echo wp_json_encode(['generated' => (string) wp_date('c'), 'hinweis' => 'Auf WordPress entscheidet die Redaktion im Board „Startseite & Ressorts“; diese Datei setzt hier nichts.', 'hero' => null, 'secondary' => []], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         exit;
     }
@@ -902,7 +920,7 @@ add_action('template_redirect', function (): void {
     if (!is_array(json_decode($daten, true))) $daten = (string) get_option('ma21_sport_current_kopie', '');
     if ($daten === '') { status_header(503); nocache_headers(); wp_send_json(['fehler' => 'Spielstand nicht verfügbar']); }
     header('Content-Type: application/json; charset=utf-8');
-    header('Cache-Control: public, max-age=600');
+    ma21_cache(600);
     echo $daten; exit;
 });
 

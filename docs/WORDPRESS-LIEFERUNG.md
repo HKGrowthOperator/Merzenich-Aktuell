@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.10.2 · Core-Plugin 1.20.7 (Historie unten)
+5. Oktober 2026 · Theme 21.10.3 · Core-Plugin 1.20.7 (Historie unten)
+
+## Neu in Theme 21.10.3 (05.10.2026): Seiten immer frisch
+
+Der Server bei IONOS gibt HTML-Seiten `Cache-Control: max-age=3600` mit (mod_expires), JSON-Daten 28 Tage. Browser und der Zwischenspeicher des Hosters zeigten so bis zu eine Stunde alte Seiten (Betreiber sah nach dem Update noch „149 Meldungen“). `ma21_cache()` setzt Cache-Control und Expires selbst: Seiten `no-cache, max-age=0, must-revalidate`, Ressort-Menü 5 Minuten, Spielstand und Übersteuerung 10 Minuten. Setzt PHP Expires, fügt mod_expires nichts mehr hinzu.
 
 ## Neu in Theme 21.10.2 / Plugin 1.20.7 (05.10.2026): keine Zahlen mehr auf der Seite
 
