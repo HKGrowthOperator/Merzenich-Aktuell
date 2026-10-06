@@ -66,9 +66,25 @@ function ma21_vorlage(string $name): string {
     static $cache = [];
     if (!isset($cache[$name])) {
         $pfad = get_template_directory() . '/vorlagen/' . $name;
-        $cache[$name] = is_readable($pfad) ? (string) file_get_contents($pfad) : '';
+        $cache[$name] = ma21_adressen_wp(is_readable($pfad) ? (string) file_get_contents($pfad) : '');
     }
     return $cache[$name];
+}
+
+/**
+ * Adressen der statischen Seite, die WordPress anders führt (21.13.0). Bis dahin
+ * lief jeder Klick darauf über eine 301-Umleitung (Vollprüfung 06.10.2026:
+ * Ortsteile im Kopf und auf der Startseite, Suche, Termin melden, SC 1919).
+ */
+function ma21_adressen_wp(string $html): string {
+    $html = (string) preg_replace('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/(?=[\#"?])#', 'href="/ort/$1/', $html);
+    return strtr($html, [
+        'href="/suche/"' => 'href="/?s="',
+        'href="/termine/melden/' => 'href="/termin-melden/',
+        'href="/sc-1919-merzenich/' => 'href="/vereine/sc-1919-merzenich/',
+        // Fuß: „Redaktion“ führte doppelt auf /ueber-uns/.
+        'href="/ueber-uns/">Redaktion</a>' => 'href="/redaktion/">Redaktion</a>',
+    ]);
 }
 
 /** Kopf-Assets: Icons, Schrift-Preloads und das CSS-Buendel (deploy/css-bundle.mjs). bundle-start.css nur auf der Startseite, bundle.css sonst; die Vorlage traegt beide (data-ma-css, deploy/wp-theme.mjs). */
@@ -1012,7 +1028,8 @@ function ma21_ort_seitenspalte(WP_Term $ort): string {
         $h .= '<div class="sidebox ort-termine"><h3>Nächste Termine in ' . ma21_e($ort->name) . '<a href="' . esc_url(home_url('/termine/')) . '">alle</a></h3><ul class="linklist">';
         foreach ($termine as $t) {
             $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($t->ID, 'start') : 0;
-            $wann = $start ? wp_date('D, d.m., H:i', $start) . ' Uhr' : '';
+            // Wochentag immer deutsch, ganztägige Termine ohne „00:00 Uhr“ (21.13.0).
+            $wann = $start ? mb_substr(MA21_TAGE[(int) wp_date('w', $start)], 0, 2) . ', ' . wp_date('d.m.', $start) . (wp_date('H:i', $start) !== '00:00' ? ', ' . wp_date('H:i', $start) . ' Uhr' : '') : '';
             $platz = (string) get_post_meta($t->ID, 'ma_event_place', true);
             $h .= '<li><a href="' . esc_url(get_permalink($t)) . '">' . ma21_e(get_the_title($t)) . '</a><small>' . ma21_e(implode(' · ', array_filter([$wann, $platz]))) . '</small></li>';
         }

@@ -153,3 +153,8 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 
 /* Dachzeile „Immobilie · Golzheim“: Abstand auch vor dem Punkt (21.13.0) */
 .kicker .dist::before{content:'\00a0· '}
+
+/* Sprungmarke für Tastatur und Vorleseprogramme: erst beim Fokus sichtbar (21.13.0) */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:10000;padding:10px 16px;border-radius:4px;background:var(--ink,#151515);color:#fff;font-weight:700;text-decoration:none}
+.skip-link:focus{top:12px;outline:3px solid var(--gold,#c9a227);outline-offset:2px}
+#main:focus{outline:none}

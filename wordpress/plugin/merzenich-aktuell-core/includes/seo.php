@@ -64,6 +64,35 @@ function ma_seo_ressorte(): array {
     ];
 }
 
+/** Anzeigen- und Branchenlisten (1.22.0): eigene Titel und Beschreibungen statt „Immobilien in Merzenich“ mit 60 Zeichen. */
+function ma_seo_listen(): array {
+    return [
+        'ma_property' => ['Immobilien', 'Immobilien in Merzenich: Häuser, Wohnungen, Grundstücke', 'Häuser, Wohnungen und Grundstücke zum Kauf oder zur Miete in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, mit Quelle und Prüfdatum.'],
+        'ma_job' => ['Jobs', 'Jobs und Ausbildung in Merzenich', 'Stellenangebote, Ausbildungsplätze und Minijobs von Arbeitgebern in der Gemeinde Merzenich, mit Quelle, Prüfdatum und direktem Link zur Bewerbung.'],
+        'ma_obituary' => ['Traueranzeigen', 'Traueranzeigen aus der Gemeinde Merzenich', 'Traueranzeigen, Danksagungen und Jahrgedächtnisse aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Anzeigen aufgeben ist online möglich.'],
+        'ma_family_notice' => ['Familienanzeigen', 'Familienanzeigen aus der Gemeinde Merzenich', 'Geburten, Hochzeiten, Jubiläen und Glückwünsche aus Merzenich und den Ortsteilen. Familienanzeigen lassen sich online aufgeben, die Redaktion prüft vorab.'],
+        'ma_business' => ['Lokale Betriebe', 'Branchenbuch: Betriebe aus der Gemeinde Merzenich', 'Branchenbuch für Merzenich und Ortsteile: Handwerk, Handel, Gastronomie und Dienstleister mit Adresse, Öffnungszeiten und Kontakt. Eintrag nur mit Einwilligung.'],
+    ];
+}
+
+/** Feste Beschreibungen für Seiten, deren Text mit einem Formular oder einer Liste beginnt. */
+function ma_seo_seitentexte(): array {
+    return [
+        'service' => 'Notrufe, Notdienste, Apotheken, Rathaus und wichtige Telefonnummern für die Gemeinde Merzenich auf einen Blick, mit Öffnungszeiten und Links.',
+        'diskussion' => 'Diskutieren Sie mit: Kommentare der Leserinnen und Leser zu Meldungen aus Merzenich, moderiert nach den Kommentarrichtlinien der Redaktion.',
+        'archiv' => 'Archiv von Merzenich Aktuell: alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald nach Monat und Ressort.',
+        'impressum' => 'Impressum von Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich: Anbieterin KBS Management GmbH, Kontakt und Verantwortliche.',
+    ];
+}
+
+/** Zu kurze Beschreibung (unter 110 Zeichen) mit Angaben davor und einem Satz dahinter auffüllen. */
+function ma_seo_auffuellen(string $text, string $vorne, string $hinten): string {
+    $text = ma_seo_kuerzen($text);
+    if (mb_strlen($text) >= 110) return $text;
+    if ($text !== '' && !preg_match('/[.!?…]$/u', $text)) $text .= '.';
+    return ma_seo_kuerzen(trim(($vorne !== '' ? $vorne . ': ' : '') . $text . ' ' . $hinten));
+}
+
 /** Kategorien, die unter /<slug>/ laufen (Blättern, Feed, Umleitung von /category/<slug>/). */
 function ma_seo_ressort_kategorien(): array {
     return ['blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine'];
@@ -360,12 +389,14 @@ function ma_seo_kontext(): array {
         $ende = function_exists('ma_event_timestamp') ? ma_event_timestamp($o->ID, 'end') : 0;
         $platz = (string) get_post_meta($o->ID, 'ma_event_place', true);
         $text = trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: ('Termin' . ($start ? ' am ' . wp_date('d.m.Y', $start) : '') . ($platz ? ' in ' . $platz : '') . ', Gemeinde Merzenich.'));
-        $k = array_merge($k, ['typ' => 'termin', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen($text), 'url' => get_permalink($o), 'og' => 'article', 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
+        $wann = $start ? 'Am ' . wp_date('d.m.Y', $start) . (wp_date('H:i', $start) !== '00:00' ? ', ' . wp_date('H:i', $start) . ' Uhr' : '') : '';
+        $vorne = trim($wann . ($platz !== '' ? ($wann !== '' ? ' in ' : 'In ') . $platz : ''));
+        $k = array_merge($k, ['typ' => 'termin', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_auffuellen($text, $vorne, 'Termin in der Gemeinde Merzenich, mit Kalendereintrag auf Merzenich Aktuell.'), 'url' => get_permalink($o), 'og' => 'article', 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
             'krumen' => [['Start', $home], ['Termine', $home . 'termine/'], [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null]], 'geaendert' => get_post_modified_time('c', false, $o),
             'termin' => ['start' => $start ? ma_seo_zeit($start) : '', 'ende' => $ende && $ende !== $start ? ma_seo_zeit($ende) : '', 'vorbei' => function_exists('ma_event_vorbei') && ma_event_vorbei($o->ID), 'ort' => $platz, 'veranstalter' => (string) get_post_meta($o->ID, 'ma_event_organizer', true), 'preis' => (string) get_post_meta($o->ID, 'ma_event_price', true)]]);
     } elseif (is_singular('ma_club') && $o instanceof WP_Post) {
         $logo = (string) get_post_meta($o->ID, 'ma_club_logo', true);
-        $k = array_merge($k, ['typ' => 'verein', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: get_the_title($o) . ': Verein in der Gemeinde Merzenich mit Meldungen und Terminen auf Merzenich Aktuell.')), 'url' => get_permalink($o), 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
+        $k = array_merge($k, ['typ' => 'verein', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_auffuellen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: get_the_title($o) . ': Verein in der Gemeinde Merzenich.'), '', 'Verein aus ' . ma_seo_orte()[ma_seo_ort_von($o)]['name'] . ' (Gemeinde Merzenich) mit Meldungen, Terminen und Kontakt auf Merzenich Aktuell.'), 'url' => get_permalink($o), 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
             'krumen' => [['Start', $home], ['Vereine', $home . 'vereine/'], [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null]], 'geaendert' => get_post_modified_time('c', false, $o),
             'verein' => ['adresse' => (string) get_post_meta($o->ID, 'ma_club_adresse', true), 'website' => (string) get_post_meta($o->ID, 'ma_club_website', true), 'gegruendet' => (string) get_post_meta($o->ID, 'ma_club_gegruendet', true), 'sportarten' => (string) get_post_meta($o->ID, 'ma_club_sportarten', true), 'logo' => $logo !== '' && str_starts_with($logo, 'http') ? $logo : '']]);
     } elseif (is_singular() && $o instanceof WP_Post) {
@@ -373,7 +404,7 @@ function ma_seo_kontext(): array {
         $krumen = [['Start', $home]];
         if ($o->post_parent) $krumen[] = [html_entity_decode(get_the_title($o->post_parent), ENT_QUOTES, 'UTF-8'), get_permalink($o->post_parent)];
         $krumen[] = [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null];
-        $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
+        $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => $o->post_type === 'page' && isset(ma_seo_seitentexte()[$o->post_name]) ? ma_seo_seitentexte()[$o->post_name] : ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
             'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage', 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)]);
     } elseif (is_category() && $o instanceof WP_Term) {
         $d = $r[$o->slug] ?? [$o->name, $o->name . ' in Merzenich', $o->description ?: 'Meldungen aus dem Ressort ' . $o->name . ' auf Merzenich Aktuell.'];
@@ -391,7 +422,7 @@ function ma_seo_kontext(): array {
         $typ = (string) get_query_var('post_type'); if (is_array(get_query_var('post_type'))) $typ = (string) (get_query_var('post_type')[0] ?? '');
         $slug = ['ma_event' => 'termine', 'ma_tip' => 'tipp', 'ma_club' => 'vereine'][$typ] ?? '';
         $obj = get_post_type_object($typ);
-        $d = $r[$slug] ?? [$obj->labels->name ?? 'Liste', ($obj->labels->name ?? 'Liste') . ' in Merzenich', ($obj->labels->name ?? 'Einträge') . ' aus der Gemeinde Merzenich auf Merzenich Aktuell.'];
+        $d = $r[$slug] ?? ma_seo_listen()[$typ] ?? [$obj->labels->name ?? 'Liste', ($obj->labels->name ?? 'Liste') . ' in Merzenich', ($obj->labels->name ?? 'Einträge') . ' aus der Gemeinde Merzenich auf Merzenich Aktuell.'];
         $k = array_merge($k, ['typ' => 'liste', 'titel' => $d[1], 'beschreibung' => $d[2], 'url' => ma_seo_liste_url(get_post_type_archive_link($typ) ?: $home), 'krumen' => [['Start', $home], [$d[0], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_search()) {
         $k = array_merge($k, ['typ' => 'suche', 'titel' => 'Suche: ' . get_search_query(), 'beschreibung' => 'Suche auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);

@@ -182,7 +182,7 @@ function ma_sport_vereinsraster(): string {
                 'name' => (string) ($angebot['titel'] ?? ma_sportart_titel($art)) . ' · ' . $haupt['name'],
                 'ort' => $orte[$haupt['ort'] ?? ''] ?? 'Gemeinde Merzenich',
                 'url' => $url,
-                'hinweis' => 'Belegtes Sportangebot des Hauptvereins · keine eigenständige Vereinsabteilung',
+                'hinweis' => 'Angebot im Hauptverein, keine eigene Abteilung',
                 'bild' => ma_sport_vereinsbild((string) $kurz, $art, $profil),
             ];
             break;
@@ -225,7 +225,7 @@ function ma_sport_vereinsraster(): string {
         </div>
       </div>
       <?php endforeach; ?>
-      <p class="ma-breitensport__quelle">Vereinsdaten: Vereinsverzeichnis Gemeinde Merzenich (im Plugin dokumentiert). Hinweise oder Vereinsfotos mit Nutzungserlaubnis: <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">an die Redaktion senden</a>.</p>
+      <p class="ma-breitensport__quelle">Vereinsdaten: Vereinsverzeichnis der Gemeinde Merzenich. Hinweise oder Vereinsfotos mit Nutzungserlaubnis: <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">an die Redaktion senden</a>.</p>
     </section>
     <?php return (string) ob_get_clean();
 }

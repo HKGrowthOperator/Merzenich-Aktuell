@@ -1,6 +1,7 @@
 </main>
 <?php // kommentare.js gehört zur abgeschalteten Vorschauseite (Kommentare laufen über WordPress), daher raus (21.11.0).
-echo preg_replace('#<script src="/assets/kommentare\.js[^"]*"[^>]*></script>#', '', ma21_vorlage('fuss.html')); ?>
+// Jahr im Copyright aus dem aktuellen Datum, nicht aus dem Bau der Vorlage (21.13.0).
+echo str_replace('© 2026 ', '© ' . wp_date('Y') . ' ', (string) preg_replace('#<script src="/assets/kommentare\.js[^"]*"[^>]*></script>#', '', ma21_vorlage('fuss.html'))); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -12,5 +12,6 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <?php echo ma21_kopf(is_front_page() ? 'kopf.html' : 'kopf-seite.html'); ?>
-<main id="main">
+<main id="main" tabindex="-1">

@@ -79,6 +79,15 @@ $kz = $k; $kz['bild'] += ['varianten' => [['url' => $HOME . 'r-teilen-16x9.jpg',
 $az = $finde(ma_seo_graph($kz, $ORG), 'NewsArticle');
 pruefe('Mit Zuschnitten: image mit 16:9, 4:3 und 1:1, jeweils mit Bildtext', [array_map(fn($i) => $i['width'] . 'x' . $i['height'], $az['image']), $az['image'][2]['caption']], [['1200x675', '1200x900', '900x900'], 'Rauchwolke']);
 
+echo "\nBeschreibungen auffüllen (1.22.0)\n";
+$b = ma_seo_auffuellen('Turnier für Jugendmannschaften', 'Am 10.10.2026, 14:00 Uhr in der Sporthalle', 'Termin in der Gemeinde Merzenich, mit Kalendereintrag auf Merzenich Aktuell.');
+pruefe('Kurzer Termintext: Datum und Ort davor, Satz dahinter, 110 bis 160 Zeichen', [str_starts_with($b, 'Am 10.10.2026, 14:00 Uhr in der Sporthalle: Turnier für Jugendmannschaften. Termin'), mb_strlen($b) >= 110 && mb_strlen($b) <= 160], [true, true]);
+$lang = str_repeat('Ausführliche Beschreibung des Abends mit Musik und Tanz. ', 3);
+pruefe('Langer Text bleibt, wie er ist (gekürzt)', ma_seo_auffuellen($lang, 'Am 1.1.2027', 'X.'), ma_seo_kuerzen($lang));
+pruefe('Listen mit eigener Beschreibung (Immobilien, Jobs, Trauer, Familie, Betriebe)', array_map(fn($d) => mb_strlen($d[2]) >= 110 && mb_strlen($d[2]) <= 160, ma_seo_listen()), ['ma_property' => true, 'ma_job' => true, 'ma_obituary' => true, 'ma_family_notice' => true, 'ma_business' => true]);
+pruefe('/betriebe/ nicht mehr gleich betitelt wie /unternehmen/', ma_seo_listen()['ma_business'][1] !== ma_seo_ressorte()['unternehmen'][1], true);
+pruefe('Seitentexte Service, Diskussion, Archiv, Impressum 110 bis 160 Zeichen', array_values(array_map(fn($t) => mb_strlen($t) >= 110 && mb_strlen($t) <= 160, ma_seo_seitentexte())), [true, true, true, true]);
+
 echo "\nTeilen-Zuschnitte (teilen-bilder.php)\n";
 pruefe('3:2-Foto 1536×1024 → 16:9 1200×675 aus der Mitte', ma_seo_zuschnitt_masse(1536, 1024, 16, 9), ['x' => 0, 'y' => 80, 'w' => 1536, 'h' => 864, 'zw' => 1200, 'zh' => 675]);
 pruefe('3:2-Foto 1536×1024 → 4:3 1200×900', ma_seo_zuschnitt_masse(1536, 1024, 4, 3), ['x' => 85, 'y' => 0, 'w' => 1365, 'h' => 1024, 'zw' => 1200, 'zh' => 900]);

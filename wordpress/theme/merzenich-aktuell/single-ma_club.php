@@ -54,12 +54,12 @@ while (have_posts()): the_post();
     <div class="facts"><h2>Meldungen aus dem Verein</h2><ul><?php foreach ($meldungen as $m): ?><li><a href="<?php echo esc_url(get_permalink($m)); ?>"><?php echo esc_html(get_the_title($m)); ?></a> <small><?php echo esc_html(get_the_date('d.m.', $m)); ?></small></li><?php endforeach; ?></ul></div>
     <?php endif; ?>
     <?php if ($termine): ?>
-    <div class="facts"><h2>Termine</h2><ul><?php foreach (array_slice($termine, 0, 6) as $t): $start = (string) get_post_meta($t->ID, 'ma_event_start', true); ?><li><a href="<?php echo esc_url(get_permalink($t)); ?>"><?php echo esc_html(get_the_title($t)); ?></a> <small><?php echo esc_html($start !== '' ? wp_date('d.m. H:i', strtotime($start)) . ' Uhr' : ''); ?></small></li><?php endforeach; ?></ul></div>
+    <div class="facts"><h2>Termine</h2><ul><?php foreach (array_slice($termine, 0, 6) as $t): $ts = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($t->ID, 'start') : 0; ?><li><a href="<?php echo esc_url(get_permalink($t)); ?>"><?php echo esc_html(get_the_title($t)); ?></a> <small><?php echo esc_html($ts ? wp_date('d.m.', $ts) . (wp_date('H:i', $ts) !== '00:00' ? ' ' . wp_date('H:i', $ts) . ' Uhr' : '') : ''); ?></small></li><?php endforeach; ?></ul></div>
     <?php endif; ?>
     <?php if (count($galerie) >= 2): ?>
     <div class="verein-galerie"><h2>Bilder</h2><div class="verein-galerie__raster"><?php foreach (array_slice($galerie, 0, 6) as [$gb, $gm]): ?><a href="<?php echo esc_url(get_permalink($gm)); ?>"><div class="media"><?php echo ma21_img($gb, '(max-width: 760px) 50vw, 250px', false); ?></div></a><?php endforeach; ?></div></div>
     <?php endif; ?>
-    <div class="source-box"><b>Eintrag.</b> Angaben laut Vereinsverzeichnis der Gemeinde Merzenich und Verein<?php echo $stand !== '' ? ', Stand ' . esc_html(wp_date('d.m.Y', strtotime($stand))) : ''; ?>. Vereine mit Redaktionszugang schlagen Änderungen im Backend vor; die Redaktion prüft sie vor der Veröffentlichung. Noch kein Zugang? <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Melden Sie sich bei der Redaktion</a>.</div>
+    <div class="source-box"><b>Eintrag.</b> Angaben laut Vereinsverzeichnis der Gemeinde Merzenich und Verein<?php echo $stand !== '' ? ', Stand ' . esc_html(wp_date('d.m.Y', strtotime($stand))) : ''; ?>. Vereine mit eigenem Zugang schlagen Änderungen direkt vor; die Redaktion prüft sie vor der Veröffentlichung. Noch kein Zugang? <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Melden Sie sich bei der Redaktion</a>.</div>
   </div>
   <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2>
     <div class="sidebox"><h3>Auf einen Blick</h3><ul class="service">
@@ -67,7 +67,7 @@ while (have_posts()): the_post();
       <?php if ($web !== ''): ?><li><span class="k">Website</span><span class="v"><a href="<?php echo esc_url($web); ?>" target="_blank" rel="noopener"><?php echo esc_html(preg_replace('#^https?://#', '', rtrim($web, '/'))); ?></a></span></li><?php endif; ?>
       <?php if ($mail !== '' && is_email($mail)): ?><li><span class="k">E-Mail</span><span class="v"><a href="mailto:<?php echo esc_attr($mail); ?>"><?php echo esc_html($mail); ?></a></span></li><?php endif; ?>
     </ul></div>
-    <?php if ($hatOrt): ?><div class="sidebox"><h3><?php echo esc_html(MA21_ORTE[$ort]); ?></h3><a class="btn ghost block" href="<?php echo esc_url(home_url('/' . $ort . '/')); ?>">Zur Ortsteilseite</a></div><?php endif; ?>
+    <?php if ($hatOrt): ?><div class="sidebox"><h3><?php echo esc_html(MA21_ORTE[$ort]); ?></h3><a class="btn ghost block" href="<?php echo esc_url(home_url('/ort/' . $ort . '/')); ?>">Zur Ortsteilseite</a></div><?php endif; ?>
     <div class="sidebox dark"><h3>Neues aus dem Verein?</h3><p>Meldung, Termin, Foto vom Fest: Die Redaktion prüft jede Einsendung und veröffentlicht mit Quelle.</p><a class="btn gold block" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Meldung senden</a><a class="btn ghost block on-dark" href="<?php echo esc_url(home_url('/termin-melden/')); ?>">Termin melden</a></div>
   </aside>
 </div>

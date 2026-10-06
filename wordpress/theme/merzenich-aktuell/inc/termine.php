@@ -85,7 +85,7 @@ function ma21_termine_seite(): void {
     $n = count($kommend);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Termine</span></nav>'
         . '<span class="eyebrow">Kalender</span><h1>Heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
-        . '<p class="count-line"><a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></p></div></div>';
+        . '<p class="count-line"><a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
     echo '<section class="section"><div class="shell"><div class="filter-controls" data-event-filters>'
         . '<div class="period-tabs" aria-label="Zeitraum"><button type="button" data-period="all" aria-pressed="true">Alle</button><button type="button" data-period="today" aria-pressed="false">Heute</button><button type="button" data-period="weekend" aria-pressed="false">Wochenende</button><button type="button" data-period="14" aria-pressed="false">Nächste 14 Tage</button></div>'
         . '<label>Ort<select data-event-place><option value="">Alle Ortsteile</option>';
@@ -96,7 +96,7 @@ function ma21_termine_seite(): void {
     echo '<p class="count-line" data-event-count aria-live="polite">' . $n . ($n === 1 ? ' Termin' : ' Termine') . '</p>';
     echo '<div class="event-list">';
     foreach ($kommend as $t) echo ma21_termin_zeile($t);
-    echo '<p class="no-result" data-event-empty' . ($n ? ' hidden' : '') . '>' . ($n ? 'Keine Termine für diese Auswahl. Wählen Sie einen anderen Zeitraum oder Ort.' : 'Gerade sind keine Termine eingetragen. Vereine und Gruppen melden ihre Termine kostenlos: <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a>.') . '</p></div>';
+    echo '<p class="no-result" data-event-empty' . ($n ? ' hidden' : '') . '>' . ($n ? 'Keine Termine für diese Auswahl. Wählen Sie einen anderen Zeitraum oder Ort.' : 'Gerade sind keine Termine eingetragen. Vereine und Gruppen melden ihre Termine kostenlos: <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.') . '</p></div>';
     if ($vergangen) {
         echo '<details class="past"><summary>Vergangene Termine</summary><ul class="archive-list">';
         foreach (array_slice($vergangen, 0, 40) as $t) echo '<li><time datetime="' . esc_attr(gmdate('Y-m-d\TH:i:s.000\Z', $t['start'])) . '">' . esc_html(wp_date('d.m.Y', $t['start'])) . '</time><a href="' . esc_url($t['url']) . '">' . esc_html($t['titel']) . '</a></li>';
@@ -143,14 +143,14 @@ function ma21_termin_einzel(WP_Post $p): void {
     echo ma21_werbung('artikel');
     echo '<div class="source-box"><b>Termindaten.</b> '
         . ($t['quelle'] !== '' ? 'Quelle: <a href="' . esc_url($t['quelle']) . '" target="_blank" rel="noopener nofollow">' . esc_html((string) parse_url($t['quelle'], PHP_URL_HOST)) . ' ↗</a>. ' : '')
-        . 'Änderungen bitte an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a>.</div>';
+        . 'Änderungen bitte an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.</div>';
     echo '</div><aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><div class="sidebox"><h3>Weitere Termine<a href="' . esc_url(home_url('/termine/')) . '">alle</a></h3>';
     if ($weitere) {
         echo '<ul>';
         foreach ($weitere as $x) echo '<li class="termin"><span class="d"><b>' . esc_html(wp_date('j', $x['start'])) . '</b><span>' . esc_html(MA21_MON[(int) wp_date('n', $x['start']) - 1]) . '</span></span><span class="t"><a href="' . esc_url($x['url']) . '">' . esc_html($x['titel']) . '</a><small>' . esc_html(implode(' · ', array_filter([ma21_termin_zeit($x), $x['ort']]))) . '</small></span></li>';
         echo '</ul>';
     } else {
-        echo '<p>Derzeit keine weiteren Termine. <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></p>';
+        echo '<p>Derzeit keine weiteren Termine. <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
     }
     echo '</div></aside></div></article>';
 }

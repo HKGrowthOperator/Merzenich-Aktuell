@@ -89,8 +89,8 @@ function ma21_tipp_zeile(WP_Post $p): string {
     $zeit = $start && wp_date('H:i', $start) !== '00:00' ? wp_date('H:i', $start) . ' Uhr' : '';
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 34, ' …');
     return '<article class="event-row">'
-        . ($start ? '<span class="d"><b>' . esc_html(wp_date('j', $start)) . '</b><span>' . esc_html(wp_date('M', $start)) . '</span></span>' : '<span class="d"><b>–</b></span>')
-        . '<div class="info"><span class="eyebrow">' . esc_html(trim(($start ? wp_date('l', $start) . ' · ' : '') . (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich'))) . '</span>'
+        . ($start ? '<span class="d"><b>' . esc_html(wp_date('j', $start)) . '</b><span>' . esc_html(MA21_MON[(int) wp_date('n', $start) - 1]) . '</span></span>' : '<span class="d"><b>–</b></span>')
+        . '<div class="info"><span class="eyebrow">' . esc_html(trim(($start ? MA21_TAGE[(int) wp_date('w', $start)] . ' · ' : '') . (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich'))) . '</span>'
         . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
         . '<div class="meta">' . ($zeit !== '' ? '<time datetime="' . esc_attr((string) wp_date('c', $start)) . '">' . esc_html($zeit) . '</time>' : '') . ($ort !== '' ? '<span>' . esc_html($ort) . '</span>' : '') . '</div>'
         . ($text !== '' ? '<p class="ev-desc">' . esc_html($text) . '</p>' : '') . '</div>'
@@ -115,9 +115,9 @@ function ma21_tipp_seite(): void {
     echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Redaktion</span>Unsere Tipps für die nächsten Tage</h2>';
     if ($termine) foreach ($termine as $p) echo ma21_tipp_zeile($p);
     else echo '<p class="no-result">In den nächsten Tagen stehen keine Termine im Kalender. Alle Veranstaltungen: <a href="' . esc_url(home_url('/termine/')) . '">Termine</a>.</p>';
-    echo '<p class="markt-quellen"><a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></p>';
+    echo '<p class="markt-quellen"><a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
     echo '</div><aside class="sidebar"><div class="sidebox"><h3>Eigenen Tipp platzieren</h3><p class="p">Veranstaltung, Projekt oder Angebot als Tipp auf Merzenich Aktuell: klar als Anzeige gekennzeichnet und getrennt von den Nachrichten der Redaktion.</p><a class="btn block" href="' . esc_url($tipp) . '">Tipp anfragen</a></div>'
-        . '<div class="sidebox"><h3>Kostenlos</h3><p class="p">Vereine, Kirchen und gemeinnützige Gruppen melden ihre Termine kostenlos. Die Redaktion prüft und veröffentlicht sie im Terminkalender.</p><a class="btn ghost block" href="' . esc_url(home_url('/termine/melden/')) . '">Termin melden</a></div></aside></div></div></section>';
+        . '<div class="sidebox"><h3>Kostenlos</h3><p class="p">Vereine, Kirchen und gemeinnützige Gruppen melden ihre Termine kostenlos. Die Redaktion prüft und veröffentlicht sie im Terminkalender.</p><a class="btn ghost block" href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></div></aside></div></div></section>';
     echo ma21_werbung('artikel');
 }
 

@@ -71,7 +71,7 @@ function ma_partner_antrag_shortcode($atts): string {
     $firma = ['unternehmen', 'immobilien', 'werbung'];
     if (in_array(sanitize_key((string)$a['typ']), $firma, true)) $typen = array_intersect_key($typen, array_flip($firma));
     ob_start(); ?>
-    <form class="ma-partner-antrag" id="partner-antrag" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+    <form class="ma-partner-antrag form" id="partner-antrag" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
       <input type="hidden" name="action" value="ma_partner_antrag">
       <input type="hidden" name="started" value="<?php echo esc_attr((string)time()); ?>">
       <?php wp_nonce_field('ma_partner_antrag', 'ma_partner_antrag_nonce'); ?>
@@ -86,7 +86,7 @@ function ma_partner_antrag_shortcode($atts): string {
       <p><label for="ma-pa-telefon">Telefon</label><input id="ma-pa-telefon" name="telefon" type="tel" maxlength="40" autocomplete="tel"></p>
       <p><label for="ma-pa-nachricht">Nachricht</label><textarea id="ma-pa-nachricht" name="nachricht" rows="5" maxlength="4000"></textarea></p>
       <p class="ma-partner-antrag__consent"><label><input type="checkbox" name="einwilligung" value="1" required> Ich bin einverstanden, dass meine Angaben zur Bearbeitung dieses Antrags gespeichert und verwendet werden.<?php if ($datenschutz !== ''): ?> Details in der <a href="<?php echo esc_url($datenschutz); ?>">Datenschutzerklärung</a>.<?php endif; ?> *</label></p>
-      <p><button type="submit">Zugang anfragen</button></p>
+      <p><button type="submit" class="btn">Zugang anfragen</button></p>
       <p class="ma-form-note">Der Antrag geht an die Redaktion. Ein Zugang wird nicht automatisch angelegt; alle Beiträge werden vor der Veröffentlichung von der Redaktion geprüft. Anzeigen für Unternehmen: Preis auf Anfrage.</p>
     </form>
     <?php return (string)ob_get_clean();
