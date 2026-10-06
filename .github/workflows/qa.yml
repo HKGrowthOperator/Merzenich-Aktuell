@@ -318,11 +318,14 @@ jobs:
             // des verlinkten Beitrags (kein Ersatzbild aus dem Pool, V3).
             await page.evaluate(() => window.scrollTo(0, 0));
             await page.waitForSelector('.navscroll > a[aria-haspopup="true"]', { timeout: 5000 });
+            // Desktop-Menues oeffnen seit 05.10. bei Hover. Ein Klick navigiert direkt.
+            await page.locator('.navscroll > a[href="/nachrichten/"]').hover();
+            await page.waitForTimeout(350);
             const dropdown = await page.evaluate(async () => {
               const link = document.querySelector('.navscroll > a[href="/nachrichten/"]');
               if (!link) return { fehler: 'Aktuell-Link fehlt' };
               const pseudo = getComputedStyle(link, '::after').content;
-              link.click();
+              // Nicht klicken: der Link oeffnet gemaess aktueller UX direkt die Ressortseite.
               await new Promise((r) => setTimeout(r, 220));
               const panel = document.querySelector('.ressort-dropdown');
               const bilder = [...(panel?.querySelectorAll('.ressort-dropdown__story img') || [])];
