@@ -136,3 +136,6 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .anzeige-formular h2{margin:6px 0 8px}
 .anzeige-formular>.p{margin:0 0 18px;color:var(--muted,#6b6b6b);max-width:62ch}
 .termin-vorbei{margin:0 0 18px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:var(--soft,#f5f4f1)}
+.event-page .art-figure{margin:22px 0 26px}
+.event-page .art-figure .media{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--soft,#f5f4f1)}
+.event-page .art-figure .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}

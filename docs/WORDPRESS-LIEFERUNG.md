@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-6. Oktober 2026 · Theme 21.12.0 · Core-Plugin 1.21.1 (Historie unten)
+6. Oktober 2026 · Theme 21.12.1 · Core-Plugin 1.21.1 (Historie unten)
+
+## Neu in Theme 21.12.1 (06.10.2026): Bild auf der Terminseite
+
+Das Bild einer Terminseite hatte keine Höhe (Bildrahmen ohne Seitenverhältnis) und war unsichtbar. Es steht jetzt im Format 3:2 (`plattform.css`, `.event-page .art-figure`).
 
 ## Neu in Theme 21.12.0 (06.10.2026): Webseiten-Symbol „M“ und Handy-Ansicht ohne alte Vorlagen
 
