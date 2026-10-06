@@ -9,12 +9,14 @@ get_header();
 global $wp_query;
 $anzahl = (int) $wp_query->found_posts;
 $sport = is_category('sport');
-$ecke = $sport ? trim(ma21_vorlage('sport-ecke.html')) : '';
+// Spielstand aus dem Backend bzw. Repository (inc/sport.php), sonst die Vorlage vom Bautag.
+$sportDaten = $sport ? ma21_sport_daten() : null;
+$ecke = $sport ? (($sportDaten ? ma21_sport_ecke($sportDaten) : '') ?: trim(ma21_vorlage('sport-ecke.html'))) : '';
 ?>
 <div class="page-head<?php echo $ecke !== '' ? ' mit-ecke' : ''; ?>"><div class="shell"><div class="page-head-text"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><span aria-current="page"><?php echo esc_html($eyebrow === 'Ort' || $eyebrow === 'Thema' ? $titel : $eyebrow); ?></span></nav><span class="eyebrow"><?php echo esc_html($eyebrow); ?></span><h1><?php echo esc_html($titel); ?></h1><?php if ($desc): ?><p class="desc"><?php echo esc_html($desc); ?></p><?php endif; ?></div><?php echo $ecke; ?></div></div>
 
 <section class="section"><div class="shell">
-  <?php if ($sport && !is_paged()) echo trim(ma21_vorlage('sport-modul.html')); ?>
+  <?php if ($sport && !is_paged()) echo ($sportDaten ? ma21_sport_modul($sportDaten) : '') ?: trim(ma21_vorlage('sport-modul.html')); ?>
   <?php if ($sport && !is_paged() && function_exists('ma_sport_vereinsraster')) echo ma_sport_vereinsraster(); ?>
   <div class="content-grid">
     <div class="feed"<?php $seiteKey = ma21_ressort_schluessel(); if ($seiteKey !== '' && !is_paged()) echo ' data-ma-seite="' . esc_attr($seiteKey) . '"'; ?>>

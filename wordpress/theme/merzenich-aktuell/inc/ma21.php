@@ -721,6 +721,8 @@ function ma21_startseite_bloecke(string $html): string {
     $html = (string) preg_replace_callback('#<!-- start:termine:start -->.*?<!-- start:termine:end -->#s', fn() => '<!-- start:termine:start -->' . ma21_agenda_zeilen(4) . '<!-- start:termine:end -->', $html, 1);
     // „Merzenich jetzt“: nächster Termin aus WordPress (nur veröffentlichte, Entwürfe aus der Recherche nie).
     $html = (string) preg_replace_callback('#<a class="mj-eintrag"[^>]*data-cockpit="termin".*?</a>#s', fn() => ma21_cockpit_termin(), $html, 1);
+    // Letzter Feuerwehreinsatz aus WordPress statt vom Bautag der Vorlage (21.13.0); ohne Treffer bleibt die Vorlage.
+    $html = (string) preg_replace_callback('#<a class="mj-eintrag"[^>]*data-cockpit="einsatz".*?</a>#s', fn($m) => ma21_cockpit_einsatz() ?: $m[0], $html, 1);
     $repo = ma21_repo_datei('index.html', HOUR_IN_SECONDS);
     foreach (['umkreis', 'markt:home-jobs', 'markt:home-immobilien'] as $k) {
         $q = preg_quote($k, '#');
@@ -745,6 +747,24 @@ function ma21_cockpit_termin(): string {
         return '<a class="mj-eintrag" href="' . esc_url(wp_make_link_relative(get_permalink($p))) . '" data-cockpit="termin" data-start="' . esc_attr(gmdate('Y-m-d\TH:i:s.000\Z', $start)) . '">'
             . '<svg class="mj-zeichen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h3v3H8z"/></svg>'
             . '<span class="mj-text"><span class="mj-lead" data-cockpit-wert>' . esc_html($lead) . '</span><span class="mj-titel">' . esc_html(html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8')) . '</span><small class="mj-klein">' . esc_html($ort !== '' ? $ort : 'Nächster Termin') . '</small></span></a>';
+    }
+    return '';
+}
+
+/** Eintrag „Feuerwehr · Einsatz N/JJ“ in „Merzenich jetzt“: jüngste veröffentlichte Einsatzmeldung (Adresse /blaulicht/einsatz-N-…/). */
+function ma21_cockpit_einsatz(): string {
+    $tage = ['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.'];
+    $monate = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
+    foreach (get_posts(['post_type' => 'post', 'post_status' => 'publish', 'category_name' => 'blaulicht', 'posts_per_page' => 20, 'orderby' => 'date', 'order' => 'DESC', 'no_found_rows' => true]) as $p) {
+        if (!preg_match('/^einsatz-(\d+)-/', $p->post_name, $m)) continue;
+        $ts = (int) get_post_time('U', true, $p);
+        $titel = html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8');
+        $kurz = trim(explode(':', $titel, 2)[0]);
+        $ort = MA21_ORTE[ma21_ort($p)] ?? 'Merzenich';
+        return '<a class="mj-eintrag" href="' . esc_url(wp_make_link_relative(get_permalink($p))) . '" data-cockpit="einsatz">'
+            . '<svg class="mj-zeichen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.1 0-3.6 3-5.6 3.6-9.4 2.4 1.5 3.6 3.8 3.6 5.9 1-.6 1.8-1.7 2-3.1 2 1.7 3.8 4 3.8 6.6 0 3.5-2.6 6.1-6.5 6.1z"/><path d="M12 21c-1.6 0-2.7-1.1-2.7-2.6 0-1.7 1.4-2.5 1.8-4.1 1.9 1.1 3.6 2.4 3.6 4.1 0 1.5-1.1 2.6-2.7 2.6z"/></svg>'
+            . '<span class="mj-text"><span class="mj-lead">Feuerwehr · Einsatz ' . esc_html($m[1] . '/' . wp_date('y', $ts)) . '</span><span class="mj-titel">' . esc_html($kurz !== '' ? $kurz : $titel) . '</span>'
+            . '<small class="mj-klein">' . esc_html($ort . ' · ' . $tage[(int) wp_date('w', $ts)] . ', ' . wp_date('j', $ts) . '. ' . $monate[(int) wp_date('n', $ts) - 1]) . '</small></span></a>';
     }
     return '';
 }
