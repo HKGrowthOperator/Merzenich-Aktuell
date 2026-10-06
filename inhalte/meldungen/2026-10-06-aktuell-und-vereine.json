@@ -1,0 +1,139 @@
+{
+  "hinweis": "Deep Research 06.10.2026, verifizierte Primärquellen. Keine nacherzählten fremden Bilder. Lokale, vorhandene Commons-Ortsmotive mit Copyright- und Symbolbildhinweis; kein unbestätigtes Ereignisfoto. Nicht mit bereits vorhandenen Meldungen vom 04./05.10. doppeln.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "blutspende-buergerhaus-merzenich-6-oktober-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Gesundheit · Heute",
+      "titel": "Heute Blutspende im Bürgerhaus Merzenich von 16 bis 20 Uhr",
+      "dek": "Am Dienstag, 6. Oktober, macht der DRK-Blutspendedienst West Station im Bürgerhaus an der Burgstraße 9. Für die Spende wird um eine vorherige Terminreservierung gebeten.",
+      "datum": "2026-10-06T09:15:00+02:00",
+      "fakten": [
+        "Dienstag, 6. Oktober 2026",
+        "16:00 bis 20:00 Uhr",
+        "Bürgerhaus, Burgstraße 9, 52399 Merzenich",
+        "DRK-Blutspendedienst West bittet um Terminreservierung"
+      ],
+      "absaetze": [
+        "Wer in Merzenich Blut spenden möchte, hat dazu heute Nachmittag Gelegenheit. Der DRK-Blutspendedienst West führt für Dienstag, 6. Oktober, einen Termin im Bürgerhaus Merzenich auf. Die Blutspende ist von 16 bis 20 Uhr möglich; Veranstaltungsort ist die Burgstraße 9.",
+        "Der Blutspendedienst bittet Interessierte ausdrücklich, vorher einen Termin zu reservieren. Die verfügbaren Termine und weitere Hinweise zur Vorbereitung sind in der offiziellen Online-Terminübersicht des DRK zu finden. So lässt sich vor dem Weg zum Bürgerhaus prüfen, ob noch ein Platz frei ist.",
+        "Die Nachricht ist eine Ankündigung des DRK-Termins, keine Meldung über einen bereits durchgeführten Blutspendetag. Maßgeblich für kurzfristige Änderungen bleibt die aktuelle Terminanzeige des Blutspendedienstes."
+      ],
+      "themen": [
+        [
+          "blutspende",
+          "Blutspende"
+        ],
+        [
+          "gesundheit",
+          "Gesundheit"
+        ],
+        [
+          "merzenich",
+          "Merzenich"
+        ]
+      ],
+      "bildklasse": "leben.blutspende",
+      "quelle": {
+        "name": "DRK-Blutspendedienst West, Terminübersicht für den Raum Düren",
+        "url": "https://www.blutspendedienst-west.de/blutspendetermine/termine?radius=10&term=52355+D%C3%BCren",
+        "stand": "2026-10-06"
+      },
+      "artikeltyp": "kurzmeldung"
+    },
+    {
+      "slug": "msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026",
+      "ressort": "vereine",
+      "ortsteil": "golzheim",
+      "kicker": "Vereinsleben · Veranstaltung",
+      "titel": "MSG Hitnight am Samstag in der Golzheimer Schützenhalle",
+      "dek": "Die Marianische Schützenbruderschaft Golzheim kündigt die MSG Hitnight für Samstag, 10. Oktober, ab 19 Uhr an. Veranstaltungsort ist die Schützenhalle an der Sankt-Sebastianus-Straße.",
+      "datum": "2026-10-06T09:17:00+02:00",
+      "fakten": [
+        "Samstag, 10. Oktober 2026",
+        "Beginn laut Veranstalter: 19:00 Uhr",
+        "Schützenhalle Golzheim, Sankt-Sebastianus-Straße 42, 52399 Merzenich-Golzheim",
+        "Veranstalter: Marianische Schützenbruderschaft Golzheim"
+      ],
+      "absaetze": [
+        "In Golzheim steht am kommenden Samstag ein weiterer Vereinsabend auf dem Programm: Für den 10. Oktober hat die Marianische Schützenbruderschaft Golzheim die MSG Hitnight angekündigt. Laut offiziellem Terminkalender beginnt die Veranstaltung um 19 Uhr in der Schützenhalle.",
+        "Die Schützenhalle befindet sich an der Sankt-Sebastianus-Straße 42 in Golzheim. Der Eintrag steht im Veranstaltungskalender der Bruderschaft, in dem auch der regelmäßige Schießbetrieb und weitere Termine des Vereins veröffentlicht werden. Wer den Abend besuchen möchte, kann dort den aktuellen Stand nachsehen.",
+        "Angaben zu Eintrittspreisen, Vorverkauf oder einem konkreten Musikprogramm enthält der eingesehene 2026er Termineintrag nicht. Merzenich Aktuell ergänzt solche Details deshalb nicht ohne Bestätigung durch den Veranstalter."
+      ],
+      "themen": [
+        [
+          "golzheim",
+          "Golzheim"
+        ],
+        [
+          "vereine",
+          "Vereine"
+        ],
+        [
+          "veranstaltungen",
+          "Veranstaltungen"
+        ]
+      ],
+      "bildklasse": "vereine.hitnight",
+      "quelle": {
+        "name": "Marianische Schützenbruderschaft Golzheim, Veranstaltungskalender 2026",
+        "url": "https://www.schuetzen-golzheim.de/aktuelles/termine/",
+        "stand": "2026-10-06"
+      },
+      "artikeltyp": "kurzmeldung"
+    },
+    {
+      "slug": "unser-dorf-hat-zukunft-kreis-dueren-2027-interesse",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Dorfgemeinschaft · Wettbewerb",
+      "titel": "„Unser Dorf hat Zukunft“: Kreis Düren sucht interessierte Orte für 2027",
+      "dek": "Für den nächsten Dorfwettbewerb bittet der Kreis Düren schon jetzt um unverbindliche Interessenbekundungen. Auch für Dorfgemeinschaften im Merzenicher Gemeindegebiet kann das interessant sein.",
+      "datum": "2026-10-06T09:18:00+02:00",
+      "fakten": [
+        "Nächster Kreiswettbewerb „Unser Dorf hat Zukunft“ ist für 2027 geplant",
+        "Jetzt zunächst nur unverbindliche Interessenbekundung per E-Mail",
+        "Voraussetzung: Dorf mit weniger als 3.000 Einwohnerinnen und Einwohnern",
+        "Anzugeben sind Dorf, Kommune sowie Name, Telefonnummer und E-Mail der Ansprechperson",
+        "Offizieller Start und Informationsveranstaltung sind für Frühjahr 2027 angekündigt"
+      ],
+      "absaetze": [
+        "Der Kreis Düren bereitet die nächste Runde von „Unser Dorf hat Zukunft“ vor. Schon jetzt können Dorfgemeinschaften ihr grundsätzliches Interesse für den Wettbewerb im Jahr 2027 bekunden. Dabei geht es noch nicht um eine verbindliche Anmeldung. Der Kreis möchte zunächst wissen, welche Orte bei der Planung berücksichtigt werden sollten und wer vor Ort für die weitere Abstimmung erreichbar ist.",
+        "Für die Gemeinde Merzenich ist der Aufruf insbesondere dort relevant, wo Menschen das Zusammenleben in ihrem Dorf gemeinsam organisieren: in Vereinen, ehrenamtlichen Gruppen und Initiativen. Ob ein Ort tatsächlich teilnehmen kann, hängt von den Wettbewerbsbedingungen ab. Nach den veröffentlichten Angaben sind Dörfer mit weniger als 3.000 Einwohnerinnen und Einwohnern teilnahmeberechtigt. Eine Teilnahme einzelner Merzenicher Ortsteile hat der Kreis in der neuen Meldung noch nicht bestätigt.",
+        "Interessierte sollen sich per E-Mail beim zuständigen Bereich des Kreises melden. Benötigt werden der Name des Dorfes, die zugehörige Kommune, Vor- und Nachname einer Ansprechperson, eine Telefonnummer und eine E-Mail-Adresse. Die Interessenbekundung dient ausdrücklich der Vorbereitung. Der eigentliche Kreiswettbewerb sowie eine Informationsveranstaltung mit Hinweisen zu Ablauf, Kriterien und Zeitplan sollen erst im Frühjahr 2027 starten.",
+        "Der Wettbewerb richtet den Blick auf mehr als das Erscheinungsbild eines Dorfes. Im Mittelpunkt stehen nach Darstellung des Kreises die Menschen, die sich um ihren Ort kümmern, und die Vorhaben, die das Leben vor Ort langfristig verbessern. Dazu gehören gemeinschaftliche Aktivitäten, Ideen für die Dorfentwicklung und das Engagement von Einwohnerinnen und Einwohnern. Eine konkrete Projektliste für Merzenich oder eine Rangfolge der Bewerbungen gibt es für die neue Wettbewerbsrunde noch nicht.",
+        "Der Kreis hat Erfahrung mit früheren Wettbewerbsrunden. Bei der Kreisrunde 2024 wurden zum Beispiel Projekte aus den Bereichen Ortsentwicklung, soziales Engagement sowie Natur und Umwelt bewertet. Diese früheren Maßstäbe sind ein Anhaltspunkt für den Charakter des Wettbewerbs, ersetzen aber nicht die erst für 2027 angekündigten Teilnahmebedingungen. Wer im Merzenicher Gemeindegebiet Interesse an einer Bewerbung hat, findet auf der Seite des Kreises die offizielle Mitteilung und die Kontaktmöglichkeit."
+      ],
+      "themen": [
+        [
+          "dorfentwicklung",
+          "Dorfentwicklung"
+        ],
+        [
+          "ehrenamt",
+          "Ehrenamt"
+        ],
+        [
+          "kreis-dueren",
+          "Kreis Düren"
+        ]
+      ],
+      "bildklasse": "leben.dorfwettbewerb",
+      "quelle": {
+        "name": "Kreis Düren, „Unser Dorf hat Zukunft: 2027 geht’s wieder los!“ vom 01.10.2026",
+        "url": "https://www.kreis-dueren.de/presse/unser-dorf-hat-zukunft_2026-10-01.php",
+        "stand": "2026-10-06"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Kreis Düren, Ergebnisse der Wettbewerbsrunde 2024",
+          "url": "https://www.kreis-dueren.de/presse/unser-dorf-hat-zukunft_2024-09-05.php",
+          "stand": "2026-10-06"
+        }
+      ],
+      "artikeltyp": "standard"
+    }
+  ]
+}
