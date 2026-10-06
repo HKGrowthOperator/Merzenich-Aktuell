@@ -158,3 +158,9 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .skip-link{position:absolute;left:12px;top:-60px;z-index:10000;padding:10px 16px;border-radius:4px;background:var(--ink,#151515);color:#fff;font-weight:700;text-decoration:none}
 .skip-link:focus{top:12px;outline:3px solid var(--gold,#c9a227);outline-offset:2px}
 #main:focus{outline:none}
+
+/* Vereins-, Termin- und Anzeigenseiten: Seitenleiste mit Kontakt, Website und weiteren
+   Einträgen auf Handy und Tablet unter dem Text statt ausgeblendet (21.13.0) */
+@media (max-width:1024px){
+  .entity-page .article-grid>.sidebar,.event-page .article-grid>.sidebar{display:flex;flex-direction:column;gap:20px;margin-top:32px}
+}

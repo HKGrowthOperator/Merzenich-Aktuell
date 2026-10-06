@@ -113,7 +113,7 @@ function ma21_anzeige_einzel(WP_Post $p): void {
     elseif ($d['quelle'] !== '' && function_exists('ma_theme_verified_line')) echo '<div class="source-box"><b>Herkunft.</b> Originalanzeige: <a href="' . esc_url($d['quelle']) . '" target="_blank" rel="noopener nofollow">' . esc_html((string) parse_url($d['quelle'], PHP_URL_HOST)) . ' ↗</a>. ' . esc_html(ma_theme_verified_line($p->ID)) . '.</div>';
     else echo '<div class="source-box"><b>Anzeige.</b> Aufgegeben bei Merzenich Aktuell und vor der Veröffentlichung von der Redaktion geprüft. Veröffentlicht am ' . esc_html(get_the_date('d.m.Y', $p)) . '.</div>';
     // Rechts: weitere Einträge derselben Art und der Weg zur eigenen Anzeige.
-    $weitere = get_posts(['post_type' => $p->post_type, 'post_status' => 'publish', 'posts_per_page' => 5, 'post__not_in' => [$p->ID], 'orderby' => 'date', 'order' => 'DESC', 'no_found_rows' => true]);
+    $weitere = ma21_aktive_anzeigen(['post_type' => $p->post_type, 'post_status' => 'publish', 'posts_per_page' => 5, 'post__not_in' => [$p->ID], 'orderby' => 'date', 'order' => 'DESC', 'no_found_rows' => true]);
     echo '</div><aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><div class="sidebox"><h3>' . esc_html($k['weitere']) . '<a href="' . esc_url(home_url($k['liste'])) . '">alle</a></h3>';
     if ($weitere) { echo '<ul class="linklist">'; foreach ($weitere as $w) echo '<li><a href="' . esc_url(get_permalink($w)) . '">' . esc_html(get_the_title($w)) . '</a></li>'; echo '</ul>'; }
     echo '<p><a class="btn ghost block" href="' . esc_url(home_url($k['aufgeben'][1])) . '">' . esc_html($k['aufgeben'][0]) . '</a></p></div></aside></div></article>';

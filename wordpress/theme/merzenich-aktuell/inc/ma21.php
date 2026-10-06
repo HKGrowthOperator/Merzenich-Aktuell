@@ -1261,3 +1261,31 @@ add_action('init', function (): void {
     flush_rewrite_rules(true);
     update_option('ma21_regeln', $v, false);
 }, 99);
+
+/**
+ * Links im Text auf eigene, (noch) nicht veröffentlichte Beiträge (21.13.0): Der
+ * Abgleich übernimmt Termine und Meldungen mit Querverweisen („Zur Meldung“), die
+ * Gegenstücke warten aber oft noch auf Freigabe. Solche Links liefen ins Leere
+ * (Vollprüfung 06.10.2026: Terminseite MSG Hitnight). Der Linktext bleibt stehen.
+ */
+function ma21_links_ohne_entwuerfe(string $html, callable $status): string {
+    if (!str_contains($html, '<a ')) return $html;
+    $host = (string) parse_url(home_url('/'), PHP_URL_HOST);
+    return (string) preg_replace_callback('#<a\s[^>]*href="((?:https?://' . preg_quote($host, '#') . ')?/[^"\#?]*)[^"]*"[^>]*>(.*?)</a>#is', function (array $m) use ($status): string {
+        $s = $status($m[1]);
+        return $s !== null && $s !== 'publish' ? $m[2] : $m[0];
+    }, $html);
+}
+add_filter('the_content', function (string $html): string {
+    if (is_admin() || !is_singular()) return $html;
+    // url_to_postid() findet für Besucher nur Veröffentlichtes, daher über den Namen (letzter Pfadteil).
+    return ma21_links_ohne_entwuerfe($html, function (string $url): ?string {
+        $pfad = trim((string) parse_url($url, PHP_URL_PATH), '/');
+        if ($pfad === '' || str_starts_with($pfad, 'wp-') || str_contains($pfad, '.')) return null;
+        $ids = get_posts(['name' => basename($pfad), 'post_type' => ['post', 'page', 'ma_event', 'ma_club', 'ma_job', 'ma_property', 'ma_tip', 'ma_business'],
+            'post_status' => ['publish', 'draft', 'pending', 'future', 'private'], 'posts_per_page' => 5, 'fields' => 'ids', 'no_found_rows' => true, 'suppress_filters' => true]);
+        if (!$ids) return null;
+        foreach ($ids as $id) if (get_post_status($id) === 'publish') return 'publish';
+        return 'entwurf';
+    });
+}, 20);

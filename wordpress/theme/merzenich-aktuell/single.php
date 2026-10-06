@@ -15,17 +15,21 @@ while (have_posts()): the_post();
     $q_stand = get_post_meta($p->ID, 'ma_source_checked_at', true);
     $teilen = rawurlencode($url);
     $teilenText = rawurlencode($titel . ' ' . $url);
+    // Bezahlte Beiträge tragen den Auftraggeber statt der Redaktion als Absender (21.13.0).
+    $gesponsert = function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p);
+    $von = $gesponsert ? (string) get_post_meta($p->ID, 'ma_gesponsert_von', true) : '';
     ?>
 <article class="article" data-meldung="<?php echo esc_attr(substr(md5($p->post_name), 0, 12)); ?>">
 <div class="article-head"><div class="shell">
-  <nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><a href="<?php echo esc_url(home_url("/{$ressort}/")); ?>"><?php echo esc_html($ressortLabel); ?></a><?php if ($ort !== 'merzenich'): ?><span class="sep">›</span><a href="<?php echo esc_url(home_url("/{$ort}/")); ?>"><?php echo esc_html(MA21_ORTE[$ort]); ?></a><?php endif; ?><span class="sep">›</span><span aria-current="page"><?php echo esc_html($titel); ?></span></nav>
+  <nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><a href="<?php echo esc_url(home_url("/{$ressort}/")); ?>"><?php echo esc_html($ressortLabel); ?></a><?php if ($ort !== 'merzenich'): ?><span class="sep">›</span><a href="<?php echo esc_url(home_url("/ort/{$ort}/")); ?>"><?php echo esc_html(MA21_ORTE[$ort]); ?></a><?php endif; ?><span class="sep">›</span><span aria-current="page"><?php echo esc_html($titel); ?></span></nav>
   <div class="kick-row"><div class="location-line"><span class="location-brand">MERZENICH</span><?php if ($ort !== 'merzenich') echo ' · ' . esc_html(mb_strtoupper(MA21_ORTE[$ort])); ?></div><span class="kicker"><?php echo esc_html($kicker); ?></span></div>
   <h1><?php echo esc_html($titel); ?></h1>
   <?php if (has_excerpt()): ?><p class="dek"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
-  <?php if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)): $von = (string) get_post_meta($p->ID, 'ma_gesponsert_von', true); ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.</p><?php endif; ?>
+  <?php if ($gesponsert): ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.</p><?php endif; ?>
   <div class="byline">
     <span class="avatar" aria-hidden="true">MA</span>
-    <span class="who"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span>
+    <?php if ($gesponsert): ?><span class="who"><b><?php echo esc_html($von !== '' ? $von : 'Auftraggeber'); ?></b><span>Anzeige · geprüft von der Redaktion</span></span>
+    <?php else: ?><span class="who"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>" rel="author">Redaktion Merzenich Aktuell</a></b><span>Lokalredaktion</span></span><?php endif; ?>
     <span class="dates">Veröffentlicht <?php echo ma21_zeit($p, true); ?><?php $akt = (string) get_post_meta($p->ID, 'ma_aktualisiert', true); $aktT = $akt !== '' ? (int) mysql2date('U', $akt, false) - (int) (get_option('gmt_offset') * HOUR_IN_SECONDS) : 0; if ($aktT > (int) get_post_time('U', true, $p)): ?> · Aktualisiert <time datetime="<?php echo esc_attr(wp_date('c', $aktT)); ?>"><?php echo esc_html(wp_date('d.m.Y · H:i', $aktT)); ?> Uhr</time><?php endif; ?><br><span class="readtime"><?php echo ma21_lesezeit($p); ?> Min. Lesezeit</span></span>
   </div>
 </div></div>
@@ -50,8 +54,9 @@ while (have_posts()): the_post();
     <div class="source-box"><b>Quelle &amp; Transparenz</b> Grundlage dieser Meldung: <a href="<?php echo esc_url($q_url); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html($q_name ?: parse_url($q_url, PHP_URL_HOST)); ?> ↗</a>.<?php if ($q_stand): ?> <span class="stand">Abgerufen am <?php echo esc_html(wp_date('d.m.Y', strtotime($q_stand))); ?>.</span><?php endif; ?> Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
   <?php endif; ?>
     <div class="tags"><?php foreach ((get_the_tags() ?: []) as $t) printf('<a href="%s" rel="tag">%s</a>', esc_url(get_tag_link($t)), esc_html($t->name));
-      if ($ort !== 'merzenich') printf('<a href="%s" rel="tag">%s</a>', esc_url(home_url("/{$ort}/")), esc_html(MA21_ORTE[$ort])); ?></div>
-    <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
+      if ($ort !== 'merzenich') printf('<a href="%s" rel="tag">%s</a>', esc_url(home_url("/ort/{$ort}/")), esc_html(MA21_ORTE[$ort])); ?></div>
+    <?php if ($gesponsert): ?><div class="author-box"><span class="avatar" aria-hidden="true">A</span><div class="b"><b>Anzeige<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?></b><p>Für den Inhalt ist der Auftraggeber verantwortlich. Die Redaktion hat den Beitrag vor der Veröffentlichung geprüft und als Anzeige gekennzeichnet. <a href="<?php echo esc_url(home_url('/werben/')); ?>">Werben auf Merzenich Aktuell</a></p></div></div>
+    <?php else: ?><div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="<?php echo esc_url(home_url('/redaktion/')); ?>">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div><?php endif; ?>
     <div class="cta-row"><a class="btn ghost" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
     <?php if (comments_open() || get_comments_number()) comments_template(); ?>
   </div>

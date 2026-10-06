@@ -12,6 +12,7 @@ function add_filter($name, $fn, ...$a) { $GLOBALS['filter'][$name][] = $fn; }
 function trailingslashit($s) { return rtrim((string) $s, '/') . '/'; }
 function get_template_directory() { return '/var/www/html/wp-content/themes/merzenich-aktuell'; }
 function wp_upload_dir(...$a) { return ['basedir' => '/var/www/html/wp-content/uploads']; }
+function home_url($p = '') { return 'https://merzenich-aktuell.de' . $p; }
 class WP_Term {} class WP_Query {} class WP_Post {}
 require __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php';
 $fehler = 0;
@@ -32,6 +33,12 @@ $block = '';
 foreach ($GLOBALS['filter']['mod_rewrite_rules'] ?? [] as $fn) $block = $fn('# WordPress');
 pruefe('readme.html, license.txt, wp-config-sample.php gesperrt', str_contains($block, 'RewriteRule ^(readme\.html|license\.txt|wp-config-sample\.php)$ - [F,L]'), true);
 pruefe('Sperre steht vor den Asset-Regeln und vor WordPress', strpos($block, '[F,L]') < strpos($block, 'ressort-menue') && strpos($block, '[F,L]') < strpos($block, '# WordPress'), true);
+
+echo "\nLinks auf nicht veröffentlichte Beiträge (Theme 21.13.0)\n";
+$status = fn(string $u): ?string => ['/blaulicht/entwurf/' => 'entwurf', '/blaulicht/fertig/' => 'publish'][(string) parse_url($u, PHP_URL_PATH)] ?? null;
+$html = '<p>Mehr: <a href="https://merzenich-aktuell.de/blaulicht/entwurf/">Zur Meldung</a>, <a href="/blaulicht/fertig/#k">Bericht</a>, <a href="https://example.org/x/">extern</a>, <a href="/termine/">Termine</a>.</p>';
+pruefe('Link auf Entwurf wird zu Text, die übrigen bleiben', ma21_links_ohne_entwuerfe($html, $status), '<p>Mehr: Zur Meldung, <a href="/blaulicht/fertig/#k">Bericht</a>, <a href="https://example.org/x/">extern</a>, <a href="/termine/">Termine</a>.</p>');
+pruefe('Ohne Links unverändert', ma21_links_ohne_entwuerfe('<p>Text</p>', $status), '<p>Text</p>');
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

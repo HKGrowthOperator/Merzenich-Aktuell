@@ -51,10 +51,22 @@ function ma21_markt_eigene_zeile(WP_Post $p, string $typ): string {
         . '<div class="act"><a href="' . $url . '">Ansehen</a></div></article>';
 }
 
+/**
+ * Nur freigegebene, nicht abgelaufene Anzeigen (21.13.0), dieselbe Regel wie die
+ * Hauptabfrage im Plugin (ma_filter_public_service_archives): Die Listen hier
+ * fragen selbst ab und zeigten bis dahin auch Anzeigen nach „Anzeige endet“.
+ */
+function ma21_aktive_anzeigen(array $args): array {
+    if (!in_array($args['post_type'] ?? '', ['ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice', 'ma_tip'], true)) return get_posts($args);
+    $jetzt = current_time('Y-m-d H:i:s');
+    return get_posts($args + ['meta_query' => ['relation' => 'AND', ['key' => 'ma_release_confirmed', 'value' => '1'],
+        ['relation' => 'OR', ['key' => 'ma_end_at', 'compare' => 'NOT EXISTS'], ['key' => 'ma_end_at', 'value' => ''], ['key' => 'ma_end_at', 'value' => $jetzt, 'compare' => '>=', 'type' => 'DATETIME']]]]);
+}
+
 /** Ganze Seite Stellen- oder Immobilienmarkt. */
 function ma21_markt_seite(string $typ): void {
     $k = MA21_MARKT[$typ];
-    $eigene = get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 50, 'orderby' => 'date', 'order' => 'DESC']);
+    $eigene = ma21_aktive_anzeigen(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 50, 'orderby' => 'date', 'order' => 'DESC']);
     $block = ma21_markt_block($k['art']);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html($k['crumb']) . '</span></nav>'
         . '<span class="eyebrow">' . esc_html($k['eyebrow']) . '</span><h1>' . esc_html($k['h1']) . '</h1><p class="desc">' . esc_html($k['desc']) . '</p>'
@@ -99,7 +111,7 @@ function ma21_tipp_zeile(WP_Post $p): string {
 
 /** Seite /tipp/: bezahlte Tipps (gekennzeichnet) und die Tipps der Redaktion aus den Terminen. */
 function ma21_tipp_seite(): void {
-    $bezahlt = get_posts(['post_type' => 'ma_tip', 'post_status' => 'publish', 'posts_per_page' => 20, 'orderby' => 'date', 'order' => 'DESC']);
+    $bezahlt = ma21_aktive_anzeigen(['post_type' => 'ma_tip', 'post_status' => 'publish', 'posts_per_page' => 20, 'orderby' => 'date', 'order' => 'DESC']);
     $termine = ma21_tipp_termine();
     $tipp = home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawurlencode('Tipp (bezahlter Beitrag)'));
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Tipps</span></nav>'
@@ -245,7 +257,7 @@ function ma21_anzeige_zeile(WP_Post $p, string $marke): string {
 /** Seite /traueranzeigen/ bzw. /familienanzeigen/. */
 function ma21_anzeigen_seite(string $typ): void {
     $k = MA21_ANZEIGEN[$typ];
-    $eigene = get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 40, 'orderby' => 'date', 'order' => 'DESC']);
+    $eigene = ma21_aktive_anzeigen(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 40, 'orderby' => 'date', 'order' => 'DESC']);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html($k['h1']) . '</span></nav>'
         . '<span class="eyebrow">Anzeigen</span><h1>' . esc_html($k['h1']) . '</h1><p class="desc">' . esc_html($k['desc']) . '</p>'
         . '<p class="count-line"><a href="' . esc_url(home_url('/anzeigen/aufgeben/?art=' . $k['art'])) . '">' . esc_html($k['aufgeben']) . '</a></p></div></div>';

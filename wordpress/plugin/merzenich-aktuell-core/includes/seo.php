@@ -236,7 +236,8 @@ function ma_seo_graph(array $k, array $o): array {
             if (!empty($k['tags'])) $a['keywords'] = implode(', ', $k['tags']);
             if (!empty($k['woerter'])) $a['wordCount'] = (int) $k['woerter'];
             if (!empty($k['quelle'])) { $a['citation'] = [$k['quelle']]; $a['isBasedOn'] = [$k['quelle']]; }
-            if (!empty($k['gesponsert'])) $a['sponsor'] = ['@type' => 'Organization', 'name' => $k['gesponsert']];
+            // Bezahlter Beitrag: Auftraggeber als Sponsor und Absender, nicht die Redaktion (wie die Byline, 1.22.0).
+            if (!empty($k['gesponsert'])) { $a['sponsor'] = ['@type' => 'Organization', 'name' => $k['gesponsert']]; $a['author'] = [$a['sponsor']]; }
             $graph[] = $a;
             $graph[] = $platz($k['ort'] ?? 'merzenich');
             break;
@@ -390,7 +391,7 @@ function ma_seo_kontext(): array {
         $platz = (string) get_post_meta($o->ID, 'ma_event_place', true);
         $text = trim($o->post_excerpt) !== '' ? $o->post_excerpt : ($o->post_content ?: ('Termin' . ($start ? ' am ' . wp_date('d.m.Y', $start) : '') . ($platz ? ' in ' . $platz : '') . ', Gemeinde Merzenich.'));
         $wann = $start ? 'Am ' . wp_date('d.m.Y', $start) . (wp_date('H:i', $start) !== '00:00' ? ', ' . wp_date('H:i', $start) . ' Uhr' : '') : '';
-        $vorne = trim($wann . ($platz !== '' ? ($wann !== '' ? ' in ' : 'In ') . $platz : ''));
+        $vorne = implode(', ', array_filter([$wann, $platz]));
         $k = array_merge($k, ['typ' => 'termin', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_auffuellen($text, $vorne, 'Termin in der Gemeinde Merzenich, mit Kalendereintrag auf Merzenich Aktuell.'), 'url' => get_permalink($o), 'og' => 'article', 'ort' => ma_seo_ort_von($o), 'bild' => ma_seo_bild($o),
             'krumen' => [['Start', $home], ['Termine', $home . 'termine/'], [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null]], 'geaendert' => get_post_modified_time('c', false, $o),
             'termin' => ['start' => $start ? ma_seo_zeit($start) : '', 'ende' => $ende && $ende !== $start ? ma_seo_zeit($ende) : '', 'vorbei' => function_exists('ma_event_vorbei') && ma_event_vorbei($o->ID), 'ort' => $platz, 'veranstalter' => (string) get_post_meta($o->ID, 'ma_event_organizer', true), 'preis' => (string) get_post_meta($o->ID, 'ma_event_price', true)]]);

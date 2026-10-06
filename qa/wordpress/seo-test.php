@@ -97,7 +97,7 @@ pruefe('Zu kleines Bild (200×150) → kein Zuschnitt', ma_seo_zuschnitt_masse(2
 
 $k['gesponsert'] = 'Musterfirma'; $k['quelle'] = ''; $k['bild'] = null; $k['tags'] = [];
 $a = $finde(ma_seo_graph($k, $ORG), 'NewsArticle');
-pruefe('Gesponsert: sponsor gesetzt; ohne Quelle/Bild/Tags keine leeren Felder', $a['sponsor']['name'] === 'Musterfirma' && !isset($a['citation']) && !isset($a['image']) && !isset($a['keywords']), true);
+pruefe('Gesponsert: sponsor gesetzt, Auftraggeber als author; ohne Quelle/Bild/Tags keine leeren Felder', $a['sponsor']['name'] === 'Musterfirma' && $a['author'][0]['name'] === 'Musterfirma' && !isset($a['citation']) && !isset($a['image']) && !isset($a['keywords']), true);
 
 echo "\nJSON-LD: Listen, Ort, Termin, Verein, Seite\n";
 $g = ma_seo_graph(['typ' => 'ressort', 'titel' => 'Blaulicht Merzenich', 'beschreibung' => 'Einsätze.', 'url' => $HOME . 'blaulicht/', 'bild' => null, 'krumen' => [['Start', $HOME], ['Blaulicht', null]], 'liste' => [[$HOME . 'blaulicht/a/', 'A'], [$HOME . 'blaulicht/b/', 'B']]], $ORG);
