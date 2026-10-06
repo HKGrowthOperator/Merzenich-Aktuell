@@ -44,13 +44,13 @@ pruefe('Knöpfe Details, Kalender (termin.ics), Quelle', [str_contains($z, '>Det
 pruefe('Ohne Quelle kein Quellen-Knopf', str_contains(ma21_termin_zeile(['quelle' => ''] + $t), 'Quelle'), false);
 
 echo "\nNeues Markup statt alter Vorlage\n";
-foreach ([['single', 'ma_event'], ['archiv', 'ma_event'], ['archiv', 'ma_obituary'], ['archiv', 'ma_family_notice'], ['archiv', 'ma_business'], ['archiv', 'ma_job']] as [$art, $typ]) {
-    $GLOBALS['t'] = ['single' => '', 'archiv' => '', $art => $typ];
-    pruefe("$typ ($art) ohne alte style.css", ma21_legacy(), false);
-}
-$GLOBALS['t'] = ['single' => 'ma_obituary', 'archiv' => ''];
-pruefe('Einzelne Traueranzeige bleibt vorerst bei der alten Vorlage', ma21_legacy(), true);
 $theme = __DIR__ . '/../../wordpress/theme/merzenich-aktuell/';
+pruefe('Alte Vorlagen und Stile entfernt (21.13.0)', array_map(fn($f) => file_exists($theme . $f), ['archive-alt.php', 'template-parts', 'assets/css/service.css', 'assets/js/site.js']), [false, false, false, false]);
+pruefe('style.css nur noch Pflichtkopf', [str_contains((string) file_get_contents($theme . 'style.css'), 'Theme Name: Merzenich Aktuell'), filesize($theme . 'style.css') < 600], [true, true]);
+pruefe('ma21_legacy() gibt es nicht mehr', function_exists('ma21_legacy'), false);
+foreach (['ma_obituary', 'ma_family_notice', 'ma_job', 'ma_property', 'ma_tip', 'ma_business'] as $typ) {
+    pruefe("Einzelseite $typ im neuen Markup (ma21_anzeige_einzel)", str_contains((string) file_get_contents($theme . "single-$typ.php"), 'ma21_anzeige_einzel(get_post())'), true);
+}
 pruefe('Vorlagen vorhanden', array_map(fn($f) => is_file($theme . $f), ['archive-ma_event.php', 'single-ma_event.php', 'archive-ma_obituary.php', 'archive-ma_family_notice.php', 'archive-ma_business.php']), [true, true, true, true, true]);
 pruefe('/betriebe/ ohne die acht Kästen „Platz frei“', str_contains((string) file_get_contents($theme . 'archive-ma_business.php'), 'Platz frei'), false);
 

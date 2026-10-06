@@ -3,8 +3,7 @@
    Sport (01.10.2026) wie die statische Sportseite: Spielstand-Ecke, Spiel- und
    Tabellenmodul aus demselben Datenstand (vorlagen/sport-*.html), nach dem
    Aufmacher ein Bildraster und rechts alle Sportvereine der Gemeinde.
-   Märkte, Traueranzeigen, Familienanzeigen und Tipps behalten ihre bisherige Vorlage. */
-if (ma21_legacy()) { require __DIR__ . '/archive-alt.php'; return; }
+   Märkte, Anzeigen, Tipps und Termine haben eigene Vorlagen (archive-ma_*.php). */
 get_header();
 [$eyebrow, $titel, $desc] = ma21_liste_kopf();
 global $wp_query;

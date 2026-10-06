@@ -139,3 +139,17 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .event-page .art-figure{margin:22px 0 26px}
 .event-page .art-figure .media{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--soft,#f5f4f1)}
 .event-page .art-figure .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Einzelseiten von Anzeigen, Tipps und Betrieben (21.13.0, inc/einzel.php) */
+.anzeige-fakten{margin:0 0 22px;padding:16px 18px;border-radius:6px;background:var(--soft,#f5f4f1);display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px 22px}
+.anzeige-fakten div{min-width:0}
+.anzeige-fakten dt{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted,#6b6b6b);margin:0 0 2px}
+.anzeige-fakten dd{margin:0;font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.anzeige-page .cta-row{margin:0 0 22px}
+.anzeige-hinweis p{margin:6px 0 0}
+.anzeige-page .art-figure{margin:6px 0 26px}
+.anzeige-page .art-figure .media{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--soft,#f5f4f1)}
+.anzeige-page .art-figure .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Dachzeile „Immobilie · Golzheim“: Abstand auch vor dem Punkt (21.13.0) */
+.kicker .dist::before{content:'\00a0· '}

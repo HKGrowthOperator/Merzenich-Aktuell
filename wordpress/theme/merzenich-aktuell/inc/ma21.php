@@ -438,23 +438,10 @@ add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); 
 /* Kopf aufräumen: WordPress-Blockstile und Emoji-Skripte gibt es auf der
    statischen Seite nicht, sie verschieben Abstände. */
 add_action('wp_enqueue_scripts', function (): void {
-    if (ma21_legacy()) return;
     foreach (['wp-block-library', 'wp-block-library-theme', 'global-styles', 'classic-theme-styles'] as $h) wp_dequeue_style($h);
 }, 100);
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-
-/** Vorlagen mit eigenem, älterem Markup (Märkte, Anzeigen, Betriebe) brauchen noch die alten Stile. */
-function ma21_legacy(): bool {
-    // Vereinsprofile haben seit 01.10.2026 eine eigene Vorlage im neuen Markup (single-ma_club.php).
-    $alt = ['ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice', 'ma_business', 'ma_tip', 'ma_event', 'ma_club'];
-    if (is_singular('ma_club')) return false;
-    // Stellen, Immobilien und Tipps haben seit 21.10.0 eigene Übersichten im neuen Markup (inc/markt.php).
-    if (is_post_type_archive(['ma_job', 'ma_property', 'ma_tip'])) return false;
-    // Termine (Liste und Seite), Trauer-, Familienanzeigen und Betriebe seit 21.12.0 (inc/termine.php, inc/markt.php).
-    if (is_singular('ma_event') || is_post_type_archive(['ma_event', 'ma_obituary', 'ma_family_notice', 'ma_business'])) return false;
-    return is_singular($alt) || is_post_type_archive($alt);
-}
 
 add_filter('body_class', function (array $k): array { $k[] = 'v20'; return $k; });
 
