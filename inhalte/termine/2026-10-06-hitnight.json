@@ -1,0 +1,27 @@
+{
+  "hinweis": "Direkt durch Veranstaltungskalender der ausrichtenden Golzheimer Schützenbruderschaft bestätigt am 06.10.2026.",
+  "termine": [
+    {
+      "slug": "msg-hitnight-golzheim-10-oktober-2026",
+      "titel": "MSG Hitnight in der Schützenhalle Golzheim",
+      "start": "2026-10-10T19:00:00+02:00",
+      "ort": "Schützenhalle Golzheim",
+      "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+      "ortsteil": "Golzheim",
+      "kategorie": "Vereine",
+      "veranstalter": "Marianische Schützenbruderschaft Golzheim",
+      "beschreibung": "Die MSG Hitnight findet laut Kalender der Marianischen Schützenbruderschaft Golzheim am Samstag, 10. Oktober 2026, ab 19 Uhr in der Schützenhalle Golzheim statt.",
+      "absaetze": [
+        "Die Golzheimer Schützen haben die MSG Hitnight für Samstag, 10. Oktober, im offiziellen Terminkalender angekündigt. Beginn ist um 19 Uhr in der Schützenhalle an der Sankt-Sebastianus-Straße 42.",
+        "Zum Programm, möglichen Eintrittspreisen oder zu einem Kartenvorverkauf sind im eingesehenen Termineintrag keine Einzelheiten veröffentlicht. Bitte den aktuellen Stand direkt beim Veranstalter prüfen."
+      ],
+      "quelle": {
+        "name": "Marianische Schützenbruderschaft Golzheim, Termine 2026",
+        "url": "https://www.schuetzen-golzheim.de/aktuelles/termine/",
+        "stand": "2026-10-06"
+      },
+      "artikel": "/vereine/msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026/",
+      "entwurf": false
+    }
+  ]
+}
