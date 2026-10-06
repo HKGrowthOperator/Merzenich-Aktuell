@@ -1,6 +1,58 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-6. Oktober 2026 · Theme 21.12.1 · Core-Plugin 1.21.1 (Historie unten)
+7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.22.0 (Historie unten)
+
+## Neu in Theme 21.13.0 / Plugin 1.22.0 (06./07.10.2026): Abnahme für die Übergabe
+
+Auftrag des Betreibers (06.10.): die ganze Seite bis Mittwoch fertig machen. Grundlage war eine Vollprüfung: 465 Seiten, alle internen und 315 externe Links, 40 Seitentypen auf Handy (375 px) und Computer (1366 px), Backend, Code und Doku. Kaputte Bilder, JavaScript-Fehler oder seitliches Verrutschen gab es nicht. Behoben bzw. ergänzt:
+
+- **Inhalte:** 5 Meldungen und 26 Termine gegen ihre Quellen geprüft und freigegeben. Die doppelte „MSG Hitnight“ ist entfernt. Spieltags-Überschriften vom 04.10. nennen das Datum statt „heute“.
+- **Impressum (Plugin):** Verantwortlicher nach § 18 Abs. 2 MStV ist Anto-Sutharsan Jesuthasan, Rheinstr. 78a, 51371 Leverkusen (Vorgabe Betreiber). Rechtstexte-Fassung 2026-10-06.
+- **Nur noch verschlüsselt:** `http://` leitet mit 301 auf `https://` um, auch hinter einem Proxy ohne Schleife. Dazu kommen Sicherheits-Kopfzeilen (nosniff, Referrer-Policy, X-Frame-Options, Permissions-Policy, HSTS ohne Subdomains). `readme.html`, `license.txt` und `wp-config-sample.php` sind gesperrt.
+- **Einzelseiten im neuen Design:** Stelle, Immobilie, Trauer- und Familienanzeige, Tipp und Betriebsprofil (`inc/einzel.php`). Jede hat Brotkrumen, einen Faktenblock aus den vorhandenen Feldern und Knöpfe (Bewerbung, Angebot, Anrufen, Website). Dazu Herkunft bzw. werbliche Kennzeichnung und „Weitere …“. Damit nutzt keine Seite mehr die alten Stile. `archive-alt.php`, `template-parts/`, `service.css`, `site.js` und die alten Regeln in `style.css` sind entfernt.
+- **Schneller laden:**
+  - Die sechs Werbe-Musterbilder hatten bis zu 1,1 MB. Jetzt sind sie 1080 px breit und unter 300 KB, mit einer 720er-Fassung für Musterprofile und das Unternehmen-Menü.
+  - Die Logos sind auf 720 px verkleinert.
+  - `/unternehmen/` und `/betriebe/` laden rund 3 MB weniger.
+  - `deploy/werben-bilder.mjs` verkleinert künftig selbst.
+- **Teilen-Vorschau (Plugin, `includes/teilen-bilder.php`):**
+  - Je Beitragsbild entstehen einmal drei JPEG-Zuschnitte: 16:9, 4:3 und 1:1, höchstens 1200 px, nie hochgerechnet.
+  - `og:image` zeigt 16:9. NewsArticle und Event führen alle drei Zuschnitte.
+  - Vorhandene Bilder holt WP-Cron nach, 20 je Lauf.
+- **Links ohne Umleitung:** Die Links aus Kopf, Startseite und Sport-Kasten gehen direkt auf die WordPress-Adressen: Ortsteile unter `/ort/…/`, außerdem Suche, Termin melden und SC 1919. „Redaktion“ im Fuß führt auf `/redaktion/`, das Jahr im Copyright stellt sich selbst um.
+- **Aktuell statt Bautag:**
+  - Spielstand-Ecke und Sportmodul auf `/sport/` kommen aus demselben Stand wie `/api/sport-current.json` (`inc/sport.php`). Vorher zeigten sie den 7. Platz vom 23.09., obwohl im Backend der 5. Platz eingetragen war.
+  - „Merzenich jetzt“ zeigt den jüngsten veröffentlichten Feuerwehreinsatz.
+- **Google:**
+  - Eigene Titel und Beschreibungen für die Anzeigenlisten, das Branchenbuch (`/betriebe/` hat nicht mehr denselben Titel wie `/unternehmen/`) sowie für Service, Diskussion, Archiv und Impressum.
+  - Kurze Termin- und Vereinstexte werden mit Datum, Ort und einem Satz aufgefüllt.
+  - Bezahlte Beiträge nennen den Auftraggeber als `author`.
+- **Feinschliff:**
+  - Vereinsseite: Die Terminzeiten waren bis zu zwei Stunden versetzt; „00:00 Uhr“ fällt weg.
+  - Wochentag und Monat stehen immer auf Deutsch.
+  - Abgelaufene Anzeigen fallen aus allen Listen.
+  - Bezahlte Beiträge zeigen den Auftraggeber statt „Redaktion“ als Absender.
+  - Links im Text auf noch nicht veröffentlichte eigene Beiträge werden zu Text.
+  - Auf Vereins-, Termin- und Anzeigenseiten steht die Seitenleiste mit Kontakt auf Handy und Tablet unter dem Text.
+  - Es gibt eine Sprungmarke „Zum Inhalt springen“.
+  - Kommentar- und Partnerformular sehen aus wie die übrigen Formulare und verweisen auf Richtlinien und Datenschutz.
+  - Dachzeile mit Abstand vor dem Punkt.
+- **Texte (Plugin, Redaktionsseiten-Fassung 2026-10-06):**
+  - `/werben/` listet die buchbaren Flächen und hat einen Knopf „Werbung anfragen“.
+  - `/unterstuetzen/` steht ohne „gibt es noch nicht“.
+  - `/whatsapp/`: „Kanal wird gerade eingerichtet“.
+- **Doku:**
+  - `docs/UEBERGABE-KBS.md` (neu): Bedienung für die Redaktion und die Aufgaben, die nur der Betreiber erledigen kann.
+  - `README-INSTALLATION.md` beschreibt den heutigen Stand.
+  - `KOMMENTARE-MODERATION.md` beschreibt die WordPress-Moderation.
+
+**Tests:**
+- `qa/wordpress/sicherheit-test.php` (neu)
+- `ladegewicht-test.php` (neu)
+- `sport-modul-test.php` (neu)
+- `seo-test.php`, `termine-test.php`, `seiten-test.php` und `rechtstexte-test.php` (erweitert)
+- alle übrigen PHP-Tests, dazu `node deploy/kette.mjs --check`
+- lokal alle sechs Einzelseiten und eine Vereinsseite auf Handy und Computer
 
 ## Neu in Theme 21.12.1 (06.10.2026): Bild auf der Terminseite
 
