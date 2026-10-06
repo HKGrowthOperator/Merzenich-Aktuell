@@ -186,7 +186,10 @@ function ma_seo_graph(array $k, array $o): array {
         elseif (isset($d['lat'])) $p['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => $d['lat'], 'longitude' => $d['lon']];
         return $p;
     };
-    $bild = !empty($k['bild']['url']) ? array_filter(['@type' => 'ImageObject', 'url' => $k['bild']['url'], 'width' => $k['bild']['w'] ?? null, 'height' => $k['bild']['h'] ?? null, 'caption' => $k['bild']['alt'] ?? null]) : null;
+    $bildobjekt = fn(array $b): array => array_filter(['@type' => 'ImageObject', 'url' => $b['url'], 'width' => $b['w'] ?? null, 'height' => $b['h'] ?? null, 'caption' => $k['bild']['alt'] ?? null]);
+    $bild = !empty($k['bild']['url']) ? $bildobjekt($k['bild']) : null;
+    // Artikel und Termine: mit Zuschnitten alle drei Seitenverhältnisse (Google-Empfehlung), sonst das eine Bild.
+    $bilder = $bild ? (!empty($k['bild']['varianten']) ? array_map($bildobjekt, $k['bild']['varianten']) : [$bild]) : [];
     $url = $k['url'] ?? $home;
     switch ($k['typ']) {
         case 'start':
@@ -200,7 +203,7 @@ function ma_seo_graph(array $k, array $o): array {
                 'isAccessibleForFree' => true, 'inLanguage' => 'de-DE', 'articleSection' => $k['ressort'] ?? '',
                 'contentLocation' => ['@type' => 'Place', 'name' => $ort['name'], 'address' => $adresse], 'about' => ['@id' => $home . 'ort/' . ($k['ort'] ?? 'merzenich') . '/#place'],
                 'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['.article-head h1', '.article-head .dek']]];
-            if ($bild) $a['image'] = [$bild];
+            if ($bilder) $a['image'] = $bilder;
             if (!empty($k['tags'])) $a['keywords'] = implode(', ', $k['tags']);
             if (!empty($k['woerter'])) $a['wordCount'] = (int) $k['woerter'];
             if (!empty($k['quelle'])) { $a['citation'] = [$k['quelle']]; $a['isBasedOn'] = [$k['quelle']]; }
@@ -225,7 +228,7 @@ function ma_seo_graph(array $k, array $o): array {
             }
             $angebot = ma_seo_angebot((string) ($t['preis'] ?? ''), $url);
             if ($angebot) { $e['offers'] = $angebot; if ((string) $angebot['price'] === '0') $e['isAccessibleForFree'] = true; }
-            if ($bild) $e['image'] = [$bild];
+            if ($bilder) $e['image'] = $bilder;
             $graph[] = $e;
             break;
         case 'verein':
@@ -292,7 +295,11 @@ function ma_seo_bild($post): array {
     foreach (['1536x1536', 'full', 'large'] as $g) { $s = wp_get_attachment_image_src($id, $g); if ($s && (int) $s[1] >= 1200) { $src = $s; break; } if (!$src && $s) $src = $s; }
     if (!$src) return ma_seo_standardbild();
     $alt = (string) get_post_meta($id, '_wp_attachment_image_alt', true);
-    return ['url' => $src[0], 'w' => (int) $src[1], 'h' => (int) $src[2], 'alt' => $alt !== '' ? $alt : get_the_title($post)];
+    $bild = ['url' => $src[0], 'w' => (int) $src[1], 'h' => (int) $src[2], 'alt' => $alt !== '' ? $alt : get_the_title($post)];
+    // Zuschnitte 16:9, 4:3, 1:1 (teilen-bilder.php): Vorschau mit 16:9, JSON-LD mit allen dreien.
+    $z = function_exists('ma_seo_zuschnitte') ? ma_seo_zuschnitte($id) : [];
+    if ($z) $bild = array_merge($bild, $z['16x9'] ?? [], ['varianten' => array_values($z)]);
+    return $bild;
 }
 
 function ma_seo_ort_von($post): string {

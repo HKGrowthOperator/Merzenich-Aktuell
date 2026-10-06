@@ -11,6 +11,7 @@ function get_option($k, $d = false) { return $GLOBALS['opt'][$k] ?? $d; }
 function update_option($k, $v, $a = null) { $GLOBALS['opt'][$k] = $v; return true; }
 
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seo.php';
+require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/teilen-bilder.php';
 
 $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-66s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
@@ -74,6 +75,17 @@ pruefe('Artikel: Ortsbezug Bürgewald (PLZ 52399), speakable, kein sponsor', $a[
 pruefe('Place Bürgewald ohne erfundene Koordinaten', isset($finde($g, 'Place')['geo']), false);
 $b = $finde($g, 'BreadcrumbList')['itemListElement'];
 pruefe('Brotkrumen: 4 Stufen, letzte ohne item', count($b) === 4 && $b[1]['item'] === $HOME . 'blaulicht/' && $b[3]['name'] === 'Rauch über Bürgewald' && !isset($b[3]['item']), true);
+$kz = $k; $kz['bild'] += ['varianten' => [['url' => $HOME . 'r-teilen-16x9.jpg', 'w' => 1200, 'h' => 675], ['url' => $HOME . 'r-teilen-4x3.jpg', 'w' => 1200, 'h' => 900], ['url' => $HOME . 'r-teilen-1x1.jpg', 'w' => 900, 'h' => 900]]];
+$az = $finde(ma_seo_graph($kz, $ORG), 'NewsArticle');
+pruefe('Mit Zuschnitten: image mit 16:9, 4:3 und 1:1, jeweils mit Bildtext', [array_map(fn($i) => $i['width'] . 'x' . $i['height'], $az['image']), $az['image'][2]['caption']], [['1200x675', '1200x900', '900x900'], 'Rauchwolke']);
+
+echo "\nTeilen-Zuschnitte (teilen-bilder.php)\n";
+pruefe('3:2-Foto 1536×1024 → 16:9 1200×675 aus der Mitte', ma_seo_zuschnitt_masse(1536, 1024, 16, 9), ['x' => 0, 'y' => 80, 'w' => 1536, 'h' => 864, 'zw' => 1200, 'zh' => 675]);
+pruefe('3:2-Foto 1536×1024 → 4:3 1200×900', ma_seo_zuschnitt_masse(1536, 1024, 4, 3), ['x' => 85, 'y' => 0, 'w' => 1365, 'h' => 1024, 'zw' => 1200, 'zh' => 900]);
+pruefe('3:2-Foto 1536×1024 → 1:1 1024×1024, nicht hochgerechnet', ma_seo_zuschnitt_masse(1536, 1024, 1, 1), ['x' => 256, 'y' => 0, 'w' => 1024, 'h' => 1024, 'zw' => 1024, 'zh' => 1024]);
+pruefe('Hochformat 768×1085 → 16:9 768×432', array_slice(ma_seo_zuschnitt_masse(768, 1085, 16, 9), 4), ['zw' => 768, 'zh' => 432]);
+pruefe('Zu kleines Bild (200×150) → kein Zuschnitt', ma_seo_zuschnitt_masse(200, 150, 16, 9), null);
+
 $k['gesponsert'] = 'Musterfirma'; $k['quelle'] = ''; $k['bild'] = null; $k['tags'] = [];
 $a = $finde(ma_seo_graph($k, $ORG), 'NewsArticle');
 pruefe('Gesponsert: sponsor gesetzt; ohne Quelle/Bild/Tags keine leeren Felder', $a['sponsor']['name'] === 'Musterfirma' && !isset($a['citation']) && !isset($a['image']) && !isset($a['keywords']), true);

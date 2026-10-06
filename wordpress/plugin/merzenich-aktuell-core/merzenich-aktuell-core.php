@@ -20,6 +20,7 @@ add_filter('extendify_load_library', '__return_false');
 require_once MA_CORE_PATH . 'includes/content.php';
 require_once MA_CORE_PATH . 'includes/permalinks.php';
 require_once MA_CORE_PATH . 'includes/images.php';
+require_once MA_CORE_PATH . 'includes/teilen-bilder.php';
 require_once MA_CORE_PATH . 'includes/orte.php';
 require_once MA_CORE_PATH . 'includes/content-admin.php';
 require_once MA_CORE_PATH . 'includes/editorial.php';
