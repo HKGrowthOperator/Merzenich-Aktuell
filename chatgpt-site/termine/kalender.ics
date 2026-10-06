@@ -250,6 +250,21 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/msg-hitnight-golz
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:msg-hitnight-golzheim-10-oktober-2026@merzenich-aktuell.de
+DTSTAMP:20261006T060000Z
+DTSTART:20261010T170000Z
+SUMMARY:MSG Hitnight in der Schützenhalle Golzheim
+DESCRIPTION:Die MSG Hitnight findet laut Kalender der Marianischen Schütze
+ nbruderschaft Golzheim am Samstag\, 10. Oktober 2026\, ab 19 Uhr in der Sc
+ hützenhalle Golzheim statt.\nVeranstalter: Marianische Schützenbrudersch
+ aft Golzheim\nhttps://merzenichaktuell.hk-growthoperator.de/termine/msg-hi
+ tnight-golzheim-10-oktober-2026/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/msg-hitnight-golz
+ heim-10-oktober-2026/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:herbstlaub-annahme-bauhof-girbelsrath-2026@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261012T110000Z
