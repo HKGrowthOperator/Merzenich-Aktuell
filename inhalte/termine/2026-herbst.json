@@ -134,32 +134,6 @@
       }
     },
     {
-      "slug": "msg-hitnight-golzheim-2026",
-      "titel": "MSG Hitnight",
-      "start": "2026-10-10T19:00:00+02:00",
-      "ort": "Schützenhalle Golzheim",
-      "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich-Golzheim",
-      "ortsteil": "Golzheim",
-      "kategorie": "Vereine",
-      "veranstalter": "Marianische Schützenbruderschaft Golzheim",
-      "beschreibung": "Die Marianische Schützenbruderschaft Golzheim führt die MSG Hitnight für Samstag, 10. Oktober, ab 19 Uhr in ihrem Veranstaltungskalender.",
-      "absaetze": [
-        "Die Marianische Schützenbruderschaft Golzheim führt für Samstag, 10. Oktober 2026, die MSG Hitnight in ihrem offiziellen Terminkalender.",
-        "Beginn ist laut Vereinskalender um 19 Uhr in der Schützenhalle Golzheim an der Sankt-Sebastianus-Straße 42. Weitere Programmdetails nennt der öffentlich sichtbare Kalendereintrag derzeit nicht."
-      ],
-      "links": [
-        [
-          "Terminkalender der Marianischen Schützenbruderschaft Golzheim",
-          "https://www.schuetzen-golzheim.de/aktuelles/termine/"
-        ]
-      ],
-      "quelle": {
-        "name": "Marianische Schützenbruderschaft Golzheim, Terminkalender 2026",
-        "url": "https://www.schuetzen-golzheim.de/aktuelles/termine/",
-        "stand": "2026-10-04"
-      }
-    },
-    {
       "slug": "fc-fanclub-59-bierabend-2026",
       "titel": "59. Bierabend des 1. FC Köln Fanclubs Merzenich",
       "start": "2026-10-31T19:48:00+01:00",
