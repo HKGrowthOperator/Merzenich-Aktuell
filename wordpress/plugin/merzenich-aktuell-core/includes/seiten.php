@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-05';
+const MA_SEITEN_VERSION = '2026-10-06';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -34,7 +34,7 @@ function ma_seiten(): array {
         'meldung-senden' => ['titel' => 'Meldung senden', 'eyebrow' => 'Mitmachen', 'anriss' => 'Hinweise, Vereinsmeldungen, Fotos und Leserbriefe erreichen die Redaktion direkt über dieses Formular. Wir prüfen jede Einsendung und melden uns bei Rückfragen.', 'html' => 'ma_seite_meldung_senden'],
         'termin-melden' => ['titel' => 'Termin melden', 'eyebrow' => 'Kalender', 'anriss' => 'Veranstaltungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald für den Terminkalender melden.', 'html' => 'ma_seite_termin_melden'],
         'werben' => ['titel' => 'Werben auf Merzenich Aktuell', 'eyebrow' => 'Mediadaten', 'anriss' => 'Lokal sichtbar, klar gekennzeichnet: Werbebanner, Tipp und Sponsoring, Unternehmensprofil.', 'html' => 'ma_seite_werben'],
-        'unterstuetzen' => ['titel' => 'Merzenich Aktuell unterstützen', 'eyebrow' => 'Mitmachen', 'anriss' => 'Drei Wege, Merzenich Aktuell zu stärken: weitersagen, mitschreiben, fördern.', 'html' => 'ma_seite_unterstuetzen'],
+        'unterstuetzen' => ['titel' => 'Merzenich Aktuell unterstützen', 'eyebrow' => 'Mitmachen', 'anriss' => 'Drei Wege, Merzenich Aktuell zu stärken: weitersagen, mitschreiben, als Betrieb sichtbar werden.', 'html' => 'ma_seite_unterstuetzen'],
         'anzeigen' => ['titel' => 'Anzeigen', 'eyebrow' => 'Anzeigen', 'anriss' => 'Immobilien, Stellen, Trauer- und Familienanzeigen aus Merzenich: ansehen oder aufgeben.', 'html' => 'ma_seite_anzeigen'],
         'aufgeben' => ['titel' => 'Anzeige aufgeben', 'eyebrow' => 'Anzeigen', 'anriss' => 'Werbung, Immobilie, Traueranzeige oder Familienanzeige aufgeben: Angaben, Bild und Kontakt in einem Formular, Prüfung durch die Redaktion.', 'html' => 'ma_seite_aufgeben', 'eltern' => 'anzeigen'],
         'archiv' => ['titel' => 'Archiv', 'eyebrow' => 'Archiv', 'anriss' => 'Alle Meldungen von Merzenich Aktuell nach Monat.', 'html' => 'ma_seite_archiv'],
@@ -140,24 +140,28 @@ function ma_seite_termin_melden(): string {
 }
 
 function ma_seite_werben(): string {
-    return '<h2 id="wie-moechten-sie-sichtbar-werden">Wie möchten Sie sichtbar werden?</h2>'
-        . '<p>Drei Wege, die auf Merzenich Aktuell vorgesehen sind. Jede bezahlte Platzierung wird klar als Anzeige gekennzeichnet und vor Veröffentlichung geprüft.</p><ul>'
-        . '<li><strong>Werbebanner.</strong> Feste, responsive Werbeflächen zwischen den redaktionellen Bereichen der Startseite, in der Seitenspalte und im Artikelumfeld.</li>'
-        . '<li><strong>Tipp / Sponsoring.</strong> Gekennzeichnete Präsenz für Veranstaltungen, Vereine, Angebote und lokale Partner.</li>'
-        . '<li><strong>Unternehmensprofil.</strong> Dauerhafte lokale Präsenz mit Bild, Informationen und Kontakt im Bereich <a href="/unternehmen/">Unternehmen</a>.</li></ul>'
-        . '<h2 id="werbeflaechen">So erscheint Ihre Werbung</h2>'
-        . '<p>Die Flächen, die heute mit „Musteranzeige“ beschriftet sind, zeigen Lage und Darstellung der buchbaren Plätze: Startseiten-Werbebänder zwischen den Rubriken, die Fläche in der Bühne oben, die Seitenspalte auf Desktop sowie die Artikelanzeige unter dem Text. Es gibt keine erfundenen Bannergrößen; echte Kampagnen erscheinen nur nach Buchung und redaktioneller Freigabe.</p>'
+    return '<p>Merzenich Aktuell lesen Menschen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Werbung erscheint hier mitten im lokalen Geschehen, immer klar als Anzeige gekennzeichnet und vor der Veröffentlichung von der Redaktion geprüft.</p>'
+        . '<p><a class="btn" href="#anfrage">Werbung anfragen</a></p>'
+        . '<h2 id="werbeflaechen">Buchbare Flächen</h2><ul>'
+        . '<li><strong>Werbeband auf der Startseite.</strong> Breite Fläche zwischen den Rubriken der Startseite, auf Handy und Computer.</li>'
+        . '<li><strong>Fläche in der Bühne.</strong> Neben den Aufmachern ganz oben auf der Startseite.</li>'
+        . '<li><strong>Seitenspalte.</strong> Rechts neben Meldungen und Listen, auf dem Computer.</li>'
+        . '<li><strong>Artikelanzeige.</strong> Unter dem Text jeder Meldung.</li>'
+        . '<li><strong>Tipp und Sponsoring.</strong> Ein gekennzeichneter Beitrag für Veranstaltung, Angebot oder Aktion unter <a href="/tipp/">Tipps</a>.</li>'
+        . '<li><strong>Unternehmensprofil.</strong> Dauerhafter Eintrag unter <a href="/unternehmen/">Unternehmen</a> mit Bild, Öffnungszeiten, Kontakt und eigenen Beiträgen.</li></ul>'
+        . '<p>Wo die Flächen liegen, zeigen die mit „Musteranzeige“ beschrifteten Plätze auf der Seite. Echte Kampagnen erscheinen dort nach Buchung und Freigabe.</p>'
         . '<h2 id="anfrage">Anfrage</h2>'
         . '<p>Schreiben Sie uns, was Sie sichtbar machen möchten, für welchen Zeitraum und mit welchem Bildmaterial. Wir melden uns mit Format, Laufzeit und Preis. E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
         . '[ma_formular typ="werbung"]';
 }
 
 function ma_seite_unterstuetzen(): string {
-    return '<h2 id="drei-wege">Drei Wege</h2><ol>'
-        . '<li><strong>Weitersagen.</strong> Teilen Sie Meldungen per WhatsApp, abonnieren Sie den <a href="/whatsapp/">WhatsApp-Kanal</a>, sobald er startet, und empfehlen Sie die Seite in Ihrem Verein.</li>'
-        . '<li><strong>Mitschreiben.</strong> Vereinsberichte, Spielberichte, Fotos vom Fest: Alles, was Sie über <a href="/meldung-senden/">Meldung senden</a> einreichen, macht die Seite besser.</li>'
-        . '<li><strong>Fördern.</strong> Freiwillige Beiträge sollen später Zeit für Recherche vor Ort finanzieren. Eine Möglichkeit dafür, etwa eine Fördermitgliedschaft, gibt es noch nicht; sie steht hier, sobald sie eingerichtet und rechtlich geklärt ist. Wer fördert, bekommt keinen Einfluss auf Inhalte, nur ein Dankeschön.</li></ol>'
-        . '<p>Betriebe und Organisationen finden auf der Seite <a href="/werben/">Werben</a> die gekennzeichneten Formate.</p>';
+    return '<p>Merzenich Aktuell lebt davon, dass Menschen aus der Gemeinde mitlesen, mitschreiben und weitersagen.</p>'
+        . '<h2 id="drei-wege">Drei Wege</h2><ol>'
+        . '<li><strong>Weitersagen.</strong> Teilen Sie Meldungen mit den Knöpfen unter jedem Artikel, folgen Sie uns auf <a href="https://www.instagram.com/merzenichaktuell/" target="_blank" rel="noopener">Instagram</a> und empfehlen Sie die Seite in Ihrem Verein.</li>'
+        . '<li><strong>Mitschreiben.</strong> Vereinsberichte, Spielberichte, Fotos vom Fest: Alles, was Sie über <a href="/meldung-senden/">Meldung senden</a> oder <a href="/termin-melden/">Termin melden</a> einreichen, macht die Seite besser.</li>'
+        . '<li><strong>Als Betrieb sichtbar werden.</strong> Eine gekennzeichnete Anzeige, ein Tipp oder ein Unternehmensprofil trägt die lokale Berichterstattung. Alle Formate stehen unter <a href="/werben/">Werben</a>. Wer wirbt, bekommt keinen Einfluss auf redaktionelle Inhalte.</li></ol>'
+        . '<p>Fehler gefunden? Über <a href="/korrekturen/">Korrekturen</a> erreichen Hinweise direkt die Redaktion.</p>';
 }
 
 function ma_seite_anzeigen(): string {
@@ -191,13 +195,14 @@ function ma_seite_themen(): string {
 }
 
 function ma_seite_whatsapp(): string {
-    return '<h2 id="was-im-kanal-geplant-ist">Was im Kanal geplant ist</h2>'
-        . '<p>Der Kanal ist noch nicht gestartet. Die folgenden Punkte beschreiben, was er bringen soll; verschickt wird noch nichts.</p><ul>'
+    return '<h2 id="was-im-kanal-geplant-ist">Was der Kanal bringt</h2>'
+        . '<p>Der WhatsApp-Kanal wird gerade eingerichtet. Sobald er bereitsteht, finden Sie hier den Link zum Abonnieren. Er bringt:</p><ul>'
         . '<li>Eilmeldungen und Einsätze der Feuerwehr, sobald die Meldung geprüft ist.</li><li>Morgens die wichtigsten Meldungen des Vortags.</li><li>Freitags die Termine des Wochenendes aus allen fünf Ortsteilen.</li><li>Ergebnisse des SC 1919 Merzenich nach dem Spieltag.</li></ul>'
-        . '<p>Geplant sind nicht mehr als zwei bis drei Nachrichten am Tag. Werbung soll nur gekennzeichnet und höchstens einmal pro Woche kommen.</p>'
+        . '<p>Höchstens zwei bis drei Nachrichten am Tag. Werbung nur gekennzeichnet und höchstens einmal pro Woche.</p>'
         . '<h2 id="so-funktioniert-der-kanal">So funktioniert der Kanal</h2>'
-        . '<p>Ein WhatsApp-Kanal ist ein Broadcast: Sie sehen unsere Meldungen, niemand sieht Ihre Nummer, niemand kann Ihnen über den Kanal schreiben. Abbestellen jederzeit über „Kanal verlassen“. Sobald der Kanal eingerichtet ist, steht der Link hier.</p>'
-        . '<h2 id="lieber-rss">Lieber RSS?</h2>'
+        . '<p>Ein WhatsApp-Kanal ist ein Broadcast: Sie sehen unsere Meldungen, niemand sieht Ihre Nummer, niemand kann Ihnen über den Kanal schreiben. Abbestellen jederzeit über „Kanal verlassen“.</p>'
+        . '<h2 id="lieber-rss">Bis dahin und auch danach</h2>'
+        . '<p>Neues steht immer zuerst auf der <a href="/">Startseite</a> und auf <a href="https://www.instagram.com/merzenichaktuell/" target="_blank" rel="noopener">Instagram</a>.</p>'
         . '<p>Alle Meldungen: <a href="/feed/">/feed/</a>. Nur Blaulicht: <a href="/blaulicht/feed/">/blaulicht/feed/</a>. Termine: <a href="/termine/feed/">/termine/feed/</a>.</p>';
 }
 

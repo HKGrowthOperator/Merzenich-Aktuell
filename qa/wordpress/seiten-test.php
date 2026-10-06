@@ -34,7 +34,9 @@ pruefe('Archiv, Diskussion, Redaktion und Themen nutzen ihre Shortcodes', [str_c
 pruefe('Kommentarregeln beschreiben WordPress-Moderation, keinen Melden-Knopf', str_contains(ma_seite_kommentarregeln(), 'vor der Veröffentlichung von der Redaktion geprüft') && str_contains(ma_seite_kommentarregeln(), 'IP-Adresse wird beim Kommentieren nicht gespeichert') && !str_contains(ma_seite_kommentarregeln(), 'Melden“-Knopf'), true);
 pruefe('Über uns ohne Behauptung laufender Bannerkunden; Finanzierung und Grundsätze verlinkt', !str_contains(ma_seite_ueber_uns(), 'AJ Sports') && str_contains(ma_seite_ueber_uns(), 'id="finanzierung"') && str_contains(ma_seite_ueber_uns(), '/grundsaetze/'), true);
 pruefe('Grundsätze mit Ankern ethik und vielfalt (Organisations-Schema)', str_contains(ma_seite_grundsaetze(), 'id="ethik"') && str_contains(ma_seite_grundsaetze(), 'id="vielfalt"'), true);
-pruefe('WhatsApp-Seite: Kanal noch nicht gestartet, RSS auf WordPress-Feeds', str_contains(ma_seite_whatsapp(), 'noch nicht gestartet') && str_contains(ma_seite_whatsapp(), '/blaulicht/feed/'), true);
+pruefe('WhatsApp-Seite: Kanal wird eingerichtet (kein Link), RSS auf WordPress-Feeds', str_contains(ma_seite_whatsapp(), 'wird gerade eingerichtet') && !str_contains(ma_seite_whatsapp(), 'whatsapp.com') && str_contains(ma_seite_whatsapp(), '/blaulicht/feed/'), true);
+pruefe('Unterstützen ohne „gibt es noch nicht“ und „sobald er startet“', [str_contains(ma_seite_unterstuetzen(), 'noch nicht'), str_contains(ma_seite_unterstuetzen(), 'sobald er startet')], [false, false]);
+pruefe('Werben: sechs buchbare Flächen, Knopf zur Anfrage, Formular', [substr_count(ma_seite_werben(), '<li><strong>'), str_contains(ma_seite_werben(), 'href="#anfrage">Werbung anfragen'), str_contains(ma_seite_werben(), '[ma_formular typ="werbung"]')], [6, true, true]);
 pruefe('Links nur auf WordPress-Adressen (kein /autor/redaktion/, /termine/melden/, feed.xml)', str_contains($alle, '/autor/redaktion/') || str_contains($alle, '/termine/melden/') || str_contains($alle, 'feed.xml'), false);
 pruefe('Pfad mit Elternseite', ma_seite_pfad('aufgeben'), 'anzeigen/aufgeben');
 

@@ -1,12 +1,28 @@
 # Kommentare: Vorab-Freigabe und Freigabe-Mail
 
+## Live-Seite (WordPress, merzenich-aktuell.de)
+
+Seit dem 5. Oktober 2026 läuft die Seite nur noch als WordPress; Kommentare moderiert das Core-Plugin (`wordpress/plugin/merzenich-aktuell-core/includes/comments.php`).
+
+1. Jeder Kommentar von Besuchern wartet auf Freigabe, auch wenn die WordPress-Einstellung etwas anderes sagt. Die IP-Adresse wird nicht gespeichert.
+2. Das Formular unter jeder Meldung verlangt Name, E-Mail und Text und verweist auf die Kommentarrichtlinien (`/kommentarregeln/`) und die Datenschutzerklärung. Die E-Mail-Adresse wird nicht veröffentlicht.
+3. **Kommentare → Sammelfreigabe:** alle wartenden Kommentare, jeder vorausgewählt. Problematische abwählen, den Rest in einem Schritt freigeben. Einzelne Kommentare lassen sich auch in der normalen Kommentarliste freigeben oder ablehnen.
+4. Nach der Freigabe bekommt der Verfasser eine E-Mail mit Link zur Meldung, sofern er eine gültige Adresse angegeben hat. Voraussetzung ist funktionierender Mailversand (SMTP, siehe `README-INSTALLATION.md`).
+5. `/diskussion/` zeigt die jüngsten freigegebenen Kommentare aller Meldungen.
+
+Kommentare lassen sich je Beitrag im Diskussionsfeld des Editors abschalten.
+
+## Archiv: Kommentardienst der früheren Vorschauseite
+
+Der folgende Abschnitt beschreibt den Kommentardienst der statischen Vorschauseite auf Coolify. Die Vorschauseite ist seit dem 5. Oktober 2026 abgeschaltet; Code (`deploy/coolify/`) und Test (`qa/dienst/kommentare.test.mjs`) liegen noch im Repository und laufen in der CI mit. Für die Live-Seite gilt der Abschnitt oben.
+
 Gilt für die statische Auslieferung (Coolify, `chatgpt-site/`). Der
 Kommentar-Dienst ist `deploy/coolify/kommentare/server.mjs` und läuft im selben
 Container wie nginx (Grundeinrichtung: `deploy/coolify/README.md`, Abschnitt
 „Kommentare und Diskussion“). Die WordPress-Ausgabe hat ihre eigene Moderation
 im Core-Plugin und ist davon nicht betroffen.
 
-## Ablauf
+### Ablauf
 
 1. Leserinnen und Leser schreiben einen Kommentar unter einem Artikel oder in
    der Diskussion. Er wird mit Status `wartend` gespeichert und ist **nicht**
@@ -30,7 +46,7 @@ im Core-Plugin und ist davon nicht betroffen.
 Kommentare, die vor dieser Umstellung gespeichert wurden (ohne Status oder mit
 Status `sichtbar`), gelten als freigegeben und bleiben sichtbar.
 
-## Freigabeseite
+### Freigabeseite
 
 <https://merzenichaktuell.hk-growthoperator.de/api/kommentare/moderation>
 
@@ -42,7 +58,7 @@ Status `sichtbar`), gelten als freigegeben und bleiben sichtbar.
 - nach zehn falschen Token-Eingaben von derselben Adresse ist der Zugang für
   15 Minuten gesperrt
 
-## Umgebungsvariablen (in Coolify setzen, danach Redeploy)
+### Umgebungsvariablen (in Coolify setzen, danach Redeploy)
 
 | Variable | Pflicht | Bedeutung |
 |---|---|---|
@@ -60,7 +76,7 @@ keine Mail verschickt, und das Log des Containers sagt „SMTP nicht
 eingerichtet, keine Mail verschickt“. Fehler beim Versand (falsches Passwort,
 Server nicht erreichbar) stehen ebenfalls im Log und stören den Dienst nicht.
 
-## Schnittstelle (für curl)
+### Schnittstelle (für curl)
 
 Admin-Zugriff mit `Authorization: Bearer <TOKEN>` (die bisherige Kopfzeile
 `X-Admin-Token: <TOKEN>` funktioniert weiter).
@@ -75,13 +91,13 @@ curl -s -X POST $B/admin/freigabe -H "$H" -H 'Content-Type: application/json' \
 Die Admin-Liste enthält Name, Text, Datum, Artikel bzw. Thema und ob eine
 E-Mail-Adresse hinterlegt ist (`hatEmail`), aber nie die Adresse selbst.
 
-## Datenschutz (Stand 28.09.2026)
+### Datenschutz (Stand 28.09.2026)
 
 Die Datenschutzerklärung (`/datenschutz/#kommentare`) nennt jetzt beide Zwecke der E-Mail-Adresse: Rückfragen der Redaktion und die einmalige Nachricht nach der Freigabe. Außerdem steht dort, dass diese Nachricht über den SMTP-Server des Redaktionspostfachs geht und der E-Mail-Anbieter dafür Adresse und Nachrichtentext erhält.
 
 **Offen für den Betreiber (juristische Endprüfung):** Den tatsächlich genutzten E-Mail-Anbieter mit Namen und Sitz ergänzen, sobald `SMTP_HOST` in Coolify gesetzt ist, und die gesamte Datenschutzerklärung rechtlich prüfen lassen.
 
-## Test
+### Test
 
 `node qa/dienst/kommentare.test.mjs` startet den Dienst mit einem temporären
 Datenordner und einem Schein-Mailserver und prüft den ganzen Ablauf. Läuft in
