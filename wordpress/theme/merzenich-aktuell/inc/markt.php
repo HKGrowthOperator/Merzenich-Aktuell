@@ -147,6 +147,11 @@ const MA21_MUSTERPROFILE = [
         'beitrag' => ['titel' => 'Was ist mein Haus wert?', 'text' => 'Wir sehen uns Haus und Grundstück an und nennen einen realistischen Preis, unverbindlich und ohne Maklervertrag.']],
 ];
 
+/** 720 px breite Fassung eines Musterbilds (deploy/werben-bilder.mjs), reicht für Karten bis gut 300 px. */
+function ma21_muster_klein(string $bild): string {
+    return (string) preg_replace('/\.jpg$/', '-720.jpg', $bild);
+}
+
 /** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). */
 function ma21_musterprofile_html(int $echte, string $anfrage): string {
     if ($echte >= 3) return '';
@@ -154,7 +159,7 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
         . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Musterprofile, keine echten Unternehmen.</p>';
     foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min($echte, 2)) as $m) {
         $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($anfrage) . '" aria-label="' . esc_attr($m['name'] . ': Musterprofil. Eigenes Profil anfragen') . '">'
-            . '<span class="u-muster__bild"><img src="' . esc_url(home_url($m['bild'])) . '" alt="' . esc_attr($m['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>'
+            . '<span class="u-muster__bild"><img src="' . esc_url(home_url(ma21_muster_klein($m['bild']))) . '" srcset="' . esc_attr(home_url(ma21_muster_klein($m['bild'])) . ' 720w, ' . home_url($m['bild']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($m['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>'
             . '<span class="u-muster__eyebrow">' . esc_html($m['branche'] . ' · ' . $m['ort']) . '</span>'
             . '<strong class="u-muster__name">' . esc_html($m['name']) . '</strong>'
             . '<span class="u-muster__text">' . esc_html($m['text']) . '</span>'
@@ -197,7 +202,7 @@ function ma21_menue_firmen(): array {
         $platz = ['titel' => 'Ihr Betrieb an dieser Stelle', 'url' => $anfrage, 'kicker' => 'Für Unternehmen', 'meta' => 'Unternehmenskanal auf Merzenich Aktuell',
             'anriss' => 'Eigene Beiträge, ein Profil mit Bild, Öffnungszeiten und Kontakt. Die Redaktion prüft jeden Beitrag vor der Veröffentlichung.', 'bild' => null, 'knopf' => 'Betrieb eintragen', 'platz' => true];
         foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min(count($echte), 2)) as $m) {
-            $bild = ['src' => $m['bild'], 'alt' => $m['alt']];
+            $bild = ['src' => ma21_muster_klein($m['bild']), 'alt' => $m['alt']];
             $firmen[] = ['name' => $m['name'], 'url' => $anfrage, 'zeile' => $m['branche'] . ' · ' . $m['ort'], 'logo' => null, 'muster' => true, 'karten' => [
                 ['titel' => $m['beitrag']['titel'], 'url' => $anfrage, 'kicker' => $m['ort'], 'meta' => 'Musterbeitrag · Anzeige', 'anriss' => $m['beitrag']['text'], 'bild' => $bild, 'knopf' => 'Beitrag buchen', 'muster' => true,
                     'credit' => 'Foto: ' . $m['foto'] . ', ' . $m['lizenz']],

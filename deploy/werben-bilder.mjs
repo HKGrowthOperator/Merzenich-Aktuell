@@ -12,7 +12,8 @@
  * Werbemotive muessen das beworbene Format sofort erklaeren und duerfen nicht
  * zufaellig aus einem Nachrichtenressort stammen.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -22,6 +23,13 @@ const outDir = join(root, 'chatgpt-site', 'assets', 'werben');
 const creditsPath = join(outDir, 'credits.json');
 const check = process.argv.includes('--check');
 const cfg = JSON.parse(readFileSync(cfgPath, 'utf8'));
+// Angezeigt werden die Bilder höchstens gut 400 px breit (Handy 339 px bei dreifacher
+// Dichte); 1080 px und Qualität 74 reichen und halten jede Datei unter 300 KB, dazu
+// eine 720er-Fassung für Karten (06.10.2026).
+const MAX_BYTES = 300 * 1024;
+function verkleinern(buf, breite = 1080) {
+  return execFileSync('convert', ['-', '-resize', breite + 'x>', '-strip', '-interlace', 'Plane', '-sampling-factor', '4:2:0', '-quality', '74', 'jpg:-'], { input: buf, maxBuffer: 64 * 1024 * 1024 });
+}
 const erlaubteLizenz = /^(CC0|Public domain|CC BY(?:-| )|CC BY-SA)/i;
 
 function cleanHtml(s='') {
@@ -69,6 +77,8 @@ function assertOffline() {
   for (const item of cfg.images) {
     const p = join(outDir, item.output);
     if (!existsSync(p)) errs.push(item.output + ' fehlt');
+    else if (!existsSync(p.replace(/\.jpg$/, '-720.jpg'))) errs.push(item.output.replace(/\.jpg$/, '-720.jpg') + ' fehlt');
+    else if (statSync(p).size > MAX_BYTES) errs.push(item.output + ' zu schwer (' + Math.round(statSync(p).size / 1024) + ' KB, höchstens ' + MAX_BYTES / 1024 + ' KB)');
     const c = credits?.images?.find(x => x.id === item.id);
     if (!c) errs.push(item.id + ': Credit fehlt');
     else {
@@ -110,7 +120,9 @@ for (const item of cfg.images) {
   if (!r.ok) throw new Error(item.sourceTitle + ': Bilddownload ' + r.status);
   const buf = Buffer.from(await r.arrayBuffer());
   if (buf.length < 20000) throw new Error(item.sourceTitle + ': Bilddatei unerwartet klein (' + buf.length + ' Bytes)');
-  writeFileSync(join(outDir, item.output), buf);
+  writeFileSync(join(outDir, item.output), verkleinern(buf));
+  // Kleine Fassung für Karten (Musterprofile, Unternehmen-Menü), srcset in inc/markt.php.
+  writeFileSync(join(outDir, item.output.replace(/\.jpg$/, '-720.jpg')), verkleinern(buf, 720));
   credits.images.push({
     id: item.id,
     src: '/assets/werben/' + item.output,
