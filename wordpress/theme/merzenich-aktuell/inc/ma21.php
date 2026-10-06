@@ -198,6 +198,35 @@ add_action('send_headers', function (): void {
     ma21_cache(0);
 });
 
+/**
+ * Nur verschlüsselt (21.13.0): http:// lieferte die Seite bis dahin unverschlüsselt aus.
+ * Umgeleitet wird nur, wenn die Anfrage sicher unverschlüsselt ist (wie is_ssl(), dazu
+ * kein HTTPS-Kennzeichen vom Proxy), damit hinter einem Proxy keine Schleife entsteht.
+ */
+function ma21_unverschluesselt(array $server): bool {
+    if (!empty($server['HTTPS']) && strtolower((string) $server['HTTPS']) !== 'off') return false;
+    if (strtolower((string) ($server['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https') return false;
+    if (strtolower((string) ($server['REQUEST_SCHEME'] ?? '')) === 'https') return false;
+    return (string) ($server['SERVER_PORT'] ?? '443') !== '443';
+}
+add_action('init', function (): void {
+    if (PHP_SAPI === 'cli' || wp_doing_cron() || !ma21_unverschluesselt($_SERVER)) return;
+    $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    if (!in_array($host, ['merzenich-aktuell.de', 'www.merzenich-aktuell.de'], true)) return;
+    wp_redirect('https://merzenich-aktuell.de' . (string) ($_SERVER['REQUEST_URI'] ?? '/'), 301, 'Merzenich Aktuell');
+    exit;
+}, 0);
+
+/* Sicherheits-Kopfzeilen (21.13.0). HSTS nur über HTTPS und ohne Subdomains. */
+add_action('send_headers', function (): void {
+    if (headers_sent()) return;
+    header('X-Content-Type-Options: nosniff');
+    header('Referrer-Policy: strict-origin-when-cross-origin');
+    header('X-Frame-Options: SAMEORIGIN');
+    header('Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()');
+    if (is_ssl()) header('Strict-Transport-Security: max-age=31536000');
+});
+
 /* /assets/ -> Theme-Verzeichnis static/, danach die einmal aus dem Repository
    nachgeladenen Dateien (uploads/ma-assets/assets/); das Ressort-Menü und alles
    Übrige (Poolfotos, Quellen) beantwortet PHP: Mediathek, sonst nachladen. */
@@ -207,6 +236,8 @@ add_filter('mod_rewrite_rules', function (string $regeln): string {
     $nach = ma21_nachgeladen_verzeichnis() . '/assets/';
     $nachRel = ltrim(str_replace(ABSPATH, '', $nach), '/');
     $block = "# BEGIN Merzenich Aktuell Assets\n<IfModule mod_rewrite.c>\nRewriteEngine On\n"
+        // WordPress-Infodateien verraten die Version (21.13.0).
+        . "RewriteRule ^(readme\\.html|license\\.txt|wp-config-sample\\.php)$ - [F,L]\n"
         . "RewriteRule ^assets/ressort-menue\\.json$ index.php?ma_asset=ressort-menue.json [L,QSA]\n"
         . "RewriteCond {$dir}$1 -f\nRewriteRule ^assets/(.*)$ {$rel}$1 [L]\n"
         . "RewriteCond {$nach}$1 -f\nRewriteRule ^assets/(.*)$ {$nachRel}$1 [L]\n"
