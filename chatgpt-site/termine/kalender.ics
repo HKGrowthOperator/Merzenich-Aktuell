@@ -7,19 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:werwolfnacht-golzheim@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20260905T150000Z
-SUMMARY:BdSJ-Werwolfnacht
-DESCRIPTION:Spieleabend der Schützenjugend.\nVeranstalter: St. Sebastianus
-  Schützenbruderschaft Golzheim\nhttps://merzenichaktuell.hk-growthoperato
- r.de/termine/werwolfnacht-golzheim/
-LOCATION:Schützenhalle Golzheim
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/werwolfnacht-golz
- heim/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:androcup@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260906T090000Z
