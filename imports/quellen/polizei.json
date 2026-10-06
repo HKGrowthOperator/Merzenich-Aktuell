@@ -1,11 +1,11 @@
 {
  "quelle": "polizei",
- "abgerufen": "2026-10-05T12:18:06.620Z",
+ "abgerufen": "2026-10-06T12:03:58.284Z",
  "listen": [
   {
    "url": "https://www.presseportal.de/blaulicht/r/Merzenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Merzenich",
-   "abgerufen": "2026-10-05T12:16:59.539Z",
+   "abgerufen": "2026-10-06T12:02:53.819Z",
    "status": 200,
    "titel": "28 offizielle News aus Merzenich 2026 | Presseportal",
    "meta": {
@@ -320,7 +320,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Golzheim",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Golzheim",
-   "abgerufen": "2026-10-05T12:17:00.968Z",
+   "abgerufen": "2026-10-06T12:02:55.270Z",
    "status": 200,
    "titel": "Offizielle News aus Golzheim | Presseportal",
    "meta": {
@@ -409,7 +409,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
-   "abgerufen": "2026-10-05T12:17:02.421Z",
+   "abgerufen": "2026-10-06T12:02:56.724Z",
    "status": 200,
    "titel": "Offizielle News aus Girbelsrath 2026 | Presseportal",
    "meta": {
@@ -476,7 +476,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Morschenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Morschenich",
-   "abgerufen": "2026-10-05T12:17:03.851Z",
+   "abgerufen": "2026-10-06T12:02:58.163Z",
    "status": 200,
    "titel": "Offizielle News aus Morschenich | Presseportal",
    "meta": {
@@ -565,7 +565,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
    "endUrl": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
-   "abgerufen": "2026-10-05T12:17:05.279Z",
+   "abgerufen": "2026-10-06T12:02:59.611Z",
    "status": 200,
    "titel": "Offizielle News aus Bürgewald | Presseportal",
    "meta": {
@@ -622,7 +622,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6359466",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6359466",
-   "abgerufen": "2026-10-05T12:17:06.962Z",
+   "abgerufen": "2026-10-06T12:03:01.108Z",
    "status": 200,
    "titel": "POL-DN: Abbiegeunfall fordert schwer verletzten Zweiradfahrer | Presseportal",
    "meta": {
@@ -892,7 +892,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6353148",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6353148",
-   "abgerufen": "2026-10-05T12:17:08.440Z",
+   "abgerufen": "2026-10-06T12:03:02.589Z",
    "status": 200,
    "titel": "POL-DN: \"Zu schnell fahren macht uns sauer!\" - Viertklässler unterstützen ... | Presseportal",
    "meta": {
@@ -1163,7 +1163,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6349975",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6349975",
-   "abgerufen": "2026-10-05T12:17:09.923Z",
+   "abgerufen": "2026-10-06T12:03:04.058Z",
    "status": 200,
    "titel": "POL-DN: Zeugensuche nach Einbruch in Einfamilienhaus | Presseportal",
    "meta": {
@@ -1422,7 +1422,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6344030",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6344030",
-   "abgerufen": "2026-10-05T12:17:11.650Z",
+   "abgerufen": "2026-10-06T12:03:05.513Z",
    "status": 200,
    "titel": "POL-DN: Gegenstände von Fußgängerbrücke auf Fahrbahn geworfen - Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -1689,7 +1689,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6332060",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6332060",
-   "abgerufen": "2026-10-05T12:17:13.154Z",
+   "abgerufen": "2026-10-06T12:03:06.968Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall zwischen Pkw und Fahrradfahrer | Presseportal",
    "meta": {
@@ -1939,7 +1939,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6326148",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6326148",
-   "abgerufen": "2026-10-05T12:17:14.825Z",
+   "abgerufen": "2026-10-06T12:03:08.469Z",
    "status": 200,
    "titel": "POL-DN: Pkw entwendet - die Polizei bittet um Hinweise | Presseportal",
    "meta": {
@@ -2169,7 +2169,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6324912",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6324912",
-   "abgerufen": "2026-10-05T12:17:16.670Z",
+   "abgerufen": "2026-10-06T12:03:09.941Z",
    "status": 200,
    "titel": "POL-DN: Mit dem Pkw überschlagen | Presseportal",
    "meta": {
@@ -2419,7 +2419,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6324911",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6324911",
-   "abgerufen": "2026-10-05T12:17:18.920Z",
+   "abgerufen": "2026-10-06T12:03:11.407Z",
    "status": 200,
    "titel": "POL-DN: Tageswohnungseinbruch in Girbelsrath - die Polizei bittet um Hinweise | Presseportal",
    "meta": {
@@ -2665,7 +2665,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6323527",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6323527",
-   "abgerufen": "2026-10-05T12:17:20.361Z",
+   "abgerufen": "2026-10-06T12:03:12.887Z",
    "status": 200,
    "titel": "POL-DN: Radfahrerin kollidiert mit Radfahrerin | Presseportal",
    "meta": {
@@ -2903,7 +2903,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6314046",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6314046",
-   "abgerufen": "2026-10-05T12:17:21.951Z",
+   "abgerufen": "2026-10-06T12:03:14.680Z",
    "status": 200,
    "titel": "POL-DN: Schwerverletzt nach Auffahrunfall | Presseportal",
    "meta": {
@@ -3157,7 +3157,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6300033",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6300033",
-   "abgerufen": "2026-10-05T12:17:23.414Z",
+   "abgerufen": "2026-10-06T12:03:16.209Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall beim Abbiegen - Eine Person schwer verletzt | Presseportal",
    "meta": {
@@ -3373,7 +3373,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6296383",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6296383",
-   "abgerufen": "2026-10-05T12:17:24.892Z",
+   "abgerufen": "2026-10-06T12:03:17.712Z",
    "status": 200,
    "titel": "POL-DN: Solide Polizeiarbeit führt zur Festnahme mehrerer Pkw-Aufbrecher | Presseportal",
    "meta": {
@@ -3579,7 +3579,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6288735",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6288735",
-   "abgerufen": "2026-10-05T12:17:26.487Z",
+   "abgerufen": "2026-10-06T12:03:19.221Z",
    "status": 200,
    "titel": "POL-DN: Ablenkung führt zu Auffahrunfall mit drei Fahrzeugen | Presseportal",
    "meta": {
@@ -3833,7 +3833,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6286506",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6286506",
-   "abgerufen": "2026-10-05T12:17:27.984Z",
+   "abgerufen": "2026-10-06T12:03:20.769Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfallflucht - 14-jähriger Radfahrer verletzt | Presseportal",
    "meta": {
@@ -4104,7 +4104,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6282600",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6282600",
-   "abgerufen": "2026-10-05T12:17:29.439Z",
+   "abgerufen": "2026-10-06T12:03:22.237Z",
    "status": 200,
    "titel": "POL-DN: Festnahme nach Unfall mit entwendetem Pkw | Presseportal",
    "meta": {
@@ -4387,7 +4387,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6269070",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6269070",
-   "abgerufen": "2026-10-05T12:17:30.951Z",
+   "abgerufen": "2026-10-06T12:03:23.679Z",
    "status": 200,
    "titel": "POL-DN: Schwer verletzt nach Auffahrunfall | Presseportal",
    "meta": {
@@ -4646,7 +4646,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6250459",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6250459",
-   "abgerufen": "2026-10-05T12:17:32.481Z",
+   "abgerufen": "2026-10-06T12:03:25.159Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall beim Abbiegen - ein Leichtverletzter | Presseportal",
    "meta": {
@@ -4892,7 +4892,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6248735",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6248735",
-   "abgerufen": "2026-10-05T12:17:33.923Z",
+   "abgerufen": "2026-10-06T12:03:26.657Z",
    "status": 200,
    "titel": "POL-DN: Leichtkraftrad entwendet - Die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -5127,7 +5127,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6246258",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6246258",
-   "abgerufen": "2026-10-05T12:17:35.343Z",
+   "abgerufen": "2026-10-06T12:03:28.206Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall im Gegenverkehr | Presseportal",
    "meta": {
@@ -5373,7 +5373,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6238991",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6238991",
-   "abgerufen": "2026-10-05T12:17:36.806Z",
+   "abgerufen": "2026-10-06T12:03:29.732Z",
    "status": 200,
    "titel": "POL-DN: Drei Verletzte bei Frontalzusammenstoß auf der B264 - die Polizei sucht ... | Presseportal",
    "meta": {
@@ -5672,7 +5672,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6237118",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6237118",
-   "abgerufen": "2026-10-05T12:17:38.303Z",
+   "abgerufen": "2026-10-06T12:03:31.304Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in Einfamilienhaus - die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -5902,7 +5902,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6235029",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6235029",
-   "abgerufen": "2026-10-05T12:17:39.766Z",
+   "abgerufen": "2026-10-06T12:03:32.768Z",
    "status": 200,
    "titel": "POL-DN: Drei Leichtverletzte, ein Pkw-Brand und hoher Sachschaden nach Verkehrsunfall | Presseportal",
    "meta": {
@@ -6164,7 +6164,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6223425",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6223425",
-   "abgerufen": "2026-10-05T12:17:41.252Z",
+   "abgerufen": "2026-10-06T12:03:34.403Z",
    "status": 200,
    "titel": "POL-DN: Werkzeuge aus Fahrzeugen in Düren und Merzenich entwendet | Presseportal",
    "meta": {
@@ -6398,7 +6398,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6221790",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6221790",
-   "abgerufen": "2026-10-05T12:17:42.666Z",
+   "abgerufen": "2026-10-06T12:03:35.859Z",
    "status": 200,
    "titel": "POL-DN: Brand in Merzenich | Presseportal",
    "meta": {
@@ -6624,7 +6624,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6220661",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6220661",
-   "abgerufen": "2026-10-05T12:17:44.201Z",
+   "abgerufen": "2026-10-06T12:03:37.935Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in Einfamilienhaus - Zeugen gesucht | Presseportal",
    "meta": {
@@ -6882,7 +6882,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6218373",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6218373",
-   "abgerufen": "2026-10-05T12:17:45.705Z",
+   "abgerufen": "2026-10-06T12:03:39.416Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall an Rosenmontag unter Alkoholeinfluss - Pkw in Grünstreifen | Presseportal",
    "meta": {
@@ -7165,7 +7165,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6207195",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6207195",
-   "abgerufen": "2026-10-05T12:17:47.185Z",
+   "abgerufen": "2026-10-06T12:03:40.901Z",
    "status": 200,
    "titel": "POL-DN: Zeugen nach Einbruch in Einfamilienhaus gesucht | Presseportal",
    "meta": {
@@ -7424,7 +7424,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6202595",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6202595",
-   "abgerufen": "2026-10-05T12:17:48.614Z",
+   "abgerufen": "2026-10-06T12:03:42.350Z",
    "status": 200,
    "titel": "POL-DN: Bei erneutem Betrugsversuch erwischt | Presseportal",
    "meta": {
@@ -7686,7 +7686,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6186971",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6186971",
-   "abgerufen": "2026-10-05T12:17:50.480Z",
+   "abgerufen": "2026-10-06T12:03:43.823Z",
    "status": 200,
    "titel": "POL-DN: Einbrecher waren auch an Weihnachten aktiv - Die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -7952,7 +7952,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6173365",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6173365",
-   "abgerufen": "2026-10-05T12:17:52.930Z",
+   "abgerufen": "2026-10-06T12:03:45.286Z",
    "status": 200,
    "titel": "POL-DN: Zu schnell unterwegs? Dann gibt's Saures! | Presseportal",
    "meta": {
@@ -8224,7 +8224,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/5775696",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/5775696",
-   "abgerufen": "2026-10-05T12:17:54.391Z",
+   "abgerufen": "2026-10-06T12:03:46.742Z",
    "status": 200,
    "titel": "POL-DN: Von der Straße abgekommen | Presseportal",
    "meta": {
@@ -8458,7 +8458,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/4285879",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/4285879",
-   "abgerufen": "2026-10-05T12:17:56.625Z",
+   "abgerufen": "2026-10-06T12:03:48.194Z",
    "status": 200,
    "titel": "POL-DN: Frontal in den Gegenverkehr | Presseportal",
    "meta": {
@@ -8673,7 +8673,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/2777591",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/2777591",
-   "abgerufen": "2026-10-05T12:17:58.067Z",
+   "abgerufen": "2026-10-06T12:03:49.732Z",
    "status": 200,
    "titel": "POL-DN: Einbruchsversuch | Presseportal",
    "meta": {
@@ -8879,7 +8879,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6330807",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6330807",
-   "abgerufen": "2026-10-05T12:17:59.550Z",
+   "abgerufen": "2026-10-06T12:03:51.226Z",
    "status": 200,
    "titel": "POL-DN: Feldbrand in Merzenich-Girbelsrath | Presseportal",
    "meta": {
@@ -9097,7 +9097,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/4054266",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/4054266",
-   "abgerufen": "2026-10-05T12:18:00.989Z",
+   "abgerufen": "2026-10-06T12:03:52.712Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in eine Gaststätte misslungen | Presseportal",
    "meta": {
@@ -9313,7 +9313,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/5726458",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/5726458",
-   "abgerufen": "2026-10-05T12:18:02.471Z",
+   "abgerufen": "2026-10-06T12:03:54.161Z",
    "status": 200,
    "titel": "POL-DN: Junger Motorradfahrer bei Alleinunfall schwer verletzt | Presseportal",
    "meta": {
@@ -9580,7 +9580,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/11559/4955488",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/11559/4955488",
-   "abgerufen": "2026-10-05T12:18:03.956Z",
+   "abgerufen": "2026-10-06T12:03:55.629Z",
    "status": 200,
    "titel": "POL-AC: Steinwürfe auf Radlader am Hambacher Forst - Baggerführer bleibt unverletzt ... | Presseportal",
    "meta": {
@@ -9834,7 +9834,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/3612667",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/3612667",
-   "abgerufen": "2026-10-05T12:18:05.419Z",
+   "abgerufen": "2026-10-06T12:03:57.083Z",
    "status": 200,
    "titel": "POL-DN: Pkw überschlagen | Presseportal",
    "meta": {
