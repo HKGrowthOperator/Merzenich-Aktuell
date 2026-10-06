@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-10-05';
+const MA_RECHTSTEXTE_VERSION = '2026-10-06';
 
 function ma_rechtstexte(): array {
     return [
@@ -32,7 +32,6 @@ function ma_rechtstexte(): array {
 /** Offene Pflichtangaben, die nur der Betreiber liefern kann (nur im Backend sichtbar). */
 function ma_rechtstexte_offen(): array {
     return [
-        'Redaktionell verantwortliche Person nach § 18 Abs. 2 MStV (Name und Anschrift) für das Impressum.',
         'Auftragsverarbeitungsvertrag mit dem Hoster (IONOS) bestätigen und die Speicherdauer der Server-Protokolle beim Hoster erfragen.',
         'Mailversand (SMTP-Anbieter) für Formular- und Kommentarbenachrichtigungen: sobald eingerichtet, Anbieter in der Datenschutzerklärung nennen.',
     ];
@@ -47,8 +46,9 @@ function ma_rechtstext_impressum(): string {
     return '<h2 id="anbieter-nach-5-ddg">Anbieter nach § 5 DDG</h2>' . ma_rechtstext_anbieter()
         . '<h2 id="kontakt">Kontakt</h2><p>E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p>'
         . '<p>Die Gesellschaft ist Anbieterin von Merzenich Aktuell. Angaben zur Gesellschaft wurden mit dem Impressum von KBS Management abgeglichen.</p>'
-        . '<h2 id="redaktionell-verantwortliche-person">Redaktionell verantwortliche Person</h2>'
-        . '<p>Die für das journalistisch-redaktionelle Angebot verantwortliche natürliche Person nach § 18 Absatz 2 MStV wird an dieser Stelle mit Name und Anschrift benannt, sobald sie von der Herausgeberin bestätigt ist.</p>'
+        . '<h2 id="redaktionell-verantwortliche-person">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>'
+        // Vorgabe Betreiber 06.10.2026: Geschäftsführer, mit der Anschrift der Gesellschaft.
+        . '<p>Anto-Sutharsan Jesuthasan<br>Rheinstr. 78a<br>51371 Leverkusen</p>'
         . '<h2 id="anzeigen">Anzeigen und gesponserte Beiträge</h2>'
         . '<p>Werbung ist als „Anzeige“ gekennzeichnet, bezahlte Unternehmensbeiträge als „Anzeige · Gesponsert“. Musteranzeigen ohne Auftraggeber tragen die Kennzeichnung „Musteranzeige“ und werben für niemanden.</p>'
         . '<h2 id="bildnachweise">Bildnachweise</h2>'
@@ -91,7 +91,7 @@ function ma_rechtstext_datenschutz(): string {
         . '<p>Unter /wp-json/ stellt WordPress eine Schnittstelle bereit, über die die Seite selbst Aufrufe, Besuche und Anzeigenkontakte zählt, das Wetter ausliefert und Push-Abonnements entgegennimmt oder löscht. Sie gibt nur veröffentlichte Inhalte aus.</p>'
         . '<h2 id="ihre-rechte">Ihre Rechte</h2>'
         . '<p>Im Rahmen der gesetzlichen Voraussetzungen bestehen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Eine Einwilligung können Sie für die Zukunft widerrufen. Sie können sich bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere der <a href="https://www.ldi.nrw.de/" target="_blank" rel="noopener">Landesbeauftragten für Datenschutz und Informationsfreiheit NRW</a>.</p>'
-        . '<p>Stand: 2. Oktober 2026.</p>';
+        . '<p>Stand: 6. Oktober 2026.</p>';
 }
 
 /* ---------------------------------------------------------- Seiten anlegen und aktualisieren */

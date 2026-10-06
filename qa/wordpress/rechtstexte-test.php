@@ -27,12 +27,12 @@ echo "Inhalt\n";
 $ds = ma_rechtstext_datenschutz(); $im = ma_rechtstext_impressum();
 pruefe('Impressum nennt KBS Management GmbH und HRB 104692', str_contains($im, 'KBS Management GmbH') && str_contains($im, 'HRB 104692'), true);
 pruefe('Impressum ohne erfundene Telefonnummer', preg_match('/Telefon|Tel\./', $im), 0);
-pruefe('Impressum: § 18 MStV offen, kein Platzhalter-Marker', str_contains($im, '§ 18 Absatz 2 MStV') && !str_contains($im, 'TODO'), true);
+pruefe('Impressum: verantwortliche Person nach § 18 MStV mit Name und Anschrift (Vorgabe Betreiber 06.10.2026)', str_contains($im, '§ 18 Abs. 2 MStV') && str_contains($im, 'Anto-Sutharsan Jesuthasan<br>Rheinstr. 78a<br>51371 Leverkusen') && !str_contains($im, 'sobald sie') && !str_contains($im, 'TODO'), true);
 pruefe('Datenschutz: Besucherzählung mit Tages-Hash und 40 Tagen', str_contains($ds, '40 Tagen') && str_contains($ds, 'Prüfwert (Hash)'), true);
 pruefe('Datenschutz: Anzeigenzählung, Wetter, Kommentare ohne IP', str_contains($ds, 'angeklickt') && str_contains($ds, 'Open-Meteo') && str_contains($ds, 'IP-Adresse wird beim Kommentieren nicht gespeichert'), true);
 pruefe('Datenschutz: Hoster IONOS, fehlende Dateien vom eigenen Server, keine Vorschauseite mehr', [str_contains($ds, 'IONOS SE'), str_contains($ds, 'Ihr Browser verbindet sich dabei nicht mit GitHub'), str_contains($ds, 'hk-growthoperator')], [true, true, false]);
 pruefe('Kein TODO auf den öffentlichen Seiten', str_contains($ds . $im, 'TODO') || str_contains($ds . $im, '[…]'), false);
-pruefe('Offene Pflichtangaben nur im Backend (3 Punkte)', count(ma_rechtstexte_offen()), 3);
+pruefe('Offene Pflichtangaben nur im Backend (2 Punkte: AV-Vertrag, Mailversand)', count(ma_rechtstexte_offen()), 2);
 
 echo "\nAnlegen und Pflegen\n";
 pruefe('Status vor dem Anlegen: fehlt', ma_rechtstext_status('impressum'), 'fehlt');
