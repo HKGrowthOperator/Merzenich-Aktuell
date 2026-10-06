@@ -1,6 +1,29 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.22.0 (Historie unten)
+7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.23.0 (Historie unten)
+
+## Neu in Plugin 1.23.0 (06.10.2026): Seite „Mailversand“
+
+Frage des Betreibers: Ist alles vorbereitet, damit Mails rausgehen, sobald die Daten da sind? Bisher gab es keine Einstellung für den Mailserver; WordPress verschickte über die PHP-Standardfunktion.
+
+- **Merzenich Aktuell → Mailversand** (`includes/mailversand.php`):
+  - Felder: Schalter, Server (Vorgabe `smtp.ionos.de`), Port 587, Verschlüsselung (STARTTLS, SSL, für Tests keine), Benutzer, Passwort, Absender-Adresse und -Name.
+  - SMTP greift nur, wenn eingeschaltet und vollständig (`phpmailer_init`, `wp_mail_from`, `wp_mail_from_name`). Sonst bleibt alles wie vorher.
+- **Passwort:**
+  - Verschlüsselt gespeichert (`sodium_crypto_secretbox`, Schlüssel aus `wp_salt('auth')`), nie im HTML.
+  - Ein leeres Feld behält das gespeicherte, „Passwort löschen“ entfernt es.
+- **Test-Mail** an die Redaktions-E-Mail. Fehler wie „Die Authentifizierung war nicht möglich“ erscheinen auf der Seite, ohne Passwort.
+- **Dashboard:** neue Zeile „Mailversand“ mit Stand und Link.
+- **Rechtstexte:** Der offene Punkt beschreibt den Weg (Postfach bei IONOS, hier eintragen, dann Datenschutzerklärung ergänzen). Den veralteten Satz zur § 18-Person auf der Rechtstexte-Seite habe ich entfernt.
+
+**Geprüft:**
+- `qa/wordpress/mailversand-test.php` (neu).
+- Lokal mit einem Test-Mailserver:
+  - Test-Mail kommt mit „Merzenich Aktuell <redaktion@…>“ an der Redaktions-E-Mail an.
+  - Ein falsches Passwort zeigt die Fehlermeldung.
+  - Erneutes Speichern mit leerem Passwortfeld behält das Passwort.
+  - Ausschalten stellt den Standard wieder her.
+- Live ist nichts eingetragen, solange die IONOS-Daten fehlen.
 
 ## Neu in Theme 21.13.0 / Plugin 1.22.0 (06./07.10.2026): Abnahme für die Übergabe
 

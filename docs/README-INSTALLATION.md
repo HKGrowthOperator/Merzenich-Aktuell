@@ -1,6 +1,6 @@
 # Merzenich Aktuell – WordPress einrichten und aktualisieren
 
-Stand 7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.22.0 · live auf merzenich-aktuell.de (IONOS, WordPress 7.1)
+Stand 7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.23.0 · live auf merzenich-aktuell.de (IONOS, WordPress 7.1)
 
 Die Bedienung für die Redaktion steht in `UEBERGABE-KBS.md`, die Änderungen je Version in `WORDPRESS-LIEFERUNG.md`. Die frühere Fassung dieser Anleitung (Theme 20.2, September 2026) ist überholt.
 
@@ -37,7 +37,17 @@ Theme und Plugin gehören zusammen: In `WORDPRESS-LIEFERUNG.md` steht je Version
 
 ## Mailversand
 
-Formulare, Partner-Anträge und Kommentar-Benachrichtigungen nutzen `wp_mail`. Für verlässliche Zustellung SMTP über das IONOS-Postfach einrichten (etwa mit einem SMTP-Plugin) und SPF/DKIM/DMARC der Domain prüfen. Empfänger der Formulare: Feld „Redaktions-E-Mail“ auf der Seite **Merzenich Aktuell**, leer gilt die Admin-E-Mail. Einsendungen landen unabhängig vom Mailversand immer im **Eingang**.
+Formulare, Partner-Anträge und Kommentar-Benachrichtigungen nutzen `wp_mail`. Für verlässliche Zustellung unter **Merzenich Aktuell → Mailversand** (Plugin 1.23.0) das IONOS-Postfach eintragen:
+
+| Feld | Wert |
+|---|---|
+| Server | `smtp.ionos.de` (vorbelegt) |
+| Port / Verschlüsselung | 587 STARTTLS (vorbelegt), alternativ 465 SSL |
+| Benutzer | vollständige Postfach-Adresse, z. B. `redaktion@merzenich-aktuell.de` |
+| Passwort | Postfach-Passwort. Gespeichert verschlüsselt (Schlüssel aus den Sicherheitsschlüsseln in `wp-config.php`). Werden diese Schlüssel geändert, das Passwort neu eintragen. |
+| Absender | leer = Benutzer; muss zum Postfach passen |
+
+Dann „eingeschaltet“ ankreuzen, speichern und „Test-Mail schicken“. Die Test-Mail geht an die Redaktions-E-Mail (Feld auf der Seite **Merzenich Aktuell**, leer = Admin-E-Mail). Solange der Schalter aus oder etwas unvollständig ist, bleibt der Versand über die PHP-Standardfunktion. SPF/DKIM/DMARC der Domain bei IONOS prüfen. Einsendungen landen unabhängig vom Mailversand immer im **Eingang**.
 
 ## Prüfen nach einer Änderung
 

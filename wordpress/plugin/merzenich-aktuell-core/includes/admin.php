@@ -45,6 +45,8 @@ function ma_dashboard(): void {
     echo '<tr><th>Beiträge ohne Bild</th><td>'.esc_html((string)ma_count_posts_without_thumbnail()).'</td></tr>';
     echo '<tr><th>Unreviewed Drafts</th><td>'.esc_html((string)ma_count_unreviewed()).'</td></tr>';
     echo '<tr><th>Partner-Einreichungen</th><td><strong>'.esc_html((string)$pending_partner).'</strong> · <a href="'.esc_url(admin_url('users.php?page=ma-partner-zugaenge')).'">prüfen</a></td></tr>';
+    // Mailversand (1.23.0): ohne Postfach landen Formular-Mails oft im Spam.
+    if (function_exists('ma_mail_status_text')) { $m = ma_mail_einstellungen(); echo '<tr><th>Mailversand</th><td>'.(ma_mail_bereit($m) ? '' : '<strong style="color:#b71920">').esc_html(ma_mail_status_text($m)).(ma_mail_bereit($m) ? '' : '</strong>').' · <a href="'.esc_url(admin_url('admin.php?page=ma-mailversand')).'">einrichten</a></td></tr>'; }
     echo '<tr><th>Kommentare zur Freigabe</th><td><strong>'.esc_html((string)$pending_comments).'</strong> · <a href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Sammelfreigabe</a></td></tr>';
     echo '</tbody></table>';
     echo '<h2>Redaktions-E-Mail</h2><form method="post">';

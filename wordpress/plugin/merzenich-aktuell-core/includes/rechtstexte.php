@@ -33,7 +33,7 @@ function ma_rechtstexte(): array {
 function ma_rechtstexte_offen(): array {
     return [
         'Auftragsverarbeitungsvertrag mit dem Hoster (IONOS) bestätigen und die Speicherdauer der Server-Protokolle beim Hoster erfragen.',
-        'Mailversand (SMTP-Anbieter) für Formular- und Kommentarbenachrichtigungen: sobald eingerichtet, Anbieter in der Datenschutzerklärung nennen.',
+        'Mailversand für Formular- und Kommentarbenachrichtigungen: Postfach bei IONOS anlegen und unter Merzenich Aktuell → Mailversand eintragen; danach in der Datenschutzerklärung nennen, dass die Mails über den Mailserver der IONOS SE gehen.',
     ];
 }
 
@@ -186,7 +186,7 @@ function ma_rechtstexte_seite_admin(): void {
         echo '<button class="button' . ($status === 'aktuell' ? '' : ' button-primary') . '">Fassung ' . esc_html(MA_RECHTSTEXTE_VERSION) . ' einspielen</button></form></td></tr>';
     }
     echo '</tbody></table>';
-    echo '<h2>Offene Pflichtangaben</h2><p>Diese Punkte kann nur der Betreiber liefern. Sie stehen nicht auf den öffentlichen Seiten; das Impressum nennt die § 18 MStV-Person als „wird benannt, sobald bestätigt“.</p><ol>';
+    echo '<h2>Offene Pflichtangaben</h2><p>Diese Punkte kann nur der Betreiber liefern. Sie stehen nicht auf den öffentlichen Seiten.</p><ol>';
     foreach (ma_rechtstexte_offen() as $o) echo '<li>' . esc_html($o) . '</li>';
     echo '</ol><h2>Was die Datenschutzerklärung beschreibt</h2><p class="description">Aufrufzählung (statistik.php), Besucherzählung mit Tages-Hash und Löschung nach 40 Tagen (live.php), Anzeigenzählung (werbung-stat.php), Wetter über den eigenen Server (Open-Meteo), Formulare mit Eingang und Mail (forms.php, eingang.php), Kommentare ohne IP-Speicherung und mit Vorabmoderation (comments.php), Zugänge und Verlauf (redaktion.php), lokale Speicherung im Browser (einwilligung.js, v20.js). Ändert sich eine dieser Funktionen, gehört die Erklärung angepasst (MA_RECHTSTEXTE_VERSION hochzählen).</p></div>';
 }

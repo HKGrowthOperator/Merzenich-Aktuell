@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Bedienung für die Redaktion (Übergabe an KBS)
 
-Stand 7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.22.0
+Stand 7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.23.0
 
 Die Seite läuft als WordPress auf **merzenich-aktuell.de** (IONOS). Alles Redaktionelle passiert im Backend unter **merzenich-aktuell.de/wp-admin**, linkes Menü **Merzenich Aktuell**. Diese Anleitung beschreibt die täglichen Handgriffe. Technik und Versionen stehen in `WORDPRESS-LIEFERUNG.md`, die Einrichtung in `README-INSTALLATION.md`.
 
@@ -74,7 +74,7 @@ Klicks und Einblendungen je Anzeige stehen unter **Statistik**.
 ## 8. Was nur der Betreiber erledigen kann
 
 - [ ] Passwort des Kontos „HK Growth“ ändern und eigene Konten für die Redaktion anlegen (Benutzer → Neu).
-- [ ] Mailversand über das IONOS-Postfach einrichten (SMTP), damit Formular- und Kommentar-Mails zuverlässig ankommen.
+- [ ] Mailversand einrichten, damit Formular- und Kommentar-Mails zuverlässig ankommen: Postfach im IONOS-Kundenkonto anlegen, unter **Merzenich Aktuell → Mailversand** die E-Mail-Adresse als Benutzer und das Postfach-Passwort eintragen (Server `smtp.ionos.de` und Port 587 sind vorbelegt), „eingeschaltet“ ankreuzen, speichern, **Test-Mail schicken**. Danach in der Datenschutzerklärung ergänzen, dass die Mails über den Mailserver der IONOS SE gehen.
 - [ ] Postfach **redaktion@merzenich-aktuell.de** einrichten und auf der Seite **Merzenich Aktuell** (Dashboard, Feld „Redaktions-E-Mail“) eintragen. Dorthin gehen dann alle Formulare und Partner-Anträge; bis dahin an die Admin-E-Mail.
 - [ ] Vertrag zur Auftragsverarbeitung (AV-Vertrag) mit IONOS im IONOS-Kundenkonto abschließen.
 - [ ] Google Search Console: News-Sitemap `https://merzenich-aktuell.de/news-sitemap.xml` einreichen. Google Publisher Center: Publikation anlegen (Schritte in `GOOGLE-NEWS.md`).
@@ -91,5 +91,5 @@ Klicks und Einblendungen je Anzeige stehen unter **Statistik**.
 | Neue Meldungen kommen nicht an | Merzenich Aktuell → Abgleich → „Jetzt abgleichen“. Die Seite zeigt den letzten Lauf und Fehler. |
 | Eine veröffentlichte Meldung ist nach dem Speichern verschwunden | Sie steht wieder in den **Freigaben**: Einigen älteren Meldungen aus der Startphase fehlen die Prüfhäkchen (Datum, Ort, Human Review), und die Veröffentlichungssperre hält sie beim Speichern an. Dort prüfen und freigeben. Das Datum bleibt erhalten. |
 | Eine Seite zeigt Altes | Ein paar Minuten warten (Zwischenspeicher), dann im Browser neu laden. |
-| Formular-Mails kommen nicht an | SMTP prüfen (Punkt 8), Spam-Ordner prüfen. Einsendungen stehen trotzdem im Eingang. |
+| Formular-Mails kommen nicht an | Merzenich Aktuell → Mailversand: Stand prüfen und „Test-Mail schicken“; die Seite zeigt den Fehler (etwa falsches Passwort). Spam-Ordner prüfen. Einsendungen stehen trotzdem im Eingang. |
 | Etwas sieht falsch aus | Bildschirmfoto mit Adresse an HK Growth Operator. |
