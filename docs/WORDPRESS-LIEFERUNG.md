@@ -54,6 +54,16 @@ Auftrag des Betreibers (06.10.): die ganze Seite bis Mittwoch fertig machen. Gru
 - alle übrigen PHP-Tests, dazu `node deploy/kette.mjs --check`
 - lokal alle sechs Einzelseiten und eine Vereinsseite auf Handy und Computer
 
+**Live geprüft (06.10.2026, nach dem Upload):**
+- Vollprüfung: 491 Seiten, alle 200, keine interne Umleitung, kein toter Link, jede Seite mit Beschreibung ab 70 Zeichen, keine doppelten Titel, genau eine H1.
+- 40 Seitentypen auf Handy und Computer: kein altes Stylesheet, keine JavaScript-Fehler, kein seitliches Verrutschen.
+- `http://` → 301 `https://`, Sicherheits-Kopfzeilen gesetzt, `/readme.html` 403.
+- Impressum mit § 18, alle Redaktionsseiten auf Fassung 2026-10-06.
+- `/sport/`: 5. Platz, 15 Punkte, 0:5 in Barmen, nächstes Spiel 09.10.
+- Ladegewicht nach vollem Scrollen: `/unternehmen/` 1,2 MB (vorher 4,3), `/betriebe/` 1,3 MB (vorher 5,1), Startseite Handy 5,6 MB (vorher 9,0).
+- Teilen-Zuschnitte entstehen auf dem Server, der Nachlauf über WP-Cron läuft.
+- Beim Test der Zuschnitte wurde „Rauch über Bürgewald“ (Einsatz 134) über REST ohne Änderung gespeichert. Der Beitrag war ohne die Prüfhäkchen Datum, Ort und Human Review veröffentlicht, deshalb setzte ihn die Veröffentlichungssperre auf Entwurf. Nach dem Abgleich mit der Quelle (Heimat-Info der Feuerwehr) ist er über die Freigaben wieder veröffentlicht: Datum unverändert 28.09., nur Rubrik. Hinweis dazu in `UEBERGABE-KBS.md`.
+
 ## Neu in Theme 21.12.1 (06.10.2026): Bild auf der Terminseite
 
 Das Bild einer Terminseite hatte keine Höhe (Bildrahmen ohne Seitenverhältnis) und war unsichtbar. Es steht jetzt im Format 3:2 (`plattform.css`, `.event-page .art-figure`).

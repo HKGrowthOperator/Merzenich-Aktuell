@@ -89,6 +89,7 @@ Klicks und Einblendungen je Anzeige stehen unter **Statistik**.
 | Was | Was tun |
 |---|---|
 | Neue Meldungen kommen nicht an | Merzenich Aktuell → Abgleich → „Jetzt abgleichen“. Die Seite zeigt den letzten Lauf und Fehler. |
+| Eine veröffentlichte Meldung ist nach dem Speichern verschwunden | Sie steht wieder in den **Freigaben**: Einigen älteren Meldungen aus der Startphase fehlen die Prüfhäkchen (Datum, Ort, Human Review), und die Veröffentlichungssperre hält sie beim Speichern an. Dort prüfen und freigeben. Das Datum bleibt erhalten. |
 | Eine Seite zeigt Altes | Ein paar Minuten warten (Zwischenspeicher), dann im Browser neu laden. |
 | Formular-Mails kommen nicht an | SMTP prüfen (Punkt 8), Spam-Ordner prüfen. Einsendungen stehen trotzdem im Eingang. |
 | Etwas sieht falsch aus | Bildschirmfoto mit Adresse an HK Growth Operator. |
