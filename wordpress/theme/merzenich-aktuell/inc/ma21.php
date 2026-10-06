@@ -74,7 +74,10 @@ function ma21_vorlage(string $name): string {
 /** Kopf-Assets: Icons, Schrift-Preloads und das CSS-Buendel (deploy/css-bundle.mjs). bundle-start.css nur auf der Startseite, bundle.css sonst; die Vorlage traegt beide (data-ma-css, deploy/wp-theme.mjs). */
 function ma21_kopf_assets(): string {
     $weg = is_front_page() ? 'seite' : 'start';
-    return (string) preg_replace('/<link rel="stylesheet"[^>]*data-ma-css="' . $weg . '"[^>]*>\n?/', '', ma21_vorlage('kopf-assets.html'));
+    $html = (string) preg_replace('/<link rel="stylesheet"[^>]*data-ma-css="' . $weg . '"[^>]*>\n?/', '', ma21_vorlage('kopf-assets.html'));
+    // Symbole (21.12.0): die Links der statischen Seite durch die eigenen ersetzen.
+    $html = (string) preg_replace('#<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>\n?#', '', $html);
+    return ma21_symbol_links() . $html;
 }
 
 /* LCP-Bild vorladen (wp_head, frueh): Aufmacher der Startseite, Bild einer Meldung oder eines Vereinsprofils, mit denselben srcset/sizes wie das <img>. */
@@ -417,6 +420,8 @@ function ma21_legacy(): bool {
     if (is_singular('ma_club')) return false;
     // Stellen, Immobilien und Tipps haben seit 21.10.0 eigene Übersichten im neuen Markup (inc/markt.php).
     if (is_post_type_archive(['ma_job', 'ma_property', 'ma_tip'])) return false;
+    // Termine (Liste und Seite), Trauer-, Familienanzeigen und Betriebe seit 21.12.0 (inc/termine.php, inc/markt.php).
+    if (is_singular('ma_event') || is_post_type_archive(['ma_event', 'ma_obituary', 'ma_family_notice', 'ma_business'])) return false;
     return is_singular($alt) || is_post_type_archive($alt);
 }
 
@@ -1138,13 +1143,78 @@ add_action('template_redirect', function (): void {
     echo $daten; exit;
 });
 
-/* Symbole und Feed (21.11.0): /favicon.ico zeigte das WordPress-Logo, /apple-touch-icon.png fehlte;
-   der RSS-Feed war im Seitenkopf nicht angemeldet. */
-add_action('do_faviconico', function (): void { wp_redirect(home_url('/assets/img/avatar-1024.png'), 301, 'Merzenich Aktuell'); exit; });
+/* Symbole und Feed. Seit 21.12.0 liefert die Seite /favicon.ico, /apple-touch-icon.png
+   und /manifest.webmanifest selbst aus (vorher Umleitungen auf das 1024er PNG; Handys
+   behielten dann gespeicherte Symbole früherer Besuche, Meldung Betreiber 06.10.2026).
+   Dateien: chatgpt-site/assets/img/ aus deploy/symbole.mjs. */
+const MA21_SYMBOLE = [
+    '/favicon.ico' => ['img/favicon.ico', 'image/x-icon'],
+    '/apple-touch-icon.png' => ['img/icon-180.png', 'image/png'],
+    '/apple-touch-icon-precomposed.png' => ['img/icon-180.png', 'image/png'],
+];
+
+/** Datei aus static/ (Theme-Paket) als Antwort, kurz zwischengespeichert. */
+function ma21_symbol_senden(string $datei, string $typ): void {
+    $pfad = get_template_directory() . '/static/' . $datei;
+    if (!is_readable($pfad)) { wp_redirect(home_url('/assets/' . $datei), 302, 'Merzenich Aktuell'); exit; }
+    status_header(200);
+    header('Content-Type: ' . $typ);
+    header('Content-Length: ' . (string) filesize($pfad));
+    ma21_cache(DAY_IN_SECONDS);
+    readfile($pfad);
+    exit;
+}
+
+/** Web-Manifest für Android und „Zum Home-Bildschirm“ (Symbole mit neuen Namen, damit Zwischenspeicher sie neu laden). */
+function ma21_manifest(): array {
+    return [
+        'name' => 'Merzenich Aktuell', 'short_name' => 'Merzenich',
+        'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
+        'start_url' => '/?source=pwa', 'scope' => '/', 'display' => 'standalone', 'lang' => 'de',
+        'background_color' => '#fdfdfc', 'theme_color' => '#fdfdfc', 'categories' => ['news'],
+        'icons' => [
+            ['src' => '/assets/img/icon-192.png', 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any maskable'],
+            ['src' => '/assets/img/icon-512.png', 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any maskable'],
+            ['src' => '/assets/img/icon-180.png', 'sizes' => '180x180', 'type' => 'image/png', 'purpose' => 'any'],
+        ],
+        'shortcuts' => [['name' => 'Blaulicht', 'url' => '/blaulicht/'], ['name' => 'Termine', 'url' => '/termine/'], ['name' => 'Meldung senden', 'url' => '/meldung-senden/']],
+    ];
+}
+
+add_action('do_faviconico', function (): void { ma21_symbol_senden(...MA21_SYMBOLE['/favicon.ico']); });
 add_action('template_redirect', function (): void {
     $pfad = (string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
-    if (in_array($pfad, ['/apple-touch-icon.png', '/apple-touch-icon-precomposed.png'], true)) { wp_redirect(home_url('/assets/img/avatar-1024.png'), 301, 'Merzenich Aktuell'); exit; }
+    if (isset(MA21_SYMBOLE[$pfad])) ma21_symbol_senden(...MA21_SYMBOLE[$pfad]);
+    if ($pfad === '/manifest.webmanifest' || $pfad === '/site.webmanifest') {
+        status_header(200);
+        header('Content-Type: application/manifest+json; charset=utf-8');
+        ma21_cache(DAY_IN_SECONDS);
+        echo wp_json_encode(ma21_manifest(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
 }, 0);
+
+/** Symbol-Links im Kopf (ersetzen die drei Links aus vorlagen/kopf-assets.html, siehe ma21_kopf_assets). */
+function ma21_symbol_links(): string {
+    return '<link rel="icon" href="/favicon.ico" sizes="48x48">' . "\n"
+        . '<link rel="icon" href="/assets/img/favicon.svg?v=2" type="image/svg+xml">' . "\n"
+        . '<link rel="icon" href="/assets/img/favicon-32.png?v=2" type="image/png" sizes="32x32">' . "\n"
+        . '<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" sizes="180x180">' . "\n"
+        . '<link rel="manifest" href="/manifest.webmanifest">' . "\n"
+        . '<meta name="apple-mobile-web-app-title" content="Merzenich Aktuell">' . "\n";
+}
+
+/* WordPress selbst (Login, RSS, REST „site_icon_url“) meldet dasselbe Symbol. */
+add_filter('get_site_icon_url', function (string $url, int $groesse): string {
+    return home_url($groesse > 0 && $groesse <= 48 ? '/assets/img/favicon-32.png' : ($groesse <= 180 ? '/apple-touch-icon.png' : '/assets/img/icon-512.png'));
+}, 10, 2);
+// Im Seitenkopf stehen die eigenen Links (ma21_kopf_assets); WordPress' eigene nur auf Login und Verwaltung.
+add_action('init', function (): void { remove_action('wp_head', 'wp_site_icon', 99); });
+add_filter('rest_index', function ($antwort) {
+    if ($antwort instanceof WP_REST_Response) { $d = $antwort->get_data(); $d['site_icon_url'] = home_url('/assets/img/icon-512.png'); $antwort->set_data($d); }
+    return $antwort;
+});
+
 add_action('wp_head', function (): void {
     echo '<link rel="alternate" type="application/rss+xml" title="Merzenich Aktuell" href="' . esc_url(home_url('/feed/')) . '">' . "\n";
 }, 2);

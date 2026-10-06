@@ -1,6 +1,22 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-5. Oktober 2026 · Theme 21.11.3 · Core-Plugin 1.21.1 (Historie unten)
+6. Oktober 2026 · Theme 21.12.0 · Core-Plugin 1.21.1 (Historie unten)
+
+## Neu in Theme 21.12.0 (06.10.2026): Webseiten-Symbol „M“ und Handy-Ansicht ohne alte Vorlagen
+
+Meldungen des Betreibers: Als Webseiten-Symbol erschien noch ein SPD-Logo. Außerdem sollten die mobilen Anpassungen gemacht werden.
+- **Symbol:**
+  - `/favicon.ico` (16/32/48) und `/apple-touch-icon.png` (180×180) liefert die Seite jetzt selbst aus. Bisher waren beides nur Umleitungen auf das 1024er PNG.
+  - Neu ist `/manifest.webmanifest` mit 192/512.
+  - Die Kopf-Links tragen neue Dateinamen, damit Zwischenspeicher sie neu laden.
+  - Login, RSS und REST melden dasselbe „M“ (`get_site_icon_url`).
+  - Die Dateien entstehen mit `NODE_PATH=$(npm root -g) node deploy/symbole.mjs` aus `favicon.svg` bzw. `avatar-1024.png`.
+  - Bereits gespeicherte Symbole erneuert ein iPhone nicht von selbst. Dafür das Lesezeichen bzw. das Symbol auf dem Home-Bildschirm neu anlegen oder die Website-Daten löschen.
+- **Neue Vorlagen:** Diese Seiten liefen über die alte Vorlage (eigene Schrift, dicke Linien, keine Brotkrumen) und sehen jetzt aus wie die statische Seite:
+  - **Termine:** Liste mit Filter nach Zeitraum, Ort und Kategorie (`assets/v20.js`) und Knöpfen Details/Kalender/Quelle. Terminseite mit Faktenblock, „In den Kalender“, Karte, Quelle und „Weitere Termine“. Code: `inc/termine.php`, `archive-ma_event.php`, `single-ma_event.php`.
+  - **Traueranzeigen und Familienanzeigen:** neuer Seitenkopf, veröffentlichte Anzeigen als Zeilen, Verweis auf das Anzeigenformular mit Vorauswahl.
+  - **/betriebe/ (Branchenbuch):** echte Einträge als Zeilen, rechts gekennzeichnete Musterprofile statt acht gleicher Kästen „Platz frei“, Formular „Betrieb eintragen“.
+- Test: `qa/wordpress/termine-test.php`.
 
 ## Neu in Theme 21.11.3 (05.10.2026): Handy wie heute Morgen
 

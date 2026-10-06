@@ -130,3 +130,9 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .ma-notdienste a{text-decoration:none;color:var(--red,#971725)}
 .ma-notdienste b{font-size:22px;font-weight:800;margin-right:6px}
 .ma-notdienste span{font-size:13.5px;color:var(--muted,#6b6b6b)}
+
+/* Anzeigen- und Branchenbuch-Seiten im neuen Markup (21.12.0): Formular unter der Liste */
+.anzeige-formular{margin-top:40px;padding-top:28px;border-top:1px solid var(--line,#e2ddd3);scroll-margin-top:120px}
+.anzeige-formular h2{margin:6px 0 8px}
+.anzeige-formular>.p{margin:0 0 18px;color:var(--muted,#6b6b6b);max-width:62ch}
+.termin-vorbei{margin:0 0 18px;padding:12px 14px;border-left:3px solid var(--red,#971725);background:var(--soft,#f5f4f1)}

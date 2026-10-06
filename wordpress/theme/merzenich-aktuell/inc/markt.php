@@ -208,3 +208,90 @@ function ma21_menue_firmen(): array {
     }
     return $firmen;
 }
+
+/* ------------------------------------------------------------------------
+ * Traueranzeigen, Familienanzeigen und Branchenbuch (/betriebe/) im neuen
+ * Markup (21.12.0), wie die statischen Seiten. Bis 21.11 liefen sie über
+ * archive-alt.php; /betriebe/ zeigte achtmal denselben Kasten „Platz frei“
+ * (Meldung Betreiber 06.10.2026: auf dem Handy wie eine andere Website).
+ * ---------------------------------------------------------------------- */
+
+const MA21_ANZEIGEN = [
+    'ma_obituary' => ['h1' => 'Traueranzeigen', 'desc' => 'In stillem Gedenken.', 'art' => 'Traueranzeige',
+        'aufgeben' => 'Traueranzeige aufgeben', 'leer' => 'Zurzeit liegen keine veröffentlichten Traueranzeigen vor.',
+        'formtext' => 'Traueranzeige, Danksagung oder Jahrgedächtnis: Die Redaktion veröffentlicht sie nur mit Ihrer Zustimmung und so, wie Sie sie freigeben. Für Rückfragen brauchen wir eine Telefonnummer.'],
+    'ma_family_notice' => ['h1' => 'Familienanzeigen', 'desc' => 'Geburt, Hochzeit, Jubiläum und Danksagung.', 'art' => 'Familienanzeige',
+        'aufgeben' => 'Familienanzeige aufgeben', 'leer' => 'Zurzeit liegen keine veröffentlichten Familienanzeigen vor.',
+        'formtext' => 'Geburt, Hochzeit, Jubiläum oder Glückwunsch: Die Redaktion prüft jede Anzeige und veröffentlicht sie erst nach Ihrer Freigabe.'],
+];
+
+/** Eine veröffentlichte Anzeige als Zeile (Markup der Marktseiten). */
+function ma21_anzeige_zeile(WP_Post $p, string $marke): string {
+    $url = esc_url(get_permalink($p));
+    $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 32, ' …');
+    return '<article class="event-row markt-row"><span class="d"><b>' . esc_html(get_the_date('j', $p)) . '</b><span>' . esc_html(MA21_MON[(int) get_the_date('n', $p) - 1]) . '</span></span>'
+        . '<div class="info"><span class="eyebrow">' . esc_html($marke . ' · ' . (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich')) . '</span>'
+        . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
+        . ($text !== '' ? '<p class="ev-desc">' . esc_html($text) . '</p>' : '')
+        . '<div class="meta"><span>Veröffentlicht ' . esc_html(get_the_date('d.m.Y', $p)) . '</span></div></div>'
+        . '<div class="act"><a href="' . $url . '">Ansehen</a></div></article>';
+}
+
+/** Seite /traueranzeigen/ bzw. /familienanzeigen/. */
+function ma21_anzeigen_seite(string $typ): void {
+    $k = MA21_ANZEIGEN[$typ];
+    $eigene = get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 40, 'orderby' => 'date', 'order' => 'DESC']);
+    echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html($k['h1']) . '</span></nav>'
+        . '<span class="eyebrow">Anzeigen</span><h1>' . esc_html($k['h1']) . '</h1><p class="desc">' . esc_html($k['desc']) . '</p>'
+        . '<p class="count-line"><a href="' . esc_url(home_url('/anzeigen/aufgeben/?art=' . $k['art'])) . '">' . esc_html($k['aufgeben']) . '</a></p></div></div>';
+    echo '<section class="section"><div class="shell"><div class="narrow">';
+    if ($eigene) {
+        echo '<div class="event-list markt-liste">';
+        foreach ($eigene as $p) echo ma21_anzeige_zeile($p, $k['art']);
+        echo '</div>';
+    }
+    echo '<div class="info-prose">';
+    if ($typ === 'ma_obituary') {
+        echo '<p>Merzenich Aktuell veröffentlicht keine Traueranzeigen aus anderen Portalen. Traueranzeigen gehören den Familien, die sie aufgegeben haben. Aktuelle Anzeigen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald finden Sie bei den Portalen der Zeitungen:</p>'
+            . '<ul><li><a href="https://www.aachen-gedenkt.de/traueranzeigen-suche/merzenich" target="_blank" rel="noopener noreferrer nofollow">Aachen gedenkt: Traueranzeigen mit Ortsbezug Merzenich</a> <span class="muted">· Aachener Zeitung, Dürener Zeitung, Zeitung am Sonntag</span></li>'
+            . '<li><a href="https://www.wirtrauern.de/traueranzeigen-suche/merzenich" target="_blank" rel="noopener noreferrer nofollow">WirTrauern: Traueranzeigen mit Ortsbezug Merzenich</a> <span class="muted">· Achtung: auch Zülpich-Merzenich im Kreis Euskirchen</span></li></ul>';
+    } elseif (!$eigene) {
+        echo '<p>' . esc_html($k['leer']) . '</p>';
+    }
+    // Die Auswahl „Traueranzeige / Danksagung / …“ setzt assets/app.js über die Liste (führt zum Formular mit Vorauswahl).
+    echo '<p>' . esc_html($k['formtext']) . ' <a href="' . esc_url(home_url('/anzeigen/aufgeben/?art=' . $k['art'])) . '">' . esc_html($k['aufgeben']) . '</a>.</p>';
+    echo '</div></div></div></section>';
+    echo ma21_werbung('artikel');
+}
+
+/** Ein Betrieb (ma_business, nur mit Einwilligung veröffentlicht) als Zeile. */
+function ma21_betrieb_zeile(WP_Post $p): string {
+    $f = function_exists('ma_business_profile') ? (array) ma_business_profile($p->ID) : [];
+    $url = esc_url(get_permalink($p));
+    $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 28, ' …');
+    $fakten = array_filter([(string) ($f['adresse'] ?? ''), (string) ($f['telefon'] ?? '')]);
+    return '<article class="event-row job-row markt-row" data-ort="' . esc_attr(ma21_ort($p)) . '"><span class="d job-d"><b>' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . '</b></span>'
+        . '<div class="info"><span class="eyebrow">' . esc_html((string) ($f['ortsteil'] ?? '') ?: (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich')) . '</span>'
+        . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
+        . ($text !== '' ? '<p class="ev-desc">' . esc_html($text) . '</p>' : '')
+        . ($fakten ? '<div class="meta"><span>' . implode('</span><span>', array_map('esc_html', $fakten)) . '</span></div>' : '') . '</div>'
+        . '<div class="act"><a href="' . $url . '">Profil</a>' . (!empty($f['website']) ? '<a href="' . esc_url((string) $f['website']) . '" target="_blank" rel="noopener">Website ↗</a>' : '') . '</div></article>';
+}
+
+/** Seite /betriebe/ (Branchenbuch). */
+function ma21_betriebe_seite(): void {
+    $betriebe = get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 200, 'orderby' => 'title', 'order' => 'ASC']);
+    echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Lokale Betriebe</span></nav>'
+        . '<span class="eyebrow">Branchenbuch</span><h1>Lokale Betriebe in Merzenich</h1><p class="desc">Einkaufen, Handwerk, Gastronomie, Gesundheit und Dienstleistungen aus der Gemeinde Merzenich. Einträge sind kostenlos, hervorgehobene Einträge sind als Anzeige gekennzeichnet.</p>'
+        . '<p class="count-line"><a href="#partner-antrag">Betrieb eintragen</a> · <a href="' . esc_url(home_url('/unternehmen/')) . '">Unternehmen</a></p></div></div>';
+    echo '<section class="section"><div class="shell"><div class="content-grid"><div class="event-list markt-liste"><h2 class="sr-only">Verzeichnis</h2>';
+    if ($betriebe) foreach ($betriebe as $p) echo ma21_betrieb_zeile($p);
+    else echo '<p class="no-result">Noch keine Einträge. Betriebe aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald tragen sich kostenlos ein: <a href="#partner-antrag">Betrieb eintragen</a>. Jeder Eintrag erscheint erst mit Einwilligung des Betriebs und nach Prüfung durch die Redaktion.</p>';
+    echo '</div><aside class="sidebar">' . ma21_musterprofile_html(count($betriebe), '#partner-antrag') . '</aside></div>';
+    if (shortcode_exists('ma_partner_antrag')) {
+        echo '<section id="partner-antrag" class="anzeige-formular"><span class="eyebrow">Branchenbuch</span><h2>Betrieb eintragen</h2><p class="p">Name, Adresse, Öffnungszeiten und Kontakt: Die Redaktion meldet sich per E-Mail und veröffentlicht den Eintrag erst nach Ihrer Freigabe. Der einfache Eintrag ist kostenlos.</p>'
+            . do_shortcode('[ma_partner_antrag typ="unternehmen"]') . '</section>';
+    }
+    echo '</div></section>';
+    echo ma21_werbung('artikel');
+}
