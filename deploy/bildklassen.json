@@ -261,6 +261,18 @@
     "wirtschaft.arbeitgeber.stollenwerk": {
       "titel": "Lokaler Arbeitgeber Stollenwerk in Girbelsrath; ohne freigegebenes Werksfoto Ortsansicht statt sachfremdem Wirtschaftsmotiv",
       "motive": []
+    },
+    "leben.blutspende": {
+      "titel": "Blutspendetermin im Bürgerhaus – ohne Originalfoto kein nachgestelltes Spendenmotiv",
+      "motive": []
+    },
+    "vereine.hitnight": {
+      "titel": "Abendveranstaltung der Golzheimer Schützen – ohne Freigabe kein fremdes Eventfoto",
+      "motive": []
+    },
+    "leben.dorfwettbewerb": {
+      "titel": "Dorfwettbewerb 2027 – lokale Ortsansicht statt Abbildung fremder Wettbewerbsteilnehmer",
+      "motive": []
     }
   }
 }
