@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Bedienung für die Redaktion (Übergabe an KBS)
 
-Stand 7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.1
+Stand 7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.0
 
 Die Seite läuft als WordPress auf **merzenich-aktuell.de** (IONOS). Alles Redaktionelle passiert im Backend unter **merzenich-aktuell.de/wp-admin**, linkes Menü **Merzenich Aktuell**. Diese Anleitung beschreibt die täglichen Handgriffe. Technik und Versionen stehen in `WORDPRESS-LIEFERUNG.md`, die Einrichtung in `README-INSTALLATION.md`.
 
@@ -16,6 +16,7 @@ Die Seite läuft als WordPress auf **merzenich-aktuell.de** (IONOS). Alles Redak
 | Startseite anordnen, Aufmacher festsetzen | Merzenich Aktuell → **Startseite & Ressorts** | bei Bedarf |
 | Stellen und Immobilien | **Stellen**, **Immobilien** (kommen von selbst) | wöchentlich ansehen |
 | Fotos in die Bildpools | Medien → **Bildpools** | bei Bedarf |
+| Redakteure als Autoren anlegen | Benutzer → **Neu**, Häkchen „Als Autor zeigen“ | einmal je Person |
 | Werbung schalten | **Werbung** und Werbung → **Werbeplätze** | bei Buchung |
 | Zahlen zu Aufrufen und Anzeigen | Merzenich Aktuell → **Statistik** | wöchentlich |
 
@@ -97,7 +98,23 @@ Jede Meldung braucht ein Bild mit geklärten Rechten. Fehlt ein eigenes Foto, ni
 - Neue Fotos: hochladen, Urheber, Quelle und Nutzungsgrundlage eintragen, Pool eintragen, Rechteprüfung auf „Geprüft“ stellen. Was fehlt, steht in `FOTOWUNSCHLISTE.md`.
 - Fotos mit „Abgelehnt – nicht verwenden“ stehen in keinem Pool mehr und werden nicht benutzt.
 
-## 9. Partner- und Vereinskonten
+## 9. Konten und Autoren: wer mit Namen über einer Meldung steht
+
+Google zeigt Meldungen mit einem echten Autor bevorzugt. Deshalb steht über jeder Meldung der Name dessen, der sie geschrieben oder freigegeben hat.
+
+**Redakteurin oder Redakteur anlegen** (z. B. Tivi, Ordin):
+1. Benutzer → **Neu**: Benutzername, E-Mail-Adresse, Vor- und Nachname, Rolle **Redakteur**. „Benutzer hinzufügen“.
+2. Den neuen Benutzer öffnen. Bei „Öffentlich anzeigen als“ den vollen Namen wählen.
+3. Weiter unten im Abschnitt „Autor auf Merzenich Aktuell“: Häkchen **Als Autor zeigen** setzen (nur Admins können es setzen). Bei **Funktion** z. B. „Redakteur“ oder „Lokalreporterin“ eintragen. Bei **Biografische Angaben** zwei, drei Sätze zur Person.
+4. Speichern. Die Person hat jetzt die Seite `/autor/vorname-nachname/` (der Link steht im Profil), und sie erscheint auf `/redaktion/` in der Liste.
+
+**Was dann passiert:**
+- Gibt diese Person unter Freigaben eine Meldung frei, steht ihr Name darüber, mit Link zur Autorenseite. Das gilt auch, wenn der Abgleich die Meldung angelegt hat.
+- Meldungen von Polizei, Feuerwehr, Gemeinde, Vereinen und Firmen behalten deren Namen, z. B. „Polizei Düren · Polizei · geprüft von der Redaktion“. Dafür ist nichts zu tun.
+- Meldungen, die über die Sammelkonten (admin, HK Growth, KBS) freigegeben werden, und alle alten Meldungen tragen weiter „Redaktion Merzenich Aktuell“. Wer mit Namen erscheinen will, gibt mit dem eigenen Konto frei.
+- Schon veröffentlichte Meldungen ändern ihren Autor nicht, auch nicht beim Bearbeiten.
+
+**Partner- und Vereinskonten:**
 
 Die Konten der Partner und Vereine hatten Platzhalter-Adressen der Agentur. Diese Adressen sind geleert; die Partner tragen unter **Profil** ihre eigene E-Mail-Adresse ein und sehen bis dahin einen Hinweis. Name, Rolle, Passwort und Vereinszuordnung bleiben. Unter Benutzer → Vereinszugänge zeigt ein gelber Kasten, falls wieder Platzhalter-Adressen auftauchen.
 
@@ -110,11 +127,11 @@ Die Konten der Partner und Vereine hatten Platzhalter-Adressen der Agentur. Dies
 
 ## 11. Was nur der Betreiber erledigen kann
 
-- [ ] Passwort des Kontos „HK Growth“ ändern und eigene Konten für die Redaktion anlegen (Benutzer → Neu).
+- [ ] Passwort des Kontos „HK Growth“ ändern und eigene Konten für die Redaktion anlegen, mit Häkchen „Als Autor zeigen“ (Abschnitt 9).
 - [ ] Mailversand einrichten, damit Formular- und Kommentar-Mails zuverlässig ankommen: Postfach im IONOS-Kundenkonto anlegen, unter **Merzenich Aktuell → Mailversand** die E-Mail-Adresse als Benutzer und das Postfach-Passwort eintragen (Server `smtp.ionos.de` und Port 587 sind vorbelegt), „eingeschaltet“ ankreuzen, speichern, **Test-Mail schicken**. Danach in der Datenschutzerklärung ergänzen, dass die Mails über den Mailserver der IONOS SE gehen.
 - [ ] Postfach **redaktion@merzenich-aktuell.de** einrichten und auf der Seite **Merzenich Aktuell** (Dashboard, Feld „Redaktions-E-Mail“) eintragen. Dorthin gehen dann alle Formulare und Partner-Anträge; bis dahin an die Admin-E-Mail.
 - [ ] Vertrag zur Auftragsverarbeitung (AV-Vertrag) mit IONOS im IONOS-Kundenkonto abschließen.
-- [ ] Google Search Console: News-Sitemap `https://merzenich-aktuell.de/news-sitemap.xml` einreichen. Google Publisher Center: Publikation anlegen (Schritte in `GOOGLE-NEWS.md`).
+- [ ] Google Publisher Center: Publikation anlegen. Für den Zugriff per API ein Dienstkonto in der Search Console eintragen; danach reicht die Redaktion die Sitemaps per Skript ein (Schritte in `GOOGLE-NEWS.md`).
 - [ ] WhatsApp-Kanal anlegen und den Link auf der Seite `/whatsapp/` eintragen.
 - [ ] Echte Werbekunden und Unternehmensprofile gewinnen (nur mit schriftlicher Einwilligung).
 - [ ] Bildfreigaben der Vereine einholen (Vereinsfotos nur mit Nutzungserlaubnis).

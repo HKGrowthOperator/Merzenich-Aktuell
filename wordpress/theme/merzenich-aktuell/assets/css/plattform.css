@@ -258,3 +258,13 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .ma-aufgeben__formular h2{margin-top:6px}
 .ma-aufgeben__zurueck{margin-top:14px;font-size:14px}
 @media (max-width:520px){.ma-aufgeben__karten{grid-template-columns:1fr 1fr}.ma-aufgeben__karte strong{font-size:16px}}
+/* Autorenseite /autor/<name>/ und Redaktionsliste (21.16.0) */
+.autor-kopf__zeile{display:flex;gap:16px;align-items:center;margin-bottom:8px}
+.autor-kopf .autor-kopf__avatar{width:64px;height:64px;font-size:20px;border-radius:50%;flex:0 0 64px}
+.autor-kopf h1{margin:4px 0 0}
+.autor-kopf__wege{font-size:13px;margin:12px 0 0}
+.autor-kopf__wege a{text-decoration:underline;text-underline-offset:3px}
+.redaktion-liste{list-style:none;padding:0;margin:8px 0 24px}
+.redaktion-liste li{padding:12px 0;border-bottom:1px solid var(--line,#d9d9d9);line-height:1.5}
+.redaktion-liste li span{font-size:14px;color:var(--muted,#686868)}
+.leer-hinweis{padding:24px 0;color:var(--muted,#686868)}

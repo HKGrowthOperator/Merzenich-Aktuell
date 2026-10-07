@@ -1,6 +1,31 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.1 (Historie unten)
+7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.0 (Historie unten)
+
+## Neu in Theme 21.16.0 / Plugin 1.26.0 (07.10.2026): echte Autoren, Schlagwörter aufgeräumt, Google per API
+
+Beide Pakete hochladen und danach einmal das Backend öffnen. Dabei werden die doppelten Schlagwörter einmalig zusammengeführt.
+
+- **Echte Autoren** (`includes/autoren.php`):
+  - **Wer mit Namen erscheint:**
+    - **Personen der Redaktion:** Konten mit dem Häkchen „Als Autor zeigen“ unter Benutzer → Profil. Nur Admins setzen es. Gezeigt wird „Öffentlich anzeigen als“, dazu das Feld „Funktion“ (z. B. Redakteur) und die „Biografischen Angaben“.
+    - **Partner und Vereine:** Polizei, Feuerwehr, Gemeinde, Vereine, Unternehmen und Anbieter erscheinen mit ihrem Namen, ohne „(Partner)“, mit Funktion (Polizei, Gemeinde, Verein …) und dem Zusatz „geprüft von der Redaktion“.
+    - **Sonst:** „Redaktion Merzenich Aktuell“ wie bisher. Das gilt für die Sammelkonten (admin, HK Growth, KBS) und für alle alten Meldungen.
+  - **Freigabe setzt den Autor:** Gibt eine Person der Redaktion einen Entwurf frei (Entwurf, ausstehend, In Prüfung, Änderung → veröffentlicht), wird sie Autorin der Meldung. Das gilt nicht für Meldungen von Partnern und anderen Personen, nicht für Aktualisierungen schon veröffentlichter Meldungen und nicht für geplante Meldungen. Die Meldung wird dabei nicht erneut gespeichert, der Verlauf vermerkt den Wechsel.
+  - **Autorenseiten** `/autor/<name>/`: Name, Funktion, Vorstellung, Link zum Vereinsprofil und die Meldungen. Unbekannte Namen geben 404. Die Seiten von WordPress mit Anmeldenamen (`/author/…`) leiten weiter auf `/redaktion/`. Dort steht unter dem Text die Liste der Redaktion.
+  - **Für Google:** NewsArticle nennt die Person (Person mit url, jobTitle, worksFor) bzw. die Organisation. Die Autorenseite ist eine ProfilePage. Die neue Sitemap `wp-sitemap-autoren-1.xml` führt die Autorenseiten. Im Feed steht der Name in `dc:creator`.
+  - **Theme:** Autorzeile und Autorenkasten in `single.php` zeigen Initialen, ohne Gravatar (keine Verbindung zu Dritten). Neue Vorlage `autor.php`.
+- **Schlagwörter aufgeräumt** (`includes/schlagwoerter.php`, läuft einmal beim ersten Backend-Aufruf):
+  - Die Schlagwörter Blaulicht, Sport und Rathaus entfallen, ihre Ressortseiten ersetzen sie.
+  - Die Ortsteile Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald entfallen als Schlagwort, `/ort/<ort>/` ersetzt sie. Meldungen ohne Ortsangabe bekommen den Ortsteil.
+  - Grundschule → Schule, Jugendfußball → Fußball, Seniorennachmittag → Senioren, Haushaltssicherung → Haushalt, Verkehrssicherheit → Verkehr.
+  - Die alten Adressen `/thema/<alt>/` leiten dauerhaft (301) weiter. Gelöscht werden nur Schlagwörter, nie Meldungen. Das Ergebnis steht in der Option `ma_schlagwoerter_bericht`.
+- **Weniger dünne Seiten bei Google** (`includes/seo.php`):
+  - Themen mit weniger als 3 Meldungen: `noindex,follow` und raus aus der Sitemap. Für Leser bleiben sie erreichbar.
+  - Übernommene Stellen und Immobilien (aus dem Markt-Abgleich): `noindex,follow` und raus aus der Sitemap. Eigene Anzeigen sowie `/jobs/` und `/immobilien/` bleiben drin.
+  - Startseiten-Titel kürzer: „Merzenich Aktuell: Nachrichten aus Merzenich und Ortsteilen“. Die Ortsteile stehen in der Beschreibung.
+- **Google per API** (`deploy/google-seo.mjs`, nicht in den Paketen): Sitemaps einreichen und ihren Stand zeigen, Leistung je Suchanfrage und Seite (Websuche, News, Discover, Google News), URL-Prüfung und PageSpeed. Die Schlüssel kommen aus der Umgebung (`GOOGLE_SERVICE_ACCOUNT_JSON`, `PAGESPEED_API_KEY`), nie aus dem Repository. Einrichtung: `GOOGLE-NEWS.md`.
+- **Tests:** `qa/wordpress/autoren-test.php` (Autoren-Regeln, Freigabe, Schema, Schwelle, Schlagwörter), `qa/google-seo-test.mjs` (Anmeldung, Property, Fehlerhinweise).
 
 ## Neu in Theme 21.15.1 / Plugin 1.25.1 (07.10.2026): feste Reihenfolge bei gleichem Datum, Sichtprüfung Runde 17
 

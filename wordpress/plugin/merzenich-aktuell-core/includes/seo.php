@@ -29,7 +29,8 @@ if (!defined('ABSPATH')) { exit; }
 
 const MA_SEO_MARKE = 'Merzenich Aktuell';
 const MA_SEO_UNTERTITEL = 'Lokalzeitung online für die Gemeinde Merzenich';
-const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald';
+// Unter 65 Zeichen, damit Google ihn nicht abschneidet (1.26.0); die Ortsteile stehen in der Beschreibung.
+const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich und Ortsteilen';
 // Startseiten-Description: Google zeigt rund 155 Zeichen; die Langfassung steht in llms.txt.
 const MA_SEO_BESCHREIBUNG = 'Lokalzeitung für die Gemeinde Merzenich: Nachrichten, Blaulicht, Termine und Vereine aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.';
 const MA_SEO_BESCHREIBUNG_LANG = 'Merzenich Aktuell ist die Lokalzeitung online für die Gemeinde Merzenich im Kreis Düren: Nachrichten, Blaulicht, Termine, Vereine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Jede Meldung mit Quelle und Bildcredit.';
@@ -162,6 +163,22 @@ function ma_seo_google_datei_name(string $eingabe): string {
 }
 function ma_seo_google_datei_inhalt(string $name): string { return 'google-site-verification: ' . $name . '.html'; }
 
+/** Themenseiten erst ab so vielen Meldungen in Google (1.26.0: 58 von 150 Themen hatten nur eine). */
+const MA_SEO_THEMA_MIN = 3;
+function ma_seo_thema_indexierbar(int $anzahl): bool { return $anzahl >= MA_SEO_THEMA_MIN; }
+
+/**
+ * Autor einer Meldung als schema.org-Objekt (pure Funktion): Person mit
+ * Autorenseite und Funktion, Organisation (Partner) oder die Redaktion.
+ * $a wie ma_autor_anzeige(): art, name, funktion, url.
+ */
+function ma_seo_autor_schema(array $a, string $home): array {
+    $art = (string) ($a['art'] ?? 'redaktion');
+    if ($art === 'person') return ['@type' => 'Person', 'name' => (string) $a['name'], 'url' => (string) $a['url'], 'jobTitle' => (string) ($a['funktion'] ?? ''), 'worksFor' => ['@id' => $home . '#organization']];
+    if ($art === 'organisation') return ['@type' => 'Organization', 'name' => (string) $a['name'], 'url' => (string) $a['url']];
+    return ['@type' => 'Organization', 'name' => 'Redaktion Merzenich Aktuell', 'url' => $home . 'redaktion/'];
+}
+
 /** Zeilen für robots.txt: Suchseiten und Formular-Rückmeldungen nicht crawlen, News-Sitemap nennen. */
 function ma_seo_robots_txt(string $vorhanden, string $home): string {
     $zeilen = rtrim($vorhanden) . "\nDisallow: /?s=\nDisallow: /*?s=\nDisallow: /*?gesendet=\n";
@@ -228,7 +245,7 @@ function ma_seo_graph(array $k, array $o): array {
         case 'artikel':
             $a = ['@type' => 'NewsArticle', '@id' => $url . '#article', 'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => $url], 'headline' => $k['titel'], 'description' => $k['beschreibung'],
                 'datePublished' => $k['veroeffentlicht'], 'dateModified' => $k['geaendert'] ?: $k['veroeffentlicht'],
-                'author' => [['@type' => 'Organization', 'name' => 'Redaktion Merzenich Aktuell', 'url' => $home . 'redaktion/']], 'publisher' => ['@id' => $home . '#organization'],
+                'author' => [ma_seo_autor_schema($k['autor'] ?? [], $home)], 'publisher' => ['@id' => $home . '#organization'],
                 'isAccessibleForFree' => true, 'inLanguage' => 'de-DE', 'articleSection' => $k['ressort'] ?? '',
                 'contentLocation' => ['@type' => 'Place', 'name' => $ort['name'], 'address' => $adresse], 'about' => ['@id' => $home . 'ort/' . ($k['ort'] ?? 'merzenich') . '/#place'],
                 'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['.article-head h1', '.article-head .dek']]];
@@ -240,6 +257,10 @@ function ma_seo_graph(array $k, array $o): array {
             if (!empty($k['gesponsert'])) { $a['sponsor'] = ['@type' => 'Organization', 'name' => $k['gesponsert']]; $a['author'] = [$a['sponsor']]; }
             $graph[] = $a;
             $graph[] = $platz($k['ort'] ?? 'merzenich');
+            break;
+        case 'autor':
+            $graph[] = ['@type' => 'ProfilePage', '@id' => $url . '#webpage', 'url' => $url, 'name' => $k['titel'], 'description' => $k['beschreibung'], 'isPartOf' => ['@id' => $home . '#website'], 'inLanguage' => 'de-DE',
+                'mainEntity' => ma_seo_autor_schema($k['autor'] ?? [], $home)];
             break;
         case 'termin':
             $t = $k['termin'] ?? [];
@@ -384,7 +405,8 @@ function ma_seo_kontext(): array {
         $k = array_merge($k, ['typ' => 'artikel', 'titel' => $seoTitel !== '' ? $seoTitel : html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => ma_seo_kuerzen($seoText !== '' ? $seoText : $text), 'url' => get_permalink($o), 'og' => 'article', 'krumen' => $krumen, 'ort' => $ort,
             'bild' => ma_seo_bild($o), 'tags' => $tags, 'ressort' => $rl, 'veroeffentlicht' => get_post_time('c', false, $o), 'geaendert' => $aktualisiert !== '' ? (string) mysql2date('c', $aktualisiert, false) : get_post_modified_time('c', false, $o),
             'woerter' => str_word_count(strip_tags($o->post_excerpt . ' ' . $o->post_content)), 'quelle' => (string) get_post_meta($o->ID, 'ma_source_url', true),
-            'gesponsert' => function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) ? ((string) get_post_meta($o->ID, 'ma_gesponsert_von', true) ?: 'Gesponsert') : '']);
+            'gesponsert' => function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) ? ((string) get_post_meta($o->ID, 'ma_gesponsert_von', true) ?: 'Gesponsert') : '',
+            'autor' => function_exists('ma_autor_von') ? ma_autor_von($o) : []]);
     } elseif (is_singular('ma_event') && $o instanceof WP_Post) {
         $start = function_exists('ma_event_timestamp') ? ma_event_timestamp($o->ID, 'start') : 0;
         $ende = function_exists('ma_event_timestamp') ? ma_event_timestamp($o->ID, 'end') : 0;
@@ -406,7 +428,9 @@ function ma_seo_kontext(): array {
         if ($o->post_parent) $krumen[] = [html_entity_decode(get_the_title($o->post_parent), ENT_QUOTES, 'UTF-8'), get_permalink($o->post_parent)];
         $krumen[] = [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null];
         $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => $o->post_type === 'page' && isset(ma_seo_seitentexte()[$o->post_name]) ? ma_seo_seitentexte()[$o->post_name] : ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
-            'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage', 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)]);
+            'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage', 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)
+                // Übernommene Stellen und Immobilien (Kopien der Portale, 1.26.0) nicht als eigene Inhalte werten.
+                && (string) get_post_meta($o->ID, 'ma_markt_id', true) === '']);
     } elseif (is_category() && $o instanceof WP_Term) {
         $d = $r[$o->slug] ?? [$o->name, $o->name . ' in Merzenich', $o->description ?: 'Meldungen aus dem Ressort ' . $o->name . ' auf Merzenich Aktuell.'];
         $k = array_merge($k, ['typ' => 'ressort', 'titel' => $d[1], 'beschreibung' => $d[2], 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], [$d[0], null]], 'liste' => ma_seo_liste()]);
@@ -418,13 +442,20 @@ function ma_seo_kontext(): array {
         $d = ma_seo_orte()[$o->slug] ?? ['name' => $o->name, 'beschreibung' => $o->description ?: 'Meldungen aus ' . $o->name . '.'];
         $k = array_merge($k, ['typ' => 'ort', 'ort' => isset(ma_seo_orte()[$o->slug]) ? $o->slug : 'merzenich', 'titel' => $d['name'] . ': Nachrichten aus dem Ortsteil der Gemeinde Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: $d['beschreibung']), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], [$d['name'], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_tag() && $o instanceof WP_Term) {
-        $k = array_merge($k, ['typ' => 'thema', 'titel' => $o->name . ': Meldungen aus Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: 'Alle Meldungen von Merzenich Aktuell zum Thema ' . $o->name . ' aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], ['Thema', $home . 'thema/'], [$o->name, null]], 'liste' => ma_seo_liste()]);
+        $k = array_merge($k, ['typ' => 'thema', 'titel' => $o->name . ': Meldungen aus Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: 'Alle Meldungen von Merzenich Aktuell zum Thema ' . $o->name . ' aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], ['Thema', $home . 'thema/'], [$o->name, null]], 'liste' => ma_seo_liste(),
+            // Dünne Themenseiten (weniger als MA_SEO_THEMA_MIN Meldungen) nicht indexieren; Leser erreichen sie weiter.
+            'index' => ma_seo_thema_indexierbar((int) $o->count)]);
     } elseif (is_post_type_archive()) {
         $typ = (string) get_query_var('post_type'); if (is_array(get_query_var('post_type'))) $typ = (string) (get_query_var('post_type')[0] ?? '');
         $slug = ['ma_event' => 'termine', 'ma_tip' => 'tipp', 'ma_club' => 'vereine'][$typ] ?? '';
         $obj = get_post_type_object($typ);
         $d = $r[$slug] ?? ma_seo_listen()[$typ] ?? [$obj->labels->name ?? 'Liste', ($obj->labels->name ?? 'Liste') . ' in Merzenich', ($obj->labels->name ?? 'Einträge') . ' aus der Gemeinde Merzenich auf Merzenich Aktuell.'];
         $k = array_merge($k, ['typ' => 'liste', 'titel' => $d[1], 'beschreibung' => $d[2], 'url' => ma_seo_liste_url(get_post_type_archive_link($typ) ?: $home), 'krumen' => [['Start', $home], [$d[0], null]], 'liste' => ma_seo_liste()]);
+    } elseif ((string) get_query_var('ma_autor') !== '' && function_exists('ma_autor_konto') && ($ku = ma_autor_konto((string) get_query_var('ma_autor')))) {
+        $au = ma_autor_anzeige($ku);
+        $k = array_merge($k, ['typ' => 'autor', 'titel' => $au['name'] . ' · ' . $au['funktion'], 'autor' => $au,
+            'beschreibung' => ma_seo_kuerzen($au['bio'] !== '' ? $au['bio'] : 'Meldungen von ' . $au['name'] . ' auf Merzenich Aktuell, der Lokalzeitung für die Gemeinde Merzenich.'),
+            'url' => ma_seo_liste_url($au['url']), 'krumen' => [['Start', $home], ['Redaktion', $home . 'redaktion/'], [$au['name'], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_search()) {
         $k = array_merge($k, ['typ' => 'suche', 'titel' => 'Suche: ' . get_search_query(), 'beschreibung' => 'Suche auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);
     } elseif (is_404()) {
@@ -555,8 +586,8 @@ add_action('template_redirect', function (): void {
     if (preg_match('~^/category/(' . implode('|', ma_seo_ressort_kategorien()) . ')(/.*)?$~', $pfad, $m)) {
         wp_safe_redirect(home_url('/' . $m[1] . ($m[2] ?? '/')), 301); exit;
     }
-    // Autorenarchive zeigen Anmeldenamen; es gibt nur die Redaktion.
-    if (is_author()) { wp_safe_redirect(home_url('/redaktion/'), 301); exit; }
+    // WordPress-Autorenarchive zeigen Anmeldenamen; die Autorenseiten liegen unter /autor/<name>/ (autoren.php).
+    if (is_author() && (string) get_query_var('ma_autor') === '') { wp_safe_redirect(home_url('/redaktion/'), 301); exit; }
     // Anhangsseiten: zum Beitrag, sonst zur Datei.
     if (is_attachment()) {
         $a = get_queried_object();
@@ -602,6 +633,19 @@ function ma_seo_news_eintraege(): array {
 /* ------------------------------------------------------------ Sitemap und robots.txt */
 
 add_filter('wp_sitemaps_add_provider', fn($provider, string $name) => $name === 'users' ? false : $provider, 10, 2);
+// Dünne Themen und übernommene Marktanzeigen nicht in die Sitemap (1.26.0), passend zu noindex.
+add_filter('wp_sitemaps_taxonomies_query_args', function (array $args, string $tax): array {
+    if ($tax !== 'post_tag') return $args;
+    $duenn = get_terms(['taxonomy' => 'post_tag', 'hide_empty' => false, 'fields' => 'ids', 'number' => 0]);
+    $duenn = array_values(array_filter((array) $duenn, fn($id) => !ma_seo_thema_indexierbar((int) (get_term((int) $id, 'post_tag')->count ?? 0))));
+    if ($duenn) $args['exclude'] = array_merge((array) ($args['exclude'] ?? []), $duenn);
+    return $args;
+}, 10, 2);
+add_filter('wp_sitemaps_posts_query_args', function (array $args, string $typ): array {
+    if (!in_array($typ, ['ma_job', 'ma_property'], true)) return $args;
+    $args['meta_query'] = [['key' => 'ma_markt_id', 'compare' => 'NOT EXISTS']];
+    return $args;
+}, 10, 2);
 add_filter('wp_sitemaps_post_types', fn(array $t) => array_diff_key($t, array_flip(['ma_obituary', 'ma_family_notice', 'attachment'])));
 add_filter('wp_sitemaps_taxonomies', fn(array $t) => array_diff_key($t, array_flip(['ma_family_type', 'ma_source_status', 'post_format'])));
 add_filter('robots_txt', fn(string $out, bool $public) => $public ? ma_seo_robots_txt($out, home_url('/')) : $out, 10, 2);

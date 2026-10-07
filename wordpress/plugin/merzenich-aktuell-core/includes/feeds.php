@@ -5,7 +5,7 @@
  *
  * - RSS-Feeds (/feed/, Ressort-Feeds): Beitragsbild als <enclosure> und
  *   <media:content> mit Bildnachweis, Bild oben im Volltext, Autor
- *   „Redaktion Merzenich Aktuell“ statt des Anmeldenamens, Feedtitel ohne
+ *   mit Namen (autoren.php) bzw. „Redaktion Merzenich Aktuell“, nie der Anmeldename, Feedtitel ohne
  *   Seitentitel-Zusatz. Google News (Publisher Center), Microsoft Start,
  *   Feedly und Co. lesen genau diesen Feed.
  * - WebSub (PubSubHubbub): der Feed nennt einen Hub, und bei jeder
@@ -92,9 +92,13 @@ add_filter('the_content_feed', function (string $inhalt): string {
     if (!$b) return $inhalt;
     return '<p><img src="' . esc_url($b['url']) . '" alt="' . esc_attr($b['alt']) . '"' . ($b['w'] ? ' width="' . $b['w'] . '" height="' . $b['h'] . '"' : '') . '></p>' . ($b['credit'] !== '' ? '<p><small>Bild: ' . esc_html($b['credit']) . '</small></p>' : '') . $inhalt;
 });
-/* Autor in Feeds: die Redaktion, nicht der Anmeldename. */
-add_filter('the_author', fn($name) => is_feed() ? MA_FEED_AUTOR : $name);
-add_filter('get_the_author_display_name', fn($name) => is_feed() ? MA_FEED_AUTOR : $name);
+/* Autor in Feeds: nie der Anmeldename. Personen und Partner mit Namen (1.26.0,
+   autoren.php), sonst die Redaktion. */
+function ma_feed_autor_name(): string {
+    return function_exists('ma_autor_von') ? (string) ma_autor_von(get_post())['name'] : MA_FEED_AUTOR;
+}
+add_filter('the_author', fn($name) => is_feed() ? ma_feed_autor_name() : $name);
+add_filter('get_the_author_display_name', fn($name) => is_feed() ? ma_feed_autor_name() : $name);
 /* Feedtitel: „Merzenich Aktuell“ bzw. „Blaulicht | Merzenich Aktuell“, nicht der Dokumenttitel der Liste. */
 add_filter('wp_title_rss', function ($t): string {
     if (is_category() || is_tag() || is_tax()) { $o = get_queried_object(); if ($o instanceof WP_Term) return $o->name . ' | Merzenich Aktuell'; }
