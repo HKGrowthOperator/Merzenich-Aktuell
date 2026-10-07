@@ -77,7 +77,9 @@ function ma21_einzel_daten(WP_Post $p): array {
 function ma21_anzeige_einzel(WP_Post $p): void {
     $k = MA21_EINZEL[$p->post_type] ?? MA21_EINZEL['ma_job'];
     $d = ma21_einzel_daten($p);
-    $ort = MA21_ORTE[ma21_ort($p)] ?? 'Merzenich';
+    // Übernommene Marktangebote aus dem Umkreis tragen ihre Gemeinde (sonst stünde dort „Merzenich“).
+    $gemeinde = (string) get_post_meta($p->ID, 'ma_markt_gemeinde', true);
+    $ort = $gemeinde !== '' && $gemeinde !== 'Merzenich' ? $gemeinde : (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich');
     $titel = get_the_title($p);
     echo '<article class="article event-page anzeige-page anzeige-page--' . esc_attr(str_replace('ma_', '', $p->post_type)) . '"><div class="article-head"><div class="shell">'
         . '<nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><a href="' . esc_url(home_url($k['liste'])) . '">' . esc_html($k['crumb']) . '</a><span class="sep">›</span><span aria-current="page">' . esc_html($titel) . '</span></nav>'
@@ -96,9 +98,9 @@ function ma21_anzeige_einzel(WP_Post $p): void {
         foreach ($d['knoepfe'] as $i => [$text, $url, $extern]) echo '<a class="btn' . ($i ? ' ghost' : '') . '" href="' . esc_url($url, ['http', 'https', 'tel', 'mailto']) . '"' . ($extern ? ' target="_blank" rel="noopener' . ($p->post_type === 'ma_tip' ? ' sponsored' : '') . '"' : '') . '>' . esc_html($text) . '</a>';
         echo '</div>';
     }
-    // Bild: Traueranzeigen ohne Symbolbild; Betriebe nur mit eigenem Bild.
+    // Bild nur, wenn die Anzeige ein echtes Foto hat; nie eine Ersatzgrafik.
     $bild = function_exists('ma_content_image') ? ma_content_image($p, 'large') : [];
-    $zeigeBild = !empty($bild['url']) && $p->post_type !== 'ma_obituary' && !($p->post_type === 'ma_business' && !empty($bild['is_fallback']));
+    $zeigeBild = !empty($bild['url']) && empty($bild['is_fallback']) && $p->post_type !== 'ma_obituary';
     if ($zeigeBild) {
         echo '<figure class="art-figure' . (!empty($bild['is_fallback']) ? ' art-figure--symbol' : '') . '"><div class="media"><img src="' . esc_url($bild['url']) . '" alt="' . esc_attr((string) ($bild['alt'] ?? '')) . '" loading="lazy" decoding="async"></div>'
             . '<figcaption><span>' . (!empty($bild['is_fallback']) ? '<span class="figure-badge">Symbolbild</span> · ' : '') . esc_html(function_exists('ma_image_caption') ? ma_image_caption($bild) : (string) ($bild['credit'] ?? '')) . '</span></figcaption></figure>';

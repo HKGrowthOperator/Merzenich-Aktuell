@@ -60,6 +60,34 @@
 .ma-breitensport__quelle a{text-decoration:underline}
 @media(max-width:1100px){.ma-sportart-raster{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.ma-sportart-raster{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ma-sportart-block{scroll-margin-top:100px}.ma-sportverein__info{padding:8px}.ma-sportverein__info h4{font-size:13px}}
+/* Vereinssport: Tabellenstand (21.15.0) – nur aktive Vereine, ohne Bilder */
+.ma-tabellen .ma-tabellen__raster{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.ma-tabellen .ma-tabellen__verein{display:flex;flex-direction:column}
+.ma-tabellen .ma-tabellen__verein .ma-sportverein__info{border-top:0;border-bottom:1px solid var(--line,#d9d9d9);background:#faf8f4;padding:10px 11px}
+.ma-tabellen .ma-tabellen__verein h4{font-size:17px}
+.ma-tabellen__tabelle{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.ma-tabellen__tabelle thead th:nth-child(2){width:52px}.ma-tabellen__tabelle thead th:nth-child(3){width:78px}
+.ma-tabellen__tabelle thead th{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#686868);text-align:right;padding:7px 11px 5px;border-bottom:1px solid var(--line,#d9d9d9)}
+.ma-tabellen__tabelle thead th:first-child{text-align:left}
+.ma-tabellen__tabelle tbody th{font-weight:700;text-align:left;padding:7px 11px;line-height:1.3;overflow-wrap:anywhere}
+.ma-tabellen__tabelle tbody th a{text-decoration:none}
+.ma-tabellen__tabelle tbody th a:hover{text-decoration:underline;text-decoration-color:var(--red,#b71920)}
+.ma-tabellen__tabelle tbody th small{display:block;font-weight:400;font-size:11px;color:var(--muted,#686868);margin-top:2px}
+.ma-tabellen__tabelle td{text-align:right;padding:7px 11px;font-variant-numeric:tabular-nums;vertical-align:top}
+.ma-tabellen__tabelle td:nth-child(2){font-weight:800;font-size:15px}
+.ma-tabellen__tabelle tbody tr+tr>*{border-top:1px solid #eee9e0}
+.ma-tabellen__extra{margin:0;padding:8px 11px;font-size:12px;line-height:1.45;border-top:1px solid #eee9e0;list-style:none}
+.ma-tabellen__extra li+li{margin-top:4px}
+.ma-tabellen__extra a{text-decoration:underline}
+.ma-tabellen__quelle{margin:auto 0 0;padding:7px 11px 9px;font-size:11px;color:var(--muted,#686868);border-top:1px solid #eee9e0}
+.ma-tabellen__quelle a{text-decoration:underline}
+.ma-tabellen__vergleich{border:1px solid var(--line,#d9d9d9);border-left:4px solid var(--red,#b71920);padding:10px 14px;margin:0 0 14px;background:#fff}
+.ma-tabellen__vergleich h4{font-size:13px;margin:0 0 6px}
+.ma-tabellen__vergleich ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:4px 18px}
+.ma-tabellen__vergleich li{font-size:13px;line-height:1.35}
+.ma-tabellen__vergleich li span{color:var(--muted,#686868);font-size:12px}
+.ma-tabellen__platz{display:inline-block;min-width:24px;font-weight:800;color:var(--red,#b71920)!important;font-size:14px!important}
+@media(max-width:800px){.ma-tabellen .ma-tabellen__raster{grid-template-columns:1fr}}
 @media(max-width:400px){.ma-sportart-raster{grid-template-columns:1fr}.ma-sportverein{display:grid;grid-template-columns:44% 56%}.ma-sportverein__info{border-top:0}.ma-sportverein__bild img{height:100%;min-height:105px;aspect-ratio:auto;object-fit:cover}}
 /* Layout-Karte (02.10.2026): feste Plätze dürfen ohne Bild belegt sein. */
 .desk-karte--ohne-bild .karte-text{padding-top:0;border-top:3px solid var(--ink)}

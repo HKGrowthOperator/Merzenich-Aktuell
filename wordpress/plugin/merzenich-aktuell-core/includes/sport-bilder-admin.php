@@ -7,7 +7,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 function ma_sport_bild_keys(): array {
-    return ['tischtennis','tennis','badminton','pickleball','volleyball','billard','boule',
+    return ['fussball','tischtennis','tennis','badminton','pickleball','volleyball','billard','boule',
         'schach','ju-jutsu','breitensport','wasser','fitness','wandern',
         'schiesssport','tanzsport','luftsport','american-football'];
 }
@@ -138,7 +138,7 @@ function ma_sport_fotobox_anzeigen(WP_Post $p): void {
     echo '<table class="widefat striped"><thead><tr><th>Sportart</th><th>Freigegebenes Originalfoto</th></tr></thead><tbody>';
     foreach (ma_sport_bild_keys() as $k) {
         $jetzt = (int) get_post_meta($p->ID, 'ma_sportfoto_' . $k, true);
-        echo '<tr><th><label for="ma_sportfoto_' . esc_attr($k) . '">' . esc_html(ma_sportart_titel($k)) . '</label></th><td><select id="ma_sportfoto_' . esc_attr($k) . '" name="ma_sportfoto[' . esc_attr($k) . ']" style="max-width:100%;width:100%"><option value="0">Automatischer Sportbildpool / Motivgrafik</option>';
+        echo '<tr><th><label for="ma_sportfoto_' . esc_attr($k) . '">' . esc_html(ma_sportart_titel($k)) . '</label></th><td><select id="ma_sportfoto_' . esc_attr($k) . '" name="ma_sportfoto[' . esc_attr($k) . ']" style="max-width:100%;width:100%"><option value="0">Automatischer Sportbildpool</option>';
         foreach ($fotos as $a) {
             echo '<option value="' . (int) $a->ID . '"' . selected($jetzt, (int) $a->ID, false) . '>' . esc_html(get_the_title($a) . ' – #' . $a->ID) . '</option>';
         }

@@ -64,21 +64,13 @@ function ma_image_fallback_kind($post = null): string {
 }
 
 /**
- * Ortsteile duerfen eigene Ersatzbilder haben. Existiert keines, bleibt es bei
- * der Ressortgrafik - ein fremder Ortsteil waere schlechter als gar keiner.
+ * Keine Ersatzgrafiken mehr (Betreiber 07.10.2026: „niemals wieder selber“).
+ * Die selbstgezeichneten ph-*.svg sind entfernt. Ohne echtes Foto gibt es
+ * keine Bild-URL; Vorlagen zeigen dann eine Karte ohne Bild. Die Funktion
+ * bleibt für ältere Aufrufer und liefert immer einen leeren Text.
  */
 function ma_image_fallback_url(string $kind, $post = null): string {
-    $base = trailingslashit(get_template_directory_uri()) . 'assets/img/';
-
-    $terms = $post ? get_the_terms(get_post($post), 'ma_location') : [];
-    if (is_array($terms)) {
-        foreach ($terms as $t) {
-            $ort = $base . 'ph-ort-' . $t->slug . '.svg';
-            $datei = trailingslashit(get_template_directory()) . 'assets/img/ph-ort-' . $t->slug . '.svg';
-            if (file_exists($datei)) return $ort;
-        }
-    }
-    return $base . 'ph-' . $kind . '.svg';
+    return '';
 }
 
 /**
@@ -167,7 +159,7 @@ function ma_content_image($post = null, string $size = 'large'): array {
 
     $kind = ma_image_fallback_kind($post);
     return [
-        'url'         => ma_image_fallback_url($kind, $post),
+        'url'         => '',
         'type'        => 'symbol',
         'type_label'  => MA_IMAGE_TYPES['symbol'],
         'credit'      => $credit !== '' ? ma_credit_kurz($credit, $license) : 'Symbolbild · Merzenich Aktuell',

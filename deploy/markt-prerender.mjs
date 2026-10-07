@@ -66,12 +66,10 @@ function bildDaten(item, art) {
     label: 'Symbolbild · Merzenich Aktuell', kurz: 'Symbolbild'
   };
 }
-function bildMarkup(item, art) {
-  const b = bildDaten(item, art);
-  const href = sichereUrl(item.sourceUrl);
-  return `<a class="markt-thumb markt-thumb--symbol" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(item.title)} – Originalanzeige öffnen">` +
-    `<img src="${esc(b.url)}" alt="" loading="lazy" decoding="async">` +
-    `<span class="markt-thumb__badge">${esc(b.label)}</span></a>`;
+// Keine selbstgemachten Symbolbilder mehr (Betreiber 07.10.2026): Stellen und
+// Immobilien sind Textkarten. bildDaten bleibt für ältere Aufrufer.
+function bildMarkup() {
+  return '';
 }
 
 

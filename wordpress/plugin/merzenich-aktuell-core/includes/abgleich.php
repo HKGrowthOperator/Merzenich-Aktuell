@@ -412,6 +412,7 @@ function ma_abgleich_seite_admin(): void {
         if (!empty($stand['fehler'])) echo '<div class="notice notice-warning"><p><strong>Fehler:</strong><br>' . implode('<br>', array_map('esc_html', $stand['fehler'])) . '</p></div>';
         if (!empty($stand['offen'])) echo '<p>Es warten noch ' . (int) $stand['offen'] . ' Beiträge. Erneut „Jetzt abgleichen“ anklicken oder den nächsten automatischen Lauf abwarten.</p>';
     }
+    if (function_exists('ma_markt_import_kasten')) echo ma_markt_import_kasten();
     echo '<h2>Einstellungen</h2><form method="post">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="einstellungen"><table class="form-table"><tbody>';
     echo '<tr><th>Automatischer Abgleich</th><td><label><input type="checkbox" name="aktiv" value="1"' . checked(ma_abgleich_aktiv(), true, false) . '> Stündlich laufen lassen</label></td></tr>';

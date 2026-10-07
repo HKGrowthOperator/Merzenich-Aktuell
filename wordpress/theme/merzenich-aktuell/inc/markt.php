@@ -29,19 +29,66 @@ const MA21_MARKT = [
     ],
 ];
 
-/** Marktüberblick aus dem Repository (jobs/index.html bzw. immobilien/index.html), stündlich erneuert, nur erlaubtes HTML. */
+/**
+ * Marktüberblick aus dem Repository (jobs/index.html bzw. immobilien/index.html),
+ * stündlich erneuert, nur erlaubtes HTML. Nur noch Rückfall, solange keine
+ * übernommenen Einträge im Backend stehen (Plugin, includes/markt-import.php).
+ * Die selbst gezeichneten Symbolbilder entfallen (Vorgabe Betreiber 07.10.2026).
+ */
 function ma21_markt_block(string $art): string {
     $html = ma21_repo_datei($art . '/index.html', HOUR_IN_SECONDS);
     $q = preg_quote($art, '#');
     if (!preg_match('#<!-- markt:' . $q . ':start -->(.*?)<!-- markt:' . $q . ':end -->#s', $html, $m)) return '';
+    $h = (string) preg_replace('#<a class="markt-thumb[^"]*"[^>]*>.*?</a>#s', '', wp_kses_post($m[1]));
+    $h = str_replace([' markt-row--thumb', ' jede Anzeige zeigt ein gekennzeichnetes Symbolbild.'], ['', ''], $h);
     // Keine Zahlen auf der Seite: „13 Anzeigen“ je Ort entfällt.
-    return trim((string) preg_replace('#<span class="markt-ort-count">[^<]*</span>#', '', wp_kses_post($m[1])));
+    return trim((string) preg_replace('#<span class="markt-ort-count">[^<]*</span>#', '', $h));
+}
+
+/** Angebotsart einer Immobilie: „Miete“/„Kauf“ (Feld ma_property_offer oder ma_property_mode aus dem Backend). */
+function ma21_immobilie_art(int $id): string {
+    $o = trim((string) get_post_meta($id, 'ma_property_offer', true));
+    if ($o !== '') return $o;
+    return ['rent' => 'Miete', 'buy' => 'Kauf'][(string) get_post_meta($id, 'ma_property_mode', true)] ?? 'Immobilie';
+}
+
+/** Übernommene Marktangebote (Plugin markt-import.php) als Liste je Gemeinde, im Markup des Marktüberblicks. */
+function ma21_markt_wp_liste(array $posts, string $typ): string {
+    $gruppen = [];
+    foreach ($posts as $p) $gruppen[(string) get_post_meta($p->ID, 'ma_markt_gemeinde', true) ?: 'Merzenich'][] = $p;
+    uksort($gruppen, fn($a, $b) => ($a === 'Merzenich' ? -1 : ($b === 'Merzenich' ? 1 : 0)) ?: count($gruppen[$b]) <=> count($gruppen[$a]) ?: strcoll($a, $b));
+    $stand = '';
+    foreach ($posts as $p) { $v = (string) get_post_meta($p->ID, 'ma_verified_at', true); if ($v > $stand) $stand = $v; }
+    $h = '<div class="markt-stand"><strong>Zuletzt geprüft: ' . esc_html($stand !== '' ? mysql2date('d.m.Y', $stand) : '–') . '</strong><p>Redaktionell geprüfte Einzelangebote mit Prüfdatum. Verfügbarkeit, Preise und Fristen können sich beim Anbieter kurzfristig ändern; maßgeblich ist die verlinkte Originalquelle. Bilder der Anbieter werden nicht übernommen.</p></div>';
+    foreach ($gruppen as $gemeinde => $liste) {
+        $h .= '<h2 class="markt-ort"><span class="markt-ort-eyebrow">' . ($gemeinde === 'Merzenich' ? 'Gemeinde Merzenich' : 'Umkreis') . '</span>' . esc_html($gemeinde) . '</h2>';
+        if ($gemeinde === 'Merzenich') $h .= '<p class="markt-hinweis">Einschließlich Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>';
+        foreach ($liste as $p) $h .= ma21_markt_wp_zeile($p, $typ);
+    }
+    return $h;
+}
+
+function ma21_markt_wp_zeile(WP_Post $p, string $typ): string {
+    $m = fn(string $k): string => trim((string) get_post_meta($p->ID, $k, true));
+    $url = esc_url(get_permalink($p)); $quelle = $m('ma_source_url');
+    $art = $typ === 'ma_job' ? (preg_split('/\s*·\s*/', $m('ma_job_hours'))[0] ?: 'Stelle') : ma21_immobilie_art($p->ID);
+    $ort = mb_strtoupper(trim($m('ma_markt_gemeinde') . ($m('ma_markt_ortsteil') !== '' && $m('ma_markt_ortsteil') !== $m('ma_markt_gemeinde') ? ' · ' . $m('ma_markt_ortsteil') : '')));
+    $haupt = $typ === 'ma_job' ? $m('ma_job_company') : $m('ma_property_price');
+    $zeile = $typ === 'ma_job' ? trim($m('ma_job_hours') . ($m('ma_job_address') !== '' ? ' · ' . $m('ma_job_address') : ''), ' ·') : wp_strip_all_tags(strtok($p->post_content, "\n"));
+    $geprueft = $m('ma_verified_at');
+    return '<article class="event-row job-row markt-row"><span class="d job-d"><b>' . esc_html($art) . '</b></span><div class="info">'
+        . '<span class="eyebrow"><span class="markt-art">' . esc_html($art) . ' · </span><span class="markt-ort-tag">' . esc_html($ort ?: 'MERZENICH') . '</span></span>'
+        . '<h3><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h3>'
+        . ($haupt !== '' ? '<p class="markt-haupt">' . esc_html($haupt) . '</p>' : '')
+        . '<div class="meta">' . ($zeile !== '' ? '<span>' . esc_html($zeile) . '</span>' : '') . ($geprueft !== '' ? '<span>Geprüft ' . esc_html(mysql2date('d.m.Y', $geprueft)) . '</span>' : '') . '</div>'
+        . ($m('ma_source_name') !== '' ? '<p class="ev-desc">Quelle: ' . esc_html($m('ma_source_name')) . ' · Angaben laut Anbieter, maßgeblich ist die Originalanzeige.</p>' : '') . '</div>'
+        . '<div class="act"><a href="' . $url . '">Details</a>' . ($quelle !== '' ? '<a href="' . esc_url($quelle) . '" target="_blank" rel="noopener noreferrer nofollow">' . ($typ === 'ma_job' ? 'Zur Ausschreibung' : 'Zum Angebot') . ' ↗</a>' : '') . '</div></article>';
 }
 
 /** Zeile für eine hier aufgegebene Anzeige, im Markup des Marktüberblicks. */
 function ma21_markt_eigene_zeile(WP_Post $p, string $typ): string {
     $url = esc_url(get_permalink($p));
-    $art = $typ === 'ma_job' ? 'Stelle' : ((string) get_post_meta($p->ID, 'ma_property_offer', true) ?: 'Immobilie');
+    $art = $typ === 'ma_job' ? 'Stelle' : ma21_immobilie_art($p->ID);
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 32, ' …');
     return '<article class="event-row job-row markt-row"><span class="d job-d"><b>' . esc_html($art) . '</b></span><div class="info">'
         . '<span class="eyebrow"><span class="markt-art">Anzeige · </span>' . esc_html(MA21_ORTE[ma21_ort($p)] ?? 'Merzenich') . '</span>'
@@ -66,8 +113,12 @@ function ma21_aktive_anzeigen(array $args): array {
 /** Ganze Seite Stellen- oder Immobilienmarkt. */
 function ma21_markt_seite(string $typ): void {
     $k = MA21_MARKT[$typ];
-    $eigene = ma21_aktive_anzeigen(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 50, 'orderby' => 'date', 'order' => 'DESC']);
-    $block = ma21_markt_block($k['art']);
+    $alle = ma21_aktive_anzeigen(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => 200, 'orderby' => 'date', 'order' => 'DESC']);
+    // Übernommene Marktangebote (Kennung ma_markt_id) und hier aufgegebene Anzeigen getrennt; ohne
+    // übernommene Einträge bleibt der Marktüberblick aus dem Repository (keine Doppelten).
+    $markt = array_values(array_filter($alle, fn($p) => (string) get_post_meta($p->ID, 'ma_markt_id', true) !== ''));
+    $eigene = array_values(array_filter($alle, fn($p) => (string) get_post_meta($p->ID, 'ma_markt_id', true) === ''));
+    $block = $markt ? ma21_markt_wp_liste($markt, $typ) : ma21_markt_block($k['art']);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html($k['crumb']) . '</span></nav>'
         . '<span class="eyebrow">' . esc_html($k['eyebrow']) . '</span><h1>' . esc_html($k['h1']) . '</h1><p class="desc">' . esc_html($k['desc']) . '</p>'
         . '<p class="count-line"><a href="' . esc_url(home_url($k['box'][2])) . '">' . esc_html($k['box'][0]) . '</a></p>'

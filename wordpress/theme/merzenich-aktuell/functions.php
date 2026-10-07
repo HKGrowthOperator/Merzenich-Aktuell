@@ -43,7 +43,7 @@ if(!function_exists('ma_content_image')){
             $alt=(string)get_post_meta($thumb,'_wp_attachment_image_alt',true);
             return ['url'=>$url,'type'=>$license!=='' && !$verified?'licensed':'original','type_label'=>'','credit'=>$credit,'alt'=>$alt!==''?$alt:get_the_title($id),'license'=>$license,'source_url'=>'','is_fallback'=>false,'disclaimer'=>''];
         }
-        return ['url'=>get_template_directory_uri().'/assets/img/ph-nachrichten.svg','type'=>'symbol','type_label'=>'Symbolbild','credit'=>'Symbolbild · Merzenich Aktuell','alt'=>'Symbolgrafik Merzenich Aktuell','license'=>'','source_url'=>'','is_fallback'=>true,'disclaimer'=>''];
+        return ['url'=>'','type'=>'symbol','type_label'=>'Symbolbild','credit'=>'','alt'=>'','license'=>'','source_url'=>'','is_fallback'=>true,'disclaimer'=>''];
     }
 }
 if(!function_exists('ma_image_caption')){

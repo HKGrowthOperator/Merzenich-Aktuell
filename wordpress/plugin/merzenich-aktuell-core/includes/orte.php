@@ -64,7 +64,7 @@ add_action('edited_ma_location', 'ma_ort_save');
 
 /**
  * Alles, was die Vorlage ueber einen Ort braucht. Bild nur mit Credit -
- * sonst die Ersatzgrafik des Ortes oder der Gemeinde.
+ * sonst kein Bild (keine Ersatzgrafik mehr, 07.10.2026).
  */
 function ma_ort_info(WP_Term $term): array {
     $bild_id = (int)get_term_meta($term->term_id, 'ma_ort_image_id', true);
@@ -72,13 +72,7 @@ function ma_ort_info(WP_Term $term): array {
     $url     = $bild_id && $credit !== '' ? (string)wp_get_attachment_image_url($bild_id, 'large') : '';
     $alt     = $bild_id ? (string)get_post_meta($bild_id, '_wp_attachment_image_alt', true) : '';
 
-    if ($url === '') {
-        $basis = trailingslashit(get_template_directory());
-        $eigen = 'assets/img/ph-ort-' . $term->slug . '.svg';
-        $url   = trailingslashit(get_template_directory_uri()) . (file_exists($basis.$eigen) ? $eigen : 'assets/img/ph-rathaus.svg');
-        $credit = 'Symbolbild · Merzenich Aktuell';
-        $alt    = 'Symbolgrafik ' . $term->name;
-    }
+    if ($url === '') $credit = '';
     return [
         'name'       => $term->name,
         'address'    => (string)get_term_meta($term->term_id, 'ma_ort_address', true),
@@ -87,6 +81,6 @@ function ma_ort_info(WP_Term $term): array {
         'image'      => $url,
         'image_alt'  => $alt !== '' ? $alt : $term->name,
         'credit'     => $credit,
-        'is_symbol'  => $bild_id === 0 || $credit === 'Symbolbild · Merzenich Aktuell',
+        'is_symbol'  => false,
     ];
 }

@@ -1,0 +1,496 @@
+{
+ "_hinweis": "Nur Vereine und Abteilungen mit Mannschaften im Spielbetrieb 2026/27 bzw. Sommer 2026 oder belegten Wettkämpfen der letzten 12 Monate. Recherche FUSSBALL.DE, nuLiga, click-TT, Verbands- und Vereinsseiten. Nicht aufgenommen (kein Nachweis): SC 1919 Badminton, TV Girbelsrath, UL-Aero-Club, LDDF Discofox; unklar: TV Merzenich, BSC Girbelsrath, KK Klub Morschenich, Gut Schuss, Düren Demons.",
+ "stand": "2026-10-07",
+ "vereine": [
+  {
+   "name": "SC 1919 Merzenich",
+   "verein": "SC 1919 Merzenich e.V.",
+   "ort": "merzenich",
+   "sportart": "fussball",
+   "teams": [
+    {
+     "mannschaft": "Herren",
+     "liga": "Kreisliga A",
+     "saison": "2026/27",
+     "platz": 5,
+     "punkte": "15",
+     "spiele": 7,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-a-kreis-dueren-kreisliga-a-herren-saison2627-mittelrhein/-/staffel/031GUU1ID8000004VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "Herren II",
+     "liga": "Kreisliga C Staffel 2",
+     "saison": "2026/27",
+     "platz": 7,
+     "punkte": "10",
+     "spiele": 6,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-2-kreis-dueren-kreisliga-c-herren-saison2627-mittelrhein/-/staffel/031GUVBUJG000004VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "Herren III",
+     "liga": "Kreisliga C Staffel 1",
+     "saison": "2026/27",
+     "platz": 12,
+     "punkte": "4",
+     "spiele": 7,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-1-kreis-dueren-kreisliga-c-herren-saison2627-mittelrhein/-/staffel/031GUV1TCG000003VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "A-Junioren",
+     "liga": "A-Kreisleistungsklasse, Staffel 1",
+     "saison": "2026/27",
+     "platz": 2,
+     "punkte": "6",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/a-kreisleistungsklasse-st-01-kreis-dueren-a-junioren-leistungsklasse-a-junioren-saison2627-mittelrhein/-/staffel/031FBOGK24000007VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "A-Junioren II",
+     "liga": "A-Kreisleistungsklasse, Staffel 2",
+     "saison": "2026/27",
+     "platz": 6,
+     "punkte": "1",
+     "spiele": 2,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/a-kreisleistungsklasse-st-02-kreis-dueren-a-junioren-leistungsklasse-a-junioren-saison2627-mittelrhein/-/staffel/031FBOGK8O000007VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "B-Junioren",
+     "liga": "B-Qualifikationsstaffel 13",
+     "saison": "2026/27",
+     "platz": 4,
+     "punkte": "0",
+     "spiele": 2,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/b-qualifikationsstaffel-13-kreis-dueren-b-junioren-leistungsklasse-b-junioren-saison2627-mittelrhein/-/staffel/031I6F6QD800000DVS5489BTVSRD0UH9-G"
+    },
+    {
+     "mannschaft": "C-Junioren",
+     "liga": "C-Qualifikationsstaffel 22",
+     "saison": "2026/27",
+     "platz": 3,
+     "punkte": "3",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/c-qualifikationsstaffel-22-kreis-dueren-c-junioren-leistungsklasse-c-junioren-saison2627-mittelrhein/-/staffel/031BUHENKC000008VS5489BTVUS470OH-G"
+    },
+    {
+     "mannschaft": "D-Junioren",
+     "liga": "D-Qualifikationsstaffel 39",
+     "saison": "2026/27",
+     "platz": 1,
+     "punkte": "9",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/d-qualifikationsstaffel-39-kreis-dueren-d-junioren-leistungsklasse-d-junioren-saison2627-mittelrhein/-/staffel/031ICL4ML8000006VS5489BUVVKNMR0J-G"
+    },
+    {
+     "mannschaft": "D-Junioren II",
+     "liga": "D-Qualifikationsstaffel 30",
+     "saison": "2026/27",
+     "platz": 2,
+     "punkte": "6",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/d-qualifikationsstaffel-30-kreis-dueren-d-junioren-leistungsklasse-d-junioren-saison2627-mittelrhein/-/staffel/031ICL4L34000007VS5489BUVVKNMR0J-G"
+    },
+    {
+     "mannschaft": "D-Junioren III (U11)",
+     "liga": "D-Qualifikationsstaffel 32",
+     "saison": "2026/27",
+     "platz": 2,
+     "punkte": "3",
+     "spiele": 2,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/d-qualifikationsstaffel-32-kreis-dueren-d-junioren-leistungsklasse-d-junioren-saison2627-mittelrhein/-/staffel/031ICL4LFK000004VS5489BUVVKNMR0J-G"
+    }
+   ],
+   "ohneTabelle": [
+    "E-Junioren",
+    "E-Junioren II",
+    "E-Junioren III",
+    "F-Junioren",
+    "F-Junioren II",
+    "F-Junioren III",
+    "G-Junioren"
+   ],
+   "turniere": [],
+   "quelle": "https://www.fussball.de/verein/sc-merzenich-mittelrhein/-/id/00ES8GN9A0000054VV0AG08LVUPGND5I",
+   "quelleName": "FUSSBALL.DE",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "SC 1919 Merzenich · Tennis",
+   "verein": "SC 1919 Merzenich e.V.",
+   "ort": "merzenich",
+   "sportart": "tennis",
+   "teams": [
+    {
+     "mannschaft": "Herren",
+     "liga": "Herren 1. Kreisliga",
+     "saison": "Sommer 2026",
+     "platz": 7,
+     "punkte": "2:12",
+     "spiele": 7,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=34"
+    },
+    {
+     "mannschaft": "Herren 30 (4er)",
+     "liga": "Herren 30 1. Kreisklasse 4-er",
+     "saison": "Sommer 2026",
+     "platz": 4,
+     "punkte": "1:7",
+     "spiele": 4,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=51"
+    },
+    {
+     "mannschaft": "Damen 30 (4er)",
+     "liga": "Damen 30 2. Kreisklasse 4-er",
+     "saison": "Sommer 2026",
+     "platz": 2,
+     "punkte": "8:4",
+     "spiele": 6,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=16"
+    },
+    {
+     "mannschaft": "Juniorinnen 15 (4er, SG mit TC Kreuzau)",
+     "liga": "Juniorinnen 15 3. Kreisklasse Jugend 4-er",
+     "saison": "Sommer 2026",
+     "platz": 4,
+     "punkte": "0:6",
+     "spiele": 3,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=92"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=36349",
+   "quelleName": "nuLiga (Tennisverband Mittelrhein)",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "FC Golzheim 1928",
+   "verein": "FC Golzheim 1928 e.V.",
+   "ort": "golzheim",
+   "sportart": "fussball",
+   "teams": [
+    {
+     "mannschaft": "Herren",
+     "liga": "Kreisliga A",
+     "saison": "2026/27",
+     "platz": 2,
+     "punkte": "19",
+     "spiele": 7,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-a-kreis-dueren-kreisliga-a-herren-saison2627-mittelrhein/-/staffel/031GUU1ID8000004VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "Herren II",
+     "liga": "Kreisliga B Staffel 2",
+     "saison": "2026/27",
+     "platz": 6,
+     "punkte": "10",
+     "spiele": 4,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-b-staffel-2-kreis-dueren-kreisliga-b-herren-saison2627-mittelrhein/-/staffel/031GUPK6AO000004VS5489BUVSJ4CRAP-G"
+    },
+    {
+     "mannschaft": "C-Junioren (U15)",
+     "liga": "C-Qualifikationsstaffel 25",
+     "saison": "2026/27",
+     "platz": 1,
+     "punkte": "6",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/c-qualifikationsstaffel-25-kreis-dueren-c-junioren-leistungsklasse-c-junioren-saison2627-mittelrhein/-/staffel/031BUHEO5K000008VS5489BTVUS470OH-G"
+    }
+   ],
+   "ohneTabelle": [
+    "E-Junioren",
+    "F-Junioren",
+    "G-Junioren"
+   ],
+   "turniere": [],
+   "quelle": "https://www.fussball.de/verein/fc-golzheim-mittelrhein/-/id/00ES8GN9A000003SVV0AG08LVUPGND5I",
+   "quelleName": "FUSSBALL.DE",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "FC Golzheim 1928 · Tennis",
+   "verein": "FC Golzheim 1928 e.V.",
+   "ort": "golzheim",
+   "sportart": "tennis",
+   "teams": [
+    {
+     "mannschaft": "Herren 65 (4er)",
+     "liga": "Herren 65 2. Verbandsliga 4-er",
+     "saison": "Winter 2026/27",
+     "platz": null,
+     "punkte": "0:0",
+     "spiele": 0,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=TVM+Winter+2026%2F2027&group=36"
+    },
+    {
+     "mannschaft": "Herren 65 (4er)",
+     "liga": "Herren 65 1. Bezirksklasse 4-er",
+     "saison": "Sommer 2026",
+     "platz": 1,
+     "punkte": "11:1",
+     "spiele": 6,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=83"
+    },
+    {
+     "mannschaft": "Damen (4er)",
+     "liga": "Damen 3. Kreisklasse 4-er",
+     "saison": "Sommer 2026",
+     "platz": 5,
+     "punkte": "4:6",
+     "spiele": 5,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=10"
+    },
+    {
+     "mannschaft": "Junioren 18 (4er, SG mit TC Buir)",
+     "liga": "Junioren 18 2. Kreisliga 4-er",
+     "saison": "Sommer 2026",
+     "platz": 3,
+     "punkte": "7:3",
+     "spiele": 5,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=LRH+S+2026&group=121"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=36059",
+   "quelleName": "nuLiga (Tennisverband Mittelrhein)",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "FC Rhenania Girbelsrath 1931",
+   "verein": "FC Rhenania Girbelsrath 1931 e.V.",
+   "ort": "girbelsrath",
+   "sportart": "fussball",
+   "teams": [
+    {
+     "mannschaft": "Herren",
+     "liga": "Kreisliga B Staffel 2",
+     "saison": "2026/27",
+     "platz": 11,
+     "punkte": "3",
+     "spiele": 3,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-b-staffel-2-kreis-dueren-kreisliga-b-herren-saison2627-mittelrhein/-/staffel/031GUPK6AO000004VS5489BUVSJ4CRAP-G"
+    }
+   ],
+   "ohneTabelle": [
+    "F-Junioren",
+    "G-Junioren"
+   ],
+   "turniere": [],
+   "quelle": "https://www.fussball.de/verein/fc-rhenania-girbelsrath-mittelrhein/-/id/00ES8GN9A000003QVV0AG08LVUPGND5I",
+   "quelleName": "FUSSBALL.DE",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "FC Rhenania Girbelsrath · Tennis",
+   "verein": "FC Rhenania Girbelsrath 1931 e.V.",
+   "ort": "girbelsrath",
+   "sportart": "tennis",
+   "teams": [
+    {
+     "mannschaft": "Herren (4er)",
+     "liga": "Herren 3. Kreisklasse 4-er",
+     "saison": "Sommer 2026",
+     "platz": 3,
+     "punkte": "3:5",
+     "spiele": 4,
+     "tabelleUrl": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+S+2026&group=42"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [
+    {
+     "titel": "Herren Bezirkspokal 2026 (Aachen-Düren-Heinsberg), 1. Runde: FC Rhenania Girbelsrath 1 - TC BW Stolberg 1 0:3",
+     "datum": "2026-05-21",
+     "quelle": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=ADH+P+2026&group=2233594"
+    }
+   ],
+   "quelle": "https://tvm.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/clubTeams?club=36528",
+   "quelleName": "nuLiga (Tennisverband Mittelrhein)",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "SV Morschenich 1925",
+   "verein": "SV Morschenich 1925 e.V.",
+   "ort": "morschenich",
+   "sportart": "fussball",
+   "teams": [
+    {
+     "mannschaft": "Herren",
+     "liga": "Kreisliga B Staffel 2",
+     "saison": "2026/27",
+     "platz": 4,
+     "punkte": "12",
+     "spiele": 6,
+     "tabelleUrl": "https://www.fussball.de/spieltagsuebersicht/kreisliga-b-staffel-2-kreis-dueren-kreisliga-b-herren-saison2627-mittelrhein/-/staffel/031GUPK6AO000004VS5489BUVSJ4CRAP-G"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://www.fussball.de/verein/sv-morschenich-mittelrhein/-/id/00ES8GN9A0000055VV0AG08LVUPGND5I",
+   "quelleName": "FUSSBALL.DE",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "TTC Merzenich 1972",
+   "verein": "Tischtennisclub Merzenich 1972 e.V.",
+   "ort": "merzenich",
+   "sportart": "tischtennis",
+   "teams": [
+    {
+     "mannschaft": "Erwachsene",
+     "liga": "2. Bezirksklasse 6 Erwachsene",
+     "saison": "2026/27",
+     "platz": 1,
+     "punkte": "13:3",
+     "spiele": 4,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522583"
+    },
+    {
+     "mannschaft": "Erwachsene II",
+     "liga": "2. Bezirksklasse 5 Erwachsene",
+     "saison": "2026/27",
+     "platz": 4,
+     "punkte": "7:5",
+     "spiele": 3,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522057"
+    },
+    {
+     "mannschaft": "Erwachsene III",
+     "liga": "3. Bezirksklasse 8 Erwachsene",
+     "saison": "2026/27",
+     "platz": 1,
+     "punkte": "11:1",
+     "spiele": 3,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522346"
+    },
+    {
+     "mannschaft": "Erwachsene IV",
+     "liga": "3. Bezirksklasse 9 Erwachsene",
+     "saison": "2026/27",
+     "platz": 2,
+     "punkte": "9:7",
+     "spiele": 4,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522609"
+    },
+    {
+     "mannschaft": "Damen",
+     "liga": "1. Bezirksliga Damen",
+     "saison": "2026/27",
+     "platz": 3,
+     "punkte": "5:3",
+     "spiele": 2,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=528619"
+    },
+    {
+     "mannschaft": "Jugend 15",
+     "liga": "1. Bezirksklasse Jugend 15 Gruppe 1",
+     "saison": "2026/27",
+     "platz": 5,
+     "punkte": "3:5",
+     "spiele": 2,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522641"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubTeams?club=8073",
+   "quelleName": "click-TT (WTTV)",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "TV Golzheim 1885 · Tischtennis",
+   "verein": "TV Golzheim 1885 e.V.",
+   "ort": "golzheim",
+   "sportart": "tischtennis",
+   "teams": [
+    {
+     "mannschaft": "Erwachsene",
+     "liga": "3. Bezirksklasse 7 Erwachsene",
+     "saison": "2026/27",
+     "platz": 1,
+     "punkte": "14:2",
+     "spiele": 4,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=522363"
+    },
+    {
+     "mannschaft": "Erwachsene II",
+     "liga": "4. Bezirksklasse 2 Erwachsene",
+     "saison": "2026/27",
+     "platz": 4,
+     "punkte": "8:8",
+     "spiele": 4,
+     "tabelleUrl": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=Aachen%2FEuregio+26%2F27&group=532378"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubTeams?club=7936",
+   "quelleName": "click-TT (WTTV)",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "BSC Merzenich 1970 (Billard)",
+   "verein": "Billardsportclub Merzenich 1970 e.V. (BSC Merzenich)",
+   "ort": "merzenich",
+   "sportart": "billard",
+   "teams": [
+    {
+     "mannschaft": "Merzenich 1",
+     "liga": "Oberliga Dreiband (Billard-Verband Niederrhein)",
+     "saison": "2026/27",
+     "platz": 5,
+     "punkte": "4",
+     "spiele": 4,
+     "tabelleUrl": "https://billard-niederrhein.de/sb_spielplan.php?p=14%7C%7C2026/2027%7C233%7C0"
+    },
+    {
+     "mannschaft": "Merzenich 2",
+     "liga": "Verbandsliga Dreiband (Billard-Verband Niederrhein)",
+     "saison": "2026/27",
+     "platz": 8,
+     "punkte": "2",
+     "spiele": 4,
+     "tabelleUrl": "https://billard-niederrhein.de/sb_spielplan.php?p=14%7C%7C2026/2027%7C234%7C0"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [
+    {
+     "titel": "Ausrichter der Bundesmannschaftsmeisterschaft Dreiband kleiner Tisch (Lindenstraße 10, Merzenich)",
+     "datum": "2026-06-26",
+     "quelle": "https://bsc-merzenich.de/bundesmannschaftsmeisterschaft"
+    },
+    {
+     "titel": "Luigi La Rocca (BSC Merzenich) wird mit der deutschen Nationalmannschaft Europameister im 5-Pin",
+     "datum": "2026-03-11",
+     "quelle": "https://bsc-merzenich.de/europameister"
+    }
+   ],
+   "quelle": "https://bsc-merzenich.de/",
+   "quelleName": "Billard-Verband Niederrhein",
+   "geprueft": "2026-10-07"
+  },
+  {
+   "name": "Schachverein Turm 72 Merzenich",
+   "verein": "Schachverein Turm 72 Merzenich",
+   "ort": "merzenich",
+   "sportart": "schach",
+   "teams": [
+    {
+     "mannschaft": "1. Mannschaft",
+     "liga": "Bezirksliga Rur-Erft",
+     "saison": "2026/27",
+     "platz": 8,
+     "punkte": "0 MP / 16.0 BP",
+     "spiele": 2,
+     "tabelleUrl": "https://ergebnisportal.sv-mittelrhein.de/index.php/component/clm/?view=rangliste&saison=6&liga=148&Itemid=1"
+    }
+   ],
+   "ohneTabelle": [],
+   "turniere": [],
+   "quelle": "https://www.turm72merzenich.de/https/-/schach-in/sv-turm-1972-merzenich/",
+   "quelleName": "Schachverband Mittelrhein",
+   "geprueft": "2026-10-07"
+  }
+ ]
+}
