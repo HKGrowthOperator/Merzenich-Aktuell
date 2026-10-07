@@ -506,3 +506,7 @@ Nach Runde 16 lud der Importer auf GitHub 27 Ersatzfotos nach. **6 freigegeben:*
 ## Runde 18 (07.10.2026)
 
 Nach Runde 17 lud der Importer auf GitHub 12 Ersatzfotos nach. **Keines freigegeben, alle 12 ausgeschlossen:** drei weitere Porträts des Kölner Polizeipräsidenten, drei Fotos der Feuerwehr Mureck (Österreich), eine Fahrrad-Reparaturstation in Málaga, eine mit Baumarkt-Werbung, eine Werkzeug-Nahaufnahme ohne Bildaussage und Doppelungen (zwei Rauchmelder, eine Reparaturstation). Die Pools Verkehr und Technische Hilfe haben genug Reparaturstationen und Rauchmelder; was fehlt, steht in `docs/FOTOWUNSCHLISTE.md`. Der Rettungshubschrauber am Kalkberg bleibt zurückgestellt.
+
+## Runde 19 (07.10.2026)
+
+Direkt nach Runde 18 lud der Importer 8 weitere Fotos aus denselben Serien nach. **Alle 8 ausgeschlossen:** drei weitere Fotos der Feuerwehr Mureck (Österreich), ein Rauchmelder aus Russland und vier Fahrrad-Reparaturstationen mit Aufdruck (Bike Broz bei Hornbach, ADAC). Damit das nicht weitergeht, sperrt der Importer (`deploy/import-editorial-photos.mjs`) diese Serien jetzt selbst: Steiermark/Mureck, Russland, Spanien/Málaga, Ungarn/Mohács und Porträts von Polizeipräsidenten für alle Pools, Hornbach, Bike Broz und ADAC für den Pool Verkehr. Schon freigegebene Fotos bleiben.

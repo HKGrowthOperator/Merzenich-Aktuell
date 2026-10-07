@@ -160,9 +160,9 @@ const POOLS = {
 
 const BAD_TITLE = /(logo|wappen|coat of arms|flag|karte|map of|locator|diagram|poster|plakat|flyer|icon|scan|seite \d|page \d|screenshot|symbol|svg)/i;
 // Strengere Filter nach der Sichtprüfung vom 24.09.2026.
-const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|unfall|accident|crash|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
+const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|polizeipr[aä]sident|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|unfall|accident|crash|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
 const BAD_KATEGORIE = /(portrait|people of|politicians|athletes|players|footballers|musicians|actors|soldiers|military|united states army|demonstrations|protests|satellite|maps of|logos|coats of arms|patches|license plates|vehicle registration|paintings|diagrams|charts|crowds|children)/i;
-const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea|arizona|oregon|nevada|montana|colorado|utah|idaho|new mexico|texas|florida|national forest|forest service|bush ?fire|sweden|schweden|norway|norwegen|finland|denmark|d[aä]nemark|nyn[aä]shamn|israel|kibbutz|gaza|ukrain|estonia|eesti|tartu|latvia|lithuania|indonesia|philippin|mexico|colombia|brazil|india\b|massacre|massaker|anschlag)/i;
+const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea|arizona|oregon|nevada|montana|colorado|utah|idaho|new mexico|texas|florida|national forest|forest service|bush ?fire|sweden|schweden|norway|norwegen|finland|denmark|d[aä]nemark|nyn[aä]shamn|israel|kibbutz|gaza|ukrain|estonia|eesti|tartu|latvia|lithuania|indonesia|philippin|mexico|colombia|brazil|india\b|steiermark|styria|mureck|russia|russland|moscow|moskau|m[aá]laga|spain|spanien|espa[nñ]a|hungary|ungarn|moh[aá]cs|massacre|massaker|anschlag)/i;
 // Titel in nicht-lateinischer Schrift stammen fast immer aus dem Ausland.
 const FREMDE_SCHRIFT = /[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
 // Sportplatz-Suchen treffen Wegekreuze "hinter dem Sportplatz".
@@ -180,6 +180,8 @@ const EINSATZ_POOLS = new Set(['polizei', 'blaulicht', 'feuerwehr', 'brand', 'te
 const FALSCHES_MERZENICH = /(z[uü]e?lpich|euskirchen|k[oö]ln|cologne|eigelstein|schildergasse)/i;
 
 const VERKEHR_PFLICHT = /(blitzer|starenkasten|geschwindigkeitsmess|radarfalle|radarkontrolle|speed camera|traffic enforcement camera|fotoradar|fahrrad.?reparatur|reparaturstation|bicycle repair|bike repair|repair station|servicestation|fahrradservice)/i;
+// Reparaturstationen mit Firmen- oder Clubaufdruck (Runde 18/19): Werbung im Bild.
+const VERKEHR_FREMD = /(hornbach|bike ?broz|adac)/i;
 const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -264,6 +266,7 @@ function usable(c, pool) {
   // Pool verkehr bedient nur die Motivregeln geschwindigkeit und fahrrad-reparatur;
   // ohne Pflichtwort im Titel kam Beifang wie 'GNT'-Ausstellungen und Zuege.
   if (pool === 'verkehr' && !VERKEHR_PFLICHT.test(c.title)) return false;
+  if (pool === 'verkehr' && VERKEHR_FREMD.test(text)) return false;
   if (POOLS[pool].pflicht && !POOLS[pool].pflicht.test(c.title)) return false;
   // "Feldbrand" ist auch Strassen- und Nachname (Stolpersteine, Strasse Am Feldbrand).
   if (pool === 'flaeche' && /(stolperstein|am feldbrand|strassenbahnhaltestelle|hummel)/i.test(c.title)) return false;

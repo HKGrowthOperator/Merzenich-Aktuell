@@ -6,6 +6,8 @@
 
 Solange noch keine Person und kein Partner eine veröffentlichte Meldung hat, ist die Autoren-Sitemap leer. WordPress beantwortet eine leere Sitemap mit 404, und die Search Console hätte das als Fehler gemeldet. Die Sitemap steht jetzt erst im Verzeichnis `wp-sitemap.xml`, wenn sie Einträge hat. Nur das Plugin hochladen.
 
+Dazu kommt die Sichtprüfung Runde 19: 8 nachgeladene Fotos derselben Serien sind ausgeschlossen. Der Importer sperrt diese Serien jetzt selbst (`docs/POOLFOTOS-PRUEFUNG.md`).
+
 ## Neu in Theme 21.16.0 / Plugin 1.26.0 (07.10.2026): echte Autoren, Schlagwörter aufgeräumt, Google per API
 
 Beide Pakete hochladen und danach einmal das Backend öffnen. Dabei werden die doppelten Schlagwörter einmalig zusammengeführt.
