@@ -1,6 +1,18 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.1 (Historie unten)
+7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.2 (Historie unten)
+
+## Neu in Plugin 1.26.2 (07.10.2026): Redakteure, Schlagwörter im Abgleich, Kleinigkeiten für die Anleitung
+
+Nur das Plugin hochladen.
+
+- **Redakteure** (Rolle „Redakteur“, z. B. Tivi und Ordin) öffnen jetzt auch **Sport** und **Abgleich** („Jetzt abgleichen“, Stellen und Immobilien übernehmen). Die Einstellungen des Abgleichs sehen und ändern weiter nur Administratoren. Der Sport-Hinweis im Dashboard erscheint auch für Redakteure.
+- **Schlagwörter:** Der Abgleich legte bei neuen oder aktualisierten Meldungen die zusammengeführten Schlagwörter wieder an (z. B. „Golzheim“). Jetzt entfallen Ressorts und Ortsteile als Schlagwort, Unterbegriffe landen im Oberbegriff (`ma_schlagwort_abbilden`).
+- **„Heute zu tun“:** Die Kachel „Anzeigen enden in 7 Tagen“ zählt jetzt auch Werbung (Ende in `ma_ad_end`); „Ansehen“ öffnet die passende Liste.
+- **Ein Name je Haken:** Der Freigabe-Kasten sagt „Redaktionelle Prüfung abgeschlossen“ wie die Checkbox, bei Anzeigen „Freigabe dokumentiert“.
+- **Tipps** haben den Freigabe-Kasten und den Hinweis, wenn „Freigabe dokumentiert“ fehlt. Die Sperre gilt auch für geplante Anzeigen.
+- **Grundsätze:** Statt „klar gekennzeichnete Grafik“ steht dort jetzt, dass eine Meldung ohne passendes Foto ohne Bild erscheint (Fassung 2026-10-07-2).
+- **Sport-Seite:** kein Hinweis mehr auf das Repository.
 
 ## Neu in Plugin 1.26.1 (07.10.2026): Autoren-Sitemap erst mit Einträgen
 

@@ -7,7 +7,8 @@ function ma_register_admin_hooks(): void {
         add_submenu_page('merzenich-aktuell','Wetter','Wetter','manage_options','ma-weather','ma_weather_settings_page');
         // Werbeplätze stehen beim Menü „Werbung“ (Werbemittel), nicht doppelt unter Merzenich Aktuell.
         add_submenu_page('edit.php?post_type=ma_ad','Werbeplätze','Werbeplätze','manage_options','ma-ads','ma_ads_settings_page');
-        add_submenu_page('merzenich-aktuell','Sport','Sport','manage_options','ma-sport','ma_sport_settings_page');
+        // Sport und Abgleich auch für Redakteure (1.26.2); Einstellungen bleiben Administratoren vorbehalten.
+        add_submenu_page('merzenich-aktuell','Sport','Sport','edit_others_posts','ma-sport','ma_sport_settings_page');
     });
 }
 
@@ -156,7 +157,7 @@ function ma_sport_table_from_request(): array {
 }
 
 function ma_sport_settings_page(): void {
-    if (!current_user_can('manage_options')) return;
+    if (!current_user_can('edit_others_posts')) return;
 
     if (isset($_POST['ma_sport_import']) && check_admin_referer('ma_sport_save')) {
         $ergebnis = ma_sport_import_from_json((string)wp_unslash($_POST['sport_json'] ?? ''));
@@ -187,7 +188,7 @@ function ma_sport_settings_page(): void {
     $next = (array)($d['next_match'] ?? []);
     $table = array_values((array)($d['table'] ?? []));
 
-    echo '<div class="wrap"><h1>Sport</h1><p>Ergebnis, offenes Spiel, nächstes Spiel und Tabelle des SC Merzenich werden hier gepflegt. Was hier steht, zeigen Sportseite, Sportmodul und Startseite (seit 1.21.0 die einzige Quelle; ohne Eintrag gilt der Stand aus dem Repository). Nach jedem Spieltag kurz eintragen, die Quelle ist <a href="https://www.fussball.de/" target="_blank" rel="noopener">FUSSBALL.DE</a>.</p>';
+    echo '<div class="wrap"><h1>Sport</h1><p>Ergebnis, offenes Spiel, nächstes Spiel und Tabelle des SC Merzenich werden hier gepflegt. Was hier steht, zeigen die Sportseite und das Sportmodul. Nach jedem Spieltag kurz eintragen, die Quelle ist <a href="https://www.fussball.de/" target="_blank" rel="noopener">FUSSBALL.DE</a>.</p>';
     $offen = ma_sport_ueberfaellig();
     if ($offen !== '') echo '<div class="notice notice-warning inline"><p>' . esc_html($offen) . '</p></div>';
     echo '<form method="post">';

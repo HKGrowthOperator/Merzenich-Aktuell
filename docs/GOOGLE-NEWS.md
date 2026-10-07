@@ -19,7 +19,7 @@ Das Plugin holt den redaktionellen Stand jetzt **stündlich** selbst (Backend: M
 | aus (Standard) | Neue Meldungen landen als Entwurf in den Freigaben. Erst nach Freigabe stehen sie auf der Seite und in der News-Sitemap. Gibt niemand täglich frei, bleibt die Seite für Google alt. |
 | an | Neue Meldungen stehen innerhalb einer Stunde auf merzenich-aktuell.de, mit Startseiten-Freigabe. Termine werden ohnehin sofort veröffentlicht. |
 
-Empfehlung für das Ziel „bei Merzenich in den News vorn“: **an**, solange die Redaktion die Entwürfe nicht täglich freigibt. Die Meldungen sind im redaktionellen Stand mit Quelle geprüft. (Eine Vorschauseite gibt es seit 05.10.2026 nicht mehr; wer nicht freigibt, hat die Meldungen nirgends öffentlich.)
+Empfehlung: **aus**, solange die Redaktion jeden Tag freigibt; so geht jede Meldung durch einen Menschen. Nur wenn über Tage niemand freigibt, wäre „an“ besser als eine Seite ohne neue Meldungen. Die Meldungen sind im redaktionellen Stand mit Quelle geprüft. (Eine Vorschauseite gibt es seit 05.10.2026 nicht mehr; wer nicht freigibt, hat die Meldungen nirgends öffentlich.)
 
 ## Was der Betreiber einmalig tun muss
 

@@ -136,8 +136,17 @@ function ma_abgleich_term_id(string $tax, string $slug, string $name): int {
 
 function ma_abgleich_terme_setzen(int $id, array $terme): void {
     $je = [];
-    foreach ($terme as $t) { $tid = ma_abgleich_term_id((string) $t['tax'], (string) $t['slug'], (string) $t['name']); if ($tid) $je[$t['tax']][] = $tid; }
-    foreach ($je as $tax => $ids) wp_set_object_terms($id, $ids, $tax, false);
+    foreach ($terme as $t) {
+        // Zusammengeführte Schlagwörter (schlagwoerter.php) nicht wieder anlegen.
+        if ($t['tax'] === 'post_tag' && function_exists('ma_schlagwort_abbilden')) {
+            $ziel = ma_schlagwort_abbilden((string) $t['name'], (string) $t['slug']);
+            if ($ziel === '') continue;
+            if ($ziel !== null) { $da = get_term_by('name', $ziel, 'post_tag'); $t = ['tax' => 'post_tag', 'slug' => $da instanceof WP_Term ? $da->slug : sanitize_title($ziel), 'name' => $ziel]; }
+        }
+        $tid = ma_abgleich_term_id((string) $t['tax'], (string) $t['slug'], (string) $t['name']);
+        if ($tid) $je[$t['tax']][] = $tid;
+    }
+    foreach ($je as $tax => $ids) wp_set_object_terms($id, array_values(array_unique($ids)), $tax, false);
 }
 
 /** Medium zu einem Bild der Import-Datei: vorhanden (ma_image_static_src) oder laden. 0 bei Fehler. */
@@ -345,7 +354,7 @@ add_action('template_redirect', function (): void {
 /* ---------------------------------------------------------- Backend */
 
 add_action('admin_menu', function (): void {
-    add_submenu_page('merzenich-aktuell', 'Abgleich', 'Abgleich', 'manage_options', 'ma-abgleich', 'ma_abgleich_seite_admin', 2);
+    add_submenu_page('merzenich-aktuell', 'Abgleich', 'Abgleich', 'edit_others_posts', 'ma-abgleich', 'ma_abgleich_seite_admin', 2);
 }, 12);
 
 /* Dashboard-Kachel „Redaktion“ (1.20.4): was wartet, wann der Abgleich zuletzt lief, was zuletzt online ging. */
@@ -375,11 +384,12 @@ function ma_abgleich_dashboard_kachel(): void {
 }
 
 function ma_abgleich_seite_admin(): void {
-    if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
+    if (!current_user_can('edit_others_posts')) wp_die('Keine Berechtigung.');
+    $admin = current_user_can('manage_options');
     $hinweis = ''; $ergebnis = null;
     if (isset($_POST['ma_abgleich_aktion']) && check_admin_referer('ma_abgleich')) {
         $aktion = sanitize_key((string) $_POST['ma_abgleich_aktion']);
-        if ($aktion === 'einstellungen') {
+        if ($aktion === 'einstellungen' && $admin) {
             update_option('ma_abgleich_aktiv', isset($_POST['aktiv']) ? 'ja' : 'nein');
             update_option('ma_abgleich_sofort', isset($_POST['sofort']) ? 'ja' : 'nein');
             $q = esc_url_raw(trim((string) ($_POST['quelle'] ?? '')));
@@ -413,6 +423,10 @@ function ma_abgleich_seite_admin(): void {
         if (!empty($stand['offen'])) echo '<p>Es warten noch ' . (int) $stand['offen'] . ' Beiträge. Erneut „Jetzt abgleichen“ anklicken oder den nächsten automatischen Lauf abwarten.</p>';
     }
     if (function_exists('ma_markt_import_kasten')) echo ma_markt_import_kasten();
+    if (!$admin) {
+        echo '<h2>Einstellungen</h2><p>Automatischer Abgleich: ' . (ma_abgleich_aktiv() ? 'stündlich' : 'aus') . ' · Neue Meldungen: ' . (ma_abgleich_sofort() ? 'gehen sofort online' : 'landen als Entwurf in den Freigaben') . '. Ändern können das Administratoren.</p></div>';
+        return;
+    }
     echo '<h2>Einstellungen</h2><form method="post">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="einstellungen"><table class="form-table"><tbody>';
     echo '<tr><th>Automatischer Abgleich</th><td><label><input type="checkbox" name="aktiv" value="1"' . checked(ma_abgleich_aktiv(), true, false) . '> Stündlich laufen lassen</label></td></tr>';

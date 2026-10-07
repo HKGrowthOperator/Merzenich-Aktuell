@@ -35,6 +35,25 @@ function ma_schlagwort_ziel(string $name, string $zielSlug = ''): ?array {
     return [$z[0], $z[1], $pfad];
 }
 
+/** Slug wie WordPress ihn für deutsche Begriffe bildet (pure Funktion): Bürgewald → buergewald. */
+function ma_schlagwort_slug(string $s): string {
+    $s = strtr(mb_strtolower(trim($s)), ['ä' => 'ae', 'ö' => 'oe', 'ü' => 'ue', 'ß' => 'ss']);
+    return trim((string) preg_replace('~[^a-z0-9]+~', '-', $s), '-');
+}
+
+/**
+ * Schlagwort aus dem Abgleich (pure Funktion, Plugin 1.26.2): null = bleibt,
+ * '' = entfällt (Ressort oder Ortsteil, die eigene Seiten haben), sonst der
+ * Name des Oberbegriffs. Ohne das legte jeder Abgleich die zusammengeführten
+ * Schlagwörter wieder an.
+ */
+function ma_schlagwort_abbilden(string $name, string $slug = ''): ?string {
+    foreach (MA_SCHLAGWORT_ZUSAMMEN as $alt => [$art, $ziel]) {
+        if (mb_strtolower(trim($name)) === mb_strtolower($alt) || ($slug !== '' && $slug === ma_schlagwort_slug($alt))) return $art === 'thema' ? $ziel : '';
+    }
+    return null;
+}
+
 /** Weiterleitung für eine alte Themenadresse (pure Funktion). */
 function ma_schlagwort_weiterleitung(string $pfad, array $karte): string {
     return preg_match('~^/thema/([^/]+)/?~', strtolower($pfad), $m) && isset($karte[$m[1]]) ? (string) $karte[$m[1]] : '';

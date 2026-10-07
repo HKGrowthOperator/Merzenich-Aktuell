@@ -26,11 +26,11 @@ function ma_gate_requirements(string $post_type): array {
             'ma_source_verified' => 'Quelle geprüft',
             'ma_date_verified'   => 'Datum geprüft',
             'ma_place_verified'  => 'Ort geprüft',
-            'ma_human_reviewed'  => 'Human Review abgeschlossen',
+            'ma_human_reviewed'  => 'Redaktionelle Prüfung abgeschlossen',
         ];
     }
-    if (in_array($post_type, ['ma_property','ma_job','ma_obituary','ma_family_notice'], true)) {
-        return ['ma_release_confirmed' => 'Veröffentlichung freigegeben'];
+    if (in_array($post_type, ['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'], true)) {
+        return ['ma_release_confirmed' => 'Freigabe dokumentiert'];
     }
     return [];
 }
@@ -126,7 +126,7 @@ function ma_gate_status_box(): void {
 }
 
 function ma_gate_boxes(): void {
-    foreach (array_merge(['post'], ['ma_property','ma_job','ma_obituary','ma_family_notice']) as $typ) {
+    foreach (array_merge(['post'], ['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip']) as $typ) {
         add_meta_box('ma_gate_status', 'Freigabe', 'ma_gate_status_box', $typ, 'side', 'high');
     }
 }

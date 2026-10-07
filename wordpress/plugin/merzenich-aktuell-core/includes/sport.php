@@ -4,7 +4,7 @@ function ma_register_sport_hooks(): void {
     add_shortcode('ma_sport','ma_sport_shortcode');
     // Dashboard-Hinweis, sobald ein Ergebnis fehlt (1.21.0).
     add_action('admin_notices', function (): void {
-        if (!current_user_can('manage_options') || !function_exists('get_current_screen') || (get_current_screen()->id ?? '') !== 'dashboard') return;
+        if (!current_user_can('edit_others_posts') || !function_exists('get_current_screen') || (get_current_screen()->id ?? '') !== 'dashboard') return;
         $offen = ma_sport_ueberfaellig();
         if ($offen !== '') echo '<div class="notice notice-warning"><p><strong>Sport:</strong> ' . esc_html($offen) . ' <a href="' . esc_url(admin_url('admin.php?page=ma-sport')) . '">Jetzt eintragen</a></p></div>';
     });

@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-07';
+const MA_SEITEN_VERSION = '2026-10-07-2';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -74,7 +74,7 @@ function ma_seite_grundsaetze(): string {
         . '<li><strong>Archivbild.</strong> Eine frühere Aufnahme, die den Ort oder das Thema zeigt.</li>'
         . '<li><strong>Symbolbild.</strong> Ein Bild, das das Thema illustriert, ohne das Ereignis zu zeigen.</li>'
         . '<li><strong>Leserfoto.</strong> Von Leserinnen und Lesern eingesandt, mit Namensnennung.</li></ul>'
-        . '<p><strong>Keine KI-Bilder für reale Ereignisse.</strong> Für Meldungen über tatsächliche Ereignisse wird kein generiertes Ersatzbild als Ereignisfoto verwendet. Wenn kein passendes Bild vorliegt, erscheint die Meldung mit einer klar gekennzeichneten Grafik oder ohne Bild.</p>'
+        . '<p><strong>Keine KI-Bilder für reale Ereignisse.</strong> Für Meldungen über tatsächliche Ereignisse wird kein generiertes Ersatzbild als Ereignisfoto verwendet. Wenn kein passendes Foto vorliegt, erscheint die Meldung ohne Bild. Selbst gezeichnete Grafiken als Ersatz verwenden wir nicht.</p>'
         . '<h2 id="korrekturen">Korrekturen</h2>'
         . '<p>Fehler werden korrigiert und die Änderung wird im Artikel mit Datum ausgewiesen. Hinweise gehen an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über das <a href="/korrekturen/">Korrekturformular</a>. Eine Übersicht aller Korrekturen führen wir auf der Seite <a href="/korrekturen/">Korrekturen</a>.</p>'
         . '<h2 id="ethik">Ethik</h2>'

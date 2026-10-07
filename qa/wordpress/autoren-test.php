@@ -51,6 +51,10 @@ pruefe('andere Schlagwörter bleiben', [ma_schlagwort_ziel('Feuerwehr'), ma_schl
 $karte = ['grundschule' => '/thema/schule/', 'golzheim' => '/ort/golzheim/'];
 pruefe('alte Adresse leitet weiter, auch ohne Schrägstrich', [ma_schlagwort_weiterleitung('/thema/grundschule/', $karte), ma_schlagwort_weiterleitung('/thema/Golzheim', $karte)], ['/thema/schule/', '/ort/golzheim/']);
 pruefe('unbekannte und fremde Adressen nicht', [ma_schlagwort_weiterleitung('/thema/feuerwehr/', $karte), ma_schlagwort_weiterleitung('/leben/grundschule/', $karte)], ['', '']);
+pruefe('Slug wie WordPress', [ma_schlagwort_slug('Bürgewald'), ma_schlagwort_slug('Jugendfußball'), ma_schlagwort_slug(' Kreisliga A ')], ['buergewald', 'jugendfussball', 'kreisliga-a']);
+pruefe('Abgleich: Ortsteil und Ressort entfallen', [ma_schlagwort_abbilden('Golzheim', 'golzheim'), ma_schlagwort_abbilden('', 'buergewald'), ma_schlagwort_abbilden('Blaulicht')], ['', '', '']);
+pruefe('Abgleich: Unterbegriff wird Oberbegriff', [ma_schlagwort_abbilden('Grundschule', 'grundschule'), ma_schlagwort_abbilden('x', 'jugendfussball')], ['Schule', 'Fußball']);
+pruefe('Abgleich: andere bleiben', [ma_schlagwort_abbilden('Feuerwehr', 'feuerwehr'), ma_schlagwort_abbilden('Schule', 'schule')], [null, null]);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

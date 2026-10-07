@@ -59,6 +59,8 @@ echo "Pflichtfreigaben je Inhaltsart\n";
 pruefe('Beitrag hat vier Pflichthaken', count(ma_gate_requirements('post')), 4);
 pruefe('Immobilie hat einen',           count(ma_gate_requirements('ma_property')), 1);
 pruefe('Verein hat keinen',             count(ma_gate_requirements('ma_club')), 0);
+pruefe('Tipp braucht die dokumentierte Freigabe', ma_gate_requirements('ma_tip'), ['ma_release_confirmed' => 'Freigabe dokumentiert']);
+pruefe('Haken heißt wie im Editor', ma_gate_requirements('post')['ma_human_reviewed'], 'Redaktionelle Prüfung abgeschlossen');
 
 echo "\nWas fehlt gerade?\n";
 $GLOBALS['meta'][7] = [];

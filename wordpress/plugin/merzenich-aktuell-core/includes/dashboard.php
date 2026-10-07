@@ -8,6 +8,25 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
+/**
+ * Veröffentlichte Anzeigen, die in den nächsten 7 Tagen enden. Werbung speichert
+ * ihr Ende in ma_ad_end, alle anderen Anzeigenarten in ma_end_at.
+ * @return int[]
+ */
+function ma_dashboard_bald_endend(): array {
+    $zeitraum = [current_time('Y-m-d'), wp_date('Y-m-d', time() + 7 * DAY_IN_SECONDS)];
+    $abfrage = fn(array $typen, string $feld): array => get_posts(['post_type' => $typen, 'post_status' => 'publish', 'posts_per_page' => 99, 'fields' => 'ids',
+        'meta_query' => [['key' => $feld, 'value' => $zeitraum, 'compare' => 'BETWEEN', 'type' => 'DATE']]]);
+    return array_values(array_unique(array_merge($abfrage(['ma_job', 'ma_property', 'ma_obituary', 'ma_family_notice', 'ma_tip'], 'ma_end_at'), $abfrage(['ma_ad'], 'ma_ad_end'))));
+}
+
+/** Liste für „Ansehen“: die Anzeigenart mit den meisten bald endenden Einträgen (sonst Stellen). */
+function ma_dashboard_bald_typ(array $ids): string {
+    $typen = array_count_values(array_map('get_post_type', $ids));
+    arsort($typen);
+    return (string) (array_key_first($typen) ?: 'ma_job');
+}
+
 /** Zahlen für „Heute zu tun“: [Schlüssel => [Zahl, Text, Knopf, Link, wichtig]]. */
 function ma_dashboard_aufgaben(): array {
     $abgleich = function_exists('ma_freigaben_abgleich') ? count(ma_freigaben_abgleich(true)) : 0;
@@ -15,15 +34,14 @@ function ma_dashboard_aufgaben(): array {
     $eingang = (int) (wp_count_posts('ma_eingang')->ma_neu ?? 0);
     $kommentare = (int) (wp_count_comments()->moderated ?? 0);
     $sport = function_exists('ma_sport_ueberfaellig') ? ma_sport_ueberfaellig() : '';
-    $bald = get_posts(['post_type' => ['ma_job', 'ma_property', 'ma_obituary', 'ma_family_notice', 'ma_ad', 'ma_tip'], 'post_status' => 'publish', 'posts_per_page' => 99, 'fields' => 'ids',
-        'meta_query' => [['key' => 'ma_end_at', 'value' => [current_time('Y-m-d'), wp_date('Y-m-d', time() + 7 * DAY_IN_SECONDS)], 'compare' => 'BETWEEN', 'type' => 'DATE']]]);
+    $bald = ma_dashboard_bald_endend();
     $freigaben = $abgleich + $eingereicht;
     return [
         'freigaben' => [$freigaben, $freigaben === 1 ? 'Meldung wartet auf Freigabe' : 'Meldungen warten auf Freigabe', 'Freigeben', admin_url('admin.php?page=ma-freigaben'), $freigaben > 0],
         'eingang' => [$eingang, $eingang === 1 ? 'neue Einsendung im Eingang' : 'neue Einsendungen im Eingang', 'Eingang öffnen', admin_url('edit.php?post_type=ma_eingang'), $eingang > 0],
         'kommentare' => [$kommentare, $kommentare === 1 ? 'Kommentar wartet' : 'Kommentare warten', 'Sammelfreigabe', admin_url('edit-comments.php?page=ma-kommentar-freigabe'), $kommentare > 0],
         'sport' => [$sport !== '' ? 1 : 0, $sport !== '' ? 'Sportergebnis fehlt' : 'Sport ist aktuell', 'Sport eintragen', admin_url('admin.php?page=ma-sport'), $sport !== ''],
-        'anzeigen' => [count($bald), count($bald) === 1 ? 'Anzeige endet in 7 Tagen' : 'Anzeigen enden in 7 Tagen', 'Ansehen', admin_url('edit.php?post_type=ma_job&orderby=ma_end_at&order=asc'), false],
+        'anzeigen' => [count($bald), count($bald) === 1 ? 'Anzeige endet in 7 Tagen' : 'Anzeigen enden in 7 Tagen', 'Ansehen', admin_url('edit.php?post_type=' . ma_dashboard_bald_typ($bald)), false],
     ];
 }
 

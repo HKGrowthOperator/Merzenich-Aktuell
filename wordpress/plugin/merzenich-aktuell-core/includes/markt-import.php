@@ -145,7 +145,7 @@ add_action(defined('MA_ABGLEICH_CRON') ? MA_ABGLEICH_CRON : 'ma_abgleich_stuendl
 
 /* Knopf unter Merzenich Aktuell → Abgleich. */
 add_action('admin_post_ma_markt_import', function (): void {
-    if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
+    if (!current_user_can('edit_others_posts')) wp_die('Keine Berechtigung.');
     check_admin_referer('ma_markt_import');
     $d = ma_markt_holen();
     if (!$d) { wp_safe_redirect(add_query_arg('ma_markt', 'fehler', admin_url('admin.php?page=ma-abgleich'))); exit; }

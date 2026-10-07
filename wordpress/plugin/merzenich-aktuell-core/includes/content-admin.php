@@ -309,7 +309,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
 
 function ma_market_publication_gate(array $data,array $postarr): array {
     $gated=['ma_property','ma_job','ma_obituary','ma_family_notice','ma_tip'];
-    if (!in_array($data['post_type']??'',$gated,true) || ($data['post_status']??'')!=='publish') return $data;
+    if (!in_array($data['post_type']??'',$gated,true) || !in_array($data['post_status']??'',['publish','future'],true)) return $data;
 
     $post_id=(int)($postarr['ID']??0);
     $submitted=isset($_POST['ma_release_confirmed']);
