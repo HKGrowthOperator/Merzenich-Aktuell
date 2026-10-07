@@ -1,0 +1,36 @@
+{
+  "hinweis": "Recherchepaket 07.10.2026 (ChatGPT, von Claude gegen Bestand und Quelle geprüft). Von sieben Entwürfen ist nur Einsatz 137/26 neu; Herbstlaub, Vortrag Zwangsarbeit, Sportlerheim FC Golzheim und Kanalbau Krauthausen stehen schon im Bestand (Sportlerheim und Termin ergänzt). Nicht übernommen: Fachtermin EFG Niederrhein (Firmenveranstaltung außerhalb der Gemeinde), Minifußballtor (Zahlenstand vom 02.10. unbestätigt), Flutlicht Rhenania, Amprion, Pkw-Diebstahl Düren (Volltext nicht gelesen). Keine Straße und keine Angaben zum Zustand der Person.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-137-person-hinter-tuer-morschenich",
+      "ressort": "blaulicht",
+      "ortsteil": "morschenich",
+      "kicker": "Feuerwehr · Türöffnung",
+      "titel": "Türöffnung in Morschenich: Angehöriger bringt Schlüssel, Feuerwehr kann abrücken",
+      "dek": "Feuerwehr und Rettungsdienst wurden am Samstagvormittag zu einer Person hinter einer verschlossenen Tür in Morschenich gerufen. Ein Angehöriger kam mit einem Schlüssel, der Rettungsdienst übernahm.",
+      "datum": "2026-10-04T17:23:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 137/26 am Samstag, 3. Oktober 2026, vormittags",
+        "Stichwort: Person hinter Tür, Einsatzort in Morschenich",
+        "Löschgruppen Morschenich und Golzheim, FTZ Stockheim und Rettungsdienst alarmiert",
+        "Ein Angehöriger brachte einen Schlüssel, danach war der Einsatz für die Feuerwehr beendet"
+      ],
+      "absaetze": [
+        "Die Feuerwehr Merzenich ist am Samstagvormittag, 3. Oktober, zu einer Türöffnung in Morschenich alarmiert worden. Gemeldet war eine Person hinter einer verschlossenen Tür. Nach Angaben der Feuerwehr rückten die Löschgruppen Morschenich und Golzheim aus, zusammen mit der Feuerwehrtechnischen Zentrale (FTZ) in Stockheim und dem Rettungsdienst.",
+        "Die Einsatzkräfte sahen die Person durch ein Fenster und betreuten sie, bis ein Angehöriger mit einem Schlüssel eintraf. So konnte der Rettungsdienst zu ihr gelangen. Für die Feuerwehr war der Einsatz damit beendet. Es war der 137. Einsatz der Freiwilligen Feuerwehr Merzenich in diesem Jahr."
+      ],
+      "themen": [
+        ["feuerwehr", "Feuerwehr"],
+        ["rettungsdienst", "Rettungsdienst"]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 04.10.2026",
+        "url": "https://www.heimat-info.de/beitraege/bc57c30a-1513-465a-8ed4-5d639ab831b7",
+        "stand": "2026-10-07"
+      }
+    }
+  ]
+}

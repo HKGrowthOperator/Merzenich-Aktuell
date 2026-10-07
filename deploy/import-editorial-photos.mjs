@@ -32,11 +32,14 @@ const SERIE_MAX = 3;
 const PRO_POOL = 20;
 const REFRESH = process.argv.includes('--refresh');
 const HEUTE = new Date().toISOString().slice(0, 10);
-const UA = 'MerzenichAktuell-EditorialImageImporter/2.1 (https://merzenichaktuell.hk-growthoperator.de)';
+const UA = 'MerzenichAktuell-EditorialImageImporter/2.2 (https://merzenich-aktuell.de)';
 
 const POOLS = {
   aktuell: {
     tags: ['aktuell','merzenich','dueren','ort','strasse','gemeinde'],
+    // Runde 20 (07.10.2026): zwei belegte Ansichten von St. Laurentius Merzenich (Kilind).
+    max: 22,
+    titel: ['File:St. Laurentius Merzenich.jpg', 'File:St. Laurentius Merzenich Hauptportal.JPG'],
     queries: ['Merzenich Kreis Düren', 'Merzenich Denkmal', 'Golzheim Merzenich', 'Girbelsrath', 'Morschenich', 'Merzenich Rathaus', 'Kreis Düren Dorf']
   },
   blaulicht: {
@@ -109,6 +112,9 @@ const POOLS = {
   },
   leben: {
     tags: ['leben','dorfleben','alltag','nachbarschaft','familie'],
+    // Runde 20: Herbstlaub fuer Laubannahme und Herbstthemen, kein Ortsfoto.
+    max: 22,
+    titel: ['File:Herbstlaub-Ahorn.jpg', 'File:Herbstlaub auf einer Bank.jpg'],
     queries: ['Dorfplatz Nordrhein-Westfalen', 'Dorfstraße Kreis Düren', 'Kreis Düren Dorf', 'Spielplatz Nordrhein-Westfalen', 'Wochenmarkt Nordrhein-Westfalen', 'Park Düren', 'Dorfleben Nordrhein-Westfalen']
   },
   wirtschaft: {
@@ -145,10 +151,15 @@ const POOLS = {
     // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
     // und Schilder ohne Kennzeichen, Reparaturstationen fuer Fahrraeder.
     tags: ['verkehr','geschwindigkeit','blitzer','fahrrad','reparaturstation','strasse'],
+    // Runde 20: 16 geprüfte Fotos reichen; jeder Nachlauf brachte nur weitere
+    // Reparaturstationen aus dem Ausland oder mit Aufdruck.
+    max: 16,
     queries: ['Starenkasten', 'Blitzer Nordrhein-Westfalen', 'Geschwindigkeitsmessanlage', 'Geschwindigkeitsüberwachung Deutschland', 'Radarfalle Deutschland', 'Fahrradreparaturstation', 'Fahrrad-Reparaturstation', 'Fahrradservicestation', 'bicycle repair station', 'bike repair station Germany', 'Fahrrad Reparatursäule', 'Radservicestation']
   },
   tipp: {
     tags: ['tipp','freizeit','ausflug','wandern','radfahren','natur'],
+    max: 21,
+    titel: ['File:Herbstlaub im Naturschutzgebiet Wahner Heide.jpg'],
     queries: ['Sophienhöhe', 'Wandern Kreis Düren', 'Radweg Kreis Düren', 'Rurtalsperre', 'Naturschutzgebiet Kreis Düren', 'Rur Kreis Düren', 'Radweg Nordrhein-Westfalen']
   },
   menschen: {
@@ -220,22 +231,30 @@ function localityFor(text) {
 }
 
 async function commonsSearch(query) {
+  return commonsAbfrage({ generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: '50' }, query);
+}
+
+// Gezielt beschaffte Dateien (POOLS[pool].titel): genau diese Titel, in dieser
+// Reihenfolge, vor den Suchbegriffen. Lizenz- und Motivfilter gelten wie immer.
+async function commonsTitel(titel) {
+  const liste = await commonsAbfrage({ titles: titel.join('|') }, titel.join(', '));
+  return titel.map((t) => liste.find((x) => x.title === t)).filter(Boolean);
+}
+
+async function commonsAbfrage(auswahl, wofuer) {
   const params = new URLSearchParams({
     action: 'query',
     format: 'json',
-    generator: 'search',
-    gsrsearch: query,
-    gsrnamespace: '6',
-    gsrlimit: '50',
+    ...auswahl,
     prop: 'imageinfo',
     iiprop: 'url|mime|size|extmetadata',
     iiurlwidth: '1600'
   });
   const url = 'https://commons.wikimedia.org/w/api.php?' + params.toString();
   const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'application/json' } });
-  if (!res.ok) throw new Error('Commons search ' + res.status + ' for ' + query);
+  if (!res.ok) throw new Error('Commons ' + res.status + ' für ' + wofuer);
   const json = await res.json();
-  return Object.values(json?.query?.pages || {}).map((page) => {
+  return Object.values(json?.query?.pages || {}).filter((page) => page.imageinfo).map((page) => {
     const info = page.imageinfo?.[0];
     const meta = info?.extmetadata || {};
     return {
@@ -380,12 +399,13 @@ for (const pool of Object.keys(POOLS)) {
   const serien = new Map();
   for (const x of keep) serien.set(serie(x.sourceTitle), (serien.get(serie(x.sourceTitle)) || 0) + 1);
   const chosen = [];
-  for (const query of POOLS[pool].queries) {
+  const quellen = [...(POOLS[pool].titel ? [{ titel: POOLS[pool].titel }] : []), ...POOLS[pool].queries];
+  for (const query of quellen) {
     let candidates = [];
     try {
-      candidates = await commonsSearch(query);
+      candidates = typeof query === 'string' ? await commonsSearch(query) : await commonsTitel(query.titel);
     } catch (e) {
-      console.warn(pool + ': Suche fehlgeschlagen (' + query + '): ' + e.message);
+      console.warn(pool + ': Suche fehlgeschlagen (' + (query.titel || query) + '): ' + e.message);
       continue;
     }
     for (const candidate of candidates) {

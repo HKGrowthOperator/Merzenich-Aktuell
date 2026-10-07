@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 05.10.2026 für den Zeitraum 06.10. bis 30.11.2026. Alle Einträge sind Entwürfe (entwurf: true) und brauchen vor der Veröffentlichung eine redaktionelle Freigabe. Jede Angabe steht in der genannten Quelle. Ohne bekanntes Ende bleibt ende leer. Bei den geplanten Ausschusssitzungen lag am 05.10. noch keine Tagesordnung vor. deploy/termine.mjs baut für alle Einträge die Terminseiten; der WordPress-Import (deploy/wordpress-import.mjs) setzt Einträge mit entwurf: true auf Entwurf, sie erscheinen erst nach Freigabe (Freigaben-Seite).",
+  "hinweis": "Recherche vom 05.10.2026 für den Zeitraum 06.10. bis 30.11.2026. Kein Eintrag trägt entwurf: true; alle sind mit dem Abgleich direkt veröffentlicht worden (Stand 07.10.2026). Neue Termine, die erst nach Freigabe erscheinen sollen, bekommen entwurf: true. Jede Angabe steht in der genannten Quelle. Ohne bekanntes Ende bleibt ende leer. Bei den geplanten Ausschusssitzungen lag am 05.10. noch keine Tagesordnung vor. deploy/termine.mjs baut für alle Einträge die Terminseiten; der WordPress-Import (deploy/wordpress-import.mjs) setzt Einträge mit entwurf: true auf Entwurf, sie erscheinen erst nach Freigabe (Freigaben-Seite).",
   "termine": [
     {
       "slug": "blutspende-merzenich-2026-10-06",

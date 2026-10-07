@@ -1,5 +1,5 @@
 {
-  "hinweis": "Welches Motiv ein Poolfoto zeigt (Schluessel: Commons-Dateititel). Nur Fotos mit Motiv werden vergeben, und nur an Meldungen, deren Motivregel (MOTIVREGELN in deploy/lib-symbolbilder.mjs) genau dieses Motiv verlangt. Fotos ohne Eintrag zeigen nichts, das zu einer Meldung passt (fremde Dorfplaetze, Mittelaltermarkt, Polizeipraesidien in Grossstaedten), und bleiben ungenutzt. Gesichtet am 24.09.2026.",
+  "hinweis": "Welches Motiv ein Poolfoto zeigt (Schluessel: Commons-Dateititel). Nur Fotos mit Motiv werden vergeben, und nur an Meldungen, deren Motivregel (MOTIVREGELN in deploy/lib-symbolbilder.mjs) genau dieses Motiv verlangt. Fotos ohne Eintrag zeigen nichts, das zu einer Meldung passt (fremde Dorfplaetze, Mittelaltermarkt, Polizeipraesidien in Grossstaedten), und bleiben ungenutzt. Gesichtet am 24.09.2026. Runde 20 (07.10.2026): St. Laurentius Merzenich (Kilind, zwei Ansichten) als kirche-merzenich; drei Herbstlaub-Fotos als herbstlaub (Symbolbilder, kein Merzenicher Ort). \"Kath. Pfarrkirche St. Laurentius, Merzenich.jpg\" hat kein Motiv mehr: Beschreibung und Koordinaten auf Commons widersprechen sich.",
   "motive": {
     "File:DKB Bahnhof Merzenich Strassenseite Bus 2014.jpg": "bahnhof-merzenich",
     "File:Merzenich, P ^ R, Haltepunkt S12 - panoramio.jpg": "bahnhof-merzenich",
@@ -74,7 +74,8 @@
     "File:Arndtstraße Ecke Am Klagesmarkt Blitzer in Richtung Schlosswender Straße.jpg": "geschwindigkeitsmessung",
     "File:Mobilny fotoradar w Hanowerze (2025(.jpg": "geschwindigkeitsmessung",
     "File:Starenkasten Rotlichtüberwachung 1557.jpg": "geschwindigkeitsmessung",
-    "File:Kath. Pfarrkirche St. Laurentius, Merzenich.jpg": "kirche-merzenich",
+    "File:St. Laurentius Merzenich.jpg": "kirche-merzenich",
+    "File:St. Laurentius Merzenich Hauptportal.JPG": "kirche-merzenich",
     "File:Merzenich Alte Pfarrkirche.jpg": "kirche-merzenich",
     "File:Hopsten Kirmes 2014 02.JPG": "kirmes",
     "File:Hopsten Kirmes 2014 03.JPG": "kirmes",
@@ -147,6 +148,9 @@
     "File:Tanzhaus nrw Großer Saal Foto2 Katja Illner.jpg": "tanzsaal",
     "File:Nistkasten mit Marderschutz.JPG": "nistkasten",
     "File:Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck.JPG": "vereinsheim",
-    "File:Kirchenfenster- Der Herr ist mein Hirte.jpg": "kirchenfenster"
+    "File:Kirchenfenster- Der Herr ist mein Hirte.jpg": "kirchenfenster",
+    "File:Herbstlaub-Ahorn.jpg": "herbstlaub",
+    "File:Herbstlaub auf einer Bank.jpg": "herbstlaub",
+    "File:Herbstlaub im Naturschutzgebiet Wahner Heide.jpg": "herbstlaub"
   }
 }

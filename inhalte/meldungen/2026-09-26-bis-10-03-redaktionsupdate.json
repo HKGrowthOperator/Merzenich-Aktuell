@@ -187,12 +187,14 @@
       "fakten": [
         "Neue Bauetappe beim Erweiterungsbau des FC Golzheim",
         "Streifenfundamente nach Vorbereitung betoniert",
-        "Verein verweist auf erhebliche Eigenleistung und Unterstützung durch Handwerk, Gemeinde und Förderer"
+        "Verein verweist auf erhebliche Eigenleistung und Unterstützung durch Handwerk, Gemeinde und Förderer",
+        "Stand 3. Oktober: Erdarbeiten auf der Erweiterungsfläche, Leitungen werden verlegt, Untergrund wird verdichtet"
       ],
       "absaetze": [
         "Beim Erweiterungsbau des Sportlerheims des FC Golzheim ist ein weiterer Arbeitsschritt abgeschlossen: Laut der am 26. September veröffentlichten dritten Bildergeschichte wurden die vorbereiteten Streifenfundamente betoniert.",
         "Zuvor hatten Helfer die Schalungen und die Bewehrung entsprechend der statischen Vorgaben vorbereitet. Nach Vereinsangaben kamen für den Betoneinbau Betonmischer und eine Pumpe zum Einsatz; anschließend wurde bereits weiteres Material angeliefert.",
-        "Der Bau wird wesentlich durch Eigenleistung aus dem Vereinsumfeld getragen. Der FC Golzheim bedankt sich in seinem Bericht bei ehrenamtlichen Helfern sowie der Gemeinde, den unterstützenden Betrieben und privaten Förderern. Ein Termin für den Abschluss des Erweiterungsbaus wurde in dieser Meldung nicht genannt."
+        "Der Bau wird wesentlich durch Eigenleistung aus dem Vereinsumfeld getragen. Der FC Golzheim bedankt sich in seinem Bericht bei ehrenamtlichen Helfern sowie der Gemeinde, den unterstützenden Betrieben und privaten Förderern. Ein Termin für den Abschluss des Erweiterungsbaus wurde in dieser Meldung nicht genannt.",
+        "Inzwischen geht es auf der Erweiterungsfläche weiter. In seiner vierten Bildergeschichte vom 3. Oktober berichtet der Verein, dass die Erdarbeiten laufen, Leitungen verlegt werden und der Untergrund vorbereitet und verdichtet wird. Der FC Golzheim dankt erneut allen Helferinnen und Helfern und bittet weiter um Unterstützung, vor allem um Spenden für den Erweiterungsbau. Kosten und einen Fertigstellungstermin nennt auch dieser Bericht nicht."
       ],
       "themen": [
         [
@@ -209,7 +211,14 @@
         "name": "FC Golzheim 1928 e.V., Bildergeschichte Nr. 3 vom 26.09.2026",
         "url": "https://golzheim1928.de/bildergeschichte-nr-3-unser-erweiterungsbau-waechst-weiter-nachdem-in-unserer-zweiten-bildergeschichte-die-streifenfu",
         "stand": "2026-10-03"
-      }
+      },
+      "weitereQuellen": [
+        {
+          "name": "FC Golzheim 1928 e.V., Bildergeschichte Nr. 4 vom 03.10.2026",
+          "url": "https://golzheim1928.de/bildergeschichte-nr-4-erweiterungsbau-sportlerheim-auf-der-erweiterungsflaeche-geht-es-weiter-die-erdarbeiten-laufen-leitungen",
+          "stand": "2026-10-07"
+        }
+      ]
     },
     {
       "slug": "herbstlaub-2026-abgabe-bauhof-girbelsrath",
