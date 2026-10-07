@@ -7013,7 +7013,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Merzenich",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "7c99e8b1d65a466bc98beeabbec20c8f33f044b5dd4c8fe2403d14cc96195828"
     },
     {
@@ -7045,7 +7045,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Merzenich",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "5f6971587080fc9743e9e87cf89e59dbdf9eb1b6c6e3b9f8f1210628a520be64"
     },
     {
@@ -12144,39 +12144,8 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "5d4d6ff5c4ce911866f9a1fb57268fcffb5dd4c90f1a1b1322dd788967303f62"
-    },
-    {
-      "id": "web-leben-22-23c41416",
-      "pool": "leben",
-      "src": "/assets/editorial-pools/leben/leben-22-23c4141614.jpg",
-      "alt": "Kornhochheim, Fachwerkbau",
-      "credit": "Symbolbild · CTHOE / Wikimedia Commons · CC BY-SA 3.0",
-      "source": "Wikimedia Commons",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKornhochheim-Dorfplatz-3.JPG",
-      "sourceTitle": "File:Kornhochheim-Dorfplatz-3.JPG",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Kornhochheim-Dorfplatz-3.JPG/1920px-Kornhochheim-Dorfplatz-3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "license": "CC BY-SA 3.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "rightsCheckedAt": "2026-10-07",
-      "tags": [
-        "leben",
-        "dorfleben",
-        "alltag",
-        "nachbarschaft",
-        "familie",
-        "kornhochheim",
-        "dorfplatz"
-      ],
-      "width": 1920,
-      "height": 792,
-      "format": "jpg",
-      "symbol": true,
-      "photo": true,
-      "locality": "Deutschland / überregional",
-      "geprueft": false,
-      "checksum": "5ba9c529df24a550629cf767d57c3db22df808fbfcd0e02618b35161a4a37d85"
     },
     {
       "id": "web-wirtschaft-01-56135954",
@@ -14380,7 +14349,7 @@
       "symbol": true,
       "photo": true,
       "locality": "Deutschland / überregional",
-      "geprueft": false,
+      "geprueft": true,
       "checksum": "87e395bee156207cd0f13c3b2154ef67baf9fb490dd1ba9ed64e0a9aca1f6592"
     },
     {

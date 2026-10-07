@@ -113,8 +113,8 @@ const POOLS = {
   leben: {
     tags: ['leben','dorfleben','alltag','nachbarschaft','familie'],
     // Runde 20: Herbstlaub fuer Laubannahme und Herbstthemen, kein Ortsfoto.
-    max: 22,
-    titel: ['File:Herbstlaub-Ahorn.jpg', 'File:Herbstlaub auf einer Bank.jpg'],
+    max: 21,
+    titel: ['File:Herbstlaub auf einer Bank.jpg'],
     queries: ['Dorfplatz Nordrhein-Westfalen', 'Dorfstraße Kreis Düren', 'Kreis Düren Dorf', 'Spielplatz Nordrhein-Westfalen', 'Wochenmarkt Nordrhein-Westfalen', 'Park Düren', 'Dorfleben Nordrhein-Westfalen']
   },
   wirtschaft: {

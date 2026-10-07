@@ -3,7 +3,7 @@
  "quelle": "Wikimedia Commons",
  "mindest": 20,
  "pools": {
-  "aktuell": 20,
+  "aktuell": 22,
   "blaulicht": 20,
   "polizei": 13,
   "feuerwehr": 20,
@@ -17,14 +17,14 @@
   "kirchedetail": 4,
   "termine": 20,
   "vereine": 20,
-  "leben": 20,
+  "leben": 21,
   "wirtschaft": 20,
   "technik": 10,
   "rettung": 0,
   "unfall": 1,
   "flaeche": 0,
   "verkehr": 16,
-  "tipp": 20,
+  "tipp": 21,
   "menschen": 20
  },
  "bilder": [
@@ -307,6 +307,34 @@
    "geprueft": true,
    "geprueftAm": "2026-09-24",
    "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-aktuell-21-532c4ea9",
+   "pool": "aktuell",
+   "datei": "/assets/editorial-pools/aktuell/aktuell-21-532c4ea91c-1200.webp",
+   "alt": "Kath. Pfarrkirche St. Laurentius in Merzenich - Südost-Ansicht.",
+   "credit": "Symbolbild · Kilind / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASt._Laurentius_Merzenich.jpg",
+   "titel": "File:St. Laurentius Merzenich.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-10-07",
+   "ort": "Merzenich"
+  },
+  {
+   "id": "web-aktuell-22-8e6dd7d3",
+   "pool": "aktuell",
+   "datei": "/assets/editorial-pools/aktuell/aktuell-22-8e6dd7d33b-1200.webp",
+   "alt": "Hauptportal der Kath. Pfarrkirche St. Laurentius in Merzenich.",
+   "credit": "Symbolbild · Kilind / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASt._Laurentius_Merzenich_Hauptportal.JPG",
+   "titel": "File:St. Laurentius Merzenich Hauptportal.JPG",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-10-07",
+   "ort": "Merzenich"
   },
   {
    "id": "web-blaulicht-01-77105a0c",
@@ -2591,6 +2619,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-leben-21-9b5bb6e2",
+   "pool": "leben",
+   "datei": "/assets/editorial-pools/leben/leben-21-9b5bb6e2fe-1200.webp",
+   "alt": "Herbstlaub",
+   "credit": "Symbolbild · Dellex / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AHerbstlaub_auf_einer_Bank.jpg",
+   "titel": "File:Herbstlaub auf einer Bank.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-wirtschaft-01-56135954",
    "pool": "wirtschaft",
    "datei": "/assets/editorial-pools/wirtschaft/wirtschaft-01-561359542b-1200.webp",
@@ -3526,6 +3568,20 @@
    "lizenzUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tipp-21-b2be2ca7",
+   "pool": "tipp",
+   "datei": "/assets/editorial-pools/tipp/tipp-21-b2be2ca7e2-1200.webp",
+   "alt": "Abendstimmung im November in der Wahner Heide. Darstellung von goldgefärbten Laubbäumen im Herbst.",
+   "credit": "Symbolbild · Barbara Horstmann / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AHerbstlaub_im_Naturschutzgebiet_Wahner_Heide.jpg",
+   "titel": "File:Herbstlaub im Naturschutzgebiet Wahner Heide.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
