@@ -2,6 +2,13 @@
 
 7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.4 (Historie unten)
 
+## Bedienungsanleitung für KBS als PDF (07.10.2026)
+
+- `docs/Merzenich-Aktuell-Bedienungsanleitung-KBS.pdf`, 27 Seiten mit Inhaltsverzeichnis und 15 Bildschirmfotos aus dem Live-Backend (nur gelesen, Namen und Adressen unkenntlich).
+- Teil A für die Redaktion (Rolle „Redakteur“), Teil B für Administratoren, Anhang mit Regeln, Hilfe bei Problemen, Begriffen, Mustermails und Kontakten.
+- Quelle `docs/UEBERGABE-KBS.md`, neu bauen mit `deploy/anleitung-pdf.mjs` (siehe `README-INSTALLATION.md`).
+- Mustermails in `docs/vorlagen/`: Das Passwort wird persönlich oder telefonisch übergeben, WordPress schickt keine Mail.
+
 ## Neu in Plugin 1.26.3 und 1.26.4 (07.10.2026): Texte und Beiträge-Liste für die Anleitung
 
 - Sport und Partner-Zugänge: Hinweistexte ohne Entwicklerbegriffe (kein `/api/…`, kein Shortcode).

@@ -10,7 +10,7 @@ Zwei Fassungen: Zusage und Rückfrage/Absage. Platzhalter in eckigen Klammern er
 
 Guten Tag [Name],
 
-vielen Dank für Ihren Antrag für [Organisation]. Wir richten den Zugang ein. In Kürze erhalten Sie zwei E-Mails: eine automatische von WordPress, mit der Sie Ihr Passwort festlegen, und eine von uns mit einer kurzen Anleitung.
+vielen Dank für Ihren Antrag für [Organisation]. Wir richten den Zugang ein. Das Passwort teilen wir Ihnen telefonisch mit; danach erhalten Sie von uns eine E-Mail mit einer kurzen Anleitung.
 
 Zur Einordnung vorab:
 

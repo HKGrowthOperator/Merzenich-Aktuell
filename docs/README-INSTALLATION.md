@@ -4,6 +4,14 @@ Stand 7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.4 · live auf merzeni
 
 Die Bedienung für die Redaktion steht in `UEBERGABE-KBS.md`, die Änderungen je Version in `WORDPRESS-LIEFERUNG.md`. Die frühere Fassung dieser Anleitung (Theme 20.2, September 2026) ist überholt.
 
+Die Bedienungsanleitung für KBS gibt es als PDF zum Weitergeben: `Merzenich-Aktuell-Bedienungsanleitung-KBS.pdf`. Quelle ist `UEBERGABE-KBS.md`, die Bildschirmfotos liegen in `anleitung/bilder/`. Nach jeder Änderung an der Anleitung die PDF neu bauen und mit einchecken:
+
+```bash
+NODE_PATH=$(npm root -g) node deploy/anleitung-pdf.mjs
+```
+
+Das Skript braucht Playwright mit Chromium und `pdftotext` (Paket poppler-utils). Es baut die PDF zweimal, damit das Inhaltsverzeichnis die richtigen Seitenzahlen hat.
+
 ## Bestandteile
 
 | Paket | Inhalt |
