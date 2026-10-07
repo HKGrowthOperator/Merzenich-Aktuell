@@ -1,11 +1,11 @@
 {
- "stand": "2026-10-06",
+ "stand": "2026-10-07",
  "quelle": "Wikimedia Commons",
  "mindest": 20,
  "pools": {
   "aktuell": 20,
   "blaulicht": 20,
-  "polizei": 13,
+  "polizei": 16,
   "feuerwehr": 20,
   "brand": 20,
   "sport": 20,
@@ -19,11 +19,11 @@
   "vereine": 20,
   "leben": 20,
   "wirtschaft": 20,
-  "technik": 8,
+  "technik": 24,
   "rettung": 0,
   "unfall": 1,
   "flaeche": 0,
-  "verkehr": 12,
+  "verkehr": 20,
   "tipp": 20,
   "menschen": 20
  },
@@ -603,6 +603,34 @@
    "ort": "NRW"
   },
   {
+   "id": "web-polizei-02-82f5a04b",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-02-82f5a04bbf-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7266.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7266.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-polizei-03-302df8e1",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-03-302df8e121-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7272.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7272.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-polizei-04-c44548ef",
    "pool": "polizei",
    "datei": "/assets/editorial-pools/polizei/polizei-04-c44548efb5-1200.webp",
@@ -629,6 +657,20 @@
    "geprueft": true,
    "geprueftAm": "2026-09-24",
    "ort": "NRW"
+  },
+  {
+   "id": "web-polizei-06-6a3b1ead",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-06-6a3b1eadae-1200.webp",
+   "alt": "Pressetermin im Polizeipräsidium Köln-Kalk: Vorstellung des neuen Polizeipräsidenten Uwe Jacob",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVorstellung_Polizeipr%C3%A4sident_Uwe_Jacob-7273.jpg",
+   "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7273.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-polizei-07-8fce03b7",
@@ -2871,6 +2913,48 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-01-b53a8390",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-01-b53a8390e5-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_112550_(50799159438).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 112550 (50799159438).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-02-a5b6ec79",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-02-a5b6ec7982-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_113244_(50800018157).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 113244 (50800018157).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-03-bb971a7c",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-03-bb971a7cd1-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_113538_(50799161143).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 113538 (50799161143).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-technik-04-149fab0f",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-04-149fab0f23-1200.webp",
@@ -2899,6 +2983,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-06-427e9f56",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-06-427e9f562c-1200.webp",
+   "alt": "Точечный дымовой пожарный извещатель",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector%2C_Russia_(3).JPG",
+   "titel": "File:Smoke detector, Russia (3).JPG",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-technik-07-c67b4064",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-07-c67b406470-1200.webp",
@@ -2910,6 +3008,48 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-08-d4247db5",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-08-d4247db56e-1200.webp",
+   "alt": "Дымовой пожарный извещатель с заглушкой и индикатором, показывающим сигнал \"неисправность\"",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_with_stub%2C_Russia(02).jpg",
+   "titel": "File:Smoke detector with stub, Russia(02).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-09-6b308ae8",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-09-6b308ae891-1200.webp",
+   "alt": "Натяжной потолок с базой дымового пожарного извещателя",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector%2C_Russia_(04).jpg",
+   "titel": "File:Smoke detector, Russia (04).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-10-0a86dba7",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-10-0a86dba71e-1200.webp",
+   "alt": "Извещатель (детектор) дыма",
+   "credit": "Symbolbild · Nikolai Twin / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_Z.jpg",
+   "titel": "File:Smoke detector Z.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
@@ -2927,6 +3067,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-12-8652582c",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-12-8652582ca9-1200.webp",
+   "alt": "Радиоканальный дымовой пожарный извещатель \"Болид\" с монтажным комплектом не предназначенным для натяжного потолка",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_on_the_stretch_ceiling_(01).jpg",
+   "titel": "File:Smoke detector on the stretch ceiling (01).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-technik-13-fd1f4525",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-13-fd1f4525ba-1200.webp",
@@ -2941,6 +3095,62 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-14-0fad1b24",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-14-0fad1b24fc-1200.webp",
+   "alt": "Адресный дымовой пожарный извещатель \"Болид\" с монтажным комплектом не предназначенным для натяжного потолка",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_on_the_stretch_ceiling_(02).jpg",
+   "titel": "File:Smoke detector on the stretch ceiling (02).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-15-2ddfd5bd",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-15-2ddfd5bd9c-1200.webp",
+   "alt": "Gamewell Fire Alarm call box",
+   "credit": "Symbolbild · Mmangan333 / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFire_alarm_call_box_Somerville_MA.jpg",
+   "titel": "File:Fire alarm call box Somerville MA.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-16-83fa21e4",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-16-83fa21e43d-1200.webp",
+   "alt": "Smoke detector on the wall - Feel free to use this photo for your website or blog as long as you include photo credit with a clickable (hyperlinked) and do-follow link to &lt;a hre",
+   "credit": "Symbolbild · HomeSpot HQ / Wikimedia Commons · CC BY 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_Detector_(9420220532).jpg",
+   "titel": "File:Smoke Detector (9420220532).jpg",
+   "lizenz": "CC BY 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-17-7499d94f",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-17-7499d94f0e-1200.webp",
+   "alt": "Smoke detector and alarm - Feel free to use this photo for your website or blog as long as you include photo credit with a clickable (hyperlinked) and do-follow link to &lt;a href=",
+   "credit": "Symbolbild · HomeSpot HQ / Wikimedia Commons · CC BY 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_Detector_(8560801098).jpg",
+   "titel": "File:Smoke Detector (8560801098).jpg",
+   "lizenz": "CC BY 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-technik-18-1eea3512",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-18-1eea351292-1200.webp",
@@ -2952,6 +3162,34 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-19-c94e0ab0",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-19-c94e0ab089-1200.webp",
+   "alt": "fire alarm call box",
+   "credit": "Symbolbild · Artyom Svetlov / Wikimedia Commons · CC BY 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AMoscow_State_University_fire_alarm_call_box_2014-01_1389531294.JPG",
+   "titel": "File:Moscow State University fire alarm call box 2014-01 1389531294.JPG",
+   "lizenz": "CC BY 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-20-8f19ef78",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-20-8f19ef78a0-1200.webp",
+   "alt": "Smoke detector 01",
+   "credit": "Symbolbild · Urheber siehe Quelldatei / Wikimedia Commons · CC BY-SA 2.1 es",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_01.jpg",
+   "titel": "File:Smoke detector 01.jpg",
+   "lizenz": "CC BY-SA 2.1 es",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.1/es/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
@@ -2983,6 +3221,34 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-23-8b16aeff",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-23-8b16aeff20-1200.webp",
+   "alt": "Atral-Secal Funk-Rauchwarnmelder 2 - 61325917 ZY (10)",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AAtral-Secal_Funk-Rauchwarnmelder_2-7070.jpg",
+   "titel": "File:Atral-Secal Funk-Rauchwarnmelder 2-7070.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-24-527e61bd",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-24-527e61bdb1-1200.webp",
+   "alt": "Atral-Secal Funk-Rauchwarnmelder 2 - 61325917 ZY (10)",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AAtral-Secal_Funk-Rauchwarnmelder_2-7071.jpg",
+   "titel": "File:Atral-Secal Funk-Rauchwarnmelder 2-7071.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-unfall-13-dddcf86b",
    "pool": "unfall",
    "datei": "/assets/editorial-pools/unfall/unfall-13-dddcf86b1e-1200.webp",
@@ -2995,6 +3261,34 @@
    "geprueft": true,
    "geprueftAm": "2026-09-24",
    "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-01-7fa08efe",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-01-7fa08efe3c-1200.webp",
+   "alt": "Fairview Community Center, Roseville Area Schools, Roseville, Minnesota",
+   "credit": "Symbolbild · Runner1928 / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABicycle_repair_stand_at_Fairview_Community_Center_04.jpg",
+   "titel": "File:Bicycle repair stand at Fairview Community Center 04.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-02-646c812c",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-02-646c812c40-1200.webp",
+   "alt": "pump, basic tools",
+   "credit": "Symbolbild · Kurwal / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABicycle_Repair_Stand_Br%C3%BCggen_Nikolausplatz.jpg",
+   "titel": "File:Bicycle Repair Stand Brüggen Nikolausplatz.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "NRW"
   },
   {
    "id": "web-verkehr-03-abdf9193",
@@ -3025,6 +3319,34 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-verkehr-05-9f46903b",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-05-9f46903b60-1200.webp",
+   "alt": "pump, basic tools (no tubes!)",
+   "credit": "Symbolbild · Kurwal / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABicycle_Repair_Stand_Oedt_Albert-Mooren-Halle.jpg",
+   "titel": "File:Bicycle Repair Stand Oedt Albert-Mooren-Halle.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-verkehr-06-e8e784d6",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-06-e8e784d6ef-1200.webp",
+   "alt": "Bicycle repair station by Topeak",
+   "credit": "Symbolbild · Matti Blume / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABicycle_repair_station_(LRM_20230516_184201).jpg",
+   "titel": "File:Bicycle repair station (LRM 20230516 184201).jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-verkehr-07-a6da7083",
    "pool": "verkehr",
    "datei": "/assets/editorial-pools/verkehr/verkehr-07-a6da70835d-1200.webp",
@@ -3036,6 +3358,20 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-08-2020ae17",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-08-2020ae178d-1200.webp",
+   "alt": "Public bicycle repair station in Altdorf bei Nürnberg",
+   "credit": "Symbolbild · Matti Blume / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABike_repair_station%2C_Altdorf_bei_N%C3%BCrnberg_(P1180294).jpg",
+   "titel": "File:Bike repair station, Altdorf bei Nürnberg (P1180294).jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
@@ -3109,6 +3445,34 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-verkehr-14-35818b8a",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-14-35818b8abe-1200.webp",
+   "alt": "Neue Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024.",
+   "credit": "Symbolbild · Kürschner ( talk ) 16:05, 5 May 2024 (UTC) / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_am_Carlsplatz%2C_D%C3%BCsseldorf%2C_Mai_2024_(1).jpg",
+   "titel": "File:Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024 (1).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-verkehr-15-3a6ef6e0",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-15-3a6ef6e007-1200.webp",
+   "alt": "Neue Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024.",
+   "credit": "Symbolbild · Kürschner ( talk ) 16:06, 5 May 2024 (UTC) / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_am_Carlsplatz%2C_D%C3%BCsseldorf%2C_Mai_2024_(2).jpg",
+   "titel": "File:Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024 (2).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "NRW"
+  },
+  {
    "id": "web-verkehr-16-4b3fa4a4",
    "pool": "verkehr",
    "datei": "/assets/editorial-pools/verkehr/verkehr-16-4b3fa4a49f-1200.webp",
@@ -3120,6 +3484,20 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-17-6c4c6980",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-17-6c4c6980e3-1200.webp",
+   "alt": "Fahrrad-Reparaturstation Hegelstraße Tübingen",
+   "credit": "Symbolbild · Giftzwerg 88 / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_Hegelstra%C3%9Fe_T%C3%BCbingen_01.jpg",
+   "titel": "File:Fahrrad-Reparaturstation Hegelstraße Tübingen 01.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
