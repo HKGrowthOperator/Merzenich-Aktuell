@@ -14,6 +14,8 @@ Merzenich Aktuell läuft als WordPress-Seite auf **merzenich-aktuell.de**. Alles
 
 **Startseite:** oben der **Aufmacher** (große Meldung) und die **Bühne** (vier Plätze daneben und darunter), darunter die Rubrikflächen der Ressorts. Die rechte Spalte füllt sich selbst: Termine, „Merzenich jetzt“ (nächster Termin, letzter Feuerwehreinsatz), Wetter, Foto des Tages, Umkreis, Stellen und Immobilien. Sport steht auf Wunsch von KBS nicht auf der Startseite, sondern auf merzenich-aktuell.de/sport/.
 
+**Heute in Merzenich** (merzenich-aktuell.de/heute/) füllt sich selbst: die Termine von heute und den nächsten sieben Tagen und die neuesten Meldungen. Die Seite antwortet auf die Frage „Was ist heute in Merzenich los?“, die viele bei Google stellen.
+
 **Wer macht was:**
 
 | Wer | Was |
@@ -187,6 +189,8 @@ Termine heißen im Menü **Veranstaltungen**. Neuer Termin: **Veranstaltungen �
 Termine haben keine Prüfhaken. Prüfen Sie Datum, Uhrzeit und Ort selbst an der Quelle. Nach dem Ende verschwindet ein Termin von selbst aus allen Listen, ohne Ende am Abend des Tages. Jeder Termin bietet Lesern eine Kalenderdatei an.
 
 Termine aus der Recherche erscheinen sofort. Sehen Sie die Liste **Veranstaltungen** einmal pro Woche durch. Falsche Termine in den Papierkorb legen, sie kommen nicht wieder.
+
+Jeder Termin steht an seinem Tag auch auf **Heute in Merzenich** (merzenich-aktuell.de/heute/). Dort fällt ein falscher Termin besonders auf.
 
 ## A7. Eingang: Einsendungen von Lesern und Partnern
 
@@ -408,7 +412,7 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 
 ## B5. Seiten und Einstellungen
 
-- **Rechtstexte** und **Redaktionsseiten** (beide unter Merzenich Aktuell): Impressum, Datenschutz, Über uns, Redaktion, Grundsätze, Korrekturen, Kommentarrichtlinien, Kontakt, Werben, Anzeigen und weitere Seiten pflegt das System selbst. Gibt es eine neue Fassung, steht dort **Fassung … einspielen**. Wurde eine Seite von Hand geändert, überschreibt das System sie nicht und zeigt einen Hinweis. Für die Liste auf der Seite Korrekturen und den Link auf der Seite WhatsApp-Kanal ist Bearbeiten von Hand gewollt.
+- **Rechtstexte** und **Redaktionsseiten** (beide unter Merzenich Aktuell): Impressum, Datenschutz, Über uns, Redaktion, Grundsätze, Korrekturen, Kommentarrichtlinien, Kontakt, Werben, Anzeigen, Heute in Merzenich und weitere Seiten pflegt das System selbst. Gibt es eine neue Fassung, steht dort **Fassung … einspielen**. Wurde eine Seite von Hand geändert, überschreibt das System sie nicht und zeigt einen Hinweis. Für die Liste auf der Seite Korrekturen und den Link auf der Seite WhatsApp-Kanal ist Bearbeiten von Hand gewollt.
 - **Werbung → Werbeplätze**: **Werbung global AN** und je Platz ein Haken. Ein Platz ohne Haken zeigt nichts, auch keine Musteranzeige.
 - **SEO & Geo**: Bestätigungscodes für Google Search Console und Bing, offizielle Profile der Seite, Stand der Push-Nachrichten.
 - **Wetter**: läuft von selbst, nichts zu tun.
@@ -421,6 +425,7 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 - [ ] Mit IONOS den Vertrag zur Auftragsverarbeitung abschließen (im IONOS-Kundenkonto). Er regelt, dass IONOS die Daten der Seite nur im Auftrag verarbeitet.
 - [ ] Google Publisher Center: die Publikation „Merzenich Aktuell“ anlegen, damit die Seite in Google News als Quelle erscheint. Den Zugriff für die automatische Auswertung richtet HK Growth Operator mit dem Betreiber ein.
 - [ ] WhatsApp-Kanal anlegen und den Link auf der Seite WhatsApp-Kanal eintragen.
+- [ ] Um Links aus dem Ort bitten: die Gemeinde um einen Link und die Aufnahme in den Presseverteiler, Vereine nach einem Bericht über sie. Mustertexte im Anhang. Links von Seiten aus Merzenich helfen am meisten, damit Google die Seite bei „Merzenich“ weiter oben zeigt. Nur einzeln und persönlich, keine Serienmail, keine gekauften Links.
 - [ ] Echte Werbekunden und Unternehmensprofile gewinnen, nur mit schriftlicher Einwilligung.
 - [ ] Bildfreigaben der Vereine einholen. Vereinsfotos nur mit Nutzungserlaubnis.
 - [ ] Fehlende Symbolfotos beschaffen lassen (vor allem Polizei, Verkehr, Rettung, Türöffnung).
@@ -483,7 +488,7 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Startseiten-Freigabe | Ob eine Meldung auf die Startseite darf. Getrennt vom Veröffentlichen. |
 | Symbolbild | Foto zum Thema, das nicht das Ereignis selbst zeigt. |
 
-## Mustermails für Partner
+## Mustermails
 
 **Antwort auf einen Partner-Antrag (Zusage)**
 
@@ -511,6 +516,34 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 > Mit freundlichen Grüßen
 > Redaktion Merzenich Aktuell
 
+**Bitte an die Gemeinde (Presseverteiler und Link)**
+
+> Betreff: Merzenich Aktuell: Presseverteiler und Link auf Ihrer Website
+>
+> Guten Tag [Name],
+>
+> Merzenich Aktuell (merzenich-aktuell.de) berichtet aus der Gemeinde Merzenich mit Golzheim, Girbelsrath, Morschenich und Bürgewald: Nachrichten aus Rat und Verwaltung, Blaulicht, Vereine, Sport und Termine. Alle Inhalte sind frei zugänglich. Herausgeberin ist die KBS Management GmbH.
+>
+> Wir haben zwei Bitten: Nehmen Sie uns bitte in den Verteiler für Pressemitteilungen und Einladungen zu öffentlichen Sitzungen auf ([E-Mail der Redaktion]). Und wenn die Gemeinde auf ihrer Website lokale Medien oder weiterführende Links nennt, freuen wir uns über einen Eintrag: „Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich“, merzenich-aktuell.de.
+>
+> Mitteilungen der Gemeinde geben wir mit Quelle und Link auf gemeinde-merzenich.de wieder.
+>
+> Mit freundlichen Grüßen
+> [Name], Redaktion Merzenich Aktuell
+
+**Hinweis an einen Verein nach einem Bericht**
+
+> Betreff: Bericht über [Anlass] auf Merzenich Aktuell
+>
+> Guten Tag [Name],
+>
+> wir haben über [Anlass] berichtet: [Link zur Meldung]
+>
+> Wenn Ihnen der Bericht gefällt, teilen Sie ihn gern auf Ihrer Vereinsseite oder in Ihren Kanälen. Stimmt etwas nicht, sagen Sie uns bitte Bescheid. Wir korrigieren das sichtbar im Artikel.
+>
+> Mit freundlichen Grüßen
+> [Name], Redaktion Merzenich Aktuell
+
 ## Bekannte Grenzen
 
 - Die Kontaktdaten eines Vereinsprofils (Website, Kontakt, Logo) lassen sich im Backend nicht direkt ändern. Der Verein schlägt die Änderung über seinen Zugang vor („Änderung vorschlagen“), oder HK Growth Operator trägt sie ein.
@@ -525,4 +558,4 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV) | Anto-Sutharsan Jesuthasan |
 | Technische Hilfe, Recherche, Bildbeschaffung | HK Growth Operator |
 
-Technischer Stand dieser Anleitung: Theme 21.16.0 · Core-Plugin 1.26.4.
+Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.0.

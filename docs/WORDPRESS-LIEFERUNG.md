@@ -1,6 +1,19 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.4 (Historie unten)
+7. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.0 (Historie unten)
+
+## Neu in Theme 21.17.0 / Plugin 1.27.0 (07.10.2026): bei Google gefunden werden
+
+Beide Pakete hochladen und danach einmal das Backend öffnen. Dabei legt das Plugin die Seite „Heute in Merzenich“ an. Hintergrund und Schritte im Google-Konto: `GOOGLE-NEWS.md`, Abschnitt „Gefunden werden“.
+
+- **Heute in Merzenich** (`/heute/`): Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen.
+  - Bei Google heißt die Seite „Was ist heute in Merzenich los?“, die Frage, die Google selbst unter „Weitere Fragen“ zeigt.
+  - Die Seite legt das Plugin an (`includes/seiten.php`). Die Ausgabe kommt aus dem Theme (`page-heute.php`, `ma21_heute_seite()` in `inc/termine.php`).
+  - Verlinkt im Mehr-Menü, in der Schublade (Service), im Fuß nach „Termine“, über „Merzenich jetzt“ auf der Startseite und auf `/termine/`. Die Links erscheinen erst, wenn die Seite angelegt ist.
+- **Startseite:** Die einzige H1 ist das Logo, Alt-Text „Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich“. Der Aufmacher ist eine H2 und sieht unverändert aus (Bildschirmfoto-Vergleich Handy und Desktop).
+- **Strukturdaten:** Logo mit den echten Maßen 720 × 203 statt 1200 × 338. `WebSite` mit `alternateName` „Merzenich-Aktuell“ und „merzenich-aktuell.de“.
+- **Sitemap:** Neue Sitemap `wp-sitemap-bereiche-1.xml` mit `/nachrichten/`, `/termine/` und `/unternehmen/`. Diese drei Seiten standen bisher in keiner Sitemap.
+- **Mustertexte** für Links aus dem Ort: `docs/vorlagen/verlinkung-gemeinde.md`, `verlinkung-verein.md`, `teilen-lokale-gruppen.md`. Die Anleitung für KBS enthält die ersten beiden.
 
 ## Bedienungsanleitung für KBS als PDF (07.10.2026)
 

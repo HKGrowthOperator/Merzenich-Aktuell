@@ -51,6 +51,45 @@ Die Mitbewerber (Aachener Zeitung, Dürener Nachrichten, Rundschau, Radio Rur) s
 - Google-Suche „Merzenich“ → Reiter „Nachrichten“ und `site:merzenich-aktuell.de` → Reiter „Nachrichten“.
 - Backend → Abgleich zeigt den letzten Lauf (neu, aktualisiert, Fehler) und das Protokoll.
 
+## Gefunden werden (Stand 07.10.2026, Theme 21.17.0 / Plugin 1.27.0)
+
+**Befund:** Bei der Suche „merzenich“ stehen Gemeinde, Wikipedia, Kreis Düren und die Bäckerei Merzenich vorn. `site:merzenich-aktuell.de` zeigt erst wenige Seiten. Technisch ist die Seite offen: robots.txt, `index,follow`, Canonical, beide Sitemaps und die Bestätigungsdatei antworten richtig. Die Seite ist erst wenige Wochen unter dieser Domain, und kaum eine andere Seite verlinkt sie. Das ist der eigentliche Grund.
+
+**Was die Seite seit 1.27.0 selbst tut:**
+- `/heute/` („Heute in Merzenich“, Titel bei Google „Was ist heute in Merzenich los?“): Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen. Google zeigt genau diese Frage unter „Weitere Fragen“. Verlinkt aus Menü, Fuß, „Merzenich jetzt“ auf der Startseite und von `/termine/`.
+- Startseite: Die einzige H1 ist das Logo mit dem Text „Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich“. Vorher war es die jeweils oberste Meldung. Der Aufmacher ist jetzt eine H2 und sieht gleich aus.
+- Strukturdaten: Logo mit den echten Maßen (720 × 203), `WebSite` mit den Schreibweisen „Merzenich-Aktuell“ und „merzenich-aktuell.de“.
+- Neue Sitemap `wp-sitemap-bereiche-1.xml` mit `/nachrichten/`, `/termine/` und `/unternehmen/`. Sie steht im Verzeichnis `wp-sitemap.xml` und braucht keine eigene Einreichung.
+
+**Was der Betreiber im Google-Konto tut (einmalig, etwa 20 Minuten):**
+1. Search Console → Indexierung → Seiten: Zahl „Indexiert“ und die Gründe unter „Nicht indexiert“ ansehen.
+2. Search Console → URL-Prüfung → „Indexierung beantragen“ (etwa 10 Adressen am Tag):
+   - **Tag 1:** Startseite, `/heute/`, `/blaulicht/`, `/termine/`, `/nachrichten/` und die fünf Ortsteilseiten (`/ort/merzenich/`, `/ort/golzheim/`, `/ort/girbelsrath/`, `/ort/morschenich/`, `/ort/buergewald/`).
+   - **Tag 2:** `/vereine/`, `/sport/`, `/rathaus/` und die neuesten Meldungen.
+3. Sitemaps: Bei `wp-sitemap.xml` und `news-sitemap.xml` muss „Erfolgreich“ stehen.
+4. Publisher Center wie oben unter „Was der Betreiber einmalig tun muss“ anlegen.
+5. **Alte Vorschauadresse** `merzenichaktuell.hk-growthoperator.de` antwortet mit 503:
+   - Erst `site:merzenichaktuell.hk-growthoperator.de` bei Google suchen.
+   - Gibt es Treffer: dauerhaft (301) auf `https://merzenich-aktuell.de` umleiten.
+   - Sonst: den DNS-Eintrag löschen.
+
+**Was am meisten hilft: Links aus dem Ort.**
+- **Gemeinde:** Link von gemeinde-merzenich.de und Aufnahme in den Presseverteiler. Vorlage: `vorlagen/verlinkung-gemeinde.md`.
+- **Vereine:** Nach einem Bericht dem Verein den Link schicken. Vorlage: `vorlagen/verlinkung-verein.md`.
+- **Lokale Gruppen:** Einmal vorstellen, danach nur wichtige einzelne Meldungen teilen. Vorlage: `vorlagen/teilen-lokale-gruppen.md`.
+- **Nicht tun:**
+  - Links kaufen oder tauschen.
+  - Merzenich Aktuell selbst in Wikipedia eintragen (Interessenkonflikt; Wikipedia entfernt das).
+  - Ein Google-Unternehmensprofil ohne echten Publikumsstandort anlegen.
+  - Serienmails verschicken.
+
+**Was realistisch ist:**
+- **„merzenich aktuell“:** Tage bis wenige Wochen, sobald die Startseite im Index ist.
+- **„nachrichten merzenich“, „blaulicht merzenich“, „was ist heute in merzenich los“:** Wochen bis wenige Monate, abhängig von täglich neuen Meldungen.
+- **„merzenich“ allein:** Gemeinde, Wikipedia und Bäckerei bleiben vorn. Der schnellste Weg auf die erste Seite ist der Kasten „Schlagzeilen“, sobald Google die Seite als Nachrichtenquelle führt. Dauerhaft weiter oben erst nach Monaten mit Links aus dem Ort, ohne Garantie.
+
+**Messen:** Search Console → Leistung → Suchanfragen, wöchentlich. Mit den Google-Schlüsseln (unten) auch `node deploy/google-seo.mjs leistung`.
+
 ## Aufgeräumt für Google (Plugin 1.26.0)
 
 - Doppelte Schlagwörter sind zusammengeführt: Ressorts und Ortsteile als Schlagwort entfallen, Unterbegriffe gehen im Oberbegriff auf (Grundschule → Schule usw.). Die alten Adressen leiten mit 301 weiter.
