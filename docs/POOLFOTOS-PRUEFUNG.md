@@ -502,3 +502,7 @@ WordPress zieht das Ergebnis beim nächsten Aufruf des Backends nach (Plugin 1.2
 ## Runde 17 (07.10.2026)
 
 Nach Runde 16 lud der Importer auf GitHub 27 Ersatzfotos nach. **6 freigegeben:** zwei neutrale Rauchmelder (Technische Hilfe) und vier deutsche Fahrrad-Reparaturstationen (Verkehr, laut Motivregel gewollt). **21 ausgeschlossen:** drei weitere Porträts des Kölner Polizeipräsidenten, Feuerwehr Mureck (Österreich), Produktfotos mit Marke, US- und Moskauer Feuermelder, Doppelungen und unscharfe Bilder. Stand geprüft: Blaulicht 19, Polizei 13, Verkehr 16, Technische Hilfe 10.
+
+## Runde 18 (07.10.2026)
+
+Nach Runde 17 lud der Importer auf GitHub 12 Ersatzfotos nach. **Keines freigegeben, alle 12 ausgeschlossen:** drei weitere Porträts des Kölner Polizeipräsidenten, drei Fotos der Feuerwehr Mureck (Österreich), eine Fahrrad-Reparaturstation in Málaga, eine mit Baumarkt-Werbung, eine Werkzeug-Nahaufnahme ohne Bildaussage und Doppelungen (zwei Rauchmelder, eine Reparaturstation). Die Pools Verkehr und Technische Hilfe haben genug Reparaturstationen und Rauchmelder; was fehlt, steht in `docs/FOTOWUNSCHLISTE.md`. Der Rettungshubschrauber am Kalkberg bleibt zurückgestellt.

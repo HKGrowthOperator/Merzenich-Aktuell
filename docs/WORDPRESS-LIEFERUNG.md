@@ -26,6 +26,7 @@ Beide Pakete hochladen und danach einmal das Backend öffnen. Dabei werden die d
   - Startseiten-Titel kürzer: „Merzenich Aktuell: Nachrichten aus Merzenich und Ortsteilen“. Die Ortsteile stehen in der Beschreibung.
 - **Google per API** (`deploy/google-seo.mjs`, nicht in den Paketen): Sitemaps einreichen und ihren Stand zeigen, Leistung je Suchanfrage und Seite (Websuche, News, Discover, Google News), URL-Prüfung und PageSpeed. Die Schlüssel kommen aus der Umgebung (`GOOGLE_SERVICE_ACCOUNT_JSON`, `PAGESPEED_API_KEY`), nie aus dem Repository. Einrichtung: `GOOGLE-NEWS.md`.
 - **Tests:** `qa/wordpress/autoren-test.php` (Autoren-Regeln, Freigabe, Schema, Schwelle, Schlagwörter), `qa/google-seo-test.mjs` (Anmeldung, Property, Fehlerhinweise).
+- **Bildpools:** Sichtprüfung Runde 18. Die 12 nachgeladenen Fotos sind alle ausgeschlossen (`docs/POOLFOTOS-PRUEFUNG.md`).
 
 ## Neu in Theme 21.15.1 / Plugin 1.25.1 (07.10.2026): feste Reihenfolge bei gleichem Datum, Sichtprüfung Runde 17
 
