@@ -1185,6 +1185,19 @@ function ma21_u_karte(WP_Post $p, int $i): string {
         . '<p class="u-karte__teaser">' . ma21_e(ma21_teaser($p)) . '</p>'
         . "<a class=\"u-karte__weiter\" href=\"{$url}\">Weiterlesen<span class=\"sr-only\">: {$titel}</span></a></article>";
 }
+/*
+ * Feste Reihenfolge bei gleichem Datum (21.15.1). Viele importierte Meldungen
+ * tragen dieselbe Zeit (z. B. 04.09., 00:00). Die Datenbank gibt sie dann je
+ * nach Abfrage verschieden aus, und das Layout-Board zeigte andere Karten als
+ * die Seite; nach einem Tausch sprangen die automatisch belegten Plätze. Bei
+ * gleichem Datum entscheidet die Beitragsnummer aufsteigend, wie die Seite es
+ * schon zeigt.
+ */
+add_filter('posts_orderby', function (string $orderby): string {
+    global $wpdb;
+    $datum = "{$wpdb->posts}.post_date DESC";
+    return trim($orderby) === $datum ? $datum . ", {$wpdb->posts}.ID ASC" : $orderby;
+});
 // Keine Schrägstrich-Umleitung für /api/weather.json (die Skripte rufen genau diese Adresse).
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_api') ? false : $ziel);
 add_action('pre_get_posts', function (WP_Query $q): void {
