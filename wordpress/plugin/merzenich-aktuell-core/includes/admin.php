@@ -12,7 +12,9 @@ function ma_register_admin_hooks(): void {
 }
 
 function ma_dashboard(): void {
-    $hero = function_exists('ma_theme_hero_post') ? ma_theme_hero_post() : null;
+    // Aufmacher wie auf der Startseite (Layout-Karte, fest oder automatisch); die alte 7-Tage-Regel nur als Rückfall.
+    $belegung = (array) apply_filters('ma_layout_belegung', [], 'startseite');
+    $hero = !empty($belegung['aufmacher']['post']) ? get_post((int) $belegung['aufmacher']['post']) : (function_exists('ma_theme_hero_post') ? ma_theme_hero_post() : null);
     if (!$hero) {
         $latest = new WP_Query(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>1,'orderby'=>'date','order'=>'DESC']);
         $hero = $latest->posts[0] ?? null;
@@ -38,13 +40,13 @@ function ma_dashboard(): void {
     $abgleich = (string)get_option('ma_abgleich_geprueft', '');
     echo '<div class="wrap"><h1>Merzenich Aktuell – Aktualitätscheck</h1><table class="widefat striped"><tbody>';
     echo '<tr><th>Letzter Abgleich</th><td>'.esc_html($abgleich !== '' ? mysql2date('d.m.Y, H:i', $abgleich).' Uhr' : 'noch nicht gelaufen').'</td></tr>';
-    echo '<tr><th>Aktueller Hero</th><td>'.($hero ? esc_html(get_the_title($hero)) : 'Kein veröffentlichter Beitrag').'</td></tr>';
-    echo '<tr><th>Hero älter als 7 Tage</th><td>'.($old?'<strong style="color:#b71920">JA – prüfen</strong>':'Nein').'</td></tr>';
+    echo '<tr><th>Aktueller Aufmacher</th><td>'.($hero ? esc_html(get_the_title($hero)) : 'Kein veröffentlichter Beitrag').' · <a href="'.esc_url(admin_url('admin.php?page=ma-startseite')).'">Startseite anordnen</a></td></tr>';
+    echo '<tr><th>Aufmacher älter als 7 Tage</th><td>'.($old?'<strong style="color:#b71920">JA – prüfen</strong>':'Nein').'</td></tr>';
     echo '<tr><th>Kommende Events</th><td>'.count($events).'</td></tr>';
     echo '<tr><th>Wetter</th><td>'.($weather?'OK · '.esc_html($weather['updated_at']??''):'Kein valider Datenstand – Frontend blendet Modul aus').'</td></tr>';
     echo '<tr><th>Beiträge ohne Bild</th><td>'.esc_html((string)ma_count_posts_without_thumbnail()).'</td></tr>';
-    echo '<tr><th>Unreviewed Drafts</th><td>'.esc_html((string)ma_count_unreviewed()).'</td></tr>';
-    echo '<tr><th>Partner-Einreichungen</th><td><strong>'.esc_html((string)$pending_partner).'</strong> · <a href="'.esc_url(admin_url('users.php?page=ma-partner-zugaenge')).'">prüfen</a></td></tr>';
+    echo '<tr><th>Ungeprüfte Entwürfe</th><td>'.esc_html((string)ma_count_unreviewed()).' · <a href="'.esc_url(admin_url('admin.php?page=ma-freigaben')).'">Freigaben</a></td></tr>';
+    echo '<tr><th>Partner-Einreichungen</th><td><strong>'.esc_html((string)$pending_partner).'</strong> · <a href="'.esc_url(admin_url('admin.php?page=ma-freigaben')).'">prüfen</a></td></tr>';
     // Mailversand (1.23.0): ohne Postfach landen Formular-Mails oft im Spam.
     if (function_exists('ma_mail_status_text')) { $m = ma_mail_einstellungen(); echo '<tr><th>Mailversand</th><td>'.(ma_mail_bereit($m) ? '' : '<strong style="color:#b71920">').esc_html(ma_mail_status_text($m)).(ma_mail_bereit($m) ? '' : '</strong>').' · <a href="'.esc_url(admin_url('admin.php?page=ma-mailversand')).'">einrichten</a></td></tr>'; }
     echo '<tr><th>Kommentare zur Freigabe</th><td><strong>'.esc_html((string)$pending_comments).'</strong> · <a href="'.esc_url(admin_url('edit-comments.php?page=ma-kommentar-freigabe')).'">Sammelfreigabe</a></td></tr>';

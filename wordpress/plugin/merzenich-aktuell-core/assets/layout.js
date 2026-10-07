@@ -79,7 +79,7 @@
   function karteHtml(k, klein) {
     if (!k) return el('div', { class: 'ma-le__karte ma-le__karte--leer', text: 'Keine Meldung' });
     var w = el('div', { class: 'ma-le__karte' + (klein ? ' ma-le__karte--klein' : '') });
-    w.append(k.bild ? el('img', { src: k.bild.src, alt: '', loading: 'lazy' }) : el('span', { class: 'ma-le__kein-bild', text: 'ohne Bild' }));
+    w.append(k.bild ? el('img', { src: k.bild.src, alt: '', loading: 'lazy', draggable: 'false' }) : el('span', { class: 'ma-le__kein-bild', text: 'ohne Bild' }));
     var t = el('div', { class: 'ma-le__karte-text' });
     t.append(el('small', { text: (k.kicker || k.ressort.name) + ' · ' + k.ort + (k.sport ? ' · Sport' : '') }));
     t.append(el('strong', { text: k.titel }));
@@ -89,33 +89,50 @@
   }
 
   /* ------------------------------------------------------------ Auswahl einer Meldung */
+  /* Alle Meldungen, auch „Nur in der Rubrik“ und noch nicht veröffentlichte
+     (lassen sich vormerken), mit Hinweisen je Karte und „Mehr laden“. */
+  function kandidatChips(k) {
+    var w = el('span', { class: 'ma-le__chips' });
+    if (k.status && k.status !== 'publish') w.append(el('span', { class: 'ma-le__chip ist-entwurf', text: (k.statusText || 'Entwurf') + ' · wird vorgemerkt' }));
+    if (k.startplatz === 'aus') w.append(el('span', { class: 'ma-le__chip ist-warnung', text: 'Nur Rubrik' }));
+    else if (k.status === 'publish' && k.freigabe === '' && st.seite === 'startseite') w.append(el('span', { class: 'ma-le__chip', text: 'Startseite offen' }));
+    if (k.plaetze && k.plaetze.length) w.append(el('span', { class: 'ma-le__chip ist-fest', text: 'steht fest: ' + k.plaetze.map(slotLabel).join(', ') }));
+    return w;
+  }
   function waehleMeldung(opt) {
     var liste = el('div', { class: 'ma-le__liste', 'aria-live': 'polite' });
     var q = el('input', { type: 'search', placeholder: 'Titel suchen …', class: 'ma-le__suche', 'aria-label': 'Suche' });
     var ressort = el('select', { 'aria-label': 'Rubrik' }, el('option', { value: '', text: 'Alle Rubriken' }));
     var ort = el('select', { 'aria-label': 'Ortsteil' }, el('option', { value: '', text: 'Alle Orte' }));
+    var filter = el('select', { 'aria-label': 'Stand' },
+      el('option', { value: '', text: 'Alle Meldungen' }), el('option', { value: 'freigegeben', text: 'Startseite freigegeben' }),
+      el('option', { value: 'offen', text: 'Startseite noch offen' }), el('option', { value: 'nur-rubrik', text: 'Nur in der Rubrik' }),
+      el('option', { value: 'entwuerfe', text: 'Noch nicht veröffentlicht' }));
     ((st.auswahl || {}).rubriken || []).forEach(function (r) { ressort.append(el('option', { value: r.slug, text: r.name })); });
     ((st.auswahl || {}).orte || []).forEach(function (o) { ort.append(el('option', { value: o.slug, text: o.name })); });
     if (opt.rubrik) ressort.value = opt.rubrik;
-    var timer = 0;
-    function laden() {
-      liste.textContent = 'Lädt …';
-      anfrage('GET', url('layout/' + st.seite + '/kandidaten', { q: q.value, ressort: ressort.value, ort: ort.value })).then(function (d) {
-        liste.textContent = '';
-        if (!d.kandidaten.length) { liste.append(el('p', { class: 'description', text: 'Keine Meldung gefunden.' })); return; }
+    var timer = 0, seiteNr = 1;
+    var mehr = el('button', { type: 'button', class: 'button', text: 'Mehr laden', hidden: '', onclick: function () { seiteNr++; laden(true); } });
+    function laden(weiter) {
+      if (!weiter) { seiteNr = 1; liste.textContent = 'Lädt …'; }
+      mehr.hidden = true;
+      anfrage('GET', url('layout/' + st.seite + '/kandidaten', { q: q.value, ressort: ressort.value, ort: ort.value, filter: filter.value, seite_nr: seiteNr })).then(function (d) {
+        if (!weiter) liste.textContent = '';
+        if (!d.kandidaten.length && !weiter) { liste.append(el('p', { class: 'description', text: 'Keine Meldung gefunden.' })); return; }
         d.kandidaten.forEach(function (k) {
           var b = el('button', { type: 'button', class: 'ma-le__wahl', onclick: function () { schliesseDialog(); opt.onPick(k); } }, karteHtml(k, true));
-          if (k.plaetze && k.plaetze.length) b.append(el('span', { class: 'ma-le__chip', text: 'steht fest: ' + k.plaetze.map(slotLabel).join(', ') }));
+          b.append(kandidatChips(k));
           liste.append(b);
         });
+        mehr.hidden = !d.mehr;
       }).catch(function (e) { liste.textContent = e.message; });
     }
-    q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(laden, 250); });
-    ressort.addEventListener('change', laden); ort.addEventListener('change', laden);
-    var kopf = el('div', { class: 'ma-le__filter' }, q, ressort, ort);
-    var fuss = opt.neu ? el('p', { class: 'ma-le__fuss' }, el('button', { type: 'button', class: 'button', text: '+ Neue Meldung schreiben', onclick: function () { schliesseDialog(); opt.neu(); } })) : null;
+    q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { laden(false); }, 250); });
+    [ressort, ort, filter].forEach(function (s) { s.addEventListener('change', function () { laden(false); }); });
+    var kopf = el('div', { class: 'ma-le__filter' }, q, ressort, ort, filter);
+    var fuss = el('p', { class: 'ma-le__fuss' }, mehr, opt.neu ? el('button', { type: 'button', class: 'button', text: '+ Neue Meldung schreiben', onclick: function () { schliesseDialog(); opt.neu(); } }) : null);
     oeffneDialog(opt.titel || 'Meldung einsetzen', el('div', {}, kopf, liste, fuss), true);
-    laden();
+    laden(false);
   }
 
   /* ------------------------------------------------------------ Auswahl eines Platzes */
@@ -215,16 +232,24 @@
 
   /* ------------------------------------------------------------ Aktionen */
   var nachAktion = function () {};
-  function aktion(body, text) {
-    if (st.beschaeftigt) return Promise.resolve();
+  /* Jede Aktion speichert sofort. Rückfragen des Servers (Nur Rubrik, Entwurf)
+     beantwortet ein Bestätigungsdialog; hat sich die Seite inzwischen geändert
+     (409), lädt das Board still neu und versucht es einmal erneut. */
+  function aktion(body, text, wiederholt) {
+    if (st.beschaeftigt) { toast('Einen Moment, die letzte Änderung wird noch gespeichert.'); return Promise.resolve(); }
     st.beschaeftigt = true; document.body.classList.add('ma-le-wartet');
     body.rev = st.rev;
+    var nochmal = null;
     return anfrage('POST', url('layout/' + st.seite), body).then(function (d) {
-      uebernehmen(d); toast(text || d.meldung || 'Gespeichert.'); nachAktion(d);
+      uebernehmen(d); toast(d.meldung || text || 'Gespeichert.'); nachAktion(d);
     }).catch(function (e) {
-      if (e.status === 409 && e.daten && e.daten.code === 'ma_layout_konflikt') { toast(e.message, 'fehler'); return neuLaden(); }
+      var code = e.daten && e.daten.code;
+      if (code === 'ma_layout_konflikt' && !wiederholt) { nochmal = function () { return neuLaden().then(function () { return aktion(body, text, true); }); }; return; }
+      if (code === 'ma_layout_nur_rubrik' && !body.freigeben) { if (window.confirm(e.message)) { body.freigeben = true; nochmal = function () { return aktion(body, text, wiederholt); }; } return; }
+      if (code === 'ma_layout_entwurf' && !body.vormerken) { if (window.confirm(e.message)) { body.vormerken = true; nochmal = function () { return aktion(body, text, wiederholt); }; } return; }
       toast(e.message, 'fehler');
-    }).then(function () { st.beschaeftigt = false; document.body.classList.remove('ma-le-wartet'); });
+      if (code === 'ma_layout_konflikt') return neuLaden();
+    }).then(function () { st.beschaeftigt = false; document.body.classList.remove('ma-le-wartet'); if (nochmal) return nochmal(); });
   }
   function neuLaden() {
     return anfrage('GET', url('layout/' + st.seite, { html: cfg.modus === 'seite' ? '1' : '' })).then(function (d) { uebernehmen(d); nachAktion(d); });
@@ -265,25 +290,86 @@
     return w;
   }
 
-  /* ------------------------------------------------------------ Drag & Drop (gemeinsam) */
+  /* ------------------------------------------------------------ Ziehen (gemeinsam) */
+  /* Zeiger-Ereignisse für Maus, Stift und Finger, im Board und auf der Seite
+     (bis 1.24 im Board HTML5-Ziehen, dabei wanderte oft nur das Bild mit).
+     Mit der Maus greift die ganze Karte, am Handy der Griff ⠿ (sonst ließe sich
+     nicht mehr scrollen). Eine Kopie der Karte folgt dem Zeiger, das Ziel ist
+     umrandet; am oberen und unteren Rand scrollt die Seite mit. */
   var zieh = null;
-  function dragStart(e, slot, postId) {
-    zieh = { slot: slot, post: postId };
-    e.dataTransfer.effectAllowed = 'move';
-    try { e.dataTransfer.setData('text/plain', slot); } catch (x) {}
-    e.currentTarget.classList.add('ist-zieh');
-  }
-  function dragEnde(e) { e.currentTarget.classList.remove('ist-zieh'); document.querySelectorAll('.ist-ziel').forEach(function (x) { x.classList.remove('ist-ziel'); }); }
   function dropAuf(zielSlot) {
     if (!zieh || zieh.slot === zielSlot) return;
     var z = st.plaetze[zielSlot];
     aktion({ aktion: 'tauschen', slot: zieh.slot, ziel: zielSlot, post: zieh.post, zielPost: z && z.post ? z.post.id : 0 }, 'Verschoben.');
     zieh = null;
   }
-  function zielHandler(node, slot) {
-    node.addEventListener('dragover', function (e) { if (!zieh || zieh.slot === slot) return; e.preventDefault(); e.dataTransfer.dropEffect = 'move'; node.classList.add('ist-ziel'); });
-    node.addEventListener('dragleave', function () { node.classList.remove('ist-ziel'); });
-    node.addEventListener('drop', function (e) { e.preventDefault(); node.classList.remove('ist-ziel'); dropAuf(slot); });
+  var NICHT_ZIEHEN = 'button, input, select, textarea, summary, details, [contenteditable="true"], .ma-le__textknoepfe';
+  function ziehbar(quelle, slot, postId, zielSel) {
+    quelle.querySelectorAll('img, a').forEach(function (x) { x.setAttribute('draggable', 'false'); });
+    // Die Leiste mit dem Griff entsteht bei jeder Aktualisierung neu, die Karte bleibt: nur einmal anmelden.
+    if (quelle.__maZiehbar) return;
+    quelle.__maZiehbar = true;
+    quelle.addEventListener('dragstart', function (e) { if (cfg.modus === 'board' || document.body.classList.contains('ma-bearbeiten')) e.preventDefault(); });
+    quelle.addEventListener('pointerdown', function (e) {
+      if (e.button && e.button !== 0) return;
+      if (cfg.modus === 'seite' && !document.body.classList.contains('ma-bearbeiten')) return;
+      var griff = e.target.closest('.ma-le__griff'), amGriff = !!(griff && quelle.contains(griff));
+      if (!amGriff && (e.pointerType !== 'mouse' || e.target.closest(NICHT_ZIEHEN))) return;
+      if (quelle.classList.contains('ist-text')) return;
+      e.preventDefault();
+      var px = e.clientX, py = e.clientY, sx = px, sy = py, aktiv = false, ziel = null, geist = null, raf = 0, fang = amGriff ? griff : quelle;
+      try { fang.setPointerCapture(e.pointerId); } catch (x) {}
+      function zielUnter() {
+        if (geist) geist.style.visibility = 'hidden';
+        var u = document.elementFromPoint(px, py);
+        if (geist) geist.style.visibility = '';
+        var z = u && u.closest ? u.closest(zielSel) : null;
+        if (z && (z === quelle || z.getAttribute('data-slot') === slot)) z = null;
+        if (ziel && ziel !== z) ziel.classList.remove('ist-ziel');
+        ziel = z; if (ziel) ziel.classList.add('ist-ziel');
+      }
+      function schritt() {
+        raf = 0; if (!aktiv) return;
+        var oben = st.seite === 'startseite' || cfg.modus === 'seite' ? 120 : 70, unten = innerHeight - 70, dy = 0;
+        if (py < oben) dy = -Math.ceil((oben - py) / 5); else if (py > unten) dy = Math.ceil((py - unten) / 5);
+        if (dy) { window.scrollBy(0, dy); zielUnter(); }
+        raf = requestAnimationFrame(schritt);
+      }
+      function bewege(ev) {
+        px = ev.clientX; py = ev.clientY;
+        if (!aktiv) {
+          if (Math.hypot(px - sx, py - sy) < 6) return;
+          if (st.beschaeftigt) { toast('Einen Moment, die letzte Änderung wird noch gespeichert.'); ende(); return; }
+          aktiv = true; quelle.classList.add('ist-zieh'); document.body.classList.add('ma-le-zieht');
+          var r = quelle.getBoundingClientRect(), titel = (quelle.querySelector('h1,h2,h3,strong') || {}).textContent || '', bild = quelle.querySelector('img');
+          geist = el('div', { class: 'ma-le__geist', 'aria-hidden': 'true' }, bild ? el('img', { src: bild.currentSrc || bild.src, alt: '' }) : null, el('strong', { text: titel.trim().slice(0, 90) }));
+          geist.style.width = Math.min(300, Math.max(200, r.width)) + 'px';
+          document.body.append(geist);
+          raf = requestAnimationFrame(schritt);
+        }
+        geist.style.transform = 'translate(' + (px + 14) + 'px,' + (py + 14) + 'px)';
+        zielUnter();
+      }
+      function taste(ev) { if (ev.key === 'Escape') { ziel = null; ende(); } }
+      function ende() {
+        fang.removeEventListener('pointermove', bewege); fang.removeEventListener('pointerup', los); fang.removeEventListener('pointercancel', ende);
+        document.removeEventListener('keydown', taste);
+        if (raf) cancelAnimationFrame(raf); raf = 0;
+        if (geist) geist.remove(); geist = null;
+        quelle.classList.remove('ist-zieh'); document.body.classList.remove('ma-le-zieht');
+        if (ziel) ziel.classList.remove('ist-ziel');
+        var war = aktiv; aktiv = false; return war;
+      }
+      function los() {
+        var z = ziel, war = ende();
+        if (!war) return;
+        if (!z) { toast('Hier ist kein Platz. Bitte auf eine andere Karte ziehen.', 'fehler'); return; }
+        zieh = { slot: slot, post: postId };
+        dropAuf(z.getAttribute('data-slot'));
+      }
+      fang.addEventListener('pointermove', bewege); fang.addEventListener('pointerup', los); fang.addEventListener('pointercancel', ende);
+      document.addEventListener('keydown', taste);
+    });
   }
 
   /* ============================================================ Board (Backend) */
@@ -310,13 +396,16 @@
             var platz = el('div', { class: 'ma-lb__platz' + (k ? '' : ' ist-frei') + (p.fest ? ' ist-fest' : ''), 'data-slot': slot });
             platz.append(el('div', { class: 'ma-lb__platzname' }, el('span', { text: p.label }), warnChips(p)));
             if (k) {
-              var karte = karteHtml(k); karte.setAttribute('draggable', 'true'); karte.classList.add('ma-lb__karte');
-              karte.addEventListener('dragstart', function (e) { dragStart(e, slot, k.id); });
-              karte.addEventListener('dragend', dragEnde);
+              var karte = karteHtml(k); karte.classList.add('ma-lb__karte');
+              var griff = el('span', { class: 'ma-le__griff ma-lb__griff', title: 'Ziehen und auf einen anderen Platz legen', 'aria-hidden': 'true', text: '⠿' });
+              karte.prepend(griff);
+              ziehbar(karte, slot, k.id, '.ma-lb__platz[data-slot]');
               platz.append(karte);
             } else platz.append(el('div', { class: 'ma-lb__frei' }, el('span', { text: 'frei – füllt die Automatik' }), el('button', { type: 'button', class: 'button button-small', text: 'Einsetzen …', onclick: function () { menueFuer(slot, null, p)[0].tue(); } })));
+            if (p.vorgemerkt) platz.append(el('div', { class: 'ma-lb__vorgemerkt' },
+              el('span', { text: 'Vorgemerkt: „' + p.vorgemerkt.titel + '“ (' + (p.vorgemerkt.statusText || 'Entwurf') + '). Erscheint hier nach der Freigabe.' }),
+              el('button', { type: 'button', class: 'button-link', text: 'Vormerkung entfernen', onclick: function () { aktion({ aktion: 'entfernen', slot: slot }, 'Vormerkung entfernt.'); } })));
             platz.append(menueElement(menueFuer(slot, k, p), 'ma-lb__menu'));
-            zielHandler(platz, slot);
             reihe.append(platz);
           });
           if (r.anzeige) reihe.append(el('div', { class: 'ma-lb__platz ma-lb__platz--anzeige' }, el('div', { class: 'ma-lb__platzname' }, el('span', { text: r.anzeige })), el('a', { href: cfg.werbeplaetze || '#', text: 'Werbeplätze verwalten' })));
@@ -345,30 +434,10 @@
         if (!k) k = { id: id, titel: (a.querySelector('h1,h2,h3') || {}).textContent || '', bearbeiten: (cfg.editUrl || '').replace('%d', id), ansehen: (a.querySelector('h1 a,h2 a,h3 a') || {}).href || '#' };
         var leiste = el('div', { class: 'ma-le__leiste' });
         if (slot) {
-          // Ziehen über Pointer-Ereignisse (Maus und Touch): Karte unter dem Zeiger ist das Ziel.
           var griff = el('span', { class: 'ma-le__griff', title: 'Ziehen und auf einer anderen Karte ablegen', text: '⠿' });
-          griff.addEventListener('pointerdown', function (e) {
-            if (e.button && e.button !== 0) return;
-            e.preventDefault();
-            var start = { x: e.clientX, y: e.clientY }, ziel = null, aktiv = false;
-            try { griff.setPointerCapture(e.pointerId); } catch (x) {}
-            function move(ev) {
-              if (!aktiv && Math.hypot(ev.clientX - start.x, ev.clientY - start.y) < 6) return;
-              if (!aktiv) { aktiv = true; a.classList.add('ist-zieh'); document.body.classList.add('ma-le-zieht'); }
-              var unter = document.elementFromPoint(ev.clientX, ev.clientY), art = unter && unter.closest ? unter.closest('article[data-slot]') : null;
-              if (art === a) art = null;
-              if (ziel && ziel !== art) ziel.classList.remove('ist-ziel');
-              ziel = art; if (ziel) ziel.classList.add('ist-ziel');
-            }
-            function ende() {
-              griff.removeEventListener('pointermove', move); griff.removeEventListener('pointerup', up); griff.removeEventListener('pointercancel', ende);
-              a.classList.remove('ist-zieh'); document.body.classList.remove('ma-le-zieht');
-              if (ziel) ziel.classList.remove('ist-ziel');
-            }
-            function up() { var z = ziel; ende(); if (aktiv && z) { zieh = { slot: slot, post: id }; dropAuf(z.getAttribute('data-slot')); } }
-            griff.addEventListener('pointermove', move); griff.addEventListener('pointerup', up); griff.addEventListener('pointercancel', ende);
-          });
+          ziehbar(a, slot, id, 'article[data-slot]');
           leiste.append(griff, el('span', { class: 'ma-le__slotname', text: slotLabel(slot) }), warnChips(p));
+          if (p && p.vorgemerkt) leiste.append(el('span', { class: 'ma-le__chip ist-entwurf', title: 'Erscheint hier nach der Freigabe', text: 'vorgemerkt: ' + p.vorgemerkt.titel.slice(0, 40) }));
           leiste.append(el('button', { type: 'button', text: 'Ersetzen', onclick: function () { menueFuer(slot, k, p)[0].tue(); } }));
           leiste.append(el('button', { type: 'button', text: 'Nochmal', title: 'Nochmal einsetzen', onclick: function () { menueFuer(slot, k, p)[1].tue(); } }));
           if (p && p.fest) leiste.append(el('button', { type: 'button', text: 'Freigeben', title: 'Platz wieder automatisch belegen', onclick: function () { aktion({ aktion: 'entfernen', slot: slot }); } }));
@@ -434,7 +503,7 @@
       if (!bar) {
         bar = el('div', { class: 'ma-le__bar', role: 'region', 'aria-label': 'Bearbeitungsmodus' },
           el('strong', { text: 'Seite bearbeiten' }), el('span', { class: 'ma-le__bar-name', text: cfg.name || '' }),
-          el('span', { class: 'ma-le__bar-hinweis', text: 'Karten mit ⠿ ziehen und auf eine andere Karte legen. Jede Änderung wird sofort gespeichert; Leser sehen sie nach spätestens einer Stunde.' }),
+          el('span', { class: 'ma-le__bar-hinweis', text: 'Karte greifen (am Handy am ⠿) und auf eine andere Karte ziehen; am Rand scrollt die Seite mit. Jede Änderung wird sofort gespeichert.' }),
           el('button', { type: 'button', text: '+ Neue Meldung', onclick: function () { waehlePlatz({ titel: 'Neue Meldung auf welchen Platz?', onPick: function (s) { neueMeldung({ slot: s, onDone: function (d) { ersetzeBloecke(d.html); } }); } }); } }),
           el('button', { type: 'button', text: 'Einsetzen …', onclick: function () { waehlePlatz({ titel: 'Welchen Platz belegen?', onPick: function (s) { menueFuer(s, null, st.plaetze[s])[0].tue(); } }); } }),
           el('button', { type: 'button', text: 'Rückgängig', onclick: rueckgaengig }),
@@ -452,7 +521,8 @@
     }
     nachAktion = function (d) { if (d && d.html) ersetzeBloecke(d.html); else { entdekorieren(); dekorieren(); } };
     document.addEventListener('click', function (e) {
-      var t = e.target.closest('#wp-admin-bar-ma-layout > a, #wp-admin-bar-ma-layout-an > a, .ma-layout-toggle');
+      // Nur der Hauptpunkt schaltet um; „Im Backend anordnen“ darunter ist ein normaler Link.
+      var t = e.target.closest('#wp-admin-bar-ma-layout > a, #wp-admin-bar-ma-layout-an > a, a.ma-layout-toggle, button.ma-layout-toggle');
       if (!t) return;
       e.preventDefault(); an ? ausschalten() : einschalten();
     });

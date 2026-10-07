@@ -109,9 +109,39 @@ function ma_layout_speichern(string $seite, array $karte): array {
     return $karte;
 }
 
-/** Steht der Beitrag öffentlich zur Verfügung (veröffentlicht, nicht „Nur Rubrik“, Hervorhebung nicht abgelaufen)? */
-function ma_layout_post_platzierbar(int $id): bool {
-    return $id > 0 && get_post_type($id) === 'post' && get_post_status($id) === 'publish' && (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus' && !ma_layout_hervorhebung_abgelaufen($id);
+/**
+ * Steht der Beitrag auf dieser Seite zur Verfügung (veröffentlicht, Hervorhebung
+ * nicht abgelaufen)? „Nur in der Rubrik“ sperrt nur die Startseite; auf der
+ * eigenen Ressortseite war eine solche Meldung bis 1.24 fälschlich gesperrt
+ * (Meldung Betreiber 07.10.2026).
+ */
+function ma_layout_post_platzierbar(int $id, string $seite = 'startseite'): bool {
+    return $id > 0 && get_post_type($id) === 'post' && get_post_status($id) === 'publish'
+        && ($seite !== 'startseite' || (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus') && !ma_layout_hervorhebung_abgelaufen($id);
+}
+
+/** Status, die sich vormerken lassen: Der Platz bleibt bis zur Freigabe automatisch, danach rückt die Meldung ein. */
+const MA_LAYOUT_VORMERKBAR = ['draft', 'pending', 'future', 'ma_in_pruefung', 'ma_aenderung'];
+
+/** Noch nicht veröffentlichte Meldung, die sich für einen Platz vormerken lässt? */
+function ma_layout_post_vormerkbar(int $id): bool {
+    return $id > 0 && get_post_type($id) === 'post' && in_array((string) get_post_status($id), MA_LAYOUT_VORMERKBAR, true);
+}
+
+/** Fehler mit Rückfrage, falls ein Beitrag hier nicht direkt eingesetzt werden kann (null = geht). */
+function ma_layout_einsetzbar_fehler(string $seite, int $post, bool $freigeben, bool $vormerken) {
+    if (ma_layout_post_platzierbar($post, $seite)) return null;
+    if ($seite === 'startseite' && get_post_status($post) === 'publish' && (string) get_post_meta($post, 'ma_startplatz', true) === 'aus' && !ma_layout_hervorhebung_abgelaufen($post)) {
+        if ($freigeben) {
+            if (function_exists('ma_startseite_freigabe_setzen')) ma_startseite_freigabe_setzen($post, true, 'Layout-Board');
+            else update_post_meta($post, 'ma_startplatz', 'auto');
+            return null;
+        }
+        return ma_layout_fehler('ma_layout_nur_rubrik', 'Die Meldung steht auf „Nur in der Rubrik“. Für die Startseite freigeben und einsetzen?', 409);
+    }
+    if (ma_layout_post_vormerkbar($post)) return $vormerken ? null : ma_layout_fehler('ma_layout_entwurf', 'Die Meldung ist noch nicht veröffentlicht. Für diesen Platz vormerken? Sie erscheint hier, sobald sie freigegeben ist.', 409);
+    if (ma_layout_hervorhebung_abgelaufen($post)) return ma_layout_fehler('ma_layout_beitrag', 'Die Hervorhebung dieser Meldung ist abgelaufen („Hervorhebung bis“ im Beitrag).');
+    return ma_layout_fehler('ma_layout_beitrag', 'Diese Meldung lässt sich nicht einsetzen (archiviert, abgelehnt oder gelöscht).');
 }
 
 /** „Hervorhebung bis“ (ma_top_until, Ortszeit) überschritten? Leer = unbefristet. */
@@ -139,7 +169,8 @@ function ma_layout_hervorhebungen_raeumen(): int {
     return $n;
 }
 add_action('init', function (): void {
-    if (wp_doing_ajax() || get_transient('ma_hervorhebung_geraeumt')) return;
+    // Nicht während einer Aktion im Board: sonst wechselt die Fassung mitten in der Anfrage (409).
+    if (wp_doing_ajax() || str_contains((string) ($_SERVER['REQUEST_URI'] ?? ''), 'ma/v1/layout') || get_transient('ma_hervorhebung_geraeumt')) return;
     set_transient('ma_hervorhebung_geraeumt', 1, HOUR_IN_SECONDS);
     ma_layout_hervorhebungen_raeumen();
 }, 40);
@@ -148,7 +179,7 @@ add_action('init', function (): void {
 function ma_layout_feste_plaetze(string $seite): array {
     ma_layout_migrieren();
     $raus = [];
-    foreach (ma_layout_get($seite)['slots'] as $slot => $e) if (ma_layout_post_platzierbar($e['post'])) $raus[$slot] = $e['post'];
+    foreach (ma_layout_get($seite)['slots'] as $slot => $e) if (ma_layout_post_platzierbar($e['post'], $seite)) $raus[$slot] = $e['post'];
     return $raus;
 }
 
@@ -198,16 +229,16 @@ function ma_layout_platz_label(string $seite, string $slot): string {
  */
 function ma_layout_set(string $seite, string $slot, int $post, array $opt = []) {
     if (!ma_layout_seite_gueltig($seite) || !isset(ma_layout_slots($seite)[$slot])) return ma_layout_fehler('ma_layout_platz', 'Unbekannter Platz.');
-    if (!ma_layout_post_platzierbar($post)) return ma_layout_fehler('ma_layout_beitrag', 'Die Meldung ist nicht veröffentlicht oder steht auf „Nur in der Rubrik“.');
     $karte = ma_layout_get($seite);
     if ($f = ma_layout_rev_pruefen($karte, (int) ($opt['rev'] ?? 0))) return $f;
+    if ($f = ma_layout_einsetzbar_fehler($seite, $post, !empty($opt['freigeben']), !empty($opt['vormerken']))) return $f;
     $schon = array_keys(array_filter($karte['slots'], fn($e, $s) => $e['post'] === $post && $s !== $slot, ARRAY_FILTER_USE_BOTH));
     $doppelt = !empty($opt['doppelt']);
     if ($schon && !$doppelt) return ma_layout_fehler('ma_layout_doppelt', 'Die Meldung steht auf dieser Seite schon fest (' . ma_layout_slots($seite)[$schon[0]] . '). Für einen zweiten Platz „Nochmal einsetzen“ wählen.', 409);
     $karte['slots'][$slot] = ['post' => $post] + (($schon || $doppelt) ? ['doppelt' => true] : []);
     $karte = ma_layout_speichern($seite, $karte);
     ma_layout_meta_abgleichen($seite, $karte['slots']);
-    if (empty($opt['still']) && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post, ($schon ? 'Nochmal eingesetzt: ' : 'Fester Platz: ') . ma_layout_platz_label($seite, $slot));
+    if (empty($opt['still']) && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post, ($schon ? 'Nochmal eingesetzt: ' : (get_post_status($post) === 'publish' ? 'Fester Platz: ' : 'Vorgemerkt: ')) . ma_layout_platz_label($seite, $slot));
     return $karte;
 }
 
@@ -234,13 +265,15 @@ function ma_layout_tauschen(string $seite, string $von, string $nach, int $rev =
     if (!isset($slots[$von]) || !isset($slots[$nach]) || $von === $nach) return ma_layout_fehler('ma_layout_platz', 'Unbekannter Platz.');
     $karte = ma_layout_get($seite);
     if ($f = ma_layout_rev_pruefen($karte, $rev)) return $f;
-    $a = $karte['slots'][$von]['post'] ?? $vonPost;
-    $b = $karte['slots'][$nach]['post'] ?? $nachPost;
-    if (!ma_layout_post_platzierbar($a)) return ma_layout_fehler('ma_layout_beitrag', 'Die Meldung ist nicht veröffentlicht oder steht auf „Nur in der Rubrik“.');
+    // Ein automatisch belegter Platz kennt seinen Beitrag nur aus der Anfrage; eine
+    // Vormerkung (noch nicht veröffentlicht) wird dabei nicht überschrieben.
+    $a = ma_layout_post_platzierbar((int) ($karte['slots'][$von]['post'] ?? 0), $seite) ? (int) $karte['slots'][$von]['post'] : $vonPost;
+    $b = ma_layout_post_platzierbar((int) ($karte['slots'][$nach]['post'] ?? 0), $seite) ? (int) $karte['slots'][$nach]['post'] : $nachPost;
+    if (!ma_layout_post_platzierbar($a, $seite)) return ma_layout_fehler('ma_layout_beitrag', 'Diese Meldung lässt sich hier nicht verschieben. Über „Ersetzen“ einsetzen.');
     $neu = $karte['slots'];
     unset($neu[$von], $neu[$nach]);
     $neu[$nach] = ['post' => $a] + (!empty($karte['slots'][$von]['doppelt']) ? ['doppelt' => true] : []);
-    if ($b && ma_layout_post_platzierbar($b)) $neu[$von] = ['post' => $b] + (!empty($karte['slots'][$nach]['doppelt']) ? ['doppelt' => true] : []);
+    if ($b && ma_layout_post_platzierbar($b, $seite)) $neu[$von] = ['post' => $b] + (!empty($karte['slots'][$nach]['doppelt']) ? ['doppelt' => true] : []);
     $karte['slots'] = $neu;
     $karte = ma_layout_speichern($seite, $karte);
     ma_layout_meta_abgleichen($seite, $karte['slots']);
@@ -260,7 +293,7 @@ function ma_layout_ersetzen(string $seite, array $slots, int $rev = 0) {
     $neu = [];
     foreach ($slots as $slot => $e) {
         $id = (int) (is_array($e) ? ($e['post'] ?? 0) : $e);
-        if (!isset($gueltig[$slot]) || !ma_layout_post_platzierbar($id)) continue;
+        if (!isset($gueltig[$slot]) || !(ma_layout_post_platzierbar($id, $seite) || ma_layout_post_vormerkbar($id))) continue;
         $neu[$slot] = ['post' => $id] + (is_array($e) && !empty($e['doppelt']) ? ['doppelt' => true] : []);
     }
     $karte['slots'] = $neu;
@@ -289,7 +322,7 @@ function ma_layout_post_entfernen(int $post_id, string $nurSeite = '', bool $sti
 function ma_layout_warnungen(string $seite, string $slot, int $post_id): array {
     $w = [];
     if (get_post_status($post_id) !== 'publish') $w[] = 'nicht-veroeffentlicht';
-    if ((string) get_post_meta($post_id, 'ma_startplatz', true) === 'aus') $w[] = 'nur-rubrik';
+    if ($seite === 'startseite' && (string) get_post_meta($post_id, 'ma_startplatz', true) === 'aus') $w[] = 'nur-rubrik';
     if (ma_layout_hervorhebung_abgelaufen($post_id)) $w[] = 'hervorhebung-abgelaufen';
     $bild = (int) get_post_thumbnail_id($post_id);
     $src = $bild ? wp_get_attachment_image_src($bild, 'full') : false;

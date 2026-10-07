@@ -40,6 +40,19 @@ function ma_bildpool_labels(): array {
     ];
 }
 
+/**
+ * Pools in fester, gut lesbarer Reihenfolge (Wunsch Betreiber 07.10.2026):
+ * zuerst die Themenpools A–Z, dann „Detail: …“ A–Z.
+ */
+function ma_bildpool_labels_sortiert(): array {
+    $l = ma_bildpool_labels();
+    uksort($l, function (string $a, string $b) use ($l): int {
+        $da = ma_bildpool_ist_detail($a); $db = ma_bildpool_ist_detail($b);
+        return $da !== $db ? ($da ? 1 : -1) : strcoll(remove_accents($l[$a]), remove_accents($l[$b]));
+    });
+    return $l;
+}
+
 /** Detailpools haben keine Mindestgröße (wie EREIGNIS_KATEGORIEN in deploy/lib-symbolbilder.mjs). */
 function ma_bildpool_ist_detail(string $pool): bool {
     return in_array($pool, ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail'], true);
@@ -183,12 +196,57 @@ function ma_bildpools_importieren(int $max = 10): array {
     return ['neu' => $neu, 'offen' => $offen, 'fehler' => $fehler, 'ausgefallen' => $ausgefallen, 'hinweis' => $hinweis];
 }
 
+/**
+ * Sichtprüfung aus der Liste in WordPress nachziehen (1.25.0): Fotos, die die
+ * Liste inzwischen als geprüft führt, werden geprüft; Poolfotos, die nicht mehr
+ * in der Liste stehen (bei der Sichtprüfung ausgeschlossen), werden „Abgelehnt –
+ * nicht verwenden“ und verlassen ihren Pool. Gelöscht wird nichts; was die
+ * Redaktion von Hand entschieden hat (Stufe nicht „offen“), bleibt.
+ * @return array{geprueft:int,abgelehnt:int}
+ */
+function ma_bildpools_pruefung_abgleichen(): array {
+    $liste = [];
+    foreach ((array) (ma_bildpool_daten()['bilder'] ?? []) as $b) $liste[(string) $b['id']] = $b;
+    $n = ['geprueft' => 0, 'abgelehnt' => 0];
+    if (!$liste) return $n;
+    $ids = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => -1, 'fields' => 'ids', 'meta_key' => 'ma_pool_id', 'no_found_rows' => true]);
+    foreach ($ids as $id) {
+        $pid = (string) get_post_meta($id, 'ma_pool_id', true);
+        $stufe = function_exists('ma_rechtepruefung') ? ma_rechtepruefung((int) $id) : ((string) get_post_meta($id, 'ma_image_rights_verified', true) === '1' ? 'geprueft' : 'offen');
+        if ($stufe !== 'offen') continue;
+        $b = $liste[$pid] ?? null;
+        if ($b && !empty($b['geprueft'])) {
+            update_post_meta($id, 'ma_rechtepruefung', 'geprueft');
+            update_post_meta($id, 'ma_image_rights_verified', '1');
+            update_post_meta($id, 'ma_rechtepruefung_von', ['u' => 0, 't' => time(), 'grund' => 'Sichtung der Bildpools (docs/POOLFOTOS-PRUEFUNG.md)']);
+            $n['geprueft']++;
+        } elseif (!$b) {
+            update_post_meta($id, 'ma_rechtepruefung', 'abgelehnt');
+            delete_post_meta($id, 'ma_image_rights_verified');
+            update_post_meta($id, 'ma_rechtepruefung_von', ['u' => 0, 't' => time(), 'grund' => 'Bei der Sichtprüfung der Bildpools ausgeschlossen (deploy/editorial-photo-review.json)']);
+            wp_set_object_terms((int) $id, [], MA_BILDPOOL_TAX);
+            $n['abgelehnt']++;
+        }
+    }
+    return $n;
+}
+
+/* Einmal je Listenstand beim Aufruf im Backend nachziehen. */
+add_action('admin_init', function (): void {
+    if (!current_user_can('edit_others_posts')) return;
+    $d = ma_bildpool_daten();
+    $kennung = (string) ($d['stand'] ?? '') . ':' . count((array) ($d['bilder'] ?? [])) . ':' . count(array_filter((array) ($d['bilder'] ?? []), fn($b) => !empty($b['geprueft'])));
+    if (get_option('ma_bildpool_pruefstand') === $kennung) return;
+    update_option('ma_bildpool_pruefstand', $kennung, false);
+    ma_bildpools_pruefung_abgleichen();
+});
+
 /** Stand je Pool: in WordPress, davon geprüft, laut Liste. */
 function ma_bildpools_stand(): array {
     $liste = []; $geprueftListe = [];
     foreach ((array) (ma_bildpool_daten()['bilder'] ?? []) as $b) { $liste[$b['pool']] = ($liste[$b['pool']] ?? 0) + 1; if (!empty($b['geprueft'])) $geprueftListe[$b['pool']] = ($geprueftListe[$b['pool']] ?? 0) + 1; }
     $raus = [];
-    foreach (array_keys(ma_bildpool_labels()) as $pool) {
+    foreach (array_keys(ma_bildpool_labels_sortiert()) as $pool) {
         $ids = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'numberposts' => -1, 'fields' => 'ids', 'tax_query' => [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]]]);
         $geprueft = count(array_filter($ids, fn($i) => function_exists('ma_rechtepruefung') ? ma_rechtepruefung((int) $i) === 'geprueft' : get_post_meta($i, 'ma_image_rights_verified', true) === '1'));
         $raus[$pool] = ['label' => ma_bildpool_labels()[$pool], 'wp' => count($ids), 'geprueft' => $geprueft, 'liste' => $liste[$pool] ?? 0, 'liste_geprueft' => $geprueftListe[$pool] ?? 0, 'detail' => ma_bildpool_ist_detail($pool), 'angelegt' => (bool) term_exists($pool, MA_BILDPOOL_TAX)];
@@ -240,8 +298,11 @@ function ma_bildpools_seite(): void {
     if ($offen) $form('importieren', 'Fotos übernehmen (' . $offen . ' offen, in Paketen zu 10)', '', 'ma-bildpools-import');
     else echo '<p><strong>Alle ' . count((array) (ma_bildpool_daten()['bilder'] ?? [])) . ' Fotos der Liste sind in der Mediathek.</strong></p>';
     echo '<table class="widefat striped" style="max-width:980px;margin-top:8px"><thead><tr><th>Pool</th><th>In WordPress</th><th>davon geprüft</th><th>Liste (geprüft)</th><th>Hinweis</th></tr></thead><tbody>';
+    $gruppe = '';
     foreach ($stand as $pool => $s) {
-        $hinweis = !$s['angelegt'] ? 'noch nicht angelegt' : (!$s['detail'] && $s['geprueft'] < $mindest ? 'unter ' . $mindest . ' geprüften Fotos: ergänzen' : ($s['detail'] ? 'Detailpool, ohne Mindestgröße' : 'vollständig'));
+        $neueGruppe = $s['detail'] ? 'Detailpools (ohne Mindestgröße)' : 'Themenpools (je ' . $mindest . ' Fotos)';
+        if ($neueGruppe !== $gruppe) { $gruppe = $neueGruppe; echo '<tr><th colspan="5" style="background:#f0f0f1">' . esc_html($gruppe) . '</th></tr>'; }
+        $hinweis = !$s['angelegt'] ? 'noch nicht angelegt' : (!$s['detail'] && $s['geprueft'] < $mindest ? 'Fehlen noch ' . ($mindest - $s['geprueft']) . ' geprüfte Fotos' . ($s['liste'] > $s['wp'] ? ' (' . ($s['liste'] - $s['wp']) . ' davon über „Fotos übernehmen“)' : '') : ($s['detail'] ? ($s['wp'] ? 'Detailpool' : 'Detailpool, noch leer') : 'vollständig'));
         printf('<tr><td><a href="%s"><strong>%s</strong></a><br><code>%s</code></td><td>%d</td><td>%d</td><td>%d (%d)</td><td%s>%s</td></tr>', esc_url(admin_url('upload.php?mode=list&' . MA_BILDPOOL_TAX . '=' . $pool)), esc_html($s['label']), esc_html($pool), $s['wp'], $s['geprueft'], $s['liste'], $s['liste_geprueft'], str_starts_with($hinweis, 'unter') || $hinweis === 'noch nicht angelegt' ? ' style="color:#b32d2e"' : '', esc_html($hinweis));
     }
     echo '</tbody></table>';
@@ -252,19 +313,39 @@ function ma_bildpools_seite(): void {
     echo '</div>';
 }
 
-/* Filter in der Mediathek (Listenansicht). */
+/* Filter in der Mediathek: Listenansicht (Auswahl über der Liste; auch der Link in der
+   Spalte „Bildpools“ wählt den Pool) und Rasteransicht samt Beitragsbild-Fenster (1.25.0). */
+function ma_bildpool_aus_anfrage(): string {
+    $pool = sanitize_key(wp_unslash($_GET[MA_BILDPOOL_TAX] ?? ''));
+    if ($pool === '' && sanitize_key(wp_unslash($_GET['taxonomy'] ?? '')) === MA_BILDPOOL_TAX) $pool = sanitize_key(wp_unslash($_GET['term'] ?? ''));
+    return isset(ma_bildpool_labels()[$pool]) ? $pool : '';
+}
 add_action('restrict_manage_posts', function (string $typ): void {
     if ($typ !== 'attachment' || !current_user_can('edit_others_posts')) return;
-    $jetzt = sanitize_key(wp_unslash($_GET[MA_BILDPOOL_TAX] ?? ''));
+    $jetzt = ma_bildpool_aus_anfrage();
     echo '<select name="' . esc_attr(MA_BILDPOOL_TAX) . '" aria-label="Nach Bildpool filtern"><option value="">Alle Bildpools</option>';
-    foreach (ma_bildpool_labels() as $k => $l) printf('<option value="%s"%s>%s</option>', esc_attr($k), selected($jetzt, $k, false), esc_html($l));
+    foreach (ma_bildpool_labels_sortiert() as $k => $l) printf('<option value="%s"%s>%s</option>', esc_attr($k), selected($jetzt, $k, false), esc_html($l));
     echo '</select>';
 });
 add_action('pre_get_posts', function (WP_Query $q): void {
     global $pagenow;
     if (!is_admin() || !$q->is_main_query() || $pagenow !== 'upload.php') return;
-    $pool = sanitize_key(wp_unslash($_GET[MA_BILDPOOL_TAX] ?? ''));
-    if ($pool !== '' && isset(ma_bildpool_labels()[$pool])) $q->set('tax_query', [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]]);
+    $pool = ma_bildpool_aus_anfrage();
+    if ($pool !== '') $q->set('tax_query', [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]]);
+});
+add_filter('ajax_query_attachments_args', function (array $q): array {
+    $pool = sanitize_key(wp_unslash($_REQUEST['query'][MA_BILDPOOL_TAX] ?? ''));
+    if ($pool !== '' && isset(ma_bildpool_labels()[$pool]) && current_user_can('edit_others_posts')) $q['tax_query'] = [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]];
+    return $q;
+});
+add_action('admin_enqueue_scripts', function (): void {
+    if (!current_user_can('edit_others_posts')) return;
+    $pools = [];
+    foreach (ma_bildpool_labels_sortiert() as $k => $l) $pools[] = ['slug' => $k, 'label' => $l];
+    // Hängt an media-views: läuft nur dort, wo die Mediathek oder das Bild-Auswahlfenster geladen ist.
+    wp_add_inline_script('media-views', 'window.maBildpools=' . wp_json_encode($pools) . ';(function(){var v=wp&&wp.media&&wp.media.view;if(!v||!v.AttachmentFilters||!v.AttachmentsBrowser)return;'
+        . 'var Pools=v.AttachmentFilters.extend({id:"ma-bildpool-filter",createFilters:function(){var f={alle:{text:"Alle Bildpools",props:{ma_bildpool:""},priority:1}};(window.maBildpools||[]).forEach(function(p,i){f[p.slug]={text:p.label,props:{ma_bildpool:p.slug},priority:i+2};});this.filters=f;}});'
+        . 'var B=v.AttachmentsBrowser;v.AttachmentsBrowser=B.extend({createToolbar:function(){B.prototype.createToolbar.apply(this,arguments);if(this.toolbar&&this.collection&&this.collection.props)this.toolbar.set("maBildpool",new Pools({controller:this.controller,model:this.collection.props,priority:-75}).render());}});})();');
 });
 
 /* ---------------------------------------------------------- Symbolbild für Meldungen ohne Bild */

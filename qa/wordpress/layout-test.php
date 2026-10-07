@@ -75,7 +75,7 @@ meldung(13, ['sport'], ['w' => 1200, 'h' => 800]);
 meldung(14, ['leben'], null, ['post_status' => 'draft']);
 meldung(15, ['leben']); // ohne Bild
 $e = ma_layout_set('startseite', 'aufmacher', 14);
-pruefe('Entwurf lässt sich nicht setzen', is_wp_error($e) ? $e->get_error_code() : 'ok', 'ma_layout_beitrag');
+pruefe('Entwurf: Rückfrage „vormerken?“ statt Einsetzen', is_wp_error($e) ? $e->get_error_code() : 'ok', 'ma_layout_entwurf');
 $k = ma_layout_set('startseite', 'aufmacher', 1);
 pruefe('Aufmacher gesetzt', $k['slots']['aufmacher']['post'] ?? 0, 1);
 pruefe('Meta ma_startplatz gespiegelt', get_post_meta(1, 'ma_startplatz', true), 'aufmacher');
@@ -109,7 +109,9 @@ ma_layout_post_entfernen(2);
 pruefe('post_entfernen räumt alle Plätze', ma_layout_plaetze_von(2), []);
 pruefe('Doppelt-Partner bleibt', ma_layout_get('startseite')['slots']['aufmacher']['post'] ?? 0, 3);
 $k = ma_layout_ersetzen('startseite', ['aufmacher' => ['post' => 4], 'rathaus.mittel.2' => 8, 'buehne-9' => 1, 'buehne-2' => 14]);
-pruefe('Ersetzen filtert ungültige Plätze und Entwürfe', array_keys($k['slots']), ['aufmacher', 'rathaus.mittel.2']);
+pruefe('Ersetzen filtert ungültige Plätze, behält Vormerkungen (Entwurf)', array_keys($k['slots']), ['aufmacher', 'buehne-2', 'rathaus.mittel.2']);
+pruefe('Vormerkung erscheint nicht, solange Entwurf', isset(ma_layout_feste_plaetze('startseite')['buehne-2']), false);
+ma_layout_entfernen('startseite', 'buehne-2');
 pruefe('feste_plaetze liefert nur platzierbare', ma_layout_feste_plaetze('startseite'), ['aufmacher' => 4, 'rathaus.mittel.2' => 8]);
 $GLOBALS['posts'][8]->post_status = 'draft';
 pruefe('Entwurf fällt aus feste_plaetze', ma_layout_feste_plaetze('startseite'), ['aufmacher' => 4]);
@@ -131,6 +133,24 @@ pruefe('Beim Veröffentlichen kommt er auf den Platz', ma_layout_get('startseite
 foreach ($GLOBALS['actions']['transition_post_status'] as $f) $f('draft', 'publish', $GLOBALS['posts'][14]);
 pruefe('Zurückgezogen: Platz wieder frei', isset(ma_layout_get('startseite')['slots']['buehne-2']), false);
 pruefe('Inhaber eines Platzes', ma_startplatz_inhaber('aufmacher')->ID ?? 0, 4);
+
+echo "\nAlle Meldungen einsetzbar (1.25.0)\n";
+meldung(18, ['leben']); $GLOBALS['meta'][18]['ma_startplatz'] = 'aus';
+$k = ma_layout_set('ressort-leben', 'lead', 18);
+pruefe('„Nur in der Rubrik“ auf der eigenen Ressortseite einsetzbar', is_wp_error($k) ? $k->get_error_code() : ($k['slots']['lead']['post'] ?? 0), 18);
+pruefe('… und dort auch sichtbar', ma_layout_feste_plaetze('ressort-leben')['lead'] ?? 0, 18);
+$e = ma_layout_set('startseite', 'buehne-3', 18);
+pruefe('Startseite: Rückfrage „freigeben?“', is_wp_error($e) ? $e->get_error_code() : 'ok', 'ma_layout_nur_rubrik');
+$k = ma_layout_set('startseite', 'buehne-3', 18, ['freigeben' => true]);
+pruefe('Mit Freigabe eingesetzt, Meta nicht mehr „aus“', [is_wp_error($k) ? 'fehler' : ($k['slots']['buehne-3']['post'] ?? 0), get_post_meta(18, 'ma_startplatz', true) !== 'aus'], [18, true]);
+meldung(19, ['leben'], null, ['post_status' => 'pending']);
+$k = ma_layout_set('ressort-leben', 'reihe.1', 19, ['vormerken' => true]);
+pruefe('Wartende Meldung vorgemerkt, noch nicht sichtbar', [is_wp_error($k) ? 'fehler' : ($k['slots']['reihe.1']['post'] ?? 0), isset(ma_layout_feste_plaetze('ressort-leben')['reihe.1'])], [19, false]);
+$GLOBALS['posts'][19]->post_status = 'publish';
+pruefe('Nach der Freigabe steht sie auf dem Platz', ma_layout_feste_plaetze('ressort-leben')['reihe.1'] ?? 0, 19);
+$GLOBALS['posts'][20] = (object) ['ID' => 20, 'post_type' => 'post', 'post_status' => 'ma_archiv'];
+$e = ma_layout_set('ressort-leben', 'reihe.2', 20, ['vormerken' => true]);
+pruefe('Archivierte Meldung bleibt gesperrt', is_wp_error($e) ? $e->get_error_code() : 'ok', 'ma_layout_beitrag');
 
 echo "\nWarnungen\n";
 pruefe('Sport fest auf dem Aufmacher: Warnung sport', ma_layout_warnungen('startseite', 'aufmacher', 13), ['sport']);

@@ -47,10 +47,10 @@ function ma_layout_board_seite(): void {
     $seite = sanitize_key(wp_unslash($_GET['seite'] ?? 'startseite'));
     if (!ma_layout_seite_gueltig($seite)) $seite = 'startseite';
     echo '<div class="wrap"><h1>Startseite &amp; Ressorts</h1>';
-    echo '<p>Jeder Platz zeigt, was dort gerade steht. <strong>Fest</strong> heißt: von der Redaktion gesetzt, bleibt stehen. <strong>Automatisch</strong> heißt: die jüngste passende Meldung nach Relevanz. Ziehen Sie eine Karte auf einen anderen Platz, um zu tauschen. „Nochmal einsetzen“ zeigt dieselbe Meldung zusätzlich an anderer Stelle, „Neue Meldung“ legt eine Meldung direkt hier an. Jede Änderung wird sofort gespeichert; Leser sehen sie nach spätestens einer Stunde (Seitencache).</p>';
+    echo '<p>Jeder Platz zeigt, was dort gerade steht. <strong>Fest</strong> heißt: von der Redaktion gesetzt, bleibt stehen. <strong>Automatisch</strong> heißt: die jüngste passende Meldung nach Relevanz. Ziehen Sie eine Karte (an der Karte oder am ⠿) auf einen anderen Platz, um zu tauschen; am Rand scrollt die Seite mit. „Nochmal einsetzen“ zeigt dieselbe Meldung zusätzlich an anderer Stelle, „Neue Meldung“ legt eine Meldung direkt hier an. Jede Änderung wird sofort gespeichert; Leser sehen sie nach spätestens einer Stunde (Seitencache).</p>';
     echo '<nav class="ma-lb__tabs" aria-label="Seiten">';
     foreach (ma_layout_seiten() as $k => $name) printf('<a href="%s"%s>%s</a>', esc_url(admin_url('admin.php?page=ma-startseite&seite=' . $k)), $k === $seite ? ' class="ist-aktiv" aria-current="page"' : '', esc_html($name));
     echo '</nav>';
     echo '<div id="ma-layout-kopf" class="ma-lb__kopf"></div><div id="ma-layout-board">Lädt …</div>';
-    echo '<p class="description">Hinweise an einer Karte (gelb) sind keine Sperre: ein fester Platz gilt immer, auch für eine Sportmeldung auf dem Aufmacher oder eine Meldung ohne Bild. Meldungen auf „Nur in der Rubrik“ und Entwürfe lassen sich nicht einsetzen.</p></div>';
+    echo '<p class="description">Hinweise an einer Karte (gelb) sind keine Sperre: ein fester Platz gilt immer, auch für eine Sportmeldung auf dem Aufmacher oder eine Meldung ohne Bild. Jede Meldung lässt sich einsetzen: „Nur in der Rubrik“ wird auf Nachfrage für die Startseite freigegeben, noch nicht veröffentlichte Meldungen werden vorgemerkt und erscheinen nach der Freigabe.</p></div>';
 }

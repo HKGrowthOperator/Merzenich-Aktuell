@@ -29,7 +29,7 @@ add_action('rest_api_init', function (): void {
         ['methods' => 'POST', 'permission_callback' => $darf, 'callback' => fn(WP_REST_Request $r) => ma_layout_rest_aendern((string) $r['seite'], (array) $r->get_json_params())],
     ]);
     register_rest_route('ma/v1', "/layout/{$seite}/kandidaten", ['methods' => 'GET', 'permission_callback' => $darf,
-        'callback' => fn(WP_REST_Request $r) => ma_layout_rest_kandidaten((string) $r['seite'], (string) $r->get_param('q'), (string) $r->get_param('ressort'), (string) $r->get_param('ort'), (int) $r->get_param('seite_nr'))]);
+        'callback' => fn(WP_REST_Request $r) => ma_layout_rest_kandidaten((string) $r['seite'], (string) $r->get_param('q'), (string) $r->get_param('ressort'), (string) $r->get_param('ort'), (int) $r->get_param('seite_nr'), (string) $r->get_param('filter'))]);
     register_rest_route('ma/v1', "/layout/{$seite}/zuruecksetzen", ['methods' => 'POST', 'permission_callback' => $darf,
         'callback' => function (WP_REST_Request $r) { $d = (array) $r->get_json_params(); return ma_layout_rest_aendern((string) $r['seite'], ['aktion' => 'wiederherstellen', 'karte' => [], 'rev' => (int) ($d['rev'] ?? 0)]); }]);
     register_rest_route('ma/v1', '/meldung', ['methods' => 'POST', 'permission_callback' => $darf, 'callback' => fn(WP_REST_Request $r) => ma_layout_rest_meldung((array) $r->get_json_params())]);
@@ -69,6 +69,8 @@ function ma_layout_karte_daten(?WP_Post $p): ?array {
         'ressort' => ma_layout_ressort_von($p->ID), 'ort' => $ort, 'sport' => has_category('sport', $p->ID),
         'datum' => get_the_date('d.m.Y · H:i', $p) . ' Uhr', 'relevanz' => (int) get_post_meta($p->ID, 'ma_relevanz', true) ?: 5,
         'startplatz' => (string) get_post_meta($p->ID, 'ma_startplatz', true) ?: 'auto',
+        'statusText' => function_exists('ma_status_name') ? ma_status_name($p->post_status) : $p->post_status,
+        'freigabe' => function_exists('ma_startseite_freigabe') ? (string) ma_startseite_freigabe($p->ID) : '',
         'bearbeiten' => get_edit_post_link($p->ID, 'raw'), 'ansehen' => get_permalink($p),
     ];
 }
@@ -103,6 +105,9 @@ function ma_layout_rest_belegung(string $seite): array {
         if ($id && !isset($posts[$id])) $posts[$id] = ma_layout_karte_daten(get_post($id));
         $plaetze[$slot] = ['label' => $label, 'post' => $id ? $posts[$id] : null, 'fest' => !empty($e['fest']), 'doppelt' => !empty($karte['slots'][$slot]['doppelt']),
             'warnungen' => array_values(array_map(fn($w) => ['code' => $w, 'text' => ma_layout_warnung_text($w)], (array) ($e['warnungen'] ?? [])))];
+        // Vorgemerkt: noch nicht veröffentlicht, der Platz bleibt bis zur Freigabe automatisch.
+        $vm = (int) ($karte['slots'][$slot]['post'] ?? 0);
+        if ($vm && $vm !== $id && function_exists('ma_layout_post_vormerkbar') && ma_layout_post_vormerkbar($vm)) $plaetze[$slot]['vorgemerkt'] = ma_layout_karte_daten(get_post($vm));
     }
     return ['seite' => $seite, 'name' => ma_layout_seiten()[$seite] ?? $seite, 'rev' => $karte['rev'], 'stand' => $karte['stand'], 'struktur' => ma_layout_struktur($seite),
         'plaetze' => $plaetze, 'fest' => $karte['slots'], 'vorschau' => ma_layout_rest_url($seite), 'bloecke' => ma_layout_rest_bloecke($seite)];
@@ -128,20 +133,34 @@ function ma_layout_rest_lesen(string $seite, bool $mitHtml = false) {
     return ma_layout_rest_antwort($a);
 }
 
-function ma_layout_rest_kandidaten(string $seite, string $q, string $ressort, string $ort, int $seiteNr) {
+/**
+ * Meldungen zum Einsetzen: veröffentlichte und noch nicht veröffentlichte
+ * (Entwurf, wartend, geplant, in Prüfung; diese lassen sich vormerken).
+ * $filter: '' alle, 'freigegeben', 'offen' (Startseite noch nicht entschieden),
+ * 'nur-rubrik', 'entwuerfe'. Je 30, „mehr“ sagt, ob eine weitere Seite folgt.
+ */
+function ma_layout_rest_kandidaten(string $seite, string $q, string $ressort, string $ort, int $seiteNr, string $filter = '') {
     if (!ma_layout_seite_gueltig($seite)) return ma_layout_rest_antwort(['meldung' => 'Unbekannte Seite.'], 404);
-    $args = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 30, 'paged' => max(1, $seiteNr), 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false];
+    $offen = defined('MA_LAYOUT_VORMERKBAR') ? MA_LAYOUT_VORMERKBAR : ['draft', 'pending', 'future'];
+    $filter = sanitize_key($filter);
+    $args = ['post_type' => 'post', 'post_status' => $filter === 'entwuerfe' ? $offen : array_merge(['publish'], $offen), 'posts_per_page' => 30, 'paged' => max(1, $seiteNr),
+        'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false];
     if ($q !== '') $args['s'] = sanitize_text_field($q);
     if ($ressort !== '') $args['category_name'] = sanitize_key($ressort);
     if ($ort !== '') $args['tax_query'] = [['taxonomy' => 'ma_location', 'field' => 'slug', 'terms' => sanitize_key($ort)]];
+    if ($filter === 'nur-rubrik') $args['meta_query'] = [['key' => 'ma_startplatz', 'value' => 'aus']];
+    if ($filter === 'freigegeben') $args['meta_query'] = [['key' => 'ma_startseite_freigabe', 'value' => 'ja']];
+    if ($filter === 'offen') $args['meta_query'] = ['relation' => 'OR', ['key' => 'ma_startseite_freigabe', 'compare' => 'NOT EXISTS'], ['key' => 'ma_startseite_freigabe', 'value' => '']];
+    if (in_array($filter, ['freigegeben', 'offen', 'nur-rubrik'], true)) $args['post_status'] = 'publish';
     $fest = ma_layout_get($seite)['slots'];
     $raus = [];
-    foreach (get_posts($args) as $p) {
+    $q = new WP_Query($args);
+    foreach ($q->posts as $p) {
         $k = ma_layout_karte_daten($p);
         $k['plaetze'] = array_keys(array_filter($fest, fn($e) => $e['post'] === $p->ID));
         $raus[] = $k;
     }
-    return ma_layout_rest_antwort(['kandidaten' => $raus]);
+    return ma_layout_rest_antwort(['kandidaten' => $raus, 'mehr' => max(1, $seiteNr) < (int) $q->max_num_pages]);
 }
 
 /* ---------------------------------------------------------- Änderungen */
@@ -156,8 +175,8 @@ function ma_layout_rest_aendern(string $seite, array $d) {
     $vorher = ma_layout_get($seite)['slots'];
     if ($post && !current_user_can('edit_post', $post)) return ma_layout_rest_antwort(['meldung' => 'Keine Berechtigung für diese Meldung.'], 403);
     switch ($aktion) {
-        case 'setzen': $e = ma_layout_set($seite, $slot, $post, ['doppelt' => !empty($d['doppelt']), 'rev' => $rev]); break;
-        case 'doppelt': $e = ma_layout_set($seite, $slot, $post, ['doppelt' => true, 'rev' => $rev]); break;
+        case 'setzen': $e = ma_layout_set($seite, $slot, $post, ['doppelt' => !empty($d['doppelt']), 'rev' => $rev, 'freigeben' => !empty($d['freigeben']), 'vormerken' => !empty($d['vormerken'])]); break;
+        case 'doppelt': $e = ma_layout_set($seite, $slot, $post, ['doppelt' => true, 'rev' => $rev, 'freigeben' => !empty($d['freigeben']), 'vormerken' => !empty($d['vormerken'])]); break;
         case 'tauschen': $e = ma_layout_tauschen($seite, $slot, $ziel, $rev, $post, (int) ($d['zielPost'] ?? 0)); break;
         case 'entfernen': $e = ma_layout_entfernen($seite, $slot, $rev); break;
         case 'nur-rubrik':
@@ -173,7 +192,8 @@ function ma_layout_rest_aendern(string $seite, array $d) {
     $a = ma_layout_rest_belegung($seite);
     $a['html'] = ma_layout_rest_html($seite);
     $a['rueckgaengig'] = $vorher;
-    $a['meldung'] = ['setzen' => 'Eingesetzt.', 'doppelt' => 'Nochmal eingesetzt.', 'tauschen' => 'Verschoben.', 'entfernen' => 'Platz wieder automatisch.', 'nur-rubrik' => 'Nur noch in der Rubrik.', 'wiederherstellen' => 'Wiederhergestellt.'][$aktion];
+    if ($post && in_array($aktion, ['setzen', 'doppelt'], true) && get_post_status($post) !== 'publish') $aktion = 'vorgemerkt';
+    $a['meldung'] = ['vorgemerkt' => 'Vorgemerkt. Die Meldung erscheint hier, sobald sie freigegeben ist.', 'setzen' => 'Eingesetzt.', 'doppelt' => 'Nochmal eingesetzt.', 'tauschen' => 'Verschoben.', 'entfernen' => 'Platz wieder automatisch.', 'nur-rubrik' => 'Nur noch in der Rubrik.', 'wiederherstellen' => 'Wiederhergestellt.'][$aktion];
     return ma_layout_rest_antwort($a);
 }
 

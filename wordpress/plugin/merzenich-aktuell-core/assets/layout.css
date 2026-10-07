@@ -133,3 +133,20 @@ body.ma-le-zieht article[data-post]{outline-style:dashed}
 .ma-le__textknoepfe button{border:1px solid #777;background:transparent;color:#fff;padding:3px 9px;border-radius:3px;cursor:pointer;font:inherit}
 .ma-le__textknoepfe button.ist-primaer{background:#fff;color:#1d1d1b;font-weight:700}
 .ma-le__textknoepfe small{color:#d7d2cb}
+/* Ziehen mit Zeiger-Ereignissen (1.25.0): Griff, mitlaufende Kopie, Hinweise. */
+.ma-le__griff{display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:28px;font-size:18px;line-height:1;border-radius:4px;background:rgba(255,255,255,.9);color:#222}
+.ma-le__griff:hover{background:#fff;box-shadow:0 0 0 1px #8c1c22}
+.ma-lb__karte{position:relative;touch-action:pan-y;user-select:none}
+.ma-lb__griff{position:absolute;left:6px;top:6px;z-index:2;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.ma-lb__karte img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+body.ma-bearbeiten article[data-slot]{cursor:grab}
+body.ma-bearbeiten article[data-slot] img,body.ma-bearbeiten article[data-slot] a{-webkit-user-drag:none;user-drag:none}
+body.ma-le-zieht,body.ma-le-zieht *{cursor:grabbing!important;user-select:none!important}
+.ma-le__geist{position:fixed;left:0;top:0;z-index:100000;pointer-events:none;background:#fff;border:2px solid #8c1c22;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.3);overflow:hidden;opacity:.94}
+.ma-le__geist img{display:block;width:100%;height:120px;object-fit:cover}
+.ma-le__geist strong{display:block;padding:8px 10px;font:600 14px/1.3 system-ui,sans-serif;color:#17191b}
+.ist-ziel{outline:3px solid #8c1c22!important;outline-offset:3px;background-color:rgba(140,28,34,.06)}
+.ma-le__chip.ist-entwurf{background:#e8f0fb;color:#1d4f91;border-color:#9bb8e0}
+.ma-lb__vorgemerkt{margin:6px 0 0;padding:6px 8px;font-size:12px;background:#e8f0fb;border:1px dashed #9bb8e0;border-radius:4px;color:#1d4f91}
+.ma-lb__vorgemerkt .button-link{margin-left:6px;font-size:12px}
+.ma-le__fuss{display:flex;gap:8px;flex-wrap:wrap}

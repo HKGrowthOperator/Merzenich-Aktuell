@@ -339,10 +339,7 @@ add_action('manage_post_posts_custom_column', function (string $spalte, int $id)
     echo '</select>';
 }, 10, 2);
 add_filter('manage_edit-post_sortable_columns', function (array $c): array { $c['ma_relevanz'] = 'ma_relevanz'; return $c; });
-add_action('pre_get_posts', function (WP_Query $q): void {
-    if (!is_admin() || !$q->is_main_query() || $q->get('orderby') !== 'ma_relevanz') return;
-    $q->set('meta_key', 'ma_relevanz'); $q->set('orderby', 'meta_value_num');
-});
+// Sortieren nach Relevanz: includes/beitragsliste.php (auch Beiträge ohne Relevanz, Datum als zweites Kriterium).
 
 add_action('wp_ajax_ma_relevanz_setzen', function (): void {
     check_ajax_referer('ma_relevanz', 'nonce');

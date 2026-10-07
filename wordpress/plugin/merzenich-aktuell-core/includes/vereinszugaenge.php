@@ -52,17 +52,18 @@ function ma_verein_benutzer(string $kurz): ?WP_User {
 }
 
 /**
- * Legt fehlende Vereinszugänge an. $vorlage z. B. "info+{kurz}@example.de".
- * Gibt [angelegt, vorhanden, fehler[]] zurück. Sendet keine Mail.
+ * Legt fehlende Vereinszugänge an. $vorlage z. B. "info+{kurz}@example.de";
+ * leer = ohne E-Mail (Vorgabe Betreiber 07.10.2026: die Vereine tragen ihre
+ * Adresse selbst ein). Gibt [angelegt, vorhanden, fehler[]] zurück. Sendet keine Mail.
  */
 function ma_vereinszugaenge_anlegen(string $vorlage): array {
     $angelegt = 0; $vorhanden = 0; $fehler = [];
     foreach (ma_vereine_fuer_zugang() as $v) {
         $kurz = ma_verein_kurz($v['name']);
         if (ma_verein_benutzer($kurz)) { $vorhanden++; continue; }
-        $mail = sanitize_email(str_replace('{kurz}', $kurz, $vorlage));
-        if (!is_email($mail)) { $fehler[] = $v['name'] . ': E-Mail ungültig'; continue; }
-        if (email_exists($mail)) { $fehler[] = $v['name'] . ': E-Mail ' . $mail . ' ist schon vergeben'; continue; }
+        $mail = trim($vorlage) === '' ? '' : sanitize_email(str_replace('{kurz}', $kurz, $vorlage));
+        if ($mail !== '' && !is_email($mail)) { $fehler[] = $v['name'] . ': E-Mail ungültig'; continue; }
+        if ($mail !== '' && email_exists($mail)) { $fehler[] = $v['name'] . ': E-Mail ' . $mail . ' ist schon vergeben'; continue; }
         $login = 'verein-' . substr($kurz, 0, 50); $i = 2;
         while (username_exists($login)) { $login = 'verein-' . substr($kurz, 0, 46) . '-' . $i++; }
         $id = wp_insert_user(['user_login' => $login, 'user_email' => $mail, 'display_name' => $v['name'], 'nickname' => $v['name'],
@@ -81,6 +82,73 @@ add_action('admin_menu', function (): void {
     add_users_page('Vereinszugänge', 'Vereinszugänge', 'manage_options', 'ma-vereinszugaenge', 'ma_vereinszugaenge_seite');
 });
 
+/* ---------------------------------------------------------- Platzhalter-Adressen (07.10.2026) */
+
+/** Rollen der Partner- und Vereinskonten, die ihre E-Mail selbst eintragen dürfen. */
+function ma_partner_rollen(): array {
+    return function_exists('ma_partner_policies') ? array_keys(ma_partner_policies()) : ['ma_sport_partner', 'ma_vereine_partner'];
+}
+
+/** Ist ein Konto ein Partner- oder Vereinskonto (nie Redaktion oder Administration)? */
+function ma_ist_partnerkonto(WP_User $u): bool {
+    if (user_can($u, 'edit_others_posts') || user_can($u, 'manage_options')) return false;
+    return (bool) array_intersect((array) $u->roles, ma_partner_rollen()) || preg_match('/^(verein|partner)-/', $u->user_login);
+}
+
+/** Pure Prüfung: Platzhalter-Adresse der Agentur (info+…@hk-growthoperator.de), nicht die eigene des Kontos. */
+function ma_ist_platzhalter_mail(string $mail): bool {
+    return (bool) preg_match('/@hk-?growthoperator\.de$/i', trim($mail));
+}
+
+/** Partner- und Vereinskonten mit Platzhalter-Adresse. */
+function ma_platzhalter_konten(): array {
+    return array_values(array_filter(get_users(['search' => '*growthoperator.de', 'search_columns' => ['user_email'], 'number' => 500]),
+        fn(WP_User $u) => ma_ist_platzhalter_mail($u->user_email) && ma_ist_partnerkonto($u)));
+}
+
+/** Entfernt die Platzhalter-Adressen; Name, Rolle, Passwort und Zuordnung bleiben. Ohne Benachrichtigung. */
+function ma_platzhalter_mails_entfernen(): int {
+    add_filter('send_email_change_email', '__return_false', 99);
+    $n = 0;
+    foreach (ma_platzhalter_konten() as $u) {
+        $r = wp_update_user(['ID' => $u->ID, 'user_email' => '']);
+        if (!is_wp_error($r)) { update_user_meta($u->ID, 'ma_mail_entfernt', current_time('mysql')); $n++; }
+    }
+    remove_filter('send_email_change_email', '__return_false', 99);
+    return $n;
+}
+
+add_action('admin_post_ma_platzhalter_mails', function (): void {
+    if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
+    check_admin_referer('ma_platzhalter_mails');
+    $n = ma_platzhalter_mails_entfernen();
+    wp_safe_redirect(add_query_arg('ma_meldung', rawurlencode($n . ' Platzhalter-Adressen entfernt. Die Partner tragen ihre E-Mail selbst im Profil ein.'), admin_url('users.php?page=ma-vereinszugaenge')));
+    exit;
+});
+
+/* Partner- und Vereinskonten dürfen ihr Profil ohne E-Mail speichern, bis sie ihre eigene eintragen. */
+add_action('user_profile_update_errors', function (WP_Error $fehler, bool $update, $user): void {
+    if (!$update || trim((string) ($user->user_email ?? '')) !== '') return;
+    $u = get_userdata((int) ($user->ID ?? 0));
+    if ($u && ma_ist_partnerkonto($u)) { $fehler->remove('empty_email'); $fehler->remove('invalid_email'); }
+}, 10, 3);
+
+/* Die erste eigene Adresse gilt sofort: Ohne alte Adresse gibt es nichts zu schützen, und die
+   Bestätigungsmail von WordPress käme ohne eingerichteten Mailversand womöglich nie an. */
+add_action('personal_options_update', function (int $id): void {
+    $u = get_userdata($id);
+    if ($u && trim($u->user_email) === '' && ma_ist_partnerkonto($u)) remove_action('personal_options_update', 'send_confirmation_on_profile_email');
+}, 1);
+
+/* Hinweis im eigenen Profil, solange die Adresse fehlt. */
+add_action('admin_notices', function (): void {
+    $s = function_exists('get_current_screen') ? get_current_screen() : null;
+    if (!$s || !in_array($s->id, ['profile', 'dashboard'], true)) return;
+    $u = wp_get_current_user();
+    if (!$u->exists() || trim($u->user_email) !== '' || !ma_ist_partnerkonto($u)) return;
+    echo '<div class="notice notice-warning"><p><strong>Bitte tragen Sie Ihre eigene E-Mail-Adresse ein</strong> (' . ($s->id === 'profile' ? 'unten unter „Kontaktinfo“' : '<a href="' . esc_url(admin_url('profile.php')) . '">im Profil</a>') . '). Darüber erreichen Sie Hinweise der Redaktion und können Ihr Passwort zurücksetzen.</p></div>';
+});
+
 
 function ma_vereinszugaenge_seite(): void {
     if (!current_user_can('manage_options')) wp_die('Keine Berechtigung.');
@@ -88,7 +156,7 @@ function ma_vereinszugaenge_seite(): void {
     if (isset($_POST['ma_vereinszugaenge'])) {
         check_admin_referer('ma_vereinszugaenge');
         $vorlage = sanitize_text_field(wp_unslash($_POST['vorlage'] ?? ''));
-        if (!str_contains($vorlage, '{kurz}') || !str_contains($vorlage, '@')) $meldung = 'Die E-Mail-Vorlage braucht {kurz} und ein @, z. B. info+{kurz}@ihre-domain.de.';
+        if ($vorlage !== '' && (!str_contains($vorlage, '{kurz}') || !str_contains($vorlage, '@'))) $meldung = 'Die E-Mail-Vorlage braucht {kurz} und ein @, z. B. info+{kurz}@ihre-domain.de, oder bleibt leer.';
         else {
             [$a, $v, $f] = ma_vereinszugaenge_anlegen($vorlage);
             update_option('ma_vereinszugang_vorlage', $vorlage, false);
@@ -103,9 +171,17 @@ function ma_vereinszugaenge_seite(): void {
     if ($meldung !== '') echo '<div class="notice notice-info"><p>' . esc_html($meldung) . '</p></div>';
     echo '<form method="post" style="background:#fff;border:1px solid #dcdcde;padding:14px 16px;max-width:760px">';
     wp_nonce_field('ma_vereinszugaenge');
-    printf('<p><label><strong>E-Mail-Vorlage für neue Zugänge</strong><br><input class="regular-text" name="vorlage" value="%s" placeholder="info+{kurz}@ihre-domain.de" required></label><br><span class="description">{kurz} wird durch den Kurznamen des Vereins ersetzt. Die Adresse lässt sich später im Benutzerprofil auf die echte Vereinsadresse ändern.</span></p>',
-        esc_attr((string) get_option('ma_vereinszugang_vorlage', '')));
-    echo '<p><button class="button button-primary" name="ma_vereinszugaenge" value="1">Fehlende Zugänge anlegen (ohne E-Mail)</button></p></form>';
+    printf('<p><label><strong>E-Mail-Vorlage für neue Zugänge (freiwillig)</strong><br><input class="regular-text" name="vorlage" value="%s" placeholder="leer = ohne E-Mail, die Vereine tragen sie selbst ein"></label><br><span class="description">{kurz} wird durch den Kurznamen des Vereins ersetzt. Die Adresse lässt sich später im Benutzerprofil auf die echte Vereinsadresse ändern.</span></p>',
+        esc_attr(ma_ist_platzhalter_mail(str_replace('{kurz}', 'x', (string) get_option('ma_vereinszugang_vorlage', ''))) ? '' : (string) get_option('ma_vereinszugang_vorlage', '')));
+    echo '<p><button class="button button-primary" name="ma_vereinszugaenge" value="1">Fehlende Zugänge anlegen (ohne Benachrichtigung)</button></p></form>';
+    $platz = ma_platzhalter_konten();
+    if ($platz) {
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" style="background:#fff8e5;border:1px solid #dba617;padding:14px 16px;max-width:760px;margin-top:12px"><input type="hidden" name="action" value="ma_platzhalter_mails">';
+        wp_nonce_field('ma_platzhalter_mails');
+        echo '<p><strong>' . count($platz) . ' Partner- und Vereinskonten haben noch eine Platzhalter-Adresse</strong> (@hk-growthoperator.de). Entfernen leert nur die E-Mail; Name, Rolle, Passwort und Zuordnung bleiben, niemand wird benachrichtigt. Die Partner tragen ihre Adresse danach selbst im Profil ein.</p>';
+        echo '<details><summary>Betroffene Konten anzeigen</summary><p class="description">' . esc_html(implode(', ', array_map(fn($u) => $u->user_login, $platz))) . '</p></details>';
+        echo '<p><button class="button" onclick="return confirm(\'Platzhalter-Adressen bei ' . count($platz) . ' Konten entfernen?\')">Platzhalter-Adressen entfernen</button></p></form>';
+    }
     if (function_exists('ma_vereine_struktur')) {
         $struktur = ma_vereine_struktur();
         $mitProfil = count(array_filter(array_keys($struktur), fn($k) => ma_verein_profil($k)));
