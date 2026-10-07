@@ -19,11 +19,11 @@
   "vereine": 20,
   "leben": 20,
   "wirtschaft": 20,
-  "technik": 10,
+  "technik": 14,
   "rettung": 0,
   "unfall": 1,
   "flaeche": 0,
-  "verkehr": 16,
+  "verkehr": 20,
   "tipp": 20,
   "menschen": 20
  },
@@ -2871,6 +2871,48 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-technik-01-21f00fde",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-01-21f00fde60-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_113610_(50800017667).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 113610 (50800017667).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-02-0db61346",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-02-0db613466e-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_113620_(50799904691).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 113620 (50799904691).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-03-412fbfc9",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-03-412fbfc9cf-1200.webp",
+   "alt": "Beseitigung einer Ölspur auf einer Straße in Mureck in der Steiermark durch die Feuerwehr und Straßenreinigungsfahrzeug",
+   "credit": "Symbolbild · BFV Radkersburg / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96lspur-Mureck-20210104_113641_(50799160613).jpg",
+   "titel": "File:Ölspur-Mureck-20210104 113641 (50799160613).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-technik-04-149fab0f",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-04-149fab0f23-1200.webp",
@@ -2924,6 +2966,20 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-technik-08-e402192e",
+   "pool": "technik",
+   "datei": "/assets/editorial-pools/technik/technik-08-e402192e2f-1200.webp",
+   "alt": "Дымовой извещатель в туалете аэроэкспресса",
+   "credit": "Symbolbild · Georg Pik / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector%2C_Russia_(07).jpg",
+   "titel": "File:Smoke detector, Russia (07).jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
@@ -3025,6 +3081,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-verkehr-01-42cee4b3",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-01-42cee4b300-1200.webp",
+   "alt": "Bicycle rapair station Bike Broz at Hornbach at Märkische Spitze in Berlin-Marzahn, Germany",
+   "credit": "Symbolbild · Singlespeedfahrer / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_Bike_Broz_Hornbach_Berlin-Marzahn_01.jpg",
+   "titel": "File:Fahrrad-Reparaturstation Bike Broz Hornbach Berlin-Marzahn 01.jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-verkehr-02-646c812c",
    "pool": "verkehr",
    "datei": "/assets/editorial-pools/verkehr/verkehr-02-646c812c40-1200.webp",
@@ -3064,6 +3134,20 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-05-5cddd1d7",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-05-5cddd1d7f0-1200.webp",
+   "alt": "Bicycle rapair station Bike Broz at Hornbach at Märkische Spitze in Berlin-Marzahn, Germany",
+   "credit": "Symbolbild · Singlespeedfahrer / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_Bike_Broz_Hornbach_Berlin-Marzahn_04.jpg",
+   "titel": "File:Fahrrad-Reparaturstation Bike Broz Hornbach Berlin-Marzahn 04.jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
@@ -3193,6 +3277,20 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-verkehr-15-2f9fde53",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-15-2f9fde5351-1200.webp",
+   "alt": "Bicycle rapair station Bike Broz at Hornbach at Märkische Spitze in Berlin-Marzahn, Germany",
+   "credit": "Symbolbild · Singlespeedfahrer / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFahrrad-Reparaturstation_Bike_Broz_Hornbach_Berlin-Marzahn_05.jpg",
+   "titel": "File:Fahrrad-Reparaturstation Bike Broz Hornbach Berlin-Marzahn 05.jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-verkehr-16-4b3fa4a4",
    "pool": "verkehr",
    "datei": "/assets/editorial-pools/verkehr/verkehr-16-4b3fa4a49f-1200.webp",
@@ -3204,6 +3302,20 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-verkehr-17-600eed3e",
+   "pool": "verkehr",
+   "datei": "/assets/editorial-pools/verkehr/verkehr-17-600eed3e4f-1200.webp",
+   "alt": "Bicycle repair station",
+   "credit": "Symbolbild · Granpar / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABicycle_repair_station_near_Bad_Homburg_(Brauhaus_Kronenhof).jpg",
+   "titel": "File:Bicycle repair station near Bad Homburg (Brauhaus Kronenhof).jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-07",
    "ort": "Deutschland / überregional"
   },
   {
