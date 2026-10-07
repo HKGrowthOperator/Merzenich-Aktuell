@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.2 (Historie unten)
+7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.4 (Historie unten)
+
+## Neu in Plugin 1.26.3 und 1.26.4 (07.10.2026): Texte und Beiträge-Liste für die Anleitung
+
+- Sport und Partner-Zugänge: Hinweistexte ohne Entwicklerbegriffe (kein `/api/…`, kein Shortcode).
+- Editor und Ortsseiten: Der Hinweis auf eine „Ersatzgrafik“ ist weg. Ohne geprüfte Bildrechte erscheint kein Bild.
+- Beiträge-Liste: Die Relevanz-Auswahl ragte in die Nachbarspalten. Spalten Titel, Startseite und Relevanz haben jetzt feste Breiten.
+- Nur das Plugin hochladen.
 
 ## Neu in Plugin 1.26.2 (07.10.2026): Redakteure, Schlagwörter im Abgleich, Kleinigkeiten für die Anleitung
 

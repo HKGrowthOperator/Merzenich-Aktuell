@@ -31,7 +31,7 @@ function ma_image_type_field(): void {
     foreach (MA_IMAGE_TYPES as $k=>$label) {
         echo '<option value="'.esc_attr($k).'" '.selected($wert,$k,false).'>'.esc_html($label).'</option>';
     }
-    echo '</select></label><br><span class="description">Ohne gepruefte Bildrechte oder eingetragene Lizenz liefert die Seite statt des Bildes die gekennzeichnete Ersatzgrafik aus.</span></p>';
+    echo '</select></label><br><span class="description">Ohne geprüfte Bildrechte oder eingetragene Lizenz zeigt die Seite das Bild nicht; die Meldung erscheint dann ohne Bild.</span></p>';
     if (function_exists('ma_partner_rights_field')) ma_partner_rights_field((int)get_the_ID());
 }
 

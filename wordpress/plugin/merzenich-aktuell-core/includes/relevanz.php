@@ -277,7 +277,7 @@ function ma_relevanz_css(): string {
         . '.ma-relevanz__knopf--nur-rubrik span{background:#f6f7f7}.ma-relevanz__knopf--normal span{background:#fff}.ma-relevanz__knopf--wichtig span{background:#fcf0e3}.ma-relevanz__knopf--top-thema span{background:#fbe3e4}'
         . '.ma-relevanz__knopf input:checked+span{background:#8c1c22;border-color:#8c1c22;color:#fff}.ma-relevanz__knopf input:focus-visible+span{outline:2px solid #2271b1;outline-offset:1px}'
         . '.ma-relevanz__wo{margin:6px 0 0;font-size:12px;color:#50575e}'
-        . '.column-ma_relevanz{width:88px}.ma-relevanz-liste{max-width:84px}.ma-relevanz-ok{color:#008a20;margin-left:4px}'
+        . '.column-ma_relevanz{width:150px}.edit-php.post-type-post .wp-list-table .column-title{width:28%}.wp-list-table .column-ma_startplatz{width:130px}.wp-core-ui .wp-list-table select.ma-relevanz-liste{width:100%;max-width:100%;min-width:0}.ma-relevanz-ok{color:#008a20;margin-left:4px}'
         . '.ma-freigaben td{vertical-align:top}.ma-freigaben__bild{width:120px;height:68px;object-fit:cover;background:#f0f0f1;display:block}'
         . '.ma-freigaben__aktion{min-width:320px}.ma-freigaben__zeile{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}'
         . '.ma-freigaben__status{font-weight:600}.ma-freigaben__status.ist-fehler{color:#b32d2e}.ma-freigaben__status.ist-ok{color:#008a20}'

@@ -38,7 +38,7 @@ function ma_ort_edit_fields(WP_Term $term): void {
         echo $key === 'ma_ort_summary'
             ? '<textarea id="'.esc_attr($key).'" name="'.esc_attr($key).'" rows="3">'.esc_textarea($wert).'</textarea>'
             : '<input type="'.esc_attr($typ).'" id="'.esc_attr($key).'" name="'.esc_attr($key).'" value="'.esc_attr($wert).'">';
-        if ($key === 'ma_ort_image_id') echo '<p class="description">Ohne geprüfte Bildrechte bleibt es bei der Ersatzgrafik. Credit daneben eintragen.</p>';
+        if ($key === 'ma_ort_image_id') echo '<p class="description">Ohne geprüfte Bildrechte zeigt die Ortsseite kein Bild. Credit daneben eintragen.</p>';
         echo '</td></tr>';
     }
 }
