@@ -194,7 +194,7 @@ function ma_sport_settings_page(): void {
     echo '<form method="post">';
     wp_nonce_field('ma_sport_save');
 
-    echo '<h2>Aus JSON übernehmen</h2><p>Denselben Datenstand, den die statische Seite unter <code>/api/sport-current.json</code> ausliefert, hier einfügen. Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden daraus gefüllt; ein unbestätigtes Ergebnis landet als offenes Spiel.</p>';
+    echo '<h2>Aus JSON übernehmen</h2><p>Ein Datenpaket (JSON) von HK Growth Operator hier einfügen. Ergebnis, offenes Spiel, nächstes Spiel und Tabelle werden daraus gefüllt; ein unbestätigtes Ergebnis landet als offenes Spiel.</p>';
     echo '<textarea name="sport_json" rows="6" style="width:100%;max-width:900px;font-family:monospace" placeholder=\'{"generated":"…","sourceUrl":"…","lastMatch":{…},"nextMatch":{…},"table":[…]}\'></textarea>';
     echo '<p><button class="button" name="ma_sport_import">Aus JSON übernehmen</button></p>';
 
