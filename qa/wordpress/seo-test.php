@@ -86,7 +86,7 @@ $lang = str_repeat('Ausführliche Beschreibung des Abends mit Musik und Tanz. ',
 pruefe('Langer Text bleibt, wie er ist (gekürzt)', ma_seo_auffuellen($lang, 'Am 1.1.2027', 'X.'), ma_seo_kuerzen($lang));
 pruefe('Listen mit eigener Beschreibung (Immobilien, Jobs, Trauer, Familie, Betriebe)', array_map(fn($d) => mb_strlen($d[2]) >= 110 && mb_strlen($d[2]) <= 160, ma_seo_listen()), ['ma_property' => true, 'ma_job' => true, 'ma_obituary' => true, 'ma_family_notice' => true, 'ma_business' => true]);
 pruefe('/betriebe/ nicht mehr gleich betitelt wie /unternehmen/', ma_seo_listen()['ma_business'][1] !== ma_seo_ressorte()['unternehmen'][1], true);
-pruefe('Seitentexte Service, Diskussion, Archiv, Impressum 110 bis 160 Zeichen', array_values(array_map(fn($t) => mb_strlen($t) >= 110 && mb_strlen($t) <= 160, ma_seo_seitentexte())), [true, true, true, true]);
+pruefe('Seitentexte Service, Diskussion, Archiv, Impressum, Heute 110 bis 160 Zeichen', array_values(array_map(fn($t) => mb_strlen($t) >= 110 && mb_strlen($t) <= 160, ma_seo_seitentexte())), [true, true, true, true, true]);
 
 echo "\nTeilen-Zuschnitte (teilen-bilder.php)\n";
 pruefe('3:2-Foto 1536×1024 → 16:9 1200×675 aus der Mitte', ma_seo_zuschnitt_masse(1536, 1024, 16, 9), ['x' => 0, 'y' => 80, 'w' => 1536, 'h' => 864, 'zw' => 1200, 'zh' => 675]);
@@ -138,6 +138,15 @@ pruefe('Graph ist gültiges JSON ohne leere Werte', !str_contains(json_encode($g
 echo "\nGoogle-Bestätigungsdatei\n";
 pruefe('Name aus Dateiname, mit .html, aus Adresse; Fremdes abgelehnt', [ma_seo_google_datei_name('googlef2b56ca4196206a7'), ma_seo_google_datei_name(' googlef2b56ca4196206a7.html '), ma_seo_google_datei_name('https://merzenich-aktuell.de/googlef2b56ca4196206a7.html'), ma_seo_google_datei_name('google123.html'), ma_seo_google_datei_name('')], ['googlef2b56ca4196206a7', 'googlef2b56ca4196206a7', 'googlef2b56ca4196206a7', '', '']);
 pruefe('Inhalt exakt wie von Google verlangt', ma_seo_google_datei_inhalt('googlef2b56ca4196206a7'), 'google-site-verification: googlef2b56ca4196206a7.html');
+
+echo "\nGefunden werden (1.27.0)\n";
+$logo = $finde($g, 'NewsMediaOrganization')['logo'];
+$datei = getimagesize(__DIR__ . '/../../chatgpt-site/assets/img/logo-on-light.png');
+pruefe('Logo im Schema mit den echten Maßen der Datei', [$logo['width'], $logo['height']], [$datei[0], $datei[1]]);
+pruefe('WebSite mit anderen Schreibweisen des Namens', $finde($g, 'WebSite')['alternateName'], ['Merzenich-Aktuell', 'merzenich-aktuell.de']);
+pruefe('/heute/: Titel für Google ist die Frage, Beschreibung gesetzt', [ma_seo_seitentitel()['heute'], mb_strlen(ma_seo_seitentexte()['heute']) <= 155], ['Was ist heute in Merzenich los?', true]);
+$b = ma_seo_bereiche_liste($HOME, ['nachrichten' => '2026-10-07T12:00:00+02:00', 'termine' => '', 'unternehmen' => '2026-10-01T09:00:00+02:00']);
+pruefe('Sitemap „bereiche“: drei Übersichtsseiten, lastmod nur wenn bekannt', [array_column($b, 'loc'), isset($b[1]['lastmod']), $b[0]['lastmod']], [[$HOME . 'nachrichten/', $HOME . 'termine/', $HOME . 'unternehmen/'], false, '2026-10-07T12:00:00+02:00']);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

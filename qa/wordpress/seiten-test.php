@@ -27,7 +27,7 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 echo "Inhalt\n";
 $alle = '';
 foreach (ma_seiten() as $slug => $s) { $h = ma_seite_html($slug); $alle .= $h; if ($h === '' || $s['anriss'] === '' || $s['eyebrow'] === '') { $fehler++; echo "  FEHLER: $slug leer\n"; } }
-pruefe('17 Seiten mit Text, Anriss und Eyebrow', count(ma_seiten()), 17);
+pruefe('18 Seiten mit Text, Anriss und Eyebrow (1.27.0: Heute in Merzenich)', count(ma_seiten()), 18);
 pruefe('Keine Vorschau-Domain, kein Netlify-Formular, kein TODO', str_contains($alle, 'hk-growthoperator') || str_contains($alle, '/api/formular') || str_contains($alle, 'TODO') || str_contains($alle, 'kalender.ics'), false);
 pruefe('Formulare: Kontakt, Meldung, Termin, Werbung, Korrektur; Anzeigen über die Auswahl', [str_contains(ma_seite_kontakt(), '[ma_formular typ="kontakt"]'), str_contains(ma_seite_meldung_senden(), 'typ="meldung"'), str_contains(ma_seite_termin_melden(), 'typ="termin"'), str_contains(ma_seite_werben(), 'typ="werbung"'), str_contains(ma_seite_korrekturen(), 'typ="korrektur"'), str_contains(ma_seite_aufgeben(), '[ma_anzeige_aufgeben]'), !str_contains(ma_seite_aufgeben(), '[ma_formular') ], [true, true, true, true, true, true, true]);
 pruefe('Archiv, Diskussion, Redaktion und Themen nutzen ihre Shortcodes', [str_contains(ma_seite_archiv(), '[ma_archiv]'), str_contains(ma_seite_diskussion(), '[ma_diskussion]'), str_contains(ma_seite_redaktion(), '[ma_redaktion_meldungen]'), str_contains(ma_seite_themen(), '[ma_themen]')], [true, true, true, true]);
@@ -60,11 +60,11 @@ $GLOBALS['opt']['ma_seiten_stand']['kontakt']['version'] = '2026-01-01'; unset($
 pruefe('Ältere Fassung erkannt', ma_seite_status('kontakt'), 'veraltet');
 ma_seiten_abgleichen();
 pruefe('Unveränderte ältere Fassung wird gehoben', ma_seite_status('kontakt'), 'aktuell');
-pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 17);
+pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 18);
 // Neue Seite bei gleicher Fassung (Live-Befund 02.10.: /thema/ fehlte, weil der Guard schon stand): Anzahl-Guard greift.
 $GLOBALS['opt']['ma_seiten_anzahl'] = 16; unset($GLOBALS['posts'][ma_seite_seite('thema')->ID]);
 ma_seiten_abgleichen();
-pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 17]);
+pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 18]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

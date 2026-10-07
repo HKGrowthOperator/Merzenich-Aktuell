@@ -3,7 +3,7 @@
  * Redaktionsseiten (02.10.2026): Über uns, Redaktion, Grundsätze, Korrekturen,
  * Kommentarrichtlinien, KI & Redaktion, Kontakt, Meldung senden, Termin
  * melden, Werben, Unterstützen, Anzeigen (mit Aufgeben), Archiv, Diskussion,
- * WhatsApp-Kanal.
+ * Heute in Merzenich (1.27.0), WhatsApp-Kanal.
  *
  * Die Fußzeile und jede Meldung verlinken diese Adressen (wie die statische
  * Seite); auf WordPress liefen sie bisher auf 404. Dieselbe Mechanik wie die
@@ -40,6 +40,7 @@ function ma_seiten(): array {
         'archiv' => ['titel' => 'Archiv', 'eyebrow' => 'Archiv', 'anriss' => 'Alle Meldungen von Merzenich Aktuell nach Monat.', 'html' => 'ma_seite_archiv'],
         'diskussion' => ['titel' => 'Diskussion', 'eyebrow' => 'Mitreden', 'anriss' => 'Die jüngsten Kommentare aus allen Meldungen von Merzenich Aktuell.', 'html' => 'ma_seite_diskussion'],
         'thema' => ['titel' => 'Themen', 'eyebrow' => 'Themen', 'anriss' => 'Alle Themen und Schlagworte auf Merzenich Aktuell, nach Zahl der Meldungen.', 'html' => 'ma_seite_themen'],
+        'heute' => ['titel' => 'Heute in Merzenich', 'eyebrow' => 'Heute', 'anriss' => 'Was ist heute in Merzenich los? Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.', 'html' => 'ma_seite_heute'],
         'whatsapp' => ['titel' => 'WhatsApp-Kanal', 'eyebrow' => 'Immer informiert', 'anriss' => 'Eilmeldungen, Blaulicht und die wichtigsten Termine aus der Gemeinde Merzenich als Broadcast direkt aufs Handy. Kein Gruppenchat, keine sichtbare Nummer.', 'html' => 'ma_seite_whatsapp'],
     ];
 }
@@ -189,6 +190,15 @@ function ma_seite_diskussion(): string {
 
 function ma_seite_themen(): string {
     return '<p>Jede Meldung trägt Schlagworte. Hier stehen alle Themen mit der Zahl ihrer Meldungen; die Ortsteile haben eigene Seiten: <a href="/ort/merzenich/">Merzenich</a>, <a href="/ort/golzheim/">Golzheim</a>, <a href="/ort/girbelsrath/">Girbelsrath</a>, <a href="/ort/morschenich/">Morschenich</a>, <a href="/ort/buergewald/">Bürgewald</a>.</p>[ma_themen]';
+}
+
+/**
+ * Heute in Merzenich (1.27.0): Antwort auf die Google-Frage „Was ist heute in
+ * Merzenich los?“. Das Theme zeigt auf dieser Seite die Termine und Meldungen
+ * aus WordPress (page-heute.php); dieser Text steht nur da, wo das Theme fehlt.
+ */
+function ma_seite_heute(): string {
+    return '<p>Was heute in der Gemeinde Merzenich los ist: Die Termine von heute und den nächsten Tagen stehen unter <a href="/termine/">Termine</a>, die neuesten Meldungen unter <a href="/nachrichten/">Nachrichten</a> und <a href="/blaulicht/">Blaulicht</a>. Notdienste und Öffnungszeiten des Rathauses finden Sie unter <a href="/service/">Notdienste &amp; Rathaus</a>.</p>';
 }
 
 function ma_seite_whatsapp(): string {

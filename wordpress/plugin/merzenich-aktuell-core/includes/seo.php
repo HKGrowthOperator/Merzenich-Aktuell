@@ -29,6 +29,8 @@ if (!defined('ABSPATH')) { exit; }
 
 const MA_SEO_MARKE = 'Merzenich Aktuell';
 const MA_SEO_UNTERTITEL = 'Lokalzeitung online für die Gemeinde Merzenich';
+// Andere Schreibweisen des Namens für den Seitennamen in den Google-Treffern (WebSite.alternateName, 1.27.0).
+const MA_SEO_NAMEN = ['Merzenich-Aktuell', 'merzenich-aktuell.de'];
 // Unter 65 Zeichen, damit Google ihn nicht abschneidet (1.26.0); die Ortsteile stehen in der Beschreibung.
 const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich und Ortsteilen';
 // Startseiten-Description: Google zeigt rund 155 Zeichen; die Langfassung steht in llms.txt.
@@ -83,7 +85,17 @@ function ma_seo_seitentexte(): array {
         'diskussion' => 'Diskutieren Sie mit: Kommentare der Leserinnen und Leser zu Meldungen aus Merzenich, moderiert nach den Kommentarrichtlinien der Redaktion.',
         'archiv' => 'Archiv von Merzenich Aktuell: alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald nach Monat und Ressort.',
         'impressum' => 'Impressum von Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich: Anbieterin KBS Management GmbH, Kontakt und Verantwortliche.',
+        'heute' => 'Termine von heute und den nächsten sieben Tagen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, dazu die neuesten Meldungen.',
     ];
+}
+
+/**
+ * Titel für Google, wo er vom sichtbaren Seitentitel abweicht (1.27.0): /heute/
+ * heißt auf der Seite „Heute in Merzenich“, in den Suchergebnissen steht die
+ * Frage, die Google selbst unter „Weitere Fragen“ zeigt.
+ */
+function ma_seo_seitentitel(): array {
+    return ['heute' => 'Was ist heute in Merzenich los?'];
 }
 
 /** Zu kurze Beschreibung (unter 110 Zeichen) mit Angaben davor und einem Satz dahinter auffüllen. */
@@ -209,7 +221,7 @@ function ma_seo_graph(array $k, array $o): array {
     $home = $o['home'];
     $org = [
         '@type' => 'NewsMediaOrganization', '@id' => $home . '#organization', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_UNTERTITEL, 'url' => $home,
-        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1200, 'height' => 338], 'image' => $o['bild'],
+        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 720, 'height' => 203], 'image' => $o['bild'],
         'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
         'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'info@kbs-management.tv',
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Rheinstr. 78a', 'postalCode' => '51371', 'addressLocality' => 'Leverkusen', 'addressCountry' => 'DE']],
@@ -219,7 +231,7 @@ function ma_seo_graph(array $k, array $o): array {
         'actionableFeedbackPolicy' => $home . 'meldung-senden/', 'masthead' => $home . 'ueber-uns/', 'ownershipFundingInfo' => $home . 'ueber-uns/#finanzierung', 'diversityPolicy' => $home . 'grundsaetze/#vielfalt',
     ];
     if (!empty($o['sameas'])) $org['sameAs'] = array_values($o['sameas']);
-    $web = ['@type' => 'WebSite', '@id' => $home . '#website', 'name' => MA_SEO_MARKE, 'url' => $home, 'inLanguage' => 'de-DE', 'publisher' => ['@id' => $home . '#organization'],
+    $web = ['@type' => 'WebSite', '@id' => $home . '#website', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_NAMEN, 'url' => $home, 'inLanguage' => 'de-DE', 'publisher' => ['@id' => $home . '#organization'],
         'potentialAction' => ['@type' => 'SearchAction', 'target' => ['@type' => 'EntryPoint', 'urlTemplate' => $home . '?s={search_term_string}'], 'query-input' => 'required name=search_term_string']];
     $graph = [$org, $web];
     $orte = ma_seo_orte();
@@ -427,7 +439,7 @@ function ma_seo_kontext(): array {
         $krumen = [['Start', $home]];
         if ($o->post_parent) $krumen[] = [html_entity_decode(get_the_title($o->post_parent), ENT_QUOTES, 'UTF-8'), get_permalink($o->post_parent)];
         $krumen[] = [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null];
-        $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => $o->post_type === 'page' && isset(ma_seo_seitentexte()[$o->post_name]) ? ma_seo_seitentexte()[$o->post_name] : ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
+        $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => $o->post_type === 'page' && isset(ma_seo_seitentitel()[$o->post_name]) ? ma_seo_seitentitel()[$o->post_name] : html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => $o->post_type === 'page' && isset(ma_seo_seitentexte()[$o->post_name]) ? ma_seo_seitentexte()[$o->post_name] : ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
             'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage', 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)
                 // Übernommene Stellen und Immobilien (Kopien der Portale, 1.26.0) nicht als eigene Inhalte werten.
                 && (string) get_post_meta($o->ID, 'ma_markt_id', true) === '']);
@@ -649,6 +661,41 @@ add_filter('wp_sitemaps_posts_query_args', function (array $args, string $typ): 
 add_filter('wp_sitemaps_post_types', fn(array $t) => array_diff_key($t, array_flip(['ma_obituary', 'ma_family_notice', 'attachment'])));
 add_filter('wp_sitemaps_taxonomies', fn(array $t) => array_diff_key($t, array_flip(['ma_family_type', 'ma_source_status', 'post_format'])));
 add_filter('robots_txt', fn(string $out, bool $public) => $public ? ma_seo_robots_txt($out, home_url('/')) : $out, 10, 2);
+
+/*
+ * Übersichtsseiten ohne eigenen Beitrag (1.27.0): /nachrichten/ und
+ * /unternehmen/ (Routen des Themes) und /termine/ (Archiv der Termine) standen
+ * in keiner Sitemap. Eigene Sitemap „bereiche“, lastmod = letzte Änderung der
+ * passenden Inhalte. Seiten wie /heute/ stehen als WordPress-Seite schon in
+ * der Seiten-Sitemap.
+ */
+function ma_seo_bereiche_liste(string $home, array $zeiten): array {
+    $liste = [];
+    foreach (['nachrichten', 'termine', 'unternehmen'] as $b) {
+        $e = ['loc' => $home . $b . '/'];
+        if (!empty($zeiten[$b])) $e['lastmod'] = (string) $zeiten[$b];
+        $liste[] = $e;
+    }
+    return $liste;
+}
+function ma_seo_bereiche_zeit(string $typ): string {
+    $s = (string) get_lastpostmodified('blog', $typ);
+    if ($s === '') return '';
+    try { return (new DateTimeImmutable($s, wp_timezone()))->format('c'); } catch (Exception $e) { return ''; }
+}
+add_action('init', function (): void {
+    if (!class_exists('WP_Sitemaps_Provider') || !function_exists('wp_register_sitemap_provider')) return;
+    if (!class_exists('MA_Sitemap_Bereiche')) {
+        class MA_Sitemap_Bereiche extends WP_Sitemaps_Provider {
+            public function __construct() { $this->name = 'bereiche'; $this->object_type = 'bereich'; }
+            public function get_url_list($page_num, $object_subtype = '') {
+                return ma_seo_bereiche_liste(home_url('/'), ['nachrichten' => ma_seo_bereiche_zeit('post'), 'termine' => ma_seo_bereiche_zeit('ma_event'), 'unternehmen' => ma_seo_bereiche_zeit('ma_business')]);
+            }
+            public function get_max_num_pages($object_subtype = '') { return 1; }
+        }
+    }
+    wp_register_sitemap_provider('bereiche', new MA_Sitemap_Bereiche());
+}, 20);
 
 /* Ortsteile: Beschreibung am Begriff, wenn noch keine eingetragen ist (Text der statischen Ortsseiten). Nie überschreiben. */
 function ma_seo_orte_beschreiben(): void {
