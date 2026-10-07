@@ -213,7 +213,8 @@ add_action('init', function (): void {
                 }
                 return $liste;
             }
-            public function get_max_num_pages($object_subtype = '') { return 1; }
+            // Ohne Einträge nicht im Sitemap-Verzeichnis (WordPress gibt dann 404, Google meldet einen Fehler).
+            public function get_max_num_pages($object_subtype = '') { return $this->get_url_list(1) ? 1 : 0; }
         }
     }
     wp_register_sitemap_provider('autoren', new MA_Sitemap_Autoren());

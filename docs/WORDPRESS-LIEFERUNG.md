@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.0 (Historie unten)
+7. Oktober 2026 · Theme 21.16.0 · Core-Plugin 1.26.1 (Historie unten)
+
+## Neu in Plugin 1.26.1 (07.10.2026): Autoren-Sitemap erst mit Einträgen
+
+Solange noch keine Person und kein Partner eine veröffentlichte Meldung hat, ist die Autoren-Sitemap leer. WordPress beantwortet eine leere Sitemap mit 404, und die Search Console hätte das als Fehler gemeldet. Die Sitemap steht jetzt erst im Verzeichnis `wp-sitemap.xml`, wenn sie Einträge hat. Nur das Plugin hochladen.
 
 ## Neu in Theme 21.16.0 / Plugin 1.26.0 (07.10.2026): echte Autoren, Schlagwörter aufgeräumt, Google per API
 
