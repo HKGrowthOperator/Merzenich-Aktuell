@@ -1,10 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.0 (Historie unten)
+7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.1 (Historie unten)
 
-## Neu in Theme 21.15.1 (07.10.2026): feste Reihenfolge bei gleichem Datum
+## Neu in Theme 21.15.1 / Plugin 1.25.1 (07.10.2026): feste Reihenfolge bei gleichem Datum, Sichtprüfung Runde 17
 
-Viele importierte Meldungen tragen dieselbe Zeit (z. B. 04.09., 00:00). Die Datenbank gab sie je nach Abfrage verschieden aus. Deshalb zeigte das Layout-Board auf den Ressortseiten andere Karten als die Seite, und nach einem Tausch sprangen die automatisch belegten Plätze. Bei gleichem Datum entscheidet jetzt die Beitragsnummer (`posts_orderby`, `inc/ma21.php`), so wie die Seite es schon zeigte. Nur das Theme hochladen.
+Viele importierte Meldungen tragen dieselbe Zeit (z. B. 04.09., 00:00). Die Datenbank gab sie je nach Abfrage verschieden aus. Deshalb zeigte das Layout-Board auf den Ressortseiten andere Karten als die Seite, und nach einem Tausch sprangen die automatisch belegten Plätze. Bei gleichem Datum entscheidet jetzt die Beitragsnummer (`posts_orderby`, `inc/ma21.php`), so wie die Seite es schon zeigte.
+
+Plugin 1.25.1 bringt die Poolliste nach Sichtprüfung Runde 17 mit: 6 Fotos freigegeben, 21 ausgeschlossen (`docs/POOLFOTOS-PRUEFUNG.md`). Beide Pakete hochladen.
 
 ## Neu in Theme 21.15.0 / Plugin 1.25.0 (07.10.2026): Rückmeldung Luis, Teil 2 (Backend, Märkte, Sport)
 

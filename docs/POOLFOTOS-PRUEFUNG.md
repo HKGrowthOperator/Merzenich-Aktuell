@@ -498,3 +498,7 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 - **1 zurückgestellt:** Rettungshubschrauber am Kalkberg. Das Schild im Bild ist lesbar. Das Foto bleibt ungeprüft, bis Ersatz da ist.
 
 WordPress zieht das Ergebnis beim nächsten Aufruf des Backends nach (Plugin 1.25.0). Freigegebene Fotos werden „Geprüft“. Ausgeschlossene werden „Abgelehnt – nicht verwenden“ und verlassen ihren Pool, gelöscht wird nichts. Die verbleibenden Lücken stehen in `docs/FOTOWUNSCHLISTE.md`.
+
+## Runde 17 (07.10.2026)
+
+Nach Runde 16 lud der Importer auf GitHub 27 Ersatzfotos nach. **6 freigegeben:** zwei neutrale Rauchmelder (Technische Hilfe) und vier deutsche Fahrrad-Reparaturstationen (Verkehr, laut Motivregel gewollt). **21 ausgeschlossen:** drei weitere Porträts des Kölner Polizeipräsidenten, Feuerwehr Mureck (Österreich), Produktfotos mit Marke, US- und Moskauer Feuermelder, Doppelungen und unscharfe Bilder. Stand geprüft: Blaulicht 19, Polizei 13, Verkehr 16, Technische Hilfe 10.

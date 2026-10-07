@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Bedienung für die Redaktion (Übergabe an KBS)
 
-Stand 7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.0
+Stand 7. Oktober 2026 · Theme 21.15.1 · Core-Plugin 1.25.1
 
 Die Seite läuft als WordPress auf **merzenich-aktuell.de** (IONOS). Alles Redaktionelle passiert im Backend unter **merzenich-aktuell.de/wp-admin**, linkes Menü **Merzenich Aktuell**. Diese Anleitung beschreibt die täglichen Handgriffe. Technik und Versionen stehen in `WORDPRESS-LIEFERUNG.md`, die Einrichtung in `README-INSTALLATION.md`.
 

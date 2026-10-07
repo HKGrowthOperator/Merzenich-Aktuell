@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben. Runde 15 (24.09.): alle 10 Rettungswagen-Fotos einzeln auf Kennzeichen, Gesichter und fremde Ortsaufschriften geprüft, 8 ausgeschlossen, 2 bleiben (Innenraum, Malteser ohne Ortsbezug). Runde 16 (07.10.2026): 66 neu geladene Fotos der Pools blaulicht, polizei, verkehr, technik, rettung, unfall und der Detailpools gesichtet, 16 freigegeben, 49 ausgeschlossen, 1 zurückgestellt (Rettungshubschrauber am Kalkberg, Schild lesbar; bleibt ungeprüft bis zum Ersatz) (u. a. Tierrettung im Ausland, Auslandsmotive, Markenlogos, Porträts, Doppelungen).",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben. Runde 15 (24.09.): alle 10 Rettungswagen-Fotos einzeln auf Kennzeichen, Gesichter und fremde Ortsaufschriften geprüft, 8 ausgeschlossen, 2 bleiben (Innenraum, Malteser ohne Ortsbezug). Runde 16 (07.10.2026): 66 neu geladene Fotos der Pools blaulicht, polizei, verkehr, technik, rettung, unfall und der Detailpools gesichtet, 16 freigegeben, 49 ausgeschlossen, 1 zurückgestellt (Rettungshubschrauber am Kalkberg, Schild lesbar; bleibt ungeprüft bis zum Ersatz) (u. a. Tierrettung im Ausland, Auslandsmotive, Markenlogos, Porträts, Doppelungen). Runde 17 (07.10.2026): 27 nachgeladene Fotos gesichtet, 6 freigegeben (2 Rauchmelder, 4 deutsche Fahrrad-Reparaturstationen), 21 ausgeschlossen (Porträts, Feuerwehr Mureck, Produktfotos, Auslandsmotive, Doppelungen); Rettungshubschrauber am Kalkberg bleibt zurückgestellt.",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -3619,6 +3619,132 @@
       "nr": 17,
       "titel": "File:Bicycle Repair Station - Staničné námestie, Košice, Slovakia.jpg",
       "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "polizei",
+      "nr": 0,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7266.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "polizei",
+      "nr": 0,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7272.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "polizei",
+      "nr": 0,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7273.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Ölspur-Mureck-20210104 112550 (50799159438).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Ölspur-Mureck-20210104 113244 (50800018157).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Ölspur-Mureck-20210104 113538 (50799161143).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector with stub, Russia(02).jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector, Russia (04).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector Z.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector on the stretch ceiling (01).jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector on the stretch ceiling (02).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Fire alarm call box Somerville MA.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke Detector (8560801098).jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Moscow State University fire alarm call box 2014-01 1389531294.JPG",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Smoke detector 01.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Atral-Secal Funk-Rauchwarnmelder 2-7070.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "technik",
+      "nr": 0,
+      "titel": "File:Atral-Secal Funk-Rauchwarnmelder 2-7071.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 0,
+      "titel": "File:Bicycle repair stand at Fairview Community Center 04.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 0,
+      "titel": "File:Bicycle Repair Stand Oedt Albert-Mooren-Halle.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 0,
+      "titel": "File:Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024 (2).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 0,
+      "titel": "File:Fahrrad-Reparaturstation Hegelstraße Tübingen 01.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
     }
   ],
   "freigegeben": [
@@ -3884,6 +4010,12 @@
     "File:Smoke detector, Russia.JPG",
     "File:Fahrrad-Reparaturstation an der Michaelisbrücke 20230704 HOF01588 RAW-Export.png",
     "File:Fahrrad-Reparaturstation.jpg",
-    "File:Rettungshubschrauber Christoph 45 Ochsenhausen Landung.JPG"
+    "File:Rettungshubschrauber Christoph 45 Ochsenhausen Landung.JPG",
+    "File:Smoke detector, Russia (3).JPG",
+    "File:Smoke Detector (9420220532).jpg",
+    "File:Bicycle Repair Stand Brüggen Nikolausplatz.jpg",
+    "File:Bicycle repair station (LRM 20230516 184201).jpg",
+    "File:Bike repair station, Altdorf bei Nürnberg (P1180294).jpg",
+    "File:Fahrrad-Reparaturstation am Carlsplatz, Düsseldorf, Mai 2024 (1).jpg"
   ]
 }
