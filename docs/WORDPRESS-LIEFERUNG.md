@@ -1,6 +1,61 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.14.0 · Core-Plugin 1.24.0 (Historie unten)
+7. Oktober 2026 · Theme 21.15.0 · Core-Plugin 1.25.0 (Historie unten)
+
+## Neu in Theme 21.15.0 / Plugin 1.25.0 (07.10.2026): Rückmeldung Luis, Teil 2 (Backend, Märkte, Sport)
+
+Beide Pakete hochladen. Nach dem Hochladen einmal das Backend öffnen. Dabei werden Bildpools, Redaktionsseiten und Abgleich nachgezogen.
+
+- **Layout-Board:**
+  - **Ziehen:**
+    - Karten lassen sich am Griff ⠿ ziehen, mit der Maus auch an der ganzen Karte, auf jede andere Karte. Das gilt im Backend-Board und im Bearbeiten-Modus auf der Seite.
+    - Eine halbdurchsichtige Kopie folgt dem Zeiger. Am oberen und unteren Rand scrollt die Seite mit. Esc bricht ab, Loslassen neben einer Karte sagt „Hier ist kein Platz“.
+    - Am Handy wird am Griff gezogen.
+    - Statt HTML5-Drag-and-drop laufen Pointer-Ereignisse (`layout.js`, `ziehbar`).
+  - **Alle Meldungen einsetzbar:**
+    - „Nur in der Rubrik“ sperrt nur noch die Startseite. Zieht man so eine Meldung dorthin, fragt das Board kurz nach und setzt sie auf „Startseite frei“.
+    - Entwürfe, wartende und geplante Meldungen lassen sich **vormerken**. Der Platz bleibt reserviert, die Freigabe bleibt beim Menschen.
+    - Die Auswahl hat den Filter „Stand“ und „Mehr laden“.
+  - Bei einem Konflikt (409) lädt das Board still neu und wiederholt die Aktion.
+- **Dashboard:**
+  - Ganz oben steht die Kachel „Heute zu tun“ mit Zahl und Knopf für Freigaben, Eingang, Kommentare, Sport und bald endende Anzeigen.
+  - Site Health, „Ereignisse & News“ und „Schneller Entwurf“ sind ausgeblendet.
+  - Der Aktualitätscheck spricht Deutsch und nimmt den Aufmacher aus dem Layout.
+- **Beiträge-Liste:**
+  - Filter für Startseite (freigegeben / offen / nur Rubrik), Relevanz (hoch / mittel / niedrig / ohne) und Bild (ohne Bild / Rechte offen).
+  - Beim Sortieren nach Relevanz bleiben Beiträge ohne Relevanz sichtbar und stehen am Ende; bei gleicher Relevanz kommt der neueste zuerst (`beitragsliste.php`).
+- **Bildpools:**
+  - Sortiert: Themenpools A–Z, dann Detailpools A–Z. Die Übersicht sagt je Pool, wie viele Fotos fehlen.
+  - Der Pool-Filter gibt es auch in der Mediathek-Rasteransicht und im Bild-Auswahlfenster.
+  - Sichtprüfung Runde 16: 16 Fotos freigegeben, 49 ausgeschlossen, darunter Tierrettung im Sudan im Pool „Rettung“. WordPress zieht das selbst nach: ausgeschlossene Fotos werden „Abgelehnt“ und verlassen den Pool, nichts wird gelöscht.
+  - Die Lücken stehen in `docs/FOTOWUNSCHLISTE.md` (für ChatGPT).
+- **Benutzer:**
+  - Unter Benutzer → Vereinszugänge zeigt ein gelber Kasten die Partner- und Vereinskonten mit Platzhalter-Adresse `@hk-growthoperator.de`. Ein Knopf leert diese Adressen; Admins sind ausgenommen.
+  - Partnerkonten dürfen ohne E-Mail speichern und tragen ihre eigene Adresse ein. Ein Hinweis im Profil bittet darum.
+  - Neue Vereinszugänge entstehen ohne Platzhalter-Adresse.
+- **Stellen und Immobilien als echte Einträge** (`markt-import.php`):
+  - Der geprüfte Marktstand (`market.json`) wird zu Einträgen unter „Stellen“ und „Immobilien“, mit Quelle, Prüfdatum und Ende: Stellen 30 Tage, Immobilien 35 Tage nach der letzten Prüfung.
+  - Läuft täglich mit dem Abgleich und auf Knopfdruck (Merzenich Aktuell → Abgleich: „Probelauf“, „Übernehmen“).
+  - Angebote, die aus der Quelle fallen, enden am selben Tag. Gelöscht wird nichts, Anbieterbilder werden nie übernommen.
+  - `/jobs/` und `/immobilien/` zeigen die Einträge nach Gemeinde, Merzenich zuerst.
+- **Keine selbstgemachten Grafiken mehr:**
+  - Entfernt sind die Ersatzgrafiken `ph-*.svg`, die Sportart-Grafiken `sportarten/*.svg` und die Symbolbilder in Stellen- und Immobilienlisten.
+  - Ohne echtes Foto bleibt die Karte ohne Bild. Auch Anzeigen-Einzelseiten zeigen nur noch eigene Fotos.
+- **Sport:**
+  - `/sport/` zeigt unter „Wer spielt wo“ nur noch Vereine und Abteilungen mit Mannschaften im Spielbetrieb: 11 Vereine, 47 Mannschaften.
+  - Je Mannschaft stehen Liga, Platz, Punkte und Spiele, mit Link zur Tabelle beim Verband (FUSSBALL.DE, nuLiga, click-TT, Billard-Verband Niederrhein, Schachverband Mittelrhein).
+  - Dazu kommen Kinderfußball ohne Tabelle, Wettkämpfe und der Vergleich der ersten Fußballmannschaften.
+  - Ohne Nachweis fehlen SC 1919 Badminton, TV Girbelsrath, UL-Aero-Club und LDDF Discofox. Ungeklärt sind TV Merzenich, BSC Girbelsrath, KK Klub Morschenich, Gut Schuss und Düren Demons.
+  - Die Daten liegen in `data/sport-aktiv.json`, Stand 07.10. Ein neuerer Stand im Repository kommt täglich ohne neues Plugin.
+  - Das Vereinsverzeichnis bleibt unverändert.
+
+**Geprüft:**
+- Neu: `markt-import-test.php` (Felder, Laufzeiten, Ausschlüsse, Filter der Beiträge-Liste) und `sport-aktiv-test.php` (Gruppen, Vergleich, Datenstand, keine SVG). Neu ist auch der Abschnitt „Alle Meldungen einsetzbar“ in `layout-test.php`. Alle Tests grün, `node deploy/kette.mjs` ohne Fehler.
+- Lokal:
+  - Marktimport: Probelauf 67 neu, Übernehmen 67, zweiter Lauf 67 aktualisiert.
+  - Board-Ziehen mit Maus und Touch: Aufmacher ↔ Bühne, Reihe ↔ Reihe, Ressort und Vormerkung eines Entwurfs.
+  - Profil eines Partnerkontos ohne E-Mail speichern.
+  - Sporttabellen bei 1440 und 390 px ohne seitliches Scrollen.
 
 ## Neu in Theme 21.14.0 / Plugin 1.24.0 (07.10.2026): Rückmeldung Luis, Teil 1 (Seite)
 
