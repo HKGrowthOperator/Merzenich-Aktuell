@@ -1,6 +1,43 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.23.0 (Historie unten)
+7. Oktober 2026 · Theme 21.14.0 · Core-Plugin 1.24.0 (Historie unten)
+
+## Neu in Theme 21.14.0 / Plugin 1.24.0 (07.10.2026): Rückmeldung Luis, Teil 1 (Seite)
+
+Rückmeldung des Betreibers am 07.10. nach Durchsicht der Live-Seite, Vorbild oberbergaktuell.de. Die Startseite und die Vereinsseite bleiben unverändert. Beide Pakete hochladen.
+
+- **Kopfmenü wieder voll:** Seit 21.11.0 erschien ein Thema erst ab drei Meldungen; Rathaus schrumpfte auf 2, Leben auf 1 Link. Jetzt reicht eine Meldung (`ma21_menue_gruppen_pruefen`), alle Links aus `ressort-menue.json` sind zurück (Rathaus 12, Leben 12, Sport 9, Wirtschaft 11). Die Klappliste in der Menüspalte nutzt dieselben Gruppen.
+- **Unternehmen wie die anderen Ressorts:**
+  - Links die Linkgruppen, rechts „Neu im Ressort“.
+  - Solange kein Betrieb gebucht hat, zeigt die rechte Spalte als „Musterbeitrag“ gekennzeichnete Beiträge (`ma21_menue_musterbeitraege`). Daneben steht die Musteranzeige wie bei Vereine.
+  - Die Firmenliste links entfällt.
+- **Kopfzeile:**
+  - Die Lupe steht auf jeder Breite rechts, nicht erst beim Scrollen; das breite Suchfeld neben dem Logo entfällt. Ein Klick öffnet ein Suchfeld unter dem Kopf (`app.js`).
+  - „Mehr ☰“ (am Handy ☰) öffnet die Spalte von rechts mit allen Ressorts und ihren Unterseiten als Klappliste.
+- **Entfernt:**
+  - Instagram überall: Kopf, Fuß, Menüspalte, Texte „Unterstützen“ und „WhatsApp“, `sameAs` (gespeicherte Liste einmalig bereinigt).
+  - Die Notruf-Tasten 112/110 in „Merzenich jetzt“ und die beiden Nummern auf `/service/`. Termin, Wetter und Einsatz bleiben.
+- **Ressortseiten** (Aktuell, Blaulicht, Rathaus, Leben, Wirtschaft, Menschen):
+  - Nach dem Aufmacher zwei Spalten mit Bildkarten (Bild, Rubrik, Überschrift, Anriss, Zeit) statt Zeilen untereinander. Nach sechs Karten eine Musteranzeige.
+  - 12 Karten je Seite, bei Aktuell 20. Die Plätze des Layout-Boards (`data-slot`) bleiben an den Karten.
+  - Sport und Vereine behalten ihr Layout.
+- **Termine:**
+  - `/termine/` zeigt Bildkarten mit Datum auf dem Foto. „Liste“ schaltet auf die Zeilen um, die Wahl bleibt gespeichert.
+  - Filter (Zeitraum, Ort, Kategorie) wie bisher.
+- **/unternehmen/** zeigt vier Musterbeiträge mit Bild und eine Musteranzeige über dem Angebot. **/tipp/** zeigt Bildkarten.
+- **/anzeigen/aufgeben/:**
+  - Oben fünf Wahlkarten (Werbung, Immobilie, Stellenanzeige, Traueranzeige, Familienanzeige), darunter nur das gewählte Formular (`[ma_anzeige_aufgeben]`). Die Karten sind echte Links (`?art=…`); mit JavaScript ohne Neuladen.
+  - Der Betreff ergibt sich bei Anzeigen aus der Auswahl, einheitlich in Mail und Eingang: „Werbung: Werbebanner (Name)“, Mail „[Merzenich Aktuell] Werbung: Werbebanner – Name“. Neu wählbar: „Sponsoring einer Rubrik“, „Noch offen, bitte beraten“.
+  - Die Seite kommt mit der Fassung `2026-10-07` (Redaktionsseiten). Wurde sie von Hand geändert, unter Merzenich Aktuell → Redaktionsseiten übernehmen.
+
+**Geprüft:**
+- `qa/wordpress/ressort-test.php` (neu), `formular-test.php` erweitert, alle übrigen Tests grün.
+- Lokal mit Bildschirmfotos bei 1440, 860 und 390 px:
+  - Ausklappmenüs mit voller Linkzahl.
+  - Lupe auf jeder Breite rechts, auch nach dem Scrollen; Suchfeld öffnet mit Fokus.
+  - Spalte öffnet von rechts, Esc schließt.
+  - Ressort-Raster, Termine-Bildkarten, Unternehmen, Tipp.
+  - Aufgeben: Auswahl, ein Formular, Absenden legt „Werbung: Werbebanner (…)“ im Eingang an.
 
 ## Neu in Plugin 1.23.0 (06.10.2026): Seite „Mailversand“
 

@@ -2,12 +2,12 @@
 /**
  * Werbung im Frontend und ihre Zählung (01.10.2026).
  *
- * 1. Anzeigenplatz im aufgeklappten Menü „Vereine“ (hero_clubs_expanded_right):
- *    Die Seite bekommt window.maWerbungPlaetze mit den laufenden Anzeigen aus
- *    der Werbeverwaltung (Werbemittel, Platz, Start/Ende, „Schaltung aktiv“,
- *    Platz-Schalter). ressort-dropdowns.js zeigt sie rechts neben den
- *    Linkgruppen. Ohne laufende Anzeige bleibt die Fläche weg; es erscheint
- *    weder eine Muster- noch eine Ersatzanzeige.
+ * 1. Anzeigenplatz in den aufgeklappten Menüs „Vereine“ und „Unternehmen“
+ *    (hero_clubs_expanded_right): Die Seite bekommt window.maWerbungPlaetze mit
+ *    den laufenden Anzeigen aus der Werbeverwaltung (Werbemittel, Platz,
+ *    Start/Ende, „Schaltung aktiv“, Platz-Schalter). ressort-dropdowns.js zeigt
+ *    sie rechts neben den Linkgruppen. Ohne laufende Anzeige erscheint dort wie
+ *    auf allen Werbeplätzen die gekennzeichnete Musteranzeige (07.10.2026).
  *
  * 2. Zählung: Impression = eine Anzeige war in einem Seitenaufruf mindestens zur
  *    Hälfte sichtbar (einmal je Anzeige und Seitenaufruf). Klick = Klick auf die

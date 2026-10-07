@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-06';
+const MA_SEITEN_VERSION = '2026-10-07';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -158,7 +158,7 @@ function ma_seite_werben(): string {
 function ma_seite_unterstuetzen(): string {
     return '<p>Merzenich Aktuell lebt davon, dass Menschen aus der Gemeinde mitlesen, mitschreiben und weitersagen.</p>'
         . '<h2 id="drei-wege">Drei Wege</h2><ol>'
-        . '<li><strong>Weitersagen.</strong> Teilen Sie Meldungen mit den Knöpfen unter jedem Artikel, folgen Sie uns auf <a href="https://www.instagram.com/merzenichaktuell/" target="_blank" rel="noopener">Instagram</a> und empfehlen Sie die Seite in Ihrem Verein.</li>'
+        . '<li><strong>Weitersagen.</strong> Teilen Sie Meldungen mit den Knöpfen unter jedem Artikel und empfehlen Sie die Seite in Ihrem Verein.</li>'
         . '<li><strong>Mitschreiben.</strong> Vereinsberichte, Spielberichte, Fotos vom Fest: Alles, was Sie über <a href="/meldung-senden/">Meldung senden</a> oder <a href="/termin-melden/">Termin melden</a> einreichen, macht die Seite besser.</li>'
         . '<li><strong>Als Betrieb sichtbar werden.</strong> Eine gekennzeichnete Anzeige, ein Tipp oder ein Unternehmensprofil trägt die lokale Berichterstattung. Alle Formate stehen unter <a href="/werben/">Werben</a>. Wer wirbt, bekommt keinen Einfluss auf redaktionelle Inhalte.</li></ol>'
         . '<p>Fehler gefunden? Über <a href="/korrekturen/">Korrekturen</a> erreichen Hinweise direkt die Redaktion.</p>';
@@ -174,12 +174,9 @@ function ma_seite_anzeigen(): string {
 }
 
 function ma_seite_aufgeben(): string {
-    return '<p>Wählen Sie unten die Art der Anzeige. Jede Einsendung wird redaktionell geprüft und nicht automatisch veröffentlicht; wir melden uns mit Rückfragen, Format und Preis. Bilder nur mit bestätigten Bildrechten.</p>'
-        . '<h2 id="werbung">Werbung: Banner, Tipp, Unternehmensprofil</h2>[ma_formular typ="werbung"]'
-        . '<h2 id="immobilie">Immobilie</h2>[ma_formular typ="immobilie"]'
-        . '<h2 id="stellenanzeige">Stellenanzeige</h2><p>Ausbildungsplatz, Voll- oder Teilzeitstelle, Minijob oder Praktikum in der Gemeinde Merzenich.</p>[ma_formular typ="stelle"]'
-        . '<h2 id="traueranzeige">Traueranzeige</h2><p>Für Traueranzeigen brauchen wir E-Mail und Telefon für Rückfragen.</p>[ma_formular typ="trauer"]'
-        . '<h2 id="familienanzeige">Familienanzeige</h2><p>Geburt, Hochzeit, Jubiläum oder Glückwunsch, bitte mit dem Einverständnis der Betroffenen.</p>[ma_formular typ="familie"]';
+    // Seit 1.24.0 erst die Art wählen, dann ein einziges Formular (forms.php, ma_aufgeben_shortcode).
+    return '<p>Jede Einsendung wird redaktionell geprüft und nicht automatisch veröffentlicht; wir melden uns mit Rückfragen, Format und Preis. Bilder nur mit bestätigten Bildrechten.</p>'
+        . '[ma_anzeige_aufgeben]';
 }
 
 function ma_seite_archiv(): string {
@@ -202,7 +199,7 @@ function ma_seite_whatsapp(): string {
         . '<h2 id="so-funktioniert-der-kanal">So funktioniert der Kanal</h2>'
         . '<p>Ein WhatsApp-Kanal ist ein Broadcast: Sie sehen unsere Meldungen, niemand sieht Ihre Nummer, niemand kann Ihnen über den Kanal schreiben. Abbestellen jederzeit über „Kanal verlassen“.</p>'
         . '<h2 id="lieber-rss">Bis dahin und auch danach</h2>'
-        . '<p>Neues steht immer zuerst auf der <a href="/">Startseite</a> und auf <a href="https://www.instagram.com/merzenichaktuell/" target="_blank" rel="noopener">Instagram</a>.</p>'
+        . '<p>Neues steht immer zuerst auf der <a href="/">Startseite</a>.</p>'
         . '<p>Alle Meldungen: <a href="/feed/">/feed/</a>. Nur Blaulicht: <a href="/blaulicht/feed/">/blaulicht/feed/</a>. Termine: <a href="/termine/feed/">/termine/feed/</a>.</p>';
 }
 

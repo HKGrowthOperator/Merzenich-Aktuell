@@ -18,6 +18,7 @@ function wp_date($f, $ts = null) { return (new DateTimeImmutable('@' . ($ts ?? t
 function is_singular($t = '') { return $GLOBALS['t']['single'] !== '' && in_array($GLOBALS['t']['single'], (array) $t, true); }
 function is_post_type_archive($t = '') { return $GLOBALS['t']['archiv'] !== '' && in_array($GLOBALS['t']['archiv'], (array) $t, true); }
 function home_url($p = '') { return 'https://merzenich-aktuell.de' . $p; }
+function get_post_thumbnail_id($id) { return 0; } // Termine ohne Foto: Zeile ohne Bildfläche
 class WP_Term {} class WP_Query {}
 class WP_Post { public $ID = 7; public $post_name = 'msg-hitnight-golzheim-2026'; public $post_type = 'ma_event'; }
 require __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php';

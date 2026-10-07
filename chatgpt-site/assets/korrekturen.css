@@ -604,3 +604,24 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
   .admin-bar body>.nav-anchor,body.admin-bar>.nav-anchor{top:32px}
 }
 @media (min-width:768px) and (max-width:782px){.admin-bar body>.nav-anchor,body.admin-bar>.nav-anchor{top:46px}}
+
+/* Kopf (Vorgabe Betreiber 07.10.2026, Vorbild Oberberg Aktuell): die Lupe
+   steht auf jeder Breite rechts, nicht erst beim Scrollen; das breite Suchfeld
+   neben dem Logo entfaellt. Ein Klick oeffnet das Suchfeld unter dem Kopf
+   (app.js). „Mehr“ und das Menue-Symbol oeffnen die Spalte von rechts. */
+.masthead .mast-search{display:none!important}
+@media (min-width:768px){
+  .masthead .shell.mast-inner{grid-template-columns:auto minmax(0,1fr)}
+  .masthead .mast-actions{justify-self:end;margin-left:auto}
+  .mainnav .navrow .compact-search{display:flex!important;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-height:44px;margin-left:auto;color:var(--ink,#17191b)}
+  .mainnav .navrow .compact-search svg{width:22px;height:22px}
+  .mainnav .navrow .compact-search:hover,.mainnav .navrow .compact-search[aria-expanded="true"]{color:var(--red,#971725)}
+}
+.drawer .panel{left:auto!important;right:0}
+.kopf-suche{background:#fff;border-top:1px solid #e6e6e4;border-bottom:1px solid #e6e6e4;padding:12px 0}
+.kopf-suche .shell{display:flex;gap:8px;align-items:center}
+.kopf-suche input{flex:1 1 auto;min-width:0;height:46px;padding:0 14px;border:1px solid #c9c7c2;border-radius:8px;font:inherit;font-size:16px;color:#17191b;background:#fbfbfa}
+.kopf-suche input:focus{outline:2px solid #971725;outline-offset:1px;border-color:#971725}
+.kopf-suche button[type=submit]{height:46px;padding:0 18px;border:0;border-radius:8px;background:#971725;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.kopf-suche__zu{width:44px;height:46px;border:0;background:none;font-size:26px;line-height:1;color:#555;cursor:pointer}
+@media (max-width:767px){.masthead .kopf-suche{position:absolute;left:0;right:0;top:100%;z-index:5}}

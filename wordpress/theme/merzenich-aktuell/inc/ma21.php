@@ -50,6 +50,7 @@ const MA21_SIZES = [
     'feed-row' => '(max-width: 1099px) 120px, (max-width: 1439px) 210px, 240px',
     'news-card' => '(max-width: 1099px) 120px, (max-width: 1439px) 30vw, 405px',
     'raster' => '(max-width: 559px) 132px, (max-width: 1099px) 46vw, (max-width: 1279px) 31vw, 300px',
+    'ressort-raster' => '(max-width: 520px) 132px, (max-width: 1099px) 46vw, 420px',
     'unternehmen' => '(max-width: 1099px) 100vw, (max-width: 1439px) 32vw, 450px',
     'figur' => '(max-width: 1099px) 100vw, 720px',
 ];
@@ -373,8 +374,10 @@ function ma21_ressort_menue_ausgeben(): void {
     foreach ($d['ressorts'] as $pfad => &$r) {
         if (!is_array($r)) continue;
         $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
-        // Unternehmen: Firmenliste links, Beiträge rechts (wie Oberberg Aktuell).
-        if ($pfad === '/unternehmen/' && function_exists('ma21_menue_firmen')) $r['firmen'] = ma21_menue_firmen();
+        // Unternehmen wie alle anderen Ressorts (Vorgabe Betreiber 07.10.2026):
+        // Links links, rechts Beiträge (bis echte da sind: Musterbeiträge) und
+        // daneben die gekennzeichnete Musteranzeige.
+        if ($pfad === '/unternehmen/') { unset($r['firmen']); $r['werbung'] = true; }
         $r['gruppen'] = ma21_menue_gruppen_pruefen((array) ($r['gruppen'] ?? []));
     }
     unset($r);
@@ -386,11 +389,13 @@ function ma21_ressort_menue_ausgeben(): void {
 }
 
 /**
- * Linkgruppen des Ressort-Menüs (Vorgabe Betreiber 05.10.2026): ein Thema
- * (/thema/<slug>/) erscheint erst ab drei veröffentlichten Meldungen, leere
- * Gruppen fallen weg. Ortsteil-Links zeigen direkt auf /ort/<slug>/.
+ * Linkgruppen des Ressort-Menüs: ein Thema (/thema/<slug>/) fällt nur weg, wenn
+ * es keine veröffentlichte Meldung hat (Seite wäre leer). Bis 21.13 galt eine
+ * Untergrenze von drei Meldungen; damit schrumpften Rathaus, Leben und Sport auf
+ * ein bis fünf Links (Meldung Betreiber 07.10.2026). Leere Gruppen fallen weg,
+ * Ortsteil-Links zeigen direkt auf /ort/<slug>/.
  */
-function ma21_menue_gruppen_pruefen(array $gruppen, int $mindestens = 3): array {
+function ma21_menue_gruppen_pruefen(array $gruppen, int $mindestens = 1): array {
     $raus = [];
     foreach ($gruppen as $g) {
         if (!is_array($g)) continue;
@@ -432,7 +437,12 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
         }, $l);
     }
     $args = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 4, 'orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true];
-    if ($slug === 'unternehmen') { $ids = ma21_unternehmen_ids(); if (!$ids) return []; $args['post__in'] = $ids; }
+    if ($slug === 'unternehmen') {
+        $ids = ma21_unternehmen_ids();
+        $echte = $ids ? get_posts($args + ['post__in' => $ids]) : [];
+        $neu = array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => 'Anzeige · ' . (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)], $echte);
+        return array_slice(array_merge($neu, function_exists('ma21_menue_musterbeitraege') ? ma21_menue_musterbeitraege() : []), 0, 4);
+    }
     elseif ($slug !== 'nachrichten') {
         if (!get_category_by_slug($slug)) {
             // Kein Ressort mit eigener Rubrik (z. B. Unternehmen): statische Liste, aber nur Beiträge, die hier veröffentlicht sind.
@@ -956,7 +966,7 @@ function ma21_ressort_schluessel(): string {
 /** Beiträge der ersten Seite einer Ressortliste (für das Neu-Rendern im Bearbeitungsmodus). */
 function ma21_ressort_beitraege(string $seite): array {
     $slug = substr($seite, 8);
-    $q = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => $slug === 'nachrichten' ? 20 : max(1, (int) get_option('posts_per_page', 10)), 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false];
+    $q = ['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => ma21_raster_seite($seite) ? ma21_raster_anzahl($seite) : max(1, (int) get_option('posts_per_page', 10)), 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false];
     if ($slug !== 'nachrichten') $q['category_name'] = $slug;
     return get_posts($q);
 }
@@ -972,10 +982,45 @@ function ma21_ressort_belegung(string $seite, array $posts): array {
     return ['lead' => $lead, 'raster' => $raster, 'reihen' => $reihen, 'plaetze' => []];
 }
 
-/** Liste einer Ressortseite als HTML (erste Seite: nach Layout-Karte; weitere Seiten: nur Reihen). */
+/**
+ * Ressorts mit Kartenraster statt Zeilen (Vorgabe Betreiber 07.10.2026: „alles
+ * so untereinander“, Vorbild Oberberg Aktuell mit zwei Spalten). Sport und
+ * Vereine behalten ihr Layout, Ort, Thema und Suche bleiben Listen.
+ */
+function ma21_raster_seite(string $seite): bool {
+    return str_starts_with($seite, 'ressort-') && !in_array($seite, ['ressort-sport', 'ressort-vereine'], true);
+}
+
+/** Meldungen je Seite im Raster: Aufmacher plus gerade Kartenzahl (Aktuell 20, sonst 12). */
+function ma21_raster_anzahl(string $seite): int {
+    return $seite === 'ressort-nachrichten' ? 21 : 13;
+}
+
+/**
+ * Kartenraster einer Ressortseite: je Karte Bild, Rubrik, Überschrift, Anriss
+ * und Zeit, zwei Spalten; nach sechs Karten ein Werbeplatz über die ganze
+ * Breite. $plaetze: je Karte [Platz, fest] für den Bearbeitungsmodus.
+ */
+function ma21_feed_raster(array $posts, array $plaetze = []): string {
+    $h = '<div class="bildraster bildraster--ressort">';
+    foreach (array_values($posts) as $i => $p) {
+        if ($i === 6) { $w = ma21_werbung('artikel'); if ($w !== '') $h .= '<div class="bildraster-werbung">' . $w . '</div>'; }
+        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+        [$slot, $fest] = $plaetze[$i] ?? ['', false];
+        $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
+            . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['ressort-raster'], false) . ma21_badge($b, false) . '</div></a>' : '')
+            . '<div class="bildraster-text">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3>"
+            . '<p class="dek">' . ma21_e(wp_html_excerpt(ma21_teaser($p), 150, ' …')) . '</p><div class="meta">' . ma21_zeit($p, true) . '</div></div></article>';
+    }
+    return $h . '</div>';
+}
+
+/** Liste einer Ressortseite als HTML (erste Seite: nach Layout-Karte; weitere Seiten: Aufmacher und Raster bzw. Reihen). */
 function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
     if (!$posts && is_search()) return '<p class="no-result">Keine Treffer für „' . esc_html(get_search_query(false)) . '“. Versuchen Sie einen anderen Begriff, einen Ortsteil wie „Golzheim“ oder ein Thema wie „Feuerwehr“, oder stöbern Sie in den <a href="' . esc_url(home_url('/nachrichten/')) . '">neuesten Nachrichten</a>.</p>';
     if (!$posts) return '<p class="no-result">Hier gibt es noch keine Meldung. Sobald die erste Meldung vorliegt, steht sie an dieser Stelle.</p>';
+    $raster = ma21_raster_seite($seite);
+    if (!$ersteSeite && $raster) { $erste = array_shift($posts); return ma21_feed_lead($erste) . "\n" . ($posts ? ma21_feed_raster($posts) : ''); }
     if (!$ersteSeite) return implode("\n", array_map(fn($p) => ma21_feed_row($p), $posts));
     $b = ma21_ressort_belegung($seite, $posts);
     $pl = $b['plaetze'];
@@ -986,6 +1031,7 @@ function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
     $h = '';
     if ($b['lead']) { [$slot, $fest] = $slotVon($b['lead'], 'lead'); $h .= ma21_feed_lead($b['lead'], $slot, $fest) . "\n"; }
     if ($b['raster']) $h .= ma21_bildraster($b['raster'], array_map(fn($p) => $slotVon($p, 'raster.'), $b['raster'])) . "\n";
+    if ($raster) return $h . ($b['reihen'] ? ma21_feed_raster($b['reihen'], array_map(fn($p) => $slotVon($p, 'reihe.'), $b['reihen'])) . "\n" : '');
     foreach ($b['reihen'] as $p) { [$slot, $fest] = $slotVon($p, 'reihe.'); $h .= ma21_feed_row($p, $slot, $fest) . "\n"; }
     return $h;
 }
@@ -1143,8 +1189,13 @@ function ma21_u_karte(WP_Post $p, int $i): string {
 add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_api') ? false : $ziel);
 add_action('pre_get_posts', function (WP_Query $q): void {
     if (!is_admin() && $q->is_main_query() && $q->get('ma_alle')) {
-        $q->set('post_type', 'post'); $q->set('posts_per_page', 20);
+        $q->set('post_type', 'post'); $q->set('posts_per_page', ma21_raster_anzahl('ressort-nachrichten'));
         $q->is_home = false; $q->is_archive = true; $q->is_404 = false;
+    }
+    // Ressorts mit Kartenraster: Aufmacher plus gerade Kartenzahl je Seite.
+    if (!is_admin() && $q->is_main_query() && $q->is_category()) {
+        $slug = (string) $q->get('category_name');
+        if ($slug !== '' && !str_contains($slug, '/') && ma21_raster_seite('ressort-' . $slug)) $q->set('posts_per_page', ma21_raster_anzahl('ressort-' . $slug));
     }
 });
 add_action('template_redirect', function (): void {

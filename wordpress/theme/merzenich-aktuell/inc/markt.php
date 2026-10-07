@@ -100,7 +100,10 @@ function ma21_tipp_zeile(WP_Post $p): string {
     $ort = (string) get_post_meta($p->ID, 'ma_event_place', true);
     $zeit = $start && wp_date('H:i', $start) !== '00:00' ? wp_date('H:i', $start) . ' Uhr' : '';
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 34, ' …');
-    return '<article class="event-row">'
+    // Foto des Termins wie auf /termine/ (Wunsch Betreiber 07.10.2026); ohne Foto bleibt die Karte ohne Bild.
+    $b = ma21_bild($p);
+    $bild = $b ? '<a class="event-bild" href="' . $url . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_img($b, '(max-width: 640px) 92vw, 420px', false) . ma21_badge($b, false) . '</div></a>' : '';
+    return '<article class="event-row' . ($b ? ' event-row--bild' : '') . '">' . $bild
         . ($start ? '<span class="d"><b>' . esc_html(wp_date('j', $start)) . '</b><span>' . esc_html(MA21_MON[(int) wp_date('n', $start) - 1]) . '</span></span>' : '<span class="d"><b>–</b></span>')
         . '<div class="info"><span class="eyebrow">' . esc_html(trim(($start ? MA21_TAGE[(int) wp_date('w', $start)] . ' · ' : '') . (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich'))) . '</span>'
         . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
@@ -125,7 +128,7 @@ function ma21_tipp_seite(): void {
         }
     }
     echo '<h2 class="markt-ort"><span class="markt-ort-eyebrow">Redaktion</span>Unsere Tipps für die nächsten Tage</h2>';
-    if ($termine) foreach ($termine as $p) echo ma21_tipp_zeile($p);
+    if ($termine) { echo '<div class="tipp-raster event-list--bilder">'; foreach ($termine as $p) echo ma21_tipp_zeile($p); echo '</div>'; }
     else echo '<p class="no-result">In den nächsten Tagen stehen keine Termine im Kalender. Alle Veranstaltungen: <a href="' . esc_url(home_url('/termine/')) . '">Termine</a>.</p>';
     echo '<p class="markt-quellen"><a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
     echo '</div><aside class="sidebar"><div class="sidebox"><h3>Eigenen Tipp platzieren</h3><p class="p">Veranstaltung, Projekt oder Angebot als Tipp auf Merzenich Aktuell: klar als Anzeige gekennzeichnet und getrennt von den Nachrichten der Redaktion.</p><a class="btn block" href="' . esc_url($tipp) . '">Tipp anfragen</a></div>'
@@ -159,6 +162,27 @@ const MA21_MUSTERPROFILE = [
         'beitrag' => ['titel' => 'Was ist mein Haus wert?', 'text' => 'Wir sehen uns Haus und Grundstück an und nennen einen realistischen Preis, unverbindlich und ohne Maklervertrag.']],
 ];
 
+/**
+ * Musterbeiträge in der Hauptspalte von /unternehmen/ (Vorgabe Betreiber
+ * 07.10.2026: „viel zu wenig, wenigstens Musteranzeigen rein“): so sehen
+ * Beiträge von Betrieben aus. Nur solange kein echter Unternehmensbeitrag
+ * veröffentlicht ist, jede Karte sichtbar als „Musterbeitrag“ gekennzeichnet.
+ */
+function ma21_musterbeitraege_html(string $anfrage): string {
+    $h = '<div class="u-muster-beitraege"><p class="eyebrow">So sehen Unternehmensbeiträge aus</p>'
+        . '<p class="u-muster__hinweis">Die folgenden Beiträge sind Muster, keine echten Betriebe. Ihr Unternehmen kann hier eigene Beiträge veröffentlichen.</p>'
+        . '<div class="bildraster bildraster--ressort">';
+    foreach (array_slice(MA21_MUSTERPROFILE, 0, 4) as $m) {
+        $h .= '<article class="bildraster-karte u-muster-karte"><a class="bildraster-bild" href="' . esc_url($anfrage) . '" tabindex="-1" aria-hidden="true"><div class="media">'
+            . '<img src="' . esc_url(home_url(ma21_muster_klein($m['bild']))) . '" alt="' . esc_attr($m['alt']) . '" width="720" height="405" loading="lazy" decoding="async"><span class="badge">Musterbeitrag</span></div></a>'
+            . '<div class="bildraster-text"><span class="kicker">Anzeige · ' . esc_html($m['name'] . ' · ' . $m['ort']) . '</span>'
+            . '<h3><a href="' . esc_url($anfrage) . '">' . esc_html($m['beitrag']['titel']) . '</a></h3>'
+            . '<p class="dek">' . esc_html($m['beitrag']['text']) . '</p>'
+            . '<div class="meta">Foto: ' . esc_html($m['foto']) . ', <a href="' . esc_url($m['lizenz_url']) . '" target="_blank" rel="noopener license">' . esc_html($m['lizenz']) . '</a></div></div></article>';
+    }
+    return $h . '</div></div>';
+}
+
 /** 720 px breite Fassung eines Musterbilds (deploy/werben-bilder.mjs), reicht für Karten bis gut 300 px. */
 function ma21_muster_klein(string $bild): string {
     return (string) preg_replace('/\.jpg$/', '-720.jpg', $bild);
@@ -182,48 +206,14 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
 }
 
 /**
- * Firmenliste im Aufklappmenü „Unternehmen“ (Vorgabe Betreiber 05.10.2026, wie
- * Oberberg Aktuell unter „Wirtschaft“): links die Betriebe, rechts beim
- * Überfahren ihre Beiträge. Echte Profile (ma_business, nur mit Einwilligung
- * veröffentlicht) zuerst; solange weniger als drei da sind, füllen sichtbar
- * gekennzeichnete Musterprofile auf (gleiche Regel wie die rechte Spalte).
+ * Musterbeiträge für die rechte Spalte des Aufklappmenüs „Unternehmen“ (wie
+ * „Neu im Ressort“ bei den anderen Ressorts). Sichtbar als „Musterbeitrag“
+ * gekennzeichnet; der Link führt zur Anfrage für einen eigenen Beitrag.
  */
-function ma21_menue_firmen(): array {
+function ma21_menue_musterbeitraege(): array {
     $anfrage = wp_make_link_relative(home_url('/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal'));
-    $echte = get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 8, 'orderby' => 'title', 'order' => 'ASC']);
-    $firmen = [];
-    foreach ($echte as $u) {
-        $name = html_entity_decode(get_the_title($u), ENT_QUOTES, 'UTF-8');
-        $ort = (string) get_post_meta($u->ID, 'ma_business_ortsteil', true);
-        $ort = MA21_ORTE[$ort] ?? ($ort !== '' ? ucfirst($ort) : 'Gemeinde Merzenich');
-        $branche = (string) get_post_meta($u->ID, 'ma_business_branche', true);
-        $bild = ma21_menue_bild($u);
-        // Beiträge des Betriebs: gesponserte Beiträge mit diesem Auftraggeber.
-        $posts = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC',
-            'meta_query' => [['key' => 'ma_gesponsert', 'value' => '1'], ['key' => 'ma_gesponsert_von', 'value' => $name]]]);
-        $karten = array_map(fn(WP_Post $p): array => [
-            'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'url' => wp_make_link_relative(get_permalink($p)),
-            'kicker' => (string) (MA21_ORTE[ma21_ort($p)] ?? $ort), 'meta' => 'Anzeige · ' . ma21_zeit_text($p, true, ', '),
-            'anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8'), 'bild' => ma21_menue_bild($p), 'knopf' => 'Weiterlesen',
-        ], $posts);
-        if (!$karten) $karten[] = ['titel' => $name, 'url' => wp_make_link_relative(get_permalink($u)), 'kicker' => trim($branche . ' · ' . $ort, ' ·'),
-            'meta' => 'Unternehmensprofil', 'anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($u), 170, ' …'), ENT_QUOTES, 'UTF-8'), 'bild' => $bild, 'knopf' => 'Zum Profil'];
-        $firmen[] = ['name' => $name, 'url' => wp_make_link_relative(get_permalink($u)), 'zeile' => trim($branche . ' · ' . $ort, ' ·'), 'logo' => $bild ? $bild['src'] : null, 'karten' => $karten];
-    }
-    if (count($echte) < 3) {
-        $platz = ['titel' => 'Ihr Betrieb an dieser Stelle', 'url' => $anfrage, 'kicker' => 'Für Unternehmen', 'meta' => 'Unternehmenskanal auf Merzenich Aktuell',
-            'anriss' => 'Eigene Beiträge, ein Profil mit Bild, Öffnungszeiten und Kontakt. Die Redaktion prüft jeden Beitrag vor der Veröffentlichung.', 'bild' => null, 'knopf' => 'Betrieb eintragen', 'platz' => true];
-        foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min(count($echte), 2)) as $m) {
-            $bild = ['src' => ma21_muster_klein($m['bild']), 'alt' => $m['alt']];
-            $firmen[] = ['name' => $m['name'], 'url' => $anfrage, 'zeile' => $m['branche'] . ' · ' . $m['ort'], 'logo' => null, 'muster' => true, 'karten' => [
-                ['titel' => $m['beitrag']['titel'], 'url' => $anfrage, 'kicker' => $m['ort'], 'meta' => 'Musterbeitrag · Anzeige', 'anriss' => $m['beitrag']['text'], 'bild' => $bild, 'knopf' => 'Beitrag buchen', 'muster' => true,
-                    'credit' => 'Foto: ' . $m['foto'] . ', ' . $m['lizenz']],
-                ['titel' => $m['name'], 'url' => $anfrage, 'kicker' => $m['branche'] . ' · ' . $m['ort'], 'meta' => 'Musterprofil · ' . $m['info'], 'anriss' => $m['text'], 'bild' => null, 'knopf' => 'Profil anfragen', 'muster' => true],
-                $platz,
-            ]];
-        }
-    }
-    return $firmen;
+    return array_map(fn(array $m): array => ['titel' => $m['beitrag']['titel'], 'url' => $anfrage, 'ort' => $m['name'] . ' · ' . $m['ort'], 'datum' => '',
+        'bild' => ['src' => home_url(ma21_muster_klein($m['bild'])), 'alt' => $m['alt']], 'muster' => true], array_slice(MA21_MUSTERPROFILE, 0, 4));
 }
 
 /* ------------------------------------------------------------------------

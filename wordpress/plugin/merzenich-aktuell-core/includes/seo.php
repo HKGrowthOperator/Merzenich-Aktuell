@@ -707,15 +707,21 @@ function ma_seo_angebot(string $preis, string $url): array {
 }
 
 /**
- * Offizielle Profile (sameAs): Option aus SEO & Geo; solange sie nie gespeichert
- * wurde, das Instagram-Profil des Betreibers (04.10.2026). Ein bewusst leeres
- * Feld bleibt leer.
+ * Offizielle Profile (sameAs): Option aus SEO & Geo, ohne Vorgabe. Das
+ * Instagram-Profil (04.10.2026) ist seit 07.10.2026 deaktiviert und wird
+ * einmalig aus einer gespeicherten Liste entfernt; danach entscheidet nur das Feld.
  */
 function ma_seo_sameas(): array {
-    $o = get_option('ma_seo_sameas', null);
-    if ($o === null) $o = ['https://www.instagram.com/merzenichaktuell/'];
+    $o = get_option('ma_seo_sameas', []);
     return array_values(array_filter(array_map('trim', (array) $o), 'ma_seo_url_gueltig'));
 }
+
+add_action('init', function (): void {
+    if (get_option('ma_seo_sameas_ohne_instagram')) return;
+    $o = get_option('ma_seo_sameas', null);
+    if (is_array($o)) update_option('ma_seo_sameas', array_values(array_filter($o, fn($u): bool => stripos((string) $u, 'instagram.com/merzenichaktuell') === false)));
+    update_option('ma_seo_sameas_ohne_instagram', 1, false);
+});
 
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'SEO & Geo', 'SEO & Geo', 'manage_options', 'ma-seo', 'ma_seo_seite_admin');

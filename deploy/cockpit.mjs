@@ -75,7 +75,7 @@ const block = '<!-- cockpit:start --><section class="cockpit mj shell" aria-labe
   + `<div class="mj-schild"><div class="mj-kopf"><h2 class="mj-ort" id="mj-titel">Merzenich <span>jetzt</span></h2><p class="mj-datum" data-cockpit-datum>${esc(heuteText)}</p></div>`
   + '<p class="mj-wetter" data-cockpit="wetter" hidden><span class="mj-grad" data-cockpit-wert>–</span><span class="mj-himmel" data-cockpit-klein>Open-Meteo</span></p></div>'
   + `<div class="mj-liste">${eintraege.join('')}</div>`
-  + '<div class="mj-notruf" aria-label="Notruf"><a class="mj-taste" href="tel:112"><b>112</b><span>Feuerwehr, Rettung</span></a><a class="mj-taste" href="tel:110"><b>110</b><span>Polizei</span></a></div>'
+  // Notruf-Tasten 112/110 entfernt (Betreiber 07.10.2026: ueberall in Deutschland gleich).
   + '</div></section><!-- cockpit:end -->';
 
 const pfad = join(site, 'index.html');

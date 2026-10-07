@@ -57,7 +57,11 @@
   .ressort-dropdown__story:last-child{margin-bottom:0}
   .ressort-dropdown__story.ohne-bild{grid-template-columns:1fr}
   .ressort-dropdown__story-image{
-    display:block;aspect-ratio:16/9;overflow:hidden;background:#ece9e3
+    position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#ece9e3
+  }
+  .ressort-dropdown__muster{
+    position:absolute;left:6px;top:6px;padding:2px 6px;background:rgba(18,22,25,.82);color:#fff;
+    font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:2px
   }
   .ressort-dropdown__story-image img{
     display:block;width:100%;height:100%;object-fit:cover;transition:transform .18s ease
@@ -127,78 +131,4 @@
   .ressort-dropdown__werbung .ma-ad-card{display:block;color:var(--ink);text-decoration:none}
   .ressort-dropdown__werbung .werbung-credit{display:block;margin-top:6px;font-size:10px;color:#6d6860}
   .ressort-dropdown__werbung .werbung-credit a{color:inherit}
-}
-
-/* Unternehmen wie bei Oberberg Aktuell (Wunsch Betreiber 05.10.2026): links
-   der Ressortkopf, daneben die Betriebe auf grauem Grund, rechts drei Karten
-   mit Bild, Kicker, Titel, Zeile, Anriss und Knopf. */
-@media (min-width:768px){
-  .ressort-dropdown__inner.mit-firmen{
-    grid-template-columns:190px 250px minmax(0,1fr);gap:0 28px;padding-top:0;padding-bottom:0;align-items:stretch
-  }
-  .mit-firmen>.ressort-dropdown__head,.mit-firmen>.ressort-firmen__rechts{padding-top:24px;padding-bottom:28px}
-  .mit-firmen>.ressort-dropdown__head{padding-right:0;border-right:0}
-  .ressort-firmen__service{margin-top:18px}
-  .ressort-firmen__service a{font-size:12.5px;padding:6px 0}
-  .ressort-firmen__liste{display:flex;flex-direction:column;background:#efece6;padding:10px 0 14px;min-width:0}
-  .ressort-firmen__firma{
-    display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:center;
-    padding:10px 16px;color:var(--ink);text-decoration:none;border-left:3px solid transparent
-  }
-  .ressort-firmen__firma:hover,.ressort-firmen__firma:focus-visible,.ressort-firmen__firma.ist-aktiv{background:#fff}
-  .ressort-firmen__firma.ist-aktiv{border-left-color:var(--red)}
-  .ressort-firmen__firma.ist-aktiv .ressort-firmen__name{color:var(--red)}
-  .ressort-firmen__logo{
-    display:grid;place-items:center;width:40px;height:40px;border-radius:50%;overflow:hidden;
-    color:#fff;font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.02em
-  }
-  .ressort-firmen__logo img{width:100%;height:100%;object-fit:contain;background:#fff}
-  .ressort-firmen__name{display:block;min-width:0;font-size:14px;font-weight:800;line-height:1.2}
-  .ressort-firmen__name small{display:block;margin-top:2px;font-size:11.5px;font-weight:600;color:var(--ink-soft)}
-  .ressort-firmen__name em{
-    display:inline-block;margin-top:4px;padding:1px 6px;border:1px solid rgba(18,22,25,.25);border-radius:3px;
-    font-style:normal;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f5a52
-  }
-  .ressort-firmen__hinweis{margin:auto 16px 0;padding-top:12px;font-size:11px;line-height:1.4;color:#5f5a52}
-  .ressort-firmen__rechts{min-width:0}
-  .ressort-firmen__karten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-  .ressort-firmen__karte{display:flex;flex-direction:column;min-width:0}
-  .ressort-firmen__bild{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#ece9e3;margin-bottom:10px}
-  .ressort-firmen__bild img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .18s ease}
-  .ressort-firmen__karte:hover .ressort-firmen__bild img{transform:scale(1.025)}
-  .ressort-firmen__wort{
-    display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;padding:12px;
-    background:#f6f3ee;border:1px solid rgba(18,22,25,.08);text-align:center
-  }
-  .ressort-firmen__wort strong{font-family:var(--serif);font-size:22px;line-height:1.1;color:var(--ink)}
-  .ressort-firmen__wort small{margin-top:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
-  .ressort-firmen__marke{
-    position:absolute;left:8px;top:8px;padding:2px 7px;background:rgba(18,22,25,.82);color:#fff;
-    font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:2px
-  }
-  .ressort-firmen__kicker{margin:0 0 4px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-  .ressort-firmen__karte h3{margin:0;font-family:var(--serif);font-size:17px;line-height:1.15}
-  .ressort-firmen__karte h3 a{color:var(--ink);text-decoration:none}
-  .ressort-firmen__karte h3 a:hover,.ressort-firmen__karte h3 a:focus-visible{color:var(--red)}
-  .ressort-firmen__meta{margin:5px 0 0;font-size:11.5px;font-style:italic;color:#6d6860}
-  .ressort-firmen__anriss{
-    margin:8px 0 0;font-size:13px;line-height:1.45;color:var(--ink-soft);
-    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden
-  }
-  .ressort-firmen__knopf{
-    align-self:flex-start;margin-top:12px;padding:6px 11px;background:var(--red);color:#fff;text-decoration:none;
-    font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase
-  }
-  .ressort-firmen__knopf:hover{filter:brightness(.92)}
-  .ressort-firmen__credit{margin:6px 0 0;font-size:10px;color:#6d6860}
-}
-@media (max-width:1180px) and (min-width:768px){
-  .ressort-dropdown__inner.mit-firmen{grid-template-columns:230px minmax(0,1fr);gap:0 24px}
-  .mit-firmen>.ressort-dropdown__head{display:none}
-  .ressort-firmen__karten{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-  .ressort-firmen__karte:nth-child(n+3){display:none}
-}
-@media (min-width:768px){
-  .ressort-firmen__karte--platz .ressort-firmen__wort{background:#fff;border:1px dashed rgba(18,22,25,.3)}
-  .ressort-firmen__karte--platz .ressort-firmen__knopf{background:var(--ink)}
 }

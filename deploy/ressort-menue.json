@@ -594,6 +594,7 @@
       "href": "/unternehmen/",
       "titel": "Unternehmen",
       "alle": "Alle Unternehmensmeldungen",
+      "werbung": true,
       "gruppen": [
         {
           "titel": "Unternehmen",

@@ -15,7 +15,8 @@ $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawu
 <section class="section"><div class="shell content-grid"><div class="u-liste">
   <div class="u-karten" data-u-karten><?php $i = 0; $proFirma = []; while (have_posts()): the_post(); $p = get_post(); $firma = (string) (get_post_meta($p->ID, 'ma_gesponsert_von', true) ?: $p->post_author); $proFirma[$firma] = ($proFirma[$firma] ?? 0) + 1; if ($proFirma[$firma] > 4) continue; echo ma21_u_karte($p, $i++); endwhile; ?></div>
   <?php if ($anzahl > 8): ?><p class="u-mehr"><button class="btn ghost" type="button" data-u-mehr>Weitere Meldungen laden</button></p><?php endif; ?>
-  <?php if (!$anzahl): /* Vorgabe Betreiber 05.10.2026: keine leere Seite; hier steht nur Werbung von Unternehmen, also bis dahin das Angebot. */ ?>
+  <?php if (!$anzahl): /* Vorgabe Betreiber 05.10.2026: keine leere Seite; hier steht nur Werbung von Unternehmen, also bis dahin Musterbeiträge, eine Musteranzeige und das Angebot (07.10.2026). */ ?>
+  <?php echo ma21_musterbeitraege_html($assistent('Unternehmenskanal')); echo ma21_werbung('artikel'); ?>
   <div class="u-angebot">
     <p class="eyebrow">Für Unternehmen aus der Gemeinde</p>
     <h2>Ihr Unternehmen mit eigenen Beiträgen auf Merzenich Aktuell</h2>

@@ -69,11 +69,13 @@ function ma_gemeinde_shortcode($atts = []): string {
     return '';
 }
 
-/** Notrufe und Bereitschaftsdienste (bundesweit bzw. NRW), oben auf /service/ (1.21.0). */
+/**
+ * Bereitschaftsdienste (bundesweit bzw. NRW), oben auf /service/ (1.21.0). Die
+ * Notrufe 112 und 110 stehen hier nicht mehr (Betreiber 07.10.2026: überall in
+ * Deutschland gleich).
+ */
 function ma_gemeinde_notdienste(): string {
     $n = [
-        ['112', '112', 'Feuerwehr und Rettungsdienst', 'Notruf bei Feuer, Unfall und lebensbedrohlichen Notfällen'],
-        ['110', '110', 'Polizei', 'Notruf bei Straftaten und Gefahr'],
         ['116 117', '116117', 'Ärztlicher Bereitschaftsdienst', 'Wenn die Hausarztpraxis geschlossen ist: abends, nachts, am Wochenende und an Feiertagen'],
         ['0228 19240', '022819240', 'Giftnotruf NRW', 'Giftinformationszentrum Nordrhein-Westfalen in Bonn, rund um die Uhr'],
         ['0800 111 0 111', '08001110111', 'Telefonseelsorge', 'Kostenlos und anonym, rund um die Uhr'],

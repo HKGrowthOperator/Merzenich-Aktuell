@@ -1,6 +1,6 @@
 # Merzenich Aktuell – WordPress einrichten und aktualisieren
 
-Stand 7. Oktober 2026 · Theme 21.13.0 · Core-Plugin 1.23.0 · live auf merzenich-aktuell.de (IONOS, WordPress 7.1)
+Stand 7. Oktober 2026 · Theme 21.14.0 · Core-Plugin 1.24.0 · live auf merzenich-aktuell.de (IONOS, WordPress 7.1)
 
 Die Bedienung für die Redaktion steht in `UEBERGABE-KBS.md`, die Änderungen je Version in `WORDPRESS-LIEFERUNG.md`. Die frühere Fassung dieser Anleitung (Theme 20.2, September 2026) ist überholt.
 

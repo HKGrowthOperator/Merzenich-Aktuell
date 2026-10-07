@@ -16,17 +16,60 @@
   }
 
   /* ---------- Mobile-Menü ---------- */
-  var drawer = $('[data-drawer]'), openBtn = $('[data-menu]');
+  var drawer = $('[data-drawer]'), openBtn = $('[data-menu]'), opener = openBtn;
   function setDrawer(open) {
     if (!drawer) return;
     drawer.inert = !open;
     drawer.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
     Array.prototype.forEach.call(document.body.children, function (el) { if (el !== drawer) el.inert = open; });
-    if (openBtn) openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) { var f = $('a, button, input', drawer); if (f) f.focus(); } else if (openBtn) openBtn.focus();
+    if (opener) opener.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) { var f = $('a, button, input', drawer); if (f) f.focus(); } else if (opener) opener.focus();
   }
-  if (openBtn) openBtn.addEventListener('click', function () { setDrawer(true); });
+  if (openBtn) openBtn.addEventListener('click', function () { opener = openBtn; setDrawer(true); });
+  /* Am Computer oeffnet „Mehr“ in der Ressortleiste dieselbe Spalte von rechts
+     mit allen Ressorts und ihren Unterseiten (wie Oberberg Aktuell, 07.10.2026). */
+  var mehr = $('.nav-more>summary');
+  if (mehr && drawer) {
+    mehr.setAttribute('aria-controls', drawer.id || 'drawer');
+    mehr.setAttribute('aria-expanded', 'false');
+    mehr.addEventListener('click', function (e) { e.preventDefault(); opener = mehr; setDrawer(true); });
+  }
+
+  /* ---------- Termine: Ansicht Bilder oder Liste (Wahl wird gemerkt) ---------- */
+  var ansichtZiel = $('[data-ansicht-ziel]');
+  if (ansichtZiel) {
+    var knoepfe = $$('[data-ansicht]');
+    var setzeAnsicht = function (a) {
+      ansichtZiel.classList.toggle('event-list--bilder', a === 'bilder');
+      knoepfe.forEach(function (k) { k.setAttribute('aria-pressed', String(k.getAttribute('data-ansicht') === a)); });
+    };
+    var gemerkt = store('ma-termine-ansicht');
+    if (gemerkt === 'liste' || gemerkt === 'bilder') setzeAnsicht(gemerkt);
+    knoepfe.forEach(function (k) { k.addEventListener('click', function () { var a = k.getAttribute('data-ansicht'); setzeAnsicht(a); store('ma-termine-ansicht', a); }); });
+  }
+
+  /* ---------- Suche: Lupe rechts oeffnet ein Suchfeld unter dem Kopf ---------- */
+  $$('.compact-search, .mobile-search').forEach(function (lupe) {
+    lupe.addEventListener('click', function (e) {
+      var kopf = lupe.closest('.mainnav') || lupe.closest('.masthead');
+      if (!kopf) return;
+      e.preventDefault();
+      var form = kopf.querySelector(':scope > .kopf-suche');
+      if (form) { form.remove(); lupe.setAttribute('aria-expanded', 'false'); lupe.focus(); return; }
+      var ziel = lupe.getAttribute('href') || '/suche/', wp = ziel.indexOf('?s=') !== -1;
+      form = document.createElement('form');
+      form.className = 'kopf-suche';
+      form.setAttribute('role', 'search');
+      form.action = wp ? '/' : ziel;
+      form.innerHTML = '<div class="shell"><input type="search" name="' + (wp ? 's' : 'q') + '" aria-label="Suchbegriff" placeholder="Ort, Thema, Nachricht …" autocomplete="off"><button type="submit">Suchen</button><button type="button" class="kopf-suche__zu" aria-label="Suche schließen">×</button></div>';
+      kopf.appendChild(form);
+      lupe.setAttribute('aria-expanded', 'true');
+      form.querySelector('input').focus();
+      form.querySelector('.kopf-suche__zu').addEventListener('click', function () { form.remove(); lupe.setAttribute('aria-expanded', 'false'); lupe.focus(); });
+      form.addEventListener('keydown', function (k) { if (k.key === 'Escape') { form.remove(); lupe.setAttribute('aria-expanded', 'false'); lupe.focus(); } });
+    });
+  });
   if (drawer) drawer.addEventListener('click', function (e) { if (e.target.classList.contains('scrim') || e.target.closest('[data-close]')) setDrawer(false); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { if(drawer && drawer.classList.contains('open'))setDrawer(false); closeLb(); }

@@ -27,7 +27,7 @@ foreach (['logo.png', 'logo-on-light.png'] as $logo) {
 echo "\nMusterprofile laden die kleine Fassung\n";
 $markt = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/markt.php');
 pruefe('Kasten mit srcset 720w/1080w', str_contains($markt, "' 720w, ' . home_url(\$m['bild']) . ' 1080w'"), true);
-pruefe('Unternehmen-Menü mit 720er-Bild', str_contains($markt, "'src' => ma21_muster_klein(\$m['bild'])"), true);
+pruefe('Unternehmen-Menü (Musterbeiträge) mit 720er-Bild', str_contains($markt, "'src' => home_url(ma21_muster_klein(\$m['bild']))"), true);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);
