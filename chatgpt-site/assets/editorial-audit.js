@@ -101,7 +101,7 @@
         const img=bildUrl(symbolbilder[keyForEntry(x)]||symbolbilder.leben);
         return `<article class="front-brief"><a class="front-brief-media" href="${htmlEsc(x.u)}" tabindex="-1" aria-hidden="true"><div class="media"><img src="${htmlEsc(img)}" alt="" loading="lazy" decoding="async" data-editorial-image></div></a><div><div class="location-line"><span class="location-brand">${placeFromEntry(x)}</span></div><span class="kicker">${htmlEsc(x.k||'Aktuell')}${x.dt?` · ${htmlEsc(String(x.dt).replace(/\.\.$/,'.'))}`:''}</span><h2><a href="${htmlEsc(x.u)}">${htmlEsc(x.t)}</a></h2><p>${htmlEsc(x.d||'')}</p><div class="story-actions"><a class="read-more" href="${htmlEsc(x.u)}">Mehr lesen</a></div></div></article>`;
       }).join('');
-      const current=q('.front-lead h1',grid)?.textContent?.trim();
+      const current=q('.front-lead h2,.front-lead h1',grid)?.textContent?.trim();
       if(current===hero.title&&grid.dataset.editorialVerified==='1'&&qa('.front-brief .media img',grid).length===secondary.length)return;
       grid.innerHTML=`<article class="front-lead" data-story="${htmlEsc(hero.id||'')}" data-editorial-verified="1">${next}</article><div class="front-side"><span class="front-side-title">Weitere aktuelle Meldungen</span>${sides}</div>`;
       grid.dataset.editorialVerified='1';

@@ -120,7 +120,22 @@ function ma21_kopf(string $name): string {
     $d = ma21_kopf_daten();
     $html = ma21_kopf_aktuell($html);
     $html = ma21_kopf_ortswahl($html);
+    if ($name === 'kopf.html') $html = ma21_kopf_logo_h1($html);
+    if (function_exists('ma21_heute_links')) $html = ma21_heute_links($html, 'kopf');
     return ma21_kopf_jetzt($html, $d);
+}
+
+/**
+ * Startseite: Das Logo ist die eine H1 (21.17.0), mit dem Alt-Text „Merzenich
+ * Aktuell – Nachrichten aus der Gemeinde Merzenich“. Bis 21.16 war die
+ * Überschrift des Aufmachers die H1; Google las als Hauptüberschrift der
+ * Startseite also die jeweils oberste Meldung. Der Aufmacher ist jetzt eine H2
+ * (ma21_karte, Größe xl). Unterseiten haben ihre eigene H1 und behalten den
+ * Logo-Link ohne Überschrift (kopf-seite.html).
+ */
+function ma21_kopf_logo_h1(string $html): string {
+    return (string) preg_replace('#<a class="logo" href="/" aria-label="[^"]*"><img ([^>]*?)alt="Merzenich Aktuell"([^>]*)></a>#u',
+        '<h1 class="logo-h1"><a class="logo" href="/"><img $1alt="Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich"$2></a></h1>', $html, 1);
 }
 
 /** Zahlen und Meldungen für den Kopf, 10 Minuten zwischengespeichert (Reset bei jeder Statusänderung von Meldungen und Terminen). */
@@ -568,7 +583,7 @@ function ma21_karte(WP_Post $p, string $g, string $tag = 'h3', string $slot = ''
     $kopf = "<{$tag}><a href=\"{$url}\">{$titel}</a></{$tag}>";
     if ($g === 'xl') {
         return "<article class=\"front-lead\"{$attr}>" . ma21_bildflaeche($p, $b, MA21_SIZES['xl'], true)
-            . '<div class="front-lead-copy">' . ma21_marke($p) . "<h1><a href=\"{$url}\">{$titel}</a></h1><p>" . ma21_e(ma21_teaser($p)) . '</p>'
+            . '<div class="front-lead-copy">' . ma21_marke($p) . "<h2><a href=\"{$url}\">{$titel}</a></h2><p>" . ma21_e(ma21_teaser($p)) . '</p>'
             . '<div class="meta">' . ma21_zeit($p) . '<span>' . ma21_lesezeit($p) . ' Min. Lesezeit</span></div></div></article>';
     }
     if ($g === 'r' || $g === 'u') {
@@ -717,6 +732,8 @@ function ma21_startseite(): string {
     $html = (string) preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
     // Foto des Tages wählt WordPress selbst (die Vorlage kann leer oder vom Bautag sein).
     $html = (string) preg_replace_callback('#<!-- fotodestages:start -->.*?<!-- fotodestages:end -->#s', fn() => '<!-- fotodestages:start -->' . ma21_foto_des_tages() . '<!-- fotodestages:end -->', $html, 1);
+    // „Merzenich jetzt“ führt auf die Seite „Heute in Merzenich“ (21.17.0, inc/termine.php).
+    if (function_exists('ma21_heute_da') && ma21_heute_da()) $html = str_replace('<h2 class="mj-ort" id="mj-titel">Merzenich <span>jetzt</span></h2>', '<h2 class="mj-ort" id="mj-titel"><a href="/heute/">Merzenich <span>jetzt</span></a></h2>', $html);
     return ma21_startseite_bloecke($html);
 }
 

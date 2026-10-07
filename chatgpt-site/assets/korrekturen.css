@@ -625,3 +625,15 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 .kopf-suche button[type=submit]{height:46px;padding:0 18px;border:0;border-radius:8px;background:#971725;color:#fff;font:inherit;font-weight:700;cursor:pointer}
 .kopf-suche__zu{width:44px;height:46px;border:0;background:none;font-size:26px;line-height:1;color:#555;cursor:pointer}
 @media (max-width:767px){.masthead .kopf-suche{position:absolute;left:0;right:0;top:100%;z-index:5}}
+/* Startseite: das Logo ist die H1 (Theme 21.17.0, ma21_kopf_logo_h1). Die Überschrift darf am Kopf nichts verschieben. */
+.masthead .logo-h1{display:block;flex:0 0 auto;min-width:0;margin:0;padding:0;font:inherit;line-height:normal}
+/* „Merzenich jetzt“ verlinkt auf /heute/: Aussehen wie vorher, unterstrichen nur beim Zeigen. */
+body.home .mj-ort a{color:inherit;text-decoration:none}
+body.home .mj-ort a:hover,body.home .mj-ort a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+/* Seite „Heute in Merzenich“ (/heute/, 21.17.0): Abstände zwischen den Abschnitten. */
+.heute .section-head{margin-top:44px}
+.heute .section-head:first-child{margin-top:0}
+.heute .event-list{margin-bottom:8px}
+.heute .no-result{margin:8px 0 0}
+.heute-meldungen .feed-row:last-child{border-bottom:0}
+.heute-weiter{margin:36px 0 0;padding-top:18px;border-top:1px solid #e3e1dc;color:#5e5953}

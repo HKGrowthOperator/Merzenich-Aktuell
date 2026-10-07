@@ -235,5 +235,5 @@ html body .feed-lead.feed-lead{align-items:start}
    line-clamp steht neben -webkit-line-clamp, weil die Eigenschaft
    inzwischen ohne Praefix standardisiert ist; die Praefixform bleibt
    fuer aeltere Browser. */
-html body .front-lead.front-lead h1{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+html body .front-lead.front-lead h1,html body .front-lead.front-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}html body .feed-row.feed-row h3,html body .feed-lead.feed-lead h2{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 

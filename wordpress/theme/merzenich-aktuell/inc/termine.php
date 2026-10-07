@@ -93,7 +93,7 @@ function ma21_termine_seite(): void {
     $n = count($kommend);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Termine</span></nav>'
         . '<span class="eyebrow">Kalender</span><h1>Heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
-        . '<p class="count-line"><a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
+        . '<p class="count-line">' . (ma21_heute_da() ? '<a href="' . esc_url(home_url('/heute/')) . '">Was ist heute los?</a> · ' : '') . '<a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
     echo '<section class="section"><div class="shell"><div class="filter-controls" data-event-filters>'
         . '<div class="period-tabs" aria-label="Zeitraum"><button type="button" data-period="all" aria-pressed="true">Alle</button><button type="button" data-period="today" aria-pressed="false">Heute</button><button type="button" data-period="weekend" aria-pressed="false">Wochenende</button><button type="button" data-period="14" aria-pressed="false">Nächste 14 Tage</button></div>'
         . '<label>Ort<select data-event-place><option value="">Alle Ortsteile</option>';
@@ -162,4 +162,90 @@ function ma21_termin_einzel(WP_Post $p): void {
         echo '<p>Derzeit keine weiteren Termine. <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
     }
     echo '</div></aside></div></article>';
+}
+
+/* ------------------------------------------------------------ Heute in Merzenich (/heute/, 21.17.0) */
+
+/**
+ * Seite „Heute in Merzenich“: antwortet auf die Google-Frage „Was ist heute in
+ * Merzenich los?“ (Rückmeldung Betreiber 07.10.2026). Die Seite legt das Plugin
+ * an (includes/seiten.php, Slug heute); page-heute.php zeigt statt ihres Textes
+ * die Termine und die neuesten Meldungen aus WordPress.
+ *
+ * Auswahl aus den kommenden Terminen (ma21_termine_alle): heute = beginnt vor
+ * Mitternacht und ist noch nicht vorbei (auch mehrtägige); woche = beginnt
+ * morgen bis einschließlich in sieben Tagen; naechste = die nächsten fünf
+ * danach, nur wenn heute und woche leer sind.
+ */
+function ma21_heute_auswahl(array $termine, int $jetzt, ?DateTimeZone $tz = null): array {
+    $tag = (new DateTimeImmutable('@' . $jetzt))->setTimezone($tz ?? wp_timezone())->setTime(0, 0);
+    $morgen = $tag->modify('+1 day')->getTimestamp();
+    $bis = $tag->modify('+8 days')->getTimestamp();
+    $termine = array_values(array_filter($termine, fn($t) => (int) $t['start'] > 0 && (int) $t['ende'] >= $jetzt));
+    usort($termine, fn($a, $b) => $a['start'] <=> $b['start'] ?: strcmp((string) ($a['titel'] ?? ''), (string) ($b['titel'] ?? '')));
+    $heute = array_values(array_filter($termine, fn($t) => $t['start'] < $morgen));
+    $woche = array_values(array_filter($termine, fn($t) => $t['start'] >= $morgen && $t['start'] < $bis));
+    $naechste = $heute || $woche ? [] : array_slice(array_values(array_filter($termine, fn($t) => $t['start'] >= $bis)), 0, 5);
+    return ['heute' => $heute, 'woche' => $woche, 'naechste' => $naechste];
+}
+
+/** „Mittwoch, 7. Oktober 2026“. */
+function ma21_heute_datum(int $ts): string {
+    $monate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    return MA21_TAGE[(int) wp_date('w', $ts)] . ', ' . wp_date('j', $ts) . '. ' . $monate[(int) wp_date('n', $ts) - 1] . ' ' . wp_date('Y', $ts);
+}
+
+/** Kopf eines Abschnitts wie auf der statischen Seite (section-head mit Dachzeile und „alle“-Link). */
+function ma21_heute_abschnitt(string $dach, string $titel, string $mehrUrl = '', string $mehrText = ''): string {
+    return '<div class="section-head"><div class="left"><span class="eyebrow">' . esc_html($dach) . '</span><h2>' . esc_html($titel) . '</h2></div>'
+        . ($mehrUrl !== '' ? '<a class="more" href="' . esc_url(home_url($mehrUrl)) . '">' . esc_html($mehrText) . '</a>' : '') . '</div>';
+}
+
+/** Meldungen von heute, aufgefüllt mit den neuesten bis fünf; [Beiträge, ob es heutige gibt]. */
+function ma21_heute_meldungen(int $jetzt): array {
+    $heute = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 8, 'no_found_rows' => true,
+        'date_query' => [['after' => wp_date('Y-m-d 00:00:00', $jetzt), 'inclusive' => true]]]);
+    $mehr = count($heute) < 5 ? get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5 - count($heute), 'no_found_rows' => true,
+        'post__not_in' => array_map(fn($p) => $p->ID, $heute)]) : [];
+    return [array_merge($heute, $mehr), (bool) $heute];
+}
+
+/** Inhalt von /heute/ (page-heute.php). */
+function ma21_heute_seite(WP_Post $seite): void {
+    $jetzt = time();
+    [$kommend] = ma21_termine_alle($jetzt);
+    $a = ma21_heute_auswahl($kommend, $jetzt);
+    [$meldungen, $neuHeute] = ma21_heute_meldungen($jetzt);
+    $liste = fn(array $termine): string => '<div class="event-list event-list--bilder heute-termine">' . implode('', array_map('ma21_termin_zeile', $termine)) . '</div>';
+    echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">' . esc_html(get_the_title($seite)) . '</span></nav>'
+        . '<span class="eyebrow">Heute</span><h1>' . esc_html(get_the_title($seite)) . '</h1>'
+        . ($seite->post_excerpt !== '' ? '<p class="desc">' . esc_html(html_entity_decode($seite->post_excerpt, ENT_QUOTES, 'UTF-8')) . '</p>' : '')
+        . '<p class="count-line"><time datetime="' . esc_attr(wp_date('Y-m-d', $jetzt)) . '">' . esc_html(ma21_heute_datum($jetzt)) . '</time> · <a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
+    echo '<section class="section heute"><div class="shell">';
+    echo ma21_heute_abschnitt('Kalender', 'Termine heute', '/termine/', 'Alle Termine');
+    echo $a['heute'] ? $liste($a['heute']) : '<p class="no-result">Für heute steht kein Termin im Kalender. Vereine und Gruppen melden ihre Termine kostenlos: <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.</p>';
+    if ($a['woche']) echo ma21_heute_abschnitt('Vorschau', 'Die nächsten sieben Tage') . $liste($a['woche']);
+    if ($a['naechste']) echo ma21_heute_abschnitt('Vorschau', 'Die nächsten Termine') . $liste($a['naechste']);
+    if ($meldungen) {
+        echo ma21_heute_abschnitt('Nachrichten', $neuHeute ? 'Neu heute auf Merzenich Aktuell' : 'Die neuesten Meldungen', '/nachrichten/', 'Alle Nachrichten');
+        echo '<div class="heute-meldungen">' . implode("\n", array_map(fn($p) => ma21_feed_row($p), $meldungen)) . '</div>';
+    }
+    echo '<p class="heute-weiter">Mehr aus der Gemeinde: <a href="' . esc_url(home_url('/blaulicht/')) . '">Blaulicht</a> · <a href="' . esc_url(home_url('/rathaus/')) . '">Rathaus &amp; Politik</a> · <a href="' . esc_url(home_url('/vereine/')) . '">Vereine</a> · <a href="' . esc_url(home_url('/service/')) . '">Notdienste &amp; Rathaus</a></p>';
+    echo '</div></section>';
+    echo ma21_werbung('artikel');
+}
+
+/** Gibt es die Seite /heute/ schon (das Plugin legt sie beim ersten Öffnen des Backends an)? */
+function ma21_heute_da(): bool {
+    static $da = null;
+    if ($da === null) $da = function_exists('get_page_by_path') && get_page_by_path('heute', OBJECT, 'page') instanceof WP_Post;
+    return $da;
+}
+
+/** Links auf /heute/: im Kopf ins Mehr-Menü und in die Schublade (Gruppe Service), im Fuß nach „Termine“. */
+function ma21_heute_links(string $html, string $wo, ?bool $da = null): string {
+    if (!($da ?? ma21_heute_da()) || str_contains($html, 'href="/heute/"')) return $html;
+    if ($wo === 'fuss') return str_replace('<h3>Nachrichten</h3><a href="/nachrichten/">Aktuell</a><a href="/blaulicht/">Blaulicht</a><a href="/sport/">Sport</a><a href="/termine/">Termine</a>', '<h3>Nachrichten</h3><a href="/nachrichten/">Aktuell</a><a href="/blaulicht/">Blaulicht</a><a href="/sport/">Sport</a><a href="/termine/">Termine</a><a href="/heute/">Heute in Merzenich</a>', $html);
+    $html = str_replace('<li><a href="/service/">', '<li><a href="/heute/">Heute in Merzenich</a></li><li><a href="/service/">', $html);
+    return str_replace('<div class="grp">Service</div>', '<div class="grp">Service</div><a href="/heute/">Heute in Merzenich</a>', $html);
 }
