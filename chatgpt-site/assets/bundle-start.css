@@ -1518,6 +1518,27 @@ h1,h2,h3,.karte-text h2,.karte-text h3{overflow-wrap:break-word;hyphens:auto;-we
 }
 @media (min-width:768px) and (max-width:782px){.admin-bar body>.nav-anchor,body.admin-bar>.nav-anchor{top:46px}}
 
+/* Kopf (Vorgabe Betreiber 07.10.2026, Vorbild Oberberg Aktuell): die Lupe
+   steht auf jeder Breite rechts, nicht erst beim Scrollen; das breite Suchfeld
+   neben dem Logo entfaellt. Ein Klick oeffnet das Suchfeld unter dem Kopf
+   (app.js). „Mehr“ und das Menue-Symbol oeffnen die Spalte von rechts. */
+.masthead .mast-search{display:none!important}
+@media (min-width:768px){
+  .masthead .shell.mast-inner{grid-template-columns:auto minmax(0,1fr)}
+  .masthead .mast-actions{justify-self:end;margin-left:auto}
+  .mainnav .navrow .compact-search{display:flex!important;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-height:44px;margin-left:auto;color:var(--ink,#17191b)}
+  .mainnav .navrow .compact-search svg{width:22px;height:22px}
+  .mainnav .navrow .compact-search:hover,.mainnav .navrow .compact-search[aria-expanded="true"]{color:var(--red,#971725)}
+}
+.drawer .panel{left:auto!important;right:0}
+.kopf-suche{background:#fff;border-top:1px solid #e6e6e4;border-bottom:1px solid #e6e6e4;padding:12px 0}
+.kopf-suche .shell{display:flex;gap:8px;align-items:center}
+.kopf-suche input{flex:1 1 auto;min-width:0;height:46px;padding:0 14px;border:1px solid #c9c7c2;border-radius:8px;font:inherit;font-size:16px;color:#17191b;background:#fbfbfa}
+.kopf-suche input:focus{outline:2px solid #971725;outline-offset:1px;border-color:#971725}
+.kopf-suche button[type=submit]{height:46px;padding:0 18px;border:0;border-radius:8px;background:#971725;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.kopf-suche__zu{width:44px;height:46px;border:0;background:none;font-size:26px;line-height:1;color:#555;cursor:pointer}
+@media (max-width:767px){.masthead .kopf-suche{position:absolute;left:0;right:0;top:100%;z-index:5}}
+
 /* ---- werbung.css ---- */
 /* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
    anzeigen-rotation.css), auf Wunsch des Auftraggebers unveraendert in allen
@@ -2701,7 +2722,7 @@ html body.home .ort{min-height:clamp(240px,26vh,300px)}
    Nichts wird abgeschnitten. Nur echte Daten (deploy/cockpit.mjs).
    ============================================================ */
 body.home .mj{--mj-papier:#fbf3ec;display:block;margin-top:8px}
-body.home .mj-innen{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,3fr) minmax(200px,.7fr);align-items:stretch;border-bottom:1px solid var(--a-linie)}
+body.home .mj-innen{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,3.7fr);align-items:stretch;border-bottom:1px solid var(--a-linie)}
 body.home .mj-schild{display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:20px 24px 18px;background:var(--a-rot);color:var(--mj-papier);border-radius:3px 3px 0 0}
 body.home .mj-ort{margin:0;font-family:var(--serif);font-size:30px;font-weight:700;line-height:.95;letter-spacing:-.015em;color:inherit}
 body.home .mj-ort span{display:block;margin-top:5px;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;color:#f3d9d4}
@@ -2728,19 +2749,11 @@ body.home .mj-status{display:none;width:9px;height:9px;border-radius:50%;backgro
 body.home .ist-bekannt .mj-status{display:inline-block}
 body.home .ist-offen .mj-status{background:#2f7d4a;box-shadow:0 0 0 3px #2f7d4a26}
 body.home .ist-offen .mj-lead{color:#246b3c}
-body.home .mj-notruf{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:18px 0 18px 24px;border-left:1px solid var(--a-linie)}
-body.home .mj-taste{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;min-height:52px;padding:6px 14px;border:1px solid #e7c9c5;border-radius:4px;background:#fcf5f4;color:var(--a-tinte);text-decoration:none;transition:background-color .18s cubic-bezier(.22,1,.36,1),border-color .18s cubic-bezier(.22,1,.36,1)}
-body.home .mj-taste:hover{background:#f8e9e7;border-color:var(--a-rot)}
-body.home .mj-taste:focus-visible{outline:2px solid var(--a-rot);outline-offset:2px}
-body.home .mj-taste b{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--a-rot);font-variant-numeric:lining-nums}
-body.home .mj-taste span{font-size:13.5px;line-height:1.25;color:var(--a-text)}
 @media (max-width:1180px){
   body.home .mj-innen{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   body.home .mj-schild{grid-column:1/-1;flex-direction:row;align-items:flex-end;justify-content:space-between;border-radius:3px}
   body.home .mj-liste{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}
   body.home .mj-eintrag:first-child{border-left:0;padding-left:0}
-  body.home .mj-notruf{grid-column:1/-1;flex-direction:row;padding:0 0 18px;border-left:0}
-  body.home .mj-taste{flex:1}
 }
 @media (max-width:760px){
   body.home .mj-schild{padding:16px 18px}
@@ -2749,12 +2762,10 @@ body.home .mj-taste span{font-size:13.5px;line-height:1.25;color:var(--a-text)}
   body.home .mj-liste{grid-template-columns:1fr}
   body.home .mj-eintrag{border-left:0;border-bottom:1px solid var(--a-linie);padding:16px 0}
   body.home .mj-titel{font-size:19px}
-  body.home .mj-notruf{padding-top:16px}
 }
 @media (max-width:420px){
   body.home .mj-wetter{grid-template-columns:auto;justify-items:end;text-align:right}
   body.home .mj-himmel{align-items:flex-end}
-  body.home .mj-taste{grid-template-columns:1fr;justify-items:start;gap:4px;padding:10px 12px}
 }
 /* Sehr schmale Telefone: Wetter unter Ort und Datum statt daneben. */
 @media (max-width:380px){

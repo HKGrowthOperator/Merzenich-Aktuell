@@ -2,8 +2,8 @@
  "hinweis": "Inhaltsstand je Seite fuer lastmod in sitemap-seiten.xml und sitemap-verzeichnis.xml (deploy/sitemaps.mjs). Nicht von Hand pflegen.",
  "seiten": {
   "/betriebe/eintragen/": {
-   "hash": "e1cb174eac1c258b",
-   "lastmod": "2026-09-30T20:49:00+02:00"
+   "hash": "95355e78e8785855",
+   "lastmod": "2026-10-07T09:45:00+02:00"
   },
   "/blaulicht/seite/2/": {
    "hash": "7b547ca3642ff53b",
@@ -74,8 +74,8 @@
    "lastmod": "2026-10-06T09:14:00+02:00"
   },
   "/vereine/eintragen/": {
-   "hash": "e26a5e5d0fb07343",
-   "lastmod": "2026-09-30T20:49:00+02:00"
+   "hash": "2770f8a6b8d06f9f",
+   "lastmod": "2026-10-07T09:45:00+02:00"
   },
   "/vereine/meldungen/": {
    "hash": "82d38968da7e6ba9",
