@@ -1,6 +1,6 @@
 {
   "geprueftAm": "2026-09-24",
-  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben. Runde 15 (24.09.): alle 10 Rettungswagen-Fotos einzeln auf Kennzeichen, Gesichter und fremde Ortsaufschriften geprüft, 8 ausgeschlossen, 2 bleiben (Innenraum, Malteser ohne Ortsbezug).",
+  "hinweis": "Sichtprüfung aller Poolfotos (Runde 1: 240 Erstimporte, Runde 2: 159 Ersatzfotos, Runde 3: 83 Ersatzfotos, Runde 4: 49 Ersatzfotos, Runde 5: 33 Ersatzfotos, Runde 6: 20 Ersatzfotos, Runde 7: 15 Ersatzfotos, Runde 8: 9 Ersatzfotos, Runde 9: 6 Ersatzfotos, Runde 10: 2 Ersatzfotos). Ausgeschlossene Titel werden vom Importer entfernt und nie wieder geladen; freigegebene Titel tragen geprueft=true. Neu geladene Fotos gelten bis zur nächsten Sichtprüfung als ungeprüft; Runde 14 (24.09., V3-Ereignispools technik, rettung, unfall, flaeche): 71 gesichtet, 6 freigegeben. Runde 15 (24.09., lokale Themenklassen): Tennis, Digitalbildung, Tanzsaal, Nistkasten, Vereinsheim und neutrales Kirchenfenster gezielt freigegeben. Runde 15 (24.09.): alle 10 Rettungswagen-Fotos einzeln auf Kennzeichen, Gesichter und fremde Ortsaufschriften geprüft, 8 ausgeschlossen, 2 bleiben (Innenraum, Malteser ohne Ortsbezug). Runde 16 (07.10.2026): 66 neu geladene Fotos der Pools blaulicht, polizei, verkehr, technik, rettung, unfall und der Detailpools gesichtet, 16 freigegeben, 49 ausgeschlossen, 1 zurückgestellt (Rettungshubschrauber am Kalkberg, Schild lesbar; bleibt ungeprüft bis zum Ersatz) (u. a. Tierrettung im Ausland, Auslandsmotive, Markenlogos, Porträts, Doppelungen).",
   "ausgeschlossen": [
     {
       "pool": "aktuell",
@@ -3325,6 +3325,300 @@
       "nr": 15,
       "titel": "File:Deutsches Rotes Kreuz (Illingen) 2023-07-02 (01).jpg",
       "grund": "Runde 15 (24.09., Rettungswagen-Motiv): Aufschrift DRK Ortsverein Illingen und Plakat Illingen: fremder Ort, Personen"
+    },
+    {
+      "pool": "polizei",
+      "nr": 2,
+      "titel": "File:Ballonfahrt Köln 20130810 653.JPG",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "polizei",
+      "nr": 3,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7258.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "polizei",
+      "nr": 6,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7261.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "polizei",
+      "nr": 12,
+      "titel": "File:Vorstellung Polizeipräsident Uwe Jacob-7263.jpg",
+      "grund": "Erkennbare Personen des öffentlichen Lebens"
+    },
+    {
+      "pool": "polizei",
+      "nr": 15,
+      "titel": "File:Fahnen vor dem Polizeipräsidium Köln-Kalk-7324.jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "tennisdetail",
+      "nr": 3,
+      "titel": "File:Lüdinghausen, Tennisplätze -- 2014 -- 7295.jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "tennisdetail",
+      "nr": 4,
+      "titel": "File:Haltern am See, TUS-Tennis -- 2014 -- 9105.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "digitaldetail",
+      "nr": 2,
+      "titel": "File:Doro phone for seniors (16722141421).jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "digitaldetail",
+      "nr": 3,
+      "titel": "File:Doro phone for seniors (16103442603).jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "digitaldetail",
+      "nr": 4,
+      "titel": "File:Doro phone for seniors (16723387215).jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "tanzdetail",
+      "nr": 2,
+      "titel": "File:Uetzing-Tanzsaal.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 1,
+      "titel": "File:Ölspur-Mureck-20210104 110623 (50800019282).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 2,
+      "titel": "File:Ölspur-Mureck-20210104 111046 (50799159663).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 3,
+      "titel": "File:Ölspur-Mureck-20210104 112714 (50800018637).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "technik",
+      "nr": 6,
+      "titel": "File:Fire Alarm (48609950727).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 8,
+      "titel": "File:A Simplex fire alarm strobe.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 9,
+      "titel": "File:Fire alarm system in Kerala.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 10,
+      "titel": "File:Fire alarm system in Kerala (43422).jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "technik",
+      "nr": 12,
+      "titel": "File:Smoke detector (1).JPG",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 14,
+      "titel": "File:Smoke detector, Russia (1).JPG",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 15,
+      "titel": "File:Smoke detector, Russia (2).JPG",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "technik",
+      "nr": 16,
+      "titel": "File:Smoke detector camera.jpg",
+      "grund": "Markenetikett oder Werbeschriftzug im Bild"
+    },
+    {
+      "pool": "technik",
+      "nr": 17,
+      "titel": "File:Smoke detector with stub, Russia.jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "technik",
+      "nr": 19,
+      "titel": "File:Smoke detector with stub, Russia(01).jpg",
+      "grund": "Unscharf oder ohne Bildaussage"
+    },
+    {
+      "pool": "technik",
+      "nr": 20,
+      "titel": "File:Smoke detector in cold storage.jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 23,
+      "titel": "File:Smoke detector in cold storage (01).jpg",
+      "grund": "Fast gleiches Motiv wie ein anderes Bild im Pool"
+    },
+    {
+      "pool": "technik",
+      "nr": 24,
+      "titel": "File:Smoke detector in cold storage (02).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "rettung",
+      "nr": 1,
+      "titel": "File:Lion in Sudan Animal Rescue 4.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 2,
+      "titel": "File:Lion in Sudan Animal Rescue 5.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 3,
+      "titel": "File:Ducks - sudan animal rescue.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 4,
+      "titel": "File:Lion - Sudan Animal Rescue.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 5,
+      "titel": "File:Sudan animal rescue.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 6,
+      "titel": "File:Lion - Sudan animal rescue.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 7,
+      "titel": "File:Monkey - Sudan animal rescue.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 8,
+      "titel": "File:The Retreat Animal Rescue - geograph.org.uk - 6954144.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 9,
+      "titel": "File:The Retreat Animal Rescue - geograph.org.uk - 6954145.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 10,
+      "titel": "File:Animal Rescue League of Boston 1934.png",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 11,
+      "titel": "File:Heatons Animal Rescue Group - geograph.org.uk - 5153958.jpg",
+      "grund": "Motiv passt nicht zum Pool (Tierrettung im Ausland, keine Rettungsdienst-Szene)"
+    },
+    {
+      "pool": "rettung",
+      "nr": 12,
+      "titel": "File:FEMA - 34520 - Large animal rescue worker in Missouri.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "unfall",
+      "nr": 1,
+      "titel": "File:GER Wuppertal, Fußgängerbrücke Bundesallee, Aussicht 0007.jpg",
+      "grund": "Ortsfremdes Wahrzeichen"
+    },
+    {
+      "pool": "unfall",
+      "nr": 2,
+      "titel": "File:Bad Honnef Fußgängerbrücke Honnef-Süd August-Lepper-Straße (2).jpg",
+      "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 1,
+      "titel": "File:20260802 xl 1855-Öffentliche Fahrradreparaturstation, Eggersdorf, am Seeschloss, Bötzsee (98803).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 2,
+      "titel": "File:20260802 xl 1855-Öffentliche Fahrradreparaturstation, Eggersdorf, am Seeschloss, Bötzsee (16976).jpg",
+      "grund": "Ortsfremde Kennzeichnung (anderes Bundesland oder Ausland)"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 5,
+      "titel": "File:Bicycle repair stand at Fairview Community Center 01.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 6,
+      "titel": "File:Bicycle repair stand at Fairview Community Center 02.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 8,
+      "titel": "File:Bicycle repair stand at Fairview Community Center 03.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 14,
+      "titel": "File:Bicycle repair station, Rockingham Foreshore, August 2019.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 15,
+      "titel": "File:Bicycle repair station, Gyarmati Dezső Park, 2020 Óbuda.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
+    },
+    {
+      "pool": "verkehr",
+      "nr": 17,
+      "titel": "File:Bicycle Repair Station - Staničné námestie, Košice, Slovakia.jpg",
+      "grund": "Militär- oder Auslandsmotiv"
     }
   ],
   "freigegeben": [
@@ -3574,6 +3868,22 @@
     "File:Tanzhaus nrw Großer Saal Foto2 Katja Illner.jpg",
     "File:Nistkasten mit Marderschutz.JPG",
     "File:Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck.JPG",
-    "File:Kirchenfenster- Der Herr ist mein Hirte.jpg"
+    "File:Kirchenfenster- Der Herr ist mein Hirte.jpg",
+    "File:Rettungshubschrauber Christoph 45 Ochsenhausen Start.JPG",
+    "File:Wolfenbüttel Rettungshubschrauber-Station Christoph 30.jpg",
+    "File:Christoph 51 Rettungshubschrauber D-HDDD.jpg",
+    "File:Christoph 6 LDW.jpg",
+    "File:Rettungshubschrauber Christoph 15 D-HJMD EC-135 P2.jpg",
+    "File:Adac-c8-bor-04a.jpg",
+    "File:Lüdinghausen, Tennisplätze -- 2014 -- 7294.jpg",
+    "File:Seitenschiff Kirchenfenster.JPG",
+    "File:Sankt Wendelin neben Kirchenfenster.JPG",
+    "File:Blick durch Kirchenfenster auf alten Friedhof.JPG",
+    "File:Ölspur - 04.jpg",
+    "File:Heimrauchmelder.jpg",
+    "File:Smoke detector, Russia.JPG",
+    "File:Fahrrad-Reparaturstation an der Michaelisbrücke 20230704 HOF01588 RAW-Export.png",
+    "File:Fahrrad-Reparaturstation.jpg",
+    "File:Rettungshubschrauber Christoph 45 Ochsenhausen Landung.JPG"
   ]
 }

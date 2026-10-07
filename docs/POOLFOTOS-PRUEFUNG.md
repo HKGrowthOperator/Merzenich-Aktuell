@@ -481,3 +481,20 @@ Die Commons-Volltextsuche trifft bei allgemeinen Begriffen schlecht: Blaulicht l
 | 4 | 09 | Münster, Park Sentmaring, Parkbank -- 2021 -- 9129.jpg | Graffiti mit lesbarer Schrift |
 | 4 | 12 | Buergerhaus Ibbenbueren 03.jpg | Fast gleiches Motiv wie ein anderes Bild im Pool |
 
+
+## Runde 16 (07.10.2026)
+
+66 Fotos gesichtet, die der Importer seit dem 24.09. nachgeladen hatte und die noch als ungeprüft galten (Blaulicht, Polizei, Verkehr, Technische Hilfe, Rettung, Unfall und Detailpools).
+
+- **16 freigegeben:** 7 Rettungshubschrauber für Blaulicht, 1 Tennisanlage, 3 Kirchenfenster, Ölspur-Warnschild und 2 Rauchmelder für Technische Hilfe, 2 deutsche Fahrrad-Reparaturstationen für Verkehr.
+- **49 ausgeschlossen.** Die Gründe:
+  - Tierrettung im Sudan und in England im Pool Rettung (alle 12 Fotos)
+  - Auslandsmotive (US-Feuermelder, Kerala, Australien, Budapest, Košice)
+  - Feuerwehr Mureck (Österreich) mit Ortsaufschrift
+  - Porträts des Kölner Polizeipräsidenten
+  - Fahnen mit Kölner Aufschrift
+  - Markenlogos (Doro-Telefone, Rauchmelder-Kamera)
+  - Doppelungen und Bilder ohne Bildaussage
+- **1 zurückgestellt:** Rettungshubschrauber am Kalkberg. Das Schild im Bild ist lesbar. Das Foto bleibt ungeprüft, bis Ersatz da ist.
+
+WordPress zieht das Ergebnis beim nächsten Aufruf des Backends nach (Plugin 1.25.0). Freigegebene Fotos werden „Geprüft“. Ausgeschlossene werden „Abgelehnt – nicht verwenden“ und verlassen ihren Pool, gelöscht wird nichts. Die verbleibenden Lücken stehen in `docs/FOTOWUNSCHLISTE.md`.
