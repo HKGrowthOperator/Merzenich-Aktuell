@@ -7,8 +7,8 @@
   "abgerufen": "2026-09-24T18:36:02.759Z",
   "bildinfo": {
    "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde6a270000fd2c03d130&story_id=6238991&render=html",
-   "status": 200,
-   "text": "Bildunterschrift:\nVerkehrsunfall B264"
+   "status": 429,
+   "text": "Service temporarily overloaded, please retry shortly."
   }
  },
  "6238991-2.jpg": {
@@ -19,8 +19,8 @@
   "abgerufen": "2026-09-24T18:36:03.632Z",
   "bildinfo": {
    "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde6c270000fd2c03d158&story_id=6238991&render=html",
-   "status": 200,
-   "text": "Bildunterschrift:\nVerkehrsunfall B264"
+   "status": 429,
+   "text": "Service temporarily overloaded, please retry shortly."
   }
  },
  "6238991-3.jpg": {
@@ -31,8 +31,8 @@
   "abgerufen": "2026-09-24T18:36:04.381Z",
   "bildinfo": {
    "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde6b270000fd2c03d145&story_id=6238991&render=html",
-   "status": 200,
-   "text": "Bildunterschrift:\nVerkehrsunfall B264"
+   "status": 429,
+   "text": "Service temporarily overloaded, please retry shortly."
   }
  },
  "6238991-4.jpg": {
@@ -43,8 +43,8 @@
   "abgerufen": "2026-09-24T18:36:05.107Z",
   "bildinfo": {
    "url": "https://www.presseportal.de/api/image_info.htx?id=69bbde68270000fd2c03d11a&story_id=6238991&render=html",
-   "status": 200,
-   "text": "Bildunterschrift:\nVerkehrsunfall B264"
+   "status": 429,
+   "text": "Service temporarily overloaded, please retry shortly."
   }
  }
 }

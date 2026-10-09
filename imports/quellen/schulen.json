@@ -1,21 +1,892 @@
 {
  "quelle": "schulen",
- "abgerufen": "2026-10-08T12:08:23.873Z",
+ "abgerufen": "2026-10-09T12:01:44.064Z",
  "listen": [
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-10-08T12:08:20.596Z",
-   "status": 302,
-   "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
+   "abgerufen": "2026-10-09T12:01:17.033Z",
+   "status": 200,
+   "titel": "Aktuelles | Startseite",
+   "meta": {
+    "og:title": "Aktuelles",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "News aus KGS Merzenich"
+   },
+   "text": "Aktuelles\nSauer macht sicher – Kinder der vierten\n21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.\nAktuelles\nTag der offenen Tür\nAm 26.09.26 findet der Tag der offenen Tür statt.\nAktuelles\nEine große Show: Der Viertie-Gag 2026\nBeim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.\nAktuelles\nVerabschiedung der Vierties\n07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.\nAktuelles\nDie mutigen Acht\n07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.\nAktuelles\nSporttag 2026: Ein Tag der Gemeinschaft\n23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.\nAktuelles\nErstaunliches rund um die vier Elemente\n23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann\nAktuelles\nBarfuß unterwegs: Der Kollegiumsausflug\n20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.\nAktuelles\nGrundschulmeisterschaften Fußball\n17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.\nAktuelles\nDie freiwillige Feuerwehr sorgt für Abkü\n09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!\nAktuelles\nKänguruwettbewerb 2026\n19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.\nAktuelles\nNeues Klettergerüst für die KGS Merzenic\n19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.\nAktuelles\nKreismeisterschaften Schwimmen 2026\n07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.\nAktuelles\nLernzeit an der KGS Merzenich geht in di\n07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.\nAktuelles\nDer Sponsorenlauf 2026\n04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.\nAktuelles\nKarneval 2026: Ausgelassene Stimmung\n03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
+   "links": [
+    {
+     "text": "Aktuelles Sauer macht sicher – Kinder der vierten 21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzkzMTI3MzI0"
+    },
+    {
+     "text": "Aktuelles Tag der offenen Tür Am 26.09.26 findet der Tag der offenen Tür statt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjkyMzEwNjM0"
+    },
+    {
+     "text": "Aktuelles Eine große Show: Der Viertie-Gag 2026 Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTQzMTU4MjU5"
+    },
+    {
+     "text": "Aktuelles Verabschiedung der Vierties 07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODIxNzczMzk1"
+    },
+    {
+     "text": "Aktuelles Die mutigen Acht 07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjM4MzE0MDM4"
+    },
+    {
+     "text": "Aktuelles Sporttag 2026: Ein Tag der Gemeinschaft 23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTE3NTAyOTk0"
+    },
+    {
+     "text": "Aktuelles Erstaunliches rund um die vier Elemente 23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDYwOTQxNjE2"
+    },
+    {
+     "text": "Aktuelles Barfuß unterwegs: Der Kollegiumsausflug 20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzcxNDIzMzI"
+    },
+    {
+     "text": "Aktuelles Grundschulmeisterschaften Fußball 17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTQzNjIzNjg"
+    },
+    {
+     "text": "Aktuelles Die freiwillige Feuerwehr sorgt für Abkü 09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODU5NzYwMTA"
+    },
+    {
+     "text": "Aktuelles Känguruwettbewerb 2026 19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTQ1NDkwOTQy"
+    },
+    {
+     "text": "Aktuelles Neues Klettergerüst für die KGS Merzenic 19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTY5MzQ0MTE1"
+    },
+    {
+     "text": "Aktuelles Kreismeisterschaften Schwimmen 2026 07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTUyOTU0ODQz"
+    },
+    {
+     "text": "Aktuelles Lernzeit an der KGS Merzenich geht in di 07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTA0NDk1MzQ5"
+    },
+    {
+     "text": "Aktuelles Der Sponsorenlauf 2026 04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzcwMjA4MzM5"
+    },
+    {
+     "text": "Aktuelles Karneval 2026: Ausgelassene Stimmung 03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzY0NjY5ODcz"
+    }
+   ],
+   "bilder": []
   },
   {
    "url": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
    "endUrl": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
-   "abgerufen": "2026-10-08T12:08:22.672Z",
-   "status": 302,
-   "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
+   "abgerufen": "2026-10-09T12:01:18.970Z",
+   "status": 200,
+   "titel": "Unsere Schule | KGS Golzheim",
+   "meta": {
+    "og:title": "Unsere Schule",
+    "og:type": "website",
+    "og:url": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
+    "og:site_name": "KGS Golzheim",
+    "og:locale": "de_DE"
+   },
+   "text": "Unsere Schule\nHerzlich Willkommen\nauf der Homepage der Katholischen Johann-Kaspar-Kratz-Grundschule Golzheim. Wir sind eine von zwei Offenen Ganztagsgrundschulen im Osten der Gemeinde Merzenich im Kreis Düren.\nUnsere Schule\nAG's und Angebote\nan der KGS Golzheim\nUnsere Schule\nAnmeldung\nUnsere Schule\nUnser Team\nDas Team der KGS-Golzheim besteht zur Zeit aus 10 Lehrerinnen und wird von Fr. Borys im Sekretariat unterstützt.\nUnsere Schule\nFörderverein\nUnterstützen sie unseren FöVe!\nUnsere Schule\nBetreuung (8-1) / Offene Ganztagsschule (OGS)\nUnsere Schule\nSchule von A bis Z\nrund um unsere Schule\nUnsere Schule\nTermine\nUnsere Schule\nDownloads\nSeite in Arbeit…",
+   "links": [
+    {
+     "text": "Unsere Schule Herzlich Willkommen auf der Homepage der Katholischen Johann-Kaspar-Kratz-Grundschule Golzheim. Wir sind eine von zwei Offenen Ganztagsgrundschulen im Osten der Gemeinde Merzenich im Kre",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/01_willkommen.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MTAyOTE0OTM2OA"
+    },
+    {
+     "text": "Unsere Schule AG's und Angebote an der KGS Golzheim",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/ag-s.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#NTIzNjYwOTIy"
+    },
+    {
+     "text": "Unsere Schule Anmeldung",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/anmeldung.php"
+    },
+    {
+     "text": "Unsere Schule Unser Team Das Team der KGS-Golzheim besteht zur Zeit aus 10 Lehrerinnen und wird von Fr. Borys im Sekretariat unterstützt.",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/team.php"
+    },
+    {
+     "text": "Unsere Schule Förderverein Unterstützen sie unseren FöVe!",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/foeve.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MTAxNzcxNzE2Mg"
+    },
+    {
+     "text": "Unsere Schule Betreuung (8-1) / Offene Ganztagsschule (OGS)",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/ogs.php"
+    },
+    {
+     "text": "Unsere Schule Schule von A bis Z rund um unsere Schule",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/schule-a-z.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MTUyMjE2Mzkx"
+    },
+    {
+     "text": "Unsere Schule Termine",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/termine.php"
+    },
+    {
+     "text": "Unsere Schule Downloads Seite in Arbeit…",
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/downloads.php"
+    }
+   ],
+   "bilder": []
   }
  ],
- "details": []
+ "details": [
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php",
+   "abgerufen": "2026-10-09T12:01:20.366Z",
+   "status": 200,
+   "titel": "Sauer macht sicher – Kinder der vierten Klassen bei der Zitronenaktion | Startseite",
+   "meta": {
+    "og:title": "Sauer macht sicher – Kinder der vierten Klassen bei der Zitronenaktion",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark."
+   },
+   "text": "Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen der vierten Klassen der KGS Merzenich für mehr Sicherheit auf Merzenichs Straßen stark.\nJeweils sechs SchülerInnen aus den Klassen 4a und 4b machten sich in zwei Gruppen gemeinsam mit der Polizei auf den Weg zu besonders markanten Stellen in Merzenich, an denen es für Kinder im Straßenverkehr schnell brenzlig werden kann.\nDort hieß es: Tempo im Blick behalten! Die PolizeibeamtInnen führten professionelle Lasermessungen durch. Wer zu schnell unterwegs war, wurde angehalten und auf den Verstoß aufmerksam gemacht. Und dann kamen die Kinder ins Spiel.\nStatt eines gewöhnlichen Bußgeldes wartete auf die TemposünderInnen eine ziemlich saure Überraschung: ein symbolischer Strafzettel und eine Zitrone, persönlich überreicht von den Kindern.\nDabei beließen es die SchülerInnen keineswegs bei einem vorwurfsvollen Blick. Sie erklärten den AutofahrerInnen anschaulich, warum sie über zu schnelles Fahren „sauer“ sind und wie gefährlich hohe Geschwindigkeiten gerade für Kinder auf ihrem Schulweg sein können. Eine Botschaft, die aus Kindermund wohl anders wirkt als ein nüchterner Blick auf den Tacho.\nSo wurde aus der Verkehrskontrolle eine besondere Unterrichtsstunde mitten im echten Straßenverkehr. Die Kinder erlebten, wie Geschwindigkeitskontrollen funktionieren, kamen mit VerkehrsteilnehmerInnen ins Gespräch und traten selbst für ihre Sicherheit und die anderer Kinder ein.\nAuch Bürgermeister Georg Gelhausen besuchte eine der beiden Gruppen und machte sich vor Ort ein Bild von der Aktion und dem Engagement der SchülerInnen.\nDie Zitronenaktion findet jährlich in Kooperation mit der Polizei Düren, der Gemeinde Merzenich und der Schule statt. Die gute Zusammenarbeit aller Beteiligten trägt dazu bei, den Schulweg für die Kinder in Merzenich sicherer zu machen.\nVideo auf Instagram ansehen: Zitronenaktion (Öffnet in einem neuen Tab)",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php.media/17622/Zitrone1.png.scaled/5116f8ede87e16d712cbb55d07244138.png"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#MTYzNDA1Mzk3"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php.media/17623/Zitrone2.png.scaled/c430ec7385404a5981756b00d3cb150d.png"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#NTQ5MjA5Njg2"
+    },
+    {
+     "text": "Video auf Instagram ansehen: Zitronenaktion (Öffnet in einem neuen Tab)",
+     "href": "https://www.instagram.com/polizei.nrw.dueren/reel/DdV18NDgQJR/embed/"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
+   "abgerufen": "2026-10-09T12:01:21.807Z",
+   "status": 200,
+   "titel": "Aktuelles | Startseite",
+   "meta": {
+    "og:title": "Aktuelles",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "News aus KGS Merzenich"
+   },
+   "text": "Aktuelles\nSauer macht sicher – Kinder der vierten\n21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.\nAktuelles\nTag der offenen Tür\nAm 26.09.26 findet der Tag der offenen Tür statt.\nAktuelles\nEine große Show: Der Viertie-Gag 2026\nBeim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.\nAktuelles\nVerabschiedung der Vierties\n07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.\nAktuelles\nDie mutigen Acht\n07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.\nAktuelles\nSporttag 2026: Ein Tag der Gemeinschaft\n23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.\nAktuelles\nErstaunliches rund um die vier Elemente\n23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann\nAktuelles\nBarfuß unterwegs: Der Kollegiumsausflug\n20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.\nAktuelles\nGrundschulmeisterschaften Fußball\n17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.\nAktuelles\nDie freiwillige Feuerwehr sorgt für Abkü\n09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!\nAktuelles\nKänguruwettbewerb 2026\n19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.\nAktuelles\nNeues Klettergerüst für die KGS Merzenic\n19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.\nAktuelles\nKreismeisterschaften Schwimmen 2026\n07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.\nAktuelles\nLernzeit an der KGS Merzenich geht in di\n07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.\nAktuelles\nDer Sponsorenlauf 2026\n04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.\nAktuelles\nKarneval 2026: Ausgelassene Stimmung\n03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
+   "links": [
+    {
+     "text": "Aktuelles Sauer macht sicher – Kinder der vierten 21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDIzMDc5MzQ2"
+    },
+    {
+     "text": "Aktuelles Tag der offenen Tür Am 26.09.26 findet der Tag der offenen Tür statt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#Njc2MjY2MzA0"
+    },
+    {
+     "text": "Aktuelles Eine große Show: Der Viertie-Gag 2026 Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjczMTM3NjU3"
+    },
+    {
+     "text": "Aktuelles Verabschiedung der Vierties 07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTkzOTgyOTE0"
+    },
+    {
+     "text": "Aktuelles Die mutigen Acht 07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjY3NjQ1MjYx"
+    },
+    {
+     "text": "Aktuelles Sporttag 2026: Ein Tag der Gemeinschaft 23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTI4ODU2MjIw"
+    },
+    {
+     "text": "Aktuelles Erstaunliches rund um die vier Elemente 23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTc2MDI0MzU0"
+    },
+    {
+     "text": "Aktuelles Barfuß unterwegs: Der Kollegiumsausflug 20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODQ4MzY5MTYz"
+    },
+    {
+     "text": "Aktuelles Grundschulmeisterschaften Fußball 17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzUwODkwNjMy"
+    },
+    {
+     "text": "Aktuelles Die freiwillige Feuerwehr sorgt für Abkü 09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTI2MzA2ODM5"
+    },
+    {
+     "text": "Aktuelles Känguruwettbewerb 2026 19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjM4Nzg2MDQy"
+    },
+    {
+     "text": "Aktuelles Neues Klettergerüst für die KGS Merzenic 19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTE4MDExNDg2"
+    },
+    {
+     "text": "Aktuelles Kreismeisterschaften Schwimmen 2026 07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTA0MzYyMzc3Mg"
+    },
+    {
+     "text": "Aktuelles Lernzeit an der KGS Merzenich geht in di 07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTY4MDEzNzI4"
+    },
+    {
+     "text": "Aktuelles Der Sponsorenlauf 2026 04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODEwOTU5ODM1"
+    },
+    {
+     "text": "Aktuelles Karneval 2026: Ausgelassene Stimmung 03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTgxMDQ1NzQ1"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php",
+   "abgerufen": "2026-10-09T12:01:23.204Z",
+   "status": 200,
+   "titel": "Tag der offenen Tür | Startseite",
+   "meta": {
+    "og:title": "Tag der offenen Tür",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "Am 26.09.26 findet der Tag der offenen Tür statt."
+   },
+   "text": "",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php.media/17468/Tag-der-offenen-Tuer-KGS-2026.jpg.scaled/c36b619c296e74ce2938a2f9c535da3f.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php#ODQ0NTQ3MDIw"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php",
+   "abgerufen": "2026-10-09T12:01:24.592Z",
+   "status": 200,
+   "titel": "Eine große Show: Der Viertie-Gag 2026 | Startseite",
+   "meta": {
+    "og:title": "Eine große Show: Der Viertie-Gag 2026",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen."
+   },
+   "text": "Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen. Gleich mehrfach bewertete das royale Dreigespann, bestehend aus Frau Nitzki, Frau Welsch und Frau Gehring, die Leistung der Lehrkräfte mit der Bestnote. Die Klassenlehrerinnen des diesjährigen Abschlussjahrgangs traten mit einem Zepter ausgestattet und von klassischer Musik begleitet in die Turnhalle ein, wo sie gebührend begrüßt wurden. Anschließend nahmen sie als royale Jury auf der Bühne Platz, um die Darbietungen ihrer KollegInnen zu bewerten.\nDas Spektakel wurde von den vierten Klassen und Frau Salzmann organisiert, die den Viertie-Gag vor einigen Jahren als festen Bestandteil des Abschiedsprozesses etabliert hat. Nicht nur als Organisatorin, sondern auch als Moderatorin der Veranstaltung legte Frau Salzmann eine gute Figur hin.\nAuch die übrige Schülerschaft kam auf ihre Kosten und sah amüsiert dabei zu, wie sich ihre LehrerInnen den verschiedenen Herausforderungen stellten. Im Rahmen der Lehrerprüfung trat das Kollegium unter anderem beim Eierlauf, der rhythmischen Sportgymnastik und im Hula-Hoop gegen Kinder aller Altersstufen an. Eine Premiere und besonderes Highlight waren die Darbietungen der Lehrer-Bands, die zur Erheiterung des Publikums ihr Bestes gaben.\nDer Viertie-Gag sorgte für ausgelassene Stimmung, jede Menge Spaß und unvergessliche Erinnerungen. Dafür danken wir Frau Salzmann und den Klassen 4a, 4b und 4c.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php.media/17579/Viertie-Gag1.jpg.scaled/4d0dbcf19400207c6a943e00a5c8b714.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#MjExODgyMjE4"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php.media/17580/Viertie-Gag2.jpg.scaled/5a3f89dda7ce18d2dc5cefb8cac300a0.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#Mjc5NDIyODE2"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php",
+   "abgerufen": "2026-10-09T12:01:25.982Z",
+   "status": 200,
+   "titel": "Verabschiedung der Vierties | Startseite",
+   "meta": {
+    "og:title": "Verabschiedung der Vierties",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern."
+   },
+   "text": "Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern. Zunächst zelebrierten der vierte und der dritte Jahrgang zusammen mit den Angehörigen und einem kleinen Kreis des Schulteams einen feierlichen Gottesdienst in der Kirche.\nFür die weiteren Festlichkeiten in der Turnhalle kam anschließend die gesamte Schulgemeinschaft zusammen, um den „Großen“ einen ganz besonderen Abschied zu gewähren. Dafür hatte jeder Jahrgang einen kleinen Auftritt vorbereitet. Zunächst jedoch hielt die Schulleiterin, Frau Piotrowski, eine bewegende Ansprache.\nAuch die vierten Klassen selbst hatten in den letzten Wochen fleißig an ihren Nummern geprobt. Das Publikum durfte sich an einem abwechslungsreichen Programm aus Tanz-, Gesangs- und Akrobatiknummern erfreuen. Besonders schön: Die Schülerinnen und Schüler konnten sich im Vorfeld je nach Interesse klassenübergreifend den verschiedenen Darbietungen zuordnen. Während diese Vorgehensweise den großartigen Zusammenhalt innerhalb der vierten Jahrgangsstufe zeigte, machten die vielen akrobatischen Einlagen deutlich, dass es sich auch um einen ganz besonders sportlichen Jahrgang handelte. Dies lobte auch Frau Piotrowski in ihrer Rede und untermauerte es mit einer Anekdote von der Klassenfahrt. Es war ein durchweg bewegender Abschied, der in einem letzten gemeinsamen Singen der Schulhymne seinen Abschluss fand.\nAm letzten Schultag wurden die Absolventinnen und Absolventen traditionell mit einem Spalier der gesamten Schule verabschiedet. Dieser Moment war wie immer sehr ergreifend und die ein oder andere Träne ließ sich nicht unterdrücken. Zum krönenden Abschluss stiegen symbolisch bunte Luftballons in den Himmel – als Zeichen für die Reise, die vor den Kindern liegt.\nLiebe Absolventinnen und Absolventen, wir wünschen euch von Herzen alles Gute, viel Freude und ganz viel Mut für euren weiteren Lebens- und Schulweg!",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php.media/17575/Verabschiedung1.jpeg.scaled/2b39320e7a7eb37d5f75f1a3c3fac8db.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#MTY3NjAzOTAy"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php.media/17576/Verabschiedung2.jpeg.scaled/031b9f2fde5b75619fc51f8525641e74.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#ODM3NjAyNTQy"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php",
+   "abgerufen": "2026-10-09T12:01:27.371Z",
+   "status": 200,
+   "titel": "Die mutigen Acht: Theaterstück am vierten „Stoppt-Mobbing Tag“ zeigt, wie man sich gegen Mobbing verbünden kann | Startseite",
+   "meta": {
+    "og:title": "Die mutigen Acht: Theaterstück am vierten „Stoppt-Mobbing Tag“ zeigt, wie man sich gegen Mobbing verbünden kann",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück."
+   },
+   "text": "Theater Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein besonders bewegendes Theaterstück auf die Bühne: „Die mutigen Acht“.\nDas Stück erzählt die Geschichte einer Clique, die Mitschülerinnen ungerecht behandelt, ausnutzt und schikaniert. Obwohl die Angst groß ist, selbst ins Visier der Clique zu geraten, fassen acht mutige Schülerinnen einen Entschluss: Sie schauen nicht länger weg, sondern bieten dem Mobbing gemeinsam die Stirn. Nebenbei vermittelte das Stück durch Tanz- und Musikeinlagen schöne Lektionen der Selbstliebe und Selbstakzeptanz.\nDie kreative und feinfühlige Regie lag in den Händen der Schulsozialarbeiterin, Katrin Salzmann. Wir danken Frau Salzmann und dem engagierten Ensemble für dieses erkenntnisreiche und liebevoll umgesetzte Theaterstück.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php.media/17572/Theater-1.jpg.scaled/1d64a553268d0d1014c4665b68f2b053.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php#ODM0MDg5NzY5"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php",
+   "abgerufen": "2026-10-09T12:01:28.762Z",
+   "status": 200,
+   "titel": "Sporttag 2026: Ein Tag der Gemeinschaft und des Fairplays | Startseite",
+   "meta": {
+    "og:title": "Sporttag 2026: Ein Tag der Gemeinschaft und des Fairplays",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund."
+   },
+   "text": "Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund, sondern auch die Gemeinschaft und das Fairplay spielten eine bedeutende Rolle.\nAnschließend durchliefen die Klassen verschiedene Stationen. Bei verschiedenen Angeboten auf der Wiese und dem Schulhof standen die Bewegung und der Spaß im Vordergrund, während die SchülerInnen beim Hindernisparcours in der Turnhalle ihr sportliches Geschick unter Beweis stellen konnten. Eine große Rolle spielte wie jedes Jahr das Fußballturnier. Die Kinder konnten sich dafür freiwillig melden und schließlich wurden 6 SpielerInnen pro Klasse ausgelost. Die übrigen fieberten beim Jahrgangsturnier mit und feuerten ihre MitschülerInnen an. Für diesen Zweck brachten sie teilweise selbst gebastelte Schilder mit.\nNeben Urkunden und Jahrgangspokalen war in diesem Jahr auch ein Fairplay-Pokal zu gewinnen. Während der Spiele verteilte Herr Bosch, der als Schiedsrichter fungierte, aus diesem Grund Punkte für faires und sportliches Verhalten. Am Ende des Tages lobte Herr Bosch die Leistung der SchülerInnen während des Turniers und wies mit einem Augenzwinkern darauf hin, er habe das Turnier mit größerer Begeisterung verfolgt als zuletzt so manches Spiel im Fernsehen. Da sich die Kinder klassenübergreifend durch ein faires Spiel hervorhoben, ging der Fairplay-Pokal an die gesamte Schülerschaft und wird als schöne Erinnerung der Gemeinschaft im Pokalschrank des Foyers ausgestellt.\nDen Jahrgangssieg konnten die Klassen 1b, 2c, 3a und 4c für sich erzielen. Sie erhielten jeweils einen Pokal, während auch alle anderen Klassen mit einer Urkunde für ihr Fußballgeschick ausgezeichnet wurden.\nMit der gemeinsamen Siegerehrung auf dem Schulhof fand ein schöner Tag der Bewegung, des fairen Wettkampfs, des Spiels und der Gemeinschaft sein Ende.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php.media/17525/Gemeinsamer-Start.jpg.scaled/e023c28cd927f483bc7c4cf7392d8299.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#Mjc2OTEyNTM1"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php.media/17526/Haengend.jpg.scaled/0a27d3558f6b1cdd7d62651ab030d2ad.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#OTk0Mzk5NzQ0"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php.media/17527/Tuch.jpg.scaled/0bf72918e0bb407551a37c58b8fd6da9.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#NjU2MjU3MDA"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php",
+   "abgerufen": "2026-10-09T12:01:30.150Z",
+   "status": 200,
+   "titel": "Erstaunliches rund um die vier Elemente | Startseite",
+   "meta": {
+    "og:title": "Erstaunliches rund um die vier Elemente",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann"
+   },
+   "text": "Die letzte Woche dieses Schuljahres startete mit einem wortwörtlichen Knall. Am 13.07. begeisterte Dr. Ott die SchülerInnen der KGS Merzenich mit physikalischen Experimenten rund um die vier Elemente\nIn der zweiten Schulstunde durften zunächst die ersten und dritten Klassen staunen, assistieren und mitfiebern, bevor in der dritten Stunde die Zweit- und Viertklässler an der Reihe waren. Der ehemalige Wirtschaftsjournalist bewies eindrucksvoll, wie spannend, anschaulich und erstaunlich physikalische Prinzipien sein können. Er führte die Phänomene nicht nur vor, sondern lieferte im Anschluss auch direkt die passenden, kindgerechten Erklärungen.\nEin großer Dank gebührt Dr. Ott für seine großartige Darbietung sowie dem Förderverein der KGS, der uns diese packende Wissensshow überhaupt erst ermöglicht hat!",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php.media/17522/Physikanten.jpg.scaled/83a2b2a6373db289fbd810237fa5fb6a.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php#MjY3MTU5NDM5"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php",
+   "abgerufen": "2026-10-09T12:01:31.752Z",
+   "status": 200,
+   "titel": "Barfuß unterwegs: Der Kollegiumsausflug 2026 | Startseite",
+   "meta": {
+    "og:title": "Barfuß unterwegs: Der Kollegiumsausflug 2026",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt."
+   },
+   "text": "Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt. Mit zwei Kleinbussen der Gemeinde Merzenich ging es nach Unterrichtsschluss um 11.30 Uhr zum BloteVoetenPark in Brunssum. Der niederländische Barfußpark bietet neben einem liebevoll gestalteten Wanderweg auch einen Irrgarten, verschiedene Hindernisse, Meditationswege und ein gemütliches Restaurant.\nKaum angekommen, hieß es für das Kollegium der KGS: Barfuß über Stock und Stein. Bei sommerlichen 30 Grad bestritt das Team den rund vier Kilometer langen Rundweg durch das Areal. Dabei ging das Kollegium im wahrsten Sinne der Worte gemeinsam durch dick und dünn, denn der Rundweg hielt so einige schlammige Überraschungen bereit. Zusammen trotze das Team de m kalten Nass, verschiedenen Hindernissen, fand einen Weg aus dem Irrgarten und lachte und schnackte dabei viel.\nHungrig und durstig kehrte das Kollegium schließlich im gemütlichen Restaurant des Parks ein und ließ den Tag mit einem gemeinsamen Essen ausklingen - natürlich nicht, ohne sich vorher noch einmal gründlich die Füße zu säubern.\nEin besonderer Dank gilt der Gemeinde Merzenich für die Bereitstellung der Busse sowie unseren FahrerInnen Frau Krafczyk und Herrn Muhr.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php.media/17517/Gruppenbild-1.jpg.scaled/bd6b903f688ca4d95ecc7c8e648486a5.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#Mjk1NTgwNzQw"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php.media/17518/Hindernisse.jpg.scaled/7a9f76ef6f9a7cfe402476d2b2b7c299.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#OTI1OTIzOTAz"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php.media/17519/Gruppe-von-hinten.jpg.scaled/89e1acac254482ef2b466357f6aedf43.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#NTk2MjQ4OTAw"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php",
+   "abgerufen": "2026-10-09T12:01:33.137Z",
+   "status": 200,
+   "titel": "Grundschulmeisterschaften Fußball | Startseite",
+   "meta": {
+    "og:title": "Grundschulmeisterschaften Fußball",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil."
+   },
+   "text": "Am 8. Mai nahm unsere Grundschule mit 13 Kindern (2 Mädchen und 11 Jungen) an den Fußball-Grundschulmeisterschaften in Düren teil. Mit zwei knappen Siegen startete unser Team erfolgreich ins Turnier. Anschließend verloren wir knapp mit 1:2 gegen den späteren Turniersieger. Nach einem Unentschieden und einer Niederlage im letzten entscheidenden Spiel schieden wir leider aus dem Turnier aus.\nAuch wenn das Turnier nicht immer einfach verlief, konnten die Kinder viele wertvolle Erfahrungen sammeln. Sie erlebten, wie wichtig Zusammenhalt, gegenseitige Unterstützung und ein respektvoller Umgang im Mannschaftssport sind. Mit vielen neuen Eindrücken und schönen Fußballmomenten kehrten alle wieder nach Hause zurück.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php.media/17514/Fussballkreismeisterschaften.jpg.scaled/8444750a894aa67bbdd146eba8179f15.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php#NzExNjc0NzA"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php",
+   "abgerufen": "2026-10-09T12:01:34.526Z",
+   "status": 200,
+   "titel": "Die freiwillige Feuerwehr sorgt für Abkühlung an der KGS Merzenich | Startseite",
+   "meta": {
+    "og:title": "Die freiwillige Feuerwehr sorgt für Abkühlung an der KGS Merzenich",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!"
+   },
+   "text": "Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an! In der dritten und vierten Stunde verwandelte sich die Schulwiese in eine riesige Wasserspielzone. Bei der voranschreitenden Hitzewelle war das genau die richtige Abwechslung zum normalen Unterrichtsalltag.\nGegen 10.15 Uhr versammelte sich die Schulgemeinde auf der Wiese, wo bereits ein Einsatzfahrzeug der freiwilligen Feuerwehr auf sie wartete. Während dieses für ausreichend Wasser sorgte, hatten die Kinder im Vorfeld fleißig aufgerüstet und brachten Wasserpistolen in allen Formen und Farben mit. Am Feuerwehrschiff – und an flugs eingerichteten Tankstationen – konnten die Wasserspeicher blitzschnell aufgefüllt werden.\nEs wurde gelacht, gerannt und fleißig gespritzt. Am Ende der vierten Stunde waren zwar die meisten Kinder klitschnass, aber glücklich und herrlich erfrischt.\nEin riesiges Dankeschön gilt der Freiwilligen Feuerwehr für ihren tollen Einsatz und diesen unvergesslichen Vormittag!",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php.media/17499/Wasserspass1.jpg.scaled/0fb348c8054fab9d9f199982555b38c0.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#NTI1MDYyNzQ4"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php.media/17500/Wasserspass2.jpg.scaled/75b3e78b8d8e4e3107b30e980e46e71a.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#NjI3MjE5NjM4"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php",
+   "abgerufen": "2026-10-09T12:01:35.913Z",
+   "status": 200,
+   "titel": "Känguruwettbewerb 2026 | Startseite",
+   "meta": {
+    "og:title": "Känguruwettbewerb 2026",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil."
+   },
+   "text": "Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit, dem Känguruwettbewerb, teil. In 75 Minuten lösten die SchülerInnen möglichst viele der 24 Multiple-Choice-Aufgaben und erzielten dabei große Erfolge. Bastian und Kian erreichten den zweiten und dritten Platz ihrer jeweiligen Altersgruppe. Mariella rechnete die meisten Aufgaben hintereinander richtig und erzielte somit den größten Kängurusprung.\nAm 5. Mai 2026 wurden die fleißigen MathematikerInnen im Rahmen der Urkundenübergabe durch die Schulleitung, Frau Piotrowski, von der ganzen Schule bejubelt.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php.media/17418/Kaenguru.jpeg.scaled/2e43c7149f9d7a2f951d1b08396a5d41.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php#MjkxMjYyMDYw"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php",
+   "abgerufen": "2026-10-09T12:01:37.307Z",
+   "status": 200,
+   "titel": "Neues Klettergerüst für die KGS Merzenich | Startseite",
+   "meta": {
+    "og:title": "Neues Klettergerüst für die KGS Merzenich",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende."
+   },
+   "text": "Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende. Am 5. Mai 2026 wurde das neue Klettergerüst der Grundschule eingeweiht. Neben Merzenichs Bürgermeister, Herrn Gelhausen, und der Schulleiterin, Frau Piotrowski, nahmen auch verschiedene MitarbeiterInnen der Gemeinde, Lehrkräfte und die KlassensprecherInnen an dem freudigen Ereignis teil (siehe Foto). Mit den neuen Gerätschaften erfüllte die Gemeinde Merzenich der Grundschule einen großen Wunsch. Diesen hatten die SchülerInnen erstmals vor einem Jahr im Rahmen des Kinderparlaments an die Gemeinde herangetragen und ihre Vorstellungen in Form einer Skizze visualisiert. Herr Gelhausen brachte diese zu seiner Ansprache mit und erzählte, dass sie als Grundlage für die Planung mit den Architekten diente. Den Bauprozess auf dem Schulhof hatten die Kinder mit großer Neugierde und Vorfreude beobachtet. Nun kann das Schaukeln, Rutschen, Klettern und Erkunden losgehen.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php.media/17415/Klettergeruest.jpeg.scaled/0c3d4285f3254c644e6d2110dc7c7beb.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php#MzgwMjAwNzkw"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php",
+   "abgerufen": "2026-10-09T12:01:38.695Z",
+   "status": 200,
+   "titel": "Kreismeisterschaften Schwimmen 2026 | Startseite",
+   "meta": {
+    "og:title": "Kreismeisterschaften Schwimmen 2026",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil."
+   },
+   "text": "Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil. Die KGS Merzenich erzielte dabei in der Gesamtwertung Platz 10 von 22. Die Kinder traten in den Disziplinen Brust, Freistil, Tauchen sowie in der Bällchen- und T-Shirt-Staffel an. Begleitet wurden sie dabei von Frau Krafczyk und Frau Foerster.\nIn der Kategorie Freistil erzielte Louis den ersten Platz seiner Altersgruppe. Auch Lilly, Pauline, Elisa und Emma schafften es unter die besten fünf SchwimmerInnen ihrer jeweiligen Altersgruppe. Lana und Felix belegten in der Kategorie Brust die ersten beiden Plätze ihres Jahrgangs, Theo den Fünften. Auch als Team konnten die SchwimmerInnen der KGS überzeugen und erzielten den vierten Platz in der Bällchen-Staffel.\nDie Siegerehrung erfolgte am 5. Mai 2026 durch die Schulleitung, Frau Piotrowki, in der Aula der KGS Merzenich. Dabei wurden die stolzen SchwimmerInnen von der ganzen Schulgemeinschaft bejubelt.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#MTA2Njg4MDc3Ng"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php.media/17367/Schwimmen1.jpeg.scaled/4877226a56b3f5fdd42d0f138594e0be.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#ODc0MDk5NTQ5"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php",
+   "abgerufen": "2026-10-09T12:01:40.082Z",
+   "status": 200,
+   "titel": "Lernzeit an der KGS Merzenich geht in die zweite Runde | Startseite",
+   "meta": {
+    "og:title": "Lernzeit an der KGS Merzenich geht in die zweite Runde",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt."
+   },
+   "text": "Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt. Diese eröffnet den SchülerInnen ein vielfältiges und differenziertes Lern- und Förderangebot. Die Kinder konnten im Rahmen des facettenreichen Programmes drei Wünsche nennen, aus denen sie einer Projektgruppe zugeteilt wurden. Die vielfältigen Projektangebote spiegelten die diversen Interessen, Vorlieben und Bedürfnisse der SchülerInnen an der KGS Merzenich wider.\nIn der Schuleingangsphase konnten die Kinder im Rahmen des Brückenbaus und des Künstlerprojekts ihre Kreativität unter ihr handwerkliches Geschick unter Beweis stellen. Das Lesen wurde im Märchenprojekt gefördert und gefordert, während die SchülerInnen in English for everybody erste Erfahrungen in einer neuen Sprache sammeln konnten. Wer es gerne sportlich mag, konnte sich beim Freerunning auspowern oder beim Yoga innere Ruhe finden. Bei den Themen Müll und Glück lernten die SchülerInnen fürs Leben sowie Verantwortung für sich und andere zu tragen.\nIn den dritten und vierten Klassen konnten die Kinder ihre Allgemeinbildung in den Bereichen Ägypten, Rom sowie berühmte Persönlichkeiten ausbauen. Beim Stricken entstanden lustige Figuren. Naturwissenschaftliche Experimente sorgten für ein vertieftes Verständnis der Umwelt. Das wichtige Thema Glück durfte auch in den dritten und vierten Klassen nicht fehlen.\nDie Lernzeit ermöglichte es, sich intensiv und anhand vielfältiger Zugänge mit all diesen Themen auseinanderzusetzen. So manches Kind lernte dabei nicht nur sich selbst besser kennen, sondern konnte auch neue Freundschaften schließen.\nDie neuen Projekte beginnen am 11. Mai 2026 und werden bis zu den Sommerferien bestehen bleiben.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php.media/17361/Lernzeit.jpeg.scaled/1f08dcc82ae43a99b1686b907faa6759.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php#MzMxMzYwMjYx"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php",
+   "abgerufen": "2026-10-09T12:01:41.471Z",
+   "status": 200,
+   "titel": "Der Sponsorenlauf 2026: Der Kälte zum Trotz für den guten Zweck | Startseite",
+   "meta": {
+    "og:title": "Der Sponsorenlauf 2026: Der Kälte zum Trotz für den guten Zweck",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt."
+   },
+   "text": "Das Wetter meinte es in diesem Jahr nicht gut mit dem Sponsorenlauf der Katholischen Grundschule Merzenich. Traditionell findet dieser am Freitag vor den Osterferien statt, wurde in diesem Jahr aufgrund der Witterungsverhältnisse jedoch auf den 24. April 2026 verlegt. Trotz der Terminverschiebung sorgten dichter Nebel und Kälte für erschwerte Bedingungen. Umso erfreulicher ist es, dass nicht nur die Kinder dem Wetter trotzten, sondern dabei auch von zahlreichen UnterstützerInnen begleitet und angefeuert wurden. Der Zusammenhalt auf und neben der Laufstrecke macht den Sponsorenlauf jedes Jahr zu einem besonderen Highlight.\nDie SchülerInnen eines Jahrgangs hatten jeweils 30 Minuten Zeit, um möglichst viele Runden durch den Pützpark zu drehen. Diese waren jeweils 700 Meter lang. In der übrigen Zeit konnten sich die Kinder auf dem Mini-Fußballfeld oder den Spielplätzen austoben und mit Kreide malen.\nFür den guten Zweck trotzten die Kinder dem schlechten Wetter. Das gesammelte Geld wird dem Förderverein der KGS Merzenich zukommen und soll unter anderem für die Anschaffung neuer Pausenspiele Verwendung finden.\nEin besonderer Dank gilt der Familie Pütz, Frau von Laufenberg und Frau Franken für die Organisation der Veranstaltung sowie den zahlreichen SponsorInnen.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php.media/17331/Sponsorenlauf-3.jpeg.scaled/7f51e883b322f81382c96ca1fc108000.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#ODI3NzgxNTc1"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php.media/17332/Sponsorenlauf_1.jpeg.scaled/b03ee25c982618ad9cb598e332cbb36b.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#NzI3NjA1NDA0"
+    }
+   ],
+   "bilder": []
+  },
+  {
+   "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php",
+   "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php",
+   "abgerufen": "2026-10-09T12:01:42.863Z",
+   "status": 200,
+   "titel": "Karneval 2026: Ausgelassene Stimmung, bunte Kostüme und viel Magie an der KGS Merzenich | Startseite",
+   "meta": {
+    "og:title": "Karneval 2026: Ausgelassene Stimmung, bunte Kostüme und viel Magie an der KGS Merzenich",
+    "og:type": "website",
+    "og:url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php",
+    "og:site_name": "Startseite",
+    "og:locale": "de_DE",
+    "og:description": "03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval."
+   },
+   "text": "Schulleiterin, Jacqueline Piotrowski, nimmt den diesjährigen Orden der KG Jonge vom Berg entgegen. Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval. Los ging es für die Schülerinnen und Schüler an Weiberfastnacht in ihren Klassen. Vom gemeinsamen Frühstück, über zahlreiche Spiele und verschiedenen Tanzeinlagen starteten die jeweiligen Klassen in den Tag, bis es in der Polonäse in die Turnhalle ging. Dort kam die gesamte Schule zusammen, um die Merzenicher Karnevalsgesellschaft Jonge vom Berg in Empfang zu nehmen. Begeistert begrüßten die Schülerinnen und Schüler Prinzessin Luisa I. und ihr Gefolge, die neben guter Laune auch reichlich Kamelle im Gepäck hatten. Gemäß dem diesjährigen Motto „Alt und jung im gleichen Takt – weil Karneval uns Gemeinsam packt“ wurde zusammen gefeiert, getanzt und gesungen. Besonders begeisternd waren dabei die Darbietungen der drei Funkemariechen, die vor den Augen ihrer Mitschülerinnen und Mitschüler erstaunliche Tanzeinlagen darboten. Im Rahmen der Feierlichkeit bot sich für die Kinder außerdem eine seltene Gelegenheit – das Tanzen mit einer echten Prinzessin. Luisa I. mischte sich dafür extra unter ihr junges Publikum. Nach der traditionellen Ordensübergabe an Frau Piotrowski verabschiedete sich die KG Jonge vom Berg.\nNun eroberten die Schülerinnen und Schüler der KGS Merzenich selbst die Bühne. Verschiedene Klassen präsentierten ihre eingeübten Tänze und luden zum Mitmachen ein. Statt unter Applaus wurden sie von ihren Mitschülerinnen und Mitschülern, wie es an Karneval an der KGS Tradition ist, jeweils mit einer tosenden Rakete von der Bühne verabschiedet. Um 11.11 Uhr endete der farbenfrohe und ausgelassene Schultag, jedoch verabschiedete man sich noch nicht in das verlängerte Wochenende.\nMagus Antonius begeistert. In diesem Jahr stand auch am Karnevalsfreitag Schule auf dem Programm. Zum großen Glück der Kinder machte eine ordentliche Portion Magie, spendiert vom Förderverein der KGS, diesen Schultag zu einem ganz besonderen. Im Wechsel entführte Magus Antonius, alias Toni Hamacher, die Schülerinnen und Schüler der ersten und zweiten sowie dritten und vierten Klassen in die fabelhafte Welt der Magie, präsentierte erstaunliche Tricks, führte sie in mittelalterliche Bräuche ein, ließ die Kinder ungeahnte Fähigkeiten entdecken und zog sie damit in seinen Bann. Neben großem Staunen sorgte Magus Antonius mit allerlei humoristischen Einlagen und seiner Assistenz-Ente für viele Lacher. Die Zeit in den Klassen wurde mit verschiedenen Aktivitäten rund um das Thema Karneval verbracht, bevor man sich in das närrische Wochenende verabschiedete. Erst an Aschermittwoch kommt die KGS Merzenich wieder zusammen und verkündet in einem gemeinsamen Gottesdient das Ende der diesjährigen Session.",
+   "links": [
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php.media/17335/Karneval26.jpeg.scaled/108925068c0527afb781cdb94c1d440c.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#OTMxNjI2OTU4"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php.media/17336/Magus.jpeg.scaled/76bad2e55bb85e63e764559f3a257706.jpg"
+    },
+    {
+     "text": "",
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#NzAxNzIwMzEx"
+    }
+   ],
+   "bilder": []
+  }
+ ]
 }

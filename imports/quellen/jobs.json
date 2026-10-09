@@ -1,18 +1,55 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-10-08T12:08:29.899Z",
+ "abgerufen": "2026-10-09T12:01:49.950Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
    "endUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
-   "abgerufen": "2026-10-08T12:08:24.289Z",
-   "status": 302,
-   "fehlertext": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"de\">\n<head>\n<title>403: Zugriff verweigert</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<style>\n.container{width:100%}.bg-w"
+   "abgerufen": "2026-10-09T12:01:44.692Z",
+   "status": 200,
+   "titel": "Stellenangebote | Gemeinde Merzenich",
+   "meta": {
+    "og:title": "Stellenangebote",
+    "og:type": "website",
+    "og:url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
+    "og:image": "https://www.gemeinde-merzenich.de/img/teaser-stellenangebote.jpg.scaled/fea0e04e8d40b78916eb5e97e3ffa82b.jpg",
+    "og:site_name": "Gemeinde Merzenich",
+    "og:locale": "de_DE",
+    "og:description": "Personelle Verstärkung gesucht! Einzelheiten entnehmen Sie bitte den aktuellen Stellenangeboten."
+   },
+   "text": "Staatlich anerkannte Erzieherin/staatlich anerkannter Erzieher (m/w/d)\nDie Gemeinde Merzenich sucht zum nächstmöglichsten Termin eine staatlich anerkannte Erzieherin/einen staatlich anerkannten Erzieher (m/w/d) für die Kita Bärenstark in Golzheim. Es handelt sich dabei um eine befristete Stelle als Krankheitsvertretung bis zum 31.07.2027. Die Beschäftigung ist mit einer wöchentlichen Arbeitszeit von 30 Stunden oder in Vollzeit möglich.\nStellenausschreibung Bärenstark befristet 2026.pdf PDF -Datei 211,99 kB\nMitarbeiter/in (m/w/d) im Bundesfreiwilligendienst\nDie Gemeinde Merzenich sucht zum 01.09.2026 einen Mitarbeiter/eine Mitarbeiterin im Bundesfreiwilligendienst. Der Aufgabenschwerpunkt liegt bei Tätigkeiten im Rahmen der Offenen und Mobilen Jugendarbeit.\nStellenausschreibung Bufdi 2026.pdf PDF -Datei 187,56 kB\nAuszubildene/Auszubildender für das Ausbildungsjahr 01.09.2026\nDie Stelle ist vergeben, es werden keine Bewerbungen mehr angenommen!\nÜbungsleiterin/Übungsleiter\nDer Kreis Düren sucht für die Sportkita Bärenstark in Merzenich-Golzheim Übungsleiter mit C-Lizenz für das Bewegungsangebot in Ü3- und U3-Gruppen.\nHier können Sie die Stellenanzeige einsehen und herunterladen PDF -Datei 15,06 MB\nPraktikum\nPraktika bei der Gemeinde Merzenich können ausschließlich im beruflichen, schulischen oder studienrelevanten Kontext absolviert werden.\nHinweise zu den Einsatzbereichen:\nKindertagesstätten (Kitas) und Bürgerhaus: Mindestdauer 2 Wochen (Tagespraktika werden nicht angeboten)\nVerwaltung und Bauhof: Praktika sind bereits ab 1 Tag möglich\nDie Vergabe der Praktikumsplätze erfolgt nicht direkt über die einzelnen Einrichtungen oder Fachbereiche. Praktikumsanfragen richten Sie bitte ausschließlich per E-Mail an personal gemeinde-merzenich de\nAnsprechpartnerin im Rathaus\nFrau Tina Prömpers\nTeamleitung Fachbereich 2 Team 3\nAnruf E-Mail\nKontakt\nOrt\nZeiten\nKontakt\n02421 399140\n02421 399299\ntproempers gemeinde-merzenich de\nweitere Informationen\nOrt\nTeam III - Zentrale Dienste und Personal\nFrau Tina Prömpers\nTeamleitung Fachbereich 2 Team 3\nRaum 6\nRathaus Merzenich\nValdersweg 1\n52399 Merzenich\nKarte öffnen (Google Maps) (Öffnet in einem neuen Tab)\nErreichbarkeit Barrierefreier Zugang\nZeiten\nÖffnungszeiten\nMontag - Freitag\n08:00 - 12:30 Uhr\nMontag\n14:00 - 16:30 Uhr\nDienstag ganztägig für Besucher geschlossen\nMittwoch\n14:00 - 16:00 Uhr\nDonnerstag\n14:00 - 18:00 Uhr\nEine Terminvereinbarung ist erforderlich!!!",
+   "links": [
+    {
+     "text": "",
+     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#MzYwMzg3MDUz"
+    },
+    {
+     "text": "Stellenausschreibung Bärenstark befristet 2026.pdf PDF -Datei 211,99 kB",
+     "href": "https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/Stellenausschreibung-Baerenstark-befristet-2026.pdf"
+    },
+    {
+     "text": "Stellenausschreibung Bufdi 2026.pdf PDF -Datei 187,56 kB",
+     "href": "https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/Stellenausschreibung-Bufdi-2026.pdf"
+    },
+    {
+     "text": "Hier können Sie die Stellenanzeige einsehen und herunterladen PDF -Datei 15,06 MB",
+     "href": "https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/Stellenausschreibung_Uebungsleiter.pdf"
+    },
+    {
+     "text": "weitere Informationen",
+     "href": "https://www.gemeinde-merzenich.de/vv/personen/proempers-tina.php"
+    },
+    {
+     "text": "Karte öffnen (Google Maps) (Öffnet in einem neuen Tab)",
+     "href": "https://www.google.com/maps/search/?api=1&query=Valdersweg++1%2C52399+Merzenich%2CDeutschland"
+    }
+   ],
+   "bilder": []
   },
   {
    "url": "https://www.kreis-dueren.de/karriere",
    "endUrl": "https://www.kreis-dueren.de/karriere",
-   "abgerufen": "2026-10-08T12:08:26.720Z",
+   "abgerufen": "2026-10-09T12:01:47.003Z",
    "status": 200,
    "titel": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS | Kreis Düren",
    "meta": {
@@ -28,7 +65,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#ODM1NDQ4OTg4"
+     "href": "https://www.kreis-dueren.de/karriere#MTg0MjI3NTQy"
     },
     {
      "text": "PDF -Datei 233,51 kB 2026_10_05 Stellenausschreibung_Hauswirtschaftskraft_Vicusmäuse_Nörvenich Bewerbungsfrist: 16.10.2026",
@@ -76,7 +113,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#OTAwODg2NzAw"
+     "href": "https://www.kreis-dueren.de/karriere#MzI3ODg0NTcw"
     },
     {
      "text": "Arbeitgeber Kreis Düren Duales Studium und Ausbildung Jetzt informieren und bewerben.",
@@ -84,7 +121,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#OTIyNjIzOTMz"
+     "href": "https://www.kreis-dueren.de/karriere#MTAyNjk2NzYwMw"
     },
     {
      "text": "Jobs & Karriere Kreisverwaltung Düren vorgestellt Was sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...",
@@ -92,7 +129,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#MjgwMDE0ODYw"
+     "href": "https://www.kreis-dueren.de/karriere#MTM1MjE2ODk5"
     },
     {
      "text": "Leitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB",
@@ -140,7 +177,7 @@
   {
    "url": "https://www.jobsdn.de/jobportal",
    "endUrl": "https://www.jobsdn.de/jobportal",
-   "abgerufen": "2026-10-08T12:08:28.698Z",
+   "abgerufen": "2026-10-09T12:01:48.749Z",
    "status": 200,
    "titel": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
    "meta": {
