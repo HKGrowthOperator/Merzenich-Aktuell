@@ -7,19 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:buergerpokalschiessen@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20260909T163000Z
-SUMMARY:32. Bürgerpokalschießen
-DESCRIPTION:Offenes Schießen um den Bürgerpokal\, Gäste willkommen.\nVer
- anstalter: St. Sebastianus Schützenbruderschaft Golzheim\nhttps://merzeni
- chaktuell.hk-growthoperator.de/termine/buergerpokalschiessen/
-LOCATION:Schützenhalle Golzheim
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergerpokalschie
- ssen/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:faire-woche-2026@merzenich-aktuell.de
 DTSTAMP:20260827T060000Z
 DTSTART:20260910T220000Z
