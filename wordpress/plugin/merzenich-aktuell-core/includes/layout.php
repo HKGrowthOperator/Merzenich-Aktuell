@@ -25,6 +25,14 @@
  * und Bühne werden in beide Richtungen abgeglichen, „aus“ bleibt der
  * Ausschluss. Bestehende feste Plätze werden einmalig übernommen
  * (ma_layout_migrieren), nichts wird gelöscht.
+ *
+ * Feste Plätze laufen aus (1.27.2, Vorgabe Betreiber 12.10.2026: neue Meldungen
+ * sollen nach oben rücken, nicht dauerhaft dieselben): Jeder feste Platz trägt
+ * den Zeitpunkt des Einsetzens (seit). Ohne „Hervorhebung bis“ endet er nach
+ * fest_tage Tagen (Einstellung der Platzierung, Standard 7, 0 = unbefristet),
+ * danach füllt die Automatik den Platz. Bei vorgemerkten Entwürfen beginnt die
+ * Frist mit der Veröffentlichung. Einträge ohne Zeitpunkt (vor 1.27.2) zählen
+ * ab dem Stand der Karte. Ein ausdrückliches „Hervorhebung bis“ geht vor.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -93,7 +101,7 @@ function ma_layout_get(string $seite): array {
     $gueltig = ma_layout_slots($seite);
     foreach ((array) ($o['slots'] ?? []) as $slot => $e) {
         if (!isset($gueltig[$slot]) || !is_array($e) || (int) ($e['post'] ?? 0) <= 0) continue;
-        $slots[$slot] = ['post' => (int) $e['post']] + (!empty($e['doppelt']) ? ['doppelt' => true] : []);
+        $slots[$slot] = ['post' => (int) $e['post']] + (!empty($e['doppelt']) ? ['doppelt' => true] : []) + ((int) ($e['seit'] ?? 0) > 0 ? ['seit' => (int) $e['seit']] : []);
     }
     return ['v' => MA_LAYOUT_VERSION, 'rev' => (int) ($o['rev'] ?? 0), 'stand' => (int) ($o['stand'] ?? 0), 'von' => (int) ($o['von'] ?? 0), 'slots' => $slots];
 }
@@ -152,19 +160,63 @@ function ma_layout_hervorhebung_abgelaufen(int $id, ?int $jetzt = null): bool {
     return $t !== false && $t <= ($jetzt ?? time());
 }
 
+/** Frist fester Plätze in Tagen (Einstellung der Platzierung, Freigaben); 0 = unbefristet. */
+function ma_layout_fest_tage(): int {
+    $e = function_exists('ma_relevanz_einstellung') ? ma_relevanz_einstellung() : (array) get_option('ma_relevanz_einstellung', []);
+    return max(0, min(60, (int) ($e['fest_tage'] ?? 7)));
+}
+
+/** Beginn der Frist eines festen Platzes: Einsetzen (sonst Stand der Karte), bei Vormerkungen die Veröffentlichung. */
+function ma_layout_platz_seit(array $eintrag, int $stand): int {
+    $seit = (int) ($eintrag['seit'] ?? 0) ?: $stand;
+    if ($seit <= 0) return 0; // weder Zeitpunkt noch Stand bekannt: unbefristet
+    $id = (int) ($eintrag['post'] ?? 0);
+    $veroeffentlicht = $id && function_exists('get_post_time') ? (int) get_post_time('U', true, $id) : 0;
+    return max($seit, $veroeffentlicht);
+}
+
+/** Zeitpunkt, zu dem ein fester Platz endet (0 = unbefristet). „Hervorhebung bis“ des Beitrags geht vor. */
+function ma_layout_platz_bis(array $eintrag, int $stand): int {
+    $id = (int) ($eintrag['post'] ?? 0);
+    $bis = $id ? (string) get_post_meta($id, 'ma_top_until', true) : '';
+    if ($bis !== '') { $t = strtotime($bis . ' ' . (function_exists('wp_timezone_string') ? wp_timezone_string() : 'UTC')); return $t !== false ? $t : 0; }
+    $tage = ma_layout_fest_tage();
+    if ($tage <= 0) return 0;
+    $seit = ma_layout_platz_seit($eintrag, $stand);
+    return $seit > 0 ? $seit + $tage * DAY_IN_SECONDS : 0;
+}
+
+/** Ist die Frist des festen Platzes überschritten? */
+function ma_layout_platz_abgelaufen(array $eintrag, int $stand, ?int $jetzt = null): bool {
+    $bis = ma_layout_platz_bis($eintrag, $stand);
+    return $bis > 0 && $bis <= ($jetzt ?? time());
+}
+
 /**
  * Abgelaufene Hervorhebungen räumen (03.10.2026): höchstens stündlich
  * verlassen Beiträge mit überschrittenem „Hervorhebung bis“ alle festen
  * Plätze, mit Eintrag im Verlauf. Die Seite blendet sie schon vorher aus
  * (ma_layout_post_platzierbar); hier wird die Karte bereinigt.
  */
-function ma_layout_hervorhebungen_raeumen(): int {
+function ma_layout_hervorhebungen_raeumen(?int $jetzt = null): int {
     $n = 0;
     foreach (get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => 200, 'fields' => 'ids', 'meta_key' => 'ma_top_until', 'meta_compare' => '!=', 'meta_value' => '']) as $id) {
-        if (!ma_layout_hervorhebung_abgelaufen((int) $id) || !ma_layout_plaetze_von((int) $id)) continue;
+        if (!ma_layout_hervorhebung_abgelaufen((int) $id, $jetzt) || !ma_layout_plaetze_von((int) $id)) continue;
         ma_layout_post_entfernen((int) $id, '', true);
         if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen((int) $id, 'Hervorhebung abgelaufen: fester Platz beendet', '', 0);
         $n++;
+    }
+    // Feste Plätze ohne „Hervorhebung bis“, deren Frist (fest_tage) um ist: Platz zurück an die Automatik.
+    $tage = ma_layout_fest_tage();
+    if ($tage > 0) foreach (array_keys(ma_layout_seiten()) as $seite) {
+        $karte = ma_layout_get($seite);
+        $weg = [];
+        foreach ($karte['slots'] as $slot => $e) if (ma_layout_platz_abgelaufen($e, $karte['stand'], $jetzt)) $weg[$slot] = (int) $e['post'];
+        if (!$weg) continue;
+        foreach (array_keys($weg) as $slot) unset($karte['slots'][$slot]);
+        $karte = ma_layout_speichern($seite, $karte);
+        ma_layout_meta_abgleichen($seite, $karte['slots']);
+        foreach ($weg as $slot => $id) { if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Fester Platz abgelaufen (' . $tage . ' Tage): ' . ma_layout_platz_label($seite, $slot), '', 0); $n++; }
     }
     return $n;
 }
@@ -176,10 +228,11 @@ add_action('init', function (): void {
 }, 40);
 
 /** Feste Plätze einer Seite: Platz => Beitrags-ID, nur platzierbare Beiträge. */
-function ma_layout_feste_plaetze(string $seite): array {
+function ma_layout_feste_plaetze(string $seite, ?int $jetzt = null): array {
     ma_layout_migrieren();
     $raus = [];
-    foreach (ma_layout_get($seite)['slots'] as $slot => $e) if (ma_layout_post_platzierbar($e['post'], $seite)) $raus[$slot] = $e['post'];
+    $karte = ma_layout_get($seite);
+    foreach ($karte['slots'] as $slot => $e) if (ma_layout_post_platzierbar($e['post'], $seite) && !ma_layout_platz_abgelaufen($e, $karte['stand'], $jetzt)) $raus[$slot] = $e['post'];
     return $raus;
 }
 
@@ -235,7 +288,7 @@ function ma_layout_set(string $seite, string $slot, int $post, array $opt = []) 
     $schon = array_keys(array_filter($karte['slots'], fn($e, $s) => $e['post'] === $post && $s !== $slot, ARRAY_FILTER_USE_BOTH));
     $doppelt = !empty($opt['doppelt']);
     if ($schon && !$doppelt) return ma_layout_fehler('ma_layout_doppelt', 'Die Meldung steht auf dieser Seite schon fest (' . ma_layout_slots($seite)[$schon[0]] . '). Für einen zweiten Platz „Nochmal einsetzen“ wählen.', 409);
-    $karte['slots'][$slot] = ['post' => $post] + (($schon || $doppelt) ? ['doppelt' => true] : []);
+    $karte['slots'][$slot] = ['post' => $post, 'seit' => time()] + (($schon || $doppelt) ? ['doppelt' => true] : []);
     $karte = ma_layout_speichern($seite, $karte);
     ma_layout_meta_abgleichen($seite, $karte['slots']);
     if (empty($opt['still']) && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post, ($schon ? 'Nochmal eingesetzt: ' : (get_post_status($post) === 'publish' ? 'Fester Platz: ' : 'Vorgemerkt: ')) . ma_layout_platz_label($seite, $slot));
@@ -272,8 +325,8 @@ function ma_layout_tauschen(string $seite, string $von, string $nach, int $rev =
     if (!ma_layout_post_platzierbar($a, $seite)) return ma_layout_fehler('ma_layout_beitrag', 'Diese Meldung lässt sich hier nicht verschieben. Über „Ersetzen“ einsetzen.');
     $neu = $karte['slots'];
     unset($neu[$von], $neu[$nach]);
-    $neu[$nach] = ['post' => $a] + (!empty($karte['slots'][$von]['doppelt']) ? ['doppelt' => true] : []);
-    if ($b && ma_layout_post_platzierbar($b, $seite)) $neu[$von] = ['post' => $b] + (!empty($karte['slots'][$nach]['doppelt']) ? ['doppelt' => true] : []);
+    $neu[$nach] = ['post' => $a, 'seit' => time()] + (!empty($karte['slots'][$von]['doppelt']) ? ['doppelt' => true] : []);
+    if ($b && ma_layout_post_platzierbar($b, $seite)) $neu[$von] = ['post' => $b, 'seit' => time()] + (!empty($karte['slots'][$nach]['doppelt']) ? ['doppelt' => true] : []);
     $karte['slots'] = $neu;
     $karte = ma_layout_speichern($seite, $karte);
     ma_layout_meta_abgleichen($seite, $karte['slots']);
@@ -294,7 +347,8 @@ function ma_layout_ersetzen(string $seite, array $slots, int $rev = 0) {
     foreach ($slots as $slot => $e) {
         $id = (int) (is_array($e) ? ($e['post'] ?? 0) : $e);
         if (!isset($gueltig[$slot]) || !(ma_layout_post_platzierbar($id, $seite) || ma_layout_post_vormerkbar($id))) continue;
-        $neu[$slot] = ['post' => $id] + (is_array($e) && !empty($e['doppelt']) ? ['doppelt' => true] : []);
+        $seit = (int) (is_array($e) ? ($e['seit'] ?? 0) : 0) ?: ((($karte['slots'][$slot]['post'] ?? 0) === $id) ? (int) ($karte['slots'][$slot]['seit'] ?? 0) : 0) ?: time();
+        $neu[$slot] = ['post' => $id, 'seit' => $seit] + (is_array($e) && !empty($e['doppelt']) ? ['doppelt' => true] : []);
     }
     $karte['slots'] = $neu;
     $karte = ma_layout_speichern($seite, $karte);
@@ -539,13 +593,13 @@ function ma_layout_migrieren(): void {
         $slots = [];
         foreach (['aufmacher', 'buehne-1', 'buehne-2', 'buehne-3', 'buehne-4'] as $platz) {
             $q = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'meta_key' => 'ma_startplatz', 'meta_value' => $platz, 'orderby' => 'modified', 'order' => 'DESC']);
-            if ($q) $slots[$platz] = ['post' => (int) $q[0]->ID];
+            if ($q) $slots[$platz] = ['post' => (int) $q[0]->ID, 'seit' => time()];
         }
         if (empty($slots['aufmacher'])) {
             foreach (get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5, 'meta_key' => 'ma_top_pinned', 'meta_value' => '1', 'orderby' => 'date', 'order' => 'DESC']) as $p) {
                 if ((string) get_post_meta($p->ID, 'ma_startplatz', true) === 'aus') continue;
                 $bis = (string) get_post_meta($p->ID, 'ma_top_until', true);
-                if ($bis === '' || strtotime($bis) > time()) { $slots['aufmacher'] = ['post' => (int) $p->ID]; break; }
+                if ($bis === '' || strtotime($bis) > time()) { $slots['aufmacher'] = ['post' => (int) $p->ID, 'seit' => time()]; break; }
             }
         }
         $karte = ma_layout_speichern('startseite', ['rev' => 0, 'slots' => $slots]);

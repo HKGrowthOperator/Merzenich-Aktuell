@@ -5,6 +5,7 @@
  */
 define('ABSPATH', __DIR__);
 define('MA_CORE_VERSION', 'test');
+define('DAY_IN_SECONDS', 86400); define('HOUR_IN_SECONDS', 3600);
 
 class WP_Post { public $ID; public $post_type = 'post'; public $post_status = 'publish'; public $post_title = ''; public $post_date_gmt = '2026-10-01 10:00:00'; public $post_modified = '2026-10-01 10:00:00';
     function __construct(int $id, array $a = []) { $this->ID = $id; $this->post_title = "Meldung $id"; foreach ($a as $k => $v) $this->$k = $v; } }
@@ -26,6 +27,7 @@ function get_post_thumbnail_id($id) { return (int) ($GLOBALS['meta'][$id]['_thum
 function wp_get_attachment_image_src($bild, $g) { return $GLOBALS['bilder'][$bild] ?? false; }
 function has_category($slug, $id) { return in_array($slug, $GLOBALS['cats'][$id] ?? [], true); }
 function get_current_user_id() { return 7; }
+function get_post_time($f, $gmt, $p) { $p = $p instanceof WP_Post ? $p : get_post($p); return $p ? strtotime($p->post_date_gmt . ' UTC') : 0; }
 function get_posts(array $a) {
     $raus = [];
     foreach ($GLOBALS['posts'] as $p) {
@@ -86,7 +88,7 @@ pruefe('Alter Aufmacher wieder automatisch (Meta)', get_post_meta(1, 'ma_startpl
 $e = ma_layout_set('startseite', 'blaulicht.gross.1', 2);
 pruefe('Zweiter Platz ohne „doppelt“ abgelehnt', is_wp_error($e) ? $e->get_error_code() : 'ok', 'ma_layout_doppelt');
 $k = ma_layout_set('startseite', 'blaulicht.gross.1', 2, ['doppelt' => true]);
-pruefe('Mit „doppelt“ erlaubt, Flag gespeichert', $k['slots']['blaulicht.gross.1'] ?? null, ['post' => 2, 'doppelt' => true]);
+pruefe('Mit „doppelt“ erlaubt, Flag gespeichert (seit = Zeitpunkt des Einsetzens)', array_diff_key($k['slots']['blaulicht.gross.1'] ?? [], ['seit' => 1]), ['post' => 2, 'doppelt' => true]);
 $e = ma_layout_set('startseite', 'buehne-1', 3, ['rev' => 1]);
 pruefe('Veraltete rev → Konflikt 409', is_wp_error($e) ? ($e->data['status'] ?? 0) : 0, 409);
 $k = ma_layout_set('startseite', 'buehne-1', 3, ['rev' => $k['rev']]);
@@ -247,6 +249,40 @@ pruefe('Rückweg (Optionen gelöscht): ma_top_pinned wird Aufmacher', ma_layout_
 $GLOBALS['meta'][9]['ma_top_until'] = '2020-01-01 00:00:00'; $GLOBALS['meta'][9]['ma_startplatz'] = 'auto'; $GLOBALS['opt'] = [];
 ma_layout_migrieren();
 pruefe('Abgelaufene Fixierung wird nicht übernommen', ma_layout_get('startseite')['slots'], []);
+
+echo "\nFeste Plätze laufen aus (1.27.2)\n";
+$GLOBALS['opt'] = ['ma_layout_migration' => '1', 'ma_relevanz_einstellung' => ['fest_tage' => 7]]; $GLOBALS['meta'] = []; $GLOBALS['verlauf'] = [];
+$jetzt = 1791000000; // Sat, 03 Oct 2026 04:00:00 GMT; die Meldungen sind seit 01.10. veröffentlicht
+foreach ([61, 62, 63, 64] as $id) meldung($id, ['leben'], ['w' => 1200], ['post_date_gmt' => '2026-09-01 10:00:00']);
+$k = ma_layout_set('startseite', 'buehne-1', 61);
+pruefe('Einsetzen merkt sich den Zeitpunkt (seit)', ($k['slots']['buehne-1']['seit'] ?? 0) > 0, true);
+pruefe('ma_layout_get behält seit', (ma_layout_get('startseite')['slots']['buehne-1']['seit'] ?? 0) > 0, true);
+$GLOBALS['opt']['ma_layout_startseite'] = ['v' => 1, 'rev' => 3, 'stand' => $jetzt - 10 * DAY_IN_SECONDS, 'von' => 7, 'slots' => [
+    'buehne-1' => ['post' => 61, 'seit' => $jetzt - 8 * DAY_IN_SECONDS], 'buehne-2' => ['post' => 62, 'seit' => $jetzt - 6 * DAY_IN_SECONDS], 'buehne-3' => ['post' => 63], 'buehne-4' => ['post' => 64, 'seit' => $jetzt - 30 * DAY_IN_SECONDS]]];
+$GLOBALS['meta'][64]['ma_top_until'] = '2030-01-01 00:00:00';
+pruefe('Nach 8 Tagen ist der Platz frei (Frist 7 Tage)', isset(ma_layout_feste_plaetze('startseite', $jetzt)['buehne-1']), false);
+pruefe('Nach 6 Tagen steht die Meldung noch', ma_layout_feste_plaetze('startseite', $jetzt)['buehne-2'] ?? 0, 62);
+pruefe('Ohne Zeitpunkt zählt der Stand der Karte (10 Tage): abgelaufen', isset(ma_layout_feste_plaetze('startseite', $jetzt)['buehne-3']), false);
+pruefe('„Hervorhebung bis“ in der Zukunft geht vor: bleibt nach 30 Tagen', ma_layout_feste_plaetze('startseite', $jetzt)['buehne-4'] ?? 0, 64);
+pruefe('Ablaufzeitpunkt = seit + 7 Tage', ma_layout_platz_bis(['post' => 62, 'seit' => $jetzt - 6 * DAY_IN_SECONDS], 0), $jetzt + DAY_IN_SECONDS);
+pruefe('Ablaufzeitpunkt folgt „Hervorhebung bis“', ma_layout_platz_bis(['post' => 64, 'seit' => $jetzt], 0), strtotime('2030-01-01 00:00:00 UTC'));
+$GLOBALS['posts'][61]->post_date_gmt = gmdate('Y-m-d H:i:s', $jetzt - 2 * DAY_IN_SECONDS);
+pruefe('Vormerkung: Frist läuft erst ab Veröffentlichung (vor 2 Tagen)', ma_layout_feste_plaetze('startseite', $jetzt)['buehne-1'] ?? 0, 61);
+$GLOBALS['posts'][61]->post_date_gmt = '2026-09-01 10:00:00';
+$GLOBALS['opt']['ma_relevanz_einstellung'] = ['fest_tage' => 0];
+pruefe('0 Tage = unbefristet: alle vier Plätze stehen', count(ma_layout_feste_plaetze('startseite', $jetzt)), 4);
+pruefe('Unbefristet: kein Ablaufzeitpunkt', ma_layout_platz_bis(['post' => 62, 'seit' => $jetzt - 6 * DAY_IN_SECONDS], 0), 0);
+$GLOBALS['opt']['ma_relevanz_einstellung'] = ['fest_tage' => 7];
+pruefe('Ohne Zeitpunkt und ohne Stand: unbefristet', ma_layout_platz_abgelaufen(['post' => 63], 0, $jetzt), false);
+$n = ma_layout_hervorhebungen_raeumen($jetzt);
+pruefe('Räumen nimmt die abgelaufenen Plätze aus der Karte', [$n, array_keys(ma_layout_get('startseite')['slots'])], [2, ['buehne-2', 'buehne-4']]);
+pruefe('Verlauf nennt den Ablauf', in_array('Fester Platz abgelaufen (7 Tage): Startseite: Bühne 1 (rechts oben)', $GLOBALS['verlauf'][61] ?? [], true), true);
+pruefe('Meta der abgelaufenen Meldung zurück auf auto', get_post_meta(61, 'ma_startplatz', true), 'auto');
+pruefe('Meta der bleibenden Meldung zeigt ihren Platz', get_post_meta(62, 'ma_startplatz', true), 'buehne-2');
+$k = ma_layout_tauschen('startseite', 'buehne-2', 'buehne-3', 0, 0, 63);
+pruefe('Tauschen bestätigt beide Plätze neu (seit = jetzt)', [($k['slots']['buehne-3']['seit'] ?? 0) > $jetzt, ($k['slots']['buehne-2']['seit'] ?? 0) > $jetzt], [true, true]);
+$k = ma_layout_ersetzen('startseite', ['buehne-3' => ['post' => 62, 'seit' => $jetzt - DAY_IN_SECONDS], 'buehne-1' => ['post' => 61]]);
+pruefe('Ersetzen: Zeitpunkt aus der Anfrage, sonst jetzt', [$k['slots']['buehne-3']['seit'] ?? 0, ($k['slots']['buehne-1']['seit'] ?? 0) > $jetzt], [$jetzt - DAY_IN_SECONDS, true]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

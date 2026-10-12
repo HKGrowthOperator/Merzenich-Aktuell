@@ -52,6 +52,8 @@ function ma_relevanz_einstellung(): array {
         'abklingen' => max(0.0, min(5.0, (float) ($e['abklingen'] ?? 1.0))),
         'hero_ab' => max(7, min(10, (int) ($e['hero_ab'] ?? 9))),
         'buehne_ab' => max(6, min(10, (int) ($e['buehne_ab'] ?? 8))),
+        // Feste Plätze ohne „Hervorhebung bis“ enden nach so vielen Tagen (1.27.2); 0 = unbefristet.
+        'fest_tage' => max(0, min(60, (int) ($e['fest_tage'] ?? 7))),
     ];
 }
 if (!defined('MA_RELEVANZ_FRISCH_STUNDEN')) define('MA_RELEVANZ_FRISCH_STUNDEN', 72);
@@ -459,6 +461,7 @@ add_action('admin_post_ma_relevanz_einstellung', function (): void {
     update_option('ma_relevanz_einstellung', [
         'frisch_stunden' => (int) ($_POST['frisch_stunden'] ?? 72), 'abklingen' => (float) str_replace(',', '.', (string) ($_POST['abklingen'] ?? '1')),
         'hero_ab' => (int) ($_POST['hero_ab'] ?? 9), 'buehne_ab' => (int) ($_POST['buehne_ab'] ?? 8),
+        'fest_tage' => (int) ($_POST['fest_tage'] ?? 7),
     ], false);
     $neu = ma_relevanz_einstellung();
     update_option('ma_relevanz_einstellung_log', array_slice(array_merge((array) get_option('ma_relevanz_einstellung_log', []), [['t' => time(), 'u' => get_current_user_id(), 'alt' => $alt, 'neu' => $neu]]), -50), false);
@@ -482,8 +485,9 @@ function ma_freigaben_seite(): void {
     }
     echo '<h2 id="stufen" style="margin-top:28px">Die zehn Stufen</h2><table class="ma-relevanz-stufen"><thead><tr><th>Relevanz</th><th>Bedeutung</th><th>Platz auf der Startseite (mit Startseiten-Freigabe)</th></tr></thead><tbody>';
     foreach (ma_relevanz_stufen() as $s) printf('<tr><td>%d</td><td><strong>%s</strong></td><td>%s</td></tr>', $s['von'], esc_html($s['name']), esc_html($s['wo']));
-    printf('</tbody></table><p class="description">Ohne Startseiten-Freigabe steht eine Meldung nur in ihrer Rubrik, auch mit Relevanz 10. „Frisch“ heißt jünger als %d Stunden. Sortiert wird nach Relevanz minus %s Punkt(e) je Tag Alter; bei gleichem Wert steht die neuere Meldung vorn. Ein fester Platz unter <a href="%s">Startseite</a> geht immer vor.</p>',
-        $e['frisch_stunden'], esc_html(number_format_i18n($e['abklingen'], 1)), esc_url(admin_url('admin.php?page=ma-startseite')));
+    printf('</tbody></table><p class="description">Ohne Startseiten-Freigabe steht eine Meldung nur in ihrer Rubrik, auch mit Relevanz 10. „Frisch“ heißt jünger als %d Stunden. Sortiert wird nach Relevanz minus %s Punkt(e) je Tag Alter; bei gleichem Wert steht die neuere Meldung vorn. Ein fester Platz unter <a href="%s">Startseite</a> geht immer vor; ohne „Hervorhebung bis“ endet er %s, dann übernimmt wieder die Automatik.</p>',
+        $e['frisch_stunden'], esc_html(number_format_i18n($e['abklingen'], 1)), esc_url(admin_url('admin.php?page=ma-startseite')),
+        $e['fest_tage'] > 0 ? 'nach ' . $e['fest_tage'] . ' Tagen' : 'nie (unbefristet)');
     if (current_user_can('manage_options')) {
         echo '<h2 id="einstellung">Einstellungen der Platzierung</h2><form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" class="ma-relevanz-einstellung"><input type="hidden" name="action" value="ma_relevanz_einstellung">';
         wp_nonce_field('ma_relevanz_einstellung');
@@ -491,6 +495,7 @@ function ma_freigaben_seite(): void {
         printf('<label>Abklingen je Tag Alter (Punkte) <input type="number" name="abklingen" min="0" max="5" step="0.1" value="%s"></label>', esc_attr((string) $e['abklingen']));
         printf('<label>Aufmacher ab Relevanz <input type="number" name="hero_ab" min="7" max="10" value="%d"></label>', $e['hero_ab']);
         printf('<label>Bühne ab Relevanz <input type="number" name="buehne_ab" min="6" max="10" value="%d"></label>', $e['buehne_ab']);
+        printf('<label>Feste Plätze enden nach (Tage, 0 = unbefristet) <input type="number" name="fest_tage" min="0" max="60" value="%d"></label>', $e['fest_tage']);
         echo '<button class="button">Speichern</button></form>';
     }
     echo '</div>';

@@ -20,6 +20,11 @@ pruefe('HEAD wie GET', ma_rest_cache_kopfzeilen([], 'HEAD', false, $t), ['Cache-
 pruefe('Kleingeschriebene Methode wird erkannt', ma_rest_cache_kopfzeilen([], 'get', false, $t), ['Cache-Control' => 'public, max-age=300', 'Expires' => $ablauf(300)]);
 pruefe('POST (ma/v1/puls, ma/v1/push): nicht speichern', ma_rest_cache_kopfzeilen([], 'POST', false, $t), ['Cache-Control' => 'no-store, max-age=0', 'Expires' => $ablauf(0)]);
 pruefe('OPTIONS: nicht speichern', ma_rest_cache_kopfzeilen([], 'OPTIONS', false, $t)['Cache-Control'], 'no-store, max-age=0');
+pruefe('Fehlerantwort 404 (rest_no_route): nicht speichern', ma_rest_cache_kopfzeilen([], 'GET', false, $t, 404), ['Cache-Control' => 'no-store, max-age=0', 'Expires' => $ablauf(0)]);
+pruefe('Fehlerantwort 401 (geschützter Endpunkt): nicht speichern', ma_rest_cache_kopfzeilen([], 'GET', false, $t, 401)['Cache-Control'], 'no-store, max-age=0');
+pruefe('Fehlerantwort 500: nicht speichern', ma_rest_cache_kopfzeilen([], 'GET', false, $t, 500)['Cache-Control'], 'no-store, max-age=0');
+pruefe('Umleitung 301: nicht speichern', ma_rest_cache_kopfzeilen([], 'GET', false, $t, 301)['Cache-Control'], 'no-store, max-age=0');
+pruefe('204 ohne Inhalt: speichern wie 200', ma_rest_cache_kopfzeilen([], 'GET', false, $t, 204)['Cache-Control'], 'public, max-age=300');
 pruefe('Expires im HTTP-Datumsformat', preg_match('/^[A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} \d{4} \d{2}:\d{2}:\d{2} GMT$/', ma_rest_cache_kopfzeilen([], 'GET', false, $t)['Expires']), 1);
 pruefe('Expires für den Testzeitpunkt wörtlich', ma_rest_cache_kopfzeilen([], 'GET', false, $t)['Expires'], 'Sat, 03 Oct 2026 04:05:00 GMT');
 

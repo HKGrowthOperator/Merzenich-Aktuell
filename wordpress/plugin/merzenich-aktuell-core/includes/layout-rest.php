@@ -104,7 +104,9 @@ function ma_layout_rest_belegung(string $seite): array {
         $id = (int) ($e['post'] ?? 0);
         if ($id && !isset($posts[$id])) $posts[$id] = ma_layout_karte_daten(get_post($id));
         $plaetze[$slot] = ['label' => $label, 'post' => $id ? $posts[$id] : null, 'fest' => !empty($e['fest']), 'doppelt' => !empty($karte['slots'][$slot]['doppelt']),
-            'warnungen' => array_values(array_map(fn($w) => ['code' => $w, 'text' => ma_layout_warnung_text($w)], (array) ($e['warnungen'] ?? [])))];
+            'warnungen' => array_values(array_map(fn($w) => ['code' => $w, 'text' => ma_layout_warnung_text($w)], (array) ($e['warnungen'] ?? []))),
+            // Fester Platz: Zeitpunkt, zu dem er von selbst endet (1.27.2); 0 = unbefristet.
+            'bis' => !empty($e['fest']) && isset($karte['slots'][$slot]) ? ma_layout_platz_bis($karte['slots'][$slot], $karte['stand']) : 0];
         // Vorgemerkt: noch nicht veröffentlicht, der Platz bleibt bis zur Freigabe automatisch.
         $vm = (int) ($karte['slots'][$slot]['post'] ?? 0);
         if ($vm && $vm !== $id && function_exists('ma_layout_post_vormerkbar') && ma_layout_post_vormerkbar($vm)) $plaetze[$slot]['vorgemerkt'] = ma_layout_karte_daten(get_post($vm));
