@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: ImageMagick fuer deploy/werben-bilder.mjs
+        # ubuntu-24.04-Runner bringen kein ImageMagick mehr mit: der Lauf vom 06.10.2026
+        # brach mit "spawnSync convert ENOENT" ab (werben-bilder.mjs verkleinert mit convert).
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends imagemagick
       - name: Kuratierte Commons-Bilder lokal materialisieren
         run: node deploy/werben-bilder.mjs
       - name: Bildset pruefen

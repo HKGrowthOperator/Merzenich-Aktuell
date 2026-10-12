@@ -1,0 +1,19 @@
+# BuildKit liest "<Dockerfile>.dockerignore" neben dem Dockerfile. Gebraucht wird
+# nur deploy/coolify/umleitung.conf; alles andere bleibt aus dem Build-Kontext
+# (Ausschlussliste wie bei Dockerfile.dockerignore, siehe die Begruendung dort).
+
+.git
+.github
+node_modules
+
+artifacts
+chatgpt-site
+docs
+imports
+inhalte
+qa
+site-source
+wordpress
+wordpress-delivery
+
+deploy/coolify/kommentare

@@ -1,0 +1,19 @@
+# Merzenich Aktuell - Umleitung der alten Vorschauadresse auf merzenich-aktuell.de.
+#
+# Loest deploy/coolify/Dockerfile (die statische Vorschau) in Coolify ab: kein
+# Inhalt, nur nginx mit einer 301-Regel (umleitung.conf). In Coolify bei der
+# bestehenden Anwendung nur "Dockerfile Location" auf
+# /deploy/coolify/Dockerfile.umleitung stellen und neu deployen (README.md).
+#
+# Die QA (qa.yml) baut das Image bei jedem Lauf und prueft 301, Pfad und Abfrage.
+
+FROM nginx:1.27-alpine
+
+RUN rm -f /etc/nginx/conf.d/default.conf
+COPY deploy/coolify/umleitung.conf /etc/nginx/conf.d/umleitung.conf
+RUN nginx -t
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD wget -q -O /dev/null http://127.0.0.1/gesund || exit 1
+
+EXPOSE 80

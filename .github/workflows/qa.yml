@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # gh workflow run build-wordpress-packages.yml nach geaenderten Theme-Vorlagen
 
 # Laeufe auf main nacheinander: zwei gleichzeitige Laeufe haben beide
 # Screenshots committet und sich beim Rebase an den Binaerdateien
@@ -388,8 +389,28 @@ jobs:
         if: always()
         run: docker rm -f merzenich-aktuell-qa || true
 
+      - name: Umleitungs-Image fuer die alte Vorschauadresse bauen und pruefen
+        # deploy/coolify/Dockerfile.umleitung loest die Vorschau auf Coolify ab: jede Anfrage
+        # bekommt 301 auf merzenich-aktuell.de mit gleichem Pfad (12.10.2026).
+        run: |
+          docker build -f deploy/coolify/Dockerfile.umleitung -t merzenich-aktuell-umleitung .
+          docker run -d --rm --name merzenich-aktuell-umleitung -p 4174:80 merzenich-aktuell-umleitung
+          trap 'docker rm -f merzenich-aktuell-umleitung > /dev/null 2>&1 || true' EXIT
+          for i in $(seq 1 20); do
+            if curl --silent --fail -o /dev/null http://127.0.0.1:4174/gesund; then break; fi
+            sleep 1
+          done
+          curl --silent -o /dev/null -w '%{http_code}\n' http://127.0.0.1:4174/gesund | grep -qx '204'
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' http://127.0.0.1:4174/ | grep -qx '301 https://merzenich-aktuell.de/'
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' 'http://127.0.0.1:4174/blaulicht/einsatz-134-rauch-buergewald/?a=1' | grep -qx '301 https://merzenich-aktuell.de/blaulicht/einsatz-134-rauch-buergewald/?a=1'
+          curl --silent -o /dev/null -w '%{http_code} %{redirect_url}\n' -X POST http://127.0.0.1:4174/api/kommentare | grep -qx '301 https://merzenich-aktuell.de/api/kommentare'
+          curl --silent -I http://127.0.0.1:4174/ | grep -qiE '^server: nginx[[:space:]]*$'
+          echo 'Umleitung: 301 auf merzenich-aktuell.de, Pfad und Abfrage bleiben erhalten.'
+
       - name: Commit generierte Ansichten und QA-Screenshots
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.actor != 'github-actions[bot]' && success()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -399,7 +420,11 @@ jobs:
           # aufnehmen; alles andere, was die QA-Schritte schreiben (z. B.
           # qa/routen.json), stellt --autostash beim Rebase beiseite. Vorher
           # brach der Rebase an ungestageten Dateien ab (QA #415/#416).
-          git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data
+          # Theme-Vorlagen (deploy/wp-theme.mjs) gehoeren dazu: ohne sie blieben sie auf dem
+          # Runner liegen, und das Theme-Zip aus build-wordpress-packages.yml trug alte
+          # Vorlagen (Audit 12.10.2026).
+          git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
+          THEME_GEAENDERT=$(git diff --cached --name-only -- wordpress/theme | wc -l)
           if git diff --cached --quiet; then
             echo 'Nichts nachzuziehen.'
           else
@@ -416,7 +441,14 @@ jobs:
                 echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
                 break
               fi
-              if git push origin HEAD:main; then break; fi
+              if git push origin HEAD:main; then
+                # [skip ci] im Commit unterdrueckt den Paketbau: bei geaenderten Theme-Vorlagen
+                # ausdruecklich anstossen, damit das Theme-Zip den Stand von main traegt.
+                if [ "$THEME_GEAENDERT" -gt 0 ]; then
+                  gh workflow run build-wordpress-packages.yml --ref main || echo 'Paketbau nicht angestossen (gh workflow run fehlgeschlagen).'
+                fi
+                break
+              fi
               sleep $((versuch * 7))
             done
           fi

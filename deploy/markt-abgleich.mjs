@@ -31,7 +31,7 @@ const trocken = process.argv.includes('--dry');
 const BA = 'https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobdetails/';
 // Oeffentlicher Schluessel der Jobboerse (dokumentiert u. a. bei bund.dev).
 const BA_KEY = 'jobboerse-jobsuche';
-const UA = 'MerzenichAktuell-Marktabgleich/1.0 (https://merzenichaktuell.hk-growthoperator.de)';
+const UA = 'MerzenichAktuell-Marktabgleich/1.0 (https://merzenich-aktuell.de)';
 
 const daten = JSON.parse(readFileSync(pfad, 'utf8'));
 const jetzt = new Date();

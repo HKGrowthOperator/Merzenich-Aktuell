@@ -1,9 +1,45 @@
-# Coolify: Vorschau von Merzenich Aktuell (abgeschaltet)
+# Coolify: Vorschau von Merzenich Aktuell (abgeschaltet, Umleitung bereit)
 
-> **Seit 05.10.2026 abgeschaltet und gelöscht.** Ausgeliefert wird nur noch
-> WordPress auf https://merzenich-aktuell.de. Die Dateien hier bleiben, weil die
-> QA das Image als Test des statischen Bestands baut; nichts im Theme oder Plugin
-> hängt mehr an der Vorschauseite.
+> **Seit 05.10.2026 abgeschaltet.** Ausgeliefert wird nur noch WordPress auf
+> https://merzenich-aktuell.de. Die Dateien hier bleiben, weil die QA das Image
+> als Test des statischen Bestands baut; nichts im Theme oder Plugin hängt mehr
+> an der Vorschauseite.
+>
+> **Stand 12.10.2026:** `merzenichaktuell.hk-growthoperator.de` zeigt per DNS
+> weiter auf den Coolify-Server und antwortet mit 503 („no available server“).
+> `Dockerfile.umleitung` ersetzt die Vorschau durch eine dauerhafte Umleitung,
+> siehe unten „Umleitung auf merzenich-aktuell.de“.
+
+## Umleitung auf merzenich-aktuell.de (seit 12.10.2026)
+
+`Dockerfile.umleitung` baut nur nginx mit `umleitung.conf`: jede Anfrage bekommt
+`301 https://merzenich-aktuell.de<Pfad><Abfrage>`, `/gesund` antwortet 204 fuer
+die Gesundheitspruefung. Kein Inhalt, keine Abhaengigkeit von chatgpt-site/.
+Die QA (`.github/workflows/qa.yml`, Schritt „Umleitungs-Image … bauen und
+pruefen“) baut das Image bei jedem Lauf und prueft Statuscode, Pfad und Abfrage.
+
+So schaltet der Betreiber um (nur in Coolify moeglich, nicht aus dem Repository):
+
+1. Coolify -> die bestehende Anwendung der Vorschau oeffnen.
+2. `Dockerfile Location` auf `/deploy/coolify/Dockerfile.umleitung` stellen.
+   Base Directory bleibt `/`, Port bleibt `80`, Branch bleibt `main`.
+   Persistent Storage `/data` und die Umgebungsvariablen (KOMMENTARE_*, SMTP_*)
+   werden nicht mehr gebraucht und koennen entfernt werden.
+3. Redeploy (bzw. Start, falls die Anwendung gestoppt ist).
+4. Pruefen:
+
+```
+curl -sI https://merzenichaktuell.hk-growthoperator.de/ | head -3
+# HTTP/2 301
+# location: https://merzenich-aktuell.de/
+curl -sI 'https://merzenichaktuell.hk-growthoperator.de/blaulicht/?a=1' | grep -i '^location'
+# location: https://merzenich-aktuell.de/blaulicht/?a=1
+```
+
+Alternative ohne Container: den DNS-Eintrag `merzenichaktuell` bei
+hk-growthoperator.de loeschen. Dann gibt es keine Umleitung, nur „Server nicht
+gefunden“; sinnvoll nur, wenn `site:merzenichaktuell.hk-growthoperator.de` bei
+Google keine Treffer zeigt.
 
 Dient dazu, den Stand unter einer erreichbaren Adresse anzusehen, ohne auf
 GitHub Pages oder Cloudflare zu warten.
@@ -16,6 +52,9 @@ GitHub Pages oder Cloudflare zu warten.
 | `nginx.conf` | **erzeugt** - nicht von Hand bearbeiten |
 | `erzeuge-nginx-conf.mjs` | erzeugt `nginx.conf` aus `_redirects` und `_headers` |
 | `Dockerfile.dockerignore` | haelt den Build-Kontext klein (BuildKit liest ihn neben dem Dockerfile) |
+| `Dockerfile.umleitung` | nginx-Image, das nur noch per 301 auf merzenich-aktuell.de umleitet (12.10.2026) |
+| `umleitung.conf` | die eine Umleitungsregel plus `/gesund` fuer die Gesundheitspruefung |
+| `Dockerfile.umleitung.dockerignore` | Build-Kontext fuer das Umleitungs-Image |
 
 `chatgpt-site/` ist der ausgelieferte Stand. Hier wird nichts gebaut, nur
 ausgeliefert. Das Image enthaelt keinerlei Build-Schritt und keine

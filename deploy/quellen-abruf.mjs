@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ziel = join(wurzel, 'imports', 'quellen');
-const UA = 'MerzenichAktuell-Recherche/1.0 (+https://merzenichaktuell.hk-growthoperator.de; Lokalredaktion)';
+const UA = 'MerzenichAktuell-Recherche/1.0 (+https://merzenich-aktuell.de; Lokalredaktion)';
 const nur = (process.argv.find((a) => a.startsWith('--nur=')) || '').slice(6).split(',').filter(Boolean);
 const ORTE = ['Merzenich', 'Golzheim', 'Girbelsrath', 'Morschenich', 'Bürgewald'];
 const pause = (ms) => new Promise((ok) => setTimeout(ok, ms));

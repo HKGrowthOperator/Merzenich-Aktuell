@@ -53,7 +53,7 @@ async function commonsInfo(sourceTitle) {
     iiurlwidth: '1600'
   });
   const r = await fetch('https://commons.wikimedia.org/w/api.php?' + qs, {
-    headers: { 'User-Agent': 'MerzenichAktuell-WerbenBildmaterialisierung/1.0 (https://merzenichaktuell.hk-growthoperator.de)' }
+    headers: { 'User-Agent': 'MerzenichAktuell-WerbenBildmaterialisierung/1.0 (https://merzenich-aktuell.de)' }
   });
   if (!r.ok) throw new Error(sourceTitle + ': Commons API ' + r.status);
   const j = await r.json();
@@ -115,7 +115,7 @@ for (const item of cfg.images) {
     console.warn(item.id + ': Lizenz laut Commons "' + info.license + '", erwartet "' + item.expectedLicense + '"');
   }
   const r = await fetch(info.download, {
-    headers: { 'User-Agent': 'MerzenichAktuell-WerbenBildmaterialisierung/1.0 (https://merzenichaktuell.hk-growthoperator.de)' }
+    headers: { 'User-Agent': 'MerzenichAktuell-WerbenBildmaterialisierung/1.0 (https://merzenich-aktuell.de)' }
   });
   if (!r.ok) throw new Error(item.sourceTitle + ': Bilddownload ' + r.status);
   const buf = Buffer.from(await r.arrayBuffer());
