@@ -9,7 +9,7 @@ Dieses Dokument ist die verbindliche Arbeitsanweisung für alle zukünftigen Cha
 - Repository: `HKGrowthOperator/Merzenich-Aktuell`
 - Branch: `main`
 - Source of Truth für Änderungen: dieses GitHub-Repository auf `main`
-- **Ausgeliefert wird seit 05.10.2026 nur noch WordPress auf `https://merzenich-aktuell.de` (IONOS).** Die Vorschauseite auf Coolify (`merzenichaktuell.hk-growthoperator.de`) ist abgeschaltet und gelöscht; nichts darf mehr von ihr abhängen.
+- **Ausgeliefert wird seit 05.10.2026 nur noch WordPress auf `https://merzenich-aktuell.de` (IONOS).** Die Vorschauseite auf Coolify (`merzenichaktuell.hk-growthoperator.de`) ist abgeschaltet; nichts darf mehr von ihr abhängen. Die Adresse zeigt per DNS noch auf den Coolify-Server (503); `deploy/coolify/Dockerfile.umleitung` leitet sie per 301 auf merzenich-aktuell.de um, sobald der Betreiber es in Coolify einstellt (12.10.2026).
 - Redaktioneller Stand: `chatgpt-site/` mit den Quellen unter `inhalte/` und den Generatoren unter `deploy/` (der Ordnername ist nur ein historischer technischer Name). Daraus entstehen die Import-Datei für WordPress, die Vorlagen des Themes und die Daten, die das Theme zur Laufzeit aus dem Repository liest (Spielstand, Stellen- und Immobilienmarkt).
 - `site-source/dist/` ist **nur lokaler, wegwerfbarer Build-Output** des historischen Generators: per `.gitignore` ausgeschlossen, nicht Teil des Deployments und niemals Source of Truth. Änderungen dort sind ungültig; produktive Änderungen müssen in versionierten Quellen/Generatoren erfolgen und im ausgelieferten `chatgpt-site/` materialisiert sein.
 - `deploy/coolify/` ist nur noch ein historischer Stand; die QA baut das Image weiter als Test des statischen Bestands, ausgeliefert wird es nicht.

@@ -41,7 +41,7 @@ Die Mitbewerber (Aachener Zeitung, Dürener Nachrichten, Rundschau, Radio Rur) s
 - **Ortsname im Titel und im ersten Absatz:** „Merzenich“, „Golzheim“, „Girbelsrath“, „Morschenich“, „Bürgewald“ dort, wo sie hingehören, nicht in jeden Satz.
 - **Eigene Berichte statt Zusammenfassungen:** Google erkennt, ob eine Meldung nur eine Pressemitteilung nacherzählt. Ratssitzung besucht, Verein befragt, Foto vor Ort geschossen: das zählt.
 - **Namen in der Byline:** Google bevorzugt Meldungen mit einer Person als Autor und einer Autorenseite. Seit Plugin 1.26.0 steht über einer Meldung der Name der Redakteurin oder des Redakteurs, der sie freigibt, mit Seite `/autor/<name>/` (Name, Funktion, Vorstellung, Meldungen). In den Strukturdaten steht dann eine Person (`Person` mit Seite, Funktion und Arbeitgeber). Meldungen von Polizei, Gemeinde, Vereinen und Firmen nennen diese als Organisation. Voraussetzung: Jede Person hat ein eigenes Konto mit dem Häkchen „Als Autor zeigen“ und gibt damit frei (`UEBERGABE-KBS.md`, Abschnitt 9). Was über Sammelkonten freigegeben wird, heißt weiter „Redaktion Merzenich Aktuell“.
-- **Bilder in drei Formaten:** Für die Schlagzeilen empfiehlt Google je Meldung Bilder in 16:9, 4:3 und 1:1 mit mindestens 1200 px Breite. Die hochgeladenen Fotos sind breit genug; die drei Zuschnitte liefert WordPress noch nicht (offener Punkt, Theme).
+- **Bilder in drei Formaten:** Für die Schlagzeilen empfiehlt Google je Meldung Bilder in 16:9, 4:3 und 1:1 mit mindestens 1200 px Breite. Die hochgeladenen Fotos sind breit genug; die drei Zuschnitte erzeugt das Plugin seit 1.17.0 je Beitragsbild (`includes/teilen-bilder.php`), NewsArticle führt alle drei.
 - **Geduld:** Nach dem Start einer neuen Quelle dauert es in der Regel zwei bis sechs Wochen, bis Google sie in den Nachrichten zeigt.
 
 ## Prüfen, ob es wirkt
@@ -68,10 +68,9 @@ Die Mitbewerber (Aachener Zeitung, Dürener Nachrichten, Rundschau, Radio Rur) s
    - **Tag 2:** `/vereine/`, `/sport/`, `/rathaus/` und die neuesten Meldungen.
 3. Sitemaps: Bei `wp-sitemap.xml` und `news-sitemap.xml` muss „Erfolgreich“ stehen.
 4. Publisher Center wie oben unter „Was der Betreiber einmalig tun muss“ anlegen.
-5. **Alte Vorschauadresse** `merzenichaktuell.hk-growthoperator.de` antwortet mit 503:
-   - Erst `site:merzenichaktuell.hk-growthoperator.de` bei Google suchen.
-   - Gibt es Treffer: dauerhaft (301) auf `https://merzenich-aktuell.de` umleiten.
-   - Sonst: den DNS-Eintrag löschen.
+5. **Alte Vorschauadresse** `merzenichaktuell.hk-growthoperator.de` antwortet mit 503 (Stand 12.10.2026; DNS zeigt noch auf den Coolify-Server):
+   - Umleitung (301 auf `https://merzenich-aktuell.de`, gleicher Pfad) liegt fertig im Repo: in Coolify „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen (`deploy/coolify/README.md`).
+   - Alternative, wenn `site:merzenichaktuell.hk-growthoperator.de` bei Google keine Treffer zeigt: den DNS-Eintrag löschen.
 
 **Was am meisten hilft: Links aus dem Ort.**
 - **Gemeinde:** Link von gemeinde-merzenich.de und Aufnahme in den Presseverteiler. Vorlage: `vorlagen/verlinkung-gemeinde.md`.

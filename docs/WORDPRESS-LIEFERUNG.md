@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-7. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.0 (Historie unten)
+12. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.1 (Historie unten)
+
+## Neu in Plugin 1.27.1 (12.10.2026): REST-Antworten kurz gespeichert, CI repariert, alte Vorschauadresse umleiten
+
+Nur das Plugin-Paket hochladen (`wordpress-delivery/merzenich-aktuell-core.zip`); das Theme bleibt 21.17.0. Ohne das Einspielen bleibt die 28-Tage-Speicherzeit auf `/wp-json/` bestehen.
+
+- **REST-Antworten (`/wp-json/…`) nur noch fünf Minuten gespeichert** (`includes/rest-cache.php`): Der Server bei IONOS gab anonymen REST-Antworten 28 Tage Speicherzeit mit (`Cache-Control: max-age=2419200`, `Expires` vier Wochen voraus; mod_expires für JSON), weil WordPress dort keine eigenen Kopfzeilen setzt. `/api/latest.json`, die Feeds und `/assets/ressort-menue.json` hatten schon eigene Angaben. Jetzt: anonymes GET/HEAD `public, max-age=300` mit passendem `Expires`, alle anderen Methoden `no-store`. Angemeldete Benutzer (WordPress setzt no-cache) und Endpunkte mit eigener Angabe (`ma/v1/live`, `ma/v1/layout`) bleiben unverändert. Prüfung nach dem Einspielen: `curl -sD - -o /dev/null 'https://merzenich-aktuell.de/wp-json/wp/v2/posts?per_page=1'` muss `cache-control: public, max-age=300` zeigen. Test: `qa/wordpress/rest-cache-test.php`.
+- **CI „Materialize Werben Images“** lief seit dem 06.10. rot: `deploy/werben-bilder.mjs` verkleinert mit ImageMagick (`convert`), das auf den ubuntu-24.04-Runnern nicht mehr vorinstalliert ist („spawnSync convert ENOENT“). Der Workflow installiert ImageMagick jetzt vor dem Lauf.
+- **Theme-Vorlagen im CI nachgezogen:** `qa.yml` committet `wordpress/theme/merzenich-aktuell/vorlagen/` (erzeugt von `deploy/wp-theme.mjs` in der Kette) jetzt mit. Bisher blieben sie auf dem Runner liegen, und das Theme-Zip aus `build-wordpress-packages.yml` trug alte Vorlagen. Ändern sich Vorlagen, stößt der QA-Lauf den Paketbau an (`gh workflow run build-wordpress-packages.yml`), weil `[skip ci]` im Commit ihn sonst unterdrückt.
+- **Alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de`:** antwortet seit der Abschaltung mit 503 (DNS zeigt weiter auf den Coolify-Server, die Anwendung ist gestoppt). Im Repo liegt ein Umleitungs-Image (`deploy/coolify/Dockerfile.umleitung`, `umleitung.conf`): jede Anfrage bekommt 301 auf `https://merzenich-aktuell.de` mit gleichem Pfad und gleicher Abfrage. Die QA baut und prüft es bei jedem Lauf. **Betreiber:** in Coolify bei der alten Anwendung „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen (Anleitung `deploy/coolify/README.md`), oder den DNS-Eintrag löschen. Von hier aus nicht möglich (kein Coolify-Zugang). Adressen in den User-Agent-Kennungen der Abrufskripte (`markt-abgleich.mjs`, `werben-bilder.mjs`, `quellen-abruf.mjs`) zeigen auf `merzenich-aktuell.de`.
+- **Doku nachgezogen:** Rechtstexte-Fassung 2026-10-06 mit § 18-Person (Hinweis beim Eintrag 1.15.0), Bildzuschnitte vorhanden (`GOOGLE-NEWS.md`), Importer lädt seit 21.10.1 über `liveUrl()` (Hinweis beim Eintrag zum Import).
 
 ## Neu in Theme 21.17.0 / Plugin 1.27.0 (07.10.2026): bei Google gefunden werden
 
@@ -552,7 +562,7 @@ Datenmodell: eine Layout-Karte je Seite (`ma_layout_startseite`, `ma_layout_ress
 
 **Werbung ist an.** `ma_ads_enabled` = 1 und alle Plätze eingeschaltet (einmalig beim ersten Admin-Aufruf; danach unter Werbeplätze änderbar). Die sechs Musterflächen der Startseite (Bänder 1–6, Servicespalte, Bühne), die Sport-Seitenspalte, die Unternehmensspalte und die Fläche unter dem Artikeltext sind an die Werbeverwaltung gebunden (`ma_ad_marker_slot()`, `ma_render_werbeplatz()`): läuft dort eine freigegebene Anzeige, ersetzt sie die Musteranzeige; sonst bleibt die Musteranzeige, jetzt mit dem Label „Musteranzeige“ (`deploy/anzeigen.json`). Neue Plätze: `homepage_buehne`, `sport_sidebar`, `business_sidebar`.
 
-**Rechtstexte.** `/impressum/` und `/datenschutz/` sind Seiten der Installation (`includes/rechtstexte.php`, Fassung 2026-10-02): KBS Management GmbH als Anbieterin und Verantwortliche, Datenschutzerklärung nach der tatsächlichen Technik (Aufruf- und Besucherzählung mit Tages-Hash und 40 Tagen, Anzeigenzählung, Wetter über den eigenen Server, Formulare mit Eingang, Kommentare ohne IP-Speicherung, Zugänge und Verlauf, lokale Speicherung, Umleitung fehlender Dateien). Eine neue Fassung wird nur eingespielt, wenn der Text nicht von Hand geändert wurde (Merzenich Aktuell → Rechtstexte). Offen und nur dort sichtbar: § 18 Abs. 2 MStV-Person, AV-Vertrag IONOS, SMTP-Anbieter. Kommentare speichern keine IP-Adresse mehr (`pre_comment_user_ip`).
+**Rechtstexte.** `/impressum/` und `/datenschutz/` sind Seiten der Installation (`includes/rechtstexte.php`, Fassung 2026-10-02): KBS Management GmbH als Anbieterin und Verantwortliche, Datenschutzerklärung nach der tatsächlichen Technik (Aufruf- und Besucherzählung mit Tages-Hash und 40 Tagen, Anzeigenzählung, Wetter über den eigenen Server, Formulare mit Eingang, Kommentare ohne IP-Speicherung, Zugänge und Verlauf, lokale Speicherung, Umleitung fehlender Dateien). Eine neue Fassung wird nur eingespielt, wenn der Text nicht von Hand geändert wurde (Merzenich Aktuell → Rechtstexte). Offen und nur dort sichtbar: § 18 Abs. 2 MStV-Person, AV-Vertrag IONOS, SMTP-Anbieter. Kommentare speichern keine IP-Adresse mehr (`pre_comment_user_ip`). *Stand 12.10.2026: Fassung 2026-10-06, die § 18-Person ist eingetragen (siehe 21.13.0); offen bleiben AV-Vertrag und SMTP-Anbieter (Checkliste B6).*
 
 **Kopf.** Wettersymbol · Merzenich · Temperatur · Datum, ohne Uhrzeit, auch mobil (`v20.js`, `korrekturen.css`; `kopf-theme-einbinden.mjs` entfernt `data-clock` aus allen Seiten).
 
@@ -573,7 +583,7 @@ WordPress 7.1.2, frisch installiert am 30.09. (nur Musterinhalte). Eingerichtet 
 
 Beim Import aufgefallen und im Generator behoben: Termine trugen den Beginn als Beitragsdatum (WordPress setzte kommende Termine auf „Geplant“), und zwei Anhänge mit gleichem Titel wurden als Dublette übersprungen. Die fünf betroffenen Termine und das fehlende Beitragsbild wurden auf der Seite direkt korrigiert.
 
-Die Bilder lädt der Importer von der statischen Seite `merzenichaktuell.hk-growthoperator.de` (siehe `SITE_URL` in `deploy/wordpress-import.mjs`), nicht von merzenich-aktuell.de. Die Import-Anfrage läuft länger als 30 Sekunden; bricht der Browser ab, arbeitet der Server weiter (Anzahl unter Beiträge/Medien prüfen).
+Die Bilder lädt der Importer von der statischen Seite `merzenichaktuell.hk-growthoperator.de` (siehe `SITE_URL` in `deploy/wordpress-import.mjs`), nicht von merzenich-aktuell.de. *Überholt seit 21.10.1: Bildadressen und interne Links zeigen über `liveUrl()` auf merzenich-aktuell.de, die Bildpools laden aus dem Repository.* Die Import-Anfrage läuft länger als 30 Sekunden; bricht der Browser ab, arbeitet der Server weiter (Anzahl unter Beiträge/Medien prüfen).
 
 Offen: Meldungen freigeben (Veröffentlichungssperre: Datum, Ort, Quelle und menschliche Prüfung je Beitrag), WordPress-Musterinhalte („Hello world!“, „Sample Page“), SMTP, Impressum und Datenschutz.
 

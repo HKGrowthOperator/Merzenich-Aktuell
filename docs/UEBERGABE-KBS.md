@@ -431,6 +431,8 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 - [ ] Fehlende Symbolfotos beschaffen lassen (vor allem Polizei, Verkehr, Rettung, Türöffnung).
 - [ ] Nach dem Spiel am 9. Oktober (Freialdenhoven – Merzenich) das Ergebnis unter Sport eintragen.
 - [ ] iPhone: Wer die Seite schon auf dem Home-Bildschirm hat, sieht das neue „M“-Symbol erst, wenn er das Symbol neu anlegt.
+- [ ] Alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de` (antwortet mit 503): in Coolify bei der alten Anwendung „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen, dann leitet sie dauerhaft auf merzenich-aktuell.de um. Oder den DNS-Eintrag löschen. Anleitung: `deploy/coolify/README.md`.
+- [ ] Plugin 1.27.1 hochladen (Merzenich Aktuell → Plugins → Hochladen, `wordpress-delivery/merzenich-aktuell-core.zip`): REST-Antworten werden dann nur noch fünf Minuten statt 28 Tage zwischengespeichert.
 
 ---
 
@@ -558,4 +560,4 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV) | Anto-Sutharsan Jesuthasan |
 | Technische Hilfe, Recherche, Bildbeschaffung | HK Growth Operator |
 
-Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.0.
+Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.1.
