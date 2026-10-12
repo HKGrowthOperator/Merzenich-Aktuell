@@ -25,6 +25,10 @@ So schaltet der Betreiber um (nur in Coolify moeglich, nicht aus dem Repository)
    Base Directory bleibt `/`, Port bleibt `80`, Branch bleibt `main`.
    Persistent Storage `/data` und die Umgebungsvariablen (KOMMENTARE_*, SMTP_*)
    werden nicht mehr gebraucht und koennen entfernt werden.
+   **Health Check in Coolify:** entweder ausschalten (dann gilt der HEALTHCHECK
+   aus dem Dockerfile) oder Pfad `/gesund` mit erwartetem Status `204`
+   eintragen. `/` antwortet jetzt 301; ein Health Check auf `/` mit Erwartung
+   200 wuerde den Container als ungesund markieren, und Traefik bliebe bei 503.
 3. Redeploy (bzw. Start, falls die Anwendung gestoppt ist).
 4. Pruefen:
 

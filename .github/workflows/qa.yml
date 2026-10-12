@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  actions: write   # gh workflow run build-wordpress-packages.yml nach geaenderten Theme-Vorlagen
 
 # Laeufe auf main nacheinander: zwei gleichzeitige Laeufe haben beide
 # Screenshots committet und sich beim Rebase an den Binaerdateien
@@ -409,8 +408,6 @@ jobs:
 
       - name: Commit generierte Ansichten und QA-Screenshots
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.actor != 'github-actions[bot]' && success()
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -422,9 +419,11 @@ jobs:
           # brach der Rebase an ungestageten Dateien ab (QA #415/#416).
           # Theme-Vorlagen (deploy/wp-theme.mjs) gehoeren dazu: ohne sie blieben sie auf dem
           # Runner liegen, und das Theme-Zip aus build-wordpress-packages.yml trug alte
-          # Vorlagen (Audit 12.10.2026).
+          # Vorlagen (Audit 12.10.2026). Die Pakete werden bewusst nicht taeglich neu
+          # gebaut (startseite.html wechselt jeden Tag mit dem Foto des Tages; das waere
+          # taeglich ein neues Zip im Repo): build-wordpress-packages.yml laeuft bei jedem
+          # Theme-/Plugin-Push und per workflow_dispatch und nimmt dann den aktuellen Stand.
           git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
-          THEME_GEAENDERT=$(git diff --cached --name-only -- wordpress/theme | wc -l)
           if git diff --cached --quiet; then
             echo 'Nichts nachzuziehen.'
           else
@@ -441,14 +440,7 @@ jobs:
                 echo 'Screenshots nicht committet: Rebase auf origin/main nicht moeglich.'
                 break
               fi
-              if git push origin HEAD:main; then
-                # [skip ci] im Commit unterdrueckt den Paketbau: bei geaenderten Theme-Vorlagen
-                # ausdruecklich anstossen, damit das Theme-Zip den Stand von main traegt.
-                if [ "$THEME_GEAENDERT" -gt 0 ]; then
-                  gh workflow run build-wordpress-packages.yml --ref main || echo 'Paketbau nicht angestossen (gh workflow run fehlgeschlagen).'
-                fi
-                break
-              fi
+              if git push origin HEAD:main; then break; fi
               sleep $((versuch * 7))
             done
           fi
