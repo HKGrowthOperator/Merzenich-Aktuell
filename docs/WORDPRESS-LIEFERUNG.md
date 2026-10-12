@@ -1,6 +1,20 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-12. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.1 (Historie unten)
+12. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.2 (Historie unten)
+
+## Neu in Plugin 1.27.2 (12.10.2026): feste Startseitenplätze laufen aus
+
+Nur das Plugin-Paket hochladen (`wordpress-delivery/merzenich-aktuell-core.zip`); das Theme bleibt 21.17.0. Enthält auch 1.27.1 (REST-Speicherzeit).
+
+Vorgabe Betreiber (12.10.2026): Neue Meldungen sollen oben erscheinen, nicht dauerhaft dieselben. Die Automatik tut das schon (Relevanz minus Alter, „frisch“ für Aufmacher und Bühne), aber feste Plätze aus dem Board (Startseite & Ressorts) galten bisher unbefristet: Am 12.10. standen auf Bühne 2 und 4 fest gesetzte Meldungen vom 25.09. und 04.10.
+
+- **Feste Plätze enden nach 7 Tagen** (`includes/layout.php`): Jeder feste Platz merkt sich den Zeitpunkt des Einsetzens (`seit`). Ohne „Hervorhebung bis“ endet er nach der Frist, dann füllt die Automatik den Platz, mit Eintrag im Verlauf („Fester Platz abgelaufen (7 Tage): …“). Die Frist beginnt mit dem Einsetzen, bei vorgemerkten Entwürfen mit der Veröffentlichung. „Nochmal einsetzen“, Tauschen und Verschieben bestätigen den Platz neu. Ein ausdrückliches „Hervorhebung bis“ im Beitrag geht vor (auch länger als die Frist).
+- **Einstellung:** Freigaben → Einstellungen der Platzierung → „Feste Plätze enden nach (Tage, 0 = unbefristet)“, Standard 7, höchstens 60. Mit 0 verhält sich alles wie vor 1.27.2.
+- **Bestand nach dem Update:** Plätze, die vor 1.27.2 gesetzt wurden, haben keinen Zeitpunkt; für sie zählt der Stand der Karte (letzte Änderung im Board). Ist der älter als 7 Tage, gehen diese Plätze beim ersten Aufruf nach dem Update an die Automatik. Wer eine Meldung oben halten will, setzt sie im Board neu ein oder trägt „Hervorhebung bis“ ein.
+- **Board/REST (`ma/v1/layout`):** je Platz das Feld `bis` (Zeitpunkt, 0 = unbefristet) für eine spätere Anzeige; die Oberfläche zeigt es noch nicht.
+- Test: `qa/wordpress/layout-test.php`, Abschnitt „Feste Plätze laufen aus“.
+
+**Was sonst für „immer Neues oben“ nötig ist (keine Technik):** Seit dem 06.10. ist keine neue Meldung veröffentlicht; der tägliche Lauf „Quellen abrufen“ legt nur Rohdaten unter `imports/quellen/` ab und schreibt keine Meldungen. Neue Meldungen entstehen erst redaktionell (`inhalte/meldungen/`), landen über den stündlichen Abgleich in den Freigaben und brauchen dort Veröffentlichung plus Startseiten-Freigabe. Aufmacher braucht ein echtes Foto (kein Ortsbild) mit mindestens 480 px Breite.
 
 ## Neu in Plugin 1.27.1 (12.10.2026): REST-Antworten kurz gespeichert, CI repariert, alte Vorschauadresse umleiten
 
@@ -8,7 +22,7 @@ Nur das Plugin-Paket hochladen (`wordpress-delivery/merzenich-aktuell-core.zip`)
 
 - **REST-Antworten (`/wp-json/…`) nur noch fünf Minuten gespeichert** (`includes/rest-cache.php`): Der Server bei IONOS gab anonymen REST-Antworten 28 Tage Speicherzeit mit (`Cache-Control: max-age=2419200`, `Expires` vier Wochen voraus; mod_expires für JSON), weil WordPress dort keine eigenen Kopfzeilen setzt. `/api/latest.json`, die Feeds und `/assets/ressort-menue.json` hatten schon eigene Angaben. Jetzt: anonymes GET/HEAD `public, max-age=300` mit passendem `Expires`, alle anderen Methoden `no-store`. Angemeldete Benutzer (WordPress setzt no-cache) und Endpunkte mit eigener Angabe (`ma/v1/live`, `ma/v1/layout`) bleiben unverändert. Prüfung nach dem Einspielen: `curl -sD - -o /dev/null 'https://merzenich-aktuell.de/wp-json/wp/v2/posts?per_page=1'` muss `cache-control: public, max-age=300` zeigen. Test: `qa/wordpress/rest-cache-test.php`.
 - **CI „Materialize Werben Images“** lief seit dem 06.10. rot: `deploy/werben-bilder.mjs` verkleinert mit ImageMagick (`convert`), das auf den ubuntu-24.04-Runnern nicht mehr vorinstalliert ist („spawnSync convert ENOENT“). Der Workflow installiert ImageMagick jetzt vor dem Lauf.
-- **Theme-Vorlagen im CI nachgezogen:** `qa.yml` committet `wordpress/theme/merzenich-aktuell/vorlagen/` (erzeugt von `deploy/wp-theme.mjs` in der Kette) jetzt mit. Bisher blieben sie auf dem Runner liegen, und das Theme-Zip aus `build-wordpress-packages.yml` trug alte Vorlagen. Ändern sich Vorlagen, stößt der QA-Lauf den Paketbau an (`gh workflow run build-wordpress-packages.yml`), weil `[skip ci]` im Commit ihn sonst unterdrückt.
+- **Theme-Vorlagen im CI nachgezogen:** `qa.yml` committet `wordpress/theme/merzenich-aktuell/vorlagen/` (erzeugt von `deploy/wp-theme.mjs` in der Kette) jetzt mit. Bisher blieben sie auf dem Runner liegen, und das Theme-Zip aus `build-wordpress-packages.yml` trug alte Vorlagen. Die Pakete werden nicht täglich neu gebaut (die Startseiten-Vorlage wechselt jeden Tag mit dem Foto des Tages, das wäre täglich ein neues Zip im Repo); `build-wordpress-packages.yml` läuft bei jedem Theme-/Plugin-Push und auf Wunsch per workflow_dispatch und nimmt dann die aktuellen Vorlagen mit.
 - **Alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de`:** antwortet seit der Abschaltung mit 503 (DNS zeigt weiter auf den Coolify-Server, die Anwendung ist gestoppt). Im Repo liegt ein Umleitungs-Image (`deploy/coolify/Dockerfile.umleitung`, `umleitung.conf`): jede Anfrage bekommt 301 auf `https://merzenich-aktuell.de` mit gleichem Pfad und gleicher Abfrage. Die QA baut und prüft es bei jedem Lauf. **Betreiber:** in Coolify bei der alten Anwendung „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen (Anleitung `deploy/coolify/README.md`), oder den DNS-Eintrag löschen. Von hier aus nicht möglich (kein Coolify-Zugang). Adressen in den User-Agent-Kennungen der Abrufskripte (`markt-abgleich.mjs`, `werben-bilder.mjs`, `quellen-abruf.mjs`) zeigen auf `merzenich-aktuell.de`.
 - **Doku nachgezogen:** Rechtstexte-Fassung 2026-10-06 mit § 18-Person (Hinweis beim Eintrag 1.15.0), Bildzuschnitte vorhanden (`GOOGLE-NEWS.md`), Importer lädt seit 21.10.1 über `liveUrl()` (Hinweis beim Eintrag zum Import).
 

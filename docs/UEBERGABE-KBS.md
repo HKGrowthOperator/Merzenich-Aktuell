@@ -164,6 +164,8 @@ Bei **Ersetzen** lässt sich jede veröffentlichte Meldung wählen. Steht sie au
 
 **Hervorhebung bis** (im Editor, A4): Ein fester Platz gilt bis zu diesem Zeitpunkt, dann rückt die Automatik nach.
 
+**Feste Plätze laufen aus:** Ohne „Hervorhebung bis“ gilt ein fester Platz 7 Tage ab dem Einsetzen (bei vorgemerkten Entwürfen ab der Veröffentlichung), dann übernimmt wieder die Automatik, und die neueren Meldungen rücken nach oben. „Nochmal einsetzen“ startet die Frist neu. Die Frist stellen Sie unter **Merzenich Aktuell → Freigaben → Einstellungen der Platzierung** ein (0 = unbefristet).
+
 **Direkt auf der Seite:** Angemeldet steht in der schwarzen Leiste oben **Seite bearbeiten** (auf der Startseite und auf der ersten Seite jedes Ressorts). Dann gibt es an jeder Karte **Ersetzen**, **Nochmal**, **Freigeben** (Platz zurück an die Automatik) und **Text**. Mit **Text** ändern Sie Titel und Anriss direkt: **Enter** speichert, **Esc** bricht ab. **Fertig** beendet den Modus.
 
 **Beiträge-Liste** (Menü **Beiträge**):
@@ -432,7 +434,7 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 - [ ] Nach dem Spiel am 9. Oktober (Freialdenhoven – Merzenich) das Ergebnis unter Sport eintragen.
 - [ ] iPhone: Wer die Seite schon auf dem Home-Bildschirm hat, sieht das neue „M“-Symbol erst, wenn er das Symbol neu anlegt.
 - [ ] Alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de` (antwortet mit 503): in Coolify bei der alten Anwendung „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen, dann leitet sie dauerhaft auf merzenich-aktuell.de um. Oder den DNS-Eintrag löschen. Anleitung: `deploy/coolify/README.md`.
-- [ ] Plugin 1.27.1 hochladen (Merzenich Aktuell → Plugins → Hochladen, `wordpress-delivery/merzenich-aktuell-core.zip`): REST-Antworten werden dann nur noch fünf Minuten statt 28 Tage zwischengespeichert.
+- [ ] Plugin 1.27.2 hochladen (Plugins → Installieren → Plugin hochladen, `wordpress-delivery/merzenich-aktuell-core.zip`): REST-Antworten werden dann nur noch fünf Minuten statt 28 Tage zwischengespeichert, und feste Startseitenplätze laufen nach 7 Tagen aus.
 
 ---
 
@@ -560,4 +562,4 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV) | Anto-Sutharsan Jesuthasan |
 | Technische Hilfe, Recherche, Bildbeschaffung | HK Growth Operator |
 
-Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.1.
+Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.2.
