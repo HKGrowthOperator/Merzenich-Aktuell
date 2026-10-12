@@ -1,11 +1,11 @@
 {
  "quelle": "trauer",
- "abgerufen": "2026-10-12T13:15:28.504Z",
+ "abgerufen": "2026-10-12T13:40:54.800Z",
  "listen": [
   {
    "url": "https://www.wirtrauern.de/traueranzeigen-suche/merzenich",
    "endUrl": "https://www.wirtrauern.de/traueranzeigen-suche/merzenich",
-   "abgerufen": "2026-10-12T13:15:25.209Z",
+   "abgerufen": "2026-10-12T13:40:52.236Z",
    "status": 200,
    "titel": "Traueranzeigen | WirTrauern",
    "meta": {
@@ -319,7 +319,7 @@
   {
    "url": "https://www.bestattungen-kick.de/",
    "endUrl": "https://www.bestattungen-kick.de/",
-   "abgerufen": "2026-10-12T13:15:27.301Z",
+   "abgerufen": "2026-10-12T13:40:53.600Z",
    "status": 200,
    "titel": "Bestattungshaus Kick | Ihr Bestatter in Kerpen, Elsdorf & Merzenich",
    "meta": {
