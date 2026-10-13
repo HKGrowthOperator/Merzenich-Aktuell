@@ -1,0 +1,134 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint in WordPress als Entwurf in den Freigaben; die Redaktion prüft und gibt frei.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-135-person-hinter-tuer-girbelsrath",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Feuerwehr · 135/26",
+      "titel": "Person hinter Tür in Girbelsrath: Einsatz 135/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 1. Oktober 2026, um 12:03 Uhr nach Girbelsrath alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "datum": "2026-10-01T12:03:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 135/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Donnerstag, 1. Oktober 2026, 12:03 Uhr",
+        "Einsatzort: Girbelsrath, Ringstraße",
+        "Meldung: Person hinter Tür",
+        "Eingesetzte Kräfte: Löschgruppe Girbelsrath, Löschgruppe Golzheim, Feuerschutztechnisches Zentrum, Rettungsdienst Kreis Düren, Tagesalarmgruppe"
+      ],
+      "absaetze": [
+        "Einsatzort war Girbelsrath, Ringstraße. Im Einsatz waren: Löschgruppe Girbelsrath, Löschgruppe Golzheim, Feuerschutztechnisches Zentrum, Rettungsdienst Kreis Düren und Tagesalarmgruppe.",
+        "Die Feuerwehr schreibt dazu: „Zu einer Person hinter Tür wurde am Donnerstag Vormittag die Feuerwehr und der Rettungsdienst gerufen. Vor Ort konnte die Eingangstüre aber vom Patienten selber geöffnet werden. Die Person wurde dem Rettungsdienst zur weiteren Behandlung übergeben, die Feuerwehr konnte den Einsatz abbrechen.“ Es war der 135. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "rettungsdienst",
+          "Rettungsdienst"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 135/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/13526-girbelsrath-ringstrasse",
+        "stand": "2026-10-12"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 03.10.2026",
+          "url": "https://www.heimat-info.de/beitraege/aa7949f9-97a9-4fa6-bdf2-a7304063442f",
+          "stand": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "slug": "einsatz-136-unklare-rauchentwicklung-merzenich",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 136/26",
+      "titel": "Unklare Rauchentwicklung in Merzenich: Einsatz 136/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Freitag, 2. Oktober 2026, um 21:36 Uhr nach Merzenich alarmiert worden. Die Meldung lautete „Unklare Rauchentwicklung“.",
+      "datum": "2026-10-02T21:36:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 136/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Freitag, 2. Oktober 2026, 21:36 Uhr",
+        "Einsatzort: Merzenich, S-Bahnhaltestelle",
+        "Meldung: Unklare Rauchentwicklung",
+        "Eingesetzte Kräfte: Löschgruppe Merzenich"
+      ],
+      "absaetze": [
+        "Einsatzort war Merzenich, S-Bahnhaltestelle. Das Einsatzstichwort lautete „Brand 1“ (Brand). Im Einsatz war: Löschgruppe Merzenich. Beim Datum unterscheiden sich die Quellen: Die Einsatzseite der Feuerwehr nennt Freitag, 2. Oktober 2026, 21:36 Uhr, der Beitrag der Feuerwehr in der Heimat-Info-App den 3. Oktober 2026.",
+        "Die Feuerwehr schreibt dazu: „Ebenfalls abbrechen konnte die Löschgruppe Merzenich einen Einsatz am Freitag Abend. Zuvor wurde die Leitstelle über eine unbekannte Rauchentwicklung im Bereich des S-Bahnhof informiert. Während der Erkundung im Umfeld konnte ein leichter Brandgeruch, aber keine Rauchentwicklung mehr festgestellt werden.“ Es war der 136. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 136/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/13626-merzenich-s-bahnhaltestelle",
+        "stand": "2026-10-12"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 03.10.2026",
+          "url": "https://www.heimat-info.de/beitraege/566674bc-16cb-4201-a14a-2fec78de9df3",
+          "stand": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "slug": "einsatz-138-person-hinter-tuer-merzenich",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 138/26",
+      "titel": "Person hinter Tür in Merzenich: Einsatz 138/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Sonntag, 4. Oktober 2026, um 11:03 Uhr nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "datum": "2026-10-04T11:03:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 138/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Sonntag, 4. Oktober 2026, 11:03 Uhr",
+        "Einsatzort: Merzenich, Steinweg",
+        "Meldung: Person hinter Tür",
+        "Eingesetzte Kräfte: Löschgruppe Merzenich, Feuerschutztechnisches Zentrum, Rettungsdienst Kreis Düren"
+      ],
+      "absaetze": [
+        "Einsatzort war Merzenich, Steinweg. Im Einsatz waren: Löschgruppe Merzenich, Feuerschutztechnisches Zentrum und Rettungsdienst Kreis Düren.",
+        "Die Feuerwehr schreibt dazu: „Hier wurde nach kurzer Erkundung ein Zugang über den Keller geschaffen. Der Pateint wurde dem Rettungsdienst übergeben. Die Feuerwehr konnte den Einsatz schnell beenden und zum Standort einrücken.“ Es war der 138. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "rettungsdienst",
+          "Rettungsdienst"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 138/26",
+        "url": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg",
+        "stand": "2026-10-12"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 06.10.2026",
+          "url": "https://www.heimat-info.de/beitraege/ae3fb570-2d47-4d2f-ad81-374e1eb3d4e1",
+          "stand": "2026-10-12"
+        }
+      ]
+    }
+  ]
+}

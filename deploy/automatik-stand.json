@@ -1,0 +1,20 @@
+{
+  "hinweis": "Automatisch angelegte Meldungen (deploy/automatik-feuerwehr.mjs). Eine Nummer hier wird nie wieder angelegt, auch wenn die Meldung gelöscht wurde.",
+  "feuerwehr": {
+    "135/26": {
+      "slug": "einsatz-135-person-hinter-tuer-girbelsrath",
+      "datei": "inhalte/meldungen/2026-10-13-feuerwehr-automatik.json",
+      "am": "2026-10-13"
+    },
+    "136/26": {
+      "slug": "einsatz-136-unklare-rauchentwicklung-merzenich",
+      "datei": "inhalte/meldungen/2026-10-13-feuerwehr-automatik.json",
+      "am": "2026-10-13"
+    },
+    "138/26": {
+      "slug": "einsatz-138-person-hinter-tuer-merzenich",
+      "datei": "inhalte/meldungen/2026-10-13-feuerwehr-automatik.json",
+      "am": "2026-10-13"
+    }
+  }
+}

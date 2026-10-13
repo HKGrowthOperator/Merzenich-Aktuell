@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-07T12:01:31.689Z",
+  "updatedAt": "2026-10-13T07:14:40.252Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -584,6 +584,15 @@
       "assignedAt": "2026-10-07T12:01:31.689Z",
       "articleId": "2026-09-30-herbstlaub-2026-abgabe-bauhof-girbelsrath",
       "articleDate": "2026-09-30T10:46:00+02:00"
+    },
+    "/blaulicht/einsatz-136-unklare-rauchentwicklung-merzenich/": {
+      "imageId": "web-brand-19-6a048a0c",
+      "pool": "brand",
+      "motiv": "brand",
+      "regel": "blaulicht.feuer",
+      "assignedAt": "2026-10-13T07:14:40.251Z",
+      "articleId": "2026-10-02-einsatz-136-unklare-rauchentwicklung-merzenich",
+      "articleDate": "2026-10-02T21:36:00+02:00"
     }
   }
 }
