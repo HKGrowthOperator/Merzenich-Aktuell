@@ -369,7 +369,7 @@ Partner reichen Meldungen, Termine und Anzeigen ein. Veröffentlichen und die Pr
 | Rathaus-Partner | Gemeinde | Meldungen (Rathaus & Politik) |
 | Sport-Partner | Sportverein | Meldungen (Sport), Termine, Vereinsprofil |
 | Vereins-Partner | Verein, Initiative | Meldungen (Vereine), Termine, Vereinsprofil |
-| Unternehmens-Partner | Firma, Sponsor | Meldungen (als Anzeige gekennzeichnet), Unternehmensprofil, Tipps, Werbung |
+| Unternehmens-Partner | Firma, Sponsor | Meldungen (als Anzeige gekennzeichnet, im eigenen Unternehmenskanal), Unternehmensprofil, Tipps, Werbung |
 | Immobilien-Partner | Makler | Immobilien |
 | Werbepartner | Agentur, Werbekunde | Werbung, Tipps |
 
@@ -387,6 +387,14 @@ Partner reichen Meldungen, Termine und Anzeigen ein. Veröffentlichen und die Pr
 **Einreichungen** landen in den **Freigaben** (A3). Bei Meldungen, Immobilien, Unternehmen, Tipps und Werbung gibt es im Editor zusätzlich den Kasten **Partner-Einreichung ablehnen** mit **Begründung**.
 
 **Werbekontingent:** Im Profil eines Unternehmens unter **Werbekontingent (Merzenich Aktuell)**: **Gleichzeitig aktive Anzeigen** und **Erlaubte Plätze**.
+
+**Unternehmenskanal (seit Plugin 1.28.0 / Theme 21.18.0):** Jede Firma mit Zugang hat einen eigenen Kanal unter `merzenich-aktuell.de/unternehmen/<firma>/` mit Profil, ihren Beiträgen und ihrer Anzeige. Im Menü „Unternehmen“ steht sie links in der Firmenliste, sobald ein Beitrag veröffentlicht ist.
+1. **Benutzer → Partner-Zugänge:** Rolle **Unternehmens-Partner**, unter **Unternehmensprofil** „Neues Profil als Entwurf anlegen“ (die Firma füllt es selbst aus) oder ein vorhandenes Profil wählen. Für bestehende Zugänge: **Benutzer → Profil der Firma → Unternehmenskanal**.
+2. Die Firma meldet sich an und sieht **Ihr Bereich bei Merzenich Aktuell** mit **Unternehmensprofil ausfüllen** bzw. **Unternehmensprofil bearbeiten**, **Neue Meldung schreiben** und **Kanal ansehen**. Sie schreibt einen Beitrag, bestätigt die Bildrechte und reicht ein. Jeder Beitrag kommt automatisch in ihren Kanal.
+3. In den **Freigaben** prüfen und freigeben (A3). Der Beitrag erscheint als „Anzeige · Firma“ im Kanal, auf `/unternehmen/` und im Menü.
+4. Die Firma bearbeitet nur ihre eigenen Entwürfe. Veröffentlichtes ändert sie über **Änderung vorschlagen**; die Redaktion gibt die Änderung frei. Die Zuordnung zum Kanal kann nur die Redaktion ändern (Kasten **Kennzeichnung** → **Unternehmenskanal**).
+
+**Musterfirmen:** Solange weniger als drei echte Firmen Beiträge haben, zeigen fünf ausgedachte Firmen (Muster-Backstube, Muster-Café am Markt, Muster-Schreinerei, Muster-Steuerbüro, Muster-Immobilien), wie Kanäle aussehen. Sie sind überall als **Musterprofil**, **Musterbeitrag** und **Testanzeige** gekennzeichnet, für Suchmaschinen gesperrt und stehen in keinem Feed und keiner Sitemap. Ab der dritten echten Firma mit Beiträgen verschwinden sie von selbst. Texte und Fotos stehen in `wordpress/theme/merzenich-aktuell/inc/unternehmen-muster.json`.
 
 **Vereinszugänge** (Benutzer → Vereinszugänge): Übersicht aller Vereinskonten. Je Konto: **Deaktivieren** oder **Aktivieren**, **Passwort-Link senden** (nur mit Mailversand), **Passwort im Profil setzen**. Partner tragen ihre E-Mail-Adresse selbst unter **Profil** ein.
 

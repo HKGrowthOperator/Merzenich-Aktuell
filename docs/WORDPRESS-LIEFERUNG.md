@@ -1,6 +1,26 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-13. Oktober 2026 · Theme 21.17.1 · Core-Plugin 1.27.4 (Historie unten)
+13. Oktober 2026 · Theme 21.18.0 · Core-Plugin 1.28.0 (Historie unten)
+
+## Neu am 13.10.2026: Theme 21.18.0 / Plugin 1.28.0, Unternehmen mit Firmenkanälen (Vorbild Oberberg Aktuell)
+
+Auftrag des Betreibers vom 13.10.2026, drei Punkte. Beide Pakete hochladen; die ZIPs kommen aus `node deploy/wp-pakete.mjs` (nur dieser Bau enthält `static/`).
+
+- **Anzeige im Menü „Unternehmen“ entfernt:** Der Block „Anzeige“ mit großem Bild unter „Für Unternehmen“ ist weg (`ma21_ressort_menue_daten`, `deploy/ressort-menue.json`). Die beiden Linkgruppen stehen jetzt untereinander links, daneben die Firmenliste, rechts wie bisher die Firmenbeiträge. Es bleibt keine leere Fläche.
+- **Firmen im Menü, Beiträge beim Überfahren:** Links stehen die Unternehmen (Kürzel, Name, Branche · Ort, bei Musterfirmen „Musterprofil“). Bleibt die Maus kurz auf einer Firma (160 ms), zeigt der rechte Bereich ihre neuesten Beiträge und „Zum Unternehmenskanal“. Wer nur darüber streicht oder schräg zu den Beiträgen zieht, behält die gewählte Firma. Klick auf die Firma öffnet ihren Kanal.
+  - Verlässt die Maus das Menü kurz, schließt es erst nach 400 ms. Kommt sie vorher zurück, bleibt es offen. Bisher klappte es trotz Rückkehr zu, weil zwei Zeitgeber liefen.
+  - Tastatur: Fokus zeigt die Beiträge, Pfeiltasten wandern, Escape schließt.
+  - Tablet quer: Tippen öffnet das Menü, Tippen auf eine Firma zeigt ihre Beiträge, ein zweiter Tipp öffnet den Kanal. Unter etwa 1180 px steht „Unternehmen“ wie bisher unter „Mehr“.
+  - Handy: Tippen auf „Unternehmen“ öffnet die Menüspalte mit den Firmen; je Firma klappen die Beiträge auf.
+- **Unternehmenskanäle** `/unternehmen/<firma>/` (`inc/unternehmen.php`, `unternehmen-kanal.php`): Profil, Beiträge, Anzeige der Firma, weitere Kanäle. `/unternehmen/` zeigt oben die Kanäle als Kacheln, darunter die Beiträge.
+- **Musterfirmen mit vollständigen Seiten:** Muster-Backstube, Muster-Café am Markt, Muster-Schreinerei, Muster-Steuerbüro und Muster-Immobilien (`inc/unternehmen-muster.json`) mit je drei Musterbeiträgen und einer Testanzeige. Jeder Musterbeitrag öffnet eine ganze Seite (`/unternehmen/<firma>/<beitrag>/`, `unternehmen-beitrag.php`); bisher führten die Karten nur auf das Anfrageformular.
+  - Überall gekennzeichnet als Musterprofil, Musterbeitrag oder Testanzeige, „kein echtes Unternehmen“. Die Musterseiten haben `noindex` (Meta und `X-Robots-Tag`) und stehen in keiner Sitemap, keinem Feed und keiner Suche, weil sie nicht in WordPress gespeichert sind.
+  - Ab drei echten Firmen mit veröffentlichten Beiträgen verschwinden sie; ihre Adressen geben dann 404.
+  - Fotos: zusätzliche frei lizenzierte Commons-Fotos (`deploy/werben-bilder.json`, Lizenz und Urheber vor der Aufnahme einzeln geprüft), Nachweis mit Urheber und Lizenzlink an jedem Bild.
+- **Firmenzugang (vorhandene Rolle Unternehmens-Partner, kein neues System, `includes/unternehmenskanal.php`):** Benutzer → Partner-Zugänge verknüpft den Zugang mit einem Unternehmensprofil (neu als Entwurf oder vorhanden), für bestehende Zugänge am Benutzerprofil. Beiträge, Anzeigen und Tipps des Zugangs kommen beim Speichern automatisch in den Kanal (`ma_business_id`). Die Zuordnung kann der Zugang nicht selbst ändern; die Redaktion setzt sie im Kasten „Kennzeichnung“. Bearbeiten wie bisher nur eigene, nicht veröffentlichte Inhalte; das veröffentlichte Profil über „Änderung vorschlagen“. Diese übernimmt jetzt auch Profilfelder und Einwilligung; vorher gingen diese Änderungen verloren.
+- **Kleinere Korrekturen:** Karten auf `/unternehmen/` zeigen bei Anzeigen „Anzeige · Firma“ statt „Redaktion“; Beiträge einer Firma verlinken oben auf ihren Kanal; „Unternehmen“ ist im Kopf auch auf Kanal- und Musterseiten markiert. `seo.php` hat den Filter `ma_seo_kontext` für Titel, Adresse und Index dieser Seiten.
+- **Tests:** `qa/wordpress/unternehmen-test.php`, `qa/wordpress/unternehmenskanal-test.php`, `kopf-test.php`, `ladegewicht-test.php`; in `qa.yml` Browserprüfung des Unternehmen-Menüs (Desktop, Tablet quer und hochkant, Handy).
+- **Hinweis:** Eine Firmenliste im Menü gab es schon in Theme 21.10.5. Sie wurde am 07.10. auf Wunsch des Betreibers entfernt; der Auftrag vom 13.10. holt sie zurück.
 
 ## Neu am 13.10.2026: Plugin 1.27.3 und 1.27.4, Theme 21.17.1, Feuerwehr-Automatik (live eingespielt)
 

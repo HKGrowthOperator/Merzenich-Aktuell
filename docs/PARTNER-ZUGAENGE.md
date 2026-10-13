@@ -13,7 +13,7 @@ Polizei, Feuerwehr, Rathaus, Makler, der Fußballverein (Sport liegt beim SC 191
 | Rathaus-Partner (`ma_rathaus_partner`) | Gemeinde / Rathaus | Beiträge | Rubrik Rathaus & Politik |
 | Sport-Partner (`ma_sport_partner`) | Fußballverein (SC 1919) | Beiträge | Rubrik Sport |
 | Vereins-Partner (`ma_vereine_partner`) | Verein / Initiative | Beiträge | Rubrik Vereine |
-| Unternehmens-Partner (`ma_wirtschaft_partner`) | Unternehmen | Beiträge, Unternehmensprofil, Tipp, Werbeanzeige | Rubrik Wirtschaft, `/betriebe/`, Werbeplätze |
+| Unternehmens-Partner (`ma_wirtschaft_partner`) | Unternehmen | Beiträge, Unternehmensprofil, Tipp, Werbeanzeige | Eigener Unternehmenskanal `/unternehmen/<firma>/` (seit 1.28.0: Zugang mit Profil verknüpft, Beiträge automatisch im Kanal), `/unternehmen/`, Menü „Unternehmen“, `/betriebe/`, Werbeplätze |
 | Immobilien-Partner (`ma_immobilien_partner`) | Makler / Immobilien-Verantwortliche | Immobilien-Inserate | `/immobilien/` |
 | Blaulicht-Partner (alt) | frühere gemeinsame Rolle Polizei/Feuerwehr | Beiträge | Blaulicht – nur für bestehende Zugänge, wird nicht mehr neu vergeben |
 
