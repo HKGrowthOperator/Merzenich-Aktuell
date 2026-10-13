@@ -33,6 +33,40 @@ function ma21_muster_firmen(): array {
 }
 
 /**
+ * Musterfirmen für Menü, Übersicht und Adressen: ohne die, deren Adresse ein
+ * veröffentlichtes echtes Profil belegt (das echte Profil geht vor, die
+ * Musterfirma verschwindet ganz statt auf die echte Firma zu zeigen).
+ */
+function ma21_muster_liste(): array {
+    static $l = null;
+    if ($l !== null) return $l;
+    $slugs = array_column(ma21_muster_firmen(), 'slug');
+    $belegt = $slugs ? array_map(fn($p) => (string) $p->post_name, (array) get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'post_name__in' => $slugs, 'posts_per_page' => count($slugs)])) : [];
+    return $l = array_values(array_filter(ma21_muster_firmen(), fn($m) => !in_array((string) ($m['slug'] ?? ''), $belegt, true)));
+}
+
+// Echte Profile bekommen keine Adresse einer Musterfirma (sonst zeigt sie auf die echte Firma).
+add_filter('wp_unique_post_slug', function ($slug, $id, $status, $typ) {
+    return $typ === 'ma_business' && in_array($slug, array_column(ma21_muster_firmen(), 'slug'), true) ? $slug . '-firma' : $slug;
+}, 10, 4);
+
+/** Bildadresse absolut: Musterbilder sind relativ (/assets/…), echte Bilder schon absolut (Uploads). */
+function ma21_abs(string $u): string {
+    return preg_match('#^(https?:)?//#i', $u) ? $u : home_url($u);
+}
+
+/** Bild fürs Menü-JSON: kleine Fassung, Alternativtext und Nachweis (Urheber, Lizenz, Lizenzlink). */
+function ma21_menue_bildnachweis(?array $b): ?array {
+    return $b ? ['src' => ma21_abs($b['klein']), 'alt' => $b['alt'], 'foto' => (string) $b['foto'], 'lizenz' => (string) $b['lizenz'], 'lizenz_url' => (string) $b['lizenz_url']] : null;
+}
+
+/** Abfragewert nur als Text (Arrays aus ?ma_firma[]=… gelten als leer). */
+function ma21_qv(string $k, ?WP_Query $q = null): string {
+    $v = $q ? $q->get($k) : get_query_var($k);
+    return is_string($v) ? $v : '';
+}
+
+/**
  * Bildnachweise der Werbefotos: im Theme-Paket static/werben/credits.json,
  * im Repository chatgpt-site/assets/werben/credits.json (Tests).
  */
@@ -72,7 +106,8 @@ function ma21_kanal_ids(): array {
     if ($ids !== null) return $ids;
     $roh = [];
     foreach ((array) get_users(['meta_key' => 'ma_business_id', 'fields' => 'ID']) as $u) $roh[] = (int) get_user_meta((int) $u, 'ma_business_id', true);
-    foreach ((array) get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 300, 'fields' => 'ids', 'meta_key' => 'ma_business_id', 'meta_compare' => 'EXISTS']) as $p) $roh[] = (int) get_post_meta((int) $p, 'ma_business_id', true);
+    foreach ((array) get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 300, 'fields' => 'ids',
+        'meta_query' => [['key' => 'ma_business_id', 'compare' => 'EXISTS'], ['key' => 'ma_gesponsert', 'value' => '1']]]) as $p) $roh[] = (int) get_post_meta((int) $p, 'ma_business_id', true);
     $ids = [];
     foreach (array_unique(array_filter($roh)) as $id) if (get_post_type($id) === 'ma_business' && get_post_status($id) === 'publish') $ids[] = (int) $id;
     return $ids;
@@ -100,7 +135,7 @@ function ma21_muster_aktiv(): bool {
 /** Alle Firmen für Menü und Übersicht: echte zuerst, dann Musterfirmen (solange aktiv). */
 function ma21_alle_firmen(int $max = 8): array {
     $f = ma21_echte_firmen();
-    if (ma21_muster_aktiv()) foreach (ma21_muster_firmen() as $m) $f[] = ma21_firma_ansicht($m);
+    if (ma21_muster_aktiv()) foreach (ma21_muster_liste() as $m) $f[] = ma21_firma_ansicht($m);
     return array_slice(array_values(array_filter($f)), 0, $max);
 }
 
@@ -151,7 +186,8 @@ function ma21_firma_ansicht($q): ?array {
     foreach (function_exists('ma_business_beitraege') ? ma_business_beitraege($q->ID, 24) : [] as $b) {
         $bild = ma21_bild($b);
         $beitraege[] = ['slug' => $b->post_name, 'titel' => html_entity_decode(get_the_title($b), ENT_QUOTES, 'UTF-8'), 'anriss' => ma21_teaser($b), 'absaetze' => [],
-            'url' => get_permalink($b), 'bild' => $bild ? ['src' => $bild['src'], 'klein' => (string) (wp_get_attachment_image_url($bild['id'], 'ma-480') ?: $bild['src']), 'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] : null,
+            'url' => get_permalink($b), 'bild' => $bild ? ['src' => $bild['src'], 'klein' => (string) (wp_get_attachment_image_url($bild['id'], 'ma-480') ?: $bild['src']), 'srcset' => $bild['srcset'], 'w' => $bild['w'], 'h' => $bild['h'],
+                'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] : null,
             'zeit' => ma21_zeit_text($b, true, ', '), 'iso' => (string) get_post_time('c', false, $b), 'muster' => false];
     }
     $logo = (string) (get_the_post_thumbnail_url($q, 'thumbnail') ?: '');
@@ -184,7 +220,7 @@ function ma21_firmen_route(string $firma, string $beitrag = ''): array {
         return $beitrag === '' ? ['art' => 'kanal', 'firma' => ma21_firma_ansicht($echt[0])] : ['art' => '404'];
     }
     if (!ma21_muster_aktiv()) return ['art' => '404'];
-    foreach (ma21_muster_firmen() as $m) {
+    foreach (ma21_muster_liste() as $m) {
         if (($m['slug'] ?? '') !== $firma) continue;
         $f = ma21_firma_ansicht($m);
         if ($beitrag === '') return ['art' => 'kanal', 'firma' => $f];
@@ -197,43 +233,43 @@ function ma21_firmen_route(string $firma, string $beitrag = ''): array {
 /** Ergebnis für die laufende Anfrage (einmal ermittelt). */
 function ma21_firmen_anfrage(): ?array {
     if (!array_key_exists('ma21_firmen_route', $GLOBALS)) {
-        $f = (string) get_query_var('ma_firma');
-        $GLOBALS['ma21_firmen_route'] = $f !== '' ? ma21_firmen_route($f, (string) get_query_var('ma_firmenbeitrag')) : null;
+        $f = ma21_qv('ma_firma');
+        $GLOBALS['ma21_firmen_route'] = $f !== '' ? ma21_firmen_route($f, ma21_qv('ma_firmenbeitrag')) : null;
     }
     return $GLOBALS['ma21_firmen_route'];
 }
 
 add_action('pre_get_posts', function (WP_Query $q): void {
-    if (is_admin() || !$q->is_main_query() || (string) $q->get('ma_firma') === '') return;
+    if (is_admin() || !$q->is_main_query() || ma21_qv('ma_firma', $q) === '') return;
     // Keine Beitragsabfrage: Kanal und Musterbeitrag lesen ihre Daten selbst.
     $q->set('post_type', 'post'); $q->set('post__in', [0]); $q->set('posts_per_page', 1); $q->set('no_found_rows', true);
     $q->is_home = false; $q->is_archive = true;
 });
 // Gültige Adresse: Seite statt 404. Unbekannte Firma oder Beitrag: echte 404.
 add_filter('pre_handle_404', function ($stop, $q) {
-    if (!$q->is_main_query() || (string) $q->get('ma_firma') === '') return $stop;
+    if (!$q->is_main_query() || ma21_qv('ma_firma', $q) === '') return $stop;
     $r = ma21_firmen_anfrage();
     if ($r && $r['art'] !== '404') { status_header(200); return true; }
     $q->set_404(); status_header(404); nocache_headers();
     return true;
 }, 10, 2);
 // Kein Raten ähnlicher Adressen (redirect_guess_404_permalink) unter /unternehmen/<…>/.
-add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_firma') !== '' ? false : $ziel);
+add_filter('redirect_canonical', fn($ziel) => ma21_qv('ma_firma') !== '' ? false : $ziel);
 add_filter('template_include', function ($t) {
-    $r = get_query_var('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
+    $r = ma21_qv('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
     if (!$r || $r['art'] === '404') return $t;
     return locate_template($r['art'] === 'beitrag' ? 'unternehmen-beitrag.php' : 'unternehmen-kanal.php') ?: $t;
 }, 20);
 // Musterseiten: nicht in Suchmaschinen (zusätzlich zum robots-Meta über ma_seo_kontext).
 add_action('template_redirect', function (): void {
-    $r = get_query_var('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
+    $r = ma21_qv('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
     if ($r && $r['art'] !== '404' && !empty($r['firma']['muster']) && !headers_sent()) header('X-Robots-Tag: noindex, follow');
 });
 
 /** Titel, Adresse, Brotkrumen und Index für Kanal und Musterbeitrag (Plugin seo.php). */
 add_filter('ma_seo_kontext', 'ma21_firmen_seo');
 function ma21_firmen_seo(array $k): array {
-    $r = get_query_var('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
+    $r = ma21_qv('ma_firma') !== '' ? ma21_firmen_anfrage() : null;
     if (!$r || $r['art'] === '404') return $k;
     $f = $r['firma']; $home = home_url('/');
     $krumen = [['Start', $home], ['Unternehmen', $home . 'unternehmen/']];
@@ -248,7 +284,7 @@ function ma21_firmen_seo(array $k): array {
             'beschreibung' => function_exists('ma_seo_kuerzen') ? ma_seo_kuerzen('Musterbeitrag, kein echtes Unternehmen. ' . $b['anriss']) : $b['anriss'],
             'krumen' => array_merge($krumen, [[$f['name'], $f['url']], [$b['titel'], null]]), 'liste' => []]);
     }
-    if ($bild) $k['bild'] = ['url' => home_url($bild['src']), 'w' => 0, 'h' => 0, 'alt' => $bild['alt']];
+    if ($bild) $k['bild'] = ['url' => ma21_abs($bild['src']), 'w' => (int) ($bild['w'] ?? 0), 'h' => (int) ($bild['h'] ?? 0), 'alt' => $bild['alt']];
     return $k;
 }
 
@@ -267,11 +303,13 @@ function ma21_muster_nachweis(?array $b, string $vorne = 'Symbolfoto: '): string
         . ($b['quelle'] !== '' ? ', <a href="' . esc_url($b['quelle']) . '" target="_blank" rel="noopener">Wikimedia Commons</a>' : '');
 }
 
-/** Bild einer Karte (720er-Fassung, darüber die große). */
+/** Bild einer Karte. Musterbild: 720er-Fassung, darüber die große. Echtes Bild: srcset und Maße aus der Mediathek. */
 function ma21_firmen_bild_html(?array $b, string $sizes, bool $eager = false): string {
     if (!$b) return '';
-    $srcset = $b['klein'] !== $b['src'] ? ' srcset="' . esc_attr(home_url($b['klein']) . ' 720w, ' . home_url($b['src']) . ' 1080w') . '" sizes="' . esc_attr($sizes) . '"' : '';
-    return '<img src="' . esc_url(home_url($b['klein'])) . '"' . $srcset . ' alt="' . esc_attr($b['alt']) . '" width="720" height="405" loading="' . ($eager ? 'eager' : 'lazy') . '" decoding="async">';
+    if (!empty($b['srcset'])) $srcset = ' srcset="' . esc_attr($b['srcset']) . '" sizes="' . esc_attr($sizes) . '"';
+    else $srcset = $b['klein'] !== $b['src'] && empty($b['w']) ? ' srcset="' . esc_attr(ma21_abs($b['klein']) . ' 720w, ' . ma21_abs($b['src']) . ' 1080w') . '" sizes="' . esc_attr($sizes) . '"' : '';
+    $w = (int) ($b['w'] ?? 0) ?: 720; $h = (int) ($b['h'] ?? 0) ?: 405;
+    return '<img src="' . esc_url(ma21_abs($b['klein'])) . '"' . $srcset . ' alt="' . esc_attr($b['alt']) . '" width="' . $w . '" height="' . $h . '" loading="' . ($eager ? 'eager' : 'lazy') . '" decoding="async">';
 }
 
 /** Beitragskarte (Bildraster) eines Firmenbeitrags; Musterbeiträge mit Etikett und Nachweis. */
@@ -279,7 +317,7 @@ function ma21_firmen_karte_html(array $f, array $b, bool $eager = false): string
     $u = esc_url($b['url']); $t = esc_html($b['titel']);
     return '<article class="bildraster-karte u-firmen-karte' . ($b['muster'] ? ' u-muster-karte' : '') . '">'
         . ($b['bild'] ? '<a class="bildraster-bild" href="' . $u . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_firmen_bild_html($b['bild'], '(max-width: 520px) 92vw, (max-width: 1099px) 46vw, 420px', $eager) . ($b['muster'] ? '<span class="badge">Musterbeitrag</span>' : '') . '</div></a>' : '')
-        . '<div class="bildraster-text"><span class="kicker">Anzeige · <a href="' . esc_url($f['url']) . '">' . esc_html($f['name']) . '</a> · ' . esc_html($f['ort']) . '</span>'
+        . '<div class="bildraster-text"><span class="kicker">' . ($b['muster'] ? 'Musterbeitrag' : 'Anzeige') . ' · <a href="' . esc_url($f['url']) . '">' . esc_html($f['name']) . '</a> · ' . esc_html($f['ort']) . '</span>'
         . '<h3><a href="' . $u . '">' . $t . '</a></h3>'
         . ($b['anriss'] !== '' ? '<p class="dek">' . esc_html($b['anriss']) . '</p>' : '')
         . '<div class="meta">' . ($b['muster'] ? 'Musterbeitrag · ' . ma21_muster_nachweis($b['bild'], 'Foto: ') : esc_html($b['zeit'])) . '</div></div></article>';
@@ -293,7 +331,7 @@ function ma21_firmen_anzeige_html(array $f, string $format = 'gap'): string {
         $a = $f['anzeige']; $b = $a['bild'];
         return '<aside class="u-testanzeige u-testanzeige--' . ($format === 'gap' ? 'schmal' : 'breit') . '" aria-label="Testanzeige"><span class="u-testanzeige__label">Testanzeige</span>'
             . '<a class="u-testanzeige__karte" href="' . esc_url($a['url']) . '" aria-label="' . esc_attr('Testanzeige: ' . $f['name'] . ' – ' . $a['titel']) . '">'
-            . ($b ? '<span class="u-testanzeige__bild"><img src="' . esc_url(home_url($b['klein'])) . '" alt="' . esc_attr($b['alt']) . '" width="720" height="405" loading="lazy" decoding="async"></span>' : '')
+            . ($b ? '<span class="u-testanzeige__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" alt="' . esc_attr($b['alt']) . '" width="720" height="405" loading="lazy" decoding="async"></span>' : '')
             . '<span class="u-testanzeige__text"><span class="u-testanzeige__firma">' . esc_html($f['name'] . ' · ' . $f['ort']) . '</span><strong>' . esc_html($a['titel']) . '</strong>'
             . ($a['text'] !== '' ? '<span class="u-testanzeige__satz">' . esc_html($a['text']) . '</span>' : '') . '<span class="u-testanzeige__knopf">' . esc_html($a['knopf']) . '</span>'
             . '<small>Testanzeige · kein echtes Unternehmen</small></span></a>'
@@ -330,7 +368,7 @@ function ma21_firmen_kacheln_html(array $firmen, string $ueberschrift = 'Unterne
 
 /** Musterbeiträge für /unternehmen/: der Reihe nach je Firma einer, bis $max. */
 function ma21_muster_beitraege_liste(int $max = 6): array {
-    $firmen = array_map('ma21_firma_ansicht', ma21_muster_firmen());
+    $firmen = array_map('ma21_firma_ansicht', ma21_muster_liste());
     $liste = [];
     for ($runde = 0; count($liste) < $max && $runde < 5; $runde++) {
         foreach ($firmen as $f) if ($f && isset($f['beitraege'][$runde]) && count($liste) < $max) $liste[] = [$f, $f['beitraege'][$runde]];

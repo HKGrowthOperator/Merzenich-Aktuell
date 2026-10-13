@@ -40,18 +40,18 @@ const kurzname = (s) => String(s || '').replace(/\s*(\(|https?:|,).*$/u, '').tri
 function musterBild(id) {
   const i = werbenBilder[id];
   if (!i) { fehler.push(`Musterfirmen: Bild ${id} fehlt in assets/werben/credits.json`); return null; }
-  return { src: i.src.replace(/\.jpg$/, '-720.jpg'), alt: i.alt || '', credit: 'Foto: ' + kurzname(i.author) + (i.license ? ', ' + i.license : '') };
+  return { src: i.src.replace(/\.jpg$/, '-720.jpg'), alt: i.alt || '', foto: kurzname(i.author), lizenz: i.license || '', lizenz_url: i.licenseUrl || '' };
 }
 const musterFirmen = (JSON.parse(readFileSync(musterDatei, 'utf8')).firmen || []).map((f) => {
   const url = `/unternehmen/${f.slug}/`;
   return { name: f.name, url, zeile: `${f.branche} · ${ORTSTEIL[f.ort] || 'Merzenich'}`, kuerzel: f.kuerzel, farbe: f.farbe, logo: '', muster: true,
-    beitraege: (f.beitraege || []).map((b) => ({ titel: b.titel, url: url + b.slug + '/', anriss: b.anriss || '', zeit: '', muster: true, bild: musterBild(b.bild) })) };
+    beitraege: (f.beitraege || []).map((b) => ({ titel: b.titel, url: url + b.slug + '/', anriss: b.anriss || '', zeit: '', muster: true, gesponsert: false, bild: musterBild(b.bild) })) };
 });
 // „Neu von Unternehmen“: der Reihe nach je Firma ein Musterbeitrag.
 const musterNeu = [];
 for (let runde = 0; musterNeu.length < 4 && runde < 5; runde++) for (const f of musterFirmen) if (f.beitraege[runde] && musterNeu.length < 4) {
   const b = f.beitraege[runde];
-  musterNeu.push({ titel: b.titel, url: b.url, ort: `${f.name} · ${f.zeile.split(' · ')[1]}`, datum: '', bild: b.bild ? { src: b.bild.src, alt: b.bild.alt } : null, muster: true });
+  musterNeu.push({ titel: b.titel, url: b.url, ort: `${f.name} · ${f.zeile.split(' · ')[1]}`, datum: '', bild: b.bild, muster: true });
 }
 
 const zielDa = (href) => {

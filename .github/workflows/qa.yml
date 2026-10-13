@@ -368,12 +368,18 @@ jobs:
               werbung: !!document.querySelector('.ressort-dropdown .ressort-dropdown__werbung, .ressort-dropdown .werbung'),
               firmen: document.querySelectorAll('.ressort-firmen__firma').length,
               rechts: document.querySelectorAll('.ressort-firmen__rechts .ressort-dropdown__story').length,
-              luecke: (() => { const g = document.querySelector('.ressort-firmen__gruppen'); const h = document.querySelector('.mit-firmen .ressort-dropdown__head'); return g && h ? Math.round(h.getBoundingClientRect().bottom - g.getBoundingClientRect().bottom) : -1; })()
+              // Abstand vom letzten Link unter „Für Unternehmen“ bis zur Unterkante des Panelinhalts.
+              luecke: (() => { const i = document.querySelector('.ressort-dropdown__inner.mit-firmen'); const l = [...document.querySelectorAll('.ressort-firmen__gruppen a')].pop(); return i && l ? Math.round(i.getBoundingClientRect().bottom - parseFloat(getComputedStyle(i).paddingBottom) - l.getBoundingClientRect().bottom) : -1; })(),
+              // Musterbeitraege als solche gekennzeichnet (nicht als Anzeige), Bildnachweis mit Lizenzlink, kein Link im Link.
+              anzeigeMuster: [...document.querySelectorAll('.ressort-firmen__rechts .ressort-dropdown__story-meta')].filter((m) => !/^Musterbeitrag/i.test(m.textContent.trim())).length,
+              nachweise: document.querySelectorAll('.ressort-firmen__rechts .ressort-dropdown__credit a[rel~="license"]').length,
+              verschachtelt: document.querySelectorAll('.ressort-dropdown a a').length
             }));
             if (un1.werbung) throw new Error('Unternehmen-Menue zeigt noch eine Anzeige');
             if (un1.firmen < 3) throw new Error(`Unternehmen-Menue: nur ${un1.firmen} Firmen`);
             if (un1.rechts < 1) throw new Error('Unternehmen-Menue: rechts keine Firmenbeitraege');
             if (un1.luecke > 40) throw new Error(`Unternehmen-Menue: leere Flaeche unter den Linkgruppen (${un1.luecke} px)`);
+            if (un1.anzeigeMuster || un1.nachweise < 1 || un1.verschachtelt) throw new Error(`Unternehmen-Menue: Kennzeichnung oder Bildnachweis fehlerhaft: ${JSON.stringify(un1)}`);
             const firma = async (n) => (await page.locator('.ressort-firmen__firma').nth(n).locator('strong').textContent() || '').trim();
             const zweite = await page.locator('.ressort-firmen__firma').nth(1).boundingBox();
             await page.mouse.move(zweite.x + 40, zweite.y + zweite.height / 2, { steps: 10 });
@@ -389,6 +395,20 @@ jobs:
             const un3 = await page.evaluate(() => ({ offen: document.querySelector('.ressort-dropdown')?.classList.contains('is-open'), aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '' }));
             if (!un3.offen) throw new Error('Unternehmen-Menue schliesst beim Weg zu den Beitraegen');
             if (un3.aktiv !== await firma(1)) throw new Error(`Schraeger Weg zu den Karten wechselt die Firma: ${un3.aktiv}`);
+            // Gerader Weg von „Unternehmen“ zur ersten Firma (ueber „Wirtschaft“ hinweg) behaelt das Unternehmen-Menue.
+            await page.keyboard.press('Escape');
+            await page.mouse.move(8, 700);
+            await page.waitForTimeout(450);
+            await page.mouse.move(unLink.x + 4, unLink.y + unLink.height / 2);
+            await page.mouse.move(unLink.x + unLink.width / 2, unLink.y + unLink.height / 2, { steps: 4 });
+            await page.waitForSelector('.ressort-dropdown.is-open .ressort-firmen__firma', { timeout: 3000 });
+            const erste = await page.locator('.ressort-firmen__firma').first().boundingBox();
+            const [a0, b0, a1, b1] = [unLink.x + unLink.width / 2, unLink.y + unLink.height / 2, erste.x + erste.width / 2, erste.y + erste.height / 2];
+            const schritte = Math.round(Math.hypot(a1 - a0, b1 - b0) / 9);
+            for (let i = 1; i <= schritte; i++) { await page.mouse.move(a0 + (a1 - a0) * i / schritte, b0 + (b1 - b0) * i / schritte); await page.waitForTimeout(16); }
+            await page.waitForTimeout(450);
+            const un4 = await page.evaluate(() => ({ offen: document.querySelector('.navscroll > a.ressort-open')?.getAttribute('href') || '', aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '' }));
+            if (un4.offen !== '/unternehmen/' || un4.aktiv !== await firma(0)) throw new Error(`Weg von „Unternehmen“ zu den Firmen schaltet um: ${JSON.stringify(un4)}`);
             await page.keyboard.press('Escape');
             await page.waitForTimeout(200);
             if (await page.evaluate(() => !document.querySelector('.ressort-dropdown')?.hidden)) throw new Error('Escape schliesst das Unternehmen-Menue nicht');

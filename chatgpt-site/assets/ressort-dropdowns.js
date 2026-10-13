@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=31ce4c2f50';
+  const MENUE_URL = '/assets/ressort-menue.json?v=83241a3e25';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -49,19 +49,30 @@
     }).format(d);
   }
 
+  // Bildnachweis mit Lizenzlink („Foto: Name, CC BY-SA 4.0“). Steht neben dem
+  // Kartenlink, nicht darin: ein Link im Link ist ungueltig.
+  function nachweis(b, klasse) {
+    if (!b || !b.foto) return '';
+    const lizenz = b.lizenz ? ', ' + (b.lizenz_url ? '<a href="' + esc(b.lizenz_url) + '" target="_blank" rel="license noopener">' + esc(b.lizenz) + '</a>' : esc(b.lizenz)) : '';
+    return '<span class="' + klasse + '">Foto: ' + esc(b.foto) + lizenz + '</span>';
+  }
+
   function story(item) {
-    // Musterbeitraege (Unternehmen, bis echte Betriebe buchen) sichtbar markiert.
+    // Musterbeitraege (Unternehmen, bis echte Betriebe buchen) sichtbar markiert,
+    // im Bild und in der Metazeile (auch ohne Bild), mit Bildnachweis.
     const marke = item.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>' : '';
     const bild = item.bild && item.bild.src
       ? '<span class="ressort-dropdown__story-image"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async">' + marke + '</span>'
       : '';
-    const meta = [item.ort, fmtDate(item.datum, !!item.termin)].filter(Boolean).join(' · ');
-    return '<a class="ressort-dropdown__story' + (bild ? '' : ' ohne-bild') + '" href="' + esc(item.url) + '">' + bild +
+    const meta = [item.muster ? 'Musterbeitrag' : '', item.ort, fmtDate(item.datum, !!item.termin)].filter(Boolean).join(' · ');
+    const karte = '<a class="ressort-dropdown__story' + (bild ? '' : ' ohne-bild') + '" href="' + esc(item.url) + '">' + bild +
       '<span class="ressort-dropdown__story-copy">' +
         (meta ? '<span class="ressort-dropdown__story-meta">' + esc(meta) + '</span>' : '') +
         '<strong>' + esc(item.titel) + '</strong>' +
       '</span>' +
     '</a>';
+    const credit = item.muster && bild ? nachweis(item.bild, 'ressort-dropdown__credit') : '';
+    return credit ? '<div class="ressort-dropdown__story-box">' + karte + credit + '</div>' : karte;
   }
 
   let werbeDaten = null;
@@ -98,16 +109,20 @@
     return '<span class="ressort-firmen__logo" style="background:' + esc(f.farbe || '#5f5b55') + '" aria-hidden="true">' +
       (f.logo ? '<img src="' + esc(f.logo) + '" alt="" width="40" height="40" loading="lazy" decoding="async">' : esc(f.kuerzel || '?')) + '</span>';
   }
+  // Kennzeichnung aus den Daten: Musterbeitrag einer erfundenen Firma, Anzeige
+  // (gesponserter Beitrag einer echten Firma) oder nur der Firmenname.
+  function firmenEtikett(f, b) {
+    return (b.muster ? 'Musterbeitrag · ' : b.gesponsert !== false ? 'Anzeige · ' : '') + f.name;
+  }
   function firmenKarte(f, b) {
     const bild = b.bild && b.bild.src
       ? '<span class="ressort-firmen__bild"><img src="' + esc(b.bild.src) + '" alt="' + esc(b.bild.alt || '') + '" width="480" height="270" loading="lazy" decoding="async">' +
         (b.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>' : '') + '</span>'
       : '';
-    return '<a class="ressort-firmen__karte' + (bild ? '' : ' ohne-bild') + '" href="' + esc(b.url) + '">' + bild +
-      '<span class="ressort-firmen__meta">Anzeige · ' + esc(f.name) + (b.zeit ? ' · ' + esc(b.zeit) : '') + '</span>' +
+    return '<div class="ressort-firmen__beitrag"><a class="ressort-firmen__karte' + (bild ? '' : ' ohne-bild') + '" href="' + esc(b.url) + '">' + bild +
+      '<span class="ressort-firmen__meta">' + esc(firmenEtikett(f, b)) + (b.zeit ? ' · ' + esc(b.zeit) : '') + '</span>' +
       '<strong>' + esc(b.titel) + '</strong>' +
-      (b.bild && b.bild.credit ? '<span class="ressort-firmen__credit">' + esc(b.bild.credit) + '</span>' : '') +
-    '</a>';
+    '</a>' + (bild ? nachweis(b.bild, 'ressort-firmen__credit') : '') + '</div>';
   }
   function firmenAnsicht(f) {
     const karten = (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => firmenKarte(f, b)).join('');
@@ -175,11 +190,14 @@
       rechts.classList.remove('ist-neu'); void rechts.offsetWidth; rechts.classList.add('ist-neu');
     };
     // Zielt die Maus auf den rechten Bereich? Steigung der letzten Bewegung
-    // liegt zwischen den Linien zur oberen und unteren linken Ecke.
+    // liegt zwischen den Linien zur oberen und unteren linken Ecke. Nur
+    // Bewegung der letzten 100 ms zaehlt: steht der Zeiger, gilt die Firma
+    // unter ihm sofort (sonst wirkte eine alte Spur noch nach).
     const zielt = () => {
-      if (spur.length < 2 || aktiv < 0) return false;
+      const frisch = spur.filter((p) => performance.now() - p[2] < 100);
+      if (frisch.length < 2 || aktiv < 0) return false;
       const r = rechts.getBoundingClientRect();
-      const [x0, y0] = spur[0], [x1, y1] = spur[spur.length - 1];
+      const [x0, y0] = frisch[0], [x1, y1] = frisch[frisch.length - 1];
       if (x1 <= x0 || r.left <= x0) return false;
       const s = (y1 - y0) / (x1 - x0);
       return s > (r.top - 40 - y0) / (r.left - x0) && s < (r.bottom + 40 - y0) / (r.left - x0);
@@ -187,8 +205,8 @@
     const liste = inner.querySelector('.ressort-firmen__liste');
     liste.addEventListener('pointermove', (e) => {
       if (e.pointerType !== 'mouse') return;
-      spur.push([e.clientX, e.clientY]);
-      if (spur.length > 4) spur.shift();
+      spur.push([e.clientX, e.clientY, e.timeStamp]);
+      if (spur.length > 6) spur.shift();
     });
     eintraege.forEach((a, i) => {
       let tipp = false;
@@ -212,16 +230,22 @@
           e.preventDefault();
           const n = eintraege[(i + (e.key === 'ArrowDown' ? 1 : eintraege.length - 1)) % eintraege.length];
           n.focus();
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault(); zeige(i);
-          const ziel = rechts.querySelector('a'); if (ziel) ziel.focus();
+        } else if (e.key === 'ArrowRight' || (e.key === 'Tab' && !e.shiftKey && aktiv === i)) {
+          // Tab fuehrt wie Pfeil rechts zu den Beitraegen dieser Firma (Aufklapp-Muster),
+          // von deren letztem Link weiter zur naechsten Firma.
+          const ziel = (zeige(i), rechts.querySelector('a'));
+          if (ziel) { e.preventDefault(); ziel.focus(); }
         }
       });
     });
     rechts.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowLeft') return;
+      const links = [...rechts.querySelectorAll('a')];
       const zurueck = eintraege[aktiv >= 0 ? aktiv : 0];
-      if (zurueck) { e.preventDefault(); zurueck.focus(); }
+      if (e.key === 'ArrowLeft' || (e.key === 'Tab' && e.shiftKey && e.target === links[0])) {
+        if (zurueck) { e.preventDefault(); zurueck.focus(); }
+      } else if (e.key === 'Tab' && !e.shiftKey && e.target === links[links.length - 1] && aktiv >= 0 && aktiv < eintraege.length - 1) {
+        e.preventDefault(); eintraege[aktiv + 1].focus();
+      }
     });
   }
 
@@ -277,6 +301,31 @@
     await werbePromise;
     let active = null;
     let schwebeAuf = 0, schwebeZu = 0, zeiger = '';
+    // Spur der Maus in der Leiste: Wer bei offenem Menue schraeg nach unten
+    // ins Panel zieht (etwa von „Unternehmen“ zu den Firmen) und dabei ein
+    // anderes Ressort streift, behaelt das offene Menue (Richtung zaehlt wie
+    // bei der Firmenliste). Steht der Zeiger, wird gewechselt.
+    let navSpur = [];
+    nav.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      navSpur.push([e.clientX, e.clientY, e.timeStamp]);
+      if (navSpur.length > 8) navSpur.shift();
+    });
+    const zieltInsPanel = () => {
+      const frisch = navSpur.filter((p) => performance.now() - p[2] < 100);
+      if (panel.hidden || frisch.length < 2) return false;
+      const [x0, y0] = frisch[0], [x1, y1] = frisch[frisch.length - 1];
+      if (y1 - y0 < 1) return false;
+      const r = panel.getBoundingClientRect();
+      const xOben = x1 + (r.top - y1) * (x1 - x0) / (y1 - y0);
+      return xOben >= r.left && xOben <= r.right;
+    };
+    const wechsle = (link, n) => {
+      schwebeAuf = 0;
+      if (active === link) return;
+      if (active && n < 3 && zieltInsPanel()) { schwebeAuf = setTimeout(() => wechsle(link, n + 1), 100); return; }
+      open(link);
+    };
 
     function close(options = {}) {
       if (!active) return;
@@ -345,7 +394,7 @@
         if (e.pointerType !== 'mouse' || schwebeAuf || active === link) return;
         if (!desktop() || !data[link.getAttribute('href')]) return;
         clearTimeout(schwebeZu);
-        schwebeAuf = setTimeout(() => { schwebeAuf = 0; if (active !== link) open(link); }, active ? 60 : 160);
+        schwebeAuf = setTimeout(() => wechsle(link, 0), active ? 60 : 160);
       });
       link.addEventListener('pointerleave', () => { clearTimeout(schwebeAuf); schwebeAuf = 0; });
       link.addEventListener('keydown', (e) => {
@@ -442,7 +491,7 @@
         return '<div class="drawer-firma"><a href="' + esc(f.url) + '">' + esc(f.name) + '<small>' + esc(f.zeile || '') + (f.muster ? ' · Musterprofil' : '') + '</small></a>' +
           '<button type="button" class="drawer-ressort__auf drawer-firma__auf" aria-expanded="false" aria-controls="' + fid + '"><span class="sr-only">' + esc(f.name) + ': Beiträge</span></button>' +
           '<div class="drawer-firma__liste" id="' + fid + '" hidden>' +
-            (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => '<a href="' + esc(b.url) + '">' + esc(b.titel) + (b.muster ? '<small>Musterbeitrag</small>' : '') + '</a>').join('') +
+            (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => '<a href="' + esc(b.url) + '">' + esc(b.titel) + (b.muster ? '<small>Musterbeitrag</small>' : b.gesponsert !== false ? '<small>Anzeige</small>' : '') + '</a>').join('') +
             '<a class="drawer-firma__kanal" href="' + esc(f.url) + '">Zum Unternehmenskanal</a>' +
           '</div></div>';
       }).join('') +
@@ -465,6 +514,9 @@
     knopf.click();
     const auf = zeile.querySelector('.drawer-ressort__auf');
     if (auf && auf.getAttribute('aria-expanded') !== 'true') auf.click();
+    // Der Seitenkopf liegt ueber der Menuespalte: mit seinem Abstand scrollen.
+    const kopf = document.querySelector('.masthead');
+    zeile.style.scrollMarginTop = (kopf ? Math.max(0, Math.round(kopf.getBoundingClientRect().bottom)) + 8 : 8) + 'px';
     requestAnimationFrame(() => { zeile.scrollIntoView({ block: 'start' }); const ziel = zeile.querySelector('.drawer-firma > a') || auf; if (ziel) ziel.focus({ preventScroll: true }); });
     return true;
   }

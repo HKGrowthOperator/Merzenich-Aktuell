@@ -26,11 +26,11 @@ foreach (['logo.png', 'logo-on-light.png'] as $logo) {
 
 echo "\nMusterprofile laden die kleine Fassung\n";
 $markt = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/markt.php');
-pruefe('Kasten mit srcset 720w/1080w', str_contains($markt, "' 720w, ' . home_url(\$b['src']) . ' 1080w'"), true);
-pruefe('Unternehmen-Menü (Musterbeiträge) mit 720er-Bild', str_contains($markt, "['src' => home_url(\$x[1]['bild']['klein'])"), true);
+pruefe('Kasten mit srcset 720w/1080w', str_contains($markt, "' 720w, ' . ma21_abs(\$b['src']) . ' 1080w'"), true);
+pruefe('Unternehmen-Menü (Musterbeiträge) mit 720er-Bild', str_contains($markt, "'bild' => ma21_menue_bildnachweis(\$x[1]['bild'])"), true);
 $unternehmen = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/unternehmen.php');
 pruefe('Musterbilder haben eine 720er-Fassung', str_contains($unternehmen, "'klein' => ma21_muster_klein((string) \$i['src'])"), true);
-pruefe('Firmenmenü lädt die 720er-Fassung', str_contains((string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php'), "['src' => home_url(\$b['bild']['klein'])"), true);
+pruefe('Firmenmenü lädt die 720er-Fassung', str_contains((string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php'), "'bild' => ma21_menue_bildnachweis(\$b['bild'])") && str_contains($unternehmen, "['src' => ma21_abs(\$b['klein'])"), true);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

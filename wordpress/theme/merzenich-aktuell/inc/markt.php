@@ -221,12 +221,12 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
     if ($echte >= 3 || !ma21_muster_aktiv()) return '';
     $h = '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>'
         . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Musterprofile, keine echten Unternehmen.</p>';
-    foreach (array_slice(ma21_muster_firmen(), 0, 5 - min($echte, 2)) as $m) {
+    foreach (array_slice(ma21_muster_liste(), 0, 5 - min($echte, 2)) as $m) {
         $f = ma21_firma_ansicht($m);
         if (!$f) continue;
         $b = $f['bild'];
         $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Musterprofil, Unternehmenskanal ansehen') . '">'
-            . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(home_url($b['klein'])) . '" srcset="' . esc_attr(home_url($b['klein']) . ' 720w, ' . home_url($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>' : '')
+            . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" srcset="' . esc_attr(ma21_abs($b['klein']) . ' 720w, ' . ma21_abs($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>' : '')
             . '<span class="u-muster__eyebrow">' . esc_html($f['zeile']) . '</span>'
             . '<strong class="u-muster__name">' . esc_html($f['name']) . '</strong>'
             . '<span class="u-muster__text">' . esc_html($f['text']) . '</span>'
@@ -244,7 +244,7 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
 function ma21_menue_musterbeitraege(int $max = 4): array {
     if (!ma21_muster_aktiv()) return [];
     return array_map(fn(array $x): array => ['titel' => $x[1]['titel'], 'url' => wp_make_link_relative($x[1]['url']), 'ort' => $x[0]['name'] . ' · ' . $x[0]['ort'], 'datum' => '',
-        'bild' => $x[1]['bild'] ? ['src' => home_url($x[1]['bild']['klein']), 'alt' => $x[1]['bild']['alt']] : null, 'muster' => true], ma21_muster_beitraege_liste($max));
+        'bild' => ma21_menue_bildnachweis($x[1]['bild']), 'muster' => true], ma21_muster_beitraege_liste($max));
 }
 
 /* ------------------------------------------------------------------------

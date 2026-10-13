@@ -21,7 +21,7 @@ $weitere = array_values(array_filter($f['beitraege'], fn($x) => $x['slug'] !== $
   <p class="gesponsert-hinweis" data-nosnippet><span class="gesponsert">Musterbeitrag</span> Ausgedachtes Beispiel eines Unternehmensbeitrags: kein echtes Unternehmen, kein echtes Angebot.</p>
   <div class="byline">
     <?php echo ma21_firma_logo_html($f, 'avatar'); ?>
-    <span class="who"><b><a href="<?php echo esc_url($f['url']); ?>"><?php echo esc_html($f['name']); ?></a></b><span>Anzeige · Musterbeitrag · <?php echo esc_html($f['zeile']); ?></span></span>
+    <span class="who"><b><a href="<?php echo esc_url($f['url']); ?>"><?php echo esc_html($f['name']); ?></a></b><span>Musterbeitrag · <?php echo esc_html($f['zeile']); ?></span></span>
   </div>
 </div></div>
 <div class="shell article-grid">

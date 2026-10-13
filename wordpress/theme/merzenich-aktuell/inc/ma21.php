@@ -144,7 +144,9 @@ function ma21_kopf_daten(): array {
     if (is_array($d) && isset($d['daten'], $d['ohne_zahlen'])) return $d;
     // Keine Zahlen auf der Seite (Vorgabe Betreiber 05.10.2026: „wie viele Meldungen es gibt, ist unprofessionell“).
     $d = ['ohne_zahlen' => true, 'neu' => null, 'daten' => [], 'termin' => null];
-    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC']);
+    // Anzeigen (gesponserte Firmenbeiträge) stehen nicht als „Neu“ im Kopf.
+    $neueste = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC',
+        'meta_query' => [['key' => 'ma_gesponsert', 'compare' => 'NOT EXISTS']]]);
     foreach ($neueste as $i => $p) {
         $iso = (string) get_post_time('c', false, $p);
         $d['daten'][] = $iso;
@@ -423,8 +425,9 @@ function ma21_menue_firmen(): array {
     $l = [];
     foreach (ma21_alle_firmen(8) as $f) {
         $l[] = ['name' => $f['name'], 'url' => $rel($f['url']), 'zeile' => $f['zeile'], 'kuerzel' => $f['kuerzel'], 'farbe' => $f['farbe'], 'logo' => $f['logo'], 'muster' => $f['muster'],
-            'beitraege' => array_map(fn(array $b): array => ['titel' => $b['titel'], 'url' => $rel($b['url']), 'anriss' => $b['anriss'], 'zeit' => $b['zeit'], 'muster' => $b['muster'],
-                'bild' => $b['bild'] ? ['src' => home_url($b['bild']['klein']), 'alt' => $b['bild']['alt'], 'credit' => $b['muster'] ? 'Foto: ' . $b['bild']['foto'] . ($b['bild']['lizenz'] !== '' ? ', ' . $b['bild']['lizenz'] : '') : ''] : null],
+            // Kanalbeiträge echter Firmen sind gesponsert (ma_business_beitraege); Bildnachweis mit Lizenzlink.
+            'beitraege' => array_map(fn(array $b): array => ['titel' => $b['titel'], 'url' => $rel($b['url']), 'anriss' => $b['anriss'], 'zeit' => $b['zeit'], 'muster' => $b['muster'], 'gesponsert' => !$b['muster'],
+                'bild' => ma21_menue_bildnachweis($b['bild'])],
                 array_slice($f['beitraege'], 0, 3))];
     }
     set_transient('ma21_menue_firmen', $l, 300);
@@ -435,7 +438,7 @@ add_action('transition_post_status', function (string $neu, string $alt, WP_Post
 }, 10, 3);
 add_action('updated_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
 add_action('added_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
-add_action('updated_post_meta', function ($mid, $pid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
+foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) add_action($h, function ($mid, $pid, $key): void { if (in_array($key, ['ma_business_id', 'ma_gesponsert'], true)) delete_transient('ma21_menue_firmen'); }, 10, 3);
 
 /**
  * Linkgruppen des Ressort-Menüs: ein Thema (/thema/<slug>/) fällt nur weg, wenn
@@ -505,7 +508,9 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
     }
     // Anriss nur, wo das Menü Karten mit Text zeigt (Wirtschaft im Unternehmen-Menü).
     $anriss = in_array($slug, ['wirtschaft', 'unternehmen'], true);
-    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)]
+    // Gesponserte Beiträge mit „Anzeige“ vor dem Ort (wie die Karten auf den Seiten).
+    $anzeige = fn(WP_Post $p): string => function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? 'Anzeige · ' : '';
+    return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => $anzeige($p) . (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)]
         + ($anriss ? ['anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8')] : []), get_posts($args));
 }
 add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); });

@@ -70,7 +70,7 @@ preg_match_all('#<article class="bildraster-karte[^"]*"#', $html, $karten);
 pruefe('Sechs Musterbeiträge als Karten', count($karten[0]), 6);
 pruefe('Jede Karte trägt „Musterbeitrag“', substr_count($html, '<span class="badge">Musterbeitrag</span>'), 6);
 pruefe('Karten führen auf Beitragsseiten, nie auf das Anfrageformular', [str_contains($html, '/anzeigen/aufgeben/'), preg_match_all('#href="https://merzenich-aktuell\.de/unternehmen/muster-[a-z\-]+/[a-z0-9\-]+/"#', $html)], [false, 12]);
-pruefe('Firma und Ort in jeder Karte', substr_count($html, 'Anzeige · <a href="https://merzenich-aktuell.de/unternehmen/muster-'), 6);
+pruefe('Firma und Ort in jeder Karte', substr_count($html, 'Musterbeitrag · <a href="https://merzenich-aktuell.de/unternehmen/muster-'), 6);
 pruefe('Hinweis: keine echten Unternehmen', str_contains($html, 'keine echten Unternehmen'), true);
 pruefe('Testanzeige unter den Karten, gekennzeichnet', [substr_count($html, '<span class="u-testanzeige__label">Testanzeige</span>'), str_contains($html, 'kein echtes Unternehmen')], [1, true]);
 $kasten = ma21_musterprofile_html(0, 'https://merzenich-aktuell.de/anzeigen/aufgeben/?art=Werbung');
@@ -110,13 +110,25 @@ unset($GLOBALS['ma21_firmen_route']);
 pruefe('Unbekannte Adresse ändert nichts', ma21_firmen_seo($basis), $basis);
 $GLOBALS['qv'] = [];
 
+echo "\nBildadressen und Abfragewerte\n";
+pruefe('Musterbild (relativ) bekommt die Domain', ma21_abs('/assets/werben/x-720.jpg'), 'https://merzenich-aktuell.de/assets/werben/x-720.jpg');
+pruefe('Echtes Bild (absolut) bleibt, wie es ist', ma21_abs('https://merzenich-aktuell.de/wp-content/uploads/a.webp'), 'https://merzenich-aktuell.de/wp-content/uploads/a.webp');
+$echt = ma21_firmen_bild_html(['src' => 'https://merzenich-aktuell.de/wp-content/uploads/a.webp', 'klein' => 'https://merzenich-aktuell.de/wp-content/uploads/a-480x360.webp', 'srcset' => 'https://merzenich-aktuell.de/wp-content/uploads/a-480x360.webp 480w', 'w' => 1600, 'h' => 1200, 'alt' => 'A'], '100vw');
+pruefe('Echtes Kartenbild: keine doppelte Domain, srcset und Maße aus der Mediathek', [substr_count($echt, 'https://merzenich-aktuell.de/https'), str_contains($echt, ' 480w"'), str_contains($echt, 'width="1600" height="1200"')], [0, true, true]);
+$GLOBALS['qv'] = ['ma_firma' => ['x'], 'ma_firmenbeitrag' => ['y']];
+unset($GLOBALS['ma21_firmen_route']);
+pruefe('?ma_firma[]=… gilt als leer (keine Warnung, keine Route)', [ma21_qv('ma_firma'), ma21_firmen_anfrage()], ['', null]);
+$GLOBALS['qv'] = [];
+unset($GLOBALS['ma21_firmen_route']);
+
 echo "\nUnternehmen-Menü\n";
 $d = ma21_ressort_menue_daten(['ressorts' => ['/unternehmen/' => ['titel' => 'Unternehmen', 'werbung' => true, 'gruppen' => [['titel' => 'Für Unternehmen', 'links' => [['Werben', '/werben/']]]], 'neu' => []]]]);
 $u = $d['ressorts']['/unternehmen/'];
 pruefe('Keine Anzeige unter „Für Unternehmen“', array_key_exists('werbung', $u), false);
 pruefe('Fünf Firmen mit je drei Beiträgen', [count($u['firmen']), array_sum(array_map(fn($f) => count($f['beitraege']), $u['firmen']))], [5, 15]);
 pruefe('Firmen und Beiträge zeigen auf ihre Seiten', count(array_filter($u['firmen'], fn($f) => preg_match('#^/unternehmen/muster-[a-z\-]+/$#', $f['url']) && !array_filter($f['beitraege'], fn($b) => !str_starts_with($b['url'], $f['url'])))), 5);
-pruefe('Beitragsbilder in kleiner Fassung mit Nachweis', count(array_filter(array_merge(...array_map(fn($f) => $f['beitraege'], $u['firmen'])), fn($b) => str_ends_with($b['bild']['src'], '-720.jpg') && str_starts_with($b['bild']['credit'], 'Foto: '))), 15);
+pruefe('Beitragsbilder in kleiner Fassung mit Nachweis', count(array_filter(array_merge(...array_map(fn($f) => $f['beitraege'], $u['firmen'])), fn($b) => str_ends_with($b['bild']['src'], '-720.jpg') && $b['bild']['foto'] !== '' && $b['bild']['lizenz'] !== '' && empty($b['gesponsert']))), 15);
+pruefe('„Neu von Unternehmen“ mit Bildnachweis', count(array_filter($u['neu'], fn($n) => !empty($n['bild']['foto']) && !empty($n['bild']['lizenz']))), 4);
 pruefe('Rechts bleiben die Firmenbeiträge (vier Musterbeiträge)', [count($u['neu']), count(array_filter($u['neu'], fn($n) => !empty($n['muster']) && str_starts_with($n['url'], '/unternehmen/muster-')))], [4, 4]);
 
 echo "\nStatisches Menü (deploy/ressort-menue.mjs) wie WordPress\n";
