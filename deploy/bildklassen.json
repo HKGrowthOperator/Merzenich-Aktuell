@@ -273,6 +273,26 @@
     "leben.dorfwettbewerb": {
       "titel": "Dorfwettbewerb 2027 – lokale Ortsansicht statt Abbildung fremder Wettbewerbsteilnehmer",
       "motive": []
+    },
+    "wirtschaft.geschaeft": {
+      "titel": "Neueröffnung oder Dienstleister im Ort; ohne freigegebenes Foto des Betriebs nur Ortsansicht",
+      "motive": []
+    },
+    "leben.energie": {
+      "titel": "Energieversorgung und Netzumstellung (Gas, Strom); ohne lokales Motiv nur Ortsansicht",
+      "motive": []
+    },
+    "leben.vorsorge": {
+      "titel": "Bevölkerungsschutz, Krisenvorsorge und Kurse dazu; ohne lokales Motiv nur Ortsansicht",
+      "motive": []
+    },
+    "leben.ortsfest": {
+      "titel": "Ortsfest, Oldieabend und Dorffeste; ohne freigegebenes Foto nur Ortsansicht",
+      "motive": []
+    },
+    "leben.foerderung": {
+      "titel": "Förderprogramme und Ideenwettbewerbe im Rheinischen Revier; nur Ortsansicht",
+      "motive": []
     }
   }
 }

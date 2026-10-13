@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T07:14:40.252Z",
+  "updatedAt": "2026-10-13T08:00:35.636Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -593,6 +593,24 @@
       "assignedAt": "2026-10-13T07:14:40.251Z",
       "articleId": "2026-10-02-einsatz-136-unklare-rauchentwicklung-merzenich",
       "articleDate": "2026-10-02T21:36:00+02:00"
+    },
+    "/sport/sc-merzenich-d1-sonderliga-jugend-oktober-2026/": {
+      "imageId": "web-sport-13-fee5d2ea",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-13T08:00:35.636Z",
+      "articleId": "2026-10-13-sc-merzenich-d1-sonderliga-jugend-oktober-2026",
+      "articleDate": "2026-10-13T07:15:00+02:00"
+    },
+    "/sport/sc-merzenich-freialdenhoven-6-1-zweite-4-4-2026-10/": {
+      "imageId": "web-sport-16-74d277b0",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-13T08:00:35.636Z",
+      "articleId": "2026-10-13-sc-merzenich-freialdenhoven-6-1-zweite-4-4-2026-10",
+      "articleDate": "2026-10-13T09:00:00+02:00"
     }
   }
 }
