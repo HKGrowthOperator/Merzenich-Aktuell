@@ -295,7 +295,8 @@ function ma_partner_enforce_assignment(int $post_id, WP_Post $post, bool $update
     // Organisation (einreichende Stelle, KBS-Artikelvorlage): Verein bzw. Name des Zugangs, nur wenn noch leer.
     if ((string) get_post_meta($post_id, 'ma_organisation', true) === '') {
         $u = wp_get_current_user();
-        $org = trim((string) get_user_meta($u->ID, 'ma_verein_name', true)) ?: trim((string) $u->display_name) ?: (string) $policy['description'];
+        $firma = function_exists('ma_business_von_benutzer') ? ma_business_von_benutzer((int) $u->ID) : 0;
+        $org = trim((string) get_user_meta($u->ID, 'ma_verein_name', true)) ?: ($firma ? trim((string) get_the_title($firma)) : '') ?: trim((string) $u->display_name) ?: (string) $policy['description'];
         $GLOBALS['ma_system_schreibt'] = true;
         update_post_meta($post_id, 'ma_organisation', $org);
         unset($GLOBALS['ma_system_schreibt']);
@@ -417,8 +418,16 @@ function ma_partner_create_account(): string {
     ]);
     if (is_wp_error($user_id)) return 'Zugang konnte nicht angelegt werden: '.$user_id->get_error_message();
 
+    // Unternehmenskanal (1.28.0): Zugang mit einem Unternehmensprofil verknüpfen (unternehmenskanal.php).
+    $kanal = '';
+    $firma = sanitize_text_field(wp_unslash($_POST['partner_firma'] ?? ''));
+    if ($role === 'ma_wirtschaft_partner' && function_exists('ma_partner_business_verknuepfen') && ($firma === 'neu' || ctype_digit($firma))) {
+        $bid = ma_partner_business_verknuepfen((int)$user_id, $firma, $name);
+        if ($bid) $kanal = ' Verknüpft mit dem Unternehmensprofil „'.get_the_title($bid).'“'.($firma === 'neu' ? ' (Entwurf; die Firma füllt es selbst aus und reicht es ein)' : '').'.';
+    }
+
     // Keine Einladungs-Mail (Entscheidung KBS 03.10.2026: Einladungsfunktion vorerst nicht vorgesehen).
-    return 'Partner-Zugang für '.$name.' angelegt (Benutzername '.$login.'). Es wurde keine E-Mail verschickt. Passwort im Profil setzen und dem Partner persönlich mitteilen: '.admin_url('user-edit.php?user_id='.(int)$user_id.'#password');
+    return 'Partner-Zugang für '.$name.' angelegt (Benutzername '.$login.').'.$kanal.' Es wurde keine E-Mail verschickt. Passwort im Profil setzen und dem Partner persönlich mitteilen: '.admin_url('user-edit.php?user_id='.(int)$user_id.'#password');
 }
 
 function ma_partner_admin_page(): void {
@@ -438,7 +447,13 @@ function ma_partner_admin_page(): void {
     echo '<p><label><strong>E-Mail</strong><br><input class="regular-text" type="email" name="partner_email" required></label></p>';
     echo '<p><label><strong>Rolle</strong><br><select name="partner_role" required><option value="">Bitte wählen</option>';
     foreach($policies as $role=>$p) if (empty($p['veraltet'])) echo '<option value="'.esc_attr($role).'">'.esc_html($p['label'].' – '.$p['description']).'</option>';
-    echo '</select></label></p><p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen (ohne E-Mail)</button></p></form></section>';
+    echo '</select></label></p>';
+    if (function_exists('ma_business_auswahl')) {
+        echo '<p><label><strong>Unternehmensprofil</strong> <small>(nur Unternehmens-Partner)</small><br><select name="partner_firma"><option value="">– keins –</option><option value="neu">Neues Profil als Entwurf anlegen</option>';
+        foreach (ma_business_auswahl() as $bid => $titel) echo '<option value="'.(int)$bid.'">'.esc_html($titel).'</option>';
+        echo '</select></label><br><span class="description">Beiträge des Zugangs erscheinen im Unternehmenskanal unter /unternehmen/…/. „Neues Profil“: die Firma füllt es selbst aus und reicht es ein.</span></p>';
+    }
+    echo '<p><button class="button button-primary" name="ma_create_partner" value="1">Zugang anlegen (ohne E-Mail)</button></p></form></section>';
 
     echo '<section><h2 style="margin-top:0">Rollen</h2><table class="widefat striped"><thead><tr><th>Rolle</th><th>Für</th><th>Offen</th></tr></thead><tbody>';
     foreach ($policies as $role=>$p) {

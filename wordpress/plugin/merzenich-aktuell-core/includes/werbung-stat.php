@@ -119,6 +119,12 @@ add_action('add_meta_boxes_post', function (): void {
         printf('<label><input type="checkbox" name="ma_gesponsert" value="1"%s> Gesponserter Beitrag (bezahlte Unternehmenspräsentation)</label><p class="description">Die Seite kennzeichnet ihn als „Anzeige · Gesponsert“. Redaktionelle Unternehmensnachrichten bleiben ohne Haken.</p>',
             checked((string) get_post_meta($p->ID, 'ma_gesponsert', true), '1', false));
         printf('<p><label>Auftraggeber (sichtbar)<br><input type="text" name="ma_gesponsert_von" value="%s" style="width:100%%"></label></p>', esc_attr((string) get_post_meta($p->ID, 'ma_gesponsert_von', true)));
+        if (function_exists('ma_business_auswahl')) {
+            $jetzt = (int) get_post_meta($p->ID, 'ma_business_id', true);
+            echo '<p><label>Unternehmenskanal<br><select name="ma_business_id" style="width:100%"><option value="">– keiner –</option>';
+            foreach (ma_business_auswahl() as $bid => $titel) printf('<option value="%d"%s>%s</option>', $bid, selected($jetzt, $bid, false), esc_html($titel));
+            echo '</select></label></p><p class="description">Der Beitrag erscheint im Kanal dieses Unternehmens unter /unternehmen/…/.</p>';
+        }
     }, 'post', 'side', 'default');
 });
 add_action('save_post_post', function (int $id): void {
@@ -127,6 +133,13 @@ add_action('save_post_post', function (int $id): void {
     $an = !empty($_POST['ma_gesponsert']);
     $an ? update_post_meta($id, 'ma_gesponsert', '1') : delete_post_meta($id, 'ma_gesponsert');
     $von = sanitize_text_field(wp_unslash($_POST['ma_gesponsert_von'] ?? ''));
+    if (array_key_exists('ma_business_id', $_POST)) {
+        $bid = (int) $_POST['ma_business_id'];
+        if ($bid > 0 && get_post_type($bid) === 'ma_business') {
+            update_post_meta($id, 'ma_business_id', (string) $bid);
+            if ($von === '') $von = (string) get_the_title($bid);
+        } else delete_post_meta($id, 'ma_business_id');
+    }
     $von !== '' ? update_post_meta($id, 'ma_gesponsert_von', $von) : delete_post_meta($id, 'ma_gesponsert_von');
 }, 20);
 
@@ -138,7 +151,9 @@ add_action('save_post_post', function (int $id, WP_Post $p): void {
     $u = get_userdata((int) $p->post_author);
     if (!$u || !in_array('ma_wirtschaft_partner', (array) $u->roles, true)) return;
     if ((string) get_post_meta($id, 'ma_gesponsert', true) !== '1') update_post_meta($id, 'ma_gesponsert', '1');
-    if ((string) get_post_meta($id, 'ma_gesponsert_von', true) === '') update_post_meta($id, 'ma_gesponsert_von', trim((string) $u->display_name));
+    // Auftraggeber: das verknüpfte Unternehmensprofil (unternehmenskanal.php), sonst der Name des Zugangs.
+    $firma = function_exists('ma_business_von_benutzer') ? ma_business_von_benutzer((int) $u->ID) : 0;
+    if ((string) get_post_meta($id, 'ma_gesponsert_von', true) === '') update_post_meta($id, 'ma_gesponsert_von', $firma ? (string) get_the_title($firma) : trim((string) $u->display_name));
 }, 30, 2);
 
 function ma_ist_gesponsert($post): bool {

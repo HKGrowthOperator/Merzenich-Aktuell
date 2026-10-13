@@ -255,6 +255,7 @@ function ma_partner_dashboard(): void {
     $status = ['draft' => 'Entwürfe', 'pending' => 'Eingereicht', 'ma_in_pruefung' => 'In Prüfung', 'ma_aenderung' => 'Änderungen angefordert', 'future' => 'Geplant', 'publish' => 'Veröffentlicht', 'ma_abgelehnt' => 'Abgelehnt'];
     echo '<style>.ma-pd__zahlen{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:0 0 14px}.ma-pd__zahl{border:1px solid #dcdcde;padding:8px 10px}.ma-pd__zahl strong{display:block;font-size:22px;font-variant-numeric:tabular-nums}.ma-pd__zahl.ist-wichtig{border-color:#b26200;background:#fcf9e8}.ma-pd__wege{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.ma-pd table{width:100%;border-collapse:collapse}.ma-pd td,.ma-pd th{text-align:left;padding:6px 8px 6px 0;border-top:1px solid #f0f0f1;vertical-align:top}.ma-pd__notiz{display:block;color:#8a2424;white-space:pre-line}</style><div class="ma-pd">';
     if ($kurz !== '') echo '<p><strong>' . esc_html(ma_verein_name($kurz) ?: $policy['label']) . '</strong> · ' . esc_html($policy['label']) . '</p>';
+    if (function_exists('ma_business_dashboard_zeile')) ma_business_dashboard_zeile($uid);
     echo '<div class="ma-pd__wege">';
     if (in_array('post', $typen, true)) echo '<a class="button button-primary" href="' . esc_url(admin_url('post-new.php')) . '">Neue Meldung schreiben</a>';
     if (in_array('ma_event', $typen, true)) echo '<a class="button" href="' . esc_url(admin_url('post-new.php?post_type=ma_event')) . '">Termin einreichen</a>';

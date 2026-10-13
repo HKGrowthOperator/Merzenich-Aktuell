@@ -476,6 +476,8 @@ function ma_seo_kontext(): array {
         // Datums-, Autoren- und sonstige Archive: lesbar, aber nicht indexierbar.
         $k = array_merge($k, ['typ' => 'liste', 'titel' => html_entity_decode(wp_strip_all_tags(get_the_archive_title()), ENT_QUOTES, 'UTF-8'), 'beschreibung' => 'Meldungen auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);
     }
+    // Seiten des Themes ohne eigenen WordPress-Inhalt (Unternehmenskanäle, 1.28.0) setzen Titel, Adresse und Index selbst.
+    $k = (array) apply_filters('ma_seo_kontext', $k);
     return $k;
 }
 
