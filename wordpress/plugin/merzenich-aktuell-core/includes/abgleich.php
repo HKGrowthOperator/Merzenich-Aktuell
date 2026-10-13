@@ -222,8 +222,42 @@ function ma_abgleich_anlegen(array $e, array $bilder, array &$fehler): int {
  */
 function ma_abgleich_meta_fuer_update(array $meta): array {
     foreach (['ma_startseite_freigabe', 'ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'] as $k) unset($meta[$k]);
+    // Bildrechte nie herabsetzen (1.27.4): Die Import-Datei trägt '0' für Originalbilder;
+    // eine von Hand bestätigte '1' bleibt stehen.
+    if ((string) ($meta['ma_image_rights_verified'] ?? '') !== '1') unset($meta['ma_image_rights_verified']);
     return $meta;
 }
+
+/** Häkchen, die die einmalige Reparatur (1.27.4) für einen Beitrag setzt: nur veröffentlichte Abgleich-Beiträge, nur fehlende Häkchen. */
+function ma_abgleich_haekchen_fehlend(string $status, string $hash, array $werte): array {
+    if ($status !== 'publish' || $hash === '') return [];
+    return array_values(array_filter(['ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'], fn($k) => (string) ($werte[$k] ?? '') !== '1'));
+}
+
+/**
+ * Einmalige Reparatur (1.27.4): Bis 1.27.2 setzte der Abgleich die Häkchen Datum, Ort und
+ * redaktionelle Prüfung veröffentlichter Beiträge auf '0' (Prüfung 13.10.2026: Herbstlaub-
+ * Meldung, auf der Startseite). Veröffentlicht werden konnten diese Beiträge nur durch die
+ * Veröffentlichungssperre, also mit gesetzten Häkchen; der Abgleich hat sie danach entfernt.
+ * Sie werden für veröffentlichte Abgleich-Beiträge wiederhergestellt, mit Eintrag im Verlauf.
+ * Bildrechte bleiben unberührt.
+ */
+add_action('admin_init', function (): void {
+    if (get_option('ma_abgleich_haekchen_1274') === '1') return;
+    $ids = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids', 'meta_key' => '_ma_abgleich_hash', 'meta_compare' => 'EXISTS']);
+    $n = 0;
+    foreach ($ids as $id) {
+        $werte = [];
+        foreach (['ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'] as $k) $werte[$k] = (string) get_post_meta($id, $k, true);
+        $fehlt = ma_abgleich_haekchen_fehlend('publish', (string) get_post_meta($id, '_ma_abgleich_hash', true), $werte);
+        if (!$fehlt) continue;
+        foreach ($fehlt as $k) update_post_meta($id, $k, '1');
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen((int) $id, 'Prüfhäkchen wiederhergestellt', 'Der Abgleich hatte sie bis Plugin 1.27.2 zurückgesetzt: ' . implode(', ', $fehlt), 0);
+        $n++;
+    }
+    update_option('ma_abgleich_haekchen_1274', '1', false);
+    update_option('ma_abgleich_haekchen_1274_anzahl', $n, false);
+});
 
 function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$fehler): bool {
     $meta = ma_abgleich_meta_fuer_update($e['meta']);

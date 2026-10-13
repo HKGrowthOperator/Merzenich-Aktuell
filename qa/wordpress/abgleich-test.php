@@ -66,6 +66,10 @@ pruefe('Datum, Ort, redaktionelle Prüfung und Startseiten-Freigabe fallen weg',
 pruefe('Übrige Importfelder bleiben unverändert', $upd, ['ma_legacy_url' => '/blaulicht/x/', 'ma_source_url' => 'https://example.org/q', 'ma_source_verified' => '1', 'ma_kicker' => 'Feuerwehr · 138/26']);
 $echt = ma_abgleich_lesen($xml)['eintraege'];
 $post = array_values(array_filter($echt, fn($x) => $x['typ'] === 'post'))[0] ?? ['meta' => []];
+pruefe('Bildrechte: bestätigte 1 bleibt, 0 aus der Import-Datei wird nicht geschrieben', [ma_abgleich_meta_fuer_update(['ma_image_rights_verified' => '1'])['ma_image_rights_verified'] ?? null, array_key_exists('ma_image_rights_verified', ma_abgleich_meta_fuer_update(['ma_image_rights_verified' => '0']))], ['1', false]);
+pruefe('Reparatur: veröffentlicht + Abgleich, fehlende Häkchen', ma_abgleich_haekchen_fehlend('publish', 'h', ['ma_date_verified' => '0', 'ma_place_verified' => '1', 'ma_human_reviewed' => '']), ['ma_date_verified', 'ma_human_reviewed']);
+pruefe('Reparatur: Entwurf oder ohne Abgleich bleibt unberührt', [ma_abgleich_haekchen_fehlend('draft', 'h', []), ma_abgleich_haekchen_fehlend('publish', '', [])], [[], []]);
+pruefe('Reparatur: alles gesetzt, nichts zu tun', ma_abgleich_haekchen_fehlend('publish', 'h', ['ma_date_verified' => '1', 'ma_place_verified' => '1', 'ma_human_reviewed' => '1']), []);
 pruefe('Echte Import-Datei: Meldungen tragen die Häkchen beim Anlegen, das Update nicht', [isset($post['meta']['ma_human_reviewed']), isset(ma_abgleich_meta_fuer_update($post['meta'])['ma_human_reviewed'])], [true, false]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
