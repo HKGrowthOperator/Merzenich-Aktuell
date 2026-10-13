@@ -381,6 +381,29 @@ function ma_redaktion_meta_loeschsperre($check, $id, $key) {
     return empty($GLOBALS['ma_system_raeumt']) ? ma_redaktion_meta_sperre($check, $id, $key) : $check;
 }
 
+/*
+ * Dieselbe Sperre für Schreibwege über die Meta-ID (13.10.2026): Der Kasten
+ * „Individuelle Felder“, admin-ajax add-meta und XML-RPC ändern oder benennen
+ * Zeilen um, ohne die Filter oben zu durchlaufen. Partner bekommen für diese
+ * Schlüssel kein Recht edit_post_meta/add_post_meta/delete_post_meta, und
+ * Änderungen über die Meta-ID werden zusätzlich abgewiesen.
+ */
+add_action('init', function (): void {
+    foreach (ma_redaktion_nur_felder() as $k) add_filter('auth_post_meta_' . $k, 'ma_redaktion_meta_recht', 20, 4);
+}, 20);
+function ma_redaktion_meta_recht($erlaubt, $key, $post_id, $uid) {
+    return function_exists('ma_current_partner_policy') && ma_current_partner_policy(get_userdata((int) $uid) ?: null) ? false : $erlaubt;
+}
+add_filter('update_post_metadata_by_mid', 'ma_redaktion_meta_sperre_mid', 5, 4);
+add_filter('delete_post_metadata_by_mid', 'ma_redaktion_meta_sperre_mid', 5, 2);
+function ma_redaktion_meta_sperre_mid($check, $mid, $wert = null, $key = false) {
+    $alt = get_metadata_by_mid('post', (int) $mid);
+    foreach (array_filter([$alt ? (string) $alt->meta_key : '', is_string($key) ? $key : '']) as $k) {
+        if (ma_redaktion_meta_sperre($check, $alt ? (int) $alt->post_id : 0, $k) === false) return false;
+    }
+    return $check;
+}
+
 /* Archivieren und Wiederherstellen direkt in der Liste (03.10.2026). */
 add_filter('post_row_actions', 'ma_redaktion_zeilenaktionen', 10, 2);
 add_filter('page_row_actions', 'ma_redaktion_zeilenaktionen', 10, 2);

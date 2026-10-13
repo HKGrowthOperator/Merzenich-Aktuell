@@ -119,11 +119,9 @@ add_action('add_meta_boxes_post', function (): void {
         printf('<label><input type="checkbox" name="ma_gesponsert" value="1"%s> Gesponserter Beitrag (bezahlte Unternehmenspräsentation)</label><p class="description">Die Seite kennzeichnet ihn als „Anzeige · Gesponsert“. Redaktionelle Unternehmensnachrichten bleiben ohne Haken.</p>',
             checked((string) get_post_meta($p->ID, 'ma_gesponsert', true), '1', false));
         printf('<p><label>Auftraggeber (sichtbar)<br><input type="text" name="ma_gesponsert_von" value="%s" style="width:100%%"></label></p>', esc_attr((string) get_post_meta($p->ID, 'ma_gesponsert_von', true)));
-        if (function_exists('ma_business_auswahl')) {
-            $jetzt = (int) get_post_meta($p->ID, 'ma_business_id', true);
-            echo '<p><label>Unternehmenskanal<br><select name="ma_business_id" style="width:100%"><option value="">– keiner –</option>';
-            foreach (ma_business_auswahl() as $bid => $titel) printf('<option value="%d"%s>%s</option>', $bid, selected($jetzt, $bid, false), esc_html($titel));
-            echo '</select></label></p><p class="description">Der Beitrag erscheint im Kanal dieses Unternehmens unter /unternehmen/…/.</p>';
+        if (function_exists('ma_business_auswahl_html')) {
+            echo '<p><label for="ma_business_id">Unternehmenskanal</label><br>' . ma_business_auswahl_html('ma_business_id', (int) get_post_meta($p->ID, 'ma_business_id', true), '– keiner –') . '</p>'
+                . '<p class="description">Gesponserte Beiträge erscheinen im Kanal dieses Unternehmens unter /unternehmen/…/. Redaktionelle Berichte ohne Haken bleiben draußen.</p>';
         }
     }, 'post', 'side', 'default');
 });
@@ -133,13 +131,15 @@ add_action('save_post_post', function (int $id): void {
     $an = !empty($_POST['ma_gesponsert']);
     $an ? update_post_meta($id, 'ma_gesponsert', '1') : delete_post_meta($id, 'ma_gesponsert');
     $von = sanitize_text_field(wp_unslash($_POST['ma_gesponsert_von'] ?? ''));
-    if (array_key_exists('ma_business_id', $_POST)) {
+    // Nur ändern, wenn die Auswahl wirklich geändert wurde (unternehmenskanal.php).
+    if (function_exists('ma_business_auswahl_geaendert') && ma_business_auswahl_geaendert('ma_business_id')) {
         $bid = (int) $_POST['ma_business_id'];
-        if ($bid > 0 && get_post_type($bid) === 'ma_business') {
-            update_post_meta($id, 'ma_business_id', (string) $bid);
-            if ($von === '') $von = (string) get_the_title($bid);
-        } else delete_post_meta($id, 'ma_business_id');
+        if ($bid > 0 && get_post_type($bid) === 'ma_business') update_post_meta($id, 'ma_business_id', (string) $bid);
+        else delete_post_meta($id, 'ma_business_id');
     }
+    // Auftraggeber aus dem Kanal nur bei gesponserten Beiträgen.
+    $kanal = (int) get_post_meta($id, 'ma_business_id', true);
+    if ($an && $von === '' && $kanal > 0 && get_post_type($kanal) === 'ma_business') $von = (string) get_the_title($kanal);
     $von !== '' ? update_post_meta($id, 'ma_gesponsert_von', $von) : delete_post_meta($id, 'ma_gesponsert_von');
 }, 20);
 
@@ -160,3 +160,9 @@ function ma_ist_gesponsert($post): bool {
     $id = $post instanceof WP_Post ? $post->ID : (int) $post;
     return (string) get_post_meta($id, 'ma_gesponsert', true) === '1';
 }
+
+/* Gesponserte Beiträge auch im RSS-Feed als Anzeige kennzeichnen (13.10.2026). */
+add_filter('the_title_rss', function ($t) {
+    $p = get_post();
+    return $p && $p->post_type === 'post' && ma_ist_gesponsert($p) && !str_starts_with((string) $t, 'Anzeige') ? 'Anzeige: ' . $t : $t;
+});

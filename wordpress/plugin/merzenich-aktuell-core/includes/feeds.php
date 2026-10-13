@@ -148,7 +148,10 @@ function ma_latest_daten(): array {
     $items = [];
     foreach ($posts as $p) {
         $b = ma_feed_bild($p);
-        $items[] = ma_latest_eintrag(html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), (string) get_permalink($p), (string) get_post_time('c', false, $p),
+        // Gesponserte Beiträge (Unternehmenskanal) als Anzeige gekennzeichnet.
+        $titel = html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8');
+        if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) $titel = 'Anzeige: ' . $titel;
+        $items[] = ma_latest_eintrag($titel, (string) get_permalink($p), (string) get_post_time('c', false, $p),
             function_exists('ma_seo_ressort_von') ? ma_seo_ressort_von($p)[0] : '', function_exists('ma_seo_ort_von') ? ma_seo_ort_von($p) : 'merzenich',
             function_exists('ma_seo_kuerzen') ? ma_seo_kuerzen(trim($p->post_excerpt) !== '' ? $p->post_excerpt : $p->post_content, 220) : '', $b['url'] ?? '');
     }

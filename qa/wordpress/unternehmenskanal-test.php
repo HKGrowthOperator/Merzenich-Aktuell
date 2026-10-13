@@ -32,6 +32,11 @@ function get_post($id) { return $GLOBALS['posts'][(int) $id] ?? null; }
 function get_post_type($id) { return ($p = get_post($id)) ? $p->post_type : false; }
 function get_post_status($id) { return ($p = get_post($id)) ? $p->post_status : false; }
 function get_the_title($id) { $p = $id instanceof WP_Post ? $id : get_post($id); return $p ? $p->post_title : ''; }
+function get_post_stati() { return ['publish', 'future', 'draft', 'pending', 'private', 'trash', 'auto-draft', 'inherit', 'ma_in_pruefung', 'ma_aenderung', 'ma_archiv', 'ma_abgelehnt']; }
+function get_post_status_object($s) { return (object) ['label' => ['draft' => 'Entwurf', 'ma_in_pruefung' => 'In Prüfung'][$s] ?? $s]; }
+function selected($a, $b, $echo = true) { return (string) $a === (string) $b ? ' selected="selected"' : ''; }
+function sanitize_text_field($s) { return trim((string) $s); } function wp_unslash($s) { return $s; }
+function get_metadata_by_mid($typ, $mid) { foreach ($GLOBALS['pmeta'] as $pid => $m) foreach ($m as $k => $v) if (crc32($pid . $k) === $mid) return (object) ['post_id' => $pid, 'meta_key' => $k]; return false; }
 function get_post_meta($id, $k, $single = false) { return $GLOBALS['pmeta'][(int) $id][$k] ?? ''; }
 // Wie WordPress: update/add laufen durch den Filter (hier die Feldsperre aus redaktion.php).
 function update_post_meta($id, $k, $v) { if (ma_redaktion_meta_sperre(null, $id, $k) === false) return false; $GLOBALS['pmeta'][(int) $id][$k] = $v; return true; }
@@ -49,7 +54,10 @@ function get_posts(array $q) {
         if (isset($q['author']) && (int) $p->post_author !== (int) $q['author']) return false;
         if (isset($q['post_status']) && $q['post_status'] !== 'any' && !in_array($p->post_status, (array) $q['post_status'], true)) return false;
         if (isset($q['meta_key'], $q['meta_value']) && (string) get_post_meta($p->ID, $q['meta_key']) !== (string) $q['meta_value']) return false;
-        foreach ((array) ($q['meta_query'] ?? []) as $m) if (($m['compare'] ?? '') === 'NOT EXISTS' && get_post_meta($p->ID, $m['key']) !== '') return false;
+        foreach ((array) ($q['meta_query'] ?? []) as $m) {
+            $c = $m['compare'] ?? (isset($m['value']) ? '=' : 'EXISTS'); $w = get_post_meta($p->ID, $m['key']);
+            if (($c === 'NOT EXISTS' && $w !== '') || ($c === 'EXISTS' && $w === '') || ($c === '=' && (string) $w !== (string) $m['value'])) return false;
+        }
         return true;
     }));
     return ($q['fields'] ?? '') === 'ids' ? array_map(fn($p) => $p->ID, $l) : $l;
@@ -88,6 +96,14 @@ pruefe('Zugang kann die Zuordnung nicht selbst setzen', update_post_meta(101, 'm
 $GLOBALS['ma_system_schreibt'] = true;
 pruefe('Systemseitige Zuordnung ist erlaubt', ma_redaktion_meta_sperre(null, 101, 'ma_business_id'), null);
 unset($GLOBALS['ma_system_schreibt']);
+// Schreibwege über die Meta-ID (Individuelle Felder, admin-ajax add-meta, XML-RPC).
+pruefe('Kein Recht edit_post_meta auf ma_business_id für den Zugang', ma_redaktion_meta_recht(true, 'ma_business_id', 101, 7), false);
+pruefe('Redaktion behält das Recht', ma_redaktion_meta_recht(true, 'ma_business_id', 101, 1), true);
+$GLOBALS['pmeta'][101]['ma_organisation'] = 'Bäckerei';
+pruefe('Andere Zeile per Meta-ID in ma_business_id umbenennen: gesperrt', ma_redaktion_meta_sperre_mid(null, crc32('101ma_organisation'), '51', 'ma_business_id'), false);
+$GLOBALS['pmeta'][101]['notiz'] = 'x';
+pruefe('Freies Feld per Meta-ID ändern bleibt möglich', ma_redaktion_meta_sperre_mid(null, crc32('101notiz'), 'y', 'notiz'), null);
+unset($GLOBALS['pmeta'][101]['ma_organisation'], $GLOBALS['pmeta'][101]['notiz']);
 
 echo "\nNeue Beiträge eines verknüpften Zugangs\n";
 ma_business_beitrag_zuordnen(101, get_post(101));
@@ -116,15 +132,31 @@ echo "\nZugang mit Profil verknüpfen (Partner-Zugänge)\n";
 $GLOBALS['ich'] = 1;
 $GLOBALS['users'][9] = new WP_User(9, ['ma_wirtschaft_partner']);
 neuer_beitrag(['ID' => 120, 'post_type' => 'post', 'post_status' => 'pending', 'post_author' => 9, 'post_title' => 'Schon eingereicht']);
+neuer_beitrag(['ID' => 121, 'post_type' => 'post', 'post_status' => 'ma_in_pruefung', 'post_author' => 9, 'post_title' => 'In Prüfung']);
 $neu = ma_partner_business_verknuepfen(9, 'neu', 'Café Beispiel');
 pruefe('Neues Profil als Entwurf, Autor ist der Zugang', [get_post($neu)->post_type, get_post($neu)->post_status, (int) get_post($neu)->post_author, get_post($neu)->post_title], ['ma_business', 'draft', 9, 'Café Beispiel']);
 pruefe('Zugang zeigt auf das neue Profil', ma_business_von_benutzer(9), $neu);
 pruefe('Bisherige Beiträge werden nachgetragen', get_post_meta(120, 'ma_business_id'), (string) $neu);
+pruefe('Auch Beiträge „In Prüfung“', get_post_meta(121, 'ma_business_id'), (string) $neu);
+pruefe('Auswahl zeigt nicht veröffentlichte Profile mit Status', ma_business_auswahl()[$neu] ?? null, 'Café Beispiel (Entwurf)');
+$_POST = ['ma_business_id' => (string) $neu, 'ma_business_id_alt' => (string) $neu];
+pruefe('Speichern ohne Änderung lässt die Verknüpfung stehen', ma_business_auswahl_geaendert('ma_business_id'), false);
+$_POST = ['ma_business_id' => '', 'ma_business_id_alt' => (string) $neu];
+pruefe('Bewusst „kein Profil“ gewählt: Änderung', ma_business_auswahl_geaendert('ma_business_id'), true);
+$_POST = [];
+get_post($neu)->post_status = 'ma_in_pruefung';
+pruefe('Aktuelles Profil steht in der Auswahl, auch wenn nicht gelistet', str_contains(ma_business_auswahl_html('ma_business_id', $neu, '– kein Profil –'), 'value="' . $neu . '" selected="selected"'), true);
 pruefe('Vorhandenes Profil wählen', ma_partner_business_verknuepfen(9, '51'), 51);
 pruefe('Kein Unternehmensprofil (Beitrag) wird abgelehnt', ma_partner_business_verknuepfen(9, '101'), 0);
 pruefe('Leer löst die Verknüpfung', [ma_partner_business_verknuepfen(9, ''), ma_business_von_benutzer(9)], [0, 0]);
 $GLOBALS['ich'] = 7;
 pruefe('Ein Zugang darf selbst nichts verknüpfen (Feldsperre greift bei Beiträgen)', update_post_meta(102, 'ma_business_id', '51'), false);
+
+echo "\nKanal zeigt nur gesponserte Beiträge\n";
+$GLOBALS['pmeta'][102]['ma_business_id'] = '50';
+pruefe('Ohne Kennzeichnung „gesponsert“ nicht im Kanal', array_map(fn($p) => $p->ID, ma_business_beitraege(50)), []);
+$GLOBALS['pmeta'][102]['ma_gesponsert'] = '1';
+pruefe('Gesponsert: im Kanal', array_map(fn($p) => $p->ID, ma_business_beitraege(50)), [102]);
 
 echo $fehler ? "\n$fehler Fehler.\n" : "\nAlle Pruefungen bestanden.\n";
 exit($fehler ? 1 : 0);

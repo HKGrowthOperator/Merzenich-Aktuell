@@ -38,11 +38,22 @@ function ma_business_von_beitrag(int $post_id): int {
     return ($p instanceof WP_Post && $p->post_type === 'ma_business') ? $id : 0;
 }
 
-/** Veröffentlichte Beiträge (oder Anzeigen, Tipps) eines Firmenprofils, neueste zuerst. */
+/**
+ * Veröffentlichte Beiträge (oder Anzeigen, Tipps) eines Firmenprofils, neueste zuerst.
+ * Beiträge nur, wenn sie als gesponsert gekennzeichnet sind: Der Kanal zeigt Anzeigen
+ * der Firma, ein redaktioneller Bericht über sie gehört nicht hinein.
+ */
 function ma_business_beitraege(int $bid, int $n = 6, string $typ = 'post'): array {
     if ($bid <= 0) return [];
-    return get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => $n, 'meta_key' => MA_FIRMA_META, 'meta_value' => (string) $bid,
+    $mq = [['key' => MA_FIRMA_META, 'value' => (string) $bid]];
+    if ($typ === 'post') $mq[] = ['key' => 'ma_gesponsert', 'value' => '1'];
+    return get_posts(['post_type' => $typ, 'post_status' => 'publish', 'posts_per_page' => $n, 'meta_query' => $mq,
         'orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true]);
+}
+
+/** Alle Status außer Papierkorb, automatischem Entwurf und Revision (auch In Prüfung, Änderung, Archiv, Abgelehnt). */
+function ma_business_alle_status(): array {
+    return array_values(array_diff(get_post_stati(), ['trash', 'auto-draft', 'inherit']));
 }
 
 /** Adresse des Unternehmenskanals (Theme, inc/unternehmen.php). */
@@ -51,13 +62,38 @@ function ma_business_kanal_url($b): string {
     return ($p instanceof WP_Post && $p->post_name !== '') ? home_url('/unternehmen/' . $p->post_name . '/') : '';
 }
 
-/** Profile zur Auswahl in der Verwaltung (alle außer Papierkorb und Änderungskopien). */
+/** Profile zur Auswahl in der Verwaltung (alle außer Papierkorb und Änderungskopien), nicht veröffentlichte mit Status. */
 function ma_business_auswahl(): array {
-    $l = get_posts(['post_type' => 'ma_business', 'post_status' => ['publish', 'draft', 'pending', 'future', 'private'], 'posts_per_page' => 300, 'orderby' => 'title', 'order' => 'ASC',
+    $l = get_posts(['post_type' => 'ma_business', 'post_status' => ma_business_alle_status(), 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC',
         'meta_query' => [['key' => '_ma_aenderung_von', 'compare' => 'NOT EXISTS']]]);
     $r = [];
-    foreach ($l as $p) $r[(int) $p->ID] = $p->post_title !== '' ? $p->post_title : '(ohne Namen)';
+    foreach ($l as $p) {
+        $o = $p->post_status !== 'publish' ? get_post_status_object($p->post_status) : null;
+        $r[(int) $p->ID] = ($p->post_title !== '' ? $p->post_title : '(ohne Namen)') . ($o ? ' (' . $o->label . ')' : '');
+    }
     return $r;
+}
+
+/**
+ * Optionen der Profilauswahl. Der aktuelle Wert steht immer darin, auch wenn er
+ * nicht in der Liste ist; dazu ein verstecktes Feld mit dem Ausgangswert, damit
+ * Speichern ohne Änderung die Verknüpfung nie löscht.
+ */
+function ma_business_auswahl_html(string $name, int $jetzt, string $leer, bool $neu = false): string {
+    $l = ma_business_auswahl();
+    if ($jetzt > 0 && !isset($l[$jetzt]) && get_post_type($jetzt) === 'ma_business') $l = [$jetzt => get_the_title($jetzt) . ' (' . (get_post_status_object((string) get_post_status($jetzt))->label ?? '') . ')'] + $l;
+    $h = '<input type="hidden" name="' . esc_attr($name) . '_alt" value="' . esc_attr($jetzt > 0 ? (string) $jetzt : '') . '">'
+        . '<select id="' . esc_attr($name) . '" name="' . esc_attr($name) . '" style="max-width:100%"><option value="">' . esc_html($leer) . '</option>'
+        . ($neu ? '<option value="neu">Neues Profil als Entwurf anlegen</option>' : '');
+    foreach ($l as $id => $titel) $h .= sprintf('<option value="%d"%s>%s</option>', $id, selected($jetzt, $id, false), esc_html($titel));
+    return $h . '</select>';
+}
+
+/** Wurde die Auswahl gegenüber dem Ausgangswert geändert? (Formular ohne Ausgangswert: ja.) */
+function ma_business_auswahl_geaendert(string $name): bool {
+    if (!array_key_exists($name, $_POST)) return false;
+    if (!array_key_exists($name . '_alt', $_POST)) return true;
+    return sanitize_text_field(wp_unslash((string) $_POST[$name])) !== sanitize_text_field(wp_unslash((string) $_POST[$name . '_alt']));
 }
 
 /**
@@ -77,7 +113,8 @@ function ma_partner_business_verknuepfen(int $uid, string $wahl, string $name = 
         if (!$p instanceof WP_Post || $p->post_type !== 'ma_business') return 0;
     }
     update_user_meta($uid, MA_FIRMA_META, (string) $bid);
-    $alt = get_posts(['post_type' => ['post', 'ma_ad', 'ma_tip'], 'post_status' => 'any', 'author' => $uid, 'posts_per_page' => 200, 'fields' => 'ids',
+    // Ausdrücklich alle Status: 'any' ließe In Prüfung, Änderung, Archiv und Abgelehnt aus.
+    $alt = get_posts(['post_type' => ['post', 'ma_ad', 'ma_tip'], 'post_status' => ma_business_alle_status(), 'author' => $uid, 'posts_per_page' => -1, 'fields' => 'ids',
         'meta_query' => [['key' => MA_FIRMA_META, 'compare' => 'NOT EXISTS']]]);
     $GLOBALS['ma_system_schreibt'] = true;
     foreach ($alt as $id) update_post_meta((int) $id, MA_FIRMA_META, (string) $bid);
@@ -110,9 +147,8 @@ function ma_business_profilfeld(WP_User $u): void {
     $jetzt = ma_business_von_benutzer($u->ID);
     wp_nonce_field('ma_business_zugang_' . $u->ID, 'ma_business_zugang_nonce');
     echo '<h2>Unternehmenskanal</h2><table class="form-table" role="presentation"><tr><th><label for="ma_business_id">Unternehmensprofil</label></th><td>';
-    echo '<select id="ma_business_id" name="ma_business_id"><option value="">– kein Profil –</option><option value="neu">Neues Profil als Entwurf anlegen</option>';
-    foreach (ma_business_auswahl() as $id => $titel) printf('<option value="%d"%s>%s</option>', $id, selected($jetzt, $id, false), esc_html($titel));
-    echo '</select><p class="description">Beiträge dieses Zugangs erscheinen im Kanal des gewählten Unternehmens unter /unternehmen/…/ (nach Freigabe durch die Redaktion).';
+    echo ma_business_auswahl_html('ma_business_id', (int) get_user_meta($u->ID, MA_FIRMA_META, true), '– kein Profil –', true);
+    echo '<p class="description">Beiträge dieses Zugangs erscheinen im Kanal des gewählten Unternehmens unter /unternehmen/…/ (nach Freigabe durch die Redaktion).';
     if ($jetzt && ($url = ma_business_kanal_url($jetzt)) && get_post_status($jetzt) === 'publish') echo ' <a href="' . esc_url($url) . '" target="_blank">Kanal ansehen</a>';
     echo '</p></td></tr></table>';
 }
@@ -124,6 +160,7 @@ function ma_business_profilfeld_speichern(int $uid): void {
     if (!current_user_can('edit_users') || (function_exists('ma_current_partner_policy') && ma_current_partner_policy())) return;
     $u = get_userdata($uid);
     if (!$u || !in_array('ma_wirtschaft_partner', (array) $u->roles, true)) return;
+    if (!ma_business_auswahl_geaendert('ma_business_id')) return;
     $wahl = sanitize_text_field(wp_unslash($_POST['ma_business_id'] ?? ''));
     if ($wahl !== 'neu' && $wahl !== '' && !ctype_digit($wahl)) return;
     if ($wahl === (string) ma_business_von_benutzer($uid)) return;
