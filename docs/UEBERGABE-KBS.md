@@ -92,6 +92,8 @@ Die Meldung ist sofort online, auf der Startseite (wenn freigegeben), im Ressort
 - **Bearbeiten**: öffnet die Meldung im Editor (A4).
 - **Verlauf**: zeigt, wer wann was geändert hat.
 
+**Automatische Feuerwehr-Meldungen:** Jeden Tag nach dem Quellenabruf legt die Automatik neue Einsätze der Feuerwehr als Entwurf an (Dachzeile „Feuerwehr · 138/26“). Der Text besteht nur aus den Angaben der Feuerwehr und einem gekennzeichneten Zitat aus ihrem Bericht. Vor der Freigabe den Bericht über den Quellenlink öffnen und vergleichen; Tippfehler im Zitat stammen aus dem Original. Nennen die Quellen unterschiedliche Daten, steht das im Text.
+
 **Nicht freigeben** heißt: nichts tun. Die Meldung bleibt Entwurf und schadet nicht. Was falsch oder veraltet ist, über **Bearbeiten** in den Papierkorb legen. Dann kommt sie auch mit der nächsten Recherche nicht wieder.
 
 ## A4. Eine Meldung selbst schreiben
@@ -434,7 +436,8 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 - [ ] Nach dem Spiel am 9. Oktober (Freialdenhoven – Merzenich) das Ergebnis unter Sport eintragen.
 - [ ] iPhone: Wer die Seite schon auf dem Home-Bildschirm hat, sieht das neue „M“-Symbol erst, wenn er das Symbol neu anlegt.
 - [ ] Alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de` (antwortet mit 503): in Coolify bei der alten Anwendung „Dockerfile Location“ auf `/deploy/coolify/Dockerfile.umleitung` stellen und neu deployen, dann leitet sie dauerhaft auf merzenich-aktuell.de um. Oder den DNS-Eintrag löschen. Anleitung: `deploy/coolify/README.md`.
-- [ ] Plugin 1.27.2 hochladen (Plugins → Installieren → Plugin hochladen, `wordpress-delivery/merzenich-aktuell-core.zip`): REST-Antworten werden dann nur noch fünf Minuten statt 28 Tage zwischengespeichert, und feste Startseitenplätze laufen nach 7 Tagen aus.
+- [x] Plugin 1.27.4 und Theme 21.17.1 eingespielt (13.10.2026).
+- [ ] Das Passwort des Kontos „HK Growth“ ändern: Es wurde am 13.10.2026 für das Einspielen im Chat weitergegeben.
 
 ---
 
@@ -562,4 +565,4 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV) | Anto-Sutharsan Jesuthasan |
 | Technische Hilfe, Recherche, Bildbeschaffung | HK Growth Operator |
 
-Technischer Stand dieser Anleitung: Theme 21.17.0 · Core-Plugin 1.27.2.
+Technischer Stand dieser Anleitung: Theme 21.17.1 · Core-Plugin 1.27.4.

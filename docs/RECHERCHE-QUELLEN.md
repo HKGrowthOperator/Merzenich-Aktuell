@@ -23,6 +23,38 @@ Quellen (Netzrichtlinie, HTTP 403). GitHub Actions erreicht sie. Deshalb:
 | Grundschulen (KGS Merzenich, KGS Golzheim) | `schulen.json` | erster Lauf: 302, wie oben |
 | Jobbörse der Bundesagentur, 25 km um Merzenich | `jobs.json` | erster Lauf: 403, Fehlertext wird jetzt mitgeschrieben |
 
+## Automatik Feuerwehr (seit 13.10.2026)
+
+`deploy/automatik-feuerwehr.mjs` läuft nach jedem erfolgreichen Quellenabruf
+(`.github/workflows/meldungen-automatik.yml`, auch von Hand mit „trocken“).
+
+- **Quellen:** Einsatzseiten von feuerwehr-merzenich.de (`feuerwehr.json`:
+  Nummer, Ort - Straße, Stichwort / Kategorie, Alarmzeit, Bericht, Kräfte) und
+  die Feuerwehr-Beiträge in der Heimat-Info-App (`heimatinfo.json`: Einsatz-Nr,
+  Datum, Stichwort, Meldung, Einsatzort, Kräfte; erscheinen meist früher).
+  Beide werden je Einsatznummer zusammengeführt.
+- **Nur Neues:** Nummer in keiner Meldung, keinem Artikel und keiner Seite
+  (`inhalte/meldungen`, `site-source/content/artikel`, `chatgpt-site/blaulicht`),
+  nicht in `deploy/automatik-stand.json`, Alarm höchstens 14 Tage alt.
+- **Text:** nur aus den Feldern der Quelle, dazu höchstens drei Sätze des
+  Feuerwehrberichts als Zitat („Die Feuerwehr schreibt dazu: …“), ohne Sätze mit
+  Ziffern (Hausnummern, Alter). Widersprechen sich die Quellen bei Datum oder
+  Ort, nennt der Text beide (Beispiel 136/26: 02.10. laut Einsatzseite,
+  03.10. laut Heimat-Info).
+- **Übersprungen** (steht in der Zusammenfassung des Laufs): Einsatzort ohne
+  Ortsteil (Autobahn, Landstraße), kein Bericht, keine passende Bildklasse,
+  unter 80 Wörtern.
+- **Veröffentlicht nichts.** Die Meldungen kommen über den Abgleich als Entwurf
+  in die Freigaben. Wer eine Meldung nicht will, legt sie in WordPress in den
+  Papierkorb; sie kommt nicht wieder.
+- Test mit echten Rohdaten: `node qa/automatik-feuerwehr-test.mjs`.
+
+**Quellenstand 13.10.2026:** Polizei/Presseportal liefert seit 10.10. nur
+„Security Check“ (HTTP 503), letzte lesbare Fassung im Commit 0b88a926.
+`gemeinde.json` enthält keine Daten (Datum) und keine Einzelmeldungen.
+Datierte Gemeinde-Beiträge kommen nur über Heimat-Info; sie werden nicht
+automatisch übernommen, sondern stehen in der Zusammenfassung des Laufs.
+
 ## Regeln für Meldungen
 
 - Nur was in der Quelle steht. Keine Verallgemeinerungen, keine Vermutungen.

@@ -1,6 +1,17 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-12. Oktober 2026 · Theme 21.17.0 · Core-Plugin 1.27.2 (Historie unten)
+13. Oktober 2026 · Theme 21.17.1 · Core-Plugin 1.27.4 (Historie unten)
+
+## Neu am 13.10.2026: Plugin 1.27.3 und 1.27.4, Theme 21.17.1, Feuerwehr-Automatik (live eingespielt)
+
+Plugin 1.27.4 und Theme 21.17.1 sind auf merzenich-aktuell.de eingespielt (Konto „HK Growth“, Plugins bzw. Design → hochladen → „Aktuelle Version ersetzen“). Geprüft: Seitenquelltext `ver=1.27.4`/`ver=21.17.1`, Startseite 200 ohne PHP-Fehler auf Handy und Desktop, keine 4xx/5xx beim Laden, `/wp-json/wp/v2/posts` mit `cache-control: public, max-age=300`, unbekannte REST-Route mit `no-store`. Enthalten sind 1.27.1 (REST-Speicherzeit) und 1.27.2 (feste Plätze laufen nach 7 Tagen aus).
+
+- **Abgleich lässt Prüfhäkchen stehen (1.27.3):** Beim Aktualisieren eines bestehenden Beitrags schrieb der Abgleich die Import-Werte `ma_date_verified`, `ma_place_verified`, `ma_human_reviewed` = `'0'`. Eine veröffentlichte Meldung fiel dadurch beim nächsten Speichern auf Entwurf zurück (Veröffentlichungssperre). `ma_abgleich_meta_fuer_update()` lässt diese Häkchen und die Startseiten-Freigabe beim Aktualisieren weg.
+- **Reparatur und Bildrechte (1.27.4):** Einmalig beim ersten Backend-Aufruf bekommen veröffentlichte Abgleich-Beiträge die fehlenden Häkchen zurück, mit Eintrag „Prüfhäkchen wiederhergestellt“ im Verlauf (live geprüft an der Herbstlaub-Meldung, die sie verloren hatte). `ma_image_rights_verified` wird beim Aktualisieren nur noch geschrieben, wenn die Import-Datei `'1'` trägt; eine bestätigte 1 wird nie herabgesetzt. Tests: `qa/wordpress/abgleich-test.php`.
+- **Theme 21.17.1:** gleicher Code, aktuelle Vorlagen (u. a. Cache-Buster für `kopf.js`). Gebaut mit `node deploy/wp-pakete.mjs`, weil nur dieses Paket `static/` enthält; das CI-Zip hat es nicht und würde beim Ersetzen die Assets löschen.
+- **Feuerwehr-Automatik:** `deploy/automatik-feuerwehr.mjs` und `.github/workflows/meldungen-automatik.yml` legen neue Einsätze nach dem täglichen Quellenabruf als Meldung an; sie kommen über den Abgleich als Entwurf in die Freigaben. Erster Lauf 13.10.: Einsatz 135/26 (Girbelsrath), 136/26 (Merzenich, mit beiden Datumsangaben der Quellen) und 138/26 (Merzenich) stehen in den Freigaben. Regeln und Grenzen: `RECHERCHE-QUELLEN.md`, Abschnitt „Automatik Feuerwehr“.
+- **Paketbau:** `build-wordpress-packages.yml` baut bei abgelehntem Push auf frischem `main` neu (bis vier Versuche). Am 12.10. war das Zip deshalb auf 1.27.1 stehen geblieben.
+- **ChatGPT-Recherche:** ChatGPT liefert die Morgenrecherche als Markdown-Bericht, nicht als Commit; der letzte Inhalts-Commit von ChatGPT ist vom 06.10. Wie die Berichte ins Repo kommen: `CHATGPT-MORGENUPDATE.md`.
 
 ## Neu in Plugin 1.27.2 (12.10.2026): feste Startseitenplätze laufen aus
 
