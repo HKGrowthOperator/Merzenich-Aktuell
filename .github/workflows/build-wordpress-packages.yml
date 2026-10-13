@@ -32,40 +32,41 @@ jobs:
         run: |
           while IFS= read -r file; do php -l "$file"; done < <(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' -print)
 
-      - name: Build installable ZIPs from versioned source
-        run: |
-          rm -f wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip
-          (
-            cd wordpress/theme
-            zip -X -qr ../../wordpress-delivery/merzenich-aktuell-theme.zip merzenich-aktuell
-          )
-          (
-            cd wordpress/plugin
-            zip -X -qr ../../wordpress-delivery/merzenich-aktuell-core.zip merzenich-aktuell-core
-          )
-          unzip -tq wordpress-delivery/merzenich-aktuell-theme.zip
-          unzip -tq wordpress-delivery/merzenich-aktuell-core.zip
-
-      - name: Pruefsummen mitziehen
-        # Ohne diesen Schritt beschreibt docs/SHA256SUMS.txt nach jedem Neubau
-        # Archive, die es nicht mehr gibt. sha256sum -c schlaegt dann fehl und
-        # qa/pruefung.mjs meldet die Abweichung bei jedem Lauf.
-        run: |
-          {
-            sha256sum wordpress-delivery/merzenich-aktuell-theme.zip
-            sha256sum wordpress-delivery/merzenich-aktuell-core.zip
-            sha256sum wordpress-delivery/merzenich-aktuell-import.xml
-          } > docs/SHA256SUMS.txt
-          sha256sum -c docs/SHA256SUMS.txt
-
-      - name: Commit synchronized delivery packages
+      - name: Zips und Pruefsummen bauen, committen, pushen
+        # In einer Schleife: qa.yml, die Quellen-Laeufe und die Automatik schreiben parallel
+        # auf main. Am 12.10.2026 wurde der Push deshalb abgelehnt ("fetch first") und das
+        # Zip blieb auf dem alten Stand. Bei Ablehnung wird auf dem frischen main neu gebaut
+        # statt rebased: qa.yml aendert die Import-Datei und damit docs/SHA256SUMS.txt.
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip docs/SHA256SUMS.txt
-          if git diff --cached --quiet; then
-            echo 'Delivery packages already synchronized.'
-            exit 0
-          fi
-          git commit -m 'build: synchronize WordPress delivery ZIPs and checksums'
-          git push origin HEAD:main
+          for versuch in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            rm -f wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip
+            ( cd wordpress/theme && zip -X -qr ../../wordpress-delivery/merzenich-aktuell-theme.zip merzenich-aktuell )
+            ( cd wordpress/plugin && zip -X -qr ../../wordpress-delivery/merzenich-aktuell-core.zip merzenich-aktuell-core )
+            unzip -tq wordpress-delivery/merzenich-aktuell-theme.zip
+            unzip -tq wordpress-delivery/merzenich-aktuell-core.zip
+            # Ohne neue Pruefsummen beschreibt docs/SHA256SUMS.txt Archive, die es nicht mehr
+            # gibt; sha256sum -c schlaegt dann fehl und qa/pruefung.mjs meldet es bei jedem Lauf.
+            {
+              sha256sum wordpress-delivery/merzenich-aktuell-theme.zip
+              sha256sum wordpress-delivery/merzenich-aktuell-core.zip
+              sha256sum wordpress-delivery/merzenich-aktuell-import.xml
+            } > docs/SHA256SUMS.txt
+            sha256sum -c docs/SHA256SUMS.txt
+            git add wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip docs/SHA256SUMS.txt
+            if git diff --cached --quiet; then
+              echo 'Delivery packages already synchronized.'
+              exit 0
+            fi
+            git commit -q -m 'build: synchronize WordPress delivery ZIPs and checksums'
+            if git push origin HEAD:main; then
+              echo "Plugin im Zip: $(unzip -p wordpress-delivery/merzenich-aktuell-core.zip merzenich-aktuell-core/merzenich-aktuell-core.php | grep -m1 'Version:')"
+              exit 0
+            fi
+            echo "Push abgelehnt (Versuch $versuch), baue auf frischem main neu."
+            sleep $((versuch * 7))
+          done
+          exit 1
