@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated": "2026-10-13T15:05:11.073Z",
+  "generated": "2026-10-13T15:22:05.575Z",
   "rightsCheckedAt": "2026-10-13",
-  "note": "Kuratiertes Bildset fuer die Vermarktungsseite. Nur reale, frei lizenzierte Fotografien; keine Marken werden als echte Werbekunden dargestellt. Seit 13.10.2026 auch Symbolfotos der Musterbeiträge im Unternehmen-Menü und in den Unternehmenskanälen (als Musterbeitrag gekennzeichnet, ausgedachte Firmen).",
+  "note": "Kuratiertes Bildset fuer die Vermarktungsseite. Nur reale, frei lizenzierte Fotografien; keine Marken werden als echte Werbekunden dargestellt. Seit 13.10.2026 auch Symbolfotos der Musterbeiträge im Unternehmen-Menü und in den Unternehmenskanälen (als Musterbeitrag gekennzeichnet, ausgedachte Firmen). Ausschnitte (crop) sind als Anteile [x, y, Breite, Höhe] angegeben.",
   "images": [
     {
       "id": "werbebanner",
@@ -195,6 +195,76 @@
       "width": 1600,
       "height": 1067,
       "description": "Architecture"
+    },
+    {
+      "id": "muster-schreinerei-beitel",
+      "src": "/assets/werben/muster-schreinerei-beitel.jpg",
+      "alt": "Zwei Hände führen einen Stechbeitel über ein Werkstück aus hellem Holz",
+      "purpose": "Musterbeitrag Muster-Schreinerei (Ausbildung)",
+      "source": "Wikimedia Commons",
+      "sourceTitle": "File:How much wood could the wood shop chuck 150324-F-AI558-0224.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHow%20much%20wood%20could%20the%20wood%20shop%20chuck%20150324-F-AI558-0224.jpg",
+      "author": "Senior Airman Matthew Lotz",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "rightsCheckedAt": "2026-10-13",
+      "width": 1600,
+      "height": 1106,
+      "description": "Stefano De Bortoli, 31st Force Support Squadron wood hobby shop manager, chisels a piece of wood March 24, 2015, at Aviano Air Base, Italy. The shop is part of the arts and crafts center and is open Tuesday through Saturday. (U.S. Air Force photo by Senior Airman Matthew Lotz/Released) Unit: 31st Fighter Wing Public Affairs"
+    },
+    {
+      "id": "muster-schreinerei-treppe",
+      "src": "/assets/werben/muster-schreinerei-treppe.jpg",
+      "alt": "Gerade Holztreppe aus Eiche mit Handlauf, Antrittspfosten und weißen Geländerstäben",
+      "purpose": "Musterbeitrag Muster-Schreinerei (Treppe)",
+      "source": "Wikimedia Commons",
+      "sourceTitle": "File:Before boxed newel installation richmond va (3) (14014449790).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABefore%20boxed%20newel%20installation%20richmond%20va%20(3)%20(14014449790).jpg",
+      "author": "The Finishing Company Richmond Va",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "rightsCheckedAt": "2026-10-13",
+      "width": 1232,
+      "height": 821,
+      "crop": [
+        0,
+        0.25,
+        0.77,
+        0.684
+      ],
+      "description": "before boxed newel installation richmond va (3)"
+    },
+    {
+      "id": "muster-steuerbuero-notizen",
+      "src": "/assets/werben/muster-steuerbuero-notizen.jpg",
+      "alt": "Hand schreibt in ein Notizbuch, daneben ein aufgeklappter Laptop",
+      "purpose": "Musterbeitrag Muster-Steuerbüro (Beratung per Video)",
+      "source": "Wikimedia Commons",
+      "sourceTitle": "File:Working from home writing notes.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWorking%20from%20home%20writing%20notes.jpg",
+      "author": "Microbiz Mag",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "rightsCheckedAt": "2026-10-13",
+      "width": 1600,
+      "height": 1067,
+      "description": "Man makes notes on a coffee table during work from home. Coffee in background."
+    },
+    {
+      "id": "muster-immobilien-schluessel",
+      "src": "/assets/werben/muster-immobilien-schluessel.jpg",
+      "alt": "Mehrere Hausschlüssel an einem Schlüsselring in Nahaufnahme",
+      "purpose": "Musterbeitrag Muster-Immobilien (Schlüsselübergabe)",
+      "source": "Wikimedia Commons",
+      "sourceTitle": "File:Macro Keys (8649298548).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMacro%20Keys%20(8649298548).jpg",
+      "author": "benjgibbs",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "rightsCheckedAt": "2026-10-13",
+      "width": 1600,
+      "height": 1068,
+      "description": "Macro Keys"
     }
   ]
 }

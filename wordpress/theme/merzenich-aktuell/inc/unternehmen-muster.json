@@ -131,7 +131,7 @@
             "In der Ausbildung geht es um Möbelbau, Treppenbau und die Montage beim Kunden. Dazu kommen Maschinenkunde und das Lesen von Zeichnungen.",
             "Wer erst einmal reinschnuppern möchte, kann sich für einen Tag in der Werkstatt melden. Ein Lebenslauf genügt für den Anfang."
           ],
-          "bild": "format-artikelanzeige"
+          "bild": "muster-schreinerei-beitel"
         },
         {
           "slug": "treppen-nach-mass",
@@ -142,7 +142,7 @@
             "Nach dem Aufmaß vor Ort entsteht eine Zeichnung, die gemeinsam besprochen wird. Gefertigt wird in der eigenen Werkstatt, montiert vom selben Team.",
             "Auch alte Treppen lassen sich oft aufarbeiten. Ein Termin vor Ort klärt, was möglich ist."
           ],
-          "bild": "format-artikelanzeige"
+          "bild": "muster-schreinerei-treppe"
         },
         {
           "slug": "ein-blick-in-die-werkstatt",
@@ -205,7 +205,7 @@
             "Für das Gespräch reichen ein Laptop oder ein Tablet mit Kamera. Den Link zum Termin gibt es vorher per E-Mail.",
             "Unterlagen, die besprochen werden sollen, lassen sich vorab hochladen. So bleibt im Gespräch mehr Zeit für die Fragen."
           ],
-          "bild": "unternehmensprofil"
+          "bild": "muster-steuerbuero-notizen"
         }
       ]
     },
@@ -246,7 +246,7 @@
             "Dazu gehören die Zahlung des Kaufpreises, das Ablesen der Zähler und ein Protokoll über den Zustand des Hauses. Muster-Immobilien begleitet diese Schritte.",
             "Am Ende steht die Schlüsselübergabe. Ein gemeinsamer Rundgang sorgt dafür, dass beide Seiten wissen, was übergeben wird."
           ],
-          "bild": "format-sidebar"
+          "bild": "muster-immobilien-schluessel"
         },
         {
           "slug": "grundrisse-lesen",

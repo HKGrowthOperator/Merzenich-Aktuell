@@ -30,6 +30,16 @@ const MAX_BYTES = 300 * 1024;
 function verkleinern(buf, breite = 1080) {
   return execFileSync('convert', ['-', '-resize', breite + 'x>', '-strip', '-interlace', 'Plane', '-sampling-factor', '4:2:0', '-quality', '74', 'jpg:-'], { input: buf, maxBuffer: 64 * 1024 * 1024 });
 }
+// Optionaler Ausschnitt [x, y, b, h] als Anteile des Bildes, z. B. um einen störenden
+// Gegenstand am Rand wegzuschneiden (13.10.2026). Gibt Bild und neue Größe zurück.
+function zuschneiden(buf, crop, w, h) {
+  if (!crop) return { buf, w, h };
+  const [x, y, b, hh] = crop.map(Number);
+  if (![x, y, b, hh].every(n => n >= 0 && n <= 1) || x + b > 1 || y + hh > 1 || !b || !hh) throw new Error('crop ungueltig: ' + crop.join(','));
+  const cw = Math.round(w * b), ch = Math.round(h * hh);
+  const out = execFileSync('convert', ['-', '-crop', cw + 'x' + ch + '+' + Math.round(w * x) + '+' + Math.round(h * y), '+repage', '-quality', '95', 'jpg:-'], { input: buf, maxBuffer: 64 * 1024 * 1024 });
+  return { buf: out, w: cw, h: ch };
+}
 const erlaubteLizenz = /^(CC0|Public domain|CC BY(?:-| )|CC BY-SA)/i;
 
 function cleanHtml(s='') {
@@ -120,9 +130,10 @@ for (const item of cfg.images) {
   if (!r.ok) throw new Error(item.sourceTitle + ': Bilddownload ' + r.status);
   const buf = Buffer.from(await r.arrayBuffer());
   if (buf.length < 20000) throw new Error(item.sourceTitle + ': Bilddatei unerwartet klein (' + buf.length + ' Bytes)');
-  writeFileSync(join(outDir, item.output), verkleinern(buf));
+  const bild = zuschneiden(buf, item.crop, info.width, info.height);
+  writeFileSync(join(outDir, item.output), verkleinern(bild.buf));
   // Kleine Fassung für Karten (Musterprofile, Unternehmen-Menü), srcset in inc/markt.php.
-  writeFileSync(join(outDir, item.output.replace(/\.jpg$/, '-720.jpg')), verkleinern(buf, 720));
+  writeFileSync(join(outDir, item.output.replace(/\.jpg$/, '-720.jpg')), verkleinern(bild.buf, 720));
   credits.images.push({
     id: item.id,
     src: '/assets/werben/' + item.output,
@@ -131,13 +142,17 @@ for (const item of cfg.images) {
     source: 'Wikimedia Commons',
     sourceTitle: item.sourceTitle,
     sourceUrl: info.sourceUrl,
-    author: info.author,
+    // Eigene Urheberangabe, wenn die Commons-Angabe sich nicht sauber kürzen lässt.
+    author: item.author ?? info.author,
     license: info.license,
     licenseUrl: info.licenseUrl,
     rightsCheckedAt: cfg.rightsCheckedAt,
-    width: info.width,
-    height: info.height,
-    description: info.desc
+    width: bild.w,
+    height: bild.h,
+    ...(item.crop ? { crop: item.crop } : {}),
+    // Eigene Beschreibung, wenn die Commons-Beschreibung nicht übernommen werden soll
+    // (z. B. weil sie eine inzwischen fremd genutzte Domain nennt).
+    description: item.description ?? info.desc
   });
   console.log('Werben-Bild: ' + item.id + ' <- ' + item.sourceTitle + ' (' + info.license + ', ' + Math.round(buf.length/1024) + ' KB)');
 }
