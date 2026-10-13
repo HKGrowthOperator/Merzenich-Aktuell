@@ -31,6 +31,29 @@ const ORTSTEIL = { merzenich: 'Merzenich', golzheim: 'Golzheim', girbelsrath: 'G
 const RESSORT = { '/blaulicht/': 'blaulicht', '/sport/': 'sport', '/vereine/': 'vereine', '/rathaus/': 'rathaus', '/leben/': 'leben', '/wirtschaft/': 'wirtschaft', '/unternehmen/': 'wirtschaft', '/menschen/': 'menschen', '/tipp/': 'tipp' };
 
 const fehler = [];
+// Unternehmen (Auftrag Betreiber 13.10.2026): Firmen aus der Theme-Datei, wie
+// WordPress sie ausgibt (inc/unternehmen.php, ma21_menue_firmen), solange es
+// keine echten Unternehmenskanaele gibt. Bilder mit Nachweis aus credits.json.
+const musterDatei = join(wurzel, 'wordpress', 'theme', 'merzenich-aktuell', 'inc', 'unternehmen-muster.json');
+const werbenBilder = Object.fromEntries((JSON.parse(readFileSync(join(site, 'assets', 'werben', 'credits.json'), 'utf8')).images || []).map((i) => [i.id, i]));
+const kurzname = (s) => String(s || '').replace(/\s*(\(|https?:|,).*$/u, '').trim() || 'Wikimedia Commons';
+function musterBild(id) {
+  const i = werbenBilder[id];
+  if (!i) { fehler.push(`Musterfirmen: Bild ${id} fehlt in assets/werben/credits.json`); return null; }
+  return { src: i.src.replace(/\.jpg$/, '-720.jpg'), alt: i.alt || '', credit: 'Foto: ' + kurzname(i.author) + (i.license ? ', ' + i.license : '') };
+}
+const musterFirmen = (JSON.parse(readFileSync(musterDatei, 'utf8')).firmen || []).map((f) => {
+  const url = `/unternehmen/${f.slug}/`;
+  return { name: f.name, url, zeile: `${f.branche} · ${ORTSTEIL[f.ort] || 'Merzenich'}`, kuerzel: f.kuerzel, farbe: f.farbe, logo: '', muster: true,
+    beitraege: (f.beitraege || []).map((b) => ({ titel: b.titel, url: url + b.slug + '/', anriss: b.anriss || '', zeit: '', muster: true, bild: musterBild(b.bild) })) };
+});
+// „Neu von Unternehmen“: der Reihe nach je Firma ein Musterbeitrag.
+const musterNeu = [];
+for (let runde = 0; musterNeu.length < 4 && runde < 5; runde++) for (const f of musterFirmen) if (f.beitraege[runde] && musterNeu.length < 4) {
+  const b = f.beitraege[runde];
+  musterNeu.push({ titel: b.titel, url: b.url, ort: `${f.name} · ${f.zeile.split(' · ')[1]}`, datum: '', bild: b.bild ? { src: b.bild.src, alt: b.bild.alt } : null, muster: true });
+}
+
 const zielDa = (href) => {
   const pfad = href.split('#')[0];
   return pfad.endsWith('/') ? existsSync(join(site, pfad, 'index.html')) : existsSync(join(site, pfad));
@@ -66,7 +89,8 @@ for (const r of quelle.ressorts) {
   const rechts = new Set(neu.map((x) => x.url));
   const mehr = r.mehrBilder ? passend.filter((a) => a.bild?.src && !rechts.has(a.url)).slice(0, r.mehrBilder).map(beitrag) : [];
   if (r.mehrBilder && mehr.length < r.mehrBilder) fehler.push(`${r.titel}: nur ${mehr.length} von ${r.mehrBilder} weiteren Bildmeldungen`);
-  ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu, ...(mehr.length ? { mehr } : {}), ...(r.werbung ? { werbung: true } : {}) };
+  const firmen = r.href === '/unternehmen/' ? musterFirmen : [];
+  ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu: firmen.length ? musterNeu : neu, ...(mehr.length ? { mehr } : {}), ...(r.werbung ? { werbung: true } : {}), ...(firmen.length ? { firmen } : {}) };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }
 

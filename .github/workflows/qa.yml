@@ -351,7 +351,102 @@ jobs:
             if (dropdown.teaser < 1) throw new Error('Ressort-Dropdown ohne aktuellen Beitrag');
             if (dropdown.fremd.length) throw new Error('Ressort-Dropdown zeigt ein Bild, das nicht zum Beitrag gehoert: ' + dropdown.fremd.join(', '));
             if (!dropdown.geladen) throw new Error('Mindestens ein Bild im Ressort-Dropdown laedt nicht');
+
+            // Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): keine
+            // Anzeige unter „Für Unternehmen“, links die Firmen, rechts zuerst die
+            // Firmenbeitraege. Ueberfahren einer Firma zeigt ihre Beitraege; der
+            // schraege Weg zu den Karten ueber andere Firmen behaelt die Wahl;
+            // Escape schliesst.
+            await page.keyboard.press('Escape');
+            await page.mouse.move(8, 700);
+            await page.waitForTimeout(450);
+            const unLink = await page.locator('.navscroll > a[href="/unternehmen/"]').boundingBox();
+            await page.mouse.move(unLink.x + 4, unLink.y + unLink.height / 2);
+            await page.mouse.move(unLink.x + unLink.width / 2, unLink.y + unLink.height / 2, { steps: 4 });
+            await page.waitForSelector('.ressort-dropdown.is-open .ressort-firmen__firma', { timeout: 3000 });
+            const un1 = await page.evaluate(() => ({
+              werbung: !!document.querySelector('.ressort-dropdown .ressort-dropdown__werbung, .ressort-dropdown .werbung'),
+              firmen: document.querySelectorAll('.ressort-firmen__firma').length,
+              rechts: document.querySelectorAll('.ressort-firmen__rechts .ressort-dropdown__story').length,
+              luecke: (() => { const g = document.querySelector('.ressort-firmen__gruppen'); const h = document.querySelector('.mit-firmen .ressort-dropdown__head'); return g && h ? Math.round(h.getBoundingClientRect().bottom - g.getBoundingClientRect().bottom) : -1; })()
+            }));
+            if (un1.werbung) throw new Error('Unternehmen-Menue zeigt noch eine Anzeige');
+            if (un1.firmen < 3) throw new Error(`Unternehmen-Menue: nur ${un1.firmen} Firmen`);
+            if (un1.rechts < 1) throw new Error('Unternehmen-Menue: rechts keine Firmenbeitraege');
+            if (un1.luecke > 40) throw new Error(`Unternehmen-Menue: leere Flaeche unter den Linkgruppen (${un1.luecke} px)`);
+            const firma = async (n) => (await page.locator('.ressort-firmen__firma').nth(n).locator('strong').textContent() || '').trim();
+            const zweite = await page.locator('.ressort-firmen__firma').nth(1).boundingBox();
+            await page.mouse.move(zweite.x + 40, zweite.y + zweite.height / 2, { steps: 10 });
+            await page.waitForTimeout(450);
+            const un2 = await page.evaluate(() => ({ aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '', kopf: document.querySelector('.ressort-firmen__ansicht .ressort-dropdown__eyebrow')?.textContent || '', karten: document.querySelectorAll('.ressort-firmen__ansicht .ressort-firmen__karte').length, kanal: document.querySelector('.ressort-firmen__kanal')?.getAttribute('href') || '' }));
+            if (un2.aktiv !== await firma(1) || !un2.kopf.startsWith(un2.aktiv)) throw new Error(`Ueberfahren einer Firma zeigt nicht ihre Beitraege: ${JSON.stringify(un2)}`);
+            if (un2.karten < 1 || !un2.kanal.startsWith('/unternehmen/')) throw new Error(`Firmenansicht ohne Beitraege oder Kanal: ${JSON.stringify(un2)}`);
+            // Schraeg nach rechts unten zur ersten Karte, langsam ueber die naechsten Firmen.
+            const karte = await page.locator('.ressort-firmen__ansicht .ressort-firmen__karte').first().boundingBox();
+            const [x0, y0, x1, y1] = [zweite.x + 40, zweite.y + zweite.height / 2, karte.x + 12, Math.max(karte.y + karte.height - 12, zweite.y + zweite.height * 2.5)];
+            for (let i = 1; i <= 12; i++) { await page.mouse.move(x0 + (x1 - x0) * i / 12, y0 + (y1 - y0) * i / 12); await page.waitForTimeout(18); }
+            await page.waitForTimeout(400);
+            const un3 = await page.evaluate(() => ({ offen: document.querySelector('.ressort-dropdown')?.classList.contains('is-open'), aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '' }));
+            if (!un3.offen) throw new Error('Unternehmen-Menue schliesst beim Weg zu den Beitraegen');
+            if (un3.aktiv !== await firma(1)) throw new Error(`Schraeger Weg zu den Karten wechselt die Firma: ${un3.aktiv}`);
+            await page.keyboard.press('Escape');
+            await page.waitForTimeout(200);
+            if (await page.evaluate(() => !document.querySelector('.ressort-dropdown')?.hidden)) throw new Error('Escape schliesst das Unternehmen-Menue nicht');
           });
+
+          // Tablet quer (Tippen): erster Tipp oeffnet das Menue, Tipp auf eine
+          // Firma zeigt ihre Beitraege, zweiter Tipp oeffnet ihren Kanal. Unter
+          // etwa 1180 px passt „Unternehmen“ nicht in die Leiste und steht wie
+          // bisher unter „Mehr“ (Tablet hochkant, unten).
+          {
+            const ctx = await browser.newContext({ viewport: { width: 1180, height: 820 }, hasTouch: true, isMobile: true, deviceScaleFactor: 1 });
+            const page = await ctx.newPage();
+            await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector('.navscroll > a[href="/unternehmen/"][aria-haspopup="true"]', { timeout: 15000 });
+            await page.locator('.navscroll > a[href="/unternehmen/"]').tap();
+            await page.waitForSelector('.ressort-dropdown.is-open .ressort-firmen__firma', { timeout: 3000 });
+            if (new URL(page.url()).pathname !== '/') throw new Error('Tablet: erster Tipp auf Unternehmen navigiert statt zu oeffnen');
+            await page.locator('.ressort-firmen__firma').nth(2).tap();
+            await page.waitForTimeout(300);
+            const t = await page.evaluate(() => ({ pfad: location.pathname, aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '' }));
+            if (t.pfad !== '/' || !t.aktiv) throw new Error(`Tablet: Tipp auf eine Firma zeigt nicht ihre Beitraege: ${JSON.stringify(t)}`);
+            await page.screenshot({ path: 'qa/after/unternehmen-menue-tablet.png', fullPage: false });
+            await page.locator('.ressort-firmen__firma').nth(2).tap();
+            await page.waitForURL(/\/unternehmen\/[^/]+\/$/, { timeout: 5000 }).catch(() => {});
+            if (!/^\/unternehmen\/[^/]+\/$/.test(new URL(page.url()).pathname)) throw new Error(`Tablet: zweiter Tipp oeffnet nicht den Kanal: ${page.url()}`);
+            await ctx.close();
+          }
+          // Tablet hochkant: „Mehr“ oeffnet die Menuespalte, Unternehmen klappt die
+          // Firmen auf, eine Firma ihre Beitraege.
+          {
+            const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true, isMobile: true, deviceScaleFactor: 1 });
+            const page = await ctx.newPage();
+            await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector('[data-drawer] .drawer-firma', { state: 'attached', timeout: 15000 });
+            await page.locator('.nav-more > summary').tap();
+            await page.waitForSelector('[data-drawer].open', { timeout: 3000 });
+            const zeile = page.locator('[data-drawer] .drawer-ressort').filter({ has: page.locator(':scope > a[href="/unternehmen/"]') });
+            await zeile.locator(':scope > .drawer-ressort__auf').tap();
+            await zeile.locator('.drawer-firma__auf').first().tap();
+            const t = await page.evaluate(() => ({ firmen: document.querySelectorAll('[data-drawer] .drawer-firma').length, links: [...document.querySelectorAll('[data-drawer] .drawer-firma__liste:not([hidden]) a')].map((a) => a.getAttribute('href')) }));
+            if (t.firmen < 3 || t.links.length < 2 || !t.links.every((u) => u.startsWith('/unternehmen/'))) throw new Error(`Tablet hochkant: Firmen unter „Mehr“: ${JSON.stringify(t)}`);
+            await ctx.close();
+          }
+          // Handy: Tipp auf Unternehmen oeffnet die Menuespalte mit den Firmen,
+          // Tipp auf den Knopf einer Firma klappt ihre Beitraege auf.
+          {
+            const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, deviceScaleFactor: 1 });
+            const page = await ctx.newPage();
+            await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector('[data-drawer] .drawer-firma', { state: 'attached', timeout: 15000 });
+            await page.locator('.navscroll > a[href="/unternehmen/"]').tap();
+            await page.waitForSelector('[data-drawer].open .drawer-firma', { timeout: 3000 });
+            await page.locator('[data-drawer] .drawer-firma__auf').first().tap();
+            const h = await page.evaluate(() => ({ pfad: location.pathname, links: [...document.querySelectorAll('[data-drawer] .drawer-firma__liste:not([hidden]) a')].map((a) => a.getAttribute('href')) }));
+            if (h.pfad !== '/' || h.links.length < 2 || !h.links.every((u) => u.startsWith('/unternehmen/'))) throw new Error(`Handy: Firmen in der Menuespalte: ${JSON.stringify(h)}`);
+            await page.screenshot({ path: 'qa/after/unternehmen-menue-handy.png', fullPage: false });
+            await ctx.close();
+          }
 
           await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
             const title = (await page.locator('.front-lead h1').textContent() || '').trim();

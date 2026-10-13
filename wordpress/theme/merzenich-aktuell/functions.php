@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) { exit; }
 
 require_once __DIR__ . '/inc/ma21.php';
 require_once __DIR__ . '/inc/markt.php';
+require_once __DIR__ . '/inc/unternehmen.php';
 require_once __DIR__ . '/inc/termine.php';
 require_once __DIR__ . '/inc/einzel.php';
 require_once __DIR__ . '/inc/sport.php';

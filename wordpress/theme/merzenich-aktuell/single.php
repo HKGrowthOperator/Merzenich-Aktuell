@@ -18,6 +18,9 @@ while (have_posts()): the_post();
     // Bezahlte Beiträge tragen den Auftraggeber statt der Redaktion als Absender (21.13.0).
     $gesponsert = function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p);
     $von = $gesponsert ? (string) get_post_meta($p->ID, 'ma_gesponsert_von', true) : '';
+    // Beitrag einer Firma mit Unternehmenskanal (21.18.0): Link zum Kanal.
+    $firma = $gesponsert ? (int) get_post_meta($p->ID, 'ma_business_id', true) : 0;
+    $kanal = $firma && get_post_status($firma) === 'publish' && function_exists('ma_business_kanal_url') ? ma_business_kanal_url($firma) : '';
     ?>
 <article class="article" data-meldung="<?php echo esc_attr(substr(md5($p->post_name), 0, 12)); ?>">
 <div class="article-head"><div class="shell">
@@ -25,7 +28,7 @@ while (have_posts()): the_post();
   <div class="kick-row"><div class="location-line"><span class="location-brand">MERZENICH</span><?php if ($ort !== 'merzenich') echo ' · ' . esc_html(mb_strtoupper(MA21_ORTE[$ort])); ?></div><span class="kicker"><?php echo esc_html($kicker); ?></span></div>
   <h1><?php echo esc_html($titel); ?></h1>
   <?php if (has_excerpt()): ?><p class="dek"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
-  <?php if ($gesponsert): ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.</p><?php endif; ?>
+  <?php if ($gesponsert): ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.<?php if ($kanal !== ''): ?> <a href="<?php echo esc_url($kanal); ?>">Zum Unternehmenskanal</a><?php endif; ?></p><?php endif; ?>
   <div class="byline">
     <?php // Autor (1.26.0): Person der Redaktion, Partner (Polizei, Gemeinde, Verein …) oder die Redaktion. ?>
     <?php $au = function_exists('ma_autor_von') ? ma_autor_von($p) : ['art' => 'redaktion', 'name' => 'Redaktion Merzenich Aktuell', 'funktion' => 'Lokalredaktion', 'url' => home_url('/redaktion/'), 'initialen' => 'MA', 'bio' => '']; ?>

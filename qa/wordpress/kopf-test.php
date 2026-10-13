@@ -63,6 +63,11 @@ pruefe('Meldung: ihr Ressort ist markiert', substr_count(ma21_kopf_aktuell($vorl
 $GLOBALS['t'] = ['tax' => false, 'obj' => null, 'single' => 'ma_event', 'archiv' => ''];
 $_SERVER['REQUEST_URI'] = '/termine/kirmes/';
 pruefe('Termin: „Termine“ markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/termine/" aria-current="page">'), 3);
+$GLOBALS['t'] = ['tax' => false, 'obj' => null, 'single' => '', 'archiv' => ''];
+foreach (['/unternehmen/muster-backstube/', '/unternehmen/muster-backstube/roggenbroetchen-aus-dem-steinofen/'] as $u) {
+    $_SERVER['REQUEST_URI'] = $u;
+    pruefe('Unternehmenskanal und Musterbeitrag: „Unternehmen“ markiert (' . substr_count($u, '/') . ')', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/unternehmen/" aria-current="page">'), 3);
+}
 $_SERVER['REQUEST_URI'] = '/ort/golzheim/';
 $GLOBALS['t'] = ['tax' => true, 'obj' => null, 'single' => '', 'archiv' => ''];
 pruefe('Ortsseite: Ressortleiste ohne Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);

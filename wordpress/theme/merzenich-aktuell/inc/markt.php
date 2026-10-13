@@ -188,50 +188,27 @@ function ma21_tipp_seite(): void {
 }
 
 /**
- * Musterprofile für /unternehmen/ (Vorgabe Betreiber 05.10.2026: rechte Spalte
- * mit Unternehmen, Bild und Werbetext wie bei Oberberg Aktuell). Echte Betriebe
- * erscheinen nur mit Einwilligung (deploy/unternehmen.mjs); bis genug eigene
- * Profile da sind, zeigen ausgedachte, sichtbar als „Musterprofil“
- * gekennzeichnete Betriebe, wie ein Eintrag aussieht. Fotos: frei lizenziert,
- * Nachweis in chatgpt-site/assets/werben/credits.json.
+ * Musterfirmen (seit 21.18.0 in inc/unternehmen-muster.json, Seiten und Kanäle in
+ * inc/unternehmen.php). Bis echte Unternehmen eigene Beiträge haben, zeigen
+ * ausgedachte, sichtbar als „Musterprofil“, „Musterbeitrag“ und „Testanzeige“
+ * gekennzeichnete Betriebe, wie ein Unternehmenskanal aussieht. Jeder
+ * Musterbeitrag öffnet eine vollständige Seite (Auftrag Betreiber 13.10.2026);
+ * bis 21.17 führten die Karten nur auf das Anfrageformular.
  */
-const MA21_MUSTERPROFILE = [
-    ['name' => 'Muster-Backstube', 'branche' => 'Bäckerei', 'ort' => 'Merzenich', 'bild' => '/assets/werben/format-startseitenband.jpg', 'alt' => 'Verkaufstheke einer Bäckerei mit Brot und Gebäck', 'foto' => 'Kgbo', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.', 'info' => 'Mo bis Sa 6 bis 18 Uhr, So 7 bis 11 Uhr',
-        'beitrag' => ['titel' => 'Sonntags frisch: die Frühstückstüte zum Mitnehmen', 'text' => 'Brötchen, Croissants und Aufschnitt für zwei, bis Samstagabend vorbestellt und sonntags ab 7 Uhr abholbereit.']],
-    ['name' => 'Muster-Café am Markt', 'branche' => 'Café', 'ort' => 'Golzheim', 'bild' => '/assets/werben/werbebanner.jpg', 'alt' => 'Helles Café mit Tischen und Sitzplätzen', 'foto' => 'Phi', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
-        'text' => 'Kaffee aus der Region, Torten aus eigener Herstellung und ein Mittagstisch, der jeden Tag wechselt.', 'info' => 'Di bis So 9 bis 18 Uhr',
-        'beitrag' => ['titel' => 'Neuer Mittagstisch, jeden Tag ab 12 Uhr', 'text' => 'Suppe, Hauptgericht und Kaffee zum festen Preis. Die Karte der Woche hängt freitags im Schaufenster.']],
-    ['name' => 'Muster-Schreinerei', 'branche' => 'Handwerk', 'ort' => 'Girbelsrath', 'bild' => '/assets/werben/format-artikelanzeige.jpg', 'alt' => 'Werkstatt mit Werkbank und Werkzeugen', 'foto' => 'Dimitrios Savva', 'lizenz' => 'CC0', 'lizenz_url' => 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
-        'text' => 'Küchen, Treppen und Möbel nach Maß, gefertigt in der eigenen Werkstatt. Aufmaß und Beratung vor Ort.', 'info' => 'Termine nach Vereinbarung',
-        'beitrag' => ['titel' => 'Ausbildung zum Tischler: zwei Plätze frei', 'text' => 'Wer gern mit Holz arbeitet, lernt bei uns Möbelbau, Treppenbau und Montage. Schnuppertage sind jederzeit möglich.']],
-    ['name' => 'Muster-Steuerbüro', 'branche' => 'Beratung', 'ort' => 'Merzenich', 'bild' => '/assets/werben/unternehmensprofil.jpg', 'alt' => 'Modernes Büro mit Arbeitsplätzen', 'foto' => 'MichaelHolemans', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Steuererklärung, Lohnabrechnung und Gründungsberatung, persönlich im Büro oder digital von zu Hause.', 'info' => 'Mo bis Fr 8 bis 17 Uhr',
-        'beitrag' => ['titel' => 'Steuererklärung ohne Papierstapel', 'text' => 'Belege fotografieren, hochladen, fertig. In einer offenen Sprechstunde zeigen wir, wie das digitale Steuerbüro funktioniert.']],
-    ['name' => 'Muster-Immobilien', 'branche' => 'Immobilien', 'ort' => 'Bürgewald', 'bild' => '/assets/werben/format-sidebar.jpg', 'alt' => 'Modernes Wohnhaus mit Garten', 'foto' => 'Rüdiger Müller', 'lizenz' => 'CC BY-SA 4.0', 'lizenz_url' => 'https://creativecommons.org/licenses/by-sa/4.0',
-        'text' => 'Wir bewerten Ihr Haus, finden passende Käufer und begleiten Sie bis zum Notartermin.', 'info' => 'Beratung auch am Wochenende',
-        'beitrag' => ['titel' => 'Was ist mein Haus wert?', 'text' => 'Wir sehen uns Haus und Grundstück an und nennen einen realistischen Preis, unverbindlich und ohne Maklervertrag.']],
-];
 
-/**
- * Musterbeiträge in der Hauptspalte von /unternehmen/ (Vorgabe Betreiber
- * 07.10.2026: „viel zu wenig, wenigstens Musteranzeigen rein“): so sehen
- * Beiträge von Betrieben aus. Nur solange kein echter Unternehmensbeitrag
- * veröffentlicht ist, jede Karte sichtbar als „Musterbeitrag“ gekennzeichnet.
- */
-function ma21_musterbeitraege_html(string $anfrage): string {
-    $h = '<div class="u-muster-beitraege"><p class="eyebrow">So sehen Unternehmensbeiträge aus</p>'
-        . '<p class="u-muster__hinweis">Die folgenden Beiträge sind Muster, keine echten Betriebe. Ihr Unternehmen kann hier eigene Beiträge veröffentlichen.</p>'
+/** Musterbeiträge in der Hauptspalte von /unternehmen/: Karten mit Bild, Firma, Ort und Titel, dazwischen eine Testanzeige. */
+function ma21_musterbeitraege_html(int $max = 6): string {
+    $liste = ma21_muster_beitraege_liste($max);
+    if (!$liste) return '';
+    $h = '<div class="u-muster-beitraege"><p class="eyebrow">Beiträge der Unternehmen</p>'
+        . '<p class="u-muster__hinweis">Die folgenden Beiträge sind Musterbeiträge ausgedachter Betriebe, keine echten Unternehmen und keine echten Angebote. So sieht es aus, wenn Ihr Unternehmen hier eigene Beiträge veröffentlicht.</p>'
         . '<div class="bildraster bildraster--ressort">';
-    foreach (array_slice(MA21_MUSTERPROFILE, 0, 4) as $m) {
-        $h .= '<article class="bildraster-karte u-muster-karte"><a class="bildraster-bild" href="' . esc_url($anfrage) . '" tabindex="-1" aria-hidden="true"><div class="media">'
-            . '<img src="' . esc_url(home_url(ma21_muster_klein($m['bild']))) . '" alt="' . esc_attr($m['alt']) . '" width="720" height="405" loading="lazy" decoding="async"><span class="badge">Musterbeitrag</span></div></a>'
-            . '<div class="bildraster-text"><span class="kicker">Anzeige · ' . esc_html($m['name'] . ' · ' . $m['ort']) . '</span>'
-            . '<h3><a href="' . esc_url($anfrage) . '">' . esc_html($m['beitrag']['titel']) . '</a></h3>'
-            . '<p class="dek">' . esc_html($m['beitrag']['text']) . '</p>'
-            . '<div class="meta">Foto: ' . esc_html($m['foto']) . ', <a href="' . esc_url($m['lizenz_url']) . '" target="_blank" rel="noopener license">' . esc_html($m['lizenz']) . '</a></div></div></article>';
-    }
-    return $h . '</div></div>';
+    foreach ($liste as $i => [$f, $b]) $h .= ma21_firmen_karte_html($f, $b, $i < 2);
+    $h .= '</div>';
+    // Eine Testanzeige je zwei Firmen, als Band unter den Karten.
+    $anzeige = $liste[0][0] ?? null;
+    if ($anzeige) $h .= ma21_firmen_anzeige_html($anzeige, 'band');
+    return $h . '</div>';
 }
 
 /** 720 px breite Fassung eines Musterbilds (deploy/werben-bilder.mjs), reicht für Karten bis gut 300 px. */
@@ -239,19 +216,22 @@ function ma21_muster_klein(string $bild): string {
     return (string) preg_replace('/\.jpg$/', '-720.jpg', $bild);
 }
 
-/** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). */
+/** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). Jedes führt in seinen Kanal. */
 function ma21_musterprofile_html(int $echte, string $anfrage): string {
-    if ($echte >= 3) return '';
+    if ($echte >= 3 || !ma21_muster_aktiv()) return '';
     $h = '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>'
         . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Musterprofile, keine echten Unternehmen.</p>';
-    foreach (array_slice(MA21_MUSTERPROFILE, 0, 5 - min($echte, 2)) as $m) {
-        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($anfrage) . '" aria-label="' . esc_attr($m['name'] . ': Musterprofil. Eigenes Profil anfragen') . '">'
-            . '<span class="u-muster__bild"><img src="' . esc_url(home_url(ma21_muster_klein($m['bild']))) . '" srcset="' . esc_attr(home_url(ma21_muster_klein($m['bild'])) . ' 720w, ' . home_url($m['bild']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($m['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>'
-            . '<span class="u-muster__eyebrow">' . esc_html($m['branche'] . ' · ' . $m['ort']) . '</span>'
-            . '<strong class="u-muster__name">' . esc_html($m['name']) . '</strong>'
-            . '<span class="u-muster__text">' . esc_html($m['text']) . '</span>'
-            . '<span class="u-muster__info">' . esc_html($m['info']) . '</span></a>'
-            . '<span class="u-muster__credit">Foto: ' . esc_html($m['foto']) . ', <a href="' . esc_url($m['lizenz_url']) . '" target="_blank" rel="noopener license">' . esc_html($m['lizenz']) . '</a></span></article>';
+    foreach (array_slice(ma21_muster_firmen(), 0, 5 - min($echte, 2)) as $m) {
+        $f = ma21_firma_ansicht($m);
+        if (!$f) continue;
+        $b = $f['bild'];
+        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Musterprofil, Unternehmenskanal ansehen') . '">'
+            . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(home_url($b['klein'])) . '" srcset="' . esc_attr(home_url($b['klein']) . ' 720w, ' . home_url($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>' : '')
+            . '<span class="u-muster__eyebrow">' . esc_html($f['zeile']) . '</span>'
+            . '<strong class="u-muster__name">' . esc_html($f['name']) . '</strong>'
+            . '<span class="u-muster__text">' . esc_html($f['text']) . '</span>'
+            . '<span class="u-muster__info">' . esc_html($f['fakten']['Öffnungszeiten'] ?? '') . '</span></a>'
+            . ($b ? '<span class="u-muster__credit">' . ma21_muster_nachweis($b, 'Foto: ') . '</span>' : '') . '</article>';
     }
     return $h . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';
 }
@@ -259,12 +239,12 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
 /**
  * Musterbeiträge für die rechte Spalte des Aufklappmenüs „Unternehmen“ (wie
  * „Neu im Ressort“ bei den anderen Ressorts). Sichtbar als „Musterbeitrag“
- * gekennzeichnet; der Link führt zur Anfrage für einen eigenen Beitrag.
+ * gekennzeichnet; der Link öffnet die vollständige Seite des Musterbeitrags.
  */
-function ma21_menue_musterbeitraege(): array {
-    $anfrage = wp_make_link_relative(home_url('/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal'));
-    return array_map(fn(array $m): array => ['titel' => $m['beitrag']['titel'], 'url' => $anfrage, 'ort' => $m['name'] . ' · ' . $m['ort'], 'datum' => '',
-        'bild' => ['src' => home_url(ma21_muster_klein($m['bild'])), 'alt' => $m['alt']], 'muster' => true], array_slice(MA21_MUSTERPROFILE, 0, 4));
+function ma21_menue_musterbeitraege(int $max = 4): array {
+    if (!ma21_muster_aktiv()) return [];
+    return array_map(fn(array $x): array => ['titel' => $x[1]['titel'], 'url' => wp_make_link_relative($x[1]['url']), 'ort' => $x[0]['name'] . ' · ' . $x[0]['ort'], 'datum' => '',
+        'bild' => $x[1]['bild'] ? ['src' => home_url($x[1]['bild']['klein']), 'alt' => $x[1]['bild']['alt']] : null, 'muster' => true], ma21_muster_beitraege_liste($max));
 }
 
 /* ------------------------------------------------------------------------

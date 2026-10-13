@@ -10,13 +10,17 @@ $nachOrt = [];
 foreach ($profile as $u) { $o = (string) get_post_meta($u->ID, 'ma_business_ortsteil', true) ?: ma21_ort($u); $nachOrt[MA21_ORTE[$o] ?? 'Gemeinde Merzenich'][] = $u; }
 ksort($nachOrt);
 $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawurlencode($f));
+// Unternehmenskanäle (21.18.0, inc/unternehmen.php): echte Firmen mit Beiträgen, solange es weniger als drei sind dazu die Musterfirmen.
+$firmen = ma21_alle_firmen(12);
 ?>
 <div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><span aria-current="page">Unternehmen</span></nav><h1>Unternehmen</h1><p class="desc">Beiträge der Unternehmen aus der Gemeinde Merzenich, als Anzeige gekennzeichnet. Nachrichten der Redaktion über Betriebe und Arbeit stehen unter <a href="<?php echo esc_url(home_url('/wirtschaft/')); ?>">Wirtschaft</a>.</p></div></div>
 <section class="section"><div class="shell content-grid"><div class="u-liste">
-  <div class="u-karten" data-u-karten><?php $i = 0; $proFirma = []; while (have_posts()): the_post(); $p = get_post(); $firma = (string) (get_post_meta($p->ID, 'ma_gesponsert_von', true) ?: $p->post_author); $proFirma[$firma] = ($proFirma[$firma] ?? 0) + 1; if ($proFirma[$firma] > 4) continue; echo ma21_u_karte($p, $i++); endwhile; ?></div>
+  <?php echo ma21_firmen_kacheln_html($firmen); ?>
+  <div class="u-karten" data-u-karten><?php $i = 0; $proFirma = []; while (have_posts()): the_post(); $p = get_post(); $firma = (string) (get_post_meta($p->ID, 'ma_business_id', true) ?: get_post_meta($p->ID, 'ma_gesponsert_von', true) ?: $p->post_author); $proFirma[$firma] = ($proFirma[$firma] ?? 0) + 1; if ($proFirma[$firma] > 4) continue; echo ma21_u_karte($p, $i++); endwhile; ?></div>
   <?php if ($anzahl > 8): ?><p class="u-mehr"><button class="btn ghost" type="button" data-u-mehr>Weitere Meldungen laden</button></p><?php endif; ?>
-  <?php if (!$anzahl): /* Vorgabe Betreiber 05.10.2026: keine leere Seite; hier steht nur Werbung von Unternehmen, also bis dahin Musterbeiträge, eine Musteranzeige und das Angebot (07.10.2026). */ ?>
-  <?php echo ma21_musterbeitraege_html($assistent('Unternehmenskanal')); echo ma21_werbung('artikel'); ?>
+  <?php /* Bis drei echte Kanäle Beiträge haben: Musterbeiträge mit eigener Seite und eine Testanzeige (Auftrag Betreiber 13.10.2026). Eine gebuchte Anzeige für den Artikelplatz läuft weiter; die allgemeine Musteranzeige entfällt hier, an ihrer Stelle stehen die Testanzeigen der Musterfirmen. */
+  if (ma21_muster_aktiv()) echo ma21_musterbeitraege_html(6);
+  if (function_exists('ma_ad_marker_slot') && function_exists('ma_active_ads') && ma_active_ads(ma_ad_marker_slot('artikel'))) echo ma21_werbung('artikel'); ?>
   <div class="u-angebot">
     <p class="eyebrow">Für Unternehmen aus der Gemeinde</p>
     <h2>Ihr Unternehmen mit eigenen Beiträgen auf Merzenich Aktuell</h2>
@@ -28,7 +32,6 @@ $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawu
     </ol>
     <p class="u-angebot__knoepfe"><a class="btn" href="<?php echo esc_url($assistent('Unternehmenskanal')); ?>">Unternehmenskanal anfragen</a> <a class="btn ghost" href="<?php echo esc_url(home_url('/werben/')); ?>">Mediadaten ansehen</a></p>
   </div>
-  <?php endif; ?>
 </div><aside class="sidebar">
   <?php echo ma21_musterprofile_html(count($profile), $assistent('Unternehmenspräsenz')); ?>
   <?php if ($profile): ?><div class="sidebox u-box"><h3>Unternehmen nach Ortsteil</h3>

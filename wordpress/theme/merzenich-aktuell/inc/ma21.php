@@ -172,7 +172,9 @@ function ma21_kopf_aktuell(string $html): string {
     $html = str_replace(' aria-current="page"', '', $html);
     $pfad = '/' . trim((string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH), '/') . '/';
     if ($pfad === '//') $pfad = '/';
-    if (is_singular('post')) { $o = get_queried_object(); if ($o instanceof WP_Post) $pfad = '/' . ma21_ressort($o)[0] . '/'; }
+    if (is_singular('post')) { $o = get_queried_object(); if ($o instanceof WP_Post) $pfad = (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) && get_post_meta($o->ID, 'ma_business_id', true)) ? '/unternehmen/' : '/' . ma21_ressort($o)[0] . '/'; }
+    // Unternehmenskanäle und Musterbeiträge (inc/unternehmen.php) gehören zu „Unternehmen“.
+    elseif (str_starts_with($pfad, '/unternehmen/')) $pfad = '/unternehmen/';
     elseif (is_singular('ma_event') || is_post_type_archive('ma_event')) $pfad = '/termine/';
     elseif (is_singular('ma_club') || is_post_type_archive('ma_club')) $pfad = '/vereine/';
     if (!preg_match('#^/[a-z0-9-]+/$#', $pfad)) return $html;
@@ -386,22 +388,54 @@ function ma21_ressort_menue_ausgeben(): void {
     $datei = trailingslashit(get_template_directory()) . 'static/ressort-menue.json';
     $d = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
     if (!is_array($d) || empty($d['ressorts']) || !is_array($d['ressorts'])) { status_header(404); nocache_headers(); exit; }
-    foreach ($d['ressorts'] as $pfad => &$r) {
-        if (!is_array($r)) continue;
-        $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
-        // Unternehmen wie alle anderen Ressorts (Vorgabe Betreiber 07.10.2026):
-        // Links links, rechts Beiträge (bis echte da sind: Musterbeiträge) und
-        // daneben die gekennzeichnete Musteranzeige.
-        if ($pfad === '/unternehmen/') { unset($r['firmen']); $r['werbung'] = true; }
-        $r['gruppen'] = ma21_menue_gruppen_pruefen((array) ($r['gruppen'] ?? []));
-    }
-    unset($r);
-    $d['standWordPress'] = (string) wp_date('c');
+    $d = ma21_ressort_menue_daten($d);
     header('Content-Type: application/json; charset=utf-8');
     ma21_cache(300);
     echo wp_json_encode($d, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
+
+/** Menüdaten aus der statischen Datei mit dem Stand dieser Installation (testbar ohne Ausgabe). */
+function ma21_ressort_menue_daten(array $d): array {
+    foreach ($d['ressorts'] as $pfad => &$r) {
+        if (!is_array($r)) continue;
+        $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
+        // Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): links die
+        // Firmen, beim Überfahren rechts ihre Beiträge; ohne Wahl die neuesten
+        // Firmenbeiträge. Die Musteranzeige unter „Für Unternehmen“ entfällt.
+        if ($pfad === '/unternehmen/') { unset($r['werbung']); $r['firmen'] = ma21_menue_firmen(); }
+        $r['gruppen'] = ma21_menue_gruppen_pruefen((array) ($r['gruppen'] ?? []));
+    }
+    unset($r);
+    $d['standWordPress'] = (string) wp_date('c');
+    return $d;
+}
+
+/**
+ * Firmen für das Unternehmen-Menü (ressort-dropdowns.js): echte Kanäle mit
+ * Beiträgen, solange es weniger als drei sind dazu die Musterfirmen; je Firma
+ * bis zu drei Beiträge. 5 Minuten zwischengespeichert.
+ */
+function ma21_menue_firmen(): array {
+    $c = get_transient('ma21_menue_firmen');
+    if (is_array($c)) return $c;
+    $rel = fn(string $u): string => wp_make_link_relative($u);
+    $l = [];
+    foreach (ma21_alle_firmen(8) as $f) {
+        $l[] = ['name' => $f['name'], 'url' => $rel($f['url']), 'zeile' => $f['zeile'], 'kuerzel' => $f['kuerzel'], 'farbe' => $f['farbe'], 'logo' => $f['logo'], 'muster' => $f['muster'],
+            'beitraege' => array_map(fn(array $b): array => ['titel' => $b['titel'], 'url' => $rel($b['url']), 'anriss' => $b['anriss'], 'zeit' => $b['zeit'], 'muster' => $b['muster'],
+                'bild' => $b['bild'] ? ['src' => home_url($b['bild']['klein']), 'alt' => $b['bild']['alt'], 'credit' => $b['muster'] ? 'Foto: ' . $b['bild']['foto'] . ($b['bild']['lizenz'] !== '' ? ', ' . $b['bild']['lizenz'] : '') : ''] : null],
+                array_slice($f['beitraege'], 0, 3))];
+    }
+    set_transient('ma21_menue_firmen', $l, 300);
+    return $l;
+}
+add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
+    if (in_array($p->post_type, ['post', 'ma_business', 'ma_ad'], true) && ($neu === 'publish' || $alt === 'publish')) delete_transient('ma21_menue_firmen');
+}, 10, 3);
+add_action('updated_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
+add_action('added_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
+add_action('updated_post_meta', function ($mid, $pid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
 
 /**
  * Linkgruppen des Ressort-Menüs: ein Thema (/thema/<slug>/) fällt nur weg, wenn
@@ -1198,9 +1232,18 @@ function ma21_u_karte(WP_Post $p, int $i): string {
         . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, MA21_SIZES['unternehmen'], $i < 2) . ma21_badge($b, false) . '</a>' : '')
         . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>'
         . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
-        . '<p class="u-karte__meta">Redaktion · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(ma21_zeit_text($p, true, ', ')) . '</time></p>'
+        // Beiträge von Unternehmen sind Anzeigen: Absender ist die Firma, nicht die Redaktion (21.18.0).
+        . '<p class="u-karte__meta">' . ma21_u_absender($p) . ' · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(ma21_zeit_text($p, true, ', ')) . '</time></p>'
         . '<p class="u-karte__teaser">' . ma21_e(ma21_teaser($p)) . '</p>'
         . "<a class=\"u-karte__weiter\" href=\"{$url}\">Weiterlesen<span class=\"sr-only\">: {$titel}</span></a></article>";
+}
+/** Absender einer Karte auf /unternehmen/: „Anzeige · Firma“ (mit Link zum Kanal) oder „Redaktion“. */
+function ma21_u_absender(WP_Post $p): string {
+    if (!function_exists('ma_ist_gesponsert') || !ma_ist_gesponsert($p)) return 'Redaktion';
+    $bid = (int) get_post_meta($p->ID, 'ma_business_id', true);
+    $von = (string) get_post_meta($p->ID, 'ma_gesponsert_von', true) ?: ($bid ? (string) get_the_title($bid) : 'Auftraggeber');
+    $kanal = $bid && get_post_status($bid) === 'publish' && function_exists('ma_business_kanal_url') ? ma_business_kanal_url($bid) : '';
+    return 'Anzeige · ' . ($kanal !== '' ? '<a href="' . esc_url($kanal) . '">' . ma21_e($von) . '</a>' : ma21_e($von));
 }
 /*
  * Feste Reihenfolge bei gleichem Datum (21.15.1). Viele importierte Meldungen

@@ -268,3 +268,62 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .redaktion-liste li{padding:12px 0;border-bottom:1px solid var(--line,#d9d9d9);line-height:1.5}
 .redaktion-liste li span{font-size:14px;color:var(--muted,#686868)}
 .leer-hinweis{padding:24px 0;color:var(--muted,#686868)}
+
+/* Unternehmenskanäle (21.18.0, Auftrag Betreiber 13.10.2026, Vorbild Oberberg
+   Aktuell): Kacheln der Kanäle auf /unternehmen/, Kopf des Kanals, Hinweise auf
+   Musterprofile, Testanzeige und Musterbeitrag. */
+.u-kanaele{margin:0 0 8px;padding:0 0 22px;border-bottom:1px solid var(--line)}
+.u-kanaele__liste{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.u-kanal{display:flex;align-items:center;gap:12px;min-height:66px;padding:10px 12px;border:1px solid var(--line);background:var(--card,#fff);color:var(--ink);text-decoration:none;transition:border-color .12s ease}
+.u-kanal:hover,.u-kanal:focus-visible{border-color:var(--ink-soft)}
+.u-kanal:hover strong,.u-kanal:focus-visible strong{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.u-kanal__logo,.u-kanal-kopf__logo,.u-muster-artikel .avatar{flex:0 0 auto;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;overflow:hidden;color:#fff;font-family:var(--sans);font-size:15px;font-weight:800;letter-spacing:.04em}
+.u-kanal__logo img,.u-kanal-kopf__logo img,.u-muster-artikel .avatar img{width:100%;height:100%;object-fit:cover}
+.u-kanal__text{display:flex;flex-direction:column;min-width:0}
+.u-kanal__text strong{font-size:15px;line-height:1.25}
+.u-kanal__text small{font-size:12.5px;line-height:1.35;color:var(--muted)}
+.u-kanal__zahl em{font-style:normal;font-weight:700;color:var(--ink-soft)}
+.u-muster__hinweis{font-size:13px;color:var(--muted);margin:4px 0 0}
+.sidebar .u-kanaele{margin:0;padding:0;border:0}
+.sidebar .u-kanaele__liste{grid-template-columns:1fr}
+.u-kanal-kopf__zeile{display:flex;align-items:center;gap:18px;margin-top:6px}
+.u-kanal-kopf__zeile h1{margin:2px 0 6px}
+.u-kanal-kopf__logo{width:76px;height:76px;font-size:25px}
+.u-muster-banner{max-width:78ch;margin:16px 0 0;padding:10px 14px;background:var(--gold-wash);border:1px solid var(--line);font-size:14px;line-height:1.45}
+.u-kanal-kopf__hinweis{max-width:78ch;margin:12px 0 0;font-size:13.5px;color:var(--muted)}
+.u-kanal-leer{padding:22px 0;color:var(--muted)}
+.u-kanal-profil .anzeige-fakten{margin:0 0 12px}
+.u-firmen-karte .kicker a{color:inherit}
+.u-firmen-karte .meta a{color:inherit}
+.u-muster-beitraege .werbung{margin:18px 0 0}
+.werbung--test .werbung-label{color:var(--ink-soft)}
+.werbung--test .ma-ad-card{text-decoration:none}
+.u-muster-artikel .byline .avatar{width:40px;height:40px;font-size:13px}
+.u-muster-artikel .author-box .avatar{width:48px;height:48px}
+.u-muster-artikel .figure-badge{text-transform:uppercase}
+.u-muster-artikel .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}
+@media (max-width:520px){.u-kanal-kopf__zeile{gap:12px}.u-kanal-kopf__logo{width:56px;height:56px;font-size:19px}.u-kanaele__liste{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.u-kanal{transition:none}}
+/* Testanzeige der Musterfirmen: eigene Karte, breit (Text- und Hauptspalte) oder schmal (Seitenspalte). */
+.u-testanzeige{margin:24px 0;padding-top:10px;border-top:1px solid var(--line)}
+.u-testanzeige__label{display:block;margin:0 0 8px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.u-testanzeige__karte{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);border:1px solid var(--line);background:var(--card,#fff);color:var(--ink);text-decoration:none}
+.u-testanzeige__bild{display:block;min-height:100%;overflow:hidden;background:var(--line-soft)}
+.u-testanzeige__bild img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+.u-testanzeige__text{display:flex;flex-direction:column;gap:6px;padding:16px 18px}
+.u-testanzeige__firma{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.u-testanzeige__text strong{font-family:var(--serif);font-size:22px;line-height:1.15}
+.u-testanzeige__satz{font-size:14.5px;line-height:1.45;color:var(--ink-soft)}
+.u-testanzeige__knopf{align-self:flex-start;margin-top:4px;padding-bottom:2px;font-size:13.5px;font-weight:800;border-bottom:1px solid var(--red)}
+.u-testanzeige__text small{margin-top:auto;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.u-testanzeige__karte:hover .u-testanzeige__knopf,.u-testanzeige__karte:focus-visible .u-testanzeige__knopf{color:var(--red)}
+.u-testanzeige__credit{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+.u-testanzeige__credit a{color:inherit}
+.u-testanzeige--schmal .u-testanzeige__karte{grid-template-columns:1fr}
+.u-testanzeige--schmal .u-testanzeige__text strong{font-size:19px}
+.sidebar .u-testanzeige{margin-top:0}
+@media (max-width:560px){.u-testanzeige__karte{grid-template-columns:1fr}.u-testanzeige__text strong{font-size:19px}}
+.u-muster-artikel .author-box .btn:not(.ghost){color:#fff}
+.u-muster-artikel .author-box .btn.ghost{color:var(--ink)}
+.u-firmen-karte .meta{display:block}
+.u-muster-banner a{color:var(--red);text-decoration:underline;text-underline-offset:3px;font-weight:700}

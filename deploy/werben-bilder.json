@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "rightsCheckedAt": "2026-09-28",
-  "note": "Kuratiertes Bildset fuer die Vermarktungsseite. Nur reale, frei lizenzierte Fotografien; keine Marken werden als echte Werbekunden dargestellt.",
+  "rightsCheckedAt": "2026-10-13",
+  "note": "Kuratiertes Bildset fuer die Vermarktungsseite. Nur reale, frei lizenzierte Fotografien; keine Marken werden als echte Werbekunden dargestellt. Seit 13.10.2026 auch Symbolfotos der Musterbeiträge im Unternehmen-Menü und in den Unternehmenskanälen (als Musterbeitrag gekennzeichnet, ausgedachte Firmen).",
   "images": [
     {
       "id": "werbebanner",
@@ -50,6 +50,54 @@
       "alt": "Modernes Wohnhaus in Deutschland als Beispielmotiv für eine Immobilienanzeige",
       "purpose": "Demo Sidebar-Anzeige",
       "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "muster-backstube-broetchen",
+      "sourceTitle": "File:Johannesstraße 02 Uchtelfangen (2023-11-30) 01.jpg",
+      "output": "muster-backstube-broetchen.jpg",
+      "alt": "Weidenkorb mit frischen Brötchen auf einem Holztisch",
+      "purpose": "Musterbeitrag Muster-Backstube (Brötchen)",
+      "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "muster-backstube-kuchen",
+      "sourceTitle": "File:Yeast cake with plums (54847350244).jpg",
+      "output": "muster-backstube-kuchen.jpg",
+      "alt": "Stücke Pflaumenkuchen mit Streuseln in Nahaufnahme",
+      "purpose": "Musterbeitrag Muster-Backstube (Kuchen)",
+      "expectedLicense": "CC BY 4.0"
+    },
+    {
+      "id": "muster-cafe-suppe",
+      "sourceTitle": "File:The homemade soup in lunch.jpg",
+      "output": "muster-cafe-suppe.jpg",
+      "alt": "Schale Suppe mit Brot und Salat auf einem Holztisch",
+      "purpose": "Musterbeitrag Muster-Café am Markt (Suppe)",
+      "expectedLicense": "CC BY 2.0"
+    },
+    {
+      "id": "muster-cafe-torte",
+      "sourceTitle": "File:Carrot cake, Eppstein.jpg",
+      "output": "muster-cafe-torte.jpg",
+      "alt": "Stück Rüblitorte neben einer Tasse Milchkaffee",
+      "purpose": "Musterbeitrag Muster-Café am Markt (Torte)",
+      "expectedLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "muster-steuerbuero-belege",
+      "sourceTitle": "File:Analyzing Financial Data (5099605109).jpg",
+      "output": "muster-steuerbuero-belege.jpg",
+      "alt": "Hand mit Kugelschreiber prüft eine Zahlenaufstellung neben einem Taschenrechner",
+      "purpose": "Musterbeitrag Muster-Steuerbüro (Belege)",
+      "expectedLicense": "CC BY-SA 2.0"
+    },
+    {
+      "id": "muster-immobilien-grundriss",
+      "sourceTitle": "File:Architecture-1857175 1280.jpg",
+      "output": "muster-immobilien-grundriss.jpg",
+      "alt": "Ausgedruckter Wohnungsgrundriss mit Stift und Maßstab",
+      "purpose": "Musterbeitrag Muster-Immobilien (Grundriss)",
+      "expectedLicense": "CC0"
     }
   ]
 }

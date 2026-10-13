@@ -21,21 +21,6 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/faire-woche-2026/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:denkmaltag-2026@merzenich-aktuell.de
-DTSTAMP:20260916T060000Z
-DTSTART:20260913T110000Z
-DTEND:20260913T150000Z
-SUMMARY:Heimatmuseum & Wasserturm: Tag des offenen Denkmals
-DESCRIPTION:Zwei Orte der Ortsgeschichte öffnen von 13 bis 17 Uhr. Im Heim
- atmuseum gibt es historische Bilder sowie Kaffee und Kuchen\; der Wassertu
- rm widmet sich der Neffel\nVeranstalter: Geschichts- und Heimatverein Merz
- enich e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/termine/denkmalt
- ag-2026/
-LOCATION:Heimatmuseum und Wasserturm
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/denkmaltag-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:standkarten-troedelmarkt@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20260916T123000Z
