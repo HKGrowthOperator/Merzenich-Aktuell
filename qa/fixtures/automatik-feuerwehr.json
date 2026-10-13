@@ -1,0 +1,55 @@
+{
+ "hinweis": "Echte Ausschnitte aus imports/quellen/feuerwehr.json und heimatinfo.json vom 12.10.2026 (Einsatz 133, 136, 138) für qa/automatik-feuerwehr-test.mjs.",
+ "feuerwehr": {
+  "abgerufen": "2026-10-12T13:35:54.699Z",
+  "details": [
+   {
+    "url": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:33:50.898Z",
+    "titel": "138/26 Merzenich - Steinweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+    "text": "138/26 Merzenich - Steinweg\nPerson hinter Tür / Eingeschlossene Person\n04.10.2026 / 11:03 Uhr\nEine weitere Alarmierung \"Person hinter Tür\" bekam die Löschgruppe Merzenich am vergangenen Sonntag Morgen.\nHier wurde nach kurzer Erkundung ein Zugang über den Keller geschaffen. Der Pateint wurde dem Rettungsdienst übergeben. Die Feuerwehr konnte den Einsatz schnell beenden und zum Standort einrücken.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren"
+   },
+   {
+    "url": "https://feuerwehr-merzenich.de/einsaetze/13626-merzenich-s-bahnhaltestelle",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:33:54.384Z",
+    "titel": "136/26 Merzenich - S_Bahnhaltestelle | Einsätze | Freiwillige Feuerwehr Merzenich",
+    "text": "136/26 Merzenich - S_Bahnhaltestelle\nBrand 1 / Brand\n02.10.2026 / 21:36 Uhr\nEbenfalls abbrechen konnte die Löschgruppe Merzenich einen Einsatz am Freitag Abend.\nZuvor wurde die Leitstelle über eine unbekannte Rauchentwicklung im Bereich des S-Bahnhof informiert.\nWährend der Erkundung im Umfeld konnte ein leichter Brandgeruch, aber keine Rauchentwicklung mehr festgestellt werden. Auch die Ausweitung der Erkundung im Bereich der angrenzenden Wohnbebauung brachte keine Feststellung\nEingesetzte Kräfte\nLöschgruppe Merzenich"
+   },
+   {
+    "url": "https://feuerwehr-merzenich.de/einsaetze/13326-bab4",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:33:59.579Z",
+    "titel": "133/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
+    "text": "133/26 BAB4\nBrand / Brand\n26.09.2026 / 23:16 Uhr\nZu brennenden Unrat wurden am Samstag Nacht die Löschgruppen Merzenich und Girbelsrath auf die Autobahn in Fahrtrichtung Düren alarmiert.\nDa sich die Einsatzstelle allerdings außerhalb der Autobahn befand und von dort aus kein Herankommen war, wurde durch den Einsatzleiter die Löschgruppe Ellen der Feuerwehr Niederzier nachalarmiert.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nLöschgruppe Girbelsrath\nLöschgruppe Ellen"
+   }
+  ]
+ },
+ "heimatinfo": {
+  "abgerufen": "2026-10-12T13:40:18.502Z",
+  "details": [
+   {
+    "url": "https://www.heimat-info.de/beitraege/ae3fb570-2d47-4d2f-ad81-374e1eb3d4e1",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:38:52.666Z",
+    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 138/26 🗓️ Datum: 04.10.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter... - Heimat-Info",
+    "text": "Zurück\n🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 138/26 🗓️ Datum: 04.10.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter...\nFreiwillige Feuerwehr Merzenich\n06.10.2026, 19:09\n🚨 +++ Letzter Einsatz +++ 🚨\n🚒 Einsatz-Nr: 138/26\n🗓️ Datum: 04.10.2026\n📟 Stichwort: PET\n📟 Meldung: Person hinter Tür\n📍Einsatzort: Merzenich - Steinweg\n👨‍🚒Eingesetzte Kräfte: LG Merzenich, FTZ Stockheim, Rettungsdienst\nEine weitere Alarmierung \"Person hinter Tür\" bekam die Löschgruppe Merzenich am vergangenen Sonntag Morgen.\nHier wurde nach kurzer Erkundung ein Zugang über den Keller geschaffen. Der Pateint wurde dem Rettungsdienst übergeben. Die Feuerwehr konnte den Einsatz schnell beenden und zum Standort einrücken.\n#heimatinfo #wirfuermerzenich #imeinsatzfürmerzenich #einsatzfuermerzenich\nSymbolfoto\nweiterlesen\nWeitere Beiträge des Profils\n"
+   },
+   {
+    "url": "https://www.heimat-info.de/beitraege/566674bc-16cb-4201-a14a-2fec78de9df3",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:38:54.176Z",
+    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 136/26 🗓️ Datum: 03.10.2026 📟 Stichwort: BD1... 📟 Meldung: Unklare Rauch... - Heimat-Info",
+    "text": "Zurück\n🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 136/26 🗓️ Datum: 03.10.2026 📟 Stichwort: BD1... 📟 Meldung: Unklare Rauch...\nFreiwillige Feuerwehr Merzenich\n03.10.2026, 08:31\n🚨 +++ Letzter Einsatz +++ 🚨\n🚒 Einsatz-Nr: 136/26\n🗓️ Datum: 03.10.2026\n📟 Stichwort: BD1\n📟 Meldung: Unklare Rauchentwicklung\n📍Einsatzort: Merzenich - S-Bahn Haltestelle\n👨‍🚒Eingesetzte Kräfte: LG Merzenich\nEbenfalls abbrechen konnte die Löschgruppe Merzenich einen Einsatz am Freitag Abend.\nZuvor wurde die Leitstelle über eine unbekannte Rauchentwicklung im Bereich des S-Bahnhof informiert.\nWährend der Erkundung im Umfeld konnte ein leichter Brandgeruch, aber keine Rauchentwicklung mehr festgestellt werden. Auch die Ausweitung der Erkundung im Bereich der angrenzenden Wohnbebauung brachte keine Feststellung\n#heimatinfo #wirfuermerzenich #imeinsatzfürmerzenich #einsatzfuermerzenich\nSymbolfoto\nweiterlesen\nWeitere Beiträge des Profils\n"
+   },
+   {
+    "url": "https://www.heimat-info.de/beitraege/a8bcb2f4-8d08-4666-8388-e2bb230911aa",
+    "status": 200,
+    "abgerufen": "2026-10-12T13:39:03.793Z",
+    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 133/26 🗓️ Datum: 26.09.2026 📟 Stichwort: BD... 📟 Meldung: Brennt Unrat �... - Heimat-Info",
+    "text": "Zurück\n🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 133/26 🗓️ Datum: 26.09.2026 📟 Stichwort: BD... 📟 Meldung: Brennt Unrat �...\nFreiwillige Feuerwehr Merzenich\n27.09.2026, 20:31\n🚨 +++ Letzter Einsatz +++ 🚨\n🚒 Einsatz-Nr: 133/26\n🗓️ Datum: 26.09.2026\n📟 Stichwort: BD\n📟 Meldung: Brennt Unrat\n📍Einsatzort: A4 n - Fahrtrichtung Düren\n👨‍🚒Eingesetzte Kräfte: LG Merzenich, LG Girbelsrath, Fw Niederzier\nZu brennenden Unrat wurden am Samstag Nacht die Löschgruppen Merzenich und Girbelsrath auf die Autobahn in Fahrtrichtung Düren alarmiert.\nDa sich die Einsatzstelle allerdings außerhalb der Autobahn befand und von dort aus kein Herankommen war, wurde durch den Einsatzleiter die Feuerwehr Niederzier nachalarmiert.\n#heimatinfo #wirfuermerzenich #imeinsatzfürmerzenich #einsatzfuermerzenich\nSymbolfoto\nweiterlesen\nWeitere Beiträge des Profils\n"
+   }
+  ]
+ }
+}

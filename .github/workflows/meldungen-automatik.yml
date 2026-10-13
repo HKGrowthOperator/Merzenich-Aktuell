@@ -1,0 +1,91 @@
+name: Meldungen-Automatik (Feuerwehr)
+
+# Legt neue Einsaetze der Freiwilligen Feuerwehr Merzenich als Meldung an
+# (deploy/automatik-feuerwehr.mjs), sobald der taegliche Quellenabruf fertig ist.
+# Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat; ohne
+# Ortsteil, Bildklasse oder Bericht wird uebersprungen. Die Meldungen kommen ueber
+# den WordPress-Abgleich als Entwurf in die Freigaben (Option "sofort veroeffentlichen"
+# bleibt aus); die Redaktion prueft und gibt frei. Danach baut dieser Lauf die Kette
+# selbst: Commits mit GITHUB_TOKEN starten keine QA, und die QA committet keine
+# Laeufe des Bots.
+
+on:
+  workflow_run:
+    workflows: ["Quellen abrufen (Recherche)"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      trocken:
+        description: 'Nur anzeigen, nichts schreiben'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meldungen-automatik
+  cancel-in-progress: false
+
+jobs:
+  feuerwehr:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+
+      - name: Automatik pruefen (echte Rohdaten aus qa/fixtures)
+        run: node qa/automatik-feuerwehr-test.mjs
+
+      - name: Neue Einsaetze anlegen, Kette bauen, committen, pushen
+        env:
+          TROCKEN: ${{ inputs.trocken && 'ja' || '' }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ "$TROCKEN" = "ja" ]; then node deploy/automatik-feuerwehr.mjs --trocken; exit 0; fi
+          # In einer Schleife auf frischem main: QA, Paketbau und Quellenabruf schreiben
+          # parallel. Bei abgelehntem Push wird neu aufgesetzt statt rebased, damit Import-
+          # Datei und Pruefsummen zum Stand passen.
+          for versuch in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            : > /tmp/zusammenfassung.md
+            GITHUB_STEP_SUMMARY=/tmp/zusammenfassung.md node deploy/automatik-feuerwehr.mjs
+            if [ -z "$(git status --porcelain -- inhalte/meldungen deploy/automatik-stand.json)" ]; then
+              cat /tmp/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
+              echo 'Keine neuen Einsaetze.'
+              exit 0
+            fi
+            node deploy/kette.mjs
+            node deploy/kette.mjs
+            node deploy/kette.mjs --check
+            node deploy/symbolbilder.mjs --check
+            php qa/wordpress/import-test.php
+            git add -A inhalte/meldungen deploy/automatik-stand.json chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
+            git commit -q -m 'automatik: Feuerwehr-Einsaetze als Entwurf [skip ci]'
+            if git push origin HEAD:main; then
+              cat /tmp/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            echo "Push abgelehnt (Versuch $versuch), setze auf frischem main neu auf."
+            sleep $((versuch * 7))
+          done
+          exit 1

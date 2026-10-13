@@ -11,7 +11,7 @@ on:
   schedule:
     - cron: '7 * * * *'
   workflow_run:
-    workflows: ["Merzenich Aktuell QA", "Build WordPress Delivery Packages"]
+    workflows: ["Merzenich Aktuell QA", "Build WordPress Delivery Packages", "Meldungen-Automatik (Feuerwehr)"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
