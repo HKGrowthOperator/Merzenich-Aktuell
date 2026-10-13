@@ -59,5 +59,14 @@ pruefe('Import-Datei: eigene Adresse aus den Einstellungen', ma_abgleich_quelle(
 pruefe('Bilder: Repository als letzte Quelle, eigene Adresse zuerst', [array_slice(ma_abgleich_bildbasen(), -1)[0], (function () { $GLOBALS['opt']['ma_abgleich_bilder'] = 'http://127.0.0.1:8300/chatgpt-site/'; return ma_abgleich_bildbasen()[0]; })()], ['https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site', 'http://127.0.0.1:8300/chatgpt-site']);
 pruefe('Abgleich ist standardmäßig an, sofortige Veröffentlichung aus', [ma_abgleich_aktiv(), ma_abgleich_sofort()], [true, false]);
 
+echo "\nAktualisieren lässt Prüfhäkchen stehen (1.27.3)\n";
+$importMeta = ['ma_legacy_url' => '/blaulicht/x/', 'ma_source_url' => 'https://example.org/q', 'ma_source_verified' => '1', 'ma_date_verified' => '0', 'ma_place_verified' => '0', 'ma_human_reviewed' => '0', 'ma_startseite_freigabe' => 'ja', 'ma_kicker' => 'Feuerwehr · 138/26'];
+$upd = ma_abgleich_meta_fuer_update($importMeta);
+pruefe('Datum, Ort, redaktionelle Prüfung und Startseiten-Freigabe fallen weg', array_intersect(['ma_date_verified', 'ma_place_verified', 'ma_human_reviewed', 'ma_startseite_freigabe'], array_keys($upd)), []);
+pruefe('Übrige Importfelder bleiben unverändert', $upd, ['ma_legacy_url' => '/blaulicht/x/', 'ma_source_url' => 'https://example.org/q', 'ma_source_verified' => '1', 'ma_kicker' => 'Feuerwehr · 138/26']);
+$echt = ma_abgleich_lesen($xml)['eintraege'];
+$post = array_values(array_filter($echt, fn($x) => $x['typ'] === 'post'))[0] ?? ['meta' => []];
+pruefe('Echte Import-Datei: Meldungen tragen die Häkchen beim Anlegen, das Update nicht', [isset($post['meta']['ma_human_reviewed']), isset(ma_abgleich_meta_fuer_update($post['meta'])['ma_human_reviewed'])], [true, false]);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

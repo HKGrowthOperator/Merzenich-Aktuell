@@ -213,9 +213,20 @@ function ma_abgleich_anlegen(array $e, array $bilder, array &$fehler): int {
  * wird der Beitrag nicht neu gespeichert: Änderungsdatum („Aktualisiert am“,
  * dateModified, Sitemap) bleibt dann unberührt.
  */
+/**
+ * Importfelder, die beim Aktualisieren eines bestehenden Beitrags geschrieben werden (1.27.3).
+ * Startseiten-Freigabe und die Prüfhäkchen Datum, Ort und redaktionelle Prüfung gelten nur
+ * beim Anlegen: Die Import-Datei trägt sie als '0'. Bis 1.27.2 überschrieb der Abgleich damit
+ * die Häkchen veröffentlichter Beiträge, und die Veröffentlichungssperre setzte sie beim
+ * nächsten Speichern auf Entwurf zurück (eine korrigierte Meldung verschwand von der Seite).
+ */
+function ma_abgleich_meta_fuer_update(array $meta): array {
+    foreach (['ma_startseite_freigabe', 'ma_date_verified', 'ma_place_verified', 'ma_human_reviewed'] as $k) unset($meta[$k]);
+    return $meta;
+}
+
 function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$fehler): bool {
-    $meta = $e['meta'];
-    unset($meta['ma_startseite_freigabe']);
+    $meta = ma_abgleich_meta_fuer_update($e['meta']);
     $p = get_post($id);
     if (!$p) return false;
     $textNeu = ma_abgleich_texthash($e['titel'], $e['inhalt'], $e['auszug']) !== ma_abgleich_texthash($p->post_title, $p->post_content, $p->post_excerpt);
