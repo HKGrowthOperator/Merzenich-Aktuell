@@ -226,10 +226,10 @@
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Ökumenische Vorbereitungsgruppe der katholischen und evangelischen Gemeinde",
-      "beschreibung": "Frauen aus beiden Konfessionen feiern am Freitag, 16. Oktober, um 18 Uhr einen Gottesdienst im Evangelischen Gemeindehaus. Im Mittelpunkt stehen die biblischen Frauen Ruth und Noomi.",
+      "beschreibung": "Frauen aus beiden Konfessionen gestalten am Freitag, 16. Oktober, um 18 Uhr einen Gottesdienst im Evangelischen Gemeindehaus. Im Mittelpunkt steht das gemeinsame Lastentragen. Eingeladen sind ausdrücklich auch Männer.",
       "absaetze": [
         "Am Freitag, 16. Oktober 2026, um 18 Uhr feiern katholische und evangelische Frauen im Evangelischen Gemeindehaus an der Severin-Böhr-Straße 15 einen ökumenischen Gottesdienst. Das Thema lautet „Gemeinsam Lasten tragen“.",
-        "Es geht um Ruth und Noomi, zwei Frauen, die ihre Lasten gemeinsam tragen und einen neuen Weg gehen. Nach dem Gottesdienst ist Zeit für Begegnung. Eingeladen sind alle Frauen."
+        "Laut Pfarrbrief geht es um Ruth und Noomi, zwei starke Frauen, die ihre Lasten auf sich nehmen und gemeinsam einen neuen Weg gehen. Der Gottesdienst ist nach Angaben des Vorbereitungsteams von Frauen gestaltet, aber nicht nur für Frauen gedacht: Auch Männer sind eingeladen. Anschließend gibt es einen Imbiss und Zeit zum Austausch."
       ],
       "links": [
         [
@@ -239,12 +239,16 @@
         [
           "Pfarrbrief Oktober 2026 (PDF)",
           "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ],
+        [
+          "Einladung des Evangelischen Gemeindezentrums Merzenich auf Heimat-Info (09.10.2026)",
+          "https://www.heimat-info.de/veranstaltungen/ab79b373-0a72-4c89-a37c-68bb72401178"
         ]
       ],
       "quelle": {
-        "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier 08/26; Evangelische Gemeinde zu Düren; Amtsblatt Merzenich Nr. 10/2026",
-        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
-        "stand": "2026-10-05"
+        "name": "Evangelisches Gemeindezentrum Merzenich auf Heimat-Info (09.10.2026); Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier 08/26; Evangelische Gemeinde zu Düren; Amtsblatt Merzenich Nr. 10/2026",
+        "url": "https://www.heimat-info.de/veranstaltungen/ab79b373-0a72-4c89-a37c-68bb72401178",
+        "stand": "2026-10-14"
       }
     },
     {

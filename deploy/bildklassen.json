@@ -286,6 +286,14 @@
       "titel": "Bevölkerungsschutz, Krisenvorsorge und Kurse dazu; ohne lokales Motiv nur Ortsansicht",
       "motive": []
     },
+    "verkehr.baustelle": {
+      "titel": "Baustelle, Fahrstreifensperrung oder Umleitung auf Straße und Autobahn; ohne lokales Motiv nur Ortsansicht",
+      "motive": []
+    },
+    "wirtschaft.weiterbildung": {
+      "titel": "Workshop, Seminar oder Weiterbildungsangebot für Betriebe; ohne lokales Motiv nur Ortsansicht",
+      "motive": []
+    },
     "leben.ortsfest": {
       "titel": "Ortsfest, Oldieabend und Dorffeste; ohne freigegebenes Foto nur Ortsansicht",
       "motive": []

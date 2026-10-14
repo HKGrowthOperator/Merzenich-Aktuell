@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T08:00:35.636Z",
+  "updatedAt": "2026-10-14T11:01:01.119Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -611,6 +611,15 @@
       "assignedAt": "2026-10-13T08:00:35.636Z",
       "articleId": "2026-10-13-sc-merzenich-freialdenhoven-6-1-zweite-4-4-2026-10",
       "articleDate": "2026-10-13T09:00:00+02:00"
+    },
+    "/sport/fussball-golzheim-verliert-morschenich-gewinnt-5-0-2026-10/": {
+      "imageId": "web-sport-17-a4565598",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-14T11:01:01.119Z",
+      "articleId": "2026-10-14-fussball-golzheim-verliert-morschenich-gewinnt-5-0-2026-10",
+      "articleDate": "2026-10-14T13:10:00+02:00"
     }
   }
 }
