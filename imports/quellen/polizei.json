@@ -1,39 +1,39 @@
 {
  "quelle": "polizei",
- "abgerufen": "2026-10-14T10:12:10.342Z",
+ "abgerufen": "2026-10-15T09:54:48.561Z",
  "listen": [
   {
    "url": "https://www.presseportal.de/blaulicht/r/Merzenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Merzenich",
-   "abgerufen": "2026-10-14T10:12:03.535Z",
+   "abgerufen": "2026-10-15T09:54:42.095Z",
    "status": 503,
    "fehlertext": "<!DOCTYPE html><html><head><title>Security Check</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width\"><style>.col,.icon{position:relative}.error-info,.icon,h1,h6{text-align:center}body{font:16px/18px Helvetica,Arial,sans-serif;margin:0}h1,h2,h6{font-weight:lighter}.ie-arrow,.ie-img,center,hr{display:none}div.logo{width:100%;height:140px}.clearfix:after{content:\"\";display"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/r/Golzheim",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Golzheim",
-   "abgerufen": "2026-10-14T10:12:04.872Z",
+   "abgerufen": "2026-10-15T09:54:43.411Z",
    "status": 503,
    "fehlertext": "<!DOCTYPE html><html><head><title>Security Check</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width\"><style>.col,.icon{position:relative}.error-info,.icon,h1,h6{text-align:center}body{font:16px/18px Helvetica,Arial,sans-serif;margin:0}h1,h2,h6{font-weight:lighter}.ie-arrow,.ie-img,center,hr{display:none}div.logo{width:100%;height:140px}.clearfix:after{content:\"\";display"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
-   "abgerufen": "2026-10-14T10:12:06.471Z",
+   "abgerufen": "2026-10-15T09:54:44.727Z",
    "status": 503,
    "fehlertext": "<!DOCTYPE html><html><head><title>Security Check</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width\"><style>.col,.icon{position:relative}.error-info,.icon,h1,h6{text-align:center}body{font:16px/18px Helvetica,Arial,sans-serif;margin:0}h1,h2,h6{font-weight:lighter}.ie-arrow,.ie-img,center,hr{display:none}div.logo{width:100%;height:140px}.clearfix:after{content:\"\";display"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/r/Morschenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Morschenich",
-   "abgerufen": "2026-10-14T10:12:07.806Z",
+   "abgerufen": "2026-10-15T09:54:46.045Z",
    "status": 503,
    "fehlertext": "<!DOCTYPE html><html><head><title>Security Check</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width\"><style>.col,.icon{position:relative}.error-info,.icon,h1,h6{text-align:center}body{font:16px/18px Helvetica,Arial,sans-serif;margin:0}h1,h2,h6{font-weight:lighter}.ie-arrow,.ie-img,center,hr{display:none}div.logo{width:100%;height:140px}.clearfix:after{content:\"\";display"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
    "endUrl": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
-   "abgerufen": "2026-10-14T10:12:09.141Z",
+   "abgerufen": "2026-10-15T09:54:47.360Z",
    "status": 503,
    "fehlertext": "<!DOCTYPE html><html><head><title>Security Check</title><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width\"><style>.col,.icon{position:relative}.error-info,.icon,h1,h6{text-align:center}body{font:16px/18px Helvetica,Arial,sans-serif;margin:0}h1,h2,h6{font-weight:lighter}.ie-arrow,.ie-img,center,hr{display:none}div.logo{width:100%;height:140px}.clearfix:after{content:\"\";display"
   }
