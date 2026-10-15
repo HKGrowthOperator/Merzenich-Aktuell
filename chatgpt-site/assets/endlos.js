@@ -8,7 +8,7 @@
  *     liefert nur die Meldungen als Teilstück [data-endlos-teil] (inc/ma21.php);
  *   - statische Kopie: der Link a[rel=next] im Blättern, aus der ganzen Seite.
  * Die Startseite hat nach den Blöcken „Weitere Meldungen“ ([data-endlos-quelle]),
- * gespeist aus /nachrichten/; was oben schon steht, kommt nicht noch einmal.
+ * gespeist aus /nachrichten/ ohne Sport (?ma_ohne_sport=1); was oben schon steht, kommt nicht noch einmal.
  *
  * Ohne JavaScript, im Bearbeitungsmodus der Redaktion und bei Fehlern bleibt
  * das Blättern bzw. der Knopf „Weitere Meldungen laden“. Nachgeladene Teile

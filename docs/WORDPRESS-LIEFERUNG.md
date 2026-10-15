@@ -1,6 +1,48 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-15. Oktober 2026 · Theme 21.19.0 · Core-Plugin 1.28.0 · live (Historie unten)
+15. Oktober 2026 · Theme 21.19.1 · Core-Plugin 1.28.1 · live: 21.19.0 / 1.28.0 (Historie unten)
+
+## Neu am 15.10.2026 (abends): Theme 21.19.1 und Plugin 1.28.1, Korrekturen aus dem Vorführ-Check
+
+Vor der Vorstellung beim Bürgermeister wurde die Live-Seite in sechs Breiten (1920, 1440, 1280, 1180 quer, 820 hoch, 390) Seite für Seite durchgesehen, jeder auffällige Befund unabhängig gegengeprüft. Behoben ist, was im Code liegt; die Ausbaustufe bleibt unverändert (einfache Fassung).
+
+**Stand live:** noch nicht eingespielt. Live laufen weiter 21.19.0 und 1.28.0. Einspielen wie unten (erst Plugin, dann Theme, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks speichern); dafür braucht es ein neues Passwort für das Konto „HK Growth“.
+
+- **Startseite**
+  - Die Rubrikflächen nehmen für große und mittlere Karten zuerst Meldungen der letzten 14 Tage, erst danach ältere mit eigenem Foto (`MA_LAYOUT_FRISCH_TAGE`, Plugin `includes/layout.php`). Vorher standen in „Politik & Gemeinde“ und „Wirtschaft“ groß fünf Meldungen vom 04.09., die vom 13.10. nur als Zeilen.
+  - „Weitere Meldungen“ ist sportfrei wie die übrige Startseite (Vorgabe KBS 26.09.2026): `/nachrichten/?ma_ohne_sport=1` lässt Sport und Vereinsmeldungen mit Sportbezug weg; „Vereine & Menschen“ nutzt dieselbe Sportregel des Plugins.
+  - Terminzeile „Vor Ort“: Die Punkte über Ä/Ö/Ü am Zeilenanfang werden nicht mehr abgeschnitten („Okumenischer“).
+- **Feste Plätze:** Ältere Einträge ohne Einsetz-Zeitpunkt behalten beim Speichern der Karte ihre Frist (vorher verlängerte jede Änderung an einem anderen Platz sie wieder).
+- **Termine:** Ein Termin, der schon begonnen hat, zeigt weiter seine Uhrzeit statt „vor 41 Min.“. Gemeindeweite Termine heißen „Gemeinde Merzenich“ statt „Merzenich“.
+- **Menüs**
+  - Feuerwehr und Polizei (aus dem Blaulicht-Menü) markieren Blaulicht und zeigen Start › Blaulicht › Feuerwehr, wie die Sammelseiten (`inc/rubriken.json`, Feld `themenRessort`).
+  - Rote Titel zu leeren Verzeichnissen (Branchenbuch, Familienanzeigen) blendet WordPress aus wie leere Themen; sie kommen mit dem ersten Eintrag zurück.
+  - Keine Meldung zweimal im Sport-Menü.
+  - Symbolbilder im Menü tragen das Etikett „Symbolbild“.
+  - Tablet hochkant: kein Leerraum mehr, das Menü passt auf den Bildschirm.
+  - Handy-Menü liegt über dem Kopf: Logo und × sind wieder zu sehen.
+- **Listen**
+  - Der Aufmacher steht immer ganz da; Zeilen werden erst nach fünf statt drei Zeilen gekürzt.
+  - Anrisse enden am Wortende.
+  - Ein Aufmacher ohne Bild nutzt die ganze Breite.
+- **Suche:** Nur Meldungen, keine Vereinsprofile und Formularseiten als „Nachrichten“.
+- **Meldungsseite:** Kopf und Text stehen auf derselben Kante; rechts „Neueste Meldungen“ statt einer leeren Spalte.
+- **Märkte und Seiten**
+  - Stellenmarkt einspaltig: Die Art steht in der Kopfzeile, nicht mehr umbrochen („AUSBILDU/NG“).
+  - Werbeband in der Inhaltsspalte statt über die ganze Breite; unter Traueranzeigen keines.
+  - `/werben/`: Knopf „Werbung anfragen“ lesbar, der Auswahlkasten steht unter dem Seitentitel.
+  - Sporttabelle am Handy zeigt die Punkte ohne Wischen.
+- **Fuß:** „Datenschutz-Einstellungen“ steht neben Impressum und Datenschutz statt am linken Rand.
+
+Tests: `layout-test.php`, `endlos-test.php`, `ausbau-test.php`, `kopf-test.php`, `termine-test.php`, `ressort-test.php` erweitert; jede Korrektur zusätzlich im Browser mit den neuen Dateien auf den Live-Inhalten nachgestellt.
+
+**Bleibt beim Betreiber (WordPress-Admin, nicht im Code):**
+- Fester Platz „Bühne 1“ (Infoabend am 8. Oktober) freigeben.
+- Aufmacher KGS-Schulanmeldung ab 16.10. tauschen.
+- Sportergebnis eintragen.
+- Entwürfe vom 14.10. freigeben (A4-Entwurf verwerfen, er galt nur für den 15.10.).
+- Fußballergebnis vom festen Platz im Blaulicht-Block nehmen.
+- Doppelte Flächenbrand-Meldung zusammenführen.
 
 ## Neu am 15.10.2026: Theme 21.19.0, Menü nur mit roten Titeln, Home-Knopf, Endlos-Scrollen, 3 Beispielfirmen
 

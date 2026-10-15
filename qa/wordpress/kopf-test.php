@@ -88,6 +88,10 @@ pruefe('Blätterseite der Startseite: Home-Knopf nicht markiert', substr_count(m
 $GLOBALS['start'] = ['front' => true, 'suche' => false, 'paged' => false];
 $_SERVER['REQUEST_URI'] = '/rubrik/verkehr/';
 pruefe('Sammelseite /rubrik/verkehr/: „Blaulicht“ markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/blaulicht/" aria-current="page">'), 3);
+$_SERVER['REQUEST_URI'] = '/thema/feuerwehr/';
+pruefe('Themenseite aus dem Blaulicht-Menü (/thema/feuerwehr/): „Blaulicht“ markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/blaulicht/" aria-current="page">'), 3);
+$_SERVER['REQUEST_URI'] = '/thema/irgendwas/';
+pruefe('Andere Themenseite: nichts markiert', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current="page"'), 0);
 $_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';
 pruefe('Unbekannte Sammelseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 $_SERVER['REQUEST_URI'] = '/vereine/';

@@ -37,6 +37,8 @@
 if (!defined('ABSPATH')) { exit; }
 
 const MA_LAYOUT_VERSION = 1;
+/** Startseiten-Rubrikflächen: Meldungen bis zu diesem Alter gehen auf groß/mittel vor älteren. */
+const MA_LAYOUT_FRISCH_TAGE = 14;
 
 /** Seiten mit Layout-Karte: Schlüssel => Name. */
 function ma_layout_seiten(): array {
@@ -107,6 +109,10 @@ function ma_layout_get(string $seite): array {
 }
 
 function ma_layout_speichern(string $seite, array $karte): array {
+    // Alte Einträge ohne „seit“ zählen ab dem bisherigen Stand. Den beim Speichern
+    // festhalten, sonst verlängert jede Änderung an einem anderen Platz ihre Frist (1.28.1).
+    $alt = (int) ($karte['stand'] ?? 0);
+    foreach ($karte['slots'] as $slot => $e) if (is_array($e) && (int) ($e['seit'] ?? 0) <= 0 && $alt > 0) $karte['slots'][$slot]['seit'] = $alt;
     $karte['v'] = MA_LAYOUT_VERSION;
     $karte['rev'] = (int) ($karte['rev'] ?? 0) + 1;
     $karte['stand'] = time();
@@ -429,6 +435,12 @@ function ma_layout_aufloesen_startseite(array $fest, array $alle, array $r): arr
     $echt = $r['echtesBild'] ?? fn($p) => true;
     $ressort = $r['ressort'] ?? fn($p) => '';
     $kat = $r['kategorie'] ?? fn($p, $slug) => false;
+    // Frisch = höchstens MA_LAYOUT_FRISCH_TAGE alt; ohne Datum gilt eine Meldung als frisch.
+    $jetzt = (int) ($r['jetzt'] ?? time());
+    $frisch = $r['frisch'] ?? function ($p) use ($jetzt): bool {
+        $t = !empty($p->post_date_gmt) ? strtotime($p->post_date_gmt . ' UTC') : false;
+        return !$t || $jetzt - $t <= MA_LAYOUT_FRISCH_TAGE * DAY_IN_SECONDS;
+    };
     $warn = function_exists('ma_layout_warnungen') && empty($r['ohneWarnungen']) ? fn($slot, $p) => ma_layout_warnungen('startseite', $slot, $p->ID) : fn($slot, $p) => [];
     $byId = [];
     foreach ($alle as $p) $byId[$p->ID] = $p;
@@ -484,7 +496,13 @@ function ma_layout_aufloesen_startseite(array $fest, array $alle, array $r): arr
             }
             return $raus;
         };
-        $ortZuletzt = fn(array $l) => array_merge(array_filter($l, fn($a) => $bildtyp($a) !== 'place'), array_filter($l, fn($a) => $bildtyp($a) === 'place'));
+        // Ortsansichten zuletzt, aber nur unter gleich frischen Meldungen (1.28.1):
+        // Vorführ-Check 15.10.2026 – „Politik & Gemeinde“ zeigte groß fünf
+        // Meldungen vom 04.09. mit eigenem Foto, die vom 13.10. (Ortsansicht) nur als Zeilen.
+        $ortZuletzt = function (array $l) use ($bildtyp, $frisch): array {
+            $teil = fn(bool $f, bool $ort) => array_filter($l, fn($a) => $frisch($a) === $f && ($bildtyp($a) === 'place') === $ort);
+            return array_merge($teil(true, false), $teil(true, true), $teil(false, false), $teil(false, true));
+        };
         $lF = $ortZuletzt(array_filter($frei, function ($a) use ($breite, $echt, $r) { $b = ($r['bild'] ?? fn($p) => null)($a); return $echt($a) && $breite($a) >= 480 && (!$b || !$b['h'] || $b['w'] / $b['h'] >= 1.2); }));
         $mF = $ortZuletzt(array_filter($frei, fn($a) => $echt($a) && $breite($a) >= 360));
         $fg = []; $fm = []; $fz = [];

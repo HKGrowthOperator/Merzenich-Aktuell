@@ -26,7 +26,8 @@ function ma21_termin(WP_Post $p): array {
     if ($ohneEnde) $ende = $start ? (new DateTimeImmutable('@' . $start))->setTimezone(wp_timezone())->setTime(23, 59, 59)->getTimestamp() : 0;
     $ort = ma21_ort($p);
     // Ohne Ortsteil (z. B. Allerheiligen in allen Orten) gilt der Termin für die ganze
-    // Gemeinde: der Ortsfilter (?ort=, assets/v20.js) zeigt ihn unter jedem Ortsteil.
+    // Gemeinde: der Ortsfilter (?ort=, assets/v20.js) zeigt ihn unter jedem Ortsteil, beschriftet mit
+    // „Gemeinde Merzenich“ statt mit dem Ortsteil Merzenich (Vorführ-Check 15.10.2026).
     $orte = get_the_terms($p->ID, 'ma_location');
     $hatOrt = is_array($orte) && (bool) array_filter($orte, fn($t) => isset(MA21_ORTE[$t->slug]));
     $quelle = (string) get_post_meta($p->ID, 'ma_event_source_url', true) ?: (string) get_post_meta($p->ID, 'ma_source_url', true);
@@ -34,7 +35,7 @@ function ma21_termin(WP_Post $p): array {
     return [
         'post' => $p, 'id' => $p->ID, 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'),
         'url' => wp_make_link_relative(get_permalink($p)), 'start' => $start, 'ende' => $ende, 'ohneEnde' => $ohneEnde,
-        'ort' => (string) get_post_meta($p->ID, 'ma_event_place', true), 'ortSlug' => $hatOrt ? $ort : 'gemeinde', 'ortsteil' => MA21_ORTE[$ort] ?? 'Merzenich',
+        'ort' => (string) get_post_meta($p->ID, 'ma_event_place', true), 'ortSlug' => $hatOrt ? $ort : 'gemeinde', 'ortsteil' => $hatOrt ? (MA21_ORTE[$ort] ?? 'Merzenich') : 'Gemeinde Merzenich',
         'kategorie' => (string) get_post_meta($p->ID, 'ma_event_category', true) ?: 'Termin',
         'veranstalter' => (string) get_post_meta($p->ID, 'ma_event_organizer', true),
         'eintritt' => (string) get_post_meta($p->ID, 'ma_event_price', true),
@@ -116,7 +117,7 @@ function ma21_termine_seite(): void {
         echo '</ul></details>';
     }
     echo '</div></section>';
-    echo ma21_werbung('artikel');
+    echo ma21_werbung_band();
 }
 
 /** Terminseite (single-ma_event.php), Markup wie deploy/termine.mjs seiteAusDaten(). */
@@ -236,7 +237,7 @@ function ma21_heute_seite(WP_Post $seite): void {
     }
     echo '<p class="heute-weiter">Mehr aus der Gemeinde: <a href="' . esc_url(home_url('/blaulicht/')) . '">Blaulicht</a> · <a href="' . esc_url(home_url('/rathaus/')) . '">Rathaus &amp; Politik</a> · <a href="' . esc_url(home_url('/vereine/')) . '">Vereine</a> · <a href="' . esc_url(home_url('/service/')) . '">Notdienste &amp; Rathaus</a></p>';
     echo '</div></section>';
-    echo ma21_werbung('artikel');
+    echo ma21_werbung_band();
 }
 
 /** Gibt es die Seite /heute/ schon (das Plugin legt sie beim ersten Öffnen des Backends an)? */

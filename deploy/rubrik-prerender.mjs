@@ -90,11 +90,20 @@ if (existsSync(basis)) for (const slug of readdirSync(basis)) {
   if (!nurPruefen) rmSync(join(basis, slug), { recursive: true, force: true });
 }
 
+// Themenseiten, die ein roter Titel öffnet (Blaulicht › Feuerwehr): Ressort für Markierung,
+// Brotkrumen und Dachzeile wie bei den Sammelseiten (Vorführ-Check 15.10.2026). Erstes Ressort gewinnt.
+const themenRessort = {};
+for (const r of quelle.ressorts || []) for (const p of r.punkte || []) {
+  const m = /^\/thema\/([a-z0-9-]+)\/$/.exec(p.href || '');
+  if (m && !themenRessort[m[1]]) themenRessort[m[1]] = { ressort: r.href, ressortTitel: r.titel };
+}
+
 // WordPress liest dieselben Definitionen (Route /rubrik/<slug>/, inc/ma21.php).
 const wp = join(wurzel, 'wordpress', 'theme', 'merzenich-aktuell', 'inc', 'rubriken.json');
 const wpJson = JSON.stringify({
   hinweis: 'Erzeugt von deploy/rubrik-prerender.mjs aus deploy/ressort-menue.json. Nicht von Hand bearbeiten.',
   rubriken: Object.fromEntries(rubriken.map((d) => [d.slug, { titel: d.titel, ressort: d.ressort, ressortTitel: d.ressortTitel, themen: d.themen, kategorie: d.kategorie, ohneKategorie: d.ohneKategorie, beschreibung: d.beschreibung }])),
+  themenRessort,
 }, null, 2) + '\n';
 if (!existsSync(wp) || readFileSync(wp, 'utf8') !== wpJson) { geaendert.push('inc/rubriken.json'); if (!nurPruefen) writeFileSync(wp, wpJson); }
 

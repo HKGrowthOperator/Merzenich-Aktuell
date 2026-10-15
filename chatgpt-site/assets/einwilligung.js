@@ -127,9 +127,12 @@
     });
   }
   function fusslinkSetzen() {
-    const ziel = document.querySelector('.compact-footer .shell, footer .shell, footer'); if (!ziel || ziel.querySelector('.einwilligung__link')) return;
+    // Der Reihe nach: Eine Liste in querySelector nähme das <footer> selbst (steht im Dokument vor seiner .shell), der Link klebte dann am linken Rand.
+    const ziel = ['.compact-footer .foot-bottom > div', '.compact-footer .shell', 'footer .shell', 'footer'].map((s) => document.querySelector(s)).find(Boolean); if (!ziel || ziel.querySelector('.einwilligung__link')) return;
     const a = document.createElement('a'); a.href = '#datenschutz-einstellungen'; a.className = 'einwilligung__link'; a.textContent = 'Datenschutz-Einstellungen';
     a.addEventListener('click', (e) => { e.preventDefault(); bannerZeigen(true); if (stand) { const f = document.querySelector('.einwilligung form'); if (f) { f.liveMeldungen.checked = !!stand.liveMeldungen; } } });
+    // Neben „Impressum · Datenschutz · RSS“ wie ein weiterer Fußlink.
+    if (ziel.matches('.foot-bottom > div')) ziel.append(' · ');
     ziel.append(a);
   }
   window.maEinwilligungOeffnen = () => document.querySelector('.einwilligung__link')?.click();

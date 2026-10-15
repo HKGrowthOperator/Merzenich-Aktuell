@@ -39,6 +39,9 @@ class WP_Term { public $count = 0; } class WP_Query {} class WP_Post {}
 function get_term_by($feld, $slug, $tax) { $t = new WP_Term(); $t->count = $slug === 'diebstahl' ? 0 : 1; return $t; }
 $GLOBALS['optionen'] = [];
 function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
+// Einträge je Verzeichnis (Branchenbuch, Familienanzeigen); ohne Angabe gibt es Einträge.
+$GLOBALS['anzahl'] = [];
+function wp_count_posts($typ) { return (object) ['publish' => $GLOBALS['anzahl'][$typ] ?? 1]; }
 function schalter(array $an) { $GLOBALS['optionen'] = ['ma21_ausbau' => $an]; }
 require $wurzel . '/wordpress/theme/merzenich-aktuell/inc/ma21.php';
 require $wurzel . '/wordpress/theme/merzenich-aktuell/inc/markt.php';
@@ -112,6 +115,17 @@ $v = ma21_ressort_menue_daten($quelle)['ressorts']['/vereine/'] ?? null;
 pruefe('Beide an: Vereine wie bis 14.10. mit Gruppen und Anzeige', [array_column($v['gruppen'] ?? [], 'titel'), $v['werbung'] ?? null], [['Vereinsleben', 'Sport & Fans', 'Mitmachen'], true]);
 pruefe('Unternehmen bekommt nie eine Anzeige (Auftrag 13.10.2026)', isset(ma21_ressort_menue_daten($quelle)['ressorts']['/unternehmen/']['werbung']), false);
 schalter([]);
+$q = $quelle; $sp = $q['ressorts']['/sport/'];
+$doppelt = $sp['neu'][0]['url'] ?? ''; $q['ressorts']['/sport/']['mehr'] = array_merge([['titel' => 'Doppelt', 'url' => $doppelt, 'bild' => ['src' => '/x.jpg']]], (array) ($sp['mehr'] ?? []));
+$d = ma21_ressort_menue_daten($q);
+$ueberschneidung = 0; foreach ($d['ressorts'] as $r) $ueberschneidung += count(array_intersect(array_column((array) ($r['mehr'] ?? []), 'url'), array_column((array) ($r['neu'] ?? []), 'url')));
+$GLOBALS['anzahl'] = ['ma_business' => 0, 'ma_family_notice' => 0];
+$d = ma21_ressort_menue_daten($quelle);
+pruefe('Leeres Branchenbuch und leere Familienanzeigen: kein roter Titel dorthin, Traueranzeigen bleiben', [in_array('/betriebe/', array_column($d['ressorts']['/unternehmen/']['punkte'], 'href'), true), in_array('/familienanzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true), in_array('/traueranzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true)], [false, false, true]);
+$GLOBALS['anzahl'] = [];
+$d = ma21_ressort_menue_daten($quelle);
+pruefe('Mit Einträgen: Branchenbuch und Familienanzeigen wieder im Menü', [in_array('/betriebe/', array_column($d['ressorts']['/unternehmen/']['punkte'], 'href'), true), in_array('/familienanzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true)], [true, true]);
+pruefe('Keine Meldung zweimal im Menü: „mehr“ ohne Einträge aus „neu“ (Sport, Vorführ-Check 15.10.)', [$doppelt !== '', $ueberschneidung], [true, 0]);
 
 echo "\nMusterfirmen\n";
 pruefe('Standard: drei Beispielfirmen', array_column(ma21_muster_firmen(), 'slug'), ['backhaus-morgenrot', 'cafe-feldlerche', 'holzwerkstatt-jahresring']);

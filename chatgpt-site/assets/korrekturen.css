@@ -214,6 +214,7 @@ html[data-werbung="aus"] .ad-row-body,html[data-werbung="aus"] .portal-ads,html[
 .einwilligung__fuss{margin:12px 0 0;font-size:12px;color:#65696c;line-height:1.5}
 .einwilligung__fuss a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .einwilligung__link{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted,#666);text-decoration:underline;text-underline-offset:2px}
+.foot-bottom .einwilligung__link{display:inline;margin-top:0;font-size:inherit;color:inherit}
 @media (max-width:640px){.einwilligung{padding:0}.einwilligung__box{max-width:none;border-radius:16px 16px 0 0;border-left:0;border-right:0;border-bottom:0;padding:18px 18px calc(16px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(17,19,21,.2)}.einwilligung__aktionen{grid-template-columns:1fr}}
 .live-hinweis{position:sticky;top:0;z-index:2050;display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--red,#971725);color:#fff;font-size:14px}
 .live-hinweis__label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border:1px solid rgba(255,255,255,.6)}
@@ -669,3 +670,30 @@ body.home .mj-ort a:hover,body.home .mj-ort a:focus-visible{text-decoration:unde
    gespeichert. WordPress entfernt sie serverseitig oder zeigt sie mit
    eingeschaltetem Schalter ohne dieses Merkmal; die statische Kopie blendet sie aus. */
 [data-ausbau],.mainnav .navrow .navscroll>a[data-ausbau],[data-drawer] .drawer-group>a[data-ausbau]{display:none!important}
+
+/* Vorführ-Check 15.10.2026 (Theme 21.19.1) */
+/* Knöpfe im Fließtext: .info-prose a färbte „Werbung anfragen“ dunkelrot auf dunklem Knopf (Kontrast 1,5:1). */
+.info-prose a.btn,.info-prose a.btn:hover{color:#fff;text-decoration:none}
+.info-prose a.btn.ghost{color:var(--ink)}
+/* Überschriften in Listen: Der Aufmacher steht immer ganz da (die Einwendungsfrist im Titel fehlte bei 1280 px),
+   Zeilen erst nach fünf Zeilen gekürzt statt nach drei (Handy). system.css begrenzte beide auf drei Zeilen. */
+html body .feed-lead.feed-lead h2{display:block;-webkit-line-clamp:unset;line-clamp:none;overflow:visible}
+html body .feed-row.feed-row h3{-webkit-line-clamp:5;line-clamp:5}
+/* Handy-Menü über dem klebenden Kopf (recovery.css: z-index 120), sonst verdeckte der Kopf Logo und × der Menüspalte. */
+.drawer{z-index:130}
+/* Meldungsseite: Kopf und Text auf derselben Kante (Titel stand 30 px weiter rechts als Bild und Text). */
+.article-head .shell{max-width:1160px}
+@media(max-width:1024px){.article-grid{justify-content:start}}
+/* Stellenmarkt: Die Art (Ausbildung, Produktion …) steht schon in der Kopfzeile der Anzeige; die 55-px-Spalte
+   daneben brach sie mitten im Wort um („AUSBILDU/NG“). Wie auf dem Handy entfällt die Spalte. */
+.markt-liste .markt-row:not(.markt-row--thumb){grid-template-columns:minmax(0,1fr)}
+.markt-liste .markt-row:not(.markt-row--thumb)>.d{display:none}
+.markt-liste .markt-row:not(.markt-row--thumb) .act{grid-column:1}
+/* Tabellenauszug auf dem Handy: S, U, N und Diff. ausblenden, damit Pkt. ohne seitliches Wischen zu sehen ist. */
+@media(max-width:560px){
+  .league-table{min-width:0}
+  .league-table tr>:nth-child(4),.league-table tr>:nth-child(5),.league-table tr>:nth-child(6),.league-table tr>:nth-child(8){display:none}
+  .league-table th:nth-child(2){min-width:0}
+  .league-table th,.league-table td{padding:10px 8px}
+  .league-table .league-gap td{padding:4px 8px}
+}

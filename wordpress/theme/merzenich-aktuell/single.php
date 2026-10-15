@@ -66,7 +66,8 @@ while (have_posts()): the_post();
     <div class="cta-row"><a class="btn ghost" href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
     <?php if (comments_open() || get_comments_number()) comments_template(); ?>
   </div>
-  <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2></aside>
+  <?php // Rechte Spalte nicht leer lassen (Vorführ-Check 15.10.2026): neueste Meldungen ohne diese. ?>
+  <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><?php echo ma21_liste_seitenspalte($p->ID); ?></aside>
 </div>
 </article>
 <?php

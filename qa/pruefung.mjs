@@ -946,7 +946,7 @@ function pruefeMenueUndEndlos() {
   if (mitVereine) fehler('Leiste', `${mitVereine} Seite(n) mit sichtbarem „Vereine“ in der Leiste (gespeichert, aber ohne data-ausbau="vereine").`);
   if (!lies('chatgpt-site/assets/korrekturen.css').includes('.mainnav .navrow .navscroll>a[data-ausbau]')) fehler('Leiste', 'korrekturen.css blendet [data-ausbau] in der Leiste nicht aus (die Leistenregel mit !important ist spezifischer).');
   if (ohneEndlos) fehler('Endlos', `${ohneEndlos} Seite(n) ohne assets/endlos.js.`);
-  if (!lies('chatgpt-site/index.html').includes('data-endlos-quelle="/nachrichten/"')) fehler('Endlos', 'Startseite ohne „Weitere Meldungen“ (data-endlos-quelle).');
+  if (!lies('chatgpt-site/index.html').includes('data-endlos-quelle="/nachrichten/?ma_ohne_sport=1"')) fehler('Endlos', 'Startseite ohne „Weitere Meldungen“ (data-endlos-quelle).');
   const rubriken = JSON.parse(lies('wordpress/theme/merzenich-aktuell/inc/rubriken.json')).rubriken || {};
   for (const slug of Object.keys(rubriken)) {
     const pfad = `chatgpt-site/rubrik/${slug}/index.html`;

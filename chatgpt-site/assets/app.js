@@ -245,6 +245,8 @@
     $$('time[datetime]', root).forEach(function (t) {
       var d = new Date(t.getAttribute('datetime')), diff = (Date.now() - d) / 60000;
       if (isNaN(diff) || diff < 0 || diff > 1440 || !t.closest('.meta, .ticker')) return;
+      // Termine zeigen ihre Uhrzeit, auch wenn sie schon begonnen haben („vor 41 Min.“ las sich wie eine Meldungszeit, Vorführ-Check 15.10.2026).
+      if (t.closest('[data-event-row], .event-row, .event-page')) return;
       // Schon umgestellt (Zurück-Taste setzt gemerkte Meldungen wieder ein): Datum im Titel behalten.
       if (!t.hasAttribute('title')) t.setAttribute('title', t.textContent);
       t.textContent = diff < 60 ? 'vor ' + Math.max(1, Math.round(diff)) + ' Min.' : 'vor ' + Math.round(diff / 60) + ' Std.';
@@ -360,7 +362,10 @@ document.querySelectorAll('form[data-mail-draft]').forEach(function(form){
         {icon:'megafon',title:'Tipp / Sponsoring',text:'Eigene Tipp-Rubrik für Vereine, Unternehmen und Sponsoren.',href:'/anzeigen/aufgeben/?art=Werbung&format=Tipp%20(bezahlter%20Beitrag)'},
         {icon:'haus',title:'Unternehmensprofil',text:'Dauerhafte lokale Präsenz im Wirtschaftsbereich.',href:'/anzeigen/aufgeben/?art=Werbung&format=Unternehmenspr%C3%A4senz'}
       ]);
-      werben.insertBefore(w5.firstElementChild,werben.firstChild);
+      // Nach Brotkrumen und Titel, nicht davor (Vorführ-Check 15.10.2026: der Kasten stand über dem Seitentitel).
+      var kopfW=document.querySelector('main .page-head');
+      if(kopfW&&kopfW.parentNode){var huelle=document.createElement('div');huelle.className='shell';huelle.appendChild(w5.firstElementChild);kopfW.parentNode.insertBefore(huelle,kopfW.nextSibling);}
+      else werben.insertBefore(w5.firstElementChild,werben.firstChild);
     }
   }
 })();

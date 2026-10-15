@@ -131,7 +131,7 @@ function ma21_markt_seite(string $typ): void {
     if ($block !== '') echo $block;
     elseif (!$eigene) echo '<p class="no-result">Der Marktüberblick wird gerade aktualisiert und ist in wenigen Minuten wieder da. Eigene Anzeigen nimmt die Redaktion jederzeit an.</p>';
     echo '</div><aside class="sidebar"><div class="sidebox"><h3>' . esc_html($k['box'][0]) . '</h3><p class="p">' . esc_html($k['box'][1]) . '</p><a class="btn block" href="' . esc_url(home_url($k['box'][2])) . '">' . esc_html($k['box'][3]) . '</a></div></aside></div></div></section>';
-    echo ma21_werbung('artikel');
+    echo ma21_werbung_band();
 }
 
 /** Termine der nächsten Tage für die Tipps (veröffentlicht, Beginn ab jetzt). */
@@ -184,7 +184,7 @@ function ma21_tipp_seite(): void {
     echo '<p class="markt-quellen"><a href="' . esc_url(home_url('/termine/')) . '">Alle Termine</a> · <a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p>';
     echo '</div><aside class="sidebar"><div class="sidebox"><h3>Eigenen Tipp platzieren</h3><p class="p">Veranstaltung, Projekt oder Angebot als Tipp auf Merzenich Aktuell: klar als Anzeige gekennzeichnet und getrennt von den Nachrichten der Redaktion.</p><a class="btn block" href="' . esc_url($tipp) . '">Tipp anfragen</a></div>'
         . '<div class="sidebox"><h3>Kostenlos</h3><p class="p">Vereine, Kirchen und gemeinnützige Gruppen melden ihre Termine kostenlos. Die Redaktion prüft und veröffentlicht sie im Terminkalender.</p><a class="btn ghost block" href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></div></aside></div></div></section>';
-    echo ma21_werbung('artikel');
+    echo ma21_werbung_band();
 }
 
 /**
@@ -299,7 +299,8 @@ function ma21_anzeigen_seite(string $typ): void {
     // Die Auswahl „Traueranzeige / Danksagung / …“ setzt assets/app.js über die Liste (führt zum Formular mit Vorauswahl).
     echo '<p>' . esc_html($k['formtext']) . ' <a href="' . esc_url(home_url('/anzeigen/aufgeben/?art=' . $k['art'])) . '">' . esc_html($k['aufgeben']) . '</a>.</p>';
     echo '</div></div></div></section>';
-    echo ma21_werbung('artikel');
+    // Unter Traueranzeigen keine Musteranzeige (Café-Werbung direkt unter dem Trauerhinweis wirkte pietätlos).
+    if ($typ !== 'ma_obituary') echo ma21_werbung_band();
 }
 
 /** Ein Betrieb (ma_business, nur mit Einwilligung veröffentlicht) als Zeile. */
@@ -331,5 +332,5 @@ function ma21_betriebe_seite(): void {
             . do_shortcode('[ma_partner_antrag typ="unternehmen"]') . '</section>';
     }
     echo '</div></section>';
-    echo ma21_werbung('artikel');
+    echo ma21_werbung_band();
 }

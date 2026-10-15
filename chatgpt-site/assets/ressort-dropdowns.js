@@ -142,7 +142,10 @@
   function story(item) {
     // Musterbeitraege (Unternehmen, bis echte Betriebe buchen) sichtbar markiert,
     // im Bild und in der Metazeile (auch ohne Bild), mit Bildnachweis.
-    const marke = item.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>' : '';
+    // Symbolbilder tragen wie auf den Seiten ihr Etikett (Vorführ-Check 15.10.2026: im Termine-Menü wirkte
+    // ein Kirmes-Karussell wie ein Foto vom Seniorennachmittag).
+    const marke = item.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>'
+      : (item.bild && item.bild.symbol ? '<span class="ressort-dropdown__muster ressort-dropdown__symbol">Symbolbild</span>' : '');
     const bild = item.bild && item.bild.src
       ? '<span class="ressort-dropdown__story-image"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async">' + marke + '</span>'
       : '';

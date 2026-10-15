@@ -76,7 +76,7 @@ const WERBUNG_JS = `<script src="/assets/werbung.js?${V}" defer></script>`;
 const ENDLOS_JS = `<script src="/assets/endlos.js?${V}" defer></script>`;
 // Startseite: nach den Bloecken „Weitere Meldungen“ aus /nachrichten/ (endlos.js
 // laedt nach, was oben noch nicht steht). Ohne JavaScript bleibt der Link.
-const ENDLOS_START = '<!-- endlos:start --><section class="desk shell weitere-meldungen" aria-labelledby="weitere-titel"><div class="desk-heading"><div><h2 id="weitere-titel">Weitere Meldungen</h2></div><a class="desk-more" href="/nachrichten/">Alle Meldungen</a></div><div class="feed weitere-meldungen__liste" data-endlos-quelle="/nachrichten/"><p class="weitere-meldungen__ohne-js"><a href="/nachrichten/">Alle Meldungen der Reihe nach lesen</a></p></div></section><!-- endlos:end -->';
+const ENDLOS_START = '<!-- endlos:start --><section class="desk shell weitere-meldungen" aria-labelledby="weitere-titel"><div class="desk-heading"><div><h2 id="weitere-titel">Weitere Meldungen</h2></div><a class="desk-more" href="/nachrichten/">Alle Meldungen</a></div><div class="feed weitere-meldungen__liste" data-endlos-quelle="/nachrichten/?ma_ohne_sport=1"><p class="weitere-meldungen__ohne-js"><a href="/nachrichten/">Alle Meldungen der Reihe nach lesen</a></p></div></section><!-- endlos:end -->';
 const ENDLOS_START_RE = /<!-- endlos:start -->[\s\S]*?<!-- endlos:end -->/;
 // KBS/Ordin 26.09.2026: "Anzeige aufgeben" muss leicht zu finden sein - oben in
 // der Schublade, im Mega-Menue und im Fuss. Den roten Knopf "+ Anzeige aufgeben"

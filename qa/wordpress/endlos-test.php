@@ -57,6 +57,10 @@ function get_post_field($f, $p) { return $p->$f ?? ''; }
 function get_transient($k) { return false; } function set_transient(...$a) { return true; }
 function apply_filters($n, $v) { return $v; }
 function get_category_by_slug($s) { return false; }
+// Sport: Kategorie oder (Plugin) Sportbezug im Text, für die sportfreie Startseite
+$GLOBALS['sport'] = []; $GLOBALS['sportbezug'] = [];
+function has_category($slug, $p) { return $slug === 'sport' && in_array($p->ID, $GLOBALS['sport'], true); }
+function ma_is_sport_post($p) { return in_array($p->ID, $GLOBALS['sportbezug'], true); }
 function get_template_directory() { return __DIR__ . '/../../wordpress/theme/merzenich-aktuell'; }
 require __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php';
 $fehler = 0;
@@ -109,6 +113,16 @@ $GLOBALS['ist']['404'] = false;
 $GLOBALS['optionen'] = ['ma21_ausbau' => ['endlos' => false]];
 pruefe('Endlos-Scrollen ausgeschaltet (Ausbaustufe): keine Antwort, Blättern wie bisher', [ma21_endlos_antwort(), ma21_endlos_attr('ressort-blaulicht')], [null, '']);
 $GLOBALS['optionen'] = [];
+$GLOBALS['ist'] = ['tax' => false] + $leer; $GLOBALS['anfrage'] = '/nachrichten/page/2/?ma_ohne_sport=1&ma_endlos=1';
+$GLOBALS['qv'] = ['paged' => 2, 'ma_endlos' => '1', 'ma_alle' => '1', 'ma_ohne_sport' => '1'];
+$wp_query->posts = array_slice($posts, 0, 4); $GLOBALS['sport'] = [$posts[0]->ID]; $GLOBALS['sportbezug'] = [$posts[2]->ID];
+$a = ma21_endlos_antwort();
+pruefe('Startseite (?ma_ohne_sport=1): Sport und Sportbezug fallen weg, Folgeseite behält den Filter', [$a[0] ?? null, substr_count($a[1] ?? '', ' data-story="'), str_contains($a[1] ?? '', 'data-naechste="https://merzenich-aktuell.de/nachrichten/page/3/?ma_ohne_sport=1"')], [200, 2, true]);
+$GLOBALS['sport'] = array_map(fn($p) => $p->ID, $posts);
+$a = ma21_endlos_antwort();
+pruefe('Nur Sport auf der Seite: 200 ohne Meldungen, aber mit Folgeseite (endlos.js lädt weiter)', [$a[0] ?? null, substr_count($a[1] ?? '', ' data-story="'), str_contains($a[1] ?? '', 'page/3/')], [200, 0, true]);
+$GLOBALS['sport'] = []; $GLOBALS['sportbezug'] = []; $GLOBALS['qv'] = ['paged' => 2, 'ma_endlos' => '1'];
+pruefe('ma_ohne_sport ist eine erlaubte Abfragevariable', in_array('ma_ohne_sport', array_reduce($GLOBALS['hooks']['query_vars'] ?? [], fn($v, $cb) => $cb($v), []), true), true);
 $GLOBALS['ist'] = ['archiv' => 'ma_event'] + $leer;
 pruefe('Terminliste mit ?ma_endlos: keine Antwort', ma21_endlos_antwort(), null);
 $GLOBALS['ist'] = $leer;
@@ -121,5 +135,9 @@ pruefe('ma_endlos ist eine erlaubte Abfragevariable', in_array('ma_endlos', arra
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/archive.php');
 pruefe('archive.php und autor.php setzen die Attribute am .feed', [str_contains($vorlage, 'ma21_endlos_attr('), str_contains((string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/autor.php'), 'ma21_endlos_attr(')], [true, true]);
 
+echo "\nAnrisse am Wortende kürzen (21.19.1)\n";
+pruefe('Kürzung endet am Wortende mit …', ma21_kurz('Familien sollen ihr Kind jetzt vormerken. Der Kreis nennt die Frist', 47), 'Familien sollen ihr Kind jetzt vormerken. Der …');
+pruefe('Kurzer Text bleibt unverändert', ma21_kurz('Kurz und gut.', 150), 'Kurz und gut.');
+pruefe('Ohne Leerzeichen: hart gekürzt', ma21_kurz(str_repeat('x', 20), 10), str_repeat('x', 10) . ' …');
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

@@ -194,5 +194,23 @@
       ],
       "beschreibung": "Jubiläen, Hochzeiten und Ehrenamt aus der Gemeinde Merzenich."
     }
+  },
+  "themenRessort": {
+    "feuerwehr": {
+      "ressort": "/blaulicht/",
+      "ressortTitel": "Blaulicht"
+    },
+    "polizei": {
+      "ressort": "/blaulicht/",
+      "ressortTitel": "Blaulicht"
+    },
+    "fussball": {
+      "ressort": "/sport/",
+      "ressortTitel": "Sport"
+    },
+    "ehrenamt": {
+      "ressort": "/vereine/",
+      "ressortTitel": "Vereine"
+    }
   }
 }

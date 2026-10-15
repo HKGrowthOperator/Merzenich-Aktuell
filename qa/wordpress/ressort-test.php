@@ -26,6 +26,9 @@ $GLOBALS['abfragen'] = [];
 function get_posts($a) { $GLOBALS['abfragen'][] = $a; foreach ((array) ($a['tag_slug__in'] ?? []) as $t) if (($GLOBALS['themen'][$t] ?? 0) > 0) return [1]; return []; }
 $GLOBALS['qv'] = [];
 function get_query_var($k, $d = '') { return $GLOBALS['qv'][$k] ?? $d; }
+// Themenseite (/thema/<slug>/): das Schlagwort der Anfrage, sonst keins
+$GLOBALS['tag'] = null;
+function is_tag() { return $GLOBALS['tag'] !== null; } function get_queried_object() { return $GLOBALS['tag']; }
 require __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php';
 $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-70s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
@@ -64,6 +67,12 @@ pruefe('Brotkrumen: Start › Blaulicht › Verkehr', ma21_liste_eltern(), ['Bla
 $GLOBALS['qv']['ma_rubrik'] = 'gibt-es-nicht';
 pruefe('Unbekannte Sammelseite hat keinen Kopf', [ma21_rubrik_aktuell(), ma21_liste_eltern()], [null, null]);
 unset($GLOBALS['qv']['ma_rubrik']);
+$t = new WP_Term(); $t->slug = 'feuerwehr'; $GLOBALS['tag'] = $t;
+pruefe('Themenseite aus dem Blaulicht-Menü: Start › Blaulicht › Feuerwehr', ma21_liste_eltern(), ['Blaulicht', 'https://merzenich-aktuell.de/blaulicht/']);
+$t = new WP_Term(); $t->slug = 'irgendwas'; $GLOBALS['tag'] = $t;
+pruefe('Andere Themenseite: keine Ressort-Brotkrume', ma21_liste_eltern(), null);
+$GLOBALS['tag'] = null;
+pruefe('Themen der roten Menütitel: Feuerwehr und Polizei bei Blaulicht, Fußball bei Sport', [ma21_thema_ressort('feuerwehr')['ressort'] ?? '', ma21_thema_ressort('polizei')['ressort'] ?? '', ma21_thema_ressort('fussball')['ressort'] ?? ''], ['/blaulicht/', '/blaulicht/', '/sport/']);
 
 echo "\nKartenraster der Ressortseiten\n";
 pruefe('Raster für Aktuell, Blaulicht, Rathaus, Leben, Wirtschaft, Menschen', array_map('ma21_raster_seite', ['ressort-nachrichten', 'ressort-blaulicht', 'ressort-rathaus', 'ressort-leben', 'ressort-wirtschaft', 'ressort-menschen']), [true, true, true, true, true, true]);

@@ -193,6 +193,8 @@ function ma21_kopf_aktuell(string $html): string {
     elseif (str_starts_with($pfad, '/unternehmen/')) $pfad = '/unternehmen/';
     // Sammelseiten der roten Menütitel gehören zu ihrem Ressort.
     elseif (str_starts_with($pfad, '/rubrik/')) { $rs = ma21_rubrik((string) (explode('/', trim($pfad, '/'))[1] ?? '')); if ($rs) $pfad = (string) $rs['ressort']; }
+    // Themenseiten aus dem Menü (Blaulicht › Feuerwehr, Polizei) ebenso.
+    elseif (str_starts_with($pfad, '/thema/')) { $rs = ma21_thema_ressort((string) (explode('/', trim($pfad, '/'))[1] ?? '')); if ($rs) $pfad = (string) $rs['ressort']; }
     elseif (is_singular('ma_event') || is_post_type_archive('ma_event')) $pfad = '/termine/';
     elseif (is_singular('ma_club') || is_post_type_archive('ma_club')) $pfad = '/vereine/';
     if (!preg_match('#^/[a-z0-9-]+/$#', $pfad)) return $html;
@@ -425,6 +427,14 @@ function ma21_ressort_menue_daten(array $d): array {
         if (!is_array($r)) continue;
         unset($r['ausbau']);
         $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
+        // „Weitere Bildmeldungen“ (mehr) kommen aus der statischen Datei und waren nur gegen deren „neu“ entdoppelt:
+        // Fehlt dort ein Entwurf, rückt eine Meldung nach und stand im Sport-Menü zweimal (Vorführ-Check 15.10.2026).
+        if (!empty($r['mehr']) && is_array($r['mehr'])) {
+            $pfadVon = fn($u) => rtrim((string) parse_url((string) $u, PHP_URL_PATH), '/');
+            $schon = array_map(fn($e) => $pfadVon($e['url'] ?? ''), $r['neu']);
+            $r['mehr'] = array_values(array_filter($r['mehr'], fn($e) => is_array($e) && !in_array($pfadVon($e['url'] ?? ''), $schon, true)));
+            if (!$r['mehr']) unset($r['mehr']);
+        }
         // Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): links die
         // Firmen, beim Überfahren rechts ihre Beiträge; ohne Wahl die neuesten
         // Firmenbeiträge. Die Musteranzeige unter „Für Unternehmen“ entfällt.
@@ -518,6 +528,10 @@ function ma21_menue_punkte_pruefen(array $punkte): array {
             if (!$t || (int) $t->count < 1) continue;
         }
         if (preg_match('#^/rubrik/([^/]+)/$#', $href, $m) && !ma21_rubrik_hat_beitraege($m[1])) continue;
+        // Verzeichnisse ohne einen einzigen Eintrag (Branchenbuch „Noch keine Einträge.“) wie leere Themen ausblenden
+        // (Vorführ-Check 15.10.2026). Traueranzeigen bleiben: Die Seite verweist auf die Gedenkportale.
+        $leer = ['/betriebe/' => 'ma_business', '/familienanzeigen/' => 'ma_family_notice'];
+        if (isset($leer[$href]) && function_exists('wp_count_posts') && (int) (wp_count_posts($leer[$href])->publish ?? 0) < 1) continue;
         $raus[] = ['titel' => (string) $p['titel'], 'href' => $href];
     }
     return $raus;
@@ -567,7 +581,7 @@ function ma21_menue_neu(string $pfad, array $statisch): array {
     // Gesponserte Beiträge mit „Anzeige“ vor dem Ort (wie die Karten auf den Seiten).
     $anzeige = fn(WP_Post $p): string => function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? 'Anzeige · ' : '';
     return array_map(fn(WP_Post $p): array => ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => $anzeige($p) . (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p))), 'datum' => (string) get_post_time('c', false, $p), 'bild' => ma21_menue_bild($p)]
-        + ($anriss ? ['anriss' => html_entity_decode(wp_html_excerpt(ma21_teaser($p), 170, ' …'), ENT_QUOTES, 'UTF-8')] : []), get_posts($args));
+        + ($anriss ? ['anriss' => html_entity_decode(ma21_kurz(ma21_teaser($p), 170), ENT_QUOTES, 'UTF-8')] : []), get_posts($args));
 }
 add_action('after_switch_theme', function (): void { flush_rewrite_rules(true); });
 
@@ -629,6 +643,16 @@ function ma21_lesezeit(WP_Post $p): int {
 function ma21_teaser(WP_Post $p): string {
     $t = trim($p->post_excerpt) ?: wp_trim_words(wp_strip_all_tags($p->post_content), 30, ' …');
     return $t;
+}
+
+/** Text auf höchstens $n Zeichen kürzen, am Wortende („Der Kreis ne …“ stand mitten im Wort, Vorführ-Check 15.10.2026). */
+function ma21_kurz(string $t, int $n): string {
+    $t = trim(preg_replace('/\s+/u', ' ', wp_strip_all_tags($t)));
+    if (mb_strlen($t) <= $n) return $t;
+    $k = mb_substr($t, 0, $n + 1);
+    $leer = mb_strrpos($k, ' ');
+    $k = $leer !== false && $leer > $n * 0.6 ? mb_substr($k, 0, $leer) : mb_substr($t, 0, $n);
+    return rtrim($k, " ,;:–-") . ' …';
 }
 
 /** Bilddaten des Beitragsbilds oder null. */
@@ -712,7 +736,8 @@ function ma21_startplatz(WP_Post $p): string {
     return $v ?: 'auto';
 }
 
-function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p); }
+/** Sport im Sinn der sportfreien Startseite (KBS 26.09.2026): mit Plugin auch Vereins- und Fanclub-Meldungen mit Sportbezug. */
+function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p) || (function_exists('ma_is_sport_post') && ma_is_sport_post($p)); }
 
 /**
  * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, vier
@@ -786,6 +811,15 @@ function ma21_werbung(string $marker): string {
         if ($slot !== '' && ma_active_ads($slot)) { $echt = ma_render_werbeplatz($slot, $marker); if ($echt !== '') return $echt; }
     }
     return trim(ma21_vorlage("werbung-{$marker}.html"));
+}
+
+/**
+ * Werbeband unter Seiten, deren Inhalt schon geschlossen ist (Märkte, Tipps, Termine):
+ * ohne eigene Spalte lief es über die ganze Fensterbreite (Vorführ-Check 15.10.2026).
+ */
+function ma21_werbung_band(): string {
+    $w = ma21_werbung('artikel');
+    return $w === '' ? '' : '<div class="shell werbung-seitenband">' . $w . '</div>';
 }
 
 function ma21_block(string $name): string {
@@ -1045,7 +1079,8 @@ function ma21_news_card(WP_Post $p): string {
 /** Erste Meldung einer Liste (Rubrik, Ort, Thema). */
 function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-    return '<article class="feed-lead"' . ma21_karte_attr($p, $slot, $fest) . '>'
+    // Ohne Bild über die ganze Breite (.feed-lead.no-media, korrekturen.css), sonst stand der Text in der Bildspalte (Suche, Vorführ-Check 15.10.2026).
+    return '<article class="feed-lead' . ($b ? '' : ' no-media') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
         . ($b ? "<a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-lead'], true) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="lead-copy">' . ma21_marke($p, 'kicker') . "<h2><a href=\"{$url}\">{$titel}</a></h2><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div></div></article>';
@@ -1129,7 +1164,7 @@ function ma21_feed_raster(array $posts, array $plaetze = []): string {
         $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
             . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['ressort-raster'], false) . ma21_badge($b, false) . '</div></a>' : '')
             . '<div class="bildraster-text">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3>"
-            . '<p class="dek">' . ma21_e(wp_html_excerpt(ma21_teaser($p), 150, ' …')) . '</p><div class="meta">' . ma21_zeit($p, true) . '</div></div></article>';
+            . '<p class="dek">' . ma21_e(ma21_kurz(ma21_teaser($p), 150)) . '</p><div class="meta">' . ma21_zeit($p, true) . '</div></div></article>';
     }
     return $h . '</div>';
 }
@@ -1165,7 +1200,7 @@ function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
  * Teilstück: ohne Kopf und Aufmacher, Raster-Ressorts als Karten (Anzeige wie
  * gewohnt nach Karte 6), alle anderen Listen als Zeilen.
  */
-add_filter('query_vars', function (array $v): array { $v[] = 'ma_endlos'; return $v; });
+add_filter('query_vars', function (array $v): array { $v[] = 'ma_endlos'; $v[] = 'ma_ohne_sport'; return $v; });
 /** Ist die Anfrage eine Meldungsliste, die endlos weiterlaufen kann? */
 function ma21_endlos_liste(): bool {
     return is_category() || is_tag() || is_tax('ma_location') || is_search() || (bool) get_query_var('ma_alle')
@@ -1194,6 +1229,9 @@ function ma21_endlos_antwort(): ?array {
     global $wp_query;
     $posts = array_values(array_filter((array) ($wp_query->posts ?? []), fn($p) => $p instanceof WP_Post));
     if (!$posts || is_404()) return [404, ''];
+    // „Weitere Meldungen“ der Startseite (?ma_ohne_sport=1): Die Startseite bleibt sportfrei (KBS 26.09.2026),
+    // auch mit Vereins- und Fanclub-Meldungen mit Sportbezug. Bleibt nichts übrig, lädt endlos.js die Folgeseite.
+    if ((string) get_query_var('ma_ohne_sport') !== '') $posts = array_values(array_filter($posts, fn($p) => !ma21_ist_sport($p)));
     $schluessel = ma21_ressort_schluessel();
     return [200, ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste())];
 }
@@ -1232,9 +1270,9 @@ add_filter('ma_layout_belegung', function ($b, string $seite): array {
 }, 10, 2);
 
 /** Rechte Spalte der Listen: neueste Meldungen, bei Sport und Vereinen die Vereine der Gemeinde. */
-function ma21_liste_seitenspalte(): string {
+function ma21_liste_seitenspalte(int $ohne = 0): string {
     $h = '';
-    $neu = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5]);
+    $neu = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5] + ($ohne ? ['post__not_in' => [$ohne]] : []));
     if ($neu) {
         $h .= '<div class="sidebox"><h3>Neueste Meldungen aus allen Ressorts<a href="' . esc_url(home_url('/nachrichten/')) . '">alle</a></h3><ol class="ranked">';
         foreach ($neu as $p) $h .= '<li><a href="' . esc_url(get_permalink($p)) . '">' . ma21_e(get_the_title($p)) . '</a></li>';
@@ -1317,7 +1355,7 @@ function ma21_liste_kopf(): array {
     ];
     if (is_category() && $o instanceof WP_Term && isset($TEXTE[$o->slug])) return $TEXTE[$o->slug];
     if (is_tax('ma_location') && $o instanceof WP_Term) return ['Ort', $o->name, $o->description ?: "Meldungen aus {$o->name}."];
-    if (is_tag() && $o instanceof WP_Term) return ['Thema', $o->name, $o->description ?: "Alle Meldungen zum Thema {$o->name}."];
+    if (is_tag() && $o instanceof WP_Term) return [(string) (ma21_thema_ressort((string) $o->slug)['ressortTitel'] ?? 'Thema'), $o->name, $o->description ?: "Alle Meldungen zum Thema {$o->name}."];
     if (is_search()) return ['Suche', 'Suche: ' . get_search_query(), ''];
     if ($o instanceof WP_Term) return [$o->name, $o->name, $o->description];
     return ['Nachrichten', 'Alle Meldungen', 'Alle Meldungen aus der Gemeinde Merzenich, die jüngste zuerst.'];
@@ -1326,6 +1364,7 @@ function ma21_liste_kopf(): array {
 /** Übergeordnete Seite in den Brotkrumen einer Liste (Sammelseite: ihr Ressort), sonst null. */
 function ma21_liste_eltern(): ?array {
     $rs = ma21_rubrik_aktuell();
+    if (!$rs && is_tag() && ($o = get_queried_object()) instanceof WP_Term) $rs = ma21_thema_ressort((string) $o->slug);
     return $rs ? [(string) $rs['ressortTitel'], home_url((string) $rs['ressort'])] : null;
 }
 
@@ -1340,12 +1379,21 @@ function ma21_liste_eltern(): ?array {
  * inc/rubriken.json. Die Seiten stehen auf noindex: Die Themenseiten bleiben
  * das, was Suchmaschinen finden sollen.
  */
-function ma21_rubriken(): array {
-    static $r = null;
-    if ($r !== null) return $r;
+function ma21_rubriken_datei(): array {
+    static $d = null;
+    if ($d !== null) return $d;
     $datei = __DIR__ . '/rubriken.json';
-    $d = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
-    return $r = is_array($d['rubriken'] ?? null) ? $d['rubriken'] : [];
+    $j = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
+    return $d = is_array($j) ? $j : [];
+}
+function ma21_rubriken(): array {
+    $d = ma21_rubriken_datei();
+    return is_array($d['rubriken'] ?? null) ? $d['rubriken'] : [];
+}
+/** Ressort einer Themenseite, die ein roter Menütitel öffnet (/thema/feuerwehr/ → Blaulicht), sonst null. */
+function ma21_thema_ressort(string $slug): ?array {
+    $t = ma21_rubriken_datei()['themenRessort'][$slug] ?? null;
+    return is_array($t) && !empty($t['ressort']) ? $t : null;
 }
 function ma21_rubrik(string $slug): ?array {
     $r = ma21_rubriken();
@@ -1502,8 +1550,12 @@ add_filter('redirect_canonical', fn($ziel) => get_query_var('ma_api') ? false : 
 add_action('pre_get_posts', function (WP_Query $q): void {
     if (!is_admin() && $q->is_main_query() && $q->get('ma_alle')) {
         $q->set('post_type', 'post'); $q->set('posts_per_page', ma21_raster_anzahl('ressort-nachrichten'));
+        if ($q->get('ma_ohne_sport') && ($sport = get_category_by_slug('sport'))) $q->set('category__not_in', [(int) $sport->term_id]);
         $q->is_home = false; $q->is_archive = true; $q->is_404 = false;
     }
+    // Suche: nur Meldungen. Vereinsprofile und Formularseiten erschienen als „Nachrichten“ mit Datum
+    // und Lesezeit vor der passenden Meldung (Vorführ-Check 15.10.2026).
+    if (!is_admin() && $q->is_main_query() && $q->is_search() && !$q->get('post_type')) $q->set('post_type', 'post');
     // Ressorts mit Kartenraster: Aufmacher plus gerade Kartenzahl je Seite.
     if (!is_admin() && $q->is_main_query() && $q->is_category()) {
         $slug = (string) $q->get('category_name');

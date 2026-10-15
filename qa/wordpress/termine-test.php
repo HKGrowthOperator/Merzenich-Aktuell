@@ -83,6 +83,8 @@ function wp_trim_words($t, ...$a) { return $t; } function wp_strip_all_tags($t) 
 $p = new WP_Post(); $p->post_excerpt = 'x'; $p->post_content = '';
 $ort = function (array $slugs) use ($p) { $GLOBALS['orte'][$p->ID] = $slugs ? array_map(function ($s) { $t = new WP_Term(); $t->slug = $s; return $t; }, $slugs) : false; return ma21_termin($p)['ortSlug']; };
 pruefe('Termin in Golzheim: golzheim; ohne Ortsteil: gemeinde; fremder Ort: gemeinde', [$ort(['golzheim']), $ort([]), $ort(['dueren'])], ['golzheim', 'gemeinde', 'gemeinde']);
+$teil = function (array $slugs) use ($p) { $GLOBALS['orte'][$p->ID] = $slugs ? array_map(function ($s) { $t = new WP_Term(); $t->slug = $s; return $t; }, $slugs) : false; return ma21_termin($p)['ortsteil']; };
+pruefe('Beschriftung: Golzheim; ohne Ortsteil „Gemeinde Merzenich“ statt des Ortsteils Merzenich', [$teil(['golzheim']), $teil(['merzenich']), $teil([])], ['Golzheim', 'Merzenich', 'Gemeinde Merzenich']);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

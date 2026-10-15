@@ -284,5 +284,35 @@ pruefe('Tauschen bestätigt beide Plätze neu (seit = jetzt)', [($k['slots']['bu
 $k = ma_layout_ersetzen('startseite', ['buehne-3' => ['post' => 62, 'seit' => $jetzt - DAY_IN_SECONDS], 'buehne-1' => ['post' => 61]]);
 pruefe('Ersetzen: Zeitpunkt aus der Anfrage, sonst jetzt', [$k['slots']['buehne-3']['seit'] ?? 0, ($k['slots']['buehne-1']['seit'] ?? 0) > $jetzt], [$jetzt - DAY_IN_SECONDS, true]);
 
+echo "\nSpeichern hält die Frist alter Einträge fest (1.28.1)\n";
+$GLOBALS['opt'] = ['ma_layout_migration' => '1', 'ma_relevanz_einstellung' => ['fest_tage' => 7]];
+$GLOBALS['opt']['ma_layout_startseite'] = ['v' => 1, 'rev' => 3, 'stand' => $jetzt - 5 * DAY_IN_SECONDS, 'von' => 7, 'slots' => ['buehne-3' => ['post' => 63]]];
+$k = ma_layout_speichern('startseite', ma_layout_get('startseite'));
+pruefe('Alter Eintrag ohne seit bekommt den bisherigen Stand', $k['slots']['buehne-3']['seit'] ?? 0, $jetzt - 5 * DAY_IN_SECONDS);
+pruefe('Nach dem Speichern läuft er weiter nach 7 Tagen ab, nicht erneut ab jetzt', ma_layout_platz_bis(ma_layout_get('startseite')['slots']['buehne-3'], ma_layout_get('startseite')['stand']), $jetzt + 2 * DAY_IN_SECONDS);
+$GLOBALS['opt']['ma_layout_startseite'] = ['v' => 1, 'rev' => 0, 'stand' => 0, 'slots' => ['buehne-3' => ['post' => 63]]];
+pruefe('Ohne bisherigen Stand bleibt seit leer (unbefristet wie bisher)', isset(ma_layout_speichern('startseite', ma_layout_get('startseite'))['slots']['buehne-3']['seit']), false);
+
+echo "\nRubrikflächen: frische Meldungen vor alten mit Foto (1.28.1)\n";
+$GLOBALS['opt'] = ['ma_layout_migration' => '1']; $GLOBALS['meta'] = []; $GLOBALS['posts'] = []; $GLOBALS['cats'] = []; $GLOBALS['bilder'] = [];
+$heute = 1792050000; // Do, 15.10.2026
+$typ = []; $alle = [];
+foreach ([71, 72, 73, 74, 75] as $id) { $alle[] = meldung($id, ['rathaus'], ['w' => 1200, 'h' => 800], ['post_date_gmt' => '2026-09-04 00:00:00']); $typ[$id] = 'photo'; }
+foreach ([76, 77] as $id) { $alle[] = meldung($id, ['rathaus'], ['w' => 1024, 'h' => 768], ['post_date_gmt' => '2026-10-13 07:45:00']); $typ[$id] = 'place'; }
+$alle[] = meldung(78, ['rathaus'], ['w' => 1200, 'h' => 800], ['post_date_gmt' => '2026-10-10 09:00:00']); $typ[78] = 'photo';
+usort($alle, fn($a, $b) => strcmp($b->post_date_gmt, $a->post_date_gmt));
+$rf = ['jetzt' => $heute, 'buehnenTauglich' => fn($p) => false, 'breite' => fn($p) => $GLOBALS['bilder'][get_post_thumbnail_id($p->ID)][1] ?? 0,
+    'bild' => fn($p) => ['w' => $GLOBALS['bilder'][get_post_thumbnail_id($p->ID)][1], 'h' => $GLOBALS['bilder'][get_post_thumbnail_id($p->ID)][2]],
+    'motiv' => fn($p) => get_post_thumbnail_id($p->ID), 'bildtyp' => fn($p) => $typ[$p->ID], 'echtesBild' => fn($p) => true,
+    'ressort' => fn($p) => 'rathaus', 'kategorie' => fn($p, $s) => has_category($s, $p->ID), 'holen' => fn($id) => get_post($id), 'ohneWarnungen' => true,
+    'sektionen' => ['rathaus' => ['titel' => 'Politik & Gemeinde', 'nimm' => fn($p) => has_category('rathaus', $p->ID)]]];
+$b = ma_layout_aufloesen('startseite', [], $alle, $rf);
+$ids = fn(array $l) => array_map(fn($p) => $p->ID, $l);
+pruefe('Groß: frisches Foto vor frischer Ortsansicht, beide vor altem Foto', $ids($b['sektionen']['rathaus']['gross']), [78, 76]);
+pruefe('Mittel: zweite frische Ortsansicht vor den Meldungen vom 04.09.', $ids($b['sektionen']['rathaus']['mittel'])[0] ?? 0, 77);
+$rf['jetzt'] = strtotime('2026-09-10 00:00:00 UTC');
+$b = ma_layout_aufloesen('startseite', [], array_slice($alle, 3), $rf);
+pruefe('Alle gleich frisch: Fotos weiter vor Ortsansichten', in_array(76, $ids($b['sektionen']['rathaus']['gross']), true), false);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);
