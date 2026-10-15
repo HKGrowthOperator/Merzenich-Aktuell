@@ -1,5 +1,5 @@
 /* Merzenich Aktuell – Service Worker: Offline-Fallback und Cache für Assets. Netzwerk zuerst für HTML. */
-const VERSION = 'a-c067d62b9c26';
+const VERSION = 'a-c0005c2998d3';
 const STATIC = 'ma-static-' + VERSION;
 const PAGES = 'ma-pages-' + VERSION;
 // Nur die Offline-Seite und das Symbol: Seiten laden CSS/JS mit ?v=<Hash>;

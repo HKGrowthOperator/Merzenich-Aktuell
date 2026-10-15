@@ -1,0 +1,84 @@
+{
+ "hinweis": "Zwei neue Themen der Gemeinde Merzenich (Heimat-Info, 12. und 13.10.2026), an der Originalquelle geprüft am 15.10.2026. Erscheint in WordPress als Entwurf in den Freigaben.",
+ "redaktionsstandard": 2,
+ "meldungen": [
+  {
+   "slug": "altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026",
+   "ressort": "leben",
+   "ortsteil": "merzenich",
+   "kicker": "Leben · Abfall",
+   "titel": "Altpapier bitte in die Tonne: Gemeinde und Schönmackers bitten um weniger lose Bündel",
+   "dek": "Am Abfuhrtag liegt in Merzenich noch oft Papier lose oder gebündelt am Straßenrand. Die Papiertonne schützt vor Regen und Wind und erleichtert die Leerung.",
+   "datum": "2026-10-15T20:30:00+02:00",
+   "artikeltyp": "kurzmeldung",
+   "themen": [
+    [
+     "umwelt",
+     "Umwelt"
+    ],
+    [
+     "abfall",
+     "Abfall"
+    ],
+    [
+     "buergerservice",
+     "Bürgerservice"
+    ]
+   ],
+   "bildklasse": "gemeinde.abfall",
+   "fakten": [
+    "Papier und Pappe lose in die Altpapiertonne geben; Bündeln und Verschnüren ist nicht nötig",
+    "Plastiktüten und Kunststoffbänder gehören nicht in die Papiertonne; größere Kartons zerkleinern oder flach falten",
+    "Abfuhrtermine im Abfallkalender und in der kostenlosen MüllALARM-App von Schönmackers"
+   ],
+   "absaetze": [
+    "Die Altpapiertonne gibt es in der Gemeinde Merzenich seit vielen Jahren. Trotzdem liegt am Abfuhrtag noch immer Papier lose oder in Bündeln am Straßenrand. Die Gemeinde und das Entsorgungsunternehmen Schönmackers bitten deshalb alle Haushalte, Papier und Pappe in die Tonne zu geben. Zeitungen und Kartons müssen dann weder gebündelt noch verschnürt werden, und in der Tonne ist das Papier vor Regen und Wind geschützt. Gehwege und Straßenränder bleiben so sauberer.",
+    "Auch für die Abfuhr ist die Tonne eine Erleichterung: Sie wird mechanisch geleert, die Mitarbeitenden müssen weniger Papier von Hand aufheben und keine schweren, durchnässten Bündel tragen. Trockenes, sauberes Papier lässt sich zudem besser wiederverwerten. Plastiktüten und Kunststoffbänder gehören nicht hinein; größere Kartons sollen zerkleinert oder flach gefaltet werden, damit mehr Platz bleibt. Die Abfuhrtermine stehen im Abfallkalender und in der kostenlosen MüllALARM-App von Schönmackers."
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich auf Heimat-Info, Beitrag „Darum das Altpapier besser in die Tonne“ vom 13.10.2026",
+    "url": "https://www.heimat-info.de/beitraege/4a211652-9503-4b7a-8c65-87e70a4a2ad1",
+    "stand": "2026-10-15"
+   }
+  },
+  {
+   "slug": "jugendbus-wilde-13-donnerstags-golzheim-schuetzenhalle-2026",
+   "ressort": "leben",
+   "ortsteil": "golzheim",
+   "kicker": "Leben · Jugend",
+   "titel": "Jugendbus „Wilde 13“ hält jetzt donnerstags an der Schützenhalle Golzheim",
+   "dek": "Der Doppeldecker des Kreises Düren bringt jeden Donnerstag von 15 bis 18 Uhr Spiele, Konsolen, Kreativ-, Koch- und Sportangebote nach Golzheim.",
+   "datum": "2026-10-15T20:40:00+02:00",
+   "artikeltyp": "kurzmeldung",
+   "themen": [
+    [
+     "familie",
+     "Familie"
+    ],
+    [
+     "freizeit",
+     "Freizeit"
+    ],
+    [
+     "jugend",
+     "Jugend"
+    ]
+   ],
+   "bildklasse": "vereine.jugend",
+   "fakten": [
+    "Jeden Donnerstag von 15 bis 18 Uhr an der Schützenhalle Golzheim, Sankt-Sebastianus-Straße 42",
+    "Angebote: Gesellschaftsspiele, Spielekonsolen, Großbild-Fernseher, Basteln, Kochen und Backen, Fußball, Basketball, Badminton",
+    "Der erste Besuch in Golzheim hat laut Gemeinde bereits stattgefunden"
+   ],
+   "absaetze": [
+    "Der Jugendbus des Kreises Düren, die „Wilde 13“, macht jetzt regelmäßig Halt in der Gemeinde Merzenich: Jeden Donnerstag von 15 bis 18 Uhr steht der Doppeldecker an der Schützenhalle Golzheim in der Sankt-Sebastianus-Straße 42. Der erste Besuch hat laut Gemeinde bereits stattgefunden.",
+    "Im Bus gibt es eine große Auswahl an Gesellschaftsspielen, Spielekonsolen und einen Großbild-Fernseher, dazu Bastel- und Kreativangebote, Kochen und Backen sowie Fußball, Basketball und Badminton. Wer will, kann auch einfach Musik hören und sich unterhalten. Die „Wilde 13 2.0“ ist eine rollende Jugendeinrichtung des Kreises: Sie ist an fünf Nachmittagen in der Woche an verschiedenen Orten im Kreis Düren unterwegs und ergänzt die offene Kinder- und Jugendarbeit, auch dort, wo es sonst kein Angebot gibt."
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich auf Heimat-Info, Beitrag „Die ‚Wilde 13‘ macht Halt in Golzheim!“ vom 12.10.2026",
+    "url": "https://www.heimat-info.de/beitraege/9eb6d135-a678-481f-91df-5c40c798ce8e",
+    "stand": "2026-10-15"
+   }
+  }
+ ]
+}

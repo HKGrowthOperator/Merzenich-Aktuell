@@ -1,6 +1,6 @@
 {
  "stand": "2026-10-15",
- "routen": 488,
+ "routen": 492,
  "fehler": 0,
  "hinweise": 3,
  "befunde": [
@@ -135,7 +135,7 @@
    "bilder": 0,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 303,
+   "links": 305,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -1960,10 +1960,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+Place+BreadcrumbList",
-   "bilder": 19,
+   "bilder": 20,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 186,
+   "links": 189,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -2193,6 +2193,29 @@
    ]
   },
   {
+   "route": "/leben/altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026/",
+   "typ": "artikel",
+   "index": true,
+   "title": 105,
+   "desc": 155,
+   "canonical": "live",
+   "h1": 1,
+   "og": true,
+   "twitter": true,
+   "jsonld": "NewsMediaOrganization+WebSite+NewsArticle+BreadcrumbList",
+   "bilder": 4,
+   "ohneAlt": 0,
+   "fehlendeBilder": [],
+   "links": 143,
+   "tot": [],
+   "platzhalter": [],
+   "zeitwort": "",
+   "sitemap": [
+    "news-sitemap.xml",
+    "sitemap-artikel.xml"
+   ]
+  },
+  {
    "route": "/leben/blutspende-buergerhaus-merzenich-6-oktober-2026/",
    "typ": "artikel",
    "index": true,
@@ -2255,7 +2278,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -2412,6 +2434,28 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
+    "sitemap-artikel.xml"
+   ]
+  },
+  {
+   "route": "/leben/jugendbus-wilde-13-donnerstags-golzheim-schuetzenhalle-2026/",
+   "typ": "artikel",
+   "index": true,
+   "title": 93,
+   "desc": 143,
+   "canonical": "live",
+   "h1": 1,
+   "og": true,
+   "twitter": true,
+   "jsonld": "NewsMediaOrganization+WebSite+NewsArticle+BreadcrumbList",
+   "bilder": 4,
+   "ohneAlt": 0,
+   "fehlendeBilder": [],
+   "links": 145,
+   "tot": [],
+   "platzhalter": [],
+   "zeitwort": "",
+   "sitemap": [
     "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
@@ -2479,7 +2523,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -2634,7 +2677,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -2723,7 +2765,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -2782,10 +2823,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 10,
+   "bilder": 12,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 162,
+   "links": 168,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -3172,10 +3213,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+Place+BreadcrumbList",
-   "bilder": 119,
+   "bilder": 120,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 492,
+   "links": 495,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -3342,10 +3383,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 9,
+   "bilder": 11,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 159,
+   "links": 165,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -3721,7 +3762,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -3788,7 +3828,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -3966,7 +4005,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -4043,10 +4081,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite",
-   "bilder": 11,
+   "bilder": 12,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 164,
+   "links": 167,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -4063,10 +4101,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite",
-   "bilder": 4,
+   "bilder": 5,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 143,
+   "links": 146,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -4103,10 +4141,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite",
-   "bilder": 14,
+   "bilder": 15,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 173,
+   "links": 176,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -4143,10 +4181,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite",
-   "bilder": 4,
+   "bilder": 5,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 145,
+   "links": 148,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -4598,7 +4636,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -4621,7 +4658,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -4930,7 +4966,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
@@ -6128,7 +6163,7 @@
    "bilder": 0,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 357,
+   "links": 360,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -6169,6 +6204,26 @@
    "ohneAlt": 0,
    "fehlendeBilder": [],
    "links": 142,
+   "tot": [],
+   "platzhalter": [],
+   "zeitwort": "",
+   "sitemap": []
+  },
+  {
+   "route": "/thema/abfall/",
+   "typ": "thema",
+   "index": true,
+   "title": 33,
+   "desc": 59,
+   "canonical": "live",
+   "h1": 1,
+   "og": true,
+   "twitter": true,
+   "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
+   "bilder": 1,
+   "ohneAlt": 0,
+   "fehlendeBilder": [],
+   "links": 134,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -6605,10 +6660,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 4,
+   "bilder": 5,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 143,
+   "links": 146,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -6925,10 +6980,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 3,
+   "bilder": 4,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 140,
+   "links": 143,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -7045,10 +7100,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 1,
+   "bilder": 2,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 133,
+   "links": 136,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -7469,6 +7524,26 @@
    "ohneAlt": 0,
    "fehlendeBilder": [],
    "links": 143,
+   "tot": [],
+   "platzhalter": [],
+   "zeitwort": "",
+   "sitemap": []
+  },
+  {
+   "route": "/thema/jugend/",
+   "typ": "thema",
+   "index": true,
+   "title": 33,
+   "desc": 59,
+   "canonical": "live",
+   "h1": 1,
+   "og": true,
+   "twitter": true,
+   "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
+   "bilder": 1,
+   "ohneAlt": 0,
+   "fehlendeBilder": [],
+   "links": 134,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -9065,10 +9140,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+BreadcrumbList",
-   "bilder": 2,
+   "bilder": 3,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 136,
+   "links": 139,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -10232,7 +10307,6 @@
    "platzhalter": [],
    "zeitwort": "",
    "sitemap": [
-    "news-sitemap.xml",
     "sitemap-artikel.xml"
    ]
   },
