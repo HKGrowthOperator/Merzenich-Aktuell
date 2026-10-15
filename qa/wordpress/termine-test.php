@@ -72,5 +72,17 @@ $alt = (string) file_get_contents($theme . 'vorlagen/kopf-assets.html');
 $ohne = (string) preg_replace('#<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>\n?#', '', $alt);
 pruefe('Alte Symbol-Links der Vorlage werden ersetzt', [substr_count($alt, 'rel="icon"') > 0, str_contains($ohne, 'avatar-1024.png')], [true, false]);
 
+echo "\nOrt für den Ortsfilter (?ort=, assets/v20.js; Review 15.10.2026)\n";
+// Termine ohne Ortsteil (Allerheiligen in allen Kirchen) gelten für die ganze Gemeinde:
+// data-place="gemeinde" zeigt sie unter jedem Ortsteil, wie in der statischen Kopie.
+$GLOBALS['orte'] = [];
+function get_the_terms($id, $tax) { return $GLOBALS['orte'][$id] ?? false; }
+function get_post_meta(...$a) { return ''; } function get_the_title($p) { return 'Termin'; } function get_permalink($p) { return 'https://merzenich-aktuell.de/termine/x/'; }
+function wp_make_link_relative($u) { return (string) preg_replace('#^https?://[^/]+#', '', $u); }
+function wp_trim_words($t, ...$a) { return $t; } function wp_strip_all_tags($t) { return strip_tags((string) $t); } function strip_shortcodes($t) { return $t; }
+$p = new WP_Post(); $p->post_excerpt = 'x'; $p->post_content = '';
+$ort = function (array $slugs) use ($p) { $GLOBALS['orte'][$p->ID] = $slugs ? array_map(function ($s) { $t = new WP_Term(); $t->slug = $s; return $t; }, $slugs) : false; return ma21_termin($p)['ortSlug']; };
+pruefe('Termin in Golzheim: golzheim; ohne Ortsteil: gemeinde; fremder Ort: gemeinde', [$ort(['golzheim']), $ort([]), $ort(['dueren'])], ['golzheim', 'gemeinde', 'gemeinde']);
+
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

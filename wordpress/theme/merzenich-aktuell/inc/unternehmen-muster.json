@@ -8,7 +8,7 @@
       "ort": "golzheim",
       "kuerzel": "BM",
       "farbe": "#7a3b2e",
-      "text": "Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.",
+      "text": "Frische Brötchen am Morgen, Kuchen nach Hausrezept und eine Frühstückstüte zum Mitnehmen.",
       "bild": "format-startseitenband",
       "pruefung": {
         "datum": "2026-10-15",
@@ -20,20 +20,20 @@
         "ergebnis": "Kein Betrieb dieses Namens gefunden. Bewusst nicht „Fuchs“: Die frühere Großbäckerei Fuchs-Brot in Düren war ein echter Betrieb."
       },
       "anzeige": {
-        "titel": "Frische Brötchen ab 6 Uhr",
-        "text": "Jeden Morgen aus der eigenen Backstube, sonntags mit Frühstückstüte.",
+        "titel": "Frische Brötchen am Morgen",
+        "text": "Jeden Morgen aus der eigenen Backstube, dazu die Frühstückstüte zum Mitnehmen.",
         "knopf": "Zum Unternehmenskanal",
         "bild": "format-startseitenband"
       },
       "beitraege": [
         {
           "slug": "fruehstueckstuete-sonntags",
-          "titel": "Sonntags frisch: die Frühstückstüte zum Mitnehmen",
-          "anriss": "Brötchen, Croissants und Aufschnitt für zwei, bis Samstagabend vorbestellt und sonntags ab 7 Uhr abholbereit.",
+          "titel": "Ausschlafen und frisch frühstücken: die Frühstückstüte",
+          "anriss": "Brötchen, Croissants und Aufschnitt für zwei, am Vortag vorbestellt und am Morgen abholbereit.",
           "absaetze": [
-            "Wer sonntags ausschlafen möchte, muss auf frische Brötchen nicht verzichten. Die Frühstückstüte des Backhauses Morgenrot enthält alles für ein Frühstück zu zweit: Brötchen, Croissants, Butter, Marmelade und Aufschnitt.",
-            "Bestellt wird bis Samstagabend im Laden oder telefonisch. Am Sonntag liegt die Tüte ab 7 Uhr mit Namen an der Theke bereit.",
-            "Wer mehr braucht, etwa für Besuch oder ein Vereinsfrühstück, sagt bei der Bestellung einfach Bescheid. Größere Mengen bitte bis Freitag anmelden."
+            "Wer am Wochenende ausschlafen möchte, muss auf frische Brötchen nicht verzichten. Die Frühstückstüte des Backhauses Morgenrot enthält alles für ein Frühstück zu zweit: Brötchen, Croissants, Butter, Marmelade und Aufschnitt.",
+            "Bestellt wird am Vortag im Laden. Am nächsten Morgen liegt die Tüte mit Namen an der Theke bereit.",
+            "Wer mehr braucht, etwa für Besuch oder ein Vereinsfrühstück, sagt bei der Bestellung einfach Bescheid. Größere Mengen bitte einige Tage vorher bestellen."
           ],
           "bild": "format-startseitenband"
         },
@@ -88,12 +88,12 @@
       "beitraege": [
         {
           "slug": "neuer-mittagstisch",
-          "titel": "Neuer Mittagstisch, jeden Tag ab 12 Uhr",
-          "anriss": "Suppe, Hauptgericht und Kaffee: Die Karte der Woche hängt freitags im Schaufenster.",
+          "titel": "Neuer Mittagstisch mit wechselnder Karte",
+          "anriss": "Suppe, Hauptgericht und Kaffee: Die Karte der Woche hängt im Schaufenster.",
           "absaetze": [
             "Das Café Feldlerche bietet jetzt jeden Tag einen Mittagstisch an. Es gibt eine Suppe, ein Hauptgericht und zum Abschluss einen Kaffee.",
-            "Die Gerichte wechseln täglich. Die Karte für die kommende Woche hängt freitags im Schaufenster und liegt an der Theke aus.",
-            "Wer in der Mittagspause wenig Zeit hat, kann vorbestellen und das Essen ab 12 Uhr abholen."
+            "Die Gerichte wechseln täglich. Die Karte für die kommende Woche hängt im Schaufenster und liegt an der Theke aus.",
+            "Wer in der Mittagspause wenig Zeit hat, kann vorbestellen und das Essen zur Mittagszeit abholen."
           ],
           "bild": "werbebanner"
         },
@@ -153,7 +153,7 @@
           "absaetze": [
             "Die Holzwerkstatt Jahresring bildet aus. Gesucht werden junge Leute, die gern mit den Händen arbeiten und Freude an Holz haben.",
             "In der Ausbildung geht es um Möbelbau, Treppenbau und die Montage beim Kunden. Dazu kommen Maschinenkunde und das Lesen von Zeichnungen.",
-            "Wer erst einmal reinschnuppern möchte, kann sich für einen Tag in der Werkstatt melden. Ein Lebenslauf genügt für den Anfang."
+            "Wer erst einmal reinschnuppern möchte, kann einen Tag in der Werkstatt mitarbeiten."
           ],
           "bild": "muster-schreinerei-beitel"
         },

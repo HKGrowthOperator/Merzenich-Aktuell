@@ -40,7 +40,13 @@ $bilder = ma21_werben_bilder();
 pruefe('Drei Beispielfirmen', [count($roh), array_column($roh, 'slug')], [3, ['backhaus-morgenrot', 'cafe-feldlerche', 'holzwerkstatt-jahresring']]);
 pruefe('Slugs eindeutig', count(array_unique(array_column($roh, 'slug'))), 3);
 pruefe('Jeder Name ist gegen echte Betriebe geprüft (Datum, Quellen, Ergebnis)', count(array_filter($roh, fn($m) => preg_match('/^\d{4}-\d{2}-\d{2}$/', $m['pruefung']['datum'] ?? '') && count($m['pruefung']['quellen'] ?? []) >= 2 && ($m['pruefung']['ergebnis'] ?? '') !== '')), 3);
-pruefe('Keine Öffnungszeiten, Adressen oder Telefonnummern (niemand sucht ein echtes Geschäft)', count(array_filter($roh, fn($m) => isset($m['info']) || preg_match('/(straße|str\.|platz \d|\b0\d{3,}[\s\/-]?\d|uhr bis|mo bis|di bis)/iu', json_encode(array_diff_key($m, ['pruefung' => 1]), JSON_UNESCAPED_UNICODE)))), 0);
+// Alle Texte der Firma ohne Adressen (slug) und Prüfprotokoll: keine Uhrzeiten, Wochentage,
+// Adressen, Telefon- oder Mailwege, keine Bewerbungsaufrufe (Review 15.10.2026).
+$texte = function ($x) use (&$texte): array { if (!is_array($x)) return is_string($x) ? [$x] : []; $l = []; foreach ($x as $k => $v) if ($k !== 'slug' && $k !== 'pruefung') $l = array_merge($l, $texte($v)); return $l; };
+$kontakt = '/(straße|str\.|platz \d|\b0\d{3,}[\s\/-]?\d|\b\d{1,2}([:.]\d{2})?\s*uhr\b|\b(mo|di|mi|do|fr|sa|so)\.?\s*(bis|[–-])|\b(montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(s|abend|morgen)?\b|telefon|anruf|e-?mail|@|lebenslauf|bewerb|\b\d{5}\s+\p{Lu})/iu';
+$treffer = array_values(array_filter(array_merge(...array_map($texte, $roh)), fn($t) => preg_match($kontakt, $t)));
+pruefe('Keine Öffnungszeiten, Uhrzeiten, Adressen, Telefon- oder Mailwege (niemand sucht ein echtes Geschäft)', [count(array_filter($roh, fn($m) => isset($m['info']))), $treffer], [0, []]);
+pruefe('Die Prüfung erkennt solche Angaben (Gegenprobe)', [preg_match($kontakt, 'Frische Brötchen ab 6 Uhr'), preg_match($kontakt, 'sonntags abholbereit'), preg_match($kontakt, 'im Laden oder telefonisch'), preg_match($kontakt, 'Mo bis Sa'), preg_match($kontakt, 'Frische Brötchen am Morgen')], [1, 1, 1, 1, 0]);
 pruefe('Orte sind Ortsteile der Gemeinde', count(array_filter($roh, fn($m) => isset(MA21_ORTE[$m['ort']]))), 3);
 $ids = [];
 foreach ($roh as $m) {

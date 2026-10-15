@@ -180,7 +180,11 @@ function ma21_kopf_aktuell(string $html): string {
     $pfad = '/' . trim((string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH), '/') . '/';
     if ($pfad === '//') $pfad = '/';
     // Startseite: der Home-Knopf links neben „Aktuell“ (Wunsch Betreiber 15.10.2026).
-    if ($pfad === '/') return str_replace('<a class="nav-home" href="/"', '<a class="nav-home" href="/" aria-current="page"', $html);
+    // Nur die echte Startseite, nicht Suche (/?s=), Vorschau oder Blätterseiten mit Pfad „/“.
+    if ($pfad === '/') {
+        $start = !function_exists('is_front_page') || (is_front_page() && !is_search() && !is_paged());
+        return $start ? str_replace('<a class="nav-home" href="/"', '<a class="nav-home" href="/" aria-current="page"', $html) : $html;
+    }
     if (is_singular('post')) { $o = get_queried_object(); if ($o instanceof WP_Post) $pfad = (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) && get_post_meta($o->ID, 'ma_business_id', true)) ? '/unternehmen/' : '/' . ma21_ressort($o)[0] . '/'; }
     // Unternehmenskanäle und Musterbeiträge (inc/unternehmen.php) gehören zu „Unternehmen“.
     elseif (str_starts_with($pfad, '/unternehmen/')) $pfad = '/unternehmen/';
@@ -1177,18 +1181,30 @@ function ma21_endlos_teil(string $seite, array $posts, string $naechste): string
     $inhalt = $raster ? ma21_feed_raster($posts) : implode("\n", array_map(fn($p) => ma21_feed_row($p), $posts));
     return '<div data-endlos-teil data-art="' . ($raster ? 'raster' : 'reihen') . '" data-naechste="' . esc_attr($naechste) . '">' . $inhalt . '</div>';
 }
-add_action('template_redirect', function (): void {
-    if ((string) get_query_var('ma_endlos') === '' || !ma21_ausbau('endlos') || !ma21_endlos_liste()) return;
+/**
+ * Antwort des Teilmodus (?ma_endlos=1): null = keine (normale Seite, auch bei
+ * ausgeschaltetem Endlos-Scrollen), sonst [Status, Inhalt]. Hinter der letzten
+ * Seite 404, endlos.js meldet dann „Alle Meldungen geladen“.
+ */
+function ma21_endlos_antwort(): ?array {
+    if ((string) get_query_var('ma_endlos') === '' || !ma21_ausbau('endlos') || !ma21_endlos_liste()) return null;
     global $wp_query;
     $posts = array_values(array_filter((array) ($wp_query->posts ?? []), fn($p) => $p instanceof WP_Post));
-    if (!headers_sent()) header('X-Robots-Tag: noindex, follow');
-    // Hinter der letzten Seite: 404, endlos.js meldet „Alle Meldungen geladen“.
-    if (!$posts || is_404()) { status_header(404); nocache_headers(); exit; }
-    status_header(200);
-    header('Content-Type: text/html; charset=utf-8');
-    ma21_cache(120);
+    if (!$posts || is_404()) return [404, ''];
     $schluessel = ma21_ressort_schluessel();
-    echo ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste());
+    return [200, ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste())];
+}
+add_action('template_redirect', function (): void {
+    $antwort = ma21_endlos_antwort();
+    if ($antwort === null) return;
+    if (!headers_sent()) header('X-Robots-Tag: noindex, follow');
+    status_header($antwort[0]);
+    if ($antwort[0] !== 200) { nocache_headers(); exit; }
+    header('Content-Type: text/html; charset=utf-8');
+    // Wie die Seiten selbst nie zwischenspeichern: Ein altes Teilstück ließe nach einer
+    // neuen Meldung eine Meldung aus (sie rutscht von Seite 1 auf die gespeicherte Seite 2).
+    if (function_exists('is_user_logged_in') && is_user_logged_in()) nocache_headers(); else ma21_cache(0);
+    echo $antwort[1];
     exit;
 }, 1);
 /* Blättern bleibt für Suchmaschinen und Leser ohne JavaScript: rel="next"/"prev" an den Links. */

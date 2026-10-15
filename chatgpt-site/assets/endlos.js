@@ -104,7 +104,7 @@
     steuer.className = 'endlos';
     steuer.innerHTML = '<p class="sr-only" role="status" aria-live="polite"></p>'
       + '<button type="button" class="endlos-knopf">Weitere Meldungen laden</button>'
-      + `<p class="endlos-ende" hidden>Alle Meldungen geladen. <a href="${ARCHIV}">Ältere Meldungen im Archiv</a></p>`;
+      + `<p class="endlos-ende" tabindex="-1" hidden>Alle Meldungen geladen. <a href="${ARCHIV}">Ältere Meldungen im Archiv</a></p>`;
     liste.insertBefore(steuer, blaettern);
     if (blaettern) blaettern.hidden = true;
     const status = steuer.querySelector('[role="status"]');
@@ -130,16 +130,20 @@
       } else {
         for (const k of fertig) if (k.hasAttribute('data-story')) liste.insertBefore(k, steuer);
       }
-      rotation(liste);
+      // Nur die neuen Anzeigen: die der ersten Seite rotiert schon ad-rotation.js (Plugin).
+      for (const k of fertig) if (k.querySelectorAll) rotation(k);
       d.dispatchEvent(new CustomEvent('ma:nachgeladen', { detail: { knoten: fertig } }));
       return fertig;
     }
 
     function zustand() {
+      // Verschwindet der Knopf mit dem Tastaturfokus, wandert der Fokus zum Hinweis am Ende.
+      const hatteFokus = d.activeElement === knopf;
       knopf.hidden = !naechste;
       ende.hidden = Boolean(naechste);
       knopf.removeAttribute('aria-disabled');
       knopf.textContent = fehler ? 'Erneut versuchen' : 'Weitere Meldungen laden';
+      if (hatteFokus && knopf.hidden) ende.focus();
     }
 
     async function laden(vonKnopf) {
@@ -150,7 +154,7 @@
       liste.setAttribute('aria-busy', 'true');
       let neu = [];
       try {
-        const r = await fetch(mitTeilmodus(naechste), { credentials: 'same-origin', headers: { Accept: 'text/html' } });
+        const r = await fetch(mitTeilmodus(naechste), { credentials: 'same-origin', cache: 'no-cache', headers: { Accept: 'text/html' } });
         if (r.status === 404) { naechste = ''; }
         else if (!r.ok) throw new Error('Status ' + r.status);
         else {
@@ -159,7 +163,8 @@
           const folgt = teil.naechste ? adresse(teil.naechste) : '';
           // Nennt die Antwort sich selbst als Folgeseite, ist hier Schluss (keine Schleife).
           naechste = folgt === naechste ? '' : folgt;
-          if (neu.length) teile.push({ art: teil.art, html: neu.map((k) => k.outerHTML).join('') });
+          // Gemerkt wird ohne Rotationsmerkmal, sonst wechseln wiederhergestellte Anzeigen nicht mehr.
+          if (neu.length) teile.push({ art: teil.art, html: neu.map((k) => k.outerHTML).join('').replace(/ data-ma-endlos-rotation="1"/g, '') });
         }
         const zahl = neu.filter((k) => k.hasAttribute('data-story')).length;
         status.textContent = !naechste ? 'Alle Meldungen geladen.' : `${zahl} weitere Meldung${zahl === 1 ? '' : 'en'} geladen.`;

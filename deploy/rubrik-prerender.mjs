@@ -56,7 +56,13 @@ function seite(d, liste) {
     .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${esc(titel)}">`)
     .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${esc(d.beschreibung)}">`)
     // Sammlung und Brotkrumen der Themenseite gelten hier nicht (Seite ist noindex).
-    .replace(/<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"(?:CollectionPage|BreadcrumbList)"[\s\S]*?<\/script>\s*/g, '');
+    .replace(/<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"(?:CollectionPage|BreadcrumbList)"[\s\S]*?<\/script>\s*/g, '')
+    // Markiert ist das Ressort der Sammelseite wie in WordPress (ma21_kopf_aktuell),
+    // nicht „Aktuell“ und der Ort der Vorlage. Wie auf allen statischen Seiten in
+    // Leiste und Schublade; das Mehr-Menü baut kopf-theme-einbinden.mjs ohne Markierung.
+    // (Die Ortsauswahl behält ihre Markierung, die pflegt inhaltsindex.mjs auf allen Seiten.)
+    .replace(/<div class="navscroll">[\s\S]*?<\/div>|<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g,
+      (b) => b.replace(/ aria-current="page"/g, '').split(`<a href="${d.ressort}">`).join(`<a href="${d.ressort}" aria-current="page">`));
   let rumpf = vorlage.slice(vorlage.indexOf('<main'));
   const kopfzeile = `<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="/">Start</a><span class="sep">›</span><a href="${esc(d.ressort)}">${esc(d.ressortTitel)}</a><span class="sep">›</span><span aria-current="page">${esc(d.titel)}</span></nav><span class="eyebrow">${esc(d.ressortTitel)}</span><h1>${esc(d.titel)}</h1><p class="desc">${esc(d.beschreibung)}</p>${zaehler(liste.length)}</div></div>`;
   rumpf = rumpf.replace(/<div class="page-head">[\s\S]*?<\/div><\/div>/, () => kopfzeile);

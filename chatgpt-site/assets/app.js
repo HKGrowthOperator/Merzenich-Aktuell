@@ -245,7 +245,8 @@
     $$('time[datetime]', root).forEach(function (t) {
       var d = new Date(t.getAttribute('datetime')), diff = (Date.now() - d) / 60000;
       if (isNaN(diff) || diff < 0 || diff > 1440 || !t.closest('.meta, .ticker')) return;
-      t.setAttribute('title', t.textContent);
+      // Schon umgestellt (Zurück-Taste setzt gemerkte Meldungen wieder ein): Datum im Titel behalten.
+      if (!t.hasAttribute('title')) t.setAttribute('title', t.textContent);
       t.textContent = diff < 60 ? 'vor ' + Math.max(1, Math.round(diff)) + ' Min.' : 'vor ' + Math.round(diff / 60) + ' Std.';
     });
   }

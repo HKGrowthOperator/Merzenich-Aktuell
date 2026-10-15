@@ -22,11 +22,15 @@ class WP_Query { public $max_num_pages = 0; public $posts = []; }
 class WP_Post { public $ID; public $post_type = 'post'; public $post_title = ''; public $post_excerpt = ''; public $post_content = ''; public $post_date = '2026-10-15 09:00:00'; public $post_name = ''; function __construct($id) { $this->ID = $id; $this->post_title = "Meldung $id"; $this->post_excerpt = "Anriss $id"; $this->post_name = "meldung-$id"; } }
 // Abfrage-Zustand der Stub-Seite
 $GLOBALS['qv'] = [];
-$GLOBALS['ist'] = ['category' => false, 'tag' => false, 'tax' => false, 'search' => false, 'kat' => ''];
+$GLOBALS['ist'] = ['category' => false, 'tag' => false, 'tax' => false, 'search' => false, 'kat' => '', 'taxonomie' => 'ma_location', 'archiv' => '', '404' => false];
 function get_query_var($k, $d = '') { return $GLOBALS['qv'][$k] ?? $d; }
 function is_category($s = null) { return $GLOBALS['ist']['category'] && ($s === null || $s === $GLOBALS['ist']['kat']); }
 function is_tag($s = null) { return $GLOBALS['ist']['tag']; }
-function is_tax($t = null) { return $GLOBALS['ist']['tax']; }
+function is_tax($t = null) { return $GLOBALS['ist']['tax'] && ($t === null || $t === $GLOBALS['ist']['taxonomie']); }
+function is_post_type_archive($t = null) { return $GLOBALS['ist']['archiv'] !== '' && ($t === null || $t === $GLOBALS['ist']['archiv']); }
+function is_404() { return $GLOBALS['ist']['404']; }
+$GLOBALS['optionen'] = [];
+function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
 function is_search() { return $GLOBALS['ist']['search']; }
 function is_paged() { return (int) ($GLOBALS['qv']['paged'] ?? 0) > 1; }
 // Blättern wie WordPress: get_pagenum_link behält die Abfrage der aktuellen Adresse (also auch ma_endlos).
@@ -51,7 +55,6 @@ function get_post_modified_time($f = 'U', $gmt = false, $p = null) { return get_
 function wp_date($f, $ts = null) { return gmdate($f, $ts ?? 1791702000); }
 function get_post_field($f, $p) { return $p->$f ?? ''; }
 function get_transient($k) { return false; } function set_transient(...$a) { return true; }
-function get_option($k, $d = false) { return $d; }
 function apply_filters($n, $v) { return $v; }
 function get_category_by_slug($s) { return false; }
 function get_template_directory() { return __DIR__ . '/../../wordpress/theme/merzenich-aktuell'; }
@@ -85,9 +88,30 @@ $wp_query->max_num_pages = 4; $GLOBALS['anfrage'] = '/sport/';
 pruefe('Attribute am .feed: Folgeseite und Art', [ma21_endlos_attr('ressort-blaulicht'), ma21_endlos_attr('ressort-sport')], [' data-endlos-naechste="https://merzenich-aktuell.de/sport/page/2/" data-endlos-art="raster"', ' data-endlos-naechste="https://merzenich-aktuell.de/sport/page/2/" data-endlos-art="reihen"']);
 
 echo "\nWelche Seiten endlos laufen\n";
-$fall = function (array $ist, array $qv = []) { $GLOBALS['ist'] = $ist + ['category' => false, 'tag' => false, 'tax' => false, 'search' => false, 'kat' => '']; $GLOBALS['qv'] = $qv; return ma21_endlos_liste(); };
+$leer = ['category' => false, 'tag' => false, 'tax' => false, 'search' => false, 'kat' => '', 'taxonomie' => 'ma_location', 'archiv' => '', '404' => false];
+$fall = function (array $ist, array $qv = []) use ($leer) { $GLOBALS['ist'] = $ist + $leer; $GLOBALS['qv'] = $qv; return ma21_endlos_liste(); };
 pruefe('Ressort, Thema, Ortsteil, Suche, Aktuell, Autor, Sammelseite', [$fall(['category' => true]), $fall(['tag' => true]), $fall(['tax' => true]), $fall(['search' => true]), $fall([], ['ma_alle' => '1']), $fall([], ['ma_autor' => 'redaktion']), $fall([], ['ma_rubrik' => 'verkehr'])], [true, true, true, true, true, true, true]);
-pruefe('Termine, Märkte, Unternehmen, Einzelseiten: nein', [$fall([]), $fall([], ['ma_rubrik' => 'gibt-es-nicht'])], [false, false]);
+pruefe('Termine, Märkte, Unternehmen, Einzelseiten: nein', [$fall([]), $fall([], ['ma_rubrik' => 'gibt-es-nicht']), $fall(['archiv' => 'ma_event']), $fall(['archiv' => 'ma_job']), $fall([], ['ma_unternehmen' => '1']), $fall(['tax' => true, 'taxonomie' => 'ma_event_category'])], [false, false, false, false, false, false]);
+
+echo "\nAntwort des Teilmodus (?ma_endlos=1)\n";
+$GLOBALS['ist'] = ['category' => true, 'kat' => 'blaulicht'] + $leer;
+$wp_query->max_num_pages = 4; $wp_query->posts = array_slice($posts, 0, 3); $GLOBALS['anfrage'] = '/blaulicht/page/2/?ma_endlos=1';
+$GLOBALS['qv'] = ['paged' => 2];
+pruefe('Ohne ?ma_endlos: keine Antwort (normale Seite)', ma21_endlos_antwort(), null);
+$GLOBALS['qv'] = ['paged' => 2, 'ma_endlos' => '1'];
+$a = ma21_endlos_antwort();
+pruefe('Mit ?ma_endlos: 200 und nur das Teilstück mit Folgeseite', [$a[0] ?? null, str_starts_with($a[1] ?? '', '<div data-endlos-teil'), str_contains($a[1] ?? '', 'data-naechste="https://merzenich-aktuell.de/blaulicht/page/3/"'), str_contains($a[1] ?? '', '<html')], [200, true, true, false]);
+$wp_query->posts = [];
+pruefe('Hinter der letzten Seite: 404 ohne Inhalt', ma21_endlos_antwort(), [404, '']);
+$wp_query->posts = array_slice($posts, 0, 3); $GLOBALS['ist']['404'] = true;
+pruefe('WordPress meldet 404 (Seite zu groß): 404', ma21_endlos_antwort()[0] ?? null, 404);
+$GLOBALS['ist']['404'] = false;
+$GLOBALS['optionen'] = ['ma21_ausbau' => ['endlos' => false]];
+pruefe('Endlos-Scrollen ausgeschaltet (Ausbaustufe): keine Antwort, Blättern wie bisher', [ma21_endlos_antwort(), ma21_endlos_attr('ressort-blaulicht')], [null, '']);
+$GLOBALS['optionen'] = [];
+$GLOBALS['ist'] = ['archiv' => 'ma_event'] + $leer;
+pruefe('Terminliste mit ?ma_endlos: keine Antwort', ma21_endlos_antwort(), null);
+$GLOBALS['ist'] = $leer;
 
 echo "\nBlättern bleibt für Suchmaschinen und ohne JavaScript\n";
 $filter = null; foreach ($GLOBALS['hooks']['paginate_links_output'] ?? [] as $cb) $filter = $cb;

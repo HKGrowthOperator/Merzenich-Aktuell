@@ -17,6 +17,8 @@ function get_queried_object() { return $GLOBALS['t']['obj']; }
 function is_singular($t) { return $GLOBALS['t']['single'] === $t; }
 function is_post_type_archive($t) { return $GLOBALS['t']['archiv'] === $t; }
 function wp_date($f, $ts = null) { return gmdate($f, $ts ?? 1791021600); } // 03.10.2026 10:00 UTC
+$GLOBALS['start'] = ['front' => true, 'suche' => false, 'paged' => false];
+function is_front_page() { return $GLOBALS['start']['front']; } function is_search() { return $GLOBALS['start']['suche']; } function is_paged() { return $GLOBALS['start']['paged']; }
 $GLOBALS['optionen'] = [];
 function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
 function get_the_category($id) { return [(object) ['slug' => 'sport', 'name' => 'Sport']]; }
@@ -78,6 +80,12 @@ pruefe('Nur /blaulicht/ markiert (Leiste, Mehr-Menü, Schublade), „Aktuell“ 
 $_SERVER['REQUEST_URI'] = '/';
 $h = ma21_kopf_aktuell($vorlage);
 pruefe('Startseite: nur der Home-Knopf ist markiert', [substr_count($h, 'aria-current'), str_contains($h, '<a class="nav-home" href="/" aria-current="page">')], [1, true]);
+$_SERVER['REQUEST_URI'] = '/?s=feuerwehr';
+$GLOBALS['start'] = ['front' => false, 'suche' => true, 'paged' => false];
+pruefe('Suchergebnisse (/?s=…): nichts markiert, auch nicht der Home-Knopf', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
+$GLOBALS['start'] = ['front' => true, 'suche' => false, 'paged' => true];
+pruefe('Blätterseite der Startseite: Home-Knopf nicht markiert', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
+$GLOBALS['start'] = ['front' => true, 'suche' => false, 'paged' => false];
 $_SERVER['REQUEST_URI'] = '/rubrik/verkehr/';
 pruefe('Sammelseite /rubrik/verkehr/: „Blaulicht“ markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/blaulicht/" aria-current="page">'), 3);
 $_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';

@@ -43,11 +43,15 @@ function ma21_muster_firmen(): array {
  * Musterfirma verschwindet ganz statt auf die echte Firma zu zeigen).
  */
 function ma21_muster_liste(): array {
-    static $l = null;
-    if ($l !== null) return $l;
+    static $l = [];
+    $satz = function_exists('ma21_ausbau') && ma21_ausbau('muster_alt') ? 'frueher' : 'firmen';
+    if (isset($l[$satz])) return $l[$satz];
     $slugs = array_column(ma21_muster_firmen(), 'slug');
-    $belegt = $slugs ? array_map(fn($p) => (string) $p->post_name, (array) get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'post_name__in' => $slugs, 'posts_per_page' => count($slugs)])) : [];
-    return $l = array_values(array_filter(ma21_muster_firmen(), fn($m) => !in_array((string) ($m['slug'] ?? ''), $belegt, true)));
+    // Ein echtes Profil mit demselben Namen bekommt die Adresse <slug>-firma (Filter unten):
+    // auch dann verschwindet die Beispielfirma, damit nie beide nebeneinander stehen.
+    $suche = array_merge($slugs, array_map(fn($s) => $s . '-firma', $slugs));
+    $belegt = $slugs ? array_map(fn($p) => (string) preg_replace('/-firma$/', '', (string) $p->post_name), (array) get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'post_name__in' => $suche, 'posts_per_page' => count($suche)])) : [];
+    return $l[$satz] = array_values(array_filter(ma21_muster_firmen(), fn($m) => !in_array((string) ($m['slug'] ?? ''), $belegt, true)));
 }
 
 // Echte Profile bekommen keine Adresse einer Musterfirma (sonst zeigt sie auf die echte Firma).
