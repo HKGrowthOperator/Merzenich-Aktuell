@@ -1,12 +1,21 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-15. Oktober 2026 · Theme 21.19.0 · Core-Plugin 1.28.0 (Historie unten)
+15. Oktober 2026 · Theme 21.19.0 · Core-Plugin 1.28.0 · live (Historie unten)
 
 ## Neu am 15.10.2026: Theme 21.19.0, Menü nur mit roten Titeln, Home-Knopf, Endlos-Scrollen, 3 Beispielfirmen
 
 Wünsche des Betreibers vom 15.10.2026 nach Durchsicht des Live-Menüs. Alles steckt im Theme; das Plugin bleibt 1.28.0. Theme 21.19.0 enthält 21.18.0 (Abschnitt unten). Hochladen wie dort beschrieben: erst Plugin 1.28.0, dann Theme 21.19.0, beide aus `node deploy/wp-pakete.mjs`. Danach einmal Einstellungen → Permalinks speichern (die neuen Adressen `/rubrik/<slug>/` schreibt das Theme beim ersten Aufruf zwar selbst ein, sicher ist der Klick trotzdem).
 
-**Stand live:** noch nicht eingespielt. Live laufen weiter Theme 21.17.1 und Plugin 1.27.4.
+**Stand live: eingespielt am 15.10.2026** über das Konto „HK Growth“ (Pakete aus `node deploy/wp-pakete.mjs`, Stand Commit 3da5898e, QA grün): Plugin 1.27.4 → 1.28.0, Theme 21.17.1 → 21.19.0, danach Permalinks gespeichert. Live geprüft:
+- Seitenquelltext `ver=21.19.0` und `ver=1.28.0`; Startseite und Listen ohne PHP-Fehler.
+- `/assets/ressort-menue.json` nur mit roten Titeln (Blaulicht: Feuerwehr, Polizei, Verkehr), ohne Vereine, Unterpunkte und Anzeige; Termine mit 5 Ortsteilen; 3 Beispielfirmen.
+- `/rubrik/verkehr/` 200 mit `noindex,follow` (Meta und `X-Robots-Tag`); `/blaulicht/page/2/?ma_endlos=1` liefert 13 Meldungen als Teilstück (`no-cache`), hinter der letzten Seite 404.
+- `/unternehmen/backhaus-morgenrot/` 200 mit `noindex`, alte `/unternehmen/muster-backstube/` 404; keine Beispielfirma in Sitemap und Feed.
+- `/termine/?ort=golzheim` zeigt gemeindeweite Termine (Allerheiligen).
+- Browser (Playwright): Endlos-Scrollen auf `/blaulicht/` 13 → 68 Meldungen ohne Doppelte, Zurück-Taste an dieselbe Stelle; Home-Knopf, rote Titel, Uhrzeit in Ortszeit auch bei Browser-Zeitzone UTC, Startseite „Weitere Meldungen“ ohne Doppelte, Handy-Home-Knopf; Unternehmen-Menü mit 3 Firmen, Firma 2 zeigt 3 Beiträge mit Bild.
+- Design → Ausbaustufe vorhanden, Standard: einfache Fassung (nur Endlos-Scrollen an).
+
+Sitzungsdatei danach gelöscht; das Passwort des Kontos sollte geändert werden.
 
 **Nichts ist gelöscht (Ausbaustufe, Wunsch Betreiber 15.10.2026):** Die einfache Fassung ist für die Vorstellung beim Bürgermeister gedacht. Alles, was dafür ausgeblendet wurde, bleibt im Code und in den Daten gespeichert und lässt sich im Backend unter **Design → Ausbaustufe** einzeln wieder einschalten, ohne neues Theme (`inc/ausbau.php`, Option `ma21_ausbau`; die Menüs übernehmen es spätestens nach 5 Minuten):
 
@@ -15,7 +24,7 @@ Wünsche des Betreibers vom 15.10.2026 nach Durchsicht des Live-Menüs. Alles st
 | Unterpunkte in den Aufklappmenüs | aus | die 114 kleinen Links in ihren Gruppen, Themen ohne Meldung blendet WordPress wie damals aus (z. B. Blaulicht › Rettung & Hilfe, Diebstahl; Sport › SC 1919: Tabelle & Spielplan; Termine › Ortsfest), mit Vereinen auch die Anzeige im Vereine-Menü | `deploy/ressort-menue.json`, je Ressort `voll` |
 | Vereine in der Ressortleiste | aus | Vereine in Leiste, „Mehr“ und Handy-Menü, mit eigenem Aufklappmenü | Ressort `/vereine/` mit `ausbau`; Links mit `data-ausbau="vereine"` (`deploy/kopf-theme-einbinden.mjs`) |
 | Endlos-Scrollen | an | ausgeschaltet: Blättern mit Seite 1, 2, keine „Weitere Meldungen“ auf der Startseite | `inc/ma21.php`, `assets/endlos.js` |
-| Fünf Musterfirmen statt drei Beispielfirmen | aus | Muster-Backstube, Muster-Café am Markt, Muster-Schreinerei, Muster-Steuerbüro, Muster-Immobilien mit allen Beiträgen, Anzeigen und Öffnungszeiten | `inc/unternehmen-muster.json`, `frueher` |
+| Fünf Musterfirmen statt drei Beispielfirmen | aus | Muster-Backstube, Muster-Café am Markt, Muster-Schreinerei, Muster-Steuerbüro, Muster-Immobilien mit allen Beiträgen, Anzeigen und Öffnungszeiten (gekennzeichnet wie alle Musterfirmen als „Beispielfirma“, früher „Musterprofil“) | `inc/unternehmen-muster.json`, `frueher` |
 
 Der Werbeplatz „Menü „Vereine“ aufgeklappt – Fläche rechts“ (Werbung → Werbeplätze) bleibt buchbar, Anzeigen darauf erscheinen aber nur, wenn „Unterpunkte“ und „Vereine“ beide an sind. Der Generator prüft auch die ausgeblendeten Links bei jedem Lauf; `qa/wordpress/ausbau-test.php` vergleicht die gespeicherten Daten mit dem Stand vom 14.10.2026 (Commit 7c56c388) und prüft jeden Schalter. Die statische Kopie zeigt immer die einfache Fassung.
 
@@ -37,7 +46,7 @@ Der Werbeplatz „Menü „Vereine“ aufgeklappt – Fläche rechts“ (Werbung
 
 Auftrag des Betreibers vom 13.10.2026, drei Punkte. Beide Pakete hochladen; die ZIPs kommen aus `node deploy/wp-pakete.mjs` (nur dieser Bau enthält `static/`).
 
-**Stand live:** noch nicht eingespielt. Auf merzenich-aktuell.de laufen am 13.10.2026 Theme 21.17.1 und Plugin 1.27.4 (Seitenquelltext geprüft). Einspielen über das Konto „HK Growth“, danach einmal Einstellungen → Permalinks speichern, falls `/unternehmen/<firma>/` 404 gibt.
+**Stand live:** mit Theme 21.19.0 und Plugin 1.28.0 am 15.10.2026 eingespielt, Permalinks gespeichert (Abschnitt oben).
 
 - **Anzeige im Menü „Unternehmen“ entfernt:** Der Block „Anzeige“ mit großem Bild unter „Für Unternehmen“ ist weg (`ma21_ressort_menue_daten`, `deploy/ressort-menue.json`). Die beiden Linkgruppen stehen jetzt untereinander links, daneben die Firmenliste, rechts wie bisher die Firmenbeiträge. Es bleibt keine leere Fläche.
 - **Firmen im Menü, Beiträge beim Überfahren:** Links stehen die Unternehmen (Kürzel, Name, Branche · Ort, bei Musterfirmen „Musterprofil“). Bleibt die Maus kurz auf einer Firma (160 ms), zeigt der rechte Bereich ihre neuesten Beiträge und „Zum Unternehmenskanal“. Wer nur darüber streicht oder schräg zu den Beiträgen zieht, behält die gewählte Firma. Klick auf die Firma öffnet ihren Kanal.
