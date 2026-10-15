@@ -117,13 +117,16 @@ add_action('wp_head', function (): void {
  * veröffentlichten Meldung und dem nächsten Termin, und die Markierung der gerade besuchten Seite im Menü.
  * (Vorher zeigte die Zeile einen Entwurf, der für Leser ein 404 war.)
  */
+/** Menü im Kopf: erst die Ausbaustufe (Vereine weg oder sichtbar, inc/ausbau.php), dann die Markierung der besuchten Seite. */
+function ma21_kopf_menue(string $html): string {
+    return ma21_kopf_aktuell(ma21_ausbau_html($html));
+}
+
 function ma21_kopf(string $name): string {
     $datum = '<time data-today datetime="' . esc_attr((string) wp_date('c')) . '">' . esc_html((string) wp_date('d.m.')) . '</time>';
     $html = str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
     $d = ma21_kopf_daten();
-    // Ausbaustufe (inc/ausbau.php): ausgeblendete Einträge (Vereine) weg oder sichtbar, vor der Markierung.
-    $html = ma21_ausbau_html($html);
-    $html = ma21_kopf_aktuell($html);
+    $html = ma21_kopf_menue($html);
     $html = ma21_kopf_ortswahl($html);
     if ($name === 'kopf.html') $html = ma21_kopf_logo_h1($html);
     if (function_exists('ma21_heute_links')) $html = ma21_heute_links($html, 'kopf');

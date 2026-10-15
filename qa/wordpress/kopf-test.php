@@ -91,9 +91,9 @@ pruefe('Sammelseite /rubrik/verkehr/: „Blaulicht“ markiert', substr_count(ma
 $_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';
 pruefe('Unbekannte Sammelseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 $_SERVER['REQUEST_URI'] = '/vereine/';
-pruefe('Vereine ausgeblendet: keine Markierung im Kopf', substr_count(ma21_kopf_aktuell(ma21_ausbau_html($vorlage)), 'aria-current'), 0);
+pruefe('Vereine ausgeblendet: keine Markierung im Kopf (ma21_kopf_menue)', [substr_count(ma21_kopf_menue($vorlage), 'aria-current'), str_contains(ma21_kopf_menue($vorlage), '/vereine/')], [0, false]);
 $GLOBALS['optionen'] = ['ma21_ausbau' => ['vereine' => true]];
-pruefe('Vereine eingeschaltet: „Vereine“ markiert (Leiste, Mehr-Menü, Schublade)', substr_count(ma21_kopf_aktuell(ma21_ausbau_html($vorlage)), '<a href="/vereine/" aria-current="page">'), 3);
+pruefe('Vereine eingeschaltet: „Vereine“ markiert (Leiste, Mehr-Menü, Schublade)', substr_count(ma21_kopf_menue($vorlage), '<a href="/vereine/" aria-current="page">'), 3);
 $GLOBALS['optionen'] = [];
 $_SERVER['REQUEST_URI'] = '/sport/sc-merzenich-siegt/';
 $GLOBALS['t'] = ['tax' => false, 'obj' => new WP_Post(), 'single' => 'post', 'archiv' => ''];

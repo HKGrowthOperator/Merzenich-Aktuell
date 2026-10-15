@@ -100,10 +100,11 @@
   // (Vorgabe Betreiber 07.10.2026). Motiv im selben Takt wie assets/werbung.js.
   let werbeDaten = null, werbeLaden = null;
   function werbungVorbereiten() {
-    if (werbeLaden || document.documentElement.dataset.werbung === 'aus') return;
-    werbeLaden = fetch('/assets/werbung.json', { credentials: 'same-origin' })
+    if (document.documentElement.dataset.werbung === 'aus') return Promise.resolve();
+    if (!werbeLaden) werbeLaden = fetch('/assets/werbung.json', { credentials: 'same-origin' })
       .then((r) => r.ok ? r.json() : null).catch(() => null)
       .then((d) => { werbeDaten = d; });
+    return werbeLaden;
   }
   function werbungHtml() {
     if (document.documentElement.dataset.werbung === 'aus') return '';
@@ -347,7 +348,8 @@
     row.insertAdjacentElement('afterend', panel);
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
-    if (Object.values(data).some((d) => d.werbung && gruppenVon(d).length)) werbungVorbereiten();
+    // Wie bis 14.10.2026: Anzeigedaten abwarten, damit schon das erste Aufklappen die Anzeige zeigt.
+    if (Object.values(data).some((d) => d.werbung && gruppenVon(d).length)) await werbungVorbereiten();
     let active = null;
     let schwebeAuf = 0, schwebeZu = 0, zeiger = '';
     // Spur der Maus in der Leiste: Wer bei offenem Menue schraeg nach unten

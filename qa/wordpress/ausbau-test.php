@@ -70,6 +70,15 @@ foreach (['kopf.html', 'kopf-seite.html'] as $v) {
 echo "\nMenüdaten (statische Datei wie in WordPress)\n";
 $quelle = json_decode((string) file_get_contents($wurzel . '/chatgpt-site/assets/ressort-menue.json'), true);
 pruefe('Statische Datei trägt die gespeicherte volle Fassung und Vereine', [isset($quelle['ressorts']['/vereine/']), $quelle['ressorts']['/vereine/']['ausbau'] ?? '', count(array_filter($quelle['ressorts'], fn($r) => !empty($r['voll']['gruppen'])))], [true, 'vereine', 11]);
+// Prüfsummen des Stands vom 14.10.2026 (Commit 7c56c388), damit die CI auch ohne
+// Git-Verlauf (flacher Checkout) merkt, wenn gespeicherte Daten verloren gehen.
+const STAND_1410_GRUPPEN = '905fd30f6aaf91f8c15eda84d9f1d90bab77c9ac22c556e0f0d18fbe0bb073ab';
+const STAND_1410_FIRMEN = '8628fdd01327dc010f0d0c6e5d607133470f9d40c32a50b716340fc073d12466';
+$summe = fn($x) => hash('sha256', json_encode($x, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+$gespeichert = [];
+foreach (json_decode((string) file_get_contents($wurzel . '/deploy/ressort-menue.json'), true)['ressorts'] as $r) $gespeichert[$r['href']] = $r['voll']['gruppen'] ?? null;
+pruefe('Gespeicherte Unterpunkte = Stand 14.10.2026 (Prüfsumme, auch ohne Git-Verlauf)', $summe($gespeichert), STAND_1410_GRUPPEN);
+pruefe('Statische Menüdatei trägt dieselben Unterpunkte', $summe(array_map(fn($r) => $r['voll']['gruppen'] ?? null, $quelle['ressorts'])), STAND_1410_GRUPPEN);
 $alt = json_decode((string) shell_exec('git -C ' . escapeshellarg($wurzel) . ' show 7c56c388:deploy/ressort-menue.json 2>/dev/null'), true);
 if (is_array($alt)) {
     $vorher = array_column(array_map(fn($r) => ['href' => $r['href'], 'gruppen' => $r['gruppen']], $alt['ressorts']), 'gruppen', 'href');
@@ -90,6 +99,11 @@ pruefe('Unterpunkte an: Sport mit „SC 1919: Tabelle & Spielplan“', in_array(
 pruefe('Unterpunkte an: Ortsteile zeigen auf /ort/…/', in_array(['Golzheim', '/ort/golzheim/'], array_merge(...array_column($voll['ressorts']['/nachrichten/']['gruppen'], 'links')), true), true);
 pruefe('Unterpunkte an: alte Beschriftung „Alle Unternehmensmeldungen“ (einfach: „Alle Unternehmen“)', [$voll['ressorts']['/unternehmen/']['alle'], $einfach['ressorts']['/unternehmen/']['alle']], ['Alle Unternehmensmeldungen', 'Alle Unternehmen']);
 pruefe('Unterpunkte an, Vereine aus: kein Vereine-Ressort, keine Anzeige', [isset($voll['ressorts']['/vereine/']), str_contains(json_encode($voll), '"werbung"')], [false, false]);
+schalter(['vereine' => true, 'menue_voll' => true]);
+$alles = ma21_ressort_menue_daten($quelle);
+$soll = 0; foreach ($gespeichert as $gr) foreach ((array) $gr as $g) foreach ($g['links'] as $l) $soll += $l[1] === '/thema/diebstahl/' ? 0 : 1;
+$ist = 0; foreach ($alles['ressorts'] as $r) foreach ($r['gruppen'] ?? [] as $g) $ist += count($g['links']);
+pruefe("Alles an: jeder gespeicherte Link kommt zurück ($soll von 114, ohne das leere Thema im Test)", [$ist, $soll, count(array_filter($alles['ressorts'], fn($r) => !empty($r['gruppen'])))], [$soll, 113, 11]);
 schalter(['vereine' => true]);
 $v = ma21_ressort_menue_daten($quelle)['ressorts']['/vereine/'] ?? null;
 pruefe('Vereine an: eigenes Menü mit roten Titeln, ohne Unterpunkte und Anzeige', [$v ? array_column($v['punkte'], 'titel') : null, isset($v['gruppen']), isset($v['werbung']), isset($v['ausbau'])], [['Vereinsleben', 'Ehrenamt', 'Verein eintragen'], false, false, false]);
@@ -103,6 +117,7 @@ echo "\nMusterfirmen\n";
 pruefe('Standard: drei Beispielfirmen', array_column(ma21_muster_firmen(), 'slug'), ['backhaus-morgenrot', 'cafe-feldlerche', 'holzwerkstatt-jahresring']);
 schalter(['muster_alt' => true]);
 $fruehere = ma21_muster_firmen();
+pruefe('Fünf Musterfirmen = Stand 14.10.2026 (Prüfsumme, auch ohne Git-Verlauf)', $summe($fruehere), STAND_1410_FIRMEN);
 pruefe('Schalter an: die fünf Musterfirmen bis 14.10.2026', array_column($fruehere, 'slug'), ['muster-backstube', 'muster-cafe-am-markt', 'muster-schreinerei', 'muster-steuerbuero', 'muster-immobilien']);
 $altFirmen = json_decode((string) shell_exec('git -C ' . escapeshellarg($wurzel) . ' show 7c56c388:wordpress/theme/merzenich-aktuell/inc/unternehmen-muster.json 2>/dev/null'), true);
 if (is_array($altFirmen)) pruefe('Gespeichert unverändert (Commit 7c56c388), samt Beiträgen und Bildern', $fruehere == $altFirmen['firmen'], true);
@@ -122,6 +137,14 @@ pruefe('Aus: Blättern wie bis 14.10. (kein Nachladen, kein Block auf der Starts
 schalter([]);
 $startseite = (string) file_get_contents(get_template_directory() . '/vorlagen/startseite.html');
 pruefe('Startseiten-Vorlage hat genau einen Block „Weitere Meldungen“', [substr_count($startseite, '<!-- endlos:start -->'), substr_count($startseite, '<!-- endlos:end -->')], [1, 1]);
+
+echo "\nVerdrahtung der Schalter\n";
+$quelltext = fn($d) => (string) file_get_contents($wurzel . '/' . $d);
+pruefe('Kopf: erst Ausbaustufe, dann Markierung (ma21_kopf → ma21_kopf_menue)', [str_contains($quelltext('wordpress/theme/merzenich-aktuell/inc/ma21.php'), '$html = ma21_kopf_menue($html);'), str_contains($quelltext('wordpress/theme/merzenich-aktuell/inc/ma21.php'), 'return ma21_kopf_aktuell(ma21_ausbau_html($html));')], [true, true]);
+pruefe('Startseite: Block „Weitere Meldungen“ hängt am Schalter', str_contains($quelltext('wordpress/theme/merzenich-aktuell/inc/ma21.php'), '$html = ma21_startseite_ausbau($html);'), true);
+pruefe('Endlos-Scrollen aus: <html data-endlos="aus"> und endlos.js hört darauf', [str_contains($quelltext('wordpress/theme/merzenich-aktuell/header.php'), "ma21_ausbau('endlos') ? '' : ' data-endlos=\"aus\"'"), str_contains($quelltext('chatgpt-site/assets/endlos.js'), "d.documentElement.dataset.endlos === 'aus'")], [true, true]);
+pruefe('Speichern unter „Design“ mit edit_theme_options (options.php)', str_contains($quelltext('wordpress/theme/merzenich-aktuell/inc/ausbau.php'), "add_filter('option_page_capability_ma21_ausbau', fn() => 'edit_theme_options');"), true);
+pruefe('functions.php lädt inc/ma21.php (und damit inc/ausbau.php)', [str_contains($quelltext('wordpress/theme/merzenich-aktuell/functions.php'), "require_once __DIR__ . '/inc/ma21.php';"), str_contains($quelltext('wordpress/theme/merzenich-aktuell/inc/ma21.php'), "require_once __DIR__ . '/ausbau.php';")], [true, true]);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

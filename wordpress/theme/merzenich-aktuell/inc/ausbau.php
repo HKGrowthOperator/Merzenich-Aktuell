@@ -75,6 +75,9 @@ add_action('admin_init', function (): void {
     ]);
 });
 
+// options.php verlangt sonst manage_options; die Seite steht unter „Design“ (edit_theme_options).
+add_filter('option_page_capability_ma21_ausbau', fn() => 'edit_theme_options');
+
 // Zwischenspeicher, die vom Schalter abhängen, sofort leeren.
 add_action('update_option_ma21_ausbau', 'ma21_ausbau_caches_leeren');
 add_action('add_option_ma21_ausbau', 'ma21_ausbau_caches_leeren');

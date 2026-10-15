@@ -248,7 +248,7 @@
   .mit-firmen .ressort-firmen__gruppen.ist-voll .ressort-dropdown__links a{border-bottom:0}
 }
 @media (min-width:1121px){
-  .mit-firmen .ressort-firmen__gruppen.ist-voll{justify-content:space-between;gap:18px}
+  .mit-firmen .ressort-firmen__gruppen.ist-voll{display:flex;flex-direction:column;justify-content:space-between;gap:18px}
   .mit-firmen .ressort-firmen__gruppen.ist-voll .ressort-dropdown__group:last-child{padding:12px 14px 6px;background:#f3f0ea;border-radius:3px}
   .mit-firmen .ressort-firmen__gruppen.ist-voll .ressort-dropdown__group:last-child .ressort-dropdown__links a:last-child{border-bottom:0}
 }
