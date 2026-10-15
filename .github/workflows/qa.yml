@@ -43,6 +43,8 @@ jobs:
           node --check chatgpt-site/assets/app.js
           node --check chatgpt-site/assets/v20.js
           node --check chatgpt-site/assets/ressort-dropdowns.js
+          node --check chatgpt-site/assets/endlos.js
+          node --check chatgpt-site/assets/werbung.js
           node --check site-source/src/templates/pages.mjs
           node --check site-source/src/templates/layout.mjs
           node --check site-source/src/templates/components.mjs
@@ -376,7 +378,7 @@ jobs:
               verschachtelt: document.querySelectorAll('.ressort-dropdown a a').length
             }));
             if (un1.werbung) throw new Error('Unternehmen-Menue zeigt noch eine Anzeige');
-            if (un1.firmen < 3) throw new Error(`Unternehmen-Menue: nur ${un1.firmen} Firmen`);
+            if (un1.firmen !== 3) throw new Error(`Unternehmen-Menue: ${un1.firmen} statt 3 Beispielfirmen (15.10.2026)`);
             if (un1.rechts < 1) throw new Error('Unternehmen-Menue: rechts keine Firmenbeitraege');
             if (un1.luecke > 40) throw new Error(`Unternehmen-Menue: leere Flaeche unter den Linkgruppen (${un1.luecke} px)`);
             if (un1.anzeigeMuster || un1.nachweise < 1 || un1.verschachtelt) throw new Error(`Unternehmen-Menue: Kennzeichnung oder Bildnachweis fehlerhaft: ${JSON.stringify(un1)}`);
@@ -384,7 +386,10 @@ jobs:
             const zweite = await page.locator('.ressort-firmen__firma').nth(1).boundingBox();
             await page.mouse.move(zweite.x + 40, zweite.y + zweite.height / 2, { steps: 10 });
             await page.waitForTimeout(450);
-            const un2 = await page.evaluate(() => ({ aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '', kopf: document.querySelector('.ressort-firmen__ansicht .ressort-dropdown__eyebrow')?.textContent || '', karten: document.querySelectorAll('.ressort-firmen__ansicht .ressort-firmen__karte').length, kanal: document.querySelector('.ressort-firmen__kanal')?.getAttribute('href') || '' }));
+            await page.waitForFunction(() => [...document.querySelectorAll('.ressort-firmen__ansicht .ressort-firmen__karte img')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+            const un2 = await page.evaluate(() => ({ aktiv: document.querySelector('.ressort-firmen__firma.ist-aktiv strong')?.textContent.trim() || '', kopf: document.querySelector('.ressort-firmen__ansicht .ressort-dropdown__eyebrow')?.textContent || '', karten: document.querySelectorAll('.ressort-firmen__ansicht .ressort-firmen__karte').length, bilder: [...document.querySelectorAll('.ressort-firmen__ansicht .ressort-firmen__karte img')].map((i) => i.complete && i.naturalWidth > 0), kanal: document.querySelector('.ressort-firmen__kanal')?.getAttribute('href') || '' }));
+            // Wunsch Betreiber 15.10.2026: Maus auf eine Firma zeigt sofort ihre 3 Beiträge mit Bild.
+            if (un2.karten !== 3 || un2.bilder.length !== 3 || !un2.bilder.every(Boolean)) throw new Error(`Firma 2: nicht 3 Beitraege mit geladenem Bild: ${JSON.stringify(un2)}`);
             if (un2.aktiv !== await firma(1) || !un2.kopf.startsWith(un2.aktiv)) throw new Error(`Ueberfahren einer Firma zeigt nicht ihre Beitraege: ${JSON.stringify(un2)}`);
             if (un2.karten < 1 || !un2.kanal.startsWith('/unternehmen/')) throw new Error(`Firmenansicht ohne Beitraege oder Kanal: ${JSON.stringify(un2)}`);
             // Schraeg nach rechts unten zur ersten Karte, langsam ueber die naechsten Firmen.
@@ -468,6 +473,73 @@ jobs:
             await ctx.close();
           }
 
+          // Wunsch Betreiber 15.10.2026: nur rote Menütitel, Vereine raus, Home-Knopf,
+          // Termine nach Ortsteil, Termin-Uhrzeit in Ortszeit, Endlos-Scrollen.
+          {
+            // Browser in UTC: Termine im Menue muessen trotzdem deutsche Ortszeit zeigen.
+            const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, timezoneId: 'UTC', locale: 'de-DE' });
+            const page = await ctx.newPage();
+            await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
+            await page.waitForSelector('.navscroll > a[href="/blaulicht/"][aria-haspopup="true"]', { timeout: 15000 });
+            const home = await page.evaluate(() => { const h = document.querySelector('.mainnav .nav-home'); const a = document.querySelector('.navscroll > a[href="/nachrichten/"]'); return h && a ? { href: h.getAttribute('href'), sichtbar: h.offsetWidth > 0, links: h.getBoundingClientRect().right <= a.getBoundingClientRect().left + 1, markiert: h.getAttribute('aria-current') } : null; });
+            if (!home || home.href !== '/' || !home.sichtbar || !home.links || home.markiert !== 'page') throw new Error(`Home-Knopf links neben Aktuell: ${JSON.stringify(home)}`);
+            if (await page.locator('.navscroll > a[href="/vereine/"]').count()) throw new Error('Vereine steht wieder in der Leiste');
+            await page.locator('.navscroll > a[href="/blaulicht/"]').hover();
+            await page.waitForSelector('.ressort-dropdown.is-open .ressort-dropdown__punkt', { timeout: 3000 });
+            const bl = await page.evaluate(() => { const p = document.querySelector('.ressort-dropdown.is-open'); const pk = [...p.querySelectorAll('.ressort-dropdown__punkt')]; const rgb = (pk[0] ? getComputedStyle(pk[0]).color : '').match(/\d+/g)?.map(Number) || []; return { titel: pk.map((a) => a.textContent.trim()), ziele: pk.map((a) => a.getAttribute('href')), rot: rgb[0] > 110 && rgb[1] < 70 && rgb[2] < 80, links: p.querySelectorAll('.ressort-dropdown__punkte a').length }; });
+            if (bl.titel.join('|') !== 'Feuerwehr|Polizei|Verkehr' || bl.links !== 3 || !bl.rot) throw new Error(`Blaulicht-Menue nicht nur rote Titel Feuerwehr, Polizei, Verkehr: ${JSON.stringify(bl)}`);
+            for (const ziel of bl.ziele) { const r = await page.request.get(base + ziel); if (r.status() !== 200 || !(await r.text()).includes('data-story=')) throw new Error(`Menueziel ${ziel}: ${r.status()} oder ohne Meldungen`); }
+            await page.keyboard.press('Escape'); await page.mouse.move(8, 700); await page.waitForTimeout(450);
+            await page.locator('.navscroll > a[href="/termine/"]').hover();
+            await page.waitForSelector('.ressort-dropdown.is-open .ressort-dropdown__punkt', { timeout: 3000 });
+            const te = await page.evaluate(() => [...document.querySelectorAll('.ressort-dropdown.is-open .ressort-dropdown__punkt')].map((a) => a.getAttribute('href')));
+            if (te[0] !== '/termine/' || te.filter((h) => /^\/termine\/\?ort=[a-z]+$/.test(h)).length !== 5) throw new Error(`Termine-Menue: Alle Termine plus 5 Ortsteile erwartet: ${JSON.stringify(te)}`);
+            const menue = await (await page.request.get(base + '/assets/ressort-menue.json')).json();
+            const termin = (menue.ressorts['/termine/'].neu || []).find((t) => t.termin && t.datum);
+            if (termin) {
+              const zeit = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date(termin.datum));
+              const text = await page.evaluate((url) => document.querySelector(`.ressort-dropdown.is-open a.ressort-dropdown__story[href="${url}"]`)?.textContent || '', termin.url);
+              if (zeit !== '00:00' && !text.includes(`${zeit} Uhr`)) throw new Error(`Termin im Menue nicht in Ortszeit (${zeit} Uhr erwartet): ${text}`);
+            }
+            await page.keyboard.press('Escape');
+            await page.goto(`${base}/termine/?ort=golzheim`, { waitUntil: 'domcontentloaded' });
+            await page.waitForTimeout(500);
+            const tf = await page.evaluate(() => ({ wert: document.querySelector('select[data-event-place]')?.value, orte: [...new Set([...document.querySelectorAll('[data-event-row]')].filter((r) => r.offsetParent !== null).map((r) => r.dataset.place))] }));
+            if (tf.wert !== 'golzheim' || tf.orte.some((o) => !['golzheim', 'gemeinde'].includes(o))) throw new Error(`Termine ?ort=golzheim filtert nicht: ${JSON.stringify(tf)}`);
+            // Endlos-Scrollen: mehr Meldungen, keine doppelt, Ansage, Blaettern weg, Zurueck-Taste
+            await page.goto(`${base}/nachrichten/`, { waitUntil: 'domcontentloaded' });
+            const zaehle = () => page.evaluate(() => { const ids = [...document.querySelectorAll('.feed [data-story]')].map((e) => e.dataset.story); return { n: ids.length, eindeutig: new Set(ids).size }; });
+            const vorher = await zaehle();
+            for (let i = 0; i < 3; i++) { await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight)); await page.waitForTimeout(1000); }
+            const nachher = await zaehle();
+            const ansage = (await page.locator('.endlos [role="status"]').textContent()) || '';
+            if (nachher.n <= vorher.n || nachher.n !== nachher.eindeutig || !/geladen/.test(ansage)) throw new Error(`Endlos-Scrollen: ${JSON.stringify({ vorher, nachher, ansage })}`);
+            if (await page.locator('.feed > .pagination').isVisible()) throw new Error('Blaettern sichtbar trotz Endlos-Scrollen');
+            await page.screenshot({ path: 'qa/after/endlos-nachrichten.png', fullPage: false });
+            const ziel = await page.evaluate(() => { const a = [...document.querySelectorAll('.feed [data-story] :is(h2,h3) a')].at(-2); a.scrollIntoView({ block: 'center' }); return a.getAttribute('href'); });
+            await Promise.all([page.waitForNavigation(), page.locator(`.feed [data-story] :is(h2,h3) a[href="${ziel}"]`).first().click()]);
+            await page.goBack({ waitUntil: 'load' });
+            await page.waitForTimeout(800);
+            const zurueck = await zaehle();
+            if (zurueck.n < nachher.n) throw new Error(`Zurueck-Taste verliert nachgeladene Meldungen: ${zurueck.n} statt ${nachher.n}`);
+            // Startseite: „Weitere Meldungen“ ohne Doppelte zu den Bloecken oben
+            await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
+            await page.evaluate(() => document.querySelector('.weitere-meldungen')?.scrollIntoView());
+            await page.waitForFunction(() => document.querySelectorAll('.weitere-meldungen [data-story]').length > 0, null, { timeout: 10000 });
+            const st = await page.evaluate(() => { const ids = [...document.querySelectorAll('[data-story]')].map((e) => e.dataset.story); return { n: ids.length, eindeutig: new Set(ids).size }; });
+            if (st.n !== st.eindeutig) throw new Error(`Startseite: Weitere Meldungen wiederholen Meldungen von oben: ${JSON.stringify(st)}`);
+            await ctx.close();
+          }
+          {
+            const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, deviceScaleFactor: 1 });
+            const page = await ctx.newPage();
+            await page.goto(`${base}/blaulicht/`, { waitUntil: 'domcontentloaded' });
+            const h = page.locator('.mainnav .nav-home');
+            if (!(await h.isVisible())) throw new Error('Handy: Home-Knopf nicht sichtbar');
+            await Promise.all([page.waitForURL(`${base}/`, { timeout: 8000 }), h.tap()]);
+            await ctx.close();
+          }
+
           await shot('home-mobile', '/', { width: 390, height: 844 }, '.front-lead h1', async page => {
             const title = (await page.locator('.front-lead h1').textContent() || '').trim();
             if (title !== expectedHero) throw new Error(`Mobile hero stale/unexpected: ${title} (erwartet: ${expectedHero})`);
@@ -541,7 +613,7 @@ jobs:
           # gebaut (startseite.html wechselt jeden Tag mit dem Foto des Tages; das waere
           # taeglich ein neues Zip im Repo): build-wordpress-packages.yml laeuft bei jedem
           # Theme-/Plugin-Push und per workflow_dispatch und nimmt dann den aktuellen Stand.
-          git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
+          git add -A qa/after chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen wordpress/theme/merzenich-aktuell/inc/rubriken.json
           if git diff --cached --quiet; then
             echo 'Nichts nachzuziehen.'
           else

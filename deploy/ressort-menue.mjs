@@ -2,16 +2,18 @@
 /**
  * Merzenich Aktuell - Daten der Ressort-Dropdowns.
  *
- * Liest deploy/ressort-menue.json (Gruppen und Links je Ressort), prueft jedes
- * Ziel gegen die ausgelieferten Seiten und haengt je Ressort die zwei
- * neuesten echten Beitraege aus api/inhalte.json an (Termine: die zwei
- * naechsten Termine aus api/latest.json). Schreibt
+ * Liest deploy/ressort-menue.json (rote Titel je Ressort, Wunsch Betreiber
+ * 15.10.2026: keine kleinen Unterpunkte mehr), prueft jedes Ziel gegen die
+ * ausgelieferten Seiten (Sammelseiten /rubrik/<slug>/ schreibt vorher
+ * rubrik-prerender.mjs) und haengt je Ressort die neuesten echten Beitraege
+ * aus api/inhalte.json an (Termine: die naechsten Termine aus
+ * api/latest.json). Schreibt
  * chatgpt-site/assets/ressort-menue.json und traegt dessen Hash in
  * assets/ressort-dropdowns.js ein, damit Browser und Service Worker nie einen
  * alten Stand zeigen.
  *
  * Fehlt ein Ziel, bricht der Lauf ab: Das Menue verlinkt nur, was es gibt.
- * Aufruf: node deploy/ressort-menue.mjs [--check]   (vor kopf-theme-einbinden)
+ * Aufruf: node deploy/ressort-menue.mjs [--check]   (nach rubrik-prerender, vor kopf-theme-einbinden)
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -54,8 +56,9 @@ for (let runde = 0; musterNeu.length < 4 && runde < 5; runde++) for (const f of 
   musterNeu.push({ titel: b.titel, url: b.url, ort: `${f.name} · ${f.zeile.split(' · ')[1]}`, datum: '', bild: b.bild, muster: true });
 }
 
+// Ziel ohne Abfrage- und Sprungteil (/termine/?ort=golzheim zeigt /termine/ vorgefiltert).
 const zielDa = (href) => {
-  const pfad = href.split('#')[0];
+  const pfad = href.split(/[?#]/)[0];
   return pfad.endsWith('/') ? existsSync(join(site, pfad, 'index.html')) : existsSync(join(site, pfad));
 };
 
@@ -80,7 +83,10 @@ const bebildertZuerst = (liste) => [...liste.filter((a) => a.bild?.src), ...list
 const ressorts = {};
 for (const r of quelle.ressorts) {
   if (!zielDa(r.href)) fehler.push(`${r.titel}: Ressortseite ${r.href} fehlt`);
-  for (const g of r.gruppen) for (const [label, href] of g.links) if (!zielDa(href)) fehler.push(`${r.titel} / ${g.titel}: "${label}" -> ${href} fehlt`);
+  if (!Array.isArray(r.punkte) || !r.punkte.length) fehler.push(`${r.titel}: keine Punkte (rote Titel)`);
+  if (r.gruppen) fehler.push(`${r.titel}: "gruppen" gibt es nicht mehr, nur "punkte" (rote Titel ohne Unterpunkte)`);
+  const punkte = (r.punkte || []).map((p) => ({ titel: p.titel, href: p.rubrik ? `/rubrik/${p.rubrik.slug}/` : p.href }));
+  for (const p of punkte) if (!p.titel || !p.href || !zielDa(p.href)) fehler.push(`${r.titel}: "${p.titel}" -> ${p.href} fehlt`);
   const passend = artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]);
   const neu = r.href === '/termine/' ? termine
     : bebildertZuerst(passend.slice(0, 12)).slice(0, 4).map(beitrag);
@@ -90,7 +96,7 @@ for (const r of quelle.ressorts) {
   const mehr = r.mehrBilder ? passend.filter((a) => a.bild?.src && !rechts.has(a.url)).slice(0, r.mehrBilder).map(beitrag) : [];
   if (r.mehrBilder && mehr.length < r.mehrBilder) fehler.push(`${r.titel}: nur ${mehr.length} von ${r.mehrBilder} weiteren Bildmeldungen`);
   const firmen = r.href === '/unternehmen/' ? musterFirmen : [];
-  ressorts[r.href] = { titel: r.titel, alle: r.alle, gruppen: r.gruppen.map((g) => ({ titel: g.titel, links: g.links })), neu: firmen.length ? musterNeu : neu, ...(mehr.length ? { mehr } : {}), ...(r.werbung ? { werbung: true } : {}), ...(firmen.length ? { firmen } : {}) };
+  ressorts[r.href] = { titel: r.titel, alle: r.alle, punkte, neu: firmen.length ? musterNeu : neu, ...(mehr.length ? { mehr } : {}), ...(firmen.length ? { firmen } : {}) };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }
 
@@ -111,5 +117,5 @@ for (const [rel, inhalt] of ziele) {
   if (!nurPruefen) writeFileSync(pfad, inhalt);
 }
 const offen = quelle.ressorts.flatMap((r) => (r.offen || []).map((o) => `${r.titel}: ${o}`));
-console.log(`Ressort-Menue: ${quelle.ressorts.length} Ressorts, ${quelle.ressorts.reduce((n, r) => n + r.gruppen.reduce((m, g) => m + g.links.length, 0), 0)} Links, ${Object.values(ressorts).reduce((n, r) => n + r.neu.length, 0)} aktuelle Beiträge; ${offen.length} Wunschpunkte ohne Seite; ${veraltet.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+console.log(`Ressort-Menue: ${quelle.ressorts.length} Ressorts, ${quelle.ressorts.reduce((n, r) => n + (r.punkte || []).length, 0)} rote Titel, ${Object.values(ressorts).reduce((n, r) => n + r.neu.length, 0)} aktuelle Beiträge; ${offen.length} Wunschpunkte ohne Seite; ${veraltet.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && veraltet.length) process.exit(2);

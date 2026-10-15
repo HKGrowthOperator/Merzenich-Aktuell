@@ -1,0 +1,198 @@
+{
+  "hinweis": "Erzeugt von deploy/rubrik-prerender.mjs aus deploy/ressort-menue.json. Nicht von Hand bearbeiten.",
+  "rubriken": {
+    "verkehr": {
+      "titel": "Verkehr",
+      "ressort": "/blaulicht/",
+      "ressortTitel": "Blaulicht",
+      "themen": [
+        "verkehrsunfall",
+        "geschwindigkeit",
+        "verkehrssicherheit",
+        "a4",
+        "l264",
+        "b264"
+      ],
+      "kategorie": "blaulicht",
+      "ohneKategorie": [],
+      "beschreibung": "Unfälle, Kontrollen und Verkehrsmeldungen von Polizei und Feuerwehr aus der Gemeinde Merzenich."
+    },
+    "sportvereine": {
+      "titel": "Sportvereine",
+      "ressort": "/sport/",
+      "ressortTitel": "Sport",
+      "themen": [
+        "sc-1919-merzenich",
+        "fc-golzheim",
+        "sv-morschenich",
+        "rhenania-girbelsrath",
+        "ttc-merzenich",
+        "tv-golzheim"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Meldungen der Sportvereine aus Merzenich, Golzheim, Girbelsrath und Morschenich."
+    },
+    "sport-weitere": {
+      "titel": "Weitere Sportarten",
+      "ressort": "/sport/",
+      "ressortTitel": "Sport",
+      "themen": [
+        "tischtennis",
+        "billard",
+        "wttv-cup",
+        "soccerhalle",
+        "fanclub"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Tischtennis, Billard, Soccerhalle und Fanclubs aus der Gemeinde Merzenich."
+    },
+    "gemeinde": {
+      "titel": "Gemeinde",
+      "ressort": "/rathaus/",
+      "ressortTitel": "Rathaus & Politik",
+      "themen": [
+        "gemeinderat",
+        "buergermeister",
+        "sprechstunde",
+        "standesamt",
+        "verwaltung",
+        "bekanntmachung",
+        "amtsblatt",
+        "buergerservice"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Gemeinderat, Bürgermeister, Verwaltung, Bekanntmachungen und Bürgerservice der Gemeinde Merzenich."
+    },
+    "geld-und-planung": {
+      "titel": "Geld & Planung",
+      "ressort": "/rathaus/",
+      "ressortTitel": "Rathaus & Politik",
+      "themen": [
+        "haushalt",
+        "masterplan",
+        "staedtebaufoerderung",
+        "waermeplanung"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [],
+      "beschreibung": "Haushalt, Masterplan, Städtebauförderung und Wärmeplanung der Gemeinde Merzenich."
+    },
+    "beteiligung": {
+      "titel": "Beteiligung",
+      "ressort": "/rathaus/",
+      "ressortTitel": "Rathaus & Politik",
+      "themen": [
+        "beteiligung",
+        "jugendgremium",
+        "kommunalpolitik"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [],
+      "beschreibung": "Bürgerbeteiligung, Jugendgremium und Kommunalpolitik in der Gemeinde Merzenich."
+    },
+    "familie-und-schule": {
+      "titel": "Familie & Schule",
+      "ressort": "/leben/",
+      "ressortTitel": "Leben",
+      "themen": [
+        "schule",
+        "grundschule",
+        "kita",
+        "ogs",
+        "familie",
+        "senioren",
+        "seniorennachmittag",
+        "kleidertreff"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Schule, Kita, Familie und Senioren in der Gemeinde Merzenich."
+    },
+    "natur-und-umwelt": {
+      "titel": "Natur & Umwelt",
+      "ressort": "/leben/",
+      "ressortTitel": "Leben",
+      "themen": [
+        "umwelt",
+        "naturschutz",
+        "klimaschutz",
+        "muellsammelaktion"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Umwelt, Naturschutz und Klimaschutz in der Gemeinde Merzenich."
+    },
+    "freizeit-und-mobilitaet": {
+      "titel": "Freizeit & Mobilität",
+      "ressort": "/leben/",
+      "ressortTitel": "Leben",
+      "themen": [
+        "freizeit",
+        "ausflug",
+        "mobilitaet",
+        "oepnv",
+        "fahrrad"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Freizeit, Ausflüge, Bus, Bahn und Fahrrad rund um Merzenich."
+    },
+    "strukturwandel": {
+      "titel": "Strukturwandel",
+      "ressort": "/wirtschaft/",
+      "ressortTitel": "Wirtschaft",
+      "themen": [
+        "strukturwandel",
+        "rheinisches-revier",
+        "buergewaldzentrum"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [],
+      "beschreibung": "Strukturwandel im Rheinischen Revier und seine Folgen für Merzenich."
+    },
+    "infrastruktur": {
+      "titel": "Infrastruktur",
+      "ressort": "/wirtschaft/",
+      "ressortTitel": "Wirtschaft",
+      "themen": [
+        "glasfaser",
+        "breitband",
+        "stromnetz",
+        "waermeplanung"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [],
+      "beschreibung": "Glasfaser, Stromnetz und Wärmeplanung in der Gemeinde Merzenich."
+    },
+    "aus-der-gemeinde": {
+      "titel": "Aus der Gemeinde",
+      "ressort": "/menschen/",
+      "ressortTitel": "Menschen",
+      "themen": [
+        "jubilaeum",
+        "hochzeit",
+        "ehrenamt"
+      ],
+      "kategorie": "",
+      "ohneKategorie": [
+        "blaulicht"
+      ],
+      "beschreibung": "Jubiläen, Hochzeiten und Ehrenamt aus der Gemeinde Merzenich."
+    }
+  }
+}

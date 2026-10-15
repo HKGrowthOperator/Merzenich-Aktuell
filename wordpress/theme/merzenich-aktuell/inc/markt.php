@@ -190,7 +190,7 @@ function ma21_tipp_seite(): void {
 /**
  * Musterfirmen (seit 21.18.0 in inc/unternehmen-muster.json, Seiten und Kanäle in
  * inc/unternehmen.php). Bis echte Unternehmen eigene Beiträge haben, zeigen
- * ausgedachte, sichtbar als „Musterprofil“, „Musterbeitrag“ und „Testanzeige“
+ * ausgedachte, sichtbar als „Beispielfirma“, „Musterbeitrag“ und „Testanzeige“
  * gekennzeichnete Betriebe, wie ein Unternehmenskanal aussieht. Jeder
  * Musterbeitrag öffnet eine vollständige Seite (Auftrag Betreiber 13.10.2026);
  * bis 21.17 führten die Karten nur auf das Anfrageformular.
@@ -220,17 +220,17 @@ function ma21_muster_klein(string $bild): string {
 function ma21_musterprofile_html(int $echte, string $anfrage): string {
     if ($echte >= 3 || !ma21_muster_aktiv()) return '';
     $h = '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>'
-        . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Musterprofile, keine echten Unternehmen.</p>';
+        . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Beispielfirmen, keine echten Unternehmen.</p>';
     foreach (array_slice(ma21_muster_liste(), 0, 5 - min($echte, 2)) as $m) {
         $f = ma21_firma_ansicht($m);
         if (!$f) continue;
         $b = $f['bild'];
-        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Musterprofil, Unternehmenskanal ansehen') . '">'
-            . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" srcset="' . esc_attr(ma21_abs($b['klein']) . ' 720w, ' . ma21_abs($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Musterprofil</span></span>' : '')
+        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Beispielfirma, Unternehmenskanal ansehen') . '">'
+            . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" srcset="' . esc_attr(ma21_abs($b['klein']) . ' 720w, ' . ma21_abs($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Beispielfirma</span></span>' : '')
             . '<span class="u-muster__eyebrow">' . esc_html($f['zeile']) . '</span>'
             . '<strong class="u-muster__name">' . esc_html($f['name']) . '</strong>'
             . '<span class="u-muster__text">' . esc_html($f['text']) . '</span>'
-            . '<span class="u-muster__info">' . esc_html($f['fakten']['Öffnungszeiten'] ?? '') . '</span></a>'
+            . (($f['fakten']['Öffnungszeiten'] ?? '') !== '' ? '<span class="u-muster__info">' . esc_html($f['fakten']['Öffnungszeiten']) . '</span>' : '') . '</a>'
             . ($b ? '<span class="u-muster__credit">' . ma21_muster_nachweis($b, 'Foto: ') . '</span>' : '') . '</article>';
     }
     return $h . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';

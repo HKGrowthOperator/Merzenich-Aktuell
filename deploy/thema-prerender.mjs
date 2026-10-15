@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { artikelSammeln, esc, dmyLang, markeHtml } from './lib-artikel.mjs';
+import { artikelSammeln, esc, nurLogo, feedZeile as zeile } from './lib-artikel.mjs';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const nurPruefen = process.argv.includes('--check');
@@ -20,24 +20,7 @@ for (const a of artikelSammeln(site)) for (const t of a.themen) {
   if (!themen.has(t.slug)) themen.set(t.slug, { label: t.label, artikel: [] });
   themen.get(t.slug).artikel.push(a);
 }
-// Bildflaeche wie in den bestehenden Zeilen der Themenseiten: a.feed-img mit
-// .media und Badge. Nachgetragene Zeilen standen bis zum 23.09. pauschal auf
-// "no-media no-image" - gemessen 34 von 73 Karten auf den Themenseiten ohne
-// Bild, obwohl jeder Artikel ein Motiv hat. Ein Vereinslogo oder Wappen fuellt
-// keine Bildflaeche (Designstandard 7b), dort bleibt die Zeile textlich.
-const nurLogo = (b) => !b || !b.src || b.fit === 'contain' || /logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
-const bildFlaeche = (a) => {
-  const b = a.bild;
-  if (nurLogo(b)) return '';
-  const srcset = b.srcset ? ` srcset="${esc(b.srcset)}"` : '';
-  const masse = b.width && b.height ? ` width="${b.width}" height="${b.height}"` : '';
-  const badge = b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '';
-  return `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">`
-    + `<img src="${esc(b.src)}"${srcset} sizes="(max-width: 640px) 120px, 240px" alt="${esc(b.alt || '')}"${masse}`
-    + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
-};
-
-const zeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row${nurLogo(a.bild) ? ' no-media no-image' : ''}">${bildFlaeche(a)}<div class="feed-copy">${markeHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
+// Zeilen und Bildflaeche: lib-artikel.mjs (feedZeile, auch fuer die Sammelseiten /rubrik/).
 const zaehler = (html, n) => html.replace(/<p class="count-line">\d+ Meldung(?:en)?<\/p>/, `<p class="count-line">${n} Meldung${n === 1 ? '' : 'en'}</p>`);
 
 let neuAngelegt = 0, nachgetragen = 0, bebildert = 0;

@@ -327,3 +327,9 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 .u-muster-artikel .author-box .btn.ghost{color:var(--ink)}
 .u-firmen-karte .meta{display:block}
 .u-muster-banner a{color:var(--red);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+/* Startseite „Weitere Meldungen“ (Endlos-Scrollen, 15.10.2026): volle Breite,
+   deshalb ab 1101 px drei Spalten statt zwei wie in der Ressortspalte. */
+.weitere-meldungen .bildraster--ressort{padding-top:0}
+@media (min-width:1101px){.weitere-meldungen .bildraster--ressort{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Karte ohne Bild auf dem Handy: Text über die volle Breite statt in der Bildspalte. */
+@media (max-width:520px){.bildraster-karte--ohne-bild{display:flex}}

@@ -174,9 +174,13 @@ function ma21_kopf_aktuell(string $html): string {
     $html = str_replace(' aria-current="page"', '', $html);
     $pfad = '/' . trim((string) parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH), '/') . '/';
     if ($pfad === '//') $pfad = '/';
+    // Startseite: der Home-Knopf links neben „Aktuell“ (Wunsch Betreiber 15.10.2026).
+    if ($pfad === '/') return str_replace('<a class="nav-home" href="/"', '<a class="nav-home" href="/" aria-current="page"', $html);
     if (is_singular('post')) { $o = get_queried_object(); if ($o instanceof WP_Post) $pfad = (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($o) && get_post_meta($o->ID, 'ma_business_id', true)) ? '/unternehmen/' : '/' . ma21_ressort($o)[0] . '/'; }
     // Unternehmenskanäle und Musterbeiträge (inc/unternehmen.php) gehören zu „Unternehmen“.
     elseif (str_starts_with($pfad, '/unternehmen/')) $pfad = '/unternehmen/';
+    // Sammelseiten der roten Menütitel gehören zu ihrem Ressort.
+    elseif (str_starts_with($pfad, '/rubrik/')) { $rs = ma21_rubrik((string) (explode('/', trim($pfad, '/'))[1] ?? '')); if ($rs) $pfad = (string) $rs['ressort']; }
     elseif (is_singular('ma_event') || is_post_type_archive('ma_event')) $pfad = '/termine/';
     elseif (is_singular('ma_club') || is_post_type_archive('ma_club')) $pfad = '/vereine/';
     if (!preg_match('#^/[a-z0-9-]+/$#', $pfad)) return $html;
@@ -381,8 +385,8 @@ function ma21_repo_datei(string $pfad, int $ttl = HOUR_IN_SECONDS): string {
 }
 
 /**
- * Ressort-Menü (assets/ressort-menue.json, liest ressort-dropdowns.js): Gruppen
- * und Links aus der statischen Datei, „Neu im Ressort“ aus den veröffentlichten
+ * Ressort-Menü (assets/ressort-menue.json, liest ressort-dropdowns.js): rote
+ * Titel (punkte) aus der statischen Datei, „Neu im Ressort“ aus den veröffentlichten
  * Beiträgen dieser WordPress-Installation, nie aus dem redaktionellen Stand
  * im Repository (dort stehen auch noch nicht freigegebene Meldungen).
  */
@@ -406,7 +410,9 @@ function ma21_ressort_menue_daten(array $d): array {
         // Firmen, beim Überfahren rechts ihre Beiträge; ohne Wahl die neuesten
         // Firmenbeiträge. Die Musteranzeige unter „Für Unternehmen“ entfällt.
         if ($pfad === '/unternehmen/') { unset($r['werbung']); $r['firmen'] = ma21_menue_firmen(); }
-        $r['gruppen'] = ma21_menue_gruppen_pruefen((array) ($r['gruppen'] ?? []));
+        // Nur rote Titel, keine kleinen Unterpunkte (Wunsch Betreiber 15.10.2026).
+        $r['punkte'] = ma21_menue_punkte_pruefen((array) ($r['punkte'] ?? []));
+        unset($r['gruppen']);
     }
     unset($r);
     $d['standWordPress'] = (string) wp_date('c');
@@ -419,7 +425,8 @@ function ma21_ressort_menue_daten(array $d): array {
  * bis zu drei Beiträge. 5 Minuten zwischengespeichert.
  */
 function ma21_menue_firmen(): array {
-    $c = get_transient('ma21_menue_firmen');
+    // _v2 seit 21.19.0: nach dem Update sofort die drei neuen Beispielfirmen, nicht die alte Liste.
+    $c = get_transient('ma21_menue_firmen_v2');
     if (is_array($c)) return $c;
     $rel = fn(string $u): string => wp_make_link_relative($u);
     $l = [];
@@ -430,39 +437,35 @@ function ma21_menue_firmen(): array {
                 'bild' => ma21_menue_bildnachweis($b['bild'])],
                 array_slice($f['beitraege'], 0, 3))];
     }
-    set_transient('ma21_menue_firmen', $l, 300);
+    set_transient('ma21_menue_firmen_v2', $l, 300);
     return $l;
 }
 add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
-    if (in_array($p->post_type, ['post', 'ma_business', 'ma_ad'], true) && ($neu === 'publish' || $alt === 'publish')) delete_transient('ma21_menue_firmen');
+    if (in_array($p->post_type, ['post', 'ma_business', 'ma_ad'], true) && ($neu === 'publish' || $alt === 'publish')) delete_transient('ma21_menue_firmen_v2');
 }, 10, 3);
-add_action('updated_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
-add_action('added_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen'); }, 10, 3);
-foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) add_action($h, function ($mid, $pid, $key): void { if (in_array($key, ['ma_business_id', 'ma_gesponsert'], true)) delete_transient('ma21_menue_firmen'); }, 10, 3);
+add_action('updated_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
+add_action('added_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
+foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) add_action($h, function ($mid, $pid, $key): void { if (in_array($key, ['ma_business_id', 'ma_gesponsert'], true)) delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
 
 /**
- * Linkgruppen des Ressort-Menüs: ein Thema (/thema/<slug>/) fällt nur weg, wenn
- * es keine veröffentlichte Meldung hat (Seite wäre leer). Bis 21.13 galt eine
- * Untergrenze von drei Meldungen; damit schrumpften Rathaus, Leben und Sport auf
- * ein bis fünf Links (Meldung Betreiber 07.10.2026). Leere Gruppen fallen weg,
- * Ortsteil-Links zeigen direkt auf /ort/<slug>/.
+ * Rote Titel des Ressort-Menüs (Wunsch Betreiber 15.10.2026): Jeder Titel führt
+ * auf alle Meldungen dazu. Ein Thema (/thema/<slug>/) oder eine Sammelseite
+ * (/rubrik/<slug>/) fällt weg, solange sie keine veröffentlichte Meldung hat
+ * (die Seite wäre leer). Ortsteile zeigen direkt auf /ort/<slug>/, vorgefilterte
+ * Termine (/termine/?ort=…) bleiben, wie sie sind.
  */
-function ma21_menue_gruppen_pruefen(array $gruppen, int $mindestens = 1): array {
+function ma21_menue_punkte_pruefen(array $punkte): array {
     $raus = [];
-    foreach ($gruppen as $g) {
-        if (!is_array($g)) continue;
-        $links = [];
-        foreach ((array) ($g['links'] ?? []) as $l) {
-            if (!is_array($l) || count($l) < 2) continue;
-            $href = (string) $l[1];
-            if (preg_match('#^/(' . implode('|', array_keys(MA21_ORTE)) . ')/$#', $href, $m)) $l[1] = '/ort/' . $m[1] . '/';
-            if (preg_match('#^/thema/([^/]+)/$#', $href, $m)) {
-                $t = get_term_by('slug', $m[1], 'post_tag');
-                if (!$t || (int) $t->count < $mindestens) continue;
-            }
-            $links[] = $l;
+    foreach ($punkte as $p) {
+        if (!is_array($p) || (string) ($p['titel'] ?? '') === '' || (string) ($p['href'] ?? '') === '') continue;
+        $href = (string) $p['href'];
+        if (preg_match('#^/(' . implode('|', array_keys(MA21_ORTE)) . ')/$#', $href, $m)) $href = '/ort/' . $m[1] . '/';
+        if (preg_match('#^/thema/([^/]+)/$#', $href, $m)) {
+            $t = get_term_by('slug', $m[1], 'post_tag');
+            if (!$t || (int) $t->count < 1) continue;
         }
-        if ($links) { $g['links'] = $links; $raus[] = $g; }
+        if (preg_match('#^/rubrik/([^/]+)/$#', $href, $m) && !ma21_rubrik_hat_beitraege($m[1])) continue;
+        $raus[] = ['titel' => (string) $p['titel'], 'href' => $href];
     }
     return $raus;
 }
@@ -991,7 +994,8 @@ function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): stri
 
 function ma21_feed_row(WP_Post $p, string $slot = '', bool $fest = false): string {
     $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
-    return '<article' . ma21_karte_attr($p, $slot, $fest) . ' class="feed-row">'
+    // Ohne Bild eine Spalte wie in der statischen Kopie (deploy/inhaltsindex.mjs), sonst stünde der Text in der schmalen Bildspalte.
+    return '<article' . ma21_karte_attr($p, $slot, $fest) . ' class="feed-row' . ($b ? '' : ' no-media no-image') . '">'
         . ($b ? "<a class=\"feed-img\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-row'], false) . ma21_badge($b, false) . '</div></a>' : '')
         . '<div class="feed-copy">' . ma21_marke($p, 'kicker') . "<h3><a href=\"{$url}\">{$titel}</a></h3><p class=\"dek\">" . ma21_e(ma21_teaser($p)) . '</p>'
         . '<div class="meta">' . ma21_zeit($p, true) . '<span class="readtime">' . ma21_lesezeit($p) . ' Min.</span></div>'
@@ -1092,6 +1096,59 @@ function ma21_feed_html(string $seite, array $posts, bool $ersteSeite): string {
     return $h;
 }
 
+/* ------------------------------------------------------------ Endlos-Scrollen */
+
+/**
+ * Endlos-Scrollen (Wunsch Betreiber 15.10.2026: keine Seiten 1, 2, man scrollt
+ * einfach weiter). assets/endlos.js lädt beim Scrollen die nächste Seite nach.
+ * /…/page/N/ bleibt unverändert für Suchmaschinen und Leser ohne JavaScript.
+ * Mit ?ma_endlos=1 liefert dieselbe Adresse nur die Meldungen dieser Seite als
+ * Teilstück: ohne Kopf und Aufmacher, Raster-Ressorts als Karten (Anzeige wie
+ * gewohnt nach Karte 6), alle anderen Listen als Zeilen.
+ */
+add_filter('query_vars', function (array $v): array { $v[] = 'ma_endlos'; return $v; });
+/** Ist die Anfrage eine Meldungsliste, die endlos weiterlaufen kann? */
+function ma21_endlos_liste(): bool {
+    return is_category() || is_tag() || is_tax('ma_location') || is_search() || (bool) get_query_var('ma_alle')
+        || ma21_rubrik_aktuell() !== null || (string) get_query_var('ma_autor') !== '';
+}
+/** Adresse der nächsten Seite der aktuellen Liste, '' auf der letzten Seite. */
+function ma21_endlos_naechste(): string {
+    global $wp_query;
+    $seite = max(1, (int) get_query_var('paged'));
+    if (!$wp_query || $seite >= (int) ($wp_query->max_num_pages ?? 0)) return '';
+    return (string) remove_query_arg('ma_endlos', get_pagenum_link($seite + 1, false));
+}
+/** Teilstück: Karten oder Zeilen, nie ein Aufmacher; data-naechste nennt die Folgeseite ('' am Ende). */
+function ma21_endlos_teil(string $seite, array $posts, string $naechste): string {
+    $raster = ma21_raster_seite($seite);
+    $inhalt = $raster ? ma21_feed_raster($posts) : implode("\n", array_map(fn($p) => ma21_feed_row($p), $posts));
+    return '<div data-endlos-teil data-art="' . ($raster ? 'raster' : 'reihen') . '" data-naechste="' . esc_attr($naechste) . '">' . $inhalt . '</div>';
+}
+add_action('template_redirect', function (): void {
+    if ((string) get_query_var('ma_endlos') === '' || !ma21_endlos_liste()) return;
+    global $wp_query;
+    $posts = array_values(array_filter((array) ($wp_query->posts ?? []), fn($p) => $p instanceof WP_Post));
+    if (!headers_sent()) header('X-Robots-Tag: noindex, follow');
+    // Hinter der letzten Seite: 404, endlos.js meldet „Alle Meldungen geladen“.
+    if (!$posts || is_404()) { status_header(404); nocache_headers(); exit; }
+    status_header(200);
+    header('Content-Type: text/html; charset=utf-8');
+    ma21_cache(120);
+    $schluessel = ma21_ressort_schluessel();
+    echo ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste());
+    exit;
+}, 1);
+/* Blättern bleibt für Suchmaschinen und Leser ohne JavaScript: rel="next"/"prev" an den Links. */
+add_filter('paginate_links_output', function (string $r): string {
+    return str_replace(['<a class="next page-numbers"', '<a class="prev page-numbers"'], ['<a class="next page-numbers" rel="next"', '<a class="prev page-numbers" rel="prev"'], $r);
+});
+/** Datenattribute am .feed einer Liste für assets/endlos.js. */
+function ma21_endlos_attr(string $seite): string {
+    $n = ma21_endlos_naechste();
+    return $n === '' ? '' : ' data-endlos-naechste="' . esc_attr($n) . '" data-endlos-art="' . (ma21_raster_seite($seite) ? 'raster' : 'reihen') . '"';
+}
+
 /* Bearbeitungsmodus und Board (Plugin): Blöcke neu rendern und Belegung lesen. */
 add_filter('ma_layout_block_html', function ($html, string $seite, string $block): string {
     if ($seite === 'startseite') return ma21_block($block); // Belegung vorher über ma_layout_belegung auffrischen.
@@ -1175,6 +1232,8 @@ function ma21_ort_seitenspalte(WP_Term $ort): string {
 
 /** Kopf und Beschreibung je Liste, wie auf der statischen Seite. */
 function ma21_liste_kopf(): array {
+    // Sammelseite eines roten Menütitels: Ressort als Dachzeile, Titel als Überschrift.
+    if (($rs = ma21_rubrik_aktuell()) !== null) return [(string) $rs['ressortTitel'], (string) $rs['titel'], (string) $rs['beschreibung']];
     $o = get_queried_object();
     $TEXTE = [
         'blaulicht' => ['Blaulicht', 'Feuerwehr, Polizei und Rettungsdienst', 'Einsätze der Freiwilligen Feuerwehr Merzenich, Polizeimeldungen für das Gemeindegebiet und Verkehrsmeldungen, sachlich zusammengefasst und mit Originalquelle.'],
@@ -1191,6 +1250,109 @@ function ma21_liste_kopf(): array {
     if ($o instanceof WP_Term) return [$o->name, $o->name, $o->description];
     return ['Nachrichten', 'Alle Meldungen', 'Alle Meldungen aus der Gemeinde Merzenich, die jüngste zuerst.'];
 }
+
+/** Übergeordnete Seite in den Brotkrumen einer Liste (Sammelseite: ihr Ressort), sonst null. */
+function ma21_liste_eltern(): ?array {
+    $rs = ma21_rubrik_aktuell();
+    return $rs ? [(string) $rs['ressortTitel'], home_url((string) $rs['ressort'])] : null;
+}
+
+/* ------------------------------------------------------------ Sammelseiten der roten Menütitel */
+
+/**
+ * Sammelseiten (Wunsch Betreiber 15.10.2026): Ein roter Titel im Aufklappmenü,
+ * für den es keine eigene Seite gibt (Blaulicht › Verkehr, Rathaus › Gemeinde),
+ * zeigt unter /rubrik/<slug>/ alle Meldungen mit einem seiner Themen, auf ein
+ * Ressort beschränkt oder ohne bestimmte Ressorts. Die Definitionen schreibt
+ * deploy/rubrik-prerender.mjs aus deploy/ressort-menue.json nach
+ * inc/rubriken.json. Die Seiten stehen auf noindex: Die Themenseiten bleiben
+ * das, was Suchmaschinen finden sollen.
+ */
+function ma21_rubriken(): array {
+    static $r = null;
+    if ($r !== null) return $r;
+    $datei = __DIR__ . '/rubriken.json';
+    $d = is_readable($datei) ? json_decode((string) file_get_contents($datei), true) : null;
+    return $r = is_array($d['rubriken'] ?? null) ? $d['rubriken'] : [];
+}
+function ma21_rubrik(string $slug): ?array {
+    $r = ma21_rubriken();
+    return isset($r[$slug]) && is_array($r[$slug]) ? $r[$slug] : null;
+}
+/** Die Sammelseite der aktuellen Anfrage oder null. */
+function ma21_rubrik_aktuell(): ?array {
+    $slug = (string) get_query_var('ma_rubrik');
+    return $slug !== '' ? ma21_rubrik($slug) : null;
+}
+/** Abfrage einer Sammelseite: Themen als ODER, Ressort ein- oder ausgeschlossen. */
+function ma21_rubrik_args(array $def): array {
+    $a = ['post_type' => 'post', 'tag_slug__in' => array_values(array_map('strval', (array) ($def['themen'] ?? [])))];
+    if ((string) ($def['kategorie'] ?? '') !== '') $a['category_name'] = (string) $def['kategorie'];
+    $ohne = [];
+    foreach ((array) ($def['ohneKategorie'] ?? []) as $slug) { $c = get_category_by_slug((string) $slug); if ($c) $ohne[] = (int) $c->term_id; }
+    if ($ohne) $a['category__not_in'] = $ohne;
+    return $a;
+}
+/** Hat die Sammelseite veröffentlichte Meldungen? Das Menü blendet leere Titel aus (10 Minuten zwischengespeichert). */
+function ma21_rubrik_hat_beitraege(string $slug): bool {
+    $def = ma21_rubrik($slug);
+    if (!$def) return false;
+    $c = get_transient('ma21_rubrik_zahlen');
+    if (!is_array($c)) $c = [];
+    if (!array_key_exists($slug, $c)) {
+        $c[$slug] = count(get_posts(ma21_rubrik_args($def) + ['post_status' => 'publish', 'posts_per_page' => 1, 'fields' => 'ids', 'ignore_sticky_posts' => true, 'no_found_rows' => true]));
+        set_transient('ma21_rubrik_zahlen', $c, 10 * MINUTE_IN_SECONDS);
+    }
+    return (int) $c[$slug] > 0;
+}
+add_action('transition_post_status', function (string $neu, string $alt, WP_Post $p): void {
+    if ($p->post_type === 'post' && ($neu === 'publish' || $alt === 'publish')) delete_transient('ma21_rubrik_zahlen');
+}, 10, 3);
+add_action('init', function (): void {
+    add_rewrite_rule('^rubrik/([a-z0-9-]+)/?$', 'index.php?ma_rubrik=$matches[1]', 'top');
+    add_rewrite_rule('^rubrik/([a-z0-9-]+)/page/([0-9]+)/?$', 'index.php?ma_rubrik=$matches[1]&paged=$matches[2]', 'top');
+});
+add_filter('query_vars', function (array $v): array { $v[] = 'ma_rubrik'; return $v; });
+add_action('pre_get_posts', function (WP_Query $q): void {
+    if (is_admin() || !$q->is_main_query() || (string) $q->get('ma_rubrik') === '') return;
+    $def = ma21_rubrik((string) $q->get('ma_rubrik'));
+    // Unbekannte Sammelseite: keine Meldungen, pre_handle_404 antwortet mit 404.
+    if (!$def) { $q->set('post__in', [0]); $q->is_home = false; return; }
+    foreach (ma21_rubrik_args($def) as $k => $v) $q->set($k, $v);
+    $q->set('orderby', 'date'); $q->set('order', 'DESC'); $q->set('ignore_sticky_posts', true);
+    $q->is_home = false; $q->is_archive = true; $q->is_404 = false;
+});
+add_filter('pre_handle_404', function ($stop, $q) {
+    if (!$q->is_main_query() || (string) $q->get('ma_rubrik') === '') return $stop;
+    // Bekannte Sammelseite: auch leer eine Seite; nur jenseits der letzten Seite und für unbekannte Namen 404.
+    if (ma21_rubrik((string) $q->get('ma_rubrik')) && !($q->is_paged() && !$q->posts)) return true;
+    $q->set_404(); status_header(404); nocache_headers();
+    return true;
+}, 10, 2);
+add_filter('template_include', fn($t) => ma21_rubrik_aktuell() !== null && !is_404() ? (locate_template('archive.php') ?: $t) : $t);
+add_action('template_redirect', function (): void {
+    if (ma21_rubrik_aktuell() !== null && !headers_sent()) header('X-Robots-Tag: noindex, follow');
+});
+/** Titel, Adresse, Brotkrumen und noindex der Sammelseiten (Plugin seo.php, ab 1.28.0). */
+add_filter('ma_seo_kontext', function (array $k): array {
+    $rs = ma21_rubrik_aktuell();
+    if ($rs === null || is_404()) return $k;
+    $home = home_url('/');
+    $url = home_url('/rubrik/' . (string) get_query_var('ma_rubrik') . '/');
+    return array_merge($k, ['typ' => 'liste', 'titel' => $rs['titel'] . ' · ' . $rs['ressortTitel'], 'beschreibung' => (string) $rs['beschreibung'],
+        'url' => function_exists('ma_seo_liste_url') ? ma_seo_liste_url($url) : $url, 'index' => false,
+        'krumen' => [['Start', $home], [(string) $rs['ressortTitel'], home_url((string) $rs['ressort'])], [(string) $rs['titel'], null]],
+        'liste' => function_exists('ma_seo_liste') ? ma_seo_liste() : []]);
+});
+/* Neue Adressen (/rubrik/) brauchen neu geschriebene Umschreibregeln. Das
+   Ersetzen des Themes per Upload löst after_switch_theme nicht aus; deshalb
+   einmal je Theme-Version neu schreiben (zusätzlich Permalinks speichern). */
+add_action('init', function (): void {
+    $v = (string) wp_get_theme(get_template())->get('Version');
+    if ($v === '' || get_option('ma21_umschreib_stand') === $v) return;
+    flush_rewrite_rules(false);
+    update_option('ma21_umschreib_stand', $v, true);
+}, 99);
 
 /* ------------------------------------------------------------ Adressen der statischen Seite */
 

@@ -3,19 +3,18 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=997bcf21f8';
+  const MENUE_URL = '/assets/ressort-menue.json?v=caf4b46414';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
     '/nachrichten/': 'Aktuelle Meldungen aus Merzenich und den Ortsteilen.',
-    '/blaulicht/': 'Polizei, Feuerwehr, Rettung und Verkehr aus der Gemeinde.',
+    '/blaulicht/': 'Feuerwehr, Polizei und Verkehr aus der Gemeinde.',
     '/sport/': 'Vereine, Mannschaften, Spieltage und Ergebnisse aus der Gemeinde.',
     '/termine/': 'Was in Merzenich und den Ortsteilen ansteht.',
-    '/vereine/': 'Ehrenamt, Gemeinschaft, Feuerwehr, Fanclubs und Vereinsleben.',
     '/rathaus/': 'Verwaltung, Rat, Beteiligung und kommunale Entscheidungen.',
     '/leben/': 'Schule, Freizeit, Umwelt, Familie und Alltag in der Gemeinde.',
     '/wirtschaft/': 'Unternehmen, Infrastruktur und Strukturwandel rund um Merzenich.',
-    '/unternehmen/': 'Betriebe aus der Gemeinde, Unternehmenskanäle und Wirtschaftsmeldungen.',
+    '/unternehmen/': 'Betriebe aus der Gemeinde und ihre Unternehmenskanäle.',
     '/tipp/': 'Freizeitideen, Ausflüge und klar gekennzeichnete Empfehlungen.',
     '/menschen/': 'Porträts, Ehrungen, Jubiläen und Geschichten aus der Gemeinde.'
   };
@@ -38,15 +37,34 @@
       return {};
     });
 
+  // Immer Berliner Zeit: Ohne Zeitzone rechnete der Browser in seiner eigenen
+  // (ein Termin um 18 Uhr stand in einem UTC-Browser als 16:00 da). Termine
+  // ohne Uhrzeit (00:00) zeigen nur das Datum.
+  const ZONE = 'Europe/Berlin';
   function fmtDate(value, isEvent) {
     if (!value) return '';
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return '';
-    return new Intl.DateTimeFormat('de-DE', {
-      day: '2-digit',
-      month: '2-digit',
-      ...(isEvent ? { hour: '2-digit', minute: '2-digit' } : {})
-    }).format(d);
+    const tag = new Intl.DateTimeFormat('de-DE', { timeZone: ZONE, day: '2-digit', month: '2-digit' }).format(d);
+    if (!isEvent) return tag;
+    const zeit = new Intl.DateTimeFormat('de-DE', { timeZone: ZONE, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(d);
+    return zeit === '00:00' ? tag : tag + ', ' + zeit + ' Uhr';
+  }
+
+  // Rote Titel (Wunsch Betreiber 15.10.2026): Jedes Menue zeigt nur noch die
+  // roten Titel, ohne kleine Unterpunkte. Ein Klick zeigt alle Meldungen dazu.
+  // Alte Daten mit "gruppen" (Browser-Cache waehrend eines Updates) zeigen den
+  // Gruppentitel mit dem ersten Link.
+  function punkteVon(def) {
+    if (Array.isArray(def.punkte)) return def.punkte.filter((p) => p && p.titel && p.href);
+    return (def.gruppen || []).map((g) => ({ titel: g.titel, href: ((g.links || [])[0] || [])[1] })).filter((p) => p.titel && p.href);
+  }
+  function punkteHtml(def, label) {
+    const punkte = punkteVon(def);
+    if (!punkte.length) return '';
+    return '<nav class="ressort-dropdown__punkte' + (punkte.length > 4 ? ' zwei-spalten' : '') + '" aria-label="' + esc(label) + '"><ul>' +
+      punkte.map((p) => '<li><a class="ressort-dropdown__punkt" href="' + esc(p.href) + '">' + esc(p.titel) + '</a></li>').join('') +
+    '</ul></nav>';
   }
 
   // Bildnachweis mit Lizenzlink („Foto: Name, CC BY-SA 4.0“). Steht neben dem
@@ -75,33 +93,8 @@
     return credit ? '<div class="ressort-dropdown__story-box">' + karte + credit + '</div>' : karte;
   }
 
-  let werbeDaten = null;
-  const werbePromise = document.documentElement.dataset.werbung === 'aus' ? Promise.resolve(null)
-    : fetch('/assets/werbung.json', { credentials: 'same-origin' }).then((r) => r.ok ? r.json() : null).catch(() => null);
-  werbePromise.then((d) => { werbeDaten = d; });
-  function werbungHtml() {
-    // WordPress (merzenich-aktuell.de) liefert die Anzeigen dieses Platzes aus
-    // der Werbeverwaltung (Platz hero_clubs_expanded_right). Ohne laufende
-    // Anzeige erscheint wie auf allen Werbeplaetzen die gekennzeichnete
-    // Musteranzeige (Vorgabe Betreiber 07.10.2026).
-    const wp = window.maWerbungPlaetze;
-    const liste = wp && typeof wp === 'object' && Array.isArray(wp.hero_clubs_expanded_right) ? wp.hero_clubs_expanded_right : [];
-    if (liste.length) {
-      const a = liste[Math.floor(Date.now() / 14000) % liste.length];
-      return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige" data-ma-anzeige="' + Number(a.id) + '" data-ma-platz="hero_clubs_expanded_right"><span class="werbung-label">Anzeige</span>' +
-        '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + a.html + '</div></aside>';
-    }
-    const motive = werbeDaten && Array.isArray(werbeDaten.motive) ? werbeDaten.motive : [];
-    if (!motive.length) return '';
-    const takt = Math.max(6, Number(werbeDaten.rotationSekunden) || 14) * 1000;
-    const m = motive[Math.floor(Date.now() / takt) % motive.length];
-    return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige"><span class="werbung-label">Anzeige</span>' +
-      '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + (m.gap || m.band) + '</div>' +
-      (m.credit ? '<span class="werbung-credit">' + m.credit + '</span>' : '') + '</aside>';
-  }
-
   // Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): links die
-  // Linkgruppen, daneben die Firmen, rechts zuerst die neuesten Firmenbeitraege;
+  // roten Titel, daneben die Firmen, rechts zuerst die neuesten Firmenbeitraege;
   // beim Ueberfahren einer Firma zeigt der rechte Bereich ihre Beitraege und den
   // Weg in ihren Unternehmenskanal. Musterfirmen sind als solche markiert.
   const RECHTS_ID = 'ressort-firmen-rechts';
@@ -127,11 +120,11 @@
   function firmenAnsicht(f) {
     const karten = (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => firmenKarte(f, b)).join('');
     return '<div class="ressort-firmen__ansicht">' +
-      '<span class="ressort-dropdown__eyebrow">' + esc(f.name) + (f.muster ? ' · Musterprofil' : ' · Unternehmenskanal') + '</span>' +
+      '<span class="ressort-dropdown__eyebrow">' + esc(f.name) + (f.muster ? ' · Beispielfirma' : ' · Unternehmenskanal') + '</span>' +
       '<div class="ressort-firmen__karten">' + karten +
         '<a class="ressort-firmen__kanal" href="' + esc(f.url) + '">' + firmenLogo(f) +
           '<strong>' + esc(f.name) + '</strong><span>' + esc(f.zeile || '') + '</span>' +
-          (f.muster ? '<em>Musterprofil · kein echtes Unternehmen</em>' : '') +
+          (f.muster ? '<em>Beispielfirma · kein echtes Unternehmen</em>' : '') +
           '<span class="ressort-firmen__kanal-cta">Zum Unternehmenskanal</span>' +
         '</a>' +
       '</div>' +
@@ -144,10 +137,7 @@
   function renderFirmen(inner, link, def) {
     const route = link.getAttribute('href');
     const firmen = def.firmen.filter((f) => f && f.name && f.url);
-    const gruppen = (def.gruppen || []).map((g) =>
-      '<section class="ressort-dropdown__group"><h3>' + esc(g.titel) + '</h3><div class="ressort-dropdown__links">' +
-        (g.links || []).map((item) => '<a href="' + esc(item[1]) + '">' + esc(item[0]) + '</a>').join('') +
-      '</div></section>').join('');
+    const punkte = punkteHtml(def, (def.titel || 'Unternehmen') + ': Bereiche');
     inner.classList.add('mit-firmen');
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
@@ -155,14 +145,14 @@
         '<strong>' + esc(def.titel || link.textContent.trim()) + '</strong>' +
         '<p>' + esc(INTROS[route] || '') + '</p>' +
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
-        '<div class="ressort-firmen__gruppen">' + gruppen + '</div>' +
+        (punkte ? '<div class="ressort-firmen__gruppen">' + punkte + '</div>' : '') +
       '</div>' +
       '<nav class="ressort-firmen__liste" aria-label="Unternehmen aus der Gemeinde">' +
         '<span class="ressort-dropdown__eyebrow">Unternehmen aus der Gemeinde</span>' +
         firmen.map((f, i) => '<a class="ressort-firmen__firma" href="' + esc(f.url) + '" data-firma="' + i + '" aria-controls="' + RECHTS_ID + '" aria-expanded="false">' +
           firmenLogo(f) + '<span class="ressort-firmen__name"><strong>' + esc(f.name) + '</strong><small>' + esc(f.zeile || '') + '</small>' +
-          (f.muster ? '<em>Musterprofil</em>' : '') + '</span></a>').join('') +
-        (firmen.some((f) => f.muster) ? '<p class="ressort-firmen__hinweis">Musterprofile zeigen, wie Betriebe hier erscheinen. Es sind keine echten Unternehmen.</p>' : '') +
+          (f.muster ? '<em>Beispielfirma</em>' : '') + '</span></a>').join('') +
+        (firmen.some((f) => f.muster) ? '<p class="ressort-firmen__hinweis">Beispielfirmen zeigen, wie Betriebe hier erscheinen. Es sind keine echten Unternehmen.</p>' : '') +
       '</nav>' +
       '<section class="ressort-firmen__rechts" id="' + RECHTS_ID + '" aria-label="Beiträge der Unternehmen">' + standardRechts(def) + '</section>';
     firmenVerhalten(inner, def, firmen);
@@ -253,22 +243,12 @@
     inner.classList.remove('mit-firmen');
     if (Array.isArray(def.firmen) && def.firmen.length) { renderFirmen(inner, link, def); return; }
     const route = link.getAttribute('href');
-    const groups = (def.gruppen || []).map((g) =>
-      '<section class="ressort-dropdown__group">' +
-        '<h3>' + esc(g.titel) + '</h3>' +
-        '<div class="ressort-dropdown__links">' +
-          (g.links || []).map((item) => '<a href="' + esc(item[1]) + '">' + esc(item[0]) + '</a>').join('') +
-        '</div>' +
-      '</section>'
-    ).join('');
+    const punkte = punkteHtml(def, (def.titel || link.textContent.trim()) + ': Bereiche');
 
     // Nur echte Beitraege; ohne Beitraege bleibt die Spalte weg.
     const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 4).map(story).join('');
     // Weitere Bildmeldungen links unter dem Ressortnamen (Sport).
     const mehr = (def.mehr || []).filter((x) => x && x.url && x.titel && x.bild).map(story).join('');
-    // Anzeige in der freien Flaeche neben den Linkgruppen (Vereine). Motiv im
-    // selben Takt wie alle Werbeflaechen der Seite (assets/werbung.js).
-    const werbung = def.werbung ? werbungHtml() : '';
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
@@ -277,7 +257,7 @@
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
         (mehr ? '<div class="ressort-dropdown__mehr" aria-label="Weitere Meldungen">' + mehr + '</div>' : '') +
       '</div>' +
-      '<div class="ressort-dropdown__groups' + (werbung ? ' mit-werbung' : '') + '">' + groups + werbung + '</div>' +
+      '<div class="ressort-dropdown__groups">' + punkte + '</div>' +
       (newest ? '<aside class="ressort-dropdown__latest" aria-label="Neu im Ressort">' +
         '<span class="ressort-dropdown__eyebrow">Neu im Ressort</span>' +
         newest +
@@ -298,7 +278,6 @@
     row.insertAdjacentElement('afterend', panel);
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
-    await werbePromise;
     let active = null;
     let schwebeAuf = 0, schwebeZu = 0, zeiger = '';
     // Spur der Maus in der Leiste: Wer bei offenem Menue schraeg nach unten
@@ -442,7 +421,8 @@
   }
 
   // Mobil: im Menue-Drawer klappt jedes Ressort als Akkordeon auf (Link bleibt
-  // Link, der Knopf daneben oeffnet die Unterseiten). Immer nur eines offen.
+  // Link, der Knopf daneben oeffnet die Bereiche, wie oben nur die Titel).
+  // Immer nur eines offen.
   function drawerAkkordeon(data) {
     const gruppe = document.querySelector('[data-drawer] .drawer-group');
     if (!gruppe || gruppe.querySelector('.drawer-ressort')) return;
@@ -459,13 +439,12 @@
       knopf.className = 'drawer-ressort__auf';
       knopf.setAttribute('aria-expanded', 'false');
       knopf.setAttribute('aria-controls', id);
-      knopf.innerHTML = '<span class="sr-only">' + esc(def.titel) + ': Unterseiten</span>';
+      knopf.innerHTML = '<span class="sr-only">' + esc(def.titel) + ': Bereiche</span>';
       const liste = document.createElement('div');
       liste.className = 'drawer-ressort__liste';
       liste.id = id;
       liste.hidden = true;
-      liste.innerHTML = (def.gruppen || []).map((g) => '<div class="drawer-ressort__gruppe">' + esc(g.titel) + '</div>' +
-        (g.links || []).map((l) => '<a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a>').join('')).join('') +
+      liste.innerHTML = punkteVon(def).map((p) => '<a href="' + esc(p.href) + '">' + esc(p.titel) + '</a>').join('') +
         drawerFirmen(def, id);
       zeile.append(a, knopf, liste);
       drawerFirmenVerhalten(liste);
@@ -488,14 +467,14 @@
     return '<div class="drawer-ressort__gruppe">Unternehmen aus der Gemeinde</div>' +
       firmen.map((f, i) => {
         const fid = id + '-firma-' + i;
-        return '<div class="drawer-firma"><a href="' + esc(f.url) + '">' + esc(f.name) + '<small>' + esc(f.zeile || '') + (f.muster ? ' · Musterprofil' : '') + '</small></a>' +
+        return '<div class="drawer-firma"><a href="' + esc(f.url) + '">' + esc(f.name) + '<small>' + esc(f.zeile || '') + (f.muster ? ' · Beispielfirma' : '') + '</small></a>' +
           '<button type="button" class="drawer-ressort__auf drawer-firma__auf" aria-expanded="false" aria-controls="' + fid + '"><span class="sr-only">' + esc(f.name) + ': Beiträge</span></button>' +
           '<div class="drawer-firma__liste" id="' + fid + '" hidden>' +
             (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => '<a href="' + esc(b.url) + '">' + esc(b.titel) + (b.muster ? '<small>Musterbeitrag</small>' : b.gesponsert !== false ? '<small>Anzeige</small>' : '') + '</a>').join('') +
             '<a class="drawer-firma__kanal" href="' + esc(f.url) + '">Zum Unternehmenskanal</a>' +
           '</div></div>';
       }).join('') +
-      (firmen.some((f) => f.muster) ? '<p class="drawer-firma__hinweis">Musterprofile sind keine echten Unternehmen.</p>' : '');
+      (firmen.some((f) => f.muster) ? '<p class="drawer-firma__hinweis">Beispielfirmen sind keine echten Unternehmen.</p>' : '');
   }
   function drawerFirmenVerhalten(liste) {
     const knoepfe = [...liste.querySelectorAll('.drawer-firma__auf')];

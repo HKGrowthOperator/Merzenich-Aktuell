@@ -11,7 +11,7 @@
  *   Freigabe durch die Redaktion; deren Seiten liefert single.php.
  * - Musterfirmen aus inc/unternehmen-muster.json, solange weniger als drei echte
  *   Kanäle Beiträge haben. Ausgedacht und überall gekennzeichnet
- *   (Musterprofil, Musterbeitrag, Testanzeige); ihre Seiten sind für
+ *   (Beispielfirma, Musterbeitrag, Testanzeige); ihre Seiten sind für
  *   Suchmaschinen gesperrt und stehen in keiner Sitemap und keinem Feed.
  *
  * Oben in der Datei nur add_action/add_filter: qa/wordpress/*-test.php laden sie
@@ -139,7 +139,7 @@ function ma21_alle_firmen(int $max = 8): array {
     return array_slice(array_values(array_filter($f)), 0, $max);
 }
 
-/** Kürzel aus dem Namen („Muster-Café am Markt“ → „CM“). */
+/** Kürzel aus dem Namen („Café Feldlerche“ → „CF“, ein altes „Muster-“ zählt nicht). */
 function ma21_firma_kuerzel(string $name): string {
     $w = array_values(array_filter(preg_split('/[\s\-]+/u', (string) preg_replace('/^Muster-/u', '', $name)) ?: [], fn($x) => preg_match('/^\p{Lu}/u', $x)));
     $k = mb_substr($w[0] ?? $name, 0, 1) . (isset($w[1]) ? mb_substr($w[1], 0, 1) : '');
@@ -275,8 +275,8 @@ function ma21_firmen_seo(array $k): array {
     $krumen = [['Start', $home], ['Unternehmen', $home . 'unternehmen/']];
     $bild = $f['bild'] ?? null;
     if ($r['art'] === 'kanal') {
-        $k = array_merge($k, ['typ' => 'liste', 'titel' => $f['name'] . ($f['muster'] ? ' (Musterprofil)' : '') . ' · Unternehmenskanal', 'url' => $f['url'], 'index' => !$f['muster'], 'og' => 'website',
-            'beschreibung' => function_exists('ma_seo_kuerzen') ? ma_seo_kuerzen(($f['muster'] ? 'Musterprofil, kein echtes Unternehmen. ' : '') . $f['text'] . ' Beiträge von ' . $f['name'] . ' aus ' . $f['ort'] . ' auf Merzenich Aktuell.') : $f['text'],
+        $k = array_merge($k, ['typ' => 'liste', 'titel' => $f['name'] . ($f['muster'] ? ' (Beispielfirma)' : '') . ' · Unternehmenskanal', 'url' => $f['url'], 'index' => !$f['muster'], 'og' => 'website',
+            'beschreibung' => function_exists('ma_seo_kuerzen') ? ma_seo_kuerzen(($f['muster'] ? 'Beispielfirma, kein echtes Unternehmen. ' : '') . $f['text'] . ' Beiträge von ' . $f['name'] . ' aus ' . $f['ort'] . ' auf Merzenich Aktuell.') : $f['text'],
             'krumen' => array_merge($krumen, [[$f['name'], null]]), 'liste' => array_map(fn($b) => [$b['url'], $b['titel']], array_slice($f['beitraege'], 0, 20))]);
     } else {
         $b = $f['beitraege'][$r['nr']]; $bild = $b['bild'] ?: $bild;
@@ -355,13 +355,13 @@ function ma21_firmen_kacheln_html(array $firmen, string $ueberschrift = 'Unterne
     $firmen = array_values(array_filter($firmen, fn($f) => $f && $f['slug'] !== $ohne));
     if (!$firmen) return '';
     $h = '<section class="u-kanaele" aria-label="' . esc_attr($ueberschrift) . '"><p class="eyebrow">' . esc_html($ueberschrift) . '</p>';
-    if (array_filter($firmen, fn($f) => $f['muster'])) $h .= '<p class="u-muster__hinweis">Musterprofile zeigen, wie Unternehmen hier erscheinen. Es sind keine echten Betriebe.</p>';
+    if (array_filter($firmen, fn($f) => $f['muster'])) $h .= '<p class="u-muster__hinweis">Beispielfirmen zeigen, wie Unternehmen hier erscheinen. Es sind keine echten Betriebe.</p>';
     $h .= '<ul class="u-kanaele__liste">';
     foreach ($firmen as $f) {
         $n = count($f['beitraege']);
         $h .= '<li><a class="u-kanal" href="' . esc_url($f['url']) . '">' . ma21_firma_logo_html($f, 'u-kanal__logo')
             . '<span class="u-kanal__text"><strong>' . esc_html($f['name']) . '</strong><small>' . esc_html($f['zeile']) . '</small>'
-            . '<small class="u-kanal__zahl">' . ($f['muster'] ? '<em>Musterprofil</em> · ' : '') . $n . ($n === 1 ? ' Beitrag' : ' Beiträge') . '</small></span></a></li>';
+            . '<small class="u-kanal__zahl">' . ($f['muster'] ? '<em>Beispielfirma</em> · ' : '') . $n . ($n === 1 ? ' Beitrag' : ' Beiträge') . '</small></span></a></li>';
     }
     return $h . '</ul></section>';
 }

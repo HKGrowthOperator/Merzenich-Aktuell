@@ -29,7 +29,7 @@
   .ressort-dropdown__head p{
     margin:10px 0 16px;max-width:30ch;font-size:13px;line-height:1.45;color:var(--ink-soft)
   }
-  .ressort-dropdown__eyebrow,.ressort-dropdown__groups h3{
+  .ressort-dropdown__eyebrow{
     display:block;margin:0 0 9px;font-size:10px;line-height:1.2;font-weight:800;
     letter-spacing:.12em;text-transform:uppercase;color:var(--red)
   }
@@ -38,15 +38,19 @@
     border-bottom:1px solid var(--red);padding-bottom:2px
   }
 
-  .ressort-dropdown__groups{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 26px
+  /* Rote Titel (Wunsch Betreiber 15.10.2026): nur noch die roten Titel, ohne
+     kleine Unterpunkte; jeder Titel ist ein Link auf alle Meldungen dazu. */
+  .ressort-dropdown__groups{min-width:0}
+  .ressort-dropdown__punkte ul{display:grid;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .ressort-dropdown__punkte.zwei-spalten ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px}
+  .ressort-dropdown__punkt{
+    display:flex;align-items:center;min-height:42px;padding:8px 0;border-bottom:1px solid rgba(18,22,25,.09);
+    font-size:13px;line-height:1.2;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--red);text-decoration:none
   }
-  .ressort-dropdown__group{min-width:0}
-  .ressort-dropdown__links{display:grid;grid-template-columns:1fr}
-  .ressort-dropdown__links a{
-    display:block;padding:7px 0;border-bottom:1px solid rgba(18,22,25,.08);
-    font-size:13px;font-weight:700;line-height:1.25;color:var(--ink);text-decoration:none
-  }
+  .ressort-dropdown__punkt::after{content:"";width:6px;height:6px;margin-left:auto;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);opacity:.55}
+  .ressort-dropdown__punkt:hover,.ressort-dropdown__punkt:focus-visible{color:var(--ink);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
+  .ressort-dropdown__punkt:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 
   .ressort-dropdown__latest{min-width:0}
   .ressort-dropdown__story{
@@ -76,14 +80,13 @@
   }
   .ressort-dropdown__story:hover img,.ressort-dropdown__story:focus-visible img{transform:scale(1.025)}
   .ressort-dropdown__story:hover strong,.ressort-dropdown__story:focus-visible strong,
-  .ressort-dropdown__links a:hover,.ressort-dropdown__links a:focus-visible,
   .ressort-dropdown__all:hover,.ressort-dropdown__all:focus-visible{color:var(--red)}
 }
 @media (max-width:1120px) and (min-width:768px){
   .ressort-dropdown__inner{
     grid-template-columns:170px minmax(300px,1fr) minmax(280px,.9fr);gap:22px
   }
-  .ressort-dropdown__groups{grid-template-columns:1fr 1fr;gap:16px 20px}
+  .ressort-dropdown__punkte.zwei-spalten ul{column-gap:20px}
   .ressort-dropdown__story{grid-template-columns:105px minmax(0,1fr);gap:10px}
   .ressort-dropdown__story-copy strong{font-size:15px}
 }
@@ -96,7 +99,8 @@
 @media (max-width:767px){.ressort-dropdown{display:none!important}}
 
 /* Drawer (mobil, dunkler Grund, Raster aus v20.css): jedes Ressort als volle
-   Zeile, Link links, Aufklapper rechts, Unterseiten eingerueckt darunter. */
+   Zeile, Link links, Aufklapper rechts, die Bereiche eingerueckt darunter. Rot
+   auf dunklem Grund ist zu kontrastarm, die Bereiche stehen deshalb hell. */
 .drawer-group .drawer-ressort{grid-column:1/-1;display:grid;grid-template-columns:1fr 48px;align-items:center;border-bottom:1px solid #2b2e31}
 .drawer-ressort>a{min-width:0}
 .drawer-ressort__auf{width:48px;height:44px;border:0;background:none;cursor:pointer;position:relative;color:#fff}
@@ -120,28 +124,20 @@
 }
 
 /* Wunsch Betreiber 30.09.2026: Sport zeigt links unter dem Ressortnamen zwei
-   weitere Bildmeldungen; Vereine fuellt die freie Flaeche rechts neben den
-   Linkgruppen mit einer Anzeige (Format wie die Spalten-Anzeigen). */
+   weitere Bildmeldungen. */
 @media (min-width:768px){
   .ressort-dropdown__mehr{display:grid;gap:14px;margin-top:22px;padding-top:16px;border-top:1px solid rgba(18,22,25,.1)}
   .ressort-dropdown__mehr .ressort-dropdown__story{grid-template-columns:1fr;gap:7px;padding:0;margin:0;border-bottom:0}
   .ressort-dropdown__mehr .ressort-dropdown__story-copy strong{font-size:14.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
-  .ressort-dropdown__werbung{grid-column:2;min-width:0;margin:0;padding:0;border:0;background:none}
-  .ressort-dropdown__werbung .werbung-label{display:block;margin:0 0 6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6d6860}
-  .ressort-dropdown__werbung .ma-ad-card{display:block;color:var(--ink);text-decoration:none}
-  .ressort-dropdown__werbung .werbung-credit{display:block;margin-top:6px;font-size:10px;color:#6d6860}
-  .ressort-dropdown__werbung .werbung-credit a{color:inherit}
 }
 
 /* Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): links Ressort
-   und Linkgruppen untereinander, daneben die Firmen, rechts ihre Beitraege. Keine
-   Werbespalte mehr, deshalb keine Luecke unter „Für Unternehmen“. */
+   und rote Titel untereinander, daneben die Firmen, rechts ihre Beitraege. */
 @media (min-width:768px){
   .ressort-dropdown__inner.mit-firmen{grid-template-columns:minmax(180px,200px) minmax(220px,250px) minmax(0,1fr);gap:28px}
   .mit-firmen .ressort-dropdown__head p{margin-bottom:12px}
-  .ressort-firmen__gruppen{display:grid;gap:14px;margin-top:18px}
-  .ressort-firmen__gruppen .ressort-dropdown__group h3{display:block;margin:0 0 4px;font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-  .ressort-firmen__gruppen .ressort-dropdown__links a{padding:5px 0;font-size:12.5px}
+  .ressort-firmen__gruppen{margin-top:18px}
+  .ressort-firmen__gruppen .ressort-dropdown__punkt{min-height:40px;font-size:12px}
 
   .ressort-firmen__liste{min-width:0;display:flex;flex-direction:column;align-self:stretch;margin:-6px 0;padding:6px 0;border-right:1px solid rgba(18,22,25,.1);padding-right:18px}
   .ressort-firmen__firma{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;align-items:center;padding:8px 10px;margin:0 -10px;color:var(--ink);text-decoration:none;border-radius:3px;transition:background-color .12s ease}
@@ -183,14 +179,11 @@
   .mit-firmen .ressort-dropdown__story{grid-template-columns:1fr;gap:8px;padding:0;margin:0;border-bottom:0}
   .mit-firmen .ressort-dropdown__story-copy strong{font-size:15.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 }
-/* Breite Ansicht: Die linke Spalte reicht bis zur Unterkante der Karten. Die
-   Linkgruppen verteilen sich über die Höhe, „Für Unternehmen“ schließt unten als
-   Kasten ab; so bleibt dort, wo früher die Anzeige stand, keine leere Fläche. */
+/* Breite Ansicht: Die linke Spalte reicht bis zur Unterkante der Karten; die
+   roten Titel stehen unten, so bleibt keine leere Fläche unter dem Text. */
 @media (min-width:1121px){
   .mit-firmen .ressort-dropdown__head{display:flex;flex-direction:column;align-self:stretch}
-  .mit-firmen .ressort-firmen__gruppen{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
-  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__group:last-child{padding:12px 14px 6px;background:#f3f0ea;border-radius:3px}
-  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__group:last-child .ressort-dropdown__links a:last-child{border-bottom:0}
+  .mit-firmen .ressort-firmen__gruppen{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
   .ressort-firmen__bild,.mit-firmen .ressort-dropdown__story-image{aspect-ratio:2/1}
 }
 @keyframes ressortFirmaAuf{from{opacity:.25;transform:translateX(6px)}to{opacity:1;transform:none}}
@@ -198,10 +191,10 @@
   .mit-firmen .ressort-dropdown__head{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:0 0 12px;border-right:0;border-bottom:1px solid rgba(18,22,25,.1)}
   .mit-firmen .ressort-dropdown__head strong{font-size:24px}
   .mit-firmen .ressort-dropdown__head>.ressort-dropdown__eyebrow,.mit-firmen .ressort-dropdown__head p{display:none}
-  .mit-firmen .ressort-firmen__gruppen{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0;flex-basis:100%}
-  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__group{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px}
-  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__links{display:flex;flex-wrap:wrap;gap:0 14px}
-  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__links a{border-bottom:0}
+  .mit-firmen .ressort-firmen__gruppen{margin:0;flex-basis:100%}
+  .mit-firmen .ressort-firmen__gruppen ul{display:flex;flex-wrap:wrap;gap:0 22px}
+  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__punkt{border-bottom:0;min-height:36px}
+  .mit-firmen .ressort-firmen__gruppen .ressort-dropdown__punkt::after{content:none}
   .ressort-dropdown__inner.mit-firmen{grid-template-columns:220px minmax(0,1fr);gap:18px 22px}
   .ressort-firmen__karten,.mit-firmen .ressort-dropdown__latest{gap:14px 16px}
 }

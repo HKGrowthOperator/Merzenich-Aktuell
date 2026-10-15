@@ -71,6 +71,13 @@ const EINWILLIGUNG = `<script src="/assets/einwilligung.js?${V}" defer></script>
 // Verweise im Kopf statt nachgeladen - so springt beim Laden nichts.
 const WERBUNG_CSS = `<link rel="stylesheet" href="/assets/werbung.css?${V}">`;
 const WERBUNG_JS = `<script src="/assets/werbung.js?${V}" defer></script>`;
+// Endlos-Scrollen (Wunsch Betreiber 15.10.2026): Listen laden beim Scrollen
+// weiter, statt in Seiten 1, 2 zu blaettern (assets/endlos.js).
+const ENDLOS_JS = `<script src="/assets/endlos.js?${V}" defer></script>`;
+// Startseite: nach den Bloecken „Weitere Meldungen“ aus /nachrichten/ (endlos.js
+// laedt nach, was oben noch nicht steht). Ohne JavaScript bleibt der Link.
+const ENDLOS_START = '<!-- endlos:start --><section class="desk shell weitere-meldungen" aria-labelledby="weitere-titel"><div class="desk-heading"><div><h2 id="weitere-titel">Weitere Meldungen</h2></div><a class="desk-more" href="/nachrichten/">Alle Meldungen</a></div><div class="feed weitere-meldungen__liste" data-endlos-quelle="/nachrichten/"><p class="weitere-meldungen__ohne-js"><a href="/nachrichten/">Alle Meldungen der Reihe nach lesen</a></p></div></section><!-- endlos:end -->';
+const ENDLOS_START_RE = /<!-- endlos:start -->[\s\S]*?<!-- endlos:end -->/;
 // KBS/Ordin 26.09.2026: "Anzeige aufgeben" muss leicht zu finden sein - oben in
 // der Schublade, im Mega-Menue und im Fuss. Den roten Knopf "+ Anzeige aufgeben"
 // im Kopf wollte der Betreiber am 29.09. nicht mehr; er wird entfernt.
@@ -123,10 +130,13 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
 // Vier Spalten wie die Schublade auf dem Telefon, darunter die drei Wege, etwas
 // an die Redaktion zu geben. Unter 768 px bleibt es bei der Schublade.
 const MEGA_SPALTEN = [
-  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
+  // Vereine steht seit 15.10.2026 nicht mehr im Menue (Wunsch Betreiber; Seite und Fusslink bleiben).
+  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
   ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
   ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
-  ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen']]],
+  ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen'],
+    // Endlos-Scrollen schiebt den Fuss nach hinten: Impressum und Datenschutz bleiben ueber „Mehr“ erreichbar.
+    ['/impressum/', 'Impressum'], ['/datenschutz/', 'Datenschutz']]],
 ];
 const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-senden/', 'Meldung senden'], ['/termine/melden/', 'Termin melden']];
 const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="mega-panel"><div class="mega-spalten">'
@@ -141,6 +151,10 @@ const MONO_V = (() => { const h = assetHash('/assets/marke/monogramm.svg'); retu
 const MONOGRAMM_LINK = `<a class="compact-brand" href="/" aria-label="Merzenich Aktuell – Startseite"><img class="ma-monogramm" src="/assets/marke/monogramm.svg${MONO_V}" width="35" height="35" alt=""></a>`;
 const MONOGRAMM_RE = /<a class="compact-brand" href="\/"(?: aria-label="[^"]*")?>\s*<img\b[^>]*>\s*<\/a>/;
 const MEHR_RE = /<details class="nav-more[^"]*">[\s\S]*?<\/details>/;
+// Home-Knopf links neben „Aktuell“ (Wunsch Betreiber 15.10.2026): fuehrt zur
+// Startseite wie das Logo. Steht vor der Leiste, nicht in ihr: Die Leiste
+// bricht zu breite Punkte in eine verborgene zweite Zeile um.
+const NAV_HOME = '<a class="nav-home" href="/"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M3 11.2 12 4l9 7.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.8v9.7h4.8v-5.7h3.4v5.7h4.8V9.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="sr-only">Startseite</span></a>';
 const SPORT_RE = /<div class="sport-mega">[\s\S]*?<!--\/sport-mega-->/;
 const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
 for (const pfad of seiten) {
@@ -191,6 +205,10 @@ for (const pfad of seiten) {
     html = html.replace(/(<div class="drawer-group"><div class="grp">Ressorts<\/div>)/, (m) => SOCIAL_HTML + m);
   }
   if (!html.includes('/assets/werbung.js')) html = html.replace(/<script src="\/assets\/einwilligung\.js[^"]*" defer><\/script>/, (m) => m + WERBUNG_JS);
+  if (!html.includes('/assets/endlos.js')) html = html.replace(/<script src="\/assets\/werbung\.js[^"]*" defer><\/script>/, (m) => m + ENDLOS_JS);
+  if (html.includes('<!-- fotodestages:end -->')) {
+    html = ENDLOS_START_RE.test(html) ? html.replace(ENDLOS_START_RE, () => ENDLOS_START) : html.replace('<!-- fotodestages:end -->', (m) => m + ENDLOS_START);
+  }
   // KBS/Ordin 23.09.2026: eigener Tipp-Kanal nach Wirtschaft.
   // Seit 30.09.2026 steht „Unternehmen“ dazwischen (deploy/unternehmen.mjs).
   // Nur Ressortnavigationen bearbeiten: Die fruehere globale Ersetzung hat
@@ -199,9 +217,14 @@ for (const pfad of seiten) {
     /(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/(?:tipp|unternehmen)\/")/g,
     '$1<a href="/tipp/">Tipp</a>'
   );
+  // Vereine raus aus Leiste und Schublade (Wunsch Betreiber 15.10.2026), Sport bleibt.
+  const ohneVereine = (block) => block.replace(/<a href="\/vereine\/"(?: aria-current="page")?>Vereine<\/a>/g, '');
   html = html
-    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, tippNachWirtschaft)
-    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, tippNachWirtschaft);
+    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, (b) => ohneVereine(tippNachWirtschaft(b)))
+    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, (b) => ohneVereine(tippNachWirtschaft(b)));
+  if (html.includes('<div class="navscroll">') && !html.includes('class="nav-home"')) html = html.replace('<div class="navscroll">', NAV_HOME + '<div class="navscroll">');
+  // Startseite: markiert ist der Home-Knopf, nicht „Aktuell“ (wie ma21_kopf_aktuell in WordPress).
+  if (pfad === join(wurzel, 'chatgpt-site', 'index.html')) html = html.replace('<a class="nav-home" href="/">', '<a class="nav-home" href="/" aria-current="page">').replace(/<a href="\/nachrichten\/" aria-current="page">Aktuell<\/a>/g, '<a href="/nachrichten/">Aktuell</a>');
   // Altbestand aus der frueheren globalen Regel bereinigen.
   html = html.replace(
     /(<nav class="crumbs"[^>]*>[\s\S]*?<a href="\/wirtschaft\/">Wirtschaft<\/a>)(?:<a href="\/(?:unternehmen|tipp)\/">(?:Unternehmen|Tipp)<\/a>)+(?=<span class="sep">)/g,

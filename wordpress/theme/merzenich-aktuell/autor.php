@@ -21,7 +21,7 @@ $posts = array_values(array_filter((array) $wp_query->posts, fn($p) => $p instan
 
 <section class="section"><div class="shell">
   <div class="content-grid">
-    <div class="feed">
+    <div class="feed"<?php echo ma21_endlos_attr('liste'); ?>>
 <?php
 if ($posts) echo ma21_feed_html('liste', $posts, !is_paged());
 else echo '<p class="leer-hinweis">Noch keine veröffentlichten Meldungen.</p>';

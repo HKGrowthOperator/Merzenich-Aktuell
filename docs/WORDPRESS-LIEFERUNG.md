@@ -1,6 +1,26 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-13. Oktober 2026 · Theme 21.18.0 · Core-Plugin 1.28.0 (Historie unten)
+15. Oktober 2026 · Theme 21.19.0 · Core-Plugin 1.28.0 (Historie unten)
+
+## Neu am 15.10.2026: Theme 21.19.0, Menü nur mit roten Titeln, Home-Knopf, Endlos-Scrollen, 3 Beispielfirmen
+
+Wünsche des Betreibers vom 15.10.2026 nach Durchsicht des Live-Menüs. Alles steckt im Theme; das Plugin bleibt 1.28.0. Theme 21.19.0 enthält 21.18.0 (Abschnitt unten). Hochladen wie dort beschrieben: erst Plugin 1.28.0, dann Theme 21.19.0, beide aus `node deploy/wp-pakete.mjs`. Danach einmal Einstellungen → Permalinks speichern (die neuen Adressen `/rubrik/<slug>/` schreibt das Theme beim ersten Aufruf zwar selbst ein, sicher ist der Klick trotzdem).
+
+**Stand live:** noch nicht eingespielt. Live laufen weiter Theme 21.17.1 und Plugin 1.27.4.
+
+- **Menü: nur rote Titel.** Jedes Aufklappmenü zeigt nur noch die roten Titel, die kleinen Unterpunkte (Diebstahl, Einbruch, Brände …) sind weg. Ein Klick auf einen Titel zeigt alle Meldungen dazu. Gibt es eine passende Seite, führt der Titel dorthin (Polizei → `/thema/polizei/`, das alle Polizeimeldungen trägt), sonst auf eine neue Sammelseite `/rubrik/<slug>/` mit allen Meldungen der bisherigen Unterpunkte. Titel ohne Meldung blendet WordPress aus.
+  - Blaulicht: Feuerwehr, Polizei, Verkehr. Sport: Vereine, Fußball, Weitere (die Tabelle ist raus). Termine: Alle Termine und die 5 Ortsteile (`/termine/?ort=golzheim` zeigt nur Golzheim und gemeindeweite Termine). Rathaus & Politik: Gemeinde, Geld & Planung, Beteiligung. Leben, Wirtschaft, Menschen und Tipp entsprechend.
+  - Sammelseiten (12): Verkehr, Sportvereine, Weitere Sportarten, Gemeinde, Geld & Planung, Beteiligung, Familie & Schule, Natur & Umwelt, Freizeit & Mobilität, Strukturwandel, Infrastruktur, Aus der Gemeinde. Sie stehen auf `noindex,follow`, damit keine Doppelinhalte entstehen; Suchmaschinen finden weiter die Themenseiten. Brotkrumen Start › Ressort › Titel, im Kopf ist ihr Ressort markiert.
+  - Daten: `deploy/ressort-menue.json` (`punkte`), daraus `deploy/rubrik-prerender.mjs` und `inc/rubriken.json` (Route und Abfrage in `inc/ma21.php`).
+  - Termine im Menü zeigen die Uhrzeit fest in deutscher Ortszeit. In Browsern mit anderer Zeitzone stand vorher z. B. 16:00 statt 18:00.
+- **Leiste:** „Vereine“ ist raus aus Leiste, Handy-Menü und „Mehr“ (Seite `/vereine/` und Fußlink bleiben), Sport bleibt. Neu links neben „Aktuell“ ein Home-Knopf (Haus-Symbol), der wie das Logo zur Startseite führt; auf der Startseite ist er markiert. Impressum und Datenschutz stehen zusätzlich in „Mehr“, weil der Fuß durch das Endlos-Scrollen weiter nach hinten rückt.
+- **Endlos-Scrollen statt Seite 1, 2:** Ressorts, Aktuell, Ortsteile, Themen, Sammelseiten, Suche und Autorenseiten laden kurz vor dem Listenende die nächsten Meldungen nach, ohne Obergrenze, bis alle da sind („Alle Meldungen geladen“ mit Link ins Archiv). Auf der Startseite folgen nach den Blöcken „Weitere Meldungen“; was oben schon steht, kommt nicht noch einmal. Termine, Märkte und Unternehmen bleiben wie sie sind.
+  - Technik: `assets/endlos.js`; dieselbe Listenadresse mit `?ma_endlos=1` liefert nur die Meldungen der Seite (`noindex`). `/…/page/N/` bleibt für Suchmaschinen und Leser ohne JavaScript, mit `rel="next"`/`"prev"`.
+  - Keine Meldung doppelt, Anzeigen im Kartenraster immer am Zeilenanfang, nachgeladene Anzeigen wechseln mit. Die Zurück-Taste führt an dieselbe Stelle (nachgeladene Meldungen werden 30 Minuten in der Sitzung gemerkt). Knopf „Weitere Meldungen laden“ als Rückfall, Ansage für Bildschirmleser. Im Bearbeitungsmodus der Redaktion ist das Nachladen aus.
+- **Unternehmen: 3 Beispielfirmen** statt fünf Musterfirmen, mit Namen wie echte Betriebe: Backhaus Morgenrot (Bäckerei, Golzheim), Café Feldlerche (Café, Merzenich), Holzwerkstatt Jahresring (Handwerk, Girbelsrath), je drei Beiträge mit Bild. Maus auf eine Firma zeigt sofort ihre drei Beiträge. Damit niemand sie für echt hält: Kennzeichen „Beispielfirma“ neben jedem Namen, „Musterbeitrag“ an jedem Beitrag, Hinweis „Es sind keine echten Unternehmen“, keine Öffnungszeiten, Adressen oder Telefonnummern, `noindex`. Die Namen wurden vorher in Branchenverzeichnissen und im Web gesucht (Feld `pruefung` in `inc/unternehmen-muster.json`). Ab drei echten Firmenkanälen verschwinden sie wie bisher.
+- **Kleinigkeiten:** Zeilen ohne Bild stehen in WordPress über die volle Breite (vorher Text in der schmalen Bildspalte), Karten ohne Bild auf dem Handy ebenso. Verwaiste statische Seiten `/merzenich/seite/2/` und `/3/` sind aufgeräumt.
+- **Tests:** neu `qa/wordpress/endlos-test.php`; erweitert `ressort-test.php`, `kopf-test.php`, `unternehmen-test.php`, `qa/pruefung.mjs` (rote Titel, Home-Knopf, keine Vereine in der Leiste, `endlos.js` auf jeder Seite, Sammelseiten `noindex`) und `qa/routen.mjs` (Seitentyp `rubrik`). In `qa.yml` Browserprüfung: Blaulicht-Menü genau Feuerwehr, Polizei, Verkehr in Rot und jedes Ziel mit Meldungen, Termine-Menü und Ortsfilter, Uhrzeit bei Browser-Zeitzone UTC, Home-Knopf auf 1440 und 390 px, Endlos-Scrollen auf `/nachrichten/` und der Startseite samt Zurück-Taste, genau 3 Firmen und 3 Beiträge mit geladenem Bild.
+
 
 ## Neu am 13.10.2026: Theme 21.18.0 / Plugin 1.28.0, Unternehmen mit Firmenkanälen (Vorbild Oberberg Aktuell)
 

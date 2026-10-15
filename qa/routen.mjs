@@ -84,6 +84,7 @@ for (const { route, datei } of routen) {
     : /\/danke\/$/.test(route) ? 'danke'
     : /^\/termine\/[^/]+\/$/.test(route) && route !== '/termine/melden/' ? 'termin'
     : /^\/thema\/[^/]+\//.test(route) ? 'thema'
+    : /^\/rubrik\/[^/]+\/$/.test(route) ? 'rubrik'
     : /\/seite\/\d+\/$/.test(route) ? 'pagination'
     : /<meta property="og:type" content="article"/.test(html) && /"@type":"(?:News)?Article"/.test(html) ? 'artikel'
     : /^\/vereine\/[^/]+\/$/.test(route) ? 'verein'
@@ -121,6 +122,8 @@ for (const { route, datei } of routen) {
   if (platzhalter.length) f(`Platzhalter im Inhalt: ${platzhalter.join(', ')}`);
   if (ld.includes('UNGUELTIG')) f('JSON-LD nicht lesbar');
   if (typ === 'system' || typ === 'danke') { if (!noindex) f('System-/Danke-Seite ohne noindex'); }
+  // Sammelseiten der roten Menütitel (15.10.2026): nur für Leser, Suchmaschinen finden die Themenseiten.
+  if (typ === 'rubrik' && !noindex) f('Sammelseite /rubrik/ ohne noindex');
   if (!noindex) {
     if (!title) f('Title fehlt');
     if (!desc) f('Description fehlt');

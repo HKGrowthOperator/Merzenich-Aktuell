@@ -80,11 +80,14 @@
   });
 
   /* A broken source image collapses; it never becomes a fabricated picture. */
-  $$('img[data-editorial-image]').forEach(function(img) {
-    function collapse(){var box=img.closest('.media');if(box)box.hidden=true;var row=img.closest('.feed-row');if(row)row.classList.add('no-image');}
-    img.addEventListener('error',collapse);
-    if(img.complete && !img.naturalWidth)collapse();
-  });
+  function bilderPruefen(root) {
+    $$('img[data-editorial-image]', root).forEach(function(img) {
+      function collapse(){var box=img.closest('.media');if(box)box.hidden=true;var row=img.closest('.feed-row');if(row)row.classList.add('no-image');}
+      img.addEventListener('error',collapse);
+      if(img.complete && !img.naturalWidth)collapse();
+    });
+  }
+  bilderPruefen(document);
 
   /* ---------- Sticky-Navigation: aktuelle Rubrik in Sicht scrollen ---------- */
   var cur = null; // Preserve anchor and back-navigation scroll positions.
@@ -238,11 +241,18 @@
   }
 
   /* ---------- Relative Zeitangaben für frische Meldungen ---------- */
-  $$('time[datetime]').forEach(function (t) {
-    var d = new Date(t.getAttribute('datetime')), diff = (Date.now() - d) / 60000;
-    if (isNaN(diff) || diff < 0 || diff > 1440 || !t.closest('.meta, .ticker')) return;
-    t.setAttribute('title', t.textContent);
-    t.textContent = diff < 60 ? 'vor ' + Math.max(1, Math.round(diff)) + ' Min.' : 'vor ' + Math.round(diff / 60) + ' Std.';
+  function zeitenRelativ(root) {
+    $$('time[datetime]', root).forEach(function (t) {
+      var d = new Date(t.getAttribute('datetime')), diff = (Date.now() - d) / 60000;
+      if (isNaN(diff) || diff < 0 || diff > 1440 || !t.closest('.meta, .ticker')) return;
+      t.setAttribute('title', t.textContent);
+      t.textContent = diff < 60 ? 'vor ' + Math.max(1, Math.round(diff)) + ' Min.' : 'vor ' + Math.round(diff / 60) + ' Std.';
+    });
+  }
+  zeitenRelativ(document);
+  /* Endlos-Scrollen (endlos.js): nachgeladene Meldungen genauso behandeln. */
+  document.addEventListener('ma:nachgeladen', function (e) {
+    (e.detail && e.detail.knoten || []).forEach(function (k) { if (k.querySelectorAll) { bilderPruefen(k); zeitenRelativ(k); } });
   });
 
   /* ---------- Service Worker (Offline-Fallback) ---------- */

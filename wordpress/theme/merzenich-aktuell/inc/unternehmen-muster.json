@@ -1,16 +1,24 @@
 {
-  "_hinweis": "Musterfirmen für Unternehmen-Menü, /unternehmen/, Unternehmenskanäle und Musterbeiträge (Auftrag Betreiber 13.10.2026). Ausgedacht, überall als Musterprofil, Musterbeitrag oder Testanzeige gekennzeichnet, nicht in Suchmaschinen, Feeds und Sitemaps. Keine echten Betriebe, keine Preise, keine überprüfbaren Tatsachen. Fotos frei lizenziert, Nachweis wie in chatgpt-site/assets/werben/credits.json (deploy/werben-bilder.json). Sie verschwinden, sobald drei echte Unternehmenskanäle Beiträge haben (inc/unternehmen.php).",
+  "_hinweis": "Beispielfirmen für Unternehmen-Menü, /unternehmen/, Unternehmenskanäle und Musterbeiträge (Auftrag Betreiber 13.10.2026; seit 15.10.2026 drei Firmen mit echt wirkenden, aber ausgedachten Namen). Überall als „Beispielfirma“, „Musterbeitrag“ oder „Testanzeige“ gekennzeichnet, nicht in Suchmaschinen, Feeds und Sitemaps. Keine echten Betriebe, keine Adressen, Öffnungszeiten, Telefonnummern oder Preise, keine überprüfbaren Tatsachen. Jeder Name ist geprüft (Feld „pruefung“): Es gibt keinen Betrieb dieses Namens in der Gemeinde Merzenich oder im Kreis Düren. Taucht später einer auf, wird die Beispielfirma umbenannt. Fotos frei lizenziert, Nachweis wie in chatgpt-site/assets/werben/credits.json (deploy/werben-bilder.json). Die Beispielfirmen verschwinden, sobald drei echte Unternehmenskanäle Beiträge haben (inc/unternehmen.php).",
   "firmen": [
     {
-      "slug": "muster-backstube",
-      "name": "Muster-Backstube",
+      "slug": "backhaus-morgenrot",
+      "name": "Backhaus Morgenrot",
       "branche": "Bäckerei",
-      "ort": "merzenich",
-      "kuerzel": "BS",
+      "ort": "golzheim",
+      "kuerzel": "BM",
       "farbe": "#7a3b2e",
       "text": "Frische Brötchen ab 6 Uhr, Kuchen nach Hausrezept und sonntags Frühstück zum Mitnehmen.",
-      "info": "Mo bis Sa 6 bis 18 Uhr, So 7 bis 11 Uhr",
       "bild": "format-startseitenband",
+      "pruefung": {
+        "datum": "2026-10-15",
+        "quellen": [
+          "Websuche nach dem genauen Namen mit Merzenich, Golzheim, Girbelsrath, Düren und Niederzier",
+          "Das Örtliche und 11880: Bäckereien, Cafés und Schreinereien in Merzenich",
+          "Gelbe Seiten: Schreiner in Niederzier und Düren"
+        ],
+        "ergebnis": "Kein Betrieb dieses Namens gefunden. Bewusst nicht „Fuchs“: Die frühere Großbäckerei Fuchs-Brot in Düren war ein echter Betrieb."
+      },
       "anzeige": {
         "titel": "Frische Brötchen ab 6 Uhr",
         "text": "Jeden Morgen aus der eigenen Backstube, sonntags mit Frühstückstüte.",
@@ -23,7 +31,7 @@
           "titel": "Sonntags frisch: die Frühstückstüte zum Mitnehmen",
           "anriss": "Brötchen, Croissants und Aufschnitt für zwei, bis Samstagabend vorbestellt und sonntags ab 7 Uhr abholbereit.",
           "absaetze": [
-            "Wer sonntags ausschlafen möchte, muss auf frische Brötchen nicht verzichten. Die Frühstückstüte der Muster-Backstube enthält alles für ein Frühstück zu zweit: Brötchen, Croissants, Butter, Marmelade und Aufschnitt.",
+            "Wer sonntags ausschlafen möchte, muss auf frische Brötchen nicht verzichten. Die Frühstückstüte des Backhauses Morgenrot enthält alles für ein Frühstück zu zweit: Brötchen, Croissants, Butter, Marmelade und Aufschnitt.",
             "Bestellt wird bis Samstagabend im Laden oder telefonisch. Am Sonntag liegt die Tüte ab 7 Uhr mit Namen an der Theke bereit.",
             "Wer mehr braucht, etwa für Besuch oder ein Vereinsfrühstück, sagt bei der Bestellung einfach Bescheid. Größere Mengen bitte bis Freitag anmelden."
           ],
@@ -34,7 +42,7 @@
           "titel": "Neu in der Theke: Roggenbrötchen aus dem Steinofen",
           "anriss": "Kräftig, lange geführter Teig und eine dunkle Kruste: die neuen Roggenbrötchen gibt es ab sofort jeden Morgen.",
           "absaetze": [
-            "Seit dieser Woche liegt ein neues Brötchen in der Theke der Muster-Backstube. Der Roggenteig ruht über Nacht und wird am frühen Morgen im Steinofen gebacken.",
+            "Seit dieser Woche liegt ein neues Brötchen in der Theke des Backhauses Morgenrot. Der Roggenteig ruht über Nacht und wird am frühen Morgen im Steinofen gebacken.",
             "Das Ergebnis ist ein kräftiges Brötchen mit dunkler Kruste, das auch am Nachmittag noch saftig ist. Es passt zu Käse ebenso wie zu Marmelade.",
             "Probieren lohnt sich: In der ersten Woche gibt es an der Theke kleine Kostproben."
           ],
@@ -45,7 +53,7 @@
           "titel": "Kuchen nach Hausrezept: Pflaumenkuchen zur Erntezeit",
           "anriss": "Solange es Pflaumen gibt, steht der Blechkuchen nach altem Familienrezept jeden Tag in der Auslage.",
           "absaetze": [
-            "Im Herbst gehört er einfach dazu: Pflaumenkuchen vom Blech, mit Hefeteig und dünnen Streuseln. Die Muster-Backstube backt ihn nach einem Rezept, das seit Jahren in der Familie weitergegeben wird.",
+            "Im Herbst gehört er einfach dazu: Pflaumenkuchen vom Blech, mit Hefeteig und dünnen Streuseln. Das Backhaus Morgenrot backt ihn nach einem Rezept, das seit Jahren in der Familie weitergegeben wird.",
             "Der Kuchen kommt jeden Vormittag frisch aus dem Ofen. Ganze Bleche für Feiern oder das Büro lassen sich zwei Tage vorher bestellen.",
             "Wenn die Pflaumenzeit vorbei ist, folgen Apfel- und Streuselkuchen. Was gerade da ist, steht auf der Tafel am Eingang."
           ],
@@ -54,15 +62,23 @@
       ]
     },
     {
-      "slug": "muster-cafe-am-markt",
-      "name": "Muster-Café am Markt",
+      "slug": "cafe-feldlerche",
+      "name": "Café Feldlerche",
       "branche": "Café",
-      "ort": "golzheim",
-      "kuerzel": "CM",
+      "ort": "merzenich",
+      "kuerzel": "CF",
       "farbe": "#2f5d62",
       "text": "Kaffee aus der Region, Torten aus eigener Herstellung und ein Mittagstisch, der jeden Tag wechselt.",
-      "info": "Di bis So 9 bis 18 Uhr",
       "bild": "werbebanner",
+      "pruefung": {
+        "datum": "2026-10-15",
+        "quellen": [
+          "Websuche nach dem genauen Namen mit Merzenich, Golzheim, Girbelsrath, Düren und Niederzier",
+          "Das Örtliche und 11880: Bäckereien, Cafés und Schreinereien in Merzenich",
+          "Gelbe Seiten: Schreiner in Niederzier und Düren"
+        ],
+        "ergebnis": "Kein Betrieb dieses Namens gefunden."
+      },
       "anzeige": {
         "titel": "Zeit für Kaffee und Kuchen",
         "text": "Torten aus eigener Herstellung, mittags ein wechselnder Tisch.",
@@ -75,7 +91,7 @@
           "titel": "Neuer Mittagstisch, jeden Tag ab 12 Uhr",
           "anriss": "Suppe, Hauptgericht und Kaffee: Die Karte der Woche hängt freitags im Schaufenster.",
           "absaetze": [
-            "Das Muster-Café am Markt bietet jetzt jeden Tag einen Mittagstisch an. Es gibt eine Suppe, ein Hauptgericht und zum Abschluss einen Kaffee.",
+            "Das Café Feldlerche bietet jetzt jeden Tag einen Mittagstisch an. Es gibt eine Suppe, ein Hauptgericht und zum Abschluss einen Kaffee.",
             "Die Gerichte wechseln täglich. Die Karte für die kommende Woche hängt freitags im Schaufenster und liegt an der Theke aus.",
             "Wer in der Mittagspause wenig Zeit hat, kann vorbestellen und das Essen ab 12 Uhr abholen."
           ],
@@ -86,7 +102,7 @@
           "titel": "Torten aus eigener Herstellung, auch auf Bestellung",
           "anriss": "Von der Obsttorte bis zur Sahnetorte: Alles in der Vitrine entsteht in der eigenen Küche.",
           "absaetze": [
-            "Jeden Morgen stehen im Muster-Café am Markt neue Torten in der Vitrine. Gebacken wird in der eigenen Küche hinter dem Gastraum.",
+            "Jeden Morgen stehen im Café Feldlerche neue Torten in der Vitrine. Gebacken wird in der eigenen Küche hinter dem Gastraum.",
             "Für Geburtstage, Taufen oder Jubiläen lassen sich ganze Torten bestellen. Ein Gespräch an der Theke genügt, am besten eine Woche vorher.",
             "Wer lieber gleich probiert: Am Nachmittag gibt es jede Torte auch als Stück zum Kaffee."
           ],
@@ -97,7 +113,7 @@
           "titel": "Suppe der Woche: warm durch den Herbst",
           "anriss": "Jede Woche eine andere Suppe aus Gemüse der Saison, im Café oder zum Mitnehmen.",
           "absaetze": [
-            "Wenn es draußen kühler wird, kocht das Muster-Café am Markt jede Woche eine neue Suppe. Gemüse der Saison steht dabei im Mittelpunkt.",
+            "Wenn es draußen kühler wird, kocht das Café Feldlerche jede Woche eine neue Suppe. Gemüse der Saison steht dabei im Mittelpunkt.",
             "Die Suppe gibt es zum Mittagstisch im Café oder im Becher zum Mitnehmen. Brot aus der Nachbarschaft liegt dazu bereit.",
             "Welche Suppe gerade auf dem Herd steht, verrät die Tafel neben der Tür."
           ],
@@ -106,15 +122,23 @@
       ]
     },
     {
-      "slug": "muster-schreinerei",
-      "name": "Muster-Schreinerei",
+      "slug": "holzwerkstatt-jahresring",
+      "name": "Holzwerkstatt Jahresring",
       "branche": "Handwerk",
       "ort": "girbelsrath",
-      "kuerzel": "SR",
+      "kuerzel": "HJ",
       "farbe": "#5b4a8a",
       "text": "Küchen, Treppen und Möbel nach Maß, gefertigt in der eigenen Werkstatt. Aufmaß und Beratung vor Ort.",
-      "info": "Termine nach Vereinbarung",
       "bild": "format-artikelanzeige",
+      "pruefung": {
+        "datum": "2026-10-15",
+        "quellen": [
+          "Websuche nach dem genauen Namen mit Merzenich, Golzheim, Girbelsrath, Düren und Niederzier",
+          "Das Örtliche und 11880: Bäckereien, Cafés und Schreinereien in Merzenich",
+          "Gelbe Seiten: Schreiner in Niederzier und Düren"
+        ],
+        "ergebnis": "Kein Betrieb dieses Namens gefunden; bewusst ohne Familiennamen."
+      },
       "anzeige": {
         "titel": "Möbel nach Maß aus der eigenen Werkstatt",
         "text": "Küchen, Treppen und Einbauten, mit Aufmaß und Beratung vor Ort.",
@@ -127,7 +151,7 @@
           "titel": "Ausbildung zum Tischler: Plätze für das kommende Jahr",
           "anriss": "Wer gern mit Holz arbeitet, lernt bei uns Möbelbau, Treppenbau und Montage. Schnuppertage sind jederzeit möglich.",
           "absaetze": [
-            "Die Muster-Schreinerei bildet aus. Gesucht werden junge Leute, die gern mit den Händen arbeiten und Freude an Holz haben.",
+            "Die Holzwerkstatt Jahresring bildet aus. Gesucht werden junge Leute, die gern mit den Händen arbeiten und Freude an Holz haben.",
             "In der Ausbildung geht es um Möbelbau, Treppenbau und die Montage beim Kunden. Dazu kommen Maschinenkunde und das Lesen von Zeichnungen.",
             "Wer erst einmal reinschnuppern möchte, kann sich für einen Tag in der Werkstatt melden. Ein Lebenslauf genügt für den Anfang."
           ],
@@ -138,7 +162,7 @@
           "titel": "Treppen nach Maß, gefertigt in der eigenen Werkstatt",
           "anriss": "Vom ersten Aufmaß bis zur Montage: Jede Treppe wird für das Haus geplant, in dem sie steht.",
           "absaetze": [
-            "Eine Treppe muss passen: zum Raum, zum Haus und zu den Menschen, die sie täglich nutzen. Die Muster-Schreinerei plant jede Treppe einzeln.",
+            "Eine Treppe muss passen: zum Raum, zum Haus und zu den Menschen, die sie täglich nutzen. Die Holzwerkstatt Jahresring plant jede Treppe einzeln.",
             "Nach dem Aufmaß vor Ort entsteht eine Zeichnung, die gemeinsam besprochen wird. Gefertigt wird in der eigenen Werkstatt, montiert vom selben Team.",
             "Auch alte Treppen lassen sich oft aufarbeiten. Ein Termin vor Ort klärt, was möglich ist."
           ],
@@ -149,115 +173,11 @@
           "titel": "Ein Blick in die Werkstatt",
           "anriss": "Wo die Möbel entstehen: Maschinen, Werkbänke und viel Platz für große Stücke.",
           "absaetze": [
-            "In der Werkstatt der Muster-Schreinerei entstehen Küchen, Schränke und Treppen. Hier stehen die Maschinen für Zuschnitt und Bearbeitung, dazu mehrere Werkbänke.",
+            "In der Werkstatt der Holzwerkstatt Jahresring entstehen Küchen, Schränke und Treppen. Hier stehen die Maschinen für Zuschnitt und Bearbeitung, dazu mehrere Werkbänke.",
             "Große Stücke werden vor der Auslieferung einmal komplett aufgebaut und geprüft. So passt beim Kunden später alles auf Anhieb.",
             "Wer ein Projekt plant, ist zu einem Besuch in der Werkstatt eingeladen. Termine gibt es nach Absprache."
           ],
           "bild": "format-artikelanzeige"
-        }
-      ]
-    },
-    {
-      "slug": "muster-steuerbuero",
-      "name": "Muster-Steuerbüro",
-      "branche": "Beratung",
-      "ort": "merzenich",
-      "kuerzel": "SB",
-      "farbe": "#8c2f39",
-      "text": "Steuererklärung, Lohnabrechnung und Gründungsberatung, persönlich im Büro oder digital von zu Hause.",
-      "info": "Mo bis Fr 8 bis 17 Uhr",
-      "bild": "unternehmensprofil",
-      "anzeige": {
-        "titel": "Steuern, persönlich beraten",
-        "text": "Im Büro oder digital von zu Hause, für Privatleute und Betriebe.",
-        "knopf": "Zum Unternehmenskanal",
-        "bild": "unternehmensprofil"
-      },
-      "beitraege": [
-        {
-          "slug": "steuererklaerung-ohne-papierstapel",
-          "titel": "Steuererklärung ohne Papierstapel",
-          "anriss": "Belege fotografieren, hochladen, fertig. In einer offenen Sprechstunde zeigen wir, wie das digitale Steuerbüro funktioniert.",
-          "absaetze": [
-            "Viele Belege für die Steuererklärung liegen ohnehin schon auf dem Handy. Das Muster-Steuerbüro nimmt sie auch digital entgegen.",
-            "Belege werden fotografiert und über einen geschützten Zugang hochgeladen. Rückfragen klärt das Büro per Telefon oder Video.",
-            "Wie das genau funktioniert, zeigt eine offene Sprechstunde im Büro. Eine Anmeldung ist nicht nötig."
-          ],
-          "bild": "unternehmensprofil"
-        },
-        {
-          "slug": "belege-sortieren",
-          "titel": "Belege sortieren: so wird die Steuererklärung schneller fertig",
-          "anriss": "Drei Ordner, ein fester Tag im Monat: mit wenig Aufwand liegt im Frühjahr alles bereit.",
-          "absaetze": [
-            "Die meiste Zeit kostet die Steuererklärung nicht beim Ausfüllen, sondern beim Suchen. Das Muster-Steuerbüro empfiehlt deshalb eine einfache Ordnung über das Jahr.",
-            "Ein Ordner für Arbeit und Fahrten, einer für Haus und Handwerker, einer für Versicherungen und Spenden. Einmal im Monat kommt alles Neue an seinen Platz.",
-            "Wer so sammelt, hat im Frühjahr alles beisammen. Im Büro liegt eine Checkliste zum Mitnehmen aus."
-          ],
-          "bild": "muster-steuerbuero-belege"
-        },
-        {
-          "slug": "beratung-per-video",
-          "titel": "Beratung per Video: das Büro kommt nach Hause",
-          "anriss": "Wer nicht ins Büro kommen kann oder möchte, bespricht Fragen zur Steuer auch am eigenen Rechner.",
-          "absaetze": [
-            "Nicht jeder hat Zeit, für eine kurze Frage ins Büro zu fahren. Das Muster-Steuerbüro bietet deshalb Termine per Video an.",
-            "Für das Gespräch reichen ein Laptop oder ein Tablet mit Kamera. Den Link zum Termin gibt es vorher per E-Mail.",
-            "Unterlagen, die besprochen werden sollen, lassen sich vorab hochladen. So bleibt im Gespräch mehr Zeit für die Fragen."
-          ],
-          "bild": "muster-steuerbuero-notizen"
-        }
-      ]
-    },
-    {
-      "slug": "muster-immobilien",
-      "name": "Muster-Immobilien",
-      "branche": "Immobilien",
-      "ort": "buergewald",
-      "kuerzel": "IM",
-      "farbe": "#8a6d1f",
-      "text": "Wir bewerten Ihr Haus, finden passende Käufer und begleiten Sie bis zum Notartermin.",
-      "info": "Beratung auch am Wochenende",
-      "bild": "format-sidebar",
-      "anzeige": {
-        "titel": "Haus verkaufen mit Begleitung",
-        "text": "Bewertung, Käufersuche und Notartermin aus einer Hand.",
-        "knopf": "Zum Unternehmenskanal",
-        "bild": "format-sidebar"
-      },
-      "beitraege": [
-        {
-          "slug": "was-ist-mein-haus-wert",
-          "titel": "Was ist mein Haus wert?",
-          "anriss": "Wir sehen uns Haus und Grundstück an und nennen einen realistischen Preis, unverbindlich und ohne Maklervertrag.",
-          "absaetze": [
-            "Wer über einen Verkauf nachdenkt, möchte zuerst wissen, was das eigene Haus wert ist. Muster-Immobilien sieht sich Haus und Grundstück vor Ort an.",
-            "Für die Einschätzung zählen Lage, Zustand, Größe und vergleichbare Verkäufe in der Umgebung. Das Ergebnis gibt es schriftlich.",
-            "Die Bewertung ist unverbindlich. Ob und wann verkauft wird, entscheiden die Eigentümer danach in Ruhe."
-          ],
-          "bild": "format-sidebar"
-        },
-        {
-          "slug": "vom-notartermin-zur-schluesseluebergabe",
-          "titel": "Vom Notartermin bis zur Schlüsselübergabe",
-          "anriss": "Was nach dem Kaufvertrag passiert und worauf Verkäufer bei der Übergabe achten sollten.",
-          "absaetze": [
-            "Mit dem Notartermin ist ein Hausverkauf noch nicht abgeschlossen. Bis zur Übergabe sind noch einige Schritte zu erledigen.",
-            "Dazu gehören die Zahlung des Kaufpreises, das Ablesen der Zähler und ein Protokoll über den Zustand des Hauses. Muster-Immobilien begleitet diese Schritte.",
-            "Am Ende steht die Schlüsselübergabe. Ein gemeinsamer Rundgang sorgt dafür, dass beide Seiten wissen, was übergeben wird."
-          ],
-          "bild": "muster-immobilien-schluessel"
-        },
-        {
-          "slug": "grundrisse-lesen",
-          "titel": "Grundrisse lesen: worauf Käufer achten sollten",
-          "anriss": "Wo fällt Licht ein, wie liegen die Räume zueinander? Ein Grundriss verrät mehr als viele Fotos.",
-          "absaetze": [
-            "Ein Grundriss zeigt, wie eine Wohnung oder ein Haus aufgeteilt ist. Wer ihn lesen kann, erkennt schnell, ob die Räume zum eigenen Alltag passen.",
-            "Wichtig sind die Lage der Fenster, die Wege zwischen Küche, Essplatz und Wohnraum und der Platz für Schränke. Auch Stellflächen für Möbel lassen sich gut abschätzen.",
-            "Muster-Immobilien geht Grundrisse bei der Besichtigung gemeinsam mit den Interessenten durch."
-          ],
-          "bild": "muster-immobilien-grundriss"
         }
       ]
     }

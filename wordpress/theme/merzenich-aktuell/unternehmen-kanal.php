@@ -15,7 +15,7 @@ $anfrage = home_url('/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal');
       <?php if ($f['text'] !== ''): ?><p class="desc"><?php echo esc_html($f['text']); ?></p><?php endif; ?>
     </div>
   </div>
-  <?php if ($f['muster']): ?><p class="u-muster-banner"><strong>Musterprofil.</strong> Dieses Unternehmen ist ausgedacht. Es zeigt, wie ein Unternehmenskanal auf Merzenich Aktuell aussieht: kein echter Betrieb, keine echten Angebote. <a href="<?php echo esc_url($anfrage); ?>">Eigenen Unternehmenskanal anfragen</a></p>
+  <?php if ($f['muster']): ?><p class="u-muster-banner"><strong>Beispielfirma.</strong> Dieses Unternehmen ist ausgedacht. Es zeigt, wie ein Unternehmenskanal auf Merzenich Aktuell aussieht: kein echter Betrieb, keine echten Angebote. <a href="<?php echo esc_url($anfrage); ?>">Eigenen Unternehmenskanal anfragen</a></p>
   <?php else: ?><p class="u-kanal-kopf__hinweis">Beiträge dieses Unternehmens sind Anzeigen: Für den Inhalt ist das Unternehmen verantwortlich, die Redaktion prüft jeden Beitrag vor der Veröffentlichung.</p><?php endif; ?>
 </div></div>
 <section class="section"><div class="shell content-grid"><div class="u-liste">

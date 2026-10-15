@@ -239,6 +239,42 @@ export function artikelSammeln(site) {
   }
   return out.filter((a) => a.titel).sort((a, b) => (b.datum || '').localeCompare(a.datum || ''));
 }
+// Listenzeile der Themen- und Sammelseiten (thema-prerender, rubrik-prerender):
+// Bildflaeche wie in den bestehenden Zeilen, a.feed-img mit .media und Badge. Ein
+// Vereinslogo oder Wappen fuellt keine Bildflaeche (Designstandard 7b), dort
+// bleibt die Zeile textlich.
+export const nurLogo = (b) => !b || !b.src || b.fit === 'contain' || /logo|wappen/i.test(`${b.badge || ''} ${b.alt || ''} ${b.src}`);
+const bildFlaeche = (a) => {
+  const b = a.bild;
+  if (nurLogo(b)) return '';
+  const srcset = b.srcset ? ` srcset="${esc(b.srcset)}"` : '';
+  const masse = b.width && b.height ? ` width="${b.width}" height="${b.height}"` : '';
+  const badge = b.badge ? `<span class="badge">${esc(b.badge)}</span>` : '';
+  return `<a class="feed-img" href="${esc(a.url)}" tabindex="-1" aria-hidden="true"><div class="media">`
+    + `<img src="${esc(b.src)}"${srcset} sizes="(max-width: 640px) 120px, 240px" alt="${esc(b.alt || '')}"${masse}`
+    + ` loading="lazy" decoding="async" data-editorial-image>${badge}</div></a>`;
+};
+export const feedZeile = (a) => `<article data-story="${esc(a.id)}" class="feed-row${nurLogo(a.bild) ? ' no-media no-image' : ''}">${bildFlaeche(a)}<div class="feed-copy">${markeHtml(a)}<h3><a href="${esc(a.url)}">${esc(a.titel)}</a></h3><p class="dek">${esc(a.teaser)}</p><div class="meta"><time datetime="${esc(a.datum)}">${esc(a.zeitLabel || dmyLang(a.datum))}</time></div><div class="story-actions"><a class="read-more" href="${esc(a.url)}">Mehr lesen<span class="sr-only">: ${esc(a.titel)}</span></a></div></div></article>`;
+
+/**
+ * Sammelseiten der roten Menuetitel (Wunsch Betreiber 15.10.2026): Ein Titel
+ * ohne eigene Seite (z. B. Blaulicht › Verkehr, Rathaus › Gemeinde) fuehrt auf
+ * /rubrik/<slug>/ mit allen Meldungen, die eines der Themen tragen. Quelle ist
+ * deploy/ressort-menue.json; dieselbe Liste liest WordPress aus
+ * inc/rubriken.json (rubrik-prerender.mjs schreibt sie).
+ */
+export function rubrikenAusMenue(quelle) {
+  const out = [];
+  for (const r of quelle.ressorts || []) for (const p of r.punkte || []) {
+    if (!p.rubrik) continue;
+    const d = p.rubrik;
+    out.push({ slug: d.slug, titel: d.titelSeite || p.titel, menueTitel: p.titel, ressort: r.href, ressortTitel: r.titel,
+      themen: [...(d.themen || [])], kategorie: d.kategorie || '', ohneKategorie: [...(d.ohneKategorie || [])], beschreibung: d.beschreibung || '' });
+  }
+  return out;
+}
+export const rubrikTrifft = (def, a) => (!def.kategorie || a.ressort === def.kategorie)
+  && !def.ohneKategorie.includes(a.ressort) && a.themen.some((t) => def.themen.includes(t.slug));
 // Motiv eines Bildes unabhaengig von Groessenvariante und Format:
 // /assets/places/golzheim-1440.webp und -720.webp sind dasselbe Motiv, ebenso
 // ein Poolfoto als .jpg und als -800.webp. Die Startseite zaehlt Motive, nicht

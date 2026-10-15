@@ -915,6 +915,42 @@ await pruefeSportfreieStartseite();
     if (existsSync(join(wurzel, datei)) && lang.test(lies(datei))) fehler('Bildnachweis', `${datei} traegt noch einen langen Wikimedia-Nachweis.`);
   }
 }
+// ------------------------------- Menü, Leiste, Endlos-Scrollen (15.10.2026)
+// Wunsch Betreiber: in jedem Aufklappmenü nur rote Titel, Vereine nicht mehr in
+// der Leiste, Home-Knopf links neben „Aktuell“, Listen laden beim Scrollen weiter.
+function pruefeMenueUndEndlos() {
+  const menue = JSON.parse(lies('chatgpt-site/assets/ressort-menue.json'));
+  for (const [href, r] of Object.entries(menue.ressorts || {})) {
+    if (r.gruppen) fehler('Menue', `${href}: noch "gruppen" (kleine Unterpunkte) im Menü.`);
+    if (!Array.isArray(r.punkte) || !r.punkte.length) fehler('Menue', `${href}: keine roten Titel (punkte).`);
+    for (const pk of r.punkte || []) {
+      if (!pk.titel || !/^\/[^/]/.test(pk.href || '')) fehler('Menue', `${href}: Titel ohne Ziel (${JSON.stringify(pk)}).`);
+      if (Object.keys(pk).some((k) => !['titel', 'href'].includes(k))) fehler('Menue', `${href} › ${pk.titel}: Unterpunkte im Menü (${Object.keys(pk).join(', ')}).`);
+    }
+  }
+  if (menue.ressorts && menue.ressorts['/vereine/']) fehler('Menue', 'Vereine steht wieder im Menü (seit 15.10.2026 raus, Sport bleibt).');
+  let ohneHome = 0, mitVereine = 0, ohneEndlos = 0;
+  for (const datei of dateienUnter('chatgpt-site', '.html')) {
+    const html = lies(datei);
+    const leiste = (/<div class="navscroll">([\s\S]*?)<\/div>/.exec(html) || [])[1];
+    if (leiste !== undefined) {
+      if ((html.match(/class="nav-home"/g) || []).length !== 1) ohneHome++;
+      if (leiste.includes('href="/vereine/"')) mitVereine++;
+    }
+    if (html.includes('/assets/werbung.js') && !html.includes('/assets/endlos.js')) ohneEndlos++;
+  }
+  if (ohneHome) fehler('Leiste', `${ohneHome} Seite(n) ohne genau einen Home-Knopf (deploy/kopf-theme-einbinden.mjs).`);
+  if (mitVereine) fehler('Leiste', `${mitVereine} Seite(n) mit „Vereine“ in der Leiste.`);
+  if (ohneEndlos) fehler('Endlos', `${ohneEndlos} Seite(n) ohne assets/endlos.js.`);
+  if (!lies('chatgpt-site/index.html').includes('data-endlos-quelle="/nachrichten/"')) fehler('Endlos', 'Startseite ohne „Weitere Meldungen“ (data-endlos-quelle).');
+  const rubriken = JSON.parse(lies('wordpress/theme/merzenich-aktuell/inc/rubriken.json')).rubriken || {};
+  for (const slug of Object.keys(rubriken)) {
+    const pfad = `chatgpt-site/rubrik/${slug}/index.html`;
+    if (!gibtEs(pfad)) { fehler('Rubriken', `/rubrik/${slug}/ fehlt (deploy/rubrik-prerender.mjs).`); continue; }
+    if (!/<meta name="robots" content="noindex,follow">/.test(lies(pfad))) fehler('Rubriken', `/rubrik/${slug}/ steht nicht auf noindex,follow.`);
+  }
+}
+pruefeMenueUndEndlos();
 pruefeBildwiederholung();
 pruefeMotivvielfalt();
 pruefeOrtswahl();

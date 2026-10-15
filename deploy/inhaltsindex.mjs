@@ -160,7 +160,8 @@ function listeSchreiben(basis, items, { seiten = true } = {}) {
   const seite1 = items.length ? (seiten ? items.slice(0, SEITENGROESSE) : items) : [];
   const innen1 = seite1.length ? '\n      ' + leadHtml(seite1[0]) + seite1.slice(1).map((a) => '\n      ' + rowHtml(a)).join('') + (k > 1 ? '\n      ' + paginationHtml(basis, 1, k) : '') : '\n      ' + leerHtml(html1, basis);
   const neu1 = ersetzeFeed(zaehler(html1, items.length, basis), innen1); if (neu1) schreibe(rel1, neu1);
-  if (!seiten) return;
+  // Ohne Blaettern (Ortsseiten) ist k = 1: keine Folgeseiten, aber alte
+  // /seite/N/ von frueher werden unten aufgeraeumt (blieben sonst verwaist).
   const vorlagePfad = join(site, basis.replace(/^\//, ''), 'seite', '2', 'index.html');
   const vorlage = existsSync(vorlagePfad) ? readFileSync(vorlagePfad, 'utf8') : html1.replace(/<title>([^<|]*?)\s*\|/, '<title>$1 – Seite 2 |').replace(/(<link rel="canonical" href="[^"]*?)("\s*>)/, '$1seite/2/$2');
   for (let n = 2; n <= k; n++) {

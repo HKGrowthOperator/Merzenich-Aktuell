@@ -27,12 +27,21 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf.html');
 pruefe('Vorlage hat Ortswahl, Jetzt-Zeile und Markierung', [str_contains($vorlage, 'class="ortswahl-zahl"'), str_contains($vorlage, 'class="jetzt-feld jetzt-neu"'), substr_count($vorlage, 'aria-current="page"') >= 1], [true, true, true]);
 
+echo "Leiste (Wunsch Betreiber 15.10.2026)\n";
+$seite = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf-seite.html');
+foreach (['kopf.html' => $vorlage, 'kopf-seite.html' => $seite] as $name => $v) {
+    preg_match('#<div class="navscroll">(.*?)</div>#s', $v, $leiste);
+    preg_match('#<div class="drawer-group"><div class="grp">Ressorts</div>(.*?)</div>#s', $v, $schublade);
+    pruefe("$name: Home-Knopf einmal, direkt vor der Leiste (links neben „Aktuell“)", [substr_count($v, 'class="nav-home"'), (bool) preg_match('#<a class="nav-home" href="/"(?: aria-current="page")?>.*?</a><div class="navscroll"><a href="/nachrichten/"#s', $v), str_contains($v, '<span class="sr-only">Startseite</span>')], [1, true, true]);
+    pruefe("$name: Vereine weder in Leiste, Schublade noch Mehr-Menü, Sport bleibt", [str_contains($leiste[1] ?? '', '/vereine/'), str_contains($schublade[1] ?? '', '/vereine/'), str_contains($v, 'href="/vereine/"'), str_contains($leiste[1] ?? '', 'href="/sport/"')], [false, false, false, true]);
+    pruefe("$name: Impressum und Datenschutz im Mehr-Menü", [str_contains($v, '<li><a href="/impressum/">Impressum</a></li>'), str_contains($v, '<li><a href="/datenschutz/">Datenschutz</a></li>')], [true, true]);
+}
+
 echo "Keine Ausgabe-Wahl oben (Vorgabe Betreiber 05.10.2026)\n";
 $h = ma21_kopf_ortswahl($vorlage);
 pruefe('Startseite: Wahl „Ausgabe“ weg, Jetzt-Zeile bleibt', [str_contains($h, 'ortswahl-schalter'), str_contains($h, '>Ausgabe<'), str_contains($h, 'Ausgabe waehlen'), str_contains($h, 'class="jetzt"')], [false, false, false, true]);
 pruefe('Keine Zahl: kein ortswahl-zahl, kein „Meldungen“ im Kopf', [str_contains($h, 'ortswahl-zahl'), (bool) preg_match('#\d+ Meldungen#', $h)], [false, false]);
 pruefe('Ortsteile bleiben (Mehr-Menü, Schublade) und zeigen auf /ort/…/', [preg_match('#href="/(merzenich|golzheim|girbelsrath|morschenich|buergewald)/"#', $h), substr_count($h, 'href="/ort/golzheim/"') >= 2, substr_count($h, 'href="/ort/buergewald/"') >= 2], [0, true, true]);
-$seite = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf-seite.html');
 $h = ma21_kopf_ortswahl($seite);
 pruefe('Unterseite: leere Leiste ganz weg, Ortsteile bleiben', [str_contains($h, 'class="ortswahl"'), str_contains($h, 'Ausgabe'), substr_count($h, 'href="/ort/morschenich/"') >= 2], [false, false, true]);
 $GLOBALS['t'] = ['tax' => true, 'obj' => new WP_Term('golzheim', 'Golzheim'), 'single' => '', 'archiv' => ''];
@@ -56,7 +65,14 @@ $_SERVER['REQUEST_URI'] = '/blaulicht/?x=1';
 $h = ma21_kopf_aktuell($vorlage);
 pruefe('Nur /blaulicht/ markiert (Leiste, Mehr-Menü, Schublade), „Aktuell“ nicht mehr', [substr_count($h, '<a href="/blaulicht/" aria-current="page">'), str_contains($h, '<a href="/nachrichten/" aria-current="page">')], [3, false]);
 $_SERVER['REQUEST_URI'] = '/';
-pruefe('Startseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
+$h = ma21_kopf_aktuell($vorlage);
+pruefe('Startseite: nur der Home-Knopf ist markiert', [substr_count($h, 'aria-current'), str_contains($h, '<a class="nav-home" href="/" aria-current="page">')], [1, true]);
+$_SERVER['REQUEST_URI'] = '/rubrik/verkehr/';
+pruefe('Sammelseite /rubrik/verkehr/: „Blaulicht“ markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/blaulicht/" aria-current="page">'), 3);
+$_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';
+pruefe('Unbekannte Sammelseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
+$_SERVER['REQUEST_URI'] = '/vereine/';
+pruefe('Vereine (nicht mehr im Menü): keine Markierung im Kopf', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 $_SERVER['REQUEST_URI'] = '/sport/sc-merzenich-siegt/';
 $GLOBALS['t'] = ['tax' => false, 'obj' => new WP_Post(), 'single' => 'post', 'archiv' => ''];
 pruefe('Meldung: ihr Ressort ist markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/sport/" aria-current="page">'), 3);
