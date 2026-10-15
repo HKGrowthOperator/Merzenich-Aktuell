@@ -483,7 +483,8 @@ jobs:
             await page.waitForSelector('.navscroll > a[href="/blaulicht/"][aria-haspopup="true"]', { timeout: 15000 });
             const home = await page.evaluate(() => { const h = document.querySelector('.mainnav .nav-home'); const a = document.querySelector('.navscroll > a[href="/nachrichten/"]'); return h && a ? { href: h.getAttribute('href'), sichtbar: h.offsetWidth > 0, links: h.getBoundingClientRect().right <= a.getBoundingClientRect().left + 1, markiert: h.getAttribute('aria-current') } : null; });
             if (!home || home.href !== '/' || !home.sichtbar || !home.links || home.markiert !== 'page') throw new Error(`Home-Knopf links neben Aktuell: ${JSON.stringify(home)}`);
-            if (await page.locator('.navscroll > a[href="/vereine/"]').count()) throw new Error('Vereine steht wieder in der Leiste');
+            // Vereine bleibt gespeichert (data-ausbau="vereine", inc/ausbau.php), darf aber nicht sichtbar sein.
+            if (await page.locator('.navscroll > a[href="/vereine/"]').first().isVisible()) throw new Error('Vereine steht sichtbar in der Leiste');
             await page.locator('.navscroll > a[href="/blaulicht/"]').hover();
             await page.waitForSelector('.ressort-dropdown.is-open .ressort-dropdown__punkt', { timeout: 3000 });
             const bl = await page.evaluate(() => { const p = document.querySelector('.ressort-dropdown.is-open'); const pk = [...p.querySelectorAll('.ressort-dropdown__punkt')]; const rgb = (pk[0] ? getComputedStyle(pk[0]).color : '').match(/\d+/g)?.map(Number) || []; return { titel: pk.map((a) => a.textContent.trim()), ziele: pk.map((a) => a.getAttribute('href')), rot: rgb[0] > 110 && rgb[1] < 70 && rgb[2] < 80, links: p.querySelectorAll('.ressort-dropdown__punkte a').length }; });

@@ -17,6 +17,8 @@ function get_queried_object() { return $GLOBALS['t']['obj']; }
 function is_singular($t) { return $GLOBALS['t']['single'] === $t; }
 function is_post_type_archive($t) { return $GLOBALS['t']['archiv'] === $t; }
 function wp_date($f, $ts = null) { return gmdate($f, $ts ?? 1791021600); } // 03.10.2026 10:00 UTC
+$GLOBALS['optionen'] = [];
+function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
 function get_the_category($id) { return [(object) ['slug' => 'sport', 'name' => 'Sport']]; }
 class WP_Term { public $slug; public $name; function __construct($s, $n) { $this->slug = $s; $this->name = $n; } }
 class WP_Post { public $ID = 7; public $post_type = 'post'; }
@@ -33,7 +35,16 @@ foreach (['kopf.html' => $vorlage, 'kopf-seite.html' => $seite] as $name => $v) 
     preg_match('#<div class="navscroll">(.*?)</div>#s', $v, $leiste);
     preg_match('#<div class="drawer-group"><div class="grp">Ressorts</div>(.*?)</div>#s', $v, $schublade);
     pruefe("$name: Home-Knopf einmal, direkt vor der Leiste (links neben „Aktuell“)", [substr_count($v, 'class="nav-home"'), (bool) preg_match('#<a class="nav-home" href="/"(?: aria-current="page")?>.*?</a><div class="navscroll"><a href="/nachrichten/"#s', $v), str_contains($v, '<span class="sr-only">Startseite</span>')], [1, true, true]);
-    pruefe("$name: Vereine weder in Leiste, Schublade noch Mehr-Menü, Sport bleibt", [str_contains($leiste[1] ?? '', '/vereine/'), str_contains($schublade[1] ?? '', '/vereine/'), str_contains($v, 'href="/vereine/"'), str_contains($leiste[1] ?? '', 'href="/sport/"')], [false, false, false, true]);
+    // Ausbaustufe (inc/ausbau.php): Vereine bleibt gespeichert, markiert an allen drei Stellen.
+    pruefe("$name: Vereine gespeichert, aber markiert (Leiste, Schublade, Mehr-Menü)", [str_contains($leiste[1] ?? '', '<a href="/vereine/" data-ausbau="vereine">Vereine</a>'), str_contains($schublade[1] ?? '', '<a href="/vereine/" data-ausbau="vereine">Vereine</a>'), str_contains($v, '<li data-ausbau="vereine"><a href="/vereine/">Vereine</a></li>'), substr_count($v, 'href="/vereine/"'), substr_count($v, 'data-ausbau="vereine"')], [true, true, true, 3, 3]);
+    $aus = ma21_ausbau_html($v);
+    preg_match('#<div class="navscroll">(.*?)</div>#s', $aus, $leisteAus);
+    pruefe("$name: Schalter aus (Standard): Vereine nirgends im Kopf, Sport bleibt", [str_contains($aus, 'data-ausbau'), str_contains($leisteAus[1] ?? '', '/vereine/'), str_contains($aus, '<li><a href="/vereine/">'), str_contains($leisteAus[1] ?? '', 'href="/sport/"')], [false, false, false, true]);
+    $GLOBALS['optionen'] = ['ma21_ausbau' => ['vereine' => true]];
+    $an = ma21_ausbau_html($v);
+    preg_match('#<div class="navscroll">(.*?)</div>#s', $an, $leisteAn);
+    pruefe("$name: Schalter an: Vereine hinter Termine, ohne Merkmal, in Mehr-Menü", [str_contains($leisteAn[1] ?? '', '<a href="/termine/">Termine</a><a href="/vereine/">Vereine</a>'), str_contains($an, 'data-ausbau'), str_contains($an, '<li><a href="/vereine/">Vereine</a></li>')], [true, false, true]);
+    $GLOBALS['optionen'] = [];
     pruefe("$name: Impressum und Datenschutz im Mehr-Menü", [str_contains($v, '<li><a href="/impressum/">Impressum</a></li>'), str_contains($v, '<li><a href="/datenschutz/">Datenschutz</a></li>')], [true, true]);
 }
 
@@ -72,7 +83,10 @@ pruefe('Sammelseite /rubrik/verkehr/: „Blaulicht“ markiert', substr_count(ma
 $_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';
 pruefe('Unbekannte Sammelseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 $_SERVER['REQUEST_URI'] = '/vereine/';
-pruefe('Vereine (nicht mehr im Menü): keine Markierung im Kopf', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
+pruefe('Vereine ausgeblendet: keine Markierung im Kopf', substr_count(ma21_kopf_aktuell(ma21_ausbau_html($vorlage)), 'aria-current'), 0);
+$GLOBALS['optionen'] = ['ma21_ausbau' => ['vereine' => true]];
+pruefe('Vereine eingeschaltet: „Vereine“ markiert (Leiste, Mehr-Menü, Schublade)', substr_count(ma21_kopf_aktuell(ma21_ausbau_html($vorlage)), '<a href="/vereine/" aria-current="page">'), 3);
+$GLOBALS['optionen'] = [];
 $_SERVER['REQUEST_URI'] = '/sport/sc-merzenich-siegt/';
 $GLOBALS['t'] = ['tax' => false, 'obj' => new WP_Post(), 'single' => 'post', 'archiv' => ''];
 pruefe('Meldung: ihr Ressort ist markiert', substr_count(ma21_kopf_aktuell($vorlage), '<a href="/sport/" aria-current="page">'), 3);

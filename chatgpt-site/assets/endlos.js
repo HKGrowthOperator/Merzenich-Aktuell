@@ -20,6 +20,8 @@
   if (!('fetch' in window) || !('DOMParser' in window)) return;
   const bearbeiten = () => Boolean(window.maLayout) || d.body.classList.contains('ma-bearbeiten') || /[?&]bearbeiten=1(?:&|$)/.test(location.search);
   if (bearbeiten()) return;
+  // Ausbaustufe „Endlos-Scrollen“ ausgeschaltet (inc/ausbau.php): Blättern wie bis 14.10.2026.
+  if (d.documentElement.dataset.endlos === 'aus') return;
 
   const SPEICHER_MS = 30 * 60 * 1000;
   const ARCHIV = '/archiv/';

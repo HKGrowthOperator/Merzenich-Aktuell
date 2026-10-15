@@ -56,6 +56,10 @@ for (let runde = 0; musterNeu.length < 4 && runde < 5; runde++) for (const f of 
   musterNeu.push({ titel: b.titel, url: b.url, ort: `${f.name} · ${f.zeile.split(' · ')[1]}`, datum: '', bild: b.bild, muster: true });
 }
 
+// Schalter der Ausbaustufe (wordpress/theme/merzenich-aktuell/inc/ausbau.php, const MA21_AUSBAU).
+const AUSBAU = [...readFileSync(join(wurzel, 'wordpress', 'theme', 'merzenich-aktuell', 'inc', 'ausbau.php'), 'utf8').matchAll(/^    '([a-z_]+)' => \[$/gm)].map((m) => m[1]);
+if (!AUSBAU.length) { console.error('ressort-menue: keine Schalter in inc/ausbau.php gefunden'); process.exit(1); }
+
 // Ziel ohne Abfrage- und Sprungteil (/termine/?ort=golzheim zeigt /termine/ vorgefiltert).
 const zielDa = (href) => {
   const pfad = href.split(/[?#]/)[0];
@@ -84,7 +88,12 @@ const ressorts = {};
 for (const r of quelle.ressorts) {
   if (!zielDa(r.href)) fehler.push(`${r.titel}: Ressortseite ${r.href} fehlt`);
   if (!Array.isArray(r.punkte) || !r.punkte.length) fehler.push(`${r.titel}: keine Punkte (rote Titel)`);
-  if (r.gruppen) fehler.push(`${r.titel}: "gruppen" gibt es nicht mehr, nur "punkte" (rote Titel ohne Unterpunkte)`);
+  if (r.gruppen) fehler.push(`${r.titel}: "gruppen" gehoert unter "voll" (gespeicherte volle Fassung), oben stehen nur "punkte"`);
+  if (r.ausbau && !AUSBAU.includes(r.ausbau)) fehler.push(`${r.titel}: Ausbaustufe "${r.ausbau}" unbekannt (${AUSBAU.join(', ')})`);
+  // Gespeicherte volle Fassung (Ausbaustufe, inc/ausbau.php): Die Ziele werden
+  // weiter geprueft, damit sie beim Einschalten nicht ins Leere fuehren.
+  const voll = r.voll && Array.isArray(r.voll.gruppen) ? r.voll.gruppen : [];
+  for (const g of voll) for (const [label, href] of g.links || []) if (!zielDa(href)) fehler.push(`${r.titel} (volle Fassung) / ${g.titel}: "${label}" -> ${href} fehlt`);
   const punkte = (r.punkte || []).map((p) => ({ titel: p.titel, href: p.rubrik ? `/rubrik/${p.rubrik.slug}/` : p.href }));
   for (const p of punkte) if (!p.titel || !p.href || !zielDa(p.href)) fehler.push(`${r.titel}: "${p.titel}" -> ${p.href} fehlt`);
   const passend = artikel.filter((a) => (r.href === '/nachrichten/' && !sportBezug(a)) || a.ressort === RESSORT[r.href]);
@@ -96,7 +105,8 @@ for (const r of quelle.ressorts) {
   const mehr = r.mehrBilder ? passend.filter((a) => a.bild?.src && !rechts.has(a.url)).slice(0, r.mehrBilder).map(beitrag) : [];
   if (r.mehrBilder && mehr.length < r.mehrBilder) fehler.push(`${r.titel}: nur ${mehr.length} von ${r.mehrBilder} weiteren Bildmeldungen`);
   const firmen = r.href === '/unternehmen/' ? musterFirmen : [];
-  ressorts[r.href] = { titel: r.titel, alle: r.alle, punkte, neu: firmen.length ? musterNeu : neu, ...(mehr.length ? { mehr } : {}), ...(firmen.length ? { firmen } : {}) };
+  ressorts[r.href] = { titel: r.titel, alle: r.alle, punkte, neu: firmen.length ? musterNeu : neu, ...(mehr.length ? { mehr } : {}), ...(firmen.length ? { firmen } : {}),
+    ...(r.ausbau ? { ausbau: r.ausbau } : {}), ...(voll.length ? { voll: { gruppen: voll.map((g) => ({ titel: g.titel, links: g.links })), ...(r.voll.werbung ? { werbung: true } : {}), ...(r.voll.alle ? { alle: r.voll.alle } : {}) } } : {}) };
 }
 if (fehler.length) { console.error('Ressort-Menue: Ziele fehlen\n  ' + fehler.join('\n  ')); process.exit(1); }
 
@@ -117,5 +127,6 @@ for (const [rel, inhalt] of ziele) {
   if (!nurPruefen) writeFileSync(pfad, inhalt);
 }
 const offen = quelle.ressorts.flatMap((r) => (r.offen || []).map((o) => `${r.titel}: ${o}`));
-console.log(`Ressort-Menue: ${quelle.ressorts.length} Ressorts, ${quelle.ressorts.reduce((n, r) => n + (r.punkte || []).length, 0)} rote Titel, ${Object.values(ressorts).reduce((n, r) => n + r.neu.length, 0)} aktuelle Beiträge; ${offen.length} Wunschpunkte ohne Seite; ${veraltet.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
+const gespeichert = quelle.ressorts.reduce((n, r) => n + ((r.voll && r.voll.gruppen) || []).reduce((m, g) => m + (g.links || []).length, 0), 0);
+console.log(`Ressort-Menue: ${quelle.ressorts.length} Ressorts (${quelle.ressorts.filter((r) => r.ausbau).length} ausgeblendet), ${quelle.ressorts.reduce((n, r) => n + (r.punkte || []).length, 0)} rote Titel, ${gespeichert} Unterpunkte der vollen Fassung gespeichert, ${Object.values(ressorts).reduce((n, r) => n + r.neu.length, 0)} aktuelle Beiträge; ${offen.length} Wunschpunkte ohne Seite; ${veraltet.length} Datei(en) ${nurPruefen ? 'nicht aktuell' : 'geschrieben'}.`);
 if (nurPruefen && veraltet.length) process.exit(2);

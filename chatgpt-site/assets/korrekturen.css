@@ -664,3 +664,8 @@ body.home .mj-ort a:hover,body.home .mj-ort a:focus-visible{text-decoration:unde
 .weitere-meldungen__ohne-js{margin:0;font-size:16px}
 .weitere-meldungen__ohne-js a{text-decoration:underline;text-underline-offset:3px}
 .weitere-meldungen .feed-row:first-child{padding-top:0}
+/* Ausbaustufe (15.10.2026, wordpress/theme/merzenich-aktuell/inc/ausbau.php):
+   Ausgeblendete Einträge (z. B. Vereine in der Leiste) bleiben im HTML
+   gespeichert. WordPress entfernt sie serverseitig oder zeigt sie mit
+   eingeschaltetem Schalter ohne dieses Merkmal; die statische Kopie blendet sie aus. */
+[data-ausbau],.mainnav .navrow .navscroll>a[data-ausbau],[data-drawer] .drawer-group>a[data-ausbau]{display:none!important}

@@ -16,6 +16,9 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
+// Ausbaustufe: ausgeblendete Funktionen bleiben gespeichert und sind einzeln einschaltbar (15.10.2026).
+require_once __DIR__ . '/ausbau.php';
+
 const MA21_ORTE = ['merzenich' => 'Merzenich', 'golzheim' => 'Golzheim', 'girbelsrath' => 'Girbelsrath', 'morschenich' => 'Morschenich', 'buergewald' => 'Bürgewald'];
 const MA21_RESSORT = ['blaulicht' => 'Blaulicht', 'sport' => 'Sport', 'rathaus' => 'Rathaus & Politik', 'leben' => 'Leben', 'wirtschaft' => 'Wirtschaft', 'menschen' => 'Menschen', 'vereine' => 'Vereine', 'tipp' => 'Tipp'];
 // Bildhinweis je Bildtyp: auf der Startseite (knapp) und in Listen/Artikeln.
@@ -118,6 +121,8 @@ function ma21_kopf(string $name): string {
     $datum = '<time data-today datetime="' . esc_attr((string) wp_date('c')) . '">' . esc_html((string) wp_date('d.m.')) . '</time>';
     $html = str_replace('{{ma:datum}}', $datum, ma21_vorlage($name));
     $d = ma21_kopf_daten();
+    // Ausbaustufe (inc/ausbau.php): ausgeblendete Einträge (Vereine) weg oder sichtbar, vor der Markierung.
+    $html = ma21_ausbau_html($html);
     $html = ma21_kopf_aktuell($html);
     $html = ma21_kopf_ortswahl($html);
     if ($name === 'kopf.html') $html = ma21_kopf_logo_h1($html);
@@ -403,8 +408,15 @@ function ma21_ressort_menue_ausgeben(): void {
 
 /** Menüdaten aus der statischen Datei mit dem Stand dieser Installation (testbar ohne Ausgabe). */
 function ma21_ressort_menue_daten(array $d): array {
+    // Ausbaustufe (inc/ausbau.php): ausgeblendete Ressorts (Vereine) nur mit eingeschaltetem Schalter.
+    foreach ($d['ressorts'] as $pfad => $r) {
+        $stufe = is_array($r) ? (string) ($r['ausbau'] ?? '') : '';
+        if ($stufe !== '' && !ma21_ausbau($stufe)) unset($d['ressorts'][$pfad]);
+    }
+    $voll = ma21_ausbau('menue_voll');
     foreach ($d['ressorts'] as $pfad => &$r) {
         if (!is_array($r)) continue;
+        unset($r['ausbau']);
         $r['neu'] = ma21_menue_neu((string) $pfad, (array) ($r['neu'] ?? []));
         // Unternehmen wie Oberberg Aktuell (Auftrag Betreiber 13.10.2026): links die
         // Firmen, beim Überfahren rechts ihre Beiträge; ohne Wahl die neuesten
@@ -412,7 +424,17 @@ function ma21_ressort_menue_daten(array $d): array {
         if ($pfad === '/unternehmen/') { unset($r['werbung']); $r['firmen'] = ma21_menue_firmen(); }
         // Nur rote Titel, keine kleinen Unterpunkte (Wunsch Betreiber 15.10.2026).
         $r['punkte'] = ma21_menue_punkte_pruefen((array) ($r['punkte'] ?? []));
-        unset($r['gruppen']);
+        // Volle Fassung mit Unterpunkten und Anzeige (Stand 14.10.2026), gespeichert
+        // in „voll“: nur mit eingeschaltetem Schalter „Unterpunkte in den Aufklappmenüs“.
+        $gespeichert = is_array($r['voll'] ?? null) ? $r['voll'] : [];
+        unset($r['gruppen'], $r['voll']);
+        if ($pfad !== '/unternehmen/') unset($r['werbung']);
+        if ($voll && $gespeichert) {
+            $gruppen = ma21_menue_gruppen_pruefen((array) ($gespeichert['gruppen'] ?? []));
+            if ($gruppen) $r['gruppen'] = $gruppen;
+            if ($gruppen && (string) ($gespeichert['alle'] ?? '') !== '') $r['alle'] = (string) $gespeichert['alle'];
+            if ($gruppen && !empty($gespeichert['werbung']) && $pfad !== '/unternehmen/') $r['werbung'] = true;
+        }
     }
     unset($r);
     $d['standWordPress'] = (string) wp_date('c');
@@ -454,6 +476,30 @@ foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) ad
  * (die Seite wäre leer). Ortsteile zeigen direkt auf /ort/<slug>/, vorgefilterte
  * Termine (/termine/?ort=…) bleiben, wie sie sind.
  */
+/**
+ * Linkgruppen der vollen Fassung (Ausbaustufe, gespeichert in „voll“): Ortsteile
+ * zeigen auf /ort/<slug>/, Themen erst ab einer Meldung, Gruppen ohne Link fallen weg.
+ */
+function ma21_menue_gruppen_pruefen(array $gruppen, int $mindestens = 1): array {
+    $raus = [];
+    foreach ($gruppen as $g) {
+        if (!is_array($g) || (string) ($g['titel'] ?? '') === '') continue;
+        $links = [];
+        foreach ((array) ($g['links'] ?? []) as $l) {
+            if (!is_array($l) || count($l) < 2) continue;
+            $l = [(string) $l[0], (string) $l[1]];
+            if (preg_match('#^/(' . implode('|', array_keys(MA21_ORTE)) . ')/$#', $l[1], $m)) $l[1] = '/ort/' . $m[1] . '/';
+            if (preg_match('#^/thema/([^/]+)/$#', $l[1], $m)) {
+                $t = get_term_by('slug', $m[1], 'post_tag');
+                if (!$t || (int) $t->count < $mindestens) continue;
+            }
+            $links[] = $l;
+        }
+        if ($links) $raus[] = ['titel' => (string) $g['titel'], 'links' => $links];
+    }
+    return $raus;
+}
+
 function ma21_menue_punkte_pruefen(array $punkte): array {
     $raus = [];
     foreach ($punkte as $p) {
@@ -768,9 +814,15 @@ function ma21_block(string $name): string {
     return $rahmen("<section class=\"desk shell\" data-sektion=\"{$name}\">{$kopf}" . $reihe('desk-gross', $sek['gross'], 'l', 'gross') . $reihe('desk-mittel', $sek['mittel'], 'm', 'mittel') . $reihe('desk-zeilen', $sek['zeilen'], 's', 'zeilen') . '</section>');
 }
 
+/** „Weitere Meldungen“ (Endlos-Scrollen) nur mit eingeschaltetem Schalter (inc/ausbau.php). */
+function ma21_startseite_ausbau(string $html): string {
+    return ma21_ausbau('endlos') ? $html : (string) preg_replace('#<!-- endlos:start -->.*?<!-- endlos:end -->#s', '', $html);
+}
+
 /** Startseite: Vorlage mit gefüllten Nachrichtenblöcken und Werbeflächen. */
 function ma21_startseite(): string {
     $html = ma21_vorlage('startseite.html');
+    $html = ma21_startseite_ausbau($html);
     $html = (string) preg_replace_callback('/\{\{ma:([a-z0-9:-]+)\}\}/', fn($m) => str_starts_with($m[1], 'werbung:') ? ma21_werbung(substr($m[1], 8)) : ma21_block($m[1]), $html);
     // Foto des Tages wählt WordPress selbst (die Vorlage kann leer oder vom Bautag sein).
     $html = (string) preg_replace_callback('#<!-- fotodestages:start -->.*?<!-- fotodestages:end -->#s', fn() => '<!-- fotodestages:start -->' . ma21_foto_des_tages() . '<!-- fotodestages:end -->', $html, 1);
@@ -1126,7 +1178,7 @@ function ma21_endlos_teil(string $seite, array $posts, string $naechste): string
     return '<div data-endlos-teil data-art="' . ($raster ? 'raster' : 'reihen') . '" data-naechste="' . esc_attr($naechste) . '">' . $inhalt . '</div>';
 }
 add_action('template_redirect', function (): void {
-    if ((string) get_query_var('ma_endlos') === '' || !ma21_endlos_liste()) return;
+    if ((string) get_query_var('ma_endlos') === '' || !ma21_ausbau('endlos') || !ma21_endlos_liste()) return;
     global $wp_query;
     $posts = array_values(array_filter((array) ($wp_query->posts ?? []), fn($p) => $p instanceof WP_Post));
     if (!headers_sent()) header('X-Robots-Tag: noindex, follow');
@@ -1145,6 +1197,7 @@ add_filter('paginate_links_output', function (string $r): string {
 });
 /** Datenattribute am .feed einer Liste für assets/endlos.js. */
 function ma21_endlos_attr(string $seite): string {
+    if (!ma21_ausbau('endlos')) return '';
     $n = ma21_endlos_naechste();
     return $n === '' ? '' : ' data-endlos-naechste="' . esc_attr($n) . '" data-endlos-art="' . (ma21_raster_seite($seite) ? 'raster' : 'reihen') . '"';
 }

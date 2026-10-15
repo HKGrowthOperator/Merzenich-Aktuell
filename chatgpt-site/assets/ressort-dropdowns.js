@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=caf4b46414';
+  const MENUE_URL = '/assets/ressort-menue.json?v=e96b66a9e1';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -15,9 +15,18 @@
     '/leben/': 'Schule, Freizeit, Umwelt, Familie und Alltag in der Gemeinde.',
     '/wirtschaft/': 'Unternehmen, Infrastruktur und Strukturwandel rund um Merzenich.',
     '/unternehmen/': 'Betriebe aus der Gemeinde und ihre Unternehmenskanäle.',
+    // Nur mit eingeschalteter Ausbaustufe „Vereine in der Ressortleiste“ (inc/ausbau.php).
+    '/vereine/': 'Ehrenamt, Gemeinschaft, Feuerwehr, Fanclubs und Vereinsleben.',
     '/tipp/': 'Freizeitideen, Ausflüge und klar gekennzeichnete Empfehlungen.',
     '/menschen/': 'Porträts, Ehrungen, Jubiläen und Geschichten aus der Gemeinde.'
   };
+
+  // Einleitung der vollen Fassung (Ausbaustufe, inc/ausbau.php), wie bis 14.10.2026.
+  const INTROS_VOLL = {
+    '/blaulicht/': 'Polizei, Feuerwehr, Rettung und Verkehr aus der Gemeinde.',
+    '/unternehmen/': 'Betriebe aus der Gemeinde, Unternehmenskanäle und Wirtschaftsmeldungen.'
+  };
+  const intro = (route, def) => (gruppenVon(def).length && INTROS_VOLL[route]) || INTROS[route] || '';
 
   // Bilder nur vom Beitrag selbst: Ohne eigenes, passendes Bild steht der Teaser
   // als Text (Editorial Image System V3, docs/BILD-MOTIVREGELN.md). Die
@@ -31,7 +40,14 @@
       if (!r.ok) throw new Error('Ressort-Menue HTTP ' + r.status);
       return r.json();
     })
-    .then((data) => data && data.ressorts ? data.ressorts : {})
+    .then((data) => {
+      const ressorts = data && data.ressorts ? data.ressorts : {};
+      // Ausgeblendete Ressorts (Ausbaustufe, inc/ausbau.php): Die statische Kopie
+      // traegt sie mit "ausbau" in den Daten, WordPress liefert sie nur
+      // eingeschaltet und dann ohne dieses Merkmal.
+      for (const k of Object.keys(ressorts)) if (!ressorts[k] || ressorts[k].ausbau) delete ressorts[k];
+      return ressorts;
+    })
     .catch((err) => {
       console.error('Ressort-Menue konnte nicht geladen werden:', err);
       return {};
@@ -53,11 +69,58 @@
 
   // Rote Titel (Wunsch Betreiber 15.10.2026): Jedes Menue zeigt nur noch die
   // roten Titel, ohne kleine Unterpunkte. Ein Klick zeigt alle Meldungen dazu.
-  // Alte Daten mit "gruppen" (Browser-Cache waehrend eines Updates) zeigen den
-  // Gruppentitel mit dem ersten Link.
   function punkteVon(def) {
-    if (Array.isArray(def.punkte)) return def.punkte.filter((p) => p && p.titel && p.href);
-    return (def.gruppen || []).map((g) => ({ titel: g.titel, href: ((g.links || [])[0] || [])[1] })).filter((p) => p.titel && p.href);
+    return Array.isArray(def.punkte) ? def.punkte.filter((p) => p && p.titel && p.href) : [];
+  }
+
+  // Volle Fassung (Ausbaustufe „Unterpunkte in den Aufklappmenüs“,
+  // inc/ausbau.php): WordPress liefert dann "gruppen" mit den kleinen
+  // Unterpunkten und "werbung" (Vereine) wie bis zum 14.10.2026. Die
+  // einfache Fassung sieht diese Daten nie.
+  function gruppenVon(def) {
+    return (Array.isArray(def.gruppen) ? def.gruppen : [])
+      .map((g) => ({ titel: g && g.titel, links: ((g && g.links) || []).filter((l) => Array.isArray(l) && l[0] && l[1]) }))
+      .filter((g) => g.titel && g.links.length);
+  }
+  function gruppenHtml(gruppen) {
+    return gruppen.map((g) =>
+      '<section class="ressort-dropdown__group">' +
+        '<h3>' + esc(g.titel) + '</h3>' +
+        '<div class="ressort-dropdown__links">' +
+          g.links.map((item) => '<a href="' + esc(item[1]) + '">' + esc(item[0]) + '</a>').join('') +
+        '</div>' +
+      '</section>'
+    ).join('');
+  }
+
+  // Anzeige in der freien Flaeche neben den Linkgruppen (Vereine, volle
+  // Fassung). WordPress liefert die Anzeigen des Platzes
+  // hero_clubs_expanded_right aus der Werbeverwaltung; ohne laufende Anzeige
+  // erscheint wie auf allen Werbeplaetzen die gekennzeichnete Musteranzeige
+  // (Vorgabe Betreiber 07.10.2026). Motiv im selben Takt wie assets/werbung.js.
+  let werbeDaten = null, werbeLaden = null;
+  function werbungVorbereiten() {
+    if (werbeLaden || document.documentElement.dataset.werbung === 'aus') return;
+    werbeLaden = fetch('/assets/werbung.json', { credentials: 'same-origin' })
+      .then((r) => r.ok ? r.json() : null).catch(() => null)
+      .then((d) => { werbeDaten = d; });
+  }
+  function werbungHtml() {
+    if (document.documentElement.dataset.werbung === 'aus') return '';
+    const wp = window.maWerbungPlaetze;
+    const liste = wp && typeof wp === 'object' && Array.isArray(wp.hero_clubs_expanded_right) ? wp.hero_clubs_expanded_right : [];
+    if (liste.length) {
+      const a = liste[Math.floor(Date.now() / 14000) % liste.length];
+      return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige" data-ma-anzeige="' + Number(a.id) + '" data-ma-platz="hero_clubs_expanded_right"><span class="werbung-label">Anzeige</span>' +
+        '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + a.html + '</div></aside>';
+    }
+    const motive = werbeDaten && Array.isArray(werbeDaten.motive) ? werbeDaten.motive : [];
+    if (!motive.length) return '';
+    const takt = Math.max(6, Number(werbeDaten.rotationSekunden) || 14) * 1000;
+    const m = motive[Math.floor(Date.now() / takt) % motive.length];
+    return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige"><span class="werbung-label">Anzeige</span>' +
+      '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + (m.gap || m.band) + '</div>' +
+      (m.credit ? '<span class="werbung-credit">' + m.credit + '</span>' : '') + '</aside>';
   }
   function punkteHtml(def, label) {
     const punkte = punkteVon(def);
@@ -137,15 +200,17 @@
   function renderFirmen(inner, link, def) {
     const route = link.getAttribute('href');
     const firmen = def.firmen.filter((f) => f && f.name && f.url);
-    const punkte = punkteHtml(def, (def.titel || 'Unternehmen') + ': Bereiche');
+    const gruppen = gruppenVon(def);
+    const punkte = gruppen.length ? '' : punkteHtml(def, (def.titel || 'Unternehmen') + ': Bereiche');
     inner.classList.add('mit-firmen');
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
         '<strong>' + esc(def.titel || link.textContent.trim()) + '</strong>' +
-        '<p>' + esc(INTROS[route] || '') + '</p>' +
+        '<p>' + esc(intro(route, def)) + '</p>' +
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
-        (punkte ? '<div class="ressort-firmen__gruppen">' + punkte + '</div>' : '') +
+        (gruppen.length ? '<div class="ressort-firmen__gruppen ist-voll">' + gruppenHtml(gruppen) + '</div>'
+          : punkte ? '<div class="ressort-firmen__gruppen">' + punkte + '</div>' : '') +
       '</div>' +
       '<nav class="ressort-firmen__liste" aria-label="Unternehmen aus der Gemeinde">' +
         '<span class="ressort-dropdown__eyebrow">Unternehmen aus der Gemeinde</span>' +
@@ -243,7 +308,9 @@
     inner.classList.remove('mit-firmen');
     if (Array.isArray(def.firmen) && def.firmen.length) { renderFirmen(inner, link, def); return; }
     const route = link.getAttribute('href');
-    const punkte = punkteHtml(def, (def.titel || link.textContent.trim()) + ': Bereiche');
+    const gruppen = gruppenVon(def);
+    const punkte = gruppen.length ? '' : punkteHtml(def, (def.titel || link.textContent.trim()) + ': Bereiche');
+    const werbung = gruppen.length && def.werbung ? werbungHtml() : '';
 
     // Nur echte Beitraege; ohne Beitraege bleibt die Spalte weg.
     const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 4).map(story).join('');
@@ -253,11 +320,13 @@
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +
         '<strong>' + esc(def.titel || link.textContent.trim()) + '</strong>' +
-        '<p>' + esc(INTROS[route] || '') + '</p>' +
+        '<p>' + esc(intro(route, def)) + '</p>' +
         '<a class="ressort-dropdown__all" href="' + esc(route) + '">' + esc(def.alle || 'Alle Meldungen') + '</a>' +
         (mehr ? '<div class="ressort-dropdown__mehr" aria-label="Weitere Meldungen">' + mehr + '</div>' : '') +
       '</div>' +
-      '<div class="ressort-dropdown__groups">' + punkte + '</div>' +
+      (gruppen.length
+        ? '<div class="ressort-dropdown__groups ist-voll' + (werbung ? ' mit-werbung' : '') + '">' + gruppenHtml(gruppen) + werbung + '</div>'
+        : '<div class="ressort-dropdown__groups">' + punkte + '</div>') +
       (newest ? '<aside class="ressort-dropdown__latest" aria-label="Neu im Ressort">' +
         '<span class="ressort-dropdown__eyebrow">Neu im Ressort</span>' +
         newest +
@@ -278,6 +347,7 @@
     row.insertAdjacentElement('afterend', panel);
     const inner = panel.querySelector('.ressort-dropdown__inner');
     const data = await menuPromise;
+    if (Object.values(data).some((d) => d.werbung && gruppenVon(d).length)) werbungVorbereiten();
     let active = null;
     let schwebeAuf = 0, schwebeZu = 0, zeiger = '';
     // Spur der Maus in der Leiste: Wer bei offenem Menue schraeg nach unten
@@ -439,12 +509,15 @@
       knopf.className = 'drawer-ressort__auf';
       knopf.setAttribute('aria-expanded', 'false');
       knopf.setAttribute('aria-controls', id);
-      knopf.innerHTML = '<span class="sr-only">' + esc(def.titel) + ': Bereiche</span>';
+      knopf.innerHTML = '<span class="sr-only">' + esc(def.titel) + (gruppenVon(def).length ? ': Unterseiten' : ': Bereiche') + '</span>';
       const liste = document.createElement('div');
       liste.className = 'drawer-ressort__liste';
       liste.id = id;
       liste.hidden = true;
-      liste.innerHTML = punkteVon(def).map((p) => '<a href="' + esc(p.href) + '">' + esc(p.titel) + '</a>').join('') +
+      const gruppen = gruppenVon(def);
+      liste.innerHTML = (gruppen.length
+        ? gruppen.map((g) => '<div class="drawer-ressort__gruppe">' + esc(g.titel) + '</div>' + g.links.map((l) => '<a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a>').join('')).join('')
+        : punkteVon(def).map((p) => '<a href="' + esc(p.href) + '">' + esc(p.titel) + '</a>').join('')) +
         drawerFirmen(def, id);
       zeile.append(a, knopf, liste);
       drawerFirmenVerhalten(liste);

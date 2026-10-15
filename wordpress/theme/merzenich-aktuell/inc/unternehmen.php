@@ -24,12 +24,17 @@ const MA21_MUSTER_BIS = 3;
 
 /* ------------------------------------------------------------ Daten */
 
-/** Musterfirmen (inc/unternehmen-muster.json). */
+/**
+ * Musterfirmen (inc/unternehmen-muster.json): die drei Beispielfirmen, mit dem
+ * Schalter „Fünf Musterfirmen statt drei Beispielfirmen“ (inc/ausbau.php) die
+ * gespeicherten fünf Musterfirmen bis zum 14.10.2026 („frueher“).
+ */
 function ma21_muster_firmen(): array {
-    static $f = null;
-    if ($f !== null) return $f;
+    static $f = [];
+    $satz = function_exists('ma21_ausbau') && ma21_ausbau('muster_alt') ? 'frueher' : 'firmen';
+    if (isset($f[$satz])) return $f[$satz];
     $d = json_decode((string) @file_get_contents(__DIR__ . '/unternehmen-muster.json'), true);
-    return $f = (is_array($d) && is_array($d['firmen'] ?? null)) ? array_values($d['firmen']) : [];
+    return $f[$satz] = (is_array($d) && is_array($d[$satz] ?? null)) ? array_values($d[$satz]) : [];
 }
 
 /**

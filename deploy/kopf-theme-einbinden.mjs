@@ -130,8 +130,9 @@ let geaendert = 0, uebersprungen = 0, fehler = 0;
 // Vier Spalten wie die Schublade auf dem Telefon, darunter die drei Wege, etwas
 // an die Redaktion zu geben. Unter 768 px bleibt es bei der Schublade.
 const MEGA_SPALTEN = [
-  // Vereine steht seit 15.10.2026 nicht mehr im Menue (Wunsch Betreiber; Seite und Fusslink bleiben).
-  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
+  // Vereine: für die Vorstellung ausgeblendet (Wunsch Betreiber 15.10.2026), gespeichert als
+  // Ausbaustufe „vereine“ (dritter Wert, inc/ausbau.php). Seite und Fusslink bleiben immer.
+  ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine', 'vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
   ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
   ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
   ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen'],
@@ -140,7 +141,7 @@ const MEGA_SPALTEN = [
 ];
 const MEGA_WEGE = [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/meldung-senden/', 'Meldung senden'], ['/termine/melden/', 'Termin melden']];
 const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="mega-panel"><div class="mega-spalten">'
-  + MEGA_SPALTEN.map(([titel, links]) => `<div class="mega-spalte"><p class="mega-titel">${esc(titel)}</p><ul>${links.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join('')}</ul></div>`).join('')
+  + MEGA_SPALTEN.map(([titel, links]) => `<div class="mega-spalte"><p class="mega-titel">${esc(titel)}</p><ul>${links.map(([u, t, stufe]) => `<li${stufe ? ` data-ausbau="${stufe}"` : ''}><a href="${u}">${esc(t)}</a></li>`).join('')}</ul></div>`).join('')
   + `</div><p class="mega-wege"><span class="mega-titel">Für die Redaktion</span>${MEGA_WEGE.map(([u, t], i) => `<a class="${i ? 'mega-weg' : 'mega-weg primaer'}" href="${u}">${esc(t)}</a>`).join('')}</p></div></details>`;
 // Das alte Sport-Untermenue (.sport-mega) ist seit 26.09. ersetzt durch die
 // Ressort-Dropdowns (deploy/ressort-menue.mjs) und wird aus allen Seiten entfernt.
@@ -154,6 +155,7 @@ const MEHR_RE = /<details class="nav-more[^"]*">[\s\S]*?<\/details>/;
 // Home-Knopf links neben „Aktuell“ (Wunsch Betreiber 15.10.2026): fuehrt zur
 // Startseite wie das Logo. Steht vor der Leiste, nicht in ihr: Die Leiste
 // bricht zu breite Punkte in eine verborgene zweite Zeile um.
+const VEREINE_AUSGEBLENDET = '<a href="/vereine/" data-ausbau="vereine">Vereine</a>';
 const NAV_HOME = '<a class="nav-home" href="/"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M3 11.2 12 4l9 7.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.8v9.7h4.8v-5.7h3.4v5.7h4.8V9.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="sr-only">Startseite</span></a>';
 const SPORT_RE = /<div class="sport-mega">[\s\S]*?<!--\/sport-mega-->/;
 const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
@@ -217,11 +219,17 @@ for (const pfad of seiten) {
     /(<a href="\/wirtschaft\/"(?: aria-current="page")?>Wirtschaft<\/a>)(?!<a href="\/(?:tipp|unternehmen)\/")/g,
     '$1<a href="/tipp/">Tipp</a>'
   );
-  // Vereine raus aus Leiste und Schublade (Wunsch Betreiber 15.10.2026), Sport bleibt.
-  const ohneVereine = (block) => block.replace(/<a href="\/vereine\/"(?: aria-current="page")?>Vereine<\/a>/g, '');
+  // Vereine (Wunsch Betreiber 15.10.2026: raus für die Vorstellung, Sport bleibt)
+  // bleibt in Leiste und Schublade gespeichert, markiert als Ausbaustufe
+  // „vereine“ (inc/ausbau.php): Die statische Kopie blendet es aus
+  // (korrekturen.css), WordPress zeigt es nur mit eingeschaltetem Schalter.
+  const vereineAusgeblendet = (block) => {
+    const ohne = block.replace(/<a href="\/vereine\/"(?: aria-current="page")?(?: data-ausbau="vereine")?>Vereine<\/a>/g, '');
+    return ohne.replace(/(<a href="\/termine\/"(?: aria-current="page")?>Termine<\/a>)/, '$1' + VEREINE_AUSGEBLENDET);
+  };
   html = html
-    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, (b) => ohneVereine(tippNachWirtschaft(b)))
-    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, (b) => ohneVereine(tippNachWirtschaft(b)));
+    .replace(/<div class="navscroll">[\s\S]*?<\/div>/g, (b) => vereineAusgeblendet(tippNachWirtschaft(b)))
+    .replace(/<div class="drawer-group"><div class="grp">Ressorts<\/div>[\s\S]*?<\/div>/g, (b) => vereineAusgeblendet(tippNachWirtschaft(b)));
   if (html.includes('<div class="navscroll">') && !html.includes('class="nav-home"')) html = html.replace('<div class="navscroll">', NAV_HOME + '<div class="navscroll">');
   // Startseite: markiert ist der Home-Knopf, nicht „Aktuell“ (wie ma21_kopf_aktuell in WordPress).
   if (pfad === join(wurzel, 'chatgpt-site', 'index.html')) html = html.replace('<a class="nav-home" href="/">', '<a class="nav-home" href="/" aria-current="page">').replace(/<a href="\/nachrichten\/" aria-current="page">Aktuell<\/a>/g, '<a href="/nachrichten/">Aktuell</a>');

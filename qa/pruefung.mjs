@@ -928,19 +928,23 @@ function pruefeMenueUndEndlos() {
       if (Object.keys(pk).some((k) => !['titel', 'href'].includes(k))) fehler('Menue', `${href} › ${pk.titel}: Unterpunkte im Menü (${Object.keys(pk).join(', ')}).`);
     }
   }
-  if (menue.ressorts && menue.ressorts['/vereine/']) fehler('Menue', 'Vereine steht wieder im Menü (seit 15.10.2026 raus, Sport bleibt).');
+  // Ausbaustufe (inc/ausbau.php): Vereine ist gespeichert, aber als ausgeblendet markiert.
+  if (menue.ressorts && menue.ressorts['/vereine/'] && menue.ressorts['/vereine/'].ausbau !== 'vereine') fehler('Menue', 'Vereine steht sichtbar im Menü (seit 15.10.2026 ausgeblendet, Sport bleibt).');
+  const ohneVoll = Object.entries(menue.ressorts || {}).filter(([, r]) => !(r.voll && Array.isArray(r.voll.gruppen) && r.voll.gruppen.length)).map(([h]) => h);
+  if (ohneVoll.length) fehler('Menue', `Gespeicherte volle Fassung (Unterpunkte) fehlt: ${ohneVoll.join(', ')}.`);
   let ohneHome = 0, mitVereine = 0, ohneEndlos = 0;
   for (const datei of dateienUnter('chatgpt-site', '.html')) {
     const html = lies(datei);
     const leiste = (/<div class="navscroll">([\s\S]*?)<\/div>/.exec(html) || [])[1];
     if (leiste !== undefined) {
       if ((html.match(/class="nav-home"/g) || []).length !== 1) ohneHome++;
-      if (leiste.includes('href="/vereine/"')) mitVereine++;
+      if (/<a href="\/vereine\/"(?![^>]*data-ausbau=)/.test(leiste)) mitVereine++;
     }
     if (html.includes('/assets/werbung.js') && !html.includes('/assets/endlos.js')) ohneEndlos++;
   }
   if (ohneHome) fehler('Leiste', `${ohneHome} Seite(n) ohne genau einen Home-Knopf (deploy/kopf-theme-einbinden.mjs).`);
-  if (mitVereine) fehler('Leiste', `${mitVereine} Seite(n) mit „Vereine“ in der Leiste.`);
+  if (mitVereine) fehler('Leiste', `${mitVereine} Seite(n) mit sichtbarem „Vereine“ in der Leiste (gespeichert, aber ohne data-ausbau="vereine").`);
+  if (!lies('chatgpt-site/assets/korrekturen.css').includes('.mainnav .navrow .navscroll>a[data-ausbau]')) fehler('Leiste', 'korrekturen.css blendet [data-ausbau] in der Leiste nicht aus (die Leistenregel mit !important ist spezifischer).');
   if (ohneEndlos) fehler('Endlos', `${ohneEndlos} Seite(n) ohne assets/endlos.js.`);
   if (!lies('chatgpt-site/index.html').includes('data-endlos-quelle="/nachrichten/"')) fehler('Endlos', 'Startseite ohne „Weitere Meldungen“ (data-endlos-quelle).');
   const rubriken = JSON.parse(lies('wordpress/theme/merzenich-aktuell/inc/rubriken.json')).rubriken || {};

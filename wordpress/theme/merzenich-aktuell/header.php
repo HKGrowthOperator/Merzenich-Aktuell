@@ -1,7 +1,7 @@
 <?php
 /* Kopf wie auf der statischen Seite: Assets und Masthead aus vorlagen/ (deploy/wp-theme.mjs). */
 ?><!doctype html>
-<html lang="de" data-page="<?php echo is_front_page() ? 'home v20' : 'v20'; ?>" data-werbung="an">
+<html lang="de" data-page="<?php echo is_front_page() ? 'home v20' : 'v20'; ?>" data-werbung="an"<?php echo ma21_ausbau('endlos') ? '' : ' data-endlos="aus"'; ?>>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
