@@ -33,6 +33,9 @@ Vor der Vorstellung beim Bürgermeister wurde die Live-Seite in sechs Breiten (1
   - `/werben/`: Knopf „Werbung anfragen“ lesbar, der Auswahlkasten steht unter dem Seitentitel.
   - Sporttabelle am Handy zeigt die Punkte ohne Wischen.
 - **Fuß:** „Datenschutz-Einstellungen“ steht neben Impressum und Datenschutz statt am linken Rand.
+- **Ladezeit:**
+  - Am 15.10. gegen 17:20 UTC brauchten einzelne erste Aufrufe 12,6 s (`/unternehmen/`) bzw. über 20 s (`/wirtschaft/`). Bei zwei späteren Messreihen, jeweils ohne und mit zufälliger Abfrage, lagen alle 15 Hauptseiten bei 0,5 bis 1 s. Die Ursache ließ sich ohne Serverzugang nicht sicher klären.
+  - Behoben ist eine belegte Bremse: Dateien aus dem Repository (Startseiten-Blöcke, Spielstand, Märkte) holte der Seitenaufruf bei abgelaufenem Zwischenspeicher selbst von GitHub, mit bis zu 8 s Wartezeit je Datei. Jetzt liefert er die letzte gute Kopie sofort und frischt sie im Hintergrund auf (WP-Cron; ist die Kopie älter als dreimal die Laufzeit, wie bisher direkt).
 
 Tests: `layout-test.php`, `endlos-test.php`, `ausbau-test.php`, `kopf-test.php`, `termine-test.php`, `ressort-test.php` erweitert; jede Korrektur zusätzlich im Browser mit den neuen Dateien auf den Live-Inhalten nachgestellt.
 

@@ -31,6 +31,14 @@ function is_post_type_archive($t = null) { return $GLOBALS['ist']['archiv'] !== 
 function is_404() { return $GLOBALS['ist']['404']; }
 $GLOBALS['optionen'] = [];
 function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
+// Abruf von GitHub (ma21_repo_datei): gezählt, nie echt
+$GLOBALS['abrufe'] = 0; $GLOBALS['geplant'] = [];
+function update_option($k, $v, $a = null) { $GLOBALS['optionen'][$k] = $v; return true; }
+function is_wp_error($x) { return false; }
+function wp_remote_get($u, $a = []) { $GLOBALS['abrufe']++; return ['body' => 'neu']; }
+function wp_remote_retrieve_response_code($r) { return 200; } function wp_remote_retrieve_body($r) { return $r['body']; }
+function wp_next_scheduled($h, $a = []) { return in_array([$h, $a], $GLOBALS['geplant'], true) ? time() : false; }
+function wp_schedule_single_event($t, $h, $a = []) { $GLOBALS['geplant'][] = [$h, $a]; return true; }
 function is_search() { return $GLOBALS['ist']['search']; }
 function is_paged() { return (int) ($GLOBALS['qv']['paged'] ?? 0) > 1; }
 // Blättern wie WordPress: get_pagenum_link behält die Abfrage der aktuellen Adresse (also auch ma_endlos).
@@ -134,6 +142,17 @@ pruefe('rel="next" und rel="prev" an den Blätterlinks', [str_contains($b, '<a c
 pruefe('ma_endlos ist eine erlaubte Abfragevariable', in_array('ma_endlos', array_reduce($GLOBALS['hooks']['query_vars'] ?? [], fn($v, $cb) => $cb($v), []), true), true);
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/archive.php');
 pruefe('archive.php und autor.php setzen die Attribute am .feed', [str_contains($vorlage, 'ma21_endlos_attr('), str_contains((string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/autor.php'), 'ma21_endlos_attr(')], [true, true]);
+
+echo "\nDateien aus dem Repository ohne Warten (21.19.1)\n";
+$k = 'ma21_repo_' . md5('index.html');
+$GLOBALS['optionen'] = [$k . '_kopie' => 'alt', $k . '_zeit' => time() - 2 * HOUR_IN_SECONDS];
+pruefe('Abgelaufen mit Kopie: sofort die Kopie, kein Abruf, Auffrischen im Hintergrund geplant', [ma21_repo_datei('index.html'), $GLOBALS['abrufe'], count($GLOBALS['geplant'])], ['alt', 0, 1]);
+ma21_repo_datei('index.html');
+pruefe('Zweiter Aufruf plant nicht noch einmal', count($GLOBALS['geplant']), 1);
+$GLOBALS['optionen'] = [$k . '_kopie' => 'alt'];
+pruefe('Kopie ohne Zeitpunkt (ältere Installation): einmal direkt holen, Zeit merken', [ma21_repo_datei('index.html'), $GLOBALS['abrufe'], isset($GLOBALS['optionen'][$k . '_zeit'])], ['neu', 1, true]);
+$GLOBALS['optionen'] = [];
+pruefe('Keine Kopie: direkt holen', [ma21_repo_datei('index.html'), $GLOBALS['abrufe']], ['neu', 2]);
 
 echo "\nAnrisse am Wortende kürzen (21.19.1)\n";
 pruefe('Kürzung endet am Wortende mit …', ma21_kurz('Familien sollen ihr Kind jetzt vormerken. Der Kreis nennt die Frist', 47), 'Familien sollen ihr Kind jetzt vormerken. Der …');

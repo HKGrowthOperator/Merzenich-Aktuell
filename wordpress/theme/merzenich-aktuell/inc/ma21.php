@@ -386,17 +386,34 @@ function ma21_repo_datei(string $pfad, int $ttl = HOUR_IN_SECONDS): string {
     $schluessel = 'ma21_repo_' . md5($pfad);
     $t = get_transient($schluessel);
     if (is_string($t) && $t !== '') return $t;
+    // Abgelaufen, aber eine nicht zu alte Kopie ist da: sofort ausliefern und im Hintergrund
+    // (WP-Cron) auffrischen. Vorher wartete der Seitenaufruf bis zu 8 s auf GitHub
+    // (Vorführ-Check 15.10.2026: einzelne erste Aufrufe 12 bis 20 s).
+    $kopie = (string) get_option($schluessel . '_kopie', '');
+    $alter = time() - (int) get_option($schluessel . '_zeit', 0);
+    if ($kopie !== '' && $alter < max(3 * $ttl, 3 * HOUR_IN_SECONDS)) {
+        set_transient($schluessel, $kopie, 5 * MINUTE_IN_SECONDS);
+        if (function_exists('wp_schedule_single_event') && !wp_next_scheduled('ma21_repo_auffrischen', [$pfad, $ttl])) wp_schedule_single_event(time(), 'ma21_repo_auffrischen', [$pfad, $ttl]);
+        return $kopie;
+    }
+    return ma21_repo_holen($pfad, $ttl);
+}
+/** Datei jetzt aus dem Repository holen; antwortet GitHub nicht, gilt die letzte gute Kopie. */
+function ma21_repo_holen(string $pfad, int $ttl): string {
+    $schluessel = 'ma21_repo_' . md5($pfad);
     $r = wp_remote_get(MA21_REPO . '/' . ltrim($pfad, '/'), ['timeout' => 8]);
     $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
     if ($body !== '') {
         set_transient($schluessel, $body, $ttl);
         update_option($schluessel . '_kopie', $body, false);
+        update_option($schluessel . '_zeit', time(), false);
         return $body;
     }
     $kopie = (string) get_option($schluessel . '_kopie', '');
     if ($kopie !== '') set_transient($schluessel, $kopie, 10 * MINUTE_IN_SECONDS);
     return $kopie;
 }
+add_action('ma21_repo_auffrischen', function ($pfad, $ttl): void { ma21_repo_holen((string) $pfad, (int) $ttl); }, 10, 2);
 
 /**
  * Ressort-Menü (assets/ressort-menue.json, liest ressort-dropdowns.js): rote
