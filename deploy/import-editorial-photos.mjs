@@ -6,7 +6,7 @@
  * Nutzung und Bearbeitung zulässig). Zuerst werden Merzenich/Kreis Düren/NRW
  * gesucht, danach erst allgemeine deutsche Motive.
  *
- * Je Pool werden exakt 20 verschiedene Fotos lokal materialisiert.
+ * Ziel: je Haupt- und Detailpool 20 unterschiedliche und thematisch passende Fotos.
  * Die Original-Dateiseite, Lizenz, Urheber und Download-URL bleiben im
  * Manifest nachvollziehbar. Für die Website wird eine max. 1600px breite
  * Commons-Ableitung gespeichert, damit das Repository nicht mit mehreren
@@ -28,7 +28,7 @@ const PRUEFUNG = join(ROOT, 'deploy', 'editorial-photo-review.json');
 // Die übrigen Pools fallen auf die V2-Symbolgrafiken zurück, dort ist eine
 // kleinere, dafür geprüfte Fotoauswahl besser als aufgefüllter Ausschuss.
 const NUR_FOTO = new Set(['aktuell', 'blaulicht', 'brand', 'termine', 'tipp', 'menschen']);
-const SERIE_MAX = 3;
+const SERIE_MAX = 3; // Detailpools erlauben hoechstens zwei Motive derselben Fotoreihe.
 const PRO_POOL = 20;
 const REFRESH = process.argv.includes('--refresh');
 const HEUTE = new Date().toISOString().slice(0, 10);
@@ -66,40 +66,40 @@ const POOLS = {
     queries: ['deepcat:"Football venues in North Rhine-Westphalia"', 'deepcat:"Association football pitches in Germany"', 'Fußballplatz Nordrhein-Westfalen', 'Kunstrasenplatz', 'Sporthalle Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
   },
   tennisdetail: {
-    tags: ['sport','tennis','tennisplatz'],
-    max: 4,
+    tags: ['sport','tennis','tennisplatz','tennistraining'],
+    max: 20,
     pflicht: /tennis/i,
-    queries: ['Dülmen Tenniszentrum Süd 2014 7786', 'Tennisplätze Nordrhein-Westfalen', 'Tennisanlage Nordrhein-Westfalen']
+    queries: ['Tennisplätze Nordrhein-Westfalen','Tennisanlage Nordrhein-Westfalen','Tennisclub Nordrhein-Westfalen','Tennisplatz Sandplatz Deutschland','Tennis court NRW','Tennishalle Nordrhein-Westfalen','Tennis Training Deutschland','Tennisnetz Platz','Tennisverein Deutschland','Tennisplätze Kreis Düren','Tennisplatz Freiluft Deutschland','Tenniscourt Germany','Tennis doubles court Germany','Tennis Sportanlage Düren']
   },
   digitaldetail: {
-    tags: ['digital','smartphone','senioren','bildung'],
-    max: 4,
-    pflicht: /(senior.*smartphone|smartphone.*senior|xl-viewer|phone for seniors)/i,
-    queries: ['Senior smartphone XL-Viewer 5000', 'Doro phone for seniors']
+    tags: ['digital','smartphone','senioren','bildung','tablet','medienkompetenz'],
+    max: 20,
+    pflicht: /(senior.*smartphone|smartphone.*senior|seniorenhandy|mobiltelefon|smartphone|tablet computer|tablet device|handy senior|phone for seniors|xl-viewer)/i,
+    queries: ['Senioren Smartphone Kurs','Senior smartphone XL-Viewer 5000','Smartphone Senioren Deutschland','Smartphone Bedienung','Android Smartphone Germany','Doro phone for seniors','Senioren Tablet','Tablet Computer Hand','Handy für Senioren','Digitalisierung Smartphone Schule','Smartphone auf Tisch','Smartphone Bildschirm Android','Tablet Computer Germany','Medienkompetenz Handy']
   },
   tanzdetail: {
-    tags: ['tanz','vortanzen','tanzsaal'],
-    max: 4,
-    pflicht: /(tanzhaus|tanzsaal|dance hall)/i,
-    queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner', 'Uetzing Tanzsaal']
+    tags: ['tanz','vortanzen','tanzsaal','tanzverein','tanzstudio'],
+    max: 20,
+    pflicht: /(tanzhaus|tanzsaal|tanzstudio|tanzschule|tanzraum|dance hall|dance studio|dance floor|ballettsaal|ballet studio)/i,
+    queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner','Tanzsaal Nordrhein-Westfalen','Tanzstudio Deutschland','Tanzraum Deutschland','Tanzschule Saal NRW','Tanzproberaum','Dance studio Germany','Dance hall Germany','Ballettsaal Germany','Tanzparkett Tanzsaal','Tanzhaus Düsseldorf','Uetzing Tanzsaal','Tanzhalle','Tanzsport Verein Trainingssaal']
   },
   naturdetail: {
-    tags: ['natur','nistkasten','voegel'],
-    max: 4,
-    pflicht: /(nistkasten|nestbox|birdhouse)/i,
-    queries: ['Nistkasten mit Marderschutz', 'Nistkasten Holz Deutschland']
+    tags: ['natur','nistkasten','voegel','vogelschutz','naturschutz'],
+    max: 20,
+    pflicht: /(nistk[aä]ste?n|nest.?box|bird.?house|bird nest box|vogelkasten|brutkasten|vogelhaus)/i,
+    queries: ['Nistkasten mit Marderschutz','Nistkasten Holz Deutschland','Nistkasten Baum Deutschland','Nistkasten für Meisen','Nistkasten im Garten','Nistkasten Montage','Nistkasten Vogelschutz','Meisenkasten Deutschland','Bird nest box Germany','Nestbox trees Germany','Vogelhaus Brutkasten','Nistkasten bauen','Nistkasten Naturpark Nordrhein-Westfalen']
   },
   vereinsdetail: {
-    tags: ['verein','vereinsheim','sportlerheim'],
-    max: 4,
-    pflicht: /(vereinsheim|clubhouse|club house)/i,
-    queries: ['Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck', 'Vereinsheim Nordrhein-Westfalen']
+    tags: ['verein','vereinsheim','sportlerheim','gemeinschaftshaus','ehrenamt'],
+    max: 20,
+    pflicht: /(vereinsheim|clubhouse|club house|sch[uü]tzenheim|sportlerheim|gemeinschaftshaus|dorfgemeinschaftshaus|clubheim)/i,
+    queries: ['Vereinsheim Nordrhein-Westfalen','Sportlerheim Nordrhein-Westfalen','Schützenheim Nordrhein-Westfalen','Dorfgemeinschaftshaus Kreis Düren','Gemeinschaftshaus Nordrhein-Westfalen','Clubhouse Germany sports','Vereinsheim Sportverein','Kleingarten Vereinsheim NRW','Vereinsheim des KGV Knipprather Busch 1969 eV In der Loheck','Schützenheim Deutschland','Sportlerheim Außenansicht','Vereinsheim Deutschland','Dorfgemeinschaftshaus Gemeinde','Vereinsheim Fußball NRW']
   },
   kirchedetail: {
-    tags: ['kirche','gottesdienst','kirchenfenster'],
-    max: 4,
-    pflicht: /(kirchenfenster|church window)/i,
-    queries: ['Kirchenfenster Der Herr ist mein Hirte', 'Kirchenfenster Deutschland']
+    tags: ['kirche','gottesdienst','kirchenfenster','bleiglas','sakral'],
+    max: 20,
+    pflicht: /(kirchenfenster|church window|stained.?glass|glasmalerei|bleiglasfenster|kirchen.?glasfenster)/i,
+    queries: ['Kirchenfenster Der Herr ist mein Hirte','Kirchenfenster Nordrhein-Westfalen','Kirchenfenster Deutschland','Bleiglasfenster Kirche NRW','Kirchenfenster St Laurentius Merzenich','Glasmalerei Kirchenfenster Deutschland','Church stained glass Germany','Stained glass NRW church','Kirchenfenster Kirche Düren','Kirchenfenster Christuskirche','Kirchenfenster Heiliger Geist','Stained glass window church Germany','Kirchenfenster Altarkirche','Kirchenfenster evangelische Kirche NRW']
   },
   termine: {
     tags: ['termine','veranstaltung','event','fest','markt'],
@@ -124,28 +124,28 @@ const POOLS = {
   // Editorial Image System V3: Ereignis-Pools. Pflichtwort im Dateititel, sonst
   // kommt Beifang; Sichtung und Motiv (deploy/bildmotive.json) wie bei allen.
   technik: {
-    tags: ['feuerwehr','technische-hilfe','einsatz'],
+    tags: ['feuerwehr','technische-hilfe','einsatz','oelspur','brandmeldeanlage'],
     max: 24,
-    pflicht: /(ölspur|oelspur|ölbinde|oelbinde|bindemittel|ölsperre|hydrauliköl|brandmelde|brandmelder|rauchmelder|rauchwarnmelder|smoke detector|fire alarm)/i,
-    queries: ['Ölspur Feuerwehr', 'Ölbindemittel', 'Ölspur Straße', 'Bindemittel Feuerwehr', 'Brandmeldeanlage', 'Brandmelder', 'Brandmeldezentrale', 'Rauchmelder', 'Rauchwarnmelder', 'smoke detector ceiling']
+    pflicht: /(ölspur|oelspur|ölbinde|oelbinde|bindemittel|ölsperre|hydrauliköl|brandmelde|brandmelder|rauchmelder|rauchwarnmelder|smoke detector|fire alarm|oil spill)/i,
+    queries: ['Ölspur Feuerwehr Nordrhein-Westfalen','Ölbindemittel Feuerwehr','Ölspur Straße','Ölspur Beseitigung','Ölsperre Feuerwehr','Oil spill fire brigade Germany','Bindemittel Feuerwehr','Brandmeldeanlage Feuerwehr','Brandmeldezentrale','Brandmelder','Handfeuermelder','Rauchmelder','Rauchwarnmelder','Smoke detector ceiling Germany','Fire alarm button Germany','Rauchwarnmelder an Decke']
   },
   rettung: {
-    tags: ['feuerwehr','rettung','tier','tuer'],
-    max: 16,
-    pflicht: /(tierrettung|tier in not|tierfang|katze.*(baum|feuerwehr)|türöffnung|tueroeffnung|wohnungsöffnung|animal rescue)/i,
-    queries: ['Tierrettung Feuerwehr', 'Tierrettung', 'Tierfang Feuerwehr', 'Katze Feuerwehr Drehleiter', 'Türöffnung Feuerwehr', 'Wohnungsöffnung Feuerwehr', 'animal rescue fire brigade Germany']
+    tags: ['feuerwehr','rettung','tier','tuer','technische-hilfe'],
+    max: 20,
+    pflicht: /(tierrettung|tier in not|tierfang|katze.*(baum|feuerwehr)|türöffnung|tueroeffnung|wohnungsöffnung|haustüröffnung|animal rescue|cat rescue|feuerwehr.*tier)/i,
+    queries: ['Tierrettung Feuerwehr Nordrhein-Westfalen','Tierrettung Feuerwehr','Tierrettung Katze Feuerwehr','Katze auf Baum Feuerwehr','Tierfang Feuerwehr','Katze Drehleiter Feuerwehr','Animal rescue German fire brigade','Cat rescue fire brigade','Türöffnung Feuerwehr Nordrhein-Westfalen','Türöffnung Feuerwehr','Wohnungsöffnung Feuerwehr','Türöffnungswerkzeug Feuerwehr','Haustüröffnung Feuerwehr','Firefighters animal rescue Germany','Feuerwehr Türrettung']
   },
   unfall: {
-    tags: ['verkehr','unfall','einsatz'],
+    tags: ['verkehr','unfall','einsatz','absperrung','unfallstelle'],
     max: 20,
-    pflicht: /(verkehrsunfall|unfallstelle|unfall|absperrung|fußgängerbrücke|fussgaengerbruecke|fußgängerüberführung|footbridge)/i,
-    queries: ['Verkehrsunfall Feuerwehr Nordrhein-Westfalen', 'Unfallstelle Absperrung', 'Verkehrsunfall Absicherung', 'Unfallstelle Polizei', 'Fußgängerbrücke Landstraße', 'Fußgängerbrücke Nordrhein-Westfalen', 'Fußgängerüberführung Straße']
+    pflicht: /(verkehrsunfall|unfallstelle|unfall|absperrung|fußgängerbrücke|fussgaengerbruecke|fußgängerüberführung|footbridge|traffic accident|crash scene)/i,
+    queries: ['Verkehrsunfall Feuerwehr Nordrhein-Westfalen','Verkehrsunfall Kreis Düren','Unfallstelle Nordrhein-Westfalen','Verkehrsunfall Absicherung','Unfallabsperrung Feuerwehr','Unfallstelle Polizei Nordrhein-Westfalen','Straßenunfall Absperrung','Verkehrsunfall Landstraße Deutschland','Fahrzeugunfall Nordrhein-Westfalen','Fußgängerbrücke Landstraße','Fußgängerbrücke Nordrhein-Westfalen','Fußgängerüberführung Straße','Traffic accident Germany fire brigade','Verkehrsunfall Sperrung']
   },
   flaeche: {
-    tags: ['brand','feld','flaeche'],
+    tags: ['brand','feld','flaeche','vegetationsbrand','feuerwehr'],
     max: 20,
-    pflicht: /(feldbrand|flächenbrand|flaechenbrand|stoppelfeld|böschungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|mülleimerbrand|muelleimerbrand|containerbrand)/i,
-    queries: ['Feldbrand', 'Flächenbrand', 'Stoppelfeldbrand', 'Böschungsbrand', 'Strohballenbrand', 'Vegetationsbrand', 'Grasbrand Feuerwehr', 'Containerbrand', 'Mülleimerbrand']
+    pflicht: /(feldbrand|flächenbrand|flaechenbrand|stoppelfeld|böschungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|mülleimerbrand|muelleimerbrand|containerbrand|brush fire|grass fire)/i,
+    queries: ['Feldbrand Nordrhein-Westfalen','Flächenbrand Kreis Düren','Stoppelfeldbrand Feuerwehr','Böschungsbrand NRW','Böschungsbrand','Strohballenbrand Deutschland','Vegetationsbrand Feuerwehr Nordrhein-Westfalen','Grasbrand Deutschland','Flächenbrand Feuerwehr','Feldbrand Feuerwehr','Mülleimerbrand Feuerwehr','Containerbrand Feuerwehr','Böschungsbrand Straße','Grass fire Germany','Vegetationsbrand Ausbildung']
   },
   verkehr: {
     // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
@@ -153,7 +153,7 @@ const POOLS = {
     tags: ['verkehr','geschwindigkeit','blitzer','fahrrad','reparaturstation','strasse'],
     // Runde 20: 16 geprüfte Fotos reichen; jeder Nachlauf brachte nur weitere
     // Reparaturstationen aus dem Ausland oder mit Aufdruck.
-    max: 16,
+    max: 20,
     queries: ['Starenkasten', 'Blitzer Nordrhein-Westfalen', 'Geschwindigkeitsmessanlage', 'Geschwindigkeitsüberwachung Deutschland', 'Radarfalle Deutschland', 'Fahrradreparaturstation', 'Fahrrad-Reparaturstation', 'Fahrradservicestation', 'bicycle repair station', 'bike repair station Germany', 'Fahrrad Reparatursäule', 'Radservicestation']
   },
   tipp: {
@@ -171,7 +171,7 @@ const POOLS = {
 
 const BAD_TITLE = /(logo|wappen|coat of arms|flag|karte|map of|locator|diagram|poster|plakat|flyer|icon|scan|seite \d|page \d|screenshot|symbol|svg)/i;
 // Strengere Filter nach der Sichtprüfung vom 24.09.2026.
-const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|polizeipr[aä]sident|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|unfall|accident|crash|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
+const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|polizeipr[aä]sident|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
 const BAD_KATEGORIE = /(portrait|people of|politicians|athletes|players|footballers|musicians|actors|soldiers|military|united states army|demonstrations|protests|satellite|maps of|logos|coats of arms|patches|license plates|vehicle registration|paintings|diagrams|charts|crowds|children)/i;
 const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea|arizona|oregon|nevada|montana|colorado|utah|idaho|new mexico|texas|florida|national forest|forest service|bush ?fire|sweden|schweden|norway|norwegen|finland|denmark|d[aä]nemark|nyn[aä]shamn|israel|kibbutz|gaza|ukrain|estonia|eesti|tartu|latvia|lithuania|indonesia|philippin|mexico|colombia|brazil|india\b|steiermark|styria|mureck|russia|russland|moscow|moskau|m[aá]laga|spain|spanien|espa[nñ]a|hungary|ungarn|moh[aá]cs|massacre|massaker|anschlag)/i;
 // Titel in nicht-lateinischer Schrift stammen fast immer aus dem Ausland.
@@ -279,6 +279,8 @@ function usable(c, pool) {
   if (AUSGESCHLOSSEN.has(c.title)) return false;
   const text = [c.title, c.description, c.categories].join(' ');
   if (BAD_TITLE_STRENG.test(c.title) || BAD_TITLE_STRENG.test(c.description)) return false;
+  // Unfallsymbolbilder duerfen Unfall im Dateititel tragen; andere Pools nicht.
+  if (pool !== 'unfall' && /(unfall|accident|crash)/i.test(c.title + ' ' + c.description)) return false;
   if (BAD_KATEGORIE.test(c.categories)) return false;
   if (AUSLAND.test(text) || FREMDE_SCHRIFT.test(c.title)) return false;
   if (pool === 'sport' && SPORT_FREMD.test(c.title)) return false;
@@ -413,7 +415,7 @@ for (const pool of Object.keys(POOLS)) {
       if (chosen.length >= fehlend + 8) break;
       if (!usable(candidate, pool) || usedTitles.has(candidate.title) || chosen.some((x) => x.title === candidate.title)) continue;
       const s = serie(candidate.title);
-      if ((serien.get(s) || 0) >= SERIE_MAX) continue;
+      if ((serien.get(s) || 0) >= (pool.endsWith('detail') || ['technik','rettung','unfall','flaeche'].includes(pool) ? 2 : SERIE_MAX)) continue;
       serien.set(s, (serien.get(s) || 0) + 1);
       chosen.push(candidate);
     }
