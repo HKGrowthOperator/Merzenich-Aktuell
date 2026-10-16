@@ -20,7 +20,7 @@
   "sport": 20,
   "tennisdetail": 15,
   "digitaldetail": 8,
-  "tanzdetail": 3,
+  "tanzdetail": 6,
   "naturdetail": 20,
   "vereinsdetail": 20,
   "kirchedetail": 20,
@@ -31,7 +31,7 @@
   "technik": 14,
   "rettung": 2,
   "unfall": 3,
-  "flaeche": 0,
+  "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
   "menschen": 20
@@ -4210,6 +4210,34 @@
    "ort": "NRW"
   },
   {
+   "id": "web-tanzdetail-02-c1158f13",
+   "pool": "tanzdetail",
+   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-02-c1158f132a-1200.webp",
+   "alt": "Schönbusch Park in en:Aschaffenburg - \"Dancing Hall\" from inside",
+   "credit": "Symbolbild · Maulaff / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ASch%C3%B6nbusch_-_Tanzsaal_von_innen.jpg",
+   "titel": "File:Schönbusch - Tanzsaal von innen.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tanzdetail-03-77f987b4",
+   "pool": "tanzdetail",
+   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-03-77f987b4c6-1200.webp",
+   "alt": "Das Kornhaus in Dessau - Blick in den Tanzsaal",
+   "credit": "Symbolbild · JensKunstfreund / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ADas_Kornhaus_in_Dessau_-_Blick_in_den_Tanzsaal.jpg",
+   "titel": "File:Das Kornhaus in Dessau - Blick in den Tanzsaal.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-tanzdetail-04-52fb6293",
    "pool": "tanzdetail",
    "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-04-52fb62934c-1200.webp",
@@ -4222,6 +4250,20 @@
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "NRW"
+  },
+  {
+   "id": "web-tanzdetail-05-1cce80ad",
+   "pool": "tanzdetail",
+   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-05-1cce80ad97-1200.webp",
+   "alt": "Aschaffenburg, Park Schönbusch, Tanzsaal",
+   "credit": "Symbolbild · Tilman2007 / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AAschaffenburg%2C_Park_Sch%C3%B6nbusch%2C_Tanzsaal%2C_003.jpg",
+   "titel": "File:Aschaffenburg, Park Schönbusch, Tanzsaal, 003.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-tanzdetail-06-d4961f44",
@@ -6475,6 +6517,34 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-flaeche-01-c1ee65fe",
+   "pool": "flaeche",
+   "datei": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-1200.webp",
+   "alt": "Wildfire in Summer 2003.",
+   "credit": "Symbolbild · Tilo / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AWaldbrand-Bodenfeuer.jpg",
+   "titel": "File:Waldbrand-Bodenfeuer.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-flaeche-02-e4fbd1a1",
+   "pool": "flaeche",
+   "datei": "/assets/editorial-pools/flaeche/flaeche-02-e4fbd1a141-800.webp",
+   "alt": "Waldbrand in der Gohrische Heide von Glaubitz aus gesehen, aufgenommen am 3. Juli 2025.",
+   "credit": "Symbolbild · Photographer: Mosbatho / Wikimedia Commons · CC BY 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AGohrischheide_Waldbrand_Juli_2025.jpg",
+   "titel": "File:Gohrischheide Waldbrand Juli 2025.jpg",
+   "lizenz": "CC BY 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
