@@ -78,7 +78,21 @@
 - Prüfgruppe „Märkte“: nicht nachgestellt.
 - Englische Alt-Texte in den Bildpools (`bildpools.json`, Sache der Pool-Pflege).
 
-**Stand live:** noch nicht eingespielt.
+**Stand live:** eingespielt am 16.10.2026 abends, jeweils aus `node deploy/wp-pakete.mjs`:
+- erst Plugin 1.28.2, dann Theme 21.20.1, danach Permalinks gespeichert;
+- dann Plugin 1.28.3 (Menü „Firmen-Entwürfe“) und Theme 21.20.2 (Wetter).
+
+Firmen-Entwürfe live angelegt: 3 Profile und 3 Werbebeiträge (IDs 4556256 bis 4556261), alle Entwurf, ohne Einwilligung.
+- Alle sechs Adressen sowie `/unternehmen/baeckerei-wirtz-merzenich/` und `?p=` antworten mit 404; REST nach Adresse liefert leere Listen.
+- `/unternehmen/` zeigt weiter nur die gekennzeichneten Beispielfirmen; auf der Startseite steht nichts davon.
+- Die Vorschau zeigt „Anzeige · kostenfreier Testeintrag“ und den Website-Knopf mit `rel="noopener sponsored"`.
+
+Geprüft bei 1440, 820 und 390 px auf Startseite, `/nachrichten/`, Ortsseiten, Feuerwehr, Termine, Suche (leer und mit Begriff), Unternehmen, Menschen, Sport und einer Meldung:
+- 36 von 36 Aufrufen ohne Konsolenfehler, kein Überlauf, genau ein robots-Tag.
+- Bildhinweise in Zeilenlisten sichtbar.
+- Endhinweis auf `/ort/buergewald/` und `/menschen/`.
+- Ortsmarke ohne Umbruch nach dem Punkt.
+- Wetter im Kopf (über Bright Sky, solange das Open-Meteo-Kontingent erschöpft ist).
 
 ## Neu am 16.10.2026: Theme 21.20.0, Sportseite ohne Ergebnisse und Tabellen, darunter alle Sportvereine
 
