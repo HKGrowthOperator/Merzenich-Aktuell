@@ -129,8 +129,9 @@ function liste(daten, art) {
   const quellen = daten[art === 'jobs' ? 'jobSources' : 'propertySources'] || [];
   const uebersprungen = alle.filter((i) => !sichereUrl(i.sourceUrl) || istSuchseite(i.sourceUrl));
   const items = alle.filter((i) => !uebersprungen.includes(i));
-  // Stellen gleicht deploy/markt-abgleich.mjs taeglich ab (jobsCheckedAt), Immobilien nicht.
-  const p = datum(art === 'jobs' ? (daten.meta?.jobsCheckedAt || daten.meta?.checkedAt) : daten.meta?.checkedAt);
+  // deploy/markt-abgleich.mjs gleicht taeglich ab: Stellen (jobsCheckedAt) und,
+  // wenn die Quellen erreichbar sind, Immobilien (propertiesCheckedAt).
+  const p = datum(art === 'jobs' ? (daten.meta?.jobsCheckedAt || daten.meta?.checkedAt) : (daten.meta?.propertiesCheckedAt || daten.meta?.checkedAt));
   const teile = [];
 
   teile.push(`<div class="markt-stand"><strong>Markt geprüft: ${esc(p.tag)}${p.zeit ? ' · ' + esc(p.zeit) + ' Uhr' : ''}</strong>` +

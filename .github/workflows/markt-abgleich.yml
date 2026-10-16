@@ -1,12 +1,15 @@
-name: Stellenmarkt abgleichen
+name: Stellen- und Immobilienmarkt abgleichen
 
-# Prueft jede Stelle in market.json bei ihrer Quelle nach
-# (deploy/markt-abgleich.mjs). Neue Stellen nimmt der Lauf nicht auf.
+# Prueft jede Stelle und jedes Immobilienangebot in market.json bei der
+# Quelle nach (deploy/markt-abgleich.mjs). Neues nimmt der Lauf nicht auf.
 on:
   push:
     branches: [main]
     paths:
       - 'deploy/markt-prerender.mjs'
+      - 'deploy/markt-abgleich.mjs'
+      - 'deploy/lib-markt-abgleich.mjs'
+      - 'qa/markt-abgleich-test.mjs'
       - 'chatgpt-site/assets/korrekturen.css'
       - 'chatgpt-site/assets/startseite.css'
       - '.github/workflows/markt-abgleich.yml'
@@ -39,7 +42,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Stellen bei der Quelle nachpruefen
+      - name: Entscheidungen pruefen
+        run: node qa/markt-abgleich-test.mjs
+
+      - name: Stellen und Immobilien bei der Quelle nachpruefen
         run: node deploy/markt-abgleich.mjs ${{ (github.event_name == 'workflow_dispatch' && inputs.trocken) && '--dry' || '' }}
 
       - name: Seiten neu schreiben und pruefen
@@ -57,7 +63,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add market.json chatgpt-site/api/market.json chatgpt-site/jobs/index.html chatgpt-site/immobilien/index.html chatgpt-site/index.html
           if git diff --cached --quiet; then echo 'Nichts zu aendern.'; exit 0; fi
-          git commit -m 'markt: Stellen bei der Quelle abgeglichen [skip ci]'
+          git commit -m 'markt: Stellen und Immobilien bei der Quelle abgeglichen [skip ci]'
           # kopf-theme-einbinden.mjs beruehrt weitere Seiten; die bleiben in
           # diesem Commit aussen vor und stellt --autostash beim Rebase beiseite
           # (vorher git reset --hard und git clean -fd, die alles Ungestagete
