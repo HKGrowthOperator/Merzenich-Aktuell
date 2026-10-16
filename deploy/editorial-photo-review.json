@@ -3895,6 +3895,139 @@
       "nr": 22,
       "titel": "File:Kornhochheim-Dorfplatz-3.JPG",
       "grund": "Motiv passt nicht zum Pool"
+    },
+    {
+      "pool": "jobs",
+      "titel": "File:President Ronald Reagan Working on The State of The Union Address at His Oval Office Desk - DPLA - 8c603e004413ff4e51997a991da9f36c.jpg",
+      "grund": "Aus Titel: historisches US-Präsidentenfoto statt neutraler Arbeitsplatz",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "jobs",
+      "titel": "File:Tableau, office, workplace, work, women, men, typewriter, interior, furniture, arm chair, desk Fortepan 11735.jpg",
+      "grund": "Aus Titel: historisches Foto mit Personen, kein neutraler Arbeitsplatz",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "jobs",
+      "titel": "File:Beschützende Werkstatt der Marie-Christian-Heime e.V. im Rönner Weg in Kroog (Kiel 57.241).jpg",
+      "grund": "Aus Titel: historisches Archivfoto einer fremden konkreten Einrichtung",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "jobs",
+      "titel": "File:2006 Friederikentunnel Hannover Landesinnung Niedersachsen des Gebäudereiniger-Handwerks.jpg",
+      "grund": "Aus Titel: fremder Tunnel/Handwerksverband, kein neutrales Berufsmotiv",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "kultur",
+      "titel": "File:Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey (32057763710).jpg",
+      "grund": "Aus Titel: archäologische Stätte in der Türkei, keine moderne Kulturbühne",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "kultur",
+      "titel": "File:Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey (32284523092).jpg",
+      "grund": "Aus Titel: archäologische Stätte in der Türkei, keine moderne Kulturbühne",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "kultur",
+      "titel": "File:Die Nowak in concert (standing behind piano) 2024.jpg",
+      "grund": "Aus Titel: erkennbarer Künstler statt neutrales Szenenmotiv",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "schule",
+      "titel": "File:Education, school, classroom, blackboard, teacher Fortepan 3612.jpg",
+      "grund": "Aus Titel: historisches Archivbild mit Lehrperson",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "tennisdetail",
+      "titel": "File:Schwäbische-Alb-Nordrand-Weg (Hauptwanderweg 1, HW 1), Albsteig, Blick auf Lichtenstein (Forellenhof Rössle und Tennisverein) - panoramio.jpg",
+      "grund": "Aus Titel: Landschaftsaufnahme/Wanderweg statt Tennisplatz",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "digitaldetail",
+      "titel": "File:Smartphone Battery cover with NFC antenna front.jpg",
+      "grund": "Aus Titel: Bauteil eines Smartphones, kein neutrales Digitalbildungs-Motiv",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "digitaldetail",
+      "titel": "File:Smartphone Battery cover with NFC antenna back.jpg",
+      "grund": "Aus Titel: Smartphone-Rückdeckel, kein Bedienmotiv",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "digitaldetail",
+      "titel": "File:Backside of a Smartphone with invisible NFC capabilityes.jpg",
+      "grund": "Aus Titel: rückseitiges Smartphone-Technikdetail statt digitale Bildung",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "digitaldetail",
+      "titel": "File:2019-11-07 Gruppenbild mit Smartphone.jpg",
+      "grund": "Aus Titel: Gruppenbild mit Personen statt neutrales Gerät",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "tanzdetail",
+      "titel": "File:Wasserschäden im Ballettsaal (2019).jpg",
+      "grund": "Aus Titel: Gebäudeschaden statt geeigneter Tanzsaal",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "tanzdetail",
+      "titel": "File:Zugang zum Ballettsaal (2019).jpg",
+      "grund": "Aus Titel: Zugang statt Innenansicht des Tanzsaals",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "tanzdetail",
+      "titel": "File:Bertram Müller, tanzhaus nrw e.V., Düsseldorf.png",
+      "grund": "Aus Titel: Personenporträt statt Tanzsaal",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "tanzdetail",
+      "titel": "File:Großkinetik am Tanzhaus NRW in Düsseldorf.jpg",
+      "grund": "Aus Titel: Kunstwerk am Gebäude statt Innenansicht Tanzsaal",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "technik",
+      "titel": "File:Fire Alarm 2141 (Woods Hole, MA).jpg",
+      "grund": "Aus Titel: US-Motiv; nicht geeignet als lokale Feuerwehrtechnik",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
+    },
+    {
+      "pool": "technik",
+      "titel": "File:A fire alarm call box at the platform of a station on Taichung Metro Green LIne.jpg",
+      "grund": "Aus Titel: Taiwan / U-Bahn, kein lokales Alarm-/Einsatzmotiv",
+      "pruefung": "Titel- und Themenmetadaten",
+      "runde": "2026-10-16"
     }
   ],
   "freigegeben": [
