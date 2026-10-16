@@ -19,8 +19,8 @@
    "merzenich": 129,
    "golzheim": 19,
    "girbelsrath": 23,
-   "morschenich": 12,
-   "buergewald": 8,
+   "morschenich": 11,
+   "buergewald": 9,
    "region": 0
   },
   "listen": {
@@ -77,11 +77,11 @@
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 12,
+    "anzahl": 11,
     "liste": "gepflegt"
    },
    "/buergewald/": {
-    "anzahl": 8,
+    "anzahl": 9,
     "liste": "gepflegt"
    }
   },
@@ -1574,9 +1574,9 @@
   {
    "id": "2026-10-06-blutspende-buergerhaus-merzenich-6-oktober-2026",
    "url": "/leben/blutspende-buergerhaus-merzenich-6-oktober-2026/",
-   "titel": "Heute Blutspende im Bürgerhaus Merzenich von 16 bis 20 Uhr",
+   "titel": "Blutspende im Bürgerhaus Merzenich am 6. Oktober von 16 bis 20 Uhr",
    "teaser": "Am Dienstag, 6. Oktober, macht der DRK-Blutspendedienst West Station im Bürgerhaus an der Burgstraße 9. Für die Spende wird um eine vorherige Terminreservierung gebeten.",
-   "kicker": "Gesundheit · Heute",
+   "kicker": "Gesundheit · Termin",
    "ressort": "leben",
    "ressortLabel": "Leben",
    "ort": "MERZENICH",
@@ -7784,7 +7784,7 @@
    "ressort": "wirtschaft",
    "ressortLabel": "Wirtschaft",
    "ort": "MERZENICH",
-   "ortsteil": "morschenich",
+   "ortsteil": "buergewald",
    "datum": "",
    "aktualisiert": "2026-09-04T00:00:00+02:00",
    "lesezeit": "1 Min. Lesezeit",
