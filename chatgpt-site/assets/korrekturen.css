@@ -689,6 +689,8 @@ html body .feed-row.feed-row h3{-webkit-line-clamp:5;line-clamp:5}
 .markt-liste .markt-row:not(.markt-row--thumb){grid-template-columns:minmax(0,1fr)}
 .markt-liste .markt-row:not(.markt-row--thumb)>.d{display:none}
 .markt-liste .markt-row:not(.markt-row--thumb) .act{grid-column:1}
+/* Dafür die Art bzw. Branche in der Kopfzeile auch am Desktop zeigen (sonst stand sie nirgends, Review 16.10.2026). */
+.markt-liste .markt-row:not(.markt-row--thumb) .markt-art{display:inline}
 /* Tabellenauszug auf dem Handy: S, U, N und Diff. ausblenden, damit Pkt. ohne seitliches Wischen zu sehen ist. */
 @media(max-width:560px){
   .league-table{min-width:0}

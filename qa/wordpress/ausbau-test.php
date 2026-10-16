@@ -27,7 +27,7 @@ function get_transient($k) { return false; } function set_transient($k, $v, $t) 
 function get_category_by_slug($s) { return false; }
 const MINUTE_IN_SECONDS = 60;
 // Sammelseiten (/rubrik/…/) haben Meldungen; „Neu im Ressort“ bleibt leer.
-function get_posts($q) { return !empty($q['tag_slug__in']) ? [1] : []; } function get_users($q) { return []; }
+function get_posts($q) { if (($q['post_type'] ?? '') === 'ma_family_notice') return $GLOBALS['aktive_familie'] ?? [1]; return !empty($q['tag_slug__in']) ? [1] : []; } function get_users($q) { return []; }
 function get_query_var($k, $d = '') { return $GLOBALS['qv'][$k] ?? $d; }
 function get_header() {} function get_footer() {}
 function url_to_postid($u) { return 0; } function get_post_status($id) { return false; }
@@ -119,10 +119,13 @@ $q = $quelle; $sp = $q['ressorts']['/sport/'];
 $doppelt = $sp['neu'][0]['url'] ?? ''; $q['ressorts']['/sport/']['mehr'] = array_merge([['titel' => 'Doppelt', 'url' => $doppelt, 'bild' => ['src' => '/x.jpg']]], (array) ($sp['mehr'] ?? []));
 $d = ma21_ressort_menue_daten($q);
 $ueberschneidung = 0; foreach ($d['ressorts'] as $r) $ueberschneidung += count(array_intersect(array_column((array) ($r['mehr'] ?? []), 'url'), array_column((array) ($r['neu'] ?? []), 'url')));
-$GLOBALS['anzahl'] = ['ma_business' => 0, 'ma_family_notice' => 0];
+$GLOBALS['anzahl'] = ['ma_business' => 0, 'ma_family_notice' => 0]; $GLOBALS['aktive_familie'] = [];
 $d = ma21_ressort_menue_daten($quelle);
 pruefe('Leeres Branchenbuch und leere Familienanzeigen: kein roter Titel dorthin, Traueranzeigen bleiben', [in_array('/betriebe/', array_column($d['ressorts']['/unternehmen/']['punkte'], 'href'), true), in_array('/familienanzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true), in_array('/traueranzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true)], [false, false, true]);
-$GLOBALS['anzahl'] = [];
+$GLOBALS['anzahl'] = ['ma_family_notice' => 2]; $GLOBALS['aktive_familie'] = [];
+$d = ma21_ressort_menue_daten($quelle);
+pruefe('Nur abgelaufene Familienanzeigen: kein roter Titel dorthin (Review 16.10.)', in_array('/familienanzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true), false);
+$GLOBALS['anzahl'] = []; unset($GLOBALS['aktive_familie']);
 $d = ma21_ressort_menue_daten($quelle);
 pruefe('Mit Einträgen: Branchenbuch und Familienanzeigen wieder im Menü', [in_array('/betriebe/', array_column($d['ressorts']['/unternehmen/']['punkte'], 'href'), true), in_array('/familienanzeigen/', array_column($d['ressorts']['/menschen/']['punkte'], 'href'), true)], [true, true]);
 pruefe('Keine Meldung zweimal im Menü: „mehr“ ohne Einträge aus „neu“ (Sport, Vorführ-Check 15.10.)', [$doppelt !== '', $ueberschneidung], [true, 0]);

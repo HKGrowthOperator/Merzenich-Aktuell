@@ -547,8 +547,9 @@ function ma21_menue_punkte_pruefen(array $punkte): array {
         if (preg_match('#^/rubrik/([^/]+)/$#', $href, $m) && !ma21_rubrik_hat_beitraege($m[1])) continue;
         // Verzeichnisse ohne einen einzigen Eintrag (Branchenbuch „Noch keine Einträge.“) wie leere Themen ausblenden
         // (Vorführ-Check 15.10.2026). Traueranzeigen bleiben: Die Seite verweist auf die Gedenkportale.
-        $leer = ['/betriebe/' => 'ma_business', '/familienanzeigen/' => 'ma_family_notice'];
-        if (isset($leer[$href]) && function_exists('wp_count_posts') && (int) (wp_count_posts($leer[$href])->publish ?? 0) < 1) continue;
+        // Familienanzeigen zählen wie auf der Seite nur freigegebene, nicht abgelaufene (ma21_aktive_anzeigen, Review 16.10.2026).
+        if ($href === '/betriebe/' && function_exists('wp_count_posts') && (int) (wp_count_posts('ma_business')->publish ?? 0) < 1) continue;
+        if ($href === '/familienanzeigen/' && function_exists('ma21_aktive_anzeigen') && !ma21_aktive_anzeigen(['post_type' => 'ma_family_notice', 'post_status' => 'publish', 'posts_per_page' => 1, 'fields' => 'ids', 'no_found_rows' => true])) continue;
         $raus[] = ['titel' => (string) $p['titel'], 'href' => $href];
     }
     return $raus;
@@ -560,7 +561,7 @@ function ma21_menue_bild(WP_Post $p): ?array {
     $url = wp_get_attachment_image_url($id, 'ma-480');
     if (!$url) return null;
     $typ = (string) (get_post_meta($p->ID, 'ma_image_type', true) ?: get_post_meta($id, 'ma_image_type', true));
-    return ['src' => $url, 'alt' => (string) (get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id)), 'symbol' => $typ === 'symbol'];
+    return ['src' => $url, 'alt' => (string) (get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id)), 'symbol' => $typ === 'symbol', 'etikett' => $typ === 'place' ? 'Ortsansicht' : ($typ === 'symbol' ? 'Symbolbild' : '')];
 }
 
 /** „Neu im Ressort“: Meldungen der Rubrik, alle Meldungen (Aktuell) oder kommende Termine; unbekannte Ressorts behalten die statische Liste. */
@@ -756,6 +757,9 @@ function ma21_startplatz(WP_Post $p): string {
 /** Sport im Sinn der sportfreien Startseite (KBS 26.09.2026): mit Plugin auch Vereins- und Fanclub-Meldungen mit Sportbezug. */
 function ma21_ist_sport(WP_Post $p): bool { return has_category('sport', $p) || (function_exists('ma_is_sport_post') && ma_is_sport_post($p)); }
 
+/** Darf auf die Startseite: Startseiten-Freigabe (Plugin, seit 03.10.2026), ohne Plugin nicht „aus“ (Nur in der Rubrik). */
+function ma21_startseite_frei(WP_Post $p): bool { return function_exists('ma_relevanz_startseite') ? ma_relevanz_startseite($p) : ma21_startplatz($p) !== 'aus'; }
+
 /**
  * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, vier
  * Nebenmeldungen (zwei rechts, zwei darunter, daneben eine Anzeige), dann die
@@ -775,7 +779,7 @@ function ma21_startseite_belegung(bool $neu = false): array {
     // zentrale Relevanzlogik. Aufmacher und Bühne bekommen zuerst, was frisch
     // die Schwellen erreicht (Zone hero, dann buehne), danach den höchsten Wert.
     // Seit 03.10.2026 mit eigener Startseiten-Freigabe (ma_relevanz_startseite), ohne Plugin wie bisher.
-    $alle = array_values(array_filter($alle, fn($p) => function_exists('ma_relevanz_startseite') ? ma_relevanz_startseite($p) : ma21_startplatz($p) !== 'aus'));
+    $alle = array_values(array_filter($alle, 'ma21_startseite_frei'));
     if (function_exists('ma_relevanz_sortieren')) $alle = ma_relevanz_sortieren($alle);
     $zone = fn($p) => function_exists('ma_relevanz_zone') ? ma_relevanz_zone($p) : 'feed';
     $rang = ['hero' => 0, 'buehne' => 1];
@@ -1247,8 +1251,9 @@ function ma21_endlos_antwort(): ?array {
     $posts = array_values(array_filter((array) ($wp_query->posts ?? []), fn($p) => $p instanceof WP_Post));
     if (!$posts || is_404()) return [404, ''];
     // „Weitere Meldungen“ der Startseite (?ma_ohne_sport=1): Die Startseite bleibt sportfrei (KBS 26.09.2026),
-    // auch mit Vereins- und Fanclub-Meldungen mit Sportbezug. Bleibt nichts übrig, lädt endlos.js die Folgeseite.
-    if ((string) get_query_var('ma_ohne_sport') !== '') $posts = array_values(array_filter($posts, fn($p) => !ma21_ist_sport($p)));
+    // auch mit Vereins- und Fanclub-Meldungen mit Sportbezug, und zeigt wie die oberen Blöcke nur Meldungen mit
+    // Startseiten-Freigabe („Nur in der Rubrik“ bleibt draußen, Review 16.10.2026). Bleibt nichts übrig, lädt endlos.js die Folgeseite.
+    if ((string) get_query_var('ma_ohne_sport') !== '') $posts = array_values(array_filter($posts, fn($p) => !ma21_ist_sport($p) && ma21_startseite_frei($p)));
     $schluessel = ma21_ressort_schluessel();
     return [200, ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste())];
 }

@@ -48,7 +48,7 @@ function remove_query_arg($k, $url) { $t = parse_url($url); parse_str($t['query'
 // Rendering der Karten und Zeilen
 function get_permalink($p) { return '/blaulicht/meldung-' . $p->ID . '/'; }
 function get_the_title($p) { return $p->post_title; }
-function get_post_meta(...$a) { return ''; }
+function get_post_meta(...$a) { return $a[1] === 'ma_startplatz' && in_array($a[0], $GLOBALS['nur_rubrik'] ?? [], true) ? 'aus' : ''; }
 function get_the_terms(...$a) { return []; }
 function get_the_category($id) { $c = new WP_Term(); $c->slug = 'blaulicht'; $c->name = 'Blaulicht'; return [$c]; }
 function get_post_thumbnail_id(...$a) { return 0; }
@@ -126,6 +126,10 @@ $GLOBALS['qv'] = ['paged' => 2, 'ma_endlos' => '1', 'ma_alle' => '1', 'ma_ohne_s
 $wp_query->posts = array_slice($posts, 0, 4); $GLOBALS['sport'] = [$posts[0]->ID]; $GLOBALS['sportbezug'] = [$posts[2]->ID];
 $a = ma21_endlos_antwort();
 pruefe('Startseite (?ma_ohne_sport=1): Sport und Sportbezug fallen weg, Folgeseite behält den Filter', [$a[0] ?? null, substr_count($a[1] ?? '', ' data-story="'), str_contains($a[1] ?? '', 'data-naechste="https://merzenich-aktuell.de/nachrichten/page/3/?ma_ohne_sport=1"')], [200, 2, true]);
+$GLOBALS['nur_rubrik'] = [$posts[1]->ID];
+$a = ma21_endlos_antwort();
+pruefe('Startseite (?ma_ohne_sport=1): „Nur in der Rubrik“ bleibt auch in „Weitere Meldungen“ draußen (Review 16.10.)', [$a[0] ?? null, substr_count($a[1] ?? '', ' data-story="')], [200, 1]);
+$GLOBALS['nur_rubrik'] = [];
 $GLOBALS['sport'] = array_map(fn($p) => $p->ID, $posts);
 $a = ma21_endlos_antwort();
 pruefe('Nur Sport auf der Seite: 200 ohne Meldungen, aber mit Folgeseite (endlos.js lädt weiter)', [$a[0] ?? null, substr_count($a[1] ?? '', ' data-story="'), str_contains($a[1] ?? '', 'page/3/')], [200, 0, true]);

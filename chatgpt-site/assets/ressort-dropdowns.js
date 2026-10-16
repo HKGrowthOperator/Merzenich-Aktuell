@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=a96d5b5e71';
+  const MENUE_URL = '/assets/ressort-menue.json?v=64793e3aba';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {
@@ -145,7 +145,8 @@
     // Symbolbilder tragen wie auf den Seiten ihr Etikett (Vorführ-Check 15.10.2026: im Termine-Menü wirkte
     // ein Kirmes-Karussell wie ein Foto vom Seniorennachmittag).
     const marke = item.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>'
-      : (item.bild && item.bild.symbol ? '<span class="ressort-dropdown__muster ressort-dropdown__symbol">Symbolbild</span>' : '');
+      // Ortsansichten heißen wie auf den Seiten „Ortsansicht“, nicht „Symbolbild“ (Review 16.10.2026).
+      : (item.bild && (item.bild.etikett || item.bild.symbol) ? '<span class="ressort-dropdown__muster ressort-dropdown__symbol">' + esc(item.bild.etikett || 'Symbolbild') + '</span>' : '');
     const bild = item.bild && item.bild.src
       ? '<span class="ressort-dropdown__story-image"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async">' + marke + '</span>'
       : '';

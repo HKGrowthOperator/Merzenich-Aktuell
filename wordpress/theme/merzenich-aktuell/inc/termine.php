@@ -126,7 +126,8 @@ function ma21_termin_einzel(WP_Post $p): void {
     $vorbei = $t['ende'] && $t['ende'] < time();
     [$kommend] = ma21_termine_alle();
     $weitere = array_slice(array_values(array_filter($kommend, fn($x) => $x['id'] !== $t['id'])), 0, 5);
-    $kartenOrt = trim($t['ort'] . ', ' . $t['ortsteil'] . ', 52399 Merzenich', ', ');
+    // Für die Kartensuche ohne „Gemeinde“: OSM findet „Bürgerhaus, Gemeinde Merzenich“ nicht (Review 16.10.2026).
+    $kartenOrt = trim($t['ort'] . ', ' . ($t['ortSlug'] === 'gemeinde' ? 'Merzenich' : $t['ortsteil']) . ', 52399 Merzenich', ', ');
     $bild = function_exists('ma_content_image') ? ma_content_image($p, 'large') : [];
     echo '<article class="article event-page"><div class="article-head"><div class="shell">'
         . '<nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><a href="' . esc_url(home_url('/termine/')) . '">Termine</a><span class="sep">›</span><span aria-current="page">' . esc_html($t['titel']) . '</span></nav>'

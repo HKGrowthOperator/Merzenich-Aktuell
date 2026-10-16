@@ -310,7 +310,7 @@ function ma21_betrieb_zeile(WP_Post $p): string {
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 28, ' …');
     $fakten = array_filter([(string) ($f['adresse'] ?? ''), (string) ($f['telefon'] ?? '')]);
     return '<article class="event-row job-row markt-row" data-ort="' . esc_attr(ma21_ort($p)) . '"><span class="d job-d"><b>' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . '</b></span>'
-        . '<div class="info"><span class="eyebrow">' . esc_html((string) ($f['ortsteil'] ?? '') ?: (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich')) . '</span>'
+        . '<div class="info"><span class="eyebrow"><span class="markt-art">' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . ' · </span>' . esc_html((string) ($f['ortsteil'] ?? '') ?: (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich')) . '</span>'
         . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
         . ($text !== '' ? '<p class="ev-desc">' . esc_html($text) . '</p>' : '')
         . ($fakten ? '<div class="meta"><span>' . implode('</span><span>', array_map('esc_html', $fakten)) . '</span></div>' : '') . '</div>'

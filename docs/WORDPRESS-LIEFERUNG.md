@@ -6,6 +6,8 @@
 
 Vor der Vorstellung beim Bürgermeister wurde die Live-Seite in sechs Breiten (1920, 1440, 1280, 1180 quer, 820 hoch, 390) Seite für Seite durchgesehen, jeder auffällige Befund unabhängig gegengeprüft. Behoben ist, was im Code liegt; die Ausbaustufe bleibt unverändert (einfache Fassung).
 
+**Nachtrag 16.10.2026 (Code-Prüfung, im selben Versionsstand):** Karten-Link gemeindeweiter Termine sucht wieder „Merzenich“ statt „Gemeinde Merzenich“ (OSM fand nichts); „Familienanzeigen“ verschwindet aus dem Menü auch dann, wenn es nur abgelaufene oder nicht freigegebene Anzeigen gibt; „Weitere Meldungen“ auf der Startseite zeigt nur Meldungen mit Startseiten-Freigabe („Nur in der Rubrik“ bleibt draußen); Marktlisten zeigen Art bzw. Branche am Desktop in der Kopfzeile; Aufklappmenüs nennen Ortsansichten „Ortsansicht“ statt „Symbolbild“.
+
 **Stand live:** noch nicht eingespielt. Live laufen weiter 21.19.0 und 1.28.0. Einspielen wie unten (erst Plugin, dann Theme, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks speichern); dafür braucht es ein neues Passwort für das Konto „HK Growth“.
 
 - **Startseite**

@@ -75,7 +75,7 @@ const zielDa = (href) => {
 
 const kleinstes = (srcset) => (String(srcset || '').split(',').map((s) => s.trim().split(/\s+/)).find(([, w]) => /^\d+w$/.test(w || '') && parseInt(w, 10) <= 480) || [])[0] || null;
 function beitrag(a) {
-  const b = a.bild && a.bild.src ? { src: kleinstes(a.bild.srcset) || a.bild.src, alt: a.bild.alt || '', symbol: !!a.bild.symbol } : null;
+  const b = a.bild && a.bild.src ? { src: kleinstes(a.bild.srcset) || a.bild.src, alt: a.bild.alt || '', symbol: !!a.bild.symbol, etikett: a.bild.stufe === 'O' ? 'Ortsansicht' : (a.bild.symbol ? 'Symbolbild' : '') } : null;
   return { titel: a.titel, url: a.url, ort: ORTSTEIL[a.ortsteil] || null, datum: a.datum, bild: b };
 }
 const artikel = [...(inhalte.artikel || [])].sort((x, y) => String(y.datum).localeCompare(String(x.datum)));
