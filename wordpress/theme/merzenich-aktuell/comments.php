@@ -8,6 +8,8 @@
     'fields' => [
         'author' => '<p><label>Name<br><input name="author" required maxlength="120" autocomplete="name"></label></p>',
         'email' => '<p><label>E-Mail<br><input name="email" type="email" required maxlength="190" autocomplete="email"></label></p>',
+        // Eigener Speichern-Hinweis (16.10.2026): Der Kern-Text nannte ein Adressfeld, das es hier nicht gibt.
+        'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Name und E-Mail-Adresse in diesem Browser für meinen nächsten Kommentar speichern.</label></p>',
     ],
     'comment_field' => '<p><label>Kommentar<br><textarea name="comment" rows="6" required maxlength="4000"></textarea></label></p>',
     'label_submit' => 'Kommentar absenden',

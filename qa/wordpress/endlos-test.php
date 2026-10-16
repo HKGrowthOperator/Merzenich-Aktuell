@@ -162,5 +162,13 @@ echo "\nAnrisse am Wortende kürzen (21.19.1)\n";
 pruefe('Kürzung endet am Wortende mit …', ma21_kurz('Familien sollen ihr Kind jetzt vormerken. Der Kreis nennt die Frist', 47), 'Familien sollen ihr Kind jetzt vormerken. Der …');
 pruefe('Kurzer Text bleibt unverändert', ma21_kurz('Kurz und gut.', 150), 'Kurz und gut.');
 pruefe('Ohne Leerzeichen: hart gekürzt', ma21_kurz(str_repeat('x', 20), 10), str_repeat('x', 10) . ' …');
+echo "\nSuche: Begriff, Trefferzahl, Feld (21.20.1)\n";
+pruefe('Leere Suche bittet um einen Begriff', ma21_suche_kopf('', 190), ['Suche', 'Suche', 'Wonach suchen Sie? Geben Sie einen Ort, ein Thema oder ein Stichwort ein.']);
+pruefe('Mit Begriff: in Anführungszeichen, Trefferzahl', [ma21_suche_kopf('Schule', 13)[1], ma21_suche_kopf('Schule', 13)[2], ma21_suche_kopf('Kita', 1)[2], ma21_suche_kopf('xyz', 0)[2]], ['Suche: „Schule“', '13 Treffer', '1 Treffer', '0 Treffer']);
+$feld = ma21_suchfeld('a"b<c');
+pruefe('Suchfeld trägt den Begriff maskiert', str_contains($feld, 'name="s"') && str_contains($feld, 'value="a&quot;b&lt;c"'), true);
+$archivQuelle = file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/archive.php');
+pruefe('archive.php: ohne Begriff keine Liste, kein Blättern, kein Endlos', substr_count($archivQuelle, '!$leereSuche') === 3, true);
+
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

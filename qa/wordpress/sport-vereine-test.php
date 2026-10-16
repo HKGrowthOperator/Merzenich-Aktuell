@@ -65,7 +65,7 @@ function get_option($k, $d = false) { return $GLOBALS['optionen'][$k] ?? $d; }
 pruefe('Schalter „sport_daten“ ist im Standard aus', ma21_ausbau('sport_daten'), false);
 $archiv = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/archive.php');
 pruefe('archive.php: Ecke, Modul und Tabellenstand nur mit Schalter', [str_contains($archiv, "\$sportTabellen = \$sport && ma21_ausbau('sport_daten');"), str_contains($archiv, 'if ($sportTabellen && !is_paged() && function_exists(\'ma_sport_vereinsraster\'))'), str_contains($archiv, '$ecke = $sportTabellen ?')], [true, true, true]);
-pruefe('archive.php: Vereine unter den Meldungen, Sport ohne Endlos-Scrollen', [str_contains($archiv, "if (\$sport && !\$sportTabellen && !is_paged()) echo ma21_sport_vereine();"), str_contains($archiv, 'if (!$sport || $sportTabellen) echo ma21_endlos_attr(')], [true, true]);
+pruefe('archive.php: Vereine unter den Meldungen, Sport ohne Endlos-Scrollen', [str_contains($archiv, "if (\$sport && !\$sportTabellen && !is_paged()) echo ma21_sport_vereine();"), str_contains($archiv, 'if ((!$sport || $sportTabellen) && !$leereSuche) echo ma21_endlos_attr(')], [true, true]);
 $ma21 = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php');
 pruefe('Rechte Spalte wiederholt die Vereine auf Seite 1 nicht', str_contains($ma21, "if (\$n && !\$vereineUnten) \$h .= '<div class=\"sidebox sport-leiste\">"), true);
 

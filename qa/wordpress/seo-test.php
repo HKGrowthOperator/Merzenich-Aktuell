@@ -148,5 +148,11 @@ pruefe('/heute/: Titel für Google ist die Frage, Beschreibung gesetzt', [ma_seo
 $b = ma_seo_bereiche_liste($HOME, ['nachrichten' => '2026-10-07T12:00:00+02:00', 'termine' => '', 'unternehmen' => '2026-10-01T09:00:00+02:00']);
 pruefe('Sitemap „bereiche“: drei Übersichtsseiten, lastmod nur wenn bekannt', [array_column($b, 'loc'), isset($b[1]['lastmod']), $b[0]['lastmod']], [[$HOME . 'nachrichten/', $HOME . 'termine/', $HOME . 'unternehmen/'], false, '2026-10-07T12:00:00+02:00']);
 
+echo "\nNur eine robots-Angabe (16.10.2026)\n";
+$quelle = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seo.php');
+pruefe('Kern-Ausgabe wp_robots entfernt, eigene bleibt', str_contains($quelle, "remove_action('wp_head', 'wp_robots', 1);") && substr_count($quelle, '<meta name="robots"') === 1, true);
+$kommentare = file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/comments.php');
+pruefe('Kommentarformular: Speichern-Hinweis ohne „Website“', str_contains($kommentare, "'cookies' =>") && !str_contains($kommentare, 'Website'), true);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

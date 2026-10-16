@@ -1380,9 +1380,23 @@ function ma21_liste_kopf(): array {
     if (is_category() && $o instanceof WP_Term && isset($TEXTE[$o->slug])) return $TEXTE[$o->slug];
     if (is_tax('ma_location') && $o instanceof WP_Term) return ['Ort', $o->name, $o->description ?: "Meldungen aus {$o->name}."];
     if (is_tag() && $o instanceof WP_Term) return [(string) (ma21_thema_ressort((string) $o->slug)['ressortTitel'] ?? 'Thema'), $o->name, $o->description ?: "Alle Meldungen zum Thema {$o->name}."];
-    if (is_search()) return ['Suche', 'Suche: ' . get_search_query(), ''];
+    if (is_search()) return ma21_suche_kopf(trim((string) get_search_query(false)), (int) ($GLOBALS['wp_query']->found_posts ?? 0));
     if ($o instanceof WP_Term) return [$o->name, $o->name, $o->description];
     return ['Nachrichten', 'Alle Meldungen', 'Alle Meldungen aus der Gemeinde Merzenich, die jüngste zuerst.'];
+}
+
+/**
+ * Seitenkopf der Suche (16.10.2026): Begriff in Anführungszeichen und Trefferzahl;
+ * leere Suche bittet um einen Begriff statt „Suche:“ ohne Wort und aller Meldungen.
+ */
+function ma21_suche_kopf(string $begriff, int $treffer): array {
+    if ($begriff === '') return ['Suche', 'Suche', 'Wonach suchen Sie? Geben Sie einen Ort, ein Thema oder ein Stichwort ein.'];
+    return ['Suche', 'Suche: „' . $begriff . '“', $treffer === 1 ? '1 Treffer' : $treffer . ' Treffer'];
+}
+
+/** Suchfeld im Seitenkopf der Suche, mit dem aktuellen Begriff. */
+function ma21_suchfeld(string $begriff): string {
+    return '<form class="search-input" role="search" action="' . esc_url(home_url('/')) . '"><input type="search" name="s" value="' . esc_attr($begriff) . '" placeholder="Ort, Thema, Nachricht …" aria-label="Suchbegriff"><button class="btn" type="submit">Suchen</button></form>';
 }
 
 /** Übergeordnete Seite in den Brotkrumen einer Liste (Sammelseite: ihr Ressort), sonst null. */

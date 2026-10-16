@@ -50,7 +50,7 @@ while (have_posts()): the_post();
     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $teilen; ?>" target="_blank" rel="noopener" aria-label="Auf Facebook teilen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H8.1V14h2.4v7h3z"/></svg></a>
     <a href="mailto:?subject=<?php echo rawurlencode($titel); ?>&amp;body=<?php echo $teilen; ?>" aria-label="Per E-Mail teilen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5zm2 2v.5l7 4.2 7-4.2V7H5zm0 3v7h14v-7l-7 4.2L5 10z"/></svg></a>
     <button type="button" data-share aria-label="Link kopieren"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 001.4 0l3.5-3.5a2.5 2.5 0 10-3.5-3.5l-1 1 1.4 1.4 1-1a.7.7 0 011 1l-3.5 3.5a1 1 0 000 1.1zm2.8-2.8a1 1 0 00-1.4 0l-3.5 3.5a2.5 2.5 0 103.5 3.5l1-1-1.4-1.4-1 1a.7.7 0 01-1-1l3.5-3.5a1 1 0 000-1.1z"/></svg></button>
-    <span class="sr-only" role="status" data-share-status></span>
+    <span class="share-status" role="status" data-share-status></span>
     <button type="button" data-print aria-label="Drucken"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v5H6V3zm-2 6h16a2 2 0 012 2v6h-4v4H6v-4H2v-6a2 2 0 012-2zm4 6v4h8v-4H8z"/></svg></button>
   </div>
     <div class="prose"><?php the_content(); ?></div>

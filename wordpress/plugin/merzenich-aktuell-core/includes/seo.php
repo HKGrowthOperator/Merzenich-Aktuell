@@ -501,6 +501,9 @@ add_action('init', function (): void {
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'wlwmanifest_link');
     remove_action('wp_head', 'rsd_link');
+    // Robots kommt aus ma_seo_head (Index-Regel je Seite); der Kern gab daneben
+    // eine zweite Angabe aus (16.10.2026).
+    remove_action('wp_head', 'wp_robots', 1);
 });
 
 function ma_seo_head(): void {
