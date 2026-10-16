@@ -11,7 +11,8 @@ define('MA_CORE_PATH', dirname(__DIR__, 2) . '/wordpress/plugin/merzenich-aktuel
 define('MA_STATUS_ARCHIV', 'ma_archiv');
 
 $GLOBALS['posts'] = []; $GLOBALS['terms'] = []; $GLOBALS['naechste'] = 100;
-function add_action(...$a) {}
+$GLOBALS['aktionen'] = [];
+function add_action($h, $f, $prio = 10, $n = 1) { $GLOBALS['aktionen'][$h] = $prio; }
 function wp_slash($v) { return $v; }
 function wp_kses($s, $erlaubt) { return strip_tags((string) $s, '<' . implode('><', array_keys($erlaubt)) . '>'); }
 function esc_url($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -51,6 +52,9 @@ foreach ($firmen as $f) {
     pruefe("$n: Ortsteil bekannt", in_array($p['ortsteil'], ['merzenich', 'golzheim', 'girbelsrath', 'morschenich', 'buergewald'], true), true);
     pruefe("$n: SEO-Beschreibung höchstens 160 Zeichen", mb_strlen($b['seo_beschreibung']) <= 160, true);
 }
+
+echo "Menü\n";
+pruefe('Untermenü nach dem Hauptmenü angemeldet (sonst 403)', ($GLOBALS['aktionen']['admin_menu'] ?? 0) > 10, true);
 
 echo "Beitragstext\n";
 $h = ma_firmen_beitrag_html(['absaetze' => ['Erster <strong>Teil</strong><script>x()</script>'], 'knopf' => ['text' => 'Besuchen', 'ziel' => 'https://example.org/']]);

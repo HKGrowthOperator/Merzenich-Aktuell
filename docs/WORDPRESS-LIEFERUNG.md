@@ -1,8 +1,8 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-16. Oktober 2026 · Theme 21.20.1 · Core-Plugin 1.28.2 · live: 21.20.0 / 1.28.1 (Historie unten)
+16. Oktober 2026 · Theme 21.20.1 · Core-Plugin 1.28.3 · live: 21.20.1 / 1.28.3 (Historie unten)
 
-## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.2, Feinschliff und drei Betriebe als Entwurf
+## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.3, Feinschliff und drei Betriebe als Entwurf
 
 **Feinschliff aus dem Vorführ-Check.** Die offenen Befunde wurden am 16.10. auf der Live-Seite 21.20.0 noch einmal nachgestellt. Behoben ist, was noch bestand:
 
@@ -64,6 +64,8 @@
 - **Kommentarformular:** Gespeicherte Angaben füllen Name und E-Mail vor. Solche Seiten gehen mit `Cache-Control: private, no-store` raus.
 
 **Tests:** neu `testeintrag-test.php` und `firmen-entwuerfe-test.php`; erweitert `freigabe-test.php`, `endlos-test.php`, `seo-test.php`, `termine-test.php`. Lokal im WordPress bei 320 bis 1440 px nachgestellt, 0 Konsolenfehler.
+
+**Plugin 1.28.3** (gleicher Abend): Die Seite „Firmen-Entwürfe“ meldet sich jetzt nach dem Hauptmenü an. Unter 1.28.2 fehlte sie und lieferte 403 (`firmen-entwuerfe-test.php` prüft die Reihenfolge).
 
 **Nicht in diesem Stand:**
 - Karten von „Weitere Meldungen“ auf der Startseite im Stil der Blöcke darüber (größerer Umbau).

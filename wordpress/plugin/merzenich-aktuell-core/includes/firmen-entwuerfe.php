@@ -94,9 +94,11 @@ function ma_firmen_entwuerfe_anlegen(): array {
     return $log;
 }
 
+// Priorität 30: Das Hauptmenü „Merzenich Aktuell“ meldet admin.php erst bei plugins_loaded an (Priorität 10);
+// vorher angemeldet, fehlte die Seite (403 „Keine Berechtigung“).
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'Firmen-Entwürfe', 'Firmen-Entwürfe', 'edit_others_posts', 'ma-firmen-entwuerfe', 'ma_firmen_entwuerfe_seite');
-});
+}, 30);
 
 add_action('admin_post_ma_firmen_entwuerfe', function (): void {
     if (!current_user_can('edit_others_posts')) wp_die('Keine Berechtigung.');

@@ -1,6 +1,6 @@
 # Drei Betriebe als Entwurf: Bäckerei Wirtz, Hasberg, Porschen Media
 
-Stand 16.10.2026 · Plugin 1.28.2 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
+Stand 16.10.2026 · Plugin 1.28.3 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
 
 Auftrag des Betreibers vom 16.10.2026, Entscheidung „Entwurf bis Zusage“. Je Betrieb liegen ein Unternehmensprofil und ein Werbebeitrag als **Entwurf** in WordPress. Öffentlich wird nichts, bevor der Betrieb zugestimmt hat.
 
