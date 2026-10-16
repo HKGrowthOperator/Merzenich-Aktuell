@@ -59,7 +59,9 @@ const POOL_KOPIE = 'wordpress/plugin/merzenich-aktuell-core/data/bildpools.json'
 const lies = (rel) => readFileSync(join(wurzel, rel), 'utf8');
 const idx = JSON.parse(lies('chatgpt-site/api/inhalte.json'));
 const manifest = new Map(JSON.parse(lies('chatgpt-site/data/editorial-images/editorial-images.json')).images.map((b) => [b.src, b]));
-const ortsbilder = new Map(JSON.parse(lies('deploy/ortsbilder.json')).ansichten.map((b) => [b.src, b]));
+const ORTSBILDER_JSON = JSON.parse(lies('deploy/ortsbilder.json'));
+const ortsbilder = new Map(ORTSBILDER_JSON.ansichten.map((b) => [b.src, b]));
+const ORTSBILDER_GESICHTET = ORTSBILDER_JSON.gesichtet;
 
 // ------------------------------------------------------------ Hilfen
 const cdata = (s) => `<![CDATA[${String(s ?? '').replace(/]]>/g, ']]]]><![CDATA[>')}]]>`;
@@ -136,7 +138,7 @@ function anhang(bild) {
     // Rechte gelten nur als geprueft, wenn die Bildbibliothek es vermerkt
     // (geprueft am rightsCheckedAt) oder die Ortsansicht gesichtet ist.
     geprueft: m?.geprueft === true || Boolean(o) ? '1' : '0',
-    herkunft: m ? `Bildbibliothek (${m.source || 'Pool'}), Rechte geprueft am ${m.rightsCheckedAt || 'unbekannt'}` : o ? 'Ortsansicht (deploy/ortsbilder.json), gesichtet am 26.09.2026' : 'Quellenbild des statischen Stands',
+    herkunft: m ? `Bildbibliothek (${m.source || 'Pool'}), Rechte geprueft am ${m.rightsCheckedAt || 'unbekannt'}` : o ? `Ortsansicht (deploy/ortsbilder.json), gesichtet am ${(o.gesichtet || ORTSBILDER_GESICHTET).split('-').reverse().join('.')}` : 'Quellenbild des statischen Stands',
   };
   anhaenge.set(bild.src, a);
   return a;

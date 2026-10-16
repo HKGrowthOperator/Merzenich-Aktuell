@@ -188,6 +188,7 @@
         "rettungswagen"
       ]
     },
+    "rathaus.tagebau": {"titel": "Tagebau Hambach und Tagebausee", "motive": ["tagebau", "sophienhoehe"]},
     "rathaus.rat": {
       "titel": "Ratssitzungen, Ausschuesse, Bekanntmachungen der Gemeinde",
       "motive": [
