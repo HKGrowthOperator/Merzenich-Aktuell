@@ -35,6 +35,67 @@ const HEUTE = new Date().toISOString().slice(0, 10);
 const UA = 'MerzenichAktuell-EditorialImageImporter/2.2 (https://merzenich-aktuell.de)';
 
 const POOLS = {
+
+  // Hauptressorts mit eigenen Fotopools. Die vorhandenen 20 SVGs bleiben
+  // als gepruefte, neutrale Reserve erhalten. Fremde Orte nie als Merzenich
+  // ausgeben; Fotos sind erkennbar als Symbolbilder gekennzeichnet.
+  gemeinde: {
+    tags: ['gemeinde','rathaus','verwaltung','kommunalpolitik','rat'],
+    max: 20,
+    pflicht: /(rathaus|gemeindeverwaltung|bürgerbüro|buergerbuero|ratssaal|sitzungssaal|gemeinderat|verwaltungsg[ea]b[aä]ude)/i,
+    queries: ['Merzenich Rathaus','Rathaus Kreis Düren','Rathaus NRW','Gemeindeverwaltung Nordrhein-Westfalen','Ratssaal Nordrhein-Westfalen','Sitzungssaal Rathaus','Bürgerbüro Nordrhein-Westfalen','Rathaus Eingang Deutschland','Gemeinderatssaal Deutschland','Kommunalverwaltung Rathaus','Rathaus Düren','Rathaus Innenansicht','Rathaus Sitzungsraum','Gemeinderat Rathaus']
+  },
+  veranstaltungen: {
+    tags: ['veranstaltungen','dorfveranstaltung','fest','konzert','brauchtum'],
+    max: 20,
+    pflicht: /(dorf.?fest|stadtfest|kirmes|weihnachtsmarkt|adventsmarkt|sch[uü]tzenfest|konzertb[uü]hne|festplatz|martinszug|festzelt|flohmarkt)/i,
+    queries: ['Dorffest Nordrhein-Westfalen','Stadtfest Nordrhein-Westfalen','Festplatz Nordrhein-Westfalen','Schützenfest Nordrhein-Westfalen','Martinszug NRW','Kirmes Düren','Weihnachtsmarkt Kreis Düren','Adventsmarkt Rheinland','Volksfest Nordrhein-Westfalen','Festzelt Deutschland','Konzertbühne Dorf','Weihnachtsmarkt Deutschland','Flohmarkt NRW','Schützenfest Zelt']
+  },
+  jobs: {
+    tags: ['jobs','arbeit','ausbildung','stellenmarkt','beruf'],
+    max: 20,
+    pflicht: /(arbeitsplatz|werkbank|b[uü]roarbeitsplatz|werkstatt|ausbildung|schreibtisch|bewerbung|arbeitsplatzrechner|handwerk|produktionshalle|workplace|office desk)/i,
+    queries: ['Arbeitsplatz Werkbank Deutschland','Büroarbeitsplatz Deutschland','Werkstatt Arbeitsplatz Nordrhein-Westfalen','Schreibtisch Arbeitsplatz','Ausbildung Werkstatt','Job Bewerbung Schreibtisch','Office desk Germany','Production workshop NRW','Ausbildung Handwerk','Leerer Arbeitsplatz Deutschland','Schreibtisch Computer Arbeit','Werkbank Werkzeug','Stellenmarkt Bewerbung Unterlagen','Büro Arbeitsplätze']
+  },
+  immobilien: {
+    tags: ['immobilien','wohnen','haus','miete','bau','architektur'],
+    max: 20,
+    // Nur neutrale Architektur-Details, nie eine fremde Immobilie als Angebotsfoto.
+    pflicht: /(fenster|haust[uü]r|treppenhaus|fassadendetail|dachziegel|schl[uü]ssel|ziegelwand|window detail|staircase|building facade detail|front door)/i,
+    queries: ['Haustür Detail Deutschland','Treppenhaus Nordrhein-Westfalen','Fenster Fassade Haus Deutschland','Ziegelwand Architektur','Dachziegel Gebäude','Haus Schlüssel neutral','Staircase Germany building','Wohnhaus Fenster Detail','Klinker Fassade Detail','Treppe Haus Innenraum','Bau Architektur Detail Deutschland','Hausfassade Fenster NRW','Eingangstür Mehrfamilienhaus','Fensterrahmen Wohngebäude']
+  },
+  familie: {
+    tags: ['familie','kinder','alltag','gemeinschaft','freizeit'],
+    max: 20,
+    // Keine fremden Kinder-/Familienportraets als lokales Ereignisbild.
+    pflicht: /(spielplatz|kinderwagen|kinderspielplatz|spielger[aä]t|rutsche|schaukel|familienzentrum|playground|pram|stroller)/i,
+    queries: ['Spielplatz Nordrhein-Westfalen','Spielplatz Kreis Düren','Spielgeräte Spielplatz','Kinderspielplatz Deutschland','Spielplatz Rutsche','Kinderwagen im Park ohne Menschen','Playground Germany','Spielplatz Schaukel','Familienzentrum NRW Außen','Spielplatz Klettergerüst','Kinderspielplatz Natur','Öffentlicher Spielplatz Düren','Spielplatz Park NRW','Stroller Park Germany']
+  },
+  trauer: {
+    tags: ['trauer','gedenken','abschied','friedhof','blumen'],
+    max: 20,
+    pflicht: /(trauerkerze|gedenkkerze|grablicht|friedhof|grabstein|blumenstrauß|blumenstrauss|kerze|memorial candle|cemetery|grave light)/i,
+    queries: ['Trauerkerze Gedenken','Grablicht Deutschland','Friedhof Kerzen','Gedenkkerze Deutschland','Friedhof Blumen','Grabstein Friedhof Deutschland','Kerze Stilleben','Friedhof Nordrhein-Westfalen','Blumenstrauß Gedenken','Friedhof Weg Deutschland','Memorial candle Germany','Kerzen Gedenken Kirche','Grablicht Friedhof','Friedhof Herbst NRW']
+  },
+  kultur: {
+    tags: ['kultur','kunst','musik','theater','literatur'],
+    max: 20,
+    pflicht: /(theaterb[uü]hne|b[uü]hnenraum|b[uü]hnentechnik|klavier|konzertsaal|bibliothek|lesesaal|musikinstrument|stage curtain|theatre stage|piano|library)/i,
+    queries: ['Theaterbühne Deutschland leer','Bühnenraum Theater','Konzertsaal Nordrhein-Westfalen','Klavier Kulturzentrum','Bibliothek Lesesaal NRW','Musikinstrumente Konzertsaal','Bühnentechnik Deutschland','Theatre stage Germany','Piano on stage Germany','Theatervorhang','Theater Bühne Beleuchtung','Bibliothek Bücherregal Deutschland','Musiksaal Deutschland','Kulturhaus Bühne NRW']
+  },
+  schule: {
+    tags: ['schule','bildung','unterricht','klassenraum','lernen'],
+    max: 20,
+    // Neutrale Klassenzimmer und Lernmaterialien ohne fremde Schulgebäude.
+    pflicht: /(klassenraum|klassenzimmer|schulbank|schultafel|schulheft|schulb[uü]cher|stifte|classroom|blackboard|chalkboard|school desk)/i,
+    queries: ['Klassenzimmer Nordrhein-Westfalen leer','Klassenraum Deutschland','Schultafel Klassenzimmer','Schulbank Deutschland','Schulheft Stifte','Schulbücher Lernmaterial','Classroom Germany empty','Blackboard classroom Germany','Klassenzimmer Grundschule','Schultafel Unterricht','Schulhefte Bücher','Schulbank leer','Schreibtafel Klassenraum','Unterrichtsraum NRW']
+  },
+  kirche: {
+    tags: ['kirche','gottesdienst','gemeinde','pfarrleben','kirchenraum'],
+    max: 20,
+    pflicht: /(kircheninneres|kirchenraum|kirchenschiff|kirchenbank|altarraum|kirchenfenster|orgel|church interior|church pew|stained glass)/i,
+    queries: ['Kircheninneres Nordrhein-Westfalen','Kirchenbänke Kirche','Altarraum Kirche NRW','Kirchenschiff Nordrhein-Westfalen','Kirchenraum Deutschland','Kirchenfenster Kreis Düren','Kirchenorgel Deutschland','Church interior NRW','Church pew Germany','Kirchenfenster Nordrhein-Westfalen','Kirchenraum evangelisch NRW','St Laurentius Merzenich Kirche Innen','Kirchenschiff leer Deutschland','Orgel Kirche Nordrhein-Westfalen']
+  },
   aktuell: {
     tags: ['aktuell','merzenich','dueren','ort','strasse','gemeinde'],
     // Runde 20 (07.10.2026): zwei belegte Ansichten von St. Laurentius Merzenich (Kilind).
