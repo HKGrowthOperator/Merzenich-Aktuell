@@ -14,4 +14,4 @@ image:
   type: logo
   fit: contain
 ---
-Der SC 1919 Merzenich ist der größte Sportverein der Gemeinde. Der Verein hat 17 Mannschaften, davon 14 im Juniorenbereich; die erste Mannschaft spielt in der Kreisliga A. Spielberichte und Tabellen finden Sie im Ressort [Sport](/sport/).
+Der SC 1919 Merzenich ist der größte Sportverein der Gemeinde. Der Verein hat 17 Mannschaften, davon 14 im Juniorenbereich; die erste Mannschaft spielt in der Kreisliga A. Spielberichte finden Sie im Ressort [Sport](/sport/).

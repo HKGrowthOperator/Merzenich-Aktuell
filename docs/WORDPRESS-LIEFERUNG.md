@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-16. Oktober 2026 · Theme 21.20.0 · Core-Plugin 1.28.1 · live: 21.19.0 / 1.28.0 (Historie unten)
+16. Oktober 2026 · Theme 21.20.0 · Core-Plugin 1.28.1 · live: 21.20.0 / 1.28.1 (Historie unten)
 
 ## Neu am 16.10.2026: Theme 21.20.0, Sportseite ohne Ergebnisse und Tabellen, darunter alle Sportvereine
 
@@ -14,7 +14,9 @@ Ergebnisse, Tabellenstände und Spielpläne hätten laufend nachgetragen werden 
 - **Tests:** neu `qa/wordpress/sport-vereine-test.php` (alle 16 Vereine genau einmal, Gruppen und Zahlen der Sprungleiste, Sparten, Profil und Monogramm, keine Tabellenwerte, keine Hinweistexte, Schalter aus); `ausbau-test.php` prüft fünf Schalter.
 - **Enthält** die Korrekturen aus 21.19.1 (Abschnitt unten) und gehört zu Plugin 1.28.1.
 
-**Stand live:** noch nicht eingespielt. Einspielen: erst Plugin 1.28.1, dann Theme 21.20.0, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks speichern.
+- **Profiltext SC 1919:** „Spielberichte und Tabellen finden Sie im Ressort Sport“ heißt jetzt „Spielberichte finden Sie im Ressort Sport“ (Quelle `site-source/content/vereine/sc-1919-merzenich.md`; live direkt im Vereinsprofil geändert, weil der Profiltext beim Anlegen in den Beitrag übernommen wird).
+
+**Stand live:** eingespielt am 16.10.2026 (erst Plugin 1.28.1, dann Theme 21.20.0, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks gespeichert). Geprüft bei 1440, 820 und 390 px: keine Spielstand-Ecke, kein Spiel- und Tabellenmodul, kein Tabellenstand, 16 Vereine unter den Meldungen, kein Endlos-Scrollen, „Ältere Sportmeldungen“ führt auf `/sport/page/2/` (dort ohne Vereinsliste), alle 16 Vereinsprofile antworten mit 200, keine Konsolenfehler. Gegenprobe Startseite, Meldung, Termine, Unternehmen, Blaulicht bei 1440 und 390 px ohne Fehler. Schalter „Ergebnisse und Tabellen auf der Sportseite“ steht live auf aus.
 
 ## Neu am 15.10.2026 (abends): Theme 21.19.1 und Plugin 1.28.1, Korrekturen aus dem Vorführ-Check
 
@@ -22,7 +24,7 @@ Vor der Vorstellung beim Bürgermeister wurde die Live-Seite in sechs Breiten (1
 
 **Nachtrag 16.10.2026 (Code-Prüfung, im selben Versionsstand):** Karten-Link gemeindeweiter Termine sucht wieder „Merzenich“ statt „Gemeinde Merzenich“ (OSM fand nichts); „Familienanzeigen“ verschwindet aus dem Menü auch dann, wenn es nur abgelaufene oder nicht freigegebene Anzeigen gibt; „Weitere Meldungen“ auf der Startseite zeigt nur Meldungen mit Startseiten-Freigabe („Nur in der Rubrik“ bleibt draußen); Marktlisten zeigen Art bzw. Branche am Desktop in der Kopfzeile; Aufklappmenüs nennen Ortsansichten „Ortsansicht“ statt „Symbolbild“.
 
-**Stand live:** noch nicht eingespielt. Live laufen weiter 21.19.0 und 1.28.0. Einspielen wie unten (erst Plugin, dann Theme, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks speichern); dafür braucht es ein neues Passwort für das Konto „HK Growth“.
+**Stand live:** eingespielt am 16.10.2026 zusammen mit Theme 21.20.0 (Abschnitt oben).
 
 - **Startseite**
   - Die Rubrikflächen nehmen für große und mittlere Karten zuerst Meldungen der letzten 14 Tage, erst danach ältere mit eigenem Foto (`MA_LAYOUT_FRISCH_TAGE`, Plugin `includes/layout.php`). Vorher standen in „Politik & Gemeinde“ und „Wirtschaft“ groß fünf Meldungen vom 04.09., die vom 13.10. nur als Zeilen.
