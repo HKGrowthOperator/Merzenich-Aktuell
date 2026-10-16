@@ -135,21 +135,37 @@ function ortsansichtenAufloesen(pools) {
     return { ...o, src: m.src, srcset: srcsetFuer(m), width: m.width, height: m.height, nachweis: `${o.credit} · ${o.lizenz}` };
   }).filter(Boolean);
 }
-// Innerhalb eines Ortsteils reihum nach Datum (neueste zuerst): benachbarte
-// Meldungen in Listen zeigen so verschiedene Ansichten. Die Reihenfolge haengt
-// nur am Bestand, der Lauf bleibt wiederholbar.
+// Stabil (16.10.2026): Eine Meldung behaelt die Ansicht, die sie schon traegt
+// (data-ortsansicht auf ihrer Seite), solange die Ansicht zu ihrem Ortsteil
+// gehoert. Vorher wurde bei jeder neuen Meldung reihum neu verteilt; dadurch
+// wechselten die Bilder aelterer Meldungen, und WordPress (das vorhandene
+// Beitragsbilder nicht ersetzt) bekam Nachweise, die nicht zum Bild passten.
+// Neue Meldungen bekommen, neueste zuerst, die im Ortsteil am seltensten
+// genutzte Ansicht (bei Gleichstand die erste der Liste, aber nicht dieselbe
+// wie die zuletzt vergebene). Der Lauf bleibt wiederholbar.
 const ortVon = (a) => (ORT_SLUGS.has(a.ortsteil) ? a.ortsteil : 'merzenich');
 function ortsansichtenVerteilen(artikel, ansichten) {
   const zuordnung = new Map();
-  const zaehler = new Map();
+  const nutzung = new Map();
+  const nachId = new Map(ansichten.map((o) => [o.id, o]));
+  const auswahlFuer = (ort) => { const liste = ansichten.filter((o) => o.ortsteil === ort); return liste.length ? liste : ansichten.filter((o) => o.ortsteil === 'merzenich'); };
   const sortiert = [...artikel].sort((x, y) => String(y.datum || '').localeCompare(String(x.datum || '')) || x.url.localeCompare(y.url));
+  const offen = [];
   for (const a of sortiert) {
+    const pfad = artikelPfad(a);
+    const alt = existsSync(pfad) ? (/data-ortsansicht="([^"]+)"/.exec(readFileSync(pfad, 'utf8')) || [])[1] : '';
+    const o = alt ? nachId.get(alt) : null;
+    if (o && auswahlFuer(ortVon(a)).includes(o)) { zuordnung.set(a.url, o); nutzung.set(o.id, (nutzung.get(o.id) || 0) + 1); }
+    else offen.push(a);
+  }
+  const zuletzt = new Map();
+  for (const a of offen) {
     const ort = ortVon(a);
-    const liste = ansichten.filter((o) => o.ortsteil === ort);
-    const auswahl = liste.length ? liste : ansichten.filter((o) => o.ortsteil === 'merzenich');
+    const auswahl = auswahlFuer(ort);
     if (!auswahl.length) continue;
-    const i = zaehler.get(ort) || 0; zaehler.set(ort, i + 1);
-    zuordnung.set(a.url, auswahl[i % auswahl.length]);
+    const kandidaten = auswahl.length > 1 ? auswahl.filter((o) => o.id !== zuletzt.get(ort)) : auswahl;
+    const o = kandidaten.reduce((best, k) => ((nutzung.get(k.id) || 0) < (nutzung.get(best.id) || 0) ? k : best), kandidaten[0]);
+    zuordnung.set(a.url, o); nutzung.set(o.id, (nutzung.get(o.id) || 0) + 1); zuletzt.set(ort, o.id);
   }
   return zuordnung;
 }
