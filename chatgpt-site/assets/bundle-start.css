@@ -980,7 +980,7 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 @media (min-width:768px){
   .masthead{position:sticky;top:0;z-index:70;margin:0;box-shadow:none}
   .mainnav.is-scrolled{top:84px}
-  .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:0}
+  .header-local,.mast-actions .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:0}
   .header-local [data-today]{flex-basis:auto;text-align:right}
   /* Wettersymbol · Merzenich · Temperatur · Datum, ohne Uhrzeit (02.10.2026): ein Punkt trennt die Teile. */
   .header-local>*+*::before{content:"·";margin:0 7px;color:#9a948c;font-weight:400}
@@ -1644,11 +1644,26 @@ img.sv-zeichen{background:var(--card,#fff);border:1px solid var(--line,#e3e3e1)}
 /* Feinschliff 16.10.2026 (Theme 21.20.1, noch nicht live) */
 /* „Link kopieren“: sichtbare Bestätigung neben den Knöpfen statt nur für Screenreader. */
 .share .share-status{align-self:center;font:500 13px/1.4 var(--sans);color:var(--ok,#1f6f43);white-space:nowrap}
-.share .share-status:empty{display:none}
+.share .share-status:empty{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(min-width:1360px){.article .share .share-status{white-space:normal;width:44px;font-size:11px;line-height:1.2;text-align:center}}
 /* „Das passt zum Thema“ unter einer Meldung: bei 820 px stand die dritte Karte allein in einer Reihe,
    am Handy brachen die Titel nach drei Zeilen ab. Drei Spalten bis 641 px, Titel wie in Listen nach fünf Zeilen. */
-@media(min-width:641px) and (max-width:1100px){body.single .cards-3{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}body.single .cards-3 .news-card h3{font-size:18px;line-height:1.25}}
+@media(min-width:768px) and (max-width:1100px){body.single .cards-3{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}body.single .cards-3 .news-card h3{font-size:18px;line-height:1.25}}
 html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
+/* Kopf: Wettersymbol und Ortsname hatten bei 768–1180 px keinen Abstand („☁Merzenich“). */
+@media(min-width:768px) and (max-width:1180px){.kopf-wetter-icon{margin-right:6px}}
+/* Handy: Die Ressortleiste läuft rechts aus, damit man sieht, dass es weitergeht; das Polster lässt den letzten Punkt aus dem Verlauf scrollen. */
+@media(max-width:767px){.mainnav .navscroll{padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}}
+/* Listen: Unter der letzten Zeile stand eine zweite Linie über dem Endhinweis (die Zeile hat schon eine Unterlinie). */
+.feed-row+.endlos .endlos-ende{border-top:0;padding-top:0}
+/* Bildhinweis („Symbolbild“, „Ortsansicht“) auch in Zeilenlisten zeigen; v19.css blendete ihn aus. */
+.feed-row .media .badge{display:block;left:6px;bottom:6px;font-size:10px;padding:2px 6px}
+/* Schmale Karten und Handy: „Merzenich · Ortsteil“ bleibt zusammen, die Rubrik rückt als Ganzes in die nächste Zeile (brach vorher nach dem Punkt um). */
+.marke{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px}
+.marke .marke-teil{margin-left:-10px;white-space:pre}
+.marke .marke-rubrik,body.home .marke .marke-rubrik,.marke .gesponsert{margin-left:0}
+/* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
+@media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 
 /* ---- werbung.css ---- */
 /* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
@@ -2769,7 +2784,8 @@ html body.home .buehne-karte .media{aspect-ratio:4/3!important;overflow:hidden;b
 body.home .buehne-karte .media img{width:100%;height:100%;object-fit:cover;display:block}
 body.home .buehne-karte .karte-text{padding-top:0!important}
 body.home .buehne-karte .marke{margin:0 0 4px;font-size:11.5px}
-body.home .buehne-karte h2{margin:0 0 4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.18;font-size:17.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+/* Schlagzeilen ganz zeigen (Feinschliff 16.10.2026: am Handy endeten sie mitten im Wort mit „…“). */
+body.home .buehne-karte h2{margin:0 0 4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.18;font-size:17.5px}
 body.home .buehne-karte h2 a{color:var(--a-tinte);text-decoration:none}
 body.home .buehne-karte h2 a:hover,body.home .buehne .front-lead h1 a:hover,body.home .buehne .front-lead h2 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 body.home .buehne-karte .meta{font-size:12px;color:var(--a-leise)}
@@ -2784,7 +2800,7 @@ body.home .buehne-karte .karte-bild .badge{font-size:9.5px;padding:2px 5px;left:
   body.home .buehne .front-lead-copy a{pointer-events:auto}
   body.home .buehne .front-lead .marke,body.home .buehne .front-lead .marke-teil,body.home .buehne .front-lead .marke-rubrik{color:#f3eee8}
   body.home .buehne .front-lead .marke-ort{display:inline-block;padding:3px 7px 2px;background:var(--a-rot);color:#fdfbf8}
-  body.home .buehne .front-lead h1,body.home .buehne .front-lead h2{font-size:clamp(30px,3.3vw,46px);max-width:24ch;-webkit-line-clamp:3;line-clamp:3}
+  body.home .buehne .front-lead h1,body.home .buehne .front-lead h2{font-size:clamp(30px,3.3vw,46px);max-width:24ch;-webkit-line-clamp:4;line-clamp:4}
   body.home .buehne .front-lead h1 a,body.home .buehne .front-lead h2 a{color:#fdfbf8}
   body.home .buehne .front-lead-copy>p:not(.marke){max-width:62ch;color:rgba(253,251,248,.88);-webkit-line-clamp:2;line-clamp:2}
   body.home .buehne .front-lead .meta{color:rgba(253,251,248,.78)}
@@ -2856,7 +2872,7 @@ body.home .mj-eintrag:focus-visible{outline:2px solid var(--a-rot);outline-offse
 body.home .mj-zeichen{width:26px;height:26px;margin-top:1px;fill:none;stroke:var(--a-rot);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 body.home .mj-text{display:flex;flex-direction:column;gap:4px;min-width:0}
 body.home .mj-lead{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;line-height:1.3;color:var(--a-rot)}
-body.home .mj-titel{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.18;letter-spacing:-.01em;color:var(--a-tinte);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+body.home .mj-titel{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.18;letter-spacing:-.01em;color:var(--a-tinte)}
 body.home .mj-eintrag:hover .mj-titel{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 body.home .mj-klein{margin-top:2px;font-size:14px;line-height:1.35;color:var(--a-leise)}
 /* Rathaus: Status als Punkt, gruen nur bei „geoeffnet“; Farbe traegt nie allein (Text sagt es). */

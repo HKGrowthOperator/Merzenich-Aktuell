@@ -54,7 +54,7 @@
   if (!document.querySelector('link[data-ma-editorial-audit]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/editorial-audit.css?v=4e7a3dd037';
+    style.href = '/assets/editorial-audit.css?v=884c27f9f9';
     style.dataset.maEditorialAudit = '1';
     document.head.append(style);
   }
@@ -137,7 +137,7 @@
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=27bb98c099';
+    script.src = '/assets/ressort-dropdowns.js?v=aee3f44dc4';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);

@@ -980,7 +980,7 @@ body>.nav-anchor,body>.mainnav{min-width:0}.mainnav .navrow,.mainnav .navscroll{
 @media (min-width:768px){
   .masthead{position:sticky;top:0;z-index:70;margin:0;box-shadow:none}
   .mainnav.is-scrolled{top:84px}
-  .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:0}
+  .header-local,.mast-actions .header-local{max-width:none;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:0}
   .header-local [data-today]{flex-basis:auto;text-align:right}
   /* Wettersymbol · Merzenich · Temperatur · Datum, ohne Uhrzeit (02.10.2026): ein Punkt trennt die Teile. */
   .header-local>*+*::before{content:"·";margin:0 7px;color:#9a948c;font-weight:400}
@@ -1644,11 +1644,26 @@ img.sv-zeichen{background:var(--card,#fff);border:1px solid var(--line,#e3e3e1)}
 /* Feinschliff 16.10.2026 (Theme 21.20.1, noch nicht live) */
 /* „Link kopieren“: sichtbare Bestätigung neben den Knöpfen statt nur für Screenreader. */
 .share .share-status{align-self:center;font:500 13px/1.4 var(--sans);color:var(--ok,#1f6f43);white-space:nowrap}
-.share .share-status:empty{display:none}
+.share .share-status:empty{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(min-width:1360px){.article .share .share-status{white-space:normal;width:44px;font-size:11px;line-height:1.2;text-align:center}}
 /* „Das passt zum Thema“ unter einer Meldung: bei 820 px stand die dritte Karte allein in einer Reihe,
    am Handy brachen die Titel nach drei Zeilen ab. Drei Spalten bis 641 px, Titel wie in Listen nach fünf Zeilen. */
-@media(min-width:641px) and (max-width:1100px){body.single .cards-3{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}body.single .cards-3 .news-card h3{font-size:18px;line-height:1.25}}
+@media(min-width:768px) and (max-width:1100px){body.single .cards-3{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}body.single .cards-3 .news-card h3{font-size:18px;line-height:1.25}}
 html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
+/* Kopf: Wettersymbol und Ortsname hatten bei 768–1180 px keinen Abstand („☁Merzenich“). */
+@media(min-width:768px) and (max-width:1180px){.kopf-wetter-icon{margin-right:6px}}
+/* Handy: Die Ressortleiste läuft rechts aus, damit man sieht, dass es weitergeht; das Polster lässt den letzten Punkt aus dem Verlauf scrollen. */
+@media(max-width:767px){.mainnav .navscroll{padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}}
+/* Listen: Unter der letzten Zeile stand eine zweite Linie über dem Endhinweis (die Zeile hat schon eine Unterlinie). */
+.feed-row+.endlos .endlos-ende{border-top:0;padding-top:0}
+/* Bildhinweis („Symbolbild“, „Ortsansicht“) auch in Zeilenlisten zeigen; v19.css blendete ihn aus. */
+.feed-row .media .badge{display:block;left:6px;bottom:6px;font-size:10px;padding:2px 6px}
+/* Schmale Karten und Handy: „Merzenich · Ortsteil“ bleibt zusammen, die Rubrik rückt als Ganzes in die nächste Zeile (brach vorher nach dem Punkt um). */
+.marke{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px}
+.marke .marke-teil{margin-left:-10px;white-space:pre}
+.marke .marke-rubrik,body.home .marke .marke-rubrik,.marke .gesponsert{margin-left:0}
+/* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
+@media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 
 /* ---- werbung.css ---- */
 /* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
