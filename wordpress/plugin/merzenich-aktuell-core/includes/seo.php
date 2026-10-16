@@ -469,7 +469,7 @@ function ma_seo_kontext(): array {
             'beschreibung' => ma_seo_kuerzen($au['bio'] !== '' ? $au['bio'] : 'Meldungen von ' . $au['name'] . ' auf Merzenich Aktuell, der Lokalzeitung für die Gemeinde Merzenich.'),
             'url' => ma_seo_liste_url($au['url']), 'krumen' => [['Start', $home], ['Redaktion', $home . 'redaktion/'], [$au['name'], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_search()) {
-        $k = array_merge($k, ['typ' => 'suche', 'titel' => 'Suche: ' . get_search_query(), 'beschreibung' => 'Suche auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);
+        $k = array_merge($k, ['typ' => 'suche', 'titel' => get_search_query() === '' ? 'Suche' : 'Suche: „' . get_search_query() . '“', 'beschreibung' => 'Suche auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);
     } elseif (is_404()) {
         $k = array_merge($k, ['typ' => '404', 'titel' => 'Seite nicht gefunden', 'beschreibung' => 'Diese Seite gibt es auf Merzenich Aktuell nicht.', 'url' => '', 'index' => false, 'krumen' => []]);
     } else {

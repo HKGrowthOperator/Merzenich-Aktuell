@@ -216,16 +216,25 @@ function ma21_muster_klein(string $bild): string {
     return (string) preg_replace('/\.jpg$/', '-720.jpg', $bild);
 }
 
-/** Kasten „Unternehmen aus der Gemeinde“ mit Musterprofilen (nur solange weniger als drei echte Profile veröffentlicht sind). Jedes führt in seinen Kanal. */
+/** Kasten „Unternehmen aus der Gemeinde“: echte Profile zuerst, Musterprofile nur solange weniger als drei echte Profile veröffentlicht sind. Jede Karte führt in Kanal oder Profil. */
 function ma21_musterprofile_html(int $echte, string $anfrage): string {
-    if ($echte >= 3 || !ma21_muster_aktiv()) return '';
-    $h = '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>'
-        . '<p class="u-muster__hinweis">So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Beispielfirmen, keine echten Unternehmen.</p>';
-    foreach (array_slice(ma21_muster_liste(), 0, 5 - min($echte, 2)) as $m) {
+    // Echte, veröffentlichte Betriebe zuerst (16.10.2026, Auftrag Betreiber): Logo nur mit
+    // geklärten Rechten, sonst Kürzel; Knopf zur Website des Betriebs. Darunter die
+    // Musterfirmen, solange sie aktiv sind, als Beispielfirma gekennzeichnet.
+    $echt = '';
+    foreach (ma21_gemeinde_profile(5) as $f) {
+        $ziel = in_array($f['id'], ma21_kanal_ids(), true) ? $f['url'] : $f['profil'];
+        $echt .= '<article class="u-echt"><a class="u-echt__link" href="' . esc_url($ziel) . '">' . ma21_firma_logo_html($f, 'firma-logo u-echt__logo')
+            . '<span class="u-echt__kopf"><strong class="u-echt__name">' . esc_html($f['name']) . '</strong><span class="u-echt__zeile">' . esc_html($f['zeile']) . '</span></span></a>'
+            . ($f['text'] !== '' ? '<p class="u-echt__text">' . esc_html($f['text']) . '</p>' : '')
+            . ($f['knopf'] !== '' && $f['knopf_ziel'] !== '' ? '<p class="u-echt__knopf"><a href="' . esc_url($f['knopf_ziel']) . '" target="_blank" rel="noopener">' . esc_html($f['knopf']) . ' ↗</a></p>' : '') . '</article>';
+    }
+    $muster = '';
+    if ($echte < 3 && ma21_muster_aktiv()) foreach (array_slice(ma21_muster_liste(), 0, 5 - min($echte, 2)) as $m) {
         $f = ma21_firma_ansicht($m);
         if (!$f) continue;
         $b = $f['bild'];
-        $h .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Beispielfirma, Unternehmenskanal ansehen') . '">'
+        $muster .= '<article class="u-muster__karte"><a class="u-muster__link" href="' . esc_url($f['url']) . '" aria-label="' . esc_attr($f['name'] . ': Beispielfirma, Unternehmenskanal ansehen') . '">'
             . ($b ? '<span class="u-muster__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" srcset="' . esc_attr(ma21_abs($b['klein']) . ' 720w, ' . ma21_abs($b['src']) . ' 1080w') . '" sizes="(max-width: 759px) 92vw, 300px" alt="' . esc_attr($b['alt']) . '" width="600" height="338" loading="lazy" decoding="async"><span class="u-muster__marke">Beispielfirma</span></span>' : '')
             . '<span class="u-muster__eyebrow">' . esc_html($f['zeile']) . '</span>'
             . '<strong class="u-muster__name">' . esc_html($f['name']) . '</strong>'
@@ -233,7 +242,23 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
             . (($f['fakten']['Öffnungszeiten'] ?? '') !== '' ? '<span class="u-muster__info">' . esc_html($f['fakten']['Öffnungszeiten']) . '</span>' : '') . '</a>'
             . ($b ? '<span class="u-muster__credit">' . ma21_muster_nachweis($b, 'Foto: ') . '</span>' : '') . '</article>';
     }
-    return $h . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';
+    if ($echt === '' && $muster === '') return '';
+    return '<div class="sidebox u-box u-muster"><h3>Unternehmen aus der Gemeinde</h3>' . $echt
+        . ($muster !== '' ? '<p class="u-muster__hinweis">' . ($echt !== '' ? 'Darunter Beispielfirmen: So erscheinen Betriebe, die sich hier eintragen. Sie sind keine echten Unternehmen.' : 'So erscheinen Betriebe, die sich hier eintragen. Die folgenden Einträge sind Beispielfirmen, keine echten Unternehmen.') . '</p>' . $muster : '')
+        . '<p><a class="btn block" href="' . esc_url($anfrage) . '">Eigenen Betrieb eintragen</a></p></div>';
+}
+
+/**
+ * Veröffentlichte Unternehmensprofile für den Kasten „Unternehmen aus der
+ * Gemeinde“: die Betriebe aus data/firmen-entwuerfe.json (Plugin) in ihrer
+ * Reihenfolge zuerst, dann die übrigen nach Name. Entwürfe erscheinen nie.
+ */
+function ma21_gemeinde_profile(int $max = 5): array {
+    $profile = get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 48, 'orderby' => 'title', 'order' => 'ASC']);
+    $reihe = [];
+    if (function_exists('ma_firmen_entwuerfe_daten')) foreach ((array) (ma_firmen_entwuerfe_daten()['firmen'] ?? []) as $i => $f) $reihe[(string) ($f['profil']['slug'] ?? '')] = $i;
+    usort($profile, fn($a, $b) => [$reihe[$a->post_name] ?? 99, $a->post_title] <=> [$reihe[$b->post_name] ?? 99, $b->post_title]);
+    return array_slice(array_values(array_filter(array_map('ma21_firma_ansicht', $profile))), 0, $max);
 }
 
 /**

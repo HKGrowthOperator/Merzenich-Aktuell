@@ -783,7 +783,8 @@ html body.home .buehne-karte .media{aspect-ratio:4/3!important;overflow:hidden;b
 body.home .buehne-karte .media img{width:100%;height:100%;object-fit:cover;display:block}
 body.home .buehne-karte .karte-text{padding-top:0!important}
 body.home .buehne-karte .marke{margin:0 0 4px;font-size:11.5px}
-body.home .buehne-karte h2{margin:0 0 4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.18;font-size:17.5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+/* Schlagzeilen ganz zeigen (Feinschliff 16.10.2026: am Handy endeten sie mitten im Wort mit „…“). */
+body.home .buehne-karte h2{margin:0 0 4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.18;font-size:17.5px}
 body.home .buehne-karte h2 a{color:var(--a-tinte);text-decoration:none}
 body.home .buehne-karte h2 a:hover,body.home .buehne .front-lead h1 a:hover,body.home .buehne .front-lead h2 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 body.home .buehne-karte .meta{font-size:12px;color:var(--a-leise)}
@@ -798,7 +799,7 @@ body.home .buehne-karte .karte-bild .badge{font-size:9.5px;padding:2px 5px;left:
   body.home .buehne .front-lead-copy a{pointer-events:auto}
   body.home .buehne .front-lead .marke,body.home .buehne .front-lead .marke-teil,body.home .buehne .front-lead .marke-rubrik{color:#f3eee8}
   body.home .buehne .front-lead .marke-ort{display:inline-block;padding:3px 7px 2px;background:var(--a-rot);color:#fdfbf8}
-  body.home .buehne .front-lead h1,body.home .buehne .front-lead h2{font-size:clamp(30px,3.3vw,46px);max-width:24ch;-webkit-line-clamp:3;line-clamp:3}
+  body.home .buehne .front-lead h1,body.home .buehne .front-lead h2{font-size:clamp(30px,3.3vw,46px);max-width:24ch;-webkit-line-clamp:4;line-clamp:4}
   body.home .buehne .front-lead h1 a,body.home .buehne .front-lead h2 a{color:#fdfbf8}
   body.home .buehne .front-lead-copy>p:not(.marke){max-width:62ch;color:rgba(253,251,248,.88);-webkit-line-clamp:2;line-clamp:2}
   body.home .buehne .front-lead .meta{color:rgba(253,251,248,.78)}
@@ -870,7 +871,7 @@ body.home .mj-eintrag:focus-visible{outline:2px solid var(--a-rot);outline-offse
 body.home .mj-zeichen{width:26px;height:26px;margin-top:1px;fill:none;stroke:var(--a-rot);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 body.home .mj-text{display:flex;flex-direction:column;gap:4px;min-width:0}
 body.home .mj-lead{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;line-height:1.3;color:var(--a-rot)}
-body.home .mj-titel{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.18;letter-spacing:-.01em;color:var(--a-tinte);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+body.home .mj-titel{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.18;letter-spacing:-.01em;color:var(--a-tinte)}
 body.home .mj-eintrag:hover .mj-titel{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 body.home .mj-klein{margin-top:2px;font-size:14px;line-height:1.35;color:var(--a-leise)}
 /* Rathaus: Status als Punkt, gruen nur bei „geoeffnet“; Farbe traegt nie allein (Text sagt es). */

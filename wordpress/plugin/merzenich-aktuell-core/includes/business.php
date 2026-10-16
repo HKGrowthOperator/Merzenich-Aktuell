@@ -33,11 +33,18 @@ function ma_business_fields(): array {
         'ma_business_branche' => ['Branche', 'text'],
         'ma_business_adresse' => ['Adresse', 'text'],
         'ma_business_telefon' => ['Telefon', 'tel'],
+        'ma_business_email' => ['E-Mail', 'email'],
         'ma_business_website' => ['Website', 'url'],
         'ma_business_oeffnungszeiten' => ['Öffnungszeiten', 'textarea'],
         'ma_business_ortsteil' => ['Ortsteil', 'ortsteil'],
         'ma_business_quelle' => ['Quelle', 'text'],
         'ma_business_stand' => ['Stand', 'date'],
+        // Logo und Knopf der Karte „Unternehmen aus der Gemeinde“ (16.10.2026). Das Logo
+        // (Beitragsbild) erscheint erst, wenn die Rechte geklärt sind.
+        'ma_business_logo_quelle' => ['Logo-Quelle', 'url'],
+        'ma_business_logo_rechte' => ['Logo-Rechte', 'logorechte'],
+        'ma_business_karte_knopf' => ['Knopf auf der Karte', 'text'],
+        'ma_business_karte_ziel' => ['Ziel des Knopfs', 'url'],
     ];
 }
 
@@ -58,8 +65,10 @@ function ma_business_sanitize(string $type, $value): string {
     switch ($type) {
         case 'url': return esc_url_raw(trim((string)$value));
         case 'tel': return trim(preg_replace('/[^0-9+\/\-() ]/', '', (string)$value));
+        case 'email': return sanitize_email(trim((string)$value));
         case 'textarea': return sanitize_textarea_field((string)$value);
         case 'date': return preg_match('/^\d{4}-\d{2}-\d{2}$/', (string)$value) ? (string)$value : '';
+        case 'logorechte': return in_array((string)$value, ['offen', 'geklaert'], true) ? (string)$value : '';
         case 'ortsteil':
             $key = sanitize_key((string)$value);
             return isset(ma_business_ortsteile()[$key]) ? $key : '';
@@ -80,8 +89,12 @@ function ma_business_render_meta_box(WP_Post $post): void {
             echo '<select id="'.esc_attr($key).'" name="'.esc_attr($key).'"><option value="">Bitte wählen</option>';
             foreach (ma_business_ortsteile() as $slug => $name) echo '<option value="'.esc_attr($slug).'" '.selected($value, $slug, false).'>'.esc_html($name).'</option>';
             echo '</select>';
+        } elseif ($type === 'logorechte') {
+            echo '<select id="'.esc_attr($key).'" name="'.esc_attr($key).'"><option value="">ohne Angabe</option>';
+            foreach (['offen' => 'offen: Logo wird nicht gezeigt', 'geklaert' => 'geklärt: schriftliche Freigabe des Unternehmens liegt vor'] as $k => $name) echo '<option value="'.esc_attr($k).'" '.selected($value, $k, false).'>'.esc_html($name).'</option>';
+            echo '</select><p class="description">Das Logo als Beitragsbild hochladen. Bei „offen“ zeigt die Seite das Kürzel der Firma.</p>';
         } else {
-            $input = ['tel' => 'tel', 'url' => 'url', 'date' => 'date'][$type] ?? 'text';
+            $input = ['tel' => 'tel', 'url' => 'url', 'date' => 'date', 'email' => 'email'][$type] ?? 'text';
             echo '<input class="regular-text" type="'.esc_attr($input).'" id="'.esc_attr($key).'" name="'.esc_attr($key).'" value="'.esc_attr($value).'">';
             if ($key === 'ma_business_quelle') echo '<p class="description">Woher stammen die Angaben? Zum Beispiel „Angaben des Unternehmens“ oder die Website.</p>';
             if ($key === 'ma_business_stand') echo '<p class="description">Wann wurden die Angaben zuletzt bestätigt?</p>';
@@ -182,6 +195,7 @@ function ma_business_profile(int $post_id): array {
         'adresse' => (string)get_post_meta($post_id, 'ma_business_adresse', true),
         'telefon' => $telefon,
         'telefon_href' => $telefon !== '' ? 'tel:'.preg_replace('/[^0-9+]/', '', $telefon) : '',
+        'email' => (string)get_post_meta($post_id, 'ma_business_email', true),
         'website' => (string)get_post_meta($post_id, 'ma_business_website', true),
         'oeffnungszeiten' => (string)get_post_meta($post_id, 'ma_business_oeffnungszeiten', true),
         'ortsteil' => ma_business_ortsteile()[$ortsteil] ?? '',

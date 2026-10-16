@@ -34,7 +34,7 @@ $firmen = ma21_alle_firmen(12);
   </div>
 </div><aside class="sidebar">
   <?php echo ma21_musterprofile_html(count($profile), $assistent('Unternehmenspräsenz')); ?>
-  <?php if ($profile): ?><div class="sidebox u-box"><h3>Unternehmen nach Ortsteil</h3>
+  <?php /* Bis fünf Profile stehen schon oben im Kasten „Unternehmen aus der Gemeinde“. */ if (count($profile) > 5): ?><div class="sidebox u-box"><h3>Unternehmen nach Ortsteil</h3>
   <?php if ($profile): foreach ($nachOrt as $ortName => $liste): ?><p class="u-ort"><strong><?php echo esc_html($ortName); ?></strong></p><ul class="linklist"><?php foreach ($liste as $u): $branche = (string) get_post_meta($u->ID, 'ma_business_branche', true); ?><li><a href="<?php echo esc_url(get_permalink($u)); ?>"><?php echo esc_html(get_the_title($u)); ?></a><?php if ($branche !== ''): ?><small><?php echo esc_html($branche); ?></small><?php endif; ?></li><?php endforeach; ?></ul><?php endforeach;
   endif; ?>
   <p><a class="btn" href="<?php echo esc_url($assistent('Unternehmenskanal')); ?>">Eigenes Profil anfragen</a></p></div><?php endif; ?>

@@ -119,6 +119,10 @@ add_action('add_meta_boxes_post', function (): void {
         printf('<label><input type="checkbox" name="ma_gesponsert" value="1"%s> Gesponserter Beitrag (bezahlte Unternehmenspräsentation)</label><p class="description">Die Seite kennzeichnet ihn als „Anzeige · Gesponsert“. Redaktionelle Unternehmensnachrichten bleiben ohne Haken.</p>',
             checked((string) get_post_meta($p->ID, 'ma_gesponsert', true), '1', false));
         printf('<p><label>Auftraggeber (sichtbar)<br><input type="text" name="ma_gesponsert_von" value="%s" style="width:100%%"></label></p>', esc_attr((string) get_post_meta($p->ID, 'ma_gesponsert_von', true)));
+        // Kostenfreier Testeintrag (16.10.2026, testeintrag.php): Kennzeichnung „Anzeige · kostenfreier Testeintrag“, endet nach 30 Tagen.
+        printf('<p><label><input type="checkbox" name="ma_gesponsert_test" value="1"%s> Kostenfreier Testeintrag</label></p><p class="description">0 Euro, %d Tage ab Veröffentlichung, endet von selbst (Archiv), keine Verlängerung. Die Seite schreibt „Anzeige · kostenfreier Testeintrag“ statt „Bezahlte Präsentation“.%s</p>',
+            checked((string) get_post_meta($p->ID, 'ma_gesponsert_art', true), 'test', false), MA_TEST_TAGE,
+            ($ende = (string) get_post_meta($p->ID, 'ma_test_ende', true)) !== '' ? ' Testzeitraum bis ' . esc_html(mysql2date('d.m.Y', $ende)) . '.' : '');
         if (function_exists('ma_business_auswahl_html')) {
             echo '<p><label for="ma_business_id">Unternehmenskanal</label><br>' . ma_business_auswahl_html('ma_business_id', (int) get_post_meta($p->ID, 'ma_business_id', true), '– keiner –') . '</p>'
                 . '<p class="description">Gesponserte Beiträge erscheinen im Kanal dieses Unternehmens unter /unternehmen/…/. Redaktionelle Berichte ohne Haken bleiben draußen.</p>';
@@ -130,6 +134,7 @@ add_action('save_post_post', function (int $id): void {
     if (!current_user_can('edit_others_posts') || !current_user_can('edit_post', $id)) return;
     $an = !empty($_POST['ma_gesponsert']);
     $an ? update_post_meta($id, 'ma_gesponsert', '1') : delete_post_meta($id, 'ma_gesponsert');
+    $an && !empty($_POST['ma_gesponsert_test']) ? update_post_meta($id, 'ma_gesponsert_art', 'test') : delete_post_meta($id, 'ma_gesponsert_art');
     $von = sanitize_text_field(wp_unslash($_POST['ma_gesponsert_von'] ?? ''));
     // Nur ändern, wenn die Auswahl wirklich geändert wurde (unternehmenskanal.php).
     if (function_exists('ma_business_auswahl_geaendert') && ma_business_auswahl_geaendert('ma_business_id')) {

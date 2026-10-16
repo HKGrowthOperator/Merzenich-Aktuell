@@ -94,8 +94,9 @@ $GLOBALS['anfrage'] = '/?s=feuerwehr&ma_endlos=1'; $GLOBALS['qv'] = ['paged' => 
 pruefe('Suche: Abfrage bleibt, ma_endlos fällt weg', ma21_endlos_naechste(), 'https://merzenich-aktuell.de/page/2/?s=feuerwehr');
 $GLOBALS['qv'] = ['paged' => 6];
 pruefe('Letzte Seite: keine Folgeseite', ma21_endlos_naechste(), '');
+pruefe('Letzte von mehreren Seiten: kein Attribut, Blättern zurück bleibt', ma21_endlos_attr('ressort-blaulicht'), '');
 $wp_query->max_num_pages = 1; $GLOBALS['qv'] = [];
-pruefe('Liste mit nur einer Seite: keine Folgeseite, kein Attribut am .feed', [ma21_endlos_naechste(), ma21_endlos_attr('ressort-blaulicht')], ['', '']);
+pruefe('Liste mit nur einer Seite: leeres Attribut, endlos.js zeigt den Endhinweis', [ma21_endlos_naechste(), ma21_endlos_attr('ressort-blaulicht')], ['', ' data-endlos-naechste="" data-endlos-art="raster"']);
 $wp_query->max_num_pages = 4; $GLOBALS['anfrage'] = '/sport/';
 pruefe('Attribute am .feed: Folgeseite und Art', [ma21_endlos_attr('ressort-blaulicht'), ma21_endlos_attr('ressort-sport')], [' data-endlos-naechste="https://merzenich-aktuell.de/sport/page/2/" data-endlos-art="raster"', ' data-endlos-naechste="https://merzenich-aktuell.de/sport/page/2/" data-endlos-art="reihen"']);
 

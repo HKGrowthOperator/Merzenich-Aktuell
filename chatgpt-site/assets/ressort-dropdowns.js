@@ -321,8 +321,8 @@
     const newest = (def.neu || []).filter((x) => x && x.url && x.titel).slice(0, 4).map(story).join('');
     // Weitere Bildmeldungen links unter dem Ressortnamen (Sport).
     const mehr = (def.mehr || []).filter((x) => x && x.url && x.titel && x.bild).map(story).join('');
-    // Termine zeigen rechts die naechsten Termine, nicht die neuesten Beitraege (16.10.2026).
-    const spalte = route === '/termine/' ? 'Nächste Termine' : 'Neu im Ressort';
+    // Termine und Tipp zeigen rechts kommende Termine, nicht die neuesten Beitraege (16.10.2026).
+    const spalte = route === '/termine/' ? 'Nächste Termine' : route === '/tipp/' ? 'Unsere Tipps' : 'Neu im Ressort';
     inner.innerHTML =
       '<div class="ressort-dropdown__head">' +
         '<span class="ressort-dropdown__eyebrow">Ressort</span>' +

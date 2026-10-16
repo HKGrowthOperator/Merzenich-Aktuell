@@ -104,7 +104,7 @@
     steuer.className = 'endlos';
     steuer.innerHTML = '<p class="sr-only" role="status" aria-live="polite"></p>'
       + '<button type="button" class="endlos-knopf">Weitere Meldungen laden</button>'
-      + `<p class="endlos-ende" tabindex="-1" hidden>Alle Meldungen geladen. <a href="${ARCHIV}">Ältere Meldungen im Archiv</a></p>`;
+      + `<p class="endlos-ende" tabindex="-1" hidden>Alle Meldungen geladen. <a href="${ARCHIV}">Archiv nach Monaten</a></p>`;
     liste.insertBefore(steuer, blaettern);
     if (blaettern) blaettern.hidden = true;
     const status = steuer.querySelector('[role="status"]');
@@ -218,8 +218,9 @@
   }
 
   // WordPress-Listen
+  // Leeres Attribut: Liste ohne Folgeseite, gleich mit Endhinweis (inc/ma21.php ma21_endlos_attr).
   const listen = [...d.querySelectorAll('.feed[data-endlos-naechste]')];
-  for (const l of listen) einrichten(l, adresse(l.getAttribute('data-endlos-naechste')));
+  for (const l of listen) { const n = l.getAttribute('data-endlos-naechste'); einrichten(l, n ? adresse(n) : ''); }
   // Statische Kopie: Blättern mit rel=next
   for (const l of d.querySelectorAll('.feed')) {
     if (listen.includes(l) || l.hasAttribute('data-endlos-quelle')) continue;

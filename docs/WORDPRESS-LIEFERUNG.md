@@ -1,6 +1,61 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-16. Oktober 2026 · Theme 21.20.0 · Core-Plugin 1.28.1 · live: 21.20.0 / 1.28.1 (Historie unten)
+16. Oktober 2026 · Theme 21.20.1 · Core-Plugin 1.28.2 · live: 21.20.0 / 1.28.1 (Historie unten)
+
+## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.2, Feinschliff und drei Betriebe als Entwurf
+
+**Feinschliff aus dem Vorführ-Check.** Die offenen Befunde wurden am 16.10. auf der Live-Seite 21.20.0 noch einmal nachgestellt. Behoben ist, was noch bestand:
+
+- **Kopf und Menüs**
+  - Wettersymbol und Ortsname haben bei 768 bis 1180 px Abstand; am Desktop gleichmäßige Abstände um den Trennpunkt.
+  - Handy: Die Ressortleiste läuft rechts sichtbar aus und springt auf das aktuelle Ressort (ohne die Seite zu verschieben).
+  - „Menschen“ passt bei 1181 bis 1339 px in die Leiste.
+  - Menü „Termine“: rechte Spalte „Nächste Termine“; Menü „Tipp“ zeigt die nächsten Tipp-Termine.
+- **Suche**
+  - Kopf mit Begriff, Trefferzahl und Suchfeld.
+  - Leere Suche bittet um einen Begriff, statt alle Meldungen zu listen.
+  - Fenstertitel „Suche“ bzw. „Suche: „Begriff““.
+- **Meldungsseite**
+  - Nur noch eine robots-Angabe im Kopf.
+  - Kommentarformular ohne das nicht vorhandene Feld „Website“; der Haken bleibt gesetzt, wenn schon gespeichert.
+  - „Link kopiert“ ist sichtbar, auch in der senkrechten Leiste ab 1360 px.
+  - „Das passt zum Thema“ dreispaltig ab 768 px, Titel nach fünf Zeilen gekürzt.
+  - Anzeige unter dem Text am Handy zweizeilig statt mit „…“.
+- **Listen**
+  - Endhinweis „Alle Meldungen geladen. Archiv nach Monaten“, statt ältere Meldungen zu versprechen, die es nicht gibt. Er steht jetzt auch auf einseitigen Listen wie `/ort/buergewald/`.
+  - Keine doppelte Linie darüber.
+  - `/nachrichten/` zeigt rechts „Nach Ortsteil“ und „Nach Ressort“ statt derselben fünf Meldungen wie links.
+  - Bildhinweis („Symbolbild“, „Ortsansicht“) auch in Zeilenlisten (Feuerwehr, Polizei, Verkehr).
+  - Ortsmarke „Merzenich · Ortsteil“ bricht in schmalen Karten nicht mehr nach dem Punkt um.
+- **Startseite:** Schlagzeilen auf der Bühne und im Termin-Kasten werden nicht mehr mit „…“ gekürzt; der Bühnen-Aufmacher darf vier Zeilen haben.
+- **Termine:** Terminbilder in der Liste und Symbolbilder auf der Terminseite haben ein leeres `alt`. Die Pool-Texte waren oft englisch oder abgeschnitten; die Bildunterschrift nennt das Symbolbild.
+
+**Drei echte Betriebe als Entwurf** (Auftrag Betreiber 16.10.2026, Entscheidung „Entwurf bis Zusage“): Bäckerei Wirtz, Hasberg Fenster & Rollladentechnik, Porschen Media. Einzelheiten, Logo-Quellen und Anfragetext in `docs/FIRMEN-ENTWUERFE.md`.
+
+- **Plugin, Merzenich Aktuell → Firmen-Entwürfe** (`includes/firmen-entwuerfe.php`, Daten `data/firmen-entwuerfe.json`)
+  - Der Knopf legt je Betrieb ein Unternehmensprofil und einen Werbebeitrag an, **nur als Entwurf**.
+  - Vorhandenes (auch im Papierkorb) wird nie doppelt angelegt oder überschrieben.
+  - Profile ohne Einwilligung bleiben durch die bestehende Sperre Entwurf.
+- **Kostenfreier Testeintrag** (`includes/testeintrag.php`)
+  - Haken im Kasten „Kennzeichnung“.
+  - Die Seite schreibt „Anzeige · kostenfreier Testeintrag“ und „Kostenfreie Präsentation im Testzeitraum bis …“ statt „Bezahlte Präsentation“.
+  - Der Zeitraum beginnt mit der ersten Veröffentlichung, dauert 30 Tage und endet von selbst: Ein täglicher Lauf archiviert den Beitrag. Keine Verlängerung, keine Rechnung.
+- **Unternehmensprofil**
+  - Neue Felder: E-Mail, Logo-Quelle, Logo-Rechte (offen/geklärt), Knopf und Knopfziel.
+  - Das Logo (Beitragsbild) erscheint nur bei „geklärt“, sonst das Kürzel.
+- **Kasten „Unternehmen aus der Gemeinde“** (`/unternehmen/`, `/betriebe/`)
+  - Veröffentlichte echte Betriebe stehen zuerst (diese drei in fester Reihenfolge), mit Logo oder Kürzel, Branche · Ort, Kurztext und Knopf zur Website.
+  - Darunter folgen die Beispielfirmen, solange sie aktiv sind, weiter als Beispielfirma gekennzeichnet.
+- **Bleibt:** Startseite und Bannerplätze werden nicht belegt (`ma_startseite_freigabe = nein`); die Banner-Texte stehen nur in der Datei.
+
+**Tests:** neu `testeintrag-test.php` (24 Prüfungen) und `firmen-entwuerfe-test.php` (36); erweitert `endlos-test.php`, `seo-test.php`, `termine-test.php`. Lokal im WordPress bei 1440, 820 und 390 px nachgestellt, 0 Konsolenfehler.
+
+**Nicht in diesem Stand:**
+- Karten von „Weitere Meldungen“ auf der Startseite im Stil der Blöcke darüber (größerer Umbau).
+- Prüfgruppe „Märkte“: nicht nachgestellt.
+- Englische Alt-Texte in den Bildpools (`bildpools.json`, Sache der Pool-Pflege).
+
+**Stand live:** noch nicht eingespielt.
 
 ## Neu am 16.10.2026: Theme 21.20.0, Sportseite ohne Ergebnisse und Tabellen, darunter alle Sportvereine
 

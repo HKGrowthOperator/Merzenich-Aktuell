@@ -154,6 +154,18 @@ body.admin-bar .mainnav,body.admin-bar .mainnav.is-scrolled{top:0}
 .u-muster__info{font-size:12px;color:var(--muted,#6b6b6b)}
 .u-muster__credit{display:block;margin-top:6px;font-size:10.5px;color:var(--muted,#8a857d)}
 .u-muster__credit a{color:inherit}
+/* Echte Betriebe im Kasten „Unternehmen aus der Gemeinde“ (21.20.1): Logo nur mit geklärten Rechten, sonst Kürzel */
+.u-echt{padding:2px 0 14px;margin:0 0 14px;border-bottom:1px solid var(--line,#e2ddd3)}
+.u-echt__link{display:flex;gap:12px;align-items:center;color:inherit;text-decoration:none}
+.u-echt__link:hover .u-echt__name,.u-echt__link:focus-visible .u-echt__name{text-decoration:underline;text-underline-offset:3px}
+.u-echt__logo{flex:0 0 auto;display:inline-grid;place-items:center;width:52px;height:52px;border-radius:4px;overflow:hidden;color:#fff;font-family:var(--sans);font-size:16px;font-weight:800;letter-spacing:.04em}
+.u-echt__logo img{width:100%;height:100%;object-fit:contain;padding:5px;box-sizing:border-box;background:#f5f3ee}
+.u-echt__kopf{display:grid;gap:2px;min-width:0}
+.u-echt__name{font-size:16.5px;line-height:1.25}
+.u-echt__zeile{font-size:12px;line-height:1.35;color:var(--muted,#6b6b6b)}
+.u-echt__text{font-size:13.5px;line-height:1.5;margin:8px 0 0;color:var(--ink,#1d1d1d)}
+.u-echt__knopf{margin:6px 0 0;font-size:13px;font-weight:700}
+.u-echt__knopf a{color:var(--ma-red,#971725);text-underline-offset:3px}
 
 /* Ohne Ausgabe-Wahl (Vorgabe Betreiber 05.10.2026) steht „Merzenich · Jetzt“
    allein in der Leiste: links beginnend, mit der Höhe der früheren Leiste. Am

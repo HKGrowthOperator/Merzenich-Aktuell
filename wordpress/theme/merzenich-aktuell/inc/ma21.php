@@ -568,9 +568,10 @@ function ma21_menue_bild(WP_Post $p): ?array {
 function ma21_menue_neu(string $pfad, array $statisch): array {
     $slug = trim($pfad, '/');
     $titel = fn(WP_Post $p): string => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8');
-    if ($slug === 'termine') {
+    // Tipp (16.10.2026): dieselben kommenden Termine wie /tipp/ (ma21_tipp_termine), vorher blieb die Spalte leer.
+    if ($slug === 'termine' || $slug === 'tipp') {
         $jetzt = (string) current_time('Y-m-d\TH:i');
-        $l = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 4, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
+        $l = $slug === 'tipp' && function_exists('ma21_tipp_termine') ? array_slice(ma21_tipp_termine(), 0, 4) : get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 4, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC', 'meta_query' => [['key' => 'ma_event_start', 'value' => $jetzt, 'compare' => '>=']]]);
         return array_map(function (WP_Post $p) use ($titel): array {
             $start = function_exists('ma_event_timestamp') ? (int) ma_event_timestamp($p->ID, 'start') : 0;
             return ['titel' => $titel($p), 'url' => wp_make_link_relative(get_permalink($p)), 'ort' => (string) (get_post_meta($p->ID, 'ma_event_place', true) ?: (MA21_ORTE[ma21_ort($p)] ?? ucfirst(ma21_ort($p)))), 'datum' => $start ? (string) wp_date('c', $start) : (string) get_post_meta($p->ID, 'ma_event_start', true), 'bild' => ma21_menue_bild($p), 'termin' => true];
@@ -639,7 +640,7 @@ function ma21_marke(WP_Post $p, string $rubrik = 'ressort'): string {
         . ($ort !== 'merzenich' ? '<span class="marke-teil"> · ' . ma21_e(MA21_ORTE[$ort]) . '</span>' : '')
         . '<span class="marke-rubrik">' . ma21_e($label) . '</span>'
         // Bezahlte Unternehmenspräsentation (Plugin, werbung-stat.php): immer gekennzeichnet.
-        . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>';
+        . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">' . ma21_e(function_exists('ma_gesponsert_label') ? ma_gesponsert_label($p) : 'Anzeige · Gesponsert') . '</span>' : '') . '</p>';
 }
 
 function ma21_zeit(WP_Post $p, bool $lang = false): string {
@@ -1278,7 +1279,10 @@ add_filter('paginate_links_output', function (string $r): string {
 function ma21_endlos_attr(string $seite): string {
     if (!ma21_ausbau('endlos')) return '';
     $n = ma21_endlos_naechste();
-    return $n === '' ? '' : ' data-endlos-naechste="' . esc_attr($n) . '" data-endlos-art="' . (ma21_raster_seite($seite) ? 'raster' : 'reihen') . '"';
+    // Einseitige Liste: leeres Attribut, damit der Endhinweis steht. Auf der letzten von
+    // mehreren Seiten (/page/N/) bleibt das Blättern zurück sichtbar, dort kein Attribut.
+    if ($n === '' && (int) get_query_var('paged') > 1) return '';
+    return ' data-endlos-naechste="' . esc_attr($n) . '" data-endlos-art="' . (ma21_raster_seite($seite) ? 'raster' : 'reihen') . '"';
 }
 
 /* Bearbeitungsmodus und Board (Plugin): Blöcke neu rendern und Belegung lesen. */
@@ -1294,11 +1298,20 @@ add_filter('ma_layout_belegung', function ($b, string $seite): array {
 /** Rechte Spalte der Listen: neueste Meldungen, bei Sport und Vereinen die Vereine der Gemeinde. */
 function ma21_liste_seitenspalte(int $ohne = 0): string {
     $h = '';
-    $neu = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5] + ($ohne ? ['post__not_in' => [$ohne]] : []));
+    // Auf /nachrichten/ wären es genau die ersten fünf Meldungen der Liste daneben.
+    $neu = get_query_var('ma_alle') ? [] : get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 5] + ($ohne ? ['post__not_in' => [$ohne]] : []));
     if ($neu) {
         $h .= '<div class="sidebox"><h3>Neueste Meldungen aus allen Ressorts<a href="' . esc_url(home_url('/nachrichten/')) . '">alle</a></h3><ol class="ranked">';
         foreach ($neu as $p) $h .= '<li><a href="' . esc_url(get_permalink($p)) . '">' . ma21_e(get_the_title($p)) . '</a></li>';
         $h .= '</ol></div>';
+    }
+    // /nachrichten/: statt der doppelten Liste die Wege nach Ortsteil und Ressort (Vereine sind ausgeblendet).
+    if (get_query_var('ma_alle')) {
+        $h .= '<div class="sidebox"><h3>Nach Ortsteil</h3><ul class="linklist">';
+        foreach (MA21_ORTE as $slug => $name) $h .= '<li><a href="' . esc_url(home_url('/ort/' . $slug . '/')) . '">' . ma21_e($name) . '</a></li>';
+        $h .= '</ul></div><div class="sidebox"><h3>Nach Ressort</h3><ul class="linklist">';
+        foreach (['blaulicht', 'rathaus', 'leben', 'wirtschaft', 'sport', 'menschen'] as $r) $h .= '<li><a href="' . esc_url(home_url('/' . $r . '/')) . '">' . ma21_e(MA21_RESSORT[$r]) . '</a></li>';
+        $h .= '<li><a href="' . esc_url(home_url('/archiv/')) . '">Archiv nach Monaten</a></li></ul></div>';
     }
     if (is_tax('ma_location')) { $o = get_queried_object(); if ($o instanceof WP_Term) $h .= ma21_ort_seitenspalte($o); }
     $sport = is_category('sport'); $vereine = is_category('vereine');
@@ -1555,7 +1568,7 @@ function ma21_u_karte(WP_Post $p, int $i): string {
     $ort = ma21_ort($p);
     return '<article class="u-karte' . ($b ? '' : ' u-karte--ohne-bild') . '"' . ($i >= 8 ? ' data-nachladen hidden' : '') . '>'
         . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, MA21_SIZES['unternehmen'], $i < 2) . ma21_badge($b, false) . '</a>' : '')
-        . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">Anzeige · Gesponsert</span>' : '') . '</p>'
+        . '<p class="u-karte__kicker">' . ma21_e(MA21_ORTE[$ort] ?? 'Wirtschaft') . (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p) ? '<span class="gesponsert">' . ma21_e(function_exists('ma_gesponsert_label') ? ma_gesponsert_label($p) : 'Anzeige · Gesponsert') . '</span>' : '') . '</p>'
         . "<h2><a href=\"{$url}\">{$titel}</a></h2>"
         // Beiträge von Unternehmen sind Anzeigen: Absender ist die Firma, nicht die Redaktion (21.18.0).
         . '<p class="u-karte__meta">' . ma21_u_absender($p) . ' · <time datetime="' . esc_attr(get_the_date('c', $p)) . '">' . esc_html(ma21_zeit_text($p, true, ', ')) . '</time></p>'

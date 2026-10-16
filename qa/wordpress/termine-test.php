@@ -53,6 +53,9 @@ foreach (['ma_obituary', 'ma_family_notice', 'ma_job', 'ma_property', 'ma_tip', 
     pruefe("Einzelseite $typ im neuen Markup (ma21_anzeige_einzel)", str_contains((string) file_get_contents($theme . "single-$typ.php"), 'ma21_anzeige_einzel(get_post())'), true);
 }
 pruefe('Vorlagen vorhanden', array_map(fn($f) => is_file($theme . $f), ['archive-ma_event.php', 'single-ma_event.php', 'archive-ma_obituary.php', 'archive-ma_family_notice.php', 'archive-ma_business.php']), [true, true, true, true, true]);
+$termineQuelle = (string) file_get_contents($theme . 'inc/termine.php');
+pruefe('Liste: Bild aria-hidden mit leerem alt (Pool-Texte sind oft englisch)', str_contains($termineQuelle, 'ma21_img(array_merge($b, [\'alt\' => \'\'])'), true);
+pruefe('Terminseite: Symbolbild mit leerem alt, die Unterschrift sagt „Symbolbild“', str_contains($termineQuelle, 'esc_attr(!empty($bild[\'is_fallback\']) ? \'\' :'), true);
 pruefe('/betriebe/ ohne die acht Kästen „Platz frei“', str_contains((string) file_get_contents($theme . 'archive-ma_business.php'), 'Platz frei'), false);
 
 echo "\nWebseiten-Symbol (Meldung Betreiber 06.10.2026)\n";

@@ -76,7 +76,7 @@ function ma21_termin_zeile(array $t): string {
     $iso = fn(int $ts): string => gmdate('Y-m-d\TH:i:s.000\Z', $ts);
     $b = ma21_bild($t['post']);
     $bild = $b ? '<a class="event-bild" href="' . $url . '" tabindex="-1" aria-hidden="true"><div class="media">'
-        . ma21_img($b, '(max-width: 640px) 92vw, (max-width: 1099px) 46vw, 380px', false) . ma21_badge($b, false) . '</div></a>' : '';
+        . ma21_img(array_merge($b, ['alt' => '']), '(max-width: 640px) 92vw, (max-width: 1099px) 46vw, 380px', false) . ma21_badge($b, false) . '</div></a>' : '';
     return '<div data-event-row data-start="' . esc_attr($iso($t['start'])) . '" data-end="' . esc_attr($iso($t['ende'])) . '" data-place="' . esc_attr($t['ortSlug']) . '" data-category="' . esc_attr($t['kategorie']) . '">'
         . '<article class="event-row' . ($b ? ' event-row--bild' : '') . '" id="' . esc_attr($t['post']->post_name) . '">' . $bild
         . '<span class="d"><b>' . esc_html(wp_date('j', $t['start'])) . '</b><span>' . esc_html(MA21_MON[(int) wp_date('n', $t['start']) - 1]) . '</span></span>'
@@ -147,7 +147,7 @@ function ma21_termin_einzel(WP_Post $p): void {
         . ($t['quelle'] !== '' ? '<a class="btn ghost" href="' . esc_url($t['quelle']) . '" target="_blank" rel="noopener nofollow">Quelle ↗</a>' : '')
         . '</div>';
     if (!empty($bild['url'])) {
-        echo '<figure class="art-figure' . (!empty($bild['is_fallback']) ? ' art-figure--symbol' : '') . '"><div class="media"><img src="' . esc_url($bild['url']) . '" alt="' . esc_attr((string) ($bild['alt'] ?? '')) . '" loading="lazy" decoding="async"></div>'
+        echo '<figure class="art-figure' . (!empty($bild['is_fallback']) ? ' art-figure--symbol' : '') . '"><div class="media"><img src="' . esc_url($bild['url']) . '" alt="' . esc_attr(!empty($bild['is_fallback']) ? '' : (string) ($bild['alt'] ?? '')) . '" loading="lazy" decoding="async"></div>'
             . '<figcaption><span>' . (!empty($bild['is_fallback']) ? '<span class="figure-badge">Symbolbild</span> · Kein Foto der Veranstaltung. ' : '') . esc_html(function_exists('ma_image_caption') ? ma_image_caption($bild) : (string) ($bild['credit'] ?? '')) . '</span></figcaption></figure>';
     }
     $inhalt = apply_filters('the_content', $p->post_content);

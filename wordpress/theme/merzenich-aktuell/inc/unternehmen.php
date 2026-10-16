@@ -199,12 +199,14 @@ function ma21_firma_ansicht($q): ?array {
                 'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] : null,
             'zeit' => ma21_zeit_text($b, true, ', '), 'iso' => (string) get_post_time('c', false, $b), 'muster' => false];
     }
-    $logo = (string) (get_the_post_thumbnail_url($q, 'thumbnail') ?: '');
+    // Logo (Beitragsbild) nur mit geklärten Rechten; „offen“ zeigt das Kürzel (16.10.2026).
+    $logo = (string) get_post_meta($q->ID, 'ma_business_logo_rechte', true) === 'offen' ? '' : (string) (get_the_post_thumbnail_url($q, 'medium') ?: '');
     $text = trim(wp_strip_all_tags($q->post_excerpt !== '' ? $q->post_excerpt : wp_trim_words(wp_strip_all_tags($q->post_content), 40, ' …')));
     return ['slug' => $q->post_name, 'name' => $name, 'branche' => (string) ($p['branche'] ?? ''), 'ort' => $ort, 'zeile' => trim(($p['branche'] ?? '') . ' · ' . $ort, ' ·'),
         'url' => $home . 'unternehmen/' . $q->post_name . '/', 'muster' => false, 'kuerzel' => ma21_firma_kuerzel($name), 'farbe' => ma21_firma_farbe($name), 'logo' => $logo, 'text' => $text,
-        'fakten' => array_filter(['Branche' => (string) ($p['branche'] ?? ''), 'Ort' => $ort, 'Adresse' => (string) ($p['adresse'] ?? ''), 'Telefon' => (string) ($p['telefon'] ?? ''), 'Öffnungszeiten' => (string) ($p['oeffnungszeiten'] ?? '')]),
+        'fakten' => array_filter(['Branche' => (string) ($p['branche'] ?? ''), 'Ort' => $ort, 'Adresse' => (string) ($p['adresse'] ?? ''), 'Telefon' => (string) ($p['telefon'] ?? ''), 'E-Mail' => (string) ($p['email'] ?? ''), 'Öffnungszeiten' => (string) ($p['oeffnungszeiten'] ?? '')]),
         'telefon_href' => (string) ($p['telefon_href'] ?? ''), 'website' => (string) ($p['website'] ?? ''),
+        'knopf' => (string) get_post_meta($q->ID, 'ma_business_karte_knopf', true), 'knopf_ziel' => (string) get_post_meta($q->ID, 'ma_business_karte_ziel', true),
         'bild' => null, 'profil' => get_permalink($q), 'beitraege' => $beitraege, 'anzeige' => null, 'id' => (int) $q->ID];
 }
 

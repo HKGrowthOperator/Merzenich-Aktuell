@@ -90,8 +90,10 @@
   bilderPruefen(document);
 
   /* ---------- Sticky-Navigation: aktuelle Rubrik in Sicht scrollen ---------- */
-  var cur = null; // Preserve anchor and back-navigation scroll positions.
-  if (cur && cur.scrollIntoView) { try { cur.scrollIntoView({ inline: 'center', block: 'nearest' }); window.scrollTo(0, 0); } catch (e) { } }
+  // Nur die Leiste selbst verschieben (scrollLeft), nie die Seite: scrollIntoView zog Anker
+  // und Zurück-Position mit (deshalb war es aus). Am Handy stand „Menschen“ sonst außerhalb.
+  var cur = document.querySelector('.mainnav .navscroll>a[aria-current]');
+  if (cur) { var leiste = cur.parentNode; if (leiste.scrollWidth > leiste.clientWidth) leiste.scrollLeft += cur.getBoundingClientRect().left - leiste.getBoundingClientRect().left - 16; }
 
   /* ---------- Teilen ---------- */
   $$('[data-share]').forEach(function (btn) {

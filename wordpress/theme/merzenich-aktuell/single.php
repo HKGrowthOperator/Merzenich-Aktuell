@@ -28,7 +28,7 @@ while (have_posts()): the_post();
   <div class="kick-row"><div class="location-line"><span class="location-brand">MERZENICH</span><?php if ($ort !== 'merzenich') echo ' · ' . esc_html(mb_strtoupper(MA21_ORTE[$ort])); ?></div><span class="kicker"><?php echo esc_html($kicker); ?></span></div>
   <h1><?php echo esc_html($titel); ?></h1>
   <?php if (has_excerpt()): ?><p class="dek"><?php echo esc_html(get_the_excerpt()); ?></p><?php endif; ?>
-  <?php if ($gesponsert): ?><p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Präsentation<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.<?php if ($kanal !== ''): ?> <a href="<?php echo esc_url($kanal); ?>">Zum Unternehmenskanal</a><?php endif; ?></p><?php endif; ?>
+  <?php if ($gesponsert): ?><p class="gesponsert-hinweis"><span class="gesponsert"><?php echo esc_html(function_exists('ma_gesponsert_label') ? ma_gesponsert_label($p) : 'Anzeige · Gesponsert'); ?></span> <?php echo esc_html(function_exists('ma_gesponsert_hinweis') ? ma_gesponsert_hinweis($p) : 'Bezahlte Präsentation'); ?><?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?>, kein redaktioneller Beitrag.<?php if ($kanal !== ''): ?> <a href="<?php echo esc_url($kanal); ?>">Zum Unternehmenskanal</a><?php endif; ?></p><?php endif; ?>
   <div class="byline">
     <?php // Autor (1.26.0): Person der Redaktion, Partner (Polizei, Gemeinde, Verein …) oder die Redaktion. ?>
     <?php $au = function_exists('ma_autor_von') ? ma_autor_von($p) : ['art' => 'redaktion', 'name' => 'Redaktion Merzenich Aktuell', 'funktion' => 'Lokalredaktion', 'url' => home_url('/redaktion/'), 'initialen' => 'MA', 'bio' => '']; ?>
