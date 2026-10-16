@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T11:01:01.119Z",
+  "updatedAt": "2026-10-16T07:37:41.487Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -620,6 +620,15 @@
       "assignedAt": "2026-10-14T11:01:01.119Z",
       "articleId": "2026-10-14-fussball-golzheim-verliert-morschenich-gewinnt-5-0-2026-10",
       "articleDate": "2026-10-14T13:10:00+02:00"
+    },
+    "/rathaus/tagebausee-hambach-planfeststellung-einwendungen-2026/": {
+      "imageId": "web-wirtschaft-05-94380a18",
+      "pool": "wirtschaft",
+      "motiv": "tagebau",
+      "regel": "rathaus.tagebau",
+      "assignedAt": "2026-10-16T07:37:41.487Z",
+      "articleId": "2026-10-13-tagebausee-hambach-planfeststellung-einwendungen-2026",
+      "articleDate": "2026-10-13T09:45:00+02:00"
     }
   }
 }
