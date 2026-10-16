@@ -5,22 +5,22 @@
  "pools": {
   "gemeinde": 20,
   "veranstaltungen": 20,
-  "jobs": 8,
+  "jobs": 4,
   "immobilien": 20,
   "familie": 20,
   "trauer": 20,
-  "kultur": 9,
-  "schule": 17,
+  "kultur": 16,
+  "schule": 16,
   "kirche": 20,
   "aktuell": 22,
   "blaulicht": 20,
-  "polizei": 13,
+  "polizei": 16,
   "feuerwehr": 20,
   "brand": 20,
   "sport": 20,
-  "tennisdetail": 8,
+  "tennisdetail": 15,
   "digitaldetail": 8,
-  "tanzdetail": 7,
+  "tanzdetail": 3,
   "naturdetail": 20,
   "vereinsdetail": 20,
   "kirchedetail": 20,
@@ -28,8 +28,8 @@
   "vereine": 20,
   "leben": 21,
   "wirtschaft": 20,
-  "technik": 16,
-  "rettung": 0,
+  "technik": 14,
+  "rettung": 2,
   "unfall": 3,
   "flaeche": 0,
   "verkehr": 20,
@@ -49,7 +49,7 @@
    "lizenzUrl": "",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-02-b784b899",
@@ -63,7 +63,7 @@
    "lizenzUrl": "",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-03-13cb46db",
@@ -91,7 +91,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-05-5301a536",
@@ -133,7 +133,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-08-990aa1e5",
@@ -147,7 +147,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-09-45be01dd",
@@ -161,7 +161,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-10-41f119fd",
@@ -175,7 +175,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "Kreis Düren"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-gemeinde-11-9b1d2652",
@@ -626,34 +626,6 @@
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-jobs-03-109c2f0d",
-   "pool": "jobs",
-   "datei": "/assets/editorial-pools/jobs/jobs-03-109c2f0dd8-800.webp",
-   "alt": "Einweihung. Das Heim dient der Ausbildung und Betreuung verhaltensauffälliger Jugendlicher.",
-   "credit": "Symbolbild · Magnussen, Friedrich (1914-1987) / Wikimedia Commons · CC BY-SA 3.0 de",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ABesch%C3%BCtzende_Werkstatt_der_Marie-Christian-Heime_e.V._im_R%C3%B6nner_Weg_in_Kroog_(Kiel_57.241).jpg",
-   "titel": "File:Beschützende Werkstatt der Marie-Christian-Heime e.V. im Rönner Weg in Kroog (Kiel 57.241).jpg",
-   "lizenz": "CC BY-SA 3.0 de",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-jobs-04-84317b59",
-   "pool": "jobs",
-   "datei": "/assets/editorial-pools/jobs/jobs-04-84317b5994-1200.webp",
-   "alt": "Tags: tableau, office, workplace, work, women, men, typewriter, interior, furniture, arm chair, desk",
-   "credit": "Symbolbild · FOTO:Fortepan — ID 11735 : Adományozó/Donor: Unknown. archive copy at the Wayback Machine / Wikimedia Commons · Public domain",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ATableau%2C_office%2C_workplace%2C_work%2C_women%2C_men%2C_typewriter%2C_interior%2C_furniture%2C_arm_chair%2C_desk_Fortepan_11735.jpg",
-   "titel": "File:Tableau, office, workplace, work, women, men, typewriter, interior, furniture, arm chair, desk Fortepan 11735.jpg",
-   "lizenz": "Public domain",
-   "lizenzUrl": "",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
    "id": "web-jobs-05-a7836776",
    "pool": "jobs",
    "datei": "/assets/editorial-pools/jobs/jobs-05-a78367767c-1200.webp",
@@ -675,34 +647,6 @@
    "credit": "Symbolbild · Babewyn / Wikimedia Commons · CC BY-SA 4.0",
    "quelle": "https://commons.wikimedia.org/wiki/File%3ASchreibtisch_2017.png",
    "titel": "File:Schreibtisch 2017.png",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-jobs-07-36d8660f",
-   "pool": "jobs",
-   "datei": "/assets/editorial-pools/jobs/jobs-07-36d8660f5c-1200.webp",
-   "alt": "President Ronald Reagan Working on The State of The Union Address at His Oval Office Desk - DPLA - 8c603e004413ff4e51997a991da9f36c",
-   "credit": "Symbolbild · President (1981-1989 : Reagan). White House Photographic Office. 1981-1989 / Wikimedia Commons · Public domain",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3APresident_Ronald_Reagan_Working_on_The_State_of_The_Union_Address_at_His_Oval_Office_Desk_-_DPLA_-_8c603e004413ff4e51997a991da9f36c.jpg",
-   "titel": "File:President Ronald Reagan Working on The State of The Union Address at His Oval Office Desk - DPLA - 8c603e004413ff4e51997a991da9f36c.jpg",
-   "lizenz": "Public domain",
-   "lizenzUrl": "",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-jobs-08-2e51508f",
-   "pool": "jobs",
-   "datei": "/assets/editorial-pools/jobs/jobs-08-2e51508f6d-1200.webp",
-   "alt": "Der Künstler bei der Arbeit an der Darstellung eines der beiden Löwen vor dem Welfenschloss; entworfen von Philipp von Zitzewitz als Geschenk der Landesinnung Niedersachsen des Geb",
-   "credit": "Symbolbild · Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3A2006_Friederikentunnel_Hannover_Landesinnung_Niedersachsen_des_Geb%C3%A4udereiniger-Handwerks.jpg",
-   "titel": "File:2006 Friederikentunnel Hannover Landesinnung Niedersachsen des Gebäudereiniger-Handwerks.jpg",
    "lizenz": "CC BY-SA 4.0",
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
@@ -749,7 +693,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-immobilien-04-053d0f00",
@@ -847,7 +791,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-immobilien-11-b0f273c0",
@@ -1550,43 +1494,43 @@
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-kultur-01-3cee9f37",
+   "id": "web-kultur-01-8826d38c",
    "pool": "kultur",
-   "datei": "/assets/editorial-pools/kultur/kultur-01-3cee9f3788-1200.webp",
-   "alt": "Rebekka Maier as Die Nowak standing behind her piano in concert at Kulturzentrum Faust, Hannover on 19th of November 2024.",
-   "credit": "Symbolbild · Softwing.de / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ADie_Nowak_in_concert_(standing_behind_piano)_2024.jpg",
-   "titel": "File:Die Nowak in concert (standing behind piano) 2024.jpg",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "datei": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp",
+   "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
+   "credit": "Symbolbild · Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABlick_vomTechniker-Raum_%C3%BCber_die_Sesselreihen_und_die_Tisch-_und_Stuhlgruppen_zur_B%C3%BChne_bei_Aufr%C3%A4um-Beleuchtung%2C_die_breitere_Publikumsfront_vor_dem_Podium_ist_hier_noch_kaum_zu_erahnen.jpg",
+   "titel": "File:Blick vomTechniker-Raum über die Sesselreihen und die Tisch- und Stuhlgruppen zur Bühne bei Aufräum-Beleuchtung, die breitere Publikumsfront vor dem Podium ist hier noch kaum zu erahnen.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-kultur-02-7835c3e0",
+   "id": "web-kultur-02-cf330293",
    "pool": "kultur",
-   "datei": "/assets/editorial-pools/kultur/kultur-02-7835c3e090-1200.webp",
-   "alt": "Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey",
-   "credit": "Symbolbild · Carole Raddato from FRANKFURT, Germany / Wikimedia Commons · CC BY-SA 2.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ATheatre_stage_building%2C_Battle_of_Apollo_with_the_giants_depicted_under_the_statue%2C_Hierapolis%2C_Phrygia%2C_Turkey_(32057763710).jpg",
-   "titel": "File:Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey (32057763710).jpg",
-   "lizenz": "CC BY-SA 2.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "datei": "/assets/editorial-pools/kultur/kultur-02-cf3302939e-1200.webp",
+   "alt": "500px provided description: Violine [#Stillive ,#Music ,#Instrument]",
+   "credit": "Symbolbild · Rolf Bruch / Wikimedia Commons · CC BY 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AGeige_(67339971).jpeg",
+   "titel": "File:Geige (67339971).jpeg",
+   "lizenz": "CC BY 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/3.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-kultur-03-a8e21eb1",
+   "id": "web-kultur-03-8e00f5f3",
    "pool": "kultur",
-   "datei": "/assets/editorial-pools/kultur/kultur-03-a8e21eb145-1200.webp",
-   "alt": "Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey",
-   "credit": "Symbolbild · Carole Raddato from FRANKFURT, Germany / Wikimedia Commons · CC BY-SA 2.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ATheatre_stage_building%2C_Battle_of_Apollo_with_the_giants_depicted_under_the_statue%2C_Hierapolis%2C_Phrygia%2C_Turkey_(32284523092).jpg",
-   "titel": "File:Theatre stage building, Battle of Apollo with the giants depicted under the statue, Hierapolis, Phrygia, Turkey (32284523092).jpg",
-   "lizenz": "CC BY-SA 2.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "datei": "/assets/editorial-pools/kultur/kultur-03-8e00f5f3fc-1200.webp",
+   "alt": "Interior of the law library inside the Munich Town Hall. The Building and the interior were designed by Georg von Hauberrisser.",
+   "credit": "Symbolbild · Unknown author Unknown author / Wikimedia Commons · Public domain",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ARathaus_muenchen_juristischebibliothek_1909.png",
+   "titel": "File:Rathaus muenchen juristischebibliothek 1909.png",
+   "lizenz": "Public domain",
+   "lizenzUrl": "",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
@@ -1676,6 +1620,104 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-kultur-10-8335d391",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-10-8335d391c6-1200.webp",
+   "alt": "Austausch vor einem Bücherregal der Oberlausitzischen Bibliothek der Wissenschaften in Görlitz",
+   "credit": "Symbolbild · Conny / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AWikipedianer_und_der_Leiter_der_Bibliothek_beim_Bestaunen_einer_Bestandswand_der_Oberlausitzischen_Biblitothek_der_Wissenschaften.JPG",
+   "titel": "File:Wikipedianer und der Leiter der Bibliothek beim Bestaunen einer Bestandswand der Oberlausitzischen Biblitothek der Wissenschaften.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-11-f1753634",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-11-f1753634a6-1200.webp",
+   "alt": "Detailaufnahme: Bücherregal",
+   "credit": "Symbolbild · Nootsh / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AVLB_Alte_Bibliothek_04.jpg",
+   "titel": "File:VLB Alte Bibliothek 04.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-12-67269a5d",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-12-67269a5ddf-1200.webp",
+   "alt": "Bützow : Library, Historic bookshelf from the 19th century",
+   "credit": "Symbolbild · KrummesHaus / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ABibliothek_B%C3%BCtzow-Historisches_B%C3%BCcherregal_19JH.jpg",
+   "titel": "File:Bibliothek Bützow-Historisches Bücherregal 19JH.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-13-9c24ecb9",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-13-9c24ecb9e3-1200.webp",
+   "alt": "Innenräume der Von Parish Kostümbibliothek",
+   "credit": "Symbolbild · Burkhard Mücke / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AB%C3%BCcherregal_in_der_Bibliothek.jpg",
+   "titel": "File:Bücherregal in der Bibliothek.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-14-3aa47c0a",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-14-3aa47c0a3d-1200.webp",
+   "alt": "Offenes Bücherregal & Büchertisch bei der Bibliothek in der Dorfstraße in Hallwang",
+   "credit": "Symbolbild · Chester100rot / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A20250323-offenes-b%C3%BCcherregal-b%C3%BCchertisch-bibliothek-dorfstra%C3%9Fe-hallwang.jpg",
+   "titel": "File:20250323-offenes-bücherregal-büchertisch-bibliothek-dorfstraße-hallwang.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-15-7e068524",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-15-7e0685244e-1200.webp",
+   "alt": "Pannonhalma Archabbey, library, bookshelf and statue of Francis II, Holy Roman Emperor",
+   "credit": "Symbolbild · Dguendel / Wikimedia Commons · CC BY 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3APannonhalma_Archabbey%2C_library%2C_bookshelf_and_statue_of_Francis_II%2C_Holy_Roman_Emperor.jpg",
+   "titel": "File:Pannonhalma Archabbey, library, bookshelf and statue of Francis II, Holy Roman Emperor.jpg",
+   "lizenz": "CC BY 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-kultur-16-475f307b",
+   "pool": "kultur",
+   "datei": "/assets/editorial-pools/kultur/kultur-16-475f307bca-800.webp",
+   "alt": "Kaibä",
+   "credit": "Symbolbild · RA Dr. jur. Hans G. Müsse, Hechingen / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AKaib%C3%A4_in_der_Bibliothek.JPG",
+   "titel": "File:Kaibä in der Bibliothek.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-schule-01-51c677ab",
    "pool": "schule",
    "datei": "/assets/editorial-pools/schule/schule-01-51c677ab7f-1200.webp",
@@ -1743,7 +1785,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-schule-06-26a52a9f",
@@ -1757,7 +1799,7 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-schule-07-f3fc27d3",
@@ -1769,20 +1811,6 @@
    "titel": "File:NSUclassroom.jpg",
    "lizenz": "CC BY-SA 4.0",
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-schule-08-e37810ec",
-   "pool": "schule",
-   "datei": "/assets/editorial-pools/schule/schule-08-e37810ecd5-1200.webp",
-   "alt": "Tags: education, school, classroom, blackboard, teacher",
-   "credit": "Symbolbild · FOTO:Fortepan — ID 3612 : Adományozó/Donor: Unknown. / Wikimedia Commons · Public domain",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AEducation%2C_school%2C_classroom%2C_blackboard%2C_teacher_Fortepan_3612.jpg",
-   "titel": "File:Education, school, classroom, blackboard, teacher Fortepan 3612.jpg",
-   "lizenz": "Public domain",
-   "lizenzUrl": "",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
@@ -1939,7 +1967,7 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-kirche-03-a97e146a",
@@ -1953,7 +1981,7 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-kirche-04-0576485e",
@@ -1967,7 +1995,7 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
-   "ort": "NRW"
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-kirche-05-48f8af90",
@@ -2796,6 +2824,34 @@
    "ort": "NRW"
   },
   {
+   "id": "web-polizei-02-30646985",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-02-3064698597-1200.webp",
+   "alt": "in Vlotho , District of Herford , North Rhine-Westphalia , Germany .",
+   "credit": "Symbolbild · TUBS / Wikimedia Commons · Public domain",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A2010-05-11_Vlotho_066.jpg",
+   "titel": "File:2010-05-11 Vlotho 066.jpg",
+   "lizenz": "Public domain",
+   "lizenzUrl": "",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-polizei-03-3f7417a8",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-03-3f7417a8b3-1200.webp",
+   "alt": "Polizeiwagen aus Nordrhein-Westfalen",
+   "credit": "Symbolbild · MaikMeid / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3APolizeiwagen_Hattingen.JPG",
+   "titel": "File:Polizeiwagen Hattingen.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "NRW"
+  },
+  {
    "id": "web-polizei-04-c44548ef",
    "pool": "polizei",
    "datei": "/assets/editorial-pools/polizei/polizei-04-c44548efb5-1200.webp",
@@ -2821,6 +2877,20 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-polizei-06-45a27a05",
+   "pool": "polizei",
+   "datei": "/assets/editorial-pools/polizei/polizei-06-45a27a05f0-1200.webp",
+   "alt": "The location is near Schlossturm, Duesseldorf, Germany.",
+   "credit": "Symbolbild · Kaap bij Sneeuw / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3APolice_car_NRW_5-6357.jpg",
+   "titel": "File:Police car NRW 5-6357.jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
    "ort": "NRW"
   },
   {
@@ -3846,15 +3916,15 @@
    "ort": "NRW"
   },
   {
-   "id": "web-tennisdetail-04-23f4180f",
+   "id": "web-tennisdetail-04-a7afef32",
    "pool": "tennisdetail",
-   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-04-23f4180f87-1200.webp",
-   "alt": "Schwäbische-Alb-Nordrand-Weg (Hauptwanderweg 1, HW 1), Albsteig: Blick auf Lichtenstein (Forellenhof Rössle und Tennisverein)",
-   "credit": "Symbolbild · qwesy qwesy / Wikimedia Commons · CC BY 3.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ASchw%C3%A4bische-Alb-Nordrand-Weg_(Hauptwanderweg_1%2C_HW_1)%2C_Albsteig%2C_Blick_auf_Lichtenstein_(Forellenhof_R%C3%B6ssle_und_Tennisverein)_-_panoramio.jpg",
-   "titel": "File:Schwäbische-Alb-Nordrand-Weg (Hauptwanderweg 1, HW 1), Albsteig, Blick auf Lichtenstein (Forellenhof Rössle und Tennisverein) - panoramio.jpg",
-   "lizenz": "CC BY 3.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by/3.0",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-04-a7afef3209-1200.webp",
+   "alt": "Corrugated iron roof.",
+   "credit": "Symbolbild · Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AH%C3%BCckeswagen_-_K%C3%B6lner_Stra%C3%9Fe_-_Tennishalle_01_ies.jpg",
+   "titel": "File:Hückeswagen - Kölner Straße - Tennishalle 01 ies.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
@@ -3916,6 +3986,104 @@
    "ort": "Deutschland / überregional"
   },
   {
+   "id": "web-tennisdetail-09-6e733c79",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-09-6e733c797a-1200.webp",
+   "alt": "Corrugated iron roof.",
+   "credit": "Symbolbild · Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AH%C3%BCckeswagen_-_K%C3%B6lner_Stra%C3%9Fe_-_Tennishalle_02_ies.jpg",
+   "titel": "File:Hückeswagen - Kölner Straße - Tennishalle 02 ies.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tennisdetail-10-c2717993",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-10-c271799363-1200.webp",
+   "alt": "Öffentlicher Tennisplatz auf dem Kölner Grüngürtel",
+   "credit": "Symbolbild · LH7605 / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3A%C3%96ffentlicher_Tennisplatz_auf_dem_Inneren_Gr%C3%BCng%C3%BCrtel_in_K%C3%B6ln%2C_aufgenommen_am_3._Oktober_2019.jpg",
+   "titel": "File:Öffentlicher Tennisplatz auf dem Inneren Grüngürtel in Köln, aufgenommen am 3. Oktober 2019.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-tennisdetail-11-ba753dc6",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-11-ba753dc6da-1200.webp",
+   "alt": "Cologne",
+   "credit": "Symbolbild · dronepicr / Wikimedia Commons · CC BY 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3APoller_Wiesen_Tennisanlage_in_K%C3%B6ln%2C_Deutschland_(48987596568).jpg",
+   "titel": "File:Poller Wiesen Tennisanlage in Köln, Deutschland (48987596568).jpg",
+   "lizenz": "CC BY 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "NRW"
+  },
+  {
+   "id": "web-tennisdetail-12-5762f413",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-12-5762f413c7-1200.webp",
+   "alt": "Tennisplätze der Tennisabteilung des TSV Tauberbischofsheim.",
+   "credit": "Symbolbild · Triplec85 / Wikimedia Commons · CC0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ATSV_Tauberbischofsheim_Tennispl%C3%A4tze_2.jpg",
+   "titel": "File:TSV Tauberbischofsheim Tennisplätze 2.jpg",
+   "lizenz": "CC0",
+   "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tennisdetail-13-b4d69e13",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-13-b4d69e1337-1200.webp",
+   "alt": "Tennisplätze in Tauberbischofsheim 2022",
+   "credit": "Symbolbild · Triplec85 / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ATennispl%C3%A4tze_in_Tauberbischofsheim_2022.jpg",
+   "titel": "File:Tennisplätze in Tauberbischofsheim 2022.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tennisdetail-14-734853a8",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-14-734853a82a-1200.webp",
+   "alt": "Die Tennisplätze des TC Rot-Weiß Eichstätt in der Schottenau",
+   "credit": "Symbolbild · Chaddy / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AEichst%C3%A4tt_-_Tennispl%C3%A4tze_Schottenau_4.jpg",
+   "titel": "File:Eichstätt - Tennisplätze Schottenau 4.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-tennisdetail-15-b0fff497",
+   "pool": "tennisdetail",
+   "datei": "/assets/editorial-pools/tennisdetail/tennisdetail-15-b0fff49767-1200.webp",
+   "alt": "Drohnenaufnahme Richtung Norden mit Tennisplätze KTHC Rot-Weiß im Sportpark Müngersdorf, Köln",
+   "credit": "Symbolbild · Raimond Spekking / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ADrohnenaufnahme_Richtung_Norden_mit_Tennispl%C3%A4tze_KTHC_Rot-Wei%C3%9F_im_Sportpark_M%C3%BCngersdorf%2C_K%C3%B6ln-0565.jpg",
+   "titel": "File:Drohnenaufnahme Richtung Norden mit Tennisplätze KTHC Rot-Weiß im Sportpark Müngersdorf, Köln-0565.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
    "id": "web-digitaldetail-01-8758d856",
    "pool": "digitaldetail",
    "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-01-8758d856d5-1200.webp",
@@ -3944,43 +4112,43 @@
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-digitaldetail-03-e3e4292b",
+   "id": "web-digitaldetail-03-784279d7",
    "pool": "digitaldetail",
-   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-03-e3e4292b4d-1200.webp",
-   "alt": "DE: Smartphone Akkuabdeckung mit NFC Antenne Vorderseite / EN: Smartphone Battery cover with NFC antenna front",
-   "credit": "Symbolbild · treaki / Wikimedia Commons · CC BY-SA 3.0 de",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmartphone_Battery_cover_with_NFC_antenna_front.jpg",
-   "titel": "File:Smartphone Battery cover with NFC antenna front.jpg",
-   "lizenz": "CC BY-SA 3.0 de",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-03-784279d7f2-1200.webp",
+   "alt": "Senioren am Tablet-PC",
+   "credit": "Symbolbild · Sigismund von Dobschütz / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ATablet-PC_Parkwohnstift_06.JPG",
+   "titel": "File:Tablet-PC Parkwohnstift 06.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-digitaldetail-04-44a97d43",
+   "id": "web-digitaldetail-04-54783aa3",
    "pool": "digitaldetail",
-   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-04-44a97d4398-1200.webp",
-   "alt": "DE: Smartphone Akkuabdeckung mit NFC Antenne Rückseite / EN: Smartphone Battery cover with NFC antenna back",
-   "credit": "Symbolbild · treaki / Wikimedia Commons · CC BY-SA 3.0 de",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ASmartphone_Battery_cover_with_NFC_antenna_back.jpg",
-   "titel": "File:Smartphone Battery cover with NFC antenna back.jpg",
-   "lizenz": "CC BY-SA 3.0 de",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-04-54783aa342-1200.webp",
+   "alt": "Senioren am Tablet-PC",
+   "credit": "Symbolbild · Sigismund von Dobschütz / Wikimedia Commons · CC BY-SA 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ATablet-PC_Parkwohnstift_03.JPG",
+   "titel": "File:Tablet-PC Parkwohnstift 03.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-digitaldetail-05-fb640f6d",
+   "id": "web-digitaldetail-05-e5cf920d",
    "pool": "digitaldetail",
-   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-05-fb640f6d1a-1200.webp",
-   "alt": "DE: Rückseite eines Smartphones mit unsichtbar NFC-Fähigkiet / EN: Backside_of_a_Smartphone_with_invisible_NFC_capabilityes.jpg",
-   "credit": "Symbolbild · treaki / Wikimedia Commons · CC BY-SA 3.0 de",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ABackside_of_a_Smartphone_with_invisible_NFC_capabilityes.jpg",
-   "titel": "File:Backside of a Smartphone with invisible NFC capabilityes.jpg",
-   "lizenz": "CC BY-SA 3.0 de",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-05-e5cf920d5d-1200.webp",
+   "alt": "Fujitsu Siemens Lifebook T4210 and Lifebook T3010 Tablet PCs",
+   "credit": "Symbolbild · Woookie / Wikimedia Commons · CC BY 2.0 de",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFujitsu_Siemens_Tablet_PC.jpg",
+   "titel": "File:Fujitsu Siemens Tablet PC.jpg",
+   "lizenz": "CC BY 2.0 de",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/2.0/de/deed.en",
    "geprueft": false,
    "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
@@ -4000,13 +4168,13 @@
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-digitaldetail-07-3861e0fe",
+   "id": "web-digitaldetail-07-5446cb40",
    "pool": "digitaldetail",
-   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-07-3861e0fe9f-1200.webp",
-   "alt": "Gruppenbild mit Smartphone in der Galerie CC in Hannover, Königstraße 8; von links: Gil Maria Koebberling, Helga Müller-Offenhausen, Thorsten Voss, Wilhelm Zappe und Caren Cunst ..",
-   "credit": "Symbolbild · Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3A2019-11-07_Gruppenbild_mit_Smartphone.jpg",
-   "titel": "File:2019-11-07 Gruppenbild mit Smartphone.jpg",
+   "datei": "/assets/editorial-pools/digitaldetail/digitaldetail-07-5446cb40e6-1200.webp",
+   "alt": "Fujitsu Stylistic 1000 Tablet PC",
+   "credit": "Symbolbild · MRuniqat / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AFujitsu_Stylistic_1000_Tablet_PC.jpg",
+   "titel": "File:Fujitsu Stylistic 1000 Tablet PC.jpg",
    "lizenz": "CC BY-SA 4.0",
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
@@ -4042,34 +4210,6 @@
    "ort": "NRW"
   },
   {
-   "id": "web-tanzdetail-02-e8d27128",
-   "pool": "tanzdetail",
-   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-02-e8d271289c-1200.webp",
-   "alt": "Regenwasser zerstört das Parkett im Ballettsaal (2019)",
-   "credit": "Symbolbild · Josef Kaiser (Architekt) / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AWassersch%C3%A4den_im_Ballettsaal_(2019).jpg",
-   "titel": "File:Wasserschäden im Ballettsaal (2019).jpg",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-tanzdetail-03-55847e67",
-   "pool": "tanzdetail",
-   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-03-55847e6776-800.webp",
-   "alt": "Zugang zum Ballettsaal (2019)",
-   "credit": "Symbolbild · Josef Kaiser (Architekt) / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AZugang_zum_Ballettsaal_(2019).jpg",
-   "titel": "File:Zugang zum Ballettsaal (2019).jpg",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
    "id": "web-tanzdetail-04-52fb6293",
    "pool": "tanzdetail",
    "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-04-52fb62934c-1200.webp",
@@ -4084,20 +4224,6 @@
    "ort": "NRW"
   },
   {
-   "id": "web-tanzdetail-05-e32b649e",
-   "pool": "tanzdetail",
-   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-05-e32b649e6a-800.webp",
-   "alt": "Bertram Müller, tanzhaus nrw e.V. Düsseldorf",
-   "credit": "Symbolbild · FannyClara77 / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3ABertram_M%C3%BCller%2C_tanzhaus_nrw_e.V.%2C_D%C3%BCsseldorf.png",
-   "titel": "File:Bertram Müller, tanzhaus nrw e.V., Düsseldorf.png",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "NRW"
-  },
-  {
    "id": "web-tanzdetail-06-d4961f44",
    "pool": "tanzdetail",
    "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-06-d4961f4442-1200.webp",
@@ -4105,20 +4231,6 @@
    "credit": "Symbolbild · Tanzhaus nrw / Wikimedia Commons · CC BY-SA 4.0",
    "quelle": "https://commons.wikimedia.org/wiki/File%3ATanzhaus_nrw_2_klein_Foto_Katja_Illner.jpg",
    "titel": "File:Tanzhaus nrw 2 klein Foto Katja Illner.jpg",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "NRW"
-  },
-  {
-   "id": "web-tanzdetail-07-27d22def",
-   "pool": "tanzdetail",
-   "datei": "/assets/editorial-pools/tanzdetail/tanzdetail-07-27d22def21-800.webp",
-   "alt": "Großkinetik am Tanzhaus NRW in Düsseldorf, urspr. Signal-Iduna Haus.",
-   "credit": "Symbolbild · Neugotik-König / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AGro%C3%9Fkinetik_am_Tanzhaus_NRW_in_D%C3%BCsseldorf.jpg",
-   "titel": "File:Großkinetik am Tanzhaus NRW in Düsseldorf.jpg",
    "lizenz": "CC BY-SA 4.0",
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "geprueft": false,
@@ -6114,34 +6226,6 @@
    "ort": "Deutschland / überregional"
   },
   {
-   "id": "web-technik-02-4a377e77",
-   "pool": "technik",
-   "datei": "/assets/editorial-pools/technik/technik-02-4a377e7759-1200.webp",
-   "alt": "A Gamewell pull box on Quisset Avenue in Woods Hole, Falmouth, Massachusetts.",
-   "credit": "Symbolbild · Jim Kuhn / Wikimedia Commons · CC BY 2.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AFire_Alarm_2141_(Woods_Hole%2C_MA).jpg",
-   "titel": "File:Fire Alarm 2141 (Woods Hole, MA).jpg",
-   "lizenz": "CC BY 2.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by/2.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
-   "id": "web-technik-03-8c53c6e8",
-   "pool": "technik",
-   "datei": "/assets/editorial-pools/technik/technik-03-8c53c6e86d-1200.webp",
-   "alt": "​台中捷運綠線一車站月台火災發信機",
-   "credit": "Symbolbild · Lokseng01 / Wikimedia Commons · CC BY-SA 4.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AA_fire_alarm_call_box_at_the_platform_of_a_station_on_Taichung_Metro_Green_LIne.jpg",
-   "titel": "File:A fire alarm call box at the platform of a station on Taichung Metro Green LIne.jpg",
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "geprueft": false,
-   "geprueftAm": "2026-10-16",
-   "ort": "Deutschland / überregional"
-  },
-  {
    "id": "web-technik-04-149fab0f",
    "pool": "technik",
    "datei": "/assets/editorial-pools/technik/technik-04-149fab0f23-1200.webp",
@@ -6321,6 +6405,34 @@
    "lizenzUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "geprueft": true,
    "geprueftAm": "2026-09-24",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-rettung-01-6ed1c4ef",
+   "pool": "rettung",
+   "datei": "/assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-1200.webp",
+   "alt": "A domestic cat ( Felis silvestris libyca ) on the branches of a hawthorn ( Cratægus sp.), in a urban setting.",
+   "credit": "Symbolbild · No machine-readable author provided. Kintaiyo assumed (based on copyright claims). / Wikimedia Commons · Public domain",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AKatze-im-baum.JPG",
+   "titel": "File:Katze-im-baum.JPG",
+   "lizenz": "Public domain",
+   "lizenzUrl": "",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-rettung-02-141ce68b",
+   "pool": "rettung",
+   "datei": "/assets/editorial-pools/rettung/rettung-02-141ce68b97-1200.webp",
+   "alt": "Katze im Baum",
+   "credit": "Symbolbild · Theo Crazzolara / Wikimedia Commons · CC BY-SA 2.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AKatze_im_Baum_(27250918190).jpg",
+   "titel": "File:Katze im Baum (27250918190).jpg",
+   "lizenz": "CC BY-SA 2.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "geprueft": false,
+   "geprueftAm": "2026-10-16",
    "ort": "Deutschland / überregional"
   },
   {
