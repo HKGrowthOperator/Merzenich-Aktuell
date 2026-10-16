@@ -7,6 +7,7 @@ on:
       - 'deploy/lib-symbolbilder.mjs'
       - 'deploy/symbolbilder.mjs'
       - 'deploy/import-editorial-photos.mjs'
+      - 'deploy/editorial-photo-audit.mjs'
       - 'deploy/editorial-photo-review.json'
       - 'deploy/bildmotive.json'
       - 'deploy/bildklassen.json'
@@ -58,6 +59,9 @@ jobs:
       - name: Verify hard image-system invariants
         run: |
           node deploy/symbolbilder.mjs --check
+          # Fotoanzahl, Bildrechte, Dubletten und Freigabe getrennt auditieren.
+          # --check prueft Integritaet; --strict kann nach 20 freigegebenen je Pool aktiviert werden.
+          node deploy/editorial-photo-audit.mjs --check
           node deploy/teaser-bilder.mjs --check
           node deploy/ortsmarke.mjs --check
           node deploy/meldungen.mjs --check
