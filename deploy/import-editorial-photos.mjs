@@ -141,6 +141,9 @@ const POOLS = {
   tanzdetail: {
     tags: ['tanz','vortanzen','tanzsaal','tanzverein','tanzstudio'],
     max: 20,
+    // Bereits auf ihren Wikimedia-Dateiseiten recherchierte echte Saalansichten;
+    // weiterhin keine automatische Sichtfreigabe.
+    titel: ['File:Uetzing-Tanzsaal.jpg', 'File:Schönbusch - Tanzsaal von innen.jpg', 'File:Das Kornhaus in Dessau - Blick in den Tanzsaal.jpg', 'File:Aschaffenburg, Park Schönbusch, Tanzsaal, 003.jpg'],
     pflicht: /(tanzhaus|tanzsaal|tanzstudio|tanzschule|tanzraum|dance hall|dance studio|dance floor|ballettsaal|ballet studio)/i,
     queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner','Tanzsaal Nordrhein-Westfalen','Tanzstudio Deutschland','Tanzraum Deutschland','Tanzschule Saal NRW','Tanzproberaum','Dance studio Germany','Dance hall Germany','Ballettsaal Germany','Tanzparkett Tanzsaal','Tanzhaus Düsseldorf','Uetzing Tanzsaal','Tanzhalle','Tanzsport Verein Trainingssaal', "Tanzstudio Parkett Deutschland", "Tanzschule Köln Saal", "Tanzsaal Düsseldorf", "Tanzsaal Köln", "Tanzschule Bonn Raum", "Tanzschule Aachen", "Tanzstudio NRW Innenraum", "Ballettsaal Deutschland", "Tanzsaal Spiegelwand", "Tanzparkett Spiegel", "Dance studio Cologne", "Tanzsaal im Sportverein"]
   },
@@ -205,7 +208,10 @@ const POOLS = {
   flaeche: {
     tags: ['brand','feld','flaeche','vegetationsbrand','feuerwehr'],
     max: 20,
-    pflicht: /(feldbrand|fl[aä]chenbrand|flaechenbrand|stoppelfeldbrand|b[oö]schungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|grasfl[aä]chenbrand|wiesenbrand|flurbrand|grasfeuer|m[uü]lleimerbrand|muelleimerbrand|containerbrand|brush fire|grass fire)/i,
+    // Recherchierte deutsche Flächen-/Bodenbrandfotos, explizit als fremde
+    // Archiv-Symbolmotive. Ein Brand in Sachsen ist KEIN Brand in Merzenich.
+    titel: ['File:Conflagration near Bautzen Germany 101.JPG', 'File:Waldbrand-Bodenfeuer.jpg', 'File:Gohrischheide Waldbrand Juli 2025.jpg'],
+    pflicht: /(feldbrand|fl[aä]chenbrand|flaechenbrand|stoppelfeldbrand|b[oö]schungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|grasfl[aä]chenbrand|wiesenbrand|flurbrand|grasfeuer|m[uü]lleimerbrand|muelleimerbrand|containerbrand|brush fire|grass fire|conflagration near bautzen|waldbrand-bodenfeuer|gohrischheide waldbrand)/i,
     queries: ['Feldbrand Nordrhein-Westfalen','Flächenbrand Kreis Düren','Stoppelfeldbrand Feuerwehr','Böschungsbrand NRW','Böschungsbrand','Strohballenbrand Deutschland','Vegetationsbrand Feuerwehr Nordrhein-Westfalen','Grasbrand Deutschland','Flächenbrand Feuerwehr','Feldbrand Feuerwehr','Mülleimerbrand Feuerwehr','Containerbrand Feuerwehr','Böschungsbrand Straße','Grass fire Germany','Vegetationsbrand Ausbildung', "Wiesenbrand Feuerwehr", "Grasflächenbrand", "Stoppelfeldbrand Nordrhein-Westfalen", "Strohballen Feuer Feuerwehr", "Feuer im Feld NRW", "Böschungsbrand Feuerwehr NRW", "Flurbrand Deutschland", "Vegetationsbrand in NRW", "Feuerwehr Flurbrand", "Grasfeuer Deutschland", "Flächenbrand bei Düren", "Waldwiesenbrand", "Feldbrand Feuerwehr Deutschland", "Löschen von Stoppelfeldbrand"]
   },
   verkehr: {
@@ -355,7 +361,14 @@ function usable(c, pool) {
   // "Feldbrand" ist auch Strassen- und Nachname (Stolpersteine, Strasse Am Feldbrand).
   if (pool === 'flaeche' && /(stolperstein|am feldbrand|strassenbahnhaltestelle|hummel)/i.test(c.title)) return false;
   if (pool === 'brand' && (BRAND_FREMD.test(text) || BRAND_TITEL_FREMD.test(c.title) || ARCHIV.test(text))) return false;
-  if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text)) return false;
+  // Drei explizit recherchierte reine Vegetationsbrand-Symbolfotos duerfen aus
+  // anderen Bundeslaendern stammen. Keine Einsatzfahrzeuge aus Fremdlaendern.
+  const landesneutral = pool === 'flaeche' && new Set([
+    'File:Conflagration near Bautzen Germany 101.JPG',
+    'File:Waldbrand-Bodenfeuer.jpg',
+    'File:Gohrischheide Waldbrand Juli 2025.jpg'
+  ]).has(c.title);
+  if (EINSATZ_POOLS.has(pool) && ANDERES_LAND.test(text) && !landesneutral) return false;
   if (/merzenich/i.test(text) && FALSCHES_MERZENICH.test(text)) return false;
   if (pool === 'aktuell' && !['Merzenich', 'Kreis Düren'].includes(localityFor(text))) return false;
   if (!licenceAllowed(c.license)) return false;
