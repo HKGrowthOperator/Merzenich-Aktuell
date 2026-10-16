@@ -31,6 +31,11 @@ const MA21_AUSBAU = [
         'text' => 'Listen laden beim Scrollen weiter, auf der Startseite folgen „Weitere Meldungen“. Ausgeschaltet: Blättern mit Seite 1, 2 wie bis zum 14.10.2026.',
         'standard' => true,
     ],
+    'sport_daten' => [
+        'titel' => 'Ergebnisse und Tabellen auf der Sportseite',
+        'text' => 'Spielstand-Ecke des SC 1919 (Platz, Punkte, nächstes Spiel), Kasten mit letztem und nächstem Spiel samt Tabellenauszug und „Vereinssport · Tabellenstand“ auf /sport/, wie bis zum 16.10.2026. Sie brauchen laufende Pflege. Ausgeschaltet zeigt /sport/ die Sportmeldungen und darunter alle Sportvereine der Gemeinde.',
+        'standard' => false,
+    ],
     'muster_alt' => [
         'titel' => 'Fünf Musterfirmen statt drei Beispielfirmen',
         'text' => 'Im Menü „Unternehmen“ die fünf Musterfirmen bis zum 14.10.2026 (Muster-Backstube, Muster-Café am Markt, Muster-Schreinerei, Muster-Steuerbüro, Muster-Immobilien) statt Backhaus Morgenrot, Café Feldlerche und Holzwerkstatt Jahresring. Beide erscheinen nur, solange es weniger als drei echte Firmenkanäle gibt.',

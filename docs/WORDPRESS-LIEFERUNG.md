@@ -1,6 +1,20 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-15. Oktober 2026 · Theme 21.19.1 · Core-Plugin 1.28.1 · live: 21.19.0 / 1.28.0 (Historie unten)
+16. Oktober 2026 · Theme 21.20.0 · Core-Plugin 1.28.1 · live: 21.19.0 / 1.28.0 (Historie unten)
+
+## Neu am 16.10.2026: Theme 21.20.0, Sportseite ohne Ergebnisse und Tabellen, darunter alle Sportvereine
+
+Ergebnisse, Tabellenstände und Spielpläne hätten laufend nachgetragen werden müssen; live waren sie seit dem 05. bzw. 07.10. nicht mehr aktuell. `/sport/` zeigt deshalb nur noch die Sportmeldungen und darunter alle Sportvereine der Gemeinde.
+
+- **Weg auf `/sport/`:** Spielstand-Ecke im Seitenkopf (Platz, Punkte, nächstes Spiel), der Kasten mit letztem und nächstem Spiel samt Tabellenauszug und „Vereinssport · Tabellenstand“. Auch die Vereinsliste in der Seitenspalte entfällt auf Seite 1, weil die Vereine jetzt unten ausführlich stehen.
+- **Meldungen zuerst:** Aufmacher, Bildraster und Reihen wie bisher. Kein Endlos-Scrollen auf `/sport/`, sonst wäre die Vereinsliste nie erreichbar; stattdessen der Knopf „Ältere Sportmeldungen“ (`/sport/page/2/` usw., dort ohne Vereinsliste).
+- **Neu darunter: „Sportvereine in Merzenich“** (`ma21_sport_vereine()` in `inc/sport.php`). Quelle ist das Vereinsverzeichnis im Plugin (`ma_vereine_struktur()`, Kategorie Sport): 16 Hauptvereine, gegliedert nach Fußball, Turnen und Breitensport, Tischtennis und Billard, Schießsport und weiteren Sportarten, mit Sprungleiste. Je Verein Ortsteil, Name, Sparten (Abteilungen stehen als Sparte beim Hauptverein, mit Link, wenn sie eine eigene Website haben), Vereinsprofil (wenn veröffentlicht, dann auch mit Bild, sonst Monogramm) und Website. Keine Pflegefelder wie Platz oder Punkte. Die internen Hinweistexte des Verzeichnisses erscheinen nicht.
+- **Seitenkopf:** „Spielberichte und Neues aus den Sportvereinen der Gemeinde.“ (ohne „Ergebnisse“).
+- **Wieder einschalten ohne neuen Code:** Design → Ausbaustufe → „Ergebnisse und Tabellen auf der Sportseite“ (Schlüssel `sport_daten`, Standard aus). Dann sieht `/sport/` aus wie bis zum 16.10., mit Endlos-Scrollen. `inc/sport.php`, die Vorlagen `sport-ecke.html`/`sport-modul.html`, das Plugin-Raster und `/api/sport-current.json` bleiben unverändert erhalten; die statische Kopie `chatgpt-site/sport/` behält die Module als Vorlage für diesen Schalter.
+- **Tests:** neu `qa/wordpress/sport-vereine-test.php` (alle 16 Vereine genau einmal, Gruppen und Zahlen der Sprungleiste, Sparten, Profil und Monogramm, keine Tabellenwerte, keine Hinweistexte, Schalter aus); `ausbau-test.php` prüft fünf Schalter.
+- **Enthält** die Korrekturen aus 21.19.1 (Abschnitt unten) und gehört zu Plugin 1.28.1.
+
+**Stand live:** noch nicht eingespielt. Einspielen: erst Plugin 1.28.1, dann Theme 21.20.0, beide aus `node deploy/wp-pakete.mjs`, danach Permalinks speichern.
 
 ## Neu am 15.10.2026 (abends): Theme 21.19.1 und Plugin 1.28.1, Korrekturen aus dem Vorführ-Check
 

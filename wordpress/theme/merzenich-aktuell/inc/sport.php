@@ -85,3 +85,104 @@ function ma21_sport_modul(array $d, ?int $jetzt = null): string {
     }
     return $h === '' ? '' : '<div class="sports-module" data-generated="' . esc_attr((string) $d['generated']) . '">' . $h . '</div>';
 }
+
+/* ------------------------------------------------------------------
+ * Sportvereine der Gemeinde (16.10.2026): Unter den Sportmeldungen stehen alle
+ * Sportvereine aus dem Vereinsverzeichnis des Plugins (ma_vereine_struktur,
+ * Kategorie Sport; Abteilungen beim Hauptverein). Nur Angaben, die keine
+ * laufende Pflege brauchen: Name, Ortsteil, Sportarten, Profil und Website.
+ * Die Hinweise im Verzeichnis sind Recherchenotizen und erscheinen nicht.
+ * ------------------------------------------------------------------ */
+
+const MA21_SPORT_GRUPPEN = [
+    'fussball' => 'Fußball',
+    'turnen' => 'Turnen und Breitensport',
+    'tisch' => 'Tischtennis und Billard',
+    'schiessen' => 'Schießsport',
+    'weitere' => 'Weitere Sportarten',
+];
+
+/** Gruppe nach der Sportart des Hauptvereins. */
+function ma21_sport_gruppe(string $sportart): string {
+    if (preg_match('/fußball|fussball/iu', $sportart) && !preg_match('/american/iu', $sportart)) return 'fussball';
+    if (preg_match('/turnen|breitensport/iu', $sportart)) return 'turnen';
+    if (preg_match('/tischtennis|billard/iu', $sportart)) return 'tisch';
+    if (preg_match('/schie(ß|ss)/iu', $sportart)) return 'schiessen';
+    return 'weitere';
+}
+
+/** „Turnen/Breitensport (u. a. Kinderturnen, Badminton)“ → [Turnen, Breitensport, Kinderturnen, Badminton]. */
+function ma21_sport_sparten(string $sportart): array {
+    $teile = [];
+    $haupt = trim((string) preg_replace('/\(.*\)/u', '', $sportart));
+    foreach (preg_split('/\s*[\/,]\s*/u', $haupt) ?: [] as $t) if (trim($t) !== '') $teile[] = trim($t);
+    if (preg_match('/\((.*)\)/u', $sportart, $m)) {
+        foreach (preg_split('/\s*,\s*/u', trim((string) preg_replace('/^u\.\s*a\.\s*/u', '', $m[1]))) ?: [] as $t) if (trim($t) !== '') $teile[] = trim($t);
+    }
+    return array_values(array_unique($teile));
+}
+
+/** Kürzel für das Vereinszeichen ohne Logo: SC, FC, TTC, BSC … */
+function ma21_sport_kuerzel(string $name): string {
+    if (preg_match('/\(([A-ZÄÖÜ]{2,4})\b/u', $name, $m)) return $m[1];
+    $erstes = (string) preg_replace('/-.*/u', '', (string) strtok($name, ' '));
+    if (preg_match('/^[A-ZÄÖÜ]{2,4}$/u', $erstes)) return $erstes;
+    $bekannt = ['Tischtennisclub' => 'TTC', 'Turnverein' => 'TV', 'Schachverein' => 'SV'];
+    if (isset($bekannt[$erstes])) return $bekannt[$erstes];
+    $k = '';
+    foreach (preg_split('/\s+/u', $name) ?: [] as $w) {
+        if (preg_match('/^\d/u', $w) || mb_strlen($k) >= 3) break;
+        if (preg_match('/^\p{Lu}/u', $w)) $k .= mb_substr($w, 0, 1);
+    }
+    return $k !== '' ? $k : mb_strtoupper(mb_substr($name, 0, 2));
+}
+
+/** Abschnitt „Sportvereine in der Gemeinde“ unter den Sportmeldungen ('' ohne Plugin). */
+function ma21_sport_vereine(): string {
+    if (!function_exists('ma_vereine_struktur')) return '';
+    $orte = ['merzenich' => 0, 'golzheim' => 1, 'girbelsrath' => 2, 'morschenich' => 3, 'buergewald' => 4];
+    $gruppen = array_fill_keys(array_keys(MA21_SPORT_GRUPPEN), []);
+    foreach (ma_vereine_struktur() as $kurz => $e) {
+        $v = (array) ($e['verein'] ?? []);
+        if (($v['kategorie'] ?? '') !== 'Sport' || empty($v['name'])) continue;
+        $gruppen[ma21_sport_gruppe((string) ($v['sportart'] ?? ''))][] = [$kurz, $v, (array) ($e['abteilungen'] ?? [])];
+    }
+    $gruppen = array_filter($gruppen);
+    if (!$gruppen) return '';
+    $anzahl = 0; $sprung = ''; $inhalt = '';
+    foreach ($gruppen as $g => $liste) {
+        usort($liste, fn($a, $b) => [$orte[$a[1]['ort'] ?? ''] ?? 9, $a[1]['name']] <=> [$orte[$b[1]['ort'] ?? ''] ?? 9, $b[1]['name']]);
+        $anzahl += count($liste);
+        $sprung .= '<a href="#sv-' . $g . '">' . esc_html(MA21_SPORT_GRUPPEN[$g]) . '<span>' . count($liste) . '</span></a>';
+        $karten = '';
+        foreach ($liste as [$kurz, $v, $abteilungen]) {
+            $profil = function_exists('ma_verein_profil') ? ma_verein_profil((string) $kurz) : null;
+            $profil = $profil instanceof WP_Post && $profil->post_status === 'publish' ? $profil : null;
+            $bild = $profil && has_post_thumbnail($profil) ? (string) wp_get_attachment_image_url((int) get_post_thumbnail_id($profil), 'thumbnail') : '';
+            $zeichen = $bild !== ''
+                ? '<img class="sv-zeichen" src="' . esc_url($bild) . '" alt="" width="56" height="56" loading="lazy" decoding="async">'
+                : '<span class="sv-zeichen" aria-hidden="true">' . esc_html(ma21_sport_kuerzel((string) $v['name'])) . '</span>';
+            $sparten = '';
+            foreach (ma21_sport_sparten((string) ($v['sportart'] ?? '')) as $s) $sparten .= '<li>' . esc_html($s) . '</li>';
+            foreach ($abteilungen as $a) {
+                foreach (ma21_sport_sparten((string) ($a['sportart'] ?? '')) as $s) {
+                    if (str_contains($sparten, '>' . esc_html($s) . '<')) continue;
+                    $sparten .= '<li>' . (!empty($a['website']) ? '<a href="' . esc_url((string) $a['website']) . '" target="_blank" rel="noopener">' . esc_html($s) . ' ↗</a>' : esc_html($s)) . '</li>';
+                }
+            }
+            $links = ($profil ? '<a href="' . esc_url(get_permalink($profil)) . '">Vereinsprofil</a>' : '')
+                . (!empty($v['website']) ? '<a href="' . esc_url((string) $v['website']) . '" target="_blank" rel="noopener">Website ↗</a>' : '');
+            $karten .= '<li class="sv-verein">' . $zeichen . '<div class="sv-text"><span class="sv-ort">' . esc_html(MA21_ORTE[$v['ort'] ?? ''] ?? 'Gemeinde Merzenich') . '</span>'
+                . '<h4>' . esc_html(html_entity_decode((string) $v['name'], ENT_QUOTES, 'UTF-8')) . '</h4>'
+                . ($sparten !== '' ? '<ul class="sv-sparten" aria-label="Sportarten">' . $sparten . '</ul>' : '')
+                . ($links !== '' ? '<p class="sv-links">' . $links . '</p>' : '') . '</div></li>';
+        }
+        $inhalt .= '<div class="sv-gruppe" id="sv-' . $g . '"><h3>' . esc_html(MA21_SPORT_GRUPPEN[$g]) . '</h3><ul class="sv-raster">' . $karten . '</ul></div>';
+    }
+    return '<section class="sport-vereinsliste" aria-labelledby="sv-titel"><div class="sv-kopf"><span class="eyebrow">Vereinssport in der Gemeinde</span>'
+        . '<h2 id="sv-titel">Sportvereine in Merzenich</h2>'
+        . '<p class="sv-dek">' . $anzahl . ' Vereine in Merzenich, Golzheim, Girbelsrath und Morschenich. Wer mitmachen oder zuschauen möchte, findet hier den Weg zum Verein.</p>'
+        . '<nav class="sv-sprung" aria-label="Sportarten">' . $sprung . '</nav></div>'
+        . $inhalt
+        . '<p class="sv-fuss">Quelle: Vereinsverzeichnis der Gemeinde Merzenich. Abteilungen stehen beim Hauptverein. Fehlt ein Verein oder stimmt eine Angabe nicht? <a href="' . esc_url(home_url('/meldung-senden/')) . '">Bitte der Redaktion melden</a>.</p></section>';
+}

@@ -699,3 +699,31 @@ html body .feed-row.feed-row h3{-webkit-line-clamp:5;line-clamp:5}
   .league-table th,.league-table td{padding:10px 8px}
   .league-table .league-gap td{padding:4px 8px}
 }
+/* Sportseite (16.10.2026): Unter den Sportmeldungen alle Sportvereine der Gemeinde
+   (ma21_sport_vereine). Ruhige Liste ohne Karten-Schatten: Vereinszeichen,
+   Ortsteil, Name, Sportarten als Etiketten, Profil und Website. */
+.sport-vereinsliste{margin-top:64px;border-top:2px solid var(--ink,#17191b);padding-top:20px}
+.sv-kopf{margin-bottom:8px}
+.sv-kopf h2{font-family:var(--serif);font-size:clamp(30px,3.2vw,44px);font-weight:700;line-height:1.04;letter-spacing:-.02em;margin:8px 0 0}
+.sv-dek{font-size:17px;line-height:1.55;color:var(--ink,#17191b);max-width:62ch;margin:10px 0 0}
+.sv-sprung{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.sv-sprung a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border:1px solid var(--line,#e3e3e1);border-radius:999px;font-size:14px;font-weight:600;color:var(--ink,#17191b);background:var(--card,#fff);transition:border-color .18s ease-out,color .18s ease-out}
+.sv-sprung a span{font-size:12px;font-weight:800;color:var(--red-dark,#70111b)}
+.sv-sprung a:hover,.sv-sprung a:focus-visible{border-color:var(--red,#971725);color:var(--red-dark,#70111b)}
+.sv-gruppe{margin-top:40px;scroll-margin-top:96px}
+.sv-gruppe h3{font-family:var(--sans);font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red-dark,#70111b);margin:0 0 6px}
+.sv-raster{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:36px}
+.sv-verein{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;padding:20px 0;border-top:1px solid var(--line,#e3e3e1)}
+.sv-zeichen{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--red-wash,#faf1f2);color:var(--red-dark,#70111b);font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:.03em;object-fit:cover}
+img.sv-zeichen{background:var(--card,#fff);border:1px solid var(--line,#e3e3e1)}
+.sv-ort{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted,#686b70)}
+.sv-verein h4{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.22;margin:5px 0 10px;color:var(--ink,#17191b)}
+.sv-sparten{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.sv-sparten li{font-size:12.5px;line-height:1.2;padding:5px 9px;background:#f3f3f1;border-radius:3px;color:var(--ink,#17191b)}
+.sv-sparten a{color:var(--red-dark,#70111b)}
+.sv-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0;font-size:14px;font-weight:600}
+.sv-links a{display:inline-flex;align-items:center;min-height:36px;color:var(--red-dark,#70111b);text-decoration:underline;text-underline-offset:3px}
+.sv-fuss{margin:32px 0 0;padding-top:16px;border-top:1px solid var(--line,#e3e3e1);font-size:14px;line-height:1.55;color:var(--muted,#686b70)}
+.sv-fuss a{color:var(--red-dark,#70111b)}
+@media(max-width:1024px){.sv-raster{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}}
+@media(max-width:640px){.sport-vereinsliste{margin-top:44px}.sv-raster{grid-template-columns:minmax(0,1fr)}.sv-verein{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:16px 0}.sv-zeichen{width:48px;height:48px;font-size:14px}.sv-verein h4{font-size:18px}.sv-dek{font-size:16px}}

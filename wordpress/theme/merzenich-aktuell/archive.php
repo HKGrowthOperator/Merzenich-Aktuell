@@ -1,8 +1,9 @@
 <?php
 /* Liste wie /blaulicht/ der statischen Seite: Seitenkopf, Aufmacher, Zeilen, Blättern.
-   Sport (01.10.2026) wie die statische Sportseite: Spielstand-Ecke, Spiel- und
-   Tabellenmodul aus demselben Datenstand (vorlagen/sport-*.html), nach dem
-   Aufmacher ein Bildraster und rechts alle Sportvereine der Gemeinde.
+   Sport (16.10.2026): die Sportmeldungen (Aufmacher, Bildraster, Reihen) und
+   darunter alle Sportvereine der Gemeinde (ma21_sport_vereine). Spielstand-Ecke,
+   Spiel- und Tabellenmodul und Tabellenstand der Vereine nur noch mit dem
+   Ausbau-Schalter „sport_daten“, weil sie laufend nachgetragen werden müssten.
    Märkte, Anzeigen, Tipps und Termine haben eigene Vorlagen (archive-ma_*.php). */
 get_header();
 [$eyebrow, $titel, $desc] = ma21_liste_kopf();
@@ -11,17 +12,18 @@ $eltern = ma21_liste_eltern();
 global $wp_query;
 $anzahl = (int) $wp_query->found_posts;
 $sport = is_category('sport');
+$sportTabellen = $sport && ma21_ausbau('sport_daten');
 // Spielstand aus dem Backend bzw. Repository (inc/sport.php), sonst die Vorlage vom Bautag.
-$sportDaten = $sport ? ma21_sport_daten() : null;
-$ecke = $sport ? (($sportDaten ? ma21_sport_ecke($sportDaten) : '') ?: trim(ma21_vorlage('sport-ecke.html'))) : '';
+$sportDaten = $sportTabellen ? ma21_sport_daten() : null;
+$ecke = $sportTabellen ? (($sportDaten ? ma21_sport_ecke($sportDaten) : '') ?: trim(ma21_vorlage('sport-ecke.html'))) : '';
 ?>
 <div class="page-head<?php echo $ecke !== '' ? ' mit-ecke' : ''; ?>"><div class="shell"><div class="page-head-text"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><?php if ($eltern): ?><a href="<?php echo esc_url($eltern[1]); ?>"><?php echo esc_html($eltern[0]); ?></a><span class="sep">›</span><span aria-current="page"><?php echo esc_html($titel); ?></span><?php else: ?><span aria-current="page"><?php echo esc_html($eyebrow === 'Ort' || $eyebrow === 'Thema' ? $titel : $eyebrow); ?></span><?php endif; ?></nav><span class="eyebrow"><?php echo esc_html($eyebrow); ?></span><h1><?php echo esc_html($titel); ?></h1><?php if ($desc): ?><p class="desc"><?php echo esc_html($desc); ?></p><?php endif; ?></div><?php echo $ecke; ?></div></div>
 
 <section class="section"><div class="shell">
-  <?php if ($sport && !is_paged()) echo ($sportDaten ? ma21_sport_modul($sportDaten) : '') ?: trim(ma21_vorlage('sport-modul.html')); ?>
-  <?php if ($sport && !is_paged() && function_exists('ma_sport_vereinsraster')) echo ma_sport_vereinsraster(); ?>
+  <?php if ($sportTabellen && !is_paged()) echo ($sportDaten ? ma21_sport_modul($sportDaten) : '') ?: trim(ma21_vorlage('sport-modul.html')); ?>
+  <?php if ($sportTabellen && !is_paged() && function_exists('ma_sport_vereinsraster')) echo ma_sport_vereinsraster(); ?>
   <div class="content-grid">
-    <div class="feed"<?php $seiteKey = ma21_ressort_schluessel(); if ($seiteKey !== '' && !is_paged()) echo ' data-ma-seite="' . esc_attr($seiteKey) . '"'; echo ma21_endlos_attr($seiteKey !== '' ? $seiteKey : ($sport ? 'ressort-sport' : 'liste')); ?>>
+    <div class="feed"<?php $seiteKey = ma21_ressort_schluessel(); if ($seiteKey !== '' && !is_paged()) echo ' data-ma-seite="' . esc_attr($seiteKey) . '"'; if (!$sport || $sportTabellen) echo ma21_endlos_attr($seiteKey !== '' ? $seiteKey : ($sport ? 'ressort-sport' : 'liste')); // Sport ohne Endlos: darunter stehen die Vereine ?>>
 <?php
 // Erste Seite nach der Layout-Karte (Aufmacher, Sport-Bildraster, Reihen; feste
 // Plätze der Redaktion), weitere Seiten als Reihen. Ohne Layout-Schlüssel
@@ -30,9 +32,10 @@ global $wp_query;
 $posts = array_values(array_filter((array) $wp_query->posts, fn($p) => $p instanceof WP_Post));
 echo ma21_feed_html($seiteKey !== '' ? $seiteKey : ($sport ? 'ressort-sport' : 'liste'), $posts, !is_paged());
 ?>
-      <?php the_posts_pagination(['mid_size' => 1, 'prev_text' => '‹ Neuere', 'next_text' => 'Ältere ›']); ?>
+      <?php the_posts_pagination(['mid_size' => 1, 'prev_text' => '‹ Neuere', 'next_text' => $sport ? 'Ältere Sportmeldungen ›' : 'Ältere ›']); ?>
     </div>
     <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><?php echo ma21_liste_seitenspalte(); if ($sport) echo ma21_werbung('sport'); ?></aside>
   </div>
+  <?php if ($sport && !$sportTabellen && !is_paged()) echo ma21_sport_vereine(); ?>
 </div></section>
 <?php get_footer();

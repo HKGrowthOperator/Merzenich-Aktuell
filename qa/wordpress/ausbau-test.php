@@ -51,8 +51,8 @@ $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-76s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
 
 echo "Schalter (inc/ausbau.php)\n";
-pruefe('Vier Schalter, jeder mit Titel und Erklärung', [array_keys(MA21_AUSBAU), count(array_filter(MA21_AUSBAU, fn($s) => $s['titel'] !== '' && strlen($s['text']) > 60))], [['menue_voll', 'vereine', 'endlos', 'muster_alt'], 4]);
-pruefe('Standard = einfache Fassung für die Vorstellung, Endlos-Scrollen an', [ma21_ausbau('menue_voll'), ma21_ausbau('vereine'), ma21_ausbau('endlos'), ma21_ausbau('muster_alt')], [false, false, true, false]);
+pruefe('Fünf Schalter, jeder mit Titel und Erklärung', [array_keys(MA21_AUSBAU), count(array_filter(MA21_AUSBAU, fn($s) => $s['titel'] !== '' && strlen($s['text']) > 60))], [['menue_voll', 'vereine', 'endlos', 'sport_daten', 'muster_alt'], 5]);
+pruefe('Standard = einfache Fassung für die Vorstellung, Endlos-Scrollen an', [ma21_ausbau('menue_voll'), ma21_ausbau('vereine'), ma21_ausbau('endlos'), ma21_ausbau('sport_daten'), ma21_ausbau('muster_alt')], [false, false, true, false, false]);
 pruefe('Unbekannter Schlüssel ist aus', ma21_ausbau('gibt-es-nicht'), false);
 schalter(['menue_voll' => true, 'endlos' => false]);
 pruefe('Gespeicherte Option geht vor dem Standard', [ma21_ausbau('menue_voll'), ma21_ausbau('endlos'), ma21_ausbau('vereine')], [true, false, false]);

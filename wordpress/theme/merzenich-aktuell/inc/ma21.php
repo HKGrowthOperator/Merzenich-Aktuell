@@ -1302,6 +1302,8 @@ function ma21_liste_seitenspalte(int $ohne = 0): string {
     }
     if (is_tax('ma_location')) { $o = get_queried_object(); if ($o instanceof WP_Term) $h .= ma21_ort_seitenspalte($o); }
     $sport = is_category('sport'); $vereine = is_category('vereine');
+    // Auf der ersten Sportseite stehen die Vereine groß unter den Meldungen (ma21_sport_vereine), rechts nicht noch einmal.
+    $vereineUnten = $sport && !is_paged() && function_exists('ma21_ausbau') && !ma21_ausbau('sport_daten');
     if (($sport || $vereine) && function_exists('ma_vereine_struktur')) {
         if ($sport) $h .= '<div class="sidebox sport-side-action"><h3>Sport direkt aus den Vereinen</h3><p>Vereine reichen Spielberichte, Ergebnisse, Termine und Mannschaftsfotos über ihren Redaktionszugang ein. Veröffentlicht wird nach Freigabe durch die Redaktion.</p><p><a class="read-more" href="' . esc_url(home_url('/meldung-senden/')) . '">Sportmeldung senden</a></p></div>';
         $liste = ''; $n = 0;
@@ -1315,7 +1317,7 @@ function ma21_liste_seitenspalte(int $ohne = 0): string {
             $link = $profil && $profil->post_status === 'publish' ? '<a href="' . esc_url(get_permalink($profil)) . '">' . $name . '</a>' : (!empty($v['website']) ? '<a href="' . esc_url($v['website']) . '" target="_blank" rel="noopener">' . $name . '</a>' : '<span>' . $name . '</span>');
             $liste .= '<li>' . $link . '<small>' . ma21_e($klein) . '</small></li>'; $n++;
         }
-        if ($n) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
+        if ($n && !$vereineUnten) $h .= '<div class="sidebox sport-leiste"><h3>' . ($sport ? 'Sportvereine in der Gemeinde' : 'Vereine in Merzenich') . '</h3><ul class="sport-vereine">' . $liste . '</ul><p class="sport-leiste-quelle">Vereinsverzeichnis der Gemeinde · Abteilungen im Profil des Hauptvereins</p></div>';
     }
     return $h;
 }
@@ -1370,7 +1372,7 @@ function ma21_liste_kopf(): array {
     $TEXTE = [
         'blaulicht' => ['Blaulicht', 'Feuerwehr, Polizei und Rettungsdienst', 'Einsätze der Freiwilligen Feuerwehr Merzenich, Polizeimeldungen für das Gemeindegebiet und Verkehrsmeldungen, sachlich zusammengefasst und mit Originalquelle.'],
         'rathaus' => ['Rathaus & Politik', 'Rathaus, Rat und Gemeinde', 'Beschlüsse, Bekanntmachungen und Projekte der Gemeinde Merzenich.'],
-        'sport' => ['Sport', 'Sport in Merzenich', 'Spielberichte, Ergebnisse und Neues aus den Sportvereinen der Gemeinde.'],
+        'sport' => ['Sport', 'Sport in Merzenich', 'Spielberichte und Neues aus den Sportvereinen der Gemeinde.'],
         'leben' => ['Leben', 'Leben in Merzenich', 'Schule, Familie, Kirche, Senioren und Alltag in den fünf Orten.'],
         'wirtschaft' => ['Wirtschaft', 'Wirtschaft und Arbeit', 'Betriebe, Arbeit, Infrastruktur und Strukturwandel im Rheinischen Revier.'],
         'vereine' => ['Vereine', 'Aus den Vereinen', 'Meldungen, Feste und Termine der Vereine in Merzenich.'],
