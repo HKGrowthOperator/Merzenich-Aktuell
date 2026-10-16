@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-16. Oktober 2026 · Theme 21.20.1 · Core-Plugin 1.28.3 · live: 21.20.1 / 1.28.3 (Historie unten)
+16. Oktober 2026 · Theme 21.20.2 · Core-Plugin 1.28.3 · live: 21.20.2 / 1.28.3 (Historie unten)
 
 ## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.3, Feinschliff und drei Betriebe als Entwurf
 
@@ -66,6 +66,12 @@
 **Tests:** neu `testeintrag-test.php` und `firmen-entwuerfe-test.php`; erweitert `freigabe-test.php`, `endlos-test.php`, `seo-test.php`, `termine-test.php`. Lokal im WordPress bei 320 bis 1440 px nachgestellt, 0 Konsolenfehler.
 
 **Plugin 1.28.3** (gleicher Abend): Die Seite „Firmen-Entwürfe“ meldet sich jetzt nach dem Hauptmenü an. Unter 1.28.2 fehlte sie und lieferte 403 (`firmen-entwuerfe-test.php` prüft die Reihenfolge).
+
+**Theme 21.20.2** (gleicher Abend): Live fehlte die Wetteranzeige im Kopf. Ursache: `/api/weather.json` antwortete mit 503, weil Open-Meteo das Tageskontingent der geteilten Server-Adresse als erschöpft meldete („Daily API request limit exceeded“).
+- **Ersatzquelle:** Antwortet Open-Meteo nicht, holt der Server das Wetter bei Bright Sky (`api.brightsky.dev`, Daten des Deutschen Wetterdienstes). Die Antwort wird ins Format von Open-Meteo umgerechnet, sodass `cockpit.js` und `v20.js` unverändert bleiben.
+- **Letzte gute Antwort:** Fallen beide Quellen aus, gilt sie bis zu zwei Stunden weiter.
+- **Pause:** Nach einem Fehlschlag wartet der Server zwei Minuten, statt jeden Aufruf sechs Sekunden warten zu lassen.
+- **Grund:** Die 503-Antwort nennt ihn (`grund`).
 
 **Nicht in diesem Stand:**
 - Karten von „Weitere Meldungen“ auf der Startseite im Stil der Blöcke darüber (größerer Umbau).

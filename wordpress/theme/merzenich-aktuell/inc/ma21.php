@@ -1617,20 +1617,84 @@ add_action('pre_get_posts', function (WP_Query $q): void {
         if ($slug !== '' && !str_contains($slug, '/') && ma21_raster_seite('ressort-' . $slug)) $q->set('posts_per_page', ma21_raster_anzahl('ressort-' . $slug));
     }
 });
+/**
+ * Wetter von Open-Meteo, 10 Minuten zwischengespeichert. Antwortet die Quelle nicht
+ * (16.10.2026 abends live: Kopf ohne Wetter), gilt die letzte gute Antwort bis zu
+ * zwei Stunden weiter. Nach einem Fehlschlag zwei Minuten Pause, damit nicht jeder
+ * Seitenaufruf sechs Sekunden auf die Quelle wartet. Der Grund steht in der Antwort.
+ */
+function ma21_wetter_daten(): array {
+    $daten = get_transient('ma21_wetter');
+    if ($daten) return [200, (string) $daten, ''];
+    $grund = (string) get_transient('ma21_wetter_pause');
+    if ($grund === '') {
+        $url = 'https://api.open-meteo.com/v1/forecast?latitude=50.8317&longitude=6.5361&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FBerlin&forecast_days=3';
+        $r = wp_remote_get($url, ['timeout' => 6, 'user-agent' => 'MerzenichAktuell/' . wp_get_theme()->get('Version') . ' (+' . home_url('/') . ')']);
+        $code = is_wp_error($r) ? 0 : (int) wp_remote_retrieve_response_code($r);
+        $body = $code === 200 ? (string) wp_remote_retrieve_body($r) : '';
+        if ($code === 200 && is_array(json_decode($body, true))) {
+            set_transient('ma21_wetter', $body, 10 * MINUTE_IN_SECONDS);
+            update_option('ma21_wetter_letzt', ['t' => time(), 'daten' => $body], false);
+            return [200, $body, ''];
+        }
+        $grund = 'Open-Meteo ' . (is_wp_error($r) ? 'Verbindung: ' . $r->get_error_message() : 'HTTP ' . $code);
+        // Ersatzquelle: Bright Sky (Daten des Deutschen Wetterdienstes), umgerechnet ins Format von Open-Meteo.
+        $ersatz = ma21_wetter_brightsky();
+        if ($ersatz !== '') {
+            set_transient('ma21_wetter', $ersatz, 10 * MINUTE_IN_SECONDS);
+            update_option('ma21_wetter_letzt', ['t' => time(), 'daten' => $ersatz], false);
+            return [200, $ersatz, $grund];
+        }
+        set_transient('ma21_wetter_pause', $grund, 2 * MINUTE_IN_SECONDS);
+    }
+    $letzt = get_option('ma21_wetter_letzt');
+    if (is_array($letzt) && !empty($letzt['daten']) && time() - (int) ($letzt['t'] ?? 0) < 2 * HOUR_IN_SECONDS) return [200, (string) $letzt['daten'], $grund];
+    return [503, '', $grund];
+}
+/** Wettersymbol von Bright Sky als WMO-Code wie bei Open-Meteo (cockpit.js, v20.js lesen weather_code). */
+function ma21_wetter_wmo(string $icon): int {
+    return ['clear-day' => 0, 'clear-night' => 0, 'partly-cloudy-day' => 2, 'partly-cloudy-night' => 2, 'cloudy' => 3, 'wind' => 3, 'fog' => 45,
+        'rain' => 61, 'sleet' => 66, 'snow' => 71, 'hail' => 96, 'thunderstorm' => 95][$icon] ?? 3;
+}
+/**
+ * Bright Sky (api.brightsky.dev, DWD) als Ersatz: aktuelle Temperatur und drei Tage
+ * Höchst-, Tiefstwert und Wetter (häufigstes Symbol zwischen 8 und 20 Uhr), im Format
+ * der Open-Meteo-Antwort. Leer, wenn auch diese Quelle nicht antwortet.
+ */
+function ma21_wetter_brightsky(): string {
+    $ua = ['timeout' => 6, 'user-agent' => 'MerzenichAktuell (+' . home_url('/') . ')'];
+    $heute = wp_date('Y-m-d');
+    $jetzt = wp_remote_get('https://api.brightsky.dev/current_weather?lat=50.8317&lon=6.5361&tz=Europe/Berlin', $ua);
+    $tage = wp_remote_get('https://api.brightsky.dev/weather?lat=50.8317&lon=6.5361&tz=Europe/Berlin&date=' . $heute . '&last_date=' . wp_date('Y-m-d', time() + 3 * DAY_IN_SECONDS), $ua);
+    if (is_wp_error($jetzt) || is_wp_error($tage) || wp_remote_retrieve_response_code($jetzt) !== 200 || wp_remote_retrieve_response_code($tage) !== 200) return '';
+    $c = json_decode((string) wp_remote_retrieve_body($jetzt), true)['weather'] ?? null;
+    $stunden = json_decode((string) wp_remote_retrieve_body($tage), true)['weather'] ?? null;
+    if (!is_array($c) || !is_numeric($c['temperature'] ?? null) || !is_array($stunden)) return '';
+    $tag = [];
+    foreach ($stunden as $h) {
+        if (!is_numeric($h['temperature'] ?? null)) continue;
+        $d = substr((string) ($h['timestamp'] ?? ''), 0, 10); $std = (int) substr((string) ($h['timestamp'] ?? ''), 11, 2);
+        $tag[$d]['t'][] = (float) $h['temperature'];
+        if ($std >= 8 && $std <= 20 && !empty($h['icon'])) $tag[$d]['i'][] = (string) $h['icon'];
+    }
+    $daily = ['time' => [], 'weather_code' => [], 'temperature_2m_max' => [], 'temperature_2m_min' => []];
+    foreach ($tag as $d => $x) {
+        if ($d < $heute || count($daily['time']) >= 3 || count($x['t']) < 12) continue;
+        $haeufig = $x['i'] ?? []; $zahl = array_count_values($haeufig); arsort($zahl);
+        $daily['time'][] = $d; $daily['temperature_2m_max'][] = round(max($x['t']), 1); $daily['temperature_2m_min'][] = round(min($x['t']), 1);
+        $daily['weather_code'][] = ma21_wetter_wmo((string) (array_key_first($zahl) ?? ''));
+    }
+    if (!$daily['time']) return '';
+    return (string) wp_json_encode(['latitude' => 50.8317, 'longitude' => 6.5361, 'timezone' => 'Europe/Berlin', 'quelle' => 'Bright Sky, Daten: Deutscher Wetterdienst',
+        'current' => ['time' => (string) ($c['timestamp'] ?? ''), 'temperature_2m' => round((float) $c['temperature'], 1), 'weather_code' => ma21_wetter_wmo((string) ($c['icon'] ?? ''))], 'daily' => $daily]);
+}
 add_action('template_redirect', function (): void {
     if (get_query_var('ma_api') !== 'weather') return;
-    $daten = get_transient('ma21_wetter');
-    if (!$daten) {
-        $url = 'https://api.open-meteo.com/v1/forecast?latitude=50.8317&longitude=6.5361&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FBerlin&forecast_days=3';
-        $r = wp_remote_get($url, ['timeout' => 6]);
-        if (!is_wp_error($r) && wp_remote_retrieve_response_code($r) === 200) {
-            $daten = wp_remote_retrieve_body($r);
-            set_transient('ma21_wetter', $daten, 10 * MINUTE_IN_SECONDS);
-        }
-    }
+    [$status, $daten, $grund] = ma21_wetter_daten();
     nocache_headers();
-    if (!$daten) { status_header(503); wp_send_json(['fehler' => 'Wetter nicht verfügbar']); }
+    if ($status !== 200) { status_header(503); wp_send_json(['fehler' => 'Wetter nicht verfügbar', 'grund' => mb_substr($grund, 0, 160)]); }
     header('Content-Type: application/json; charset=utf-8');
+    if ($grund !== '') header('X-Wetter-Stand: letzte gute Antwort');
     echo $daten; exit;
 });
 

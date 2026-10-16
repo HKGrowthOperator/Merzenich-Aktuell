@@ -114,5 +114,10 @@ $_SERVER['REQUEST_URI'] = '/ort/golzheim/';
 $GLOBALS['t'] = ['tax' => true, 'obj' => null, 'single' => '', 'archiv' => ''];
 pruefe('Ortsseite: Ressortleiste ohne Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 
+echo "\nWetter-Ersatzquelle Bright Sky (16.10.2026: Open-Meteo-Tageskontingent der geteilten IP erschöpft)\n";
+pruefe('Symbole als WMO-Code wie Open-Meteo', array_map('ma21_wetter_wmo', ['clear-day', 'partly-cloudy-night', 'cloudy', 'fog', 'rain', 'snow', 'thunderstorm']), [0, 2, 3, 45, 61, 71, 95]);
+pruefe('Unbekanntes Symbol: bedeckt statt Fehler', ma21_wetter_wmo(''), 3);
+pruefe('cockpit.js liest dieselben Felder', (bool) preg_match('/temperature_2m_max.*temperature_2m_min/s', (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/cockpit.js')), true);
+
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);
