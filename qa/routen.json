@@ -2,24 +2,8 @@
  "stand": "2026-10-16",
  "routen": 517,
  "fehler": 0,
- "hinweise": 3,
- "befunde": [
-  {
-   "route": "/leben/blutspende-buergerhaus-merzenich-6-oktober-2026/",
-   "schwere": "hinweis",
-   "text": "zeitrelatives Wort im Artikeltext: \"heute\""
-  },
-  {
-   "route": "/rathaus/neues-buergerhaus-merzenich-bedarfsermittlung-2026/",
-   "schwere": "hinweis",
-   "text": "zeitrelatives Wort im Artikeltext: \"heute\""
-  },
-  {
-   "route": "/vereine/msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026/",
-   "schwere": "hinweis",
-   "text": "zeitrelatives Wort im Artikeltext: \"kommenden Samstag\""
-  }
- ],
+ "hinweise": 0,
+ "befunde": [],
  "matrix": [
   {
    "route": "/",
@@ -1860,10 +1844,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+Place+BreadcrumbList",
-   "bilder": 9,
+   "bilder": 10,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 154,
+   "links": 157,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -2219,7 +2203,7 @@
    "route": "/leben/blutspende-buergerhaus-merzenich-6-oktober-2026/",
    "typ": "artikel",
    "index": true,
-   "title": 78,
+   "title": 86,
    "desc": 169,
    "canonical": "live",
    "h1": 1,
@@ -2232,7 +2216,7 @@
    "links": 143,
    "tot": [],
    "platzhalter": [],
-   "zeitwort": "heute",
+   "zeitwort": "",
    "sitemap": [
     "sitemap-artikel.xml"
    ]
@@ -3195,10 +3179,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+NewsArticle+BreadcrumbList",
-   "bilder": 1,
+   "bilder": 4,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 135,
+   "links": 145,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -3347,10 +3331,10 @@
    "og": true,
    "twitter": true,
    "jsonld": "NewsMediaOrganization+WebSite+CollectionPage+Place+BreadcrumbList",
-   "bilder": 13,
+   "bilder": 12,
    "ohneAlt": 0,
    "fehlendeBilder": [],
-   "links": 169,
+   "links": 166,
    "tot": [],
    "platzhalter": [],
    "zeitwort": "",
@@ -4074,7 +4058,7 @@
    "links": 143,
    "tot": [],
    "platzhalter": [],
-   "zeitwort": "heute",
+   "zeitwort": "",
    "sitemap": [
     "sitemap-artikel.xml"
    ]
@@ -10458,7 +10442,7 @@
    "links": 145,
    "tot": [],
    "platzhalter": [],
-   "zeitwort": "kommenden Samstag",
+   "zeitwort": "",
    "sitemap": [
     "sitemap-artikel.xml"
    ]
