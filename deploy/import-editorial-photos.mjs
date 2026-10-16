@@ -54,7 +54,9 @@ const POOLS = {
   jobs: {
     tags: ['jobs','arbeit','ausbildung','stellenmarkt','beruf'],
     max: 20,
-    pflicht: /(arbeitsplatz|werkbank|b[uü]roarbeitsplatz|werkstatt|ausbildung|schreibtisch|bewerbung|arbeitsplatzrechner|handwerk|produktionshalle|workplace|office desk|metallwerkstatt|schreibplatz|laborarbeitsplatz|arbeitsumgebung|tastatur schreib)/i,
+    // Commons-Kategorie Workbenches in Germany: Werkstatt-Arbeitsumgebungen.
+    titel: ['File:Rummelsburg BLO-Ateliers Metallwerkstatt Schweißtisch.jpg', 'File:Werkbänke Leisten Herstellung Fagus Werk.jpg'],
+    pflicht: /(arbeitsplatz|werkbank|b[uü]roarbeitsplatz|werkstatt|ausbildung|schreibtisch|bewerbung|arbeitsplatzrechner|handwerk|produktionshalle|workplace|office desk|werkb[aä]nk(?:e|en)|metallwerkstatt|schreibplatz|laborarbeitsplatz|arbeitsumgebung|tastatur schreib)/i,
     queries: ['Arbeitsplatz Werkbank Deutschland','Büroarbeitsplatz Deutschland','Werkstatt Arbeitsplatz Nordrhein-Westfalen','Schreibtisch Arbeitsplatz','Ausbildung Werkstatt','Job Bewerbung Schreibtisch','Office desk Germany','Production workshop NRW','Ausbildung Handwerk','Leerer Arbeitsplatz Deutschland','Schreibtisch Computer Arbeit','Werkbank Werkzeug','Stellenmarkt Bewerbung Unterlagen','Büro Arbeitsplätze', "Werkbank Deutschland", "Werkbank Werkzeug Nahaufnahme", "Metallwerkstatt Arbeitsplatz", "Werkzeugbank Handwerk", "Arbeitsplatz Schreibtisch Deutschland", "Schreibtisch mit Computer", "Tastatur Schreibtisch Arbeitsplatz", "Leere Werkstatt Deutschland", "Schreiner Werkbank NRW", "Büro Arbeitsplatz ohne Menschen", "Ausbildung Maschinenbau Werkstatt"]
   },
   immobilien: {
@@ -130,6 +132,9 @@ const POOLS = {
     tags: ['sport','tennis','tennisplatz','tennistraining'],
     max: 20,
     pflicht: /tennis/i,
+    // Commons-Kategorien: Tennis courts in North Rhine-Westphalia / Tennis in Germany.
+    // Ausschliesslich Sportanlage, keine Spielerportraets; noch keine Sichtfreigabe.
+    titel: ["File:Lüdinghausen, Tennisplätze -- 2014 -- 7295.jpg","File:Haltern am See, TUS-Tennis -- 2014 -- 9105.jpg","File:Tennis courts at Poller Wiesen in Cologne, Germany (48988353677).jpg","File:Aerial view of tennis courts in Cologne, Germany (50390585946).jpg","File:Top-Down-Luftbild der Tennisplätze der Kölner Tennisgesellschaft Blau-Gold (51226453811).jpg","File:Tennisplatz des Tennisclub Holzhausen 1982 e. V. (Immenhausen).jpg"],
     queries: ['Tennisplätze Nordrhein-Westfalen','Tennisanlage Nordrhein-Westfalen','Tennisclub Nordrhein-Westfalen','Tennisplatz Sandplatz Deutschland','Tennis court NRW','Tennishalle Nordrhein-Westfalen','Tennis Training Deutschland','Tennisnetz Platz','Tennisverein Deutschland','Tennisplätze Kreis Düren','Tennisplatz Freiluft Deutschland','Tenniscourt Germany','Tennis doubles court Germany','Tennis Sportanlage Düren', "deepcat:\"Tennis courts in North Rhine-Westphalia\"", "deepcat:\"Tennis courts in Germany\"", "Tennisplätze Köln", "Tennisplätze Düsseldorf", "Tennisplätze Aachen", "Tennisplätze Düren", "Tennisplatz Tennisnetz Deutschland", "Tennisplatz Sandbelag Deutschland", "Tennisanlage Mönchengladbach", "Tennis NRW Anlage", "Tennisplatz Bochum"]
   },
   digitaldetail: {
