@@ -292,7 +292,7 @@ function localityFor(text) {
 }
 
 async function commonsSearch(query) {
-  return commonsAbfrage({ generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: '100' }, query);
+  return commonsAbfrage({ generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: '50' }, query);
 }
 
 // Gezielt beschaffte Dateien (POOLS[pool].titel): genau diese Titel, in dieser
