@@ -54,8 +54,8 @@ const POOLS = {
   jobs: {
     tags: ['jobs','arbeit','ausbildung','stellenmarkt','beruf'],
     max: 20,
-    pflicht: /(arbeitsplatz|werkbank|b[uü]roarbeitsplatz|werkstatt|ausbildung|schreibtisch|bewerbung|arbeitsplatzrechner|handwerk|produktionshalle|workplace|office desk)/i,
-    queries: ['Arbeitsplatz Werkbank Deutschland','Büroarbeitsplatz Deutschland','Werkstatt Arbeitsplatz Nordrhein-Westfalen','Schreibtisch Arbeitsplatz','Ausbildung Werkstatt','Job Bewerbung Schreibtisch','Office desk Germany','Production workshop NRW','Ausbildung Handwerk','Leerer Arbeitsplatz Deutschland','Schreibtisch Computer Arbeit','Werkbank Werkzeug','Stellenmarkt Bewerbung Unterlagen','Büro Arbeitsplätze']
+    pflicht: /(arbeitsplatz|werkbank|b[uü]roarbeitsplatz|werkstatt|ausbildung|schreibtisch|bewerbung|arbeitsplatzrechner|handwerk|produktionshalle|workplace|office desk|metallwerkstatt|schreibplatz|laborarbeitsplatz|arbeitsumgebung|tastatur schreib)/i,
+    queries: ['Arbeitsplatz Werkbank Deutschland','Büroarbeitsplatz Deutschland','Werkstatt Arbeitsplatz Nordrhein-Westfalen','Schreibtisch Arbeitsplatz','Ausbildung Werkstatt','Job Bewerbung Schreibtisch','Office desk Germany','Production workshop NRW','Ausbildung Handwerk','Leerer Arbeitsplatz Deutschland','Schreibtisch Computer Arbeit','Werkbank Werkzeug','Stellenmarkt Bewerbung Unterlagen','Büro Arbeitsplätze', "Werkbank Deutschland", "Werkbank Werkzeug Nahaufnahme", "Metallwerkstatt Arbeitsplatz", "Werkzeugbank Handwerk", "Arbeitsplatz Schreibtisch Deutschland", "Schreibtisch mit Computer", "Tastatur Schreibtisch Arbeitsplatz", "Leere Werkstatt Deutschland", "Schreiner Werkbank NRW", "Büro Arbeitsplatz ohne Menschen", "Ausbildung Maschinenbau Werkstatt"]
   },
   immobilien: {
     tags: ['immobilien','wohnen','haus','miete','bau','architektur'],
@@ -80,15 +80,15 @@ const POOLS = {
   kultur: {
     tags: ['kultur','kunst','musik','theater','literatur'],
     max: 20,
-    pflicht: /(theaterb[uü]hne|b[uü]hnenraum|b[uü]hnentechnik|klavier|konzertsaal|bibliothek|lesesaal|musikinstrument|stage curtain|theatre stage|piano|library)/i,
-    queries: ['Theaterbühne Deutschland leer','Bühnenraum Theater','Konzertsaal Nordrhein-Westfalen','Klavier Kulturzentrum','Bibliothek Lesesaal NRW','Musikinstrumente Konzertsaal','Bühnentechnik Deutschland','Theatre stage Germany','Piano on stage Germany','Theatervorhang','Theater Bühne Beleuchtung','Bibliothek Bücherregal Deutschland','Musiksaal Deutschland','Kulturhaus Bühne NRW']
+    pflicht: /(theaterb[uü]hne|theaterraum|b[uü]hnenraum|b[uü]hnentechnik|b[uü]hnenvorhang|b[uü]hne|klavier|konzertsaal|bibliothek|b[uü]cherei|lesesaal|musikinstrument|notenst[aä]nder|probenraum|geige|gitarre|stage curtain|theatre stage|piano|library)/i,
+    queries: ['Theaterbühne Deutschland leer','Bühnenraum Theater','Konzertsaal Nordrhein-Westfalen','Klavier Kulturzentrum','Bibliothek Lesesaal NRW','Musikinstrumente Konzertsaal','Bühnentechnik Deutschland','Theatre stage Germany','Piano on stage Germany','Theatervorhang','Theater Bühne Beleuchtung','Bibliothek Bücherregal Deutschland','Musiksaal Deutschland','Kulturhaus Bühne NRW', "Theaterbühne leer Deutschland", "Bühnenvorhang Theater Deutschland", "Kulturhaus Bühne Nordrhein-Westfalen", "Geige Instrument Detail", "Musikinstrument Detail Deutschland", "Bibliothek Deutschland innen", "Bücherregal Bibliothek", "Gitarren Musikinstrumente", "Notenständer Bühne", "Orchestergraben leer", "Theaterraum Nordrhein-Westfalen", "Musikschule Probenraum"]
   },
   schule: {
     tags: ['schule','bildung','unterricht','klassenraum','lernen'],
     max: 20,
     // Neutrale Klassenzimmer und Lernmaterialien ohne fremde Schulgebäude.
-    pflicht: /(klassenraum|klassenzimmer|schulbank|schultafel|schulheft|schulb[uü]cher|stifte|classroom|blackboard|chalkboard|school desk)/i,
-    queries: ['Klassenzimmer Nordrhein-Westfalen leer','Klassenraum Deutschland','Schultafel Klassenzimmer','Schulbank Deutschland','Schulheft Stifte','Schulbücher Lernmaterial','Classroom Germany empty','Blackboard classroom Germany','Klassenzimmer Grundschule','Schultafel Unterricht','Schulhefte Bücher','Schulbank leer','Schreibtafel Klassenraum','Unterrichtsraum NRW']
+    pflicht: /(klassenraum|klassenzimmer|schulbank|schultafel|schulheft|schulb[uü]cher|schulmaterial|schulranzen|schreibheft|stifte|classroom|blackboard|chalkboard|school desk)/i,
+    queries: ['Klassenzimmer Nordrhein-Westfalen leer','Klassenraum Deutschland','Schultafel Klassenzimmer','Schulbank Deutschland','Schulheft Stifte','Schulbücher Lernmaterial','Classroom Germany empty','Blackboard classroom Germany','Klassenzimmer Grundschule','Schultafel Unterricht','Schulhefte Bücher','Schulbank leer','Schreibtafel Klassenraum','Unterrichtsraum NRW', "Schulranzen Unterrichtsmaterial", "Schreibheft Bleistift Schule", "Klassenraum Grundschule Deutschland", "Schultafel Grundschule Deutschland", "Klassenzimmer NRW", "Klassenzimmer leer Deutschland", "Schulmaterial Stifte Hefte"]
   },
   kirche: {
     tags: ['kirche','gottesdienst','gemeinde','pfarrleben','kirchenraum'],
@@ -110,7 +110,7 @@ const POOLS = {
   polizei: {
     tags: ['polizei','streifenwagen','einsatz','kontrolle'],
     // Motivregeln (24.09.): Streifenwagen zuerst; Wachen lesen sich oft als Wohnhaus.
-    queries: ['Funkstreifenwagen Nordrhein-Westfalen', 'Streifenwagen Polizei Nordrhein-Westfalen', 'Polizeifahrzeug Nordrhein-Westfalen', 'Polizeiwache Nordrhein-Westfalen', 'Polizeipräsidium Nordrhein-Westfalen', 'Polizeihubschrauber Nordrhein-Westfalen', 'Polizei Düren', 'Polizei Nordrhein-Westfalen Streifenwagen', 'Polizei Nordrhein-Westfalen']
+    queries: ['Funkstreifenwagen Nordrhein-Westfalen', 'Streifenwagen Polizei Nordrhein-Westfalen', 'Polizeifahrzeug Nordrhein-Westfalen', 'Polizeiwache Nordrhein-Westfalen', 'Polizeipräsidium Nordrhein-Westfalen', 'Polizeihubschrauber Nordrhein-Westfalen', 'Polizei Düren', 'Polizei Nordrhein-Westfalen Streifenwagen', 'Polizei Nordrhein-Westfalen', "Polizei Düren Streifenwagen", "Polizei Aachen Streifenwagen", "Polizei Euskirchen Streifenwagen", "Polizei Köln Streifenwagen", "Polizei NRW Passat", "Streifenwagen NRW Volkswagen", "Polizei NRW Einsatzfahrzeug", "Polizei Motorrad NRW", "Polizeiwagen Nordrhein-Westfalen", "Funkstreifenwagen Polizei NRW", "Polizei Nordrhein-Westfalen Hubschrauber", "Polizeiwache Kreis Düren"]
   },
   feuerwehr: {
     tags: ['feuerwehr','loeschfahrzeug','einsatz','rettung'],
@@ -130,19 +130,19 @@ const POOLS = {
     tags: ['sport','tennis','tennisplatz','tennistraining'],
     max: 20,
     pflicht: /tennis/i,
-    queries: ['Tennisplätze Nordrhein-Westfalen','Tennisanlage Nordrhein-Westfalen','Tennisclub Nordrhein-Westfalen','Tennisplatz Sandplatz Deutschland','Tennis court NRW','Tennishalle Nordrhein-Westfalen','Tennis Training Deutschland','Tennisnetz Platz','Tennisverein Deutschland','Tennisplätze Kreis Düren','Tennisplatz Freiluft Deutschland','Tenniscourt Germany','Tennis doubles court Germany','Tennis Sportanlage Düren']
+    queries: ['Tennisplätze Nordrhein-Westfalen','Tennisanlage Nordrhein-Westfalen','Tennisclub Nordrhein-Westfalen','Tennisplatz Sandplatz Deutschland','Tennis court NRW','Tennishalle Nordrhein-Westfalen','Tennis Training Deutschland','Tennisnetz Platz','Tennisverein Deutschland','Tennisplätze Kreis Düren','Tennisplatz Freiluft Deutschland','Tenniscourt Germany','Tennis doubles court Germany','Tennis Sportanlage Düren', "deepcat:\"Tennis courts in North Rhine-Westphalia\"", "deepcat:\"Tennis courts in Germany\"", "Tennisplätze Köln", "Tennisplätze Düsseldorf", "Tennisplätze Aachen", "Tennisplätze Düren", "Tennisplatz Tennisnetz Deutschland", "Tennisplatz Sandbelag Deutschland", "Tennisanlage Mönchengladbach", "Tennis NRW Anlage", "Tennisplatz Bochum"]
   },
   digitaldetail: {
     tags: ['digital','smartphone','senioren','bildung','tablet','medienkompetenz'],
     max: 20,
-    pflicht: /(senior.*smartphone|smartphone.*senior|seniorenhandy|mobiltelefon|smartphone|tablet computer|tablet device|handy senior|phone for seniors|xl-viewer)/i,
-    queries: ['Senioren Smartphone Kurs','Senior smartphone XL-Viewer 5000','Smartphone Senioren Deutschland','Smartphone Bedienung','Android Smartphone Germany','Doro phone for seniors','Senioren Tablet','Tablet Computer Hand','Handy für Senioren','Digitalisierung Smartphone Schule','Smartphone auf Tisch','Smartphone Bildschirm Android','Tablet Computer Germany','Medienkompetenz Handy']
+    pflicht: /(senior.*smartphone|smartphone.*senior|seniorenhandy|mobiltelefon|smartphone|tablet computer|tablet device|tablet.?pc|handy senior|phone for seniors|xl-viewer|mobilger[aä]t)/i,
+    queries: ['Senioren Smartphone Kurs','Senior smartphone XL-Viewer 5000','Smartphone Senioren Deutschland','Smartphone Bedienung','Android Smartphone Germany','Doro phone for seniors','Senioren Tablet','Tablet Computer Hand','Handy für Senioren','Digitalisierung Smartphone Schule','Smartphone auf Tisch','Smartphone Bildschirm Android','Tablet Computer Germany','Medienkompetenz Handy', "Smartphone auf Schreibtisch", "Smartphone Frontansicht Deutschland", "Mobiltelefon Senioren", "Tablet Computer Tisch", "Smartphone in der Hand ohne Person", "Handydisplay Deutschland", "Smartphone Schulung Senioren", "Seniorenhandy Doro", "Handy Android Bildschirm", "Android Tablet Germany", "Smartphone Telefonieren"]
   },
   tanzdetail: {
     tags: ['tanz','vortanzen','tanzsaal','tanzverein','tanzstudio'],
     max: 20,
     pflicht: /(tanzhaus|tanzsaal|tanzstudio|tanzschule|tanzraum|dance hall|dance studio|dance floor|ballettsaal|ballet studio)/i,
-    queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner','Tanzsaal Nordrhein-Westfalen','Tanzstudio Deutschland','Tanzraum Deutschland','Tanzschule Saal NRW','Tanzproberaum','Dance studio Germany','Dance hall Germany','Ballettsaal Germany','Tanzparkett Tanzsaal','Tanzhaus Düsseldorf','Uetzing Tanzsaal','Tanzhalle','Tanzsport Verein Trainingssaal']
+    queries: ['Tanzhaus nrw Großer Saal Foto2 Katja Illner','Tanzsaal Nordrhein-Westfalen','Tanzstudio Deutschland','Tanzraum Deutschland','Tanzschule Saal NRW','Tanzproberaum','Dance studio Germany','Dance hall Germany','Ballettsaal Germany','Tanzparkett Tanzsaal','Tanzhaus Düsseldorf','Uetzing Tanzsaal','Tanzhalle','Tanzsport Verein Trainingssaal', "Tanzstudio Parkett Deutschland", "Tanzschule Köln Saal", "Tanzsaal Düsseldorf", "Tanzsaal Köln", "Tanzschule Bonn Raum", "Tanzschule Aachen", "Tanzstudio NRW Innenraum", "Ballettsaal Deutschland", "Tanzsaal Spiegelwand", "Tanzparkett Spiegel", "Dance studio Cologne", "Tanzsaal im Sportverein"]
   },
   naturdetail: {
     tags: ['natur','nistkasten','voegel','vogelschutz','naturschutz'],
@@ -188,25 +188,25 @@ const POOLS = {
     tags: ['feuerwehr','technische-hilfe','einsatz','oelspur','brandmeldeanlage'],
     max: 24,
     pflicht: /(ölspur|oelspur|ölbinde|oelbinde|bindemittel|ölsperre|hydrauliköl|brandmelde|brandmelder|rauchmelder|rauchwarnmelder|smoke detector|fire alarm|oil spill)/i,
-    queries: ['Ölspur Feuerwehr Nordrhein-Westfalen','Ölbindemittel Feuerwehr','Ölspur Straße','Ölspur Beseitigung','Ölsperre Feuerwehr','Oil spill fire brigade Germany','Bindemittel Feuerwehr','Brandmeldeanlage Feuerwehr','Brandmeldezentrale','Brandmelder','Handfeuermelder','Rauchmelder','Rauchwarnmelder','Smoke detector ceiling Germany','Fire alarm button Germany','Rauchwarnmelder an Decke']
+    queries: ['Ölspur Feuerwehr Nordrhein-Westfalen','Ölbindemittel Feuerwehr','Ölspur Straße','Ölspur Beseitigung','Ölsperre Feuerwehr','Oil spill fire brigade Germany','Bindemittel Feuerwehr','Brandmeldeanlage Feuerwehr','Brandmeldezentrale','Brandmelder','Handfeuermelder','Rauchmelder','Rauchwarnmelder','Smoke detector ceiling Germany','Fire alarm button Germany','Rauchwarnmelder an Decke', "Ölspur - 02", "Rauchwarnmelder Deutschland", "Heimrauchmelder Decke", "Brandmelder Nordrhein-Westfalen", "Handdruckmelder Deutschland", "Ölspur Bindemittel Feuerwehr NRW", "Schadstoffbinder Feuerwehr", "Brandmeldezentrale Deutschland", "Brandmeldeanlage Handfeuermelder", "Feuerwehr Ölbindemittel", "Ölspur Straße Deutschland"]
   },
   rettung: {
     tags: ['feuerwehr','rettung','tier','tuer','technische-hilfe'],
     max: 20,
-    pflicht: /(tierrettung|tier in not|tierfang|katze.*(baum|feuerwehr)|türöffnung|tueroeffnung|wohnungsöffnung|haustüröffnung|animal rescue|cat rescue|feuerwehr.*tier)/i,
-    queries: ['Tierrettung Feuerwehr Nordrhein-Westfalen','Tierrettung Feuerwehr','Tierrettung Katze Feuerwehr','Katze auf Baum Feuerwehr','Tierfang Feuerwehr','Katze Drehleiter Feuerwehr','Animal rescue German fire brigade','Cat rescue fire brigade','Türöffnung Feuerwehr Nordrhein-Westfalen','Türöffnung Feuerwehr','Wohnungsöffnung Feuerwehr','Türöffnungswerkzeug Feuerwehr','Haustüröffnung Feuerwehr','Firefighters animal rescue Germany','Feuerwehr Türrettung']
+    pflicht: /(tierrettung|tier in not|tierfang|katze.*(baum|feuerwehr|dach)|cat in tree|cat rescue|feuerwehr.*tier|t[uü]r[oö]ffnung|wohnungs[oö]ffnung|haust[uü]r[oö]ffnung|animal rescue|feuerwehr.*katze)/i,
+    queries: ['Tierrettung Feuerwehr Nordrhein-Westfalen','Tierrettung Feuerwehr','Tierrettung Katze Feuerwehr','Katze auf Baum Feuerwehr','Tierfang Feuerwehr','Katze Drehleiter Feuerwehr','Animal rescue German fire brigade','Cat rescue fire brigade','Türöffnung Feuerwehr Nordrhein-Westfalen','Türöffnung Feuerwehr','Wohnungsöffnung Feuerwehr','Türöffnungswerkzeug Feuerwehr','Haustüröffnung Feuerwehr','Firefighters animal rescue Germany','Feuerwehr Türrettung', "Katze auf dem Baum Feuerwehr", "Katze auf Baum Deutschland", "Katze im Baum", "Katze in Baumkrone", "Katze auf dem Dach Feuerwehr", "Cat in tree Germany", "Cat rescue ladder Germany", "Feuerwehr Katze Rettung", "Tierrettung Drehleiter", "Feuerwehr Tier aus Schacht", "Tierrettung Deutschland Katze", "Türöffnungswerkzeug Feuerwehr Deutschland", "Türöffnung Feuerwehr Gerät", "Feuerwehr Türe öffnen", "Animal rescue Germany"]
   },
   unfall: {
     tags: ['verkehr','unfall','einsatz','absperrung','unfallstelle'],
     max: 20,
     pflicht: /(verkehrsunfall|unfallstelle|unfall|absperrung|fußgängerbrücke|fussgaengerbruecke|fußgängerüberführung|footbridge|traffic accident|crash scene)/i,
-    queries: ['Verkehrsunfall Feuerwehr Nordrhein-Westfalen','Verkehrsunfall Kreis Düren','Unfallstelle Nordrhein-Westfalen','Verkehrsunfall Absicherung','Unfallabsperrung Feuerwehr','Unfallstelle Polizei Nordrhein-Westfalen','Straßenunfall Absperrung','Verkehrsunfall Landstraße Deutschland','Fahrzeugunfall Nordrhein-Westfalen','Fußgängerbrücke Landstraße','Fußgängerbrücke Nordrhein-Westfalen','Fußgängerüberführung Straße','Traffic accident Germany fire brigade','Verkehrsunfall Sperrung']
+    queries: ['Verkehrsunfall Feuerwehr Nordrhein-Westfalen','Verkehrsunfall Kreis Düren','Unfallstelle Nordrhein-Westfalen','Verkehrsunfall Absicherung','Unfallabsperrung Feuerwehr','Unfallstelle Polizei Nordrhein-Westfalen','Straßenunfall Absperrung','Verkehrsunfall Landstraße Deutschland','Fahrzeugunfall Nordrhein-Westfalen','Fußgängerbrücke Landstraße','Fußgängerbrücke Nordrhein-Westfalen','Fußgängerüberführung Straße','Traffic accident Germany fire brigade','Verkehrsunfall Sperrung', "Verkehrsunfall Polizei Düren", "Unfallstelle Feuerwehr NRW", "Verkehrsunfall NRW Foto", "Verkehrsunfall Polizeifahrzeug", "Verkehrsunfall Absperrung Nordrhein-Westfalen", "Fußgängerbrücke B264", "Unfallstelle Düren", "Autounfall NRW", "Autounfall Feuerwehr Nordrhein-Westfalen", "Unfallstelle Verkehrssicherung", "Verkehrsunfall Landstraße NRW", "Verkehrsunfall Feuerwehr Bild Deutschland"]
   },
   flaeche: {
     tags: ['brand','feld','flaeche','vegetationsbrand','feuerwehr'],
     max: 20,
-    pflicht: /(feldbrand|flächenbrand|flaechenbrand|stoppelfeld|böschungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|mülleimerbrand|muelleimerbrand|containerbrand|brush fire|grass fire)/i,
-    queries: ['Feldbrand Nordrhein-Westfalen','Flächenbrand Kreis Düren','Stoppelfeldbrand Feuerwehr','Böschungsbrand NRW','Böschungsbrand','Strohballenbrand Deutschland','Vegetationsbrand Feuerwehr Nordrhein-Westfalen','Grasbrand Deutschland','Flächenbrand Feuerwehr','Feldbrand Feuerwehr','Mülleimerbrand Feuerwehr','Containerbrand Feuerwehr','Böschungsbrand Straße','Grass fire Germany','Vegetationsbrand Ausbildung']
+    pflicht: /(feldbrand|fl[aä]chenbrand|flaechenbrand|stoppelfeldbrand|b[oö]schungsbrand|boeschungsbrand|strohballenbrand|vegetationsbrand|grasbrand|grasfl[aä]chenbrand|wiesenbrand|flurbrand|grasfeuer|m[uü]lleimerbrand|muelleimerbrand|containerbrand|brush fire|grass fire)/i,
+    queries: ['Feldbrand Nordrhein-Westfalen','Flächenbrand Kreis Düren','Stoppelfeldbrand Feuerwehr','Böschungsbrand NRW','Böschungsbrand','Strohballenbrand Deutschland','Vegetationsbrand Feuerwehr Nordrhein-Westfalen','Grasbrand Deutschland','Flächenbrand Feuerwehr','Feldbrand Feuerwehr','Mülleimerbrand Feuerwehr','Containerbrand Feuerwehr','Böschungsbrand Straße','Grass fire Germany','Vegetationsbrand Ausbildung', "Wiesenbrand Feuerwehr", "Grasflächenbrand", "Stoppelfeldbrand Nordrhein-Westfalen", "Strohballen Feuer Feuerwehr", "Feuer im Feld NRW", "Böschungsbrand Feuerwehr NRW", "Flurbrand Deutschland", "Vegetationsbrand in NRW", "Feuerwehr Flurbrand", "Grasfeuer Deutschland", "Flächenbrand bei Düren", "Waldwiesenbrand", "Feldbrand Feuerwehr Deutschland", "Löschen von Stoppelfeldbrand"]
   },
   verkehr: {
     // Motivregeln geschwindigkeit und fahrrad-reparatur (24.09.): Messanlagen
@@ -234,7 +234,7 @@ const BAD_TITLE = /(logo|wappen|coat of arms|flag|karte|map of|locator|diagram|p
 // Strengere Filter nach der Sichtprüfung vom 24.09.2026.
 const BAD_TITLE_STRENG = /(satellit|sentinel|modis|copernicus|nasa|landsat|viirs|olci|chart|diagramm|statistik|mitglieder|karte|openstreetmap|abzeichen|patch|badge|kennz|kennzeichen|license plate|nummernschild|portr[aä]it|politik|minister|polizeipr[aä]sident|army|soldat|soldier|military|milit[aä]r|bundeswehr|painting|gem[aä]lde|museum|hdri|poly haven|render|demonstration|protest|kundgebung|pride|parade|b[aä]ckerei|bakery|fire suppression|halon|argonite|fm-200|l[oö]schanlage|model car|modellauto|dosimeter|sound level|zivilschutz|belohnung)/i;
 const BAD_KATEGORIE = /(portrait|people of|politicians|athletes|players|footballers|musicians|actors|soldiers|military|united states army|demonstrations|protests|satellite|maps of|logos|coats of arms|patches|license plates|vehicle registration|paintings|diagrams|charts|crowds|children)/i;
-const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea|arizona|oregon|nevada|montana|colorado|utah|idaho|new mexico|texas|florida|national forest|forest service|bush ?fire|sweden|schweden|norway|norwegen|finland|denmark|d[aä]nemark|nyn[aä]shamn|israel|kibbutz|gaza|ukrain|estonia|eesti|tartu|latvia|lithuania|indonesia|philippin|mexico|colombia|brazil|india\b|steiermark|styria|mureck|russia|russland|moscow|moskau|m[aá]laga|spain|spanien|espa[nñ]a|hungary|ungarn|moh[aá]cs|massacre|massaker|anschlag)/i;
+const AUSLAND = /(croatia|kroatien|hrvatska|switzerland|schweiz|austria|österreich|california|united states|\busa\b|england|london|united kingdom|scotland|shetland|faroe|venezuela|new zealand|afghanistan|poland|polska|netherlands|niederlande|belgium|belgien|france|frankreich|manchester|austria|japan|tokyo|osaka|italy|italia|italien|canada|kanada|china|korea|arizona|oregon|nevada|montana|colorado|utah|idaho|new mexico|texas|florida|national forest|forest service|bush ?fire|sweden|schweden|norway|norwegen|finland|denmark|d[aä]nemark|nyn[aä]shamn|israel|kibbutz|gaza|ukrain|estonia|eesti|tartu|latvia|lithuania|indonesia|philippin|mexico|colombia|brazil|india\b|steiermark|styria|mureck|russia|russland|moscow|moskau|m[aá]laga|spain|spanien|espa[nñ]a|hungary|ungarn|moh[aá]cs|massacre|massaker|anschlag|turkey|t[uü]rkei|phrygia|anatolia|saudi|dubai|south africa|australia|new york|reagan|fortepan|us embassy|washington d\.c\.|czechia|czech republic|slovakia)/i;
 // Titel in nicht-lateinischer Schrift stammen fast immer aus dem Ausland.
 const FREMDE_SCHRIFT = /[\u0370-\u03ff\u0400-\u04ff\u0590-\u06ff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
 // Sportplatz-Suchen treffen Wegekreuze "hinter dem Sportplatz".
@@ -292,7 +292,7 @@ function localityFor(text) {
 }
 
 async function commonsSearch(query) {
-  return commonsAbfrage({ generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: '50' }, query);
+  return commonsAbfrage({ generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: '100' }, query);
 }
 
 // Gezielt beschaffte Dateien (POOLS[pool].titel): genau diese Titel, in dieser
@@ -340,6 +340,8 @@ function usable(c, pool) {
   if (AUSGESCHLOSSEN.has(c.title)) return false;
   const text = [c.title, c.description, c.categories].join(' ');
   if (BAD_TITLE_STRENG.test(c.title) || BAD_TITLE_STRENG.test(c.description)) return false;
+  if (['jobs','kultur','schule','tennisdetail','tanzdetail'].includes(pool) && /(fortepan|theatre stage building|antiken|antique|mittelalter|reagan|ronald|president of|wassersch[aä]den|gro[ßs]kinetik)/i.test(c.title)) return false;
+  if (pool === 'rettung' && /(medaille|orden|schutzverein|auszeichnung|wappen|rescue badge)/i.test(c.title)) return false;
   // Unfallsymbolbilder duerfen Unfall im Dateititel tragen; andere Pools nicht.
   if (pool !== 'unfall' && /(unfall|accident|crash)/i.test(c.title + ' ' + c.description)) return false;
   if (BAD_KATEGORIE.test(c.categories)) return false;
