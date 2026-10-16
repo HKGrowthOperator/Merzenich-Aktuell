@@ -45,7 +45,7 @@ for (const im of images) {
   if (!Array.isArray(im.tags) || !im.tags.length) error.push(`${im.id}: Tags fehlen`);
   if (!canonical(im)) error.push(`${im.id}: Lokale Originaldatei fehlt`);
   if (!licenceAllowed(im.license)) error.push(`${im.id}: Lizenz ist nicht ausreichend nachgewiesen (${im.license})`);
-  if (!/^https:\/\/commons\.wikimedia\.org\/wiki\/File/i.test(im.sourceUrl || '')) warn.push(`${im.id}: nicht bestätigter Commons-Link`);
+  if (!/^https:\/\/commons\.wikimedia\.org\/wiki\/File(?::|%3A)/i.test(im.sourceUrl || '')) warn.push(`${im.id}: nicht bestätigter Commons-Link`);
   if (seenIds.has(im.id)) error.push(`Doppelte ID: ${im.id}`);
   if (im.sourceTitle && seenSources.has(im.sourceTitle)) error.push(`Doppelte Quelle: ${im.sourceTitle}`);
   if (im.checksum && seenChecksums.has(im.checksum)) error.push(`Bilddatei-Dublette: ${im.checksum}`);
