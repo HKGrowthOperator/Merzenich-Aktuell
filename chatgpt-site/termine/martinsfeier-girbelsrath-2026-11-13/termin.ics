@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Martinsfeier und Lichterfest in Girbelsrath
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:martinsfeier-girbelsrath-2026-11-13@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261113T163000Z
+SUMMARY:Martinsfeier und Lichterfest in Girbelsrath
+DESCRIPTION:Martinsfeier um 17.30 Uhr in der Kirche\, danach Lichterfest mi
+ t Weckmannausgabe\, Kakao und Glühwein am Kindergarten.\nVeranstalter: Or
+ tschaft Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /martinsfeier-girbelsrath-2026-11-13/
+LOCATION:Kirche Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinsfeier-girb
+ elsrath-2026-11-13/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

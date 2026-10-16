@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Martinszug in Morschenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:martinszug-morschenich-2026-11-02@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261102T170000Z
+SUMMARY:Martinszug in Morschenich
+DESCRIPTION:Der Martinszug startet um 18 Uhr am Ludwig-Rixen-Platz und ende
+ t hinter dem Bürgewaldzentrum mit Weckmännern am Feuer.\nVeranstalter: O
+ rtschaft Morschenich\nhttps://merzenichaktuell.hk-growthoperator.de/termin
+ e/martinszug-morschenich-2026-11-02/
+LOCATION:Ludwig-Rixen-Platz
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-morsch
+ enich-2026-11-02/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

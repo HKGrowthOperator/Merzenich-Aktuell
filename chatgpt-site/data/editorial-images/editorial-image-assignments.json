@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T07:37:41.487Z",
+  "updatedAt": "2026-10-16T07:49:05.303Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -629,6 +629,60 @@
       "assignedAt": "2026-10-16T07:37:41.487Z",
       "articleId": "2026-10-13-tagebausee-hambach-planfeststellung-einwendungen-2026",
       "articleDate": "2026-10-13T09:45:00+02:00"
+    },
+    "/rathaus/feuerwehr-infoabend-gemeinderat-geraetehaus-2026/": {
+      "imageId": "web-blaulicht-13-f2236bb0",
+      "pool": "blaulicht",
+      "motiv": "feuerwehrhaus",
+      "regel": "rathaus.feuerwehr",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-feuerwehr-infoabend-gemeinderat-geraetehaus-2026",
+      "articleDate": "2026-10-16T10:40:00+02:00"
+    },
+    "/vereine/tv-girbelsrath-hallenbosseln-freitags-maarhalle-2026/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "vereine.hallensport",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-tv-girbelsrath-hallenbosseln-freitags-maarhalle-2026",
+      "articleDate": "2026-10-16T11:00:00+02:00"
+    },
+    "/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/": {
+      "imageId": "web-aktuell-07-d9238244",
+      "pool": "aktuell",
+      "motiv": "windmuehle-merzenich",
+      "regel": "vereine.wasserturm",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026",
+      "articleDate": "2026-10-16T11:10:00+02:00"
+    },
+    "/leben/buendelsammlung-gruenabfall-16-november-2026-anmeldung/": {
+      "imageId": "web-tipp-21-b2be2ca7",
+      "pool": "tipp",
+      "motiv": "herbstlaub",
+      "regel": "gemeinde.herbstlaub",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-buendelsammlung-gruenabfall-16-november-2026-anmeldung",
+      "articleDate": "2026-10-16T11:30:00+02:00"
+    },
+    "/sport/flutlicht-sportplatz-rhenania-girbelsrath-kek-westenergie/": {
+      "imageId": "web-sport-18-80141c60",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.platz",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-flutlicht-sportplatz-rhenania-girbelsrath-kek-westenergie",
+      "articleDate": "2026-10-16T11:40:00+02:00"
+    },
+    "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/": {
+      "imageId": "web-menschen-01-686bb6fb",
+      "pool": "menschen",
+      "motiv": "parkbank",
+      "regel": "leben.klima",
+      "assignedAt": "2026-10-16T07:49:05.303Z",
+      "articleId": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
+      "articleDate": "2026-10-16T11:50:00+02:00"
     }
   }
 }

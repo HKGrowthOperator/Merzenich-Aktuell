@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Adventmarkt im Heimatmuseum
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261128T130000Z
+SUMMARY:Adventmarkt im Heimatmuseum
+DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
+ änken und Blasmusik\; am Sonntag ab 11 Uhr geöffnet. Eintritt frei.\nVer
+ anstalter: Geschichts- und Heimatverein Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/adventmarkt-heimatmuseum-2026-11-28/
+LOCATION:Heimatmuseum Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
+ tmuseum-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

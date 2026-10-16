@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tag der Modelleisenbahn im Wasserturm
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261121T120000Z
+DTEND:20261121T160000Z
+SUMMARY:Tag der Modelleisenbahn im Wasserturm
+DESCRIPTION:Modellzüge aus Deutschland\, Frankreich und anderen Ländern i
+ m Betrieb\, Motto „Europäischer Bahnverkehr“.\nVeranstalter: Geschich
+ ts- und Heimatverein Merzenich und DPSG Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/tag-der-modelleisenbahn-wasserturm-2026-11-
+ 21/
+LOCATION:Wasserturm Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tag-der-modelleis
+ enbahn-wasserturm-2026-11-21/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

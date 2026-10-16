@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Martinszug in Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:martinszug-merzenich-2026-11-12@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261112T170000Z
+SUMMARY:Martinszug in Merzenich
+DESCRIPTION:Der Martinszug startet um 18 Uhr an der Kirche an der Schulstra
+ ße.\nVeranstalter: Ortschaft Merzenich\nhttps://merzenichaktuell.hk-growt
+ hoperator.de/termine/martinszug-merzenich-2026-11-12/
+LOCATION:Kirche St. Laurentius
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-merzen
+ ich-2026-11-12/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

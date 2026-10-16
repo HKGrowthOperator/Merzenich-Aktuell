@@ -412,6 +412,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/allerheiligen-gra
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:martinszug-morschenich-2026-11-02@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261102T170000Z
+SUMMARY:Martinszug in Morschenich
+DESCRIPTION:Der Martinszug startet um 18 Uhr am Ludwig-Rixen-Platz und ende
+ t hinter dem Bürgewaldzentrum mit Weckmännern am Feuer.\nVeranstalter: O
+ rtschaft Morschenich\nhttps://merzenichaktuell.hk-growthoperator.de/termin
+ e/martinszug-morschenich-2026-11-02/
+LOCATION:Ludwig-Rixen-Platz
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-morsch
+ enich-2026-11-02/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261104T160000Z
@@ -502,6 +516,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-p
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:martinszug-golzheim-2026-11-11@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261111T164500Z
+SUMMARY:Martinszug in Golzheim
+DESCRIPTION:Start nach der Messe gegen 17.45 Uhr an der Kirche\, danach zum
+  Feuer und weiter zur Schule und zur Kita.\nVeranstalter: Ortschaft Golzhe
+ im\nhttps://merzenichaktuell.hk-growthoperator.de/termine/martinszug-golzh
+ eim-2026-11-11/
+LOCATION:Kirche Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-golzhe
+ im-2026-11-11/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261112T170000Z
@@ -513,6 +541,33 @@ DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
 LOCATION:Ratssaal der Gemeinde Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/bauausschuss-sitz
  ung-2026-11-12/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:martinszug-merzenich-2026-11-12@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261112T170000Z
+SUMMARY:Martinszug in Merzenich
+DESCRIPTION:Der Martinszug startet um 18 Uhr an der Kirche an der Schulstra
+ ße.\nVeranstalter: Ortschaft Merzenich\nhttps://merzenichaktuell.hk-growt
+ hoperator.de/termine/martinszug-merzenich-2026-11-12/
+LOCATION:Kirche St. Laurentius
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-merzen
+ ich-2026-11-12/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:martinsfeier-girbelsrath-2026-11-13@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261113T163000Z
+SUMMARY:Martinsfeier und Lichterfest in Girbelsrath
+DESCRIPTION:Martinsfeier um 17.30 Uhr in der Kirche\, danach Lichterfest mi
+ t Weckmannausgabe\, Kakao und Glühwein am Kindergarten.\nVeranstalter: Or
+ tschaft Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /martinsfeier-girbelsrath-2026-11-13/
+LOCATION:Kirche Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinsfeier-girb
+ elsrath-2026-11-13/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -563,6 +618,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/taize-gottesdiens
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:pluriversum-gesamtschule-merzenich-2026-11-17@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261117T171500Z
+SUMMARY:„Pluriversum“: Impulse zu Klimaschutz und Zusammenhalt
+DESCRIPTION:Zweite Ausgabe des „Pluriversum“ mit entwicklungspolitische
+ n Impulsen\, Musik und Projektionen\; eine Referentin wird live zugeschalt
+ et.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growtho
+ perator.de/termine/pluriversum-gesamtschule-merzenich-2026-11-17/
+LOCATION:Aula der Gesamtschule
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
+ tschule-merzenich-2026-11-17/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261119T090000Z
@@ -593,6 +662,22 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/haupt-finanzaussc
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261121T120000Z
+DTEND:20261121T160000Z
+SUMMARY:Tag der Modelleisenbahn im Wasserturm
+DESCRIPTION:Modellzüge aus Deutschland\, Frankreich und anderen Ländern i
+ m Betrieb\, Motto „Europäischer Bahnverkehr“.\nVeranstalter: Geschich
+ ts- und Heimatverein Merzenich und DPSG Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/tag-der-modelleisenbahn-wasserturm-2026-11-
+ 21/
+LOCATION:Wasserturm Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tag-der-modelleis
+ enbahn-wasserturm-2026-11-21/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261126T170000Z
@@ -604,6 +689,36 @@ DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
 LOCATION:Ratssaal der Gemeinde Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/ausschuss-revital
  isierung-buergewald-2026-11-26/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20261128T130000Z
+SUMMARY:Adventmarkt im Heimatmuseum
+DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
+ änken und Blasmusik\; am Sonntag ab 11 Uhr geöffnet. Eintritt frei.\nVer
+ anstalter: Geschichts- und Heimatverein Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/adventmarkt-heimatmuseum-2026-11-28/
+LOCATION:Heimatmuseum Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
+ tmuseum-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kraetzchensitzung-weinberghalle-2027-01-23@merzenich-aktuell.de
+DTSTAMP:20261016T060000Z
+DTSTART:20270123T130000Z
+DTEND:20270123T173000Z
+SUMMARY:Krätzchensitzung der Gemeinde und der drei KGs
+DESCRIPTION:„Karneval der leisen Töne“ erstmals in der Weinberghalle\;
+  Karten zu 15 Euro über die Karnevalsgesellschaften.\nVeranstalter: Gemei
+ nde Merzenich mit KG Jonge vom Berg\, KG Mir hahle Poohl Golzheim und Karn
+ evals- und Bühnenfreunden Girbelsrath\nhttps://merzenichaktuell.hk-growth
+ operator.de/termine/kraetzchensitzung-weinberghalle-2027-01-23/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kraetzchensitzung
+ -weinberghalle-2027-01-23/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

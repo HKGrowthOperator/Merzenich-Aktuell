@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 15 Oct 2026 18:40:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 16 Oct 2026 09:50:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Sport</title><link>https://merzenichaktuell.hk-growthoperator.de/sport/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/sport/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Neues Flutlicht für den Sportplatz des FC Rhenania Girbelsrath</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/flutlicht-sportplatz-rhenania-girbelsrath-kek-westenergie/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/flutlicht-sportplatz-rhenania-girbelsrath-kek-westenergie/</guid>
+<pubDate>Fri, 16 Oct 2026 09:40:00 GMT</pubDate>
+<category>Sport</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die sparsamere Beleuchtung wurde über das Kommunale Energiekonzept von Westenergie finanziert und von der Gemeinde koordiniert. Der Trainingsbetrieb wird flexibler.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-18-80141c600e.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
 <item>
 <title>Golzheim verliert erstmals, Morschenich gewinnt 5:0</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/sport/fussball-golzheim-verliert-morschenich-gewinnt-5-0-2026-10/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die aktuelle Kreisliga-A-Tabelle führt den SC 1919 Merzenich nach einem Spiel mit drei Punkten und 5:2 Toren auf Platz zwei.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-13-fee5d2ea04.jpg" medium="image"><media:credit>BikeMike / Wikimedia Commons · CC0</media:credit><media:description>Fußballplatz</media:description></media:content>
-</item>
-<item>
-<title>Gold in Antalya: Luigi La Rocca vom BSC Merzenich ist Europameister</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/sport/bsc-merzenich-la-rocca-europameister/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/bsc-merzenich-la-rocca-europameister/</guid>
-<pubDate>Fri, 13 Mar 2026 13:43:00 GMT</pubDate>
-<category>Sport</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Mit der Nationalmannschaft gewann der Merzenicher Billardspieler im 5 Pin die Europameisterschaft. Im Finale wurde Dänemark 4:1 geschlagen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE</media:credit><media:description>Katholische Pfarrkirche St. Laurentius in Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>
