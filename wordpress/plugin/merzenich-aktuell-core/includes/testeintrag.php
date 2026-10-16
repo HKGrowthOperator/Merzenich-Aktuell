@@ -50,15 +50,27 @@ function ma_test_abgelaufen(string $ende, string $jetzt): bool {
     return $ende !== '' && strcmp($jetzt, $ende) >= 0;
 }
 
-/* Zeitraum beginnt mit der ersten Veröffentlichung, nicht mit dem Anlegen des Entwurfs. */
-add_action('transition_post_status', function (string $neu, string $alt, $post): void {
-    if ($neu !== 'publish' || $alt === 'publish' || !$post instanceof WP_Post || $post->post_type !== 'post') return;
-    if (!ma_ist_testeintrag($post) || (string) get_post_meta($post->ID, 'ma_test_ende', true) !== '') return;
+/**
+ * Zeitraum beginnt mit der ersten Veröffentlichung, nicht mit dem Anlegen des
+ * Entwurfs. Einmal gesetzt, bleibt das Ende: erneutes Veröffentlichen
+ * verlängert nicht.
+ */
+function ma_test_starten(int $id): bool {
+    if (get_post_status($id) !== 'publish' || !ma_ist_testeintrag($id) || (string) get_post_meta($id, 'ma_test_ende', true) !== '') return false;
     $start = (string) current_time('mysql');
-    update_post_meta($post->ID, 'ma_test_start', $start);
-    update_post_meta($post->ID, 'ma_test_ende', ma_test_ende_berechnen($start));
-    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post->ID, 'Testzeitraum begonnen', MA_TEST_TAGE . ' Tage, kostenfrei, endet am ' . mysql2date('d.m.Y', ma_test_ende_berechnen($start)) . ' von selbst.');
-}, 10, 3);
+    update_post_meta($id, 'ma_test_start', $start);
+    update_post_meta($id, 'ma_test_ende', ma_test_ende_berechnen($start));
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Testzeitraum begonnen', MA_TEST_TAGE . ' Tage, kostenfrei, endet am ' . mysql2date('d.m.Y', ma_test_ende_berechnen($start)) . ' von selbst.');
+    return true;
+}
+/* Nach dem Speichern der Felder (save_post): Der Haken „Kostenfreier Testeintrag“
+   kann im selben Speichern wie „Veröffentlichen“ gesetzt werden, im Block-Editor
+   kommt der Kasten sogar erst in einer zweiten Anfrage. transition_post_status
+   liefe davor und sähe den Haken noch nicht. */
+add_action('wp_after_insert_post', function (int $id, $post): void {
+    if (!$post instanceof WP_Post || $post->post_type !== 'post') return;
+    ma_test_starten($id);
+}, 10, 2);
 
 /* Täglich: abgelaufene Testeinträge archivieren (nicht mehr öffentlich). */
 add_action('init', function (): void {

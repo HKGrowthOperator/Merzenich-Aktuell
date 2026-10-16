@@ -32,9 +32,9 @@ function ma_firmen_beitrag_html(array $b): string {
     return $h;
 }
 
-/** Vorhandener Inhalt mit diesem Slug (jeder Status außer automatischem Entwurf), sonst 0. */
+/** Vorhandener Inhalt mit diesem Slug in jedem Status (auch In Prüfung, Abgelehnt, Archiv, Papierkorb), sonst 0. */
 function ma_firmen_vorhanden(string $typ, string $slug): int {
-    $q = get_posts(['post_type' => $typ, 'name' => $slug, 'post_status' => ['publish', 'draft', 'pending', 'future', 'private', 'trash', defined('MA_STATUS_ARCHIV') ? MA_STATUS_ARCHIV : 'draft'], 'posts_per_page' => 1, 'fields' => 'ids']);
+    $q = get_posts(['post_type' => $typ, 'name' => $slug, 'post_status' => array_values(array_diff(get_post_stati(), ['auto-draft', 'inherit'])), 'posts_per_page' => 1, 'fields' => 'ids']);
     if ($q) return (int) $q[0];
     // Im Papierkorb trägt der Slug den Zusatz __trashed.
     $q = get_posts(['post_type' => $typ, 'name' => $slug . '__trashed', 'post_status' => 'trash', 'posts_per_page' => 1, 'fields' => 'ids']);
@@ -52,7 +52,7 @@ function ma_firmen_entwuerfe_anlegen(): array {
         $pid = ma_firmen_vorhanden('ma_business', (string) $p['slug']);
         if (!$pid) {
             $logo = (array) ($p['logo'] ?? []);
-            $pid = (int) wp_insert_post(wp_slash([
+            $r = wp_insert_post(wp_slash([
                 'post_type' => 'ma_business', 'post_status' => 'draft', 'post_title' => (string) $p['titel'], 'post_name' => (string) $p['slug'],
                 'post_excerpt' => (string) ($p['kurz'] ?? ''), 'post_content' => '<p>' . esc_html((string) ($p['text'] ?? '')) . '</p>',
                 'meta_input' => array_filter([
@@ -65,7 +65,8 @@ function ma_firmen_entwuerfe_anlegen(): array {
                     'ma_business_karte_knopf' => (string) ($p['karte']['knopf'] ?? ''), 'ma_business_karte_ziel' => (string) ($p['karte']['ziel'] ?? ''),
                 ], fn($v) => $v !== ''),
             ]), true);
-            if (is_wp_error($pid) || !$pid) { $log[] = $p['titel'] . ': Profil nicht angelegt' . (is_wp_error($pid) ? ' (' . $pid->get_error_message() . ')' : ''); continue; }
+            if (is_wp_error($r) || !$r) { $log[] = $p['titel'] . ': Profil nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : ''); continue; }
+            $pid = (int) $r;
             $log[] = $p['titel'] . ': Profil als Entwurf angelegt';
             if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($pid, 'Entwurf angelegt', 'Aus data/firmen-entwuerfe.json (Stand ' . $stand . '). Veröffentlichung erst mit Einwilligung des Unternehmens; Logo-Rechte offen.');
         } else $log[] = $p['titel'] . ': Profil schon vorhanden (' . get_post_status($pid) . ')';
@@ -73,7 +74,7 @@ function ma_firmen_entwuerfe_anlegen(): array {
         if (empty($b['slug']) || empty($b['titel'])) continue;
         if ($bid = ma_firmen_vorhanden('post', (string) $b['slug'])) { $log[] = $p['titel'] . ': Beitrag schon vorhanden (' . get_post_status($bid) . ')'; continue; }
         $kat = get_category_by_slug('wirtschaft');
-        $bid = (int) wp_insert_post(wp_slash([
+        $r = wp_insert_post(wp_slash([
             'post_type' => 'post', 'post_status' => 'draft', 'post_title' => (string) $b['titel'], 'post_name' => (string) $b['slug'],
             'post_excerpt' => (string) ($b['anriss'] ?? ''), 'post_content' => ma_firmen_beitrag_html($b),
             'post_category' => $kat ? [(int) $kat->term_id] : [],
@@ -84,7 +85,8 @@ function ma_firmen_entwuerfe_anlegen(): array {
                 'ma_startseite_freigabe' => 'nein',
             ],
         ]), true);
-        if (is_wp_error($bid) || !$bid) { $log[] = $p['titel'] . ': Beitrag nicht angelegt'; continue; }
+        if (is_wp_error($r) || !$r) { $log[] = $p['titel'] . ': Beitrag nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : ''); continue; }
+        $bid = (int) $r;
         if (!empty($p['ortsteil']) && taxonomy_exists('ma_location')) wp_set_object_terms($bid, (string) $p['ortsteil'], 'ma_location', false);
         $log[] = $p['titel'] . ': Beitrag als Entwurf angelegt (kostenfreier Testeintrag)';
         if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Entwurf angelegt', 'Werbebeitrag als kostenfreier Testeintrag aus data/firmen-entwuerfe.json. Erst veröffentlichen, wenn das Unternehmen Text und Schaltung bestätigt hat.');

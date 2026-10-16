@@ -1658,10 +1658,12 @@ html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
 .feed-row+.endlos .endlos-ende{border-top:0;padding-top:0}
 /* Bildhinweis („Symbolbild“, „Ortsansicht“) auch in Zeilenlisten zeigen; v19.css blendete ihn aus. */
 .feed-row .media .badge{display:block;left:6px;bottom:6px;font-size:10px;padding:2px 6px}
-/* Schmale Karten und Handy: „Merzenich · Ortsteil“ bleibt zusammen, die Rubrik rückt als Ganzes in die nächste Zeile (brach vorher nach dem Punkt um). */
+/* Schmale Karten und Handy: „Merzenich · Ortsteil“ bleibt zusammen, solange es in die Spalte passt; die Rubrik rückt als Ganzes in die nächste Zeile (brach vorher nach dem Punkt um). */
 .marke{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px}
-.marke .marke-teil{margin-left:-10px;white-space:pre}
+.marke>.marke-ort,.marke>.marke-teil{display:contents}
 .marke .marke-rubrik,body.home .marke .marke-rubrik,.marke .gesponsert{margin-left:0}
+/* Bühne ab 760 px: Der Ort ist dort ein roter Kasten (eigenes Element), der Ortsteil folgt ohne Lücke. */
+@media(min-width:760px){body.home .buehne .front-lead .marke{column-gap:0}body.home .buehne .front-lead .marke .marke-rubrik{margin-left:10px}}
 /* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
 @media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 

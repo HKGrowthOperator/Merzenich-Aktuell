@@ -24,7 +24,8 @@ function add_action($h, $f, $p = 10, $a = 1) { $GLOBALS['hooks'][$h][] = $f; }
 function add_meta_box(...$a) {}
 function esc_html($s) { return htmlspecialchars((string)$s, ENT_QUOTES); }
 function get_the_ID() { return 0; }
-function get_post_type($id = 0) { return 'post'; }
+function get_post_type($id = 0) { return $GLOBALS['typ'][$id] ?? 'post'; }
+function get_post_status($id = 0) { return $GLOBALS['status'][$id] ?? 'draft'; }
 function current_time($f) { return date($f === 'Y-m-d H:i:s' ? 'Y-m-d H:i:s' : 'H:i:s'); }
 function get_current_screen() { return null; }
 function plugins_url(...$a) { return ''; }
@@ -92,6 +93,26 @@ echo "\nKein Grund ohne Veroeffentlichungsabsicht\n";
 $GLOBALS['meta'][9] = [];
 ma_gate_record_reason(['post_type'=>'post','post_status'=>'draft'], ['ID'=>9,'post_status'=>'draft']);
 pruefe('bewusst gespeicherter Entwurf meldet nichts', get_post_meta(9, MA_GATE_NOTICE_META, true), '');
+
+echo "\nWerbebeitrag eines Unternehmens: Einwilligung am Profil (16.10.2026)\n";
+$GLOBALS['typ'][50] = 'ma_business';
+$GLOBALS['meta'][20] = ['ma_source_verified'=>'1','ma_date_verified'=>'1','ma_place_verified'=>'1','ma_human_reviewed'=>'1','ma_gesponsert'=>'1','ma_business_id'=>'50'];
+$GLOBALS['meta'][50] = [];
+$gate = fn(int $id) => ma_gate_einwilligung(['post_type'=>'post','post_status'=>'publish'], ['ID'=>$id,'post_status'=>'publish'])['post_status'];
+pruefe('ohne Einwilligung bleibt der Beitrag Entwurf', $gate(20), 'draft');
+pruefe('Grund: Einwilligung des Unternehmens', ma_gate_missing(20, 'post'), ['ma_business_consent' => 'Einwilligung des Unternehmens (Profil)']);
+ma_gate_record_reason(['post_type'=>'post','post_status'=>'draft'], ['ID'=>20,'post_status'=>'publish']);
+pruefe('der Grund steht im Editor', get_post_meta(20, MA_GATE_NOTICE_META, true), 'Einwilligung des Unternehmens (Profil)');
+$GLOBALS['meta'][50]['ma_business_consent'] = '1';
+pruefe('mit Einwilligung darf er veröffentlicht werden', $gate(20), 'publish');
+$GLOBALS['meta'][50] = [];
+$GLOBALS['status'][20] = 'publish';
+pruefe('schon veröffentlicht: Bearbeiten zieht ihn nicht zurück', $gate(20), 'publish');
+$GLOBALS['status'][20] = 'draft';
+$GLOBALS['meta'][21] = ['ma_business_id'=>'50'];
+pruefe('nicht gesponsert (Bericht über die Firma): keine Einwilligung nötig', $gate(21), 'publish');
+$GLOBALS['meta'][22] = ['ma_gesponsert'=>'1'];
+pruefe('gesponsert ohne Profil: keine Einwilligung nötig', $gate(22), 'publish');
 
 echo "\nZwischenspeicherung: erlaubte Felder\n";
 pruefe('Freigabe-Haken NICHT zwischenspeicherbar', in_array('ma_release_confirmed', ma_autosave_allowed_keys(), true), false);

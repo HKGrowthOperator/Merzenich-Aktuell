@@ -90,7 +90,7 @@ function ma_business_render_meta_box(WP_Post $post): void {
             foreach (ma_business_ortsteile() as $slug => $name) echo '<option value="'.esc_attr($slug).'" '.selected($value, $slug, false).'>'.esc_html($name).'</option>';
             echo '</select>';
         } elseif ($type === 'logorechte') {
-            echo '<select id="'.esc_attr($key).'" name="'.esc_attr($key).'"><option value="">ohne Angabe</option>';
+            echo '<select id="'.esc_attr($key).'" name="'.esc_attr($key).'"><option value="">ohne Angabe: Logo nur mit „Bildrechte geprüft“</option>';
             foreach (['offen' => 'offen: Logo wird nicht gezeigt', 'geklaert' => 'geklärt: schriftliche Freigabe des Unternehmens liegt vor'] as $k => $name) echo '<option value="'.esc_attr($k).'" '.selected($value, $k, false).'>'.esc_html($name).'</option>';
             echo '</select><p class="description">Das Logo als Beitragsbild hochladen. Bei „offen“ zeigt die Seite das Kürzel der Firma.</p>';
         } else {

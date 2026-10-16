@@ -81,5 +81,5 @@ add_action('admin_notices', function (): void {
         return;
     }
     printf('<div class="notice notice-success is-dismissible"><p>%d Beiträge freigegeben und veröffentlicht. Die Startseite ist eine eigene Entscheidung: „Startseite: freigeben“ in den Mehrfachaktionen oder Box „Startseite“ im Beitrag.</p></div>', $ok);
-    if ($gesperrt) printf('<div class="notice notice-warning is-dismissible"><p>%d Beiträge sind Entwurf geblieben: Beitragsbild ohne bestätigte Bildrechte. Bildrechte prüfen und mit „Bildrechte bestätigen“ freigeben, dann erneut veröffentlichen.</p></div>', $gesperrt);
+    if ($gesperrt) printf('<div class="notice notice-warning is-dismissible"><p>%d Beiträge sind Entwurf geblieben: Beitragsbild ohne bestätigte Bildrechte oder Werbebeitrag ohne Einwilligung des Unternehmens. Bildrechte mit „Bildrechte bestätigen“ freigeben bzw. die Einwilligung am Unternehmensprofil setzen, dann erneut veröffentlichen.</p></div>', $gesperrt);
 });

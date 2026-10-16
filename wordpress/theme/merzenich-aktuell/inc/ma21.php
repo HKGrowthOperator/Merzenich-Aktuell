@@ -250,6 +250,8 @@ function ma21_cache(int $sekunden): void {
 add_action('send_headers', function (): void {
     if (is_admin() || wp_doing_ajax() || wp_doing_cron() || (defined('REST_REQUEST') && REST_REQUEST)) return;
     ma21_cache(0);
+    // Gespeicherte Kommentarangaben füllen das Formular vor: solche Seiten nie in einem gemeinsamen Zwischenspeicher.
+    if (defined('COOKIEHASH') && isset($_COOKIE['comment_author_' . COOKIEHASH]) && !headers_sent()) header('Cache-Control: private, no-store, max-age=0');
 });
 
 /**
@@ -1281,7 +1283,9 @@ function ma21_endlos_attr(string $seite): string {
     $n = ma21_endlos_naechste();
     // Einseitige Liste: leeres Attribut, damit der Endhinweis steht. Auf der letzten von
     // mehreren Seiten (/page/N/) bleibt das Blättern zurück sichtbar, dort kein Attribut.
-    if ($n === '' && (int) get_query_var('paged') > 1) return '';
+    // Leere Liste (keine Treffer): kein Endhinweis unter „Keine Treffer“.
+    global $wp_query;
+    if ($n === '' && ((int) get_query_var('paged') > 1 || (int) ($wp_query->max_num_pages ?? 0) < 1)) return '';
     return ' data-endlos-naechste="' . esc_attr($n) . '" data-endlos-art="' . (ma21_raster_seite($seite) ? 'raster' : 'reihen') . '"';
 }
 

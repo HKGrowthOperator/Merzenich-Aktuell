@@ -153,6 +153,9 @@ $quelle = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell
 pruefe('Kern-Ausgabe wp_robots entfernt, eigene bleibt', str_contains($quelle, "remove_action('wp_head', 'wp_robots', 1);") && substr_count($quelle, '<meta name="robots"') === 1, true);
 $kommentare = file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/comments.php');
 pruefe('Kommentarformular: Speichern-Hinweis ohne „Website“', str_contains($kommentare, "'cookies' =>") && !str_contains($kommentare, 'Website'), true);
+pruefe('Kommentarformular: gespeicherte Angaben füllen Name und E-Mail vor', str_contains($kommentare, "wp_get_current_commenter()") && str_contains($kommentare, 'esc_attr($ma_c[\'comment_author_email\'])'), true);
+$ma21 = file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php');
+pruefe('Seiten mit Kommentar-Cookie: private, no-store', str_contains($ma21, "Cache-Control: private, no-store"), true);
 pruefe('Kommentarformular: Haken bleibt gesetzt, wenn schon gespeichert', str_contains($kommentare, "comment_author_email_' . COOKIEHASH") && str_contains($kommentare, "' checked'"), true);
 $seo = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seo.php');
 pruefe('Fenstertitel der Suche wie der Seitenkopf (leer: „Suche“)', str_contains($seo, "get_search_query() === '' ? 'Suche' : 'Suche: „'"), true);

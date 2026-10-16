@@ -48,8 +48,32 @@ function ma_gate_missing(int $post_id, string $post_type): array {
         $stored    = get_post_meta($post_id, 'ma_image_rights_verified', true) === '1';
         if (!$submitted && !$stored) $fehlt['ma_image_rights_verified'] = 'Bildrechte geprüft';
     }
+    if ($post_type === 'post' && ma_gate_einwilligung_fehlt($post_id)) $fehlt['ma_business_consent'] = 'Einwilligung des Unternehmens (Profil)';
     return $fehlt;
 }
+
+/**
+ * Werbebeitrag eines Unternehmens (gesponsert, mit Unternehmensprofil): erst
+ * veröffentlichen, wenn am Profil die Einwilligung steht (16.10.2026, Firmen-
+ * Entwürfe). Sonst ginge eine Anzeige im Namen eines Betriebs online, der nicht
+ * zugestimmt hat, etwa über die Sammelfreigabe. Schon Veröffentlichtes bleibt
+ * beim Bearbeiten unberührt.
+ */
+function ma_gate_einwilligung_fehlt(int $post_id): bool {
+    if (!$post_id || get_post_status($post_id) === 'publish') return false;
+    $gesponsert = isset($_POST['ma_gesponsert_nonce']) ? !empty($_POST['ma_gesponsert']) : (string) get_post_meta($post_id, 'ma_gesponsert', true) === '1';
+    if (!$gesponsert) return false;
+    $profil = isset($_POST['ma_business_id']) ? (int) $_POST['ma_business_id'] : (int) get_post_meta($post_id, 'ma_business_id', true);
+    if ($profil <= 0 || get_post_type($profil) !== 'ma_business') return false;
+    return (string) get_post_meta($profil, 'ma_business_consent', true) !== '1';
+}
+function ma_gate_einwilligung(array $data, array $postarr): array {
+    if (($data['post_type'] ?? '') !== 'post' || !in_array(($data['post_status'] ?? ''), ['publish', 'future'], true)) return $data;
+    if (ma_gate_einwilligung_fehlt((int) ($postarr['ID'] ?? 0))) $data['post_status'] = 'draft';
+    return $data;
+}
+// Prioritaet 21: nach ma_publication_gate (20), vor ma_gate_record_reason (30).
+add_filter('wp_insert_post_data', 'ma_gate_einwilligung', 21, 2);
 
 /**
  * Grund festhalten, sobald eine Sperre greift. Laeuft nach beiden Gates, weil
@@ -103,6 +127,7 @@ function ma_gate_status_box(): void {
     if ($typ === 'post' && has_post_thumbnail($post_id)) {
         $pflicht['ma_image_rights_verified'] = 'Bildrechte geprüft';
     }
+    $einwilligungFehlt = $typ === 'post' && ma_gate_einwilligung_fehlt($post_id);
 
     $offen = 0;
     echo '<ul class="ma-gate-list">';
@@ -116,6 +141,8 @@ function ma_gate_status_box(): void {
             esc_html($label)
         );
     }
+    // Die Einwilligung steht am Unternehmensprofil, nicht am Beitrag.
+    if ($einwilligungFehlt) { $offen++; echo '<li class="ma-gate-offen"><span aria-hidden="true">○</span> ' . esc_html('Einwilligung des Unternehmens (am Profil setzen)') . '</li>'; }
     echo '</ul>';
 
     echo $offen === 0

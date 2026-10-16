@@ -199,8 +199,11 @@ function ma21_firma_ansicht($q): ?array {
                 'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] : null,
             'zeit' => ma21_zeit_text($b, true, ', '), 'iso' => (string) get_post_time('c', false, $b), 'muster' => false];
     }
-    // Logo (Beitragsbild) nur mit geklärten Rechten; „offen“ zeigt das Kürzel (16.10.2026).
-    $logo = (string) get_post_meta($q->ID, 'ma_business_logo_rechte', true) === 'offen' ? '' : (string) (get_the_post_thumbnail_url($q, 'medium') ?: '');
+    // Logo (Beitragsbild) nur mit geklärten Rechten, sonst das Kürzel (16.10.2026). Ohne Angabe
+    // (ältere Profile) zählt wie auf der Profilseite das Häkchen „Bildrechte geprüft“.
+    $rechte = (string) get_post_meta($q->ID, 'ma_business_logo_rechte', true);
+    $logoOk = $rechte === 'geklaert' || ($rechte === '' && (string) get_post_meta($q->ID, 'ma_image_rights_verified', true) === '1');
+    $logo = $logoOk ? (string) (get_the_post_thumbnail_url($q, 'medium') ?: '') : '';
     $text = trim(wp_strip_all_tags($q->post_excerpt !== '' ? $q->post_excerpt : wp_trim_words(wp_strip_all_tags($q->post_content), 40, ' …')));
     return ['slug' => $q->post_name, 'name' => $name, 'branche' => (string) ($p['branche'] ?? ''), 'ort' => $ort, 'zeile' => trim(($p['branche'] ?? '') . ' · ' . $ort, ' ·'),
         'url' => $home . 'unternehmen/' . $q->post_name . '/', 'muster' => false, 'kuerzel' => ma21_firma_kuerzel($name), 'farbe' => ma21_firma_farbe($name), 'logo' => $logo, 'text' => $text,

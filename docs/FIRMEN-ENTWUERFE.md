@@ -32,7 +32,7 @@ Auftrag des Betreibers vom 16.10.2026, Entscheidung „Entwurf bis Zusage“. Je
 
 ## Freigeben, wenn ein Betrieb zusagt
 
-1. **Profil:** Haken „Einwilligung“ setzen, dann Veröffentlichen. Ohne Haken bleibt es Entwurf, das sichert die Profil-Sperre.
+1. **Profil:** Haken „Einwilligung“ setzen, dann Veröffentlichen. Ohne Haken bleibt es Entwurf, das sichert die Profil-Sperre. Auch der Werbebeitrag lässt sich erst veröffentlichen, wenn am Profil die Einwilligung steht, sonst bleibt er Entwurf (auch bei der Sammelfreigabe).
 2. **Werbebeitrag:** Text mit dem Betrieb abstimmen. Dann im Kasten „Kennzeichnung“ prüfen, dass „Gesponsert“ und „Kostenfreier Testeintrag“ gesetzt sind. Danach die Prüfhäkchen setzen und veröffentlichen, wie bei jeder Meldung.
 3. **Testzeitraum:**
    - Er beginnt mit dieser ersten Veröffentlichung, nicht mit dem Anlegen.

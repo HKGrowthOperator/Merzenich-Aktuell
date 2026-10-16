@@ -48,7 +48,22 @@
   - Darunter folgen die Beispielfirmen, solange sie aktiv sind, weiter als Beispielfirma gekennzeichnet.
 - **Bleibt:** Startseite und Bannerplätze werden nicht belegt (`ma_startseite_freigabe = nein`); die Banner-Texte stehen nur in der Datei.
 
-**Tests:** neu `testeintrag-test.php` (24 Prüfungen) und `firmen-entwuerfe-test.php` (36); erweitert `endlos-test.php`, `seo-test.php`, `termine-test.php`. Lokal im WordPress bei 1440, 820 und 390 px nachgestellt, 0 Konsolenfehler.
+**Code-Prüfung** (drei Prüfer, jeder Befund gegengeprüft, 13 bestätigt, alle eingearbeitet):
+- **Einwilligung:** Ein Werbebeitrag mit verknüpftem Unternehmensprofil bleibt Entwurf, solange am Profil die Einwilligung fehlt. Das gilt auch für die Sammelfreigabe; die Freigabeliste nennt den Grund (`ma_gate_einwilligung`, `freigabe.php`). Schon veröffentlichte Beiträge bleiben beim Bearbeiten unberührt.
+- **Testzeitraum:** Er beginnt nach dem Speichern der Felder (`wp_after_insert_post`). Damit greift der Haken auch, wenn er im selben Schritt wie „Veröffentlichen“ oder nachträglich gesetzt wird.
+- **Firmen-Entwürfe:**
+  - Sie erkennen Inhalte in jedem Status (auch In Prüfung, Änderung, Abgelehnt).
+  - Ein Fehler beim Anlegen hängt nichts an fremde Inhalte.
+- **Logo:** Es erscheint nur bei „geklärt“. Ohne Angabe gilt wie auf der Profilseite „Bildrechte geprüft“.
+- **Listen:**
+  - Leere Listen und Suchen ohne Treffer zeigen keinen Endhinweis.
+  - Die Ortsmarke bricht erst um, wenn „Merzenich · Ortsteil“ nicht in die Spalte passt, und nie nach links aus der Spalte.
+- **Ressortleiste:**
+  - Am Handy rückt sie nach dem Laden der Schrift erneut zum aktuellen Ressort.
+  - Bei 1181 bis 1339 px hat sie auch mit Scrollleiste und im kompakten Kopf Platz für „Menschen“.
+- **Kommentarformular:** Gespeicherte Angaben füllen Name und E-Mail vor. Solche Seiten gehen mit `Cache-Control: private, no-store` raus.
+
+**Tests:** neu `testeintrag-test.php` und `firmen-entwuerfe-test.php`; erweitert `freigabe-test.php`, `endlos-test.php`, `seo-test.php`, `termine-test.php`. Lokal im WordPress bei 320 bis 1440 px nachgestellt, 0 Konsolenfehler.
 
 **Nicht in diesem Stand:**
 - Karten von „Weitere Meldungen“ auf der Startseite im Stil der Blöcke darüber (größerer Umbau).

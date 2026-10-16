@@ -92,8 +92,14 @@
   /* ---------- Sticky-Navigation: aktuelle Rubrik in Sicht scrollen ---------- */
   // Nur die Leiste selbst verschieben (scrollLeft), nie die Seite: scrollIntoView zog Anker
   // und Zurück-Position mit (deshalb war es aus). Am Handy stand „Menschen“ sonst außerhalb.
+  // Noch einmal nach dem Laden: editorial-audit.css (über kopf.js) und die Schrift ändern die Breiten danach.
   var cur = document.querySelector('.mainnav .navscroll>a[aria-current]');
-  if (cur) { var leiste = cur.parentNode; if (leiste.scrollWidth > leiste.clientWidth) leiste.scrollLeft += cur.getBoundingClientRect().left - leiste.getBoundingClientRect().left - 16; }
+  function ressortZeigen() { var leiste = cur.parentNode; if (leiste.scrollWidth > leiste.clientWidth) leiste.scrollLeft += cur.getBoundingClientRect().left - leiste.getBoundingClientRect().left - 16; }
+  if (cur) {
+    ressortZeigen();
+    window.addEventListener('load', ressortZeigen, { once: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ressortZeigen);
+  }
 
   /* ---------- Teilen ---------- */
   $$('[data-share]').forEach(function (btn) {

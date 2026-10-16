@@ -16,12 +16,14 @@ function wp_slash($v) { return $v; }
 function wp_kses($s, $erlaubt) { return strip_tags((string) $s, '<' . implode('><', array_keys($erlaubt)) . '>'); }
 function esc_url($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
 function esc_html($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
-function is_wp_error($x) { return false; }
+class WP_Error { public function get_error_message() { return 'Datenbankfehler'; } }
+function is_wp_error($x) { return $x instanceof WP_Error; }
+function get_post_stati() { return ['publish', 'draft', 'pending', 'future', 'private', 'trash', 'auto-draft', 'inherit', 'ma_archiv', 'ma_in_pruefung', 'ma_aenderung', 'ma_abgelehnt']; }
 function get_category_by_slug($s) { return $s === 'wirtschaft' ? (object) ['term_id' => 7] : false; }
 function taxonomy_exists($t) { return true; }
 function wp_set_object_terms($id, $t, $tax, $append) { $GLOBALS['terms'][$id][$tax] = $t; }
 function get_post_status($id) { return $GLOBALS['posts'][$id]['post_status'] ?? false; }
-function wp_insert_post($a, $err = false) { $id = $GLOBALS['naechste']++; $GLOBALS['posts'][$id] = $a; return $id; }
+function wp_insert_post($a, $err = false) { if (!empty($GLOBALS['fehler_beim_anlegen'])) return new WP_Error(); $id = $GLOBALS['naechste']++; $GLOBALS['posts'][$id] = $a; return $id; }
 function get_posts($q) {
     $treffer = array_keys(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === $q['post_type'] && $p['post_name'] === $q['name'] && in_array($p['post_status'], (array) $q['post_status'], true)));
     return array_slice($treffer, 0, 1);
@@ -80,6 +82,18 @@ $GLOBALS['posts'][101]['post_status'] = 'trash';
 $GLOBALS['posts'][101]['post_name'] .= '__trashed';
 ma_firmen_entwuerfe_anlegen();
 pruefe('Beitrag im Papierkorb wird nicht neu angelegt', count($GLOBALS['posts']), $vorher);
+foreach (['ma_in_pruefung', 'ma_aenderung', 'ma_abgelehnt', 'ma_archiv'] as $st) {
+    $GLOBALS['posts'][103]['post_status'] = $st; $GLOBALS['posts'][100]['post_status'] = $st;
+    ma_firmen_entwuerfe_anlegen();
+    pruefe("Status $st: nichts doppelt", count($GLOBALS['posts']), $vorher);
+}
+
+echo "Fehler beim Anlegen\n";
+$GLOBALS['posts'] = []; $GLOBALS['terms'] = []; $GLOBALS['fehler_beim_anlegen'] = true;
+$log3 = ma_firmen_entwuerfe_anlegen();
+pruefe('nichts angelegt, nichts an fremde Inhalte gehängt', [count($GLOBALS['posts']), count($GLOBALS['terms'])], [0, 0]);
+pruefe('Rückmeldung nennt den Fehler', str_contains($log3[0] ?? '', 'nicht angelegt (Datenbankfehler)'), true);
+$GLOBALS['fehler_beim_anlegen'] = false;
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);
