@@ -12,7 +12,8 @@
     const tag = Math.floor(Date.parse(heute + 'T00:00:00Z') / 864e5);
     const f = (d.eintraege || []).find((e) => e.datum === heute) || d.reihe[tag % d.reihe.length];
     const img = document.getElementById('foto-des-tages-bild');
-    if (img) { img.src = f.src; img.alt = f.alt; }
+    // Neues Foto: der Schlüssel des alten (data-foto, für endlos.js) gilt nicht mehr.
+    if (img) { img.src = f.src; img.alt = f.alt; img.removeAttribute('data-foto'); }
     const setze = (sel, t) => { const el = sektion.querySelector(sel); if (el) el.textContent = t; };
     setze('[data-ansicht-ort]', f.ort || 'Gemeinde Merzenich');
     setze('[data-ansicht-text]', f.alt + '.');

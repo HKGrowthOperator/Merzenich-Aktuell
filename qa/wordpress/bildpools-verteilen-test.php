@@ -37,7 +37,9 @@ function get_posts($q) {
         if (isset($q['date_query']) && $x['post']['post_date'] < '2026-09-02') continue;
         // Kommende und laufende Termine (Ende >= jetzt oder Beginn >= heute), wie in ma_bildpool_sichtbar().
         if (($q['meta_query']['relation'] ?? '') === 'OR' && !((string) ($GLOBALS['meta'][$id]['ma_event_end'] ?? '') >= '2026-10-17 12:00:00' || (string) ($GLOBALS['meta'][$id]['ma_event_start'] ?? '') >= '2026-10-17')) continue;
-        if (isset($q['meta_query'][0]['key']) && $q['meta_query'][0]['key'] === '_ma_bildpool_auto' && !isset($GLOBALS['meta'][$id]['_ma_bildpool_auto'])) continue;
+        $passt = true;
+        foreach ((array) ($q['meta_query'] ?? []) as $m) if (is_array($m) && in_array($m['compare'] ?? '', ['EXISTS', 'NOT EXISTS'], true) && isset($GLOBALS['meta'][$id][$m['key']]) !== ($m['compare'] === 'EXISTS')) $passt = false;
+        if (!$passt) continue;
         if (isset($q['post__in']) && !in_array($id, $q['post__in'], true)) continue;
         $ids[] = $id;
     }
@@ -112,6 +114,30 @@ $GLOBALS['meta'][76]['_ma_bildpool_auto_bild'] = '103';
 ma_bildpool_bild_setzen(get_post(76), 104, 'kirchedetail');
 pruefe('Neu verteilt: Merkmal bleibt, gemerkt ist das neue Bild', [$GLOBALS['meta'][76]['_ma_bildpool_auto'] ?? '', $GLOBALS['meta'][76]['_ma_bildpool_auto_bild'] ?? ''], ['kirchedetail', '104']);
 
+echo "Merkmale von vor 1.29.0\n";
+$GLOBALS['inhalte'] = []; $GLOBALS['meta'] = [];
+termin(85, 'Messe 85', '2026-10-25T10:00', 101); termin(86, 'Messe 86', '2026-10-26T10:00', 900);
+pruefe('Nachtragen: Poolfoto wird gemerkt, Redaktionsfoto verliert das Merkmal', [ma_bildpool_merkmale_nachtragen(), $GLOBALS['meta'][85]['_ma_bildpool_auto_bild'] ?? '', isset($GLOBALS['meta'][86]['_ma_bildpool_auto'])], [1, '101', false]);
+termin(87, 'Messe 87', '2026-10-27T10:00', 101);
+set_post_thumbnail(87, 102);
+pruefe('Redaktion wählt selbst ein anderes Poolfoto: Merkmal fällt weg', isset($GLOBALS['meta'][87]['_ma_bildpool_auto']), false);
+
+echo "Symbolbild vor dem eigentlichen Bild (Abgleich, Block-Editor)\n";
+$GLOBALS['inhalte'][88] = ['post' => ['post_type' => 'post', 'post_title' => 'Meldung mit Foto', 'post_date' => '2026-10-17 09:00:00']];
+$GLOBALS['meta'][88] = ['ma_image_credit' => 'Gemeinde Merzenich', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0'];
+ma_bildpool_nutzung(true);
+ma_bildpool_symbolbild_setzen(get_post(88));
+pruefe('Erst Poolfoto: Typ Symbolbild, Rechte geprüft', [$GLOBALS['meta'][88]['ma_image_type'], $GLOBALS['meta'][88]['ma_image_rights_verified']], ['symbol', '1']);
+set_post_thumbnail(88, 950);
+pruefe('Dann das eigentliche Foto: Nachweis, Typ und Rechtestand wie vorher', [$GLOBALS['meta'][88]['ma_image_credit'] ?? '', $GLOBALS['meta'][88]['ma_image_type'] ?? '', $GLOBALS['meta'][88]['ma_image_rights_verified'] ?? '', isset($GLOBALS['meta'][88]['ma_image_original_url']), isset($GLOBALS['meta'][88]['_ma_bildpool_vorher'])], ['Gemeinde Merzenich', 'original', '0', false, false]);
+termin(89, 'Messe 89', '2026-10-28T10:00');
+$GLOBALS['meta'][89]['ma_image_credit'] = 'leer vorher';
+ma_bildpool_nutzung(true);
+ma_bildpool_symbolbild_setzen(get_post(89));
+$erst = $GLOBALS['meta'][89]['_ma_bildpool_vorher'] ?? null;
+ma_bildpool_bild_setzen(get_post(89), 104, 'kirchedetail');
+pruefe('Neu verteilt: die erste Sicherung bleibt (nicht die Angaben des ersten Poolfotos)', $GLOBALS['meta'][89]['_ma_bildpool_vorher'] ?? null, $erst);
+
 echo "Dasselbe Foto als Abgleich- und Pool-Anhang\n";
 $GLOBALS['inhalte'] = []; $GLOBALS['meta'] = [];
 $GLOBALS['meta'][555] = ['ma_image_static_src' => '/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-1200.webp'];
@@ -147,8 +173,9 @@ if (is_callable($cron)) $cron();
 pruefe('Automatik an: der tägliche Lauf verteilt', count(array_unique(array_map('get_post_thumbnail_id', range(1, 4)))) > 1, true);
 
 echo "Leerer Pool\n";
-$GLOBALS['pools'] = ['aktuell' => []];
-pruefe('ohne geprüfte Fotos: 0', ma_bildpool_waehlen('aktuell', 5), 0);
+// Eigener Name: Die Kandidaten je Pool merkt sich ma_bildpool_kandidaten() für den Seitenaufruf.
+$GLOBALS['pools'] = ['leer' => []];
+pruefe('ohne geprüfte Fotos: 0', ma_bildpool_waehlen('leer', 5), 0);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

@@ -454,8 +454,27 @@ function ma_bildpool_ersatz(string $pool, WP_Post $p): int {
 }
 
 /** Poolfoto und Nachweis am Inhalt setzen (Typ Symbolbild, Merkmal _ma_bildpool_auto = vorgesehener Pool). */
+/** Bildangaben am Inhalt, die ein Poolfoto überschreibt (und die zurückkommen, wenn danach das eigentliche Bild gesetzt wird). */
+const MA_BILDPOOL_BILDFELDER = ['ma_image_credit', 'ma_image_license', 'ma_image_original_url', 'ma_image_type', 'ma_image_rights_verified'];
+
+/** Setzt das Plugin gerade selbst ein Beitragsbild? (Dann lässt ma_bildpool_merkmal_pruefen das Merkmal stehen.) */
+function ma_bildpool_setzt_selbst(?bool $an = null): bool {
+    static $selbst = false;
+    if ($an !== null) $selbst = $an;
+    return $selbst;
+}
+
 function ma_bildpool_bild_setzen(WP_Post $p, int $bild, string $pool): void {
+    // Erstes Poolfoto an diesem Inhalt: bisherige Bildangaben sichern. Abgleich und Block-Editor setzen das
+    // eigentliche Bild erst nach dem Veröffentlichen; dann kommen sie zurück (Review 17.10.2026).
+    if ((string) get_post_meta($p->ID, '_ma_bildpool_auto', true) === '') {
+        $vorher = [];
+        foreach (MA_BILDPOOL_BILDFELDER as $k) $vorher[$k] = (string) get_post_meta($p->ID, $k, true);
+        update_post_meta($p->ID, '_ma_bildpool_vorher', $vorher);
+    }
+    ma_bildpool_setzt_selbst(true);
     set_post_thumbnail($p->ID, $bild);
+    ma_bildpool_setzt_selbst(false);
     foreach (['ma_image_credit', 'ma_image_license', 'ma_image_original_url'] as $k) {
         $v = (string) get_post_meta($bild, $k, true);
         $v !== '' ? update_post_meta($p->ID, $k, $v) : delete_post_meta($p->ID, $k);
@@ -470,7 +489,8 @@ function ma_bildpool_bild_setzen(WP_Post $p, int $bild, string $pool): void {
  * Trägt der Inhalt noch das automatisch vergebene Poolfoto? Ersetzt jemand das Bild
  * (Redaktion, Editor nach dem Veröffentlichen, Änderungsvorschlag, Abgleich), ist das
  * Merkmal veraltet und das Bild bleibt unangetastet (Review 17.10.2026).
- * Vor 1.29.0 gesetzte Merkmale ohne gemerktes Bild: nur wenn das Bild im Bildpool liegt.
+ * Vor 1.29.0 gesetzte Merkmale ohne gemerktes Bild: nur wenn das Bild im Bildpool liegt
+ * (ma_bildpool_merkmale_nachtragen() trägt das gemerkte Bild dann einmal nach).
  */
 function ma_bildpool_auto_aktuell(int $id): bool {
     if ((string) get_post_meta($id, '_ma_bildpool_auto', true) === '') return false;
@@ -483,14 +503,38 @@ function ma_bildpool_auto_aktuell(int $id): bool {
 function ma_bildpool_merkmal_loeschen(int $id): void {
     delete_post_meta($id, '_ma_bildpool_auto');
     delete_post_meta($id, '_ma_bildpool_auto_bild');
+    delete_post_meta($id, '_ma_bildpool_vorher');
 }
 
-/** Neues Beitragsbild, das nicht das automatisch vergebene ist: Merkmal entfernen. */
+/**
+ * Jemand anderes als das Plugin setzt ein Beitragsbild (Redaktion, Editor, Abgleich,
+ * Änderungsvorschlag): Das Merkmal fällt weg, auch bei einem anderen Poolfoto, und die
+ * vor dem Poolfoto gesicherten Bildangaben kommen zurück.
+ */
 function ma_bildpool_merkmal_pruefen($meta_id, $post_id, $key, $wert): void {
-    if ($key !== '_thumbnail_id' || (string) get_post_meta((int) $post_id, '_ma_bildpool_auto', true) === '') return;
-    $gemerkt = (int) get_post_meta((int) $post_id, '_ma_bildpool_auto_bild', true);
-    $neu = (int) $wert;
-    if ($gemerkt ? $neu !== $gemerkt : !($neu && has_term('', MA_BILDPOOL_TAX, $neu))) ma_bildpool_merkmal_loeschen((int) $post_id);
+    if ($key !== '_thumbnail_id' || ma_bildpool_setzt_selbst()) return;
+    $id = (int) $post_id;
+    if ((string) get_post_meta($id, '_ma_bildpool_auto', true) === '' || (int) $wert === (int) get_post_meta($id, '_ma_bildpool_auto_bild', true)) return;
+    $vorher = get_post_meta($id, '_ma_bildpool_vorher', true);
+    if (is_array($vorher)) foreach (MA_BILDPOOL_BILDFELDER as $k) { $v = (string) ($vorher[$k] ?? ''); $v !== '' ? update_post_meta($id, $k, $v) : delete_post_meta($id, $k); }
+    ma_bildpool_merkmal_loeschen($id);
+}
+
+/**
+ * Merkmale von vor 1.29.0 tragen kein gemerktes Bild. Trägt der Inhalt noch ein Poolfoto,
+ * gilt es als das automatisch vergebene; sonst fällt das Merkmal weg. Danach erkennt
+ * ma_bildpool_merkmal_pruefen jeden Bildwechsel. Gibt die Zahl der Nachträge zurück.
+ */
+function ma_bildpool_merkmale_nachtragen(): int {
+    $n = 0;
+    foreach (get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'any', 'posts_per_page' => 2000, 'fields' => 'ids', 'no_found_rows' => true,
+        'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS'], ['key' => '_ma_bildpool_auto_bild', 'compare' => 'NOT EXISTS']]]) as $id) {
+        $id = (int) $id; $bild = (int) get_post_thumbnail_id($id);
+        if (!$bild) continue;
+        if (has_term('', MA_BILDPOOL_TAX, $bild)) { update_post_meta($id, '_ma_bildpool_auto_bild', (string) $bild); $n++; }
+        else ma_bildpool_merkmal_loeschen($id);
+    }
+    return $n;
 }
 add_action('added_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
 add_action('updated_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
@@ -516,6 +560,7 @@ function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
  * der Wechsel zurück.
  */
 function ma_bildpool_verteilen(): int {
+    ma_bildpool_merkmale_nachtragen();
     $nutzung = &ma_bildpool_nutzung(true);
     $auto = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 800, 'no_found_rows' => true, 'orderby' => 'date', 'order' => 'ASC',
         'post__in' => ma_bildpool_sichtbar() ?: [0], 'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS']]]);
@@ -552,6 +597,8 @@ add_action('transition_post_status', function (string $neu, string $alt, $p): vo
     if (!$p instanceof WP_Post || $neu !== 'publish' || $alt === 'publish' || get_option('ma_bildpool_auto', '1') !== '1') return;
     // WXR-Import: Das Beitragsbild kommt erst nach dem Anlegen als Meta, also hier nichts setzen.
     if (defined('WP_IMPORTING') && WP_IMPORTING) return;
+    // Kopie eines Änderungsvorschlags: Das Bild kommt vom Original (redaktion.php).
+    if (defined('MA_AENDERUNG_VON') && get_post_meta($p->ID, MA_AENDERUNG_VON, true)) return;
     ma_bildpool_symbolbild_setzen($p);
 }, 30, 3);
 

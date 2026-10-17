@@ -13,7 +13,7 @@ class WP_Post {
     function __construct(array $a = []) { foreach ($a as $k => $v) $this->$k = $v; }
 }
 class WP_User {
-    public $ID; public $roles; public $display_name = ''; public $user_login = '';
+    public $ID; public $roles; public $display_name = ''; public $user_login = ''; public $user_email = '';
     function __construct($id, $r) { $this->ID = $id; $this->roles = $r; }
     function exists() { return $this->ID > 0; }
 }
@@ -157,6 +157,30 @@ $GLOBALS['pmeta'][102]['ma_business_id'] = '50';
 pruefe('Ohne Kennzeichnung „gesponsert“ nicht im Kanal', array_map(fn($p) => $p->ID, ma_business_beitraege(50)), []);
 $GLOBALS['pmeta'][102]['ma_gesponsert'] = '1';
 pruefe('Gesponsert: im Kanal', array_map(fn($p) => $p->ID, ma_business_beitraege(50)), [102]);
+
+echo "\nÄnderungsvorschlag übernehmen: Bild nur bei echter Änderung (Review 17.10.2026)\n";
+function get_post_thumbnail_id($id) { return (int) ($GLOBALS['pmeta'][(int) $id]['_thumbnail_id'] ?? 0); }
+function set_post_thumbnail($id, $b) { $GLOBALS['pmeta'][(int) $id]['_thumbnail_id'] = (int) $b; return true; }
+function delete_post_thumbnail($id) { unset($GLOBALS['pmeta'][(int) $id]['_thumbnail_id']); return true; }
+function wp_update_post(array $a) { foreach ($a as $k => $v) if ($k !== 'ID') $GLOBALS['posts'][(int) $a['ID']]->$k = $v; return (int) $a['ID']; }
+function wp_delete_post($id, $f = false) { unset($GLOBALS['posts'][(int) $id], $GLOBALS['pmeta'][(int) $id]); return true; }
+function is_object_in_taxonomy($t, $tax) { return false; }
+function add_post_meta($id, $k, $v) { return true; }
+function get_permalink($id) { return 'https://merzenich-aktuell.de/?p=' . (int) $id; }
+function is_email($e) { return false; }
+$GLOBALS['ich'] = 1;
+// Termin mit Symbolbild 500, das der tägliche Lauf inzwischen auf 600 umgestellt hat; der Vorschlag ändert nur den Text.
+neuer_beitrag(['ID' => 300, 'post_type' => 'ma_event', 'post_status' => 'publish', 'post_title' => 'Seniorentreff', 'post_author' => 7]);
+$GLOBALS['pmeta'][300] = ['_thumbnail_id' => 600, 'ma_image_credit' => 'Foto B', 'ma_image_license' => 'CC BY 4.0', 'ma_image_type' => 'symbol', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:B.jpg', 'ma_image_rights_verified' => '1'];
+neuer_beitrag(['ID' => 301, 'post_type' => 'ma_event', 'post_status' => 'pending', 'post_title' => 'Seniorentreff im Pfarrheim', 'post_author' => 7]);
+$GLOBALS['pmeta'][301] = [MA_AENDERUNG_VON => '300', '_ma_aenderung_bild_vorher' => '500', '_thumbnail_id' => 500, 'ma_image_credit' => 'Foto A', 'ma_image_license' => 'CC0', 'ma_image_type' => 'symbol'];
+ma_aenderung_uebernehmen(301);
+pruefe('Text übernommen', get_post(300)->post_title, 'Seniorentreff im Pfarrheim');
+pruefe('Bild unverändert vorgeschlagen: neu verteiltes Bild und Nachweis bleiben', [get_post_thumbnail_id(300), $GLOBALS['pmeta'][300]['ma_image_credit'], $GLOBALS['pmeta'][300]['ma_image_original_url'], $GLOBALS['pmeta'][300]['ma_image_rights_verified'] ?? ''], [600, 'Foto B', 'https://commons.wikimedia.org/wiki/File:B.jpg', '1']);
+neuer_beitrag(['ID' => 302, 'post_type' => 'ma_event', 'post_status' => 'pending', 'post_title' => 'Seniorentreff', 'post_author' => 7]);
+$GLOBALS['pmeta'][302] = [MA_AENDERUNG_VON => '300', '_ma_aenderung_bild_vorher' => '600', '_thumbnail_id' => 700, 'ma_image_credit' => 'Verein', 'ma_image_type' => 'original'];
+ma_aenderung_uebernehmen(302);
+pruefe('Neues Bild vorgeschlagen: Bild, Nachweis, Typ; alte Quelle und Rechteprüfung fallen weg', [get_post_thumbnail_id(300), $GLOBALS['pmeta'][300]['ma_image_credit'] ?? '', $GLOBALS['pmeta'][300]['ma_image_type'] ?? '', $GLOBALS['pmeta'][300]['ma_image_original_url'] ?? '', $GLOBALS['pmeta'][300]['ma_image_rights_verified'] ?? ''], [700, 'Verein', 'original', '', '']);
 
 echo $fehler ? "\n$fehler Fehler.\n" : "\nAlle Pruefungen bestanden.\n";
 exit($fehler ? 1 : 0);

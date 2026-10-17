@@ -160,11 +160,36 @@ $neueSeite();
 pruefe('Neuer Seitenaufruf: Zähler wieder bei null', ma21_bild_seite($haupt) !== null, true);
 pruefe('Ohne Beitragsbild: kein Eintrag im Zähler', [ma21_bild_seite(new WP_Post(9999)), count(ma21_bild_register())], [null, 1]);
 
+echo "/termine/: Grenze über die sichtbaren Zeilen (assets/v20.js)\n";
+$termine = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php');
+pruefe('ma21_termin_zeile gibt alle Bilder aus (gefiltert wird im Browser)', (bool) preg_match('/function ma21_termin_zeile.*?\$b = ma21_bild\(\$t\[\'post\'\]\);/s', $termine), true);
+$v20 = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/v20.js');
+if (preg_match('/const fotoGrenze=\(\)=>\{.*?\}\);\};/s', $v20, $fg) && trim((string) shell_exec('command -v node')) !== '') {
+    // Zeilen wie auf /termine/: Foto A an Termin 1, 2, 4, 5; Filter blendet Termin 1 aus.
+    $js = <<<'JS'
+const zeile = (foto, hidden) => { const m = { hidden: false, dataset: {}, querySelector: () => ({ getAttribute: (a) => a === 'data-foto' ? foto : '' }) }; return { hidden, m, querySelector: () => m }; };
+const rows = [zeile('A', false), zeile('A', false), zeile('B', false), zeile('A', false), zeile('A', false)];
+JS;
+    $js .= $fg[0] . "\nfotoGrenze(); const a = rows.map(r => r.m.hidden);\nrows[0].hidden = true; fotoGrenze(); const b = rows.map(r => r.m.hidden);\nrows[0].hidden = false; fotoGrenze(); const c = rows.map(r => r.m.hidden);\nconsole.log(JSON.stringify([a, b, c]));\n";
+    $datei = tempnam(sys_get_temp_dir(), 'v20') . '.js'; file_put_contents($datei, $js);
+    [$a, $b, $c] = json_decode((string) shell_exec('node ' . escapeshellarg($datei)), true) ?: [[], [], []];
+    @unlink($datei);
+    pruefe('Alle sichtbar: drittes und viertes A ohne Bild', $a, [false, false, false, true, true]);
+    pruefe('Erster Termin ausgefiltert: nur noch das vierte A ohne Bild (die ausgeblendete Zeile bleibt unberührt)', $b, [false, false, false, false, true]);
+    pruefe('Filter zurück: wieder wie vorher', $c, $a);
+} else pruefe('v20.js fotoGrenze gefunden und node vorhanden', false, true);
+pruefe('run() rechnet die Grenze nach jedem Filtern', str_contains($v20, "\$('[data-event-empty]').hidden=n>0;fotoGrenze();};"), true);
+
 echo "Startseite\n";
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/startseite.html');
 preg_match_all('#<span class="ort-bild"><img src="([^"]+)"#', $vorlage, $orte);
 pruefe('Ortsbilder der Bühne haben die Schlüssel, die motiveVorab vorab zählt', array_map('ma21_foto_schluessel', $orte[1]), array_map(fn($o) => ma21_foto_schluessel("/assets/places/{$o}-720.webp"), array_keys(MA21_ORTE)));
 pruefe('Ortsansicht als Abgleich-Anhang hat denselben Schlüssel wie das Ortsbild der Bühne', ma_foto_schluessel(504), ma21_foto_schluessel($orte[1][4] ?? ''));
+$ma21 = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php');
+pruefe('Foto des Tages trägt data-foto aus der ursprünglichen Adresse', str_contains($ma21, '<img id="foto-des-tages-bild" data-foto="\' . esc_attr($foto) . \'"') && str_contains($ma21, '$foto = ma21_foto_schluessel($src); $id = 0;'), true);
+pruefe('Foto des Tages meidet Fotos der Startseite nach Foto-Schlüssel (auch Ortsbilder)', str_contains($ma21, "!in_array(ma21_foto_schluessel((string) \$r['src']), \$belegt, true)") && str_contains($ma21, '$motive = array_map(fn($o) => ma21_foto_schluessel("/assets/places/{$o}-720.webp"), array_keys(MA21_ORTE));'), true);
+$fdt = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/foto-des-tages.js');
+pruefe('foto-des-tages.js entfernt data-foto beim Tausch', str_contains($fdt, "img.removeAttribute('data-foto')"), true);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

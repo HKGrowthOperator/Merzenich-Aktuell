@@ -215,6 +215,8 @@ function ma_aenderung_anlegen(int $orig_id, int $user_id) {
         'post_content' => $orig->post_content, 'post_excerpt' => $orig->post_excerpt], true);
     if (is_wp_error($id)) return $id;
     update_post_meta($id, MA_AENDERUNG_VON, (string) $orig_id);
+    // Ausgangsbild merken: Übernommen wird das Bild nur, wenn der Vorschlag es ändert (ma_aenderung_uebernehmen).
+    update_post_meta($id, '_ma_aenderung_bild_vorher', (string) (int) get_post_thumbnail_id($orig_id));
     if ($t = get_post_thumbnail_id($orig_id)) set_post_thumbnail($id, $t);
     foreach (['category', 'ma_location', 'post_tag'] as $tax) {
         if (!is_object_in_taxonomy($orig->post_type, $tax)) continue;
@@ -234,13 +236,25 @@ function ma_aenderung_uebernehmen(int $kopie_id): int {
     if (!$k || !$o) return 0;
     wp_update_post(['ID' => $orig_id, 'post_title' => $k->post_title, 'post_content' => $k->post_content, 'post_excerpt' => $k->post_excerpt]);
     $t = (int) get_post_thumbnail_id($kopie_id);
-    // Neues Bild: Die Prüfung der Bildrechte durch die Redaktion gilt nicht mehr automatisch.
-    if ($t !== (int) get_post_thumbnail_id($orig_id)) delete_post_meta($orig_id, 'ma_image_rights_verified');
-    if ($t) set_post_thumbnail($orig_id, $t); else delete_post_thumbnail($orig_id);
+    // Bild und Bildangaben nur, wenn der Vorschlag das Bild geändert hat. Sonst setzte die Übernahme ein
+    // inzwischen neu verteiltes Symbolbild zurück (Review 17.10.2026). Ältere Vorschläge ohne Merkwert wie bisher.
+    $vorher = (string) get_post_meta($kopie_id, '_ma_aenderung_bild_vorher', true);
+    $bildNeu = $vorher === '' || $t !== (int) $vorher;
+    $bildfelder = ['ma_image_credit', 'ma_image_license', 'ma_image_type', 'ma_image_original_url'];
+    if ($bildNeu) {
+        // Neues Bild: Die Prüfung der Bildrechte durch die Redaktion gilt nicht mehr automatisch.
+        if ($t !== (int) get_post_thumbnail_id($orig_id)) delete_post_meta($orig_id, 'ma_image_rights_verified');
+        if ($t) set_post_thumbnail($orig_id, $t); else delete_post_thumbnail($orig_id);
+        $v = (string) get_post_meta($kopie_id, 'ma_image_original_url', true);
+        $v === '' ? delete_post_meta($orig_id, 'ma_image_original_url') : update_post_meta($orig_id, 'ma_image_original_url', $v);
+    }
     foreach (['ma_location', 'post_tag'] as $tax) {
         if (is_object_in_taxonomy($o->post_type, $tax)) wp_set_object_terms($orig_id, wp_get_object_terms($kopie_id, $tax, ['fields' => 'ids']), $tax);
     }
-    foreach (ma_aenderung_felder($o->post_type) as $f) { $v = get_post_meta($kopie_id, $f, true); $v === '' ? delete_post_meta($orig_id, $f) : update_post_meta($orig_id, $f, $v); }
+    foreach (ma_aenderung_felder($o->post_type) as $f) {
+        if (!$bildNeu && in_array($f, $bildfelder, true)) continue;
+        $v = get_post_meta($kopie_id, $f, true); $v === '' ? delete_post_meta($orig_id, $f) : update_post_meta($orig_id, $f, $v);
+    }
     // Bildrechte-Nachweise des Einsenders wandern mit.
     foreach (get_post_meta($kopie_id, '_ma_bildrechte_log') ?: [] as $eintrag) add_post_meta($orig_id, '_ma_bildrechte_log', $eintrag);
     $autor = get_userdata((int) $k->post_author);

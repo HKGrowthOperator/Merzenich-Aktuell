@@ -18,9 +18,9 @@ $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-70s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
 
 echo "Motiv-Schlüssel\n";
-pruefe('Ortsansicht ohne Breite und Endung', ma21_motiv_schluessel('/assets/places/golzheim-1440.webp'), 'places/golzheim');
-pruefe('720er Kachel ist dasselbe Motiv', ma21_motiv_schluessel('https://x.de/assets/places/golzheim-720.webp?v=1'), 'places/golzheim');
-pruefe('Poolfoto', ma21_motiv_schluessel('/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg'), 'editorial-pools/aktuell/aktuell-05-85b961cd5e');
+pruefe('Ortsansicht ohne Breite und Endung', ma21_foto_schluessel('/assets/places/golzheim-1440.webp'), 'p:places/golzheim');
+pruefe('720er Kachel ist dasselbe Motiv', ma21_foto_schluessel('https://x.de/assets/places/golzheim-720.webp?v=1'), 'p:places/golzheim');
+pruefe('Poolfoto (auch als Pool-Anhang in der Mediathek)', [ma21_foto_schluessel('/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg'), ma21_foto_schluessel('https://x.de/wp-content/uploads/2026/10/aktuell-05-85b961cd5e.jpg')], ['h:aktuell-05-85b961cd5e', 'h:aktuell-05-85b961cd5e']);
 
 $d = json_decode((string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/foto-des-tages.json'), true);
 echo "\nDaten aus deploy/foto-des-tages.mjs\n";
@@ -33,8 +33,8 @@ $b = ma21_foto_des_tages_wahl($d, '2026-10-06', []);
 pruefe('Ohne Belegung: es gibt immer ein Foto', is_array($a) && !empty($a['src']), true);
 pruefe('Wechselt täglich', $a['src'] !== $b['src'], true);
 pruefe('Gleicher Tag, gleiches Foto', ma21_foto_des_tages_wahl($d, '2026-10-05', [])['src'], $a['src']);
-$alle = array_map(fn($r) => ma21_motiv_schluessel($r['src']), $d['alle']);
-$belegt = array_values(array_filter($alle, fn($k) => $k !== ma21_motiv_schluessel($d['alle'][2]['src'])));
+$alle = array_map(fn($r) => ma21_foto_schluessel($r['src']), $d['alle']);
+$belegt = array_values(array_filter($alle, fn($k) => $k !== ma21_foto_schluessel($d['alle'][2]['src'])));
 pruefe('Motive der Startseite werden übersprungen', ma21_foto_des_tages_wahl($d, '2026-10-05', $belegt)['src'], $d['alle'][2]['src']);
 pruefe('Alles belegt: trotzdem ein Foto (volle Reihe)', ma21_foto_des_tages_wahl($d, '2026-10-05', $alle)['src'], $a['src']);
 $mitLeser = $d + []; $mitLeser['eintraege'] = [['datum' => '2026-10-05', 'src' => '/assets/leser/x.jpg', 'alt' => 'Sonnenuntergang', 'ort' => 'Golzheim', 'credit' => 'Leserin · mit Zustimmung']];

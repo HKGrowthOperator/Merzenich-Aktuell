@@ -46,6 +46,17 @@
 - **Kleinkram:** Fokusrahmen der Zeitraum-Knöpfe auf `/termine/` am Handy vollständig; Abstand über „Weitere Meldungen“.
 - **Bleibt:** Die statische Kopie (`chatgpt-site`) begrenzt Fotos nur beim Nachladen. Ihre Ortsseiten listen alle Meldungen auf einmal. Live läuft WordPress mit der Begrenzung im Theme.
 
+**Nachprüfung der Korrekturen** (zwei Prüfer, gegengeprüft, 6 weitere bestätigt, alle eingearbeitet):
+- **Merkmale von vor 1.29.0:** Der Lauf trägt das gemerkte Bild einmal nach, solange noch ein Poolfoto am Inhalt steht; sonst fällt das Merkmal weg. Danach entfernt jeder Bildwechsel, den nicht das Plugin selbst vornimmt, das Merkmal, auch wenn die Redaktion ein anderes Poolfoto wählt.
+- **Symbolbild vor dem eigentlichen Bild** (Abgleich mit „sofort veröffentlichen“, Block-Editor):
+  - Vor dem ersten Poolfoto sichert das Plugin Nachweis, Lizenz, Quelle, Typ und Rechtestand (`_ma_bildpool_vorher`).
+  - Kommt danach das eigentliche Bild, stellt es diese Angaben wieder her.
+- **Änderungsvorschläge** (`redaktion.php`):
+  - Bild und Bildangaben werden nur übernommen, wenn der Vorschlag das Bild geändert hat. Ein inzwischen neu verteiltes Symbolbild bleibt.
+  - Kopien bekommen kein eigenes Symbolbild.
+- **Foto des Tages:** Es meidet Fotos der Startseite nach Foto-Schlüssel, auch Pool-Anhänge und die Ortsbilder, und trägt `data-foto`.
+- **`/termine/`:** Die Liste wird im Browser gefiltert. Deshalb rechnet `assets/v20.js` die Grenze nach jedem Filtern über die sichtbaren Termine; ein gefilterter Termin verliert sein Bild nicht wegen ausgeblendeter Zeilen. Ohne JavaScript stehen alle Bilder da.
+
 
 ## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.3, Feinschliff und drei Betriebe als Entwurf
 
