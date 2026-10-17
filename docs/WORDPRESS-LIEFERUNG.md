@@ -59,9 +59,13 @@
 
 **Dritte Prüfrunde** (zwei Prüfer, gegengeprüft, 6 bestätigt, alle eingearbeitet; Test `qa/wordpress/bildangaben-test.php` mit dem echten Hook):
 - **Änderungsvorschlag mit neuem Bild:** Die Sicherung des Poolfotos wird verworfen. „Bildrechte geprüft“ kommt also nicht zurück an ein ungeprüftes Bild.
-- **Änderungsvorschlag ohne neues Bild:** Bildangaben bleiben nur zurück, solange am Original das automatisch vergebene Poolfoto steht. Korrekturen am Nachweis eines eigenen Fotos kommen an.
-- **Kasten „Bild und Prüfung“** (`editorial.php`): Er merkt sich die Bildangaben beim Laden. Speichert der Block-Editor ihn nach dem Veröffentlichen mit den alten, leeren Werten, bleibt der Nachweis des Poolfotos stehen. Ändert die Redaktion eine Angabe bewusst, gilt das Bild als ihres.
-- **Abgleich:** Ist der Bild-Download beim Anlegen gescheitert und steht nur das Poolfoto, holt der nächste Lauf das Bild aus der Import-Datei nach (`ma_abgleich_bild_fehlt`).
+- **Änderungsvorschlag ohne neues Bild:** Korrekturen am Nachweis kommen nur an, wenn das Original noch dasselbe eigene Foto trägt. Steht dort das automatisch vergebene Poolfoto oder inzwischen ein anderes Bild, bleiben dessen Angaben.
+- **Kasten „Bild und Prüfung“** (`editorial.php`): Er merkt sich, welches Beitragsbild er beim Laden zeigte (`ma_bildfelder_bild`).
+  - Zeigte er ein anderes Bild als das inzwischen gesetzte Poolfoto (meist noch keins; der Block-Editor lädt ihn nach dem Veröffentlichen nicht neu), gehen seine Bildangaben in die Sicherung des Poolfotos. Sie gelten, sobald das eigentliche Bild kommt. Der Nachweis des Poolfotos bleibt, ebenso das Merkmal.
+  - Zeigte er das Poolfoto und ändert die Redaktion eine Angabe bewusst, gilt das Bild als ihres.
+- **Abgleich:**
+  - Ist der Bild-Download beim Anlegen gescheitert und steht nur das Poolfoto, holt der nächste Lauf das Bild aus der Import-Datei nach (`ma_abgleich_bild_fehlt`).
+  - Neue Bildangaben aus der Import-Datei gehen bis dahin in die Sicherung, nicht an das Poolfoto.
 - **`/heute/`:** Die Terminzeilen begrenzt wieder der Server; nur `/termine/` gibt alle Bilder aus und begrenzt im Browser.
 - **`/termine/`:** `editorial-audit.js` blendet laufende mehrtägige Termine nicht mehr nach ihrem Beginn aus (die Zeile trägt ein Ende, das `v20.js` prüft).
 

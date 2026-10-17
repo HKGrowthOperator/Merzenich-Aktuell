@@ -39,6 +39,7 @@ function sanitize_key($s) { return strtolower(preg_replace('/[^a-z0-9_\-]/i', ''
 function esc_attr($s) { return htmlspecialchars((string) $s, ENT_QUOTES); } function wp_json_encode($v) { return json_encode($v); }
 function get_the_ID() { return $GLOBALS['aktuell'] ?? 0; }
 function get_posts($q) { return []; }
+function wp_slash($v) { return $v; } function current_time($f, $gmt = false) { return '2026-10-17 18:00:00'; }
 
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/fotoschluessel.php';
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/bildpools.php';
@@ -51,28 +52,37 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 function beitrag(int $id, array $meta = [], string $typ = 'post'): WP_Post { $GLOBALS['posts'][$id] = new WP_Post(['ID' => $id, 'post_type' => $typ, 'post_title' => "Beitrag $id"]); $GLOBALS['meta'][$id] = $meta; return $GLOBALS['posts'][$id]; }
 // Poolfotos mit Nachweis wie aus ma_bildpool_uebernehmen()
 $GLOBALS['meta'][101] = ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg'];
-// Kasten so, wie ihn der Browser beim Laden zeigte, und was er abschickt.
-function kasten(int $id, array $geladen, array $gesendet): void {
-    $_POST = ['ma_editorial_nonce' => 'x', 'ma_bildfelder_geladen' => json_encode($geladen)] + $gesendet;
+// Kasten: welches Beitragsbild er beim Laden zeigte, und was er abschickt.
+function kasten(int $id, int $geladenBild, array $gesendet): void {
+    $_POST = ['ma_editorial_nonce' => 'x', 'ma_bildfelder_bild' => (string) $geladenBild] + $gesendet;
     ma_save_editorial_meta($id);
     $_POST = [];
 }
-$leer = ['ma_image_credit' => '', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => '', 'ma_image_rights_verified' => '0'];
+$leer = ['ma_image_credit' => '', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => ''];
 
 echo "Kasten „Bild und Prüfung“ nach dem Veröffentlichen (Block-Editor)\n";
 beitrag(10);
 ma_bildpool_bild_setzen(get_post(10), 101, 'aktuell');
 pruefe('Poolfoto gesetzt: Nachweis, Typ, Rechte', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified')], ['Foto X / Wikimedia Commons', 'symbol', '1']);
-kasten(10, $leer, ['ma_image_credit' => '', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => '']);
-pruefe('Alte, leere Felder überschreiben den Nachweis des Poolfotos nicht', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_license'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified')], ['Foto X / Wikimedia Commons', 'CC BY 4.0', 'symbol', '1']);
+kasten(10, 0, $leer);
+pruefe('Kasten vom Stand ohne Bild überschreibt den Nachweis des Poolfotos nicht', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_license'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified')], ['Foto X / Wikimedia Commons', 'CC BY 4.0', 'symbol', '1']);
 pruefe('Merkmal bleibt (das Plugin darf weiter verteilen)', get_post_meta(10, '_ma_bildpool_auto'), 'aktuell');
 $GLOBALS['aktuell'] = 10;
 ob_start(); ma_bildfelder_geladen_feld(); $feld = ob_get_clean();
-$geladen = json_decode(html_entity_decode((string) preg_replace('/^.*value="([^"]*)".*$/s', '$1', $feld), ENT_QUOTES), true);
-kasten(10, $geladen, ['ma_image_credit' => 'Foto X (Korrektur) / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1']);
-pruefe('Redaktion ändert den Nachweis: gespeichert, Bild gilt als ihres (kein Merkmal)', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, '_ma_bildpool_auto')], ['Foto X (Korrektur) / Wikimedia Commons', '']);
+pruefe('Kasten merkt sich das gezeigte Beitragsbild', $feld, '<input type="hidden" name="ma_bildfelder_bild" value="101">');
+kasten(10, 101, ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1']);
+pruefe('Kasten zeigte das Poolfoto, nichts geändert: Merkmal bleibt', get_post_meta(10, '_ma_bildpool_auto'), 'aktuell');
+kasten(10, 101, ['ma_image_credit' => 'Foto X (Korrektur) / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1']);
+pruefe('Redaktion ändert den Nachweis des Poolfotos: gespeichert, Bild gilt als ihres', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, '_ma_bildpool_auto')], ['Foto X (Korrektur) / Wikimedia Commons', '']);
+// Vor dem Veröffentlichen Nachweis, Typ und „Bildrechte geprüft“ eingetragen und als Entwurf gespeichert; dann ohne Bild veröffentlicht.
+beitrag(12, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '1']);
+ma_bildpool_bild_setzen(get_post(12), 101, 'aktuell');
+kasten(12, 0, ['ma_image_credit' => 'Foto: Max', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '1']);
+pruefe('Block-Editor speichert den Kasten nach dem Veröffentlichen: Poolfoto behält Nachweis und Merkmal', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, '_ma_bildpool_auto')], ['Foto X / Wikimedia Commons', 'symbol', 'aktuell']);
+set_post_thumbnail(12, 950);
+pruefe('Kommt das eigentliche Bild, gelten die Angaben aus dem Kasten', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, 'ma_image_rights_verified'), get_post_meta(12, 'ma_image_license')], ['Foto: Max', 'original', '1', '']);
 beitrag(11, ['_thumbnail_id' => 880, 'ma_image_credit' => 'Gemeinde']);
-kasten(11, ['ma_image_credit' => 'Gemeinde'] + $leer, ['ma_image_credit' => '', 'ma_image_type' => '']);
+kasten(11, 880, ['ma_image_credit' => '', 'ma_image_type' => '']);
 pruefe('Ohne Poolfoto wie bisher: geleertes Feld wird gelöscht', get_post_meta(11, 'ma_image_credit'), '');
 
 echo "Änderungsvorschlag übernehmen\n";
@@ -86,6 +96,11 @@ beitrag(30, ['_thumbnail_id' => 880, 'ma_image_credit' => 'unbekannt'], 'ma_busi
 beitrag(31, [MA_AENDERUNG_VON => '30', '_ma_aenderung_bild_vorher' => '880', '_thumbnail_id' => 880, 'ma_image_credit' => 'Foto: Verein', 'ma_image_license' => 'Eigenes Foto'], 'ma_business');
 ma_aenderung_uebernehmen(31);
 pruefe('Eigenes Foto behalten, Nachweis korrigiert: Korrektur kommt an', [get_post_thumbnail_id(30), get_post_meta(30, 'ma_image_credit'), get_post_meta(30, 'ma_image_license')], [880, 'Foto: Verein', 'Eigenes Foto']);
+// Vorschlag begonnen, als das Poolfoto stand; danach setzt die Redaktion ein eigenes Foto. Der Vorschlag ändert nur den Text.
+beitrag(32, ['ma_image_credit' => 'Gemeinde Merzenich', 'ma_image_license' => 'Eigenes Foto', 'ma_image_type' => 'official', '_thumbnail_id' => 900]);
+beitrag(33, [MA_AENDERUNG_VON => '32', '_ma_aenderung_bild_vorher' => '101', '_thumbnail_id' => 101, 'ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_type' => 'symbol']);
+ma_aenderung_uebernehmen(33);
+pruefe('Original trägt inzwischen ein anderes Bild: dessen Nachweis bleibt', [get_post_thumbnail_id(32), get_post_meta(32, 'ma_image_credit'), get_post_meta(32, 'ma_image_license'), get_post_meta(32, 'ma_image_type')], [900, 'Gemeinde Merzenich', 'Eigenes Foto', 'official']);
 
 echo "Abgleich: fehlendes Bild nachholen\n";
 beitrag(40); ma_bildpool_bild_setzen(get_post(40), 102, 'aktuell');
@@ -95,6 +110,13 @@ beitrag(43, ['ma_image_credit' => 'Gemeinde Merzenich', 'ma_image_type' => 'orig
 ma_bildpool_bild_setzen(get_post(43), 102, 'aktuell');
 set_post_thumbnail(43, 950); // ma_abgleich_bild_setzen beim nächsten Lauf
 pruefe('Abgleich-Bild ersetzt das Poolfoto: Angaben aus der Import-Datei zurück', [get_post_meta(43, 'ma_image_credit'), get_post_meta(43, 'ma_image_type'), get_post_meta(43, 'ma_image_rights_verified'), get_post_meta(43, '_ma_bildpool_auto')], ['Gemeinde Merzenich', 'original', '0', '']);
+
+$abgleichFehler = [];
+beitrag(44); ma_bildpool_bild_setzen(get_post(44), 102, 'aktuell');
+ma_abgleich_aktualisieren(44, ['meta' => ['ma_image_credit' => 'Feuerwehr Merzenich', 'ma_image_type' => 'official', 'ma_kicker' => 'Blaulicht'], 'titel' => 'Beitrag 44', 'inhalt' => '', 'auszug' => '', 'terme' => [], 'bild' => 0, 'hash' => 'h'], [], $abgleichFehler);
+pruefe('Abgleich-Aktualisierung bei Poolfoto: Bildangaben in die Sicherung, nicht ans Poolfoto', [get_post_meta(44, 'ma_image_credit'), get_post_meta(44, '_ma_bildpool_vorher')['ma_image_credit'] ?? '', get_post_meta(44, 'ma_kicker')], ['', 'Feuerwehr Merzenich', 'Blaulicht']);
+set_post_thumbnail(44, 960);
+pruefe('Mit dem Abgleich-Bild gelten die neuen Angaben', [get_post_meta(44, 'ma_image_credit'), get_post_meta(44, 'ma_image_type')], ['Feuerwehr Merzenich', 'official']);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

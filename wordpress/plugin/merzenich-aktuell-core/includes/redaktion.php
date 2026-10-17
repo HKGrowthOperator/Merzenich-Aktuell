@@ -244,6 +244,8 @@ function ma_aenderung_uebernehmen(int $kopie_id): int {
     // Bildangaben des Vorschlags zurückhalten nur, solange am Original das automatisch vergebene Poolfoto steht;
     // Korrekturen an Nachweis oder Lizenz eines eigenen Fotos kommen weiter an.
     $poolBild = function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell($orig_id);
+    // Und nur, wenn das Original noch das Bild trägt, zu dem die Angaben der Kopie gehören (die Redaktion kann es inzwischen getauscht haben).
+    $origWieKopie = (int) get_post_thumbnail_id($orig_id) === $t;
     if ($bildNeu) {
         // Die vor dem Poolfoto gesicherten Angaben gehören nicht zum neuen Bild (sonst käme z. B. „Bildrechte geprüft“ zurück).
         delete_post_meta($orig_id, '_ma_bildpool_vorher');
@@ -257,7 +259,7 @@ function ma_aenderung_uebernehmen(int $kopie_id): int {
         if (is_object_in_taxonomy($o->post_type, $tax)) wp_set_object_terms($orig_id, wp_get_object_terms($kopie_id, $tax, ['fields' => 'ids']), $tax);
     }
     foreach (ma_aenderung_felder($o->post_type) as $f) {
-        if (!$bildNeu && $poolBild && in_array($f, $bildfelder, true)) continue;
+        if (!$bildNeu && ($poolBild || !$origWieKopie) && in_array($f, $bildfelder, true)) continue;
         $v = get_post_meta($kopie_id, $f, true); $v === '' ? delete_post_meta($orig_id, $f) : update_post_meta($orig_id, $f, $v);
     }
     // Bildrechte-Nachweise des Einsenders wandern mit.

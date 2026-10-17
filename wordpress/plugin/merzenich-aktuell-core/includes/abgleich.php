@@ -272,6 +272,15 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
     $meta = ma_abgleich_meta_fuer_update($e['meta']);
     $p = get_post($id);
     if (!$p) return false;
+    // Steht noch das automatisch vergebene Poolfoto, gehören die Bildangaben der Import-Datei zum Abgleich-Bild, nicht zum
+    // Poolfoto: in dessen Sicherung statt an den Beitrag. Sie gelten, sobald das Abgleich-Bild es ersetzt (gleich unten
+    // oder in einem späteren Lauf).
+    if (function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell($id) && defined('MA_BILDPOOL_BILDFELDER')) {
+        $vorher = get_post_meta($id, '_ma_bildpool_vorher', true);
+        if (!is_array($vorher)) $vorher = [];
+        foreach (MA_BILDPOOL_BILDFELDER as $k) if (array_key_exists($k, $meta)) { $vorher[$k] = (string) $meta[$k]; unset($meta[$k]); }
+        update_post_meta($id, '_ma_bildpool_vorher', $vorher);
+    }
     $textNeu = ma_abgleich_texthash($e['titel'], $e['inhalt'], $e['auszug']) !== ma_abgleich_texthash($p->post_title, $p->post_content, $p->post_excerpt);
     if ($textNeu) {
         $r = wp_update_post(wp_slash(['ID' => $id, 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'meta_input' => $meta]), true);
