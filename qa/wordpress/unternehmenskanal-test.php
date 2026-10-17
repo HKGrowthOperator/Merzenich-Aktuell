@@ -168,10 +168,12 @@ function is_object_in_taxonomy($t, $tax) { return false; }
 function add_post_meta($id, $k, $v) { return true; }
 function get_permalink($id) { return 'https://merzenich-aktuell.de/?p=' . (int) $id; }
 function is_email($e) { return false; }
+// Wie bildpools.php: Trägt der Inhalt noch das automatisch vergebene Poolfoto?
+function ma_bildpool_auto_aktuell(int $id): bool { return ($GLOBALS['pmeta'][$id]['_ma_bildpool_auto'] ?? '') !== '' && (int) ($GLOBALS['pmeta'][$id]['_ma_bildpool_auto_bild'] ?? 0) === get_post_thumbnail_id($id); }
 $GLOBALS['ich'] = 1;
 // Termin mit Symbolbild 500, das der tägliche Lauf inzwischen auf 600 umgestellt hat; der Vorschlag ändert nur den Text.
 neuer_beitrag(['ID' => 300, 'post_type' => 'ma_event', 'post_status' => 'publish', 'post_title' => 'Seniorentreff', 'post_author' => 7]);
-$GLOBALS['pmeta'][300] = ['_thumbnail_id' => 600, 'ma_image_credit' => 'Foto B', 'ma_image_license' => 'CC BY 4.0', 'ma_image_type' => 'symbol', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:B.jpg', 'ma_image_rights_verified' => '1'];
+$GLOBALS['pmeta'][300] = ['_thumbnail_id' => 600, '_ma_bildpool_auto' => 'kirchedetail', '_ma_bildpool_auto_bild' => '600', 'ma_image_credit' => 'Foto B', 'ma_image_license' => 'CC BY 4.0', 'ma_image_type' => 'symbol', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:B.jpg', 'ma_image_rights_verified' => '1'];
 neuer_beitrag(['ID' => 301, 'post_type' => 'ma_event', 'post_status' => 'pending', 'post_title' => 'Seniorentreff im Pfarrheim', 'post_author' => 7]);
 $GLOBALS['pmeta'][301] = [MA_AENDERUNG_VON => '300', '_ma_aenderung_bild_vorher' => '500', '_thumbnail_id' => 500, 'ma_image_credit' => 'Foto A', 'ma_image_license' => 'CC0', 'ma_image_type' => 'symbol'];
 ma_aenderung_uebernehmen(301);

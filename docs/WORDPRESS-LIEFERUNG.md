@@ -57,6 +57,14 @@
 - **Foto des Tages:** Es meidet Fotos der Startseite nach Foto-Schlüssel, auch Pool-Anhänge und die Ortsbilder, und trägt `data-foto`.
 - **`/termine/`:** Die Liste wird im Browser gefiltert. Deshalb rechnet `assets/v20.js` die Grenze nach jedem Filtern über die sichtbaren Termine; ein gefilterter Termin verliert sein Bild nicht wegen ausgeblendeter Zeilen. Ohne JavaScript stehen alle Bilder da.
 
+**Dritte Prüfrunde** (zwei Prüfer, gegengeprüft, 6 bestätigt, alle eingearbeitet; Test `qa/wordpress/bildangaben-test.php` mit dem echten Hook):
+- **Änderungsvorschlag mit neuem Bild:** Die Sicherung des Poolfotos wird verworfen. „Bildrechte geprüft“ kommt also nicht zurück an ein ungeprüftes Bild.
+- **Änderungsvorschlag ohne neues Bild:** Bildangaben bleiben nur zurück, solange am Original das automatisch vergebene Poolfoto steht. Korrekturen am Nachweis eines eigenen Fotos kommen an.
+- **Kasten „Bild und Prüfung“** (`editorial.php`): Er merkt sich die Bildangaben beim Laden. Speichert der Block-Editor ihn nach dem Veröffentlichen mit den alten, leeren Werten, bleibt der Nachweis des Poolfotos stehen. Ändert die Redaktion eine Angabe bewusst, gilt das Bild als ihres.
+- **Abgleich:** Ist der Bild-Download beim Anlegen gescheitert und steht nur das Poolfoto, holt der nächste Lauf das Bild aus der Import-Datei nach (`ma_abgleich_bild_fehlt`).
+- **`/heute/`:** Die Terminzeilen begrenzt wieder der Server; nur `/termine/` gibt alle Bilder aus und begrenzt im Browser.
+- **`/termine/`:** `editorial-audit.js` blendet laufende mehrtägige Termine nicht mehr nach ihrem Beginn aus (die Zeile trägt ein Ende, das `v20.js` prüft).
+
 
 ## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.3, Feinschliff und drei Betriebe als Entwurf
 

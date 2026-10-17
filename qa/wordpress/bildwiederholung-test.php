@@ -160,9 +160,22 @@ $neueSeite();
 pruefe('Neuer Seitenaufruf: Zähler wieder bei null', ma21_bild_seite($haupt) !== null, true);
 pruefe('Ohne Beitragsbild: kein Eintrag im Zähler', [ma21_bild_seite(new WP_Post(9999)), count(ma21_bild_register())], [null, 1]);
 
+echo "/heute/: Terminzeilen begrenzt der Server, /termine/ gibt alle aus\n";
+if (!function_exists('trailingslashit')) { function trailingslashit($s) { return rtrim((string) $s, '/') . '/'; } }
+require_once __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php';
+$zeile = function (int $bild, bool $alle) use ($meldungen) { [$p] = $meldungen([$bild]); return ma21_termin_zeile(['post' => $p, 'url' => '/termine/x/', 'start' => 1792050000, 'ende' => 1792057200, 'ortSlug' => 'merzenich', 'kategorie' => 'Kirche', 'ortsteil' => 'Merzenich', 'titel' => 'Messe', 'ort' => '', 'veranstalter' => '', 'beschreibung' => '', 'quelle' => '', 'id' => $p->ID] + ['ganztags' => false, 'ohneEnde' => false], $alle); };
+$neueSeite();
+$heute = $zeile(501, false) . $zeile(502, false) . $zeile(501, false);
+pruefe('/heute/: drittes Vorkommen desselben Fotos ohne Bild', [substr_count($heute, 'class="event-bild"'), substr_count($heute, 'event-row--bild')], [2, 2]);
+$neueSeite();
+$alle = $zeile(501, true) . $zeile(502, true) . $zeile(501, true);
+pruefe('/termine/: alle Bilder (die Grenze rechnet v20.js nach dem Filtern)', substr_count($alle, 'class="event-bild"'), 3);
+$termineSeite = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php');
+pruefe('ma21_termine_seite ruft ma21_termin_zeile mit allen Bildern auf', str_contains($termineSeite, 'foreach ($kommend as $t) echo ma21_termin_zeile($t, true);'), true);
+
 echo "/termine/: Grenze über die sichtbaren Zeilen (assets/v20.js)\n";
 $termine = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php');
-pruefe('ma21_termin_zeile gibt alle Bilder aus (gefiltert wird im Browser)', (bool) preg_match('/function ma21_termin_zeile.*?\$b = ma21_bild\(\$t\[\'post\'\]\);/s', $termine), true);
+pruefe('ma21_termin_zeile: auf /termine/ alle Bilder (gefiltert wird im Browser), sonst begrenzt', str_contains($termine, "\$b = \$alleBilder ? ma21_bild(\$t['post']) : ma21_bild_seite(\$t['post']);"), true);
 $v20 = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/v20.js');
 if (preg_match('/const fotoGrenze=\(\)=>\{.*?\}\);\};/s', $v20, $fg) && trim((string) shell_exec('command -v node')) !== '') {
     // Zeilen wie auf /termine/: Foto A an Termin 1, 2, 4, 5; Filter blendet Termin 1 aus.
@@ -178,6 +191,8 @@ JS;
     pruefe('Erster Termin ausgefiltert: nur noch das vierte A ohne Bild (die ausgeblendete Zeile bleibt unberührt)', $b, [false, false, false, false, true]);
     pruefe('Filter zurück: wieder wie vorher', $c, $a);
 } else pruefe('v20.js fotoGrenze gefunden und node vorhanden', false, true);
+$audit = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/editorial-audit.js');
+pruefe('editorial-audit.js blendet laufende mehrtägige Termine (mit data-end) nicht aus', str_contains($audit, "const w=el.closest('[data-event-row]');if(w&&Number.isFinite(Date.parse(w.getAttribute('data-end')||'')))return;"), true);
 pruefe('run() rechnet die Grenze nach jedem Filtern', str_contains($v20, "\$('[data-event-empty]').hidden=n>0;fotoGrenze();};"), true);
 
 echo "Startseite\n";

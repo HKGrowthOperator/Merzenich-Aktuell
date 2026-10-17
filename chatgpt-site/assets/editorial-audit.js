@@ -128,7 +128,8 @@
     qa('[data-event-end]').forEach(el=>{if(el.closest('.past'))return;const end=Date.parse(el.getAttribute('data-event-end')||'');if(Number.isFinite(end)&&end<now)el.remove()});
     if(path==='/termine'){
       const p=berlinParts(),startToday=Date.parse(`${p.year}-${p.month}-${p.day}T00:00:00+02:00`);
-      qa('.event-list article,.event-list .event-row,.events-grid article').forEach(el=>{if(el.closest('.past'))return;const t=q('time[datetime]',el);if(!t)return;const d=Date.parse(t.getAttribute('datetime'));if(Number.isFinite(d)&&d<startToday&&!el.hasAttribute('data-event-end'))el.setAttribute('data-editorial-hidden','1')});
+      // Termine mit Ende (data-end am [data-event-row], WordPress): Ablauf regelt v20.js; laufende mehrtägige Termine bleiben sichtbar (17.10.2026).
+      qa('.event-list article,.event-list .event-row,.events-grid article').forEach(el=>{if(el.closest('.past'))return;const w=el.closest('[data-event-row]');if(w&&Number.isFinite(Date.parse(w.getAttribute('data-end')||'')))return;const t=q('time[datetime]',el);if(!t)return;const d=Date.parse(t.getAttribute('datetime'));if(Number.isFinite(d)&&d<startToday&&!el.hasAttribute('data-event-end'))el.setAttribute('data-editorial-hidden','1')});
     }
   }
   expireAgenda();

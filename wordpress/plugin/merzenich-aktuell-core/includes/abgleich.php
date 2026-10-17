@@ -180,6 +180,15 @@ function ma_abgleich_bild(array $b, int $post_id, string &$fehler = ''): int {
     return (int) $id;
 }
 
+/**
+ * Fehlt das Bild aus der Import-Datei? Auch dann, wenn nur das automatisch vergebene Poolfoto steht
+ * (Download beim Anlegen gescheitert, Inhalt schon veröffentlicht). Das echte Bild ersetzt es dann,
+ * und die vorher gesicherten Bildangaben kommen zurück (bildpools.php, 17.10.2026).
+ */
+function ma_abgleich_bild_fehlt(int $id): bool {
+    return !has_post_thumbnail($id) || (function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell($id));
+}
+
 function ma_abgleich_bild_setzen(int $id, array $e, array $bilder, array &$fehler): void {
     if (!$e['bild'] || empty($bilder[$e['bild']])) return;
     $f = '';
@@ -271,7 +280,7 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
         foreach ($meta as $k => $v) update_post_meta($id, $k, wp_slash($v));
     }
     ma_abgleich_terme_setzen($id, $e['terme']);
-    if ($e['bild'] && !has_post_thumbnail($id)) ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
+    if ($e['bild'] && ma_abgleich_bild_fehlt($id)) ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
     ma_abgleich_stand_merken($id, $e);
     if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', $textNeu ? 'Text aus dem redaktionellen Stand aktualisiert' : 'Importfelder aus dem redaktionellen Stand aktualisiert', 0);
     return true;
@@ -339,7 +348,7 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         elseif ($ent === 'aktualisieren') { if (ma_abgleich_aktualisieren($id, $e, $daten['bilder'], $erg['fehler'])) $erg['aktualisiert']++; }
         else $erg['von_hand'][] = $e['titel'];
         // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
-        if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && !has_post_thumbnail($id)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
+        if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && ma_abgleich_bild_fehlt($id)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
     }
     return ma_abgleich_abschliessen($erg, $t0);
 }

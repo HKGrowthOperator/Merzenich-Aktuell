@@ -23,8 +23,22 @@ function ma_editorial_boxes(): void {
     }
 }
 
+/**
+ * Bildangaben beim Laden des Formulars (17.10.2026). Setzt das Plugin beim Veröffentlichen ein
+ * Poolfoto, schickt der Kasten danach noch die alten, leeren Felder: Unverändert gelassene Felder
+ * überschreiben dann nicht den Nachweis des Poolfotos (ma_save_editorial_meta).
+ */
+const MA_EDITORIAL_BILDFELDER = ['ma_image_credit', 'ma_image_license', 'ma_image_original_url', 'ma_image_type', 'ma_image_rights_verified'];
+function ma_bildfelder_geladen_feld(): void {
+    $id = (int) get_the_ID(); $w = [];
+    foreach (MA_EDITORIAL_BILDFELDER as $k) $w[$k] = (string) get_post_meta($id, $k, true);
+    $w['ma_image_rights_verified'] = $w['ma_image_rights_verified'] === '1' ? '1' : '0';
+    echo '<input type="hidden" name="ma_bildfelder_geladen" value="' . esc_attr((string) wp_json_encode($w)) . '">';
+}
+
 /** Auswahlfeld fuer ma_image_type. */
 function ma_image_type_field(): void {
+    ma_bildfelder_geladen_feld();
     $wert=(string)get_post_meta(get_the_ID(),'ma_image_type',true);
     echo '<p><label><strong>Bildtyp</strong><br><select style="width:100%" name="ma_image_type">';
     echo '<option value="">— nicht gesetzt —</option>';
@@ -126,11 +140,23 @@ function ma_save_editorial_meta(int $post_id): void {
     if (!isset($_POST['ma_editorial_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])),'ma_editorial_save')) return;
     if (!current_user_can('edit_post',$post_id)) return;
 
+    // Steht das automatisch vergebene Poolfoto: Bildfelder, die seit dem Laden des Kastens niemand geändert hat, nicht
+    // überschreiben (Block-Editor speichert den Kasten nach dem Veröffentlichen mit den alten, leeren Werten).
+    $geladen = isset($_POST['ma_bildfelder_geladen']) ? json_decode((string) wp_unslash($_POST['ma_bildfelder_geladen']), true) : null;
+    $poolBild = is_array($geladen) && function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell((int) $post_id);
+    $bildGeaendert = false;
+    $unveraendert = function (string $k, string $neu) use ($geladen, $poolBild, &$bildGeaendert): bool {
+        if (!$poolBild || !array_key_exists($k, $geladen)) return false;
+        if ((string) $geladen[$k] === $neu) return true;
+        $bildGeaendert = true;
+        return false;
+    };
     $text=['ma_source_publisher','ma_image_credit','ma_image_license','ma_ai_use_type','ma_reviewed_by','ma_editorial_responsibility','ma_kicker','ma_organisation','ma_seo_titel'];
     // Bildtyp ist eine feste Auswahl. Alles ausserhalb der Liste wird verworfen,
     // damit der Resolver sich auf den Wert verlassen kann.
     $bildtyp = isset($_POST['ma_image_type']) ? sanitize_key(wp_unslash($_POST['ma_image_type'])) : '';
-    if ($bildtyp !== '' && isset(MA_IMAGE_TYPES[$bildtyp])) update_post_meta($post_id,'ma_image_type',$bildtyp);
+    if (isset($_POST['ma_image_type']) && $unveraendert('ma_image_type', $bildtyp)) {}
+    elseif ($bildtyp !== '' && isset(MA_IMAGE_TYPES[$bildtyp])) update_post_meta($post_id,'ma_image_type',$bildtyp);
     elseif (isset($_POST['ma_image_type'])) delete_post_meta($post_id,'ma_image_type');
     $url=['ma_source_url','ma_image_original_url'];
     $datetime=['ma_source_published_at','ma_source_checked_at','ma_top_until','ma_reviewed_at','ma_aktualisiert'];
@@ -139,9 +165,9 @@ function ma_save_editorial_meta(int $post_id): void {
 
     // Nur Felder, die das Formular mitschickt (03.10.2026): ein Feld, das der
     // Kasten nicht zeigt (Partner, ältere Felder), wird nicht gelöscht oder genullt.
-    foreach($text as $k){if(!isset($_POST[$k]))continue;$v=sanitize_text_field(wp_unslash($_POST[$k]));$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
+    foreach($text as $k){if(!isset($_POST[$k]))continue;$v=sanitize_text_field(wp_unslash($_POST[$k]));if($unveraendert($k,$v))continue;$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     if(isset($_POST['ma_seo_beschreibung'])){$v=sanitize_textarea_field(wp_unslash($_POST['ma_seo_beschreibung']));$v===''?delete_post_meta($post_id,'ma_seo_beschreibung'):update_post_meta($post_id,'ma_seo_beschreibung',$v);}
-    foreach($url as $k){if(!isset($_POST[$k]))continue;$v=esc_url_raw(wp_unslash($_POST[$k]));$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
+    foreach($url as $k){if(!isset($_POST[$k]))continue;$v=esc_url_raw(wp_unslash($_POST[$k]));if($unveraendert($k,$v))continue;$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($datetime as $k){if(!isset($_POST[$k]))continue;$v=ma_editorial_datetime_value($_POST[$k]);$v===''?delete_post_meta($post_id,$k):update_post_meta($post_id,$k,$v);}
     foreach($number as $k){if(!isset($_POST[$k]))continue;$v=max(0,min(100,(int)$_POST[$k]));update_post_meta($post_id,$k,(string)$v);}
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
@@ -155,8 +181,11 @@ function ma_save_editorial_meta(int $post_id): void {
             delete_post_meta($post_id,$k);
             continue;
         }
+        if ($k === 'ma_image_rights_verified' && $unveraendert($k, isset($_POST[$k]) ? '1' : '0')) continue;
         update_post_meta($post_id,$k,isset($_POST[$k])?'1':'0');
     }
+    // Hat die Redaktion Bildangaben des Poolfotos bewusst geändert, gilt das Bild als ihres: kein automatischer Tausch mehr.
+    if ($poolBild && $bildGeaendert && function_exists('ma_bildpool_merkmal_loeschen')) ma_bildpool_merkmal_loeschen((int) $post_id);
 }
 
 function ma_publication_gate(array $data,array $postarr): array {
