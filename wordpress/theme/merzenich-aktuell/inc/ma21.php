@@ -685,7 +685,58 @@ function ma21_bild(WP_Post $p): ?array {
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
     $typ = get_post_meta($p->ID, 'ma_image_type', true) ?: get_post_meta($id, 'ma_image_type', true);
     return ['id' => $id, 'src' => $voll[0], 'w' => (int) $voll[1], 'h' => (int) $voll[2], 'srcset' => (string) wp_get_attachment_image_srcset($id, 'full'),
-        'alt' => $alt, 'typ' => (string) $typ, 'credit' => ma_credit_kurz((string) get_post_meta($p->ID, 'ma_image_credit', true), (string) get_post_meta($p->ID, 'ma_image_license', true))];
+        'alt' => $alt, 'typ' => (string) $typ, 'credit' => ma_credit_kurz((string) get_post_meta($p->ID, 'ma_image_credit', true), (string) get_post_meta($p->ID, 'ma_image_license', true)),
+        'foto' => function_exists('ma_foto_schluessel') ? ma_foto_schluessel($id) : ma21_foto_schluessel((string) $voll[0])];
+}
+
+/* Höchstens so oft dasselbe Foto auf einer Seite (17.10.2026, Wunsch Betreiber: „oft das gleiche
+   Bild 5 mal in einer Seite“). Ab dem dritten Mal zeigt die Karte kein Bild (Entscheidung Betreiber:
+   „Ohne Bild“); die Meldungsseite behält ihr Foto. Gezählt wird das Foto, nicht der Anhang: Abgleich
+   und Bildpool legen dasselbe Foto als zwei Anhänge an. Den Schlüssel bildet das Plugin aus der
+   Herkunft des Anhangs (includes/fotoschluessel.php), sonst diese Funktion aus der Adresse. */
+const MA21_BILD_MAX = 2;
+const MA21_FOTO_BREITEN = '240|320|360|480|526|590|600|640|720|768|800|960|1080|1200|1440|1600|1920';
+
+/**
+ * Foto-Schlüssel aus einer Bildadresse, gleiche Regeln wie ma_foto_schluessel_pfad() im Plugin und
+ * fotoSchluessel() in assets/endlos.js: h:<name-prüfsumme> für Pipeline-Dateien mit Prüfsumme,
+ * p:<ordner>/<name> für übrige Dateien unter /assets/ (ohne erzeugte Breite), sonst u:<pfad>
+ * (nur WordPress-Größen wie -300x200 und -scaled fallen weg, zwei „plakat.jpg“ bleiben zwei Fotos).
+ */
+function ma21_foto_schluessel(string $src): string {
+    $pfad = strtolower((string) preg_replace('#[?\#].*$#', '', $src));
+    $name = (string) preg_replace('#\.[a-z0-9]+$#', '', basename($pfad));
+    $name = (string) preg_replace('#-\d+x\d+$#', '', $name);
+    $name = (string) preg_replace('#-(scaled|rotated)$#', '', $name);
+    if (preg_match('#^((?:.*-)?(?=[0-9a-f]*[a-f])[0-9a-f]{10,})(?:-\d{2,4})?(?:-\d)?$#', $name, $m)) return 'h:' . $m[1];
+    $i = strpos($pfad, '/assets/');
+    if ($i !== false) {
+        $ordner = dirname(substr($pfad, $i + 8));
+        return 'p:' . ($ordner === '.' ? '' : $ordner . '/') . (string) preg_replace('#-(?:' . MA21_FOTO_BREITEN . ')$#', '', $name);
+    }
+    return 'u:' . (string) preg_replace('#^https?://[^/]+#', '', dirname($pfad)) . '/' . $name;
+}
+
+/** Zählerstand der Fotos dieses Seitenaufrufs. */
+function &ma21_bild_register(): array {
+    static $r = [];
+    return $r;
+}
+
+/** Darf dieses Foto auf der Seite noch erscheinen? Zählt mit, wenn ja. */
+function ma21_bild_frei(?array $b): bool {
+    if (!$b) return false;
+    $k = (string) ($b['foto'] ?? '') ?: ma21_foto_schluessel((string) $b['src']);
+    $r = &ma21_bild_register();
+    if (($r[$k] ?? 0) >= MA21_BILD_MAX) return false;
+    $r[$k] = ($r[$k] ?? 0) + 1;
+    return true;
+}
+
+/** Bild für eine Karte in einer Liste: wie ma21_bild(), ab dem dritten Mal desselben Fotos null. */
+function ma21_bild_seite(WP_Post $p): ?array {
+    $b = ma21_bild($p);
+    return ma21_bild_frei($b) ? $b : null;
 }
 
 /** Echtes, redaktionell nutzbares Bild: kein Logo, kein Wappen. */
@@ -696,7 +747,8 @@ function ma21_echtes_bild(?array $b): bool {
 function ma21_img(array $b, string $sizes, bool $eager): string {
     return '<img src="' . esc_url($b['src']) . '"' . ($b['srcset'] ? ' srcset="' . esc_attr($b['srcset']) . '"' : '')
         . ' sizes="' . esc_attr($sizes) . '" alt="' . esc_attr($b['alt']) . '"' . ($b['w'] && $b['h'] ? ' width="' . $b['w'] . '" height="' . $b['h'] . '"' : '')
-        . ' loading="' . ($eager ? 'eager' : 'lazy') . '"' . ($eager ? ' fetchpriority="high"' : '') . ' decoding="async" data-editorial-image class="">';
+        . ' loading="' . ($eager ? 'eager' : 'lazy') . '"' . ($eager ? ' fetchpriority="high"' : '') . ' decoding="async" data-editorial-image'
+        . (($b['foto'] ?? '') !== '' ? ' data-foto="' . esc_attr((string) $b['foto']) . '"' : '') . ' class="">';
 }
 
 function ma21_badge(array $b, bool $start): string {
@@ -802,7 +854,11 @@ function ma21_startseite_belegung(bool $neu = false): array {
         'vorrang' => $vorrang,
         'buehnenTauglich' => fn($p) => !ma21_ist_sport($p) && !has_category('tipp', $p) && ma21_echtes_bild(ma21_bild($p)),
         'breite' => fn($p) => (ma21_bild($p)['w'] ?? 0),
-        'motiv' => fn($p) => (int) get_post_thumbnail_id($p->ID),
+        // Motiv = Foto (17.10.2026): Abgleich und Bildpool legen dasselbe Foto als zwei Anhänge an; die Ortsbilder
+        // der Orte-Bühne (vorlagen/startseite.html, /assets/places/<ort>-720) stehen fest auf der Seite und zählen vorab.
+        'motiv' => fn($p) => ($b = ma21_bild($p)) ? (string) ($b['foto'] ?? '') : '',
+        // Die fünf Ortsbilder der Bühne „Ihre fünf Orte“ (vorlagen/startseite.html) stehen fest auf der Seite.
+        'motiveVorab' => array_fill_keys(array_map(fn($o) => ma21_foto_schluessel("/assets/places/{$o}-720.webp"), array_keys(MA21_ORTE)), 1),
         'bildtyp' => fn($p) => (string) (ma21_bild($p)['typ'] ?? ''),
         'bild' => fn($p) => ma21_bild($p),
         'echtesBild' => fn($p) => ma21_echtes_bild(ma21_bild($p)),
@@ -1094,7 +1150,7 @@ function ma21_kommende_termine(int $n): array {
 
 /** Karte im „Weiterlesen“-Block unter einer Meldung. */
 function ma21_news_card(WP_Post $p): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
     return '<article class="news-card">' . ($b ? "\n  <a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['news-card'], false) . ma21_badge($b, false) . '</div></a>' : '')
         . "\n  <div class=\"news-card-body\">\n    " . ma21_marke($p, 'kicker') . "\n    <h3><a href=\"{$url}\">{$titel}</a></h3>\n    <p class=\"dek\">" . ma21_e(ma21_teaser($p)) . "</p>\n    <div class=\"meta\">" . ma21_zeit($p, true) . '</div>'
         . "<div class=\"story-actions\"><a class=\"read-more\" href=\"{$url}\">Mehr lesen<span class=\"sr-only\">: {$titel}</span></a></div>\n  </div>\n</article>";
@@ -1102,7 +1158,7 @@ function ma21_news_card(WP_Post $p): string {
 
 /** Erste Meldung einer Liste (Rubrik, Ort, Thema). */
 function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
     // Ohne Bild über die ganze Breite (.feed-lead.no-media, korrekturen.css), sonst stand der Text in der Bildspalte (Suche, Vorführ-Check 15.10.2026).
     return '<article class="feed-lead' . ($b ? '' : ' no-media') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
         . ($b ? "<a href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-lead'], true) . ma21_badge($b, false) . '</div></a>' : '')
@@ -1111,7 +1167,7 @@ function ma21_feed_lead(WP_Post $p, string $slot = '', bool $fest = false): stri
 }
 
 function ma21_feed_row(WP_Post $p, string $slot = '', bool $fest = false): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
     // Ohne Bild eine Spalte wie in der statischen Kopie (deploy/inhaltsindex.mjs), sonst stünde der Text in der schmalen Bildspalte.
     return '<article' . ma21_karte_attr($p, $slot, $fest) . ' class="feed-row' . ($b ? '' : ' no-media no-image') . '">'
         . ($b ? "<a class=\"feed-img\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['feed-row'], false) . ma21_badge($b, false) . '</div></a>' : '')
@@ -1124,7 +1180,7 @@ function ma21_feed_row(WP_Post $p, string $slot = '', bool $fest = false): strin
 function ma21_bildraster(array $posts, array $plaetze = []): string {
     $h = '<div class="bildraster">';
     foreach (array_values($posts) as $i => $p) {
-        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
         [$slot, $fest] = $plaetze[$i] ?? ['', false];
         $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
             . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['raster'], false) . ma21_badge($b, false) . '</div></a>' : '')
@@ -1183,7 +1239,7 @@ function ma21_feed_raster(array $posts, array $plaetze = []): string {
     $h = '<div class="bildraster bildraster--ressort">';
     foreach (array_values($posts) as $i => $p) {
         if ($i === 6) { $w = ma21_werbung('artikel'); if ($w !== '') $h .= '<div class="bildraster-werbung">' . $w . '</div>'; }
-        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+        $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
         [$slot, $fest] = $plaetze[$i] ?? ['', false];
         $h .= '<article class="bildraster-karte' . ($b ? '' : ' bildraster-karte--ohne-bild') . '"' . ma21_karte_attr($p, $slot, $fest) . '>'
             . ($b ? "<a class=\"bildraster-bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\"><div class=\"media\">" . ma21_img($b, MA21_SIZES['ressort-raster'], false) . ma21_badge($b, false) . '</div></a>' : '')
@@ -1244,6 +1300,19 @@ function ma21_endlos_teil(string $seite, array $posts, string $naechste): string
     return '<div data-endlos-teil data-art="' . ($raster ? 'raster' : 'reihen') . '" data-naechste="' . esc_attr($naechste) . '">' . $inhalt . '</div>';
 }
 /**
+ * „Weitere Meldungen“ der Startseite: Karten wie in den Rubrikblöcken darüber (ma21_karte 'm' im
+ * Raster .desk-mittel, startseite.css) statt Zeilen (Vorführ-Check 15.10.2026, „sieht anders aus“);
+ * die Anzeige wie in den Ressortlisten nach Karte 6. endlos.js setzt die Karten in dieselbe Hülle.
+ */
+function ma21_endlos_weitere(array $posts, string $naechste): string {
+    $h = '';
+    foreach (array_values($posts) as $i => $p) {
+        if ($i === 6) { $w = ma21_werbung('artikel'); if ($w !== '') $h .= '<div class="bildraster-werbung">' . $w . '</div>'; }
+        $h .= ma21_karte($p, 'm', 'h3', '', false, 'weitere', $i);
+    }
+    return '<div data-endlos-teil data-art="raster" data-naechste="' . esc_attr($naechste) . '"><div class="desk-mittel weitere-meldungen__raster">' . $h . '</div></div>';
+}
+/**
  * Antwort des Teilmodus (?ma_endlos=1): null = keine (normale Seite, auch bei
  * ausgeschaltetem Endlos-Scrollen), sonst [Status, Inhalt]. Hinter der letzten
  * Seite 404, endlos.js meldet dann „Alle Meldungen geladen“.
@@ -1256,7 +1325,10 @@ function ma21_endlos_antwort(): ?array {
     // „Weitere Meldungen“ der Startseite (?ma_ohne_sport=1): Die Startseite bleibt sportfrei (KBS 26.09.2026),
     // auch mit Vereins- und Fanclub-Meldungen mit Sportbezug, und zeigt wie die oberen Blöcke nur Meldungen mit
     // Startseiten-Freigabe („Nur in der Rubrik“ bleibt draußen, Review 16.10.2026). Bleibt nichts übrig, lädt endlos.js die Folgeseite.
-    if ((string) get_query_var('ma_ohne_sport') !== '') $posts = array_values(array_filter($posts, fn($p) => !ma21_ist_sport($p) && ma21_startseite_frei($p)));
+    if ((string) get_query_var('ma_ohne_sport') !== '') {
+        $posts = array_values(array_filter($posts, fn($p) => !ma21_ist_sport($p) && ma21_startseite_frei($p)));
+        return [200, ma21_endlos_weitere($posts, ma21_endlos_naechste())];
+    }
     $schluessel = ma21_ressort_schluessel();
     return [200, ma21_endlos_teil($schluessel !== '' ? $schluessel : (is_category('sport') ? 'ressort-sport' : 'liste'), $posts, ma21_endlos_naechste())];
 }
@@ -1568,7 +1640,7 @@ add_filter('pre_handle_404', fn($stop, $q) => ($q->is_main_query() && $q->get('m
 
 /** Karte der Unternehmensseite: Bild oben, Kicker, Titel, Zeile, Anriss, Weiterlesen. */
 function ma21_u_karte(WP_Post $p, int $i): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p);
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild_seite($p);
     $ort = ma21_ort($p);
     return '<article class="u-karte' . ($b ? '' : ' u-karte--ohne-bild') . '"' . ($i >= 8 ? ' data-nachladen hidden' : '') . '>'
         . ($b ? "<a class=\"u-karte__bild\" href=\"{$url}\" tabindex=\"-1\" aria-hidden=\"true\">" . ma21_img($b, MA21_SIZES['unternehmen'], $i < 2) . ma21_badge($b, false) . '</a>' : '')

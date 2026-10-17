@@ -53,14 +53,56 @@
     return Boolean(a && schon.pfade.has(new URL(a.getAttribute('href'), location.href).pathname));
   }
 
+  /* Höchstens zweimal dasselbe Foto auf der Seite (wie ma21_bild_seite im Theme, 17.10.2026):
+     nachgeladene Karten verlieren ab dem dritten Mal ihre Bildfläche, der Text bleibt. Den Schlüssel
+     liefert WordPress am Bild (data-foto); sonst gelten dieselben Regeln wie ma21_foto_schluessel. */
+  const BILD_MAX = 2;
+  const BREITEN = '240|320|360|480|526|590|600|640|720|768|800|960|1080|1200|1440|1600|1920';
+  const RASTER = '.bildraster--ressort, .weitere-meldungen__raster';
+  function fotoSchluessel(src) {
+    const pfad = (src || '').replace(/[?#].*$/, '').toLowerCase();
+    const name = pfad.split('/').pop().replace(/\.[a-z0-9]+$/, '').replace(/-\d+x\d+$/, '').replace(/-(scaled|rotated)$/, '');
+    const h = name.match(/^((?:.*-)?(?=[0-9a-f]*[a-f])[0-9a-f]{10,})(?:-\d{2,4})?(?:-\d)?$/);
+    if (h) return 'h:' + h[1];
+    const i = pfad.indexOf('/assets/');
+    if (i >= 0) {
+      const teile = pfad.slice(i + 8).split('/'); teile.pop();
+      return 'p:' + (teile.length ? teile.join('/') + '/' : '') + name.replace(new RegExp('-(?:' + BREITEN + ')$'), '');
+    }
+    const ohneHost = pfad.replace(/^https?:\/\/[^/]+/, '');
+    return 'u:' + (ohneHost.includes('/') ? ohneHost.replace(/\/[^/]*$/, '') : '.') + '/' + name;
+  }
+  const schluesselVon = (img) => img.getAttribute('data-foto') || fotoSchluessel(img.getAttribute('src'));
+  // Fest auf der Seite: Bilder der Karten, die Ortsbilder „Ihre fünf Orte“ und das Foto des Tages (zählen im Theme vorab mit).
+  const FEST = 'img[data-editorial-image], .orte-buehne img, #foto-des-tages-bild';
+  function bilderBegrenzen(knoten) {
+    const zahl = new Map();
+    for (const img of d.querySelectorAll(FEST)) { const k = schluesselVon(img); if (k) zahl.set(k, (zahl.get(k) || 0) + 1); }
+    for (const k of knoten) {
+      if (!k.querySelectorAll) continue;
+      for (const img of [...k.querySelectorAll('img[data-editorial-image]')]) {
+        const s = schluesselVon(img);
+        if (!s || (zahl.get(s) || 0) < BILD_MAX) { if (s) zahl.set(s, (zahl.get(s) || 0) + 1); continue; }
+        const huelle = img.closest('a[aria-hidden="true"]') || img.closest('.media') || img;
+        (k.contains(huelle) ? huelle : img).remove();
+        if (k.classList.contains('bildraster-karte')) k.classList.add('bildraster-karte--ohne-bild');
+        if (k.classList.contains('feed-row')) k.classList.add('no-media', 'no-image');
+        if (k.classList.contains('feed-lead')) k.classList.add('no-media');
+        if (k.classList.contains('desk-karte')) k.classList.add('desk-karte--ohne-bild');
+        if (k.classList.contains('u-karte')) k.classList.add('u-karte--ohne-bild');
+      }
+    }
+  }
+
   /** Antwort lesen: Teilstück aus WordPress oder ganze statische Seite. */
   function lesen(text) {
     const doc = new DOMParser().parseFromString(text, 'text/html');
     const teil = doc.querySelector('[data-endlos-teil]');
     if (teil) {
       const art = teil.getAttribute('data-art') === 'raster' ? 'raster' : 'reihen';
-      const quelle = art === 'raster' ? (teil.querySelector('.bildraster--ressort') || teil) : teil;
-      return { art, knoten: [...quelle.children], naechste: teil.getAttribute('data-naechste') || '' };
+      // Hülle der Karten: Kartenraster der Ressorts oder (Startseite, „Weitere Meldungen“) das Raster der Rubrikblöcke.
+      const quelle = art === 'raster' ? (teil.querySelector(RASTER) || teil) : teil;
+      return { art, huelle: quelle !== teil ? quelle.className : '', knoten: [...quelle.children], naechste: teil.getAttribute('data-naechste') || '' };
     }
     const feed = doc.querySelector('.feed');
     const weiter = feed && feed.querySelector('a[rel="next"]');
@@ -73,9 +115,9 @@
     if (spalten < 2) return;
     for (const w of raster.querySelectorAll(':scope > .bildraster-werbung')) {
       let davor = 0;
-      for (let el = w.previousElementSibling; el; el = el.previousElementSibling) if (el.classList.contains('bildraster-karte')) davor++;
+      for (let el = w.previousElementSibling; el; el = el.previousElementSibling) if (el.hasAttribute('data-story')) davor++;
       let fehlt = (spalten - (davor % spalten)) % spalten, ziel = w;
-      while (fehlt > 0 && ziel.nextElementSibling && ziel.nextElementSibling.classList.contains('bildraster-karte')) { ziel = ziel.nextElementSibling; fehlt--; }
+      while (fehlt > 0 && ziel.nextElementSibling && ziel.nextElementSibling.hasAttribute('data-story')) { ziel = ziel.nextElementSibling; fehlt--; }
       if (ziel !== w) ziel.after(w);
     }
   }
@@ -117,14 +159,15 @@
     }
 
     /** Knoten einfügen; gibt die tatsächlich neuen zurück. */
-    function einfuegen(art, knoten) {
+    function einfuegen(art, knoten, huelle) {
       const schon = bekannt();
       const neu = knoten.filter((k) => !doppelt(k, schon));
       if (!neu.some((k) => k.hasAttribute('data-story'))) return [];
       const fertig = neu.map((k) => d.importNode(k, true));
+      bilderBegrenzen(fertig);
       if (art === 'raster') {
-        let raster = [...liste.querySelectorAll('.bildraster--ressort')].pop();
-        if (!raster) { raster = d.createElement('div'); raster.className = 'bildraster bildraster--ressort'; liste.insertBefore(raster, steuer); }
+        let raster = [...liste.querySelectorAll(RASTER)].pop();
+        if (!raster) { raster = d.createElement('div'); raster.className = huelle || 'bildraster bildraster--ressort'; liste.insertBefore(raster, steuer); }
         for (const k of fertig) raster.appendChild(k);
         werbungAusrichten(raster);
       } else {
@@ -159,12 +202,12 @@
         else if (!r.ok) throw new Error('Status ' + r.status);
         else {
           const teil = lesen(await r.text());
-          neu = einfuegen(teil.art, teil.knoten);
+          neu = einfuegen(teil.art, teil.knoten, teil.huelle);
           const folgt = teil.naechste ? adresse(teil.naechste) : '';
           // Nennt die Antwort sich selbst als Folgeseite, ist hier Schluss (keine Schleife).
           naechste = folgt === naechste ? '' : folgt;
           // Gemerkt wird ohne Rotationsmerkmal, sonst wechseln wiederhergestellte Anzeigen nicht mehr.
-          if (neu.length) teile.push({ art: teil.art, html: neu.map((k) => k.outerHTML).join('').replace(/ data-ma-endlos-rotation="1"/g, '') });
+          if (neu.length) teile.push({ art: teil.art, huelle: teil.huelle, html: neu.map((k) => k.outerHTML).join('').replace(/ data-ma-endlos-rotation="1"/g, '') });
         }
         const zahl = neu.filter((k) => k.hasAttribute('data-story')).length;
         status.textContent = !naechste ? 'Alle Meldungen geladen.' : `${zahl} weitere Meldung${zahl === 1 ? '' : 'en'} geladen.`;
@@ -193,7 +236,7 @@
       for (const t of alt.teile) {
         const tpl = d.createElement('template');
         tpl.innerHTML = t.html;
-        if (einfuegen(t.art, [...tpl.content.children]).length) teile.push(t);
+        if (einfuegen(t.art, [...tpl.content.children], t.huelle || '').length) teile.push(t);
       }
       naechste = alt.naechste || '';
       if (typeof alt.y === 'number') {

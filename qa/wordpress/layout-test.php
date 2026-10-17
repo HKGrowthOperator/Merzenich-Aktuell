@@ -314,5 +314,17 @@ $rf['jetzt'] = strtotime('2026-09-10 00:00:00 UTC');
 $b = ma_layout_aufloesen('startseite', [], array_slice($alle, 3), $rf);
 pruefe('Alle gleich frisch: Fotos weiter vor Ortsansichten', in_array(76, $ids($b['sektionen']['rathaus']['gross']), true), false);
 
+echo "\nMotive nach Foto, Ortsbilder vorab gezählt (17.10.2026)\n";
+$GLOBALS['opt'] = ['ma_layout_migration' => '1']; $GLOBALS['meta'] = []; $GLOBALS['posts'] = []; $GLOBALS['cats'] = []; $GLOBALS['bilder'] = [];
+$alle = [];
+for ($i = 1; $i <= 30; $i++) { $cat = ['blaulicht', 'rathaus', 'wirtschaft', 'vereine', 'leben'][$i % 5]; $alle[] = meldung($i, [$cat], ['w' => 1200, 'h' => 800]); }
+// Jede dritte Meldung trägt dasselbe Foto (Ortsansicht Bürgewald), als verschiedene Anhänge.
+$foto = fn($p) => $p->ID % 3 === 0 ? 'buergewald' : 'foto-' . $p->ID;
+$platziert = function (array $b) { $ids = []; foreach ($b['plaetze'] as $e) if (!empty($e['post'])) $ids[] = $e['post']; return count(array_filter($ids, fn($id) => $id % 3 === 0)); };
+$ohneGrenze = ma_layout_aufloesen('startseite', [], $alle, ['motiv' => fn($p) => 'foto-' . $p->ID] + $regeln);
+pruefe('Ohne gemeinsames Foto stünden mehr als zwei davon auf der Seite', $platziert($ohneGrenze) > 2, true);
+pruefe('Dasselbe Foto in verschiedenen Anhängen: höchstens zweimal', $platziert(ma_layout_aufloesen('startseite', [], $alle, ['motiv' => $foto] + $regeln)), 2);
+pruefe('Ortsbild der Bühne zählt vorab: nur noch einmal', $platziert(ma_layout_aufloesen('startseite', [], $alle, ['motiv' => $foto, 'motiveVorab' => ['buergewald' => 1, 'golzheim' => 1]] + $regeln)), 1);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

@@ -1,6 +1,51 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-16. Oktober 2026 · Theme 21.20.2 · Core-Plugin 1.28.3 · live: 21.20.2 / 1.28.3 (Historie unten)
+17. Oktober 2026 · Theme 21.20.3 · Core-Plugin 1.29.0 · live: 21.20.2 / 1.28.3 (Historie unten)
+
+## Neu am 17.10.2026: Theme 21.20.3 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
+
+**Anlass:** Der Betreiber meldete am 16.10.: „gerade ist oft das gleiche Bild 5 mal in einer Seite“. Gemessen am 17.10. auf 17 Seiten bei 1440 px bis zum Seitenende:
+
+| Seite | Wiederholung |
+|---|---|
+| `/termine/` | Kirchenfoto 7×, Tanzfoto 4× |
+| `/ort/buergewald/` | Ortsansicht 6× |
+| `/rathaus/` | ein Pool-Foto 4× |
+| Startseite | zwei Pool-Fotos je 3× |
+
+- **Plugin: Pool-Bilder gleichmäßig verteilen** (`includes/bildpools.php`)
+  - Neue Symbolbilder nehmen das am wenigsten genutzte geprüfte Foto des Pools. Gezählt werden nur sichtbare Inhalte: kommende Termine und Meldungen der letzten 45 Tage.
+  - Höchstens zweimal je Foto. Reicht ein kleiner Pool nicht (Tanz: 1 Foto, Kirche: 4), hilft der übergeordnete Pool aus: Termine für Termine, Aktuell für Meldungen.
+  - `ma_bildpool_verteilen()` verteilt automatisch vergebene Bilder (`_ma_bildpool_auto`) neu. Es läuft einmal nach dem Update, täglich per Cron und über den Knopf „Symbolbilder verteilen“ unter Medien → Bildpools. Redaktionsfotos und Bilder aus dem Abgleich bleiben unberührt; jeder Wechsel steht im Verlauf.
+- **Theme: höchstens zweimal dasselbe Foto je Seite**
+  - `ma21_bild_seite()` zählt je Seitenaufruf das Foto, nicht den Anhang: Dateiname ohne Größen-, Kopie- und Prüfsummenzusatz. Damit zählen Abgleich- und Pool-Fassung sowie 1440 und 720 px als ein Foto.
+  - Ab dem dritten Mal erscheint die Karte ohne Bild (Entscheidung Betreiber: „Ohne Bild“). Das gilt für Listen, Kartenraster, Termine und Unternehmenskarten. Die Meldungsseite behält ihr Foto.
+  - Startseite: Die Motivgrenze zählt nach Foto; die Ortsbilder der Bühne zählen vorab mit.
+  - Nachladen (`assets/endlos.js`): dieselbe Grenze und Normalisierung über die ganze Seite.
+- **„Weitere Meldungen“ auf der Startseite:** Die Karten sehen aus wie die Rubrikblöcke darüber (Raster `.desk-mittel`, 3/2/1 Spalten). Die Anzeige folgt wie in den Ressortlisten nach Karte 6.
+- **Markt (Vorführ-Check, Gruppe Markt, am 17.10. live nachgestellt)**
+  - Die Testanzeige einer Beispielfirma führt auf ihrem eigenen Kanal zum ersten Musterbeitrag statt auf dieselbe Seite.
+  - Das Etikett „Musterbeitrag“ heißt auf kleinen Vorschaubildern am Handy kurz „Muster“ und sitzt in der Ecke (vorher 27 % der Bildfläche).
+  - `/termine/` am Handy: Kopf ohne Einleitungssatz, Zeiträume in einer wischbaren Zeile, Auswahlfelder ohne sichtbare Beschriftung. Der erste Termin beginnt bei 474 statt 798 px (390 × 844).
+  - Bildnachweise an Musterbildern waren schon vollständig; Fotowiederholungen auf `/unternehmen/` erledigt die Grenze oben.
+- **Neue Meldung:** LEADER an Inde und Rur, sieben neue Projekte, Ideen bis 27.01.2027 (`inhalte/meldungen/2026-10-17-leader.json`). Sie kommt mit dem stündlichen Abgleich als Entwurf.
+- **Tests:** neu `qa/wordpress/bildwiederholung-test.php` und `bildpools-verteilen-test.php`; erweitert `layout-test.php`, `endlos-test.php` und `unternehmen-test.php`.
+
+**Code-Prüfung** (drei Prüfer, jeder Befund gegengeprüft, 10 bestätigt, alle eingearbeitet):
+- **Redaktionsfotos sind geschützt.** Das Plugin merkt sich, welches Poolfoto es selbst gesetzt hat (`_ma_bildpool_auto_bild`). Ersetzt jemand das Bild (Redaktion, Editor, Änderungsvorschlag, Abgleich), entfällt das Merkmal, und weder der Verteil-Lauf noch das Nachziehen fassen das Bild an.
+- **Ein Foto-Schlüssel für Plugin, Theme und Nachladen** (`includes/fotoschluessel.php`):
+  - Pipeline-Dateien mit Prüfsumme zählen als ein Foto.
+  - Übrige Dateien unter `/assets/` zählen ohne die erzeugte Breite.
+  - Alles andere zählt je Anhang. Zwei verschiedene Uploads „plakat.jpg“ oder „einsatz-118“ und „einsatz-121“ bleiben also zwei Fotos.
+  - Das Theme schreibt den Schlüssel als `data-foto` ans Bild; `endlos.js` liest ihn.
+- **Täglicher Lauf:** nur bei eingeschalteter Automatik; der Knopf geht immer.
+- **Laufende mehrtägige Termine** zählen als sichtbar.
+- **Gezählt wird auch, was fest auf der Seite steht:**
+  - Meldungsseite: Das Foto der Meldung zählt mit, „Weiterlesen“ zeigt es höchstens noch einmal.
+  - Startseite: Ortsbilder „Ihre fünf Orte“ und Foto des Tages zählen beim Nachladen mit.
+- **Kleinkram:** Fokusrahmen der Zeitraum-Knöpfe auf `/termine/` am Handy vollständig; Abstand über „Weitere Meldungen“.
+- **Bleibt:** Die statische Kopie (`chatgpt-site`) begrenzt Fotos nur beim Nachladen. Ihre Ortsseiten listen alle Meldungen auf einmal. Live läuft WordPress mit der Begrenzung im Theme.
+
 
 ## Neu am 16.10.2026 (abends): Theme 21.20.1 und Plugin 1.28.3, Feinschliff und drei Betriebe als Entwurf
 

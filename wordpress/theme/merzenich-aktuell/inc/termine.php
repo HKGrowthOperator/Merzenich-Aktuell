@@ -74,7 +74,7 @@ function ma21_termine_alle(?int $jetzt = null): array {
 function ma21_termin_zeile(array $t): string {
     $url = esc_url($t['url']);
     $iso = fn(int $ts): string => gmdate('Y-m-d\TH:i:s.000\Z', $ts);
-    $b = ma21_bild($t['post']);
+    $b = ma21_bild_seite($t['post']);
     $bild = $b ? '<a class="event-bild" href="' . $url . '" tabindex="-1" aria-hidden="true"><div class="media">'
         . ma21_img(array_merge($b, ['alt' => '']), '(max-width: 640px) 92vw, (max-width: 1099px) 46vw, 380px', false) . ma21_badge($b, false) . '</div></a>' : '';
     return '<div data-event-row data-start="' . esc_attr($iso($t['start'])) . '" data-end="' . esc_attr($iso($t['ende'])) . '" data-place="' . esc_attr($t['ortSlug']) . '" data-category="' . esc_attr($t['kategorie']) . '">'

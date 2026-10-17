@@ -267,6 +267,7 @@ add_action('admin_post_ma_bildpools', function (): void {
     if ($aktion === 'anlegen') $q['ma_angelegt'] = ma_bildpools_anlegen();
     if ($aktion === 'importieren') { $e = ma_bildpools_importieren(10); $q = ['ma_neu' => $e['neu'], 'ma_offen' => $e['offen'], 'ma_fehler' => count($e['fehler'])]; set_transient('ma_bildpool_lauf', ['fehler' => array_slice($e['fehler'], 0, 3), 'hinweis' => $e['hinweis']], 600); }
     if ($aktion === 'auto' && current_user_can('manage_options')) update_option('ma_bildpool_auto', !empty($_POST['auto']) ? '1' : '0', false);
+    if ($aktion === 'verteilen') $q['ma_verteilt'] = ma_bildpool_verteilen();
     wp_safe_redirect(add_query_arg($q, admin_url('upload.php?page=ma-bildpools'))); exit;
 });
 
@@ -279,6 +280,7 @@ function ma_bildpools_seite(): void {
     echo '<div class="wrap"><h1>Bildpools</h1>';
     echo '<p>Gesichtete Symbolfotos je Thema (Quelle: Wikimedia Commons, Liste vom ' . esc_html((string) (ma_bildpool_daten()['stand'] ?? '')) . '). Ein Poolfoto ist immer ein <strong>Symbolbild</strong>, nie ein Foto vom Ereignis. Nur Fotos mit Rechteprüfung „geprüft“ werden verwendet.</p>';
     if (isset($_GET['ma_angelegt'])) echo '<div class="notice notice-success"><p>' . (int) $_GET['ma_angelegt'] . ' Pools angelegt.</p></div>';
+    if (isset($_GET['ma_verteilt'])) echo '<div class="notice notice-success"><p>' . (int) $_GET['ma_verteilt'] . ' Symbolbilder neu verteilt (höchstens ' . MA_BILDPOOL_GRENZE . '× dasselbe Foto unter den sichtbaren Inhalten).</p></div>';
     if (isset($_GET['ma_neu'])) {
         $lauf = get_transient('ma_bildpool_lauf'); $lauf = is_array($lauf) ? $lauf : ['fehler' => [], 'hinweis' => ''];
         $nFehler = (int) ($_GET['ma_fehler'] ?? 0);
@@ -295,6 +297,7 @@ function ma_bildpools_seite(): void {
         echo $extra . '<button class="button' . ($aktion === 'importieren' ? ' button-primary' : '') . '">' . esc_html($knopf) . '</button></form>';
     };
     $form('anlegen', 'Pools anlegen');
+    $form('verteilen', 'Symbolbilder verteilen');
     if ($offen) $form('importieren', 'Fotos übernehmen (' . $offen . ' offen, in Paketen zu 10)', '', 'ma-bildpools-import');
     else echo '<p><strong>Alle ' . count((array) (ma_bildpool_daten()['bilder'] ?? [])) . ' Fotos der Liste sind in der Mediathek.</strong></p>';
     echo '<table class="widefat striped" style="max-width:980px;margin-top:8px"><thead><tr><th>Pool</th><th>In WordPress</th><th>davon geprüft</th><th>Liste (geprüft)</th><th>Hinweis</th></tr></thead><tbody>';
@@ -381,37 +384,169 @@ function ma_bildpool_fuer_termin(string $text): string {
     return 'termine';
 }
 
-/** Geprüftes Foto des Pools; nicht dasselbe wie bei den letzten acht Meldungen. 0 = keines. */
-function ma_bildpool_waehlen(string $pool, int $post_id): int {
-    $ids = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'numberposts' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC',
-        'tax_query' => [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]], 'meta_query' => [['key' => 'ma_rechtepruefung', 'value' => 'geprueft']]]);
-    if (!$ids) return 0;
-    $zuletzt = array_map('intval', array_filter(array_map(fn($i) => get_post_thumbnail_id($i), get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'numberposts' => 8, 'fields' => 'ids', 'post__not_in' => [$post_id]]))));
-    $n = count($ids);
-    for ($i = 0; $i < $n; $i++) { $kandidat = (int) $ids[($post_id + $i) % $n]; if (!in_array($kandidat, $zuletzt, true)) return $kandidat; }
-    return (int) $ids[$post_id % $n];
+/* Höchstens so oft dasselbe Poolfoto unter den sichtbaren Inhalten (17.10.2026: auf
+   /termine/ stand dasselbe Kirchenfoto siebenmal, weil beim Vergeben erst eines der
+   vier Kirchenfotos geprüft war und nie neu verteilt wurde). */
+const MA_BILDPOOL_GRENZE = 2;
+const MA_BILDPOOL_TAGE = 45;
+
+/** Geprüfte Fotos eines Pools (Medien-IDs, aufsteigend). */
+function ma_bildpool_kandidaten(string $pool): array {
+    static $cache = [];
+    if (!isset($cache[$pool])) $cache[$pool] = array_map('intval', get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'numberposts' => -1, 'fields' => 'ids', 'orderby' => 'ID', 'order' => 'ASC',
+        'tax_query' => [['taxonomy' => MA_BILDPOOL_TAX, 'field' => 'slug', 'terms' => $pool]], 'meta_query' => [['key' => 'ma_rechtepruefung', 'value' => 'geprueft']]]));
+    return $cache[$pool];
 }
+
+/** Sichtbare Inhalte: Meldungen der letzten MA_BILDPOOL_TAGE Tage, kommende und laufende Termine (IDs, wie /termine/). */
+function ma_bildpool_sichtbar(): array {
+    $meldungen = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 400, 'fields' => 'ids', 'no_found_rows' => true,
+        'date_query' => [['after' => MA_BILDPOOL_TAGE . ' days ago', 'inclusive' => true]]]);
+    $termine = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 400, 'fields' => 'ids', 'no_found_rows' => true,
+        'meta_query' => ['relation' => 'OR',
+            ['key' => 'ma_event_end', 'value' => (string) current_time('Y-m-d H:i:s'), 'compare' => '>=', 'type' => 'DATETIME'],
+            ['key' => 'ma_event_start', 'value' => (string) current_time('Y-m-d'), 'compare' => '>=']]]);
+    return array_values(array_unique(array_map('intval', array_merge($meldungen, $termine))));
+}
+
+/**
+ * Wie oft jedes Foto unter den sichtbaren Inhalten Beitragsbild ist, nach Foto-Schlüssel
+ * (fotoschluessel.php): Abgleich- und Pool-Anhang desselben Fotos zählen zusammen.
+ * $neu verwirft den Zwischenstand.
+ */
+function &ma_bildpool_nutzung(bool $neu = false): array {
+    static $n = null;
+    if ($n === null || $neu) {
+        $n = [];
+        foreach (ma_bildpool_sichtbar() as $id) { $b = (int) get_post_thumbnail_id($id); if ($b) { $k = ma_foto_schluessel($b); $n[$k] = ($n[$k] ?? 0) + 1; } }
+    }
+    return $n;
+}
+
+/**
+ * Geprüftes Foto des Pools, das unter den sichtbaren Inhalten am seltensten
+ * vorkommt (bei Gleichstand wie bisher ab Stelle post_id % n). Mit $grenze nur
+ * Fotos, die seltener als $grenze vorkommen. 0 = keines.
+ */
+function ma_bildpool_waehlen(string $pool, int $post_id, int $grenze = PHP_INT_MAX): int {
+    $ids = ma_bildpool_kandidaten($pool);
+    $n = count($ids);
+    if (!$n) return 0;
+    $nutzung = ma_bildpool_nutzung();
+    $best = 0; $bestZahl = PHP_INT_MAX;
+    for ($i = 0; $i < $n; $i++) {
+        $k = $ids[($post_id + $i) % $n]; $z = $nutzung[ma_foto_schluessel($k)] ?? 0;
+        if ($z < $grenze && $z < $bestZahl) { $best = $k; $bestZahl = $z; }
+    }
+    return $best;
+}
+
+/**
+ * Ersatzbild für einen Inhalt: zuerst ein seltenes Foto des eigenen Pools, dann
+ * des übergeordneten Pools (Termine: „termine“, Meldungen: „aktuell“), erst dann
+ * das seltenste Foto ohne Grenze. Detailpools haben oft nur ein oder vier
+ * geprüfte Fotos.
+ */
+function ma_bildpool_ersatz(string $pool, WP_Post $p): int {
+    $ober = $p->post_type === 'ma_event' ? 'termine' : 'aktuell';
+    foreach (array_unique([$pool, $ober]) as $q) if ($b = ma_bildpool_waehlen($q, $p->ID, MA_BILDPOOL_GRENZE)) return $b;
+    return ma_bildpool_waehlen($pool, $p->ID) ?: ma_bildpool_waehlen($ober, $p->ID) ?: ma_bildpool_waehlen('aktuell', $p->ID);
+}
+
+/** Poolfoto und Nachweis am Inhalt setzen (Typ Symbolbild, Merkmal _ma_bildpool_auto = vorgesehener Pool). */
+function ma_bildpool_bild_setzen(WP_Post $p, int $bild, string $pool): void {
+    set_post_thumbnail($p->ID, $bild);
+    foreach (['ma_image_credit', 'ma_image_license', 'ma_image_original_url'] as $k) {
+        $v = (string) get_post_meta($bild, $k, true);
+        $v !== '' ? update_post_meta($p->ID, $k, $v) : delete_post_meta($p->ID, $k);
+    }
+    update_post_meta($p->ID, 'ma_image_type', 'symbol');
+    update_post_meta($p->ID, 'ma_image_rights_verified', '1');
+    update_post_meta($p->ID, '_ma_bildpool_auto', $pool);
+    update_post_meta($p->ID, '_ma_bildpool_auto_bild', (string) $bild);
+}
+
+/**
+ * Trägt der Inhalt noch das automatisch vergebene Poolfoto? Ersetzt jemand das Bild
+ * (Redaktion, Editor nach dem Veröffentlichen, Änderungsvorschlag, Abgleich), ist das
+ * Merkmal veraltet und das Bild bleibt unangetastet (Review 17.10.2026).
+ * Vor 1.29.0 gesetzte Merkmale ohne gemerktes Bild: nur wenn das Bild im Bildpool liegt.
+ */
+function ma_bildpool_auto_aktuell(int $id): bool {
+    if ((string) get_post_meta($id, '_ma_bildpool_auto', true) === '') return false;
+    $bild = (int) get_post_thumbnail_id($id);
+    if (!$bild) return false;
+    $gemerkt = (int) get_post_meta($id, '_ma_bildpool_auto_bild', true);
+    return $gemerkt ? $bild === $gemerkt : has_term('', MA_BILDPOOL_TAX, $bild);
+}
+
+function ma_bildpool_merkmal_loeschen(int $id): void {
+    delete_post_meta($id, '_ma_bildpool_auto');
+    delete_post_meta($id, '_ma_bildpool_auto_bild');
+}
+
+/** Neues Beitragsbild, das nicht das automatisch vergebene ist: Merkmal entfernen. */
+function ma_bildpool_merkmal_pruefen($meta_id, $post_id, $key, $wert): void {
+    if ($key !== '_thumbnail_id' || (string) get_post_meta((int) $post_id, '_ma_bildpool_auto', true) === '') return;
+    $gemerkt = (int) get_post_meta((int) $post_id, '_ma_bildpool_auto_bild', true);
+    $neu = (int) $wert;
+    if ($gemerkt ? $neu !== $gemerkt : !($neu && has_term('', MA_BILDPOOL_TAX, $neu))) ma_bildpool_merkmal_loeschen((int) $post_id);
+}
+add_action('added_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
+add_action('updated_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
 
 /** Setzt ein Poolfoto als Beitragsbild (nur ohne eigenes Bild). Gibt die Medien-ID zurück. */
 function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
     if (has_post_thumbnail($p->ID) || !in_array($p->post_type, ['post', 'ma_event'], true)) return 0;
     $pool = ma_bildpool_fuer($p);
-    $bild = ma_bildpool_waehlen($pool, $p->ID);
-    // Detailpools haben oft nur ein geprüftes Foto: Termine fallen auf den Terminpool zurück, alles auf „Aktuell“.
-    if (!$bild && $p->post_type === 'ma_event' && $pool !== 'termine') $bild = ma_bildpool_waehlen('termine', $p->ID);
-    if (!$bild && $pool !== 'aktuell') $bild = ma_bildpool_waehlen('aktuell', $p->ID);
+    $bild = ma_bildpool_ersatz($pool, $p);
     if (!$bild) return 0;
-    set_post_thumbnail($p->ID, $bild);
-    foreach (['ma_image_credit' => 'ma_image_credit', 'ma_image_license' => 'ma_image_license', 'ma_image_original_url' => 'ma_image_original_url'] as $von => $nach) {
-        $v = (string) get_post_meta($bild, $von, true);
-        if ($v !== '') update_post_meta($p->ID, $nach, $v);
-    }
-    update_post_meta($p->ID, 'ma_image_type', 'symbol');
-    update_post_meta($p->ID, 'ma_image_rights_verified', '1');
-    update_post_meta($p->ID, '_ma_bildpool_auto', $pool);
+    ma_bildpool_bild_setzen($p, $bild, $pool);
+    $nutzung = &ma_bildpool_nutzung(); $k = ma_foto_schluessel($bild); $nutzung[$k] = ($nutzung[$k] ?? 0) + 1;
     if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($p->ID, 'Symbolbild aus dem Bildpool „' . (ma_bildpool_labels()[$pool] ?? $pool) . '“ gesetzt (kein eigenes Bild)', '', 0);
     return $bild;
 }
+
+/**
+ * Automatisch vergebene Symbolbilder neu verteilen (17.10.2026): Kommt ein Poolfoto
+ * unter den sichtbaren Inhalten öfter als MA_BILDPOOL_GRENZE vor, bekommen die
+ * übrigen ein seltenes Foto aus ihrem Pool, sonst aus dem übergeordneten. Nur
+ * Inhalte mit _ma_bildpool_auto; Fotos der Redaktion und aus dem Abgleich bleiben.
+ * Die ältesten behalten ihr Bild, damit Neues nicht ständig wechselt. Gibt die Zahl
+ * der Wechsel zurück.
+ */
+function ma_bildpool_verteilen(): int {
+    $nutzung = &ma_bildpool_nutzung(true);
+    $auto = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 800, 'no_found_rows' => true, 'orderby' => 'date', 'order' => 'ASC',
+        'post__in' => ma_bildpool_sichtbar() ?: [0], 'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS']]]);
+    // Nur Inhalte, die noch ihr automatisch vergebenes Poolfoto tragen; veraltete Merkmale fallen weg.
+    $auto = array_values(array_filter($auto, function ($p) { if (ma_bildpool_auto_aktuell($p->ID)) return true; if (get_post_thumbnail_id($p->ID)) ma_bildpool_merkmal_loeschen($p->ID); return false; }));
+    // Was nicht automatisch vergeben ist (Redaktionsfotos, Abgleich), steht fest und zählt zuerst.
+    $gesehen = $nutzung;
+    foreach ($auto as $p) $gesehen[ma_foto_schluessel((int) get_post_thumbnail_id($p->ID))]--;
+    $wechsel = 0;
+    foreach ($auto as $p) {
+        $bild = (int) get_post_thumbnail_id($p->ID); $k = ma_foto_schluessel($bild);
+        $gesehen[$k] = ($gesehen[$k] ?? 0) + 1;
+        if ($gesehen[$k] <= MA_BILDPOOL_GRENZE || ($nutzung[$k] ?? 0) <= MA_BILDPOOL_GRENZE) continue;
+        $pool = (string) get_post_meta($p->ID, '_ma_bildpool_auto', true) ?: ma_bildpool_fuer($p);
+        $ober = $p->post_type === 'ma_event' ? 'termine' : 'aktuell';
+        $neu = 0;
+        foreach (array_unique([$pool, $ober]) as $q) if ($neu = ma_bildpool_waehlen($q, $p->ID, MA_BILDPOOL_GRENZE)) break;
+        if (!$neu || ma_foto_schluessel($neu) === $k) continue;
+        ma_bildpool_bild_setzen($p, $neu, $pool);
+        $kn = ma_foto_schluessel($neu);
+        $nutzung[$k]--; $nutzung[$kn] = ($nutzung[$kn] ?? 0) + 1; $gesehen[$k]--;
+        $wechsel++;
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($p->ID, 'Symbolbild gewechselt: dasselbe Poolfoto stand schon bei ' . MA_BILDPOOL_GRENZE . ' anderen sichtbaren Inhalten', '', 0);
+    }
+    return $wechsel;
+}
+// Täglich, aber nur bei eingeschalteter Automatik (wie das Setzen beim Veröffentlichen); der Knopf geht immer.
+add_action('ma_bildpool_verteilen_taeglich', function (): void { if (get_option('ma_bildpool_auto', '1') === '1') ma_bildpool_verteilen(); });
+add_action('init', function (): void {
+    if (function_exists('wp_next_scheduled') && !wp_next_scheduled('ma_bildpool_verteilen_taeglich')) wp_schedule_event(time() + 900, 'daily', 'ma_bildpool_verteilen_taeglich');
+});
 
 add_action('transition_post_status', function (string $neu, string $alt, $p): void {
     if (!$p instanceof WP_Post || $neu !== 'publish' || $alt === 'publish' || get_option('ma_bildpool_auto', '1') !== '1') return;
@@ -434,6 +569,8 @@ function ma_bildpool_nachziehen(int $max = 60): int {
     // einen anderen Pool ergibt (vorher bekam jeder Termin ein Kirmesfoto). Von Hand
     // gesetzte Bilder tragen kein _ma_bildpool_auto und bleiben unberührt.
     foreach (get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 200, 'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS']]]) as $p) {
+        // Bild inzwischen ersetzt (Redaktion, Editor): nie löschen, nur das veraltete Merkmal entfernen.
+        if (get_post_thumbnail_id($p->ID) && !ma_bildpool_auto_aktuell($p->ID)) { ma_bildpool_merkmal_loeschen($p->ID); continue; }
         $pool = ma_bildpool_fuer($p);
         if ($pool === (string) get_post_meta($p->ID, '_ma_bildpool_auto', true)) continue;
         delete_post_thumbnail($p->ID);
@@ -448,6 +585,12 @@ add_action('admin_init', function (): void {
     $n = ma_bildpool_nachziehen(60);
     if ($n < 60) update_option('ma_bildpool_nachgezogen', MA_CORE_VERSION, false);
 });
+/* Einmal je Plugin-Version neu verteilen (der tägliche Lauf hält es danach). */
+add_action('admin_init', function (): void {
+    if (get_option('ma_bildpool_auto', '1') !== '1' || get_option('ma_bildpool_verteilt') === MA_CORE_VERSION) return;
+    update_option('ma_bildpool_verteilt', MA_CORE_VERSION, false);
+    ma_bildpool_verteilen();
+}, 20);
 
 /* WP-CLI: wp ma-bildpools importieren [--max=50] */
 if (defined('WP_CLI') && WP_CLI) {

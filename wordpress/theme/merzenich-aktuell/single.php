@@ -9,6 +9,8 @@ while (have_posts()): the_post();
     $titel = get_the_title($p);
     $kicker = get_post_meta($p->ID, 'ma_kicker', true) ?: $ressortLabel;
     $b = ma21_bild($p);
+    // Das Foto der Meldung zählt mit: Die Karten unter „Weiterlesen“ zeigen es höchstens noch einmal (ma21_bild_seite).
+    if ($b) ma21_bild_frei($b);
     // Kasten „Das Wichtigste in Kürze“ (ma_facts) wird seit 04.10.2026 nicht mehr gezeigt (Wunsch des Auftraggebers); das Feld bleibt im Backend.
     $q_url = get_post_meta($p->ID, 'ma_source_url', true);
     $q_name = get_post_meta($p->ID, 'ma_source_publisher', true);

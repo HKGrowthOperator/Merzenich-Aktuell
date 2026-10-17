@@ -1,22 +1,22 @@
 {
- "generated": "2026-10-16T09:44:00+02:00",
- "anzahl": 191,
+ "generated": "2026-10-17T16:00:00+02:00",
+ "anzahl": 192,
  "bestand": {
-  "gesamt": 191,
+  "gesamt": 192,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 68,
    "sport": 31,
    "rathaus": 21,
    "leben": 40,
-   "wirtschaft": 9,
+   "wirtschaft": 10,
    "tipp": 0,
    "menschen": 6,
    "vereine": 16,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 129,
+   "merzenich": 130,
    "golzheim": 19,
    "girbelsrath": 23,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 191,
+    "anzahl": 192,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -45,7 +45,7 @@
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 9,
+    "anzahl": 10,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 129,
+    "anzahl": 130,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-17-leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027",
+   "url": "/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/",
+   "titel": "LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027",
+   "teaser": "Die Lokale Aktionsgruppe hat sieben Projekte beschlossen und dafür rund 591.000 Euro gebunden. Rund 98.000 Euro sind noch frei; neue Projektideen nimmt das Regionalmanagement bis zum 27. Januar 2027 an.",
+   "kicker": "Wirtschaft · Förderung",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-17T16:00:00+02:00",
+   "aktualisiert": "2026-10-17T16:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "strukturwandel",
+     "label": "Strukturwandel"
+    },
+    {
+     "slug": "dorfentwicklung",
+     "label": "Dorfentwicklung"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1920,
+    "height": 1253,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
    "url": "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/",

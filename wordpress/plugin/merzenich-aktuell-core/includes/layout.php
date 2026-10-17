@@ -413,7 +413,7 @@ function ma_layout_warnung_text(string $w): string {
  * in Automatik-Reihenfolge. $regeln (vom Theme, damit die Logik ohne Theme
  * testbar bleibt):
  *   Startseite: vorrang (WP_Post[] nach Zone), buehnenTauglich(p), breite(p),
- *     motiv(p) => int, bildtyp(p) => string, echtesBild(p), ressort(p) => slug,
+ *     motiv(p) => Schlüssel (Foto), motiveVorab => [Schlüssel => Anzahl], bildtyp(p) => string, echtesBild(p), ressort(p) => slug,
  *     kategorie(p, slug) => bool, sektionen (id => ['s' => Konfig mit nimm,
  *     jeRessort, fenster, zeilen]), holen(id) => ?WP_Post
  *   Ressort: raster (bool), echtesBild(p), holen(id)
@@ -445,7 +445,8 @@ function ma_layout_aufloesen_startseite(array $fest, array $alle, array $r): arr
     $byId = [];
     foreach ($alle as $p) $byId[$p->ID] = $p;
     $post = function (int $id) use (&$byId, $holen) { if (!isset($byId[$id])) { $p = $holen($id); if ($p) $byId[$id] = $p; } return $byId[$id] ?? null; };
-    $MOTIV_MAX = 2; $vergeben = []; $motive = []; $plaetze = [];
+    // motiveVorab: Fotos, die schon fest auf der Seite stehen (Ortsbilder der Bühne), zählen von Anfang an mit.
+    $MOTIV_MAX = 2; $vergeben = []; $motive = array_filter((array) ($r['motiveVorab'] ?? []), 'is_int'); $plaetze = [];
     $motivFrei = function ($p, array $extra = []) use (&$motive, $motiv, $MOTIV_MAX) { $k = $motiv($p); return !$k || (($motive[$k] ?? 0) + ($extra[$k] ?? 0)) < $MOTIV_MAX; };
     $belegen = function ($p) use (&$motive, &$vergeben, $motiv) { $vergeben[$p->ID] = true; $k = $motiv($p); if ($k) $motive[$k] = ($motive[$k] ?? 0) + 1; };
     $festPost = function (string $slot) use ($fest, $post) { return !empty($fest[$slot]) ? $post((int) $fest[$slot]) : null; };

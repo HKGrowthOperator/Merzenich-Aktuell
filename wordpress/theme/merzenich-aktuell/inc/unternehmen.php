@@ -330,19 +330,21 @@ function ma21_firmen_bild_html(?array $b, string $sizes, bool $eager = false): s
 function ma21_firmen_karte_html(array $f, array $b, bool $eager = false): string {
     $u = esc_url($b['url']); $t = esc_html($b['titel']);
     return '<article class="bildraster-karte u-firmen-karte' . ($b['muster'] ? ' u-muster-karte' : '') . '">'
-        . ($b['bild'] ? '<a class="bildraster-bild" href="' . $u . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_firmen_bild_html($b['bild'], '(max-width: 520px) 92vw, (max-width: 1099px) 46vw, 420px', $eager) . ($b['muster'] ? '<span class="badge">Musterbeitrag</span>' : '') . '</div></a>' : '')
+        . ($b['bild'] ? '<a class="bildraster-bild" href="' . $u . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_firmen_bild_html($b['bild'], '(max-width: 520px) 92vw, (max-width: 1099px) 46vw, 420px', $eager) . ($b['muster'] ? '<span class="badge" data-kurz="Muster">Musterbeitrag</span>' : '') . '</div></a>' : '')
         . '<div class="bildraster-text"><span class="kicker">' . ($b['muster'] ? 'Musterbeitrag' : 'Anzeige') . ' · <a href="' . esc_url($f['url']) . '">' . esc_html($f['name']) . '</a> · ' . esc_html($f['ort']) . '</span>'
         . '<h3><a href="' . $u . '">' . $t . '</a></h3>'
         . ($b['anriss'] !== '' ? '<p class="dek">' . esc_html($b['anriss']) . '</p>' : '')
         . '<div class="meta">' . ($b['muster'] ? 'Musterbeitrag · ' . ma21_muster_nachweis($b['bild'], 'Foto: ') : esc_html($b['zeit'])) . '</div></div></article>';
 }
 
-/** Testanzeige einer Musterfirma bzw. laufende Anzeige einer echten Firma (Plugin ma_ad). '' = keine. */
-function ma21_firmen_anzeige_html(array $f, string $format = 'gap'): string {
+/** Testanzeige einer Musterfirma bzw. laufende Anzeige einer echten Firma (Plugin ma_ad). '' = keine. $aufKanal: steht auf dem Kanal selbst. */
+function ma21_firmen_anzeige_html(array $f, string $format = 'gap', bool $aufKanal = false): string {
     if ($f['muster'] && !empty($f['anzeige']['titel'])) {
         // Eigene Karte statt der Werbeformate (Band und Spalte passen nicht in Text- und Seitenspalte):
         // breit Bild neben Text, schmal Bild über Text; immer als Testanzeige gekennzeichnet.
         $a = $f['anzeige']; $b = $a['bild'];
+        // Auf dem Kanal führte die Anzeige auf dieselbe Seite (Vorführ-Check, Gruppe Markt): dort zum ersten Musterbeitrag.
+        if ($aufKanal && !empty($f['beitraege'][0]['url'])) $a['url'] = $f['beitraege'][0]['url'];
         return '<aside class="u-testanzeige u-testanzeige--' . ($format === 'gap' ? 'schmal' : 'breit') . '" aria-label="Testanzeige"><span class="u-testanzeige__label">Testanzeige</span>'
             . '<a class="u-testanzeige__karte" href="' . esc_url($a['url']) . '" aria-label="' . esc_attr('Testanzeige: ' . $f['name'] . ' – ' . $a['titel']) . '">'
             . ($b ? '<span class="u-testanzeige__bild"><img src="' . esc_url(ma21_abs($b['klein'])) . '" alt="' . esc_attr($b['alt']) . '" width="720" height="405" loading="lazy" decoding="async"></span>' : '')

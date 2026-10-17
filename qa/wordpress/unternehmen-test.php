@@ -76,7 +76,7 @@ echo "\nÜbersicht /unternehmen/ und Kasten Musterprofile\n";
 $html = ma21_musterbeitraege_html(6);
 preg_match_all('#<article class="bildraster-karte[^"]*"#', $html, $karten);
 pruefe('Sechs Musterbeiträge als Karten', count($karten[0]), 6);
-pruefe('Jede Karte trägt „Musterbeitrag“', substr_count($html, '<span class="badge">Musterbeitrag</span>'), 6);
+pruefe('Jede Karte trägt „Musterbeitrag“', substr_count($html, '<span class="badge" data-kurz="Muster">Musterbeitrag</span>'), 6);
 pruefe('Karten führen auf Beitragsseiten, nie auf das Anfrageformular', [str_contains($html, '/anzeigen/aufgeben/'), preg_match_all('#href="https://merzenich-aktuell\.de/unternehmen/(?:backhaus-morgenrot|cafe-feldlerche|holzwerkstatt-jahresring)/[a-z0-9\-]+/"#', $html)], [false, 12]);
 pruefe('Firma und Ort in jeder Karte', substr_count($html, 'Musterbeitrag · <a href="https://merzenich-aktuell.de/unternehmen/'), 6);
 pruefe('Hinweis: keine echten Unternehmen', str_contains($html, 'keine echten Unternehmen'), true);
@@ -104,6 +104,9 @@ ob_start(); include $wurzel . '/wordpress/theme/merzenich-aktuell/unternehmen-ka
 pruefe('Name, Zeile und Hinweis Beispielfirma', [str_contains($kanal, '<h1>Holzwerkstatt Jahresring</h1>'), str_contains($kanal, 'Handwerk · Girbelsrath'), str_contains($kanal, '<strong>Beispielfirma.</strong> Dieses Unternehmen ist ausgedacht')], [true, true, true]);
 pruefe('Alle drei Beiträge als Karten', substr_count($kanal, 'class="bildraster-karte u-firmen-karte'), 3);
 pruefe('Testanzeige und weitere Kanäle', [str_contains($kanal, 'Testanzeige'), substr_count($kanal, 'class="u-kanal"')], [true, 2]);
+preg_match('#class="u-testanzeige__karte" href="([^"]+)"#', $kanal, $ziel);
+pruefe('Testanzeige auf dem Kanal führt zum ersten Musterbeitrag, nicht auf sich selbst', (bool) preg_match('#^https://merzenich-aktuell\.de/unternehmen/holzwerkstatt-jahresring/[a-z0-9\-]+/$#', $ziel[1] ?? ''), true);
+pruefe('Etikett Musterbeitrag mit Kurzform für kleine Bilder', substr_count($kanal, '<span class="badge" data-kurz="Muster">Musterbeitrag</span>'), 3);
 
 echo "\nSuchmaschinen\n";
 $basis = ['typ' => 'liste', 'titel' => '', 'beschreibung' => '', 'url' => '', 'index' => true, 'og' => 'website', 'krumen' => [], 'bild' => ['url' => '', 'w' => 0, 'h' => 0], 'liste' => []];

@@ -34,7 +34,7 @@ $anfrage = home_url('/anzeigen/aufgeben/?art=Werbung&format=Unternehmenskanal');
       <?php if ($f['profil'] !== ''): ?><a class="btn ghost" href="<?php echo esc_url($f['profil']); ?>">Eintrag im Branchenbuch</a><?php endif; ?>
     </p><?php endif; ?>
   </div>
-  <?php echo ma21_firmen_anzeige_html($f); ?>
+  <?php echo ma21_firmen_anzeige_html($f, 'gap', true); ?>
   <?php echo ma21_firmen_kacheln_html(ma21_alle_firmen(), 'Weitere Unternehmenskanäle', $f['slug']); ?>
   <div class="sidebox u-box"><h3>Für Unternehmen</h3><p>Ihr Betrieb mit eigenem Kanal, eigenen Beiträgen und Anzeigen: Zugang anfragen, Beiträge selbst schreiben, die Redaktion gibt frei.</p><p><a class="btn block" href="<?php echo esc_url($anfrage); ?>">Unternehmenskanal anfragen</a></p></div>
 </aside></div></section>

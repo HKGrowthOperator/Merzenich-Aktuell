@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 16 Oct 2026 07:44:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 17 Oct 2026 14:00:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/</guid>
+<pubDate>Sat, 17 Oct 2026 14:00:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Lokale Aktionsgruppe hat sieben Projekte beschlossen und dafür rund 591.000 Euro gebunden. Rund 98.000 Euro sind noch frei; neue Projektideen nimmt das Regionalmanagement bis zum 27. Januar 2027 an.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Klimaanpassung: Gemeinde setzt auf Stauden, Blühwiesen und seltener gemähte Flächen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Ein 3:3 beim JFV Bördeland Vettweiß reichte der D1 zum Gruppensieg. Für B- und C-Junioren stehen am 14. und 17. Oktober die nächsten Spiele an.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-13-fee5d2ea04.jpg" medium="image"><media:credit>BikeMike / Wikimedia Commons · CC0</media:credit><media:description>Fußballplatz</media:description></media:content>
-</item>
-<item>
-<title>Ideenwettbewerb „Mit Tatkraft“: 5.000 oder 10.000 Euro für Projekte im Rheinischen Revier</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/</guid>
-<pubDate>Tue, 13 Oct 2026 05:00:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Bürgerinnen und Bürger, Vereine und Initiativen können bis 30. November Projektideen beim Landesamt LANUK einreichen. Der Kreis Düren mit Merzenich gehört zum Gebiet.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
 </item>
 </channel>
 </rss>

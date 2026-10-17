@@ -1667,6 +1667,30 @@ html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
 /* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
 @media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 
+/* Vorführ-Check, Gruppe Markt (17.10.2026) */
+/* Etikett „Musterbeitrag“ verdeckte am Handy ein Viertel des kleinen Vorschaubilds: dort kurz „Muster“ in der Ecke (der Text darunter nennt „Musterbeitrag“). */
+@media(max-width:759px){.u-firmen-karte .media .badge[data-kurz]{font-size:0;letter-spacing:0;padding:2px 5px;left:4px;bottom:4px;top:auto;line-height:1}.u-firmen-karte .media .badge[data-kurz]::after{content:attr(data-kurz);font:600 9px/1.2 var(--sans)}}
+/* /termine/ am Handy: Der erste Termin stand unter dem ersten Bildschirm (Kopf 314 px, Filter 290 px). Kopf ohne Einleitungssatz, Zeiträume in einer wischbaren Zeile, Auswahlfelder ohne sichtbare Beschriftung (die Felder nennen „Alle Ortsteile“ bzw. „Alle Kategorien“). */
+@media(max-width:759px){
+  main:has([data-event-filters]) .page-head{padding-top:14px}
+  main:has([data-event-filters]) .page-head .crumbs{margin-bottom:10px}
+  main:has([data-event-filters]) .page-head h1{font-size:27px;line-height:1.15;margin:6px 0 8px}
+  main:has([data-event-filters]) .page-head .desc{display:none}
+  main:has([data-event-filters]) .page-head .count-line{margin-top:6px}
+  .filter-controls[data-event-filters]{gap:10px;padding:12px 0;margin-bottom:12px}
+  /* Polster 6 px: Platz für den Fokusrahmen (2 px, Abstand 4 px), den die wischbare Zeile sonst abschneidet. */
+  .filter-controls[data-event-filters] .period-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:6px;padding:6px;margin:-6px}
+  .filter-controls[data-event-filters] .period-tabs::-webkit-scrollbar{display:none}
+  .filter-controls[data-event-filters] .period-tabs button{flex:0 0 auto;min-height:40px;padding:6px 12px;font-size:13px}
+  .filter-controls[data-event-filters] label{font-size:0;gap:0}
+  .filter-controls[data-event-filters] select{height:40px;font-size:14px}
+  .filter-controls[data-event-filters] .ansicht-tabs button{min-height:40px}
+  .filter-controls[data-event-filters]+[data-event-count]{margin-top:0}
+}
+/* Startseite, „Weitere Meldungen“: Karten im Raster der Rubrikblöcke (.desk-mittel, startseite.css); die Anzeige über die ganze Zeile. */
+body.home .desk-mittel.weitere-meldungen__raster{margin-top:0}
+body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
+
 /* ---- werbung.css ---- */
 /* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
    anzeigen-rotation.css), auf Wunsch des Auftraggebers unveraendert in allen
