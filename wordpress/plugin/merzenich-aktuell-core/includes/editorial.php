@@ -142,15 +142,24 @@ function ma_save_editorial_meta(int $post_id): void {
     // - Zeigte der Kasten beim Laden ein anderes Bild (meist noch keins), gehören seine Bildangaben zum Stand vor dem
     //   Poolfoto: Sie kommen in dessen Sicherung (_ma_bildpool_vorher) und gelten, sobald das eigentliche Bild kommt.
     // - Zeigte er das Poolfoto und ändert die Redaktion eine Angabe, gilt das Bild als ihres (kein automatischer Tausch).
+    // - Zeigte er ein Poolfoto, das inzwischen ersetzt ist (vom Plugin neu verteilt oder von der Redaktion durch ein
+    //   eigenes Bild), sind Werte, die genau den Angaben jenes Poolfotos entsprechen, veraltet: weder an den Inhalt
+    //   noch in die Sicherung. Bewusst geänderte Felder zählen.
     $geladenBild = isset($_POST['ma_bildfelder_bild']) ? (int) $_POST['ma_bildfelder_bild'] : null;
+    $jetztBild = (int) get_post_thumbnail_id((int) $post_id);
     $poolBild = $geladenBild !== null && function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell((int) $post_id);
-    $anderesBild = $poolBild && $geladenBild !== (int) get_post_thumbnail_id((int) $post_id);
+    $altesPoolfoto = $geladenBild !== null && $geladenBild > 0 && $geladenBild !== $jetztBild && defined('MA_BILDPOOL_TAX') && has_term('', MA_BILDPOOL_TAX, $geladenBild);
+    $poolWerte = $altesPoolfoto ? ['ma_image_credit' => (string) get_post_meta($geladenBild, 'ma_image_credit', true), 'ma_image_license' => (string) get_post_meta($geladenBild, 'ma_image_license', true),
+        'ma_image_original_url' => (string) get_post_meta($geladenBild, 'ma_image_original_url', true), 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1'] : [];
+    $anderesBild = $poolBild && !$altesPoolfoto && $geladenBild !== $jetztBild;
     $sicherung = $anderesBild ? get_post_meta((int) $post_id, '_ma_bildpool_vorher', true) : null;
     if ($anderesBild && !is_array($sicherung)) $sicherung = [];
     $bildGeaendert = false;
-    // true: Feld ist erledigt (in der Sicherung), nicht am Inhalt schreiben.
-    $unveraendert = function (string $k, string $neu) use ($post_id, $poolBild, $anderesBild, &$sicherung, &$bildGeaendert): bool {
-        if (!$poolBild || !in_array($k, MA_EDITORIAL_BILDFELDER, true)) return false;
+    // true: Feld ist erledigt (veraltet oder in der Sicherung), nicht am Inhalt schreiben.
+    $unveraendert = function (string $k, string $neu) use ($post_id, $poolBild, $anderesBild, $altesPoolfoto, $poolWerte, &$sicherung, &$bildGeaendert): bool {
+        if (!in_array($k, MA_EDITORIAL_BILDFELDER, true)) return false;
+        if ($altesPoolfoto) { if ($neu === $poolWerte[$k]) return true; $bildGeaendert = true; return false; }
+        if (!$poolBild) return false;
         if ($anderesBild) { $sicherung[$k] = $neu; return true; }
         $alt = (string) get_post_meta((int) $post_id, $k, true);
         if ($k === 'ma_image_rights_verified') $alt = $alt === '1' ? '1' : '0';

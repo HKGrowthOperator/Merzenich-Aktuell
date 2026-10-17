@@ -81,6 +81,27 @@ kasten(12, 0, ['ma_image_credit' => 'Foto: Max', 'ma_image_license' => '', 'ma_i
 pruefe('Block-Editor speichert den Kasten nach dem Veröffentlichen: Poolfoto behält Nachweis und Merkmal', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, '_ma_bildpool_auto')], ['Foto X / Wikimedia Commons', 'symbol', 'aktuell']);
 set_post_thumbnail(12, 950);
 pruefe('Kommt das eigentliche Bild, gelten die Angaben aus dem Kasten', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, 'ma_image_rights_verified'), get_post_meta(12, 'ma_image_license')], ['Foto: Max', 'original', '1', '']);
+$poolX = ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1'];
+$GLOBALS['meta'][102] = ['ma_image_credit' => 'Foto Y / Wikimedia Commons', 'ma_image_license' => 'CC0'];
+// Kasten zeigte Poolfoto 101; während der Sitzung verteilt das Plugin auf 102; Speichern ohne Änderung.
+beitrag(60, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0']);
+ma_bildpool_bild_setzen(get_post(60), 101, 'aktuell'); ma_bildpool_bild_setzen(get_post(60), 102, 'aktuell');
+kasten(60, 101, $poolX);
+pruefe('Poolfoto inzwischen neu verteilt: alte Poolangaben weder am Inhalt noch in der Sicherung', [get_post_meta(60, 'ma_image_credit'), get_post_meta(60, '_ma_bildpool_auto'), get_post_meta(60, '_ma_bildpool_vorher')['ma_image_credit'] ?? ''], ['Foto Y / Wikimedia Commons', 'aktuell', 'Foto: Max']);
+set_post_thumbnail(60, 950);
+pruefe('Danach das eigentliche Bild: Angaben von vor dem Poolfoto', [get_post_meta(60, 'ma_image_credit'), get_post_meta(60, 'ma_image_type'), get_post_meta(60, 'ma_image_rights_verified')], ['Foto: Max', 'original', '0']);
+// Redaktion wählt im Editor das eigentliche Bild; der Kasten (geladen mit Poolfoto 101) wird danach gespeichert.
+beitrag(61, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0']);
+ma_bildpool_bild_setzen(get_post(61), 101, 'aktuell');
+set_post_thumbnail(61, 950);
+kasten(61, 101, $poolX);
+pruefe('Eigenes Bild im selben Speichern: Poolangaben aus dem Kasten überschreiben die Rückgabe nicht', [get_post_meta(61, 'ma_image_credit'), get_post_meta(61, 'ma_image_type'), get_post_meta(61, 'ma_image_rights_verified'), get_post_meta(61, 'ma_image_license')], ['Foto: Max', 'original', '0', '']);
+beitrag(62, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original']);
+ma_bildpool_bild_setzen(get_post(62), 101, 'aktuell');
+set_post_thumbnail(62, 950);
+$ohneHaken = $poolX; unset($ohneHaken['ma_image_rights_verified']); // abgewählter Haken fehlt im Formular
+kasten(62, 101, ['ma_image_credit' => 'Foto: Anna'] + $ohneHaken);
+pruefe('… bewusst geänderte Felder werden geschrieben', [get_post_meta(62, 'ma_image_credit'), get_post_meta(62, 'ma_image_rights_verified'), get_post_meta(62, 'ma_image_type')], ['Foto: Anna', '0', 'original']);
 beitrag(11, ['_thumbnail_id' => 880, 'ma_image_credit' => 'Gemeinde']);
 kasten(11, 880, ['ma_image_credit' => '', 'ma_image_type' => '']);
 pruefe('Ohne Poolfoto wie bisher: geleertes Feld wird gelöscht', get_post_meta(11, 'ma_image_credit'), '');
@@ -114,7 +135,7 @@ pruefe('Abgleich-Bild ersetzt das Poolfoto: Angaben aus der Import-Datei zurück
 $abgleichFehler = [];
 beitrag(44); ma_bildpool_bild_setzen(get_post(44), 102, 'aktuell');
 ma_abgleich_aktualisieren(44, ['meta' => ['ma_image_credit' => 'Feuerwehr Merzenich', 'ma_image_type' => 'official', 'ma_kicker' => 'Blaulicht'], 'titel' => 'Beitrag 44', 'inhalt' => '', 'auszug' => '', 'terme' => [], 'bild' => 0, 'hash' => 'h'], [], $abgleichFehler);
-pruefe('Abgleich-Aktualisierung bei Poolfoto: Bildangaben in die Sicherung, nicht ans Poolfoto', [get_post_meta(44, 'ma_image_credit'), get_post_meta(44, '_ma_bildpool_vorher')['ma_image_credit'] ?? '', get_post_meta(44, 'ma_kicker')], ['', 'Feuerwehr Merzenich', 'Blaulicht']);
+pruefe('Abgleich-Aktualisierung bei Poolfoto: Bildangaben in die Sicherung, nicht ans Poolfoto', [get_post_meta(44, 'ma_image_credit'), get_post_meta(44, '_ma_bildpool_vorher')['ma_image_credit'] ?? '', get_post_meta(44, 'ma_kicker')], ['Foto Y / Wikimedia Commons', 'Feuerwehr Merzenich', 'Blaulicht']);
 set_post_thumbnail(44, 960);
 pruefe('Mit dem Abgleich-Bild gelten die neuen Angaben', [get_post_meta(44, 'ma_image_credit'), get_post_meta(44, 'ma_image_type')], ['Feuerwehr Merzenich', 'official']);
 

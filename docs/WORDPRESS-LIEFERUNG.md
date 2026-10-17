@@ -63,6 +63,7 @@
 - **Kasten „Bild und Prüfung“** (`editorial.php`): Er merkt sich, welches Beitragsbild er beim Laden zeigte (`ma_bildfelder_bild`).
   - Zeigte er ein anderes Bild als das inzwischen gesetzte Poolfoto (meist noch keins; der Block-Editor lädt ihn nach dem Veröffentlichen nicht neu), gehen seine Bildangaben in die Sicherung des Poolfotos. Sie gelten, sobald das eigentliche Bild kommt. Der Nachweis des Poolfotos bleibt, ebenso das Merkmal.
   - Zeigte er das Poolfoto und ändert die Redaktion eine Angabe bewusst, gilt das Bild als ihres.
+  - Zeigte er ein Poolfoto, das inzwischen ersetzt ist (neu verteilt oder durch ein eigenes Bild), schreibt er dessen unveränderte Angaben weder an den Inhalt noch in die Sicherung; nur bewusst geänderte Felder zählen.
 - **Abgleich:**
   - Ist der Bild-Download beim Anlegen gescheitert und steht nur das Poolfoto, holt der nächste Lauf das Bild aus der Import-Datei nach (`ma_abgleich_bild_fehlt`).
   - Neue Bildangaben aus der Import-Datei gehen bis dahin in die Sicherung, nicht an das Poolfoto.
