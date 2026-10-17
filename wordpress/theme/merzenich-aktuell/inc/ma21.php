@@ -739,6 +739,24 @@ function ma21_bild_seite(WP_Post $p): ?array {
     return ma21_bild_frei($b) ? $b : null;
 }
 
+/** Bild zählen, ohne es zu unterdrücken (Aufmacher und Bühne der Startseite behalten ihr Foto immer). */
+function ma21_bild_zaehlen(?array $b): ?array {
+    if ($b) { $k = (string) ($b['foto'] ?? '') ?: ma21_foto_schluessel((string) $b['src']); $r = &ma21_bild_register(); $r[$k] = ($r[$k] ?? 0) + 1; }
+    return $b;
+}
+
+/**
+ * Startseite (17.10.2026): Die Ortsbilder „Ihre fünf Orte“ (vorlagen/startseite.html) stehen fest auf der Seite und
+ * zählen einmal vorab, wie motiveVorab in ma21_startseite_belegung. Feste Plätze umgehen die Motivgrenze des Layouts;
+ * die Karten der Rubrikblöcke zeigen ein Foto deshalb ebenfalls höchstens zweimal (ma21_karte).
+ */
+function ma21_bild_register_start(): void {
+    static $fertig = false;
+    if ($fertig || !function_exists('is_front_page') || !is_front_page()) return;
+    $fertig = true;
+    foreach (array_keys(MA21_ORTE) as $o) ma21_bild_zaehlen(['src' => "/assets/places/{$o}-720.webp", 'foto' => ma21_foto_schluessel("/assets/places/{$o}-720.webp")]);
+}
+
 /** Echtes, redaktionell nutzbares Bild: kein Logo, kein Wappen. */
 function ma21_echtes_bild(?array $b): bool {
     return $b && !preg_match('/logo|wappen/i', $b['alt'] . ' ' . $b['src']);
@@ -771,7 +789,10 @@ function ma21_karte_attr(WP_Post $p, string $slot = '', bool $fest = false): str
 
 /** Startseitenkarte in den Größen xl (Aufmacher), r/u (Bühne), l, m, s (Rubrikflächen). */
 function ma21_karte(WP_Post $p, string $g, string $tag = 'h3', string $slot = '', bool $fest = false, string $sektion = '', int $i = 0): string {
-    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $b = ma21_bild($p); $attr = ma21_karte_attr($p, $slot, $fest);
+    ma21_bild_register_start();
+    // Aufmacher und Bühne behalten ihr Foto und zählen mit; Rubrikkarten ab dem dritten Mal desselben Fotos ohne Bild.
+    $b = in_array($g, ['xl', 'r', 'u'], true) ? ma21_bild_zaehlen(ma21_bild($p)) : ma21_bild_seite($p);
+    $url = esc_url(get_permalink($p)); $titel = ma21_e(get_the_title($p)); $attr = ma21_karte_attr($p, $slot, $fest);
     $kopf = "<{$tag}><a href=\"{$url}\">{$titel}</a></{$tag}>";
     if ($g === 'xl') {
         return "<article class=\"front-lead\"{$attr}>" . ma21_bildflaeche($p, $b, MA21_SIZES['xl'], true)

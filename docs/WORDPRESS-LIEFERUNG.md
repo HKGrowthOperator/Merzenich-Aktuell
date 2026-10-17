@@ -1,8 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-17. Oktober 2026 · Theme 21.20.3 · Core-Plugin 1.29.0 · live: 21.20.2 / 1.28.3 (Historie unten)
+17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.0 · live: 21.20.3 / 1.29.0 (Historie unten)
 
-## Neu am 17.10.2026: Theme 21.20.3 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
+## Neu am 17.10.2026: Theme 21.20.3/21.20.4 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
+
+**Stand live (17.10., 19:20 Uhr):** Plugin 1.29.0 und Theme 21.20.3 sind eingespielt. Gemessen nach dem Einspielen auf denselben 17 Seiten: Bis auf die Startseite steht kein Foto mehr als zweimal da. Auf der Startseite standen zwei Fotos noch je 3×, alle auf **festen Plätzen**, die die Motivgrenze des Layouts bewusst umgehen; ihre Fotos stammen aus dem Abgleich und werden deshalb nicht umverteilt.
+
+**Theme 21.20.4:** Auch die Startseite zeigt ein Foto höchstens zweimal. Aufmacher und Bühne behalten ihr Bild und zählen mit, ebenso die fünf Ortsbilder „Ihre fünf Orte“. Karten in den Rubrikblöcken erscheinen ab dem dritten Vorkommen ohne Bild (`ma21_karte`, `ma21_bild_register_start`).
 
 **Anlass:** Der Betreiber meldete am 16.10.: „gerade ist oft das gleiche Bild 5 mal in einer Seite“. Gemessen am 17.10. auf 17 Seiten bei 1440 px bis zum Seitenende:
 

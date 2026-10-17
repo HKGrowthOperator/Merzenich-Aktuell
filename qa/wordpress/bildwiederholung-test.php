@@ -184,9 +184,9 @@ const zeile = (foto, hidden) => { const m = { hidden: false, dataset: {}, queryS
 const rows = [zeile('A', false), zeile('A', false), zeile('B', false), zeile('A', false), zeile('A', false)];
 JS;
     $js .= $fg[0] . "\nfotoGrenze(); const a = rows.map(r => r.m.hidden);\nrows[0].hidden = true; fotoGrenze(); const b = rows.map(r => r.m.hidden);\nrows[0].hidden = false; fotoGrenze(); const c = rows.map(r => r.m.hidden);\nconsole.log(JSON.stringify([a, b, c]));\n";
-    $datei = tempnam(sys_get_temp_dir(), 'v20') . '.js'; file_put_contents($datei, $js);
-    [$a, $b, $c] = json_decode((string) shell_exec('node ' . escapeshellarg($datei)), true) ?: [[], [], []];
-    @unlink($datei);
+    $v20Datei = tempnam(sys_get_temp_dir(), 'v20') . '.js'; file_put_contents($v20Datei, $js);
+    [$a, $b, $c] = json_decode((string) shell_exec('node ' . escapeshellarg($v20Datei)), true) ?: [[], [], []];
+    @unlink($v20Datei);
     pruefe('Alle sichtbar: drittes und viertes A ohne Bild', $a, [false, false, false, true, true]);
     pruefe('Erster Termin ausgefiltert: nur noch das vierte A ohne Bild (die ausgeblendete Zeile bleibt unberührt)', $b, [false, false, false, false, true]);
     pruefe('Filter zurück: wieder wie vorher', $c, $a);
@@ -194,6 +194,18 @@ JS;
 $audit = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/editorial-audit.js');
 pruefe('editorial-audit.js blendet laufende mehrtägige Termine (mit data-end) nicht aus', str_contains($audit, "const w=el.closest('[data-event-row]');if(w&&Number.isFinite(Date.parse(w.getAttribute('data-end')||'')))return;"), true);
 pruefe('run() rechnet die Grenze nach jedem Filtern', str_contains($v20, "\$('[data-event-empty]').hidden=n>0;fotoGrenze();};"), true);
+
+echo "Startseite: Bühne behält ihr Foto, Rubrikkarten höchstens zweimal (feste Plätze)\n";
+function is_front_page() { return !empty($GLOBALS['startseite']); }
+$neueSeite(); $GLOBALS['startseite'] = true;
+[$s1, $s2, $s3, $s4] = $meldungen([504, 505, 501, 501]);
+[$s5, $s6] = $meldungen([501, 502]);
+$buehne = ma21_karte($s1, 'r') . ma21_karte($s3, 'xl') . ma21_karte($s4, 'u') . ma21_karte($s5, 'u');
+pruefe('Aufmacher und Bühne: alle mit Bild, auch das dritte Kirchenfoto', substr_count($buehne, 'class="karte-bild"'), 4);
+$rubrik = ma21_karte($s2, 'm') . ma21_karte($s6, 'l');
+pruefe('Ortsbild der Orte-Bühne zählt vorab: Bürgewald in der Rubrik ohne Bild', str_contains(ma21_karte($s2, 'm'), 'desk-karte--ohne-bild'), true);
+pruefe('Kirchenfoto schon dreimal oben: Rubrikkarte ohne Bild', substr_count($rubrik, 'desk-karte--ohne-bild'), 2);
+$GLOBALS['startseite'] = false;
 
 echo "Startseite\n";
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/startseite.html');
