@@ -1,10 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.0 · live: 21.20.3 / 1.29.0 (Historie unten)
+17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.0 (Historie unten)
 
 ## Neu am 17.10.2026: Theme 21.20.3/21.20.4 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
 
 **Stand live (17.10., 19:20 Uhr):** Plugin 1.29.0 und Theme 21.20.3 sind eingespielt. Gemessen nach dem Einspielen auf denselben 17 Seiten: Bis auf die Startseite steht kein Foto mehr als zweimal da. Auf der Startseite standen zwei Fotos noch je 3×, alle auf **festen Plätzen**, die die Motivgrenze des Layouts bewusst umgehen; ihre Fotos stammen aus dem Abgleich und werden deshalb nicht umverteilt.
+
+**Plugin 1.29.1** (letzte Prüfrunde, Kasten „Bild und Prüfung“): Der Kasten schickt mit, welches Bild und welche Bildangaben er beim Laden zeigte (`ma_bildfelder_bild`, `ma_bildfelder_werte`). Hat das Bild seitdem gewechselt (Poolfoto beim Veröffentlichen, Neuverteilung, eigenes Bild in der Seitenleiste), schreibt er nur Felder, die die Redaktion seither geändert hat. Steht dabei das automatisch vergebene Poolfoto, kommen die Änderungen in dessen Sicherung. Die Sicherung kommt zurück, bevor das neue Medium leere Angaben füllt (Hook-Priorität 5). Ein Poolfoto ist immer ein Symbolbild, auch von Hand gewählt.
 
 **Theme 21.20.4:** Auch die Startseite zeigt ein Foto höchstens zweimal. Aufmacher und Bühne behalten ihr Bild und zählen mit, ebenso die fünf Ortsbilder „Ihre fünf Orte“. Karten in den Rubrikblöcken erscheinen ab dem dritten Vorkommen ohne Bild (`ma21_karte`, `ma21_bild_register_start`).
 
@@ -67,7 +69,7 @@
 - **Kasten „Bild und Prüfung“** (`editorial.php`): Er merkt sich, welches Beitragsbild er beim Laden zeigte (`ma_bildfelder_bild`).
   - Zeigte er ein anderes Bild als das inzwischen gesetzte Poolfoto (meist noch keins; der Block-Editor lädt ihn nach dem Veröffentlichen nicht neu), gehen seine Bildangaben in die Sicherung des Poolfotos. Sie gelten, sobald das eigentliche Bild kommt. Der Nachweis des Poolfotos bleibt, ebenso das Merkmal.
   - Zeigte er das Poolfoto und ändert die Redaktion eine Angabe bewusst, gilt das Bild als ihres.
-  - Zeigte er ein Poolfoto, das inzwischen ersetzt ist (neu verteilt oder durch ein eigenes Bild), schreibt er dessen unveränderte Angaben weder an den Inhalt noch in die Sicherung; nur bewusst geänderte Felder zählen.
+  - Zeigte er ein Poolfoto, das inzwischen ersetzt ist (neu verteilt oder durch ein eigenes Bild), schreibt er dessen unveränderte Angaben weder an den Inhalt noch in die Sicherung; nur bewusst geänderte Felder zählen (seit 1.29.1 gemessen am Stand beim Laden, nicht an den Angaben des Mediums).
 - **Abgleich:**
   - Ist der Bild-Download beim Anlegen gescheitert und steht nur das Poolfoto, holt der nächste Lauf das Bild aus der Import-Datei nach (`ma_abgleich_bild_fehlt`).
   - Neue Bildangaben aus der Import-Datei gehen bis dahin in die Sicherung, nicht an das Poolfoto.

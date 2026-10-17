@@ -24,14 +24,19 @@ function ma_editorial_boxes(): void {
 }
 
 /**
- * Welches Beitragsbild zeigte der Kasten beim Laden? (17.10.2026) Setzt das Plugin beim
- * Veröffentlichen ein Poolfoto, gehören die Bildangaben im Kasten noch zum Stand davor (meist:
- * kein Bild; der Block-Editor lädt den Kasten nicht neu). ma_save_editorial_meta legt sie dann
- * in die Sicherung des Poolfotos, statt dessen Nachweis zu überschreiben.
+ * Was zeigte der Kasten beim Laden? (17.10.2026) Beitragsbild und Bildangaben. Der Block-Editor
+ * lädt den Kasten nach dem Speichern nicht neu; wechselt das Bild inzwischen (Poolfoto beim
+ * Veröffentlichen, Neuverteilung, eigenes Bild in der Seitenleiste), gehören unverändert
+ * gelassene Felder zum alten Bild. ma_save_editorial_meta schreibt dann nur, was die Redaktion
+ * seit dem Laden geändert hat.
  */
 const MA_EDITORIAL_BILDFELDER = ['ma_image_credit', 'ma_image_license', 'ma_image_original_url', 'ma_image_type', 'ma_image_rights_verified'];
 function ma_bildfelder_geladen_feld(): void {
-    echo '<input type="hidden" name="ma_bildfelder_bild" value="' . (int) get_post_thumbnail_id((int) get_the_ID()) . '">';
+    $id = (int) get_the_ID(); $w = [];
+    foreach (MA_EDITORIAL_BILDFELDER as $k) $w[$k] = (string) get_post_meta($id, $k, true);
+    $w['ma_image_rights_verified'] = $w['ma_image_rights_verified'] === '1' ? '1' : '0';
+    echo '<input type="hidden" name="ma_bildfelder_bild" value="' . (int) get_post_thumbnail_id($id) . '">';
+    echo '<input type="hidden" name="ma_bildfelder_werte" value="' . esc_attr((string) wp_json_encode($w)) . '">';
 }
 
 /** Auswahlfeld fuer ma_image_type. */
@@ -138,32 +143,32 @@ function ma_save_editorial_meta(int $post_id): void {
     if (!isset($_POST['ma_editorial_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_editorial_nonce'])),'ma_editorial_save')) return;
     if (!current_user_can('edit_post',$post_id)) return;
 
-    // Steht das automatisch vergebene Poolfoto:
-    // - Zeigte der Kasten beim Laden ein anderes Bild (meist noch keins), gehören seine Bildangaben zum Stand vor dem
-    //   Poolfoto: Sie kommen in dessen Sicherung (_ma_bildpool_vorher) und gelten, sobald das eigentliche Bild kommt.
-    // - Zeigte er das Poolfoto und ändert die Redaktion eine Angabe, gilt das Bild als ihres (kein automatischer Tausch).
-    // - Zeigte er ein Poolfoto, das inzwischen ersetzt ist (vom Plugin neu verteilt oder von der Redaktion durch ein
-    //   eigenes Bild), sind Werte, die genau den Angaben jenes Poolfotos entsprechen, veraltet: weder an den Inhalt
-    //   noch in die Sicherung. Bewusst geänderte Felder zählen.
+    // Bildangaben, wenn das Beitragsbild seit dem Laden des Kastens gewechselt hat:
+    // - unverändert gelassene Felder gehören zum alten Bild: nicht schreiben;
+    // - geänderte Felder: Steht jetzt das automatisch vergebene Poolfoto, gehören sie zum eigentlichen Bild und kommen
+    //   in dessen Sicherung (_ma_bildpool_vorher, gilt, sobald es kommt); sonst (eigenes Bild) normal schreiben.
+    // Ohne Wechsel und mit Poolfoto: Eine bewusst geänderte Angabe macht das Bild zu dem der Redaktion (kein Tausch mehr).
     $geladenBild = isset($_POST['ma_bildfelder_bild']) ? (int) $_POST['ma_bildfelder_bild'] : null;
-    $jetztBild = (int) get_post_thumbnail_id((int) $post_id);
+    $geladen = isset($_POST['ma_bildfelder_werte']) ? json_decode((string) wp_unslash($_POST['ma_bildfelder_werte']), true) : null;
     $poolBild = $geladenBild !== null && function_exists('ma_bildpool_auto_aktuell') && ma_bildpool_auto_aktuell((int) $post_id);
-    $altesPoolfoto = $geladenBild !== null && $geladenBild > 0 && $geladenBild !== $jetztBild && defined('MA_BILDPOOL_TAX') && has_term('', MA_BILDPOOL_TAX, $geladenBild);
-    $poolWerte = $altesPoolfoto ? ['ma_image_credit' => (string) get_post_meta($geladenBild, 'ma_image_credit', true), 'ma_image_license' => (string) get_post_meta($geladenBild, 'ma_image_license', true),
-        'ma_image_original_url' => (string) get_post_meta($geladenBild, 'ma_image_original_url', true), 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1'] : [];
-    $anderesBild = $poolBild && !$altesPoolfoto && $geladenBild !== $jetztBild;
-    $sicherung = $anderesBild ? get_post_meta((int) $post_id, '_ma_bildpool_vorher', true) : null;
-    if ($anderesBild && !is_array($sicherung)) $sicherung = [];
+    $wechsel = $geladenBild !== null && is_array($geladen) && $geladenBild !== (int) get_post_thumbnail_id((int) $post_id);
+    $sicherung = null;
     $bildGeaendert = false;
     // true: Feld ist erledigt (veraltet oder in der Sicherung), nicht am Inhalt schreiben.
-    $unveraendert = function (string $k, string $neu) use ($post_id, $poolBild, $anderesBild, $altesPoolfoto, $poolWerte, &$sicherung, &$bildGeaendert): bool {
+    $unveraendert = function (string $k, string $neu) use ($post_id, $poolBild, $wechsel, $geladen, &$sicherung, &$bildGeaendert): bool {
         if (!in_array($k, MA_EDITORIAL_BILDFELDER, true)) return false;
-        if ($altesPoolfoto) { if ($neu === $poolWerte[$k]) return true; $bildGeaendert = true; return false; }
-        if (!$poolBild) return false;
-        if ($anderesBild) { $sicherung[$k] = $neu; return true; }
-        $alt = (string) get_post_meta((int) $post_id, $k, true);
-        if ($k === 'ma_image_rights_verified') $alt = $alt === '1' ? '1' : '0';
-        if ($alt !== $neu) $bildGeaendert = true;
+        if ($wechsel) {
+            if (array_key_exists($k, $geladen) && (string) $geladen[$k] === $neu) return true;
+            if (!$poolBild) return false;
+            if ($sicherung === null) { $sicherung = get_post_meta((int) $post_id, '_ma_bildpool_vorher', true); if (!is_array($sicherung)) $sicherung = []; }
+            $sicherung[$k] = $neu;
+            return true;
+        }
+        if ($poolBild) {
+            $alt = (string) get_post_meta((int) $post_id, $k, true);
+            if ($k === 'ma_image_rights_verified') $alt = $alt === '1' ? '1' : '0';
+            if ($alt !== $neu) $bildGeaendert = true;
+        }
         return false;
     };
     $text=['ma_source_publisher','ma_image_credit','ma_image_license','ma_ai_use_type','ma_reviewed_by','ma_editorial_responsibility','ma_kicker','ma_organisation','ma_seo_titel'];
@@ -199,7 +204,7 @@ function ma_save_editorial_meta(int $post_id): void {
         if ($k === 'ma_image_rights_verified' && $unveraendert($k, isset($_POST[$k]) ? '1' : '0')) continue;
         update_post_meta($post_id,$k,isset($_POST[$k])?'1':'0');
     }
-    if ($anderesBild) update_post_meta((int) $post_id, '_ma_bildpool_vorher', $sicherung);
+    if ($sicherung !== null) update_post_meta((int) $post_id, '_ma_bildpool_vorher', $sicherung);
     // Hat die Redaktion Bildangaben des Poolfotos bewusst geändert, gilt das Bild als ihres: kein automatischer Tausch mehr.
     elseif ($poolBild && $bildGeaendert && function_exists('ma_bildpool_merkmal_loeschen')) ma_bildpool_merkmal_loeschen((int) $post_id);
 }

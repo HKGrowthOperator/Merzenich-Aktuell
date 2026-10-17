@@ -52,58 +52,66 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 function beitrag(int $id, array $meta = [], string $typ = 'post'): WP_Post { $GLOBALS['posts'][$id] = new WP_Post(['ID' => $id, 'post_type' => $typ, 'post_title' => "Beitrag $id"]); $GLOBALS['meta'][$id] = $meta; return $GLOBALS['posts'][$id]; }
 // Poolfotos mit Nachweis wie aus ma_bildpool_uebernehmen()
 $GLOBALS['meta'][101] = ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg'];
-// Kasten: welches Beitragsbild er beim Laden zeigte, und was er abschickt.
-function kasten(int $id, int $geladenBild, array $gesendet): void {
-    $_POST = ['ma_editorial_nonce' => 'x', 'ma_bildfelder_bild' => (string) $geladenBild] + $gesendet;
+// Kasten: welches Beitragsbild und welche Bildangaben er beim Laden zeigte, und was er abschickt.
+// Ein angehakter Haken steht im Formular, ein leerer fehlt (wie im Browser).
+function kasten(int $id, int $geladenBild, array $geladen, array $gesendet): void {
+    $werte = []; foreach (MA_EDITORIAL_BILDFELDER as $k) $werte[$k] = (string) ($geladen[$k] ?? ($k === 'ma_image_rights_verified' ? '0' : ''));
+    if (($gesendet['ma_image_rights_verified'] ?? '1') !== '1') unset($gesendet['ma_image_rights_verified']);
+    $_POST = ['ma_editorial_nonce' => 'x', 'ma_bildfelder_bild' => (string) $geladenBild, 'ma_bildfelder_werte' => json_encode($werte)] + $gesendet;
     ma_save_editorial_meta($id);
     $_POST = [];
 }
-$leer = ['ma_image_credit' => '', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => ''];
+$leer = ['ma_image_credit' => '', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => '', 'ma_image_rights_verified' => '0'];
+$poolX = ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1'];
+$GLOBALS['meta'][102] = ['ma_image_credit' => 'Foto Y / Wikimedia Commons', 'ma_image_license' => 'CC0'];
 
-echo "Kasten „Bild und Prüfung“ nach dem Veröffentlichen (Block-Editor)\n";
+echo "Kasten „Bild und Prüfung“ und Poolfoto\n";
 beitrag(10);
 ma_bildpool_bild_setzen(get_post(10), 101, 'aktuell');
 pruefe('Poolfoto gesetzt: Nachweis, Typ, Rechte', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified')], ['Foto X / Wikimedia Commons', 'symbol', '1']);
-kasten(10, 0, $leer);
-pruefe('Kasten vom Stand ohne Bild überschreibt den Nachweis des Poolfotos nicht', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_license'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified')], ['Foto X / Wikimedia Commons', 'CC BY 4.0', 'symbol', '1']);
-pruefe('Merkmal bleibt (das Plugin darf weiter verteilen)', get_post_meta(10, '_ma_bildpool_auto'), 'aktuell');
+kasten(10, 0, $leer, $leer);
+pruefe('Kasten vom Stand ohne Bild (Block-Editor nach dem Veröffentlichen): Nachweis des Poolfotos bleibt', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, 'ma_image_license'), get_post_meta(10, 'ma_image_type'), get_post_meta(10, 'ma_image_rights_verified'), get_post_meta(10, '_ma_bildpool_auto')], ['Foto X / Wikimedia Commons', 'CC BY 4.0', 'symbol', '1', 'aktuell']);
 $GLOBALS['aktuell'] = 10;
 ob_start(); ma_bildfelder_geladen_feld(); $feld = ob_get_clean();
-pruefe('Kasten merkt sich das gezeigte Beitragsbild', $feld, '<input type="hidden" name="ma_bildfelder_bild" value="101">');
-kasten(10, 101, ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1']);
+pruefe('Kasten merkt sich Bild und Angaben beim Laden', [str_contains($feld, 'name="ma_bildfelder_bild" value="101"'), str_contains($feld, 'name="ma_bildfelder_werte" value="') && str_contains(html_entity_decode($feld, ENT_QUOTES), '"ma_image_type":"symbol"')], [true, true]);
+kasten(10, 101, $poolX, $poolX);
 pruefe('Kasten zeigte das Poolfoto, nichts geändert: Merkmal bleibt', get_post_meta(10, '_ma_bildpool_auto'), 'aktuell');
-kasten(10, 101, ['ma_image_credit' => 'Foto X (Korrektur) / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1']);
+kasten(10, 101, $poolX, ['ma_image_credit' => 'Foto X (Korrektur) / Wikimedia Commons'] + $poolX);
 pruefe('Redaktion ändert den Nachweis des Poolfotos: gespeichert, Bild gilt als ihres', [get_post_meta(10, 'ma_image_credit'), get_post_meta(10, '_ma_bildpool_auto')], ['Foto X (Korrektur) / Wikimedia Commons', '']);
 // Vor dem Veröffentlichen Nachweis, Typ und „Bildrechte geprüft“ eingetragen und als Entwurf gespeichert; dann ohne Bild veröffentlicht.
 beitrag(12, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '1']);
 ma_bildpool_bild_setzen(get_post(12), 101, 'aktuell');
-kasten(12, 0, ['ma_image_credit' => 'Foto: Max', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '1']);
-pruefe('Block-Editor speichert den Kasten nach dem Veröffentlichen: Poolfoto behält Nachweis und Merkmal', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, '_ma_bildpool_auto')], ['Foto X / Wikimedia Commons', 'symbol', 'aktuell']);
+kasten(12, 0, $leer, ['ma_image_credit' => 'Foto: Max', 'ma_image_license' => '', 'ma_image_original_url' => '', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '1']);
+pruefe('Eingaben aus derselben Sitzung: Poolfoto behält Nachweis und Merkmal', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, '_ma_bildpool_auto')], ['Foto X / Wikimedia Commons', 'symbol', 'aktuell']);
 set_post_thumbnail(12, 950);
 pruefe('Kommt das eigentliche Bild, gelten die Angaben aus dem Kasten', [get_post_meta(12, 'ma_image_credit'), get_post_meta(12, 'ma_image_type'), get_post_meta(12, 'ma_image_rights_verified'), get_post_meta(12, 'ma_image_license')], ['Foto: Max', 'original', '1', '']);
-$poolX = ['ma_image_credit' => 'Foto X / Wikimedia Commons', 'ma_image_license' => 'CC BY 4.0', 'ma_image_original_url' => 'https://commons.wikimedia.org/wiki/File:X.jpg', 'ma_image_type' => 'symbol', 'ma_image_rights_verified' => '1'];
-$GLOBALS['meta'][102] = ['ma_image_credit' => 'Foto Y / Wikimedia Commons', 'ma_image_license' => 'CC0'];
-// Kasten zeigte Poolfoto 101; während der Sitzung verteilt das Plugin auf 102; Speichern ohne Änderung.
+// Kasten zeigte Poolfoto 101; während der Sitzung verteilt das Plugin auf 102; das Medium 101 bekommt inzwischen eine längere Lizenzangabe.
 beitrag(60, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0']);
 ma_bildpool_bild_setzen(get_post(60), 101, 'aktuell'); ma_bildpool_bild_setzen(get_post(60), 102, 'aktuell');
-kasten(60, 101, $poolX);
-pruefe('Poolfoto inzwischen neu verteilt: alte Poolangaben weder am Inhalt noch in der Sicherung', [get_post_meta(60, 'ma_image_credit'), get_post_meta(60, '_ma_bildpool_auto'), get_post_meta(60, '_ma_bildpool_vorher')['ma_image_credit'] ?? ''], ['Foto Y / Wikimedia Commons', 'aktuell', 'Foto: Max']);
+$GLOBALS['meta'][101]['ma_image_license'] = 'CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)';
+kasten(60, 101, $poolX, $poolX);
+pruefe('Poolfoto inzwischen neu verteilt: alte Poolangaben weder am Inhalt noch in der Sicherung', [get_post_meta(60, 'ma_image_credit'), get_post_meta(60, 'ma_image_license'), get_post_meta(60, '_ma_bildpool_auto'), get_post_meta(60, '_ma_bildpool_vorher')['ma_image_credit'] ?? ''], ['Foto Y / Wikimedia Commons', 'CC0', 'aktuell', 'Foto: Max']);
 set_post_thumbnail(60, 950);
 pruefe('Danach das eigentliche Bild: Angaben von vor dem Poolfoto', [get_post_meta(60, 'ma_image_credit'), get_post_meta(60, 'ma_image_type'), get_post_meta(60, 'ma_image_rights_verified')], ['Foto: Max', 'original', '0']);
 // Redaktion wählt im Editor das eigentliche Bild; der Kasten (geladen mit Poolfoto 101) wird danach gespeichert.
 beitrag(61, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0']);
 ma_bildpool_bild_setzen(get_post(61), 101, 'aktuell');
 set_post_thumbnail(61, 950);
-kasten(61, 101, $poolX);
+kasten(61, 101, $poolX, $poolX);
 pruefe('Eigenes Bild im selben Speichern: Poolangaben aus dem Kasten überschreiben die Rückgabe nicht', [get_post_meta(61, 'ma_image_credit'), get_post_meta(61, 'ma_image_type'), get_post_meta(61, 'ma_image_rights_verified'), get_post_meta(61, 'ma_image_license')], ['Foto: Max', 'original', '0', '']);
 beitrag(62, ['ma_image_credit' => 'Foto: Max', 'ma_image_type' => 'original']);
 ma_bildpool_bild_setzen(get_post(62), 101, 'aktuell');
 set_post_thumbnail(62, 950);
-$ohneHaken = $poolX; unset($ohneHaken['ma_image_rights_verified']); // abgewählter Haken fehlt im Formular
-kasten(62, 101, ['ma_image_credit' => 'Foto: Anna'] + $ohneHaken);
+kasten(62, 101, $poolX, ['ma_image_credit' => 'Foto: Anna', 'ma_image_rights_verified' => '0'] + $poolX);
 pruefe('… bewusst geänderte Felder werden geschrieben', [get_post_meta(62, 'ma_image_credit'), get_post_meta(62, 'ma_image_rights_verified'), get_post_meta(62, 'ma_image_type')], ['Foto: Anna', '0', 'original']);
+// Redaktion wählt selbst das passendere Poolfoto 102 und trägt dessen Nachweis ein; „Symbolbild“ bleibt angehakt.
+beitrag(63);
+ma_bildpool_bild_setzen(get_post(63), 101, 'aktuell');
+set_post_thumbnail(63, 102);
+kasten(63, 101, $poolX, ['ma_image_credit' => 'Foto Y / Wikimedia Commons', 'ma_image_license' => 'CC0', 'ma_image_original_url' => ''] + $poolX);
+pruefe('Poolfoto von Hand gewählt: bleibt Symbolbild, Nachweis wie eingetragen', [get_post_meta(63, 'ma_image_type'), get_post_meta(63, 'ma_image_credit'), get_post_meta(63, 'ma_image_license'), get_post_meta(63, '_ma_bildpool_auto')], ['symbol', 'Foto Y / Wikimedia Commons', 'CC0', '']);
 beitrag(11, ['_thumbnail_id' => 880, 'ma_image_credit' => 'Gemeinde']);
-kasten(11, 880, ['ma_image_credit' => '', 'ma_image_type' => '']);
+kasten(11, 880, ['ma_image_credit' => 'Gemeinde'] + $leer, ['ma_image_credit' => '', 'ma_image_type' => '']);
 pruefe('Ohne Poolfoto wie bisher: geleertes Feld wird gelöscht', get_post_meta(11, 'ma_image_credit'), '');
 
 echo "Änderungsvorschlag übernehmen\n";

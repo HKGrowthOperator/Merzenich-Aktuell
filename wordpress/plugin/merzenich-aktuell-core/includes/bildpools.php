@@ -513,11 +513,14 @@ function ma_bildpool_merkmal_loeschen(int $id): void {
  */
 function ma_bildpool_merkmal_pruefen($meta_id, $post_id, $key, $wert): void {
     if ($key !== '_thumbnail_id' || ma_bildpool_setzt_selbst()) return;
-    $id = (int) $post_id;
-    if ((string) get_post_meta($id, '_ma_bildpool_auto', true) === '' || (int) $wert === (int) get_post_meta($id, '_ma_bildpool_auto_bild', true)) return;
-    $vorher = get_post_meta($id, '_ma_bildpool_vorher', true);
-    if (is_array($vorher)) foreach (MA_BILDPOOL_BILDFELDER as $k) { $v = (string) ($vorher[$k] ?? ''); $v !== '' ? update_post_meta($id, $k, $v) : delete_post_meta($id, $k); }
-    ma_bildpool_merkmal_loeschen($id);
+    $id = (int) $post_id; $neu = (int) $wert;
+    if ((string) get_post_meta($id, '_ma_bildpool_auto', true) !== '' && $neu !== (int) get_post_meta($id, '_ma_bildpool_auto_bild', true)) {
+        $vorher = get_post_meta($id, '_ma_bildpool_vorher', true);
+        if (is_array($vorher)) foreach (MA_BILDPOOL_BILDFELDER as $k) { $v = (string) ($vorher[$k] ?? ''); $v !== '' ? update_post_meta($id, $k, $v) : delete_post_meta($id, $k); }
+        ma_bildpool_merkmal_loeschen($id);
+    }
+    // Ein Poolfoto ist immer ein Symbolbild, auch wenn die Redaktion es selbst wählt.
+    if ($neu && has_term('', MA_BILDPOOL_TAX, $neu)) update_post_meta($id, 'ma_image_type', 'symbol');
 }
 
 /**
@@ -536,8 +539,10 @@ function ma_bildpool_merkmale_nachtragen(): int {
     }
     return $n;
 }
-add_action('added_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
-add_action('updated_post_meta', 'ma_bildpool_merkmal_pruefen', 10, 4);
+// Priorität 5: vor ma_medium_beitragsbild_gesetzt (sport-bilder-admin.php, 10), das leere Bildangaben aus dem neuen
+// Medium füllt. Erst die Sicherung zurück, dann füllt das neue Bild, was dort leer ist.
+add_action('added_post_meta', 'ma_bildpool_merkmal_pruefen', 5, 4);
+add_action('updated_post_meta', 'ma_bildpool_merkmal_pruefen', 5, 4);
 
 /** Setzt ein Poolfoto als Beitragsbild (nur ohne eigenes Bild). Gibt die Medien-ID zurück. */
 function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
