@@ -1,10 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.0 (Historie unten)
+17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.1 (Historie unten)
 
 ## Neu am 17.10.2026: Theme 21.20.3/21.20.4 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
 
-**Stand live (17.10., 19:20 Uhr):** Plugin 1.29.0 und Theme 21.20.3 sind eingespielt. Gemessen nach dem Einspielen auf denselben 17 Seiten: Bis auf die Startseite steht kein Foto mehr als zweimal da. Auf der Startseite standen zwei Fotos noch je 3×, alle auf **festen Plätzen**, die die Motivgrenze des Layouts bewusst umgehen; ihre Fotos stammen aus dem Abgleich und werden deshalb nicht umverteilt.
+**Stand live (17.10., 21:20 Uhr):** Theme 21.20.4 und Plugin 1.29.1 sind eingespielt. Gemessen danach auf denselben 17 Seiten bei 1440 px bis zum Seitenende: kein Foto mehr als zweimal, auch nicht auf der Startseite; 0 Konsolenfehler. Die strenge Prüfung nach Fotoschlüssel (13 Seiten mit `/heute/`) ist überall in Ordnung. Auf `/termine/` stehen 28 Bilder aus 21 Fotos (vorher 15, Kirchenfoto 7×).
+
+**Zwischenstand (17.10., 19:20 Uhr):** Plugin 1.29.0 und Theme 21.20.3 sind eingespielt. Gemessen nach dem Einspielen auf denselben 17 Seiten: Bis auf die Startseite steht kein Foto mehr als zweimal da. Auf der Startseite standen zwei Fotos noch je 3×, alle auf **festen Plätzen**, die die Motivgrenze des Layouts bewusst umgehen; ihre Fotos stammen aus dem Abgleich und werden deshalb nicht umverteilt.
 
 **Plugin 1.29.1** (letzte Prüfrunde, Kasten „Bild und Prüfung“): Der Kasten schickt mit, welches Bild und welche Bildangaben er beim Laden zeigte (`ma_bildfelder_bild`, `ma_bildfelder_werte`). Hat das Bild seitdem gewechselt (Poolfoto beim Veröffentlichen, Neuverteilung, eigenes Bild in der Seitenleiste), schreibt er nur Felder, die die Redaktion seither geändert hat. Steht dabei das automatisch vergebene Poolfoto, kommen die Änderungen in dessen Sicherung. Die Sicherung kommt zurück, bevor das neue Medium leere Angaben füllt (Hook-Priorität 5). Ein Poolfoto ist immer ein Symbolbild, auch von Hand gewählt.
 
