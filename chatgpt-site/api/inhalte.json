@@ -1,11 +1,11 @@
 {
  "generated": "2026-10-17T16:00:00+02:00",
- "anzahl": 192,
+ "anzahl": 193,
  "bestand": {
-  "gesamt": 192,
+  "gesamt": 193,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 68,
+   "blaulicht": 69,
    "sport": 31,
    "rathaus": 21,
    "leben": 40,
@@ -17,7 +17,7 @@
   },
   "ortsteile": {
    "merzenich": 130,
-   "golzheim": 19,
+   "golzheim": 20,
    "girbelsrath": 23,
    "morschenich": 11,
    "buergewald": 9,
@@ -25,11 +25,11 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 192,
+    "anzahl": 193,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 68,
+    "anzahl": 69,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -69,7 +69,7 @@
     "liste": "gepflegt"
    },
    "/golzheim/": {
-    "anzahl": 19,
+    "anzahl": 20,
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
@@ -134,6 +134,44 @@
     "alt": "Rathaus der Gemeinde Merzenich",
     "width": 1920,
     "height": 1253,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-16-einsatz-140-person-hinter-tuer-golzheim",
+   "url": "/blaulicht/einsatz-140-person-hinter-tuer-golzheim/",
+   "titel": "Person hinter Tür in Golzheim: Einsatz 140/26 der Feuerwehr",
+   "teaser": "Die Freiwillige Feuerwehr Merzenich ist am Freitag, 16. Oktober 2026, nach Golzheim alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+   "kicker": "Feuerwehr · 140/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-10-16T12:00:00+02:00",
+   "aktualisiert": "2026-10-16T12:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "rettungsdienst",
+     "label": "Rettungsdienst"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/golzheim-1440.webp",
+    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
+    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
+    "width": 1440,
+    "height": 960,
     "fit": "",
     "badge": "Ortsansicht",
     "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",

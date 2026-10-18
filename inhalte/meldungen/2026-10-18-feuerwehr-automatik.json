@@ -1,0 +1,43 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint in WordPress als Entwurf in den Freigaben; die Redaktion prüft und gibt frei.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-140-person-hinter-tuer-golzheim",
+      "ressort": "blaulicht",
+      "ortsteil": "golzheim",
+      "kicker": "Feuerwehr · 140/26",
+      "titel": "Person hinter Tür in Golzheim: Einsatz 140/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Freitag, 16. Oktober 2026, nach Golzheim alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "datum": "2026-10-16T12:00:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 140/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Freitag, 16. Oktober 2026",
+        "Einsatzort: Golzheim, Buirer Straße",
+        "Meldung: Person hinter Tür",
+        "Eingesetzte Kräfte: Löschgruppe Golzheim, Löschgruppe Girbelsrath, Tagesalarmgruppe, Feuerschutztechnisches Zentrum Stockheim, Rettungsdienst"
+      ],
+      "absaetze": [
+        "Einsatzort war Golzheim, Buirer Straße. Das Einsatzstichwort lautete „PET“. Im Einsatz waren: Löschgruppe Golzheim, Löschgruppe Girbelsrath, Tagesalarmgruppe, Feuerschutztechnisches Zentrum Stockheim und Rettungsdienst.",
+        "Die Feuerwehr schreibt dazu: „Am Freitag wurde die Feuerwehr Merzenich zu einem Einsatz in Golzheim alarmiert. Gemeldet wurde eine Person hinter einer verschlossenen Tür. Die Einsatzkräfte öffneten die Tür, um dem Rettungsdienst den Zugang zur betroffenen Person zu ermöglichen.“ Es war der 140. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "rettungsdienst",
+          "Rettungsdienst"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 17.10.2026",
+        "url": "https://www.heimat-info.de/beitraege/bac4e458-d7a6-4657-970b-6d9e657203a4",
+        "stand": "2026-10-18"
+      }
+    }
+  ]
+}

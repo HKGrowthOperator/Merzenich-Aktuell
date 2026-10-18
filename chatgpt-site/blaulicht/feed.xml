@@ -12,6 +12,17 @@
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/blaulicht/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
+<title>Person hinter Tür in Golzheim: Einsatz 140/26 der Feuerwehr</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/</guid>
+<pubDate>Fri, 16 Oct 2026 10:00:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Golzheim</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Freiwillige Feuerwehr Merzenich ist am Freitag, 16. Oktober 2026, nach Golzheim alarmiert worden. Die Meldung lautete „Person hinter Tür“.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/golzheim-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Blick über den Wenauer Hof auf St. Gregorius in Golzheim</media:description></media:content>
+</item>
+<item>
 <title>Türöffnung in Morschenich: Angehöriger bringt Schlüssel, Feuerwehr kann abrücken</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-137-person-hinter-tuer-morschenich/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-137-person-hinter-tuer-morschenich/</guid>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am 13. August stießen auf der A4 zwei Autos zusammen. Zwei Menschen kamen verletzt ins Krankenhaus.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/7f7b66be2cccb8-526.webp" medium="image"><media:credit>Freiwillige Feuerwehr Merzenich (Beispielbild)</media:credit><media:description>Einsatzfahrzeug der Feuerwehr Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Auto erfasst Radfahrer an der Einmündung Am Roßpfad</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/unfall-pkw-fahrrad-am-rosspfad/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/unfall-pkw-fahrrad-am-rosspfad/</guid>
-<pubDate>Wed, 12 Aug 2026 11:17:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Ein 60-Jähriger aus Vettweiß wurde am 11. August leicht verletzt. Er hatte Vorfahrt.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/girbelsrath-1440.webp" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath</media:description></media:content>
 </item>
 </channel>
 </rss>
