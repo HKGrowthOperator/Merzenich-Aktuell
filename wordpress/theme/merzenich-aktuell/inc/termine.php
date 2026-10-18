@@ -71,13 +71,10 @@ function ma21_termine_alle(?int $jetzt = null): array {
  * /termine/ zeigt die Termine als Bildkarten, wie die Terminübersicht von
  * Oberberg Aktuell (Vorgabe Betreiber 07.10.2026); „Liste“ blendet die Bilder aus.
  */
-function ma21_termin_zeile(array $t, bool $alleBilder = false): string {
+function ma21_termin_zeile(array $t): string {
     $url = esc_url($t['url']);
     $iso = fn(int $ts): string => gmdate('Y-m-d\TH:i:s.000\Z', $ts);
-    // /termine/ ($alleBilder): alle Bilder ausgeben; die Liste wird im Browser gefiltert (Zeitraum, Ort, Kategorie),
-    // die Grenze „höchstens zweimal dasselbe Foto“ rechnet assets/v20.js nach jedem Filtern über die sichtbaren Zeilen.
-    // Sonst (/heute/) begrenzt der Server wie in den anderen Listen.
-    $b = $alleBilder ? ma21_bild($t['post']) : ma21_bild_seite($t['post']);
+    $b = ma21_bild($t['post']);
     $bild = $b ? '<a class="event-bild" href="' . $url . '" tabindex="-1" aria-hidden="true"><div class="media">'
         . ma21_img(array_merge($b, ['alt' => '']), '(max-width: 640px) 92vw, (max-width: 1099px) 46vw, 380px', false) . ma21_badge($b, false) . '</div></a>' : '';
     return '<div data-event-row data-start="' . esc_attr($iso($t['start'])) . '" data-end="' . esc_attr($iso($t['ende'])) . '" data-place="' . esc_attr($t['ortSlug']) . '" data-category="' . esc_attr($t['kategorie']) . '">'
@@ -112,7 +109,7 @@ function ma21_termine_seite(): void {
         . '<div class="ansicht-tabs" role="group" aria-label="Ansicht"><button type="button" data-ansicht="bilder" aria-pressed="true">Bilder</button><button type="button" data-ansicht="liste" aria-pressed="false">Liste</button></div></div>';
     echo '<p class="count-line" data-event-count aria-live="polite">' . $n . ($n === 1 ? ' Termin' : ' Termine') . '</p>';
     echo '<div class="event-list event-list--bilder" data-ansicht-ziel>';
-    foreach ($kommend as $t) echo ma21_termin_zeile($t, true);
+    foreach ($kommend as $t) echo ma21_termin_zeile($t);
     echo '<p class="no-result" data-event-empty' . ($n ? ' hidden' : '') . '>' . ($n ? 'Keine Termine für diese Auswahl. Wählen Sie einen anderen Zeitraum oder Ort.' : 'Gerade sind keine Termine eingetragen. Vereine und Gruppen melden ihre Termine kostenlos: <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.') . '</p></div>';
     if ($vergangen) {
         echo '<details class="past"><summary>Vergangene Termine</summary><ul class="archive-list">';

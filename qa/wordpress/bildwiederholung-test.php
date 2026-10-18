@@ -1,10 +1,11 @@
 <?php
 /**
- * Höchstens zweimal dasselbe Foto je Seite (inc/ma21.php ma21_bild_seite,
- * Plugin includes/fotoschluessel.php, assets/endlos.js; 17.10.2026, Wunsch
- * Betreiber „oft das gleiche Bild 5 mal in einer Seite“): ein Foto-Schlüssel
- * über Anhänge und Breiten hinweg, gleich in Plugin, Theme und Skript; Karten
- * ab dem dritten Mal ohne Bild; Aufmacher und Meldungsseite behalten ihr Foto.
+ * Jede Karte zeigt ihr Bild (18.10.2026, Betreiber: „überall Bilder wieder hin und
+ * generische Striche da raus“). Die Obergrenze je Seite (21.20.3/21.20.4) nahm ab
+ * dem dritten Vorkommen das Bild heraus und ließ eine Linie stehen; Theme,
+ * endlos.js und v20.js nehmen keine Bilder mehr weg. Geprüft wird außerdem der
+ * Foto-Schlüssel (Plugin includes/fotoschluessel.php, Theme ma21_foto_schluessel):
+ * Er dient der Motivgrenze der Startseiten-Belegung und dem Foto des Tages.
  * Aufruf: php qa/wordpress/bildwiederholung-test.php
  */
 define('ABSPATH', __DIR__ . '/');
@@ -84,7 +85,6 @@ $GLOBALS['ameta'] = [501 => ['ma_image_static_src' => '/assets/editorial-pools/k
     507 => ['_wp_attached_file' => '2026/09/plakat.jpg'], 508 => ['_wp_attached_file' => '2026/10/plakat.jpg']];
 $GLOBALS['bild'] = [];
 $meldungen = function (array $bilder) { $l = []; foreach ($bilder as $i => $b) { $id = 100 + count($GLOBALS['bild']); $GLOBALS['bild'][$id] = $b; $l[] = new WP_Post($id); } return $l; };
-$neueSeite = function () { $r = &ma21_bild_register(); $r = []; };
 
 echo "Foto-Schlüssel (Plugin, Anhang)\n";
 pruefe('Abgleich- und Pool-Anhang desselben Fotos: ein Schlüssel', [ma_foto_schluessel(501), ma_foto_schluessel(502)], ['h:kirchedetail-01-995c6c09d8', 'h:kirchedetail-01-995c6c09d8']);
@@ -92,7 +92,7 @@ pruefe('Ortsansicht in 1440 und 720 (verschiedene Anhänge): ein Schlüssel', [m
 pruefe('Andere Ansicht desselben Orts bleibt eigenes Foto', ma_foto_schluessel(506), 'p:places/merzenich-st-laurentius');
 pruefe('Zwei Uploads „plakat.jpg“ (Monatsordner) bleiben zwei Fotos', [ma_foto_schluessel(507), ma_foto_schluessel(508)], ['a:507', 'a:508']);
 
-echo "Foto-Schlüssel (Adresse): Plugin, Theme und endlos.js gleich\n";
+echo "Foto-Schlüssel (Adresse): Plugin und Theme gleich\n";
 $faelle = [
     '/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-1200.webp' => 'h:kirchedetail-01-995c6c09d8',
     'https://merzenich-aktuell.de/wp-content/uploads/2026/10/kirchedetail-01-995c6c09d8-1.jpg?ver=2' => 'h:kirchedetail-01-995c6c09d8',
@@ -114,98 +114,56 @@ pruefe('Theme ma21_foto_schluessel: alle Fälle', $theme, array_values($faelle))
 $plugin = array_map(fn($u) => ma_foto_schluessel_pfad($u) ?: 'u:', array_keys($faelle));
 pruefe('Plugin ma_foto_schluessel_pfad: gleiche Schlüssel (ohne feste Kennung leer)', $plugin, array_map(fn($k) => str_starts_with($k, 'u:') ? 'u:' : $k, array_values($faelle)));
 pruefe('Gleiche Breitenliste in Plugin und Theme', MA_FOTO_BREITEN, MA21_FOTO_BREITEN);
-$js = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/endlos.js');
-if (preg_match('/function fotoSchluessel\(src\) \{.*?\n  \}\n/s', $js, $fn) && preg_match("/const BREITEN = '([^']+)';/", $js, $br) && trim((string) shell_exec('command -v node')) !== '') {
-    $skript = tempnam(sys_get_temp_dir(), 'fs') . '.js';
-    file_put_contents($skript, "const BREITEN = '{$br[1]}';\n" . $fn[0] . "\nconsole.log(JSON.stringify(" . json_encode(array_keys($faelle)) . ".map(fotoSchluessel)));\n");
-    pruefe('endlos.js fotoSchluessel: gleiche Schlüssel (node)', json_decode((string) shell_exec('node ' . escapeshellarg($skript)), true), array_values($faelle));
-    @unlink($skript);
-} else pruefe('endlos.js fotoSchluessel gefunden und node vorhanden', false, true);
-pruefe('endlos.js: gleiche Grenze, Breiten und data-foto zuerst', [(bool) preg_match('/const BILD_MAX = ' . MA21_BILD_MAX . ';/', $js), ($br[1] ?? '') === MA21_FOTO_BREITEN, str_contains($js, "img.getAttribute('data-foto') || fotoSchluessel(")], [true, true, true]);
-pruefe('endlos.js zählt Ortsbilder und Foto des Tages mit', str_contains($js, ".orte-buehne img, #foto-des-tages-bild'"), true);
-pruefe('endlos.js begrenzt vor dem Einfügen', (bool) preg_match('/importNode\(k, true\)\);\s*bilderBegrenzen\(fertig\);/', $js), true);
 
-echo "Kartenraster (/termine/, Ressorts)\n";
-$neueSeite();
+$alleMitBild = function (string $h, string $klasse) { return [substr_count($h, 'class="' . $klasse), substr_count($h, 'data-editorial-image')]; };
+
+echo "Kartenraster (Ressorts, Startseite „Weitere Meldungen“)\n";
 $h = ma21_feed_raster($meldungen([501, 502, 501, 503, 502, 501, 503]));
-pruefe('Sieben Karten, alle da', substr_count($h, 'class="bildraster-karte'), 7);
-pruefe('Kirchenfoto (zwei Anhänge) nur zweimal mit Bild', preg_match_all('#<img src="[^"]*kirchedetail-01-995c6c09d8#', $h), 2);
-pruefe('Ab dem dritten Mal ohne Bild', substr_count($h, 'bildraster-karte--ohne-bild'), 3);
-pruefe('Anderes Foto zweimal, beide mit Bild', preg_match_all('#<img src="[^"]*kirchedetail-02-3cc89ae5d6#', $h), 2);
-pruefe('Bild trägt seinen Schlüssel für endlos.js (data-foto)', substr_count($h, 'data-foto="h:kirchedetail-01-995c6c09d8"'), 2);
+pruefe('Sieben Karten, alle mit Bild, auch dasselbe Foto fünfmal', $alleMitBild($h, 'bildraster-karte'), [7, 7]);
+pruefe('Keine Karte ohne Bild', substr_count($h, '--ohne-bild'), 0);
+pruefe('Bild trägt seinen Schlüssel (data-foto)', substr_count($h, 'data-foto="h:kirchedetail-01-995c6c09d8"'), 5);
+$h = ma21_bildraster($meldungen([504, 505, 504, 504]));
+pruefe('Bildraster der Sportseite: alle mit Bild', [substr_count($h, '--ohne-bild'), preg_match_all('#<img src=#', $h)], [0, 4]);
 
-echo "Liste: Aufmacher und Zeilen\n";
-$neueSeite();
-[$a, $b2, $c, $d] = $meldungen([504, 505, 504, 506]);
+echo "Liste: Aufmacher, Zeilen, Weiterlesen, Unternehmen\n";
+[$a, $b2, $c, $d] = $meldungen([504, 505, 504, 504]);
 $lead = ma21_feed_lead($a);
 $zeilen = ma21_feed_row($b2) . ma21_feed_row($c) . ma21_feed_row($d);
-pruefe('Aufmacher behält sein Bild', [str_contains($lead, 'buergewald-1440'), str_contains($lead, 'no-media')], [true, false]);
-pruefe('Ortsansicht 1440/720 zählt als ein Foto: dritte Zeile ohne Bild', substr_count($zeilen, 'no-media no-image'), 1);
-pruefe('Andere Ansicht bleibt mit Bild', str_contains($zeilen, 'merzenich-st-laurentius'), true);
-$neueSeite();
-$h = ma21_feed_raster($meldungen([507, 508, 507, 508]));
-pruefe('Zwei verschiedene „plakat.jpg“: je zweimal mit Bild, keine Karte ohne Bild', substr_count($h, 'bildraster-karte--ohne-bild'), 0);
-
-echo "Meldungsseite\n";
-$neueSeite();
-[$haupt] = $meldungen([504]);
-$hb = ma21_bild($haupt);
-ma21_bild_frei($hb); // wie single.php
-$karten = implode('', array_map('ma21_news_card', $meldungen([505, 504, 504])));
-pruefe('Foto der Meldung zählt mit: Weiterlesen zeigt es nur noch einmal', preg_match_all('#<img src="[^"]*buergewald-#', $karten), 1);
-pruefe('ma21_bild() (Meldungsseite, Vorladen) liefert das Foto weiter', ma21_bild($haupt)['src'] ?? '', 'https://merzenich-aktuell.de/wp-content/uploads/2026/09/buergewald-1440.webp');
+pruefe('Aufmacher mit Bild', [str_contains($lead, 'buergewald-1440'), str_contains($lead, 'no-media')], [true, false]);
+pruefe('Zeilen: alle mit Bild, keine ohne', [preg_match_all('#<img src=#', $zeilen), substr_count($zeilen, 'no-image')], [3, 0]);
+$karten = implode('', array_map('ma21_news_card', $meldungen([504, 504, 504])));
+pruefe('Weiterlesen: alle mit Bild', preg_match_all('#<img src="[^"]*buergewald-#', $karten), 3);
 $single = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/single.php');
-pruefe('single.php zählt das Foto der Meldung', (bool) preg_match('/\$b = ma21_bild\(\$p\);.*?if \(\$b\) ma21_bild_frei\(\$b\);/s', $single), true);
-$neueSeite();
-pruefe('Neuer Seitenaufruf: Zähler wieder bei null', ma21_bild_seite($haupt) !== null, true);
-pruefe('Ohne Beitragsbild: kein Eintrag im Zähler', [ma21_bild_seite(new WP_Post(9999)), count(ma21_bild_register())], [null, 1]);
+pruefe('single.php zählt nichts mehr mit', str_contains($single, 'ma21_bild_frei'), false);
+pruefe('Ohne Beitragsbild bleibt die Karte ohne Bild (kein Fehler)', ma21_bild(new WP_Post(9999)), null);
 
-echo "/heute/: Terminzeilen begrenzt der Server, /termine/ gibt alle aus\n";
+echo "Termine (/termine/, /heute/)\n";
 if (!function_exists('trailingslashit')) { function trailingslashit($s) { return rtrim((string) $s, '/') . '/'; } }
 require_once __DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php';
-$zeile = function (int $bild, bool $alle) use ($meldungen) { [$p] = $meldungen([$bild]); return ma21_termin_zeile(['post' => $p, 'url' => '/termine/x/', 'start' => 1792050000, 'ende' => 1792057200, 'ortSlug' => 'merzenich', 'kategorie' => 'Kirche', 'ortsteil' => 'Merzenich', 'titel' => 'Messe', 'ort' => '', 'veranstalter' => '', 'beschreibung' => '', 'quelle' => '', 'id' => $p->ID] + ['ganztags' => false, 'ohneEnde' => false], $alle); };
-$neueSeite();
-$heute = $zeile(501, false) . $zeile(502, false) . $zeile(501, false);
-pruefe('/heute/: drittes Vorkommen desselben Fotos ohne Bild', [substr_count($heute, 'class="event-bild"'), substr_count($heute, 'event-row--bild')], [2, 2]);
-$neueSeite();
-$alle = $zeile(501, true) . $zeile(502, true) . $zeile(501, true);
-pruefe('/termine/: alle Bilder (die Grenze rechnet v20.js nach dem Filtern)', substr_count($alle, 'class="event-bild"'), 3);
-$termineSeite = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php');
-pruefe('ma21_termine_seite ruft ma21_termin_zeile mit allen Bildern auf', str_contains($termineSeite, 'foreach ($kommend as $t) echo ma21_termin_zeile($t, true);'), true);
+$zeile = function (int $bild) use ($meldungen) { [$p] = $meldungen([$bild]); return ma21_termin_zeile(['post' => $p, 'url' => '/termine/x/', 'start' => 1792050000, 'ende' => 1792057200, 'ortSlug' => 'merzenich', 'kategorie' => 'Kirche', 'ortsteil' => 'Merzenich', 'titel' => 'Messe', 'ort' => '', 'veranstalter' => '', 'beschreibung' => '', 'ohneEnde' => false, 'quelle' => '']); };
+$zeilen = $zeile(501) . $zeile(502) . $zeile(501) . $zeile(501);
+pruefe('Jede Terminzeile mit Bild, auch dasselbe Foto viermal', [substr_count($zeilen, 'class="event-bild"'), substr_count($zeilen, 'event-row--bild')], [4, 4]);
 
-echo "/termine/: Grenze über die sichtbaren Zeilen (assets/v20.js)\n";
-$termine = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/termine.php');
-pruefe('ma21_termin_zeile: auf /termine/ alle Bilder (gefiltert wird im Browser), sonst begrenzt', str_contains($termine, "\$b = \$alleBilder ? ma21_bild(\$t['post']) : ma21_bild_seite(\$t['post']);"), true);
-$v20 = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/v20.js');
-if (preg_match('/const fotoGrenze=\(\)=>\{.*?\}\);\};/s', $v20, $fg) && trim((string) shell_exec('command -v node')) !== '') {
-    // Zeilen wie auf /termine/: Foto A an Termin 1, 2, 4, 5; Filter blendet Termin 1 aus.
-    $js = <<<'JS'
-const zeile = (foto, hidden) => { const m = { hidden: false, dataset: {}, querySelector: () => ({ getAttribute: (a) => a === 'data-foto' ? foto : '' }) }; return { hidden, m, querySelector: () => m }; };
-const rows = [zeile('A', false), zeile('A', false), zeile('B', false), zeile('A', false), zeile('A', false)];
-JS;
-    $js .= $fg[0] . "\nfotoGrenze(); const a = rows.map(r => r.m.hidden);\nrows[0].hidden = true; fotoGrenze(); const b = rows.map(r => r.m.hidden);\nrows[0].hidden = false; fotoGrenze(); const c = rows.map(r => r.m.hidden);\nconsole.log(JSON.stringify([a, b, c]));\n";
-    $v20Datei = tempnam(sys_get_temp_dir(), 'v20') . '.js'; file_put_contents($v20Datei, $js);
-    [$a, $b, $c] = json_decode((string) shell_exec('node ' . escapeshellarg($v20Datei)), true) ?: [[], [], []];
-    @unlink($v20Datei);
-    pruefe('Alle sichtbar: drittes und viertes A ohne Bild', $a, [false, false, false, true, true]);
-    pruefe('Erster Termin ausgefiltert: nur noch das vierte A ohne Bild (die ausgeblendete Zeile bleibt unberührt)', $b, [false, false, false, false, true]);
-    pruefe('Filter zurück: wieder wie vorher', $c, $a);
-} else pruefe('v20.js fotoGrenze gefunden und node vorhanden', false, true);
-$audit = (string) file_get_contents(__DIR__ . '/../../chatgpt-site/assets/editorial-audit.js');
-pruefe('editorial-audit.js blendet laufende mehrtägige Termine (mit data-end) nicht aus', str_contains($audit, "const w=el.closest('[data-event-row]');if(w&&Number.isFinite(Date.parse(w.getAttribute('data-end')||'')))return;"), true);
-pruefe('run() rechnet die Grenze nach jedem Filtern', str_contains($v20, "\$('[data-event-empty]').hidden=n>0;fotoGrenze();};"), true);
-
-echo "Startseite: Bühne behält ihr Foto, Rubrikkarten höchstens zweimal (feste Plätze)\n";
+echo "Startseite: jede Karte mit Bild\n";
 function is_front_page() { return !empty($GLOBALS['startseite']); }
-$neueSeite(); $GLOBALS['startseite'] = true;
-[$s1, $s2, $s3, $s4] = $meldungen([504, 505, 501, 501]);
-[$s5, $s6] = $meldungen([501, 502]);
-$buehne = ma21_karte($s1, 'r') . ma21_karte($s3, 'xl') . ma21_karte($s4, 'u') . ma21_karte($s5, 'u');
-pruefe('Aufmacher und Bühne: alle mit Bild, auch das dritte Kirchenfoto', substr_count($buehne, 'class="karte-bild"'), 4);
-$rubrik = ma21_karte($s2, 'm') . ma21_karte($s6, 'l');
-pruefe('Ortsbild der Orte-Bühne zählt vorab: Bürgewald in der Rubrik ohne Bild', str_contains(ma21_karte($s2, 'm'), 'desk-karte--ohne-bild'), true);
-pruefe('Kirchenfoto schon dreimal oben: Rubrikkarte ohne Bild', substr_count($rubrik, 'desk-karte--ohne-bild'), 2);
+$GLOBALS['startseite'] = true;
+[$s1, $s2, $s3, $s4, $s5, $s6] = $meldungen([504, 505, 501, 501, 501, 502]);
+$h = ma21_karte($s1, 'r') . ma21_karte($s3, 'xl') . ma21_karte($s4, 'u') . ma21_karte($s5, 'u') . ma21_karte($s2, 'm') . ma21_karte($s6, 'l');
+pruefe('Aufmacher, Bühne und Rubrikkarten: alle sechs mit Bild', [substr_count($h, 'class="karte-bild"'), substr_count($h, 'desk-karte--ohne-bild')], [6, 0]);
 $GLOBALS['startseite'] = false;
+
+echo "Browser: nachgeladene und gefilterte Karten behalten ihr Bild\n";
+foreach (['chatgpt-site/assets/', 'wordpress/theme/merzenich-aktuell/static/'] as $ordner) {
+    $endlos = (string) @file_get_contents(__DIR__ . '/../../' . $ordner . 'endlos.js');
+    $v20 = (string) @file_get_contents(__DIR__ . '/../../' . $ordner . 'v20.js');
+    if ($endlos === '' && $ordner !== 'chatgpt-site/assets/') continue; // Theme-Kopie entsteht erst mit der Kette
+    pruefe("{$ordner}endlos.js nimmt kein Bild heraus", [str_contains($endlos, 'bilderBegrenzen'), str_contains($endlos, 'ohne-bild'), str_contains($endlos, "'no-image'")], [false, false, false]);
+    pruefe("{$ordner}v20.js blendet keine Terminbilder aus", [str_contains($v20, 'fotoGrenze'), str_contains($v20, 'fotoAus')], [false, false]);
+}
+
+echo "CSS: keine Linie anstelle eines Bildes\n";
+$css = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/assets/css/plattform.css');
+pruefe('plattform.css: Karten ohne Bild ohne schwarze Linie', (bool) preg_match('/--ohne-bild[^{]*\{[^}]*border-top:\s*3px/', $css), false);
 
 echo "Startseite\n";
 $vorlage = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/startseite.html');

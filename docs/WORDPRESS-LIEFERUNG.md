@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-17. Oktober 2026 · Theme 21.20.4 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.1 (Historie unten)
+18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.1 (Historie unten)
+
+## Neu am 18.10.2026: Theme 21.20.5, jede Karte zeigt wieder ihr Bild
+
+**Anlass:** Der Betreiber sah auf der Live-Seite Linien statt Bilder: „ÜBERALL BILDER WIEDER HIN UND GENERISCHE STRICHE DA RAUS“. Die Obergrenze „höchstens zweimal dasselbe Foto je Seite“ (21.20.3/21.20.4) nahm ab dem dritten Vorkommen das Bild aus der Karte; stattdessen stand eine 3 px dicke Linie da. Gemessen am 18.10. bis zum Ende nachgeladen: Startseite 62 von 142 Karten ohne Bild, `/nachrichten/` 38 von 126, `/ort/merzenich/` 25 von 70. Alle 189 Meldungen haben ein Beitragsbild.
+
+- **Theme:** `ma21_bild_seite`, `ma21_bild_frei`, `ma21_bild_zaehlen`, `ma21_bild_register*` und `MA21_BILD_MAX` sind weg; alle Karten, Zeilen, Terminzeilen und Startseitenkarten nutzen wieder `ma21_bild()`. `ma21_termin_zeile()` hat keinen Parameter `$alleBilder` mehr.
+- **Browser:** `endlos.js` (`bilderBegrenzen`) und `v20.js` (`fotoGrenze`) nehmen keine Bilder mehr heraus.
+- **CSS:** Die Linie über Karten ohne Bild (`plattform.css`) ist weg; hat ein fester Platz doch kein Bild, steht nur der Text.
+- **Bleibt:** Foto-Schlüssel (`data-foto`, `ma21_foto_schluessel`) für die Motivgrenze der Startseiten-Belegung (wählt nur die Meldung je Platz) und das Foto des Tages.
+- **Test:** `qa/wordpress/bildwiederholung-test.php` prüft jetzt, dass jede Karte ihr Bild behält und keine Linie im CSS steht.
 
 ## Neu am 17.10.2026: Theme 21.20.3/21.20.4 und Plugin 1.29.0, höchstens zweimal dasselbe Foto je Seite
 

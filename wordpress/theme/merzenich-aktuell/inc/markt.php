@@ -152,7 +152,7 @@ function ma21_tipp_zeile(WP_Post $p): string {
     $zeit = $start && wp_date('H:i', $start) !== '00:00' ? wp_date('H:i', $start) . ' Uhr' : '';
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 34, ' …');
     // Foto des Termins wie auf /termine/ (Wunsch Betreiber 07.10.2026); ohne Foto bleibt die Karte ohne Bild.
-    $b = ma21_bild_seite($p);
+    $b = ma21_bild($p);
     $bild = $b ? '<a class="event-bild" href="' . $url . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_img($b, '(max-width: 640px) 92vw, 420px', false) . ma21_badge($b, false) . '</div></a>' : '';
     return '<article class="event-row' . ($b ? ' event-row--bild' : '') . '">' . $bild
         . ($start ? '<span class="d"><b>' . esc_html(wp_date('j', $start)) . '</b><span>' . esc_html(MA21_MON[(int) wp_date('n', $start) - 1]) . '</span></span>' : '<span class="d"><b>–</b></span>')

@@ -53,46 +53,8 @@
     return Boolean(a && schon.pfade.has(new URL(a.getAttribute('href'), location.href).pathname));
   }
 
-  /* Höchstens zweimal dasselbe Foto auf der Seite (wie ma21_bild_seite im Theme, 17.10.2026):
-     nachgeladene Karten verlieren ab dem dritten Mal ihre Bildfläche, der Text bleibt. Den Schlüssel
-     liefert WordPress am Bild (data-foto); sonst gelten dieselben Regeln wie ma21_foto_schluessel. */
-  const BILD_MAX = 2;
-  const BREITEN = '240|320|360|480|526|590|600|640|720|768|800|960|1080|1200|1440|1600|1920';
+  // Hülle der nachgeladenen Karten: Kartenraster der Ressorts oder (Startseite) „Weitere Meldungen“.
   const RASTER = '.bildraster--ressort, .weitere-meldungen__raster';
-  function fotoSchluessel(src) {
-    const pfad = (src || '').replace(/[?#].*$/, '').toLowerCase();
-    const name = pfad.split('/').pop().replace(/\.[a-z0-9]+$/, '').replace(/-\d+x\d+$/, '').replace(/-(scaled|rotated)$/, '');
-    const h = name.match(/^((?:.*-)?(?=[0-9a-f]*[a-f])[0-9a-f]{10,})(?:-\d{2,4})?(?:-\d)?$/);
-    if (h) return 'h:' + h[1];
-    const i = pfad.indexOf('/assets/');
-    if (i >= 0) {
-      const teile = pfad.slice(i + 8).split('/'); teile.pop();
-      return 'p:' + (teile.length ? teile.join('/') + '/' : '') + name.replace(new RegExp('-(?:' + BREITEN + ')$'), '');
-    }
-    const ohneHost = pfad.replace(/^https?:\/\/[^/]+/, '');
-    return 'u:' + (ohneHost.includes('/') ? ohneHost.replace(/\/[^/]*$/, '') : '.') + '/' + name;
-  }
-  const schluesselVon = (img) => img.getAttribute('data-foto') || fotoSchluessel(img.getAttribute('src'));
-  // Fest auf der Seite: Bilder der Karten, die Ortsbilder „Ihre fünf Orte“ und das Foto des Tages (zählen im Theme vorab mit).
-  const FEST = 'img[data-editorial-image], .orte-buehne img, #foto-des-tages-bild';
-  function bilderBegrenzen(knoten) {
-    const zahl = new Map();
-    for (const img of d.querySelectorAll(FEST)) { const k = schluesselVon(img); if (k) zahl.set(k, (zahl.get(k) || 0) + 1); }
-    for (const k of knoten) {
-      if (!k.querySelectorAll) continue;
-      for (const img of [...k.querySelectorAll('img[data-editorial-image]')]) {
-        const s = schluesselVon(img);
-        if (!s || (zahl.get(s) || 0) < BILD_MAX) { if (s) zahl.set(s, (zahl.get(s) || 0) + 1); continue; }
-        const huelle = img.closest('a[aria-hidden="true"]') || img.closest('.media') || img;
-        (k.contains(huelle) ? huelle : img).remove();
-        if (k.classList.contains('bildraster-karte')) k.classList.add('bildraster-karte--ohne-bild');
-        if (k.classList.contains('feed-row')) k.classList.add('no-media', 'no-image');
-        if (k.classList.contains('feed-lead')) k.classList.add('no-media');
-        if (k.classList.contains('desk-karte')) k.classList.add('desk-karte--ohne-bild');
-        if (k.classList.contains('u-karte')) k.classList.add('u-karte--ohne-bild');
-      }
-    }
-  }
 
   /** Antwort lesen: Teilstück aus WordPress oder ganze statische Seite. */
   function lesen(text) {
@@ -164,7 +126,6 @@
       const neu = knoten.filter((k) => !doppelt(k, schon));
       if (!neu.some((k) => k.hasAttribute('data-story'))) return [];
       const fertig = neu.map((k) => d.importNode(k, true));
-      bilderBegrenzen(fertig);
       if (art === 'raster') {
         let raster = [...liste.querySelectorAll(RASTER)].pop();
         if (!raster) { raster = d.createElement('div'); raster.className = huelle || 'bildraster bildraster--ressort'; liste.insertBefore(raster, steuer); }

@@ -89,10 +89,8 @@
 .ma-tabellen__platz{display:inline-block;min-width:24px;font-weight:800;color:var(--red,#b71920)!important;font-size:14px!important}
 @media(max-width:800px){.ma-tabellen .ma-tabellen__raster{grid-template-columns:1fr}}
 @media(max-width:400px){.ma-sportart-raster{grid-template-columns:1fr}.ma-sportverein{display:grid;grid-template-columns:44% 56%}.ma-sportverein__info{border-top:0}.ma-sportverein__bild img{height:100%;min-height:105px;aspect-ratio:auto;object-fit:cover}}
-/* Layout-Karte (02.10.2026): feste Plätze dürfen ohne Bild belegt sein. */
-.desk-karte--ohne-bild .karte-text{padding-top:0;border-top:3px solid var(--ink)}
-.desk-karte--ohne-bild .karte-text h3{margin-top:8px}
-.bildraster-karte--ohne-bild .bildraster-text{padding-top:0;border-top:3px solid var(--ink)}
+/* Layout-Karte (02.10.2026): feste Plätze dürfen ohne Bild belegt sein; dann steht nur der Text, ohne Linie (Betreiber 18.10.2026). */
+.desk-karte--ohne-bild .karte-text,.bildraster-karte--ohne-bild .bildraster-text{padding-top:0}
 /* Angemeldete Redaktion: die WordPress-Leiste liegt über dem Seitenkopf; der klebende Kopf rückt nach. */
 /* Eingeloggt (04.10.2026): Die Ressortleiste ist sticky auf .nav-anchor (korrekturen.css) und klebt unter der Admin-Leiste; der grosse Kopf scrollt weg. Mobil bleibt der schmale Kopf unter der Admin-Leiste kleben. */
 body.admin-bar>.nav-anchor{top:32px}
