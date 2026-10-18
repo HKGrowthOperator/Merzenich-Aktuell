@@ -1,11 +1,11 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-10-17T09:26:44.434Z",
+ "abgerufen": "2026-10-18T09:42:02.273Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
    "endUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
-   "abgerufen": "2026-10-17T09:26:39.067Z",
+   "abgerufen": "2026-10-18T09:41:56.957Z",
    "status": 200,
    "titel": "Stellenangebote | Gemeinde Merzenich",
    "meta": {
@@ -21,7 +21,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#MTA0MDg2NzU0MQ"
+     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#NDc0NjczOTA2"
     },
     {
      "text": "Stellenausschreibung FBL III ab Oktober 2026.pdf PDF -Datei 150,36 kB",
@@ -53,7 +53,7 @@
   {
    "url": "https://www.kreis-dueren.de/karriere",
    "endUrl": "https://www.kreis-dueren.de/karriere",
-   "abgerufen": "2026-10-17T09:26:41.424Z",
+   "abgerufen": "2026-10-18T09:41:59.181Z",
    "status": 200,
    "titel": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS | Kreis Düren",
    "meta": {
@@ -69,7 +69,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#NzQ1NDA4MTg5"
+     "href": "https://www.kreis-dueren.de/karriere#NDYwNTQxODUz"
     },
     {
      "text": "PDF -Datei 211,08 kB Stellenausschreibung der Kindertagesbetreuung Kreismäuse AöR: Kita-Helfer:in (m/w/d) Rurpiraten, Jülich befristet bis zum 01.11.2026",
@@ -109,7 +109,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#NjEwNTc5NzA"
+     "href": "https://www.kreis-dueren.de/karriere#MTk2NzY4NDg1"
     },
     {
      "text": "Arbeitgeber Kreis Düren Duales Studium und Ausbildung Jetzt informieren und bewerben.",
@@ -117,7 +117,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#NjA3ODA1NDI"
+     "href": "https://www.kreis-dueren.de/karriere#MTM5NDMxMDcz"
     },
     {
      "text": "Jobs & Karriere Kreisverwaltung Düren vorgestellt Was sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...",
@@ -125,7 +125,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#ODYxMjE5NzEz"
+     "href": "https://www.kreis-dueren.de/karriere#MjQzMzgwODUx"
     },
     {
      "text": "Leitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB",
@@ -173,7 +173,7 @@
   {
    "url": "https://www.jobsdn.de/jobportal",
    "endUrl": "https://www.jobsdn.de/jobportal",
-   "abgerufen": "2026-10-17T09:26:43.233Z",
+   "abgerufen": "2026-10-18T09:42:01.073Z",
    "status": 200,
    "titel": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
    "meta": {
