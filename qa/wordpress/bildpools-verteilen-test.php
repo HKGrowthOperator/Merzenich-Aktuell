@@ -2,7 +2,9 @@
 /**
  * Symbolbilder aus den Bildpools gleichmäßig verteilen (includes/bildpools.php,
  * 17.10.2026): seltenstes geprüftes Foto, höchstens zweimal unter den sichtbaren
- * Inhalten, übergeordneter Pool, nur automatisch vergebene Bilder.
+ * Inhalten, übergeordneter Pool, nur automatisch vergebene Bilder. Seit 1.30.0
+ * (18.10.2026) über alle Meldungen und auch für Symbolbilder und Ortsansichten
+ * aus dem Abgleich; Originalfotos und Redaktionsfotos bleiben.
  * Aufruf: php qa/wordpress/bildpools-verteilen-test.php
  */
 define('ABSPATH', __DIR__ . '/');
@@ -171,6 +173,57 @@ pruefe('Automatik aus: der tägliche Lauf tauscht nichts', array_map('get_post_t
 $GLOBALS['optionen']['ma_bildpool_auto'] = '1';
 if (is_callable($cron)) $cron();
 pruefe('Automatik an: der tägliche Lauf verteilt', count(array_unique(array_map('get_post_thumbnail_id', range(1, 4)))) > 1, true);
+
+
+echo "1.30.0: alle Meldungen, Symbolbilder und Ortsansichten aus dem Abgleich\n";
+$GLOBALS['pools'] = ['aktuell' => range(301, 322), 'feuerwehr' => range(501, 506), 'blaulicht' => [], 'termine' => range(201, 220)];
+$GLOBALS['inhalte'] = []; $GLOBALS['meta'] = []; $GLOBALS['verlauf'] = [];
+function meldung(int $id, string $titel, string $datum, int $bild, string $typ, array $kats = ['rathaus']) {
+    $GLOBALS['inhalte'][$id] = ['post' => ['post_type' => 'post', 'post_title' => $titel, 'post_date' => $datum], 'kats' => $kats];
+    $GLOBALS['meta'][$id] = ['_thumbnail_id' => $bild, 'ma_image_type' => $typ, 'ma_image_credit' => "Nachweis $bild"];
+}
+// Abgleich-Anhänge: dasselbe Poolfoto (aktuell-05) als Import-Bild, eine Ortsansicht, ein Originalfoto, ein Mediathek-Bild.
+$GLOBALS['meta'][700] = ['ma_image_static_src' => '/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp'];
+$GLOBALS['meta'][701] = ['ma_image_static_src' => '/assets/places/girbelsrath-1440.webp', 'ma_image_type' => 'place'];
+$GLOBALS['meta'][702] = ['ma_image_static_src' => '/assets/uploads/einsatz-118.webp'];
+// Elf Meldungen von Juli bis Oktober mit demselben Abgleich-Symbolbild (live: aktuell-05 elfmal).
+for ($i = 0; $i < 11; $i++) meldung(600 + $i, "Rathaus $i", sprintf('2026-%02d-%02d 10:00:00', 7 + intdiv($i, 4), 1 + ($i % 4) * 7), 700, 'symbol');
+// Sieben Feuerwehrmeldungen aus Girbelsrath mit derselben Ortsansicht (live: siebenmal).
+for ($i = 0; $i < 7; $i++) meldung(620 + $i, "Einsatz Girbelsrath $i", sprintf('2026-%02d-15 10:%02d:00', 6 + $i % 4, $i), 701, 'place', ['blaulicht']);
+// Originalfoto aus dem Abgleich dreimal, Redaktionsfoto aus der Mediathek (ohne Herkunft) dreimal: beide bleiben.
+for ($i = 0; $i < 3; $i++) meldung(640 + $i, "Original $i", "2026-08-0{$i} 10:00:00", 702, 'original');
+for ($i = 0; $i < 3; $i++) meldung(650 + $i, "Mediathek $i", "2026-08-1{$i} 10:00:00", 703, 'symbol');
+$sicht = ma_bildpool_sichtbar();
+pruefe('sichtbar: auch Meldungen älter als 45 Tage', in_array(600, $sicht, true), true);
+$n = ma_bildpool_verteilen();
+$schluessel = function (array $ids): array { $z = []; foreach ($ids as $id) { $k = ma_foto_schluessel(get_post_thumbnail_id($id)); $z[$k] = ($z[$k] ?? 0) + 1; } arsort($z); return $z; };
+$rathaus = range(600, 610); $feuer = range(620, 626);
+pruefe('Abgleich-Symbolbild: höchstens zweimal, die zwei neuesten behalten es', [max($schluessel($rathaus)), get_post_thumbnail_id(610), get_post_thumbnail_id(609), get_post_thumbnail_id(600) !== 700], [2, 700, 700, true]);
+$neueste = array_slice(array_reverse($feuer), 0, 2);
+usort($feuer, fn($a, $b) => strcmp($GLOBALS['inhalte'][$b]['post']['post_date'], $GLOBALS['inhalte'][$a]['post']['post_date']));
+pruefe('Ortsansicht: die zwei neuesten Meldungen behalten sie', [get_post_thumbnail_id($feuer[0]), get_post_thumbnail_id($feuer[1])], [701, 701]);
+pruefe('Ortsansicht: die übrigen bekommen ein Feuerwehr-Symbolbild', array_values(array_unique(array_map(fn($id) => get_post_thumbnail_id($id) >= 501 && get_post_thumbnail_id($id) <= 506, array_slice($feuer, 2)))), [true]);
+pruefe('Ortsansicht ersetzt: Typ Symbolbild, Nachweis des Poolfotos, Sicherung mit dem alten Nachweis', [$GLOBALS['meta'][$feuer[6]]['ma_image_type'], ($GLOBALS['meta'][$feuer[6]]['_ma_bildpool_vorher']['ma_image_type'] ?? ''), ($GLOBALS['meta'][$feuer[6]]['_ma_bildpool_vorher']['ma_image_credit'] ?? '')], ['symbol', 'place', 'Nachweis 701']);
+pruefe('Originalfoto und Mediathek-Bild bleiben, auch dreimal', array_map('get_post_thumbnail_id', [640, 641, 642, 650, 651, 652]), [702, 702, 702, 703, 703, 703]);
+pruefe('Kein Merkmal an Original und Mediathek-Bild', [isset($GLOBALS['meta'][640]['_ma_bildpool_auto']), isset($GLOBALS['meta'][650]['_ma_bildpool_auto'])], [false, false]);
+pruefe('Verlauf nennt die ersetzte Ortsansicht', count(array_filter($GLOBALS['verlauf'], fn($v) => str_starts_with($v[1], 'Ortsansicht gewechselt'))), 5);
+pruefe('jeder Wechsel steht im Verlauf (9 Rathaus, 5 Feuerwehr)', [$n, count($GLOBALS['verlauf'])], [14, 14]);
+pruefe('zweiter Lauf: nichts mehr zu tun', ma_bildpool_verteilen(), 0);
+
+echo "1.30.0: Pool reicht nicht für zweimal: gleichmäßig und mit Abstand\n";
+// Der Pool „aktuell“ hat 22 geprüfte Fotos (Kandidaten gelten für den ganzen Aufruf); 60 Meldungen.
+$GLOBALS['inhalte'] = []; $GLOBALS['meta'] = []; $GLOBALS['verlauf'] = [];
+$GLOBALS['meta'][700] = ['ma_image_static_src' => '/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp'];
+for ($i = 0; $i < 60; $i++) meldung(800 + $i, "Meldung $i", sprintf('2026-%02d-%02d 10:00:00', 4 + intdiv($i, 20), 1 + $i % 20), 700, 'symbol');
+ma_bildpool_verteilen();
+$folge = array_map(fn($id) => ma_foto_schluessel(get_post_thumbnail_id($id)), array_reverse(range(800, 859)));
+$z = array_count_values($folge);
+pruefe('60 Meldungen, 22 Fotos plus das Abgleich-Foto: jedes höchstens 3×', max($z) <= 3, true);
+pruefe('alle 22 Poolfotos im Einsatz', count($z), 23);
+$abstand = PHP_INT_MAX; $letzte = [];
+foreach ($folge as $i => $k) { if (isset($letzte[$k]) && $i > 1) $abstand = min($abstand, $i - $letzte[$k]); $letzte[$k] = $i; }
+pruefe('Abstand zwischen zwei gleichen Fotos (ab der dritten Meldung): mindestens 15', $abstand >= 15, true);
+pruefe('zweiter Lauf: stabil', ma_bildpool_verteilen(), 0);
 
 echo "Leerer Pool\n";
 // Eigener Name: Die Kandidaten je Pool merkt sich ma_bildpool_kandidaten() für den Seitenaufruf.

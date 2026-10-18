@@ -9,8 +9,8 @@
  * - p:<ordner>/<name>   übrige Dateien unter /assets/ (places/buergewald), ohne erzeugte Breite
  * - a:<id>              alles andere: der Anhang selbst (zwei „plakat.jpg“ bleiben zwei Fotos)
  *
- * Dieselben Regeln stehen im Theme (ma21_foto_schluessel) und in assets/endlos.js
- * (fotoSchluessel); qa/wordpress/bildwiederholung-test.php vergleicht alle drei.
+ * Dieselben Regeln stehen im Theme (ma21_foto_schluessel); qa/wordpress/bildwiederholung-test.php
+ * vergleicht beide.
  */
 if (!defined('ABSPATH')) { exit; }
 

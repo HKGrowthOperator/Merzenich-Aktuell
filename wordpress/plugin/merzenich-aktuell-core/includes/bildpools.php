@@ -386,9 +386,10 @@ function ma_bildpool_fuer_termin(string $text): string {
 
 /* Höchstens so oft dasselbe Poolfoto unter den sichtbaren Inhalten (17.10.2026: auf
    /termine/ stand dasselbe Kirchenfoto siebenmal, weil beim Vergeben erst eines der
-   vier Kirchenfotos geprüft war und nie neu verteilt wurde). */
+   vier Kirchenfotos geprüft war und nie neu verteilt wurde). Sichtbar sind seit 1.30.0
+   alle veröffentlichten Meldungen: Die Listen laden beim Scrollen bis in den Juli nach,
+   und dort standen dieselben fünf Fotos bis zu elfmal (18.10.2026). */
 const MA_BILDPOOL_GRENZE = 2;
-const MA_BILDPOOL_TAGE = 45;
 
 /** Geprüfte Fotos eines Pools (Medien-IDs, aufsteigend). */
 function ma_bildpool_kandidaten(string $pool): array {
@@ -398,15 +399,21 @@ function ma_bildpool_kandidaten(string $pool): array {
     return $cache[$pool];
 }
 
-/** Sichtbare Inhalte: Meldungen der letzten MA_BILDPOOL_TAGE Tage, kommende und laufende Termine (IDs, wie /termine/). */
+/** Sichtbare Inhalte: alle veröffentlichten Meldungen, kommende und laufende Termine (IDs, wie /termine/). */
 function ma_bildpool_sichtbar(): array {
-    $meldungen = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 400, 'fields' => 'ids', 'no_found_rows' => true,
-        'date_query' => [['after' => MA_BILDPOOL_TAGE . ' days ago', 'inclusive' => true]]]);
+    $meldungen = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 2000, 'fields' => 'ids', 'no_found_rows' => true]);
     $termine = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 400, 'fields' => 'ids', 'no_found_rows' => true,
         'meta_query' => ['relation' => 'OR',
             ['key' => 'ma_event_end', 'value' => (string) current_time('Y-m-d H:i:s'), 'compare' => '>=', 'type' => 'DATETIME'],
             ['key' => 'ma_event_start', 'value' => (string) current_time('Y-m-d'), 'compare' => '>=']]]);
-    return array_values(array_unique(array_map('intval', array_merge($meldungen, $termine))));
+    $ids = array_values(array_unique(array_map('intval', array_merge($meldungen, $termine))));
+    // Bildangaben der Inhalte und ihrer Beitragsbilder in einem Zug laden statt je Inhalt.
+    if ($ids && function_exists('update_meta_cache')) {
+        update_meta_cache('post', $ids);
+        $bilder = array_filter(array_map('get_post_thumbnail_id', $ids));
+        if ($bilder) update_meta_cache('post', array_values(array_unique($bilder)));
+    }
+    return $ids;
 }
 
 /**
@@ -557,38 +564,79 @@ function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
 }
 
 /**
- * Automatisch vergebene Symbolbilder neu verteilen (17.10.2026): Kommt ein Poolfoto
- * unter den sichtbaren Inhalten öfter als MA_BILDPOOL_GRENZE vor, bekommen die
- * übrigen ein seltenes Foto aus ihrem Pool, sonst aus dem übergeordneten. Nur
- * Inhalte mit _ma_bildpool_auto; Fotos der Redaktion und aus dem Abgleich bleiben.
- * Die ältesten behalten ihr Bild, damit Neues nicht ständig wechselt. Gibt die Zahl
- * der Wechsel zurück.
+ * Darf das Bild dieses Inhalts neu verteilt werden? Ja beim automatisch vergebenen
+ * Poolfoto und (1.30.0) bei allgemeinen Bildern aus dem Abgleich: Symbolbild oder
+ * Ortsansicht, deren Anhang aus der Import-Datei stammt (ma_image_static_src). Nie
+ * bei Originalfotos, Quellenmotiven, Archivbildern oder von der Redaktion gewählten
+ * Bildern aus der Mediathek.
+ */
+function ma_bildpool_allgemein(int $id): bool {
+    if (ma_bildpool_auto_aktuell($id)) return true;
+    $bild = (int) get_post_thumbnail_id($id);
+    if (!$bild || (string) get_post_meta($bild, 'ma_image_static_src', true) === '') return false;
+    $typ = (string) get_post_meta($id, 'ma_image_type', true) ?: (string) get_post_meta($bild, 'ma_image_type', true);
+    return in_array($typ, ['symbol', 'place'], true);
+}
+
+/**
+ * Am seltensten genutztes geprüftes Foto aus $pool, bei Gleichstand das am längsten
+ * nicht mehr vergebene (kleinste Stelle in $zuletzt, nie vergeben zuerst), dann ab
+ * Stelle post_id % n. Gibt [Medien-ID, Zahl] zurück, [0, PHP_INT_MAX] ohne Foto.
+ */
+function ma_bildpool_seltenstes(string $pool, int $post_id, array $zahl, array $zuletzt): array {
+    $ids = ma_bildpool_kandidaten($pool);
+    $n = count($ids);
+    $best = [0, PHP_INT_MAX, PHP_INT_MAX];
+    for ($i = 0; $i < $n; $i++) {
+        $b = $ids[($post_id + $i) % $n]; $k = ma_foto_schluessel($b);
+        $z = $zahl[$k] ?? 0; $l = $zuletzt[$k] ?? -1;
+        if ($z < $best[1] || ($z === $best[1] && $l < $best[2])) $best = [$b, $z, $l];
+    }
+    return [$best[0], $best[1]];
+}
+
+/**
+ * Allgemeine Bilder neu verteilen (17.10.2026, seit 1.30.0 über alle Meldungen und
+ * auch für Symbolbilder und Ortsansichten aus dem Abgleich): Von neu nach alt behält
+ * jeder Inhalt sein Foto, solange es höchstens MA_BILDPOOL_GRENZE-mal vorkommt. Sonst
+ * bekommt er das seltenste geprüfte Foto seines Pools (bei Gleichstand das am längsten
+ * nicht vergebene), vom übergeordneten Pool (Termine: „termine“, Meldungen: „aktuell“)
+ * nur, wenn es dort ein selteneres gibt. Ortsansichten behalten so die zwei neuesten
+ * Meldungen. Was nicht verteilt werden darf (ma_bildpool_allgemein), steht fest und
+ * zählt zuerst. Gibt die Zahl der Wechsel zurück; jeder steht im Verlauf.
  */
 function ma_bildpool_verteilen(): int {
     ma_bildpool_merkmale_nachtragen();
     $nutzung = &ma_bildpool_nutzung(true);
-    $auto = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 800, 'no_found_rows' => true, 'orderby' => 'date', 'order' => 'ASC',
-        'post__in' => ma_bildpool_sichtbar() ?: [0], 'meta_query' => [['key' => '_ma_bildpool_auto', 'compare' => 'EXISTS']]]);
-    // Nur Inhalte, die noch ihr automatisch vergebenes Poolfoto tragen; veraltete Merkmale fallen weg.
-    $auto = array_values(array_filter($auto, function ($p) { if (ma_bildpool_auto_aktuell($p->ID)) return true; if (get_post_thumbnail_id($p->ID)) ma_bildpool_merkmal_loeschen($p->ID); return false; }));
-    // Was nicht automatisch vergeben ist (Redaktionsfotos, Abgleich), steht fest und zählt zuerst.
-    $gesehen = $nutzung;
-    foreach ($auto as $p) $gesehen[ma_foto_schluessel((int) get_post_thumbnail_id($p->ID))]--;
-    $wechsel = 0;
-    foreach ($auto as $p) {
+    $alle = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 2400, 'no_found_rows' => true, 'orderby' => 'date', 'order' => 'DESC',
+        'post__in' => ma_bildpool_sichtbar() ?: [0]]);
+    $zahl = []; $frei = [];
+    foreach ($alle as $p) {
+        // Veraltetes Merkmal (Bild inzwischen ersetzt): entfernen, das Bild bleibt.
+        if ((string) get_post_meta($p->ID, '_ma_bildpool_auto', true) !== '' && !ma_bildpool_auto_aktuell($p->ID) && get_post_thumbnail_id($p->ID)) ma_bildpool_merkmal_loeschen($p->ID);
+        $bild = (int) get_post_thumbnail_id($p->ID);
+        if (!$bild) continue;
+        if (ma_bildpool_allgemein($p->ID)) { $frei[] = $p; continue; }
+        $k = ma_foto_schluessel($bild); $zahl[$k] = ($zahl[$k] ?? 0) + 1;
+    }
+    $zuletzt = []; $wechsel = 0;
+    foreach ($frei as $i => $p) {
         $bild = (int) get_post_thumbnail_id($p->ID); $k = ma_foto_schluessel($bild);
-        $gesehen[$k] = ($gesehen[$k] ?? 0) + 1;
-        if ($gesehen[$k] <= MA_BILDPOOL_GRENZE || ($nutzung[$k] ?? 0) <= MA_BILDPOOL_GRENZE) continue;
-        $pool = (string) get_post_meta($p->ID, '_ma_bildpool_auto', true) ?: ma_bildpool_fuer($p);
+        $jetzt = $zahl[$k] ?? 0;
+        if ($jetzt < MA_BILDPOOL_GRENZE) { $zahl[$k] = $jetzt + 1; $zuletzt[$k] = $i; continue; }
+        $pool = (ma_bildpool_auto_aktuell($p->ID) ? (string) get_post_meta($p->ID, '_ma_bildpool_auto', true) : '') ?: ma_bildpool_fuer($p);
         $ober = $p->post_type === 'ma_event' ? 'termine' : 'aktuell';
-        $neu = 0;
-        foreach (array_unique([$pool, $ober]) as $q) if ($neu = ma_bildpool_waehlen($q, $p->ID, MA_BILDPOOL_GRENZE)) break;
-        if (!$neu || ma_foto_schluessel($neu) === $k) continue;
+        [$neu, $z] = ma_bildpool_seltenstes($pool, $p->ID, $zahl, $zuletzt);
+        if ($ober !== $pool) { [$neuO, $zO] = ma_bildpool_seltenstes($ober, $p->ID, $zahl, $zuletzt); if ($neuO && $zO < $z) { $neu = $neuO; $z = $zO; } }
+        // Nur wechseln, wenn das neue Foto seltener ist als das bisherige.
+        if (!$neu || $z >= $jetzt || ma_foto_schluessel($neu) === $k) { $zahl[$k] = $jetzt + 1; $zuletzt[$k] = $i; continue; }
+        $typVorher = (string) get_post_meta($p->ID, 'ma_image_type', true);
         ma_bildpool_bild_setzen($p, $neu, $pool);
         $kn = ma_foto_schluessel($neu);
-        $nutzung[$k]--; $nutzung[$kn] = ($nutzung[$kn] ?? 0) + 1; $gesehen[$k]--;
+        $zahl[$kn] = ($zahl[$kn] ?? 0) + 1; $zuletzt[$kn] = $i;
+        $nutzung[$k] = max(0, ($nutzung[$k] ?? 1) - 1); $nutzung[$kn] = ($nutzung[$kn] ?? 0) + 1;
         $wechsel++;
-        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($p->ID, 'Symbolbild gewechselt: dasselbe Poolfoto stand schon bei ' . MA_BILDPOOL_GRENZE . ' anderen sichtbaren Inhalten', '', 0);
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($p->ID, ($typVorher === 'place' ? 'Ortsansicht' : 'Symbolbild') . ' gewechselt: dasselbe Foto stand schon bei ' . MA_BILDPOOL_GRENZE . ' neueren Inhalten; neu ist ein Symbolbild aus dem Bildpool (vorher Medium ' . $bild . ', jetzt ' . $neu . ')', '', 0);
     }
     return $wechsel;
 }
