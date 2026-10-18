@@ -136,7 +136,10 @@ beitrag(40); ma_bildpool_bild_setzen(get_post(40), 102, 'aktuell');
 beitrag(41, ['_thumbnail_id' => 880]); beitrag(42);
 pruefe('Nur Poolfoto statt Abgleich-Bild: gilt als fehlend; eigenes Bild nicht; ohne Bild schon', [ma_abgleich_bild_fehlt(40), ma_abgleich_bild_fehlt(41), ma_abgleich_bild_fehlt(42)], [true, false, true]);
 // 1.30.0: Die Verteilung tauscht allgemeine Import-Bilder gegen seltenere Poolfotos; der Abgleich dreht das nicht zurück.
-pruefe('Poolfoto statt Import-Symbolbild oder -Ortsansicht: nicht fehlend; statt Originalfoto schon', [ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'symbol']]), ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'place']]), ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'original']]), ma_abgleich_bild_fehlt(42, ['meta' => ['ma_image_type' => 'symbol']])], [false, false, true, true]);
+pruefe('Poolfoto nach gescheitertem Download: auch ein Import-Symbolbild gilt als fehlend', ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'symbol']]), true);
+update_post_meta(40, '_ma_bildpool_ersetzt', 'p:places/girbelsrath');
+pruefe('Von der Verteilung ersetzt: Symbolbild/Ortsansicht nicht zurück, Originalfoto schon; ohne Bild immer', [ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'symbol']]), ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'place']]), ma_abgleich_bild_fehlt(40, ['meta' => ['ma_image_type' => 'original']]), ma_abgleich_bild_fehlt(42, ['meta' => ['ma_image_type' => 'symbol']])], [false, false, true, true]);
+delete_post_meta(40, '_ma_bildpool_ersetzt');
 beitrag(43, ['ma_image_credit' => 'Gemeinde Merzenich', 'ma_image_type' => 'original', 'ma_image_rights_verified' => '0']);
 ma_bildpool_bild_setzen(get_post(43), 102, 'aktuell');
 set_post_thumbnail(43, 950); // ma_abgleich_bild_setzen beim nächsten Lauf

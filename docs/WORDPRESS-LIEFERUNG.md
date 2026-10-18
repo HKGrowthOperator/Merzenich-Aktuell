@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.29.1 · live: 21.20.4 / 1.29.1 (Historie unten)
+18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.30.0 · live: 21.20.5 / 1.29.1 (Historie unten)
+
+## Neu am 18.10.2026: Plugin 1.30.0, weniger Wiederholungen über andere echte Fotos
+
+**Anlass:** Nach 21.20.5 zeigt jede Karte ihr Bild, aber 189 Meldungen teilen sich nur 87 Fotos. Gemessen bis zum Ende nachgeladen: Startseite ein Foto 9×, `/ort/merzenich/` 8×, `/ort/girbelsrath/` die Ortsansicht 7×, `/ort/buergewald/` 6×. Die Pools haben je rund 20 geprüfte Fotos.
+
+- **Verteilung über alle Meldungen** (`ma_bildpool_verteilen`): statt der letzten 45 Tage alle veröffentlichten Meldungen und kommende Termine. Von neu nach alt behält jede Meldung ihr Foto, solange es höchstens zweimal vorkommt; sonst kommt das seltenste geprüfte Foto ihres Pools (bei Gleichstand das am längsten nicht vergebene), der übergeordnete Pool nur, wenn der eigene kein Foto unter der Grenze mehr hat. Ortsansichten behalten so die zwei neuesten Meldungen.
+- **Was wechseln darf:** das automatisch vergebene Poolfoto und Symbolbilder oder Ortsansichten, die der Abgleich gesetzt hat (Typ am Inhalt `symbol`/`place`, Anhang mit `ma_image_static_src`). Nie: Originalfotos, Quellenmotive, Archivbilder und alles, was jemand von Hand gesetzt hat (`_ma_bild_von_hand`, gesetzt vom Hook auf `_thumbnail_id`).
+- **Kein Hin und Her:** Jeder Inhalt wechselt höchstens einmal (`_ma_bildpool_verteilt`). Der Abgleich liefert ein so ersetztes allgemeines Import-Bild nicht stündlich zurück (`_ma_bildpool_ersetzt`), ein echtes Foto setzt sich aber durch. Bildangaben aus der Import-Datei landen nicht an einem von Hand gewählten Bild.
+- **Nachweis:** Das Poolfoto bringt seinen Nachweis mit; die alten Angaben liegen in `_ma_bildpool_vorher`. Jeder Wechsel steht im Verlauf mit altem und neuem Medium. Rückweg: Plugin 1.29.1, dann setzt der Abgleich die Import-Bilder wieder.
+- **Code-Prüfung:** 3 Prüfer mit Gegenprüfung; bestätigt und eingearbeitet: tägliches Weiterschieben in vollen Pools, von Hand gewählte Import-Bilder, übergeordneter Pool zu früh, gescheiterter Download, feste Reihenfolge, Abstand auch zu festen Fotos, veralteter Kommentar in `v20.js`.
 
 ## Neu am 18.10.2026: Theme 21.20.5, jede Karte zeigt wieder ihr Bild
 

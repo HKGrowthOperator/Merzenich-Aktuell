@@ -45,7 +45,10 @@ function get_posts($q) {
         if (isset($q['post__in']) && !in_array($id, $q['post__in'], true)) continue;
         $ids[] = $id;
     }
-    if (($q['orderby'] ?? '') === 'date') usort($ids, fn($a, $b) => strcmp($GLOBALS['inhalte'][$a]['post']['post_date'], $GLOBALS['inhalte'][$b]['post']['post_date']) * (($q['order'] ?? 'DESC') === 'ASC' ? 1 : -1));
+    // Wie WP_Query: 'date' mit order, oder ['date' => …, 'ID' => …].
+    $ob = $q['orderby'] ?? '';
+    if ($ob === 'date') usort($ids, fn($a, $b) => strcmp($GLOBALS['inhalte'][$a]['post']['post_date'], $GLOBALS['inhalte'][$b]['post']['post_date']) * (($q['order'] ?? 'DESC') === 'ASC' ? 1 : -1));
+    elseif (is_array($ob)) usort($ids, fn($a, $b) => (strcmp($GLOBALS['inhalte'][$a]['post']['post_date'], $GLOBALS['inhalte'][$b]['post']['post_date']) ?: $a <=> $b) * (($ob['date'] ?? 'DESC') === 'ASC' ? 1 : -1));
     return ($q['fields'] ?? '') === 'ids' ? $ids : array_map('get_post', $ids);
 }
 require dirname(__DIR__, 2) . '/wordpress/plugin/merzenich-aktuell-core/includes/fotoschluessel.php';
@@ -224,6 +227,27 @@ $abstand = PHP_INT_MAX; $letzte = [];
 foreach ($folge as $i => $k) { if (isset($letzte[$k]) && $i > 1) $abstand = min($abstand, $i - $letzte[$k]); $letzte[$k] = $i; }
 pruefe('Abstand zwischen zwei gleichen Fotos (ab der dritten Meldung): mindestens 15', $abstand >= 15, true);
 pruefe('zweiter Lauf: stabil', ma_bildpool_verteilen(), 0);
+
+echo "Review 18.10.: kein tägliches Weiterschieben, Hand-Bilder bleiben, eigener Pool zuerst\n";
+// Volle Pools: Eine neue Meldung oben (mit dem Abgleich-Foto) darf keine ältere zum Wechseln bringen.
+$verteilt = array_values(array_filter(range(800, 859), fn($id) => ($GLOBALS['meta'][$id]['_ma_bildpool_verteilt'] ?? '') === '1'));
+$vorher = array_map('get_post_thumbnail_id', $verteilt);
+meldung(870, 'Neueste Meldung', '2026-10-18 08:00:00', 700, 'symbol');
+$n = ma_bildpool_verteilen();
+pruefe('Neue Meldung in vollem Pool: kein schon verteilter Inhalt wechselt erneut', [count($verteilt) > 50, array_map('get_post_thumbnail_id', $verteilt) === $vorher], [true, true]);
+pruefe('höchstens ein Wechsel (die bisher zweitneueste mit dem Abgleich-Foto)', $n <= 1, true);
+// Von Hand gewähltes Import-Bild (Ortsansicht aus der Mediathek, Typ nur am Anhang) bleibt; ebenso nach set_post_thumbnail.
+$GLOBALS['inhalte'] = []; $GLOBALS['meta'] = []; $GLOBALS['verlauf'] = [];
+$GLOBALS['meta'][701] = ['ma_image_static_src' => '/assets/places/girbelsrath-1440.webp', 'ma_image_type' => 'place'];
+for ($i = 0; $i < 3; $i++) meldung(900 + $i, "Einsatz Girbelsrath $i", "2026-10-1{$i} 10:00:00", 701, 'place', ['blaulicht']);
+meldung(905, 'Von Hand: Ortsansicht ohne Typ am Inhalt', '2026-09-01 10:00:00', 701, '', ['blaulicht']);
+meldung(906, 'Von Hand gesetzt', '2026-09-02 10:00:00', 0, 'place', ['blaulicht']); set_post_thumbnail(906, 701);
+ma_bildpool_verteilen();
+pruefe('Import-Bild ohne Typ am Inhalt und von Hand gesetztes bleiben', [get_post_thumbnail_id(905), get_post_thumbnail_id(906)], [701, 701]);
+pruefe('Die älteste Abgleich-Ortsansicht wechselt (dritte)', get_post_thumbnail_id(900) !== 701, true);
+pruefe('Verteilt: Merkmale für Abgleich-Rücksicht und einmaligen Wechsel', [$GLOBALS['meta'][900]['_ma_bildpool_ersetzt'] ?? '', $GLOBALS['meta'][900]['_ma_bildpool_verteilt'] ?? ''], ['p:places/girbelsrath', '1']);
+// Eigener Pool mit freien Fotos: nicht der übergeordnete (Ratssitzung bekommt kein Fremdfoto).
+pruefe('Feuerwehr-Pool hat freie Fotos: kein Foto aus „aktuell“', get_post_thumbnail_id(900) >= 501 && get_post_thumbnail_id(900) <= 506, true);
 
 echo "Leerer Pool\n";
 // Eigener Name: Die Kandidaten je Pool merkt sich ma_bildpool_kandidaten() für den Seitenaufruf.

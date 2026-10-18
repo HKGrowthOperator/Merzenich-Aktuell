@@ -511,6 +511,8 @@ function ma_bildpool_merkmal_loeschen(int $id): void {
     delete_post_meta($id, '_ma_bildpool_auto');
     delete_post_meta($id, '_ma_bildpool_auto_bild');
     delete_post_meta($id, '_ma_bildpool_vorher');
+    delete_post_meta($id, '_ma_bildpool_verteilt');
+    delete_post_meta($id, '_ma_bildpool_ersetzt');
 }
 
 /**
@@ -521,6 +523,10 @@ function ma_bildpool_merkmal_loeschen(int $id): void {
 function ma_bildpool_merkmal_pruefen($meta_id, $post_id, $key, $wert): void {
     if ($key !== '_thumbnail_id' || ma_bildpool_setzt_selbst()) return;
     $id = (int) $post_id; $neu = (int) $wert;
+    // Wer das Bild setzt: der Abgleich (ma_abgleich_setzt_bild) oder jemand von Hand. Von Hand gewählte Bilder
+    // verteilt ma_bildpool_verteilen nie neu, auch wenn sie aus dem Abgleich stammen (Review 18.10.2026).
+    if (function_exists('ma_abgleich_setzt_bild') && ma_abgleich_setzt_bild()) delete_post_meta($id, '_ma_bild_von_hand');
+    else update_post_meta($id, '_ma_bild_von_hand', '1');
     if ((string) get_post_meta($id, '_ma_bildpool_auto', true) !== '' && $neu !== (int) get_post_meta($id, '_ma_bildpool_auto_bild', true)) {
         $vorher = get_post_meta($id, '_ma_bildpool_vorher', true);
         if (is_array($vorher)) foreach (MA_BILDPOOL_BILDFELDER as $k) { $v = (string) ($vorher[$k] ?? ''); $v !== '' ? update_post_meta($id, $k, $v) : delete_post_meta($id, $k); }
@@ -565,17 +571,18 @@ function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
 
 /**
  * Darf das Bild dieses Inhalts neu verteilt werden? Ja beim automatisch vergebenen
- * Poolfoto und (1.30.0) bei allgemeinen Bildern aus dem Abgleich: Symbolbild oder
- * Ortsansicht, deren Anhang aus der Import-Datei stammt (ma_image_static_src). Nie
- * bei Originalfotos, Quellenmotiven, Archivbildern oder von der Redaktion gewählten
- * Bildern aus der Mediathek.
+ * Poolfoto und (1.30.0) bei allgemeinen Bildern, die der Abgleich gesetzt hat:
+ * Symbolbild oder Ortsansicht (Typ am Inhalt), Anhang aus der Import-Datei
+ * (ma_image_static_src), nie von Hand gesetzt (_ma_bild_von_hand). Nie bei
+ * Originalfotos, Quellenmotiven, Archivbildern oder von der Redaktion gewählten Bildern.
  */
 function ma_bildpool_allgemein(int $id): bool {
     if (ma_bildpool_auto_aktuell($id)) return true;
     $bild = (int) get_post_thumbnail_id($id);
     if (!$bild || (string) get_post_meta($bild, 'ma_image_static_src', true) === '') return false;
-    $typ = (string) get_post_meta($id, 'ma_image_type', true) ?: (string) get_post_meta($bild, 'ma_image_type', true);
-    return in_array($typ, ['symbol', 'place'], true);
+    if ((string) get_post_meta($id, '_ma_bild_von_hand', true) === '1') return false;
+    // Nur der Typ am Inhalt zählt: Ein von der Redaktion gewähltes Import-Bild hat dort meist keinen.
+    return in_array((string) get_post_meta($id, 'ma_image_type', true), ['symbol', 'place'], true);
 }
 
 /**
@@ -601,37 +608,49 @@ function ma_bildpool_seltenstes(string $pool, int $post_id, array $zahl, array $
  * jeder Inhalt sein Foto, solange es höchstens MA_BILDPOOL_GRENZE-mal vorkommt. Sonst
  * bekommt er das seltenste geprüfte Foto seines Pools (bei Gleichstand das am längsten
  * nicht vergebene), vom übergeordneten Pool (Termine: „termine“, Meldungen: „aktuell“)
- * nur, wenn es dort ein selteneres gibt. Ortsansichten behalten so die zwei neuesten
- * Meldungen. Was nicht verteilt werden darf (ma_bildpool_allgemein), steht fest und
+ * nur, wenn der eigene kein Foto unter der Grenze mehr hat und es dort ein selteneres gibt.
+ * Ortsansichten behalten so die zwei neuesten Meldungen. Jeder Inhalt wechselt höchstens
+ * einmal (_ma_bildpool_verteilt). Was nicht verteilt werden darf (ma_bildpool_allgemein), steht fest und
  * zählt zuerst. Gibt die Zahl der Wechsel zurück; jeder steht im Verlauf.
  */
 function ma_bildpool_verteilen(): int {
     ma_bildpool_merkmale_nachtragen();
     $nutzung = &ma_bildpool_nutzung(true);
-    $alle = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 2400, 'no_found_rows' => true, 'orderby' => 'date', 'order' => 'DESC',
+    $alle = get_posts(['post_type' => ['post', 'ma_event'], 'post_status' => 'publish', 'posts_per_page' => 2400, 'no_found_rows' => true, 'orderby' => ['date' => 'DESC', 'ID' => 'DESC'],
         'post__in' => ma_bildpool_sichtbar() ?: [0]]);
+    // Fest: was nicht verteilt werden darf, und was die Verteilung schon einmal gesetzt hat. Jeder Inhalt
+    // wechselt so höchstens einmal; sonst schöben neue Meldungen in vollen Pools täglich Dutzende ältere
+    // weiter (Review 18.10.2026).
     $zahl = []; $frei = [];
-    foreach ($alle as $p) {
+    foreach ($alle as $i => $p) {
         // Veraltetes Merkmal (Bild inzwischen ersetzt): entfernen, das Bild bleibt.
         if ((string) get_post_meta($p->ID, '_ma_bildpool_auto', true) !== '' && !ma_bildpool_auto_aktuell($p->ID) && get_post_thumbnail_id($p->ID)) ma_bildpool_merkmal_loeschen($p->ID);
         $bild = (int) get_post_thumbnail_id($p->ID);
         if (!$bild) continue;
-        if (ma_bildpool_allgemein($p->ID)) { $frei[] = $p; continue; }
+        if (ma_bildpool_allgemein($p->ID) && (string) get_post_meta($p->ID, '_ma_bildpool_verteilt', true) === '') { $frei[$i] = true; continue; }
         $k = ma_foto_schluessel($bild); $zahl[$k] = ($zahl[$k] ?? 0) + 1;
     }
-    $zuletzt = []; $wechsel = 0;
-    foreach ($frei as $i => $p) {
-        $bild = (int) get_post_thumbnail_id($p->ID); $k = ma_foto_schluessel($bild);
+    $gesehen = []; $zuletzt = []; $wechsel = 0;
+    foreach ($alle as $i => $p) {
+        $bild = (int) get_post_thumbnail_id($p->ID);
+        if (!$bild) continue;
+        $k = ma_foto_schluessel($bild);
+        if (empty($frei[$i])) { $zuletzt[$k] = $i; continue; }
+        // Bisher vergeben: feste Fotos ganz, freie nur bei neueren Inhalten.
         $jetzt = $zahl[$k] ?? 0;
         if ($jetzt < MA_BILDPOOL_GRENZE) { $zahl[$k] = $jetzt + 1; $zuletzt[$k] = $i; continue; }
         $pool = (ma_bildpool_auto_aktuell($p->ID) ? (string) get_post_meta($p->ID, '_ma_bildpool_auto', true) : '') ?: ma_bildpool_fuer($p);
         $ober = $p->post_type === 'ma_event' ? 'termine' : 'aktuell';
         [$neu, $z] = ma_bildpool_seltenstes($pool, $p->ID, $zahl, $zuletzt);
-        if ($ober !== $pool) { [$neuO, $zO] = ma_bildpool_seltenstes($ober, $p->ID, $zahl, $zuletzt); if ($neuO && $zO < $z) { $neu = $neuO; $z = $zO; } }
+        // Der übergeordnete Pool nur, wenn der eigene kein Foto unter der Grenze mehr hat (sonst bekäme eine Ratssitzung ein Kirmesfoto).
+        if ($ober !== $pool && $z >= MA_BILDPOOL_GRENZE) { [$neuO, $zO] = ma_bildpool_seltenstes($ober, $p->ID, $zahl, $zuletzt); if ($neuO && $zO < $z) { $neu = $neuO; $z = $zO; } }
         // Nur wechseln, wenn das neue Foto seltener ist als das bisherige.
         if (!$neu || $z >= $jetzt || ma_foto_schluessel($neu) === $k) { $zahl[$k] = $jetzt + 1; $zuletzt[$k] = $i; continue; }
         $typVorher = (string) get_post_meta($p->ID, 'ma_image_type', true);
+        // Ein Bild des Abgleichs weicht: Dann liefert der Abgleich es nicht stündlich zurück (ma_abgleich_bild_fehlt).
+        if (!ma_bildpool_auto_aktuell($p->ID)) update_post_meta($p->ID, '_ma_bildpool_ersetzt', $k);
         ma_bildpool_bild_setzen($p, $neu, $pool);
+        update_post_meta($p->ID, '_ma_bildpool_verteilt', '1');
         $kn = ma_foto_schluessel($neu);
         $zahl[$kn] = ($zahl[$kn] ?? 0) + 1; $zuletzt[$kn] = $i;
         $nutzung[$k] = max(0, ($nutzung[$k] ?? 1) - 1); $nutzung[$kn] = ($nutzung[$kn] ?? 0) + 1;

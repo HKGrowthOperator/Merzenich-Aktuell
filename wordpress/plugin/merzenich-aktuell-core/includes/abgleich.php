@@ -182,23 +182,34 @@ function ma_abgleich_bild(array $b, int $post_id, string &$fehler = ''): int {
 
 /**
  * Fehlt das Bild aus der Import-Datei? Auch dann, wenn nur das automatisch vergebene Poolfoto steht
- * (Download beim Anlegen gescheitert, Inhalt schon veröffentlicht). Das echte Bild ersetzt es dann,
+ * (Download beim Anlegen gescheitert, Inhalt schon veröffentlicht). Das Import-Bild ersetzt es dann,
  * und die vorher gesicherten Bildangaben kommen zurück (bildpools.php, 17.10.2026).
- * Ein allgemeines Import-Bild (Symbolbild, Ortsansicht) ersetzt das Poolfoto nicht: Die Verteilung
- * (ma_bildpool_verteilen, 1.30.0) tauscht genau solche Bilder gegen seltenere Poolfotos, und der
- * Abgleich drehte das sonst stündlich zurück.
+ * Nicht, wenn die Verteilung (ma_bildpool_verteilen, 1.30.0) genau dieses Import-Bild gegen ein
+ * selteneres Poolfoto getauscht hat (_ma_bildpool_ersetzt): Sonst drehte der Abgleich das stündlich
+ * zurück. Ein echtes Foto (kein Symbolbild, keine Ortsansicht) setzt sich immer durch.
  */
 function ma_abgleich_bild_fehlt(int $id, array $e = []): bool {
     if (!has_post_thumbnail($id)) return true;
     if (!function_exists('ma_bildpool_auto_aktuell') || !ma_bildpool_auto_aktuell($id)) return false;
+    if ((string) get_post_meta($id, '_ma_bildpool_ersetzt', true) === '') return true;
     return !in_array((string) ($e['meta']['ma_image_type'] ?? ''), ['symbol', 'place'], true);
+}
+
+/** Setzt der Abgleich gerade selbst ein Beitragsbild? (Dann gilt es nicht als von Hand gewählt.) */
+function ma_abgleich_setzt_bild(?bool $an = null): bool {
+    static $an_ = false;
+    if ($an !== null) $an_ = $an;
+    return $an_;
 }
 
 function ma_abgleich_bild_setzen(int $id, array $e, array $bilder, array &$fehler): void {
     if (!$e['bild'] || empty($bilder[$e['bild']])) return;
     $f = '';
     $m = ma_abgleich_bild($bilder[$e['bild']], $id, $f);
-    if ($m) set_post_thumbnail($id, $m); else $fehler[] = $e['titel'] . ' (Bild): ' . $f;
+    if (!$m) { $fehler[] = $e['titel'] . ' (Bild): ' . $f; return; }
+    ma_abgleich_setzt_bild(true);
+    set_post_thumbnail($id, $m);
+    ma_abgleich_setzt_bild(false);
 }
 
 function ma_abgleich_stand_merken(int $id, array $e): void {
@@ -285,6 +296,9 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
         if (!is_array($vorher)) $vorher = [];
         foreach (MA_BILDPOOL_BILDFELDER as $k) if (array_key_exists($k, $meta)) { $vorher[$k] = (string) $meta[$k]; unset($meta[$k]); }
         update_post_meta($id, '_ma_bildpool_vorher', $vorher);
+    } elseif (defined('MA_BILDPOOL_BILDFELDER') && get_post_meta($id, '_ma_bild_von_hand', true) === '1' && has_post_thumbnail($id)) {
+        // Bild von Hand gewählt (Review 18.10.2026): Die Bildangaben der Import-Datei gehören nicht dazu.
+        foreach (MA_BILDPOOL_BILDFELDER as $k) unset($meta[$k]);
     }
     $textNeu = ma_abgleich_texthash($e['titel'], $e['inhalt'], $e['auszug']) !== ma_abgleich_texthash($p->post_title, $p->post_content, $p->post_excerpt);
     if ($textNeu) {
