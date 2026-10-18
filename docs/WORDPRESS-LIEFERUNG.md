@@ -1,8 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.30.0 · live: 21.20.5 / 1.29.1 (Historie unten)
+18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.30.0 · live: 21.20.5 / 1.30.0 (Historie unten)
 
 ## Neu am 18.10.2026: Plugin 1.30.0, weniger Wiederholungen über andere echte Fotos
+
+**Stand live (18.10.):** Theme 21.20.5 und Plugin 1.30.0 sind eingespielt. Gemessen danach auf 17 Seiten bei 1440 px bis zum Ende nachgeladen: 0 Karten ohne Bild, kein Foto öfter als 2× je Seite, 0 Konsolenfehler. Verschiedene Fotos: Startseite 68 → 109 (von 130 Bildern), `/nachrichten/` 45 → 118, `/ort/merzenich/` 35 → 59, `/blaulicht/` 38 → 54. Karte und Meldungsseite zeigen dasselbe Foto mit Nachweis (Stichprobe `/ort/girbelsrath/`).
 
 **Anlass:** Nach 21.20.5 zeigt jede Karte ihr Bild, aber 189 Meldungen teilen sich nur 87 Fotos. Gemessen bis zum Ende nachgeladen: Startseite ein Foto 9×, `/ort/merzenich/` 8×, `/ort/girbelsrath/` die Ortsansicht 7×, `/ort/buergewald/` 6×. Die Pools haben je rund 20 geprüfte Fotos.
 
