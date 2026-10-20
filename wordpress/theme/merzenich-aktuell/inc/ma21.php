@@ -559,7 +559,11 @@ function ma21_menue_punkte_pruefen(array $punkte): array {
 
 function ma21_menue_bild(WP_Post $p): ?array {
     $id = (int) get_post_thumbnail_id($p->ID);
-    if (!$id) return null;
+    if (!$id) {
+        // Anzeige eines Unternehmens ohne eigenes Foto: das freigegebene Logo (20.10.2026).
+        $l = ma21_bild_firmenlogo($p);
+        return $l ? ['src' => (string) (wp_get_attachment_image_url((int) $l['id'], 'ma-480') ?: $l['src']), 'alt' => $l['alt'], 'symbol' => false, 'etikett' => '', 'logo' => true] : null;
+    }
     $url = wp_get_attachment_image_url($id, 'ma-480');
     if (!$url) return null;
     $typ = (string) (get_post_meta($p->ID, 'ma_image_type', true) ?: get_post_meta($id, 'ma_image_type', true));
@@ -851,7 +855,8 @@ function ma21_startseite_belegung(bool $neu = false): array {
         'breite' => fn($p) => (ma21_bild($p)['w'] ?? 0),
         // Motiv = Foto (17.10.2026): Abgleich und Bildpool legen dasselbe Foto als zwei Anhänge an; die Ortsbilder
         // der Orte-Bühne (vorlagen/startseite.html, /assets/places/<ort>-720) stehen fest auf der Seite und zählen vorab.
-        'motiv' => fn($p) => ($b = ma21_bild($p)) ? (string) ($b['foto'] ?? '') : '',
+        // Ein Firmenlogo ist kein Motiv (Zeilen zeigen es nicht; ma21_echtes_bild).
+        'motiv' => fn($p) => ($b = ma21_bild($p)) && empty($b['logo']) ? (string) ($b['foto'] ?? '') : '',
         // Die fünf Ortsbilder der Bühne „Ihre fünf Orte“ (vorlagen/startseite.html) stehen fest auf der Seite.
         'motiveVorab' => array_fill_keys(array_map(fn($o) => ma21_foto_schluessel("/assets/places/{$o}-720.webp"), array_keys(MA21_ORTE)), 1),
         'bildtyp' => fn($p) => (string) (ma21_bild($p)['typ'] ?? ''),
@@ -1074,7 +1079,7 @@ function ma21_startseite_motive(): array {
     foreach ((array) ($b['sektionen'] ?? []) as $sek) foreach (['gross', 'mittel', 'zeilen'] as $art) $posts = array_merge($posts, array_values((array) ($sek[$art] ?? [])));
     $motive = array_map(fn($o) => ma21_foto_schluessel("/assets/places/{$o}-720.webp"), array_keys(MA21_ORTE));
     foreach ($posts as $p) {
-        if (!$p instanceof WP_Post || !($bild = ma21_bild($p))) continue;
+        if (!$p instanceof WP_Post || !($bild = ma21_bild($p)) || !empty($bild['logo'])) continue;
         if (($bild['foto'] ?? '') !== '') $motive[] = (string) $bild['foto'];
     }
     return array_values(array_unique($motive));

@@ -132,10 +132,11 @@ pruefe('Logo-Freigabe mit Nachweis, Person und Zeit', get_post_meta(100, 'ma_bus
 // Einwilligung: Profil veröffentlicht, Werbebeitrag bleibt Entwurf (Freigaben).
 $log = ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'Zusage laut Betreiber, 20.10.2026', true, false);
 pruefe('Einwilligung: mit Nachweis, wer, wann', [get_post_meta(100, 'ma_business_consent'), get_post_meta(100, 'ma_business_consent_quelle'), get_post_meta(100, 'ma_business_consent_by'), get_post_meta(100, 'ma_business_consent_at')], ['1', 'Zusage laut Betreiber, 20.10.2026', 'Redaktion', '20.10.2026 14:00']);
-pruefe('Profil veröffentlicht, Werbebeitrag bleibt Entwurf für die Freigaben', [$GLOBALS['posts'][100]['post_status'], $GLOBALS['posts'][101]['post_status'], str_contains($log[0], 'in den Freigaben')], ['publish', 'draft', true]);
+pruefe('Profil veröffentlicht, Werbebeitrag zur Prüfung in den Freigaben, Zusatzbeiträge bleiben Entwurf', [$GLOBALS['posts'][100]['post_status'], $GLOBALS['posts'][101]['post_status'], $GLOBALS['posts'][102]['post_status'], $GLOBALS['posts'][103]['post_status'], str_contains(implode(' ', $log), 'in den Freigaben zur Prüfung')], ['publish', 'pending', 'draft', 'draft', true]);
 // Zweites Mal (beide Haken): kein zweites Medium, Einwilligung unverändert.
 ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'anderer Nachweis', true, true);
-pruefe('erneut: kein zweites Logo-Medium, erste Einwilligung bleibt', [$GLOBALS['medien'], get_post_meta(100, 'ma_business_consent_quelle')], [1, 'Zusage laut Betreiber, 20.10.2026']);
+pruefe('erneut: kein zweites Logo-Medium, erste Einwilligung und erste Logo-Freigabe bleiben', [$GLOBALS['medien'], get_post_meta(100, 'ma_business_consent_quelle'), get_post_meta(100, 'ma_business_logo_freigabe')], [1, 'Zusage laut Betreiber, 20.10.2026', 'Zusage laut Betreiber, 20.10.2026 · eingetragen von Redaktion am 20.10.2026 14:00']);
+pruefe('Logo-Freigabe steht genau einmal im Verlauf', count(array_filter($GLOBALS['verlauf'], fn($v) => $v[0] === 100 && $v[1] === 'Logo freigegeben')), 1);
 pruefe('Verlauf: Logo und Einwilligung je einmal (plus erneute Logo-Zeile)', count(array_filter($GLOBALS['verlauf'], fn($v) => $v[0] === 100 && $v[1] === 'Einwilligung eingetragen')), 1);
 pruefe('unbekannter Betrieb', ma_firmen_zusage_eintragen('gibt-es-nicht', 'x', true, true), ['Unbekannter Betrieb.']);
 $GLOBALS['posts'][104]['post_status'] = 'trash';

@@ -9,9 +9,9 @@
  * - Ein Beitrag je Betrieb als gesponserter, kostenfreier Testeintrag
  *   (testeintrag.php), verknüpft mit dem Profil (ma_business_id), nicht auf der
  *   Startseite, als Entwurf.
- * - Logos werden nicht übernommen: Quelle und Rechtestand stehen am Profil
- *   (ma_business_logo_quelle, ma_business_logo_rechte = offen); bis zur Klärung
- *   zeigt die Seite das Kürzel der Firma.
+ * - Logos: Quelle und Rechtestand stehen am Profil (ma_business_logo_quelle,
+ *   ma_business_logo_rechte = offen, bis die Logo-Freigabe eingetragen ist);
+ *   bis dahin zeigt die Seite das Kürzel der Firma.
  *
  * Merzenich Aktuell → Firmen-Entwürfe legt fehlende Entwürfe an. Vorhandenes
  * (auch im Papierkorb) wird nie überschrieben oder doppelt angelegt.
@@ -21,7 +21,8 @@
  * aus data/logos/ einmal in die Mediathek und wird Beitragsbild des Profils; mit
  * der Einwilligung wird das Profil veröffentlicht (die Sperre in business.php
  * bleibt die Prüfung). Den Werbebeitrag gibt die Redaktion danach wie jeden
- * Beitrag in den Freigaben frei (Prüfhäkchen, Sperre in freigabe.php).
+ * Beitrag in den Freigaben frei: Er liegt dort nach der Einwilligung zur Prüfung
+ * (Prüfhäkchen, Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -157,7 +158,9 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
     $wer = (string) ($wer->display_name ?? '') ?: (string) ($wer->user_login ?? '');
     $jetzt = (string) current_time('d.m.Y H:i');
     $log = [];
-    if ($logo) {
+    if ($logo && (string) get_post_meta($pid, 'ma_business_logo_rechte', true) === 'geklaert') {
+        $log[] = $name . ': Logo war schon freigegeben, nichts geändert.';
+    } elseif ($logo) {
         $fehler = '';
         $m = ma_firmen_logo_medium($p, $pid, $fehler);
         if (!$m) $log[] = $name . ': Logo nicht übernommen (' . $fehler . ').';
@@ -179,8 +182,16 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
         }
         if (get_post_status($pid) !== 'publish') {
             $r = wp_update_post(['ID' => $pid, 'post_status' => 'publish'], true);
-            $log[] = $name . (!is_wp_error($r) && get_post_status($pid) === 'publish' ? ': Einwilligung eingetragen, Profil veröffentlicht. Den Werbebeitrag in den Freigaben freigeben.' : ': Einwilligung eingetragen, Profil aber nicht veröffentlicht.');
+            $log[] = $name . (!is_wp_error($r) && get_post_status($pid) === 'publish' ? ': Einwilligung eingetragen, Profil veröffentlicht.' : ': Einwilligung eingetragen, Profil aber nicht veröffentlicht.');
         } else $log[] = $name . ': Einwilligung eingetragen, Profil war schon veröffentlicht.';
+        // Der Werbebeitrag (erster Beitrag der Datei) geht zur Prüfung in die Freigaben; dort setzt die Redaktion die
+        // Prüfhäkchen und veröffentlicht (Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf (Review 20.10.2026).
+        $bid = ma_firmen_vorhanden('post', (string) ($f['beitrag']['slug'] ?? ''));
+        if ($bid && get_post_status($pid) === 'publish' && get_post_status($bid) === 'draft') {
+            wp_update_post(['ID' => $bid, 'post_status' => 'pending']);
+            $log[] = $name . ': Werbebeitrag liegt in den Freigaben zur Prüfung.';
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Zur Freigabe vorgelegt', 'Einwilligung des Unternehmens eingetragen: ' . $nachweis);
+        }
     }
     return $log;
 }

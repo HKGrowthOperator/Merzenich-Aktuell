@@ -148,7 +148,7 @@
       // Ortsansichten heißen wie auf den Seiten „Ortsansicht“, nicht „Symbolbild“ (Review 16.10.2026).
       : (item.bild && (item.bild.etikett || item.bild.symbol) ? '<span class="ressort-dropdown__muster ressort-dropdown__symbol">' + esc(item.bild.etikett || 'Symbolbild') + '</span>' : '');
     const bild = item.bild && item.bild.src
-      ? '<span class="ressort-dropdown__story-image"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async">' + marke + '</span>'
+      ? '<span class="ressort-dropdown__story-image' + (item.bild.logo ? ' ressort-dropdown__story-image--logo' : '') + '"><img src="' + esc(item.bild.src) + '" alt="' + esc(item.bild.alt || '') + '" width="480" height="270" loading="eager" decoding="async">' + marke + '</span>'
       : '';
     const meta = [item.muster ? 'Musterbeitrag' : '', item.ort, fmtDate(item.datum, !!item.termin)].filter(Boolean).join(' · ');
     const karte = '<a class="ressort-dropdown__story' + (bild ? '' : ' ohne-bild') + '" href="' + esc(item.url) + '">' + bild +

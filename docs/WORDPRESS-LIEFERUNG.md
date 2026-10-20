@@ -1,6 +1,17 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-18. Oktober 2026 · Theme 21.20.5 · Core-Plugin 1.30.0 · live: 21.20.5 / 1.30.0 (Historie unten)
+20. Oktober 2026 · Theme 21.20.6 · Core-Plugin 1.31.0 · live: 21.20.5 / 1.30.0 (Historie unten)
+
+## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6, drei echte Firmen im Unternehmensmenü
+
+**Anlass:** Im Hover-Menü „Unternehmen“ standen noch die drei Beispielfirmen. Der Betreiber hat am 20.10. bestätigt, dass Bäckerei Wirtz, Hasberg Fenster & Rollladentechnik und Porschen Media dem kostenfreien Testeintrag (Anzeige, 0 €, 30 Tage) und der Logonutzung zugestimmt haben.
+
+- **Zusage eintragen** (Merzenich Aktuell → Firmen-Entwürfe): je Betrieb Einwilligung und Logo-Freigabe getrennt, jeweils mit Pflicht-Nachweis, Person und Zeit (`ma_business_consent_quelle`, `ma_business_logo_freigabe`). Das Logo kommt aus `data/logos/` einmal in die Mediathek (Alt-Text, Nachweis, Herkunft) und wird Beitragsbild des Profils; `ma_business_logo_rechte = geklaert`. Mit der Einwilligung wird das Profil veröffentlicht (Sperre in `business.php` bleibt) und der Werbebeitrag liegt zur Prüfung in den Freigaben. Zweiter Aufruf ändert nichts.
+- **Logos:** Wirtz (PNG 500 × 500) und Hasberg (JPEG 543 × 205) von den Unternehmenswebsites, Porschen Media aus dem SVG der Website als PNG auf Weiß gerendert (WordPress nimmt kein SVG an).
+- **Darstellung:** Logos überall ganz auf heller Fläche (`object-fit: contain`, kein Kreis), im Menü 72 px breit. Anzeigen eines Unternehmens ohne eigenes Foto zeigen das freigegebene Logo (`ma21_bild_firmenlogo`, Klasse `bild-logo`), auch in „Neu von Unternehmen“. Sie bekommen kein Commons-Symbolfoto und werden nicht verteilt. Ein Logo zählt nicht als Motiv der Startseite.
+- **Beispielfirmen** verschwinden über `ma21_muster_aktiv()`, sobald drei echte Kanäle je einen veröffentlichten Beitrag haben. Die statische Kopie (`deploy/ressort-menue.mjs`) zeigt weiter die Beispielfirmen; auf WordPress liefert `ma21_menue_firmen()` die Firmen.
+- **Zusatzbeiträge:** je Betrieb zwei sachliche Beiträge aus den Leistungsseiten (abgerufen 20.10.2026), nur als Entwurf.
+- **Firmenzugänge** (`unternehmenskanal.php`) sind vorbereitet, brauchen aber je Betrieb eine E-Mail-Adresse und die Zustimmung zum Konto.
 
 ## Neu am 18.10.2026: Plugin 1.30.0, weniger Wiederholungen über andere echte Fotos
 

@@ -151,10 +151,11 @@
   .ressort-firmen__logo{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;overflow:hidden;color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em}
   .ressort-firmen__logo img{width:100%;height:100%;object-fit:cover}
   /* Freigegebene Firmenlogos ganz zeigen: helle Fläche, einheitlich breit, nicht beschnitten (20.10.2026). */
-  .ressort-firmen__logo--bild{width:72px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px #ddd8cf;padding:3px;box-sizing:border-box}
-  .ressort-firmen__logo--bild img{object-fit:contain}
-  .ressort-firmen__bild--logo{background:#fff;box-shadow:inset 0 0 0 1px #e6e2da}
-  .ressort-firmen__bild--logo img{object-fit:contain;padding:8% 14%;box-sizing:border-box}
+  .ressort-firmen__logo.ressort-firmen__logo--bild{width:72px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px #ddd8cf;padding:3px;box-sizing:border-box}
+  .ressort-firmen__logo.ressort-firmen__logo--bild img{object-fit:contain}
+  .ressort-firmen__firma:has(.ressort-firmen__logo--bild){grid-template-columns:72px minmax(0,1fr)}
+  .ressort-firmen__bild.ressort-firmen__bild--logo,.ressort-dropdown__story-image.ressort-dropdown__story-image--logo{background:#fff;box-shadow:inset 0 0 0 1px #e6e2da}
+  .ressort-firmen__bild.ressort-firmen__bild--logo img,.ressort-dropdown__story-image.ressort-dropdown__story-image--logo img{object-fit:contain;padding:8% 14%;box-sizing:border-box}
   .ressort-firmen__name{display:flex;flex-direction:column;min-width:0}
   .ressort-firmen__name strong{font-size:13.5px;line-height:1.2}
   .ressort-firmen__name small{font-size:11.5px;line-height:1.3;color:#5f5b55}
@@ -178,7 +179,7 @@
   .ressort-firmen__karte:hover strong,.ressort-firmen__karte:focus-visible strong{color:var(--red)}
   .ressort-firmen__kanal{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:16px;min-height:150px;background:#f3f0ea;color:var(--ink);text-decoration:none;border-radius:3px}
   .ressort-firmen__kanal .ressort-firmen__logo{width:46px;height:46px;font-size:15px;margin-bottom:6px}
-  .ressort-firmen__kanal .ressort-firmen__logo--bild{width:92px}
+  .ressort-firmen__kanal .ressort-firmen__logo.ressort-firmen__logo--bild{width:92px}
   .ressort-firmen__kanal strong{font-family:var(--serif);font-size:18px;line-height:1.15}
   .ressort-firmen__kanal span:not(.ressort-firmen__logo){font-size:12.5px;color:#5f5b55}
   .ressort-firmen__kanal em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f5b55}

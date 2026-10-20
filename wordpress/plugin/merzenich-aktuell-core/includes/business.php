@@ -135,6 +135,7 @@ function ma_business_save(int $post_id, WP_Post $post): void {
         if ((string)get_post_meta($post_id, MA_BUSINESS_CONSENT_META, true) !== '1') {
             $user = wp_get_current_user();
             update_post_meta($post_id, MA_BUSINESS_CONSENT_META, '1');
+            delete_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_quelle');
             update_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_by', (string)($user->display_name ?? '') ?: (string)($user->user_login ?? ''));
             update_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_at', current_time('d.m.Y H:i'));
         }
@@ -142,6 +143,7 @@ function ma_business_save(int $post_id, WP_Post $post): void {
         delete_post_meta($post_id, MA_BUSINESS_CONSENT_META);
         delete_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_by');
         delete_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_at');
+        delete_post_meta($post_id, MA_BUSINESS_CONSENT_META.'_quelle');
     }
 }
 
