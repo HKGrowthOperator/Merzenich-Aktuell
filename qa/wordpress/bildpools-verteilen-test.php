@@ -249,6 +249,13 @@ pruefe('Verteilt: Merkmale für Abgleich-Rücksicht und einmaligen Wechsel', [$G
 // Eigener Pool mit freien Fotos: nicht der übergeordnete (Ratssitzung bekommt kein Fremdfoto).
 pruefe('Feuerwehr-Pool hat freie Fotos: kein Foto aus „aktuell“', get_post_thumbnail_id(900) >= 501 && get_post_thumbnail_id(900) <= 506, true);
 
+echo "Anzeige eines Unternehmens: kein Symbolfoto (20.10.2026)\n";
+$GLOBALS['inhalte'][990] = ['post' => ['post_type' => 'post', 'post_title' => 'Brot und Torten', 'post_date' => '2026-10-20 09:00:00'], 'kats' => ['wirtschaft']];
+$GLOBALS['meta'][990] = ['ma_gesponsert' => '1', 'ma_business_id' => '100'];
+pruefe('gesponserter Firmenbeitrag bekommt kein Poolfoto', [ma_bildpool_symbolbild_setzen(get_post(990)), get_post_thumbnail_id(990)], [0, 0]);
+$GLOBALS['meta'][990] = ['ma_gesponsert' => '1'];
+pruefe('gesponsert ohne Unternehmensprofil: wie bisher ein Symbolbild', ma_bildpool_symbolbild_setzen(get_post(990)) > 0, true);
+
 echo "Leerer Pool\n";
 // Eigener Name: Die Kandidaten je Pool merkt sich ma_bildpool_kandidaten() für den Seitenaufruf.
 $GLOBALS['pools'] = ['leer' => []];

@@ -15,6 +15,13 @@
  *
  * Merzenich Aktuell → Firmen-Entwürfe legt fehlende Entwürfe an. Vorhandenes
  * (auch im Papierkorb) wird nie überschrieben oder doppelt angelegt.
+ *
+ * Zusage eintragen (20.10.2026): je Betrieb Einwilligung und Logo-Freigabe getrennt,
+ * jeweils mit Nachweis (wer, wann, woher). Mit der Logo-Freigabe kommt das Logo
+ * aus data/logos/ einmal in die Mediathek und wird Beitragsbild des Profils; mit
+ * der Einwilligung wird das Profil veröffentlicht (die Sperre in business.php
+ * bleibt die Prüfung). Den Werbebeitrag gibt die Redaktion danach wie jeden
+ * Beitrag in den Freigaben frei (Prüfhäkchen, Sperre in freigabe.php).
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -94,11 +101,101 @@ function ma_firmen_entwuerfe_anlegen(): array {
     return $log;
 }
 
+/** Daten eines Betriebs aus der Datei nach Profil-Slug, sonst null. */
+function ma_firmen_eintrag(string $slug): ?array {
+    foreach ((array) (ma_firmen_entwuerfe_daten()['firmen'] ?? []) as $f) if ((string) ($f['profil']['slug'] ?? '') === $slug) return $f;
+    return null;
+}
+
+/**
+ * Logo aus data/logos/ einmal in die Mediathek übernehmen; ein zweiter Aufruf findet
+ * das Medium wieder (ma_firmen_logo_datei). Gibt die Medien-ID zurück, 0 bei Fehler.
+ */
+function ma_firmen_logo_medium(array $p, int $pid, string &$fehler = ''): int {
+    $logo = (array) ($p['logo'] ?? []);
+    $datei = basename((string) ($logo['datei'] ?? ''));
+    $pfad = MA_CORE_PATH . 'data/logos/' . $datei;
+    if ($datei === '' || !is_file($pfad)) { $fehler = 'Logo-Datei fehlt im Plugin'; return 0; }
+    $da = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => 'ma_firmen_logo_datei', 'meta_value' => $datei]);
+    if ($da) return (int) $da[0];
+    if (!function_exists('media_handle_sideload')) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+    }
+    $tmp = wp_tempnam($datei);
+    if (!$tmp || !copy($pfad, $tmp)) { $fehler = 'Logo-Datei nicht lesbar'; return 0; }
+    $id = media_handle_sideload(['name' => $datei, 'tmp_name' => $tmp], $pid, (string) ($logo['alt'] ?? ''));
+    if (is_wp_error($id)) { @unlink($tmp); $fehler = $id->get_error_message(); return 0; }
+    $id = (int) $id;
+    update_post_meta($id, 'ma_firmen_logo_datei', $datei);
+    update_post_meta($id, '_wp_attachment_image_alt', (string) ($logo['alt'] ?? ''));
+    update_post_meta($id, 'ma_image_credit', 'Logo: ' . (string) ($p['titel'] ?? '') . ', Nutzung mit Freigabe des Unternehmens');
+    update_post_meta($id, 'ma_image_original_url', (string) ($logo['quelle'] ?? ''));
+    update_post_meta($id, 'ma_image_rights_verified', '1');
+    return $id;
+}
+
+/**
+ * Zusage eines Betriebs eintragen. $nachweis: woher die Zusage stammt (Pflicht).
+ * Einwilligung und Logo getrennt; was schon eingetragen ist, bleibt unverändert.
+ * Ergebnis: Zeilen für die Rückmeldung.
+ */
+function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwilligung, bool $logo): array {
+    $f = ma_firmen_eintrag($slug);
+    if (!$f) return ['Unbekannter Betrieb.'];
+    $p = (array) $f['profil']; $name = (string) ($p['titel'] ?? $slug);
+    $nachweis = trim($nachweis);
+    if ($nachweis === '') return [$name . ': Ohne Nachweis der Zusage wird nichts eingetragen.'];
+    if (!$einwilligung && !$logo) return [$name . ': Kein Haken gesetzt, nichts eingetragen.'];
+    $pid = ma_firmen_vorhanden('ma_business', (string) $p['slug']);
+    if (!$pid || get_post_status($pid) === 'trash') return [$name . ': Profil fehlt. Zuerst „Fehlende Entwürfe anlegen“.'];
+    $wer = wp_get_current_user();
+    $wer = (string) ($wer->display_name ?? '') ?: (string) ($wer->user_login ?? '');
+    $jetzt = (string) current_time('d.m.Y H:i');
+    $log = [];
+    if ($logo) {
+        $fehler = '';
+        $m = ma_firmen_logo_medium($p, $pid, $fehler);
+        if (!$m) $log[] = $name . ': Logo nicht übernommen (' . $fehler . ').';
+        else {
+            set_post_thumbnail($pid, $m);
+            update_post_meta($pid, 'ma_business_logo_rechte', 'geklaert');
+            update_post_meta($pid, 'ma_business_logo_freigabe', $nachweis . ' · eingetragen von ' . $wer . ' am ' . $jetzt);
+            $log[] = $name . ': Logo freigegeben und als Beitragsbild gesetzt.';
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($pid, 'Logo freigegeben', $nachweis);
+        }
+    }
+    if ($einwilligung) {
+        if ((string) get_post_meta($pid, 'ma_business_consent', true) !== '1') {
+            update_post_meta($pid, 'ma_business_consent', '1');
+            update_post_meta($pid, 'ma_business_consent_by', $wer);
+            update_post_meta($pid, 'ma_business_consent_at', $jetzt);
+            update_post_meta($pid, 'ma_business_consent_quelle', $nachweis);
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($pid, 'Einwilligung eingetragen', $nachweis);
+        }
+        if (get_post_status($pid) !== 'publish') {
+            $r = wp_update_post(['ID' => $pid, 'post_status' => 'publish'], true);
+            $log[] = $name . (!is_wp_error($r) && get_post_status($pid) === 'publish' ? ': Einwilligung eingetragen, Profil veröffentlicht. Den Werbebeitrag in den Freigaben freigeben.' : ': Einwilligung eingetragen, Profil aber nicht veröffentlicht.');
+        } else $log[] = $name . ': Einwilligung eingetragen, Profil war schon veröffentlicht.';
+    }
+    return $log;
+}
+
 // Priorität 30: Das Hauptmenü „Merzenich Aktuell“ meldet admin.php erst bei plugins_loaded an (Priorität 10);
 // vorher angemeldet, fehlte die Seite (403 „Keine Berechtigung“).
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'Firmen-Entwürfe', 'Firmen-Entwürfe', 'edit_others_posts', 'ma-firmen-entwuerfe', 'ma_firmen_entwuerfe_seite');
 }, 30);
+
+add_action('admin_post_ma_firmen_zusage', function (): void {
+    if (!current_user_can('edit_others_posts')) wp_die('Keine Berechtigung.');
+    check_admin_referer('ma_firmen_zusage');
+    $log = ma_firmen_zusage_eintragen(sanitize_title(wp_unslash($_POST['firma'] ?? '')), sanitize_text_field(wp_unslash($_POST['nachweis'] ?? '')), !empty($_POST['einwilligung']), !empty($_POST['logo']));
+    set_transient('ma_firmen_entwuerfe_log_' . get_current_user_id(), $log, 300);
+    wp_safe_redirect(admin_url('admin.php?page=ma-firmen-entwuerfe&angelegt=1'));
+    exit;
+});
 
 add_action('admin_post_ma_firmen_entwuerfe', function (): void {
     if (!current_user_can('edit_others_posts')) wp_die('Keine Berechtigung.');
@@ -113,16 +210,29 @@ function ma_firmen_entwuerfe_seite(): void {
     echo '<div class="wrap"><h1>Firmen-Entwürfe</h1><p>' . esc_html((string) ($daten['hinweis'] ?? '')) . '</p>';
     $log = get_transient('ma_firmen_entwuerfe_log_' . get_current_user_id());
     if (!empty($_GET['angelegt']) && is_array($log)) { echo '<div class="notice notice-success"><ul>'; foreach ($log as $z) echo '<li>' . esc_html((string) $z) . '</li>'; echo '</ul></div>'; }
-    echo '<table class="widefat striped"><thead><tr><th>Betrieb</th><th>Profil</th><th>Einwilligung</th><th>Werbebeitrag</th><th>Logo</th></tr></thead><tbody>';
+    echo '<table class="widefat striped"><thead><tr><th>Betrieb</th><th>Profil</th><th>Einwilligung</th><th>Werbebeitrag</th><th>Logo</th><th>Zusage eintragen</th></tr></thead><tbody>';
     foreach ((array) ($daten['firmen'] ?? []) as $f) {
         $p = (array) ($f['profil'] ?? []); $b = (array) ($f['beitrag'] ?? []);
         $pid = ma_firmen_vorhanden('ma_business', (string) ($p['slug'] ?? ''));
         $bid = ma_firmen_vorhanden('post', (string) ($b['slug'] ?? ''));
         $zelle = fn(int $id): string => $id ? '<a href="' . esc_url((string) get_edit_post_link($id)) . '">' . esc_html(function_exists('ma_status_name') ? ma_status_name((string) get_post_status($id)) : (string) get_post_status($id)) . '</a>' . (get_post_status($id) !== 'publish' ? ' · <a href="' . esc_url((string) get_preview_post_link($id)) . '" target="_blank">Vorschau</a>' : '') : 'fehlt';
         $ja = $pid && (string) get_post_meta($pid, 'ma_business_consent', true) === '1';
+        $logoJa = $pid && (string) get_post_meta($pid, 'ma_business_logo_rechte', true) === 'geklaert';
         $logo = (array) ($p['logo'] ?? []);
-        echo '<tr><td><strong>' . esc_html((string) ($p['titel'] ?? '')) . '</strong><br><small>' . esc_html((string) ($p['adresse'] ?? '')) . '</small></td><td>' . $zelle($pid) . '</td><td>' . ($ja ? 'liegt vor' : '<strong>fehlt</strong>') . '</td><td>' . $zelle($bid) . '</td>'
-            . '<td>' . (!empty($logo['quelle']) ? '<a href="' . esc_url((string) $logo['quelle']) . '" target="_blank" rel="noopener">Quelle</a>, ' : '') . 'Rechte ' . esc_html((string) ($logo['rechte'] ?? 'offen')) . '</td></tr>';
+        $einw = $ja ? 'liegt vor<br><small>' . esc_html(trim((string) get_post_meta($pid, 'ma_business_consent_quelle', true) . ' · ' . get_post_meta($pid, 'ma_business_consent_by', true) . ', ' . get_post_meta($pid, 'ma_business_consent_at', true), ' ·,')) . '</small>' : '<strong>fehlt</strong>';
+        $logoZelle = (!empty($logo['quelle']) ? '<a href="' . esc_url((string) $logo['quelle']) . '" target="_blank" rel="noopener">Quelle</a>, ' : '')
+            . ($logoJa ? 'freigegeben<br><small>' . esc_html((string) get_post_meta($pid, 'ma_business_logo_freigabe', true)) . '</small>' : 'Rechte <strong>offen</strong>');
+        $form = '';
+        if ($pid && (!$ja || !$logoJa)) {
+            $form = '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="ma_firmen_zusage"><input type="hidden" name="firma" value="' . esc_attr((string) $p['slug']) . '">'
+                . wp_nonce_field('ma_firmen_zusage', '_wpnonce', true, false)
+                . '<label style="display:block">Nachweis <input type="text" name="nachweis" required class="regular-text" placeholder="z. B. E-Mail vom … / Zusage laut Betreiber am …"></label>'
+                . (!$ja ? '<label style="display:block"><input type="checkbox" name="einwilligung" value="1"> Das Unternehmen hat der Veröffentlichung von Profil und Testeintrag zugestimmt.</label>' : '')
+                . (!$logoJa ? '<label style="display:block"><input type="checkbox" name="logo" value="1"> Das Unternehmen hat die Nutzung seines Logos freigegeben.</label>' : '')
+                . '<button class="button">Zusage eintragen</button></form>';
+        }
+        echo '<tr><td><strong>' . esc_html((string) ($p['titel'] ?? '')) . '</strong><br><small>' . esc_html((string) ($p['adresse'] ?? '')) . '</small></td><td>' . $zelle($pid) . '</td><td>' . $einw . '</td><td>' . $zelle($bid) . '</td>'
+            . '<td>' . $logoZelle . '</td><td>' . ($form ?: ($pid ? 'eingetragen' : '–')) . '</td></tr>';
     }
     echo '</tbody></table><form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" style="margin-top:16px"><input type="hidden" name="action" value="ma_firmen_entwuerfe">';
     wp_nonce_field('ma_firmen_entwuerfe');

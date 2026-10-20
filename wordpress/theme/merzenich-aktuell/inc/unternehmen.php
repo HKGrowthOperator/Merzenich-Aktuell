@@ -66,7 +66,7 @@ function ma21_abs(string $u): string {
 
 /** Bild fürs Menü-JSON: kleine Fassung, Alternativtext und Nachweis (Urheber, Lizenz, Lizenzlink). */
 function ma21_menue_bildnachweis(?array $b): ?array {
-    return $b ? ['src' => ma21_abs($b['klein']), 'alt' => $b['alt'], 'foto' => (string) $b['foto'], 'lizenz' => (string) $b['lizenz'], 'lizenz_url' => (string) $b['lizenz_url']] : null;
+    return $b ? ['src' => ma21_abs($b['klein']), 'alt' => $b['alt'], 'foto' => (string) $b['foto'], 'lizenz' => (string) $b['lizenz'], 'lizenz_url' => (string) $b['lizenz_url']] + (!empty($b['logo']) ? ['logo' => true] : []) : null;
 }
 
 /** Abfragewert nur als Text (Arrays aus ?ma_firma[]=… gelten als leer). */
@@ -191,19 +191,19 @@ function ma21_firma_ansicht($q): ?array {
     $name = html_entity_decode(get_the_title($q), ENT_QUOTES, 'UTF-8');
     $p = function_exists('ma_business_profile') ? (array) ma_business_profile($q->ID) : [];
     $ort = (string) ($p['ortsteil'] ?? '') ?: 'Gemeinde Merzenich';
-    $beitraege = [];
-    foreach (function_exists('ma_business_beitraege') ? ma_business_beitraege($q->ID, 24) : [] as $b) {
-        $bild = ma21_bild($b);
-        $beitraege[] = ['slug' => $b->post_name, 'titel' => html_entity_decode(get_the_title($b), ENT_QUOTES, 'UTF-8'), 'anriss' => ma21_teaser($b), 'absaetze' => [],
-            'url' => get_permalink($b), 'bild' => $bild ? ['src' => $bild['src'], 'klein' => (string) (wp_get_attachment_image_url($bild['id'], 'ma-480') ?: $bild['src']), 'srcset' => $bild['srcset'], 'w' => $bild['w'], 'h' => $bild['h'],
-                'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] : null,
-            'zeit' => ma21_zeit_text($b, true, ', '), 'iso' => (string) get_post_time('c', false, $b), 'muster' => false];
-    }
     // Logo (Beitragsbild) nur mit geklärten Rechten, sonst das Kürzel (16.10.2026). Ohne Angabe
     // (ältere Profile) zählt wie auf der Profilseite das Häkchen „Bildrechte geprüft“.
     $rechte = (string) get_post_meta($q->ID, 'ma_business_logo_rechte', true);
     $logoOk = $rechte === 'geklaert' || ($rechte === '' && (string) get_post_meta($q->ID, 'ma_image_rights_verified', true) === '1');
     $logo = $logoOk ? (string) (get_the_post_thumbnail_url($q, 'medium') ?: '') : '';
+    $beitraege = [];
+    foreach (function_exists('ma_business_beitraege') ? ma_business_beitraege($q->ID, 24) : [] as $b) {
+        $bild = ma21_bild($b);
+        $beitraege[] = ['slug' => $b->post_name, 'titel' => html_entity_decode(get_the_title($b), ENT_QUOTES, 'UTF-8'), 'anriss' => ma21_teaser($b), 'absaetze' => [],
+            'url' => get_permalink($b), 'bild' => $bild ? ['src' => $bild['src'], 'klein' => (string) (wp_get_attachment_image_url($bild['id'], 'ma-480') ?: $bild['src']), 'srcset' => $bild['srcset'], 'w' => $bild['w'], 'h' => $bild['h'],
+                'alt' => $bild['alt'], 'foto' => $bild['credit'], 'lizenz' => '', 'lizenz_url' => '', 'quelle' => ''] + (!empty($bild['logo']) ? ['logo' => true] : []) : null,
+            'zeit' => ma21_zeit_text($b, true, ', '), 'iso' => (string) get_post_time('c', false, $b), 'muster' => false];
+    }
     $text = trim(wp_strip_all_tags($q->post_excerpt !== '' ? $q->post_excerpt : wp_trim_words(wp_strip_all_tags($q->post_content), 40, ' …')));
     return ['slug' => $q->post_name, 'name' => $name, 'branche' => (string) ($p['branche'] ?? ''), 'ort' => $ort, 'zeile' => trim(($p['branche'] ?? '') . ' · ' . $ort, ' ·'),
         'url' => $home . 'unternehmen/' . $q->post_name . '/', 'muster' => false, 'kuerzel' => ma21_firma_kuerzel($name), 'farbe' => ma21_firma_farbe($name), 'logo' => $logo, 'text' => $text,
@@ -306,7 +306,8 @@ function ma21_firmen_seo(array $k): array {
 
 /** Logo oder Kürzel einer Firma. */
 function ma21_firma_logo_html(array $f, string $klasse = 'firma-logo'): string {
-    if ($f['logo'] !== '') return '<span class="' . esc_attr($klasse) . '"><img src="' . esc_url($f['logo']) . '" alt="" width="48" height="48" loading="lazy" decoding="async"></span>';
+    // Logo ganz zeigen (contain, heller Grund, kein Kreis), einheitlich breit (20.10.2026).
+    if ($f['logo'] !== '') return '<span class="' . esc_attr($klasse) . ' firmenlogo-box"><img src="' . esc_url($f['logo']) . '" alt="" width="96" height="48" loading="lazy" decoding="async"></span>';
     return '<span class="' . esc_attr($klasse) . '" style="background:' . esc_attr($f['farbe']) . '" aria-hidden="true">' . esc_html($f['kuerzel']) . '</span>';
 }
 
@@ -330,7 +331,7 @@ function ma21_firmen_bild_html(?array $b, string $sizes, bool $eager = false): s
 function ma21_firmen_karte_html(array $f, array $b, bool $eager = false): string {
     $u = esc_url($b['url']); $t = esc_html($b['titel']);
     return '<article class="bildraster-karte u-firmen-karte' . ($b['muster'] ? ' u-muster-karte' : '') . '">'
-        . ($b['bild'] ? '<a class="bildraster-bild" href="' . $u . '" tabindex="-1" aria-hidden="true"><div class="media">' . ma21_firmen_bild_html($b['bild'], '(max-width: 520px) 92vw, (max-width: 1099px) 46vw, 420px', $eager) . ($b['muster'] ? '<span class="badge" data-kurz="Muster">Musterbeitrag</span>' : '') . '</div></a>' : '')
+        . ($b['bild'] ? '<a class="bildraster-bild" href="' . $u . '" tabindex="-1" aria-hidden="true"><div class="media' . (!empty($b['bild']['logo']) ? ' media--logo' : '') . '">' . ma21_firmen_bild_html($b['bild'], '(max-width: 520px) 92vw, (max-width: 1099px) 46vw, 420px', $eager) . ($b['muster'] ? '<span class="badge" data-kurz="Muster">Musterbeitrag</span>' : '') . '</div></a>' : '')
         . '<div class="bildraster-text"><span class="kicker">' . ($b['muster'] ? 'Musterbeitrag' : 'Anzeige') . ' · <a href="' . esc_url($f['url']) . '">' . esc_html($f['name']) . '</a> · ' . esc_html($f['ort']) . '</span>'
         . '<h3><a href="' . $u . '">' . $t . '</a></h3>'
         . ($b['anriss'] !== '' ? '<p class="dek">' . esc_html($b['anriss']) . '</p>' : '')

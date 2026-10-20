@@ -28,7 +28,7 @@ echo "\nBildzeile\n";
 $bild = ['url' => 'x', 'type' => 'licensed', 'type_label' => 'Lizenziertes Bild', 'credit' => ma_credit_kurz('Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0', 'CC BY-SA 3.0'), 'alt' => 'a', 'license' => 'CC BY-SA 3.0', 'source_url' => '', 'is_fallback' => false, 'disclaimer' => ''];
 pruefe('Lizenz steht in der Bildzeile genau einmal', ma_image_caption($bild), 'Lizenziertes Bild. Foto: Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0');
 $q = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/feeds.php') . file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php');
-pruefe('Feed und Theme-Bildzeile nutzen ma_credit_kurz', substr_count($q, 'ma_credit_kurz('), 2);
+pruefe('Feed und Theme-Bildzeile nutzen ma_credit_kurz (Theme auch beim Firmenlogo)', substr_count($q, 'ma_credit_kurz('), 3);
 
 echo "\nZwischengrößen (Nachlauf)\n";
 pruefe('Zwischengrößen 480 und 240 px', MA_GROESSEN, ['ma-480' => 480, 'ma-240' => 240]);

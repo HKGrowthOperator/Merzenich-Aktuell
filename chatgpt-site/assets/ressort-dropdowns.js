@@ -166,9 +166,10 @@
   // beim Ueberfahren einer Firma zeigt der rechte Bereich ihre Beitraege und den
   // Weg in ihren Unternehmenskanal. Musterfirmen sind als solche markiert.
   const RECHTS_ID = 'ressort-firmen-rechts';
+  // Freigegebenes Logo ganz auf hellem Grund (20.10.2026), sonst das Kürzel auf der Firmenfarbe.
   function firmenLogo(f) {
-    return '<span class="ressort-firmen__logo" style="background:' + esc(f.farbe || '#5f5b55') + '" aria-hidden="true">' +
-      (f.logo ? '<img src="' + esc(f.logo) + '" alt="" width="40" height="40" loading="lazy" decoding="async">' : esc(f.kuerzel || '?')) + '</span>';
+    if (f.logo) return '<span class="ressort-firmen__logo ressort-firmen__logo--bild" aria-hidden="true"><img src="' + esc(f.logo) + '" alt="" width="72" height="36" loading="lazy" decoding="async"></span>';
+    return '<span class="ressort-firmen__logo" style="background:' + esc(f.farbe || '#5f5b55') + '" aria-hidden="true">' + esc(f.kuerzel || '?') + '</span>';
   }
   // Kennzeichnung aus den Daten: Musterbeitrag einer erfundenen Firma, Anzeige
   // (gesponserter Beitrag einer echten Firma) oder nur der Firmenname.
@@ -177,13 +178,13 @@
   }
   function firmenKarte(f, b) {
     const bild = b.bild && b.bild.src
-      ? '<span class="ressort-firmen__bild"><img src="' + esc(b.bild.src) + '" alt="' + esc(b.bild.alt || '') + '" width="480" height="270" loading="lazy" decoding="async">' +
+      ? '<span class="ressort-firmen__bild' + (b.bild.logo ? ' ressort-firmen__bild--logo' : '') + '"><img src="' + esc(b.bild.src) + '" alt="' + esc(b.bild.alt || '') + '" width="480" height="270" loading="lazy" decoding="async">' +
         (b.muster ? '<span class="ressort-dropdown__muster">Musterbeitrag</span>' : '') + '</span>'
       : '';
     return '<div class="ressort-firmen__beitrag"><a class="ressort-firmen__karte' + (bild ? '' : ' ohne-bild') + '" href="' + esc(b.url) + '">' + bild +
       '<span class="ressort-firmen__meta">' + esc(firmenEtikett(f, b)) + (b.zeit ? ' · ' + esc(b.zeit) : '') + '</span>' +
       '<strong>' + esc(b.titel) + '</strong>' +
-    '</a>' + (bild ? nachweis(b.bild, 'ressort-firmen__credit') : '') + '</div>';
+    '</a>' + (bild && !b.bild.logo ? nachweis(b.bild, 'ressort-firmen__credit') : '') + '</div>';
   }
   function firmenAnsicht(f) {
     const karten = (f.beitraege || []).filter((b) => b && b.url && b.titel).slice(0, 3).map((b) => firmenKarte(f, b)).join('');

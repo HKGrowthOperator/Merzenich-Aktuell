@@ -1,110 +1,181 @@
 {
- "stand": "2026-10-16",
- "hinweis": "Drei echte Betriebe als Entwurf (Auftrag Betreiber 16.10.2026). Stammdaten am 16.10.2026 auf den Unternehmenswebsites geprüft. Keine Einwilligung und keine geklärten Logo-Rechte: Profile und Beiträge bleiben Entwurf, bis das Unternehmen zustimmt; Logos werden nicht übernommen. Testeintrag: 0 Euro, 30 Tage ab Veröffentlichung, endet von selbst, keine Verlängerung, keine Rechnung.",
- "test": { "preis_cent": 0, "tage": 30, "verlaengerung": false },
- "firmen": [
-  {
-   "profil": {
-    "slug": "baeckerei-wirtz-merzenich",
-    "titel": "Bäckerei Wirtz",
-    "branche": "Bäckerei & Konditorei",
-    "ortsteil": "merzenich",
-    "adresse": "Lindenstraße 24, 52399 Merzenich",
-    "telefon": "02421 34819",
-    "email": "",
-    "website": "https://www.baeckerei-wirtz.de/",
-    "oeffnungszeiten": "Mo–Fr 6:30–12:30 und 14:00–18:00 Uhr, Sa 6:30–13:00 Uhr, So 8:00–11:00 Uhr",
-    "quelle": "Angaben laut baeckerei-wirtz.de (Startseite und Filiale Merzenich), geprüft am 16.10.2026",
-    "quellen": ["https://www.baeckerei-wirtz.de/", "https://www.baeckerei-wirtz.de/filialen/filiale-merzenich-/"],
-    "kurz": "Frisches Brot, Brötchen und feines Gebäck sowie Kuchen und individuelle Torten für besondere Anlässe.",
-    "text": "Die Bäckerei Wirtz ist mit einer Filiale in der Lindenstraße 24 in Merzenich vertreten. Das Angebot umfasst Brot, Brötchen, Feingebäck, Kuchen und Torten. Für besondere Anlässe bietet die Konditorei auch individuell gestaltete Festtagstorten an. Aktuelle Informationen und Kontaktmöglichkeiten finden Interessierte auf der Unternehmenswebsite.",
-    "karte": { "knopf": "Bäckerei entdecken", "ziel": "https://www.baeckerei-wirtz.de/" },
-    "logo": { "quelle": "https://www.baeckerei-wirtz.de/bilder/logo-frei0_500x500.png", "art": "PNG, 500 × 500, von der Unternehmenswebsite", "rechte": "offen", "alt": "Logo Bäckerei Wirtz" }
-   },
-   "beitrag": {
-    "slug": "baeckerei-wirtz-brot-torten-merzenich",
-    "titel": "Brot, Brötchen und besondere Torten: Bäckerei Wirtz in Merzenich",
-    "anriss": "Von frischen Backwaren bis zu Torten für besondere Anlässe: ein Blick auf das Angebot der Bäckerei Wirtz in der Lindenstraße.",
-    "absaetze": [
-     "Ob Brot für den Alltag, Brötchen zum Frühstück oder etwas Süßes für die Kaffeetafel: In der Lindenstraße 24 in Merzenich ist die Bäckerei Wirtz zu finden. Neben klassischen Backwaren gehören auch Feingebäck, Kuchen und Torten zum Sortiment.",
-     "Wer eine Feier plant, kann sich zudem über individuell gestaltete Torten für Geburtstage, Hochzeiten und andere Anlässe informieren. Auf der Website der Bäckerei gibt es weitere Informationen zum Angebot und zu den Filialen.",
-     "<strong>Kontakt und Standort:</strong> Lindenstraße 24, 52399 Merzenich. Weitere Informationen auf der offiziellen Unternehmenswebsite."
-    ],
-    "knopf": { "text": "Bäckerei Wirtz besuchen", "ziel": "https://www.baeckerei-wirtz.de/" },
-    "seo_titel": "Bäckerei Wirtz in Merzenich – Brot, Brötchen & Torten",
-    "seo_beschreibung": "Bäckerei Wirtz in Merzenich: Brot, Brötchen, Kuchen und individuelle Torten. Informationen zur Filiale in der Lindenstraße 24."
-   },
-   "anzeige": { "eyebrow": "Aus Merzenich", "titel": "Frische Backwaren & besondere Torten", "text": "Brot, Brötchen, Kuchen und Konditorei – entdecken Sie die Bäckerei Wirtz in Merzenich.", "knopf": "Mehr erfahren", "ziel": "https://www.baeckerei-wirtz.de/" }
+  "stand": "2026-10-16",
+  "hinweis": "Drei echte Betriebe als Entwurf (Auftrag Betreiber 16.10.2026). Stammdaten am 16.10.2026 auf den Unternehmenswebsites geprüft. Keine Einwilligung und keine geklärten Logo-Rechte: Profile und Beiträge bleiben Entwurf, bis das Unternehmen zustimmt; Logos werden nicht übernommen. Testeintrag: 0 Euro, 30 Tage ab Veröffentlichung, endet von selbst, keine Verlängerung, keine Rechnung.",
+  "test": {
+    "preis_cent": 0,
+    "tage": 30,
+    "verlaengerung": false
   },
-  {
-   "profil": {
-    "slug": "hasberg-fenster-rollladentechnik-merzenich",
-    "titel": "Hasberg Fenster & Rollladentechnik",
-    "firmenname": "Hasberg Fenster u. Rollladentechnik e.K.",
-    "branche": "Fenster, Türen, Rollläden & Sonnenschutz",
-    "ortsteil": "merzenich",
-    "adresse": "Morschenicher Straße 42, 52399 Merzenich",
-    "telefon": "02421 93580",
-    "email": "info@hasberg.de",
-    "website": "https://www.hasberg.de/",
-    "oeffnungszeiten": "Bürozeiten Mo–Fr 8:00–17:00 Uhr, Sa nach Vereinbarung",
-    "quelle": "Angaben laut hasberg.de (Kontakt und Anfahrt, Produkte, Impressum), geprüft am 16.10.2026",
-    "quellen": ["https://www.hasberg.de/", "https://www.hasberg.de/unsere-produkte", "https://www.hasberg.de/kontakt-und-anfahrt", "https://www.hasberg.de/impressum"],
-    "kurz": "Lösungen für Fenster, Haustüren, Rollläden und Markisen – ergänzt durch Insektenschutz und moderne Steuerungssysteme.",
-    "text": "Hasberg Fenster u. Rollladentechnik e.K. ist in der Morschenicher Straße 42 in Merzenich ansässig. Das Unternehmen bietet unter anderem Fenster, Haustüren, Rollläden, Markisen, Überdachungen, Garagentore und Insektenschutz an. Zum Leistungsspektrum gehören außerdem Lösungen zur Automatisierung von Rollläden und Sonnenschutz. Informationen zu den Produktbereichen und Beratungsmöglichkeiten sind auf der offiziellen Website zu finden.",
-    "karte": { "knopf": "Leistungen ansehen", "ziel": "https://www.hasberg.de/" },
-    "logo": { "quelle": "https://www.hasberg.de/uploads/6xZoQu63/01-hasberg-weber-logo__msi___jpg.jpg", "art": "JPEG, 543 × 205, Logo laut Strukturdaten der Unternehmenswebsite", "rechte": "offen", "alt": "Logo Hasberg Fenster und Rollladentechnik" }
-   },
-   "beitrag": {
-    "slug": "hasberg-fenster-rolllaeden-sonnenschutz-merzenich",
-    "titel": "Fenster, Rollläden und Sonnenschutz: Hasberg aus Merzenich",
-    "anriss": "Ob Modernisierung oder Neubau: Der Merzenicher Fachbetrieb bietet Lösungen rund um Fenster, Türen und Sonnenschutz.",
-    "absaetze": [
-     "Wer Fenster austauschen, Sonnenschutz nachrüsten oder Rollläden modernisieren möchte, findet mit Hasberg Fenster u. Rollladentechnik e.K. einen Fachbetrieb in Merzenich. Das Unternehmen hat seinen Sitz in der Morschenicher Straße 42.",
-     "Das Angebot reicht von Fenstern und Haustüren über Rollläden, Markisen und Insektenschutz bis hin zu Überdachungen und Garagentoren. Hinzu kommen technische Lösungen, mit denen sich Rollläden und Sonnenschutz komfortabel steuern lassen.",
-     "Auf der Website stellt Hasberg die einzelnen Produktbereiche vor und informiert über Kontakt- und Beratungsmöglichkeiten.",
-     "<strong>Kontakt und Standort:</strong> Morschenicher Straße 42, 52399 Merzenich. Telefon: 02421 93580."
-    ],
-    "knopf": { "text": "Hasberg kennenlernen", "ziel": "https://www.hasberg.de/" },
-    "seo_titel": "Hasberg in Merzenich – Fenster, Türen & Sonnenschutz",
-    "seo_beschreibung": "Hasberg Fenster u. Rollladentechnik aus Merzenich: Fenster, Rollläden, Markisen, Türen und Smart-Home-Steuerung im Überblick."
-   },
-   "anzeige": { "eyebrow": "Fachbetrieb in Merzenich", "titel": "Fenster, Türen & Sonnenschutz", "text": "Von Rollläden bis Markisen: Entdecken Sie die Lösungen von Hasberg für Ihr Gebäude.", "knopf": "Leistungen ansehen", "ziel": "https://www.hasberg.de/" }
-  },
-  {
-   "profil": {
-    "slug": "porschen-media-girbelsrath",
-    "titel": "Porschen Media",
-    "firmenname": "Porschen Media GmbH & Co. KG",
-    "branche": "Mediengestaltung, Druck & Werbetechnik",
-    "ortsteil": "girbelsrath",
-    "adresse": "Am Roßpfad 8, 52399 Merzenich",
-    "telefon": "02421 69796-40",
-    "email": "info@porschen-media.de",
-    "website": "https://porschen.media/",
-    "oeffnungszeiten": "Mo–Fr 8:00–17:00 Uhr",
-    "quelle": "Angaben laut porschen.media (Kontakt, Über uns, Impressum), geprüft am 16.10.2026",
-    "quellen": ["https://porschen.media/", "https://porschen.media/porschen-media-ueber-uns/", "https://porschen.media/kontakt/", "https://porschen.media/impressum/"],
-    "kurz": "Mediengestaltung, Digital- und Offsetdruck, Werbetechnik und Webdesign aus Merzenich-Girbelsrath.",
-    "text": "Porschen Media GmbH & Co. KG hat ihren Sitz am Roßpfad 8 im Merzenicher Ortsteil Girbelsrath. Die Leistungen verbinden Mediengestaltung mit Druckproduktion und Werbetechnik. Dazu gehören unter anderem Corporate Design, Offset- und Digitaldruck, Druckweiterverarbeitung, Beschriftungen, Werbemittel und Webdesign. Die Unternehmensgeschichte reicht nach eigenen Angaben bis ins Jahr 1980 zurück. Weitere Informationen und Kontaktmöglichkeiten stehen auf der offiziellen Website.",
-    "karte": { "knopf": "Unternehmen entdecken", "ziel": "https://porschen.media/" },
-    "logo": { "quelle": "https://porschen.media/_astro/logo.Bq7BYIkx_1Gh7MW.svg", "art": "SVG, Kopfzeile der Unternehmenswebsite (alt: „Porschen Media – zur Startseite“)", "rechte": "offen", "alt": "Logo Porschen Media" }
-   },
-   "beitrag": {
-    "slug": "porschen-media-druck-werbung-girbelsrath",
-    "titel": "Von der Gestaltung bis zum Druck: Porschen Media aus Girbelsrath",
-    "anriss": "Design, Print und Werbetechnik aus einem Haus: Was das Medienunternehmen am Roßpfad anbietet.",
-    "absaetze": [
-     "Ob Geschäftsausstattung, Druckprodukte oder Fahrzeugbeschriftung: Porschen Media in Merzenich-Girbelsrath bietet verschiedene Leistungen rund um Gestaltung und Unternehmenskommunikation. Der Standort befindet sich am Roßpfad 8.",
-     "Zum Angebot gehören Corporate Design, Druckvorstufe, Offset- und Digitaldruck, Weiterverarbeitung sowie Werbetechnik und Webdesign. Unternehmen können damit unterschiedliche Maßnahmen ihres Außenauftritts über einen Anbieter koordinieren.",
-     "Die Wurzeln des Unternehmens gehen nach eigenen Angaben auf eine 1980 gegründete Druckerei zurück. Heute bündelt Porschen Media mehrere Bereiche der Medienproduktion. Wer sich über die Leistungen informieren möchte, findet auf der Unternehmenswebsite Beispiele und Kontaktmöglichkeiten.",
-     "<strong>Kontakt und Standort:</strong> Am Roßpfad 8, 52399 Merzenich-Girbelsrath. Telefon: 02421 69796-40."
-    ],
-    "knopf": { "text": "Porschen Media entdecken", "ziel": "https://porschen.media/" },
-    "seo_titel": "Porschen Media in Girbelsrath – Druck, Design & Werbung",
-    "seo_beschreibung": "Porschen Media in Merzenich-Girbelsrath: Gestaltung, Offset- und Digitaldruck, Werbetechnik und Webdesign am Roßpfad 8."
-   },
-   "anzeige": { "eyebrow": "Aus Girbelsrath", "titel": "Design, Druck & Werbung aus einer Hand", "text": "Von der Gestaltung bis zur Produktion: Lernen Sie die Leistungen von Porschen Media kennen.", "knopf": "Mehr erfahren", "ziel": "https://porschen.media/" }
-  }
- ]
+  "firmen": [
+    {
+      "profil": {
+        "slug": "baeckerei-wirtz-merzenich",
+        "titel": "Bäckerei Wirtz",
+        "branche": "Bäckerei & Konditorei",
+        "ortsteil": "merzenich",
+        "adresse": "Lindenstraße 24, 52399 Merzenich",
+        "telefon": "02421 34819",
+        "email": "",
+        "website": "https://www.baeckerei-wirtz.de/",
+        "oeffnungszeiten": "Mo–Fr 6:30–12:30 und 14:00–18:00 Uhr, Sa 6:30–13:00 Uhr, So 8:00–11:00 Uhr",
+        "quelle": "Angaben laut baeckerei-wirtz.de (Startseite und Filiale Merzenich), geprüft am 16.10.2026",
+        "quellen": [
+          "https://www.baeckerei-wirtz.de/",
+          "https://www.baeckerei-wirtz.de/filialen/filiale-merzenich-/"
+        ],
+        "kurz": "Frisches Brot, Brötchen und feines Gebäck sowie Kuchen und individuelle Torten für besondere Anlässe.",
+        "text": "Die Bäckerei Wirtz ist mit einer Filiale in der Lindenstraße 24 in Merzenich vertreten. Das Angebot umfasst Brot, Brötchen, Feingebäck, Kuchen und Torten. Für besondere Anlässe bietet die Konditorei auch individuell gestaltete Festtagstorten an. Aktuelle Informationen und Kontaktmöglichkeiten finden Interessierte auf der Unternehmenswebsite.",
+        "karte": {
+          "knopf": "Bäckerei entdecken",
+          "ziel": "https://www.baeckerei-wirtz.de/"
+        },
+        "logo": {
+          "quelle": "https://www.baeckerei-wirtz.de/bilder/logo-frei0_500x500.png",
+          "art": "PNG, 500 × 500, von der Unternehmenswebsite",
+          "rechte": "offen",
+          "alt": "Logo Bäckerei Wirtz",
+          "datei": "baeckerei-wirtz.png"
+        }
+      },
+      "beitrag": {
+        "slug": "baeckerei-wirtz-brot-torten-merzenich",
+        "titel": "Brot, Brötchen und besondere Torten: Bäckerei Wirtz in Merzenich",
+        "anriss": "Von frischen Backwaren bis zu Torten für besondere Anlässe: ein Blick auf das Angebot der Bäckerei Wirtz in der Lindenstraße.",
+        "absaetze": [
+          "Ob Brot für den Alltag, Brötchen zum Frühstück oder etwas Süßes für die Kaffeetafel: In der Lindenstraße 24 in Merzenich ist die Bäckerei Wirtz zu finden. Neben klassischen Backwaren gehören auch Feingebäck, Kuchen und Torten zum Sortiment.",
+          "Wer eine Feier plant, kann sich zudem über individuell gestaltete Torten für Geburtstage, Hochzeiten und andere Anlässe informieren. Auf der Website der Bäckerei gibt es weitere Informationen zum Angebot und zu den Filialen.",
+          "<strong>Kontakt und Standort:</strong> Lindenstraße 24, 52399 Merzenich. Weitere Informationen auf der offiziellen Unternehmenswebsite."
+        ],
+        "knopf": {
+          "text": "Bäckerei Wirtz besuchen",
+          "ziel": "https://www.baeckerei-wirtz.de/"
+        },
+        "seo_titel": "Bäckerei Wirtz in Merzenich – Brot, Brötchen & Torten",
+        "seo_beschreibung": "Bäckerei Wirtz in Merzenich: Brot, Brötchen, Kuchen und individuelle Torten. Informationen zur Filiale in der Lindenstraße 24."
+      },
+      "anzeige": {
+        "eyebrow": "Aus Merzenich",
+        "titel": "Frische Backwaren & besondere Torten",
+        "text": "Brot, Brötchen, Kuchen und Konditorei – entdecken Sie die Bäckerei Wirtz in Merzenich.",
+        "knopf": "Mehr erfahren",
+        "ziel": "https://www.baeckerei-wirtz.de/"
+      }
+    },
+    {
+      "profil": {
+        "slug": "hasberg-fenster-rollladentechnik-merzenich",
+        "titel": "Hasberg Fenster & Rollladentechnik",
+        "firmenname": "Hasberg Fenster u. Rollladentechnik e.K.",
+        "branche": "Fenster, Türen, Rollläden & Sonnenschutz",
+        "ortsteil": "merzenich",
+        "adresse": "Morschenicher Straße 42, 52399 Merzenich",
+        "telefon": "02421 93580",
+        "email": "info@hasberg.de",
+        "website": "https://www.hasberg.de/",
+        "oeffnungszeiten": "Bürozeiten Mo–Fr 8:00–17:00 Uhr, Sa nach Vereinbarung",
+        "quelle": "Angaben laut hasberg.de (Kontakt und Anfahrt, Produkte, Impressum), geprüft am 16.10.2026",
+        "quellen": [
+          "https://www.hasberg.de/",
+          "https://www.hasberg.de/unsere-produkte",
+          "https://www.hasberg.de/kontakt-und-anfahrt",
+          "https://www.hasberg.de/impressum"
+        ],
+        "kurz": "Lösungen für Fenster, Haustüren, Rollläden und Markisen – ergänzt durch Insektenschutz und moderne Steuerungssysteme.",
+        "text": "Hasberg Fenster u. Rollladentechnik e.K. ist in der Morschenicher Straße 42 in Merzenich ansässig. Das Unternehmen bietet unter anderem Fenster, Haustüren, Rollläden, Markisen, Überdachungen, Garagentore und Insektenschutz an. Zum Leistungsspektrum gehören außerdem Lösungen zur Automatisierung von Rollläden und Sonnenschutz. Informationen zu den Produktbereichen und Beratungsmöglichkeiten sind auf der offiziellen Website zu finden.",
+        "karte": {
+          "knopf": "Leistungen ansehen",
+          "ziel": "https://www.hasberg.de/"
+        },
+        "logo": {
+          "quelle": "https://www.hasberg.de/uploads/6xZoQu63/01-hasberg-weber-logo__msi___jpg.jpg",
+          "art": "JPEG, 543 × 205, Logo laut Strukturdaten der Unternehmenswebsite",
+          "rechte": "offen",
+          "alt": "Logo Hasberg Fenster und Rollladentechnik",
+          "datei": "hasberg.jpg"
+        }
+      },
+      "beitrag": {
+        "slug": "hasberg-fenster-rolllaeden-sonnenschutz-merzenich",
+        "titel": "Fenster, Rollläden und Sonnenschutz: Hasberg aus Merzenich",
+        "anriss": "Ob Modernisierung oder Neubau: Der Merzenicher Fachbetrieb bietet Lösungen rund um Fenster, Türen und Sonnenschutz.",
+        "absaetze": [
+          "Wer Fenster austauschen, Sonnenschutz nachrüsten oder Rollläden modernisieren möchte, findet mit Hasberg Fenster u. Rollladentechnik e.K. einen Fachbetrieb in Merzenich. Das Unternehmen hat seinen Sitz in der Morschenicher Straße 42.",
+          "Das Angebot reicht von Fenstern und Haustüren über Rollläden, Markisen und Insektenschutz bis hin zu Überdachungen und Garagentoren. Hinzu kommen technische Lösungen, mit denen sich Rollläden und Sonnenschutz komfortabel steuern lassen.",
+          "Auf der Website stellt Hasberg die einzelnen Produktbereiche vor und informiert über Kontakt- und Beratungsmöglichkeiten.",
+          "<strong>Kontakt und Standort:</strong> Morschenicher Straße 42, 52399 Merzenich. Telefon: 02421 93580."
+        ],
+        "knopf": {
+          "text": "Hasberg kennenlernen",
+          "ziel": "https://www.hasberg.de/"
+        },
+        "seo_titel": "Hasberg in Merzenich – Fenster, Türen & Sonnenschutz",
+        "seo_beschreibung": "Hasberg Fenster u. Rollladentechnik aus Merzenich: Fenster, Rollläden, Markisen, Türen und Smart-Home-Steuerung im Überblick."
+      },
+      "anzeige": {
+        "eyebrow": "Fachbetrieb in Merzenich",
+        "titel": "Fenster, Türen & Sonnenschutz",
+        "text": "Von Rollläden bis Markisen: Entdecken Sie die Lösungen von Hasberg für Ihr Gebäude.",
+        "knopf": "Leistungen ansehen",
+        "ziel": "https://www.hasberg.de/"
+      }
+    },
+    {
+      "profil": {
+        "slug": "porschen-media-girbelsrath",
+        "titel": "Porschen Media",
+        "firmenname": "Porschen Media GmbH & Co. KG",
+        "branche": "Mediengestaltung, Druck & Werbetechnik",
+        "ortsteil": "girbelsrath",
+        "adresse": "Am Roßpfad 8, 52399 Merzenich",
+        "telefon": "02421 69796-40",
+        "email": "info@porschen-media.de",
+        "website": "https://porschen.media/",
+        "oeffnungszeiten": "Mo–Fr 8:00–17:00 Uhr",
+        "quelle": "Angaben laut porschen.media (Kontakt, Über uns, Impressum), geprüft am 16.10.2026",
+        "quellen": [
+          "https://porschen.media/",
+          "https://porschen.media/porschen-media-ueber-uns/",
+          "https://porschen.media/kontakt/",
+          "https://porschen.media/impressum/"
+        ],
+        "kurz": "Mediengestaltung, Digital- und Offsetdruck, Werbetechnik und Webdesign aus Merzenich-Girbelsrath.",
+        "text": "Porschen Media GmbH & Co. KG hat ihren Sitz am Roßpfad 8 im Merzenicher Ortsteil Girbelsrath. Die Leistungen verbinden Mediengestaltung mit Druckproduktion und Werbetechnik. Dazu gehören unter anderem Corporate Design, Offset- und Digitaldruck, Druckweiterverarbeitung, Beschriftungen, Werbemittel und Webdesign. Die Unternehmensgeschichte reicht nach eigenen Angaben bis ins Jahr 1980 zurück. Weitere Informationen und Kontaktmöglichkeiten stehen auf der offiziellen Website.",
+        "karte": {
+          "knopf": "Unternehmen entdecken",
+          "ziel": "https://porschen.media/"
+        },
+        "logo": {
+          "quelle": "https://porschen.media/_astro/logo.Bq7BYIkx_1Gh7MW.svg",
+          "art": "SVG, Kopfzeile der Unternehmenswebsite (alt: „Porschen Media – zur Startseite“); als PNG auf Weiß gerendert (WordPress nimmt kein SVG an), Inhalt unverändert",
+          "rechte": "offen",
+          "alt": "Logo Porschen Media",
+          "datei": "porschen-media.png"
+        }
+      },
+      "beitrag": {
+        "slug": "porschen-media-druck-werbung-girbelsrath",
+        "titel": "Von der Gestaltung bis zum Druck: Porschen Media aus Girbelsrath",
+        "anriss": "Design, Print und Werbetechnik aus einem Haus: Was das Medienunternehmen am Roßpfad anbietet.",
+        "absaetze": [
+          "Ob Geschäftsausstattung, Druckprodukte oder Fahrzeugbeschriftung: Porschen Media in Merzenich-Girbelsrath bietet verschiedene Leistungen rund um Gestaltung und Unternehmenskommunikation. Der Standort befindet sich am Roßpfad 8.",
+          "Zum Angebot gehören Corporate Design, Druckvorstufe, Offset- und Digitaldruck, Weiterverarbeitung sowie Werbetechnik und Webdesign. Unternehmen können damit unterschiedliche Maßnahmen ihres Außenauftritts über einen Anbieter koordinieren.",
+          "Die Wurzeln des Unternehmens gehen nach eigenen Angaben auf eine 1980 gegründete Druckerei zurück. Heute bündelt Porschen Media mehrere Bereiche der Medienproduktion. Wer sich über die Leistungen informieren möchte, findet auf der Unternehmenswebsite Beispiele und Kontaktmöglichkeiten.",
+          "<strong>Kontakt und Standort:</strong> Am Roßpfad 8, 52399 Merzenich-Girbelsrath. Telefon: 02421 69796-40."
+        ],
+        "knopf": {
+          "text": "Porschen Media entdecken",
+          "ziel": "https://porschen.media/"
+        },
+        "seo_titel": "Porschen Media in Girbelsrath – Druck, Design & Werbung",
+        "seo_beschreibung": "Porschen Media in Merzenich-Girbelsrath: Gestaltung, Offset- und Digitaldruck, Werbetechnik und Webdesign am Roßpfad 8."
+      },
+      "anzeige": {
+        "eyebrow": "Aus Girbelsrath",
+        "titel": "Design, Druck & Werbung aus einer Hand",
+        "text": "Von der Gestaltung bis zur Produktion: Lernen Sie die Leistungen von Porschen Media kennen.",
+        "knopf": "Mehr erfahren",
+        "ziel": "https://porschen.media/"
+      }
+    }
+  ]
 }

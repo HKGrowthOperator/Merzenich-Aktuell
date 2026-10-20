@@ -3,7 +3,9 @@
  * Drei echte Betriebe als Entwurf (includes/firmen-entwuerfe.php und
  * data/firmen-entwuerfe.json, 16.10.2026): nur Entwürfe, keine Einwilligung,
  * keine Logos, Werbebeitrag als kostenfreier Testeintrag, kein Platz auf der
- * Startseite, kein zweites Anlegen.
+ * Startseite, kein zweites Anlegen. Zusage eintragen (20.10.2026): Einwilligung
+ * und Logo getrennt mit Nachweis, Logo einmal in die Mediathek, Profil erst mit
+ * Einwilligung veröffentlicht, Werbebeitrag bleibt für die Freigaben.
  * Aufruf: php qa/wordpress/firmen-entwuerfe-test.php
  */
 define('ABSPATH', __DIR__ . '/');
@@ -26,6 +28,7 @@ function wp_set_object_terms($id, $t, $tax, $append) { $GLOBALS['terms'][$id][$t
 function get_post_status($id) { return $GLOBALS['posts'][$id]['post_status'] ?? false; }
 function wp_insert_post($a, $err = false) { if (!empty($GLOBALS['fehler_beim_anlegen'])) return new WP_Error(); $id = $GLOBALS['naechste']++; $GLOBALS['posts'][$id] = $a; return $id; }
 function get_posts($q) {
+    if (($q['post_type'] ?? '') === 'attachment') return array_keys(array_filter($GLOBALS['meta'] ?? [], fn($m) => ($m[$q['meta_key']] ?? null) === $q['meta_value']));
     $treffer = array_keys(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === $q['post_type'] && $p['post_name'] === $q['name'] && in_array($p['post_status'], (array) $q['post_status'], true)));
     return array_slice($treffer, 0, 1);
 }
@@ -98,6 +101,42 @@ $log3 = ma_firmen_entwuerfe_anlegen();
 pruefe('nichts angelegt, nichts an fremde Inhalte gehängt', [count($GLOBALS['posts']), count($GLOBALS['terms'])], [0, 0]);
 pruefe('Rückmeldung nennt den Fehler', str_contains($log3[0] ?? '', 'nicht angelegt (Datenbankfehler)'), true);
 $GLOBALS['fehler_beim_anlegen'] = false;
+
+
+echo "Zusage eintragen\n";
+$GLOBALS['posts'] = []; $GLOBALS['terms'] = []; $GLOBALS['naechste'] = 100; $GLOBALS['meta'] = []; $GLOBALS['medien'] = 0; $GLOBALS['verlauf'] = [];
+function get_post_meta($id, $k, $s = false) { return $GLOBALS['meta'][$id][$k] ?? ($GLOBALS['posts'][$id]['meta_input'][$k] ?? ''); }
+function update_post_meta($id, $k, $v) { $GLOBALS['meta'][$id][$k] = $v; return true; }
+function set_post_thumbnail($id, $m) { $GLOBALS['meta'][$id]['_thumbnail_id'] = $m; return true; }
+function wp_get_current_user() { return (object) ['display_name' => 'Redaktion', 'user_login' => 'admin']; }
+function current_time($f) { return '20.10.2026 14:00'; }
+function wp_tempnam($n) { return tempnam(sys_get_temp_dir(), 'logo'); }
+function media_handle_sideload($datei, $pid, $alt) { $GLOBALS['medien']++; @unlink($datei['tmp_name']); $id = 900 + $GLOBALS['medien']; $GLOBALS['posts'][$id] = ['post_type' => 'attachment', 'post_status' => 'inherit', 'post_name' => $datei['name'], 'datei' => $datei['name']]; return $id; }
+function ma_verlauf_eintragen($id, $a, $t = '') { $GLOBALS['verlauf'][] = [$id, $a, $t]; }
+// Veröffentlichen wie WordPress mit der Sperre aus business.php: ohne Einwilligung bleibt es Entwurf.
+function wp_update_post($a, $err = false) { $id = $a['ID']; if (($a['post_status'] ?? '') === 'publish' && ($GLOBALS['posts'][$id]['post_type'] ?? '') === 'ma_business' && get_post_meta($id, 'ma_business_consent') !== '1') $a['post_status'] = 'draft'; $GLOBALS['posts'][$id] = array_merge($GLOBALS['posts'][$id], $a); return $id; }
+$alteSuche = 'get_posts';
+ma_firmen_entwuerfe_anlegen();
+foreach ($firmen as $f) pruefe($f['profil']['titel'] . ': Logo-Datei im Plugin', is_file(MA_CORE_PATH . 'data/logos/' . ($f['profil']['logo']['datei'] ?? '-')), true);
+pruefe('ohne Nachweis: nichts', [ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', ' ', true, true)[0] ?? '', $GLOBALS['posts'][100]['post_status'], $GLOBALS['medien']], ['Bäckerei Wirtz: Ohne Nachweis der Zusage wird nichts eingetragen.', 'draft', 0]);
+pruefe('ohne Haken: nichts', str_contains(ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'Zusage laut Betreiber, 20.10.2026', false, false)[0] ?? '', 'Kein Haken'), true);
+// Nur Logo: Profil bleibt Entwurf, Logo ist Beitragsbild und freigegeben.
+ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'Zusage laut Betreiber, 20.10.2026', false, true);
+pruefe('nur Logo: Beitragsbild, Rechte geklärt, Profil weiter Entwurf', [$GLOBALS['meta'][100]['_thumbnail_id'] ?? 0, get_post_meta(100, 'ma_business_logo_rechte'), $GLOBALS['posts'][100]['post_status']], [901, 'geklaert', 'draft']);
+pruefe('Logo-Medium: Nachweis, Alt-Text, Rechte geprüft, Herkunft', [get_post_meta(901, 'ma_image_credit'), get_post_meta(901, '_wp_attachment_image_alt'), get_post_meta(901, 'ma_image_rights_verified'), get_post_meta(901, 'ma_image_original_url')],
+    ['Logo: Bäckerei Wirtz, Nutzung mit Freigabe des Unternehmens', 'Logo Bäckerei Wirtz', '1', 'https://www.baeckerei-wirtz.de/bilder/logo-frei0_500x500.png']);
+pruefe('Logo-Freigabe mit Nachweis, Person und Zeit', get_post_meta(100, 'ma_business_logo_freigabe'), 'Zusage laut Betreiber, 20.10.2026 · eingetragen von Redaktion am 20.10.2026 14:00');
+// Einwilligung: Profil veröffentlicht, Werbebeitrag bleibt Entwurf (Freigaben).
+$log = ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'Zusage laut Betreiber, 20.10.2026', true, false);
+pruefe('Einwilligung: mit Nachweis, wer, wann', [get_post_meta(100, 'ma_business_consent'), get_post_meta(100, 'ma_business_consent_quelle'), get_post_meta(100, 'ma_business_consent_by'), get_post_meta(100, 'ma_business_consent_at')], ['1', 'Zusage laut Betreiber, 20.10.2026', 'Redaktion', '20.10.2026 14:00']);
+pruefe('Profil veröffentlicht, Werbebeitrag bleibt Entwurf für die Freigaben', [$GLOBALS['posts'][100]['post_status'], $GLOBALS['posts'][101]['post_status'], str_contains($log[0], 'in den Freigaben')], ['publish', 'draft', true]);
+// Zweites Mal (beide Haken): kein zweites Medium, Einwilligung unverändert.
+ma_firmen_zusage_eintragen('baeckerei-wirtz-merzenich', 'anderer Nachweis', true, true);
+pruefe('erneut: kein zweites Logo-Medium, erste Einwilligung bleibt', [$GLOBALS['medien'], get_post_meta(100, 'ma_business_consent_quelle')], [1, 'Zusage laut Betreiber, 20.10.2026']);
+pruefe('Verlauf: Logo und Einwilligung je einmal (plus erneute Logo-Zeile)', count(array_filter($GLOBALS['verlauf'], fn($v) => $v[0] === 100 && $v[1] === 'Einwilligung eingetragen')), 1);
+pruefe('unbekannter Betrieb', ma_firmen_zusage_eintragen('gibt-es-nicht', 'x', true, true), ['Unbekannter Betrieb.']);
+$GLOBALS['posts'][102]['post_status'] = 'trash';
+pruefe('Profil im Papierkorb: nichts', str_contains(ma_firmen_zusage_eintragen('hasberg-fenster-rollladentechnik-merzenich', 'x', true, true)[0] ?? '', 'Profil fehlt'), true);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

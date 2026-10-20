@@ -343,3 +343,8 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 @media (min-width:1101px){.weitere-meldungen .bildraster--ressort{grid-template-columns:repeat(3,minmax(0,1fr))}}
 /* Karte ohne Bild auf dem Handy: Text über die volle Breite statt in der Bildspalte. */
 @media (max-width:520px){.bildraster-karte--ohne-bild{display:flex}}
+/* Firmenlogos ganz zeigen (20.10.2026): helle Fläche, nicht beschnitten, kein Kreis; Anzeigen ohne eigenes Foto zeigen das Logo. */
+.firmenlogo-box{border-radius:6px!important;background:#fff!important;box-shadow:inset 0 0 0 1px var(--line);padding:3px;box-sizing:border-box;width:auto!important;aspect-ratio:2/1}
+.firmenlogo-box img{object-fit:contain!important}
+img.bild-logo,.media--logo img{object-fit:contain!important;background:#fff;padding:6% 12%;box-sizing:border-box}
+.media:has(> img.bild-logo),.media--logo{background:#fff}

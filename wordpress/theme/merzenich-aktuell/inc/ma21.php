@@ -679,7 +679,7 @@ function ma21_kurz(string $t, int $n): string {
 /** Bilddaten des Beitragsbilds oder null. */
 function ma21_bild(WP_Post $p): ?array {
     $id = (int) get_post_thumbnail_id($p->ID);
-    if (!$id) return null;
+    if (!$id) return ma21_bild_firmenlogo($p);
     $voll = wp_get_attachment_image_src($id, 'full');
     if (!$voll) return null;
     $alt = get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id);
@@ -687,6 +687,23 @@ function ma21_bild(WP_Post $p): ?array {
     return ['id' => $id, 'src' => $voll[0], 'w' => (int) $voll[1], 'h' => (int) $voll[2], 'srcset' => (string) wp_get_attachment_image_srcset($id, 'full'),
         'alt' => $alt, 'typ' => (string) $typ, 'credit' => ma_credit_kurz((string) get_post_meta($p->ID, 'ma_image_credit', true), (string) get_post_meta($p->ID, 'ma_image_license', true)),
         'foto' => function_exists('ma_foto_schluessel') ? ma_foto_schluessel($id) : ma21_foto_schluessel((string) $voll[0])];
+}
+
+/**
+ * Anzeige eines Unternehmens ohne eigenes Foto: das Logo des Unternehmens, wenn seine Nutzung freigegeben
+ * ist (ma_business_logo_rechte = geklaert). Kein Symbolfoto, keine Karte ohne Bild (20.10.2026). 'logo'
+ * lässt ma21_img das Logo ganz auf hellem Grund zeigen statt beschnitten.
+ */
+function ma21_bild_firmenlogo(WP_Post $p): ?array {
+    if ($p->post_type !== 'post' || (string) get_post_meta($p->ID, 'ma_gesponsert', true) !== '1') return null;
+    $fid = (int) get_post_meta($p->ID, 'ma_business_id', true);
+    if (!$fid || get_post_type($fid) !== 'ma_business' || (string) get_post_meta($fid, 'ma_business_logo_rechte', true) !== 'geklaert') return null;
+    $lid = (int) get_post_thumbnail_id($fid);
+    $voll = $lid ? wp_get_attachment_image_src($lid, 'full') : false;
+    if (!$voll) return null;
+    return ['id' => $lid, 'src' => $voll[0], 'w' => (int) $voll[1], 'h' => (int) $voll[2], 'srcset' => (string) wp_get_attachment_image_srcset($lid, 'full'),
+        'alt' => 'Logo ' . html_entity_decode(get_the_title($fid), ENT_QUOTES, 'UTF-8'), 'typ' => '', 'credit' => ma_credit_kurz((string) get_post_meta($lid, 'ma_image_credit', true), ''),
+        'foto' => function_exists('ma_foto_schluessel') ? ma_foto_schluessel($lid) : ma21_foto_schluessel((string) $voll[0]), 'logo' => true];
 }
 
 /* Foto-Schlüssel (17.10.2026): Abgleich und Bildpool legen dasselbe Foto als zwei Anhänge an. Den Schlüssel bildet
@@ -725,7 +742,7 @@ function ma21_img(array $b, string $sizes, bool $eager): string {
     return '<img src="' . esc_url($b['src']) . '"' . ($b['srcset'] ? ' srcset="' . esc_attr($b['srcset']) . '"' : '')
         . ' sizes="' . esc_attr($sizes) . '" alt="' . esc_attr($b['alt']) . '"' . ($b['w'] && $b['h'] ? ' width="' . $b['w'] . '" height="' . $b['h'] . '"' : '')
         . ' loading="' . ($eager ? 'eager' : 'lazy') . '"' . ($eager ? ' fetchpriority="high"' : '') . ' decoding="async" data-editorial-image'
-        . (($b['foto'] ?? '') !== '' ? ' data-foto="' . esc_attr((string) $b['foto']) . '"' : '') . ' class="">';
+        . (($b['foto'] ?? '') !== '' ? ' data-foto="' . esc_attr((string) $b['foto']) . '"' : '') . ' class="' . (!empty($b['logo']) ? 'bild-logo' : '') . '">';
 }
 
 function ma21_badge(array $b, bool $start): string {

@@ -560,6 +560,9 @@ add_action('updated_post_meta', 'ma_bildpool_merkmal_pruefen', 5, 4);
 /** Setzt ein Poolfoto als Beitragsbild (nur ohne eigenes Bild). Gibt die Medien-ID zurück. */
 function ma_bildpool_symbolbild_setzen(WP_Post $p): int {
     if (has_post_thumbnail($p->ID) || !in_array($p->post_type, ['post', 'ma_event'], true)) return 0;
+    // Beiträge eines Unternehmens (Anzeige) bekommen kein Symbolfoto aus Commons: Es wirkte wie ein Foto des
+    // Betriebs. Ohne eigenes Bild zeigen Karten das freigegebene Firmenlogo (Theme, 20.10.2026).
+    if ((string) get_post_meta($p->ID, 'ma_gesponsert', true) === '1' && (int) get_post_meta($p->ID, 'ma_business_id', true) > 0) return 0;
     $pool = ma_bildpool_fuer($p);
     $bild = ma_bildpool_ersatz($pool, $p);
     if (!$bild) return 0;
