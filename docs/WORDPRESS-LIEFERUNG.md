@@ -1,8 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. Oktober 2026 · Theme 21.20.7 · Core-Plugin 1.31.0 · live: 21.20.5 / 1.30.0 (Historie unten)
+20. Oktober 2026 · Theme 21.20.8 · Core-Plugin 1.31.0 · live: 21.20.8 / 1.31.0 (Historie unten)
 
-## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6, drei echte Firmen im Unternehmensmenü
+## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6 bis 21.20.8, drei echte Firmen im Unternehmensmenü
+
+**Stand live (20.10., 16:50 Uhr):** Plugin 1.31.0 und Theme 21.20.8 sind eingespielt. Die Zusagen aller drei Betriebe sind eingetragen (Nachweis „Zusage laut Betreiber, 20.10.2026“), Profile und Werbebeiträge sind veröffentlicht, Testzeitraum bis 19.11.2026; die sechs Zusatzbeiträge bleiben Entwurf. Menü, Übersicht, Kanäle und Beiträge geprüft bei 1440, 820 und 390 px, 0 Konsolenfehler, Tastatur (Pfeil runter, Tab, Escape) funktioniert.
 
 **Anlass:** Im Hover-Menü „Unternehmen“ standen noch die drei Beispielfirmen. Der Betreiber hat am 20.10. bestätigt, dass Bäckerei Wirtz, Hasberg Fenster & Rollladentechnik und Porschen Media dem kostenfreien Testeintrag (Anzeige, 0 €, 30 Tage) und der Logonutzung zugestimmt haben.
 

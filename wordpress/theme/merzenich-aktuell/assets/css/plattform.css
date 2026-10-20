@@ -344,7 +344,7 @@ body.home .ortswahl>.shell>.jetzt:first-child{justify-content:flex-start;min-hei
 /* Karte ohne Bild auf dem Handy: Text über die volle Breite statt in der Bildspalte. */
 @media (max-width:520px){.bildraster-karte--ohne-bild{display:flex}}
 /* Firmenlogos ganz zeigen (20.10.2026): helle Fläche, nicht beschnitten, kein Kreis; Anzeigen ohne eigenes Foto zeigen das Logo. */
-.firmenlogo-box{border-radius:6px!important;background:#fff!important;box-shadow:inset 0 0 0 1px var(--line);padding:3px;box-sizing:border-box;width:auto!important;aspect-ratio:2/1}
-.firmenlogo-box img{object-fit:contain!important}
+.firmenlogo-box{border-radius:6px!important;background:#fff!important;box-shadow:inset 0 0 0 1px var(--line);padding:3px;box-sizing:border-box;width:88px!important;height:44px!important;aspect-ratio:auto;display:flex!important;align-items:center;justify-content:center}
+.firmenlogo-box img{width:auto!important;height:auto!important;max-width:100%;max-height:100%;object-fit:contain!important}
 img.bild-logo,.media--logo img{object-fit:contain!important;background:#fff;padding:6% 12%;box-sizing:border-box}
 .media:has(> img.bild-logo),.media--logo{background:#fff}

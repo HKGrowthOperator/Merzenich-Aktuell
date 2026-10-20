@@ -64,6 +64,7 @@ $css = (string) file_get_contents($wurzel . '/chatgpt-site/assets/ressort-dropdo
 $pl = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/assets/css/plattform.css');
 pruefe('Menü: Logo im Kasten, Karte mit Logo ohne „Foto:“-Nachweis', [str_contains($js, 'ressort-firmen__logo--bild'), str_contains($js, 'ressort-firmen__bild--logo'), str_contains($js, '!b.bild.logo ? nachweis(')], [true, true, true]);
 pruefe('CSS: Logos mit contain, Regeln schlagen die Grundregeln (doppelte Klasse)', [str_contains($css, '.ressort-firmen__logo.ressort-firmen__logo--bild img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}'), str_contains($css, '.ressort-firmen__bild.ressort-firmen__bild--logo img,'), str_contains($pl, 'img.bild-logo,.media--logo img{object-fit:contain!important')], [true, true, true]);
+pruefe('CSS: Logo-Kasten fest 88 × 44, Bild darin ganz (kein Abschneiden des runden Wirtz-Logos)', [str_contains($pl, 'width:88px!important;height:44px!important'), str_contains($pl, '.firmenlogo-box img{width:auto!important;height:auto!important;max-width:100%;max-height:100%')], [true, true]);
 pruefe('CSS: Firmenzeile mit Logo bekommt eine 72-px-Spalte (kein Überlappen)', str_contains($css, '.ressort-firmen__firma:has(.ressort-firmen__logo--bild){grid-template-columns:72px minmax(0,1fr)}'), true);
 pruefe('„Neu von Unternehmen“: Logo-Karte mit eigener Klasse', str_contains($js, "item.bild.logo ? ' ressort-dropdown__story-image--logo'"), true);
 
