@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. Oktober 2026 · Theme 21.20.6 · Core-Plugin 1.31.0 · live: 21.20.5 / 1.30.0 (Historie unten)
+20. Oktober 2026 · Theme 21.20.7 · Core-Plugin 1.31.0 · live: 21.20.5 / 1.30.0 (Historie unten)
 
 ## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6, drei echte Firmen im Unternehmensmenü
 
