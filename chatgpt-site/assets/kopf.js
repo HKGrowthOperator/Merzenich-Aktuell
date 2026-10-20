@@ -131,7 +131,7 @@
   if (!document.querySelector('link[data-ma-ressort-dropdowns]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/ressort-dropdowns.css?v=bd1a2de42e';
+    style.href = '/assets/ressort-dropdowns.css?v=242df82871';
     style.dataset.maRessortDropdowns = '1';
     document.head.append(style);
   }
