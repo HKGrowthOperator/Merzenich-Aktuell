@@ -59,7 +59,43 @@
         "text": "Brot, Brötchen, Kuchen und Konditorei – entdecken Sie die Bäckerei Wirtz in Merzenich.",
         "knopf": "Mehr erfahren",
         "ziel": "https://www.baeckerei-wirtz.de/"
-      }
+      },
+      "zusatz": [
+        {
+          "slug": "baeckerei-wirtz-festtagstorten-nach-wunsch",
+          "titel": "Festtagstorten nach Wunsch: Bäckerei Wirtz berät persönlich",
+          "anriss": "Für Hochzeit, Geburtstag oder andere Feiern fertigt die Konditorei der Bäckerei Wirtz Torten als Einzelstück.",
+          "absaetze": [
+            "Eine Hochzeit oder ein Geburtstag lässt sich mit einer besonderen Torte feiern. Die Bäckerei Wirtz fertigt Festtagstorten nach individuellen Wünschen an.",
+            "Wie die Torte aussehen soll, klärt die Konditorei in einem persönlichen Gespräch. So entsteht für jede Feier ein Einzelstück.",
+            "<strong>Kontakt:</strong> Filiale Lindenstraße 24, 52399 Merzenich. Weitere Informationen zu Festtagstorten auf der Website der Bäckerei."
+          ],
+          "knopf": {
+            "text": "Festtagstorten ansehen",
+            "ziel": "https://www.baeckerei-wirtz.de/produkte/festtagstorten/"
+          },
+          "seo_titel": "Festtagstorten nach Wunsch – Bäckerei Wirtz Merzenich",
+          "seo_beschreibung": "Bäckerei Wirtz fertigt Festtagstorten für Hochzeiten, Geburtstage und Feiern nach Wunsch, mit persönlicher Beratung.",
+          "quelle": "https://www.baeckerei-wirtz.de/produkte/festtagstorten/"
+        },
+        {
+          "slug": "baeckerei-wirtz-ausbildung-baecker-konditor",
+          "titel": "Ausbildung zum Bäcker oder Konditor bei der Bäckerei Wirtz",
+          "anriss": "Die Bäckerei Wirtz bildet in ihrer Backstube in Düren Bäcker und Konditoren aus (m/w/d).",
+          "absaetze": [
+            "Die Bäckerei Wirtz mit Filialen in Düren, Merzenich und Niederzier bietet Ausbildungsplätze zum Bäcker und zum Konditor (m/w/d) an.",
+            "Zur Ausbildung gehören laut Bäckerei unter anderem das Herstellen von Brot, Brötchen und feinen Backwaren, das Planen der Arbeitsabläufe und die Kontrolle der Zutaten. Gearbeitet wird in der Backstube in Düren. Die Ausbildungsvergütung richtet sich nach Tarif.",
+            "<strong>Bewerbung und Details:</strong> auf der Website der Bäckerei unter „Jobs“."
+          ],
+          "knopf": {
+            "text": "Zu den Ausbildungsplätzen",
+            "ziel": "https://www.baeckerei-wirtz.de/jobs/ausbildung-zum-baecker-mwd/"
+          },
+          "seo_titel": "Ausbildung Bäcker und Konditor – Bäckerei Wirtz",
+          "seo_beschreibung": "Bäckerei Wirtz bildet Bäcker und Konditoren (m/w/d) in der Backstube in Düren aus. Vergütung nach Tarif.",
+          "quelle": "https://www.baeckerei-wirtz.de/jobs/ausbildung-zum-konditor-mwd/"
+        }
+      ]
     },
     {
       "profil": {
@@ -117,7 +153,43 @@
         "text": "Von Rollläden bis Markisen: Entdecken Sie die Lösungen von Hasberg für Ihr Gebäude.",
         "knopf": "Leistungen ansehen",
         "ziel": "https://www.hasberg.de/"
-      }
+      },
+      "zusatz": [
+        {
+          "slug": "hasberg-rollladen-sonnenschutz-markisen",
+          "titel": "Rollläden, Jalousien und Markisen: Sonnenschutz von Hasberg",
+          "anriss": "Hasberg in Merzenich bietet Rollläden, innen- und außenliegenden Sonnenschutz, Markisen und Verdunkelungsanlagen.",
+          "absaetze": [
+            "Zum Sortiment von Hasberg Fenster und Rollladentechnik in der Morschenicher Straße gehören Rollläden in verschiedenen Ausführungen: mit integriertem Insektenschutz, als sichtbare Rollladenelemente oder als Einputzvariante.",
+            "Beim Sonnenschutz bietet der Betrieb innen- und außenliegende Lösungen für Fenster und Türen an, dazu Jalousien, Markisen, Dachfensterbeschattungen und Verdunkelungsanlagen.",
+            "<strong>Kontakt:</strong> Morschenicher Straße 42, 52399 Merzenich, Telefon 02421 93580."
+          ],
+          "knopf": {
+            "text": "Produkte ansehen",
+            "ziel": "https://www.hasberg.de/unsere-produkte"
+          },
+          "seo_titel": "Rollläden und Sonnenschutz – Hasberg Merzenich",
+          "seo_beschreibung": "Hasberg in Merzenich: Rollläden mit Insektenschutz, Jalousien, Markisen, Dachfensterbeschattung und Verdunkelung.",
+          "quelle": "https://www.hasberg.de/unsere-produkte"
+        },
+        {
+          "slug": "hasberg-fenster-haustueren-neubau-nachruestung",
+          "titel": "Fenster und Haustüren für Neubau und Nachrüstung: Hasberg in Merzenich",
+          "anriss": "Fenster aus Metall, Aluminium oder Holz und Haustüren in verschiedenen Breiten und Formen bietet Hasberg an.",
+          "absaetze": [
+            "Hasberg Fenster und Rollladentechnik liefert Fenster aus Metall, Aluminium oder Holz. Sie eignen sich laut Betrieb für Neubauten ebenso wie zur Nachrüstung in bestehenden Gebäuden.",
+            "Haustüren gibt es in verschiedenen Breiten und Formen; auf der Website des Betriebs lässt sich die Wunschtür mit einem Konfigurator zusammenstellen.",
+            "<strong>Kontakt:</strong> Morschenicher Straße 42, 52399 Merzenich, Telefon 02421 93580."
+          ],
+          "knopf": {
+            "text": "Fenster und Türen ansehen",
+            "ziel": "https://www.hasberg.de/unsere-produkte"
+          },
+          "seo_titel": "Fenster und Haustüren – Hasberg Merzenich",
+          "seo_beschreibung": "Hasberg in Merzenich: Fenster aus Metall, Aluminium oder Holz für Neubau und Nachrüstung sowie Haustüren nach Wunsch.",
+          "quelle": "https://www.hasberg.de/unsere-produkte"
+        }
+      ]
     },
     {
       "profil": {
@@ -175,7 +247,44 @@
         "text": "Von der Gestaltung bis zur Produktion: Lernen Sie die Leistungen von Porschen Media kennen.",
         "knopf": "Mehr erfahren",
         "ziel": "https://porschen.media/"
-      }
+      },
+      "zusatz": [
+        {
+          "slug": "porschen-media-druckerei-offset-digital",
+          "titel": "Offset- und Digitaldruck im eigenen Haus: die Druckerei von Porschen Media",
+          "anriss": "Satz, Druck und Weiterverarbeitung unter einem Dach im Gewerbegebiet Girbelsrath.",
+          "absaetze": [
+            "Porschen Media am Roßpfad im Gewerbegebiet Girbelsrath betreibt eine eigene Druckerei. Gedruckt wird im Offset- und im Digitaldruck, Letzterer auch bei kleinen Stückzahlen.",
+            "Auch die Weiterverarbeitung, also Falzen, Heften, Binden und Konfektionieren, erledigt der Betrieb im Haus.",
+            "<strong>Kontakt:</strong> Am Roßpfad 8, 52399 Merzenich, Telefon 02421 69796-40."
+          ],
+          "knopf": {
+            "text": "Leistungen ansehen",
+            "ziel": "https://porschen.media/"
+          },
+          "seo_titel": "Druckerei Offset und Digital – Porschen Media",
+          "seo_beschreibung": "Porschen Media in Merzenich-Girbelsrath: Offset- und Digitaldruck sowie Falzen, Heften und Binden im eigenen Haus.",
+          "quelle": "https://porschen.media/"
+        },
+        {
+          "slug": "porschen-media-werbetechnik-fahrzeugbeschriftung",
+          "titel": "Fahrzeugbeschriftung, Schilder und Textildruck: Werbetechnik von Porschen Media",
+          "anriss": "Gestaltung, Druck und Anbringung aus einem Haus, Folierungen in der Werkstatt in Merzenich.",
+          "absaetze": [
+            "Zur Werbetechnik von Porschen Media gehören Fahrzeugbeschriftungen vom Aufkleber bis zur Vollfolierung, wetterfeste Schilder und Banner für innen und außen sowie Textildruck im DTF-Verfahren, auch bei kleinen Auflagen.",
+            "Gestaltung, Druck und Anbringung laufen laut Betrieb im selben Haus. Aufwendige Folierungen entstehen in der Werkstatt in Merzenich.",
+            "<strong>Kontakt:</strong> Am Roßpfad 8, 52399 Merzenich, Telefon 02421 69796-40."
+          ],
+          "knopf": {
+            "text": "Werbetechnik ansehen",
+            "ziel": "https://porschen.media/werbetechnik/"
+          },
+          "seo_titel": "Werbetechnik und Fahrzeugbeschriftung – Porschen Media",
+          "seo_beschreibung": "Porschen Media in Merzenich: Fahrzeugbeschriftung bis zur Vollfolierung, Schilder, Banner und DTF-Textildruck.",
+          "quelle": "https://porschen.media/werbetechnik/"
+        }
+      ]
     }
-  ]
+  ],
+  "hinweis_zusatz": "Zusatzbeiträge (20.10.2026, Auftrag Betreiber): je Betrieb zwei sachliche Beiträge aus den Leistungsseiten der Unternehmenswebsites, abgerufen am 20.10.2026. Nur Entwurf; Veröffentlichung auf Zeichen des Betreibers."
 }

@@ -78,25 +78,28 @@ function ma_firmen_entwuerfe_anlegen(): array {
             if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($pid, 'Entwurf angelegt', 'Aus data/firmen-entwuerfe.json (Stand ' . $stand . '). Veröffentlichung erst mit Einwilligung des Unternehmens; Logo-Rechte offen.');
         } else $log[] = $p['titel'] . ': Profil schon vorhanden (' . get_post_status($pid) . ')';
 
-        if (empty($b['slug']) || empty($b['titel'])) continue;
-        if ($bid = ma_firmen_vorhanden('post', (string) $b['slug'])) { $log[] = $p['titel'] . ': Beitrag schon vorhanden (' . get_post_status($bid) . ')'; continue; }
-        $kat = get_category_by_slug('wirtschaft');
-        $r = wp_insert_post(wp_slash([
-            'post_type' => 'post', 'post_status' => 'draft', 'post_title' => (string) $b['titel'], 'post_name' => (string) $b['slug'],
-            'post_excerpt' => (string) ($b['anriss'] ?? ''), 'post_content' => ma_firmen_beitrag_html($b),
-            'post_category' => $kat ? [(int) $kat->term_id] : [],
-            'meta_input' => [
-                'ma_gesponsert' => '1', 'ma_gesponsert_art' => 'test', 'ma_gesponsert_von' => (string) ($p['firmenname'] ?? '') ?: (string) $p['titel'],
-                'ma_business_id' => (string) $pid, 'ma_seo_titel' => (string) ($b['seo_titel'] ?? ''), 'ma_seo_beschreibung' => (string) ($b['seo_beschreibung'] ?? ''),
-                'ma_source_url' => (string) ($p['website'] ?? ''), 'ma_source_publisher' => (string) ($p['firmenname'] ?? '') ?: (string) $p['titel'],
-                'ma_startseite_freigabe' => 'nein',
-            ],
-        ]), true);
-        if (is_wp_error($r) || !$r) { $log[] = $p['titel'] . ': Beitrag nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : ''); continue; }
-        $bid = (int) $r;
-        if (!empty($p['ortsteil']) && taxonomy_exists('ma_location')) wp_set_object_terms($bid, (string) $p['ortsteil'], 'ma_location', false);
-        $log[] = $p['titel'] . ': Beitrag als Entwurf angelegt (kostenfreier Testeintrag)';
-        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Entwurf angelegt', 'Werbebeitrag als kostenfreier Testeintrag aus data/firmen-entwuerfe.json. Erst veröffentlichen, wenn das Unternehmen Text und Schaltung bestätigt hat.');
+        // Werbebeitrag und (20.10.2026) die Zusatzbeiträge, alle als Entwurf.
+        foreach (array_merge([$b], (array) ($f['zusatz'] ?? [])) as $nr => $b) {
+            if (empty($b['slug']) || empty($b['titel'])) continue;
+            if ($bid = ma_firmen_vorhanden('post', (string) $b['slug'])) { $log[] = $p['titel'] . ': Beitrag schon vorhanden (' . get_post_status($bid) . ')'; continue; }
+            $kat = get_category_by_slug('wirtschaft');
+            $r = wp_insert_post(wp_slash([
+                'post_type' => 'post', 'post_status' => 'draft', 'post_title' => (string) $b['titel'], 'post_name' => (string) $b['slug'],
+                'post_excerpt' => (string) ($b['anriss'] ?? ''), 'post_content' => ma_firmen_beitrag_html($b),
+                'post_category' => $kat ? [(int) $kat->term_id] : [],
+                'meta_input' => [
+                    'ma_gesponsert' => '1', 'ma_gesponsert_art' => 'test', 'ma_gesponsert_von' => (string) ($p['firmenname'] ?? '') ?: (string) $p['titel'],
+                    'ma_business_id' => (string) $pid, 'ma_seo_titel' => (string) ($b['seo_titel'] ?? ''), 'ma_seo_beschreibung' => (string) ($b['seo_beschreibung'] ?? ''),
+                    'ma_source_url' => (string) ($b['quelle'] ?? '') ?: (string) ($p['website'] ?? ''), 'ma_source_publisher' => (string) ($p['firmenname'] ?? '') ?: (string) $p['titel'],
+                    'ma_startseite_freigabe' => 'nein',
+                ],
+            ]), true);
+            if (is_wp_error($r) || !$r) { $log[] = $p['titel'] . ': Beitrag nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : ''); continue; }
+            $bid = (int) $r;
+            if (!empty($p['ortsteil']) && taxonomy_exists('ma_location')) wp_set_object_terms($bid, (string) $p['ortsteil'], 'ma_location', false);
+            $log[] = $p['titel'] . ': Beitrag als Entwurf angelegt (kostenfreier Testeintrag)';
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Entwurf angelegt', 'Werbebeitrag als kostenfreier Testeintrag aus data/firmen-entwuerfe.json. Erst veröffentlichen, wenn das Unternehmen Text und Schaltung bestätigt hat.');
+        }
     }
     return $log;
 }
