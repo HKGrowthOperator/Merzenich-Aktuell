@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 17 Oct 2026 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 19 Oct 2026 10:00:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-141-oelspur-merzenich/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-141-oelspur-merzenich/</guid>
+<pubDate>Mon, 19 Oct 2026 10:00:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/technik/technik-05-81cd88e925.jpg" medium="image"><media:credit>RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Warnschild vor einer Ölspur</media:description></media:content>
+</item>
 <item>
 <title>LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Das Dürener Immobilienunternehmen ist jetzt auch am Kreisverkehr im Merzenicher Ortskern vertreten. Bürgermeister Georg Gelhausen besuchte die Filiale, wie die Gemeinde am 8. Oktober mitteilte.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Alte katholische Pfarrkirche in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>TTC Merzenich: Damen gewinnen 7:3 bei Aachen-Hörn, Vierte siegt 8:2 bei Alemannia Lendersdorf</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026/</guid>
-<pubDate>Tue, 13 Oct 2026 06:15:00 GMT</pubDate>
-<category>Sport</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Zwei Auswärtssiege am Freitag, 9. Oktober: Die Damen setzten sich in der 1. Bezirksliga durch, die vierte Mannschaft in der 3. Bezirksklasse.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Rathaus Merzenich von der Straße aus</media:description></media:content>
 </item>
 </channel>
 </rss>

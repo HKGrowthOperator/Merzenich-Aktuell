@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T07:49:05.303Z",
+  "updatedAt": "2026-10-21T10:16:00.525Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -683,6 +683,15 @@
       "assignedAt": "2026-10-16T07:49:05.303Z",
       "articleId": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
       "articleDate": "2026-10-16T11:50:00+02:00"
+    },
+    "/blaulicht/einsatz-141-oelspur-merzenich/": {
+      "imageId": "web-technik-05-81cd88e9",
+      "pool": "technik",
+      "motiv": "oelspur",
+      "regel": "blaulicht.technik.oelspur",
+      "assignedAt": "2026-10-21T10:16:00.525Z",
+      "articleId": "2026-10-19-einsatz-141-oelspur-merzenich",
+      "articleDate": "2026-10-19T12:00:00+02:00"
     }
   }
 }

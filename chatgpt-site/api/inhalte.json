@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-17T16:00:00+02:00",
- "anzahl": 193,
+ "generated": "2026-10-19T12:00:00+02:00",
+ "anzahl": 194,
  "bestand": {
-  "gesamt": 193,
+  "gesamt": 194,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 69,
+   "blaulicht": 70,
    "sport": 31,
    "rathaus": 21,
    "leben": 40,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 130,
+   "merzenich": 131,
    "golzheim": 20,
    "girbelsrath": 23,
    "morschenich": 11,
@@ -25,11 +25,11 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 193,
+    "anzahl": 194,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 69,
+    "anzahl": 70,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 130,
+    "anzahl": 131,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,40 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-19-einsatz-141-oelspur-merzenich",
+   "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
+   "titel": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr",
+   "teaser": "Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.",
+   "kicker": "Feuerwehr · 141/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-19T12:00:00+02:00",
+   "aktualisiert": "2026-10-19T12:00:00+02:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/technik/technik-05-81cd88e925.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-05-81cd88e925-480.webp 480w, /assets/editorial-pools/technik/technik-05-81cd88e925-800.webp 800w, /assets/editorial-pools/technik/technik-05-81cd88e925-1200.webp 1200w, /assets/editorial-pools/technik/technik-05-81cd88e925.jpg 1920w",
+    "alt": "Warnschild vor einer Ölspur",
+    "width": 1920,
+    "height": 2560,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-17-leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027",
    "url": "/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/",
@@ -8031,6 +8065,11 @@
  },
  "nebenmeldungen": [
   {
+   "id": "2026-10-19-einsatz-141-oelspur-merzenich",
+   "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
+   "titel": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr"
+  },
+  {
    "id": "2026-10-16-buendelsammlung-gruenabfall-16-november-2026-anmeldung",
    "url": "/leben/buendelsammlung-gruenabfall-16-november-2026-anmeldung/",
    "titel": "Bündelsammlung am 16. November: Grünabfall nur nach kostenloser Anmeldung bei Schönmackers"
@@ -8044,11 +8083,6 @@
    "id": "2026-10-16-feuerwehr-infoabend-gemeinderat-geraetehaus-2026",
    "url": "/rathaus/feuerwehr-infoabend-gemeinderat-geraetehaus-2026/",
    "titel": "Wehrleitung informiert Gemeinderat im Gerätehaus über Fuhrpark, Personal und Einsätze"
-  },
-  {
-   "id": "2026-10-13-tagebausee-hambach-planfeststellung-einwendungen-2026",
-   "url": "/rathaus/tagebausee-hambach-planfeststellung-einwendungen-2026/",
-   "titel": "Tagebausee Hambach: Planunterlagen ab 9. November online, Einwendungen bis 22. Dezember"
   }
  ],
  "startseitenMotive": {
@@ -8068,7 +8102,7 @@
   "editorial-pools/menschen/menschen-06-1835323b3c": 1,
   "editorial-pools/naturdetail/naturdetail-01-0a789f9162": 1,
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 2,
-  "editorial-pools/technik/technik-05-81cd88e925": 1,
+  "editorial-pools/technik/technik-05-81cd88e925": 2,
   "editorial-pools/technik/technik-07-c67b406470": 2,
   "editorial-pools/tipp/tipp-21-b2be2ca7e2": 1,
   "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
@@ -8084,7 +8118,6 @@
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
-  "responsive/574e8ee34ee536": 1,
   "responsive/939564298cdfdc": 1,
   "responsive/f507b5f3e2c7d3": 1,
   "werben/format-artikelanzeige": 2,
@@ -8098,8 +8131,8 @@
   "editorial-pools/aktuell/aktuell-07-d923824479",
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e",
   "editorial-pools/menschen/menschen-01-686bb6fb4c",
-  "editorial-pools/tipp/tipp-21-b2be2ca7e2",
-  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858"
+  "editorial-pools/technik/technik-05-81cd88e925",
+  "editorial-pools/tipp/tipp-21-b2be2ca7e2"
  ],
  "motivMax": 2
 }

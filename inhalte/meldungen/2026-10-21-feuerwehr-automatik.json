@@ -1,0 +1,39 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint in WordPress als Entwurf in den Freigaben; die Redaktion prüft und gibt frei.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-141-oelspur-merzenich",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 141/26",
+      "titel": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.",
+      "datum": "2026-10-19T12:00:00+02:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 141/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Montag, 19. Oktober 2026",
+        "Einsatzort: Merzenich, Valdersweg",
+        "Meldung: Ölspur",
+        "Eingesetzte Kräfte: Löschgruppe Merzenich, Tagesalarmgruppe"
+      ],
+      "absaetze": [
+        "Einsatzort war Merzenich, Valdersweg. Das Einsatzstichwort lautete „OES“. Im Einsatz waren: Löschgruppe Merzenich und Tagesalarmgruppe.",
+        "Die Feuerwehr schreibt dazu: „Am Montag Vormittag wurde die Löschgruppe Merzenich, zusammen mit der Tagesalarmgruppe zu einer Ölspur auf den Valdersweg alarmiert. Nach der Erkundung stellte sich heraus, das sich die Spur durch die komplette Ortslage zog. Ausgehend von der Autobahnausfahrt, über Merzenich nach Girbelsrath wurden mehrere größere Ölflecken festgestellt und mittels Bindemittel abgebunden.“ Es war der 141. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.technik.oelspur",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 20.10.2026",
+        "url": "https://www.heimat-info.de/beitraege/c21ea3fb-4f5d-4225-b455-90541c6d492b",
+        "stand": "2026-10-21"
+      }
+    }
+  ]
+}

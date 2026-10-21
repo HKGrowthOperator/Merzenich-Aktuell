@@ -15,6 +15,21 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-141-oelspur-merzenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-141-oelspur-merzenich/",
+      "title": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr",
+      "summary": "Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.",
+      "content_html": "<p>Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.</p>",
+      "date_published": "2026-10-19T12:00:00+02:00",
+      "date_modified": "2026-10-19T12:00:00+02:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/technik/technik-05-81cd88e925.jpg",
+      "tags": [
+        "Blaulicht",
+        "Merzenich",
+        "Feuerwehr"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/",
       "title": "LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027",
@@ -504,23 +519,6 @@
         "Merzenich",
         "Immobilien",
         "Unternehmen"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026/",
-      "title": "TTC Merzenich: Damen gewinnen 7:3 bei Aachen-Hörn, Vierte siegt 8:2 bei Alemannia Lendersdorf",
-      "summary": "Zwei Auswärtssiege am Freitag, 9. Oktober: Die Damen setzten sich in der 1. Bezirksliga durch, die vierte Mannschaft in der 3. Bezirksklasse.",
-      "content_html": "<p>Zwei Auswärtssiege am Freitag, 9. Oktober: Die Damen setzten sich in der 1. Bezirksliga durch, die vierte Mannschaft in der 3. Bezirksklasse.</p>",
-      "date_published": "2026-10-13T08:15:00+02:00",
-      "date_modified": "2026-10-13T08:15:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-      "tags": [
-        "Sport",
-        "Merzenich",
-        "Tischtennis",
-        "TTC Merzenich",
-        "Sport"
       ]
     }
   ]
