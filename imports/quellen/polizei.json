@@ -1,11 +1,11 @@
 {
  "quelle": "polizei",
- "abgerufen": "2026-10-22T10:12:43.360Z",
+ "abgerufen": "2026-10-23T10:05:10.963Z",
  "listen": [
   {
    "url": "https://www.presseportal.de/blaulicht/r/Merzenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Merzenich",
-   "abgerufen": "2026-10-22T10:11:26.432Z",
+   "abgerufen": "2026-10-23T10:03:56.360Z",
    "status": 200,
    "titel": "28 offizielle News aus Merzenich 2026 | Presseportal",
    "meta": {
@@ -320,7 +320,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Golzheim",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Golzheim",
-   "abgerufen": "2026-10-22T10:11:27.859Z",
+   "abgerufen": "2026-10-23T10:03:57.754Z",
    "status": 200,
    "titel": "Offizielle News aus Golzheim | Presseportal",
    "meta": {
@@ -409,7 +409,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Girbelsrath",
-   "abgerufen": "2026-10-22T10:11:29.315Z",
+   "abgerufen": "2026-10-23T10:03:59.181Z",
    "status": 200,
    "titel": "Offizielle News aus Girbelsrath 2026 | Presseportal",
    "meta": {
@@ -476,7 +476,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/Morschenich",
    "endUrl": "https://www.presseportal.de/blaulicht/r/Morschenich",
-   "abgerufen": "2026-10-22T10:11:30.735Z",
+   "abgerufen": "2026-10-23T10:04:00.597Z",
    "status": 200,
    "titel": "Offizielle News aus Morschenich | Presseportal",
    "meta": {
@@ -565,7 +565,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
    "endUrl": "https://www.presseportal.de/blaulicht/r/B%C3%BCrgewald",
-   "abgerufen": "2026-10-22T10:11:32.161Z",
+   "abgerufen": "2026-10-23T10:04:01.990Z",
    "status": 200,
    "titel": "Offizielle News aus Bürgewald | Presseportal",
    "meta": {
@@ -622,7 +622,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6359466",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6359466",
-   "abgerufen": "2026-10-22T10:11:33.603Z",
+   "abgerufen": "2026-10-23T10:04:03.454Z",
    "status": 200,
    "titel": "POL-DN: Abbiegeunfall fordert schwer verletzten Zweiradfahrer | Presseportal",
    "meta": {
@@ -892,7 +892,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6353148",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6353148",
-   "abgerufen": "2026-10-22T10:11:35.051Z",
+   "abgerufen": "2026-10-23T10:04:04.910Z",
    "status": 200,
    "titel": "POL-DN: \"Zu schnell fahren macht uns sauer!\" - Viertklässler unterstützen ... | Presseportal",
    "meta": {
@@ -1163,7 +1163,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6349975",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6349975",
-   "abgerufen": "2026-10-22T10:11:36.468Z",
+   "abgerufen": "2026-10-23T10:04:06.334Z",
    "status": 200,
    "titel": "POL-DN: Zeugensuche nach Einbruch in Einfamilienhaus | Presseportal",
    "meta": {
@@ -1422,7 +1422,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6344030",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6344030",
-   "abgerufen": "2026-10-22T10:11:37.955Z",
+   "abgerufen": "2026-10-23T10:04:07.753Z",
    "status": 200,
    "titel": "POL-DN: Gegenstände von Fußgängerbrücke auf Fahrbahn geworfen - Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -1689,7 +1689,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6332060",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6332060",
-   "abgerufen": "2026-10-22T10:11:39.406Z",
+   "abgerufen": "2026-10-23T10:04:09.180Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall zwischen Pkw und Fahrradfahrer | Presseportal",
    "meta": {
@@ -1939,7 +1939,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6326148",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6326148",
-   "abgerufen": "2026-10-22T10:11:40.879Z",
+   "abgerufen": "2026-10-23T10:04:10.587Z",
    "status": 200,
    "titel": "POL-DN: Pkw entwendet - die Polizei bittet um Hinweise | Presseportal",
    "meta": {
@@ -2169,7 +2169,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6324912",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6324912",
-   "abgerufen": "2026-10-22T10:11:42.370Z",
+   "abgerufen": "2026-10-23T10:04:12.284Z",
    "status": 200,
    "titel": "POL-DN: Mit dem Pkw überschlagen | Presseportal",
    "meta": {
@@ -2419,7 +2419,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6324911",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6324911",
-   "abgerufen": "2026-10-22T10:11:43.810Z",
+   "abgerufen": "2026-10-23T10:04:13.704Z",
    "status": 200,
    "titel": "POL-DN: Tageswohnungseinbruch in Girbelsrath - die Polizei bittet um Hinweise | Presseportal",
    "meta": {
@@ -2665,7 +2665,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6323527",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6323527",
-   "abgerufen": "2026-10-22T10:11:45.273Z",
+   "abgerufen": "2026-10-23T10:04:15.130Z",
    "status": 200,
    "titel": "POL-DN: Radfahrerin kollidiert mit Radfahrerin | Presseportal",
    "meta": {
@@ -2903,7 +2903,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6314046",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6314046",
-   "abgerufen": "2026-10-22T10:11:46.713Z",
+   "abgerufen": "2026-10-23T10:04:16.548Z",
    "status": 200,
    "titel": "POL-DN: Schwerverletzt nach Auffahrunfall | Presseportal",
    "meta": {
@@ -3157,7 +3157,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6300033",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6300033",
-   "abgerufen": "2026-10-22T10:11:48.150Z",
+   "abgerufen": "2026-10-23T10:04:23.622Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall beim Abbiegen - Eine Person schwer verletzt | Presseportal",
    "meta": {
@@ -3373,7 +3373,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6296383",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6296383",
-   "abgerufen": "2026-10-22T10:11:49.620Z",
+   "abgerufen": "2026-10-23T10:04:30.794Z",
    "status": 200,
    "titel": "POL-DN: Solide Polizeiarbeit führt zur Festnahme mehrerer Pkw-Aufbrecher | Presseportal",
    "meta": {
@@ -3579,1320 +3579,42 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6288735",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6288735",
-   "abgerufen": "2026-10-22T10:11:51.049Z",
-   "status": 200,
-   "titel": "POL-DN: Ablenkung führt zu Auffahrunfall mit drei Fahrzeugen | Presseportal",
-   "meta": {
-    "description": "Polizei Düren - Merzenich - Am Mittwoch (03.06.2026) kam es gegen 15:15 Uhr auf der L264 in ...✚ Mehr lesen",
-    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
-    "og:site_name": "presseportal.de",
-    "og:url": "https://www.presseportal.de/blaulicht/pm/8/6288735",
-    "og:title": "POL-DN: Ablenkung führt zu Auffahrunfall mit drei Fahrzeugen",
-    "og:description": "Merzenich (ots) - Am Mittwoch (03.06.2026) kam es gegen 15:15 Uhr auf der L264 in Fahrtrichtung Merzenich zu einem Verkehrsunfall mit drei beteiligten Fahrzeugen. Zwei Personen...",
-    "og:type": "article",
-    "og:image": "https://www.presseportal.de/some-default.jpg",
-    "og:image:height": "250",
-    "og:image:width": "250"
-   },
-   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n05.06.2026 – 11:55\nPolizei Düren\nPOL-DN: Ablenkung führt zu Auffahrunfall mit drei Fahrzeugen\nMerzenich (ots)\nAm Mittwoch (03.06.2026) kam es gegen 15:15 Uhr auf der L264 in Fahrtrichtung Merzenich zu einem Verkehrsunfall mit drei beteiligten Fahrzeugen. Zwei Personen wurden dabei leicht verletzt.\nNach bisherigen Erkenntnissen befuhren ein 37-jähriger Mann aus Düren, ein 39-jähriger Mann aus Krefeld sowie ein 60-jähriger Mann aus Düren mit ihren Fahrzeugen die L264 aus Richtung Niederzier kommend in Fahrtrichtung Merzenich. Kurz vor einem Kreisverkehr mussten die beiden vorausfahrenden Fahrzeuge verkehrsbedingt anhalten.\nDer 60-Jährige ließ während der Fahrt versehentlich eine Zigarettenpackung in den Fußraum seines Fahrzeugs fallen und versuchte, diese aufzuheben. Hierdurch war er abgelenkt und bemerkte das Anhalten der vorausfahrenden Fahrzeuge zu spät. Er fuhr auf das Fahrzeug des 39-Jährigen auf, das durch die Wucht des Aufpralls auf den Pkw des 37-Jährigen geschoben wurde.\nDer 39-Jährige aus Krefeld sowie der 37-jährige Dürener wurden leicht verletzt und zur weiteren Behandlung in ein Krankenhaus gebracht. Der 60-Jährige blieb unverletzt.\nAlle drei Fahrzeuge mussten abgeschleppt werden. Der entstandene Sachschaden wird auf etwa 4.100 Euro geschätzt.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMerzenich\nNordrhein-Westfalen\nThemen in dieser Meldung\nAuffahrunfall\nPersonenkraftwagen\nKreisverkehr\nFahrtrichtung\nFahrzeug\nAblenkung\nZigarettenpackung\nTransport\nVerkehrsunglück\nVerkehrsbericht\nMedizin, Gesundheit\nInvalidität\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n05.06.2026 – 11:55\nPOL-DN: Drei Leichtverletzte nach Verkehrsunfall auf der Fritz-Erler-Straße\nDüren (ots) - Am Mittwoch (03.06.2026) kam es gegen 14:45 Uhr auf der Fritz-Erler-Straße zu einem Verkehrsunfall, bei dem drei Personen leicht verletzt wurden. Nach bisherigen Erkenntnissen befuhr ein 61-jähriger Mann aus Düren mit seinem Pkw die linke Fahrspur der Fritz-Erler-Straße. Zeitgleich fuhr ein 79-jähriger Pkw-Fahrer aus Eschweiler von einem Parkplatz ...\nmehr\n05.06.2026 – 11:55\nPOL-DN: Betrüger locken mit hohen Gewinnen - Senior verliert mehr als 8.500 Euro\nDüren (ots) - Ein 74-jähriger Mann aus Düren erschien am Mittwoch (03.06.2026) zur Anzeigenerstattung auf der Polizeiwache Düren. Er wurde Opfer eines Anlagebetrugs im Internet. Die Täter versprachen hohe Gewinne mit einer vermeintlichen Geldanlage und erbeuteten so mehrere tausend Euro. Nach Angaben des Geschädigten war er im April 2026 auf eine Internetseite ...\nmehr\n05.06.2026 – 11:55\nPOL-DN: Unbekannte Täter beschädigten Fenster des Amtsgericht Düren\nDüren (ots) - In der vergangenen Woche wurden zwei Fernster des Amtsgerichts Düren beschädigt. Die Polizei sucht Zeugen. Ein Jusitzmitarbeiter hatte am 03.06.2026 gegen 13:00 Uhr bemerkt, dass zwei der Goethestraße zugewandte Fenster beschädigt worden waren. Unbekannte Täter hatten sie nach ersten Erkenntnissen zwischen Mittwoch, dem 27.05.2026 und Mittwoch, dem ...\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-MA: Heidelberg: Polizei nimmt Mann wegen Diebstahl aus geparktem Auto...\nPOL-DN: 70-jähriger Radfahrer umgefahren - Zeugen gesucht\nPOL-Pforzheim: (PF) Pforzheim - Fahrzeug ausgebrannt\nPOL-RT: Störer unterwegs; Verkehrsunfälle; Wohnungsbrand; Erfolgreiche...\nFW Celle: Verkehrsunfall in Hustedt\nPolizeidirektion Kaiserslautern\nFreiwillige Feuerwehr Sankt Augustin\nPolizeipräsidium Frankfurt am Main\nPolizeipräsidium Recklinghausen\nLandespolizeiinspektion Saalfeld\nPolizeipräsidium Einsatz\nFeuerwehr Wetter (Ruhr)\nFreiwillige Feuerwehr Königswinter\nHeidelberg\nDüren\nPforzheim\nReutlingen\nCelle\nLüneburg\nUlm\nBremen",
-   "links": [
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6288735#"
-    },
-    {
-     "text": "Polizei Düren",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "",
-     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6288735%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Ablenkung%20f%C3%BChrt%20zu%20Auffahrunfall%20mit%20drei%20Fahrzeugen&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6288735%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
-    },
-    {
-     "text": "",
-     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Ablenkung%20f%C3%BChrt%20zu%20Auffahrunfall%20mit%20drei%20Fahrzeugen%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6288735%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6288735%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6288735%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Ablenkung+f%C3%BChrt+zu+Auffahrunfall+mit+drei+Fahrzeugen"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6288735#"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Auffahrunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Auffahrunfall"
-    },
-    {
-     "text": "Personenkraftwagen",
-     "href": "https://www.presseportal.de/blaulicht/st/Personenkraftwagen"
-    },
-    {
-     "text": "Kreisverkehr",
-     "href": "https://www.presseportal.de/blaulicht/st/Kreisverkehr"
-    },
-    {
-     "text": "Fahrtrichtung",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrtrichtung"
-    },
-    {
-     "text": "Fahrzeug",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrzeug"
-    },
-    {
-     "text": "Ablenkung",
-     "href": "https://www.presseportal.de/blaulicht/st/Ablenkung"
-    },
-    {
-     "text": "Zigarettenpackung",
-     "href": "https://www.presseportal.de/blaulicht/st/Zigarettenpackung"
-    },
-    {
-     "text": "Transport",
-     "href": "https://www.presseportal.de/blaulicht/st/Transport"
-    },
-    {
-     "text": "Verkehrsunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsungl%C3%BCck"
-    },
-    {
-     "text": "Verkehrsbericht",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsbericht"
-    },
-    {
-     "text": "Medizin, Gesundheit",
-     "href": "https://www.presseportal.de/blaulicht/st/Medizin%2C%20Gesundheit"
-    },
-    {
-     "text": "Invalidität",
-     "href": "https://www.presseportal.de/blaulicht/st/Invalidit%C3%A4t"
-    },
-    {
-     "text": "Polizei",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei"
-    },
-    {
-     "text": "Polizei Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "POL-DN: Drei Leichtverletzte nach Verkehrsunfall auf der Fritz-Erler-Straße",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6288734"
-    },
-    {
-     "text": "POL-DN: Betrüger locken mit hohen Gewinnen - Senior verliert mehr als 8.500 Euro",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6288733"
-    },
-    {
-     "text": "POL-DN: Unbekannte Täter beschädigten Fenster des Amtsgericht Düren",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6288732"
-    },
-    {
-     "text": "POL-MA: Heidelberg: Polizei nimmt Mann wegen Diebstahl aus geparktem Auto...",
-     "href": "https://www.presseportal.de/blaulicht/pm/14915/6111910"
-    },
-    {
-     "text": "POL-DN: 70-jähriger Radfahrer umgefahren - Zeugen gesucht",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6059398"
-    },
-    {
-     "text": "POL-Pforzheim: (PF) Pforzheim - Fahrzeug ausgebrannt",
-     "href": "https://www.presseportal.de/blaulicht/pm/137462/6086810"
-    },
-    {
-     "text": "POL-RT: Störer unterwegs; Verkehrsunfälle; Wohnungsbrand; Erfolgreiche...",
-     "href": "https://www.presseportal.de/blaulicht/pm/110976/6117223"
-    },
-    {
-     "text": "FW Celle: Verkehrsunfall in Hustedt",
-     "href": "https://www.presseportal.de/blaulicht/pm/149821/6208138"
-    },
-    {
-     "text": "Polizeidirektion Kaiserslautern",
-     "href": "https://www.presseportal.de/blaulicht/nr/117679"
-    },
-    {
-     "text": "Freiwillige Feuerwehr Sankt Augustin",
-     "href": "https://www.presseportal.de/blaulicht/nr/127035"
-    },
-    {
-     "text": "Polizeipräsidium Frankfurt am Main",
-     "href": "https://www.presseportal.de/blaulicht/nr/4970"
-    },
-    {
-     "text": "Polizeipräsidium Recklinghausen",
-     "href": "https://www.presseportal.de/blaulicht/nr/42900"
-    },
-    {
-     "text": "Landespolizeiinspektion Saalfeld",
-     "href": "https://www.presseportal.de/blaulicht/nr/126724"
-    },
-    {
-     "text": "Polizeipräsidium Einsatz",
-     "href": "https://www.presseportal.de/blaulicht/nr/110981"
-    },
-    {
-     "text": "Feuerwehr Wetter (Ruhr)",
-     "href": "https://www.presseportal.de/blaulicht/nr/69783"
-    },
-    {
-     "text": "Freiwillige Feuerwehr Königswinter",
-     "href": "https://www.presseportal.de/blaulicht/nr/128175"
-    },
-    {
-     "text": "Heidelberg",
-     "href": "https://www.presseportal.de/blaulicht/r/Heidelberg"
-    },
-    {
-     "text": "Düren",
-     "href": "https://www.presseportal.de/blaulicht/r/D%FCren"
-    },
-    {
-     "text": "Pforzheim",
-     "href": "https://www.presseportal.de/blaulicht/r/Pforzheim"
-    },
-    {
-     "text": "Reutlingen",
-     "href": "https://www.presseportal.de/blaulicht/r/Reutlingen"
-    },
-    {
-     "text": "Celle",
-     "href": "https://www.presseportal.de/blaulicht/r/Celle"
-    },
-    {
-     "text": "Lüneburg",
-     "href": "https://www.presseportal.de/blaulicht/r/L%FCneburg"
-    },
-    {
-     "text": "Ulm",
-     "href": "https://www.presseportal.de/blaulicht/r/Ulm"
-    },
-    {
-     "text": "Bremen",
-     "href": "https://www.presseportal.de/blaulicht/r/Bremen"
-    }
-   ],
-   "bilder": [
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    }
-   ]
+   "abgerufen": "2026-10-23T10:04:33.230Z",
+   "status": 503,
+   "fehlertext": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6286506",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6286506",
-   "abgerufen": "2026-10-22T10:11:52.490Z",
-   "status": 200,
-   "titel": "POL-DN: Verkehrsunfallflucht - 14-jähriger Radfahrer verletzt | Presseportal",
-   "meta": {
-    "description": "Polizei Düren - Merzenich - Am Montagabend (01.06.2026) erschien ein 14-jähriger Dürener gemeinsam ...✚ Mehr lesen",
-    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
-    "og:site_name": "presseportal.de",
-    "og:url": "https://www.presseportal.de/blaulicht/pm/8/6286506",
-    "og:title": "POL-DN: Verkehrsunfallflucht - 14-jähriger Radfahrer verletzt",
-    "og:description": "Merzenich (ots) - Am Montagabend (01.06.2026) erschien ein 14-jähriger Dürener gemeinsam mit seiner Mutter auf der Polizeiwache Düren und erstattete Anzeige wegen einer...",
-    "og:type": "article",
-    "og:image": "https://www.presseportal.de/some-default.jpg",
-    "og:image:height": "250",
-    "og:image:width": "250"
-   },
-   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n02.06.2026 – 09:45\nPolizei Düren\nPOL-DN: Verkehrsunfallflucht - 14-jähriger Radfahrer verletzt\nMerzenich (ots)\nAm Montagabend (01.06.2026) erschien ein 14-jähriger Dürener gemeinsam mit seiner Mutter auf der Polizeiwache Düren und erstattete Anzeige wegen einer Verkehrsunfallflucht.\nNach Angaben des Jugendlichen befuhr er gegen 18:50 Uhr mit seinem Fahrrad die Bahnstraße in Fahrtrichtung Dürener Straße. Im Kreuzungsbereich zur Gartenstraße sei er von einem Pkw mit der Fahrzeugfront touchiert worden. Der Fahrer habe seine Fahrt anschließend fortgesetzt, ohne anzuhalten.\nBei dem beteiligten Fahrzeug soll es sich um einen grauen SUV, möglicherweise der Marke Audi, gehandelt haben. Der Pkw fuhr nach dem Unfall in Richtung Distelrather Weg davon.\nDer 14-Jährige wurde bei dem Unfall leicht verletzt und suchte eigenständig ein Krankenhaus auf.\nDie Polizei bittet den Fahrer des Fahrzeugs, sich zur Klärung des Sachverhalts zu melden. Darüber hinaus werden Zeugen, die den Unfall beobachtet haben oder Hinweise zur Identität des Fahrers beziehungsweise zum beteiligten Fahrzeug geben können, gebeten, sich unter der Rufnummer 02421 949-0 mit der Polizei Düren in Verbindung zu setzen.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMerzenich\nNordrhein-Westfalen\nThemen in dieser Meldung\nSport Utility Vehicle\nUnfallflucht\nFahrrad\nAudi\nPersonenkraftwagen\nRadfahrer\nFahrzeug\nPolizeiwache\nVerkehrsunfallflucht\nVerkehrsunglück\nTransport\nSicherheitskräfte\nVerkehrsbericht\nKriminalität\nSport\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n01.06.2026 – 11:30\nPOL-DN: Verkehrsunfall unter Drogeneinfluss - Widerstand nach Anordnung einer Blutprobe\nVettweiß (ots) - Am Sonntagmorgen (31.05.2026) kam es auf der Vettweißer Straße zu einem Verkehrsunfall. Im Rahmen der Unfallaufnahme ergaben sich Hinweise darauf, dass der Unfallverursacher unter dem Einfluss berauschender Mittel stand. Als ihm die Entnahme einer Blutprobe eröffnet wurde, versuchte er zu flüchten und leistete Widerstand gegen die eingesetzten ...\nmehr\n01.06.2026 – 11:30\nPOL-DN: Unfall mit E-Scooter: Zu zweit, bei Rotlicht und ohne gültige Versicherung\nDüren (ots) - Am Freitag (29.05.2026) kam es zu einem Unfall zwischen einem E-Scooter und einem Pkw. Der Fahrer des Elektrokleinstfahrzeugs war bei Rot gefahren und verletzte sich bei dem Zusammenstoß. Gegen 13:20 Uhr war ein 58 Jahre alter E-Scooter-Fahrer aus Düren auf dem Radweg der August-Klotz-Straße in Richtung Platz der Deutschen Einheit unterwegs. An der ...\nmehr\n01.06.2026 – 11:30\nPOL-DN: Brennende Heuballen in Schophoven - Die Polizei sucht Zeugen\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-MK: Ohne Versicherungsschutz unterwegs\nPOL-SO: Riskante Flucht vor der Polizei endet für 23-Jährigen auf der Wache\nPOL-FR: Schluchsee: Geparkter Pkw beschädigt - Zeugen gesucht!\nPOL-BOR: Stadtlohn - Unfallflucht begangen\nPOL-PDNR: Kennzeichendiebstahl\nPolizeiinspektion Göttingen\nLandesamt für Brand- und Katastrophenschutz\nHochschule für Polizei Baden-Württemberg\nFeuerwehr Kiel\nPolizeiinspektion Heidekreis\nFeuerwehr Detmold\nKreispolizeibehörde Hochsauerlandkreis\nPolizei Gütersloh\nAltena\nSoest\nFreiburg\nStadtlohn\nWeyerbusch\nBielefeld\nLüdenscheid\nBad Gandersheim",
-   "links": [
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6286506#"
-    },
-    {
-     "text": "Polizei Düren",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "",
-     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6286506%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Verkehrsunfallflucht%20-%2014-j%C3%A4hriger%20Radfahrer%20verletzt&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6286506%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
-    },
-    {
-     "text": "",
-     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Verkehrsunfallflucht%20-%2014-j%C3%A4hriger%20Radfahrer%20verletzt%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6286506%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6286506%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6286506%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Verkehrsunfallflucht+-+14-j%C3%A4hriger+Radfahrer+verletzt"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6286506#"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Sport Utility Vehicle",
-     "href": "https://www.presseportal.de/blaulicht/st/Sport%20Utility%20Vehicle"
-    },
-    {
-     "text": "Unfallflucht",
-     "href": "https://www.presseportal.de/blaulicht/st/Unfallflucht"
-    },
-    {
-     "text": "Fahrrad",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrrad"
-    },
-    {
-     "text": "Audi",
-     "href": "https://www.presseportal.de/blaulicht/st/Audi"
-    },
-    {
-     "text": "Personenkraftwagen",
-     "href": "https://www.presseportal.de/blaulicht/st/Personenkraftwagen"
-    },
-    {
-     "text": "Radfahrer",
-     "href": "https://www.presseportal.de/blaulicht/st/Radfahrer"
-    },
-    {
-     "text": "Fahrzeug",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrzeug"
-    },
-    {
-     "text": "Polizeiwache",
-     "href": "https://www.presseportal.de/blaulicht/st/Polizeiwache"
-    },
-    {
-     "text": "Verkehrsunfallflucht",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsunfallflucht"
-    },
-    {
-     "text": "Verkehrsunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsungl%C3%BCck"
-    },
-    {
-     "text": "Transport",
-     "href": "https://www.presseportal.de/blaulicht/st/Transport"
-    },
-    {
-     "text": "Sicherheitskräfte",
-     "href": "https://www.presseportal.de/blaulicht/st/Sicherheitskr%C3%A4fte"
-    },
-    {
-     "text": "Verkehrsbericht",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsbericht"
-    },
-    {
-     "text": "Kriminalität",
-     "href": "https://www.presseportal.de/blaulicht/st/Kriminalit%C3%A4t"
-    },
-    {
-     "text": "Sport",
-     "href": "https://www.presseportal.de/blaulicht/st/Sport"
-    },
-    {
-     "text": "Polizei",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei"
-    },
-    {
-     "text": "Polizei Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "POL-DN: Verkehrsunfall unter Drogeneinfluss - Widerstand nach Anordnung einer Blutprobe",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6285694"
-    },
-    {
-     "text": "POL-DN: Unfall mit E-Scooter: Zu zweit, bei Rotlicht und ohne gültige Versicherung",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6285693"
-    },
-    {
-     "text": "POL-DN: Brennende Heuballen in Schophoven - Die Polizei sucht Zeugen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6285692"
-    },
-    {
-     "text": "POL-MK: Ohne Versicherungsschutz unterwegs",
-     "href": "https://www.presseportal.de/blaulicht/pm/65850/6122391"
-    },
-    {
-     "text": "POL-SO: Riskante Flucht vor der Polizei endet für 23-Jährigen auf der Wache",
-     "href": "https://www.presseportal.de/blaulicht/pm/65855/6259374"
-    },
-    {
-     "text": "POL-FR: Schluchsee: Geparkter Pkw beschädigt - Zeugen gesucht!",
-     "href": "https://www.presseportal.de/blaulicht/pm/110970/6115209"
-    },
-    {
-     "text": "POL-BOR: Stadtlohn - Unfallflucht begangen",
-     "href": "https://www.presseportal.de/blaulicht/pm/24843/6066377"
-    },
-    {
-     "text": "POL-PDNR: Kennzeichendiebstahl",
-     "href": "https://www.presseportal.de/blaulicht/pm/117709/6274026"
-    },
-    {
-     "text": "Polizeiinspektion Göttingen",
-     "href": "https://www.presseportal.de/blaulicht/nr/119508"
-    },
-    {
-     "text": "Landesamt für Brand- und Katastrophenschutz",
-     "href": "https://www.presseportal.de/blaulicht/nr/180751"
-    },
-    {
-     "text": "Hochschule für Polizei Baden-Württemberg",
-     "href": "https://www.presseportal.de/blaulicht/nr/110984"
-    },
-    {
-     "text": "Feuerwehr Kiel",
-     "href": "https://www.presseportal.de/blaulicht/nr/82765"
-    },
-    {
-     "text": "Polizeiinspektion Heidekreis",
-     "href": "https://www.presseportal.de/blaulicht/nr/59460"
-    },
-    {
-     "text": "Feuerwehr Detmold",
-     "href": "https://www.presseportal.de/blaulicht/nr/116239"
-    },
-    {
-     "text": "Kreispolizeibehörde Hochsauerlandkreis",
-     "href": "https://www.presseportal.de/blaulicht/nr/65847"
-    },
-    {
-     "text": "Polizei Gütersloh",
-     "href": "https://www.presseportal.de/blaulicht/nr/23127"
-    },
-    {
-     "text": "Altena",
-     "href": "https://www.presseportal.de/blaulicht/r/Altena"
-    },
-    {
-     "text": "Soest",
-     "href": "https://www.presseportal.de/blaulicht/r/Soest"
-    },
-    {
-     "text": "Freiburg",
-     "href": "https://www.presseportal.de/blaulicht/r/Freiburg"
-    },
-    {
-     "text": "Stadtlohn",
-     "href": "https://www.presseportal.de/blaulicht/r/Stadtlohn"
-    },
-    {
-     "text": "Weyerbusch",
-     "href": "https://www.presseportal.de/blaulicht/r/Weyerbusch"
-    },
-    {
-     "text": "Bielefeld",
-     "href": "https://www.presseportal.de/blaulicht/r/Bielefeld"
-    },
-    {
-     "text": "Lüdenscheid",
-     "href": "https://www.presseportal.de/blaulicht/r/L%FCdenscheid"
-    },
-    {
-     "text": "Bad Gandersheim",
-     "href": "https://www.presseportal.de/blaulicht/r/Bad%20Gandersheim"
-    }
-   ],
-   "bilder": [
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/liste/1e5b7336-158d-4705-88e4-0cc273f7b1d6/polizei-d-ren-pol-dn-brennende-heuballen-in-schophoven-die-polizei-sucht-zeugen?crop=0,9,290,190",
-     "alt": "Polizei Düren: POL-DN: Brennende Heuballen in Schophoven - Die Polizei sucht Zeugen",
-     "title": "Polizei Düren: POL-DN: Brennende Heuballen in Schophoven - Die Polizei sucht Zeugen"
-    }
-   ]
+   "abgerufen": "2026-10-23T10:04:34.560Z",
+   "status": 503,
+   "fehlertext": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6282600",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6282600",
-   "abgerufen": "2026-10-22T10:11:54.010Z",
-   "status": 200,
-   "titel": "POL-DN: Festnahme nach Unfall mit entwendetem Pkw | Presseportal",
-   "meta": {
-    "description": "Polizei Düren - Merzenich/Düren - Bereits in der Nacht zu Dienstag (26.05.2026) kam es im Verlauf der ...✚ Mehr lesen",
-    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
-    "og:site_name": "presseportal.de",
-    "og:url": "https://www.presseportal.de/blaulicht/pm/8/6282600",
-    "og:title": "POL-DN: Festnahme nach Unfall mit entwendetem Pkw",
-    "og:description": "Merzenich/Düren (ots) - Bereits in der Nacht zu Dienstag (26.05.2026) kam es im Verlauf der Nordstraße zu einem Verkehrsunfall bei dem der verursachende Pkw auf dem Dach...",
-    "og:type": "article",
-    "og:image": "https://www.presseportal.de/some-default.jpg",
-    "og:image:height": "250",
-    "og:image:width": "250"
-   },
-   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n27.05.2026 – 09:55\nPolizei Düren\nPOL-DN: Festnahme nach Unfall mit entwendetem Pkw\nMerzenich/Düren (ots)\nBereits in der Nacht zu Dienstag (26.05.2026) kam es im Verlauf der Nordstraße zu einem Verkehrsunfall bei dem der verursachende Pkw auf dem Dach landete und drei Personen fußläufig flüchteten. Im Rahmen der Fahndung konnten Beamte der Wache Düren den später geständigen Fahrer des Pkw antreffen und festnehmen.\nGegen 04:50 Uhr erhielt die Polizei die Meldung über einen auf der Nordstraße verunfallten Pkw. Dieser hatte ein geparktes Fahrzeug touchiert und sich in der Folge überschlagen. Aus dem Fahrzeug waren drei Insassen fußläufig flüchtig. In der Ortslage Birkesdorf konnten zur Fahndung eingesetzte Kräfte schließlich eine verdächtige Person antreffen, auf die die Beschreibung zutraf. Der 18-jährige Mann aus Düren gestand schließlich, dass er das Fahrzeug zur Unfallzeit geführt hatte. Zudem räumte er ein, dass man das Fahrzeug zuvor mit zwei weiteren Personen in Merzenich entwendet hatte und damit umher gefahren sei.\nDer genaue Tatablauf ist nun Gegenstand der Ermittlungen. Im Besitz einer gültigen Fahrerlaubnis ist der junge Mann nicht. Zudem stellten die Beamten fest, dass er unter dem Einfluss berauschender Mittel stand. Der Dürener wurde vorläufig festgenommen. Er muss sich nun einem Strafverfahren u.a. wegen Kfz.-Diebstahl, Unfallflucht sowie weiteren Verkehrsstraftaten stellen.\nDie beiden am Unfall beteiligten Fahrzeuge wurden so stark beschädigt, dass sie durch Abschlepper geborgen werden mussten. Der entstandene Sachschaden wird mit ca. 13.000 Euro angegeben. Personenschaden entstand durch den Verkehrsunfall nicht.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMerzenich/Düren\nNordrhein-Westfalen\nThemen in dieser Meldung\nUnfallflucht\nKraftfahrzeug\nFestnahme\nFührerschein\nPersonenschaden\nPersonenkraftwagen\nFahrzeug\nUnfall\nPkw\nVerkehrsunfall\nSicherheitskräfte\nTransport\nVerkehrsunglück\nKriminalität\nTransportnotfall\nVerkehrsbericht\nGesetz\nRegierung\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n27.05.2026 – 09:55\nPOL-DN: Kradfahrer bei Alleinunfall leicht verletzt\nInden (ots) - Am Dienstagmorgen (26.05.2026) kam es gegen 07:00 Uhr auf der Mittelstraße zu einem Verkehrsunfall, bei dem ein 18-jähriger Kradfahrer leicht verletzt wurde. Nach bisherigen Erkenntnissen verlor der 18-Jährige aus Inden aus bislang ungeklärter Ursache die Kontrolle über sein Leichtkraftrad. In der Folge kam er von der Fahrbahn ab und stürzte. Der junge Mann wurde leicht verletzt und mit einem ...\nmehr\n27.05.2026 – 09:55\nPOL-DN: Streit eskaliert - Ermittlungen wegen gefährlicher Körperverletzung eingeleitet\nDüren (ots) - Am Dienstagabend (26.05.2026) kam es gegen 18:00 Uhr in der Schloßbergstraße zu einer körperlichen Auseinandersetzung zwischen zwei Männern. Nach bisherigen Erkenntnissen stand ein 49-jähriger Mann aus Düren an seinem geparkten Kleinkraftrad am Fahrbahnrand der Schloßbergstraße, als ein 79-jähriger Autofahrer aus Düren mit seinem Pkw ...\nmehr\n26.05.2026 – 12:00\nPOL-DN: Gas- und Bremse vertauscht: Umgestürzte Laterne verletzt Frau\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-GT: Zeugen- und Videoaufruf nach Verkehrsunfall am Möhnesee\nFW Mainz: Stefan Behrendt neuer Leiter der Feuerwehr Mainz\nPOL-RT: Nach Angriff auf Nachbarin - Tatverdächtiger in Haft (Tübingen)\nLKA-BW: Gemeinsame Pressemitteilung der Staatsanwaltschaft Stuttgart, des LKA...\nPOL-MTK: Wohnhaus in Hofheim heimgesucht\nFreiwillige Feuerwehr Horn-Bad Meinberg\nBundespolizeiinspektion Rostock\nBundespolizeiinspektion Bremen\nPolizeipräsidium Osthessen\nPolizeiinspektion Cuxhaven\nPolizeiinspektion Nienburg / Schaumburg\nPolizei Bonn\nBundespolizeiinspektion See Neustadt / Holstein\nGütersloh\nMainz\nReutlingen\nStuttgart\nHofheim\nA 73 Höhe Schleusingen\nLandkreis Oldenburg\nFreiburg",
-   "links": [
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6282600#"
-    },
-    {
-     "text": "Polizei Düren",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "",
-     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6282600%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Festnahme%20nach%20Unfall%20mit%20entwendetem%20Pkw&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6282600%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
-    },
-    {
-     "text": "",
-     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Festnahme%20nach%20Unfall%20mit%20entwendetem%20Pkw%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6282600%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6282600%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6282600%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Festnahme+nach+Unfall+mit+entwendetem+Pkw"
-    },
-    {
-     "text": "Merzenich/Düren",
-     "href": "https://www.presseportal.de/regional/Merzenich%252FD%FCren"
-    },
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6282600#"
-    },
-    {
-     "text": "Merzenich/Düren",
-     "href": "https://www.presseportal.de/regional/Merzenich%252FD%FCren"
-    },
-    {
-     "text": "Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Unfallflucht",
-     "href": "https://www.presseportal.de/blaulicht/st/Unfallflucht"
-    },
-    {
-     "text": "Kraftfahrzeug",
-     "href": "https://www.presseportal.de/blaulicht/st/Kraftfahrzeug"
-    },
-    {
-     "text": "Festnahme",
-     "href": "https://www.presseportal.de/blaulicht/st/Festnahme"
-    },
-    {
-     "text": "Führerschein",
-     "href": "https://www.presseportal.de/blaulicht/st/F%C3%BChrerschein"
-    },
-    {
-     "text": "Personenschaden",
-     "href": "https://www.presseportal.de/blaulicht/st/Personenschaden"
-    },
-    {
-     "text": "Personenkraftwagen",
-     "href": "https://www.presseportal.de/blaulicht/st/Personenkraftwagen"
-    },
-    {
-     "text": "Fahrzeug",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrzeug"
-    },
-    {
-     "text": "Unfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Unfall"
-    },
-    {
-     "text": "Pkw",
-     "href": "https://www.presseportal.de/blaulicht/st/Pkw"
-    },
-    {
-     "text": "Verkehrsunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsunfall"
-    },
-    {
-     "text": "Sicherheitskräfte",
-     "href": "https://www.presseportal.de/blaulicht/st/Sicherheitskr%C3%A4fte"
-    },
-    {
-     "text": "Transport",
-     "href": "https://www.presseportal.de/blaulicht/st/Transport"
-    },
-    {
-     "text": "Verkehrsunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsungl%C3%BCck"
-    },
-    {
-     "text": "Kriminalität",
-     "href": "https://www.presseportal.de/blaulicht/st/Kriminalit%C3%A4t"
-    },
-    {
-     "text": "Transportnotfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Transportnotfall"
-    },
-    {
-     "text": "Verkehrsbericht",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsbericht"
-    },
-    {
-     "text": "Gesetz",
-     "href": "https://www.presseportal.de/blaulicht/st/Gesetz"
-    },
-    {
-     "text": "Regierung",
-     "href": "https://www.presseportal.de/blaulicht/st/Regierung"
-    },
-    {
-     "text": "Polizei",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei"
-    },
-    {
-     "text": "Polizei Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "POL-DN: Kradfahrer bei Alleinunfall leicht verletzt",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6282599"
-    },
-    {
-     "text": "POL-DN: Streit eskaliert - Ermittlungen wegen gefährlicher Körperverletzung eingeleitet",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6282598"
-    },
-    {
-     "text": "POL-DN: Gas- und Bremse vertauscht: Umgestürzte Laterne verletzt Frau",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6281813"
-    },
-    {
-     "text": "POL-GT: Zeugen- und Videoaufruf nach Verkehrsunfall am Möhnesee",
-     "href": "https://www.presseportal.de/blaulicht/pm/23127/6229606"
-    },
-    {
-     "text": "FW Mainz: Stefan Behrendt neuer Leiter der Feuerwehr Mainz",
-     "href": "https://www.presseportal.de/blaulicht/pm/171463/6188147"
-    },
-    {
-     "text": "POL-RT: Nach Angriff auf Nachbarin - Tatverdächtiger in Haft (Tübingen)",
-     "href": "https://www.presseportal.de/blaulicht/pm/110976/6141748"
-    },
-    {
-     "text": "LKA-BW: Gemeinsame Pressemitteilung der Staatsanwaltschaft Stuttgart, des LKA...",
-     "href": "https://www.presseportal.de/blaulicht/pm/110980/6181856"
-    },
-    {
-     "text": "POL-MTK: Wohnhaus in Hofheim heimgesucht",
-     "href": "https://www.presseportal.de/blaulicht/pm/50154/6207793"
-    },
-    {
-     "text": "Freiwillige Feuerwehr Horn-Bad Meinberg",
-     "href": "https://www.presseportal.de/blaulicht/nr/153423"
-    },
-    {
-     "text": "Bundespolizeiinspektion Rostock",
-     "href": "https://www.presseportal.de/blaulicht/nr/50067"
-    },
-    {
-     "text": "Bundespolizeiinspektion Bremen",
-     "href": "https://www.presseportal.de/blaulicht/nr/70255"
-    },
-    {
-     "text": "Polizeipräsidium Osthessen",
-     "href": "https://www.presseportal.de/blaulicht/nr/43558"
-    },
-    {
-     "text": "Polizeiinspektion Cuxhaven",
-     "href": "https://www.presseportal.de/blaulicht/nr/68437"
-    },
-    {
-     "text": "Polizeiinspektion Nienburg / Schaumburg",
-     "href": "https://www.presseportal.de/blaulicht/nr/57922"
-    },
-    {
-     "text": "Polizei Bonn",
-     "href": "https://www.presseportal.de/blaulicht/nr/7304"
-    },
-    {
-     "text": "Bundespolizeiinspektion See Neustadt / Holstein",
-     "href": "https://www.presseportal.de/blaulicht/nr/70262"
-    },
-    {
-     "text": "Gütersloh",
-     "href": "https://www.presseportal.de/blaulicht/r/G%FCtersloh"
-    },
-    {
-     "text": "Mainz",
-     "href": "https://www.presseportal.de/blaulicht/r/Mainz"
-    },
-    {
-     "text": "Reutlingen",
-     "href": "https://www.presseportal.de/blaulicht/r/Reutlingen"
-    },
-    {
-     "text": "Stuttgart",
-     "href": "https://www.presseportal.de/blaulicht/r/Stuttgart"
-    },
-    {
-     "text": "Hofheim",
-     "href": "https://www.presseportal.de/blaulicht/r/Hofheim"
-    },
-    {
-     "text": "A 73 Höhe Schleusingen",
-     "href": "https://www.presseportal.de/blaulicht/r/A%2073%20H%F6he%20Schleusingen"
-    },
-    {
-     "text": "Landkreis Oldenburg",
-     "href": "https://www.presseportal.de/blaulicht/r/Landkreis%20Oldenburg"
-    },
-    {
-     "text": "Freiburg",
-     "href": "https://www.presseportal.de/blaulicht/r/Freiburg"
-    }
-   ],
-   "bilder": [
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/liste/1788e52e-acd4-48ce-886c-badde079d39d/polizei-d-ren-pol-dn-gas-und-bremse-vertauscht-umgestuerzte-laterne-verletzt-frau?crop=0,1,290,190",
-     "alt": "Polizei Düren: POL-DN: Gas- und Bremse vertauscht: Umgestürzte Laterne verletzt Frau",
-     "title": "Polizei Düren: POL-DN: Gas- und Bremse vertauscht: Umgestürzte Laterne verletzt Frau"
-    }
-   ]
+   "abgerufen": "2026-10-23T10:04:35.898Z",
+   "status": 503,
+   "fehlertext": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6269070",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6269070",
-   "abgerufen": "2026-10-22T10:11:55.438Z",
-   "status": 200,
-   "titel": "POL-DN: Schwer verletzt nach Auffahrunfall | Presseportal",
-   "meta": {
-    "description": "Polizei Düren - Merzenich - Am Montagmorgen (04.05.2026) kam es auf der B264, zwischen Merzenich und ...✚ Mehr lesen",
-    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
-    "og:site_name": "presseportal.de",
-    "og:url": "https://www.presseportal.de/blaulicht/pm/8/6269070",
-    "og:title": "POL-DN: Schwer verletzt nach Auffahrunfall",
-    "og:description": "Merzenich (ots) - Am Montagmorgen (04.05.2026) kam es auf der B264, zwischen Merzenich und Golzheim, zu einem Verkehrsunfall zwischen zwei Pkw. Dabei wurde eine Person schwer...",
-    "og:type": "article",
-    "og:image": "https://www.presseportal.de/some-default.jpg",
-    "og:image:height": "250",
-    "og:image:width": "250"
-   },
-   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n05.05.2026 – 13:07\nPolizei Düren\nPOL-DN: Schwer verletzt nach Auffahrunfall\nMerzenich (ots)\nAm Montagmorgen (04.05.2026) kam es auf der B264, zwischen Merzenich und Golzheim, zu einem Verkehrsunfall zwischen zwei Pkw. Dabei wurde eine Person schwer verletzt.\nGegen 08:00 Uhr befuhr eine 54-jährige Frau aus Kerpen mit ihrem Pkw die B264 aus Richtung Golzheim kommend in Richtung Merzenich. Zeitgleich fuhr vor ihr ein 25-jähriger Pkw-Fahrer aus Merzenich in die gleiche Richtung.\nDer 25-Jährige musste sein Fahrzeug aufgrund eines vorausfahrenden, unbeteiligten Pkw verkehrsbedingt abbremsen. Nach eigenen Angaben bemerkte die 54-Jährige das zu spät und fuhr auf den vor ihr befindlichen Pkw auf.\nDurch die Wucht des Aufpralls wurde die Frau schwer verletzt. Ein Rettungswagen brachte sie in ein nahegelegenes Krankenhaus. Der 25-Jährige blieb unverletzt. Es entstand ein Sachschaden von ca. 16000 Euro.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMerzenich\nNordrhein-Westfalen\nThemen in dieser Meldung\nAuffahrunfall\nRettungswagen\nPersonenkraftwagen\nPkw\nVerkehrsunfall\nKrankenhaus\nTransportnotfall\nTransport\nVerkehrsunglück\nVerkehrsnotfall\nBahnunglück\nBahn\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n05.05.2026 – 13:06\n2\nPOL-DN: Polizei und Ordnungsamt kontrollieren Halteverbot an der Anne-Frank-Gesamtschule - Fokus auf Aufklärung und Sicherheit\nmehr\n05.05.2026 – 13:03\nPOL-DN: Einbruch in Vereinsheim - Die Polizei bittet um Hinweise\nInden (ots) - Ein Vereinsheim in der Lehrer-Steffens-Straße geriet zwischen Sonntag (03.05.2026, 17:30 Uhr) und Montag (04.05.2026, 20:40 Uhr) in das Visier von Einbrechern. Im genannten Zeitraum verschafften sich bislang unbekannte Täter gewaltsam Zugang zum Gebäude. Entwendet wurde nach jetzigem Stand der Ermittlungen nichts. Die Kriminalpolizei ist am Tatort erschienen, hat Spuren gesichert und die Ermittlungen ...\nmehr\n04.05.2026 – 12:37\nPOL-DN: 17-jähriger Pkw-Fahrer flüchtet vor Polizei\nNiederzier (ots) - Ein Minderjähriger ohne Fahrerlaubnis versuchte am Donnerstag (30.04.2026), sich einer allgemeinen Verkehrskontrolle zu entziehen. Die Flucht endete mit einem Unfall. Gegen 22:10 Uhr sollte ein Pkw, der auf einem Feldeweg parallel zur L12 in der Nähe von Hambach fuhr, einer allgemeinen Verkehrskontrolle unterzogen werden. Nachdem der Streifenwagen, der ihm entgegengekommen war, Anhaltezeichen gegeben ...\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-UN: Kamen - Zigarettenautomat in Kamen aufgesprengt\nLPI-EF: Berauschter E-Scooter-Fahrer\nLPI-SHL: Berauscht unterwegs\nPOL-PDNW: Betrunken mit dem Elektrorollstuhl unterwegs...\nPOL-GM: Einbruch in Sportlerheim\nPolizeiinspektion Northeim\nPolizeiinspektion Saarlouis\nPolizeiinspektion Anklam\nBundespolizeiinspektion See Neustadt / Holstein\nLeitstellen-Zweckverband Nord\nKreisfeuerwehr Oldenburg\nPolizei Essen\nHessische Hochschule für öffentliches Management und Sicherheit (HöMS)\nKamen\nErfurt\nEbertshausen\nNeustadt/Weinstraße\nWaldbröl\nDelmenhorst\nKarlsruhe\nOestrich-Winkel",
-   "links": [
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6269070#"
-    },
-    {
-     "text": "Polizei Düren",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "",
-     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6269070%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Schwer%20verletzt%20nach%20Auffahrunfall&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6269070%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
-    },
-    {
-     "text": "",
-     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Schwer%20verletzt%20nach%20Auffahrunfall%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6269070%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6269070%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6269070%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Schwer+verletzt+nach+Auffahrunfall"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6269070#"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Auffahrunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Auffahrunfall"
-    },
-    {
-     "text": "Rettungswagen",
-     "href": "https://www.presseportal.de/blaulicht/st/Rettungswagen"
-    },
-    {
-     "text": "Personenkraftwagen",
-     "href": "https://www.presseportal.de/blaulicht/st/Personenkraftwagen"
-    },
-    {
-     "text": "Pkw",
-     "href": "https://www.presseportal.de/blaulicht/st/Pkw"
-    },
-    {
-     "text": "Verkehrsunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsunfall"
-    },
-    {
-     "text": "Krankenhaus",
-     "href": "https://www.presseportal.de/blaulicht/st/Krankenhaus"
-    },
-    {
-     "text": "Transportnotfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Transportnotfall"
-    },
-    {
-     "text": "Transport",
-     "href": "https://www.presseportal.de/blaulicht/st/Transport"
-    },
-    {
-     "text": "Verkehrsunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsungl%C3%BCck"
-    },
-    {
-     "text": "Verkehrsnotfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsnotfall"
-    },
-    {
-     "text": "Bahnunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Bahnungl%C3%BCck"
-    },
-    {
-     "text": "Bahn",
-     "href": "https://www.presseportal.de/blaulicht/st/Bahn"
-    },
-    {
-     "text": "Polizei",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei"
-    },
-    {
-     "text": "Polizei Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "POL-DN: Polizei und Ordnungsamt kontrollieren Halteverbot an der Anne-Frank-Gesamtschule - Fokus auf Aufklärung und Sicherheit",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6269066"
-    },
-    {
-     "text": "POL-DN: Einbruch in Vereinsheim - Die Polizei bittet um Hinweise",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6269062"
-    },
-    {
-     "text": "POL-DN: 17-jähriger Pkw-Fahrer flüchtet vor Polizei",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6268066"
-    },
-    {
-     "text": "POL-UN: Kamen - Zigarettenautomat in Kamen aufgesprengt",
-     "href": "https://www.presseportal.de/blaulicht/pm/65856/6046098"
-    },
-    {
-     "text": "LPI-EF: Berauschter E-Scooter-Fahrer",
-     "href": "https://www.presseportal.de/blaulicht/pm/126719/6194057"
-    },
-    {
-     "text": "LPI-SHL: Berauscht unterwegs",
-     "href": "https://www.presseportal.de/blaulicht/pm/126725/6138326"
-    },
-    {
-     "text": "POL-PDNW: Betrunken mit dem Elektrorollstuhl unterwegs...",
-     "href": "https://www.presseportal.de/blaulicht/pm/117687/6045860"
-    },
-    {
-     "text": "POL-GM: Einbruch in Sportlerheim",
-     "href": "https://www.presseportal.de/blaulicht/pm/65843/6187595"
-    },
-    {
-     "text": "Polizeiinspektion Northeim",
-     "href": "https://www.presseportal.de/blaulicht/nr/57929"
-    },
-    {
-     "text": "Polizeiinspektion Saarlouis",
-     "href": "https://www.presseportal.de/blaulicht/nr/138489"
-    },
-    {
-     "text": "Polizeiinspektion Anklam",
-     "href": "https://www.presseportal.de/blaulicht/nr/108768"
-    },
-    {
-     "text": "Bundespolizeiinspektion See Neustadt / Holstein",
-     "href": "https://www.presseportal.de/blaulicht/nr/70262"
-    },
-    {
-     "text": "Leitstellen-Zweckverband Nord",
-     "href": "https://www.presseportal.de/blaulicht/nr/75839"
-    },
-    {
-     "text": "Kreisfeuerwehr Oldenburg",
-     "href": "https://www.presseportal.de/blaulicht/nr/172811"
-    },
-    {
-     "text": "Polizei Essen",
-     "href": "https://www.presseportal.de/blaulicht/nr/11562"
-    },
-    {
-     "text": "Hessische Hochschule für öffentliches Management und Sicherheit (HöMS)",
-     "href": "https://www.presseportal.de/blaulicht/nr/103085"
-    },
-    {
-     "text": "Kamen",
-     "href": "https://www.presseportal.de/blaulicht/r/Kamen"
-    },
-    {
-     "text": "Erfurt",
-     "href": "https://www.presseportal.de/blaulicht/r/Erfurt"
-    },
-    {
-     "text": "Ebertshausen",
-     "href": "https://www.presseportal.de/blaulicht/r/Ebertshausen"
-    },
-    {
-     "text": "Neustadt/Weinstraße",
-     "href": "https://www.presseportal.de/blaulicht/r/Neustadt%252FWeinstra%DFe"
-    },
-    {
-     "text": "Waldbröl",
-     "href": "https://www.presseportal.de/blaulicht/r/Waldbr%F6l"
-    },
-    {
-     "text": "Delmenhorst",
-     "href": "https://www.presseportal.de/blaulicht/r/Delmenhorst"
-    },
-    {
-     "text": "Karlsruhe",
-     "href": "https://www.presseportal.de/blaulicht/r/Karlsruhe"
-    },
-    {
-     "text": "Oestrich-Winkel",
-     "href": "https://www.presseportal.de/blaulicht/r/Oestrich-Winkel"
-    }
-   ],
-   "bilder": [
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/liste/93b663d1-855e-4404-9df1-955eced38c47/polizei-d-ren-pol-dn-polizei-und-ordnungsamt-kontrollieren-halteverbot-an-der-anne-frank-gesamtschul?crop=0,98,290,190",
-     "alt": "Polizei Düren: POL-DN: Polizei und Ordnungsamt kontrollieren Halteverbot an der Anne-Frank-Gesamtschule - Fokus auf Aufklärung und Sicherheit",
-     "title": "Polizei Düren: POL-DN: Polizei und Ordnungsamt kontrollieren Halteverbot an der Anne-Frank-Gesamtschule - Fokus auf Aufklärung und Sicherheit"
-    }
-   ]
+   "abgerufen": "2026-10-23T10:04:37.233Z",
+   "status": 503,
+   "fehlertext": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6250459",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6250459",
-   "abgerufen": "2026-10-22T10:11:56.870Z",
-   "status": 200,
-   "titel": "POL-DN: Verkehrsunfall beim Abbiegen - ein Leichtverletzter | Presseportal",
-   "meta": {
-    "description": "Polizei Düren - Merzenich - Am Montagnachmittag (06.04.2026) kam es im Kreuzungsbereich B264 / L264 zu ...✚ Mehr lesen",
-    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
-    "og:site_name": "presseportal.de",
-    "og:url": "https://www.presseportal.de/blaulicht/pm/8/6250459",
-    "og:title": "POL-DN: Verkehrsunfall beim Abbiegen - ein Leichtverletzter",
-    "og:description": "Merzenich (ots) - Am Montagnachmittag (06.04.2026) kam es im Kreuzungsbereich B264 / L264 zu einem Alleinunfall. Ein Mann wurde dabei leicht verletzt. Gegen 15:15 Uhr befuhr ein...",
-    "og:type": "article",
-    "og:image": "https://www.presseportal.de/some-default.jpg",
-    "og:image:height": "250",
-    "og:image:width": "250"
-   },
-   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n07.04.2026 – 12:07\nPolizei Düren\nPOL-DN: Verkehrsunfall beim Abbiegen - ein Leichtverletzter\nMerzenich (ots)\nAm Montagnachmittag (06.04.2026) kam es im Kreuzungsbereich B264 / L264 zu einem Alleinunfall. Ein Mann wurde dabei leicht verletzt.\nGegen 15:15 Uhr befuhr ein 35-jähriger Mann aus Bornheim mit seinem Kraftrad die B264 aus Düren kommend in Fahrtrichtung Golzheim. Er beabsichtigte, nach rechts auf die L264 abzubiegen. Beim Abbiegevorgang verlor der Fahrer nach jetzigem Stand der Ermittlungen die Kontrolle über das Kraftrad und stürzte. Das Fahrzeug rutschte dabei wenige Meter über die Fahrbahn.\nDer 35-Jährige wurde durch den Unfall leicht verletzt in ein nahegelegenes Krankenhaus gebracht.\nEs entstand ein Sachschaden von ca. 200 Euro.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMerzenich\nNordrhein-Westfalen\nThemen in dieser Meldung\nAlleinunfall\nVerkehrsunfall\nFahrzeug\nTransport\nVerkehrsunglück\nVerkehrsbericht\nInvalidität\nTransportnotfall\nMedizin, Gesundheit\nVerkehrsnotfall\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n07.04.2026 – 12:06\nPOL-DN: Ohne Fahrerlaubnis Alleinunfall verursacht\nNideggen (ots) - Am Morgen des Ostermontages (06.04.2026) kam es auf der L246 zu einem Alleinunfall eines Pkw-Fahrers. Dieser entfernte sich zu Fuß vom Unfallort, konnte aber von der Polizei in der Nähe angetroffen werden. Gegen 05:45 Uhr erhielt die Polizei Kenntnis von einem im Straßengraben liegenden Pkw. Nach jetzigem Stand der Ermittlungen befuhr ein 34-jähriger Mann aus Blankenheim mit seinem Pkw die L246 aus ...\nmehr\n07.04.2026 – 12:05\nPOL-DN: Verkehrsunfall beim Überholen - 18-Jährige leicht verletzt\nDüren (ots) - Auf der K2 kam es am Donnerstag (02.04.2026) zu einem Verkehrsunfall, bei dem eine 18-jährige Autofahrerin leicht verletzt wurde. Die 18-Jährige aus Niederzier befuhr die K2 in Fahrtrichtung Arnoldsweiler und beabsichtigte, ein vor ihr fahrendes Fahrzeug zu überholen. Hierzu wechselte sie auf die Gegenfahrbahn. Als sie dort ein entgegenkommendes ...\nmehr\n07.04.2026 – 12:04\nPOL-DN: Mehrere Einbrüche über das Osterwochenende - Polizei sucht Zeugen\nKreis Düren (ots) - Über das Osterwochenende kam es im Kreisgebiet zu mehreren Einbrüchen und Einbruchsversuchen. Die Polizei hat die Ermittlungen aufgenommen und bittet um Zeugenhinweise. Am Karfreitag (03.04.2026) verschafften sich gegen 21:15 Uhr zwei bislang unbekannte Täter gewaltsam Zugang zu einem Wohnhaus in der Straße \"Auf dem Stein\" in Vettweiß. Die ...\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-PDKL: Autofahrer handelt sich Ärger mit der Polizei ein\nPOL-PPWP: Einbrecher nehmen Tresor mit\nPOL-KN: (Allensbach, Lkr. Konstanz) Unbekannte beschädigen Glasscheibe an der...\nPOL-LG: ++ Polizei warnt vor angeblichen Schenkungen von Küchengeräten ++...\nLPI-SHL: Fehler bei Spurwechsel\nFFW Gemeinde Schwalmtal\nFreiwillige Feuerwehr Bornheim\nFreiwillige Feuerwehr Bad Segeberg\nPolizeipräsidium Mainz\nPolizeidirektion Neustadt/Weinstraße\nFeuerwehr Plettenberg\nKreisfeuerwehrverband Görlitz e.V.\nBevölkerungsschutz Landkreis Merzig-Wadern\nKaiserslautern\nKonstanz\nAllensbach\nLüneburg\nHildburghausen\nGoslar\nLegden\nWuppertal",
-   "links": [
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6250459#"
-    },
-    {
-     "text": "Polizei Düren",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "",
-     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6250459%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Verkehrsunfall%20beim%20Abbiegen%20-%20ein%20Leichtverletzter&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6250459%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
-    },
-    {
-     "text": "",
-     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Verkehrsunfall%20beim%20Abbiegen%20-%20ein%20Leichtverletzter%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6250459%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6250459%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
-    },
-    {
-     "text": "",
-     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F6250459%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Verkehrsunfall+beim+Abbiegen+-+ein+Leichtverletzter"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Folgen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6250459#"
-    },
-    {
-     "text": "Merzenich",
-     "href": "https://www.presseportal.de/regional/Merzenich"
-    },
-    {
-     "text": "Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alleinunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Alleinunfall"
-    },
-    {
-     "text": "Verkehrsunfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsunfall"
-    },
-    {
-     "text": "Fahrzeug",
-     "href": "https://www.presseportal.de/blaulicht/st/Fahrzeug"
-    },
-    {
-     "text": "Transport",
-     "href": "https://www.presseportal.de/blaulicht/st/Transport"
-    },
-    {
-     "text": "Verkehrsunglück",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsungl%C3%BCck"
-    },
-    {
-     "text": "Verkehrsbericht",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsbericht"
-    },
-    {
-     "text": "Invalidität",
-     "href": "https://www.presseportal.de/blaulicht/st/Invalidit%C3%A4t"
-    },
-    {
-     "text": "Transportnotfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Transportnotfall"
-    },
-    {
-     "text": "Medizin, Gesundheit",
-     "href": "https://www.presseportal.de/blaulicht/st/Medizin%2C%20Gesundheit"
-    },
-    {
-     "text": "Verkehrsnotfall",
-     "href": "https://www.presseportal.de/blaulicht/st/Verkehrsnotfall"
-    },
-    {
-     "text": "Polizei",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei"
-    },
-    {
-     "text": "Polizei Nordrhein-Westfalen",
-     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
-    },
-    {
-     "text": "Alle Meldungen",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "Alle",
-     "href": "https://www.presseportal.de/blaulicht/nr/8"
-    },
-    {
-     "text": "POL-DN: Ohne Fahrerlaubnis Alleinunfall verursacht",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6250455"
-    },
-    {
-     "text": "POL-DN: Verkehrsunfall beim Überholen - 18-Jährige leicht verletzt",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6250451"
-    },
-    {
-     "text": "POL-DN: Mehrere Einbrüche über das Osterwochenende - Polizei sucht Zeugen",
-     "href": "https://www.presseportal.de/blaulicht/pm/8/6250448"
-    },
-    {
-     "text": "POL-PDKL: Autofahrer handelt sich Ärger mit der Polizei ein",
-     "href": "https://www.presseportal.de/blaulicht/pm/117679/6034680"
-    },
-    {
-     "text": "POL-PPWP: Einbrecher nehmen Tresor mit",
-     "href": "https://www.presseportal.de/blaulicht/pm/117683/6185214"
-    },
-    {
-     "text": "POL-KN: (Allensbach, Lkr. Konstanz) Unbekannte beschädigen Glasscheibe an der...",
-     "href": "https://www.presseportal.de/blaulicht/pm/110973/6211199"
-    },
-    {
-     "text": "POL-LG: ++ Polizei warnt vor angeblichen Schenkungen von Küchengeräten ++...",
-     "href": "https://www.presseportal.de/blaulicht/pm/59488/6083442"
-    },
-    {
-     "text": "LPI-SHL: Fehler bei Spurwechsel",
-     "href": "https://www.presseportal.de/blaulicht/pm/126725/6168900"
-    },
-    {
-     "text": "FFW Gemeinde Schwalmtal",
-     "href": "https://www.presseportal.de/blaulicht/nr/170081"
-    },
-    {
-     "text": "Freiwillige Feuerwehr Bornheim",
-     "href": "https://www.presseportal.de/blaulicht/nr/183214"
-    },
-    {
-     "text": "Freiwillige Feuerwehr Bad Segeberg",
-     "href": "https://www.presseportal.de/blaulicht/nr/157624"
-    },
-    {
-     "text": "Polizeipräsidium Mainz",
-     "href": "https://www.presseportal.de/blaulicht/nr/117708"
-    },
-    {
-     "text": "Polizeidirektion Neustadt/Weinstraße",
-     "href": "https://www.presseportal.de/blaulicht/nr/117687"
-    },
-    {
-     "text": "Feuerwehr Plettenberg",
-     "href": "https://www.presseportal.de/blaulicht/nr/116600"
-    },
-    {
-     "text": "Kreisfeuerwehrverband Görlitz e.V.",
-     "href": "https://www.presseportal.de/blaulicht/nr/169679"
-    },
-    {
-     "text": "Bevölkerungsschutz Landkreis Merzig-Wadern",
-     "href": "https://www.presseportal.de/blaulicht/nr/167397"
-    },
-    {
-     "text": "Kaiserslautern",
-     "href": "https://www.presseportal.de/blaulicht/r/Kaiserslautern"
-    },
-    {
-     "text": "Konstanz",
-     "href": "https://www.presseportal.de/blaulicht/r/Konstanz"
-    },
-    {
-     "text": "Allensbach",
-     "href": "https://www.presseportal.de/blaulicht/r/Allensbach"
-    },
-    {
-     "text": "Lüneburg",
-     "href": "https://www.presseportal.de/blaulicht/r/L%FCneburg"
-    },
-    {
-     "text": "Hildburghausen",
-     "href": "https://www.presseportal.de/blaulicht/r/Hildburghausen"
-    },
-    {
-     "text": "Goslar",
-     "href": "https://www.presseportal.de/blaulicht/r/Goslar"
-    },
-    {
-     "text": "Legden",
-     "href": "https://www.presseportal.de/blaulicht/r/Legden"
-    },
-    {
-     "text": "Wuppertal",
-     "href": "https://www.presseportal.de/blaulicht/r/Wuppertal"
-    }
-   ],
-   "bilder": [
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    },
-    {
-     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
-     "alt": "Alle Meldungen",
-     "title": "Polizei Düren"
-    }
-   ]
+   "abgerufen": "2026-10-23T10:04:38.572Z",
+   "status": 503,
+   "fehlertext": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
   },
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6248735",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6248735",
-   "abgerufen": "2026-10-22T10:11:58.308Z",
+   "abgerufen": "2026-10-23T10:04:40.684Z",
    "status": 200,
    "titel": "POL-DN: Leichtkraftrad entwendet - Die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -5127,7 +3849,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6246258",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6246258",
-   "abgerufen": "2026-10-22T10:11:59.782Z",
+   "abgerufen": "2026-10-23T10:04:42.093Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall im Gegenverkehr | Presseportal",
    "meta": {
@@ -5373,7 +4095,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6238991",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6238991",
-   "abgerufen": "2026-10-22T10:12:01.245Z",
+   "abgerufen": "2026-10-23T10:04:43.557Z",
    "status": 200,
    "titel": "POL-DN: Drei Verletzte bei Frontalzusammenstoß auf der B264 - die Polizei sucht ... | Presseportal",
    "meta": {
@@ -5672,7 +4394,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6237118",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6237118",
-   "abgerufen": "2026-10-22T10:12:02.914Z",
+   "abgerufen": "2026-10-23T10:04:44.968Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in Einfamilienhaus - die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -5902,7 +4624,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6235029",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6235029",
-   "abgerufen": "2026-10-22T10:12:04.346Z",
+   "abgerufen": "2026-10-23T10:04:46.383Z",
    "status": 200,
    "titel": "POL-DN: Drei Leichtverletzte, ein Pkw-Brand und hoher Sachschaden nach Verkehrsunfall | Presseportal",
    "meta": {
@@ -6164,7 +4886,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6223425",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6223425",
-   "abgerufen": "2026-10-22T10:12:05.817Z",
+   "abgerufen": "2026-10-23T10:04:47.832Z",
    "status": 200,
    "titel": "POL-DN: Werkzeuge aus Fahrzeugen in Düren und Merzenich entwendet | Presseportal",
    "meta": {
@@ -6398,7 +5120,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6221790",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6221790",
-   "abgerufen": "2026-10-22T10:12:07.251Z",
+   "abgerufen": "2026-10-23T10:04:49.272Z",
    "status": 200,
    "titel": "POL-DN: Brand in Merzenich | Presseportal",
    "meta": {
@@ -6624,7 +5346,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6220661",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6220661",
-   "abgerufen": "2026-10-22T10:12:08.674Z",
+   "abgerufen": "2026-10-23T10:04:50.682Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in Einfamilienhaus - Zeugen gesucht | Presseportal",
    "meta": {
@@ -6882,7 +5604,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6218373",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6218373",
-   "abgerufen": "2026-10-22T10:12:10.115Z",
+   "abgerufen": "2026-10-23T10:04:52.417Z",
    "status": 200,
    "titel": "POL-DN: Verkehrsunfall an Rosenmontag unter Alkoholeinfluss - Pkw in Grünstreifen | Presseportal",
    "meta": {
@@ -7165,7 +5887,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6207195",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6207195",
-   "abgerufen": "2026-10-22T10:12:11.559Z",
+   "abgerufen": "2026-10-23T10:04:53.892Z",
    "status": 200,
    "titel": "POL-DN: Zeugen nach Einbruch in Einfamilienhaus gesucht | Presseportal",
    "meta": {
@@ -7424,7 +6146,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6202595",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6202595",
-   "abgerufen": "2026-10-22T10:12:13.027Z",
+   "abgerufen": "2026-10-23T10:04:55.404Z",
    "status": 200,
    "titel": "POL-DN: Bei erneutem Betrugsversuch erwischt | Presseportal",
    "meta": {
@@ -7686,7 +6408,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6186971",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6186971",
-   "abgerufen": "2026-10-22T10:12:14.484Z",
+   "abgerufen": "2026-10-23T10:04:56.896Z",
    "status": 200,
    "titel": "POL-DN: Einbrecher waren auch an Weihnachten aktiv - Die Polizei sucht Zeugen | Presseportal",
    "meta": {
@@ -7952,7 +6674,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6173365",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6173365",
-   "abgerufen": "2026-10-22T10:12:16.008Z",
+   "abgerufen": "2026-10-23T10:04:58.363Z",
    "status": 200,
    "titel": "POL-DN: Zu schnell unterwegs? Dann gibt's Saures! | Presseportal",
    "meta": {
@@ -8224,7 +6946,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/5775696",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/5775696",
-   "abgerufen": "2026-10-22T10:12:17.981Z",
+   "abgerufen": "2026-10-23T10:04:59.789Z",
    "status": 200,
    "titel": "POL-DN: Von der Straße abgekommen | Presseportal",
    "meta": {
@@ -8458,7 +7180,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/4285879",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/4285879",
-   "abgerufen": "2026-10-22T10:12:19.713Z",
+   "abgerufen": "2026-10-23T10:05:01.197Z",
    "status": 200,
    "titel": "POL-DN: Frontal in den Gegenverkehr | Presseportal",
    "meta": {
@@ -8673,7 +7395,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/2777591",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/2777591",
-   "abgerufen": "2026-10-22T10:12:21.146Z",
+   "abgerufen": "2026-10-23T10:05:02.631Z",
    "status": 200,
    "titel": "POL-DN: Einbruchsversuch | Presseportal",
    "meta": {
@@ -8879,7 +7601,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/6330807",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/6330807",
-   "abgerufen": "2026-10-22T10:12:22.656Z",
+   "abgerufen": "2026-10-23T10:05:04.058Z",
    "status": 200,
    "titel": "POL-DN: Feldbrand in Merzenich-Girbelsrath | Presseportal",
    "meta": {
@@ -9097,7 +7819,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/4054266",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/4054266",
-   "abgerufen": "2026-10-22T10:12:24.072Z",
+   "abgerufen": "2026-10-23T10:05:05.473Z",
    "status": 200,
    "titel": "POL-DN: Einbruch in eine Gaststätte misslungen | Presseportal",
    "meta": {
@@ -9313,7 +8035,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/5726458",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/5726458",
-   "abgerufen": "2026-10-22T10:12:25.537Z",
+   "abgerufen": "2026-10-23T10:05:06.896Z",
    "status": 200,
    "titel": "POL-DN: Junger Motorradfahrer bei Alleinunfall schwer verletzt | Presseportal",
    "meta": {
@@ -9580,7 +8302,7 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/11559/4955488",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/11559/4955488",
-   "abgerufen": "2026-10-22T10:12:27.133Z",
+   "abgerufen": "2026-10-23T10:05:08.319Z",
    "status": 200,
    "titel": "POL-AC: Steinwürfe auf Radlader am Hambacher Forst - Baggerführer bleibt unverletzt ... | Presseportal",
    "meta": {
@@ -9834,9 +8556,217 @@
   {
    "url": "https://www.presseportal.de/blaulicht/pm/8/3612667",
    "endUrl": "https://www.presseportal.de/blaulicht/pm/8/3612667",
-   "abgerufen": "2026-10-22T10:12:42.159Z",
-   "status": 502,
-   "fehlertext": "<html><body><h1>502 Bad Gateway</h1>\nThe server returned an invalid or incomplete response.\n</body></html>\n"
+   "abgerufen": "2026-10-23T10:05:09.762Z",
+   "status": 200,
+   "titel": "POL-DN: Pkw überschlagen | Presseportal",
+   "meta": {
+    "description": "Polizei Düren - Morschenich - Zu einem Alleinunfall wurde die Polizei am frühen Donnerstagmorgen nach ...✚ Mehr lesen",
+    "keywords": "NRW, Polizei, Kriminalität,Presse,Pressemitteilung,Pressemeldung,Pressemitteilungen",
+    "og:site_name": "presseportal.de",
+    "og:url": "https://www.presseportal.de/blaulicht/pm/8/3612667",
+    "og:title": "POL-DN: Pkw überschlagen",
+    "og:description": "Morschenich (ots) - Zu einem Alleinunfall wurde die Polizei am frühen Donnerstagmorgen nach Morschenich gerufen. Ein 30 Jahre alter Autofahrer verletzte sich leicht. Etwa um...",
+    "og:type": "article",
+    "og:image": "https://cache.pressmailing.net/thumbnail/highlight/7923f1e3-c43f-4135-85df-b67ea14889f4/image?crop=0,4,630,412",
+    "og:image:width": "630",
+    "og:image:height": "412"
+   },
+   "text": "Alle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\n13.04.2017 – 13:35\nPolizei Düren\nPOL-DN: Pkw überschlagen\nBild-Infos\nDownload\nMorschenich (ots)\nZu einem Alleinunfall wurde die Polizei am frühen Donnerstagmorgen nach Morschenich gerufen. Ein 30 Jahre alter Autofahrer verletzte sich leicht.\nEtwa um 05:00 Uhr befuhr ein Autofahrer aus Würselen die L 257. Er kam aus Richtung Morschenich und fuhr in Richtung Buir, als sein Fahrzeug in einer Rechtskurve von der Fahrbahn abkam und in das angrenzende Feld fuhr. Dort überschlug sich der Wagen mehrfach, bevor er zum Stillstand kam.\nDer 30-Jährige konnte sich selbstständig aus seinem Auto befreien. Er wurde noch an der Unfallstelle medizinisch versorgt, bevor ihn ein Rettungswagen zur ambulanten Behandlung in ein Krankenhaus brachte. Sein Auto musste abgeschleppt werden, der Unfallschaden beläuft sich auf etwa 2000 Euro.\nRückfragen bitte an:\nPolizei Düren\nPressestelle\nTelefon: 02421 949-1100\nFax: 02421 949-1199\nOriginal-Content von: Polizei Düren, übermittelt durch news aktuell\nAlle Meldungen\nFolgen Keine Meldung von Polizei Düren mehr verpassen.\nDruckversion\nPDF-Version\nOrte in dieser Meldung\nMorschenich\nNordrhein-Westfalen\nThemen in dieser Meldung\nPolizei\nPolizei Nordrhein-Westfalen\nWeitere Meldungen: Polizei Düren\nWeitere Meldungen: Polizei Düren\nAlle Meldungen Alle\n13.04.2017 – 13:34\nPOL-DN: Angetrunken zurückgesetzt\nDüren (ots) - Beim Rangieren mit seinem Lkw samt Anhänger beschädigte am Mittwochnachmittag ein 52 Jahre alter Mann zwei weitere Fahrzeuge. Vorangegangener Alkoholkonsum dürfte die Erklärung für die mangelhafte Fahrleistung sein. Gegen 17:15 Uhr fuhr der aus Hürtgenwald stammende Lastwagenfahrer sein Gespann rückwärts aus der Straße Schieferbenden heraus in Richtung Monschauer Landstraße. Der Fahrer eines parkenden Autos bot dem 52-Jährigen noch an, seinen Wagen ...\nmehr\n13.04.2017 – 13:33\nPOL-DN: Festnahme\nJülich (ots) - Drei Männer im Alter von 24 und 29 Jahren wurden am Mittwochnachmittag vorläufig festgenommen. Ihnen wird ein besonders schwerer Fall des Ladendiebstahls zur Last gelegt. Das Trio hatte sich gegen 15:30 Uhr in einer Drogerie in der Kölnstraße aufgehalten. Dort verdeckten die beiden Jüngeren das Tun des Dritten: dieser verstaute Parfüm im Wert von über 500 Euro in einer mitgebrachten Plastiktüte - eine Tüte, die, wie sich später herausstellte, so ...\nmehr\n13.04.2017 – 13:32\nPOL-DN: Fahrradfahrer übersehen\nDüren (ots) - Zu einem Zusammenstoß zwischen einem Auto und einem Fahrradfahrer ist es am Mittwochnachmittag in der Zülpicher Straße gekommen. Der Radler verletzte sich dabei leicht. Gegen 14:40 Uhr hatte ein 53 Jahre alter Mann aus Nörvenich mit seinem Zweirad die Stockheimer Landstraße (B 56) in Richtung stadteinwärts befahren. Hierbei nutzte er den linksseitig gelegenen Fuß- und Radweg. Gleichzeitig befuhr ein 68 Jahre alter Autofahrer aus Heimbach die Zülpicher ...\nmehr\nDas könnte Sie auch interessieren\nDas könnte Sie auch interessieren\nPOL-SE: Elmshorn - Polizei lädt zur Fahrradcodierung ein\nPOL-PDLU: (Beindersheim) - Einbruch in Vereinsheim\nPOL-PPMZ: Konzert im Dom gestört\nPOL-PDKH: Verkehrsunfall mit Personenschaden\nPOL-H: Zeugenaufruf!\nBurgwedel: Fünf Verletzte bei Verkehrsunfall\nPolizeipräsidium Mittelhessen - Pressestelle Wetterau\nFeuerwehr Wuppertal\nHauptzollamt Landshut\nHauptzollamt Nürnberg\nFeuerwehr Bergheim\nPolizei Paderborn\nFeuerwehr Ludwigshafen\nFeuerwehr Witten\nBad Segeberg\nBeindersheim\nMainz\nOrtslage Biebelsheim\nHannover\nOlpe\nPirmasens\nBad Ems",
+   "links": [
+    {
+     "text": "",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "Alle Meldungen",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "Folgen",
+     "href": "https://www.presseportal.de/blaulicht/pm/8/3612667#"
+    },
+    {
+     "text": "Polizei Düren",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "",
+     "href": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F3612667%2F%3Futm_source%3Dfacebook%26utm_medium%3Dsocial"
+    },
+    {
+     "text": "",
+     "href": "https://twitter.com/intent/tweet?text=POL-DN%3A%20Pkw%20%C3%BCberschlagen&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F3612667%2F%3Futm_source%3Dtwitter%26utm_medium%3Dsocial&hashtags=ots&lang=de"
+    },
+    {
+     "text": "",
+     "href": "https://web.whatsapp.com/send?text=POL-DN%3A%20Pkw%20%C3%BCberschlagen%0A%0Ahttps%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F3612667%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial"
+    },
+    {
+     "text": "",
+     "href": "https://www.xing.com/app/user?op=share;url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F3612667%2F%3Futm_source%3Dxing%26utm_medium%3Dsocial"
+    },
+    {
+     "text": "",
+     "href": "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.presseportal.de%2Fblaulicht%2Fpm%2F8%2F3612667%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial&title=POL-DN%3A+Pkw+%C3%BCberschlagen"
+    },
+    {
+     "text": "",
+     "href": "https://cache.pressmailing.net/thumbnail/story_hires/7923f1e3-c43f-4135-85df-b67ea14889f4/image.jpg"
+    },
+    {
+     "text": "Morschenich",
+     "href": "https://www.presseportal.de/regional/Morschenich"
+    },
+    {
+     "text": "",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "Alle Meldungen",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "Folgen",
+     "href": "https://www.presseportal.de/blaulicht/pm/8/3612667#"
+    },
+    {
+     "text": "Morschenich",
+     "href": "https://www.presseportal.de/regional/Morschenich"
+    },
+    {
+     "text": "Nordrhein-Westfalen",
+     "href": "https://www.presseportal.de/blaulicht/l/nordrhein-westfalen"
+    },
+    {
+     "text": "Polizei",
+     "href": "https://www.presseportal.de/blaulicht/d/polizei"
+    },
+    {
+     "text": "Polizei Nordrhein-Westfalen",
+     "href": "https://www.presseportal.de/blaulicht/d/polizei/l/nordrhein-westfalen"
+    },
+    {
+     "text": "Alle Meldungen",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "Alle",
+     "href": "https://www.presseportal.de/blaulicht/nr/8"
+    },
+    {
+     "text": "POL-DN: Angetrunken zurückgesetzt",
+     "href": "https://www.presseportal.de/blaulicht/pm/8/3612663"
+    },
+    {
+     "text": "POL-DN: Festnahme",
+     "href": "https://www.presseportal.de/blaulicht/pm/8/3612662"
+    },
+    {
+     "text": "POL-DN: Fahrradfahrer übersehen",
+     "href": "https://www.presseportal.de/blaulicht/pm/8/3612659"
+    },
+    {
+     "text": "POL-SE: Elmshorn - Polizei lädt zur Fahrradcodierung ein",
+     "href": "https://www.presseportal.de/blaulicht/pm/19027/3611515"
+    },
+    {
+     "text": "POL-PDLU: (Beindersheim) - Einbruch in Vereinsheim",
+     "href": "https://www.presseportal.de/blaulicht/pm/117688/3593588"
+    },
+    {
+     "text": "POL-PPMZ: Konzert im Dom gestört",
+     "href": "https://www.presseportal.de/blaulicht/pm/117708/3470223"
+    },
+    {
+     "text": "POL-PDKH: Verkehrsunfall mit Personenschaden",
+     "href": "https://www.presseportal.de/blaulicht/pm/117703/3470101"
+    },
+    {
+     "text": "POL-H: Zeugenaufruf! Burgwedel: Fünf Verletzte bei Verkehrsunfall",
+     "href": "https://www.presseportal.de/blaulicht/pm/66841/3333006"
+    },
+    {
+     "text": "Polizeipräsidium Mittelhessen - Pressestelle Wetterau",
+     "href": "https://www.presseportal.de/blaulicht/nr/43647"
+    },
+    {
+     "text": "Feuerwehr Wuppertal",
+     "href": "https://www.presseportal.de/blaulicht/nr/115885"
+    },
+    {
+     "text": "Hauptzollamt Landshut",
+     "href": "https://www.presseportal.de/blaulicht/nr/121254"
+    },
+    {
+     "text": "Hauptzollamt Nürnberg",
+     "href": "https://www.presseportal.de/blaulicht/nr/121257"
+    },
+    {
+     "text": "Feuerwehr Bergheim",
+     "href": "https://www.presseportal.de/blaulicht/nr/168361"
+    },
+    {
+     "text": "Polizei Paderborn",
+     "href": "https://www.presseportal.de/blaulicht/nr/55625"
+    },
+    {
+     "text": "Feuerwehr Ludwigshafen",
+     "href": "https://www.presseportal.de/blaulicht/nr/135123"
+    },
+    {
+     "text": "Feuerwehr Witten",
+     "href": "https://www.presseportal.de/blaulicht/nr/120429"
+    },
+    {
+     "text": "Bad Segeberg",
+     "href": "https://www.presseportal.de/blaulicht/r/Bad%20Segeberg"
+    },
+    {
+     "text": "Beindersheim",
+     "href": "https://www.presseportal.de/blaulicht/r/Beindersheim"
+    },
+    {
+     "text": "Mainz",
+     "href": "https://www.presseportal.de/blaulicht/r/Mainz"
+    },
+    {
+     "text": "Ortslage Biebelsheim",
+     "href": "https://www.presseportal.de/blaulicht/r/Ortslage%20Biebelsheim"
+    },
+    {
+     "text": "Hannover",
+     "href": "https://www.presseportal.de/blaulicht/r/Hannover"
+    },
+    {
+     "text": "Olpe",
+     "href": "https://www.presseportal.de/blaulicht/r/Olpe"
+    },
+    {
+     "text": "Pirmasens",
+     "href": "https://www.presseportal.de/blaulicht/r/Pirmasens"
+    },
+    {
+     "text": "Bad Ems",
+     "href": "https://www.presseportal.de/blaulicht/r/Bad%20Ems"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
+     "alt": "Alle Meldungen",
+     "title": "Polizei Düren"
+    },
+    {
+     "src": "https://cache.pressmailing.net/thumbnail/story_big/7923f1e3-c43f-4135-85df-b67ea14889f4/pol-dn-pkw-berschlagen",
+     "alt": "POL-DN: Pkw überschlagen",
+     "title": ""
+    },
+    {
+     "src": "https://cache.pressmailing.net/thumbnail/small/9bbc7a6c-b2af-4dc8-8c18-f6b17cdf3c2c/logo",
+     "alt": "Alle Meldungen",
+     "title": "Polizei Düren"
+    }
+   ]
   }
  ]
 }
