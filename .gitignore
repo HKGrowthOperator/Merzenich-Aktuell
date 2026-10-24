@@ -1,1 +1,7 @@
 wordpress/theme/merzenich-aktuell/static/
+
+# Erklärvideo: Clips und Renderergebnis entstehen mit bauen.mjs / hyperframes render
+docs/anleitung/video/clips/
+docs/anleitung/video/*.mp4
+docs/anleitung/video/.hyperframes/
+docs/anleitung/video/medien/

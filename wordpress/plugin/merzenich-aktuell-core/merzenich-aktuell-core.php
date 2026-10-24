@@ -74,6 +74,7 @@ require_once MA_CORE_PATH . 'includes/seo.php';
 require_once MA_CORE_PATH . 'includes/feeds.php';
 require_once MA_CORE_PATH . 'includes/rest-cache.php';
 require_once MA_CORE_PATH . 'includes/push.php';
+require_once MA_CORE_PATH . 'includes/hilfe.php';
 require_once MA_CORE_PATH . 'includes/admin.php';
 
 add_action('plugins_loaded', function () {

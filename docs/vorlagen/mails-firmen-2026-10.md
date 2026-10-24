@@ -30,7 +30,9 @@ Sie können Beiträge auch selbst schreiben:
    Benutzername: [Benutzername]
    Das Passwort teilen wir Ihnen persönlich mit.
 2. Unter „Profil“ ein eigenes Passwort festlegen.
-3. „Neue Meldung schreiben“, Text und auf Wunsch ein Foto einfügen, „Zur Prüfung einreichen“.
+3. „Neue Meldung schreiben“, Text und auf Wunsch ein Foto einfügen, „Zur Überprüfung einreichen“.
+
+Eine Anleitung als PDF und ein kurzes Erklärvideo finden Sie nach dem Anmelden links im Menü unter „Hilfe“. Die Anleitung können Sie auch direkt öffnen: https://merzenich-aktuell.de/wp-content/plugins/merzenich-aktuell-core/assets/hilfe/anleitung-zugang.pdf
 
 Die Redaktion prüft jeden Beitrag vor der Veröffentlichung; Sie bekommen eine Nachricht, sobald er online ist.
 
@@ -64,7 +66,9 @@ Die Angaben stammen von kbs-management.tv (Startseite und Impressum, Stand 24.10
    Benutzername: [Benutzername]
    Das Passwort wird persönlich mitgeteilt.
 2. Unter „Profil“ ein eigenes Passwort festlegen.
-3. Beiträge mit „Neue Meldung schreiben“ anlegen und zur Prüfung einreichen.
+3. Beiträge mit „Neue Meldung schreiben“ anlegen und „Zur Überprüfung einreichen“.
+
+Eine Anleitung als PDF und ein kurzes Erklärvideo finden Sie nach dem Anmelden links im Menü unter „Hilfe“. Die Anleitung können Sie auch direkt öffnen: https://merzenich-aktuell.de/wp-content/plugins/merzenich-aktuell-core/assets/hilfe/anleitung-zugang.pdf
 
 Mit freundlichen Grüßen
 

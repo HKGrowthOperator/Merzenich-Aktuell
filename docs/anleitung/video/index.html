@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>So geht's: Ihr Zugang bei Merzenich Aktuell</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:'Hanken Grotesk';src:url('medien/hanken-grotesk-latin-wght-normal.woff2') format('woff2');font-weight:100 900}
+@font-face{font-family:'Newsreader';src:url('medien/newsreader-latin-wght-normal.woff2') format('woff2');font-weight:200 800}
+:root{--rot:#971725;--tinte:#151412;--leise:#5f5b55;--papier:#f4f1ec;--linie:#e3dfd8}
+body{margin:0;background:var(--papier)}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--papier);color:var(--tinte);font-family:'Hanken Grotesk',Arial,sans-serif}
+.clip{position:absolute}
+.voll{inset:0;z-index:5;background:var(--papier);display:flex;flex-direction:column;justify-content:center;padding:0 160px}
+.voll .logo{width:360px;margin-bottom:64px}
+.voll h1{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:132px;line-height:1.02;margin:0}
+.voll h1 span{color:var(--rot)}
+.voll p{font-size:40px;color:var(--leise);margin:36px 0 0;max-width:1300px;line-height:1.35}
+.karte{inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:0 160px;background:var(--tinte);color:#f4f1ec}
+.karte .kn{font-family:'Newsreader',Georgia,serif;font-size:220px;line-height:1;color:#d9a3a8;margin:0}
+.karte h2{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:96px;margin:12px 0 0}
+.szene{inset:0}
+aside{position:absolute;left:64px;top:100px;width:340px;height:880px}
+aside .logo{width:200px;display:block;margin-bottom:56px}
+aside .nr{font-size:22px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);font-weight:700;margin:0 0 10px}
+aside h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:46px;line-height:1.1;margin:0}
+.texte{position:absolute;left:0;right:0;top:330px}
+.text{position:absolute;left:0;right:0;top:0;margin:0;font-size:36px;line-height:1.32;font-weight:450}
+.text b{font-weight:750;color:var(--rot)}
+.fort{position:absolute;bottom:0;left:0;margin:0;padding:0;list-style:none;display:flex;gap:10px}
+.fort li{width:30px;height:6px;border-radius:3px;background:var(--linie)}
+.fort li.ok{background:#c9a3a6}.fort li.jetzt{background:var(--rot)}
+.rahmen-video{position:absolute;left:448px;top:100px;width:1408px;height:880px;border-radius:14px;overflow:hidden;box-shadow:0 2px 6px rgba(21,20,18,.12),0 18px 48px rgba(21,20,18,.14);background:#fff}
+.zoom{position:absolute;inset:0}
+.zoom video{position:absolute;inset:0;width:1408px;height:880px;object-fit:cover}
+.rahmen{border:5px solid var(--rot);border-radius:10px;box-shadow:0 0 0 6px rgba(151,23,37,.18)}
+</style></head>
+<body>
+<div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="231">
+<div class="clip voll" id="vorspann" data-start="0" data-duration="6"><img class="logo" src="medien/logo.png" alt=""><h1>So geht's:<br><span>Ihr Zugang bei Merzenich Aktuell</span></h1><p>Anmelden, schreiben, Bild einfügen, einreichen. In 7 kurzen Kapiteln.</p></div>
+<div class="rahmen-video"><div class="zoom" id="v1"><video id="clip1" src="clips/01-anmelden.mp4" muted playsinline data-start="9.2" data-duration="19.27"></video><div class="clip rahmen" data-start="10.07" data-duration="2.6" style="left:566px;top:219.87px;width:276px;height:51.11px"></div><div class="clip rahmen" data-start="18.37" data-duration="2.6" style="left:171.96px;top:154.36px;width:1222.49px;height:223.2px"></div></div>
+<div class="zoom" id="v2"><video id="clip2" src="clips/02-tour.mp4" muted playsinline data-start="31.67" data-duration="38.2"></video></div>
+<div class="zoom" id="v3"><video id="clip3" src="clips/03-schreiben.mp4" muted playsinline data-start="73.07" data-duration="67.53"></video><div class="clip rahmen" data-start="91.05" data-duration="2.6" style="left:1143.87px;top:228.67px;width:254.49px;height:51.11px"></div><div class="clip rahmen" data-start="97.42" data-duration="2.6" style="left:600.22px;top:392.93px;width:208.53px;height:58.93px"></div><div class="clip rahmen" data-start="112.12" data-duration="2.6" style="left:1185.91px;top:588.49px;width:182.13px;height:51.11px"></div><div class="clip rahmen" data-start="119.25" data-duration="2.6" style="left:1143.87px;top:343.07px;width:254.49px;height:510.67px"></div><div class="clip rahmen" data-start="125.72" data-duration="2.6" style="left:1167.33px;top:457.47px;width:68.71px;height:27.64px"></div><div class="clip rahmen" data-start="129.67" data-duration="2.6" style="left:1158.53px;top:40.93px;width:208.53px;height:43.29px"></div><div class="clip rahmen" data-start="134.49" data-duration="2.6" style="left:1244.58px;top:40.93px;width:164.53px;height:43.29px"></div></div>
+<div class="zoom" id="v4"><video id="clip4" src="clips/04-rueckmeldung.mp4" muted playsinline data-start="143.8" data-duration="24.97"></video><div class="clip rahmen" data-start="146.77" data-duration="2.6" style="left:184.67px;top:579.69px;width:1197.07px;height:95.11px"></div><div class="clip rahmen" data-start="156.91" data-duration="2.6" style="left:-6px;top:87.87px;width:1146.22px;height:79.47px"></div><div class="clip rahmen" data-start="167.26" data-duration="2.6" style="left:-6px;top:87.87px;width:1146.22px;height:79.47px"></div></div>
+<div class="zoom" id="v5"><video id="clip5" src="clips/05-profil.mp4" muted playsinline data-start="171.97" data-duration="12.27"></video><div class="clip rahmen" data-start="176.86" data-duration="2.6" style="left:387.07px;top:430.09px;width:199.73px;height:51.11px"></div><div class="clip rahmen" data-start="181.47" data-duration="2.6" style="left:171.96px;top:358.71px;width:892px;height:51.11px"></div></div>
+<div class="zoom" id="v6"><video id="clip6" src="clips/06-firma.mp4" muted playsinline data-start="187.43" data-duration="13.83"></video><div class="clip rahmen" data-start="198.58" data-duration="2.6" style="left:171.96px;top:154.36px;width:929.16px;height:51.11px"></div></div>
+<div class="zoom" id="v7"><video id="clip7" src="clips/07-verein.mp4" muted playsinline data-start="204.47" data-duration="19.53"></video><div class="clip rahmen" data-start="222.2" data-duration="2.6" style="left:233.56px;top:542.53px;width:354.22px;height:51.11px"></div></div></div>
+<div class="clip karte" data-start="6" data-duration="3.2"><p class="kn">1</p><h2>Anmelden</h2></div>
+<aside class="clip" data-start="9.2" data-duration="19.27"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 1 von 7</p><h3>Anmelden</h3><div class="texte"><p class="clip text" data-start="9.2" data-duration="2.8">Im Browser <b>merzenich-aktuell.de/wp-admin</b> öffnen.</p><p class="clip text" data-start="12" data-duration="4.63">Benutzername und Passwort eintragen, dann <b>Anmelden</b>.</p><p class="clip text" data-start="16.63" data-duration="11.83">Ihr Dashboard: oben die Kurzanleitung, darunter <b>Ihr Bereich</b>.</p></div>
+  <ol class="fort"><li class="jetzt"></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="28.47" data-duration="3.2"><p class="kn">2</p><h2>Die Tour im Editor</h2></div>
+<aside class="clip" data-start="31.67" data-duration="38.2"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 2 von 7</p><h3>Die Tour im Editor</h3><div class="texte"><p class="clip text" data-start="31.67" data-duration="9.31">Beim ersten Mal führt eine kurze Tour durch den Editor.</p><p class="clip text" data-start="40.98" data-duration="5.56"><b>Titel:</b> wer, was, wo, wann.</p><p class="clip text" data-start="46.54" data-duration="4.82"><b>Text:</b> das Wichtigste in den ersten Satz.</p><p class="clip text" data-start="51.36" data-duration="4.51"><b>Beitragsbild:</b> das Foto für Startseite und Meldung.</p><p class="clip text" data-start="55.87" data-duration="4.4"><b>Bildrechte</b> bestätigen, sonst geht nichts raus.</p><p class="clip text" data-start="60.27" data-duration="4.4"><b>Ortsteil</b> wählen.</p><p class="clip text" data-start="64.68" data-duration="5.19"><b>Zur Überprüfung einreichen.</b> Die Redaktion prüft.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="jetzt"></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="69.87" data-duration="3.2"><p class="kn">3</p><h2>Schreiben, Bild, Einreichen</h2></div>
+<aside class="clip" data-start="73.07" data-duration="67.53"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 3 von 7</p><h3>Schreiben, Bild, Einreichen</h3><div class="texte"><p class="clip text" data-start="73.07" data-duration="16.9">Titel und Text schreiben. Datum immer mit Tag und Monat.</p><p class="clip text" data-start="89.97" data-duration="2.96">Rechts: <b>Beitragsbild festlegen</b>.</p><p class="clip text" data-start="92.93" data-duration="7.24"><b>Dateien auswählen</b> und das Foto hochladen.</p><p class="clip text" data-start="100.17" data-duration="15.03"><b>Fotograf</b> und <b>Nutzungsgrundlage</b> eintragen.</p><p class="clip text" data-start="115.2" data-duration="8.45">Erklärung lesen, <b>Haken setzen</b>.</p><p class="clip text" data-start="123.64" data-duration="4.5">Den <b>Ortsteil</b> wählen.</p><p class="clip text" data-start="128.14" data-duration="4.61">Oben rechts: <b>Zur Überprüfung einreichen</b>.</p><p class="clip text" data-start="132.75" data-duration="2.8">Noch einmal bestätigen. Fertig.</p><p class="clip text" data-start="135.55" data-duration="5.05">Die Redaktion prüft. Sie bekommen eine <b>E-Mail</b>, sobald die Meldung online ist.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="ok"></li><li class="jetzt"></li><li class=""></li><li class=""></li><li class=""></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="140.6" data-duration="3.2"><p class="kn">4</p><h2>Rückmeldungen</h2></div>
+<aside class="clip" data-start="143.8" data-duration="24.97"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 4 von 7</p><h3>Rückmeldungen</h3><div class="texte"><p class="clip text" data-start="143.8" data-duration="2.8">Im Dashboard steht der Stand jeder Meldung.</p><p class="clip text" data-start="146.6" data-duration="3.28">In Rot: was die Redaktion noch braucht.</p><p class="clip text" data-start="149.88" data-duration="9.42">Die Bitte steht auch oben im Editor. Ändern und erneut einreichen.</p><p class="clip text" data-start="159.29" data-duration="9.47">Veröffentlichtes ändern: <b>Änderung vorschlagen</b>. Das Original bleibt, bis die Redaktion freigibt.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="jetzt"></li><li class=""></li><li class=""></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="168.77" data-duration="3.2"><p class="kn">5</p><h2>Profil und Hilfe</h2></div>
+<aside class="clip" data-start="171.97" data-duration="12.27"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 5 von 7</p><h3>Profil und Hilfe</h3><div class="texte"><p class="clip text" data-start="171.97" data-duration="2.91">Unter <b>Profil</b>: E-Mail-Adresse prüfen.</p><p class="clip text" data-start="174.88" data-duration="3.87"><b>Neues Passwort festlegen</b>, dann speichern.</p><p class="clip text" data-start="178.75" data-duration="5.48">Unter <b>Hilfe</b>: Anleitung als PDF, Video, Tour und häufige Fragen.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="jetzt"></li><li class=""></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="184.23" data-duration="3.2"><p class="kn">6</p><h2>Für Unternehmen</h2></div>
+<aside class="clip" data-start="187.43" data-duration="13.83"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 6 von 7</p><h3>Für Unternehmen</h3><div class="texte"><p class="clip text" data-start="187.43" data-duration="2.81">Unternehmen: Profil bearbeiten und den eigenen <b>Kanal</b> ansehen.</p><p class="clip text" data-start="190.24" data-duration="11.03"><b>Anzeige</b>: Titel, Platz, Laufzeit, Bannerbild. Die Redaktion schaltet frei.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="jetzt"></li><li class=""></li></ol></aside>
+<div class="clip karte" data-start="201.27" data-duration="3.2"><p class="kn">7</p><h2>Für Vereine</h2></div>
+<aside class="clip" data-start="204.47" data-duration="19.53"><img class="logo" src="medien/logo.png" alt=""><p class="nr">Kapitel 7 von 7</p><h3>Für Vereine</h3><div class="texte"><p class="clip text" data-start="204.47" data-duration="12.22">Vereine: <b>Termin einreichen</b> für den Kalender.</p><p class="clip text" data-start="216.69" data-duration="7.31"><b>Beginn</b> und <b>Ort</b> eintragen, dann einreichen.</p></div>
+  <ol class="fort"><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="ok"></li><li class="jetzt"></li></ol></aside>
+<div class="clip voll" id="abspann" data-start="224" data-duration="7"><img class="logo" src="medien/logo.png" alt=""><h1>Fragen?<br><span>info@kbs-management.tv</span></h1><p>Die Anleitung als PDF, dieses Video und die Tour finden Sie im Backend unter <b>Hilfe</b>.</p></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.from('#vorspann > *', { opacity: 0, y: 30, duration: 0.8, stagger: 0.25, ease: 'power3.out' }, 0.2);
+document.querySelectorAll('.karte').forEach((k) => { const s = +k.dataset.start; tl.from(k.children, { opacity: 0, y: 40, duration: 0.7, stagger: 0.15, ease: 'power3.out' }, s + 0.1); });
+document.querySelectorAll('.text').forEach((e) => { tl.from(e, { opacity: 0, y: 16, duration: 0.45, ease: 'power3.out' }, +e.dataset.start); });
+document.querySelectorAll('.rahmen').forEach((e) => { const s = +e.dataset.start; tl.from(e, { opacity: 0, scale: 1.25, duration: 0.4, ease: 'power3.out' }, s); tl.to(e, { opacity: 0, duration: 0.4 }, s + 2.2); });
+tl.to('#v3', {scale:1.25, transformOrigin:'1271.11px 254.22px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 91.05);
+tl.to('#v3', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 93.65);
+tl.to('#v3', {scale:1.7, transformOrigin:'1276.98px 614.04px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 112.12);
+tl.to('#v3', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 114.72);
+tl.to('#v3', {scale:1.25, transformOrigin:'1271.11px 598.4px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 119.25);
+tl.to('#v3', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 121.85);
+tl.to('#v3', {scale:1.7, transformOrigin:'1201.69px 471.29px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 125.72);
+tl.to('#v3', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 128.32);
+tl.to('#v3', {scale:1.53, transformOrigin:'1262.8px 62.58px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 129.67);
+tl.to('#v3', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 132.27);
+tl.to('#v4', {scale:1.25, transformOrigin:'783.2px 627.24px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 146.77);
+tl.to('#v4', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 149.37);
+tl.to('#v4', {scale:1.25, transformOrigin:'567.11px 127.6px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 156.91);
+tl.to('#v4', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 159.51);
+tl.to('#v5', {scale:1.6, transformOrigin:'486.93px 455.64px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 176.86);
+tl.to('#v5', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 179.46);
+tl.to('#v7', {scale:1.25, transformOrigin:'410.67px 568.09px', duration:0.7, ease:'power3.out', overwrite:'auto'}, 222.2);
+tl.to('#v7', {scale:1, duration:0.7, ease:'power3.inOut', overwrite:'auto'}, 224.8);
+tl.from('#abspann > *', { opacity: 0, y: 30, duration: 0.8, stagger: 0.25, ease: 'power3.out' }, 224.2);
+tl.to({}, { duration: 0.01 }, 230.99);
+window.__timelines = { root: tl };
+</script>
+</body></html>

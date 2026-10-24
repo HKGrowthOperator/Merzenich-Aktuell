@@ -2,7 +2,7 @@
 
 24. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.32.0 · live: 21.20.8 / 1.31.0 (Historie unten)
 
-## Neu am 24.10.2026: Plugin 1.32.0 und Theme 21.21.0, Relevanz in drei Stufen, vier Unternehmen, Werbebanner
+## Neu am 24.10.2026: Plugin 1.32.0 und Theme 21.21.0, Relevanz in drei Stufen, vier Unternehmen, Werbebanner, Hilfe für alle Zugänge
 
 **Stand live:** noch nicht eingespielt.
 
@@ -16,6 +16,8 @@
 - **Kasten „Kennzeichnung“:** Speichern im Editor behält „anzeige“ und „eigen“; der Haken steuert nur den Testeintrag.
 - **Code-Prüfung** (2 Prüfer, Befunde eingearbeitet): Die Umstellung läuft nie im Namen eines Partners (dessen Schreibsperre hätte sie still leer laufen lassen), schreibt erst den neuen Wert und prüft ihn, sichert dann den alten, erfasst auch Papierkorb und eigene Status und gilt erst als erledigt, wenn jeder Beitrag umgerechnet ist. Profile nur mit Namen bekommen auch auf Profilseite und im Branchenbuch keinen erfundenen Ort und stehen nicht im Kasten „aus der Gemeinde“; die KBS-Profilseite nennt die Herausgeberin; „Anzeige · in eigener Sache“ ohne doppeltes „von“; „Firma zurückziehen“ holt nichts aus dem Papierkorb; ein Banner ohne Bild bekommt es beim nächsten Eintragen.
 - **Zugänge** für Almera Clean und KBS über Benutzer → Partner-Zugänge (ohne E-Mail von WordPress); Mails zum Kopieren in `docs/vorlagen/mails-firmen-2026-10.md`.
+- **Hilfe für alle Zugänge** (`includes/hilfe.php`): Kasten „So geht's: in vier Schritten zum Beitrag“ ganz oben im Dashboard der Partner (einspaltig, ohne leere Fläche), Menüpunkt **Hilfe** mit Erklärvideo, PDF, häufigen Fragen und Kontakt, und eine geführte Tour im Editor (Titel, Text, Beitragsbild, Bildrechte, Ortsteil, Einreichen; „Nicht mehr zeigen“ je Konto, über die Hilfe-Seite neu startbar). Die Anleitung liegt als PDF im Plugin (`assets/hilfe/anleitung-zugang.pdf`, 24 Seiten, Quelle `docs/anleitung/ZUGANG.md`, gebaut mit `node deploy/anleitung-pdf.mjs zugang`). Das Video (4:20 Minuten, ohne Ton, Quelle `docs/anleitung/video/`) kommt in die Mediathek; die Option `ma_hilfe_video` nennt die Medien-ID. Ohne Video zeigt die Hilfe nur das PDF.
+- **Beim Aufnehmen gefunden und behoben:** Die Tour startete erst nach 10 Sekunden (Titel liegt im Editor-Rahmen); der Haken für die Bildrechte galt in der Seitenleiste, aber nicht im Fenster vor dem Einreichen; Hinweise der Redaktion („bittet um Änderungen“, „Änderungsvorschlag zu …“) erschienen im Block-Editor nicht; Datum und Ort eines Termins lagen zugeklappt unter dem Text (jetzt bei Terminen, Immobilien, Stellen, Familien- und Traueranzeigen und Tipps aufgeklappt); Partner sahen den Redaktionskasten „Freigabe“ („4 Freigaben offen“); das Upload-Fenster nannte die Servergrenze statt 10 MB; ein Änderungsvorschlag stand in der Liste wie ein zweiter Entwurf.
 
 ## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6 bis 21.20.8, drei echte Firmen im Unternehmensmenü
 

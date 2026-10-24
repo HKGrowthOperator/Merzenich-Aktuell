@@ -14,7 +14,12 @@
  * Seitenzahlen im Inhaltsverzeichnis: erster Druck mit Platzhaltern, dann
  * liest pdftotext (poppler-utils) die Seiten, zweiter Druck mit Zahlen.
  *
- * Aufruf: NODE_PATH=$(npm root -g) node deploy/anleitung-pdf.mjs
+ * Zweite Anleitung (24.10.2026): `zugang` baut aus docs/anleitung/ZUGANG.md die
+ * Anleitung für alle Partner-Zugänge in das Plugin (assets/hilfe/anleitung-zugang.pdf).
+ * Bilder dort tragen nummerierte Rahmen aus docs/anleitung/zugang/marken.json
+ * (Koordinaten im Bildschirmfoto 1440 × 900, je Bild nach Dateiname ohne Endung).
+ *
+ * Aufruf: NODE_PATH=$(npm root -g) node deploy/anleitung-pdf.mjs [redaktion|zugang]
  * Braucht Playwright mit Chromium und pdftotext.
  */
 import { existsSync, readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs';
@@ -25,8 +30,25 @@ import { tmpdir } from 'node:os';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const QUELLE = join(wurzel, 'docs', 'UEBERGABE-KBS.md');
-const ZIEL = join(wurzel, 'docs', 'Merzenich-Aktuell-Bedienungsanleitung-KBS.pdf');
+const ARTEN = {
+  redaktion: { quelle: 'docs/UEBERGABE-KBS.md', ziel: 'docs/Merzenich-Aktuell-Bedienungsanleitung-KBS.pdf', titel: 'Bedienungsanleitung', rot: 'für die Redaktion',
+    unter: 'So arbeiten Sie mit dem Backend von merzenich-aktuell.de: freigeben, schreiben, anordnen, Anzeigen und Konten.', fuss: 'Bedienungsanleitung für die Redaktion' },
+  zugang: { quelle: 'docs/anleitung/ZUGANG.md', ziel: 'wordpress/plugin/merzenich-aktuell-core/assets/hilfe/anleitung-zugang.pdf', marken: 'docs/anleitung/zugang/marken.json', titel: 'So geht\'s:', rot: 'Ihr Zugang bei Merzenich Aktuell',
+    unter: 'Meldungen schreiben, Bilder einfügen, einreichen und Rückmeldungen lesen. Für Unternehmen, Vereine, Polizei, Feuerwehr, Gemeinde und Makler.', fuss: 'So geht\'s: Ihr Zugang bei Merzenich Aktuell' },
+};
+const ART = ARTEN[process.argv[2] || 'redaktion'];
+if (!ART) { console.error('Art unbekannt: redaktion oder zugang'); process.exit(2); }
+const QUELLE = join(wurzel, ART.quelle);
+const ZIEL = join(wurzel, ART.ziel);
+const MARKEN = ART.marken && existsSync(join(wurzel, ART.marken)) ? JSON.parse(readFileSync(join(wurzel, ART.marken), 'utf8')) : {};
+/** Bild mit nummerierten Rahmen (Prozent der Aufnahme 1440 × 900). */
+const markiert = (src, alt) => {
+  const name = src.replace(/^.*\//, '').replace(/\.[a-z]+$/, ''); const m = MARKEN[name] || [];
+  const r = (v, g) => (Math.max(0, v) / g * 100).toFixed(2) + '%';
+  // Rahmen im Bild halten (ein hoher Kasten kann über den Bildschirm hinausreichen).
+  const ok = m.map((b) => { const x = Math.max(4, b.x - 4), y = Math.max(4, b.y - 4); return { nr: b.nr, x, y, w: Math.min(b.x + b.w + 4, 1436) - x, h: Math.min(b.y + b.h + 4, 896) - y }; }).filter((b) => b.w > 8 && b.h > 8);
+  return `<span class="mk"><img src="${url(join(wurzel, 'docs', src))}" alt="${esc(alt)}">${ok.map((b) => `<i style="left:${r(b.x, 1440)};top:${r(b.y, 900)};width:${r(b.w, 1440)};height:${r(b.h, 900)}"><b>${b.nr}</b></i>`).join('')}</span>`;
+};
 const FONTS = join(wurzel, 'chatgpt-site', 'assets', 'fonts');
 const LOGO = join(wurzel, 'chatgpt-site', 'assets', 'img', 'logo-on-light.png');
 const url = (p) => pathToFileURL(p).href;
@@ -97,7 +119,7 @@ export function umsetzen(md) {
     const text = teile.join(' ');
     if (/^(!\[[^\]]*\]\([^)]+\)\s*)+$/.test(text)) {
       const bilder = [...text.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)];
-      aus.push(`<figure class="bilder n${bilder.length}">${bilder.map(([, alt, src]) => `<div><img src="${url(join(wurzel, 'docs', src))}" alt="${esc(alt)}"><figcaption>${esc(alt)}</figcaption></div>`).join('')}</figure>`);
+      aus.push(`<figure class="bilder n${bilder.length}">${bilder.map(([, alt, src]) => `<div>${markiert(src, alt)}<figcaption>${esc(alt)}</figcaption></div>`).join('')}</figure>`);
     } else aus.push(`<p>${inline(text)}</p>`);
   }
   return { html: aus.join('\n'), kapitel };
@@ -119,7 +141,7 @@ function seite(md, seitenzahlen) {
 *{box-sizing:border-box}
 body{margin:0;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:10.5pt;line-height:1.5;color:var(--tinte);hyphens:auto;-webkit-hyphens:auto}
 h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:600;line-height:1.2;break-after:avoid;page-break-after:avoid}
-h1{font-size:24pt;color:var(--rot);margin:0 0 12pt;padding-bottom:8pt;border-bottom:2pt solid var(--rot);break-before:page;page-break-before:always}
+h1{font-size:24pt;color:var(--rot);margin:0 0 12pt;padding-top:6pt;padding-bottom:8pt;border-bottom:2pt solid var(--rot);break-before:page;page-break-before:always}
 h2{font-size:15pt;margin:20pt 0 6pt}
 h3{font-size:12pt;margin:14pt 0 4pt}
 p{margin:0 0 7pt}
@@ -144,6 +166,9 @@ figure.bilder{margin:8pt 0 12pt;display:flex;gap:10pt;align-items:flex-start;bre
 figure.bilder>div{flex:1;min-width:0}
 figure.bilder img{display:block;max-height:150mm;max-width:100%;width:auto;margin:0 auto;border:.6pt solid #cfc9c0;border-radius:3pt;box-shadow:0 1pt 3pt rgba(0,0,0,.08)}
 figure.bilder.n2 img{max-height:120mm}
+figure.bilder .mk{position:relative;display:block;width:fit-content;max-width:100%;margin:0 auto}
+figure.bilder .mk i{position:absolute;border:1.6pt solid var(--rot);border-radius:3pt;box-sizing:border-box}
+figure.bilder .mk i b{position:absolute;left:-7pt;top:-7pt;width:14pt;height:14pt;border-radius:50%;background:var(--rot);color:#fff;font:700 8.5pt/14pt 'Hanken Grotesk',Arial,sans-serif;text-align:center;font-style:normal}
 figcaption{font-size:8.5pt;color:var(--grau);margin-top:4pt;text-align:center}
 .titel{height:250mm;display:flex;flex-direction:column;justify-content:space-between;padding:10mm 0}
 .titel img{width:70mm}
@@ -164,7 +189,7 @@ p:has(>strong:only-child),p:has(+blockquote),p:has(+figure){break-after:avoid;pa
 a{color:var(--rot)}
 </style></head><body>
 <section class="titel"><div><img src="${url(LOGO)}" alt="Merzenich Aktuell"></div>
-<div><p class="gross">Bedienungsanleitung<br><span class="rot">für die Redaktion</span></p><p class="unter">So arbeiten Sie mit dem Backend von merzenich-aktuell.de: freigeben, schreiben, anordnen, Anzeigen und Konten.</p></div>
+<div><p class="gross">${esc(ART.titel)}<br><span class="rot">${esc(ART.rot)}</span></p><p class="unter">${esc(ART.unter)}</p></div>
 <div class="fuss">${esc(stand)}</div></section>
 <nav class="toc"><h2>Inhalt</h2><ol>${toc}</ol></nav>
 ${html}
@@ -178,7 +203,7 @@ async function drucken(browser, html, pfad) {
   const page = await browser.newPage();
   await page.goto(url(datei), { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
-  const fuss = `<div style="width:100%;font-family:Arial,sans-serif;font-size:7.5pt;color:#7a766f;padding:0 18mm;display:flex;justify-content:space-between"><span>Merzenich Aktuell · Bedienungsanleitung für die Redaktion</span><span>Seite <span class="pageNumber"></span> von <span class="totalPages"></span></span></div>`;
+  const fuss = `<div style="width:100%;font-family:Arial,sans-serif;font-size:7.5pt;color:#7a766f;padding:0 18mm;display:flex;justify-content:space-between"><span>Merzenich Aktuell · ${esc(ART.fuss)}</span><span>Seite <span class="pageNumber"></span> von <span class="totalPages"></span></span></div>`;
   await page.pdf({ path: pfad, format: 'A4', printBackground: true, displayHeaderFooter: true, headerTemplate: '<span></span>', footerTemplate: fuss, margin: { top: '20mm', bottom: '22mm', left: '18mm', right: '18mm' }, outline: true, tagged: true });
   await page.close();
   rmSync(tmp, { recursive: true, force: true });

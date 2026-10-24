@@ -23,9 +23,11 @@ für [Organisation] ist jetzt ein Zugang zu Merzenich Aktuell eingerichtet. Dami
 - [Für Nachrichten: „Neue Meldung schreiben“ / für Unternehmen zusätzlich „Unternehmen“ und „Werbung“ / für Makler: „Immobilien“ – Unzutreffendes streichen]
 - Titel und Text schreiben, bei Bedarf ein Foto als Beitragsbild hochladen.
 - Vor dem Einreichen die Erklärung zu den Bild- und Nutzungsrechten lesen und bestätigen. Ohne diese Bestätigung lässt sich der Beitrag nicht einreichen. Auf Fotos keine Kennzeichen, erkennbaren Gesichter oder Hausnummern.
-- Auf „Zur Prüfung einreichen“ klicken. Veröffentlicht wird erst nach der Prüfung.
+- Auf „Zur Überprüfung einreichen“ klicken. Veröffentlicht wird erst nach der Prüfung.
 
-Die Redaktion prüft jeden Beitrag vor der Veröffentlichung. Sie erhalten eine E-Mail, sobald er freigegeben ist, oder eine kurze Begründung, falls er so nicht erscheinen kann. Veröffentlichte Beiträge können Sie nicht mehr selbst ändern; schreiben Sie uns in diesem Fall kurz.
+Eine Anleitung als PDF und ein kurzes Erklärvideo finden Sie nach dem Anmelden links im Menü unter „Hilfe“. Die Anleitung können Sie auch direkt öffnen: https://merzenich-aktuell.de/wp-content/plugins/merzenich-aktuell-core/assets/hilfe/anleitung-zugang.pdf
+
+Die Redaktion prüft jeden Beitrag vor der Veröffentlichung. Sie erhalten eine E-Mail, sobald er freigegeben ist, oder eine kurze Begründung, falls er so nicht erscheinen kann. Veröffentlichte Beiträge ändern Sie über „Änderung vorschlagen“ im Dashboard; die Redaktion übernimmt die Änderung nach Prüfung.
 
 [Nur für Unternehmen:] Ihr Zugang umfasst [Anzahl] gleichzeitig laufende Anzeige(n) auf folgenden Plätzen: [Plätze]. Auch Anzeigen werden vor der Veröffentlichung von der Redaktion geprüft. Weitere Plätze: Preis auf Anfrage.
 

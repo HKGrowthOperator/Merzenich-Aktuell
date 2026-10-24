@@ -25,6 +25,10 @@ Für alle Partner gilt:
 - Redaktionelle Prüfhaken (Quelle, Datum, Ort, Bildrechte, Human Review, Anzeige aktiv, Freigabe) können sie nicht setzen; sie werden beim Speichern entfernt.
 - Die Rubrik wird nach der Rolle gesetzt, nicht nach der Auswahl des Partners.
 
+### Hilfe für Partner (seit 1.32.0)
+
+Jeder Partner sieht im Dashboard zuerst den Kasten „So geht's“ und links den Menüpunkt **Hilfe**: Erklärvideo, Anleitung als PDF (`assets/hilfe/anleitung-zugang.pdf`), häufige Fragen, Kontakt und den Knopf für die geführte Tour im Editor. Veröffentlichte Beiträge ändern Partner über „Änderung vorschlagen“; die veröffentlichte Fassung bleibt, bis die Redaktion den Vorschlag freigibt. Das Video wird einmal in die Mediathek geladen und unter der Option `ma_hilfe_video` (Medien-ID) eingetragen.
+
 ## 2. Zugang anlegen (Administration)
 
 1. Anfrage prüfen. Anträge kommen über das Formular `[ma_partner_antrag]` per E-Mail an die Administrationsadresse (Einstellungen → Allgemein → „E-Mail-Adresse der Administration“). Ein Konto wird dabei **nicht** automatisch angelegt.
