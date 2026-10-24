@@ -5,3 +5,5 @@ docs/anleitung/video/clips/
 docs/anleitung/video/*.mp4
 docs/anleitung/video/.hyperframes/
 docs/anleitung/video/medien/
+docs/anleitung/video/work-*/
+docs/anleitung/video/.*.hf-transaction-*/
