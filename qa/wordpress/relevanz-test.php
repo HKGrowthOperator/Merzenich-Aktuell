@@ -11,8 +11,10 @@ class WP_Post { public $ID; public $post_status = 'pending'; public $post_date_g
 $GLOBALS['meta'] = []; $GLOBALS['status'] = []; $GLOBALS['posts'] = []; $GLOBALS['sperre'] = [];
 function add_action(...$a) {} function add_filter(...$a) {}
 function get_post_meta($id, $k, $s = false) { return $GLOBALS['meta'][$id][$k] ?? ''; }
-function update_post_meta($id, $k, $v) { $GLOBALS['meta'][$id][$k] = $v; return true; }
-function delete_post_meta($id, $k) { unset($GLOBALS['meta'][$id][$k]); return true; }
+function update_post_meta($id, $k, $v) { if (!empty($GLOBALS['partner']) && $k === 'ma_relevanz') return false; $GLOBALS['meta'][$id][$k] = $v; return true; }
+function ma_current_partner_policy() { return !empty($GLOBALS['partner']) ? ['label' => 'Verein'] : null; }
+function get_post_stati() { return ['publish', 'draft', 'pending', 'trash', 'auto-draft', 'inherit', 'ma_archiv']; }
+function delete_post_meta($id, $k) { if (!empty($GLOBALS['partner']) && $k === 'ma_relevanz') return false; unset($GLOBALS['meta'][$id][$k]); return true; }
 function get_post_type($id) { return 'post'; }
 function get_post_status($id) { return $GLOBALS['status'][$id] ?? 'pending'; }
 function wp_update_post($a) {
@@ -57,16 +59,20 @@ pruefe('gesetzte Stufe wird gelesen', ma_relevanz(98), 1);
 echo "\nUmstellung 1–10 → 3 Stufen\n";
 $GLOBALS['meta'] = [];
 foreach ([501 => 10, 502 => 8, 503 => 7, 504 => 5, 505 => 4, 506 => 3, 507 => 1, 508 => 0] as $id => $alt) update_post_meta($id, 'ma_relevanz', $alt);
+$GLOBALS['partner'] = true;
+$zp = ma_relevanz_stufen_umstellen();
+pruefe('Partner löst aus: nichts umgerechnet, nicht als erledigt markiert', [$zp[1], get_post_meta(501, 'ma_relevanz'), get_post_meta(501, '_ma_relevanz_alt'), get_option('ma_relevanz_stufen')], [0, 10, '', false]);
+$GLOBALS['partner'] = false;
 $z = ma_relevanz_stufen_umstellen();
 pruefe('8–10 → 1', [get_post_meta(501, 'ma_relevanz'), get_post_meta(502, 'ma_relevanz')], [1, 1]);
 pruefe('4–7 → 2', [get_post_meta(503, 'ma_relevanz'), get_post_meta(504, 'ma_relevanz'), get_post_meta(505, 'ma_relevanz')], [2, 2, 2]);
 pruefe('1–3 → 3', [get_post_meta(506, 'ma_relevanz'), get_post_meta(507, 'ma_relevanz')], [3, 3]);
 pruefe('0 wird „ohne Angabe“', get_post_meta(508, 'ma_relevanz'), '');
 pruefe('alter Wert gesichert', get_post_meta(501, '_ma_relevanz_alt'), '10');
-pruefe('Zählung je Stufe', $z, [1 => 2, 2 => 3, 3 => 2, 'ohne' => 1]);
+pruefe('Zählung je Stufe', $z, [1 => 2, 2 => 3, 3 => 2, 'ohne' => 1, 'fehler' => 0]);
 pruefe('kein „Nur in der Rubrik“ durch die Umstellung', get_post_meta(507, 'ma_startplatz'), '');
 pruefe('Option gesetzt', get_option('ma_relevanz_stufen'), '3');
-pruefe('zweiter Lauf ändert nichts (1 bleibt 1)', [ma_relevanz_stufen_umstellen(), get_post_meta(501, 'ma_relevanz')], [[1 => 0, 2 => 0, 3 => 0, 'ohne' => 0], 1]);
+pruefe('zweiter Lauf ändert nichts (1 bleibt 1)', [ma_relevanz_stufen_umstellen(), get_post_meta(501, 'ma_relevanz')], [[1 => 0, 2 => 0, 3 => 0, 'ohne' => 0, 'fehler' => 0], 1]);
 unset($GLOBALS['opt']['ma_relevanz_stufen']);
 update_post_meta(509, 'ma_relevanz', 9);
 ma_relevanz_stufen_umstellen();

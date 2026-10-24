@@ -131,6 +131,7 @@ function get_post_meta($id, $k, $s = false) { return $GLOBALS['meta'][$id][$k] ?
 function update_post_meta($id, $k, $v) { $GLOBALS['meta'][$id][$k] = $v; return true; }
 function add_post_meta($id, $k, $v) { $GLOBALS['weitere'][$id][$k][] = $v; return true; }
 function set_post_thumbnail($id, $m) { $GLOBALS['meta'][$id]['_thumbnail_id'] = $m; return true; }
+function get_post_thumbnail_id($id) { return (int) ($GLOBALS['meta'][$id]['_thumbnail_id'] ?? 0); }
 function wp_get_current_user() { return (object) ['display_name' => 'Redaktion', 'user_login' => 'admin']; }
 function current_time($f) { return '24.10.2026 14:00'; }
 function wp_tempnam($n) { return tempnam(sys_get_temp_dir(), 'logo'); }
@@ -166,6 +167,9 @@ pruefe('Rückmeldung: Werbebanner läuft', str_contains(implode(' ', $log), 'Mer
 $n = count($GLOBALS['posts']);
 $log = ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false);
 pruefe('zweite Zusage: kein zweites Banner', [count($GLOBALS['posts']), str_contains(implode(' ', $log), 'schon vorhanden')], [$n, true]);
+unset($GLOBALS['meta'][$adId]['_thumbnail_id']); $GLOBALS['medien'] = 50;
+unset($GLOBALS['meta'][array_key_first(array_filter($GLOBALS['meta'], fn($m) => ($m['ma_firmen_banner_datei'] ?? '') === 'merzlicht.png'))]['ma_firmen_banner_datei']);
+pruefe('Banner ohne Bild (Übernahme gescheitert): Bild wird nachgetragen', [str_contains(implode(' ', ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false)), 'Bild nachgetragen'), ($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0) > 0], [true, true]);
 pruefe('unbekannter Betrieb', ma_firmen_zusage_eintragen('gibt-es-nicht', 'x', true, true), ['Unbekannter Betrieb.']);
 $GLOBALS['posts'][102]['post_status'] = 'trash';
 pruefe('Profil im Papierkorb: nichts', str_contains(ma_firmen_zusage_eintragen('kbs-management', 'x', true, true)[0] ?? '', 'Profil fehlt'), true);
@@ -185,6 +189,8 @@ pruefe('fremder Beitrag bleibt', $GLOBALS['posts'][504]['post_status'], 'publish
 pruefe('Rückmeldung nennt Zahl und Profil', [str_contains($log[0] ?? '', '3 Beiträge und Banner'), str_contains($log[1] ?? '', 'Profil auf Entwurf')], [true, true]);
 pruefe('nichts gelöscht', isset($GLOBALS['posts'][500], $GLOBALS['posts'][501], $GLOBALS['posts'][503]), true);
 pruefe('zweiter Lauf: Profil war schon Entwurf', str_contains(ma_firmen_zurueckziehen('baeckerei-wirtz-merzenich')[1] ?? '', 'schon Entwurf'), true);
+$GLOBALS['posts'][510] = ['post_type' => 'ma_business', 'post_status' => 'trash', 'post_name' => 'hasberg-fenster-rollladentechnik-merzenich__trashed'];
+pruefe('Profil im Papierkorb wird nicht herausgeholt', [ma_firmen_zurueckziehen('hasberg-fenster-rollladentechnik-merzenich'), $GLOBALS['posts'][510]['post_status']], [['Hasberg Fenster & Rollladentechnik: Profil liegt im Papierkorb, nichts geändert.'], 'trash']);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

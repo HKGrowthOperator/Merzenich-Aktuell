@@ -68,6 +68,7 @@ function ma21_einzel_daten(WP_Post $p): array {
             if (!empty($b['oeffnungszeiten'])) $hinweise['Öffnungszeiten'] = (string) $b['oeffnungszeiten'];
             if (!empty($b['telefon_href'])) $knoepfe[] = ['Anrufen', (string) $b['telefon_href'], false];
             if (!empty($b['website'])) $knoepfe[] = ['Website ↗', (string) $b['website'], true];
+            if (!empty($b['herausgeberin'])) $hinweise['Hinweis'] = html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8') . ' ist die Herausgeberin von Merzenich Aktuell.';
             break;
     }
     return ['fakten' => array_filter($fakten, fn($v) => trim((string) $v) !== ''), 'knoepfe' => $knoepfe, 'hinweise' => $hinweise, 'kicker' => $kicker, 'quelle' => $quelle, 'gesponsert' => $gesponsert];
@@ -80,10 +81,15 @@ function ma21_anzeige_einzel(WP_Post $p): void {
     // Übernommene Marktangebote aus dem Umkreis tragen ihre Gemeinde (sonst stünde dort „Merzenich“).
     $gemeinde = (string) get_post_meta($p->ID, 'ma_markt_gemeinde', true);
     $ort = $gemeinde !== '' && $gemeinde !== 'Merzenich' ? $gemeinde : (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich');
+    // Unternehmensprofil: Ortsteil, sonst Sitz außerhalb (KBS: Leverkusen); nur mit Namen gar kein Ort (24.10.2026).
+    if ($p->post_type === 'ma_business' && function_exists('ma_business_profile')) {
+        $b = (array) ma_business_profile($p->ID);
+        $ort = (string) ($b['ortsteil'] ?? '') ?: ((string) ($b['ort'] ?? '') ?: (!empty($b['nur_name']) ? '' : $ort));
+    }
     $titel = get_the_title($p);
     echo '<article class="article event-page anzeige-page anzeige-page--' . esc_attr(str_replace('ma_', '', $p->post_type)) . '"><div class="article-head"><div class="shell">'
         . '<nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><a href="' . esc_url(home_url($k['liste'])) . '">' . esc_html($k['crumb']) . '</a><span class="sep">›</span><span aria-current="page">' . esc_html($titel) . '</span></nav>'
-        . '<div class="kick-row"><span class="kicker">' . esc_html($d['kicker']) . '<span class="dist">' . esc_html($ort) . '</span></span></div>'
+        . '<div class="kick-row"><span class="kicker">' . esc_html($d['kicker']) . ($ort !== '' ? '<span class="dist">' . esc_html($ort) . '</span>' : '') . '</span></div>'
         . '<h1>' . esc_html($titel) . '</h1>'
         . ($p->post_excerpt !== '' ? '<p class="dek">' . esc_html(html_entity_decode($p->post_excerpt, ENT_QUOTES, 'UTF-8')) . '</p>' : '')
         . ($p->post_type === 'ma_tip' ? '<p class="gesponsert-hinweis"><span class="gesponsert">Anzeige · Gesponsert</span> Bezahlte Platzierung' . ($d['gesponsert'] !== '' ? ' von ' . esc_html($d['gesponsert']) : '') . ', kein redaktioneller Beitrag.</p>' : '')

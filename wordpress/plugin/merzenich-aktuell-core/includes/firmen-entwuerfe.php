@@ -199,7 +199,15 @@ function ma_firmen_banner_anlegen(array $f, int $pid): string {
     $a = (array) ($f['anzeige'] ?? []); $p = (array) ($f['profil'] ?? []);
     $slug = (string) ($p['slug'] ?? ''); $name = (string) ($p['titel'] ?? $slug);
     if (!$a || empty($a['titel']) || $slug === '') return '';
-    if ($da = ma_firmen_banner_vorhanden($slug)) return $name . ': Werbebanner schon vorhanden (' . get_post_status($da) . ').';
+    if ($da = ma_firmen_banner_vorhanden($slug)) {
+        // Bild fehlt (Übernahme beim ersten Mal gescheitert): noch einmal versuchen.
+        if (!get_post_thumbnail_id($da) && !empty($a['bild']) && get_post_status($da) !== 'trash') {
+            $fehler = '';
+            $m = ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $da, (string) ($a['alt'] ?? 'Anzeige ' . $name), 'Werbebanner ' . $name . ', gestaltet von Merzenich Aktuell', '', $fehler);
+            if ($m) { set_post_thumbnail($da, $m); return $name . ': Werbebanner schon vorhanden, Bild nachgetragen.'; }
+        }
+        return $name . ': Werbebanner schon vorhanden (' . get_post_status($da) . ').';
+    }
     $plaetze = ma_firmen_banner_plaetze();
     $r = wp_insert_post(wp_slash([
         'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => (string) $a['titel'], 'post_excerpt' => (string) ($a['text'] ?? ''),
@@ -290,6 +298,7 @@ function ma_firmen_zurueckziehen(string $slug): array {
     $name = $bekannt[$slug] ?: $slug;
     $pid = ma_firmen_vorhanden('ma_business', $slug);
     if (!$pid) return [$name . ': Profil nicht gefunden, nichts geändert.'];
+    if (get_post_status($pid) === 'trash') return [$name . ': Profil liegt im Papierkorb, nichts geändert.'];
     $log = []; $n = 0;
     foreach (['post', 'ma_ad'] as $typ) {
         $ids = get_posts(['post_type' => $typ, 'post_status' => ['publish', 'future', 'pending', 'ma_in_pruefung'], 'posts_per_page' => -1, 'fields' => 'ids',
@@ -382,7 +391,7 @@ function ma_firmen_entwuerfe_seite(): void {
         foreach ($frueher as $alt) {
             $slug = (string) ($alt['slug'] ?? ''); $pid = $slug !== '' ? ma_firmen_vorhanden('ma_business', $slug) : 0;
             $n = $pid ? count(get_posts(['post_type' => ['post', 'ma_ad'], 'post_status' => ['publish', 'future', 'pending', 'ma_in_pruefung'], 'posts_per_page' => -1, 'fields' => 'ids', 'meta_query' => [['key' => 'ma_business_id', 'value' => (string) $pid]]])) : 0;
-            $aktiv = $pid && (get_post_status($pid) !== 'draft' || $n);
+            $aktiv = $pid && get_post_status($pid) !== 'trash' && (get_post_status($pid) !== 'draft' || $n);
             echo '<tr><td><strong>' . esc_html((string) ($alt['titel'] ?? $slug)) . '</strong></td><td>' . ($pid ? esc_html(function_exists('ma_status_name') ? ma_status_name((string) get_post_status($pid)) : (string) get_post_status($pid)) : 'nicht vorhanden') . '</td><td>' . $n . '</td><td>' . ($aktiv ? $zurueck($slug, (string) ($alt['titel'] ?? $slug)) : 'von der Seite genommen') . '</td></tr>';
         }
         echo '</tbody></table>';

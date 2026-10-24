@@ -88,5 +88,12 @@ pruefe('Firma ohne Beitrag: Hinweis statt leerer Fläche; Herausgeberin im Kanal
 $kanal = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/unternehmen-kanal.php');
 pruefe('Kanalseite nennt den Hinweis', str_contains($kanal, "\$f['hinweis']"), true);
 
+$ez = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/inc/einzel.php');
+$mk = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/inc/markt.php');
+$sg = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/single.php');
+pruefe('Profilseite: Ort wie im Kanal, nur Name ohne Ort, Hinweis Herausgeberin', [str_contains($ez, "!empty(\$b['nur_name']) ? '' : \$ort"), str_contains($ez, 'ist die Herausgeberin von Merzenich Aktuell.')], [true, true]);
+pruefe('Branchenbuch und Gemeinde-Kasten: kein erfundener Ort, nur-Name-Profile nicht „aus der Gemeinde“', [str_contains($mk, "!empty(\$f['nur_name']) ? '' :"), str_contains($mk, "'ma_business_nur_name', true) !== '1'")], [true, true]);
+pruefe('Anzeigenhinweis „in eigener Sache“ ohne doppeltes „von“', str_contains($sg, "!== 'eigen' ? ' von '"), true);
+
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

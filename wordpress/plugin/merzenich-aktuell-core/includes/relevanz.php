@@ -198,22 +198,30 @@ function ma_relevanz_sortieren(array $posts, ?int $jetzt = null): array {
  * Gibt die Zahl je neuer Stufe zurück (Protokoll in ma_relevanz_stufen_log).
  */
 function ma_relevanz_stufen_umstellen(): array {
-    $zahl = [1 => 0, 2 => 0, 3 => 0, 'ohne' => 0];
+    $zahl = [1 => 0, 2 => 0, 3 => 0, 'ohne' => 0, 'fehler' => 0];
     if (get_option('ma_relevanz_stufen') === '3') return $zahl;
-    // Je Beitrag einmal: Der alte Wert wird zuerst in _ma_relevanz_alt gesichert.
-    // Wer ihn schon hat, ist umgerechnet und wird übersprungen; so rechnet auch
-    // ein abgebrochener oder doppelt gestarteter Lauf keinen Wert zweimal um.
-    $ids = get_posts(['post_type' => 'post', 'post_status' => 'any', 'posts_per_page' => -1, 'fields' => 'ids',
+    // Nie im Namen eines Partners: Für Partner sperrt redaktion.php das Schreiben von
+    // ma_relevanz still (Review 24.10.2026). Dann übernimmt der nächste Aufruf eines
+    // Besuchers oder der Redaktion.
+    if (function_exists('ma_current_partner_policy') && ma_current_partner_policy()) return $zahl;
+    // Je Beitrag einmal: Erst den neuen Wert schreiben und nachlesen, dann den alten in
+    // _ma_relevanz_alt sichern. Wer die Sicherung hat, ist umgerechnet und wird
+    // übersprungen; so rechnet auch ein abgebrochener oder doppelt gestarteter Lauf
+    // keinen Wert zweimal um. Alle Status, auch Papierkorb und eigene Status.
+    $status = function_exists('get_post_stati') ? array_values(array_diff(get_post_stati(), ['auto-draft', 'inherit'])) : 'any';
+    $ids = get_posts(['post_type' => 'post', 'post_status' => $status, 'posts_per_page' => -1, 'fields' => 'ids',
         'meta_query' => [['key' => 'ma_relevanz', 'compare' => 'EXISTS'], ['key' => '_ma_relevanz_alt', 'compare' => 'NOT EXISTS']]]);
     foreach ($ids as $id) {
         if (get_post_meta($id, '_ma_relevanz_alt', true) !== '') continue;
         $alt = (int) get_post_meta($id, 'ma_relevanz', true);
-        update_post_meta($id, '_ma_relevanz_alt', (string) $alt);
         $neu = ma_relevanz_alt_zu_stufe($alt);
-        if ($neu) { update_post_meta($id, 'ma_relevanz', $neu); $zahl[$neu]++; }
-        else { delete_post_meta($id, 'ma_relevanz'); $zahl['ohne']++; }
+        if ($neu) update_post_meta($id, 'ma_relevanz', $neu); else delete_post_meta($id, 'ma_relevanz');
+        if ((int) get_post_meta($id, 'ma_relevanz', true) !== $neu) { $zahl['fehler']++; continue; }
+        update_post_meta($id, '_ma_relevanz_alt', (string) $alt);
+        $neu ? $zahl[$neu]++ : $zahl['ohne']++;
     }
-    update_option('ma_relevanz_stufen', '3', true);
+    // Erst fertig, wenn jeder Beitrag umgerechnet ist; sonst versucht es der nächste Aufruf.
+    if (!$zahl['fehler']) update_option('ma_relevanz_stufen', '3', true);
     update_option('ma_relevanz_stufen_log', ['t' => time(), 'zahl' => $zahl], false);
     return $zahl;
 }
