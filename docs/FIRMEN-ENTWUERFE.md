@@ -1,88 +1,47 @@
-# Drei Betriebe als Entwurf: Bäckerei Wirtz, Hasberg, Porschen Media
+# Unternehmen auf Merzenich Aktuell: Almera Clean, KBS Management, Merzlicht, AJ Sports
 
-Stand 16.10.2026 · Plugin 1.28.3 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
+Stand 24.10.2026 · Plugin 1.32.0 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
 
-Auftrag des Betreibers vom 16.10.2026, Entscheidung „Entwurf bis Zusage“. Je Betrieb liegen ein Unternehmensprofil und ein Werbebeitrag als **Entwurf** in WordPress. Öffentlich wird nichts, bevor der Betrieb zugestimmt hat.
+Auftrag des Betreibers vom 24.10.2026: Die vier Unternehmen ersetzen Bäckerei Wirtz, Hasberg Fenster & Rollladentechnik und Porschen Media (Oktober 2026, Testeintrag). Je Unternehmen liegen ein Profil und, wo Angaben vorliegen, ein Werbebeitrag als **Entwurf** in WordPress. Öffentlich wird erst etwas, wenn die Zusage eingetragen ist.
 
 ## Was angelegt wird
 
 **WordPress → Merzenich Aktuell → Firmen-Entwürfe → „Fehlende Entwürfe anlegen“**
 
-| Betrieb | Profil (Entwurf) | Werbebeitrag (Entwurf) |
-|---|---|---|
-| Bäckerei Wirtz | `/betriebe/baeckerei-wirtz-merzenich/` | `baeckerei-wirtz-brot-torten-merzenich` |
-| Hasberg Fenster & Rollladentechnik | `/betriebe/hasberg-fenster-rollladentechnik-merzenich/` | `hasberg-fenster-rolllaeden-sonnenschutz-merzenich` |
-| Porschen Media | `/betriebe/porschen-media-girbelsrath/` | `porschen-media-druck-werbung-girbelsrath` |
+| Unternehmen | Kanal | Werbebeitrag | Logo | Werbebanner |
+|---|---|---|---|---|
+| Almera Clean | `/unternehmen/almera-clean-merzenich/` | `almera-clean-gebaeudereinigung-merzenich` | von almera-clean.de | – |
+| KBS Management GmbH | `/unternehmen/kbs-management/` | `kbs-management-apps-software-it-beratung` | von kbs-management.tv | – |
+| Merzlicht | `/unternehmen/merzlicht/` | – (nur Name) | – | `data/banner/merzlicht.png` |
+| AJ Sports | `/unternehmen/aj-sports/` | – (nur Name) | – | `data/banner/aj-sports.png` |
 
-**Profil**
-- Stammdaten, wie sie am 16.10.2026 auf der Website des Betriebs standen: Branche, Adresse, Telefon, E-Mail (falls genannt), Website, Öffnungs- bzw. Bürozeiten, Ortsteil.
-- Quelle und Stand.
-- Kurztext.
-- Knopf zur Website.
+- **Almera Clean und KBS:** Stammdaten, wie sie am 24.10.2026 auf den Websites standen (Branche, Adresse, Telefon soweit genannt, E-Mail, Website), Quelle und Stand, Kurztext, Knopf zur Website. Die Logos sind auf den Websites weiß; für die hellen Logo-Flächen der Seite sind sie dunkel eingefärbt und zugeschnitten (`data/logos/`).
+- **Merzlicht und AJ Sports:** Profil nur mit dem Namen (`nur_name`). Keine Adresse, keine Branche, kein Logo, kein Beitrag: Es liegen keine Angaben vor, und die Seite erfindet keine. Im Menü steht „Noch keine Beiträge“.
+- **KBS** ist die Herausgeberin von Merzenich Aktuell. Profil, Beitrag, Kanal und Menü sagen das ausdrücklich; der Beitrag ist als „Anzeige · in eigener Sache“ gekennzeichnet. KBS erscheint nicht im Kasten „Unternehmen aus der Gemeinde“ (Sitz Leverkusen).
+- **Kennzeichnung:** Alle Beiträge sind Anzeigen (`ma_gesponsert_art = anzeige` bzw. `eigen`), verknüpft mit dem Profil, Rubrik Wirtschaft, nicht für die Startseite freigegeben. Kein Testzeitraum: Die Einträge laufen, bis der Betreiber sie austauscht.
 
-**Werbebeitrag**
-- Text wie vom Betreiber vorgegeben, Rubrik Wirtschaft.
-- Gekennzeichnet als gesponsert und als kostenfreier Testeintrag, verknüpft mit dem Profil.
-- Nicht für die Startseite freigegeben.
+## Zusage eintragen
 
-**Was nicht angelegt wird**
-- Keine Einwilligung: Der Haken bleibt leer, bis der Betrieb zugestimmt hat.
-- Keine Logos, keine Fotos.
-- Keine Bannerplätze und kein Platz auf der Startseite. Die Bannertexte (`anzeige` in der Datei) sind nur vorbereitet.
+Je Unternehmen in der Tabelle: Nachweis eintragen (z. B. „Zusage laut Betreiber, 24.10.2026“), Haken für die Einwilligung und, wo es ein Logo gibt, für die Logo-Freigabe.
 
-## Freigeben, wenn ein Betrieb zusagt
+- **Mit der Logo-Freigabe** kommt das Logo einmal in die Mediathek und wird Profilbild.
+- **Mit der Einwilligung** wird das Profil veröffentlicht, der Werbebeitrag liegt zur Prüfung in den Freigaben (dort Relevanz wählen und freigeben), und das Werbebanner entsteht einmal als laufende Anzeige.
+- **Banner-Plätze:** alle Werbeplätze, die die Seite zeigt: sechs Startseiten-Bänder, Servicespalte und Bühne der Startseite, unter Artikeln, Sport- und Unternehmensspalte; ohne Link, ohne Ende. Dort verschwinden die Musteranzeigen. Mehrere Anzeigen auf einem Platz wechseln alle 8 Sekunden.
 
-1. **Profil:** Haken „Einwilligung“ setzen, dann Veröffentlichen. Ohne Haken bleibt es Entwurf, das sichert die Profil-Sperre. Auch der Werbebeitrag lässt sich erst veröffentlichen, wenn am Profil die Einwilligung steht, sonst bleibt er Entwurf (auch bei der Sammelfreigabe).
-2. **Werbebeitrag:** Text mit dem Betrieb abstimmen. Dann im Kasten „Kennzeichnung“ prüfen, dass „Gesponsert“ und „Kostenfreier Testeintrag“ gesetzt sind. Danach die Prüfhäkchen setzen und veröffentlichen, wie bei jeder Meldung.
-3. **Testzeitraum:**
-   - Er beginnt mit dieser ersten Veröffentlichung, nicht mit dem Anlegen.
-   - Er dauert 30 Tage, kostet 0 € und verlängert sich nicht.
-   - Am Ende archiviert ein täglicher Lauf den Beitrag; er ist dann nicht mehr öffentlich. Das Profil bleibt.
-   - Das Enddatum steht im Beitrag („Kostenfreie Präsentation im Testzeitraum bis …“) und im Verlauf.
-4. **Kasten „Unternehmen aus der Gemeinde“ auf `/unternehmen/`:**
-   - Sobald ein Profil veröffentlicht ist, steht der Betrieb dort vor den Beispielfirmen.
-   - Ab drei echten Betrieben mit veröffentlichtem Beitrag verschwinden die Beispielfirmen.
+## Früher eingetragene Betriebe
 
-**Wording auf der Seite**
-- Die Betriebe werden nie als Partner, Kunden oder Sponsoren bezeichnet.
-- Die Kennzeichnung lautet „Anzeige · kostenfreier Testeintrag“.
+Abschnitt „Früher eingetragen“ auf derselben Seite: **„Firma zurückziehen“** setzt Profil, alle veröffentlichten oder wartenden Beiträge und Banner des Betriebs auf Entwurf (Banner zusätzlich „Schaltung aus“). Gelöscht wird nichts; die Logos bleiben in der Mediathek. Betrifft Bäckerei Wirtz, Hasberg und Porschen Media.
 
-## Logos: Quellen und Rechte
+## Zugänge
 
-**Alle Rechte sind offen.** Ohne schriftliche Freigabe des Betriebs zeigt die Seite das Kürzel (BW, HF, PM). So wird ein Logo eingesetzt, sobald die Freigabe vorliegt:
-1. Logo im Profil als Beitragsbild hochladen.
-2. „Logo-Rechte“ auf „geklärt“ stellen.
+Unter **Benutzer → Partner-Zugänge**: Name, E-Mail-Adresse, Rolle „Unternehmens-Partner“ und das Profil wählen, „Zugang anlegen (ohne E-Mail)“.
 
-| Betrieb | Fundstelle (16.10.2026) | Format | Rechte |
-|---|---|---|---|
-| Bäckerei Wirtz | https://www.baeckerei-wirtz.de/bilder/logo-frei0_500x500.png | PNG, 500 × 500 | offen |
-| Hasberg | https://www.hasberg.de/uploads/6xZoQu63/01-hasberg-weber-logo__msi___jpg.jpg | JPEG, 543 × 205, Logo laut Strukturdaten der Website | offen |
-| Porschen Media | https://porschen.media/_astro/logo.Bq7BYIkx_1Gh7MW.svg | SVG aus der Kopfzeile der Website | offen |
+- Almera Clean mit `info@almera-clean.de`, KBS mit `info@kbs-management.tv`.
+- Merzlicht und AJ Sports erst, wenn eine E-Mail-Adresse vorliegt.
+- WordPress verschickt nichts. Passwort im Profil setzen und persönlich weitergeben; die Mails zum Kopieren stehen in `docs/vorlagen/mails-firmen-2026-10.md`.
 
-**Am besten** bittet man jeden Betrieb um eine eigene Logodatei, idealerweise SVG oder PNG mit transparentem Hintergrund, zusammen mit der Zusage.
+## Wenn Angaben von Merzlicht oder AJ Sports kommen
 
-## Anfragetext an die Betriebe
-
-> Betreff: Ihr Betrieb auf Merzenich Aktuell, kostenfreier Testeintrag
->
-> Guten Tag,
->
-> Merzenich Aktuell ist die Lokalzeitung im Netz für die Gemeinde Merzenich mit Golzheim, Girbelsrath, Morschenich und Bürgewald. Wir möchten Ihren Betrieb in der Rubrik „Unternehmen“ vorstellen: mit einem kurzen Unternehmensprofil (Adresse, Telefon, Öffnungszeiten, Website) und einem Beitrag über Ihr Angebot.
->
-> Wir haben dafür einen Entwurf vorbereitet. Die Angaben stammen von Ihrer Website (Stand 16.10.2026). Den Text senden wir Ihnen gern zur Durchsicht.
->
-> - Der Eintrag ist ein kostenfreier Testeintrag: 0 Euro, 30 Tage ab Veröffentlichung, er endet von selbst. Es gibt keine Verlängerung und keine Rechnung.
-> - Der Beitrag ist als Anzeige gekennzeichnet („Anzeige · kostenfreier Testeintrag“) und klar von den Nachrichten der Redaktion getrennt.
-> - Veröffentlicht wird nur mit Ihrer Zustimmung. Ihr Logo zeigen wir nur, wenn Sie es uns dafür freigeben.
->
-> Wenn Sie einverstanden sind, antworten Sie bitte kurz auf diese Nachricht. Senden Sie gern Ihr Logo mit, wenn es erscheinen soll. Änderungswünsche am Text nehmen wir gern auf.
->
-> Mit freundlichen Grüßen
-> Redaktion Merzenich Aktuell
-
-## Technik
-
-- `includes/firmen-entwuerfe.php`: Menüseite, Anlegen (idempotent nach Adresse, auch Papierkorb), Übersicht mit Status, Einwilligung und Logo-Rechten.
-- `includes/testeintrag.php`: Kennzeichnung (`ma_gesponsert_label`, `ma_gesponsert_hinweis`), Start und Ende (`ma_test_start`, `ma_test_ende`), täglicher Lauf `ma_testeintraege_pruefen`.
-- Theme: `ma21_gemeinde_profile()` und `ma21_musterprofile_html()` in `inc/markt.php`; das Logo nur bei `ma_business_logo_rechte` ≠ „offen“ (`inc/unternehmen.php`).
-- Tests: `qa/wordpress/firmen-entwuerfe-test.php`, `qa/wordpress/testeintrag-test.php`.
+1. In `data/firmen-entwuerfe.json` die Profilangaben ergänzen, `nur_name` entfernen, Logo nach `data/logos/` und auf Wunsch einen Beitrag eintragen.
+2. Das vorhandene Profil im Backend von Hand ergänzen; „Fehlende Entwürfe anlegen“ überschreibt nichts. Ein neuer Beitrag wird angelegt.
+3. Banner: neues Bild in der Werbeverwaltung (Werbung → Werbemittel) am vorhandenen Banner tauschen.

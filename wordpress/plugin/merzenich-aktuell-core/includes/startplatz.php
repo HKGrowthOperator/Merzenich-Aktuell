@@ -4,7 +4,7 @@
  * seit 02.10.2026 über die Layout-Karte in includes/layout.php).
  *
  * Meta ma_startplatz je Beitrag:
- *   auto        automatisch nach Relevanz 1–10 (includes/relevanz.php), sonst
+ *   auto        automatisch nach Relevanz (drei Stufen, includes/relevanz.php), sonst
  *               füllt die jüngste passende Meldung freie Plätze
  *   aufmacher   großer Aufmacher oben
  *   buehne-1…4  Bühne: 1–2 rechts neben dem Aufmacher, 3–4 darunter
@@ -134,13 +134,10 @@ function ma_startplatz_box(WP_Post $p): void {
         foreach ($slotsR as $wert => $label) printf('<option value="%s"%s>%s</option>', esc_attr($wert), selected($jetztR, $wert, false), esc_html($label));
         echo '</select><input type="hidden" name="ma_ressortplatz_seite" value="' . esc_attr($ressort) . '">';
     }
-    // Relevanz 1–10 (includes/relevanz.php): steuert „Automatisch“.
+    // Relevanz in drei Stufen (includes/relevanz.php): steuert „Automatisch“.
     if (function_exists('ma_relevanz_auswahl')) {
         echo '<p><strong>Relevanz</strong> <span class="description">(bei „Automatisch“)</span></p>';
         echo ma_relevanz_auswahl('ma_relevanz', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true)));
-    }
-    if (function_exists('ma_prioritaet_auswahl')) {
-        echo '<p style="margin-bottom:4px"><strong>Priorität</strong> <span class="description">(ordnet innerhalb derselben Relevanz)</span></p>' . ma_prioritaet_auswahl('ma_prioritaet', ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_prioritaet', true)), ' style="width:100%"');
     }
     printf('<p><a href="%s">Startseite &amp; Ressorts anordnen</a></p>', esc_url(admin_url('admin.php?page=ma-startseite')));
 }
@@ -159,11 +156,6 @@ add_action('save_post_post', function (int $post_id): void {
         elseif ($platz === 'aus') $platz = 'auto';
         if (ma_startseite_freigabe($post_id) !== $freigabe) ma_startseite_freigabe_setzen($post_id, $freigabe === 'ja', 'Box Startseite');
     }
-    if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_prioritaet'])) {
-        $pr = ma_relevanz_saeubern(wp_unslash($_POST['ma_prioritaet']));
-        $prVorher = ma_relevanz_saeubern(get_post_meta($post_id, 'ma_prioritaet', true));
-        if ($pr !== $prVorher) { $pr ? update_post_meta($post_id, 'ma_prioritaet', $pr) : delete_post_meta($post_id, 'ma_prioritaet'); if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Priorität ' . ($pr ?: 'normal')); }
-    }
     if ($platz === 'auto' || $platz === 'aus' || isset(ma_layout_slots('startseite')[$platz])) {
         ma_startplatz_setzen($post_id, $platz);
         if ($alt !== $platz && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Startseite: ' . (ma_startplaetze()[$platz] ?? ma_layout_slots('startseite')[$platz] ?? $platz));
@@ -181,9 +173,9 @@ add_action('save_post_post', function (int $post_id): void {
     }
     if (function_exists('ma_relevanz_saeubern') && isset($_POST['ma_relevanz'])) {
         $r = ma_relevanz_saeubern(wp_unslash($_POST['ma_relevanz']));
-        $vorher = (int) get_post_meta($post_id, 'ma_relevanz', true);
+        $vorher = ma_relevanz_saeubern(get_post_meta($post_id, 'ma_relevanz', true));
         if ($r) update_post_meta($post_id, 'ma_relevanz', $r);
-        if ($r && $r !== $vorher && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Relevanz ' . $r . ($vorher ? ' (vorher ' . $vorher . ')' : ''));
+        if ($r && $r !== $vorher && function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($post_id, 'Relevanz ' . ma_relevanz_stufe($r)['name'] . ($vorher ? ' (vorher ' . ma_relevanz_stufe($vorher)['name'] . ')' : ''));
     }
 }, 20);
 

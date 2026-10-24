@@ -134,7 +134,11 @@ add_action('save_post_post', function (int $id): void {
     if (!current_user_can('edit_others_posts') || !current_user_can('edit_post', $id)) return;
     $an = !empty($_POST['ma_gesponsert']);
     $an ? update_post_meta($id, 'ma_gesponsert', '1') : delete_post_meta($id, 'ma_gesponsert');
-    $an && !empty($_POST['ma_gesponsert_test']) ? update_post_meta($id, 'ma_gesponsert_art', 'test') : delete_post_meta($id, 'ma_gesponsert_art');
+    // Der Haken steuert nur den Testeintrag; „anzeige“ und „eigen“ (Firmen-Entwürfe, 24.10.2026) bleiben beim Speichern erhalten.
+    $art = (string) get_post_meta($id, 'ma_gesponsert_art', true);
+    if (!$an) delete_post_meta($id, 'ma_gesponsert_art');
+    elseif (!empty($_POST['ma_gesponsert_test'])) update_post_meta($id, 'ma_gesponsert_art', 'test');
+    elseif ($art === 'test' || !in_array($art, ['anzeige', 'eigen'], true)) delete_post_meta($id, 'ma_gesponsert_art');
     $von = sanitize_text_field(wp_unslash($_POST['ma_gesponsert_von'] ?? ''));
     // Nur ändern, wenn die Auswahl wirklich geändert wurde (unternehmenskanal.php).
     if (function_exists('ma_business_auswahl_geaendert') && ma_business_auswahl_geaendert('ma_business_id')) {

@@ -35,6 +35,13 @@ pruefe('Testeintrag: Anzeige · kostenfreier Testeintrag', ma_gesponsert_label(2
 pruefe('Testeintrag vor Veröffentlichung: ohne Enddatum', ma_gesponsert_hinweis(2), 'Kostenfreie Präsentation im Testzeitraum');
 pruefe('ohne Haken „Gesponsert“ kein Testeintrag', ma_ist_testeintrag(3), false);
 pruefe('Kennzeichnung mit WP_Post', ma_gesponsert_label(new WP_Post(['ID' => 2])), 'Anzeige · kostenfreier Testeintrag');
+// Firmen-Entwürfe (24.10.2026): „anzeige“ und „eigen“ (Herausgeberin), ohne Testzeitraum.
+$GLOBALS['meta'][7] = ['ma_gesponsert' => '1', 'ma_gesponsert_art' => 'anzeige'];
+$GLOBALS['meta'][8] = ['ma_gesponsert' => '1', 'ma_gesponsert_art' => 'eigen'];
+pruefe('Anzeige: Kennzeichnung und Hinweis, kein Testeintrag', [ma_gesponsert_label(7), ma_gesponsert_hinweis(7), ma_ist_testeintrag(7)], ['Anzeige', 'Werbliche Präsentation eines Unternehmens', false]);
+pruefe('In eigener Sache: Kennzeichnung und Hinweis', [ma_gesponsert_label(8), ma_gesponsert_hinweis(8)], ['Anzeige · in eigener Sache', 'Präsentation der Herausgeberin von Merzenich Aktuell']);
+$ws = (string) file_get_contents(dirname(__DIR__, 2) . '/wordpress/plugin/merzenich-aktuell-core/includes/werbung-stat.php');
+pruefe('Kasten „Kennzeichnung“: Speichern behält „anzeige“ und „eigen“', str_contains($ws, "!in_array(\$art, ['anzeige', 'eigen'], true)) delete_post_meta(\$id, 'ma_gesponsert_art')"), true);
 
 echo "Zeitraum\n";
 pruefe('Ende = Start + 30 Tage', ma_test_ende_berechnen('2026-10-20 09:00:00'), '2026-11-19 09:00:00');

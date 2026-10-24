@@ -131,13 +131,13 @@
   if (!document.querySelector('link[data-ma-ressort-dropdowns]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = '/assets/ressort-dropdowns.css?v=242df82871';
+    style.href = '/assets/ressort-dropdowns.css?v=2665ba567a';
     style.dataset.maRessortDropdowns = '1';
     document.head.append(style);
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=c9b604d999';
+    script.src = '/assets/ressort-dropdowns.js?v=1cd41d2e36';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);

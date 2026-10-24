@@ -5,6 +5,8 @@
  * Relevanz zeigt auch Beiträge ohne Relevanz (am Ende) und ordnet bei
  * gleicher Relevanz nach Datum. Bis 1.24 fielen Beiträge ohne Relevanz beim
  * Sortieren aus der Liste („da fällt was raus“).
+ * Seit 1.32.0 drei Stufen (1 Hoch, 2 Mitte, 3 Niedrig): Aufsteigend sortiert
+ * steht Hoch oben; ohne Angabe zählt wie Mitte.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -12,7 +14,7 @@ if (!defined('ABSPATH')) { exit; }
 function ma_beitragsliste_filter(): array {
     return [
         'ma_sf' => ['Startseite: alle', ['ja' => 'Startseite freigegeben', 'offen' => 'Startseite noch offen', 'nur-rubrik' => 'Nur in der Rubrik']],
-        'ma_rel' => ['Relevanz: alle', ['hoch' => 'Relevanz hoch (8–10)', 'mittel' => 'Relevanz mittel (4–7)', 'niedrig' => 'Relevanz niedrig (1–3)', 'ohne' => 'ohne Relevanz']],
+        'ma_rel' => ['Relevanz: alle', ['hoch' => 'Relevanz 1 · Hoch', 'mittel' => 'Relevanz 2 · Mitte', 'niedrig' => 'Relevanz 3 · Niedrig', 'ohne' => 'ohne Relevanz (zählt wie Mitte)']],
         'ma_bild' => ['Bild: alle', ['ohne' => 'ohne Beitragsbild', 'rechte-offen' => 'Bildrechte nicht bestätigt']],
     ];
 }
@@ -27,9 +29,9 @@ function ma_beitragsliste_meta_query(array $wahl): array {
             ['relation' => 'OR', ['key' => 'ma_startplatz', 'compare' => 'NOT EXISTS'], ['key' => 'ma_startplatz', 'value' => 'aus', 'compare' => '!=']]]; break;
     }
     switch ($wahl['ma_rel'] ?? '') {
-        case 'hoch': $mq[] = ['key' => 'ma_relevanz', 'value' => 8, 'compare' => '>=', 'type' => 'NUMERIC']; break;
-        case 'mittel': $mq[] = ['key' => 'ma_relevanz', 'value' => [4, 7], 'compare' => 'BETWEEN', 'type' => 'NUMERIC']; break;
-        case 'niedrig': $mq[] = ['key' => 'ma_relevanz', 'value' => [1, 3], 'compare' => 'BETWEEN', 'type' => 'NUMERIC']; break;
+        case 'hoch': $mq[] = ['key' => 'ma_relevanz', 'value' => 1, 'compare' => '=', 'type' => 'NUMERIC']; break;
+        case 'mittel': $mq[] = ['key' => 'ma_relevanz', 'value' => 2, 'compare' => '=', 'type' => 'NUMERIC']; break;
+        case 'niedrig': $mq[] = ['key' => 'ma_relevanz', 'value' => 3, 'compare' => '=', 'type' => 'NUMERIC']; break;
         case 'ohne': $mq[] = ['relation' => 'OR', ['key' => 'ma_relevanz', 'compare' => 'NOT EXISTS'], ['key' => 'ma_relevanz', 'value' => ['', '0'], 'compare' => 'IN']]; break;
     }
     switch ($wahl['ma_bild'] ?? '') {
@@ -55,9 +57,21 @@ add_action('pre_get_posts', function (WP_Query $q): void {
     foreach (array_keys(ma_beitragsliste_filter()) as $n) $wahl[$n] = sanitize_key(wp_unslash($_GET[$n] ?? ''));
     $mq = ma_beitragsliste_meta_query($wahl);
     if ($q->get('orderby') === 'ma_relevanz') {
-        // Beiträge ohne Relevanz bleiben in der Liste; bei gleicher Relevanz das neueste zuerst.
-        $mq['ma_rel_sort'] = ['relation' => 'OR', 'ma_rel_da' => ['key' => 'ma_relevanz', 'type' => 'NUMERIC', 'compare' => 'EXISTS'], ['key' => 'ma_relevanz', 'compare' => 'NOT EXISTS']];
-        $q->set('orderby', ['ma_rel_da' => strtoupper((string) $q->get('order')) === 'ASC' ? 'ASC' : 'DESC', 'date' => 'DESC']);
+        // Sortierung über posts_orderby (unten): ohne Angabe zählt wie Mitte, nichts fällt heraus.
+        $q->set('ma_rel_sortieren', strtoupper((string) $q->get('order')) === 'DESC' ? 'DESC' : 'ASC');
+        $q->set('orderby', 'date');
     }
     if ($mq) $q->set('meta_query', ['relation' => 'AND'] + $mq);
 });
+
+/** ORDER BY für die Relevanz-Sortierung: Stufe (ohne Angabe = 2), dann das neueste zuerst. */
+function ma_beitragsliste_relevanz_orderby(string $posts, string $postmeta, string $richtung): string {
+    $richtung = $richtung === 'DESC' ? 'DESC' : 'ASC';
+    return "COALESCE((SELECT CAST(pm.meta_value AS UNSIGNED) FROM {$postmeta} pm WHERE pm.post_id = {$posts}.ID AND pm.meta_key = 'ma_relevanz' AND pm.meta_value IN ('1','2','3') LIMIT 1), 2) {$richtung}, {$posts}.post_date DESC";
+}
+add_filter('posts_orderby', function (string $orderby, WP_Query $q): string {
+    $r = (string) $q->get('ma_rel_sortieren');
+    if ($r === '') return $orderby;
+    global $wpdb;
+    return ma_beitragsliste_relevanz_orderby($wpdb->posts, $wpdb->postmeta, $r);
+}, 10, 2);

@@ -478,9 +478,9 @@ function ma21_ressort_menue_daten(array $d): array {
 }
 
 /**
- * Firmen für das Unternehmen-Menü (ressort-dropdowns.js): echte Kanäle mit
- * Beiträgen, solange es weniger als drei sind dazu die Musterfirmen; je Firma
- * bis zu drei Beiträge. 5 Minuten zwischengespeichert.
+ * Firmen für das Unternehmen-Menü (ressort-dropdowns.js): echte Kanäle, nur
+ * ohne echten Kanal die Musterfirmen; je Firma bis zu drei Beiträge.
+ * 5 Minuten zwischengespeichert.
  */
 function ma21_menue_firmen(): array {
     // _v2 seit 21.19.0: nach dem Update sofort die drei neuen Beispielfirmen, nicht die alte Liste.
@@ -489,7 +489,7 @@ function ma21_menue_firmen(): array {
     $rel = fn(string $u): string => wp_make_link_relative($u);
     $l = [];
     foreach (ma21_alle_firmen(8) as $f) {
-        $l[] = ['name' => $f['name'], 'url' => $rel($f['url']), 'zeile' => $f['zeile'], 'kuerzel' => $f['kuerzel'], 'farbe' => $f['farbe'], 'logo' => $f['logo'], 'muster' => $f['muster'],
+        $l[] = ['name' => $f['name'], 'url' => $rel($f['url']), 'zeile' => $f['zeile'], 'kuerzel' => $f['kuerzel'], 'farbe' => $f['farbe'], 'logo' => $f['logo'], 'muster' => $f['muster'], 'hinweis' => (string) ($f['hinweis'] ?? ''),
             // Kanalbeiträge echter Firmen sind gesponsert (ma_business_beitraege); Bildnachweis mit Lizenzlink.
             'beitraege' => array_map(fn(array $b): array => ['titel' => $b['titel'], 'url' => $rel($b['url']), 'anriss' => $b['anriss'], 'zeit' => $b['zeit'], 'muster' => $b['muster'], 'gesponsert' => !$b['muster'],
                 'bild' => ma21_menue_bildnachweis($b['bild'])],
@@ -503,7 +503,7 @@ add_action('transition_post_status', function (string $neu, string $alt, WP_Post
 }, 10, 3);
 add_action('updated_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
 add_action('added_user_meta', function ($mid, $uid, $key): void { if ($key === 'ma_business_id') delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
-foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) add_action($h, function ($mid, $pid, $key): void { if (in_array($key, ['ma_business_id', 'ma_gesponsert'], true)) delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
+foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $h) add_action($h, function ($mid, $pid, $key): void { if (in_array($key, ['ma_business_id', 'ma_gesponsert', 'ma_business_kanal', 'ma_business_logo_rechte', '_thumbnail_id'], true)) delete_transient('ma21_menue_firmen_v2'); }, 10, 3);
 
 /**
  * Rote Titel des Ressort-Menüs (Wunsch Betreiber 15.10.2026): Jeder Titel führt
@@ -818,7 +818,7 @@ function ma21_startseite_frei(WP_Post $p): bool { return function_exists('ma_rel
  * Belegung der Startseite wie deploy/inhaltsindex.mjs: Aufmacher, vier
  * Nebenmeldungen (zwei rechts, zwei darunter, daneben eine Anzeige), dann die
  * Rubrikflächen. Die Startseiten-Freigabe entscheidet, ob eine Meldung
- * erscheint; die Relevanz 1–10 (mit Aktualität) entscheidet, wo.
+ * erscheint; die Relevanz (drei Stufen, mit Aktualität) entscheidet, wo.
  * Feste Plätze der Redaktion (Layout-Karte, Plugin includes/layout.php) gehen
  * vor, auch gegen die Bildregeln; freie Plätze füllt die jüngste passende
  * Meldung. „aus“ = nur in der eigenen Rubrik, nie auf der Startseite.
@@ -828,7 +828,7 @@ function ma21_startseite_belegung(bool $neu = false): array {
     static $cache = null;
     if ($cache !== null && !$neu) return $cache;
     $alle = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 120, 'orderby' => 'date', 'order' => 'DESC', 'suppress_filters' => false]);
-    // Startseiten-Freigabe und Relevanz 1–10 (Plugin, includes/relevanz.php):
+    // Startseiten-Freigabe und Relevanz in drei Stufen (Plugin, includes/relevanz.php):
     // „Nur in der Rubrik“ (aus) bleibt draußen, alles andere sortiert die
     // zentrale Relevanzlogik. Aufmacher und Bühne bekommen zuerst, was frisch
     // die Schwellen erreicht (Zone hero, dann buehne), danach den höchsten Wert.

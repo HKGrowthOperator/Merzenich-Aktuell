@@ -83,7 +83,7 @@
     var t = el('div', { class: 'ma-le__karte-text' });
     t.append(el('small', { text: (k.kicker || k.ressort.name) + ' · ' + k.ort + (k.sport ? ' · Sport' : '') }));
     t.append(el('strong', { text: k.titel }));
-    t.append(el('span', { class: 'ma-le__zeit', text: k.datum + ' · Relevanz ' + k.relevanz }));
+    t.append(el('span', { class: 'ma-le__zeit', text: k.datum + ' · Relevanz ' + k.relevanz + ((st.auswahl && st.auswahl.relevanz && st.auswahl.relevanz[k.relevanz]) ? ' ' + st.auswahl.relevanz[k.relevanz].name : '') }));
     w.append(t);
     return w;
   }
@@ -191,8 +191,8 @@
     var rechteBox = el('details', { class: 'ma-le__rechte' }, el('summary', { text: 'Erklärung zu Bild- und Nutzungsrechten lesen' }), el('div', { html: a.bildrechte || '' }));
     var quelle = el('input', { type: 'url', name: 'quelle', placeholder: 'https://…' });
     var relevanz = el('select', { name: 'relevanz' });
-    for (var i = 10; i >= 1; i--) relevanz.append(el('option', { value: String(i), text: i + ' · ' + ((a.relevanz && a.relevanz[i]) ? a.relevanz[i].name : '') }));
-    relevanz.value = '5';
+    for (var i = 1; i <= 3; i++) relevanz.append(el('option', { value: String(i), text: i + ' · ' + ((a.relevanz && a.relevanz[i]) ? a.relevanz[i].name : '') }));
+    relevanz.value = '2';
     var status = el('p', { class: 'ma-le__status', role: 'status' });
     var btnVeroeff = el('button', { type: 'submit', class: 'button button-primary', text: opt.slot ? 'Veröffentlichen und einsetzen' : 'Veröffentlichen' });
     var btnEntwurf = el('button', { type: 'button', class: 'button', text: 'Als Entwurf speichern und im Editor öffnen' });

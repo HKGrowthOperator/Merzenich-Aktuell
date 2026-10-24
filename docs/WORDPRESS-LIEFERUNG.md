@@ -1,6 +1,20 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. Oktober 2026 · Theme 21.20.8 · Core-Plugin 1.31.0 · live: 21.20.8 / 1.31.0 (Historie unten)
+24. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.32.0 · live: 21.20.8 / 1.31.0 (Historie unten)
+
+## Neu am 24.10.2026: Plugin 1.32.0 und Theme 21.21.0, Relevanz in drei Stufen, vier Unternehmen, Werbebanner
+
+**Stand live:** noch nicht eingespielt.
+
+**Anlass:** Auftrag des Betreibers vom 24.10.: im Backend nur noch drei Relevanzstufen statt zehn; statt Bäckerei Wirtz, Hasberg und Porschen Media stehen Almera Clean, KBS Management, Merzlicht und AJ Sports auf der Seite, mit Zugang; Merzlicht und AJ Sports laufen als Werbebanner; Mails an die Unternehmen.
+
+- **Relevanz** (`includes/relevanz.php`): ein Wert je Meldung, 1 Hoch, 2 Mitte, 3 Niedrig; ohne Angabe gilt Mitte. Gerechnet wird mit Punkten (9, 6, 2) minus einem Punkt je Tag Alter; Aufmacher und Bühne nur mit Stufe 1 und frisch (72 Stunden). Drei Knöpfe in Freigaben und Beitragsbox, Auswahl „1 Hoch / 2 Mitte / 3 Niedrig“ in der Beitragsliste (Filter je Stufe, Sortierung mit Hoch oben, ohne Angabe wie Mitte) und im Layout-Board. Die Priorität 1–10 und die Einstellungen „Aufmacher ab“ und „Bühne ab“ entfallen. Einmalige Umstellung beim ersten Aufruf: 8–10 → 1, 4–7 → 2, 1–3 → 3; der alte Wert bleibt in `_ma_relevanz_alt`, kein Beitrag wird doppelt umgerechnet. Die frühere Umstellung von 1.11 (1–3 = „Nur in der Rubrik“) ist entfernt; sie hätte nach der neuen Skala die wichtigsten Meldungen von der Startseite genommen.
+- **Unternehmen** (`data/firmen-entwuerfe.json`): Almera Clean (Gebäudereinigung, Kettenweg 1, Merzenich) und KBS Management GmbH (App- und Softwareentwicklung, Leverkusen) mit Angaben von ihren Websites, Logo (weiß, für helle Flächen dunkel eingefärbt) und je einem Beitrag; Merzlicht und AJ Sports nur mit Namen (`nur_name`), ohne Adresse, Logo und Beitrag, bis der Betreiber Angaben schickt. Kein Testzeitraum mehr: Kennzeichnung „Anzeige“ (`ma_gesponsert_art = anzeige`), bei KBS „Anzeige · in eigener Sache“ mit dem Hinweis „Herausgeberin von Merzenich Aktuell“ (Profil, Beitrag, Kanal, Menü). KBS steht nicht im Kasten „Unternehmen aus der Gemeinde“.
+- **Firma zurückziehen** (Firmen-Entwürfe, Abschnitt „Früher eingetragen“): Profil, Beiträge und Banner eines früheren Betriebs werden Entwurf, Banner mit „Schaltung aus“. Nichts wird gelöscht, Logos bleiben in der Mediathek.
+- **Werbebanner** Merzlicht und AJ Sports (`data/banner/`, 1200 × 400, nur der Name als Schriftzug): entstehen mit der eingetragenen Einwilligung einmal als laufende Anzeige auf allen sichtbaren Werbeplätzen (sechs Startseiten-Bänder, Servicespalte und Bühne der Startseite, unter Artikeln, Sport- und Unternehmensspalte), ohne Link und ohne Ende, und ersetzen dort die Musteranzeigen; mehrere Anzeigen auf einem Platz wechseln wie bisher alle 8 Sekunden.
+- **Theme:** Jedes Profil aus den Firmen-Entwürfen ist ein Kanal, auch ohne Beitrag (`ma_business_kanal`); das Menü zeigt dann „Noch keine Beiträge“. Die Beispielfirmen verschwinden, sobald es eine echte Firma gibt (`MA21_MUSTER_BIS = 1`). Sitz außerhalb der Gemeinde über `ma_business_ort`.
+- **Kasten „Kennzeichnung“:** Speichern im Editor behält „anzeige“ und „eigen“; der Haken steuert nur den Testeintrag.
+- **Zugänge** für Almera Clean und KBS über Benutzer → Partner-Zugänge (ohne E-Mail von WordPress); Mails zum Kopieren in `docs/vorlagen/mails-firmen-2026-10.md`.
 
 ## Neu am 20.10.2026: Plugin 1.31.0 und Theme 21.20.6 bis 21.20.8, drei echte Firmen im Unternehmensmenü
 

@@ -184,6 +184,7 @@
   .ressort-firmen__kanal strong{font-family:var(--serif);font-size:18px;line-height:1.15}
   .ressort-firmen__kanal span:not(.ressort-firmen__logo){font-size:12.5px;color:#5f5b55}
   .ressort-firmen__kanal em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f5b55}
+  .ressort-firmen__leer{margin:0;align-self:center;font-size:13px;line-height:1.4;color:#5f5b55}
   .ressort-firmen__kanal .ressort-firmen__kanal-cta{margin-top:8px;font-size:13px;font-weight:800;color:var(--ink);border-bottom:1px solid var(--red);align-self:flex-start;padding-bottom:2px}
   .ressort-firmen__kanal:hover .ressort-firmen__kanal-cta,.ressort-firmen__kanal:focus-visible .ressort-firmen__kanal-cta{color:var(--red)}
   .mit-firmen .ressort-dropdown__latest{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-content:start}

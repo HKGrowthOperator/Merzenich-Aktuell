@@ -29,8 +29,8 @@ Für alle Partner gilt:
 
 1. Anfrage prüfen. Anträge kommen über das Formular `[ma_partner_antrag]` per E-Mail an die Administrationsadresse (Einstellungen → Allgemein → „E-Mail-Adresse der Administration“). Ein Konto wird dabei **nicht** automatisch angelegt.
 2. Im Backend **Benutzer → Partner-Zugänge** öffnen.
-3. Name / Organisation, E-Mail-Adresse und Rolle eintragen, „Zugang anlegen & Einladung senden“.
-4. WordPress schickt dem Partner eine E-Mail mit dem Link zum Setzen des Passworts. Zusätzlich kann die Vorlage `docs/vorlagen/einladung-partnerzugang.md` verschickt werden.
+3. Name / Organisation, E-Mail-Adresse und Rolle eintragen, bei Unternehmen das Profil wählen, „Zugang anlegen (ohne E-Mail)“.
+4. WordPress schickt **keine** E-Mail. Benutzername ist der Teil der E-Mail-Adresse vor dem @, das Passwort sind 24 Zufallszeichen; es wird im Profil neu gesetzt und persönlich weitergegeben (nie per Mail). Die Einladung verschickt die Redaktion selbst, Vorlage `docs/vorlagen/einladung-partnerzugang.md`, für die Unternehmen vom Oktober 2026 `docs/vorlagen/mails-firmen-2026-10.md`.
 5. Bei Unternehmen: Werbekontingent am Benutzerprofil prüfen (siehe Abschnitt 4).
 
 Zugang sperren: unter **Benutzer** die Rolle auf „Kein Rang für diese Website“ setzen oder den Benutzer löschen (Inhalte dabei einem Redaktionskonto zuordnen).

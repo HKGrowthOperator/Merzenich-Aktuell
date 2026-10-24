@@ -56,7 +56,11 @@ pruefe('Startseite freigegeben', ma_beitragsliste_meta_query(['ma_sf' => 'ja']),
 pruefe('Nur in der Rubrik', ma_beitragsliste_meta_query(['ma_sf' => 'nur-rubrik']), [['key' => 'ma_startplatz', 'value' => 'aus']]);
 $ohne = ma_beitragsliste_meta_query(['ma_rel' => 'ohne']);
 pruefe('ohne Relevanz: fehlend oder leer', [$ohne[0]['relation'], $ohne[0][0]['compare'], $ohne[0][1]['compare']], ['OR', 'NOT EXISTS', 'IN']);
-pruefe('Relevanz hoch ab 8, numerisch', ma_beitragsliste_meta_query(['ma_rel' => 'hoch'])[0], ['key' => 'ma_relevanz', 'value' => 8, 'compare' => '>=', 'type' => 'NUMERIC']);
+pruefe('Relevanz Hoch = Stufe 1, numerisch', ma_beitragsliste_meta_query(['ma_rel' => 'hoch'])[0], ['key' => 'ma_relevanz', 'value' => 1, 'compare' => '=', 'type' => 'NUMERIC']);
+pruefe('Relevanz Niedrig = Stufe 3', ma_beitragsliste_meta_query(['ma_rel' => 'niedrig'])[0]['value'], 3);
+$ob = ma_beitragsliste_relevanz_orderby('wp_posts', 'wp_postmeta', 'ASC');
+pruefe('Sortierung: ohne Angabe zählt wie Mitte, Hoch zuerst, dann neueste', [str_contains($ob, '), 2) ASC'), str_contains($ob, "IN ('1','2','3')"), str_ends_with($ob, 'wp_posts.post_date DESC')], [true, true, true]);
+pruefe('Sortierrichtung nur ASC oder DESC', str_contains(ma_beitragsliste_relevanz_orderby('p', 'm', 'x; DROP'), 'DROP'), false);
 pruefe('Bildrechte offen: Bild da und Rechte nicht bestätigt', count(ma_beitragsliste_meta_query(['ma_bild' => 'rechte-offen'])), 2);
 pruefe('Filter kombinierbar', count(ma_beitragsliste_meta_query(['ma_sf' => 'offen', 'ma_rel' => 'mittel', 'ma_bild' => 'ohne'])), 3);
 pruefe('unbekannter Wert wird ignoriert', ma_beitragsliste_meta_query(['ma_sf' => 'quatsch', 'ma_rel' => 'x']), []);

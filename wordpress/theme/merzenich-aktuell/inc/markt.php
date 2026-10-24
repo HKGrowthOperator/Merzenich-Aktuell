@@ -251,10 +251,12 @@ function ma21_musterprofile_html(int $echte, string $anfrage): string {
 /**
  * Veröffentlichte Unternehmensprofile für den Kasten „Unternehmen aus der
  * Gemeinde“: die Betriebe aus data/firmen-entwuerfe.json (Plugin) in ihrer
- * Reihenfolge zuerst, dann die übrigen nach Name. Entwürfe erscheinen nie.
+ * Reihenfolge zuerst, dann die übrigen nach Name. Entwürfe erscheinen nie,
+ * Unternehmen mit Sitz außerhalb (ma_business_ort, z. B. KBS in Leverkusen) auch nicht.
  */
 function ma21_gemeinde_profile(int $max = 5): array {
     $profile = get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 48, 'orderby' => 'title', 'order' => 'ASC']);
+    $profile = array_values(array_filter($profile, fn($p) => (string) get_post_meta($p->ID, 'ma_business_ort', true) === ''));
     $reihe = [];
     if (function_exists('ma_firmen_entwuerfe_daten')) foreach ((array) (ma_firmen_entwuerfe_daten()['firmen'] ?? []) as $i => $f) $reihe[(string) ($f['profil']['slug'] ?? '')] = $i;
     usort($profile, fn($a, $b) => [$reihe[$a->post_name] ?? 99, $a->post_title] <=> [$reihe[$b->post_name] ?? 99, $b->post_title]);
@@ -335,7 +337,7 @@ function ma21_betrieb_zeile(WP_Post $p): string {
     $text = wp_trim_words(wp_strip_all_tags((string) ($p->post_excerpt ?: $p->post_content)), 28, ' …');
     $fakten = array_filter([(string) ($f['adresse'] ?? ''), (string) ($f['telefon'] ?? '')]);
     return '<article class="event-row job-row markt-row" data-ort="' . esc_attr(ma21_ort($p)) . '"><span class="d job-d"><b>' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . '</b></span>'
-        . '<div class="info"><span class="eyebrow"><span class="markt-art">' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . ' · </span>' . esc_html((string) ($f['ortsteil'] ?? '') ?: (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich')) . '</span>'
+        . '<div class="info"><span class="eyebrow"><span class="markt-art">' . esc_html((string) ($f['branche'] ?? '') ?: 'Betrieb') . ' · </span>' . esc_html((string) ($f['ortsteil'] ?? '') ?: ((string) ($f['ort'] ?? '') ?: (MA21_ORTE[ma21_ort($p)] ?? 'Merzenich'))) . '</span>'
         . '<h2><a href="' . $url . '">' . esc_html(get_the_title($p)) . '</a></h2>'
         . ($text !== '' ? '<p class="ev-desc">' . esc_html($text) . '</p>' : '')
         . ($fakten ? '<div class="meta"><span>' . implode('</span><span>', array_map('esc_html', $fakten)) . '</span></div>' : '') . '</div>'

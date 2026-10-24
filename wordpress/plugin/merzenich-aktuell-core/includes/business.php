@@ -201,6 +201,10 @@ function ma_business_profile(int $post_id): array {
         'website' => (string)get_post_meta($post_id, 'ma_business_website', true),
         'oeffnungszeiten' => (string)get_post_meta($post_id, 'ma_business_oeffnungszeiten', true),
         'ortsteil' => ma_business_ortsteile()[$ortsteil] ?? '',
+        // Sitz außerhalb der Gemeinde (z. B. „Leverkusen“), nur ohne Ortsteil (Firmen-Entwürfe, 24.10.2026).
+        'ort' => (string)get_post_meta($post_id, 'ma_business_ort', true),
+        'nur_name' => (string)get_post_meta($post_id, 'ma_business_nur_name', true) === '1',
+        'herausgeberin' => (string)get_post_meta($post_id, 'ma_business_herausgeberin', true) === '1',
         'quelle' => (string)get_post_meta($post_id, 'ma_business_quelle', true),
         'stand' => $stand_text,
     ];

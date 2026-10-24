@@ -9,8 +9,8 @@
  *   verknüpftem Zugang oder zugeordneten Beiträgen (Plugin,
  *   includes/unternehmenskanal.php). Ihre Beiträge sind normale Beiträge mit
  *   Freigabe durch die Redaktion; deren Seiten liefert single.php.
- * - Musterfirmen aus inc/unternehmen-muster.json, solange weniger als drei echte
- *   Kanäle Beiträge haben. Ausgedacht und überall gekennzeichnet
+ * - Musterfirmen aus inc/unternehmen-muster.json, solange es keinen echten
+ *   Kanal gibt (seit 21.21.0; vorher bis drei echte Kanäle mit Beiträgen). Ausgedacht und überall gekennzeichnet
  *   (Beispielfirma, Musterbeitrag, Testanzeige); ihre Seiten sind für
  *   Suchmaschinen gesperrt und stehen in keiner Sitemap und keinem Feed.
  *
@@ -19,8 +19,8 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-/** Ab so vielen echten Kanälen mit Beiträgen entfallen die Musterfirmen. */
-const MA21_MUSTER_BIS = 3;
+/** Ab so vielen echten Kanälen entfallen die Musterfirmen (Betreiber 24.10.2026: sobald eine echte Firma da ist). */
+const MA21_MUSTER_BIS = 1;
 
 /* ------------------------------------------------------------ Daten */
 
@@ -108,7 +108,8 @@ function ma21_kurzname(string $s): string {
 
 /**
  * IDs der echten Unternehmenskanäle: veröffentlichte Profile mit verknüpftem
- * Zugang oder veröffentlichten, zugeordneten Beiträgen.
+ * Zugang, mit veröffentlichten, zugeordneten Beiträgen oder als Kanal angelegt
+ * (ma_business_kanal, Firmen-Entwürfe; auch ohne Beitrag, 24.10.2026).
  */
 function ma21_kanal_ids(): array {
     static $ids = null;
@@ -117,26 +118,28 @@ function ma21_kanal_ids(): array {
     foreach ((array) get_users(['meta_key' => 'ma_business_id', 'fields' => 'ID']) as $u) $roh[] = (int) get_user_meta((int) $u, 'ma_business_id', true);
     foreach ((array) get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 300, 'fields' => 'ids',
         'meta_query' => [['key' => 'ma_business_id', 'compare' => 'EXISTS'], ['key' => 'ma_gesponsert', 'value' => '1']]]) as $p) $roh[] = (int) get_post_meta((int) $p, 'ma_business_id', true);
+    foreach ((array) get_posts(['post_type' => 'ma_business', 'post_status' => 'publish', 'posts_per_page' => 50, 'fields' => 'ids',
+        'meta_query' => [['key' => 'ma_business_kanal', 'value' => '1']]]) as $p) $roh[] = (int) $p;
     $ids = [];
     foreach (array_unique(array_filter($roh)) as $id) if (get_post_type($id) === 'ma_business' && get_post_status($id) === 'publish') $ids[] = (int) $id;
     return $ids;
 }
 
-/** Echte Kanäle mit mindestens einem veröffentlichten Beitrag (Menü, Übersicht). */
+/** Echte Kanäle mit mindestens einem veröffentlichten Beitrag oder als Kanal angelegt (Menü, Übersicht). */
 function ma21_echte_firmen(): array {
     static $f = null;
     if ($f !== null) return $f;
     $f = [];
     foreach (ma21_kanal_ids() as $id) {
         $a = ma21_firma_ansicht(get_post($id));
-        if ($a && $a['beitraege']) $f[] = $a;
+        if ($a && ($a['beitraege'] || (string) get_post_meta($id, 'ma_business_kanal', true) === '1')) $f[] = $a;
     }
-    // Neueste Beiträge zuerst (Oberberg Aktuell ordnet ebenso nach Aktualität).
-    usort($f, fn($a, $b) => strcmp((string) ($b['beitraege'][0]['iso'] ?? ''), (string) ($a['beitraege'][0]['iso'] ?? '')));
+    // Neueste Beiträge zuerst (Oberberg Aktuell ordnet ebenso nach Aktualität), Firmen ohne Beitrag danach in Namensfolge.
+    usort($f, fn($a, $b) => [(string) ($b['beitraege'][0]['iso'] ?? ''), $a['name']] <=> [(string) ($a['beitraege'][0]['iso'] ?? ''), $b['name']]);
     return $f;
 }
 
-/** Werden die Musterfirmen gezeigt? Bis drei echte Kanäle Beiträge haben. */
+/** Werden die Musterfirmen gezeigt? Nur solange es keinen echten Kanal gibt. */
 function ma21_muster_aktiv(): bool {
     return count(ma21_echte_firmen()) < MA21_MUSTER_BIS;
 }
@@ -190,7 +193,8 @@ function ma21_firma_ansicht($q): ?array {
     if (!$q instanceof WP_Post || $q->post_type !== 'ma_business') return null;
     $name = html_entity_decode(get_the_title($q), ENT_QUOTES, 'UTF-8');
     $p = function_exists('ma_business_profile') ? (array) ma_business_profile($q->ID) : [];
-    $ort = (string) ($p['ortsteil'] ?? '') ?: 'Gemeinde Merzenich';
+    // Ortsteil, sonst Sitz außerhalb (KBS: Leverkusen); nur bei Profilen mit bloßem Namen gar kein Ort.
+    $ort = (string) ($p['ortsteil'] ?? '') ?: ((string) ($p['ort'] ?? '') ?: (!empty($p['nur_name']) ? '' : 'Gemeinde Merzenich'));
     // Logo (Beitragsbild) nur mit geklärten Rechten, sonst das Kürzel (16.10.2026). Ohne Angabe
     // (ältere Profile) zählt wie auf der Profilseite das Häkchen „Bildrechte geprüft“.
     $rechte = (string) get_post_meta($q->ID, 'ma_business_logo_rechte', true);
@@ -210,7 +214,8 @@ function ma21_firma_ansicht($q): ?array {
         'fakten' => array_filter(['Branche' => (string) ($p['branche'] ?? ''), 'Ort' => $ort, 'Adresse' => (string) ($p['adresse'] ?? ''), 'Telefon' => (string) ($p['telefon'] ?? ''), 'E-Mail' => (string) ($p['email'] ?? ''), 'Öffnungszeiten' => (string) ($p['oeffnungszeiten'] ?? '')]),
         'telefon_href' => (string) ($p['telefon_href'] ?? ''), 'website' => (string) ($p['website'] ?? ''),
         'knopf' => (string) get_post_meta($q->ID, 'ma_business_karte_knopf', true), 'knopf_ziel' => (string) get_post_meta($q->ID, 'ma_business_karte_ziel', true),
-        'bild' => null, 'profil' => get_permalink($q), 'beitraege' => $beitraege, 'anzeige' => null, 'id' => (int) $q->ID];
+        'bild' => null, 'profil' => get_permalink($q), 'beitraege' => $beitraege, 'anzeige' => null, 'id' => (int) $q->ID,
+        'hinweis' => !empty($p['herausgeberin']) ? 'Herausgeberin von Merzenich Aktuell' : ''];
 }
 
 /* ------------------------------------------------------------ Adressen */

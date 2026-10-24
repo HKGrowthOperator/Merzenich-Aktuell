@@ -191,9 +191,11 @@
     return '<div class="ressort-firmen__ansicht">' +
       '<span class="ressort-dropdown__eyebrow">' + esc(f.name) + (f.muster ? ' · Beispielfirma' : ' · Unternehmenskanal') + '</span>' +
       '<div class="ressort-firmen__karten">' + karten +
+        // Firma ohne Beitrag (24.10.2026): kurzer Hinweis statt leerer Fläche.
+        (karten ? '' : '<p class="ressort-firmen__leer">Noch keine Beiträge von ' + esc(f.name) + '.</p>') +
         '<a class="ressort-firmen__kanal" href="' + esc(f.url) + '">' + firmenLogo(f) +
           '<strong>' + esc(f.name) + '</strong><span>' + esc(f.zeile || '') + '</span>' +
-          (f.muster ? '<em>Beispielfirma · kein echtes Unternehmen</em>' : '') +
+          (f.muster ? '<em>Beispielfirma · kein echtes Unternehmen</em>' : f.hinweis ? '<em>' + esc(f.hinweis) + '</em>' : '') +
           '<span class="ressort-firmen__kanal-cta">Zum Unternehmenskanal</span>' +
         '</a>' +
       '</div>' +
@@ -218,8 +220,8 @@
         (gruppen.length ? '<div class="ressort-firmen__gruppen ist-voll">' + gruppenHtml(gruppen) + '</div>'
           : punkte ? '<div class="ressort-firmen__gruppen">' + punkte + '</div>' : '') +
       '</div>' +
-      '<nav class="ressort-firmen__liste" aria-label="Unternehmen aus der Gemeinde">' +
-        '<span class="ressort-dropdown__eyebrow">Unternehmen aus der Gemeinde</span>' +
+      '<nav class="ressort-firmen__liste" aria-label="Unternehmen">' +
+        '<span class="ressort-dropdown__eyebrow">Unternehmen</span>' +
         firmen.map((f, i) => '<a class="ressort-firmen__firma" href="' + esc(f.url) + '" data-firma="' + i + '" aria-controls="' + RECHTS_ID + '" aria-expanded="false">' +
           firmenLogo(f) + '<span class="ressort-firmen__name"><strong>' + esc(f.name) + '</strong><small>' + esc(f.zeile || '') + '</small>' +
           (f.muster ? '<em>Beispielfirma</em>' : '') + '</span></a>').join('') +
@@ -546,7 +548,7 @@
   function drawerFirmen(def, id) {
     const firmen = (def.firmen || []).filter((f) => f && f.name && f.url);
     if (!firmen.length) return '';
-    return '<div class="drawer-ressort__gruppe">Unternehmen aus der Gemeinde</div>' +
+    return '<div class="drawer-ressort__gruppe">Unternehmen</div>' +
       firmen.map((f, i) => {
         const fid = id + '-firma-' + i;
         return '<div class="drawer-firma"><a href="' + esc(f.url) + '">' + esc(f.name) + '<small>' + esc(f.zeile || '') + (f.muster ? ' · Beispielfirma' : '') + '</small></a>' +

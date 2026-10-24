@@ -67,7 +67,7 @@ function ma_layout_karte_daten(?WP_Post $p): ?array {
         'anriss' => (string) $p->post_excerpt, 'status' => $p->post_status,
         'bild' => $src ? ['src' => $src[0], 'w' => (int) $src[1], 'h' => (int) $src[2], 'alt' => (string) get_post_meta($bild, '_wp_attachment_image_alt', true), 'typ' => (string) get_post_meta($p->ID, 'ma_image_type', true)] : null,
         'ressort' => ma_layout_ressort_von($p->ID), 'ort' => $ort, 'sport' => has_category('sport', $p->ID),
-        'datum' => get_the_date('d.m.Y · H:i', $p) . ' Uhr', 'relevanz' => (int) get_post_meta($p->ID, 'ma_relevanz', true) ?: 5,
+        'datum' => get_the_date('d.m.Y · H:i', $p) . ' Uhr', 'relevanz' => function_exists('ma_relevanz') ? ma_relevanz($p->ID) : 2,
         'startplatz' => (string) get_post_meta($p->ID, 'ma_startplatz', true) ?: 'auto',
         'statusText' => function_exists('ma_status_name') ? ma_status_name($p->post_status) : $p->post_status,
         'freigabe' => function_exists('ma_startseite_freigabe') ? (string) ma_startseite_freigabe($p->ID) : '',
@@ -205,7 +205,7 @@ function ma_layout_rest_aendern(string $seite, array $d) {
  * Meldung anlegen: Entwurf → Zuordnungen und Metas → veröffentlichen
  * (Freigabe-Sperren bleiben wirksam) → auf den gewünschten Platz.
  * $f: titel, kicker, anriss, text, rubrik (Slug), ort (Slug), bild (Anhang-ID),
- * bildtyp, bildcredit, bildrechte (bool), quelle (URL), relevanz (1–10),
+ * bildtyp, bildcredit, bildrechte (bool), quelle (URL), relevanz (1 Hoch, 2 Mitte, 3 Niedrig),
  * status (publish|draft), seite, slot.
  */
 function ma_meldung_anlegen(array $f) {
@@ -240,8 +240,8 @@ function ma_meldung_anlegen(array $f) {
             update_post_meta($id, 'ma_image_rights_verified', '1');
         }
     }
-    $relevanz = function_exists('ma_relevanz_saeubern') ? ma_relevanz_saeubern($f['relevanz'] ?? 5) : max(1, min(10, (int) ($f['relevanz'] ?? 5)));
-    update_post_meta($id, 'ma_relevanz', $relevanz ?: 5);
+    $relevanz = function_exists('ma_relevanz_saeubern') ? ma_relevanz_saeubern($f['relevanz'] ?? 2) : max(1, min(3, (int) ($f['relevanz'] ?? 2)));
+    update_post_meta($id, 'ma_relevanz', $relevanz ?: 2);
     update_post_meta($id, 'ma_startplatz', 'auto');
     if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Angelegt im Layout-Editor');
     $antwort = ['id' => $id, 'bearbeiten' => get_edit_post_link($id, 'raw'), 'veroeffentlicht' => false];

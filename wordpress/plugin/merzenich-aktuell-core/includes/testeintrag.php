@@ -26,13 +26,29 @@ function ma_ist_testeintrag($post): bool {
     return $id > 0 && (string) get_post_meta($id, 'ma_gesponsert', true) === '1' && (string) get_post_meta($id, 'ma_gesponsert_art', true) === 'test';
 }
 
-/** Kennzeichnung auf der Seite: „Anzeige · kostenfreier Testeintrag“ oder wie bisher „Anzeige · Gesponsert“. */
+/** Art der Kennzeichnung (ma_gesponsert_art): test, anzeige, eigen oder '' (wie bisher). */
+function ma_gesponsert_art($post): string {
+    $id = $post instanceof WP_Post ? $post->ID : (int) $post;
+    return $id > 0 ? (string) get_post_meta($id, 'ma_gesponsert_art', true) : '';
+}
+
+/**
+ * Kennzeichnung auf der Seite: „Anzeige · kostenfreier Testeintrag“, „Anzeige“
+ * (Unternehmen aus den Firmen-Entwürfen, 24.10.2026), „Anzeige · in eigener
+ * Sache“ (die Herausgeberin) oder wie bisher „Anzeige · Gesponsert“.
+ */
 function ma_gesponsert_label($post): string {
-    return ma_ist_testeintrag($post) ? 'Anzeige · kostenfreier Testeintrag' : 'Anzeige · Gesponsert';
+    if (ma_ist_testeintrag($post)) return 'Anzeige · kostenfreier Testeintrag';
+    $art = ma_gesponsert_art($post);
+    if ($art === 'eigen') return 'Anzeige · in eigener Sache';
+    return $art === 'anzeige' ? 'Anzeige' : 'Anzeige · Gesponsert';
 }
 
 /** Zusatz im Hinweis unter der Überschrift. */
 function ma_gesponsert_hinweis($post): string {
+    $art = ma_gesponsert_art($post);
+    if ($art === 'eigen') return 'Präsentation der Herausgeberin von Merzenich Aktuell';
+    if ($art === 'anzeige') return 'Werbliche Präsentation eines Unternehmens';
     if (!ma_ist_testeintrag($post)) return 'Bezahlte Präsentation';
     $id = $post instanceof WP_Post ? $post->ID : (int) $post;
     $ende = (string) get_post_meta($id, 'ma_test_ende', true);

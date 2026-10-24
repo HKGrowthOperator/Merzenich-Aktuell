@@ -76,11 +76,10 @@ Der Tag in fünf Schritten:
 3. Bild ansehen: Passt es zum Thema? Symbolbilder sind als „Symbolbild“ gekennzeichnet. Ein falsches Bild lieber entfernen (Anhang, Regeln).
 
 **Freigeben:**
-1. **Relevanz** wählen, 1 bis 10. Ohne Relevanz geht die Freigabe nicht. 8 bis 10 sind Kandidaten für Aufmacher und Bühne, 4 bis 7 normale Nachrichten, 1 bis 3 Randmeldungen. Die Tabelle **Die zehn Stufen** unten auf der Seite erklärt jede Stufe.
+1. **Relevanz** wählen: **1 Hoch**, **2 Mitte** oder **3 Niedrig** (seit 24.10.2026, vorher 1 bis 10). Ohne Relevanz geht die Freigabe nicht. Hoch ist Kandidat für Aufmacher und Bühne, solange die Meldung frisch ist; Mitte steht in den Blöcken der Startseite, Niedrig weiter unten. Die Tabelle **Die drei Stufen** unten auf der Seite erklärt sie.
 2. **Startseiten-Freigabe: auf die Startseite** ankreuzen, wenn die Meldung auf die Startseite darf. Ohne Haken erscheint sie nur in ihrem Ressort.
-3. Bei Bedarf die **Priorität** ändern. Sie ordnet Meldungen mit gleicher Relevanz.
-4. **Bildrechte geprüft** ankreuzen, wenn das Bild in Ordnung ist.
-5. **Freigeben** klicken.
+3. **Bildrechte geprüft** ankreuzen, wenn das Bild in Ordnung ist.
+4. **Freigeben** klicken.
 
 Die Meldung ist sofort online, auf der Startseite (wenn freigegeben), im Ressort und bei Google News. Wer sich für Live-Meldungen angemeldet hat, bekommt eine Push-Nachricht aufs Handy (A15).
 
@@ -128,7 +127,7 @@ Die Meldung ist sofort online, auf der Startseite (wenn freigegeben), im Ressort
 5. Im Kasten **Startseite** (Seitenleiste, unter den Schlagwörtern) wählen:
    - **Startseiten-Freigabe**: „Ja, auf die Startseite“ oder „Nein, nur Rubrik“.
    - **Wo steht diese Meldung?**: meist „Automatisch“, sonst ein fester Platz.
-   - **Relevanz** und **Priorität**.
+   - **Relevanz** (Hoch, Mitte, Niedrig).
 6. **Veröffentlichen**.
 
 ![Kasten „Startseite“ in der Seitenleiste](anleitung/bilder/03b-startseite.png) ![Kasten „Freigabe“: was noch fehlt](anleitung/bilder/03c-freigabe-kasten.png)
@@ -174,7 +173,7 @@ Bei **Ersetzen** lässt sich jede veröffentlichte Meldung wählen. Steht sie au
 
 ![Beiträge-Liste mit Filtern](anleitung/bilder/05-beitraege.png)
 
-- Filter über der Liste: **Startseite** (freigegeben, noch offen, nur in der Rubrik), **Relevanz** (hoch, mittel, niedrig, ohne) und **Bild** (ohne Beitragsbild, Bildrechte nicht bestätigt). Ein Klick auf die Spalte **Relevanz** sortiert.
+- Filter über der Liste: **Startseite** (freigegeben, noch offen, nur in der Rubrik), **Relevanz** (1 Hoch, 2 Mitte, 3 Niedrig, ohne) und **Bild** (ohne Beitragsbild, Bildrechte nicht bestätigt). Ein Klick auf die Spalte **Relevanz** sortiert.
 - Die Relevanz lässt sich direkt in der Liste ändern.
 - Mehrere Meldungen auf einmal: ankreuzen, oben bei **Mehrfachaktionen** wählen: **Redaktionell freigeben und veröffentlichen**, **Bildrechte bestätigen**, **Startseite: freigeben**, **Startseite: nicht freigeben** oder **Archivieren / zurückziehen**.
 - **Archivieren** (beim Überfahren einer Zeile) nimmt eine Meldung von der Seite, ohne sie zu löschen. **Wieder veröffentlichen** holt sie zurück.
@@ -498,8 +497,7 @@ Einsendungen stehen auch ohne Mailversand immer im Eingang.
 | Kicker (Dachzeile) | Kurze Zeile über dem Titel. |
 | Nur in der Rubrik | Die Meldung steht im Ressort, aber nicht auf der Startseite. |
 | Partner | Polizei, Feuerwehr, Gemeinde, Verein oder Firma mit eigenem Zugang zum Einreichen. |
-| Priorität | Ordnet Meldungen mit gleicher Relevanz. |
-| Relevanz | Wie wichtig eine Meldung ist, 1 bis 10. Bestimmt den Platz auf der Startseite. |
+| Relevanz | Wie wichtig eine Meldung ist: 1 Hoch, 2 Mitte, 3 Niedrig. Bestimmt den Platz auf der Startseite. |
 | Startseiten-Freigabe | Ob eine Meldung auf die Startseite darf. Getrennt vom Veröffentlichen. |
 | Symbolbild | Foto zum Thema, das nicht das Ereignis selbst zeigt. |
 

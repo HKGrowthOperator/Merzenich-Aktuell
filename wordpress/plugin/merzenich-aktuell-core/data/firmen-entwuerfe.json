@@ -1,290 +1,175 @@
 {
-  "stand": "2026-10-16",
-  "hinweis": "Drei echte Betriebe (Auftrag Betreiber 16.10.2026). Stammdaten am 16.10.2026 auf den Unternehmenswebsites geprüft. Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen. Den aktuellen Stand je Betrieb zeigt die Tabelle. Testeintrag: 0 Euro, 30 Tage ab Veröffentlichung, endet von selbst, keine Verlängerung, keine Rechnung.",
+  "stand": "2026-10-24",
+  "hinweis": "Vier Unternehmen (Auftrag Betreiber 24.10.2026, ersetzt Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean und KBS Management am 24.10.2026 auf den Unternehmenswebsites geprüft; von Merzlicht und AJ Sports liegt bisher nur der Name vor, ihre Profile zeigen nur den Namen. Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Kein Testzeitraum: Die Einträge laufen, bis der Betreiber sie austauscht. Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
     "verlaengerung": false
   },
-  "firmen": [
+  "frueher": [
     {
-      "profil": {
-        "slug": "baeckerei-wirtz-merzenich",
-        "titel": "Bäckerei Wirtz",
-        "branche": "Bäckerei & Konditorei",
-        "ortsteil": "merzenich",
-        "adresse": "Lindenstraße 24, 52399 Merzenich",
-        "telefon": "02421 34819",
-        "email": "",
-        "website": "https://www.baeckerei-wirtz.de/",
-        "oeffnungszeiten": "Mo–Fr 6:30–12:30 und 14:00–18:00 Uhr, Sa 6:30–13:00 Uhr, So 8:00–11:00 Uhr",
-        "quelle": "Angaben laut baeckerei-wirtz.de (Startseite und Filiale Merzenich), geprüft am 16.10.2026",
-        "quellen": [
-          "https://www.baeckerei-wirtz.de/",
-          "https://www.baeckerei-wirtz.de/filialen/filiale-merzenich-/"
-        ],
-        "kurz": "Frisches Brot, Brötchen und feines Gebäck sowie Kuchen und individuelle Torten für besondere Anlässe.",
-        "text": "Die Bäckerei Wirtz ist mit einer Filiale in der Lindenstraße 24 in Merzenich vertreten. Das Angebot umfasst Brot, Brötchen, Feingebäck, Kuchen und Torten. Für besondere Anlässe bietet die Konditorei auch individuell gestaltete Festtagstorten an. Aktuelle Informationen und Kontaktmöglichkeiten finden Interessierte auf der Unternehmenswebsite.",
-        "karte": {
-          "knopf": "Bäckerei entdecken",
-          "ziel": "https://www.baeckerei-wirtz.de/"
-        },
-        "logo": {
-          "quelle": "https://www.baeckerei-wirtz.de/bilder/logo-frei0_500x500.png",
-          "art": "PNG, 500 × 500, von der Unternehmenswebsite",
-          "rechte": "offen",
-          "alt": "Logo Bäckerei Wirtz",
-          "datei": "baeckerei-wirtz.png"
-        }
-      },
-      "beitrag": {
-        "slug": "baeckerei-wirtz-brot-torten-merzenich",
-        "titel": "Brot, Brötchen und besondere Torten: Bäckerei Wirtz in Merzenich",
-        "anriss": "Von frischen Backwaren bis zu Torten für besondere Anlässe: ein Blick auf das Angebot der Bäckerei Wirtz in der Lindenstraße.",
-        "absaetze": [
-          "Ob Brot für den Alltag, Brötchen zum Frühstück oder etwas Süßes für die Kaffeetafel: In der Lindenstraße 24 in Merzenich ist die Bäckerei Wirtz zu finden. Neben klassischen Backwaren gehören auch Feingebäck, Kuchen und Torten zum Sortiment.",
-          "Wer eine Feier plant, kann sich zudem über individuell gestaltete Torten für Geburtstage, Hochzeiten und andere Anlässe informieren. Auf der Website der Bäckerei gibt es weitere Informationen zum Angebot und zu den Filialen.",
-          "<strong>Kontakt und Standort:</strong> Lindenstraße 24, 52399 Merzenich. Weitere Informationen auf der offiziellen Unternehmenswebsite."
-        ],
-        "knopf": {
-          "text": "Bäckerei Wirtz besuchen",
-          "ziel": "https://www.baeckerei-wirtz.de/"
-        },
-        "seo_titel": "Bäckerei Wirtz in Merzenich – Brot, Brötchen & Torten",
-        "seo_beschreibung": "Bäckerei Wirtz in Merzenich: Brot, Brötchen, Kuchen und individuelle Torten. Informationen zur Filiale in der Lindenstraße 24."
-      },
-      "anzeige": {
-        "eyebrow": "Aus Merzenich",
-        "titel": "Frische Backwaren & besondere Torten",
-        "text": "Brot, Brötchen, Kuchen und Konditorei – entdecken Sie die Bäckerei Wirtz in Merzenich.",
-        "knopf": "Mehr erfahren",
-        "ziel": "https://www.baeckerei-wirtz.de/"
-      },
-      "zusatz": [
-        {
-          "slug": "baeckerei-wirtz-festtagstorten-nach-wunsch",
-          "titel": "Festtagstorten nach Wunsch: Bäckerei Wirtz berät persönlich",
-          "anriss": "Für Hochzeit, Geburtstag oder andere Feiern fertigt die Konditorei der Bäckerei Wirtz Torten als Einzelstück.",
-          "absaetze": [
-            "Eine Hochzeit oder ein Geburtstag lässt sich mit einer besonderen Torte feiern. Die Bäckerei Wirtz fertigt Festtagstorten nach individuellen Wünschen an.",
-            "Wie die Torte aussehen soll, klärt die Konditorei in einem persönlichen Gespräch. So entsteht für jede Feier ein Einzelstück.",
-            "<strong>Kontakt:</strong> Filiale Lindenstraße 24, 52399 Merzenich. Weitere Informationen zu Festtagstorten auf der Website der Bäckerei."
-          ],
-          "knopf": {
-            "text": "Festtagstorten ansehen",
-            "ziel": "https://www.baeckerei-wirtz.de/produkte/festtagstorten/"
-          },
-          "seo_titel": "Festtagstorten nach Wunsch – Bäckerei Wirtz Merzenich",
-          "seo_beschreibung": "Bäckerei Wirtz fertigt Festtagstorten für Hochzeiten, Geburtstage und Feiern nach Wunsch, mit persönlicher Beratung.",
-          "quelle": "https://www.baeckerei-wirtz.de/produkte/festtagstorten/"
-        },
-        {
-          "slug": "baeckerei-wirtz-ausbildung-baecker-konditor",
-          "titel": "Ausbildung zum Bäcker oder Konditor bei der Bäckerei Wirtz",
-          "anriss": "Die Bäckerei Wirtz bildet in ihrer Backstube in Düren Bäcker und Konditoren aus (m/w/d).",
-          "absaetze": [
-            "Die Bäckerei Wirtz mit Filialen in Düren, Merzenich und Niederzier bietet Ausbildungsplätze zum Bäcker und zum Konditor (m/w/d) an.",
-            "Zur Ausbildung gehören laut Bäckerei unter anderem das Herstellen von Brot, Brötchen und feinen Backwaren, das Planen der Arbeitsabläufe und die Kontrolle der Zutaten. Gearbeitet wird in der Backstube in Düren. Die Ausbildungsvergütung richtet sich nach Tarif.",
-            "<strong>Bewerbung und Details:</strong> auf der Website der Bäckerei unter „Jobs“."
-          ],
-          "knopf": {
-            "text": "Zu den Ausbildungsplätzen",
-            "ziel": "https://www.baeckerei-wirtz.de/jobs/ausbildung-zum-baecker-mwd/"
-          },
-          "seo_titel": "Ausbildung Bäcker und Konditor – Bäckerei Wirtz",
-          "seo_beschreibung": "Bäckerei Wirtz bildet Bäcker und Konditoren (m/w/d) in der Backstube in Düren aus. Vergütung nach Tarif.",
-          "quelle": "https://www.baeckerei-wirtz.de/jobs/ausbildung-zum-konditor-mwd/"
-        }
-      ]
+      "slug": "baeckerei-wirtz-merzenich",
+      "titel": "Bäckerei Wirtz"
     },
     {
-      "profil": {
-        "slug": "hasberg-fenster-rollladentechnik-merzenich",
-        "titel": "Hasberg Fenster & Rollladentechnik",
-        "firmenname": "Hasberg Fenster u. Rollladentechnik e.K.",
-        "branche": "Fenster, Türen, Rollläden & Sonnenschutz",
-        "ortsteil": "merzenich",
-        "adresse": "Morschenicher Straße 42, 52399 Merzenich",
-        "telefon": "02421 93580",
-        "email": "info@hasberg.de",
-        "website": "https://www.hasberg.de/",
-        "oeffnungszeiten": "Bürozeiten Mo–Fr 8:00–17:00 Uhr, Sa nach Vereinbarung",
-        "quelle": "Angaben laut hasberg.de (Kontakt und Anfahrt, Produkte, Impressum), geprüft am 16.10.2026",
-        "quellen": [
-          "https://www.hasberg.de/",
-          "https://www.hasberg.de/unsere-produkte",
-          "https://www.hasberg.de/kontakt-und-anfahrt",
-          "https://www.hasberg.de/impressum"
-        ],
-        "kurz": "Lösungen für Fenster, Haustüren, Rollläden und Markisen – ergänzt durch Insektenschutz und moderne Steuerungssysteme.",
-        "text": "Hasberg Fenster u. Rollladentechnik e.K. ist in der Morschenicher Straße 42 in Merzenich ansässig. Das Unternehmen bietet unter anderem Fenster, Haustüren, Rollläden, Markisen, Überdachungen, Garagentore und Insektenschutz an. Zum Leistungsspektrum gehören außerdem Lösungen zur Automatisierung von Rollläden und Sonnenschutz. Informationen zu den Produktbereichen und Beratungsmöglichkeiten sind auf der offiziellen Website zu finden.",
-        "karte": {
-          "knopf": "Leistungen ansehen",
-          "ziel": "https://www.hasberg.de/"
-        },
-        "logo": {
-          "quelle": "https://www.hasberg.de/uploads/6xZoQu63/01-hasberg-weber-logo__msi___jpg.jpg",
-          "art": "JPEG, 543 × 205, Logo laut Strukturdaten der Unternehmenswebsite",
-          "rechte": "offen",
-          "alt": "Logo Hasberg Fenster und Rollladentechnik",
-          "datei": "hasberg.jpg"
-        }
-      },
-      "beitrag": {
-        "slug": "hasberg-fenster-rolllaeden-sonnenschutz-merzenich",
-        "titel": "Fenster, Rollläden und Sonnenschutz: Hasberg aus Merzenich",
-        "anriss": "Ob Modernisierung oder Neubau: Der Merzenicher Fachbetrieb bietet Lösungen rund um Fenster, Türen und Sonnenschutz.",
-        "absaetze": [
-          "Wer Fenster austauschen, Sonnenschutz nachrüsten oder Rollläden modernisieren möchte, findet mit Hasberg Fenster u. Rollladentechnik e.K. einen Fachbetrieb in Merzenich. Das Unternehmen hat seinen Sitz in der Morschenicher Straße 42.",
-          "Das Angebot reicht von Fenstern und Haustüren über Rollläden, Markisen und Insektenschutz bis hin zu Überdachungen und Garagentoren. Hinzu kommen technische Lösungen, mit denen sich Rollläden und Sonnenschutz komfortabel steuern lassen.",
-          "Auf der Website stellt Hasberg die einzelnen Produktbereiche vor und informiert über Kontakt- und Beratungsmöglichkeiten.",
-          "<strong>Kontakt und Standort:</strong> Morschenicher Straße 42, 52399 Merzenich. Telefon: 02421 93580."
-        ],
-        "knopf": {
-          "text": "Hasberg kennenlernen",
-          "ziel": "https://www.hasberg.de/"
-        },
-        "seo_titel": "Hasberg in Merzenich – Fenster, Türen & Sonnenschutz",
-        "seo_beschreibung": "Hasberg Fenster u. Rollladentechnik aus Merzenich: Fenster, Rollläden, Markisen, Türen und Smart-Home-Steuerung im Überblick."
-      },
-      "anzeige": {
-        "eyebrow": "Fachbetrieb in Merzenich",
-        "titel": "Fenster, Türen & Sonnenschutz",
-        "text": "Von Rollläden bis Markisen: Entdecken Sie die Lösungen von Hasberg für Ihr Gebäude.",
-        "knopf": "Leistungen ansehen",
-        "ziel": "https://www.hasberg.de/"
-      },
-      "zusatz": [
-        {
-          "slug": "hasberg-rollladen-sonnenschutz-markisen",
-          "titel": "Rollläden, Jalousien und Markisen: Sonnenschutz von Hasberg",
-          "anriss": "Hasberg in Merzenich bietet Rollläden, innen- und außenliegenden Sonnenschutz, Markisen und Verdunkelungsanlagen.",
-          "absaetze": [
-            "Zum Sortiment von Hasberg Fenster und Rollladentechnik in der Morschenicher Straße gehören Rollläden in verschiedenen Ausführungen: mit integriertem Insektenschutz, als sichtbare Rollladenelemente oder als Einputzvariante.",
-            "Beim Sonnenschutz bietet der Betrieb innen- und außenliegende Lösungen für Fenster und Türen an, dazu Jalousien, Markisen, Dachfensterbeschattungen und Verdunkelungsanlagen.",
-            "<strong>Kontakt:</strong> Morschenicher Straße 42, 52399 Merzenich, Telefon 02421 93580."
-          ],
-          "knopf": {
-            "text": "Produkte ansehen",
-            "ziel": "https://www.hasberg.de/unsere-produkte"
-          },
-          "seo_titel": "Rollläden und Sonnenschutz – Hasberg Merzenich",
-          "seo_beschreibung": "Hasberg in Merzenich: Rollläden mit Insektenschutz, Jalousien, Markisen, Dachfensterbeschattung und Verdunkelung.",
-          "quelle": "https://www.hasberg.de/unsere-produkte"
-        },
-        {
-          "slug": "hasberg-fenster-haustueren-neubau-nachruestung",
-          "titel": "Fenster und Haustüren für Neubau und Nachrüstung: Hasberg in Merzenich",
-          "anriss": "Fenster aus Metall, Aluminium oder Holz und Haustüren in verschiedenen Breiten und Formen bietet Hasberg an.",
-          "absaetze": [
-            "Hasberg Fenster und Rollladentechnik liefert Fenster aus Metall, Aluminium oder Holz. Sie eignen sich laut Betrieb für Neubauten ebenso wie zur Nachrüstung in bestehenden Gebäuden.",
-            "Haustüren gibt es in verschiedenen Breiten und Formen; auf der Website des Betriebs lässt sich die Wunschtür mit einem Konfigurator zusammenstellen.",
-            "<strong>Kontakt:</strong> Morschenicher Straße 42, 52399 Merzenich, Telefon 02421 93580."
-          ],
-          "knopf": {
-            "text": "Fenster und Türen ansehen",
-            "ziel": "https://www.hasberg.de/unsere-produkte"
-          },
-          "seo_titel": "Fenster und Haustüren – Hasberg Merzenich",
-          "seo_beschreibung": "Hasberg in Merzenich: Fenster aus Metall, Aluminium oder Holz für Neubau und Nachrüstung sowie Haustüren nach Wunsch.",
-          "quelle": "https://www.hasberg.de/unsere-produkte"
-        }
-      ]
+      "slug": "hasberg-fenster-rollladentechnik-merzenich",
+      "titel": "Hasberg Fenster & Rollladentechnik"
     },
     {
-      "profil": {
-        "slug": "porschen-media-girbelsrath",
-        "titel": "Porschen Media",
-        "firmenname": "Porschen Media GmbH & Co. KG",
-        "branche": "Mediengestaltung, Druck & Werbetechnik",
-        "ortsteil": "girbelsrath",
-        "adresse": "Am Roßpfad 8, 52399 Merzenich",
-        "telefon": "02421 69796-40",
-        "email": "info@porschen-media.de",
-        "website": "https://porschen.media/",
-        "oeffnungszeiten": "Mo–Fr 8:00–17:00 Uhr",
-        "quelle": "Angaben laut porschen.media (Kontakt, Über uns, Impressum), geprüft am 16.10.2026",
-        "quellen": [
-          "https://porschen.media/",
-          "https://porschen.media/porschen-media-ueber-uns/",
-          "https://porschen.media/kontakt/",
-          "https://porschen.media/impressum/"
-        ],
-        "kurz": "Mediengestaltung, Digital- und Offsetdruck, Werbetechnik und Webdesign aus Merzenich-Girbelsrath.",
-        "text": "Porschen Media GmbH & Co. KG hat ihren Sitz am Roßpfad 8 im Merzenicher Ortsteil Girbelsrath. Die Leistungen verbinden Mediengestaltung mit Druckproduktion und Werbetechnik. Dazu gehören unter anderem Corporate Design, Offset- und Digitaldruck, Druckweiterverarbeitung, Beschriftungen, Werbemittel und Webdesign. Die Unternehmensgeschichte reicht nach eigenen Angaben bis ins Jahr 1980 zurück. Weitere Informationen und Kontaktmöglichkeiten stehen auf der offiziellen Website.",
-        "karte": {
-          "knopf": "Unternehmen entdecken",
-          "ziel": "https://porschen.media/"
-        },
-        "logo": {
-          "quelle": "https://porschen.media/_astro/logo.Bq7BYIkx_1Gh7MW.svg",
-          "art": "SVG, Kopfzeile der Unternehmenswebsite (alt: „Porschen Media – zur Startseite“); als PNG auf Weiß gerendert (WordPress nimmt kein SVG an), Inhalt unverändert",
-          "rechte": "offen",
-          "alt": "Logo Porschen Media",
-          "datei": "porschen-media.png"
-        }
-      },
-      "beitrag": {
-        "slug": "porschen-media-druck-werbung-girbelsrath",
-        "titel": "Von der Gestaltung bis zum Druck: Porschen Media aus Girbelsrath",
-        "anriss": "Design, Print und Werbetechnik aus einem Haus: Was das Medienunternehmen am Roßpfad anbietet.",
-        "absaetze": [
-          "Ob Geschäftsausstattung, Druckprodukte oder Fahrzeugbeschriftung: Porschen Media in Merzenich-Girbelsrath bietet verschiedene Leistungen rund um Gestaltung und Unternehmenskommunikation. Der Standort befindet sich am Roßpfad 8.",
-          "Zum Angebot gehören Corporate Design, Druckvorstufe, Offset- und Digitaldruck, Weiterverarbeitung sowie Werbetechnik und Webdesign. Unternehmen können damit unterschiedliche Maßnahmen ihres Außenauftritts über einen Anbieter koordinieren.",
-          "Die Wurzeln des Unternehmens gehen nach eigenen Angaben auf eine 1980 gegründete Druckerei zurück. Heute bündelt Porschen Media mehrere Bereiche der Medienproduktion. Wer sich über die Leistungen informieren möchte, findet auf der Unternehmenswebsite Beispiele und Kontaktmöglichkeiten.",
-          "<strong>Kontakt und Standort:</strong> Am Roßpfad 8, 52399 Merzenich-Girbelsrath. Telefon: 02421 69796-40."
-        ],
-        "knopf": {
-          "text": "Porschen Media entdecken",
-          "ziel": "https://porschen.media/"
-        },
-        "seo_titel": "Porschen Media in Girbelsrath – Druck, Design & Werbung",
-        "seo_beschreibung": "Porschen Media in Merzenich-Girbelsrath: Gestaltung, Offset- und Digitaldruck, Werbetechnik und Webdesign am Roßpfad 8."
-      },
-      "anzeige": {
-        "eyebrow": "Aus Girbelsrath",
-        "titel": "Design, Druck & Werbung aus einer Hand",
-        "text": "Von der Gestaltung bis zur Produktion: Lernen Sie die Leistungen von Porschen Media kennen.",
-        "knopf": "Mehr erfahren",
-        "ziel": "https://porschen.media/"
-      },
-      "zusatz": [
-        {
-          "slug": "porschen-media-druckerei-offset-digital",
-          "titel": "Offset- und Digitaldruck im eigenen Haus: die Druckerei von Porschen Media",
-          "anriss": "Satz, Druck und Weiterverarbeitung unter einem Dach im Gewerbegebiet Girbelsrath.",
-          "absaetze": [
-            "Porschen Media am Roßpfad im Gewerbegebiet Girbelsrath betreibt eine eigene Druckerei. Gedruckt wird im Offset- und im Digitaldruck, Letzterer auch bei kleinen Stückzahlen.",
-            "Auch die Weiterverarbeitung, also Falzen, Heften, Binden und Konfektionieren, erledigt der Betrieb im Haus.",
-            "<strong>Kontakt:</strong> Am Roßpfad 8, 52399 Merzenich, Telefon 02421 69796-40."
-          ],
-          "knopf": {
-            "text": "Leistungen ansehen",
-            "ziel": "https://porschen.media/"
-          },
-          "seo_titel": "Druckerei Offset und Digital – Porschen Media",
-          "seo_beschreibung": "Porschen Media in Merzenich-Girbelsrath: Offset- und Digitaldruck sowie Falzen, Heften und Binden im eigenen Haus.",
-          "quelle": "https://porschen.media/"
-        },
-        {
-          "slug": "porschen-media-werbetechnik-fahrzeugbeschriftung",
-          "titel": "Fahrzeugbeschriftung, Schilder und Textildruck: Werbetechnik von Porschen Media",
-          "anriss": "Gestaltung, Druck und Anbringung aus einem Haus, Folierungen in der Werkstatt in Merzenich.",
-          "absaetze": [
-            "Zur Werbetechnik von Porschen Media gehören Fahrzeugbeschriftungen vom Aufkleber bis zur Vollfolierung, wetterfeste Schilder und Banner für innen und außen sowie Textildruck im DTF-Verfahren, auch bei kleinen Auflagen.",
-            "Gestaltung, Druck und Anbringung laufen laut Betrieb im selben Haus. Aufwendige Folierungen entstehen in der Werkstatt in Merzenich.",
-            "<strong>Kontakt:</strong> Am Roßpfad 8, 52399 Merzenich, Telefon 02421 69796-40."
-          ],
-          "knopf": {
-            "text": "Werbetechnik ansehen",
-            "ziel": "https://porschen.media/werbetechnik/"
-          },
-          "seo_titel": "Werbetechnik und Fahrzeugbeschriftung – Porschen Media",
-          "seo_beschreibung": "Porschen Media in Merzenich: Fahrzeugbeschriftung bis zur Vollfolierung, Schilder, Banner und DTF-Textildruck.",
-          "quelle": "https://porschen.media/werbetechnik/"
-        }
-      ]
+      "slug": "porschen-media-girbelsrath",
+      "titel": "Porschen Media"
     }
   ],
-  "hinweis_zusatz": "Zusatzbeiträge (20.10.2026, Auftrag Betreiber): je Betrieb zwei sachliche Beiträge aus den Leistungsseiten der Unternehmenswebsites, abgerufen am 20.10.2026. Nur Entwurf; Veröffentlichung auf Zeichen des Betreibers."
+  "firmen": [
+    {
+      "art": "anzeige",
+      "profil": {
+        "slug": "almera-clean-merzenich",
+        "titel": "Almera Clean",
+        "firmenname": "Almera-Clean Gebäudereinigung",
+        "branche": "Gebäudereinigung",
+        "ortsteil": "merzenich",
+        "adresse": "Kettenweg 1, 52399 Merzenich",
+        "telefon": "+49 176 81412441",
+        "email": "info@almera-clean.de",
+        "website": "https://www.almera-clean.de/",
+        "oeffnungszeiten": "",
+        "quelle": "Angaben laut almera-clean.de (Startseite und Kontakt), geprüft am 24.10.2026",
+        "quellen": [
+          "https://www.almera-clean.de/"
+        ],
+        "kurz": "Gebäudereinigung aus Merzenich: Reinigung von Gebäuden und Fenstern sowie ein Wäscheservice.",
+        "text": "Almera Clean ist eine Gebäudereinigung mit Sitz im Kettenweg 1 in Merzenich. Zum Angebot gehören laut Unternehmenswebsite die Reinigung von Gebäuden und Fenstern sowie ein Wäscheservice. Angebote gibt es auf Anfrage per Telefon, E-Mail oder über das Kontaktformular der Website.",
+        "karte": {
+          "knopf": "Almera Clean entdecken",
+          "ziel": "https://www.almera-clean.de/"
+        },
+        "logo": {
+          "quelle": "https://www.almera-clean.de/wp-content/uploads/go-x/u/14655c71-e038-491b-9eb0-0605d667f173/image-911x594.png",
+          "art": "PNG von der Unternehmenswebsite (weiß), für helle Flächen dunkel eingefärbt und zugeschnitten",
+          "rechte": "offen",
+          "alt": "Logo Almera Gebäudereinigung",
+          "datei": "almera-clean.png"
+        }
+      },
+      "beitrag": {
+        "slug": "almera-clean-gebaeudereinigung-merzenich",
+        "titel": "Gebäude, Fenster und Wäsche: Almera Clean aus Merzenich",
+        "anriss": "Die Gebäudereinigung Almera Clean sitzt im Kettenweg in Merzenich und bietet Gebäude- und Fensterreinigung sowie einen Wäscheservice an.",
+        "absaetze": [
+          "Ob Büro, Praxis oder Treppenhaus: Almera Clean reinigt Gebäude und Räume. Das Unternehmen hat seinen Sitz im Kettenweg 1 in Merzenich.",
+          "Neben der Gebäudereinigung bietet Almera Clean laut eigener Website eine Fensterreinigung und einen Wäscheservice an. Ein individuelles Angebot gibt es auf Anfrage.",
+          "<strong>Kontakt:</strong> Kettenweg 1, 52399 Merzenich, Telefon +49 176 81412441, E-Mail info@almera-clean.de."
+        ],
+        "knopf": {
+          "text": "Almera Clean besuchen",
+          "ziel": "https://www.almera-clean.de/"
+        },
+        "seo_titel": "Almera Clean in Merzenich: Gebäude- und Fensterreinigung",
+        "seo_beschreibung": "Almera Clean aus Merzenich: Gebäudereinigung, Fensterreinigung und Wäscheservice. Kontakt und Angebot im Kettenweg 1.",
+        "quelle": "https://www.almera-clean.de/"
+      }
+    },
+    {
+      "art": "eigen",
+      "herausgeberin": true,
+      "profil": {
+        "slug": "kbs-management",
+        "titel": "KBS Management GmbH",
+        "firmenname": "KBS Management GmbH",
+        "branche": "App- und Softwareentwicklung",
+        "ortsteil": "",
+        "ort": "Leverkusen",
+        "adresse": "Rheinstr. 78a, 51371 Leverkusen",
+        "telefon": "",
+        "email": "info@kbs-management.tv",
+        "website": "https://kbs-management.tv/",
+        "oeffnungszeiten": "",
+        "quelle": "Angaben laut kbs-management.tv (Startseite und Impressum), geprüft am 24.10.2026",
+        "quellen": [
+          "https://kbs-management.tv/",
+          "https://kbs-management.tv/impressum/"
+        ],
+        "kurz": "Beratungsunternehmen aus Leverkusen für App- und Softwareentwicklung, Broadcast- und IT-Beratung. Herausgeberin von Merzenich Aktuell.",
+        "text": "Die KBS Management GmbH aus Leverkusen entwickelt nach eigenen Angaben Apps und Software für Mobilgeräte, Web und Desktop und berät zu Broadcast- und IT-Themen. Zu ihren Projekten zählen laut Website unter anderem CRM- und ERP-Systeme sowie Plattformen für Video auf Abruf. Die KBS Management GmbH ist die Herausgeberin von Merzenich Aktuell.",
+        "karte": {
+          "knopf": "KBS Management entdecken",
+          "ziel": "https://kbs-management.tv/"
+        },
+        "logo": {
+          "quelle": "https://kbs-management.tv/wp-content/themes/kbs/kbs-logo.png",
+          "art": "PNG von der Unternehmenswebsite (weiß), für helle Flächen dunkel eingefärbt und zugeschnitten",
+          "rechte": "offen",
+          "alt": "Logo KBS Management GmbH",
+          "datei": "kbs-management.png"
+        }
+      },
+      "beitrag": {
+        "slug": "kbs-management-apps-software-it-beratung",
+        "titel": "Apps, Software und IT-Beratung: KBS Management aus Leverkusen",
+        "anriss": "In eigener Sache: Die KBS Management GmbH, Herausgeberin von Merzenich Aktuell, entwickelt Apps und Software und berät zu Broadcast- und IT-Themen.",
+        "absaetze": [
+          "<strong>In eigener Sache:</strong> Die KBS Management GmbH ist die Herausgeberin von Merzenich Aktuell. An dieser Stelle stellt sie ihre Arbeit vor.",
+          "Das Unternehmen mit Sitz in der Rheinstraße in Leverkusen entwickelt nach eigenen Angaben Anwendungen für Mobilgeräte, Web und Desktop sowie Software nach Maß. Dazu kommen Beratung zu Broadcast-Technik und zur Verbreitung von Inhalten sowie IT-Beratung.",
+          "Zu den Projekten zählen laut Website unter anderem CRM- und ERP-Systeme und Plattformen für Video auf Abruf.",
+          "<strong>Kontakt:</strong> Rheinstr. 78a, 51371 Leverkusen, E-Mail info@kbs-management.tv."
+        ],
+        "knopf": {
+          "text": "KBS Management besuchen",
+          "ziel": "https://kbs-management.tv/"
+        },
+        "seo_titel": "KBS Management GmbH: Apps, Software und IT-Beratung",
+        "seo_beschreibung": "KBS Management GmbH aus Leverkusen, Herausgeberin von Merzenich Aktuell: App- und Softwareentwicklung, Broadcast- und IT-Beratung.",
+        "quelle": "https://kbs-management.tv/"
+      }
+    },
+    {
+      "art": "anzeige",
+      "nur_name": true,
+      "profil": {
+        "slug": "merzlicht",
+        "titel": "Merzlicht",
+        "firmenname": "Merzlicht",
+        "branche": "",
+        "ortsteil": "",
+        "adresse": "",
+        "telefon": "",
+        "email": "",
+        "website": "",
+        "oeffnungszeiten": "",
+        "quelle": "Name laut Betreiber (Auftrag 24.10.2026); weitere Angaben folgen",
+        "kurz": "Merzlicht ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
+        "text": "Merzlicht ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
+      },
+      "anzeige": {
+        "titel": "Merzlicht",
+        "bild": "merzlicht.png",
+        "alt": "Anzeige Merzlicht"
+      }
+    },
+    {
+      "art": "anzeige",
+      "nur_name": true,
+      "profil": {
+        "slug": "aj-sports",
+        "titel": "AJ Sports",
+        "firmenname": "AJ Sports",
+        "branche": "",
+        "ortsteil": "",
+        "adresse": "",
+        "telefon": "",
+        "email": "",
+        "website": "",
+        "oeffnungszeiten": "",
+        "quelle": "Name laut Betreiber (Auftrag 24.10.2026); weitere Angaben folgen",
+        "kurz": "AJ Sports ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
+        "text": "AJ Sports ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
+      },
+      "anzeige": {
+        "titel": "AJ Sports",
+        "bild": "aj-sports.png",
+        "alt": "Anzeige AJ Sports"
+      }
+    }
+  ]
 }
