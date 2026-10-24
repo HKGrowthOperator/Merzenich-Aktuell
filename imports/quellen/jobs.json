@@ -1,11 +1,11 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-10-23T10:09:53.465Z",
+ "abgerufen": "2026-10-24T09:38:58.662Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
    "endUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
-   "abgerufen": "2026-10-23T10:09:48.518Z",
+   "abgerufen": "2026-10-24T09:38:53.539Z",
    "status": 200,
    "titel": "Stellenangebote | Gemeinde Merzenich",
    "meta": {
@@ -21,7 +21,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#Njc2NTQ0Nzkx"
+     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#MzcwNDEwNjg0"
     },
     {
      "text": "Stellenausschreibung FBL III ab Oktober 2026.pdf PDF -Datei 150,36 kB",
@@ -53,7 +53,7 @@
   {
    "url": "https://www.kreis-dueren.de/karriere",
    "endUrl": "https://www.kreis-dueren.de/karriere",
-   "abgerufen": "2026-10-23T10:09:50.538Z",
+   "abgerufen": "2026-10-24T09:38:55.652Z",
    "status": 200,
    "titel": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS | Kreis Düren",
    "meta": {
@@ -69,7 +69,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#MzM5NTA2OTEw"
+     "href": "https://www.kreis-dueren.de/karriere#ODY3NTU5NDI1"
     },
     {
      "text": "PDF -Datei 284,32 kB Stellenausschreibung GIS: Staatlich geprüfte/r Techniker/-in oder Meister/-in im Hochbaugewerbe für den Bereich der laufenden Gebäudeunterhaltung (m/w/d) Bewerbungsfrist: 30.11.20",
@@ -105,7 +105,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#OTk5MjM3Mjg0"
+     "href": "https://www.kreis-dueren.de/karriere#Nzk4Njc3Njgx"
     },
     {
      "text": "Arbeitgeber Kreis Düren Duales Studium und Ausbildung Jetzt informieren und bewerben.",
@@ -113,7 +113,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#Mzc0MDE1NTg"
+     "href": "https://www.kreis-dueren.de/karriere#MTM2ODM2NTYw"
     },
     {
      "text": "Jobs & Karriere Kreisverwaltung Düren vorgestellt Was sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...",
@@ -121,7 +121,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#ODkzNTc4NDUw"
+     "href": "https://www.kreis-dueren.de/karriere#MjY2MDY5NDgx"
     },
     {
      "text": "Leitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB",
@@ -169,7 +169,7 @@
   {
    "url": "https://www.jobsdn.de/jobportal",
    "endUrl": "https://www.jobsdn.de/jobportal",
-   "abgerufen": "2026-10-23T10:09:52.263Z",
+   "abgerufen": "2026-10-24T09:38:57.462Z",
    "status": 200,
    "titel": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
    "meta": {
