@@ -275,7 +275,7 @@ function ma_partner_dashboard(): void {
         $link = current_user_can('edit_post', $p->ID) ? get_edit_post_link($p->ID) : ($p->post_status === 'publish' ? get_permalink($p) : '');
         printf('<tr><td>%s%s</td><td>%s%s</td><td>%s</td></tr>', $link ? '<a href="' . esc_url($link) . '">' . esc_html(get_the_title($p) ?: '(ohne Titel)') . '</a>' : esc_html(get_the_title($p)),
             $p->post_status === 'publish' && function_exists('ma_aenderung_link') && ma_aenderung_erlaubt($p, wp_get_current_user()) ? '<br><a href="' . esc_url(ma_aenderung_link($p->ID)) . '">Änderung vorschlagen</a>' : '',
-            esc_html(ma_status_name($p->post_status)), $notiz !== '' ? '<span class="ma-pd__notiz">Redaktion: ' . esc_html($notiz) . '</span>' : '',
+            esc_html(ma_status_name($p->post_status)) . (defined('MA_AENDERUNG_VON') && get_post_meta($p->ID, MA_AENDERUNG_VON, true) ? ' · Änderungsvorschlag' : ''), $notiz !== '' ? '<span class="ma-pd__notiz">Redaktion: ' . esc_html($notiz) . '</span>' : '',
             $p->post_status === 'publish' ? esc_html(number_format_i18n($aufrufe[$p->ID] ?? 0)) : '–');
     }
     echo '</tbody></table><p class="description">Aufrufe werden ohne Cookies gezählt; Sie sehen nur Ihre eigenen Beiträge.</p></div>';

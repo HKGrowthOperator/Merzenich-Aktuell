@@ -5,6 +5,19 @@ function ma_register_content_admin_hooks(): void {
     add_action('add_meta_boxes', 'ma_add_content_meta_boxes');
     add_action('save_post', 'ma_save_content_meta_boxes', 10, 2);
     add_filter('wp_insert_post_data', 'ma_market_publication_gate', 20, 2);
+    add_action('enqueue_block_editor_assets', 'ma_datenkasten_aufklappen');
+}
+
+/**
+ * Block-Editor: Datum, Ort und die anderen Pflichtangaben stehen in Kästen unter dem Text,
+ * die WordPress zugeklappt zeigt („Metaboxen“). Bei diesen Inhaltsarten gleich aufklappen.
+ */
+function ma_datenkasten_aufklappen(): void {
+    if (!in_array((string) get_post_type(), ['ma_event', 'ma_property', 'ma_job', 'ma_obituary', 'ma_family_notice', 'ma_tip'], true)) return;
+    wp_register_script('ma-datenkasten', false, ['wp-data', 'wp-preferences'], MA_CORE_VERSION, true);
+    wp_enqueue_script('ma-datenkasten');
+    wp_add_inline_script('ma-datenkasten', "try{var pr=wp.data.dispatch('core/preferences');pr.set('core/edit-post','metaBoxesMainIsOpen',true);"
+        . "if(!wp.data.select('core/preferences').get('core/edit-post','metaBoxesMainOpenHeight'))pr.set('core/edit-post','metaBoxesMainOpenHeight',Math.round(innerHeight*0.45));}catch(e){}");
 }
 
 function ma_add_content_meta_boxes(): void {

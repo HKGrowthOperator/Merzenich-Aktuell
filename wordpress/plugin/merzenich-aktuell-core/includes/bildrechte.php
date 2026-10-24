@@ -174,13 +174,15 @@ function ma_bildrechte_js(): string {
   function useMedien(){return useSelect(function(s){var ids=medienSammeln(s('core/block-editor').getBlocks(),[]);var f=s('core/editor').getEditedPostAttribute('featured_media');if(f)ids.push(Number(f));return ids.filter(function(x,i,a){return x>0&&a.indexOf(x)===i;});},[]);}
   function Kasten(p){
     var medien=useMedien(),st=useState(false),haken=st[0],setHaken=st[1],ms=useState(''),meldung=ms[0],setMeldung=ms[1],bs=useState(bestaetigt),best=bs[0],setBest=bs[1];
+    // Seitenleiste und Fenster vor dem Einreichen teilen sich den Stand: einmal bestätigt gilt in beiden.
+    useEffect(function(){function neu(){setBest(bestaetigt.slice());}window.addEventListener('ma-bildrechte',neu);return function(){window.removeEventListener('ma-bildrechte',neu);};},[]);
     var offen=medien.filter(function(m){return best.indexOf(m)<0;});
     useEffect(function(){var e=wp.data.dispatch('core/editor');if(!p.sperren)return;if(offen.length)e.lockPostSaving('ma-bildrechte');else e.unlockPostSaving('ma-bildrechte');return function(){e.unlockPostSaving('ma-bildrechte');};},[offen.length,p.sperren]);
     if(!medien.length)return h('p',{},'Dieser Beitrag enthält keine Bilder. Eine Bestätigung ist nicht nötig.');
     if(!offen.length)return h('p',{},'Bild- und Nutzungsrechte für alle '+medien.length+' Medien bestätigt.');
     function aendern(v){setHaken(v);if(!v)return;setMeldung('Wird gespeichert …');
       var b=new URLSearchParams({action:'ma_bildrechte_bestaetigen',nonce:d.nonce,post:String(d.post||wp.data.select('core/editor').getCurrentPostId()),medien:offen.join(',')});
-      fetch(d.ajax,{method:'POST',credentials:'same-origin',body:b}).then(function(r){return r.json();}).then(function(j){if(j&&j.success){setBest(j.data.bestaetigt.map(Number));setMeldung('Bestätigt am '+j.data.zeit+'.');}else{setHaken(false);setMeldung((j&&j.data&&j.data.meldung)||'Nicht gespeichert. Bitte Beitrag einmal als Entwurf speichern und erneut bestätigen.');}}).catch(function(){setHaken(false);setMeldung('Keine Verbindung.');});}
+      fetch(d.ajax,{method:'POST',credentials:'same-origin',body:b}).then(function(r){return r.json();}).then(function(j){if(j&&j.success){bestaetigt=j.data.bestaetigt.map(Number);setBest(bestaetigt.slice());window.dispatchEvent(new Event('ma-bildrechte'));setMeldung('Bestätigt am '+j.data.zeit+'.');}else{setHaken(false);setMeldung((j&&j.data&&j.data.meldung)||'Nicht gespeichert. Bitte Beitrag einmal als Entwurf speichern und erneut bestätigen.');}}).catch(function(){setHaken(false);setMeldung('Keine Verbindung.');});}
     return h('div',{className:'ma-bildrechte'},
       h('p',{},h('strong',{},'Bestätigung der Bild- und Nutzungsrechte')),
       h('p',{style:{fontSize:'12px',lineHeight:1.5}},d.text),
@@ -231,4 +233,10 @@ add_filter('wp_handle_upload_prefilter', function (array $datei): array {
     if (!in_array($typ['type'] ?? '', ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'], true)) $datei['error'] = 'Erlaubt sind Bilder (JPG, PNG, WebP, GIF) und PDF.';
     elseif ((int) ($datei['size'] ?? 0) > 10 * 1024 * 1024) $datei['error'] = 'Die Datei ist größer als 10 MB.';
     return $datei;
+});
+
+/* Das Upload-Fenster nennt Partnern dieselbe Grenze (höchstens 10 MB, weniger, wenn der Server weniger erlaubt). */
+add_filter('upload_size_limit', function ($grenze) {
+    if (!function_exists('ma_current_partner_policy') || !ma_current_partner_policy()) return $grenze;
+    return min((int) $grenze, 10 * 1024 * 1024);
 });

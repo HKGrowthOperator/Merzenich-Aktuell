@@ -157,19 +157,38 @@ add_filter('map_meta_cap', function (array $caps, string $cap, int $user_id, arr
     return $caps;
 }, 30, 4);
 
-/** Hinweis im Editor des Partners: was die Redaktion ändern möchte. */
+/** Hinweise im Editor: was die Redaktion ändern möchte, und ob dies ein Änderungsvorschlag ist. Je Eintrag [Art, Titel, Text]. */
+function ma_redaktion_editor_hinweise(WP_Post $p): array {
+    $h = [];
+    if ($p->post_status === MA_STATUS_AENDERUNG) {
+        $n = trim((string) get_post_meta($p->ID, MA_AENDERUNG_NOTIZ, true));
+        $h[] = ['warning', 'Die Redaktion bittet um Änderungen.', ($n !== '' ? $n . "\n" : '') . 'Bitte überarbeiten und mit „Zur Überprüfung einreichen“ erneut senden.'];
+    }
+    if ($von = (int) get_post_meta($p->ID, MA_AENDERUNG_VON, true)) {
+        $h[] = ['info', 'Änderungsvorschlag zu „' . get_the_title($von) . '“.', 'Die veröffentlichte Fassung bleibt unverändert, bis die Redaktion diesen Vorschlag freigibt. '
+            . (current_user_can('edit_others_posts') ? 'Mit „Freigeben“ unter Merzenich Aktuell → Freigaben (oder „Veröffentlichen“ hier) werden die Änderungen ins Original übernommen.' : 'Ändern Sie den Text und reichen Sie ihn mit „Zur Überprüfung einreichen“ ein.')];
+    }
+    return $h;
+}
+
+/** Klassische Formulare: als Hinweis oben auf der Seite. */
 add_action('admin_notices', function (): void {
     $p = $GLOBALS['post'] ?? null;
     if (!$p instanceof WP_Post || !function_exists('get_current_screen') || (get_current_screen()->base ?? '') !== 'post') return;
-    if ($p->post_status === MA_STATUS_AENDERUNG) {
-        $n = (string) get_post_meta($p->ID, MA_AENDERUNG_NOTIZ, true);
-        echo '<div class="notice notice-warning"><p><strong>Die Redaktion bittet um Änderungen.</strong></p>' . ($n !== '' ? '<p style="white-space:pre-line">' . esc_html($n) . '</p>' : '')
-            . '<p>Bitte überarbeiten und mit „Zur Prüfung einreichen“ erneut senden.</p></div>';
+    if (function_exists('use_block_editor_for_post') && use_block_editor_for_post($p)) return;
+    foreach (ma_redaktion_editor_hinweise($p) as [$art, $titel, $text]) {
+        echo '<div class="notice notice-' . esc_attr($art) . '"><p><strong>' . esc_html($titel) . '</strong></p><p style="white-space:pre-line">' . esc_html($text) . '</p></div>';
     }
-    if ($von = (int) get_post_meta($p->ID, MA_AENDERUNG_VON, true)) {
-        echo '<div class="notice notice-info"><p><strong>Änderungsvorschlag zu „' . esc_html(get_the_title($von)) . '“.</strong> Die veröffentlichte Fassung bleibt unverändert, bis die Redaktion diesen Vorschlag freigibt. '
-            . (current_user_can('edit_others_posts') ? 'Mit „Freigeben“ unter Merzenich Aktuell → Freigaben (oder „Veröffentlichen“ hier) werden die Änderungen ins Original übernommen.' : '') . '</p></div>';
-    }
+});
+
+/** Block-Editor: dort erscheinen klassische Hinweise nicht, also als feste Hinweise oben im Editor. */
+add_action('enqueue_block_editor_assets', function (): void {
+    $p = get_post();
+    if (!$p instanceof WP_Post || !($h = ma_redaktion_editor_hinweise($p))) return;
+    wp_register_script('ma-redaktion-hinweise', false, ['wp-data', 'wp-notices', 'wp-dom-ready'], MA_CORE_VERSION, true);
+    wp_enqueue_script('ma-redaktion-hinweise');
+    wp_add_inline_script('ma-redaktion-hinweise', 'wp.domReady(function(){(' . wp_json_encode($h) . ').forEach(function(n,i){'
+        . "wp.data.dispatch('core/notices').createNotice(n[0],n[1]+' '+n[2],{id:'ma-redaktion-'+i,isDismissible:false});});});");
 });
 
 /* ---------------------------------------------------------- Änderungen an Veröffentlichtem */
