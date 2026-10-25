@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-25-morgens.md",
-  "source_check_window": "2026-10-25 morgens; exakter Zeitpunkt im Quelldossier nicht angegeben",
+  "latest_dossier": "dossiers/2026-10-25-abends.md",
+  "source_check_window": "2026-10-25 18:04–18:15 Europe/Berlin; reine Bestandsaufträge separat markiert",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -32,12 +32,12 @@
       "id": "MA-SC3-GEREONSWEILER-2510",
       "priority": "P1",
       "location_section": "Merzenich/Fußball",
-      "change_type": "heute/Termin",
-      "text_status": "T1",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -47,19 +47,48 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "02 · MA-SC3-GEREONSWEILER-2510 · P1 · Merzenich/Fußball · heute · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-SC3-GEREONSWEILER-2510 · T0/B0",
+          "check_scope": "partial_or_open"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "26.10.2026 morgens",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Klartext-Endstand und Spielbericht beschaffen; erst danach Tabelle und nächstes Spiel ergänzen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/spiel/sc-1919-merzenich-3-fc-constantia-09-gereonsweiler/-/spiel/031LRT63GK000000VS5489BTVSRD0UH9",
+          "publisher": "FUSSBALL.DE / DFB",
+          "published": "Spielseite 25.10.2026; Endstand unlesbar"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-SC1-HAMBACH-2510",
       "priority": "P1",
-      "location_section": "Merzenich/Fußball",
-      "change_type": "heute/Termin",
+      "location_section": "Merzenich / Hambach/Fußball",
+      "change_type": "Update / Ergebnis",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -84,19 +113,48 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "03 · MA-SC1-HAMBACH-2510 · P1 · Merzenich/Fußball · heute · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-SC1-HAMBACH-2510 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 / vor 08.11.",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Aktuellen Rang und gesamte Tabelle prüfen; keine alten Kopfwerte 18 oder 21 Punkte als Nachspielstand. Gleiche ID wie morgens; vorhandenen Vereinsartikel aktualisieren, keinen zweiten Vorschauartikel erzeugen.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032GIKD088000000VS5489C0VU75ERBE",
+          "publisher": "FUSSBALL.DE / DFB, automatischer Datenbericht",
+          "published": "25.10.2026 17:35"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MO-GO2-2510",
       "priority": "P1",
-      "location_section": "Morschenich/Golzheim/Fußball",
-      "change_type": "heute/Derby",
+      "location_section": "Morschenich / Golzheim/Fußball",
+      "change_type": "Update / Ergebnis",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -121,19 +179,48 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "04 · MO-GO2-2510 · P1 · Morschenich/Golzheim/Fußball · heute/Derby · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MO-GO2-2510 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 / vor 08.11.",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Vier Golzheimer Treffer separat verifizieren; kompletten Tabellenstand abrufen. Ergebnis ersetzt Morgenvorschau derselben ID. Auswärtsspiel 08.11. nicht mit widersprechender Drittanbieter-Heimspielangabe vermischen.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032GIIPKIS000000VS5489BVVT0GJGMV",
+          "publisher": "FUSSBALL.DE / DFB, automatischer Datenbericht",
+          "published": "25.10.2026 17:28"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "GR-RHENANIA-MERKEN-2510",
       "priority": "P1",
-      "location_section": "Girbelsrath/Fußball",
-      "change_type": "heute/Termin",
+      "location_section": "Girbelsrath / Merken/Fußball",
+      "change_type": "Update / Ergebnis",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -153,20 +240,49 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "05 · GR-RHENANIA-MERKEN-2510 · P1 · Girbelsrath/Fußball · heute · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "GR-RHENANIA-MERKEN-2510 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 / vor 08.11.",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Aktuelle Tabelle, Rang und vollständige jüngere Ergebnisfolge. Gleiche ID wie Morgenvorschau; keine automatisierte Übernahme des alten Tabellenrangs 13.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032GIDOHQG000000VS5489BVVT0GJGMV",
+          "publisher": "FUSSBALL.DE / DFB, automatischer Datenbericht",
+          "published": "25.10.2026 17:06"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-MARTINSZUEGE-2026",
       "priority": "P1",
-      "location_section": "alle Ortsteile/Brauchtum",
-      "change_type": "Update/Termin",
+      "location_section": "Alle Ortsteile/Kirchen / Jugend / Brauchtum",
+      "change_type": "Unverändert / Terminrefresh",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "article_path": "inhalte/meldungen/2026-10-16-amtsblatt-11.json",
       "article_id": null,
       "implementation_commit": null,
       "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
@@ -215,20 +331,49 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "06 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-MARTINSZUEGE-2026 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "27.10.2026 vor Ausgabe; jeweils Veranstaltungsbeginn",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Laufwege, Absagen, kurzfristige Verkehrsmaßnahmen. Unverändert, ausdrücklich keine Neumeldung. Artikel und Termine in inhalte/*/2026-10-16-amtsblatt-11.json vorhanden.",
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/sankt-martin-2026.php",
+          "publisher": "Gemeinde Merzenich",
+          "published": "auf Detailseite nicht ausgewiesen"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-LAUB-2610",
       "priority": "P1",
-      "location_section": "alle Ortsteile/Umwelt",
-      "change_type": "morgen/Service",
+      "location_section": "Girbelsrath / Gemeindegebiet/Umwelt",
+      "change_type": "Quellenkorrektur / unveränderter Service",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "article_path": "inhalte/meldungen/2026-09-26-bis-10-03-redaktionsupdate.json",
       "article_id": null,
       "implementation_commit": null,
       "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
@@ -237,8 +382,37 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "07 · MA-LAUB-2610 · P1 · alle Ortsteile/Umwelt · morgen · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-LAUB-2610 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 vor 13 Uhr / Ablauf 17 Uhr",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Mengenbegrenzung nicht genannt; Fehler der alten URL ist kein Beleg für Absage. Bestandsartikel vorhanden; Zusatzquelle korrigieren statt neuen Artikel erstellen.",
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/beitraege/dde491d2-cfa7-4d76-b358-7182f2df7701",
+          "publisher": "Gemeinde Merzenich / Heimat-Info",
+          "published": "07.10.2026 10:50"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-PAPIERTONNE-2026",
@@ -332,11 +506,11 @@
     {
       "id": "KD-CROWD-2610",
       "priority": "P1",
-      "location_section": "Kreis/Jugend",
-      "change_type": "morgen/Frist",
-      "text_status": "T1-B",
+      "location_section": "Kreis / Merzenicher Jugend/Jugend/Ehrenamt",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
       "last_checked_at": null,
       "article_path": null,
@@ -363,19 +537,42 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "10 · KD-CROWD-2610 · P1 · Kreis/Jugend · morgen/Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "KD-CROWD-2610 · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "26.10.2026 vor Weiterverwendung",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Fristende mit Uhrzeit? Förderfähige Projekte, Mittel und Anmeldeweg? Originalausschreibung erforderlich. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "KD-PERSBUDGET-0511",
       "priority": "P1",
-      "location_section": "Kreis/Soziales",
-      "change_type": "verifiziert/Termin",
+      "location_section": "Kreis Düren/Soziales / Inklusion",
+      "change_type": "Unverändert / Fristrefresh",
       "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -390,8 +587,37 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "11 · KD-PERSBUDGET-0511 · P1 · Kreis/Soziales · verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "KD-PERSBUDGET-0511 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 / danach keine offene Anmeldung behaupten",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Aktuelle Platzverfügbarkeit und genaue Uhrzeit des Fristendes nicht angegeben. Keine neue Kreisnachricht, unveränderter Morgendossier-Service.",
+      "research_sources": [
+        {
+          "url": "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php",
+          "publisher": "Kreis Düren",
+          "published": "19.10.2026"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "KD-MEISTERSTIP-3110",
@@ -491,12 +717,12 @@
     },
     {
       "id": "MA-FBL3-JOB-1511",
-      "priority": "P1",
-      "location_section": "Merzenich/Arbeit",
-      "change_type": "Frist",
-      "text_status": "T1-B",
+      "priority": "P2",
+      "location_section": "Merzenich/Wirtschaft/Arbeit",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
       "last_checked_at": null,
       "article_path": null,
@@ -508,17 +734,40 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "15 · MA-FBL3-JOB-1511 · P1 · Merzenich/Arbeit · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-FBL3-JOB-1511 · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "28.10.2026 / vor Bewerbungshinweis",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Noch offen? Frist, Qualifikation, Beschäftigungsumfang, Vergütung und offizieller Bewerbungslink aktuell? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-KRAETZCHEN-230127",
       "priority": "P2",
-      "location_section": "Gemeinde/Karneval",
-      "change_type": "Vorverkauf",
-      "text_status": "T2",
+      "location_section": "Gemeindegebiet/Kultur/Karneval",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
       "last_checked_at": null,
       "article_path": null,
@@ -540,8 +789,31 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "16 · MA-KRAETZCHEN-230127 · P2 · Gemeinde/Karneval · Vorverkauf · T2/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-KRAETZCHEN-230127 · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "30.10.2026 / vor Kartenhinweis",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Welcher Ort gilt verbindlich? Stimmen Gemeinde, Plakat und Veranstalter überein? Preis und Verkaufsstellen? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "KD-MENTALLOAD-1811",
@@ -672,11 +944,11 @@
     {
       "id": "MA-ADVENTFENSTER-2026",
       "priority": "P2",
-      "location_section": "Gemeinde/Kirche",
-      "change_type": "Mitmachen",
-      "text_status": "T2",
+      "location_section": "Gemeindegebiet/Kirchen/Vereine",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
       "last_checked_at": null,
       "article_path": null,
@@ -728,8 +1000,31 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "20 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachen · T2/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-ADVENTFENSTER-2026 · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "30.10.2026",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Welche Tage sind noch frei, wer darf anmelden, bis wann und bei welchem Pfarrbüro? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-MODELLBAHN-2111",
@@ -985,12 +1280,12 @@
       "id": "GO-KOSLAR-ERG-2410",
       "priority": "P1",
       "location_section": "Golzheim/Fußball",
-      "change_type": "Ergebnis nachfassen",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1000,8 +1295,37 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "26 · GO-KOSLAR-ERG-2410 · P1 · Golzheim/Fußball"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "GO-KOSLAR-ERG-2410 · T0/B0",
+          "check_scope": "partial_or_open"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "26.10.2026 morgens",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Endstand, Halbzeit, Spielstatus und jüngsten Tabellenstand aus Spielbericht/Verein bestätigen; Ergebniszeichen nicht entschlüsseln. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/verein/sv-viktoria-1908-koslar-mittelrhein/-/id/00ES8GN9A000004HVV0AG08LVUPGND5I",
+          "publisher": "FUSSBALL.DE / DFB",
+          "published": "laufend; im Abruf kein aktueller lesbarer Ergebnistext"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-SONNTAGSSPORT-ERG-2510",
@@ -1023,18 +1347,25 @@
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "27 · MA-SONNTAGSSPORT-ERG-2510 · P1 · alle Kernorte/Fußball"
         }
+      ],
+      "research_notes": "Abendnachlauf: drei Ergebnisse in bestehenden Einzel-IDs aufgelöst; SC III offen. Sammelauftrag nicht separat als Nachricht zählen.",
+      "related_topic_ids": [
+        "MA-SC1-HAMBACH-2510",
+        "MO-GO2-2510",
+        "GR-RHENANIA-MERKEN-2510",
+        "MA-SC3-GEREONSWEILER-2510"
       ]
     },
     {
       "id": "MA-HAMBACHSEE-PFV",
       "priority": "P1",
-      "location_section": "Hambach/Strukturwandel",
-      "change_type": "Originalrefresh",
+      "location_section": "Hambach / Bürgewald/Strukturwandel",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1104,19 +1435,48 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "28 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-HAMBACHSEE-PFV · T0/B0",
+          "check_scope": "partial_or_open"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "26.10.2026 / spätestens vor09.11.",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Welche Auslegung, Fristen und Einwendungswege gelten exakt? Bezirksregierung/UVP-Portal als Alternativen öffnen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
+          "publisher": "Gemeinde Merzenich; Bekanntmachung Bezirksregierung Arnsberg",
+          "published": "09.10.2026"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-BUERGEWALD-VERGABE",
       "priority": "P1",
       "location_section": "Bürgewald/Strukturwandel",
-      "change_type": "Nachfassen",
-      "text_status": "T0",
+      "change_type": "Quellenkorrektur / Hintergrund",
+      "text_status": "T2",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1186,17 +1546,51 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "29 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-BUERGEWALD-VERGABE · T2/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026; vor jeder Übernahme",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Verbindliche Endfassung, Ratsbeschluss, Budget, Umsetzung und Vergabe. Freigabebedingung: Dokumentensatz vollständig gegenprüfen. Bestehende Bürgewald-ID fortgeführt. Gemeindeteaser reicht für Aktualität nicht; keine neue Vergabe behaupten.",
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/dokumentation-masterplan.php",
+          "publisher": "Gemeinde Merzenich",
+          "published": "nicht ausgewiesen; Text nennt Ziel Ende 2025"
+        },
+        {
+          "url": "https://nrw-urban.de/transformation-des-ehemaligen-tagebau-dorfs-dynamischer-masterplan-buergewald/",
+          "publisher": "NRW.URBAN",
+          "published": "04.08.2025; sichtbares Änderungsdatum18.06.2026"
+        }
+      ],
+      "research_review": {
+        "text": "T2",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-HGAS-OKT",
       "priority": "P1",
-      "location_section": "Gemeinde/Energie",
-      "change_type": "Originalrefresh",
+      "location_section": "Merzenich/Energie",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
       "last_checked_at": null,
       "article_path": null,
@@ -1268,19 +1662,42 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "30 · MA-HGAS-OKT · P1 · Gemeinde/Energie"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-HGAS-OKT · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "26.10.2026",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Welche Abschnitte, Terminschreiben, Kontakt- und Störungswege gelten aktuell? Betreiberoriginal und individuelle Mitteilungen nicht vermischen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-RIS-OKT25",
       "priority": "P1",
-      "location_section": "Rathaus/Rat",
-      "change_type": "Nachfassen",
+      "location_section": "Merzenich/Rathaus/Rat",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1290,17 +1707,46 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "31 · MA-RIS-OKT25 · P1 · Rathaus/Rat"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-RIS-OKT25 · T0/B0",
+          "check_scope": "partial_or_open"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "26.10.2026 morgens",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Welche neuen öffentlichen Tagesordnungen und Anlagen? Beschluss, Vorlage und Exportdatum auseinanderhalten. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/vorlagen",
+          "publisher": "Gemeinde Merzenich / RIS",
+          "published": "System nennt Aktualisierung 21.10.2026 13:09"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "GR-REIBEKUCHEN-NACHBERICHT",
       "priority": "P2",
-      "location_section": "Girbelsrath/Verein",
-      "change_type": "Nachfassen",
+      "location_section": "Girbelsrath/Vereine/Ehrenamt",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
       "last_checked_at": null,
       "article_path": null,
@@ -1317,19 +1763,42 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "32 · GR-REIBEKUCHEN-NACHBERICHT · P2 · Girbelsrath/Verein"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "GR-REIBEKUCHEN-NACHBERICHT · T0/B0",
+          "check_scope": "repository_only_not_rechecked"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "repository_only_not_rechecked",
+      "refresh_note": "26.10.2026",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Hat der Termin stattgefunden? Besucher, Erlöszweck und eigene Fotofreigabe? Keine Schätzung aus Ankündigung. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-TTC-OKT25",
       "priority": "P2",
-      "location_section": "Merzenich/Tischtennis",
-      "change_type": "Nachfassen",
-      "text_status": "T0",
+      "location_section": "Merzenich/Weitere Sportarten / Tischtennis",
+      "change_type": "Update / Datenlücke geschlossen",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1339,8 +1808,37 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "33 · MA-TTC-OKT25 · P2 · Merzenich/Tischtennis"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-TTC-OKT25 · T1/B0",
+          "check_scope": "detail_read"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "29.10.2026 vor Spiel / 30.10. nach Spiel",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Weitere TTC-Mannschaften separat abrufen; Punktwertungsmodell nicht mit Fußball vergleichen. Morgendossier T0 teilweise aufgelöst; nur erste Mannschaft verifiziert. Historische TTC-Wochenblöcke bleiben getrennt.",
+      "research_sources": [
+        {
+          "url": "https://wttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/teamPortrait?championship=Aachen/Euregio+26/27&group=522583&pageState=vorrunde&teamtable=4315065",
+          "publisher": "Westdeutscher Tischtennis-Verband / click-TT",
+          "published": "laufender Datenstand, keine Veröffentlichungsuhrzeit"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-JUGENDGREMIUM-STATUS",
@@ -1371,14 +1869,14 @@
     },
     {
       "id": "MA-NAHVERKEHRSPLAN",
-      "priority": "P2",
-      "location_section": "Gemeinde/ÖPNV",
-      "change_type": "Nachfassen",
+      "priority": "P1",
+      "location_section": "Gemeindegebiet / Kreis/Verkehr/ÖPNV",
+      "change_type": "Nachfassen / gesperrt",
       "text_status": "T0",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
+      "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -1443,8 +1941,37 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "35 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-NAHVERKEHRSPLAN · T0/B0",
+          "check_scope": "partial_or_open"
         }
-      ]
+      ],
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "26.10.2026 / vor Mitmachaufruf",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Neue Beteiligungsphase? Aktueller Beschlussweg, Linienänderungen und Inkrafttreten? Kreisplan und aktuelle Bekanntmachung lesen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/umfrage-nvp.php",
+          "publisher": "Gemeinde Merzenich",
+          "published": "nicht ausgewiesen; nennt Ende Februar 2026"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     },
     {
       "id": "MA-RIXEN-1310",
@@ -4617,6 +5144,287 @@
         }
       ],
       "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-STURM-23102026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-STURM-23102026 · T1/B0",
+          "check_scope": "detail_read"
+        }
+      ],
+      "priority": "P1",
+      "location_section": "Golzheim / Merzenich/Polizei/Feuerwehr; Verkehr",
+      "change_type": "Neu im Dossier / Nachtrag",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026; danach Archiv",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Genaue Einsatzzeiten, Schäden und Verletzte nicht genannt; keine ergänzenden Angaben erfinden. Zwei Einsatzberichte zu einer Wetterlage in einer Karte gebündelt. Kein Treffer in 28 gelesenen Artikel-/Terminpaketen; Rohimporte enthalten beide Quellen bereits.",
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/beitraege/ea9cebd6-cb5d-4b20-88ed-1ee6babe60aa",
+          "publisher": "Freiwillige Feuerwehr Merzenich / Heimat-Info",
+          "published": "23.10.2026 18:24"
+        },
+        {
+          "url": "https://www.heimat-info.de/beitraege/3865a392-2ea9-4ac0-864e-7a32eb3ba895",
+          "publisher": "Freiwillige Feuerwehr Merzenich / Heimat-Info",
+          "published": "23.10.2026 18:31"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
+    },
+    {
+      "id": "MA-SCHUELER-WANDERUNG-23102026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-SCHUELER-WANDERUNG-23102026 · T1/B0",
+          "check_scope": "detail_read"
+        }
+      ],
+      "priority": "P1",
+      "location_section": "Merzenich / Bürgewald/Schulen/Jugend; Menschen",
+      "change_type": "Neu im Dossier / Nachtrag",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "29.10.2026 / nach Bestätigung des Reiseendes",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Konkreter Besuchstag, Verlauf und Abschluss; Bilderrechte bei Stephan Jonen sowie Persönlichkeitsrechte klären. Nicht im Morgendossier und kein Treffer in gelesenen Artikelpaketen. Keine erfundenen Namen oder Gespräche.",
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/beitraege/bb5362f1-7c2c-45ee-aa48-b9d5374bd5e5",
+          "publisher": "Gemeinde Merzenich / Heimat-Info",
+          "published": "23.10.2026 11:15"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
+    },
+    {
+      "id": "KD-B56-UNFALL-24102026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "KD-B56-UNFALL-24102026 · T1/B0",
+          "check_scope": "detail_read"
+        }
+      ],
+      "priority": "P3",
+      "location_section": "Aldenhoven / regional/Polizei",
+      "change_type": "Neu seit Vergleichsstand / Region",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "26.10.2026 / danach Archiv",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Keine gesicherte spätere Entwicklung; Alkoholeinfluss als Polizeifeststellung attribuieren. Nicht im Morgendossier oder den 28 gelesenen Paketen. Nicht als Merzenicher Unfall ausgeben.",
+      "research_sources": [
+        {
+          "url": "https://www.presseportal.de/blaulicht/pm/8/6377348",
+          "publisher": "Polizei Düren / Presseportal",
+          "published": "25.10.2026 10:51"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
+    },
+    {
+      "id": "MA-AMTSBLATT-FRIST-03112026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-AMTSBLATT-FRIST-03112026 · T1/B0",
+          "check_scope": "detail_read"
+        }
+      ],
+      "priority": "P2",
+      "location_section": "Merzenich/Rathaus / Vereine",
+      "change_type": "Bestätigter Termin / ältere Servicequelle",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "02.11.2026 / Fristende 03.11.",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Einreichungsformat und Annahmebedingungen bei Originalhinweisen prüfen. Neuer Arbeits-ID-Eintrag für nächste Frist; alten Artikel zur Frist06.10. nicht als aktuellen Text übernehmen.",
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
+          "publisher": "Gemeinde Merzenich",
+          "published": "laufender Erscheinungsplan, kein Seitendatum"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
+    },
+    {
+      "id": "GO-OGS-130-2026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "GO-OGS-130-2026 · T1/B0",
+          "check_scope": "detail_read"
+        }
+      ],
+      "priority": "P2",
+      "location_section": "Golzheim/Rathaus / Schulen",
+      "change_type": "Hintergrund / Beschlussverifikation",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "detail_read",
+      "refresh_note": "05.11.2026 / vor Bauausschuss",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Aktuelle Kostensumme, Förderbescheid und Tagesordnung12.11.; zeitliche Formulierung im Beschluss und Bericht nicht still angleichen. Älterer Vorgang, am Abend Originalbeschluss gelesen. Abgleich mit allgemeiner Ganztagsmeldung14.10.; eigener lokaler Vorgang, kein neuer Kreis-OGS-Artikel.",
+      "research_sources": [
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZao1td9hi9oZyEAlwr_oWwvTec6V3psydPCAAfzAZI45/Beschlusstext_130-2026_-oeffentlich-_Gemeinderat_30.09.2026.pdf",
+          "publisher": "Gemeinderat Merzenich / öffentliche Niederschrift",
+          "published": "Beschluss 30.09.2026; Export 08.10.2026"
+        }
+      ],
+      "research_review": {
+        "text": "T1",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
+    },
+    {
+      "id": "MA-ELW1-116-2026",
+      "workflow_status": "neu",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-abends.md",
+          "heading": "MA-ELW1-116-2026 · T0/B0",
+          "check_scope": "partial_or_open"
+        }
+      ],
+      "priority": "P2",
+      "location_section": "Merzenich/Rathaus/Feuerwehr",
+      "change_type": "Nachfassen / gesperrt",
+      "text_status": "T0",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
+      "source_check_status": "partial_or_open",
+      "refresh_note": "28.10.2026",
+      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "research_notes": "Beschlusstext und eventuelle Änderungen? Vergabeverfahren begonnen oder Auftrag erteilt? Aktueller Zeitplan? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
+      "research_sources": [
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZSvbhaIgFpMuKYsK4dla6ZClHpgCEEG98EBaK-LMBlIE/Beschlussvorlage_116-2026.pdf",
+          "publisher": "Gemeinde Merzenich / Fachbereich 2",
+          "published": "Vorlage 16.09.2026; Export 21.09.2026"
+        }
+      ],
+      "research_review": {
+        "text": "T0",
+        "image": {
+          "rights": "B0_keine_artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "nur_quellen_dateiabgleich",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_aenderung_durch_recherchelauf"
+      }
     }
   ],
   "archive": {
@@ -4718,5 +5526,28 @@
         "source_refreshed_on_import": false
       }
     ]
-  }
+  },
+  "research_runs": [
+    {
+      "dossier": "dossiers/2026-10-25-abends.md",
+      "date": "2026-10-25",
+      "edition": "abends",
+      "compared_with": "dossiers/2026-10-25-morgens.md",
+      "base_commit": "2b188d399c6e4cbfc613e5961a3ebecaa762795b",
+      "topics": 25,
+      "drafts_T1": 12,
+      "drafts_T2": 1,
+      "assignments_T0": 12,
+      "new_sunday_results": 3,
+      "local_backfills": 2,
+      "new_regional_police_reports": 1,
+      "photos_new_found": 10,
+      "photos_license_checked": 8,
+      "photos_rights_open": 2,
+      "photos_reused": 2,
+      "photos_visual_checked": 0,
+      "photos_downloaded": 0,
+      "photos_integrated": 0
+    }
+  ]
 }
