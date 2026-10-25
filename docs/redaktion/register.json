@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-25-abends.md",
-  "source_check_window": "2026-10-25 18:04–18:15 Europe/Berlin; reine Bestandsaufträge separat markiert",
+  "latest_dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+  "source_check_window": "2026-10-25 nachmittags/abends Europe/Berlin (Claude-Nachlauf, Containeruhr); Abenddossier 18:04–18:15",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -14,17 +14,22 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: 3:4 laut fussball.de-Datenbericht, als Absatz im Spieltagsbericht",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "01 · MA-SC2-BERZBUIR-2310 · P1 · Merzenich/Fußball · neues Ergebnis · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -87,12 +92,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Spieltagsbericht aller vier Herrenteams; Tabelle Kreisliga A aus fussball.de-Stand plus Sonntagsergebnissen berechnet, mit fupa abgeglichen; sport-current.json aktualisiert.",
       "dossier_history": [
         {
           "date": "2026-10-22",
@@ -119,6 +124,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-SC1-HAMBACH-2510 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -153,12 +163,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: im Spieltagsbericht",
       "dossier_history": [
         {
           "date": "2026-10-22",
@@ -185,6 +195,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MO-GO2-2510 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -219,12 +234,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: im Spieltagsbericht",
       "dossier_history": [
         {
           "date": "2026-10-23",
@@ -246,6 +261,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "GR-RHENANIA-MERKEN-2510 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -280,12 +300,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-25",
       "article_path": "inhalte/meldungen/2026-10-16-amtsblatt-11.json",
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Dublette: Bons-Termine stehen seit 16.10. im Artikel; kein zweiter Artikel",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -337,6 +357,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-MARTINSZUEGE-2026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -571,12 +596,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
       "dossier_history": [
         {
           "date": "2026-10-20",
@@ -593,6 +618,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "KD-PERSBUDGET-0511 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -627,12 +657,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Frist 31.10. im Original geprüft",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -658,6 +688,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "12 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -669,12 +704,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -685,6 +720,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "13 · KD-EICHEL-0611 · P2 · Hürtgenwald/Umwelt · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -696,11 +736,11 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
+      "implementation_commit": "7e268d6",
       "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
       "dossier_history": [
         {
@@ -712,6 +752,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "14 · KD-FINKENHEIDE-2011 · P2 · Kreis/Jugend/Immobilien · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -823,12 +868,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -849,6 +894,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "17 · KD-MENTALLOAD-1811 · P2 · Kreis/Familie · verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -860,12 +910,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/termine/2026-10-25-recherche-claude.json → /termine/seniorenweihnacht-kreis-dueren-2026-11-24/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: nur als Termin",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -876,6 +926,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "18 · KD-SENIORENWEIHNACHT-2411 · P2 · Düren/Senioren · verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ]
     },
@@ -1284,12 +1339,12 @@
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Klartext 0:5 bei fupa (Abpfiff) und fussball.de-Tabelle (26:9) belegt; im Spieltagsbericht.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -1301,6 +1356,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "GO-KOSLAR-ERG-2410 · T0/B0",
           "check_scope": "partial_or_open"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -1335,17 +1395,22 @@
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sonntagsergebnisse nach Abpfiff bestätigt (fussball.de-Datenberichte, fupa).",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "27 · MA-SONNTAGSSPORT-ERG-2510 · P1 · alle Kernorte/Fußball"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "research_notes": "Abendnachlauf: drei Ergebnisse in bestehenden Einzel-IDs aufgelöst; SC III offen. Sammelauftrag nicht separat als Nachricht zählen.",
@@ -1364,12 +1429,12 @@
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-13-recherche-chatgpt.json → /rathaus/tagebausee-hambach-planfeststellung-einwendungen-2026/ (Nachtrag)",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Bekanntmachung der Bezirksregierung Arnsberg vom 01.10.2026 gelesen (bra.nrw.de); Merzenich ausdrücklich genannt; als Nachtrag in den bestehenden Artikel",
       "dossier_history": [
         {
           "date": "2026-10-13",
@@ -1441,6 +1506,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-HAMBACHSEE-PFV · T0/B0",
           "check_scope": "partial_or_open"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -1696,12 +1766,12 @@
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "in_bearbeitung",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/sitzungstermine-gemeinderat-3-dezember-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -1713,6 +1783,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-RIS-OKT25 · T0/B0",
           "check_scope": "partial_or_open"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -1797,12 +1872,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "7e268d6",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -1814,6 +1889,11 @@
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-TTC-OKT25 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -5147,17 +5227,22 @@
     },
     {
       "id": "MA-STURM-23102026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /blaulicht/sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "7e268d6",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Als eine Meldung mit beiden Einsatznummern umgesetzt; Automatik erkennt 142/26 und 143/26 damit als gedeckt.",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-STURM-23102026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "priority": "P1",
@@ -5166,7 +5251,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "26.10.2026; danach Archiv",
@@ -5198,17 +5283,22 @@
     },
     {
       "id": "MA-SCHUELER-WANDERUNG-23102026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "7e268d6",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Kurzmeldung ohne Schülernamen; Fotos (Stephan Jonen) nicht verwendet.",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-SCHUELER-WANDERUNG-23102026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "priority": "P1",
@@ -5217,7 +5307,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "29.10.2026 / nach Bestätigung des Reiseendes",
@@ -5244,17 +5334,22 @@
     },
     {
       "id": "KD-B56-UNFALL-24102026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/umkreis/2026-10-25.json (Umkreis-Liste)",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "7e268d6",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: kein eigener Artikel, Umkreis-Eintrag",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "KD-B56-UNFALL-24102026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "priority": "P3",
@@ -5263,7 +5358,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "26.10.2026 / danach Archiv",
@@ -5290,17 +5385,22 @@
     },
     {
       "id": "MA-AMTSBLATT-FRIST-03112026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/amtsblatt-12-2026-abgabeschluss-3-november/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "7e268d6",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Terminplan in den Rohdaten (gemeinde.json) geprüft: 12/2026 am 13.11., Abgabe 03.11.; Meldung und Termin",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "MA-AMTSBLATT-FRIST-03112026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "priority": "P2",
@@ -5309,7 +5409,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "02.11.2026 / Fristende 03.11.",
@@ -5336,17 +5436,22 @@
     },
     {
       "id": "GO-OGS-130-2026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "7e268d6",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Beschlusstext 130/2026 als PDF gelesen",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-abends.md",
           "heading": "GO-OGS-130-2026 · T1/B0",
           "check_scope": "detail_read"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "Zusammengeführt mit Claude-Nachlauf"
         }
       ],
       "priority": "P2",
@@ -5355,7 +5460,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "05.11.2026 / vor Bauausschuss",
@@ -5425,6 +5530,138 @@
         },
         "implementation": "keine_aenderung_durch_recherchelauf"
       }
+    },
+    {
+      "id": "MA-1025-02",
+      "priority": "P2",
+      "location_section": "Merzenich/Leben",
+      "change_type": "Neu / Nachbericht",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Seniorennachmittag Weinberghalle, rund 120 Gäste (Gemeinde über Heimat-Info 20.10.)",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-02"
+        }
+      ]
+    },
+    {
+      "id": "MA-1025-04",
+      "priority": "P2",
+      "location_section": "Golzheim/Rathaus",
+      "change_type": "Termin / Neu",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Bürgersprechstunde 30.10., Pfarrheim Golzheim; auch Termin",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-04"
+        }
+      ]
+    },
+    {
+      "id": "MA-1025-05",
+      "priority": "P2",
+      "location_section": "Sophienhöhe/Strukturwandel",
+      "change_type": "Termin",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Wildpferdeexkursion 29.10. (Neuland Hambach); auch Termin und Umkreis",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-05"
+        }
+      ]
+    },
+    {
+      "id": "MA-1025-07",
+      "priority": "P3",
+      "location_section": "Gemeinde/Rathaus",
+      "change_type": "Termin",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/sitzungstermine-gemeinderat-3-dezember-2026/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Sitzungstermine bis 3.12. aus termine.ics; Termin Gemeinderat 3.12. neu",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-07"
+        }
+      ]
+    },
+    {
+      "id": "MA-1025-08",
+      "priority": "P3",
+      "location_section": "Golzheim/Wirtschaft",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /wirtschaft/uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Übungsleiter-Ausschreibung (PDF, KSB Düren) gelesen",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-08"
+        }
+      ]
+    },
+    {
+      "id": "MA-1025-25",
+      "priority": "P2",
+      "location_section": "Pendler/Verkehr",
+      "change_type": "Neu / Service",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-25",
+      "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/",
+      "article_id": null,
+      "implementation_commit": "7e268d6",
+      "notes": "Claude 25.10.: Bahn Düren–Köln nachts, Bismarckstraße Düren, A4 (go.Rheinland, Stadt Düren, Autobahn GmbH)",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+          "heading": "MA-1025-25"
+        }
+      ]
     }
   ],
   "archive": {
@@ -5548,6 +5785,13 @@
       "photos_visual_checked": 0,
       "photos_downloaded": 0,
       "photos_integrated": 0
+    },
+    {
+      "date": "2026-10-25",
+      "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
+      "by": "Claude",
+      "implementation_commit": "7e268d6",
+      "summary": "17 Meldungen, 9 Termine, 14 Umkreis-Einträge, Sportstand, Tagebausee-Nachtrag"
     }
   ]
 }
