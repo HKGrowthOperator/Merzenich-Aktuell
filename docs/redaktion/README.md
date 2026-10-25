@@ -2,6 +2,10 @@
 
 Stand: 25.10.2026. Dieser Ordner verbindet die ausführliche ChatGPT-Recherche mit dem bestehenden Merzenich-Aktuell-Repository. Er enthält Arbeitsmaterial und gehört nicht zur öffentlichen Website. Das Repository ist öffentlich; der Ordner ist kein vertraulicher Speicher.
 
+## Historischer Rückstand und Archiv
+
+Alle verfügbaren vollständigen Dossiers vom 13.–25.10. stehen im [Archiv](archiv.md). Letzter ausdrücklich verarbeiteter ChatGPT-Recherchestand: 14.10.; der folgende Recherchevergleich beginnt am 15.10. Das Register verbindet die historischen Fassungen über dossier_history. Historische Themen mit archiv_refresh_noetig vor Übernahme neu prüfen. Der Archivimport aktualisiert keine Website-Artikel und setzt keine alten Themen auf freigegeben.
+
 ## Einstieg bei jeder Redaktionsaufgabe
 
 1. PROJECT.md und docs/REDAKTIONELLER-STANDARD-V2.md lesen; git status prüfen und aktuelle main-Änderungen ohne Überschreiben fremder Arbeit übernehmen.

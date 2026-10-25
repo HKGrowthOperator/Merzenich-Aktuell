@@ -19,7 +19,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "01 · MA-SC2-BERZBUIR-2310 · P1 · Merzenich/Fußball · neues Ergebnis · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-SC3-GEREONSWEILER-2510",
@@ -34,7 +41,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "02 · MA-SC3-GEREONSWEILER-2510 · P1 · Merzenich/Fußball · heute · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-SC1-HAMBACH-2510",
@@ -49,7 +63,29 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "06 · MA-SC1-HAMBACH-2510 · P1 · Merzenich/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "08 · MA-SC1-HAMBACH-2510 · P1 · Merzenich/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "06 · MA-SC1-HAMBACH-2510 · P1 · Merzenich/Fußball · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "03 · MA-SC1-HAMBACH-2510 · P1 · Merzenich/Fußball · heute · T1/B0"
+        }
+      ]
     },
     {
       "id": "MO-GO2-2510",
@@ -64,7 +100,29 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "07 · MO-GO2-2510 · P1 · Morschenich/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "09 · MO-GO2-2510 · P1 · Morschenich/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "07 · MO-GO2-2510 · P1 · Morschenich/Fußball · Derby · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "04 · MO-GO2-2510 · P1 · Morschenich/Golzheim/Fußball · heute/Derby · T1/B0"
+        }
+      ]
     },
     {
       "id": "GR-RHENANIA-MERKEN-2510",
@@ -79,7 +137,24 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "11 · GR-RHENANIA-MERKEN-2510 · P1 · Girbelsrath/Fußball · Termin · T2/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "09 · GR-RHENANIA-MERKEN-2510 · P1 · Girbelsrath/Fußball · Termin · T2/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "05 · GR-RHENANIA-MERKEN-2510 · P1 · Girbelsrath/Fußball · heute · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-MARTINSZUEGE-2026",
@@ -94,7 +169,54 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "36 · MA-MARTINSZUEGE-2026 · P1 · Ortsteile/Brauchtum · Bestandsnachprüfung"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "32 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Originalprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "05 · MA-MARTINSZUEGE-2026 · P1 · alle vier Orte/Brauchtum · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "06 · MA-MARTINSZUEGE-2026 · P1 · alle vier Orte/Brauchtum · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "09 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Terminblock · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "11 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Terminblock · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "16 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Terminblock · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "05 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "06 · MA-MARTINSZUEGE-2026 · P1 · alle Ortsteile/Brauchtum · Update · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-LAUB-2610",
@@ -109,7 +231,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "07 · MA-LAUB-2610 · P1 · alle Ortsteile/Umwelt · morgen · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-PAPIERTONNE-2026",
@@ -124,7 +253,49 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "02 · MA-PAPIERTONNE-2026 · Altpapier soll in die blaue Tonne"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "10 · MA-PAPIERTONNE-2026"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "08 · MA-PAPIERTONNE-2026"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "13 · MA-PAPIERTONNE-2026"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "11 · MA-PAPIERTONNE-2026 · P2 · Gemeinde/Umwelt · Service"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "04 · MA-PAPIERTONNE-2026 · P1 · Gemeinde/Umwelt · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "11 · MA-PAPIERTONNE-2026 · P1 · Gemeinde/Umwelt · Service · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "08 · MA-PAPIERTONNE-2026 · P1 · Gemeinde/Umwelt · Service · T1/B0"
+        }
+      ]
     },
     {
       "id": "GR-FLUTLICHT-2026",
@@ -139,7 +310,24 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "03 · GR-FLUTLICHT-2026 · P1 · Girbelsrath/Sport/Energie · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "12 · GR-FLUTLICHT-2026 · P1 · Girbelsrath/Sport/Energie · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "09 · GR-FLUTLICHT-2026 · P1 · Girbelsrath/Sport/Energie · Update · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-CROWD-2610",
@@ -154,7 +342,29 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "20 · KD-CROWD-2610 · P1 · Kreis/Jugend · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "22 · KD-CROWD-2610 · P1 · Kreis/Jugend · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "17 · KD-CROWD-2610 · P1 · Kreis/Jugend · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "10 · KD-CROWD-2610 · P1 · Kreis/Jugend · morgen/Frist · T1-B/B0"
+        }
+      ]
     },
     {
       "id": "KD-PERSBUDGET-0511",
@@ -169,7 +379,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "22 · KD-PERSBUDGET-0511 · P2 · Kreis Düren/Soziales · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "11 · KD-PERSBUDGET-0511 · P1 · Kreis/Soziales · verifiziert · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-MEISTERSTIP-3110",
@@ -184,7 +406,34 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "23 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · neu/Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "22 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "23 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "18 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "12 · KD-MEISTERSTIP-3110 · P1 · Kreis/Wirtschaft · Frist · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-EICHEL-0611",
@@ -199,7 +448,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "13 · KD-EICHEL-0611 · P2 · Hürtgenwald/Umwelt · neues Update · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "13 · KD-EICHEL-0611 · P2 · Hürtgenwald/Umwelt · Update · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-FINKENHEIDE-2011",
@@ -214,7 +475,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "14 · KD-FINKENHEIDE-2011 · P2 · Kreis/Jugend/Immobilien · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "14 · KD-FINKENHEIDE-2011 · P2 · Kreis/Jugend/Immobilien · Frist · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-FBL3-JOB-1511",
@@ -229,7 +502,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "15 · MA-FBL3-JOB-1511 · P1 · Merzenich/Arbeit · Frist · T1-B/B0"
+        }
+      ]
     },
     {
       "id": "MA-KRAETZCHEN-230127",
@@ -244,7 +524,24 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "14 · MA-KRAETZCHEN-230127 · P2 · Gemeinde/Karneval · Termin/Ticketstart · T2/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "15 · MA-KRAETZCHEN-230127 · P2 · Gemeinde/Karneval · Vorverkauf · T2/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "16 · MA-KRAETZCHEN-230127 · P2 · Gemeinde/Karneval · Vorverkauf · T2/B0"
+        }
+      ]
     },
     {
       "id": "KD-MENTALLOAD-1811",
@@ -259,7 +556,29 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "24 · KD-MENTALLOAD-1811 · P2 · Kreis/Familie · neu/Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "23 · KD-MENTALLOAD-1811 · P2 · Kreis/Familie · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "24 · KD-MENTALLOAD-1811 · P2 · Kreis/Familie · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "17 · KD-MENTALLOAD-1811 · P2 · Kreis/Familie · verifiziert · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-SENIORENWEIHNACHT-2411",
@@ -274,7 +593,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "25 · KD-SENIORENWEIHNACHT-2411 · P3 · Kreis/Senioren · Update/Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "18 · KD-SENIORENWEIHNACHT-2411 · P2 · Düren/Senioren · verifiziert · T1/B0"
+        }
+      ]
     },
     {
       "id": "MA-TEAM-ORTSFEST-2026",
@@ -289,7 +620,54 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "38 · MA-TEAM-ORTSFEST-2026 · P2 · Merzenich/Ehrenamt · Bestandsnachprüfung"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "34 · MA-TEAM-ORTSFEST-2026 · P2 · Merzenich/Ehrenamt · Originalprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "06 · MA-TEAM-ORTSFEST-2026 · P1 · Gemeinde/Ehrenamt · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "07 · MA-TEAM-ORTSFEST-2026 · P1 · Gemeinde/Ehrenamt · Update · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "10 · MA-TEAM-ORTSFEST-2026 · P1 · Gemeinde/Ehrenamt · Aufruf · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "12 · MA-TEAM-ORTSFEST-2026 · P1 · Gemeinde/Ehrenamt · Aufruf · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "17 · MA-TEAM-ORTSFEST-2026 · P2 · Gemeinde/Ehrenamt · Aufruf · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "21 · MA-TEAM-ORTSFEST-2026 · P2 · Gemeinde/Ehrenamt · Aufruf · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "19 · MA-TEAM-ORTSFEST-2026 · P2 · Gemeinde/Ehrenamt · Aufruf · T1-B/B0"
+        }
+      ]
     },
     {
       "id": "MA-ADVENTFENSTER-2026",
@@ -304,7 +682,54 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "37 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Bestandsnachprüfung"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "33 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Originalprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "10 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "14 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Update · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "16 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachaufruf · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "15 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachen · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "19 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachen · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "22 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachen · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "20 · MA-ADVENTFENSTER-2026 · P2 · Gemeinde/Kirche · Mitmachen · T2/B0"
+        }
+      ]
     },
     {
       "id": "MA-MODELLBAHN-2111",
@@ -319,7 +744,44 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "11 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "15 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "17 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "16 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "20 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "23 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "21 · MA-MODELLBAHN-2111 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        }
+      ]
     },
     {
       "id": "MA-ADVENTMARKT-2811",
@@ -334,7 +796,44 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "12 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "16 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "18 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "17 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "21 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "24 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "22 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        }
+      ]
     },
     {
       "id": "MA-AMPRION-BAUSTART",
@@ -349,7 +848,74 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "13 · MA-AMPRION-BAUSTART · Zwei neue Strommasten entstehen in Merzenich"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "32 · MA-AMPRION-BAUSTART · Konkreten Merzenicher Bauabschnitt verifizieren"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "06 · MA-AMPRION-BAUSTART"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "04 · MA-AMPRION-BAUSTART"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "05 · MA-AMPRION-BAUSTART"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "03 · MA-AMPRION-BAUSTART · P1 · Merzenich/Verkehr · Hintergrund"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "23 · MA-AMPRION-BAUSTART · P2 · Merzenich/Verkehr · Hintergrund · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "21 · MA-AMPRION-BAUSTART · P2 · Merzenich/Verkehr · Hintergrund · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "22 · MA-AMPRION-BAUSTART · P2 · Merzenich/Verkehr · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "21 · MA-AMPRION-BAUSTART · P2 · Merzenich/Energie · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "25 · MA-AMPRION-BAUSTART · P2 · Merzenich/Energie · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "25 · MA-AMPRION-BAUSTART · P2 · Merzenich/Energie · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "23 · MA-AMPRION-BAUSTART · P2 · Merzenich/Energie · Hintergrund · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-VISIONPLUS-2110",
@@ -364,7 +930,29 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "33 · KD-VISIONPLUS-2110 · P3 · Inden/Wirtschaft"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "32 · KD-VISIONPLUS-2110 · P3 · Kreis/Wirtschaft"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "19 · KD-VISIONPLUS-2110 · P3 · Inden/Wirtschaft · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "24 · KD-VISIONPLUS-2110 · P3 · Inden/Wirtschaft · Hintergrund · T1/B0"
+        }
+      ]
     },
     {
       "id": "KD-ERNTE-2310",
@@ -379,7 +967,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "20 · KD-ERNTE-2310 · P3 · Kreis/Landwirtschaft · neu/Hintergrund · T1/B0"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "25 · KD-ERNTE-2310 · P3 · Kreis/Landwirtschaft · Hintergrund · T1/B0"
+        }
+      ]
     },
     {
       "id": "GO-KOSLAR-ERG-2410",
@@ -394,7 +994,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "26 · GO-KOSLAR-ERG-2410 · P1 · Golzheim/Fußball"
+        }
+      ]
     },
     {
       "id": "MA-SONNTAGSSPORT-ERG-2510",
@@ -409,7 +1016,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "27 · MA-SONNTAGSSPORT-ERG-2510 · P1 · alle Kernorte/Fußball"
+        }
+      ]
     },
     {
       "id": "MA-HAMBACHSEE-PFV",
@@ -424,7 +1038,74 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "01 · MA-HAMBACHSEE-PFV · Verfahren für den Tagebausee Hambach öffentlich bekannt gemacht"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "22 · MA-HAMBACHSEE-PFV · Originalbekanntmachung und Fristen sichern"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "26 · MA-HAMBACHSEE-PFV · P1 · Revier/Strukturwandel · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "01 · MA-HAMBACHSEE-PFV"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "01 · MA-HAMBACHSEE-PFV"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "21 · MA-HAMBACHSEE-PFV · P1 · Revier/Struktur · Fristen-Update"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "28 · MA-HAMBACHSEE-PFV · P1 · Revier/Struktur · Originalrefresh"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "27 · MA-HAMBACHSEE-PFV · P1 · Revier/Strukturwandel · Originalrefresh"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "27 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel · Originalrefresh"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "27 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "27 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "28 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "28 · MA-HAMBACHSEE-PFV · P1 · Hambach/Strukturwandel"
+        }
+      ]
     },
     {
       "id": "MA-BUERGEWALD-VERGABE",
@@ -439,7 +1120,74 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "35 · MA-BUERGEWALD-VERGABE · Zwischen- und Flächennutzungen: Status offen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "33 · MA-BUERGEWALD-VERGABE · P2 · Bürgewald/Strukturwandel · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "33 · MA-BUERGEWALD-VERGABE · P2 · Bürgewald/Struktur · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "31 · MA-BUERGEWALD-VERGABE · P2 · Bürgewald/Struktur · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Struktur · Nachfassen"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "29 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Struktur · Nachfassen"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel · Nachfassen"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel · Nachfassen"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "28 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "29 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "29 · MA-BUERGEWALD-VERGABE · P1 · Bürgewald/Strukturwandel"
+        }
+      ]
     },
     {
       "id": "MA-HGAS-OKT",
@@ -454,7 +1202,74 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "12 · MA-HGAS-OKT · H-Gas-Anpassung erreicht Haushalte in drei Ortsteilen"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "11 · MA-HGAS-OKT · Betreiber nennt November für Geräteanpassung"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "16 · MA-HGAS-OKT"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "15 · MA-HGAS-OKT"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "04 · MA-HGAS-OKT"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "02 · MA-HGAS-OKT · P1 · Gemeinde/Energie · Update"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "32 · MA-HGAS-OKT · P1 · Gemeinde/Energie · Originalrefresh"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "31 · MA-HGAS-OKT · P1 · Gemeinde/Energie · Originalrefresh"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "30 · MA-HGAS-OKT · P1 · Gemeinde/Energie · Originalrefresh"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "30 · MA-HGAS-OKT · P1 · Gemeinde/Energie"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "29 · MA-HGAS-OKT · P1 · Gemeinde/Energie"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "30 · MA-HGAS-OKT · P1 · Gemeinde/Energie"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "30 · MA-HGAS-OKT · P1 · Gemeinde/Energie"
+        }
+      ]
     },
     {
       "id": "MA-RIS-OKT25",
@@ -469,7 +1284,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "31 · MA-RIS-OKT25 · P1 · Rathaus/Rat"
+        }
+      ]
     },
     {
       "id": "GR-REIBEKUCHEN-NACHBERICHT",
@@ -484,7 +1306,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "32 · GR-REIBEKUCHEN-NACHBERICHT · P2 · Girbelsrath/Verein"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "32 · GR-REIBEKUCHEN-NACHBERICHT · P2 · Girbelsrath/Verein"
+        }
+      ]
     },
     {
       "id": "MA-TTC-OKT25",
@@ -499,7 +1333,14 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "33 · MA-TTC-OKT25 · P2 · Merzenich/Tischtennis"
+        }
+      ]
     },
     {
       "id": "MA-JUGENDGREMIUM-STATUS",
@@ -514,7 +1355,19 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "34 · MA-JUGENDGREMIUM-STATUS · P2 · Gemeinde/Jugend"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "34 · MA-JUGENDGREMIUM-STATUS · P2 · Gemeinde/Jugend"
+        }
+      ]
     },
     {
       "id": "MA-NAHVERKEHRSPLAN",
@@ -529,7 +1382,3341 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen."
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "30 · MA-NAHVERKEHRSPLAN"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "34 · MA-NAHVERKEHRSPLAN · Beteiligungsstatus und örtliche Linien prüfen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "32 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Korrektur/Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "32 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Korrektur/Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "30 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "27 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Standprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "18 · MA-NAHVERKEHRSPLAN · P1 · Gemeinde/ÖPNV · Unterlagenupdate · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "10 · MA-NAHVERKEHRSPLAN · P1 · Gemeinde/ÖPNV · Unterlagenupdate · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "11 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "13 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV · Hintergrund · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "35 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV"
+        },
+        {
+          "date": "2026-10-25",
+          "dossier": "dossiers/2026-10-25-morgens.md",
+          "heading": "35 · MA-NAHVERKEHRSPLAN · P2 · Gemeinde/ÖPNV"
+        }
+      ]
+    },
+    {
+      "id": "MA-RIXEN-1310",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "02 · MA-RIXEN-1310 · Kuratorium der Rixen-Stiftung tagt heute"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-STRUKTUR-1510",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "03 · MA-STRUKTUR-1510 · Wirtschaftsförderungs- und Strukturausschuss tagt am Donnerstag"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "23 · MA-STRUKTUR-1510 · Tagesordnung des Strukturausschusses lesen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "05 · MA-STRUKTUR-1510 · P1 · Gemeinde/Rat · Termin/Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "27 · MA-STRUKTUR-1510 · P1 · Gemeinde/Rat · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "27 · MA-STRUKTUR-1510 · P1 · Gemeinde/Rat · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "25 · MA-STRUKTUR-1510 · P1 · Gemeinde/Rat · Beschlussprüfung"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-ZWANGSARBEIT-1510",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "04 · MA-ZWANGSARBEIT-1510 · Vortrag beleuchtet Zwangsarbeit in Merzenich"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "05 · MA-ZWANGSARBEIT-1510 · Vortrag zur Zwangsarbeit in Merzenich"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "03 · MA-ZWANGSARBEIT-1510"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-LAUB-LAEUFT",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "05 · MA-LAUB-LAEUFT · Laubannahme läuft jetzt am neuen Bauhofstandort"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "06 · MA-LAUB-LAEUFT · Nächste Laubannahme am Montag in Girbelsrath"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "09 · MA-LAUB-LAEUFT"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "03 · MA-LAUB-LAEUFT"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "03 · MA-LAUB-LAEUFT"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "01 · MA-LAUB-LAEUFT · P1 · Girbelsrath/Umwelt · Service-Update"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "03 · MA-LAUB-LAEUFT · P1 · Girbelsrath/Umwelt · Service · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SCHNULLER-LAEUFT",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "06 · MA-SCHNULLER-LAEUFT · Schnullersäule bis 23. Oktober an der Kita St. Marien"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "07 · MA-SCHNULLER-LAEUFT · Schnullersäule steht allen Kindern offen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "08 · MA-SCHNULLER-LAEUFT"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "07 · MA-SCHNULLER-LAEUFT"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "06 · MA-SCHNULLER-LAEUFT"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "09 · MA-SCHNULLER-LAEUFT · P2 · Merzenich/Familie · laufender Termin"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "15 · MA-SCHNULLER-LAEUFT · P2 · Merzenich/Familie · Service · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "18 · MA-SCHNULLER-LAEUFT · P2 · Merzenich/Familie · Service · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "02 · MA-SCHNULLER-LAEUFT · P1 · Merzenich/Familie · Service · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC1-SERIE",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "07 · MA-SC1-SERIE · SC Merzenich festigt nach 6:1 den fünften Tabellenplatz"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC2-REMIS",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "08 · MA-SC2-REMIS · Vier Tore reichen der Merzenicher Zweiten nur zu einem Punkt"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC-JUGEND",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "09 · MA-SC-JUGEND · D1 qualifiziert sich für die Kreismeisterschaft"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-TTC-0910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "10 · MA-TTC-0910 · TTC Merzenich gewinnt doppelt auswärts"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SENIOREN-1710",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "11 · MA-SENIOREN-1710 · Seniorennachmittag erstmals am Wochenende"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "08 · MA-SENIOREN-1710 · Seniorennachmittag am Samstag"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "11 · MA-SENIOREN-1710"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "05 · MA-SENIOREN-1710"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "02 · MA-SENIOREN-1710"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-KITA-2728",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "14 · MA-KITA-2728 · Anmeldung für das Kita-Jahr 2027/28 läuft"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "04 · MA-KITA-2728 · Kita-Betreuungsbedarf jetzt vormerken"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "07 · MA-KITA-2728"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-OGS-KOOP",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "15 · KD-OGS-KOOP · Kreis und Kommunen vereinbaren gemeinsamen Ganztagsrahmen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-FLUTLICHT-RHENANIA",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "16 · MA-FLUTLICHT-RHENANIA · Neue Flutlichtanlage für Rhenania Girbelsrath"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "10 · MA-FLUTLICHT-RHENANIA · Neue Beleuchtung für die Rhenania"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "18 · MA-FLUTLICHT-RHENANIA"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "14 · MA-FLUTLICHT-RHENANIA"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "15 · MA-FLUTLICHT-RHENANIA"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "13 · MA-FLUTLICHT-RHENANIA · P3 · Girbelsrath/Energie/Sport · Hintergrund"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-CONTAINER-MAARHALLE",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "17 · MA-CONTAINER-MAARHALLE · Mehr Lagerraum für Girbelsrather Ortsvereine"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "09 · MA-CONTAINER-MAARHALLE · Mehr Lagerplatz für Girbelsrather Vereine"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "17 · MA-CONTAINER-MAARHALLE"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "13 · MA-CONTAINER-MAARHALLE"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "14 · MA-CONTAINER-MAARHALLE"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "12 · MA-CONTAINER-MAARHALLE · P3 · Girbelsrath/Vereine · Hintergrund"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-ORTSFEST-BILANZ",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "18 · MA-ORTSFEST-BILANZ · Mehr als 85 Stände beim Merzenicher Ortsfest"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-KLIMAANPASSUNG",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "19 · KD-KLIMAANPASSUNG · Kreis entwickelt Projekte für Folgen des Klimawandels"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-DROHNEN",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "20 · KD-DROHNEN · Kreis stärkt Bevölkerungsschutz mit Drohnentechnik"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-FEUERWEHR-NEU",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "21 · MA-FEUERWEHR-NEU"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "31 · MA-FEUERWEHR-NEU · Widersprüchliche Einsatzansichten klären"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "29 · MA-FEUERWEHR-NEU · P2 · Gemeinde/Blaulicht · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "29 · MA-FEUERWEHR-NEU · P2 · Gemeinde/Blaulicht · Nachfassen mit gelesenem Archivbeleg"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "29 · MA-FEUERWEHR-NEU · P2 · Gemeinde/Blaulicht · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "26 · MA-FEUERWEHR-NEU · P2 · Gemeinde/Blaulicht · Aktualitätsprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "33 · MA-FEUERWEHR-NEU · P2 · Gemeinde/Blaulicht · Nachfassen"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "08 · MA-FEUERWEHR-NEU · P1 · Golzheim/A4/Blaulicht · Quellenupdate · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "08 · MA-FEUERWEHR-NEU · P1 · Golzheim/A4/Blaulicht · Nachbericht · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-POLIZEI-NEU",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "22 · MA-POLIZEI-NEU"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "30 · MA-POLIZEI-NEU · Kernort-Blaulicht und regionale Einzelmeldungen nachlesen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "28 · MA-POLIZEI-NEU · P1 · Düren/Merzenich/Blaulicht · Neuansatz"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "28 · MA-POLIZEI-NEU · P1 · Düren/Merzenich · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "21 · MA-POLIZEI-NEU"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-GOLZHEIM-SPORT",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "23 · MA-GOLZHEIM-SPORT"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "26 · MA-GOLZHEIM-SPORT · Ergebnis und Ansetzungskonflikt klären"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "30 · MA-GOLZHEIM-SPORT · P2 · Golzheim/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "30 · MA-GOLZHEIM-SPORT · P2 · Golzheim/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "12 · MA-GOLZHEIM-SPORT"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "07 · MA-GOLZHEIM-SPORT · P1 · Golzheim/Fußball · Ansetzungs-Update"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "02 · MA-GOLZHEIM-SPORT · P1 · Golzheim/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "04 · MA-GOLZHEIM-SPORT · P1 · Golzheim/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "05 · MA-GOLZHEIM-SPORT · P1 · Golzheim/Fußball · Update · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-GIRBELS-SENIOREN",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "24 · MA-GIRBELS-SENIOREN"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "27 · MA-GIRBELS-SENIOREN · Girbelsrather Ergebnis bleibt numerisch offen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "31 · MA-GIRBELS-SENIOREN · P2 · Girbelsrath/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "31 · MA-GIRBELS-SENIOREN · P2 · Girbelsrath/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "28 · MA-GIRBELS-SENIOREN · P1 · Girbelsrath/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "08 · MA-GIRBELS-SENIOREN · P1 · Girbelsrath/Fußball · Ansetzung geklärt"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "27 · MA-GIRBELS-SENIOREN · P1 · Girbelsrath/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "26 · MA-GIRBELS-SENIOREN · P1 · Girbelsrath/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "26 · MA-GIRBELS-SENIOREN · P1 · Girbelsrath/Fußball · Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-RIXEN-TOPS",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-14-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "25 · MA-RIXEN-TOPS"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "24 · MA-RIXEN-TOPS · Nachbericht statt gestrigem Termintipp"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-AMTSBLATT-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "26 · MA-AMTSBLATT-1610"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "25 · MA-AMTSBLATT-1610 · Ausgabe 11 wirklich lesen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "27 · MA-AMTSBLATT-1610 · P1 · Gemeinde/Rathaus · Update/Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "26 · MA-AMTSBLATT-1610 · P1 · Gemeinde/Rathaus · Update/Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "26 · MA-AMTSBLATT-1610 · P1 · Gemeinde/Rathaus · Update/Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "24 · MA-AMTSBLATT-1610 · P1 · Gemeinde/Rathaus · Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-KG-KARTEN",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "27 · MA-KG-KARTEN"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-MYBACH-DETAILS",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "29 · MA-MYBACH-DETAILS"
+        },
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "33 · MA-MYBACH-DETAILS · Lokale Immobilienfiliale neutral belegen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "34 · MA-MYBACH-DETAILS · P3 · Merzenich/Immobilien · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "34 · MA-MYBACH-DETAILS · P3 · Merzenich/Immobilien · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "32 · MA-MYBACH-DETAILS · P3 · Merzenich/Immobilien · Bestandsnachprüfung"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "29 · MA-MYBACH-DETAILS · P3 · Merzenich/Wirtschaft · Bestandsprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "24 · MA-MYBACH-DETAILS · P3 · Merzenich/Wirtschaft · Hintergrund · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-GOLZHEIM-GRABSTAETTE",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "31 · MA-GOLZHEIM-GRABSTAETTE"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-BLAULICHT-INDEX-QA",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-13-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-13",
+          "dossier": "dossiers/2026-10-13-morgens.md",
+          "heading": "32 · MA-BLAULICHT-INDEX-QA"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-KGS-ANMELDUNG-2728",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "01 · MA-KGS-ANMELDUNG-2728 · Letzte Anmeldetermine an der KGS „Am Weinberg“"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "01 · MA-KGS-ANMELDUNG-2728"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-WILDE13-GOLZHEIM",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "03 · MA-WILDE13-GOLZHEIM · Jugendbus hält donnerstags in Golzheim"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "04 · MA-WILDE13-GOLZHEIM"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "06 · MA-WILDE13-GOLZHEIM"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "07 · MA-WILDE13-GOLZHEIM"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC-WOCHENBLOCK",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "12 · MA-SC-WOCHENBLOCK · SC Merzenich vor Heimspielen gegen Wenau"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "13 · MA-SC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "10 · MA-SC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "09 · MA-SC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "05 · MA-SC-WOCHENBLOCK · P1 · Merzenich/Fußball · Termin"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "01 · MA-SC-WOCHENBLOCK · P1 · Gemeinde/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "03 · MA-SC-WOCHENBLOCK · P1 · Gemeinde/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "03 · MA-SC-WOCHENBLOCK · P1 · Merzenich/Fußball · Update · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-TTC-WOCHENBLOCK",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "13 · MA-TTC-WOCHENBLOCK · TTC-Dritte empfängt Jülich am Freitag"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "15 · MA-TTC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "12 · MA-TTC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "11 · MA-TTC-WOCHENBLOCK"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "04 · MA-TTC-WOCHENBLOCK · P1 · Merzenich/Tischtennis · Prüf-Update"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-KRISENVORSORGE-1126",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "14 · MA-KRISENVORSORGE-1126 · Kostenfreie Online-Reihe zur Krisenvorsorge"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "19 · MA-KRISENVORSORGE-1126"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "22 · MA-KRISENVORSORGE-1126"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "18 · MA-KRISENVORSORGE-1126"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "15 · MA-KRISENVORSORGE-1126 · P2 · online/Ehrenamt · Terminreihe"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-ERZAEHLSALON-0311",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "15 · NZ-ERZAEHLSALON-0311 · Erzählsalons starten an der Gesamtschule"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "20 · NZ-ERZAEHLSALON-0311"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "21 · NZ-ERZAEHLSALON-0311"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "17 · NZ-ERZAEHLSALON-0311"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "16 · NZ-ERZAEHLSALON-0311 · P2 · Niederzier-Oberzier/Struktur · Termin"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-SPENDEN-ASSIKOI",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-14-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "16 · KD-SPENDEN-ASSIKOI · Kreis sammelt Ausstattung für Geburtshilfestation"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "BUIR-KANAL-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "17 · BUIR-KANAL-2026 · Kanalsanierung in Buir läuft weiter"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "24 · BUIR-KANAL-2026"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "24 · BUIR-KANAL-2026"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "24 · BUIR-KANAL-2026"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "22 · BUIR-KANAL-2026 · P3 · Kerpen-Buir/Verkehr · älterer Hintergrund"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "ELS-PORTA-SOPHIA",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "18 · ELS-PORTA-SOPHIA · Landschaftsraum an der :porta sophia geplant"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "25 · ELS-PORTA-SOPHIA"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "25 · ELS-PORTA-SOPHIA"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "25 · ELS-PORTA-SOPHIA"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "23 · ELS-PORTA-SOPHIA · P3 · Elsdorf/Struktur · älterer Hintergrund"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-K6-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "19 · KD-K6-1910 · K6 zwischen Koslar und Barmen wird gesperrt"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "21 · KD-K6-1910"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "23 · KD-K6-1910"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-KRIMI-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "20 · KD-KRIMI-1610 · Krimilesungen auf Burg Nideggen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "22 · KD-KRIMI-1610"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-HUBERTUS-1810",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "21 · KD-HUBERTUS-1810 · Hubertusmesse mit Tiersegnung"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "23 · KD-HUBERTUS-1810"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-MORSCHENICH-SPORT",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "28 · MA-MORSCHENICH-SPORT · SV-Morschenich-Wochenbericht nachziehen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "14 · MA-MORSCHENICH-SPORT"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "11 · MA-MORSCHENICH-SPORT"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "10 · MA-MORSCHENICH-SPORT"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "06 · MA-MORSCHENICH-SPORT · P2 · Morschenich/Fußball · Update"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "26 · MA-MORSCHENICH-SPORT · P1 · Morschenich/Fußball · Nachfassen"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "01 · MA-MORSCHENICH-SPORT · P1 · Morschenich/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "06 · MA-MORSCHENICH-SPORT · P1 · Morschenich/Fußball · Update · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SPORT-ERGÄNZUNG",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-14-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "29 · MA-SPORT-ERGÄNZUNG · Weitere Teams und Sportarten ergänzen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-FBL3-JOB-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-14",
+          "dossier": "dossiers/2026-10-14-morgens.md",
+          "heading": "36 · MA-FBL3-JOB-2026 · Stellenausschreibung Planen und Bauen prüfen"
+        },
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "12 · MA-FBL3-JOB-2026"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "35 · MA-FBL3-JOB-2026 · P2 · Gemeinde/Arbeitsplatz · Revalidierung"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "33 · MA-FBL3-JOB-2026 · P2 · Gemeinde/Arbeitsplätze · Revalidierung"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "30 · MA-FBL3-JOB-2026 · P2 · Gemeinde/Arbeitsplätze · Nachprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "35 · MA-FBL3-JOB-2026 · P2 · Gemeinde/Arbeitsplätze · Fristprüfung"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "02 · MA-FBL3-JOB-2026 · P1 · Merzenich/Arbeitsplätze · Verifikationsupdate · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "07 · MA-FBL3-JOB-2026 · P1 · Merzenich/Arbeitsplätze · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "09 · MA-FBL3-JOB-2026 · P1 · Merzenich/Arbeit · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "15 · MA-FBL3-JOB-2026 · P1 · Merzenich/Arbeit · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "16 · MA-FBL3-JOB-2026 · P1 · Merzenich/Arbeit · Frist · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-BAERENSTARK-JOB-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-15-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "02 · MA-BAERENSTARK-JOB-2026"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NOE-GYMNICHER-STATUS",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-15",
+          "dossier": "dossiers/2026-10-15-morgens.md",
+          "heading": "35 · NOE-GYMNICHER-STATUS · P3 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "36 · NOE-GYMNICHER-STATUS · P3 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "34 · NOE-GYMNICHER-STATUS · P3 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "31 · NOE-GYMNICHER-STATUS · P2 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "34 · NOE-GYMNICHER-STATUS · P2 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "32 · NOE-GYMNICHER-STATUS · P2 · Wissersheim/Verkehr · Nachfassen"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "32 · NOE-GYMNICHER-STATUS · P2 · Nörvenich/Verkehr · Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-OEKUMENE-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "02 · MA-OEKUMENE-1610"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-GNM-TOT-2111",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "09 · MA-GNM-TOT-2111"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "08 · MA-GNM-TOT-2111"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "10 · MA-GNM-TOT-2111 · P2 · Gemeinde/Schule · Termin"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-BIERABEND-3110",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "16 · MA-BIERABEND-3110"
+        },
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "35 · MA-BIERABEND-3110 · P2 · Merzenich/Kultur · Terminprüfung"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-LED-SCHULWEG-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "17 · KD-LED-SCHULWEG-2026"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-WINDPOCKEN-1410",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "18 · KD-WINDPOCKEN-1410"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-KI-BKJ-1510",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "19 · KD-KI-BKJ-1510"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-FOS-POLIZEI-2728",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-16-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-16",
+          "dossier": "dossiers/2026-10-16-morgens.md",
+          "heading": "20 · KD-FOS-POLIZEI-2728"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-KI-KMU-2210",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "16 · KD-KI-KMU-2210"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "14 · KD-KI-KMU-2210 · P1 · Düren/Wirtschaft · Anmeldefrist heute"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "31 · KD-KI-KMU-2210 · P1 · Düren/Wirtschaft · CTA-Konflikt"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "30 · KD-KI-KMU-2210 · P1 · Düren/Wirtschaft · Fristkonflikt"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "31 · KD-KI-KMU-2210 · P1 · Düren/Wirtschaft · Fristkonflikt"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-BIBLIOTHEK-DINGE",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "19 · DN-BIBLIOTHEK-DINGE"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "17 · DN-BIBLIOTHEK-DINGE · P2 · Düren/Bildung · aktuelle Ergänzung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "20 · DN-BIBLIOTHEK-DINGE · P3 · Düren/Bildung · Angebot · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-GAMEDESIGN-2810",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "20 · DN-GAMEDESIGN-2810"
+        },
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "18 · DN-GAMEDESIGN-2810 · P2 · online/Kultur/Bildung · Termin"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-POLIZEI-PRAKTIKA-2027",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "22 · KD-POLIZEI-PRAKTIKA-2027"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-FRUEHEHILFEN-1211",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "23 · KD-FRUEHEHILFEN-1211"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-HALLENBOSSELN-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-17-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "39 · MA-HALLENBOSSELN-2026 · P2 · Girbelsrath/Sport · Bestandsnachprüfung"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-PLURIVERSUM-1711",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-17",
+          "dossier": "dossiers/2026-10-17-morgens.md",
+          "heading": "40 · MA-PLURIVERSUM-1711 · P2 · Merzenich/Kultur/Umwelt · Bestandsnachprüfung"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "13 · MA-PLURIVERSUM-1711 · P2 · Merzenich/Bildung · Termin · T2/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-STETTERNICH-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "19 · KD-STETTERNICH-1610 · P2 · Stetternich/Blaulicht · neu im Dossier"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-SCHOPHOVEN-1710",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-18-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "20 · NZ-SCHOPHOVEN-1710 · P2 · Niederzier-Schophoven/Blaulicht · neu im Dossier"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-KRAETZCHEN-2027",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-20-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-18",
+          "dossier": "dossiers/2026-10-18-morgens.md",
+          "heading": "35 · MA-KRAETZCHEN-2027 · P2 · Gemeinde/Kultur · widersprüchliche Quelle"
+        },
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "25 · MA-KRAETZCHEN-2027 · P2 · Merzenich/Kultur · Vorverkauf · T2/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "33 · MA-KRAETZCHEN-2027 · P2 · Merzenich/Kultur · Nachfassen / außerhalb 60 Tage"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-OPENHOUSE-2110",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "04 · MA-OPENHOUSE-2110 · P1 · Merzenich/Jugend · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "05 · MA-OPENHOUSE-2110 · P1 · Merzenich/Jugend · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "01 · MA-OPENHOUSE-2110 · P1 · Merzenich/Jugend · laufender Termin · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-BLUETENLIEBE-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "07 · MA-BLUETENLIEBE-2026 · P2 · Merzenich/Wirtschaft · neu im Dossier · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "11 · MA-BLUETENLIEBE-2026 · P2 · Merzenich/Wirtschaft · Bestandsfortführung · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "13 · MA-BLUETENLIEBE-2026 · P3 · Merzenich/Wirtschaft · Bestandsservice · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GR-REIBEKUCHEN-2410",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "08 · GR-REIBEKUCHEN-2410 · P2 · Girbelsrath/Vereine · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "12 · GR-REIBEKUCHEN-2410 · P2 · Girbelsrath/Vereine · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "14 · GR-REIBEKUCHEN-2410 · P1 · Girbelsrath/Vereine · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "04 · GR-REIBEKUCHEN-2410 · P1 · Girbelsrath/Verein · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "06 · GR-REIBEKUCHEN-2410 · P1 · Girbelsrath/Verein · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "02 · GR-REIBEKUCHEN-2410 · P1 · Girbelsrath/Verein · heute · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GR-KRIPO-0511",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "09 · GR-KRIPO-0511 · P2 · Girbelsrath/Soziales · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "13 · GR-KRIPO-0511 · P2 · Girbelsrath/Soziales · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "15 · GR-KRIPO-0511 · P2 · Girbelsrath/Prävention · Termin · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GR-HALLENBOSSELN-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "14 · GR-HALLENBOSSELN-2026 · P2 · Girbelsrath/Sport · Angebot · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "17 · GR-HALLENBOSSELN-2026 · P2 · Girbelsrath/Sport · Angebot · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "19 · GR-HALLENBOSSELN-2026 · P2 · Girbelsrath/Sport · Angebot · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-BUENDEL-1611",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "16 · MA-BUENDEL-1611 · P2 · Gemeinde/Umwelt · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "19 · MA-BUENDEL-1611 · P2 · Gemeinde/Umwelt · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "20 · MA-BUENDEL-1611 · P2 · Gemeinde/Umwelt · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "19 · MA-BUENDEL-1611 · P2 · Gemeinde/Umwelt · Termin · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-CROWD-JUGEND-2610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "17 · KD-CROWD-JUGEND-2610 · P1 · Kreis/Förderung · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "20 · KD-CROWD-JUGEND-2610 · P1 · Kreis/Förderung · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "21 · KD-CROWD-JUGEND-2610 · P1 · Kreis/Jugendförderung · Frist · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-LEADER-LETZTAUFRUF",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "19 · MA-LEADER-LETZTAUFRUF · P1 · Gemeinde/Ehrenamt/Struktur · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "09 · MA-LEADER-LETZTAUFRUF · P1 · Gemeinde/Revier/Förderung · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "12 · MA-LEADER-LETZTAUFRUF · P1 · Gemeinde/Revier/Förderung · Update · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-KANAL-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "21 · NZ-KANAL-1910 · P2 · Niederzier/Verkehr · geplanter Beginn · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-RADROUTE-DN-JUE",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-19-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "22 · NZ-RADROUTE-DN-JUE · P2 · Düren/Niederzier/Jülich · Planungsstand · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-JUGENDBUS-ZEIT",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-19",
+          "dossier": "dossiers/2026-10-19-morgens.md",
+          "heading": "30 · MA-JUGENDBUS-ZEIT · P1 · Golzheim/Jugend · Quellenkonflikt"
+        },
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "29 · MA-JUGENDBUS-ZEIT · P1 · Golzheim/Jugend · Quellenkonflikt"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "29 · MA-JUGENDBUS-ZEIT · P1 · Golzheim/Jugend · Quellenkonflikt"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "29 · MA-JUGENDBUS-ZEIT · P1 · Golzheim/Jugend"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-LENDERSDORFER-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-20-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "23 · DN-LENDERSDORFER-1910 · P2 · Düren/Verkehr · Planungsupdate · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-ZWEIRAD-KONTROLLEN-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-20-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "24 · DN-ZWEIRAD-KONTROLLEN-1610 · P3 · Düren/Polizei · Nachbericht · T2/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-PEDELEC-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "25 · DN-PEDELEC-1910 · P3 · Düren/Polizei · Neu im Dossier · T2/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "35 · DN-PEDELEC-1910 · P2 · Düren/Merzenich/Polizei"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "33 · DN-PEDELEC-1910 · P2 · Düren/Merzenich/Polizei"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "ELS-TERRANOVA-NACHFASS",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "34 · ELS-TERRANOVA-NACHFASS · P2 · Elsdorf/Revier/Strukturwandel · Nachfassen"
+        },
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "33 · ELS-TERRANOVA-NACHFASS · P2 · Elsdorf/Revier · Nachbericht offen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-TRANSPORTER-1610",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-20-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-20",
+          "dossier": "dossiers/2026-10-20-morgens.md",
+          "heading": "35 · DN-TRANSPORTER-1610 · P3 · Düren/Polizei · Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC2-2310",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "04 · MA-SC2-2310 · P2 · Merzenich/Fußball · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "03 · MA-SC2-2310 · P1 · Merzenich/Fußball · Vorschau · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "02 · MA-SC2-2310 · P1 · Merzenich/Fußball · heute · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-PKW-PEDELEC-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "34 · DN-PKW-PEDELEC-1910 · P2 · Düren/Polizei · neu/Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-E-LADESAEULE-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-21-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-21",
+          "dossier": "dossiers/2026-10-21-morgens.md",
+          "heading": "35 · NZ-E-LADESAEULE-1910 · P2 · Niederzier/Polizei/Energie · neu/Nachfassen"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-OPENHOUSE-2210",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "01 · MA-OPENHOUSE-2210 · P1 · Merzenich/Jugend · letzter Tag · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SCHNULLER-2310",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "02 · MA-SCHNULLER-2310 · P1 · Merzenich/Familie · Frist · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "01 · MA-SCHNULLER-2310 · P1 · Merzenich/Familie · letzter Tag · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GO-KOSLAR-2410",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "05 · GO-KOSLAR-2410 · P1 · Golzheim/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "07 · GO-KOSLAR-2410 · P1 · Golzheim/Fußball · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "03 · GO-KOSLAR-2410 · P1 · Golzheim/Fußball · heute · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC3-2510",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "08 · MA-SC3-2510 · P2 · Merzenich/Fußball · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "10 · MA-SC3-2510 · P2 · Merzenich/Fußball · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "08 · MA-SC3-2510 · P2 · Merzenich/Fußball · Termin · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-FEUERWEHR-140-26",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "10 · MA-FEUERWEHR-140-26 · P1 · Golzheim/A4/Blaulicht · Nachbericht · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-LEADER-270127",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "14 · MA-LEADER-270127 · P2 · Revier/Förderung · Frist · T1-B/B0"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "18 · MA-LEADER-270127 · P2 · Revier/Förderung · Frist · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GR-HALLENBOSSELN",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "18 · GR-HALLENBOSSELN · P2 · Girbelsrath/Sport · Angebot · T1-B/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NOE-L327-2010",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "24 · NOE-L327-2010 · P1 · Nörvenich/Verkehr · neu · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-ISRAEL-2910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "25 · DN-ISRAEL-2910 · P3 · Düren/Kultur · neu/Termin · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "GR-RHENANIA-ERG",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "26 · GR-RHENANIA-ERG · P1 · Girbelsrath/Fußball"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "26 · GR-RHENANIA-ERG · P1 · Girbelsrath/Fußball"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "27 · GR-RHENANIA-ERG · P1 · Girbelsrath/Fußball"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-EICHELN-2110",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "31 · KD-EICHELN-2110 · P2 · Hürtgenwald/Umwelt"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "30 · KD-EICHELN-2110 · P2 · Kreis/Umwelt"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "KD-FINKENHEIDE-2110",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "32 · KD-FINKENHEIDE-2110 · P2 · Hürtgenwald/Jugend/Immobilien"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "31 · KD-FINKENHEIDE-2110 · P2 · Kreis/Jugend/Immobilien"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-ESCOOTER-2010",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-22-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "34 · DN-ESCOOTER-2010 · P2 · Düren/Polizei"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "NZ-LADESAEULE-1910",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-22",
+          "dossier": "dossiers/2026-10-22-morgens.md",
+          "heading": "36 · NZ-LADESAEULE-1910 · P2 · Niederzier/Energie/Polizei"
+        },
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "34 · NZ-LADESAEULE-1910 · P2 · Niederzier/Energie/Polizei"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-LAUB-2026",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "05 · MA-LAUB-2026 · P1 · alle Ortsteile/Umwelt · neu verifiziert · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "10 · MA-LAUB-2026 · P1 · alle Ortsteile/Umwelt · Service · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "DN-EINBRUCH-2410",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "12 · DN-EINBRUCH-2410 · P2 · Düren/Polizei · neu/Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "01 · DN-EINBRUCH-2410 · P1 · Düren/Polizei · heute · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-ZEITUMSTELLUNG-2510",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "13 · MA-ZEITUMSTELLUNG-2510 · P2 · Gemeinde/Service · Termin · T1/B0"
+        },
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "04 · MA-ZEITUMSTELLUNG-2510 · P1 · Gemeinde/Service · Termin · T1/B0"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-RIS-OKT23",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-23-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-23",
+          "dossier": "dossiers/2026-10-23-morgens.md",
+          "heading": "35 · MA-RIS-OKT23 · P1 · Rathaus/Rat"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-SC2-ERG-2310",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "26 · MA-SC2-ERG-2310 · P1 · Merzenich/Fußball"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-RIS-OKT24",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "31 · MA-RIS-OKT24 · P1 · Rathaus/Rat"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+    },
+    {
+      "id": "MA-TTC-OKT24",
+      "priority": null,
+      "location_section": null,
+      "change_type": "historisches_recherchethema",
+      "text_status": null,
+      "image_status": null,
+      "dossier": "dossiers/2026-10-24-morgens.md",
+      "workflow_status": "archiv_refresh_noetig",
+      "last_checked_at": null,
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-10-24",
+          "dossier": "dossiers/2026-10-24-morgens.md",
+          "heading": "33 · MA-TTC-OKT24 · P2 · Merzenich/Tischtennis"
+        }
+      ],
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
     }
-  ]
+  ],
+  "archive": {
+    "baseline_processed_report": "2026-10-14",
+    "baseline_evidence": "inhalte/meldungen/2026-10-14-recherche-chatgpt.json",
+    "earlier_coverage_evidence": "inhalte/meldungen/2026-10-13-recherche-chatgpt.json",
+    "earlier_coverage_note": "Das bestehende Paket vom 13.10. beschreibt eine Zusammenführung der Berichte vom 07.–13.10.; die vollständigen Originaldossiers vom 07.–12.10. wurden bei diesem Import nicht wiederhergestellt.",
+    "import_scope": "Vollständige verfügbare Originaldossiers 13.–25.10.2026; 13./14.10. als Referenz, 15.–25.10. als Recherche-Nachlauf. Kein Nachweis, dass seit 14.10. keine anderen Artikel ergänzt wurden.",
+    "dossiers": [
+      {
+        "date": "2026-10-13",
+        "path": "dossiers/2026-10-13-morgens.md",
+        "topics": 32,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-14",
+        "path": "dossiers/2026-10-14-morgens.md",
+        "topics": 36,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-15",
+        "path": "dossiers/2026-10-15-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-16",
+        "path": "dossiers/2026-10-16-morgens.md",
+        "topics": 36,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-17",
+        "path": "dossiers/2026-10-17-morgens.md",
+        "topics": 40,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-18",
+        "path": "dossiers/2026-10-18-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-19",
+        "path": "dossiers/2026-10-19-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-20",
+        "path": "dossiers/2026-10-20-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-21",
+        "path": "dossiers/2026-10-21-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-22",
+        "path": "dossiers/2026-10-22-morgens.md",
+        "topics": 36,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-23",
+        "path": "dossiers/2026-10-23-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-24",
+        "path": "dossiers/2026-10-24-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      },
+      {
+        "date": "2026-10-25",
+        "path": "dossiers/2026-10-25-morgens.md",
+        "topics": 35,
+        "archival": true,
+        "source_refreshed_on_import": false
+      }
+    ]
+  }
 }

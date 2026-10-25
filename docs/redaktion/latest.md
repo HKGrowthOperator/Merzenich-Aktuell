@@ -9,3 +9,6 @@ Nächster Lauf: bestätigte Sonntagsergebnisse, Golzheimer Samstagsspiel, Friste
 Bearbeitungsstatus und Artikelzuordnung: [register.json](register.json). Verfahrensregeln: [README.md](README.md).
 
 Archivstatus: Das Dossier ist unverändert übernommen. Aussagen wie „kein Push“ im Dossier beziehen sich auf seine Erstellung. Die Ablage im Repo ist ein gesonderter Dokumentationscommit; sie veröffentlicht keinen Artikel.
+
+
+Vollständiger historischer Nachlauf: [Archiv 13.–25.10.2026](archiv.md). Letzter ausdrücklich verarbeiteter ChatGPT-Bericht: 14.10.; Berichte ab 15.10. mit allen inzwischen vorhandenen Artikeln abgleichen. Das Archiv macht frühere Quellen, Entwürfe und Bildkandidaten auffindbar; es ersetzt keine aktuelle Prüfung.
