@@ -10,7 +10,8 @@ on:
       - 'deploy/quellen-abruf.mjs'
       - '.github/workflows/quellen-abruf.yml'
   schedule:
-    - cron: '10 5 * * *'
+    # UTC: 06:10/16:10 MEZ bzw. 07:10/17:10 MESZ; vor den Recherchefenstern.
+    - cron: '10 5,15 * * *'
   workflow_dispatch:
     inputs:
       nur:

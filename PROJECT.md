@@ -287,3 +287,12 @@ Wenn kein nutzbares konkretes Bild vorhanden ist:
 - LIVE DEPLOYED — öffentlich ausgeliefert und nochmals geprüft
 
 Nur `LIVE DEPLOYED` heißt fertig.
+
+
+## Redaktionelle Recherche für Claude Code (25.10.2026)
+
+Der zentrale Einstieg ist `docs/redaktion/README.md`. Vor redaktioneller Arbeit `docs/redaktion/latest.md`, `docs/redaktion/register.json` und die dort referenzierten Dossiers lesen. Neue Recherche wird hier versioniert und auf main bereitgestellt. `CLAUDE.md` weist beim Start darauf hin.
+
+Die Arbeitsdossiers sind nicht Teil von Navigation, Suche, Sitemap, Artikelgenerator oder WordPress-Import. Nur einzeln geprüfte und redaktionell freigegebene Artikel über die bestehende Pipeline übernehmen. Die historischen Statusangaben im archivierten Dossier beschreiben seinen Erstellungszeitpunkt, nicht einen späteren Repo-Upload.
+
+Geplante Recherchefenster: täglich ca. 08:00 und 18:00 Europe/Berlin. Jeder Lauf vergleicht den letzten erfolgreichen Bericht, das Register, bestehende Artikel und `imports/quellen/`; Neuigkeiten und echte Änderungen getrennt ausweisen. Ohne neue Meldung keinen künstlichen Artikel erzeugen. Die Rechercheautomation liefert Dateien; sie startet Claude Code nicht selbstständig.
