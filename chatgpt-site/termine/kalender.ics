@@ -7,20 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:faire-woche-2026@merzenich-aktuell.de
-DTSTAMP:20260827T060000Z
-DTSTART:20260910T220000Z
-DTEND:20260925T215900Z
-SUMMARY:Faire Woche in Merzenich
-DESCRIPTION:Die Gemeinde beteiligt sich an der bundesweiten Fairen Woche mi
- t Naturangeboten für Familien und Schulklassen und einer Müllsammelaktio
- n am 20. September.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichak
- tuell.hk-growthoperator.de/termine/faire-woche-2026/
-LOCATION:Gemeindegebiet
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/faire-woche-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:ratssitzung-2026-09-30@merzenich-aktuell.de
 DTSTAMP:20260928T060000Z
 DTSTART:20260930T160000Z
@@ -353,6 +339,51 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/patrozinium-st-am
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:wildpferde-exkursion-sophienhoehe-2026-10-29@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261029T080000Z
+SUMMARY:Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstferien
+ )
+DESCRIPTION:Kostenlose geführte Exkursion mit Bus und kurzer Wanderung zu 
+ den Konik-Wildpferden auf der Goldenen Aue\; Anmeldung beim RWE-Besucherdi
+ enst unter 0800 8833-830\, Plätze begrenzt.\nVeranstalter: Neuland Hambac
+ h GmbH und RWE Forschungsstelle Rekultivierung\nhttps://merzenichaktuell.h
+ k-growthoperator.de/termine/wildpferde-exkursion-sophienhoehe-2026-10-29/
+LOCATION:Wanderparkplatz Sophienhöhe
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wildpferde-exkurs
+ ion-sophienhoehe-2026-10-29/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:buergersprechstunde-golzheim-2026-10-30@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261030T170000Z
+SUMMARY:Bürgersprechstunde mit Bürgermeister Georg Gelhausen
+DESCRIPTION:Bürgermeister Georg Gelhausen bietet am Freitag\, 30. Oktober\
+ , um 18 Uhr im Pfarrheim Golzheim eine Bürgersprechstunde an.\nVeranstalt
+ er: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/term
+ ine/buergersprechstunde-golzheim-2026-10-30/
+LOCATION:Pfarrheim Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/buergersprechstun
+ de-golzheim-2026-10-30/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ttc-merzenich-androcup-2026-10-31@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261031T123000Z
+DTEND:20261031T153000Z
+SUMMARY:AndroCup des TTC Merzenich
+DESCRIPTION:Tischtennisturnier für maximal 16 Teilnehmerinnen und Teilnehm
+ er\; Anmeldung über mytischtennis.de.\nVeranstalter: TTC Merzenich\nhttps
+ ://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-androcup-20
+ 26-10-31/
+LOCATION:Turnhalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-and
+ rocup-2026-10-31/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:fc-fanclub-59-bierabend-2026@merzenich-aktuell.de
 DTSTAMP:20261004T060000Z
 DTSTART:20261031T184800Z
@@ -399,6 +430,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-morsch
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:amtsblatt-12-2026-abgabeschluss-2026-11-03@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261103T110000Z
+SUMMARY:Abgabeschluss für das Amtsblatt 12/2026
+DESCRIPTION:Beiträge für das Amtsblatt 12/2026 (Erscheinungstag 13. Novem
+ ber) müssen bis Dienstag\, 3. November\, bei der Gemeinde vorliegen.\nVer
+ anstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.
+ de/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/
+LOCATION:Rathaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-12-2026
+ -abgabeschluss-2026-11-03/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261104T160000Z
@@ -413,6 +458,23 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:aktionstag-persoenliches-budget-kreishaus-2026-11-05@merzenich-aktuell.
+ de
+DTSTAMP:20261025T060000Z
+DTSTART:20261105T090000Z
+DTEND:20261105T160000Z
+SUMMARY:Aktionstag „Das Persönliche Budget“ im Kreishaus Düren
+DESCRIPTION:Vorträge\, „Markt der Möglichkeiten“ und Austausch zum Pe
+ rsönlichen Budget für Menschen mit Behinderung\; kostenlos und barrieref
+ rei\, Anmeldung bis 26. Oktober.\nVeranstalter: Kreis Düren\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/aktionstag-persoenliches-budget-
+ kreishaus-2026-11-05/
+LOCATION:Kreishaus Düren\, Raum A 158
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/aktionstag-persoe
+ nliches-budget-kreishaus-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261105T170000Z
@@ -424,6 +486,22 @@ DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
 LOCATION:Ratssaal der Gemeinde Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/rechnungspruefung
  sausschuss-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:eichel-sammelaktion-huertgenwald-2026-11-06@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261106T130000Z
+DTEND:20261106T160000Z
+SUMMARY:Eichel-Sammelaktion für den Hürtgenwald
+DESCRIPTION:Eicheln sammeln für die Wiederbewaldung nach dem Waldbrand im 
+ August\; Jutebeutel\, feste Kleidung und Handschuhe mitbringen\, Anmeldung
+  per E-Mail an das Umweltamt des Kreises.\nVeranstalter: Kreis Düren und 
+ Wald und Holz NRW\nhttps://merzenichaktuell.hk-growthoperator.de/termine/e
+ ichel-sammelaktion-huertgenwald-2026-11-06/
+LOCATION:Parkplatz Burg Laufenburg
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/eichel-sammelakti
+ on-huertgenwald-2026-11-06/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -605,6 +683,22 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:mental-load-online-vortrag-2026-11-18@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261118T170000Z
+DTEND:20261118T183000Z
+SUMMARY:Online-Vortrag „Mental Load“ des Kreises Düren
+DESCRIPTION:Kostenfreier digitaler Vortrag der Reihe „Wir. Gemeinsam. Fam
+ ilie im digitalen Gespräch.“ mit Ralf Arnolds (SkF Düren)\; Anmeldung 
+ über beteiligung.nrw.de/k/1031298.\nVeranstalter: Kreis Düren\nhttps://m
+ erzenichaktuell.hk-growthoperator.de/termine/mental-load-online-vortrag-20
+ 26-11-18/
+LOCATION:Online
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/mental-load-onlin
+ e-vortrag-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261119T090000Z
@@ -651,6 +745,22 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/tag-der-modelleis
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:seniorenweihnacht-kreis-dueren-2026-11-24@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261124T140000Z
+DTEND:20261124T163000Z
+SUMMARY:13. Seniorenweihnacht des Kreises Düren
+DESCRIPTION:Konzert mit Stefanie Hertel\, Blechbläsern aus Vossenack und K
+ inderchören\; Einlass 14 Uhr\, Karten 10 Euro inklusive Kaffee und Kuchen
+ \, Restkarten über ticketree.de.\nVeranstalter: Kreis Düren\nhttps://mer
+ zenichaktuell.hk-growthoperator.de/termine/seniorenweihnacht-kreis-dueren-
+ 2026-11-24/
+LOCATION:Arena Kreis Düren
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorenweihnacht
+ -kreis-dueren-2026-11-24/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261126T170000Z
@@ -676,6 +786,20 @@ DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
 LOCATION:Heimatmuseum Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
  tmuseum-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261203T160000Z
+SUMMARY:8. Sitzung des Gemeinderates
+DESCRIPTION:Der Gemeinderat tagt am Donnerstag\, 3. Dezember\, um 17 Uhr im
+  Ratssaal\; die Tagesordnung veröffentlicht die Gemeinde im Ratsinformati
+ onssystem.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/gemeinderat-sitzung-2026-12-03/
+LOCATION:Rathaus Merzenich\, Ratssaal
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/gemeinderat-sitzu
+ ng-2026-12-03/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:13. Seniorenweihnacht des Kreises Düren
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:seniorenweihnacht-kreis-dueren-2026-11-24@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261124T140000Z
+DTEND:20261124T163000Z
+SUMMARY:13. Seniorenweihnacht des Kreises Düren
+DESCRIPTION:Konzert mit Stefanie Hertel\, Blechbläsern aus Vossenack und K
+ inderchören\; Einlass 14 Uhr\, Karten 10 Euro inklusive Kaffee und Kuchen
+ \, Restkarten über ticketree.de.\nVeranstalter: Kreis Düren\nhttps://mer
+ zenichaktuell.hk-growthoperator.de/termine/seniorenweihnacht-kreis-dueren-
+ 2026-11-24/
+LOCATION:Arena Kreis Düren
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorenweihnacht
+ -kreis-dueren-2026-11-24/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

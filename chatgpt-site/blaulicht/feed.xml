@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 19 Oct 2026 10:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 25 Oct 2026 21:40:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Blaulicht</title><link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/blaulicht/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Sturmtief „Luise“: Feuerwehr räumt Äste in Golzheim und einen Baum von der L264</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23/</guid>
+<pubDate>Sun, 25 Oct 2026 21:10:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Golzheim</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Zwei Einsätze innerhalb weniger Minuten am Freitagabend: In der St.-Sebastianus-Straße in Golzheim lagen Äste auf der Fahrbahn, auf der Landstraße 264 bei Merzenich ein umgestürzter Baum. Beide Einsätze waren nach rund einer halben Stunde beendet.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim</media:description></media:content>
+</item>
 <item>
 <title>Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-141-oelspur-merzenich/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Während des Großeinsatzes an der L257 ging ein weiterer Notruf aus Bürgewald ein. Rund 100 Quadratmeter Böschung brannten.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/buergewald-1440.webp" medium="image"><media:credit>Antisyntagmatarchos / Wikimedia Commons · CC0</media:credit><media:description>Luftbild von Bürgewald, dem früheren Morschenich-Alt</media:description></media:content>
-</item>
-<item>
-<title>Flächenbrand an der L257: mehr als 200 Kräfte und Helfer im Einsatz</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/flaechenbrand-l257/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/flaechenbrand-l257/</guid>
-<pubDate>Thu, 13 Aug 2026 12:28:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Bürgewald</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Trockenheit und Wind beschleunigten die Ausbreitung in Richtung Bürgewald. Die Feuerwehr veröffentlichte 16 Originalfotos des Einsatzes.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/9e5ae48a4bcf47-1440.webp" medium="image"><media:credit>Freiwillige Feuerwehr Merzenich</media:credit><media:description>Einsatzkräfte beim Flächenbrand an der L257</media:description></media:content>
 </item>
 </channel>
 </rss>

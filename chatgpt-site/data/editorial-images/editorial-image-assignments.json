@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:16:00.525Z",
+  "updatedAt": "2026-10-25T22:01:25.705Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -692,6 +692,24 @@
       "assignedAt": "2026-10-21T10:16:00.525Z",
       "articleId": "2026-10-19-einsatz-141-oelspur-merzenich",
       "articleDate": "2026-10-19T12:00:00+02:00"
+    },
+    "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/": {
+      "imageId": "web-wirtschaft-05-94380a18",
+      "pool": "wirtschaft",
+      "motiv": "tagebau",
+      "regel": "rathaus.tagebau",
+      "assignedAt": "2026-10-25T22:01:25.705Z",
+      "articleId": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
+      "articleDate": "2026-10-25T22:18:00+01:00"
+    },
+    "/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis",
+      "assignedAt": "2026-10-25T22:01:25.705Z",
+      "articleId": "2026-10-25-ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026",
+      "articleDate": "2026-10-25T22:30:00+01:00"
     }
   }
 }

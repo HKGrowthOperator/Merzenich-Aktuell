@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Aktionstag „Das Persönliche Budget“ im Kreishaus Düren
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:aktionstag-persoenliches-budget-kreishaus-2026-11-05@merzenich-aktuell.
+ de
+DTSTAMP:20261025T060000Z
+DTSTART:20261105T090000Z
+DTEND:20261105T160000Z
+SUMMARY:Aktionstag „Das Persönliche Budget“ im Kreishaus Düren
+DESCRIPTION:Vorträge\, „Markt der Möglichkeiten“ und Austausch zum Pe
+ rsönlichen Budget für Menschen mit Behinderung\; kostenlos und barrieref
+ rei\, Anmeldung bis 26. Oktober.\nVeranstalter: Kreis Düren\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/aktionstag-persoenliches-budget-
+ kreishaus-2026-11-05/
+LOCATION:Kreishaus Düren\, Raum A 158
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/aktionstag-persoe
+ nliches-budget-kreishaus-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:AndroCup des TTC Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ttc-merzenich-androcup-2026-10-31@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261031T123000Z
+DTEND:20261031T153000Z
+SUMMARY:AndroCup des TTC Merzenich
+DESCRIPTION:Tischtennisturnier für maximal 16 Teilnehmerinnen und Teilnehm
+ er\; Anmeldung über mytischtennis.de.\nVeranstalter: TTC Merzenich\nhttps
+ ://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-androcup-20
+ 26-10-31/
+LOCATION:Turnhalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-and
+ rocup-2026-10-31/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

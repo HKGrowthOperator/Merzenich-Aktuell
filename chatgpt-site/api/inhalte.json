@@ -1,23 +1,23 @@
 {
- "generated": "2026-10-19T12:00:00+02:00",
- "anzahl": 194,
+ "generated": "2026-10-25T22:40:00+01:00",
+ "anzahl": 211,
  "bestand": {
-  "gesamt": 194,
+  "gesamt": 211,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 70,
-   "sport": 31,
-   "rathaus": 21,
-   "leben": 40,
-   "wirtschaft": 10,
+   "blaulicht": 71,
+   "sport": 33,
+   "rathaus": 25,
+   "leben": 46,
+   "wirtschaft": 12,
    "tipp": 0,
-   "menschen": 6,
-   "vereine": 16,
+   "menschen": 7,
+   "vereine": 17,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 131,
-   "golzheim": 20,
+   "merzenich": 144,
+   "golzheim": 24,
    "girbelsrath": 23,
    "morschenich": 11,
    "buergewald": 9,
@@ -25,27 +25,27 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 194,
+    "anzahl": 211,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 70,
+    "anzahl": 71,
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 31,
+    "anzahl": 33,
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 21,
+    "anzahl": 25,
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 40,
+    "anzahl": 46,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 10,
+    "anzahl": 12,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -53,11 +53,11 @@
     "liste": "gepflegt"
    },
    "/menschen/": {
-    "anzahl": 6,
+    "anzahl": 7,
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 16,
+    "anzahl": 17,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -65,11 +65,11 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 131,
+    "anzahl": 144,
     "liste": "gepflegt"
    },
    "/golzheim/": {
-    "anzahl": 20,
+    "anzahl": 24,
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
@@ -101,6 +101,704 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-25-mental-load-online-vortrag-kreis-dueren-18-november-2026",
+   "url": "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/",
+   "titel": "„Mental Load“: kostenloser Online-Vortrag des Kreises am 18. November",
+   "teaser": "Wer in der Familie an alles denken muss, trägt die unsichtbare Last. Ein Familientherapeut der SkF-Beratungsstelle Düren zeigt, wie sich Verantwortung fairer verteilen lässt. Anmeldung ab sofort.",
+   "kicker": "Leben · Familie",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:40:00+01:00",
+   "aktualisiert": "2026-10-25T22:40:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "familie",
+     "label": "Familie"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    },
+    {
+     "slug": "vortrag",
+     "label": "Vortrag"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026",
+   "url": "/wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/",
+   "titel": "Meisterstipendium des Kreises: 6.000 Euro, Bewerbung noch bis Samstag",
+   "teaser": "Der Kreis Düren vergibt zum dritten Mal vier Stipendien für angehende Meisterinnen und Meister. Bedingung: nach der Prüfung mindestens fünf Jahre im Kreis arbeiten.",
+   "kicker": "Wirtschaft · Handwerk",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:38:00+01:00",
+   "aktualisiert": "2026-10-25T22:38:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "handwerk",
+     "label": "Handwerk"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    },
+    {
+     "slug": "foerderung",
+     "label": "Förderung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt",
+   "url": "/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/",
+   "titel": "Eicheln für den Hürtgenwald: erster Sammeltermin fiel dem Sturm zum Opfer, zweiter am 6. November",
+   "teaser": "Nach dem Waldbrand im August sollen Eicheln aus der Region die Wiederbewaldung anstoßen. Der Termin am Freitag wurde wegen Sturmböen abgesagt; am 6. November geht es an der Burg Laufenburg weiter.",
+   "kicker": "Leben · Umwelt",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:36:00+01:00",
+   "aktualisiert": "2026-10-25T22:36:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "wald",
+     "label": "Wald"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026",
+   "url": "/vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/",
+   "titel": "Jugendzeltplatz Finkenheide: Kreis sucht bis 20. November einen neuen Träger",
+   "teaser": "Der Kreis Düren verkauft den 11.500 Quadratmeter großen Zeltplatz in Hürtgenwald-Kleinhau. Gesucht ist ein Träger der Jugendhilfe, der ihn als Lern- und Begegnungsort weiterführt.",
+   "kicker": "Vereine · Jugend",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:34:00+01:00",
+   "aktualisiert": "2026-10-25T22:34:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "jugend",
+     "label": "Jugend"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    },
+    {
+     "slug": "zeltlager",
+     "label": "Zeltlager"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
+    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26",
+   "url": "/leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/",
+   "titel": "Bahn, Bismarckstraße, A4: Was Pendler aus Merzenich in dieser Woche wissen müssen",
+   "teaser": "Nachts fährt zwischen Düren und Köln bis Freitag nur ein Gleis, in Düren ist die Bismarckstraße stadteinwärts gesperrt, und auf der A4 wird an zwei Stellen gearbeitet. Die Termine im Überblick.",
+   "kicker": "Leben · Verkehr",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:32:00+01:00",
+   "aktualisiert": "2026-10-25T22:32:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    },
+    {
+     "slug": "s-bahn",
+     "label": "S-Bahn"
+    },
+    {
+     "slug": "a4",
+     "label": "A4"
+    },
+    {
+     "slug": "dueren",
+     "label": "Düren"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
+    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026",
+   "url": "/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
+   "titel": "Tischtennis: AndroCup am 31. Oktober in Merzenich, zwei Auswärtsspiele für die Erste",
+   "teaser": "Der TTC Merzenich richtet am Samstag ein Turnier für 16 Teilnehmer aus. Die erste Mannschaft, Zweiter der 2. Bezirksklasse, spielt am Donnerstag und Freitag auswärts.",
+   "kicker": "Sport · Tischtennis",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:30:00+01:00",
+   "aktualisiert": "2026-10-25T22:30:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "tischtennis",
+     "label": "Tischtennis"
+    },
+    {
+     "slug": "ttc-merzenich",
+     "label": "TTC Merzenich"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/sport/sport-08-c10997cd29.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-08-c10997cd29-480.webp 480w, /assets/editorial-pools/sport/sport-08-c10997cd29-800.webp 800w, /assets/editorial-pools/sport/sport-08-c10997cd29-1200.webp 1200w, /assets/editorial-pools/sport/sport-08-c10997cd29.jpg 1920w",
+    "alt": "Sporthalle",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "TUBS / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026",
+   "url": "/wirtschaft/uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026/",
+   "titel": "Sportkita Bärenstark: Übungsleiterin oder Übungsleiter mit C-Lizenz gesucht",
+   "teaser": "Für das Bewegungsangebot der Kita in Golzheim werden zwei Kräfte gesucht: montags vormittags für die Kleinsten, freitags von 9:30 bis 11:30 Uhr für die Kinder ab drei Jahren. Die Anzeige läuft über die Stellenseite der Gemeinde.",
+   "kicker": "Wirtschaft · Stellen",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-10-25T22:28:00+01:00",
+   "aktualisiert": "2026-10-25T22:28:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kita",
+     "label": "Kita"
+    },
+    {
+     "slug": "stellen",
+     "label": "Stellen"
+    },
+    {
+     "slug": "sport",
+     "label": "Sport"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-amtsblatt-12-2026-abgabeschluss-3-november",
+   "url": "/rathaus/amtsblatt-12-2026-abgabeschluss-3-november/",
+   "titel": "Amtsblatt 12/2026 erscheint am 13. November: Beiträge bis 3. November einreichen",
+   "teaser": "Vereine und Einrichtungen, die Termine oder Mitteilungen im nächsten Amtsblatt der Gemeinde unterbringen wollen, haben bis Dienstag, 3. November, Zeit.",
+   "kicker": "Rathaus · Amtsblatt",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:26:00+01:00",
+   "aktualisiert": "2026-10-25T22:26:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "amtsblatt",
+     "label": "Amtsblatt"
+    },
+    {
+     "slug": "vereine",
+     "label": "Vereine"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
+    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
+    "alt": "St. Laurentius in Merzenich von Südosten",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026",
+   "url": "/rathaus/umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026/",
+   "titel": "Umbau der Grundschule Golzheim: Rat billigt geänderte Planung, Beratung im Bauausschuss am 12. November",
+   "teaser": "Der Gemeinderat hat am 30. September einstimmig beschlossen, den Förderantrag für das Rheinische Revier mit der angepassten Entwurfsplanung einzureichen. Weil sich die Kosten verändert haben, soll die neue Variante im Bauausschuss noch einmal beraten werden.",
+   "kicker": "Rathaus · Schule",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-10-25T22:24:00+01:00",
+   "aktualisiert": "2026-10-25T22:24:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "grundschule-golzheim",
+     "label": "Grundschule Golzheim"
+    },
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    },
+    {
+     "slug": "foerderung",
+     "label": "Förderung"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/golzheim-aachener-strasse-1440.webp",
+    "srcset": "/assets/places/golzheim-aachener-strasse-720.webp 720w, /assets/places/golzheim-aachener-strasse-1440.webp 1440w",
+    "alt": "Denkmalgeschützte Backstein-Hofanlage an der Aachener Straße in Golzheim",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-sitzungstermine-gemeinderat-3-dezember-2026",
+   "url": "/rathaus/sitzungstermine-gemeinderat-3-dezember-2026/",
+   "titel": "Gemeinderat tagt am 3. Dezember: die Sitzungstermine bis Jahresende",
+   "teaser": "Das Ratsinformationssystem nennt sechs Sitzungen bis Dezember, vom Jugendgremium am 4. November bis zum Gemeinderat am 3. Dezember. Alle Sitzungen sind öffentlich.",
+   "kicker": "Rathaus · Sitzungskalender",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:22:00+01:00",
+   "aktualisiert": "2026-10-25T22:22:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    },
+    {
+     "slug": "ausschuesse",
+     "label": "Ausschüsse"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-1440.webp",
+    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
+    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-aktionstag-persoenliches-budget-kreishaus-5-november-2026",
+   "url": "/leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/",
+   "titel": "Persönliches Budget: Aktionstag im Kreishaus am 5. November, Anmeldung bis Montag",
+   "teaser": "Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Gemeinde Merzenich weist auf die Anmeldefrist 26. Oktober hin.",
+   "kicker": "Leben · Soziales",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:20:00+01:00",
+   "aktualisiert": "2026-10-25T22:20:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "inklusion",
+     "label": "Inklusion"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus der Gemeinde Merzenich",
+    "width": 1920,
+    "height": 1253,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
+   "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
+   "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober",
+   "teaser": "Neuland Hambach und die RWE-Forschungsstelle Rekultivierung bieten in den Herbstferien einen Zusatztermin an. Anmeldung beim RWE-Besucherdienst, die Plätze sind begrenzt.",
+   "kicker": "Leben · Ferientipp",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:18:00+01:00",
+   "aktualisiert": "2026-10-25T22:18:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "sophienhoehe",
+     "label": "Sophienhöhe"
+    },
+    {
+     "slug": "tagebausee-hambach",
+     "label": "Tagebausee Hambach"
+    },
+    {
+     "slug": "herbstferien",
+     "label": "Herbstferien"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg",
+    "srcset": "/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-480.webp 480w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-800.webp 800w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-1200.webp 1200w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg 1920w",
+    "alt": "Schaufelradbagger 286 im Tagebau Hambach",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Anıl Öztaş / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026",
+   "url": "/rathaus/buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026/",
+   "titel": "Bürgersprechstunde: Bürgermeister Gelhausen am Freitag im Pfarrheim Golzheim",
+   "teaser": "Am 30. Oktober um 18 Uhr können Golzheimerinnen und Golzheimer ihre Anliegen direkt mit dem Bürgermeister besprechen. Eine Anmeldung nennt die Ankündigung nicht.",
+   "kicker": "Rathaus · Bürgersprechstunde",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-10-25T22:16:00+01:00",
+   "aktualisiert": "2026-10-25T22:16:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "buergermeister",
+     "label": "Bürgermeister"
+    },
+    {
+     "slug": "golzheim",
+     "label": "Golzheim"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/golzheim-1440.webp",
+    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
+    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-siegener-schueler-fussmarsch-station-merzenich-buergewald-2026",
+   "url": "/menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/",
+   "titel": "17 Tage zu Fuß von Köln an die Grenze: Siegener Schüler machen Station in Merzenich",
+   "teaser": "Vier Neuntklässler und zwei Lehramtsstudentinnen wandern mit Bollerwagen und 150 Euro pro Person durch das Rheinland. In Merzenich lud der Bürgermeister sie zum Essen ein und schickte sie mit dem Bürgerbus nach Bürgewald.",
+   "kicker": "Menschen · Unterwegs",
+   "ressort": "menschen",
+   "ressortLabel": "Menschen",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:14:00+01:00",
+   "aktualisiert": "2026-10-25T22:14:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "buergerbus",
+     "label": "Bürgerbus"
+    },
+    {
+     "slug": "buergewald",
+     "label": "Bürgewald"
+    },
+    {
+     "slug": "schule",
+     "label": "Schule"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
+    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-seniorennachmittag-weinberghalle-120-gaeste-oktober-2026",
+   "url": "/leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/",
+   "titel": "Rund 120 Gäste beim Seniorennachmittag in der Weinberghalle",
+   "teaser": "Kuchen, Akkordeon und ein Tanzauftritt der Kita-Kinder: Die Gemeinde hat ihre Seniorinnen und Senioren wieder in die Weinberghalle eingeladen. Getragen wurde der Nachmittag von Vereinen, Ehrenamtlichen und Sponsoren.",
+   "kicker": "Leben · Senioren",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:12:00+01:00",
+   "aktualisiert": "2026-10-25T22:12:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "senioren",
+     "label": "Senioren"
+    },
+    {
+     "slug": "weinberghalle",
+     "label": "Weinberghalle"
+    },
+    {
+     "slug": "ehrenamt",
+     "label": "Ehrenamt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23",
+   "url": "/blaulicht/sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23/",
+   "titel": "Sturmtief „Luise“: Feuerwehr räumt Äste in Golzheim und einen Baum von der L264",
+   "teaser": "Zwei Einsätze innerhalb weniger Minuten am Freitagabend: In der St.-Sebastianus-Straße in Golzheim lagen Äste auf der Fahrbahn, auf der Landstraße 264 bei Merzenich ein umgestürzter Baum. Beide Einsätze waren nach rund einer halben Stunde beendet.",
+   "kicker": "Feuerwehr · 142/26 und 143/26",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-10-25T22:10:00+01:00",
+   "aktualisiert": "2026-10-25T22:10:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "sturm",
+     "label": "Sturm"
+    },
+    {
+     "slug": "l264",
+     "label": "L264"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-25-fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25",
+   "url": "/sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
+   "titel": "8:0 in Hambach: SC Merzenich stürmt auf Platz vier, Morschenich gewinnt Ortsderby 8:4",
+   "teaser": "Ein Wochenende mit 29 Toren aus Sicht der Gemeinde: Der SC Merzenich siegt 8:0 beim Hambacher SV, der FC Golzheim 5:0 in Koslar, der SV Morschenich schlägt Golzheim II mit 8:4. Nur Rhenania Girbelsrath geht in Merken leer aus.",
+   "kicker": "Sport · Fußball",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-25T22:00:00+01:00",
+   "aktualisiert": "2026-10-25T22:00:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "kreisliga-a",
+     "label": "Kreisliga A"
+    },
+    {
+     "slug": "kreisliga-b",
+     "label": "Kreisliga B"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-19-einsatz-141-oelspur-merzenich",
    "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
@@ -8059,15 +8757,20 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
-  "url": "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/",
-  "titel": "Klimaanpassung: Gemeinde setzt auf Stauden, Blühwiesen und seltener gemähte Flächen"
+  "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
+  "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
+  "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober"
  },
  "nebenmeldungen": [
   {
    "id": "2026-10-19-einsatz-141-oelspur-merzenich",
    "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
    "titel": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr"
+  },
+  {
+   "id": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
+   "url": "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/",
+   "titel": "Klimaanpassung: Gemeinde setzt auf Stauden, Blühwiesen und seltener gemähte Flächen"
   },
   {
    "id": "2026-10-16-buendelsammlung-gruenabfall-16-november-2026-anmeldung",
@@ -8078,16 +8781,11 @@
    "id": "2026-10-16-tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026",
    "url": "/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/",
    "titel": "Tag der Modelleisenbahn: Wasserturm Merzenich öffnet am 21. November mit europäischen Zügen"
-  },
-  {
-   "id": "2026-10-16-feuerwehr-infoabend-gemeinderat-geraetehaus-2026",
-   "url": "/rathaus/feuerwehr-infoabend-gemeinderat-geraetehaus-2026/",
-   "titel": "Wehrleitung informiert Gemeinderat im Gerätehaus über Fuhrpark, Personal und Einsätze"
   }
  ],
  "startseitenMotive": {
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
-  "editorial-pools/aktuell/aktuell-02-3d716def0b": 1,
+  "editorial-pools/aktuell/aktuell-02-3d716def0b": 2,
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
@@ -8097,23 +8795,22 @@
   "editorial-pools/brand/brand-19-6a048a0c3d": 1,
   "editorial-pools/feuerwehr/feuerwehr-01-cacd404127": 1,
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 1,
-  "editorial-pools/leben/leben-21-9b5bb6e2fe": 1,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/menschen/menschen-06-1835323b3c": 1,
-  "editorial-pools/naturdetail/naturdetail-01-0a789f9162": 1,
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 2,
   "editorial-pools/technik/technik-05-81cd88e925": 2,
   "editorial-pools/technik/technik-07-c67b406470": 2,
   "editorial-pools/tipp/tipp-21-b2be2ca7e2": 1,
   "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
-  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858": 1,
+  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858": 2,
   "places/buergewald": 1,
   "places/girbelsrath": 1,
   "places/golzheim": 2,
+  "places/golzheim-aachener-strasse": 1,
   "places/merzenich": 2,
   "places/merzenich-bergstrasse": 2,
   "places/merzenich-st-laurentius": 2,
-  "places/morschenich": 2,
+  "places/morschenich": 1,
   "responsive/0f626136429ef9": 1,
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
@@ -8129,10 +8826,10 @@
  },
  "buehnenMotive": [
   "editorial-pools/aktuell/aktuell-07-d923824479",
-  "editorial-pools/blaulicht/blaulicht-13-f2236bb05e",
   "editorial-pools/menschen/menschen-01-686bb6fb4c",
   "editorial-pools/technik/technik-05-81cd88e925",
-  "editorial-pools/tipp/tipp-21-b2be2ca7e2"
+  "editorial-pools/tipp/tipp-21-b2be2ca7e2",
+  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858"
  ],
  "motivMax": 2
 }

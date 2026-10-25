@@ -1,0 +1,117 @@
+{
+  "hinweis": "Recherche für den Direkten Umkreis am 25.10.2026 (17.–25.10.2026): Polizei Düren und Polizei Rhein-Erft (Presseportal, heute ohne Sperre), Kreis Düren, Stadt Düren, Stadt Elsdorf, LAG Inde-Rur, Neuland Hambach. Jede Meldung an der Quelle gelesen; Titel in eigenen Worten, ohne Namen von Privatpersonen. Keine Dubletten zu 2026-10-16.json und älteren Umkreis-Dateien. Niederzier, Nörvenich und Kerpen waren wegen einer JavaScript-Sperre nicht lesbar.",
+  "eintraege": [
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Aldenhoven: B56 zwischen Freialdenhoven und Dürboslar: alkoholisierter Fahrer verursacht Unfall mit drei Autos und fünf Schwerverletzten, einer lebensgefährlich",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377348",
+      "datum": "2026-10-25",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Vettweiß: L33 bei Froitzheim: Fahrerin weicht Wildtier aus, Auto überschlägt sich, Vollsperrung bis 10:15 Uhr",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6376638",
+      "datum": "2026-10-23",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Aldenhoven: Kreuzungsunfall mit Taxi an der L11: vier Leichtverletzte",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6376491",
+      "datum": "2026-10-23",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Karton auf dem Herd gerät in Brand, Bewohner löschen selbst",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6376492",
+      "datum": "2026-10-23",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Elsdorf",
+      "rubrik": "Blaulicht",
+      "titel": "Räuberischer Diebstahl in Discounter an der Ohndorfer Straße: Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/10374/6376792",
+      "datum": "2026-10-23",
+      "quelle": "Polizei Rhein-Erft-Kreis"
+    },
+    {
+      "ort": "Kerpen",
+      "rubrik": "Blaulicht",
+      "titel": "Werkzeug aus Transporter in Blatzheim gestohlen, zweiter Fall in Bergheim",
+      "url": "https://www.presseportal.de/blaulicht/pm/10374/6376862",
+      "datum": "2026-10-23",
+      "quelle": "Polizei Rhein-Erft-Kreis"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Wirtschaft",
+      "titel": "VISIONplus Unternehmerinnenpreis: erster Platz für eine Goldschmiede aus Inden",
+      "url": "https://www.kreis-dueren.de/presse/visionplus-unternehmerinnenpreis_2026-10-21.php",
+      "datum": "2026-10-21",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Gesundheit",
+      "titel": "Linnich: Trinkwasser: Chlorung beendet, Wasser wieder uneingeschränkt nutzbar",
+      "url": "https://www.kreis-dueren.de/presse/trinkwasser-linnich_2026-10-19.php",
+      "datum": "2026-10-19",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Landwirtschaft",
+      "titel": "Erntedankempfang im Kreishaus: Bauernschaft klagt über Kostendruck und Trockenheitsverluste",
+      "url": "https://www.kreis-dueren.de/presse/erntedankempfang_2026-10-23.php",
+      "datum": "2026-10-23",
+      "quelle": "Kreis Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Kaiserplatz: Busse fahren seit 22. Oktober wieder regulär über Kaiserplatz und Zehnthofstraße",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/sanierung-der-nebenanlagen-im-bereich-kaiserplatzzehnthofstrae-verzoegert-sich",
+      "datum": "2026-10-17",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Verkehr",
+      "titel": "Bismarckstraße stadteinwärts zwischen Schoellerstraße und Kreuzstraße vom 26. bis 30. Oktober gesperrt",
+      "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/stadteinwaerts-fuehrende-fahrspur-der-bismarckstrae-zwischen-schoellerstrae-und-kreuzstrae-ab-2610-voruebergehend-gesperrt",
+      "datum": "2026-10-21",
+      "quelle": "Stadt Düren"
+    },
+    {
+      "ort": "Elsdorf",
+      "rubrik": "Verkehr",
+      "titel": "Jülicher Straße in Oberembt bis 6. November gesperrt; Wirtschaftsweg am Elisenhof bis März 2027",
+      "url": "https://www.elsdorf.de/rathaus-service/rathaus-service/aktuelle-strassensperrungen",
+      "datum": "2026-10-19",
+      "quelle": "Stadt Elsdorf"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Freizeit",
+      "titel": "Aldenhoven: LEADER-geförderte „RömerRunde“ in Freialdenhoven: Rundweg über die Via Belgica mit Infotafeln und Spielangeboten",
+      "url": "https://www.heimat-info.de/beitraege/fc5481c0-bd53-4f59-86b4-5ce6d7d75115",
+      "datum": "2026-10-22",
+      "quelle": "LAG Rheinisches Revier an Inde und Rur"
+    },
+    {
+      "ort": "Niederzier",
+      "rubrik": "Freizeit",
+      "titel": "Wildpferdeexkursion auf die Sophienhöhe am 29. Oktober: kostenloser Zusatztermin in den Herbstferien",
+      "url": "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien",
+      "datum": "2026-10-20",
+      "quelle": "Neuland Hambach GmbH"
+    }
+  ]
+}

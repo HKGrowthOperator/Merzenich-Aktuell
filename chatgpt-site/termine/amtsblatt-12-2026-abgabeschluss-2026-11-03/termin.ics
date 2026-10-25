@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Abgabeschluss für das Amtsblatt 12/2026
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:amtsblatt-12-2026-abgabeschluss-2026-11-03@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261103T110000Z
+SUMMARY:Abgabeschluss für das Amtsblatt 12/2026
+DESCRIPTION:Beiträge für das Amtsblatt 12/2026 (Erscheinungstag 13. Novem
+ ber) müssen bis Dienstag\, 3. November\, bei der Gemeinde vorliegen.\nVer
+ anstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.
+ de/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/
+LOCATION:Rathaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-12-2026
+ -abgabeschluss-2026-11-03/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

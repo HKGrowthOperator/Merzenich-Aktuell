@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Online-Vortrag „Mental Load“ des Kreises Düren
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:mental-load-online-vortrag-2026-11-18@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261118T170000Z
+DTEND:20261118T183000Z
+SUMMARY:Online-Vortrag „Mental Load“ des Kreises Düren
+DESCRIPTION:Kostenfreier digitaler Vortrag der Reihe „Wir. Gemeinsam. Fam
+ ilie im digitalen Gespräch.“ mit Ralf Arnolds (SkF Düren)\; Anmeldung 
+ über beteiligung.nrw.de/k/1031298.\nVeranstalter: Kreis Düren\nhttps://m
+ erzenichaktuell.hk-growthoperator.de/termine/mental-load-online-vortrag-20
+ 26-11-18/
+LOCATION:Online
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/mental-load-onlin
+ e-vortrag-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

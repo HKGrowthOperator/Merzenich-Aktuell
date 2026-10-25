@@ -188,15 +188,56 @@
         "rettungswagen"
       ]
     },
-    "leben.brauchtum": {"titel": "Brauchtum und Advent", "motive": []},
-    "leben.veranstaltung": {"titel": "Vortrag und Gesprächsabend", "motive": []},
-    "leben.klima": {"titel": "Grünflächen und Klimaanpassung", "motive": ["parkbank"]},
-    "vereine.karneval": {"titel": "Karnevalssitzung", "motive": []},
-    "vereine.hallensport": {"titel": "Breitensport in der Halle", "motive": ["sporthalle"]},
-    "vereine.wasserturm": {"titel": "Wasserturm Merzenich", "motive": ["windmuehle-merzenich"]},
-    "rathaus.feuerwehr": {"titel": "Feuerwehr und Gemeinderat", "motive": ["feuerwehrhaus"]},
-    "sport.platz": {"titel": "Sportplatz", "motive": ["fussball", "stadion"]},
-    "rathaus.tagebau": {"titel": "Tagebau Hambach und Tagebausee", "motive": ["tagebau", "sophienhoehe"]},
+    "leben.brauchtum": {
+      "titel": "Brauchtum und Advent",
+      "motive": []
+    },
+    "leben.veranstaltung": {
+      "titel": "Vortrag und Gesprächsabend",
+      "motive": []
+    },
+    "leben.klima": {
+      "titel": "Grünflächen und Klimaanpassung",
+      "motive": [
+        "parkbank"
+      ]
+    },
+    "vereine.karneval": {
+      "titel": "Karnevalssitzung",
+      "motive": []
+    },
+    "vereine.hallensport": {
+      "titel": "Breitensport in der Halle",
+      "motive": [
+        "sporthalle"
+      ]
+    },
+    "vereine.wasserturm": {
+      "titel": "Wasserturm Merzenich",
+      "motive": [
+        "windmuehle-merzenich"
+      ]
+    },
+    "rathaus.feuerwehr": {
+      "titel": "Feuerwehr und Gemeinderat",
+      "motive": [
+        "feuerwehrhaus"
+      ]
+    },
+    "sport.platz": {
+      "titel": "Sportplatz",
+      "motive": [
+        "fussball",
+        "stadion"
+      ]
+    },
+    "rathaus.tagebau": {
+      "titel": "Tagebau Hambach und Tagebausee",
+      "motive": [
+        "tagebau",
+        "sophienhoehe"
+      ]
+    },
     "rathaus.rat": {
       "titel": "Ratssitzungen, Ausschuesse, Bekanntmachungen der Gemeinde",
       "motive": [
@@ -313,6 +354,18 @@
     },
     "leben.foerderung": {
       "titel": "Förderprogramme und Ideenwettbewerbe im Rheinischen Revier; nur Ortsansicht",
+      "motive": []
+    },
+    "blaulicht.technik.sturm": {
+      "titel": "Sturmschaden: Baum oder Äste auf der Straße, Feuerwehr beim Räumen",
+      "motive": []
+    },
+    "menschen.wandern": {
+      "titel": "Wandern, Fußmarsch, Jugendliche mit Rucksack unterwegs",
+      "motive": []
+    },
+    "umwelt.wald": {
+      "titel": "Wald, Wiederbewaldung, Eicheln sammeln",
       "motive": []
     }
   }

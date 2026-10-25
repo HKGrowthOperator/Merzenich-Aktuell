@@ -1,0 +1,252 @@
+{
+  "hinweis": "Termine aus der Recherche vom 25.10.2026 (Claude): Gemeinde über Heimat-Info, Ratsinformationssystem (Kalenderexport), Kreis Düren, Neuland Hambach, TTC Merzenich; jeweils am 25.10.2026 an der Quelle gelesen. Ohne bekanntes Ende bleibt ende leer.",
+  "termine": [
+    {
+      "slug": "buergersprechstunde-golzheim-2026-10-30",
+      "titel": "Bürgersprechstunde mit Bürgermeister Georg Gelhausen",
+      "start": "2026-10-30T18:00:00+01:00",
+      "ort": "Pfarrheim Golzheim",
+      "adresse": "Pastoratstraße 20, 52399 Merzenich-Golzheim",
+      "ortsteil": "Golzheim",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Bürgermeister Georg Gelhausen bietet am Freitag, 30. Oktober, um 18 Uhr im Pfarrheim Golzheim eine Bürgersprechstunde an.",
+      "absaetze": [
+        "Bürgermeister Georg Gelhausen lädt am Freitag, 30. Oktober 2026, um 18 Uhr zur Bürgersprechstunde ins Pfarrheim Golzheim an der Pastoratstraße 20 ein. Die Gemeinde hat den Termin am 23. Oktober in der Heimat-Info-App veröffentlicht.",
+        "Eine Anmeldung nennt die Ankündigung nicht. Rückfragen beantwortet das Rathaus unter 02421 399-0."
+      ],
+      "links": [
+        [
+          "Ankündigung der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich über Heimat-Info, Veranstaltung vom 23.10.2026",
+        "url": "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "wildpferde-exkursion-sophienhoehe-2026-10-29",
+      "titel": "Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstferien)",
+      "start": "2026-10-29T09:00:00+01:00",
+      "ort": "Wanderparkplatz Sophienhöhe",
+      "adresse": "Wanderparkplatz Sophienhöhe (50.91124, 6.44156)",
+      "ortsteil": "Umgebung",
+      "kategorie": "Umwelt",
+      "veranstalter": "Neuland Hambach GmbH und RWE Forschungsstelle Rekultivierung",
+      "beschreibung": "Kostenlose geführte Exkursion mit Bus und kurzer Wanderung zu den Konik-Wildpferden auf der Goldenen Aue; Anmeldung beim RWE-Besucherdienst unter 0800 8833-830, Plätze begrenzt.",
+      "absaetze": [
+        "Am Donnerstag, 29. Oktober 2026, um 9 Uhr laden Neuland Hambach und die RWE-Forschungsstelle Rekultivierung zu einer Exkursion auf die Sophienhöhe ein. Mit dem Bus geht es zur Goldenen Aue, eine rund 30-minütige Wanderung führt durch das Weidegebiet der Koniks.",
+        "Die Teilnahme ist kostenlos, die Anmeldung beim RWE-Besucherdienst (0800 8833-830) ist erforderlich. Festes Schuhwerk und wetterfeste Kleidung werden empfohlen."
+      ],
+      "links": [
+        [
+          "Ankündigung Neuland Hambach",
+          "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien"
+        ]
+      ],
+      "quelle": {
+        "name": "Neuland Hambach GmbH, 20.10.2026",
+        "url": "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "ttc-merzenich-androcup-2026-10-31",
+      "titel": "AndroCup des TTC Merzenich",
+      "start": "2026-10-31T13:30:00+01:00",
+      "ende": "2026-10-31T16:30:00+01:00",
+      "ort": "Turnhalle Merzenich",
+      "adresse": "Schulstraße 4, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Sport",
+      "veranstalter": "TTC Merzenich",
+      "beschreibung": "Tischtennisturnier für maximal 16 Teilnehmerinnen und Teilnehmer; Anmeldung über mytischtennis.de.",
+      "absaetze": [
+        "Der TTC Merzenich richtet am Samstag, 31. Oktober 2026, von 13:30 bis 16:30 Uhr einen AndroCup in der Turnhalle Merzenich aus. Das Turnier ist auf 16 Teilnehmerinnen und Teilnehmer begrenzt.",
+        "Die Anmeldung läuft über das Portal mytischtennis.de."
+      ],
+      "links": [
+        [
+          "TTC Merzenich",
+          "https://ttc-merzenich.de/"
+        ]
+      ],
+      "quelle": {
+        "name": "TTC Merzenich, Turnierübersicht der Vereinsseite (Schnittstelle)",
+        "url": "https://ttc-merzenich.de/wp-json/ttc/v1/manual-events",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "amtsblatt-12-2026-abgabeschluss-2026-11-03",
+      "titel": "Abgabeschluss für das Amtsblatt 12/2026",
+      "start": "2026-11-03T12:00:00+01:00",
+      "ort": "Rathaus Merzenich",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Gemeinde",
+      "kategorie": "Info",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Beiträge für das Amtsblatt 12/2026 (Erscheinungstag 13. November) müssen bis Dienstag, 3. November, bei der Gemeinde vorliegen.",
+      "absaetze": [
+        "Nach dem Terminplan der Gemeinde ist Dienstag, 3. November 2026, Abgabeschluss für Beiträge zum Amtsblatt 12/2026. Die Ausgabe erscheint am Freitag, 13. November.",
+        "Eine Uhrzeit nennt der Terminplan nicht; der Eintrag steht ersatzweise auf 12 Uhr."
+      ],
+      "links": [
+        [
+          "Amtsblatt-Termine der Gemeinde",
+          "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt: Abgabe- und Erscheinungstermine 2026",
+        "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "aktionstag-persoenliches-budget-kreishaus-2026-11-05",
+      "titel": "Aktionstag „Das Persönliche Budget“ im Kreishaus Düren",
+      "start": "2026-11-05T10:00:00+01:00",
+      "ende": "2026-11-05T17:00:00+01:00",
+      "ort": "Kreishaus Düren, Raum A 158",
+      "adresse": "Bismarckstraße 16, 52351 Düren",
+      "ortsteil": "Umgebung",
+      "kategorie": "Info",
+      "veranstalter": "Kreis Düren",
+      "beschreibung": "Vorträge, „Markt der Möglichkeiten“ und Austausch zum Persönlichen Budget für Menschen mit Behinderung; kostenlos und barrierefrei, Anmeldung bis 26. Oktober.",
+      "absaetze": [
+        "Der Kreis Düren lädt am Donnerstag, 5. November 2026, von 10 bis 17 Uhr zum Aktionstag „Das Persönliche Budget“ ins Kreishaus (Raum A 158) ein. Es gibt Fachvorträge, einen Markt der Möglichkeiten mit Beratungsstellen und Raum für Austausch; Hörunterstützung, Schrift- und Gebärdensprachdolmetschende sowie ein Ruheraum stehen bereit.",
+        "Anmeldung bis Montag, 26. Oktober, online unter beteiligung.nrw.de/k/1028609, per E-Mail an die Inklusionsbeauftragte des Kreises oder unter 02421 22-1051000. Vom 2. bis 6. November informiert zusätzlich eine Wanderausstellung im Lichthof des Kreishauses."
+      ],
+      "links": [
+        [
+          "Mitteilung des Kreises Düren",
+          "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php"
+        ],
+        [
+          "Anmeldung",
+          "https://beteiligung.nrw.de/k/1028609"
+        ]
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Pressemitteilung vom 19.10.2026",
+        "url": "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "eichel-sammelaktion-huertgenwald-2026-11-06",
+      "titel": "Eichel-Sammelaktion für den Hürtgenwald",
+      "start": "2026-11-06T14:00:00+01:00",
+      "ende": "2026-11-06T17:00:00+01:00",
+      "ort": "Parkplatz Burg Laufenburg",
+      "adresse": "Burg Laufenburg, 52393 Hürtgenwald",
+      "ortsteil": "Umgebung",
+      "kategorie": "Umwelt",
+      "veranstalter": "Kreis Düren und Wald und Holz NRW",
+      "beschreibung": "Eicheln sammeln für die Wiederbewaldung nach dem Waldbrand im August; Jutebeutel, feste Kleidung und Handschuhe mitbringen, Anmeldung per E-Mail an das Umweltamt des Kreises.",
+      "absaetze": [
+        "Am Freitag, 6. November 2026, von 14 bis 17 Uhr sammeln Freiwillige im Bereich der Burg Laufenburg Eicheln für die Wiederbewaldung des Hürtgenwalds. Treffpunkt ist der Parkplatz Laufenburg. Der erste Termin am 23. Oktober war wegen Sturmböen abgesagt worden.",
+        "Mitzubringen sind ein Jutebeutel, wetterfeste Kleidung und Schuhe sowie Handschuhe. Zur Planung bittet der Kreis um Anmeldung per E-Mail an Amt 61 mit Datum und Teilnehmerzahl."
+      ],
+      "links": [
+        [
+          "Mitteilung des Kreises Düren",
+          "https://www.kreis-dueren.de/presse/eichel-sammelaktion_2026-10-23.php"
+        ]
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Mitteilung vom 23.10.2026",
+        "url": "https://www.kreis-dueren.de/presse/eichel-sammelaktion_2026-10-23.php",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "mental-load-online-vortrag-2026-11-18",
+      "titel": "Online-Vortrag „Mental Load“ des Kreises Düren",
+      "start": "2026-11-18T18:00:00+01:00",
+      "ende": "2026-11-18T19:30:00+01:00",
+      "ort": "Online",
+      "adresse": "Online (Zugang nach Anmeldung)",
+      "ortsteil": "Umgebung",
+      "kategorie": "Info",
+      "veranstalter": "Kreis Düren",
+      "beschreibung": "Kostenfreier digitaler Vortrag der Reihe „Wir. Gemeinsam. Familie im digitalen Gespräch.“ mit Ralf Arnolds (SkF Düren); Anmeldung über beteiligung.nrw.de/k/1031298.",
+      "absaetze": [
+        "Am Mittwoch, 18. November 2026, von 18 bis 19:30 Uhr geht es im Online-Vortrag „Mental Load – Wenn im Kopf immer jemand ‚Dienst hat‘“ darum, wie Familien die unsichtbare Organisationsarbeit fairer verteilen können. Referent ist Ralf Arnolds, Leiter der SkF-Beratungsstelle für Kinder, Jugendliche und Eltern in Düren.",
+        "Die Teilnahme ist kostenfrei; Anmeldung ab sofort unter beteiligung.nrw.de/k/1031298."
+      ],
+      "links": [
+        [
+          "Mitteilung des Kreises Düren",
+          "https://www.kreis-dueren.de/presse/vortrag-mental-load_2026-10-20.php"
+        ],
+        [
+          "Anmeldung",
+          "https://beteiligung.nrw.de/k/1031298"
+        ]
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Pressemitteilung vom 20.10.2026",
+        "url": "https://www.kreis-dueren.de/presse/vortrag-mental-load_2026-10-20.php",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "seniorenweihnacht-kreis-dueren-2026-11-24",
+      "titel": "13. Seniorenweihnacht des Kreises Düren",
+      "start": "2026-11-24T15:00:00+01:00",
+      "ende": "2026-11-24T17:30:00+01:00",
+      "ort": "Arena Kreis Düren",
+      "adresse": "Arena Kreis Düren, 52355 Düren",
+      "ortsteil": "Umgebung",
+      "kategorie": "Senioren",
+      "veranstalter": "Kreis Düren",
+      "beschreibung": "Konzert mit Stefanie Hertel, Blechbläsern aus Vossenack und Kinderchören; Einlass 14 Uhr, Karten 10 Euro inklusive Kaffee und Kuchen, Restkarten über ticketree.de.",
+      "absaetze": [
+        "Die 13. Seniorenweihnacht des Kreises Düren findet am Dienstag, 24. November 2026, in der Arena Kreis Düren statt. Einlass ist um 14 Uhr, Beginn um 15 Uhr. Auf dem Programm stehen ein Konzert mit Stefanie Hertel, Blechbläser aus Vossenack und Kinderchöre.",
+        "Karten kosten 10 Euro inklusive Kaffee und Kuchen; Restkarten gibt es über ticketree.de/event/seniorenweihnacht."
+      ],
+      "links": [
+        [
+          "Mitteilung des Kreises Düren",
+          "https://www.kreis-dueren.de/presse/seniorenweihnacht_2026-09-30.php"
+        ]
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Mitteilung vom 30.09.2026 (Restkarten, Listendatum 19.10.2026)",
+        "url": "https://www.kreis-dueren.de/presse/seniorenweihnacht_2026-09-30.php",
+        "stand": "2026-10-25"
+      }
+    },
+    {
+      "slug": "gemeinderat-sitzung-2026-12-03",
+      "titel": "8. Sitzung des Gemeinderates",
+      "start": "2026-12-03T17:00:00+01:00",
+      "ort": "Rathaus Merzenich, Ratssaal",
+      "adresse": "Valdersweg 1, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Der Gemeinderat tagt am Donnerstag, 3. Dezember, um 17 Uhr im Ratssaal; die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssystem.",
+      "absaetze": [
+        "Laut Sitzungskalender des Ratsinformationssystems tritt der Gemeinderat am Donnerstag, 3. Dezember 2026, um 17 Uhr im Ratssaal des Rathauses zusammen. Es ist die letzte eingetragene Ratssitzung des Jahres.",
+        "Am 25. Oktober lag im Ratsinformationssystem noch keine Tagesordnung vor. Die Sitzungsnummer folgt der Zählung der Niederschriften (7. Sitzung am 30.09.2026)."
+      ],
+      "links": [
+        [
+          "Sitzungskalender im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/termine"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (Kalenderexport)",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+        "stand": "2026-10-25"
+      }
+    }
+  ]
+}

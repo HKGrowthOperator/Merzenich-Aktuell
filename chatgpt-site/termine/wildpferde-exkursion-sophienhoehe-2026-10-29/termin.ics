@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstf
+ erien)
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:wildpferde-exkursion-sophienhoehe-2026-10-29@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261029T080000Z
+SUMMARY:Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstferien
+ )
+DESCRIPTION:Kostenlose geführte Exkursion mit Bus und kurzer Wanderung zu 
+ den Konik-Wildpferden auf der Goldenen Aue\; Anmeldung beim RWE-Besucherdi
+ enst unter 0800 8833-830\, Plätze begrenzt.\nVeranstalter: Neuland Hambac
+ h GmbH und RWE Forschungsstelle Rekultivierung\nhttps://merzenichaktuell.h
+ k-growthoperator.de/termine/wildpferde-exkursion-sophienhoehe-2026-10-29/
+LOCATION:Wanderparkplatz Sophienhöhe
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wildpferde-exkurs
+ ion-sophienhoehe-2026-10-29/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

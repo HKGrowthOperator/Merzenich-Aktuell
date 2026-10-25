@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Eichel-Sammelaktion für den Hürtgenwald
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:eichel-sammelaktion-huertgenwald-2026-11-06@merzenich-aktuell.de
+DTSTAMP:20261025T060000Z
+DTSTART:20261106T130000Z
+DTEND:20261106T160000Z
+SUMMARY:Eichel-Sammelaktion für den Hürtgenwald
+DESCRIPTION:Eicheln sammeln für die Wiederbewaldung nach dem Waldbrand im 
+ August\; Jutebeutel\, feste Kleidung und Handschuhe mitbringen\, Anmeldung
+  per E-Mail an das Umweltamt des Kreises.\nVeranstalter: Kreis Düren und 
+ Wald und Holz NRW\nhttps://merzenichaktuell.hk-growthoperator.de/termine/e
+ ichel-sammelaktion-huertgenwald-2026-11-06/
+LOCATION:Parkplatz Burg Laufenburg
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/eichel-sammelakti
+ on-huertgenwald-2026-11-06/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
