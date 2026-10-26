@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-26-morgens.md",
-  "source_check_window": "26.10.2026 morgens ab 08:05 Europe/Berlin; je Quelle begrenzter Prüfumfang im Dossier; unveränderte Bestände getrennt",
+  "latest_dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+  "source_check_window": "26.10.2026 nachmittags ab 16:31 Europe/Berlin (Claude-Umsetzungslauf, Containeruhr); Morgendossier ab 08:05",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -468,12 +468,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
-      "article_path": "inhalte/meldungen/2026-09-26-bis-10-03-redaktionsupdate.json",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-09-26-bis-10-03-redaktionsupdate.json → herbstlaub-2026-abgabe-bauhof-girbelsrath",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "8041a59",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. nachmittags: Heimat-Info-Beitrag der Gemeinde vom 07.10. als Zweitquelle ergänzt; Text unverändert.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -491,6 +491,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-LAUB-2610",
           "check_scope": "Originalbeitrag erneut gelesen; alter Gemeindeweg404"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "MA-LAUB-2610 · umgesetzt"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -644,12 +649,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
-      "last_checked_at": "2026-10-26 morgens Europe/Berlin",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. nachmittags: Frist 26.10. läuft am Tag der Umsetzung ab; ein Entwurf käme nach Fristende. Kein Artikel.",
       "dossier_history": [
         {
           "date": "2026-10-22",
@@ -682,6 +687,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "KD-CROWD-2610",
           "check_scope": "SWD-Originaldetail gelesen; Projektplattform geöffnet, lieferte keinen auswertbaren Inhalt"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "KD-CROWD-2610 · gesperrt"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -6147,11 +6157,11 @@
     },
     {
       "id": "MA-ELW1-116-2026",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt.",
+      "implementation_commit": "8041a59",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -6164,6 +6174,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-ELW1-116-2026",
           "check_scope": "Vorgang116 und einseitiger öffentlicher Beschlusstext gelesen, nicht nur Vorlage"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "MA-ELW1-116-2026 · umgesetzt"
         }
       ],
       "priority": "P2",
@@ -6172,7 +6187,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-26 morgens Europe/Berlin",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
       "refresh_note": "28.10.2026",
@@ -6423,11 +6438,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-26 morgens Europe/Berlin",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/",
       "article_id": null,
-      "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Bahn Düren–Köln nachts, Bismarckstraße Düren, A4 (go.Rheinland, Stadt Düren, Autobahn GmbH)",
+      "implementation_commit": "8041a59",
+      "notes": "Claude 25.10.: Bahn Düren–Köln nachts, Bismarckstraße Düren, A4 (go.Rheinland, Stadt Düren, Autobahn GmbH) | Claude 26.10. nachmittags: Nachtrag 26.10. aus VRS/zuginfo.NRW-Plakat FPLO 30754 (S 19 SEV 26.–28.10., RE 9, RB 20, RB 38, RE 1); Buszeiten weiter offen.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -6439,6 +6454,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-1025-25",
           "check_scope": "PDF vollständig als Text gelesen; VRS-Haltestellenhinweis gegengeprüft"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "MA-1025-25 · umgesetzt"
         }
       ],
       "research_history": [
@@ -6493,17 +6513,22 @@
     },
     {
       "id": "MA-ROSENKRANZ-PFARRHEIM-0411",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation.",
+      "implementation_commit": "8041a59",
+      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation. | Claude 26.10. nachmittags: Standard-Artikel (Allerheiligen, Ortswechsel Rosenkranz, Sonntagscafé, Caritas-Gruppen) plus Termin rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04.",
       "dossier_history": [
         {
           "date": "2026-10-26",
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-ROSENKRANZ-PFARRHEIM-0411",
           "check_scope": "PDF S.33 mit Ortswechsel gelesen; keine neuere Novemberausgabe belegt"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "MA-ROSENKRANZ-PFARRHEIM-0411 · umgesetzt"
         }
       ],
       "research_history": [
@@ -6538,7 +6563,7 @@
       "latest_research_scope": "PDF S.33 mit Ortswechsel gelesen; keine neuere Novemberausgabe belegt",
       "text_status": "T1",
       "source_check_status": "detail_read_with_stated_limits",
-      "last_checked_at": "2026-10-26 morgens Europe/Berlin",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "research_sources": [
         {
           "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
@@ -6561,17 +6586,22 @@
     },
     {
       "id": "MA-PFARRLEITUNG-31012027",
-      "workflow_status": "neu",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation.",
+      "implementation_commit": "8041a59",
+      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation. | Claude 26.10. nachmittags: Standard-Artikel aus Pfarrbrief 08/26 S. 2 plus Bistums-Rahmenkonzept 15.05.2025; Leitungsübernahme Kraus als geplant, amtliche Ernennung nicht belegt (Nachfassen).",
       "dossier_history": [
         {
           "date": "2026-10-26",
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-PFARRLEITUNG-31012027",
           "check_scope": "PDF S.2 gelesen; aktueller Bistumsbeschluss nicht geprüft"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "MA-PFARRLEITUNG-31012027 · umgesetzt"
         }
       ],
       "research_history": [
@@ -6603,7 +6633,8 @@
       "latest_research_dossier": "dossiers/2026-10-26-morgens.md",
       "latest_research_text_status": "T0",
       "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
-      "latest_research_scope": "PDF S.2 gelesen; aktueller Bistumsbeschluss nicht geprüft"
+      "latest_research_scope": "PDF S.2 gelesen; aktueller Bistumsbeschluss nicht geprüft",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin"
     },
     {
       "id": "MA-1025-17",
@@ -6662,6 +6693,28 @@
       "latest_research_text_status": "T0",
       "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
       "latest_research_scope": "Termin- und Startseite gelesen; Liste nicht extrahierbar. KGSAmWeinberg-Aktuelles zusätzlich geprüft."
+    },
+    {
+      "id": "KD-KI-ROADSHOW-0611",
+      "priority": "P3",
+      "location_section": "Düren / Wirtschaft–Weiterbildung",
+      "change_type": "Neu / Termin",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
+      "article_id": null,
+      "implementation_commit": "8041a59",
+      "notes": "Claude 26.10. nachmittags: Kurzmeldung aus Kreis-Mitteilung 26.10. und IHK-Seite; Termin ki-roadshow-ihk-dueren-2026-11-06 und Umkreis-Eintrag.",
+      "dossier_history": [
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+          "heading": "KD-KI-ROADSHOW-0611"
+        }
+      ]
     }
   ],
   "archive": {
@@ -6821,6 +6874,16 @@
       "photos_integrated": 0,
       "publication": "keine",
       "implementation": "keine_Artikelumsetzung_durch_diesen_Lauf"
+    },
+    {
+      "date": "2026-10-26",
+      "edition": "nachmittags",
+      "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+      "by": "Claude",
+      "compared_with": "dossiers/2026-10-26-morgens.md",
+      "implementation_commit": "8041a59",
+      "summary": "4 neue Meldungen (3 Standard, 1 Kurz), 2 Aktualisierungen (Verkehr S19-Nachtrag, Laub-Zweitquelle), 2 Termine, 6 Umkreis; Sport unverändert; 0 Bilder; QA 0 Fehler",
+      "publication": "keine (Entwürfe über Abgleich in WordPress-Freigaben)"
     }
   ]
 }
