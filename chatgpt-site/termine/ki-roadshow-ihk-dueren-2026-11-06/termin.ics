@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:KI-Roadshow der IHK Aachen in Düren
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ki-roadshow-ihk-dueren-2026-11-06@merzenich-aktuell.de
+DTSTAMP:20261026T060000Z
+DTSTART:20261106T080000Z
+DTEND:20261106T100000Z
+SUMMARY:KI-Roadshow der IHK Aachen in Düren
+DESCRIPTION:Kostenfreie Veranstaltung für kleine und mittlere Unternehmen 
+ zu Datenanalyse\, Kundenservice und Prozessoptimierung mit KI\; Anmeldung 
+ über die IHK-Veranstaltungsseite.\nVeranstalter: IHK Aachen mit Wirtschaf
+ tsförderung Kreis Düren und WIN.DN\nhttps://merzenichaktuell.hk-growthop
+ erator.de/termine/ki-roadshow-ihk-dueren-2026-11-06/
+LOCATION:CO_SPACE.DN
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ki-roadshow-ihk-d
+ ueren-2026-11-06/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

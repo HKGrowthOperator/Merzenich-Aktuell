@@ -255,7 +255,14 @@
         "name": "Gemeinde Merzenich, Herbstlaub 2026",
         "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/herbstlaub-2026.php",
         "stand": "2026-10-03"
-      }
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich über Heimat-Info, 07.10.2026: Laubkörbe und Laubannahme am Bauhof Girbelsrath montags 13 bis 17 Uhr bis 7.12.",
+          "url": "https://www.heimat-info.de/beitraege/dde491d2-cfa7-4d76-b358-7182f2df7701",
+          "stand": "2026-10-26"
+        }
+      ]
     },
     {
       "slug": "kita-baerenstark-golzheim-erzieher-stelle-2026",

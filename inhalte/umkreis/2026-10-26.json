@@ -1,0 +1,53 @@
+{
+  "hinweis": "Recherche für den Direkten Umkreis am 26.10.2026, Nachmittagslauf (Claude): Polizei Düren (Presseportal, RSS und Einzelmeldungen) und Kreis Düren; jede Meldung gelesen, Titel in eigenen Worten, ohne Namen von Privatpersonen. Keine Dubletten zu 2026-10-25.json.",
+  "eintraege": [
+    {
+      "ort": "Niederzier",
+      "rubrik": "Blaulicht",
+      "titel": "Imbisswagen auf dem Parkplatz eines Nahversorgungszentrums an der Straße Rurbenden ausgebrannt, zwei geparkte Autos beschädigt, niemand verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377797",
+      "datum": "2026-10-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Titz: Vier Leichtverletzte bei Abbiegeunfall auf der L 12 an der Hohen Straße",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377654",
+      "datum": "2026-10-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Kleinkraftradfahrer bei Alleinunfall am Schindberg schwer verletzt, Rettungshubschrauber im Einsatz",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377648",
+      "datum": "2026-10-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Weißer Opel Corsa in der Elisabethstraße gestohlen, Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377642",
+      "datum": "2026-10-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Einbrüche in ein Einfamilienhaus in Vettweiß und ein Mehrfamilienhaus in Düren: Zeugen gesucht",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6377641",
+      "datum": "2026-10-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Wirtschaft",
+      "titel": "KI-Roadshow der IHK Aachen am 6. November im CO_SPACE.DN in Düren, kostenfrei für kleine und mittlere Betriebe",
+      "url": "https://www.kreis-dueren.de/presse/ki-roadshow_2026-10-26.php",
+      "datum": "2026-10-26",
+      "quelle": "Kreis Düren"
+    }
+  ]
+}

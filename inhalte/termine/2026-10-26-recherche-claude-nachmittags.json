@@ -1,0 +1,62 @@
+{
+  "hinweis": "Termine aus der Recherche vom 26.10.2026, Nachmittagslauf (Claude): Kreis Düren/IHK Aachen und Pfarrbrief 08/26; am 26.10.2026 an der Quelle gelesen.",
+  "termine": [
+    {
+      "slug": "ki-roadshow-ihk-dueren-2026-11-06",
+      "titel": "KI-Roadshow der IHK Aachen in Düren",
+      "start": "2026-11-06T09:00:00+01:00",
+      "ende": "2026-11-06T11:00:00+01:00",
+      "ort": "CO_SPACE.DN",
+      "adresse": "CO_SPACE.DN, Düren",
+      "ortsteil": "Umgebung",
+      "kategorie": "Info",
+      "veranstalter": "IHK Aachen mit Wirtschaftsförderung Kreis Düren und WIN.DN",
+      "beschreibung": "Kostenfreie Veranstaltung für kleine und mittlere Unternehmen zu Datenanalyse, Kundenservice und Prozessoptimierung mit KI; Anmeldung über die IHK-Veranstaltungsseite.",
+      "absaetze": [
+        "Am Freitag, 6. November 2026, von 9 bis 11 Uhr macht die KI-Roadshow der IHK Aachen im CO_SPACE.DN in Düren Station. Fachleute zeigen anhand praxisnaher Beispiele, wo Künstliche Intelligenz in kleinen und mittleren Unternehmen helfen kann, und geben Orientierung zu Datenschutz, AI Act und Fördermitteln.",
+        "Die Teilnahme ist kostenfrei; die Anmeldung läuft über die Veranstaltungsseite der IHK Aachen."
+      ],
+      "links": [
+        [
+          "Mitteilung des Kreises Düren",
+          "https://www.kreis-dueren.de/presse/ki-roadshow_2026-10-26.php"
+        ],
+        [
+          "IHK Aachen: Termine und Anmeldung",
+          "https://www.ihk.de/aachen/innovation/digitalisierung/ki-ropadshow-7153252"
+        ]
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Mitteilung vom 26.10.2026",
+        "url": "https://www.kreis-dueren.de/presse/ki-roadshow_2026-10-26.php",
+        "stand": "2026-10-26"
+      }
+    },
+    {
+      "slug": "rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04",
+      "titel": "Rosenkranzgebet wieder im Pfarrheim (ab 4. November)",
+      "start": "2026-11-04T18:00:00+01:00",
+      "ort": "Pfarrheim Merzenich",
+      "adresse": "Schulstraße 4a, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Pfarrei St. Laurentius Merzenich",
+      "beschreibung": "Das wöchentliche Rosenkranzgebet wird ab dem 4. November nicht mehr in der Kirche, sondern wieder im Pfarrheim an der Schulstraße 4a gebetet; im Oktoberplan stand es mittwochs um 18 Uhr.",
+      "absaetze": [
+        "Laut Pfarrbrief 08/26 (S. 33) findet das wöchentliche Rosenkranzgebet in Merzenich ab Mittwoch, 4. November 2026, wieder im Pfarrheim an der Schulstraße 4a statt, nicht mehr in der Kirche.",
+        "Die Uhrzeit für November nennt der Hinweis nicht; im Oktober stand das Gebet mittwochs um 18 Uhr im Gottesdienstplan. Vor dem ersten Termin den aktuellen Plan prüfen."
+      ],
+      "links": [
+        [
+          "Pfarrbrief 08/26 (PDF)",
+          "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf"
+        ]
+      ],
+      "quelle": {
+        "name": "Katholische Kirchengemeinden Merzenich und Niederzier, Pfarrbrief Ausgabe 08/26, S. 33",
+        "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+        "stand": "2026-10-26"
+      }
+    }
+  ]
+}

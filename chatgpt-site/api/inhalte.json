@@ -1,22 +1,22 @@
 {
- "generated": "2026-10-25T22:40:00+01:00",
- "anzahl": 211,
+ "generated": "2026-10-26T17:40:00+01:00",
+ "anzahl": 215,
  "bestand": {
-  "gesamt": 211,
+  "gesamt": 215,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 71,
    "sport": 33,
-   "rathaus": 25,
-   "leben": 46,
-   "wirtschaft": 12,
+   "rathaus": 26,
+   "leben": 48,
+   "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
    "vereine": 17,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 144,
+   "merzenich": 148,
    "golzheim": 24,
    "girbelsrath": 23,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 211,
+    "anzahl": 215,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,15 +37,15 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 25,
+    "anzahl": 26,
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 46,
+    "anzahl": 48,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 12,
+    "anzahl": 13,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 144,
+    "anzahl": 148,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,178 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
+   "url": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
+   "titel": "KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe",
+   "teaser": "Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.",
+   "kicker": "Wirtschaft · Weiterbildung",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-26T17:40:00+01:00",
+   "aktualisiert": "2026-10-26T17:40:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kuenstliche-intelligenz",
+     "label": "Künstliche Intelligenz"
+    },
+    {
+     "slug": "ihk",
+     "label": "IHK"
+    },
+    {
+     "slug": "kreis-dueren",
+     "label": "Kreis Düren"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
+    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
+   "url": "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
+   "titel": "Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt",
+   "teaser": "Gräbersegnungen in allen Ortsteilen am 31. Oktober und 1. November, das wöchentliche Rosenkranzgebet zieht ab dem 4. November zurück ins Pfarrheim, und die Caritas lädt pflegende Angehörige zu zwei Selbsthilfegruppen an die Lindenstraße.",
+   "kicker": "Leben · Kirche und Soziales",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-26T17:30:00+01:00",
+   "aktualisiert": "2026-10-26T17:30:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kirche",
+     "label": "Kirche"
+    },
+    {
+     "slug": "allerheiligen",
+     "label": "Allerheiligen"
+    },
+    {
+     "slug": "senioren",
+     "label": "Senioren"
+    },
+    {
+     "slug": "pflege",
+     "label": "Pflege"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
+    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-26-pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder",
+   "url": "/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/",
+   "titel": "Pfarrer Andreas Galbierz gibt die Leitung der Pfarrei St. Laurentius zum 31. Januar 2027 ab",
+   "teaser": "Im Pfarrbrief informiert der Pfarrer die Gemeinden Merzenich und Niederzier persönlich: Auf Bitten des Bistums Aachen legt er die Leitung beider Pfarreien nieder und verlässt Niederzier. Im Pastoralen Raum soll künftig Pfarrer Gerd Kraus aus Vettweiß die Leitung übernehmen.",
+   "kicker": "Leben · Kirche",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-26T17:20:00+01:00",
+   "aktualisiert": "2026-10-26T17:20:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kirche",
+     "label": "Kirche"
+    },
+    {
+     "slug": "st-laurentius",
+     "label": "St. Laurentius"
+    },
+    {
+     "slug": "bistum-aachen",
+     "label": "Bistum Aachen"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg",
+    "srcset": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-480.webp 480w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-800.webp 800w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-1200.webp 1200w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg 1920w",
+    "alt": "Kirchenfenster",
+    "width": 1920,
+    "height": 2567,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-10-26-einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026",
+   "url": "/rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
+   "titel": "Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei",
+   "teaser": "Der Einsatzleitwagen der Freiwilligen Feuerwehr stammt aus dem Jahr 1999. Der Gemeinderat hat die Verwaltung einstimmig beauftragt, ein neues Fahrzeug zu beschaffen, zugeschnitten auf die Einsatzführung vor Ort. Vergeben ist der Auftrag noch nicht.",
+   "kicker": "Rathaus · Feuerwehr",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-26T17:10:00+01:00",
+   "aktualisiert": "2026-10-26T17:10:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "feuerwehr",
+     "label": "Feuerwehr"
+    },
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    },
+    {
+     "slug": "brandschutz",
+     "label": "Brandschutz"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg 1920w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "TUBS / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-25-mental-load-online-vortrag-kreis-dueren-18-november-2026",
    "url": "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/",
@@ -273,7 +445,7 @@
    "id": "2026-10-25-verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26",
    "url": "/leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/",
    "titel": "Bahn, Bismarckstraße, A4: Was Pendler aus Merzenich in dieser Woche wissen müssen",
-   "teaser": "Nachts fährt zwischen Düren und Köln bis Freitag nur ein Gleis, in Düren ist die Bismarckstraße stadteinwärts gesperrt, und auf der A4 wird an zwei Stellen gearbeitet. Die Termine im Überblick.",
+   "teaser": "Nachts fährt zwischen Düren und Köln bis Freitag nur ein Gleis, in den Nächten zum 27. und 28. Oktober fällt auch die S 19 ab Merzenich aus. In Düren ist die Bismarckstraße stadteinwärts gesperrt, und auf der A4 wird an zwei Stellen gearbeitet.",
    "kicker": "Leben · Verkehr",
    "ressort": "leben",
    "ressortLabel": "Leben",
@@ -281,7 +453,7 @@
    "ortsteil": "merzenich",
    "datum": "2026-10-25T22:32:00+01:00",
    "aktualisiert": "2026-10-25T22:32:00+01:00",
-   "lesezeit": "2 Min. Lesezeit",
+   "lesezeit": "3 Min. Lesezeit",
    "themen": [
     {
      "slug": "verkehr",
@@ -8757,11 +8929,21 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
-  "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
-  "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober"
+  "id": "2026-10-26-einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026",
+  "url": "/rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
+  "titel": "Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-10-26-pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder",
+   "url": "/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/",
+   "titel": "Pfarrer Andreas Galbierz gibt die Leitung der Pfarrei St. Laurentius zum 31. Januar 2027 ab"
+  },
+  {
+   "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
+   "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
+   "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober"
+  },
   {
    "id": "2026-10-19-einsatz-141-oelspur-merzenich",
    "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
@@ -8771,16 +8953,6 @@
    "id": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
    "url": "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/",
    "titel": "Klimaanpassung: Gemeinde setzt auf Stauden, Blühwiesen und seltener gemähte Flächen"
-  },
-  {
-   "id": "2026-10-16-buendelsammlung-gruenabfall-16-november-2026-anmeldung",
-   "url": "/leben/buendelsammlung-gruenabfall-16-november-2026-anmeldung/",
-   "titel": "Bündelsammlung am 16. November: Grünabfall nur nach kostenloser Anmeldung bei Schönmackers"
-  },
-  {
-   "id": "2026-10-16-tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026",
-   "url": "/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/",
-   "titel": "Tag der Modelleisenbahn: Wasserturm Merzenich öffnet am 21. November mit europäischen Zügen"
   }
  ],
  "startseitenMotive": {
@@ -8789,12 +8961,13 @@
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
-  "editorial-pools/aktuell/aktuell-10-9c5a4aeb44": 2,
+  "editorial-pools/aktuell/aktuell-10-9c5a4aeb44": 1,
   "editorial-pools/aktuell/aktuell-13-33d9d347f2": 2,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
   "editorial-pools/brand/brand-19-6a048a0c3d": 1,
   "editorial-pools/feuerwehr/feuerwehr-01-cacd404127": 1,
-  "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 1,
+  "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
+  "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/menschen/menschen-06-1835323b3c": 1,
   "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 2,
@@ -8809,7 +8982,7 @@
   "places/golzheim-aachener-strasse": 1,
   "places/merzenich": 2,
   "places/merzenich-bergstrasse": 2,
-  "places/merzenich-st-laurentius": 2,
+  "places/merzenich-st-laurentius": 1,
   "places/morschenich": 1,
   "responsive/0f626136429ef9": 1,
   "responsive/37c79d0e603f3a": 1,
@@ -8825,10 +8998,10 @@
   "werben/werbebanner": 2
  },
  "buehnenMotive": [
-  "editorial-pools/aktuell/aktuell-07-d923824479",
+  "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a",
+  "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
   "editorial-pools/menschen/menschen-01-686bb6fb4c",
   "editorial-pools/technik/technik-05-81cd88e925",
-  "editorial-pools/tipp/tipp-21-b2be2ca7e2",
   "editorial-pools/wirtschaft/wirtschaft-05-94380a1858"
  ],
  "motivMax": 2

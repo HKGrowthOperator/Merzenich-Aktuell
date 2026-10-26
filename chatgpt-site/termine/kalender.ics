@@ -458,6 +458,21 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04@merzenich-aktuell.de
+DTSTAMP:20261026T060000Z
+DTSTART:20261104T170000Z
+SUMMARY:Rosenkranzgebet wieder im Pfarrheim (ab 4. November)
+DESCRIPTION:Das wöchentliche Rosenkranzgebet wird ab dem 4. November nicht
+  mehr in der Kirche\, sondern wieder im Pfarrheim an der Schulstraße 4a g
+ ebetet\; im Oktoberplan stand es mittwochs um 18 Uhr.\nVeranstalter: Pfarr
+ ei St. Laurentius Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de
+ /termine/rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04/
+LOCATION:Pfarrheim Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/rosenkranzgebet-p
+ farrheim-merzenich-ab-2026-11-04/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:aktionstag-persoenliches-budget-kreishaus-2026-11-05@merzenich-aktuell.
  de
 DTSTAMP:20261025T060000Z
@@ -486,6 +501,22 @@ DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
 LOCATION:Ratssaal der Gemeinde Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/rechnungspruefung
  sausschuss-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ki-roadshow-ihk-dueren-2026-11-06@merzenich-aktuell.de
+DTSTAMP:20261026T060000Z
+DTSTART:20261106T080000Z
+DTEND:20261106T100000Z
+SUMMARY:KI-Roadshow der IHK Aachen in Düren
+DESCRIPTION:Kostenfreie Veranstaltung für kleine und mittlere Unternehmen 
+ zu Datenanalyse\, Kundenservice und Prozessoptimierung mit KI\; Anmeldung 
+ über die IHK-Veranstaltungsseite.\nVeranstalter: IHK Aachen mit Wirtschaf
+ tsförderung Kreis Düren und WIN.DN\nhttps://merzenichaktuell.hk-growthop
+ erator.de/termine/ki-roadshow-ihk-dueren-2026-11-06/
+LOCATION:CO_SPACE.DN
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ki-roadshow-ihk-d
+ ueren-2026-11-06/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
