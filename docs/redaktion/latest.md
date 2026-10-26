@@ -1,11 +1,11 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [26.10.2026 nachmittags, Claude-Umsetzungslauf](dossiers/2026-10-26-claude-nachmittags.md). Vergleichsbasis: [Morgendossier 26.10.](dossiers/2026-10-26-morgens.md) (ChatGPT, keine Umsetzung); davor [Claude-Nachlauf 25.10.](dossiers/2026-10-25-nachlauf-claude.md).
+Jüngstes Dossier: [26.10.2026 abends, Claude-Nachlauf](dossiers/2026-10-26-claude-nachlauf.md) (Standprüfung, eine Meldung, Automatisierung). Vergleichsbasis: [Nachmittagslauf 26.10.](dossiers/2026-10-26-claude-nachmittags.md) (Claude, Commit `8041a59`) und [Morgendossier 26.10.](dossiers/2026-10-26-morgens.md) (ChatGPT).
 
-**Umgesetzt am 26.10.2026 nachmittags (Commit `8041a59`):** vier neue Meldungen in `inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json` (Einsatzleitwagen-Beschluss 116/2026, Pfarrer Galbierz legt Leitung zum 31.01.2027 nieder, Allerheiligen/Rosenkranz/Sonntagscafé aus dem Pfarrbrief, KI-Roadshow IHK Düren 06.11.), zwei Termine (`inhalte/termine/2026-10-26-recherche-claude-nachmittags.json`), sechs Umkreis-Einträge (`inhalte/umkreis/2026-10-26.json`), Nachtrag zum S-19-Ausfall 26.–28.10. im Verkehrsartikel vom 25.10., Heimat-Info-Zweitquelle im Laub-Artikel. Kette zweimal, `--check` unverändert, QA 0 Fehler. Die Meldungen erscheinen über den Abgleich als **Entwurf in den WordPress-Freigaben**; veröffentlicht wird dort von der Redaktion.
+**Nachlauf 26.10. abends:** eine neue Standard-Meldung (Amprion-Netzausbau, Radweg am S-Bahnhof) in `inhalte/meldungen/2026-10-26-recherche-claude-nachlauf.json`; drei Registerthemen geklärt (Flutlicht Dublette, Papiertonne unbelegt, SC III weiter ohne Klartext). Neu: Umkreis-Automatik für Polizeimeldungen (`deploy/automatik-umkreis.mjs`), Register-Lagebild [offen.md](offen.md) (`node deploy/register-pflege.mjs`), Korrektur des Bildsystem-Workflows. Auf `main` gepusht (`b73122c9`, `976e9be1`).
 
-**Aus dem Morgendossier erledigt:** MA-ELW1-116-2026, MA-PFARRLEITUNG-31012027, MA-ROSENKRANZ-PFARRHEIM-0411, MA-1025-25 (Nachtrag), MA-LAUB-2610. Gesperrt: KD-CROWD-2610 (Frist am 26.10. abgelaufen), MA-HGAS-OKT (widersprüchliche Betreiberangaben), MA-MARTINSZUEGE-2026 (Dublette).
+**Umgesetzt am 26.10. nachmittags (Commit `8041a59`):** vier Meldungen, zwei Termine, sechs Umkreis-Einträge, S-19-Nachtrag; Entwürfe in den WordPress-Freigaben.
 
-**Offen für den 27.10.:** Freigaben-Status in WordPress (Benutzername fehlt), SC III Endstand, Strukturausschuss-Niederschrift 15.10., Jugendgremium 04.11., SEV-Buszeiten Merzenich, amtliche Ernennung der Leitung des Pastoralen Raums, Bürgewald, Krätzchen, H-Gas. Bilder: keine Recherche im Nachmittagslauf; Commons-Import über GitHub Actions empfohlen.
+**Offen für den 27.10.:** Abgleich-Ergebnis prüfen; Freigaben in WordPress (22 Entwürfe seit 25.10., Benutzername fehlt, Startseite live noch auf Stand 21.10.); ersten Lauf der Umkreis-Automatik prüfen; SC III Endstand, SEV-Buszeiten, Bistum-Ernennung, Strukturausschuss-Niederschrift, Jugendgremium 04.11.
 
-[Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)
+[Offene Themen](offen.md) · [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)

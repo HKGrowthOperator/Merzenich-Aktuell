@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-26-claude-nachmittags.md",
+  "latest_dossier": "dossiers/2026-10-26-claude-nachlauf.md",
   "source_check_window": "26.10.2026 nachmittags ab 16:31 Europe/Berlin (Claude-Umsetzungslauf, Containeruhr); Morgendossier ab 08:05",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -42,11 +42,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "neu",
-      "last_checked_at": "2026-10-25T18:15:32+01:00",
+      "last_checked_at": "2026-10-26",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Spielseite erneut gelesen, „Abpfiff“ steht, Endstand weiter nur als verschleierte Schrift (data-obfuscation), kein Klartext; bleibt gesperrt bis Datenbericht oder fupa „Abpfiff“ mit Ergebnis.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -64,6 +64,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-SC3-GEREONSWEILER-2510",
           "check_scope": "Spielseite erneut gelesen; kein neuer Klartextbericht gefunden"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
+          "heading": "Geprüft im Claude-Nachlauf 26.10."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -560,12 +565,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-26",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Karte vom 25.10. ist damit nicht belegt. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 (15.10.) deckt den Inhalt der Seite. Gesperrt bis zu einer Quelle für die Behälterumstellung.",
       "dossier_history": [
         {
           "date": "2026-10-14",
@@ -606,6 +611,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "08 · MA-PAPIERTONNE-2026 · P1 · Gemeinde/Umwelt · Service · T1/B0"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
+          "heading": "Geprüft im Claude-Nachlauf 26.10."
         }
       ]
     },
@@ -617,12 +627,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-10-26",
+      "article_path": "inhalte/meldungen/2026-10-16-amtsblatt-11.json → /vereine/flutlicht-sportplatz-rhenania-girbelsrath-kek-westenergie/ (zuvor inhalte/meldungen/2026-heimatinfo-vereine.json → rhenania-girbelsrath-neues-flutlicht, 29.09.)",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "bestand (vor 16.10.2026)",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Dublette, Thema steht seit 29.09. (Heimat-Info) und 16.10. (Amtsblatt 11) im Bestand; kein neuer Beleg zu Kosten, Leuchtenzahl oder Abnahme auf der Gemeindeseite flutlicht-rhenania-girbelsrath.php. Keine neue Meldung.",
       "dossier_history": [
         {
           "date": "2026-10-23",
@@ -638,6 +648,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "09 · GR-FLUTLICHT-2026 · P1 · Girbelsrath/Sport/Energie · Update · T1/B0"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
+          "heading": "Geprüft im Claude-Nachlauf 26.10."
         }
       ]
     },
@@ -1497,12 +1512,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "zur_abnahme",
+      "last_checked_at": "2026-10-26",
+      "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachlauf.json → /leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "976e9be1",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Standard-Artikel (436 Wörter, 6 Fakten) aus Gemeindemitteilung 28.07. und Amprion-Projektseite; „zwei neue Masten“ aus dem Dossier auf keiner Quelle belegt und nicht übernommen. Offen: Sperrplan je Straße, Fördersumme nicht Gegenstand.",
       "dossier_history": [
         {
           "date": "2026-10-13",
@@ -1568,6 +1583,23 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "23 · MA-AMPRION-BAUSTART · P2 · Merzenich/Energie · Hintergrund · T1/B0"
+        },
+        {
+          "date": "2026-10-26",
+          "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
+          "heading": "Umgesetzt im Claude-Nachlauf 26.10."
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/amprion-stromleitung.php",
+          "publisher": "Gemeinde Merzenich",
+          "published": "2026-07-28"
+        },
+        {
+          "url": "https://www.amprion.net/Netzausbau/Unsere-Projekte/Oberzier-Pkt.-Blatzheim/",
+          "publisher": "Amprion GmbH",
+          "published": "nicht ausgewiesen"
         }
       ]
     },
@@ -6884,6 +6916,16 @@
       "implementation_commit": "8041a59",
       "summary": "4 neue Meldungen (3 Standard, 1 Kurz), 2 Aktualisierungen (Verkehr S19-Nachtrag, Laub-Zweitquelle), 2 Termine, 6 Umkreis; Sport unverändert; 0 Bilder; QA 0 Fehler",
       "publication": "keine (Entwürfe über Abgleich in WordPress-Freigaben)"
+    },
+    {
+      "date": "2026-10-26",
+      "edition": "nachlauf",
+      "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
+      "by": "Claude",
+      "compared_with": "dossiers/2026-10-26-claude-nachmittags.md",
+      "implementation_commit": "976e9be1",
+      "summary": "1 neue Standard-Meldung (Amprion-Netzausbau), 3 Registerthemen geklärt (Flutlicht Dublette, Papiertonne unbelegt, SC III weiter ohne Klartext); Automatisierung: Umkreis-Automatik Polizei, Register-Lagebild, Bildsystem-Workflow-Korrektur",
+      "publication": "keine (Entwurf über Abgleich in WordPress-Freigaben)"
     }
   ]
 }
