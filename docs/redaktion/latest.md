@@ -1,11 +1,13 @@
 # Aktueller Recherche-Einstieg
 
-Letztes abgelegtes Dossier: [25.10.2026, Nachlauf Claude (abends)](dossiers/2026-10-25-nachlauf-claude.md). Vorher: [Abenddossier](dossiers/2026-10-25-abends.md), [Morgendossier](dossiers/2026-10-25-morgens.md).
+Jüngstes Dossier: [26.10.2026 morgens](dossiers/2026-10-26-morgens.md). Vergleichsbasis: [Claude-Nachlauf vom 25.10.](dossiers/2026-10-25-nachlauf-claude.md); davor [Abenddossier](dossiers/2026-10-25-abends.md).
 
-**Umgesetzt am 25.10.2026 (Commit `7e268d6`):** 17 Meldungen (`inhalte/meldungen/2026-10-25-recherche-claude.json`), 9 Termine (`inhalte/termine/2026-10-25-recherche-claude.json`), 14 Umkreis-Einträge (`inhalte/umkreis/2026-10-25.json`), Nachtrag im Tagebausee-Artikel (Bekanntmachung Bezirksregierung Arnsberg), `chatgpt-site/api/sport-current.json` auf den 10. Spieltag, drei neue Bildklassen ohne Motiv. Kette zweimal gelaufen und `--check` unverändert, `qa/pruefung.mjs` 0 Fehler. Die Meldungen erscheinen über den Abgleich als **Entwurf in den WordPress-Freigaben**; veröffentlicht wird dort von der Redaktion.
+**Neu im Recherchematerial:** Drei materielle Ergänzungen beziehungsweise geschlossene Beleglücken: S19-Ausfall/SEV aus dem offiziellen Bahnplakat, öffentlicher ELW1-Beschluss 116/2026, SWD-Original zur heutigen Crowd-Frist. Zusätzlich ein älterer kirchlicher Servicehinweis zum Ortswechsel ab 04.11. als Entwurf. H-Gas bleibt wegen widersprüchlicher Betreiberangaben T2; Pfarrleitungswechsel als älterer Hintergrund zur aktuellen Bestätigung vorgemerkt.
 
-Bestätigte Sonntagsergebnisse: SC Merzenich 8:0 in Hambach (Platz 4, 24 Punkte), Morschenich 8:4 gegen Golzheim II, Girbelsrath 1:3 in Merken, Golzheim 5:0 in Koslar (Samstag), SC II 4:3 in Berzbuir (Freitag).
+**Umfang:** 25 Karten, vier neue vollständige Kurzmeldungsentwürfe, elf Bestands-/Terminkarten ohne erneuten Volltext, sieben T0-Aufträge und drei T2-Klärungsfälle. Keine zusätzliche lokale Eilmeldung und kein neues Herren-Ergebnis seit dem Claude-Nachlauf bestätigt. Heutige Fristen für Crowd und Persönliches Budget beachten; konkrete SEV-Buszeiten/Einstiegsstelle noch offen.
 
-Offen (siehe Register, Status `neu`/`gesperrt`): SC III Endstand, Strukturausschuss-Niederschrift 15.10., Jugendgremium-Tagesordnung 4.11., GPA/RPA 5.11., Bürgewald-Masterplan (T2), NVP, HGas, ELW-Vergabe, Krätzchen-Ortsfrage, Adventfenster, Reibekuchen-Nachbericht, Düren-Crowd, Pfarrbrief, KGS Golzheim, Straßen.NRW. Bilder: Commons-API war gedrosselt (429); 4 ungeprüfte Kandidaten, Importlauf über GitHub Actions empfohlen.
+**Bilder:** Acht Dateiseiten, sieben zusätzliche Kandidaten und eine erkannte Bestandsdublette. Acht Lizenzbewertungen, ein Pipeline-Ausschluss. Null Sichtprüfungen/Downloads/Integrationen; keine Poolfreigabe. Ausführliche Metadaten, Credits und Sperrthemen im Dossier.
 
-[Register](register.json) · [Regeln](README.md) · [Archiv 13.–25.10.](archiv.md)
+**Vorherige Umsetzung erhalten:** Claude hat am 25.10. in Commit `7e268d6` 17 Meldungen, neun Termine, 14 Umkreis-Einträge, den Tagebausee-Nachtrag und Sportdaten vorbereitet. Diese Umsetzung wird durch den Recherchelauf nicht wiederholt. Vier Herren-Ergebnisse einschließlich Golzheim 5:0 sind Bestand; SCIII-Endstand bleibt T0. Artikelpfade, Bearbeitungsnotizen und Umsetzungscommits im Register erhalten. Keine Artikel-/ImportXML-/Frontendänderung durch diesen Lauf; keine Publikation oder gestartete Claude-Sitzung.
+
+[Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)
