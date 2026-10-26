@@ -1,11 +1,11 @@
 {
  "quelle": "feuerwehr",
- "abgerufen": "2026-10-26T11:03:11.275Z",
+ "abgerufen": "2026-10-26T20:29:16.722Z",
  "listen": [
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze",
-   "abgerufen": "2026-10-26T11:00:25.957Z",
+   "abgerufen": "2026-10-26T20:26:55.144Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -164,7 +164,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=1",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=1",
-   "abgerufen": "2026-10-26T11:00:27.969Z",
+   "abgerufen": "2026-10-26T20:26:57.059Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -323,7 +323,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=2",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=2",
-   "abgerufen": "2026-10-26T11:00:29.953Z",
+   "abgerufen": "2026-10-26T20:26:58.932Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -486,7 +486,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=3",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=3",
-   "abgerufen": "2026-10-26T11:00:31.938Z",
+   "abgerufen": "2026-10-26T20:27:00.829Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -649,7 +649,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=4",
-   "abgerufen": "2026-10-26T11:00:33.887Z",
+   "abgerufen": "2026-10-26T20:27:02.639Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -812,7 +812,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=5",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=5",
-   "abgerufen": "2026-10-26T11:00:35.931Z",
+   "abgerufen": "2026-10-26T20:27:04.472Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -975,7 +975,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=6",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=6",
-   "abgerufen": "2026-10-26T11:00:37.867Z",
+   "abgerufen": "2026-10-26T20:27:06.384Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1138,7 +1138,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=7",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=7",
-   "abgerufen": "2026-10-26T11:00:39.851Z",
+   "abgerufen": "2026-10-26T20:27:08.223Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1301,7 +1301,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze?page=8",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze?page=8",
-   "abgerufen": "2026-10-26T11:00:41.862Z",
+   "abgerufen": "2026-10-26T20:27:10.392Z",
    "status": 200,
    "titel": "Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1462,7 +1462,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/14026-golzheim-buirer-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/14026-golzheim-buirer-strasse",
-   "abgerufen": "2026-10-26T11:00:43.724Z",
+   "abgerufen": "2026-10-26T20:27:12.134Z",
    "status": 200,
    "titel": "140/26 Golzheim - Buirer Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1487,7 +1487,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13926-bab-4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13926-bab-4",
-   "abgerufen": "2026-10-26T11:00:45.619Z",
+   "abgerufen": "2026-10-26T20:27:13.883Z",
    "status": 200,
    "titel": "139/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1532,13 +1532,32 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg",
-   "abgerufen": "2026-10-26T11:00:49.139Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:27:15.616Z",
+   "status": 200,
+   "titel": "138/26 Merzenich - Steinweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Eine weitere Alarmierung \"Person hinter Tür\" bekam die Löschgruppe Merzenich am vergangenen Sonntag Morgen.\r\nHier wurde nach kurzer Erkundung ein Zugang über...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg",
+    "og:type": "website",
+    "og:title": "138/26 Merzenich - Steinweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Eine weitere Alarmierung \"Person hinter Tür\" bekam die Löschgruppe Merzenich am vergangenen Sonntag Morgen.\r\nHier wurde nach kurzer Erkundung ein Zugang über...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/252890855_1780650762120430_4514134351230424812_n.jpg"
+   },
+   "text": "138/26 Merzenich - Steinweg\nPerson hinter Tür / Eingeschlossene Person\n04.10.2026 / 11:03 Uhr\nEine weitere Alarmierung \"Person hinter Tür\" bekam die Löschgruppe Merzenich am vergangenen Sonntag Morgen.\nHier wurde nach kurzer Erkundung ein Zugang über den Keller geschaffen. Der Pateint wurde dem Rettungsdienst übergeben. Die Feuerwehr konnte den Einsatz schnell beenden und zum Standort einrücken.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nFeuerschutztechnisches Zentrum\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/13826-merzenich-steinweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13726-morschenich-obere-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13726-morschenich-obere-strasse",
-   "abgerufen": "2026-10-26T11:00:53.166Z",
+   "abgerufen": "2026-10-26T20:27:17.359Z",
    "status": 200,
    "titel": "137/26 Morschenich - Obere Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1563,7 +1582,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13626-merzenich-s-bahnhaltestelle",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13626-merzenich-s-bahnhaltestelle",
-   "abgerufen": "2026-10-26T11:00:55.020Z",
+   "abgerufen": "2026-10-26T20:27:18.994Z",
    "status": 200,
    "titel": "136/26 Merzenich - S_Bahnhaltestelle | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1588,7 +1607,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13526-girbelsrath-ringstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13526-girbelsrath-ringstrasse",
-   "abgerufen": "2026-10-26T11:00:56.901Z",
+   "abgerufen": "2026-10-26T20:27:20.745Z",
    "status": 200,
    "titel": "135/26 Girbelsrath - Ringstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1613,7 +1632,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13426-burgewald-am-kamp",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13426-burgewald-am-kamp",
-   "abgerufen": "2026-10-26T11:00:58.808Z",
+   "abgerufen": "2026-10-26T20:27:22.486Z",
    "status": 200,
    "titel": "134/26 Bürgewald - Am Kamp | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1638,7 +1657,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13326-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13326-bab4",
-   "abgerufen": "2026-10-26T11:01:00.669Z",
+   "abgerufen": "2026-10-26T20:27:24.134Z",
    "status": 200,
    "titel": "133/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1663,7 +1682,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13226-golzheim-aachener-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13226-golzheim-aachener-strasse",
-   "abgerufen": "2026-10-26T11:01:02.564Z",
+   "abgerufen": "2026-10-26T20:27:25.886Z",
    "status": 200,
    "titel": "132/26 Golzheim - Aachener Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1688,7 +1707,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13126-b264l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13126-b264l264",
-   "abgerufen": "2026-10-26T11:01:04.424Z",
+   "abgerufen": "2026-10-26T20:27:27.622Z",
    "status": 200,
    "titel": "131/26 B264/L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1713,7 +1732,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/13026-golzheim-buirer-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/13026-golzheim-buirer-strasse",
-   "abgerufen": "2026-10-26T11:01:06.281Z",
+   "abgerufen": "2026-10-26T20:27:29.363Z",
    "status": 200,
    "titel": "130/26 Golzheim - Buirer Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1738,7 +1757,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12926-merzenich-an-der-windmuhle",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12926-merzenich-an-der-windmuhle",
-   "abgerufen": "2026-10-26T11:01:08.032Z",
+   "abgerufen": "2026-10-26T20:27:31.112Z",
    "status": 200,
    "titel": "129/26 Merzenich - An der Windmühle | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1763,7 +1782,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12826-merzenich-vogelrute",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12826-merzenich-vogelrute",
-   "abgerufen": "2026-10-26T11:01:09.811Z",
+   "abgerufen": "2026-10-26T20:27:32.762Z",
    "status": 200,
    "titel": "128/26 Merzenich - Vogelrute | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1788,7 +1807,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12726-girbelsrtath-dechant-fabry-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12726-girbelsrtath-dechant-fabry-strasse",
-   "abgerufen": "2026-10-26T11:01:11.707Z",
+   "abgerufen": "2026-10-26T20:27:34.435Z",
    "status": 200,
    "titel": "127/26 Girbelsrtath - Dechant Fabry Strasse | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1813,7 +1832,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12626-morschenich-obere-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12626-morschenich-obere-strasse",
-   "abgerufen": "2026-10-26T11:01:13.567Z",
+   "abgerufen": "2026-10-26T20:27:36.168Z",
    "status": 200,
    "titel": "126/26 Morschenich - Obere Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1838,7 +1857,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12526-burgewald-oberstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12526-burgewald-oberstrasse",
-   "abgerufen": "2026-10-26T11:01:15.422Z",
+   "abgerufen": "2026-10-26T20:27:37.908Z",
    "status": 200,
    "titel": "125/26 Bürgewald - Oberstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1863,7 +1882,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12426-mereznich-muhlenstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12426-mereznich-muhlenstrasse",
-   "abgerufen": "2026-10-26T11:01:17.303Z",
+   "abgerufen": "2026-10-26T20:27:39.649Z",
    "status": 200,
    "titel": "124/26 Mereznich - Mühlenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1893,7 +1912,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12326-merzenich-steinpfahl",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12326-merzenich-steinpfahl",
-   "abgerufen": "2026-10-26T11:01:19.210Z",
+   "abgerufen": "2026-10-26T20:27:41.384Z",
    "status": 200,
    "titel": "123/26 Merzenich - Steinpfahl | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1918,7 +1937,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12126-merzenich-steinpfahl",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12126-merzenich-steinpfahl",
-   "abgerufen": "2026-10-26T11:01:21.105Z",
+   "abgerufen": "2026-10-26T20:27:43.131Z",
    "status": 200,
    "titel": "121/26 Merzenich - Steinpfahl | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1943,7 +1962,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/12026-burgewald-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/12026-burgewald-l257",
-   "abgerufen": "2026-10-26T11:01:22.964Z",
+   "abgerufen": "2026-10-26T20:27:44.866Z",
    "status": 200,
    "titel": "120/26 Bürgewald - L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1973,7 +1992,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11926-burgewald-l257",
-   "abgerufen": "2026-10-26T11:01:24.726Z",
+   "abgerufen": "2026-10-26T20:27:46.608Z",
    "status": 200,
    "titel": "119/26 Bürgewald - L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -1998,7 +2017,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11826-girbelsrath-am-rosspfad",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11826-girbelsrath-am-rosspfad",
-   "abgerufen": "2026-10-26T11:01:26.651Z",
+   "abgerufen": "2026-10-26T20:27:48.350Z",
    "status": 200,
    "titel": "118/26 Girbelsrath - Am Roßpfad | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2023,7 +2042,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11726-burgewald-unterstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11726-burgewald-unterstrasse",
-   "abgerufen": "2026-10-26T11:01:28.557Z",
+   "abgerufen": "2026-10-26T20:27:50.086Z",
    "status": 200,
    "titel": "117/26 Bürgewald - Unterstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2048,7 +2067,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11626-l257",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11626-l257",
-   "abgerufen": "2026-10-26T11:01:30.491Z",
+   "abgerufen": "2026-10-26T20:27:51.876Z",
    "status": 200,
    "titel": "116/26 L257 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2153,7 +2172,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11526-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11526-bab4",
-   "abgerufen": "2026-10-26T11:01:32.323Z",
+   "abgerufen": "2026-10-26T20:27:53.617Z",
    "status": 200,
    "titel": "115/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2178,7 +2197,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11426-merzenich-b264valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11426-merzenich-b264valdersweg",
-   "abgerufen": "2026-10-26T11:01:34.178Z",
+   "abgerufen": "2026-10-26T20:27:55.365Z",
    "status": 200,
    "titel": "114/26 Merzenich B264/Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2203,7 +2222,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11326-girbelsrath-feld-richtung-binsfeld",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11326-girbelsrath-feld-richtung-binsfeld",
-   "abgerufen": "2026-10-26T11:01:35.924Z",
+   "abgerufen": "2026-10-26T20:27:57.113Z",
    "status": 200,
    "titel": "113/26 Girbelsrath - Feld Richtung Binsfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2228,19 +2247,101 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
-   "abgerufen": "2026-10-26T11:01:39.453Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:27:58.863Z",
+   "status": 200,
+   "titel": "112/26 Girbelsrath - Feld Richtung Binsfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nAm Montagnachmittag wurde die Feuerwehr Merzenich gegen 13:30 Uhr zu einem Flächenbrand zwischen Girbelsrath und Binsfeld alarmiert.\r\n\r\n\r\nKurz nach dem Ein...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld",
+    "og:type": "website",
+    "og:title": "112/26 Girbelsrath - Feld Richtung Binsfeld | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nAm Montagnachmittag wurde die Feuerwehr Merzenich gegen 13:30 Uhr zu einem Flächenbrand zwischen Girbelsrath und Binsfeld alarmiert.\r\n\r\n\r\nKurz nach dem Ein...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/01.jpg"
+   },
+   "text": "112/26 Girbelsrath - Feld Richtung Binsfeld\nWaldbrand 2 / Flächenbrand\n10.08.2026 / 13:33 Uhr\nAm Montagnachmittag wurde die Feuerwehr Merzenich gegen 13:30 Uhr zu einem Flächenbrand zwischen Girbelsrath und Binsfeld alarmiert.\nKurz nach dem Eintreffen der ersten Einsatzkräfte wurde aufgrund der schnellen Brandausbreitung Vollalarm für die Feuerwehr Merzenich ausgelöst. Die Flammen hatten bereits auf eine Hecke im Bereich eines Industriebetriebes sowie auf die angrenzende Fläche des Sportplatzes übergegriffen.\nZur Unterstützung der Löschmaßnahmen wurden zwei Wasserbehälter des Feuerwehrtechnischen Zentrums (FTZ) eingesetzt. Zudem wurden Einheiten der Freiwillige Feuerwehr Nörvenich zur überörtlichen Hilfe angefordert.\nDurch das schnelle und koordinierte Eingreifen der Einsatzkräfte konnte ein weiteres Ausbreiten des Feuers, insbesondere auf ein angrenzendes Waldstück, verhindert werden.\nBesonders hervorzuheben war die Unterstützung der örtlichen Landwirte. Mit ihren landwirtschaftlichen Maschinen leisteten sie einen wichtigen Beitrag bei der Eindämmung des Feuers und unterstützten die Feuerwehr bei den Löscharbeiten.\nFür diese schnelle und unkomplizierte Hilfe gilt den beteiligten Landwirten ein ausdrücklicher Dank.\nGegen 15:30 Uhr konnte schließlich „Feuer aus“ gemeldet werden. Insgesamt brannten rund 30 Hektar Vegetation.\nDie Freiwillige Feuerwehr Niederzier LG Ellen stellte während des Einsatzes den Grundschutz für das Gemeindegebiet sicher.\nEingesetzte Kräfte\nFeuerschutztechnisches Zentrum\nLöschgruppe Binsfeld\nLöschgruppe Eschweiler über Feld\nVollalarm Feuerwehr Merzenich\nLöschgruppe Nörvenich",
+   "links": [
+    {
+     "text": "Freiwillige Feuerwehr Nörvenich",
+     "href": "https://www.facebook.com/ffnrv?__cft__[0]=AZYq0KeD07ybjgimj5R7CPd9OERPRF9sLff9JSniYP070ywxRK3gm1n99Iqha5b3lfGc5xqB_zMJffsUpeW8EM6Sv_FboT8yKcZqCfxEVzkUnmifcrpTSz0IYno9ixiKKXf4FC48AV3qLdcEMSheRPj7iXbEEDbtNwR-IdgYcn8zZXndW6Ya3TSl5JDcqK9E2RQ&__tn__=-]K-R"
+    },
+    {
+     "text": "Freiwillige Feuerwehr Niederzier LG Ellen",
+     "href": "https://www.facebook.com/Feuerwehrellen?__cft__[0]=AZYq0KeD07ybjgimj5R7CPd9OERPRF9sLff9JSniYP070ywxRK3gm1n99Iqha5b3lfGc5xqB_zMJffsUpeW8EM6Sv_FboT8yKcZqCfxEVzkUnmifcrpTSz0IYno9ixiKKXf4FC48AV3qLdcEMSheRPj7iXbEEDbtNwR-IdgYcn8zZXndW6Ya3TSl5JDcqK9E2RQ&__tn__=-]K-R"
+    }
+   ],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/11226-girbelsrath-feld-richtung-binsfeld#",
+     "alt": "#",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/02.jpg",
+     "alt": "02",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/03.jpg",
+     "alt": "03",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/04.jpg",
+     "alt": "04",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/05.jpg",
+     "alt": "05",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/06.jpg",
+     "alt": "06",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/07.jpg",
+     "alt": "07",
+     "title": ""
+    },
+    {
+     "src": "https://feuerwehr-merzenich.de/uploads/2026/08/10%20Fl%C3%A4che%20Girbelsrath/08.jpg",
+     "alt": "08",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
-   "abgerufen": "2026-10-26T11:01:42.977Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:28:00.612Z",
+   "status": 200,
+   "titel": "111/26 Bürgewald - Unterstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Die Löschgruppe Morschenich wurde zu einem Tierfang nach Bürgewald alarmiert.\r\nEine Taube hatte sich in einem Zaun verfangen. Für das Tier kam jede Hilfe zu...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse",
+    "og:type": "website",
+    "og:title": "111/26 Bürgewald - Unterstraße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Die Löschgruppe Morschenich wurde zu einem Tierfang nach Bürgewald alarmiert.\r\nEine Taube hatte sich in einem Zaun verfangen. Für das Tier kam jede Hilfe zu...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/01.jpg"
+   },
+   "text": "111/26 Bürgewald - Unterstraße\nTierfang / Herrenloses Tier\n06.08.2026 / 18:27 Uhr\nDie Löschgruppe Morschenich wurde zu einem Tierfang nach Bürgewald alarmiert.\nEine Taube hatte sich in einem Zaun verfangen. Für das Tier kam jede Hilfe zu spät und wurde durch die Kameraden entfernt.\nEingesetzte Kräfte\nLöschgruppe Morschenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/11126-burgewald-unterstrasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/11026-girbelsrath-matthias-von-den-driesch-str",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/11026-girbelsrath-matthias-von-den-driesch-str",
-   "abgerufen": "2026-10-26T11:01:46.925Z",
+   "abgerufen": "2026-10-26T20:28:02.368Z",
    "status": 200,
    "titel": "110/26 Girbelsrath - Matthias von den Driesch-Str. | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2270,7 +2371,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10926-merzenich-valdersweg",
-   "abgerufen": "2026-10-26T11:01:48.677Z",
+   "abgerufen": "2026-10-26T20:28:04.115Z",
    "status": 200,
    "titel": "109/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2295,7 +2396,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10826-merzenich-l264",
-   "abgerufen": "2026-10-26T11:01:50.534Z",
+   "abgerufen": "2026-10-26T20:28:05.857Z",
    "status": 200,
    "titel": "108/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2325,7 +2426,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10726-merzenich-handelstrasse",
-   "abgerufen": "2026-10-26T11:01:52.417Z",
+   "abgerufen": "2026-10-26T20:28:07.593Z",
    "status": 200,
    "titel": "107/26 Merzenich - Händelstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2365,7 +2466,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10626-golzheim-b264",
-   "abgerufen": "2026-10-26T11:01:54.156Z",
+   "abgerufen": "2026-10-26T20:28:09.303Z",
    "status": 200,
    "titel": "106/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2390,7 +2491,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10526-merzenich-distelrather-weg",
-   "abgerufen": "2026-10-26T11:01:55.908Z",
+   "abgerufen": "2026-10-26T20:28:11.330Z",
    "status": 200,
    "titel": "105/26 Merzenich - Distelrather Weg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2415,7 +2516,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10426-merzenich-steinweg-bahnanlage",
-   "abgerufen": "2026-10-26T11:01:57.819Z",
+   "abgerufen": "2026-10-26T20:28:13.070Z",
    "status": 200,
    "titel": "104/26 Merzenich - Steinweg_Bahnanlage | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2445,7 +2546,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10326-merzenich-auf-der-heide",
-   "abgerufen": "2026-10-26T11:01:59.682Z",
+   "abgerufen": "2026-10-26T20:28:14.705Z",
    "status": 200,
    "titel": "103/26 Merzenich - Auf der Heide | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2470,7 +2571,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10226-morschenich-ludwig-rixen-strasse",
-   "abgerufen": "2026-10-26T11:02:01.541Z",
+   "abgerufen": "2026-10-26T20:28:16.437Z",
    "status": 200,
    "titel": "102/26 Morschenich - ludwig-Rixen-Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2495,7 +2596,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10126-merzenich-l264",
-   "abgerufen": "2026-10-26T11:02:03.299Z",
+   "abgerufen": "2026-10-26T20:28:18.071Z",
    "status": 200,
    "titel": "101/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2520,7 +2621,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/10026-golzheim-kolner-strasse",
-   "abgerufen": "2026-10-26T11:02:05.064Z",
+   "abgerufen": "2026-10-26T20:28:19.803Z",
    "status": 200,
    "titel": "100/26 Golzheim - Kölner Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2545,7 +2646,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9926-bab4",
-   "abgerufen": "2026-10-26T11:02:06.828Z",
+   "abgerufen": "2026-10-26T20:28:21.552Z",
    "status": 200,
    "titel": "99/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2570,7 +2671,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9826-golzheim-b264",
-   "abgerufen": "2026-10-26T11:02:08.703Z",
+   "abgerufen": "2026-10-26T20:28:23.336Z",
    "status": 200,
    "titel": "98/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2604,7 +2705,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9726-girbelsrath-dechant-fabry-strasse",
-   "abgerufen": "2026-10-26T11:02:10.558Z",
+   "abgerufen": "2026-10-26T20:28:25.071Z",
    "status": 200,
    "titel": "97/26 Girbelsrath - Dechant-Fabry-Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2629,7 +2730,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9626-bab4",
-   "abgerufen": "2026-10-26T11:02:12.438Z",
+   "abgerufen": "2026-10-26T20:28:26.814Z",
    "status": 200,
    "titel": "96/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2659,7 +2760,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9526-morschenich",
-   "abgerufen": "2026-10-26T11:02:14.334Z",
+   "abgerufen": "2026-10-26T20:28:28.585Z",
    "status": 200,
    "titel": "95/26 Morschenich | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2684,7 +2785,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9426-merzenich-l264",
-   "abgerufen": "2026-10-26T11:02:16.195Z",
+   "abgerufen": "2026-10-26T20:28:30.331Z",
    "status": 200,
    "titel": "94/26 Merzenich - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2724,7 +2825,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9326-golzheim-b264",
-   "abgerufen": "2026-10-26T11:02:18.103Z",
+   "abgerufen": "2026-10-26T20:28:32.071Z",
    "status": 200,
    "titel": "93/26 Golzheim - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2749,7 +2850,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9226-girbelsrath-matthias-von-der-driesch-strasse",
-   "abgerufen": "2026-10-26T11:02:19.959Z",
+   "abgerufen": "2026-10-26T20:28:33.809Z",
    "status": 200,
    "titel": "92/26 Girbelsrath - Matthias von der Driesch Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2774,7 +2875,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9126-merzenich-valdersweg",
-   "abgerufen": "2026-10-26T11:02:21.818Z",
+   "abgerufen": "2026-10-26T20:28:35.553Z",
    "status": 200,
    "titel": "91/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2799,7 +2900,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/9026-merzenich-b264",
-   "abgerufen": "2026-10-26T11:02:23.714Z",
+   "abgerufen": "2026-10-26T20:28:37.199Z",
    "status": 200,
    "titel": "90/26 Merzenich - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2824,7 +2925,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8926-merzenich-b264",
-   "abgerufen": "2026-10-26T11:02:25.595Z",
+   "abgerufen": "2026-10-26T20:28:38.855Z",
    "status": 200,
    "titel": "89/26 Merzenich -B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2849,7 +2950,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8826-golzheim-kolner-strasse",
-   "abgerufen": "2026-10-26T11:02:27.539Z",
+   "abgerufen": "2026-10-26T20:28:40.487Z",
    "status": 200,
    "titel": "88/26 Golzheim - Kölner Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2874,7 +2975,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8726-merzenich-grunstrasse",
-   "abgerufen": "2026-10-26T11:02:29.393Z",
+   "abgerufen": "2026-10-26T20:28:42.221Z",
    "status": 200,
    "titel": "87/26 merzenich - Grünstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2904,7 +3005,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8626-bab-4",
-   "abgerufen": "2026-10-26T11:02:31.251Z",
+   "abgerufen": "2026-10-26T20:28:43.962Z",
    "status": 200,
    "titel": "86/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2929,7 +3030,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8526-bab-4",
-   "abgerufen": "2026-10-26T11:02:33.147Z",
+   "abgerufen": "2026-10-26T20:28:45.699Z",
    "status": 200,
    "titel": "85/26 BAB 4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2954,7 +3055,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8426-merzenich-schutzenstrasse",
-   "abgerufen": "2026-10-26T11:02:35.028Z",
+   "abgerufen": "2026-10-26T20:28:47.448Z",
    "status": 200,
    "titel": "84/26 Merzenich - Schützenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -2979,7 +3080,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8326-bab4",
-   "abgerufen": "2026-10-26T11:02:36.883Z",
+   "abgerufen": "2026-10-26T20:28:49.192Z",
    "status": 200,
    "titel": "83/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3004,7 +3105,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8226-bab4",
-   "abgerufen": "2026-10-26T11:02:38.819Z",
+   "abgerufen": "2026-10-26T20:28:50.971Z",
    "status": 200,
    "titel": "82/26 BAB4 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3039,7 +3140,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8126-merzenich-bergstrasse",
-   "abgerufen": "2026-10-26T11:02:40.716Z",
+   "abgerufen": "2026-10-26T20:28:52.713Z",
    "status": 200,
    "titel": "81/26 Merzenich - Bergstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3064,7 +3165,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/8026-girbelsrath-l264",
-   "abgerufen": "2026-10-26T11:02:42.575Z",
+   "abgerufen": "2026-10-26T20:28:54.448Z",
    "status": 200,
    "titel": "80/26 Girbelsrath - L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3089,7 +3190,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7926-merzenich-handelstrasse",
-   "abgerufen": "2026-10-26T11:02:44.324Z",
+   "abgerufen": "2026-10-26T20:28:56.236Z",
    "status": 200,
    "titel": "79/26 Merzenich - Händelstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3114,7 +3215,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7826-merzenich-muhlenstrasse",
-   "abgerufen": "2026-10-26T11:02:46.179Z",
+   "abgerufen": "2026-10-26T20:28:57.898Z",
    "status": 200,
    "titel": "78/26 Merzenich - Mühlenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3139,7 +3240,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7726-merzenich-in-den-weingarten",
-   "abgerufen": "2026-10-26T11:02:48.086Z",
+   "abgerufen": "2026-10-26T20:28:59.638Z",
    "status": 200,
    "titel": "77/26 Merzenich - In den Weingärten | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3164,7 +3265,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7626-girbelsrath-l264",
-   "abgerufen": "2026-10-26T11:02:50.007Z",
+   "abgerufen": "2026-10-26T20:29:01.379Z",
    "status": 200,
    "titel": "76/26 - Girbelsrath L264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3194,7 +3295,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7526-b264",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7526-b264",
-   "abgerufen": "2026-10-26T11:02:51.868Z",
+   "abgerufen": "2026-10-26T20:29:03.116Z",
    "status": 200,
    "titel": "75/26 - B264 | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3224,7 +3325,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7426-merzenich-valdersweg",
-   "abgerufen": "2026-10-26T11:02:53.631Z",
+   "abgerufen": "2026-10-26T20:29:04.862Z",
    "status": 200,
    "titel": "74/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3249,25 +3350,82 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
-   "abgerufen": "2026-10-26T11:02:57.337Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:29:06.605Z",
+   "status": 200,
+   "titel": "73/26 Merzenich - Erlenweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Am vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\r\nEin maroder Baum war auf die Straße gekippt\r\nDer Baum wurde mit einer Motorke...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg",
+    "og:type": "website",
+    "og:title": "73/26 Merzenich - Erlenweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Am vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\r\nEin maroder Baum war auf die Straße gekippt\r\nDer Baum wurde mit einer Motorke...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Motors%C3%A4ge/Motors%C3%A4ge_Helm.jpg"
+   },
+   "text": "73/26 Merzenich - Erlenweg\nTechnische Hilfe / Technische Hilfe\n20.06.2026 / 14:22 Uhr\nAm vergangenen Samstag Nachmittag wurde die Feuerwehr in den Erlenweg gerufen.\nEin maroder Baum war auf die Straße gekippt\nDer Baum wurde mit einer Motorkettensäge zerkleinert und von der Fahrbahn entfernt. Zum Abschluss reinigten die Einsatzkräfte die Straße grob von Ästen und Holzresten.\nEingesetzte Kräfte\nLöschgruppe Merzenich",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7326-merzenich-erlenweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
-   "abgerufen": "2026-10-26T11:03:00.859Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:29:08.340Z",
+   "status": 200,
+   "titel": "72/26 Merzenich - Valdersweg | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "\r\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidie...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg",
+    "og:type": "website",
+    "og:title": "72/26 Merzenich - Valdersweg | Freiwillige Feuerwehr Merzenich",
+    "og:description": "\r\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidie...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/Auto/Weste%20HLF.jpg"
+   },
+   "text": "72/26 Merzenich - Valdersweg\nTH-VU / TH-VU\n19.06.2026 / 17:30 Uhr\nDie Feuerwehr wurde am Freitag zu einem Verkehrsunfall im Kreuzungsbereich der B264 und des Valderswegs alarmiert. Dort waren drei Pkw miteinander kollidiert. Glücklicherweise wurde bei dem Unfall niemand verletzt.\nDie Einsatzkräfte sicherten die Unfallstelle ab und stellten den Brandschutz sicher. Zudem traten aus den beschädigten Fahrzeugen Betriebsstoffe aus, die sich auf einer Fläche von etwa zehn Quadratmetern auf der Fahrbahn verteilten.\nNach Rücksprache mit der Polizei wurde eine Spezialfirma zur fachgerechten Beseitigung der Verunreinigung angefordert.\nNachdem die Gefahrenstelle gesichert und die weiteren Maßnahmen abgestimmt waren, konnte die Feuerwehr ihren Einsatz beenden und die Einsatzstelle an die Polizei übergeben.\nEingesetzte Kräfte\nLöschgruppe Merzenich\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7226-merzenich-valdersweg#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
-   "abgerufen": "2026-10-26T11:03:04.388Z",
-   "status": "fehler: ECONNREFUSED"
+   "abgerufen": "2026-10-26T20:29:10.090Z",
+   "status": 200,
+   "titel": "71/26 Golzheim - Buirer Straße | Einsätze | Freiwillige Feuerwehr Merzenich",
+   "meta": {
+    "description": "Kurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\r\nEine ältere Person hatte den Hausnotruf ausgelö...",
+    "keywords": "merzenich,feuerwehr,feuerwehr merzenich,gemeinde merzenich,gemeindefeuerwehr merzenich,fwmrz,merzenich unfall,unfall,feuer,merzenich feuer,brand,merzenich brand,jugendfeuerwehr,jugendfeuerwehr merzenich,jf,jf merzenich,spühlmobil,spühlmobil merzenich,kreis düren,düren",
+    "og:url": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse",
+    "og:type": "website",
+    "og:title": "71/26 Golzheim - Buirer Straße | Freiwillige Feuerwehr Merzenich",
+    "og:description": "Kurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\r\nEine ältere Person hatte den Hausnotruf ausgelö...",
+    "og:image": "https://feuerwehr-merzenich.de/uploads/Beispielbilder/T%C3%BCr%C3%B6ffnung/tuer01.jpg"
+   },
+   "text": "71/26 Golzheim - Buirer Straße\nPerson hinter Tür / Eingeschlossene Person\n14.06.2026 / 00:29 Uhr\nKurz nach Mitternacht wurde die Löschgruppe Golzheim und Girbelsrath zu einer \"Person hinter Tür\" alarmiert.\nEine ältere Person hatte den Hausnotruf ausgelöst, der bei einer Hilfsorganisation aufläuft. Sie klagte über Schmerzen, sowie Schwindel und gab an selbst nicht die Haustüre öffnen zu können, worauf der Mitarbeiter des Hausnotrufdienst über die 112 einen Notruf absetzte.\nDurch die Leitstelle wurden der Rettungsdienst und die Feuerwehr alarmiert.\nVon den Einsatzkräften vor Ort wurde die Haustüre geöffnet und der Patient dem Rettungsdienst übergeben.\nEingesetzte Kräfte\nLöschgruppe Girbelsrath\nLöschgruppe Golzheim\nRettungsdienst Kreis Düren",
+   "links": [],
+   "bilder": [
+    {
+     "src": "https://feuerwehr-merzenich.de/einsaetze/7126-golzheim-buirer-strasse#",
+     "alt": "#",
+     "title": ""
+    }
+   ]
   },
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/7026-merzenich-im-ehrenfeld",
-   "abgerufen": "2026-10-26T11:03:06.188Z",
+   "abgerufen": "2026-10-26T20:29:12.036Z",
    "status": 200,
    "titel": "70/26 Merzenich - Im Ehrenfeld | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3292,7 +3450,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6926-merzenich-lindenstrasse",
-   "abgerufen": "2026-10-26T11:03:08.341Z",
+   "abgerufen": "2026-10-26T20:29:13.777Z",
    "status": 200,
    "titel": "69/26 Merzenich - Lindenstraße | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
@@ -3317,7 +3475,7 @@
   {
    "url": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg",
    "endUrl": "https://feuerwehr-merzenich.de/einsaetze/6826-merzenich-steinweg",
-   "abgerufen": "2026-10-26T11:03:10.074Z",
+   "abgerufen": "2026-10-26T20:29:15.522Z",
    "status": 200,
    "titel": "68/26 Merzenich - Steinweg | Einsätze | Freiwillige Feuerwehr Merzenich",
    "meta": {
