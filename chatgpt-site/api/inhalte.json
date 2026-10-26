@@ -1,14 +1,14 @@
 {
- "generated": "2026-10-26T17:40:00+01:00",
- "anzahl": 215,
+ "generated": "2026-10-26T18:30:00+01:00",
+ "anzahl": 216,
  "bestand": {
-  "gesamt": 215,
+  "gesamt": 216,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 71,
    "sport": 33,
    "rathaus": 26,
-   "leben": 48,
+   "leben": 49,
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 148,
+   "merzenich": 149,
    "golzheim": 24,
    "girbelsrath": 23,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 215,
+    "anzahl": 216,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 48,
+    "anzahl": 49,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 148,
+    "anzahl": 149,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,52 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
+   "url": "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
+   "titel": "Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt",
+   "teaser": "Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.",
+   "kicker": "Energie · Netzausbau",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-10-26T18:30:00+01:00",
+   "aktualisiert": "2026-10-26T18:30:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "netzausbau",
+     "label": "Netzausbau"
+    },
+    {
+     "slug": "amprion",
+     "label": "Amprion"
+    },
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    },
+    {
+     "slug": "rheinisches-revier",
+     "label": "Rheinisches Revier"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
+    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
+    "alt": "St. Laurentius in Merzenich von Südosten",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
    "url": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
@@ -8956,7 +9002,7 @@
   }
  ],
  "startseitenMotive": {
-  "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
+  "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 1,
   "editorial-pools/aktuell/aktuell-02-3d716def0b": 2,
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
@@ -8982,7 +9028,7 @@
   "places/golzheim-aachener-strasse": 1,
   "places/merzenich": 2,
   "places/merzenich-bergstrasse": 2,
-  "places/merzenich-st-laurentius": 1,
+  "places/merzenich-st-laurentius": 2,
   "places/morschenich": 1,
   "responsive/0f626136429ef9": 1,
   "responsive/37c79d0e603f3a": 1,

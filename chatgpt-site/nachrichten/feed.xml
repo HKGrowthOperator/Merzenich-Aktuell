@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 26 Oct 2026 16:40:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 26 Oct 2026 17:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</guid>
+<pubDate>Mon, 26 Oct 2026 17:30:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
+</item>
 <item>
 <title>KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-07-d923824479.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Ehemalige Merzenicher Windmühle</media:description></media:content>
-</item>
-<item>
-<title>TV 1910 Girbelsrath bietet neu freitags Hallenbosseln in der Maarhalle an</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/tv-girbelsrath-hallenbosseln-freitags-maarhalle-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/tv-girbelsrath-hallenbosseln-freitags-maarhalle-2026/</guid>
-<pubDate>Fri, 16 Oct 2026 07:24:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Das Zielwurfspiel aus Buchenholz-Bosseln ist aus dem Eisstockschießen entstanden. Die Gruppe ist im Aufbau, der Verein bittet um Voranmeldung.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-08-c10997cd29.jpg" medium="image"><media:credit>TUBS / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Sporthalle</media:description></media:content>
 </item>
 </channel>
 </rss>

@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 26 Oct 2026 16:40:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 26 Oct 2026 17:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</guid>
+<pubDate>Mon, 26 Oct 2026 17:30:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
+</item>
 <item>
 <title>Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Gemeinde Merzenich sucht für die Kita Bärenstark eine staatlich anerkannte pädagogische Fachkraft. Die Stelle ist bis 31. Juli 2027 befristet; 30 Stunden oder Vollzeit sind möglich.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
-</item>
-<item>
-<title>Herbstlaub ab 12. Oktober am Bauhof Girbelsrath abgeben – Standort geändert</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/herbstlaub-2026-abgabe-bauhof-girbelsrath/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/herbstlaub-2026-abgabe-bauhof-girbelsrath/</guid>
-<pubDate>Wed, 30 Sep 2026 08:46:00 GMT</pubDate>
-<category>Leben</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Gemeinde nimmt Herbstlaub montags von 13 bis 17 Uhr in Girbelsrath an. Der bisherige Standort Jahnstraße entfällt. Dazu stehen mehr als 20 Laubkörbe bereit.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/leben/leben-21-9b5bb6e2fe.jpg" medium="image"><media:credit>Dellex / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Dorfplatz</media:description></media:content>
 </item>
 </channel>
 </rss>
