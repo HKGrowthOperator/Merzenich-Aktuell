@@ -8,8 +8,9 @@
  * mit Quellenlink.
  *
  *   feuerwehr.json  Einsatzliste der Freiwilligen Feuerwehr Merzenich + Einsatzseiten
- *   polizei.json    Presseportal Blaulicht, Suche nach Ort (Merzenich + Ortsteile)
- *                   + Pressemitteilungen (Text, Bild-URLs mit Bildhinweis)
+ *   polizei.json    Presseportal Blaulicht, Suche nach Ort (Merzenich + Ortsteile) und
+ *                   Gesamtliste der Polizei Dueren (Umkreis) + Pressemitteilungen
+ *                   (Text, Bild-URLs mit Bildhinweis)
  *   gemeinde.json   "Aktuelles" der Gemeinde Merzenich + Beitraege
  *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
  *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen)
@@ -124,8 +125,12 @@ const QUELLEN = {
     listen: ['https://feuerwehr-merzenich.de/einsaetze', ...Array.from({ length: 8 }, (_, i) => `https://feuerwehr-merzenich.de/einsaetze?page=${i + 1}`)],
     detail: /^https:\/\/(www\.)?feuerwehr-merzenich\.de\/einsaetze\/[^?#/]+/, max: 90,
   }),
+  // Ortslisten (Merzenich + Ortsteile) zuerst: ihre Einzelmeldungen haben Vorrang bei
+  // den hoechstens 60 Unterseiten. Danach die Gesamtliste der Polizei Dueren (nr/8),
+  // aus der deploy/automatik-umkreis.mjs die Eintraege fuer den Block "Direkter
+  // Umkreis" ableitet (26.10.2026); vorher suchte jeder Redaktionslauf dort von Hand.
   polizei: () => listeMitDetails({
-    listen: ORTE.map((o) => `https://www.presseportal.de/blaulicht/r/${encodeURIComponent(o)}`),
+    listen: [...ORTE.map((o) => `https://www.presseportal.de/blaulicht/r/${encodeURIComponent(o)}`), 'https://www.presseportal.de/blaulicht/nr/8'],
     detail: /^https:\/\/www\.presseportal\.de\/blaulicht\/pm\/\d+\/\d+/, max: 60,
   }),
   gemeinde: () => listeMitDetails({

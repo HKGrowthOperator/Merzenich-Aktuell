@@ -17,11 +17,11 @@ Stand: 26.10.2026. Gilt für jeden Lauf der KI-Redaktion (Claude), zweimal tägl
 
 ## Ablauf je Lauf
 
-1. `git fetch`/`merge origin/main`; `PROJECT.md`, `docs/redaktion/README.md`, `latest.md`, `register.json` und die jüngsten Dossiers lesen.
-2. Rohdaten `imports/quellen/*.json` plus eigene Live-Abrufe (Heimat-Info, Ratsinformationssystem, Amtsblatt-PDF, Kreis Düren, Polizei Düren, Feuerwehr, Neuland Hambach, Bezirksregierung, Vereine, fupa/FUSSBALL.DE/click-TT, Autobahn GmbH, go.Rheinland). Alle zwölf Ressorts, Kernorte zuerst.
+1. `git fetch`/`merge origin/main`; `PROJECT.md`, `docs/redaktion/README.md`, `latest.md` und die jüngsten Dossiers lesen. Statt das ganze Register zu lesen: `node deploy/register-pflege.mjs` ausführen und `docs/redaktion/offen.md` lesen (offene Themen nach Priorität, je Thema der mögliche Bestand als Dublettenwarnung); `register.json` nur für die Themen öffnen, die bearbeitet werden.
+2. Umkreis-Einträge der Polizei Düren legt die Automatik an (`deploy/automatik-umkreis.mjs` nach jedem Quellenabruf); im Lauf nur noch Polizeimeldungen mit Merzenich oder Ortsteil im Vorspann als eigene Meldung prüfen (Zusammenfassung des Workflows „Meldungen-Automatik“ oder `node deploy/automatik-umkreis.mjs --trocken`). Rohdaten `imports/quellen/*.json` plus eigene Live-Abrufe (Heimat-Info, Ratsinformationssystem, Amtsblatt-PDF, Kreis Düren, Polizei Düren, Feuerwehr, Neuland Hambach, Bezirksregierung, Vereine, fupa/FUSSBALL.DE/click-TT, Autobahn GmbH, go.Rheinland). Alle zwölf Ressorts, Kernorte zuerst.
 3. Meldungen, Termine und Umkreis als neue JSON-Pakete; bestehende Artikel bei Updates ergänzen; neue Bildklassen nur in `deploy/bildklassen.json`.
 4. `node deploy/kette.mjs` zweimal, `node deploy/kette.mjs --check`, `node qa/pruefung.mjs` (0 Fehler), dann Commit und Push auf `main`.
-5. Dossier unter `docs/redaktion/dossiers/`, `latest.md` und `register.json` nachziehen (Artikelpfad, Commit, Status `zur_abnahme`); zweiter Commit.
+5. Dossier unter `docs/redaktion/dossiers/`, `latest.md` und `register.json` nachziehen (Artikelpfad, Commit, Status `zur_abnahme`); danach `node deploy/register-pflege.mjs` (schreibt `offen.md` neu, prüft Pfade und Pflichtfelder); zweiter Commit.
 6. Abgleich anstoßen (`https://merzenich-aktuell.de/?ma_api=abgleich-anstoss`, danach `wp-cron.php`); Freigaben im Backend prüfen, sobald ein Zugang hinterlegt ist. Veröffentlicht wird nur von der Redaktion im Backend.
 7. Kurzbericht an die Redaktion: Zahl der neuen Meldungen, Updates, Termine, offene Fragen, Quellenlücken, Commit.
 

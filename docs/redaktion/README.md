@@ -9,7 +9,7 @@ Alle verfügbaren vollständigen Dossiers vom 13.–25.10. stehen im [Archiv](ar
 ## Einstieg bei jeder Redaktionsaufgabe
 
 1. PROJECT.md und docs/REDAKTIONELLER-STANDARD-V2.md lesen; git status prüfen und aktuelle main-Änderungen ohne Überschreiben fremder Arbeit übernehmen.
-2. latest.md und register.json lesen, danach die relevanten vollständigen Dossiers. Quellenrohstände unter imports/quellen/ berücksichtigen; Abrufdatum und HTTP-Status prüfen. Ein Rohabruf ersetzt weder Detailprüfung noch redaktionelle Recherche.
+2. latest.md und [offen.md](offen.md) lesen (Lagebild aus dem Register, erzeugt von `node deploy/register-pflege.mjs`; nennt je offenem Thema den möglichen Bestand), register.json nur für die bearbeiteten Themen, danach die relevanten vollständigen Dossiers. Quellenrohstände unter imports/quellen/ berücksichtigen; Abrufdatum und HTTP-Status prüfen. Ein Rohabruf ersetzt weder Detailprüfung noch redaktionelle Recherche.
 3. Bestehende Artikel, Termine und Quellenpakete unter inhalte/ sowie die aktuellen Generatoren unter deploy/ suchen. Nicht allein auf das Register verlassen: Es protokolliert ab diesem Übergabestand und ist noch kein vollständiges Artikelinventar.
 4. Themen anhand stabiler IDs, kanonischer Quellen-URLs, Ereignis und Ort zusammenführen. Neue Fakten als Update einer bestehenden Meldung behandeln, wenn sie denselben Vorgang betreffen. Kein zweiter Artikel allein wegen eines neuen Recherchelaufs.
 

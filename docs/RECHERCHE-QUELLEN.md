@@ -18,7 +18,7 @@ Quellen (Netzrichtlinie, HTTP 403). GitHub Actions erreicht sie. Deshalb:
 | Quelle | Datei | Stand 24.09. |
 |---|---|---|
 | Freiwillige Feuerwehr Merzenich, Einsätze | `feuerwehr.json` | 18 Einsätze (109–127/26) |
-| Presseportal, Polizei Düren, Suche nach Ort (Merzenich und Ortsteile) | `polizei.json` | 38 Mitteilungen 2026 |
+| Presseportal, Polizei Düren, Suche nach Ort (Merzenich und Ortsteile) und Gesamtliste der Polizei Düren (`blaulicht/nr/8`, seit 26.10.) | `polizei.json` | 38 Mitteilungen 2026 |
 | Gemeinde Merzenich, Aktuelles | `gemeinde.json` | erster Lauf: 302, Abruf mit Cookies seit 24.09. |
 | Grundschulen (KGS Merzenich, KGS Golzheim) | `schulen.json` | erster Lauf: 302, wie oben |
 | Jobbörse der Bundesagentur, 25 km um Merzenich | `jobs.json` | erster Lauf: 403, Fehlertext wird jetzt mitgeschrieben |
@@ -54,6 +54,32 @@ Quellen (Netzrichtlinie, HTTP 403). GitHub Actions erreicht sie. Deshalb:
 `gemeinde.json` enthält keine Daten (Datum) und keine Einzelmeldungen.
 Datierte Gemeinde-Beiträge kommen nur über Heimat-Info; sie werden nicht
 automatisch übernommen, sondern stehen in der Zusammenfassung des Laufs.
+
+## Automatik Umkreis (seit 26.10.2026)
+
+`deploy/automatik-umkreis.mjs` läuft im selben Workflow wie die Feuerwehr-Automatik
+(`.github/workflows/meldungen-automatik.yml`, auch von Hand mit „trocken“).
+
+- **Quelle:** die Gesamtliste der Polizei Düren im Presseportal (`polizei.json`,
+  `blaulicht/nr/8`) und die Ortslisten. Jede Listenzeile liefert Datum, Dienststelle,
+  Schlagzeile und den Vorspann, der mit dem Ort beginnt („Niederzier (ots) - …“).
+- **Ergebnis:** Einträge für den Block „Direkter Umkreis“ der Startseite
+  (`inhalte/umkreis/<datum>-polizei-automatik.json`, Schema wie `deploy/umkreis.mjs`):
+  Ort (Düren, Niederzier, Nörvenich, Elsdorf, Kerpen oder „Kreis Düren“ mit dem Ort
+  vor der Schlagzeile), amtliche Schlagzeile ohne „POL-DN:“, Datum, Link zur
+  Einzelmeldung. Kein eigener Text, kein Vorspann, keine Namen.
+- **Nur Umkreis:** Meldungen mit Merzenich, Golzheim, Girbelsrath, Morschenich oder
+  Bürgewald im Vorspann werden nie angelegt; sie stehen in der Zusammenfassung des
+  Laufs für den Redaktionslauf (eigene Meldung mit Primärquelle).
+- **Nur Neues:** URL in keiner Datei unter `inhalte/umkreis/`, nicht als Quelle einer
+  Meldung, nicht in `deploy/automatik-stand.json`; höchstens drei Tage alt.
+- **Übersprungen:** andere Dienststelle (etwa Polizei Aachen in einer Ortsliste),
+  Ort außerhalb des Kreises Düren, kein Vorspann, kein Link.
+- **Sichtbarkeit:** Der Umkreis-Block erscheint auf merzenich-aktuell.de ohne
+  Freigabe (das Theme liest die Startseite stündlich aus dem Repository). Darum
+  nur amtliche Schlagzeile und Link. Ein unerwünschter Eintrag wird in der JSON-Datei
+  gelöscht; die URL bleibt im Stand und kommt nicht wieder.
+- Test mit echten Rohdaten: `node qa/automatik-umkreis-test.mjs`.
 
 ## Regeln für Meldungen
 

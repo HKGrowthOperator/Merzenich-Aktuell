@@ -97,10 +97,14 @@ jobs:
           PY
 
       - name: Commit generated delivery state
+        # Die Kette schreibt auch ausserhalb von chatgpt-site/ (Plugin-Datenkopie
+        # bildpools.json, Import-Datei, Pruefsummen, Theme-Vorlagen, Sitemap-Stand).
+        # Nur chatgpt-site zu committen liess main mit rotem `kette --check` zurueck
+        # (26.10.2026); dieselbe Liste wie in meldungen-automatik.yml.
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A chatgpt-site
+          git add -A chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
           if git diff --cached --quiet; then
             echo 'Nothing to materialize.'
             exit 0
