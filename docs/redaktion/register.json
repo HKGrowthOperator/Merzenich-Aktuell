@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-26-abends.md",
-  "source_check_window": "26.10.2026 abends ab 18:04 Europe/Berlin; konkrete Prüftiefe je Karte",
+  "latest_dossier": "dossiers/2026-10-27-morgens.md",
+  "source_check_window": "27.10.2026 morgens ab 07:56 Europe/Berlin; tatsächliche Prüftiefe pro Karte",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -37,11 +37,11 @@
       "id": "MA-SC3-GEREONSWEILER-2510",
       "priority": "P1",
       "location_section": "Merzenich · Fußball",
-      "change_type": "Nachfassen / gesperrt",
+      "change_type": "Nachfassen",
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "neu",
+      "workflow_status": "gesperrt",
       "last_checked_at": "2026-10-26 abends Europe/Berlin",
       "article_path": null,
       "article_id": null,
@@ -75,12 +75,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-SC3-GEREONSWEILER-2510",
           "check_scope": "Spiel- und Mannschaftsseite gelesen; der Teamkopf liefert einen alten Septemberstand"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-SC3-GEREONSWEILER-2510",
+          "check_scope": "Einzelspielseite erneut gelesen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "27.10.2026",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "27.10. abends",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Klartext-Endstand und Spielbericht beschaffen; erst danach Tabelle und nächstes Spiel ergänzen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -146,17 +152,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-SC3-GEREONSWEILER-2510",
+          "source_check_scope": "Einzelspielseite erneut gelesen",
+          "open_questions": "Klartext-Datenbericht oder bestätigte alternative Spielquelle? Nächstes Einzelspiel?",
+          "refresh": "27.10. abends",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T0",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Spiel- und Mannschaftsseite gelesen; der Teamkopf liefert einen alten Septemberstand",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Einzelspielseite erneut gelesen",
       "latest_research_review": {
         "text": "T0",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -369,9 +395,9 @@
     },
     {
       "id": "MA-MARTINSZUEGE-2026",
-      "priority": "P2",
-      "location_section": "Alle Ortsteile · Termine/Brauchtum",
-      "change_type": "Unverändert / Terminrefresh",
+      "priority": "P1",
+      "location_section": "Morschenich / Golzheim / übrige Ortsteile · Brauchtum/Service",
+      "change_type": "Terminrefresh, unveränderter Vorgang",
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
@@ -449,12 +475,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-MARTINSZUEGE-2026",
           "check_scope": "Artikel- und Terminbestand verglichen; abends kein erneuter Gemeindedetailabruf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-MARTINSZUEGE-2026",
+          "check_scope": "Gemeinde-Detail vollständig gelesen, keine Plakat-Sichtprüfung"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
-      "refresh_note": "27.10.2026",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "27.10. nach 19 Uhr; vor den nächsten Ortsfenstern",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Laufwege, Absagen, kurzfristige Verkehrsmaßnahmen. Unverändert, ausdrücklich keine Neumeldung. Artikel und Termine in inhalte/*/2026-10-16-amtsblatt-11.json vorhanden.",
       "research_sources": [
         {
@@ -520,17 +552,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Terminrefresh, unveränderter Vorgang",
+          "text_status": "T1",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-MARTINSZUEGE-2026",
+          "source_check_scope": "Gemeinde-Detail vollständig gelesen, keine Plakat-Sichtprüfung",
+          "open_questions": "Noch Bons erhältlich? Zusätzliche Ausgabestellen oder Verlängerung?",
+          "refresh": "27.10. nach 19 Uhr; vor den nächsten Ortsfenstern",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Artikel- und Terminbestand verglichen; abends kein erneuter Gemeindedetailabruf",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_text_status": "T1",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Gemeinde-Detail vollständig gelesen, keine Plakat-Sichtprüfung",
       "latest_research_review": {
-        "text": "T1-B",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -627,10 +679,10 @@
     },
     {
       "id": "MA-PAPIERTONNE-2026",
-      "priority": "P1",
-      "location_section": "Gemeinde/Umwelt",
-      "change_type": "Service",
-      "text_status": "T1",
+      "priority": "P2",
+      "location_section": "Gemeindegebiet · Umwelt/Abfall",
+      "change_type": "Bestands-/Sperrprüfung",
+      "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "gesperrt",
@@ -684,6 +736,53 @@
           "date": "2026-10-26",
           "dossier": "dossiers/2026-10-26-claude-nachlauf.md",
           "heading": "Geprüft im Claude-Nachlauf 26.10."
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-PAPIERTONNE-2026",
+          "check_scope": "Gemeinde-Detail vollständig gelesen, mit Artikel vom 15.10. verglichen"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Gemeinde-Detail vollständig gelesen, mit Artikel vom 15.10. verglichen",
+      "refresh_note": "Nur bei neuer Satzung/Entsorgerinformation",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Bestands-/Sperrprüfung",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-PAPIERTONNE-2026",
+          "source_check_scope": "Gemeinde-Detail vollständig gelesen, mit Artikel vom 15.10. verglichen",
+          "open_questions": "Gibt es eine gesonderte amtliche Quelle für Behälteränderungen?",
+          "refresh": "Nur bei neuer Satzung/Entsorgerinformation",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/papiertonne-gemeinde-merzenich.php",
+          "publisher": "Gemeinde Merzenich / Schönmackers",
+          "published": "undatiert; vorhandener Aufruf 13.10.2026"
         }
       ]
     },
@@ -1075,10 +1174,10 @@
     },
     {
       "id": "MA-FBL3-JOB-1511",
-      "priority": "P1",
-      "location_section": "Merzenich · Wirtschaft/Arbeitsplätze/Rathaus",
-      "change_type": "Update / Beleglücke geschlossen",
-      "text_status": "T1",
+      "priority": "P2",
+      "location_section": "Merzenich · Wirtschaft/Rathaus",
+      "change_type": "Unveränderter Bestand mit Listungsrefresh",
+      "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "zur_abnahme",
@@ -1110,12 +1209,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-FBL3-JOB-1511",
           "check_scope": "Aktuelle Listung, dreiseitiges Original-PDF und datierter Gemeindeaufruf gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-FBL3-JOB-1511",
+          "check_scope": "Aktuelle Liste gelesen; dreiseitiges Original heute nicht erneut gelesen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "09.11.2026; vor Fristende",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "09.11.; vor Übernahme Original erneut lesen",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Noch offen? Frist, Qualifikation, Beschäftigungsumfang, Vergütung und offizieller Bewerbungslink aktuell? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -1191,17 +1296,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Unveränderter Bestand mit Listungsrefresh",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-FBL3-JOB-1511",
+          "source_check_scope": "Aktuelle Liste gelesen; dreiseitiges Original heute nicht erneut gelesen",
+          "open_questions": "Änderungen oder Besetzung seit gestern?",
+          "refresh": "09.11.; vor Übernahme Original erneut lesen",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Aktuelle Listung, dreiseitiges Original-PDF und datierter Gemeindeaufruf gelesen",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_text_status": "T1-B",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Aktuelle Liste gelesen; dreiseitiges Original heute nicht erneut gelesen",
       "latest_research_review": {
-        "text": "T1",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "text": "T1-B",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       },
       "matched_existing_articles": [
         {
@@ -1496,9 +1621,9 @@
     {
       "id": "MA-ADVENTFENSTER-2026",
       "priority": "P2",
-      "location_section": "Gemeindegebiet/Kirchen/Vereine",
-      "change_type": "Nachfassen / gesperrt",
-      "text_status": "T0",
+      "location_section": "Gemeindegebiet · Kirchen/Ehrenamt",
+      "change_type": "Hintergrund / bestätigter älterer Aufruf",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
@@ -1564,14 +1689,26 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-ADVENTFENSTER-2026",
           "check_scope": "PDF S.12 gelesen; Artikel16.10. abgeglichen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-ADVENTFENSTER-2026",
+          "check_scope": "PDF S.12 gelesen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "repository_only_not_rechecked",
-      "refresh_note": "30.10.2026",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "Anfang November",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Welche Tage sind noch frei, wer darf anmelden, bis wann und bei welchem Pfarrbüro? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
-      "research_sources": [],
+      "research_sources": [
+        {
+          "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+          "publisher": "Katholische Kirchengemeinden Merzenich/Niederzier",
+          "published": "Ausgabe 08/26, Herbst 2026"
+        }
+      ],
       "research_review": {
         "text": "T0",
         "image": {
@@ -1607,12 +1744,38 @@
             "duplicate": "keine_Artikelbildzuordnung_geprueft",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Hintergrund / bestätigter älterer Aufruf",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-ADVENTFENSTER-2026",
+          "source_check_scope": "PDF S.12 gelesen",
+          "open_questions": "Welche Termine sind noch offen? Gibt es einen fertigen Kalender?",
+          "refresh": "Anfang November",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-morgens.md",
-      "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
-      "latest_research_scope": "PDF S.12 gelesen; Artikel16.10. abgeglichen"
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_text_status": "T1",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "PDF S.12 gelesen",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     },
     {
       "id": "MA-MODELLBAHN-2111",
@@ -1949,7 +2112,7 @@
       "id": "MA-SONNTAGSSPORT-ERG-2510",
       "priority": "P2",
       "location_section": "Alle Kernorte · Fußball",
-      "change_type": "Ergebnisrunde",
+      "change_type": "Unveränderter Ergebnisrefresh",
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
@@ -1981,6 +2144,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-SONNTAGSSPORT-ERG-2510",
           "check_scope": "Vier Mannschaftsseiten und vier Klartextberichte gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-SONNTAGSSPORT-ERG-2510",
+          "check_scope": "Vier Teamseiten mit aktuellem Kopf und vier Klartextberichte gelesen"
         }
       ],
       "research_notes": "Abendnachlauf: drei Ergebnisse in bestehenden Einzel-IDs aufgelöst; SC III offen. Sammelauftrag nicht separat als Nachricht zählen.",
@@ -2036,12 +2205,26 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Unveränderter Ergebnisrefresh",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-SONNTAGSSPORT-ERG-2510",
+          "source_check_scope": "Vier Teamseiten mit aktuellem Kopf und vier Klartextberichte gelesen",
+          "open_questions": "Verlegungen? Vollständige Ligatabelle zum selben Stichtag?",
+          "refresh": "Vor 08.11.; bei Verlegung früher",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Vier Mannschaftsseiten und vier Klartextberichte gelesen",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Vier Teamseiten mit aktuellem Kopf und vier Klartextberichte gelesen",
       "refresh_note": "Vor 08.11.; bei Verlegung früher",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
@@ -2049,14 +2232,26 @@
           "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032G8QJE1O000000VS5489C0VU75ERBE",
           "publisher": "FUSSBALL.DE / DFB",
           "published": "Datenberichte 25./26.10.2026; Mannschaftsseiten laufend"
+        },
+        {
+          "url": "https://www.fussball.de/",
+          "publisher": "DFB / FUSSBALL.DE",
+          "published": "Berichte 25./26.10.; laufende Teamseiten"
         }
       ],
       "latest_research_review": {
         "text": "T1",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
-      }
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     },
     {
       "id": "MA-HAMBACHSEE-PFV",
@@ -2213,8 +2408,8 @@
     {
       "id": "MA-BUERGEWALD-VERGABE",
       "priority": "P1",
-      "location_section": "Bürgewald / Hambach · Strukturwandel/Immobilien",
-      "change_type": "Quellenkorrektur / Hintergrund",
+      "location_section": "Bürgewald · Strukturwandel/Immobilien",
+      "change_type": "Nachfassen / Hintergrund",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
@@ -2307,12 +2502,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-BUERGEWALD-VERGABE",
           "check_scope": "Repo-Bestand und Neuland-Übersicht gelesen; keine neue Masterplanvollfassung erschlossen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-BUERGEWALD-VERGABE",
+          "check_scope": "Repo-Bestand und neue Neuland-Projektquellen abgeglichen; kein frischer vollständiger Bürgewald-Masterplanabruf"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
-      "refresh_note": "28.10.2026",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "28.10.",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Verbindliche Endfassung, Ratsbeschluss, Budget, Umsetzung und Vergabe. Freigabebedingung: Dokumentensatz vollständig gegenprüfen. Bestehende Bürgewald-ID fortgeführt. Gemeindeteaser reicht für Aktualität nicht; keine neue Vergabe behaupten.",
       "research_sources": [
         {
@@ -2383,24 +2584,44 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen / Hintergrund",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-BUERGEWALD-VERGABE",
+          "source_check_scope": "Repo-Bestand und neue Neuland-Projektquellen abgeglichen; kein frischer vollständiger Bürgewald-Masterplanabruf",
+          "open_questions": "Welche Fassung ist beschlossen, welche Vergabe läuft und wann Beteiligung?",
+          "refresh": "28.10.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Repo-Bestand und Neuland-Übersicht gelesen; keine neue Masterplanvollfassung erschlossen",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Repo-Bestand und neue Neuland-Projektquellen abgeglichen; kein frischer vollständiger Bürgewald-Masterplanabruf",
       "latest_research_review": {
         "text": "T2",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
       "id": "MA-HGAS-OKT",
       "priority": "P1",
       "location_section": "Merzenich / Golzheim / Girbelsrath · Energie",
-      "change_type": "Nachfassen / gesperrt",
+      "change_type": "Nachfassen, Konflikt unverändert",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
@@ -2493,12 +2714,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-HGAS-OKT",
           "check_scope": "Fließtext und Ortstabelle erneut gelesen; ältere Originalnews nicht zugänglich"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-HGAS-OKT",
+          "check_scope": "Fließtext und Ortstabelle erneut gelesen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor jedem Artikelupdate",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "Vor Artikelupdate",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Welche Abschnitte, Terminschreiben, Kontakt- und Störungswege gelten aktuell? Betreiberoriginal und individuelle Mitteilungen nicht vermischen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -2564,24 +2791,44 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen, Konflikt unverändert",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-HGAS-OKT",
+          "source_check_scope": "Fließtext und Ortstabelle erneut gelesen",
+          "open_questions": "Anpassung vor eigentlichem Gaswechsel? Welcher Bezirk und welcher individuelle Termin gilt?",
+          "refresh": "Vor Artikelupdate",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Fließtext und Ortstabelle erneut gelesen; ältere Originalnews nicht zugänglich",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Fließtext und Ortstabelle erneut gelesen",
       "latest_research_review": {
         "text": "T2",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
       "id": "MA-RIS-OKT25",
       "priority": "P1",
       "location_section": "Merzenich · Rathaus/Rat/Jugend",
-      "change_type": "Nachfassen / gesperrt",
+      "change_type": "Nachfassen",
       "text_status": "T0",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
@@ -2619,12 +2866,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-RIS-OKT25",
           "check_scope": "Drei Gremienseiten, ihre Kalenderansichten und die Tagesordnung vom 15.10. gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-RIS-OKT25",
+          "check_scope": "Gremien Jugend/RPA/Struktur und jeweilige Kalender geöffnet"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "27.10.2026",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "28.10.",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Welche neuen öffentlichen Tagesordnungen und Anlagen? Beschluss, Vorlage und Exportdatum auseinanderhalten. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -2636,6 +2889,11 @@
           "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeL8fMQS3RZ0qpbtgmNf5jg",
           "publisher": "Gemeinde Merzenich / RIS",
           "published": "Einladung exportiert 02.10.; Vorlagen exportiert 15.10.2026"
+        },
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/",
+          "publisher": "Gemeinde Merzenich / RIS",
+          "published": "Systemaktualisierung 26.10.16:10, kein Dokumentdatum"
         }
       ],
       "research_review": {
@@ -2695,17 +2953,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-RIS-OKT25",
+          "source_check_scope": "Gremien Jugend/RPA/Struktur und jeweilige Kalender geöffnet",
+          "open_questions": "Öffentliche Einladungen/ICS/Niederschrift 15.10.? Uhrzeiten und Zugang?",
+          "refresh": "28.10.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T0",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Drei Gremienseiten, ihre Kalenderansichten und die Tagesordnung vom 15.10. gelesen",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Gremien Jugend/RPA/Struktur und jeweilige Kalender geöffnet",
       "latest_research_review": {
         "text": "T0",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -2797,8 +3075,8 @@
     {
       "id": "MA-TTC-OKT25",
       "priority": "P2",
-      "location_section": "Merzenich · Tischtennis/weitere Sportarten",
-      "change_type": "Update / Datenlücke geschlossen",
+      "location_section": "Merzenich · Tischtennis",
+      "change_type": "Teilrefresh / Nachfassen",
       "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
@@ -2836,12 +3114,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "Vereinsübersicht gelesen; click-TT-Mannschaftsporträt nicht zugänglich"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-TTC-OKT25",
+          "check_scope": "Vereinsübersicht frisch gelesen; keine neue auswertbare Verbands-Ergebnis-/Tabellenprüfung"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "29.10. vor Spielbeginn",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "29.10. vor Spiel",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Weitere TTC-Mannschaften separat abrufen; Punktwertungsmodell nicht mit Fußball vergleichen. Morgendossier T0 teilweise aufgelöst; nur erste Mannschaft verifiziert. Historische TTC-Wochenblöcke bleiben getrennt.",
       "research_sources": [
         {
@@ -2912,17 +3196,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Teilrefresh / Nachfassen",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-TTC-OKT25",
+          "source_check_scope": "Vereinsübersicht frisch gelesen; keine neue auswertbare Verbands-Ergebnis-/Tabellenprüfung",
+          "open_questions": "Letzte Spiele aller Teams und Verlegungen? andro-Cup am 31.10. im Veranstalteroriginal bestätigt?",
+          "refresh": "29.10. vor Spiel",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Vereinsübersicht gelesen; click-TT-Mannschaftsporträt nicht zugänglich",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Vereinsübersicht frisch gelesen; keine neue auswertbare Verbands-Ergebnis-/Tabellenprüfung",
       "latest_research_review": {
         "text": "T1-B",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -2954,10 +3258,10 @@
     },
     {
       "id": "MA-NAHVERKEHRSPLAN",
-      "priority": "P1",
-      "location_section": "Merzenich / Kreis Düren · ÖPNV, Rathaus",
-      "change_type": "Update / neu erschlossener älterer Verfahrensstand",
-      "text_status": "T1",
+      "priority": "P2",
+      "location_section": "Merzenich / Kreis Düren · ÖPNV",
+      "change_type": "Unveränderter Recherchebestand",
+      "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "zur_abnahme",
@@ -3044,12 +3348,18 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-NAHVERKEHRSPLAN",
           "check_scope": "Vierseitige öffentliche Vorlage, Kreis-Original und Projektseite gelesen; keine nichtöffentliche Anlage abgerufen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-NAHVERKEHRSPLAN",
+          "check_scope": "Gestrigen vollständigen Entwurf und Register gelesen; M136 heute nicht neu abgerufen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "27.10.2026; nach dem November-Workshop",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "Nach November-Workshop; vor Übernahme Originalrefresh",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Neue Beteiligungsphase? Aktueller Beschlussweg, Linienänderungen und Inkrafttreten? Kreisplan und aktuelle Bekanntmachung lesen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -3071,6 +3381,11 @@
           "url": "https://mk.mobigator.de/kreis-dueren/",
           "publisher": "Beauftragte Projekthomepage büro stadtVerkehr/mobigator",
           "published": "kein aktuelles Änderungsdatum sichtbar"
+        },
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/",
+          "publisher": "Gemeinde Merzenich / M136/2026, Kreis Düren",
+          "published": "Vorlage 12.10., Export 15.10.2026"
         }
       ],
       "research_review": {
@@ -3130,17 +3445,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Unveränderter Recherchebestand",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-NAHVERKEHRSPLAN",
+          "source_check_scope": "Gestrigen vollständigen Entwurf und Register gelesen; M136 heute nicht neu abgerufen",
+          "open_questions": "Workshopdatum und Veröffentlichung des Entwurfs?",
+          "refresh": "Nach November-Workshop; vor Übernahme Originalrefresh",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Vierseitige öffentliche Vorlage, Kreis-Original und Projektseite gelesen; keine nichtöffentliche Anlage abgerufen",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_text_status": "T1-B",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Gestrigen vollständigen Entwurf und Register gelesen; M136 heute nicht neu abgerufen",
       "latest_research_review": {
-        "text": "T1",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "text": "T1-B",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -4716,7 +5051,7 @@
       "id": "MA-BAERENSTARK-JOB-2026",
       "priority": "P1",
       "location_section": "Golzheim · Kita/Arbeitsplätze",
-      "change_type": "Korrekturauftrag / Fristwiderspruch",
+      "change_type": "Nachfassen, Sperre unverändert",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-15-morgens.md",
@@ -4736,6 +5071,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-BAERENSTARK-JOB-2026",
           "check_scope": "Einseitiges Original-PDF und kommunale Listung gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-BAERENSTARK-JOB-2026",
+          "check_scope": "Stellenliste frisch gelesen; PDF-Neuabruf gescheitert"
         }
       ],
       "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet.",
@@ -4761,13 +5102,27 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen, Sperre unverändert",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-BAERENSTARK-JOB-2026",
+          "source_check_scope": "Stellenliste frisch gelesen; PDF-Neuabruf gescheitert",
+          "open_questions": "Neue Ausschreibung, Besetzung oder Verlängerung?",
+          "refresh": "Vor jedem Stellenhinweis",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Einseitiges Original-PDF und kommunale Listung gelesen",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Stellenliste frisch gelesen; PDF-Neuabruf gescheitert",
       "latest_research_text_status": "T2",
-      "refresh_note": "27.10.2026; vor jedem Stellenhinweis",
+      "refresh_note": "Vor jedem Stellenhinweis",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
@@ -4784,10 +5139,17 @@
       "review_block_reason": "PDF-Frist abgelaufen, keine aktuelle Verlängerung belegt",
       "latest_research_review": {
         "text": "T2",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
-      }
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     },
     {
       "id": "NOE-GYMNICHER-STATUS",
@@ -4897,10 +5259,10 @@
     },
     {
       "id": "MA-BIERABEND-3110",
-      "priority": null,
-      "location_section": null,
-      "change_type": "historisches_recherchethema",
-      "text_status": null,
+      "priority": "P2",
+      "location_section": "Merzenich · Vereine/Kultur",
+      "change_type": "Terminrefresh",
+      "text_status": "T1",
       "image_status": null,
       "dossier": "dossiers/2026-10-17-morgens.md",
       "workflow_status": "archiv_refresh_noetig",
@@ -4918,9 +5280,56 @@
           "date": "2026-10-17",
           "dossier": "dossiers/2026-10-17-morgens.md",
           "heading": "35 · MA-BIERABEND-3110 · P2 · Merzenich/Kultur · Terminprüfung"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-BIERABEND-3110",
+          "check_scope": "Veranstalterdetail vollständig gelesen"
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet.",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T1",
+      "latest_research_scope": "Veranstalterdetail vollständig gelesen",
+      "refresh_note": "29.10.; spätestens vor 31.10.",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Terminrefresh",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-BIERABEND-3110",
+          "source_check_scope": "Veranstalterdetail vollständig gelesen",
+          "open_questions": "Kartenpreis, Verkaufsweg, Restkarten, Einlass und Altersbedingungen?",
+          "refresh": "29.10.; spätestens vor 31.10.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/veranstaltungen/efb93919-2d19-4892-a781-1f693bd73f45",
+          "publisher": "1. FC Köln Fanclub Merzenich 1967 auf Heimat-Info",
+          "published": "25.10.2026, 10:05 Uhr"
+        }
+      ]
     },
     {
       "id": "KD-LED-SCHULWEG-2026",
@@ -5527,9 +5936,9 @@
     {
       "id": "MA-LEADER-LETZTAUFRUF",
       "priority": "P2",
-      "location_section": "Gemeindegebiet / Revier · Ehrenamt/Strukturwandel",
-      "change_type": "Update / ergänzender älterer Förderkalender",
-      "text_status": "T1",
+      "location_section": "Gemeindegebiet / Revier · Vereine/Wirtschaft",
+      "change_type": "Unveränderter Förderhintergrund",
+      "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-21-morgens.md",
       "workflow_status": "zur_abnahme",
@@ -5558,6 +5967,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-LEADER-LETZTAUFRUF",
           "check_scope": "Zweiseitige öffentliche Vorlage und LAG-Aufruf vollständig gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-LEADER-LETZTAUFRUF",
+          "check_scope": "Abenddossier und vorhandenen LEADER-Artikel abgeglichen; Originale heute nicht erneut gelesen"
         }
       ],
       "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet.",
@@ -5583,13 +5998,27 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Unveränderter Förderhintergrund",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-LEADER-LETZTAUFRUF",
+          "source_check_scope": "Abenddossier und vorhandenen LEADER-Artikel abgeglichen; Originale heute nicht erneut gelesen",
+          "open_questions": "Fristenänderungen? Aktuell verfügbare Mittel und Beratung?",
+          "refresh": "Dezember; vor Antragstellung",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Zweiseitige öffentliche Vorlage und LAG-Aufruf vollständig gelesen",
-      "latest_research_text_status": "T1",
-      "refresh_note": "Dezember 2026; vor Antragsberatung",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Abenddossier und vorhandenen LEADER-Artikel abgeglichen; Originale heute nicht erneut gelesen",
+      "latest_research_text_status": "T1-B",
+      "refresh_note": "Dezember; vor Antragstellung",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
@@ -5604,10 +6033,16 @@
         }
       ],
       "latest_research_review": {
-        "text": "T1",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "text": "T1-B",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       },
       "matched_existing_articles": [
         {
@@ -5618,7 +6053,8 @@
       ],
       "related_topic_ids": [
         "MA-LEADER-270127"
-      ]
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     },
     {
       "id": "NZ-KANAL-1910",
@@ -6616,19 +7052,25 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-AMTSBLATT-FRIST-03112026",
           "check_scope": "Aktuelle verlinkte Ausgabe11 geöffnet, Textauszug gelesen; keine spätere Ausgabe gesehen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-AMTSBLATT-FRIST-03112026",
+          "check_scope": "Amtliche Terminseite einschließlich Jahrestabelle gelesen; Ausgabe-PDF heute nicht erreichbar"
         }
       ],
       "priority": "P2",
-      "location_section": "Merzenich/Rathaus / Vereine",
-      "change_type": "Bestätigter Termin / ältere Servicequelle",
+      "location_section": "Merzenich · Rathaus/Vereine",
+      "change_type": "Terminrefresh",
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "last_checked_at": "2026-10-25",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
-      "refresh_note": "02.11.2026 / Fristende 03.11.",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "02.11.; nach Fristablauf entfernen",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Einreichungsformat und Annahmebedingungen bei Originalhinweisen prüfen. Neuer Arbeits-ID-Eintrag für nächste Frist; alten Artikel zur Frist06.10. nicht als aktuellen Text übernehmen.",
       "research_sources": [
         {
@@ -6672,12 +7114,38 @@
             "duplicate": "keine_Artikelbildzuordnung_geprueft",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Terminrefresh",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-AMTSBLATT-FRIST-03112026",
+          "source_check_scope": "Amtliche Terminseite einschließlich Jahrestabelle gelesen; Ausgabe-PDF heute nicht erreichbar",
+          "open_questions": "Geänderte Annahmebedingungen oder Schlussuhrzeit?",
+          "refresh": "02.11.; nach Fristablauf entfernen",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-morgens.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
-      "latest_research_scope": "Aktuelle verlinkte Ausgabe11 geöffnet, Textauszug gelesen; keine spätere Ausgabe gesehen"
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Amtliche Terminseite einschließlich Jahrestabelle gelesen; Ausgabe-PDF heute nicht erreichbar",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     },
     {
       "id": "GO-OGS-130-2026",
@@ -6796,19 +7264,25 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-ELW1-116-2026",
           "check_scope": "Aktuellen Artikel und Nachmittagsdossier gelesen; Beschluss-Neuabruf nicht möglich"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-ELW1-116-2026",
+          "check_scope": "Vorhandenen Artikel mit gestriger QA-Karte abgeglichen; kein neuer Zuschlagsbeleg gefunden oder Primärbeschluss neu gelesen"
         }
       ],
       "priority": "P1",
-      "location_section": "Merzenich · Rathaus/Feuerwehr",
-      "change_type": "Nachfassen / gesperrt",
-      "text_status": "T1",
+      "location_section": "Merzenich · Feuerwehr/Rathaus",
+      "change_type": "Fortgeführter Korrekturauftrag",
+      "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor der Endabnahme des Bestandsartikels",
-      "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
+      "refresh_note": "Vor Artikel-Endabnahme",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Beschlusstext und eventuelle Änderungen? Vergabeverfahren begonnen oder Auftrag erteilt? Aktueller Zeitplan? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
@@ -6820,6 +7294,11 @@
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZeSgDXK7stQ8cYbRBFieuloGsxGKrUNZX_qOS0QIavuV/Beschlusstext_116-2026_-oeffentlich-_Gemeinderat_30.09.2026.pdf",
           "publisher": "Gemeinderat Merzenich / Ratsinformationssystem",
           "published": "Beschluss 30.09.2026; PDF exportiert 08.10.2026"
+        },
+        {
+          "url": "https://ratsinfo.gemeinde-merzenich.de/vorlagen",
+          "publisher": "Gemeinde Merzenich / vorhandener Ratsvorgang 116/2026",
+          "published": "Beschluss 30.09.2026; Artikel 26.10."
         }
       ],
       "research_review": {
@@ -6879,17 +7358,37 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Fortgeführter Korrekturauftrag",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-ELW1-116-2026",
+          "source_check_scope": "Vorhandenen Artikel mit gestriger QA-Karte abgeglichen; kein neuer Zuschlagsbeleg gefunden oder Primärbeschluss neu gelesen",
+          "open_questions": "Aktuelle Zuschlagsbekanntmachung? Relative Artikelzeitangabe belegt?",
+          "refresh": "Vor Artikel-Endabnahme",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Aktuellen Artikel und Nachmittagsdossier gelesen; Beschluss-Neuabruf nicht möglich",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Vorhandenen Artikel mit gestriger QA-Karte abgeglichen; kein neuer Zuschlagsbeleg gefunden oder Primärbeschluss neu gelesen",
       "latest_research_review": {
         "text": "T2",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       },
       "editorial_correction_required": {
         "status": "T2",
@@ -6923,8 +7422,8 @@
     {
       "id": "MA-1025-04",
       "priority": "P2",
-      "location_section": "Golzheim/Rathaus",
-      "change_type": "Termin / Neu",
+      "location_section": "Golzheim · Rathaus/Bürgerdialog",
+      "change_type": "Termin, unverändert frisch bestätigt",
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
@@ -6945,6 +7444,12 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "MA-1025-04",
           "check_scope": "Artikel/Termin und Gemeindeindex gelesen; Originaldetail heute nicht erneut geöffnet"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-1025-04",
+          "check_scope": "Vollständiges Veranstalterdetail gelesen"
         }
       ],
       "research_history": [
@@ -6971,12 +7476,47 @@
             "duplicate": "keine_Artikelbildzuordnung_geprueft",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Termin, unverändert frisch bestätigt",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-1025-04",
+          "source_check_scope": "Vollständiges Veranstalterdetail gelesen",
+          "open_questions": "Anmeldung nötig? Dauer und Zugang?",
+          "refresh": "30.10. vor Anfahrt",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-morgens.md",
-      "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
-      "latest_research_scope": "Artikel/Termin und Gemeindeindex gelesen; Originaldetail heute nicht erneut geöffnet"
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_text_status": "T1",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Vollständiges Veranstalterdetail gelesen",
+      "refresh_note": "30.10. vor Anfahrt",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1",
+          "publisher": "Gemeinde Merzenich auf Heimat-Info",
+          "published": "23.10.2026, 18:04 Uhr"
+        }
+      ]
     },
     {
       "id": "MA-1025-05",
@@ -7126,8 +7666,8 @@
     {
       "id": "MA-1025-25",
       "priority": "P1",
-      "location_section": "Merzenich / Buir · Verkehr/ÖPNV",
-      "change_type": "Neu / Service",
+      "location_section": "Merzenich / Buir / Düren · Verkehr/ÖPNV",
+      "change_type": "Updateprüfung, letzte Sperrnacht",
       "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
@@ -7159,6 +7699,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-1025-25",
           "check_scope": "VRS-Ereignisdetail und Lageplan als Text gelesen; keine auswertbare aktuelle Fahrtauskunft"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-1025-25",
+          "check_scope": "VRS-Haltestellenereignis gelesen; Originalplakat heute nicht abrufbar; keine aktuelle verbindliche SEV-Fahrtauskunft erhalten"
         }
       ],
       "research_history": [
@@ -7207,12 +7753,26 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Updateprüfung, letzte Sperrnacht",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-1025-25",
+          "source_check_scope": "VRS-Haltestellenereignis gelesen; Originalplakat heute nicht abrufbar; keine aktuelle verbindliche SEV-Fahrtauskunft erhalten",
+          "open_questions": "Welche Busabfahrten je Richtung? Tatsächlich gültiger Einstieg, Verlegung und Barrierefreiheit?",
+          "refresh": "27.10. vor 20 Uhr; Ablauf 28.10.05 Uhr",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "VRS-Ereignisdetail und Lageplan als Text gelesen; keine auswertbare aktuelle Fahrtauskunft",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "VRS-Haltestellenereignis gelesen; Originalplakat heute nicht abrufbar; keine aktuelle verbindliche SEV-Fahrtauskunft erhalten",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
@@ -7242,13 +7802,20 @@
         },
         "implementation": "keine_aenderung_durch_recherchelauf"
       },
-      "refresh_note": "Heute vor 21 Uhr; Ablauf 28.10.2026 um 05 Uhr",
+      "refresh_note": "27.10. vor 20 Uhr; Ablauf 28.10.05 Uhr",
       "latest_research_review": {
         "text": "T1-B",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
-      }
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     },
     {
       "id": "MA-ROSENKRANZ-PFARRHEIM-0411",
@@ -7268,6 +7835,12 @@
           "date": "2026-10-26",
           "dossier": "dossiers/2026-10-26-claude-nachmittags.md",
           "heading": "MA-ROSENKRANZ-PFARRHEIM-0411 · umgesetzt"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-ROSENKRANZ-PFARRHEIM-0411",
+          "check_scope": "PDF S.32/33 und S.5 tatsächlich gelesen"
         }
       ],
       "research_history": [
@@ -7294,12 +7867,26 @@
             "duplicate": "keine_Artikelbildzuordnung_geprueft",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Termin-/Ortsrefresh, unverändert",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-ROSENKRANZ-PFARRHEIM-0411",
+          "source_check_scope": "PDF S.32/33 und S.5 tatsächlich gelesen",
+          "open_questions": "Neue Novemberausgabe mit Änderungen? Genaue Uhrzeit des Rosenkranzes?",
+          "refresh": "31.10.; 04.11. vor Anreise",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-morgens.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 morgens Europe/Berlin",
-      "latest_research_scope": "PDF S.33 mit Ortswechsel gelesen; keine neuere Novemberausgabe belegt",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "PDF S.32/33 und S.5 tatsächlich gelesen",
       "text_status": "T1",
       "source_check_status": "detail_read_with_stated_limits",
       "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
@@ -7321,7 +7908,24 @@
         },
         "implementation": "keine_aenderung_durch_recherchelauf"
       },
-      "image_status": "B0"
+      "image_status": "B0",
+      "refresh_note": "31.10.; 04.11. vor Anreise",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "priority": "P2",
+      "change_type": "Termin-/Ortsrefresh, unverändert",
+      "location_section": "Merzenich / Ortsteile · Kirchen/Soziales"
     },
     {
       "id": "MA-PFARRLEITUNG-31012027",
@@ -7347,6 +7951,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-PFARRLEITUNG-31012027",
           "check_scope": "Artikel, Claude-Dossier und gezielte Bistumssuche; keine aktuelle Ernennungsdetailseite belegt"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-PFARRLEITUNG-31012027",
+          "check_scope": "PDF S.2 erneut gelesen; Archiv 2026 endet im abgerufenen Weg beim Oktoberheft"
         }
       ],
       "research_history": [
@@ -7395,32 +8005,62 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen / unveränderte Ankündigung",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-PFARRLEITUNG-31012027",
+          "source_check_scope": "PDF S.2 erneut gelesen; Archiv 2026 endet im abgerufenen Weg beim Oktoberheft",
+          "open_questions": "Aktuelle Bistumsveröffentlichung und neuer Pfarrbrief?",
+          "refresh": "Bei Bistumsdetail, spätestens Anfang November",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T0",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Artikel, Claude-Dossier und gezielte Bistumssuche; keine aktuelle Ernennungsdetailseite belegt",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "PDF S.2 erneut gelesen; Archiv 2026 endet im abgerufenen Weg beim Oktoberheft",
       "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "priority": "P2",
-      "location_section": "Merzenich / Niederzier / Nörvenich / Vettweiß · Kirchen",
-      "refresh_note": "Bei Bistumsmeldung; spätestens im November",
+      "location_section": "Merzenich / Nachbarn · Kirchen",
+      "refresh_note": "Bei Bistumsdetail, spätestens Anfang November",
       "latest_research_review": {
         "text": "T0",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
-      }
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "research_sources": [
+        {
+          "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
+          "publisher": "Katholische Kirchengemeinden Merzenich/Niederzier",
+          "published": "Ausgabe 08/26, 26.09.–02.11.2026"
+        }
+      ],
+      "text_status": "T0",
+      "change_type": "Nachfassen / unveränderte Ankündigung"
     },
     {
       "id": "MA-1025-17",
-      "priority": "P2",
-      "location_section": "Golzheim / Merzenich · Schulen/Kitas/Jugend",
-      "change_type": "historisches_recherchethema",
-      "text_status": null,
+      "priority": "P1",
+      "location_section": "Merzenich / Golzheim · Schulen/Jugend",
+      "change_type": "Nachfassen",
+      "text_status": "T0",
       "image_status": null,
       "dossier": "dossiers/2026-10-15-morgens.md",
-      "workflow_status": "neu",
+      "workflow_status": "gesperrt",
       "last_checked_at": null,
       "article_path": null,
       "article_id": null,
@@ -7442,6 +8082,12 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-1025-17",
           "check_scope": "Schulen-Rohdatei gelesen; Webabruf des Martinsdetails gescheitert"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-1025-17",
+          "check_scope": "Rohdatei gelesen, Detail- und verlinkten JPG-Abruf versucht; beide nicht zugänglich"
         }
       ],
       "notes": "Schul-Rechercheauftrag MA-1025-17 aus Claude-Nachlauf25.10. fortgeführt; eigener Golzheimer Vorgang, nicht mit den abgelaufenen Anmeldeterminen der KGSAmWeinberg zusammenführen.",
@@ -7491,19 +8137,47 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-1025-17",
+          "source_check_scope": "Rohdatei gelesen, Detail- und verlinkten JPG-Abruf versucht; beide nicht zugänglich",
+          "open_questions": "Lesbare Originalgrafik? Richtiges Jahr und richtige Schule? Warum widersprechen ältere Septemberangaben?",
+          "refresh": "27.10. nachmittags",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
       "latest_research_text_status": "T0",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Schulen-Rohdatei gelesen; Webabruf des Martinsdetails gescheitert",
-      "refresh_note": "27.10.2026",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_scope": "Rohdatei gelesen, Detail- und verlinkten JPG-Abruf versucht; beide nicht zugänglich",
+      "refresh_note": "27.10. nachmittags",
       "latest_research_review": {
         "text": "T0",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
-      }
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "research_sources": [
+        {
+          "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php",
+          "publisher": "KGS Am Weinberg Merzenich; Golzheimer Vorgang gesondert",
+          "published": "Seitendatum offen; Rohabruf 26.10.21:35 MEZ"
+        }
+      ]
     },
     {
       "id": "KD-KI-ROADSHOW-0611",
@@ -7526,6 +8200,488 @@
           "heading": "KD-KI-ROADSHOW-0611"
         }
       ]
+    },
+    {
+      "id": "MA-VHS-OFFLINE-26102026",
+      "priority": "P1",
+      "location_section": "Merzenich / VHS Rur-Eifel · Bildung/Service",
+      "change_type": "Neu erschlossener Servicehinweis vom Vortag",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "MA-VHS-OFFLINE-26102026",
+          "check_scope": "Städtischen Volltext gelesen; VHS-Homepage liefert beim Direktabruf HTTP 429, nicht als Abschaltungsnachweis werten"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Neu erschlossener Servicehinweis vom Vortag",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → MA-VHS-OFFLINE-26102026",
+          "source_check_scope": "Städtischen Volltext gelesen; VHS-Homepage liefert beim Direktabruf HTTP 429, nicht als Abschaltungsnachweis werten",
+          "open_questions": "Ist die Seite wieder erreichbar? Welche konkrete technische Ursache und zweite unabhängige beziehungsweise institutionelle Bestätigung liegen vor?",
+          "refresh": "27.10. vor Endabnahme, dann täglich bis Wiederbetrieb",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/die-homepage-der-vhs-rur-eifel-ist-voruebergehend-offline",
+          "publisher": "Stadt Düren / VHS Rur-Eifel",
+          "published": "26.10.2026, 11:24 Uhr"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Städtischen Volltext gelesen; VHS-Homepage liefert beim Direktabruf HTTP 429, nicht als Abschaltungsnachweis werten",
+      "refresh_note": "27.10. vor Endabnahme, dann täglich bis Wiederbetrieb",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "NH-OEKOSYSTEM-2026",
+      "priority": "P1",
+      "location_section": "Merzenicher Erbwald / Hambacher Forst · Umwelt/Strukturwandel",
+      "change_type": "Neu erschlossener Hintergrund, Zeitplanprüfung offen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "NH-OEKOSYSTEM-2026",
+          "check_scope": "Vollständige Projektseite und zweite Textausgabe desselben Abrufwegs gelesen; keine Bewilligungsurkunde"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P1",
+          "change_type": "Neu erschlossener Hintergrund, Zeitplanprüfung offen",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → NH-OEKOSYSTEM-2026",
+          "source_check_scope": "Vollständige Projektseite und zweite Textausgabe desselben Abrufwegs gelesen; keine Bewilligungsurkunde",
+          "open_questions": "Welche datierte Fassung gilt? Welche Flächen und Eigentümer, Genehmigungen, Förderung und Beteiligung? Handelt es sich beim wechselnden Zeitplan um Aktualisierung oder Cacheabweichung?",
+          "refresh": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.neuland-hambach.de/projekte/oekosystemverbund-hambach",
+          "publisher": "NEULAND HAMBACH",
+          "published": "Stand Oktober 2026, kein Veröffentlichungstag"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Vollständige Projektseite und zweite Textausgabe desselben Abrufwegs gelesen; keine Bewilligungsurkunde",
+      "refresh_note": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "NH-BIZ-SOPHIENHOEHE-2026",
+      "priority": "P2",
+      "location_section": "Sophienhöhe / Niederzier / Region · Strukturwandel/Bildung",
+      "change_type": "Neu erschlossener älterer Hintergrund",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "zur_abnahme",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "NH-BIZ-SOPHIENHOEHE-2026",
+          "check_scope": "Projektseite und ausführliche Erläuterung zum Standort vollständig gelesen; zwei Veröffentlichungen desselben Projektträgers, keine unabhängige Zweitprüfung"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Neu erschlossener älterer Hintergrund",
+          "text_status": "T1",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → NH-BIZ-SOPHIENHOEHE-2026",
+          "source_check_scope": "Projektseite und ausführliche Erläuterung zum Standort vollständig gelesen; zwei Veröffentlichungen desselben Projektträgers, keine unabhängige Zweitprüfung",
+          "open_questions": "Ist die Entwurfsplanung abgeschlossen? Aktueller Bewilligungs-/Vergabestand und Kostenträger? Ausgestaltung der Zufahrtsbeschränkung und Erreichbarkeit ohne Auto?",
+          "refresh": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.neuland-hambach.de/projekte/besucher-und-informationszentrum-sophienhoehe",
+          "publisher": "NEULAND HAMBACH",
+          "published": "Projektstand Oktober 2026; Hintergrundmeldung im Index 27.08.2026"
+        },
+        {
+          "url": "https://www.neuland-hambach.de/aktuelles/artikel/die-sophienhoehe-bekommt-ihr-besucherzentrum-biz",
+          "publisher": "NEULAND HAMBACH",
+          "published": "Meldung im Index 27.08.2026; Detail ohne Datumszeile"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T1",
+      "latest_research_scope": "Projektseite und ausführliche Erläuterung zum Standort vollständig gelesen; zwei Veröffentlichungen desselben Projektträgers, keine unabhängige Zweitprüfung",
+      "refresh_note": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T1",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "NH-NATURERLEBNIS-2026",
+      "priority": "P2",
+      "location_section": "Sophienhöhe / Nachbarkommunen · Umwelt/Freizeit",
+      "change_type": "Neu erschlossener Hintergrund / Detailbedingung offen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "NH-NATURERLEBNIS-2026",
+          "check_scope": "Projektseite vollständig, Konzept-PDF Titel/Impressum, Inhaltsverzeichnis und Einleitung/Prozess gelesen; kein vollständiger 66-Seiten-Fachcheck"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Neu erschlossener Hintergrund / Detailbedingung offen",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → NH-NATURERLEBNIS-2026",
+          "source_check_scope": "Projektseite vollständig, Konzept-PDF Titel/Impressum, Inhaltsverzeichnis und Einleitung/Prozess gelesen; kein vollständiger 66-Seiten-Fachcheck",
+          "open_questions": "Artenschutzprüfung tatsächlich abgeschlossen? Welche Maßnahmen finanziert/genehmigt? Aktuelle Sperrungen oder Baustarts? Zweite aktuelle belastbare Quelle?",
+          "refresh": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.neuland-hambach.de/projekte/naturerlebnis-sophienhoehe",
+          "publisher": "NEULAND HAMBACH",
+          "published": "Stand Oktober 2026; Konzept Mai 2023"
+        },
+        {
+          "url": "https://www.neuland-hambach.de/fileadmin/03_Downloads/NEULAND-HAMBACH-Downloads-Struktur-und-Nutzungskonzept-Sophienhoehe-Endbericht_230522.pdf",
+          "publisher": "NEULAND HAMBACH / PROJECT M und Partner",
+          "published": "Endbericht Mai 2023; hier Einleitung/Prozesspassagen gelesen"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Projektseite vollständig, Konzept-PDF Titel/Impressum, Inhaltsverzeichnis und Einleitung/Prozess gelesen; kein vollständiger 66-Seiten-Fachcheck",
+      "refresh_note": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "NH-HAMBACH-LOOP-2026",
+      "priority": "P2",
+      "location_section": "Merzenich / Kerpen / Niederzier / Hambach · Verkehr/Strukturwandel",
+      "change_type": "Neu erschlossener Hintergrund, Vollunterlagen offen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "NH-HAMBACH-LOOP-2026",
+          "check_scope": "Projektseite und Downloadbereich gelesen; Abschlussbericht-Link geöffnet, Abruf fehlgeschlagen; keine Karten-/Steckbrief-Vollprüfung"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Neu erschlossener Hintergrund, Vollunterlagen offen",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → NH-HAMBACH-LOOP-2026",
+          "source_check_scope": "Projektseite und Downloadbereich gelesen; Abschlussbericht-Link geöffnet, Abruf fehlgeschlagen; keine Karten-/Steckbrief-Vollprüfung",
+          "open_questions": "Welche Merzenicher Abschnitte zuerst? Aktuelle Trassenkarte, Grunderwerb und Baulast? Förderbescheid? Gültige Umfahrung während Bauphasen?",
+          "refresh": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.neuland-hambach.de/projekte/hambach-loop",
+          "publisher": "NEULAND HAMBACH",
+          "published": "Projektstand Oktober 2026"
+        },
+        {
+          "url": "https://www.neuland-hambach.de/downloadbereich-abschlussbericht-hambach-loop",
+          "publisher": "NEULAND HAMBACH",
+          "published": "undatierter Downloadbereich"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Projektseite und Downloadbereich gelesen; Abschlussbericht-Link geöffnet, Abruf fehlgeschlagen; keine Karten-/Steckbrief-Vollprüfung",
+      "refresh_note": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "DN-RADSTATION-2026",
+      "priority": "P2",
+      "location_section": "Düren Bahnhof / Merzenicher Pendler · Verkehr/Service",
+      "change_type": "Neu erschlossener Quellenkonflikt",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "dossier_history": [
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "heading": "DN-RADSTATION-2026",
+          "check_scope": "Städtische Detailseite, Homepagehinweis und Betreiberseite gelesen"
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-27",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-27-morgens.md",
+          "priority": "P2",
+          "change_type": "Neu erschlossener Quellenkonflikt",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-27-morgens.md → DN-RADSTATION-2026",
+          "source_check_scope": "Städtische Detailseite, Homepagehinweis und Betreiberseite gelesen",
+          "open_questions": "Ist die Anlage schon zugänglich? Ab wann Werkstatt, Parken und Buchung? Stimmt der ÖPNV-Rabatt, und wie wird er nachgewiesen?",
+          "refresh": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "research_sources": [
+        {
+          "url": "https://www.dueren.de/leben-wohnen/mobilitaet-verkehr/fahrrad/radstation",
+          "publisher": "Stadt Düren",
+          "published": "undatierte Detailseite; Homepagehinweis aktuell gelesen"
+        },
+        {
+          "url": "https://radstationdueren.de/",
+          "publisher": "BikeAround Düren GmbH",
+          "published": "undatiert, Titel Eröffnung November 2026"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Städtische Detailseite, Homepagehinweis und Betreiberseite gelesen",
+      "refresh_note": "Vor einer Artikelübernahme; spätestens 03.11.2026",
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
+      "latest_research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_review": {
+        "text": "T2",
+        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "nicht_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -7738,6 +8894,36 @@
       "photos_integrated": 0,
       "publication": "keine",
       "implementation": "keine_Artikelumsetzung_durch_diesen_Lauf"
+    },
+    {
+      "date": "2026-10-27",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-27-morgens.md",
+      "compared_with": "dossiers/2026-10-26-abends.md",
+      "base_commit": "4b7840c6956fd9d09e503011c636c7a5a15dcf33",
+      "summary": "27 Karten; 1 erstmals erschlossener regionaler Servicehinweis, 1 neuer Quellenkonflikt und 4 Hintergrundpakete; 7 neue Textfassungen (2 T1, 5 T2 gesperrt); keine neue örtliche Eilmeldung oder Sportergebnisnachricht; 10 zusätzliche Bildkandidaten, ohne Sichtprüfung/Download/Integration.",
+      "topics": 27,
+      "new_register_topics": 6,
+      "new_local_breaking_reports": 0,
+      "newly_sourced_service_topics": 1,
+      "new_source_conflict_topics": 1,
+      "new_background_topics": 4,
+      "new_confirmed_sports_results": 0,
+      "complete_drafts": 7,
+      "standard_drafts": 1,
+      "short_working_drafts": 6,
+      "drafts_T1": 2,
+      "drafts_blocked_T2": 5,
+      "photos_new_found": 10,
+      "photos_license_evaluated": 10,
+      "photos_visual_checked": 0,
+      "photos_downloaded": 0,
+      "photos_url_duplicates_checked": 10,
+      "photos_pixel_duplicates_checked": 0,
+      "photos_integrated": 0,
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung"
     }
   ]
 }
