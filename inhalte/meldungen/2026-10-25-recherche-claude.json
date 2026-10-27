@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 25.10.2026 (Claude, Nachlauf abends): Rohdaten des Quellenabrufs vom Morgen, eigene Live-Abrufe bei Heimat-Info, Ratsinformationssystem, Kreis Düren, Neuland Hambach, FUSSBALL.DE/fupa, click-TT, Autobahn GmbH und go.Rheinland; abgeglichen mit dem Morgen- und Abenddossier unter docs/redaktion/dossiers/ und dem Bestand. Jede Aussage an der genannten Quelle gelesen; Sonntagsergebnisse nach Abpfiff bestätigt. Keine Namen von Privatpersonen. Erscheint in WordPress als Entwurf in den Freigaben. Korrekturen 27.10.2026 (Claude): Mental Load ausgebucht, Meisterstipendium (bis zu vier, Rückforderung), Finkenheide (Datum 23.10., Buchbarkeit bleibt Bedingung, Standard), Persönliches Budget (Anmeldefrist laut Portal 02.11.). Weitere Korrekturen 27.10.: Amtsblatt (keine Sitzungstermine im Heft, Eigenangabe monatlich), Sitzungstermine (Öffentlichkeit nicht belegt), Eichel-Sammelaktion (Querverweis ohne Quelle entfernt).",
+  "hinweis": "Recherche vom 25.10.2026 (Claude, Nachlauf abends): Rohdaten des Quellenabrufs vom Morgen, eigene Live-Abrufe bei Heimat-Info, Ratsinformationssystem, Kreis Düren, Neuland Hambach, FUSSBALL.DE/fupa, click-TT, Autobahn GmbH und go.Rheinland; abgeglichen mit dem Morgen- und Abenddossier unter docs/redaktion/dossiers/ und dem Bestand. Jede Aussage an der genannten Quelle gelesen; Sonntagsergebnisse nach Abpfiff bestätigt. Keine Namen von Privatpersonen. Erscheint in WordPress als Entwurf in den Freigaben. Korrekturen 27.10.2026 (Claude): Mental Load ausgebucht, Meisterstipendium (bis zu vier, Rückforderung), Finkenheide (Datum 23.10., Buchbarkeit bleibt Bedingung, Standard), Persönliches Budget (Anmeldefrist laut Portal 02.11.). Weitere Korrekturen 27.10.: Amtsblatt (keine Sitzungstermine im Heft, Eigenangabe monatlich), Sitzungstermine (Öffentlichkeit nicht belegt), Eichel-Sammelaktion (Querverweis ohne Quelle entfernt). 27.10.: Siegen (Datum relativ entfernt, unbelegte Erklärung zu Bürgewald gestrichen, Amtsblatt als Quelle), Bürgersprechstunde (Widerspruch 30.10./13.11. benannt).",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -138,24 +138,31 @@
         "Mitteilung der Gemeinde vom 23.10.2026, 11:15 Uhr; genauer Besuchstag nicht genannt"
       ],
       "absaetze": [
-        "Eine ungewöhnliche Reisegruppe hat in der vergangenen Woche in Merzenich Halt gemacht: vier Schüler des Evangelischen Gymnasiums Siegen-Weidenau und zwei Lehramtsstudentinnen, die 17 Tage lang zu Fuß von Köln bis an die niederländische Grenze und wieder zurück unterwegs sind. Die Gemeinde berichtete am 23. Oktober über den Besuch.",
+        "Eine ungewöhnliche Reisegruppe hat in Merzenich Halt gemacht: vier Schüler des Evangelischen Gymnasiums Siegen-Weidenau und zwei Lehramtsstudentinnen, die 17 Tage lang zu Fuß von Köln bis an die niederländische Grenze und wieder zurück unterwegs sind. Die Gemeinde berichtete im Amtsblatt vom 16. Oktober und am 23. Oktober in der Heimat-Info-App über den Besuch; das genaue Datum nennt sie nicht.",
         "Hinter der Tour steckt ein festes Projekt der Siegener Schule. Zu Beginn der neunten Klasse sollen sich die Jugendlichen selbst eine Herausforderung stellen, um eigene Grenzen kennenzulernen. Das Quartett entschied sich für den langen Fußmarsch, packte Rucksäcke und einen Bollerwagen mit Vorräten und setzte sich zusätzlich ein knappes Budget: 150 Euro pro Person für die gesamte Zeit.",
-        "Weil der Weg durch Merzenich führte, griff Bürgermeister Georg Gelhausen ein. Er lud die Gruppe zum Essen ein, besorgte eine Übernachtungsmöglichkeit und organisierte einen Ausflug mit dem Bürgerbus nach Bürgewald, den neuen Ortsteil, in den die Morschenicher wegen des Tagebaus Hambach umgesiedelt sind. „Ein tolles Projekt und eine sehr mutige Herausforderung der vier Schüler“, wird Gelhausen in der Mitteilung zitiert. Er wünsche den Beteiligten, dass sie gesund blieben und den gemeinsamen Weg erfolgreich bestreiten würden.",
+        "Weil der Weg durch Merzenich führte, griff Bürgermeister Georg Gelhausen ein. Er lud die Gruppe zum Essen ein, besorgte eine Übernachtungsmöglichkeit und organisierte einen Ausflug mit dem Bürgerbus nach Bürgewald. „Ein tolles Projekt und eine sehr mutige Herausforderung der vier Schüler“, wird Gelhausen in der Mitteilung zitiert. Er wünsche den Beteiligten, dass sie gesund blieben und den gemeinsamen Weg erfolgreich bestreiten würden.",
         "Wo die Gruppe in Merzenich übernachtet hat und an welchem Tag sie weitergezogen ist, nennt die Gemeinde nicht. Die Gruppe soll nach Abschluss der 17 Tage wieder in Köln ankommen; ob Schule oder Gemeinde über das Ende der Tour berichten, ist offen."
       ],
       "quelle": {
         "name": "Gemeinde Merzenich über Heimat-Info, 23.10.2026, 11:15 Uhr",
         "url": "https://www.heimat-info.de/beitraege/bb5362f1-7c2c-45ee-aa48-b9d5374bd5e5",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt 11/2026 vom 16.10.2026 (PDF), S. 9: „Schüler laufen zu Fuß durch Merzenich nach Köln“",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
+          "stand": "2026-10-27"
+        }
+      ]
     },
     {
       "slug": "buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026",
       "ressort": "rathaus",
       "ortsteil": "golzheim",
       "kicker": "Rathaus · Bürgersprechstunde",
-      "titel": "Bürgersprechstunde: Bürgermeister Gelhausen am Freitag im Pfarrheim Golzheim",
-      "dek": "Am 30. Oktober um 18 Uhr können Golzheimerinnen und Golzheimer ihre Anliegen direkt mit dem Bürgermeister besprechen. Eine Anmeldung nennt die Ankündigung nicht.",
+      "titel": "Bürgersprechstunde in Golzheim: Gemeinde nennt 30. Oktober, Amtsblatt den 13. November",
+      "dek": "Die Gemeinde hat am 23. Oktober eine Bürgersprechstunde mit Bürgermeister Gelhausen für Freitag, 30. Oktober, 18 Uhr, im Pfarrheim Golzheim angekündigt. Das Amtsblatt vom 16. Oktober führt für denselben Ort den 13. November.",
       "datum": "2026-10-25T22:16:00+01:00",
       "artikeltyp": "kurzmeldung",
       "themen": [
@@ -170,20 +177,27 @@
       ],
       "bildklasse": "rathaus.rat",
       "fakten": [
-        "Bürgersprechstunde mit Bürgermeister Georg Gelhausen: Freitag, 30.10.2026, 18 Uhr, Pfarrheim Golzheim, Pastoratstraße 20",
-        "Veröffentlicht von der Gemeinde am 23.10.2026, 18:04 Uhr, als Veranstaltung in der Heimat-Info-App",
-        "Kontakt Rathaus: 02421 399-0, buergermeister@gemeinde-merzenich.de"
+        "Heimat-Info, Veranstaltung der Gemeinde vom 23.10.2026, 18:04 Uhr: Bürgersprechstunde mit Bürgermeister Georg Gelhausen, Freitag, 30.10.2026, 18 Uhr, Pfarrheim Golzheim, Pastoratstraße 20",
+        "Amtsblatt 11/2026 vom 16.10.2026, Veranstaltungskalender: Bürgersprechstunde mit Bürgermeister Georg Gelhausen, Freitag, 13.11.2026, 18 bis 19 Uhr, Pfarrheim Golzheim, Pastoratstraße 20",
+        "Widerspruch nicht aufgelöst; Rathaus 02421 399-0"
       ],
       "absaetze": [
-        "Bürgermeister Georg Gelhausen bietet am Freitag, 30. Oktober, eine Bürgersprechstunde in Golzheim an. Beginn ist um 18 Uhr im Pfarrheim Golzheim an der Pastoratstraße 20. Die Gemeinde hat den Termin am 23. Oktober in der Heimat-Info-App veröffentlicht.",
-        "Die Sprechstunde richtet sich an alle, die Fragen oder Anliegen zu ihrem Ortsteil oder zur Gemeinde haben. Eine Anmeldung oder Themenvorgabe nennt die Ankündigung nicht; wer kommt, kann sein Anliegen vor Ort vorbringen. Weitere Informationen gibt es im Rathaus unter 02421 399-0 oder per E-Mail an buergermeister@gemeinde-merzenich.de.",
-        "Ob Sprechstunden in den anderen Ortsteilen folgen, ist bislang nicht angekündigt."
+        "Bürgermeister Georg Gelhausen bietet eine Bürgersprechstunde im Pfarrheim Golzheim an der Pastoratstraße 20 an. Zum Termin gibt es zwei Angaben der Gemeinde: In der Heimat-Info-App hat sie am 23. Oktober Freitag, 30. Oktober, 18 Uhr, veröffentlicht. Der Veranstaltungskalender im Amtsblatt vom 16. Oktober nennt dagegen Freitag, 13. November, 18 bis 19 Uhr, am selben Ort.",
+        "Ob es zwei Sprechstunden in Golzheim gibt oder der Termin verlegt wurde, geht aus den beiden Veröffentlichungen nicht hervor. Die jüngere Angabe ist die aus der App. Wer sichergehen will, fragt im Rathaus unter 02421 399-0 nach. Eine Anmeldung oder Themenvorgabe nennen beide Ankündigungen nicht.",
+        "Die Sprechstunde richtet sich an alle, die Fragen oder Anliegen zu ihrem Ortsteil oder zur Gemeinde haben. Ob Sprechstunden in den anderen Ortsteilen folgen, ist bislang nicht angekündigt."
       ],
       "quelle": {
         "name": "Gemeinde Merzenich über Heimat-Info, Veranstaltung „Bürgersprechstunde mit Bürgermeister Georg Gelhausen“, 23.10.2026",
         "url": "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt 11/2026 vom 16.10.2026 (PDF), Veranstaltungskalender",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
+          "stand": "2026-10-27"
+        }
+      ]
     },
     {
       "slug": "wildpferde-exkursion-sophienhoehe-29-oktober-2026",
@@ -440,12 +454,12 @@
       "fakten": [
         "Gesucht: Übungsleiter:innen mit Übungsleiter-C-Lizenz für das Bewegungsangebot der Sportkita Bärenstark in Golzheim",
         "U3-Gruppe: montags vormittags, bis zu 2 Stunden; Ü3-Gruppe: freitags 9:30 bis 11:30 Uhr",
-        "Kontakt laut Ausschreibung: l.waller@ksb-dueren.de, 02421 502373 (Kreissportbund Düren); veröffentlicht auf der Stellenseite der Gemeinde Merzenich",
+        "Kontakt laut Ausschreibung: Kreissportbund Düren, 02421 502373; veröffentlicht auf der Stellenseite der Gemeinde Merzenich",
         "Außerdem sucht die Gemeinde für die Kita weiterhin eine Erzieherin oder einen Erzieher als Krankheitsvertretung bis 31.07.2027 (30 Stunden oder Vollzeit)"
       ],
       "absaetze": [
         "Die Sportkita Bärenstark in Merzenich-Golzheim sucht Übungsleiterinnen oder Übungsleiter mit C-Lizenz für ihr Bewegungsangebot. Die Ausschreibung, die die Gemeinde Merzenich auf ihrer Stellenseite veröffentlicht hat, nennt zwei Einsätze: montags vormittags bis zu zwei Stunden in der Gruppe der unter Dreijährigen und freitags von 9:30 bis 11:30 Uhr in der Gruppe der Kinder ab drei Jahren.",
-        "Ansprechpartner ist nach der Ausschreibung der Kreissportbund Düren (l.waller@ksb-dueren.de, 02421 502373). Angaben zur Vergütung macht das Infoblatt nicht. Die Kita trägt das Profil einer Sportkita, bei der Bewegung fest zum Tagesablauf gehört.",
+        "Ansprechpartner ist nach der Ausschreibung der Kreissportbund Düren (Telefon 02421 502373; weitere Kontaktdaten in der Ausschreibung). Angaben zur Vergütung macht das Infoblatt nicht. Die Kita trägt das Profil einer Sportkita, bei der Bewegung fest zum Tagesablauf gehört.",
         "Unabhängig davon sucht die Gemeinde für dieselbe Kita weiterhin eine Erzieherin oder einen Erzieher als Krankheitsvertretung bis Ende Juli 2027, mit 30 Wochenstunden oder in Vollzeit."
       ],
       "quelle": {
