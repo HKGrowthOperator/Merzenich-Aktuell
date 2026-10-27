@@ -25,6 +25,25 @@ Stand: 26.10.2026. Gilt für jeden Lauf der KI-Redaktion (Claude), zweimal tägl
 6. Abgleich anstoßen (`https://merzenich-aktuell.de/?ma_api=abgleich-anstoss`, danach `wp-cron.php`); Freigaben im Backend prüfen, sobald ein Zugang hinterlegt ist. Veröffentlicht wird nur von der Redaktion im Backend.
 7. Kurzbericht an die Redaktion: Zahl der neuen Meldungen, Updates, Termine, offene Fragen, Quellenlücken, Commit.
 
+## Was sofort sichtbar wird (Stand 27.10.2026)
+
+Nicht alles, was ein Lauf pusht, wartet auf eine Freigabe. Geprüft in `deploy/wordpress-import.mjs` und im Plugin (`wordpress/plugin/merzenich-aktuell-core/includes/abgleich.php`, Funktion `ma_abgleich_status`) sowie im Theme (`wordpress/theme/merzenich-aktuell/inc/ma21.php`):
+
+| Was | Weg | Sichtbar |
+|---|---|---|
+| Meldungen (`inhalte/meldungen/`) | Import-XML, Typ `post` | **Entwurf** in den Freigaben, solange „Sofort veröffentlichen“ aus ist |
+| Termine (`inhalte/termine/`) | Import-XML, Typ `ma_event`, Status aus der XML | **Veröffentlicht**, wenn der Termin kein `"entwurf": true` trägt; mit `true` als Entwurf. Der Abgleich ändert den Status bestehender Termine nie |
+| Spielstand `chatgpt-site/api/sport-current.json` | Theme liest die Datei von GitHub (Zwischenspeicher 15 Minuten) | **sofort** |
+| Startseiten-Setzungen `chatgpt-site/api/editorial-current.json` | dito | **sofort** |
+| Umkreis-Liste (`inhalte/umkreis/`, auch die Umkreis-Automatik) | gebaute Startseite, vom Theme aus dem Repo gelesen | **sofort** |
+| Markt (Stellen, Immobilien) | Theme liest Repo-Daten | **sofort** |
+
+Regeln daraus:
+
+- **Jeder Termin aus einem Claude-Lauf trägt `"entwurf": true`.** Ohne dieses Feld wäre der Termin ohne menschliche Freigabe online. (Die 11 Claude-Termine vom 25./26.10. gingen so online; das Feld ist seit 27.10. nachgetragen und wirkt für neue Importe.)
+- Sportstand, Umkreis und Startseiten-Setzungen werden nur mit Klartext-Belegen geändert und im Dossier mit Quelle und Zeitpunkt ausgewiesen, weil es keine Freigabestufe gibt.
+- `editorial-current.json` und Marktdaten ändert die KI-Redaktion nicht.
+
 ## Was nicht passiert
 
-Keine Veröffentlichung, kein Einschalten von „Sofort veröffentlichen“, keine Bilder ohne geprüfte Lizenz, keine Zugangsdaten im Repository, keine erfundenen Zeitstempel oder Adressen.
+Keine Veröffentlichung (auch nicht über Termine ohne `entwurf`), kein Einschalten von „Sofort veröffentlichen“, keine Bilder ohne geprüfte Lizenz, keine Zugangsdaten im Repository, keine erfundenen Zeitstempel oder Adressen.

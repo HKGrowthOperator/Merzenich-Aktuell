@@ -25,7 +25,8 @@
         "name": "Gemeinde Merzenich über Heimat-Info, Veranstaltung vom 23.10.2026",
         "url": "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "wildpferde-exkursion-sophienhoehe-2026-10-29",
@@ -51,7 +52,8 @@
         "name": "Neuland Hambach GmbH, 20.10.2026",
         "url": "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "ttc-merzenich-androcup-2026-10-31",
@@ -78,7 +80,8 @@
         "name": "TTC Merzenich, Turnierübersicht der Vereinsseite (Schnittstelle)",
         "url": "https://ttc-merzenich.de/wp-json/ttc/v1/manual-events",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "amtsblatt-12-2026-abgabeschluss-2026-11-03",
@@ -104,7 +107,8 @@
         "name": "Gemeinde Merzenich, Amtsblatt: Abgabe- und Erscheinungstermine 2026",
         "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "aktionstag-persoenliches-budget-kreishaus-2026-11-05",
@@ -135,7 +139,8 @@
         "name": "Kreis Düren, Pressemitteilung vom 19.10.2026",
         "url": "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "eichel-sammelaktion-huertgenwald-2026-11-06",
@@ -162,7 +167,8 @@
         "name": "Kreis Düren, Mitteilung vom 23.10.2026",
         "url": "https://www.kreis-dueren.de/presse/eichel-sammelaktion_2026-10-23.php",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "mental-load-online-vortrag-2026-11-18",
@@ -193,7 +199,8 @@
         "name": "Kreis Düren, Pressemitteilung vom 20.10.2026",
         "url": "https://www.kreis-dueren.de/presse/vortrag-mental-load_2026-10-20.php",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "seniorenweihnacht-kreis-dueren-2026-11-24",
@@ -220,7 +227,8 @@
         "name": "Kreis Düren, Mitteilung vom 30.09.2026 (Restkarten, Listendatum 19.10.2026)",
         "url": "https://www.kreis-dueren.de/presse/seniorenweihnacht_2026-09-30.php",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     },
     {
       "slug": "gemeinderat-sitzung-2026-12-03",
@@ -246,7 +254,8 @@
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (Kalenderexport)",
         "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
         "stand": "2026-10-25"
-      }
+      },
+      "entwurf": true
     }
   ]
 }
