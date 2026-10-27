@@ -63,3 +63,22 @@ Commits `20d0b3f` (Termine-Entwurf, Laufdefinition) und `636d04c` (ELW, Umkreis)
 3. Tagesordnungen Jugendgremium 04.11. und RPA 05.11. sobald im RIS.
 4. Amtliche Ernennung der Leitung des Pastoralen Raums.
 5. Teil B des Ausbauplans: Zweitquellen für die sieben Ein-Quellen-Meldungen vom 25.10.
+
+## Nachtrag 27.10.: Korrekturen an Claude-Meldungen vom 25.10. und Regelwerk 2.0
+
+Commits `d32d252` und `33aa1ec` (Inhalte), `a3e97db` (Regelwerk). Alle Angaben am 27.10. an den Originalen gelesen. Die betroffenen Termine sind veröffentlicht; ihre Textänderungen gehen beim nächsten Abgleich ohne Freigabe online.
+
+| Meldung | Alt | Neu | Beleg |
+|---|---|---|---|
+| Mental Load (Termin live) | „Anmeldung ab sofort“ | ausgebucht, keine Online-Buchung mehr | Anmeldeseite beteiligung.nrw.de, Buchungsstatus |
+| Meisterstipendium | „vier Stipendien“, „muss nicht zurückgezahlt werden“ | „bis zu vier“, Sonderstipendium, Rückforderung bei Verstoß gegen die Richtlinie | Förderseite und Förderrichtlinie des Kreises |
+| Jugendzeltplatz Finkenheide | Mitteilung vom 21.10.; Buchbarkeit „hängt vom Träger ab“ | Mitteilung vom 23.10.; Fortbestand der Buchung durch Verbände und Vereine ist Verkaufsbedingung; jetzt Standard | Informationsblatt des Kreises |
+| Persönliches Budget (Termin live) | Anmeldung bis 26.10. | Pressemitteilung 26.10., Anmeldeportal bis 02.11. (31 freie Plätze am 27.10.) | Anmeldeportal |
+| Amtsblatt 12 | Heft enthalte die Sitzungstermine | Heft verweist für Sitzungen auf die Website | Amtsblatt 11/2026 |
+| Sitzungstermine | „Alle Sitzungen sind öffentlich“ | gestrichen (nicht belegt) | RIS-Kalender ohne Angabe |
+| Eichel-Sammelaktion | Querverweis auf Feuerwehreinsätze | gestrichen (ohne Quelle im Artikel) | – |
+| Siegener Schüler | „in der vergangenen Woche“; Bürgewald als Umsiedlungsort | Besuch vor dem 16.10.; Erklärung gestrichen | Amtsblatt 11/2026, S. 9 |
+| Bürgersprechstunde Golzheim (Termin live) | 30.10. | 30.10. (Heimat-Info, 23.10.) und 13.11. (Amtsblatt, 16.10.) genannt, Widerspruch offen | beide Originale |
+| Übungsleiter Sportkita | persönliche E-Mail-Adresse | Organisationskontakt | Datenschutz |
+
+Offen: Seniorennachmittag und Wildpferdeexkursion haben weiter nur eine Quelle; Vertiefung der Standard-Meldungen (Schulumbau Golzheim, Pfarrbrief, ELW) steht aus.

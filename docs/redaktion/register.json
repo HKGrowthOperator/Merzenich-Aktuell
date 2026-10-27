@@ -973,11 +973,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin | Claude 27.10. Korrektur: Anmeldezeitraum laut Portal bis 02.11. ergänzt (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-20",
@@ -1005,6 +1005,11 @@
           "dossier": "dossiers/2026-10-26-morgens.md",
           "heading": "KD-PERSBUDGET-0511",
           "check_scope": "Originaldetail erneut gelesen, keine materielle Änderung"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -1070,11 +1075,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Frist 31.10. im Original geprüft",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Frist 31.10. im Original geprüft | Claude 27.10. Korrektur: bis zu vier, Rückforderung ergänzt (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -1105,6 +1110,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
@@ -1117,11 +1127,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin | Claude 27.10. Korrektur: Querverweis ohne Quelle entfernt (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -1137,6 +1147,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
@@ -1149,11 +1164,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 27.10. Korrektur: Datum 23.10., Buchbarkeit als Bedingung, Standard (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -1169,6 +1184,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
@@ -1491,11 +1511,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin | Claude 27.10. Korrektur: ausgebucht (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -1521,6 +1541,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
@@ -6932,7 +6957,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Kurzmeldung ohne Schülernamen; Fotos (Stephan Jonen) nicht verwendet.",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Kurzmeldung ohne Schülernamen; Fotos (Stephan Jonen) nicht verwendet. | Claude 27.10. Korrektur: Zeitangabe und Bürgewald-Erklärung korrigiert (33aa1ec)",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -6944,6 +6969,11 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ],
       "priority": "P1",
@@ -6952,7 +6982,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "29.10.2026 / nach Bestätigung des Reiseendes",
@@ -7034,7 +7064,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/amtsblatt-12-2026-abgabeschluss-3-november/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Terminplan in den Rohdaten (gemeinde.json) geprüft: 12/2026 am 13.11., Abgabe 03.11.; Meldung und Termin",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Terminplan in den Rohdaten (gemeinde.json) geprüft: 12/2026 am 13.11., Abgabe 03.11.; Meldung und Termin | Claude 27.10. Korrektur: Sitzungstermine-Aussage korrigiert, Amtsblatt-PDF als Quelle (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -7058,6 +7088,11 @@
           "dossier": "dossiers/2026-10-27-morgens.md",
           "heading": "MA-AMTSBLATT-FRIST-03112026",
           "check_scope": "Amtliche Terminseite einschließlich Jahrestabelle gelesen; Ausgabe-PDF heute nicht erreichbar"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ],
       "priority": "P2",
@@ -7066,7 +7101,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "02.11.; nach Fristablauf entfernen",
@@ -7428,11 +7463,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Bürgersprechstunde 30.10., Pfarrheim Golzheim; auch Termin",
+      "notes": "Claude 25.10.: Bürgersprechstunde 30.10., Pfarrheim Golzheim; auch Termin | Claude 27.10. Korrektur: Termin-Widerspruch 30.10./13.11. benannt (33aa1ec)",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -7450,6 +7485,11 @@
           "dossier": "dossiers/2026-10-27-morgens.md",
           "heading": "MA-1025-04",
           "check_scope": "Vollständiges Veranstalterdetail gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ],
       "research_history": [
@@ -7628,16 +7668,21 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/sitzungstermine-gemeinderat-3-dezember-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Sitzungstermine bis 3.12. aus termine.ics; Termin Gemeinderat 3.12. neu",
+      "notes": "Claude 25.10.: Sitzungstermine bis 3.12. aus termine.ics; Termin Gemeinderat 3.12. neu | Claude 27.10. Korrektur: Öffentlichkeit nicht belegt, gestrichen (d32d252)",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "MA-1025-07"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
@@ -7650,16 +7695,21 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /wirtschaft/uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Übungsleiter-Ausschreibung (PDF, KSB Düren) gelesen",
+      "notes": "Claude 25.10.: Übungsleiter-Ausschreibung (PDF, KSB Düren) gelesen | Claude 27.10. Korrektur: personenbezogene E-Mail entfernt (33aa1ec)",
       "dossier_history": [
         {
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "MA-1025-08"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "Nachtrag Korrekturen"
         }
       ]
     },
