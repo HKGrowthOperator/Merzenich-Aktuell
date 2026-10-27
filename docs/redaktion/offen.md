@@ -1,19 +1,19 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-27-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-27-abends.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
-| archiv_refresh_noetig | 99 |
+| archiv_refresh_noetig | 98 |
 | uebernommen | 31 |
-| gesperrt | 15 |
-| zur_abnahme | 7 |
+| gesperrt | 22 |
 | neu | 5 |
-| in_bearbeitung | 1 |
+| zur_abnahme | 5 |
+| in_bearbeitung | 4 |
 
-## Offen (13)
+## Offen (14)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -28,6 +28,14 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `strukturausschuss-15-oktober-ruhbens-rwe-neuland-hambach` – Strukturausschuss am Donnerstag: CO2-Leitung „Ruhbens“, RWE und Neuland Hambach auf der Tagesordnung (2026-10-14, inhalte/meldungen/2026-10-14-recherche-chatgpt.json)
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen
+
+### GR-L264-27102026 · P1 · T1/B0 · zur_abnahme
+
+- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Neu; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: 28.10.2026 vor Übernahme; keine fortdauernde Sperrung behaupten.
+- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
+- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
+- Möglicher Bestand: keiner gefunden
+- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
 
 ### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
 
@@ -50,16 +58,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026` – Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachlauf.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Standard-Artikel (436 Wörter, 6 Fakten) aus Gemeindemitteilung 28.07. und Amprion-Projektseite; „zwei neue Masten“ aus dem Dossier auf keiner Quelle belegt und nicht übernommen. Offe
 
-### MA-KRAETZCHEN-230127 · P2 · T1/B0 · zur_abnahme
-
-- Ort/Ressort: Merzenich / alle Ortsteile · Kultur/Vereine; Art: Korrektur des Recherchekonflikts / älterer bestätigter Termin; zuletzt geprüft: 2026-10-26 abends Europe/Berlin; Refresh: Vor einem Kartenhinweis; spätestens 15.12.2026
-- Dossier: [2026-10-26-abends.md](dossiers/2026-10-26-abends.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md)
-- Quelle: https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/kraetzchensitzung-2027.php (Gemeinde Merzenich)
-- Quelle: https://www.heimat-info.de/beitraege/27850b7f-c8db-42aa-974f-4883ca537b6c (Gemeinde Merzenich viaHeimat-Info)
-- Möglicher Bestand (Stichwort): `kraetzchensitzung-weinberghalle-23-januar-2027` – Krätzchensitzung zieht in die Weinberghalle: Gemeinde und drei KGs laden für den 23. Januar ein (2026-10-16, inhalte/meldungen/2026-10-16-amtsblatt-11.json)
-- Möglicher Bestand (Stichwort): `kraetzchensitzung-weinberghalle-2027-01-23` – Krätzchensitzung der Gemeinde und der drei KGs (2027-01-23, inhalte/termine/2026-10-16-amtsblatt-11.json)
-- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
-
 ### NH-BIZ-SOPHIENHOEHE-2026 · P2 · T1/B0 · zur_abnahme
 
 - Ort/Ressort: Sophienhöhe / Niederzier / Region · Strukturwandel/Bildung; Art: Neu erschlossener älterer Hintergrund; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: Vor einer Artikelübernahme; spätestens 03.11.2026
@@ -78,17 +76,25 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (Stichwort): `adventmarkt-heimatmuseum-2026-11-28` – Adventmarkt im Heimatmuseum (2026-11-28, inhalte/termine/2026-10-16-amtsblatt-11.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
-### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · zur_abnahme
+### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · in_bearbeitung
 
-- Ort/Ressort: Merzenich · Wirtschaft/Rathaus; Art: Unveränderter Bestand mit Listungsrefresh; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: 09.11.; vor Übernahme Original erneut lesen
-- Dossier: [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md)
-- Quelle: https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/01.111.07.02-003-Stellenausschreibung-FBL-III-ab-Oktober-2026-M000770251.pdf (Gemeinde Merzenich, dreiseitige Stellenausschreibung)
+- Ort/Ressort: Merzenich · Wirtschaft/Arbeitsplätze; Art: Termin; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: Vor Übernahme; nach 15.11.2026 auslaufen.
+- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md)
+- Quelle: https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/01.111.07.02-003-Stellenausschreibung-FBL-III-ab-Oktober-2026-M000770251.pdf (Gemeinde Merzenich)
 - Quelle: https://www.heimat-info.de/beitraege/84069eb1-5ed0-4970-ba2c-1281bafd0fd2 (Gemeinde Merzenich viaHeimat-Info)
 - Quelle: https://www.gemeinde-merzenich.de/politik/stellenanngebote.php (Gemeinde Merzenich)
 - Möglicher Bestand (gleiche Quelle): `kita-baerenstark-golzheim-erzieher-stelle-2026` – Kita Bärenstark in Golzheim sucht Erzieherin oder Erzieher als Krankheitsvertretung (2026-10-01, inhalte/meldungen/2026-09-26-bis-10-03-redaktionsupdate.json)
 - Möglicher Bestand (gleiche Quelle): `gemeinde-merzenich-sucht-fachbereichsleitung-planen-und-bauen` – Gemeinde sucht Leitung für den Fachbereich Planen und Bauen (2026-10-14, inhalte/meldungen/2026-10-14-recherche-chatgpt.json)
 - Möglicher Bestand (gleiche Quelle): `uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026` – Sportkita Bärenstark: Übungsleiterin oder Übungsleiter mit C-Lizenz gesucht (2026-10-25, inhalte/meldungen/2026-10-25-recherche-claude.json)
-- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
+- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-FBL3-JOB-1511, T1-B; Stellenübersicht und Original-PDF vollständig geprüft. Weiterarbeit: Ist die Ausschreibung vor Übernahme weiterhin offen? Bewerbungsprofil vollständig verlinken,
+
+### MA-LEADER-270127 · P2 · T1-B/B0 · in_bearbeitung
+
+- Ort/Ressort: Alle Kernorte · Vereine/Wirtschaft/Strukturwandel; Art: Hintergrund; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: Vor Förderberatung/Übernahme; spätestens 10.11.2026.
+- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-22-morgens.md](dossiers/2026-10-22-morgens.md)
+- Quelle: https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXGdzugBlDh1kR-iRHD4ZXtVRW-AA_MbaqeIHuim_Mwf/Mitteilungsvorlage_M135-2026.pdf (Gemeinde Merzenich, StabIW)
+- Möglicher Bestand (Stichwort): `leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027` – LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027 (2026-10-17, inhalte/meldungen/2026-10-17-leader.json)
+- Notiz: Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | ChatGPT 27.10. abends: MA-LEADER-270127, T1-B; Amtliche Mitteilung gelesen; 
 
 ### MA-LEADER-LETZTAUFRUF · P2 · T1-B/B0 · zur_abnahme
 
@@ -106,17 +112,13 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand: keiner gefunden
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
-### MA-NAHVERKEHRSPLAN · P2 · T1-B/B0 · zur_abnahme
+### MA-PAPIERTONNE-2026 · P2 · T1-B/B0 · in_bearbeitung
 
-- Ort/Ressort: Merzenich / Kreis Düren · ÖPNV; Art: Unveränderter Recherchebestand; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: Nach November-Workshop; vor Übernahme Originalrefresh
-- Dossier: [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-13-morgens.md](dossiers/2026-10-13-morgens.md), [2026-10-14-morgens.md](dossiers/2026-10-14-morgens.md), [2026-10-15-morgens.md](dossiers/2026-10-15-morgens.md), [2026-10-16-morgens.md](dossiers/2026-10-16-morgens.md), [2026-10-17-morgens.md](dossiers/2026-10-17-morgens.md), [2026-10-18-morgens.md](dossiers/2026-10-18-morgens.md), [2026-10-19-morgens.md](dossiers/2026-10-19-morgens.md), [2026-10-20-morgens.md](dossiers/2026-10-20-morgens.md), [2026-10-21-morgens.md](dossiers/2026-10-21-morgens.md), [2026-10-22-morgens.md](dossiers/2026-10-22-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md)
-- Quelle: https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/umfrage-nvp.php (Gemeinde Merzenich)
-- Quelle: https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZUifbD7yAv7-NfTsQ1p_eoaVMwCC18lif1Eq2etJ7oWm/Mitteilungsvorlage_M136-2026_1._Nachtrag.pdf (Gemeinde Merzenich / öffentliche Mitteilung M136/2026, 1.Nachtrag)
-- Quelle: https://www.kreis-dueren.de/presse/online-beteiligung-zum-nahverkehrsplan_2025-11-18.php (Kreis Düren)
-- Quelle: https://mk.mobigator.de/kreis-dueren/ (Beauftragte Projekthomepage büro stadtVerkehr/mobigator)
-- Quelle: https://ratsinfo.gemeinde-merzenich.de/ (Gemeinde Merzenich / M136/2026, Kreis Düren)
-- Möglicher Bestand: keiner gefunden
-- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
+- Ort/Ressort: Alle Kernorte · Umwelt/Service; Art: Hintergrund; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: Vor einer Terminnennung.
+- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-14-morgens.md](dossiers/2026-10-14-morgens.md), [2026-10-15-morgens.md](dossiers/2026-10-15-morgens.md), [2026-10-16-morgens.md](dossiers/2026-10-16-morgens.md), [2026-10-17-morgens.md](dossiers/2026-10-17-morgens.md), [2026-10-18-morgens.md](dossiers/2026-10-18-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md), [2026-10-26-claude-nachlauf.md](dossiers/2026-10-26-claude-nachlauf.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md)
+- Quelle: https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/papiertonne-gemeinde-merzenich.php (Gemeinde Merzenich / Schönmackers)
+- Möglicher Bestand (Stichwort): `altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026` – Altpapier bitte in die Tonne: Gemeinde und Schönmackers bitten um weniger lose Bündel (2026-10-15, inhalte/meldungen/2026-10-15-gemeinde-heimatinfo.json)
+- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Ka
 
 ### MA-TEAM-ORTSFEST-2026 · P2 · T1-B/B0 · neu
 
@@ -143,7 +145,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-10-27 abends (ChatGPT): 25 Karten; 1 neue örtliche Unfallmeldung und 6 regionale Funde; 1 neuer Einlass-/Beginn-Abgleich; 7 neue Kurzfassungen (1 T1 mit zu dokumentierender Quellenausnahme, 6 T2 gesperrt). 10 zusätzliche Fotodateien, Lizenzmetadaten 10, Sichtabruf 9, lokale Downloads/Integration 0. Keine neuen Sportergebnisse.
 - 2026-10-27 morgens (Claude): 0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 636d04c
 - 2026-10-27 morgens (ChatGPT): 27 Karten; 1 erstmals erschlossener regionaler Servicehinweis, 1 neuer Quellenkonflikt und 4 Hintergrundpakete; 7 neue Textfassungen (2 T1, 5 T2 gesperrt); keine neue örtliche Eilmeldung oder Sportergebnisnachricht; 10 zusätzliche Bildkandidaten, ohne Sichtprüfung/Download/Integration.
 - 2026-10-26 abends (ChatGPT): 18 Karten; 4 Quellen- und Sachstandsergänzungen, 2 neue Korrekturaufträge; 1 Standardentwurf und 3 Ergänzungsbausteine; 10 zusätzliche Bildkandidaten, davon 1 gesperrt; keine Artikelumsetzung
-- 2026-10-26 nachlauf (Claude): 1 neue Standard-Meldung (Amprion-Netzausbau), 3 Registerthemen geklärt (Flutlicht Dublette, Papiertonne unbelegt, SC III weiter ohne Klartext); Automatisierung: Umkreis-Automatik Polizei, Register-Lagebild, Bildsystem-Workflow-Korrektur – Commit 976e9be1
