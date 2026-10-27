@@ -6,6 +6,10 @@ Stand: 25.10.2026. Dieser Ordner verbindet die ausführliche ChatGPT-Recherche m
 
 Alle verfügbaren vollständigen Dossiers vom 13.–25.10. stehen im [Archiv](archiv.md). Letzter ausdrücklich verarbeiteter ChatGPT-Recherchestand: 14.10.; der folgende Recherchevergleich beginnt am 15.10. Das Register verbindet die historischen Fassungen über dossier_history. Historische Themen mit archiv_refresh_noetig vor Übernahme neu prüfen. Der Archivimport aktualisiert keine Website-Artikel und setzt keine alten Themen auf freigegeben.
 
+## Claude-Redaktionslauf
+
+Der zweimal tägliche Lauf der KI-Redaktion folgt [CLAUDE-LAUF.md](CLAUDE-LAUF.md) (Version 2.0). Regeln: [SCHREIBREGELN.md](SCHREIBREGELN.md), Quellen: [QUELLEN.md](QUELLEN.md), Register: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md), Vorlagen: [vorlagen/](vorlagen/). Maschinelle Prüfung: `node qa/redaktion-lauf.mjs`. Bei Widerspruch zu diesem README gilt CLAUDE-LAUF.md.
+
 ## Einstieg bei jeder Redaktionsaufgabe
 
 1. PROJECT.md und docs/REDAKTIONELLER-STANDARD-V2.md lesen; git status prüfen und aktuelle main-Änderungen ohne Überschreiben fremder Arbeit übernehmen.
@@ -37,13 +41,13 @@ Textstatus: T0 gesperrt/unvollständig; T2 konkrete Freigabebedingung offen; T1-
 
 Priorität: dringende lokale Meldungen und Fristen, dann bestätigte Sport-/Ortsteilupdates, dann relevante Kreisstoffe. Mehrere Quellen für denselben Vorgang zu einer belegten Meldung zusammenführen; Unstimmigkeiten benennen und klären. Bereits verstrichene Spielvorschauen aktualisieren oder sperren. Sportdaten als Einheit aus Ergebnis, offenem Spiel, nächstem Spiel, Tabelle und einheitlichem Datenzeitpunkt behandeln. Sport bleibt von der Startseite ausgeschlossen.
 
-Recherchedateien nicht nach inhalte/meldungen/ kopieren und nicht pauschal in den WordPress-Import aufnehmen. Einzelne Artikel erst nach Quellenrefresh, Bildfreigabe und Human Review in die vorhandene Pipeline übernehmen. Achtung: WordPress kann die Import-XML stündlich selbst abrufen; ihre Änderung ist publikationswirksam.
+Recherchedateien nicht nach inhalte/meldungen/ kopieren und nicht pauschal in den WordPress-Import aufnehmen. Einzelne Artikel erst nach Quellenrefresh in die vorhandene Pipeline übernehmen; die menschliche Prüfung (Human Review) findet in den WordPress-Freigaben statt, in die Meldungen als Entwurf kommen. Der genaue Ablauf für Claude steht in [CLAUDE-LAUF.md](CLAUDE-LAUF.md). Achtung: WordPress kann die Import-XML stündlich selbst abrufen; ihre Änderung ist publikationswirksam.
 
 Verarbeitung im Register: neu → in_bearbeitung → zur_abnahme → uebernommen bzw. gesperrt/veraltet. Nur bei echter Umsetzung Artikelpfad und Commit erfassen; Quellenprüfung, Bildfreigabe und Publikation getrennt halten. Ein gelesener Bericht ist noch nicht umgesetzt. Claude Code muss laufen bzw. vom Nutzer gestartet werden; die Ablage und ChatGPT-Automation starten keine Claude-Sitzung.
 
 ## Bilder und Bildpools
 
-Ziel je Lauf 10–20 zusätzliche motivisch unterschiedliche Kandidaten, soweit sinnvoll verfügbar. Gegen bisherige Dossiers und echte Bibliothek abgleichen. Je Bild Dateiseite, Originalzugang, Urheber, genaue Lizenz und Lizenzlink, sichtbarer Credit, Alt-Text, Maße, tatsächlicher Ort/Datum, Pool und Sperrthemen dokumentieren. Archiv/Symbol klar kennzeichnen. Gefunden, rechtlich geprüft, visuell geprüft, heruntergeladen, Dubletten geprüft und integriert getrennt zählen.
+Für die ChatGPT-Recherche: Ziel je Lauf 10–20 zusätzliche motivisch unterschiedliche Kandidaten, soweit sinnvoll verfügbar (Claude-Läufe haben kein Mengenziel, siehe CLAUDE-LAUF.md). Gegen bisherige Dossiers und echte Bibliothek abgleichen. Je Bild Dateiseite, Originalzugang, Urheber, genaue Lizenz und Lizenzlink, sichtbarer Credit, Alt-Text, Maße, tatsächlicher Ort/Datum, Pool und Sperrthemen dokumentieren. Archiv/Symbol klar kennzeichnen. Gefunden, rechtlich geprüft, visuell geprüft, heruntergeladen, Dubletten geprüft und integriert getrennt zählen.
 
 Bestehende Pfade verwenden: deploy/import-editorial-photos.mjs, deploy/editorial-photo-review.json, chatgpt-site/data/editorial-images/editorial-photo-pools.json; weitere Pfade mit rg auflösen. Keine neuen parallelen Poolmanifeste. Keine offizielle Fotoerlaubnis aus bloßem Copyright ableiten, keine ungeprüften Freigaben und kein auswärtiger Ort als Merzenich. Poolerweiterung erfordert tatsächlichen Download, Rechte-/Sichtprüfung, Dublettenabgleich und vorhandenen Importer; eine Kandidatenliste erfüllt das noch nicht.
 
@@ -51,7 +55,9 @@ Bestehende Pfade verwenden: deploy/import-editorial-photos.mjs, deploy/editorial
 
 Dieser Ordner liegt außerhalb chatgpt-site/, inhalte/ und wordpress-delivery/. Keine Aufnahme in Frontendnavigation, Suche, Feed, Sitemap, WordPress-Import oder öffentliche Build-Assets. Keine Links von öffentlichen Artikeln auf Dossiers. Nur öffentliche Quellen und redaktionelle Arbeitsdaten speichern, keine Zugangsdaten oder personenbezogenen internen Notizen. Unsichtbar auf der Website bedeutet nicht privat auf GitHub.
 
-## Abschluss eines Laufs
+## Abschluss eines Recherchelaufs (ChatGPT)
+
+Für Claude-Läufe gilt stattdessen CLAUDE-LAUF.md Phasen 4 bis 7 (dort werden auch Inhalte und erzeugte Dateien committet).
 
 1. Dossier, latest.md und Register auf konsistente IDs, Pfade, Zahlen und Status prüfen.
 2. Ausschließlich Recherche-/Dokumentationsdateien committen; keine fremden Änderungen einbeziehen. main frisch lesen und mit aktuellem Parent/Lease aktualisieren, niemals Force-Push oder konkurrierende Commits überschreiben.

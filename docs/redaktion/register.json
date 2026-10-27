@@ -7236,11 +7236,11 @@
     },
     {
       "id": "MA-ELW1-116-2026",
-      "workflow_status": "uebernommen",
+      "workflow_status": "zur_abnahme",
       "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
       "article_id": null,
       "implementation_commit": "636d04c",
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsbehauptung zum Vergabestand, EU-Schwellenwert mit EU-Quelle, Deutung als nicht belegt gekennzeichnet, Datum statt relativer Zeitangabe).",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsbehauptung zum Vergabestand, EU-Schwellenwert mit EU-Quelle, Deutung als nicht belegt gekennzeichnet, Datum statt relativer Zeitangabe). Status zur_abnahme: korrigierter Entwurf liegt in den WordPress-Freigaben.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -7395,12 +7395,7 @@
         },
         "implementation": "keine_Artikelumsetzung"
       },
-      "editorial_correction_required": {
-        "status": "T2",
-        "dossier": "dossiers/2026-10-26-abends.md",
-        "scope": "Nichtvergabe nicht aus fehlendem Zuschlagsnachweis ableiten",
-        "implementation_status": "Altumsetzung unverändert"
-      }
+      "editorial_correction_required": false
     },
     {
       "id": "MA-1025-02",

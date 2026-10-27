@@ -4,4 +4,4 @@ Lies zuerst PROJECT.md. Für Redaktion, neue Meldungen und Bilder danach docs/re
 
 Die Dossiers sind Recherche und Arbeitsaufträge, keine Publikationsfreigabe. Vor Umsetzung Quellen, Datenstand, Dubletten, Rechte und Freigabestatus prüfen. Bearbeitete Themen mit Artikelpfad und Commit im Register dokumentieren. Bestehende Architektur und Quellenimporte nutzen.
 
-Für den zweimal täglichen Claude-Redaktionslauf gelten zusätzlich die Qualitätsanforderungen in docs/redaktion/CLAUDE-LAUF.md (Standard-Länge als Regelfall, mindestens zwei Quellen, jede Angabe an der Primärquelle geprüft).
+Für den zweimal täglichen Claude-Redaktionslauf ist docs/redaktion/CLAUDE-LAUF.md die verbindliche Laufdefinition (Phasen, Abnahmen, Störungen, was ohne Freigabe sichtbar wird). Dazu docs/redaktion/SCHREIBREGELN.md (Artikeltyp, Verifikation, zwei Quellen, Datenschutz), docs/redaktion/QUELLEN.md (Quellenkatalog, Sperren, Umwege), docs/redaktion/REGISTER-SCHEMA.md und die Vorlagen unter docs/redaktion/vorlagen/. Vor jedem Commit eines Laufs: node qa/redaktion-lauf.mjs (0 Fehler). Claude-Termine immer mit "entwurf": true.

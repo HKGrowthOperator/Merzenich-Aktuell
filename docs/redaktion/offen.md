@@ -7,13 +7,13 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 99 |
-| uebernommen | 32 |
+| uebernommen | 31 |
 | gesperrt | 15 |
-| zur_abnahme | 6 |
+| zur_abnahme | 7 |
 | neu | 5 |
 | in_bearbeitung | 1 |
 
-## Offen (12)
+## Offen (13)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -28,6 +28,17 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `strukturausschuss-15-oktober-ruhbens-rwe-neuland-hambach` – Strukturausschuss am Donnerstag: CO2-Leitung „Ruhbens“, RWE und Neuland Hambach auf der Tagesordnung (2026-10-14, inhalte/meldungen/2026-10-14-recherche-chatgpt.json)
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen
+
+### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
+
+- Ort/Ressort: Merzenich · Feuerwehr/Rathaus; Art: Fortgeführter Korrekturauftrag; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: Vor Artikel-Endabnahme
+- Dossier: [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-claude-nachmittags.md](dossiers/2026-10-26-claude-nachmittags.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md), [2026-10-27-claude-morgens.md](dossiers/2026-10-27-claude-morgens.md)
+- Quelle: https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZSvbhaIgFpMuKYsK4dla6ZClHpgCEEG98EBaK-LMBlIE/Beschlussvorlage_116-2026.pdf (Gemeinde Merzenich / Fachbereich 2)
+- Quelle: https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZeSgDXK7stQ8cYbRBFieuloGsxGKrUNZX_qOS0QIavuV/Beschlusstext_116-2026_-oeffentlich-_Gemeinderat_30.09.2026.pdf (Gemeinderat Merzenich / Ratsinformationssystem)
+- Quelle: https://ratsinfo.gemeinde-merzenich.de/vorlagen (Gemeinde Merzenich / vorhandener Ratsvorgang 116/2026)
+- Artikelpfad: inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/
+- Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
+- Notiz: Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsb
 
 ### MA-AMPRION-BAUSTART · P2 · T1/B0 · zur_abnahme
 
