@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 25.10.2026 (Claude, Nachlauf abends): Rohdaten des Quellenabrufs vom Morgen, eigene Live-Abrufe bei Heimat-Info, Ratsinformationssystem, Kreis Düren, Neuland Hambach, FUSSBALL.DE/fupa, click-TT, Autobahn GmbH und go.Rheinland; abgeglichen mit dem Morgen- und Abenddossier unter docs/redaktion/dossiers/ und dem Bestand. Jede Aussage an der genannten Quelle gelesen; Sonntagsergebnisse nach Abpfiff bestätigt. Keine Namen von Privatpersonen. Erscheint in WordPress als Entwurf in den Freigaben.",
+  "hinweis": "Recherche vom 25.10.2026 (Claude, Nachlauf abends): Rohdaten des Quellenabrufs vom Morgen, eigene Live-Abrufe bei Heimat-Info, Ratsinformationssystem, Kreis Düren, Neuland Hambach, FUSSBALL.DE/fupa, click-TT, Autobahn GmbH und go.Rheinland; abgeglichen mit dem Morgen- und Abenddossier unter docs/redaktion/dossiers/ und dem Bestand. Jede Aussage an der genannten Quelle gelesen; Sonntagsergebnisse nach Abpfiff bestätigt. Keine Namen von Privatpersonen. Erscheint in WordPress als Entwurf in den Freigaben. Korrekturen 27.10.2026 (Claude): Mental Load ausgebucht, Meisterstipendium (bis zu vier, Rückforderung), Finkenheide (Datum 23.10., Buchbarkeit bleibt Bedingung, Standard), Persönliches Budget (Anmeldefrist laut Portal 02.11.). Weitere Korrekturen 27.10.: Amtsblatt (keine Sitzungstermine im Heft, Eigenangabe monatlich), Sitzungstermine (Öffentlichkeit nicht belegt), Eichel-Sammelaktion (Querverweis ohne Quelle entfernt).",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -231,8 +231,8 @@
       "ressort": "leben",
       "ortsteil": "merzenich",
       "kicker": "Leben · Soziales",
-      "titel": "Persönliches Budget: Aktionstag im Kreishaus am 5. November, Anmeldung bis Montag",
-      "dek": "Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Gemeinde Merzenich weist auf die Anmeldefrist 26. Oktober hin.",
+      "titel": "Persönliches Budget: Aktionstag im Kreishaus am 5. November, Anmeldung über das Kreisportal noch möglich",
+      "dek": "Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Pressemitteilung nannte den 26. Oktober als Anmeldeschluss, das Anmeldeportal des Kreises nimmt Anmeldungen bis 2. November an.",
       "datum": "2026-10-25T22:20:00+01:00",
       "artikeltyp": "kurzmeldung",
       "themen": [
@@ -248,25 +248,30 @@
       "bildklasse": "leben.vorsorge",
       "fakten": [
         "Aktionstag „Das Persönliche Budget“: Donnerstag, 5.11.2026, 10 bis 17 Uhr, Kreishaus Düren, Raum A 158; kostenlos und barrierefrei",
-        "Anmeldung bis Montag, 26.10.2026: online unter beteiligung.nrw.de/k/1028609, per E-Mail an die Inklusionsbeauftragte des Kreises oder telefonisch unter 02421 22-1051000",
+        "Anmeldung: Pressemitteilung „bis Montag, 26. Oktober“; Anmeldeportal Anmeldezeitraum 01.09.–02.11.2026, am 27.10.2026 31 freie Plätze; online, per E-Mail an die Inklusionsbeauftragte oder unter 02421 22-1051000",
         "Programm: Fachvorträge, „Markt der Möglichkeiten“ mit Beratungsstellen, Austausch; Hörübertragungsanlage, Schrift- und Gebärdensprachdolmetschende, Ruheraum",
         "Wanderausstellung vom 2. bis 6.11.2026 im Lichthof des Kreishauses (1. Stock, Haus B); Hinweis der Gemeinde Merzenich am 21.10.2026 über Heimat-Info"
       ],
       "absaetze": [
-        "Der Kreis Düren lädt am Donnerstag, 5. November, von 10 bis 17 Uhr zum Aktionstag „Das Persönliche Budget“ ins Kreishaus Düren ein (Raum A 158). Die Gemeinde Merzenich hat die Einladung am 21. Oktober in der Heimat-Info-App weitergegeben. Wer teilnehmen möchte, muss sich bis Montag, 26. Oktober, anmelden: online unter beteiligung.nrw.de/k/1028609, per E-Mail an die Inklusionsbeauftragte des Kreises oder telefonisch unter 02421 22-1051000. Ein Unterstützungsbedarf soll bei der Anmeldung angegeben werden.",
+        "Der Kreis Düren lädt am Donnerstag, 5. November, von 10 bis 17 Uhr zum Aktionstag „Das Persönliche Budget“ ins Kreishaus Düren ein (Raum A 158). Die Gemeinde Merzenich hat die Einladung am 21. Oktober in der Heimat-Info-App weitergegeben. Zur Anmeldung gibt es zwei Angaben: Pressemitteilung und Einladung nennen Montag, 26. Oktober, das Anmeldeportal des Kreises gibt als Anmeldezeitraum den 1. September bis 2. November an und zeigte am 27. Oktober 31 freie Plätze. Angemeldet wird online unter beteiligung.nrw.de/k/1028609, per E-Mail an die Inklusionsbeauftragte des Kreises oder telefonisch unter 02421 22-1051000; ein Unterstützungsbedarf soll dabei angegeben werden.",
         "Das Persönliche Budget ist ein Geldbetrag, auf den Menschen mit Behinderung einen Rechtsanspruch haben. Damit können sie Leistungen selbst auswählen, einkaufen und bezahlen, statt sie als Sachleistung zu erhalten. Der Aktionstag bietet Fachvorträge, einen „Markt der Möglichkeiten“ mit Beratungsstellen und Diensten sowie Raum für Erfahrungsaustausch. Die Teilnahme ist kostenlos.",
         "Das Kreishaus stellt eine Hörübertragungsanlage, Schrift- und Gebärdensprachdolmetschende sowie einen Ruheraum bereit. Begleitend informiert vom 2. bis 6. November eine barrierefreie Wanderausstellung im Lichthof des Kreishauses über das Persönliche Budget."
       ],
       "quelle": {
         "name": "Kreis Düren, Pressemitteilung vom 19.10.2026: „Kreis Düren lädt zum Aktionstag ‚Das Persönliche Budget‘ ein“",
         "url": "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php",
-        "stand": "2026-10-25"
+        "stand": "2026-10-27"
       },
       "weitereQuellen": [
         {
           "name": "Gemeinde Merzenich über Heimat-Info, 21.10.2026, 09:29 Uhr",
           "url": "https://www.heimat-info.de/beitraege/6ff892e9-2eba-4374-a65d-44609b7a6fdb",
           "stand": "2026-10-25"
+        },
+        {
+          "name": "Kreis Düren, Anmeldeseite „Aktionstag Das Persönliche Budget“ auf beteiligung.nrw.de",
+          "url": "https://beteiligung.nrw.de/portal/dueren/beteiligung/themen/1028609",
+          "stand": "2026-10-27"
         }
       ]
     },
@@ -276,7 +281,7 @@
       "ortsteil": "merzenich",
       "kicker": "Rathaus · Sitzungskalender",
       "titel": "Gemeinderat tagt am 3. Dezember: die Sitzungstermine bis Jahresende",
-      "dek": "Das Ratsinformationssystem nennt sechs Sitzungen bis Dezember, vom Jugendgremium am 4. November bis zum Gemeinderat am 3. Dezember. Alle Sitzungen sind öffentlich.",
+      "dek": "Das Ratsinformationssystem nennt sechs Sitzungen bis Dezember, vom Jugendgremium am 4. November bis zum Gemeinderat am 3. Dezember.",
       "datum": "2026-10-25T22:22:00+01:00",
       "artikeltyp": "kurzmeldung",
       "themen": [
@@ -297,14 +302,14 @@
         "Quelle: Kalenderexport des Ratsinformationssystems, Abruf 25.10.2026"
       ],
       "absaetze": [
-        "Bis zum Jahresende stehen in der Gemeinde Merzenich sechs öffentliche Gremiensitzungen an. Das geht aus dem Sitzungskalender des Ratsinformationssystems hervor (Stand 25. Oktober).",
+        "Bis zum Jahresende stehen in der Gemeinde Merzenich sechs Gremiensitzungen an. Das geht aus dem Sitzungskalender des Ratsinformationssystems hervor (Stand 25. Oktober).",
         "Den Anfang macht das Jugendgremium am Mittwoch, 4. November, um 17 Uhr im Bürgerhaus an der Burgstraße 9. Am Donnerstag, 5. November, tagt um 18 Uhr der Rechnungsprüfungsausschuss im Ratssaal. Es folgen der Bau-, Planungs- und Umweltausschuss am 12. November, der Haupt- und Finanzausschuss am 19. November und der Ausschuss für Revitalisierung Bürgewald am 26. November, jeweils um 18 Uhr im Ratssaal am Valdersweg 1.",
         "Der Gemeinderat kommt am Donnerstag, 3. Dezember, um 17 Uhr im Ratssaal zusammen. Es ist die letzte im Kalender eingetragene Ratssitzung des Jahres. Die Tagesordnungen veröffentlicht die Verwaltung vor dem jeweiligen Termin im Ratsinformationssystem; für den Bauausschuss am 12. November ist laut Niederschrift des Gemeinderats die geänderte Entwurfsplanung für den Umbau der Grundschule Golzheim vorgesehen."
       ],
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (Kalenderexport)",
         "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
-        "stand": "2026-10-25"
+        "stand": "2026-10-27"
       },
       "weitereQuellen": [
         {
@@ -392,14 +397,21 @@
         "Aktuelle Ausgabe 11/2026 vom 16.10.2026; das Amtsblatt erscheint monatlich"
       ],
       "absaetze": [
-        "Das nächste Amtsblatt der Gemeinde Merzenich, Ausgabe 12/2026, erscheint nach dem veröffentlichten Terminplan am Freitag, 13. November. Abgabeschluss für Beiträge ist Dienstag, 3. November. Vereine, Kirchengemeinden und Einrichtungen, die Termine für Advent und Dezember ankündigen wollen, sollten ihre Texte bis dahin bei der Gemeinde einreichen.",
-        "Die aktuelle Ausgabe 11/2026 ist am 16. Oktober erschienen; sie enthält unter anderem die Martinszüge, die Laubannahme am Bauhof und die Sitzungstermine. Das Amtsblatt erscheint monatlich und steht auf der Website der Gemeinde als PDF bereit. Der Terminplan enthält keine Zusage, dass jeder eingereichte Beitrag abgedruckt wird."
+        "Das nächste Amtsblatt der Gemeinde Merzenich, Ausgabe 12/2026, erscheint nach dem veröffentlichten Terminplan am Freitag, 13. November. Abgabeschluss für Beiträge ist Dienstag, 3. November. Was in der Ausgabe vom 13. November erscheinen soll, muss bis zu diesem Termin bei der Gemeinde vorliegen.",
+        "Die aktuelle Ausgabe 11/2026 ist am 16. Oktober erschienen; sie enthält unter anderem die Martinszüge, die Laubannahme am Bauhof und den Hinweis, dass Zeit und Ort der Rats- und Ausschusssitzungen auf der Website der Gemeinde bekannt gemacht werden. Das Amtsblatt erscheint nach eigener Angabe monatlich, wird kostenlos an die Haushalte verteilt und steht auf der Website der Gemeinde als PDF bereit. Der Terminplan enthält keine Zusage, dass jeder eingereichte Beitrag abgedruckt wird."
       ],
       "quelle": {
         "name": "Gemeinde Merzenich, Amtsblatt: Abgabe- und Erscheinungstermine 2026",
         "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt 11/2026 vom 16.10.2026 (PDF), S. 1 und 3: nächstes Erscheinungsdatum, Abgabetermine, Impressum",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
+          "stand": "2026-10-27"
+        }
+      ]
     },
     {
       "slug": "uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026",
@@ -674,9 +686,9 @@
       "ortsteil": "merzenich",
       "kicker": "Vereine · Jugend",
       "titel": "Jugendzeltplatz Finkenheide: Kreis sucht bis 20. November einen neuen Träger",
-      "dek": "Der Kreis Düren verkauft den 11.500 Quadratmeter großen Zeltplatz in Hürtgenwald-Kleinhau. Gesucht ist ein Träger der Jugendhilfe, der ihn als Lern- und Begegnungsort weiterführt.",
+      "dek": "Der Kreis Düren will den knapp 11.500 Quadratmeter großen Jugendzeltplatz in Hürtgenwald-Kleinhau verkaufen. Ein Käufer muss anerkannter Träger der Jugendhilfe sein und zusagen, dass Vereine und Verbände den Platz weiter buchen können.",
       "datum": "2026-10-25T22:34:00+01:00",
-      "artikeltyp": "kurzmeldung",
+      "artikeltyp": "standard",
       "themen": [
         [
           "jugend",
@@ -693,19 +705,31 @@
       ],
       "bildklasse": "vereine.jugend",
       "fakten": [
-        "Jugendzeltplatz Finkenheide, Hürtgenwald-Kleinhau: rund 11.500 m², Zeltflächen, Lagerfeuerstellen, Gruppen- und Aktionshaus, Küchen- und Sanitärräume, Spiel- und Sportmöglichkeiten",
-        "Gesucht: Träger der Jugendhilfe mit Nutzungskonzept und Kaufpreisangebot; Bewerbungsschluss 20.11.2026",
-        "Kreis Düren, Mitteilung vom 21.10.2026 (Listendatum 23.10.); Informationsblatt als PDF auf der Kreisseite"
+        "Jugendzeltplatz Finkenheide, Hürtgenwald-Kleinhau, eröffnet Juli 1988; Liegenschaft 11.482 m² (Mitteilung: rund 11.500 m²), Zeltfläche 1.650 m², Aktionshaus 270 m², Gruppengebäude 383 m² (Informationsblatt)",
+        "Bieter- und Konzeptverfahren: Nutzungskonzept und Kaufpreisangebot bis 20.11.2026 an die Kreisverwaltung Düren (Mitteilung vom 23.10.2026, Informationsblatt)",
+        "Kriterien des Jugendhilfeausschusses: anerkannter Träger nach § 75 SGB VIII, mehrjährige Erfahrung, Kinderschutzkonzept, pädagogische Ausrichtung, Fortbestand der Buchung durch Verbände und Vereine; bei Erfüllung entscheidet das höchste Angebot",
+        "Entscheidung durch den Kreistag; Verfahren unverbindlich, keine Ausschreibung nach Vergaberecht (Informationsblatt)",
+        "Investitionen der letzten Jahre u. a. Küche, Sanitär, Heizung mit Solarthermie, Dach, Elektrik, Photovoltaik (Informationsblatt)"
       ],
       "absaetze": [
-        "Der Kreis Düren will den Jugendzeltplatz Finkenheide in Hürtgenwald-Kleinhau abgeben. Nach einer Mitteilung der Kreisverwaltung wird ein Träger der Jugendhilfe gesucht, der das rund 11.500 Quadratmeter große Gelände am Rand des Nationalparks Eifel kauft und als Lern-, Bildungs- und Begegnungsort für Kinder und Jugendliche weiterführt. Zum Platz gehören Zeltflächen, Lagerfeuerstellen, ein Gruppen- und ein Aktionshaus, Küchen- und Sanitärräume sowie Spiel- und Sportmöglichkeiten; in den vergangenen Jahren wurde nach Angaben des Kreises in Gebäude und Ausstattung investiert.",
-        "Interessenten müssen bis zum 20. November 2026 ein Nutzungskonzept und ein Kaufpreisangebot einreichen. Ein Informationsblatt mit den Einzelheiten stellt der Kreis als PDF auf seiner Website bereit. Ob der Platz nach dem Verkauf weiter für Jugendgruppen von außerhalb buchbar bleibt, hängt vom künftigen Träger ab."
+        "Der Kreis Düren will den Jugendzeltplatz Finkenheide in Hürtgenwald-Kleinhau abgeben. In einem Bieter- und Konzeptverfahren sucht die Kreisverwaltung einen Träger der Jugendhilfe, der das Gelände kauft und als Lern-, Bildungs- und Begegnungsort für Kinder und Jugendliche weiterführt. Interessenten müssen bis zum 20. November 2026 ein Nutzungskonzept und ein Kaufpreisangebot einreichen. Das geht aus einer Mitteilung des Kreises vom 23. Oktober und dem dazugehörigen Informationsblatt hervor.",
+        "Die Liegenschaft ist nach dem Informationsblatt 11.482 Quadratmeter groß; davon entfallen 1.650 Quadratmeter auf die Zeltfläche und 5.520 Quadratmeter auf Spiel- und Wiesenflächen mit Feuerstelle. Das Aktionshaus hat 270, das Gruppengebäude 383 Quadratmeter Nutzfläche. Zum Platz gehören eine Küche für zwei Gruppen, ein Aufenthaltsraum, Sanitäranlagen, drei Lagerplätze mit Lagerfeuerstelle, ein Spiel- und Bolzplatz und ein überdachter Grillplatz. Er liegt etwa zwei Kilometer vom Ortsteil Kleinhau entfernt am Rand des Nationalparks Eifel.",
+        "Eröffnet wurde der Zeltplatz im Juli 1988. In den vergangenen Jahren hat der Kreis nach eigenen Angaben erheblich investiert, unter anderem in Küche und Sanitäranlagen, Heizung, Dach, Elektrik und eine Photovoltaikanlage; die Heizung wird durch Solarthermie unterstützt.",
+        "Die Bedingungen hat der Jugendhilfeausschuss des Kreises festgelegt: Der neue Eigentümer muss anerkannter Träger der Jugendhilfe nach Paragraf 75 des Sozialgesetzbuchs VIII sein oder kurz vor der Anerkennung stehen, mehrjährige Erfahrung in der Arbeit mit Kindern und Jugendlichen haben und ein Kinderschutzkonzept vorlegen. Das Nutzungskonzept muss erkennen lassen, dass der bisherige Nutzungszweck, die Buchung durch Verbände und Vereine, gewährleistet bleibt, und natur-, erlebnis- oder kulturpädagogisch ausgerichtet sein. Erfüllen mehrere Bewerber alle Kriterien, entscheidet das höchste Kaufpreisangebot.",
+        "Wie es weitergeht: Über den Verkauf entscheidet der Kreistag. Der Kreis nennt das Verfahren ausdrücklich eine unverbindliche Aufforderung zur Abgabe eines Angebots und keine Ausschreibung nach Vergaberecht; er behält sich vor, ob, wann und an wen er verkauft. Besichtigungen vermittelt das Zentrale Gebäudemanagement des Kreises, Angebote gehen unter dem Stichwort „Angebot Jugendzeltplatz Finkenheide“ an die Kreisverwaltung in Düren."
       ],
       "quelle": {
-        "name": "Kreis Düren, Mitteilung vom 21.10.2026: „Jugendzeltplatz Finkenheide sucht neuen Eigentümer“",
+        "name": "Kreis Düren, Mitteilung vom 23.10.2026: „Jugendzeltplatz Finkenheide sucht neuen Eigentümer“",
         "url": "https://www.kreis-dueren.de/presse/zeltplatz-finkenheide_2026-10-21.php",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Kreis Düren, Informationsblatt „Veräußerung des Jugendzeltplatzes Finkenheide – Bieter-/Konzeptverfahren“ (PDF)",
+          "url": "https://www.kreis-dueren.de/kreishaus/amt/pressestelle/pdf/Bieter-Konzeptverfahren.pdf",
+          "stand": "2026-10-27"
+        }
+      ]
     },
     {
       "slug": "eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt",
@@ -739,7 +763,7 @@
       ],
       "absaetze": [
         "Der Kreis Düren und Wald und Holz NRW rufen dazu auf, Eicheln für die Wiederbewaldung des Hürtgenwalds zu sammeln. Dort hatte im August ein Waldbrand rund 300 Hektar erfasst. Die gesammelten Eicheln sollen zwischengelagert und voraussichtlich zum Jahreswechsel ausgesät werden; Eichen gelten als robust gegen Hitze und Trockenheit.",
-        "Der erste Sammeltermin am Freitag, 23. Oktober, wurde kurzfristig abgesagt: Der Deutsche Wetterdienst hatte für den Kreis Sturmböen gemeldet, und im Wald drohten abbrechende Äste. Es war derselbe Sturmtag, an dem die Feuerwehr Merzenich in Golzheim und auf der L264 ausrückte. Angemeldete Helferinnen und Helfer wurden nach Angaben des Kreises direkt informiert.",
+        "Der erste Sammeltermin am Freitag, 23. Oktober, wurde kurzfristig abgesagt: Der Deutsche Wetterdienst hatte für den Kreis Sturmböen gemeldet, und im Wald drohten abbrechende Äste. Angemeldete Helferinnen und Helfer wurden nach Angaben des Kreises direkt informiert.",
         "Der zweite Termin bleibt bestehen: Freitag, 6. November, von 14 bis 17 Uhr, Treffpunkt ist der Parkplatz an der Burg Laufenburg in Hürtgenwald. Mitzubringen sind ein Jutebeutel, wetterfeste Kleidung und Schuhe sowie Handschuhe. Zur besseren Planung bittet der Kreis um Anmeldung per E-Mail an sein Umweltamt (Amt 61) mit Datum und Teilnehmerzahl."
       ],
       "quelle": {
@@ -761,7 +785,7 @@
       "ortsteil": "merzenich",
       "kicker": "Wirtschaft · Handwerk",
       "titel": "Meisterstipendium des Kreises: 6.000 Euro, Bewerbung noch bis Samstag",
-      "dek": "Der Kreis Düren vergibt zum dritten Mal vier Stipendien für angehende Meisterinnen und Meister. Bedingung: nach der Prüfung mindestens fünf Jahre im Kreis arbeiten.",
+      "dek": "Der Kreis Düren vergibt zum dritten Mal bis zu vier Stipendien von je 6.000 Euro für angehende Meisterinnen und Meister. Bedingung: nach der Prüfung mindestens fünf Jahre im Kreis arbeiten.",
       "datum": "2026-10-25T22:38:00+01:00",
       "artikeltyp": "kurzmeldung",
       "themen": [
@@ -780,28 +804,42 @@
       ],
       "bildklasse": "wirtschaft.weiterbildung",
       "fakten": [
-        "Meisterstipendium des Kreises Düren, dritte Runde: vier Stipendien zu je 6.000 Euro, einmalig ausgezahlt, nicht zurückzuzahlen; Förderdauer maximal drei Jahre",
+        "Meisterstipendium des Kreises Düren, dritte Runde: bis zu vier Stipendien zu je 6.000 Euro (Förderseite: „maximal vier“), eines als Sonderstipendium für fachkräftearme Handwerke vorgesehen (Förderrichtlinie); einmalige Zahlung",
+        "Rückforderung in voller Höhe möglich, wenn die Bedingungen der Richtlinie nicht eingehalten werden (Förderseite des Kreises); laut Mitteilung vom 20.10. Förderdauer maximal drei Jahre",
         "Verpflichtung: nach bestandener Meisterprüfung mindestens fünf Jahre Berufsausübung im Kreis Düren",
+        "Auswahl durch eine Jury, nicht allein nach Ausbildungsnoten; beim Aufstiegs-BAföG als Einkommen anzugeben (Förderseite)",
         "Bewerbung online bis Samstag, 31.10.2026, unter www.kreis-dueren.de/meisterstipendium",
         "Mitteilung des Kreises vom 20.10.2026 mit Porträt eines Stipendiaten des ersten Jahrgangs (Garten- und Landschaftsbau, Düren)"
       ],
       "absaetze": [
-        "Handwerkerinnen und Handwerker aus der Gemeinde, die eine Meisterausbildung beginnen oder absolvieren, können sich noch bis Samstag, 31. Oktober, um ein Meisterstipendium des Kreises Düren bewerben. Der Kreis vergibt in der dritten Runde vier Stipendien von je 6.000 Euro; das Geld wird einmalig ausgezahlt und muss nicht zurückgezahlt werden, die Förderdauer beträgt höchstens drei Jahre. Im Gegenzug verpflichten sich die Stipendiaten, nach der Meisterprüfung mindestens fünf Jahre im Kreis Düren in ihrem Beruf zu arbeiten.",
-        "Die Bewerbung läuft online über www.kreis-dueren.de/meisterstipendium. In seiner Mitteilung vom 20. Oktober stellt der Kreis einen Garten- und Landschaftsbauer aus Düren vor, der zum ersten Jahrgang gehört und inzwischen den Meistertitel hat. Ob bisher jemand aus Merzenich gefördert wurde, geht aus der Mitteilung nicht hervor."
+        "Handwerkerinnen und Handwerker aus der Gemeinde, die eine Meisterausbildung beginnen oder absolvieren, können sich noch bis Samstag, 31. Oktober, um ein Meisterstipendium des Kreises Düren bewerben. Der Kreis vergibt in der dritten Runde bis zu vier Stipendien von je 6.000 Euro; eines ist nach der Förderrichtlinie als Sonderstipendium für besonders fachkräftearme Handwerke vorgesehen, sofern eine passende Bewerbung vorliegt. Das Geld wird einmalig ausgezahlt und muss nicht erstattet werden, solange die Bedingungen der Richtlinie eingehalten werden; sonst kann der Kreis es in voller Höhe zurückfordern. Im Gegenzug verpflichten sich die Stipendiaten, nach der Meisterprüfung mindestens fünf Jahre im Kreis Düren in ihrem Beruf zu arbeiten.",
+        "Die Bewerbung läuft ausschließlich online über www.kreis-dueren.de/meisterstipendium. Eine Jury prüft die vollständigen Bewerbungen; entscheidend sind nach Angaben des Kreises nicht allein die Ausbildungsnoten, sondern das Gesamtbild. Wer Aufstiegs-BAföG beantragt, muss das Stipendium dort als Einkommen angeben. In seiner Mitteilung vom 20. Oktober stellt der Kreis einen Garten- und Landschaftsbauer aus Düren vor, der zum ersten Jahrgang gehört und inzwischen den Meistertitel hat. Ob bisher jemand aus Merzenich gefördert wurde, geht aus den Veröffentlichungen nicht hervor."
       ],
       "quelle": {
         "name": "Kreis Düren, Mitteilung vom 20.10.2026: „Ein Leben für den Landschaftsbau“ mit Aufruf zum Meisterstipendium",
         "url": "https://www.kreis-dueren.de/presse/meisterstipendium_2026-10-01.php",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Kreis Düren, Förderseite „Meisterinnen- und Meisterstipendium“",
+          "url": "https://www.kreis-dueren.de/meisterstipendium",
+          "stand": "2026-10-27"
+        },
+        {
+          "name": "Kreis Düren, Förderrichtlinie Meisterstipendium (PDF)",
+          "url": "https://www.kreis-dueren.de/kreishaus/amt/60/pdf/Foerderrichtlinie-Kreis-Dueren.pdf",
+          "stand": "2026-10-27"
+        }
+      ]
     },
     {
       "slug": "mental-load-online-vortrag-kreis-dueren-18-november-2026",
       "ressort": "leben",
       "ortsteil": "merzenich",
       "kicker": "Leben · Familie",
-      "titel": "„Mental Load“: kostenloser Online-Vortrag des Kreises am 18. November",
-      "dek": "Wer in der Familie an alles denken muss, trägt die unsichtbare Last. Ein Familientherapeut der SkF-Beratungsstelle Düren zeigt, wie sich Verantwortung fairer verteilen lässt. Anmeldung ab sofort.",
+      "titel": "„Mental Load“: Online-Vortrag des Kreises am 18. November ist ausgebucht",
+      "dek": "Wer in der Familie an alles denken muss, trägt eine unsichtbare Last. Ein Familientherapeut der SkF-Beratungsstelle Düren zeigt im Online-Vortrag des Kreises, wie sich Verantwortung fairer verteilen lässt. Die Plätze sind inzwischen vergeben.",
       "datum": "2026-10-25T22:40:00+01:00",
       "artikeltyp": "kurzmeldung",
       "themen": [
@@ -822,18 +860,25 @@
       "fakten": [
         "Online-Vortrag „Mental Load – Wenn im Kopf immer jemand ‚Dienst hat‘“: Mittwoch, 18.11.2026, 18 bis 19:30 Uhr, kostenfrei; Reihe „Wir. Gemeinsam. Familie im digitalen Gespräch.“",
         "Referent: Ralf Arnolds, Leiter der Beratungsstelle für Kinder, Jugendliche und Eltern des Sozialdienstes Katholischer Frauen Düren, Systemischer Paar- und Familientherapeut",
-        "Anmeldung ab sofort unter https://beteiligung.nrw.de/k/1031298; Rückfragen per E-Mail an das Jugendamt des Kreises (Amt 51)"
+        "Anmeldeseite des Kreises am 27.10.2026: „Buchungsstatus Ausgebucht“, keine Online-Buchung mehr möglich; Rückfragen per E-Mail an das Jugendamt des Kreises (Amt 51)"
       ],
       "absaetze": [
         "Wer in der Familie an Arzttermine, Elternabende, Geburtstage und Einkäufe denkt, trägt die „Mental Load“. Wie sich diese unsichtbare Organisationsarbeit fairer verteilen lässt, erklärt ein kostenfreier Online-Vortrag des Kreises Düren am Mittwoch, 18. November, von 18 bis 19:30 Uhr. Referent ist Ralf Arnolds, Leiter der Beratungsstelle für Kinder, Jugendliche und Eltern des Sozialdienstes Katholischer Frauen Düren und Systemischer Paar- und Familientherapeut.",
         "Der Vortrag gehört zur Reihe „Wir. Gemeinsam. Familie im digitalen Gespräch.“ und richtet sich an Eltern und alle, die verstehen möchten, warum Familienorganisation manchmal mehr Kraft kostet als die eigentliche Arbeit. Im Mittelpunkt steht nicht die Frage, wer mehr macht, sondern wie Verantwortung in Familien, Patchworkfamilien und anderen Konstellationen für alle tragbar organisiert werden kann.",
-        "Eine Anmeldung ist ab sofort über beteiligung.nrw.de/k/1031298 möglich; Rückfragen beantwortet das Jugendamt des Kreises per E-Mail. Für Eltern aus Merzenich entfällt die Anfahrt nach Düren."
+        "Freie Plätze gibt es nicht mehr: Die Anmeldeseite des Kreises meldet am 27. Oktober „Buchungsstatus Ausgebucht“, eine Online-Buchung sei nicht mehr möglich. In der Pressemitteilung vom 20. Oktober hieß es noch, Anmeldungen seien ab sofort möglich. Ob es eine Warteliste gibt, nennt die Seite nicht; Rückfragen beantwortet das Jugendamt des Kreises (Amt 51) per E-Mail. Die Reihe „Wir. Gemeinsam. Familie im digitalen Gespräch.“ findet online statt, die Anfahrt nach Düren entfällt also auch bei künftigen Terminen."
       ],
       "quelle": {
         "name": "Kreis Düren, Mitteilung vom 20.10.2026: „Kostenfreier Vortrag zum Thema Mental Load am 18. November“",
         "url": "https://www.kreis-dueren.de/presse/vortrag-mental-load_2026-10-20.php",
-        "stand": "2026-10-25"
-      }
+        "stand": "2026-10-27"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Kreis Düren, Anmeldeseite „Mental Load“ auf beteiligung.nrw.de (Buchungsstatus)",
+          "url": "https://beteiligung.nrw.de/portal/dueren/beteiligung/themen/1031298",
+          "stand": "2026-10-27"
+        }
+      ]
     }
   ]
 }
