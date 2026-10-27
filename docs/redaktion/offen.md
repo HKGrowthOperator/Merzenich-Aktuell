@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-27-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-27-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 99 |
-| uebernommen | 31 |
-| gesperrt | 16 |
+| uebernommen | 32 |
+| gesperrt | 15 |
 | zur_abnahme | 6 |
 | neu | 5 |
 | in_bearbeitung | 1 |
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-10-27 morgens (Claude): 0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 636d04c
 - 2026-10-27 morgens (ChatGPT): 27 Karten; 1 erstmals erschlossener regionaler Servicehinweis, 1 neuer Quellenkonflikt und 4 Hintergrundpakete; 7 neue Textfassungen (2 T1, 5 T2 gesperrt); keine neue örtliche Eilmeldung oder Sportergebnisnachricht; 10 zusätzliche Bildkandidaten, ohne Sichtprüfung/Download/Integration.
 - 2026-10-26 abends (ChatGPT): 18 Karten; 4 Quellen- und Sachstandsergänzungen, 2 neue Korrekturaufträge; 1 Standardentwurf und 3 Ergänzungsbausteine; 10 zusätzliche Bildkandidaten, davon 1 gesperrt; keine Artikelumsetzung
 - 2026-10-26 nachlauf (Claude): 1 neue Standard-Meldung (Amprion-Netzausbau), 3 Registerthemen geklärt (Flutlicht Dublette, Papiertonne unbelegt, SC III weiter ohne Klartext); Automatisierung: Umkreis-Automatik Polizei, Register-Lagebild, Bildsystem-Workflow-Korrektur – Commit 976e9be1
-- 2026-10-26 nachmittags (Claude): 4 neue Meldungen (3 Standard, 1 Kurz), 2 Aktualisierungen (Verkehr S19-Nachtrag, Laub-Zweitquelle), 2 Termine, 6 Umkreis; Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 8041a59

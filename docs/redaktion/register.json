@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-27-morgens.md",
+  "latest_dossier": "dossiers/2026-10-27-claude-morgens.md",
   "source_check_window": "27.10.2026 morgens ab 07:56 Europe/Berlin; tatsächliche Prüftiefe pro Karte",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -7239,8 +7239,8 @@
       "workflow_status": "uebernommen",
       "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
       "article_id": null,
-      "implementation_commit": "8041a59",
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben.",
+      "implementation_commit": "636d04c",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsbehauptung zum Vergabestand, EU-Schwellenwert mit EU-Quelle, Deutung als nicht belegt gekennzeichnet, Datum statt relativer Zeitangabe).",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -7270,15 +7270,20 @@
           "dossier": "dossiers/2026-10-27-morgens.md",
           "heading": "MA-ELW1-116-2026",
           "check_scope": "Vorhandenen Artikel mit gestriger QA-Karte abgeglichen; kein neuer Zuschlagsbeleg gefunden oder Primärbeschluss neu gelesen"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "MA-ELW1-116-2026 · Korrektur umgesetzt"
         }
       ],
       "priority": "P1",
       "location_section": "Merzenich · Feuerwehr/Rathaus",
       "change_type": "Fortgeführter Korrekturauftrag",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-10-27 morgens Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
       "refresh_note": "Vor Artikel-Endabnahme",
@@ -8209,18 +8214,23 @@
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-27-morgens.md",
-      "workflow_status": "gesperrt",
+      "workflow_status": "uebernommen",
       "last_checked_at": "2026-10-27 morgens Europe/Berlin",
-      "article_path": null,
+      "article_path": "inhalte/umkreis/2026-10-27.json",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.",
+      "implementation_commit": "636d04c",
+      "notes": "Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf. | Claude 27.10. morgens: als Umkreis-Eintrag (Düren, Bildung); kein Merzenicher Artikel, weil die Zuständigkeit der VHS für Merzenich nicht belegt ist.",
       "dossier_history": [
         {
           "date": "2026-10-27",
           "dossier": "dossiers/2026-10-27-morgens.md",
           "heading": "MA-VHS-OFFLINE-26102026",
           "check_scope": "Städtischen Volltext gelesen; VHS-Homepage liefert beim Direktabruf HTTP 429, nicht als Abschaltungsnachweis werten"
+        },
+        {
+          "date": "2026-10-27",
+          "dossier": "dossiers/2026-10-27-claude-morgens.md",
+          "heading": "MA-VHS-OFFLINE-26102026 · Umkreis"
         }
       ],
       "research_history": [
@@ -8924,6 +8934,16 @@
       "photos_integrated": 0,
       "publication": "keine",
       "implementation": "keine_Artikelumsetzung"
+    },
+    {
+      "date": "2026-10-27",
+      "edition": "morgens",
+      "dossier": "dossiers/2026-10-27-claude-morgens.md",
+      "by": "Claude",
+      "compared_with": "dossiers/2026-10-27-morgens.md",
+      "implementation_commit": "636d04c",
+      "summary": "0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler",
+      "publication": "keine; Befund: 11 Claude-Termine waren ohne Freigabe online"
     }
   ]
 }
