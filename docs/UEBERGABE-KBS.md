@@ -298,15 +298,15 @@ Jede Anzeigenart hat ihr eigenes Menü und einen eigenen Kasten mit Feldern. Zwe
 
 ![Werbemittel bearbeiten](anleitung/bilder/11-werbung.png)
 
-Jeder freie Werbeplatz zeigt eine gekennzeichnete **Musteranzeige**. So sieht ein Kunde, wo seine Anzeige erscheint.
+Läuft auf einem Werbeplatz keine Anzeige, bleibt er leer (seit 28.10.2026 keine Musteranzeigen mehr).
 
 **Anzeige schalten:** **Werbung → Werbemittel hinzufügen**.
 1. Titel (intern, z. B. „Bäckerei Muster Herbst 2026“).
 2. **Werbemittel (Bild)**: Bild hochladen, **Alternativtext des Bildes** eintragen.
-3. Kasten **Werbeschaltung**: **Sponsor / Firma**, **Ziel-URL**, **Start**, **Ende**, **Platzierung**. Für mehrere Plätze zusätzlich **Weitere Plätze (Kampagne)**. **Priorität**, wenn sich mehrere Anzeigen einen Platz teilen.
+3. Kasten **Werbeschaltung**: **Sponsor / Firma**, **Ziel-URL**, **Start**, **Ende**, **Platzierung**. Für mehrere Plätze zusätzlich **Weitere Plätze (Kampagne)**. **Priorität** in drei Stufen (1 Hoch, 2 Mitte, 3 Niedrig, wie die Relevanz der Meldungen), wenn sich mehrere Anzeigen einen Platz teilen.
 4. **Aktiv** (Schaltung aktiv) ankreuzen, **Veröffentlichen**.
 
-Eine Anzeige läuft nur, wenn sie veröffentlicht und aktiv ist, das Startdatum erreicht ist und Werbung sowie der Platz eingeschaltet sind (Werbeplätze, B5). Nach dem Ende kommt die Musteranzeige zurück.
+Eine Anzeige läuft nur, wenn sie veröffentlicht und aktiv ist, das Startdatum erreicht ist und Werbung sowie der Platz eingeschaltet sind (Werbeplätze, B5). Nach dem Ende bleibt der Platz leer, solange dort keine andere Anzeige läuft.
 
 **Gesponserte Beiträge:** Im Editor im Kasten **Kennzeichnung** **Gesponserter Beitrag** ankreuzen und den **Auftraggeber** nennen. Die Meldung trägt dann sichtbar „Anzeige“ und nennt den Auftraggeber statt der Redaktion. Gesponserte Beiträge lösen keine Push-Nachricht aus.
 

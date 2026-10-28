@@ -59,6 +59,30 @@ function ma_register_ads_hooks(): void {
     add_shortcode('ma_ad', 'ma_ad_shortcode');
     add_action('wp_enqueue_scripts', 'ma_ads_register_assets');
     add_action('admin_init', 'ma_ads_aktivieren_113');
+    add_action('init', 'ma_ad_stufen_umstellen', 30);
+}
+
+/**
+ * Priorität einer Anzeige in drei Stufen wie die Relevanz der Meldungen
+ * (28.10.2026): 1 Hoch, 2 Mitte, 3 Niedrig; ohne Wert gilt Mitte.
+ */
+function ma_ad_stufe(int $id): int {
+    $v = (int) get_post_meta($id, 'ma_ad_priority', true);
+    return $v >= 1 && $v <= 3 ? $v : 2;
+}
+
+/**
+ * Einmalige Umstellung der früheren freien Priorität (höhere Zahl gewann) auf
+ * drei Stufen: ab 8 Hoch, 4 bis 7 Mitte, darunter Niedrig (wie bei der Relevanz).
+ */
+function ma_ad_stufen_umstellen(): void {
+    if (get_option('ma_ad_stufen') === '3') return;
+    update_option('ma_ad_stufen', '3', true);
+    $ids = get_posts(['post_type' => 'ma_ad', 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => 'ma_ad_priority']);
+    foreach ((array) $ids as $id) {
+        $alt = (float) get_post_meta((int) $id, 'ma_ad_priority', true);
+        update_post_meta((int) $id, 'ma_ad_priority', (string) ($alt >= 8 ? 1 : ($alt >= 4 ? 2 : 3)));
+    }
 }
 
 function ma_ads_register_assets(): void {
@@ -89,7 +113,7 @@ function ma_ad_is_running(WP_Post $ad, string $now = ''): bool {
 /**
  * Alle laufenden, freigegebenen Anzeigen eines Platzes.
  *
- * Reihenfolge: hoechste Prioritaet zuerst, dann die neueste. Die Prioritaet
+ * Reihenfolge: Stufe 1 (Hoch) zuerst, dann die neueste (ma_ad_stufe). Die Prioritaet
  * wird in PHP sortiert und nicht per meta_key abgefragt: meta_key setzt in
  * WP_Query voraus, dass der Schluessel existiert, und blendete importierte
  * Anzeigen ohne ma_ad_priority aus (Befund aus 1.4).
@@ -141,9 +165,9 @@ function ma_active_ads(string $slot, int $limit = 0): array {
             $ads[] = $ad;
         }
         usort($ads, static function (WP_Post $a, WP_Post $b): int {
-            $pa = (float)get_post_meta($a->ID, 'ma_ad_priority', true);
-            $pb = (float)get_post_meta($b->ID, 'ma_ad_priority', true);
-            if ($pa !== $pb) return $pa < $pb ? 1 : -1;
+            $pa = ma_ad_stufe($a->ID);
+            $pb = ma_ad_stufe($b->ID);
+            if ($pa !== $pb) return $pa <=> $pb;
             return strcmp((string)$b->post_date, (string)$a->post_date);
         });
         $cache[$slot] = $ads;

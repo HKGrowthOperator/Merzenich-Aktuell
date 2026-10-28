@@ -239,12 +239,8 @@ add_action('init', function (): void {
         'sanitize_callback' => 'ma_relevanz_saeubern',
         'auth_callback' => fn() => ma_relevanz_darf(),
     ]);
-    // Frühere Priorität 1–10: wird nicht mehr gelesen, bleibt aber gültig gespeichert.
-    register_post_meta('post', 'ma_prioritaet', [
-        'type' => 'integer', 'single' => true, 'show_in_rest' => true, 'default' => 0,
-        'sanitize_callback' => fn($v) => ((int) $v >= 1 && (int) $v <= 10) ? (int) $v : 0,
-        'auth_callback' => fn() => ma_relevanz_darf(),
-    ]);
+    // Die frühere Priorität 1–10 (ma_prioritaet) ist seit 28.10.2026 nicht mehr registriert:
+    // nirgends mehr auswählbar, auch nicht über die REST-Schnittstelle. Gespeicherte Werte bleiben unbenutzt liegen.
 });
 
 /** Auswahl der drei Stufen als Knopfreihe (Box im Beitrag und Freigabeseite). */

@@ -97,9 +97,9 @@ function ids(array $posts): array { return array_map(fn($p) => (int)$p->ID, $pos
 echo "Werbung: mehrere Anzeigen je Platz\n";
 $GLOBALS['opt'] = ['ma_ads_enabled' => 1, 'ma_ad_slots' => ['homepage_band_1' => 1, 'homepage_band_2' => 1, 'homepage_band_6' => 1]];
 $aktiv = ['ma_ad_slot' => 'homepage_band_1', 'ma_ad_active' => '1'];
-add_post(['ID' => 101, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige A', 'post_date' => '2026-09-10 10:00:00'], $aktiv + ['ma_ad_priority' => '5', 'ma_ad_url' => 'https://a.invalid/']);
-add_post(['ID' => 102, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige B', 'post_date' => '2026-09-01 10:00:00'], $aktiv + ['ma_ad_priority' => '10']);
-add_post(['ID' => 103, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige C ohne Prioritaet', 'post_date' => '2026-09-20 10:00:00'], $aktiv);
+add_post(['ID' => 101, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige A', 'post_date' => '2026-09-10 10:00:00'], $aktiv + ['ma_ad_priority' => '2', 'ma_ad_url' => 'https://a.invalid/']);
+add_post(['ID' => 102, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige B', 'post_date' => '2026-09-01 10:00:00'], $aktiv + ['ma_ad_priority' => '1']);
+add_post(['ID' => 103, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Anzeige C Niedrig', 'post_date' => '2026-09-20 10:00:00'], $aktiv + ['ma_ad_priority' => '3']);
 add_post(['ID' => 104, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'pausiert'], ['ma_ad_slot' => 'homepage_band_1', 'ma_ad_active' => '0']);
 add_post(['ID' => 105, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'abgelaufen'], $aktiv + ['ma_ad_end' => '2026-09-20 00:00:00']);
 add_post(['ID' => 106, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'startet spaeter'], $aktiv + ['ma_ad_start' => '2026-10-01 00:00:00']);
@@ -107,7 +107,7 @@ add_post(['ID' => 107, 'post_type' => 'ma_ad', 'post_status' => 'pending', 'post
 add_post(['ID' => 108, 'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'anderer Platz'], ['ma_ad_slot' => 'homepage_band_2', 'ma_ad_active' => '1']);
 
 pruefe('ma_active_ads liefert alle drei laufenden Anzeigen', count(ma_active_ads('homepage_band_1')), 3);
-pruefe('Reihenfolge: Prioritaet, dann neueste', ids(ma_active_ads('homepage_band_1')), [102, 101, 103]);
+pruefe('Reihenfolge: Stufe 1 Hoch vor 2 Mitte vor 3 Niedrig, dann neueste', ids(ma_active_ads('homepage_band_1')), [102, 101, 103]);
 pruefe('Limit wird beachtet', ids(ma_active_ads('homepage_band_1', 2)), [102, 101]);
 pruefe('ma_active_ad bleibt kompatibel (erste Anzeige)', ma_active_ad('homepage_band_1')->ID ?? null, 102);
 pruefe('Anderer Platz getrennt', ids(ma_active_ads('homepage_band_2')), [108]);

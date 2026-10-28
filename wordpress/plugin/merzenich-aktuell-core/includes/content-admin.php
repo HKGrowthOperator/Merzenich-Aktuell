@@ -75,10 +75,12 @@ function ma_admin_textarea(string $name, string $label, string $value='', string
     echo '</td></tr>';
 }
 
-function ma_admin_select(string $name, string $label, string $value, array $options): void {
+function ma_admin_select(string $name, string $label, string $value, array $options, string $description=''): void {
     echo '<tr><th scope="row"><label for="'.esc_attr($name).'">'.esc_html($label).'</label></th><td><select id="'.esc_attr($name).'" name="'.esc_attr($name).'">';
     foreach ($options as $key=>$text) echo '<option value="'.esc_attr($key).'" '.selected($value,(string)$key,false).'>'.esc_html($text).'</option>';
-    echo '</select></td></tr>';
+    echo '</select>';
+    if ($description!=='') echo '<p class="description">'.esc_html($description).'</p>';
+    echo '</td></tr>';
 }
 
 function ma_admin_checkbox(string $name, string $label, bool $checked, string $description='', string $check_text='Aktiv'): void {
@@ -224,7 +226,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_input('ma_ad_video','Video (Medien-ID)',$vid ? (string) $vid : '','number','','Optional: MP4 aus der Mediathek (stumm, kurze Schleife, unter 1 MB). Läuft auf den großen Plätzen statt des Bildes; das Bild bleibt Standbild.'.($vid && ($u = wp_get_attachment_url($vid)) ? ' Aktuell: '.basename((string) $u) : ''));
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
-    if (!$partner) ma_admin_input('ma_ad_priority','Priorität',ma_admin_field_value($post->ID,'ma_ad_priority'),'number','10','Höhere Zahl gewinnt innerhalb desselben Slots.');
+    if (!$partner) ma_admin_select('ma_ad_priority','Priorität',(string) (function_exists('ma_ad_stufe') ? ma_ad_stufe($post->ID) : 2),['1'=>'1 · Hoch','2'=>'2 · Mitte','3'=>'3 · Niedrig'],'Drei Stufen wie bei der Relevanz der Meldungen. Laufen mehrere Anzeigen auf einem Platz, steht Hoch vorn; bei gleicher Stufe die neuere.');
     $bild = (int) get_post_thumbnail_id($post->ID);
     ma_admin_input('ma_ad_alt','Alternativtext des Bildes',$bild ? (string) get_post_meta($bild, '_wp_attachment_image_alt', true) : '','text','Was zeigt das Werbemittel? Für Screenreader.','Leer = Titel der Anzeige.');
     if ($partner && function_exists('ma_partner_rights_field')) {
@@ -259,7 +261,7 @@ function ma_content_admin_schema(string $post_type): array {
             'ma_tip_kind'=>'text','ma_tip_sponsor'=>'text','ma_tip_url'=>'url','ma_tip_start'=>'datetime',
         ]),
         'ma_ad'=>[
-            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'number',
+            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'stufe',
         ],
     ];
     return $schema[$post_type] ?? [];
@@ -269,6 +271,7 @@ function ma_sanitize_content_admin_value(string $type, $value): string {
     $value = is_string($value) ? wp_unslash($value) : $value;
     if ($type==='url') return esc_url_raw((string)$value);
     if ($type==='number') return (string)max(0,(float)$value);
+    if ($type==='stufe') return in_array((string)$value,['1','2','3'],true) ? (string)$value : '';
     if ($type==='bool') return $value ? '1' : '0';
     if ($type==='textarea') return sanitize_textarea_field((string)$value);
     if ($type==='date') return preg_match('/^\d{4}-\d{2}-\d{2}$/',(string)$value) ? (string)$value : '';

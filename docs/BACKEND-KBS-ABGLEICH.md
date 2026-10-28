@@ -15,7 +15,7 @@ Legende: **vorhanden** = war schon umgesetzt · **neu** = mit 1.19.0 umgesetzt �
 | 3.1 | Nicht Freigegebenes nie öffentlich (Suche, RSS, Sitemaps, Schnittstelle) | vorhanden | eigene Status nicht öffentlich, Sitemaps und Feeds gefiltert |
 | 3.2 | Zwei getrennte Freigaben: Veröffentlichung und Startseite | **neu** | Eigenes Feld „Startseiten-Freigabe“ (ja/nein, wer, wann). Ohne Entscheidung nur Rubrik. Box „Startseite“ im Beitrag (ohne Vorauswahl), Freigabeseite, Mehrfachaktionen „Startseite: freigeben / nicht freigeben“. Bestehende Meldungen behalten ihren Stand. |
 | 3.2 | Relevanz in drei Stufen (seit 24.10.2026, vorher 1–10) | vorhanden | 1 Hoch, 2 Mitte, 3 Niedrig; Freigabeseite, Box „Startseite“, Spalte in der Beitragsliste |
-| 3.2 | Priorität 1–10 | entfallen (24.10.2026) | wird nicht mehr gelesen; gespeicherte Werte bleiben |
+| 3.2 | Priorität 1–10 | entfallen (24.10.2026) | wird nicht mehr gelesen, seit 28.10.2026 auch nicht mehr registriert; Werbemittel haben ebenfalls drei Stufen |
 | 4 | Artikelfelder: Titel, Unterzeile, Inhalt, Autor, Ressort, Ort, Quelle, Quellen-URL, Quelldatum, Veröffentlichung, Beitragsbild, Bildnachweis, Bildrechte, Status | vorhanden | Editor, Kasten „Redaktion & Quelle“ (jetzt deutsch beschriftet) |
 | 4 | Organisation (einreichende Stelle) | **neu** | bei Partner-Einreichungen automatisch (Verein bzw. Zugang), sonst Redaktion |
 | 4 | Aktualisierungsdatum (öffentlich) | **neu** | „Aktualisiert am“, erscheint auf der Meldung und in den Daten für Suchmaschinen |
