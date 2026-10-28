@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-28-claude-morgens.md",
-  "source_check_window": "28.10.2026 morgens ab 08:33 Europe/Berlin (Claude-Umsetzungslauf)",
+  "latest_dossier": "dossiers/2026-10-28-mittags.md",
+  "source_check_window": "28.10.2026 mittags ab 14:51 Europe/Berlin; verspäteter Lauf nach 14:15; direkte Primärabrufe 14:53–14:54, anschließende PDF-Fundstellenprüfung",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10678,6 +10678,31 @@
       "implementation_commit": "24702c2",
       "summary": "1 neue Kurzmeldung (L 264 Girbelsrath, Quellenausnahme), 0 Korrekturen, 0 Termine, 0 Umkreis; Nachmittagslauf 27.10. ausgefallen (Planungsmodus); Befund Umkreis-Automatik überspringt Düren/Jülich",
       "publication": "keine"
+    },
+    {
+      "date": "2026-10-28",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-28-mittags.md",
+      "compared_with": "dossiers/2026-10-28-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-28-claude-morgens.md",
+      "base_commit": "c4e0fd1c4c549fd440de194261537fb971351588",
+      "implementation_commit": null,
+      "summary": "Neuer Auftrag: reines Faktenmaterial ohne fertige Artikel. Dokumentierter Nullfund für neue örtliche Karten; 1 zuletzt übernommener Claude-Artikel live gegen Polizei geprüft, 0 Korrekturen. Neuer regionaler Linnich-Fund ohne belegten Gemeindebezug ausgeschlossen. Amtsblatt und Bahnplakat direkt abrufbar, bekannte Konflikte bleiben; RIS-Kalenderprüfung unvollständig. Verspätet nach 14:15 begonnen.",
+      "topics": 0,
+      "new_local_breaking_reports": 0,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "complete_drafts": 0,
+      "new_or_changed_events": 0,
+      "photos_new_found": 0,
+      "photos_integrated": 0,
+      "deadline": "2026-10-28T14:15:00+01:00",
+      "deadline_met": false,
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "JSON, ausschließlich erlaubte Pfade, Dossierüberschriften und Erhalt sämtlicher alter Registerthemen und Laufeinträge vor Upload geprüft."
     }
   ]
 }
