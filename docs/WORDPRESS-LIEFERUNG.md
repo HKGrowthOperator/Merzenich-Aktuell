@@ -1,10 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.1 · live: 21.21.1 / 1.34.0 (Historie unten)
+28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.1 · live: 21.23.0 / 1.36.1 (Historie unten)
 
 ## Neu am 28.10.2026 spät: Plugin 1.36.1, Pakete unter 8 MB
 
-**Stand live:** wird eingespielt. Enthält 1.36.0 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.0 (`wordpress-delivery/` bei `ed19085fd`).
+**Stand live:** eingespielt am 28.10.2026 gegen 23:30 Uhr (Plugin 1.36.1, dann Theme 21.23.0, Permalinks gespeichert). Enthält 1.36.0 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.0 (`wordpress-delivery/` bei `ed19085fd`).
+
+**Live im Backend erledigt:** Fehlende Entwürfe angelegt (fünf Profile, drei Beiträge); Zusage für alle fünf eingetragen (Nachweis „Zusage laut Betreiber, 24.10. und 28.10.2026“, Logos von Almera, KBS und ASS), dabei zehn Anzeigen mit Foto und Video angelegt; Wirtz, Hasberg und Porschen zurückgezogen; die Beiträge von Almera, KBS und ASS freigegeben (Stufe Mitte, nur in der Rubrik); Werbung global und alle Plätze an; Partner-Zugänge für Almera, KBS und ASS (Kontingent 5, alle elf Plätze).
+
+**Live gemessen (1440, 820, 390 px):** Startseite, Meldung, `/unternehmen/`, `/termine/`, `/sport/`: kein „Musteranzeige“ oder „Testanzeige“, alle fünf Firmen in der Rotation, „KI-Bild“ bei Merzlicht und AJ Sports, 0 Konsolenfehler, keine kaputten Bilder. Videos laufen im sichtbaren Platz (WebM); bei 390 px wie vorgesehen kein Video. Menü „Unternehmen“ zeigt genau die fünf Firmen. Alte Adressen von Wirtz, Hasberg und Porschen: 404. Firmenbeiträge nicht auf Startseite, `/wirtschaft/`, `/nachrichten/`, Suche, `/feed/` und `/api/latest.json`, aber unter `/unternehmen/` und im Kanal. Stile und Skripte unter `/assets/` entsprechen dem Repository.
 
 **Anlass:** Der Webserver lehnt Uploads ab etwa 8 MB mit „413 Request Entity Too Large“ ab (gemessen am 28.10.: 8,2 MB geht, 8,4 MB nicht). Das Plugin 1.36.0 war 9,0 MB, das Theme 17,2 MB. Der Upload im Backend blieb ohne Rückmeldung hängen.
 
