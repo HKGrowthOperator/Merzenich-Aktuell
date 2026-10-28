@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-28-morgens.md",
-  "source_check_window": "28.10.2026 morgens ab 08:04 Europe/Berlin (MEZ); tatsächliche Prüftiefe pro Karte, vorhandene Rohstände vom 27.10.21:04–21:11 MEZ.",
+  "latest_dossier": "dossiers/2026-10-28-claude-morgens.md",
+  "source_check_window": "28.10.2026 morgens ab 08:33 Europe/Berlin (Claude-Umsetzungslauf)",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -9697,15 +9697,15 @@
       "priority": "P1",
       "location_section": "Girbelsrath · Polizei/Verkehr",
       "change_type": "Nachfassen",
-      "text_status": "T1-B",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-27-abends.md",
-      "workflow_status": "neu",
+      "workflow_status": "zur_abnahme",
       "last_checked_at": "2026-10-28 morgens Europe/Berlin",
-      "article_path": null,
+      "article_path": "inhalte/meldungen/2026-10-28-recherche-claude-morgens.json → /blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen. Offen: Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren. Historische Umsetzung bleibt erhalten.",
+      "implementation_commit": "24702c2",
+      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen. Offen: Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren. Historische Umsetzung bleibt erhalten. | Claude 28.10. morgens: Kurzmeldung mit Quellenausnahme (nur Polizei; kein Feuerwehrbericht), ohne Alter und Herkunft des Fahrers.",
       "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
       "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
@@ -9725,6 +9725,11 @@
           "dossier": "dossiers/2026-10-28-morgens.md",
           "heading": "GR-L264-27102026",
           "check_scope": "Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen."
+        },
+        {
+          "date": "2026-10-28",
+          "dossier": "dossiers/2026-10-28-claude-morgens.md",
+          "heading": "GR-L264-27102026 · umgesetzt"
         }
       ],
       "research_history": [
@@ -10663,6 +10668,16 @@
       "publication": "keine",
       "implementation": "keine_Artikelumsetzung",
       "qa": "node deploy/register-pflege.mjs und --check: 0 Verstöße; node qa/redaktion-lauf.mjs --json: 0 Fehler, 7 unveränderte Bestandshinweise; Zahlen/Links/Erhalt alter Umsetzungen zusätzlich geprüft."
+    },
+    {
+      "date": "2026-10-28",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-10-28-claude-morgens.md",
+      "compared_with": "dossiers/2026-10-28-morgens.md",
+      "implementation_commit": "24702c2",
+      "summary": "1 neue Kurzmeldung (L 264 Girbelsrath, Quellenausnahme), 0 Korrekturen, 0 Termine, 0 Umkreis; Nachmittagslauf 27.10. ausgefallen (Planungsmodus); Befund Umkreis-Automatik überspringt Düren/Jülich",
+      "publication": "keine"
     }
   ]
 }

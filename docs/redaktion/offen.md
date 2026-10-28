@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-28-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-28-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -9,8 +9,8 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | archiv_refresh_noetig | 97 |
 | uebernommen | 31 |
 | gesperrt | 24 |
-| neu | 7 |
-| zur_abnahme | 5 |
+| neu | 6 |
+| zur_abnahme | 6 |
 | in_bearbeitung | 3 |
 
 ## Offen (15)
@@ -29,6 +29,15 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen
 
+### GR-L264-27102026 · P1 · T1/B0 · zur_abnahme
+
+- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Nachfassen; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Artikelübernahme; nach einer neuen Polizeimitteilung.
+- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-28-claude-morgens.md](dossiers/2026-10-28-claude-morgens.md)
+- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
+- Artikelpfad: inhalte/meldungen/2026-10-28-recherche-claude-morgens.json → /blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/
+- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
+- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
+
 ### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
 
 - Ort/Ressort: Merzenich · Feuerwehr/Rathaus; Art: Fortgeführter Korrekturauftrag; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: Vor Artikel-Endabnahme
@@ -39,14 +48,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Artikelpfad: inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsb
-
-### GR-L264-27102026 · P1 · T1-B/B0 · neu
-
-- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Nachfassen; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Artikelübernahme; nach einer neuen Polizeimitteilung.
-- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
-- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
-- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
-- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
 
 ### DN-ARCHIV-SERVICE-102026 · P2 · T1/B0 · zur_abnahme
 
@@ -155,7 +156,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-10-28 morgens (Claude): 1 neue Kurzmeldung (L 264 Girbelsrath, Quellenausnahme), 0 Korrekturen, 0 Termine, 0 Umkreis; Nachmittagslauf 27.10. ausgefallen (Planungsmodus); Befund Umkreis-Automatik überspringt Düren/Jülich – Commit 24702c2
 - 2026-10-28 morgens (ChatGPT): 20 Karten, 4 neue Textfassungen (1 Standard, 3 Kurzfassungen; 2 T1, 2 T2). 0 neue örtliche Eilmeldungen/Ergebnisse; neu erschlossener älterer Archivservice, KG-Verlinkungskonflikt, SC-III-Tabellen-/Ansetzungsbeleg und S19-Ablaufpflege. 8 zusätzliche Fotodateien, 8 Lizenzmetadatenprüfungen, 6 Original-Sichtabrufe, 0 lokale Downloads/Integration.
 - 2026-10-27 abends (ChatGPT): 25 Karten; 1 neue örtliche Unfallmeldung und 6 regionale Funde; 1 neuer Einlass-/Beginn-Abgleich; 7 neue Kurzfassungen (1 T1 mit zu dokumentierender Quellenausnahme, 6 T2 gesperrt). 10 zusätzliche Fotodateien, Lizenzmetadaten 10, Sichtabruf 9, lokale Downloads/Integration 0. Keine neuen Sportergebnisse.
 - 2026-10-27 morgens (Claude): 0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 636d04c
-- 2026-10-27 morgens (ChatGPT): 27 Karten; 1 erstmals erschlossener regionaler Servicehinweis, 1 neuer Quellenkonflikt und 4 Hintergrundpakete; 7 neue Textfassungen (2 T1, 5 T2 gesperrt); keine neue örtliche Eilmeldung oder Sportergebnisnachricht; 10 zusätzliche Bildkandidaten, ohne Sichtprüfung/Download/Integration.
