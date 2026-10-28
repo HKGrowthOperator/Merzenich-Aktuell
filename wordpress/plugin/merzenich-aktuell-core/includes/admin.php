@@ -106,7 +106,7 @@ function ma_ads_settings_page(): void {
     }
     $enabled=(int)get_option('ma_ads_enabled',0);
     $slots=(array)get_option('ma_ad_slots',[]);
-    echo '<div class="wrap"><h1>Werbeplätze</h1><p>Werbemittel unter <strong>Werbung → Werbemittel hinzufügen</strong> anlegen (Titel, Platz, Laufzeit, Bild auf einem Bildschirm). Eine Anzeige läuft, wenn sie veröffentlicht ist, „Schaltung aktiv“ gesetzt ist, Werbung global an ist und ihr Platz hier eingeschaltet ist. Solange auf einem Platz keine echte Anzeige läuft, zeigt die Seite dort die gekennzeichnete Musteranzeige.</p><form method="post">';
+    echo '<div class="wrap"><h1>Werbeplätze</h1><p>Werbemittel unter <strong>Werbung → Werbemittel hinzufügen</strong> anlegen (Titel, Platz, Laufzeit, Bild auf einem Bildschirm). Eine Anzeige läuft, wenn sie veröffentlicht ist, „Schaltung aktiv“ gesetzt ist, Werbung global an ist und ihr Platz hier eingeschaltet ist. Solange auf einem Platz keine Anzeige läuft, bleibt er leer (keine Musteranzeigen).</p><form method="post">';
     wp_nonce_field('ma_ads_save');
     echo '<p><label><input type="checkbox" name="global" '.checked($enabled,1,false).'> Werbung global AN</label></p>';
     echo '<p class="description">Mehrere laufende Anzeigen auf demselben Platz wechseln sich ab (Rotation). Die Werbebänder 1 bis 6 stehen auf der Startseite zwischen den Meldungsblöcken. Kontingente der Unternehmen: am jeweiligen Benutzerprofil.</p>';

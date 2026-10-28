@@ -157,15 +157,44 @@ function ma_firmen_eintrag(string $slug): ?array {
     return null;
 }
 
+/** Plugin-Daten im Repository (Stand von main), Quelle für Dateien, die nicht im Paket liegen. */
+if (!defined('MA_FIRMEN_REPO_DATEN')) define('MA_FIRMEN_REPO_DATEN', 'https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/wordpress/plugin/merzenich-aktuell-core/data/');
+
 /**
- * Datei aus dem Plugin (data/<ordner>/<datei>) einmal in die Mediathek übernehmen;
- * ein zweiter Aufruf findet das Medium über $merkmal wieder. Gibt die Medien-ID
- * zurück, 0 bei Fehler ($fehler nennt den Grund).
+ * Pfad einer Datei aus data/<ordner>/ (28.10.2026, Plugin 1.36.1): zuerst im Plugin,
+ * sonst die einmal aus dem Repository geholte Kopie unter uploads/ma-firmen/. Die
+ * Anzeigenvideos liegen nicht im Paket, weil der Server Uploads über 8 MB ablehnt.
+ * Die Kopie wird nach einem Tag neu geholt (neu gebaute Videos gleichen Namens);
+ * antwortet GitHub nicht, gilt die letzte Kopie. Leer, wenn es die Datei nirgends gibt.
+ */
+function ma_firmen_datei(string $ordner, string $datei): string {
+    $datei = basename($datei);
+    if ($datei === '' || !preg_match('/^[\w.-]+\.(jpe?g|png|webp|mp4|webm)$/i', $datei) || !preg_match('/^\w+$/', $ordner)) return '';
+    $pfad = MA_CORE_PATH . 'data/' . $ordner . '/' . $datei;
+    if (is_file($pfad)) return $pfad;
+    $kopie = trailingslashit((string) wp_upload_dir(null, false)['basedir']) . 'ma-firmen/' . $ordner . '/' . $datei;
+    clearstatcache(true, $kopie);
+    if (is_file($kopie) && filemtime($kopie) > time() - DAY_IN_SECONDS) return $kopie;
+    $sperre = 'ma_firmen_fehlt_' . md5($ordner . '/' . $datei);
+    if (get_transient($sperre)) return is_file($kopie) ? $kopie : '';
+    $r = wp_remote_get(MA_FIRMEN_REPO_DATEN . $ordner . '/' . rawurlencode($datei), ['timeout' => 30]);
+    $body = !is_wp_error($r) && (int) wp_remote_retrieve_response_code($r) === 200 ? (string) wp_remote_retrieve_body($r) : '';
+    if ($body === '' || strlen($body) > 8 * MB_IN_BYTES || !wp_mkdir_p(dirname($kopie)) || file_put_contents($kopie, $body) === false) {
+        set_transient($sperre, 1, HOUR_IN_SECONDS);
+        return is_file($kopie) ? $kopie : '';
+    }
+    return $kopie;
+}
+
+/**
+ * Datei aus data/<ordner>/<datei> (Plugin, sonst Repository, siehe ma_firmen_datei)
+ * einmal in die Mediathek übernehmen; ein zweiter Aufruf findet das Medium über
+ * $merkmal wieder. Gibt die Medien-ID zurück, 0 bei Fehler ($fehler nennt den Grund).
  */
 function ma_firmen_medium(string $ordner, string $datei, string $merkmal, int $pid, string $alt, string $credit, string $quelle, string &$fehler = '', bool $inhalt = false): int {
     $datei = basename($datei);
-    $pfad = MA_CORE_PATH . 'data/' . $ordner . '/' . $datei;
-    if ($datei === '' || !is_file($pfad)) { $fehler = 'Datei fehlt im Plugin'; return 0; }
+    $pfad = $datei !== '' ? ma_firmen_datei($ordner, $datei) : '';
+    if ($pfad === '') { $fehler = 'Datei fehlt im Plugin und im Repository'; return 0; }
     // $inhalt: Merkmal mit Prüfsumme der Datei, damit eine neu gebaute Datei gleichen Namens neu übernommen wird.
     $wert = $inhalt ? $datei . '#' . substr((string) md5_file($pfad), 0, 12) : $datei;
     $da = get_posts(['post_type' => 'attachment', 'post_status' => 'inherit', 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => $merkmal, 'meta_value' => $wert]);
@@ -266,7 +295,7 @@ function ma_firmen_banner_anlegen(array $f, int $pid): array {
     $log = []; $eigene = [];
     if ($slug === '') return $log;
     $geloescht = (array) get_option('ma_firmen_banner_geloescht', []);
-    $datei = fn(string $d): string => $d !== '' && is_file(MA_CORE_PATH . 'data/banner/' . basename($d)) ? MA_CORE_PATH . 'data/banner/' . basename($d) : '';
+    $datei = fn(string $d): string => $d !== '' ? ma_firmen_datei('banner', $d) : '';
     foreach (ma_firmen_anzeigen($f) as $i => $a) {
         $n = $i + 1;
         $schluessel = ma_firmen_anzeige_schluessel($a, $n);

@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-07-2';
+const MA_SEITEN_VERSION = '2026-10-28';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -150,7 +150,7 @@ function ma_seite_werben(): string {
         . '<li><strong>Artikelanzeige.</strong> Unter dem Text jeder Meldung.</li>'
         . '<li><strong>Tipp und Sponsoring.</strong> Ein gekennzeichneter Beitrag für Veranstaltung, Angebot oder Aktion unter <a href="/tipp/">Tipps</a>.</li>'
         . '<li><strong>Unternehmensprofil.</strong> Dauerhafter Eintrag unter <a href="/unternehmen/">Unternehmen</a> mit Bild, Öffnungszeiten, Kontakt und eigenen Beiträgen.</li></ul>'
-        . '<p>Wo die Flächen liegen, zeigen die mit „Musteranzeige“ beschrifteten Plätze auf der Seite. Echte Kampagnen erscheinen dort nach Buchung und Freigabe.</p>'
+        . '<p>Wo die Flächen liegen, zeigen die laufenden Anzeigen auf der Seite. Neue Kampagnen erscheinen dort nach Buchung und Freigabe.</p>'
         . '<h2 id="anfrage">Anfrage</h2>'
         . '<p>Schreiben Sie uns, was Sie sichtbar machen möchten, für welchen Zeitraum und mit welchem Bildmaterial. Wir melden uns mit Format, Laufzeit und Preis. E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
         . '[ma_formular typ="werbung"]';

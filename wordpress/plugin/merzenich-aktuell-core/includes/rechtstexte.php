@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-10-06';
+const MA_RECHTSTEXTE_VERSION = '2026-10-28';
 
 function ma_rechtstexte(): array {
     return [
@@ -50,7 +50,7 @@ function ma_rechtstext_impressum(): string {
         // Vorgabe Betreiber 06.10.2026: Geschäftsführer, mit der Anschrift der Gesellschaft.
         . '<p>Anto-Sutharsan Jesuthasan<br>Rheinstr. 78a<br>51371 Leverkusen</p>'
         . '<h2 id="anzeigen">Anzeigen und gesponserte Beiträge</h2>'
-        . '<p>Werbung ist als „Anzeige“ gekennzeichnet, bezahlte Unternehmensbeiträge als „Anzeige · Gesponsert“. Musteranzeigen ohne Auftraggeber tragen die Kennzeichnung „Musteranzeige“ und werben für niemanden.</p>'
+        . '<p>Werbung ist als „Anzeige“ gekennzeichnet, bezahlte Unternehmensbeiträge als „Anzeige · Gesponsert“.</p>'
         . '<h2 id="bildnachweise">Bildnachweise</h2>'
         . '<p>Credits und Bildtypen stehen bei den jeweiligen Beiträgen. Archiv- und Symbolmotive werden ausdrücklich als solche gekennzeichnet. Eine Quellenangabe ersetzt keine Nutzungsfreigabe. Die Herkunft aller verwendeten Motive ist im Bildverzeichnis der Redaktion dokumentiert; Nutzungsrechte werden vor der Veröffentlichung geprüft.</p>'
         . '<p>Die Schriften Hanken Grotesk und Newsreader werden lokal bereitgestellt; die zugehörigen Lizenztexte liegen dem Projekt bei.</p>';
@@ -71,7 +71,7 @@ function ma_rechtstext_datenschutz(): string {
         . '<li>Angemeldete Redaktionsmitglieder und automatische Programme (Bots) werden nicht gezählt.</li></ul>'
         . '<p>Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe f DSGVO (Interesse an einer datensparsamen Erfolgsmessung des redaktionellen Angebots).</p>'
         . '<h2 id="anzeigen">Anzeigen</h2>'
-        . '<p>Für Anzeigen zählt die Seite, wie oft eine Anzeige mindestens zur Hälfte sichtbar war und wie oft sie angeklickt wurde, als Tagessumme je Anzeige und Platz. Es werden keine Cookies gesetzt und keine Profile gebildet. Musteranzeigen sind gekennzeichnet; sie werben für niemanden. Klicken Sie eine Anzeige an, gelangen Sie auf die Website des Werbenden; dort gelten dessen Datenschutzhinweise.</p>'
+        . '<p>Für Anzeigen zählt die Seite, wie oft eine Anzeige mindestens zur Hälfte sichtbar war und wie oft sie angeklickt wurde, als Tagessumme je Anzeige und Platz. Es werden keine Cookies gesetzt und keine Profile gebildet. Klicken Sie eine Anzeige an, gelangen Sie auf die Website des Werbenden; dort gelten dessen Datenschutzhinweise.</p>'
         . '<h2 id="wetter">Wetter im Seitenkopf</h2>'
         . '<p>Das Wetter für Merzenich fragt unser Server beim Wetterdienst Open-Meteo ab, speichert das Ergebnis zehn Minuten zwischen und reicht nur dieses Ergebnis an Ihren Browser weiter. Ihr Browser verbindet sich nicht mit Open-Meteo. Das zuletzt empfangene Wetter merkt sich Ihr Browser lokal, damit der Seitenkopf sofort gefüllt ist.</p>'
         . '<h2 id="einsendungen-und-kontakt">Einsendungen und Kontakt</h2>'

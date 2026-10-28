@@ -4,6 +4,9 @@
  * wordpress-delivery/. Das Theme bekommt dabei static/ = chatgpt-site/assets
  * ohne die großen Bildpools (editorial-pools, sources); die liefert der Server
  * bei Bedarf per Umleitung von der statischen Seite (theme/inc/ma21.php).
+ * Seit 28.10.2026 bleiben beide Pakete unter 8 MB (Upload-Grenze des Servers):
+ * ohne Fotos in static/ und ohne die Anzeigenvideos des Plugins; beides holt
+ * der Server bei Bedarf aus dem Repository.
  * Aufruf: node deploy/wp-pakete.mjs
  */
 import { execFileSync } from 'node:child_process';
@@ -25,8 +28,15 @@ execFileSync('bash', ['-c', `cd "${join(wurzel, 'chatgpt-site', 'assets')}" && t
 for (const [ordner, datei] of [[join(wp, 'plugin'), 'merzenich-aktuell-core'], [join(wp, 'theme'), 'merzenich-aktuell']]) {
   const zip = join(ziel, `${datei === 'merzenich-aktuell' ? 'merzenich-aktuell-theme' : datei}.zip`);
   rmSync(zip, { force: true });
-  execFileSync('zip', ['-qr', zip, datei, '-x', '*/.DS_Store', '*/archive-alt.php.orig'], { cwd: ordner });
-  console.log(`${zip.replace(wurzel + '/', '')}: ${(statSync(zip).size / 1048576).toFixed(1)} MB`);
+  // Plugin ohne Anzeigenvideos: die holt ma_firmen_datei() bei Bedarf aus dem Repository (Plugin 1.36.1).
+  // Theme ohne Fotos in static/: die liefert /assets/ aus uploads/ma-assets oder einmal aus dem Repository (ma21_asset).
+  const ohne = datei === 'merzenich-aktuell-core' ? ['*/data/banner/*.mp4', '*/data/banner/*.webm']
+    : ['*/static/*.webp', '*/static/*.jpg', '*/static/*.jpeg', '*/static/*.png'];
+  execFileSync('zip', ['-qr', zip, datei, '-x', '*/.DS_Store', '*/archive-alt.php.orig', ...ohne], { cwd: ordner });
+  const groesse = statSync(zip).size;
+  console.log(`${zip.replace(wurzel + '/', '')}: ${(groesse / 1048576).toFixed(1)} MB`);
+  // Der Webserver (IONOS) lehnt Uploads ab etwa 8 MB mit 413 ab (gemessen 28.10.2026).
+  if (groesse >= 8 * 1024 * 1024 - 256 * 1024) throw new Error(`${zip} ist zu groß zum Hochladen (Grenze etwa 8 MB).`);
 }
 
 // docs/SHA256SUMS.txt: Zeilen der beiden Pakete nachziehen (qa/pruefung.mjs prüft sie).

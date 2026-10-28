@@ -1,6 +1,18 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.0 · live: 21.21.1 / 1.34.0 (Historie unten)
+28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.1 · live: 21.21.1 / 1.34.0 (Historie unten)
+
+## Neu am 28.10.2026 spät: Plugin 1.36.1, Pakete unter 8 MB
+
+**Stand live:** wird eingespielt. Enthält 1.36.0 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.0 (`wordpress-delivery/` bei `ed19085fd`).
+
+**Anlass:** Der Webserver lehnt Uploads ab etwa 8 MB mit „413 Request Entity Too Large“ ab (gemessen am 28.10.: 8,2 MB geht, 8,4 MB nicht). Das Plugin 1.36.0 war 9,0 MB, das Theme 17,2 MB. Der Upload im Backend blieb ohne Rückmeldung hängen.
+
+- **Anzeigenvideos aus dem Repository** (`includes/firmen-entwuerfe.php`, neu `ma_firmen_datei`): Fehlt eine Datei aus `data/<ordner>/` im Plugin, holt das Plugin sie einmal aus dem Repository (Stand von `main`) und legt sie unter `uploads/ma-firmen/` ab. Nach einem Tag wird sie neu geholt; antwortet GitHub nicht, gilt die letzte Kopie. Fehlt sie auch dort, eine Stunde Pause. Nur Bild- und Videodateien. `ma_firmen_medium` und die Prüfsumme der Banner nutzen diesen Weg.
+- **Pakete** (`deploy/wp-pakete.mjs`): Das Plugin enthält die MP4- und WebM-Dateien aus `data/banner/` nicht mehr (4,0 MB). Das Theme enthält in `static/` keine Fotos mehr (1,2 MB); die liefert `/assets/` wie bisher aus `uploads/ma-assets/` oder einmal aus dem Repository (`ma21_asset`). Stile und Skripte bleiben im Theme und haben damit Vorrang vor alten Kopien in `uploads/ma-assets/`. Erreicht ein Paket 8 MB, bricht das Skript ab.
+- **Texte ohne „Musteranzeige“:** Werbeplätze-Seite im Backend, Datenschutzerklärung und Impressum (`rechtstexte.php`, Fassung 2026-10-28) und die Seite „Werben“ (`seiten.php`, Fassung 2026-10-28). Unveränderte Seiten hebt das Plugin selbst auf die neue Fassung.
+- **Test:** neu `qa/wordpress/firmen-datei-test.php`.
+
 
 ## Neu am 28.10.2026 abends: Plugin 1.36.0 und Theme 21.23.0, keine Musterwerbung mehr, echte animierte Anzeigen für alle fünf Firmen
 

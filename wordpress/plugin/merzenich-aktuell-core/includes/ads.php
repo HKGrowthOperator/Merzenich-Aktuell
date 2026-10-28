@@ -298,7 +298,7 @@ function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $ver
  * Werbung einschalten (Entscheidung Betreiber 02.10.2026): einmalig global an
  * und alle Plätze an. Danach jederzeit unter Werbung → Werbeplätze änderbar.
  * Echte Anzeigen erscheinen weiterhin nur veröffentlicht + „Schaltung aktiv“
- * innerhalb ihrer Laufzeit; bis dahin bleibt je Platz die Musteranzeige.
+ * innerhalb ihrer Laufzeit; bis dahin bleibt der Platz leer (seit 1.36.0).
  */
 function ma_ads_aktivieren_113(): void {
     if (get_option('ma_ads_aktiviert_113') === '1') return;
