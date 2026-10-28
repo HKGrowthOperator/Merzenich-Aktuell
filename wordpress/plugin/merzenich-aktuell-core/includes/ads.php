@@ -281,7 +281,7 @@ function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $ver
     $kunst = '';
     if ($img) {
         $kunst = '<span class="ma-ad-art'.($vid === '' ? ' ma-ad-art--bewegt' : '').'"><img src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async"'.$stil.'>'
-            .($vid !== '' ? '<video class="ma-ad-video"'.$stil.' muted loop playsinline preload="none" poster="'.esc_url($img).'" data-src="'.esc_url($vid).'"'.($webm !== '' ? ' data-src-webm="'.esc_url($webm).'"' : '').' aria-hidden="true"></video>' : '')
+            .($vid !== '' ? '<video class="ma-ad-video"'.$stil.' muted loop playsinline preload="none" data-src="'.esc_url($vid).'"'.($webm !== '' ? ' data-src-webm="'.esc_url($webm).'"' : '').' aria-hidden="true"></video>' : '')
             .($nachweis !== '' ? '<span class="ma-ad-nachweis">'.esc_html($nachweis).'</span>' : '').'</span>';
     }
     $inhalt = $kunst.'<span class="ma-ad-copy">'.($sponsor !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($sponsor).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'

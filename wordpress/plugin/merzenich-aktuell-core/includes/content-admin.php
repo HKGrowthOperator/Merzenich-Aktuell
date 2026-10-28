@@ -289,6 +289,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
     if (!isset($_POST['ma_content_admin_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['ma_content_admin_nonce'])),'ma_save_content_admin')) return;
 
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
+    $video_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_video', true) : '';
     foreach ($schema as $key=>$type) {
         if ($partner && in_array($key, ['ma_release_confirmed','ma_ad_active'], true)) {
             delete_post_meta($post_id,$key);
@@ -317,8 +318,11 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         if ($neu !== $alt) { delete_post_meta($post_id, 'ma_ad_slot_weitere'); foreach ($neu as $s) add_post_meta($post_id, 'ma_ad_slot_weitere', $s); }
     }
     if ($post->post_type === 'ma_ad') {
+        // Video: nur Videos aus der Mediathek; Partner nur eigene Uploads (Rechte wie beim Bild).
         $vid = (int) get_post_meta($post_id, 'ma_ad_video', true);
-        if ($vid && strpos((string) get_post_mime_type($vid), 'video/') !== 0) delete_post_meta($post_id, 'ma_ad_video');
+        if ($vid && (strpos((string) get_post_mime_type($vid), 'video/') !== 0 || ($partner && (int) get_post_field('post_author', $vid) !== (int) get_current_user_id()))) delete_post_meta($post_id, 'ma_ad_video');
+        // Neues oder kein Video: die WebM-Fassung aus den Firmen-Entwürfen gehört zum alten und fällt weg.
+        if ((string) get_post_meta($post_id, 'ma_ad_video', true) !== $video_vorher) delete_post_meta($post_id, 'ma_ad_video_webm');
     }
     if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_alt'])) {
         $bild = (int) get_post_thumbnail_id($post_id);

@@ -55,6 +55,8 @@ function ma_bildrechte_medien(int $post_id, ?string $inhalt = null, ?int $bild =
     $ids = ma_bildrechte_medien_aus_text($inhalt);
     $bild = $bild ?? (int) get_post_thumbnail_id($post_id);
     if ($bild > 0) $ids[] = $bild;
+    // Video einer Anzeige (ma_ad_video, 28.10.2026) gehört zu den bestätigten Medien.
+    if (($video = (int) get_post_meta($post_id, 'ma_ad_video', true)) > 0) $ids[] = $video;
     $ids = array_values(array_unique(array_map('intval', $ids)));
     sort($ids);
     return $ids;

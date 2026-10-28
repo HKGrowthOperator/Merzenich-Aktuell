@@ -35,7 +35,7 @@ $GLOBALS['meta'][5] = ['_thumbnail_id' => 50, 'ma_ad_sponsor' => 'Merzlicht · V
 $GLOBALS['meta'][50] = ['_wp_attachment_image_alt' => 'LED-Videowall (KI-Bild)', 'ma_image_credit' => 'KI-Bild (Symbolbild), erstellt für Merzenich Aktuell'];
 $ad = new WP_Post(['ID' => 5, 'post_title' => 'Ihre Werbung auf der Videowall.', 'post_excerpt' => 'Am Sportplatz Bürgewaldzentrum.']);
 $band = ma_ad_karte($ad, 'band', true);
-pruefe('Video-Schleife: stumm, Schleife, inline, erst bei Bedarf geladen, Standbild als Poster', (bool) preg_match('/<video class="ma-ad-video" muted loop playsinline preload="none" poster="[^"]+bild-50[^"]*" data-src="[^"]+video-51\.mp4" aria-hidden="true"><\/video>/', $band), true);
+pruefe('Video-Schleife: stumm, Schleife, inline, erst bei Bedarf geladen, ohne Poster (das Bild darunter ist das Standbild)', (bool) preg_match('/<video class="ma-ad-video" muted loop playsinline preload="none" data-src="[^"]+video-51\.mp4" aria-hidden="true"><\/video>/', $band), true);
 pruefe('Bild mit Alt-Text bleibt (ohne JavaScript und als Poster)', str_contains($band, '<img src="https://merzenich-aktuell.de/wp-content/uploads/bild-50-1024x576.jpg" alt="LED-Videowall (KI-Bild)"'), true);
 pruefe('Zeile oben, Überschrift, Satz, Knopf', [str_contains($band, '<span class="ma-ad-eyebrow">Merzlicht · Videowall am Bürgewaldzentrum</span>'), str_contains($band, '<strong>Ihre Werbung auf der Videowall.</strong>'), str_contains($band, '<span class="ma-ad-text">Am Sportplatz Bürgewaldzentrum.</span>'), str_contains($band, '<span class="ma-ad-cta">Zum Profil</span>')], [true, true, true, true]);
 pruefe('„KI-Bild“ auf dem Bild', str_contains($band, '<span class="ma-ad-nachweis">KI-Bild</span>'), true);
@@ -75,6 +75,10 @@ pruefe('statische Kopie: kein „Musteranzeige“ auf der Startseite', str_conta
 echo "\nRotation und Video\n";
 $rot = (string) file_get_contents($W . '/plugin/merzenich-aktuell-core/assets/ad-rotation.js');
 pruefe('Video nur bei Bewegung, ohne Datensparmodus, breiter als 560 px', str_contains($rot, "prefers-reduced-motion: reduce") && str_contains($rot, 'saveData') && str_contains($rot, 'window.innerWidth > 560'), true);
+pruefe('nachgeladene Plätze (Endlos-Scrollen) bekommen Rotation und Video', str_contains($rot, 'window.maAdPlatz = einrichten') && str_contains((string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/assets/endlos.js'), 'window.maAdPlatz(platz)'), true);
+$stat = (string) file_get_contents($W . '/plugin/merzenich-aktuell-core/includes/werbung-stat.php');
+pruefe('Zählung: Platz auch von data-ma-platz eines Vorfahren (Menü)', str_contains($stat, 'closest("[data-ma-platz],[data-ma-ad-slot]")'), true);
+pruefe('Bühne ohne Anzeige: eigene Spaltenaufteilung', str_contains($ma21, 'buehne-unten--ohne-werbung') && str_contains((string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/assets/startseite.css'), '.buehne-unten--ohne-werbung{grid-template-columns:repeat(2,minmax(0,1fr))}'), true);
 pruefe('Video lädt erst beim Abspielen (data-src, WebM wo möglich) und pausiert außerhalb', str_contains($rot, "v.setAttribute('src', quelle)") && str_contains($rot, 'data-src-webm') && str_contains($rot, 'v.pause()') && str_contains($rot, 'IntersectionObserver'), true);
 $css = (string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/assets/werbung.css');
 pruefe('CSS: ohne Bewegung kein Zoom und kein Video', (bool) preg_match('/@media \(prefers-reduced-motion:reduce\)\{\s*\.ma-ad-art--bewegt img\{animation:none\}\s*\.ma-ad-video\{display:none\}/', $css), true);

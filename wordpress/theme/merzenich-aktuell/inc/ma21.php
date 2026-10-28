@@ -915,7 +915,7 @@ function ma21_block(string $name): string {
         $unten = ''; foreach ([3, 4] as $i) if (!empty($n[$i])) $unten .= ma21_karte($n[$i], 'u', 'h3', "buehne-$i", $fest("buehne-$i"));
         $inhalt = ($b['aufmacher'] ? ma21_karte($b['aufmacher'], 'xl', 'h3', 'aufmacher', $fest('aufmacher')) : '')
             . ($rechts !== '' ? '<div class="buehne-rechts">' . $rechts . '</div>' : '')
-            . '<div class="buehne-unten">' . $unten . ma21_werbung('buehne') . '</div>';
+            . (($w = ma21_werbung('buehne')) !== '' ? '<div class="buehne-unten">' . $unten . $w . '</div>' : '<div class="buehne-unten buehne-unten--ohne-werbung">' . $unten . '</div>');
         return '<!-- start:oben:start --><section class="shell buehne" data-editorial-verified="1" aria-label="Die wichtigsten Nachrichten">' . $inhalt . '</section><!-- start:oben:end -->';
     }
     $sek = $b['sektionen'][$name] ?? null;

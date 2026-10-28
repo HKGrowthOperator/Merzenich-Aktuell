@@ -84,8 +84,10 @@
     }
   }
 
-  /** Anzeigen des Plugins mit mehreren Motiven wechseln wie ad-rotation.js. */
+  /** Anzeigen des Plugins mit mehreren Motiven wechseln wie ad-rotation.js; mit dem Plugin-Skript
+   *  (window.maAdPlatz) auch die Video-Schleifen nachgeladener Anzeigen (28.10.2026). */
   function rotation(wurzel) {
+    if (typeof window.maAdPlatz === 'function') { wurzel.querySelectorAll('.ma-ad').forEach((platz) => window.maAdPlatz(platz)); return; }
     for (const platz of wurzel.querySelectorAll('.ma-ad[data-ma-ad-rotate]')) {
       const items = platz.querySelectorAll('.ma-ad__item');
       if (items.length < 2 || platz.dataset.maEndlosRotation) continue;

@@ -2866,6 +2866,11 @@ body.home .buehne-karte .karte-bild .badge{font-size:9.5px;padding:2px 5px;left:
   body.home .buehne-unten{display:grid;grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
   body.home .buehne-unten .buehne-karte{grid-column:auto}
   html body.home .buehne-unten .buehne-karte .media{aspect-ratio:16/9!important}
+  /* Ohne laufende Anzeige (keine Musteranzeigen mehr, 28.10.2026): zwei Karten über die volle Breite. */
+  body.home .buehne-unten--ohne-werbung{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:760px) and (max-width:1099px){
+  body.home .buehne-unten--ohne-werbung .buehne-karte--u{grid-column:span 3}
 }
 
 /* ============================================================

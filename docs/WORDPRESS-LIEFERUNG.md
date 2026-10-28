@@ -33,6 +33,18 @@
   - Kette unverändert; `pruefung.mjs` und `routen.mjs` mit 0 Fehlern.
   - Lokal (8090): 0 „Musteranzeige“ auf Startseite, Nachrichten, Unternehmen, Sport und Termine; Videos laufen; 0 Konsolenfehler bei 1440 und 390 px.
 
+- **Code-Prüfung** (2 Prüfer, 14 Befunde, alle eingearbeitet):
+  - Klicks auf die Anzeige im Vereine-Menü werden wieder gezählt.
+  - Videos in nachgeladenen Listen laufen (`window.maAdPlatz` für `endlos.js`).
+  - Kein vorab geladenes Poster.
+  - Bühne ohne Anzeige ohne Lücke.
+  - Ein neues Video im Backend verwirft die alte WebM-Fassung; Partner dürfen nur eigene Videos eintragen, und das Video zählt zu den bestätigten Medien.
+  - Neu gebaute Dateien gleichen Namens werden neu übernommen (Prüfsumme im Medien-Merkmal).
+  - Motive mit festem Schlüssel; Motive, die nicht mehr in der Datei stehen, werden abgeschaltet; endgültig gelöschte werden nicht neu angelegt.
+  - Ältere Banner ohne Prüfsumme sind vor dem Überschreiben geschützt.
+  - Das Kontingent bereits verknüpfter Zugänge wird angehoben.
+  - Nur ein Lauf zur Zeit.
+
 **Einspielen:**
 1. Plugin 1.36.0, dann Theme 21.23.0 hochladen.
 2. Merzenich Aktuell → Firmen-Entwürfe:

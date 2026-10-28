@@ -6,9 +6,10 @@
  * gemeinte Anzeige trifft. Ohne JavaScript bleibt die erste sichtbar.
  *
  * Video-Schleifen (28.10.2026): Ein <video data-src> laedt erst, wenn seine
- * Anzeige sichtbar und der Platz im Bild ist, und pausiert sonst. Kein Video
+ * Anzeige sichtbar und der Platz im Bild ist, und pausiert sonst; eingeblendet
+ * wird es erst, wenn es laeuft (bis dahin steht das Bild darunter). Kein Video
  * bei "Bewegung reduzieren", Datensparmodus oder schmalem Bildschirm (bis
- * 560 px); dann bleibt das Standbild (poster/img).
+ * 560 px). window.maAdPlatz(platz) richtet nachgeladene Plaetze ein (endlos.js).
  */
 (function () {
   'use strict';
@@ -24,9 +25,10 @@
           // WebM (VP9), wo der Browser es kann, sonst MP4 (H.264).
           var webm = v.getAttribute('data-src-webm');
           var quelle = webm && v.canPlayType('video/webm; codecs="vp9"') ? webm : v.getAttribute('data-src');
-          if (quelle) v.setAttribute('src', quelle);
+          if (!quelle) return;
+          v.addEventListener('playing', function () { v.classList.add('ma-ad-video--an'); });
+          v.setAttribute('src', quelle);
         }
-        v.classList.add('ma-ad-video--an');
         var p = v.play();
         if (p && p.catch) p.catch(function () { v.classList.remove('ma-ad-video--an'); });
       } else if (!v.paused) {
@@ -35,10 +37,11 @@
     });
   }
 
-  var plaetze = document.querySelectorAll('.ma-ad');
-  Array.prototype.forEach.call(plaetze, function (platz) {
+  function einrichten(platz) {
+    if (platz.getAttribute('data-ma-ad-bereit')) return;
     var items = platz.querySelectorAll('.ma-ad__item');
     if (!items.length) return;
+    platz.setAttribute('data-ma-ad-bereit', '1');
     var aktiv = 0;
     var imBild = false;
     function zeige(i) {
@@ -68,5 +71,8 @@
       aktiv = (aktiv + 1) % items.length;
       zeige(aktiv);
     }, takt);
-  });
+  }
+
+  window.maAdPlatz = einrichten;
+  Array.prototype.forEach.call(document.querySelectorAll('.ma-ad'), einrichten);
 })();
