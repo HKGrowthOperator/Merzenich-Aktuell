@@ -209,6 +209,32 @@ function ma_abgleich_bild_fehlt(int $id, array $e = []): bool {
 }
 
 /** Setzt der Abgleich gerade selbst ein Beitragsbild? (Dann gilt es nicht als von Hand gewählt.) */
+/**
+ * Themenbild nachziehen (1.34.0, Entscheidung Luis Kummer 28.10.2026: das Bild muss zum Thema passen).
+ * Wählt das Repository für einen bestehenden Beitrag ein anderes Bild (neues Motiv, neue Bildklasse),
+ * übernimmt der Abgleich es, solange niemand das Bild in WordPress von Hand gewählt hat. Bis 1.33
+ * kam ein neues Bild nur bei Beiträgen ohne Bild an.
+ */
+function ma_abgleich_bild_wechsel(string $neuSrc, string $jetztSrc, bool $hatBild, bool $vonHand): bool {
+    return $neuSrc !== '' && $hatBild && !$vonHand && $neuSrc !== $jetztSrc;
+}
+function ma_abgleich_bild_veraltet(int $id, array $e, array $bilder): bool {
+    if (!$e['bild'] || empty($bilder[$e['bild']])) return false;
+    $bild = (int) get_post_thumbnail_id($id);
+    return ma_abgleich_bild_wechsel((string) ($bilder[$e['bild']]['src'] ?? ''), $bild ? (string) get_post_meta($bild, 'ma_image_static_src', true) : '', $bild > 0, (string) get_post_meta($id, '_ma_bild_von_hand', true) === '1');
+}
+function ma_abgleich_bild_nachziehen(int $id, array $e, array $bilder, array &$fehler): bool {
+    $vorher = (int) get_post_thumbnail_id($id);
+    ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
+    if ((int) get_post_thumbnail_id($id) === $vorher) return false;
+    foreach (['ma_image_credit', 'ma_image_license', 'ma_image_original_url', 'ma_image_type', 'ma_image_rights_verified'] as $k) {
+        if (isset($e['meta'][$k]) && (string) $e['meta'][$k] !== '') update_post_meta($id, $k, (string) $e['meta'][$k]);
+    }
+    foreach (['_ma_bildpool_auto', '_ma_bildpool_auto_bild', '_ma_bildpool_vorher', '_ma_bildpool_verteilt', '_ma_bildpool_ersetzt'] as $k) delete_post_meta($id, $k);
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Themenbild aus dem redaktionellen Stand übernommen (vorher Medium ' . $vorher . ')', 0);
+    return true;
+}
+
 function ma_abgleich_setzt_bild(?bool $an = null): bool {
     static $an_ = false;
     if ($an !== null) $an_ = $an;
@@ -410,6 +436,8 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         if (ma_abgleich_ki_freischalten($id, $e, $ent)) $erg['ki_veroeffentlicht'] = ($erg['ki_veroeffentlicht'] ?? 0) + 1;
         // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
         if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && ma_abgleich_bild_fehlt($id, $e)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
+        // Anderes Themenbild im Repository: übernehmen, wenn das Bild nicht von Hand gewählt ist (1.34.0).
+        if (ma_abgleich_bild_veraltet($id, $e, $daten['bilder']) && ma_abgleich_bild_nachziehen($id, $e, $daten['bilder'], $erg['fehler'])) $erg['bild_aktualisiert'] = ($erg['bild_aktualisiert'] ?? 0) + 1;
     }
     return ma_abgleich_abschliessen($erg, $t0);
 }
@@ -529,7 +557,7 @@ function ma_abgleich_seite_admin(): void {
     if (ma_abgleich_ueberfaellig()) echo '<div class="notice notice-warning"><p>' . ma_abgleich_ueberfaellig_text() . '</p></div>';
     if (is_array($stand) && $stand) {
         echo '<h2>Letzter Lauf</h2><table class="widefat striped" style="max-width:720px"><tbody>';
-        foreach ([['Zeit', $stand['zeit'] ?? ''], ['Stand der Import-Datei', $stand['stand'] ?? ''], ['Neu angelegt', (string) ($stand['neu'] ?? 0)], ['KI-Beiträge veröffentlicht', (string) ($stand['ki_veroeffentlicht'] ?? 0)], ['Aktualisiert', (string) ($stand['aktualisiert'] ?? 0)], ['Unverändert', (string) (($stand['unveraendert'] ?? 0) + ($stand['uebernommen'] ?? 0))], ['Von Hand geändert, nicht überschrieben', (string) count($stand['von_hand'] ?? [])], ['Verworfen (Papierkorb, kommt nicht wieder)', (string) ($stand['verworfen'] ?? 0)], ['Noch offen (nächster Lauf)', (string) ($stand['offen'] ?? 0)], ['Dauer', ($stand['dauer'] ?? 0) . ' s']] as [$k, $v]) {
+        foreach ([['Zeit', $stand['zeit'] ?? ''], ['Stand der Import-Datei', $stand['stand'] ?? ''], ['Neu angelegt', (string) ($stand['neu'] ?? 0)], ['KI-Beiträge veröffentlicht', (string) ($stand['ki_veroeffentlicht'] ?? 0)], ['Themenbild aktualisiert', (string) ($stand['bild_aktualisiert'] ?? 0)], ['Aktualisiert', (string) ($stand['aktualisiert'] ?? 0)], ['Unverändert', (string) (($stand['unveraendert'] ?? 0) + ($stand['uebernommen'] ?? 0))], ['Von Hand geändert, nicht überschrieben', (string) count($stand['von_hand'] ?? [])], ['Verworfen (Papierkorb, kommt nicht wieder)', (string) ($stand['verworfen'] ?? 0)], ['Noch offen (nächster Lauf)', (string) ($stand['offen'] ?? 0)], ['Dauer', ($stand['dauer'] ?? 0) . ' s']] as [$k, $v]) {
             echo '<tr><th style="width:280px">' . esc_html($k) . '</th><td>' . esc_html($v) . '</td></tr>';
         }
         echo '</tbody></table>';

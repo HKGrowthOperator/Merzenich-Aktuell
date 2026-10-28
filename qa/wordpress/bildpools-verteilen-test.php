@@ -201,7 +201,7 @@ pruefe('sichtbar: auch Meldungen älter als 45 Tage', in_array(600, $sicht, true
 $n = ma_bildpool_verteilen();
 $schluessel = function (array $ids): array { $z = []; foreach ($ids as $id) { $k = ma_foto_schluessel(get_post_thumbnail_id($id)); $z[$k] = ($z[$k] ?? 0) + 1; } arsort($z); return $z; };
 $rathaus = range(600, 610); $feuer = range(620, 626);
-pruefe('Abgleich-Symbolbild: höchstens zweimal, die zwei neuesten behalten es', [max($schluessel($rathaus)), get_post_thumbnail_id(610), get_post_thumbnail_id(609), get_post_thumbnail_id(600) !== 700], [2, 700, 700, true]);
+pruefe('1.34.0: Abgleich-Symbolbild (Themenbild aus dem Repository) bleibt bei allen elf', array_values(array_unique(array_map('get_post_thumbnail_id', $rathaus))), [700]);
 $neueste = array_slice(array_reverse($feuer), 0, 2);
 usort($feuer, fn($a, $b) => strcmp($GLOBALS['inhalte'][$b]['post']['post_date'], $GLOBALS['inhalte'][$a]['post']['post_date']));
 pruefe('Ortsansicht: die zwei neuesten Meldungen behalten sie', [get_post_thumbnail_id($feuer[0]), get_post_thumbnail_id($feuer[1])], [701, 701]);
@@ -210,14 +210,14 @@ pruefe('Ortsansicht ersetzt: Typ Symbolbild, Nachweis des Poolfotos, Sicherung m
 pruefe('Originalfoto und Mediathek-Bild bleiben, auch dreimal', array_map('get_post_thumbnail_id', [640, 641, 642, 650, 651, 652]), [702, 702, 702, 703, 703, 703]);
 pruefe('Kein Merkmal an Original und Mediathek-Bild', [isset($GLOBALS['meta'][640]['_ma_bildpool_auto']), isset($GLOBALS['meta'][650]['_ma_bildpool_auto'])], [false, false]);
 pruefe('Verlauf nennt die ersetzte Ortsansicht', count(array_filter($GLOBALS['verlauf'], fn($v) => str_starts_with($v[1], 'Ortsansicht gewechselt'))), 5);
-pruefe('jeder Wechsel steht im Verlauf (9 Rathaus, 5 Feuerwehr)', [$n, count($GLOBALS['verlauf'])], [14, 14]);
+pruefe('jeder Wechsel steht im Verlauf (nur die 5 Ortsansichten)', [$n, count($GLOBALS['verlauf'])], [5, 5]);
 pruefe('zweiter Lauf: nichts mehr zu tun', ma_bildpool_verteilen(), 0);
 
-echo "1.30.0: Pool reicht nicht für zweimal: gleichmäßig und mit Abstand\n";
+echo "1.30.0: Pool reicht nicht für zweimal: gleichmäßig und mit Abstand (seit 1.34.0 mit Ortsansichten)\n";
 // Der Pool „aktuell“ hat 22 geprüfte Fotos (Kandidaten gelten für den ganzen Aufruf); 60 Meldungen.
 $GLOBALS['inhalte'] = []; $GLOBALS['meta'] = []; $GLOBALS['verlauf'] = [];
 $GLOBALS['meta'][700] = ['ma_image_static_src' => '/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp'];
-for ($i = 0; $i < 60; $i++) meldung(800 + $i, "Meldung $i", sprintf('2026-%02d-%02d 10:00:00', 4 + intdiv($i, 20), 1 + $i % 20), 700, 'symbol');
+for ($i = 0; $i < 60; $i++) meldung(800 + $i, "Meldung $i", sprintf('2026-%02d-%02d 10:00:00', 4 + intdiv($i, 20), 1 + $i % 20), 700, 'place');
 ma_bildpool_verteilen();
 $folge = array_map(fn($id) => ma_foto_schluessel(get_post_thumbnail_id($id)), array_reverse(range(800, 859)));
 $z = array_count_values($folge);
@@ -232,7 +232,7 @@ echo "Review 18.10.: kein tägliches Weiterschieben, Hand-Bilder bleiben, eigene
 // Volle Pools: Eine neue Meldung oben (mit dem Abgleich-Foto) darf keine ältere zum Wechseln bringen.
 $verteilt = array_values(array_filter(range(800, 859), fn($id) => ($GLOBALS['meta'][$id]['_ma_bildpool_verteilt'] ?? '') === '1'));
 $vorher = array_map('get_post_thumbnail_id', $verteilt);
-meldung(870, 'Neueste Meldung', '2026-10-18 08:00:00', 700, 'symbol');
+meldung(870, 'Neueste Meldung', '2026-10-18 08:00:00', 700, 'place');
 $n = ma_bildpool_verteilen();
 pruefe('Neue Meldung in vollem Pool: kein schon verteilter Inhalt wechselt erneut', [count($verteilt) > 50, array_map('get_post_thumbnail_id', $verteilt) === $vorher], [true, true]);
 pruefe('höchstens ein Wechsel (die bisher zweitneueste mit dem Abgleich-Foto)', $n <= 1, true);

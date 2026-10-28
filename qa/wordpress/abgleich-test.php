@@ -60,9 +60,14 @@ pruefe('Bilder: Repository als letzte Quelle, eigene Adresse zuerst', [array_sli
 pruefe('Abgleich ist standardmäßig an, sofortige Veröffentlichung aus', [ma_abgleich_aktiv(), ma_abgleich_sofort()], [true, false]);
 $ki = ['typ' => 'post', 'meta' => ['ma_herkunft' => 'ki-redaktion']];
 pruefe('KI-Redaktion (1.33.0): mit Option direkt veröffentlicht, ohne Option Entwurf', [ma_abgleich_status($ki, false, true), ma_abgleich_status($ki, false, false)], ['publish', 'draft']);
-pruefe('KI-Option gilt nicht für andere Meldungen (Feuerwehr-Automatik, ChatGPT)', ma_abgleich_status($e, false, true), 'draft');
+pruefe('KI-Option gilt nicht für andere Meldungen (Feuerwehr-Automatik, ChatGPT)', ma_abgleich_status(['typ' => 'post', 'meta' => ['ma_kicker' => 'Feuerwehr']], false, true), 'draft');
 pruefe('KI-Option ändert Termine nicht', ma_abgleich_status(['typ' => 'ma_event', 'status' => 'draft', 'meta' => ['ma_herkunft' => 'ki-redaktion']], false, true), 'draft');
 pruefe('KI direkt ist standardmäßig aus', ma_abgleich_ki_direkt(), false);
+pruefe('Themenbild (1.34.0): anderes Bild im Repository wird übernommen', ma_abgleich_bild_wechsel('/assets/editorial-pools/themen/a.jpg', '/assets/places/merzenich-1440.webp', true, false), true);
+pruefe('Themenbild: gleiches Bild, nichts zu tun', ma_abgleich_bild_wechsel('/x.jpg', '/x.jpg', true, false), false);
+pruefe('Themenbild: von Hand gewähltes Bild bleibt', ma_abgleich_bild_wechsel('/x.jpg', '/y.jpg', true, true), false);
+pruefe('Themenbild: kein Bild in der Datei oder am Beitrag (dann gilt ma_abgleich_bild_fehlt)', [ma_abgleich_bild_wechsel('', '/y.jpg', true, false), ma_abgleich_bild_wechsel('/x.jpg', '', false, false)], [false, false]);
+pruefe('Themenbild: Poolfoto aus WordPress (ohne statischen Pfad) wird ersetzt', ma_abgleich_bild_wechsel('/x.jpg', '', true, false), true);
 pruefe('KI-Häkchen setzen Quelle, Datum, Ort, Prüfung und Prüfer', [ma_abgleich_ki_haekchen()['ma_human_reviewed'], ma_abgleich_ki_haekchen()['ma_reviewed_by']], ['1', MA_ABGLEICH_KI_PRUEFER]);
 
 echo "\nAktualisieren lässt Prüfhäkchen stehen (1.27.3)\n";

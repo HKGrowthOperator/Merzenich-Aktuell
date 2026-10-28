@@ -593,7 +593,10 @@ function ma_bildpool_allgemein(int $id): bool {
     if (!$bild || (string) get_post_meta($bild, 'ma_image_static_src', true) === '') return false;
     if ((string) get_post_meta($id, '_ma_bild_von_hand', true) === '1') return false;
     // Nur der Typ am Inhalt zählt: Ein von der Redaktion gewähltes Import-Bild hat dort meist keinen.
-    return in_array((string) get_post_meta($id, 'ma_image_type', true), ['symbol', 'place'], true);
+    // 1.34.0 (Entscheidung Luis Kummer 28.10.2026: das Bild muss zum Thema passen): Symbolbilder aus der
+    // Import-Datei wählt das Repository nach Motiv (Sport zeigt Sport); sie bleiben stehen, statt durch ein
+    // Foto des Ressort-Pools ersetzt zu werden. Umverteilt werden nur noch Ortsansichten.
+    return (string) get_post_meta($id, 'ma_image_type', true) === 'place';
 }
 
 /**
