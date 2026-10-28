@@ -1,6 +1,6 @@
 # Mails an die Unternehmen (Oktober 2026)
 
-Stand 28.10.2026 · Plugin 1.35.0 · Theme 21.22.0
+Stand 28.10.2026 abends · Plugin 1.36.0 · Theme 21.23.0
 
 Fünf fertige Mails zum Kopieren, eine je Unternehmen. Absender ist die Redaktion (info@kbs-management.tv). Das Passwort steht in keiner Mail: Es wird unter Benutzer → Profil gesetzt und persönlich oder telefonisch weitergegeben. Was in eckigen Klammern steht, vor dem Versand prüfen; die Benutzernamen trägt die Redaktion ein, sobald die Zugänge angelegt sind.
 
@@ -19,6 +19,8 @@ Almera Clean ist jetzt auf Merzenich Aktuell, der Lokalzeitung online für die G
   Dort stehen Ihr Profil mit Adresse, Telefon und Website sowie Ihre Beiträge. Den Kanal erreicht man auch über das Menü „Unternehmen“ auf jeder Seite.
 - **Ihr erster Beitrag:** „Gebäude, Fenster und Wäsche: Almera Clean aus Merzenich“. Er ist als Anzeige gekennzeichnet.
 - **Ihr Logo** haben wir von Ihrer Website übernommen und für helle Flächen dunkel dargestellt.
+- **Ihre Anzeigen:** Zwei Anzeigen laufen auf allen Werbeplätzen der Seite im Wechsel, mit Fotos von Ihrer Website. Sie sind als Anzeige gekennzeichnet und führen zu Ihrem Unternehmenskanal.
+- **Bis zu 5 eigene Anzeigen inklusive:** Mit Ihrem Zugang können Sie zusätzlich bis zu fünf eigene Anzeigen gleichzeitig schalten. Die Redaktion prüft sie vor dem Start.
 
 Alle Angaben stammen von almera-clean.de (Stand 24.10.2026). Wenn etwas nicht stimmt oder fehlt, antworten Sie einfach auf diese Mail. Ein Logo in besserer Auflösung (gern als PNG mit transparentem Hintergrund) nehmen wir gern.
 
@@ -57,6 +59,8 @@ die KBS Management GmbH ist jetzt auf Merzenich Aktuell als Unternehmen zu sehen
 - **Beitrag:** „Apps, Software und IT-Beratung: KBS Management aus Leverkusen“, gekennzeichnet als „Anzeige · in eigener Sache“.
 - **Hinweis:** Profil, Beitrag und Menü nennen KBS ausdrücklich als Herausgeberin von Merzenich Aktuell. So ist für Leserinnen und Leser klar, dass hier die Herausgeberin selbst wirbt.
 - **Logo:** von kbs-management.tv übernommen, für helle Flächen dunkel dargestellt.
+- **Ihre Anzeigen:** Zwei Anzeigen laufen auf allen Werbeplätzen der Seite im Wechsel, mit Fotos von Ihrer Website und der Intro-Animation. Sie sind als Anzeige gekennzeichnet und führen zu Ihrem Unternehmenskanal.
+- **Bis zu 5 eigene Anzeigen inklusive:** Mit Ihrem Zugang können Sie zusätzlich bis zu fünf eigene Anzeigen gleichzeitig schalten. Die Redaktion prüft sie vor dem Start.
 
 Die Angaben stammen von kbs-management.tv (Startseite und Impressum, Stand 24.10.2026). Korrekturen und ein Logo in besserer Auflösung bitte als Antwort auf diese Mail.
 
@@ -90,6 +94,8 @@ ASS Elektrotechnik ist jetzt auf Merzenich Aktuell, der Lokalzeitung online für
   Dort stehen Ihr Profil mit Adresse, Telefon, E-Mail und Website sowie Ihre Beiträge. Den Kanal erreicht man auch über das Menü „Unternehmen“ auf jeder Seite.
 - **Ihr erster Beitrag:** „Smart Home, Licht und Sicherheit: ASS Elektrotechnik aus Düren“. Er ist als Anzeige gekennzeichnet.
 - **Ihr Logo** haben wir von Ihrer Website übernommen und für helle Flächen dunkel dargestellt.
+- **Ihre Anzeigen:** Zwei Anzeigen laufen auf allen Werbeplätzen der Seite im Wechsel, mit Fotos von Ihrer Website. Sie sind als Anzeige gekennzeichnet und führen zu Ihrem Unternehmenskanal.
+- **Bis zu 5 eigene Anzeigen inklusive:** Mit Ihrem Zugang können Sie zusätzlich bis zu fünf eigene Anzeigen gleichzeitig schalten. Die Redaktion prüft sie vor dem Start.
 
 Alle Angaben stammen von asselektrotechnik.de (Stand 28.10.2026). Wenn etwas nicht stimmt oder fehlt, antworten Sie einfach auf diese Mail. Ein Logo in besserer Auflösung (gern als PNG mit transparentem Hintergrund) nehmen wir gern.
 
@@ -123,7 +129,7 @@ Guten Tag,
 
 Merzlicht ist jetzt auf Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich, vertreten:
 
-- **Werbebanner:** „Ihre Werbung auf der Videowall. Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.“ Es läuft auf der Startseite zwischen den Rubriken und in der Seitenspalte, unter den Meldungen, auf der Sportseite und auf der Seite „Unternehmen“, ist als Anzeige gekennzeichnet und wechselt sich mit anderen Anzeigen ab. Das Foto ist vorerst ein Symbolbild; ein Foto Ihrer Videowall setzen wir gern ein.
+- **Zwei Anzeigen:** „Ihre Werbung auf der Videowall. Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.“ und „Gesehen vom Spielfeld und vom Merzpark.“ Sie laufen auf der Startseite zwischen den Rubriken und in der Seitenspalte, unter den Meldungen, auf der Sportseite und auf der Seite „Unternehmen“, sind als Anzeige gekennzeichnet, mit kurzer Bewegung, und wechseln sich mit anderen Anzeigen ab. Die Bilder sind vorerst KI-Bilder (so gekennzeichnet); Fotos Ihrer Videowall setzen wir gern ein.
 - **Unternehmenskanal:** https://merzenich-aktuell.de/unternehmen/merzlicht/
   Bisher stehen dort Ihr Name und „Werbung auf der Videowall“.
 - **Bis zu 5 Anzeigen inklusive:** Mit Ihrem Zugang können Sie bis zu fünf eigene Anzeigen gleichzeitig schalten, auf allen Werbeplätzen der Seite. Die Redaktion prüft sie vor dem Start.
@@ -135,7 +141,7 @@ Damit Ihr Profil vollständig wird, schicken Sie uns bitte:
 - zwei, drei Sätze, was Merzlicht anbietet,
 - eine E-Mail-Adresse für Ihren eigenen Zugang, mit dem Sie Beiträge und Anzeigen selbst einreichen können.
 
-Auf Wunsch tauschen wir das Foto im Banner gegen Ihr Logo oder ein eigenes Bild aus.
+Auf Wunsch tauschen wir die Bilder gegen Ihr Logo oder eigene Fotos aus.
 
 Mit freundlichen Grüßen
 
@@ -153,7 +159,7 @@ Guten Tag,
 
 AJ Sports ist jetzt auf Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich, vertreten:
 
-- **Werbebanner:** „AJ Sports Entertainment. Partner des Sports und von Merzenich Aktuell.“ Es läuft auf der Startseite zwischen den Rubriken und in der Seitenspalte, unter den Meldungen, auf der Sportseite und auf der Seite „Unternehmen“, ist als Anzeige gekennzeichnet und wechselt sich mit anderen Anzeigen ab. Das Foto ist vorerst ein Symbolbild; ein eigenes Foto setzen wir gern ein.
+- **Zwei Anzeigen:** „AJ Sports Entertainment. Partner des Sports und von Merzenich Aktuell.“ und „Für den Sport in der Region.“ Sie laufen auf der Startseite zwischen den Rubriken und in der Seitenspalte, unter den Meldungen, auf der Sportseite und auf der Seite „Unternehmen“, sind als Anzeige gekennzeichnet, mit kurzer Bewegung, und wechseln sich mit anderen Anzeigen ab. Die Bilder sind vorerst KI-Bilder (so gekennzeichnet); eigene Fotos setzen wir gern ein.
 - **Unternehmenskanal:** https://merzenich-aktuell.de/unternehmen/aj-sports/
   Bisher steht dort nur Ihr Name.
 - **Bis zu 5 Anzeigen inklusive:** Mit Ihrem Zugang können Sie bis zu fünf eigene Anzeigen gleichzeitig schalten, auf allen Werbeplätzen der Seite. Die Redaktion prüft sie vor dem Start.
@@ -165,7 +171,7 @@ Damit Ihr Profil vollständig wird, schicken Sie uns bitte:
 - zwei, drei Sätze, was AJ Sports anbietet,
 - eine E-Mail-Adresse für Ihren eigenen Zugang, mit dem Sie Beiträge und Anzeigen selbst einreichen können.
 
-Auf Wunsch tauschen wir das Foto im Banner gegen Ihr Logo oder ein eigenes Bild aus.
+Auf Wunsch tauschen wir die Bilder gegen Ihr Logo oder eigene Fotos aus.
 
 Mit freundlichen Grüßen
 

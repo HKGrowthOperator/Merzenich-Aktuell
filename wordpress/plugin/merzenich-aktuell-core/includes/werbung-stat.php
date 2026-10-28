@@ -70,13 +70,7 @@ function ma_werbung_platz_daten(string $platz): array {
     if (!function_exists('ma_active_ads')) return [];
     $raus = [];
     foreach (ma_ads_rotate(ma_active_ads($platz), $platz) as $ad) {
-        $url = (string) get_post_meta($ad->ID, 'ma_ad_url', true);
-        $img = get_the_post_thumbnail_url($ad, 'large');
-        $sponsor = (string) get_post_meta($ad->ID, 'ma_ad_sponsor', true);
-        $inhalt = $img ? '<span class="ma-ad-art"><img src="' . esc_url($img) . '" alt="' . esc_attr(ma_ad_alt($ad)) . '" loading="lazy" decoding="async"></span>' : '';
-        $inhalt .= '<span class="ma-ad-copy">' . ($sponsor !== '' ? '<span class="ma-ad-eyebrow">' . esc_html($sponsor) . '</span>' : '') . '<strong>' . esc_html(get_the_title($ad)) . '</strong>'
-            . ($ad->post_excerpt !== '' ? '<span class="ma-ad-text">' . esc_html($ad->post_excerpt) . '</span>' : '') . '</span>';
-        $html = $url !== '' ? '<a class="ma-ad-card ma-ad-card--gap" href="' . esc_url($url) . '" rel="sponsored noopener" target="_blank">' . $inhalt . '</a>' : '<div class="ma-ad-card ma-ad-card--gap">' . $inhalt . '</div>';
+        $html = ma_ad_karte($ad, 'gap');
         $raus[] = ['id' => (int) $ad->ID, 'html' => $html];
     }
     return $raus;

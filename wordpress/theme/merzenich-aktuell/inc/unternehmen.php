@@ -360,16 +360,19 @@ function ma21_firmen_anzeige_html(array $f, string $format = 'gap', bool $aufKan
             . ($b ? '<span class="u-testanzeige__credit">' . ma21_muster_nachweis($b, 'Foto: ') . '</span>' : '') . '</aside>';
     }
     if ($f['muster'] || empty($f['id']) || !function_exists('ma_business_beitraege') || !function_exists('ma_ad_is_running')) return '';
-    foreach (ma_business_beitraege((int) $f['id'], 6, 'ma_ad') as $ad) {
-        if (!ma_ad_is_running($ad)) continue;
-        $url = (string) get_post_meta($ad->ID, 'ma_ad_url', true); $img = (string) get_the_post_thumbnail_url($ad, 'large');
-        $inhalt = ($img !== '' ? '<span class="ma-ad-art"><img src="' . esc_url($img) . '" alt="' . esc_attr(function_exists('ma_ad_alt') ? ma_ad_alt($ad) : '') . '" loading="lazy" decoding="async"></span>' : '')
-            . '<span class="ma-ad-copy"><span class="ma-ad-eyebrow">' . esc_html($f['name']) . '</span><strong>' . esc_html(get_the_title($ad)) . '</strong>' . ($ad->post_excerpt !== '' ? '<span class="ma-ad-text">' . esc_html($ad->post_excerpt) . '</span>' : '') . '</span>';
-        $attr = ' class="ma-ad-card ma-ad-card--' . esc_attr($format) . ' ma-ad__item" data-ma-anzeige="' . (int) $ad->ID . '" aria-label="' . esc_attr('Anzeige: ' . $f['name'] . ' – ' . get_the_title($ad)) . '"';
-        return '<aside class="werbung werbung--' . esc_attr($format) . ' werbung--echt" aria-label="Anzeige"><span class="werbung-label">Anzeige</span><div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--' . esc_attr($format) . '">'
-            . ($url !== '' ? '<a' . $attr . ' href="' . esc_url($url) . '" rel="sponsored noopener" target="_blank">' . $inhalt . '</a>' : '<div' . $attr . '>' . $inhalt . '</div>') . '</div></aside>';
+    $ads = array_values(array_filter(ma_business_beitraege((int) $f['id'], 6, 'ma_ad'), 'ma_ad_is_running'));
+    if (!$ads || !function_exists('ma_ad_karte')) return '';
+    // Auf dem Kanal selbst führt der Knopf nicht auf dieselbe Seite: dann zur Website des Unternehmens, sonst ohne Link.
+    $ziel = null;
+    if ($aufKanal) {
+        $web = function_exists('ma_business_profile') ? (string) (ma_business_profile((int) $f['id'])['website'] ?? '') : '';
+        $ziel = $web !== '' ? $web : '';
     }
-    return '';
+    $items = '';
+    foreach ($ads as $i => $ad) $items .= ma_ad_karte($ad, $format, $format !== 'gap', $i > 0, $ziel);
+    if (function_exists('wp_enqueue_script') && defined('MA_CORE_URL')) wp_enqueue_script('ma-ad-rotation', MA_CORE_URL . 'assets/ad-rotation.js', [], defined('MA_CORE_VERSION') ? MA_CORE_VERSION : null, true);
+    return '<aside class="werbung werbung--' . esc_attr($format) . ' werbung--echt" aria-label="Anzeige"><span class="werbung-label">Anzeige</span><div class="werbung-flaeche ma-ad ma-ad-rotator ma-ad-rotator--' . esc_attr($format) . '"'
+        . (count($ads) > 1 ? ' data-ma-ad-rotate="8000" data-ma-ad-count="' . count($ads) . '"' : '') . '>' . $items . '</div></aside>';
 }
 
 /** Kacheln der Unternehmenskanäle (Übersicht /unternehmen/, Seitenspalte im Kanal). */

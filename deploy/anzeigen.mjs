@@ -10,8 +10,8 @@
  * (Servicespalte der Startseite, klebt beim Scrollen), sport (rechte Spalte der
  * Sportseite), unternehmen (rechte Spalte von /unternehmen/) oder artikel (Artikel- und uebrige Seiten).
  *
- * - Jede Flaeche zeigt ein Demo-Motiv mit echter, bereits freigegebener Fotografie.
- *   Benachbarte
+ * - Jede Flaeche zeigt eine echte Anzeige der Firmen (seit 28.10.2026, keine
+ *   Musteranzeigen mehr). Benachbarte
  *   Flaechen beginnen versetzt, damit nicht zweimal hintereinander dasselbe
  *   Motiv steht. Wiederholungen ueber die Seite sind erlaubt.
  * - Das HTML traegt den Startzustand, damit ohne JavaScript Werbung steht.
@@ -56,6 +56,8 @@ const MOTIVE = daten.motive;
 // wechselt mit der Rotation. CC0 und gemeinfreie Fotos brauchen keinen.
 const CREDITS = new Map(JSON.parse(readFileSync(join(site, 'assets', 'werben', 'credits.json'), 'utf8')).images.map((c) => [c.src, c]));
 function creditHtml(m) {
+  // Fotos der Unternehmen und KI-Bilder: Nachweis steht im Motiv (nachweis), kein CC-Hinweis noetig.
+  if (m.nachweis) return '';
   const c = CREDITS.get(m.bild);
   if (!c) { fehler.push(`${m.id}: kein Eintrag in assets/werben/credits.json fuer ${m.bild}`); return ''; }
   if (!/^CC BY/i.test(c.license || '')) return '';
@@ -70,8 +72,9 @@ if (MOTIVE.length < 2) fehler.push('mindestens zwei Motive noetig, sonst rotiert
 // Werbe-Fotografie. Format band: Werbebaender und Artikelseiten.
 // Format gap: hochkant in Spalten.
 function kunst(m) {
-  return '<span class="ma-ad-art ma-ad-art--' + esc(m.typ) + '">'
+  return '<span class="ma-ad-art ma-ad-art--' + esc(m.typ) + ' ma-ad-art--bewegt">'
     + '<img src="' + esc(m.bild) + '" alt="' + esc(m.bildAlt) + '" loading="lazy" decoding="async">'
+    + (m.ki ? '<span class="ma-ad-nachweis">KI-Bild</span>' : '')
     + '</span>';
 }
 function motivHtml(m, format) {
@@ -84,7 +87,6 @@ function motivHtml(m, format) {
     + `<strong>${esc(m.headline)}</strong>`
     + `<span class="ma-ad-text">${esc(m.text)}</span>`
     + `<span class="ma-ad-cta">${esc(m.cta)}</span>`
-    + (format === 'gap' ? '<span class="ma-ad-muster">Musteranzeige</span>' : '')
     + '</span></a>';
 }
 

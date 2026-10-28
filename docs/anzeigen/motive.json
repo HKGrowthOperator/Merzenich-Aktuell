@@ -1,0 +1,16 @@
+{
+  "hinweis": "crf = Qualität (höher = kleinere Datei, Standard 28). Bewegung der Anzeigenvideos (docs/anzeigen/bauen.mjs). Standbild je Motiv: wordpress/plugin/merzenich-aktuell-core/data/banner/<id>.jpg (1600 × 900). flaechen = leuchtende Bildschirme als Vielecke [[x, y], ...], lichter = Lichtquellen [x, y, radius], glanz = Lichtstreif; alles in Prozent des Bildes.",
+  "dauer": 8,
+  "motive": [
+    {"id": "almera-clean-1", "glanz": true, "crf": 32},
+    {"id": "almera-clean-2", "glanz": true},
+    {"id": "ass-elektrotechnik-1", "glanz": true},
+    {"id": "ass-elektrotechnik-2", "glanz": true},
+    {"id": "kbs-management-1", "quelle": "video", "hinweis": "Intro-Animation von kbs-management.tv (wp-content/themes/kbs/intro.mp4), ein- und ausgeblendet als Schleife"},
+    {"id": "kbs-management-2", "glanz": true, "lichter": [[33, 43, 16]]},
+    {"id": "merzlicht-1", "flaechen": [[[55, 32], [86.8, 11.6], [87.7, 63.5], [55.2, 65.5]]], "lichter": [[25.8, 21.7, 7], [27.5, 48.4, 4], [13.7, 48.9, 3]]},
+    {"id": "merzlicht-2", "flaechen": [[[60.3, 32.6], [73.6, 32.6], [73.6, 46.3], [60.3, 46.3]], [[5.5, 44.5], [64, 52], [64, 55.5], [5.5, 53.4]]], "lichter": [[75.5, 0.9, 7]]},
+    {"id": "aj-sports-1", "lichter": [[87.1, 6.9, 8], [10, 45, 12]]},
+    {"id": "aj-sports-2", "lichter": [[43.7, 27.8, 7], [92, 18.4, 7], [77.5, 40.4, 3]]}
+  ]
+}

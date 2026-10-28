@@ -6,8 +6,10 @@
  * Platz auf der Startseite, kein zweites Anlegen; Profile nur mit Namen ohne
  * erfundene Angaben. Zusage eintragen: Einwilligung und Logo getrennt mit
  * Nachweis, Logo einmal in die Mediathek, Profil erst mit Einwilligung
- * veröffentlicht, Werbebeitrag bleibt für die Freigaben, Werbebanner einmal
- * angelegt. Firma zurückziehen: alles Entwurf, nichts gelöscht.
+ * veröffentlicht, Werbebeitrag bleibt für die Freigaben, je Firma zwei
+ * Werbebanner mit Foto, Video und Knopf (28.10.2026), geänderte Motive werden
+ * nachgezogen, im Backend bearbeitete nicht. Firma zurückziehen: alles Entwurf,
+ * nichts gelöscht.
  * Aufruf: php qa/wordpress/firmen-entwuerfe-test.php
  */
 define('ABSPATH', __DIR__ . '/');
@@ -18,6 +20,9 @@ $GLOBALS['posts'] = []; $GLOBALS['terms'] = []; $GLOBALS['naechste'] = 100;
 $GLOBALS['aktionen'] = [];
 function add_action($h, $f, $prio = 10, $n = 1) { $GLOBALS['aktionen'][$h] = $prio; }
 function wp_slash($v) { return $v; }
+function wp_json_encode($v) { return json_encode($v); }
+function get_permalink($id) { return 'https://merzenich-aktuell.de/unternehmen/' . ($GLOBALS['posts'][$id]['post_name'] ?? $id) . '/'; }
+function get_post_field($f, $id) { return $GLOBALS['posts'][$id][$f] ?? ''; }
 function wp_kses($s, $erlaubt) { return strip_tags((string) $s, '<' . implode('><', array_keys($erlaubt)) . '>'); }
 function esc_url($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
 function esc_html($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
@@ -37,7 +42,7 @@ function get_posts($q) {
         if (!in_array($p['post_type'], $typ, true) || !in_array($p['post_status'], $st, true)) return false;
         if (isset($q['name']) && $p['post_name'] !== $q['name']) return false;
         if (isset($q['meta_key']) && $wert($id, $q['meta_key']) !== (string) $q['meta_value']) return false;
-        foreach ((array) ($q['meta_query'] ?? []) as $c) if ($wert($id, $c['key']) !== (string) $c['value']) return false;
+        foreach ((array) ($q['meta_query'] ?? []) as $c) if (($c['compare'] ?? '=') === 'IN' ? !in_array($wert($id, $c['key']), (array) $c['value'], true) : $wert($id, $c['key']) !== (string) $c['value']) return false;
         return true;
     }, ARRAY_FILTER_USE_BOTH));
     return isset($q['name']) || isset($q['meta_key']) ? array_slice($treffer, 0, 1) : $treffer;
@@ -54,19 +59,26 @@ $firmen = (array) ($d['firmen'] ?? []);
 pruefe('fünf Unternehmen (24.10. und 28.10.2026)', array_map(fn($f) => $f['profil']['titel'], $firmen), ['Almera Clean', 'KBS Management GmbH', 'ASS Elektrotechnik', 'Merzlicht', 'AJ Sports']);
 pruefe('frühere Betriebe zum Zurückziehen', array_column($d['frueher'] ?? [], 'slug'), ['baeckerei-wirtz-merzenich', 'hasberg-fenster-rollladentechnik-merzenich', 'porschen-media-girbelsrath']);
 // Redaktionelle Angaben (Profil, Beitrag, Hinweis); den Anzeigentext der Banner hat der Betreiber gewählt (28.10.2026).
-$text = json_encode(array_map(fn($f) => array_diff_key($f, ['anzeige' => 1]), $firmen) + ['hinweis' => $d['hinweis'] ?? ''], JSON_UNESCAPED_UNICODE);
+$text = json_encode(array_map(fn($f) => array_diff_key($f, ['anzeigen' => 1]), $firmen) + ['hinweis' => $d['hinweis'] ?? ''], JSON_UNESCAPED_UNICODE);
 pruefe('keine Wörter „Partner“, „Kunde“, „Sponsor“ über die Betriebe', preg_match('/partner|kunde|sponsor/i', $text), 0);
 pruefe('kein Gedankenstrich „—“', strpos($text, '—'), false);
 pruefe('Art je Firma: Anzeige, eigene Sache (Herausgeberin), Anzeige, Anzeige, Anzeige', array_map('ma_firmen_art', $firmen), ['anzeige', 'eigen', 'anzeige', 'anzeige', 'anzeige']);
 pruefe('nur KBS ist als Herausgeberin markiert', array_map(fn($f) => !empty($f['herausgeberin']), $firmen), [false, true, false, false, false]);
-pruefe('Werbekontingent: Merzlicht und AJ Sports 5, die übrigen 0', array_map(fn($f) => $f['werbung']['max'] ?? null, $firmen), [0, 0, 0, 5, 5]);
+pruefe('Werbekontingent: alle fünf 5 Anzeigen', array_map(fn($f) => $f['werbung']['max'] ?? null, $firmen), [5, 5, 5, 5, 5]);
+pruefe('je Firma zwei Anzeigen', array_map(fn($f) => count(ma_firmen_anzeigen($f)), $firmen), [2, 2, 2, 2, 2]);
+pruefe('KI-Bilder nur bei Merzlicht und AJ Sports', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[false, false], [false, false], [false, false], [true, true], [true, true]]);
+foreach ($firmen as $f) foreach (ma_firmen_anzeigen($f) as $i => $a) {
+    $n = $f['profil']['titel'] . ' ' . ($i + 1);
+    pruefe("$n: Überschrift, Satz, Zeile oben, Knopf, Alt-Text, Nachweis", count(array_filter([$a['titel'] ?? '', $a['text'] ?? '', $a['zeile'] ?? '', $a['knopf'] ?? '', $a['alt'] ?? '', $a['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 6);
+    $webm = MA_CORE_PATH . 'data/banner/' . preg_replace('/\.mp4$/', '.webm', $a['video']);
+    pruefe("$n: Foto, MP4 und WebM im Plugin, Videos unter 1 MB", [is_file(MA_CORE_PATH . 'data/banner/' . $a['bild']), filesize(MA_CORE_PATH . 'data/banner/' . $a['video']) < 1024 * 1024, is_file($webm) && filesize($webm) < 1024 * 1024], [true, true, true]);
+    pruefe("$n: keine Preise", preg_match('/€|\bEUR\b|\d+\s*Euro/i', $a['titel'] . ' ' . $a['text']), 0);
+}
 foreach ($firmen as $f) {
     $p = $f['profil']; $n = $p['titel'];
     if (!empty($f['nur_name'])) {
         pruefe("$n: nur Name, keine erfundenen Angaben (Adresse, Telefon, Website, Logo, Beitrag)", [$p['adresse'], $p['telefon'], $p['website'], $p['logo'] ?? null, $f['beitrag'] ?? null], ['', '', '', null, null]);
         pruefe("$n: Branche nur mit Quelle", $p['branche'] === '' || !empty($p['quellen']), true);
-        pruefe("$n: Banner im Stil der Anzeigen (Überschrift, Satz, Zeile oben, Bildnachweis)", count(array_filter([$f['anzeige']['titel'] ?? '', $f['anzeige']['text'] ?? '', $f['anzeige']['zeile'] ?? '', $f['anzeige']['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 4);
-        pruefe("$n: Banner mit Bilddatei im Plugin", is_file(MA_CORE_PATH . 'data/banner/' . ($f['anzeige']['bild'] ?? '-')), true);
         continue;
     }
     $b = $f['beitrag'];
@@ -77,7 +89,6 @@ foreach ($firmen as $f) {
     pruefe("$n: SEO-Beschreibung höchstens 160 Zeichen", mb_strlen($b['seo_beschreibung']) <= 160, true);
 }
 pruefe('KBS: Hinweis „Herausgeberin“ in Profil, Anriss und Text', [str_contains($firmen[1]['profil']['text'], 'Herausgeberin von Merzenich Aktuell'), str_contains($firmen[1]['beitrag']['anriss'], 'Herausgeberin'), str_contains($firmen[1]['beitrag']['absaetze'][0], 'In eigener Sache')], [true, true, true]);
-pruefe('Banner nur für Merzlicht und AJ Sports', array_map(fn($f) => !empty($f['anzeige']), $firmen), [false, false, false, true, true]);
 pruefe('ASS Elektrotechnik: Sitz Düren, Meisterbetrieb, Logo und Beitrag', [$firmen[2]['profil']['ort'], str_contains($firmen[2]['profil']['branche'], 'Meisterbetrieb'), $firmen[2]['profil']['logo']['datei'], $firmen[2]['beitrag']['slug'] !== ''], ['Düren', true, 'ass-elektrotechnik.png', true]);
 
 echo "Menü\n";
@@ -156,31 +167,45 @@ pruefe('Logo-Medium: Nachweis, Alt-Text, Rechte geprüft, Herkunft', [get_post_m
 $log = ma_firmen_zusage_eintragen('almera-clean-merzenich', 'Zusage laut Betreiber, 24.10.2026', true, false);
 pruefe('Einwilligung: mit Nachweis, wer, wann', [get_post_meta(100, 'ma_business_consent'), get_post_meta(100, 'ma_business_consent_quelle'), get_post_meta(100, 'ma_business_consent_by'), get_post_meta(100, 'ma_business_consent_at')], ['1', 'Zusage laut Betreiber, 24.10.2026', 'Redaktion', '24.10.2026 14:00']);
 pruefe('Profil veröffentlicht, Werbebeitrag zur Prüfung in den Freigaben', [$GLOBALS['posts'][100]['post_status'], $GLOBALS['posts'][101]['post_status'], str_contains(implode(' ', $log), 'in den Freigaben zur Prüfung')], ['publish', 'pending', true]);
-pruefe('Almera ohne Banner-Angabe: kein Werbebanner', count(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad')), 0);
+pruefe('Almera: zwei Werbebanner mit der Einwilligung', [count(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad')), str_contains(implode(' ', $log), 'Almera Clean, Anzeige 2: läuft.')], [2, true]);
 ma_firmen_zusage_eintragen('almera-clean-merzenich', 'anderer Nachweis', true, true);
-pruefe('erneut: kein zweites Logo-Medium, erste Einwilligung bleibt', [$GLOBALS['medien'], get_post_meta(100, 'ma_business_consent_quelle')], [1, 'Zusage laut Betreiber, 24.10.2026']);
+pruefe('erneut: kein zweites Logo-Medium, erste Einwilligung bleibt', [count(array_filter($GLOBALS['meta'], fn($m) => isset($m['ma_firmen_logo_datei']))), get_post_meta(100, 'ma_business_consent_quelle')], [1, 'Zusage laut Betreiber, 24.10.2026']);
 pruefe('Logo-Freigabe und Einwilligung je genau einmal im Verlauf', [count(array_filter($GLOBALS['verlauf'], fn($v) => $v[0] === 100 && $v[1] === 'Logo freigegeben')), count(array_filter($GLOBALS['verlauf'], fn($v) => $v[0] === 100 && $v[1] === 'Einwilligung eingetragen'))], [1, 1]);
 
 echo "Nur Name und Werbebanner\n";
 // Profil aus der Zeit vor der Branche (lokal 24.10. angelegt): die Zusage ergänzt sie, vorhandene Felder bleiben.
 $GLOBALS['posts'][106]['meta_input']['ma_business_branche'] = ''; $GLOBALS['meta'][106]['ma_business_ortsteil'] = 'golzheim';
 $log = ma_firmen_zusage_eintragen('merzlicht', 'Zusage laut Betreiber, 24.10.2026', true, true);
-$ads = array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad');
+$ads = array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_business_id') === '106', ARRAY_FILTER_USE_BOTH);
 $adId = (int) array_key_first($ads); $ad = $ads[$adId] ?? [];
+$m = fn(string $k) => get_post_meta($adId, $k);
 pruefe('Merzlicht: Profil veröffentlicht, Logo-Haken ohne Logo ignoriert', [$GLOBALS['posts'][106]['post_status'], get_post_meta(106, 'ma_business_logo_rechte'), str_contains(implode(' ', $log), 'Logo')], ['publish', '', false]);
-pruefe('Werbebanner angelegt: veröffentlicht, aktiv, ohne Link, ohne Ende, mit Profil', [$ad['post_status'] ?? '', $ad['post_title'] ?? '', $ad['meta_input']['ma_ad_active'] ?? '', $ad['meta_input']['ma_ad_url'] ?? 'x', isset($ad['meta_input']['ma_ad_end']), $ad['meta_input']['ma_business_id'] ?? ''], ['publish', 'Ihre Werbung auf der Videowall.', '1', '', false, '106']);
+pruefe('Merzlicht: zwei Werbebanner, markiert 1 und 2', [count($ads), array_values(array_map(fn($id) => get_post_meta($id, 'ma_firmen_banner'), array_keys($ads)))], [2, ['merzlicht:1', 'merzlicht:2']]);
+pruefe('Banner 1: veröffentlicht, aktiv, Knopf zum Firmenkanal, ohne Ende, mit Profil', [$ad['post_status'] ?? '', $ad['post_title'] ?? '', $m('ma_ad_active'), $m('ma_ad_url'), $m('ma_ad_knopf'), $m('ma_ad_end'), $m('ma_business_id')], ['publish', 'Ihre Werbung auf der Videowall.', '1', 'https://merzenich-aktuell.de/unternehmen/merzlicht/', 'Zum Profil', '', '106']);
 pruefe('Zusage ergänzt leere Branche, eigene Angaben bleiben', [get_post_meta(106, 'ma_business_branche'), get_post_meta(106, 'ma_business_ortsteil')], ['Werbung auf der Videowall', 'golzheim']);
-pruefe('Banner im Stil der Anzeigen: Zeile oben und Satz', [$ad['meta_input']['ma_ad_sponsor'] ?? '', $ad['post_excerpt'] ?? ''], ['Merzlicht · Videowall am Bürgewaldzentrum', 'Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.']);
-pruefe('Plätze: sechs Startseiten-Bänder, unter Artikeln, Unternehmensspalte', array_merge([$ad['meta_input']['ma_ad_slot'] ?? ''], $GLOBALS['weitere'][$adId]['ma_ad_slot_weitere'] ?? []), ma_firmen_banner_plaetze());
-pruefe('Bannerbild aus data/banner als Beitragsbild, Alt-Text', [get_post_meta($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0, 'ma_firmen_banner_datei'), get_post_meta($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0, '_wp_attachment_image_alt')], ['merzlicht.jpg', 'Sportplatz im Abendlicht mit Bandenwerbung (Symbolbild)']);
-pruefe('Bildnachweis des Fotos am Banner', get_post_meta($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0, 'ma_image_credit'), 'Symbolbild · MrChippo / Wikimedia Commons · CC BY-SA 4.0');
-pruefe('Rückmeldung: Werbebanner läuft', str_contains(implode(' ', $log), 'Merzlicht: Werbebanner läuft.'), true);
-$n = count($GLOBALS['posts']);
+pruefe('Banner im Stil der Anzeigen: Zeile oben und Satz, als KI-Bild gekennzeichnet', [$m('ma_ad_sponsor'), $ad['post_excerpt'] ?? '', $m('ma_ad_ki')], ['Merzlicht · Videowall am Bürgewaldzentrum', 'Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.', '1']);
+pruefe('Plätze: sechs Startseiten-Bänder, unter Artikeln, Unternehmensspalte', array_merge([$m('ma_ad_slot')], $GLOBALS['weitere'][$adId]['ma_ad_slot_weitere'] ?? []), ma_firmen_banner_plaetze());
+$bild = (int) ($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0);
+pruefe('Bannerbild aus data/banner als Beitragsbild, Alt-Text, Nachweis', [get_post_meta($bild, 'ma_firmen_banner_datei'), get_post_meta($bild, '_wp_attachment_image_alt'), get_post_meta($bild, 'ma_image_credit')], ['merzlicht-1.jpg', 'LED-Videowall am Sportplatz in der Dämmerung (KI-Bild)', 'KI-Bild (Symbolbild), erstellt für Merzenich Aktuell']);
+pruefe('Video-Schleife aus data/banner in der Mediathek, MP4 und WebM', [get_post_meta((int) $m('ma_ad_video'), 'ma_firmen_banner_datei'), get_post_meta((int) $m('ma_ad_video_webm'), 'ma_firmen_banner_datei')], ['merzlicht-1.mp4', 'merzlicht-1.webm']);
+pruefe('Rückmeldung: beide Banner laufen', [str_contains(implode(' ', $log), 'Merzlicht, Anzeige 1: läuft.'), str_contains(implode(' ', $log), 'Merzlicht, Anzeige 2: läuft.')], [true, true]);
+$n = count($GLOBALS['posts']); $medien = $GLOBALS['medien'];
 $log = ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false);
-pruefe('zweite Zusage: kein zweites Banner', [count($GLOBALS['posts']), str_contains(implode(' ', $log), 'schon vorhanden')], [$n, true]);
-unset($GLOBALS['meta'][$adId]['_thumbnail_id']); $GLOBALS['medien'] = 50;
-unset($GLOBALS['meta'][array_key_first(array_filter($GLOBALS['meta'], fn($m) => ($m['ma_firmen_banner_datei'] ?? '') === 'merzlicht.jpg'))]['ma_firmen_banner_datei']);
-pruefe('Banner ohne Bild (Übernahme gescheitert): Bild wird nachgetragen', [str_contains(implode(' ', ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false)), 'Bild nachgetragen'), ($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0) > 0], [true, true]);
+pruefe('zweite Zusage: kein zweites Banner, keine neuen Medien, „aktuell“', [count($GLOBALS['posts']), $GLOBALS['medien'], str_contains(implode(' ', $log), 'Anzeige 1: aktuell')], [$n, $medien, true]);
+update_post_meta($adId, '_ma_firmen_banner_pruef', 'alter Stand');
+pruefe('geändertes Motiv in der Datei: Banner wird nachgezogen', [str_contains(implode(' ', ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false)), 'Anzeige 1: aktualisiert'), count($GLOBALS['posts'])], [true, $n]);
+update_post_meta($adId, '_ma_firmen_banner_pruef', 'alter Stand'); $GLOBALS['posts'][$adId]['post_modified_gmt'] = '2026-10-29 10:00:00';
+pruefe('im Backend bearbeitet: nicht überschrieben', str_contains(implode(' ', ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false)), 'Anzeige 1: im Backend bearbeitet'), true);
+$GLOBALS['posts'][$adId]['post_modified_gmt'] = ''; update_post_meta($adId, '_ma_firmen_banner_geschrieben', '');
+unset($GLOBALS['meta'][$adId]['_thumbnail_id']);
+pruefe('Banner ohne Bild (Übernahme gescheitert): Bild wird nachgetragen', [str_contains(implode(' ', ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false)), 'Anzeige 1: aktualisiert'), ($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0) > 0], [true, true]);
+// Früheres einzelnes Banner (Markierung ohne Nummer, 28.10. vormittags) wird Anzeige 1, kein drittes.
+$GLOBALS['posts'][700] = ['post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'AJ Sports Entertainment', 'meta_input' => ['ma_firmen_banner' => 'aj-sports', 'ma_business_id' => '107', 'ma_ad_active' => '1']];
+ma_firmen_zusage_eintragen('aj-sports', 'Zusage laut Betreiber, 24.10.2026', true, false);
+$aj = array_keys(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_business_id') === '107', ARRAY_FILTER_USE_BOTH));
+pruefe('AJ Sports: altes Banner wird Anzeige 1, dazu Anzeige 2', [count($aj), get_post_meta(700, 'ma_firmen_banner'), get_post_meta(700, 'ma_ad_video') !== ''], [2, 'aj-sports:1', true]);
+$GLOBALS['posts'][700]['post_status'] = 'trash';
+pruefe('Banner im Papierkorb: nichts neu angelegt', [str_contains(implode(' ', ma_firmen_zusage_eintragen('aj-sports', 'x', true, false)), 'Anzeige 1: liegt im Papierkorb'), count(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad'))], [true, count(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad'))]);
 pruefe('unbekannter Betrieb', ma_firmen_zusage_eintragen('gibt-es-nicht', 'x', true, true), ['Unbekannter Betrieb.']);
 $GLOBALS['posts'][102]['post_status'] = 'trash';
 pruefe('Profil im Papierkorb: nichts', str_contains(ma_firmen_zusage_eintragen('kbs-management', 'x', true, true)[0] ?? '', 'Profil fehlt'), true);

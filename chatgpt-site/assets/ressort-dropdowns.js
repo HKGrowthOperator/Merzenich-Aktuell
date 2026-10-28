@@ -110,6 +110,8 @@
     if (document.documentElement.dataset.werbung === 'aus') return '';
     const wp = window.maWerbungPlaetze;
     const liste = wp && typeof wp === 'object' && Array.isArray(wp.hero_clubs_expanded_right) ? wp.hero_clubs_expanded_right : [];
+    // WordPress: nur laufende Anzeigen, sonst nichts (keine Musterwerbung, 28.10.2026).
+    if (wp && typeof wp === 'object' && !liste.length) return '';
     if (liste.length) {
       const a = liste[Math.floor(Date.now() / 14000) % liste.length];
       return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige" data-ma-anzeige="' + Number(a.id) + '" data-ma-platz="hero_clubs_expanded_right"><span class="werbung-label">Anzeige</span>' +

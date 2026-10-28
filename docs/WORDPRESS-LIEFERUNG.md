@@ -1,6 +1,46 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.22.0 · Core-Plugin 1.35.0 · live: 21.21.0 / 1.34.0 (Historie unten)
+28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.0 · live: 21.21.0 / 1.34.0 (Historie unten)
+
+## Neu am 28.10.2026 abends: Plugin 1.36.0 und Theme 21.23.0, keine Musterwerbung mehr, echte animierte Anzeigen für alle fünf Firmen
+
+**Stand live:** noch nicht eingespielt. Enthält 1.35.0 und 21.22.0 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.0.
+
+**Anlass:** Auftrag des Betreibers am 28.10. abends: Musterwerbung raus. Alle fünf Firmen werben überall, realistisch, mit echten Bildern und Animationen, ohne Testwerbung.
+
+- **Keine Musterwerbung** (`T/inc/ma21.php`, `ma21_werbung`): Läuft auf einem Platz keine Anzeige, bleibt er leer. Die Vorlagen `vorlagen/werbung-*.html` liest WordPress nicht mehr. Auch das Vereine-Menü zeigt ohne laufende Anzeige nichts mehr.
+- **Zehn Anzeigen, zwei je Firma** (`data/firmen-entwuerfe.json`, Feld `anzeigen`):
+  - **Fotos:** Almera, KBS und ASS mit Fotos von ihren Websites (Nutzung mit Zusage laut Betreiber); KBS zusätzlich mit der eigenen Intro-Animation der Website. Merzlicht und AJ Sports mit KI-Bildern (in Canva erzeugt), auf dem Bild als „KI-Bild“ gekennzeichnet.
+  - **Texte:** nur belegte Angaben, keine Preise. Knopf „Zum Profil“ führt zum Firmenkanal.
+  - **Plätze:** alle elf Werbeplätze, Wechsel alle 8 Sekunden.
+- **Animation:**
+  - **Große Plätze** (Startseiten-Bänder, Bühne, unter Artikeln): stumme Video-Schleife, 8 s, 960 × 540, gebaut mit HyperFrames (`docs/anzeigen/bauen.mjs`, `docs/anzeigen/motive.json`: Kamerafahrt, leuchtende Bildschirme, Licht, Glanz). Je Motiv MP4 (H.264) und WebM (VP9), jeweils unter 600 KB.
+  - **Kleine Plätze** (Servicespalte, Sport, Unternehmen): langsamer Zoom per CSS.
+  - **Laden und Abspielen:** Videos laden erst, wenn die Anzeige sichtbar und im Bild ist (`assets/ad-rotation.js`), und pausieren sonst. Ohne Video bleibt das Standbild: bei „Bewegung reduzieren“, im Datensparmodus und bis 560 px Breite.
+- **Anzeigenkarte** (`P/includes/ads.php`, neu `ma_ad_karte`):
+  - Knopf (`ma_ad_knopf`), Bildfokus für den schmalen Bandausschnitt (`ma_ad_fokus`).
+  - Nachweis auf dem Bild: „KI-Bild“ oder die CC-Lizenz; Fotos der Firmen selbst ohne Nachweis.
+  - Interne Links im selben Fenster, externe mit `rel="sponsored"`.
+  - Dieselbe Karte nutzen das Vereine-Menü und der Firmenkanal; auf dem Kanal selbst führt der Knopf zur Website der Firma.
+- **Werbemittel im Backend** (`content-admin.php`): neue Felder „Knopftext“ und „Video (Medien-ID)“; es werden nur Videos aus der Mediathek angenommen.
+- **Anlegen und Nachziehen** (`ma_firmen_banner_anlegen`):
+  - „Zusage eintragen“ und „Fehlende Entwürfe anlegen“ legen fehlende Motive an. Bei Firmen mit Einwilligung ziehen sie geänderte Motive nach (Prüfsumme je Motiv); im Backend bearbeitete Anzeigen bleiben unverändert.
+  - Das frühere einzelne Banner (Markierung ohne Nummer) wird Motiv 1, es entsteht kein drittes.
+- **Kontingent:** alle fünf Firmen 5 eigene Anzeigen (`werbung.max`).
+- **Statische Kopie:** `deploy/anzeigen.json` mit denselben zehn Motiven (Bilder unter `/assets/anzeigen/`), Label „Anzeige“. `/werben/` zeigt sie als Beispiele.
+- **Prüfung:**
+  - Tests: neu `qa/wordpress/werbung-ohne-muster-test.php`; `firmen-entwuerfe-test.php` für zehn Motive, Video, Nachziehen, Handänderung, Papierkorb und altes Banner. Alle `qa/wordpress/*-test.php` grün.
+  - Kette unverändert; `pruefung.mjs` und `routen.mjs` mit 0 Fehlern.
+  - Lokal (8090): 0 „Musteranzeige“ auf Startseite, Nachrichten, Unternehmen, Sport und Termine; Videos laufen; 0 Konsolenfehler bei 1440 und 390 px.
+
+**Einspielen:**
+1. Plugin 1.36.0, dann Theme 21.23.0 hochladen.
+2. Merzenich Aktuell → Firmen-Entwürfe:
+   - „Fehlende Entwürfe anlegen“.
+   - „Zusage eintragen“ für alle fünf. Erst damit entstehen die zehn Anzeigen; bereits zugesagte Firmen bekommen sie mit „Fehlende Entwürfe anlegen“.
+   - „Firma zurückziehen“ für Wirtz, Hasberg und Porschen.
+3. Unter Werbung prüfen: „Werbung global“ an, alle elf Plätze an.
+4. Zwischenspeicher leeren.
 
 ## Neu am 28.10.2026: Plugin 1.35.0 und Theme 21.22.0, fünf Unternehmen, Firmenbeiträge nur unter „Unternehmen“, Banner im Anzeigenstil
 

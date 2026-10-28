@@ -18,12 +18,12 @@
  * - Logos: Quelle und Rechtestand stehen am Profil (ma_business_logo_quelle,
  *   ma_business_logo_rechte = offen, bis die Logo-Freigabe eingetragen ist);
  *   bis dahin zeigt die Seite das Kürzel der Firma.
- * - Werbebanner („anzeige“ mit Bild aus data/banner/): entsteht einmal mit der
- *   Einwilligung als laufende Anzeige (ma_ad) auf allen sichtbaren Werbeplätzen
- *   (ma_firmen_banner_plaetze()), ohne Link, ohne Ende.
+ * - Werbebanner („anzeigen“ mit Foto und Video aus data/banner/): entstehen mit der
+ *   Einwilligung als laufende Anzeigen (ma_ad) auf allen sichtbaren Werbeplätzen
+ *   (ma_firmen_banner_plaetze()), mit Knopf zum Firmenkanal, ohne Ende.
  *
- * Merzenich Aktuell → Firmen-Entwürfe legt fehlende Entwürfe an. Vorhandenes
- * (auch im Papierkorb) wird nie überschrieben oder doppelt angelegt.
+ * Merzenich Aktuell → Firmen-Entwürfe legt fehlende Entwürfe an. Vorhandene Profile
+ * und Beiträge (auch im Papierkorb) werden nie überschrieben oder doppelt angelegt.
  *
  * Zusage eintragen (20.10.2026): je Betrieb Einwilligung und Logo-Freigabe getrennt,
  * jeweils mit Nachweis (wer, wann, woher). Mit der Logo-Freigabe kommt das Logo
@@ -33,10 +33,12 @@
  * Beitrag in den Freigaben frei: Er liegt dort nach der Einwilligung zur Prüfung
  * (Prüfhäkchen, Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf.
  *
- * Werbung (28.10.2026): Banner nur für Unternehmen mit „anzeige“ (Merzlicht, AJ Sports),
- * im Stil der laufenden Anzeigen (Foto, „zeile“ oben, Überschrift, Satz).
- * „werbung.max“ ist das Kontingent eines Zugangs (Merzlicht und AJ Sports 5, sonst
- * 0); es wird beim Verknüpfen eines Zugangs mit dem Profil gesetzt.
+ * Werbung (28.10.2026 abends): für alle fünf je zwei Motive („anzeigen“: Foto, „zeile“
+ * oben, Überschrift, Satz, Knopf, Video-Schleife aus docs/anzeigen/bauen.mjs).
+ * „Fehlende Entwürfe anlegen“ und „Zusage eintragen“ legen neue Motive an und ziehen
+ * geänderte nach, außer eine Anzeige wurde im Backend bearbeitet.
+ * „werbung.max“ ist das Kontingent eines Zugangs (5 für alle); es wird beim
+ * Verknüpfen eines Zugangs mit dem Profil gesetzt.
  *
  * Firma zurückziehen (24.10.2026): Profil, Beiträge und Werbebanner eines
  * früheren Betriebs („frueher“ in der Datei) werden Entwurf; nichts wird
@@ -140,6 +142,8 @@ function ma_firmen_entwuerfe_anlegen(): array {
             $log[] = $p['titel'] . ': Beitrag als Entwurf angelegt (' . $wie . ')';
             if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Entwurf angelegt', 'Werbebeitrag (' . $wie . ') aus data/firmen-entwuerfe.json. Erst veröffentlichen, wenn das Unternehmen Text und Schaltung bestätigt hat.');
         }
+        // Werbebanner: neue Motive anlegen, geänderte nachziehen, nur mit wirksamer Einwilligung (veröffentlichtes Profil).
+        if (get_post_status($pid) === 'publish' && (string) get_post_meta($pid, 'ma_business_consent', true) === '1') $log = array_merge($log, ma_firmen_banner_anlegen($f, $pid));
     }
     return $log;
 }
@@ -188,9 +192,21 @@ function ma_firmen_logo_medium(array $p, int $pid, string &$fehler = ''): int {
     return $id;
 }
 
-/** Vorhandenes Werbebanner eines Unternehmens (jeder Status, auch Papierkorb), sonst 0. */
-function ma_firmen_banner_vorhanden(string $slug): int {
-    $q = get_posts(['post_type' => 'ma_ad', 'post_status' => array_values(array_diff(get_post_stati(), ['auto-draft', 'inherit'])), 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => 'ma_firmen_banner', 'meta_value' => $slug]);
+/** Anzeigen eines Unternehmens aus der Datei: „anzeigen“ (Liste, seit 28.10.2026), sonst das frühere einzelne „anzeige“. */
+function ma_firmen_anzeigen(array $f): array {
+    $l = array_values(array_filter((array) ($f['anzeigen'] ?? []), fn($a) => is_array($a) && !empty($a['titel'])));
+    if (!$l && !empty($f['anzeige']['titel'])) $l = [(array) $f['anzeige']];
+    return $l;
+}
+
+/**
+ * Vorhandenes Werbebanner Nummer $n eines Unternehmens (jeder Status, auch Papierkorb), sonst 0.
+ * Markierung ma_firmen_banner = <slug>:<n>; das frühere einzelne Banner (Markierung <slug>) gilt als Nummer 1.
+ */
+function ma_firmen_banner_vorhanden(string $slug, int $n = 1): int {
+    $werte = $n === 1 ? [$slug . ':1', $slug] : [$slug . ':' . $n];
+    $q = get_posts(['post_type' => 'ma_ad', 'post_status' => array_values(array_diff(get_post_stati(), ['auto-draft', 'inherit'])), 'numberposts' => 1, 'fields' => 'ids',
+        'meta_query' => [['key' => 'ma_firmen_banner', 'value' => $werte, 'compare' => 'IN']]]);
     return $q ? (int) $q[0] : 0;
 }
 
@@ -200,8 +216,8 @@ function ma_firmen_banner_nachweis(array $a, string $name): string {
 }
 
 /**
- * Werbekontingent eines Zugangs aus „werbung.max“ der Datei (28.10.2026): Merzlicht und
- * AJ Sports 5 Anzeigen auf allen Werbeplätzen, die übrigen keine. Firmen ohne Eintrag
+ * Werbekontingent eines Zugangs aus „werbung.max“ der Datei (28.10.2026): bis zu 5
+ * Anzeigen auf allen Werbeplätzen, bei 0 keine. Firmen ohne Eintrag
  * in der Datei behalten die Voreinstellung. Gibt das gesetzte Kontingent zurück, sonst null.
  */
 function ma_firmen_kontingent_setzen(int $uid, int $bid): ?int {
@@ -214,39 +230,62 @@ function ma_firmen_kontingent_setzen(int $uid, int $bid): ?int {
 }
 
 /**
- * Werbebanner aus „anzeige“ einmal anlegen: laufende Anzeige (ma_ad) auf allen
- * Plätzen aus ma_firmen_banner_plaetze(), ohne Link und ohne Ende, Bild aus
- * data/banner/, verknüpft mit dem Profil. Ergebnis: Zeile für die Rückmeldung
- * ('' ohne Banner in der Datei).
+ * Werbebanner aus „anzeigen“ anlegen und aktuell halten (28.10.2026): je Motiv eine
+ * laufende Anzeige (ma_ad) auf allen Plätzen aus ma_firmen_banner_plaetze(), ohne
+ * Ende, mit Foto und Video-Schleife aus data/banner/, Knopf zum Firmenkanal (oder
+ * „ziel“), verknüpft mit dem Profil. Ändert sich ein Motiv in der Datei („stand“
+ * oder Inhalt), zieht es die Anzeige nach, außer jemand hat sie im Backend bearbeitet.
+ * Ergebnis: Zeilen für die Rückmeldung (leer ohne Anzeigen in der Datei).
  */
-function ma_firmen_banner_anlegen(array $f, int $pid): string {
-    $a = (array) ($f['anzeige'] ?? []); $p = (array) ($f['profil'] ?? []);
+function ma_firmen_banner_anlegen(array $f, int $pid): array {
+    $p = (array) ($f['profil'] ?? []);
     $slug = (string) ($p['slug'] ?? ''); $name = (string) ($p['titel'] ?? $slug);
-    if (!$a || empty($a['titel']) || $slug === '') return '';
-    if ($da = ma_firmen_banner_vorhanden($slug)) {
-        // Bild fehlt (Übernahme beim ersten Mal gescheitert): noch einmal versuchen.
-        if (!get_post_thumbnail_id($da) && !empty($a['bild']) && get_post_status($da) !== 'trash') {
-            $fehler = '';
-            $m = ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $da, (string) ($a['alt'] ?? 'Anzeige ' . $name), ma_firmen_banner_nachweis($a, $name), (string) ($a['quelle'] ?? ''), $fehler);
-            if ($m) { set_post_thumbnail($da, $m); return $name . ': Werbebanner schon vorhanden, Bild nachgetragen.'; }
+    $log = [];
+    if ($slug === '') return $log;
+    foreach (ma_firmen_anzeigen($f) as $i => $a) {
+        $n = $i + 1;
+        $wer = $name . ', Anzeige ' . $n;
+        // WebM-Fassung daneben (gleicher Name), für Browser ohne H.264; ihr Hinzukommen zählt als Änderung.
+        $webm = !empty($a['video']) ? (string) preg_replace('/\.mp4$/', '.webm', basename((string) $a['video'])) : '';
+        if ($webm === basename((string) ($a['video'] ?? '')) || !is_file(MA_CORE_PATH . 'data/banner/' . $webm)) $webm = '';
+        $pruef = md5((string) wp_json_encode($a) . '|' . $webm);
+        $da = ma_firmen_banner_vorhanden($slug, $n);
+        if ($da && get_post_status($da) === 'trash') { $log[] = $wer . ': liegt im Papierkorb, nichts geändert.'; continue; }
+        if ($da) {
+            $vonHand = (string) get_post_meta($da, '_ma_firmen_banner_geschrieben', true) !== (string) get_post_field('post_modified_gmt', $da);
+            if ((string) get_post_meta($da, '_ma_firmen_banner_pruef', true) === $pruef && get_post_thumbnail_id($da)) { $log[] = $wer . ': aktuell (' . get_post_status($da) . ').'; continue; }
+            if ($vonHand && (string) get_post_meta($da, '_ma_firmen_banner_pruef', true) !== '') { $log[] = $wer . ': im Backend bearbeitet, nicht überschrieben.'; continue; }
+            wp_update_post(wp_slash(['ID' => $da, 'post_title' => (string) $a['titel'], 'post_excerpt' => (string) ($a['text'] ?? '')]));
+            $id = $da;
+        } else {
+            $r = wp_insert_post(wp_slash(['post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => (string) $a['titel'], 'post_excerpt' => (string) ($a['text'] ?? '')]), true);
+            if (is_wp_error($r) || !$r) { $log[] = $wer . ': nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : '') . '.'; continue; }
+            $id = (int) $r;
+            $plaetze = ma_firmen_banner_plaetze();
+            update_post_meta($id, 'ma_ad_slot', $plaetze[0]);
+            foreach (array_slice($plaetze, 1) as $pl) add_post_meta($id, 'ma_ad_slot_weitere', $pl);
+            update_post_meta($id, 'ma_ad_active', '1');
+            update_post_meta($id, 'ma_business_id', (string) $pid);
         }
-        return $name . ': Werbebanner schon vorhanden (' . get_post_status($da) . ').';
+        update_post_meta($id, 'ma_firmen_banner', $slug . ':' . $n);
+        update_post_meta($id, 'ma_ad_sponsor', (string) ($a['zeile'] ?? $name));
+        update_post_meta($id, 'ma_ad_knopf', (string) ($a['knopf'] ?? 'Zum Profil'));
+        update_post_meta($id, 'ma_ad_url', (string) ($a['ziel'] ?? '') ?: (string) get_permalink($pid));
+        update_post_meta($id, 'ma_ad_ki', !empty($a['ki']) ? '1' : '');
+        update_post_meta($id, 'ma_ad_fokus', preg_match('/^\d{1,3}% \d{1,3}%$/', (string) ($a['fokus'] ?? '')) ? (string) $a['fokus'] : '');
+        $nachweis = ma_firmen_banner_nachweis($a, $name); $alt = (string) ($a['alt'] ?? 'Anzeige ' . $name); $fehler = '';
+        $m = !empty($a['bild']) ? ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $id, $alt, $nachweis, (string) ($a['quelle'] ?? ''), $fehler) : 0;
+        if ($m) set_post_thumbnail($id, $m);
+        $v = !empty($a['video']) ? ma_firmen_medium('banner', (string) $a['video'], 'ma_firmen_banner_datei', $id, $alt, $nachweis, (string) ($a['quelle'] ?? '')) : 0;
+        update_post_meta($id, 'ma_ad_video', $v ? (string) $v : '');
+        $vw = $webm !== '' ? ma_firmen_medium('banner', $webm, 'ma_firmen_banner_datei', $id, $alt, $nachweis, (string) ($a['quelle'] ?? '')) : 0;
+        update_post_meta($id, 'ma_ad_video_webm', $vw ? (string) $vw : '');
+        update_post_meta($id, '_ma_firmen_banner_pruef', $pruef);
+        update_post_meta($id, '_ma_firmen_banner_geschrieben', (string) get_post_field('post_modified_gmt', $id));
+        if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, $da ? 'Werbebanner aktualisiert' : 'Werbebanner angelegt', 'Aus data/firmen-entwuerfe.json (Anzeige ' . $n . ' von ' . $name . '). Läuft ohne Ende, bis der Betreiber es austauscht.');
+        $log[] = $wer . ($da ? ': aktualisiert' : ': läuft') . ($m ? '' : ' (ohne Bild: ' . ($fehler ?: 'keine Bilddatei') . ')') . ($v || empty($a['video']) ? '' : ' (ohne Video)') . '.';
     }
-    $plaetze = ma_firmen_banner_plaetze();
-    $r = wp_insert_post(wp_slash([
-        'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => (string) $a['titel'], 'post_excerpt' => (string) ($a['text'] ?? ''),
-        'meta_input' => ['ma_ad_slot' => $plaetze[0], 'ma_ad_active' => '1', 'ma_ad_url' => (string) ($a['ziel'] ?? ''), 'ma_ad_sponsor' => (string) ($a['zeile'] ?? $name),
-            'ma_business_id' => (string) $pid, 'ma_firmen_banner' => $slug],
-    ]), true);
-    if (is_wp_error($r) || !$r) return $name . ': Werbebanner nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : '') . '.';
-    $id = (int) $r;
-    foreach (array_slice($plaetze, 1) as $pl) add_post_meta($id, 'ma_ad_slot_weitere', $pl);
-    $fehler = '';
-    $m = !empty($a['bild']) ? ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $id, (string) ($a['alt'] ?? 'Anzeige ' . $name),
-        ma_firmen_banner_nachweis($a, $name), (string) ($a['quelle'] ?? ''), $fehler) : 0;
-    if ($m) set_post_thumbnail($id, $m);
-    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Werbebanner angelegt', 'Aus data/firmen-entwuerfe.json, mit der Einwilligung von ' . $name . '. Läuft ohne Ende, bis der Betreiber es austauscht.');
-    return $name . ': Werbebanner läuft' . ($m ? '' : ' (ohne Bild: ' . ($fehler ?: 'keine Bilddatei') . ')') . '.';
+    return $log;
 }
 
 /**
@@ -309,7 +348,7 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
             if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Zur Freigabe vorgelegt', 'Einwilligung des Unternehmens eingetragen: ' . $nachweis);
         }
         // Werbebanner erst, wenn das Profil veröffentlicht ist (Einwilligung wirksam).
-        if (get_post_status($pid) === 'publish' && ($z = ma_firmen_banner_anlegen($f, $pid)) !== '') $log[] = $z;
+        if (get_post_status($pid) === 'publish') $log = array_merge($log, ma_firmen_banner_anlegen($f, $pid));
     }
     return $log;
 }
@@ -399,15 +438,18 @@ function ma_firmen_entwuerfe_seite(): void {
         $einw = $ja ? 'liegt vor<br><small>' . esc_html(trim((string) get_post_meta($pid, 'ma_business_consent_quelle', true) . ' · ' . get_post_meta($pid, 'ma_business_consent_by', true) . ', ' . get_post_meta($pid, 'ma_business_consent_at', true), ' ·,')) . '</small>' : '<strong>fehlt</strong>';
         $logoZelle = !$logo ? '– <small>(noch kein Logo)</small>' : (!empty($logo['quelle']) ? '<a href="' . esc_url((string) $logo['quelle']) . '" target="_blank" rel="noopener">Quelle</a>, ' : '')
             . ($logoJa ? 'freigegeben<br><small>' . esc_html((string) get_post_meta($pid, 'ma_business_logo_freigabe', true)) . '</small>' : 'Rechte <strong>offen</strong>');
-        $ban = !empty($f['anzeige']) ? ma_firmen_banner_vorhanden((string) $p['slug']) : 0;
-        $banZelle = empty($f['anzeige']) ? '–' : ($ban ? $zelle($ban) . ((string) get_post_meta($ban, 'ma_ad_active', true) === '1' ? ' · läuft' : ' · aus') : 'kommt mit der Einwilligung');
+        $anzeigen = ma_firmen_anzeigen($f);
+        $banZelle = !$anzeigen ? '–' : implode('<br>', array_map(function (int $n) use ($p, $zelle): string {
+            $ban = ma_firmen_banner_vorhanden((string) $p['slug'], $n);
+            return $n . ': ' . ($ban ? $zelle($ban) . ((string) get_post_meta($ban, 'ma_ad_active', true) === '1' ? ' · läuft' : ' · aus') : 'kommt mit der Einwilligung');
+        }, range(1, count($anzeigen))));
         if (!$logo) $logoJa = true;
         $form = '';
         if ($pid && (!$ja || !$logoJa)) {
             $form = '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="ma_firmen_zusage"><input type="hidden" name="firma" value="' . esc_attr((string) $p['slug']) . '">'
                 . wp_nonce_field('ma_firmen_zusage', '_wpnonce', true, false)
                 . '<label style="display:block">Nachweis <input type="text" name="nachweis" required class="regular-text" placeholder="z. B. E-Mail vom … / Zusage laut Betreiber am …"></label>'
-                . (!$ja ? '<label style="display:block"><input type="checkbox" name="einwilligung" value="1"> Das Unternehmen hat der Veröffentlichung von Profil' . ($b ? ' und Werbebeitrag' : '') . (!empty($f['anzeige']) ? ' und Werbebanner' : '') . ' zugestimmt.</label>' : '')
+                . (!$ja ? '<label style="display:block"><input type="checkbox" name="einwilligung" value="1"> Das Unternehmen hat der Veröffentlichung von Profil' . ($b ? ' und Werbebeitrag' : '') . (ma_firmen_anzeigen($f) ? ' und Werbebanner' : '') . ' zugestimmt.</label>' : '')
                 . (!$logoJa ? '<label style="display:block"><input type="checkbox" name="logo" value="1"> Das Unternehmen hat die Nutzung seines Logos freigegeben.</label>' : '')
                 . '<button class="button">Zusage eintragen</button></form>';
         }

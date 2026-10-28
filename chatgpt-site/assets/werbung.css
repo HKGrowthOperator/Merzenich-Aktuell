@@ -324,3 +324,17 @@ body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow,body.home .werbung--b
   body.home .werbung--buehne{grid-column:auto}
   body.home .werbung--buehne .ma-ad-card--gap .ma-ad-art{aspect-ratio:16/9}
 }
+
+/* Echte Anzeigen der Firmen (28.10.2026): Video-Schleife über dem Standbild auf den
+   großen Plätzen, langsamer Zoom auf den kleinen, kleiner Bildnachweis („KI-Bild“)
+   in der Bildecke. Ohne Bewegung (prefers-reduced-motion) bleibt das Standbild. */
+.ma-ad-art{position:relative;overflow:hidden}
+.ma-ad-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s ease}
+.ma-ad-video.ma-ad-video--an{opacity:1}
+.ma-ad-art--bewegt img{animation:ma-ad-zoom 16s ease-in-out infinite alternate;transform-origin:50% 50%}
+@keyframes ma-ad-zoom{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.ma-ad-nachweis{position:absolute;left:6px;bottom:5px;z-index:1;padding:1px 5px;border-radius:2px;background:rgba(21,20,18,.62);color:#f4f1ec;font-family:var(--sans);font-size:9px;font-weight:600;line-height:1.5;letter-spacing:.02em;max-width:calc(100% - 12px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+@media (prefers-reduced-motion:reduce){
+  .ma-ad-art--bewegt img{animation:none}
+  .ma-ad-video{display:none}
+}

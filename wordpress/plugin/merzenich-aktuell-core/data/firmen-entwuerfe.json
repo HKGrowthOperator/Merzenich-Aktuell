@@ -1,6 +1,6 @@
 {
   "stand": "2026-10-28",
-  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbebanner nur für Merzlicht und AJ Sports (bis zu 5 Anzeigen je Firma); die übrigen stehen nur unter „Unternehmen“. Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
+  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
@@ -70,8 +70,36 @@
         "quelle": "https://www.almera-clean.de/"
       },
       "werbung": {
-        "max": 0
-      }
+        "max": 5
+      },
+      "anzeigen": [
+        {
+          "zeile": "Almera Clean · Gebäudereinigung aus Merzenich",
+          "titel": "Gebäude und Fenster in guten Händen.",
+          "text": "Reinigung von Gebäuden und Fenstern, dazu ein Wäscheservice. Angebote auf Anfrage.",
+          "bild": "almera-clean-1.jpg",
+          "video": "almera-clean-1.mp4",
+          "alt": "Fensterreiniger an einer geschwungenen Glasfassade",
+          "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
+          "quelle": "https://www.almera-clean.de/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "50% 30%"
+        },
+        {
+          "zeile": "Almera Clean · Kettenweg 1, Merzenich",
+          "titel": "Sauberkeit für Büro und Haus.",
+          "text": "Gebäudereinigung und Wäscheservice aus Merzenich.",
+          "bild": "almera-clean-2.jpg",
+          "video": "almera-clean-2.mp4",
+          "alt": "Eimer mit Reinigungsmitteln, im Hintergrund wird der Boden gewischt",
+          "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
+          "quelle": "https://www.almera-clean.de/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "30% 70%"
+        }
+      ]
     },
     {
       "art": "eigen",
@@ -126,13 +154,40 @@
         "quelle": "https://kbs-management.tv/"
       },
       "werbung": {
-        "max": 0
-      }
+        "max": 5
+      },
+      "anzeigen": [
+        {
+          "zeile": "KBS Management · in eigener Sache",
+          "titel": "Apps und Software nach Maß.",
+          "text": "App- und Softwareentwicklung aus Leverkusen, von der Herausgeberin von Merzenich Aktuell.",
+          "bild": "kbs-management-1.jpg",
+          "video": "kbs-management-1.mp4",
+          "alt": "Animiertes Logo von KBS Management",
+          "nachweis": "Animation: KBS Management (Website des Unternehmens)",
+          "quelle": "https://kbs-management.tv/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28"
+        },
+        {
+          "zeile": "KBS Management · in eigener Sache",
+          "titel": "Broadcast- und IT-Beratung.",
+          "text": "Für Sender, Videoplattformen und Medienhäuser.",
+          "bild": "kbs-management-2.jpg",
+          "video": "kbs-management-2.mp4",
+          "alt": "Mischpult in einem Fernsehstudio",
+          "nachweis": "Foto: KBS Management (Website des Unternehmens)",
+          "quelle": "https://kbs-management.tv/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "35% 50%"
+        }
+      ]
     },
     {
       "art": "anzeige",
       "werbung": {
-        "max": 0
+        "max": 5
       },
       "profil": {
         "slug": "ass-elektrotechnik",
@@ -181,7 +236,35 @@
         "seo_titel": "ASS Elektrotechnik Düren: Smart Home, Beleuchtung, Sicherheit",
         "seo_beschreibung": "ASS Elektrotechnik, Meisterbetrieb aus Düren: Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik. Kontakt Am Dürener Weg 53.",
         "quelle": "https://www.asselektrotechnik.de/"
-      }
+      },
+      "anzeigen": [
+        {
+          "zeile": "ASS Elektrotechnik · Meisterbetrieb aus Düren",
+          "titel": "Ihr Elektriker aus der Nachbarschaft.",
+          "text": "Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik.",
+          "bild": "ass-elektrotechnik-1.jpg",
+          "video": "ass-elektrotechnik-1.mp4",
+          "alt": "Mitarbeiter im Shirt von ASS Elektrotechnik, von hinten",
+          "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
+          "quelle": "https://www.asselektrotechnik.de/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "50% 78%"
+        },
+        {
+          "zeile": "ASS Elektrotechnik · Beratung und Planung",
+          "titel": "Elektrotechnik für eine bessere Zukunft.",
+          "text": "Fachkundige Beratung und Planung für jedes Projekt.",
+          "bild": "ass-elektrotechnik-2.jpg",
+          "video": "ass-elektrotechnik-2.mp4",
+          "alt": "Hand am Akkuschrauber im Werkzeuggürtel",
+          "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
+          "quelle": "https://www.asselektrotechnik.de/",
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "40% 50%"
+        }
+      ]
     },
     {
       "art": "anzeige",
@@ -204,18 +287,37 @@
           "https://www.scmerzenich.de/newsarchiv/archiv-saison-25-26/videowall-am-b%C3%BCrgewaldzentrum/"
         ]
       },
-      "anzeige": {
-        "titel": "Ihre Werbung auf der Videowall.",
-        "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
-        "zeile": "Merzlicht · Videowall am Bürgewaldzentrum",
-        "bild": "merzlicht.jpg",
-        "alt": "Sportplatz im Abendlicht mit Bandenwerbung (Symbolbild)",
-        "nachweis": "Symbolbild · MrChippo / Wikimedia Commons · CC BY-SA 4.0",
-        "quelle": "https://commons.wikimedia.org/wiki/File:SportplatzWelgersdorfBlickVonAnzeigetafel.jpg"
-      },
       "werbung": {
         "max": 5
-      }
+      },
+      "anzeigen": [
+        {
+          "zeile": "Merzlicht · Videowall am Bürgewaldzentrum",
+          "titel": "Ihre Werbung auf der Videowall.",
+          "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
+          "bild": "merzlicht-1.jpg",
+          "video": "merzlicht-1.mp4",
+          "alt": "LED-Videowall am Sportplatz in der Dämmerung (KI-Bild)",
+          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "ki": true,
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "72% 40%"
+        },
+        {
+          "zeile": "Merzlicht · Werbeclips und Bilder",
+          "titel": "Gesehen vom Spielfeld und vom Merzpark.",
+          "text": "Die Videowall am Sportplatz zeigt in beide Richtungen.",
+          "bild": "merzlicht-2.jpg",
+          "video": "merzlicht-2.mp4",
+          "alt": "Beleuchtete Bande und Videowall am Sportplatz am Abend (KI-Bild)",
+          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "ki": true,
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "60% 45%"
+        }
+      ]
     },
     {
       "art": "anzeige",
@@ -235,18 +337,37 @@
         "kurz": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
         "text": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
       },
-      "anzeige": {
-        "titel": "AJ Sports Entertainment",
-        "text": "Partner des Sports und von Merzenich Aktuell.",
-        "zeile": "AJ Sports",
-        "bild": "aj-sports.jpg",
-        "alt": "Kunstrasenplatz mit Tor (Symbolbild)",
-        "nachweis": "Symbolbild · TheRegentsInternationalSchoolBangkok / Wikimedia Commons · CC BY-SA 4.0",
-        "quelle": "https://commons.wikimedia.org/wiki/File:Artificial_Turf_Football_Field_at_Regent's_International_School_Bangkok.jpg"
-      },
       "werbung": {
         "max": 5
-      }
+      },
+      "anzeigen": [
+        {
+          "zeile": "AJ Sports",
+          "titel": "AJ Sports Entertainment",
+          "text": "Partner des Sports und von Merzenich Aktuell.",
+          "bild": "aj-sports-1.jpg",
+          "video": "aj-sports-1.mp4",
+          "alt": "Abendspiel unter Flutlicht (KI-Bild)",
+          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "ki": true,
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "35% 55%"
+        },
+        {
+          "zeile": "AJ Sports Entertainment",
+          "titel": "Für den Sport in der Region.",
+          "text": "AJ Sports Entertainment unterstützt Merzenich Aktuell.",
+          "bild": "aj-sports-2.jpg",
+          "video": "aj-sports-2.mp4",
+          "alt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
+          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "ki": true,
+          "knopf": "Zum Profil",
+          "stand": "2026-10-28",
+          "fokus": "50% 60%"
+        }
+      ]
     }
   ]
 }

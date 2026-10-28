@@ -884,13 +884,15 @@ function ma21_belegung_ohne_plugin(array $alle, array $r): array {
     return ['aufmacher' => $aufmacher, 'neben' => $neben, 'sektionen' => [], 'plaetze' => $pl];
 }
 
-/** Werbefläche der Vorlage; mit laufender Anzeige aus der Werbeverwaltung ersetzt sie das Muster (Plugin, includes/ads.php). */
+/**
+ * Werbefläche: laufende Anzeigen aus der Werbeverwaltung (Plugin, includes/ads.php).
+ * Ohne laufende Anzeige bleibt der Platz leer; die Musteranzeigen der Vorlagen
+ * (vorlagen/werbung-*.html) zeigt WordPress seit 28.10.2026 nicht mehr (Auftrag Betreiber).
+ */
 function ma21_werbung(string $marker): string {
-    if (function_exists('ma_render_werbeplatz') && function_exists('ma_ad_marker_slot')) {
-        $slot = ma_ad_marker_slot($marker);
-        if ($slot !== '' && ma_active_ads($slot)) { $echt = ma_render_werbeplatz($slot, $marker); if ($echt !== '') return $echt; }
-    }
-    return trim(ma21_vorlage("werbung-{$marker}.html"));
+    if (!function_exists('ma_render_werbeplatz') || !function_exists('ma_ad_marker_slot')) return '';
+    $slot = ma_ad_marker_slot($marker);
+    return $slot !== '' && ma_active_ads($slot) ? ma_render_werbeplatz($slot, $marker) : '';
 }
 
 /**

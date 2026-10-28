@@ -9044,6 +9044,16 @@
   }
  ],
  "startseitenMotive": {
+  "anzeigen/aj-sports-1": 2,
+  "anzeigen/aj-sports-2": 2,
+  "anzeigen/almera-clean-1": 2,
+  "anzeigen/almera-clean-2": 2,
+  "anzeigen/ass-elektrotechnik-1": 2,
+  "anzeigen/ass-elektrotechnik-2": 2,
+  "anzeigen/kbs-management-1": 2,
+  "anzeigen/kbs-management-2": 2,
+  "anzeigen/merzlicht-1": 2,
+  "anzeigen/merzlicht-2": 2,
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
@@ -9082,13 +9092,7 @@
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
-  "responsive/f507b5f3e2c7d3": 1,
-  "werben/format-artikelanzeige": 2,
-  "werben/format-sidebar": 2,
-  "werben/format-startseitenband": 2,
-  "werben/tipp-sponsoring": 2,
-  "werben/unternehmensprofil": 2,
-  "werben/werbebanner": 2
+  "responsive/f507b5f3e2c7d3": 1
  },
  "buehnenMotive": [
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a",

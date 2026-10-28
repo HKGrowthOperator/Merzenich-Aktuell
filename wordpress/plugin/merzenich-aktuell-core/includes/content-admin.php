@@ -198,7 +198,7 @@ function ma_render_tip_meta_box(WP_Post $post): void {
 function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_start();
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
-    echo '<tr><td colspan="2" style="padding:0 0 8px"><p class="description" style="margin:0">Alles auf einer Seite: Titel oben, hier Platz und Laufzeit, darunter das Bild. ' . ($partner ? 'Nach dem Einreichen prüft die Redaktion und schaltet die Anzeige frei.' : 'Veröffentlichen + „Schaltung aktiv“ = die Anzeige läuft; sie ersetzt auf ihrem Platz die Musteranzeige.') . '</p></td></tr>';
+    echo '<tr><td colspan="2" style="padding:0 0 8px"><p class="description" style="margin:0">Alles auf einer Seite: Titel oben, hier Platz und Laufzeit, darunter das Bild. ' . ($partner ? 'Nach dem Einreichen prüft die Redaktion und schaltet die Anzeige frei.' : 'Veröffentlichen + „Schaltung aktiv“ = die Anzeige läuft. Ohne laufende Anzeige bleibt ein Platz leer.') . '</p></td></tr>';
     if (function_exists('ma_render_ad_item') && has_post_thumbnail($post)) echo '<tr><th scope="row">Vorschau</th><td><div class="ma-ad ma-ad--vorschau" style="max-width:420px;border:1px solid #dcdcde;padding:8px;background:#fff">' . ma_render_ad_item($post) . '</div></td></tr>';
     if (!$partner) ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Platz unter Werbung → Werbeplätze eingeschaltet sein.');
     // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
@@ -219,6 +219,9 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     }
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
     ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
+    ma_admin_input('ma_ad_knopf','Knopftext',ma_admin_field_value($post->ID,'ma_ad_knopf'),'text','Zum Profil','Optional, erscheint nur mit Ziel-URL.');
+    $vid = (int) ma_admin_field_value($post->ID,'ma_ad_video');
+    ma_admin_input('ma_ad_video','Video (Medien-ID)',$vid ? (string) $vid : '','number','','Optional: MP4 aus der Mediathek (stumm, kurze Schleife, unter 1 MB). Läuft auf den großen Plätzen statt des Bildes; das Bild bleibt Standbild.'.($vid && ($u = wp_get_attachment_url($vid)) ? ' Aktuell: '.basename((string) $u) : ''));
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
     if (!$partner) ma_admin_input('ma_ad_priority','Priorität',ma_admin_field_value($post->ID,'ma_ad_priority'),'number','10','Höhere Zahl gewinnt innerhalb desselben Slots.');
@@ -256,7 +259,7 @@ function ma_content_admin_schema(string $post_type): array {
             'ma_tip_kind'=>'text','ma_tip_sponsor'=>'text','ma_tip_url'=>'url','ma_tip_start'=>'datetime',
         ]),
         'ma_ad'=>[
-            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'number',
+            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'number',
         ],
     ];
     return $schema[$post_type] ?? [];
@@ -312,6 +315,10 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         $alt = array_map('strval', (array) get_post_meta($post_id, 'ma_ad_slot_weitere'));
         sort($neu); sort($alt);
         if ($neu !== $alt) { delete_post_meta($post_id, 'ma_ad_slot_weitere'); foreach ($neu as $s) add_post_meta($post_id, 'ma_ad_slot_weitere', $s); }
+    }
+    if ($post->post_type === 'ma_ad') {
+        $vid = (int) get_post_meta($post_id, 'ma_ad_video', true);
+        if ($vid && strpos((string) get_post_mime_type($vid), 'video/') !== 0) delete_post_meta($post_id, 'ma_ad_video');
     }
     if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_alt'])) {
         $bild = (int) get_post_thumbnail_id($post_id);

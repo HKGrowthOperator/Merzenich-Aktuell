@@ -226,7 +226,7 @@ function ma_ad_shortcode($atts): string {
     return in_array($a['slot'], ma_ad_slots(), true) ? ma_render_ads($a['slot']) : '';
 }
 
-/* ---------------------------------------------------------- Musterflächen mit echten Anzeigen */
+/* ---------------------------------------------------------- Werbeflächen mit echten Anzeigen */
 
 /**
  * Werbefläche der Vorlage (Band, Spalte, Bühne, Artikel, Sport, Unternehmen) mit
@@ -234,28 +234,64 @@ function ma_ad_shortcode($atts): string {
  * (werbung.css). Ohne data-werbung, damit werbung.js (Musterrotation) die
  * echte Anzeige nicht überschreibt; mehrere Anzeigen wechseln über
  * ad-rotation.js. Zählung: data-ma-anzeige je Karte, data-ma-ad-slot am Platz
- * (werbung-stat.php). Leer, wenn keine Anzeige läuft (dann bleibt das Muster).
+ * (werbung-stat.php). Leer, wenn keine Anzeige läuft (seit 28.10.2026 bleibt der
+ * Platz dann leer, Musteranzeigen gibt es nicht mehr). ad-rotation.js startet auch
+ * die Video-Schleifen.
  */
 function ma_render_werbeplatz(string $slot, string $marker): string {
     $ads = ma_ads_rotate(ma_active_ads($slot), $slot);
     if (!$ads) return '';
     $art = preg_match('/^band-/', $marker) ? 'band' : $marker;
     $format = in_array($art, ['spalte', 'sport', 'buehne', 'unternehmen'], true) ? 'gap' : 'band';
+    // Video-Schleife auf den großen Plätzen, Zoom (CSS) auf den kleinen (Entscheidung Betreiber 28.10.2026).
+    $video = in_array($art, ['band', 'buehne', 'artikel'], true);
     $items = '';
-    foreach ($ads as $i => $ad) {
-        $url = (string) get_post_meta($ad->ID, 'ma_ad_url', true);
-        $img = get_the_post_thumbnail_url($ad, 'large');
-        $sponsor = (string) get_post_meta($ad->ID, 'ma_ad_sponsor', true);
-        $inhalt = ($img ? '<span class="ma-ad-art"><img src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async"></span>' : '')
-            .'<span class="ma-ad-copy">'.($sponsor !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($sponsor).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'
-            .($ad->post_excerpt !== '' ? '<span class="ma-ad-text">'.esc_html($ad->post_excerpt).'</span>' : '').'</span>';
-        $attr = ' class="ma-ad-card ma-ad-card--'.$format.' ma-ad__item" data-ma-anzeige="'.(int) $ad->ID.'" aria-label="'.esc_attr('Anzeige: '.($sponsor !== '' ? $sponsor.' – ' : '').get_the_title($ad)).'"'.($i > 0 ? ' hidden' : '');
-        $items .= $url !== '' ? '<a'.$attr.' href="'.esc_url($url).'" rel="sponsored noopener" target="_blank">'.$inhalt.'</a>' : '<div'.$attr.'>'.$inhalt.'</div>';
-    }
+    foreach ($ads as $i => $ad) $items .= ma_ad_karte($ad, $format, $video, $i > 0);
     $n = count($ads);
-    if ($n > 1 && function_exists('wp_enqueue_script')) wp_enqueue_script('ma-ad-rotation', MA_CORE_URL.'assets/ad-rotation.js', [], MA_CORE_VERSION, true);
+    if (function_exists('wp_enqueue_script')) wp_enqueue_script('ma-ad-rotation', MA_CORE_URL.'assets/ad-rotation.js', [], MA_CORE_VERSION, true);
     return '<aside class="werbung werbung--'.esc_attr($art).($art === 'band' ? ' shell' : '').' werbung--echt" data-ma-werbeplatz="'.esc_attr($marker).'" data-ma-ad-slot="'.esc_attr($slot).'" aria-label="Anzeige">'
         .'<span class="werbung-label">Anzeige</span><div class="werbung-flaeche ma-ad ma-ad-rotator ma-ad-rotator--'.$format.'"'.($n > 1 ? ' data-ma-ad-rotate="8000" data-ma-ad-count="'.$n.'"' : '').'>'.$items.'</div></aside>';
+}
+
+/** Kurzer Bildnachweis auf der Anzeige: „KI-Bild“ oder eine Lizenzangabe (CC); Fotos des Unternehmens selbst ohne Nachweis. */
+function ma_ad_nachweis(WP_Post $ad): string {
+    if ((string) get_post_meta($ad->ID, 'ma_ad_ki', true) === '1') return 'KI-Bild';
+    $bild = (int) get_post_thumbnail_id($ad->ID);
+    $credit = $bild ? trim((string) get_post_meta($bild, 'ma_image_credit', true)) : '';
+    return preg_match('/\bCC\b|Wikimedia/i', $credit) ? $credit : '';
+}
+
+/**
+ * Eine Anzeige im Markup der Werbeflächen (werbung.css): Bild (mit Video-Schleife aus
+ * ma_ad_video, wenn $video), Zeile oben, Überschrift, Satz, Knopf (ma_ad_knopf),
+ * Nachweis. Links nach außen öffnen in neuem Fenster, mit rel="sponsored".
+ * $ziel ersetzt die Ziel-URL ('' = ohne Link), z. B. auf dem Firmenkanal selbst.
+ */
+function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $versteckt = false, ?string $ziel = null): string {
+    $url = $ziel ?? (string) get_post_meta($ad->ID, 'ma_ad_url', true);
+    $img = get_the_post_thumbnail_url($ad, 'large');
+    $sponsor = (string) get_post_meta($ad->ID, 'ma_ad_sponsor', true);
+    $knopf = (string) get_post_meta($ad->ID, 'ma_ad_knopf', true);
+    $vid = $video && $img ? (string) wp_get_attachment_url((int) get_post_meta($ad->ID, 'ma_ad_video', true)) : '';
+    $webm = $vid !== '' ? (string) wp_get_attachment_url((int) get_post_meta($ad->ID, 'ma_ad_video_webm', true)) : '';
+    $nachweis = ma_ad_nachweis($ad);
+    // Bildfokus (z. B. „50% 78%“) für den schmalen Ausschnitt im Band.
+    $fokus = (string) get_post_meta($ad->ID, 'ma_ad_fokus', true);
+    $stil = preg_match('/^\d{1,3}% \d{1,3}%$/', $fokus) ? ' style="object-position:'.$fokus.'"' : '';
+    $kunst = '';
+    if ($img) {
+        $kunst = '<span class="ma-ad-art'.($vid === '' ? ' ma-ad-art--bewegt' : '').'"><img src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async"'.$stil.'>'
+            .($vid !== '' ? '<video class="ma-ad-video"'.$stil.' muted loop playsinline preload="none" poster="'.esc_url($img).'" data-src="'.esc_url($vid).'"'.($webm !== '' ? ' data-src-webm="'.esc_url($webm).'"' : '').' aria-hidden="true"></video>' : '')
+            .($nachweis !== '' ? '<span class="ma-ad-nachweis">'.esc_html($nachweis).'</span>' : '').'</span>';
+    }
+    $inhalt = $kunst.'<span class="ma-ad-copy">'.($sponsor !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($sponsor).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'
+        .($ad->post_excerpt !== '' ? '<span class="ma-ad-text">'.esc_html($ad->post_excerpt).'</span>' : '')
+        .($knopf !== '' && $url !== '' ? '<span class="ma-ad-cta">'.esc_html($knopf).'</span>' : '').'</span>';
+    $attr = ' class="ma-ad-card ma-ad-card--'.esc_attr($format).' ma-ad__item" data-ma-anzeige="'.(int) $ad->ID.'" aria-label="'.esc_attr('Anzeige: '.($sponsor !== '' ? $sponsor.' – ' : '').get_the_title($ad)).'"'.($versteckt ? ' hidden' : '');
+    if ($url === '') return '<div'.$attr.'>'.$inhalt.'</div>';
+    $host = (string) wp_parse_url($url, PHP_URL_HOST);
+    $aussen = $host !== '' && $host !== (string) wp_parse_url(home_url('/'), PHP_URL_HOST);
+    return '<a'.$attr.' href="'.esc_url($url).'"'.($aussen ? ' rel="sponsored noopener" target="_blank"' : '').'>'.$inhalt.'</a>';
 }
 
 /**
