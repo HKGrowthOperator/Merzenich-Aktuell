@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.34.0 · live: 21.20.8 / 1.31.0 (Historie unten)
+28. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.34.0 · live: 21.21.0 / 1.34.0 (Historie unten)
 
 ## Neu am 28.10.2026: Plugin 1.34.0, Themenbild aus dem Repository gilt auch für bestehende Beiträge
 
-**Stand live:** noch nicht eingespielt (enthält 1.32.0 und 1.33.0).
+**Stand live:** eingespielt am 28.10.2026 gegen 15:05 Uhr (Plugin 1.34.0 und Theme 21.21.0 per Upload, Option „Beiträge der KI-Redaktion direkt veröffentlichen“ eingeschaltet). Nachweis: `?ver=1.34.0` und `?ver=21.21.0` im Quelltext; alle 23 Claude-Meldungen antworten mit HTTP 200, 22 davon mit dem Themenbild aus dem Repository. Der L264-Unfall behält das Polizeifoto (Bild in WordPress von Hand gesetzt, wird nicht überschrieben).
 
 **Anlass:** Live zeigten Beiträge Bilder, die nicht zum Thema passen (Prüfung 28.10.: Martinszüge mit Ortsansicht, L264-Unfall mit Polizeifoto). Zwei Ursachen im Plugin: (1) Ein neues Bild aus dem Repository kam nur bei Beiträgen ohne Bild an. (2) Die tägliche Bildverteilung ersetzte Symbolbilder aus dem Abgleich, sobald ein Foto mehr als zweimal vorkam, durch ein Foto des Ressort-Pools (jede Leben-Meldung ein Dorfplatz).
 
@@ -14,7 +14,7 @@
 
 ## Neu am 28.10.2026: Plugin 1.33.0, Beiträge der KI-Redaktion direkt online, Themenfotos
 
-**Stand live:** noch nicht eingespielt (kommt mit 1.34.0).
+**Stand live:** eingespielt am 28.10.2026 mit 1.34.0.
 
 **Anlass:** Entscheidung von Luis Kummer am 28.10.: Beiträge, die die KI-Redaktion (Claude-Redaktionslauf) schreibt, gehen ohne Freigabe online; Beiträge anderer (Feuerwehr-Automatik, Umkreis, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die Freigaben. Außerdem muss das Bild zum Thema passen.
 
