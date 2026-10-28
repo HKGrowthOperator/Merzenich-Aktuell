@@ -1,6 +1,6 @@
 {
-  "stand": "2026-10-24",
-  "hinweis": "Vier Unternehmen (Auftrag Betreiber 24.10.2026, ersetzt Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean und KBS Management am 24.10.2026 auf den Unternehmenswebsites geprüft; von Merzlicht und AJ Sports liegt bisher nur der Name vor, ihre Profile zeigen nur den Namen. Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Kein Testzeitraum: Die Einträge laufen, bis der Betreiber sie austauscht. Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
+  "stand": "2026-10-28",
+  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbebanner nur für Merzlicht und AJ Sports (bis zu 5 Anzeigen je Firma); die übrigen stehen nur unter „Unternehmen“. Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
@@ -68,6 +68,9 @@
         "seo_titel": "Almera Clean in Merzenich: Gebäude- und Fensterreinigung",
         "seo_beschreibung": "Almera Clean aus Merzenich: Gebäudereinigung, Fensterreinigung und Wäscheservice. Kontakt und Angebot im Kettenweg 1.",
         "quelle": "https://www.almera-clean.de/"
+      },
+      "werbung": {
+        "max": 0
       }
     },
     {
@@ -121,6 +124,63 @@
         "seo_titel": "KBS Management GmbH: Apps, Software und IT-Beratung",
         "seo_beschreibung": "KBS Management GmbH aus Leverkusen, Herausgeberin von Merzenich Aktuell: App- und Softwareentwicklung, Broadcast- und IT-Beratung.",
         "quelle": "https://kbs-management.tv/"
+      },
+      "werbung": {
+        "max": 0
+      }
+    },
+    {
+      "art": "anzeige",
+      "werbung": {
+        "max": 0
+      },
+      "profil": {
+        "slug": "ass-elektrotechnik",
+        "titel": "ASS Elektrotechnik",
+        "firmenname": "ASS Elektrotechnik",
+        "branche": "Elektrotechnik, Meisterbetrieb",
+        "ortsteil": "",
+        "ort": "Düren",
+        "adresse": "Am Dürener Weg 53, 52355 Düren",
+        "telefon": "+49 174 1905070",
+        "email": "info@asselektrotechnik.de",
+        "website": "https://www.asselektrotechnik.de/",
+        "oeffnungszeiten": "",
+        "quelle": "Angaben laut asselektrotechnik.de (Startseite und Impressum), geprüft am 28.10.2026",
+        "quellen": [
+          "https://www.asselektrotechnik.de/",
+          "https://www.asselektrotechnik.de/impressum"
+        ],
+        "kurz": "Elektro-Meisterbetrieb aus Düren: Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik.",
+        "text": "ASS Elektrotechnik ist ein Meisterbetrieb mit Sitz Am Dürener Weg in Düren. Laut Unternehmenswebsite gehören Smart-Home-Lösungen, Beleuchtungssysteme, Kommunikationssysteme für Wohn- und Gewerbeimmobilien sowie Sicherheitsanlagen zum Angebot, mit Beratung und Planung für jedes Projekt.",
+        "karte": {
+          "knopf": "ASS Elektrotechnik entdecken",
+          "ziel": "https://www.asselektrotechnik.de/"
+        },
+        "logo": {
+          "quelle": "https://www.asselektrotechnik.de/wp-content/uploads/go-x/u/a87f1a5a-b4b8-4fe1-9eb4-9b18c5fb5a82/image-455x323.png",
+          "art": "PNG von der Unternehmenswebsite (weiß), für helle Flächen dunkel eingefärbt",
+          "rechte": "offen",
+          "alt": "Logo ASS Elektrotechnik Meisterbetrieb",
+          "datei": "ass-elektrotechnik.png"
+        }
+      },
+      "beitrag": {
+        "slug": "ass-elektrotechnik-smart-home-beleuchtung-dueren",
+        "titel": "Smart Home, Licht und Sicherheit: ASS Elektrotechnik aus Düren",
+        "anriss": "Der Elektro-Meisterbetrieb ASS Elektrotechnik aus Düren plant und installiert Smart-Home-Lösungen, Beleuchtung sowie Kommunikations- und Sicherheitstechnik.",
+        "absaetze": [
+          "ASS Elektrotechnik ist ein Meisterbetrieb mit Sitz Am Dürener Weg in Düren, nur wenige Kilometer von Merzenich entfernt.",
+          "Laut Unternehmenswebsite gehören vier Bereiche zum Angebot: Smart-Home-Lösungen, energieeffiziente Beleuchtungssysteme, Kommunikationssysteme für Wohn- und Gewerbeimmobilien und Sicherheitsanlagen. Dazu kommen Beratung und Planung für jedes Projekt.",
+          "<strong>Kontakt:</strong> Am Dürener Weg 53, 52355 Düren, Telefon +49 174 1905070, E-Mail info@asselektrotechnik.de."
+        ],
+        "knopf": {
+          "text": "ASS Elektrotechnik besuchen",
+          "ziel": "https://www.asselektrotechnik.de/"
+        },
+        "seo_titel": "ASS Elektrotechnik Düren: Smart Home, Beleuchtung, Sicherheit",
+        "seo_beschreibung": "ASS Elektrotechnik, Meisterbetrieb aus Düren: Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik. Kontakt Am Dürener Weg 53.",
+        "quelle": "https://www.asselektrotechnik.de/"
       }
     },
     {
@@ -130,21 +190,31 @@
         "slug": "merzlicht",
         "titel": "Merzlicht",
         "firmenname": "Merzlicht",
-        "branche": "",
-        "ortsteil": "",
+        "branche": "Werbung auf der Videowall",
+        "ortsteil": "merzenich",
         "adresse": "",
         "telefon": "",
         "email": "",
         "website": "",
         "oeffnungszeiten": "",
-        "quelle": "Name laut Betreiber (Auftrag 24.10.2026); weitere Angaben folgen",
-        "kurz": "Merzlicht ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
-        "text": "Merzlicht ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
+        "quelle": "SC 1919 Merzenich, „Videowall am Bürgewaldzentrum“ (scmerzenich.de, abgerufen am 28.10.2026)",
+        "kurz": "Werbung auf der Videowall am Sportplatz Bürgewaldzentrum in Merzenich, sichtbar zum Spielfeld und zum Merzpark.",
+        "text": "Unter dem Namen Merzlicht, angelehnt an den nahen Merzpark, laufen Werbeclips und Bilder auf der Videowall am Sportplatz des SC 1919 Merzenich am Bürgewaldzentrum. Die Wall zeigt beidseitig: zum Sportplatz und zum Merzpark. Die Werbeeinnahmen finanzieren die Videowall mit, die im Juni 2025 eingeweiht wurde und Spielstände, Ergebnisse und Höhepunkte vom Platz zeigen kann.",
+        "quellen": [
+          "https://www.scmerzenich.de/newsarchiv/archiv-saison-25-26/videowall-am-b%C3%BCrgewaldzentrum/"
+        ]
       },
       "anzeige": {
-        "titel": "Merzlicht",
-        "bild": "merzlicht.png",
-        "alt": "Anzeige Merzlicht"
+        "titel": "Ihre Werbung auf der Videowall.",
+        "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
+        "zeile": "Merzlicht · Videowall am Bürgewaldzentrum",
+        "bild": "merzlicht.jpg",
+        "alt": "Sportplatz im Abendlicht mit Bandenwerbung (Symbolbild)",
+        "nachweis": "Symbolbild · MrChippo / Wikimedia Commons · CC BY-SA 4.0",
+        "quelle": "https://commons.wikimedia.org/wiki/File:SportplatzWelgersdorfBlickVonAnzeigetafel.jpg"
+      },
+      "werbung": {
+        "max": 5
       }
     },
     {
@@ -153,7 +223,7 @@
       "profil": {
         "slug": "aj-sports",
         "titel": "AJ Sports",
-        "firmenname": "AJ Sports",
+        "firmenname": "AJ Sports Entertainment",
         "branche": "",
         "ortsteil": "",
         "adresse": "",
@@ -162,13 +232,20 @@
         "website": "",
         "oeffnungszeiten": "",
         "quelle": "Name laut Betreiber (Auftrag 24.10.2026); weitere Angaben folgen",
-        "kurz": "AJ Sports ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
-        "text": "AJ Sports ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
+        "kurz": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
+        "text": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
       },
       "anzeige": {
-        "titel": "AJ Sports",
-        "bild": "aj-sports.png",
-        "alt": "Anzeige AJ Sports"
+        "titel": "AJ Sports Entertainment",
+        "text": "Partner des Sports und von Merzenich Aktuell.",
+        "zeile": "AJ Sports",
+        "bild": "aj-sports.jpg",
+        "alt": "Kunstrasenplatz mit Tor (Symbolbild)",
+        "nachweis": "Symbolbild · TheRegentsInternationalSchoolBangkok / Wikimedia Commons · CC BY-SA 4.0",
+        "quelle": "https://commons.wikimedia.org/wiki/File:Artificial_Turf_Football_Field_at_Regent's_International_School_Bangkok.jpg"
+      },
+      "werbung": {
+        "max": 5
       }
     }
   ]

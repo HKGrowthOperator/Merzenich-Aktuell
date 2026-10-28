@@ -33,6 +33,11 @@
  * Beitrag in den Freigaben frei: Er liegt dort nach der Einwilligung zur Prüfung
  * (Prüfhäkchen, Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf.
  *
+ * Werbung (28.10.2026): Banner nur für Unternehmen mit „anzeige“ (Merzlicht, AJ Sports),
+ * im Stil der laufenden Anzeigen (Foto, „zeile“ oben, Überschrift, Satz).
+ * „werbung.max“ ist das Kontingent eines Zugangs (Merzlicht und AJ Sports 5, sonst
+ * 0); es wird beim Verknüpfen eines Zugangs mit dem Profil gesetzt.
+ *
  * Firma zurückziehen (24.10.2026): Profil, Beiträge und Werbebanner eines
  * früheren Betriebs („frueher“ in der Datei) werden Entwurf; nichts wird
  * gelöscht, Logos bleiben in der Mediathek.
@@ -189,6 +194,25 @@ function ma_firmen_banner_vorhanden(string $slug): int {
     return $q ? (int) $q[0] : 0;
 }
 
+/** Bildnachweis des Banners: aus der Datei (Foto mit Lizenz), sonst eigene Gestaltung. */
+function ma_firmen_banner_nachweis(array $a, string $name): string {
+    return trim((string) ($a['nachweis'] ?? '')) ?: 'Werbebanner ' . $name . ', gestaltet von Merzenich Aktuell';
+}
+
+/**
+ * Werbekontingent eines Zugangs aus „werbung.max“ der Datei (28.10.2026): Merzlicht und
+ * AJ Sports 5 Anzeigen auf allen Werbeplätzen, die übrigen keine. Firmen ohne Eintrag
+ * in der Datei behalten die Voreinstellung. Gibt das gesetzte Kontingent zurück, sonst null.
+ */
+function ma_firmen_kontingent_setzen(int $uid, int $bid): ?int {
+    $f = ma_firmen_eintrag((string) get_post_field('post_name', $bid));
+    if (!$f || !isset($f['werbung']['max'])) return null;
+    $max = max(0, min(defined('MA_AD_QUOTA_LIMIT') ? MA_AD_QUOTA_LIMIT : 20, (int) $f['werbung']['max']));
+    update_user_meta($uid, 'ma_ad_quota_max', (string) $max);
+    update_user_meta($uid, 'ma_ad_quota_slots', $max ? implode(',', ma_firmen_banner_plaetze()) : '-');
+    return $max;
+}
+
 /**
  * Werbebanner aus „anzeige“ einmal anlegen: laufende Anzeige (ma_ad) auf allen
  * Plätzen aus ma_firmen_banner_plaetze(), ohne Link und ohne Ende, Bild aus
@@ -203,7 +227,7 @@ function ma_firmen_banner_anlegen(array $f, int $pid): string {
         // Bild fehlt (Übernahme beim ersten Mal gescheitert): noch einmal versuchen.
         if (!get_post_thumbnail_id($da) && !empty($a['bild']) && get_post_status($da) !== 'trash') {
             $fehler = '';
-            $m = ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $da, (string) ($a['alt'] ?? 'Anzeige ' . $name), 'Werbebanner ' . $name . ', gestaltet von Merzenich Aktuell', '', $fehler);
+            $m = ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $da, (string) ($a['alt'] ?? 'Anzeige ' . $name), ma_firmen_banner_nachweis($a, $name), (string) ($a['quelle'] ?? ''), $fehler);
             if ($m) { set_post_thumbnail($da, $m); return $name . ': Werbebanner schon vorhanden, Bild nachgetragen.'; }
         }
         return $name . ': Werbebanner schon vorhanden (' . get_post_status($da) . ').';
@@ -211,7 +235,7 @@ function ma_firmen_banner_anlegen(array $f, int $pid): string {
     $plaetze = ma_firmen_banner_plaetze();
     $r = wp_insert_post(wp_slash([
         'post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => (string) $a['titel'], 'post_excerpt' => (string) ($a['text'] ?? ''),
-        'meta_input' => ['ma_ad_slot' => $plaetze[0], 'ma_ad_active' => '1', 'ma_ad_url' => (string) ($a['ziel'] ?? ''), 'ma_ad_sponsor' => '',
+        'meta_input' => ['ma_ad_slot' => $plaetze[0], 'ma_ad_active' => '1', 'ma_ad_url' => (string) ($a['ziel'] ?? ''), 'ma_ad_sponsor' => (string) ($a['zeile'] ?? $name),
             'ma_business_id' => (string) $pid, 'ma_firmen_banner' => $slug],
     ]), true);
     if (is_wp_error($r) || !$r) return $name . ': Werbebanner nicht angelegt' . (is_wp_error($r) ? ' (' . $r->get_error_message() . ')' : '') . '.';
@@ -219,7 +243,7 @@ function ma_firmen_banner_anlegen(array $f, int $pid): string {
     foreach (array_slice($plaetze, 1) as $pl) add_post_meta($id, 'ma_ad_slot_weitere', $pl);
     $fehler = '';
     $m = !empty($a['bild']) ? ma_firmen_medium('banner', (string) $a['bild'], 'ma_firmen_banner_datei', $id, (string) ($a['alt'] ?? 'Anzeige ' . $name),
-        'Werbebanner ' . $name . ', gestaltet von Merzenich Aktuell', '', $fehler) : 0;
+        ma_firmen_banner_nachweis($a, $name), (string) ($a['quelle'] ?? ''), $fehler) : 0;
     if ($m) set_post_thumbnail($id, $m);
     if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Werbebanner angelegt', 'Aus data/firmen-entwuerfe.json, mit der Einwilligung von ' . $name . '. Läuft ohne Ende, bis der Betreiber es austauscht.');
     return $name . ': Werbebanner läuft' . ($m ? '' : ' (ohne Bild: ' . ($fehler ?: 'keine Bilddatei') . ')') . '.';
@@ -259,6 +283,12 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
         }
     }
     if ($einwilligung) {
+        // Leere Profilfelder aus der Datei ergänzen (28.10.2026: Merzlicht bekam die Branche erst nach dem Anlegen),
+        // ohne vorhandene Angaben zu überschreiben.
+        foreach (['branche', 'ortsteil', 'ort', 'adresse', 'telefon', 'email', 'website'] as $feld) {
+            $wert = (string) ($p[$feld] ?? '');
+            if ($wert !== '' && (string) get_post_meta($pid, 'ma_business_' . $feld, true) === '') update_post_meta($pid, 'ma_business_' . $feld, $wert);
+        }
         if ((string) get_post_meta($pid, 'ma_business_consent', true) !== '1') {
             update_post_meta($pid, 'ma_business_consent', '1');
             update_post_meta($pid, 'ma_business_consent_by', $wer);

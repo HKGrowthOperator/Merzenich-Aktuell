@@ -76,7 +76,7 @@ foreach ($d['firmen'] as $x) {
     $info = is_file($datei) ? getimagesize($datei) : false;
     pruefe($x['profil']['titel'] . ': Logo-Datei als PNG oder JPEG, mindestens 200 px breit', $info !== false && in_array($info[2], [IMAGETYPE_PNG, IMAGETYPE_JPEG], true) && $info[0] >= 200, true);
 }
-pruefe('Logos für alle Firmen mit Logo-Angabe, ohne die früheren Betriebe', array_values(array_diff(scandir($wurzel . '/wordpress/plugin/merzenich-aktuell-core/data/logos/'), ['.', '..'])), ['almera-clean.png', 'kbs-management.png']);
+pruefe('Logos für alle Firmen mit Logo-Angabe, ohne die früheren Betriebe', array_values(array_diff(scandir($wurzel . '/wordpress/plugin/merzenich-aktuell-core/data/logos/'), ['.', '..'])), ['almera-clean.png', 'ass-elektrotechnik.png', 'kbs-management.png']);
 
 echo $fehler ? "\n$fehler Fehler\n" : "\nAlle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

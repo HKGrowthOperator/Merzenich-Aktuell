@@ -113,6 +113,8 @@ function ma_partner_business_verknuepfen(int $uid, string $wahl, string $name = 
         if (!$p instanceof WP_Post || $p->post_type !== 'ma_business') return 0;
     }
     update_user_meta($uid, MA_FIRMA_META, (string) $bid);
+    // Werbekontingent aus den Firmen-Entwürfen (Merzlicht und AJ Sports 5, die übrigen 0).
+    if (function_exists('ma_firmen_kontingent_setzen')) ma_firmen_kontingent_setzen($uid, (int) $bid);
     // Ausdrücklich alle Status: 'any' ließe In Prüfung, Änderung, Archiv und Abgelehnt aus.
     $alt = get_posts(['post_type' => ['post', 'ma_ad', 'ma_tip'], 'post_status' => ma_business_alle_status(), 'author' => $uid, 'posts_per_page' => -1, 'fields' => 'ids',
         'meta_query' => [['key' => MA_FIRMA_META, 'compare' => 'NOT EXISTS']]]);

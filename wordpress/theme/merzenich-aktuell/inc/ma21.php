@@ -1620,7 +1620,7 @@ function ma21_unternehmen_ids(): array {
     if ($ids !== null) return $ids;
     $a = get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 200, 'fields' => 'ids', 'meta_key' => 'ma_gesponsert', 'meta_value' => '1']);
     $nutzer = get_users(['role' => 'ma_wirtschaft_partner', 'fields' => 'ID']);
-    $b = $nutzer ? get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 200, 'fields' => 'ids', 'author__in' => array_map('intval', (array) $nutzer)]) : [];
+    $b = $nutzer ? get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 200, 'fields' => 'ids', 'ma_firmen_erlaubt' => true, 'author__in' => array_map('intval', (array) $nutzer)]) : [];
     return $ids = array_values(array_unique(array_map('intval', array_merge((array) $a, (array) $b))));
 }
 add_action('pre_get_posts', function (WP_Query $q): void {

@@ -1,6 +1,21 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.34.0 · live: 21.21.0 / 1.34.0 (Historie unten)
+28. Oktober 2026 · Theme 21.22.0 · Core-Plugin 1.35.0 · live: 21.21.0 / 1.34.0 (Historie unten)
+
+## Neu am 28.10.2026: Plugin 1.35.0 und Theme 21.22.0, fünf Unternehmen, Firmenbeiträge nur unter „Unternehmen“, Banner im Anzeigenstil
+
+**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.34.0, Theme 21.21.0.
+
+**Anlass:** Auftrag des Betreibers vom 28.10.: Unter „Unternehmen“ standen live noch Bäckerei Wirtz, Hasberg und Porschen Media (der Code für die neuen Firmen war live, die Schritte im Backend fehlten). Firmenbeiträge erschienen auch in anderen Bereichen. Werbung nur für Merzlicht und AJ Sports, die übrigen Firmen bekommen nur ihren Eintrag unter „Unternehmen“.
+
+- **Fünf Firmen** (`data/firmen-entwuerfe.json`): Almera Clean, KBS Management GmbH, ASS Elektrotechnik (neu: Meisterbetrieb, Am Dürener Weg 53, Düren; Angaben und Logo von asselektrotechnik.de, ein Beitrag aus belegten Leistungen), Merzlicht (Branche „Werbung auf der Videowall“, belegt über den Bericht des SC 1919 zur Videowall am Bürgewaldzentrum) und AJ Sports (nur Name). Wirtz, Hasberg und Porschen bleiben unter „Früher eingetragen“ zum Zurückziehen.
+- **Werbekontingent je Firma** (Feld `werbung.max`): Merzlicht und AJ Sports 5 Anzeigen, Almera, KBS und ASS 0. Beim Verknüpfen eines Zugangs mit dem Profil setzt `ma_firmen_kontingent_setzen` das Kontingent (`ma_ad_quota_max`) und die erlaubten Plätze (alle Werbeplätze, bei 0 keine).
+- **Banner im Stil der Anzeigen** (Foto, Zeile oben, Überschrift, ein Satz; Auswahl des Betreibers): Merzlicht „Ihre Werbung auf der Videowall.“ mit Zeile „Merzlicht · Videowall am Bürgewaldzentrum“; AJ Sports „AJ Sports Entertainment“ mit „Partner des Sports und von Merzenich Aktuell.“. Beide vorerst mit Symbolfoto von Wikimedia Commons (CC BY-SA 4.0, Nachweis am Bild). Die Zeile oben kommt aus `anzeige.zeile` (`ma_ad_sponsor`).
+- **Firmenbeiträge nur unter „Unternehmen“** (neu `includes/firmenbeitraege.php`): Jede Beitragsabfrage beim Seitenaufruf schließt Beiträge mit `ma_gesponsert = 1` aus: Startseite, Rubriken, /nachrichten/, Ortsteile, Themen, Suche, Seitenspalten, „Das passt zum Thema“, Nachladen, RSS-Feed und `latest.json`. Ausgenommen: /unternehmen/, Firmenkanal, Unternehmen-Menü (Merkmal `ma_firmen_erlaubt`), die Beitragsseite selbst, Sitemaps, Admin, Cron, AJAX, REST und WP-CLI. Feste Plätze der Startseite nehmen keine Firmenbeiträge an (`ma_layout_post_platzierbar`). Die Brotkrumen eines Firmenbeitrags führen zu „Unternehmen“.
+- **Zusage eintragen** ergänzt leere Profilfelder (Branche, Ort, Kontakt) aus der Datei, ohne vorhandene Angaben zu überschreiben.
+- **Prüfung:** neu `qa/wordpress/firmenbeitraege-test.php`; `firmen-entwuerfe-test.php` und `firmenlogo-test.php` auf fünf Firmen; alle `qa/wordpress/*-test.php` grün. Lokal (8090): kein Firmenbeitrag auf Startseite, /wirtschaft/, /nachrichten/, Ortsteilen, Suche, /feed/ und `latest.json`; vorhanden unter /unternehmen/, im Kanal und im Menü; Banner in den Bändern bei 1440 und 390 px; 0 Konsolenfehler.
+
+**Einspielen:** erst Plugin 1.35.0, dann Theme 21.22.0. Danach unter Merzenich Aktuell → Firmen-Entwürfe: „Fehlende Entwürfe anlegen“, „Zusage eintragen“ für alle fünf, „Firma zurückziehen“ für Wirtz, Hasberg und Porschen; die Beiträge von Almera, KBS und ASS in den Freigaben freigeben; Zugänge unter Benutzer → Partner-Zugänge.
 
 ## Neu am 28.10.2026: Plugin 1.34.0, Themenbild aus dem Repository gilt auch für bestehende Beiträge
 

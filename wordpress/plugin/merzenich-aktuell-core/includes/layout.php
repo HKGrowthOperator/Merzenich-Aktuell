@@ -131,6 +131,8 @@ function ma_layout_speichern(string $seite, array $karte): array {
  */
 function ma_layout_post_platzierbar(int $id, string $seite = 'startseite'): bool {
     return $id > 0 && get_post_type($id) === 'post' && get_post_status($id) === 'publish'
+        // Firmenbeiträge stehen nur unter „Unternehmen“ (firmenbeitraege.php), nie auf festen Plätzen.
+        && (string) get_post_meta($id, 'ma_gesponsert', true) !== '1'
         && ($seite !== 'startseite' || (string) get_post_meta($id, 'ma_startplatz', true) !== 'aus') && !ma_layout_hervorhebung_abgelaufen($id);
 }
 
