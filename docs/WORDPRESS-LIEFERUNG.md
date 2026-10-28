@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.2 · live: 21.23.0 / 1.36.1 (Historie unten)
+28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.2 · live: 21.23.0 / 1.36.2 (Historie unten)
 
 ## Neu am 28.10.2026 spät: Plugin 1.36.2, überall drei Stufen
 
-**Stand live:** wird eingespielt. Rückweg: Plugin 1.36.1.
+**Stand live:** eingespielt am 28.10.2026 (Werbemittel zeigen die Auswahl 1 Hoch, 2 Mitte, 3 Niedrig; REST liefert nur noch `ma_relevanz`). Rückweg: Plugin 1.36.1.
 
 **Anlass:** Der Betreiber will überall nur drei Prioritätsstufen statt zehn, vor allem in den Rubriken, und den Rest entfernt. Live gemessen am 28.10.: Freigaben, Box „Startseite“ im Beitrag, Beitragsliste (Spalte und Filter), Board „Startseite & Ressorts“ und alle acht Ressort-Boards zeigen bereits 1 Hoch, 2 Mitte, 3 Niedrig (seit 1.32.0). Übrig waren:
 
