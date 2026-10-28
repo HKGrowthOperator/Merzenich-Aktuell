@@ -1,5 +1,5 @@
 {
-  "hinweis": "Editorial Image System V3: Bildklassen. Eine Meldung traegt ihre Klasse ausdruecklich (inhalte/meldungen: bildklasse -> <meta name=\"ma:bildklasse\">). Die Klasse nennt die Motive, die das Ereignis zeigen (Motiv je Foto: deploy/bildmotive.json). Ohne passendes Foto bleibt die Meldung ohne Bild. Die Elternklasse (Teil vor dem letzten Punkt) gilt nur, wenn die Klasse eltern:true setzt, also wenn das Elternmotiv die Aussage noch zeigt. Meldungen ohne Klasse laufen weiter ueber MOTIVREGELN in lib-symbolbilder.mjs.",
+  "hinweis": "Editorial Image System V3: Bildklassen. Eine Meldung traegt ihre Klasse ausdruecklich (inhalte/meldungen: bildklasse -> <meta name=\"ma:bildklasse\">). Die Klasse nennt die Motive, die das Ereignis zeigen (Motiv je Foto: deploy/bildmotive.json). Ohne passendes Foto bleibt die Meldung ohne Bild. Die Elternklasse (Teil vor dem letzten Punkt) gilt nur, wenn die Klasse eltern:true setzt, also wenn das Elternmotiv die Aussage noch zeigt. Meldungen ohne Klasse laufen weiter ueber MOTIVREGELN in lib-symbolbilder.mjs. Entscheidung Luis Kummer 28.10.2026: Das Bild muss zeigen, worum es im Artikel geht. Klassen ohne passendes Foto erhalten passende gesichtete Themenmotive; die Ortsansicht bleibt nur, wo kein Motiv das Thema trifft.",
   "maxJeFoto": 3,
   "klassen": {
     "blaulicht.alarm.brandmeldeanlage": {
@@ -35,13 +35,19 @@
     "blaulicht.feuer.innen": {
       "titel": "Brand in einem Raum oder Anbau, ohne Großlage",
       "motive": [
-        "brandschaden-innen"
+        "brandschaden-innen",
+        "einsatzfahrzeuge",
+        "brand",
+        "feuerwehrhaus"
       ]
     },
     "blaulicht.feuer.klein": {
       "titel": "Kleinbrand (Mülleimer, Gulli, Unrat)",
       "motive": [
-        "kleinbrand"
+        "kleinbrand",
+        "einsatzfahrzeuge",
+        "brand",
+        "feuerwehrhaus"
       ]
     },
     "blaulicht.feuer.nachloeschen": {
@@ -59,13 +65,17 @@
     "blaulicht.rettung.tier": {
       "titel": "Tier in Not, Tierfang",
       "motive": [
-        "tierrettung"
+        "tierrettung",
+        "feuerwehrhaus"
       ]
     },
     "blaulicht.rettung.tuer": {
       "titel": "Person hinter Tür, Türöffnung",
       "motive": [
-        "tueroeffnung"
+        "tueroeffnung",
+        "einsatzfahrzeuge",
+        "rettungswagen",
+        "feuerwehrhaus"
       ]
     },
     "blaulicht.technik.ecall": {
@@ -100,7 +110,9 @@
     },
     "leben.senioren": {
       "titel": "Tagespflege, Senioren, Feiern in Einrichtungen",
-      "motive": []
+      "motive": [
+        "veranstaltungssaal"
+      ]
     },
     "polizei.diebstahl": {
       "titel": "Diebstahl aus Fahrzeugen, Werkzeugdiebstahl",
@@ -139,7 +151,9 @@
     },
     "sport.billard": {
       "titel": "Billard, Vereinssport in der Halle",
-      "motive": []
+      "motive": [
+        "sporthalle"
+      ]
     },
     "sport.tennis": {
       "titel": "Tennis, Mannschaft oder Spielbetrieb",
@@ -149,7 +163,9 @@
     },
     "vereine.jugend": {
       "titel": "Jugendarbeit, Pfadfinder, Zeltlager",
-      "motive": []
+      "motive": [
+        "zeltplatz"
+      ]
     },
     "vereine.tanz": {
       "titel": "Tanz, Vortanzen und Tanzgruppe",
@@ -172,7 +188,9 @@
     "verkehr.unfall": {
       "titel": "Verkehrsunfall",
       "motive": [
-        "unfallstelle"
+        "unfallstelle",
+        "rettungswagen",
+        "blaulicht-leuchte"
       ]
     },
     "verkehr.unfall.rad": {
@@ -189,12 +207,17 @@
       ]
     },
     "leben.brauchtum": {
-      "titel": "Brauchtum und Advent",
-      "motive": []
+      "titel": "Brauchtum, Sankt Martin, Martinszüge",
+      "motive": [
+        "martinsfeuer"
+      ]
     },
     "leben.veranstaltung": {
       "titel": "Vortrag und Gesprächsabend",
-      "motive": []
+      "motive": [
+        "seminarraum",
+        "veranstaltungssaal"
+      ]
     },
     "leben.klima": {
       "titel": "Grünflächen und Klimaanpassung",
@@ -204,7 +227,10 @@
     },
     "vereine.karneval": {
       "titel": "Karnevalssitzung",
-      "motive": []
+      "motive": [
+        "karneval",
+        "veranstaltungssaal"
+      ]
     },
     "vereine.hallensport": {
       "titel": "Breitensport in der Halle",
@@ -264,7 +290,9 @@
     },
     "vereine.erntedank": {
       "titel": "Erntedankfest in Girbelsrath ohne freigegebenes Originalfoto; kein fremder Orts- oder Kirchenbezug",
-      "motive": []
+      "motive": [
+        "erntekrone"
+      ]
     },
     "leben.buergewald.jahrbuch": {
       "titel": "Kreisgeschichte und Strukturwandel mit Bürgewald-Bezug; ohne passendes Ereignisfoto nur Ortsansicht",
@@ -276,7 +304,9 @@
     },
     "leben.schule.anmeldung": {
       "titel": "Schule, Anmeldung und Schulorganisation; ohne lokales Schulmotiv nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "klassenzimmer"
+      ]
     },
     "vereine.landfrauen": {
       "titel": "LandFrauen und Mitgliederversammlung; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
@@ -290,7 +320,9 @@
     },
     "vereine.schuetzen.kreis": {
       "titel": "Schützenwesen und Kreismajestätenschießen; ohne freigegebenes Veranstaltungsfoto nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "schuetzen"
+      ]
     },
     "sport.tischtennis": {
       "titel": "Tischtennis, Mannschaftsspiel oder Turnier in der Halle",
@@ -300,7 +332,9 @@
     },
     "gemeinde.abfall": {
       "titel": "Abfall und Wertstoffe (Papiertonne, Abfuhr); noch kein gesichtetes Foto, die Meldung bleibt ohne Bild",
-      "motive": []
+      "motive": [
+        "papiertonne"
+      ]
     },
     "gemeinde.buergerhaus": {
       "titel": "Neues Bürgerhaus, kommunales Bau- und Planungsprojekt",
@@ -310,7 +344,9 @@
     },
     "sport.tischtennis.ergebnis": {
       "titel": "Tischtennis-Ergebnisüberblick ohne passendes lokales Spiel-/Mannschaftsfoto; klar gekennzeichnete Ortsansicht statt fremdem Sportmotiv",
-      "motive": []
+      "motive": [
+        "sporthalle"
+      ]
     },
     "wirtschaft.arbeitgeber.stollenwerk": {
       "titel": "Lokaler Arbeitgeber Stollenwerk in Girbelsrath; ohne freigegebenes Werksfoto Ortsansicht statt sachfremdem Wirtschaftsmotiv",
@@ -322,7 +358,9 @@
     },
     "vereine.hitnight": {
       "titel": "Abendveranstaltung der Golzheimer Schützen – ohne Freigabe kein fremdes Eventfoto",
-      "motive": []
+      "motive": [
+        "festzelt"
+      ]
     },
     "leben.dorfwettbewerb": {
       "titel": "Dorfwettbewerb 2027 – lokale Ortsansicht statt Abbildung fremder Wettbewerbsteilnehmer",
@@ -334,23 +372,34 @@
     },
     "leben.energie": {
       "titel": "Energieversorgung und Netzumstellung (Gas, Strom); ohne lokales Motiv nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "strommast"
+      ]
     },
     "leben.vorsorge": {
       "titel": "Bevölkerungsschutz, Krisenvorsorge und Kurse dazu; ohne lokales Motiv nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "seminarraum"
+      ]
     },
     "verkehr.baustelle": {
       "titel": "Baustelle, Fahrstreifensperrung oder Umleitung auf Straße und Autobahn; ohne lokales Motiv nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "baustelle"
+      ]
     },
     "wirtschaft.weiterbildung": {
       "titel": "Workshop, Seminar oder Weiterbildungsangebot für Betriebe; ohne lokales Motiv nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "seminarraum"
+      ]
     },
     "leben.ortsfest": {
       "titel": "Ortsfest, Oldieabend und Dorffeste; ohne freigegebenes Foto nur Ortsansicht",
-      "motive": []
+      "motive": [
+        "festzelt",
+        "kirmes"
+      ]
     },
     "leben.foerderung": {
       "titel": "Förderprogramme und Ideenwettbewerbe im Rheinischen Revier; nur Ortsansicht",
@@ -358,14 +407,33 @@
     },
     "blaulicht.technik.sturm": {
       "titel": "Sturmschaden: Baum oder Äste auf der Straße, Feuerwehr beim Räumen",
-      "motive": []
+      "motive": [
+        "sturmschaden",
+        "einsatzfahrzeuge",
+        "feuerwehrhaus"
+      ]
     },
     "menschen.wandern": {
       "titel": "Wandern, Fußmarsch, Jugendliche mit Rucksack unterwegs",
-      "motive": []
+      "motive": [
+        "wanderweg"
+      ]
     },
     "umwelt.wald": {
       "titel": "Wald, Wiederbewaldung, Eicheln sammeln",
+      "motive": [
+        "eicheln"
+      ]
+    },
+    "leben.brauchtum.advent": {
+      "titel": "Advent: Adventsmarkt, lebendiger Adventskalender",
+      "motive": [
+        "adventskalender",
+        "adventsmarkt"
+      ]
+    },
+    "leben.energie.gas": {
+      "titel": "Gasversorgung, Netzumstellung (H-Gas); ohne Gasmotiv nur Ortsansicht, kein Strommast",
       "motive": []
     }
   }

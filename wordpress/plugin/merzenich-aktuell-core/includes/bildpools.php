@@ -36,7 +36,7 @@ function ma_bildpool_labels(): array {
         'menschen' => 'Menschen', 'wirtschaft' => 'Wirtschaft', 'tipp' => 'Tipp / Freizeit',
         'technik' => 'Detail: Technische Hilfe', 'rettung' => 'Detail: Rettung', 'unfall' => 'Detail: Unfallstelle', 'flaeche' => 'Detail: Flächenbrand',
         'tennisdetail' => 'Detail: Tennis', 'digitaldetail' => 'Detail: Digital', 'tanzdetail' => 'Detail: Tanz', 'naturdetail' => 'Detail: Natur',
-        'vereinsdetail' => 'Detail: Vereinsheim', 'kirchedetail' => 'Detail: Kirche',
+        'vereinsdetail' => 'Detail: Vereinsheim', 'kirchedetail' => 'Detail: Kirche', 'themen' => 'Themenfotos',
     ];
 }
 
@@ -55,7 +55,7 @@ function ma_bildpool_labels_sortiert(): array {
 
 /** Detailpools haben keine Mindestgröße (wie EREIGNIS_KATEGORIEN in deploy/lib-symbolbilder.mjs). */
 function ma_bildpool_ist_detail(string $pool): bool {
-    return in_array($pool, ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail'], true);
+    return in_array($pool, ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail', 'themen'], true);
 }
 
 function ma_bildpool_daten(): array {

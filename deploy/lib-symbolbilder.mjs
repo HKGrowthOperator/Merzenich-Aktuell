@@ -19,7 +19,7 @@ export const ALLE_KATEGORIEN = [...KATEGORIEN, ...FOTO_KATEGORIEN];
 // Brandmelder, Tierrettung, Unfallstelle, Flaechenbrand ...). Sie fuellen nur
 // Luecken der Klassen, haben deshalb keine Mindestgroesse und stehen nicht im
 // Pool-Audit; jedes Foto braucht wie ueberall Sichtung und Motiv.
-export const EREIGNIS_KATEGORIEN = ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail'];
+export const EREIGNIS_KATEGORIEN = ['technik', 'rettung', 'unfall', 'flaeche', 'tennisdetail', 'digitaldetail', 'tanzdetail', 'naturdetail', 'vereinsdetail', 'kirchedetail', 'themen'];
 export const FOTO_MANIFEST_DATEI = `${DATEN_WURZEL}/editorial-photo-pools.json`;
 
 const LABELS = {
@@ -799,7 +799,8 @@ export const MOTIVREGELN = [
   { id: 'fahrrad', wenn: /fahrrad|radweg|e-bike|radtour|radfahr/, motive: ['radweg'] },
   { id: 'tagebau', wenn: /tagebau|braunkohle|schaufelradbagger/, motive: ['tagebau'] },
   { id: 'sophienhoehe', wenn: /sophienhohe/, motive: ['sophienhoehe'] },
-  { id: 'bahn', wenn: /s-bahn|\bs ?12\b|bahnhof|haltepunkt|bahnstrecke|regionalbahn/, motive: ['bahnhof-merzenich', 'zug'] },
+  { id: 'bahn', wenn: /s-bahn|\bs ?1[29]\b|\bre ?9\b|\brb ?\d{2}\b|bahnhof|haltepunkt|bahnstrecke|regionalbahn|schienenersatz|zugausfall|zugverkehr/, motive: ['bahnhof-merzenich', 'zug'] },
+  { id: 'schule', wenn: /grundschule|gesamtschule|schulanmeldung|tag der offenen tur|klassenzimmer|einschulung/, motive: ['klassenzimmer'] },
   { id: 'rathaus', wenn: /rathaus|gemeinderat|burgermeister|ratssitzung|gemeindeverwaltung|haushalt/, motive: ['rathaus-merzenich'] },
   { id: 'kirche-merzenich', wenn: /st\.? laurentius|pfarrkirche st\.? laurentius|alte pfarrkirche merzenich/, motive: ['kirche-merzenich'] },
   { id: 'kirche', wenn: /pfarrkirche|gottesdienst|pfarrgemeinde|kirchengemeinde|patrozinium|kapelle|lambertus/, motive: ['kirchenfenster'] },
@@ -898,9 +899,15 @@ export function vergibSymbolbilder(artikel, pools, bestand = { assignments: {} }
     const lokal = (m) => (['Merzenich', 'Kreis Düren'].includes(m.locality) ? 0 : 1);
     // Hoechstens maxJeFoto Meldungen je Foto (neue Zuordnungen), damit eine Liste nicht achtmal dasselbe Bild zeigt.
     const grenze = bildklassenLesen().maxJeFoto || Infinity;
+    // Entscheidung Luis Kummer 28.10.2026: Das Bild muss zum Thema passen. Sind alle passenden
+    // Fotos schon maxJeFoto-mal vergeben, bekommt die Meldung das am wenigsten genutzte passende
+    // Foto statt einer Ortsansicht (ein Sportbericht zeigt Sport, kein Fachwerkhaus).
+    // Sind alle ausgeschöpft, entscheidet zuerst die Nutzung, damit sich die Last über alle passenden Fotos verteilt.
     const frei = erlaubt.filter((e) => (usage.get(e.m.id) || 0) < grenze);
-    if (!frei.length) { bildlos.push({ url: key, regel: regel.id, motive: regel.motive, grund: `alle passenden Fotos schon ${grenze}-mal vergeben` }); continue; }
-    const wahl = [...frei].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || (usage.get(x.m.id) || 0) - (usage.get(y.m.id) || 0) || x.m.id.localeCompare(y.m.id))[0];
+    const genutzt = (e) => usage.get(e.m.id) || 0;
+    const wahl = frei.length
+      ? [...frei].sort((x, y) => x.rang - y.rang || lokal(x.m) - lokal(y.m) || genutzt(x) - genutzt(y) || x.m.id.localeCompare(y.m.id))[0]
+      : [...erlaubt].sort((x, y) => genutzt(x) - genutzt(y) || x.rang - y.rang || x.m.id.localeCompare(y.m.id))[0];
     const k = wahl.m; stufen.set(key, stufeFuer(regel, wahl.rang, k));
     usage.set(k.id, (usage.get(k.id) || 0) + 1);
     assignments[key] = { imageId: k.id, pool: k.pool, motiv: motivFuer(k), regel: regel.id, assignedAt: new Date().toISOString(), articleId: a.id || '', articleDate: a.datum || a.abgerufen || '' };

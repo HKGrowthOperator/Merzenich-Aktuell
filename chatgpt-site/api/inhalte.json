@@ -129,16 +129,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
+    "width": 1920,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -175,16 +175,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-16-b1fd3ef820.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-16-b1fd3ef820-480.webp 480w, /assets/editorial-pools/themen/themen-16-b1fd3ef820-800.webp 800w, /assets/editorial-pools/themen/themen-16-b1fd3ef820-1200.webp 1200w, /assets/editorial-pools/themen/themen-16-b1fd3ef820.jpg 1920w",
+    "alt": "High-voltage overhead power lines (pylon construction) close to Westerkappeln substation, Westerkappeln, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 1194,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -217,16 +217,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -263,16 +263,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg",
+    "srcset": "/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-480.webp 480w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-800.webp 800w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8-1200.webp 1200w, /assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg 1920w",
+    "alt": "Kirchenfenster",
     "width": 1920,
-    "height": 1280,
+    "height": 2567,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -389,16 +389,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg",
+    "srcset": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-480.webp 480w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-800.webp 800w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp 1200w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg 1600w",
+    "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
+    "width": 1600,
+    "height": 1060,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -431,16 +431,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
     "width": 1920,
-    "height": 1253,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -473,16 +473,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-08-5f0f3260df.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-08-5f0f3260df-480.webp 480w, /assets/editorial-pools/themen/themen-08-5f0f3260df-800.webp 800w, /assets/editorial-pools/themen/themen-08-5f0f3260df-1200.webp 1200w, /assets/editorial-pools/themen/themen-08-5f0f3260df.jpg 1920w",
+    "alt": "Eicheln am Baum der Stieleiche, Quercus robur in Celle",
     "width": 1920,
-    "height": 1440,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "NobbiP / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -515,16 +515,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/themen/themen-11-59fc252a23.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-11-59fc252a23-480.webp 480w, /assets/editorial-pools/themen/themen-11-59fc252a23-800.webp 800w, /assets/editorial-pools/themen/themen-11-59fc252a23-1200.webp 1200w, /assets/editorial-pools/themen/themen-11-59fc252a23.jpg 1920w",
+    "alt": "Jugendzeltplatz Am Stürzenhardter Brückle",
+    "width": 1920,
+    "height": 1080,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -561,16 +561,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-07-fe61f0f669.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-07-fe61f0f669-480.webp 480w, /assets/editorial-pools/themen/themen-07-fe61f0f669-800.webp 800w, /assets/editorial-pools/themen/themen-07-fe61f0f669-1200.webp 1200w, /assets/editorial-pools/themen/themen-07-fe61f0f669.jpg 1920w",
+    "alt": "Here you see an environmental protection area in lower saxony, northern Germany. It is named \"Moor aside Buxtehude\". The sand wall is the preparation for a highway passing the area",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "CrocodileRobert / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -641,16 +641,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-1440.webp",
-    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
-    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
     "fit": "",
-    "badge": "Ortsansicht",
+    "badge": "Symbolbild",
     "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -679,16 +679,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
-    "width": 1920,
-    "height": 1280,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -721,16 +721,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-aachener-strasse-1440.webp",
-    "srcset": "/assets/places/golzheim-aachener-strasse-720.webp 720w, /assets/places/golzheim-aachener-strasse-1440.webp 1440w",
-    "alt": "Denkmalgeschützte Backstein-Hofanlage an der Aachener Straße in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -759,16 +759,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
-    "width": 1920,
-    "height": 1280,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -797,16 +797,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -877,16 +877,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
     "width": 1920,
-    "height": 1280,
+    "height": 1253,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -919,16 +919,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-12-1e67d8491e.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-12-1e67d8491e-480.webp 480w, /assets/editorial-pools/themen/themen-12-1e67d8491e-800.webp 800w, /assets/editorial-pools/themen/themen-12-1e67d8491e-1200.webp 1200w, /assets/editorial-pools/themen/themen-12-1e67d8491e.jpg 1920w",
+    "alt": "Fingerpost of the hiking trail Teutoschleife Dörenther Klippen through the nature reserve „Dorenthe Cliffs“ ( Naturschutzgebiet Dörenther Klippen ) near Ibbenbüren - Dörenthe, Kre",
     "width": 1920,
-    "height": 1440,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -961,16 +961,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg",
+    "srcset": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-480.webp 480w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-800.webp 800w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp 1200w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg 1600w",
+    "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
+    "width": 1600,
+    "height": 1060,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1003,16 +1003,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "src": "/assets/editorial-pools/themen/themen-01-0394d77d0b.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-01-0394d77d0b-480.webp 480w, /assets/editorial-pools/themen/themen-01-0394d77d0b-800.webp 800w, /assets/editorial-pools/themen/themen-01-0394d77d0b-1200.webp 1200w, /assets/editorial-pools/themen/themen-01-0394d77d0b.jpg 1920w",
+    "alt": "The fire brigade Ganderkesee in Lower Saxony removes storm damage in the village",
     "width": 1920,
     "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Ralf Krebs / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1045,16 +1045,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "src": "/assets/editorial-pools/sport/sport-19-d26a753635.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-19-d26a753635-480.webp 480w, /assets/editorial-pools/sport/sport-19-d26a753635-800.webp 800w, /assets/editorial-pools/sport/sport-19-d26a753635-1200.webp 1200w, /assets/editorial-pools/sport/sport-19-d26a753635.jpg 1920w",
+    "alt": "Fußballplatz",
     "width": 1920,
     "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1159,16 +1159,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-1440.webp",
-    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
-    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f.jpg 1920w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "GeorgDerReisende@Vicuna / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1327,16 +1327,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg 1920w",
+    "alt": "Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 2721,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1453,16 +1453,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg 1920w",
+    "alt": "Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany",
     "width": 1920,
-    "height": 1280,
+    "height": 2721,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1537,16 +1537,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
     "width": 1920,
-    "height": 1280,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1579,16 +1579,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-15-30a6b323da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-15-30a6b323da-480.webp 480w, /assets/editorial-pools/themen/themen-15-30a6b323da-800.webp 800w, /assets/editorial-pools/themen/themen-15-30a6b323da-1200.webp 1200w, /assets/editorial-pools/themen/themen-15-30a6b323da.jpg 1920w",
+    "alt": "Jester Fool",
+    "width": 1920,
+    "height": 2560,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Goltziusjester / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1621,16 +1621,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg 1920w",
+    "alt": "Deutschland, Biedenkopf: Grenzgang; historisches Heimatfest. Großes Festzelt \"auf der Bleiche\"; Festplatz am Lahnufer",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Sir James / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1663,16 +1663,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-04-a4cc30a6e0.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-04-a4cc30a6e0-480.webp 480w, /assets/editorial-pools/themen/themen-04-a4cc30a6e0-800.webp 800w, /assets/editorial-pools/themen/themen-04-a4cc30a6e0-1200.webp 1200w, /assets/editorial-pools/themen/themen-04-a4cc30a6e0.jpg 1920w",
+    "alt": "Martinsfeuer Bassenheim",
+    "width": 1920,
+    "height": 1285,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Meyer P. / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1705,16 +1705,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-1440.webp",
-    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
-    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-11-59fc252a23.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-11-59fc252a23-480.webp 480w, /assets/editorial-pools/themen/themen-11-59fc252a23-800.webp 800w, /assets/editorial-pools/themen/themen-11-59fc252a23-1200.webp 1200w, /assets/editorial-pools/themen/themen-11-59fc252a23.jpg 1920w",
+    "alt": "Jugendzeltplatz Am Stürzenhardter Brückle",
+    "width": 1920,
+    "height": 1080,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1747,16 +1747,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-20-72a84de410.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-20-72a84de410-480.webp 480w, /assets/editorial-pools/themen/themen-20-72a84de410-800.webp 800w, /assets/editorial-pools/themen/themen-20-72a84de410-1200.webp 1200w, /assets/editorial-pools/themen/themen-20-72a84de410.jpg 1920w",
+    "alt": "Richen, ein Ortsteil von Groß-Umstadt (Hessen, Deutschland)",
+    "width": 1920,
+    "height": 2357,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "4028mdk09 / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1789,16 +1789,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
-    "width": 1920,
-    "height": 1253,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1831,16 +1831,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-06-bc6b8eed4f.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-06-bc6b8eed4f-480.webp 480w, /assets/editorial-pools/themen/themen-06-bc6b8eed4f-800.webp 800w, /assets/editorial-pools/themen/themen-06-bc6b8eed4f-1200.webp 1200w, /assets/editorial-pools/themen/themen-06-bc6b8eed4f.jpg 1920w",
+    "alt": "Baustellenabsperrung Dohnaischer Platz, für Bau eines Abwassersammlers",
     "width": 1920,
-    "height": 1440,
+    "height": 1277,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "VSchagow / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1873,16 +1873,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/schule/schule-13-cfbe8f3150.jpg",
+    "srcset": "/assets/editorial-pools/schule/schule-13-cfbe8f3150-480.webp 480w, /assets/editorial-pools/schule/schule-13-cfbe8f3150-800.webp 800w, /assets/editorial-pools/schule/schule-13-cfbe8f3150-1200.webp 1200w, /assets/editorial-pools/schule/schule-13-cfbe8f3150.jpg 1920w",
+    "alt": "Schulräume/Klassenzimmer der privaten katholischen Grundschule im Haus St. Marien in Neumarkt in der Oberpfalz:",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "DALIBRI / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1915,16 +1915,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
     "width": 1920,
-    "height": 1280,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -1957,16 +1957,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/schule/schule-12-e8ff2c48df.jpg",
+    "srcset": "/assets/editorial-pools/schule/schule-12-e8ff2c48df-480.webp 480w, /assets/editorial-pools/schule/schule-12-e8ff2c48df-800.webp 800w, /assets/editorial-pools/schule/schule-12-e8ff2c48df-1200.webp 1200w, /assets/editorial-pools/schule/schule-12-e8ff2c48df.jpg 1920w",
+    "alt": "Schulräume/Klassenzimmer der privaten katholischen Grundschule im Haus St. Marien in Neumarkt in der Oberpfalz:",
     "width": 1920,
     "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "DALIBRI / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2041,16 +2041,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2125,16 +2125,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/schule/schule-09-c727ea707c.jpg",
+    "srcset": "/assets/editorial-pools/schule/schule-09-c727ea707c-480.webp 480w, /assets/editorial-pools/schule/schule-09-c727ea707c-800.webp 800w, /assets/editorial-pools/schule/schule-09-c727ea707c-1200.webp 1200w, /assets/editorial-pools/schule/schule-09-c727ea707c.jpg 1920w",
+    "alt": "Beispiel: Klassenzimmer",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "FrauPfenning / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2167,14 +2167,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Rathaus Merzenich von der Straße aus",
+    "width": 1024,
+    "height": 768,
     "fit": "",
     "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
     "stufe": "O"
    },
@@ -2251,16 +2251,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg 1920w",
+    "alt": "Deutschland, Biedenkopf: Grenzgang; historisches Heimatfest. Großes Festzelt \"auf der Bleiche\"; Festplatz am Lahnufer",
     "width": 1920,
-    "height": 1253,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Sir James / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2335,16 +2335,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/sport/sport-08-c10997cd29.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-08-c10997cd29-480.webp 480w, /assets/editorial-pools/sport/sport-08-c10997cd29-800.webp 800w, /assets/editorial-pools/sport/sport-08-c10997cd29-1200.webp 1200w, /assets/editorial-pools/sport/sport-08-c10997cd29.jpg 1920w",
+    "alt": "Sporthalle",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "TUBS / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2377,16 +2377,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
-    "width": 1920,
-    "height": 1280,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2419,16 +2419,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
     "width": 1920,
-    "height": 1280,
+    "height": 1253,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2461,16 +2461,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
+    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2629,16 +2629,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg 1920w",
+    "alt": "Deutschland, Biedenkopf: Grenzgang; historisches Heimatfest. Großes Festzelt \"auf der Bleiche\"; Festplatz am Lahnufer",
     "width": 1920,
     "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Sir James / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2709,16 +2709,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/morschenich-1440.webp",
-    "srcset": "/assets/places/morschenich-720.webp 720w, /assets/places/morschenich-1440.webp 1440w",
-    "alt": "Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-15-78d45fb015.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-15-78d45fb015-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-15-78d45fb015-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-15-78d45fb015-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-15-78d45fb015.jpg 1920w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · CC BY 3.0",
+    "badge": "Symbolbild",
+    "credit": "GeorgDerReisende@Vicuna / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -2965,16 +2965,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
-    "width": 1920,
-    "height": 1440,
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3007,16 +3007,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/sport/sport-20-f1adf37954.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-20-f1adf37954-480.webp 480w, /assets/editorial-pools/sport/sport-20-f1adf37954-800.webp 800w, /assets/editorial-pools/sport/sport-20-f1adf37954-1200.webp 1200w, /assets/editorial-pools/sport/sport-20-f1adf37954.jpg 1504w",
+    "alt": "Sporthalle",
+    "width": 1504,
+    "height": 800,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3049,16 +3049,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-aachener-strasse-1440.webp",
-    "srcset": "/assets/places/golzheim-aachener-strasse-720.webp 720w, /assets/places/golzheim-aachener-strasse-1440.webp 1440w",
-    "alt": "Denkmalgeschützte Backstein-Hofanlage an der Aachener Straße in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/sport/sport-20-f1adf37954.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-20-f1adf37954-480.webp 480w, /assets/editorial-pools/sport/sport-20-f1adf37954-800.webp 800w, /assets/editorial-pools/sport/sport-20-f1adf37954-1200.webp 1200w, /assets/editorial-pools/sport/sport-20-f1adf37954.jpg 1504w",
+    "alt": "Sporthalle",
+    "width": 1504,
+    "height": 800,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3175,16 +3175,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/morschenich-1440.webp",
-    "srcset": "/assets/places/morschenich-720.webp 720w, /assets/places/morschenich-1440.webp 1440w",
-    "alt": "Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34.jpg 1920w",
+    "alt": "Floral decorations on the mock rifles at the “Schützenfest Bürgerschützen” on the market square in Dülmen, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 2560,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · CC BY 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3301,16 +3301,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/schule/schule-05-800f5134d9.jpg",
+    "srcset": "/assets/editorial-pools/schule/schule-05-800f5134d9-480.webp 480w, /assets/editorial-pools/schule/schule-05-800f5134d9-800.webp 800w, /assets/editorial-pools/schule/schule-05-800f5134d9-1200.webp 1200w, /assets/editorial-pools/schule/schule-05-800f5134d9.jpg 1920w",
+    "alt": "Klassenzimmer des Louis-Baare-Berufskollegs",
     "width": 1920,
-    "height": 1280,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Sebastian Martin Dicke / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3377,16 +3377,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c.jpg 1536w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1536,
+    "height": 992,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3601,16 +3601,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-11-d25c0ad661.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-11-d25c0ad661-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-11-d25c0ad661-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-11-d25c0ad661-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-11-d25c0ad661.jpg 1920w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "TUBS / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3791,16 +3791,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/buergewald-1440.webp",
-    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
-    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-10-91d83757e9.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-10-91d83757e9-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-10-91d83757e9-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-10-91d83757e9-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-10-91d83757e9.jpg 1920w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1920,
+    "height": 825,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -3829,16 +3829,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-21-193cdcf154.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-21-193cdcf154-480.webp 480w, /assets/editorial-pools/themen/themen-21-193cdcf154-800.webp 800w, /assets/editorial-pools/themen/themen-21-193cdcf154-1200.webp 1200w, /assets/editorial-pools/themen/themen-21-193cdcf154.jpg 1920w",
+    "alt": "Germany: Thanksgiving crown, braided from grain trees. Seen in the parish church St. Pankratius in Steinhilben",
+    "width": 1920,
+    "height": 1822,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "W. Bulach / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4023,16 +4023,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/brand/brand-19-6a048a0c3d.jpg",
+    "srcset": "/assets/editorial-pools/brand/brand-19-6a048a0c3d-480.webp 480w, /assets/editorial-pools/brand/brand-19-6a048a0c3d-800.webp 800w, /assets/editorial-pools/brand/brand-19-6a048a0c3d-1200.webp 1200w, /assets/editorial-pools/brand/brand-19-6a048a0c3d.jpg 1920w",
+    "alt": "Feuerwehr beim Löschen eines Brandes",
+    "width": 1920,
+    "height": 1322,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Nassauer27 / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4099,16 +4099,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/brand/brand-19-6a048a0c3d.jpg",
+    "srcset": "/assets/editorial-pools/brand/brand-19-6a048a0c3d-480.webp 480w, /assets/editorial-pools/brand/brand-19-6a048a0c3d-800.webp 800w, /assets/editorial-pools/brand/brand-19-6a048a0c3d-1200.webp 1200w, /assets/editorial-pools/brand/brand-19-6a048a0c3d.jpg 1920w",
+    "alt": "Feuerwehr beim Löschen eines Brandes",
     "width": 1920,
-    "height": 1253,
+    "height": 1322,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Nassauer27 / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4217,16 +4217,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg 1920w",
+    "alt": "Rettungswagen",
     "width": 1920,
-    "height": 1440,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4259,16 +4259,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-1440.webp",
-    "srcset": "/assets/places/golzheim-720.webp 720w, /assets/places/golzheim-1440.webp 1440w",
-    "alt": "Blick über den Wenauer Hof auf St. Gregorius in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg",
+    "srcset": "/assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-480.webp 480w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-800.webp 800w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357-1200.webp 1200w, /assets/editorial-pools/feuerwehr/feuerwehr-06-4cdb4dc357.jpg 1536w",
+    "alt": "Feuerwehrhaus mit Einsatzfahrzeugen",
+    "width": 1536,
+    "height": 912,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4305,16 +4305,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1279w",
+    "alt": "Rettungswagen",
+    "width": 1279,
+    "height": 1706,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4831,16 +4831,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-02-3d716def0b-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-02-3d716def0b.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus in der Hunsgasse in Golzheim",
+    "src": "/assets/editorial-pools/schule/schule-03-dbb36132c8.jpg",
+    "srcset": "/assets/editorial-pools/schule/schule-03-dbb36132c8-480.webp 480w, /assets/editorial-pools/schule/schule-03-dbb36132c8-800.webp 800w, /assets/editorial-pools/schule/schule-03-dbb36132c8-1200.webp 1200w, /assets/editorial-pools/schule/schule-03-dbb36132c8.jpg 1920w",
+    "alt": "Empty Classroom of an Elementary school in Rhineland-Palatinate, Germany",
     "width": 1920,
-    "height": 1280,
+    "height": 1128,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Martin Kraft / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -4953,16 +4953,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/rettung/rettung-01-6ed1c4efcb.jpg",
+    "srcset": "/assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-480.webp 480w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-800.webp 800w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-1200.webp 1200w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb.jpg 1920w",
+    "alt": "A domestic cat ( Felis silvestris libyca ) on the branches of a hawthorn ( Cratægus sp.), in a urban setting",
     "width": 1920,
-    "height": 1280,
+    "height": 1277,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Kintaiyo / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -5549,16 +5549,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/buergewald-1440.webp",
-    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
-    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/technik/technik-11-a6b7200468.jpg",
+    "srcset": "/assets/editorial-pools/technik/technik-11-a6b7200468-480.webp 480w, /assets/editorial-pools/technik/technik-11-a6b7200468-800.webp 800w, /assets/editorial-pools/technik/technik-11-a6b7200468.jpg 1024w",
+    "alt": "photoelectric smoke detector, mounted on the ceiling moderner Heimrauchmelder (optisch), an der Decke montiert photo made by: user:TDLacoste on Feb 3, 2005 first upload: Feb 5, 200",
+    "width": 1024,
+    "height": 768,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "badge": "Symbolbild",
+    "credit": "Nordelch / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -5663,16 +5663,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg 1920w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Wikifreund , Germany / Wikimedia Commons · CC BY 2.5",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6251,16 +6251,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/buergewald-1440.webp",
-    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
-    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/rettung/rettung-02-141ce68b97.jpg",
+    "srcset": "/assets/editorial-pools/rettung/rettung-02-141ce68b97-480.webp 480w, /assets/editorial-pools/rettung/rettung-02-141ce68b97-800.webp 800w, /assets/editorial-pools/rettung/rettung-02-141ce68b97-1200.webp 1200w, /assets/editorial-pools/rettung/rettung-02-141ce68b97.jpg 1920w",
+    "alt": "Katze im Baum",
+    "width": 1920,
+    "height": 1473,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "badge": "Symbolbild",
+    "credit": "Theo Crazzolara / Wikimedia Commons · CC BY-SA 2.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6403,16 +6403,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/buergewald-1440.webp",
-    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
-    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg",
+    "srcset": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-480.webp 480w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-800.webp 800w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-1200.webp 1200w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg 1648w",
+    "alt": "Wildfire in Summer 2003",
+    "width": 1648,
+    "height": 2464,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "badge": "Symbolbild",
+    "credit": "Tilo / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6529,16 +6529,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
+    "width": 1920,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6571,16 +6571,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-10-85fcb93e91.jpg 1920w",
+    "alt": "Rettungswagen",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6609,16 +6609,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg",
+    "srcset": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-480.webp 480w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-800.webp 800w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-1200.webp 1200w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg 1648w",
+    "alt": "Wildfire in Summer 2003",
+    "width": 1648,
+    "height": 2464,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Tilo / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6651,16 +6651,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg",
+    "srcset": "/assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-480.webp 480w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-800.webp 800w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9-1200.webp 1200w, /assets/editorial-pools/flaeche/flaeche-01-c1ee65fef9.jpg 1648w",
+    "alt": "Wildfire in Summer 2003",
+    "width": 1648,
+    "height": 2464,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Tilo / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6765,16 +6765,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/buergewald-1440.webp",
-    "srcset": "/assets/places/buergewald-720.webp 720w, /assets/places/buergewald-1440.webp 1440w",
-    "alt": "Luftbild von Bürgewald, dem früheren Morschenich-Alt",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/rettung/rettung-01-6ed1c4efcb.jpg",
+    "srcset": "/assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-480.webp 480w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-800.webp 800w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb-1200.webp 1200w, /assets/editorial-pools/rettung/rettung-01-6ed1c4efcb.jpg 1920w",
+    "alt": "A domestic cat ( Felis silvestris libyca ) on the branches of a hawthorn ( Cratægus sp.), in a urban setting",
+    "width": 1920,
+    "height": 1277,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Antisyntagmatarchos / Wikimedia Commons · CC0",
+    "badge": "Symbolbild",
+    "credit": "Kintaiyo / Wikimedia Commons · gemeinfrei",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -6883,16 +6883,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg 1920w",
+    "alt": "Rettungswagen im Einsatz",
     "width": 1920,
-    "height": 1253,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Wikifreund , Germany / Wikimedia Commons · CC BY 2.5",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7177,16 +7177,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/golzheim-aachener-strasse-1440.webp",
-    "srcset": "/assets/places/golzheim-aachener-strasse-720.webp 720w, /assets/places/golzheim-aachener-strasse-1440.webp 1440w",
-    "alt": "Denkmalgeschützte Backstein-Hofanlage an der Aachener Straße in Golzheim",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5.jpg 1920w",
+    "alt": "Bird pole at the festival grounds of the “Schützenfest Nieströter” near the Sportzentrum Nord, Dülmen, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 2560,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7219,16 +7219,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-01-6d47317cc5.jpg 1920w",
+    "alt": "Bird pole at the festival grounds of the “Schützenfest Nieströter” near the Sportzentrum Nord, Dülmen, North Rhine-Westphalia, Germany",
     "width": 1920,
-    "height": 1440,
+    "height": 2560,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7257,16 +7257,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/morschenich-1440.webp",
-    "srcset": "/assets/places/morschenich-720.webp 720w, /assets/places/morschenich-1440.webp 1440w",
-    "alt": "Archivaufnahme vom Aufbau des neuen Morschenich im Februar 2015",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34.jpg",
+    "srcset": "/assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-480.webp 480w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-800.webp 800w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34-1200.webp 1200w, /assets/editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34.jpg 1920w",
+    "alt": "Floral decorations on the mock rifles at the “Schützenfest Bürgerschützen” on the market square in Dülmen, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 2560,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · CC BY 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7375,16 +7375,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg",
+    "srcset": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-480.webp 480w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-800.webp 800w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp 1200w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg 1600w",
+    "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
+    "width": 1600,
+    "height": 1060,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7493,16 +7493,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
-    "width": 1920,
-    "height": 1280,
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1279w",
+    "alt": "Rettungswagen",
+    "width": 1279,
+    "height": 1706,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7573,16 +7573,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
     "width": 1920,
-    "height": 1280,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7611,16 +7611,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7653,16 +7653,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
+    "width": 1920,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7699,16 +7699,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
+    "width": 1920,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7737,16 +7737,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/themen/themen-11-59fc252a23.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-11-59fc252a23-480.webp 480w, /assets/editorial-pools/themen/themen-11-59fc252a23-800.webp 800w, /assets/editorial-pools/themen/themen-11-59fc252a23-1200.webp 1200w, /assets/editorial-pools/themen/themen-11-59fc252a23.jpg 1920w",
+    "alt": "Jugendzeltplatz Am Stürzenhardter Brückle",
     "width": 1920,
-    "height": 1253,
+    "height": 1080,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7779,16 +7779,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
     "width": 1920,
-    "height": 1440,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7863,16 +7863,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
-    "alt": "Rathaus Merzenich von der Straße aus",
-    "width": 1024,
-    "height": 768,
+    "src": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg",
+    "srcset": "/assets/editorial-pools/unfall/unfall-01-d28ac4c922-480.webp 480w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-800.webp 800w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922-1200.webp 1200w, /assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg 1920w",
+    "alt": "Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland",
+    "width": 1920,
+    "height": 1478,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "badge": "Symbolbild",
+    "credit": "Huhu Uet / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7905,16 +7905,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/girbelsrath-1440.webp",
-    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8035,16 +8035,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg 1920w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich",
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
     "width": 1920,
     "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8073,16 +8073,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
-    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
-    "width": 1920,
-    "height": 1280,
+    "src": "/assets/editorial-pools/sport/sport-20-f1adf37954.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-20-f1adf37954-480.webp 480w, /assets/editorial-pools/sport/sport-20-f1adf37954-800.webp 800w, /assets/editorial-pools/sport/sport-20-f1adf37954-1200.webp 1200w, /assets/editorial-pools/sport/sport-20-f1adf37954.jpg 1504w",
+    "alt": "Sporthalle",
+    "width": 1504,
+    "height": 800,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "J.-H. Janßen / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8161,16 +8161,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-bergstrasse-1440.webp",
-    "srcset": "/assets/places/merzenich-bergstrasse-720.webp 720w, /assets/places/merzenich-bergstrasse-1440.webp 1440w",
-    "alt": "Denkmalgeschütztes Fachwerkhaus an der Bergstraße in Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8199,16 +8199,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-04-eb21dd443a.jpg 1920w",
+    "alt": "Rettungswagen im Einsatz",
+    "width": 1920,
+    "height": 1440,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Wikifreund , Germany / Wikimedia Commons · CC BY 2.5",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8241,16 +8241,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-1440.webp",
-    "srcset": "/assets/places/merzenich-720.webp 720w, /assets/places/merzenich-1440.webp 1440w",
-    "alt": "Historisches Fachwerkhaus im Ortskern von Merzenich",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1920,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8325,16 +8325,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
     "width": 1920,
-    "height": 1253,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -8359,16 +8359,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg 1920w",
-    "alt": "Alte katholische Pfarrkirche in Merzenich",
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
     "width": 1920,
-    "height": 1440,
+    "height": 1280,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -9017,66 +9017,71 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-10-26-einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026",
-  "url": "/rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
-  "titel": "Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei"
+  "id": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
+  "url": "/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
+  "titel": "Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt"
  },
  "nebenmeldungen": [
   {
-   "id": "2026-10-26-pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder",
-   "url": "/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/",
-   "titel": "Pfarrer Andreas Galbierz gibt die Leitung der Pfarrei St. Laurentius zum 31. Januar 2027 ab"
+   "id": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
+   "url": "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
+   "titel": "Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt"
   },
   {
-   "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
-   "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
-   "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober"
+   "id": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
+   "url": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
+   "titel": "KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe"
   },
   {
-   "id": "2026-10-19-einsatz-141-oelspur-merzenich",
-   "url": "/blaulicht/einsatz-141-oelspur-merzenich/",
-   "titel": "Ölspur in Merzenich: Einsatz 141/26 der Feuerwehr"
+   "id": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
+   "url": "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
+   "titel": "Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt"
   },
   {
-   "id": "2026-10-16-klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026",
-   "url": "/rathaus/klimaanpassung-gruenflaechen-bluehwiesen-merzenich-2026/",
-   "titel": "Klimaanpassung: Gemeinde setzt auf Stauden, Blühwiesen und seltener gemähte Flächen"
+   "id": "2026-10-26-einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026",
+   "url": "/rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
+   "titel": "Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei"
   }
  ],
  "startseitenMotive": {
-  "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 1,
-  "editorial-pools/aktuell/aktuell-02-3d716def0b": 2,
-  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
+  "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
+  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
-  "editorial-pools/aktuell/aktuell-10-9c5a4aeb44": 1,
-  "editorial-pools/aktuell/aktuell-13-33d9d347f2": 2,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
   "editorial-pools/brand/brand-19-6a048a0c3d": 1,
-  "editorial-pools/feuerwehr/feuerwehr-01-cacd404127": 1,
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
+  "editorial-pools/feuerwehr/feuerwehr-14-7cb6e8b04c": 1,
+  "editorial-pools/feuerwehr/feuerwehr-15-78d45fb015": 1,
+  "editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f": 1,
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
+  "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/menschen/menschen-06-1835323b3c": 1,
-  "editorial-pools/tanzdetail/tanzdetail-01-f2d17e652a": 2,
-  "editorial-pools/technik/technik-05-81cd88e925": 2,
-  "editorial-pools/technik/technik-07-c67b406470": 2,
+  "editorial-pools/technik/technik-05-81cd88e925": 1,
+  "editorial-pools/technik/technik-07-c67b406470": 1,
+  "editorial-pools/themen/themen-01-0394d77d0b": 1,
+  "editorial-pools/themen/themen-07-fe61f0f669": 1,
+  "editorial-pools/themen/themen-08-5f0f3260df": 1,
+  "editorial-pools/themen/themen-11-59fc252a23": 1,
+  "editorial-pools/themen/themen-12-1e67d8491e": 1,
+  "editorial-pools/themen/themen-15-30a6b323da": 1,
+  "editorial-pools/themen/themen-16-b1fd3ef820": 1,
+  "editorial-pools/themen/themen-19-deb8f481da": 2,
   "editorial-pools/tipp/tipp-21-b2be2ca7e2": 1,
-  "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
+  "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
+  "editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34": 1,
+  "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 2,
+  "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 1,
   "editorial-pools/wirtschaft/wirtschaft-05-94380a1858": 2,
   "places/buergewald": 1,
   "places/girbelsrath": 2,
-  "places/golzheim": 2,
-  "places/golzheim-aachener-strasse": 1,
-  "places/merzenich": 2,
-  "places/merzenich-bergstrasse": 2,
-  "places/merzenich-st-laurentius": 1,
+  "places/golzheim": 1,
+  "places/merzenich": 1,
   "places/morschenich": 1,
-  "responsive/0f626136429ef9": 1,
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
-  "responsive/939564298cdfdc": 1,
   "responsive/f507b5f3e2c7d3": 1,
   "werben/format-artikelanzeige": 2,
   "werben/format-sidebar": 2,
@@ -9088,9 +9093,9 @@
  "buehnenMotive": [
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a",
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
-  "editorial-pools/menschen/menschen-01-686bb6fb4c",
-  "editorial-pools/technik/technik-05-81cd88e925",
-  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858"
+  "editorial-pools/themen/themen-16-b1fd3ef820",
+  "editorial-pools/themen/themen-19-deb8f481da",
+  "editorial-pools/unfall/unfall-01-d28ac4c922"
  ],
  "motivMax": 2
 }

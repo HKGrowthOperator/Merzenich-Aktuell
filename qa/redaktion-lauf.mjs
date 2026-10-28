@@ -18,9 +18,12 @@
  *     "recherche-claude") mindestens zwei verschiedene Quell-URLs ausserhalb merzenich-aktuell.de
  *     (Ausnahme: Feld quellenausnahme mit Begruendung). Claude-Pakete vor REGEL_AB melden das
  *     nur als Hinweis (--streng: Fehler). Updates in Nicht-Claude-Dateien prueft das Skript nicht.
+ *     Ab REGEL_V3_AB (29.10.2026) in Claude-Paketen ausserdem: mindestens drei verschiedene
+ *     Quellen, Standardtext mindestens 450 Woerter, und die Artikelseite zeigt keine Ortsansicht,
+ *     wenn die Bildklasse Motive nennt (Bild muss zum Thema passen). Davor nur Hinweise.
  *   B Termine: Pflichtfelder, quelle.url https, quelle.stand, start/ende mit Zeitzone,
- *     ende nicht vor start, Slug eindeutig; in Claude-Paketen "entwurf": true (sonst ist
- *     der Termin ohne Freigabe online); im Paket des Laufs kein Start vor --datum.
+ *     ende nicht vor start, Slug eindeutig; im Paket des Laufs kein Start vor --datum.
+ *     Claude-Termine gehen direkt online; "entwurf": true nur, wenn der Termin in die Freigabe soll.
  *   C Umkreis: ort aus der Liste in deploy/umkreis.mjs, url https, datum YYYY-MM-DD, titel,
  *     rubrik, quelle.
  *   D Register: node deploy/register-pflege.mjs --check muss gruen sein (ohne --datum ist
@@ -48,8 +51,12 @@ const DATUM = opt('--datum');
 const LAUF = opt('--lauf');
 const STRENG = args.includes('--streng');
 const ALS_JSON = args.includes('--json');
-// Ab diesem Paketdatum gelten Zwei-Quellen-Regel und Termin-Entwurf als Fehler (Regel seit 26./27.10.2026).
+// Ab diesem Paketdatum gilt die Zwei-Quellen-Regel als Fehler (Regel seit 26./27.10.2026).
 const REGEL_AB = '2026-10-27';
+// Ab diesem Paketdatum (Entscheidung Luis Kummer 28.10.2026, Claude-Beitraege gehen direkt live):
+// Standardtext mindestens 450 Woerter, mindestens drei verschiedene Quellen, Bild passend zum Thema.
+const REGEL_V3_AB = '2026-10-29';
+const V3_STANDARD_WOERTER = 450;
 
 const ARTIKELTYPEN = { kurzmeldung: [80, 2, 2], standard: [300, 4, 4], vertiefung: [450, 5, 5], hintergrund: [700, 7, 5] };
 const RESSORTS = ['blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine'];
@@ -93,10 +100,25 @@ function quelleOk(b, q, name) {
 let bildklassen = {};
 try { bildklassen = JSON.parse(readFileSync(join(wurzel, 'deploy', 'bildklassen.json'), 'utf8')).klassen || {}; }
 catch { H('deploy/bildklassen.json', 'nicht lesbar, Bildklassen ungeprueft'); }
+// Bild passend zum Thema (Entscheidung Luis Kummer 28.10.2026): zeigt die erzeugte Artikelseite eine
+// Ortsansicht, obwohl die Bildklasse Motive nennt, fehlt ein passendes Foto. Fehler ab REGEL_V3_AB.
+const SEITE = join(wurzel, 'chatgpt-site');
+const seitenOrdner = existsSync(SEITE) ? readdirSync(SEITE, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name) : [];
+function bildPruefen(b, m, streng) {
+  const ordner = seitenOrdner.find((o) => existsSync(join(SEITE, o, m.slug || '-', 'index.html')));
+  if (!ordner) { H(b, 'Artikelseite nicht gefunden (Kette gelaufen?), Bild ungeprueft'); return; }
+  const html = readFileSync(join(SEITE, ordner, m.slug, 'index.html'), 'utf8');
+  if (!/data-bildstufe="O"/.test(html)) return;
+  const motive = (bildklassen[m.bildklasse] || {}).motive || [];
+  if (!m.bildklasse) (streng ? F : H)(b, 'Ortsansicht statt Themenbild: bildklasse fehlt');
+  else if (motive.length) (streng ? F : H)(b, `Ortsansicht statt Themenbild: kein gesichtetes Foto fuer ${m.bildklasse} (${motive.join('/')}); Foto importieren oder passendere Bildklasse`);
+  else H(b, `Ortsansicht: Bildklasse ${m.bildklasse} hat kein Motiv; Themenfoto ergaenzen, wenn es eines gibt`);
+}
 const slugs = new Map();
 for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
   const claude = datei.includes('recherche-claude');
   const regel = claude && (paketDatum(datei) >= REGEL_AB || STRENG);
+  const v3 = claude && (paketDatum(datei) >= REGEL_V3_AB || STRENG);
   const v2 = Number(daten.redaktionsstandard) >= 2;
   for (const m of daten.meldungen || []) {
     const b = `meldungen/${datei}/${m.slug || '?'}`;
@@ -127,6 +149,14 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
       (regel ? F : H)(b, `nur ${fremd.length} Quelle(n) ausser merzenich-aktuell.de; Zwei-Quellen-Regel (oder quellenausnahme mit Begruendung)`);
     }
     if (claude && m.artikeltyp !== 'kurzmeldung' && new Set(fremd.map((q) => host(q.url))).size === 1) H(b, `alle Quellen von ${host(fremd[0].url)}; unabhaengige Zweitquelle pruefen`);
+    if (claude) {
+      // Ab REGEL_V3_AB: laenger, mehr Quellen (SCHREIBREGELN.md Abschnitt Laenge und Quellen).
+      const alleUrls = new Set(urls);
+      if (alleUrls.size < 3 && !m.quellenausnahme) (v3 ? F : H)(b, `${alleUrls.size} Quelle(n); mindestens drei verschiedene Quellen (oder quellenausnahme mit Begruendung)`);
+      if (m.artikeltyp === 'standard' && woerter(m) < V3_STANDARD_WOERTER) (v3 ? F : H)(b, `Standardtext mit ${woerter(m)} Woertern; Claude-Standard mindestens ${V3_STANDARD_WOERTER}`);
+      if (m.artikeltyp === 'kurzmeldung' && m.ressort !== 'blaulicht' && !m.service) H(b, 'Kurzmeldung ausserhalb Blaulicht/Service; Standardtext ist der Regelfall');
+      bildPruefen(b, m, v3);
+    }
     if (m.ressort === 'blaulicht') {
       const treffer = [m.dek, ...(m.absaetze || [])].join(' ').match(/\b[A-ZÄÖÜ][a-zäöüß]+(straße|str\.|weg|gasse|platz|allee|ring)\s+\d+[a-z]?\b/);
       if (treffer && !/^(Land|Bundes|Kreis)stra/.test(treffer[0])) H(b, `moegliche Hausnummer im Blaulicht-Text: "${treffer[0]}"`);
@@ -146,7 +176,9 @@ for (const { datei, daten } of jsonDateien('inhalte/termine')) {
     if (!claude) continue; // Altbestand: deploy/termine.mjs
     const fehlt = TERMIN_PFLICHT.filter((k) => t[k] === undefined || t[k] === '' || (Array.isArray(t[k]) && !t[k].length));
     if (fehlt.length) F(b, `Pflichtfelder fehlen: ${fehlt.join(', ')}`);
-    if (t.entwurf !== true) F(b, '"entwurf": true fehlt; ohne das Feld geht der Termin ohne Freigabe online');
+    // Seit 28.10.2026 gehen Claude-Termine direkt online (Entscheidung Luis Kummer); "entwurf": true
+    // setzt der Lauf nur, wenn er unsicher ist und der Termin gezielt in die Freigabe soll.
+    if (t.entwurf === true) H(b, 'Termin als Entwurf markiert: geht nicht online, sondern in die Freigabe');
     if (!MIT_ZONE.test(t.start || '') || Number.isNaN(Date.parse(t.start))) F(b, `start ohne Zeitzone oder unlesbar (${t.start})`);
     if (t.ende && (!MIT_ZONE.test(t.ende) || Date.parse(t.ende) < Date.parse(t.start))) F(b, `ende ohne Zeitzone oder vor start (${t.ende})`);
     if (laufPaket && String(t.start).slice(0, 10) < DATUM) F(b, `Termin liegt vor dem Laufdatum ${DATUM}`);

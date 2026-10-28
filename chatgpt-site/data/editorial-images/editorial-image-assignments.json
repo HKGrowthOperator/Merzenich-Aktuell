@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T15:42:35.415Z",
+  "updatedAt": "2026-10-28T09:39:03.891Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -728,6 +728,798 @@
       "assignedAt": "2026-10-26T15:42:35.414Z",
       "articleId": "2026-10-26-pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder",
       "articleDate": "2026-10-26T17:20:00+01:00"
+    },
+    "/blaulicht/betrueger-burgstrasse-gestellt/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.festnahme",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-01-23-betrueger-burgstrasse-gestellt",
+      "articleDate": "2026-01-23T12:00:00+01:00"
+    },
+    "/blaulicht/einbruch-marienstrasse/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.einbruch",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-01-30-einbruch-marienstrasse",
+      "articleDate": "2026-01-30T10:30:00+01:00"
+    },
+    "/blaulicht/einbruch-arnoldsweilerweg-februar/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.einbruch",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-02-20-einbruch-arnoldsweilerweg-februar",
+      "articleDate": "2026-02-20T10:35:00+01:00"
+    },
+    "/blaulicht/brand-schuetzenstrasse-waeschetrockner/": {
+      "imageId": "web-blaulicht-04-eb21dd44",
+      "pool": "blaulicht",
+      "motiv": "einsatzfahrzeuge",
+      "regel": "blaulicht.feuer.innen",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-02-23-brand-schuetzenstrasse-waeschetrockner",
+      "articleDate": "2026-02-23T10:29:00+01:00"
+    },
+    "/blaulicht/werkzeug-aus-transporter-in-der-lohe/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.diebstahl",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-02-25-werkzeug-aus-transporter-in-der-lohe",
+      "articleDate": "2026-02-25T09:20:00+01:00"
+    },
+    "/sport/bsc-merzenich-la-rocca-europameister/": {
+      "imageId": "web-sport-20-f1adf379",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.billard",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-03-13-bsc-merzenich-la-rocca-europameister",
+      "articleDate": "2026-03-13T14:43:00+01:00"
+    },
+    "/blaulicht/einbruch-buirer-strasse-waffenschrank/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.einbruch",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-03-17-einbruch-buirer-strasse-waffenschrank",
+      "articleDate": "2026-03-17T09:30:00+01:00"
+    },
+    "/blaulicht/motorroller-gestohlen-am-fronhof/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.diebstahl.kfz",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-04-02-motorroller-gestohlen-am-fronhof",
+      "articleDate": "2026-04-02T12:00:00+02:00"
+    },
+    "/blaulicht/motorradfahrer-stuerzt-beim-abbiegen-b264/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-04-07-motorradfahrer-stuerzt-beim-abbiegen-b264",
+      "articleDate": "2026-04-07T12:07:00+02:00"
+    },
+    "/blaulicht/gestohlenes-auto-ueberschlagen-festnahme/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.festnahme",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-05-27-gestohlenes-auto-ueberschlagen-festnahme",
+      "articleDate": "2026-05-27T09:55:00+02:00"
+    },
+    "/vereine/pfadfinder-merzenich-pfingsten-westernohe/": {
+      "imageId": "web-themen-11-59fc252a",
+      "pool": "themen",
+      "motiv": "zeltplatz",
+      "regel": "vereine.jugend",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-05-30-pfadfinder-merzenich-pfingsten-westernohe",
+      "articleDate": "2026-05-30T16:38:00+02:00"
+    },
+    "/blaulicht/unfallflucht-radfahrer-bahnstrasse/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-06-02-unfallflucht-radfahrer-bahnstrasse",
+      "articleDate": "2026-06-02T09:45:00+02:00"
+    },
+    "/blaulicht/abgelenkt-auffahrunfall-l264-drei-autos/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-06-05-abgelenkt-auffahrunfall-l264-drei-autos",
+      "articleDate": "2026-06-05T11:55:00+02:00"
+    },
+    "/blaulicht/festnahmen-serie-pkw-aufbrueche/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "polizei.festnahme",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-06-17-festnahmen-serie-pkw-aufbrueche",
+      "articleDate": "2026-06-17T13:32:00+02:00"
+    },
+    "/blaulicht/abbiegeunfall-b264-muehlenstrasse/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-06-23-abbiegeunfall-b264-muehlenstrasse",
+      "articleDate": "2026-06-23T09:30:00+02:00"
+    },
+    "/blaulicht/e-scooter-auffahrunfall-duerener-strasse/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-07-14-e-scooter-auffahrunfall-duerener-strasse",
+      "articleDate": "2026-07-14T09:45:00+02:00"
+    },
+    "/leben/tagespflege-fak-merzenich-25-jahre/": {
+      "imageId": "web-kultur-01-8826d38c",
+      "pool": "kultur",
+      "motiv": "veranstaltungssaal",
+      "regel": "leben.senioren",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-07-21-tagespflege-fak-merzenich-25-jahre",
+      "articleDate": "2026-07-21T13:36:00+02:00"
+    },
+    "/menschen/schuetzen-merzenich-kaiser-matthias-hoehn-2026/": {
+      "imageId": "web-veranstaltungen-01-6d47317c",
+      "pool": "veranstaltungen",
+      "motiv": "schuetzen",
+      "regel": "vereine.schuetzen.kreis",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-07-24-schuetzen-merzenich-kaiser-matthias-hoehn-2026",
+      "articleDate": "2026-07-24T12:00:00+02:00"
+    },
+    "/menschen/schuetzen-morschenich-koenigspaar-sistig-2026/": {
+      "imageId": "web-veranstaltungen-09-737ed00d",
+      "pool": "veranstaltungen",
+      "motiv": "schuetzen",
+      "regel": "vereine.schuetzen.kreis",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-07-24-schuetzen-morschenich-koenigspaar-sistig-2026",
+      "articleDate": "2026-07-24T12:00:00+02:00"
+    },
+    "/menschen/schuetzen-golzheim-koenigin-jennifer-krause-2026/": {
+      "imageId": "web-veranstaltungen-01-6d47317c",
+      "pool": "veranstaltungen",
+      "motiv": "schuetzen",
+      "regel": "vereine.schuetzen.kreis",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-07-24-schuetzen-golzheim-koenigin-jennifer-krause-2026",
+      "articleDate": "2026-07-24T12:10:00+02:00"
+    },
+    "/blaulicht/einsatz-109-gullibrand-valdersweg/": {
+      "imageId": "web-blaulicht-04-eb21dd44",
+      "pool": "blaulicht",
+      "motiv": "einsatzfahrzeuge",
+      "regel": "blaulicht.feuer.klein",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-01-einsatz-109-gullibrand-valdersweg",
+      "articleDate": "2026-08-01T17:23:00+02:00"
+    },
+    "/blaulicht/einsatz-111-tierfang-buergewald/": {
+      "imageId": "web-rettung-01-6ed1c4ef",
+      "pool": "rettung",
+      "motiv": "tierrettung",
+      "regel": "blaulicht.rettung.tier",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-06-einsatz-111-tierfang-buergewald",
+      "articleDate": "2026-08-06T18:27:00+02:00"
+    },
+    "/menschen/flaechenbrand-girbelsrath-landwirte-feuerschneisen/": {
+      "imageId": "web-flaeche-01-c1ee65fe",
+      "pool": "flaeche",
+      "motiv": "flaechenbrand",
+      "regel": "blaulicht.feuer.flaeche",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-10-flaechenbrand-girbelsrath-landwirte-feuerschneisen",
+      "articleDate": "2026-08-10T19:18:00+02:00"
+    },
+    "/blaulicht/einsatz-113-glutnester-girbelsrath/": {
+      "imageId": "web-flaeche-01-c1ee65fe",
+      "pool": "flaeche",
+      "motiv": "flaechenbrand",
+      "regel": "blaulicht.feuer.nachloeschen",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-10-einsatz-113-glutnester-girbelsrath",
+      "articleDate": "2026-08-10T19:59:00+02:00"
+    },
+    "/blaulicht/einsatz-114-unfall-b264-valdersweg/": {
+      "imageId": "web-blaulicht-10-85fcb93e",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-11-einsatz-114-unfall-b264-valdersweg",
+      "articleDate": "2026-08-11T16:12:00+02:00"
+    },
+    "/blaulicht/unfall-pkw-fahrrad-am-rosspfad/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-12-unfall-pkw-fahrrad-am-rosspfad",
+      "articleDate": "2026-08-12T13:17:00+02:00"
+    },
+    "/blaulicht/einsatz-117-boeschungsbrand-buergewald/": {
+      "imageId": "web-flaeche-01-c1ee65fe",
+      "pool": "flaeche",
+      "motiv": "flaechenbrand",
+      "regel": "blaulicht.feuer.flaeche",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-13-einsatz-117-boeschungsbrand-buergewald",
+      "articleDate": "2026-08-13T17:10:00+02:00"
+    },
+    "/blaulicht/einsatz-120-hund-l264/": {
+      "imageId": "web-rettung-02-141ce68b",
+      "pool": "rettung",
+      "motiv": "tierrettung",
+      "regel": "blaulicht.rettung.tier",
+      "assignedAt": "2026-10-28T09:39:03.888Z",
+      "articleId": "2026-08-20-einsatz-120-hund-l264",
+      "articleDate": "2026-08-20T11:41:00+02:00"
+    },
+    "/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/": {
+      "imageId": "web-blaulicht-04-eb21dd44",
+      "pool": "blaulicht",
+      "motiv": "einsatzfahrzeuge",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.889Z",
+      "articleId": "2026-09-05-einsatz-123-person-hinter-tuer-steinpfahl",
+      "articleDate": "2026-09-05T06:28:00+02:00"
+    },
+    "/blaulicht/einsatz-125-rauchmelder-buergewald/": {
+      "imageId": "web-technik-11-a6b72004",
+      "pool": "technik",
+      "motiv": "rauchmelder",
+      "regel": "blaulicht.alarm.rauchmelder",
+      "assignedAt": "2026-10-28T09:39:03.889Z",
+      "articleId": "2026-09-12-einsatz-125-rauchmelder-buergewald",
+      "articleDate": "2026-09-12T21:59:00+02:00"
+    },
+    "/blaulicht/katze-baum-vogelrute/": {
+      "imageId": "web-rettung-01-6ed1c4ef",
+      "pool": "rettung",
+      "motiv": "tierrettung",
+      "regel": "tierrettung",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-24-katze-baum-vogelrute",
+      "articleDate": "2026-09-24T14:14:00+02:00"
+    },
+    "/leben/grundschulen-tag-offene-tuer/": {
+      "imageId": "web-schule-03-dbb36132",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "schule",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-24-grundschulen-tag-offene-tuer",
+      "articleDate": "2026-09-24T14:20:00+02:00"
+    },
+    "/blaulicht/abbiegeunfall-motorradfahrer-steinweg/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-26-abbiegeunfall-motorradfahrer-steinweg",
+      "articleDate": "2026-09-26T07:20:00+02:00"
+    },
+    "/blaulicht/einsatz-130-person-hinter-tuer-golzheim/": {
+      "imageId": "web-feuerwehr-06-4cdb4dc3",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-26-einsatz-130-person-hinter-tuer-golzheim",
+      "articleDate": "2026-09-26T09:36:00+02:00"
+    },
+    "/blaulicht/einsatz-131-unfall-b264-l264/": {
+      "imageId": "web-blaulicht-10-85fcb93e",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-26-einsatz-131-unfall-b264-l264",
+      "articleDate": "2026-09-26T10:10:00+02:00"
+    },
+    "/blaulicht/einsatz-132-unrat-aachener-strasse/": {
+      "imageId": "web-brand-19-6a048a0c",
+      "pool": "brand",
+      "motiv": "brand",
+      "regel": "blaulicht.feuer.klein",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-27-einsatz-132-unrat-aachener-strasse",
+      "articleDate": "2026-09-27T20:06:00+02:00"
+    },
+    "/blaulicht/einsatz-133-unrat-a4-niederzier/": {
+      "imageId": "web-brand-19-6a048a0c",
+      "pool": "brand",
+      "motiv": "brand",
+      "regel": "blaulicht.feuer.klein",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-27-einsatz-133-unrat-a4-niederzier",
+      "articleDate": "2026-09-27T20:31:00+02:00"
+    },
+    "/vereine/pfadfinder-erntedank-girbelsrath-2026/": {
+      "imageId": "web-themen-21-193cdcf1",
+      "pool": "themen",
+      "motiv": "erntekrone",
+      "regel": "vereine.erntedank",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-28-pfadfinder-erntedank-girbelsrath-2026",
+      "articleDate": "2026-09-28T18:06:00+02:00"
+    },
+    "/blaulicht/einsatz-134-rauch-buergewald-am-kamp/": {
+      "imageId": "web-feuerwehr-10-91d83757",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.feuer.klein",
+      "assignedAt": "2026-10-28T09:39:03.890Z",
+      "articleId": "2026-09-28-einsatz-134-rauch-buergewald-am-kamp",
+      "articleDate": "2026-09-28T20:52:00+02:00"
+    },
+    "/blaulicht/einsatz-135-person-hinter-tuer-girbelsrath/": {
+      "imageId": "web-feuerwehr-11-d25c0ad6",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-01-einsatz-135-person-hinter-tuer-girbelsrath",
+      "articleDate": "2026-10-01T12:03:00+02:00"
+    },
+    "/blaulicht/einsatz-138-person-hinter-tuer-merzenich/": {
+      "imageId": "web-feuerwehr-14-7cb6e8b0",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-einsatz-138-person-hinter-tuer-merzenich",
+      "articleDate": "2026-10-04T11:03:00+02:00"
+    },
+    "/leben/kgs-am-weinberg-schulanmeldung-2027-2028-oktober-2026/": {
+      "imageId": "web-schule-05-800f5134",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "leben.schule.anmeldung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-kgs-am-weinberg-schulanmeldung-2027-2028-oktober-2026",
+      "articleDate": "2026-10-04T12:14:00+02:00"
+    },
+    "/vereine/kreismajestaetenschiessen-morschenich-2026-zeitangaben/": {
+      "imageId": "web-veranstaltungen-09-737ed00d",
+      "pool": "veranstaltungen",
+      "motiv": "schuetzen",
+      "regel": "vereine.schuetzen.kreis",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-kreismajestaetenschiessen-morschenich-2026-zeitangaben",
+      "articleDate": "2026-10-04T12:26:00+02:00"
+    },
+    "/sport/tv-golzheim-tischtennis-september-2026/": {
+      "imageId": "web-sport-20-f1adf379",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis.ergebnis",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-tv-golzheim-tischtennis-september-2026",
+      "articleDate": "2026-10-04T12:37:00+02:00"
+    },
+    "/sport/ttc-merzenich-ergebnisse-september-2026/": {
+      "imageId": "web-sport-20-f1adf379",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis.ergebnis",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-ttc-merzenich-ergebnisse-september-2026",
+      "articleDate": "2026-10-04T12:38:00+02:00"
+    },
+    "/rathaus/amtsblatt-11-2026-abgabeschluss-6-oktober/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-amtsblatt-11-2026-abgabeschluss-6-oktober",
+      "articleDate": "2026-10-04T12:42:00+02:00"
+    },
+    "/blaulicht/einsatz-137-person-hinter-tuer-morschenich/": {
+      "imageId": "web-feuerwehr-15-78d45fb0",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-04-einsatz-137-person-hinter-tuer-morschenich",
+      "articleDate": "2026-10-04T17:23:00+02:00"
+    },
+    "/vereine/msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026/": {
+      "imageId": "web-veranstaltungen-15-ab467209",
+      "pool": "veranstaltungen",
+      "motiv": "festzelt",
+      "regel": "vereine.hitnight",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-06-msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026",
+      "articleDate": "2026-10-06T09:17:00+02:00"
+    },
+    "/leben/online-seminarreihe-krisenvorsorge-november-2026/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "leben.vorsorge",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-online-seminarreihe-krisenvorsorge-november-2026",
+      "articleDate": "2026-10-13T07:30:00+02:00"
+    },
+    "/rathaus/haushalt-2027-zeitplan-merzenich/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-haushalt-2027-zeitplan-merzenich",
+      "articleDate": "2026-10-13T07:45:00+02:00"
+    },
+    "/rathaus/kulturkalender-merzenich-termine-bis-19-oktober-2026/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-kulturkalender-merzenich-termine-bis-19-oktober-2026",
+      "articleDate": "2026-10-13T08:00:00+02:00"
+    },
+    "/sport/ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026/": {
+      "imageId": "web-sport-08-c10997cd",
+      "pool": "sport",
+      "motiv": "sporthalle",
+      "regel": "sport.tischtennis.ergebnis",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-ttc-merzenich-damen-und-vierte-gewinnen-9-oktober-2026",
+      "articleDate": "2026-10-13T08:15:00+02:00"
+    },
+    "/leben/rueckblick-oldieabend-ortsfest-merzenich-2026/": {
+      "imageId": "web-veranstaltungen-15-ab467209",
+      "pool": "veranstaltungen",
+      "motiv": "festzelt",
+      "regel": "leben.ortsfest",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-rueckblick-oldieabend-ortsfest-merzenich-2026",
+      "articleDate": "2026-10-13T08:45:00+02:00"
+    },
+    "/leben/kita-navigator-vormerkung-kita-jahr-2027-28/": {
+      "imageId": "web-schule-09-c727ea70",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "leben.schule.anmeldung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-13-kita-navigator-vormerkung-kita-jahr-2027-28",
+      "articleDate": "2026-10-13T09:30:00+02:00"
+    },
+    "/rathaus/strukturausschuss-15-oktober-ruhbens-rwe-neuland-hambach/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-strukturausschuss-15-oktober-ruhbens-rwe-neuland-hambach",
+      "articleDate": "2026-10-14T13:00:00+02:00"
+    },
+    "/leben/ganztag-grundschulen-kreis-dueren-kooperationsvereinbarung-2026/": {
+      "imageId": "web-schule-12-e8ff2c48",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "leben.schule.anmeldung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-ganztag-grundschulen-kreis-dueren-kooperationsvereinbarung-2026",
+      "articleDate": "2026-10-14T13:20:00+02:00"
+    },
+    "/wirtschaft/ki-workshop-kmu-kreis-dueren-22-oktober-2026/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "wirtschaft.weiterbildung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-ki-workshop-kmu-kreis-dueren-22-oktober-2026",
+      "articleDate": "2026-10-14T13:30:00+02:00"
+    },
+    "/leben/fos-polizei-bewerbung-schuljahr-2027-2028-dueren/": {
+      "imageId": "web-schule-13-cfbe8f31",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "leben.schule.anmeldung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-fos-polizei-bewerbung-schuljahr-2027-2028-dueren",
+      "articleDate": "2026-10-14T13:40:00+02:00"
+    },
+    "/leben/a4-baustelle-anschlussstelle-dueren-15-oktober-2026/": {
+      "imageId": "web-themen-06-bc6b8eed",
+      "pool": "themen",
+      "motiv": "baustelle",
+      "regel": "verkehr.baustelle",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-a4-baustelle-anschlussstelle-dueren-15-oktober-2026",
+      "articleDate": "2026-10-14T13:50:00+02:00"
+    },
+    "/rathaus/gemeinde-merzenich-sucht-fachbereichsleitung-planen-und-bauen/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "gemeinde.stellenangebot",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-14-gemeinde-merzenich-sucht-fachbereichsleitung-planen-und-bauen",
+      "articleDate": "2026-10-14T14:10:00+02:00"
+    },
+    "/leben/altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026/": {
+      "imageId": "web-themen-20-72a84de4",
+      "pool": "themen",
+      "motiv": "papiertonne",
+      "regel": "gemeinde.abfall",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-15-altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026",
+      "articleDate": "2026-10-15T20:30:00+02:00"
+    },
+    "/leben/jugendbus-wilde-13-donnerstags-golzheim-schuetzenhalle-2026/": {
+      "imageId": "web-themen-11-59fc252a",
+      "pool": "themen",
+      "motiv": "zeltplatz",
+      "regel": "vereine.jugend",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-15-jugendbus-wilde-13-donnerstags-golzheim-schuetzenhalle-2026",
+      "articleDate": "2026-10-15T20:40:00+02:00"
+    },
+    "/leben/martinszuege-2026-alle-ortsteile-gemeinde-merzenich/": {
+      "imageId": "web-themen-04-a4cc30a6",
+      "pool": "themen",
+      "motiv": "martinsfeuer",
+      "regel": "leben.brauchtum",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-martinszuege-2026-alle-ortsteile-gemeinde-merzenich",
+      "articleDate": "2026-10-16T09:00:00+02:00"
+    },
+    "/rathaus/ortsfest-oldieabend-team-ortsfest-ehrenamtliche-gesucht-2026/": {
+      "imageId": "web-veranstaltungen-15-ab467209",
+      "pool": "veranstaltungen",
+      "motiv": "festzelt",
+      "regel": "leben.ortsfest",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-ortsfest-oldieabend-team-ortsfest-ehrenamtliche-gesucht-2026",
+      "articleDate": "2026-10-16T09:04:00+02:00"
+    },
+    "/vereine/kraetzchensitzung-weinberghalle-23-januar-2027/": {
+      "imageId": "web-themen-15-30a6b323",
+      "pool": "themen",
+      "motiv": "karneval",
+      "regel": "vereine.karneval",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-kraetzchensitzung-weinberghalle-23-januar-2027",
+      "articleDate": "2026-10-16T09:08:00+02:00"
+    },
+    "/leben/pluriversum-17-november-2026-gesamtschule-merzenich/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "leben.veranstaltung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-pluriversum-17-november-2026-gesamtschule-merzenich",
+      "articleDate": "2026-10-16T09:12:00+02:00"
+    },
+    "/leben/lebendiger-adventskalender-2026-gastgeber-gesucht/": {
+      "imageId": "web-veranstaltungen-18-246e60a7",
+      "pool": "veranstaltungen",
+      "motiv": "adventskalender",
+      "regel": "leben.brauchtum.advent",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-lebendiger-adventskalender-2026-gastgeber-gesucht",
+      "articleDate": "2026-10-16T09:20:00+02:00"
+    },
+    "/vereine/adventmarkt-heimatmuseum-merzenich-28-29-november-2026/": {
+      "imageId": "web-veranstaltungen-18-246e60a7",
+      "pool": "veranstaltungen",
+      "motiv": "adventskalender",
+      "regel": "leben.brauchtum.advent",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-adventmarkt-heimatmuseum-merzenich-28-29-november-2026",
+      "articleDate": "2026-10-16T09:32:00+02:00"
+    },
+    "/blaulicht/einsatz-140-person-hinter-tuer-golzheim/": {
+      "imageId": "web-feuerwehr-16-28ad9c44",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-16-einsatz-140-person-hinter-tuer-golzheim",
+      "articleDate": "2026-10-16T12:00:00+02:00"
+    },
+    "/sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/": {
+      "imageId": "web-sport-19-d26a7536",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25",
+      "articleDate": "2026-10-25T22:00:00+01:00"
+    },
+    "/blaulicht/sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23/": {
+      "imageId": "web-themen-01-0394d77d",
+      "pool": "themen",
+      "motiv": "sturmschaden",
+      "regel": "blaulicht.technik.sturm",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-sturmtief-luise-feuerwehr-aeste-golzheim-baum-l264-2026-10-23",
+      "articleDate": "2026-10-25T22:10:00+01:00"
+    },
+    "/leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/": {
+      "imageId": "web-kultur-01-8826d38c",
+      "pool": "kultur",
+      "motiv": "veranstaltungssaal",
+      "regel": "leben.senioren",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-seniorennachmittag-weinberghalle-120-gaeste-oktober-2026",
+      "articleDate": "2026-10-25T22:12:00+01:00"
+    },
+    "/menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/": {
+      "imageId": "web-themen-12-1e67d849",
+      "pool": "themen",
+      "motiv": "wanderweg",
+      "regel": "menschen.wandern",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-siegener-schueler-fussmarsch-station-merzenich-buergewald-2026",
+      "articleDate": "2026-10-25T22:14:00+01:00"
+    },
+    "/rathaus/buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026",
+      "articleDate": "2026-10-25T22:16:00+01:00"
+    },
+    "/leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "leben.vorsorge",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-aktionstag-persoenliches-budget-kreishaus-5-november-2026",
+      "articleDate": "2026-10-25T22:20:00+01:00"
+    },
+    "/rathaus/sitzungstermine-gemeinderat-3-dezember-2026/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-sitzungstermine-gemeinderat-3-dezember-2026",
+      "articleDate": "2026-10-25T22:22:00+01:00"
+    },
+    "/rathaus/umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026",
+      "articleDate": "2026-10-25T22:24:00+01:00"
+    },
+    "/rathaus/amtsblatt-12-2026-abgabeschluss-3-november/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-amtsblatt-12-2026-abgabeschluss-3-november",
+      "articleDate": "2026-10-25T22:26:00+01:00"
+    },
+    "/wirtschaft/uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "gemeinde.stellenangebot",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-uebungsleiter-sportkita-baerenstark-golzheim-gesucht-2026",
+      "articleDate": "2026-10-25T22:28:00+01:00"
+    },
+    "/leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/": {
+      "imageId": "web-themen-07-fe61f0f6",
+      "pool": "themen",
+      "motiv": "baustelle",
+      "regel": "verkehr.baustelle",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26",
+      "articleDate": "2026-10-25T22:32:00+01:00"
+    },
+    "/vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/": {
+      "imageId": "web-themen-11-59fc252a",
+      "pool": "themen",
+      "motiv": "zeltplatz",
+      "regel": "vereine.jugend",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026",
+      "articleDate": "2026-10-25T22:34:00+01:00"
+    },
+    "/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/": {
+      "imageId": "web-themen-08-5f0f3260",
+      "pool": "themen",
+      "motiv": "eicheln",
+      "regel": "umwelt.wald",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt",
+      "articleDate": "2026-10-25T22:36:00+01:00"
+    },
+    "/wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "wirtschaft.weiterbildung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026",
+      "articleDate": "2026-10-25T22:38:00+01:00"
+    },
+    "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/": {
+      "imageId": "web-kultur-01-8826d38c",
+      "pool": "kultur",
+      "motiv": "veranstaltungssaal",
+      "regel": "leben.veranstaltung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-25-mental-load-online-vortrag-kreis-dueren-18-november-2026",
+      "articleDate": "2026-10-25T22:40:00+01:00"
+    },
+    "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/": {
+      "imageId": "web-kirchedetail-01-995c6c09",
+      "pool": "kirchedetail",
+      "motiv": "kirchenfenster",
+      "regel": "kirche.gottesdienst",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
+      "articleDate": "2026-10-26T17:30:00+01:00"
+    },
+    "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/": {
+      "imageId": "web-themen-19-deb8f481",
+      "pool": "themen",
+      "motiv": "seminarraum",
+      "regel": "wirtschaft.weiterbildung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
+      "articleDate": "2026-10-26T17:40:00+01:00"
+    },
+    "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/": {
+      "imageId": "web-themen-16-b1fd3ef8",
+      "pool": "themen",
+      "motiv": "strommast",
+      "regel": "leben.energie",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
+      "articleDate": "2026-10-26T18:30:00+01:00"
+    },
+    "/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/": {
+      "imageId": "web-unfall-01-d28ac4c9",
+      "pool": "unfall",
+      "motiv": "unfallstelle",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-10-28T09:39:03.891Z",
+      "articleId": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
+      "articleDate": "2026-10-28T08:55:00+01:00"
     }
   }
 }

@@ -31,6 +31,9 @@ const NUR_FOTO = new Set(['aktuell', 'blaulicht', 'brand', 'termine', 'tipp', 'm
 const SERIE_MAX = 3; // Detailpools erlauben hoechstens zwei Motive derselben Fotoreihe.
 const PRO_POOL = 20;
 const REFRESH = process.argv.includes('--refresh');
+// --nur=pool1,pool2: nur diese Pools bearbeiten, alle anderen bleiben unverändert
+// (gezielter Nachimport ohne neue ungeprüfte Fotos in fremden Pools).
+const NUR = new Set((process.argv.find((a) => a.startsWith('--nur=')) || '').slice(6).split(',').filter(Boolean));
 const HEUTE = new Date().toISOString().slice(0, 10);
 const UA = 'MerzenichAktuell-EditorialImageImporter/2.2 (https://merzenich-aktuell.de)';
 
@@ -233,6 +236,16 @@ const POOLS = {
     max: 21,
     titel: ['File:Herbstlaub im Naturschutzgebiet Wahner Heide.jpg'],
     queries: ['Sophienhöhe', 'Wandern Kreis Düren', 'Radweg Kreis Düren', 'Rurtalsperre', 'Naturschutzgebiet Kreis Düren', 'Rur Kreis Düren', 'Radweg Nordrhein-Westfalen']
+  },
+  // Themenfotos (Entscheidung Luis Kummer 28.10.2026: das Bild muss zeigen, worum
+  // es im Artikel geht). Gezielt recherchierte, einzeln gesichtete Commons-Dateien
+  // fuer Motive ohne Foto: Sturmschaden, Martinsfeuer, Baustelle, Eicheln,
+  // Zeltplatz, Wanderweg, Karneval, Strommast, Seminarraum, Papiertonne, Erntekrone.
+  themen: {
+    tags: ['symbolbild','thema'],
+    max: 23,
+    titel: ["File:Feuerwehr beseitigt Sturmschaden.JPG", "File:Mülheim an der Ruhr Heißen Sturmschäden Juli 2014 001.jpg", "File:Sturmschaden vom 5.10.2017 am Geschwister-Scholl-Weg in Ruhland, Stieleichenast.jpg", "File:Martinsfeuer Bassenheim.jpg", "File:Martinsfeuer.jpg", "File:2020091301 Baustellenabsperrung Dohnaischer Platz 2020.jpg", "File:FFH-Gebiet Moore bei Buxtehude - A26 Baustelle.jpg", "File:Stieleiche Quercus robur 4159.jpg", "File:20190313 Quercus robur 5.jpg", "File:20190313 Quercus robur 4.jpg", "File:Jugendzeltplatz Am Stürzenhardter Brückle 00.jpg", "File:Doerenther Klippen 13.JPG", "File:Wanderweg im Nationalpark Eifel.jpg", "File:Scheven in der Eifel Kreiseuskirchen Wanderweg.jpg", "File:Museum der Museen. Eine Zeitreise durch die Kunst des Ausstellens und Sehens-7469.jpg", "File:Narr Jester Fool Hofnarr Marotte Maske Karneval Karnevale skurril Kopf IMG 20251215 173501.jpg", "File:Westerkappeln, Hochspannungsleitung -- 2014 -- 9723.jpg", "File:Drensteinfurt, Rinkerode, Hemmer -- 2014 -- 3929.jpg", "File:Itzgrund Strommast bei Gleusdorf 5061198.jpg", "File:2006-02-06 Kloster Walberberg CRW 8776.jpg", "File:Blaue Altpapiertonne Richen Juni 2014.JPG", "File:00 0229 Erntedankkrone.jpg", "File:Erntekrone Doberlug 2014b.jpg"],
+    queries: []
   },
   menschen: {
     // Keine Porträts: erkennbare Personen sind als Symbolbild unzulässig.
@@ -459,6 +472,10 @@ behalten.forEach((x) => x.sourceTitle && usedTitles.add(x.sourceTitle));
 const belegteSummen = new Set(behalten.map((x) => x.checksum).filter(Boolean));
 
 for (const pool of Object.keys(POOLS)) {
+  if (NUR.size && !NUR.has(pool)) {
+    finalImages.push(...existing.images.filter((x) => x.pool === pool).map((x) => ({ ...x, geprueft: FREIGEGEBEN.has(x.sourceTitle) })));
+    continue;
+  }
   const eigene = REFRESH ? [] : existing.images.filter((x) => x.pool === pool);
   const keep = [];
   for (const x of eigene) {
