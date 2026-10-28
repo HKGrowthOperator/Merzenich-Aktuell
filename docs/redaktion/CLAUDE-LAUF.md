@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.0, Stand 28.10.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.1, Stand 28.10.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -76,18 +76,18 @@ Abnahme: Für jede Pflichtquelle steht im Dossier Weg und Ergebnis, auch „nich
 
 ### Phase 2: Verifikation
 
-Nach dem Verifikationsprotokoll in SCHREIBREGELN.md Abschnitt 3: jede Zahl, jedes Datum, jeder Name an der Primärquelle; mindestens drei Quellen, davon zwei außerhalb merzenich-aktuell.de und unabhängig voneinander; Bestand prüfen (offen.md, `grep` in `inhalte/`, `chatgpt-site/api/inhalte.json`); Widersprüche benennen.
+Nach dem Verifikationsprotokoll in SCHREIBREGELN.md Abschnitt 3 und der **Prüfdefinition** in Abschnitt 3a: jede tragende Aussage offiziell belegt, von zwei Herausgebern bestätigt oder als Selbstauskunft gekennzeichnet; jede Zahl, jedes Datum, jeder Name an der Primärquelle; mindestens drei Quellen; Bestand prüfen (offen.md, `grep` in `inhalte/`, `chatgpt-site/api/inhalte.json`); Widersprüche benennen. Das Ergebnis steht als Prüfprotokoll (`pruefung`) in der Meldung.
 
-Abnahme: Jede Angabe im Text hat eine gelesene Fundstelle. Reaktion bei Unsicherheit: Angabe streichen; trägt der Rest keine Meldung, Thema als T2 ins Dossier; reicht es für eine Meldung, aber nicht für die Direktveröffentlichung, `"zurFreigabe": true`.
+Abnahme: Jede Aussage und jede Zahl im Text steht im Prüfprotokoll mit gelesenem Beleg. Reaktion bei Unsicherheit: Angabe streichen; trägt der Rest keine Meldung, Thema als T2 ins Dossier; reicht es für eine Meldung, aber nicht für die Direktveröffentlichung, `"zurFreigabe": true`.
 
 ### Phase 3: Schreiben
 
-Nach SCHREIBREGELN.md: **Standard (mindestens 450 Wörter) als Regelfall**, redaktionell mit Einordnung und Vorgeschichte, nicht generisch; jede Quelle im Text genannt; Updates in bestehende Einträge; Termine ohne `entwurf` (nur bei Unsicherheit `"entwurf": true`); Umkreis nur die sechs Orte; Sport als Einheit. **Bildklasse so wählen, dass das Bild zeigt, worum es geht** (Abschnitt 4a). Selbstprüfung nach SCHREIBREGELN.md Abschnitt 13.
+Nach SCHREIBREGELN.md: **Standard (mindestens 800 Wörter, Ziel 900 bis 1.300, also 4 bis 6 Minuten Lesezeit) als Regelfall**, in eigenen Worten neu geschrieben (nicht nacherzählt), redaktionell mit Einordnung, Vorgeschichte und Folgen für den Ort, nicht generisch; dünne Themen bündeln statt strecken; jede Quelle im Text genannt; Updates in bestehende Einträge; Termine ohne `entwurf` (nur bei Unsicherheit `"entwurf": true`); Umkreis nur die sechs Orte; Sport als Einheit. **Bildklasse so wählen, dass das Bild zeigt, worum es geht** (Abschnitt 4a). Selbstprüfung nach SCHREIBREGELN.md Abschnitt 13.
 
 ### Phase 4: Paketierung, Build, Bild, Commit (15 Minuten)
 
 1. Dateien: `inhalte/meldungen/<datum>-recherche-claude-<lauf>.json` (`{"hinweis": …, "redaktionsstandard": 2, "meldungen": […]}`), `inhalte/termine/<datum>-recherche-claude-<lauf>.json`, `inhalte/umkreis/<datum>.json`. Updates direkt in der Datei des Bestandsartikels, Einrückung erhalten.
-2. `node deploy/kette.mjs` zweimal, `node deploy/kette.mjs --check` (muss „alle Generatoren unveraendert“ melden), `node qa/pruefung.mjs` (0 Fehler), `node deploy/register-pflege.mjs` (schreibt `offen.md`, mitcommitten), `node qa/redaktion-lauf.mjs` (0 Fehler; prüft auch Länge, drei Quellen und Bild).
+2. `node deploy/kette.mjs` zweimal, `node deploy/kette.mjs --check` (muss „alle Generatoren unveraendert“ melden), `node qa/pruefung.mjs` (0 Fehler), `node deploy/register-pflege.mjs` (schreibt `offen.md`, mitcommitten), `node qa/redaktion-lauf.mjs` (0 Fehler; prüft Länge, drei Quellen, Prüfprotokoll und Bild), `node qa/eigenformulierung.mjs --datum <datum> --lauf <lauf>` (0 Fehler; nicht abrufbare Quellen ins Dossier).
 3. Bild: Meldet die Prüfung „Ortsansicht statt Themenbild“, Abschnitt 4a anwenden, dann Schritt 2 wiederholen.
 4. Commit mit Inhalten und allen erzeugten Dateien (`chatgpt-site/`, `wordpress-delivery/`, `wordpress/`, `docs/SHA256SUMS.txt`, `deploy/sitemap-stand.json`); Nachricht `redaktion: <Lauf> <TT.MM.> – <Themen>`; Attributionszeilen.
 5. `git fetch origin main`, `git rebase origin/main`, `git push -u origin main`. Nie `--force`.
@@ -96,10 +96,10 @@ Abnahme: Push erfolgreich, `kette --check` auf dem gepushten Stand unverändert.
 
 ### Phase 4a: Passendes Bild
 
-Das Bild muss zeigen, worum es im Artikel geht (Sport zeigt Sport, ein Sturm zeigt Sturmschaden, kein Fachwerkhaus).
+Das Bild muss zeigen, worum es im Artikel geht (Sport zeigt Sport, ein Sturm zeigt Sturmschaden, kein Fachwerkhaus). **Jeder neue und jeder geänderte Artikel wird einzeln geprüft**: `node qa/redaktion-lauf.mjs --bilder --datum <datum> --lauf <lauf>` zeigt je Meldung Motiv, Foto und Lizenz; das zugewiesene Foto (`chatgpt-site/assets/editorial-pools/…`) selbst öffnen und ansehen. Passt es nicht, Schritte 1 bis 3. Die Tabelle mit der Spalte „passt, weil“ kommt ins Dossier (Abschnitt „Bildprüfung“, ⚙).
 
 1. Passende vorhandene Bildklasse in `deploy/bildklassen.json` wählen; Motive je Foto stehen in `deploy/bildmotive.json`.
-2. Gibt es kein passendes Foto: auf Wikimedia Commons suchen (freie Lizenz: CC0, CC BY, CC BY-SA, gemeinfrei; kein NC/ND; mindestens 1000 px breit; keine erkennbaren Personen im Mittelpunkt, keine lesbaren Kennzeichen, keine fremden Ortsnamen als Hauptmotiv). Den Dateititel in den Pool `themen` in `deploy/import-editorial-photos.mjs` eintragen, `node deploy/import-editorial-photos.mjs --nur=themen`, `python3 deploy/pool-varianten.py`.
+2. Gibt es im Pool kein passendes Foto, holt der Lauf selbst eines: auf Wikimedia Commons suchen (freie Lizenz: CC0, CC BY, CC BY-SA, gemeinfrei; kein NC/ND; mindestens 1000 px breit; keine erkennbaren Personen im Mittelpunkt, keine lesbaren Kennzeichen, keine fremden Ortsnamen als Hauptmotiv). Den Dateititel in den Pool `themen` in `deploy/import-editorial-photos.mjs` eintragen, `node deploy/import-editorial-photos.mjs --nur=themen`, `python3 deploy/pool-varianten.py`.
 3. Jedes neue Foto selbst ansehen (Datei öffnen). Erst danach Titel in `deploy/editorial-photo-review.json` (`freigegeben`) und Motiv in `deploy/bildmotive.json`; Motiv der Klasse in `deploy/bildklassen.json` ergänzen. Ungeeignete Fotos in `ausgeschlossen` mit Grund.
 4. Keine KI-generierten Fotos. Ortsansicht nur, wenn wirklich kein Motiv das Thema trifft (Prüfung meldet dann nur einen Hinweis).
 
@@ -126,7 +126,8 @@ Nach [vorlagen/abschlussbericht.md](vorlagen/abschlussbericht.md) an Luis: Zahle
 
 - [ ] Korrekturaufträge der neuen Dossiers zu Claude-Artikeln erledigt oder begründet offen
 - [ ] Jede neue oder geänderte Meldung: Mindestwerte, drei Quellen, `stand` = Lesedatum, jede Quelle im Text genannt
-- [ ] Jede neue Meldung mit passendem Themenbild (keine Ortsansicht, wo ein Motiv das Thema trifft)
+- [ ] Jede neue Meldung mindestens 800 Wörter (Standard), in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler), Prüfprotokoll vollständig
+- [ ] Jede neue Meldung mit passendem Themenbild, Bild selbst angesehen, Lizenz frei, Tabelle „Bildprüfung“ im Dossier
 - [ ] Unsichere Beiträge mit `zurFreigabe`/`entwurf` und Begründung im Dossier
 - [ ] Kette zweimal, `--check` unverändert, `qa/pruefung.mjs` 0 Fehler, `qa/redaktion-lauf.mjs --datum --lauf` 0 Fehler
 - [ ] Ein Inhalts- und ein Dokumentationscommit auf main gepusht (bei Nullfund nur der Dokumentationscommit), ohne Force
@@ -167,4 +168,5 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 1.1 | 26.10.2026 | Register-Lagebild (`register-pflege.mjs`, `offen.md`), Umkreis-Automatik (Parallelsitzung) |
 | 1.2 | 27.10.2026 | Sofort sichtbare Pfade, Termine nur als Entwurf |
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
+| 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.0 | 28.10.2026 | Entscheidungen Luis Kummer: Claude-Beiträge direkt online (fremde weiter über Freigabe), `zurFreigabe` bei Unsicherheit; Standard ab 450 Wörtern, drei Quellen; Bild muss zum Thema passen (Phase 4a, Pool `themen`); ChatGPT-Auftrag mit Korrekturen zuerst; Läufe 09:13 und 14:43 in frischer Sitzung |

@@ -7,11 +7,11 @@ Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md`. Routinestart <HH:MM>, Be
 
 | Größe | Zahl | Anmerkung |
 |---|---:|---|
-| Neue Meldungen | <n> | <davon standard/vertiefung/kurzmeldung> |
+| Neue Meldungen | <n> | <davon standard/vertiefung/kurzmeldung; Wörter im Schnitt> |
 | Aktualisierte oder korrigierte Bestandsmeldungen | <n> | |
-| Neue Termine (alle mit `entwurf: true`) | <n> | |
+| Neue Termine (live / Entwurf zur Freigabe) | <n> / <n> | |
 | Umkreis-Einträge | <n> | ohne Automatik |
-| Zwei-Quellen-Quote | <n>/<n> | |
+| Drei-Quellen-Quote, Prüfprotokoll vollständig | <n>/<n> | |
 | Sportstand | <geändert/unverändert> | <Quelle, Zeitpunkt> |
 | Bilder gefunden / geprüft / integriert | <n> / <n> / <n> | |
 | Kette / QA / redaktion-lauf | <zweimal, --check unverändert, 0 Fehler, n Hinweise> | |
@@ -58,9 +58,19 @@ Sperren und Umwege: <…>
 
 Commits `<hash>` (Inhalte) und `<hash>` (Dokumentation). Konflikte und Lösung: <…>. Abgleich: Anstoß <Antwort>, wp-cron <HTTP>, Nachweis in der Import-XML <ja/nein>. Freigaben im Backend: <geprüft/nicht geprüft, Grund>.
 
-## 8. Bilder
+## 8. Bildprüfung
 
-<gefunden/geprüft/integriert, Lizenz, Sperren; oder „keine Bildarbeit in diesem Lauf“>
+<!-- Pflicht für jede Meldung des Laufs (qa/redaktion-lauf.mjs prüft das). Tabelle mit: node qa/redaktion-lauf.mjs --bilder --datum <d> --lauf <l>; jedes Foto selbst geöffnet, Spalte „passt, weil“ ausfüllen. -->
+
+| Meldung | Bildklasse | Motiv | Foto (Commons) | Lizenz | passt, weil |
+|---|---|---|---|---|---|
+
+Neu importierte Fotos: <Titel, Lizenz, Urheber, warum passend; oder „keine“>
+
+## 8a. Prüfung und Eigenformulierung
+
+| Meldung | Wörter | Quellen | Aussagen im Prüfprotokoll (offiziell / doppelt / Selbstauskunft) | Eigenformulierung (max. gleiche Wortfolge) |
+|---|---:|---:|---|---|
 
 ## 9. Offene Punkte für den nächsten Lauf
 

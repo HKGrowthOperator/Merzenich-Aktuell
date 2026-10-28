@@ -11,10 +11,21 @@ Seit 28.10.2026 gehen Claude-Beiträge ohne Freigabe online (CLAUDE-LAUF.md Absc
 Entscheidung in dieser Reihenfolge:
 
 1. Gibt es nur ein Datum, eine Frist oder einen Ort und sonst nichts Belegbares? → **Termin** in `inhalte/termine/` statt Meldung. Kommt ein Nachrichtenwert dazu (neue Regel, geänderter Ort, Ausfall), zusätzlich eine Meldung.
-2. Blaulicht-Erstmeldung oder reiner Service mit Frist oder Kontakt, Quellenlage gibt nicht mehr her? → `kurzmeldung` (mindestens 80 Wörter, 2 Absätze, 2 Fakten), bei Service mit `"service": true`. Eine Blaulicht-Kurzmeldung wird im nächsten Lauf nachgefasst oder zum Standardtext ausgebaut. ⚙ Hinweis bei Kurzmeldungen außerhalb Blaulicht/Service
-3. Normale Lokalnachricht → `standard`, **für Claude mindestens 450 Wörter**, 4 Absätze, 4 Fakten und drei Quellen. **Das ist der Regelfall.** ⚙ (ab Paketen vom 29.10.2026)
-4. Vorgang mit Vorgeschichte (frühere Beschlüsse, Vorjahreszahlen), Folgen für Ortsteile und mindestens drei Primärquellen? → `vertiefung` (450/5/5).
-5. Einordnung über mehrere Vorgänge oder Jahre → `hintergrund` (700/7/5), nur auf ausdrücklichen Auftrag.
+2. Blaulicht-Erstmeldung oder reiner Service mit Frist oder Kontakt, Quellenlage gibt nicht mehr her? → `kurzmeldung` (Claude: mindestens 150 Wörter, 3 Absätze), bei Service mit `"service": true`. Eine Blaulicht-Kurzmeldung wird im nächsten Lauf nachgefasst oder zum Standardtext ausgebaut. ⚙ Hinweis bei Kurzmeldungen außerhalb Blaulicht/Service
+3. Normale Lokalnachricht → `standard`. **Das ist der Regelfall.**
+4. Vorgang mit Vorgeschichte (frühere Beschlüsse, Vorjahreszahlen), Folgen für Ortsteile und mindestens drei Primärquellen? → `vertiefung`.
+5. Einordnung über mehrere Vorgänge oder Jahre → `hintergrund`.
+
+**Länge der Claude-Artikel** (Entscheidung Luis Kummer 28.10.2026: bisher ein bis zwei Minuten Lesezeit, das ist zu kurz). ⚙ ab Paketen vom 29.10.2026:
+
+| Typ | Mindestens | Ziel | Lesezeit |
+|---|---|---|---|
+| `kurzmeldung` | 150 Wörter, 3 Absätze | 200 bis 300 | 1 bis 2 Minuten |
+| `standard` | **800 Wörter, 7 Absätze** | 900 bis 1.300 | 4 bis 6 Minuten |
+| `vertiefung` | 1.100 Wörter, 8 Absätze | 1.200 bis 1.800 | 6 bis 9 Minuten |
+| `hintergrund` | 1.400 Wörter, 10 Absätze | 1.500 bis 2.500 | 7 bis 12 Minuten |
+
+Die Länge kommt aus **mehr Recherche**, nie aus Füllstoff: Vorgeschichte (frühere Beschlüsse, Vorjahre, ähnliche Fälle im Ort), Zahlen im Vergleich (Haushalt, Statistik, Vorjahr), Folgen für die Ortsteile, Stimmen aus öffentlichen Stellungnahmen (Rat, Verwaltung, Verein, mit Quelle), was offen ist, wie es weitergeht, Service. Trägt ein Thema allein keine 800 belegten Wörter, wird es **nicht künstlich gestreckt**, sondern mit verwandten Themen zu einem Sammelartikel gebündelt (z. B. „Was in Merzenich bis Monatsende ansteht“, „Neues aus dem Rathaus“), als Termin angelegt oder als Update in einen bestehenden Artikel geschrieben.
 
 Länge entsteht nur aus zusätzlichen belegten Fakten. Verboten sind Füllsätze, Wiederholungen von Titel oder Dek im Text, allgemeine Aussagen ohne Merzenich-Bezug und Mutmaßungen über Gründe. ⚙ Mindestwerte je Typ.
 
@@ -50,6 +61,29 @@ Länge entsteht nur aus zusätzlichen belegten Fakten. Verboten sind Füllsätze
 
 Relative Zeitangaben („vergangene Woche“, „gestern“) werden durch Daten ersetzt.
 
+## 3a. Prüfdefinition: Was in den Text darf
+
+Weil Claude-Beiträge ohne Freigabe online gehen, darf **nichts Falsches** erscheinen. Eine Aussage darf nur in den Text, wenn sie eine dieser Bedingungen erfüllt:
+
+1. **Offizielle Quelle:** Sie steht bei der Stelle, die es wissen muss: Gemeinde, Kreis, Polizei, Land, Bund, Ratsinformationssystem, Amtsblatt, Verband (FUSSBALL.DE, click-TT), Verkehrsunternehmen, Kammer, Bistum oder Feuerwehr (Liste `OFFIZIELL` in `qa/redaktion-lauf.mjs`), **oder**
+2. **Zwei unabhängige Belege:** Sie steht übereinstimmend bei zwei verschiedenen Herausgebern (nicht dieselbe Pressemitteilung zweimal), **oder**
+3. **Selbstauskunft:** Sie ist eine Angabe eines Veranstalters oder Vereins über sich selbst (eigener Termin, eigene Öffnungszeit, eigenes Ergebnis auf der eigenen Seite); dann `selbstauskunft` mit Begründung und im Text so kennzeichnen („nach Angaben des Vereins“).
+
+Alles andere fliegt raus oder wird als offen benannt („geht aus den Unterlagen nicht hervor“). Vermutungen, Gerüchte, Social-Media-Beiträge ohne Bestätigung und eigene Schlüsse sind keine Belege.
+
+**Prüfprotokoll im Paket** (Feld `pruefung`, ⚙ ab Paketen vom 29.10.2026): jede tragende Aussage einzeln, mindestens sechs (Kurzmeldung drei), jede mit den Belegen aus `quelle`/`weitereQuellen` und der Fundstelle. **Jede Zahl im Text** (Beträge, Uhrzeiten, Daten, Mengen; Jahreszahlen ausgenommen) muss in einer Aussage des Protokolls stehen, sonst meldet das Prüfskript einen Fehler.
+
+```json
+"pruefung": [
+  {"aussage": "Der Gemeinderat bewilligte am 16.10.2026 bis zu 257.000 Euro für einen Einsatzleitwagen.",
+   "belege": ["https://ratsinfo.gemeinde-merzenich.de/…", "https://www.gemeinde-merzenich.de/…"],
+   "stelle": "Beschlussvorlage 123/2026, S. 2; Niederschrift TOP 7"},
+  {"aussage": "Der Verein trainiert ab 4. November dienstags um 18 Uhr in der Weinberghalle.",
+   "belege": ["https://www.verein-beispiel.de/training"], "stelle": "Trainingszeiten, Stand 28.10.2026",
+   "selbstauskunft": "Verein nennt eigene Trainingszeiten"}
+]
+```
+
 ## 4. Quellen
 
 - `quelle` ist die Primärquelle, `weitereQuellen` die weiteren; jede mit `name` („Herausgeber, Dokument oder Seite, Datum“), `url` (https) und `stand` (Lesedatum YYYY-MM-DD). ⚙
@@ -69,7 +103,7 @@ Relative Zeitangaben („vergangene Woche“, „gestern“) werden durch Daten 
 
 ## 6. Vertiefung bestehender Artikel
 
-Eigene Artikel unter 450 Wörtern oder mit weniger als drei Quellen werden in ruhigen Läufen (Nullfund, wenig Neues) nachrecherchiert und ausgebaut; `qa/redaktion-lauf.mjs` listet sie als Hinweise.
+Eigene Artikel unter den Mindestlängen (Standard 800 Wörter) oder mit weniger als drei Quellen werden in ruhigen Läufen (Nullfund, wenig Neues) nachrecherchiert und ausgebaut; `qa/redaktion-lauf.mjs` listet sie als Hinweise.
 
 Ein `standard` wird `vertiefung`, wenn die zusätzliche Recherche mindestens drei Primärquellen, fünf belegte Fakten und Vorgeschichte oder Einordnung liefert. Ändern dürfen sich `artikeltyp`, `dek`, `absaetze`, `fakten`, `weitereQuellen`, `themen`. Jede neue Angabe hat eine geprüfte Fundstelle (Recherchedatei mit URL und Stelle). Trägt die Lage keine Vertiefung, bleibt der Typ; im Dossier steht der Grund.
 
@@ -80,9 +114,11 @@ Ein `standard` wird `vertiefung`, wenn die zusätzliche Recherche mindestens dre
 - Blaulicht: keine Hausnummern, keine Kennzeichen, keine Altersangaben mit Ort, die eine Person erkennbar machen. (⚙ Hinweis nur für das Muster „…straße/weg/platz + Zahl“; alles andere Selbstprüfung)
 - Kontaktadressen nur als Funktionsadresse aus der Quelle.
 
-## 8. Zitate und Fremdtexte
+## 8. Eigene Formulierung, Zitate und Fremdtexte
 
-Wörtliche Zitate höchstens zwei Sätze, gekennzeichnet, mit Urheber. Pressemitteilungen werden nicht nacherzählt, sondern als Quelle für Fakten genutzt; eigener Einstieg, eigene Gliederung.
+Jeder Text ist **neu geschrieben**: Aus den Quellen werden nur Fakten entnommen, Aufbau, Einstieg, Sätze und Gewichtung sind eigene redaktionelle Arbeit. Pressemitteilungen, Vereinstexte und Amtsblatt werden nicht nacherzählt oder umgestellt, sondern als Faktenbasis genutzt und mit weiteren Quellen zu einem eigenen Bericht verbunden.
+
+Wörtliche Zitate höchstens zwei Sätze, in „…“, mit Urheber. ⚙ `node qa/eigenformulierung.mjs --datum <d> --lauf <l>` lädt alle Quellen und meldet einen Fehler bei 12 oder mehr gleichen Wörtern in Folge außerhalb eines Zitats oder wenn mehr als 10 Prozent der Wortfolgen gleich sind.
 
 ## 9. Sport
 
@@ -111,11 +147,12 @@ Deutsch, kurze Sätze, aktive Verben. Zahlen deutsch (257.039 Euro, 18 Uhr, 3. D
 7. `stand` = heutiges Lesedatum?
 8. Keine Privatperson, keine Hausnummer im Blaulicht?
 9. Bestand geprüft, kein Doppelartikel?
-10. Artikeltyp passt zur Faktenlage, Mindestwerte erfüllt (Standard ab 450 Wörtern)? Vorgeschichte und Einordnung enthalten?
+10. Artikeltyp passt zur Faktenlage, Mindestwerte erfüllt (Standard ab 800 Wörtern)? Vorgeschichte und Einordnung enthalten?
 11. Titel konkret, Dek ohne unbelegte Aussage?
 12. Letzter Absatz mit Ausblick oder Service?
-13. Zitate wörtlich und gekennzeichnet?
-14. Bild zeigt das Thema (keine Ortsansicht, wo ein Motiv passt)?
+13. Zitate wörtlich und gekennzeichnet, alles andere in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler)?
+13a. Prüfprotokoll vollständig: jede Aussage offiziell oder doppelt belegt, jede Zahl im Protokoll?
+14. Bild zeigt das Thema (keine Ortsansicht, wo ein Motiv passt)? Bilddatei selbst angesehen, Lizenz frei (CC0, CC BY, CC BY-SA, gemeinfrei)?
 15. Unsicheres mit `zurFreigabe` bzw. Termin mit `"entwurf": true` und Grund im Dossier?
 16. Widersprüche zwischen Quellen benannt?
 

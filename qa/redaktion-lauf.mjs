@@ -9,6 +9,7 @@
  * Aufruf:
  *   node qa/redaktion-lauf.mjs                                  Bestand pruefen
  *   node qa/redaktion-lauf.mjs --datum 2026-10-27 --lauf morgens  zusaetzlich Laufabschluss
+ *   node qa/redaktion-lauf.mjs --bilder --datum <d> --lauf <l>  Tabelle fuer „Bildprüfung“ im Dossier
  *   Optionen: --wurzel <repo>  --json  --streng  --hilfe
  *
  * Fehler (Exit 1):
@@ -19,8 +20,10 @@
  *     (Ausnahme: Feld quellenausnahme mit Begruendung). Claude-Pakete vor REGEL_AB melden das
  *     nur als Hinweis (--streng: Fehler). Updates in Nicht-Claude-Dateien prueft das Skript nicht.
  *     Ab REGEL_V3_AB (29.10.2026) in Claude-Paketen ausserdem: mindestens drei verschiedene
- *     Quellen, Standardtext mindestens 450 Woerter, und die Artikelseite zeigt keine Ortsansicht,
- *     wenn die Bildklasse Motive nennt (Bild muss zum Thema passen). Davor nur Hinweise.
+ *     Quellen; Laenge nach V3_LAENGE (Standard 800 Woerter, 7 Absaetze); Pruefprotokoll
+ *     `pruefung` (je Aussage offizielle Quelle oder zwei Herausgeber, jede Zahl des Textes
+ *     darin); die Artikelseite zeigt keine Ortsansicht, wenn die Bildklasse Motive nennt.
+ *     Davor nur Hinweise. Mit --datum/--lauf: Dossier-Abschnitt „Bildprüfung“ nennt jede Meldung.
  *   B Termine: Pflichtfelder, quelle.url https, quelle.stand, start/ende mit Zeitzone,
  *     ende nicht vor start, Slug eindeutig; im Paket des Laufs kein Start vor --datum.
  *     Claude-Termine gehen direkt online; "entwurf": true nur, wenn der Termin in die Freigabe soll.
@@ -56,7 +59,14 @@ const REGEL_AB = '2026-10-27';
 // Ab diesem Paketdatum (Entscheidung Luis Kummer 28.10.2026, Claude-Beitraege gehen direkt live):
 // Standardtext mindestens 450 Woerter, mindestens drei verschiedene Quellen, Bild passend zum Thema.
 const REGEL_V3_AB = '2026-10-29';
-const V3_STANDARD_WOERTER = 450;
+// Laenge (Luis Kummer 28.10.2026: „viel, viel laenger“, bisher ein bis zwei Minuten Lesezeit):
+// Mindestwoerter je Artikeltyp fuer Claude-Pakete ab REGEL_V3_AB (gut 200 Woerter je Leseminute).
+const V3_LAENGE = { kurzmeldung: [150, 3], standard: [800, 7], vertiefung: [1100, 8], hintergrund: [1400, 10] };
+// Pruefdefinition (SCHREIBREGELN.md Abschnitt 3a): Jede Aussage im Pruefprotokoll braucht eine
+// offizielle Quelle (Behoerde, Gemeinde, Polizei, Verband, Herausgeber selbst) oder zwei Quellen
+// verschiedener Herausgeber. Liste der offiziellen Herausgeber:
+const OFFIZIELL = /(^|\.)(gemeinde-merzenich\.de|kreis-dueren\.de|dueren\.de|niederzier\.de|noervenich\.de|elsdorf\.de|stadt-kerpen\.de|juelich\.de|nrw|nrw\.de|bund\.de|bundesregierung\.de|europa\.eu|polizei\.nrw|presseportal\.de|feuerwehr-merzenich\.de|fussball\.de|click-tt\.de|mytischtennis\.de|vrs\.de|bahn\.de|zuginfo\.nrw|autobahn\.de|ihk\.de|hwk-aachen\.de|arbeitsagentur\.de|bistum-aachen\.de|it\.nrw|destatis\.de|lvr\.de|rwe\.com|amprion\.net)$/;
+const ZAHL = /\d+(?:[.,:]\d+)*/g;
 
 const ARTIKELTYPEN = { kurzmeldung: [80, 2, 2], standard: [300, 4, 4], vertiefung: [450, 5, 5], hintergrund: [700, 7, 5] };
 const RESSORTS = ['blaulicht', 'sport', 'rathaus', 'leben', 'wirtschaft', 'menschen', 'vereine'];
@@ -104,6 +114,24 @@ catch { H('deploy/bildklassen.json', 'nicht lesbar, Bildklassen ungeprueft'); }
 // Ortsansicht, obwohl die Bildklasse Motive nennt, fehlt ein passendes Foto. Fehler ab REGEL_V3_AB.
 const SEITE = join(wurzel, 'chatgpt-site');
 const seitenOrdner = existsSync(SEITE) ? readdirSync(SEITE, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name) : [];
+// --bilder: Tabelle fuer den Dossier-Abschnitt „Bildprüfung“ (Paket des Laufs oder --paket).
+if (args.includes('--bilder')) {
+  const datei = opt('--paket') || (DATUM && LAUF ? `inhalte/meldungen/${DATUM}-recherche-claude-${LAUF}.json` : '');
+  if (!datei || !existsSync(join(wurzel, datei))) { console.log('Kein Paket (--datum/--lauf oder --paket).'); process.exit(0); }
+  const lies = (r) => { try { return JSON.parse(readFileSync(join(wurzel, r), 'utf8')); } catch { return {}; } };
+  const zu = lies('chatgpt-site/data/editorial-images/editorial-image-assignments.json').assignments || {};
+  const fotos = new Map((lies('chatgpt-site/data/editorial-images/editorial-photo-pools.json').images || []).map((x) => [x.id, x]));
+  const motive = lies('deploy/bildmotive.json').motive || {};
+  console.log('| Meldung | Bildklasse | Motiv | Foto (Commons) | Lizenz | passt, weil |\n|---|---|---|---|---|---|');
+  for (const m of lies(datei).meldungen || []) {
+    const ordner = seitenOrdner.find((o) => existsSync(join(SEITE, o, m.slug, 'index.html')));
+    const html = ordner ? readFileSync(join(SEITE, ordner, m.slug, 'index.html'), 'utf8') : '';
+    const z = ordner ? zu[`/${ordner}/${m.slug}/`] : null; const f = z ? fotos.get(z.imageId) : null;
+    const art = !html ? 'Seite fehlt' : /data-bildstufe="O"/.test(html) ? 'Ortsansicht' : f ? (motive[f.sourceTitle] || '?') : 'eigenes Bild';
+    console.log(`| ${m.slug} | ${m.bildklasse || '–'} | ${art} | ${f ? f.sourceTitle.replace(/^File:/, '') : '–'} | ${f ? f.license : '–'} | <selbst angesehen: …> |`);
+  }
+  process.exit(0);
+}
 function bildPruefen(b, m, streng) {
   const ordner = seitenOrdner.find((o) => existsSync(join(SEITE, o, m.slug || '-', 'index.html')));
   if (!ordner) { H(b, 'Artikelseite nicht gefunden (Kette gelaufen?), Bild ungeprueft'); return; }
@@ -114,6 +142,34 @@ function bildPruefen(b, m, streng) {
   else if (motive.length) (streng ? F : H)(b, `Ortsansicht statt Themenbild: kein gesichtetes Foto fuer ${m.bildklasse} (${motive.join('/')}); Foto importieren oder passendere Bildklasse`);
   else H(b, `Ortsansicht: Bildklasse ${m.bildklasse} hat kein Motiv; Themenfoto ergaenzen, wenn es eines gibt`);
 }
+// Pruefprotokoll (Feld pruefung): [{aussage, belege: [url, ...], stelle, selbstauskunft?}]
+function pruefprotokoll(b, m, urls) {
+  const p = Array.isArray(m.pruefung) ? m.pruefung : [];
+  const mind = m.artikeltyp === 'kurzmeldung' ? 3 : 6;
+  if (p.length < mind) { F(b, `Pruefprotokoll (pruefung) mit ${p.length} Aussagen; mindestens ${mind}`); if (!p.length) return; }
+  const norm = (u) => String(u).replace(/[#?].*$/, '').replace(/\/$/, '');
+  const quellen = new Set(urls);
+  p.forEach((e, i) => {
+    const be = `${b} pruefung[${i}]`;
+    if (!e || String(e.aussage || '').length < 15) { F(be, 'aussage fehlt oder zu kurz'); return; }
+    const belege = (e.belege || []).map(norm);
+    if (!belege.length) { F(be, 'belege fehlen'); return; }
+    const fremd = belege.filter((u) => !quellen.has(u));
+    if (fremd.length) F(be, `Beleg nicht unter quelle/weitereQuellen: ${fremd.join(', ')}`);
+    const hosts = new Set(belege.map(host).filter((h) => h && !EIGEN.test(h)));
+    const offiziell = [...hosts].some((h) => OFFIZIELL.test(h));
+    const selbst = String(e.selbstauskunft || '').length >= 15;
+    if (!offiziell && hosts.size < 2 && !selbst) F(be, `„${String(e.aussage).slice(0, 60)}…“ nur aus ${[...hosts].join(', ') || 'keiner fremden Quelle'}: offizielle Quelle oder zweiter unabhaengiger Beleg noetig (oder selbstauskunft mit Begruendung)`);
+  });
+  // Jede Zahl im Text (ausser Jahreszahlen) muss in einer geprueften Aussage stehen.
+  const geprueft = p.map((e) => String(e?.aussage || '')).join(' | ');
+  const text = [m.titel, m.dek, ...(m.absaetze || [])].join(' ');
+  const offen = [...new Set((text.match(ZAHL) || []).map((z) => z.replace(/[.,:]$/, '')))]
+    .filter((z) => !/^(19|20)\d\d$/.test(z))
+    .filter((z) => !new RegExp(`(^|[^0-9])${z.replace(/[.]/g, '\\.')}([^0-9]|$)`).test(geprueft));
+  if (offen.length) F(b, `Zahlen ohne Eintrag im Pruefprotokoll: ${offen.slice(0, 8).join(', ')}${offen.length > 8 ? ' …' : ''}`);
+}
+
 const slugs = new Map();
 for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
   const claude = datei.includes('recherche-claude');
@@ -153,7 +209,10 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
       // Ab REGEL_V3_AB: laenger, mehr Quellen (SCHREIBREGELN.md Abschnitt Laenge und Quellen).
       const alleUrls = new Set(urls);
       if (alleUrls.size < 3 && !m.quellenausnahme) (v3 ? F : H)(b, `${alleUrls.size} Quelle(n); mindestens drei verschiedene Quellen (oder quellenausnahme mit Begruendung)`);
-      if (m.artikeltyp === 'standard' && woerter(m) < V3_STANDARD_WOERTER) (v3 ? F : H)(b, `Standardtext mit ${woerter(m)} Woertern; Claude-Standard mindestens ${V3_STANDARD_WOERTER}`);
+      const [minW, minA] = V3_LAENGE[m.artikeltyp] || [0, 0];
+      if (woerter(m) < minW) (v3 ? F : H)(b, `${m.artikeltyp} mit ${woerter(m)} Woertern; Claude mindestens ${minW} (SCHREIBREGELN.md Abschnitt 1)`);
+      if ((m.absaetze || []).length < minA) (v3 ? F : H)(b, `${m.artikeltyp} mit ${(m.absaetze || []).length} Absaetzen; Claude mindestens ${minA}`);
+      if (v3) pruefprotokoll(b, m, urls);
       if (m.artikeltyp === 'kurzmeldung' && m.ressort !== 'blaulicht' && !m.service) H(b, 'Kurzmeldung ausserhalb Blaulicht/Service; Standardtext ist der Regelfall');
       bildPruefen(b, m, v3);
     }
@@ -233,6 +292,14 @@ if (DATUM || LAUF) {
       const text = existsSync(dossier) ? readFileSync(dossier, 'utf8') : '';
       const ohnePaketBegruendet = /Nullfund|0 \| keine neue|Neue Meldungen \| 0/.test(text);
       if (!existsSync(paket) && !ohnePaketBegruendet) F('lauf', `kein Meldungspaket ${DATUM}-recherche-claude-${LAUF}.json und kein Nullfund im Dossier`);
+      // Bildpruefung je Artikel (Luis Kummer 28.10.2026): jede neue Meldung steht mit Bild im Dossier.
+      if (existsSync(paket)) {
+        const abschnitt = (text.split(/^## /m).find((t) => /^[0-9. ]*Bildpr(ü|ue)fung/i.test(t)) || '');
+        if (!abschnitt) F('lauf', 'Dossier ohne Abschnitt „Bildprüfung“ (Tabelle aus node qa/redaktion-lauf.mjs --bilder)');
+        for (const mm of JSON.parse(readFileSync(paket, 'utf8')).meldungen || []) {
+          if (abschnitt && !abschnitt.includes(mm.slug)) F('lauf', `Bildprüfung im Dossier ohne ${mm.slug}`);
+        }
+      }
     }
   }
 }
