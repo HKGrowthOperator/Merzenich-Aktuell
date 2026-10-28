@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-27-abends.md",
-  "source_check_window": "27.10.2026 abends ab 18:05:45 Europe/Berlin (MEZ); tatsächliche Prüftiefe pro Karte, vorhandene Rohstände nur bis 11:35 MEZ.",
+  "latest_dossier": "dossiers/2026-10-28-morgens.md",
+  "source_check_window": "28.10.2026 morgens ab 08:04 Europe/Berlin (MEZ); tatsächliche Prüftiefe pro Karte, vorhandene Rohstände vom 27.10.21:04–21:11 MEZ.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -36,17 +36,17 @@
     {
       "id": "MA-SC3-GEREONSWEILER-2510",
       "priority": "P1",
-      "location_section": "Merzenich / Morschenich-neu · Fußball",
-      "change_type": "Nachfassen",
+      "location_section": "Merzenich / Welldorf-Güsten · Fußball",
+      "change_type": "Update",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Spielseite erneut gelesen, „Abpfiff“ steht, Endstand weiter nur als verschleierte Schrift (data-obfuscation), kein Klartext; bleibt gesperrt bis Datenbericht oder fupa „Abpfiff“ mit Ergebnis. | ChatGPT 27.10. abends: MA-SC3-GEREONSWEILER-2510, T2; Spielseite einschließlich Ergebnis-/Ereignisbereich gelesen; keine Sonderzeichendekodierung und keine Screenshotauswertung. Weiterarbeit: Wie lautet der amtliche Endstand? Gibt es eine lesbare Verbandsbestätigung? Aktuelle Tabelle und nächste Paarung des SC III mit demselben Datenzeitpunkt fehlen. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Spielseite erneut gelesen, „Abpfiff“ steht, Endstand weiter nur als verschleierte Schrift (data-obfuscation), kein Klartext; bleibt gesperrt bis Datenbericht oder fupa „Abpfiff“ mit Ergebnis. | ChatGPT 27.10. abends: MA-SC3-GEREONSWEILER-2510, T2; Spielseite einschließlich Ergebnis-/Ereignisbereich gelesen; keine Sonderzeichendekodierung und keine Screenshotauswertung. Weiterarbeit: Wie lautet der amtliche Endstand? Gibt es eine lesbare Verbandsbestätigung? Aktuelle Tabelle und nächste Paarung des SC III mit demselben Datenzeitpunkt fehlen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Vorbericht, Gegner-Teamkopf, Staffelzeile und Spielseite gelesen. Suchtreffer und September-Teamkopf nicht als aktuelle Tabelle verwendet. Offen: Welcher Endstand gehört amtlich zum 25.10.? Der Vorbericht sagt nur zuletzt1:3 ohne eindeutige Gegner-/Datumszuordnung; keinesfalls dem Gereonsweiler-Spiel zuweisen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -88,18 +88,35 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-SC3-GEREONSWEILER-2510",
           "check_scope": "Spielseite einschließlich Ergebnis-/Ereignisbereich gelesen; keine Sonderzeichendekodierung und keine Screenshotauswertung."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-SC3-GEREONSWEILER-2510",
+          "check_scope": "Vorbericht, Gegner-Teamkopf, Staffelzeile und Spielseite gelesen. Suchtreffer und September-Teamkopf nicht als aktuelle Tabelle verwendet."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor Übernahme, spätestens 28.10.2026.",
+      "refresh_note": "Vor Sportübernahme und spätestens 30.10.2026.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Klartext-Endstand und Spielbericht beschaffen; erst danach Tabelle und nächstes Spiel ergänzen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
           "url": "https://www.fussball.de/spiel/sc-1919-merzenich-3-fc-constantia-09-gereonsweiler/-/spiel/031LRT63GK000000VS5489BTVSRD0UH9",
           "publisher": "DFB / FUSSBALL.DE",
-          "published": "laufende Spielseite"
+          "published": "Spiel 25.10.2026"
+        },
+        {
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032HCPSAV4000000VS5489BVVT0GJGMV",
+          "publisher": "DFB / FUSSBALL.DE",
+          "published": "28.10.2026, 06:34 Uhr"
+        },
+        {
+          "url": "https://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-1-kreis-dueren-kreisliga-c-herren-saison2627-mittelrhein/-/staffel/031GUV1TCG000003VS5489BUVSJ4CRAP-G",
+          "publisher": "DFB / FUSSBALL.DE",
+          "published": "laufende Staffelübersicht"
         }
       ],
       "research_review": {
@@ -187,12 +204,26 @@
           "open_questions": "Wie lautet der amtliche Endstand? Gibt es eine lesbare Verbandsbestätigung? Aktuelle Tabelle und nächste Paarung des SC III mit demselben Datenzeitpunkt fehlen.",
           "refresh": "Vor Übernahme, spätestens 28.10.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Update",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-SC3-GEREONSWEILER-2510",
+          "source_check_scope": "Vorbericht, Gegner-Teamkopf, Staffelzeile und Spielseite gelesen. Suchtreffer und September-Teamkopf nicht als aktuelle Tabelle verwendet.",
+          "open_questions": "Welcher Endstand gehört amtlich zum 25.10.? Der Vorbericht sagt nur zuletzt1:3 ohne eindeutige Gegner-/Datumszuordnung; keinesfalls dem Gereonsweiler-Spiel zuweisen.",
+          "refresh": "Vor Sportübernahme und spätestens 30.10.2026.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Spielseite einschließlich Ergebnis-/Ereignisbereich gelesen; keine Sonderzeichendekodierung und keine Screenshotauswertung.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Vorbericht, Gegner-Teamkopf, Staffelzeile und Spielseite gelesen. Suchtreffer und September-Teamkopf nicht als aktuelle Tabelle verwendet.",
       "latest_research_review": {
         "text": "T2",
         "workflow": "gesperrt",
@@ -424,11 +455,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-16-amtsblatt-11.json",
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Dublette: Bons-Termine stehen seit 16.10. im Artikel; kein zweiter Artikel | ChatGPT 27.10. abends: MA-MARTINSZUEGE-2026, T1; Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs. Weiterarbeit: Gibt es Restbons oder weitere Verkaufsstellen? Keine Verfügbarkeit behaupten. Schlechtwetter-/Routenänderungen kurz vor den Zügen erneut prüfen. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Dublette: Bons-Termine stehen seit 16.10. im Artikel; kein zweiter Artikel | ChatGPT 27.10. abends: MA-MARTINSZUEGE-2026, T1; Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs. Weiterarbeit: Gibt es Restbons oder weitere Verkaufsstellen? Keine Verfügbarkeit behaupten. Schlechtwetter-/Routenänderungen kurz vor den Zügen erneut prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1; Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich. Offen: Sind kurzfristige Änderungen oder Restbons veröffentlicht? Verkauf nicht als garantierten Vorrat darstellen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -510,11 +541,18 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-MARTINSZUEGE-2026",
           "check_scope": "Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-MARTINSZUEGE-2026",
+          "check_scope": "Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "27.10., 19 Uhr: heutiges Verkaufsfenster ablaufen lassen. Nächster Check vor 28.10., 14:30 Uhr.",
+      "refresh_note": "28.10.2026 vor 14:30 Uhr und nach 16 Uhr; weitere Tage einzeln prüfen.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Laufwege, Absagen, kurzfristige Verkehrsmaßnahmen. Unverändert, ausdrücklich keine Neumeldung. Artikel und Termine in inhalte/*/2026-10-16-amtsblatt-11.json vorhanden.",
       "research_sources": [
@@ -522,6 +560,11 @@
           "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/sankt-martin-2026.php",
           "publisher": "Gemeinde Merzenich / örtliche Zugorganisation",
           "published": "undatierte Sammeldetailseite"
+        },
+        {
+          "url": "https://www.heimat-info.de/beitraege/c1cfc473-86db-436c-b372-c0fd5661eb51",
+          "publisher": "Gemeinde Merzenich über Heimat-Info",
+          "published": "22.10.2026, 10:00 Uhr"
         }
       ],
       "research_review": {
@@ -609,12 +652,26 @@
           "open_questions": "Gibt es Restbons oder weitere Verkaufsstellen? Keine Verfügbarkeit behaupten. Schlechtwetter-/Routenänderungen kurz vor den Zügen erneut prüfen.",
           "refresh": "27.10., 19 Uhr: heutiges Verkaufsfenster ablaufen lassen. Nächster Check vor 28.10., 14:30 Uhr.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Termin",
+          "text_status": "T1",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-MARTINSZUEGE-2026",
+          "source_check_scope": "Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich.",
+          "open_questions": "Sind kurzfristige Änderungen oder Restbons veröffentlicht? Verkauf nicht als garantierten Vorrat darstellen.",
+          "refresh": "28.10.2026 vor 14:30 Uhr und nach 16 Uhr; weitere Tage einzeln prüfen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich.",
       "latest_research_review": {
         "text": "T1",
         "workflow": "zur_endabnahme",
@@ -1040,11 +1097,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin | Claude 27.10. Korrektur: Anmeldezeitraum laut Portal bis 02.11. ergänzt (d32d252) | ChatGPT 27.10. abends: KD-PERSBUDGET-0511, T1-B; Pressemitteilung und Anmeldeportal frisch gelesen, keine Buchung vorgenommen. Weiterarbeit: Ist die Buchung bei Übernahme noch möglich? Unterstützungsbedarf über offiziellen Anmeldeweg angeben. Kapazität kann sich jederzeit ändern. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Meldung und Termin | Claude 27.10. Korrektur: Anmeldezeitraum laut Portal bis 02.11. ergänzt (d32d252) | ChatGPT 27.10. abends: KD-PERSBUDGET-0511, T1-B; Pressemitteilung und Anmeldeportal frisch gelesen, keine Buchung vorgenommen. Weiterarbeit: Ist die Buchung bei Übernahme noch möglich? Unterstützungsbedarf über offiziellen Anmeldeweg angeben. Kapazität kann sich jederzeit ändern. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Beide widersprechenden Portalantworten und Pressevolltext tatsächlich gelesen; jüngster Abruf spricht weiter für02.11., keine Buchung durchgeführt. Offen: Gültige Frist und Buchbarkeit unmittelbar vor Übernahme erneut belegen. Keine neue Korrektur am vorhandenen02.11.-Text allein wegen Zwischenantwort. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-20",
@@ -1084,11 +1141,18 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "KD-PERSBUDGET-0511",
           "check_scope": "Pressemitteilung und Anmeldeportal frisch gelesen, keine Buchung vorgenommen."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "KD-PERSBUDGET-0511",
+          "check_scope": "Beide widersprechenden Portalantworten und Pressevolltext tatsächlich gelesen; jüngster Abruf spricht weiter für02.11., keine Buchung durchgeführt."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor Übernahme; spätestens 02.11.2026.",
+      "refresh_note": "Vor jeder Nutzung, spätestens29.10.",
       "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
       "research_notes": "Aktuelle Platzverfügbarkeit und genaue Uhrzeit des Fristendes nicht angegeben. Keine neue Kreisnachricht, unveränderter Morgendossier-Service.",
       "research_sources": [
@@ -1152,15 +1216,29 @@
           "open_questions": "Ist die Buchung bei Übernahme noch möglich? Unterstützungsbedarf über offiziellen Anmeldeweg angeben. Kapazität kann sich jederzeit ändern.",
           "refresh": "Vor Übernahme; spätestens 02.11.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → KD-PERSBUDGET-0511",
+          "source_check_scope": "Beide widersprechenden Portalantworten und Pressevolltext tatsächlich gelesen; jüngster Abruf spricht weiter für02.11., keine Buchung durchgeführt.",
+          "open_questions": "Gültige Frist und Buchbarkeit unmittelbar vor Übernahme erneut belegen. Keine neue Korrektur am vorhandenen02.11.-Text allein wegen Zwischenantwort.",
+          "refresh": "Vor jeder Nutzung, spätestens29.10.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
-      "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Pressemitteilung und Anmeldeportal frisch gelesen, keine Buchung vorgenommen.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Beide widersprechenden Portalantworten und Pressevolltext tatsächlich gelesen; jüngster Abruf spricht weiter für02.11., keine Buchung durchgeführt.",
       "latest_research_review": {
-        "text": "T1-B",
-        "workflow": "vor_uebernahme_erneut_pruefen",
+        "text": "T2",
+        "workflow": "gesperrt",
         "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
         "image": {
           "rights": "B0_keine_Artikelbildfreigabe",
@@ -1306,12 +1384,12 @@
       "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "workflow_status": "in_bearbeitung",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "workflow_status": "neu",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-FBL3-JOB-1511, T1-B; Stellenübersicht und Original-PDF vollständig geprüft. Weiterarbeit: Ist die Ausschreibung vor Übernahme weiterhin offen? Bewerbungsprofil vollständig verlinken, keine verkürzte Zugangsvoraussetzung erfinden. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-FBL3-JOB-1511, T1-B; Stellenübersicht und Original-PDF vollständig geprüft. Weiterarbeit: Ist die Ausschreibung vor Übernahme weiterhin offen? Bewerbungsprofil vollständig verlinken, keine verkürzte Zugangsvoraussetzung erfinden. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Liste und Original-PDF; keine Bewerbung und keine Personalanfrage. Offen: Ist Ausschreibung bei Artikelübernahme weiter offen? Vollständiges Anforderungsprofil verlinken. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -1348,18 +1426,25 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-FBL3-JOB-1511",
           "check_scope": "Stellenübersicht und Original-PDF vollständig geprüft."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-FBL3-JOB-1511",
+          "check_scope": "Liste und Original-PDF; keine Bewerbung und keine Personalanfrage."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor Übernahme; nach 15.11.2026 auslaufen.",
+      "refresh_note": "Vor Übernahme; nach15.11. auslaufen.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Noch offen? Frist, Qualifikation, Beschäftigungsumfang, Vergütung und offizieller Bewerbungslink aktuell? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
           "url": "https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/01.111.07.02-003-Stellenausschreibung-FBL-III-ab-Oktober-2026-M000770251.pdf",
           "publisher": "Gemeinde Merzenich",
-          "published": "Ausschreibung ab Oktober 2026; kein separater Publikationstag"
+          "published": "ab Oktober2026, kein exakter Publikationstag"
         },
         {
           "url": "https://www.heimat-info.de/beitraege/84069eb1-5ed0-4970-ba2c-1281bafd0fd2",
@@ -1369,7 +1454,7 @@
         {
           "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
           "publisher": "Gemeinde Merzenich",
-          "published": "laufende Stellenübersicht"
+          "published": "laufende Übersicht"
         }
       ],
       "research_review": {
@@ -1457,12 +1542,26 @@
           "open_questions": "Ist die Ausschreibung vor Übernahme weiterhin offen? Bewerbungsprofil vollständig verlinken, keine verkürzte Zugangsvoraussetzung erfinden.",
           "refresh": "Vor Übernahme; nach 15.11.2026 auslaufen.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Termin",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-FBL3-JOB-1511",
+          "source_check_scope": "Liste und Original-PDF; keine Bewerbung und keine Personalanfrage.",
+          "open_questions": "Ist Ausschreibung bei Artikelübernahme weiter offen? Vollständiges Anforderungsprofil verlinken.",
+          "refresh": "Vor Übernahme; nach15.11. auslaufen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Stellenübersicht und Original-PDF vollständig geprüft.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Liste und Original-PDF; keine Bewerbung und keine Personalanfrage.",
       "latest_research_review": {
         "text": "T1-B",
         "workflow": "vor_uebernahme_erneut_pruefen",
@@ -1488,16 +1587,16 @@
       "id": "MA-KRAETZCHEN-230127",
       "priority": "P1",
       "location_section": "Merzenich · Kultur/Vereine",
-      "change_type": "Update",
+      "change_type": "Nachfassen",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-KRAETZCHEN-230127, T2; PDF nur Titel/Inhalt/Impressum frisch ausgelesen; erneute Seitenabrufe/Screenshot scheiterten. Detailseiten gelesen. Weiterarbeit: Ist 15 Uhr der Bühnenbeginn, während 14–18:30 das Veranstaltungsfenster umfasst? Welcher Beginn soll im Termin-Feld stehen? Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-KRAETZCHEN-230127, T2; PDF nur Titel/Inhalt/Impressum frisch ausgelesen; erneute Seitenabrufe/Screenshot scheiterten. Detailseiten gelesen. Weiterarbeit: Ist 15 Uhr der Bühnenbeginn, während 14–18:30 das Veranstaltungsfenster umfasst? Welcher Beginn soll im Termin-Feld stehen? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Gemeinde- und Vereinsdetail gelesen; Plakat im Web als Bild geöffnet, daraus keine verlässlich transkribierte zusätzliche Uhrzeit in dieses Dossier übernommen. Direkter lokaler Bildabruf lieferte HTML, kein Bilddownload. Offen: Einlass, Bühnenbeginn und Terminbeginn ausdrücklich bestätigen. Bild-/Textabweichungen nicht durch Raten auflösen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-23",
@@ -1538,18 +1637,25 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-KRAETZCHEN-230127",
           "check_scope": "PDF nur Titel/Inhalt/Impressum frisch ausgelesen; erneute Seitenabrufe/Screenshot scheiterten. Detailseiten gelesen."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-KRAETZCHEN-230127",
+          "check_scope": "Gemeinde- und Vereinsdetail gelesen; Plakat im Web als Bild geöffnet, daraus keine verlässlich transkribierte zusätzliche Uhrzeit in dieses Dossier übernommen. Direkter lokaler Bildabruf lieferte HTML, kein Bilddownload."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor jeder Terminänderung; spätestens 03.11.2026.",
+      "refresh_note": "Vor Artikel-/Terminänderung; spätestens 03.11.2026.",
       "publication_status": "nicht_durch_diesen_lauf_veroeffentlicht",
       "research_notes": "Welcher Ort gilt verbindlich? Stimmen Gemeinde, Plakat und Veranstalter überein? Preis und Verkaufsstellen? Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
           "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/kraetzchensitzung-2027.php",
           "publisher": "Gemeinde Merzenich",
-          "published": "Datum im Detailabruf nicht sichtbar"
+          "published": "undatiertes Detail"
         },
         {
           "url": "https://www.heimat-info.de/beitraege/27850b7f-c8db-42aa-974f-4883ca537b6c",
@@ -1560,6 +1666,11 @@
           "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
           "publisher": "Gemeinde Merzenich, Amtsblatt 11/2026",
           "published": "16.10.2026; Titelblatt"
+        },
+        {
+          "url": "https://jonge-vom-berg.de/kraetzchen-sitzung/",
+          "publisher": "KG Jonge vom Berg",
+          "published": "01.10.2026"
         }
       ],
       "research_review": {
@@ -1633,12 +1744,26 @@
           "open_questions": "Ist 15 Uhr der Bühnenbeginn, während 14–18:30 das Veranstaltungsfenster umfasst? Welcher Beginn soll im Termin-Feld stehen?",
           "refresh": "Vor jeder Terminänderung; spätestens 03.11.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-KRAETZCHEN-230127",
+          "source_check_scope": "Gemeinde- und Vereinsdetail gelesen; Plakat im Web als Bild geöffnet, daraus keine verlässlich transkribierte zusätzliche Uhrzeit in dieses Dossier übernommen. Direkter lokaler Bildabruf lieferte HTML, kein Bilddownload.",
+          "open_questions": "Einlass, Bühnenbeginn und Terminbeginn ausdrücklich bestätigen. Bild-/Textabweichungen nicht durch Raten auflösen.",
+          "refresh": "Vor Artikel-/Terminänderung; spätestens 03.11.2026.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "PDF nur Titel/Inhalt/Impressum frisch ausgelesen; erneute Seitenabrufe/Screenshot scheiterten. Detailseiten gelesen.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Gemeinde- und Vereinsdetail gelesen; Plakat im Web als Bild geöffnet, daraus keine verlässlich transkribierte zusätzliche Uhrzeit in dieses Dossier übernommen. Direkter lokaler Bildabruf lieferte HTML, kein Bilddownload.",
       "latest_research_review": {
         "text": "T2",
         "workflow": "gesperrt",
@@ -2331,11 +2456,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sonntagsergebnisse nach Abpfiff bestätigt (fussball.de-Datenberichte, fupa). | ChatGPT 27.10. abends: MA-SONNTAGSSPORT-ERG-2510, T1-B; Tabellenkopf/Staffel/nächste Paarung frisch; Ergebniswerte als ausgeschriebener Morgenbeleg übernommen, nicht aus Icons gelesen. Weiterarbeit: Bestätigt der jeweilige Verein die nächste Anstoßzeit und etwaige Nachholspiele? Tabellen können sich durch andere Spiele ändern. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sonntagsergebnisse nach Abpfiff bestätigt (fussball.de-Datenberichte, fupa). | ChatGPT 27.10. abends: MA-SONNTAGSSPORT-ERG-2510, T1-B; Tabellenkopf/Staffel/nächste Paarung frisch; Ergebniswerte als ausgeschriebener Morgenbeleg übernommen, nicht aus Icons gelesen. Weiterarbeit: Bestätigt der jeweilige Verein die nächste Anstoßzeit und etwaige Nachholspiele? Tabellen können sich durch andere Spiele ändern. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Ergebnisberichte und Mannschaftsseiten tatsächlich gelesen. Kein Ergebnis aus Sonderzeichen abgeleitet. Offen: Ändern sich Anstoßzeiten oder Nachholspiele? Vor neuer Vorschau refreshen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -2371,6 +2496,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-SONNTAGSSPORT-ERG-2510",
           "check_scope": "Tabellenkopf/Staffel/nächste Paarung frisch; Ergebniswerte als ausgeschriebener Morgenbeleg übernommen, nicht aus Icons gelesen."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-SONNTAGSSPORT-ERG-2510",
+          "check_scope": "Ergebnisberichte und Mannschaftsseiten tatsächlich gelesen. Kein Ergebnis aus Sonderzeichen abgeleitet."
         }
       ],
       "research_notes": "Abendnachlauf: drei Ergebnisse in bestehenden Einzel-IDs aufgelöst; SC III offen. Sammelauftrag nicht separat als Nachricht zählen.",
@@ -2454,13 +2586,27 @@
           "open_questions": "Bestätigt der jeweilige Verein die nächste Anstoßzeit und etwaige Nachholspiele? Tabellen können sich durch andere Spiele ändern.",
           "refresh": "Vor jedem Sportimport; spätestens 29.10.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-SONNTAGSSPORT-ERG-2510",
+          "source_check_scope": "Ergebnisberichte und Mannschaftsseiten tatsächlich gelesen. Kein Ergebnis aus Sonderzeichen abgeleitet.",
+          "open_questions": "Ändern sich Anstoßzeiten oder Nachholspiele? Vor neuer Vorschau refreshen.",
+          "refresh": "Vor Sportübernahme; spätestens 30.10.2026.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Tabellenkopf/Staffel/nächste Paarung frisch; Ergebniswerte als ausgeschriebener Morgenbeleg übernommen, nicht aus Icons gelesen.",
-      "refresh_note": "Vor jedem Sportimport; spätestens 29.10.2026.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Ergebnisberichte und Mannschaftsseiten tatsächlich gelesen. Kein Ergebnis aus Sonderzeichen abgeleitet.",
+      "refresh_note": "Vor Sportübernahme; spätestens 30.10.2026.",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
@@ -2882,11 +3028,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-HGAS-OKT, T2; Allgemeine Betreiberseite inklusive Ortsteiltabelle gelesen; keine aktuellen Kundenbriefe oder Monteurtermine beschafft. Weiterarbeit: Ab wann werden in welchem Ortsteil Geräte tatsächlich angepasst? Welche Schreiben sind gültig? Betreiberbestätigung des scheinbaren Widerspruchs fehlt. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-HGAS-OKT, T2; Allgemeine Betreiberseite inklusive Ortsteiltabelle gelesen; keine aktuellen Kundenbriefe oder Monteurtermine beschafft. Weiterarbeit: Ab wann werden in welchem Ortsteil Geräte tatsächlich angepasst? Welche Schreiben sind gültig? Betreiberbestätigung des scheinbaren Widerspruchs fehlt. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Betreiberseite inklusive Ortszeilen gelesen. Offen: Tatsächlicher Anpassungsbeginn pro Ortsteil? Welches Schreiben ist gültig? Keine eigenen Sicherheitstipps aus Foto ableiten. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-13",
@@ -2983,18 +3129,25 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-HGAS-OKT",
           "check_scope": "Allgemeine Betreiberseite inklusive Ortsteiltabelle gelesen; keine aktuellen Kundenbriefe oder Monteurtermine beschafft."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-HGAS-OKT",
+          "check_scope": "Betreiberseite inklusive Ortszeilen gelesen."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Vor Energie-Serviceartikel; spätestens 03.11.2026.",
+      "refresh_note": "Vor Energie-Serviceartikel.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Welche Abschnitte, Terminschreiben, Kontakt- und Störungswege gelten aktuell? Betreiberoriginal und individuelle Mitteilungen nicht vermischen. Bestehenden Vorgang und Artikelbestand fortführen. Keine neue Artikelanlage allein wegen dieser Arbeitskarte.",
       "research_sources": [
         {
           "url": "https://www.erdgasumstellung-dueren.de/allgemeine-infos/",
           "publisher": "Leitungspartner / Erdgasumstellung Düren",
-          "published": "undatierte laufende Betreiberseite"
+          "published": "undatierte Betreiberseite"
         }
       ],
       "research_review": {
@@ -3082,12 +3235,26 @@
           "open_questions": "Ab wann werden in welchem Ortsteil Geräte tatsächlich angepasst? Welche Schreiben sind gültig? Betreiberbestätigung des scheinbaren Widerspruchs fehlt.",
           "refresh": "Vor Energie-Serviceartikel; spätestens 03.11.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-HGAS-OKT",
+          "source_check_scope": "Betreiberseite inklusive Ortszeilen gelesen.",
+          "open_questions": "Tatsächlicher Anpassungsbeginn pro Ortsteil? Welches Schreiben ist gültig? Keine eigenen Sicherheitstipps aus Foto ableiten.",
+          "refresh": "Vor Energie-Serviceartikel.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Allgemeine Betreiberseite inklusive Ortsteiltabelle gelesen; keine aktuellen Kundenbriefe oder Monteurtermine beschafft.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Betreiberseite inklusive Ortszeilen gelesen.",
       "latest_research_review": {
         "text": "T2",
         "workflow": "gesperrt",
@@ -3359,11 +3526,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -3405,11 +3572,18 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-TTC-OKT25",
+          "check_scope": "Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read_with_stated_limits",
-      "refresh_note": "Nach 29.10. sowie vor jedem Spieltermin.",
+      "refresh_note": "29.10. vor Spielbeginn und anschließend.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "research_notes": "Weitere TTC-Mannschaften separat abrufen; Punktwertungsmodell nicht mit Fußball vergleichen. Morgendossier T0 teilweise aufgelöst; nur erste Mannschaft verifiziert. Historische TTC-Wochenblöcke bleiben getrennt.",
       "research_sources": [
@@ -3425,12 +3599,12 @@
         },
         {
           "url": "https://www.mytischtennis.de/click-tt/WTTV/26--27/ligen/2._Bezirksklasse_6/gruppe/522583/spielplan/gesamt",
-          "publisher": "WTTV / myTischtennis",
-          "published": "laufender Gruppenspielplan"
+          "publisher": "WTTV über myTischtennis",
+          "published": "laufender Spielplan"
         },
         {
           "url": "https://www.mytischtennis.de/click-tt/WTTV/26--27/ligen/2._Bezirksklasse_6/gruppe/522583/tabelle/vr",
-          "publisher": "WTTV / myTischtennis",
+          "publisher": "WTTV über myTischtennis",
           "published": "laufende Tabelle"
         }
       ],
@@ -3519,12 +3693,26 @@
           "open_questions": "Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten.",
           "refresh": "Nach 29.10. sowie vor jedem Spieltermin.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Termin",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-TTC-OKT25",
+          "source_check_scope": "Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich.",
+          "open_questions": "Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen.",
+          "refresh": "29.10. vor Spielbeginn und anschließend.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich.",
       "latest_research_review": {
         "text": "T1-B",
         "workflow": "vor_uebernahme_erneut_pruefen",
@@ -3543,16 +3731,16 @@
       "id": "MA-JUGENDGREMIUM-STATUS",
       "priority": "P1",
       "location_section": "Merzenich · Rathaus/Jugend",
-      "change_type": "Update",
+      "change_type": "Nachfassen",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -3570,13 +3758,20 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-JUGENDGREMIUM-STATUS",
           "check_scope": "Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-JUGENDGREMIUM-STATUS",
+          "check_scope": "Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung."
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung.",
-      "refresh_note": "Vor 04.11.2026, täglich auf ergänzte Vorlage prüfen.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung.",
+      "refresh_note": "Vor dem 04.11. täglich prüfen.",
       "research_history": [
         {
           "date": "2026-10-27",
@@ -3590,6 +3785,20 @@
           "source_check_scope": "Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung.",
           "open_questions": "Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt?",
           "refresh": "Vor 04.11.2026, täglich auf ergänzte Vorlage prüfen.",
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-JUGENDGREMIUM-STATUS",
+          "source_check_scope": "Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung.",
+          "open_questions": "Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten?",
+          "refresh": "Vor dem 04.11. täglich prüfen.",
           "implementation": "keine_Artikelumsetzung"
         }
       ],
@@ -3610,8 +3819,8 @@
       "research_sources": [
         {
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf",
-          "publisher": "Gemeinde Merzenich, Bürgermeister",
-          "published": "Vorlagendatum 21.10.2026; Export im RIS 26.10.2026"
+          "publisher": "Gemeinde Merzenich",
+          "published": "21.10.2026, Export 26.10.2026"
         },
         {
           "url": "https://ratsinfo.gemeinde-merzenich.de/vorlagen",
@@ -4732,14 +4941,14 @@
     },
     {
       "id": "MA-KG-KARTEN",
-      "priority": null,
-      "location_section": null,
-      "change_type": "historisches_recherchethema",
-      "text_status": null,
-      "image_status": null,
+      "priority": "P1",
+      "location_section": "Golzheim · Vereine/Kultur",
+      "change_type": "Update",
+      "text_status": "T2",
+      "image_status": "B0",
       "dossier": "dossiers/2026-10-13-morgens.md",
-      "workflow_status": "archiv_refresh_noetig",
-      "last_checked_at": null,
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -4748,9 +4957,68 @@
           "date": "2026-10-13",
           "dossier": "dossiers/2026-10-13-morgens.md",
           "heading": "27 · MA-KG-KARTEN"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-KG-KARTEN",
+          "check_scope": "Startseite, Veranstaltungsübersicht und verlinkte Detailseite vollständig gelesen."
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | ChatGPT 28.10. morgens: T2; Startseite, Veranstaltungsübersicht und verlinkte Detailseite vollständig gelesen. Offen: Welche aktuelle Detailseite/Einladung gilt? Preis, Einlass und Reservierungsweg bestätigen; Restkarten nicht ohne aktuelle Vereinsbestätigung zusagen. Historische Umsetzung bleibt erhalten.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Startseite, Veranstaltungsübersicht und verlinkte Detailseite vollständig gelesen.",
+      "refresh_note": "Vor jeder Terminübernahme; spätestens 30.10.2026.",
+      "source_check_status": "detail_read_with_stated_limits",
+      "research_history": [
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Update",
+          "text_status": "T2",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-KG-KARTEN",
+          "source_check_scope": "Startseite, Veranstaltungsübersicht und verlinkte Detailseite vollständig gelesen.",
+          "open_questions": "Welche aktuelle Detailseite/Einladung gilt? Preis, Einlass und Reservierungsweg bestätigen; Restkarten nicht ohne aktuelle Vereinsbestätigung zusagen.",
+          "refresh": "Vor jeder Terminübernahme; spätestens 30.10.2026.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_sources": [
+        {
+          "url": "https://kg-mir-hahle-poohl.de/veranstaltungen/",
+          "publisher": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+          "published": "laufende Übersicht, kein Publikationstag"
+        },
+        {
+          "url": "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/",
+          "publisher": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+          "published": "Detailtermin 09.11.2024"
+        },
+        {
+          "url": "https://kg-mir-hahle-poohl.de/",
+          "publisher": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+          "published": "laufende Startseite; eingebettete relative Beitragszeiten nicht als Publikationstag verwendet"
+        }
+      ]
     },
     {
       "id": "MA-MYBACH-DETAILS",
@@ -5447,7 +5715,7 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-15-morgens.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -5475,9 +5743,16 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-BAERENSTARK-JOB-2026",
           "check_scope": "Liste und einseitige Originalausschreibung frisch gelesen."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-BAERENSTARK-JOB-2026",
+          "check_scope": "Liste/PDF tatsächlich geprüft."
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | ChatGPT 27.10. abends: MA-BAERENSTARK-JOB-2026, T2; Liste und einseitige Originalausschreibung frisch gelesen. Weiterarbeit: Wurde die Frist verlängert, läuft ein neues Verfahren oder ist die Besetzung abgeschlossen? Bitte aktuelle Ausschreibung anfordern, nicht automatisch anschreiben. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | ChatGPT 27.10. abends: MA-BAERENSTARK-JOB-2026, T2; Liste und einseitige Originalausschreibung frisch gelesen. Weiterarbeit: Wurde die Frist verlängert, läuft ein neues Verfahren oder ist die Besetzung abgeschlossen? Bitte aktuelle Ausschreibung anfordern, nicht automatisch anschreiben. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Liste/PDF tatsächlich geprüft. Offen: Neue Ausschreibung, Fristverlängerung oder Besetzung? Historische Umsetzung bleibt erhalten.",
       "research_history": [
         {
           "date": "2026-10-26",
@@ -5528,24 +5803,38 @@
           "open_questions": "Wurde die Frist verlängert, läuft ein neues Verfahren oder ist die Besetzung abgeschlossen? Bitte aktuelle Ausschreibung anfordern, nicht automatisch anschreiben.",
           "refresh": "Vor jeder Stellenempfehlung.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-BAERENSTARK-JOB-2026",
+          "source_check_scope": "Liste/PDF tatsächlich geprüft.",
+          "open_questions": "Neue Ausschreibung, Fristverlängerung oder Besetzung?",
+          "refresh": "Vor jeder Empfehlung.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Liste und einseitige Originalausschreibung frisch gelesen.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Liste/PDF tatsächlich geprüft.",
       "latest_research_text_status": "T2",
-      "refresh_note": "Vor jeder Stellenempfehlung.",
+      "refresh_note": "Vor jeder Empfehlung.",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
           "url": "https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/Stellenausschreibung-Baerenstark-befristet-2026.pdf",
           "publisher": "Gemeinde Merzenich",
-          "published": "separater Veröffentlichungstag nicht ausgewiesen"
+          "published": "kein Publikationstag"
         },
         {
           "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
           "publisher": "Gemeinde Merzenich",
-          "published": "laufende Übersicht"
+          "published": "laufende Liste"
         }
       ],
       "review_block_reason": "PDF-Frist abgelaufen, keine aktuelle Verlängerung belegt",
@@ -7900,11 +8189,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-27 vormittags Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/buergersprechstunde-gelhausen-pfarrheim-golzheim-30-oktober-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Bürgersprechstunde 30.10., Pfarrheim Golzheim; auch Termin | Claude 27.10. Korrektur: Termin-Widerspruch 30.10./13.11. benannt (33aa1ec) | ChatGPT 27.10. abends: MA-1025-04, T2; Quellenkonflikt aus bereits erfolgreichem Claude-Dossier übernommen; eigener PDF-Innenseitenabruf gescheitert. Weiterarbeit: Welches Datum gilt? Ist eine der Angaben veraltet oder gibt es zwei Sprechstunden? Vor dem 30.10. direkte Bestätigung der Gemeinde erforderlich. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Claude 25.10.: Bürgersprechstunde 30.10., Pfarrheim Golzheim; auch Termin | Claude 27.10. Korrektur: Termin-Widerspruch 30.10./13.11. benannt (33aa1ec) | ChatGPT 27.10. abends: MA-1025-04, T2; Quellenkonflikt aus bereits erfolgreichem Claude-Dossier übernommen; eigener PDF-Innenseitenabruf gescheitert. Weiterarbeit: Welches Datum gilt? Ist eine der Angaben veraltet oder gibt es zwei Sprechstunden? Vor dem 30.10. direkte Bestätigung der Gemeinde erforderlich. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Ein Veranstalterdetail frisch, Amtsblatt-PDF-Abruf gescheitert; keine Konfliktauflösung. Offen: Zwei Sprechstunden oder veraltete Angabe? Vor dem 30.10. bei der Gemeinde bestätigen lassen; keine Nachricht automatisch senden. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -7934,6 +8223,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-1025-04",
           "check_scope": "Quellenkonflikt aus bereits erfolgreichem Claude-Dossier übernommen; eigener PDF-Innenseitenabruf gescheitert."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-1025-04",
+          "check_scope": "Ein Veranstalterdetail frisch, Amtsblatt-PDF-Abruf gescheitert; keine Konfliktauflösung."
         }
       ],
       "research_history": [
@@ -7988,13 +8284,27 @@
           "open_questions": "Welches Datum gilt? Ist eine der Angaben veraltet oder gibt es zwei Sprechstunden? Vor dem 30.10. direkte Bestätigung der Gemeinde erforderlich.",
           "refresh": "Vor jeder Nutzung; spätestens 29.10.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-1025-04",
+          "source_check_scope": "Ein Veranstalterdetail frisch, Amtsblatt-PDF-Abruf gescheitert; keine Konfliktauflösung.",
+          "open_questions": "Zwei Sprechstunden oder veraltete Angabe? Vor dem 30.10. bei der Gemeinde bestätigen lassen; keine Nachricht automatisch senden.",
+          "refresh": "29.10.2026, vor jeder Terminnutzung.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Quellenkonflikt aus bereits erfolgreichem Claude-Dossier übernommen; eigener PDF-Innenseitenabruf gescheitert.",
-      "refresh_note": "Vor jeder Nutzung; spätestens 29.10.2026.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Ein Veranstalterdetail frisch, Amtsblatt-PDF-Abruf gescheitert; keine Konfliktauflösung.",
+      "refresh_note": "29.10.2026, vor jeder Terminnutzung.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "latest_research_review": {
         "text": "T2",
@@ -8013,15 +8323,15 @@
         {
           "url": "https://www.heimat-info.de/veranstaltungen/a225a9c4-ce51-4811-b6c9-0cb43af200c1",
           "publisher": "Gemeinde Merzenich über Heimat-Info",
-          "published": "23.10.2026, 18:04 Uhr laut erfolgreichem Morgenvergleich; heute Abend nicht erneut geöffnet"
+          "published": "23.10.2026, 18:04 Uhr"
         },
         {
           "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
-          "publisher": "Gemeinde Merzenich, Amtsblatt 11/2026",
-          "published": "16.10.2026; betreffende Innenseite nur im Vorbericht belegt"
+          "publisher": "Gemeinde Merzenich",
+          "published": "16.10.2026; betreffende Angabe nur aus erfolgreichem Vorbericht"
         }
       ],
-      "source_check_status": "inherited_context_with_failed_refresh"
+      "source_check_status": "detail_read_with_stated_limits"
     },
     {
       "id": "MA-1025-05",
@@ -8032,11 +8342,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-26 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Claude 25.10.: Wildpferdeexkursion 29.10. (Neuland Hambach); auch Termin und Umkreis",
+      "notes": "Claude 25.10.: Wildpferdeexkursion 29.10. (Neuland Hambach); auch Termin und Umkreis | ChatGPT 28.10. morgens: T1-B; Veranstalterdetail gelesen; keine Reservierung vorgenommen. Offen: Noch Plätze frei, wetterbedingte Änderungen, Treffpunkt/Uhrzeit und Zugänglichkeit? Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -8054,6 +8364,13 @@
           "dossier": "dossiers/2026-10-26-abends.md",
           "heading": "MA-1025-05",
           "check_scope": "Vollständigen Veranstaltertext gelesen"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-1025-05",
+          "check_scope": "Veranstalterdetail gelesen; keine Reservierung vorgenommen."
         }
       ],
       "research_history": [
@@ -8102,26 +8419,47 @@
             "duplicate": "keine_neue_Artikelbildzuordnung",
             "integration": "nicht_erfolgt"
           }
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Termin",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-1025-05",
+          "source_check_scope": "Veranstalterdetail gelesen; keine Reservierung vorgenommen.",
+          "open_questions": "Noch Plätze frei, wetterbedingte Änderungen, Treffpunkt/Uhrzeit und Zugänglichkeit?",
+          "refresh": "28.10. vor Buchung,29.10. vorAnfahrt.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-26-abends.md",
-      "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-26 abends Europe/Berlin",
-      "latest_research_scope": "Vollständigen Veranstaltertext gelesen",
-      "refresh_note": "28.10.2026; vor Anfahrt",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T1-B",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Veranstalterdetail gelesen; keine Reservierung vorgenommen.",
+      "refresh_note": "28.10. vor Buchung,29.10. vorAnfahrt.",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
           "url": "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien",
-          "publisher": "NEULANDHAMBACH / RWEForschungsstelle Rekultivierung",
-          "published": "Neuland-Index vom 20.10.2026; Detail ohne Datumszeile"
+          "publisher": "NEULAND HAMBACH / RWE Forschungsstelle Rekultivierung",
+          "published": "20.10.2026 lautMeldungsübersicht; Detail undatiert"
         }
       ],
       "latest_research_review": {
-        "text": "T1",
-        "applies_to": "Nachtrag/Rechercheauftrag dieses Laufs; historische Umsetzung bleibt erhalten",
-        "image": "B0",
-        "implementation": "nicht_durch_diesen_Lauf_umgesetzt"
+        "text": "T1-B",
+        "workflow": "vor_uebernahme_erneut_pruefen",
+        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
       }
     },
     {
@@ -8187,11 +8525,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/",
       "article_id": null,
       "implementation_commit": "8041a59",
-      "notes": "Claude 25.10.: Bahn Düren–Köln nachts, Bismarckstraße Düren, A4 (go.Rheinland, Stadt Düren, Autobahn GmbH) | Claude 26.10. nachmittags: Nachtrag 26.10. aus VRS/zuginfo.NRW-Plakat FPLO 30754 (S 19 SEV 26.–28.10., RE 9, RB 20, RB 38, RE 1); Buszeiten weiter offen. | ChatGPT 27.10. abends: MA-1025-25, T1; VRS-Detail und Original-PDF frisch gelesen; Einzelfahrtauskunft nicht ausgeführt. Weiterarbeit: Welche Ersatzhaltestelle und Abfahrt gilt für die konkrete Reise in Merzenich? Belegter Busfahrplan fehlt weiterhin. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Claude 25.10.: Bahn Düren–Köln nachts, Bismarckstraße Düren, A4 (go.Rheinland, Stadt Düren, Autobahn GmbH) | Claude 26.10. nachmittags: Nachtrag 26.10. aus VRS/zuginfo.NRW-Plakat FPLO 30754 (S 19 SEV 26.–28.10., RE 9, RB 20, RB 38, RE 1); Buszeiten weiter offen. | ChatGPT 27.10. abends: MA-1025-25, T1; VRS-Detail und Original-PDF frisch gelesen; Einzelfahrtauskunft nicht ausgeführt. Weiterarbeit: Welche Ersatzhaltestelle und Abfahrt gilt für die konkrete Reise in Merzenich? Belegter Busfahrplan fehlt weiterhin. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1; Detailmeldung und einseitiges Original-PDF vollständig als Text gelesen; keine Reiseauskunft ausgeführt. Offen: Gibt es eine Verlängerung oder andere aktuelle Störungen? Nur konkrete Fahrtinformationen erlauben eine Betriebsaussage. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -8227,6 +8565,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-1025-25",
           "check_scope": "VRS-Detail und Original-PDF frisch gelesen; Einzelfahrtauskunft nicht ausgeführt."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-1025-25",
+          "check_scope": "Detailmeldung und einseitiges Original-PDF vollständig als Text gelesen; keine Reiseauskunft ausgeführt."
         }
       ],
       "research_history": [
@@ -8303,18 +8648,32 @@
           "open_questions": "Welche Ersatzhaltestelle und Abfahrt gilt für die konkrete Reise in Merzenich? Belegter Busfahrplan fehlt weiterhin.",
           "refresh": "28.10.2026, 05:00 Uhr: zeitbezogenen Hinweis auslaufen lassen.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Update",
+          "text_status": "T1",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-1025-25",
+          "source_check_scope": "Detailmeldung und einseitiges Original-PDF vollständig als Text gelesen; keine Reiseauskunft ausgeführt.",
+          "open_questions": "Gibt es eine Verlängerung oder andere aktuelle Störungen? Nur konkrete Fahrtinformationen erlauben eine Betriebsaussage.",
+          "refresh": "Sofort bei Weiterbearbeitung: Altwarnung zeitlich auslaufen lassen; keine pauschale Entwarnung.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "VRS-Detail und Original-PDF frisch gelesen; Einzelfahrtauskunft nicht ausgeführt.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Detailmeldung und einseitiges Original-PDF vollständig als Text gelesen; keine Reiseauskunft ausgeführt.",
       "source_check_status": "detail_read_with_stated_limits",
       "research_sources": [
         {
           "url": "https://ekap-download.vrs.de/downloads/ems/Zuginfo_Ausfaelle_Koeln_Aachen_26bis28102026.pdf",
-          "publisher": "zuginfo.nrw über VRS",
-          "published": "Informationsplakat FPLO 30754, Version 01"
+          "publisher": "zuginfo.nrw, Plakat über VRS",
+          "published": "FPLO 30754, Version 01; Publikationstag nicht ausgewiesen"
         },
         {
           "url": "https://ekap-download.vrs.de/downloads/haltestellen/lageplan/hlp_merzenich_bahnhof.pdf?1717548535=",
@@ -8323,8 +8682,8 @@
         },
         {
           "url": "https://www.vrs.de/his/haltestelle/de:05358:4738",
-          "publisher": "VRS",
-          "published": "laufende Ereignismeldung, ohne separat sichtbares Publikationsdatum"
+          "publisher": "VRS / zuginfo.nrw",
+          "published": "laufende Ereignismeldung, ohne separaten Publikationstag"
         }
       ],
       "research_review": {
@@ -8338,7 +8697,7 @@
         },
         "implementation": "keine_aenderung_durch_recherchelauf"
       },
-      "refresh_note": "28.10.2026, 05:00 Uhr: zeitbezogenen Hinweis auslaufen lassen.",
+      "refresh_note": "Sofort bei Weiterbearbeitung: Altwarnung zeitlich auslaufen lassen; keine pauschale Entwarnung.",
       "latest_research_review": {
         "text": "T1",
         "workflow": "zur_endabnahme",
@@ -8360,7 +8719,7 @@
       "article_path": "inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
       "article_id": null,
       "implementation_commit": "8041a59",
-      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation. | Claude 26.10. nachmittags: Standard-Artikel (Allerheiligen, Ortswechsel Rosenkranz, Sonntagscafé, Caritas-Gruppen) plus Termin rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04. | ChatGPT 27.10. abends: MA-ROSENKRANZ-PFARRHEIM-0411, T1-B; Nur Webseitenzugang frisch versucht. Oktober-PDF und dessen Einzeltermine heute Abend nicht erneut im Volltext geprüft; ererbte Details ausdrücklich nicht als frisch ausgeben. Weiterarbeit: Liegt ein neuer Pfarrbrief vor? Bleiben Zeiten und Orte für Allerheiligen, Rosenkranz und Pfarrheimangebote bestehen? Amtliche Ernennung der Leitung separat offen. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Neuer Recherchevorgang vom 26.10.; keine Umsetzung oder Publikation. | Claude 26.10. nachmittags: Standard-Artikel (Allerheiligen, Ortswechsel Rosenkranz, Sonntagscafé, Caritas-Gruppen) plus Termin rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04. | ChatGPT 27.10. abends: MA-ROSENKRANZ-PFARRHEIM-0411, T1-B; Nur Webseitenzugang frisch versucht. Oktober-PDF und dessen Einzeltermine heute Abend nicht erneut im Volltext geprüft; ererbte Details ausdrücklich nicht als frisch ausgeben. Weiterarbeit: Liegt ein neuer Pfarrbrief vor? Bleiben Zeiten und Orte für Allerheiligen, Rosenkranz und Pfarrheimangebote bestehen? Amtliche Ernennung der Leitung separat offen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Archivzugang frisch; PDF-Detailseiten/Suchabrufe Timeout. Keine frische Volltextprüfung der Gottesdienstzeiten. Offen: Neue Ausgabe? Gelten einzelne Novembertermine unverändert? Amtliche Leitungsnachfolge separat bestätigen. Historische Umsetzung bleibt erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-26",
@@ -8385,6 +8744,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-ROSENKRANZ-PFARRHEIM-0411",
           "check_scope": "Nur Webseitenzugang frisch versucht. Oktober-PDF und dessen Einzeltermine heute Abend nicht erneut im Volltext geprüft; ererbte Details ausdrücklich nicht als frisch ausgeben."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-ROSENKRANZ-PFARRHEIM-0411",
+          "check_scope": "Archivzugang frisch; PDF-Detailseiten/Suchabrufe Timeout. Keine frische Volltextprüfung der Gottesdienstzeiten."
         }
       ],
       "research_history": [
@@ -8439,20 +8805,39 @@
           "open_questions": "Liegt ein neuer Pfarrbrief vor? Bleiben Zeiten und Orte für Allerheiligen, Rosenkranz und Pfarrheimangebote bestehen? Amtliche Ernennung der Leitung separat offen.",
           "refresh": "Vor Terminnutzung; spätestens 31.10.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-ROSENKRANZ-PFARRHEIM-0411",
+          "source_check_scope": "Archivzugang frisch; PDF-Detailseiten/Suchabrufe Timeout. Keine frische Volltextprüfung der Gottesdienstzeiten.",
+          "open_questions": "Neue Ausgabe? Gelten einzelne Novembertermine unverändert? Amtliche Leitungsnachfolge separat bestätigen.",
+          "refresh": "Vor Terminnutzung, spätestens31.10.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Nur Webseitenzugang frisch versucht. Oktober-PDF und dessen Einzeltermine heute Abend nicht erneut im Volltext geprüft; ererbte Details ausdrücklich nicht als frisch ausgeben.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Archivzugang frisch; PDF-Detailseiten/Suchabrufe Timeout. Keine frische Volltextprüfung der Gottesdienstzeiten.",
       "text_status": "T1",
       "source_check_status": "inherited_context_with_failed_refresh",
       "last_checked_at": "2026-10-26 nachmittags Europe/Berlin",
       "research_sources": [
         {
           "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
-          "publisher": "Katholische Kirchengemeinden Merzenich und Niederzier",
-          "published": "Ausgabe08/26 für26.09.–02.11.; exakter Veröffentlichungstag nicht ausgewiesen"
+          "publisher": "Katholische Kirchengemeinden Merzenich/Niederzier",
+          "published": "Oktober-Ausgabe08/26, gültiger Zeitraum ausVorbericht"
+        },
+        {
+          "url": "https://www.pfarrgemeinden-niederzier.de/pfarrbrief-aller-niederzierer-pfarrgemeinden/pfarrbriefe-als-pdf-dateien/2026-2/",
+          "publisher": "Katholische Kirchengemeinden Merzenich/Niederzier",
+          "published": "laufendes2026-Archiv"
         }
       ],
       "research_review": {
@@ -8467,7 +8852,7 @@
         "implementation": "keine_aenderung_durch_recherchelauf"
       },
       "image_status": "B0",
-      "refresh_note": "Vor Terminnutzung; spätestens 31.10.2026.",
+      "refresh_note": "Vor Terminnutzung, spätestens31.10.",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "latest_research_review": {
         "text": "T1-B",
@@ -8617,10 +9002,10 @@
       "location_section": "Merzenich / Golzheim · Schulen/Jugend",
       "change_type": "Nachfassen",
       "text_status": "T0",
-      "image_status": null,
+      "image_status": "B0",
       "dossier": "dossiers/2026-10-15-morgens.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": null,
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
@@ -8647,9 +9032,16 @@
           "dossier": "dossiers/2026-10-27-morgens.md",
           "heading": "MA-1025-17",
           "check_scope": "Rohdatei gelesen, Detail- und verlinkten JPG-Abruf versucht; beide nicht zugänglich"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "MA-1025-17",
+          "check_scope": "Terminseiten-/Aktuelleszugang und Rohdatei gelesen; keine erfolgreiche Plakat-/Kalendertranskription."
         }
       ],
-      "notes": "Schul-Rechercheauftrag MA-1025-17 aus Claude-Nachlauf25.10. fortgeführt; eigener Golzheimer Vorgang, nicht mit den abgelaufenen Anmeldeterminen der KGSAmWeinberg zusammenführen.",
+      "notes": "Schul-Rechercheauftrag MA-1025-17 aus Claude-Nachlauf25.10. fortgeführt; eigener Golzheimer Vorgang, nicht mit den abgelaufenen Anmeldeterminen der KGSAmWeinberg zusammenführen. | ChatGPT 28.10. morgens: T0; Terminseiten-/Aktuelleszugang und Rohdatei gelesen; keine erfolgreiche Plakat-/Kalendertranskription. Offen: Aktueller lesbarer Schulkalender, richtiges Jahr, Aufnahme2027/28 jeSchule separat? Historische Umsetzung bleibt erhalten.",
       "research_history": [
         {
           "date": "2026-10-26",
@@ -8710,19 +9102,34 @@
           "open_questions": "Lesbare Originalgrafik? Richtiges Jahr und richtige Schule? Warum widersprechen ältere Septemberangaben?",
           "refresh": "27.10. nachmittags",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → MA-1025-17",
+          "source_check_scope": "Terminseiten-/Aktuelleszugang und Rohdatei gelesen; keine erfolgreiche Plakat-/Kalendertranskription.",
+          "open_questions": "Aktueller lesbarer Schulkalender, richtiges Jahr, Aufnahme2027/28 jeSchule separat?",
+          "refresh": "28.10. nachmittags.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-morgens.md",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T0",
-      "latest_research_checked_at": "2026-10-27 morgens Europe/Berlin",
-      "latest_research_scope": "Rohdatei gelesen, Detail- und verlinkten JPG-Abruf versucht; beide nicht zugänglich",
-      "refresh_note": "27.10. nachmittags",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Terminseiten-/Aktuelleszugang und Rohdatei gelesen; keine erfolgreiche Plakat-/Kalendertranskription.",
+      "refresh_note": "28.10. nachmittags.",
       "latest_research_review": {
         "text": "T0",
-        "applies_to": "Sachstand oder Nachtrag dieses Dossiers; historische Artikelumsetzung unverändert",
+        "workflow": "gesperrt",
+        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
         "image": {
           "rights": "B0_keine_Artikelbildfreigabe",
-          "visual": "nicht_geprueft",
+          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
           "download": "nicht_erfolgt",
           "duplicate": "keine_neue_Artikelbildzuordnung",
           "integration": "nicht_erfolgt"
@@ -8735,8 +9142,19 @@
           "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php",
           "publisher": "KGS Am Weinberg Merzenich; Golzheimer Vorgang gesondert",
           "published": "Seitendatum offen; Rohabruf 26.10.21:35 MEZ"
+        },
+        {
+          "url": "https://www.gemeinde-merzenich.de/microsites/kgs_golzheim/rubrik-unsere-schule/termine.php",
+          "publisher": "KGS Golzheim / Gemeinde",
+          "published": "undatierte Terminseite"
+        },
+        {
+          "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
+          "publisher": "KGS Am Weinberg Merzenich",
+          "published": "laufende Übersicht"
         }
-      ]
+      ],
+      "source_check_status": "detail_read_with_stated_limits"
     },
     {
       "id": "KD-KI-ROADSHOW-0611",
@@ -9278,21 +9696,21 @@
       "id": "GR-L264-27102026",
       "priority": "P1",
       "location_section": "Girbelsrath · Polizei/Verkehr",
-      "change_type": "Neu",
-      "text_status": "T1",
+      "change_type": "Nachfassen",
+      "text_status": "T1-B",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-27-abends.md",
-      "workflow_status": "zur_abnahme",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "workflow_status": "neu",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert.",
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
-      "latest_research_text_status": "T1",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle.",
-      "refresh_note": "28.10.2026 vor Übernahme; keine fortdauernde Sperrung behaupten.",
+      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen. Offen: Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren. Historische Umsetzung bleibt erhalten.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T1-B",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen.",
+      "refresh_note": "Vor Artikelübernahme; nach einer neuen Polizeimitteilung.",
       "dossier_history": [
         {
           "date": "2026-10-27",
@@ -9300,6 +9718,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "GR-L264-27102026",
           "check_scope": "Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "GR-L264-27102026",
+          "check_scope": "Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen."
         }
       ],
       "research_history": [
@@ -9316,11 +9741,25 @@
           "open_questions": "Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme.",
           "refresh": "28.10.2026 vor Übernahme; keine fortdauernde Sperrung behaupten.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P1",
+          "change_type": "Nachfassen",
+          "text_status": "T1-B",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → GR-L264-27102026",
+          "source_check_scope": "Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen.",
+          "open_questions": "Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren.",
+          "refresh": "Vor Artikelübernahme; nach einer neuen Polizeimitteilung.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
       "latest_research_review": {
-        "text": "T1",
-        "workflow": "zur_endabnahme",
+        "text": "T1-B",
+        "workflow": "vor_uebernahme_erneut_pruefen",
         "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
         "image": {
           "rights": "B0_keine_Artikelbildfreigabe",
@@ -9345,7 +9784,7 @@
       "id": "NH-TOURISMUSTAG-05112026",
       "priority": "P2",
       "location_section": "Hambach-Revier / Mönchengladbach · Strukturwandel/Wirtschaft",
-      "change_type": "Neu",
+      "change_type": "Nachfassen",
       "text_status": "T2",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-27-abends.md",
@@ -9354,12 +9793,12 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "ChatGPT 27.10. abends: NH-TOURISMUSTAG-05112026, T2; Neue Meldung und offizielles Veranstalterportal vollständig gelesen; keine Anmeldung abgeschickt. Weiterarbeit: Sind Nachmeldungen möglich und wer erhält einen Freischaltcode? Welche Rolle haben Merzenicher Projekte/Unternehmen? Ist die DMO bereits gegründet oder nur geplant? Historische Umsetzung und Commit bleiben unverändert.",
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "notes": "ChatGPT 27.10. abends: NH-TOURISMUSTAG-05112026, T2; Neue Meldung und offizielles Veranstalterportal vollständig gelesen; keine Anmeldung abgeschickt. Weiterarbeit: Sind Nachmeldungen möglich und wer erhält einen Freischaltcode? Welche Rolle haben Merzenicher Projekte/Unternehmen? Ist die DMO bereits gegründet oder nur geplant? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Indexrefresh und Portalversuch; gestriger Vollentwurf bleibt T2. Offen: Nachmeldung/Freischaltcode? Beteiligung Merzenicher Projekte konkret belegen. Historische Umsetzung bleibt erhalten.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_scope": "Neue Meldung und offizielles Veranstalterportal vollständig gelesen; keine Anmeldung abgeschickt.",
-      "refresh_note": "Vor Terminhinweis, spätestens 29.10.2026.",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Indexrefresh und Portalversuch; gestriger Vollentwurf bleibt T2.",
+      "refresh_note": "Vor Terminübernahme; spätestens29.10.",
       "dossier_history": [
         {
           "date": "2026-10-27",
@@ -9367,6 +9806,13 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "NH-TOURISMUSTAG-05112026",
           "check_scope": "Neue Meldung und offizielles Veranstalterportal vollständig gelesen; keine Anmeldung abgeschickt."
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "NH-TOURISMUSTAG-05112026",
+          "check_scope": "Indexrefresh und Portalversuch; gestriger Vollentwurf bleibt T2."
         }
       ],
       "research_history": [
@@ -9383,6 +9829,20 @@
           "open_questions": "Sind Nachmeldungen möglich und wer erhält einen Freischaltcode? Welche Rolle haben Merzenicher Projekte/Unternehmen? Ist die DMO bereits gegründet oder nur geplant?",
           "refresh": "Vor Terminhinweis, spätestens 29.10.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → NH-TOURISMUSTAG-05112026",
+          "source_check_scope": "Indexrefresh und Portalversuch; gestriger Vollentwurf bleibt T2.",
+          "open_questions": "Nachmeldung/Freischaltcode? Beteiligung Merzenicher Projekte konkret belegen.",
+          "refresh": "Vor Terminübernahme; spätestens29.10.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
       "latest_research_review": {
@@ -9398,7 +9858,7 @@
         },
         "implementation": "keine_Artikelumsetzung"
       },
-      "source_check_status": "detail_read_with_stated_limits",
+      "source_check_status": "inherited_context_with_failed_refresh",
       "research_sources": [
         {
           "url": "https://www.neuland-hambach.de/aktuelles/artikel/tourismus-gemeinsam-gestalten-tourismustag-rheinisches-revier-2026",
@@ -9407,8 +9867,13 @@
         },
         {
           "url": "https://eveeno.com/tourismustag-rheinisches-revier",
-          "publisher": "Rhein-Erft-Kreis als Veranstalter über eveeno",
-          "published": "undatiertes Veranstaltungsportal"
+          "publisher": "Rhein-Erft-Kreis über eveeno",
+          "published": "heute nicht abrufbar; ursprüngliche Frist ausAbendbericht"
+        },
+        {
+          "url": "https://www.neuland-hambach.de/aktuelles",
+          "publisher": "NEULAND HAMBACH",
+          "published": "aktuelle Übersicht, jüngster Beitrag27.10."
         }
       ]
     },
@@ -9741,6 +10206,148 @@
           "published": "27.10.2026, 13:54 Uhr"
         }
       ]
+    },
+    {
+      "id": "DN-ARCHIV-SERVICE-102026",
+      "priority": "P2",
+      "location_section": "Düren / Merzenicher Ortsforschung · Kultur/Service",
+      "change_type": "Hintergrund",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-28-morgens.md",
+      "workflow_status": "zur_abnahme",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "ChatGPT 28.10. morgens: T1; Kreis-Presse, Stadt-Presse und Einrichtungsdetail tatsächlich gelesen. Offen: Verfügbare Besuchstermine und gewünschte Aktenbestände vor Anfahrt bestätigen. Keine konkrete Merzenich-Akte ohne Findbuchbeleg nennen. Historische Umsetzung bleibt erhalten.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T1",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Kreis-Presse, Stadt-Presse und Einrichtungsdetail tatsächlich gelesen.",
+      "refresh_note": "Heute vor Anfahrt; Novembertermine vor dem jeweiligen Besuch.",
+      "source_check_status": "detail_read_with_stated_limits",
+      "dossier_history": [
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "DN-ARCHIV-SERVICE-102026",
+          "check_scope": "Kreis-Presse, Stadt-Presse und Einrichtungsdetail tatsächlich gelesen."
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Hintergrund",
+          "text_status": "T1",
+          "draft_complete": true,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → DN-ARCHIV-SERVICE-102026",
+          "source_check_scope": "Kreis-Presse, Stadt-Presse und Einrichtungsdetail tatsächlich gelesen.",
+          "open_questions": "Verfügbare Besuchstermine und gewünschte Aktenbestände vor Anfahrt bestätigen. Keine konkrete Merzenich-Akte ohne Findbuchbeleg nennen.",
+          "refresh": "Heute vor Anfahrt; Novembertermine vor dem jeweiligen Besuch.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T1",
+        "workflow": "zur_endabnahme",
+        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_sources": [
+        {
+          "url": "https://www.kreis-dueren.de/presse/oeffnungszeiten_2026-10-01.php",
+          "publisher": "Kreis Düren",
+          "published": "01.10.2026"
+        },
+        {
+          "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/ffnungszeiten-des-stadt-und-kreisarchivs-dueren-im-oktober-und-november",
+          "publisher": "Stadt Düren",
+          "published": "01.10.2026,16:58Uhr"
+        },
+        {
+          "url": "https://www.kreis-dueren.de/kreishaus/amt/amt10/stadt-kreisarchiv.php",
+          "publisher": "Kreis Düren / Stadt- und Kreisarchiv",
+          "published": "laufende Einrichtungsseite, kein Publikationstag"
+        }
+      ]
+    },
+    {
+      "id": "GO-VEITH-OEFFNUNG-28102026",
+      "priority": "P2",
+      "location_section": "Golzheim · Wirtschaft/Service",
+      "change_type": "Nachfassen",
+      "text_status": "T0",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-28-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "ChatGPT 28.10. morgens: T0; Originalseite und gezielte Textsuche gelesen, keine bestätigte Tages-Sonderregel; Suchmaschineninhalt nur als Lead. Offen: Gibt es eine datierte offizielle Tagesankündigung? Ohne diese keine Empfehlung einer geöffneten Filiale. Historische Umsetzung bleibt erhalten.",
+      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
+      "latest_research_text_status": "T0",
+      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "latest_research_scope": "Originalseite und gezielte Textsuche gelesen, keine bestätigte Tages-Sonderregel; Suchmaschineninhalt nur als Lead.",
+      "refresh_note": "28.10. vor jeder Nutzung; danach unbestätigten Lead schließen.",
+      "source_check_status": "detail_read_with_stated_limits",
+      "dossier_history": [
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "heading": "GO-VEITH-OEFFNUNG-28102026",
+          "check_scope": "Originalseite und gezielte Textsuche gelesen, keine bestätigte Tages-Sonderregel; Suchmaschineninhalt nur als Lead."
+        }
+      ],
+      "research_history": [
+        {
+          "date": "2026-10-28",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-28-morgens.md",
+          "priority": "P2",
+          "change_type": "Nachfassen",
+          "text_status": "T0",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-28-morgens.md → GO-VEITH-OEFFNUNG-28102026",
+          "source_check_scope": "Originalseite und gezielte Textsuche gelesen, keine bestätigte Tages-Sonderregel; Suchmaschineninhalt nur als Lead.",
+          "open_questions": "Gibt es eine datierte offizielle Tagesankündigung? Ohne diese keine Empfehlung einer geöffneten Filiale.",
+          "refresh": "28.10. vor jeder Nutzung; danach unbestätigten Lead schließen.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T0",
+        "workflow": "gesperrt",
+        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
+        "image": {
+          "rights": "B0_keine_Artikelbildfreigabe",
+          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
+          "download": "nicht_erfolgt",
+          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      },
+      "research_sources": [
+        {
+          "url": "https://www.baumschuleveith.de/",
+          "publisher": "Baumschule Veith",
+          "published": "undatierte laufende Unternehmensseite"
+        }
+      ]
     }
   ],
   "archive": {
@@ -10023,6 +10630,39 @@
       "publication": "keine",
       "implementation": "keine_Artikelumsetzung",
       "qa": "node deploy/register-pflege.mjs und --check: 0 Verstöße; node qa/redaktion-lauf.mjs --json: 0 Fehler, 7 unveränderte Bestandshinweise; Zahlen/Links/Erhalt alter Umsetzungen geprüft."
+    },
+    {
+      "date": "2026-10-28",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-28-morgens.md",
+      "compared_with": "dossiers/2026-10-27-abends.md",
+      "base_commit": "c3e2d76a55ae60b3a0db85406785bf0748102a3b",
+      "summary": "20 Karten, 4 neue Textfassungen (1 Standard, 3 Kurzfassungen; 2 T1, 2 T2). 0 neue örtliche Eilmeldungen/Ergebnisse; neu erschlossener älterer Archivservice, KG-Verlinkungskonflikt, SC-III-Tabellen-/Ansetzungsbeleg und S19-Ablaufpflege. 8 zusätzliche Fotodateien, 8 Lizenzmetadatenprüfungen, 6 Original-Sichtabrufe, 0 lokale Downloads/Integration.",
+      "topics": 20,
+      "new_register_topics": 2,
+      "new_local_breaking_reports": 0,
+      "new_confirmed_sports_results": 0,
+      "new_sport_gap_closures": 1,
+      "new_source_conflict_topics": 1,
+      "new_unverified_leads": 1,
+      "newly_sourced_older_service": 1,
+      "elapsed_service_windows": 1,
+      "complete_drafts": 4,
+      "standard_drafts": 1,
+      "short_working_drafts": 3,
+      "drafts_T1": 2,
+      "drafts_blocked_T2": 2,
+      "photos_new_found": 8,
+      "photos_license_evaluated": 8,
+      "photos_visual_checked": 6,
+      "photos_downloaded": 0,
+      "photos_url_duplicates_checked": 8,
+      "photos_pixel_duplicates_checked": 0,
+      "photos_integrated": 0,
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "qa": "node deploy/register-pflege.mjs und --check: 0 Verstöße; node qa/redaktion-lauf.mjs --json: 0 Fehler, 7 unveränderte Bestandshinweise; Zahlen/Links/Erhalt alter Umsetzungen zusätzlich geprüft."
     }
   ]
 }

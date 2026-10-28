@@ -1,13 +1,15 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [27.10.2026 abends – Redaktions- und Bildrecherche](dossiers/2026-10-27-abends.md). Vergleich: [letzter erfolgreicher Claude-Morgenlauf mit Korrektur-Nachtrag](dossiers/2026-10-27-claude-morgens.md), Kontext: [ChatGPT-Morgendossier](dossiers/2026-10-27-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [28.10.2026 morgens – Redaktions- und Bildrecherche](dossiers/2026-10-28-morgens.md). Vergleich: [erfolgreiches Abenddossier27.10.](dossiers/2026-10-27-abends.md), Kontext: [Claude-Morgenlauf27.10. mit Korrektur-Nachtrag](dossiers/2026-10-27-claude-morgens.md). Offene Themen: [offen.md](offen.md).
 
-**Neu recherchiert:** örtlicher schwerer L264-Unfall bei Girbelsrath; sechs regionale Funde einschließlich Tourismustag, VHS-Tierheimvortrag, Fundsachenauktion und drei Dürener Polizeivorgängen. Neuer Abgleich Einlass/Programmbeginn beim vorhandenen Krätzchennachmittag. 25 Karten, 7 neue Kurzfassungen (1 T1 mit dokumentationspflichtiger Quellenausnahme, 6 T2 gesperrt); 10 zusätzliche Fotodateien, davon 9 Original-Sichtabrufe, keine lokalen Downloads oder Integration. Kein neues Sportergebnis.
+**Recherchefortschritt:** 20 Karten, 4 neue Texte (1 Standard, 3 Kurzfassungen; 2 T1, 2 T2). SC-III-Ansetzung31.10./Tabellenzeile neu belegt, Endstand25.10. offen. Neuer Abgleich KG-Golzheim2026 gegen verlinktes Detail2024; älterer Archivservice erstmals mit drei Primärseiten erschlossen. S19-Ausfallfenster seit28.10.,05Uhr abgelaufen, tatsächlicher Betrieb nicht bestätigt. Keine neue örtliche Eilmeldung und kein neues Sportergebnis.
 
-**Umgesetzt:** durch diesen Recherchelauf 0 Artikel, 0 Termine, 0 Bilder; nur Redaktionsablage. Bereits im Vergleichsstand umgesetzt: ELW/VHS in `636d04c`, weitere Artikel-/Terminkorrekturen `d32d252`/`33aa1ec`. Diese Arbeit wird nicht als neue Leistung gezählt; Artikelpfade und Umsetzungscommits bleiben erhalten.
+**Bilder:** 8 zusätzliche Dateien,8 Lizenzmetadatenprüfungen,6 Original-Sichtabrufe,0 lokale Bilddownloads und0 Integrationen. Weiterhin B0 für konkrete Artikelzuordnungen.
 
-**Systembefunde:** kein neuer bestätigter Frontendfehler. Bekannter Befund zu elf früher live angelegten Claude-Terminen bleibt im [Claude-Dossier](dossiers/2026-10-27-claude-morgens.md); dieser Lauf hat keinen WordPress-Status geprüft oder verändert. Rohquellen im gelesenen main enden am 27.10. gegen 11:35 MEZ, spätere Polizeimeldungen benötigen den bestehenden nächsten Abruf.
+**Umgesetzt:** durch diesen Recherchelauf0 Artikel,0 Termine,0 Bilder; ausschließlich fünf Redaktionsdateien. Historische Artikelpfade und Umsetzungscommits bleiben erhalten. Seit dem Abenddossier kam vor Recherchebeginn nur ein Quellenabrufcommit hinzu (`c3e2d76`), keine neue Claude-Artikelumsetzung.
 
-**Offen:** Golzheimer Sprechstundendatum; Krätzchen-Einlass/Beginn; vollständige Jugendgremium-Unterlagen; SC-III-Endstand; konkrete SEV-Abfahrten (Ablauf 28.10., 5 Uhr); Tourismustag-Nachmeldung und VHS-Buchungsweg; neuer Pfarrbrief/Adventskalender; Bild-Motivkonflikt und örtliche Alternativen. T0/T2-Nachträge gesperrt, T1-B erneut prüfen, T1 zur Endabnahme. Recherche ist keine Veröffentlichung.
+**System-/Quellenbefunde:** keine neue Live-Frontend-QA. Bekannter Elf-Termine-Befund bleibt im Claude-Dossier. Budgetportal lieferte widersprechende Zwischenantworten, jüngster Abruf wieder02.11.; keine bestätigte Fristverkürzung. Aktuelle Rohdateien stammen vom27.10.,21:04–21:11MEZ. Neue belegte Zugänge und Grenzen im [Quellenkatalog](QUELLEN.md).
+
+**Offen:** SC-III-Endstand, Sprechstundendatum Golzheim, KG-Detail2026, Krätzchen-Einlass/Beginn, Jugendgremium-Anlagen, Schul-/Pfarrtermine, Tourismustag-Nachmeldung, Kita-Fristverlängerung, Bild-Eignung/Pixelabgleich. T0/T2-Nachträge gesperrt; T1-B erneut prüfen; T1 zur Endabnahme. Recherche ist keine Veröffentlichung.
 
 [Register](register.json) · [Regeln](README.md) · [Register-Schema](REGISTER-SCHEMA.md) · [Archiv](archiv.md)

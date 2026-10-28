@@ -1,19 +1,19 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-27-abends.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-28-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
-| archiv_refresh_noetig | 98 |
+| archiv_refresh_noetig | 97 |
 | uebernommen | 31 |
-| gesperrt | 22 |
-| neu | 5 |
+| gesperrt | 24 |
+| neu | 7 |
 | zur_abnahme | 5 |
-| in_bearbeitung | 4 |
+| in_bearbeitung | 3 |
 
-## Offen (14)
+## Offen (15)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -29,14 +29,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen
 
-### GR-L264-27102026 · P1 · T1/B0 · zur_abnahme
-
-- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Neu; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: 28.10.2026 vor Übernahme; keine fortdauernde Sperrung behaupten.
-- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
-- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
-- Möglicher Bestand: keiner gefunden
-- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
-
 ### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
 
 - Ort/Ressort: Merzenich · Feuerwehr/Rathaus; Art: Fortgeführter Korrekturauftrag; zuletzt geprüft: 2026-10-27 morgens Europe/Berlin; Refresh: Vor Artikel-Endabnahme
@@ -47,6 +39,24 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Artikelpfad: inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json → /rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 26.10. nachmittags: Standard-Artikel; Beschlusstext und Vorlage 116/2026 als PDF gelesen, EU-Schwellenwert nachgerechnet, Vergabe als offen beschrieben. | Claude 27.10. morgens: Korrektur umgesetzt (keine Gegenwartsb
+
+### GR-L264-27102026 · P1 · T1-B/B0 · neu
+
+- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Nachfassen; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Artikelübernahme; nach einer neuen Polizeimitteilung.
+- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
+- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
+- Möglicher Bestand: keiner gefunden
+- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
+
+### DN-ARCHIV-SERVICE-102026 · P2 · T1/B0 · zur_abnahme
+
+- Ort/Ressort: Düren / Merzenicher Ortsforschung · Kultur/Service; Art: Hintergrund; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Heute vor Anfahrt; Novembertermine vor dem jeweiligen Besuch.
+- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md)
+- Quelle: https://www.kreis-dueren.de/presse/oeffnungszeiten_2026-10-01.php (Kreis Düren)
+- Quelle: https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/ffnungszeiten-des-stadt-und-kreisarchivs-dueren-im-oktober-und-november (Stadt Düren)
+- Quelle: https://www.kreis-dueren.de/kreishaus/amt/amt10/stadt-kreisarchiv.php (Kreis Düren / Stadt- und Kreisarchiv)
+- Möglicher Bestand: keiner gefunden
+- Notiz: ChatGPT 28.10. morgens: T1; Kreis-Presse, Stadt-Presse und Einrichtungsdetail tatsächlich gelesen. Offen: Verfügbare Besuchstermine und gewünschte Aktenbestände vor Anfahrt bestätigen. Keine konkrete Merzenich-Akte ohne Findbuchbeleg nennen. Historische Umsetzung bleibt erhalten.
 
 ### MA-AMPRION-BAUSTART · P2 · T1/B0 · zur_abnahme
 
@@ -76,10 +86,10 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (Stichwort): `adventmarkt-heimatmuseum-2026-11-28` – Adventmarkt im Heimatmuseum (2026-11-28, inhalte/termine/2026-10-16-amtsblatt-11.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
-### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · in_bearbeitung
+### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · neu
 
-- Ort/Ressort: Merzenich · Wirtschaft/Arbeitsplätze; Art: Termin; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: Vor Übernahme; nach 15.11.2026 auslaufen.
-- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md)
+- Ort/Ressort: Merzenich · Wirtschaft/Arbeitsplätze; Art: Termin; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Übernahme; nach15.11. auslaufen.
+- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-25-abends.md](dossiers/2026-10-25-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-26-morgens.md](dossiers/2026-10-26-morgens.md), [2026-10-26-abends.md](dossiers/2026-10-26-abends.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
 - Quelle: https://www.gemeinde-merzenich.de/bindata/stellenausschreibungen/01.111.07.02-003-Stellenausschreibung-FBL-III-ab-Oktober-2026-M000770251.pdf (Gemeinde Merzenich)
 - Quelle: https://www.heimat-info.de/beitraege/84069eb1-5ed0-4970-ba2c-1281bafd0fd2 (Gemeinde Merzenich viaHeimat-Info)
 - Quelle: https://www.gemeinde-merzenich.de/politik/stellenanngebote.php (Gemeinde Merzenich)
@@ -145,7 +155,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-10-28 morgens (ChatGPT): 20 Karten, 4 neue Textfassungen (1 Standard, 3 Kurzfassungen; 2 T1, 2 T2). 0 neue örtliche Eilmeldungen/Ergebnisse; neu erschlossener älterer Archivservice, KG-Verlinkungskonflikt, SC-III-Tabellen-/Ansetzungsbeleg und S19-Ablaufpflege. 8 zusätzliche Fotodateien, 8 Lizenzmetadatenprüfungen, 6 Original-Sichtabrufe, 0 lokale Downloads/Integration.
 - 2026-10-27 abends (ChatGPT): 25 Karten; 1 neue örtliche Unfallmeldung und 6 regionale Funde; 1 neuer Einlass-/Beginn-Abgleich; 7 neue Kurzfassungen (1 T1 mit zu dokumentierender Quellenausnahme, 6 T2 gesperrt). 10 zusätzliche Fotodateien, Lizenzmetadaten 10, Sichtabruf 9, lokale Downloads/Integration 0. Keine neuen Sportergebnisse.
 - 2026-10-27 morgens (Claude): 0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 636d04c
 - 2026-10-27 morgens (ChatGPT): 27 Karten; 1 erstmals erschlossener regionaler Servicehinweis, 1 neuer Quellenkonflikt und 4 Hintergrundpakete; 7 neue Textfassungen (2 T1, 5 T2 gesperrt); keine neue örtliche Eilmeldung oder Sportergebnisnachricht; 10 zusätzliche Bildkandidaten, ohne Sichtprüfung/Download/Integration.
-- 2026-10-26 abends (ChatGPT): 18 Karten; 4 Quellen- und Sachstandsergänzungen, 2 neue Korrekturaufträge; 1 Standardentwurf und 3 Ergänzungsbausteine; 10 zusätzliche Bildkandidaten, davon 1 gesperrt; keine Artikelumsetzung
