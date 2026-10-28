@@ -55,9 +55,7 @@ while (have_posts()): the_post();
   </div>
     <div class="prose"><?php the_content(); ?></div>
     <?php echo ma21_werbung('artikel'); ?>
-  <?php if ($q_url): ?>
-    <div class="source-box"><b>Quelle &amp; Transparenz</b> Grundlage dieser Meldung: <a href="<?php echo esc_url($q_url); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html($q_name ?: parse_url($q_url, PHP_URL_HOST)); ?> ↗</a>.<?php if ($q_stand): ?> <span class="stand">Abgerufen am <?php echo esc_html(wp_date('d.m.Y', strtotime($q_stand))); ?>.</span><?php endif; ?> Die Redaktion gibt nur wieder, was in der Quelle steht. <a href="<?php echo esc_url(home_url('/korrekturen/')); ?>">Fehler melden</a></div>
-  <?php endif; ?>
+  <?php /* Kasten „Quelle & Transparenz“ entfernt (Wunsch Luis Kummer 28.10.2026): Quellen stehen im Text, der Hinweis zur Arbeitsweise im Impressum. */ ?>
     <div class="tags"><?php foreach ((get_the_tags() ?: []) as $t) printf('<a href="%s" rel="tag">%s</a>', esc_url(get_tag_link($t)), esc_html($t->name));
       if ($ort !== 'merzenich') printf('<a href="%s" rel="tag">%s</a>', esc_url(home_url("/ort/{$ort}/")), esc_html(MA21_ORTE[$ort])); ?></div>
     <?php if ($gesponsert): ?><div class="author-box"><span class="avatar" aria-hidden="true">A</span><div class="b"><b>Anzeige<?php echo $von !== '' ? ' von ' . esc_html($von) : ''; ?></b><p>Für den Inhalt ist der Auftraggeber verantwortlich. Die Redaktion hat den Beitrag vor der Veröffentlichung geprüft und als Anzeige gekennzeichnet. <a href="<?php echo esc_url(home_url('/werben/')); ?>">Werben auf Merzenich Aktuell</a></p></div></div>

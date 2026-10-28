@@ -135,7 +135,7 @@ const MEGA_SPALTEN = [
   ['Ressorts', [['/nachrichten/', 'Aktuell'], ['/blaulicht/', 'Blaulicht'], ['/sport/', 'Sport'], ['/termine/', 'Termine'], ['/vereine/', 'Vereine', 'vereine'], ['/rathaus/', 'Rathaus & Politik'], ['/leben/', 'Leben'], ['/wirtschaft/', 'Wirtschaft'], ['/unternehmen/', 'Unternehmen'], ['/tipp/', 'Tipp'], ['/menschen/', 'Menschen']]],
   ['Orte', [['/merzenich/', 'Merzenich'], ['/golzheim/', 'Golzheim'], ['/girbelsrath/', 'Girbelsrath'], ['/morschenich/', 'Morschenich'], ['/buergewald/', 'Bürgewald']]],
   ['Anzeigen & Service', [['/anzeigen/aufgeben/', 'Anzeige aufgeben'], ['/immobilien/', 'Immobilienmarkt'], ['/jobs/', 'Stellenmarkt'], ['/traueranzeigen/', 'Traueranzeigen'], ['/familienanzeigen/', 'Familienanzeigen'], ['/service/', 'Notdienste & Rathaus'], ['/sc-1919-merzenich/', 'SC 1919 Merzenich'], ['/diskussion/', 'Diskussion'], ['/archiv/', 'Archiv']]],
-  ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/ki-redaktion/', 'KI & Redaktion'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen'],
+  ['Redaktion', [['/ueber-uns/', 'Über uns'], ['/kontakt/', 'Kontakt'], ['/grundsaetze/', 'Grundsätze'], ['/kommentarregeln/', 'Kommentarrichtlinien'], ['/korrekturen/', 'Korrekturen'], ['/werben/', 'Werben & Mediadaten'], ['/unterstuetzen/', 'Unterstützen'],
     // Endlos-Scrollen schiebt den Fuss nach hinten: Impressum und Datenschutz bleiben ueber „Mehr“ erreichbar.
     ['/impressum/', 'Impressum'], ['/datenschutz/', 'Datenschutz']]],
 ];
@@ -159,10 +159,13 @@ const VEREINE_AUSGEBLENDET = '<a href="/vereine/" data-ausbau="vereine">Vereine<
 const NAV_HOME = '<a class="nav-home" href="/"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M3 11.2 12 4l9 7.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.8v9.7h4.8v-5.7h3.4v5.7h4.8V9.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="sr-only">Startseite</span></a>';
 const SPORT_RE = /<div class="sport-mega">[\s\S]*?<!--\/sport-mega-->/;
 const LINIE = '<div class="merzenich-linie" aria-hidden="true"><i></i><svg viewBox="0 0 240 48" focusable="false"><path d="M0 24 H118 L124 20 L130 29 L136 21 L144 4 L152 44 L158 25 L166 24 L174 24 L180 18 L186 30 L192 24 H240" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><i></i></div>';
+// Link „KI & Redaktion“ nicht in Menüs und Fuß (Wunsch Luis Kummer 28.10.2026); die Seite /ki-redaktion/ bleibt.
+const KI_LINK_RE = /<li><a href="\/ki-redaktion\/">KI (?:&amp;|&) Redaktion<\/a><\/li>|<a href="\/ki-redaktion\/">KI (?:&amp;|&) Redaktion<\/a>/g;
 for (const pfad of seiten) {
   let html = readFileSync(pfad, 'utf8');
   if (!CSS_ANKER.test(html)) { uebersprungen++; continue; }
   const alt = html;
+  html = html.replace(KI_LINK_RE, '');
   // FAVICON-PNG-FALLBACK: aktuelles M.-Markenzeichen aus der Wortmarke.\n  // SVG + PNG werden ueber ihren Inhalts-Hash versioniert, damit Safari/Chrome/Google\n  // nach Markenupdates nicht ein altes, lang gecachtes Icon behalten.\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/avatar-1024\\.png(?:\\?[^"]*)?" type="image\\/png" sizes="1024x1024">\\s*/g, '');\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/favicon\\.svg(?:\\?[^"]*)?" type="image\\/svg\\+xml"(?: sizes="any")?>/, '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" sizes="any">\\n<link rel="icon" href="/assets/img/avatar-1024.png" type="image/png" sizes="1024x1024">');\n  // Fundament zuerst: vor style.css, nicht dahinter (siehe SYSTEM_ANKER).
   if (!html.includes('/assets/system.css')) {
     if (!SYSTEM_ANKER.test(html)) { fehler++; console.error('kein style.css-Anker: ' + pfad); continue; }
