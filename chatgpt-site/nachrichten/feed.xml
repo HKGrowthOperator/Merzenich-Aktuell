@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 26 Oct 2026 17:30:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 28 Oct 2026 07:55:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</guid>
+<pubDate>Wed, 28 Oct 2026 07:55:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/girbelsrath-1440.webp" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath</media:description></media:content>
+</item>
 <item>
 <title>Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Geschichts- und Heimatverein lädt zum traditionellen Adventmarkt mit Handwerkskunst, Blasmusik und Besuch des Nikolaus ein. Der Eintritt ist frei.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Rathaus Merzenich von der Straße aus</media:description></media:content>
-</item>
-<item>
-<title>Tag der Modelleisenbahn: Wasserturm Merzenich öffnet am 21. November mit europäischen Zügen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/</guid>
-<pubDate>Fri, 16 Oct 2026 07:28:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-07-d923824479.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Ehemalige Merzenicher Windmühle</media:description></media:content>
 </item>
 </channel>
 </rss>

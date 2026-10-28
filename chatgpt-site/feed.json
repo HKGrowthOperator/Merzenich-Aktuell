@@ -15,6 +15,23 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
+      "title": "Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt",
+      "summary": "In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.",
+      "content_html": "<p>In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.</p>",
+      "date_published": "2026-10-28T08:55:00+01:00",
+      "date_modified": "2026-10-28T08:55:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/places/girbelsrath-1440.webp",
+      "tags": [
+        "Blaulicht",
+        "Girbelsrath",
+        "Verkehr",
+        "Girbelsrath",
+        "Polizei"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
       "title": "Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt",
@@ -499,23 +516,6 @@
         "Merzenich",
         "Heimatverein",
         "Brauchtum",
-        "Veranstaltungen"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/",
-      "title": "Tag der Modelleisenbahn: Wasserturm Merzenich öffnet am 21. November mit europäischen Zügen",
-      "summary": "Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.",
-      "content_html": "<p>Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.</p>",
-      "date_published": "2026-10-16T09:28:00+02:00",
-      "date_modified": "2026-10-16T09:28:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-07-d923824479.jpg",
-      "tags": [
-        "Vereine",
-        "Merzenich",
-        "Heimatverein",
-        "Pfadfinder",
         "Veranstaltungen"
       ]
     }

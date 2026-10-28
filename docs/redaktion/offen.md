@@ -45,7 +45,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Nachfassen; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Artikelübernahme; nach einer neuen Polizeimitteilung.
 - Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
 - Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
-- Möglicher Bestand: keiner gefunden
+- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
 - Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
 
 ### DN-ARCHIV-SERVICE-102026 · P2 · T1/B0 · zur_abnahme

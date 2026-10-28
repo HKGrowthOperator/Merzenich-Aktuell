@@ -1,7 +1,16 @@
 {
-  "generated": "2026-10-26T18:30:00+01:00",
-  "stand": "2026-10-26T18:30:00+01:00",
+  "generated": "2026-10-28T08:55:00+01:00",
+  "stand": "2026-10-28T08:55:00+01:00",
   "items": [
+    {
+      "title": "Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
+      "date": "2026-10-28T08:55:00+01:00",
+      "ressort": "blaulicht",
+      "ort": "girbelsrath",
+      "teaser": "In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/places/girbelsrath-1440.webp"
+    },
     {
       "title": "Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt",
       "url": "https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Vier Neuntklässler und zwei Lehramtsstudentinnen wandern mit Bollerwagen und 150 Euro pro Person durch das Rheinland. In Merzenich lud der Bürgermeister sie zum Essen ein und schickte sie mit dem Bürgerbus nach Bürgewald.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-04-01b3540d7f.jpg"
-    },
-    {
-      "title": "Rund 120 Gäste beim Seniorennachmittag in der Weinberghalle",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/",
-      "date": "2026-10-25T22:12:00+01:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Kuchen, Akkordeon und ein Tanzauftritt der Kita-Kinder: Die Gemeinde hat ihre Seniorinnen und Senioren wieder in die Weinberghalle eingeladen. Getragen wurde der Nachmittag von Vereinen, Ehrenamtlichen und Sponsoren.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg"
     }
   ],
   "events": [

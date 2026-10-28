@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-26T18:30:00+01:00",
- "anzahl": 216,
+ "generated": "2026-10-28T08:55:00+01:00",
+ "anzahl": 217,
  "bestand": {
-  "gesamt": 216,
+  "gesamt": 217,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 71,
+   "blaulicht": 72,
    "sport": 33,
    "rathaus": 26,
    "leben": 49,
@@ -18,18 +18,18 @@
   "ortsteile": {
    "merzenich": 149,
    "golzheim": 24,
-   "girbelsrath": 23,
+   "girbelsrath": 24,
    "morschenich": 11,
    "buergewald": 9,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 216,
+    "anzahl": 217,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 71,
+    "anzahl": 72,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -73,7 +73,7 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 23,
+    "anzahl": 24,
     "liste": "gepflegt"
    },
    "/morschenich/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
+   "url": "/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
+   "titel": "Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt",
+   "teaser": "In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.",
+   "kicker": "Blaulicht · Verkehr",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-10-28T08:55:00+01:00",
+   "aktualisiert": "2026-10-28T08:55:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/girbelsrath-1440.webp",
+    "srcset": "/assets/places/girbelsrath-720.webp 720w, /assets/places/girbelsrath-1440.webp 1440w",
+    "alt": "Denkmalgeschütztes Fachwerkhaus an der Hauptstraße in Girbelsrath",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons (bearbeitet) · CC BY-SA 3.0 DE",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
    "url": "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
@@ -9007,7 +9049,7 @@
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 2,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
-  "editorial-pools/aktuell/aktuell-10-9c5a4aeb44": 2,
+  "editorial-pools/aktuell/aktuell-10-9c5a4aeb44": 1,
   "editorial-pools/aktuell/aktuell-13-33d9d347f2": 2,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
   "editorial-pools/brand/brand-19-6a048a0c3d": 1,
@@ -9023,7 +9065,7 @@
   "editorial-pools/verkehr/verkehr-04-d2c81be688": 1,
   "editorial-pools/wirtschaft/wirtschaft-05-94380a1858": 2,
   "places/buergewald": 1,
-  "places/girbelsrath": 1,
+  "places/girbelsrath": 2,
   "places/golzheim": 2,
   "places/golzheim-aachener-strasse": 1,
   "places/merzenich": 2,

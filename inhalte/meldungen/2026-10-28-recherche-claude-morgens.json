@@ -1,0 +1,32 @@
+{
+  "hinweis": "Recherche vom 28.10.2026, Morgenlauf (Claude), mit Stoff des ausgefallenen Nachmittagslaufs vom 27.10.: Polizei Düren (Presseportal), Rohdaten Feuerwehr und Heimat-Info, abgeglichen mit dem ChatGPT-Abenddossier vom 27.10. (GR-L264-27102026). Erscheint in WordPress als Entwurf in den Freigaben.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Blaulicht · Verkehr",
+      "titel": "Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt",
+      "dek": "In der Nacht zu Dienstag ist ein Autofahrer auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt. Er kam schwer verletzt ins Krankenhaus.",
+      "datum": "2026-10-28T08:55:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "themen": [["verkehr", "Verkehr"], ["girbelsrath", "Girbelsrath"], ["polizei", "Polizei"]],
+      "bildklasse": "verkehr.unfall.rettung",
+      "absaetze": [
+        "Nach Angaben der Polizei Düren war der Autofahrer am Dienstag, 27. Oktober, gegen 2.44 Uhr auf der L 264 aus Richtung Eschweiler über Feld in Richtung B 264 unterwegs. In Höhe Girbelsrath kam er aus bisher ungeklärter Ursache nach rechts von der Fahrbahn ab, prallte gegen einen Verkehrszeichenmast, einen Leitpfosten und einen Baum und wurde auf die Fahrbahn zurückgeschleudert. Ein Rettungswagen brachte den Fahrer schwer verletzt in ein Krankenhaus.",
+        "Für die Unfallaufnahme zog die Polizei ein speziell ausgebildetes Verkehrsunfallaufnahmeteam hinzu und sperrte die L 264 vollständig; gegen 7.50 Uhr war die Straße wieder frei. Den Sachschaden schätzt die Polizei auf rund 10.300 Euro. Das Verkehrskommissariat ermittelt zur Unfallursache."
+      ],
+      "fakten": [
+        "Alleinunfall am 27.10.2026 gegen 2.44 Uhr auf der L 264 in Höhe Girbelsrath, Fahrtrichtung aus Eschweiler über Feld zur B 264; Fahrer schwer verletzt, mit dem Rettungswagen ins Krankenhaus (Polizei Düren, 27.10.2026)",
+        "Vollsperrung für die Unfallaufnahme mit Verkehrsunfallaufnahmeteam bis gegen 7.50 Uhr; Sachschaden rund 10.300 Euro; Ermittlungen des Verkehrskommissariats (Polizei Düren)"
+      ],
+      "quelle": {
+        "name": "Polizei Düren, Pressemitteilung vom 27.10.2026, 14:48 Uhr: „Von der Fahrbahn abgekommen und schwer verletzt“",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6379066",
+        "stand": "2026-10-28"
+      },
+      "quellenausnahme": "Einzige Veröffentlichung zum Unfall: kein Einsatzbericht der Feuerwehr Merzenich (Einsatzliste und Heimat-Info bis 143/26 am 28.10. geprüft), keine weitere amtliche Mitteilung. Alter und Herkunft des Fahrers bewusst weggelassen."
+    }
+  ]
+}
