@@ -4,7 +4,7 @@
 
 ## Neu am 28.10.2026: Plugin 1.34.0, Themenbild aus dem Repository gilt auch für bestehende Beiträge
 
-**Stand live:** eingespielt am 28.10.2026 gegen 15:05 Uhr (Plugin 1.34.0 und Theme 21.21.0 per Upload, Option „Beiträge der KI-Redaktion direkt veröffentlichen“ eingeschaltet). Nachweis: `?ver=1.34.0` und `?ver=21.21.0` im Quelltext; alle 23 Claude-Meldungen antworten mit HTTP 200, 22 davon mit dem Themenbild aus dem Repository. Der L264-Unfall behält das Polizeifoto (Bild in WordPress von Hand gesetzt, wird nicht überschrieben).
+**Stand live:** eingespielt am 28.10.2026 gegen 15:05 Uhr (Plugin 1.34.0 und Theme 21.21.0 per Upload, Option „Beiträge der KI-Redaktion direkt veröffentlichen“ eingeschaltet). Nachweis: `?ver=1.34.0` und `?ver=21.21.0` im Quelltext; alle 23 Claude-Meldungen antworten mit HTTP 200, 22 davon mit dem Themenbild aus dem Repository. Der L264-Unfall zeigt noch das Polizeifoto; vermutlich wurde das Bild in WordPress von Hand gesetzt (dann überschreibt der Abgleich es bewusst nicht), nicht im Backend geprüft.
 
 **Anlass:** Live zeigten Beiträge Bilder, die nicht zum Thema passen (Prüfung 28.10.: Martinszüge mit Ortsansicht, L264-Unfall mit Polizeifoto). Zwei Ursachen im Plugin: (1) Ein neues Bild aus dem Repository kam nur bei Beiträgen ohne Bild an. (2) Die tägliche Bildverteilung ersetzte Symbolbilder aus dem Abgleich, sobald ein Foto mehr als zweimal vorkam, durch ein Foto des Ressort-Pools (jede Leben-Meldung ein Dorfplatz).
 
