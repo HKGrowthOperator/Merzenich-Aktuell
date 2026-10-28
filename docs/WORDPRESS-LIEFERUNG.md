@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.0 · live: 21.21.0 / 1.34.0 (Historie unten)
+28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.0 · live: 21.21.1 / 1.34.0 (Historie unten)
 
 ## Neu am 28.10.2026 abends: Plugin 1.36.0 und Theme 21.23.0, keine Musterwerbung mehr, echte animierte Anzeigen für alle fünf Firmen
 
-**Stand live:** noch nicht eingespielt. Enthält 1.35.0 und 21.22.0 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.0.
+**Stand live:** noch nicht eingespielt. Enthält 1.35.0 und 21.22.1 (unten). Rückweg: Plugin 1.34.0, Theme 21.21.1.
 
 **Anlass:** Auftrag des Betreibers am 28.10. abends: Musterwerbung raus. Alle fünf Firmen werben überall, realistisch, mit echten Bildern und Animationen, ohne Testwerbung.
 
@@ -41,6 +41,16 @@
    - „Firma zurückziehen“ für Wirtz, Hasberg und Porschen.
 3. Unter Werbung prüfen: „Werbung global“ an, alle elf Plätze an.
 4. Zwischenspeicher leeren.
+
+## Neu am 28.10.2026: Theme 21.22.1 (live als Hotfix 21.21.1), kein Kasten „Quelle & Transparenz“, kein Menülink „KI & Redaktion“
+
+**Stand live:** 21.21.1 eingespielt am 28.10.2026 gegen 15:34 Uhr. Das ist das live laufende Theme 21.21.0 mit nur diesen Änderungen (`single.php`, `vorlagen/kopf.html`, `kopf-seite.html`, `fuss.html`, Version). Die Version 21.22.0 der Parallelsitzung (Unternehmen) ist damit nicht eingespielt; 21.22.1 enthält beides.
+
+**Anlass:** Wunsch Luis Kummer 28.10.: Unter Beiträgen soll kein Kasten „Quelle & Transparenz“ und nichts zu „KI-Redaktion“ stehen; der Hinweis steht im Impressum bzw. auf einer eigenen Seite.
+
+- `single.php`: Kasten „Quelle & Transparenz“ entfernt. Die Quellen stehen im Text; die Importfelder (`ma_source_url` usw.) bleiben für Redaktion und Prüfung.
+- Menü, Schublade und Fuß: Link „KI & Redaktion“ entfernt (`deploy/kopf-theme-einbinden.mjs`, gilt für alle erzeugten Seiten und die Vorlagen). Die Seite `/ki-redaktion/` bleibt erreichbar.
+- Nachweis live: Artikel, Startseite und Terminseite ohne `source-box`, ohne `ki-redaktion`.
 
 ## Neu am 28.10.2026: Plugin 1.35.0 und Theme 21.22.0, fünf Unternehmen, Firmenbeiträge nur unter „Unternehmen“, Banner im Anzeigenstil
 
