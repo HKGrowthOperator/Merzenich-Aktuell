@@ -198,6 +198,12 @@ for (const b of [...anhaenge.values()].sort((x, y) => x.id - y.id)) {
     + '</item>');
 }
 
+// Beiträge der KI-Redaktion (Claude-Redaktionslauf, Paketname mit "recherche-claude") tragen
+// ma_herkunft = ki-redaktion; das Plugin veröffentlicht sie mit der Option „KI-Redaktion direkt“
+// ohne Freigabe (Entscheidung Luis Kummer 28.10.2026). "zurFreigabe": true hält eine Meldung zurück.
+const kiMeldungen = new Set(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter((f) => f.endsWith('.json') && f.includes('recherche-claude'))
+  .flatMap((f) => (JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', f), 'utf8')).meldungen || []).filter((x) => x.zurFreigabe !== true).map((x) => x.slug)));
+
 for (const m of meldungen) {
   const { a, q, bild } = m;
   const tax = `<category domain="category" nicename="${xmlEsc(a.ressort)}">${cdata(a.ressortLabel)}</category>`
@@ -217,6 +223,7 @@ for (const m of meldungen) {
     + meta('ma_date_verified', '0') + meta('ma_place_verified', '0') + meta('ma_human_reviewed', '0')
     + (m.fakten.length ? meta('ma_facts', m.fakten.join(' · ')) : '')
     + meta('ma_kicker', a.kicker || '')
+    + (kiMeldungen.has(m.slug) ? meta('ma_herkunft', 'ki-redaktion') : '')
     // Zwei getrennte Freigaben (Plugin 1.19.0): redaktionelle Meldungen der statischen Seite stehen auf der Startseite.
     + meta('ma_startseite_freigabe', 'ja')
     + (bild ? meta('_thumbnail_id', String(bild.id)) + meta('ma_image_credit', bild.credit) + meta('ma_image_license', bild.lizenz)

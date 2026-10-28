@@ -31,6 +31,19 @@ const MA_ABGLEICH_CRON = 'ma_abgleich_stuendlich';
 function ma_abgleich_quelle(): string { $q = trim((string) get_option('ma_abgleich_quelle', '')); return $q !== '' ? $q : MA_ABGLEICH_WXR; }
 function ma_abgleich_aktiv(): bool { return get_option('ma_abgleich_aktiv', 'ja') !== 'nein'; }
 function ma_abgleich_sofort(): bool { return get_option('ma_abgleich_sofort', 'nein') === 'ja'; }
+/**
+ * KI-Redaktion direkt (1.33.0, Entscheidung Luis Kummer 28.10.2026): Meldungen, die der
+ * Import als ma_herkunft = ki-redaktion kennzeichnet (Claude-Redaktionslauf, ohne
+ * "zurFreigabe"), gehen ohne Freigabe online; alle anderen (Feuerwehr-Automatik,
+ * Umkreis, Vereine, Partner, ChatGPT-Pakete) bleiben Entwurf in den Freigaben.
+ */
+function ma_abgleich_ki_direkt(): bool { return get_option('ma_abgleich_ki_direkt', 'nein') === 'ja'; }
+function ma_abgleich_ist_ki(array $e): bool { return ($e['typ'] ?? '') === 'post' && (string) ($e['meta']['ma_herkunft'] ?? '') === 'ki-redaktion'; }
+const MA_ABGLEICH_KI_PRUEFER = 'KI-Redaktion (Freigabe Luis Kummer, 28.10.2026)';
+/** Prüfhäkchen für direkt veröffentlichte KI-Beiträge, damit die Veröffentlichungssperre sie beim nächsten Speichern nicht zurücksetzt. */
+function ma_abgleich_ki_haekchen(): array {
+    return ['ma_source_verified' => '1', 'ma_date_verified' => '1', 'ma_place_verified' => '1', 'ma_human_reviewed' => '1', 'ma_reviewed_by' => MA_ABGLEICH_KI_PRUEFER, 'ma_reviewed_at' => function_exists('current_time') ? current_time('mysql') : gmdate('Y-m-d H:i:s')];
+}
 
 /** Basis-Adressen für Bilder (ma_image_static_src beginnt mit /assets/…), in Reihenfolge der Versuche. */
 function ma_abgleich_bildbasen(): array {
@@ -98,9 +111,9 @@ function ma_abgleich_entscheidung(string $hashNeu, string $hashAlt, string $text
     return $textAlt === $textJetzt ? 'aktualisieren' : 'von_hand';
 }
 
-/** Status eines neuen Beitrags: Meldungen als Entwurf in die Freigabe oder (Option) sofort veröffentlicht, Termine wie geliefert. */
-function ma_abgleich_status(array $e, bool $sofort): string {
-    if ($e['typ'] === 'post') return $sofort ? 'publish' : 'draft';
+/** Status eines neuen Beitrags: Meldungen als Entwurf in die Freigabe oder (Option) sofort veröffentlicht, KI-Meldungen mit Option „KI direkt“ veröffentlicht, Termine wie geliefert. */
+function ma_abgleich_status(array $e, bool $sofort, bool $kiDirekt = false): string {
+    if ($e['typ'] === 'post') return $sofort || ($kiDirekt && ma_abgleich_ist_ki($e)) ? 'publish' : 'draft';
     return in_array($e['status'], ['publish', 'draft', 'pending'], true) ? $e['status'] : 'draft';
 }
 
@@ -221,15 +234,34 @@ function ma_abgleich_stand_merken(int $id, array $e): void {
 }
 
 function ma_abgleich_anlegen(array $e, array $bilder, array &$fehler): int {
-    $daten = ['post_type' => $e['typ'], 'post_status' => ma_abgleich_status($e, ma_abgleich_sofort()), 'post_author' => ma_abgleich_autor(), 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'post_name' => $e['slug'], 'post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt'], 'comment_status' => $e['kommentare'], 'ping_status' => 'closed', 'meta_input' => $e['meta']];
+    $status = ma_abgleich_status($e, ma_abgleich_sofort(), ma_abgleich_ki_direkt());
+    $meta = $e['meta'];
+    if ($status === 'publish' && ma_abgleich_ist_ki($e)) $meta = array_merge($meta, ma_abgleich_ki_haekchen());
+    $daten = ['post_type' => $e['typ'], 'post_status' => $status, 'post_author' => ma_abgleich_autor(), 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'post_name' => $e['slug'], 'post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt'], 'comment_status' => $e['kommentare'], 'ping_status' => 'closed', 'meta_input' => $meta];
     if ($e['datum'] === '') unset($daten['post_date'], $daten['post_date_gmt']);
     $id = wp_insert_post(wp_slash($daten), true);
     if (is_wp_error($id) || !$id) { $fehler[] = $e['titel'] . ': ' . (is_wp_error($id) ? $id->get_error_message() : 'nicht angelegt'); return 0; }
     ma_abgleich_terme_setzen($id, $e['terme']);
     ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
     ma_abgleich_stand_merken($id, $e);
-    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Aus dem redaktionellen Stand übernommen' . ($daten['post_status'] === 'draft' ? ' (wartet auf Freigabe)' : ''), 0);
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Aus dem redaktionellen Stand übernommen' . ($daten['post_status'] === 'draft' ? ' (wartet auf Freigabe)' : (ma_abgleich_ist_ki($e) ? ' und als Beitrag der KI-Redaktion direkt veröffentlicht' : '')), 0);
     return (int) $id;
+}
+
+/**
+ * Bereits angelegte KI-Beiträge, die noch als Entwurf warten, mit Option „KI direkt“
+ * veröffentlichen. Nur Status draft (nicht in Prüfung, abgelehnt, archiviert, Papierkorb)
+ * und nur, wenn niemand Titel, Text oder Auszug von Hand geändert hat.
+ */
+function ma_abgleich_ki_freischalten(int $id, array $e, string $entscheidung): bool {
+    if (!ma_abgleich_ki_direkt() || !ma_abgleich_ist_ki($e) || $entscheidung === 'von_hand') return false;
+    $p = get_post($id);
+    if (!$p || $p->post_type !== 'post' || $p->post_status !== 'draft') return false;
+    foreach (ma_abgleich_ki_haekchen() as $k => $v) update_post_meta($id, $k, $v);
+    $r = wp_update_post(['ID' => $id, 'post_status' => 'publish'], true);
+    if (is_wp_error($r) || get_post_status($id) !== 'publish') return false;
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Als Beitrag der KI-Redaktion direkt veröffentlicht', 0);
+    return true;
 }
 
 /**
@@ -375,6 +407,7 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         elseif ($ent === 'unveraendert') $erg['unveraendert']++;
         elseif ($ent === 'aktualisieren') { if (ma_abgleich_aktualisieren($id, $e, $daten['bilder'], $erg['fehler'])) $erg['aktualisiert']++; }
         else $erg['von_hand'][] = $e['titel'];
+        if (ma_abgleich_ki_freischalten($id, $e, $ent)) $erg['ki_veroeffentlicht'] = ($erg['ki_veroeffentlicht'] ?? 0) + 1;
         // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
         if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && ma_abgleich_bild_fehlt($id, $e)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
     }
@@ -474,6 +507,7 @@ function ma_abgleich_seite_admin(): void {
         if ($aktion === 'einstellungen' && $admin) {
             update_option('ma_abgleich_aktiv', isset($_POST['aktiv']) ? 'ja' : 'nein');
             update_option('ma_abgleich_sofort', isset($_POST['sofort']) ? 'ja' : 'nein');
+            update_option('ma_abgleich_ki_direkt', isset($_POST['ki_direkt']) ? 'ja' : 'nein');
             $q = esc_url_raw(trim((string) ($_POST['quelle'] ?? '')));
             update_option('ma_abgleich_quelle', $q === MA_ABGLEICH_WXR ? '' : $q);
             update_option('ma_abgleich_bilder', esc_url_raw(trim((string) ($_POST['bilder'] ?? ''))));
@@ -495,7 +529,7 @@ function ma_abgleich_seite_admin(): void {
     if (ma_abgleich_ueberfaellig()) echo '<div class="notice notice-warning"><p>' . ma_abgleich_ueberfaellig_text() . '</p></div>';
     if (is_array($stand) && $stand) {
         echo '<h2>Letzter Lauf</h2><table class="widefat striped" style="max-width:720px"><tbody>';
-        foreach ([['Zeit', $stand['zeit'] ?? ''], ['Stand der Import-Datei', $stand['stand'] ?? ''], ['Neu angelegt', (string) ($stand['neu'] ?? 0)], ['Aktualisiert', (string) ($stand['aktualisiert'] ?? 0)], ['Unverändert', (string) (($stand['unveraendert'] ?? 0) + ($stand['uebernommen'] ?? 0))], ['Von Hand geändert, nicht überschrieben', (string) count($stand['von_hand'] ?? [])], ['Verworfen (Papierkorb, kommt nicht wieder)', (string) ($stand['verworfen'] ?? 0)], ['Noch offen (nächster Lauf)', (string) ($stand['offen'] ?? 0)], ['Dauer', ($stand['dauer'] ?? 0) . ' s']] as [$k, $v]) {
+        foreach ([['Zeit', $stand['zeit'] ?? ''], ['Stand der Import-Datei', $stand['stand'] ?? ''], ['Neu angelegt', (string) ($stand['neu'] ?? 0)], ['KI-Beiträge veröffentlicht', (string) ($stand['ki_veroeffentlicht'] ?? 0)], ['Aktualisiert', (string) ($stand['aktualisiert'] ?? 0)], ['Unverändert', (string) (($stand['unveraendert'] ?? 0) + ($stand['uebernommen'] ?? 0))], ['Von Hand geändert, nicht überschrieben', (string) count($stand['von_hand'] ?? [])], ['Verworfen (Papierkorb, kommt nicht wieder)', (string) ($stand['verworfen'] ?? 0)], ['Noch offen (nächster Lauf)', (string) ($stand['offen'] ?? 0)], ['Dauer', ($stand['dauer'] ?? 0) . ' s']] as [$k, $v]) {
             echo '<tr><th style="width:280px">' . esc_html($k) . '</th><td>' . esc_html($v) . '</td></tr>';
         }
         echo '</tbody></table>';
@@ -506,13 +540,14 @@ function ma_abgleich_seite_admin(): void {
     }
     if (function_exists('ma_markt_import_kasten')) echo ma_markt_import_kasten();
     if (!$admin) {
-        echo '<h2>Einstellungen</h2><p>Automatischer Abgleich: ' . (ma_abgleich_aktiv() ? 'stündlich' : 'aus') . ' · Neue Meldungen: ' . (ma_abgleich_sofort() ? 'gehen sofort online' : 'landen als Entwurf in den Freigaben') . '. Ändern können das Administratoren.</p></div>';
+        echo '<h2>Einstellungen</h2><p>Automatischer Abgleich: ' . (ma_abgleich_aktiv() ? 'stündlich' : 'aus') . ' · Neue Meldungen: ' . (ma_abgleich_sofort() ? 'gehen sofort online' : 'landen als Entwurf in den Freigaben') . ' · KI-Redaktion: ' . (ma_abgleich_ki_direkt() ? 'direkt online' : 'über die Freigaben') . '. Ändern können das Administratoren.</p></div>';
         return;
     }
     echo '<h2>Einstellungen</h2><form method="post">'; wp_nonce_field('ma_abgleich');
     echo '<input type="hidden" name="ma_abgleich_aktion" value="einstellungen"><table class="form-table"><tbody>';
     echo '<tr><th>Automatischer Abgleich</th><td><label><input type="checkbox" name="aktiv" value="1"' . checked(ma_abgleich_aktiv(), true, false) . '> Stündlich laufen lassen</label></td></tr>';
     echo '<tr><th>Neue Meldungen</th><td><label><input type="checkbox" name="sofort" value="1"' . checked(ma_abgleich_sofort(), true, false) . '> Sofort veröffentlichen (ohne Freigabe; ausgeschaltet landen sie als Entwurf in den Freigaben)</label></td></tr>';
+    echo '<tr><th>KI-Redaktion</th><td><label><input type="checkbox" name="ki_direkt" value="1"' . checked(ma_abgleich_ki_direkt(), true, false) . '> Beiträge der KI-Redaktion direkt veröffentlichen</label><p class="description">Nur Meldungen aus dem Claude-Redaktionslauf (Kennzeichen „ma_herkunft: ki-redaktion“), auch solche, die noch als Entwurf warten. Feuerwehr-Automatik, Umkreis, Vereine, Partner und andere Pakete bleiben in den Freigaben. Von Hand geänderte Beiträge fasst der Abgleich nicht an.</p></td></tr>';
     echo '<tr><th><label for="ma-abgleich-quelle">Import-Datei</label></th><td><input type="url" class="large-text" id="ma-abgleich-quelle" name="quelle" value="' . esc_attr(ma_abgleich_quelle()) . '"><p class="description">Standard: die Datei im Repository auf GitHub (immer der Stand von main).</p></td></tr>';
     echo '<tr><th><label for="ma-abgleich-bilder">Bilder zuerst von</label></th><td><input type="url" class="large-text" id="ma-abgleich-bilder" name="bilder" value="' . esc_attr((string) get_option('ma_abgleich_bilder', '')) . '" placeholder="leer = Repository auf GitHub"><p class="description">Reihenfolge der Versuche: ' . esc_html(implode(' → ', ma_abgleich_bildbasen())) . '</p></td></tr>';
     echo '</tbody></table><p><button class="button">Einstellungen speichern</button></p></form>';

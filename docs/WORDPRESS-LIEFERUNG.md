@@ -1,6 +1,18 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-24. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.32.0 · live: 21.20.8 / 1.31.0 (Historie unten)
+28. Oktober 2026 · Theme 21.21.0 · Core-Plugin 1.33.0 · live: 21.20.8 / 1.31.0 (Historie unten)
+
+## Neu am 28.10.2026: Plugin 1.33.0, Beiträge der KI-Redaktion direkt online, Themenfotos
+
+**Stand live:** noch nicht eingespielt.
+
+**Anlass:** Entscheidung von Luis Kummer am 28.10.: Beiträge, die die KI-Redaktion (Claude-Redaktionslauf) schreibt, gehen ohne Freigabe online; Beiträge anderer (Feuerwehr-Automatik, Umkreis, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die Freigaben. Außerdem muss das Bild zum Thema passen.
+
+- **KI-Redaktion direkt** (`includes/abgleich.php`): neue Einstellung unter Merzenich Aktuell → Abgleich, „Beiträge der KI-Redaktion direkt veröffentlichen“ (Standard aus). Erkennt Meldungen am Importfeld `ma_herkunft = ki-redaktion`, das `deploy/wordpress-import.mjs` nur für Pakete `inhalte/meldungen/*recherche-claude*` setzt (nicht bei `"zurFreigabe": true`). Neue solche Meldungen werden veröffentlicht, bereits angelegte Entwürfe beim nächsten Lauf ebenfalls; beide mit den Prüfhäkchen und Prüfer „KI-Redaktion (Freigabe Luis Kummer, 28.10.2026)“, Verlaufseintrag. Nur Status Entwurf; in Prüfung, abgelehnt, archiviert, Papierkorb und von Hand geänderte Beiträge bleiben unberührt. Die globale Option „Sofort veröffentlichen“ bleibt aus.
+- **Themenfotos** (`includes/bildpools.php`): neuer Detailpool `themen` (22 gezielt recherchierte, gesichtete Commons-Fotos: Sturmschaden, Martinsfeuer, Baustelle, Eicheln, Zeltplatz, Wanderweg, Karneval, Strommast, Seminarraum, Papiertonne, Erntekrone).
+- **Prüfung:** `php qa/wordpress/abgleich-test.php` (fünf neue Prüfungen: KI mit/ohne Option, andere Meldungen und Termine unberührt, Standard aus, Häkchen).
+
+**Einspielen:** ZIP `wordpress-delivery/merzenich-aktuell-core.zip` (baut die CI nach dem Push) unter Plugins → Installieren → Plugin hochladen, „Vorhandene Version ersetzen“. Danach unter Merzenich Aktuell → Abgleich den Haken „Beiträge der KI-Redaktion direkt veröffentlichen“ setzen und „Jetzt abgleichen“. Nachweis: Die Claude-Meldungen der letzten Tage antworten unter ihrer Adresse mit HTTP 200.
 
 ## Neu am 24.10.2026: Plugin 1.32.0 und Theme 21.21.0, Relevanz in drei Stufen, vier Unternehmen, Werbebanner, Hilfe für alle Zugänge
 

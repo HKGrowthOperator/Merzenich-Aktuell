@@ -19,13 +19,13 @@ Der zweimal tägliche Lauf der KI-Redaktion folgt [CLAUDE-LAUF.md](CLAUDE-LAUF.m
 
 ## Zwei Recherchefenster
 
-ChatGPT-Recherche: täglich ca. 08:00 und 18:00 Europe/Berlin. Sommer-/Winterzeit beachten. Jeder Lauf prüft alle relevanten Ressorts systematisch, priorisiert Neuigkeiten seit dem letzten erfolgreichen Lauf und ergänzt den belegbaren Kontext. Morgens ausführliche Lage und Tages-/Fristenüberblick, abends neue Meldungen, Ergebnisse, Korrekturen und Vertiefungen. Umfang nach tatsächlicher Nachrichtenlage, keine Wiederholungsquote.
+ChatGPT-Recherche: täglich zwei Läufe, Dossier morgens fertig bis 08:45 und mittags bis 14:15 Europe/Berlin (seit 29.10.2026; vorher ca. 08:00 und 18:00), damit die Claude-Läufe um 09:13 und 14:43 es lesen. Verbindlicher Auftrag: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md). Sommer-/Winterzeit beachten. Jeder Lauf prüft alle relevanten Ressorts systematisch, priorisiert Neuigkeiten seit dem letzten erfolgreichen Lauf und ergänzt den belegbaren Kontext. Morgens ausführliche Lage und Tages-/Fristenüberblick, abends neue Meldungen, Ergebnisse, Korrekturen und Vertiefungen. Umfang nach tatsächlicher Nachrichtenlage, keine Wiederholungsquote.
 
 Die bestehende GitHub-Quellenbeschaffung bleibt .github/workflows/quellen-abruf.yml → deploy/quellen-abruf.mjs → imports/quellen/. Ihr Cron wird auf 05:10 und 15:10 UTC erweitert (MEZ 06:10/16:10, MESZ 07:10/17:10), damit vor beiden Recherchefenstern Rohmaterial vorliegt. GitHub-Zeitpläne können sich verzögern. Kein paralleler Scraper und keine Behauptung, die Rohdaten wären fertige Artikel.
 
 ## Ablage und Vergleich
 
-- Pro Lauf ein vollständiges, datiertes Dossier unter dossiers/YYYY-MM-DD-morgens.md oder dossiers/YYYY-MM-DD-abends.md; Nachläufe mit Zeitstempel separat, alte Berichte nicht überschreiben.
+- Pro Lauf ein vollständiges, datiertes Dossier unter dossiers/YYYY-MM-DD-morgens.md oder dossiers/YYYY-MM-DD-mittags.md (bis 28.10.: -abends.md); Nachläufe mit Zeitstempel separat, alte Berichte nicht überschreiben.
 - Quellenstand mit Europe/Berlin-Zeit, Vergleichsbasis und tatsächlicher Abdeckung angeben. Neue Meldungen, materielle Updates, bestätigte Termine, fortgeführten Kontext und offene Aufträge getrennt zählen. Vollständige Inhalte nur erneut aufnehmen, wenn Kontext oder Update dies rechtfertigt; sonst auf vorige Karte verweisen.
 - latest.md auf den jüngsten Bericht umstellen und kurze Änderungsübersicht ergänzen. Unverändert übernommene Alttexte niemals als neu recherchiert oder frisch verifiziert zählen.
 - register.json erhalten und bestehende Themen fortschreiben. Pro Thema nach Bedarf Quelle, Ereignisdatum, last_checked_at, Refresh-/Ablaufdatum, Artikelpfad/-ID, Verarbeitung und Commit ergänzen. Unbekannte Werte null lassen. Keine erfundenen Zeitstempel oder URLs.

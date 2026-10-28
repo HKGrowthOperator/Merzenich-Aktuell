@@ -53,8 +53,8 @@ archiv_refresh_noetig (Altbestand bis 25.10.) ─► neu, sobald ein Lauf es auf
 |---|---|---|
 | `neu` | recherchiert, nicht umgesetzt | Recherche |
 | `in_bearbeitung` | Umsetzung begonnen, nicht abgeschlossen | Umsetzung |
-| `zur_abnahme` | **mit** `article_path` und Commit: umgesetzt, liegt als Entwurf in den WordPress-Freigaben (Claude setzt nach dem Push). **Ohne** `article_path`: von der ChatGPT-Recherche als abnahmereifer Entwurf markiert, also ein **offener Umsetzungsauftrag** für Claude | Claude bzw. ChatGPT |
-| `uebernommen` | sichtbar: von der Redaktion veröffentlicht, oder direkt sichtbar (Umkreis, Spielstand); Altbestand bis 26.10. auch für Claude-Umsetzungen | Claude bei Umkreis/Sport sofort; bei Meldungen nach dem Rückkanal (CLAUDE-LAUF.md Phase 6.4: Live-URL antwortet mit HTTP 200), Datum in `notes` |
+| `zur_abnahme` | **mit** `article_path` und Commit: umgesetzt, liegt als Entwurf in den WordPress-Freigaben (Claude setzt nach dem Push; seit 28.10.2026 nur noch, wenn die Meldung `zurFreigabe` trägt oder die Live-URL noch 404 antwortet). **Ohne** `article_path`: von der ChatGPT-Recherche als abnahmereifer Entwurf markiert, also ein **offener Umsetzungsauftrag** für Claude | Claude bzw. ChatGPT |
+| `uebernommen` | sichtbar: von der Redaktion veröffentlicht, direkt veröffentlichte Claude-Meldung (seit 28.10.2026, Plugin-Option „KI-Redaktion direkt“), oder direkt sichtbar (Umkreis, Spielstand) | Claude bei Umkreis/Sport sofort; bei Meldungen nach dem Live-Nachweis (CLAUDE-LAUF.md Phase 6.3: Live-URL antwortet mit HTTP 200), Datum in `notes` |
 | `gesperrt` | nicht umsetzen (Dublette, vorbei, Privatperson, Widerspruch); Grund in `notes` | jeder |
 | `veraltet` | durch Zeitablauf erledigt | jeder |
 | `archiv_refresh_noetig` | historisches Thema, vor Übernahme neu prüfen | nur Archivimport |

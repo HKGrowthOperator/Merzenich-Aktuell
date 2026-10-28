@@ -58,6 +58,12 @@ $GLOBALS['opt']['ma_abgleich_quelle'] = 'http://127.0.0.1:8300/x.xml';
 pruefe('Import-Datei: eigene Adresse aus den Einstellungen', ma_abgleich_quelle(), 'http://127.0.0.1:8300/x.xml');
 pruefe('Bilder: Repository als letzte Quelle, eigene Adresse zuerst', [array_slice(ma_abgleich_bildbasen(), -1)[0], (function () { $GLOBALS['opt']['ma_abgleich_bilder'] = 'http://127.0.0.1:8300/chatgpt-site/'; return ma_abgleich_bildbasen()[0]; })()], ['https://raw.githubusercontent.com/HKGrowthOperator/Merzenich-Aktuell/main/chatgpt-site', 'http://127.0.0.1:8300/chatgpt-site']);
 pruefe('Abgleich ist standardmäßig an, sofortige Veröffentlichung aus', [ma_abgleich_aktiv(), ma_abgleich_sofort()], [true, false]);
+$ki = ['typ' => 'post', 'meta' => ['ma_herkunft' => 'ki-redaktion']];
+pruefe('KI-Redaktion (1.33.0): mit Option direkt veröffentlicht, ohne Option Entwurf', [ma_abgleich_status($ki, false, true), ma_abgleich_status($ki, false, false)], ['publish', 'draft']);
+pruefe('KI-Option gilt nicht für andere Meldungen (Feuerwehr-Automatik, ChatGPT)', ma_abgleich_status($e, false, true), 'draft');
+pruefe('KI-Option ändert Termine nicht', ma_abgleich_status(['typ' => 'ma_event', 'status' => 'draft', 'meta' => ['ma_herkunft' => 'ki-redaktion']], false, true), 'draft');
+pruefe('KI direkt ist standardmäßig aus', ma_abgleich_ki_direkt(), false);
+pruefe('KI-Häkchen setzen Quelle, Datum, Ort, Prüfung und Prüfer', [ma_abgleich_ki_haekchen()['ma_human_reviewed'], ma_abgleich_ki_haekchen()['ma_reviewed_by']], ['1', MA_ABGLEICH_KI_PRUEFER]);
 
 echo "\nAktualisieren lässt Prüfhäkchen stehen (1.27.3)\n";
 $importMeta = ['ma_legacy_url' => '/blaulicht/x/', 'ma_source_url' => 'https://example.org/q', 'ma_source_verified' => '1', 'ma_date_verified' => '0', 'ma_place_verified' => '0', 'ma_human_reviewed' => '0', 'ma_startseite_freigabe' => 'ja', 'ma_kicker' => 'Feuerwehr · 138/26'];
