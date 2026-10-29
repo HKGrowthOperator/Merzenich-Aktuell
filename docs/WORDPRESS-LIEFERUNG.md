@@ -14,8 +14,18 @@
 - **Eingang** (`includes/eingang.php`): Kasten „Werbeanfrage“ mit allen Angaben, Fotos und Video; Knopf „Profil und Anzeigen anlegen“ legt Firmenprofil (oder verknüpft eines mit gleicher Website) und je Motiv eine Anzeige „Zur Prüfung“ an, mit Website als Ziel, Plätzen und Laufzeit des Formats, Foto und Video (nur mit bestätigten Bildrechten). Ein zweiter Klick legt nichts doppelt an. Außerdem zeigt die Liste unter „Alle“ die Einsendungen wieder (Status „Neu“ und „Erledigt“ jetzt `protected`; vorher war die Liste unter „Alle“ leer).
 - **Firmen-Zugänge** (`includes/bildrechte.php`, `includes/content-admin.php`): dürfen Videos (MP4, WebM bis 6 MB) hochladen; im Werbemittel Knopf „Video auswählen oder hochladen“ statt der Medien-ID, Ziel mit der Website des eigenen Profils vorbelegt.
 - **Seite „Werben“** (`includes/seiten.php`, Fassung 2026-10-29): Werbepaket, „So läuft es“, Werbeplätze, Beispiel, Anfrage. Theme 21.24.0: Stile dafür in `assets/css/plattform.css`.
+- **Nach der Code-Prüfung (29.10.):**
+  - Rate-Limit über die Besucher-IP hinter dem Proxy (`ma_live_ip`, nur als Hash), gezählt erst nach dem Speichern.
+  - Eingangsbestätigung mit festem Text ohne Formularangaben, je Empfänger einmal am Tag.
+  - Redaktionsmail ohne Preis und ohne Dateianhänge.
+  - Videos werden am Inhalt geprüft (MP4 `ftyp`, WebM), Bilder höchstens 8000 Pixel je Seite; Dateien bekommen zufällige Namen.
+  - Neues Firmenprofil steht wirklich „Zur Prüfung“ (vorher machte `business.php` einen Entwurf daraus).
+  - Vorhandene Profile behalten Einwilligung und Logo; weicht die Website ab, steht eine Warnung im Protokoll, und die Freigabezeile zeigt das Ziel.
+  - Das Ende einer Anzeige mit Format setzt erst das Freischalten (ab dann die Laufzeit des Formats); „Freigeben“ meldet ein Ende in der Vergangenheit oder vor dem Start.
+  - Formular: ausgeblendete Felder werden nicht mitgeschickt, ein Doppelklick sendet nur einmal, nach „Zurück“ ist der Knopf wieder frei, das Logo wird nicht verkleinert (Transparenz).
+  - Ohne buchbares Format verschwindet „Werbepaket“ aus der Auswahl; zwei gleichzeitige Klicks auf „Profil und Anzeigen anlegen“ legen nur einmal an.
 - **Tests:** neu `qa/wordpress/werbeformate-test.php`, `qa/wordpress/werbeanfrage-test.php`; angepasst `firmen-entwuerfe-test.php`, `formular-test.php`.
-- **Lokal geprüft (8090):** Anfrage mit einem Foto von 7,5 MB (kam mit 950 KB bei 1600 px an), einem zweiten Foto und einem Video von 4,8 MB abgeschickt; Eingang mit Kasten; „Profil und Anzeigen anlegen“, Freigeben; beide Anzeigen laufen auf 11 Plätzen vom Wunschstart 30 Tage, ein Klick öffnet die Website in einem neuen Fenster und wird gezählt; 0 Konsolenfehler.
+- **Lokal geprüft (8090):** Anfrage mit einem Foto von 7,5 MB (kam mit 950 KB bei 1600 px an), einem zweiten Foto und einem Video von 4,8 MB abgeschickt; Eingang mit Kasten; „Profil und Anzeigen anlegen“, Freigeben; beide Anzeigen laufen auf 11 Plätzen 30 Tage ab der Freigabe, ein zweites Absenden per Doppelklick ergab nur einen Eingang, ein Klick öffnet die Website in einem neuen Fenster und wird gezählt; 0 Konsolenfehler.
 
 
 ## Neu am 28.10.2026 spät: Plugin 1.36.2, überall drei Stufen

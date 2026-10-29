@@ -9,7 +9,8 @@
  * - Preise stehen nur im Backend: auf dieser Seite, bei der Anfrage im Eingang,
  *   im Werbemittel und in den Freigaben. Öffentlich bleibt es „Preis auf Anfrage“;
  *   Firmen-Zugänge sehen den Preis ebenfalls nicht.
- * - Ein Format im Werbemittel (Meta ma_ad_format) setzt Plätze und Laufzeit.
+ * - Ein Format im Werbemittel (Meta ma_ad_format) setzt die Plätze; beim
+ *   Freischalten läuft die Anzeige ab dem Start für die Tage des Formats.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -78,7 +79,7 @@ function ma_werbeformat_preis_lesen(string $text): int {
 }
 
 /** Interne Zeile für das Backend: „Rundum-Paket · 30 Tage · 490,00 € netto“. Leer ohne Format. */
-function ma_werbeformat_zeile(string $schluessel, bool $mitPreis = true): string {
+function ma_werbeformat_zeile(string $schluessel, bool $mitPreis = false): string {
     $f = ma_werbeformat($schluessel);
     if (!$f) return '';
     $preis = ma_werbeformat_preis($f['preis_cent']);
@@ -91,23 +92,38 @@ function ma_werbeformat_preis_sichtbar(): bool {
 }
 
 /**
- * Format auf eine Anzeige anwenden: Plätze (Hauptplatz plus weitere) und, wenn
- * noch kein Ende steht, Ende = Start + Laufzeit. $erlaubt begrenzt die Plätze
- * (Kontingent eines Firmen-Zugangs); leer = alle Plätze des Formats.
+ * Format auf eine Anzeige anwenden: Plätze (Hauptplatz plus weitere). Das Ende
+ * setzt erst das Freischalten (ma_werbeformat_laufzeit). $erlaubt begrenzt die Plätze
+ * (Kontingent eines Firmen-Zugangs; [] = kein Platz); null = alle Plätze des Formats.
  */
-function ma_werbeformat_anwenden(int $id, string $schluessel, array $erlaubt = []): void {
+function ma_werbeformat_anwenden(int $id, string $schluessel, ?array $erlaubt = null): void {
     $f = ma_werbeformat($schluessel);
     if (!$f) return;
-    $plaetze = $erlaubt ? array_values(array_intersect($f['plaetze'], $erlaubt)) : $f['plaetze'];
+    $plaetze = $erlaubt !== null ? array_values(array_intersect($f['plaetze'], $erlaubt)) : $f['plaetze'];
     if (!$plaetze) return;
     update_post_meta($id, 'ma_ad_slot', $plaetze[0]);
     delete_post_meta($id, 'ma_ad_slot_weitere');
     foreach (array_slice($plaetze, 1) as $p) add_post_meta($id, 'ma_ad_slot_weitere', $p);
-    $start = (string) get_post_meta($id, 'ma_ad_start', true);
-    if ($start !== '' && (string) get_post_meta($id, 'ma_ad_end', true) === '' && ($t = strtotime($start))) {
-        update_post_meta($id, 'ma_ad_end', gmdate('Y-m-d H:i:s', $t + $f['tage'] * DAY_IN_SECONDS));
-    }
 }
+
+/**
+ * Laufzeit beim Freischalten (29.10.2026): Hat eine Anzeige ein Format und noch
+ * kein Ende, läuft sie ab dem Start (liegt er in der Vergangenheit oder fehlt er:
+ * ab jetzt) für die Tage des Formats. So verkürzt eine spätere Freigabe die
+ * gebuchte Laufzeit nicht.
+ */
+function ma_werbeformat_laufzeit(int $id): void {
+    $f = ma_werbeformat((string) get_post_meta($id, 'ma_ad_format', true));
+    if (!$f || (string) get_post_meta($id, 'ma_ad_end', true) !== '') return;
+    // Start und Ende stehen in Ortszeit (Y-m-d H:i:s); gerechnet wird in „Ortszeit als Zeitstempel“ wie current_time().
+    $jetzt = (int) current_time('timestamp');
+    $start = strtotime((string) get_post_meta($id, 'ma_ad_start', true)) ?: 0;
+    if ($start < $jetzt) { $start = $jetzt; update_post_meta($id, 'ma_ad_start', gmdate('Y-m-d H:i:s', $start)); }
+    update_post_meta($id, 'ma_ad_end', gmdate('Y-m-d H:i:s', $start + $f['tage'] * DAY_IN_SECONDS));
+}
+add_action('transition_post_status', function (string $neu, string $alt, $p): void {
+    if (($p->post_type ?? '') === 'ma_ad' && in_array($neu, ['publish', 'future'], true) && $neu !== $alt) ma_werbeformat_laufzeit((int) $p->ID);
+}, 10, 3);
 
 /**
  * Formular der Seite „Formate & Preise“ lesen. $zeilen: ['schluessel' => [...]]

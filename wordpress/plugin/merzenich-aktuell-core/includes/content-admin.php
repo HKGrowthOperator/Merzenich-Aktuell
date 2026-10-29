@@ -209,7 +209,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
         $formate = ['' => '– kein Format, Plätze selbst wählen –'];
         foreach (ma_werbeformate_aktiv() as $k => $f) $formate[$k] = ma_werbeformat_zeile($k, ma_werbeformat_preis_sichtbar());
         if ($format !== '' && !isset($formate[$format]) && ($z = ma_werbeformat_zeile($format, ma_werbeformat_preis_sichtbar())) !== '') $formate[$format] = $z . ' (nicht mehr buchbar)';
-        ma_admin_select('ma_ad_format', 'Format', $format, $formate, 'Beim Wechsel des Formats setzt das Speichern die Plätze des Formats und, wenn noch kein Ende steht, das Ende nach der Laufzeit.');
+        ma_admin_select('ma_ad_format', 'Format', $format, $formate, 'Beim Wechsel des Formats setzt das Speichern die Plätze des Formats. Steht kein Ende, läuft die Anzeige ab dem Freischalten (oder dem späteren Start) für die Laufzeit des Formats.');
     }
     // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
     // (Benutzerprofil, Voreinstellung: alle Werbebaender der Startseite).
@@ -230,7 +230,7 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
     // Ziel: die Website der Firma (29.10.2026). Neue Anzeigen eines Firmen-Zugangs bekommen die Website ihres Profils vorbelegt.
     $ziel = ma_admin_field_value($post->ID,'ma_ad_url');
-    if ($ziel === '' && defined('MA_FIRMA_META') && ($bid = (int) get_user_meta(get_current_user_id(), MA_FIRMA_META, true))) $ziel = (string) get_post_meta($bid, 'ma_business_website', true);
+    if ($ziel === '' && $post->post_status === 'auto-draft' && defined('MA_FIRMA_META') && ($bid = (int) get_user_meta(get_current_user_id(), MA_FIRMA_META, true))) $ziel = (string) get_post_meta($bid, 'ma_business_website', true);
     ma_admin_input('ma_ad_url','Ziel-URL (Website der Firma)',$ziel,'url','https://www.firma.de/','Ein Klick auf die Anzeige öffnet diese Seite direkt in einem neuen Fenster.');
     ma_admin_input('ma_ad_knopf','Knopftext',ma_admin_field_value($post->ID,'ma_ad_knopf'),'text','Zur Website','Optional, erscheint nur mit Ziel-URL.');
     $vid = (int) ma_admin_field_value($post->ID,'ma_ad_video');
@@ -358,7 +358,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
     }
     if ($post->post_type === 'ma_ad' && function_exists('ma_werbeformat_anwenden') && ($format = (string) get_post_meta($post_id, 'ma_ad_format', true)) !== '' && $format !== $format_vorher) {
         // Neues Format: Plätze (für Firmen-Zugänge nur die des Kontingents) und Ende nach der Laufzeit.
-        ma_werbeformat_anwenden($post_id, $format, $partner && function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : []);
+        ma_werbeformat_anwenden($post_id, $format, $partner && function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : null);
     }
     if ($post->post_type === 'ma_ad') {
         // Video: nur Videos aus der Mediathek; Partner nur eigene Uploads (Rechte wie beim Bild).

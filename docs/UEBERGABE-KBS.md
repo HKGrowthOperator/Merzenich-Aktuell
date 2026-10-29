@@ -304,8 +304,8 @@ Läuft auf einem Werbeplatz keine Anzeige, bleibt er leer (seit 28.10.2026 keine
 
 **Werbeanfrage einer Firma** (seit 29.10.2026): Auf **/werben/** wählt die Firma „Werbepaket mit Foto und Video“ und schickt Firma, Website, Wunschstart, je Motiv Überschrift, Satz und Foto, auf Wunsch ein Video (bis 6 MB, größere als Link) und ein Logo. Die Anfrage steht im **Eingang** (A7) mit dem Kasten **Werbeanfrage** (alle Angaben, Format mit Preis, Fotos, Video). Die Redaktion bekommt eine Mail, die Firma eine Eingangsbestätigung ohne Preis.
 1. Angebot schicken und Auftrag abwarten.
-2. In der Einsendung **Profil und Anzeigen anlegen**: legt das Firmenprofil an (oder verknüpft ein vorhandenes mit gleicher Website) und je Motiv eine Anzeige mit Text, Foto, Video, Website als Ziel, allen Plätzen des Formats und der Laufzeit, alles „Zur Prüfung“.
-3. **Zu den Freigaben**: Profil und Anzeigen prüfen, **Freigeben**. Erst dann laufen die Anzeigen.
+2. In der Einsendung **Profil und Anzeigen anlegen**: legt das Firmenprofil an (oder verknüpft ein vorhandenes mit gleicher Website oder gleichem Namen; dessen Einwilligung und Logo bleiben, wie sie sind) und je Motiv eine Anzeige mit Text, Foto, Video, Website als Ziel und allen Plätzen des Formats, alles „Zur Prüfung“. Erscheint eine Warnung, dass die Website abweicht: vor dem Freigeben klären.
+3. **Zu den Freigaben**: Profil und Anzeigen prüfen, **Freigeben**. Erst dann laufen die Anzeigen, ab dem Wunschtermin oder, wenn der schon vorbei ist, ab der Freigabe für die Laufzeit des Formats.
 Ein Klick auf eine Anzeige führt direkt auf die Website der Firma (neues Fenster). Ist ein Video größer als 1 MB, steht ein Hinweis dabei: für schnelle Seiten besser eine kleinere Fassung einsetzen.
 
 **Anzeige von Hand schalten:** **Werbung → Werbemittel hinzufügen**.

@@ -79,7 +79,7 @@ function ma_form_submit(): void {
     if($type==='werbung' && defined('MA_WA_ARTEN') && in_array($wahl,MA_WA_ARTEN,true)){
         $r=ma_werbeanfrage_lesen($wahl,wp_unslash($_POST),$_FILES);
         if($r['fehler']!=='') wp_die(esc_html($r['fehler']).' <a href="javascript:history.back()">Zurück zum Formular</a>',400);
-        if(!ma_werbeanfrage_zaehlen()) wp_die('Von Ihrem Anschluss kamen in dieser Stunde schon mehrere Anfragen. Bitte versuchen Sie es später noch einmal oder schreiben Sie uns eine E-Mail.',429);
+        if(!ma_werbeanfrage_limit_ok()) wp_die('Von Ihrem Anschluss kamen in dieser Stunde schon mehrere Anfragen. Bitte versuchen Sie es später noch einmal oder schreiben Sie uns eine E-Mail.',429);
         $wa=$r['daten']; $subject.=' – '.$wa['firma'];
     }
     if(!$name||!is_email($email)||!$subject||(!$message && !$wa)) wp_die('Bitte alle Pflichtfelder korrekt ausfüllen.',400);
@@ -110,13 +110,14 @@ function ma_form_submit(): void {
     $kind=sanitize_text_field(wp_unslash($_POST['listing_kind']??''));
     if($type==='foto') $kind=$ortsteil;
     $text=$wa ? ma_werbeanfrage_text($wa).($message!==''?"\n\nAnmerkung:\n".$message:'') : $message;
-    $body="Typ: {$type}\n".($kind!==''?"Art: {$kind}\n":'')."Name: {$name}\nE-Mail: {$email}\n".($telefon!==''?"Telefon: {$telefon}\n":'').($attachments?'Bildrechte: bestätigt'."\n":'')."\n".($wa ? ma_werbeanfrage_text($wa,true).($message!==''?"\n\nAnmerkung:\n".$message:'') : $message);
+    // Mail an die Redaktion ohne Preis (Antworten gehen an den Absender); den Preis zeigt der Eingang.
+    $body="Typ: {$type}\n".($kind!==''?"Art: {$kind}\n":'')."Name: {$name}\nE-Mail: {$email}\n".($telefon!==''?"Telefon: {$telefon}\n":'').($attachments?'Bildrechte: bestätigt'."\n":'')."\n".$text;
     // Eingang im Backend ablegen, damit nichts verloren geht, auch ohne Mailversand.
     $eingang=function_exists('ma_eingang_speichern') ? ma_eingang_speichern(['typ'=>$type,'art'=>$kind,'name'=>$name,'email'=>$email,'telefon'=>$telefon,'betreff'=>$subject,'text'=>$text,'bildrechte'=>$bildrechte?'1':'','fotograf'=>$fotograf,'zustimmung'=>$zustimmung?'1':'','werbung'=>$wa,'rollen'=>$rollen],$attachments) : 0;
     if($eingang) $body.="\n\nIm Backend: ".admin_url('post.php?post='.$eingang.'&action=edit');
-    // Videos nicht als Mailanhang (Größe); sie liegen im Eingang.
-    wp_mail($to,ma_form_mail_betreff($type,$subject,$name),$body,['Reply-To: '.$name.' <'.$email.'>'],array_values(array_filter($attachments,fn($f)=>($rollen[$f]??'')!=='video')));
-    if($wa) ma_werbeanfrage_bestaetigen($email,$name,$wa);
+    // Dateien einer Werbeanfrage nicht als Mailanhang (Größe); sie liegen im Eingang.
+    wp_mail($to,ma_form_mail_betreff($type,$subject,$name),$body,['Reply-To: '.$name.' <'.$email.'>'],$wa ? [] : $attachments);
+    if($wa && $eingang){ ma_werbeanfrage_zaehlen(); ma_werbeanfrage_bestaetigen($email); }
     if(!$eingang) foreach($attachments as $f) @unlink($f);
     // Zurück zum Formular, mit Bestätigung über dem Formular (vorher stand dort nichts).
     wp_safe_redirect(add_query_arg('gesendet',$type,remove_query_arg('gesendet',wp_get_referer()?:home_url('/'))).'#formular-'.$type); exit;
@@ -140,13 +141,16 @@ function ma_form_bildrechte_text(): string {
 
 /** Arten je Anzeigenformular (Auswahlfeld, zugleich Betreff der Einsendung). */
 function ma_form_arten(): array {
-    return [
+    $arten = [
         'werbung'=>['banner'=>'Werbepaket mit Foto und Video','tipp'=>'Tipp / bezahlter Beitrag','sponsoring'=>'Sponsoring einer Rubrik','unternehmen'=>'Unternehmensprofil','beratung'=>'Noch offen, bitte beraten'],
         'immobilie'=>['verkauf'=>'Immobilie verkaufen','vermietung'=>'Immobilie vermieten','gesuch'=>'Immobilie suchen','gewerbe'=>'Gewerbeobjekt'],
         'stelle'=>['ausbildung'=>'Ausbildungsplatz','vollzeit'=>'Vollzeitstelle','teilzeit'=>'Teilzeitstelle','minijob'=>'Minijob / Aushilfe','praktikum'=>'Praktikum'],
         'trauer'=>['traueranzeige'=>'Traueranzeige','danksagung'=>'Danksagung','jahrgedaechtnis'=>'Jahrgedächtnis'],
         'familie'=>['geburt'=>'Geburt','hochzeit'=>'Hochzeit','jubilaeum'=>'Jubiläum','glueckwunsch'=>'Glückwunsch'],
     ];
+    // Werbepaket nur, solange unter Formate & Preise ein Format buchbar ist (werbeformate.php).
+    if (function_exists('ma_werbeformate_aktiv') && !ma_werbeformate_aktiv()) unset($arten['werbung']['banner']);
+    return $arten;
 }
 
 /** Beschriftung des Auswahlfelds je Formular (bis 1.23 überall „Was möchten Sie veröffentlichen?“). */

@@ -399,6 +399,9 @@ function ma_schnellfreigabe(int $id, int $relevanz, bool $startseite, bool $bild
     if ($typ === 'ma_ad') {
         // Anzeige schalten: veröffentlicht + „Schaltung aktiv“ (beides setzt nur die Redaktion).
         if ((string) get_post_meta($id, 'ma_ad_slot', true) === '') return ['ok' => false, 'meldung' => 'Die Anzeige hat noch keinen Werbeplatz. Bitte im Formular wählen.'];
+        $bis = (string) get_post_meta($id, 'ma_ad_end', true);
+        if ($bis !== '' && strtotime($bis) <= (int) current_time('timestamp')) return ['ok' => false, 'meldung' => 'Das Ende der Anzeige liegt in der Vergangenheit. Bitte im Formular ein neues Ende setzen (oder leeren: mit Format läuft sie dann ab jetzt für die Laufzeit des Formats).'];
+        if ($bis !== '' && strtotime($bis) <= (strtotime((string) get_post_meta($id, 'ma_ad_start', true)) ?: 0)) return ['ok' => false, 'meldung' => 'Das Ende der Anzeige liegt vor dem Start. Bitte im Formular korrigieren.'];
         update_post_meta($id, 'ma_ad_active', '1');
         if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Anzeige freigegeben: ' . (function_exists('ma_ad_slot_label') ? ma_ad_slot_label((string) get_post_meta($id, 'ma_ad_slot', true)) : ''));
     }
@@ -521,7 +524,8 @@ function ma_freigaben_zeile(WP_Post $p): string {
         // Format mit Laufzeit und Preis (nur Redaktion, werbeformate.php) und die verknüpfte Firma.
         $format = function_exists('ma_werbeformat_zeile') ? ma_werbeformat_zeile((string) get_post_meta($p->ID, 'ma_ad_format', true), ma_werbeformat_preis_sichtbar()) : '';
         $firma = (int) get_post_meta($p->ID, 'ma_business_id', true);
-        $kats = ($format !== '' ? $format . ' · ' : '') . ($firma && get_post($firma) ? 'Firma: ' . get_the_title($firma) . ' · ' : '') . $kats;
+        $ziel = (string) get_post_meta($p->ID, 'ma_ad_url', true);
+        $kats = ($format !== '' ? $format . ' · ' : '') . ($firma && get_post($firma) ? 'Firma: ' . get_the_title($firma) . ' · ' : '') . $kats . ($ziel !== '' ? ' · Ziel: ' . $ziel : '');
     }
     $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
     $startJa = ma_startseite_freigabe($p) === 'ja';

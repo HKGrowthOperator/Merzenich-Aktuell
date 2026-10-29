@@ -49,7 +49,7 @@ function ma_werbeanfrage_html(): string {
     $h .= '<p><label>Branche oder Angebot in wenigen Worten (optional)<br><input name="wa_branche" maxlength="80" placeholder="z. B. Gebäudereinigung"></label></p>';
     $h .= '<p><label>Adresse (optional)<br><input name="wa_adresse" maxlength="160" autocomplete="street-address"></label></p>';
     $h .= '<p><label>Kurz über Ihre Firma, für das Profil (optional)<br><textarea name="wa_beschreibung" rows="3" maxlength="600"></textarea></label></p>';
-    $h .= '<p><label>Logo (optional, JPG, PNG oder WebP, höchstens 2 MB)<br><input type="file" name="wa_logo" accept="image/jpeg,image/png,image/webp" data-ma-wa-datei data-max="' . MA_WA_LOGO_MAX . '" data-ma-verkleinern="800"></label></p>';
+    $h .= '<p><label>Logo (optional, JPG, PNG oder WebP, höchstens 2 MB)<br><input type="file" name="wa_logo" accept="image/jpeg,image/png,image/webp" data-ma-wa-datei data-max="' . MA_WA_LOGO_MAX . '"></label></p>';
     $h .= '</fieldset>';
     $h .= '<fieldset class="ma-wa__gruppe" data-nur="banner"><legend>Ihre Anzeige</legend>';
     if (count($formate) === 1) {
@@ -83,29 +83,36 @@ function ma_werbeanfrage_einwilligung_text(): string {
 }
 
 /**
- * Skript: Felder je Art ein- und ausblenden (Pflichtfelder nur, wenn sichtbar),
- * Fotos vor dem Absenden auf 1600 px verkleinern, Größen prüfen. Ohne JavaScript
- * stehen alle Felder da und der Server prüft.
+ * Skript: Felder je Art ein- und ausblenden (Pflichtfelder nur, wenn sichtbar;
+ * ausgeblendete Felder werden abgeschaltet und nicht mitgeschickt), Fotos vor dem
+ * Absenden auf 1600 px verkleinern (Logo nicht: Transparenz), Größen prüfen.
+ * Ein zweiter Klick schickt nichts doppelt; nach „Zurück“ ist der Knopf wieder
+ * frei. Ohne JavaScript stehen alle Felder da und der Server prüft.
  */
 function ma_werbeanfrage_script(): string {
     return '<script>(function(f){if(!f)return;var w=f.querySelector("[data-ma-wa]"),art=f.querySelector("[name=listing_kind]"),meld=f.querySelector("[data-ma-wa-meldung]");if(!w||!art)return;'
-        . 'var GESAMT=' . MA_WA_GESAMT_MAX . ';'
+        . 'var GESAMT=' . MA_WA_GESAMT_MAX . ',laeuft=false,knopf=null,knopfText="";'
         // Nachricht und allgemeiner Anhang stehen im Formular erst nach diesem Skript: erst beim Umschalten suchen.
-        . 'function zeige(){var a=art.value,an=a==="banner"||a==="unternehmen",sonst=f.querySelector("[data-ma-datei]");sonst=sonst&&sonst.closest("p");w.hidden=!an;if(sonst)sonst.hidden=an;'
+        . 'function zeige(){var a=art.value,an=a==="banner"||a==="unternehmen",sonst=f.querySelector("[data-ma-datei]");sonst=sonst&&sonst.closest("p");w.hidden=!an;if(sonst){sonst.hidden=an;sonst.querySelector("input").disabled=an;}'
         . 'w.querySelectorAll("[data-nur]").forEach(function(g){g.hidden=g.getAttribute("data-nur").split(" ").indexOf(a)<0;});'
-        . 'w.querySelectorAll("[data-pflicht]").forEach(function(x){var sicht=an&&!x.closest("[hidden]");x.required=sicht&&x.getAttribute("data-pflicht").split(" ").indexOf(a)>=0;});'
-        . 'var n=f.querySelector("[name=message]");if(n){n.required=!an;var l=n.closest("label");if(l&&l.firstChild&&l.firstChild.nodeType===3)l.firstChild.nodeValue=an?"Anmerkungen (optional)":"Nachricht";}}'
+        . 'w.querySelectorAll("input,select,textarea").forEach(function(x){x.disabled=!an||!!x.closest("[hidden]");});'
+        . 'w.querySelectorAll("[data-pflicht]").forEach(function(x){x.required=!x.disabled&&x.getAttribute("data-pflicht").split(" ").indexOf(a)>=0;});'
+        . 'var n=f.querySelector("[name=message]");if(n){n.required=!an;var l=n.closest("label");if(l&&l.firstChild&&l.firstChild.nodeType===3)l.firstChild.nodeValue=an?"Anmerkungen (optional)":"Nachricht";}rechte();}'
+        . 'function rechte(){var c=f.querySelector("[data-ma-bildrechte]");if(c)c.required=[].some.call(f.querySelectorAll("input[type=file]"),function(d){return !d.disabled&&d.files&&d.files.length;});}'
         . 'function sag(t){meld.textContent=t;meld.hidden=!t;if(t)meld.scrollIntoView({block:"center"});}'
+        . 'function frei(){laeuft=false;if(knopf){knopf.disabled=false;knopf.textContent=knopfText;}}'
         . 'art.addEventListener("change",zeige);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",zeige);else zeige();'
-        . 'f.addEventListener("change",function(e){if(e.target.type!=="file")return;var c=f.querySelector("[data-ma-bildrechte]");if(c)c.required=[].some.call(f.querySelectorAll("input[type=file]"),function(d){return d.files&&d.files.length&&!d.closest("[hidden]");});});'
-        . 'w.addEventListener("change",function(e){var d=e.target;if(!d.matches||!d.matches("[data-ma-wa-datei]")||!d.files[0])return;var max=+d.getAttribute("data-max");if(!d.hasAttribute("data-ma-verkleinern")&&d.files[0].size>max){sag("„"+d.files[0].name+"“ ist größer als "+Math.round(max/1048576)+" MB. Bitte kleiner speichern oder als Link angeben.");d.value="";}else sag("");});'
-        . 'function klein(d){var file=d.files[0],px=+d.getAttribute("data-ma-verkleinern");if(!file||!/^image\//.test(file.type)||!window.createImageBitmap||!window.DataTransfer)return Promise.resolve();'
-        . 'return createImageBitmap(file).then(function(b){if(b.width<=px&&file.size<=1.5*1048576)return;var s=Math.min(1,px/b.width),c=document.createElement("canvas");c.width=Math.round(b.width*s);c.height=Math.round(b.height*s);c.getContext("2d").drawImage(b,0,0,c.width,c.height);'
-        . 'return new Promise(function(r){c.toBlob(function(bl){if(bl&&bl.size<file.size){var dt=new DataTransfer();dt.items.add(new File([bl],file.name.replace(/\.\w+$/,"")+".jpg",{type:"image/jpeg"}));d.files=dt.files;}r();},"image/jpeg",.85);});}).catch(function(){});}'
-        . 'var fertig=false;f.addEventListener("submit",function(e){if(fertig||w.hidden)return;e.preventDefault();var ds=[].slice.call(w.querySelectorAll("[data-ma-verkleinern]"));'
-        . 'Promise.all(ds.map(klein)).then(function(){var sum=0,zu="";[].slice.call(f.querySelectorAll("input[type=file]")).forEach(function(d){if(d.closest("[hidden]"))return;[].slice.call(d.files||[]).forEach(function(x){sum+=x.size;if(x.size>+(d.getAttribute("data-max")||5242880))zu=x.name;});});'
-        . 'if(zu){sag("„"+zu+"“ ist zu groß.");return;}if(sum>GESAMT){sag("Alle Dateien zusammen sind "+(sum/1048576).toFixed(1)+" MB groß, erlaubt sind 7,5 MB. Bitte das Video kleiner speichern oder als Link angeben.");return;}'
-        . 'fertig=true;sag("");var b=f.querySelector("[type=submit]");if(b){b.disabled=true;b.textContent="Wird gesendet …";}HTMLFormElement.prototype.submit.call(f);});});'
+        . 'window.addEventListener("pageshow",function(e){if(e.persisted)frei();});'
+        . 'f.addEventListener("change",function(e){if(e.target.type==="file")rechte();});'
+        . 'w.addEventListener("change",function(e){var d=e.target;if(!d.matches||!d.matches("[data-ma-wa-datei]")||!d.files[0])return;var max=+d.getAttribute("data-max");if(!d.hasAttribute("data-ma-verkleinern")&&d.files[0].size>max){sag("„"+d.files[0].name+"“ ist größer als "+Math.round(max/1048576)+" MB. Bitte kleiner speichern oder als Link angeben.");d.value="";rechte();}else sag("");});'
+        . 'function klein(d){var file=d.files&&d.files[0],px=+d.getAttribute("data-ma-verkleinern");if(d.disabled||!file||!/^image\//.test(file.type)||!window.createImageBitmap||!window.DataTransfer)return Promise.resolve();'
+        . 'return createImageBitmap(file,{imageOrientation:"from-image"}).then(function(b){if(b.width<=px&&file.size<=1.5*1048576)return;var s=Math.min(1,px/b.width),c=document.createElement("canvas");c.width=Math.round(b.width*s);c.height=Math.round(b.height*s);var g=c.getContext("2d");g.fillStyle="#fff";g.fillRect(0,0,c.width,c.height);g.drawImage(b,0,0,c.width,c.height);'
+        . 'return new Promise(function(r){c.toBlob(function(bl){try{if(bl&&bl.size<file.size){var dt=new DataTransfer();dt.items.add(new File([bl],file.name.replace(/\.\w+$/,"")+".jpg",{type:"image/jpeg"}));d.files=dt.files;}}catch(x){}r();},"image/jpeg",.85);});}).catch(function(){});}'
+        . 'f.addEventListener("submit",function(e){if(w.hidden)return;e.preventDefault();if(laeuft)return;laeuft=true;knopf=f.querySelector("[type=submit]");if(knopf){knopfText=knopf.textContent;knopf.disabled=true;knopf.textContent="Wird vorbereitet …";}'
+        . 'var ds=[].slice.call(w.querySelectorAll("[data-ma-verkleinern]"));'
+        . 'Promise.all(ds.map(klein)).then(function(){var sum=0,zu="";[].slice.call(f.querySelectorAll("input[type=file]")).forEach(function(d){if(d.disabled)return;[].slice.call(d.files||[]).forEach(function(x){sum+=x.size;if(x.size>+(d.getAttribute("data-max")||5242880))zu=x.name;});});'
+        . 'if(zu){frei();sag("„"+zu+"“ ist zu groß.");return;}if(sum>GESAMT){frei();sag("Alle Dateien zusammen sind "+(sum/1048576).toFixed(1)+" MB groß, erlaubt sind 7,5 MB. Bitte das Video kleiner speichern oder als Link angeben.");return;}'
+        . 'sag("");if(knopf)knopf.textContent="Wird gesendet …";HTMLFormElement.prototype.submit.call(f);}).catch(function(){frei();HTMLFormElement.prototype.submit.call(f);});});'
         . '})(document.currentScript.closest("form"));</script>';
 }
 
@@ -171,13 +178,21 @@ function ma_werbeanfrage_lesen(string $art, array $post, array $files): array {
     return ['daten' => $d, 'fehler' => ''];
 }
 
-/** Höchstens fünf Werbeanfragen je Stunde und Absender (IP nur als Hash, ohne Speicherung der IP). */
-function ma_werbeanfrage_zaehlen(): bool {
-    $k = 'ma_wa_' . md5((string) ($_SERVER['REMOTE_ADDR'] ?? '') . wp_salt('nonce') . gmdate('YmdH'));
-    $n = (int) get_transient($k);
-    if ($n >= MA_WA_PRO_STUNDE) return false;
-    set_transient($k, $n + 1, HOUR_IN_SECONDS);
-    return true;
+/** Schlüssel je Absender und Stunde: Besucher-IP wie in live.php (hinter dem Proxy des Hosters), nur als Hash. */
+function ma_werbeanfrage_schluessel(): string {
+    $ip = function_exists('ma_live_ip') ? ma_live_ip() : (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+    if (str_contains($ip, ':')) $ip = implode(':', array_slice(explode(':', $ip), 0, 4)); // IPv6: das /64-Netz
+    return 'ma_wa_' . md5($ip . wp_salt('nonce') . gmdate('YmdH'));
+}
+
+/** Höchstens fünf Werbeanfragen je Stunde und Absender; gezählt wird erst eine angenommene Anfrage (ma_werbeanfrage_zaehlen). */
+function ma_werbeanfrage_limit_ok(): bool {
+    return (int) get_transient(ma_werbeanfrage_schluessel()) < MA_WA_PRO_STUNDE;
+}
+
+function ma_werbeanfrage_zaehlen(): void {
+    $k = ma_werbeanfrage_schluessel();
+    set_transient($k, (int) get_transient($k) + 1, HOUR_IN_SECONDS);
 }
 
 /**
@@ -190,7 +205,17 @@ function ma_werbeanfrage_dateien(array $felder, array $files, string &$fehler = 
     $r = [];
     foreach ($felder as $feld) {
         $rolle = $feld === 'wa_video' ? 'video' : ($feld === 'wa_logo' ? 'logo' : 'foto-' . (int) substr($feld, 8));
-        $u = wp_handle_upload($files[$feld], ['test_form' => false, 'mimes' => $rolle === 'video' ? ['mp4|m4v' => 'video/mp4', 'webm' => 'video/webm'] : $bild]);
+        $datei = $files[$feld];
+        $pruefung = ma_werbeanfrage_datei_pruefen((string) ($datei['tmp_name'] ?? ''), $rolle === 'video');
+        if ($pruefung !== '') {
+            foreach (array_keys($r) as $p) @unlink($p);
+            $fehler = 'Die Datei „' . sanitize_file_name((string) $datei['name']) . '“: ' . $pruefung;
+            return [];
+        }
+        // Zufälliger Name: Einsendungen liegen vor der Prüfung nicht unter einer erratbaren Adresse.
+        $endung = strtolower((string) pathinfo((string) $datei['name'], PATHINFO_EXTENSION));
+        $datei['name'] = 'werbeanfrage-' . $rolle . '-' . wp_generate_password(12, false) . ($endung !== '' ? '.' . preg_replace('/[^a-z0-9]/', '', $endung) : '');
+        $u = wp_handle_upload($datei, ['test_form' => false, 'mimes' => $rolle === 'video' ? ['mp4|m4v' => 'video/mp4', 'webm' => 'video/webm'] : $bild]);
         if (!isset($u['file'])) {
             foreach (array_keys($r) as $p) @unlink($p);
             $fehler = ($rolle === 'video' ? 'Das Video' : 'Die Datei „' . sanitize_file_name((string) $files[$feld]['name']) . '“') . ' konnte nicht übernommen werden: ' . (string) ($u['error'] ?? 'unbekannter Fehler') . ' Erlaubt sind JPG, PNG, WebP und für das Video MP4 oder WebM.';
@@ -199,6 +224,22 @@ function ma_werbeanfrage_dateien(array $felder, array $files, string &$fehler = 
         $r[$u['file']] = $rolle;
     }
     return $r;
+}
+
+/**
+ * Inhalt einer hochgeladenen Datei prüfen, bevor WordPress sie übernimmt: Videos
+ * müssen wirklich MP4 (ftyp) oder WebM sein; Bilder höchstens 8000 Pixel je Seite
+ * und 40 Megapixel (sonst bricht das Erzeugen der Vorschaubilder ab). Leer = in Ordnung.
+ */
+function ma_werbeanfrage_datei_pruefen(string $pfad, bool $video): string {
+    if ($pfad === '' || !is_readable($pfad)) return 'konnte nicht gelesen werden.';
+    if ($video) {
+        $kopf = (string) file_get_contents($pfad, false, null, 0, 12);
+        return substr($kopf, 4, 4) === 'ftyp' || str_starts_with($kopf, "\x1A\x45\xDF\xA3") ? '' : 'ist kein MP4- oder WebM-Video.';
+    }
+    $g = @getimagesize($pfad);
+    if (!$g) return 'ist kein Bild (JPG, PNG oder WebP).';
+    return max($g[0], $g[1]) > 8000 || $g[0] * $g[1] > 40000000 ? 'ist zu groß in Pixeln (höchstens 8000 je Seite).' : '';
 }
 
 /** Lesbare Zusammenfassung für Eingang und Mail. $mitPreis nur für die Redaktion. */
@@ -216,13 +257,21 @@ function ma_werbeanfrage_text(array $d, bool $mitPreis = false): string {
     return implode("\n", $z);
 }
 
-/** Eingangsbestätigung an den Absender, ohne Preis. */
-function ma_werbeanfrage_bestaetigen(string $email, string $name, array $d): void {
-    $text = "Guten Tag" . ($name !== '' ? ' ' . $name : '') . ",\n\n"
-        . "vielen Dank für Ihre Anfrage bei Merzenich Aktuell. Sie ist bei uns angekommen:\n\n" . ma_werbeanfrage_text($d) . "\n\n"
+/**
+ * Eingangsbestätigung an den Absender: fester Text ohne Angaben aus dem Formular
+ * (sonst ließe sich darüber beliebiger Text an fremde Adressen schicken) und ohne
+ * Preis; je Empfänger höchstens einmal am Tag.
+ */
+function ma_werbeanfrage_bestaetigen(string $email): bool {
+    $k = 'ma_wa_mail_' . md5(strtolower($email) . gmdate('Ymd'));
+    if (get_transient($k)) return false;
+    set_transient($k, 1, DAY_IN_SECONDS);
+    $text = "Guten Tag,\n\n"
+        . "vielen Dank für Ihre Werbeanfrage bei Merzenich Aktuell. Sie ist bei uns angekommen.\n\n"
         . "Wir prüfen Texte, Fotos und Video und melden uns mit Angebot und Zeitraum. Veröffentlicht wird erst nach Ihrem Auftrag und unserer Prüfung.\n\n"
+        . "Haben Sie diese Anfrage nicht gestellt, können Sie diese Nachricht ignorieren.\n\n"
         . "Freundliche Grüße\nRedaktion Merzenich Aktuell\n" . home_url('/');
-    wp_mail($email, 'Ihre Anfrage bei Merzenich Aktuell: ' . $d['firma'], $text);
+    return (bool) wp_mail($email, 'Ihre Anfrage bei Merzenich Aktuell', $text);
 }
 
 /* ---------------------------------------------------------- Eingang: Profil und Anzeigen anlegen */
@@ -262,6 +311,10 @@ function ma_werbeanfrage_anlegen(int $eingang): array {
     if (!is_array($d) || empty($d['firma'])) return ['profil' => 0, 'anzeigen' => [], 'log' => ['Keine Werbeanfrage.']];
     $schon = get_post_meta($eingang, '_ma_eingang_angelegt', true);
     if (is_array($schon) && !empty($schon['profil']) && get_post((int) $schon['profil'])) return $schon + ['log' => ['Schon angelegt.']];
+    // Zwei Klicks zugleich (zwei Redakteure, Doppelklick): nur einer legt an.
+    $sperre = 'ma_wa_lauf_' . $eingang;
+    if (get_transient($sperre)) return ['profil' => 0, 'anzeigen' => [], 'log' => ['Wird gerade angelegt, bitte gleich neu laden.']];
+    set_transient($sperre, 1, 60);
     $m = fn(string $k): string => (string) get_post_meta($eingang, '_ma_eingang_' . $k, true);
     $rechte = $m('bildrechte') === '1';
     $medien = ma_werbeanfrage_medien($eingang);
@@ -270,9 +323,15 @@ function ma_werbeanfrage_anlegen(int $eingang): array {
     $log = [];
 
     $pid = ma_werbeanfrage_profil_finden($d);
+    $neu = !$pid;
     if ($pid) {
-        $log[] = 'Firmenprofil „' . get_the_title($pid) . '“ ist schon da und wird verknüpft (' . get_post_status($pid) . ').';
-        if ((string) get_post_meta($pid, 'ma_business_website', true) === '' && $d['website'] !== '') update_post_meta($pid, 'ma_business_website', $d['website']);
+        // Vorhandenes Profil: Einwilligung und Logo bleiben, wie sie sind (die Anfrage kann von jemand anderem stammen).
+        $log[] = 'Firmenprofil „' . get_the_title($pid) . '“ ist schon da und wird verknüpft (' . get_post_status($pid) . '). Einwilligung und Logo bleiben unverändert.';
+        $webProfil = (string) get_post_meta($pid, 'ma_business_website', true);
+        if ($webProfil === '' && $d['website'] !== '') update_post_meta($pid, 'ma_business_website', $d['website']);
+        elseif ($d['website'] !== '' && preg_replace('/^www\./', '', (string) wp_parse_url($webProfil, PHP_URL_HOST)) !== preg_replace('/^www\./', '', (string) wp_parse_url($d['website'], PHP_URL_HOST))) {
+            $log[] = 'Achtung: Die Website der Anfrage (' . $d['website'] . ') weicht von der Website im Profil (' . $webProfil . ') ab. Bitte vor dem Freigeben prüfen.';
+        }
     } else {
         $r = wp_insert_post(wp_slash([
             'post_type' => 'ma_business', 'post_status' => 'pending', 'post_title' => $d['firma'], 'post_author' => get_current_user_id(),
@@ -282,15 +341,15 @@ function ma_werbeanfrage_anlegen(int $eingang): array {
         ]), true);
         if (is_wp_error($r) || !$r) return ['profil' => 0, 'anzeigen' => [], 'log' => ['Firmenprofil nicht angelegt' . (is_wp_error($r) ? ': ' . $r->get_error_message() : '') . '.']];
         $pid = (int) $r;
-        $log[] = 'Firmenprofil „' . $d['firma'] . '“ angelegt (zur Prüfung).';
-    }
-    if ((string) get_post_meta($pid, 'ma_business_consent', true) !== '1') {
+        // Einwilligung aus der Anfrage, dann „Zur Prüfung“ (ohne Einwilligung macht business.php beim Anlegen einen Entwurf daraus).
         update_post_meta($pid, 'ma_business_consent', '1');
         update_post_meta($pid, 'ma_business_consent_by', $m('name') . ' (' . $m('email') . ')');
         update_post_meta($pid, 'ma_business_consent_at', wp_date('d.m.Y H:i'));
         update_post_meta($pid, 'ma_business_consent_quelle', $quelle);
+        if (get_post_status($pid) !== 'pending') wp_update_post(['ID' => $pid, 'post_status' => 'pending']);
+        $log[] = 'Firmenprofil „' . $d['firma'] . '“ angelegt (zur Prüfung, Einwilligung aus der Anfrage).';
     }
-    if (!empty($medien['logo']) && $rechte && !get_post_thumbnail_id($pid)) {
+    if ($neu && !empty($medien['logo']) && $rechte && !get_post_thumbnail_id($pid)) {
         set_post_thumbnail($pid, $medien['logo']);
         update_post_meta($pid, 'ma_business_logo_rechte', 'geklaert');
         update_post_meta($medien['logo'], '_wp_attachment_image_alt', 'Logo ' . $d['firma']);
@@ -302,7 +361,8 @@ function ma_werbeanfrage_anlegen(int $eingang): array {
     $anzeigen = [];
     $format = $d['format'] !== '' && function_exists('ma_werbeformat') ? ma_werbeformat($d['format']) : null;
     if (($d['art'] ?? '') === 'banner' && $format) {
-        $start = ($d['start'] !== '' ? $d['start'] : wp_date('Y-m-d')) . ' 00:00:00';
+        // Start nur mit Wunschtermin; das Ende setzt die Freigabe (Laufzeit ab dem tatsächlichen Start, werbeformate.php).
+        $start = $d['start'] !== '' ? $d['start'] . ' 00:00:00' : '';
         foreach ((array) $d['motive'] as $i => $mo) {
             $a = wp_insert_post(wp_slash(['post_type' => 'ma_ad', 'post_status' => 'pending', 'post_title' => (string) $mo['titel'], 'post_excerpt' => (string) $mo['text'], 'post_author' => get_current_user_id()]), true);
             if (is_wp_error($a) || !$a) { $log[] = 'Anzeige ' . $i . ' nicht angelegt.'; continue; }
@@ -322,6 +382,9 @@ function ma_werbeanfrage_anlegen(int $eingang): array {
         }
     }
     $erg = ['profil' => $pid, 'anzeigen' => $anzeigen];
+    delete_transient($sperre);
+    // Nur vollständig Angelegtes merken; fehlt eine Anzeige, legt ein neuer Klick die Anfrage noch einmal an.
+    if (count($anzeigen) < count((array) $d['motive']) && ($d['art'] ?? '') === 'banner') return $erg + ['log' => array_merge($log, ['Nicht alle Anzeigen angelegt; bitte die angelegten löschen und erneut versuchen.'])];
     update_post_meta($eingang, '_ma_eingang_angelegt', $erg);
     update_post_meta($eingang, '_ma_eingang_entwurf', $anzeigen[0] ?? $pid);
     wp_update_post(['ID' => $eingang, 'post_status' => 'ma_erledigt']);

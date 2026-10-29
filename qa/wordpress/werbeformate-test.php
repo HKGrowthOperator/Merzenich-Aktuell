@@ -7,7 +7,7 @@
  * Aufruf: php qa/wordpress/werbeformate-test.php
  */
 define('ABSPATH', __DIR__ . '/');
-define('DAY_IN_SECONDS', 86400);
+define('DAY_IN_SECONDS', 86400); define('HOUR_IN_SECONDS', 3600);
 define('MA_CORE_URL', '/plugin/'); define('MA_CORE_VERSION', 'test');
 $W = dirname(__DIR__, 2) . '/wordpress/plugin/merzenich-aktuell-core';
 $GLOBALS['opt'] = []; $GLOBALS['meta'] = []; $GLOBALS['multi'] = []; $GLOBALS['kann'] = true; $GLOBALS['partner'] = false;
@@ -23,6 +23,7 @@ function esc_attr($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'
 function esc_url($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
 function add_query_arg($a, $u = '') { return $u . '?' . http_build_query($a); }
 function current_user_can($c) { return $GLOBALS['kann']; }
+function current_time($t) { return strtotime('2026-11-20 10:00:00'); }
 function ma_current_partner_policy() { return $GLOBALS['partner'] ? ['rolle' => 'x'] : null; }
 function get_post_meta($id, $k, $s = false) { return $s ? ($GLOBALS['meta'][$id][$k] ?? '') : ($GLOBALS['multi'][$id][$k] ?? []); }
 function update_post_meta($id, $k, $v) { $GLOBALS['meta'][$id][$k] = $v; return true; }
@@ -41,7 +42,8 @@ pruefe('alle elf Plätze, 2 Motive, Video, Firmenprofil, 30 Tage, noch kein Prei
 echo "\nPreis\n";
 pruefe('lesen: 490 / 490,50 / 1.290,00 € / 1290.5 / leer', array_map('ma_werbeformat_preis_lesen', ['490', '490,50', '1.290,00 €', '1290.5', '']), [49000, 49050, 129000, 129050, 0]);
 pruefe('zeigen: 490,00 € und 1.290,00 €, ohne Preis leer', [ma_werbeformat_preis(49000), ma_werbeformat_preis(129000), ma_werbeformat_preis(0)], ['490,00 €', '1.290,00 €', '']);
-pruefe('Zeile ohne Preis: „noch kein Preis hinterlegt“', ma_werbeformat_zeile('rundum-paket'), 'Rundum-Paket · 30 Tage · noch kein Preis hinterlegt');
+pruefe('Zeile mit Preis, noch keiner: „noch kein Preis hinterlegt“', ma_werbeformat_zeile('rundum-paket', true), 'Rundum-Paket · 30 Tage · noch kein Preis hinterlegt');
+pruefe('Zeile ohne Angabe: ohne Preis', ma_werbeformat_zeile('rundum-paket'), 'Rundum-Paket · 30 Tage');
 
 echo "\nSeite „Formate & Preise“\n";
 $neu = ma_werbeformate_aus_formular([
@@ -54,7 +56,7 @@ pruefe('unbekannte Plätze fallen weg, Motive höchstens 4, Preis in Cent', [$ne
 pruefe('neue Zeile ohne Namen zählt nicht', array_keys(ma_werbeformate_aus_formular(['neu' => ['name' => '', 'plaetze' => ['homepage_band_1']]])), []);
 update_option('ma_werbeformate', $neu);
 pruefe('buchbar nur mit Namen und Plätzen', array_keys(ma_werbeformate_aktiv()), ['rundum-paket', 'werbeband-startseite']);
-pruefe('Zeile mit Preis', ma_werbeformat_zeile('rundum-paket'), 'Rundum-Paket · 30 Tage · 490,00 € netto');
+pruefe('Zeile mit Preis', ma_werbeformat_zeile('rundum-paket', true), 'Rundum-Paket · 30 Tage · 490,00 € netto');
 pruefe('Zeile ohne Preis (für Firmen-Zugänge)', ma_werbeformat_zeile('rundum-paket', false), 'Rundum-Paket · 30 Tage');
 $GLOBALS['partner'] = true;
 pruefe('Preis sichtbar: Redaktion ja, Firmen-Zugang nein', [ma_werbeformat_preis_sichtbar()], [false]);
@@ -64,10 +66,29 @@ pruefe('Preis sichtbar für die Redaktion', ma_werbeformat_preis_sichtbar(), tru
 echo "\nFormat auf eine Anzeige anwenden\n";
 $GLOBALS['meta'][5] = ['ma_ad_start' => '2026-11-01 00:00:00'];
 ma_werbeformat_anwenden(5, 'rundum-paket');
-pruefe('Hauptplatz, weitere Plätze, Ende = Start + 30 Tage', [$GLOBALS['meta'][5]['ma_ad_slot'], $GLOBALS['multi'][5]['ma_ad_slot_weitere'] ?? [], $GLOBALS['meta'][5]['ma_ad_end']], ['homepage_band_1', ['homepage_buehne'], '2026-12-01 00:00:00']);
+pruefe('Hauptplatz und weitere Plätze; kein Ende (das setzt das Freischalten)', [$GLOBALS['meta'][5]['ma_ad_slot'], $GLOBALS['multi'][5]['ma_ad_slot_weitere'] ?? [], $GLOBALS['meta'][5]['ma_ad_end'] ?? ''], ['homepage_band_1', ['homepage_buehne'], '']);
 $GLOBALS['meta'][6] = ['ma_ad_start' => '2026-11-01 00:00:00', 'ma_ad_end' => '2026-11-10 00:00:00'];
 ma_werbeformat_anwenden(6, 'rundum-paket', ['homepage_buehne']);
-pruefe('Kontingent begrenzt die Plätze, vorhandenes Ende bleibt', [$GLOBALS['meta'][6]['ma_ad_slot'], $GLOBALS['multi'][6]['ma_ad_slot_weitere'] ?? [], $GLOBALS['meta'][6]['ma_ad_end']], ['homepage_buehne', [], '2026-11-10 00:00:00']);
+$GLOBALS['meta'][7] = ['ma_ad_slot' => 'x'];
+ma_werbeformat_anwenden(7, 'rundum-paket', []);
+pruefe('Kontingent ohne Platz ([]): nichts gesetzt', $GLOBALS['meta'][7]['ma_ad_slot'], 'x');
+pruefe('Kontingent begrenzt die Plätze, vorhandenes Ende bleibt (ein Platz: keine weiteren)', [$GLOBALS['meta'][6]['ma_ad_slot'], $GLOBALS['multi'][6]['ma_ad_slot_weitere'] ?? [], $GLOBALS['meta'][6]['ma_ad_end']], ['homepage_buehne', [], '2026-11-10 00:00:00']);
+
+echo "\nLaufzeit beim Freischalten (heute: 20.11.2026 10:00)\n";
+$GLOBALS['meta'][8] = ['ma_ad_format' => 'rundum-paket', 'ma_ad_start' => '2026-11-02 00:00:00'];
+ma_werbeformat_laufzeit(8);
+pruefe('Start vorbei: läuft ab jetzt volle 30 Tage', [$GLOBALS['meta'][8]['ma_ad_start'], $GLOBALS['meta'][8]['ma_ad_end']], ['2026-11-20 10:00:00', '2026-12-20 10:00:00']);
+$GLOBALS['meta'][9] = ['ma_ad_format' => 'rundum-paket', 'ma_ad_start' => '2026-12-01 00:00:00'];
+ma_werbeformat_laufzeit(9);
+pruefe('Start in der Zukunft bleibt, Ende = Start + 30 Tage', [$GLOBALS['meta'][9]['ma_ad_start'], $GLOBALS['meta'][9]['ma_ad_end']], ['2026-12-01 00:00:00', '2026-12-31 00:00:00']);
+$GLOBALS['meta'][10] = ['ma_ad_format' => 'rundum-paket'];
+ma_werbeformat_laufzeit(10);
+pruefe('ohne Start: ab jetzt', [$GLOBALS['meta'][10]['ma_ad_start'], $GLOBALS['meta'][10]['ma_ad_end']], ['2026-11-20 10:00:00', '2026-12-20 10:00:00']);
+$GLOBALS['meta'][11] = ['ma_ad_format' => 'rundum-paket', 'ma_ad_end' => '2027-01-31 00:00:00'];
+ma_werbeformat_laufzeit(11);
+pruefe('vorhandenes Ende und Anzeigen ohne Format bleiben', [$GLOBALS['meta'][11]['ma_ad_end'], $GLOBALS['meta'][11]['ma_ad_start'] ?? ''], ['2027-01-31 00:00:00', '']);
+$rel = (string) file_get_contents($W . '/includes/relevanz.php');
+pruefe('Freigeben: Ende vorbei oder vor dem Start wird gemeldet, Ziel in der Zeile', [str_contains($rel, 'Das Ende der Anzeige liegt in der Vergangenheit'), str_contains($rel, 'Das Ende der Anzeige liegt vor dem Start'), str_contains($rel, "' · Ziel: '")], [true, true, true]);
 
 echo "\nÖffentlich ohne Preis\n";
 $h = ma_werbeformate_shortcode();
