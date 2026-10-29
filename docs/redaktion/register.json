@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-29-morgens.md",
-  "source_check_window": "29.10.2026 morgens, Europe/Berlin; Beginn 07:02, Primärabrufe 07:03–07:07; Bereitstellung siehe Commit-/Branchzeit",
+  "latest_dossier": "dossiers/2026-10-29-mittags.md",
+  "source_check_window": "29.10.2026 mittags Europe/Berlin; Direktabrufe 11:59:35–12:01:30; Bereitstellung siehe bestätigter Commit-Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10437,6 +10437,42 @@
         }
       ],
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
+    },
+    {
+      "id": "MA-WDR-HEIMAT-29102026",
+      "priority": "P3",
+      "location_section": "Gemeindegebiet / Leben und Medien",
+      "change_type": "neuer kommunaler Audio-Hinweis",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-29-mittags.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-29T12:01:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Gemeinde-Beitrag vom 29.10.2026 10:00 verweist auf Audioaufnahmen in der Mediathek. Nur kommunale Veröffentlichungskette, keine unabhängige Senderbestätigung und keine dritte eigenständige Sachquelle. Aufnahme-/Ausstrahlungsdatum offen; keine neue Produktion oder WDR-Besuch behaupten. Keine privaten Teilnehmendennamen übernehmen.",
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/beitraege/76c6f5fc-081f-43b0-9fab-8beac8e65e9d",
+          "checked_at": "2026-10-29T12:00:13+01:00"
+        },
+        {
+          "url": "https://www.gemeinde-merzenich.de/leben/mediathek.php",
+          "checked_at": "2026-10-29T12:00:48+01:00"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-29-mittags.md",
+      "latest_research_text_status": "T2",
+      "dossier_history": [
+        {
+          "date": "2026-10-29",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-10-29-mittags.md",
+          "heading": "MA-WDR-HEIMAT-29102026"
+        }
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     }
   ],
   "archive": {
@@ -10813,6 +10849,34 @@
       "publication": "keine",
       "source_check_status": "documented_partial_coverage",
       "qa": "Alle alten Themen und Laufeinträge unverändert erhalten; JSON parsebar; nur erlaubte Pfade; Überschriftenreihenfolge geprüft. Rücklesevergleich nach Branchupdate erforderlich."
+    },
+    {
+      "date": "2026-10-29",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-29-mittags.md",
+      "compared_with": "dossiers/2026-10-29-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-28-claude-morgens.md",
+      "base_commit": "ed804562f48e2bdce8ee868121565a9e7e9358db",
+      "research_read_base": "b0497e1d26e2f70b8179ab670c6f6ed0df2223f7",
+      "implementation_commit": null,
+      "summary": "1 neue T2-Recherchekarte zum Gemeindehinweis auf WDR-bezogene Audios. Senderquelle und Datierung fehlen. Zwei neue regionale Polizeimeldungen ohne Gemeindebezug ausgeschlossen. Unfallartikel live gegen Original vollständig geprüft: kein Korrekturbedarf. Keine neuen Termine.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "repository_article_files_read": 28,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-10-29T11:58:38+01:00",
+      "source_check_window": "2026-10-29T11:59:35+01:00 bis 2026-10-29T12:01:30+01:00",
+      "deadline": "2026-10-29T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung durch Branchbestätigung und Commit-Zeitstempel dokumentiert; keine vorweggenommene Erfolgsbehauptung.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Alte Registerthemen und Laufeinträge unverändert erhalten; nur zwei erlaubte Pfade. Vollständiger Rücklesevergleich nach Upload erforderlich."
     }
   ]
 }
