@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-28-mittags.md",
-  "source_check_window": "28.10.2026 mittags ab 14:51 Europe/Berlin; verspäteter Lauf nach 14:15; direkte Primärabrufe 14:53–14:54, anschließende PDF-Fundstellenprüfung",
+  "latest_dossier": "dossiers/2026-10-29-morgens.md",
+  "source_check_window": "29.10.2026 morgens, Europe/Berlin; Beginn 07:02, Primärabrufe 07:03–07:07; Bereitstellung siehe Commit-/Branchzeit",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10353,6 +10353,90 @@
           "published": "undatierte laufende Unternehmensseite"
         }
       ]
+    },
+    {
+      "id": "GO-ERSTEHILFE-14112026",
+      "priority": "P2",
+      "location_section": "Golzheim / Leben und Vereine",
+      "notes": "Neuer Veranstalterbeitrag vom 28.10.2026 22:20; Originalflyer vollständig gesichtet. Kursdatum, Ort und Preise nur durch IG belegt. Drei Dokumentwege desselben Herausgebers sind keine unabhängigen Quellen. Zweite Ereignisquelle der Johanniter fehlt. Außerhalb 14-Tage-Fenster.",
+      "sources": [
+        "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba",
+        "https://heimatinfo.blob.core.windows.net/public/97ec38ae-bdcd-41cb-b832-1e7b9c91b9df.jpg",
+        "https://www.golzheimaktiv.de/aktuelles"
+      ],
+      "change_type": "neu erschlossen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-29-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-29T07:09:00+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "research_sources": [
+        {
+          "url": "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba"
+        },
+        {
+          "url": "https://heimatinfo.blob.core.windows.net/public/97ec38ae-bdcd-41cb-b832-1e7b9c91b9df.jpg"
+        },
+        {
+          "url": "https://www.golzheimaktiv.de/aktuelles"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-29-morgens.md",
+      "latest_research_text_status": "T2",
+      "dossier_history": [
+        {
+          "date": "2026-10-29",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-29-morgens.md",
+          "heading": "GO-ERSTEHILFE-14112026"
+        }
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
+    },
+    {
+      "id": "KD-SOZIALRAUMBERICHT-28102026",
+      "priority": "P2",
+      "location_section": "Gemeindegebiet / Soziales",
+      "notes": "Neue Kreis-Pressemitteilung; Kreisfachseite und Kreuzauer Originalmitteilung 213/2026 gelesen. Zwei institutionell getrennte Herausgeber, aber keine örtliche Merzenich-Datenauswertung; Hauptbericht nicht erschlossen. Beschluss laut Kreuzauer Original bereits 09.07.2026; nicht als Beschluss vom 28.10. darstellen. Foto-Bedarf offen, leerer fremder Besprechungsraum verworfen.",
+      "sources": [
+        "https://www.kreis-dueren.de/presse/sozialraumbericht_2026-10-28.php",
+        "https://www.kreis-dueren.de/sozialplanung",
+        "https://sdnetrim.kdvz-frechen.de/rim4250/webservice/oparl/v1.1/body/1/files/download/UGhVM0hpd2NXNFdFcExjZe4BVRnHGxLLeCZIcRvlmeCGMVlrQCgTlzmvX2jIaCIZ/Mitteilung_213-2026.pdf"
+      ],
+      "change_type": "neu erschlossen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-10-29-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-10-29T07:09:00+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "research_sources": [
+        {
+          "url": "https://www.kreis-dueren.de/presse/sozialraumbericht_2026-10-28.php"
+        },
+        {
+          "url": "https://www.kreis-dueren.de/sozialplanung"
+        },
+        {
+          "url": "https://sdnetrim.kdvz-frechen.de/rim4250/webservice/oparl/v1.1/body/1/files/download/UGhVM0hpd2NXNFdFcExjZe4BVRnHGxLLeCZIcRvlmeCGMVlrQCgTlzmvX2jIaCIZ/Mitteilung_213-2026.pdf"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-29-morgens.md",
+      "latest_research_text_status": "T2",
+      "dossier_history": [
+        {
+          "date": "2026-10-29",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-29-morgens.md",
+          "heading": "KD-SOZIALRAUMBERICHT-28102026"
+        }
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     }
   ],
   "archive": {
@@ -10703,6 +10787,32 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "JSON, ausschließlich erlaubte Pfade, Dossierüberschriften und Erhalt sämtlicher alter Registerthemen und Laufeinträge vor Upload geprüft."
+    },
+    {
+      "date": "2026-10-29",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-29-morgens.md",
+      "compared_with": "dossiers/2026-10-28-mittags.md",
+      "compared_with_claude": "dossiers/2026-10-28-claude-morgens.md",
+      "base_commit": "047b1910e67f1b6f359bfee734ab28c470c44395",
+      "implementation_commit": null,
+      "summary": "2 neue T2-Karten: Golzheimer Erste-Hilfe-Kurs (unabhängige Bestätigung fehlt), Kreis-Sozialraumbericht (Merzenich-Auswertung fehlt). Unfallartikel live gegen Polizei geprüft, kein Korrekturbedarf. RIS-ICS direkt erfolgreich; keine neuen Termine im Fenster. Keine Artikeltexte.",
+      "topics": 2,
+      "blocked_T2": 2,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "repository_article_files_read": 28,
+      "complete_drafts": 0,
+      "new_or_changed_events": 0,
+      "deadline": "2026-10-29T08:45:00+01:00",
+      "research_started_at": "2026-10-29T07:02:37+01:00",
+      "prepared_at": "2026-10-29T07:09:45+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung erst durch bestätigten Branch-Commit belegt; kein vorweggenommener Fristnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Alle alten Themen und Laufeinträge unverändert erhalten; JSON parsebar; nur erlaubte Pfade; Überschriftenreihenfolge geprüft. Rücklesevergleich nach Branchupdate erforderlich."
     }
   ]
 }
