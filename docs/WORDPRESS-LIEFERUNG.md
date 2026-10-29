@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-29. Oktober 2026 · Theme 21.24.0 · Core-Plugin 1.37.0 · live: 21.23.0 / 1.36.2 (Historie unten)
+29. Oktober 2026 · Theme 21.24.0 · Core-Plugin 1.37.0 · live: 21.24.0 / 1.37.0 (Historie unten)
 
 ## Neu am 29.10.2026: Plugin 1.37.0 und Theme 21.24.0, Werbung anfragen wie bei den fünf Firmen
 
-**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.36.2, Theme 21.23.0.
+**Stand live:** eingespielt am 29.10.2026 gegen 12:25 Uhr (Plugin 1.37.0, dann Theme 21.24.0, Permalinks gespeichert, danach unter Firmen-Entwürfe „Fehlende Entwürfe anlegen“). Nachweis: `?ver=1.37.0` und `?ver=21.24.0` im Quelltext. Die Anzeigen von Almera Clean, KBS und ASS Elektrotechnik verlinken auf die Website des Unternehmens (`target="_blank"`, `rel="sponsored noopener"`, Knopf „Zur Website“), Merzlicht und AJ Sports weiter auf ihr Profil. `/werben/` zeigt Rundum-Paket, „So läuft es“, Beispielband und Formular ohne Preis; das Formular blendet bei „Werbepaket mit Foto und Video“ die Motiv-, Video- und Linkfelder ein. Unter Werbung → Formate & Preise steht das Rundum-Paket, noch ohne Preis. Bei 1440, 820 und 390 px auf Startseite, Meldung, `/unternehmen/` und `/werben/` 0 Konsolenfehler, kein Überlauf. Rückweg: Plugin 1.36.2, Theme 21.23.0.
 
 **Anlass:** Auftrag des Betreibers: Werbeformate mit Preisen festlegen; Anfragen von Firmen (Werbung oder Profil) landen automatisch im Backend und lassen sich in der heutigen Struktur anlegen; Firmen reichen Fotos und Videos ein, das Format ist vorgegeben; ein Klick auf eine Anzeige führt direkt zur Website. Entscheidungen: Preise nur im Backend, zunächst ein Format (Rundum-Paket), Anfrage im Eingang mit Anlegen per Klick, Videos bis 6 MB direkt, größere als Link.
 
