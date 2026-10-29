@@ -32,6 +32,7 @@ function get_post_type($id) { return $GLOBALS['posts'][$id]['post_type'] ?? fals
 function get_the_title($id) { return $GLOBALS['posts'][$id]['post_title'] ?? ''; }
 function wp_kses($s, $erlaubt) { return strip_tags((string) $s, '<' . implode('><', array_keys($erlaubt)) . '>'); }
 function esc_url($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
+function esc_url_raw($s) { return preg_match('#^https?://#', (string) $s) ? (string) $s : ''; }
 function esc_html($s) { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
 class WP_Error { public function get_error_message() { return 'Datenbankfehler'; } }
 function is_wp_error($x) { return $x instanceof WP_Error; }
@@ -76,7 +77,9 @@ pruefe('je Firma zwei Anzeigen', array_map(fn($f) => count(ma_firmen_anzeigen($f
 pruefe('KI-Bilder nur bei Merzlicht und AJ Sports', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[false, false], [false, false], [false, false], [true, true], [true, true]]);
 foreach ($firmen as $f) foreach (ma_firmen_anzeigen($f) as $i => $a) {
     $n = $f['profil']['titel'] . ' ' . ($i + 1);
-    pruefe("$n: Überschrift, Satz, Zeile oben, Knopf, Alt-Text, Nachweis", count(array_filter([$a['titel'] ?? '', $a['text'] ?? '', $a['zeile'] ?? '', $a['knopf'] ?? '', $a['alt'] ?? '', $a['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 6);
+    pruefe("$n: Überschrift, Satz, Zeile oben, Alt-Text, Nachweis", count(array_filter([$a['titel'] ?? '', $a['text'] ?? '', $a['zeile'] ?? '', $a['alt'] ?? '', $a['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 5);
+    // Knopf (29.10.2026): ohne festen Text „Zur Website“, das setzt eine Website im Profil voraus; ohne Website steht „Zum Profil“ in der Datei.
+    pruefe("$n: Knopf zur Website oder fester Text", isset($a['knopf']) ? trim((string) $a['knopf']) !== '' : ($f['profil']['website'] ?? '') !== '', true);
     $webm = MA_CORE_PATH . 'data/banner/' . preg_replace('/\.mp4$/', '.webm', $a['video']);
     pruefe("$n: Foto, MP4 und WebM im Plugin, Videos unter 1 MB", [is_file(MA_CORE_PATH . 'data/banner/' . $a['bild']), filesize(MA_CORE_PATH . 'data/banner/' . $a['video']) < 1024 * 1024, is_file($webm) && filesize($webm) < 1024 * 1024], [true, true, true]);
     pruefe("$n: keine Preise", preg_match('/€|\bEUR\b|\d+\s*Euro/i', $a['titel'] . ' ' . $a['text']), 0);
@@ -188,7 +191,7 @@ $adId = (int) array_key_first($ads); $ad = $ads[$adId] ?? [];
 $m = fn(string $k) => get_post_meta($adId, $k);
 pruefe('Merzlicht: Profil veröffentlicht, Logo-Haken ohne Logo ignoriert', [$GLOBALS['posts'][106]['post_status'], get_post_meta(106, 'ma_business_logo_rechte'), str_contains(implode(' ', $log), 'Logo')], ['publish', '', false]);
 pruefe('Merzlicht: zwei Werbebanner, mit festem Motiv-Schlüssel markiert', [count($ads), array_values(array_map(fn($id) => get_post_meta($id, 'ma_firmen_banner'), array_keys($ads)))], [2, ['merzlicht:merzlicht-1', 'merzlicht:merzlicht-2']]);
-pruefe('Banner 1: veröffentlicht, aktiv, Knopf zum Firmenkanal, ohne Ende, mit Profil', [$ad['post_status'] ?? '', $ad['post_title'] ?? '', $m('ma_ad_active'), $m('ma_ad_url'), $m('ma_ad_knopf'), $m('ma_ad_end'), $m('ma_business_id')], ['publish', 'Ihre Werbung auf der Videowall.', '1', 'https://merzenich-aktuell.de/unternehmen/merzlicht/', 'Zum Profil', '', '106']);
+pruefe('Banner 1 (Firma ohne Website): veröffentlicht, aktiv, Knopf zum Profil, ohne Ende, mit Profil', [$ad['post_status'] ?? '', $ad['post_title'] ?? '', $m('ma_ad_active'), $m('ma_ad_url'), $m('ma_ad_knopf'), $m('ma_ad_end'), $m('ma_business_id')], ['publish', 'Ihre Werbung auf der Videowall.', '1', 'https://merzenich-aktuell.de/unternehmen/merzlicht/', 'Zum Profil', '', '106']);
 pruefe('Zusage ergänzt leere Branche, eigene Angaben bleiben', [get_post_meta(106, 'ma_business_branche'), get_post_meta(106, 'ma_business_ortsteil')], ['Werbung auf der Videowall', 'golzheim']);
 pruefe('Banner im Stil der Anzeigen: Zeile oben und Satz, als KI-Bild gekennzeichnet', [$m('ma_ad_sponsor'), $ad['post_excerpt'] ?? '', $m('ma_ad_ki')], ['Merzlicht · Videowall am Bürgewaldzentrum', 'Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.', '1']);
 pruefe('Plätze: sechs Startseiten-Bänder, unter Artikeln, Unternehmensspalte', array_merge([$m('ma_ad_slot')], $GLOBALS['weitere'][$adId]['ma_ad_slot_weitere'] ?? []), ma_firmen_banner_plaetze());
@@ -217,6 +220,8 @@ pruefe('Banner im Papierkorb: nichts neu angelegt', [str_contains(implode(' ', m
 $GLOBALS['posts'][701] = ['post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Eigener Titel', 'post_date_gmt' => '2026-10-28 10:00:00', 'post_modified_gmt' => '2026-10-28 12:00:00', 'meta_input' => ['ma_firmen_banner' => 'ass-elektrotechnik', 'ma_business_id' => '104', 'ma_ad_active' => '1']];
 $GLOBALS['posts'][104]['post_status'] = 'publish'; $GLOBALS['meta'][104]['ma_business_consent'] = '1';
 $log = ma_firmen_zusage_eintragen('ass-elektrotechnik', 'x', true, false);
+$assNeu = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-2', ARRAY_FILTER_USE_BOTH));
+pruefe('Firma mit Website: Klick führt direkt zur Website, Knopf „Zur Website“', [get_post_meta($assNeu, 'ma_ad_url'), get_post_meta($assNeu, 'ma_ad_knopf')], ['https://www.asselektrotechnik.de/', 'Zur Website']);
 pruefe('altes Banner, später von Hand geändert: nicht überschrieben', [str_contains(implode(' ', $log), 'ASS Elektrotechnik, Anzeige 1: im Backend bearbeitet'), $GLOBALS['posts'][701]['post_title']], [true, 'Eigener Titel']);
 // Endgültig gelöschtes Banner wird nicht neu angelegt.
 $ass2 = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-2', ARRAY_FILTER_USE_BOTH));

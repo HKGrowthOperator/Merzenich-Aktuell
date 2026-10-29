@@ -284,9 +284,10 @@ function ma_firmen_kontingent_setzen(int $uid, int $bid, bool $nurErhoehen = fal
 /**
  * Werbebanner aus „anzeigen“ anlegen und aktuell halten (28.10.2026): je Motiv eine
  * laufende Anzeige (ma_ad) auf allen Plätzen aus ma_firmen_banner_plaetze(), ohne
- * Ende, mit Foto und Video-Schleife aus data/banner/, Knopf zum Firmenkanal (oder
- * „ziel“), verknüpft mit dem Profil. Ändert sich ein Motiv in der Datei („stand“
- * oder Inhalt), zieht es die Anzeige nach, außer jemand hat sie im Backend bearbeitet.
+ * Ende, mit Foto und Video-Schleife aus data/banner/, Knopf zur Website der Firma
+ * („ziel“, sonst profil.website, ohne Website zum Profil), verknüpft mit dem Profil.
+ * Ändert sich ein Motiv in der Datei („stand“ oder Inhalt), zieht es die Anzeige
+ * nach, außer jemand hat sie im Backend bearbeitet.
  * Ergebnis: Zeilen für die Rückmeldung (leer ohne Anzeigen in der Datei).
  */
 function ma_firmen_banner_anlegen(array $f, int $pid): array {
@@ -331,8 +332,10 @@ function ma_firmen_banner_anlegen(array $f, int $pid): array {
         }
         update_post_meta($id, 'ma_firmen_banner', $slug . ':' . $schluessel);
         update_post_meta($id, 'ma_ad_sponsor', (string) ($a['zeile'] ?? $name));
-        update_post_meta($id, 'ma_ad_knopf', (string) ($a['knopf'] ?? 'Zum Profil'));
-        update_post_meta($id, 'ma_ad_url', (string) ($a['ziel'] ?? '') ?: (string) get_permalink($pid));
+        // Klick führt direkt zur Website der Firma (29.10.2026); ohne Website zum Profil.
+        $web = esc_url_raw((string) ($a['ziel'] ?? '') ?: (string) ($p['website'] ?? '') ?: (string) get_post_meta($pid, 'ma_business_website', true));
+        update_post_meta($id, 'ma_ad_knopf', (string) ($a['knopf'] ?? ($web !== '' ? 'Zur Website' : 'Zum Profil')));
+        update_post_meta($id, 'ma_ad_url', $web !== '' ? $web : (string) get_permalink($pid));
         update_post_meta($id, 'ma_ad_ki', !empty($a['ki']) ? '1' : '');
         update_post_meta($id, 'ma_ad_fokus', preg_match('/^\d{1,3}% \d{1,3}%$/', (string) ($a['fokus'] ?? '')) ? (string) $a['fokus'] : '');
         $nachweis = ma_firmen_banner_nachweis($a, $name); $alt = (string) ($a['alt'] ?? 'Anzeige ' . $name); $fehler = '';

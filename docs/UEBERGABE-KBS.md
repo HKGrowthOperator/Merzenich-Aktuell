@@ -300,10 +300,18 @@ Jede Anzeigenart hat ihr eigenes Menü und einen eigenen Kasten mit Feldern. Zwe
 
 Läuft auf einem Werbeplatz keine Anzeige, bleibt er leer (seit 28.10.2026 keine Musteranzeigen mehr).
 
-**Anzeige schalten:** **Werbung → Werbemittel hinzufügen**.
+**Formate und Preise:** **Werbung → Formate & Preise**. Hier steht, was Firmen buchen können; Vorgabe ist das **Rundum-Paket** (alle elf Plätze, zwei Motive mit Foto und Video, Firmenprofil, 30 Tage). Name, Beschreibung, Plätze, Motive und Laufzeit erscheinen auf der Seite „Werben“ und im Anfrageformular. **Preis und Notiz sieht nur die Redaktion** (hier, bei der Anfrage im Eingang, im Werbemittel und in den Freigaben). Ein weiteres Format legen Sie im Kasten **Neues Format anlegen** an.
+
+**Werbeanfrage einer Firma** (seit 29.10.2026): Auf **/werben/** wählt die Firma „Werbepaket mit Foto und Video“ und schickt Firma, Website, Wunschstart, je Motiv Überschrift, Satz und Foto, auf Wunsch ein Video (bis 6 MB, größere als Link) und ein Logo. Die Anfrage steht im **Eingang** (A7) mit dem Kasten **Werbeanfrage** (alle Angaben, Format mit Preis, Fotos, Video). Die Redaktion bekommt eine Mail, die Firma eine Eingangsbestätigung ohne Preis.
+1. Angebot schicken und Auftrag abwarten.
+2. In der Einsendung **Profil und Anzeigen anlegen**: legt das Firmenprofil an (oder verknüpft ein vorhandenes mit gleicher Website) und je Motiv eine Anzeige mit Text, Foto, Video, Website als Ziel, allen Plätzen des Formats und der Laufzeit, alles „Zur Prüfung“.
+3. **Zu den Freigaben**: Profil und Anzeigen prüfen, **Freigeben**. Erst dann laufen die Anzeigen.
+Ein Klick auf eine Anzeige führt direkt auf die Website der Firma (neues Fenster). Ist ein Video größer als 1 MB, steht ein Hinweis dabei: für schnelle Seiten besser eine kleinere Fassung einsetzen.
+
+**Anzeige von Hand schalten:** **Werbung → Werbemittel hinzufügen**.
 1. Titel (intern, z. B. „Bäckerei Muster Herbst 2026“).
 2. **Werbemittel (Bild)**: Bild hochladen, **Alternativtext des Bildes** eintragen.
-3. Kasten **Werbeschaltung**: **Sponsor / Firma**, **Ziel-URL**, **Start**, **Ende**, **Platzierung**. Für mehrere Plätze zusätzlich **Weitere Plätze (Kampagne)**. **Priorität** in drei Stufen (1 Hoch, 2 Mitte, 3 Niedrig, wie die Relevanz der Meldungen), wenn sich mehrere Anzeigen einen Platz teilen.
+3. Kasten **Werbeschaltung**: **Format** (setzt Plätze und Laufzeit), **Sponsor / Firma**, **Ziel-URL** (die Website der Firma), **Video** (Knopf **Video auswählen oder hochladen**), **Start**, **Ende**, **Platzierung**. Für mehrere Plätze zusätzlich **Weitere Plätze (Kampagne)**. **Priorität** in drei Stufen (1 Hoch, 2 Mitte, 3 Niedrig, wie die Relevanz der Meldungen), wenn sich mehrere Anzeigen einen Platz teilen.
 4. **Aktiv** (Schaltung aktiv) ankreuzen, **Veröffentlichen**.
 
 Eine Anzeige läuft nur, wenn sie veröffentlicht und aktiv ist, das Startdatum erreicht ist und Werbung sowie der Platz eingeschaltet sind (Werbeplätze, B5). Nach dem Ende bleibt der Platz leer, solange dort keine andere Anzeige läuft.
@@ -312,7 +320,7 @@ Eine Anzeige läuft nur, wenn sie veröffentlicht und aktiv ist, das Startdatum 
 
 **Unternehmensprofile** (Menü **Unternehmen**) nur mit schriftlicher Einwilligung des Betriebs: Haken **Einwilligung**, sonst wird das Profil nicht veröffentlicht.
 
-**Preise** stehen nirgends auf der Seite. Dort steht immer „Preis auf Anfrage“.
+**Preise** stehen nur im Backend (Formate & Preise). Auf der Seite steht immer „Preis auf Anfrage“; auch Firmen-Zugänge sehen keinen Preis.
 
 ## A14. Statistik und Live
 

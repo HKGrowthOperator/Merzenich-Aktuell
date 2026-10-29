@@ -228,11 +228,13 @@ add_filter('attachment_fields_to_save', function (array $post, array $daten): ar
     return $post;
 }, 10, 2);
 
-/* Uploads der Partner: nur Bilder und PDF, höchstens 10 MB. */
+/* Uploads der Partner: Bilder und PDF bis 10 MB, Videos für Anzeigen (MP4, WebM) bis 6 MB (29.10.2026). */
 add_filter('wp_handle_upload_prefilter', function (array $datei): array {
     if (!function_exists('ma_current_partner_policy') || !ma_current_partner_policy()) return $datei;
-    $typ = wp_check_filetype_and_ext($datei['tmp_name'] ?? '', $datei['name'] ?? '');
-    if (!in_array($typ['type'] ?? '', ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'], true)) $datei['error'] = 'Erlaubt sind Bilder (JPG, PNG, WebP, GIF) und PDF.';
+    $typ = (string) (wp_check_filetype_and_ext($datei['tmp_name'] ?? '', $datei['name'] ?? '')['type'] ?? '');
+    $video = in_array($typ, ['video/mp4', 'video/webm'], true);
+    if (!$video && !in_array($typ, ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'], true)) $datei['error'] = 'Erlaubt sind Bilder (JPG, PNG, WebP, GIF), PDF und Videos (MP4, WebM).';
+    elseif ($video && (int) ($datei['size'] ?? 0) > 6 * 1024 * 1024) $datei['error'] = 'Das Video ist größer als 6 MB. Bitte kürzer oder kleiner speichern oder der Redaktion einen Link schicken.';
     elseif ((int) ($datei['size'] ?? 0) > 10 * 1024 * 1024) $datei['error'] = 'Die Datei ist größer als 10 MB.';
     return $datei;
 });

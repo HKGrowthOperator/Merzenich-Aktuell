@@ -9,7 +9,7 @@
  * ma_active_ad() bleibt fuer bestehende Aufrufer erhalten und liefert die
  * erste davon (hoechste Prioritaet, dann die neueste).
  *
- * Preise werden nirgends ausgegeben (Vorgabe: immer "Preis auf Anfrage").
+ * Preise stehen nur im Backend (werbeformate.php); öffentlich immer "Preis auf Anfrage".
  */
 if (!defined('ABSPATH')) { exit; }
 

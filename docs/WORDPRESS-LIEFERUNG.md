@@ -1,6 +1,22 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-28. Oktober 2026 · Theme 21.23.0 · Core-Plugin 1.36.2 · live: 21.23.0 / 1.36.2 (Historie unten)
+29. Oktober 2026 · Theme 21.24.0 · Core-Plugin 1.37.0 · live: 21.23.0 / 1.36.2 (Historie unten)
+
+## Neu am 29.10.2026: Plugin 1.37.0 und Theme 21.24.0, Werbung anfragen wie bei den fünf Firmen
+
+**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.36.2, Theme 21.23.0.
+
+**Anlass:** Auftrag des Betreibers: Werbeformate mit Preisen festlegen; Anfragen von Firmen (Werbung oder Profil) landen automatisch im Backend und lassen sich in der heutigen Struktur anlegen; Firmen reichen Fotos und Videos ein, das Format ist vorgegeben; ein Klick auf eine Anzeige führt direkt zur Website. Entscheidungen: Preise nur im Backend, zunächst ein Format (Rundum-Paket), Anfrage im Eingang mit Anlegen per Klick, Videos bis 6 MB direkt, größere als Link.
+
+- **Klick zur Website** (`includes/firmen-entwuerfe.php`, `data/firmen-entwuerfe.json`): Firmenanzeigen zeigen auf `ziel`, sonst die Website des Profils, sonst das Profil; Knopf „Zur Website“. Almera, KBS und ASS führen damit auf ihre Websites, Merzlicht und AJ Sports (ohne Website) weiter aufs Profil. Klicks mit der mittleren Maustaste zählen mit (`werbung-stat.php`).
+- **Formate & Preise** (neu `includes/werbeformate.php`): Werbung → Formate & Preise, Option `ma_werbeformate`; Vorgabe Rundum-Paket (11 Plätze, 2 Motive, Video, Profil, 30 Tage, Preis leer). Preis nur im Backend: Formate-Seite, Eingang, Werbemittel (Feld „Format“, Meta `ma_ad_format`, setzt Plätze und Ende), Freigaben. Firmen-Zugänge sehen keinen Preis. Öffentlich: `[ma_werbeformate]` (Karten ohne Preis) und `[ma_werbung_beispiel]` (laufende Anzeigen als Beispiel, ohne Zählung).
+- **Werbeanfrage** (neu `includes/werbeanfrage.php`, `includes/forms.php`): Bei „Werbepaket mit Foto und Video“ und „Unternehmensprofil“ fragt das Formular Firma, Website, Branche, Adresse, Beschreibung, Logo, Format, Wunschstart, je Motiv Überschrift, Satz und Foto, Video (MP4/WebM bis 6 MB) und Video-Link ab, dazu eine Einwilligung. Der Browser verkleinert Fotos auf 1600 px und prüft die Gesamtgröße (höchstens 7,5 MB), der Server prüft Typen und Größen. Höchstens fünf Anfragen je Stunde und Absender. Eingangsbestätigung an die Firma ohne Preis; Mail an die Redaktion mit Preis (ohne Video als Anhang).
+- **Eingang** (`includes/eingang.php`): Kasten „Werbeanfrage“ mit allen Angaben, Fotos und Video; Knopf „Profil und Anzeigen anlegen“ legt Firmenprofil (oder verknüpft eines mit gleicher Website) und je Motiv eine Anzeige „Zur Prüfung“ an, mit Website als Ziel, Plätzen und Laufzeit des Formats, Foto und Video (nur mit bestätigten Bildrechten). Ein zweiter Klick legt nichts doppelt an. Außerdem zeigt die Liste unter „Alle“ die Einsendungen wieder (Status „Neu“ und „Erledigt“ jetzt `protected`; vorher war die Liste unter „Alle“ leer).
+- **Firmen-Zugänge** (`includes/bildrechte.php`, `includes/content-admin.php`): dürfen Videos (MP4, WebM bis 6 MB) hochladen; im Werbemittel Knopf „Video auswählen oder hochladen“ statt der Medien-ID, Ziel mit der Website des eigenen Profils vorbelegt.
+- **Seite „Werben“** (`includes/seiten.php`, Fassung 2026-10-29): Werbepaket, „So läuft es“, Werbeplätze, Beispiel, Anfrage. Theme 21.24.0: Stile dafür in `assets/css/plattform.css`.
+- **Tests:** neu `qa/wordpress/werbeformate-test.php`, `qa/wordpress/werbeanfrage-test.php`; angepasst `firmen-entwuerfe-test.php`, `formular-test.php`.
+- **Lokal geprüft (8090):** Anfrage mit einem Foto von 7,5 MB (kam mit 950 KB bei 1600 px an), einem zweiten Foto und einem Video von 4,8 MB abgeschickt; Eingang mit Kasten; „Profil und Anzeigen anlegen“, Freigeben; beide Anzeigen laufen auf 11 Plätzen vom Wunschstart 30 Tage, ein Klick öffnet die Website in einem neuen Fenster und wird gezählt; 0 Konsolenfehler.
+
 
 ## Neu am 28.10.2026 spät: Plugin 1.36.2, überall drei Stufen
 

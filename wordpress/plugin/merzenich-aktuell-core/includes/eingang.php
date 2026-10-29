@@ -19,7 +19,8 @@ add_action('init', function (): void {
         'map_meta_cap' => true,
     ]);
     foreach (['neu' => 'Neu', 'erledigt' => 'Erledigt'] as $status => $label) {
-        register_post_status('ma_' . $status, ['label' => $label, 'public' => false, 'internal' => false, 'show_in_admin_all_list' => true, 'show_in_admin_status_list' => true,
+        // protected: sonst zeigt die Liste unter „Alle“ keine Einsendung (WP_Query nimmt im Backend nur öffentliche und geschützte Status, 29.10.2026).
+        register_post_status('ma_' . $status, ['label' => $label, 'public' => false, 'protected' => true, 'internal' => false, 'show_in_admin_all_list' => true, 'show_in_admin_status_list' => true,
             'label_count' => _n_noop($label . ' <span class="count">(%s)</span>', $label . ' <span class="count">(%s)</span>')]);
     }
 });
@@ -33,6 +34,8 @@ function ma_eingang_speichern(array $f, array $dateien = []): int {
     $id = wp_insert_post(['post_type' => 'ma_eingang', 'post_status' => 'ma_neu', 'post_title' => wp_strip_all_tags($titel), 'post_content' => sanitize_textarea_field($f['text'] ?? '')], true);
     if (is_wp_error($id) || !$id) return 0;
     foreach (['typ', 'art', 'name', 'email', 'telefon', 'betreff', 'bildrechte', 'fotograf', 'zustimmung'] as $k) if (isset($f[$k]) && $f[$k] !== '') update_post_meta($id, '_ma_eingang_' . $k, sanitize_text_field((string) $f[$k]));
+    // Werbeanfrage (werbeanfrage.php, 29.10.2026): alle Angaben, schon gesäubert.
+    if (!empty($f['werbung']) && is_array($f['werbung'])) update_post_meta($id, '_ma_eingang_werbung', $f['werbung']);
     if ($dateien) {
         require_once ABSPATH . 'wp-admin/includes/image.php';
         foreach ($dateien as $pfad) {
@@ -42,6 +45,7 @@ function ma_eingang_speichern(array $f, array $dateien = []): int {
                 wp_update_attachment_metadata($anhang, wp_generate_attachment_metadata($anhang, $pfad));
                 // Bildrechte des Einsenders mitschreiben; „geprüft“ setzt nur die Redaktion.
                 update_post_meta($anhang, '_ma_eingang_bildrechte', !empty($f['bildrechte']) ? '1' : '');
+                if (!empty($f['rollen'][$pfad])) update_post_meta($anhang, '_ma_eingang_rolle', sanitize_key((string) $f['rollen'][$pfad]));
             }
         }
     }
@@ -124,6 +128,12 @@ function ma_eingang_uebernehmen(int $id): int {
     $e = get_post($id);
     if (!$e || $e->post_type !== 'ma_eingang') return 0;
     $m = fn(string $k): string => (string) get_post_meta($id, '_ma_eingang_' . $k, true);
+    // Werbeanfrage mit allen Angaben: Firmenprofil und Anzeigen fertig anlegen (werbeanfrage.php).
+    if (function_exists('ma_werbeanfrage_anlegen') && is_array(get_post_meta($id, '_ma_eingang_werbung', true))) {
+        $r = ma_werbeanfrage_anlegen($id);
+        if (!empty($r['log'])) set_transient('ma_wa_log_' . get_current_user_id(), $r['log'], 120);
+        return (int) ($r['anzeigen'][0] ?? $r['profil'] ?? 0);
+    }
     $ziel = ma_eingang_ziel($m('typ'), $m('art'));
     if ($ziel === '') return 0;
     $vorhanden = (int) get_post_meta($id, '_ma_eingang_entwurf', true);
@@ -148,9 +158,11 @@ add_action('admin_post_ma_eingang_uebernehmen', function (): void {
     $id = (int) ($_GET['eingang'] ?? 0);
     check_admin_referer('ma_eingang_uebernehmen_' . $id);
     if (!$id || !current_user_can('edit_others_posts') || (function_exists('ma_current_partner_policy') && ma_current_partner_policy())) wp_die('Keine Berechtigung.', 403);
+    $wa = is_array(get_post_meta($id, '_ma_eingang_werbung', true));
     $neu = ma_eingang_uebernehmen($id);
-    if (!$neu) wp_die('Für diese Art von Einsendung gibt es keinen passenden Inhaltstyp (z. B. Kontakt, Korrektur, Partner-Antrag). Bitte direkt beantworten.', 400);
-    wp_safe_redirect(admin_url('post.php?post=' . $neu . '&action=edit')); exit;
+    if (!$neu) wp_die($wa ? 'Die Werbeanfrage konnte nicht angelegt werden.' : 'Für diese Art von Einsendung gibt es keinen passenden Inhaltstyp (z. B. Kontakt, Korrektur, Partner-Antrag). Bitte direkt beantworten.', 400);
+    // Werbeanfrage: zurück zur Einsendung, dort stehen Profil, Anzeigen und der Weg zu den Freigaben.
+    wp_safe_redirect(admin_url('post.php?post=' . ($wa ? $id : $neu) . '&action=edit')); exit;
 });
 
 add_filter('post_row_actions', function (array $a, WP_Post $p): array {
@@ -159,7 +171,8 @@ add_filter('post_row_actions', function (array $a, WP_Post $p): array {
     if ($ziel === '') return $a;
     $entwurf = (int) get_post_meta($p->ID, '_ma_eingang_entwurf', true);
     $name = get_post_type_object($ziel)->labels->singular_name ?? $ziel;
-    $a['ma_uebernehmen'] = $entwurf && get_post($entwurf) ? '<a href="' . esc_url(get_edit_post_link($entwurf)) . '">Entwurf öffnen</a>' : '<a href="' . esc_url(ma_eingang_uebernehmen_link($p->ID)) . '">Als Entwurf übernehmen (' . esc_html($name) . ')</a>';
+    $wa = is_array(get_post_meta($p->ID, '_ma_eingang_werbung', true));
+    $a['ma_uebernehmen'] = $entwurf && get_post($entwurf) ? '<a href="' . esc_url(get_edit_post_link($entwurf)) . '">Entwurf öffnen</a>' : '<a href="' . esc_url(ma_eingang_uebernehmen_link($p->ID)) . '">' . ($wa ? 'Profil und Anzeigen anlegen' : 'Als Entwurf übernehmen (' . esc_html($name) . ')') . '</a>';
     return $a;
 }, 10, 2);
 
@@ -169,6 +182,18 @@ add_action('add_meta_boxes_ma_eingang', function (WP_Post $p): void {
     add_meta_box('ma-eingang-uebernehmen', 'Weiterbearbeiten', function (WP_Post $p) use ($ziel): void {
         $entwurf = (int) get_post_meta($p->ID, '_ma_eingang_entwurf', true);
         $name = get_post_type_object($ziel)->labels->singular_name ?? $ziel;
+        $angelegt = get_post_meta($p->ID, '_ma_eingang_angelegt', true);
+        if (is_array(get_post_meta($p->ID, '_ma_eingang_werbung', true))) {
+            if ($log = get_transient('ma_wa_log_' . get_current_user_id())) { delete_transient('ma_wa_log_' . get_current_user_id()); echo '<div class="notice notice-success inline"><p>' . implode('<br>', array_map('esc_html', (array) $log)) . '</p></div>'; }
+            if (is_array($angelegt) && !empty($angelegt['profil']) && get_post((int) $angelegt['profil'])) {
+                echo '<p><a href="' . esc_url(get_edit_post_link((int) $angelegt['profil'])) . '">Firmenprofil öffnen</a></p>';
+                foreach ((array) ($angelegt['anzeigen'] ?? []) as $n => $ad) if (get_post((int) $ad)) echo '<p><a href="' . esc_url(get_edit_post_link((int) $ad)) . '">Anzeige ' . ($n + 1) . ' öffnen</a> (' . esc_html(function_exists('ma_status_name') ? ma_status_name((string) get_post_status((int) $ad)) : (string) get_post_status((int) $ad)) . ')</p>';
+                echo '<p><a class="button button-primary" href="' . esc_url(admin_url('admin.php?page=ma-freigaben')) . '">Zu den Freigaben</a></p><p class="description">Dort prüfen und „Freigeben“: dann läuft die Anzeige auf den Plätzen des Formats und führt auf die Website der Firma.</p>';
+                return;
+            }
+            echo '<p><a class="button button-primary" href="' . esc_url(ma_eingang_uebernehmen_link($p->ID)) . '">Profil und Anzeigen anlegen</a></p><p class="description">Legt das Firmenprofil (oder verknüpft ein vorhandenes) und je Motiv eine Anzeige mit Text, Foto, Video, Website, Plätzen und Laufzeit an, alles „Zur Prüfung“. Es läuft erst nach „Freigeben“.</p>';
+            return;
+        }
         if ($entwurf && get_post($entwurf)) { echo '<p><a class="button" href="' . esc_url(get_edit_post_link($entwurf)) . '">Entwurf öffnen</a></p>'; return; }
         echo '<p><a class="button button-primary" href="' . esc_url(ma_eingang_uebernehmen_link($p->ID)) . '">Als Entwurf übernehmen</a></p><p class="description">Legt eine(n) ' . esc_html($name) . ' als Entwurf an. Veröffentlicht wird erst nach Prüfung und Freigabe. Kontaktdaten bleiben intern.</p>';
     }, 'ma_eingang', 'side', 'high');

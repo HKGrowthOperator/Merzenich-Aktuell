@@ -351,3 +351,26 @@ img.bild-logo,.media--logo img{object-fit:contain!important;background:#fff;padd
 /* Echte Anzeige nur mit Namen (Banner Merzlicht, AJ Sports, 24.10.2026): Das Bild füllt den Kasten, kein leerer Textblock darunter. */
 .werbung--echt .ma-ad-card--gap:not(:has(.ma-ad-text)) .ma-ad-art{flex:1 1 auto}
 .werbung--echt .ma-ad-card--gap:not(:has(.ma-ad-text)) .ma-ad-copy{flex:0 0 auto}
+
+/* Werben (29.10.2026): Formate ohne Preis, Schritte, Beispielband, Felder der Werbeanfrage (Plugin werbeformate.php, werbeanfrage.php). */
+.ma-werbeformate{display:grid;gap:16px;margin:0 0 28px}
+.ma-werbeformat{border:1px solid var(--line,#e2ddd3);border-top:3px solid var(--ma-red,#971725);border-radius:4px;padding:20px 24px;background:var(--card,#fff)}
+.ma-werbeformat h3{margin:0 0 8px;font-size:clamp(20px,2vw,24px)}
+.ma-werbeformat ul{margin:0 0 12px;padding-left:20px;line-height:1.55}
+.ma-werbeformat__preis{font-weight:700;margin:0 0 12px}
+.info-prose .ma-werben-schritte{counter-reset:schritt;list-style:none;padding:0;margin:0 0 24px;display:grid;gap:12px}
+.info-prose .ma-werben-schritte li{counter-increment:schritt;position:relative;padding-left:44px;line-height:1.55}
+.info-prose .ma-werben-schritte li::before{content:counter(schritt);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--stage-2,#1e2a36);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.info-prose .werbung--beispiel{margin:8px 0 28px}
+.info-prose .werbung--beispiel a,.info-prose .werbung--beispiel a:hover{text-decoration:none;color:inherit;border:0;background:none}
+.info-prose .werbung--beispiel strong,.info-prose .werbung--beispiel span{line-height:inherit}
+.info-prose .werbung--beispiel .ma-ad-copy strong{line-height:1.08}
+.ma-wa[hidden],.ma-wa [hidden]{display:none!important}
+.ma-wa__gruppe{border:1px solid var(--line,#e2ddd3);border-radius:6px;padding:14px 18px 6px;margin:0 0 16px;min-width:0}
+.ma-wa__gruppe legend{font-weight:800;font-size:16px;padding:0 6px}
+.ma-wa__format{background:var(--paper,#f7f5f0);border-radius:4px;padding:10px 14px;line-height:1.5}
+.ma-wa__hinweis{font-size:14px;line-height:1.5;color:var(--ink-soft,#4a4a4a)}
+.ma-wa__motiv{border-top:1px solid var(--line,#e2ddd3);padding-top:8px;margin-top:8px}
+.ma-wa__motiv-titel{font-weight:800;margin:4px 0 6px}
+.ma-wa__meldung{background:#fdecec;border:1px solid #c0392b;border-radius:4px;padding:10px 14px;color:#7a1a12;font-weight:600}
+.ma-wa input[type=file]{max-width:100%}

@@ -27,6 +27,7 @@ function ma_form_shortcode($atts): string {
           <?php foreach($arten[$type] as $key=>$label): ?><option value="<?php echo esc_attr($key); ?>" <?php selected($vorauswahl,$key); ?>><?php echo esc_html($label); ?></option><?php endforeach; ?>
         </select></label></p>
       <?php endif; ?>
+      <?php if($type==='werbung' && function_exists('ma_werbeanfrage_html')) echo ma_werbeanfrage_html(); // Werbepaket und Unternehmensprofil (werbeanfrage.php) ?>
       <?php if($foto): ?><p><label>Ortsteil<br><select name="ortsteil" required><option value="">Bitte wählen</option><?php foreach(ma_form_ortsteile() as $k=>$l): ?><option value="<?php echo esc_attr($k); ?>"><?php echo esc_html($l); ?></option><?php endforeach; ?></select></label></p><?php endif; ?>
       <p><label>Name<br><input name="name" required maxlength="120"></label></p><p><label>E-Mail<br><input name="email" type="email" required maxlength="190"></label></p>
       <p><label>Telefon<?php echo $type==='trauer' ? ' (Pflicht, für Rückfragen)' : ' (optional, für Rückfragen)'; ?><br><input name="telefon" type="tel" maxlength="40" pattern="[0-9 +()/-]{6,}" title="Bitte eine Telefonnummer mit mindestens sechs Ziffern angeben." autocomplete="tel"<?php echo $type==='trauer' ? ' required' : ''; ?>></label></p><?php if(!isset($arten[$type])): ?><p><label><?php echo $foto ? 'Was ist zu sehen? (Motiv, Ort)' : 'Betreff'; ?><br><input name="subject" required maxlength="180" value="<?php echo esc_attr($ziel['typ']===$type ? $ziel['betreff'] : ''); ?>"></label></p><?php endif; ?><p><label><?php echo $foto ? 'Wann und wo haben Sie das Foto aufgenommen?' : 'Nachricht'; ?><br><textarea name="message" rows="<?php echo $foto ? 3 : 7; ?>" required maxlength="8000"></textarea></label></p>
@@ -54,7 +55,7 @@ function ma_form_ziel_aus_link(): array {
     if ($typ === '') return ['typ' => '', 'art' => '', 'betreff' => ''];
     $format = sanitize_text_field(wp_unslash((string)($_GET['format'] ?? '')));
     $f = $k($format); $wahl = '';
-    if ($typ === 'werbung') $wahl = str_contains($f, 'banner') ? 'banner' : (str_contains($f, 'tipp') ? 'tipp' : (str_contains($f, 'unternehmen') ? 'unternehmen' : (str_contains($f, 'sponsoring') ? 'sponsoring' : (str_contains($f, 'offen') || str_contains($f, 'berat') ? 'beratung' : ''))));
+    if ($typ === 'werbung') $wahl = str_contains($f, 'banner') || str_contains($f, 'paket') ? 'banner' : (str_contains($f, 'tipp') ? 'tipp' : (str_contains($f, 'unternehmen') ? 'unternehmen' : (str_contains($f, 'sponsoring') ? 'sponsoring' : (str_contains($f, 'offen') || str_contains($f, 'berat') ? 'beratung' : ''))));
     if ($typ === 'immobilie') $wahl = in_array($a = $k((string)($_GET['angebot'] ?? '')), ['verkauf', 'vermietung', 'gesuch', 'gewerbe'], true) ? $a : '';
     if ($typ === 'trauer') { $t = $k((string)($_GET['trauerform'] ?? '')); $wahl = str_starts_with($t, 'jahr') ? 'jahrgedaechtnis' : (in_array($t, ['traueranzeige', 'danksagung'], true) ? $t : ''); }
     if ($typ === 'familie') { $t = $k((string)($_GET['anlass'] ?? '')); $wahl = str_starts_with($t, 'jubil') ? 'jubilaeum' : (in_array($t, ['geburt', 'hochzeit', 'glueckwunsch'], true) ? $t : ''); }
@@ -68,18 +69,25 @@ function ma_form_submit(): void {
     $name=sanitize_text_field(wp_unslash($_POST['name']??'')); $email=sanitize_email(wp_unslash($_POST['email']??'')); $subject=sanitize_text_field(wp_unslash($_POST['subject']??'')); $message=sanitize_textarea_field(wp_unslash($_POST['message']??''));
     // Anzeigen und Werbung: Der Betreff ergibt sich aus der gewählten Art, einheitlich
     // in Mail und Eingang („Werbung: Werbebanner“), statt frei getippt (Betreiber 07.10.2026).
-    $arten=ma_form_arten();
+    $arten=ma_form_arten(); $wahl=''; $wa=null;
     if(isset($arten[$type])){
         $wahl=sanitize_key($_POST['listing_kind']??'');
         if(!isset($arten[$type][$wahl])) wp_die('Bitte wählen Sie die Art der Anzeige.',400);
         $subject=$arten[$type][$wahl];
     }
-    if(!$name||!is_email($email)||!$subject||!$message) wp_die('Bitte alle Pflichtfelder korrekt ausfüllen.',400);
+    // Werbepaket und Unternehmensprofil: Firma, Website, Format, Motive, Fotos, Video (werbeanfrage.php, 29.10.2026).
+    if($type==='werbung' && defined('MA_WA_ARTEN') && in_array($wahl,MA_WA_ARTEN,true)){
+        $r=ma_werbeanfrage_lesen($wahl,wp_unslash($_POST),$_FILES);
+        if($r['fehler']!=='') wp_die(esc_html($r['fehler']).' <a href="javascript:history.back()">Zurück zum Formular</a>',400);
+        if(!ma_werbeanfrage_zaehlen()) wp_die('Von Ihrem Anschluss kamen in dieser Stunde schon mehrere Anfragen. Bitte versuchen Sie es später noch einmal oder schreiben Sie uns eine E-Mail.',429);
+        $wa=$r['daten']; $subject.=' – '.$wa['firma'];
+    }
+    if(!$name||!is_email($email)||!$subject||(!$message && !$wa)) wp_die('Bitte alle Pflichtfelder korrekt ausfüllen.',400);
     $telefon=sanitize_text_field(wp_unslash($_POST['telefon']??''));
     // Traueranzeige: Telefon und E-Mail sind Pflicht (Betreiber 30.09.2026).
     if($type==='trauer' && strlen(preg_replace('/\D/','',$telefon))<6) wp_die('Für Traueranzeigen brauchen wir eine Telefonnummer für Rückfragen.',400);
     $bildrechte=!empty($_POST['bildrechte']);
-    if(!empty($_FILES['attachment']['name']) && !$bildrechte) wp_die('Sie haben eine Datei angehängt: Bitte bestätigen Sie die Bildrechte.',400);
+    if((!empty($_FILES['attachment']['name']) || ($wa && $wa['dateien'])) && !$bildrechte) wp_die('Sie haben eine Datei angehängt: Bitte bestätigen Sie die Bildrechte.',400);
     // Foto des Tages: Foto, Ortsteil und Zustimmung zur Veröffentlichung sind Pflicht.
     $ortsteil=sanitize_key($_POST['ortsteil']??''); $zustimmung=!empty($_POST['zustimmung']); $fotograf=sanitize_text_field(wp_unslash($_POST['fotograf']??''));
     if($type==='foto'){
@@ -93,13 +101,22 @@ function ma_form_submit(): void {
         $upload=wp_handle_upload($_FILES['attachment'],['test_form'=>false,'mimes'=>$type==='foto'?['jpg|jpeg'=>'image/jpeg','png'=>'image/png']:['jpg|jpeg'=>'image/jpeg','png'=>'image/png','pdf'=>'application/pdf']]);
         if(isset($upload['file'])) $attachments[]=$upload['file']; else wp_die('Datei konnte nicht verarbeitet werden.',400);
     }
+    $rollen=[];
+    if($wa && $wa['dateien']){
+        $fehler=''; $rollen=ma_werbeanfrage_dateien($wa['dateien'],$_FILES,$fehler);
+        if($fehler!==''){ foreach($attachments as $f) @unlink($f); wp_die(esc_html($fehler),400); }
+        $attachments=array_merge($attachments,array_keys($rollen));
+    }
     $kind=sanitize_text_field(wp_unslash($_POST['listing_kind']??''));
     if($type==='foto') $kind=$ortsteil;
-    $body="Typ: {$type}\n".($kind!==''?"Art: {$kind}\n":'')."Name: {$name}\nE-Mail: {$email}\n".($telefon!==''?"Telefon: {$telefon}\n":'').($attachments?'Bildrechte: bestätigt'."\n":'')."\n{$message}";
+    $text=$wa ? ma_werbeanfrage_text($wa).($message!==''?"\n\nAnmerkung:\n".$message:'') : $message;
+    $body="Typ: {$type}\n".($kind!==''?"Art: {$kind}\n":'')."Name: {$name}\nE-Mail: {$email}\n".($telefon!==''?"Telefon: {$telefon}\n":'').($attachments?'Bildrechte: bestätigt'."\n":'')."\n".($wa ? ma_werbeanfrage_text($wa,true).($message!==''?"\n\nAnmerkung:\n".$message:'') : $message);
     // Eingang im Backend ablegen, damit nichts verloren geht, auch ohne Mailversand.
-    $eingang=function_exists('ma_eingang_speichern') ? ma_eingang_speichern(['typ'=>$type,'art'=>$kind,'name'=>$name,'email'=>$email,'telefon'=>$telefon,'betreff'=>$subject,'text'=>$message,'bildrechte'=>$bildrechte?'1':'','fotograf'=>$fotograf,'zustimmung'=>$zustimmung?'1':''],$attachments) : 0;
+    $eingang=function_exists('ma_eingang_speichern') ? ma_eingang_speichern(['typ'=>$type,'art'=>$kind,'name'=>$name,'email'=>$email,'telefon'=>$telefon,'betreff'=>$subject,'text'=>$text,'bildrechte'=>$bildrechte?'1':'','fotograf'=>$fotograf,'zustimmung'=>$zustimmung?'1':'','werbung'=>$wa,'rollen'=>$rollen],$attachments) : 0;
     if($eingang) $body.="\n\nIm Backend: ".admin_url('post.php?post='.$eingang.'&action=edit');
-    wp_mail($to,ma_form_mail_betreff($type,$subject,$name),$body,['Reply-To: '.$name.' <'.$email.'>'],$attachments);
+    // Videos nicht als Mailanhang (Größe); sie liegen im Eingang.
+    wp_mail($to,ma_form_mail_betreff($type,$subject,$name),$body,['Reply-To: '.$name.' <'.$email.'>'],array_values(array_filter($attachments,fn($f)=>($rollen[$f]??'')!=='video')));
+    if($wa) ma_werbeanfrage_bestaetigen($email,$name,$wa);
     if(!$eingang) foreach($attachments as $f) @unlink($f);
     // Zurück zum Formular, mit Bestätigung über dem Formular (vorher stand dort nichts).
     wp_safe_redirect(add_query_arg('gesendet',$type,remove_query_arg('gesendet',wp_get_referer()?:home_url('/'))).'#formular-'.$type); exit;
@@ -124,7 +141,7 @@ function ma_form_bildrechte_text(): string {
 /** Arten je Anzeigenformular (Auswahlfeld, zugleich Betreff der Einsendung). */
 function ma_form_arten(): array {
     return [
-        'werbung'=>['banner'=>'Werbebanner','tipp'=>'Tipp / bezahlter Beitrag','sponsoring'=>'Sponsoring einer Rubrik','unternehmen'=>'Unternehmensprofil','beratung'=>'Noch offen, bitte beraten'],
+        'werbung'=>['banner'=>'Werbepaket mit Foto und Video','tipp'=>'Tipp / bezahlter Beitrag','sponsoring'=>'Sponsoring einer Rubrik','unternehmen'=>'Unternehmensprofil','beratung'=>'Noch offen, bitte beraten'],
         'immobilie'=>['verkauf'=>'Immobilie verkaufen','vermietung'=>'Immobilie vermieten','gesuch'=>'Immobilie suchen','gewerbe'=>'Gewerbeobjekt'],
         'stelle'=>['ausbildung'=>'Ausbildungsplatz','vollzeit'=>'Vollzeitstelle','teilzeit'=>'Teilzeitstelle','minijob'=>'Minijob / Aushilfe','praktikum'=>'Praktikum'],
         'trauer'=>['traueranzeige'=>'Traueranzeige','danksagung'=>'Danksagung','jahrgedaechtnis'=>'Jahrgedächtnis'],

@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-28';
+const MA_SEITEN_VERSION = '2026-10-29';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -33,7 +33,7 @@ function ma_seiten(): array {
         'kontakt' => ['titel' => 'Kontakt', 'eyebrow' => 'Redaktion & Anzeigen', 'anriss' => 'So erreichen Sie die Redaktion und die Anzeigenannahme von Merzenich Aktuell.', 'html' => 'ma_seite_kontakt'],
         'meldung-senden' => ['titel' => 'Meldung senden', 'eyebrow' => 'Mitmachen', 'anriss' => 'Hinweise, Vereinsmeldungen, Fotos und Leserbriefe erreichen die Redaktion direkt über dieses Formular. Wir prüfen jede Einsendung und melden uns bei Rückfragen.', 'html' => 'ma_seite_meldung_senden'],
         'termin-melden' => ['titel' => 'Termin melden', 'eyebrow' => 'Kalender', 'anriss' => 'Veranstaltungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald für den Terminkalender melden.', 'html' => 'ma_seite_termin_melden'],
-        'werben' => ['titel' => 'Werben auf Merzenich Aktuell', 'eyebrow' => 'Mediadaten', 'anriss' => 'Lokal sichtbar, klar gekennzeichnet: Werbebanner, Tipp und Sponsoring, Unternehmensprofil.', 'html' => 'ma_seite_werben'],
+        'werben' => ['titel' => 'Werben auf Merzenich Aktuell', 'eyebrow' => 'Mediadaten', 'anriss' => 'Lokal sichtbar, klar gekennzeichnet: Werbepaket mit Foto und Video, Tipp und Sponsoring, Unternehmensprofil.', 'html' => 'ma_seite_werben'],
         'unterstuetzen' => ['titel' => 'Merzenich Aktuell unterstützen', 'eyebrow' => 'Mitmachen', 'anriss' => 'Drei Wege, Merzenich Aktuell zu stärken: weitersagen, mitschreiben, als Betrieb sichtbar werden.', 'html' => 'ma_seite_unterstuetzen'],
         'anzeigen' => ['titel' => 'Anzeigen', 'eyebrow' => 'Anzeigen', 'anriss' => 'Immobilien, Stellen, Trauer- und Familienanzeigen aus Merzenich: ansehen oder aufgeben.', 'html' => 'ma_seite_anzeigen'],
         'aufgeben' => ['titel' => 'Anzeige aufgeben', 'eyebrow' => 'Anzeigen', 'anriss' => 'Werbung, Immobilie, Traueranzeige oder Familienanzeige aufgeben: Angaben, Bild und Kontakt in einem Formular, Prüfung durch die Redaktion.', 'html' => 'ma_seite_aufgeben', 'eltern' => 'anzeigen'],
@@ -143,16 +143,23 @@ function ma_seite_termin_melden(): string {
 function ma_seite_werben(): string {
     return '<p>Merzenich Aktuell lesen Menschen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Werbung erscheint hier mitten im lokalen Geschehen, immer klar als Anzeige gekennzeichnet und vor der Veröffentlichung von der Redaktion geprüft.</p>'
         . '<p><a class="btn" href="#anfrage">Werbung anfragen</a></p>'
-        . '<h2 id="werbeflaechen">Buchbare Flächen</h2><ul>'
-        . '<li><strong>Werbeband auf der Startseite.</strong> Breite Fläche zwischen den Rubriken der Startseite, auf Handy und Computer.</li>'
+        . '<h2 id="werbepaket">Das Werbepaket</h2>'
+        . '[ma_werbeformate]'
+        . '<h2 id="so-laeuft-es">So läuft es</h2><ol class="ma-werben-schritte">'
+        . '<li>Sie schicken uns mit dem Formular unten Firma, Website, Überschrift und Satz für Ihre Motive, Fotos und auf Wunsch ein kurzes Video.</li>'
+        . '<li>Wir melden uns mit Angebot und Zeitraum.</li>'
+        . '<li>Die Redaktion prüft Texte und Bilder und richtet Ihre Anzeigen und Ihr Firmenprofil unter „Unternehmen“ ein.</li>'
+        . '<li>Ihre Anzeigen laufen, klar als Anzeige gekennzeichnet. Ein Klick führt direkt auf Ihre Website.</li></ol>'
+        . '<h2 id="werbeflaechen">Die Werbeplätze</h2><ul>'
+        . '<li><strong>Werbeband auf der Startseite.</strong> Breite Fläche zwischen den Rubriken der Startseite, auf Handy und Computer, mit Foto oder Video.</li>'
         . '<li><strong>Fläche in der Bühne.</strong> Neben den Aufmachern ganz oben auf der Startseite.</li>'
         . '<li><strong>Seitenspalte.</strong> Rechts neben Meldungen und Listen, auf dem Computer.</li>'
         . '<li><strong>Artikelanzeige.</strong> Unter dem Text jeder Meldung.</li>'
         . '<li><strong>Tipp und Sponsoring.</strong> Ein gekennzeichneter Beitrag für Veranstaltung, Angebot oder Aktion unter <a href="/tipp/">Tipps</a>.</li>'
-        . '<li><strong>Unternehmensprofil.</strong> Dauerhafter Eintrag unter <a href="/unternehmen/">Unternehmen</a> mit Bild, Öffnungszeiten, Kontakt und eigenen Beiträgen.</li></ul>'
-        . '<p>Wo die Flächen liegen, zeigen die laufenden Anzeigen auf der Seite. Neue Kampagnen erscheinen dort nach Buchung und Freigabe.</p>'
+        . '<li><strong>Unternehmensprofil.</strong> Dauerhafter Eintrag unter <a href="/unternehmen/">Unternehmen</a> mit Bild, Kontakt und eigenen Beiträgen.</li></ul>'
+        . '<p>So sehen laufende Anzeigen aus:</p>[ma_werbung_beispiel]'
         . '<h2 id="anfrage">Anfrage</h2>'
-        . '<p>Schreiben Sie uns, was Sie sichtbar machen möchten, für welchen Zeitraum und mit welchem Bildmaterial. Wir melden uns mit Format, Laufzeit und Preis. E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
+        . '<p>Für das Werbepaket wählen Sie „Werbepaket mit Foto und Video“ und füllen die Felder aus; für ein Firmenprofil allein „Unternehmensprofil“. Für Tipp, Sponsoring oder eine Beratung reicht eine kurze Nachricht. Preis auf Anfrage. E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
         . '[ma_formular typ="werbung"]';
 }
 

@@ -86,13 +86,15 @@ add_action('wp_footer', function (): void {
     if (is_admin() || (is_user_logged_in() && current_user_can('edit_posts'))) return;
     $url = esc_url_raw(rest_url('ma/v1/werbung'));
     // Impression: einmal je Anzeige und Seitenaufruf, sobald halb sichtbar. Auch
-    // für Anzeigen, die später entstehen (Menü). Klick: beim Klick auf die Anzeige.
+    // für Anzeigen, die später entstehen (Menü). Klick: beim Klick auf die Anzeige,
+    // auch mit der mittleren Maustaste (neuer Tab, 29.10.2026). Der Link führt direkt zum Ziel.
     printf('<script>(function(){if(!navigator.sendBeacon||!window.IntersectionObserver)return;var u=%s,gesehen={};'
         . 'function s(el,art){var id=el.getAttribute("data-ma-anzeige"),q=el.closest("[data-ma-platz],[data-ma-ad-slot]"),p=q?(q.getAttribute("data-ma-platz")||q.getAttribute("data-ma-ad-slot")):"";if(!id||!p)return;navigator.sendBeacon(u,new Blob([JSON.stringify({id:+id,platz:p,art:art})],{type:"application/json"}));}'
         . 'var io=new IntersectionObserver(function(es){es.forEach(function(e){var id=e.target.getAttribute("data-ma-anzeige");if(e.isIntersecting&&!gesehen[id]&&!e.target.hidden){gesehen[id]=1;s(e.target,"i");}});},{threshold:.5});'
         . 'function beobachte(w){(w.matches&&w.matches("[data-ma-anzeige]")?[w]:[]).concat([].slice.call(w.querySelectorAll?w.querySelectorAll("[data-ma-anzeige]"):[])).forEach(function(el){if(!el.__maBeob){el.__maBeob=1;io.observe(el);}});}'
         . 'beobachte(document);new MutationObserver(function(m){m.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType===1)beobachte(n);});});}).observe(document.body,{childList:true,subtree:true});'
-        . 'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ma-anzeige]");if(a)s(a,"k");},true);})();</script>',
+        . 'function k(e){if(e.type==="auxclick"&&e.button!==1)return;var a=e.target.closest&&e.target.closest("[data-ma-anzeige]");if(a)s(a,"k");}'
+        . 'document.addEventListener("click",k,true);document.addEventListener("auxclick",k,true);})();</script>',
         wp_json_encode($url));
 }, 98);
 

@@ -41,7 +41,7 @@ pruefe('Noch offen, bitte beraten → beratung', $ziel(['art' => 'Werbung', 'for
 
 echo "\nEinheitlicher Betreff\n";
 pruefe('Fünf Anzeigenformulare mit eigener Frage', [array_keys(ma_form_arten()), array_keys(ma_form_arten_frage())], [['werbung', 'immobilie', 'stelle', 'trauer', 'familie'], ['werbung', 'immobilie', 'stelle', 'trauer', 'familie']]);
-pruefe('Mail-Betreff: Art und Wahl, dann Name', ma_form_mail_betreff('werbung', ma_form_arten()['werbung']['banner'], 'Erika Muster'), '[Merzenich Aktuell] Werbung: Werbebanner – Erika Muster');
+pruefe('Mail-Betreff: Art und Wahl, dann Name', ma_form_mail_betreff('werbung', ma_form_arten()['werbung']['banner'], 'Erika Muster'), '[Merzenich Aktuell] Werbung: Werbepaket mit Foto und Video – Erika Muster');
 pruefe('Mail-Betreff ohne Namen', ma_form_mail_betreff('meldung', 'Laternenumzug', ''), '[Merzenich Aktuell] Meldung: Laternenumzug');
 
 echo "\nWahlkarten auf /anzeigen/aufgeben/\n";

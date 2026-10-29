@@ -8,8 +8,8 @@
  * in Pruefung bzw. Entwurf, und der Editor nennt den Grund.
  *
  * Registriert wird der Inhaltstyp in content.php; hier kommen Felder,
- * Speichern, Sperre und Archiv-Reihenfolge dazu. Preise werden nie
- * ausgegeben (Vorgabe: "Preis auf Anfrage").
+ * Speichern, Sperre und Archiv-Reihenfolge dazu. Preise stehen nur im
+ * Backend (werbeformate.php); öffentlich "Preis auf Anfrage".
  */
 if (!defined('ABSPATH')) { exit; }
 

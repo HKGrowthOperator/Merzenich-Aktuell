@@ -82,7 +82,7 @@ Unternehmen buchen ihre Anzeigen selbst – immer mit Freigabe der Redaktion.
 - **Rotation:** Laufen mehrere Anzeigen auf demselben Platz, wechseln sie sich ab. Anzeigen dürfen sich auf der Seite wiederholen. Die Reihenfolge beginnt bei der höchsten „Priorität“.
 - **Plätze:** Werbebänder 1 bis 6 auf der Startseite (je eines nach zwei Meldungen), rechte Spalte oben/Mitte, Tipp · Sponsoring, Ende der Meldungsliste, Artikel im Text, Artikel-Seitenspalte, Kopf-Billboard. Jeder Platz muss unter **Merzenich Aktuell → Werbung** eingeschaltet sein, dazu der globale Schalter.
 - Jede Anzeige ist sichtbar als „Anzeige“ gekennzeichnet; Links sind als gesponsert markiert.
-- **Preise** werden nirgends auf der Seite genannt – immer „Preis auf Anfrage“.
+- **Preise** stehen nur im Backend der Redaktion (Werbung → Formate & Preise); auf der Seite und für Firmen-Zugänge immer „Preis auf Anfrage“. Firmen-Zugänge können zu ihren Anzeigen Videos (MP4, WebM bis 6 MB) hochladen.
 
 ### Unternehmensprofil (`/betriebe/`)
 

@@ -203,6 +203,14 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     echo '<tr><td colspan="2" style="padding:0 0 8px"><p class="description" style="margin:0">Alles auf einer Seite: Titel oben, hier Platz und Laufzeit, darunter das Bild. ' . ($partner ? 'Nach dem Einreichen prüft die Redaktion und schaltet die Anzeige frei.' : 'Veröffentlichen + „Schaltung aktiv“ = die Anzeige läuft. Ohne laufende Anzeige bleibt ein Platz leer.') . '</p></td></tr>';
     if (function_exists('ma_render_ad_item') && has_post_thumbnail($post)) echo '<tr><th scope="row">Vorschau</th><td><div class="ma-ad ma-ad--vorschau" style="max-width:420px;border:1px solid #dcdcde;padding:8px;background:#fff">' . ma_render_ad_item($post) . '</div></td></tr>';
     if (!$partner) ma_admin_checkbox('ma_ad_active','Schaltung aktiv',ma_admin_field_value($post->ID,'ma_ad_active')==='1','Zusätzlich müssen Werbung global und der Platz unter Werbung → Werbeplätze eingeschaltet sein.');
+    // Format (29.10.2026, werbeformate.php): setzt Plätze und Laufzeit; den Preis sieht nur die Redaktion.
+    if (function_exists('ma_werbeformate_aktiv')) {
+        $format = (string) get_post_meta($post->ID, 'ma_ad_format', true);
+        $formate = ['' => '– kein Format, Plätze selbst wählen –'];
+        foreach (ma_werbeformate_aktiv() as $k => $f) $formate[$k] = ma_werbeformat_zeile($k, ma_werbeformat_preis_sichtbar());
+        if ($format !== '' && !isset($formate[$format]) && ($z = ma_werbeformat_zeile($format, ma_werbeformat_preis_sichtbar())) !== '') $formate[$format] = $z . ' (nicht mehr buchbar)';
+        ma_admin_select('ma_ad_format', 'Format', $format, $formate, 'Beim Wechsel des Formats setzt das Speichern die Plätze des Formats und, wenn noch kein Ende steht, das Ende nach der Laufzeit.');
+    }
     // Unternehmens-Zugaenge sehen nur die Plaetze ihres Kontingents
     // (Benutzerprofil, Voreinstellung: alle Werbebaender der Startseite).
     $slots = function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : ma_ad_slots();
@@ -220,10 +228,18 @@ function ma_render_ad_meta_box(WP_Post $post): void {
         echo '<p class="description">Jede Anzeige wird vor der Veröffentlichung von der Redaktion geprüft. Mehr Plätze: Preis auf Anfrage bei der Redaktion.</p></td></tr>';
     }
     ma_admin_input('ma_ad_sponsor','Sponsor / Firma',ma_admin_field_value($post->ID,'ma_ad_sponsor'),'text','Unternehmen GmbH');
-    ma_admin_input('ma_ad_url','Ziel-URL',ma_admin_field_value($post->ID,'ma_ad_url'),'url','https://...');
-    ma_admin_input('ma_ad_knopf','Knopftext',ma_admin_field_value($post->ID,'ma_ad_knopf'),'text','Zum Profil','Optional, erscheint nur mit Ziel-URL.');
+    // Ziel: die Website der Firma (29.10.2026). Neue Anzeigen eines Firmen-Zugangs bekommen die Website ihres Profils vorbelegt.
+    $ziel = ma_admin_field_value($post->ID,'ma_ad_url');
+    if ($ziel === '' && defined('MA_FIRMA_META') && ($bid = (int) get_user_meta(get_current_user_id(), MA_FIRMA_META, true))) $ziel = (string) get_post_meta($bid, 'ma_business_website', true);
+    ma_admin_input('ma_ad_url','Ziel-URL (Website der Firma)',$ziel,'url','https://www.firma.de/','Ein Klick auf die Anzeige öffnet diese Seite direkt in einem neuen Fenster.');
+    ma_admin_input('ma_ad_knopf','Knopftext',ma_admin_field_value($post->ID,'ma_ad_knopf'),'text','Zur Website','Optional, erscheint nur mit Ziel-URL.');
     $vid = (int) ma_admin_field_value($post->ID,'ma_ad_video');
-    ma_admin_input('ma_ad_video','Video (Medien-ID)',$vid ? (string) $vid : '','number','','Optional: MP4 aus der Mediathek (stumm, kurze Schleife, unter 1 MB). Läuft auf den großen Plätzen statt des Bildes; das Bild bleibt Standbild.'.($vid && ($u = wp_get_attachment_url($vid)) ? ' Aktuell: '.basename((string) $u) : ''));
+    $vurl = $vid ? (string) wp_get_attachment_url($vid) : '';
+    echo '<tr><th scope="row"><label for="ma_ad_video">Video</label></th><td data-ma-ad-video>';
+    echo '<input type="hidden" id="ma_ad_video" name="ma_ad_video" value="' . esc_attr($vid ? (string) $vid : '') . '">';
+    echo '<span data-ma-ad-video-name>' . ($vurl !== '' ? esc_html(basename($vurl)) : 'kein Video') . '</span> ';
+    echo '<button type="button" class="button" data-ma-ad-video-waehlen>Video auswählen oder hochladen</button> <button type="button" class="button-link" data-ma-ad-video-weg' . ($vid ? '' : ' hidden') . '>entfernen</button>';
+    echo '<p class="description">Optional: MP4 oder WebM, stumm, 6 bis 15 Sekunden, ohne Schrift im Bild, höchstens 6 MB (am besten unter 1 MB). Läuft auf den großen Plätzen statt des Bildes; das Bild bleibt Standbild.</p></td></tr>';
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
     if (!$partner) ma_admin_select('ma_ad_priority','Priorität',(string) (function_exists('ma_ad_stufe') ? ma_ad_stufe($post->ID) : 2),['1'=>'1 · Hoch','2'=>'2 · Mitte','3'=>'3 · Niedrig'],'Drei Stufen wie bei der Relevanz der Meldungen. Laufen mehrere Anzeigen auf einem Platz, steht Hoch vorn; bei gleicher Stufe die neuere.');
@@ -236,6 +252,24 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     }
     ma_admin_meta_box_end();
 }
+
+/* Video-Auswahl im Werbemittel (29.10.2026): Mediathek-Fenster nur mit Videos statt der Medien-ID. */
+add_action('admin_enqueue_scripts', function (): void {
+    $s = function_exists('get_current_screen') ? get_current_screen() : null;
+    if (!$s || $s->base !== 'post' || $s->post_type !== 'ma_ad') return;
+    wp_enqueue_media();
+    wp_add_inline_script('media-editor', <<<'JS'
+document.addEventListener('click', function (e) {
+  var z = e.target.closest('[data-ma-ad-video]'); if (!z) return;
+  var feld = z.querySelector('input[name="ma_ad_video"]'), name = z.querySelector('[data-ma-ad-video-name]'), weg = z.querySelector('[data-ma-ad-video-weg]');
+  if (e.target.closest('[data-ma-ad-video-weg]')) { feld.value = ''; name.textContent = 'kein Video'; weg.hidden = true; return; }
+  if (!e.target.closest('[data-ma-ad-video-waehlen]') || !window.wp || !wp.media) return;
+  var f = wp.media({ title: 'Video für die Anzeige', button: { text: 'Dieses Video nehmen' }, library: { type: 'video' }, multiple: false });
+  f.on('select', function () { var a = f.state().get('selection').first().toJSON(); feld.value = a.id; name.textContent = a.filename || a.title; weg.hidden = false; });
+  f.open();
+});
+JS);
+});
 
 function ma_content_admin_schema(string $post_type): array {
     $common_end = ['ma_end_at'=>'datetime','ma_release_confirmed'=>'bool'];
@@ -261,7 +295,7 @@ function ma_content_admin_schema(string $post_type): array {
             'ma_tip_kind'=>'text','ma_tip_sponsor'=>'text','ma_tip_url'=>'url','ma_tip_start'=>'datetime',
         ]),
         'ma_ad'=>[
-            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'stufe',
+            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'stufe','ma_ad_format'=>'format',
         ],
     ];
     return $schema[$post_type] ?? [];
@@ -272,6 +306,7 @@ function ma_sanitize_content_admin_value(string $type, $value): string {
     if ($type==='url') return esc_url_raw((string)$value);
     if ($type==='number') return (string)max(0,(float)$value);
     if ($type==='stufe') return in_array((string)$value,['1','2','3'],true) ? (string)$value : '';
+    if ($type==='format') return function_exists('ma_werbeformat') && ma_werbeformat(sanitize_key((string)$value)) ? sanitize_key((string)$value) : '';
     if ($type==='bool') return $value ? '1' : '0';
     if ($type==='textarea') return sanitize_textarea_field((string)$value);
     if ($type==='date') return preg_match('/^\d{4}-\d{2}-\d{2}$/',(string)$value) ? (string)$value : '';
@@ -293,6 +328,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
 
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     $video_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_video', true) : '';
+    $format_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_format', true) : '';
     foreach ($schema as $key=>$type) {
         if ($partner && in_array($key, ['ma_release_confirmed','ma_ad_active'], true)) {
             delete_post_meta($post_id,$key);
@@ -319,6 +355,10 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         $alt = array_map('strval', (array) get_post_meta($post_id, 'ma_ad_slot_weitere'));
         sort($neu); sort($alt);
         if ($neu !== $alt) { delete_post_meta($post_id, 'ma_ad_slot_weitere'); foreach ($neu as $s) add_post_meta($post_id, 'ma_ad_slot_weitere', $s); }
+    }
+    if ($post->post_type === 'ma_ad' && function_exists('ma_werbeformat_anwenden') && ($format = (string) get_post_meta($post_id, 'ma_ad_format', true)) !== '' && $format !== $format_vorher) {
+        // Neues Format: Plätze (für Firmen-Zugänge nur die des Kontingents) und Ende nach der Laufzeit.
+        ma_werbeformat_anwenden($post_id, $format, $partner && function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : []);
     }
     if ($post->post_type === 'ma_ad') {
         // Video: nur Videos aus der Mediathek; Partner nur eigene Uploads (Rechte wie beim Bild).

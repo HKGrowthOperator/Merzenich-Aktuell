@@ -518,6 +518,10 @@ function ma_freigaben_zeile(WP_Post $p): string {
         $slot = (string) get_post_meta($p->ID, 'ma_ad_slot', true); $sponsor = (string) get_post_meta($p->ID, 'ma_ad_sponsor', true);
         $von = (string) get_post_meta($p->ID, 'ma_ad_start', true); $bis = (string) get_post_meta($p->ID, 'ma_ad_end', true);
         $kats = ($slot !== '' && function_exists('ma_ad_slot_label') ? implode(', ', array_map('ma_ad_slot_label', function_exists('ma_ad_plaetze') ? ma_ad_plaetze($p->ID) : [$slot])) : 'ohne Werbeplatz') . ($sponsor !== '' ? ' · ' . $sponsor : '') . ($von !== '' ? ' · ab ' . mysql2date('d.m.Y', $von) : '') . ($bis !== '' ? ' · bis ' . mysql2date('d.m.Y', $bis) : '');
+        // Format mit Laufzeit und Preis (nur Redaktion, werbeformate.php) und die verknüpfte Firma.
+        $format = function_exists('ma_werbeformat_zeile') ? ma_werbeformat_zeile((string) get_post_meta($p->ID, 'ma_ad_format', true), ma_werbeformat_preis_sichtbar()) : '';
+        $firma = (int) get_post_meta($p->ID, 'ma_business_id', true);
+        $kats = ($format !== '' ? $format . ' · ' : '') . ($firma && get_post($firma) ? 'Firma: ' . get_the_title($firma) . ' · ' : '') . $kats;
     }
     $r = ma_relevanz_saeubern(get_post_meta($p->ID, 'ma_relevanz', true));
     $startJa = ma_startseite_freigabe($p) === 'ja';
