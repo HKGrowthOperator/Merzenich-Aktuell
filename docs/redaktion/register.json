@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-30-claude-kalenderpflege.md",
-  "source_check_window": "30.10.2026 morgens Europe/Berlin; Primärabrufe 07:05:45–07:10:02; Bereitstellung durch bestätigten Branch-Commit nachgewiesen.",
+  "latest_dossier": "dossiers/2026-10-30-mittags.md",
+  "source_check_window": "30.10.2026 mittags Europe/Berlin; Primärabrufe 11:56:49–12:00:28; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10492,6 +10492,46 @@
         }
       ],
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
+    },
+    {
+      "id": "KD-HALLOWEEN-31102026",
+      "priority": "P3",
+      "location_section": "Gemeindegebiet / Leben und Verkehrssicherheit",
+      "change_type": "neue Präventionsmitteilung",
+      "text_status": "T1",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-10-30-mittags.md",
+      "workflow_status": "recherchiert",
+      "last_checked_at": "2026-10-30T12:00:28+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neue Kreispolizei-Mitteilung 30.10. 07:54. Drei eigenständige Primärquellen: Polizei Düren, ADAC Hessen-Thüringen (Hintergrund 2023), Landesverkehrswacht Baden-Württemberg (undatiert). Nur Servicekarte, keine lokale Tat oder besondere Gefahrenlage. Commons-Kürbis visuell und Lizenz geprüft, neuer Motivvorschlag halloween-kuerbis; keine Integration.",
+      "research_sources": [
+        {
+          "url": "https://www.presseportal.de/blaulicht/pm/8/6380687",
+          "checked_at": "2026-10-30T11:58:08+01:00"
+        },
+        {
+          "url": "https://presse.adac.de/regionalclubs/hessen-thueringen/halloween.html",
+          "checked_at": "2026-10-30T12:00:28+01:00"
+        },
+        {
+          "url": "https://www.verkehrswacht-bw.de/index.php/aktuelles?catid=58&id=480:halloween-mit-kindern-auch-verkleidet-sichtbar-bleiben&view=article",
+          "checked_at": "2026-10-30T12:00:28+01:00"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-10-30-mittags.md",
+      "latest_research_text_status": "T1",
+      "dossier_history": [
+        {
+          "date": "2026-10-30",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-10-30-mittags.md",
+          "heading": "KD-HALLOWEEN-31102026"
+        }
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     }
   ],
   "archive": {
@@ -10939,6 +10979,36 @@
       "new_or_changed_events": 2,
       "publication": "Termine direkt",
       "implementation": "Kalenderpflege"
+    },
+    {
+      "date": "2026-10-30",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-30-mittags.md",
+      "compared_with": "dossiers/2026-10-30-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-30-claude-kalenderpflege.md",
+      "base_commit": "2e7c2fa672ef3746b9e92785ce865b17e2078a1d",
+      "implementation_commit": null,
+      "summary": "Neue Halloween-Servicekarte T1 mit drei eigenständigen Primärquellen. Unfallartikel ohne Korrekturbedarf geprüft; zwei neue Claude-Termine mit Originalen abgeglichen. Keine neuen Veranstaltungsdaten. VHS-Kursquelle 404; keine Absage belegt. TTC ungenehmigt und Fußball-Endstand offen; unveränderte Themen nicht wiederholt.",
+      "topics": 1,
+      "ready_T1": 1,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "additional_event_pages_checked": 2,
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 7,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-10-30T11:55:44+01:00",
+      "source_check_window": "2026-10-30T11:56:49+01:00 bis 2026-10-30T12:00:28+01:00",
+      "deadline": "2026-10-30T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung durch bestätigten main-Commit samt Zeitstempel; nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Alle bisherigen Registerthemen, Archivdaten, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten. Nur neue Laufdatei und Register; vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
