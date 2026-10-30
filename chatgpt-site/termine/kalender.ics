@@ -386,7 +386,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:fc-fanclub-59-bierabend-2026@merzenich-aktuell.de
-DTSTAMP:20261004T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261031T184800Z
 DTEND:20261031T233000Z
 SUMMARY:59. Bierabend des 1. FC Köln Fanclubs Merzenich
@@ -402,7 +402,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:allerheiligen-graebersegnung-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261101T083000Z
 SUMMARY:Allerheiligen: Gottesdienste und Gräbersegnungen in den Ortsteilen
 DESCRIPTION:An Allerheiligen\, Sonntag\, 1. November\, gibt es in vier Orts
@@ -446,7 +446,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261104T160000Z
 SUMMARY:4. Sitzung des Jugendgremiums
 DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoc
@@ -492,7 +492,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261105T170000Z
 SUMMARY:2. Sitzung des Rechnungsprüfungsausschusses
 DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
@@ -538,7 +538,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:kg-golzheim-kostuemsitzung-2026-11-07@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261107T191100Z
 SUMMARY:Große Kostümsitzung der KG Mir hahle Poohl Golzheim
 DESCRIPTION:Die KG Golzheim startet am Samstag\, 7. November\, mit ihrer Gr
@@ -553,7 +553,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:buecher-spielemarkt-ig-golzheim-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261108T090000Z
 DTEND:20261108T150000Z
 SUMMARY:Bücher- und Spielemarkt der IG Golzheim aktiv
@@ -569,7 +569,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:kindergottesdienst-ev-gemeindehaus-2026-11-08@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261108T100000Z
 SUMMARY:Kindergottesdienst im Evangelischen Gemeindehaus
 DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
@@ -614,7 +614,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
 DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
@@ -640,6 +640,23 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinszug-merzen
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:ttc-merzenich-jugend-vereinsmeisterschaften-2026-11-13@merzenich-aktuel
+ l.de
+DTSTAMP:20261030T060000Z
+DTSTART:20261113T163000Z
+DTEND:20261113T190000Z
+SUMMARY:Jugend-Vereinsmeisterschaften des TTC Merzenich (U15\, U19)
+DESCRIPTION:Der Tischtennisclub Merzenich trägt am Freitag\, 13. November\
+ , von 17:30 bis 20 Uhr seine Jugend-Vereinsmeisterschaften der Altersklass
+ en U15 und U19 in der Turnhalle Merzenich aus.\nVeranstalter: TTC Merzenic
+ h\nhttps://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-jug
+ end-vereinsmeisterschaften-2026-11-13/
+LOCATION:Turnhalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-jug
+ end-vereinsmeisterschaften-2026-11-13/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:martinsfeier-girbelsrath-2026-11-13@merzenich-aktuell.de
 DTSTAMP:20261016T060000Z
 DTSTART:20261113T163000Z
@@ -651,6 +668,22 @@ DESCRIPTION:Martinsfeier um 17.30 Uhr in der Kirche\, danach Lichterfest mi
 LOCATION:Kirche Girbelsrath
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/martinsfeier-girb
  elsrath-2026-11-13/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:erste-hilfe-kurs-golzheim-2026-11-14@merzenich-aktuell.de
+DTSTAMP:20261030T060000Z
+DTSTART:20261114T080000Z
+DTEND:20261114T160000Z
+SUMMARY:Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim
+DESCRIPTION:Die IG Golzheim aktiv bietet am Samstag\, 14. November\, von 9 
+ bis 17 Uhr einen Erste-Hilfe-Kurs im Pfarrheim Golzheim an\; laut Verein s
+ ind noch wenige Plätze frei.\nVeranstalter: IG Golzheim aktiv\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/erste-hilfe-kurs-golzheim-2026
+ -11-14/
+LOCATION:Pfarrheim Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/erste-hilfe-kurs-
+ golzheim-2026-11-14/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

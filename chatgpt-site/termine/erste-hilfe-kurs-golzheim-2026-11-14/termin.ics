@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:erste-hilfe-kurs-golzheim-2026-11-14@merzenich-aktuell.de
+DTSTAMP:20261030T060000Z
+DTSTART:20261114T080000Z
+DTEND:20261114T160000Z
+SUMMARY:Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim
+DESCRIPTION:Die IG Golzheim aktiv bietet am Samstag\, 14. November\, von 9 
+ bis 17 Uhr einen Erste-Hilfe-Kurs im Pfarrheim Golzheim an\; laut Verein s
+ ind noch wenige Plätze frei.\nVeranstalter: IG Golzheim aktiv\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/erste-hilfe-kurs-golzheim-2026
+ -11-14/
+LOCATION:Pfarrheim Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/erste-hilfe-kurs-
+ golzheim-2026-11-14/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

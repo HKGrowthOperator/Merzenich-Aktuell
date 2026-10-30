@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261104T160000Z
 SUMMARY:4. Sitzung des Jugendgremiums
 DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoc

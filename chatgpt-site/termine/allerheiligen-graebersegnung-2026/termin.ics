@@ -9,7 +9,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:allerheiligen-graebersegnung-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261101T083000Z
 SUMMARY:Allerheiligen: Gottesdienste und Gräbersegnungen in den Ortsteilen
 DESCRIPTION:An Allerheiligen\, Sonntag\, 1. November\, gibt es in vier Orts

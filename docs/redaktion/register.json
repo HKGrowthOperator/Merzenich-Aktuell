@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-30-morgens.md",
+  "latest_dossier": "dossiers/2026-10-30-claude-kalenderpflege.md",
   "source_check_window": "30.10.2026 morgens Europe/Berlin; Primärabrufe 07:05:45–07:10:02; Bereitstellung durch bestätigten Branch-Commit nachgewiesen.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10925,6 +10925,20 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "JSON parsebar; vorhandene Artikelpfade, Umsetzungscommits und historische Statusfelder erhalten. Nur zwei erlaubte Pfade; vollständiger Rücklesevergleich nach Upload erforderlich."
+    },
+    {
+      "date": "2026-10-30",
+      "edition": "kalenderpflege",
+      "by": "Claude",
+      "dossier": "dossiers/2026-10-30-claude-kalenderpflege.md",
+      "compared_with": "dossiers/2026-10-30-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-28-claude-morgens.md",
+      "base_commit": "0b72fd72",
+      "implementation_commit": null,
+      "summary": "Erste Kalenderpflege nach CLAUDE-LAUF.md Phase 1a: 8 Termine der nächsten 14 Tage an der Quelle bestätigt, 2 neue Termine (Erste-Hilfe-Kurs Golzheim 14.11., TTC-Jugend-Vereinsmeisterschaften 13.11.), VHS-Vortrag 10.11. wegen nicht erreichbarer Quelle offen.",
+      "new_or_changed_events": 2,
+      "publication": "Termine direkt",
+      "implementation": "Kalenderpflege"
     }
   ]
 }

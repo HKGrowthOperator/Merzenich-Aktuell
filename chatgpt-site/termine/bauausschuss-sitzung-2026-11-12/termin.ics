@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261030T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
 DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1

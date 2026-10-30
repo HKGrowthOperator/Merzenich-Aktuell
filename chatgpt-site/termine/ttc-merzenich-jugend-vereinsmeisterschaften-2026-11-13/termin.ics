@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Jugend-Vereinsmeisterschaften des TTC Merzenich (U15\, U19)
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ttc-merzenich-jugend-vereinsmeisterschaften-2026-11-13@merzenich-aktuel
+ l.de
+DTSTAMP:20261030T060000Z
+DTSTART:20261113T163000Z
+DTEND:20261113T190000Z
+SUMMARY:Jugend-Vereinsmeisterschaften des TTC Merzenich (U15\, U19)
+DESCRIPTION:Der Tischtennisclub Merzenich trägt am Freitag\, 13. November\
+ , von 17:30 bis 20 Uhr seine Jugend-Vereinsmeisterschaften der Altersklass
+ en U15 und U19 in der Turnhalle Merzenich aus.\nVeranstalter: TTC Merzenic
+ h\nhttps://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-jug
+ end-vereinsmeisterschaften-2026-11-13/
+LOCATION:Turnhalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ttc-merzenich-jug
+ end-vereinsmeisterschaften-2026-11-13/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

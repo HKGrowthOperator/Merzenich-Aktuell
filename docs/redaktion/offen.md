@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-28-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-30-claude-kalenderpflege.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -8,7 +8,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 |---|---:|
 | archiv_refresh_noetig | 97 |
 | uebernommen | 31 |
-| gesperrt | 24 |
+| gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 6 |
 | in_bearbeitung | 3 |
@@ -156,7 +156,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
-- 2026-10-28 morgens (Claude): 1 neue Kurzmeldung (L 264 Girbelsrath, Quellenausnahme), 0 Korrekturen, 0 Termine, 0 Umkreis; Nachmittagslauf 27.10. ausgefallen (Planungsmodus); Befund Umkreis-Automatik überspringt Düren/Jülich – Commit 24702c2
-- 2026-10-28 morgens (ChatGPT): 20 Karten, 4 neue Textfassungen (1 Standard, 3 Kurzfassungen; 2 T1, 2 T2). 0 neue örtliche Eilmeldungen/Ergebnisse; neu erschlossener älterer Archivservice, KG-Verlinkungskonflikt, SC-III-Tabellen-/Ansetzungsbeleg und S19-Ablaufpflege. 8 zusätzliche Fotodateien, 8 Lizenzmetadatenprüfungen, 6 Original-Sichtabrufe, 0 lokale Downloads/Integration.
-- 2026-10-27 abends (ChatGPT): 25 Karten; 1 neue örtliche Unfallmeldung und 6 regionale Funde; 1 neuer Einlass-/Beginn-Abgleich; 7 neue Kurzfassungen (1 T1 mit zu dokumentierender Quellenausnahme, 6 T2 gesperrt). 10 zusätzliche Fotodateien, Lizenzmetadaten 10, Sichtabruf 9, lokale Downloads/Integration 0. Keine neuen Sportergebnisse.
-- 2026-10-27 morgens (Claude): 0 neue Meldungen, 1 Korrektur (ELW), 1 Umkreis, 11 Claude-Termine auf entwurf:true (Commit 20d0b3f); Sport unverändert; 0 Bilder; QA 0 Fehler – Commit 636d04c
+- 2026-10-30 kalenderpflege (Claude): Erste Kalenderpflege nach CLAUDE-LAUF.md Phase 1a: 8 Termine der nächsten 14 Tage an der Quelle bestätigt, 2 neue Termine (Erste-Hilfe-Kurs Golzheim 14.11., TTC-Jugend-Vereinsmeisterschaften 13.11.), VHS-Vortrag 10.11. wegen nicht erreichbarer Quelle offen.
+- 2026-10-30 morgens (ChatGPT): 1 materielles TTC-Ergebnisupdate T2: 1:9 auswärts, Bericht noch nicht genehmigt, unabhängiger Ergebnisbeleg fehlt. 1 neu erschlossener Jugend-Vereinstermin im Fenster. Pflicht-Sportprüfung erfolgt; SC-III-Endstand und FuPa-Testspielabschluss nicht gesichert. Unfallartikel vollständig ohne Korrekturbedarf geprüft.
+- 2026-10-29 mittags (ChatGPT): 1 neue T2-Recherchekarte zum Gemeindehinweis auf WDR-bezogene Audios. Senderquelle und Datierung fehlen. Zwei neue regionale Polizeimeldungen ohne Gemeindebezug ausgeschlossen. Unfallartikel live gegen Original vollständig geprüft: kein Korrekturbedarf. Keine neuen Termine.
+- 2026-10-29 morgens (ChatGPT): 2 neue T2-Karten: Golzheimer Erste-Hilfe-Kurs (unabhängige Bestätigung fehlt), Kreis-Sozialraumbericht (Merzenich-Auswertung fehlt). Unfallartikel live gegen Polizei geprüft, kein Korrekturbedarf. RIS-ICS direkt erfolgreich; keine neuen Termine im Fenster. Keine Artikeltexte.

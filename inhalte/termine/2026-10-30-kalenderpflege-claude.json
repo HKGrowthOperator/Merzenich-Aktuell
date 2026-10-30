@@ -1,0 +1,63 @@
+{
+ "hinweis": "Kalenderpflege vom 30.10.2026 (Claude): Termine aus Vereinsangaben, am 30.10.2026 an der Quelle gelesen. Beide sind Selbstauskunft des Veranstalters (SCHREIBREGELN.md Abschnitt 3a).",
+ "termine": [
+  {
+   "slug": "erste-hilfe-kurs-golzheim-2026-11-14",
+   "titel": "Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim",
+   "start": "2026-11-14T09:00:00+01:00",
+   "ende": "2026-11-14T17:00:00+01:00",
+   "ort": "Pfarrheim Golzheim",
+   "adresse": "Pastoratstraße 18, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Vereine",
+   "veranstalter": "IG Golzheim aktiv",
+   "beschreibung": "Die IG Golzheim aktiv bietet am Samstag, 14. November, von 9 bis 17 Uhr einen Erste-Hilfe-Kurs im Pfarrheim Golzheim an; laut Verein sind noch wenige Plätze frei.",
+   "absaetze": [
+    "Die IG Golzheim aktiv lädt am Samstag, 14. November 2026, von 9 bis 17 Uhr zu einem Erste-Hilfe-Kurs ins Pfarrheim an der Pastoratstraße 18 in Golzheim ein. Nach Angaben des Vereins führen die Johanniter den Kurs durch; auf dem Programm stehen Basismaßnahmen, Wundversorgung, der richtige Notruf und der Umgang mit dem Defibrillator.",
+    "Der Kurs kostet laut Flyer 30 Euro für Mitglieder der IG Golzheim aktiv und 40 Euro für andere. Die Teilnehmerzahl ist auf 20 begrenzt, Plätze werden nach Eingang der Anmeldung vergeben. Am 28. Oktober meldete der Verein, es seien noch wenige Plätze frei. Anmeldung per E-Mail an info@golzheimaktiv.de."
+   ],
+   "links": [
+    [
+     "Ankündigung der IG Golzheim aktiv (Heimat-Info)",
+     "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba"
+    ],
+    [
+     "IG Golzheim aktiv",
+     "https://www.golzheimaktiv.de/aktuelles"
+    ]
+   ],
+   "quelle": {
+    "name": "IG Golzheim aktiv, Beitrag und Flyer auf Heimat-Info vom 28.10.2026 (Selbstauskunft des Veranstalters)",
+    "url": "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba",
+    "stand": "2026-10-30"
+   }
+  },
+  {
+   "slug": "ttc-merzenich-jugend-vereinsmeisterschaften-2026-11-13",
+   "titel": "Jugend-Vereinsmeisterschaften des TTC Merzenich (U15, U19)",
+   "start": "2026-11-13T17:30:00+01:00",
+   "ende": "2026-11-13T20:00:00+01:00",
+   "ort": "Turnhalle Merzenich",
+   "adresse": "Turnhalle Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Sport",
+   "veranstalter": "TTC Merzenich",
+   "beschreibung": "Der Tischtennisclub Merzenich trägt am Freitag, 13. November, von 17:30 bis 20 Uhr seine Jugend-Vereinsmeisterschaften der Altersklassen U15 und U19 in der Turnhalle Merzenich aus.",
+   "absaetze": [
+    "Laut Vereinskalender des TTC Merzenich finden die Jugend-Vereinsmeisterschaften in den Altersklassen U15 und U19 am Freitag, 13. November 2026, von 17:30 bis 20 Uhr in der Turnhalle Merzenich statt.",
+    "Es handelt sich um die vereinsinternen Meisterschaften des Nachwuchses; Teilnahmebedingungen nennt der Kalender nicht."
+   ],
+   "links": [
+    [
+     "Termine des TTC Merzenich",
+     "https://ttc-merzenich.de/"
+    ]
+   ],
+   "quelle": {
+    "name": "TTC Merzenich, Vereinskalender (Selbstauskunft des Veranstalters)",
+    "url": "https://ttc-merzenich.de/wp-json/ttc/v1/manual-events",
+    "stand": "2026-10-30"
+   }
+  }
+ ]
+}
