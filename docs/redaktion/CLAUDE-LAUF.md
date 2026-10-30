@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.1, Stand 28.10.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.2, Stand 30.10.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -21,8 +21,8 @@ Weil niemand mehr gegenliest, trägt der Lauf die volle Verantwortung: Was nicht
 | Zeit (Europe/Berlin) | Was |
 |---|---|
 | 06:10 und 16:10 (05:10/15:10 UTC im Winter) | Quellen-Abruf (`.github/workflows/quellen-abruf.yml`), danach Feuerwehr- und Umkreis-Automatik |
-| bis 08:45 und bis 14:15 | ChatGPT-Dossier morgens und mittags |
-| 09:13 und 14:43 | Routine startet den Lauf in einer frischen Sitzung; Bezeichnung `morgens` vor 12 Uhr, sonst `nachmittags` |
+| etwa 07:15 und 12:05 | ChatGPT-Dossier morgens und mittags (`*-morgens.md`, `*-mittags.md`) |
+| 09:13 und 14:43 | Routine startet den Lauf in der festen Redaktionssitzung (mit Push-Rechten auf das Repository); Bezeichnung `morgens` vor 12 Uhr, sonst `nachmittags` |
 | stündlich Minute 7 | WordPress-Abgleich holt die Import-XML |
 
 Zielzeit je Lauf: 60 bis 90 Minuten. Die Containeruhr läuft in UTC; Zeiten im Dossier mit `TZ=Europe/Berlin date` bestimmen. Sommerzeit endet/beginnt am letzten Sonntag im Oktober/März.
@@ -73,6 +73,22 @@ Abnahme: main aktuell, Vergleichsbasis notiert, Korrekturaufträge bekannt. Reak
 6. Für jedes Thema **mindestens drei Quellen** suchen (Primärquelle, unabhängige Zweitquelle, Hintergrund wie frühere Beschlüsse, Vorlagen, Statistiken).
 
 Abnahme: Für jede Pflichtquelle steht im Dossier Weg und Ergebnis, auch „nichts Neues“. Reaktion bei Sperre: Umweg aus QUELLEN.md, sonst Lücke im Dossier; keine Sperren umgehen.
+
+### Phase 1a: Kalenderpflege (jeder Lauf, 10 bis 15 Minuten)
+
+Entscheidung Luis Kummer, 30.10.2026: Kalender und Veranstaltungen sind in jedem Lauf aktuell zu halten, zusammen mit ChatGPT.
+
+1. Arbeitsliste: `node qa/redaktion-lauf.mjs --kalender` (heute bis 60 Tage, mit Slug, Quelle und Prüfstand `quelle.stand`).
+2. Quellen: Abschnitt `## TERMINE` des neuesten ChatGPT-Dossiers (Hinweis, kein Beleg), Ratsinformationssystem (`termine.ics`), Heimat-Info Merzenich, Amtsblatt, Pfarrbrief/GdG, Vereinsseiten, Kreis Düren.
+3. Je Termin genau eine Aktion:
+   - **neu:** Termin in `inhalte/termine/` anlegen (Dublette gegen Slug und Datum prüfen);
+   - **geändert:** den bestehenden Slug bearbeiten (Datum, Uhrzeit, Ort); bei Verschiebung Hinweis „Verschoben vom …“ in die Beschreibung, kein zweiter Termin;
+   - **abgesagt:** `"abgesagt": true` setzen, nicht löschen (die Seite zeigt „Abgesagt:“ und Schema.org `EventCancelled`);
+   - **bestätigt:** an der Quelle gelesen, `quelle.stand` auf das Lesedatum setzen.
+4. Pflicht: Jeder Termin der nächsten 14 Tage ist an seiner Quelle nachgeprüft. Ziel: kein Hinweis „nachpruefen“ mehr von `node qa/redaktion-lauf.mjs`.
+5. Vergangene Termine bleiben unverändert. Eine Selbstauskunft des Vereins oder Veranstalters ist Beleg, wenn sie als Quelle genannt ist; ist Datum, Ort oder Durchführung unsicher, `"entwurf": true` mit Grund im Dossier.
+
+Abnahme: Dossier-Abschnitt „Kalenderpflege“ mit Tabelle (Termin, Slug, Aktion, Quelle, Stand) und Zahl der offenen Hinweise; `qa/redaktion-lauf.mjs --datum --lauf` prüft den Abschnitt. Reaktion bei gesperrter Quelle: Termin nicht ändern, Lücke im Dossier.
 
 ### Phase 2: Verifikation
 
@@ -169,4 +185,5 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 1.2 | 27.10.2026 | Sofort sichtbare Pfade, Termine nur als Entwurf |
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
+| 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
 | 3.0 | 28.10.2026 | Entscheidungen Luis Kummer: Claude-Beiträge direkt online (fremde weiter über Freigabe), `zurFreigabe` bei Unsicherheit; Standard ab 450 Wörtern, drei Quellen; Bild muss zum Thema passen (Phase 4a, Pool `themen`); ChatGPT-Auftrag mit Korrekturen zuerst; Läufe 09:13 und 14:43 in frischer Sitzung |

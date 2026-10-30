@@ -10,6 +10,7 @@
  *   node qa/redaktion-lauf.mjs                                  Bestand pruefen
  *   node qa/redaktion-lauf.mjs --datum 2026-10-27 --lauf morgens  zusaetzlich Laufabschluss
  *   node qa/redaktion-lauf.mjs --bilder --datum <d> --lauf <l>  Tabelle fuer „Bildprüfung“ im Dossier
+ *   node qa/redaktion-lauf.mjs --kalender                       Termine der naechsten 60 Tage (Kalenderpflege)
  *   Optionen: --wurzel <repo>  --json  --streng  --hilfe
  *
  * Fehler (Exit 1):
@@ -114,6 +115,23 @@ catch { H('deploy/bildklassen.json', 'nicht lesbar, Bildklassen ungeprueft'); }
 // Ortsansicht, obwohl die Bildklasse Motive nennt, fehlt ein passendes Foto. Fehler ab REGEL_V3_AB.
 const SEITE = join(wurzel, 'chatgpt-site');
 const seitenOrdner = existsSync(SEITE) ? readdirSync(SEITE, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name) : [];
+// --kalender: alle Termine der naechsten 60 Tage aus inhalte/termine (Arbeitsliste der Kalenderpflege).
+if (args.includes('--kalender')) {
+  const bis = plusTag(heute, 60);
+  const zeilen = [];
+  for (const d of readdirSync(join(wurzel, 'inhalte', 'termine')).filter((f) => f.endsWith('.json'))) {
+    let j; try { j = JSON.parse(readFileSync(join(wurzel, 'inhalte', 'termine', d), 'utf8')); } catch { continue; }
+    for (const t of j.termine || []) {
+      const tag = String(t.start || '').slice(0, 10);
+      if (tag >= heute && tag <= bis) zeilen.push([tag, String(t.start).slice(11, 16), t.titel, t.slug, d, (t.quelle && t.quelle.stand) || '?', (t.quelle && t.quelle.url) || (typeof t.quelle === 'string' ? t.quelle : ''), t.abgesagt ? 'abgesagt' : t.entwurf ? 'Entwurf' : '']);
+    }
+  }
+  zeilen.sort((a, b) => (a[0] + a[1]).localeCompare(b[0] + b[1]));
+  console.log('| Datum | Zeit | Termin | Slug | Datei | Quelle geprüft | Quelle | Status |\n|---|---|---|---|---|---|---|---|');
+  for (const z of zeilen) console.log(`| ${z.join(' | ')} |`);
+  console.log(`\n${zeilen.length} Termine von ${heute} bis ${bis}.`);
+  process.exit(0);
+}
 // --bilder: Tabelle fuer den Dossier-Abschnitt „Bildprüfung“ (Paket des Laufs oder --paket).
 if (args.includes('--bilder')) {
   const datei = opt('--paket') || (DATUM && LAUF ? `inhalte/meldungen/${DATUM}-recherche-claude-${LAUF}.json` : '');
@@ -232,6 +250,11 @@ for (const { datei, daten } of jsonDateien('inhalte/termine')) {
     const b = `termine/${datei}/${t.slug || '?'}`;
     if (terminSlugs.has(t.slug)) F(b, `Slug doppelt (auch in ${terminSlugs.get(t.slug)}); die spaetere Datei ueberschreibt still`);
     else terminSlugs.set(t.slug, datei);
+    // Kalenderpflege: Termine der naechsten 14 Tage, deren Quelle seit mehr als 14 Tagen nicht nachgeprueft ist.
+    const tag = String(t.start || '').slice(0, 10);
+    const stand = t.quelle && typeof t.quelle === 'object' ? t.quelle.stand : '';
+    if (tag >= heute && tag <= plusTag(heute, 14) && !t.abgesagt && (!stand || stand < plusTag(heute, -14))) H(b, `Termin am ${tag}, Quelle zuletzt ${stand || 'ohne Datum'} geprueft: an der Quelle nachpruefen (findet er statt, geaendert, abgesagt?)`);
+    if (t.abgesagt !== undefined && typeof t.abgesagt !== 'boolean') F(b, 'abgesagt muss true oder false sein');
     if (!claude) continue; // Altbestand: deploy/termine.mjs
     const fehlt = TERMIN_PFLICHT.filter((k) => t[k] === undefined || t[k] === '' || (Array.isArray(t[k]) && !t[k].length));
     if (fehlt.length) F(b, `Pflichtfelder fehlen: ${fehlt.join(', ')}`);
@@ -292,6 +315,8 @@ if (DATUM || LAUF) {
       const text = existsSync(dossier) ? readFileSync(dossier, 'utf8') : '';
       const ohnePaketBegruendet = /Nullfund|0 \| keine neue|Neue Meldungen \| 0/.test(text);
       if (!existsSync(paket) && !ohnePaketBegruendet) F('lauf', `kein Meldungspaket ${DATUM}-recherche-claude-${LAUF}.json und kein Nullfund im Dossier`);
+      // Kalenderpflege (Luis Kummer 30.10.2026): jeder Lauf haelt Kalender und Veranstaltungen aktuell.
+      if (!/^## [0-9. ]*Kalenderpflege/m.test(text)) F('lauf', 'Dossier ohne Abschnitt „Kalenderpflege“ (neu, geändert, abgesagt, nachgeprüft; Liste: node qa/redaktion-lauf.mjs --kalender)');
       // Bildpruefung je Artikel (Luis Kummer 28.10.2026): jede neue Meldung steht mit Bild im Dossier.
       if (existsSync(paket)) {
         const abschnitt = (text.split(/^## /m).find((t) => /^[0-9. ]*Bildpr(ü|ue)fung/i.test(t)) || '');

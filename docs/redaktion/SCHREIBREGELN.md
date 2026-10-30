@@ -128,6 +128,8 @@ Ergebnis, offenes Spiel, nächstes Spiel und Tabelle sind eine Einheit mit einem
 
 Pflichtfelder wie in `deploy/termine.mjs`; `start`/`ende` ISO mit Zeitzone; `ortsteil` aus Merzenich, Golzheim, Girbelsrath, Morschenich, Bürgewald, Gemeinde, Umgebung; `kategorie` aus dem Bestand (Politik, Kirche, Brauchtum, Info, Vereine, Umwelt, Kultur, Senioren, Sport, Jugend); `quelle` als `{name, url, stand}`. Claude-Termine gehen **direkt online**; `"entwurf": true` nur, wenn Datum, Ort oder Durchführung nicht sicher belegt sind (dann Grund im Dossier). ⚙ Keine vergangenen Termine (⚙ nur im Paket des Laufs mit `--datum`); Dublette gegen `inhalte/termine/` prüfen (gleicher Slug überschreibt still). ⚙
 
+Kalenderpflege (30.10.2026, CLAUDE-LAUF.md Phase 1a): `quelle.stand` ist das Datum, an dem der Termin zuletzt an der Quelle gelesen wurde, und wird bei jeder Bestätigung neu gesetzt; Termine der nächsten 14 Tage mit älterem Stand meldet die QA als „nachpruefen“. Abgesagte Termine bekommen `"abgesagt": true` (true oder false ⚙) und bleiben stehen. Verschiebungen ändern den bestehenden Slug, mit Hinweis „Verschoben vom …“ in der Beschreibung.
+
 ## 11. Umkreis
 
 Nur die Orte Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren (andere Kreisorte unter „Kreis Düren“ mit Ortsnennung im Titel). ⚙ Ein Satz mit dem Kern, URL der Detailseite, `datum` der Quelle. Polizeimeldungen legt `deploy/automatik-umkreis.mjs` selbst an; im Lauf nicht doppelt anlegen. Umkreis ist sofort sichtbar.

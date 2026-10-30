@@ -50,9 +50,15 @@ Sperren und Umwege: <…>
 
 <Ergebnis, offenes Spiel, nächstes Spiel, Tabelle mit Datenstand; oder „unverändert“ und offene Endstände>
 
-## 6. Termine der nächsten 14 Tage (Veränderungen)
+## 6. Kalenderpflege
 
-<neu, geändert, abgesagt; Bestand nur als Liste>
+Arbeitsliste `node qa/redaktion-lauf.mjs --kalender` (60 Tage); alle Termine der nächsten 14 Tage an der Quelle nachgeprüft.
+
+| Termin | Slug | Aktion (neu, geändert, abgesagt, bestätigt) | Quelle | Stand |
+|---|---|---|---|---|
+| <Titel, Datum> | <slug> | <Aktion> | <URL> | <JJJJ-MM-TT> |
+
+Offene Hinweise „nachpruefen“: <Zahl, mit Grund je Termin>
 
 ## 7. QA, Commit, Abgleich
 

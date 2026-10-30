@@ -56,13 +56,17 @@ const GENERATOR_STAND = 'v2';
 const PFLICHT = ['slug', 'titel', 'start', 'ort', 'ortsteil', 'kategorie', 'veranstalter', 'beschreibung', 'absaetze', 'quelle'];
 
 function seiteAusDaten(t) {
+  // Abgesagte Termine (Kalenderpflege 30.10.2026): bleiben bis zum Termin sichtbar, deutlich als abgesagt.
+  if (t.abgesagt === true) {
+    t = { ...t, titel: /^Abgesagt: /.test(t.titel) ? t.titel : `Abgesagt: ${t.titel}`, beschreibung: /^Abgesagt\b/.test(t.beschreibung) ? t.beschreibung : `Abgesagt. ${t.beschreibung}` };
+  }
   const start = new Date(t.start);
   const ende = t.ende ? new Date(t.ende) : null;
   const url = `${SITE_URL}/termine/${t.slug}/`;
   const datumLang = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(start);
   const desc = `${t.beschreibung} ${t.titel} am ${datumLang} um ${hm(start)} Uhr.`.slice(0, 300);
   const titel = `${t.titel} – ${dmy(start)}`;
-  const ld = { '@context': 'https://schema.org', '@type': 'Event', '@id': `${url}#event`, name: t.titel, description: t.beschreibung, url, startDate: t.start, ...(t.ende ? { endDate: t.ende } : {}), eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: t.ort, address: { '@type': 'PostalAddress', streetAddress: (t.adresse || '').split(',')[0], addressLocality: t.ortsteil, postalCode: '52399', addressRegion: 'NRW', addressCountry: 'DE' } }, organizer: { '@type': 'Organization', name: t.veranstalter } };
+  const ld = { '@context': 'https://schema.org', '@type': 'Event', '@id': `${url}#event`, name: t.titel, description: t.beschreibung, url, startDate: t.start, ...(t.ende ? { endDate: t.ende } : {}), eventStatus: t.abgesagt === true ? 'https://schema.org/EventCancelled' : 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: t.ort, address: { '@type': 'PostalAddress', streetAddress: (t.adresse || '').split(',')[0], addressLocality: t.ortsteil, postalCode: '52399', addressRegion: 'NRW', addressCountry: 'DE' } }, organizer: { '@type': 'Organization', name: t.veranstalter } };
   const hash = createHash('sha256').update(GENERATOR_STAND + JSON.stringify(t)).digest('hex').slice(0, 16);
   const stand = t.quelle.stand ? t.quelle.stand.split('-').reverse().join('.') : '';
   const links = (t.links || []).map(([text, href]) => `<a class="btn ghost" href="${esc(href)}" target="_blank" rel="noopener">${esc(text)} ↗</a>`).join('');
