@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-29-mittags.md",
-  "source_check_window": "29.10.2026 mittags Europe/Berlin; Direktabrufe 11:59:35–12:01:30; Bereitstellung siehe bestätigter Commit-Zeitstempel.",
+  "latest_dossier": "dossiers/2026-10-30-morgens.md",
+  "source_check_window": "30.10.2026 morgens Europe/Berlin; Primärabrufe 07:05:45–07:10:02; Bereitstellung durch bestätigten Branch-Commit nachgewiesen.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3530,7 +3530,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -3579,6 +3579,13 @@
           "dossier": "dossiers/2026-10-28-morgens.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich."
+        },
+        {
+          "date": "2026-10-30",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-30-morgens.md",
+          "heading": "MA-TTC-OKT25",
+          "check_scope": "neues vorläufiges Spielergebnis"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -3707,12 +3714,24 @@
           "open_questions": "Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen.",
           "refresh": "29.10. vor Spielbeginn und anschließend.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-30",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-30-morgens.md",
+          "priority": "P2",
+          "change_type": "neues Ergebnis, vorläufig",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-30-morgens.md → MA-TTC-OKT25",
+          "source_check_scope": "WTTV-Einzelspielbericht/Teamprofil und Vereins-Termindaten gelesen; Genehmigung und unabhängiger Ergebnisbeleg offen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
-      "latest_research_text_status": "T1-B",
-      "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
-      "latest_research_scope": "Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich.",
+      "latest_research_dossier": "dossiers/2026-10-30-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_checked_at": "2026-10-30T07:10:02+01:00",
+      "latest_research_scope": "Neues 1:9 laut Heim:Gast-Einzelspielbericht, noch nicht genehmigt. Verbandsprofil zeigt 1. Platz/17:3/38:12. Eigenständige Ergebnisbestätigung fehlt; Vereinsschnittstelle belegt Ansetzung, kein Ergebnis.",
       "latest_research_review": {
         "text": "T1-B",
         "workflow": "vor_uebernahme_erneut_pruefen",
@@ -10877,6 +10896,35 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "Alte Registerthemen und Laufeinträge unverändert erhalten; nur zwei erlaubte Pfade. Vollständiger Rücklesevergleich nach Upload erforderlich."
+    },
+    {
+      "date": "2026-10-30",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-30-morgens.md",
+      "compared_with": "dossiers/2026-10-29-mittags.md",
+      "compared_with_claude": "dossiers/2026-10-28-claude-morgens.md",
+      "base_commit": "da34b0e99f30985e02cc24dcd51cc4d7a6d15ada",
+      "implementation_commit": null,
+      "summary": "1 materielles TTC-Ergebnisupdate T2: 1:9 auswärts, Bericht noch nicht genehmigt, unabhängiger Ergebnisbeleg fehlt. 1 neu erschlossener Jugend-Vereinstermin im Fenster. Pflicht-Sportprüfung erfolgt; SC-III-Endstand und FuPa-Testspielabschluss nicht gesichert. Unfallartikel vollständig ohne Korrekturbedarf geprüft.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "additional_update_candidates_checked": 1,
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 6,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "research_started_at": "2026-10-30T07:04:38+01:00",
+      "source_check_window": "2026-10-30T07:05:45+01:00 bis 2026-10-30T07:10:02+01:00",
+      "deadline": "2026-10-30T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung durch bestätigten Commit samt Zeitstempel; nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "JSON parsebar; vorhandene Artikelpfade, Umsetzungscommits und historische Statusfelder erhalten. Nur zwei erlaubte Pfade; vollständiger Rücklesevergleich nach Upload erforderlich."
     }
   ]
 }
