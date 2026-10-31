@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-30-mittags.md",
-  "source_check_window": "30.10.2026 mittags Europe/Berlin; Primärabrufe 11:56:49–12:00:28; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-10-31-morgens.md",
+  "source_check_window": "31.10.2026 morgens Europe/Berlin; Direktabrufe 07:06:25–07:07:13, zusätzliche Web-Prüfung bis ca. 07:09; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3530,7 +3530,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert. | ChatGPT 31.10. morgens: erster 1:9-Bericht inzwischen genehmigt, zweiter Auswärtssieg 2:8 eingetragen, noch ungenehmigt. Unabhängige Ergebnisbestätigung weiter offen; Update T2. Historische Artikelumsetzung erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -3586,6 +3586,13 @@
           "dossier": "dossiers/2026-10-30-morgens.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "neues vorläufiges Spielergebnis"
+        },
+        {
+          "date": "2026-10-31",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-31-morgens.md",
+          "heading": "MA-TTC-OKT25",
+          "check_scope": "Genehmigung erstes Spiel und neues zweites Resultat"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -3726,12 +3733,24 @@
           "evidence_ref": "dossiers/2026-10-30-morgens.md → MA-TTC-OKT25",
           "source_check_scope": "WTTV-Einzelspielbericht/Teamprofil und Vereins-Termindaten gelesen; Genehmigung und unabhängiger Ergebnisbeleg offen.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-31",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-10-31-morgens.md",
+          "priority": "P2",
+          "change_type": "Genehmigung und weiteres Ergebnis",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-31-morgens.md → MA-TTC-OKT25",
+          "source_check_scope": "Beide WTTV-Berichte und Vereins-Termine gelesen; zweite Genehmigung und unabhängige Ergebnisbestätigung offen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-30-morgens.md",
+      "latest_research_dossier": "dossiers/2026-10-31-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-30T07:10:02+01:00",
-      "latest_research_scope": "Neues 1:9 laut Heim:Gast-Einzelspielbericht, noch nicht genehmigt. Verbandsprofil zeigt 1. Platz/17:3/38:12. Eigenständige Ergebnisbestätigung fehlt; Vereinsschnittstelle belegt Ansetzung, kein Ergebnis.",
+      "latest_research_checked_at": "2026-10-31T07:07:13+01:00",
+      "latest_research_scope": "WTTV-Einzelberichte: erster Sieg seit Admin-Änderung 30.10.12:20 genehmigt, zweiter Sieg 2:8 vom30.10. noch ungenehmigt. Vereins-Terminschnittstelle bestätigt nur Ansetzungen; unabhängiger Ergebnisbeleg fehlt. Vorbericht aktualisieren statt Dublette.",
       "latest_research_review": {
         "text": "T1-B",
         "workflow": "vor_uebernahme_erneut_pruefen",
@@ -11009,6 +11028,35 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "Alle bisherigen Registerthemen, Archivdaten, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten. Nur neue Laufdatei und Register; vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-10-31",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-31-morgens.md",
+      "compared_with": "dossiers/2026-10-30-mittags.md",
+      "compared_with_claude": "dossiers/2026-10-30-claude-kalenderpflege.md",
+      "base_commit": "f9f76425a74274d45070f86918de678a22c1a688",
+      "implementation_commit": null,
+      "summary": "TTC-Update T2: 1:9 genehmigt, weiteres 2:8 noch ungenehmigt; unabhängiger Ergebnisbeleg fehlt. Neue kirchliche Originalankündigung bestätigt vorhandenen Allerheiligen-Termin. Keine Veranstaltungsänderung. Unfallartikel ohne Korrekturbedarf. VHS404; konkreter Merzenicher S19-Einzelzugstatus nicht geklärt.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "additional_update_candidates_checked": 1,
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 7,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-10-31T07:05:06+01:00",
+      "source_check_window": "2026-10-31T07:06:25+01:00 bis ca.07:09+01:00",
+      "deadline": "2026-10-31T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung durch bestätigten main-Commit samt Zeitstempel; nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Historische Artikelpfade, Umsetzung und Claude-Notizen erhalten. Nur Dossier und Register; vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
