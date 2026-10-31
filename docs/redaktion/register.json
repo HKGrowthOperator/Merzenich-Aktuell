@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-10-31-morgens.md",
-  "source_check_window": "31.10.2026 morgens Europe/Berlin; Direktabrufe 07:06:25–07:07:13, zusätzliche Web-Prüfung bis ca. 07:09; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-10-31-mittags.md",
+  "source_check_window": "31.10.2026 mittags Europe/Berlin; Direktabrufe 11:56:59–11:57:57, Web-Bildprüfung ca.11:58; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3530,7 +3530,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert. | ChatGPT 31.10. morgens: erster 1:9-Bericht inzwischen genehmigt, zweiter Auswärtssieg 2:8 eingetragen, noch ungenehmigt. Unabhängige Ergebnisbestätigung weiter offen; Update T2. Historische Artikelumsetzung erhalten.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert. | ChatGPT 31.10. morgens: erster 1:9-Bericht inzwischen genehmigt, zweiter Auswärtssieg 2:8 eingetragen, noch ungenehmigt. Unabhängige Ergebnisbestätigung weiter offen; Update T2. Historische Artikelumsetzung erhalten. | ChatGPT 31.10. mittags: auch zweiter Bericht jetzt durch Spielleiter genehmigt (Admin31.10.09:56). Unabhängige Ergebnisbestätigung weiterhin offen, Update T2. Historische Umsetzung unverändert.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -3593,6 +3593,13 @@
           "dossier": "dossiers/2026-10-31-morgens.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "Genehmigung erstes Spiel und neues zweites Resultat"
+        },
+        {
+          "date": "2026-10-31",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-10-31-mittags.md",
+          "heading": "MA-TTC-OKT25",
+          "check_scope": "Genehmigung zweiter Spielbericht"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -3745,12 +3752,24 @@
           "evidence_ref": "dossiers/2026-10-31-morgens.md → MA-TTC-OKT25",
           "source_check_scope": "Beide WTTV-Berichte und Vereins-Termine gelesen; zweite Genehmigung und unabhängige Ergebnisbestätigung offen.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-10-31",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-10-31-mittags.md",
+          "priority": "P2",
+          "change_type": "Genehmigung zweiter Auswärtssieg",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-10-31-mittags.md → MA-TTC-OKT25",
+          "source_check_scope": "WTTV-Bericht und drei Vereinswege; Genehmigung geschlossen, unabhängiger Ergebnisbeleg weiterhin offen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-31-morgens.md",
+      "latest_research_dossier": "dossiers/2026-10-31-mittags.md",
       "latest_research_text_status": "T2",
-      "latest_research_checked_at": "2026-10-31T07:07:13+01:00",
-      "latest_research_scope": "WTTV-Einzelberichte: erster Sieg seit Admin-Änderung 30.10.12:20 genehmigt, zweiter Sieg 2:8 vom30.10. noch ungenehmigt. Vereins-Terminschnittstelle bestätigt nur Ansetzungen; unabhängiger Ergebnisbeleg fehlt. Vorbericht aktualisieren statt Dublette.",
+      "latest_research_checked_at": "2026-10-31T11:57:28+01:00",
+      "latest_research_scope": "Zweiter Auswärtsspielbericht jetzt genehmigt; Ergebnis unverändert. Drei weitere Vereinswege liefern nur Termin-/allgemeine Vereinsinformationen, keine eigene Ergebnisbestätigung. Fehlendes unabhängiges Ergebnispaket ausdrücklich dokumentiert; T2.",
       "latest_research_review": {
         "text": "T1-B",
         "workflow": "vor_uebernahme_erneut_pruefen",
@@ -11057,6 +11076,45 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "Historische Artikelpfade, Umsetzung und Claude-Notizen erhalten. Nur Dossier und Register; vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-10-31",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-10-31-mittags.md",
+      "compared_with": "dossiers/2026-10-31-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-30-claude-kalenderpflege.md",
+      "base_commit": "0b1e8501041c0098f5c8587e5e3086a214be418b",
+      "implementation_commit": null,
+      "summary": "TTC-Update T2: auch zweiter Auswärtssieg genehmigt, unabhängige Bestätigung weiter offen. SC-III-Auswärtspaarung im Verbandsplan als abgesetzt konkret erschlossen; Zeitpunkt/Grund/Ersatztermin offen. LAG-Inden-Hinweis ohne neue Merzenicher Entwicklung. Unfallartikel ohne Korrekturbedarf; VHS404 und konkrete S19-Fahrtauswirkungen offen.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 7,
+      "new_or_changed_events": 1,
+      "event_notes": [
+        {
+          "type": "erstmals_erschlossene_Absetzung",
+          "date": "2026-10-31",
+          "time": "16:00",
+          "match": "SV GW Welldorf-Güsten III – SC 1919 Merzenich 3",
+          "source": "https://www.fussball.de/spiel/sv-gw-welldorf-guesten-iii-sc-1919-merzenich-3/-/spiel/031LRT642K000000VS5489BTVSRD0UH9",
+          "checked_at": "2026-10-31T11:57:57+01:00",
+          "limits": "Datum und Uhrzeit aus Vereinsplan; genaue Spielstätte, gesonderter Veranstalter, Grund, Ersatztermin und Zeitpunkt der Absetzung nicht belegt. Nur Terminhinweis, keine eigene Meldung."
+        }
+      ],
+      "complete_drafts": 0,
+      "research_started_at": "2026-10-31T11:56:08+01:00",
+      "source_check_window": "2026-10-31T11:56:59+01:00 bis ca.11:58+01:00",
+      "deadline": "2026-10-31T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung durch bestätigten main-Commit samt Zeitstempel; nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Historische Registerdaten, Artikelpfade, Umsetzungscommits und Claude-Notizen erhalten; nur neue Laufdatei und Register. Vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
