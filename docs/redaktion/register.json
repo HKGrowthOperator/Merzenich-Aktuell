@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-01-morgens.md",
-  "source_check_window": "01.11.2026 morgens Europe/Berlin; Direktabrufe 07:04:53–07:05:33, zusätzliche Webprüfung bis ca.07:06; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-11-01-mittags.md",
+  "source_check_window": "01.11.2026 mittags Europe/Berlin; Direktabrufe 11:57:15–11:57:21, ergänzende Webprüfung ca.11:57; Bereitstellung durch bestätigten main-Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11143,6 +11143,34 @@
       "implementation": "keine_Artikelumsetzung",
       "source_check_status": "documented_partial_coverage",
       "qa": "Alle historischen Registerthemen, Archivdaten, Artikelpfade, Claude-Notizen und Umsetzungscommits unverändert erhalten; nur neue Laufdatei und Register. Vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-01",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-01-mittags.md",
+      "compared_with": "dossiers/2026-11-01-morgens.md",
+      "compared_with_claude": "dossiers/2026-10-30-claude-kalenderpflege.md",
+      "base_commit": "05a330168a7462ed27722f20538b5a9fa092f35a",
+      "implementation_commit": null,
+      "summary": "Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten gegenüber morgens unverändert, RIS nur neuer Zeitstempel. Unfallartikel vollständig ohne Korrekturbedarf geprüft. VHS-Kursquelle404; offene TTC-/Golzheim-Prüfungen nicht erneut vertieft. Bahn-Endefeld verschoben, Dauer offen; keine konkrete Merzenicher Fahrt bestätigt.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "articles_checked": 1,
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 7,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-01T11:56:23+01:00",
+      "source_check_window": "2026-11-01T11:57:15+01:00 bis 2026-11-01T11:57:21+01:00; ergänzende Webabrufe ca.11:57",
+      "deadline": "2026-11-01T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung durch bestätigten main-Commit samt Zeitstempel; nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "qa": "Sämtliche vorhandenen Themen, Archivdaten, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten. Nur neue Laufdatei und Register; vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
