@@ -3,19 +3,21 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Kindergottesdienst im Evangelischen Gemeindehaus
+X-WR-CALNAME:Kindergottesdienst mit Frühstück im Evangelischen Gemeindeha
+ us
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:kindergottesdienst-ev-gemeindehaus-2026-11-08@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261108T100000Z
-SUMMARY:Kindergottesdienst im Evangelischen Gemeindehaus
+SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
 DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
-  Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich.\nVe
- ranstalter: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://me
- rzenichaktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeinde
- haus-2026-11-08/
+  Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 
+ 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\, um telefonische Anm
+ eldung wird gebeten.\nVeranstalter: Evangelische Gemeinde zu Düren\, Bezi
+ rk Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kinder
+ gottesdienst-ev-gemeindehaus-2026-11-08/
 LOCATION:Evangelisches Gemeindehaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
  t-ev-gemeindehaus-2026-11-08/

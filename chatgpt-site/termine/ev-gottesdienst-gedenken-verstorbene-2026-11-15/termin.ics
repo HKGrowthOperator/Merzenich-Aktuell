@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:ev-gottesdienst-gedenken-verstorbene-2026-11-15@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261115T090000Z
 SUMMARY:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
 DESCRIPTION:Am Sonntag\, 15. November\, feiert die Evangelische Gemeinde um
