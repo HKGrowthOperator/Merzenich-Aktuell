@@ -108,7 +108,14 @@
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (eintraege) {
+        var vorher = p.imBild;
         p.imBild = eintraege[eintraege.length - 1].isIntersecting;
+        // Kommt der Platz ins Bild (120 px vorher, also noch unsichtbar) und zeigt eine Firma,
+        // die ein anderer sichtbarer Platz schon zeigt: gleich zur nächsten wechseln.
+        if (p.imBild && !vorher && rotiert && belegt(p, true).indexOf(firmen[p.aktiv]) >= 0) {
+          zeige(wahl.naechste(firmen, p.aktiv, belegt(p, true)));
+          return;
+        }
         videos(el, items[p.aktiv], p.imBild);
       }, { rootMargin: '120px 0px' }).observe(el);
     } else {

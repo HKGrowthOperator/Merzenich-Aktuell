@@ -1,10 +1,17 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.1 · live: 21.25.0 / 1.40.0, Selbst-Update aktiv (Historie unten)
+
+## Neu am 02.11.2026: Plugin 1.40.1, Platz wechselt beim Eintritt ins Bild
+
+**Stand live:** über das Selbst-Update (erste Version auf diesem Weg).
+
+- **Keine Firma doppelt im Bild, auch beim Scrollen** (`assets/ad-rotation.js`): Kommt ein Werbeplatz ins Bild (120 px vorher, also noch unsichtbar) und zeigt eine Firma, die ein anderer sichtbarer Platz schon zeigt, wechselt er sofort zur nächsten. Live gemessen mit 1.40.0: in 5 von 60 Sekunden beim Scrollen eine Firma doppelt im Bild (Rechner), 0 am Handy.
+- **Test:** `qa/werbung-rotation-test.mjs` mit nachgebautem IntersectionObserver.
 
 ## Neu am 02.11.2026 (fünfte Runde): Plugin 1.40.0 und Theme 21.25.0, Werbung groß, abwechselnd, neue Clips
 
-**Stand live:** noch nicht auf `main` (Vorschau beim Betreiber; mit dem Selbst-Update aus 1.39.0 ginge ein Push sofort live). Enthält 1.38.0 und 1.39.0. Rückweg: Plugin 1.39.0 bzw. 1.37.2, Theme 21.24.2.
+**Stand live:** eingespielt am 02.11.2026 gegen 15:50 Uhr nach Freigabe der Vorschau („Ja, so online“): Plugin 1.40.0 von Hand (damit ist auch das Selbst-Update aus 1.39.0 aktiv, `/?ma_api=update-status`: `"aktiv":true`), dann Theme 21.25.0, Permalinks gespeichert; „Fehlende Entwürfe anlegen“ hat die 13 Anzeigen nachgezogen (danach alle „aktuell“). Enthält 1.38.0 (SEO) und 1.39.0 (Selbst-Update). Live gemessen: Band 1280 × 211 px mit 59 % Bild, unter Meldungen 932 × 180 px, am Handy Bild 352 × 198 px oben; alle Bänder mit breitem Video (`-breit.webm`); 0 Konsolenfehler bei 1440, 820 und 390 px; Rotation 60 s ohne Wiederholung je Platz. Rückweg: Plugin 1.37.2, Theme 21.24.2 (ZIPs im Scratchpad).
 
 **Anlass:** Vorgabe Betreiber 02.11.2026: „mehr Abwechslung der Werbeclips … wirken nicht passend, zu verzerrt … zu viel Text, zu wenig Bild oder Video, zu gequetscht … nicht 2 mal hintereinander die gleiche Firma“. Entscheidungen: Bänder höher mit großem Video, Text nur Überschrift und Knopf.
 

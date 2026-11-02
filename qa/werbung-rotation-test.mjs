@@ -15,8 +15,9 @@ const pruefe = (name, ist, soll) => {
 };
 
 // Kleiner DOM-Nachbau: Plätze mit Karten (data-ma-firma), Timer per Hand.
-function welt(plaetzeFirmen, zufall) {
+function welt(plaetzeFirmen, zufall, mitBeobachter = false) {
   const timer = [];
+  const beobachtet = new Map();
   const element = (attrs) => ({
     attrs: { ...attrs }, hidden: false, kinder: [],
     getAttribute(k) { return k in this.attrs ? this.attrs[k] : null; },
@@ -41,13 +42,18 @@ function welt(plaetzeFirmen, zufall) {
     document: { hidden: false, querySelectorAll: (sel) => (sel === '.ma-ad' ? plaetze : []) },
     parseInt, Array,
   };
+  // Nachgebauter IntersectionObserver: die Rückrufe je Platz löst der Test selbst aus.
+  if (mitBeobachter) {
+    kontext.IntersectionObserver = fenster.IntersectionObserver = class { constructor(cb) { this.cb = cb; } observe(el) { beobachtet.set(el, this.cb); } };
+  }
   vm.createContext(kontext);
   vm.runInContext(quelle, kontext);
   // Versatz-Timer auslösen, dann laufen die Intervalle.
   timer.filter((t) => t.einmal).forEach((t) => t.fn());
   const intervalle = timer.filter((t) => !t.einmal);
   const sicht = () => plaetze.map((p) => p.kinder.find((k) => !k.hidden).getAttribute('data-ma-firma'));
-  return { plaetze, sicht, takt: () => intervalle.forEach((t) => t.fn()), wahl: fenster.maAdWahl };
+  const imBild = (i, ja) => beobachtet.get(plaetze[i])([{ isIntersecting: ja }]);
+  return { plaetze, sicht, imBild, takt: () => intervalle.forEach((t) => t.fn()), taktEinzeln: (i) => intervalle[i].fn(), wahl: fenster.maAdWahl };
 }
 
 console.log('Auswahl (reine Funktionen)');
@@ -80,6 +86,18 @@ for (const zufall of [[0], [0.5], [0.13, 0.77, 0.41, 0.9, 0.05, 0.62, 0.33, 0.21
   pruefe(`Zufall ${JSON.stringify(zufall).slice(0, 20)}: Start ohne gleiche Firma auf Nachbarplätzen`, nachbarnGleich, 0);
   pruefe(`Zufall ${JSON.stringify(zufall).slice(0, 20)}: nie dieselbe Firma zweimal nacheinander`, gleichNacheinander, 0);
   pruefe(`Zufall ${JSON.stringify(zufall).slice(0, 20)}: gleichzeitig nicht mehr Doppelte als nötig`, gleichzeitig, 0);
+}
+
+console.log('Platz kommt ins Bild (IntersectionObserver)');
+{
+  // Zwei Plätze mit denselben drei Firmen; Platz 1 im Bild, Platz 2 noch nicht.
+  const w = welt([['a', 'b', 'c'], ['a', 'b', 'c']], [0], true);
+  w.imBild(0, true); w.imBild(1, false);
+  // Platz 1 darf auf die Firma des unsichtbaren Platzes 2 wechseln: nur Platz 1 drehen, bis es so ist.
+  let n = 0; while (w.sicht()[0] !== w.sicht()[1] && n++ < 20) w.taktEinzeln(0);
+  pruefe('außerhalb des Bildes ist dieselbe Firma erlaubt', w.sicht()[0], w.sicht()[1]);
+  w.imBild(1, true);
+  pruefe('beim Eintritt ins Bild wechselt Platz 2 zu einer anderen Firma', w.sicht()[0] !== w.sicht()[1], true);
 }
 
 console.log(fehler ? `${fehler} Fehler` : 'Alle Prüfungen bestanden.');
