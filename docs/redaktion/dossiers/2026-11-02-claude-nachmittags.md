@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Nachmittagslauf (Claude), 2. November 2026
 
-Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.3 vom 02.11.2026, Mindesttakt und Kurzmeldung). Erster Routinelauf in der festen Redaktionssitzung: Routine „14:43“ hier eingetroffen um 15:46 Uhr, Bearbeitung 15:46 bis 16:10 Uhr (Europe/Berlin). Vergleichsbasis: [Claude-Morgenlauf 02.11. (mit Nachholung)](2026-11-02-claude-morgens.md), seither neu [ChatGPT 02.11. mittags](2026-11-02-mittags.md). main vor dem Lauf: `43c2fa3`.
+Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.3 vom 02.11.2026, Mindesttakt und Kurzmeldung). Erster Routinelauf in der festen Redaktionssitzung: Routine „14:43“ hier eingetroffen um 15:46 Uhr, Bearbeitung 15:46 bis 16:10 Uhr, Live-Nachweis 16:07 Uhr (Europe/Berlin). Vergleichsbasis: [Claude-Morgenlauf 02.11. (mit Nachholung)](2026-11-02-claude-morgens.md), seither neu [ChatGPT 02.11. mittags](2026-11-02-mittags.md). main vor dem Lauf: `43c2fa3`.
 
 ## 0. Kurzfassung in Zahlen
 
@@ -40,7 +40,7 @@ Quellenausnahmen: Unfallartikel weiter nur mit Polizeimitteilungen (offizielle Q
 - MA-EINBRUCH-BAHNSTR-31102026 (ChatGPT 02.11. mittags, T2): nach CLAUDE-LAUF 3.3 wäre die Polizeimitteilung allein eine Kurzmeldung; das Live-Archiv führt aber bereits „Einbruch in Einfamilienhaus an der Bahnstraße in Merzenich: Polizei sucht Zeugen“ (Blaulicht, 02.11.), nicht im Repository angelegt. Keine Dublette.
 - Wochenvorschau: Live-Archiv führt „Martinszug, Kripo-Vortrag, Büchermarkt: Was vom 2. bis 8. November in Merzenich ansteht“ (Leben, 02.11.). Keine Dublette.
 - Neue Polizeimeldungen ohne Merzenich-Bezug: Einbruch in Geschäft in Jülich (12:47), Brand in Einfamilienhaus in Nideggen (12:01), beschädigte Autos in Jülich (12:02); Umkreis nur über die Automatik.
-- Vertiefung kurzer eigener Artikel: in diesem Lauf nicht begonnen (Todesfall-Update und Korrektur hatten Vorrang).
+- Vertiefung kurzer eigener Artikel: Einsatzleitwagen geprüft und verworfen. Beschlussvorlage und Beschlusstext 116/2026 (16:00 Uhr erneut gelesen, 689 und 157 Wörter) sind im Artikel vollständig verarbeitet, die Feuerwehr-Website hat keine Fahrzeugseite; mehr Länge ginge nur mit Füllstoff (SCHREIBREGELN.md Abschnitt 1). Typ bleibt `standard` unter Mindestlänge, Hinweis der QA bleibt.
 
 ## 4. Quellen dieses Laufs
 
@@ -76,7 +76,7 @@ Offene Hinweise „nachpruefen“: 1 (VHS-Vortrag 10.11., Website HTTP 404).
 
 ## 7. QA, Commit, Abgleich
 
-Commits `8fcc8c9` (Inhalte) und der Dokumentationscommit dieses Dossiers. Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (CI-Commit `035236d`): Stand von main übernommen, Kette zweimal, `--check` unverändert, `qa/pruefung.mjs` 0 Fehler. Abgleich: Anstoß 15:53 Uhr `angestossen: false, naechster` gegen 16:05 Uhr (Workflow plant den Lauf selbst), wp-cron HTTP 200. Nachweis in der Import-XML auf GitHub raw: neuer Unfalltitel 1, Korrekturtext Abgabeschluss 1, neue Slugs 2 Treffer. Live-Nachweis: Abschnitt 7a. Backend nicht geprüft (kein Zugang).
+Commits `8fcc8c9` (Inhalte) und der Dokumentationscommit dieses Dossiers. Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (CI-Commit `035236d`): Stand von main übernommen, Kette zweimal, `--check` unverändert, `qa/pruefung.mjs` 0 Fehler. Abgleich: Anstoß 15:53 Uhr `angestossen: false, naechster` gegen 16:05 Uhr (Workflow plant den Lauf selbst), wp-cron HTTP 200. Nachweis in der Import-XML auf GitHub raw: neuer Unfalltitel 1, Korrekturtext Abgabeschluss 1, neue Slugs 2 Treffer. Live-Nachweis 16:07 Uhr, alle HTTP 200: [Unfallartikel](https://merzenich-aktuell.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/) mit neuem Titel und „Nachtrag vom 2. November“; [Abgabeschluss 3.11.](https://merzenich-aktuell.de/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/) „ganztägig“ und „Korrigiert am 2. November“; [Abgabeschluss 1.12.](https://merzenich-aktuell.de/termine/amtsblatt-abgabeschluss-2026-12-01/) und [29.12.](https://merzenich-aktuell.de/termine/amtsblatt-abgabeschluss-2026-12-29/) online. Damit kam das Update an, das Protokoll „von Hand geändert“ greift beim Unfallartikel nicht. Backend nicht geprüft (kein Zugang).
 
 ## 8. Bildprüfung
 
@@ -98,6 +98,3 @@ Kein neues Meldungspaket (`qa/eigenformulierung.mjs --datum 2026-11-02 --lauf na
 4. Bürgersprechstunde Golzheim (30.10. oder 13.11.) und VHS-Vortrag 10.11.: Rückfrage durch Menschen.
 5. Die Handbeiträge vom 02.11. (Einbruch, Wochenvorschau) sind nicht im Repository; Folgeupdates dazu nur in WordPress oder nach Übernahme ins Repository.
 
-## 7a. Live-Nachweis
-
-Wird nach dem Abgleich gegen 16:05 Uhr ergänzt.

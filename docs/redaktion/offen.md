@@ -7,14 +7,14 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 97 |
-| uebernommen | 31 |
+| uebernommen | 32 |
 | gesperrt | 28 |
 | neu | 6 |
-| zur_abnahme | 6 |
+| zur_abnahme | 5 |
 | in_bearbeitung | 3 |
 | veraltet | 1 |
 
-## Offen (15)
+## Offen (14)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -29,15 +29,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (gleiche Quelle): `strukturausschuss-15-oktober-ruhbens-rwe-neuland-hambach` – Strukturausschuss am Donnerstag: CO2-Leitung „Ruhbens“, RWE und Neuland Hambach auf der Tagesordnung (2026-10-14, inhalte/meldungen/2026-10-14-recherche-chatgpt.json)
 - Möglicher Bestand (gleiche Quelle): `einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026` – Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei (2026-10-26, inhalte/meldungen/2026-10-26-recherche-claude-nachmittags.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Sitzungskalender (termine.ics) umgesetzt; Niederschriften/Vorlagen weiter offen
-
-### GR-L264-27102026 · P1 · T1/B0 · zur_abnahme
-
-- Ort/Ressort: Girbelsrath · Polizei/Verkehr; Art: Nachfassen; zuletzt geprüft: 2026-10-28 morgens Europe/Berlin; Refresh: Vor Artikelübernahme; nach einer neuen Polizeimitteilung.
-- Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-28-claude-morgens.md](dossiers/2026-10-28-claude-morgens.md), [2026-11-02-claude-nachmittags.md](dossiers/2026-11-02-claude-nachmittags.md)
-- Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
-- Artikelpfad: inhalte/meldungen/2026-10-28-recherche-claude-morgens.json → /blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/
-- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
-- Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
 
 ### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
 
