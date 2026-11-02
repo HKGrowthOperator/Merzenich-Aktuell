@@ -52,6 +52,8 @@ function ma_relevanz_einstellung(): array {
         'abklingen' => max(0.0, min(5.0, (float) ($e['abklingen'] ?? 1.0))),
         // Feste Plätze ohne „Hervorhebung bis“ enden nach so vielen Tagen (1.27.2); 0 = unbefristet.
         'fest_tage' => max(0, min(60, (int) ($e['fest_tage'] ?? 7))),
+        // Fester Aufmacher weicht einer neueren, frischen Stufe-1-Meldung (1.41.0, Vorgabe Betreiber 02.11.2026).
+        'aufmacher_abloesen' => (int) ($e['aufmacher_abloesen'] ?? 1) === 1,
     ];
 }
 if (!defined('MA_RELEVANZ_FRISCH_STUNDEN')) define('MA_RELEVANZ_FRISCH_STUNDEN', 72);
@@ -470,6 +472,7 @@ add_action('admin_post_ma_relevanz_einstellung', function (): void {
     update_option('ma_relevanz_einstellung', [
         'frisch_stunden' => (int) ($_POST['frisch_stunden'] ?? 72), 'abklingen' => (float) str_replace(',', '.', (string) ($_POST['abklingen'] ?? '1')),
         'fest_tage' => (int) ($_POST['fest_tage'] ?? 7),
+        'aufmacher_abloesen' => !empty($_POST['aufmacher_abloesen']) ? 1 : 0,
     ], false);
     $neu = ma_relevanz_einstellung();
     update_option('ma_relevanz_einstellung_log', array_slice(array_merge((array) get_option('ma_relevanz_einstellung_log', []), [['t' => time(), 'u' => get_current_user_id(), 'alt' => $alt, 'neu' => $neu]]), -50), false);
@@ -502,6 +505,7 @@ function ma_freigaben_seite(): void {
         printf('<label>Frisch für Aufmacher und Bühne (Stunden) <input type="number" name="frisch_stunden" min="6" max="336" value="%d"></label>', $e['frisch_stunden']);
         printf('<label>Abklingen je Tag Alter (Punkte) <input type="number" name="abklingen" min="0" max="5" step="0.1" value="%s"></label>', esc_attr((string) $e['abklingen']));
         printf('<label>Feste Plätze enden nach (Tage, 0 = unbefristet) <input type="number" name="fest_tage" min="0" max="60" value="%d"></label>', $e['fest_tage']);
+        printf('<label><input type="checkbox" name="aufmacher_abloesen" value="1"%s> Fester Aufmacher macht Platz, sobald eine neuere frische Meldung der Stufe 1 erscheint</label>', $e['aufmacher_abloesen'] ? ' checked' : '');
         echo '<button class="button">Speichern</button></form>';
     }
     echo '</div>';

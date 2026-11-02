@@ -233,7 +233,58 @@ add_action('init', function (): void {
     if (wp_doing_ajax() || str_contains((string) ($_SERVER['REQUEST_URI'] ?? ''), 'ma/v1/layout') || get_transient('ma_hervorhebung_geraeumt')) return;
     set_transient('ma_hervorhebung_geraeumt', 1, HOUR_IN_SECONDS);
     ma_layout_hervorhebungen_raeumen();
+    ma_layout_aufmacher_abloesen();
 }, 40);
+
+/**
+ * Aufmacher-Ablösung (1.41.0, Vorgabe Betreiber 02.11.2026: „immer die beste, stärkste Nachricht
+ * automatisch oben“). Ein fester Aufmacher der Startseite weicht, sobald eine Meldung der Stufe 1
+ * frisch ist (Zone „hero“, mit Startseiten-Freigabe) und nach dem Einsetzen des festen Aufmachers
+ * veröffentlicht wurde. Den freien Platz belegt die Automatik (ma_layout_aufloesen_startseite):
+ * frische Stufe 1 zuerst. Abschaltbar unter Freigaben → Einstellungen der Platzierung.
+ *
+ * Reine Entscheidung: $kandidaten = [['id' => int, 'zeit' => Veröffentlichung (UTC), 'hero' => bool], …].
+ * Rückgabe: ID der ablösenden Meldung, sonst 0.
+ */
+function ma_layout_aufmacher_abloeser(int $festId, int $seit, array $kandidaten): int {
+    foreach ($kandidaten as $k) {
+        $id = (int) ($k['id'] ?? 0);
+        if ($id > 0 && $id !== $festId && !empty($k['hero']) && (int) ($k['zeit'] ?? 0) > $seit) return $id;
+    }
+    return 0;
+}
+
+/** Festen Aufmacher der Startseite freigeben, wenn eine neuere Top-Meldung da ist. Rückgabe: ID der neuen Top-Meldung oder 0. */
+function ma_layout_aufmacher_abloesen(?int $jetzt = null): int {
+    if (!function_exists('ma_relevanz_einstellung') || empty(ma_relevanz_einstellung()['aufmacher_abloesen'])) return 0;
+    $karte = ma_layout_get('startseite');
+    $e = $karte['slots']['aufmacher'] ?? null;
+    if (!is_array($e) || empty($e['post'])) return 0;
+    $jetzt = $jetzt ?? time();
+    $festId = (int) $e['post'];
+    $seit = ma_layout_platz_seit($e, (int) ($karte['stand'] ?? 0));
+    $grenze = $jetzt - ma_relevanz_einstellung()['frisch_stunden'] * HOUR_IN_SECONDS;
+    $kandidaten = [];
+    foreach (get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 40, 'orderby' => 'date', 'order' => 'DESC', 'meta_key' => 'ma_relevanz', 'meta_value' => '1']) as $p) {
+        $zeit = (int) get_post_time('U', true, $p);
+        if ($zeit < $grenze) continue;
+        $kandidaten[] = ['id' => (int) $p->ID, 'zeit' => $zeit, 'hero' => function_exists('ma_relevanz_zone') && ma_relevanz_zone($p, $jetzt) === 'hero'];
+    }
+    $neu = ma_layout_aufmacher_abloeser($festId, $seit, $kandidaten);
+    if (!$neu) return 0;
+    unset($karte['slots']['aufmacher']);
+    $karte = ma_layout_speichern('startseite', $karte);
+    ma_layout_meta_abgleichen('startseite', $karte['slots']);
+    if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($festId, 'Fester Aufmacher automatisch abgelöst durch neuere Top-Meldung (Beitrag ' . $neu . ')', '', 0);
+    return $neu;
+}
+
+// Sofort nach dem Veröffentlichen oder Speichern einer Top-Meldung prüfen (Speichern läuft nach den Metaboxen).
+add_action('save_post_post', function ($id, $post): void {
+    if (wp_is_post_revision($id) || !$post || $post->post_status !== 'publish' || (string) get_post_meta($id, 'ma_relevanz', true) !== '1') return;
+    if (str_contains((string) ($_SERVER['REQUEST_URI'] ?? ''), 'ma/v1/layout')) return;
+    ma_layout_aufmacher_abloesen();
+}, 99, 2);
 
 /** Feste Plätze einer Seite: Platz => Beitrags-ID, nur platzierbare Beiträge. */
 function ma_layout_feste_plaetze(string $seite, ?int $jetzt = null): array {

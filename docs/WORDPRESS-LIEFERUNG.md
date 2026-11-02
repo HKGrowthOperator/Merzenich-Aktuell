@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.1 · live: 21.25.0 / 1.40.1, Selbst-Update aktiv (Historie unten)
+2. November 2026 · Theme 21.25.0 · Core-Plugin 1.41.0 · live: 21.25.0 / 1.40.1, Selbst-Update aktiv (Historie unten)
+
+## Neu am 02.11.2026: Plugin 1.41.0, Aufmacher automatisch
+
+Vorgabe Betreiber 02.11.2026: Oben soll immer automatisch die stärkste aktuelle Nachricht stehen.
+
+- **Relevanz aus dem Redaktionslauf:** Claude-Meldungen können `"relevanz": 1|2|3` tragen; `deploy/wordpress-import.mjs` schreibt daraus `ma_relevanz`. Frische Stufe-1-Meldungen (Zone „hero“, jünger als `frisch_stunden`) belegt die Automatik als Aufmacher.
+- **Ablösung des festen Aufmachers:** `ma_layout_aufmacher_abloesen()` (includes/layout.php) gibt den festen Aufmacher der Startseite frei, sobald eine frische Stufe-1-Meldung nach dem Einsetzen veröffentlicht wurde; Eintrag im Verlauf. Geprüft nach jedem Abgleich mit Änderungen, beim Speichern einer veröffentlichten Stufe-1-Meldung und stündlich. Abschaltbar unter Freigaben → Einstellungen der Platzierung („Fester Aufmacher macht Platz …“, Vorgabe an).
+- Tests: `qa/wordpress/layout-test.php` (Ablösung), `qa/wordpress/relevanz-test.php` (Einstellung). Live-Nachweis steht aus, bis das Selbst-Update 1.41.0 installiert hat (`/?ma_api=update-status`).
 
 ## Neu am 02.11.2026: Plugin 1.40.1, Platz wechselt beim Eintritt ins Bild
 

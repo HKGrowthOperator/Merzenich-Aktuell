@@ -447,6 +447,8 @@ function ma_abgleich_abschliessen(array $erg, float $t0): array {
     $erg['von_hand'] = array_slice($erg['von_hand'], 0, 30);
     $erg['neue'] = array_slice($erg['neue'], 0, 30);
     $erg['fehler'] = array_slice($erg['fehler'], 0, 30);
+    // Neue Top-Meldung der KI-Redaktion (relevanz 1): fester Aufmacher macht sofort Platz (1.41.0).
+    if (!empty($erg['neu']) || !empty($erg['aktualisiert'])) $erg['aufmacher_abgeloest'] = function_exists('ma_layout_aufmacher_abloesen') ? ma_layout_aufmacher_abloesen() : 0;
     update_option('ma_abgleich_stand', $erg, false);
     $protokoll = get_option('ma_abgleich_protokoll', []);
     if (!is_array($protokoll)) $protokoll = [];

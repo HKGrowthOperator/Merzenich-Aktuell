@@ -326,5 +326,15 @@ pruefe('Ohne gemeinsames Foto stünden mehr als zwei davon auf der Seite', $plat
 pruefe('Dasselbe Foto in verschiedenen Anhängen: höchstens zweimal', $platziert(ma_layout_aufloesen('startseite', [], $alle, ['motiv' => $foto] + $regeln)), 2);
 pruefe('Ortsbild der Bühne zählt vorab: nur noch einmal', $platziert(ma_layout_aufloesen('startseite', [], $alle, ['motiv' => $foto, 'motiveVorab' => ['buergewald' => 1, 'golzheim' => 1]] + $regeln)), 1);
 
+echo "\nAufmacher-Ablösung (1.41.0)\n";
+pruefe('Neuere frische Top-Meldung löst festen Aufmacher ab', ma_layout_aufmacher_abloeser(5, 1000, [['id' => 9, 'zeit' => 2000, 'hero' => true]]), 9);
+pruefe('Vor dem Einsetzen veröffentlicht: keine Ablösung', ma_layout_aufmacher_abloeser(5, 3000, [['id' => 9, 'zeit' => 2000, 'hero' => true]]), 0);
+pruefe('Nicht mehr frisch (keine Zone hero): keine Ablösung', ma_layout_aufmacher_abloeser(5, 1000, [['id' => 9, 'zeit' => 2000, 'hero' => false]]), 0);
+pruefe('Der feste Aufmacher selbst löst sich nicht ab', ma_layout_aufmacher_abloeser(9, 1000, [['id' => 9, 'zeit' => 2000, 'hero' => true]]), 0);
+pruefe('Erste passende Meldung der Liste', ma_layout_aufmacher_abloeser(5, 1000, [['id' => 8, 'zeit' => 500, 'hero' => true], ['id' => 7, 'zeit' => 1500, 'hero' => true]]), 7);
+pruefe('Ohne Relevanz-Einstellung (Plugin-Teil fehlt): nichts', ma_layout_aufmacher_abloesen(), 0);
+$lq = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/abgleich.php');
+pruefe('Abgleich prüft die Ablösung nach jedem Lauf mit Änderungen', str_contains($lq, 'ma_layout_aufmacher_abloesen()'), true);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

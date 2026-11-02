@@ -154,5 +154,14 @@ pruefe('keine 10er-Knopfreihe, keine Prioritätsauswahl', [str_contains($q, 'rep
 $lj = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/assets/layout.js');
 pruefe('Layout-Board: Auswahl 1–3, Vorgabe Mitte', [str_contains($lj, 'i <= 3'), str_contains($lj, "relevanz.value = '2'")], [true, true]);
 
+// Aufmacher-Ablösung (1.41.0): Vorgabe an, abschaltbar, Formular trägt das Häkchen.
+unset($GLOBALS['opt']['ma_relevanz_einstellung']);
+pruefe('Aufmacher-Ablösung: Vorgabe an', ma_relevanz_einstellung()['aufmacher_abloesen'], true);
+$GLOBALS['opt']['ma_relevanz_einstellung'] = ['aufmacher_abloesen' => 0];
+pruefe('Aufmacher-Ablösung: abschaltbar', ma_relevanz_einstellung()['aufmacher_abloesen'], false);
+unset($GLOBALS['opt']['ma_relevanz_einstellung']);
+$rq = file_get_contents(__DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/relevanz.php');
+pruefe('Aufmacher-Ablösung: Häkchen im Formular und beim Speichern', [str_contains($rq, 'name="aufmacher_abloesen"'), str_contains($rq, "'aufmacher_abloesen' => !empty(\$_POST['aufmacher_abloesen'])")], [true, true]);
+
 echo $fehler ? "\n$fehler Fehler.\n" : "\nAlle Pruefungen bestanden.\n";
 exit($fehler ? 1 : 0);
