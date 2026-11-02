@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.24.1 · Core-Plugin 1.37.1 · live: 21.24.0 / 1.37.0 (Historie unten)
+2. November 2026 · Theme 21.24.1 · Core-Plugin 1.37.1 · live: 21.24.1 / 1.37.1 (Historie unten)
 
 ## Neu am 02.11.2026: Plugin 1.37.1 und Theme 21.24.1, Werbung für das HK Growth Webstudio
 
-**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.37.0, Theme 21.24.0.
+**Stand live:** eingespielt am 02.11.2026 gegen 11:45 Uhr (Plugin 1.37.1, dann Theme 21.24.1, Permalinks gespeichert). Danach unter Firmen-Entwürfe „Fehlende Entwürfe anlegen“ und „Zusage eintragen“ für HK Growth Webstudio (Nachweis „Zusage laut Betreiber, 02.11.2026“, Einwilligung und Logo), Beitrag in den Freigaben mit Stufe 2 ohne Startseite freigegeben. Nachweis: `?ver=1.37.1` und `?ver=21.24.1` im Quelltext; Profil, Kanal und Beitrag antworten mit 200. Die drei Anzeigen laufen auf allen Werbeplätzen im Wechsel und verlinken auf `https://website.hk-growthoperator.de/` (`target="_blank"`, `rel="sponsored noopener"`, „Zur Website“). Der Beitrag steht nur unter „Unternehmen“, nicht auf Startseite, `/nachrichten/`, `/wirtschaft/` oder im Feed. Bei 1440, 820 und 390 px auf Startseite, Meldung, `/unternehmen/` und `/werben/` 0 Konsolenfehler, kein Überlauf. Rückweg: Plugin 1.37.0, Theme 21.24.0.
 
 - **Sechste Firma** in `data/firmen-entwuerfe.json`: HK Growth Webstudio (HK Growth UG, Marienheide), Art „Anzeige“, Kontingent 5. Profil mit Logo (`data/logos/hk-growth.png`) und ein Beitrag, nur aus den Angaben von website.hk-growthoperator.de und hk-growthoperator.de.
 - **Drei Anzeigen** auf allen Werbeplätzen im Wechsel, Klick auf `https://website.hk-growthoperator.de/` mit „Zur Website“: „Zeit für eine neue Website?“, „Websites, die Anfragen bringen.“, „Gefunden bei Google und ChatGPT.“ Vorgabe Betreiber: einfach Werbung für eine neue Website, kein Hinweis auf Merzenich Aktuell als Referenz.
