@@ -7,18 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:oldieabend@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20261002T170000Z
-SUMMARY:Oldieabend am Lindenplatz
-DESCRIPTION:Auftakt zum Ortsfest-Wochenende mit Musik der 60er bis 80er.\nV
- eranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperato
- r.de/termine/oldieabend/
-LOCATION:Lindenplatz Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/oldieabend/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:ortsfest-2026@merzenich-aktuell.de
 DTSTAMP:20260903T060000Z
 DTSTART:20261003T090000Z
