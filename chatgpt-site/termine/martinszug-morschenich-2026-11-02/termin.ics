@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:martinszug-morschenich-2026-11-02@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261102T170000Z
 SUMMARY:Martinszug in Morschenich
 DESCRIPTION:Der Martinszug startet um 18 Uhr am Ludwig-Rixen-Platz und ende

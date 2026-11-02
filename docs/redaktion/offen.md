@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-10-30-claude-kalenderpflege.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -12,6 +12,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | neu | 6 |
 | zur_abnahme | 6 |
 | in_bearbeitung | 3 |
+| recherchiert | 1 |
 
 ## Offen (15)
 
@@ -156,7 +157,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
-- 2026-10-30 kalenderpflege (Claude): Erste Kalenderpflege nach CLAUDE-LAUF.md Phase 1a: 8 Termine der nächsten 14 Tage an der Quelle bestätigt, 2 neue Termine (Erste-Hilfe-Kurs Golzheim 14.11., TTC-Jugend-Vereinsmeisterschaften 13.11.), VHS-Vortrag 10.11. wegen nicht erreichbarer Quelle offen.
-- 2026-10-30 morgens (ChatGPT): 1 materielles TTC-Ergebnisupdate T2: 1:9 auswärts, Bericht noch nicht genehmigt, unabhängiger Ergebnisbeleg fehlt. 1 neu erschlossener Jugend-Vereinstermin im Fenster. Pflicht-Sportprüfung erfolgt; SC-III-Endstand und FuPa-Testspielabschluss nicht gesichert. Unfallartikel vollständig ohne Korrekturbedarf geprüft.
-- 2026-10-29 mittags (ChatGPT): 1 neue T2-Recherchekarte zum Gemeindehinweis auf WDR-bezogene Audios. Senderquelle und Datierung fehlen. Zwei neue regionale Polizeimeldungen ohne Gemeindebezug ausgeschlossen. Unfallartikel live gegen Original vollständig geprüft: kein Korrekturbedarf. Keine neuen Termine.
-- 2026-10-29 morgens (ChatGPT): 2 neue T2-Karten: Golzheimer Erste-Hilfe-Kurs (unabhängige Bestätigung fehlt), Kreis-Sozialraumbericht (Merzenich-Auswertung fehlt). Unfallartikel live gegen Polizei geprüft, kein Korrekturbedarf. RIS-ICS direkt erfolgreich; keine neuen Termine im Fenster. Keine Artikeltexte.
+- 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung (Routinelauf 09:25 scheiterte am Push, HTTP 403). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung), 2 geänderte Termine (Frühstück Kindergottesdienst 8.11., Wortlaut Volkstrauertag), 19 von 21 Terminen bis 15.11. an der Quelle geprüft; VHS 404 und Amtsblatt-Index 428 offen. Commons 429, kein neues Foto. – Commit 0e926b7
+- 2026-11-02 morgens (ChatGPT): Neue Kalenderergänzung: Frühstück am 08.11. ab10:30 vor dem bekannten Kindergottesdienst um11 Uhr. Veranstalteroriginal gelesen; keine unabhängigen Quellen für Artikelkarte, T2 für Artikel. Keine neue Artikel-Themenkarte; Unfallartikel ohne Korrekturbedarf geprüft. VHS404, Golzheim-Konflikt und TTC-Prüfungen offen. Bahn-Endefeld geändert, Dauer unklar; keine konkrete Merzenicher Fahrt bestätigt.
+- 2026-11-01 mittags (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten gegenüber morgens unverändert, RIS nur neuer Zeitstempel. Unfallartikel vollständig ohne Korrekturbedarf geprüft. VHS-Kursquelle404; offene TTC-/Golzheim-Prüfungen nicht erneut vertieft. Bahn-Endefeld verschoben, Dauer offen; keine konkrete Merzenicher Fahrt bestätigt.
+- 2026-11-01 morgens (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten ohne neue örtliche Meldung; aktuelle Bahnformulierung engerer Siegstreckenabschnitt, konkrete Merzenicher Fahrt nicht belegt. TTC-Terminschnittstelle erreichbar, dynamische Startseitenplatzhalter nicht als Absagen interpretiert. Unfallartikel ohne Korrekturbedarf; VHS404 und bekannte Konflikte offen.

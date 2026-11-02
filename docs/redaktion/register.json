@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-02-morgens.md",
-  "source_check_window": "02.11.2026 morgens Europe/Berlin; Direktabrufe 07:06:16–07:08:37; tatsächliche Bereitstellung durch bestätigten main-Commit/Ref samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-11-02-claude-morgens.md",
+  "source_check_window": "02.11.2026 morgens (nachgeholt) Europe/Berlin; Live-Abrufe 11:30 bis 11:35 Uhr; Rohdaten vom 01.11. abends (älter als 12 Stunden, nicht verwendet).",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3526,11 +3526,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-02 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert. | ChatGPT 31.10. morgens: erster 1:9-Bericht inzwischen genehmigt, zweiter Auswärtssieg 2:8 eingetragen, noch ungenehmigt. Unabhängige Ergebnisbestätigung weiter offen; Update T2. Historische Artikelumsetzung erhalten. | ChatGPT 31.10. mittags: auch zweiter Bericht jetzt durch Spielleiter genehmigt (Admin31.10.09:56). Unabhängige Ergebnisbestätigung weiterhin offen, Update T2. Historische Umsetzung unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: click-TT-Stand (Rang 2, 13:3) selbst geprüft; AndroCup 31.10. als Termin. | ChatGPT 27.10. abends: MA-TTC-OKT25, T1-B; Vereinsübersicht, Herren-I-Profil, Gruppenplan und Tabelle frisch gelesen; direkter WTTV-Teamporträtabruf fehlgeschlagen, Alternative erfolgreich. Weiterarbeit: Andro-Cup 31.10. weiterhin separat beim Veranstalter bestätigen. Damen/U15: Profile erreichbar, Ergebnis-/Tabellenbereiche dynamisch und ohne Zahlen; keine Ergebnisse behaupten. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Verein und zwei Verbandsdatenwege gelesen, direkter Aufruf erst fehlgeschlagen, Klick vom Vereinsprofil erfolgreich. Offen: Kurzfristige Verlegungen? AndroCup31.10. separat am Turnieroriginal prüfen. Historische Umsetzung bleibt erhalten. | ChatGPT 30.10. morgens: neues Ergebnisupdate T2, Einzelspielbericht noch nicht genehmigt; unabhängige Ergebnisbestätigung fehlt. Bestehenden Artikel aktualisieren statt Dublette. Historische Umsetzung unverändert. | ChatGPT 31.10. morgens: erster 1:9-Bericht inzwischen genehmigt, zweiter Auswärtssieg 2:8 eingetragen, noch ungenehmigt. Unabhängige Ergebnisbestätigung weiter offen; Update T2. Historische Artikelumsetzung erhalten. | ChatGPT 31.10. mittags: auch zweiter Bericht jetzt durch Spielleiter genehmigt (Admin31.10.09:56). Unabhängige Ergebnisbestätigung weiterhin offen, Update T2. Historische Umsetzung unverändert. | Claude 02.11. morgens: Update umgesetzt (Commit 0e926b7): 1:9 bei TTF Weisweiler/Wenau IV (29.10.) und 2:8 bei TTC Mersch-Pattern IV (30.10.), Tabellenführung 21:3 Punkte, nächste Spiele 6.11. und 14.11.; Quelle click-TT (offizielle Verbandsquelle nach SCHREIBREGELN 3a, Bericht 30.10. genehmigt), daher ohne zweite unabhängige Bestätigung. Neuer Titel. Bild weiter Sporthalle (Commons 429), Tischtennis-Foto offen.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -3600,6 +3600,12 @@
           "dossier": "dossiers/2026-10-31-mittags.md",
           "heading": "MA-TTC-OKT25",
           "check_scope": "Genehmigung zweiter Spielbericht"
+        },
+        {
+          "date": "2026-11-02",
+          "dossier": "dossiers/2026-11-02-claude-morgens.md",
+          "heading": "1. Umgesetzt / 5. Sport",
+          "check_scope": "click-TT Gruppenseite, Mannschaftsporträt, Spielbericht 30.10."
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -11209,6 +11215,16 @@
         }
       ],
       "qa": "Alle vorhandenen Themen, Archivdaten, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten. Nur neue Laufdatei und Register; vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-02",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-02-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-02-morgens.md",
+      "implementation_commit": "0e926b7",
+      "summary": "Nachgeholter Morgenlauf in der festen Redaktionssitzung (Routinelauf 09:25 scheiterte am Push, HTTP 403). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung), 2 geänderte Termine (Frühstück Kindergottesdienst 8.11., Wortlaut Volkstrauertag), 19 von 21 Terminen bis 15.11. an der Quelle geprüft; VHS 404 und Amtsblatt-Index 428 offen. Commons 429, kein neues Foto.",
+      "publication": "Update am veröffentlichten TTC-Artikel und zwei Termine, sofort sichtbar beim Abgleich"
     }
   ]
 }

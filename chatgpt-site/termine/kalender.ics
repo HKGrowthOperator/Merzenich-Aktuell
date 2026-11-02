@@ -392,7 +392,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinszug-morschenich-2026-11-02@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261102T170000Z
 SUMMARY:Martinszug in Morschenich
 DESCRIPTION:Der Martinszug startet um 18 Uhr am Ludwig-Rixen-Platz und ende
@@ -420,7 +420,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-11-04@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261104T160000Z
 SUMMARY:4. Sitzung des Jugendgremiums
 DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich trifft sich am Mittwoc
@@ -434,7 +434,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04@merzenich-aktuell.de
-DTSTAMP:20261026T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261104T170000Z
 SUMMARY:Rosenkranzgebet wieder im Pfarrheim (ab 4. November)
 DESCRIPTION:Das wöchentliche Rosenkranzgebet wird ab dem 4. November nicht
@@ -450,7 +450,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:aktionstag-persoenliches-budget-kreishaus-2026-11-05@merzenich-aktuell.
  de
-DTSTAMP:20261027T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261105T090000Z
 DTEND:20261105T160000Z
 SUMMARY:Aktionstag „Das Persönliche Budget“ im Kreishaus Düren
@@ -466,7 +466,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261105T170000Z
 SUMMARY:2. Sitzung des Rechnungsprüfungsausschusses
 DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
@@ -480,7 +480,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ki-roadshow-ihk-dueren-2026-11-06@merzenich-aktuell.de
-DTSTAMP:20261026T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261106T080000Z
 DTEND:20261106T100000Z
 SUMMARY:KI-Roadshow der IHK Aachen in Düren
@@ -496,7 +496,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:eichel-sammelaktion-huertgenwald-2026-11-06@merzenich-aktuell.de
-DTSTAMP:20261025T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261106T130000Z
 DTEND:20261106T160000Z
 SUMMARY:Eichel-Sammelaktion für den Hürtgenwald
@@ -512,7 +512,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:kg-golzheim-kostuemsitzung-2026-11-07@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261107T191100Z
 SUMMARY:Große Kostümsitzung der KG Mir hahle Poohl Golzheim
 DESCRIPTION:Die KG Golzheim startet am Samstag\, 7. November\, mit ihrer Gr
@@ -543,14 +543,15 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:kindergottesdienst-ev-gemeindehaus-2026-11-08@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261108T100000Z
-SUMMARY:Kindergottesdienst im Evangelischen Gemeindehaus
+SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
 DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
-  Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich.\nVe
- ranstalter: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://me
- rzenichaktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeinde
- haus-2026-11-08/
+  Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 
+ 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\, um telefonische Anm
+ eldung wird gebeten.\nVeranstalter: Evangelische Gemeinde zu Düren\, Bezi
+ rk Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kinder
+ gottesdienst-ev-gemeindehaus-2026-11-08/
 LOCATION:Evangelisches Gemeindehaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
  t-ev-gemeindehaus-2026-11-08/
@@ -574,7 +575,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinszug-golzheim-2026-11-11@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261111T164500Z
 SUMMARY:Martinszug in Golzheim
 DESCRIPTION:Start nach der Messe gegen 17.45 Uhr an der Kirche\, danach zum
@@ -588,7 +589,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
 DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
@@ -602,7 +603,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinszug-merzenich-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:Martinszug in Merzenich
 DESCRIPTION:Der Martinszug startet um 18 Uhr an der Kirche an der Schulstra
@@ -616,7 +617,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ttc-merzenich-jugend-vereinsmeisterschaften-2026-11-13@merzenich-aktuel
  l.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261113T163000Z
 DTEND:20261113T190000Z
 SUMMARY:Jugend-Vereinsmeisterschaften des TTC Merzenich (U15\, U19)
@@ -632,7 +633,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinsfeier-girbelsrath-2026-11-13@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261113T163000Z
 SUMMARY:Martinsfeier und Lichterfest in Girbelsrath
 DESCRIPTION:Martinsfeier um 17.30 Uhr in der Kirche\, danach Lichterfest mi
@@ -646,7 +647,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:erste-hilfe-kurs-golzheim-2026-11-14@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261114T080000Z
 DTEND:20261114T160000Z
 SUMMARY:Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim
@@ -662,12 +663,12 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261115T083000Z
-SUMMARY:Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weckmanns
+SUMMARY:Volkstrauertag: Kranzniederlegung in der Alten Kirche und Weckmanns
  chießen
 DESCRIPTION:Zum Volkstrauertag am Sonntag\, 15. November\, ist in Merzenich
-  nach der Messe um 9:30 Uhr eine Kranzniederlegung an der Alten Kirche ang
+  nach der Messe um 9:30 Uhr eine Kranzniederlegung in der Alten Kirche ang
  ekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.\nVerans
  talter: Merzenicher Ortsvereine (Angaben laut Terminkalender der KG Jonge 
  vom Berg)\nhttps://merzenichaktuell.hk-growthoperator.de/termine/volkstrau
@@ -679,7 +680,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ev-gottesdienst-gedenken-verstorbene-2026-11-15@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261115T090000Z
 SUMMARY:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
 DESCRIPTION:Am Sonntag\, 15. November\, feiert die Evangelische Gemeinde um
@@ -694,7 +695,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:taize-gottesdienst-morschenich-2026-11-15@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261115T160000Z
 SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
 DESCRIPTION:In der Lambertuskapelle Morschenich wird am Sonntag\, 15. Novem

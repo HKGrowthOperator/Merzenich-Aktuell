@@ -377,7 +377,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfkxmXafKmQAUFs4nPrS_Ow",
-        "stand": "2026-10-30"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -403,7 +403,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZb49y9iUHl1Shq5ZZTcHGHI",
-        "stand": "2026-10-30"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -429,7 +429,7 @@
       "quelle": {
         "name": "KG Mir hahle Poohl Golzheim 1905 e.V., Veranstaltungsseite; ergänzend Amtsblatt Merzenich Nr. 10/2026",
         "url": "https://kg-mir-hahle-poohl.de/veranstaltung/grosse-kostuemsitzung/",
-        "stand": "2026-10-30"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -461,28 +461,33 @@
     },
     {
       "slug": "kindergottesdienst-ev-gemeindehaus-2026-11-08",
-      "titel": "Kindergottesdienst im Evangelischen Gemeindehaus",
+      "titel": "Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus",
       "start": "2026-11-08T11:00:00+01:00",
       "ort": "Evangelisches Gemeindehaus Merzenich",
       "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
-      "beschreibung": "Pfarrerin Karin Heucher feiert am Sonntag, 8. November, um 11 Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich.",
+      "beschreibung": "Pfarrerin Karin Heucher feiert am Sonntag, 8. November, um 11 Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 10.30 Uhr gibt es vorher ein gemeinsames Frühstück, um telefonische Anmeldung wird gebeten.",
       "absaetze": [
         "Die Evangelische Gemeinde lädt am Sonntag, 8. November 2026, um 11 Uhr zum Kindergottesdienst ins Gemeindehaus Merzenich ein. Es leitet Pfarrerin Karin Heucher.",
-        "Der Termin steht im Veranstaltungskalender des Gemeindebezirks Merzenich/Niederzier der Evangelischen Gemeinde zu Düren."
+        "Der Termin steht im Veranstaltungskalender des Gemeindebezirks Merzenich/Niederzier der Evangelischen Gemeinde zu Düren.",
+        "Nachtrag vom 2. November 2026: Nach einer Ankündigung des Evangelischen Gemeindezentrums Merzenich auf Heimat-Info vom 1. November beginnt der Vormittag mit einem gemeinsamen Frühstück ab 10.30 Uhr, der Gottesdienst bleibt um 11 Uhr. Die Gemeinde bittet um telefonische Anmeldung bei der Küsterin; die Nummer steht in der Ankündigung. Eine Anmeldefrist ist nicht genannt."
       ],
       "links": [
         [
           "Termine der Evangelischen Gemeinde, Bezirk Merzenich",
           "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/"
+        ],
+        [
+          "Ankündigung „Kindergottesdienst mit Frühstück vorher“ (Heimat-Info, 01.11.2026)",
+          "https://www.heimat-info.de/veranstaltungen/f60eafb6-d44f-4448-8edc-884932f1299b"
         ]
       ],
       "quelle": {
-        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender",
+        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender; Frühstück laut Ankündigung des Ev. Gemeindezentrums Merzenich auf Heimat-Info vom 01.11.2026 (Selbstauskunft des Veranstalters)",
         "url": "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/",
-        "stand": "2026-10-30"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -535,20 +540,20 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
-        "stand": "2026-10-30"
+        "stand": "2026-11-02"
       }
     },
     {
       "slug": "volkstrauertag-merzenich-2026",
-      "titel": "Volkstrauertag: Kranzniederlegung an der Alten Kirche und Weckmannschießen",
+      "titel": "Volkstrauertag: Kranzniederlegung in der Alten Kirche und Weckmannschießen",
       "start": "2026-11-15T09:30:00+01:00",
       "ort": "Alte Kirche Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Brauchtum",
       "veranstalter": "Merzenicher Ortsvereine (Angaben laut Terminkalender der KG Jonge vom Berg)",
-      "beschreibung": "Zum Volkstrauertag am Sonntag, 15. November, ist in Merzenich nach der Messe um 9:30 Uhr eine Kranzniederlegung an der Alten Kirche angekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.",
+      "beschreibung": "Zum Volkstrauertag am Sonntag, 15. November, ist in Merzenich nach der Messe um 9:30 Uhr eine Kranzniederlegung in der Alten Kirche angekündigt. Um 11:30 Uhr folgt das traditionelle Weckmannschießen.",
       "absaetze": [
-        "Der Volkstrauertag beginnt in Merzenich am Sonntag, 15. November 2026, mit der Messe um 9:30 Uhr. Danach werden an der Alten Kirche Kränze niedergelegt. Das steht im öffentlichen Terminkalender der KG Jonge vom Berg, die an dem Gedenken teilnimmt.",
+        "Der Volkstrauertag beginnt in Merzenich am Sonntag, 15. November 2026, mit der Messe um 9:30 Uhr. Danach werden in der Alten Kirche Kränze niedergelegt. Das steht im öffentlichen Terminkalender der KG Jonge vom Berg, die an dem Gedenken teilnimmt.",
         "Um 11:30 Uhr folgt laut demselben Kalender das traditionelle Weckmannschießen auf dem Schießstand der Schützenbruderschaft in der Schule. Eine offizielle Ankündigung von Gemeinde oder Pfarrei lag am 5. Oktober noch nicht vor."
       ],
       "links": [
@@ -560,7 +565,7 @@
       "quelle": {
         "name": "KG Jonge vom Berg 1975 e.V., Terminkalender",
         "url": "https://jonge-vom-berg.de/event/kranzniederlegung-und-weckmannschiessen/",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -586,7 +591,7 @@
       "quelle": {
         "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender",
         "url": "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -611,7 +616,7 @@
       "quelle": {
         "name": "Pfarrbrief der Kath. Kirchengemeinden Merzenich & Niederzier 08/26; Amtsblatt Merzenich Nr. 10/2026",
         "url": "https://www.pfarrgemeinden-niederzier.de/wp-content/uploads/2026/09/Pfarrbrief-Oktober-2026-Pfarrgemeinden-Merzenich-Niederzier.pdf",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     },
     {
