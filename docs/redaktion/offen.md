@@ -12,7 +12,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | neu | 6 |
 | zur_abnahme | 6 |
 | in_bearbeitung | 3 |
-| recherchiert | 1 |
+| veraltet | 1 |
 
 ## Offen (15)
 
@@ -157,7 +157,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
-- 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung (Routinelauf 09:25 scheiterte am Push, HTTP 403). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung), 2 geänderte Termine (Frühstück Kindergottesdienst 8.11., Wortlaut Volkstrauertag), 19 von 21 Terminen bis 15.11. an der Quelle geprüft; VHS 404 und Amtsblatt-Index 428 offen. Commons 429, kein neues Foto. – Commit 0e926b7
+- 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung, erweitert um die verlorenen Claude-Läufe 30.10. nachmittags bis 02.11. morgens (Sitzungen ohne Push-Recht). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung, click-TT), 6 neue Termine aus Amtsblatt 11/2026, 2 geänderte Termine (Frühstück mit Anmeldefrist 5.11. beim Kindergottesdienst, Wortlaut Volkstrauertag), Kalender 60 Tage geprüft (28 von 30 Bestandsterminen, VHS 404, Amtsblatt-Index 428), Fußballtabelle in sport-current.json aktualisiert. Korrekturaufträge der sechs Dossiers: keine. T1-Karte Halloween veraltet. Commons 429, kein neues Foto. – Commit e53e231
 - 2026-11-02 morgens (ChatGPT): Neue Kalenderergänzung: Frühstück am 08.11. ab10:30 vor dem bekannten Kindergottesdienst um11 Uhr. Veranstalteroriginal gelesen; keine unabhängigen Quellen für Artikelkarte, T2 für Artikel. Keine neue Artikel-Themenkarte; Unfallartikel ohne Korrekturbedarf geprüft. VHS404, Golzheim-Konflikt und TTC-Prüfungen offen. Bahn-Endefeld geändert, Dauer unklar; keine konkrete Merzenicher Fahrt bestätigt.
 - 2026-11-01 mittags (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten gegenüber morgens unverändert, RIS nur neuer Zeitstempel. Unfallartikel vollständig ohne Korrekturbedarf geprüft. VHS-Kursquelle404; offene TTC-/Golzheim-Prüfungen nicht erneut vertieft. Bahn-Endefeld verschoben, Dauer offen; keine konkrete Merzenicher Fahrt bestätigt.
 - 2026-11-01 morgens (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten ohne neue örtliche Meldung; aktuelle Bahnformulierung engerer Siegstreckenabschnitt, konkrete Merzenicher Fahrt nicht belegt. TTC-Terminschnittstelle erreichbar, dynamische Startseitenplatzhalter nicht als Absagen interpretiert. Unfallartikel ohne Korrekturbedarf; VHS404 und bekannte Konflikte offen.
