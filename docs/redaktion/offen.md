@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -157,7 +157,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung (Routinelauf 09:25 scheiterte am Push, HTTP 403). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung), 2 geänderte Termine (Frühstück Kindergottesdienst 8.11., Wortlaut Volkstrauertag), 19 von 21 Terminen bis 15.11. an der Quelle geprüft; VHS 404 und Amtsblatt-Index 428 offen. Commons 429, kein neues Foto. – Commit 0e926b7
 - 2026-11-02 morgens (ChatGPT): Neue Kalenderergänzung: Frühstück am 08.11. ab10:30 vor dem bekannten Kindergottesdienst um11 Uhr. Veranstalteroriginal gelesen; keine unabhängigen Quellen für Artikelkarte, T2 für Artikel. Keine neue Artikel-Themenkarte; Unfallartikel ohne Korrekturbedarf geprüft. VHS404, Golzheim-Konflikt und TTC-Prüfungen offen. Bahn-Endefeld geändert, Dauer unklar; keine konkrete Merzenicher Fahrt bestätigt.
 - 2026-11-01 mittags (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten gegenüber morgens unverändert, RIS nur neuer Zeitstempel. Unfallartikel vollständig ohne Korrekturbedarf geprüft. VHS-Kursquelle404; offene TTC-/Golzheim-Prüfungen nicht erneut vertieft. Bahn-Endefeld verschoben, Dauer offen; keine konkrete Merzenicher Fahrt bestätigt.
 - 2026-11-01 morgens (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten ohne neue örtliche Meldung; aktuelle Bahnformulierung engerer Siegstreckenabschnitt, konkrete Merzenicher Fahrt nicht belegt. TTC-Terminschnittstelle erreichbar, dynamische Startseitenplatzhalter nicht als Absagen interpretiert. Unfallartikel ohne Korrekturbedarf; VHS404 und bekannte Konflikte offen.
-- 2026-10-31 mittags (ChatGPT): TTC-Update T2: auch zweiter Auswärtssieg genehmigt, unabhängige Bestätigung weiter offen. SC-III-Auswärtspaarung im Verbandsplan als abgesetzt konkret erschlossen; Zeitpunkt/Grund/Ersatztermin offen. LAG-Inden-Hinweis ohne neue Merzenicher Entwicklung. Unfallartikel ohne Korrekturbedarf; VHS404 und konkrete S19-Fahrtauswirkungen offen.
