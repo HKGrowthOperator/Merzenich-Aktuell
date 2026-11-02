@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-02-mittags.md",
-  "source_check_window": "02.11.2026 mittags Europe/Berlin; Direktabrufe 11:57:20–11:58:52; zusätzliche Commons-Sichtung ca.11:58; tatsächliche Bereitstellung am bestätigten main-Commit/Ref samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-11-02-claude-nachmittags.md",
+  "source_check_window": "02.11.2026 nachmittags Europe/Berlin; Live-Abrufe 15:47 bis 15:56 Uhr.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -9764,11 +9764,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-27-abends.md",
       "workflow_status": "zur_abnahme",
-      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-02 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-28-recherche-claude-morgens.json → /blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
       "article_id": null,
       "implementation_commit": "24702c2",
-      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen. Offen: Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren. Historische Umsetzung bleibt erhalten. | Claude 28.10. morgens: Kurzmeldung mit Quellenausnahme (nur Polizei; kein Feuerwehrbericht), ohne Alter und Herkunft des Fahrers.",
+      "notes": "ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumentierte Quellenausnahme vor Artikelübernahme. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1-B; Primärvolltext, Dienststellenliste und Ortsbezug im neuen Rohstand verglichen. Offen: Ergänzter Ermittlungsstand? Einquellen-Ausnahme bei Übernahme des gestrigen Entwurfs dokumentieren. Historische Umsetzung bleibt erhalten. | Claude 28.10. morgens: Kurzmeldung mit Quellenausnahme (nur Polizei; kein Feuerwehrbericht), ohne Alter und Herkunft des Fahrers. | Claude 02.11. nachmittags: Update umgesetzt (Commit 8fcc8c9): Fahrer am 30.10. im Krankenhaus gestorben laut Polizei Düren 02.11., 15:08 Uhr (presseportal 6382725); neuer Titel, Dek, Nachtrag, zweite Polizeiquelle; Alter und Herkunft weiter weggelassen.",
       "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
       "latest_research_text_status": "T1-B",
       "latest_research_checked_at": "2026-10-28 morgens Europe/Berlin",
@@ -9793,6 +9793,12 @@
           "date": "2026-10-28",
           "dossier": "dossiers/2026-10-28-claude-morgens.md",
           "heading": "GR-L264-27102026 · umgesetzt"
+        },
+        {
+          "date": "2026-11-02",
+          "dossier": "dossiers/2026-11-02-claude-nachmittags.md",
+          "heading": "1. Umgesetzt",
+          "check_scope": "Polizei Düren 27.10. und 02.11. im Original"
         }
       ],
       "research_history": [
@@ -10595,7 +10601,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Polizeimeldung 02.11.11:54: Einbruch am31.10. in Merzenicher Bahnstraße, Schmuck/Schlüsselbund gestohlen, Zeugenaufruf. Keine unabhängige Ereignisbestätigung; zwei weitere Quellen liefern ausschließlich Präventionskontext, daher T2. Commons-Symbolfoto Einbruchspuren gesichtet, nicht integriert; zeigt anderen Einbruchsversuch am Juwelierfenster. Keine Quellenausnahme.",
+      "notes": "Polizeimeldung 02.11.11:54: Einbruch am31.10. in Merzenicher Bahnstraße, Schmuck/Schlüsselbund gestohlen, Zeugenaufruf. Keine unabhängige Ereignisbestätigung; zwei weitere Quellen liefern ausschließlich Präventionskontext, daher T2. Commons-Symbolfoto Einbruchspuren gesichtet, nicht integriert; zeigt anderen Einbruchsversuch am Juwelierfenster. Keine Quellenausnahme. | Claude 02.11. nachmittags: Live-Archiv führt bereits „Einbruch in Einfamilienhaus an der Bahnstraße in Merzenich: Polizei sucht Zeugen“ (02.11.), nicht im Repository angelegt; keine Dublette geschrieben. Nach CLAUDE-LAUF 3.3 trägt die Polizeimitteilung allein eine Kurzmeldung (kein T2).",
       "research_sources": [
         {
           "url": "https://www.presseportal.de/blaulicht/pm/8/6382355",
@@ -10621,6 +10627,11 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-02-mittags.md",
           "heading": "MA-EINBRUCH-BAHNSTR-31102026"
+        },
+        {
+          "date": "2026-11-02",
+          "dossier": "dossiers/2026-11-02-claude-nachmittags.md",
+          "heading": "3. Bewusst nicht umgesetzt"
         }
       ],
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
@@ -11334,6 +11345,16 @@
         }
       ],
       "qa": "Alle vorhandenen Registerthemen und historischen Läufe einschließlich Claude-Notizen, Artikelpfaden und Umsetzungscommits unverändert erhalten. Neue Karte und Lauf angehängt. Nur neue Dossierdatei und Register; vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-02",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-02-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-02-mittags.md",
+      "implementation_commit": "8fcc8c9",
+      "summary": "Erster Routinelauf in der festen Redaktionssitzung. 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau stehen bereits als Handbeiträge im Live-Archiv, Mindesttakt 02.11. erfüllt), 1 Update (Unfall L 264: Fahrer gestorben, Polizei 02.11. 15:08), 1 Terminkorrektur (Amtsblatt-Abgabeschluss ganztägig, Auftrag ChatGPT), 2 neue Termine (Abgabeschlüsse 1.12., 29.12.). Commons-Bilddatei 429.",
+      "publication": "Update am veröffentlichten Unfallartikel, Terminkorrektur und zwei Termine; sofort sichtbar beim Abgleich"
     }
   ]
 }
