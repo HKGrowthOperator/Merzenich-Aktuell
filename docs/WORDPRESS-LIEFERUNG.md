@@ -1,6 +1,22 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.24.2 · Core-Plugin 1.37.2 · live: 21.24.2 / 1.37.2 (Historie unten)
+2. November 2026 · Theme 21.24.2 · Core-Plugin 1.38.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+
+## Neu am 02.11.2026 (dritte Runde): Plugin 1.38.0, SEO und GEO (News-Sitemap mit Bild, KI-Crawler, llms.txt, Wikidata)
+
+**Stand live:** noch nicht eingespielt. Nur das Plugin, kein Theme. Rückweg: Plugin 1.37.2.
+
+**Anlass:** SEO-, GEO- und News-Plan vom 02.11.2026, Abschnitte 1.4 und 3.1 (`includes/seo.php`).
+
+- **News-Sitemap mit Hauptbild** (`ma_seo_news_sitemap_xml`, `ma_seo_news_eintraege`): je Meldung `<image:image>` mit dem Beitragsbild, nur mit geklärten Rechten (`ma_seo_bild`); das Standardbild wird nicht gemeldet. Namensraum `xmlns:image`.
+- **robots.txt** (`ma_seo_robots_txt`, `MA_SEO_KI_CRAWLER`): eigene Gruppe für GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot, Google-Extended, Bingbot und Applebot-Extended mit `Allow: /` als Signal, dass Zitieren gewollt ist. Weil ein Crawler mit eigener Gruppe die `*`-Gruppe nicht liest, stehen dort dieselben Sperren (wp-admin, Suche, Formular-Rückmeldung).
+- **llms.txt** (`ma_seo_llms_txt`, neu `ma_seo_llms_neueste`): Abschnitt „Aktuell“ mit `/heute/`, `/termine/`, `/termine/kalender.ics`, `/ki-redaktion/` (alle am 02.11. mit 200 geprüft) und die zehn neuesten Meldungen mit Datum, ohne gesponserte.
+- **Orte mit Wikidata und Wikipedia** (`ma_seo_orte`, neu `ma_seo_ort_sameas`): `Place.sameAs` je Ort. Kennungen am 02.11.2026 bei wikidata.org geprüft: Merzenich Q200044, Golzheim Q1284626, Girbelsrath Q1526685 (liegt in Q200044), Morschenich Q19059925, Bürgewald Q1650249; dazu der dewiki-Artikel.
+- **IndexNow bei Aktualisierungen:** war schon vorhanden (`post_updated`), keine Änderung.
+- **Offen aus dem Plan:** `/termine/` schneller (kalt 3,3 s), `llms-full.txt` erst mit den Faktenseiten.
+- **Test:** `qa/wordpress/seo-test.php` (11 neue Prüfungen: KI-Gruppe, Sperren in der Gruppe, nur einmal; Bild in der News-Sitemap; llms.txt „Aktuell“ und höchstens zehn Meldungen; sameAs und eindeutige Kennungen).
+
+**Einspielen:** ZIP `wordpress-delivery/merzenich-aktuell-core.zip` (baut die CI nach dem Push) unter Plugins → Installieren → Plugin hochladen, „Vorhandene Version ersetzen“. Nachweis: `?ver=1.38.0` im Quelltext, `/robots.txt` mit `User-agent: GPTBot`, `/llms.txt` mit „Neueste Meldungen“, `/news-sitemap.xml` mit `image:loc`, JSON-LD einer Ortsseite mit `sameAs`.
 
 ## Neu am 02.11.2026 (zweite Runde): Plugin 1.37.2 und Theme 21.24.2, HK-Growth-Anzeigen zu Website, Anfragen und Automation
 

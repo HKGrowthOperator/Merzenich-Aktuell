@@ -39,16 +39,32 @@ const MA_SEO_BESCHREIBUNG_LANG = 'Merzenich Aktuell ist die Lokalzeitung online 
 const MA_SEO_PLZ = '52399';
 const MA_SEO_GEBIET = 'Gemeinde Merzenich, Kreis Düren, Nordrhein-Westfalen';
 
-/** Ortsteile: Name, Beschreibung (wie die Ortsseiten der statischen Seite), Koordinaten nur mit Quelle. */
+/**
+ * Ortsteile: Name, Beschreibung (wie die Ortsseiten der statischen Seite), Koordinaten nur mit Quelle.
+ * wikidata/wikipedia (1.38.0): Kennung und deutscher Artikel je Ort, abgerufen am 02.11.2026 bei
+ * wikidata.org (wbgetentities: Bezeichnung, Beschreibung „Ortsteil von Merzenich“ bzw. Gemeinde,
+ * dewiki-Sitelink; Girbelsrath über P131 = Q200044). Verknüpft die Orte für Suchmaschinen und KI-Suchen.
+ */
 function ma_seo_orte(): array {
     return [
-        'merzenich' => ['name' => 'Merzenich', 'beschreibung' => 'Hauptort der Gemeinde mit Rathaus, Bürgerhaus, Pfarrkirche St. Laurentius, Heimatmuseum und S-Bahn-Halt an der Strecke Köln–Aachen.'],
-        'golzheim' => ['name' => 'Golzheim', 'beschreibung' => 'Ländlicher Ortsteil im Norden der Gemeinde mit Pfarrkirche St. Gregorius, eigener Grundschule, Schützenhalle und einer der ältesten Schützenbruderschaften der Region.', 'lat' => 50.83966, 'lon' => 6.58118],
-        'girbelsrath' => ['name' => 'Girbelsrath', 'beschreibung' => 'Ortsteil im Süden der Gemeinde mit der Kirche St. Amandus, Sportplatz, eigener Löschgruppe und aktivem Karnevalsverein inmitten der Feldflur Richtung Binsfeld.', 'lat' => 50.81185, 'lon' => 6.55163],
-        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.'],
-        'buergewald' => ['name' => 'Bürgewald', 'beschreibung' => 'Das alte Morschenich am Rand des Hambacher Forsts, seit 6. Juli 2024 Bürgewald genannt und als „Ort der Zukunft“ von Gemeinde, Land NRW und RWE gemeinsam neu entwickelt.'],
+        'merzenich' => ['name' => 'Merzenich', 'beschreibung' => 'Hauptort der Gemeinde mit Rathaus, Bürgerhaus, Pfarrkirche St. Laurentius, Heimatmuseum und S-Bahn-Halt an der Strecke Köln–Aachen.', 'wikidata' => 'Q200044', 'wikipedia' => 'Merzenich'],
+        'golzheim' => ['name' => 'Golzheim', 'beschreibung' => 'Ländlicher Ortsteil im Norden der Gemeinde mit Pfarrkirche St. Gregorius, eigener Grundschule, Schützenhalle und einer der ältesten Schützenbruderschaften der Region.', 'lat' => 50.83966, 'lon' => 6.58118, 'wikidata' => 'Q1284626', 'wikipedia' => 'Golzheim_(Merzenich)'],
+        'girbelsrath' => ['name' => 'Girbelsrath', 'beschreibung' => 'Ortsteil im Süden der Gemeinde mit der Kirche St. Amandus, Sportplatz, eigener Löschgruppe und aktivem Karnevalsverein inmitten der Feldflur Richtung Binsfeld.', 'lat' => 50.81185, 'lon' => 6.55163, 'wikidata' => 'Q1526685', 'wikipedia' => 'Girbelsrath'],
+        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.', 'wikidata' => 'Q19059925', 'wikipedia' => 'Morschenich'],
+        'buergewald' => ['name' => 'Bürgewald', 'beschreibung' => 'Das alte Morschenich am Rand des Hambacher Forsts, seit 6. Juli 2024 Bürgewald genannt und als „Ort der Zukunft“ von Gemeinde, Land NRW und RWE gemeinsam neu entwickelt.', 'wikidata' => 'Q1650249', 'wikipedia' => 'Bürgewald_(Merzenich)'],
     ];
 }
+
+/** sameAs eines Orts: Wikidata und deutsche Wikipedia (reine Funktion). */
+function ma_seo_ort_sameas(array $d): array {
+    $aus = [];
+    if (!empty($d['wikidata'])) $aus[] = 'https://www.wikidata.org/wiki/' . $d['wikidata'];
+    if (!empty($d['wikipedia'])) $aus[] = 'https://de.wikipedia.org/wiki/' . rawurlencode((string) $d['wikipedia']);
+    return $aus;
+}
+
+/** KI- und Such-Crawler, die robots.txt ausdrücklich zulässt (1.38.0): Zitieren ist gewollt. */
+const MA_SEO_KI_CRAWLER = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'ClaudeBot', 'Claude-SearchBot', 'Google-Extended', 'Bingbot', 'Applebot-Extended'];
 
 /** Ressorts und Listen: Titel und Beschreibung (Texte der statischen Seite). Schlüssel = Adresse /<slug>/. */
 function ma_seo_ressorte(): array {
@@ -191,19 +207,33 @@ function ma_seo_autor_schema(array $a, string $home): array {
     return ['@type' => 'Organization', 'name' => 'Redaktion Merzenich Aktuell', 'url' => $home . 'redaktion/'];
 }
 
-/** Zeilen für robots.txt: Suchseiten und Formular-Rückmeldungen nicht crawlen, News-Sitemap nennen. */
+/**
+ * Zeilen für robots.txt: Suchseiten und Formular-Rückmeldungen nicht crawlen, News-Sitemap nennen.
+ * 1.38.0: eigene Gruppe für KI- und Such-Crawler (MA_SEO_KI_CRAWLER) mit ausdrücklichem Allow. Ein
+ * Crawler mit eigener Gruppe liest die *-Gruppe nicht mehr, deshalb stehen die Sperren dort noch einmal.
+ */
 function ma_seo_robots_txt(string $vorhanden, string $home): string {
+    $sperren = "Disallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\nDisallow: /?s=\nDisallow: /*?s=\nDisallow: /*?gesendet=\n";
     $zeilen = rtrim($vorhanden) . "\nDisallow: /?s=\nDisallow: /*?s=\nDisallow: /*?gesendet=\n";
+    if (!str_contains($zeilen, 'User-agent: GPTBot')) {
+        $zeilen .= "\n# KI- und Suchdienste dürfen lesen und zitieren (mit Quelle merzenich-aktuell.de)\n";
+        foreach (MA_SEO_KI_CRAWLER as $bot) $zeilen .= "User-agent: {$bot}\n";
+        $zeilen .= "Allow: /\n" . $sperren;
+    }
     if (!str_contains($zeilen, 'news-sitemap.xml')) $zeilen .= "\nSitemap: {$home}news-sitemap.xml\n";
     return $zeilen;
 }
 
-/** News-Sitemap (Google News): Meldungen der letzten zwei Tage. $eintraege: [['url','titel','zeit'(ISO)], …]. */
+/**
+ * News-Sitemap (Google News): Meldungen der letzten zwei Tage. $eintraege: [['url','titel','zeit'(ISO),'bild'?], …].
+ * 1.38.0: Hauptbild als image:image, wenn die Meldung ein eigenes Bild mit geklärten Rechten hat.
+ */
 function ma_seo_news_sitemap_xml(array $eintraege): string {
-    $x = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:news=\"http://www.google.com/schemas/sitemap-news/0.9\">\n";
+    $x = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:news=\"http://www.google.com/schemas/sitemap-news/0.9\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\">\n";
     foreach ($eintraege as $e) {
         $x .= '<url><loc>' . htmlspecialchars($e['url'], ENT_XML1) . '</loc><news:news><news:publication><news:name>' . MA_SEO_MARKE . '</news:name><news:language>de</news:language></news:publication>'
-            . '<news:publication_date>' . htmlspecialchars($e['zeit'], ENT_XML1) . '</news:publication_date><news:title>' . htmlspecialchars($e['titel'], ENT_XML1) . '</news:title></news:news></url>' . "\n";
+            . '<news:publication_date>' . htmlspecialchars($e['zeit'], ENT_XML1) . '</news:publication_date><news:title>' . htmlspecialchars($e['titel'], ENT_XML1) . '</news:title></news:news>'
+            . (!empty($e['bild']) ? '<image:image><image:loc>' . htmlspecialchars((string) $e['bild'], ENT_XML1) . '</image:loc></image:image>' : '') . '</url>' . "\n";
     }
     return $x . "</urlset>\n";
 }
@@ -240,6 +270,7 @@ function ma_seo_graph(array $k, array $o): array {
     $platz = function (string $slug) use ($orte, $home, $adresse, $o): array {
         $d = $orte[$slug];
         $p = ['@type' => 'Place', '@id' => $home . 'ort/' . $slug . '/#place', 'name' => $d['name'], 'url' => $home . 'ort/' . $slug . '/', 'address' => $adresse, 'containedInPlace' => ['@type' => 'AdministrativeArea', 'name' => 'Gemeinde Merzenich']];
+        if ($s = ma_seo_ort_sameas($d)) $p['sameAs'] = $s;
         if ($slug === 'merzenich' && !empty($o['mitte'])) $p['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => $o['mitte'][0], 'longitude' => $o['mitte'][1]];
         elseif (isset($d['lat'])) $p['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => $d['lat'], 'longitude' => $d['lon']];
         return $p;
@@ -327,11 +358,19 @@ function ma_seo_itemlist(array $liste): array {
     return ['@type' => 'ItemList', 'itemListElement' => array_values(array_map(fn($e, $i) => ['@type' => 'ListItem', 'position' => $i + 1, 'url' => $e[0], 'name' => $e[1]], $liste, array_keys($liste)))];
 }
 
-/** llms.txt: Überblick für KI-Suchen aus Ressorts, Orten, Seiten und Anbieterin. $seiten: [[name, url, beschreibung]]. */
-function ma_seo_llms_txt(string $home, array $seiten): string {
+/**
+ * llms.txt: Überblick für KI-Suchen aus Ressorts, Orten, Seiten und Anbieterin. $seiten: [[name, url, beschreibung]].
+ * 1.38.0: Abschnitt „Aktuell“ (Heute, Termine, Kalender, KI-Redaktion) und $neueste: [[titel, url, datum (TT.MM.JJJJ)]], höchstens 10.
+ */
+function ma_seo_llms_txt(string $home, array $seiten, array $neueste = []): string {
     $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\n";
     $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, info@kbs-management.tv. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
-    $t .= "## Ressorts\n\n";
+    $t .= "## Aktuell\n\n- [Heute in Merzenich]({$home}heute/): Was heute in der Gemeinde ansteht und neu ist.\n- [Termine]({$home}termine/): Veranstaltungen, Sitzungen und Feste aus allen Ortsteilen.\n- [Terminkalender (ICS)]({$home}termine/kalender.ics): alle Termine zum Abonnieren.\n- [KI-Redaktion]({$home}ki-redaktion/): Wie Meldungen mit KI recherchiert, geprüft und gekennzeichnet werden.\n";
+    if ($neueste) {
+        $t .= "\n## Neueste Meldungen\n\n";
+        foreach (array_slice($neueste, 0, 10) as [$titel, $url, $datum]) $t .= "- [{$titel}]({$url})" . ($datum !== '' ? " ({$datum})" : '') . "\n";
+    }
+    $t .= "\n## Ressorts\n\n";
     foreach (ma_seo_ressorte() as $slug => [$name, $titel, $desc]) $t .= "- [{$name}]({$home}{$slug}/): {$desc}\n";
     $t .= "\n## Orte der Gemeinde Merzenich\n\n";
     foreach (ma_seo_orte() as $slug => $d) $t .= "- [{$d['name']}]({$home}ort/{$slug}/): {$d['beschreibung']}\n";
@@ -632,7 +671,7 @@ add_action('template_redirect', function (): void {
             $p = get_page_by_path($slug, OBJECT, 'page');
             if ($p instanceof WP_Post && $p->post_status === 'publish') $seiten[] = [$name, get_permalink($p), ma_seo_kuerzen($p->post_excerpt, 120)];
         }
-        echo ma_seo_llms_txt(home_url('/'), $seiten); exit;
+        echo ma_seo_llms_txt(home_url('/'), $seiten, ma_seo_llms_neueste()); exit;
     }
 }, 1);
 
@@ -642,7 +681,21 @@ function ma_seo_news_eintraege(): array {
     $aus = [];
     foreach ($posts as $p) {
         if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) continue;
-        $aus[] = ['url' => get_permalink($p), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'zeit' => get_post_time('c', false, $p)];
+        // Nur ein eigenes Bild mit geklärten Rechten, nicht das Standardbild (1.38.0).
+        $bild = ma_seo_bild($p);
+        $aus[] = ['url' => get_permalink($p), 'titel' => html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), 'zeit' => get_post_time('c', false, $p),
+            'bild' => ($bild['url'] ?? '') !== ma_seo_standardbild()['url'] ? (string) ($bild['url'] ?? '') : ''];
+    }
+    return $aus;
+}
+
+/** Die zehn neuesten veröffentlichten Meldungen für llms.txt (ohne gesponserte): [[titel, url, TT.MM.JJJJ]]. */
+function ma_seo_llms_neueste(): array {
+    $aus = [];
+    foreach (get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 20, 'orderby' => 'date', 'order' => 'DESC']) as $p) {
+        if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) continue;
+        $aus[] = [html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), get_permalink($p), get_post_time('d.m.Y', false, $p)];
+        if (count($aus) >= 10) break;
     }
     return $aus;
 }
