@@ -1,6 +1,6 @@
 {
-  "stand": "2026-10-28",
-  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
+  "stand": "2026-11-02",
+  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media), dazu seit 02.11.2026 das HK Growth Webstudio (Auftrag Betreiber: nur Webstudio, Kennzeichnung „Anzeige“, Profil und Anzeigen; Angaben von hk-growthoperator.de und website.hk-growthoperator.de). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
@@ -360,6 +360,97 @@
           "knopf": "Zum Profil",
           "stand": "2026-10-28",
           "fokus": "50% 60%"
+        }
+      ]
+    },
+    {
+      "art": "anzeige",
+      "werbung": {
+        "max": 5
+      },
+      "profil": {
+        "slug": "hk-growth-webstudio",
+        "titel": "HK Growth Webstudio",
+        "firmenname": "HK Growth UG",
+        "branche": "Websites und Webdesign",
+        "ortsteil": "",
+        "ort": "Marienheide",
+        "adresse": "Weststraße 2, 51709 Marienheide",
+        "telefon": "+49 175 4547011",
+        "email": "info@hk-growthoperator.de",
+        "website": "https://website.hk-growthoperator.de/",
+        "oeffnungszeiten": "",
+        "quelle": "Angaben laut website.hk-growthoperator.de und hk-growthoperator.de (Startseite, llms.txt), geprüft am 02.11.2026",
+        "quellen": [
+          "https://website.hk-growthoperator.de/",
+          "https://hk-growthoperator.de/",
+          "https://hk-growthoperator.de/llms.txt"
+        ],
+        "kurz": "Webstudio aus Marienheide: Unternehmenswebsites in 2 bis 4 Wochen, mit Suchmaschinenoptimierung, Sichtbarkeit in KI-Suchen und Anfrage-Automation.",
+        "text": "Das HK Growth Webstudio gehört zur HK Growth UG aus Marienheide. Laut Website entsteht eine Unternehmenswebsite in zwei bis vier Wochen bis zum Start, mit fertigen Texten, eigenem Design und einer technischen Grundlage, damit Google und KI-Suchen wie ChatGPT die Seite verstehen. Dazu kommen Terminbuchung und eine Automation, die jede Anfrage sofort weiterleitet. Den Festpreis nennt das Webstudio nach einem Erstgespräch.",
+        "karte": {
+          "knopf": "HK Growth Webstudio entdecken",
+          "ziel": "https://website.hk-growthoperator.de/"
+        },
+        "logo": {
+          "quelle": "https://hk-growthoperator.de/assets/brand/hk-growth-operator-logo-tight.png",
+          "art": "PNG von der Unternehmenswebsite (transparent, dunkle Schrift)",
+          "rechte": "offen",
+          "alt": "Logo HK Growth Operator",
+          "datei": "hk-growth.png"
+        }
+      },
+      "beitrag": {
+        "slug": "hk-growth-webstudio-websites-marienheide",
+        "titel": "Websites in zwei bis vier Wochen: HK Growth Webstudio aus Marienheide",
+        "anriss": "Das HK Growth Webstudio baut Unternehmenswebsites mit Texten, Design, Suchmaschinenoptimierung und Anfrage-Automation.",
+        "absaetze": [
+          "Das HK Growth Webstudio gehört zur HK Growth UG mit Sitz in Marienheide im Oberbergischen Kreis. Geschäftsführer sind Nick Hinze und Luis Kummer.",
+          "Laut Website entsteht eine Unternehmenswebsite in zwei bis vier Wochen bis zum Start. Zum Umfang gehören ein Workshop zur Positionierung, fertig geschriebene Texte und ein eigenes Design für Handy, Tablet und Desktop. Die Seite wird technisch so gebaut, dass Google sie versteht; dazu kommen Sichtbarkeit in KI-Suchen wie ChatGPT, eine Terminbuchung und eine Automation, die jede Anfrage sofort weiterleitet.",
+          "Den Preis nennt das Webstudio als Festpreis nach einem Erstgespräch.",
+          "<strong>Kontakt:</strong> HK Growth UG, Weststraße 2, 51709 Marienheide, Telefon +49 175 4547011, E-Mail info@hk-growthoperator.de."
+        ],
+        "knopf": {
+          "text": "HK Growth Webstudio besuchen",
+          "ziel": "https://website.hk-growthoperator.de/"
+        },
+        "seo_titel": "HK Growth Webstudio Marienheide: Websites in 2 bis 4 Wochen",
+        "seo_beschreibung": "HK Growth Webstudio aus Marienheide: Unternehmenswebsites mit Texten, Design, SEO, KI-Sichtbarkeit und Anfrage-Automation. Festpreis nach Erstgespräch.",
+        "quelle": "https://website.hk-growthoperator.de/"
+      },
+      "anzeigen": [
+        {
+          "zeile": "HK Growth Webstudio · Websites",
+          "titel": "Zeit für eine neue Website?",
+          "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, mit Terminbuchung und Anfrage-Automation.",
+          "bild": "hk-growth-webstudio-1.jpg",
+          "video": "hk-growth-webstudio-1.mp4",
+          "alt": "Website des HK Growth Webstudio auf Laptop und Handy",
+          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://website.hk-growthoperator.de/",
+          "stand": "2026-11-02"
+        },
+        {
+          "zeile": "HK Growth Webstudio · Marienheide",
+          "titel": "Websites, die Anfragen bringen.",
+          "text": "Festpreis nach dem Erstgespräch, sichtbar bei Google und in KI-Suchen.",
+          "bild": "hk-growth-webstudio-2.jpg",
+          "video": "hk-growth-webstudio-2.mp4",
+          "alt": "Website des HK Growth Webstudio im Browserfenster",
+          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://website.hk-growthoperator.de/",
+          "stand": "2026-11-02"
+        },
+        {
+          "zeile": "HK Growth Webstudio · SEO und KI-Suchen",
+          "titel": "Gefunden bei Google und ChatGPT.",
+          "text": "Suchmaschinenoptimierung und Sichtbarkeit in KI-Suchen sind bei Ihrer neuen Website inklusive.",
+          "bild": "hk-growth-webstudio-3.jpg",
+          "video": "hk-growth-webstudio-3.mp4",
+          "alt": "Leistungen des HK Growth Webstudio im Browserfenster und auf dem Handy",
+          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://website.hk-growthoperator.de/",
+          "stand": "2026-11-02"
         }
       ]
     }

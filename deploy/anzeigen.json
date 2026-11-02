@@ -136,6 +136,45 @@
       "bildAlt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
       "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
       "ki": true
+    },
+    {
+      "id": "hk-growth-webstudio-1",
+      "kunde": "HK Growth Webstudio",
+      "typ": "firma",
+      "eyebrow": "HK Growth Webstudio · Websites",
+      "headline": "Zeit für eine neue Website?",
+      "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, mit Terminbuchung und Anfrage-Automation.",
+      "cta": "Website",
+      "ziel": "https://website.hk-growthoperator.de/",
+      "bild": "/assets/anzeigen/hk-growth-webstudio-1.jpg",
+      "bildAlt": "Website des HK Growth Webstudio auf Laptop und Handy",
+      "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026"
+    },
+    {
+      "id": "hk-growth-webstudio-2",
+      "kunde": "HK Growth Webstudio",
+      "typ": "firma",
+      "eyebrow": "HK Growth Webstudio · Marienheide",
+      "headline": "Websites, die Anfragen bringen.",
+      "text": "Festpreis nach dem Erstgespräch, sichtbar bei Google und in KI-Suchen.",
+      "cta": "Website",
+      "ziel": "https://website.hk-growthoperator.de/",
+      "bild": "/assets/anzeigen/hk-growth-webstudio-2.jpg",
+      "bildAlt": "Website des HK Growth Webstudio im Browserfenster",
+      "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026"
+    },
+    {
+      "id": "hk-growth-webstudio-3",
+      "kunde": "HK Growth Webstudio",
+      "typ": "firma",
+      "eyebrow": "HK Growth Webstudio · SEO und KI-Suchen",
+      "headline": "Gefunden bei Google und ChatGPT.",
+      "text": "Suchmaschinenoptimierung und Sichtbarkeit in KI-Suchen sind bei Ihrer neuen Website inklusive.",
+      "cta": "Website",
+      "ziel": "https://website.hk-growthoperator.de/",
+      "bild": "/assets/anzeigen/hk-growth-webstudio-3.jpg",
+      "bildAlt": "Leistungen des HK Growth Webstudio im Browserfenster und auf dem Handy",
+      "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026"
     }
   ],
   "label": "Anzeige"

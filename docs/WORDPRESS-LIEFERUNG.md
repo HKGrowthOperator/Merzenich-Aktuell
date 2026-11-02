@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-29. Oktober 2026 · Theme 21.24.0 · Core-Plugin 1.37.0 · live: 21.24.0 / 1.37.0 (Historie unten)
+2. November 2026 · Theme 21.24.1 · Core-Plugin 1.37.1 · live: 21.24.0 / 1.37.0 (Historie unten)
+
+## Neu am 02.11.2026: Plugin 1.37.1 und Theme 21.24.1, Werbung für das HK Growth Webstudio
+
+**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.37.0, Theme 21.24.0.
+
+- **Sechste Firma** in `data/firmen-entwuerfe.json`: HK Growth Webstudio (HK Growth UG, Marienheide), Art „Anzeige“, Kontingent 5. Profil mit Logo (`data/logos/hk-growth.png`) und ein Beitrag, nur aus den Angaben von website.hk-growthoperator.de und hk-growthoperator.de.
+- **Drei Anzeigen** auf allen Werbeplätzen im Wechsel, Klick auf `https://website.hk-growthoperator.de/` mit „Zur Website“: „Zeit für eine neue Website?“, „Websites, die Anfragen bringen.“, „Gefunden bei Google und ChatGPT.“ Vorgabe Betreiber: einfach Werbung für eine neue Website, kein Hinweis auf Merzenich Aktuell als Referenz.
+- **Videos** (960 × 540, 8 s, MP4 und WebM unter 600 KB) mit HyperFrames aus Bildschirmansichten der Webstudio-Seite: Laptop und Handy, Browserfenster mit drei Abschnitten, Leistungen mit Handy. Die Videos liegen in `data/banner/`, nicht im ZIP; WordPress lädt sie über `ma_firmen_datei()` von GitHub.
+- **Statische Kopie:** `deploy/anzeigen.json` mit 13 Motiven; Theme 21.24.1 nur wegen der neu erzeugten Dateien (`static/werbung.json`, `vorlagen/startseite.html`).
+- **Tests:** `firmen-entwuerfe-test.php` (sechs Firmen, drei Anzeigen bei HK Growth, kein Referenzhinweis), `werbung-ohne-muster-test.php` (13 Motive), `firmenlogo-test.php`.
 
 ## Neu am 29.10.2026: Plugin 1.37.0 und Theme 21.24.0, Werbung anfragen wie bei den fünf Firmen
 

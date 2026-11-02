@@ -1,6 +1,6 @@
-# Unternehmen auf Merzenich Aktuell: Almera Clean, KBS Management, ASS Elektrotechnik, Merzlicht, AJ Sports
+# Unternehmen auf Merzenich Aktuell: Almera Clean, KBS Management, ASS Elektrotechnik, Merzlicht, AJ Sports, HK Growth Webstudio
 
-Stand 28.10.2026 abends · Plugin 1.36.0 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
+Stand 02.11.2026 · Plugin 1.37.1 · Daten: `wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json`
 
 Aufträge des Betreibers vom 24.10. und 28.10.2026: Die fünf Unternehmen ersetzen Bäckerei Wirtz, Hasberg Fenster & Rollladentechnik und Porschen Media (Oktober 2026, Testeintrag). Je Unternehmen liegen ein Profil und, wo Angaben vorliegen, ein Werbebeitrag als **Entwurf** in WordPress. Öffentlich wird erst etwas, wenn die Zusage eingetragen ist.
 
@@ -15,11 +15,13 @@ Aufträge des Betreibers vom 24.10. und 28.10.2026: Die fünf Unternehmen ersetz
 | ASS Elektrotechnik | `/unternehmen/ass-elektrotechnik/` | `ass-elektrotechnik-smart-home-beleuchtung-dueren` | von asselektrotechnik.de | je 2 | 5 |
 | Merzlicht | `/unternehmen/merzlicht/` | – (nur Name) | – | je 2 (KI-Bild) | 5 |
 | AJ Sports | `/unternehmen/aj-sports/` | – (nur Name) | – | je 2 (KI-Bild) | 5 |
+| HK Growth Webstudio | `/unternehmen/hk-growth-webstudio/` | `hk-growth-webstudio-websites-marienheide` | von hk-growthoperator.de | 3 (Bildschirmansichten der Webstudio-Seite) | 5 |
 
 - **Almera Clean, KBS und ASS:** Stammdaten, wie sie am 24.10. bzw. 28.10.2026 (ASS) auf den Websites standen (Branche, Adresse, Telefon soweit genannt, E-Mail, Website), Quelle und Stand, Kurztext, Knopf zur Website. Die Logos sind auf den Websites weiß; für die hellen Logo-Flächen der Seite sind sie dunkel eingefärbt und zugeschnitten (`data/logos/`).
 - **ASS Elektrotechnik:** Meisterbetrieb mit Sitz in Düren (Am Dürener Weg 53), daher ohne Ortsteil; Sitz „Düren“ wie bei KBS.
 - **Merzlicht und AJ Sports:** Profil nur mit dem Namen (`nur_name`). Keine Adresse, kein Logo, kein Beitrag: Es liegen keine weiteren Angaben vor, und die Seite erfindet keine. Merzlicht trägt die belegte Branche „Werbung auf der Videowall“ (Bericht des SC 1919 zur Videowall am Bürgewaldzentrum). Im Menü steht „Noch keine Beiträge“.
 - **Werbung für alle fünf** (Auftrag 28.10. abends, ersetzt die Musterwerbung): je zwei Anzeigen (`anzeigen`) mit Foto, Video-Schleife (MP4 und WebM aus `docs/anzeigen/bauen.mjs`), Zeile oben, Überschrift, Satz und Knopf „Zum Profil“, auf allen Werbeplätzen im Wechsel. Fotos von den Websites der Firmen (Nutzung mit Zusage laut Betreiber, 28.10.2026), bei KBS auch die Intro-Animation der Website; für Merzlicht und AJ Sports KI-Bilder, auf dem Bild als „KI-Bild“ gekennzeichnet, bis echte Fotos kommen.
+- **HK Growth Webstudio** (Auftrag Betreiber 02.11.2026): Werbung nur für das Webstudio, also für neue Websites, gekennzeichnet nur als „Anzeige“. Kein Hinweis, dass das Webstudio Merzenich Aktuell gebaut hat (Vorgabe Betreiber). Drei Anzeigen: „Zeit für eine neue Website?“, „Websites, die Anfragen bringen.“, „Gefunden bei Google und ChatGPT.“; Klick auf `https://website.hk-growthoperator.de/`. Die Videos zeigen nur die Webstudio-Seite (HyperFrames, Kompositionen im Scratchpad der Sitzung; Logoleiste mit Referenzen ausgeblendet). Profil mit Logo und ein Beitrag aus den Angaben der Website; Sitz Marienheide, daher ohne Ortsteil.
 - **Kontingent:** jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (`werbung.max`).
 - **KBS** ist die Herausgeberin von Merzenich Aktuell. Profil, Beitrag, Kanal und Menü sagen das ausdrücklich; der Beitrag ist als „Anzeige · in eigener Sache“ gekennzeichnet. KBS erscheint nicht im Kasten „Unternehmen aus der Gemeinde“ (Sitz Leverkusen).
 - **Kennzeichnung:** Alle Beiträge sind Anzeigen (`ma_gesponsert_art = anzeige` bzw. `eigen`), verknüpft mit dem Profil, Rubrik Wirtschaft. Firmenbeiträge erscheinen nur unter „Unternehmen“: /unternehmen/, Firmenkanal, Unternehmen-Menü und die Beitragsseite selbst, nicht auf der Startseite, in Rubriken, Ortsteilen, Suche, Seitenspalten oder im RSS-Feed (`includes/firmenbeitraege.php`, seit 1.35.0). Kein Testzeitraum: Die Einträge laufen, bis der Betreiber sie austauscht.

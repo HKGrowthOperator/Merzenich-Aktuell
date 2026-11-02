@@ -64,17 +64,17 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 echo "Daten (data/firmen-entwuerfe.json)\n";
 $d = ma_firmen_entwuerfe_daten();
 $firmen = (array) ($d['firmen'] ?? []);
-pruefe('fünf Unternehmen (24.10. und 28.10.2026)', array_map(fn($f) => $f['profil']['titel'], $firmen), ['Almera Clean', 'KBS Management GmbH', 'ASS Elektrotechnik', 'Merzlicht', 'AJ Sports']);
+pruefe('sechs Unternehmen (24.10., 28.10. und 02.11.2026)', array_map(fn($f) => $f['profil']['titel'], $firmen), ['Almera Clean', 'KBS Management GmbH', 'ASS Elektrotechnik', 'Merzlicht', 'AJ Sports', 'HK Growth Webstudio']);
 pruefe('frühere Betriebe zum Zurückziehen', array_column($d['frueher'] ?? [], 'slug'), ['baeckerei-wirtz-merzenich', 'hasberg-fenster-rollladentechnik-merzenich', 'porschen-media-girbelsrath']);
 // Redaktionelle Angaben (Profil, Beitrag, Hinweis); den Anzeigentext der Banner hat der Betreiber gewählt (28.10.2026).
 $text = json_encode(array_map(fn($f) => array_diff_key($f, ['anzeigen' => 1]), $firmen) + ['hinweis' => $d['hinweis'] ?? ''], JSON_UNESCAPED_UNICODE);
 pruefe('keine Wörter „Partner“, „Kunde“, „Sponsor“ über die Betriebe', preg_match('/partner|kunde|sponsor/i', $text), 0);
 pruefe('kein Gedankenstrich „—“', strpos($text, '—'), false);
-pruefe('Art je Firma: Anzeige, eigene Sache (Herausgeberin), Anzeige, Anzeige, Anzeige', array_map('ma_firmen_art', $firmen), ['anzeige', 'eigen', 'anzeige', 'anzeige', 'anzeige']);
-pruefe('nur KBS ist als Herausgeberin markiert', array_map(fn($f) => !empty($f['herausgeberin']), $firmen), [false, true, false, false, false]);
-pruefe('Werbekontingent: alle fünf 5 Anzeigen', array_map(fn($f) => $f['werbung']['max'] ?? null, $firmen), [5, 5, 5, 5, 5]);
-pruefe('je Firma zwei Anzeigen', array_map(fn($f) => count(ma_firmen_anzeigen($f)), $firmen), [2, 2, 2, 2, 2]);
-pruefe('KI-Bilder nur bei Merzlicht und AJ Sports', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[false, false], [false, false], [false, false], [true, true], [true, true]]);
+pruefe('Art je Firma: Anzeige, eigene Sache (Herausgeberin), sonst Anzeige (auch HK Growth, Vorgabe 02.11.2026)', array_map('ma_firmen_art', $firmen), ['anzeige', 'eigen', 'anzeige', 'anzeige', 'anzeige', 'anzeige']);
+pruefe('nur KBS ist als Herausgeberin markiert', array_map(fn($f) => !empty($f['herausgeberin']), $firmen), [false, true, false, false, false, false]);
+pruefe('Werbekontingent: alle sechs 5 Anzeigen', array_map(fn($f) => $f['werbung']['max'] ?? null, $firmen), [5, 5, 5, 5, 5, 5]);
+pruefe('je Firma zwei Anzeigen, HK Growth drei (Vorgabe Betreiber 02.11.2026)', array_map(fn($f) => count(ma_firmen_anzeigen($f)), $firmen), [2, 2, 2, 2, 2, 3]);
+pruefe('KI-Bilder nur bei Merzlicht und AJ Sports', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[false, false], [false, false], [false, false], [true, true], [true, true], [false, false, false]]);
 foreach ($firmen as $f) foreach (ma_firmen_anzeigen($f) as $i => $a) {
     $n = $f['profil']['titel'] . ' ' . ($i + 1);
     pruefe("$n: Überschrift, Satz, Zeile oben, Alt-Text, Nachweis", count(array_filter([$a['titel'] ?? '', $a['text'] ?? '', $a['zeile'] ?? '', $a['alt'] ?? '', $a['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 5);
@@ -100,6 +100,10 @@ foreach ($firmen as $f) {
 }
 pruefe('KBS: Hinweis „Herausgeberin“ in Profil, Anriss und Text', [str_contains($firmen[1]['profil']['text'], 'Herausgeberin von Merzenich Aktuell'), str_contains($firmen[1]['beitrag']['anriss'], 'Herausgeberin'), str_contains($firmen[1]['beitrag']['absaetze'][0], 'In eigener Sache')], [true, true, true]);
 pruefe('ASS Elektrotechnik: Sitz Düren, Meisterbetrieb, Logo und Beitrag', [$firmen[2]['profil']['ort'], str_contains($firmen[2]['profil']['branche'], 'Meisterbetrieb'), $firmen[2]['profil']['logo']['datei'], $firmen[2]['beitrag']['slug'] !== ''], ['Düren', true, 'ass-elektrotechnik.png', true]);
+// HK Growth Webstudio (02.11.2026): nur Webstudio, gekennzeichnet nur als „Anzeige“ (Vorgabe Betreiber), Klick auf die Website.
+pruefe('HK Growth Webstudio: Sitz Marienheide, Website als Ziel, Logo, Zeile ohne „in eigener Sache“', [$firmen[5]['profil']['ort'], $firmen[5]['profil']['website'], $firmen[5]['profil']['logo']['datei'], count(array_filter($firmen[5]['anzeigen'], fn($a) => stripos($a['zeile'], 'eigener Sache') !== false || isset($a['knopf'])))], ['Marienheide', 'https://website.hk-growthoperator.de/', 'hk-growth.png', 0]);
+// Vorgabe Betreiber 02.11.2026: einfach Werbung für eine neue Website, kein Hinweis, dass das Webstudio Merzenich Aktuell gebaut hat.
+pruefe('HK Growth Webstudio: Profil, Beitrag und Anzeigen ohne Merzenich Aktuell als Referenz', preg_match('/Merzenich Aktuell|Projekt des Webstudios|haben wir gebaut/u', json_encode($firmen[5], JSON_UNESCAPED_UNICODE)), 0);
 
 echo "Menü\n";
 pruefe('Untermenü nach dem Hauptmenü angemeldet (sonst 403)', ($GLOBALS['aktionen']['admin_menu'] ?? 0) > 10, true);
@@ -113,13 +117,13 @@ echo "Anlegen\n";
 $log = ma_firmen_entwuerfe_anlegen();
 $profile = array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_business');
 $beitraege = array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'post');
-pruefe('fünf Profile, drei Werbebeiträge (Merzlicht und AJ Sports ohne Beitrag)', [count($profile), count($beitraege)], [5, 3]);
+pruefe('sechs Profile, vier Werbebeiträge (Merzlicht und AJ Sports ohne Beitrag)', [count($profile), count($beitraege)], [6, 4]);
 pruefe('alles ist Entwurf', array_values(array_unique(array_column($GLOBALS['posts'], 'post_status'))), ['draft']);
 pruefe('keine Einwilligung gesetzt', array_filter(array_map(fn($p) => $p['meta_input']['ma_business_consent'] ?? null, $GLOBALS['posts'])), []);
 pruefe('kein Logo (Beitragsbild) gesetzt', array_filter(array_map(fn($p) => $p['_thumbnail_id'] ?? $p['meta_input']['_thumbnail_id'] ?? null, $GLOBALS['posts'])), []);
 pruefe('noch kein Werbebanner (kommt mit der Einwilligung)', count(array_filter($GLOBALS['posts'], fn($p) => $p['post_type'] === 'ma_ad')), 0);
 $alm = $GLOBALS['posts'][100]; $ab = $GLOBALS['posts'][101]; $kbs = $GLOBALS['posts'][102]; $kb = $GLOBALS['posts'][103]; $ass = $GLOBALS['posts'][104]; $merz = $GLOBALS['posts'][106];
-pruefe('Profil: E-Mail, Stand, als Kanal angelegt', [$alm['meta_input']['ma_business_email'], $alm['meta_input']['ma_business_stand'], $alm['meta_input']['ma_business_kanal']], ['info@almera-clean.de', '2026-10-28', '1']);
+pruefe('Profil: E-Mail, Stand, als Kanal angelegt', [$alm['meta_input']['ma_business_email'], $alm['meta_input']['ma_business_stand'], $alm['meta_input']['ma_business_kanal']], ['info@almera-clean.de', '2026-11-02', '1']);
 pruefe('Profil: Logo-Rechte offen', $alm['meta_input']['ma_business_logo_rechte'], 'offen');
 pruefe('Beitrag Almera: gesponsert als Anzeige, kein Testeintrag', [$ab['meta_input']['ma_gesponsert'], $ab['meta_input']['ma_gesponsert_art']], ['1', 'anzeige']);
 pruefe('Beitrag: mit dem Profil verknüpft, nicht auf der Startseite, Rubrik Wirtschaft', [$ab['meta_input']['ma_business_id'], $ab['meta_input']['ma_startseite_freigabe'], $ab['post_category']], ['100', 'nein', [7]]);
@@ -128,11 +132,11 @@ pruefe('KBS: Sitz Leverkusen, Herausgeberin, kein Ortsteil', [$kbs['meta_input']
 pruefe('KBS-Beitrag: Anzeige in eigener Sache, ohne Ortsteil', [$kb['meta_input']['ma_gesponsert_art'], isset($GLOBALS['terms'][103])], ['eigen', false]);
 pruefe('ASS: Sitz Düren, kein Ortsteil, Logo-Rechte offen', [$ass['meta_input']['ma_business_ort'] ?? '', $ass['meta_input']['ma_business_ortsteil'] ?? '', $ass['meta_input']['ma_business_logo_rechte'] ?? ''], ['Düren', '', 'offen']);
 pruefe('Merzlicht: nur Name, als Kanal, ohne Logo-Angaben', [$merz['post_title'], $merz['meta_input']['ma_business_nur_name'] ?? '', $merz['meta_input']['ma_business_kanal'] ?? '', isset($merz['meta_input']['ma_business_logo_rechte']), isset($merz['meta_input']['ma_business_adresse'])], ['Merzlicht', '1', '1', false, false]);
-pruefe('Rückmeldung je Profil und Beitrag', count($log), 8);
+pruefe('Rückmeldung je Profil und Beitrag', count($log), 10);
 $vorher = count($GLOBALS['posts']);
 $log2 = ma_firmen_entwuerfe_anlegen();
 pruefe('zweiter Lauf legt nichts doppelt an', count($GLOBALS['posts']), $vorher);
-pruefe('zweiter Lauf meldet „schon vorhanden“', count(array_filter($log2, fn($z) => str_contains($z, 'schon vorhanden'))), 8);
+pruefe('zweiter Lauf meldet „schon vorhanden“', count(array_filter($log2, fn($z) => str_contains($z, 'schon vorhanden'))), 10);
 $GLOBALS['posts'][101]['post_status'] = 'trash';
 $GLOBALS['posts'][101]['post_name'] .= '__trashed';
 ma_firmen_entwuerfe_anlegen();
