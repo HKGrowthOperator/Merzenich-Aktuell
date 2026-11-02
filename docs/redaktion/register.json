@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-02-claude-morgens.md",
-  "source_check_window": "02.11.2026 morgens (nachgeholt) Europe/Berlin; Live-Abrufe 11:30 bis 11:35 Uhr; Rohdaten vom 01.11. abends (älter als 12 Stunden, nicht verwendet).",
+  "latest_dossier": "dossiers/2026-11-02-mittags.md",
+  "source_check_window": "02.11.2026 mittags Europe/Berlin; Direktabrufe 11:57:20–11:58:52; zusätzliche Commons-Sichtung ca.11:58; tatsächliche Bereitstellung am bestätigten main-Commit/Ref samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10581,6 +10581,49 @@
         }
       ],
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
+    },
+    {
+      "id": "MA-EINBRUCH-BAHNSTR-31102026",
+      "priority": "P2",
+      "location_section": "Merzenich / Blaulicht",
+      "change_type": "neue Polizeimeldung",
+      "text_status": "T2",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-02-mittags.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-02T11:58:52+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Polizeimeldung 02.11.11:54: Einbruch am31.10. in Merzenicher Bahnstraße, Schmuck/Schlüsselbund gestohlen, Zeugenaufruf. Keine unabhängige Ereignisbestätigung; zwei weitere Quellen liefern ausschließlich Präventionskontext, daher T2. Commons-Symbolfoto Einbruchspuren gesichtet, nicht integriert; zeigt anderen Einbruchsversuch am Juwelierfenster. Keine Quellenausnahme.",
+      "research_sources": [
+        {
+          "url": "https://www.presseportal.de/blaulicht/pm/8/6382355",
+          "checked_at": "2026-11-02T11:57:52+01:00",
+          "role": "Ereignis"
+        },
+        {
+          "url": "https://www.presseportal.de/blaulicht/pm/8/6375977",
+          "checked_at": "2026-11-02T11:57:52+01:00",
+          "role": "gleicher Herausgeber, Präventionskontext"
+        },
+        {
+          "url": "https://www.polizei-beratung.de/themen-und-tipps/einbruch/",
+          "checked_at": "2026-11-02T11:58:52+01:00",
+          "role": "allgemeiner Präventionskontext, keine Fallbestätigung"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-11-02-mittags.md",
+      "latest_research_text_status": "T2",
+      "dossier_history": [
+        {
+          "date": "2026-11-02",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-02-mittags.md",
+          "heading": "MA-EINBRUCH-BAHNSTR-31102026"
+        }
+      ],
+      "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
     }
   ],
   "archive": {
@@ -11250,6 +11293,47 @@
         "dossiers/2026-11-01-mittags.md",
         "dossiers/2026-11-02-morgens.md"
       ]
+    },
+    {
+      "date": "2026-11-02",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-02-mittags.md",
+      "compared_with": "dossiers/2026-11-02-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-02-claude-morgens.md",
+      "base_commit": "875ce6592469d93306fc0bc5cb61cea8ff695f1b",
+      "implementation_commit": null,
+      "summary": "Neue T2-Karte Einbruch Bahnstraße: Polizeimeldung11:54, unabhängige Ereignisbestätigung fehlt. Kalenderkorrektur Amtsblatt-Abgabeschluss: sichtbare12Uhr nur Platzhalter, Quelle nennt03.11. ohne Uhrzeit. TTC-Ergebnisnachtrag sachlich ohne Korrektur; Unfallartikel ohne Korrektur. Frühstücksfrist5.11.11:30 im Amtsblatt bestätigt und bereits von Claude umgesetzt. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld15Uhr, genaue Dauer offen.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 1,
+      "articles_checked": 2,
+      "article_check_limit": "TTC-Nachtrag und aktuelle Verbands-/Vereinsdaten geprüft; historischer AndroCup nicht mehr vollständig im aktuellen Feed enthalten.",
+      "repository_article_files_read": 28,
+      "repository_event_files_read": 8,
+      "new_or_changed_events": 1,
+      "event_change_kind": "Korrektur einer unbelegten Ersatz-Uhrzeit",
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-02T11:56:31+01:00",
+      "source_check_window": "2026-11-02T11:57:20+01:00 bis2026-11-02T11:58:52+01:00; ergänzende Commons-Sichtung ca.11:58",
+      "deadline": "2026-11-02T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung und Fristeinhaltung am bestätigten main-Ref/Commit samt Zeitstempel nachweisen, nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "corrections": [
+        {
+          "slug": "amtsblatt-12-2026-abgabeschluss-2026-11-03",
+          "false_statement": "12:00 Uhr",
+          "correct_statement": "Abgabe03.11.2026, keine Uhrzeit in der Quelle",
+          "source": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3",
+          "source_location": "gedruckte S.1, Nächstes Erscheinungsdatum",
+          "retrieved_at": "2026-11-02T11:57:30+01:00",
+          "implemented": false
+        }
+      ],
+      "qa": "Alle vorhandenen Registerthemen und historischen Läufe einschließlich Claude-Notizen, Artikelpfaden und Umsetzungscommits unverändert erhalten. Neue Karte und Lauf angehängt. Nur neue Dossierdatei und Register; vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
