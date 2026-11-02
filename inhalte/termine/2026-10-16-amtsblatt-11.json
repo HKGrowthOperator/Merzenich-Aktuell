@@ -24,22 +24,32 @@
   {
    "slug": "martinszug-golzheim-2026-11-11",
    "titel": "Martinszug in Golzheim",
-   "start": "2026-11-11T17:45:00+01:00",
-   "ort": "Kirche Golzheim",
-   "adresse": "52399 Merzenich-Golzheim",
+   "start": "2026-11-11T17:30:00+01:00",
+   "ort": "Pfarrkirche Golzheim",
+   "adresse": "Buirer Straße, 52399 Merzenich-Golzheim",
    "ortsteil": "Golzheim",
    "kategorie": "Brauchtum",
-   "veranstalter": "Ortschaft Golzheim",
-   "beschreibung": "Start nach der Messe gegen 17.45 Uhr an der Kirche, danach zum Feuer und weiter zur Schule und zur Kita.",
+   "veranstalter": "Förderverein der KGS Johann-Kaspar-Kratz Golzheim (Vereinigung der Freunde und Förderer)",
+   "beschreibung": "Um 17.30 Uhr Wortgottesdienst in der Pfarrkirche Golzheim, um 18 Uhr Start des Martinszugs auf der Buirer Straße vor der Kirche, danach Ausklang an der Grundschule. So kündigt es der Förderverein der Grundschule an; das Amtsblatt nannte den Start gegen 17.45 Uhr.",
    "absaetze": [
-    "Der Martinszug in Golzheim startet am Mittwoch, 11. November 2026, nach der Messe gegen 17.45 Uhr an der Kirche.",
-    "Im Anschluss geht es zum Feuer und von dort zur Schule und zur Kita."
+    "Der Martinszug in Golzheim ist am Mittwoch, 11. November 2026. Nach Angaben des Fördervereins der Grundschule Golzheim beginnt der Abend um 17.30 Uhr mit einem Wortgottesdienst in der Pfarrkirche; um 18 Uhr startet der Zug auf der Buirer Straße vor der Kirche. Den Ausklang gibt es an der Katholischen Grundschule Golzheim.",
+    "Das Amtsblatt der Gemeinde vom 16. Oktober nennt den Start nach der Messe gegen 17.45 Uhr und den Weg zum Feuer, zur Schule und zur Kita. Die genaueren Zeiten stammen vom Förderverein als Veranstalter (Heimat-Info, 13. Oktober). Eingeladen sind ausdrücklich auch Gäste aus den umliegenden Orten."
    ],
    "quelle": {
-    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 9: „Martinszüge in der Gemeinde Merzenich“",
-    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=11",
+    "name": "Förderverein der KGS Golzheim, Veranstaltung auf Heimat-Info vom 13.10.2026 (Selbstauskunft des Veranstalters); Amtsblatt Merzenich Nr. 11 vom 16.10.2026, S. 9",
+    "url": "https://www.heimat-info.de/veranstaltungen/791f374e-0170-4d3b-ad22-74b3151101b0",
     "stand": "2026-11-02"
-   }
+   },
+   "links": [
+    [
+     "Ankündigung des Fördervereins auf Heimat-Info (13.10.2026)",
+     "https://www.heimat-info.de/veranstaltungen/791f374e-0170-4d3b-ad22-74b3151101b0"
+    ],
+    [
+     "Amtsblatt Merzenich 11/2026, „Martinszüge in der Gemeinde Merzenich“",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=11"
+    ]
+   ]
   },
   {
    "slug": "martinszug-merzenich-2026-11-12",
