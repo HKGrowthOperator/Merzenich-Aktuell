@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.3, Stand 02.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.4, Stand 02.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -107,7 +107,7 @@ Nach SCHREIBREGELN.md: **Standard (mindestens 800 Wörter, Ziel 900 bis 1.300, a
 2. `node deploy/kette.mjs` zweimal, `node deploy/kette.mjs --check` (muss „alle Generatoren unveraendert“ melden), `node qa/pruefung.mjs` (0 Fehler), `node deploy/register-pflege.mjs` (schreibt `offen.md`, mitcommitten), `node qa/redaktion-lauf.mjs` (0 Fehler; prüft Länge, drei Quellen, Prüfprotokoll und Bild), `node qa/eigenformulierung.mjs --datum <datum> --lauf <lauf>` (0 Fehler; nicht abrufbare Quellen ins Dossier).
 3. Bild: Meldet die Prüfung „Ortsansicht statt Themenbild“, Abschnitt 4a anwenden, dann Schritt 2 wiederholen.
 4. Commit mit Inhalten und allen erzeugten Dateien (`chatgpt-site/`, `wordpress-delivery/`, `wordpress/`, `docs/SHA256SUMS.txt`, `deploy/sitemap-stand.json`); Nachricht `redaktion: <Lauf> <TT.MM.> – <Themen>`; Attributionszeilen.
-5. `git fetch origin main`, `git rebase origin/main`, `git push -u origin main`. Nie `--force`.
+5. `git fetch origin main`, `git rebase origin/main`, `git push -u origin main`. Nie `--force`. **Sofort pushen** (Entscheidung Luis Kummer, 02.11.2026): Jeder fertige Arbeitsschritt (Inhalte, Korrektur, Termine, Dokumentation, Live-Nachweis) wird direkt committet und auf main gepusht, nicht gesammelt; danach `git status` sauber und `git log origin/main..main` leer.
 
 Abnahme: Push erfolgreich, `kette --check` auf dem gepushten Stand unverändert. Reaktionen: Prüfung rot → nur eigene Pakete korrigieren oder herausnehmen, nie Prüfung, Generator oder Workflow ändern. Rebase-Konflikt in generierten Dateien (häufig `docs/SHA256SUMS.txt`) → `git checkout --ours <datei>` (beim Rebase ist „ours“ der Stand von main), Kette erneut, `git add`, `git rebase --continue`. Uncommittete Arbeit vorher mit `git stash push -u` sichern. Konflikt in Inhalten → Abbruch, Bericht.
 
@@ -149,6 +149,7 @@ Nach [vorlagen/abschlussbericht.md](vorlagen/abschlussbericht.md) an Luis: Zahle
 - [ ] Unsichere Beiträge mit `zurFreigabe`/`entwurf` und Begründung im Dossier
 - [ ] Kette zweimal, `--check` unverändert, `qa/pruefung.mjs` 0 Fehler, `qa/redaktion-lauf.mjs --datum --lauf` 0 Fehler
 - [ ] Ein Inhalts- und ein Dokumentationscommit auf main gepusht (bei Nullfund nur der Dokumentationscommit), ohne Force
+- [ ] Lauf endet mit sauberem Arbeitsverzeichnis: `git status` ohne Änderungen, `git log origin/main..main` leer; nachträgliche Ergänzungen (z. B. Live-Nachweis) sofort als eigener Commit gepusht
 - [ ] Dossier, Register, `latest.md`, `offen.md` konsistent
 - [ ] Abgleich angestoßen, Nachweis in der Import-XML, Live-URLs geprüft
 - [ ] Bericht an Luis mit gezählten Zahlen
@@ -169,6 +170,7 @@ Ein Nullfund ist nur erlaubt, wenn keine Pflichtquelle eine belegbare Nachricht 
 | Kein ChatGPT-Dossier seit dem letzten Lauf | ohne Zulieferung arbeiten, im Dossier und Bericht vermerken |
 | Rohdaten älter als 12 Stunden | nur Live-Abrufe, im Dossier vermerken |
 | Commons nicht erreichbar | Bildklasse mit vorhandenem Motiv wählen; sonst Ortsansicht mit Hinweis im Dossier, Foto im nächsten Lauf nachholen |
+| Push scheitert (403, Netz) | bis zu vier Wiederholungen mit Pause; bei 403 `add_repo` mit Push-Zugriff; sonst Arbeit lokal sichern und im Bericht an erster Stelle nennen |
 | Sitzungs- oder Zeitlimit droht | bereits Geprüftes paketieren und pushen, Dossier knapp mit „abgebrochen nach Phase …“; nächster Lauf holt Phase 5 nach |
 | Lauf überschneidet sich mit einer zweiten Claude-Sitzung | vor jedem Commit `git fetch`; dieselbe Meldung nie in zwei Sitzungen; Register zeigt, wer was umgesetzt hat |
 | Widersprüchliche Quellen | beide Angaben benennen und `zurFreigabe`, oder Thema auf T2 |
@@ -188,5 +190,6 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
+| 3.4 | 02.11.2026 | Entscheidung Luis Kummer: Sofort pushen, jeder fertige Schritt direkt auf main, Lauf endet mit sauberem Arbeitsverzeichnis; Störung „Push scheitert“ |
 | 3.3 | 02.11.2026 | Entscheidung Luis Kummer: Mindesttakt (zwei Meldungen je Tag, eine je Lauf bei belegbarer Nachricht), Kurzmeldung 150 bis 350 Wörter mit einer offiziellen Quelle, offizielle Quelle genügt für Direktveröffentlichung (kein T2 wegen fehlender Zweitquelle), Nullfund nur mit Quellenprotokoll; `qa/redaktion-lauf.mjs` meldet 24 Stunden ohne Meldung |
 | 3.0 | 28.10.2026 | Entscheidungen Luis Kummer: Claude-Beiträge direkt online (fremde weiter über Freigabe), `zurFreigabe` bei Unsicherheit; Standard ab 450 Wörtern, drei Quellen; Bild muss zum Thema passen (Phase 4a, Pool `themen`); ChatGPT-Auftrag mit Korrekturen zuerst; Läufe 09:13 und 14:43 in frischer Sitzung |
