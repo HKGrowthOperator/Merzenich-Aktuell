@@ -468,11 +468,11 @@
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
-      "beschreibung": "Pfarrerin Karin Heucher feiert am Sonntag, 8. November, um 11 Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 10.30 Uhr gibt es vorher ein gemeinsames Frühstück, um telefonische Anmeldung wird gebeten.",
+      "beschreibung": "Pfarrerin Karin Heucher feiert am Sonntag, 8. November, um 11 Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 10.30 Uhr gibt es vorher ein gemeinsames Frühstück; dafür bittet die Gemeinde um Anmeldung bis Donnerstag, 5. November, 11.30 Uhr.",
       "absaetze": [
         "Die Evangelische Gemeinde lädt am Sonntag, 8. November 2026, um 11 Uhr zum Kindergottesdienst ins Gemeindehaus Merzenich ein. Es leitet Pfarrerin Karin Heucher.",
         "Der Termin steht im Veranstaltungskalender des Gemeindebezirks Merzenich/Niederzier der Evangelischen Gemeinde zu Düren.",
-        "Nachtrag vom 2. November 2026: Nach einer Ankündigung des Evangelischen Gemeindezentrums Merzenich auf Heimat-Info vom 1. November beginnt der Vormittag mit einem gemeinsamen Frühstück ab 10.30 Uhr, der Gottesdienst bleibt um 11 Uhr. Die Gemeinde bittet um telefonische Anmeldung bei der Küsterin; die Nummer steht in der Ankündigung. Eine Anmeldefrist ist nicht genannt."
+        "Nachtrag vom 2. November 2026: Vor dem Gottesdienst gibt es ab 10.30 Uhr ein gemeinsames Frühstück. Das kündigen die Rubrik der Evangelischen Gemeinde im Amtsblatt vom 16. Oktober und das Evangelische Gemeindezentrum Merzenich auf Heimat-Info (1. November) an. Wer mitfrühstücken möchte, meldet sich laut Amtsblatt bis Donnerstag, 5. November, 11.30 Uhr telefonisch bei der Küsterin an; die Nummer steht in beiden Ankündigungen. Der Gottesdienst beginnt unverändert um 11 Uhr."
       ],
       "links": [
         [
@@ -482,10 +482,14 @@
         [
           "Ankündigung „Kindergottesdienst mit Frühstück vorher“ (Heimat-Info, 01.11.2026)",
           "https://www.heimat-info.de/veranstaltungen/f60eafb6-d44f-4448-8edc-884932f1299b"
+        ],
+        [
+          "Amtsblatt Merzenich 11/2026, Mitteilungen der Evangelischen Gemeinde (S. 22)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=24"
         ]
       ],
       "quelle": {
-        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender; Frühstück laut Ankündigung des Ev. Gemeindezentrums Merzenich auf Heimat-Info vom 01.11.2026 (Selbstauskunft des Veranstalters)",
+        "name": "Evangelische Gemeinde zu Düren, Bezirk 7 Merzenich/Niederzier, Veranstaltungskalender; Frühstück und Anmeldefrist laut Amtsblatt Merzenich Nr. 11 vom 16.10.2026, S. 22, und Ankündigung des Ev. Gemeindezentrums Merzenich auf Heimat-Info vom 01.11.2026 (Selbstauskunft des Veranstalters)",
         "url": "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/",
         "stand": "2026-11-02"
       }
@@ -643,7 +647,7 @@
       "quelle": {
         "name": "Amtsblatt der Gemeinde Merzenich Nr. 8 vom 24.07.2026, „Kreis berät in Merzenich“",
         "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_08_2026-web.pdf",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -669,7 +673,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     },
     {
@@ -695,7 +699,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8",
-        "stand": "2026-10-05"
+        "stand": "2026-11-02"
       }
     }
   ]

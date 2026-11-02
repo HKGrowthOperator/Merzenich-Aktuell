@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Lesung mit Jennifer Teege in der Gesamtschule Niederzier/Merze
+ nich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:lesung-jennifer-teege-gesamtschule-niederzier-merzenich-2026-11-05@merz
+ enich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261105T170000Z
+SUMMARY:Lesung mit Jennifer Teege in der Gesamtschule Niederzier/Merzenich
+DESCRIPTION:Die Autorin Jennifer Teege liest am Donnerstag\, 5. November\, 
+ um 18 Uhr in der Aula der Gesamtschule in Niederzier aus ihrem Buch „Amo
+ n – Mein Großvater hätte mich erschossen“. Karten gibt es an der Abe
+ ndkasse für 3 Euro.\nVeranstalter: Gesamtschule Niederzier/Merzenich\nhtt
+ ps://merzenichaktuell.hk-growthoperator.de/termine/lesung-jennifer-teege-g
+ esamtschule-niederzier-merzenich-2026-11-05/
+LOCATION:Aula der Gesamtschule Niederzier/Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/lesung-jennifer-t
+ eege-gesamtschule-niederzier-merzenich-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

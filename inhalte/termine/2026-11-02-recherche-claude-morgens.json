@@ -1,0 +1,145 @@
+{
+ "hinweis": "Nachgeholte Kalenderpflege vom 02.11.2026 (Claude, Morgenlauf mit Nachholung der verlorenen Läufe seit 30.10.): neue Termine bis 60 Tage aus dem Veranstaltungskalender und den Mitteilungen im Amtsblatt Nr. 11 vom 16.10.2026, am 02.11.2026 an der Quelle gelesen. Keine Privatpersonen, keine privaten Telefonnummern.",
+ "termine": [
+  {
+   "slug": "kripo-info-gefahren-haustuer-girbelsrath-2026-11-05",
+   "titel": "Kripo informiert in Girbelsrath über Gefahren an der Haustür",
+   "start": "2026-11-05T15:00:00+01:00",
+   "ort": "Bürgerhaus Girbelsrath",
+   "adresse": "Altwerk 7, 52399 Merzenich",
+   "ortsteil": "Girbelsrath",
+   "kategorie": "Info",
+   "veranstalter": "Dorfwerkstatt Girbelsrath mit der Kriminalpolizei des Kreises Düren",
+   "beschreibung": "Die Dorfwerkstatt Girbelsrath lädt am Donnerstag, 5. November, um 15 Uhr ins Bürgerhaus am Altwerk 7 ein. Die Kriminalpolizei des Kreises Düren spricht über Sicherheit im Alltag und Tricks an der Haustür.",
+   "absaetze": [
+    "Am Donnerstag, 5. November 2026, informiert die Kriminalpolizei des Kreises Düren um 15 Uhr im Bürgerhaus Girbelsrath, Altwerk 7, über sicheres Leben im Alltag und Gefahren an der Haustür. Eingeladen hat die Dorfwerkstatt Girbelsrath; der Termin steht auch im Veranstaltungskalender der Gemeinde.",
+    "Nach der Vereinsmitteilung im Amtsblatt geht es um die Maschen von Banden, die es auf Ersparnisse, Schmuck, Wertpapiere oder Immobilien abgesehen haben, und darum, wie man sich davor schützt. Der Verein bittet um Anmeldung; die Telefonnummern stehen in der Mitteilung."
+   ],
+   "links": [
+    [
+     "Amtsblatt Merzenich 11/2026, Vereinsmitteilung der Dorfwerkstatt Girbelsrath",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=34"
+    ]
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, Veranstaltungskalender S. 23 und Vereinsmitteilung S. 32",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=25",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "lesung-jennifer-teege-gesamtschule-niederzier-merzenich-2026-11-05",
+   "titel": "Lesung mit Jennifer Teege in der Gesamtschule Niederzier/Merzenich",
+   "start": "2026-11-05T18:00:00+01:00",
+   "ort": "Aula der Gesamtschule Niederzier/Merzenich",
+   "adresse": "Am Weiherhof 22, 52382 Niederzier",
+   "ortsteil": "Umgebung",
+   "kategorie": "Kultur",
+   "veranstalter": "Gesamtschule Niederzier/Merzenich",
+   "beschreibung": "Die Autorin Jennifer Teege liest am Donnerstag, 5. November, um 18 Uhr in der Aula der Gesamtschule in Niederzier aus ihrem Buch „Amon – Mein Großvater hätte mich erschossen“. Karten gibt es an der Abendkasse für 3 Euro.",
+   "absaetze": [
+    "Die Gesamtschule Niederzier/Merzenich lädt am Donnerstag, 5. November 2026, um 18 Uhr zu einer Lesung in ihre Aula am Weiherhof 22 in Niederzier ein. Zu Gast ist die Autorin Jennifer Teege mit ihrem Buch „Amon – Mein Großvater hätte mich erschossen“.",
+    "Laut dem Plakat der Schule im Amtsblatt erfuhr Teege mit 38 Jahren zufällig, dass sie eine Enkelin des KZ-Kommandanten Amon Göth ist; ihr Buch handelt von Erinnerungskultur, Identität und Verantwortung. Der Eintritt an der Abendkasse kostet 3 Euro. Die Lesung steht auch im Veranstaltungskalender der Gemeinde Merzenich."
+   ],
+   "links": [
+    [
+     "Amtsblatt Merzenich 11/2026, Plakat der Gesamtschule (S. 15)",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=17"
+    ]
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, Plakat der Gesamtschule S. 15 und Veranstaltungskalender S. 23",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=17",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "inthronisation-kbf-girbelsrath-2026-11-08",
+   "titel": "Inthronisation der Tollitäten der Karnevals- und Bühnenfreunde Girbelsrath",
+   "start": "2026-11-08T11:11:00+01:00",
+   "ort": "Maarhalle Girbelsrath",
+   "adresse": "Maarweg, 52399 Merzenich",
+   "ortsteil": "Girbelsrath",
+   "kategorie": "Brauchtum",
+   "veranstalter": "Karnevals- und Bühnenfreunde Girbelsrath",
+   "beschreibung": "Die Karnevals- und Bühnenfreunde Girbelsrath setzen am Sonntag, 8. November, um 11:11 Uhr in der Maarhalle ihre Tollitäten für die neue Session ein. Der Eintritt ist frei.",
+   "absaetze": [
+    "Am Sonntag, 8. November 2026, um 11:11 Uhr inthronisieren die Karnevals- und Bühnenfreunde Girbelsrath in der Maarhalle ihre Tollitäten für die kommende Session, eine Kinderprinzessin und einen Prinzen. Der Verein lädt alle Karnevalsfreunde ein, der Eintritt ist frei.",
+    "Der Termin steht im Veranstaltungskalender der Gemeinde und in der Vereinsmitteilung der Karnevals- und Bühnenfreunde im Amtsblatt vom 16. Oktober."
+   ],
+   "links": [
+    [
+     "Amtsblatt Merzenich 11/2026, Vereinsmitteilung der Karnevals- und Bühnenfreunde",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=33"
+    ]
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, Vereinsmitteilung S. 31 und Veranstaltungskalender S. 23",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=33",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "senioren-nachmittag-ev-gemeindehaus-2026-11-18",
+   "titel": "Senioren-Nachmittag im Evangelischen Gemeindehaus",
+   "start": "2026-11-18T15:00:00+01:00",
+   "ende": "2026-11-18T17:00:00+01:00",
+   "ort": "Evangelisches Gemeindehaus Merzenich",
+   "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Senioren",
+   "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
+   "beschreibung": "Die Evangelische Gemeinde lädt am Mittwoch, 18. November, von 15 bis 17 Uhr zum Senioren-Nachmittag ins Gemeindehaus an der Severin-Böhr-Straße ein. Weitere Interessierte sind willkommen.",
+   "absaetze": [
+    "Am Mittwoch, 18. November 2026, trifft sich der Senioren-Nachmittag der Evangelischen Gemeinde von 15 bis 17 Uhr im Gemeindehaus an der Severin-Böhr-Straße 15 in Merzenich. Laut Ankündigung im Amtsblatt ist der Kreis offen für weitere Interessierte.",
+    "Der Termin steht in der Rubrik der Evangelischen Gemeinde im Amtsblatt vom 16. Oktober; der Online-Kalender des Gemeindebezirks führt nur die Gottesdienste."
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, Mitteilungen der Evangelischen Gemeinde S. 22",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=24",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "breakdance-workshop-funky-monkeys-weinberghalle-2026-12-19",
+   "titel": "Hip-Hop- und Breakdance-Workshops für Kinder in der Weinberghalle",
+   "start": "2026-12-19T16:00:00+01:00",
+   "ende": "2026-12-19T18:00:00+01:00",
+   "ort": "Weinberghalle Merzenich",
+   "adresse": "52399 Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Jugend",
+   "veranstalter": "KOMM Düren (SWD.KOMMedy.ABENDE) mit den Stadtwerken Düren",
+   "beschreibung": "Am Samstag, 19. Dezember, bieten The Funky Monkeys in der Weinberghalle zwei Breakdance-Workshops an: von 16 bis 17 Uhr für Kinder von 5 bis 7 Jahren, von 17 bis 18 Uhr für 8- bis 11-Jährige. Die Teilnahme kostet 5 Euro.",
+   "absaetze": [
+    "Einen Tag vor ihrer Weihnachtsshow laden The Funky Monkeys und die Stadtwerke Düren als Mitveranstalter am Samstag, 19. Dezember 2026, zu zwei Hip-Hop- und Breakdance-Workshops in die Weinberghalle Merzenich ein. Von 16 bis 17 Uhr sind Kinder von 5 bis 7 Jahren dran, von 17 bis 18 Uhr Kinder von 8 bis 11 Jahren.",
+    "Die Teilnahme kostet 5 Euro pro Person; Tickets gibt es im KOMM-Büro in Düren oder online. Mitbringen sollen die Kinder bequeme Sportkleidung."
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, „Weihnachtsferien mit Action: The Funky Monkeys kommen nach Merzenich“, S. 33",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=35",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "funky-monkeys-xmas-fun-weinberghalle-2026-12-20",
+   "titel": "Weihnachtsshow „XMAS FUN“ mit The Funky Monkeys in der Weinberghalle",
+   "start": "2026-12-20T16:00:00+01:00",
+   "ort": "Weinberghalle Merzenich",
+   "adresse": "52399 Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Kultur",
+   "veranstalter": "KOMM Düren (SWD.KOMMedy.ABENDE) mit den Stadtwerken Düren",
+   "beschreibung": "Die Berliner Akrobatik- und Tanzgruppe The Funky Monkeys zeigt am Sonntag, 20. Dezember, um 16 Uhr ihre Weihnachtsshow „XMAS FUN“ in der Weinberghalle. Karten kosten 26 Euro, ermäßigt 23 Euro, für Kinder bis 12 Jahre 15 Euro.",
+   "absaetze": [
+    "Im Rahmen der Reihe SWD.KOMMedy.ABENDE gastiert die Berliner Akrobatik- und Tanzgruppe The Funky Monkeys am Sonntag, 20. Dezember 2026, um 16 Uhr mit der Weihnachtsshow „XMAS FUN“ in der Merzenicher Weinberghalle. Angekündigt sind Breakdance, Akrobatik und Comedy für die ganze Familie.",
+    "Karten kosten laut Amtsblatt 26 Euro für Erwachsene, 23 Euro ermäßigt (unter anderem Schülerinnen und Schüler ab 13 Jahren, Auszubildende und Studierende) und 15 Euro für Kinder bis 12 Jahre, jeweils zuzüglich Gebühren; an der Abendkasse kommen 3 Euro hinzu. Tickets gibt es im KOMM-Büro in Düren und online."
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, „Weihnachtsferien mit Action: The Funky Monkeys kommen nach Merzenich“, S. 33",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=35",
+    "stand": "2026-11-02"
+   }
+  }
+ ]
+}

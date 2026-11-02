@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Weihnachtsshow „XMAS FUN“ mit The Funky Monkeys in der Wei
+ nberghalle
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:funky-monkeys-xmas-fun-weinberghalle-2026-12-20@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261220T150000Z
+SUMMARY:Weihnachtsshow „XMAS FUN“ mit The Funky Monkeys in der Weinberg
+ halle
+DESCRIPTION:Die Berliner Akrobatik- und Tanzgruppe The Funky Monkeys zeigt 
+ am Sonntag\, 20. Dezember\, um 16 Uhr ihre Weihnachtsshow „XMAS FUN“ i
+ n der Weinberghalle. Karten kosten 26 Euro\, ermäßigt 23 Euro\, für Kin
+ der bis 12 Jahre 15 Euro.\nVeranstalter: KOMM Düren (SWD.KOMMedy.ABENDE) 
+ mit den Stadtwerken Düren\nhttps://merzenichaktuell.hk-growthoperator.de/
+ termine/funky-monkeys-xmas-fun-weinberghalle-2026-12-20/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/funky-monkeys-xma
+ s-fun-weinberghalle-2026-12-20/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

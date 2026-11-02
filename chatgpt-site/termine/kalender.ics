@@ -465,6 +465,23 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/aktionstag-persoe
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:kripo-info-gefahren-haustuer-girbelsrath-2026-11-05@merzenich-aktuell.d
+ e
+DTSTAMP:20261102T060000Z
+DTSTART:20261105T140000Z
+SUMMARY:Kripo informiert in Girbelsrath über Gefahren an der Haustür
+DESCRIPTION:Die Dorfwerkstatt Girbelsrath lädt am Donnerstag\, 5. November
+ \, um 15 Uhr ins Bürgerhaus am Altwerk 7 ein. Die Kriminalpolizei des Kre
+ ises Düren spricht über Sicherheit im Alltag und Tricks an der Haustür.
+ \nVeranstalter: Dorfwerkstatt Girbelsrath mit der Kriminalpolizei des Krei
+ ses Düren\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kripo-in
+ fo-gefahren-haustuer-girbelsrath-2026-11-05/
+LOCATION:Bürgerhaus Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kripo-info-gefahr
+ en-haustuer-girbelsrath-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:rechnungspruefungsausschuss-2026-11-05@merzenich-aktuell.de
 DTSTAMP:20261102T060000Z
 DTSTART:20261105T170000Z
@@ -476,6 +493,23 @@ DESCRIPTION:Der Rechnungsprüfungsausschuss kommt am Donnerstag\, 5. Novemb
 LOCATION:Ratssaal der Gemeinde Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/rechnungspruefung
  sausschuss-2026-11-05/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:lesung-jennifer-teege-gesamtschule-niederzier-merzenich-2026-11-05@merz
+ enich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261105T170000Z
+SUMMARY:Lesung mit Jennifer Teege in der Gesamtschule Niederzier/Merzenich
+DESCRIPTION:Die Autorin Jennifer Teege liest am Donnerstag\, 5. November\, 
+ um 18 Uhr in der Aula der Gesamtschule in Niederzier aus ihrem Buch „Amo
+ n – Mein Großvater hätte mich erschossen“. Karten gibt es an der Abe
+ ndkasse für 3 Euro.\nVeranstalter: Gesamtschule Niederzier/Merzenich\nhtt
+ ps://merzenichaktuell.hk-growthoperator.de/termine/lesung-jennifer-teege-g
+ esamtschule-niederzier-merzenich-2026-11-05/
+LOCATION:Aula der Gesamtschule Niederzier/Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/lesung-jennifer-t
+ eege-gesamtschule-niederzier-merzenich-2026-11-05/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -548,13 +582,30 @@ DTSTART:20261108T100000Z
 SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
 DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
   Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 
- 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\, um telefonische Anm
- eldung wird gebeten.\nVeranstalter: Evangelische Gemeinde zu Düren\, Bezi
- rk Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/kinder
- gottesdienst-ev-gemeindehaus-2026-11-08/
+ 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\; dafür bittet die G
+ emeinde um Anmeldung bis Donnerstag\, 5. November\, 11.30 Uhr.\nVeranstalt
+ er: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://merzenicha
+ ktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeindehaus-202
+ 6-11-08/
 LOCATION:Evangelisches Gemeindehaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
  t-ev-gemeindehaus-2026-11-08/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:inthronisation-kbf-girbelsrath-2026-11-08@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261108T101100Z
+SUMMARY:Inthronisation der Tollitäten der Karnevals- und Bühnenfreunde Gi
+ rbelsrath
+DESCRIPTION:Die Karnevals- und Bühnenfreunde Girbelsrath setzen am Sonntag
+ \, 8. November\, um 11:11 Uhr in der Maarhalle ihre Tollitäten für die n
+ eue Session ein. Der Eintritt ist frei.\nVeranstalter: Karnevals- und Büh
+ nenfreunde Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/term
+ ine/inthronisation-kbf-girbelsrath-2026-11-08/
+LOCATION:Maarhalle Girbelsrath
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/inthronisation-kb
+ f-girbelsrath-2026-11-08/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -710,7 +761,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pluriversum-gesamtschule-merzenich-2026-11-17@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261117T171500Z
 SUMMARY:„Pluriversum“: Impulse zu Klimaschutz und Zusammenhalt
 DESCRIPTION:Zweite Ausgabe des „Pluriversum“ mit entwicklungspolitische
@@ -723,8 +774,25 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:senioren-nachmittag-ev-gemeindehaus-2026-11-18@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261118T140000Z
+DTEND:20261118T160000Z
+SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
+DESCRIPTION:Die Evangelische Gemeinde lädt am Mittwoch\, 18. November\, vo
+ n 15 bis 17 Uhr zum Senioren-Nachmittag ins Gemeindehaus an der Severin-B
+ öhr-Straße ein. Weitere Interessierte sind willkommen.\nVeranstalter: Ev
+ angelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://merzenichaktuell
+ .hk-growthoperator.de/termine/senioren-nachmittag-ev-gemeindehaus-2026-11-
+ 18/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/senioren-nachmitt
+ ag-ev-gemeindehaus-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:mental-load-online-vortrag-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261027T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261118T170000Z
 DTEND:20261118T183000Z
 SUMMARY:Online-Vortrag „Mental Load“ des Kreises Düren
@@ -740,7 +808,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261119T090000Z
 DTEND:20261119T110000Z
 SUMMARY:Sprechstunde der Betreuungsbehörde im Rathaus
@@ -756,7 +824,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261119T170000Z
 SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
 DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
@@ -770,7 +838,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261121T120000Z
 DTEND:20261121T160000Z
 SUMMARY:Tag der Modelleisenbahn im Wasserturm
@@ -786,7 +854,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:seniorenweihnacht-kreis-dueren-2026-11-24@merzenich-aktuell.de
-DTSTAMP:20261025T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261124T140000Z
 DTEND:20261124T163000Z
 SUMMARY:13. Seniorenweihnacht des Kreises Düren
@@ -802,7 +870,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261126T170000Z
 SUMMARY:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
 DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
@@ -816,7 +884,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261016T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261128T130000Z
 SUMMARY:Adventmarkt im Heimatmuseum
 DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
@@ -830,7 +898,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
-DTSTAMP:20261025T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261203T160000Z
 SUMMARY:8. Sitzung des Gemeinderates
 DESCRIPTION:Der Gemeinderat tagt am Donnerstag\, 3. Dezember\, um 17 Uhr im
@@ -840,6 +908,41 @@ DESCRIPTION:Der Gemeinderat tagt am Donnerstag\, 3. Dezember\, um 17 Uhr im
 LOCATION:Rathaus Merzenich\, Ratssaal
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/gemeinderat-sitzu
  ng-2026-12-03/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:breakdance-workshop-funky-monkeys-weinberghalle-2026-12-19@merzenich-ak
+ tuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261219T150000Z
+DTEND:20261219T170000Z
+SUMMARY:Hip-Hop- und Breakdance-Workshops für Kinder in der Weinberghalle
+DESCRIPTION:Am Samstag\, 19. Dezember\, bieten The Funky Monkeys in der Wei
+ nberghalle zwei Breakdance-Workshops an: von 16 bis 17 Uhr für Kinder von
+  5 bis 7 Jahren\, von 17 bis 18 Uhr für 8- bis 11-Jährige. Die Teilnahme
+  kostet 5 Euro.\nVeranstalter: KOMM Düren (SWD.KOMMedy.ABENDE) mit den St
+ adtwerken Düren\nhttps://merzenichaktuell.hk-growthoperator.de/termine/br
+ eakdance-workshop-funky-monkeys-weinberghalle-2026-12-19/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/breakdance-worksh
+ op-funky-monkeys-weinberghalle-2026-12-19/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:funky-monkeys-xmas-fun-weinberghalle-2026-12-20@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261220T150000Z
+SUMMARY:Weihnachtsshow „XMAS FUN“ mit The Funky Monkeys in der Weinberg
+ halle
+DESCRIPTION:Die Berliner Akrobatik- und Tanzgruppe The Funky Monkeys zeigt 
+ am Sonntag\, 20. Dezember\, um 16 Uhr ihre Weihnachtsshow „XMAS FUN“ i
+ n der Weinberghalle. Karten kosten 26 Euro\, ermäßigt 23 Euro\, für Kin
+ der bis 12 Jahre 15 Euro.\nVeranstalter: KOMM Düren (SWD.KOMMedy.ABENDE) 
+ mit den Stadtwerken Düren\nhttps://merzenichaktuell.hk-growthoperator.de/
+ termine/funky-monkeys-xmas-fun-weinberghalle-2026-12-20/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/funky-monkeys-xma
+ s-fun-weinberghalle-2026-12-20/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

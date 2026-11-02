@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-25T22:30:00+01:00",
+  "generated": "2026-11-02T11:43:00+01:00",
   "source": "FUSSBALL.DE",
   "sourceUrl": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
   "lastMatch": {
@@ -95,6 +95,17 @@
     },
     {
       "place": 8,
+      "team": "SV SW Huchem-Stammeln",
+      "played": 9,
+      "wins": 4,
+      "draws": 1,
+      "losses": 4,
+      "goals": "18:14",
+      "diff": 4,
+      "points": 13
+    },
+    {
+      "place": 9,
       "team": "SV Siersdorf",
       "played": 9,
       "wins": 3,
@@ -103,17 +114,6 @@
       "goals": "10:25",
       "diff": -15,
       "points": 11
-    },
-    {
-      "place": 9,
-      "team": "SV SW Huchem-Stammeln",
-      "played": 8,
-      "wins": 3,
-      "draws": 1,
-      "losses": 4,
-      "goals": "14:13",
-      "diff": 1,
-      "points": 10
     },
     {
       "place": 10,
@@ -129,12 +129,12 @@
     {
       "place": 11,
       "team": "JSV Frenz",
-      "played": 9,
+      "played": 10,
       "wins": 2,
       "draws": 1,
-      "losses": 6,
-      "goals": "21:27",
-      "diff": -6,
+      "losses": 7,
+      "goals": "22:31",
+      "diff": -9,
       "points": 7
     },
     {

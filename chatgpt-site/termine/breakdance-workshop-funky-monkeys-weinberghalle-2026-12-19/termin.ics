@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hip-Hop- und Breakdance-Workshops für Kinder in der Weinbergh
+ alle
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:breakdance-workshop-funky-monkeys-weinberghalle-2026-12-19@merzenich-ak
+ tuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261219T150000Z
+DTEND:20261219T170000Z
+SUMMARY:Hip-Hop- und Breakdance-Workshops für Kinder in der Weinberghalle
+DESCRIPTION:Am Samstag\, 19. Dezember\, bieten The Funky Monkeys in der Wei
+ nberghalle zwei Breakdance-Workshops an: von 16 bis 17 Uhr für Kinder von
+  5 bis 7 Jahren\, von 17 bis 18 Uhr für 8- bis 11-Jährige. Die Teilnahme
+  kostet 5 Euro.\nVeranstalter: KOMM Düren (SWD.KOMMedy.ABENDE) mit den St
+ adtwerken Düren\nhttps://merzenichaktuell.hk-growthoperator.de/termine/br
+ eakdance-workshop-funky-monkeys-weinberghalle-2026-12-19/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/breakdance-worksh
+ op-funky-monkeys-weinberghalle-2026-12-19/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

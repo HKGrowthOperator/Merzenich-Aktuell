@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
+DTSTAMP:20261102T060000Z
 DTSTART:20261119T170000Z
 SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
 DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
