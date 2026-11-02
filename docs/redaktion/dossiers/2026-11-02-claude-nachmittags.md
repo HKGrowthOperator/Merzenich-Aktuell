@@ -74,6 +74,19 @@ Arbeitsliste `node qa/redaktion-lauf.mjs --kalender`: alle Termine der nächsten
 | Abgabeschluss Amtsblatt vom 11.12., 1.12. | amtsblatt-abgabeschluss-2026-12-01 | neu | Amtsblatt 11/2026 S. 1, „Weitere Abgabetermine“ | 2026-11-02 |
 | Abgabeschluss Amtsblatt vom 8.1.2027, 29.12. | amtsblatt-abgabeschluss-2026-12-29 | neu | Amtsblatt 11/2026 S. 1, „Weitere Abgabetermine“ | 2026-11-02 |
 
+**Heimat-Info-Veranstaltungskalender** (Pflichtquelle seit CLAUDE-LAUF Phase 1a, Schritt 2a; [Liste](https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen) um 19:25 Uhr vollständig gelesen, 6 kommende Einträge, jede Detailseite geöffnet):
+
+| Eintrag (Heimat-Info) | Slug bei uns | Aktion | Befund | Stand |
+|---|---|---|---|---|
+| Kindergottesdienst mit Frühstück, 8.11. 10:30 | kindergottesdienst-ev-gemeindehaus-2026-11-08 | bestätigt | Frühstück 10.30, Gottesdienst 11 Uhr, wie bei uns | 2026-11-02 |
+| Sankt Martinsumzug Golzheim, 11.11. 17:30 | martinszug-golzheim-2026-11-11 | geändert | Förderverein der Grundschule (Veranstalter): 17.30 Uhr Wortgottesdienst, 18 Uhr Start auf der Buirer Straße, Ausklang an der Schule; bisher 17.45 Uhr laut Amtsblatt, beide Angaben im Text benannt | 2026-11-02 |
+| Gottesdienst mit Abendmahl, 15.11. 10:00 | ev-gottesdienst-gedenken-verstorbene-2026-11-15 | bestätigt | wie bei uns | 2026-11-02 |
+| Pluriversum, 17.11. 18:15 | pluriversum-gesamtschule-merzenich-2026-11-17 | bestätigt | Text des Gemeindebeitrags: „Aula der Gesamtschule an der Schulstraße in Merzenich“, wie Amtsblatt und Bestand; das Ortsfeld des Eintrags nennt „Aula der Gesamtschule Niederzier“ (Widerspruch im Eintrag selbst, Text und Amtsblatt gehen vor) | 2026-11-02 |
+| Gottesdienst mit Abendmahl, 22.11. 10:00, Bürgerhaus Niederzier | gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22 | Entwurf (Automatik), wartet auf Freigabe | `inhalte/termine/2026-11-02-heimatinfo-automatik.json`, kein zweiter Termin | – |
+| Weihnachtsfeier Schützenbruderschaft Morschenich, 6.12. 15:30, BWZ | weihnachtsfeier-morschenich-2026-12-06 | Entwurf (Automatik), wartet auf Freigabe | ohne Beschreibung, Eintrag vom 05.11.2025; ob öffentlich, ist offen | – |
+
+Commit `08305d7`.
+
 Offene Hinweise „nachpruefen“: 1 (VHS-Vortrag 10.11., Website HTTP 404).
 
 ## 7. QA, Commit, Abgleich
