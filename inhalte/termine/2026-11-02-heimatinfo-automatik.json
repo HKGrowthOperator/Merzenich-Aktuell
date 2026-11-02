@@ -1,0 +1,45 @@
+{
+  "hinweis": "Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs). Alle Termine sind Entwürfe (\"entwurf\": true) und erscheinen erst nach Freigabe der Redaktion. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.",
+  "termine": [
+    {
+      "slug": "gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22",
+      "titel": "Gottesdienst mit Abendmahl - Gedenken an Verstorbene",
+      "start": "2026-11-22T10:00:00+01:00",
+      "ort": "Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier",
+      "adresse": "Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier",
+      "ortsteil": "Umgebung",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am Sonntag, 22. November, 10:00 Uhr. Ort: Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier.",
+      "absaetze": [
+        "Evangelisches Gemeindezentrum Merzenich lädt am Sonntag, 22. November 2026, 10:00 Uhr zu „Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ ein. Ort: Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier.",
+        "Aus der Ankündigung im Veranstaltungskalender: „Wir gedenken der Verstorbenen und alle sind zum Abendmahl eingeladen.“"
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717",
+        "stand": "2026-11-02"
+      },
+      "entwurf": true
+    },
+    {
+      "slug": "weihnachtsfeier-morschenich-2026-12-06",
+      "titel": "Weihnachtsfeier",
+      "start": "2026-12-06T15:30:00+01:00",
+      "ort": "BWZ",
+      "ortsteil": "Morschenich",
+      "kategorie": "Vereine",
+      "veranstalter": "St. Lambertus Schützenbruderschaft Morschenich e.V.",
+      "beschreibung": "„Weihnachtsfeier“ am Sonntag, 6. Dezember, 15:30 Uhr. Ort: BWZ.",
+      "absaetze": [
+        "St. Lambertus Schützenbruderschaft Morschenich e.V. lädt am Sonntag, 6. Dezember 2026, 15:30 Uhr zu „Weihnachtsfeier“ ein. Ort: BWZ."
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2",
+        "stand": "2026-11-02"
+      },
+      "entwurf": true
+    }
+  ]
+}

@@ -13,7 +13,8 @@
  *                   (Text, Bild-URLs mit Bildhinweis)
  *   gemeinde.json   "Aktuelles" der Gemeinde Merzenich + Beitraege
  *   schulen.json    Aktuelles der Grundschulen (KGS Merzenich, KGS Golzheim)
- *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen)
+ *   heimatinfo.json Heimat-Info-App der Gemeinde (Gemeinde, Vereine, Schulen; dazu der
+ *                   Veranstaltungskalender: kalender + veranstaltungen)
  *   jobs.json       Offizielle/regionale Stellenquellen (Gemeinde, Kreis Düren, jobsDN)
  *   trauer.json     Trauer-Recherchequellen; keine automatische Veröffentlichung von Namen
  *   bilder/         Fotos der Polizei zu Meldungen aus inhalte/meldungen
@@ -154,7 +155,13 @@ const QUELLEN = {
     const ziele = [...new Set(listen.flatMap((s) => (s.links || []).map((l) => l.href.split('#')[0])).filter((h) => /^https:\/\/www\.heimat-info\.de\/beitraege\/[0-9a-f-]{36}$/.test(h)))].slice(0, 200);
     const details = [];
     for (const u of ziele) details.push(await seite(u));
-    return { organisationen: orgs, listen, details };
+    // Veranstaltungskalender der Gemeinde (02.11.2026): Liste und je Termin die Detailseite
+    // (Titel, Veranstalter, Beginn, Ort, Text); daraus macht deploy/automatik-termine.mjs Entwürfe.
+    const kalender = await seite(`${basis}/veranstaltungen`);
+    const termine = [...new Set((kalender.links || []).map((l) => l.href.split('#')[0]).filter((h) => /^https:\/\/www\.heimat-info\.de\/veranstaltungen\/[0-9a-f-]{36}$/.test(h)))].slice(0, 60);
+    const veranstaltungen = [];
+    for (const u of termine) veranstaltungen.push(await seite(u));
+    return { organisationen: orgs, listen, details, kalender, veranstaltungen };
   },
   schulen: () => listeMitDetails({
     listen: ['https://kgs.gemeinde-merzenich.de/aktuelles/index.php', 'https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php'],

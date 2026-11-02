@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22@merzenich
+ -aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART:20261122T090000Z
+SUMMARY:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
+DESCRIPTION:„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am S
+ onntag\, 22. November\, 10:00 Uhr. Ort: Bürgerhaus Niederzier\, Kölnstra
+ ße 46\, 52382 Niederzier.\nVeranstalter: Evangelisches Gemeindezentrum Me
+ rzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/gottesdiens
+ t-mit-abendmahl-gedenken-an-verstorbene-2026-11-22/
+LOCATION:Bürgerhaus Niederzier\, Kölnstraße 46\, 52382 Niederzier
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/gottesdienst-mit-
+ abendmahl-gedenken-an-verstorbene-2026-11-22/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

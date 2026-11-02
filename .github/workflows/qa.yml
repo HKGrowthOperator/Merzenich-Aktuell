@@ -85,11 +85,12 @@ jobs:
       - name: Freigabe-, Partner-, Kommentar- und Sport-Logik pruefen
         run: for t in qa/wordpress/*-test.php; do echo "== $t"; php "$t" || exit 1; done
 
-      - name: Feuerwehr- und Umkreis-Automatik mit echten Rohdaten, Werbe-Rotation pruefen
+      - name: Feuerwehr-, Umkreis- und Termin-Automatik mit echten Rohdaten, Werbe-Rotation pruefen
         run: |
           node qa/automatik-feuerwehr-test.mjs
           node qa/automatik-umkreis-test.mjs
           node qa/werbung-rotation-test.mjs
+          node qa/automatik-termine-test.mjs
 
       - name: "Kommentardienst: Vorab-Freigabe und Freigabe-Mail"
         run: node qa/dienst/kommentare.test.mjs
