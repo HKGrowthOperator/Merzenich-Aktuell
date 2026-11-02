@@ -46,6 +46,9 @@ pruefe('Titz: Ort vor der Schlagzeile, Eintrag unter Kreis Düren', [eintragBaue
 const juelich = { ...merzenich[2], titel: 'Jülich: Einbruch in Wohnhaus', vorspann: 'Jülich (ots) - x' };
 pruefe('Steht der Ort schon in der Schlagzeile, kein doppelter Ort', eintragBauen(juelich).eintrag.titel, 'Jülich: Einbruch in Wohnhaus');
 pruefe('Andere Dienststelle (Polizei Aachen) wird übersprungen', /Dienststelle/.test(eintragBauen({ ...nachbar, dienststelle: 'Polizei Aachen' }).grund), true);
+// Gesamtliste nr/8 seit Ende Oktober 2026: Ort statt Dienststelle in der Zeile nach dem Datum.
+pruefe('Neues Listenformat: Ort statt Dienststelle, Einzelmeldung pm/8 wird angelegt', eintragBauen({ ...nachbar, dienststelle: 'Niederzier' }).eintrag?.quelle, 'Polizei Düren');
+pruefe('Neues Listenformat: Ort mit fremder Einzelmeldung (nicht pm/8) wird übersprungen', /Dienststelle/.test(eintragBauen({ ...nachbar, dienststelle: 'Niederzier', url: 'https://www.presseportal.de/blaulicht/pm/11559/123' }).grund || ''), true);
 pruefe('Ohne Link übersprungen', /Link/.test(eintragBauen({ ...nachbar, url: '' }).grund), true);
 
 console.log('\nBestand');

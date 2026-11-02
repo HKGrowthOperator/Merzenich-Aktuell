@@ -119,12 +119,16 @@ export function meldungenLesen(polizei) {
 export function eintragBauen(m) {
   if (!m.url) return { grund: 'kein Link zur Einzelmeldung' };
   if (!m.titel || m.titel.length < 8) return { grund: 'keine Schlagzeile' };
-  if (!/^Polizei Düren$/.test(m.dienststelle)) return { grund: `Dienststelle „${m.dienststelle}“ (nur Polizei Düren)` };
+  // Seit Ende Oktober 2026 nennt die Gesamtliste der Polizei Düren (presseportal nr/8) in dieser Zeile den Ort
+  // („Jülich“, „Düren“) statt der Dienststelle; die Ortslisten nennen weiter „Polizei Düren“. Deshalb: „Polizei Düren“
+  // oder eine Ortsangabe mit Einzelmeldung der Dienststelle 8 (Polizei Düren). Andere Dienststellen bleiben draußen.
+  const istPolizeiDueren = m.dienststelle === 'Polizei Düren' || (!/^Polizei\b/.test(m.dienststelle) && /\/blaulicht\/pm\/8\/\d+/.test(m.url));
+  if (!istPolizeiDueren) return { grund: `Dienststelle „${m.dienststelle}“ (nur Polizei Düren)` };
   const o = umkreisOrt(orteAusVorspann(m.vorspann));
   if (o.grund) return o;
   // Steht der Ort schon in der Schlagzeile, kein Praefix.
   const praefix = o.praefix && new RegExp(o.praefix.slice(0, -2).split('/').join('|'), 'i').test(m.titel) ? '' : o.praefix;
-  return { eintrag: { ort: o.ort, rubrik: 'Blaulicht', titel: `${praefix}${m.titel}`, url: m.url, datum: m.datum, quelle: m.dienststelle } };
+  return { eintrag: { ort: o.ort, rubrik: 'Blaulicht', titel: `${praefix}${m.titel}`, url: m.url, datum: m.datum, quelle: 'Polizei Düren' } };
 }
 
 /* ------------------------------------------------------------ Bestand */
