@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.1 · live: 21.25.0 / 1.40.0, Selbst-Update aktiv (Historie unten)
+2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.1 · live: 21.25.0 / 1.40.1, Selbst-Update aktiv (Historie unten)
 
 ## Neu am 02.11.2026: Plugin 1.40.1, Platz wechselt beim Eintritt ins Bild
 
-**Stand live:** über das Selbst-Update (erste Version auf diesem Weg).
+**Stand live:** am 02.11.2026 um 16:12 Uhr vom Selbst-Update installiert (erste Version auf diesem Weg; `/?ma_api=update-status`: `"plugin":"1.40.1"`, Schritt „plugin 1.40.1 installiert“), ausgelöst über `/?ma_api=update-anstoss`, nachdem die CI `release.json` geschrieben hatte. Nachweis: `ad-rotation.js?ver=1.40.1` im Quelltext. Live 60 s gemessen: 1440 px 58 Wechsel, 390 px 55 Wechsel, keine Firma mehr doppelt im Bild als nötig, 0 Konsolenfehler. Rückweg: Plugin 1.40.0.
 
 - **Keine Firma doppelt im Bild, auch beim Scrollen** (`assets/ad-rotation.js`): Kommt ein Werbeplatz ins Bild (120 px vorher, also noch unsichtbar) und zeigt eine Firma, die ein anderer sichtbarer Platz schon zeigt, wechselt er sofort zur nächsten. Live gemessen mit 1.40.0: in 5 von 60 Sekunden beim Scrollen eine Firma doppelt im Bild (Rechner), 0 am Handy.
 - **Test:** `qa/werbung-rotation-test.mjs` mit nachgebautem IntersectionObserver.
