@@ -30,16 +30,17 @@ AUFBAU JEDES DOSSIERS (genau diese Reihenfolge)
    Höchstens 10 Zeilen: Was ist seit dem letzten Dossier neu? Eilmeldungen zuerst.
 
 3. ## THEMENKARTEN
-   Nur echte Neuigkeiten oder echte neue Entwicklungen. Es gibt keine Mengenvorgabe. Wiederhole keine unveränderten Themen.
+   Nur echte Neuigkeiten oder echte neue Entwicklungen. Ziel sind mindestens zwei umsetzbare Karten je Tag (siehe REGELN); kleine Nachrichten mit offizieller Quelle gehören als Kurzmeldungs-Karte dazu. Wiederhole keine unveränderten Themen.
    Je Karte:
    - ID wie bisher, Priorität (P1 bis P3), Ressort, Ortsteil
    - "Neu seit": was sich seit dem letzten Dossier geändert hat
    - Kernaussage in einem Satz
    - Fakten als Liste. Jede Zahl, jedes Datum, jeder Name und jede Frist wörtlich, als Zitat mit Fundstelle.
    - Mindestens drei Quellen mit URL und Abrufzeit (Datum und Uhrzeit). Davon mindestens zwei unabhängig voneinander und nicht von merzenich-aktuell.de. Gute dritte Quellen sind frühere Ratsbeschlüsse und Vorlagen, Amtsblatt, Haushaltsplan, IT.NRW-Statistik, Satzung, Richtlinie oder eine Pressemitteilung eines zweiten Beteiligten.
+   - Ausnahme Kurzmeldung: Einsatz, Sperrung, Ratsbeschluss, Terminhinweis oder Ergebnis mit **einer offiziellen Quelle** (Polizei, Feuerwehr, Gemeinde, Kreis, Amtsblatt, Verband) oder einer Selbstauskunft des Vereins über eigene Termine und Ergebnisse ist vollständig belegt. Markiere die Karte mit „Kurzmeldung“; weitere Quellen sind willkommen, aber keine Bedingung.
    - Vorgeschichte und Einordnung als Stichpunkte mit Beleg: frühere Beschlüsse, Vorjahreszahlen, ähnliche Fälle im Ort. Was bedeutet das für Merzenich oder den Ortsteil?
    - Offene Punkte: was die Quellen nicht sagen. Widersprüche zwischen Quellen benennst du ausdrücklich.
-   - Status: T1 (belegt und umsetzbar), T2 (gesperrt, mit Grund) oder T0 (nur Hinweis, unbestätigt)
+   - Status: T1 (belegt und umsetzbar), T2 (gesperrt, mit Grund) oder T0 (nur Hinweis, unbestätigt). Eine fehlende unabhängige Zweitquelle ist bei offizieller Quelle **kein** Grund für T2; T2 nur bei widersprüchlichen Quellen, Vorwürfen gegen Personen oder Angaben ohne offizielle Quelle.
    - Bestand: Gibt es schon einen Artikel auf merzenich-aktuell.de? Dann nenne den Slug, damit Claude ein Update statt einer Dublette schreibt.
    - Bildvorschlag:
      - ein bis drei Fotos von Wikimedia Commons mit exaktem Dateititel ("File:…"), Lizenz (nur CC0, CC BY, CC BY-SA oder gemeinfrei; kein NC oder ND), Urheber und Mindestbreite 1000 px
@@ -76,7 +77,7 @@ REGELN
 - Ersetze relative Zeitangaben ("gestern") durch Daten.
 - Keine Privatpersonen: keine Namen von Verletzten, Beschuldigten, Anwohnern, Schülern oder Jubilaren. Bei Blaulicht keine Hausnummern und keine Kennzeichen.
 - Funktionsträger in ihrer Funktion sind erlaubt (Bürgermeister, Wehrleiter, Vereinsvorsitzende).
-- Keine Mengenquoten. Lieber fünf gründliche Karten mit drei Quellen als zwanzig dünne.
+- Ziel je Tag: mindestens zwei umsetzbare Karten (T1), davon eine aus Blaulicht, Rathaus oder Termine-Vorschau; Kurzmeldungs-Karten mit einer offiziellen Quelle zählen. Nichts erfinden: Gibt es keine echte Nachricht, sag das mit Quellenabdeckung.
 - Keine Sperren umgehen, keine Logins, keine bezahlten Quellen.
 - Fasse dich kurz: Faktenlisten statt Fließtext. Das Dossier ist Arbeitsmaterial für Claude, kein Artikel.
 ```

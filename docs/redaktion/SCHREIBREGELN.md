@@ -1,18 +1,30 @@
 # Schreib- und Prüfregeln der KI-Redaktion
 
-Stand: 28.10.2026. Ergänzt [docs/REDAKTIONELLER-STANDARD-V2.md](../REDAKTIONELLER-STANDARD-V2.md) (Artikeltypen, Pflichtfragen, Paketformat) und gilt für jede Meldung, jeden Termin und jeden Umkreis-Eintrag aus einem Claude-Lauf. Ablauf: [CLAUDE-LAUF.md](CLAUDE-LAUF.md). Quellen: [QUELLEN.md](QUELLEN.md). Maschinell geprüft wird, was mit ⚙ markiert ist (`node qa/redaktion-lauf.mjs`, für Claude-Pakete; Updates in älteren Fremddateien prüft das Skript nicht, dort gilt die Selbstprüfung).
+Stand: 02.11.2026. Ergänzt [docs/REDAKTIONELLER-STANDARD-V2.md](../REDAKTIONELLER-STANDARD-V2.md) (Artikeltypen, Pflichtfragen, Paketformat) und gilt für jede Meldung, jeden Termin und jeden Umkreis-Eintrag aus einem Claude-Lauf. Ablauf: [CLAUDE-LAUF.md](CLAUDE-LAUF.md). Quellen: [QUELLEN.md](QUELLEN.md). Maschinell geprüft wird, was mit ⚙ markiert ist (`node qa/redaktion-lauf.mjs`, für Claude-Pakete; Updates in älteren Fremddateien prüft das Skript nicht, dort gilt die Selbstprüfung).
 
 Grundsatz: **Was nicht an einer Primärquelle gelesen wurde, steht nicht im Text. Lieber weniger, dafür richtig.**
 
 Seit 28.10.2026 gehen Claude-Beiträge ohne Freigabe online (CLAUDE-LAUF.md Abschnitt 3). Daraus folgen zwei Ansprüche zugleich: **länger und redaktioneller** (Einordnung, Vorgeschichte, Bedeutung für den Ort, nicht generisch) und **mehrere Quellen, im Text genannt**. Die Länge kommt aus mehr belegten Fakten, nie aus Füllsätzen.
+
+## 0. Mindesttakt und Kurzmeldung
+
+Entscheidung Luis Kummer, 02.11.2026. Anlass: Vom 28.10. bis 02.11.2026 erschien keine redaktionelle Meldung, `news-sitemap.xml` war leer, Google News und Discover lagen bei null. Ursache waren Mindestlänge und Drei-Quellen-Regel ohne Mengenvorgabe: Trug ein Thema keine 800 Wörter, erschien nichts. Am 02.11. wurde ein Einbruch mit Polizeimitteilung auf T2 gesperrt, nur weil eine unabhängige Zweitquelle fehlte.
+
+- **Mindesttakt:** an jedem Tag mindestens **zwei Meldungen**, davon mindestens eine aus Blaulicht, Rathaus oder Termine-Vorschau. Jeder Lauf veröffentlicht **mindestens eine Meldung, wenn eine belegbare Nachricht existiert**. Ein Nullfund ist nur mit vollständigem Quellenprotokoll erlaubt (CLAUDE-LAUF.md Abschnitt 7). ⚙ Hinweis bei 24 Stunden ohne Meldung und bei weniger als zwei Meldungen am Lauftag
+- **Kurzmeldung** (`kurzmeldung`), 150 bis 350 Wörter, für: Einsatz (Polizei, Feuerwehr), Sperrung, Ratsbeschluss, Terminhinweis mit Einordnung (auch Wochenvorschau), Ergebnis vom Wochenende.
+- **Eine offizielle Quelle reicht** (Abschnitt 3a Nr. 1: Polizei, Feuerwehr, Gemeinde, Kreis, Amtsblatt, Verband) oder eine Selbstauskunft des Vereins über eigene Termine und Ergebnisse. Die Zwei- und Drei-Quellen-Regel (Abschnitt 4) gilt für Kurzmeldungen nicht. ⚙
+- **Geprüft wird genauso wie bei Standard-Meldungen**: Prüfprotokoll mit mindestens drei Aussagen, jede Zahl darin, keine Privatpersonen, keine Hausnummern, keine Deutung als Tatsache. Was die Quelle nicht sagt, steht als offen im Text.
+- Der **Standard mit 800 Wörtern und mehr** bleibt für Hintergrund, Porträt, Analyse und alle Themen, deren Quellenlage es trägt. Eine Kurzmeldung kann im nächsten Lauf zum Standardtext ausgebaut werden (Update, kein zweiter Artikel).
+- **Eilmeldung:** Blaulicht und Sperrungen möglichst bald nach der Quelle als Kurzmeldung, später ergänzen (Abschnitt 5, Nachtrag).
+- **Bestand:** Auch von Hand in WordPress angelegte Beiträge zählen (Live-Archiv `https://merzenich-aktuell.de/archiv/` prüfen, nicht nur `inhalte/`); dazu keine Dublette schreiben.
 
 ## 1. Welcher Artikeltyp?
 
 Entscheidung in dieser Reihenfolge:
 
 1. Gibt es nur ein Datum, eine Frist oder einen Ort und sonst nichts Belegbares? → **Termin** in `inhalte/termine/` statt Meldung. Kommt ein Nachrichtenwert dazu (neue Regel, geänderter Ort, Ausfall), zusätzlich eine Meldung.
-2. Blaulicht-Erstmeldung oder reiner Service mit Frist oder Kontakt, Quellenlage gibt nicht mehr her? → `kurzmeldung` (Claude: mindestens 150 Wörter, 3 Absätze), bei Service mit `"service": true`. Eine Blaulicht-Kurzmeldung wird im nächsten Lauf nachgefasst oder zum Standardtext ausgebaut. ⚙ Hinweis bei Kurzmeldungen außerhalb Blaulicht/Service
-3. Normale Lokalnachricht → `standard`. **Das ist der Regelfall.**
+2. Einsatz, Sperrung, Ratsbeschluss, Terminhinweis, Ergebnis oder reiner Service mit Frist oder Kontakt, und die Quellenlage trägt keine 800 Wörter? → `kurzmeldung` nach Abschnitt 0 (150 bis 350 Wörter, 3 Absätze, eine offizielle Quelle reicht), bei Service mit `"service": true`. Eine Blaulicht-Kurzmeldung wird im nächsten Lauf nachgefasst oder zum Standardtext ausgebaut. ⚙ Hinweis bei Kurzmeldungen in Wirtschaft oder Menschen und über 350 Wörtern
+3. Normale Lokalnachricht mit tragender Quellenlage → `standard`. **Das ist der Regelfall.** Eine Nachricht wird nie zurückgehalten, nur weil sie keinen Standardtext trägt; dann ist sie eine Kurzmeldung.
 4. Vorgang mit Vorgeschichte (frühere Beschlüsse, Vorjahreszahlen), Folgen für Ortsteile und mindestens drei Primärquellen? → `vertiefung`.
 5. Einordnung über mehrere Vorgänge oder Jahre → `hintergrund`.
 
@@ -20,12 +32,12 @@ Entscheidung in dieser Reihenfolge:
 
 | Typ | Mindestens | Ziel | Lesezeit |
 |---|---|---|---|
-| `kurzmeldung` | 150 Wörter, 3 Absätze | 200 bis 300 | 1 bis 2 Minuten |
+| `kurzmeldung` | 150 Wörter, 3 Absätze; höchstens 350 | 200 bis 300 | 1 bis 2 Minuten |
 | `standard` | **800 Wörter, 7 Absätze** | 900 bis 1.300 | 4 bis 6 Minuten |
 | `vertiefung` | 1.100 Wörter, 8 Absätze | 1.200 bis 1.800 | 6 bis 9 Minuten |
 | `hintergrund` | 1.400 Wörter, 10 Absätze | 1.500 bis 2.500 | 7 bis 12 Minuten |
 
-Die Länge kommt aus **mehr Recherche**, nie aus Füllstoff: Vorgeschichte (frühere Beschlüsse, Vorjahre, ähnliche Fälle im Ort), Zahlen im Vergleich (Haushalt, Statistik, Vorjahr), Folgen für die Ortsteile, Stimmen aus öffentlichen Stellungnahmen (Rat, Verwaltung, Verein, mit Quelle), was offen ist, wie es weitergeht, Service. Trägt ein Thema allein keine 800 belegten Wörter, wird es **nicht künstlich gestreckt**, sondern mit verwandten Themen zu einem Sammelartikel gebündelt (z. B. „Was in Merzenich bis Monatsende ansteht“, „Neues aus dem Rathaus“), als Termin angelegt oder als Update in einen bestehenden Artikel geschrieben.
+Die Länge kommt aus **mehr Recherche**, nie aus Füllstoff: Vorgeschichte (frühere Beschlüsse, Vorjahre, ähnliche Fälle im Ort), Zahlen im Vergleich (Haushalt, Statistik, Vorjahr), Folgen für die Ortsteile, Stimmen aus öffentlichen Stellungnahmen (Rat, Verwaltung, Verein, mit Quelle), was offen ist, wie es weitergeht, Service. Trägt ein Thema allein keine 800 belegten Wörter, wird es **nicht künstlich gestreckt**, sondern als Kurzmeldung veröffentlicht (Abschnitt 0), mit verwandten Themen zu einem Sammelartikel gebündelt (z. B. „Was in Merzenich bis Monatsende ansteht“, „Neues aus dem Rathaus“), als Termin angelegt oder als Update in einen bestehenden Artikel geschrieben.
 
 Länge entsteht nur aus zusätzlichen belegten Fakten. Verboten sind Füllsätze, Wiederholungen von Titel oder Dek im Text, allgemeine Aussagen ohne Merzenich-Bezug und Mutmaßungen über Gründe. ⚙ Mindestwerte je Typ.
 
@@ -71,6 +83,8 @@ Weil Claude-Beiträge ohne Freigabe online gehen, darf **nichts Falsches** ersch
 
 Alles andere fliegt raus oder wird als offen benannt („geht aus den Unterlagen nicht hervor“). Vermutungen, Gerüchte, Social-Media-Beiträge ohne Bestätigung und eigene Schlüsse sind keine Belege.
 
+**Eine offizielle Quelle ist ein vollständiger Beleg.** Stammen die tragenden Aussagen aus einer offiziellen Quelle (Nr. 1), wird das Thema nicht wegen einer fehlenden unabhängigen Zweitquelle auf T2 gesetzt, nicht zurückgehalten und nicht mit `zurFreigabe` versehen. Beispiel: Zeugenaufruf der Polizei Düren zum Einbruch an der Bahnstraße, 02.11.2026; die Polizeimitteilung trägt die Kurzmeldung allein. T2 bleibt für widersprüchliche Quellen, Vorwürfe gegen Personen und Angaben ohne offizielle Quelle.
+
 **Prüfprotokoll im Paket** (Feld `pruefung`, ⚙ ab Paketen vom 29.10.2026): jede tragende Aussage einzeln, mindestens sechs (Kurzmeldung drei), jede mit den Belegen aus `quelle`/`weitereQuellen` und der Fundstelle. **Jede Zahl im Text** (Beträge, Uhrzeiten, Daten, Mengen; Jahreszahlen ausgenommen) muss in einer Aussage des Protokolls stehen, sonst meldet das Prüfskript einen Fehler.
 
 ```json
@@ -87,7 +101,7 @@ Alles andere fliegt raus oder wird als offen benannt („geht aus den Unterlagen
 ## 4. Quellen
 
 - `quelle` ist die Primärquelle, `weitereQuellen` die weiteren; jede mit `name` („Herausgeber, Dokument oder Seite, Datum“), `url` (https) und `stand` (Lesedatum YYYY-MM-DD). ⚙
-- **Mindestens drei verschiedene Quellen** je Meldung, **davon mindestens zwei außerhalb von merzenich-aktuell.de**. ⚙ (drei Quellen ab Paketen vom 29.10.2026) Gute dritte Quellen: frühere Beschlüsse oder Vorlagen, Haushaltsplan, amtliche Statistik (IT.NRW), Satzung, Richtlinie, Pressemitteilung eines zweiten Beteiligten.
+- **Mindestens drei verschiedene Quellen** je Meldung, **davon mindestens zwei außerhalb von merzenich-aktuell.de**; ausgenommen Kurzmeldungen mit offizieller Quelle (Abschnitt 0). ⚙ (drei Quellen ab Paketen vom 29.10.2026) Gute dritte Quellen: frühere Beschlüsse oder Vorlagen, Haushaltsplan, amtliche Statistik (IT.NRW), Satzung, Richtlinie, Pressemitteilung eines zweiten Beteiligten.
 - **Jede Quelle wird im Text genannt** („laut Beschlussvorlage 123/2026“, „teilt die Kreisverwaltung mit“, „heißt es im Amtsblatt vom …“). Leser sollen sehen, woher jede Angabe stammt.
 - Zwei Quellen außerhalb von merzenich-aktuell.de bleiben die harte Untergrenze. ⚙ Zweite Quelle kann sein: zweites Dokument desselben Vorgangs (Vorlage plus Beschlusstext), ein anderer Herausgeber, ein amtlicher Rahmen (Verordnung, Richtlinie). Ein eigener Artikel auf merzenich-aktuell.de ist nur Kontext.
 - Ausnahme von der Drei- und Zwei-Quellen-Regel nur mit Feld `quellenausnahme` (Begründung, z. B. „einzige amtliche Bekanntmachung, keine weitere Veröffentlichung“) in der Meldung; sie steht im Dossier im Abschnitt „Umgesetzt“ unter „Quellenausnahmen“.
@@ -145,11 +159,12 @@ Deutsch, kurze Sätze, aktive Verben. Zahlen deutsch (257.039 Euro, 18 Uhr, 3. D
 3. Jede Gegenwartsaussage zum Lesedatum belegt?
 4. Keine eigene Deutung als Tatsache?
 5. Keine relative Zeitangabe?
-6. Mindestens drei Quellen, davon zwei außerhalb merzenich-aktuell.de, jede im Text genannt?
+6. Mindestens drei Quellen, davon zwei außerhalb merzenich-aktuell.de (Kurzmeldung: eine offizielle Quelle), jede im Text genannt?
 7. `stand` = heutiges Lesedatum?
 8. Keine Privatperson, keine Hausnummer im Blaulicht?
 9. Bestand geprüft, kein Doppelartikel?
-10. Artikeltyp passt zur Faktenlage, Mindestwerte erfüllt (Standard ab 800 Wörtern)? Vorgeschichte und Einordnung enthalten?
+10. Artikeltyp passt zur Faktenlage, Mindestwerte erfüllt (Standard ab 800 Wörtern, Kurzmeldung 150 bis 350)? Beim Standard Vorgeschichte und Einordnung enthalten?
+10a. Mindesttakt: Wie viele Meldungen sind heute schon erschienen (Live-Archiv)? Unter zwei: belegbare Kurzmeldung schreiben statt Nullfund.
 11. Titel konkret, Dek ohne unbelegte Aussage?
 12. Letzter Absatz mit Ausblick oder Service?
 13. Zitate wörtlich und gekennzeichnet, alles andere in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler)?

@@ -1,0 +1,71 @@
+name: News-Sitemap-Wächter
+
+# Google News liest nur Meldungen der letzten 48 Stunden aus news-sitemap.xml. Vom 28.10.
+# bis 02.11.2026 war sie leer, ohne dass es jemand bemerkte. Dieser Workflow prüft zweimal
+# täglich (nach den Redaktionsläufen) qa/news-sitemap-waechter.mjs: Ist die Sitemap leer oder
+# die neueste Meldung älter als 24 Stunden, öffnet er ein Issue (oder kommentiert das offene);
+# ist alles wieder in Ordnung, schließt er es. GitHub verschickt dazu die Benachrichtigungs-Mail.
+
+on:
+  schedule:
+    # UTC: 11:30 und 17:30 MEZ bzw. 12:30 und 18:30 MESZ; nach den Läufen 09:13 und 14:43.
+    - cron: '30 10,16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: news-sitemap-waechter
+  cancel-in-progress: false
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: News-Sitemap prüfen
+        id: pruefung
+        run: |
+          set +e
+          node qa/news-sitemap-waechter.mjs --json > ergebnis.json
+          code=$?
+          set -e
+          cat ergebnis.json
+          if [ "$code" = "2" ]; then echo "Sitemap nicht abrufbar" >&2; exit 1; fi
+          echo "alarm=$([ "$code" = "1" ] && echo ja || echo nein)" >> "$GITHUB_OUTPUT"
+
+      - name: Issue öffnen, kommentieren oder schließen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ALARM: ${{ steps.pruefung.outputs.alarm }}
+        run: |
+          titel='Google News: keine aktuellen Meldungen (news-sitemap.xml)'
+          nummer=$(gh issue list --state open --search "\"$titel\" in:title" --json number --jq '.[0].number // empty')
+          text=$(node -e '
+            const e = require("./ergebnis.json");
+            const zeilen = e.meldungen.map((m) => `- ${m.datum} ${m.titel}`).join("\n") || "- keine";
+            console.log([
+              `**Stand:** ${new Date().toISOString()}`,
+              `**Einträge:** ${e.eintraege}, neueste ${e.neueste || "–"} (${e.alterStunden ?? "–"} Stunden)`,
+              e.alarm ? `**Grund:** ${e.gruende.join("; ")}` : "**In Ordnung.**",
+              "", "Meldungen in der Sitemap:", zeilen, "",
+              "Was tun: Mindesttakt nach docs/redaktion/SCHREIBREGELN.md Abschnitt 0 (zwei Meldungen je Tag, Kurzmeldung mit einer offiziellen Quelle reicht).",
+            ].join("\n"));')
+          if [ "$ALARM" = "ja" ]; then
+            if [ -n "$nummer" ]; then gh issue comment "$nummer" --body "$text"
+            else gh issue create --title "$titel" --body "$text"; fi
+          elif [ -n "$nummer" ]; then
+            gh issue close "$nummer" --comment "$text"
+          else
+            echo "In Ordnung, kein offenes Issue."
+          fi
