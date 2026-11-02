@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -8,7 +8,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 |---|---:|
 | archiv_refresh_noetig | 97 |
 | uebernommen | 31 |
-| gesperrt | 27 |
+| gesperrt | 28 |
 | neu | 6 |
 | zur_abnahme | 6 |
 | in_bearbeitung | 3 |
@@ -36,7 +36,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Dossier: [2026-10-28-morgens.md](dossiers/2026-10-28-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-28-claude-morgens.md](dossiers/2026-10-28-claude-morgens.md)
 - Quelle: https://www.presseportal.de/blaulicht/pm/8/6379066 (Polizei Düren)
 - Artikelpfad: inhalte/meldungen/2026-10-28-recherche-claude-morgens.json → /blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/
-- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
+- Möglicher Bestand (gleiche Quelle): `alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27` – Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben (2026-10-28, inhalte/meldungen/2026-10-28-recherche-claude-morgens.json)
 - Notiz: ChatGPT 27.10. abends: GR-L264-27102026, T1; Primärvolltext gelesen; Suche nach zusätzlicher NRW-Polizeiquelle ohne unabhängigen Treffer. Syndizierte Kopien zählen nicht als zweite Quelle. Weiterarbeit: Gibt es später einen ergänzten Ermittlungsstand? Ursache weiter offen. Zweitquelle oder dokumenti
 
 ### MA-ELW1-116-2026 · P1 · T1/B0 · zur_abnahme
@@ -157,7 +157,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-02 mittags (ChatGPT): Neue T2-Karte Einbruch Bahnstraße: Polizeimeldung11:54, unabhängige Ereignisbestätigung fehlt. Kalenderkorrektur Amtsblatt-Abgabeschluss: sichtbare12Uhr nur Platzhalter, Quelle nennt03.11. ohne Uhrzeit. TTC-Ergebnisnachtrag sachlich ohne Korrektur; Unfallartikel ohne Korrektur. Frühstücksfrist5.11.11:30 im Amtsblatt bestätigt und bereits von Claude umgesetzt. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld15Uhr, genaue Dauer offen.
 - 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung, erweitert um die verlorenen Claude-Läufe 30.10. nachmittags bis 02.11. morgens (Sitzungen ohne Push-Recht). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung, click-TT), 6 neue Termine aus Amtsblatt 11/2026, 2 geänderte Termine (Frühstück mit Anmeldefrist 5.11. beim Kindergottesdienst, Wortlaut Volkstrauertag), Kalender 60 Tage geprüft (28 von 30 Bestandsterminen, VHS 404, Amtsblatt-Index 428), Fußballtabelle in sport-current.json aktualisiert. Korrekturaufträge der sechs Dossiers: keine. T1-Karte Halloween veraltet. Commons 429, kein neues Foto. – Commit e53e231
 - 2026-11-02 morgens (ChatGPT): Neue Kalenderergänzung: Frühstück am 08.11. ab10:30 vor dem bekannten Kindergottesdienst um11 Uhr. Veranstalteroriginal gelesen; keine unabhängigen Quellen für Artikelkarte, T2 für Artikel. Keine neue Artikel-Themenkarte; Unfallartikel ohne Korrekturbedarf geprüft. VHS404, Golzheim-Konflikt und TTC-Prüfungen offen. Bahn-Endefeld geändert, Dauer unklar; keine konkrete Merzenicher Fahrt bestätigt.
 - 2026-11-01 mittags (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten gegenüber morgens unverändert, RIS nur neuer Zeitstempel. Unfallartikel vollständig ohne Korrekturbedarf geprüft. VHS-Kursquelle404; offene TTC-/Golzheim-Prüfungen nicht erneut vertieft. Bahn-Endefeld verschoben, Dauer offen; keine konkrete Merzenicher Fahrt bestätigt.
-- 2026-11-01 morgens (ChatGPT): Keine neue lokale Themenkarte oder Terminänderung belegt. Pflichtlisten ohne neue örtliche Meldung; aktuelle Bahnformulierung engerer Siegstreckenabschnitt, konkrete Merzenicher Fahrt nicht belegt. TTC-Terminschnittstelle erreichbar, dynamische Startseitenplatzhalter nicht als Absagen interpretiert. Unfallartikel ohne Korrekturbedarf; VHS404 und bekannte Konflikte offen.

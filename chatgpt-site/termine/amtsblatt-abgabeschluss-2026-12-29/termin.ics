@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Abgabeschluss für das Amtsblatt vom 8. Januar 2027
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:amtsblatt-abgabeschluss-2026-12-29@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART;VALUE=DATE:20261229
+SUMMARY:Abgabeschluss für das Amtsblatt vom 8. Januar 2027
+DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 8. Januar 2027\
+ , erscheint\, nimmt die Gemeinde bis Dienstag\, 29. Dezember per E-Mail an
+  amtsblatt@gemeinde-merzenich.de entgegen.\nVeranstalter: Gemeinde Merzeni
+ ch\nhttps://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabe
+ schluss-2026-12-29/
+LOCATION:Gemeinde Merzenich\, Amtsblatt-Redaktion (per E-Mail)
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabes
+ chluss-2026-12-29/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

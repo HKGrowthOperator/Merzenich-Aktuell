@@ -406,14 +406,15 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:amtsblatt-12-2026-abgabeschluss-2026-11-03@merzenich-aktuell.de
-DTSTAMP:20261025T060000Z
-DTSTART:20261103T110000Z
+DTSTAMP:20261102T060000Z
+DTSTART;VALUE=DATE:20261103
 SUMMARY:Abgabeschluss für das Amtsblatt 12/2026
-DESCRIPTION:Beiträge für das Amtsblatt 12/2026 (Erscheinungstag 13. Novem
- ber) müssen bis Dienstag\, 3. November\, bei der Gemeinde vorliegen.\nVer
- anstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.
- de/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/
-LOCATION:Rathaus Merzenich
+DESCRIPTION:Beiträge für das Amtsblatt 12/2026 (Erscheinungstag Freitag\,
+  13. November) nimmt die Gemeinde bis Dienstag\, 3. November\, per E-Mail 
+ an amtsblatt@gemeinde-merzenich.de entgegen. Eine Uhrzeit nennt sie nicht.
+ \nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoper
+ ator.de/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/
+LOCATION:Gemeinde Merzenich\, Amtsblatt-Redaktion (per E-Mail)
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-12-2026
  -abgabeschluss-2026-11-03/
 STATUS:CONFIRMED
@@ -897,6 +898,21 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:amtsblatt-abgabeschluss-2026-12-01@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART;VALUE=DATE:20261201
+SUMMARY:Abgabeschluss für das Amtsblatt vom 11. Dezember
+DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 11. Dezember\, 
+ erscheint\, nimmt die Gemeinde bis Dienstag\, 1. Dezember per E-Mail an am
+ tsblatt@gemeinde-merzenich.de entgegen.\nVeranstalter: Gemeinde Merzenich\
+ nhttps://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabesch
+ luss-2026-12-01/
+LOCATION:Gemeinde Merzenich\, Amtsblatt-Redaktion (per E-Mail)
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabes
+ chluss-2026-12-01/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
 DTSTAMP:20261102T060000Z
 DTSTART:20261203T160000Z
@@ -943,6 +959,21 @@ DESCRIPTION:Die Berliner Akrobatik- und Tanzgruppe The Funky Monkeys zeigt
 LOCATION:Weinberghalle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/funky-monkeys-xma
  s-fun-weinberghalle-2026-12-20/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:amtsblatt-abgabeschluss-2026-12-29@merzenich-aktuell.de
+DTSTAMP:20261102T060000Z
+DTSTART;VALUE=DATE:20261229
+SUMMARY:Abgabeschluss für das Amtsblatt vom 8. Januar 2027
+DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 8. Januar 2027\
+ , erscheint\, nimmt die Gemeinde bis Dienstag\, 29. Dezember per E-Mail an
+  amtsblatt@gemeinde-merzenich.de entgegen.\nVeranstalter: Gemeinde Merzeni
+ ch\nhttps://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabe
+ schluss-2026-12-29/
+LOCATION:Gemeinde Merzenich\, Amtsblatt-Redaktion (per E-Mail)
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabes
+ chluss-2026-12-29/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

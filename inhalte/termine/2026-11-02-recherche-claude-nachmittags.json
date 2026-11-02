@@ -1,0 +1,57 @@
+{
+ "hinweis": "Kalenderpflege im Nachmittagslauf vom 02.11.2026 (Claude): Abgabetermine des Amtsblatts aus der Liste auf Seite 1 des Amtsblatts Nr. 11 vom 16.10.2026, am 02.11.2026 gelesen. Ganztägig, weil die Gemeinde keine Uhrzeit nennt.",
+ "termine": [
+  {
+   "slug": "amtsblatt-abgabeschluss-2026-12-01",
+   "titel": "Abgabeschluss für das Amtsblatt vom 11. Dezember",
+   "start": "2026-12-01T00:00:00+01:00",
+   "ort": "Gemeinde Merzenich, Amtsblatt-Redaktion (per E-Mail)",
+   "adresse": "Valdersweg 1, 52399 Merzenich",
+   "ortsteil": "Gemeinde",
+   "kategorie": "Info",
+   "veranstalter": "Gemeinde Merzenich",
+   "beschreibung": "Beiträge für das Amtsblatt, das am Freitag, 11. Dezember, erscheint, nimmt die Gemeinde bis Dienstag, 1. Dezember per E-Mail an amtsblatt@gemeinde-merzenich.de entgegen.",
+   "absaetze": [
+    "Laut der Liste der Abgabetermine auf Seite 1 des Amtsblatts 11/2026 ist Dienstag, 1. Dezember 2026, Abgabeschluss für die Ausgabe vom 11. Dezember 2026. Mitteilungen von Vereinen und Einrichtungen sollen möglichst als Datei per E-Mail an amtsblatt@gemeinde-merzenich.de gehen.",
+    "Eine Uhrzeit nennt die Gemeinde nicht; der Termin gilt für den ganzen Tag."
+   ],
+   "links": [
+    [
+     "Amtsblatt Merzenich 11/2026, Seite 1: Abgabetermine",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3"
+    ]
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 1: „Weitere Abgabetermine“",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3",
+    "stand": "2026-11-02"
+   }
+  },
+  {
+   "slug": "amtsblatt-abgabeschluss-2026-12-29",
+   "titel": "Abgabeschluss für das Amtsblatt vom 8. Januar 2027",
+   "start": "2026-12-29T00:00:00+01:00",
+   "ort": "Gemeinde Merzenich, Amtsblatt-Redaktion (per E-Mail)",
+   "adresse": "Valdersweg 1, 52399 Merzenich",
+   "ortsteil": "Gemeinde",
+   "kategorie": "Info",
+   "veranstalter": "Gemeinde Merzenich",
+   "beschreibung": "Beiträge für das Amtsblatt, das am Freitag, 8. Januar 2027, erscheint, nimmt die Gemeinde bis Dienstag, 29. Dezember per E-Mail an amtsblatt@gemeinde-merzenich.de entgegen.",
+   "absaetze": [
+    "Laut der Liste der Abgabetermine auf Seite 1 des Amtsblatts 11/2026 ist Dienstag, 29. Dezember 2026, Abgabeschluss für die Ausgabe vom 8. Januar 2027. Mitteilungen von Vereinen und Einrichtungen sollen möglichst als Datei per E-Mail an amtsblatt@gemeinde-merzenich.de gehen.",
+    "Eine Uhrzeit nennt die Gemeinde nicht; der Termin gilt für den ganzen Tag."
+   ],
+   "links": [
+    [
+     "Amtsblatt Merzenich 11/2026, Seite 1: Abgabetermine",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3"
+    ]
+   ],
+   "quelle": {
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 1: „Weitere Abgabetermine“",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3",
+    "stand": "2026-11-02"
+   }
+  }
+ ]
+}
