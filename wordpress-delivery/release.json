@@ -1,0 +1,4 @@
+{
+  "plugin": {"version": "1.39.0", "zip": "wordpress-delivery/merzenich-aktuell-core.zip", "sha256": "91defef57e9c8142450fa4749decf5cde0b276b76b388904d63d6ae02fbe3db5"},
+  "theme": {"version": "21.24.2", "zip": "wordpress-delivery/merzenich-aktuell-theme.zip", "sha256": "1518429612ffc7037048523bddfacb2838e3ff8b62960aafee23384a9ab984ac"}
+}

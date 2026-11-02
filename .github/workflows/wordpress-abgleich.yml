@@ -26,7 +26,7 @@ jobs:
   anstossen:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Warten, bis GitHub die Import-Datei frisch ausliefert (raw-Cache fünf Minuten)
         if: github.event_name == 'workflow_run'
@@ -34,6 +34,11 @@ jobs:
       - name: Nächsten Lauf auf jetzt planen
         run: |
           curl -sS -m 60 "https://merzenich-aktuell.de/?ma_api=abgleich-anstoss" || echo "Anstoß nicht erreichbar"
+          echo
+      # Selbst-Update (Plugin 1.39.0): neue Plugin- und Theme-Pakete aus wordpress-delivery/release.json installieren.
+      - name: Selbst-Update anstoßen
+        run: |
+          curl -sS -m 60 "https://merzenich-aktuell.de/?ma_api=update-anstoss" || echo "Update-Anstoß nicht erreichbar"
           echo
       - name: WordPress-Cron ausführen (fällige Aufgaben, darunter der Abgleich)
         run: |
@@ -44,4 +49,24 @@ jobs:
             sleep 30
           done
           echo "wp-cron.php antwortet nicht" >&2
+          exit 1
+      # Nach einem Build: Läuft live die Version aus release.json? Sonst schlägt der Lauf fehl
+      # (GitHub schickt die Mail). Vor dem ersten Einspielen von 1.39.0 gibt es den Endpunkt nicht: nur Hinweis.
+      - name: Live-Version prüfen
+        if: github.event_name == 'workflow_run'
+        run: |
+          soll=$(curl -sS -m 30 "https://raw.githubusercontent.com/${{ github.repository }}/main/wordpress-delivery/release.json?t=$(date +%s)")
+          echo "release.json: $soll"
+          sp=$(echo "$soll" | jq -r '.plugin.version'); st=$(echo "$soll" | jq -r '.theme.version')
+          for i in $(seq 1 6); do
+            ist=$(curl -sS -m 30 "https://merzenich-aktuell.de/?ma_api=update-status&t=$(date +%s)" || true)
+            if ! echo "$ist" | jq -e .plugin >/dev/null 2>&1; then echo "Selbst-Update ist live noch nicht eingespielt (Plugin 1.39.0 einmal von Hand hochladen)."; exit 0; fi
+            ip=$(echo "$ist" | jq -r '.plugin'); it=$(echo "$ist" | jq -r '.theme')
+            echo "live: Plugin $ip, Theme $it; letzter Lauf: $(echo "$ist" | jq -c '.letzter.schritte')"
+            [ "$ip" = "$sp" ] && [ "$it" = "$st" ] && { echo "Live ist aktuell."; exit 0; }
+            curl -sS -m 30 "https://merzenich-aktuell.de/?ma_api=update-anstoss" >/dev/null || true
+            curl -sS -m 180 -o /dev/null "https://merzenich-aktuell.de/wp-cron.php?doing_wp_cron=$(date +%s.%N)" || true
+            sleep 60
+          done
+          echo "Live läuft nicht die Version aus release.json (Plugin $sp, Theme $st)." >&2
           exit 1

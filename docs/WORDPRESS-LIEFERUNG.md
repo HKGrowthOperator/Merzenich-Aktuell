@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.25.0 · Core-Plugin 1.38.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+2. November 2026 · Theme 21.25.0 · Core-Plugin 1.40.0 · live: 21.24.2 / 1.37.2 (Historie unten)
 
-## Neu am 02.11.2026 (dritte Runde): Plugin 1.38.0 und Theme 21.25.0, Werbung groß, abwechselnd, neue Clips
+## Neu am 02.11.2026 (fünfte Runde): Plugin 1.40.0 und Theme 21.25.0, Werbung groß, abwechselnd, neue Clips
 
-**Stand live:** noch nicht eingespielt (Vorschau beim Betreiber). Rückweg: Plugin 1.37.2, Theme 21.24.2.
+**Stand live:** noch nicht auf `main` (Vorschau beim Betreiber; mit dem Selbst-Update aus 1.39.0 ginge ein Push sofort live). Enthält 1.38.0 und 1.39.0. Rückweg: Plugin 1.39.0 bzw. 1.37.2, Theme 21.24.2.
 
 **Anlass:** Vorgabe Betreiber 02.11.2026: „mehr Abwechslung der Werbeclips … wirken nicht passend, zu verzerrt … zu viel Text, zu wenig Bild oder Video, zu gequetscht … nicht 2 mal hintereinander die gleiche Firma“. Entscheidungen: Bänder höher mit großem Video, Text nur Überschrift und Knopf.
 
@@ -14,6 +14,35 @@
 - **Breite Fassung** (3,5 : 1) je Anzeige: Meta `ma_ad_bild_breit`, `ma_ad_video_breit`, `ma_ad_video_breit_webm`; im Werbemittel wählbar (Mediathek), aus `data/firmen-entwuerfe.json` (`bild_breit`, `video_breit`) importiert. Video jetzt auf allen Plätzen und auch am Handy (nicht bei „Bewegung reduzieren“ oder Datensparen).
 - **Neue Clips für alle sechs Firmen** (`docs/anzeigen/bauen.mjs`, `motive.json`, Material in `docs/anzeigen/material/`): sechs Stile (Sequenz aus drei Fotos, Bahnen, Detail, Licht, Film, Gerät), 30 fps, nahtlose Schleife, je 16:9 und breit, alle unter 700 KB. KBS-Intro ohne Schwarzblende, Videowall ohne Farbkreisel. Neue Dateinamen `<motiv>-v2.*` und `-breit.*`, feste `id` je Anzeige: „Fehlende Entwürfe anlegen“ zieht die 13 laufenden Anzeigen nach, statt neue anzulegen (lokal geprüft: 13 × „aktualisiert“).
 - **Tests:** `qa/werbung-rotation-test.mjs` (neu, in qa.yml), `werbung-business-test.php` (Mischen), `werbung-ohne-muster-test.php` (Karte, breite Fassung, Bühne), `firmen-entwuerfe-test.php` (breite Fassung).
+
+## Neu am 02.11.2026 (vierte Runde): Plugin 1.39.0, Selbst-Update, jeder Push geht automatisch live
+
+**Stand live:** noch nicht eingespielt. **1.39.0 muss einmal von Hand hochgeladen werden**; danach installiert WordPress jede neue Plugin- und Theme-Version selbst. Enthält 1.38.0 (unten). Rückweg: Plugin 1.37.2 (dann ohne Selbst-Update); Selbst-Update abschalten mit Option `ma_selbst_update_aus = '1'` oder `define('MA_SELBST_UPDATE_AUS', true);` in `wp-config.php`.
+
+**Anlass:** Vorgabe Betreiber 02.11.2026: „das muss immer automatisch laufen“. Bisher lud jemand nach jedem Build die ZIPs im Backend hoch.
+
+- **Ablauf:** Push auf main → „Build WordPress Delivery Packages“ führt alle `qa/wordpress/*-test.php` aus (neu; schlägt einer fehl, entsteht kein Paket), baut die ZIPs und schreibt `wordpress-delivery/release.json` (Version und SHA-256 je Paket) → „WordPress-Abgleich anstoßen“ ruft `/?ma_api=update-anstoss` und `wp-cron.php` → WordPress (`includes/selbst-update.php`) liest `release.json`, lädt nur neuere Pakete, prüft die Prüfsumme und installiert erst das Plugin, dann das Theme (`Plugin_Upgrader`/`Theme_Upgrader`, `overwrite_package`). Rückfall: stündlicher Cron.
+- **Sicherungen:** nur aus `raw.githubusercontent.com/HKGrowthOperator/merzenich-aktuell/main/wordpress-delivery/`; Prüfsumme muss passen (sonst nächster Lauf); nie eine ältere Version; ein Lauf zur Zeit; schlägt das Plugin fehl, kein Theme. Der Anstoß braucht kein Geheimnis, plant nur einen Lauf (höchstens alle fünf Minuten).
+- **Kontrolle:** `/?ma_api=update-status` zeigt installierte Versionen und den letzten Lauf. Nach jedem Build prüft der Workflow, ob live die Version aus `release.json` läuft, und schlägt sonst fehl (Mail von GitHub).
+- **Test:** neu `qa/wordpress/selbst-update-test.php` (Manifest, nur aufwärts, Reihenfolge, Quelle).
+
+**Einspielen (einmalig):** ZIP `wordpress-delivery/merzenich-aktuell-core.zip` hochladen, „Vorhandene Version ersetzen“. Nachweis: `/?ma_api=update-status` antwortet mit `"plugin":"1.39.0"`.
+
+## Neu am 02.11.2026 (dritte Runde): Plugin 1.38.0, SEO und GEO (News-Sitemap mit Bild, KI-Crawler, llms.txt, Wikidata)
+
+**Stand live:** noch nicht eingespielt. Nur das Plugin, kein Theme. Rückweg: Plugin 1.37.2.
+
+**Anlass:** SEO-, GEO- und News-Plan vom 02.11.2026, Abschnitte 1.4 und 3.1 (`includes/seo.php`).
+
+- **News-Sitemap mit Hauptbild** (`ma_seo_news_sitemap_xml`, `ma_seo_news_eintraege`): je Meldung `<image:image>` mit dem Beitragsbild, nur mit geklärten Rechten (`ma_seo_bild`); das Standardbild wird nicht gemeldet. Namensraum `xmlns:image`.
+- **robots.txt** (`ma_seo_robots_txt`, `MA_SEO_KI_CRAWLER`): eigene Gruppe für GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot, Google-Extended, Bingbot und Applebot-Extended mit `Allow: /` als Signal, dass Zitieren gewollt ist. Weil ein Crawler mit eigener Gruppe die `*`-Gruppe nicht liest, stehen dort dieselben Sperren (wp-admin, Suche, Formular-Rückmeldung).
+- **llms.txt** (`ma_seo_llms_txt`, neu `ma_seo_llms_neueste`): Abschnitt „Aktuell“ mit `/heute/`, `/termine/`, `/termine/kalender.ics`, `/ki-redaktion/` (alle am 02.11. mit 200 geprüft) und die zehn neuesten Meldungen mit Datum, ohne gesponserte.
+- **Orte mit Wikidata und Wikipedia** (`ma_seo_orte`, neu `ma_seo_ort_sameas`): `Place.sameAs` je Ort. Kennungen am 02.11.2026 bei wikidata.org geprüft: Merzenich Q200044, Golzheim Q1284626, Girbelsrath Q1526685 (liegt in Q200044), Morschenich Q19059925, Bürgewald Q1650249; dazu der dewiki-Artikel.
+- **IndexNow bei Aktualisierungen:** war schon vorhanden (`post_updated`), keine Änderung.
+- **Offen aus dem Plan:** `/termine/` schneller (kalt 3,3 s), `llms-full.txt` erst mit den Faktenseiten.
+- **Test:** `qa/wordpress/seo-test.php` (11 neue Prüfungen: KI-Gruppe, Sperren in der Gruppe, nur einmal; Bild in der News-Sitemap; llms.txt „Aktuell“ und höchstens zehn Meldungen; sameAs und eindeutige Kennungen).
+
+**Einspielen:** ZIP `wordpress-delivery/merzenich-aktuell-core.zip` (baut die CI nach dem Push) unter Plugins → Installieren → Plugin hochladen, „Vorhandene Version ersetzen“. Nachweis: `?ver=1.38.0` im Quelltext, `/robots.txt` mit `User-agent: GPTBot`, `/llms.txt` mit „Neueste Meldungen“, `/news-sitemap.xml` mit `image:loc`, JSON-LD einer Ortsseite mit `sameAs`.
 
 ## Neu am 02.11.2026 (zweite Runde): Plugin 1.37.2 und Theme 21.24.2, HK-Growth-Anzeigen zu Website, Anfragen und Automation
 

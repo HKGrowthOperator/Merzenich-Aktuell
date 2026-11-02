@@ -46,6 +46,22 @@ pruefe('Koordinaten nur mit Quelle (Golzheim, Girbelsrath), nicht für Morscheni
 
 pruefe('Startseite: Description ≤ 155 Zeichen, Titel mit „Nachrichten aus Merzenich“', [mb_strlen(MA_SEO_BESCHREIBUNG) <= 155, str_contains(MA_SEO_STARTTITEL, 'Nachrichten aus Merzenich'), mb_strlen(MA_SEO_STARTTITEL) < 100], [true, true, true]);
 pruefe('llms.txt nutzt die Langfassung', str_contains($l, 'Jede Meldung mit Quelle und Bildcredit'), true);
+// 1.38.0: KI-Crawler ausdrücklich erlaubt, eigene Gruppe mit denselben Sperren.
+pruefe('robots.txt: KI-Gruppe mit GPTBot, PerplexityBot, ClaudeBot, Google-Extended, Allow /', str_contains($r, "User-agent: GPTBot\n") && str_contains($r, "User-agent: PerplexityBot\n") && str_contains($r, "User-agent: ClaudeBot\n") && str_contains($r, "User-agent: Google-Extended\n") && str_contains($r, "User-agent: Applebot-Extended\nAllow: /\n"), true);
+$kiGruppe = substr($r, strpos($r, 'User-agent: GPTBot'));
+pruefe('robots.txt: KI-Gruppe sperrt wp-admin und Suche ebenfalls', str_contains($kiGruppe, "Disallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php") && str_contains($kiGruppe, 'Disallow: /*?s=') && str_contains($kiGruppe, 'Disallow: /*?gesendet='), true);
+pruefe('robots.txt: KI-Gruppe nur einmal', substr_count(ma_seo_robots_txt($r, $HOME), 'User-agent: GPTBot'), 1);
+// 1.38.0: News-Sitemap mit Hauptbild.
+$xb = ma_seo_news_sitemap_xml([['url' => $HOME . 'blaulicht/a/', 'titel' => 'A', 'zeit' => '2026-11-02T14:25:49+01:00', 'bild' => $HOME . 'wp-content/uploads/2026/10/polizei-03.webp?x=1&y=2'], ['url' => $HOME . 'leben/b/', 'titel' => 'B', 'zeit' => '2026-11-02T14:27:31+01:00', 'bild' => '']]);
+pruefe('News-Sitemap: Bild-Namensraum und image:loc maskiert', str_contains($xb, 'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"') && str_contains($xb, '<image:image><image:loc>' . $HOME . 'wp-content/uploads/2026/10/polizei-03.webp?x=1&amp;y=2</image:loc></image:image></url>'), true);
+pruefe('News-Sitemap: ohne Bild kein image:image', substr_count($xb, '<image:image>'), 1);
+pruefe('News-Sitemap: Einträge ohne Feld bild bleiben gültig', str_contains($x, '<image:image>'), false);
+// 1.38.0: llms.txt mit Abschnitt „Aktuell“ und den neuesten Meldungen.
+$neu = array_map(fn($i) => ["Meldung $i", $HOME . "blaulicht/m-$i/", '02.11.2026'], range(1, 12));
+$l2 = ma_seo_llms_txt($HOME, [], $neu);
+pruefe('llms.txt: Heute, Termine, Kalender (ICS), KI-Redaktion', str_contains($l2, "[Heute in Merzenich]({$HOME}heute/)") && str_contains($l2, "({$HOME}termine/kalender.ics)") && str_contains($l2, "[KI-Redaktion]({$HOME}ki-redaktion/)"), true);
+pruefe('llms.txt: höchstens zehn neueste Meldungen mit Datum', [substr_count($l2, "blaulicht/m-"), str_contains($l2, "- [Meldung 1]({$HOME}blaulicht/m-1/) (02.11.2026)"), str_contains($l2, 'Meldung 11')], [10, true, false]);
+pruefe('llms.txt: ohne Meldungen kein leerer Abschnitt', str_contains($l, '## Neueste Meldungen'), false);
 
 echo "\nIndexNow\n";
 $key = ma_indexnow_key();
@@ -106,6 +122,11 @@ pruefe('Ressort: CollectionPage mit ItemList (2 Einträge, Positionen)', $c['mai
 $g = ma_seo_graph(['typ' => 'ort', 'ort' => 'golzheim', 'titel' => 'Golzheim', 'beschreibung' => 'x', 'url' => $HOME . 'ort/golzheim/', 'bild' => null, 'krumen' => [['Start', $HOME], ['Golzheim', null]], 'liste' => []], $ORG);
 $p = $finde($g, 'Place');
 pruefe('Ortsseite: Place Golzheim mit GeoNames-Koordinaten, Beschreibung, in der Gemeinde', $p['geo']['latitude'] === 50.83966 && str_contains($p['description'], 'St. Gregorius') && $p['containedInPlace']['name'] === 'Gemeinde Merzenich' && $finde($g, 'CollectionPage')['about'] === ['@id' => $p['@id']], true);
+// 1.38.0: Orte mit Wikidata und deutscher Wikipedia verknüpft (Kennungen geprüft am 02.11.2026).
+pruefe('Ortsseite: Place Golzheim sameAs Wikidata Q1284626 und dewiki Golzheim (Merzenich)', $p['sameAs'], ['https://www.wikidata.org/wiki/Q1284626', 'https://de.wikipedia.org/wiki/Golzheim_%28Merzenich%29']);
+pruefe('Alle fünf Orte haben eine Wikidata-Kennung', array_map(fn($d) => (bool) preg_match('/^Q\d+$/', $d['wikidata'] ?? ''), ma_seo_orte()), ['merzenich' => true, 'golzheim' => true, 'girbelsrath' => true, 'morschenich' => true, 'buergewald' => true]);
+pruefe('Kennungen eindeutig (Morschenich und Bürgewald nicht vertauscht)', [ma_seo_orte()['merzenich']['wikidata'], ma_seo_orte()['morschenich']['wikidata'], ma_seo_orte()['buergewald']['wikidata'], count(array_unique(array_column(ma_seo_orte(), 'wikidata')))], ['Q200044', 'Q19059925', 'Q1650249', 5]);
+pruefe('Ort ohne Kennung: kein sameAs', ma_seo_ort_sameas(['name' => 'X']), []);
 $g = ma_seo_graph(['typ' => 'termin', 'titel' => 'Ratssitzung', 'beschreibung' => 'Sitzung.', 'url' => $HOME . 'termine/rat/', 'bild' => null, 'krumen' => [['Start', $HOME], ['Termine', $HOME . 'termine/'], ['Ratssitzung', null]], 'termin' => ['start' => '2026-09-30T18:00:00+02:00', 'ende' => '', 'ort' => 'Rathaus Merzenich', 'veranstalter' => 'Gemeinde Merzenich', 'preis' => 'kostenfrei']], $ORG);
 $e = $finde($g, 'Event');
 pruefe('Termin: geplant trägt eventStatus Scheduled', $e['eventStatus'] ?? '', 'https://schema.org/EventScheduled');

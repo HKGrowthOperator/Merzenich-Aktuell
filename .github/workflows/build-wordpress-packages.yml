@@ -32,6 +32,11 @@ jobs:
         run: |
           while IFS= read -r file; do php -l "$file"; done < <(find wordpress/theme/merzenich-aktuell wordpress/plugin/merzenich-aktuell-core -type f -name '*.php' -print)
 
+      # Selbst-Update (Plugin 1.39.0): WordPress installiert, was hier gebaut wird. Deshalb erst
+      # alle PHP-Tests; schlägt einer fehl, entstehen weder Zip noch release.json, und live bleibt alles.
+      - name: PHP-Tests vor dem Bauen
+        run: for t in qa/wordpress/*-test.php; do echo "== $t"; php "$t" || exit 1; done
+
       - name: Zips und Pruefsummen bauen, committen, pushen
         # In einer Schleife: qa.yml, die Quellen-Laeufe und die Automatik schreiben parallel
         # auf main. Am 12.10.2026 wurde der Push deshalb abgelehnt ("fetch first") und das
@@ -56,7 +61,14 @@ jobs:
               sha256sum wordpress-delivery/merzenich-aktuell-import.xml
             } > docs/SHA256SUMS.txt
             sha256sum -c docs/SHA256SUMS.txt
-            git add wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip docs/SHA256SUMS.txt
+            # release.json: was WordPress per Selbst-Update installiert (Version und Prüfsumme je Paket).
+            pv=$(grep -m1 -oP "define\('MA_CORE_VERSION', '\K[0-9.]+" wordpress/plugin/merzenich-aktuell-core/merzenich-aktuell-core.php)
+            tv=$(grep -m1 -oP '^Version:\s*\K[0-9.]+' wordpress/theme/merzenich-aktuell/style.css)
+            ps=$(sha256sum wordpress-delivery/merzenich-aktuell-core.zip | cut -d' ' -f1)
+            ts=$(sha256sum wordpress-delivery/merzenich-aktuell-theme.zip | cut -d' ' -f1)
+            printf '{\n  "plugin": {"version": "%s", "zip": "wordpress-delivery/merzenich-aktuell-core.zip", "sha256": "%s"},\n  "theme": {"version": "%s", "zip": "wordpress-delivery/merzenich-aktuell-theme.zip", "sha256": "%s"}\n}\n' "$pv" "$ps" "$tv" "$ts" > wordpress-delivery/release.json
+            cat wordpress-delivery/release.json
+            git add wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip wordpress-delivery/release.json docs/SHA256SUMS.txt
             if git diff --cached --quiet; then
               echo 'Delivery packages already synchronized.'
               exit 0
