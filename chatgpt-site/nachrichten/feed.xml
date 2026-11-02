@@ -7,12 +7,23 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 28 Oct 2026 07:55:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 17:56:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
-<title>Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben</title>
+<title>Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/</guid>
+<pubDate>Mon, 02 Nov 2026 17:56:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg" medium="image"><media:credit>Kaap bij Sneeuw / Wikimedia Commons · CC0</media:credit><media:description>Rettungswagen</media:description></media:content>
+</item>
+<item>
+<title>Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</guid>
 <pubDate>Wed, 28 Oct 2026 07:55:00 GMT</pubDate>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Abgeholt werden nur gebündelte Grünabfälle, höchstens 1,5 Kubikmeter je Grundstück. Säcke, Tonnen oder Schubkarren bleiben stehen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/tipp/tipp-21-b2be2ca7e2.jpg" medium="image"><media:credit>Barbara Horstmann / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Rad- und Wanderweg</media:description></media:content>
-</item>
-<item>
-<title>Adventmarkt im Heimatmuseum an der Bergstraße am 28. und 29. November</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/adventmarkt-heimatmuseum-merzenich-28-29-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/adventmarkt-heimatmuseum-merzenich-28-29-november-2026/</guid>
-<pubDate>Fri, 16 Oct 2026 07:32:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der Geschichts- und Heimatverein lädt zum traditionellen Adventmarkt mit Handwerkskunst, Blasmusik und Besuch des Nikolaus ein. Der Eintritt ist frei.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
 </item>
 </channel>
 </rss>

@@ -7,12 +7,23 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 28 Oct 2026 07:55:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 17:56:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Blaulicht</title><link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/blaulicht/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
 <item>
-<title>Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben</title>
+<title>Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/</guid>
+<pubDate>Mon, 02 Nov 2026 17:56:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Girbelsrath</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg" medium="image"><media:credit>Kaap bij Sneeuw / Wikimedia Commons · CC0</media:credit><media:description>Rettungswagen</media:description></media:content>
+</item>
+<item>
+<title>Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</link>
 <guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/</guid>
 <pubDate>Wed, 28 Oct 2026 07:55:00 GMT</pubDate>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am 16. August stieg an der L257 an der Hambachbahn Rauch aus dem Waldboden, vermutlich aus Glutnestern des Waldbrands vom Donnerstag zuvor.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/f6d518964d1547-526.webp" medium="image"><media:credit>Freiwillige Feuerwehr Merzenich</media:credit><media:description>Einsatzkräfte an einer Fläche im Bürgewald</media:description></media:content>
-</item>
-<item>
-<title>Unklare Rauchentwicklung am Roßpfad in Girbelsrath</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-118-rosspfad/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-118-rosspfad/</guid>
-<pubDate>Fri, 14 Aug 2026 12:06:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Girbelsrath</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Eine Ursache fand die Feuerwehr am 14. August im Gewerbegebiet Girbelsrath nicht. Der Rauch kam vermutlich vom Waldbrand im Hürtgenwald.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/2abe68e61e85d1-526.webp" medium="image"><media:credit>Freiwillige Feuerwehr Merzenich</media:credit><media:description>Rauchwolke über Feldern bei Girbelsrath</media:description></media:content>
 </item>
 </channel>
 </rss>

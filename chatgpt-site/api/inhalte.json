@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-28T08:55:00+01:00",
- "anzahl": 217,
+ "generated": "2026-11-02T18:56:00+01:00",
+ "anzahl": 218,
  "bestand": {
-  "gesamt": 217,
+  "gesamt": 218,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 72,
+   "blaulicht": 73,
    "sport": 33,
    "rathaus": 26,
    "leben": 49,
@@ -18,18 +18,18 @@
   "ortsteile": {
    "merzenich": 149,
    "golzheim": 24,
-   "girbelsrath": 24,
+   "girbelsrath": 25,
    "morschenich": 11,
    "buergewald": 9,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 217,
+    "anzahl": 218,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 72,
+    "anzahl": 73,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -73,7 +73,7 @@
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
-    "anzahl": 24,
+    "anzahl": 25,
     "liste": "gepflegt"
    },
    "/morschenich/": {
@@ -102,9 +102,51 @@
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
   {
+   "id": "2026-11-02-toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02",
+   "url": "/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/",
+   "titel": "Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben",
+   "teaser": "Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.",
+   "kicker": "Blaulicht · Verkehr",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "girbelsrath",
+   "datum": "2026-11-02T18:56:00+01:00",
+   "aktualisiert": "2026-11-02T18:56:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    },
+    {
+     "slug": "girbelsrath",
+     "label": "Girbelsrath"
+    },
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+    "srcset": "/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-480.webp 480w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-800.webp 800w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3-1200.webp 1200w, /assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg 1279w",
+    "alt": "Rettungswagen",
+    "width": 1279,
+    "height": 1706,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Kaap bij Sneeuw / Wikimedia Commons · CC0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
    "url": "/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
-   "titel": "Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben",
+   "titel": "Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt",
    "teaser": "Der Autofahrer, der am 27. Oktober gegen 2.44 Uhr auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt war, ist am 30. Oktober im Krankenhaus gestorben. Das teilte die Polizei Düren am 2. November mit.",
    "kicker": "Blaulicht · Verkehr",
    "ressort": "blaulicht",
@@ -9019,9 +9061,14 @@
  "aufmacher": {
   "id": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
   "url": "/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
-  "titel": "Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben"
+  "titel": "Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-02-toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02",
+   "url": "/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/",
+   "titel": "Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben"
+  },
   {
    "id": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
    "url": "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
@@ -9036,11 +9083,6 @@
    "id": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
    "url": "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
    "titel": "Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt"
-  },
-  {
-   "id": "2026-10-26-einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026",
-   "url": "/rathaus/einsatzleitwagen-feuerwehr-merzenich-ratsbeschluss-257000-euro-2026/",
-   "titel": "Neuer Einsatzleitwagen für die Feuerwehr: Rat gibt bis zu 257.000 Euro frei"
   }
  ],
  "startseitenMotive": {
@@ -9061,6 +9103,7 @@
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
+  "editorial-pools/blaulicht/blaulicht-05-ec25c697b3": 1,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
   "editorial-pools/brand/brand-19-6a048a0c3d": 1,
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
@@ -9070,7 +9113,6 @@
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
-  "editorial-pools/menschen/menschen-06-1835323b3c": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 1,
   "editorial-pools/technik/technik-07-c67b406470": 1,
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
@@ -9098,7 +9140,7 @@
   "responsive/f507b5f3e2c7d3": 1
  },
  "buehnenMotive": [
-  "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a",
+  "editorial-pools/blaulicht/blaulicht-05-ec25c697b3",
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8",
   "editorial-pools/themen/themen-16-b1fd3ef820",
   "editorial-pools/themen/themen-19-deb8f481da",

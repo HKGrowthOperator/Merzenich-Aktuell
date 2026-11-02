@@ -15,9 +15,26 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/",
+      "title": "Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben",
+      "summary": "Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.",
+      "content_html": "<p>Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.</p>",
+      "date_published": "2026-11-02T18:56:00+01:00",
+      "date_modified": "2026-11-02T18:56:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg",
+      "tags": [
+        "Blaulicht",
+        "Girbelsrath",
+        "Verkehr",
+        "Girbelsrath",
+        "Polizei"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
-      "title": "Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben",
+      "title": "Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt",
       "summary": "Der Autofahrer, der am 27. Oktober gegen 2.44 Uhr auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt war, ist am 30. Oktober im Krankenhaus gestorben. Das teilte die Polizei Düren am 2. November mit.",
       "content_html": "<p>Der Autofahrer, der am 27. Oktober gegen 2.44 Uhr auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt war, ist am 30. Oktober im Krankenhaus gestorben. Das teilte die Polizei Düren am 2. November mit.</p>",
       "date_published": "2026-10-28T08:55:00+01:00",
@@ -500,23 +517,6 @@
         "Abfall",
         "Bürgerservice",
         "Umwelt"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/adventmarkt-heimatmuseum-merzenich-28-29-november-2026/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/adventmarkt-heimatmuseum-merzenich-28-29-november-2026/",
-      "title": "Adventmarkt im Heimatmuseum an der Bergstraße am 28. und 29. November",
-      "summary": "Der Geschichts- und Heimatverein lädt zum traditionellen Adventmarkt mit Handwerkskunst, Blasmusik und Besuch des Nikolaus ein. Der Eintritt ist frei.",
-      "content_html": "<p>Der Geschichts- und Heimatverein lädt zum traditionellen Adventmarkt mit Handwerkskunst, Blasmusik und Besuch des Nikolaus ein. Der Eintritt ist frei.</p>",
-      "date_published": "2026-10-16T09:32:00+02:00",
-      "date_modified": "2026-10-16T09:32:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg",
-      "tags": [
-        "Vereine",
-        "Merzenich",
-        "Heimatverein",
-        "Brauchtum",
-        "Veranstaltungen"
       ]
     }
   ]

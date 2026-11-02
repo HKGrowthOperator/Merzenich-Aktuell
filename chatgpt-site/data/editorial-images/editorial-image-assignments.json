@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T09:39:03.891Z",
+  "updatedAt": "2026-11-02T17:56:38.982Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1520,6 +1520,15 @@
       "assignedAt": "2026-10-28T09:39:03.891Z",
       "articleId": "2026-10-28-alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27",
       "articleDate": "2026-10-28T08:55:00+01:00"
+    },
+    "/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "verkehr.unfall.rettung",
+      "assignedAt": "2026-11-02T17:56:38.981Z",
+      "articleId": "2026-11-02-toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02",
+      "articleDate": "2026-11-02T18:56:00+01:00"
     }
   }
 }
