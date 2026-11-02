@@ -25,6 +25,11 @@
       "slug": "einsatz-141-oelspur-merzenich",
       "datei": "inhalte/meldungen/2026-10-21-feuerwehr-automatik.json",
       "am": "2026-10-21"
+    },
+    "144/26": {
+      "slug": "einsatz-144-verkehrsunfall-eingeklemmte-person-girbelsrath",
+      "datei": "inhalte/meldungen/2026-11-03-feuerwehr-automatik.json",
+      "am": "2026-11-03"
     }
   },
   "termine": {
@@ -37,6 +42,20 @@
       "slug": "weihnachtsfeier-morschenich-2026-12-06",
       "datei": "inhalte/termine/2026-11-02-heimatinfo-automatik.json",
       "am": "2026-11-02"
+    }
+  },
+  "umkreis": {
+    "https://www.presseportal.de/blaulicht/pm/8/6382454": {
+      "datei": "inhalte/umkreis/2026-11-03-polizei-automatik.json",
+      "am": "2026-11-03"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6382376": {
+      "datei": "inhalte/umkreis/2026-11-03-polizei-automatik.json",
+      "am": "2026-11-03"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6382371": {
+      "datei": "inhalte/umkreis/2026-11-03-polizei-automatik.json",
+      "am": "2026-11-03"
     }
   }
 }

@@ -7,18 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:ortsfest-2026@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20261003T090000Z
-SUMMARY:Ortsfest Merzenich 2026
-DESCRIPTION:Trödelmarkt\, Bühnenprogramm und Vereinsstände.\nVeranstalte
- r: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termi
- ne/ortsfest-2026/
-LOCATION:Ortszentrum Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/ortsfest-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:wttv-cup-merzenich-2026-10-04@merzenich-aktuell.de
 DTSTAMP:20261004T060000Z
 DTSTART:20261004T120000Z

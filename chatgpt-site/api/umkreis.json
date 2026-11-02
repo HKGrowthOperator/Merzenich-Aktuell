@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-10-26",
+ "stand": "2026-11-02",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "20 Pkw in Jülich beschädigt - Tatverdächtiger gestellt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6382376",
+   "datum": "2026-11-02",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Einbruch in Geschäft - Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6382454",
+   "datum": "2026-11-02",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Nideggen: Brand in Einfamilienhaus - Bewohner bleiben unverletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6382371",
+   "datum": "2026-11-02",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
@@ -466,14 +490,6 @@
    "url": "https://www.heimat-info.de/veranstaltungen/940d1605-baa9-4150-a13f-c0f31c4e2ccd",
    "datum": "2026-10-04",
    "quelle": "KG Frohsinn 1971 Oberzier e.V."
-  },
-  {
-   "ort": "Düren",
-   "rubrik": "Blaulicht",
-   "titel": "Radfahrer mit rund 1,8 Promille auf der Holzstraße kontrolliert",
-   "url": "https://www.presseportal.de/blaulicht/pm/8/6364075",
-   "datum": "2026-10-03",
-   "quelle": "Polizei Düren"
   }
  ]
 }

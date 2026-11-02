@@ -1,0 +1,43 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint in WordPress als Entwurf in den Freigaben; die Redaktion prüft und gibt frei.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-144-verkehrsunfall-eingeklemmte-person-girbelsrath",
+      "ressort": "blaulicht",
+      "ortsteil": "girbelsrath",
+      "kicker": "Feuerwehr · 144/26",
+      "titel": "Verkehrsunfall - eingeklemmte Person in Girbelsrath: Einsatz 144/26 der Feuerwehr",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Dienstag, 27. Oktober 2026, nach Girbelsrath alarmiert worden. Die Meldung lautete „Verkehrsunfall - eingeklemmte Person“.",
+      "datum": "2026-10-27T12:00:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "fakten": [
+        "Einsatz 144/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Dienstag, 27. Oktober 2026",
+        "Einsatzort: Girbelsrath, L264",
+        "Meldung: Verkehrsunfall - eingeklemmte Person",
+        "Eingesetzte Kräfte: Feuerwehr Merzenich, Feuerschutztechnisches Zentrum Stockheim, Rettungsdienst"
+      ],
+      "absaetze": [
+        "Einsatzort war Girbelsrath, L264. Das Einsatzstichwort lautete „PE1“. Im Einsatz waren: Feuerwehr Merzenich, Feuerschutztechnisches Zentrum Stockheim und Rettungsdienst.",
+        "Die Feuerwehr schreibt dazu: „Dort kam ein Fahrer mit seinem Fahrzeug von der Fahrbahn ab und prallte gegen einen Baum. Durch die Feuerwehr wurde die Person aus dem PKW befreit und dem Rettungsdienst übergeben.“ Es war der 144. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "rettungsdienst",
+          "Rettungsdienst"
+        ]
+      ],
+      "bildklasse": "verkehr.unfall.rettung",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 02.11.2026",
+        "url": "https://www.heimat-info.de/beitraege/ccc978e5-2fc9-473e-bbf3-1b04af0adbf7",
+        "stand": "2026-11-03"
+      }
+    }
+  ]
+}
