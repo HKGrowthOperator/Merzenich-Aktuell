@@ -1,16 +1,19 @@
 {
-  "hinweis": "crf = Qualität (höher = kleinere Datei, Standard 28). Bewegung der Anzeigenvideos (docs/anzeigen/bauen.mjs). Standbild je Motiv: wordpress/plugin/merzenich-aktuell-core/data/banner/<id>.jpg (1600 × 900). flaechen = leuchtende Bildschirme als Vielecke [[x, y], ...], lichter = Lichtquellen [x, y, radius], glanz = Lichtstreif; alles in Prozent des Bildes.",
+  "hinweis": "Anzeigenvideos, zweite Fassung (02.11.2026), gebaut von docs/anzeigen/bauen.mjs in 16:9 und breit (3,5 : 1). bilder = [Datei in docs/anzeigen/material, Fokuspunkt \"x% y%\", Bewegung heran|schwenk|schwenk-|zurueck]. flaechen = leuchtende Bildschirme als Vielecke [[x, y], ...], lichter = [x, y, radius], alles in Prozent des Fotos. crf = Qualität (höher = kleinere Datei, Standard 28). nur = nur dieses Format bauen. Fotos von Almera, ASS und KBS stammen von deren Websites (Nutzung mit Zusage laut Betreiber); Merzlicht und AJ Sports sind KI-Bilder (als KI-Bild gekennzeichnet).",
   "dauer": 8,
   "motive": [
-    {"id": "almera-clean-1", "glanz": true, "crf": 32},
-    {"id": "almera-clean-2", "glanz": true},
-    {"id": "ass-elektrotechnik-1", "glanz": true},
-    {"id": "ass-elektrotechnik-2", "glanz": true},
-    {"id": "kbs-management-1", "quelle": "video", "hinweis": "Intro-Animation von kbs-management.tv (wp-content/themes/kbs/intro.mp4), ein- und ausgeblendet als Schleife"},
-    {"id": "kbs-management-2", "glanz": true, "lichter": [[33, 43, 16]]},
-    {"id": "merzlicht-1", "flaechen": [[[55, 32], [86.8, 11.6], [87.7, 63.5], [55.2, 65.5]]], "lichter": [[25.8, 21.7, 7], [27.5, 48.4, 4], [13.7, 48.9, 3]]},
-    {"id": "merzlicht-2", "flaechen": [[[60.3, 32.6], [73.6, 32.6], [73.6, 46.3], [60.3, 46.3]], [[5.5, 44.5], [64, 52], [64, 55.5], [5.5, 53.4]]], "lichter": [[75.5, 0.9, 7]]},
-    {"id": "aj-sports-1", "lichter": [[87.1, 6.9, 8], [10, 45, 12]]},
-    {"id": "aj-sports-2", "lichter": [[43.7, 27.8, 7], [92, 18.4, 7], [77.5, 40.4, 3]]}
+    {"id": "almera-clean-1-v2", "stil": "sequenz", "crf": 30, "bilder": [["almera/fassade.jpg", "50% 35%", "heran"], ["almera/tisch.jpg", "45% 55%", "schwenk"], ["almera/boden.jpg", "40% 65%", "zurueck"]]},
+    {"id": "almera-clean-2-v2", "stil": "split", "bilder": [["almera/wischmopp.jpg", "45% 70%"], ["almera/eimer.jpg", "55% 55%"], ["almera/buero.jpg", "50% 55%"]]},
+    {"id": "ass-elektrotechnik-1-v2", "stil": "sequenz", "crf": 30, "bilder": [["ass/verteiler.jpg", "50% 50%", "heran"], ["ass/verkabelung.jpg", "55% 40%", "schwenk-"], ["ass/ruecken.jpg", "63% 55%", "zurueck"]]},
+    {"id": "ass-elektrotechnik-2-v2", "stil": "detail", "zoom": 1.45, "bilder": [["ass/akkuschrauber.jpg", "42% 52%"]]},
+    {"id": "kbs-management-1-v2", "stil": "film", "video": "kbs/intro.mp4", "ab": 0.5, "bis": 6.1, "start": 4.0, "standbild": 4.0, "fps": 25, "fokus": "50% 52%", "hinweis": "Intro-Animation von kbs-management.tv; Schleife 0,5 bis 6,6 s ohne Schwarzblende, beginnt beim stehenden Logo"},
+    {"id": "kbs-management-2-v2", "stil": "detail", "zoom": 1.5, "bilder": [["kbs/mischpult.jpg", "30% 74%"]]},
+    {"id": "merzlicht-1-v2", "stil": "licht", "bilder": [["ki/merzlicht-videowall.jpg", "72% 40%"]], "flaechen": [[[55, 32], [86.8, 11.6], [87.7, 63.5], [55.2, 65.5]]], "lichter": [[25.8, 21.7, 7], [27.5, 48.4, 4], [13.7, 48.9, 3]]},
+    {"id": "merzlicht-2-v2", "stil": "sequenz", "bilder": [["ki/merzlicht-bande.jpg", "60% 45%", "heran"], ["ki/merzlicht-videowall.jpg", "70% 40%", "schwenk"], ["ki/merzlicht-bande.jpg", "25% 60%", "zurueck"]]},
+    {"id": "aj-sports-1-v2", "stil": "sequenz", "bilder": [["ki/aj-tribuene.jpg", "50% 60%", "heran"], ["ki/aj-spiel.jpg", "35% 55%", "schwenk"], ["ki/aj-tribuene.jpg", "80% 35%", "zurueck"]]},
+    {"id": "aj-sports-2-v2", "stil": "split", "bilder": [["ki/aj-spiel.jpg", "30% 55%"], ["ki/aj-tribuene.jpg", "55% 55%"], ["ki/aj-spiel.jpg", "85% 40%"]]},
+    {"id": "hk-growth-webstudio-1", "stil": "geraet", "nur": "breit", "bild": "hk/desktop.jpg", "handy": "hk/handy.jpg", "lauf": 1400},
+    {"id": "hk-growth-webstudio-anfragen", "stil": "geraet", "nur": "breit", "bild": "hk/anfragen.jpg", "handy": "hk/handy.jpg", "handyStart": 200},
+    {"id": "hk-growth-webstudio-automation", "stil": "geraet", "nur": "breit", "bild": "hk/automation.jpg", "handy": "hk/handy.jpg", "handyStart": 580}
   ]
 }

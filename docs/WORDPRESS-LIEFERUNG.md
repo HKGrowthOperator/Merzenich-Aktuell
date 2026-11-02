@@ -1,6 +1,19 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.24.2 · Core-Plugin 1.37.2 · live: 21.24.2 / 1.37.2 (Historie unten)
+2. November 2026 · Theme 21.25.0 · Core-Plugin 1.38.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+
+## Neu am 02.11.2026 (dritte Runde): Plugin 1.38.0 und Theme 21.25.0, Werbung groß, abwechselnd, neue Clips
+
+**Stand live:** noch nicht eingespielt (Vorschau beim Betreiber). Rückweg: Plugin 1.37.2, Theme 21.24.2.
+
+**Anlass:** Vorgabe Betreiber 02.11.2026: „mehr Abwechslung der Werbeclips … wirken nicht passend, zu verzerrt … zu viel Text, zu wenig Bild oder Video, zu gequetscht … nicht 2 mal hintereinander die gleiche Firma“. Entscheidungen: Bänder höher mit großem Video, Text nur Überschrift und Knopf.
+
+- **Nie zweimal dieselbe Firma** (`includes/ads.php`, `assets/ad-rotation.js`): Der Server verzahnt die Anzeigen eines Platzes nach Firma (`ma_ads_mischen`, `ma_ad_firma`, Karten mit `data-ma-firma`). Im Browser stimmt ein Koordinator alle Plätze ab: Start ohne gleiche Firma auf Nachbarplätzen, Wechsel nur zu einer anderen Firma, die auf keinem anderen sichtbaren Platz steht, versetzter Takt. Das Vereine-Menü zeigt eine Firma, die gerade nicht zu sehen ist. Lokal gemessen: 60 s, 56 Wechsel, keine Wiederholung, keine Firma doppelt im Bild.
+- **Groß statt gequetscht** (`chatgpt-site/assets/werbung.css`): Die Karte richtet sich nach der Breite ihres Platzes (Container-Abfrage). Ab 840 px Bild oder Video 60 % bei 180 bis 224 px Höhe (vorher 86 px, 31 %), Bildseite im Wechsel je Band; 561 bis 839 px Bild links 46 % in 16:9 (unter Meldungen 330 statt 118 px breit); schmal und am Handy Bild oben in voller Breite. Überschrift mit fester Höhe, damit beim Wechsel nichts springt.
+- **Wenig Text:** Firmenname, Überschrift, Knopf. Den Satz gibt es nur in der Bühne ab 1100 px. „in eigener Sache“ (KBS) bleibt stehen.
+- **Breite Fassung** (3,5 : 1) je Anzeige: Meta `ma_ad_bild_breit`, `ma_ad_video_breit`, `ma_ad_video_breit_webm`; im Werbemittel wählbar (Mediathek), aus `data/firmen-entwuerfe.json` (`bild_breit`, `video_breit`) importiert. Video jetzt auf allen Plätzen und auch am Handy (nicht bei „Bewegung reduzieren“ oder Datensparen).
+- **Neue Clips für alle sechs Firmen** (`docs/anzeigen/bauen.mjs`, `motive.json`, Material in `docs/anzeigen/material/`): sechs Stile (Sequenz aus drei Fotos, Bahnen, Detail, Licht, Film, Gerät), 30 fps, nahtlose Schleife, je 16:9 und breit, alle unter 700 KB. KBS-Intro ohne Schwarzblende, Videowall ohne Farbkreisel. Neue Dateinamen `<motiv>-v2.*` und `-breit.*`, feste `id` je Anzeige: „Fehlende Entwürfe anlegen“ zieht die 13 laufenden Anzeigen nach, statt neue anzulegen (lokal geprüft: 13 × „aktualisiert“).
+- **Tests:** `qa/werbung-rotation-test.mjs` (neu, in qa.yml), `werbung-business-test.php` (Mischen), `werbung-ohne-muster-test.php` (Karte, breite Fassung, Bühne), `firmen-entwuerfe-test.php` (breite Fassung).
 
 ## Neu am 02.11.2026 (zweite Runde): Plugin 1.37.2 und Theme 21.24.2, HK-Growth-Anzeigen zu Website, Anfragen und Automation
 

@@ -12,7 +12,7 @@
       "text": "Reinigung von Gebäuden und Fenstern, dazu ein Wäscheservice. Angebote auf Anfrage.",
       "cta": "Website",
       "ziel": "https://www.almera-clean.de/",
-      "bild": "/assets/anzeigen/almera-clean-1.jpg",
+      "bild": "/assets/anzeigen/almera-clean-1-v2.jpg",
       "bildAlt": "Fensterreiniger an einer geschwungenen Glasfassade",
       "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
     },
@@ -25,7 +25,7 @@
       "text": "App- und Softwareentwicklung aus Leverkusen, von der Herausgeberin von Merzenich Aktuell.",
       "cta": "Website",
       "ziel": "https://kbs-management.tv/",
-      "bild": "/assets/anzeigen/kbs-management-1.jpg",
+      "bild": "/assets/anzeigen/kbs-management-1-v2.jpg",
       "bildAlt": "Animiertes Logo von KBS Management",
       "nachweis": "Animation: KBS Management (Website des Unternehmens)"
     },
@@ -38,8 +38,8 @@
       "text": "Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik.",
       "cta": "Website",
       "ziel": "https://www.asselektrotechnik.de/",
-      "bild": "/assets/anzeigen/ass-elektrotechnik-1.jpg",
-      "bildAlt": "Mitarbeiter im Shirt von ASS Elektrotechnik, von hinten",
+      "bild": "/assets/anzeigen/ass-elektrotechnik-1-v2.jpg",
+      "bildAlt": "Verkabelung in einem Verteilerkasten",
       "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
     },
     {
@@ -51,7 +51,7 @@
       "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
-      "bild": "/assets/anzeigen/merzlicht-1.jpg",
+      "bild": "/assets/anzeigen/merzlicht-1-v2.jpg",
       "bildAlt": "LED-Videowall am Sportplatz in der Dämmerung (KI-Bild)",
       "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
       "ki": true
@@ -65,8 +65,8 @@
       "text": "Partner des Sports und von Merzenich Aktuell.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
-      "bild": "/assets/anzeigen/aj-sports-1.jpg",
-      "bildAlt": "Abendspiel unter Flutlicht (KI-Bild)",
+      "bild": "/assets/anzeigen/aj-sports-1-v2.jpg",
+      "bildAlt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
       "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
       "ki": true
     },
@@ -79,8 +79,8 @@
       "text": "Gebäudereinigung und Wäscheservice aus Merzenich.",
       "cta": "Website",
       "ziel": "https://www.almera-clean.de/",
-      "bild": "/assets/anzeigen/almera-clean-2.jpg",
-      "bildAlt": "Eimer mit Reinigungsmitteln, im Hintergrund wird der Boden gewischt",
+      "bild": "/assets/anzeigen/almera-clean-2-v2.jpg",
+      "bildAlt": "Wischmopp, Eimer mit Reinigungsmitteln und Reinigung eines Tisches",
       "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
     },
     {
@@ -92,7 +92,7 @@
       "text": "Für Sender, Videoplattformen und Medienhäuser.",
       "cta": "Website",
       "ziel": "https://kbs-management.tv/",
-      "bild": "/assets/anzeigen/kbs-management-2.jpg",
+      "bild": "/assets/anzeigen/kbs-management-2-v2.jpg",
       "bildAlt": "Mischpult in einem Fernsehstudio",
       "nachweis": "Foto: KBS Management (Website des Unternehmens)"
     },
@@ -105,7 +105,7 @@
       "text": "Fachkundige Beratung und Planung für jedes Projekt.",
       "cta": "Website",
       "ziel": "https://www.asselektrotechnik.de/",
-      "bild": "/assets/anzeigen/ass-elektrotechnik-2.jpg",
+      "bild": "/assets/anzeigen/ass-elektrotechnik-2-v2.jpg",
       "bildAlt": "Hand am Akkuschrauber im Werkzeuggürtel",
       "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
     },
@@ -118,7 +118,7 @@
       "text": "Die Videowall am Sportplatz zeigt in beide Richtungen.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
-      "bild": "/assets/anzeigen/merzlicht-2.jpg",
+      "bild": "/assets/anzeigen/merzlicht-2-v2.jpg",
       "bildAlt": "Beleuchtete Bande und Videowall am Sportplatz am Abend (KI-Bild)",
       "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
       "ki": true
@@ -132,8 +132,8 @@
       "text": "AJ Sports Entertainment unterstützt Merzenich Aktuell.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
-      "bild": "/assets/anzeigen/aj-sports-2.jpg",
-      "bildAlt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
+      "bild": "/assets/anzeigen/aj-sports-2-v2.jpg",
+      "bildAlt": "Abendspiel unter Flutlicht und Zuschauer am Spielfeldrand (KI-Bild)",
       "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
       "ki": true
     },

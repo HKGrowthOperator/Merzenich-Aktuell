@@ -74,28 +74,32 @@
       },
       "anzeigen": [
         {
+          "id": "almera-clean-1",
           "zeile": "Almera Clean · Gebäudereinigung aus Merzenich",
           "titel": "Gebäude und Fenster in guten Händen.",
           "text": "Reinigung von Gebäuden und Fenstern, dazu ein Wäscheservice. Angebote auf Anfrage.",
-          "bild": "almera-clean-1.jpg",
-          "video": "almera-clean-1.mp4",
+          "bild": "almera-clean-1-v2.jpg",
+          "video": "almera-clean-1-v2.mp4",
+          "bild_breit": "almera-clean-1-v2-breit.jpg",
+          "video_breit": "almera-clean-1-v2-breit.mp4",
           "alt": "Fensterreiniger an einer geschwungenen Glasfassade",
           "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
           "quelle": "https://www.almera-clean.de/",
-          "stand": "2026-10-28",
-          "fokus": "50% 30%"
+          "stand": "2026-11-02c"
         },
         {
+          "id": "almera-clean-2",
           "zeile": "Almera Clean · Kettenweg 1, Merzenich",
           "titel": "Sauberkeit für Büro und Haus.",
           "text": "Gebäudereinigung und Wäscheservice aus Merzenich.",
-          "bild": "almera-clean-2.jpg",
-          "video": "almera-clean-2.mp4",
-          "alt": "Eimer mit Reinigungsmitteln, im Hintergrund wird der Boden gewischt",
+          "bild": "almera-clean-2-v2.jpg",
+          "video": "almera-clean-2-v2.mp4",
+          "bild_breit": "almera-clean-2-v2-breit.jpg",
+          "video_breit": "almera-clean-2-v2-breit.mp4",
+          "alt": "Wischmopp, Eimer mit Reinigungsmitteln und Reinigung eines Tisches",
           "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
           "quelle": "https://www.almera-clean.de/",
-          "stand": "2026-10-28",
-          "fokus": "30% 70%"
+          "stand": "2026-11-02c"
         }
       ]
     },
@@ -156,27 +160,32 @@
       },
       "anzeigen": [
         {
+          "id": "kbs-management-1",
           "zeile": "KBS Management · in eigener Sache",
           "titel": "Apps und Software nach Maß.",
           "text": "App- und Softwareentwicklung aus Leverkusen, von der Herausgeberin von Merzenich Aktuell.",
-          "bild": "kbs-management-1.jpg",
-          "video": "kbs-management-1.mp4",
+          "bild": "kbs-management-1-v2.jpg",
+          "video": "kbs-management-1-v2.mp4",
+          "bild_breit": "kbs-management-1-v2-breit.jpg",
+          "video_breit": "kbs-management-1-v2-breit.mp4",
           "alt": "Animiertes Logo von KBS Management",
           "nachweis": "Animation: KBS Management (Website des Unternehmens)",
           "quelle": "https://kbs-management.tv/",
-          "stand": "2026-10-28"
+          "stand": "2026-11-02c"
         },
         {
+          "id": "kbs-management-2",
           "zeile": "KBS Management · in eigener Sache",
           "titel": "Broadcast- und IT-Beratung.",
           "text": "Für Sender, Videoplattformen und Medienhäuser.",
-          "bild": "kbs-management-2.jpg",
-          "video": "kbs-management-2.mp4",
+          "bild": "kbs-management-2-v2.jpg",
+          "video": "kbs-management-2-v2.mp4",
+          "bild_breit": "kbs-management-2-v2-breit.jpg",
+          "video_breit": "kbs-management-2-v2-breit.mp4",
           "alt": "Mischpult in einem Fernsehstudio",
           "nachweis": "Foto: KBS Management (Website des Unternehmens)",
           "quelle": "https://kbs-management.tv/",
-          "stand": "2026-10-28",
-          "fokus": "35% 50%"
+          "stand": "2026-11-02c"
         }
       ]
     },
@@ -235,28 +244,32 @@
       },
       "anzeigen": [
         {
+          "id": "ass-elektrotechnik-1",
           "zeile": "ASS Elektrotechnik · Meisterbetrieb aus Düren",
           "titel": "Ihr Elektriker aus der Nachbarschaft.",
           "text": "Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik.",
-          "bild": "ass-elektrotechnik-1.jpg",
-          "video": "ass-elektrotechnik-1.mp4",
-          "alt": "Mitarbeiter im Shirt von ASS Elektrotechnik, von hinten",
+          "bild": "ass-elektrotechnik-1-v2.jpg",
+          "video": "ass-elektrotechnik-1-v2.mp4",
+          "bild_breit": "ass-elektrotechnik-1-v2-breit.jpg",
+          "video_breit": "ass-elektrotechnik-1-v2-breit.mp4",
+          "alt": "Verkabelung in einem Verteilerkasten",
           "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
           "quelle": "https://www.asselektrotechnik.de/",
-          "stand": "2026-10-28",
-          "fokus": "50% 78%"
+          "stand": "2026-11-02c"
         },
         {
+          "id": "ass-elektrotechnik-2",
           "zeile": "ASS Elektrotechnik · Beratung und Planung",
           "titel": "Elektrotechnik für eine bessere Zukunft.",
           "text": "Fachkundige Beratung und Planung für jedes Projekt.",
-          "bild": "ass-elektrotechnik-2.jpg",
-          "video": "ass-elektrotechnik-2.mp4",
+          "bild": "ass-elektrotechnik-2-v2.jpg",
+          "video": "ass-elektrotechnik-2-v2.mp4",
+          "bild_breit": "ass-elektrotechnik-2-v2-breit.jpg",
+          "video_breit": "ass-elektrotechnik-2-v2-breit.mp4",
           "alt": "Hand am Akkuschrauber im Werkzeuggürtel",
           "nachweis": "Foto: ASS Elektrotechnik (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
           "quelle": "https://www.asselektrotechnik.de/",
-          "stand": "2026-10-28",
-          "fokus": "40% 50%"
+          "stand": "2026-11-02c"
         }
       ]
     },
@@ -286,30 +299,34 @@
       },
       "anzeigen": [
         {
+          "id": "merzlicht-1",
           "zeile": "Merzlicht · Videowall am Bürgewaldzentrum",
           "titel": "Ihre Werbung auf der Videowall.",
           "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
-          "bild": "merzlicht-1.jpg",
-          "video": "merzlicht-1.mp4",
+          "bild": "merzlicht-1-v2.jpg",
+          "video": "merzlicht-1-v2.mp4",
+          "bild_breit": "merzlicht-1-v2-breit.jpg",
+          "video_breit": "merzlicht-1-v2-breit.mp4",
           "alt": "LED-Videowall am Sportplatz in der Dämmerung (KI-Bild)",
           "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
           "ki": true,
           "knopf": "Zum Profil",
-          "stand": "2026-10-28",
-          "fokus": "72% 40%"
+          "stand": "2026-11-02c"
         },
         {
+          "id": "merzlicht-2",
           "zeile": "Merzlicht · Werbeclips und Bilder",
           "titel": "Gesehen vom Spielfeld und vom Merzpark.",
           "text": "Die Videowall am Sportplatz zeigt in beide Richtungen.",
-          "bild": "merzlicht-2.jpg",
-          "video": "merzlicht-2.mp4",
+          "bild": "merzlicht-2-v2.jpg",
+          "video": "merzlicht-2-v2.mp4",
+          "bild_breit": "merzlicht-2-v2-breit.jpg",
+          "video_breit": "merzlicht-2-v2-breit.mp4",
           "alt": "Beleuchtete Bande und Videowall am Sportplatz am Abend (KI-Bild)",
           "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
           "ki": true,
           "knopf": "Zum Profil",
-          "stand": "2026-10-28",
-          "fokus": "60% 45%"
+          "stand": "2026-11-02c"
         }
       ]
     },
@@ -336,30 +353,34 @@
       },
       "anzeigen": [
         {
+          "id": "aj-sports-1",
           "zeile": "AJ Sports",
           "titel": "AJ Sports Entertainment",
           "text": "Partner des Sports und von Merzenich Aktuell.",
-          "bild": "aj-sports-1.jpg",
-          "video": "aj-sports-1.mp4",
-          "alt": "Abendspiel unter Flutlicht (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
-          "ki": true,
-          "knopf": "Zum Profil",
-          "stand": "2026-10-28",
-          "fokus": "35% 55%"
-        },
-        {
-          "zeile": "AJ Sports Entertainment",
-          "titel": "Für den Sport in der Region.",
-          "text": "AJ Sports Entertainment unterstützt Merzenich Aktuell.",
-          "bild": "aj-sports-2.jpg",
-          "video": "aj-sports-2.mp4",
+          "bild": "aj-sports-1-v2.jpg",
+          "video": "aj-sports-1-v2.mp4",
+          "bild_breit": "aj-sports-1-v2-breit.jpg",
+          "video_breit": "aj-sports-1-v2-breit.mp4",
           "alt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
           "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
           "ki": true,
           "knopf": "Zum Profil",
-          "stand": "2026-10-28",
-          "fokus": "50% 60%"
+          "stand": "2026-11-02c"
+        },
+        {
+          "id": "aj-sports-2",
+          "zeile": "AJ Sports Entertainment",
+          "titel": "Für den Sport in der Region.",
+          "text": "AJ Sports Entertainment unterstützt Merzenich Aktuell.",
+          "bild": "aj-sports-2-v2.jpg",
+          "video": "aj-sports-2-v2.mp4",
+          "bild_breit": "aj-sports-2-v2-breit.jpg",
+          "video_breit": "aj-sports-2-v2-breit.mp4",
+          "alt": "Abendspiel unter Flutlicht und Zuschauer am Spielfeldrand (KI-Bild)",
+          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "ki": true,
+          "knopf": "Zum Profil",
+          "stand": "2026-11-02c"
         }
       ]
     },
@@ -420,15 +441,18 @@
       },
       "anzeigen": [
         {
+          "id": "hk-growth-webstudio-1",
           "zeile": "HK Growth Webstudio · Websites",
           "titel": "Zeit für eine neue Website?",
           "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, sichtbar bei Google und in KI-Suchen.",
           "bild": "hk-growth-webstudio-1.jpg",
           "video": "hk-growth-webstudio-1.mp4",
+          "bild_breit": "hk-growth-webstudio-1-breit.jpg",
+          "video_breit": "hk-growth-webstudio-1-breit.mp4",
           "alt": "Website des HK Growth Webstudio auf Laptop und Handy",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
-          "stand": "2026-11-02b"
+          "stand": "2026-11-02c"
         },
         {
           "id": "hk-growth-webstudio-2",
@@ -437,11 +461,13 @@
           "text": "Terminbuchung und Anfragen mit Anliegen, Budget und Zeitraum direkt auf Ihrer Website.",
           "bild": "hk-growth-webstudio-anfragen.jpg",
           "video": "hk-growth-webstudio-anfragen.mp4",
+          "bild_breit": "hk-growth-webstudio-anfragen-breit.jpg",
+          "video_breit": "hk-growth-webstudio-anfragen-breit.mp4",
           "alt": "Leistung „Terminbuchung und qualifizierte Anfragen“ auf der Website des HK Growth Webstudio",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
           "ziel": "https://website.hk-growthoperator.de/#leistungen",
-          "stand": "2026-11-02b"
+          "stand": "2026-11-02c"
         },
         {
           "id": "hk-growth-webstudio-3",
@@ -450,11 +476,13 @@
           "text": "Einordnen, weiterleiten, bestätigen, nachfassen: Die Automation nach der Anfrage läuft von selbst.",
           "bild": "hk-growth-webstudio-automation.jpg",
           "video": "hk-growth-webstudio-automation.mp4",
+          "bild_breit": "hk-growth-webstudio-automation-breit.jpg",
+          "video_breit": "hk-growth-webstudio-automation-breit.mp4",
           "alt": "Ablauf nach der Anfrage mit Protokoll auf der Website des HK Growth Webstudio",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
           "ziel": "https://website.hk-growthoperator.de/#automatisierung",
-          "stand": "2026-11-02b"
+          "stand": "2026-11-02c"
         }
       ]
     }
