@@ -18,6 +18,15 @@ Entscheidung Luis Kummer, 02.11.2026. Anlass: Vom 28.10. bis 02.11.2026 erschien
 - **Eilmeldung:** Blaulicht und Sperrungen möglichst bald nach der Quelle als Kurzmeldung, später ergänzen (Abschnitt 5, Nachtrag).
 - **Bestand:** Auch von Hand in WordPress angelegte Beiträge zählen (Live-Archiv `https://merzenich-aktuell.de/archiv/` prüfen, nicht nur `inhalte/`); dazu keine Dublette schreiben.
 
+## 0a. Top-Meldung (Aufmacher) und Folgemeldung
+
+Entscheidung Luis Kummer, 02.11.2026: Oben auf der Startseite steht automatisch immer die stärkste aktuelle Nachricht.
+
+- **Feld `relevanz`** an jeder Claude-Meldung: `1` Top, `2` Standard (Vorgabe ohne Angabe), `3` Service oder Hinweis. Der Import schreibt daraus `ma_relevanz`; das Plugin (ab 1.41.0) stellt eine frische Stufe-1-Meldung als Aufmacher, löst dafür auch einen von Hand fest gesetzten Aufmacher ab und lässt sie nach `frisch_stunden` (72 Stunden) automatisch abrücken.
+- **Stufe 1 bekommt die stärkste Nachricht des Laufs**, wenn sie großen Nachrichtenwert für Merzenich hat: Tote oder Schwerverletzte, Großbrand, Vollsperrung einer wichtigen Straße oder der Bahn, Festnahme nach einer Tat im Ort, Ratsbeschluss mit spürbaren Folgen für viele, Großereignis oder Ausfall eines Großereignisses. Höchstens eine Meldung je Lauf; im Zweifel `2`. Im Dossier steht die Begründung.
+- Voraussetzungen für den Aufmacherplatz (Theme): kein Sport, kein Tipp, echtes Themenfoto mit mindestens 480 px Breite (keine Ortsansicht). Sport bleibt auch mit Stufe 1 in der Sportrubrik.
+- **Folgemeldung statt nur Update:** Eine neue Entwicklung mit eigenem Nachrichtenwert zu einem älteren Artikel (Tod nach einem Unfall, Festnahme, Urteil, Beschluss, Absage, Ergebnis) wird eine **neue Kurzmeldung** mit neuem Datum, damit sie als Nachricht erscheint (Startseite, News-Sitemap). Der ältere Artikel bekommt einen Nachtrag mit Hinweis auf die Folgemeldung; sein Titel beschreibt dann das ursprüngliche Ereignis, damit keine zwei gleichlautenden Überschriften stehen. Kleine Ergänzungen (Uhrzeit, Ort, Korrektur) bleiben ein Update (Abschnitt 5).
+
 ## 1. Welcher Artikeltyp?
 
 Entscheidung in dieser Reihenfolge:
@@ -113,7 +122,7 @@ Alles andere fliegt raus oder wird als offen benannt („geht aus den Unterlagen
 - Neues zum selben Vorgang ist ein **Update** des bestehenden Eintrags: neuer Absatz „Nachtrag vom <Datum>: …“, Dek anpassen, zusätzlicher Fakt, Quelle ergänzen. `slug`, `ressort` und `datum` bleiben.
 - **Korrektur** (falsche oder unbelegte Angabe): Satz ersetzen, nicht ergänzen; im Dossier unter „Umgesetzt“ mit altem und neuem Wortlaut; Register-Notiz.
 - Neue Claude-Beiträge sowie Updates und Korrekturen an **veröffentlichten** Beiträgen und Terminen gehen beim nächsten Abgleich **ohne Freigabe** online (CLAUDE-LAUF.md Abschnitt 3). Deshalb dort nur geprüfte Änderungen, im Abschlussbericht ausdrücklich nennen; meldet das Abgleich-Protokoll „von Hand geändert“, erreicht die Änderung WordPress nicht, dann den neuen Wortlaut an die Redaktion geben.
-- Neuer Artikel nur, wenn es ein neuer Vorgang ist (neuer Beschluss, neues Ereignis).
+- Neuer Artikel nur, wenn es ein neuer Vorgang ist (neuer Beschluss, neues Ereignis) oder eine Folgemeldung nach Abschnitt 0a.
 
 ## 6. Vertiefung bestehender Artikel
 
