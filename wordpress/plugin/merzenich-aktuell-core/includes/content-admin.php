@@ -233,13 +233,21 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     if ($ziel === '' && $post->post_status === 'auto-draft' && defined('MA_FIRMA_META') && ($bid = (int) get_user_meta(get_current_user_id(), MA_FIRMA_META, true))) $ziel = (string) get_post_meta($bid, 'ma_business_website', true);
     ma_admin_input('ma_ad_url','Ziel-URL (Website der Firma)',$ziel,'url','https://www.firma.de/','Ein Klick auf die Anzeige öffnet diese Seite direkt in einem neuen Fenster.');
     ma_admin_input('ma_ad_knopf','Knopftext',ma_admin_field_value($post->ID,'ma_ad_knopf'),'text','Zur Website','Optional, erscheint nur mit Ziel-URL.');
-    $vid = (int) ma_admin_field_value($post->ID,'ma_ad_video');
-    $vurl = $vid ? (string) wp_get_attachment_url($vid) : '';
-    echo '<tr><th scope="row"><label for="ma_ad_video">Video</label></th><td data-ma-ad-video>';
-    echo '<input type="hidden" id="ma_ad_video" name="ma_ad_video" value="' . esc_attr($vid ? (string) $vid : '') . '">';
-    echo '<span data-ma-ad-video-name>' . ($vurl !== '' ? esc_html(basename($vurl)) : 'kein Video') . '</span> ';
-    echo '<button type="button" class="button" data-ma-ad-video-waehlen>Video auswählen oder hochladen</button> <button type="button" class="button-link" data-ma-ad-video-weg' . ($vid ? '' : ' hidden') . '>entfernen</button>';
-    echo '<p class="description">Optional: MP4 oder WebM, stumm, 6 bis 15 Sekunden, ohne Schrift im Bild, höchstens 6 MB (am besten unter 1 MB). Läuft auf den großen Plätzen statt des Bildes; das Bild bleibt Standbild.</p></td></tr>';
+    // Medien aus der Mediathek (Fenster nur mit Videos bzw. Bildern) statt nackter Medien-ID.
+    $medium = function (string $key, string $label, string $typ, string $hilfe) use ($post): void {
+        $id = (int) ma_admin_field_value($post->ID, $key);
+        $u = $id ? (string) wp_get_attachment_url($id) : '';
+        $leer = $typ === 'video' ? 'kein Video' : 'kein Bild';
+        echo '<tr><th scope="row"><label for="' . esc_attr($key) . '">' . esc_html($label) . '</label></th><td data-ma-ad-medium="' . esc_attr($typ) . '">';
+        echo '<input type="hidden" id="' . esc_attr($key) . '" name="' . esc_attr($key) . '" value="' . esc_attr($id ? (string) $id : '') . '">';
+        echo '<span data-ma-ad-medium-name data-leer="' . esc_attr($leer) . '">' . ($u !== '' ? esc_html(basename($u)) : esc_html($leer)) . '</span> ';
+        echo '<button type="button" class="button" data-ma-ad-medium-waehlen>' . ($typ === 'video' ? 'Video' : 'Bild') . ' auswählen oder hochladen</button> <button type="button" class="button-link" data-ma-ad-medium-weg' . ($id ? '' : ' hidden') . '>entfernen</button>';
+        echo '<p class="description">' . esc_html($hilfe) . '</p></td></tr>';
+    };
+    $medium('ma_ad_video', 'Video', 'video', 'Optional: MP4 oder WebM, 16:9, stumm, 6 bis 15 Sekunden, ohne Schrift im Bild, höchstens 6 MB (am besten unter 1 MB). Läuft statt des Bildes; das Bild bleibt Standbild.');
+    // Breite Fassung (02.11.2026): für die breiten Werbebänder, damit dort nichts abgeschnitten wird.
+    $medium('ma_ad_bild_breit', 'Breite Fassung: Bild', 'image', 'Optional: dasselbe Motiv im Breitformat 3,5 : 1 (z. B. 1680 × 480 Pixel). Erscheint in den breiten Werbebändern; ohne breite Fassung wird das 16:9-Bild zugeschnitten.');
+    $medium('ma_ad_video_breit', 'Breite Fassung: Video', 'video', 'Optional: das Video im Breitformat 3,5 : 1 (z. B. 1344 × 384 Pixel), sonst wie oben.');
     ma_admin_input('ma_ad_start','Start',ma_admin_field_value($post->ID,'ma_ad_start'),'datetime-local');
     ma_admin_input('ma_ad_end','Ende',ma_admin_field_value($post->ID,'ma_ad_end'),'datetime-local');
     if (!$partner) ma_admin_select('ma_ad_priority','Priorität',(string) (function_exists('ma_ad_stufe') ? ma_ad_stufe($post->ID) : 2),['1'=>'1 · Hoch','2'=>'2 · Mitte','3'=>'3 · Niedrig'],'Drei Stufen wie bei der Relevanz der Meldungen. Laufen mehrere Anzeigen auf einem Platz, steht Hoch vorn; bei gleicher Stufe die neuere.');
@@ -253,18 +261,19 @@ function ma_render_ad_meta_box(WP_Post $post): void {
     ma_admin_meta_box_end();
 }
 
-/* Video-Auswahl im Werbemittel (29.10.2026): Mediathek-Fenster nur mit Videos statt der Medien-ID. */
+/* Medien-Auswahl im Werbemittel (29.10.2026, breite Fassung 02.11.2026): Mediathek-Fenster nur mit Videos bzw. Bildern statt der Medien-ID. */
 add_action('admin_enqueue_scripts', function (): void {
     $s = function_exists('get_current_screen') ? get_current_screen() : null;
     if (!$s || $s->base !== 'post' || $s->post_type !== 'ma_ad') return;
     wp_enqueue_media();
     wp_add_inline_script('media-editor', <<<'JS'
 document.addEventListener('click', function (e) {
-  var z = e.target.closest('[data-ma-ad-video]'); if (!z) return;
-  var feld = z.querySelector('input[name="ma_ad_video"]'), name = z.querySelector('[data-ma-ad-video-name]'), weg = z.querySelector('[data-ma-ad-video-weg]');
-  if (e.target.closest('[data-ma-ad-video-weg]')) { feld.value = ''; name.textContent = 'kein Video'; weg.hidden = true; return; }
-  if (!e.target.closest('[data-ma-ad-video-waehlen]') || !window.wp || !wp.media) return;
-  var f = wp.media({ title: 'Video für die Anzeige', button: { text: 'Dieses Video nehmen' }, library: { type: 'video' }, multiple: false });
+  var z = e.target.closest('[data-ma-ad-medium]'); if (!z) return;
+  var typ = z.getAttribute('data-ma-ad-medium'), feld = z.querySelector('input[type="hidden"]'), name = z.querySelector('[data-ma-ad-medium-name]'), weg = z.querySelector('[data-ma-ad-medium-weg]');
+  if (e.target.closest('[data-ma-ad-medium-weg]')) { feld.value = ''; name.textContent = name.getAttribute('data-leer'); weg.hidden = true; return; }
+  if (!e.target.closest('[data-ma-ad-medium-waehlen]') || !window.wp || !wp.media) return;
+  var video = typ === 'video';
+  var f = wp.media({ title: video ? 'Video für die Anzeige' : 'Bild für die Anzeige', button: { text: video ? 'Dieses Video nehmen' : 'Dieses Bild nehmen' }, library: { type: video ? 'video' : 'image' }, multiple: false });
   f.on('select', function () { var a = f.state().get('selection').first().toJSON(); feld.value = a.id; name.textContent = a.filename || a.title; weg.hidden = false; });
   f.open();
 });
@@ -295,7 +304,7 @@ function ma_content_admin_schema(string $post_type): array {
             'ma_tip_kind'=>'text','ma_tip_sponsor'=>'text','ma_tip_url'=>'url','ma_tip_start'=>'datetime',
         ]),
         'ma_ad'=>[
-            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'stufe','ma_ad_format'=>'format',
+            'ma_ad_active'=>'bool','ma_ad_slot'=>'text','ma_ad_sponsor'=>'text','ma_ad_url'=>'url','ma_ad_knopf'=>'text','ma_ad_video'=>'number','ma_ad_bild_breit'=>'number','ma_ad_video_breit'=>'number','ma_ad_start'=>'datetime','ma_ad_end'=>'datetime','ma_ad_priority'=>'stufe','ma_ad_format'=>'format',
         ],
     ];
     return $schema[$post_type] ?? [];
@@ -328,6 +337,7 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
 
     $partner = function_exists('ma_current_partner_policy') ? ma_current_partner_policy() : null;
     $video_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_video', true) : '';
+    $video_breit_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_video_breit', true) : '';
     $format_vorher = $post->post_type === 'ma_ad' ? (string) get_post_meta($post_id, 'ma_ad_format', true) : '';
     foreach ($schema as $key=>$type) {
         if ($partner && in_array($key, ['ma_release_confirmed','ma_ad_active'], true)) {
@@ -361,11 +371,14 @@ function ma_save_content_meta_boxes(int $post_id, WP_Post $post): void {
         ma_werbeformat_anwenden($post_id, $format, $partner && function_exists('ma_ad_allowed_slots_for_current_user') ? ma_ad_allowed_slots_for_current_user() : null);
     }
     if ($post->post_type === 'ma_ad') {
-        // Video: nur Videos aus der Mediathek; Partner nur eigene Uploads (Rechte wie beim Bild).
-        $vid = (int) get_post_meta($post_id, 'ma_ad_video', true);
-        if ($vid && (strpos((string) get_post_mime_type($vid), 'video/') !== 0 || ($partner && (int) get_post_field('post_author', $vid) !== (int) get_current_user_id()))) delete_post_meta($post_id, 'ma_ad_video');
+        // Videos nur Videos, Bilder nur Bilder aus der Mediathek; Partner nur eigene Uploads (Rechte wie beim Beitragsbild).
+        foreach (['ma_ad_video' => 'video/', 'ma_ad_video_breit' => 'video/', 'ma_ad_bild_breit' => 'image/'] as $key => $mime) {
+            $m = (int) get_post_meta($post_id, $key, true);
+            if ($m && (strpos((string) get_post_mime_type($m), $mime) !== 0 || ($partner && (int) get_post_field('post_author', $m) !== (int) get_current_user_id()))) delete_post_meta($post_id, $key);
+        }
         // Neues oder kein Video: die WebM-Fassung aus den Firmen-Entwürfen gehört zum alten und fällt weg.
         if ((string) get_post_meta($post_id, 'ma_ad_video', true) !== $video_vorher) delete_post_meta($post_id, 'ma_ad_video_webm');
+        if ((string) get_post_meta($post_id, 'ma_ad_video_breit', true) !== $video_breit_vorher) delete_post_meta($post_id, 'ma_ad_video_breit_webm');
     }
     if ($post->post_type === 'ma_ad' && isset($_POST['ma_ad_alt'])) {
         $bild = (int) get_post_thumbnail_id($post_id);

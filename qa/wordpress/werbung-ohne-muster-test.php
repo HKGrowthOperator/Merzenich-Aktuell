@@ -36,14 +36,25 @@ $GLOBALS['meta'][50] = ['_wp_attachment_image_alt' => 'LED-Videowall (KI-Bild)',
 $ad = new WP_Post(['ID' => 5, 'post_title' => 'Ihre Werbung auf der Videowall.', 'post_excerpt' => 'Am Sportplatz Bürgewaldzentrum.']);
 $band = ma_ad_karte($ad, 'band', true);
 pruefe('Video-Schleife: stumm, Schleife, inline, erst bei Bedarf geladen, ohne Poster (das Bild darunter ist das Standbild)', (bool) preg_match('/<video class="ma-ad-video" muted loop playsinline preload="none" data-src="[^"]+video-51\.mp4" aria-hidden="true"><\/video>/', $band), true);
-pruefe('Bild mit Alt-Text bleibt (ohne JavaScript und als Poster)', str_contains($band, '<img src="https://merzenich-aktuell.de/wp-content/uploads/bild-50-1024x576.jpg" alt="LED-Videowall (KI-Bild)"'), true);
-pruefe('Zeile oben, Überschrift, Satz, Knopf', [str_contains($band, '<span class="ma-ad-eyebrow">Merzlicht · Videowall am Bürgewaldzentrum</span>'), str_contains($band, '<strong>Ihre Werbung auf der Videowall.</strong>'), str_contains($band, '<span class="ma-ad-text">Am Sportplatz Bürgewaldzentrum.</span>'), str_contains($band, '<span class="ma-ad-cta">Zum Profil</span>')], [true, true, true, true]);
+pruefe('Bild mit Alt-Text bleibt (ohne JavaScript und als Poster)', str_contains($band, '<img class="ma-ad-bild" src="https://merzenich-aktuell.de/wp-content/uploads/bild-50-1024x576.jpg" alt="LED-Videowall (KI-Bild)"'), true);
+// Wenig Text (Vorgabe Betreiber 02.11.2026): Firmenname, Überschrift, Knopf; der Satz nur in der Bühne.
+pruefe('Firmenname (ohne Zusatz nach „·“), Überschrift, Knopf, kein Satz', [str_contains($band, '<span class="ma-ad-eyebrow">Merzlicht</span>'), str_contains($band, '<strong>Ihre Werbung auf der Videowall.</strong>'), str_contains($band, 'ma-ad-text'), str_contains($band, '<span class="ma-ad-cta">Zum Profil</span>')], [true, true, false, true]);
+pruefe('Bühne: mit Satz', str_contains(ma_ad_karte($ad, 'gap', true, false, null, 'buehne'), '<span class="ma-ad-text">Am Sportplatz Bürgewaldzentrum.</span>'), true);
+pruefe('Aria-Label vollständig mit Zusatz', str_contains($band, 'aria-label="Anzeige: Merzlicht · Videowall am Bürgewaldzentrum – Ihre Werbung auf der Videowall."'), true);
+$GLOBALS['meta'][5]['ma_ad_sponsor'] = 'KBS Management · in eigener Sache';
+pruefe('„in eigener Sache“ (Herausgeberin) bleibt stehen', str_contains(ma_ad_karte($ad, 'band', true), '<span class="ma-ad-eyebrow">KBS Management · in eigener Sache</span>'), true);
+$GLOBALS['meta'][5]['ma_ad_sponsor'] = 'Merzlicht · Videowall am Bürgewaldzentrum';
 pruefe('„KI-Bild“ auf dem Bild', str_contains($band, '<span class="ma-ad-nachweis">KI-Bild</span>'), true);
 pruefe('interner Link (Firmenkanal): gleiches Fenster, kein sponsored', [str_contains($band, 'href="https://merzenich-aktuell.de/unternehmen/merzlicht/"'), str_contains($band, 'target="_blank"')], [true, false]);
 pruefe('Zählung: data-ma-anzeige', str_contains($band, 'data-ma-anzeige="5"'), true);
 $GLOBALS['meta'][5]['ma_ad_fokus'] = '50% 78%';
 $f = ma_ad_karte($ad, 'band', true);
-pruefe('Bildfokus für Bild und Video', substr_count($f, 'style="object-position:50% 78%"'), 2);
+pruefe('Bildfokus für Bild und Video, Zoom auf denselben Punkt', substr_count($f, 'style="object-position:50% 78%;transform-origin:50% 78%"'), 2);
+$GLOBALS['meta'][5]['ma_ad_bild_breit'] = '52'; $GLOBALS['meta'][5]['ma_ad_video_breit'] = '53'; $GLOBALS['meta'][5]['ma_ad_video_breit_webm'] = '54';
+$br = ma_ad_karte($ad, 'band', true);
+pruefe('breite Fassung im Band: Standbild ohne Alt-Text, Video-Quellen', [str_contains($br, 'ma-ad-art--breit'), str_contains($br, '<img class="ma-ad-bild-breit" src="https://merzenich-aktuell.de/wp-content/uploads/video-52.mp4" alt=""'), str_contains($br, 'data-src-breit="https://merzenich-aktuell.de/wp-content/uploads/video-53.mp4" data-src-breit-webm="https://merzenich-aktuell.de/wp-content/uploads/video-54.mp4"')], [true, true, true]);
+pruefe('breite Fassung nicht in Spalten (gap)', str_contains(ma_ad_karte($ad, 'gap', true), 'breit'), false);
+unset($GLOBALS['meta'][5]['ma_ad_bild_breit'], $GLOBALS['meta'][5]['ma_ad_video_breit'], $GLOBALS['meta'][5]['ma_ad_video_breit_webm']);
 $GLOBALS['meta'][5]['ma_ad_fokus'] = '50%;background:url(x)';
 pruefe('Bildfokus: nur Prozentwerte', str_contains(ma_ad_karte($ad, 'band', true), 'object-position'), false);
 $GLOBALS['meta'][5]['ma_ad_fokus'] = '';
@@ -74,7 +85,8 @@ pruefe('statische Kopie: kein „Musteranzeige“ auf der Startseite', str_conta
 
 echo "\nRotation und Video\n";
 $rot = (string) file_get_contents($W . '/plugin/merzenich-aktuell-core/assets/ad-rotation.js');
-pruefe('Video nur bei Bewegung, ohne Datensparmodus, breiter als 560 px', str_contains($rot, "prefers-reduced-motion: reduce") && str_contains($rot, 'saveData') && str_contains($rot, 'window.innerWidth > 560'), true);
+pruefe('Video nur bei Bewegung und ohne Datensparmodus, seit 02.11.2026 auch am Handy', str_contains($rot, "prefers-reduced-motion: reduce") && str_contains($rot, 'saveData') && str_contains($rot, 'return bewegung && !sparen;'), true);
+pruefe('breite Videofassung nach Breite des Platzes (wie die Container-Abfrage)', str_contains($rot, "platz.clientWidth >= 840 && v.getAttribute('data-src-breit')"), true);
 pruefe('nachgeladene Plätze (Endlos-Scrollen) bekommen Rotation und Video', str_contains($rot, 'window.maAdPlatz = einrichten') && str_contains((string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/assets/endlos.js'), 'window.maAdPlatz(platz)'), true);
 $stat = (string) file_get_contents($W . '/plugin/merzenich-aktuell-core/includes/werbung-stat.php');
 pruefe('Zählung: Platz auch von data-ma-platz eines Vorfahren (Menü)', str_contains($stat, 'closest("[data-ma-platz],[data-ma-ad-slot]")'), true);

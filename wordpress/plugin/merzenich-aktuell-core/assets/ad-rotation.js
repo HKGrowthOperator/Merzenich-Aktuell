@@ -17,14 +17,15 @@
  * Video-Schleifen (28.10.2026): Ein <video data-src> lädt erst, wenn seine Anzeige
  * sichtbar und der Platz im Bild ist, und pausiert sonst; eingeblendet wird es erst,
  * wenn es läuft (bis dahin steht das Bild darunter). Kein Video bei „Bewegung
- * reduzieren“, Datensparmodus oder schmalem Bildschirm (bis 560 px).
+ * reduzieren“ oder Datensparmodus; seit 02.11.2026 auch am Handy.
  * window.maAdPlatz(platz) richtet nachgeladene Plätze ein (endlos.js).
  */
 (function () {
   'use strict';
   var bewegung = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var sparen = !!(navigator.connection && navigator.connection.saveData);
-  var videoErlaubt = function () { return bewegung && !sparen && window.innerWidth > 560; };
+  // Seit 02.11.2026 auch am Handy (Vorgabe Betreiber: „Video groß“, oben in voller Breite).
+  var videoErlaubt = function () { return bewegung && !sparen; };
 
   var wahl = {
     // Startanzeige: ab einer zufälligen Stelle die erste, deren Firma nicht belegt ist.
@@ -63,8 +64,9 @@
       var spielen = imBild && videoErlaubt() && v.closest('.ma-ad__item') === aktivesItem;
       if (spielen) {
         if (!v.getAttribute('src')) {
-          // Breite Fassung im Band ab 901 px, sonst 16:9; WebM (VP9), wo der Browser es kann, sonst MP4.
-          var breit = window.innerWidth > 900 && v.getAttribute('data-src-breit');
+          // Breite Fassung, wenn der Platz selbst breit ist (ab 840 px, wie die Container-Abfrage
+          // in werbung.css: Startseitenband, Seitenband), sonst 16:9; WebM (VP9), wo möglich, sonst MP4.
+          var breit = platz.clientWidth >= 840 && v.getAttribute('data-src-breit');
           var webm = breit ? v.getAttribute('data-src-breit-webm') : v.getAttribute('data-src-webm');
           var mp4 = breit ? v.getAttribute('data-src-breit') : v.getAttribute('data-src');
           var quelle = webm && v.canPlayType('video/webm; codecs="vp9"') ? webm : mp4;

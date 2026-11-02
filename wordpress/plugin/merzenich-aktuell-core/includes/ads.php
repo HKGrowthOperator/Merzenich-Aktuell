@@ -309,10 +309,10 @@ function ma_render_werbeplatz(string $slot, string $marker): string {
     if (!$ads) return '';
     $art = preg_match('/^band-/', $marker) ? 'band' : $marker;
     $format = in_array($art, ['spalte', 'sport', 'buehne', 'unternehmen'], true) ? 'gap' : 'band';
-    // Video-Schleife auf den großen Plätzen, Zoom (CSS) auf den kleinen (Entscheidung Betreiber 28.10.2026).
-    $video = in_array($art, ['band', 'buehne', 'artikel'], true);
+    // Video-Schleife auf allen Plätzen (02.11.2026, vorher nur auf den großen); ad-rotation.js
+    // spielt nur das sichtbare Video und keins am Handy, bei „Bewegung reduzieren“ oder Datensparen.
     $items = '';
-    foreach ($ads as $i => $ad) $items .= ma_ad_karte($ad, $format, $video, $i > 0);
+    foreach ($ads as $i => $ad) $items .= ma_ad_karte($ad, $format, true, $i > 0, null, $art);
     $n = count($ads);
     if (function_exists('wp_enqueue_script')) wp_enqueue_script('ma-ad-rotation', MA_CORE_URL.'assets/ad-rotation.js', [], MA_CORE_VERSION, true);
     return '<aside class="werbung werbung--'.esc_attr($art).($art === 'band' ? ' shell' : '').' werbung--echt" data-ma-werbeplatz="'.esc_attr($marker).'" data-ma-ad-slot="'.esc_attr($slot).'" aria-label="Anzeige">'
@@ -329,29 +329,41 @@ function ma_ad_nachweis(WP_Post $ad): string {
 
 /**
  * Eine Anzeige im Markup der Werbeflächen (werbung.css): Bild (mit Video-Schleife aus
- * ma_ad_video, wenn $video), Zeile oben, Überschrift, Satz, Knopf (ma_ad_knopf),
- * Nachweis. Links nach außen öffnen in neuem Fenster, mit rel="sponsored".
+ * ma_ad_video, wenn $video), Firmenname, Überschrift, Knopf (ma_ad_knopf), Nachweis.
+ * Wenig Text, große Bilder (Vorgabe Betreiber 02.11.2026): der Satz (Kurztext) nur
+ * in der Bühne ($platz 'buehne'), die Zeile oben nur mit dem Namen vor dem „·“.
+ * Im Format band dazu die breite Fassung (ma_ad_bild_breit, ma_ad_video_breit*), die
+ * werbung.css bzw. ad-rotation.js nehmen, wenn der Platz breit ist (Band, Seitenband).
+ * Links nach außen öffnen in neuem Fenster, mit rel="sponsored".
  * $ziel ersetzt die Ziel-URL ('' = ohne Link), z. B. auf dem Firmenkanal selbst.
  */
-function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $versteckt = false, ?string $ziel = null): string {
+function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $versteckt = false, ?string $ziel = null, string $platz = ''): string {
     $url = $ziel ?? (string) get_post_meta($ad->ID, 'ma_ad_url', true);
     $img = get_the_post_thumbnail_url($ad, 'large');
     $sponsor = (string) get_post_meta($ad->ID, 'ma_ad_sponsor', true);
+    // Nur der Firmenname; „in eigener Sache“ (KBS, Herausgeberin) bleibt als Kennzeichnung stehen.
+    $firma = preg_match('/in eigener Sache/iu', $sponsor) ? $sponsor : trim((string) preg_replace('/\s*·.*$/u', '', $sponsor));
     $knopf = (string) get_post_meta($ad->ID, 'ma_ad_knopf', true);
-    $vid = $video && $img ? (string) wp_get_attachment_url((int) get_post_meta($ad->ID, 'ma_ad_video', true)) : '';
-    $webm = $vid !== '' ? (string) wp_get_attachment_url((int) get_post_meta($ad->ID, 'ma_ad_video_webm', true)) : '';
+    $url_von = fn(string $key): string => ($m = (int) get_post_meta($ad->ID, $key, true)) > 0 ? (string) wp_get_attachment_url($m) : '';
+    $vid = $video && $img ? $url_von('ma_ad_video') : '';
+    $webm = $vid !== '' ? $url_von('ma_ad_video_webm') : '';
+    $breit = $format === 'band' && $img ? $url_von('ma_ad_bild_breit') : '';
+    $vbreit = $format === 'band' && $vid !== '' ? $url_von('ma_ad_video_breit') : '';
+    $vbreit_webm = $vbreit !== '' ? $url_von('ma_ad_video_breit_webm') : '';
     $nachweis = ma_ad_nachweis($ad);
-    // Bildfokus (z. B. „50% 78%“) für den schmalen Ausschnitt im Band.
+    // Bildfokus (z. B. „50% 78%“) für schmale Ausschnitte; der Zoom geht auf denselben Punkt.
     $fokus = (string) get_post_meta($ad->ID, 'ma_ad_fokus', true);
-    $stil = preg_match('/^\d{1,3}% \d{1,3}%$/', $fokus) ? ' style="object-position:'.$fokus.'"' : '';
+    $stil = preg_match('/^\d{1,3}% \d{1,3}%$/', $fokus) ? ' style="object-position:'.$fokus.';transform-origin:'.$fokus.'"' : '';
     $kunst = '';
     if ($img) {
-        $kunst = '<span class="ma-ad-art'.($vid === '' ? ' ma-ad-art--bewegt' : '').'"><img src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async"'.$stil.'>'
-            .($vid !== '' ? '<video class="ma-ad-video"'.$stil.' muted loop playsinline preload="none" data-src="'.esc_url($vid).'"'.($webm !== '' ? ' data-src-webm="'.esc_url($webm).'"' : '').' aria-hidden="true"></video>' : '')
+        $kunst = '<span class="ma-ad-art'.($vid === '' ? ' ma-ad-art--bewegt' : '').($breit !== '' ? ' ma-ad-art--breit' : '').'"><img class="ma-ad-bild" src="'.esc_url($img).'" alt="'.esc_attr(ma_ad_alt($ad)).'" loading="lazy" decoding="async"'.$stil.'>'
+            .($breit !== '' ? '<img class="ma-ad-bild-breit" src="'.esc_url($breit).'" alt="" loading="lazy" decoding="async">' : '')
+            .($vid !== '' ? '<video class="ma-ad-video"'.$stil.' muted loop playsinline preload="none" data-src="'.esc_url($vid).'"'.($webm !== '' ? ' data-src-webm="'.esc_url($webm).'"' : '')
+                .($vbreit !== '' ? ' data-src-breit="'.esc_url($vbreit).'"'.($vbreit_webm !== '' ? ' data-src-breit-webm="'.esc_url($vbreit_webm).'"' : '') : '').' aria-hidden="true"></video>' : '')
             .($nachweis !== '' ? '<span class="ma-ad-nachweis">'.esc_html($nachweis).'</span>' : '').'</span>';
     }
-    $inhalt = $kunst.'<span class="ma-ad-copy">'.($sponsor !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($sponsor).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'
-        .($ad->post_excerpt !== '' ? '<span class="ma-ad-text">'.esc_html($ad->post_excerpt).'</span>' : '')
+    $inhalt = $kunst.'<span class="ma-ad-copy">'.($firma !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($firma).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'
+        .($platz === 'buehne' && $ad->post_excerpt !== '' ? '<span class="ma-ad-text">'.esc_html($ad->post_excerpt).'</span>' : '')
         .($knopf !== '' && $url !== '' ? '<span class="ma-ad-cta">'.esc_html($knopf).'</span>' : '').'</span>';
     $attr = ' class="ma-ad-card ma-ad-card--'.esc_attr($format).' ma-ad__item" data-ma-anzeige="'.(int) $ad->ID.'" data-ma-firma="'.esc_attr(ma_ad_firma($ad)).'" aria-label="'.esc_attr('Anzeige: '.($sponsor !== '' ? $sponsor.' – ' : '').get_the_title($ad)).'"'.($versteckt ? ' hidden' : '');
     if ($url === '') return '<div'.$attr.'>'.$inhalt.'</div>';

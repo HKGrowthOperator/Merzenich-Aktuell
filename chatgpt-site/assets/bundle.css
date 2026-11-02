@@ -1665,7 +1665,6 @@ html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
 /* Bühne ab 760 px: Der Ort ist dort ein roter Kasten (eigenes Element), der Ortsteil folgt ohne Lücke. */
 @media(min-width:760px){body.home .buehne .front-lead .marke{column-gap:0}body.home .buehne .front-lead .marke .marke-rubrik{margin-left:10px}}
 /* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
-@media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 
 /* Vorführ-Check, Gruppe Markt (17.10.2026) */
 /* Etikett „Musterbeitrag“ verdeckte am Handy ein Viertel des kleinen Vorschaubilds: dort kurz „Muster“ in der Ecke (der Text darunter nennt „Musterbeitrag“). */
@@ -1723,7 +1722,6 @@ body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
   transition:opacity 180ms ease;
 }
 .ma-ad-rotator.is-changing{opacity:0}
-.ma-ad-rotator--band{height:86px}
 
 .ma-ad-card{
   height:100%;
@@ -1735,9 +1733,6 @@ body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
   border-radius:2px;
   overflow:hidden;
   text-decoration:none;
-}
-.ma-ad-card--band{
-  grid-template-columns:minmax(0,1fr) minmax(180px,31%);
 }
 .ma-ad-copy{
   min-width:0;
@@ -1851,64 +1846,14 @@ body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
 .ma-ad-card:hover .ma-ad-cta,
 .ma-ad-card:focus-visible .ma-ad-cta{text-decoration:underline;text-underline-offset:2px}
 
-.ma-ad-rotator--gap{height:260px}
-.ma-ad-card--gap{
-  display:flex;
-  flex-direction:column;
-  background:#fff;
-}
-.ma-ad-card--gap .ma-ad-art{
-  flex:1 1 46%;
-  width:100%;
-  min-height:72px;
-}
-.ma-ad-card--gap .ma-ad-copy{
-  flex:1 1 54%;
-  display:block;
-  padding:10px 11px;
-}
-.ma-ad-card--gap .ma-ad-eyebrow,
-.ma-ad-card--gap .ma-ad-copy strong,
-.ma-ad-card--gap .ma-ad-text,
-.ma-ad-card--gap .ma-ad-cta,
-.ma-ad-card--gap .ma-ad-muster{display:block}
-.ma-ad-card--gap .ma-ad-eyebrow{font-size:8px}
-.ma-ad-card--gap .ma-ad-copy strong{margin-top:4px;font-size:18px;line-height:1.05}
-.ma-ad-card--gap .ma-ad-text{margin-top:5px;font-size:10px;line-height:1.3}
-.ma-ad-card--gap .ma-ad-cta{display:inline-block;margin-top:8px;padding:5px 7px;font-size:8px}
-.ma-ad-card--gap .ma-ad-muster{margin-top:6px;color:#8b857d;font-size:8px;letter-spacing:.08em;text-transform:uppercase}
-
-/* Artikelseiten: die Textspalte ist schmal (~720px), dort gilt die kompakte
-   Bandfassung des Originals (wie unter 900px Fensterbreite). */
-@media (min-width:561px){
-  .werbung--artikel .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 118px}
-  .werbung--artikel .ma-ad-copy{gap:8px;padding:9px 11px}
-  .werbung--artikel .ma-ad-eyebrow{display:none}
-  .werbung--artikel .ma-ad-copy strong{font-size:18px}
-  .werbung--artikel .ma-ad-text{font-size:11px}
-  .werbung--artikel .ma-ad-cta{padding:6px 7px;font-size:9px}
-}
 
 @media (max-width:900px){
   .werbung--band,.werbung--artikel{margin-top:24px!important;margin-bottom:24px}
-  .ma-ad-rotator--band{height:78px}
-  .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 118px}
-  .ma-ad-copy{gap:8px;padding:9px 11px}
-  .ma-ad-eyebrow{display:none}
-  .ma-ad-copy strong{font-size:18px}
-  .ma-ad-text{font-size:11px}
-  .ma-ad-cta{padding:6px 7px;font-size:9px}
   .werbung--spalte,.werbung--sport{display:none}
 }
 
 @media (max-width:560px){
   .werbung--band,.werbung--artikel{margin-top:20px!important;margin-bottom:20px;padding-block:10px}
-  .ma-ad-rotator--band{height:74px}
-  .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 86px}
-  .ma-ad-copy{display:block;padding:8px 10px}
-  .ma-ad-copy strong{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .ma-ad-text{display:block;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:10px}
-  .ma-ad-cta{display:none}
   .ma-ad-art-word{display:none}
 }
 
@@ -1954,7 +1899,7 @@ html[data-werbung="aus"] .werbung{display:none!important}
 .media-slot-preview .werbung{width:100%;margin:0!important;padding:0!important;border:0!important;position:relative!important;top:auto!important}
 .media-slot-preview .werbung-label{margin:0 0 7px}
 .media-slot-preview--sidebar .werbung{max-width:260px}
-.media-slot-preview--sidebar .ma-ad-rotator--gap{height:245px}
+.media-slot-preview--sidebar .ma-ad-rotator--gap{height:auto}
 .media-format__meta{display:block;margin-top:11px;color:#817a72;font-size:12px;line-height:1.4}
 .werben-demo-note{margin:20px 0 0;padding:12px 14px;border-left:3px solid #9b2929;background:#faf8f4;color:#5e5953;font-size:13px;line-height:1.5}
 .werben-bildnachweise{margin-top:12px;border-top:1px solid #e3e0da;padding-top:10px;color:#6c665f;font-size:12px}
@@ -2003,8 +1948,10 @@ body.home .werbung--buehne .ma-ad-art img{width:100%;height:100%;object-fit:cove
 body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy{grid-column:2;grid-row:1;padding:0}
 body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow{font-size:10.5px;letter-spacing:.06em}
 body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong{margin-top:4px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em;font-size:17.5px;line-height:1.18}
-body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{margin-top:4px;font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
-body.home .werbung--buehne .ma-ad-card--gap .ma-ad-cta{font-size:10px;padding:5px 8px}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{margin-top:4px;font-size:12.5px;line-height:1.4;display:none;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy{display:block}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong{min-height:0}
+body.home .werbung--buehne .ma-ad-card--gap .ma-ad-cta{display:inline-block;margin-top:8px;font-size:10px;padding:5px 8px}
 body.home .werbung--buehne .ma-ad-card--gap .ma-ad-muster{display:none}
 body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow,body.home .werbung--buehne .ma-ad-card--gap .ma-ad-copy strong,body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{white-space:normal;overflow-wrap:break-word}
 @media (min-width:760px){
@@ -2017,6 +1964,7 @@ body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow,body.home .werbung--b
 @media (min-width:1100px){
   body.home .werbung--buehne{grid-column:auto}
   body.home .werbung--buehne .ma-ad-card--gap .ma-ad-art{aspect-ratio:16/9}
+  body.home .werbung--buehne .ma-ad-card--gap .ma-ad-text{display:-webkit-box}
 }
 
 /* Echte Anzeigen der Firmen (28.10.2026): Video-Schleife über dem Standbild auf den
@@ -2032,6 +1980,54 @@ body.home .werbung--buehne .ma-ad-card--gap .ma-ad-eyebrow,body.home .werbung--b
   .ma-ad-art--bewegt img{animation:none}
   .ma-ad-video{display:none}
 }
+
+/* Anzeigen groß (Vorgabe Betreiber 02.11.2026: „zu viel Text, zu wenig Bild oder
+   Video, zu gequetscht“). Bild oder Video tragen die Anzeige; dazu nur Firmenname,
+   Überschrift und Knopf. Den Satz gibt es nur in der Bühne am Rechner (oben).
+   Die Karte richtet sich nach der Breite ihres Platzes (Container-Abfrage), nicht
+   nach dem Fenster: dasselbe Werbemittel steht im Startseitenband, unter einer
+   Meldung (720 px), in Listen und in Spalten. Feste Seitenverhältnisse und eine
+   Überschrift mit fester Höhe (zwei Zeilen) halten die Höhe beim Wechsel gleich. */
+.ma-ad-text{display:none}
+.ma-ad-rotator--band,.ma-ad-rotator--gap{height:auto;container-type:inline-size}
+.ma-ad-art .ma-ad-bild-breit{display:none}
+.ma-ad-card--band,.ma-ad-card--gap{display:flex;flex-direction:column;height:auto;background:#fff}
+.ma-ad-card--band .ma-ad-art,.ma-ad-card--gap .ma-ad-art{flex:none;width:100%;aspect-ratio:16/9;min-height:0}
+.ma-ad-card--band .ma-ad-copy,.ma-ad-card--gap .ma-ad-copy{flex:none;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:14px;align-items:center;padding:10px 12px 12px}
+.ma-ad-card .ma-ad-copy .ma-ad-eyebrow{grid-column:1;grid-row:1;display:block;margin:0;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ma-ad-card .ma-ad-copy strong{grid-column:1;grid-row:2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;margin:3px 0 0;min-height:2.3em;font-family:var(--serif);font-size:18px;font-weight:650;line-height:1.15;white-space:normal;text-overflow:clip}
+.ma-ad-card .ma-ad-copy .ma-ad-cta{grid-column:2;grid-row:1/3;align-self:center;display:inline-block;margin:0;padding:8px 11px;font-size:10px}
+/* Schmale Spalte: Knopf unter die Überschrift. */
+@container (max-width:339px){
+  .ma-ad-card--band .ma-ad-copy,.ma-ad-card--gap .ma-ad-copy{display:block}
+  .ma-ad-card .ma-ad-copy strong{font-size:17px}
+  .ma-ad-card .ma-ad-copy .ma-ad-cta{margin-top:9px;padding:6px 9px}
+}
+/* Mittlerer Platz (unter einer Meldung, Tablet): Bild links (46 %, 16:9), daneben der Text. */
+@container (min-width:561px){
+  .ma-ad-card--band{display:grid;grid-template-columns:46% minmax(0,1fr);align-items:start}
+  .ma-ad-card--band .ma-ad-art{grid-column:1;grid-row:1}
+  .ma-ad-card--band .ma-ad-copy{grid-column:2;grid-row:1;align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:16px 22px}
+  .ma-ad-card--band .ma-ad-copy strong{min-height:0;margin-top:6px;font-size:22px;line-height:1.12}
+  .ma-ad-card--band .ma-ad-copy .ma-ad-cta{align-self:flex-start;margin-top:14px;padding:9px 13px;font-size:11px}
+}
+/* Breiter Platz (Startseitenband, Seitenband): Bild oder Video 60 % in der breiten
+   Fassung (3,5 : 1), ohne breite Fassung das 16:9-Motiv zugeschnitten; die Bildseite
+   wechselt von Band zu Band. */
+@container (min-width:840px){
+  .ma-ad-card--band{grid-template-columns:60% minmax(0,1fr);grid-template-rows:minmax(0,1fr);align-items:stretch;height:clamp(180px,16.5cqi,224px)}
+  .ma-ad-card--band .ma-ad-art{height:100%;aspect-ratio:auto}
+  .ma-ad-art--breit .ma-ad-bild{display:none}
+  .ma-ad-art--breit .ma-ad-bild-breit{display:block}
+  .ma-ad-card--band .ma-ad-copy{padding:20px 34px;overflow:hidden}
+  .ma-ad-card--band .ma-ad-copy .ma-ad-eyebrow{font-size:11px}
+  .ma-ad-card--band .ma-ad-copy strong{-webkit-line-clamp:3;line-clamp:3;margin-top:8px;font-size:clamp(22px,2.2cqi,30px);line-height:1.08;letter-spacing:-.012em}
+  .ma-ad-card--band .ma-ad-copy .ma-ad-cta{margin-top:16px;padding:10px 16px;font-size:12px}
+  .werbung[data-ma-werbeplatz$="-2"] .ma-ad-card--band,.werbung[data-ma-werbeplatz$="-4"] .ma-ad-card--band,.werbung[data-ma-werbeplatz$="-6"] .ma-ad-card--band{grid-template-columns:minmax(0,1fr) 60%}
+  .werbung[data-ma-werbeplatz$="-2"] .ma-ad-card--band .ma-ad-art,.werbung[data-ma-werbeplatz$="-4"] .ma-ad-card--band .ma-ad-art,.werbung[data-ma-werbeplatz$="-6"] .ma-ad-card--band .ma-ad-art{grid-column:2}
+  .werbung[data-ma-werbeplatz$="-2"] .ma-ad-card--band .ma-ad-copy,.werbung[data-ma-werbeplatz$="-4"] .ma-ad-card--band .ma-ad-copy,.werbung[data-ma-werbeplatz$="-6"] .ma-ad-card--band .ma-ad-copy{grid-column:1}
+}
+.ma-ad-card:hover .ma-ad-art img,.ma-ad-card:focus-visible .ma-ad-art img{filter:saturate(1.06)}
 
 /* ---- theme.css ---- */
 /* Merzenich Aktuell – seit 23.09.2026 ausschließlich Hellmodus. */

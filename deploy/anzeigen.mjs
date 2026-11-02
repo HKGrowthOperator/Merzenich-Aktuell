@@ -77,13 +77,18 @@ function kunst(m) {
     + (m.ki ? '<span class="ma-ad-nachweis">KI-Bild</span>' : '')
     + '</span>';
 }
+// Nur der Firmenname vor dem „·“ (wie ma_ad_karte im Plugin, 02.11.2026); „in eigener Sache“ bleibt.
+function firmaZeile(z) {
+  const t = String(z || '');
+  return /in eigener Sache/i.test(t) ? t : t.replace(/\s*·.*$/u, '').trim();
+}
 function motivHtml(m, format) {
   const extern = /^https:\/\//.test(m.ziel);
   const rel = extern ? ' target="_blank" rel="sponsored noopener"' : '';
   return `<a class="ma-ad-card ma-ad-card--${format} ma-ad-theme--${esc(m.typ)}" href="${esc(m.ziel)}"${rel} data-motiv="${esc(m.id)}" aria-label="Anzeige: ${esc(m.kunde)} – ${esc(m.headline)}">`
     + kunst(m)
     + '<span class="ma-ad-copy">'
-    + `<span class="ma-ad-eyebrow">${esc(m.eyebrow)}</span>`
+    + `<span class="ma-ad-eyebrow">${esc(firmaZeile(m.eyebrow))}</span>`
     + `<strong>${esc(m.headline)}</strong>`
     + `<span class="ma-ad-text">${esc(m.text)}</span>`
     + `<span class="ma-ad-cta">${esc(m.cta)}</span>`

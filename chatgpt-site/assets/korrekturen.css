@@ -752,7 +752,6 @@ html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
 /* Bühne ab 760 px: Der Ort ist dort ein roter Kasten (eigenes Element), der Ortsteil folgt ohne Lücke. */
 @media(min-width:760px){body.home .buehne .front-lead .marke{column-gap:0}body.home .buehne .front-lead .marke .marke-rubrik{margin-left:10px}}
 /* Anzeige unter der Meldung am Handy: Überschrift und Zeile zweizeilig statt mit „…“ abgeschnitten. */
-@media(max-width:560px){.werbung--artikel .ma-ad-rotator--band{height:84px}.werbung--artikel .ma-ad-copy strong,.werbung--artikel .ma-ad-text{white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}}
 
 /* Vorführ-Check, Gruppe Markt (17.10.2026) */
 /* Etikett „Musterbeitrag“ verdeckte am Handy ein Viertel des kleinen Vorschaubilds: dort kurz „Muster“ in der Ecke (der Text darunter nennt „Musterbeitrag“). */

@@ -302,10 +302,19 @@ function ma_firmen_banner_anlegen(array $f, int $pid): array {
         $schluessel = ma_firmen_anzeige_schluessel($a, $n);
         $wer = $name . ', Anzeige ' . $n;
         // WebM-Fassung daneben (gleicher Name), für Browser ohne H.264.
-        $webm = !empty($a['video']) ? (string) preg_replace('/\.mp4$/', '.webm', basename((string) $a['video'])) : '';
-        if ($webm === basename((string) ($a['video'] ?? '')) || $datei($webm) === '') $webm = '';
-        // Prüfsumme über den Eintrag und den Inhalt von Bild, Video und WebM: neu gebaute oder nachgelieferte Dateien zählen als Änderung.
-        $pruef = md5((string) wp_json_encode($a) . '|' . implode('|', array_map(fn($d) => ($p = $datei($d)) !== '' ? (string) md5_file($p) : '', [(string) ($a['bild'] ?? ''), (string) ($a['video'] ?? ''), $webm])));
+        $webm_zu = function (string $v) use ($datei): string {
+            $w = $v !== '' ? (string) preg_replace('/\.mp4$/', '.webm', basename($v)) : '';
+            return $w === basename($v) || $datei($w) === '' ? '' : $w;
+        };
+        $webm = $webm_zu((string) ($a['video'] ?? ''));
+        // Breite Fassung für die Werbebänder (02.11.2026): bild_breit, video_breit (+ WebM).
+        $breit = ['bild' => (string) ($a['bild_breit'] ?? ''), 'video' => (string) ($a['video_breit'] ?? '')];
+        $breit['webm'] = $webm_zu($breit['video']);
+        // Prüfsumme über den Eintrag und den Inhalt von Bild, Video und WebM (und der breiten Fassung, wenn es sie gibt):
+        // neu gebaute oder nachgelieferte Dateien zählen als Änderung.
+        $dateien = [(string) ($a['bild'] ?? ''), (string) ($a['video'] ?? ''), $webm];
+        if ($breit['bild'] !== '' || $breit['video'] !== '') array_push($dateien, $breit['bild'], $breit['video'], $breit['webm']);
+        $pruef = md5((string) wp_json_encode($a) . '|' . implode('|', array_map(fn($d) => ($p = $datei($d)) !== '' ? (string) md5_file($p) : '', $dateien)));
         $da = ma_firmen_banner_vorhanden($slug, $n, $schluessel);
         if ($da) $eigene[] = $da;
         if ($da && get_post_status($da) === 'trash') { $log[] = $wer . ': liegt im Papierkorb, nichts geändert.'; continue; }
@@ -346,6 +355,10 @@ function ma_firmen_banner_anlegen(array $f, int $pid): array {
         update_post_meta($id, 'ma_ad_video', $v ? (string) $v : '');
         $vw = $webm !== '' ? ma_firmen_medium('banner', $webm, 'ma_firmen_banner_datei', $id, $alt, $nachweis, (string) ($a['quelle'] ?? ''), $leer, true) : 0;
         update_post_meta($id, 'ma_ad_video_webm', $vw ? (string) $vw : '');
+        foreach (['ma_ad_bild_breit' => $breit['bild'], 'ma_ad_video_breit' => $breit['video'], 'ma_ad_video_breit_webm' => $breit['webm']] as $key => $d) {
+            $mb = $d !== '' ? ma_firmen_medium('banner', $d, 'ma_firmen_banner_datei', $id, $key === 'ma_ad_bild_breit' ? $alt : '', $nachweis, (string) ($a['quelle'] ?? ''), $leer, true) : 0;
+            update_post_meta($id, $key, $mb ? (string) $mb : '');
+        }
         update_post_meta($id, '_ma_firmen_banner_pruef', $pruef);
         update_post_meta($id, '_ma_firmen_banner_geschrieben', (string) get_post_field('post_modified_gmt', $id));
         if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, $da ? 'Werbebanner aktualisiert' : 'Werbebanner angelegt', 'Aus data/firmen-entwuerfe.json (Anzeige ' . $n . ' von ' . $name . '). Läuft ohne Ende, bis der Betreiber es austauscht.');
