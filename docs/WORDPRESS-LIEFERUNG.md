@@ -1,6 +1,19 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.24.2 · Core-Plugin 1.38.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+2. November 2026 · Theme 21.24.2 · Core-Plugin 1.39.0 · live: 21.24.2 / 1.37.2 (Historie unten)
+
+## Neu am 02.11.2026 (vierte Runde): Plugin 1.39.0, Selbst-Update, jeder Push geht automatisch live
+
+**Stand live:** noch nicht eingespielt. **1.39.0 muss einmal von Hand hochgeladen werden**; danach installiert WordPress jede neue Plugin- und Theme-Version selbst. Enthält 1.38.0 (unten). Rückweg: Plugin 1.37.2 (dann ohne Selbst-Update); Selbst-Update abschalten mit Option `ma_selbst_update_aus = '1'` oder `define('MA_SELBST_UPDATE_AUS', true);` in `wp-config.php`.
+
+**Anlass:** Vorgabe Betreiber 02.11.2026: „das muss immer automatisch laufen“. Bisher lud jemand nach jedem Build die ZIPs im Backend hoch.
+
+- **Ablauf:** Push auf main → „Build WordPress Delivery Packages“ führt alle `qa/wordpress/*-test.php` aus (neu; schlägt einer fehl, entsteht kein Paket), baut die ZIPs und schreibt `wordpress-delivery/release.json` (Version und SHA-256 je Paket) → „WordPress-Abgleich anstoßen“ ruft `/?ma_api=update-anstoss` und `wp-cron.php` → WordPress (`includes/selbst-update.php`) liest `release.json`, lädt nur neuere Pakete, prüft die Prüfsumme und installiert erst das Plugin, dann das Theme (`Plugin_Upgrader`/`Theme_Upgrader`, `overwrite_package`). Rückfall: stündlicher Cron.
+- **Sicherungen:** nur aus `raw.githubusercontent.com/HKGrowthOperator/merzenich-aktuell/main/wordpress-delivery/`; Prüfsumme muss passen (sonst nächster Lauf); nie eine ältere Version; ein Lauf zur Zeit; schlägt das Plugin fehl, kein Theme. Der Anstoß braucht kein Geheimnis, plant nur einen Lauf (höchstens alle fünf Minuten).
+- **Kontrolle:** `/?ma_api=update-status` zeigt installierte Versionen und den letzten Lauf. Nach jedem Build prüft der Workflow, ob live die Version aus `release.json` läuft, und schlägt sonst fehl (Mail von GitHub).
+- **Test:** neu `qa/wordpress/selbst-update-test.php` (Manifest, nur aufwärts, Reihenfolge, Quelle).
+
+**Einspielen (einmalig):** ZIP `wordpress-delivery/merzenich-aktuell-core.zip` hochladen, „Vorhandene Version ersetzen“. Nachweis: `/?ma_api=update-status` antwortet mit `"plugin":"1.39.0"`.
 
 ## Neu am 02.11.2026 (dritte Runde): Plugin 1.38.0, SEO und GEO (News-Sitemap mit Bild, KI-Crawler, llms.txt, Wikidata)
 
