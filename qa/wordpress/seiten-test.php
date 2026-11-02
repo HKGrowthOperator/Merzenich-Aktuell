@@ -18,6 +18,8 @@ function wp_insert_post(array $d, $e = false) { $id = $GLOBALS['naechste']++; $G
 function wp_update_post(array $d, $e = false) { $p = $GLOBALS['posts'][$d['ID']]; foreach ($d as $k => $v) if ($k !== 'ID') $p->$k = $v; return $d['ID']; }
 function update_post_meta($id, $k, $v) { $GLOBALS['meta'][$id][$k] = $v; return true; }
 function current_user_can($c) { return true; }
+function esc_html($s) { return htmlspecialchars((string) $s, ENT_QUOTES); } function esc_attr($s) { return htmlspecialchars((string) $s, ENT_QUOTES); } function esc_url($s) { return (string) $s; }
+function sanitize_title($s) { return strtolower(str_replace([' ', 'ü', 'ö', 'ä'], ['-', 'u', 'o', 'a'], (string) $s)); }
 
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seiten.php';
 
@@ -27,7 +29,7 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 echo "Inhalt\n";
 $alle = '';
 foreach (ma_seiten() as $slug => $s) { $h = ma_seite_html($slug); $alle .= $h; if ($h === '' || $s['anriss'] === '' || $s['eyebrow'] === '') { $fehler++; echo "  FEHLER: $slug leer\n"; } }
-pruefe('18 Seiten mit Text, Anriss und Eyebrow (1.27.0: Heute in Merzenich)', count(ma_seiten()), 18);
+pruefe('19 Seiten mit Text, Anriss und Eyebrow (1.42.0: Nachrichten aus der Umgebung)', count(ma_seiten()), 19);
 pruefe('Keine Vorschau-Domain, kein Netlify-Formular, kein TODO', str_contains($alle, 'hk-growthoperator') || str_contains($alle, '/api/formular') || str_contains($alle, 'TODO') || str_contains($alle, 'kalender.ics'), false);
 pruefe('Formulare: Kontakt, Meldung, Termin, Werbung, Korrektur; Anzeigen über die Auswahl', [str_contains(ma_seite_kontakt(), '[ma_formular typ="kontakt"]'), str_contains(ma_seite_meldung_senden(), 'typ="meldung"'), str_contains(ma_seite_termin_melden(), 'typ="termin"'), str_contains(ma_seite_werben(), 'typ="werbung"'), str_contains(ma_seite_korrekturen(), 'typ="korrektur"'), str_contains(ma_seite_aufgeben(), '[ma_anzeige_aufgeben]'), !str_contains(ma_seite_aufgeben(), '[ma_formular') ], [true, true, true, true, true, true, true]);
 pruefe('Archiv, Diskussion, Redaktion und Themen nutzen ihre Shortcodes', [str_contains(ma_seite_archiv(), '[ma_archiv]'), str_contains(ma_seite_diskussion(), '[ma_diskussion]'), str_contains(ma_seite_redaktion(), '[ma_redaktion_meldungen]'), str_contains(ma_seite_themen(), '[ma_themen]')], [true, true, true, true]);
@@ -39,6 +41,21 @@ pruefe('Unterstützen ohne „gibt es noch nicht“ und „sobald er startet“'
 pruefe('Werben: sechs buchbare Flächen, Knopf zur Anfrage, Formular', [substr_count(ma_seite_werben(), '<li><strong>'), str_contains(ma_seite_werben(), 'href="#anfrage">Werbung anfragen'), str_contains(ma_seite_werben(), '[ma_formular typ="werbung"]')], [6, true, true]);
 pruefe('Links nur auf WordPress-Adressen (kein /autor/redaktion/, /termine/melden/, feed.xml)', str_contains($alle, '/autor/redaktion/') || str_contains($alle, '/termine/melden/') || str_contains($alle, 'feed.xml'), false);
 pruefe('Pfad mit Elternseite', ma_seite_pfad('aufgeben'), 'anzeigen/aufgeben');
+
+echo "\nUmgebung (1.42.0)\n";
+pruefe('Umgebungsseite nutzt den Shortcode und verlinkt Nachrichten, Blaulicht, Termine', [str_contains(ma_seite_umgebung(), '[ma_umgebung]'), str_contains(ma_seite_umgebung(), 'href="/blaulicht/"'), str_contains(ma_seite_umgebung(), 'href="/termine/"')], [true, true, true]);
+$ug = ma_umgebung_html([
+    ['ort' => 'Niederzier', 'rubrik' => 'Blaulicht', 'titel' => 'Brand in Huchem-Stammeln', 'url' => 'https://www.presseportal.de/blaulicht/pm/8/1', 'datum' => '2026-10-20', 'quelle' => 'Polizei Düren'],
+    ['ort' => 'Düren', 'rubrik' => 'Verkehr', 'titel' => 'Ältere Meldung', 'url' => 'https://www.dueren.de/a', 'datum' => '2026-10-01', 'quelle' => 'Stadt Düren'],
+    ['ort' => 'Düren', 'rubrik' => 'Blaulicht', 'titel' => 'Neuere Meldung <b>', 'url' => 'https://www.presseportal.de/blaulicht/pm/8/2', 'datum' => '2026-10-26', 'quelle' => 'Polizei Düren'],
+    ['ort' => 'Jülich', 'rubrik' => 'X', 'titel' => 'Fremder Ort', 'url' => 'https://x.de/', 'datum' => '2026-10-26', 'quelle' => 'X'],
+    ['ort' => 'Düren', 'rubrik' => 'X', 'titel' => 'Ohne https', 'url' => 'http://x.de/', 'datum' => '2026-10-26', 'quelle' => 'X'],
+]);
+pruefe('Je Ort eine Überschrift „<Ort> aktuell“, Düren vor Niederzier', [str_contains($ug, '<h2 id="duren">Düren aktuell</h2>'), strpos($ug, 'Düren aktuell') < strpos($ug, 'Niederzier aktuell')], [true, true]);
+pruefe('Neueste zuerst, Datum TT.MM., Titel maskiert', [strpos($ug, 'Neuere Meldung') < strpos($ug, 'Ältere Meldung'), str_contains($ug, '>26.10.</time>'), str_contains($ug, 'Neuere Meldung &lt;b&gt;')], [true, true, true]);
+pruefe('Fremde Orte und Links ohne https fallen weg', [str_contains($ug, 'Fremder Ort'), str_contains($ug, 'Ohne https')], [false, false]);
+pruefe('Externe Links öffnen neu, ohne Referrer', str_contains($ug, 'target="_blank" rel="noopener noreferrer"'), true);
+pruefe('Ohne Einträge ein Hinweis statt leerer Seite', str_contains(ma_umgebung_html([]), 'keine Meldungen aus der Umgebung'), true);
 
 echo "\nAnlegen und Pflegen\n";
 pruefe('Status vor dem Anlegen: fehlt', ma_seite_status('ueber-uns'), 'fehlt');
@@ -60,11 +77,11 @@ $GLOBALS['opt']['ma_seiten_stand']['kontakt']['version'] = '2026-01-01'; unset($
 pruefe('Ältere Fassung erkannt', ma_seite_status('kontakt'), 'veraltet');
 ma_seiten_abgleichen();
 pruefe('Unveränderte ältere Fassung wird gehoben', ma_seite_status('kontakt'), 'aktuell');
-pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 18);
+pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 19);
 // Neue Seite bei gleicher Fassung (Live-Befund 02.10.: /thema/ fehlte, weil der Guard schon stand): Anzahl-Guard greift.
-$GLOBALS['opt']['ma_seiten_anzahl'] = 16; unset($GLOBALS['posts'][ma_seite_seite('thema')->ID]);
+$GLOBALS['opt']['ma_seiten_anzahl'] = 17; unset($GLOBALS['posts'][ma_seite_seite('thema')->ID]);
 ma_seiten_abgleichen();
-pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 18]);
+pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 19]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

@@ -32,9 +32,11 @@ const MA_SEO_UNTERTITEL = 'Lokalzeitung online für die Gemeinde Merzenich';
 // Andere Schreibweisen des Namens für den Seitennamen in den Google-Treffern (WebSite.alternateName, 1.27.0).
 const MA_SEO_NAMEN = ['Merzenich-Aktuell', 'merzenich-aktuell.de'];
 // Unter 65 Zeichen, damit Google ihn nicht abschneidet (1.26.0); die Ortsteile stehen in der Beschreibung.
-const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich und Ortsteilen';
+// 1.42.0 (Schlüsselwörter, docs/SEO-KEYWORDS.md): „merzenich aktuell“, „nachrichten merzenich“, „polizei merzenich“, „termine“.
+const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich, Polizei, Termine';
 // Startseiten-Description: Google zeigt rund 155 Zeichen; die Langfassung steht in llms.txt.
-const MA_SEO_BESCHREIBUNG = 'Lokalzeitung für die Gemeinde Merzenich: Nachrichten, Blaulicht, Termine und Vereine aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.';
+// „Kreis Düren“ grenzt die Gemeinde gegen den Hirnforscher Michael Merzenich und die Bäckerei Merzenich (Köln) ab.
+const MA_SEO_BESCHREIBUNG = 'Lokalzeitung für Merzenich im Kreis Düren: Polizei, Feuerwehr, Unfälle, Termine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich, Bürgewald.';
 const MA_SEO_BESCHREIBUNG_LANG = 'Merzenich Aktuell ist die Lokalzeitung online für die Gemeinde Merzenich im Kreis Düren: Nachrichten, Blaulicht, Termine, Vereine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Jede Meldung mit Quelle und Bildcredit.';
 const MA_SEO_PLZ = '52399';
 const MA_SEO_GEBIET = 'Gemeinde Merzenich, Kreis Düren, Nordrhein-Westfalen';
@@ -47,11 +49,17 @@ const MA_SEO_GEBIET = 'Gemeinde Merzenich, Kreis Düren, Nordrhein-Westfalen';
  */
 function ma_seo_orte(): array {
     return [
-        'merzenich' => ['name' => 'Merzenich', 'beschreibung' => 'Hauptort der Gemeinde mit Rathaus, Bürgerhaus, Pfarrkirche St. Laurentius, Heimatmuseum und S-Bahn-Halt an der Strecke Köln–Aachen.', 'wikidata' => 'Q200044', 'wikipedia' => 'Merzenich'],
-        'golzheim' => ['name' => 'Golzheim', 'beschreibung' => 'Ländlicher Ortsteil im Norden der Gemeinde mit Pfarrkirche St. Gregorius, eigener Grundschule, Schützenhalle und einer der ältesten Schützenbruderschaften der Region.', 'lat' => 50.83966, 'lon' => 6.58118, 'wikidata' => 'Q1284626', 'wikipedia' => 'Golzheim_(Merzenich)'],
-        'girbelsrath' => ['name' => 'Girbelsrath', 'beschreibung' => 'Ortsteil im Süden der Gemeinde mit der Kirche St. Amandus, Sportplatz, eigener Löschgruppe und aktivem Karnevalsverein inmitten der Feldflur Richtung Binsfeld.', 'lat' => 50.81185, 'lon' => 6.55163, 'wikidata' => 'Q1526685', 'wikipedia' => 'Girbelsrath'],
-        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.', 'wikidata' => 'Q19059925', 'wikipedia' => 'Morschenich'],
-        'buergewald' => ['name' => 'Bürgewald', 'beschreibung' => 'Das alte Morschenich am Rand des Hambacher Forsts, seit 6. Juli 2024 Bürgewald genannt und als „Ort der Zukunft“ von Gemeinde, Land NRW und RWE gemeinsam neu entwickelt.', 'wikidata' => 'Q1650249', 'wikipedia' => 'Bürgewald_(Merzenich)'],
+        // 1.42.0: 'titel' und 'seo' für Google (Suchanfragen „<ort> aktuell“, „unfall <ort> heute“); 'beschreibung' bleibt der Ortstext.
+        'merzenich' => ['name' => 'Merzenich', 'beschreibung' => 'Hauptort der Gemeinde mit Rathaus, Bürgerhaus, Pfarrkirche St. Laurentius, Heimatmuseum und S-Bahn-Halt an der Strecke Köln–Aachen.', 'wikidata' => 'Q200044', 'wikipedia' => 'Merzenich',
+            'titel' => 'Merzenich (Ort) aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Aktuelles aus dem Hauptort Merzenich im Kreis Düren: Polizei und Feuerwehr, Unfälle, Sperrungen, Termine, Vereine und Rathaus, jeweils mit Quelle.'],
+        'golzheim' => ['name' => 'Golzheim', 'beschreibung' => 'Ländlicher Ortsteil im Norden der Gemeinde mit Pfarrkirche St. Gregorius, eigener Grundschule, Schützenhalle und einer der ältesten Schützenbruderschaften der Region.', 'lat' => 50.83966, 'lon' => 6.58118, 'wikidata' => 'Q1284626', 'wikipedia' => 'Golzheim_(Merzenich)',
+            'titel' => 'Golzheim aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Golzheim (Gemeinde Merzenich, Kreis Düren): Polizei, Feuerwehr, Unfälle, Schützen, Karneval, Schule und Termine, jeweils mit Quelle.'],
+        'girbelsrath' => ['name' => 'Girbelsrath', 'beschreibung' => 'Ortsteil im Süden der Gemeinde mit der Kirche St. Amandus, Sportplatz, eigener Löschgruppe und aktivem Karnevalsverein inmitten der Feldflur Richtung Binsfeld.', 'lat' => 50.81185, 'lon' => 6.55163, 'wikidata' => 'Q1526685', 'wikipedia' => 'Girbelsrath',
+            'titel' => 'Girbelsrath aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Girbelsrath (Gemeinde Merzenich, Kreis Düren): Unfälle auf der L 264, Polizei, Feuerwehr, Karneval, Sport und Termine, jeweils mit Quelle.'],
+        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.', 'wikidata' => 'Q19059925', 'wikipedia' => 'Morschenich',
+            'titel' => 'Morschenich aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Morschenich (Gemeinde Merzenich, Kreis Düren): Bürgewaldzentrum, Vereine, Polizei, Feuerwehr und Termine im Umsiedlungsort, mit Quelle.'],
+        'buergewald' => ['name' => 'Bürgewald', 'beschreibung' => 'Das alte Morschenich am Rand des Hambacher Forsts, seit 6. Juli 2024 Bürgewald genannt und als „Ort der Zukunft“ von Gemeinde, Land NRW und RWE gemeinsam neu entwickelt.', 'wikidata' => 'Q1650249', 'wikipedia' => 'Bürgewald_(Merzenich)',
+            'titel' => 'Bürgewald aktuell: Ort der Zukunft, Nachrichten und Termine', 'seo' => 'Nachrichten aus Bürgewald, dem alten Morschenich am Hambacher Forst (Gemeinde Merzenich): Ort der Zukunft, Strukturwandel, Bauflächen und Termine.'],
     ];
 }
 
@@ -69,16 +77,19 @@ const MA_SEO_KI_CRAWLER = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'Perplexit
 /** Ressorts und Listen: Titel und Beschreibung (Texte der statischen Seite). Schlüssel = Adresse /<slug>/. */
 function ma_seo_ressorte(): array {
     return [
-        'blaulicht' => ['Blaulicht', 'Blaulicht Merzenich: Feuerwehr, Polizei und Rettungsdienst', 'Einsätze der Freiwilligen Feuerwehr Merzenich, Polizeimeldungen für das Gemeindegebiet und Verkehrsmeldungen, sachlich zusammengefasst und mit Originalquelle.'],
-        'sport' => ['Sport', 'Sport in der Gemeinde Merzenich', 'Fußball in der Kreisliga, Tischtennis, Schießsport, Turniere und Ergebnisse der Vereine aus allen Ortsteilen.'],
-        'rathaus' => ['Rathaus & Politik', 'Rathaus, Rat und Kommunalpolitik in Merzenich', 'Was im Rathaus Merzenich, im Gemeinderat und in den Ausschüssen entschieden wird. Sprechstunden, Satzungen, Bauvorhaben, Bürgerbeteiligung.'],
+        // 1.42.0: Titel nach den Suchanfragen (Search Console und Google-Vorschläge, 02.11.2026): „polizeieinsatz merzenich heute“, „unfall merzenich“, „feuerwehr merzenich einsätze“.
+        'blaulicht' => ['Blaulicht', 'Polizei, Feuerwehr, Unfall: Blaulicht Merzenich aktuell', 'Polizeieinsätze, Unfälle, Brände und Sperrungen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald: Meldungen von Polizei Düren und Feuerwehr, mit Quelle.'],
+        'sport' => ['Sport', 'Sport in Merzenich: Fußball, Tischtennis und Ergebnisse', 'Fußball in der Kreisliga, Tischtennis, Schießsport, Turniere und Ergebnisse der Vereine aus allen Ortsteilen.'],
+        // „gemeinde merzenich“ (73 Impressionen), „amtsblatt merzenich“, „bürgermeister merzenich“, „gemeinderat“.
+        'rathaus' => ['Rathaus & Politik', 'Gemeinde Merzenich: Rathaus, Gemeinderat und Amtsblatt', 'Was Gemeinderat, Ausschüsse und Rathaus Merzenich entscheiden: Beschlüsse, Amtsblatt, Bauvorhaben, Abfall, Steuern und Bürgerbeteiligung, mit Quelle.'],
         'leben' => ['Leben', 'Leben in der Gemeinde Merzenich', 'Feste, Kultur, Kirche, Schule, Freizeit und Alltag in Merzenich und seinen Ortsteilen.'],
         'wirtschaft' => ['Wirtschaft', 'Wirtschaft, Handel und Strukturwandel in Merzenich', 'Betriebe, Handwerk, Gewerbegebiete, Förderprogramme wie LEADER und der Strukturwandel im Rheinischen Revier rund um Merzenich.'],
         'menschen' => ['Menschen', 'Menschen aus Merzenich', 'Jubiläen, Hochzeiten, Ehrungen, Nachrufe und Porträts: die Menschen hinter den Meldungen.'],
         'vereine' => ['Vereine', 'Vereine in der Gemeinde Merzenich', 'Wer in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald aktiv ist: Schützen, Sport, Karneval, Feuerwehr, Kirche und Ehrenamt mit Ansprechpartnern und offiziellen Seiten.'],
         'tipp' => ['Tipp', 'Tipps aus Merzenich', 'Tipp: klar gekennzeichnete bezahlte und gesponserte Platzierungen von Vereinen, Unternehmen und Partnern aus Merzenich und der Region.'],
-        'nachrichten' => ['Nachrichten', 'Nachrichten aus der Gemeinde Merzenich', 'Alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald in chronologischer Reihenfolge.'],
-        'termine' => ['Termine', 'Termine und Veranstaltungen in Merzenich', 'Veranstaltungen in Merzenich und seinen Ortsteilen: Feste, Sitzungen, Sport, Kirche und Vereine, nach Datum sortiert.'],
+        'nachrichten' => ['Nachrichten', 'Nachrichten Merzenich aktuell: alle Meldungen, neueste zuerst', 'Alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald im Kreis Düren, die neueste zuerst: Blaulicht, Rathaus, Sport, Vereine und Leben.'],
+        // „veranstaltungen merzenich heute“, „was ist heute in merzenich los“, „merzenich wochenende“.
+        'termine' => ['Termine', 'Veranstaltungen Merzenich: Termine heute und am Wochenende', 'Was in Merzenich los ist: Veranstaltungen heute und am Wochenende in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, von Karneval bis Ratssitzung.'],
         'unternehmen' => ['Unternehmen', 'Unternehmen in Merzenich', 'Unternehmen in Merzenich: Wirtschaftsmeldungen der Redaktion und die Kanäle der Unternehmen aus der Gemeinde, Unternehmensbeiträge als Anzeige gekennzeichnet.'],
     ];
 }
@@ -102,6 +113,8 @@ function ma_seo_seitentexte(): array {
         'archiv' => 'Archiv von Merzenich Aktuell: alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald nach Monat und Ressort.',
         'impressum' => 'Impressum von Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich: Anbieterin KBS Management GmbH, Kontakt und Verantwortliche.',
         'heute' => 'Termine von heute und den nächsten sieben Tagen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, dazu die neuesten Meldungen.',
+        // 1.42.0: „düren aktuell“, „niederzier aktuell“, „kreis düren aktuell“ (Google-Vorschläge 02.11.2026).
+        'umgebung' => 'Nachrichten aus Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und dem Kreis Düren: Polizei, Verkehr, Rathaus und Termine, mit Link zur Originalquelle.',
     ];
 }
 
@@ -111,7 +124,7 @@ function ma_seo_seitentexte(): array {
  * Frage, die Google selbst unter „Weitere Fragen“ zeigt.
  */
 function ma_seo_seitentitel(): array {
-    return ['heute' => 'Was ist heute in Merzenich los?'];
+    return ['heute' => 'Was ist heute in Merzenich los?', 'umgebung' => 'Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung'];
 }
 
 /** Zu kurze Beschreibung (unter 110 Zeichen) mit Angaben davor und einem Satz dahinter auffüllen. */
@@ -365,7 +378,7 @@ function ma_seo_itemlist(array $liste): array {
 function ma_seo_llms_txt(string $home, array $seiten, array $neueste = []): string {
     $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\n";
     $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, info@kbs-management.tv. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
-    $t .= "## Aktuell\n\n- [Heute in Merzenich]({$home}heute/): Was heute in der Gemeinde ansteht und neu ist.\n- [Termine]({$home}termine/): Veranstaltungen, Sitzungen und Feste aus allen Ortsteilen.\n- [Terminkalender (ICS)]({$home}termine/kalender.ics): alle Termine zum Abonnieren.\n- [KI-Redaktion]({$home}ki-redaktion/): Wie Meldungen mit KI recherchiert, geprüft und gekennzeichnet werden.\n";
+    $t .= "## Aktuell\n\n- [Heute in Merzenich]({$home}heute/): Was heute in der Gemeinde ansteht und neu ist.\n- [Termine]({$home}termine/): Veranstaltungen, Sitzungen und Feste aus allen Ortsteilen.\n- [Terminkalender (ICS)]({$home}termine/kalender.ics): alle Termine zum Abonnieren.\n- [KI-Redaktion]({$home}ki-redaktion/): Wie Meldungen mit KI recherchiert, geprüft und gekennzeichnet werden.\n- [Nachrichten aus der Umgebung]({$home}umgebung/): Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren, letzte 30 Tage.\n";
     if ($neueste) {
         $t .= "\n## Neueste Meldungen\n\n";
         foreach (array_slice($neueste, 0, 10) as [$titel, $url, $datum]) $t .= "- [{$titel}]({$url})" . ($datum !== '' ? " ({$datum})" : '') . "\n";
@@ -491,7 +504,7 @@ function ma_seo_kontext(): array {
         $k = array_merge($k, ['typ' => 'liste', 'titel' => $r['unternehmen'][1], 'beschreibung' => $r['unternehmen'][2], 'url' => $home . 'unternehmen/', 'krumen' => [['Start', $home], ['Unternehmen', null]], 'liste' => ma_seo_liste()]);
     } elseif (is_tax('ma_location') && $o instanceof WP_Term) {
         $d = ma_seo_orte()[$o->slug] ?? ['name' => $o->name, 'beschreibung' => $o->description ?: 'Meldungen aus ' . $o->name . '.'];
-        $k = array_merge($k, ['typ' => 'ort', 'ort' => isset(ma_seo_orte()[$o->slug]) ? $o->slug : 'merzenich', 'titel' => $d['name'] . ': Nachrichten aus dem Ortsteil der Gemeinde Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: $d['beschreibung']), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], [$d['name'], null]], 'liste' => ma_seo_liste()]);
+        $k = array_merge($k, ['typ' => 'ort', 'ort' => isset(ma_seo_orte()[$o->slug]) ? $o->slug : 'merzenich', 'titel' => $d['titel'] ?? $d['name'] . ': Nachrichten aus dem Ortsteil der Gemeinde Merzenich', 'beschreibung' => ma_seo_kuerzen($d['seo'] ?? ($o->description ?: $d['beschreibung'])), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], [$d['name'], null]], 'liste' => ma_seo_liste()]);
     } elseif (is_tag() && $o instanceof WP_Term) {
         $k = array_merge($k, ['typ' => 'thema', 'titel' => $o->name . ': Meldungen aus Merzenich', 'beschreibung' => ma_seo_kuerzen($o->description ?: 'Alle Meldungen von Merzenich Aktuell zum Thema ' . $o->name . ' aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.'), 'url' => ma_seo_liste_url(get_term_link($o)), 'krumen' => [['Start', $home], ['Thema', $home . 'thema/'], [$o->name, null]], 'liste' => ma_seo_liste(),
             // Dünne Themenseiten (weniger als MA_SEO_THEMA_MIN Meldungen) nicht indexieren; Leser erreichen sie weiter.

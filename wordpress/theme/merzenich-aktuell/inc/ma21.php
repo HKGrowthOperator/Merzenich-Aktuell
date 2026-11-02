@@ -143,7 +143,8 @@ function ma21_kopf(string $name): string {
  */
 function ma21_kopf_logo_h1(string $html): string {
     return (string) preg_replace('#<a class="logo" href="/" aria-label="[^"]*"><img ([^>]*?)alt="Merzenich Aktuell"([^>]*)></a>#u',
-        '<h1 class="logo-h1"><a class="logo" href="/"><img $1alt="Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich"$2></a></h1>', $html, 1);
+        // 21.25.1: „im Kreis Düren“ grenzt gegen den Hirnforscher Michael Merzenich und die Bäckerei Merzenich ab (docs/SEO-KEYWORDS.md).
+        '<h1 class="logo-h1"><a class="logo" href="/"><img $1alt="Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich im Kreis Düren"$2></a></h1>', $html, 1);
 }
 
 /** Zahlen und Meldungen für den Kopf, 10 Minuten zwischengespeichert (Reset bei jeder Statusänderung von Meldungen und Terminen). */

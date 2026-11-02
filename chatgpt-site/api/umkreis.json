@@ -1,0 +1,479 @@
+{
+ "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
+ "stand": "2026-10-26",
+ "tage": 30,
+ "orte": [
+  "Düren",
+  "Niederzier",
+  "Nörvenich",
+  "Elsdorf",
+  "Kerpen",
+  "Kreis Düren"
+ ],
+ "eintraege": [
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Einbrüche in ein Einfamilienhaus in Vettweiß und ein Mehrfamilienhaus in Düren: Zeugen gesucht",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377641",
+   "datum": "2026-10-26",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Imbisswagen auf dem Parkplatz eines Nahversorgungszentrums an der Straße Rurbenden ausgebrannt, zwei geparkte Autos beschädigt, niemand verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377797",
+   "datum": "2026-10-26",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Kleinkraftradfahrer bei Alleinunfall am Schindberg schwer verletzt, Rettungshubschrauber im Einsatz",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377648",
+   "datum": "2026-10-26",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Weißer Opel Corsa in der Elisabethstraße gestohlen, Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377642",
+   "datum": "2026-10-26",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Wirtschaft",
+   "titel": "KI-Roadshow der IHK Aachen am 6. November im CO_SPACE.DN in Düren, kostenfrei für kleine und mittlere Betriebe",
+   "url": "https://www.kreis-dueren.de/presse/ki-roadshow_2026-10-26.php",
+   "datum": "2026-10-26",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Titz: Vier Leichtverletzte bei Abbiegeunfall auf der L 12 an der Hohen Straße",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377654",
+   "datum": "2026-10-26",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Bildung",
+   "titel": "VHS Rur-Eifel: Website wegen einer PHP-Sicherheitslücke vorübergehend abgeschaltet, Anmeldung weiter per Telefon 02421 25-2577 oder Mail",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/die-homepage-der-vhs-rur-eifel-ist-voruebergehend-offline",
+   "datum": "2026-10-26",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Aldenhoven: B56 zwischen Freialdenhoven und Dürboslar: alkoholisierter Fahrer verursacht Unfall mit drei Autos und fünf Schwerverletzten, einer lebensgefährlich",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6377348",
+   "datum": "2026-10-25",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Aldenhoven: Kreuzungsunfall mit Taxi an der L11: vier Leichtverletzte",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6376491",
+   "datum": "2026-10-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Landwirtschaft",
+   "titel": "Erntedankempfang im Kreishaus: Bauernschaft klagt über Kostendruck und Trockenheitsverluste",
+   "url": "https://www.kreis-dueren.de/presse/erntedankempfang_2026-10-23.php",
+   "datum": "2026-10-23",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Karton auf dem Herd gerät in Brand, Bewohner löschen selbst",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6376492",
+   "datum": "2026-10-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Elsdorf",
+   "rubrik": "Blaulicht",
+   "titel": "Räuberischer Diebstahl in Discounter an der Ohndorfer Straße: Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/10374/6376792",
+   "datum": "2026-10-23",
+   "quelle": "Polizei Rhein-Erft-Kreis"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Vettweiß: L33 bei Froitzheim: Fahrerin weicht Wildtier aus, Auto überschlägt sich, Vollsperrung bis 10:15 Uhr",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6376638",
+   "datum": "2026-10-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kerpen",
+   "rubrik": "Blaulicht",
+   "titel": "Werkzeug aus Transporter in Blatzheim gestohlen, zweiter Fall in Bergheim",
+   "url": "https://www.presseportal.de/blaulicht/pm/10374/6376862",
+   "datum": "2026-10-23",
+   "quelle": "Polizei Rhein-Erft-Kreis"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Freizeit",
+   "titel": "Aldenhoven: LEADER-geförderte „RömerRunde“ in Freialdenhoven: Rundweg über die Via Belgica mit Infotafeln und Spielangeboten",
+   "url": "https://www.heimat-info.de/beitraege/fc5481c0-bd53-4f59-86b4-5ce6d7d75115",
+   "datum": "2026-10-22",
+   "quelle": "LAG Rheinisches Revier an Inde und Rur"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Bismarckstraße stadteinwärts zwischen Schoellerstraße und Kreuzstraße vom 26. bis 30. Oktober gesperrt",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/stadteinwaerts-fuehrende-fahrspur-der-bismarckstrae-zwischen-schoellerstrae-und-kreuzstrae-ab-2610-voruebergehend-gesperrt",
+   "datum": "2026-10-21",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Wirtschaft",
+   "titel": "VISIONplus Unternehmerinnenpreis: erster Platz für eine Goldschmiede aus Inden",
+   "url": "https://www.kreis-dueren.de/presse/visionplus-unternehmerinnenpreis_2026-10-21.php",
+   "datum": "2026-10-21",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Freizeit",
+   "titel": "Wildpferdeexkursion auf die Sophienhöhe am 29. Oktober: kostenloser Zusatztermin in den Herbstferien",
+   "url": "https://www.neuland-hambach.de/aktuelles/artikel/wildpferdeexkursion-auf-die-sophienhoehe-zusatztermin-in-den-herbstferien",
+   "datum": "2026-10-20",
+   "quelle": "Neuland Hambach GmbH"
+  },
+  {
+   "ort": "Elsdorf",
+   "rubrik": "Verkehr",
+   "titel": "Jülicher Straße in Oberembt bis 6. November gesperrt; Wirtschaftsweg am Elisenhof bis März 2027",
+   "url": "https://www.elsdorf.de/rathaus-service/rathaus-service/aktuelle-strassensperrungen",
+   "datum": "2026-10-19",
+   "quelle": "Stadt Elsdorf"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Gesundheit",
+   "titel": "Linnich: Trinkwasser: Chlorung beendet, Wasser wieder uneingeschränkt nutzbar",
+   "url": "https://www.kreis-dueren.de/presse/trinkwasser-linnich_2026-10-19.php",
+   "datum": "2026-10-19",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Kaiserplatz: Busse fahren seit 22. Oktober wieder regulär über Kaiserplatz und Zehnthofstraße",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/sanierung-der-nebenanlagen-im-bereich-kaiserplatzzehnthofstrae-verzoegert-sich",
+   "datum": "2026-10-17",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Vereine",
+   "titel": "Düren: Hilfsorganisationen werben mit gemeinsamer Kampagne um ehrenamtlichen Nachwuchs",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/wir-fuer-dueren-ehrenamt-ist-ehrensache-gemeinsame-kampagne-wirbt-um-nachwuchs-fuer-duerener-hilfsorganisationen",
+   "datum": "2026-10-15",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "E-Scooter-Unfall an der Burgauer Allee: Elfjähriger leicht verletzt, Roller ohne Versicherung",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6371722",
+   "datum": "2026-10-15",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Stadtleben",
+   "titel": "Jülich: Wettbewerbsentwürfe für das Brainergy Forum werden vom 16. bis 30. Oktober im Rathaus gezeigt",
+   "url": "https://www.juelich.de/aktuelles?news=Das_Brainergy_Forum_in_J_ue_lich_nimmt_Gestalt_an",
+   "datum": "2026-10-15",
+   "quelle": "Stadt Jülich"
+  },
+  {
+   "ort": "Kerpen",
+   "rubrik": "Verkehr",
+   "titel": "Kerpen: Zwei Personen auf einem E-Scooter in der Sindorfer Straße gestoppt, Fahrer mit über 1,2 Promille",
+   "url": "https://www.presseportal.de/blaulicht/pm/10374/6371830",
+   "datum": "2026-10-15",
+   "quelle": "Polizei Rhein-Erft-Kreis"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Gesundheit",
+   "titel": "Krankenhaus Jülich erhält 2,2 Millionen Euro Strukturfördermittel für Medizintechnik und Digitales",
+   "url": "https://www.juelich.de/aktuelles?news=2_2_Millionen_Euro_aus_dem_F_oe_rdertopf",
+   "datum": "2026-10-15",
+   "quelle": "Stadt Jülich"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Verkehr",
+   "titel": "Kreis Düren schenkt rund 3000 Erstklässlern blinkende LED-Leuchten für den Schulranzen",
+   "url": "https://www.kreis-dueren.de/presse/leuchte-deinen-schulweg_2026-10-15.php",
+   "datum": "2026-10-15",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Gesundheit",
+   "titel": "Notfallbildungszentrum Eifel-Rur in Kreuzau-Stockheim feiert zehnjähriges Bestehen",
+   "url": "https://www.kreis-dueren.de/presse/nobiz-jubilaeum_2026-10-15.php",
+   "datum": "2026-10-15",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Kultur",
+   "titel": "Schloss Burgau: 6. Papier- und Figurentheaterfestival mit sieben Vorstellungen im November",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/kleine-figuren-groe-geschichten-auf-schloss-burgau",
+   "datum": "2026-10-15",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Angriffe auf Hundehalter im Burgauer Wald: Kriminalpolizei ermittelt Tatverdächtigen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6370910",
+   "datum": "2026-10-14",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Mofafahrerin auf der Robert-Koch-Straße gestürzt: Polizei sucht Zeugen zum Unfallhergang",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6370915",
+   "datum": "2026-10-14",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Gesundheit",
+   "titel": "Vermehrt Windpocken im Kreis Düren: Gesundheitsamt rät, den Impfschutz zu überprüfen",
+   "url": "https://www.kreis-dueren.de/presse/windpocken_2026-10-14.php",
+   "datum": "2026-10-14",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Klima",
+   "titel": "Düren rüstet 6.243 Straßenleuchten auf sparsamere LED-Technik um",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/neue-straenbeleuchtung-fuer-dueren-mehr-licht-bei-deutlich-weniger-verbrauch",
+   "datum": "2026-10-13",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Lendersdorfer Straße in Düren wird ab 19. Oktober in zwei Abschnitten saniert und voll gesperrt",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/lendersdorfer-strae-wird-ab-dem-19-oktober-in-zwei-bauabschnitten-saniert",
+   "datum": "2026-10-13",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Wirtschaft",
+   "titel": "Neuland Hambach GmbH sucht Projektleitungen, Bewerbungsschluss ist der 19. Oktober",
+   "url": "https://www.juelich.de/aktuelles?news=Neuland_Hambach_schreibt_mehrere_Stellen_aus",
+   "datum": "2026-10-13",
+   "quelle": "Stadt Jülich"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Raub an der Viktoriastraße: Unbekannte schlagen Mann nieder und nehmen sein Handy mit",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6370012",
+   "datum": "2026-10-13",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Einbrüche in Huchem-Stammeln und Lucherberg: Bewohnerin überrascht Täter, Polizei bittet um Hinweise",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6369242",
+   "datum": "2026-10-12",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Glasflasche in der Tivolistraße auf fahrendes Auto geworfen: Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6369241",
+   "datum": "2026-10-12",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Verkehr",
+   "titel": "Kreisstraße 6 in Jülich zwischen Koslar und Barmen ab 19. Oktober für rund zwei Wochen gesperrt",
+   "url": "https://www.kreis-dueren.de/presse/sanierung-k6_2026-10-12.php",
+   "datum": "2026-10-12",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Nörvenich",
+   "rubrik": "Verkehr",
+   "titel": "Nörvenich: 16-Jähriger flüchtet mit unversichertem Kleinkraftrad vor der Polizei, Kennzeichen manipuliert",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6369244",
+   "datum": "2026-10-12",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "„Team Bahnhof“: Polizei und Stadt kontrollieren 94 Personen rund um den Dürener Bahnhof",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6368031",
+   "datum": "2026-10-09",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Politik",
+   "titel": "Düren will Konzept für kinder-, jugend- und familienfreundliche Stadt aktualisieren",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/dueren-will-kinder-und-jugendfreundlichkeit-weiter-staerken",
+   "datum": "2026-10-08",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Elsdorf",
+   "rubrik": "Stadtleben",
+   "titel": "Spatenstich an der Gesamtschule Elsdorf: Außenbereiche werden im Rahmen des ISEK neu gestaltet",
+   "url": "https://www.elsdorf.de/rathaus-service/verwaltung/aktuell/2702/baubeginn-an-der-gesamtschule-aussenbereiche-werden-neugestaltet",
+   "datum": "2026-10-08",
+   "quelle": "Stadt Elsdorf"
+  },
+  {
+   "ort": "Nörvenich",
+   "rubrik": "Verkehr",
+   "titel": "Nörvenich: Zwei Leichtverletzte bei Zusammenstoß an der Einmündung L495/L263",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6366694",
+   "datum": "2026-10-07",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Verkehr",
+   "titel": "Radvorrangroute Düren–Jülich: Erster Bauabschnitt soll Mitte Oktober starten",
+   "url": "https://www.kreis-dueren.de/presse/radvorrangroute_2026-10-07.php",
+   "datum": "2026-10-07",
+   "quelle": "Kreis Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Klima",
+   "titel": "Entschlammung der Teiche an Gut Weyern in Düren liegt im Zeitplan",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/entschlammungsarbeiten-an-gut-weyern-kommen-gut-voran",
+   "datum": "2026-10-06",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Leben",
+   "titel": "Weiterführende Schulen in Düren laden zu Infoabenden und Tagen der offenen Tür ein",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/welche-schule-ist-die-richtige-weiterfuehrende-schulen-in-dueren-laden-zum-kennenlernen-ein",
+   "datum": "2026-10-06",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "E-Scooter-Kontrollen in der Innenstadt: 49 Fahrzeuge geprüft, zahlreiche Verstöße",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364808",
+   "datum": "2026-10-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Einbrüche am Feiertag in Gürzenich, Jüngersdorf und Titz: Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364805",
+   "datum": "2026-10-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Radfahrer schwer verletzt, E-Scooter-Fahrer flüchtet von der Unfallstelle",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364806",
+   "datum": "2026-10-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Verkehr",
+   "titel": "Jülich: Zwei Verletzte bei Zusammenstoß an der Einmündung B55/L241",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364807",
+   "datum": "2026-10-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Leben",
+   "titel": "LEADER-Projekt „Verbunden mit der Natur“ startet in den Bördedörfern an Inde und Rur",
+   "url": "https://www.juelich.de/aktuelles?news=Start_des_LEADER_Projektes_bdquo_Verbunden_mit_der_Natur_ldquo",
+   "datum": "2026-10-05",
+   "quelle": "Stadt Jülich"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Polizei berät an den Wochenmärkten in Düren und Jülich zum Schutz vor Taschendieben",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6365151",
+   "datum": "2026-10-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Leben",
+   "titel": "Stadtbücherei bietet Zeitschriften jetzt auch digital über sharemagazines an",
+   "url": "https://www.dueren.de/de/verwaltung-politik/stadtverwaltung/presse/pressemitteilung/sharemagazines-in-der-stadtbuecherei-dueren",
+   "datum": "2026-10-05",
+   "quelle": "Stadt Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Autofahrer mit mehr als zwei Promille nach Hinweis eines Zeugen gestoppt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364292",
+   "datum": "2026-10-04",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Verkehr",
+   "titel": "Derichsweiler: Alkoholisierte Fahrerin stößt gegen eigenes Auto, Wagen nicht versichert",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364268",
+   "datum": "2026-10-04",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Kultur",
+   "titel": "KG Frohsinn Oberzier eröffnet am 7. November die Session mit Dreigestirn-Proklamation",
+   "url": "https://www.heimat-info.de/veranstaltungen/940d1605-baa9-4150-a13f-c0f31c4e2ccd",
+   "datum": "2026-10-04",
+   "quelle": "KG Frohsinn 1971 Oberzier e.V."
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Radfahrer mit rund 1,8 Promille auf der Holzstraße kontrolliert",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6364075",
+   "datum": "2026-10-03",
+   "quelle": "Polizei Düren"
+  }
+ ]
+}

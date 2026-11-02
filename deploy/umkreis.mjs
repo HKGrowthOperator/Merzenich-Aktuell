@@ -59,12 +59,27 @@ const block = liste.length < MIN ? '' : '<section class="desk shell" data-sektio
   + liste.map((e, i) => `<article class="front-zeile" data-story="umkreis-${i + 1}"><div class="karte-text"><p class="marke"><span class="marke-ort">${esc(e.ort)}</span><span class="marke-rubrik">${esc(e.rubrik)}</span></p>`
     + `<h3><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.titel)}</a></h3>`
     + `<div class="meta"><time datetime="${esc(e.datum)}">${kurz(e.datum)}</time><span>${esc(e.quelle)} · externe Quelle</span></div></div></article>`).join('')
-  + '</div></section>';
+  // Alle Meldungen der letzten 30 Tage stehen auf /umgebung/ (WordPress-Seite, Plugin 1.42.0).
+  + '</div><p class="desk-mehr"><a href="/umgebung/">Alle Nachrichten aus der Umgebung</a></p></section>';
 
 const alt = readFileSync(pfad, 'utf8');
 const marke = /<!-- umkreis:start -->[\s\S]*?<!-- umkreis:end -->/;
 if (!marke.test(alt)) { console.error('Umkreis: Marker umkreis fehlt in index.html.'); process.exit(2); }
 const neu = alt.replace(marke, () => `<!-- umkreis:start -->${block}<!-- umkreis:end -->`);
 if (neu !== alt && !nurPruefen) writeFileSync(pfad, neu);
-console.log(`Umkreis: ${eintraege.length} Einträge, ${liste.length} gezeigt (seit ${grenze}); ${neu !== alt ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}.`);
-if (nurPruefen && neu !== alt) process.exit(2);
+
+// Seite /umgebung/ auf WordPress (Plugin, Shortcode [ma_umgebung], 02.11.2026): Einträge der letzten
+// ARCHIV_TAGE Tage als JSON, neueste zuerst. „stand“ ist das Datum des neuesten Eintrags, damit die
+// Datei nur bei neuen Einträgen wechselt.
+const ARCHIV_TAGE = 30, ARCHIV_MAX = 80;
+const api = join(wurzel, 'chatgpt-site', 'api', 'umkreis.json');
+const grenzeArchiv = new Date(Date.parse(heute + 'T00:00:00Z') - ARCHIV_TAGE * 864e5).toISOString().slice(0, 10);
+const archiv = eintraege.filter((e) => e.datum >= grenzeArchiv && e.datum <= heute)
+  .sort((a, b) => b.datum.localeCompare(a.datum) || a.titel.localeCompare(b.titel)).slice(0, ARCHIV_MAX)
+  .map(({ ort, rubrik, titel, url, datum, quelle }) => ({ ort, rubrik, titel, url, datum, quelle }));
+const jsonNeu = JSON.stringify({ hinweis: 'Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.', stand: archiv[0]?.datum || '', tage: ARCHIV_TAGE, orte: ORTE, eintraege: archiv }, null, 1) + '\n';
+const jsonAlt = existsSync(api) ? readFileSync(api, 'utf8') : '';
+if (jsonNeu !== jsonAlt && !nurPruefen) writeFileSync(api, jsonNeu);
+
+console.log(`Umkreis: ${eintraege.length} Einträge, ${liste.length} gezeigt (seit ${grenze}); ${neu !== alt ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}; api/umkreis.json ${archiv.length} Einträge, ${jsonNeu !== jsonAlt ? (nurPruefen ? 'nicht aktuell' : 'geschrieben') : 'aktuell'}.`);
+if (nurPruefen && (neu !== alt || jsonNeu !== jsonAlt)) process.exit(2);

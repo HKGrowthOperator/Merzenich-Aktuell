@@ -30,6 +30,18 @@ Vorgabe Betreiber 02.11.2026: Oben soll immer automatisch die stärkste aktuelle
 - **Neue Clips für alle sechs Firmen** (`docs/anzeigen/bauen.mjs`, `motive.json`, Material in `docs/anzeigen/material/`): sechs Stile (Sequenz aus drei Fotos, Bahnen, Detail, Licht, Film, Gerät), 30 fps, nahtlose Schleife, je 16:9 und breit, alle unter 700 KB. KBS-Intro ohne Schwarzblende, Videowall ohne Farbkreisel. Neue Dateinamen `<motiv>-v2.*` und `-breit.*`, feste `id` je Anzeige: „Fehlende Entwürfe anlegen“ zieht die 13 laufenden Anzeigen nach, statt neue anzulegen (lokal geprüft: 13 × „aktualisiert“).
 - **Tests:** `qa/werbung-rotation-test.mjs` (neu, in qa.yml), `werbung-business-test.php` (Mischen), `werbung-ohne-muster-test.php` (Karte, breite Fassung, Bühne), `firmen-entwuerfe-test.php` (breite Fassung).
 
+## Neu am 02.11.2026 (abends): Plugin 1.42.0 und Theme 21.25.1, Schlüsselwörter und „Nachrichten aus der Umgebung“
+
+**Stand live:** kommt per Selbst-Update nach dem Build. Rückweg: Plugin 1.41.0, Theme 21.25.0.
+
+**Anlass:** Vorgabe Betreiber 02.11.2026: SEO und GEO besser ausrichten, Schlüsselwörter definieren und besetzen, „Merzenich dominieren“, „aktuell in der Umgebung“, Nachrichten ganz oben. Grundlage und Zielseiten: [SEO-KEYWORDS.md](SEO-KEYWORDS.md) (Search Console, Google-Vorschläge, Bing Keyword Research).
+
+- **Titel und Beschreibungen** (`includes/seo.php`): Startseite „Merzenich Aktuell: Nachrichten aus Merzenich, Polizei, Termine“, Beschreibung mit „Kreis Düren“ (grenzt gegen den Hirnforscher Michael Merzenich und die Bäckerei Merzenich ab). Blaulicht „Polizei, Feuerwehr, Unfall: Blaulicht Merzenich aktuell“, Rathaus „Gemeinde Merzenich: Rathaus, Gemeinderat und Amtsblatt“, Termine „Veranstaltungen Merzenich: Termine heute und am Wochenende“, Nachrichten, Sport. Ortsseiten „<Ort> aktuell: Nachrichten, Blaulicht und Termine“ mit eigener Beschreibung (`ma_seo_orte`: `titel`, `seo`; vorher 81 bis 84 Zeichen und ein Lexikontext).
+- **Neue Seite `/umgebung/`** (`includes/seiten.php`, Shortcode `[ma_umgebung]`): Meldungen der letzten 30 Tage aus Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren, je Ort „<Ort> aktuell“, aus `chatgpt-site/api/umkreis.json` (neu, `deploy/umkreis.mjs`), eine Stunde zwischengespeichert. Google-Titel „Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung“. Die Seite entsteht beim nächsten Backend-Aufruf oder mit dem stündlichen Selbst-Update-Lauf. Der Umkreis-Block der Startseite verlinkt sie; die statische Kopie leitet `/umgebung/` dorthin weiter (`_redirects`, `nginx.conf`). In `llms.txt` unter „Aktuell“.
+- **Theme 21.25.1:** H1 der Startseite (Logo-Alt) „… Nachrichten aus der Gemeinde Merzenich im Kreis Düren“.
+- **Redaktion:** Titelregeln in `docs/redaktion/SCHREIBREGELN.md` Abschnitt 2 und `docs/SEO-KEYWORDS.md`.
+- **Tests:** `seo-test.php` (Orts-, Ressort- und Startseitentitel, Umgebung), `seiten-test.php` (19 Seiten, Umgebungsliste: Reihenfolge, Maskierung, nur https, fremde Orte raus), `heute-test.php` (Logo-Alt).
+
 ## Neu am 02.11.2026 (vierte Runde): Plugin 1.39.0, Selbst-Update, jeder Push geht automatisch live
 
 **Stand live:** noch nicht eingespielt. **1.39.0 muss einmal von Hand hochgeladen werden**; danach installiert WordPress jede neue Plugin- und Theme-Version selbst. Enthält 1.38.0 (unten). Rückweg: Plugin 1.37.2 (dann ohne Selbst-Update); Selbst-Update abschalten mit Option `ma_selbst_update_aus = '1'` oder `define('MA_SELBST_UPDATE_AUS', true);` in `wp-config.php`.

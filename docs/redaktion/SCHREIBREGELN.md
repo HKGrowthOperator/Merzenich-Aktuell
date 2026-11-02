@@ -54,7 +54,7 @@ Länge entsteht nur aus zusätzlichen belegten Fakten. Verboten sind Füllsätze
 
 | Feld | Regel |
 |---|---|
-| `titel` | Nachricht in einem Satz, 50 bis 110 Zeichen, konkret (Ort, Zahl, Datum); kein Fragezeichen-Köder, keine Doppelpunkt-Ketten |
+| `titel` | Nachricht in einem Satz, 50 bis 110 Zeichen, konkret (Ort, Zahl, Datum); kein Fragezeichen-Köder, keine Doppelpunkt-Ketten. **Ort und Ereignis in den ersten 60 Zeichen, mit den Wörtern der Suchenden** (Unfall, Polizeieinsatz, Brand, Sperrung, Veranstaltung), Ortsteil bei Mehrdeutigkeit mit „(Merzenich)“, kein „heute“ im Titel. Titelregeln und Suchbegriffe: [docs/SEO-KEYWORDS.md](../SEO-KEYWORDS.md) |
 | `kicker` | `Ressort · Unterthema`, z. B. „Rathaus · Feuerwehr“ |
 | `dek` | ein bis drei Sätze mit dem Neuen; keine Behauptung, die im Text nicht belegt ist |
 | `absaetze` | 1 Nachricht und Beleg (wer sagt was, laut welcher Quelle), 2 Zahlen und Einzelheiten, 3 Vorgeschichte (frühere Beschlüsse, Vorjahr, ähnliche Fälle im Ort), 4 Einordnung und Bedeutung für Merzenich oder den Ortsteil (wen betrifft es, was ändert sich konkret), 5 was offen ist (ausdrücklich: „geht aus den Unterlagen nicht hervor“), letzter Absatz „Wie geht es weiter?“ oder Service (Anmeldung, Kontakt, Fristen) |

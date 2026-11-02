@@ -41,6 +41,7 @@ function ma_seiten(): array {
         'diskussion' => ['titel' => 'Diskussion', 'eyebrow' => 'Mitreden', 'anriss' => 'Die jüngsten Kommentare aus allen Meldungen von Merzenich Aktuell.', 'html' => 'ma_seite_diskussion'],
         'thema' => ['titel' => 'Themen', 'eyebrow' => 'Themen', 'anriss' => 'Alle Themen und Schlagworte auf Merzenich Aktuell, nach Zahl der Meldungen.', 'html' => 'ma_seite_themen'],
         'heute' => ['titel' => 'Heute in Merzenich', 'eyebrow' => 'Heute', 'anriss' => 'Was ist heute in Merzenich los? Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.', 'html' => 'ma_seite_heute'],
+        'umgebung' => ['titel' => 'Nachrichten aus der Umgebung', 'eyebrow' => 'Rund um Merzenich', 'anriss' => 'Was in Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und im Kreis Düren passiert: Polizei, Verkehr, Rathaus und Termine der letzten 30 Tage, jeweils mit Link zur Originalquelle.', 'html' => 'ma_seite_umgebung'],
         'whatsapp' => ['titel' => 'WhatsApp-Kanal', 'eyebrow' => 'Immer informiert', 'anriss' => 'Eilmeldungen, Blaulicht und die wichtigsten Termine aus der Gemeinde Merzenich als Broadcast direkt aufs Handy. Kein Gruppenchat, keine sichtbare Nummer.', 'html' => 'ma_seite_whatsapp'],
     ];
 }
@@ -208,6 +209,60 @@ function ma_seite_heute(): string {
     return '<p>Was heute in der Gemeinde Merzenich los ist: Die Termine von heute und den nächsten Tagen stehen unter <a href="/termine/">Termine</a>, die neuesten Meldungen unter <a href="/nachrichten/">Nachrichten</a> und <a href="/blaulicht/">Blaulicht</a>. Notdienste und Öffnungszeiten des Rathauses finden Sie unter <a href="/service/">Notdienste &amp; Rathaus</a>.</p>';
 }
 
+/**
+ * Nachrichten aus der Umgebung (1.42.0, Vorgabe Betreiber 02.11.2026: „aktuell in der Umgebung“).
+ * Die Liste kommt per Shortcode aus chatgpt-site/api/umkreis.json (deploy/umkreis.mjs); der Text der
+ * Seite ändert sich deshalb nicht täglich und bleibt eine normale, von Hand pflegbare Seite.
+ */
+function ma_seite_umgebung(): string {
+    return '<p>Merzenich liegt zwischen Düren, Niederzier, Nörvenich, Elsdorf und Kerpen. Was dort passiert, betrifft oft auch Merzenich: Sperrungen auf der A4 und der L 264, Polizeieinsätze, Entscheidungen des Kreises. Hier stehen die Meldungen der letzten 30 Tage, nach Ort sortiert. Jeder Eintrag führt zur Originalquelle.</p>'
+        . '<p>Nachrichten aus der Gemeinde selbst: <a href="/nachrichten/">alle Meldungen</a>, <a href="/blaulicht/">Blaulicht</a>, <a href="/termine/">Termine</a>.</p>'
+        . '[ma_umgebung]';
+}
+
+/** Orte der Umgebung in fester Reihenfolge (wie deploy/umkreis.mjs). */
+const MA_UMGEBUNG_ORTE = ['Düren', 'Niederzier', 'Nörvenich', 'Elsdorf', 'Kerpen', 'Kreis Düren'];
+
+/** Liste aus den Einträgen (reine Funktion): je Ort eine Überschrift „<Ort> aktuell“, neueste zuerst. */
+function ma_umgebung_html(array $eintraege): string {
+    $je = [];
+    foreach ($eintraege as $e) {
+        if (!is_array($e) || !in_array($e['ort'] ?? '', MA_UMGEBUNG_ORTE, true) || !preg_match('~^https://~', (string) ($e['url'] ?? '')) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) ($e['datum'] ?? ''))) continue;
+        $je[$e['ort']][] = $e;
+    }
+    if (!$je) return '<p>Gerade liegen keine Meldungen aus der Umgebung vor. Die Liste füllt sich mit den nächsten Meldungen von Polizei, Kreis und Nachbargemeinden.</p>';
+    $h = '';
+    foreach (MA_UMGEBUNG_ORTE as $ort) {
+        if (empty($je[$ort])) continue;
+        usort($je[$ort], fn($a, $b) => strcmp((string) $b['datum'], (string) $a['datum']));
+        $id = sanitize_title($ort);
+        $h .= '<h2 id="' . esc_attr($id) . '">' . esc_html($ort) . ' aktuell</h2><ul class="archive-list umgebung-liste">';
+        foreach ($je[$ort] as $e) {
+            $d = (string) $e['datum'];
+            $h .= '<li><time datetime="' . esc_attr($d) . '">' . esc_html(substr($d, 8, 2) . '.' . substr($d, 5, 2) . '.') . '</time> '
+                . '<a href="' . esc_url((string) $e['url']) . '" target="_blank" rel="noopener noreferrer">' . esc_html((string) ($e['titel'] ?? '')) . '</a>'
+                . ' <span class="rs">' . esc_html(trim((string) ($e['rubrik'] ?? '') . ' · ' . (string) ($e['quelle'] ?? ''), ' ·')) . '</span></li>';
+        }
+        $h .= '</ul>';
+    }
+    return $h;
+}
+
+/** Shortcode [ma_umgebung]: liest api/umkreis.json aus dem Repository (eine Stunde zwischengespeichert, sonst letzte gute Kopie). */
+add_action('init', function (): void {
+    add_shortcode('ma_umgebung', function (): string {
+        $daten = get_transient('ma_umgebung_daten');
+        if (!is_array($daten)) {
+            $antwort = wp_remote_get('https://raw.githubusercontent.com/HKGrowthOperator/merzenich-aktuell/main/chatgpt-site/api/umkreis.json', ['timeout' => 10]);
+            $neu = is_wp_error($antwort) ? null : json_decode((string) wp_remote_retrieve_body($antwort), true);
+            if (is_array($neu) && isset($neu['eintraege'])) { $daten = $neu; update_option('ma_umgebung_letzte', $neu, false); }
+            else $daten = get_option('ma_umgebung_letzte') ?: ['eintraege' => []];
+            set_transient('ma_umgebung_daten', $daten, HOUR_IN_SECONDS);
+        }
+        return ma_umgebung_html((array) ($daten['eintraege'] ?? []));
+    });
+});
+
 function ma_seite_whatsapp(): string {
     return '<h2 id="was-im-kanal-geplant-ist">Was der Kanal bringt</h2>'
         . '<p>Der WhatsApp-Kanal wird gerade eingerichtet. Sobald er bereitsteht, finden Sie hier den Link zum Abonnieren. Er bringt:</p><ul>'
@@ -360,6 +415,8 @@ function ma_seiten_abgleichen(): void {
     update_option('ma_seiten_anzahl', count(ma_seiten()), false);
 }
 add_action('admin_init', 'ma_seiten_abgleichen');
+// Auch ohne Besuch im Backend (Selbst-Update, 1.42.0): neue Seiten wie /umgebung/ entstehen mit dem stündlichen Lauf.
+add_action('ma_selbst_update_stuendlich', 'ma_seiten_abgleichen', 5);
 
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'Redaktionsseiten', 'Redaktionsseiten', 'manage_options', 'ma-seiten', 'ma_seiten_seite_admin');

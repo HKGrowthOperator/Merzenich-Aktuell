@@ -120,6 +120,9 @@
 /sc-merzenich.html /sc-1919-merzenich/ 301
 /sc-merzenich /sc-1919-merzenich/ 301
 /api/* /api/:splat 200
+# 02.11.2026: /umgebung/ gibt es nur auf WordPress (Plugin 1.42.0, Nachrichten aus der Umgebung)
+/umgebung/ https://merzenich-aktuell.de/umgebung/ 302
+/umgebung https://merzenich-aktuell.de/umgebung/ 302
 /* /404.html 404
 /politik/ /rathaus/ 301
 /politik /rathaus/ 301
