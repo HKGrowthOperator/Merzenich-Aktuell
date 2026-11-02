@@ -337,6 +337,11 @@ if (DATUM || LAUF) {
       if (!existsSync(paket) && !ohnePaketBegruendet) F('lauf', `kein Meldungspaket ${DATUM}-recherche-claude-${LAUF}.json und kein Nullfund im Dossier`);
       // Kalenderpflege (Luis Kummer 30.10.2026): jeder Lauf haelt Kalender und Veranstaltungen aktuell.
       if (!/^## [0-9. ]*Kalenderpflege/m.test(text)) F('lauf', 'Dossier ohne Abschnitt „Kalenderpflege“ (neu, geändert, abgesagt, nachgeprüft; Liste: node qa/redaktion-lauf.mjs --kalender)');
+      // Heimat-Info-Veranstaltungskalender der Gemeinde (Luis Kummer 02.11.2026): in jedem Lauf vollstaendig geprueft.
+      else {
+        const kalender = text.split(/^## /m).find((t) => /^[0-9. ]*Kalenderpflege/.test(t)) || '';
+        if (!/Heimat-?Info/i.test(kalender)) F('lauf', 'Kalenderpflege ohne Heimat-Info-Veranstaltungskalender (https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen, CLAUDE-LAUF.md Phase 1a, Schritt 2a)');
+      }
       // Bildpruefung je Artikel (Luis Kummer 28.10.2026): jede neue Meldung steht mit Bild im Dossier.
       if (existsSync(paket)) {
         const abschnitt = (text.split(/^## /m).find((t) => /^[0-9. ]*Bildpr(ü|ue)fung/i.test(t)) || '');

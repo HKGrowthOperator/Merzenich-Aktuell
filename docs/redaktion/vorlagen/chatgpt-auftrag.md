@@ -49,7 +49,7 @@ AUFBAU JEDES DOSSIERS (genau diese Reihenfolge)
      - keine erkennbaren Personen im Mittelpunkt, keine lesbaren Kennzeichen, keine fremden Ortsnamen als Hauptmotiv, keine KI-Bilder
 
 4. ## TERMINE (60 Tage)
-   Der Kalender auf https://merzenich-aktuell.de/termine/ muss immer stimmen. Die KI-Redaktion gleicht ihn in jedem Lauf mit deiner Liste ab. Prüfe deshalb alle Termine von heute bis 60 Tage, nicht nur neue: Rat und Ausschüsse (Ratsinformationssystem), Heimat-Info, Amtsblatt, Pfarrbrief/GdG, Vereinsseiten (Karneval, Schützen, Sport, Feuerwehr, Senioren, Jugend), Kreis Düren und Nachbarorte mit Bezug zu Merzenich.
+   Der Kalender auf https://merzenich-aktuell.de/termine/ muss immer stimmen. Die KI-Redaktion gleicht ihn in jedem Lauf mit deiner Liste ab. Prüfe deshalb alle Termine von heute bis 60 Tage, nicht nur neue. Pflicht in jedem Auftrag: der Veranstaltungskalender der Gemeinde in Heimat-Info, https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen (die Gemeinde pflegt ihre Termine derzeit dort; alle kommenden Einträge vollständig durchsehen, auch über 60 Tage hinaus). Daneben, nicht stattdessen: Rat und Ausschüsse (Ratsinformationssystem), Heimat-Info-Beiträge, Amtsblatt, Pfarrbrief/GdG, Vereinsseiten (Karneval, Schützen, Sport, Feuerwehr, Senioren, Jugend), Kreis Düren und Nachbarorte mit Bezug zu Merzenich.
    Je Termin ein Block:
    - Status: neu | geändert | abgesagt | bestätigt
    - Slug: der vorhandene Slug, wenn der Termin auf merzenich-aktuell.de/termine/ schon steht (sonst "neu")
