@@ -26,5 +26,17 @@
       "datei": "inhalte/meldungen/2026-10-21-feuerwehr-automatik.json",
       "am": "2026-10-21"
     }
+  },
+  "termine": {
+    "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717": {
+      "slug": "gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22",
+      "datei": "inhalte/termine/2026-11-02-heimatinfo-automatik.json",
+      "am": "2026-11-02"
+    },
+    "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2": {
+      "slug": "weihnachtsfeier-morschenich-2026-12-06",
+      "datei": "inhalte/termine/2026-11-02-heimatinfo-automatik.json",
+      "am": "2026-11-02"
+    }
   }
 }

@@ -12,6 +12,10 @@ name: Meldungen-Automatik (Feuerwehr)
 # Seit 26.10.2026 legt derselbe Lauf auch die Umkreis-Eintraege der Polizei Dueren an
 # (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum, Link; Meldungen aus
 # Merzenich und den Ortsteilen bleiben der Redaktion vorbehalten (Job-Zusammenfassung).
+#
+# Seit 02.11.2026 legt er auch Termine aus dem Veranstaltungskalender der Gemeinde
+# (Heimat-Info) als Entwurf an (deploy/automatik-termine.mjs, "entwurf": true); sie
+# erscheinen erst nach Freigabe der Redaktion in WordPress.
 
 on:
   workflow_run:
@@ -59,6 +63,7 @@ jobs:
         run: |
           node qa/automatik-feuerwehr-test.mjs
           node qa/automatik-umkreis-test.mjs
+          node qa/automatik-termine-test.mjs
 
       - name: Neue Einsaetze anlegen, Kette bauen, committen, pushen
         env:
@@ -66,7 +71,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if [ "$TROCKEN" = "ja" ]; then node deploy/automatik-feuerwehr.mjs --trocken; node deploy/automatik-umkreis.mjs --trocken; exit 0; fi
+          if [ "$TROCKEN" = "ja" ]; then node deploy/automatik-feuerwehr.mjs --trocken; node deploy/automatik-umkreis.mjs --trocken; node deploy/automatik-termine.mjs --trocken; exit 0; fi
           # In einer Schleife auf frischem main: QA, Paketbau und Quellenabruf schreiben
           # parallel. Bei abgelehntem Push wird neu aufgesetzt statt rebased, damit Import-
           # Datei und Pruefsummen zum Stand passen.
@@ -76,9 +81,10 @@ jobs:
             : > /tmp/zusammenfassung.md
             GITHUB_STEP_SUMMARY=/tmp/zusammenfassung.md node deploy/automatik-feuerwehr.mjs
             GITHUB_STEP_SUMMARY=/tmp/zusammenfassung.md node deploy/automatik-umkreis.mjs
-            if [ -z "$(git status --porcelain -- inhalte/meldungen inhalte/umkreis deploy/automatik-stand.json)" ]; then
+            GITHUB_STEP_SUMMARY=/tmp/zusammenfassung.md node deploy/automatik-termine.mjs
+            if [ -z "$(git status --porcelain -- inhalte/meldungen inhalte/umkreis inhalte/termine deploy/automatik-stand.json)" ]; then
               cat /tmp/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
-              echo 'Keine neuen Einsaetze und keine neuen Umkreis-Meldungen.'
+              echo 'Keine neuen Einsaetze, Umkreis-Meldungen oder Termine.'
               exit 0
             fi
             node deploy/kette.mjs
@@ -86,8 +92,8 @@ jobs:
             node deploy/kette.mjs --check
             node deploy/symbolbilder.mjs --check
             php qa/wordpress/import-test.php
-            git add -A inhalte/meldungen inhalte/umkreis deploy/automatik-stand.json chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
-            git commit -q -m 'automatik: Feuerwehr-Einsaetze als Entwurf, Umkreis der Polizei [skip ci]'
+            git add -A inhalte/meldungen inhalte/umkreis inhalte/termine deploy/automatik-stand.json chatgpt-site deploy/sitemap-stand.json wordpress-delivery/merzenich-aktuell-import.xml docs/SHA256SUMS.txt wordpress/plugin/merzenich-aktuell-core/data wordpress/theme/merzenich-aktuell/vorlagen
+            git commit -q -m 'automatik: Feuerwehr-Einsaetze und Termine als Entwurf, Umkreis der Polizei [skip ci]'
             if git push origin HEAD:main; then
               cat /tmp/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
               exit 0
