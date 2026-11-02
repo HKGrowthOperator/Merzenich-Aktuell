@@ -113,5 +113,5 @@ Anlass: Auf der Live-Startseite stand um 18:35 Uhr weiter „Martinszüge 2026�
 | CLAUDE-LAUF 3.5, SCHREIBREGELN 0a: Feld `relevanz`, Kriterien für Stufe 1, Folgemeldung | `b381cb7` | gilt ab sofort in jedem Lauf |
 | Folgemeldung Verkehrstod L 264 mit `relevanz` 1 | `001aa8a` | soll nach Installation von 1.41.0 den festen Aufmacher ablösen |
 
-Live-Nachweis (Plugin-Version, Aufmacher) folgt in einem eigenen Commit.
+Live-Nachweis: Plugin 1.41.0 per Selbst-Update um 18:58 Uhr installiert (`/?ma_api=update-status`: `"plugin":"1.41.0"`). Folgemeldung um 19:18 Uhr live (HTTP 200) auf Platz 2 der Startseite; der feste Aufmacher „Martinszüge 2026“ stand noch oben, weil der Abgleich die Folgemeldung kurz vor der Plugin-Installation eingespielt hatte (Prüfung nach dem Abgleich lief noch mit 1.40.1). Die stündliche Prüfung löst ihn ab; Nachweis folgt.
 
