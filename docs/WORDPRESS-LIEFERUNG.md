@@ -1,10 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.24.2 · Core-Plugin 1.37.2 · live: 21.24.1 / 1.37.1 (Historie unten)
+2. November 2026 · Theme 21.24.2 · Core-Plugin 1.37.2 · live: 21.24.2 / 1.37.2 (Historie unten)
 
 ## Neu am 02.11.2026 (zweite Runde): Plugin 1.37.2 und Theme 21.24.2, HK-Growth-Anzeigen zu Website, Anfragen und Automation
 
-**Stand live:** noch nicht eingespielt. Rückweg: Plugin 1.37.1, Theme 21.24.1.
+**Stand live:** eingespielt am 02.11.2026 nachmittags (Plugin 1.37.2, dann Theme 21.24.2, Permalinks gespeichert, danach „Fehlende Entwürfe anlegen“: alle drei HK-Anzeigen „aktualisiert“). Nachweis: `?ver=1.37.2` und `?ver=21.24.2` im Quelltext; in Band 1 (1440 px) und unter einer Meldung (390 px) laufen die drei Überschriften mit den Zielen `/`, `#leistungen` und `#automatisierung`, 0 Konsolenfehler. Rückweg: Plugin 1.37.1, Theme 21.24.1.
 
 - **Drei Themen statt dreimal „Website“** (Vorgabe Betreiber 02.11.2026): „Zeit für eine neue Website?“ (Ziel `website.hk-growthoperator.de/`), „Mehr Anfragen, die wirklich passen.“ (`#leistungen`), „Jede Anfrage sofort bei Ihnen.“ (`#automatisierung`). Google und KI-Suchen stehen im Satz der Website-Anzeige; die eigene SEO-Anzeige entfällt. Alle Aussagen stehen so auf der Webstudio-Seite.
 - **Zwei neue Videos** (HyperFrames): Zoom auf die Leistung „Terminbuchung & qualifizierte Anfragen“ mit Handy; Ablauf nach der Anfrage mit Protokoll, eine Markierung läuft über die Zeilen. Eigene Dateinamen (`hk-growth-webstudio-anfragen.*`, `-automation.*`), weil WordPress Kopien aus GitHub einen Tag zwischenspeichert; die alten Dateien `-2.*` und `-3.*` sind entfernt.
