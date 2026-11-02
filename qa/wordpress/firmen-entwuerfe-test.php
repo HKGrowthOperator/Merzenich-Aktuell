@@ -104,6 +104,8 @@ pruefe('ASS Elektrotechnik: Sitz Düren, Meisterbetrieb, Logo und Beitrag', [$fi
 pruefe('HK Growth Webstudio: Sitz Marienheide, Website als Ziel, Logo, Zeile ohne „in eigener Sache“', [$firmen[5]['profil']['ort'], $firmen[5]['profil']['website'], $firmen[5]['profil']['logo']['datei'], count(array_filter($firmen[5]['anzeigen'], fn($a) => stripos($a['zeile'], 'eigener Sache') !== false || isset($a['knopf'])))], ['Marienheide', 'https://website.hk-growthoperator.de/', 'hk-growth.png', 0]);
 // Vorgabe Betreiber 02.11.2026: einfach Werbung für eine neue Website, kein Hinweis, dass das Webstudio Merzenich Aktuell gebaut hat.
 pruefe('HK Growth Webstudio: Profil, Beitrag und Anzeigen ohne Merzenich Aktuell als Referenz', preg_match('/Merzenich Aktuell|Projekt des Webstudios|haben wir gebaut/u', json_encode($firmen[5], JSON_UNESCAPED_UNICODE)), 0);
+// Vorgabe Betreiber 02.11.2026 (zweite Runde): drei verschiedene Themen statt dreimal „Website“; feste Schlüssel, damit die laufenden Anzeigen nachgezogen statt neu angelegt werden.
+pruefe('HK Growth Webstudio: Themen Websites, Anfragen, Automation; Ziele auf der Webstudio-Seite; Schlüssel 1 bis 3', [array_map(fn($a) => explode(' · ', $a['zeile'])[1] ?? '', $firmen[5]['anzeigen']), count(array_filter($firmen[5]['anzeigen'], fn($a) => !isset($a['ziel']) || str_starts_with($a['ziel'], 'https://website.hk-growthoperator.de/'))), array_map(fn($a) => ma_firmen_anzeige_schluessel($a, 0), $firmen[5]['anzeigen'])], [['Websites', 'Anfragen', 'Automation'], 3, ['hk-growth-webstudio-1', 'hk-growth-webstudio-2', 'hk-growth-webstudio-3']]);
 
 echo "Menü\n";
 pruefe('Untermenü nach dem Hauptmenü angemeldet (sonst 403)', ($GLOBALS['aktionen']['admin_menu'] ?? 0) > 10, true);

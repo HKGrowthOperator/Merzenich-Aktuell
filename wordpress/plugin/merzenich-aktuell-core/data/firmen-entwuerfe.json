@@ -422,35 +422,39 @@
         {
           "zeile": "HK Growth Webstudio · Websites",
           "titel": "Zeit für eine neue Website?",
-          "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, mit Terminbuchung und Anfrage-Automation.",
+          "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, sichtbar bei Google und in KI-Suchen.",
           "bild": "hk-growth-webstudio-1.jpg",
           "video": "hk-growth-webstudio-1.mp4",
           "alt": "Website des HK Growth Webstudio auf Laptop und Handy",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
-          "stand": "2026-11-02"
+          "stand": "2026-11-02b"
         },
         {
-          "zeile": "HK Growth Webstudio · Marienheide",
-          "titel": "Websites, die Anfragen bringen.",
-          "text": "Festpreis nach dem Erstgespräch, sichtbar bei Google und in KI-Suchen.",
-          "bild": "hk-growth-webstudio-2.jpg",
-          "video": "hk-growth-webstudio-2.mp4",
-          "alt": "Website des HK Growth Webstudio im Browserfenster",
+          "id": "hk-growth-webstudio-2",
+          "zeile": "HK Growth Webstudio · Anfragen",
+          "titel": "Mehr Anfragen, die wirklich passen.",
+          "text": "Terminbuchung und Anfragen mit Anliegen, Budget und Zeitraum direkt auf Ihrer Website.",
+          "bild": "hk-growth-webstudio-anfragen.jpg",
+          "video": "hk-growth-webstudio-anfragen.mp4",
+          "alt": "Leistung „Terminbuchung und qualifizierte Anfragen“ auf der Website des HK Growth Webstudio",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
-          "stand": "2026-11-02"
+          "ziel": "https://website.hk-growthoperator.de/#leistungen",
+          "stand": "2026-11-02b"
         },
         {
-          "zeile": "HK Growth Webstudio · SEO und KI-Suchen",
-          "titel": "Gefunden bei Google und ChatGPT.",
-          "text": "Suchmaschinenoptimierung und Sichtbarkeit in KI-Suchen sind bei Ihrer neuen Website inklusive.",
-          "bild": "hk-growth-webstudio-3.jpg",
-          "video": "hk-growth-webstudio-3.mp4",
-          "alt": "Leistungen des HK Growth Webstudio im Browserfenster und auf dem Handy",
+          "id": "hk-growth-webstudio-3",
+          "zeile": "HK Growth Webstudio · Automation",
+          "titel": "Jede Anfrage sofort bei Ihnen.",
+          "text": "Einordnen, weiterleiten, bestätigen, nachfassen: Die Automation nach der Anfrage läuft von selbst.",
+          "bild": "hk-growth-webstudio-automation.jpg",
+          "video": "hk-growth-webstudio-automation.mp4",
+          "alt": "Ablauf nach der Anfrage mit Protokoll auf der Website des HK Growth Webstudio",
           "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
           "quelle": "https://website.hk-growthoperator.de/",
-          "stand": "2026-11-02"
+          "ziel": "https://website.hk-growthoperator.de/#automatisierung",
+          "stand": "2026-11-02b"
         }
       ]
     }
