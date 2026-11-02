@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.2, Stand 30.10.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.3, Stand 02.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -45,7 +45,7 @@ Geprüft in `deploy/wordpress-import.mjs`, im Plugin (`wordpress/plugin/merzenic
 
 Daraus folgt verbindlich:
 
-- **Zur Freigabe statt live:** `"zurFreigabe": true` an der Meldung (bzw. `"entwurf": true` am Termin), wenn eine tragende Angabe nur aus einer Quelle stammt, Quellen sich widersprechen, Personen oder Vorwürfe betroffen sind (Blaulicht mit Verdacht, Gericht, Kündigungen), oder ein Thema auf T2 steht. Begründung im Dossier.
+- **Zur Freigabe statt live:** `"zurFreigabe": true` an der Meldung (bzw. `"entwurf": true` am Termin), wenn eine tragende Angabe nur aus einer **nicht offiziellen** Quelle stammt (eine offizielle Quelle nach SCHREIBREGELN.md Abschnitt 3a genügt für die Direktveröffentlichung), Quellen sich widersprechen, Personen oder Vorwürfe betroffen sind (Blaulicht mit Verdacht, Gericht, Kündigungen), oder ein Thema auf T2 steht. Begründung im Dossier.
 - Spielstand und Umkreis nur mit Klartext-Belegen ändern und im Dossier mit Quelle und Zeitpunkt ausweisen.
 - Korrekturen an veröffentlichten Beiträgen sind sofort öffentlich: im Dossier und im Bericht ausdrücklich nennen, Hinweis „Korrigiert am …“ im Text, Protokoll „von Hand geändert“ beachten.
 - `editorial-current.json` und Marktdaten ändert die KI-Redaktion nicht.
@@ -70,7 +70,8 @@ Abnahme: main aktuell, Vergleichsbasis notiert, Korrekturaufträge bekannt. Reak
 3. **Neues seit dem letzten Lauf:** Rohdaten mit dem Stand des letzten Laufs vergleichen (`git show <commit>:imports/quellen/<quelle>.json`), dann live die **Pflichtquellen jedes Laufs**: Polizei-RSS Dienststelle 8, Kreis-Presse (Index), Heimat-Info Merzenich, Ratsinformationssystem (`termine.ics`, Vorlagenliste), Feuerwehr-Einsatzliste, Amtsblatt-Index; dienstags und freitags zusätzlich FUSSBALL.DE/fupa für die vier Herrenteams, bei laufenden Bahn- oder Straßensperrungen VRS/zuginfo.NRW und Autobahn-API. Danach die zwölf Recherche-Ressorts (QUELLEN.md Abschnitte 1.3 und 3). Kernorte vor Nachbarorten.
 4. Zeitfenster: 24 Stunden zuerst, dann laufende Vorgänge der letzten 14 Tage, Termine bis 60 Tage.
 5. Polizeimeldungen aus Nachbarorten legt `deploy/automatik-umkreis.mjs` an; im Lauf nur Meldungen mit Merzenich oder Ortsteil als eigene Meldung prüfen.
-6. Für jedes Thema **mindestens drei Quellen** suchen (Primärquelle, unabhängige Zweitquelle, Hintergrund wie frühere Beschlüsse, Vorlagen, Statistiken).
+6. Für jedes Thema **mindestens drei Quellen** suchen (Primärquelle, unabhängige Zweitquelle, Hintergrund wie frühere Beschlüsse, Vorlagen, Statistiken). Findet sich keine Zweitquelle, trägt eine offizielle Quelle eine Kurzmeldung (SCHREIBREGELN.md Abschnitt 0); ein Thema wird deshalb nicht gesperrt.
+7. **Mindesttakt prüfen:** Live-Archiv (`https://merzenich-aktuell.de/archiv/`) und `node qa/redaktion-lauf.mjs` zeigen, wie viele Meldungen heute schon erschienen sind, auch von Hand in WordPress angelegte. Ziel: jeden Tag mindestens zwei, davon eine aus Blaulicht, Rathaus oder Termine-Vorschau.
 
 Abnahme: Für jede Pflichtquelle steht im Dossier Weg und Ergebnis, auch „nichts Neues“. Reaktion bei Sperre: Umweg aus QUELLEN.md, sonst Lücke im Dossier; keine Sperren umgehen.
 
@@ -94,11 +95,11 @@ Abnahme: Dossier-Abschnitt „Kalenderpflege“ mit Tabelle (Termin, Slug, Aktio
 
 Nach dem Verifikationsprotokoll in SCHREIBREGELN.md Abschnitt 3 und der **Prüfdefinition** in Abschnitt 3a: jede tragende Aussage offiziell belegt, von zwei Herausgebern bestätigt oder als Selbstauskunft gekennzeichnet; jede Zahl, jedes Datum, jeder Name an der Primärquelle; mindestens drei Quellen; Bestand prüfen (offen.md, `grep` in `inhalte/`, `chatgpt-site/api/inhalte.json`); Widersprüche benennen. Das Ergebnis steht als Prüfprotokoll (`pruefung`) in der Meldung.
 
-Abnahme: Jede Aussage und jede Zahl im Text steht im Prüfprotokoll mit gelesenem Beleg. Reaktion bei Unsicherheit: Angabe streichen; trägt der Rest keine Meldung, Thema als T2 ins Dossier; reicht es für eine Meldung, aber nicht für die Direktveröffentlichung, `"zurFreigabe": true`.
+Abnahme: Jede Aussage und jede Zahl im Text steht im Prüfprotokoll mit gelesenem Beleg. Reaktion bei Unsicherheit: Angabe streichen; trägt der Rest keine Standardmeldung, aber eine Kurzmeldung, dann Kurzmeldung; trägt er gar keine Meldung, Thema als T2 ins Dossier; reicht es für eine Meldung, aber nicht für die Direktveröffentlichung, `"zurFreigabe": true`. Eine fehlende Zweitquelle allein ist bei offizieller Quelle kein Grund für T2 oder `zurFreigabe`.
 
 ### Phase 3: Schreiben
 
-Nach SCHREIBREGELN.md: **Standard (mindestens 800 Wörter, Ziel 900 bis 1.300, also 4 bis 6 Minuten Lesezeit) als Regelfall**, in eigenen Worten neu geschrieben (nicht nacherzählt), redaktionell mit Einordnung, Vorgeschichte und Folgen für den Ort, nicht generisch; dünne Themen bündeln statt strecken; jede Quelle im Text genannt; Updates in bestehende Einträge; Termine ohne `entwurf` (nur bei Unsicherheit `"entwurf": true`); Umkreis nur die sechs Orte; Sport als Einheit. **Bildklasse so wählen, dass das Bild zeigt, worum es geht** (Abschnitt 4a). Selbstprüfung nach SCHREIBREGELN.md Abschnitt 13.
+Nach SCHREIBREGELN.md: **Standard (mindestens 800 Wörter, Ziel 900 bis 1.300, also 4 bis 6 Minuten Lesezeit) als Regelfall, wenn die Quellenlage es trägt; sonst Kurzmeldung (150 bis 350 Wörter, eine offizielle Quelle reicht, Abschnitt 0), statt nichts zu veröffentlichen**, in eigenen Worten neu geschrieben (nicht nacherzählt), redaktionell mit Einordnung, Vorgeschichte und Folgen für den Ort, nicht generisch; dünne Themen bündeln statt strecken; jede Quelle im Text genannt; Updates in bestehende Einträge; Termine ohne `entwurf` (nur bei Unsicherheit `"entwurf": true`); Umkreis nur die sechs Orte; Sport als Einheit. **Bildklasse so wählen, dass das Bild zeigt, worum es geht** (Abschnitt 4a). Selbstprüfung nach SCHREIBREGELN.md Abschnitt 13.
 
 ### Phase 4: Paketierung, Build, Bild, Commit (15 Minuten)
 
@@ -141,8 +142,9 @@ Nach [vorlagen/abschlussbericht.md](vorlagen/abschlussbericht.md) an Luis: Zahle
 ## 5. Definition of Done
 
 - [ ] Korrekturaufträge der neuen Dossiers zu Claude-Artikeln erledigt oder begründet offen
-- [ ] Jede neue oder geänderte Meldung: Mindestwerte, drei Quellen, `stand` = Lesedatum, jede Quelle im Text genannt
-- [ ] Jede neue Meldung mindestens 800 Wörter (Standard), in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler), Prüfprotokoll vollständig
+- [ ] Mindesttakt: mindestens eine Meldung in diesem Lauf, wenn eine belegbare Nachricht existiert; Tagesziel zwei (Live-Archiv gezählt)
+- [ ] Jede neue oder geänderte Meldung: Mindestwerte, drei Quellen (Kurzmeldung: eine offizielle), `stand` = Lesedatum, jede Quelle im Text genannt
+- [ ] Jede neue Meldung mindestens 800 Wörter (Standard) oder 150 bis 350 (Kurzmeldung), in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler), Prüfprotokoll vollständig
 - [ ] Jede neue Meldung mit passendem Themenbild, Bild selbst angesehen, Lizenz frei, Tabelle „Bildprüfung“ im Dossier
 - [ ] Unsichere Beiträge mit `zurFreigabe`/`entwurf` und Begründung im Dossier
 - [ ] Kette zweimal, `--check` unverändert, `qa/pruefung.mjs` 0 Fehler, `qa/redaktion-lauf.mjs --datum --lauf` 0 Fehler
@@ -157,7 +159,7 @@ Fremde Beiträge (Automatik, Vereine, Partner, ChatGPT-Pakete) nie veröffentlic
 
 ## 7. Nullfund-Lauf
 
-Gibt es nichts Neues: kein Meldungspaket, aber Dossier mit Zahlentabelle („Neue Meldungen | 0“), Quellenabschnitt mit Weg und Ergebnis je Quelle und offenen Punkten; Register `research_runs` mit `implementation_commit: null` und Begründung in `summary`; Bericht „Nullfund“ mit Quellenlücken. Die Zeit für Vertiefungen eigener Artikel nutzen (SCHREIBREGELN.md Abschnitt 6). Keine Mengenvorgabe je Lauf.
+Ein Nullfund ist nur erlaubt, wenn keine Pflichtquelle eine belegbare Nachricht liefert; eine Polizei-, Feuerwehr- oder Gemeindemitteilung mit Merzenich-Bezug, ein Ratsbeschluss, eine Sperrung oder ein Termin der nächsten sieben Tage mit Nachrichtenwert ist kein Nullfund, sondern mindestens eine Kurzmeldung. Dann: kein Meldungspaket, aber Dossier mit Zahlentabelle („Neue Meldungen | 0“), Quellenabschnitt mit Weg und Ergebnis **je Pflichtquelle** (Quellenprotokoll) und offenen Punkten; Register `research_runs` mit `implementation_commit: null` und Begründung in `summary`; Bericht „Nullfund“ mit Quellenlücken. Die Zeit für Vertiefungen eigener Artikel nutzen (SCHREIBREGELN.md Abschnitt 6). **Mengenvorgabe (Entscheidung Luis Kummer 02.11.2026):** mindestens eine Meldung je Lauf, wenn eine belegbare Nachricht existiert, und mindestens zwei Meldungen je Tag.
 
 ## 8. Störungen
 
@@ -186,4 +188,5 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
+| 3.3 | 02.11.2026 | Entscheidung Luis Kummer: Mindesttakt (zwei Meldungen je Tag, eine je Lauf bei belegbarer Nachricht), Kurzmeldung 150 bis 350 Wörter mit einer offiziellen Quelle, offizielle Quelle genügt für Direktveröffentlichung (kein T2 wegen fehlender Zweitquelle), Nullfund nur mit Quellenprotokoll; `qa/redaktion-lauf.mjs` meldet 24 Stunden ohne Meldung |
 | 3.0 | 28.10.2026 | Entscheidungen Luis Kummer: Claude-Beiträge direkt online (fremde weiter über Freigabe), `zurFreigabe` bei Unsicherheit; Standard ab 450 Wörtern, drei Quellen; Bild muss zum Thema passen (Phase 4a, Pool `themen`); ChatGPT-Auftrag mit Korrekturen zuerst; Läufe 09:13 und 14:43 in frischer Sitzung |

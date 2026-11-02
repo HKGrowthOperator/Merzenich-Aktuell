@@ -25,6 +25,8 @@
  *     `pruefung` (je Aussage offizielle Quelle oder zwei Herausgeber, jede Zahl des Textes
  *     darin); die Artikelseite zeigt keine Ortsansicht, wenn die Bildklasse Motive nennt.
  *     Davor nur Hinweise. Mit --datum/--lauf: Dossier-Abschnitt „Bildprüfung“ nennt jede Meldung.
+ *     Kurzmeldung mit mindestens einer offiziellen Quelle (OFFIZIELL): Zwei- und Drei-Quellen-Regel
+ *     entfallen (Entscheidung Luis Kummer 02.11.2026); Pruefprotokoll mit drei Aussagen bleibt Pflicht.
  *   B Termine: Pflichtfelder, quelle.url https, quelle.stand, start/ende mit Zeitzone,
  *     ende nicht vor start, Slug eindeutig; im Paket des Laufs kein Start vor --datum.
  *     Claude-Termine gehen direkt online; "entwurf": true nur, wenn der Termin in die Freigabe soll.
@@ -36,7 +38,8 @@
  *     date und edition, latest_dossier zeigt darauf, latest.md nennt das Dossier.
  *     Ausserdem Fehler: Meldungspaket des Laufs fehlt und das Dossier meldet keinen Nullfund.
  *   E Geheimnisse in docs/redaktion und inhalte (Passwortzuweisungen, Tokens).
- * Hinweise: Muster „Strasse + Hausnummer“ in Blaulicht-Texten, nur eine Quell-Domain,
+ * Hinweise: Mindesttakt (24 Stunden ohne Meldung im Repository; mit --datum weniger als zwei
+ *   Meldungen an dem Tag), Kurzmeldung ueber 350 Woerter, Muster „Strasse + Hausnummer“ in Blaulicht-Texten, nur eine Quell-Domain,
  *   E-Mail-Adressen ausser Funktionsadressen in Dateien mit „claude“ im Namen, doppelte Umkreis-URLs.
  */
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
@@ -189,6 +192,7 @@ function pruefprotokoll(b, m, urls) {
 }
 
 const slugs = new Map();
+const meldungsZeiten = [];
 for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
   const claude = datei.includes('recherche-claude');
   const regel = claude && (paketDatum(datei) >= REGEL_AB || STRENG);
@@ -197,6 +201,7 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
   for (const m of daten.meldungen || []) {
     const b = `meldungen/${datei}/${m.slug || '?'}`;
     if (slugs.has(m.slug)) F(b, `Slug doppelt (auch in ${slugs.get(m.slug)})`); else slugs.set(m.slug, datei);
+    if (!Number.isNaN(Date.parse(m.datum))) meldungsZeiten.push(Date.parse(m.datum));
     if (!claude && !v2) continue; // Altbestand ohne V2 prueft deploy/meldungen.mjs
     if (!RESSORTS.includes(m.ressort)) F(b, `Ressort ${m.ressort} unbekannt`);
     if (!ORTSTEILE.includes(m.ortsteil)) F(b, `Ortsteil ${m.ortsteil} unbekannt`);
@@ -219,19 +224,23 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
     const urls = alle.map((q) => q.url.replace(/[#?].*$/, '').replace(/\/$/, ''));
     if (new Set(urls).size < urls.length) (claude ? F : H)(b, 'dieselbe Quell-URL mehrfach eingetragen');
     const fremd = [...new Map(alle.filter((q) => !EIGEN.test(host(q.url))).map((q) => [q.url.replace(/[#?].*$/, '').replace(/\/$/, ''), q])).values()];
-    if (claude && fremd.length < 2 && !m.quellenausnahme) {
+    // Kurzmeldung (Entscheidung Luis Kummer 02.11.2026): eine offizielle Quelle reicht, Zwei- und
+    // Drei-Quellen-Regel gelten nicht; das Pruefprotokoll bleibt Pflicht.
+    const kurzOffiziell = m.artikeltyp === 'kurzmeldung' && fremd.some((q) => OFFIZIELL.test(host(q.url)));
+    if (claude && fremd.length < 2 && !m.quellenausnahme && !kurzOffiziell) {
       (regel ? F : H)(b, `nur ${fremd.length} Quelle(n) ausser merzenich-aktuell.de; Zwei-Quellen-Regel (oder quellenausnahme mit Begruendung)`);
     }
     if (claude && m.artikeltyp !== 'kurzmeldung' && new Set(fremd.map((q) => host(q.url))).size === 1) H(b, `alle Quellen von ${host(fremd[0].url)}; unabhaengige Zweitquelle pruefen`);
     if (claude) {
       // Ab REGEL_V3_AB: laenger, mehr Quellen (SCHREIBREGELN.md Abschnitt Laenge und Quellen).
       const alleUrls = new Set(urls);
-      if (alleUrls.size < 3 && !m.quellenausnahme) (v3 ? F : H)(b, `${alleUrls.size} Quelle(n); mindestens drei verschiedene Quellen (oder quellenausnahme mit Begruendung)`);
+      if (alleUrls.size < 3 && !m.quellenausnahme && !kurzOffiziell) (v3 ? F : H)(b, `${alleUrls.size} Quelle(n); mindestens drei verschiedene Quellen (oder quellenausnahme mit Begruendung)`);
       const [minW, minA] = V3_LAENGE[m.artikeltyp] || [0, 0];
       if (woerter(m) < minW) (v3 ? F : H)(b, `${m.artikeltyp} mit ${woerter(m)} Woertern; Claude mindestens ${minW} (SCHREIBREGELN.md Abschnitt 1)`);
       if ((m.absaetze || []).length < minA) (v3 ? F : H)(b, `${m.artikeltyp} mit ${(m.absaetze || []).length} Absaetzen; Claude mindestens ${minA}`);
       if (v3) pruefprotokoll(b, m, urls);
-      if (m.artikeltyp === 'kurzmeldung' && m.ressort !== 'blaulicht' && !m.service) H(b, 'Kurzmeldung ausserhalb Blaulicht/Service; Standardtext ist der Regelfall');
+      if (m.artikeltyp === 'kurzmeldung' && ['wirtschaft', 'menschen'].includes(m.ressort) && !m.service) H(b, `Kurzmeldung im Ressort ${m.ressort}; Kurzmeldungen sind fuer Einsatz, Sperrung, Ratsbeschluss, Terminhinweis und Ergebnis gedacht`);
+      if (m.artikeltyp === 'kurzmeldung' && woerter(m) > 350) H(b, `Kurzmeldung mit ${woerter(m)} Woertern (hoechstens 350); als standard fuehren, wenn die Quellenlage es traegt`);
       bildPruefen(b, m, v3);
     }
     if (m.ressort === 'blaulicht') {
@@ -239,6 +248,17 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
       if (treffer && !/^(Land|Bundes|Kreis)stra/.test(treffer[0])) H(b, `moegliche Hausnummer im Blaulicht-Text: "${treffer[0]}"`);
     }
   }
+}
+
+// Mindesttakt (Entscheidung Luis Kummer 02.11.2026, SCHREIBREGELN.md Abschnitt 0): jeden Tag mindestens
+// zwei Meldungen. Gezaehlt wird nur das Repository; von Hand in WordPress angelegte Beitraege fehlen hier.
+if (meldungsZeiten.length) {
+  const stunden = Math.floor((Date.now() - Math.max(...meldungsZeiten)) / 3600000);
+  if (stunden >= 24) H('Mindesttakt', `seit ${stunden} Stunden keine Meldung im Repository; mindestens zwei Meldungen je Tag (Live-Archiv auf Handbeitraege pruefen)`);
+}
+if (DATUM) {
+  const heuteAnzahl = meldungsZeiten.filter((t) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin' }).format(new Date(t)) === DATUM).length;
+  if (heuteAnzahl < 2) H('Mindesttakt', `am ${DATUM} ${heuteAnzahl} Meldung(en) im Repository; Ziel mindestens zwei, davon eine aus Blaulicht, Rathaus oder Termine-Vorschau`);
 }
 
 // ------------------------------------------------------------------ B Termine
