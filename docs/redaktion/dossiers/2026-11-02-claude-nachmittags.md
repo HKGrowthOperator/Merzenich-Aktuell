@@ -6,14 +6,14 @@ Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.3 vom 02.11.20
 
 | Größe | Zahl | Anmerkung |
 |---|---:|---|
-| Neue Meldungen | 0 | Die beiden Meldungen des Tages (Einbruch Bahnstraße, Wochenvorschau 2. bis 8.11.) stehen bereits im Live-Archiv; nicht im Repository, keine Dublette geschrieben |
+| Neue Meldungen | 1 | Folgemeldung Verkehrstod L 264 (Kurzmeldung, 183 Wörter, `relevanz` 1, Top-Meldung), nachgereicht um 18:56 Uhr nach Entscheidung Luis Kummer (Abschnitt 10); Einbruch Bahnstraße und Wochenvorschau standen schon als Handbeiträge im Live-Archiv, keine Dublette |
 | Aktualisierte oder korrigierte Bestandsmeldungen | 1 | Unfall L 264 Girbelsrath: Fahrer gestorben (Kurzmeldung, jetzt 161 Wörter, 3 Absätze) |
 | Korrigierte Termine | 1 | Amtsblatt-Abgabeschluss 3.11.: ganztägig statt 12 Uhr (Korrekturauftrag ChatGPT) |
 | Neue Termine (live / Entwurf zur Freigabe) | 2 / 0 | Abgabeschlüsse Amtsblatt 1.12. und 29.12. |
 | Umkreis-Einträge | 0 | |
 | Drei-Quellen-Quote, Prüfprotokoll vollständig | – | kein neues Meldungspaket |
 | Sportstand | unverändert | Tabelle am Morgen aktualisiert |
-| Bilder gefunden / geprüft / integriert | 1 / 1 / 0 | Unfallfoto des Bestands gesichtet; Tischtennis-Foto: Commons-Datei HTTP 429 |
+| Bilder gefunden / geprüft / integriert | 2 / 2 / 0 | Unfallfoto des Bestands gesichtet; Tischtennis-Foto: Commons-Datei HTTP 429 |
 | Kette / QA / redaktion-lauf | zweimal, `--check` unverändert, `pruefung` 0 Fehler (27 Hinweise), `redaktion-lauf` 0 Fehler (42 Hinweise) | |
 | Mindesttakt 02.11. | 2 Meldungen im Live-Archiv | `qa/redaktion-lauf.mjs` meldet „seit 126 Stunden keine Meldung im Repository“, weil die beiden Tagesmeldungen nur in WordPress angelegt sind |
 | Dauer des Laufs | etwa 24 Minuten | |
@@ -25,6 +25,8 @@ Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.3 vom 02.11.20
 | GR-L264-27102026 | Update: neuer Titel „Nach Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben“ (alt: „Alleinunfall auf der L 264 bei Girbelsrath: Autofahrer schwer verletzt, Straße fünf Stunden gesperrt“), neue Dek, Nachtrag vom 2. November, Fakt, zweite Polizeiquelle. Alter und Herkunft weiter weggelassen | `inhalte/meldungen/2026-10-28-recherche-claude-morgens.json` → `/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/` | [Polizei Düren 02.11., 15:08 Uhr](https://www.presseportal.de/blaulicht/pm/8/6382725) und [Erstmeldung 27.10.](https://www.presseportal.de/blaulicht/pm/8/6379066), beide 15:48 Uhr im Original gelesen |
 | Korrektur Kalender | `amtsblatt-12-2026-abgabeschluss-2026-11-03`: Start 12 Uhr → ganztägig; Ort „Rathaus Merzenich“ → „Amtsblatt-Redaktion (per E-Mail)“; Text „Korrigiert am 2. November 2026 …“ | `inhalte/termine/2026-10-25-recherche-claude.json` → `/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/` | Amtsblatt 11/2026 S. 1, Kasten „Nächstes Erscheinungsdatum“: Abgabe „bis Dienstag, 03. November 2026 per Email an amtsblatt@gemeinde-merzenich.de“, keine Uhrzeit |
 | Kalender | 2 neue Termine: Abgabeschluss 1.12. (Ausgabe 11.12.) und 29.12. (Ausgabe 8.1.2027), ganztägig | `inhalte/termine/2026-11-02-recherche-claude-nachmittags.json` | Amtsblatt 11/2026 S. 1, „Weitere Abgabetermine“; Wochentage nachgerechnet |
+
+| GR-L264-27102026 (Folgemeldung) | Neu: „Tödlicher Unfall auf der L 264 bei Girbelsrath: Autofahrer im Krankenhaus gestorben“, Kurzmeldung, `relevanz` 1; Ursprungsartikel: Titel jetzt „Alleinunfall auf der L 264 bei Girbelsrath: Wagen prallt gegen Mast und Baum, Straße fünf Stunden gesperrt“, Nachtrag verweist auf die Folgemeldung | `inhalte/meldungen/2026-11-02-recherche-claude-nachmittags.json` → `/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/` | Polizei Düren 27.10. und 02.11. (erneut 18:50 Uhr); Prüfprotokoll mit 6 Aussagen, alle offiziell |
 
 Quellenausnahmen: Unfallartikel weiter nur mit Polizeimitteilungen (offizielle Quelle, SCHREIBREGELN.md Abschnitt 0 und 3a); Begründung in `quellenausnahme` aktualisiert.
 
@@ -82,13 +84,16 @@ Commits `8fcc8c9` (Inhalte) und der Dokumentationscommit dieses Dossiers. Rebase
 
 | Meldung | Bildklasse | Motiv | Foto (Commons) | Lizenz | passt, weil |
 |---|---|---|---|---|---|
+| toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02 | verkehr.unfall.rettung | rettungswagen | Ambulance in a town of North Rhine-Westphalia inside (2024).jpg | CC0 | selbst angesehen: leerer Rettungswagen von innen (Trage, Sitze, Geräte), keine Personen, kein Kennzeichen; zeigt den Transport ins Krankenhaus, nüchtern und ohne Unfallwrack, passend für eine Todesmeldung; 1279 px breit (Aufmacher ab 480 px) |
 | alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27 (Update) | verkehr.unfall.rettung | unfallstelle | Verkehrsunfall L261 04.JPG | CC BY 3.0 | selbst angesehen: Pkw nach Aufprall an einem Straßenbaum am Rand einer Landstraße, wie im Hergang (Baum, Fahrbahnrand); keine Personen erkennbar, Kennzeichen vom Baum verdeckt (nur zwei Zeichen sichtbar). Symbolbild aus dem Kreis Pinneberg |
 
 Neu importierte Fotos: keine. Tischtennis: Commons-API lieferte die Metadaten (Datei aus Málaga, Kategorie „Table tennis tables in Andalusia“, CC BY-SA 4.0), die Bilddatei selbst HTTP 429. Hinweis für den nächsten Lauf: Die Ortskategorie Málaga dürfte den Auslandsfilter des Importskripts auslösen; besser ein Foto ohne fremden Ortsbezug suchen.
 
 ## 8a. Prüfung und Eigenformulierung
 
-Kein neues Meldungspaket (`qa/eigenformulierung.mjs --datum 2026-11-02 --lauf nachmittags`: „Kein Paket … nichts zu pruefen“). Der Nachtrag im Unfallartikel ist eigener Text; übernommen sind nur Datum, Todestag und Uhrzeit der Mitteilung.
+| Meldung | Wörter | Quellen | Aussagen im Prüfprotokoll (offiziell / doppelt / Selbstauskunft) | Eigenformulierung (max. gleiche Wortfolge) |
+|---|---:|---:|---|---|
+| toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02 | 183 | 2 (beide Polizei Düren, offizielle Quelle, Kurzmeldung nach Abschnitt 0) | 6 / 0 / 0 | 0 % gleiche Wortfolgen gegenüber der Erstmeldung, 0,5 % / höchstens 8 Wörter gegenüber der Todesmeldung (`qa/eigenformulierung.mjs` 0 Fehler) | Der Nachtrag im Unfallartikel ist eigener Text; übernommen sind nur Datum, Todestag und Uhrzeit der Mitteilung.
 
 ## 9. Offene Punkte für den nächsten Lauf
 
@@ -97,4 +102,16 @@ Kein neues Meldungspaket (`qa/eigenformulierung.mjs --datum 2026-11-02 --lauf na
 3. Vertiefungen eigener kurzer Artikel (ELW, Amprion, Pfarrer Galbierz, Jugendzeltplatz).
 4. Bürgersprechstunde Golzheim (30.10. oder 13.11.) und VHS-Vortrag 10.11.: Rückfrage durch Menschen.
 5. Die Handbeiträge vom 02.11. (Einbruch, Wochenvorschau) sind nicht im Repository; Folgeupdates dazu nur in WordPress oder nach Übernahme ins Repository.
+
+## 10. Top-Meldung automatisch (Entscheidung Luis Kummer, 02.11.2026)
+
+Anlass: Auf der Live-Startseite stand um 18:35 Uhr weiter „Martinszüge 2026“ (Amtsblatt-Paket vom 16.10.) als von Hand fest gesetzter Aufmacher (`data-fest="1"`); die Updates zum Todesfall und zum TTC standen mit altem Datum weit unten. Vorgabe: „immer die beste, stärkste Nachricht automatisch oben“.
+
+| Schritt | Commit | Wirkung |
+|---|---|---|
+| Plugin 1.41.0: Import schreibt `relevanz` als `ma_relevanz`; fester Aufmacher weicht einer frischen Stufe-1-Meldung, die nach dem Einsetzen erschien (nach jedem Abgleich mit Änderungen, beim Speichern einer Top-Meldung, stündlich; abschaltbar) | `2926f28` | Tests `layout-test.php`, `relevanz-test.php`; alle `qa/wordpress/*-test.php` grün |
+| CLAUDE-LAUF 3.5, SCHREIBREGELN 0a: Feld `relevanz`, Kriterien für Stufe 1, Folgemeldung | `b381cb7` | gilt ab sofort in jedem Lauf |
+| Folgemeldung Verkehrstod L 264 mit `relevanz` 1 | `001aa8a` | soll nach Installation von 1.41.0 den festen Aufmacher ablösen |
+
+Live-Nachweis (Plugin-Version, Aufmacher) folgt in einem eigenen Commit.
 
