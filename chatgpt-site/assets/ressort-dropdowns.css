@@ -246,7 +246,12 @@
   .ist-voll .ressort-dropdown__links a:hover,.ist-voll .ressort-dropdown__links a:focus-visible{color:var(--red)}
   .ressort-dropdown__werbung{grid-column:2;min-width:0;margin:0;padding:0;border:0;background:none}
   .ressort-dropdown__werbung .werbung-label{display:block;margin:0 0 6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6d6860}
-  .ressort-dropdown__werbung .ma-ad-card{display:block;color:var(--ink);text-decoration:none}
+  /* Karte als Spalte: oben 16:9-Bild, darunter Firma, Überschrift, Knopf (02.11.2026). */
+  .ressort-dropdown__werbung .ma-ad-rotator--gap{height:auto}
+  .ressort-dropdown__werbung .ma-ad-card{color:var(--ink);text-decoration:none}
+  .ressort-dropdown__werbung .ma-ad-card--gap .ma-ad-art{flex:none;aspect-ratio:16/9;min-height:0}
+  .ressort-dropdown__werbung .ma-ad-card--gap .ma-ad-copy{flex:none}
+  .ressort-dropdown__werbung .ma-ad-card--gap .ma-ad-text{display:none}
   .ressort-dropdown__werbung .werbung-credit{display:block;margin-top:6px;font-size:10px;color:#6d6860}
   .ressort-dropdown__werbung .werbung-credit a{color:inherit}
   .ressort-firmen__gruppen.ist-voll{display:grid;gap:14px}

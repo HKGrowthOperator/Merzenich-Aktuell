@@ -113,7 +113,11 @@
     // WordPress: nur laufende Anzeigen, sonst nichts (keine Musterwerbung, 28.10.2026).
     if (wp && typeof wp === 'object' && !liste.length) return '';
     if (liste.length) {
-      const a = liste[Math.floor(Date.now() / 14000) % liste.length];
+      // Eine Firma, die gerade auf keinem Werbeplatz der Seite steht (Abwechslung, 02.11.2026).
+      const belegt = Array.from(document.querySelectorAll('.ma-ad__item:not([hidden])')).map((el) => el.getAttribute('data-ma-firma'));
+      const start = Math.floor(Date.now() / 14000) % liste.length;
+      const reihe = liste.slice(start).concat(liste.slice(0, start));
+      const a = reihe.find((x) => !x.firma || !belegt.includes(x.firma)) || reihe[0];
       return '<aside class="ressort-dropdown__werbung werbung" aria-label="Anzeige" data-ma-anzeige="' + Number(a.id) + '" data-ma-platz="hero_clubs_expanded_right"><span class="werbung-label">Anzeige</span>' +
         '<div class="werbung-flaeche ma-ad-rotator ma-ad-rotator--gap">' + a.html + '</div></aside>';
     }

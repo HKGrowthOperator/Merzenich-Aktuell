@@ -198,6 +198,48 @@ function ma_ads_rotate(array $ads, string $slot, ?int $seed = null): array {
     return array_merge(array_slice($ads, $offset), array_slice($ads, 0, $offset));
 }
 
+/**
+ * Firma einer Anzeige als Schlüssel (02.11.2026): verknüpftes Firmenprofil
+ * (ma_business_id), sonst der Firmen-Slug aus ma_firmen_banner („slug:motiv“),
+ * sonst die Anzeige selbst. Damit wechseln Rotation und Plätze die Firma.
+ */
+function ma_ad_firma(WP_Post $ad): string {
+    $b = (int) get_post_meta($ad->ID, 'ma_business_id', true);
+    if ($b > 0) return 'b'.$b;
+    $m = (string) get_post_meta($ad->ID, 'ma_firmen_banner', true);
+    if ($m !== '') return 'f'.sanitize_key((string) strtok($m, ':'));
+    return 'a'.$ad->ID;
+}
+
+/**
+ * Reihenfolge mit Abwechslung (Vorgabe Betreiber 02.11.2026: „nicht 2 mal
+ * hintereinander die gleiche Firma“): Anzeigen je Firma gruppieren (Reihenfolge
+ * innerhalb der Firma wie geliefert, also nach Stufe), dann Stück für Stück die
+ * Firma mit den meisten übrigen Anzeigen nehmen, die nicht gerade dran war.
+ * Gleichstand entscheidet eine Saat je Platz und Minute, damit nicht jeder Platz
+ * mit derselben Firma beginnt. Keine Anzeige geht verloren.
+ */
+function ma_ads_mischen(array $ads, string $saat, ?int $minute = null): array {
+    $ads = array_values($ads);
+    if (count($ads) < 2) return $ads;
+    $gruppen = [];
+    foreach ($ads as $ad) $gruppen[ma_ad_firma($ad)][] = $ad;
+    $minute = $minute ?? (int) floor(time() / 60);
+    $rang = [];
+    foreach (array_keys($gruppen) as $f) $rang[$f] = (int) sprintf('%u', crc32($saat.'|'.$minute.'|'.$f));
+    $raus = []; $letzte = '';
+    while (count($raus) < count($ads)) {
+        $wahl = '';
+        foreach ($gruppen as $f => $rest) {
+            if (!$rest || ($f === $letzte && count($gruppen) > 1 && array_filter($gruppen, fn($r, $k) => $r && $k !== $letzte, ARRAY_FILTER_USE_BOTH))) continue;
+            if ($wahl === '' || count($rest) > count($gruppen[$wahl]) || (count($rest) === count($gruppen[$wahl]) && $rang[$f] < $rang[$wahl])) $wahl = $f;
+        }
+        $raus[] = array_shift($gruppen[$wahl]);
+        $letzte = $wahl;
+    }
+    return $raus;
+}
+
 /** Alternativtext: Feld „Alternativtext“ am Werbebild, sonst der Titel der Anzeige. */
 function ma_ad_alt(WP_Post $ad): string {
     $bild = (int)get_post_thumbnail_id($ad->ID);
@@ -263,7 +305,7 @@ function ma_ad_shortcode($atts): string {
  * die Video-Schleifen.
  */
 function ma_render_werbeplatz(string $slot, string $marker): string {
-    $ads = ma_ads_rotate(ma_active_ads($slot), $slot);
+    $ads = ma_ads_mischen(ma_active_ads($slot), $slot.'|'.$marker);
     if (!$ads) return '';
     $art = preg_match('/^band-/', $marker) ? 'band' : $marker;
     $format = in_array($art, ['spalte', 'sport', 'buehne', 'unternehmen'], true) ? 'gap' : 'band';
@@ -311,7 +353,7 @@ function ma_ad_karte(WP_Post $ad, string $format, bool $video = false, bool $ver
     $inhalt = $kunst.'<span class="ma-ad-copy">'.($sponsor !== '' ? '<span class="ma-ad-eyebrow">'.esc_html($sponsor).'</span>' : '').'<strong>'.esc_html(get_the_title($ad)).'</strong>'
         .($ad->post_excerpt !== '' ? '<span class="ma-ad-text">'.esc_html($ad->post_excerpt).'</span>' : '')
         .($knopf !== '' && $url !== '' ? '<span class="ma-ad-cta">'.esc_html($knopf).'</span>' : '').'</span>';
-    $attr = ' class="ma-ad-card ma-ad-card--'.esc_attr($format).' ma-ad__item" data-ma-anzeige="'.(int) $ad->ID.'" aria-label="'.esc_attr('Anzeige: '.($sponsor !== '' ? $sponsor.' – ' : '').get_the_title($ad)).'"'.($versteckt ? ' hidden' : '');
+    $attr = ' class="ma-ad-card ma-ad-card--'.esc_attr($format).' ma-ad__item" data-ma-anzeige="'.(int) $ad->ID.'" data-ma-firma="'.esc_attr(ma_ad_firma($ad)).'" aria-label="'.esc_attr('Anzeige: '.($sponsor !== '' ? $sponsor.' – ' : '').get_the_title($ad)).'"'.($versteckt ? ' hidden' : '');
     if ($url === '') return '<div'.$attr.'>'.$inhalt.'</div>';
     $host = (string) wp_parse_url($url, PHP_URL_HOST);
     $aussen = $host !== '' && $host !== (string) wp_parse_url(home_url('/'), PHP_URL_HOST);

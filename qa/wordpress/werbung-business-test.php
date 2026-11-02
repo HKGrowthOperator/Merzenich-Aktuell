@@ -123,6 +123,33 @@ pruefe('Rotationsskript eingereiht', in_array('ma-ad-rotation', $GLOBALS['enqueu
 pruefe('Rotation deterministisch je Startwert', ids(ma_ads_rotate(ma_active_ads('homepage_band_1'), 'homepage_band_1', 7)), ids(ma_ads_rotate(ma_active_ads('homepage_band_1'), 'homepage_band_1', 7)));
 pruefe('Rotation verliert keine Anzeige', count(array_unique(ids(ma_ads_rotate(ma_active_ads('homepage_band_1'), 'homepage_band_1', 3)))), 3);
 pruefe('Einzelne Anzeige ohne Rotation', str_contains(ma_render_ads('homepage_band_2'), 'data-ma-ad-rotate'), false);
+
+// Abwechslung (Vorgabe Betreiber 02.11.2026): nie zweimal dieselbe Firma nacheinander.
+$firmenAds = [];
+foreach ([['b1', 3], ['b2', 2], ['b3', 1], ['b4', 3], ['b5', 2]] as [$f, $anzahl]) for ($k = 0; $k < $anzahl; $k++) {
+    $id = 900 + count($firmenAds);
+    $firmenAds[] = add_post(['ID' => $id, 'post_type' => 'ma_ad', 'post_status' => 'publish'], ['ma_business_id' => substr($f, 1)]);
+}
+$nachbarn = function (array $ads): int { $n = 0; for ($i = 1; $i < count($ads); $i++) if (ma_ad_firma($ads[$i]) === ma_ad_firma($ads[$i - 1])) $n++; return $n; };
+pruefe('Firma als Schlüssel: Firmenprofil, sonst Firmen-Slug, sonst Anzeige', [ma_ad_firma($firmenAds[0]), ma_ad_firma(add_post(['ID' => 990, 'post_type' => 'ma_ad'], ['ma_firmen_banner' => 'almera-clean:almera-1'])), ma_ad_firma(add_post(['ID' => 991, 'post_type' => 'ma_ad']))], ['b1', 'falmera-clean', 'a991']);
+$keinNachbar = true; $vollstaendig = true; $starts = [];
+foreach (['homepage_band_1|band-1', 'homepage_band_2|band-2', 'homepage_buehne|buehne', 'homepage_sidebar_top|spalte'] as $saat) for ($m = 0; $m < 30; $m++) {
+    $r = ma_ads_mischen($firmenAds, $saat, $m);
+    if ($nachbarn($r)) $keinNachbar = false;
+    if (ids($r) !== array_values(array_unique(ids($r))) || count($r) !== count($firmenAds)) $vollstaendig = false;
+    $starts[ma_ad_firma($r[0])] = true;
+}
+pruefe('Gemischt: nie dieselbe Firma direkt nacheinander (4 Plätze × 30 Minuten)', $keinNachbar, true);
+pruefe('Gemischt: keine Anzeige fehlt oder doppelt', $vollstaendig, true);
+// Start auf dem Server: Firma mit den meisten Anzeigen (sichert die Abwechslung); den zufälligen Start setzt ad-rotation.js.
+pruefe('Gemischt: Startfirma wechselt je Platz und Minute', count($starts) >= 2, true);
+pruefe('Gemischt: Reihenfolge innerhalb der Firma bleibt', array_values(array_filter(ids(ma_ads_mischen($firmenAds, 'x', 1)), fn($i) => in_array($i, [900, 901, 902], true))), [900, 901, 902]);
+pruefe('Gemischt: eine Firma allein bleibt erlaubt', ids(ma_ads_mischen(array_slice($firmenAds, 0, 3), 'x', 1)), [900, 901, 902]);
+if (!function_exists('get_post_thumbnail_id')) { function get_post_thumbnail_id($p) { return 0; } }
+if (!function_exists('wp_get_attachment_url')) { function wp_get_attachment_url($id) { return ''; } }
+if (!function_exists('home_url')) { function home_url($p = '') { return 'https://merzenich-aktuell.de' . $p; } }
+if (!function_exists('wp_parse_url')) { function wp_parse_url($u, $c = -1) { return parse_url($u, $c); } }
+pruefe('Karte trägt die Firma (data-ma-firma)', str_contains(ma_ad_karte($firmenAds[0], 'band'), 'data-ma-firma="b1"'), true);
 ma_active_ads_reset();
 $GLOBALS['opt']['ma_ad_slots']['homepage_band_1'] = 0;
 pruefe('Abgeschalteter Platz: keine Anzeige', ma_active_ads('homepage_band_1'), []);

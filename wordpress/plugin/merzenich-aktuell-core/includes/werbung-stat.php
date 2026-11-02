@@ -69,9 +69,9 @@ add_action('rest_api_init', function (): void {
 function ma_werbung_platz_daten(string $platz): array {
     if (!function_exists('ma_active_ads')) return [];
     $raus = [];
-    foreach (ma_ads_rotate(ma_active_ads($platz), $platz) as $ad) {
+    foreach (ma_ads_mischen(ma_active_ads($platz), $platz) as $ad) {
         $html = ma_ad_karte($ad, 'gap');
-        $raus[] = ['id' => (int) $ad->ID, 'html' => $html];
+        $raus[] = ['id' => (int) $ad->ID, 'firma' => ma_ad_firma($ad), 'html' => $html];
     }
     return $raus;
 }
