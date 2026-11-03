@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-02-claude-nachmittags.md",
-  "source_check_window": "02.11.2026 nachmittags Europe/Berlin; Live-Abrufe 15:47 bis 15:56 Uhr.",
+  "latest_dossier": "dossiers/2026-11-03-morgens.md",
+  "source_check_window": "03.11.2026 morgens Europe/Berlin; Direktabrufe 07:04:40–07:06:33, ergänzende Repository-Prüfung ca.07:07; tatsächliche Bereitstellung am bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11355,6 +11355,61 @@
       "implementation_commit": "8fcc8c9",
       "summary": "Erster Routinelauf in der festen Redaktionssitzung. 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau stehen bereits als Handbeiträge im Live-Archiv, Mindesttakt 02.11. erfüllt), 1 Update (Unfall L 264: Fahrer gestorben, Polizei 02.11. 15:08), 1 Terminkorrektur (Amtsblatt-Abgabeschluss ganztägig, Auftrag ChatGPT), 2 neue Termine (Abgabeschlüsse 1.12., 29.12.). Commons-Bilddatei 429.",
       "publication": "Update am veröffentlichten Unfallartikel, Terminkorrektur und zwei Termine; sofort sichtbar beim Abgleich"
+    },
+    {
+      "date": "2026-11-03",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-03-morgens.md",
+      "compared_with": "dossiers/2026-11-02-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-02-claude-nachmittags.md",
+      "base_commit": "03ac470317424d2c9893e9d19d8f526cef61a7b7",
+      "implementation_commit": null,
+      "summary": "Keine neue Themenkarte oder Terminänderung. Neue Feuerwehrquelle144/26 bereits live, Unfalltod durch Claude verarbeitet; keine Dubletten. Beide Unfall-Sachtexte gegen Polizei-Originale ohne Sachkorrektur geprüft. Prüf-/Korrekturauftrag: Feuerwehrartikel zeigt Einsatzdatum27.10.12Uhr als Veröffentlichung;12Uhr ist technischer Ersatzwert, tatsächliche Veröffentlichungszeit im CMS ermitteln. Amtsblatt-Korrektur umgesetzt. Dienstägliche Fußballprüfung, keine neue belegte Entwicklung; SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld04.11.01Uhr, genaue Dauer offen.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 1,
+      "correction_kind": "unbelegte_Artikel_Veröffentlichungszeit",
+      "articles_checked": 3,
+      "repository_article_files_read": 30,
+      "repository_event_files_read": 10,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-03T07:03:48+01:00",
+      "source_check_window": "2026-11-03T07:04:40+01:00 bis2026-11-03T07:06:33+01:00; ergänzende Repository-Prüfung ca.07:07",
+      "deadline": "2026-11-03T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Erfolgreiche Bereitstellung und Fristeinhaltung am bestätigten main-Ref/Commit samt tatsächlichem Zeitstempel nachweisen, nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "corrections": [
+        {
+          "slug": "einsatz-144-verkehrsunfall-eingeklemmte-person-girbelsrath",
+          "false_or_unsupported_statement": "Veröffentlicht 27.10.2026 · 12:00 Uhr",
+          "correct_statement": "Einsatzdatum27.10.2026; tatsächliche Artikel-Veröffentlichungszeit nicht belegt. Quelle veröffentlicht02.11.2026 19:18.12Uhr technischer Ersatzwert.",
+          "source": "https://www.heimat-info.de/beitraege/ccc978e5-2fc9-473e-bbf3-1b04af0adbf7",
+          "retrieved_at": "2026-11-03T07:04:48+01:00",
+          "article_retrieved_at": "2026-11-03T07:06:33+01:00",
+          "implementation_evidence": "deploy/automatik-feuerwehr.mjs berlinIso: zeit||12:00; Artikel datum aus Einsatzdatum",
+          "actual_publication_time": "offen, CMS-Abgleich nötig",
+          "implemented": false
+        }
+      ],
+      "resolved_prior_corrections": [
+        {
+          "slug": "amtsblatt-12-2026-abgabeschluss-2026-11-03",
+          "verified_at": "2026-11-03T07:04:49+01:00",
+          "result": "ganztägig/perE-Mail, keine feste Uhrzeit mehr"
+        }
+      ],
+      "football_check": {
+        "performed": true,
+        "primary": "FUSSBALL.DE SC Erste, SC III, FC Golzheim, B2 Düren",
+        "secondary": "FuPa A/B2; älterer technischer Zeitstempel, nicht als aktuelle unabhängige Primärbestätigung gewertet",
+        "result": "keine neue konkret belegte Entwicklung; SCIII-Endstand offen"
+      },
+      "qa": "Alle bestehenden Themen, Archivdaten, Claude-Notizen, Artikelpfade, Umsetzungscommits und historischen Läufe unverändert erhalten; nur neuen Lauf angehängt und Recherche-Einstieg aktualisiert. Vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
