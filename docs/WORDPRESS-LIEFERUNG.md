@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
 
 ## Neu am 03.11.2026: Plugin 1.43.0, ehrliches Datum und Freigabe = Veröffentlichung
 
@@ -12,6 +12,7 @@ Anlass: Korrekturauftrag ChatGPT 03.11.2026. Feuerwehr 144/26 stand mit „Verö
 - Tests: `qa/wordpress/abgleich-test.php` (Abschnitt „Datum“).
 - **Live 03.11.2026, 10:36 Uhr** (Selbst-Update, mit Theme 21.25.1). Datum von 140/26 und 141/26 um 10:40 Uhr korrigiert. **144/26 ist seitdem nicht öffentlich:** Der Beitrag war ohne Prüfhäkchen online; das Speichern der Datumskorrektur lief durch die Veröffentlichungssperre (`ma_publication_gate`) und setzte ihn auf Entwurf. Er steht in den Freigaben; mit der Freigabe gilt die Freigabezeit als Datum.
 - **1.43.1:** Die Datumskorrektur schreibt nur noch `post_date` und `post_date_gmt` (ohne `wp_update_post`) und ändert den Status nie.
+- **1.43.2:** Die Korrektur gilt einmal je Datum (`_ma_datum_aus_stand`), damit eine spätere Freigabezeit nicht zurückgesetzt wird. `datumKorrektur` ist ein Einmal-Kennzeichen: nach der Übernahme aus dem Paket entfernen (für 140/26, 141/26, 144/26 erledigt).
 
 ## Neu am 02.11.2026: Plugin 1.41.0, Aufmacher automatisch
 

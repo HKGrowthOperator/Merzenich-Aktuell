@@ -117,9 +117,10 @@ function ma_abgleich_entscheidung(string $hashNeu, string $hashAlt, string $text
  * mit "datumKorrektur": true (Importfeld ma_datum_aus_stand), übernimmt der Abgleich das Datum des
  * Pakets einmal. Anlass: Feuerwehr 144/26 stand mit Einsatztag und erfundener 12 Uhr online.
  */
-function ma_abgleich_datum_korrigieren(array $e, string $postDatum): bool {
+function ma_abgleich_datum_korrigieren(array $e, string $postDatum, string $schonKorrigiert = ''): bool {
+    // Einmalig (1.43.2): Wurde dieses Datum schon übernommen, gilt danach das Datum in WordPress (etwa die Freigabezeit).
     return ($e['typ'] ?? '') === 'post' && (string) ($e['meta']['ma_datum_aus_stand'] ?? '') === '1'
-        && ($e['datum'] ?? '') !== '' && ($e['datum_gmt'] ?? '') !== '' && $e['datum'] !== $postDatum;
+        && ($e['datum'] ?? '') !== '' && ($e['datum_gmt'] ?? '') !== '' && $e['datum'] !== $postDatum && $schonKorrigiert !== $e['datum'];
 }
 
 /**
@@ -396,13 +397,14 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
         foreach ($meta as $k => $v) update_post_meta($id, $k, wp_slash($v));
     }
     $p = get_post($id);
-    if ($p && ma_abgleich_datum_korrigieren($e, (string) $p->post_date)) {
+    if ($p && ma_abgleich_datum_korrigieren($e, (string) $p->post_date, (string) get_post_meta($id, '_ma_datum_aus_stand', true))) {
         global $wpdb;
         $vorher = (string) $p->post_date;
         // Nur das Datum, nicht über wp_update_post (1.43.1): Das Speichern läuft durch die Veröffentlichungssperre und
         // setzte am 03.11.2026 Feuerwehr 144/26 (online ohne Prüfhäkchen) auf Entwurf. Eine Datumskorrektur ändert den Status nie.
         $r = $wpdb->update($wpdb->posts, ['post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt']], ['ID' => $id]);
         clean_post_cache($id);
+        if ($r !== false) update_post_meta($id, '_ma_datum_aus_stand', $e['datum']);
         if ($r === false) $fehler[] = $e['titel'] . ' (Datum): nicht korrigiert';
         elseif (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Datum aus dem redaktionellen Stand korrigiert: ' . $vorher . ' → ' . $e['datum'], 0);
     }

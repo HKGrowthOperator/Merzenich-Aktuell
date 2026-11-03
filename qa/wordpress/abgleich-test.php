@@ -47,6 +47,7 @@ echo "\nDatum: Korrektur aus dem Stand, Freigabe = Veröffentlichung (1.43.0)\n"
 $k = ['typ' => 'post', 'datum' => '2026-11-03 00:13:00', 'datum_gmt' => '2026-11-02 23:13:00', 'meta' => ['ma_datum_aus_stand' => '1']];
 pruefe('Gekennzeichnet und abweichend: Datum aus dem Stand übernehmen', ma_abgleich_datum_korrigieren($k, '2026-10-27 12:00:00'), true);
 pruefe('Schon gleich: nichts tun (einmalig)', ma_abgleich_datum_korrigieren($k, '2026-11-03 00:13:00'), false);
+pruefe('Schon einmal übernommen, danach freigegeben (neues Datum): bleibt', ma_abgleich_datum_korrigieren($k, '2026-11-03 14:05:00', '2026-11-03 00:13:00'), false);
 pruefe('Ohne Kennzeichen: Datum bleibt', ma_abgleich_datum_korrigieren(['meta' => []] + $k, '2026-10-27 12:00:00'), false);
 pruefe('Termin oder leeres Datum: nie', [ma_abgleich_datum_korrigieren(['typ' => 'ma_event'] + $k, 'x'), ma_abgleich_datum_korrigieren(['datum' => ''] + $k, 'x')], [false, false]);
 pruefe('Entwurf oder Prüfung aus dem Abgleich wird veröffentlicht: Freigabezeit', [ma_abgleich_freigabe_datum_jetzt('draft', 'publish', true, false), ma_abgleich_freigabe_datum_jetzt('pending', 'publish', true, false)], [true, true]);
