@@ -115,6 +115,7 @@ function ma_seo_seitentexte(): array {
         'heute' => 'Termine von heute und den nächsten sieben Tagen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, dazu die neuesten Meldungen.',
         // 1.42.0: „düren aktuell“, „niederzier aktuell“, „kreis düren aktuell“ (Google-Vorschläge 02.11.2026).
         'umgebung' => 'Nachrichten aus Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und dem Kreis Düren: Polizei, Verkehr, Rathaus und Termine, mit Link zur Originalquelle.',
+        'merzenich-in-zahlen' => 'Merzenich in Zahlen: 10.509 Einwohner, 37,92 km², fünf Ortsteile, Bürgermeister Georg Gelhausen, 26 Sitze im Gemeinderat. Mit Stand und amtlicher Quelle.',
     ];
 }
 
@@ -124,7 +125,7 @@ function ma_seo_seitentexte(): array {
  * Frage, die Google selbst unter „Weitere Fragen“ zeigt.
  */
 function ma_seo_seitentitel(): array {
-    return ['heute' => 'Was ist heute in Merzenich los?', 'umgebung' => 'Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung'];
+    return ['heute' => 'Was ist heute in Merzenich los?', 'umgebung' => 'Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung', 'merzenich-in-zahlen' => 'Merzenich in Zahlen: Einwohner, Fläche, Bürgermeister, Gemeinderat'];
 }
 
 /** Zu kurze Beschreibung (unter 110 Zeichen) mit Angaben davor und einem Satz dahinter auffüllen. */

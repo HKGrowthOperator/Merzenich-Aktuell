@@ -41,6 +41,7 @@ function ma_seiten(): array {
         'diskussion' => ['titel' => 'Diskussion', 'eyebrow' => 'Mitreden', 'anriss' => 'Die jüngsten Kommentare aus allen Meldungen von Merzenich Aktuell.', 'html' => 'ma_seite_diskussion'],
         'thema' => ['titel' => 'Themen', 'eyebrow' => 'Themen', 'anriss' => 'Alle Themen und Schlagworte auf Merzenich Aktuell, nach Zahl der Meldungen.', 'html' => 'ma_seite_themen'],
         'heute' => ['titel' => 'Heute in Merzenich', 'eyebrow' => 'Heute', 'anriss' => 'Was ist heute in Merzenich los? Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.', 'html' => 'ma_seite_heute'],
+        'merzenich-in-zahlen' => ['titel' => 'Gemeinde Merzenich in Zahlen', 'eyebrow' => 'Fakten', 'anriss' => 'Einwohner, Fläche, Ortsteile, Bürgermeister und Gemeinderat der Gemeinde Merzenich im Kreis Düren, mit Stand und amtlicher Quelle zu jeder Zahl.', 'html' => 'ma_seite_merzenich_in_zahlen'],
         'umgebung' => ['titel' => 'Nachrichten aus der Umgebung', 'eyebrow' => 'Rund um Merzenich', 'anriss' => 'Was in Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und im Kreis Düren passiert: Polizei, Verkehr, Rathaus und Termine der letzten 30 Tage, jeweils mit Link zur Originalquelle.', 'html' => 'ma_seite_umgebung'],
         'whatsapp' => ['titel' => 'WhatsApp-Kanal', 'eyebrow' => 'Immer informiert', 'anriss' => 'Eilmeldungen, Blaulicht und die wichtigsten Termine aus der Gemeinde Merzenich als Broadcast direkt aufs Handy. Kein Gruppenchat, keine sichtbare Nummer.', 'html' => 'ma_seite_whatsapp'],
     ];
@@ -218,6 +219,37 @@ function ma_seite_umgebung(): string {
     return '<p>Merzenich liegt zwischen Düren, Niederzier, Nörvenich, Elsdorf und Kerpen. Was dort passiert, betrifft oft auch Merzenich: Sperrungen auf der A4 und der L 264, Polizeieinsätze, Entscheidungen des Kreises. Hier stehen die Meldungen der letzten 30 Tage, nach Ort sortiert. Jeder Eintrag führt zur Originalquelle.</p>'
         . '<p>Nachrichten aus der Gemeinde selbst: <a href="/nachrichten/">alle Meldungen</a>, <a href="/blaulicht/">Blaulicht</a>, <a href="/termine/">Termine</a>.</p>'
         . '[ma_umgebung]';
+}
+
+/**
+ * Gemeinde Merzenich in Zahlen (1.45.0, Faktenseite aus dem SEO-GEO-NEWS-PLAN 3.2): Fragen als
+ * Zwischenüberschrift, kurze Antwort, Stand und Quelle zu jeder Zahl. Geprüft am 03.11.2026:
+ * Einwohner und Fläche über Wikidata Q200044 mit Verweis auf das Gemeindeverzeichnis des
+ * Statistischen Bundesamts; Rat und Bürgermeister aus den amtlichen Endergebnissen auf
+ * wahlergebnisse.nrw (PDF a358040kw25 und b358040kw25, gelesen am 03.11.2026). Prüfung zweimal im Jahr.
+ */
+function ma_seite_merzenich_in_zahlen(): string {
+    return '<p><strong>Stand: 3. November 2026.</strong> Jede Zahl auf dieser Seite nennt ihre Quelle. Fehler oder neuere Zahlen bitte über <a href="/korrekturen/">Korrekturen</a> melden.</p>'
+        . '<h2 id="einwohner">Wie viele Einwohner hat Merzenich?</h2>'
+        . '<p>Die Gemeinde Merzenich hatte am 31. Dezember 2025 <strong>10.509 Einwohnerinnen und Einwohner</strong>. Ein Jahr zuvor, am 31. Dezember 2024, waren es 10.508, am 31. Dezember 2023 waren es 10.409.</p>'
+        . '<p>Quelle: Statistisches Bundesamt, Gemeindeverzeichnis 2025 (veröffentlicht am 27. August 2026), über <a href="https://www.wikidata.org/wiki/Q200044" target="_blank" rel="noopener">Wikidata Q200044</a>.</p>'
+        . '<h2 id="flaeche">Wie groß ist die Gemeinde Merzenich?</h2>'
+        . '<p>Die Gemeinde ist <strong>37,92 Quadratkilometer</strong> groß. Daraus ergeben sich rund 277 Einwohner je Quadratkilometer (eigene Rechnung aus Einwohnerzahl und Fläche).</p>'
+        . '<p>Quelle: Statistisches Bundesamt, Gemeindeverzeichnis (Stand 31. Dezember 2017), über <a href="https://www.wikidata.org/wiki/Q200044" target="_blank" rel="noopener">Wikidata Q200044</a>.</p>'
+        . '<h2 id="ortsteile">Welche Ortsteile gehören zu Merzenich?</h2>'
+        . '<p>Zur Gemeinde gehören fünf Orte: <a href="/ort/merzenich/">Merzenich</a> mit dem Rathaus, <a href="/ort/golzheim/">Golzheim</a>, <a href="/ort/girbelsrath/">Girbelsrath</a>, <a href="/ort/morschenich/">Morschenich</a> und <a href="/ort/buergewald/">Bürgewald</a>. Bürgewald ist das alte Morschenich am Hambacher Forst; der neue Ort Morschenich entstand ab 2015 als Umsiedlungsort westlich von Merzenich.</p>'
+        . '<h2 id="lage">Wo liegt Merzenich?</h2>'
+        . '<p>Merzenich liegt im <strong>Kreis Düren</strong> in Nordrhein-Westfalen, zwischen Düren, Niederzier, Nörvenich, Elsdorf und Kerpen. Die Postleitzahl ist 52399, der amtliche Gemeindeschlüssel 05 3 58 040. Was in den Nachbarorten passiert, steht unter <a href="/umgebung/">Nachrichten aus der Umgebung</a>.</p>'
+        . '<h2 id="buergermeister">Wer ist Bürgermeister von Merzenich?</h2>'
+        . '<p><strong>Georg Gelhausen (CDU)</strong>. Bei der Kommunalwahl am 14. September 2025 wurde er mit 57,2 Prozent der gültigen Stimmen gewählt. Auf Gerald Scheurmann-Kettner (SPD) entfielen 24,0 Prozent, auf Kornelius Peters (AfD) 14,4 Prozent und auf Heinrich Rosenbaum (Einzelbewerber) 4,4 Prozent.</p>'
+        . '<p>Quelle: IT.NRW, <a href="https://wahlergebnisse.nrw/kommunalwahlen/2025/aktuell/pdf/b358040kw25.pdf" target="_blank" rel="noopener">Endgültiges Ergebnis der Bürgermeisterwahl Merzenich 2025</a>.</p>'
+        . '<h2 id="gemeinderat">Wie ist der Gemeinderat zusammengesetzt?</h2>'
+        . '<p>Der Gemeinderat hat seit der Wahl am 14. September 2025 <strong>26 Sitze</strong>:</p>'
+        . '<ul><li>CDU: 13 Sitze (49,2 Prozent)</li><li>SPD: 7 Sitze (27,1 Prozent)</li><li>FDP: 2 Sitze (9,7 Prozent)</li><li>Grüne: 2 Sitze (8,0 Prozent)</li><li>AfD: 2 Sitze (5,9 Prozent)</li></ul>'
+        . '<p>Wahlberechtigt waren 8.381 Menschen, die Wahlbeteiligung lag bei 64,5 Prozent. 2020 hatte die CDU 14 Sitze, die Linke saß mit einem Sitz im Rat, die AfD war nicht vertreten.</p>'
+        . '<p>Quelle: IT.NRW, <a href="https://wahlergebnisse.nrw/kommunalwahlen/2025/aktuell/pdf/a358040kw25.pdf" target="_blank" rel="noopener">Endgültiges Ergebnis der Gemeinderatswahl Merzenich 2025</a>. Was Rat und Ausschüsse beschließen: <a href="/rathaus/">Rathaus und Gemeinderat</a>.</p>'
+        . '<h2 id="mehr">Wo finde ich mehr?</h2>'
+        . '<p>Aktuelles aus der Gemeinde unter <a href="/nachrichten/">Nachrichten</a>, Einsätze unter <a href="/blaulicht/">Blaulicht</a>, Termine unter <a href="/termine/">Termine</a>. Amtliche Bekanntmachungen veröffentlicht die Gemeinde auf <a href="https://www.gemeinde-merzenich.de/" target="_blank" rel="noopener">gemeinde-merzenich.de</a>.</p>';
 }
 
 /** Orte der Umgebung in fester Reihenfolge (wie deploy/umkreis.mjs). */
