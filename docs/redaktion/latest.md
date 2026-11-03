@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [03.11.2026, Claude-Morgenlauf](dossiers/2026-11-03-claude-morgens.md), Vergleichsbasis [ChatGPT 03.11. morgens](dossiers/2026-11-03-morgens.md) und [Claude 02.11. nachmittags](dossiers/2026-11-02-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [03.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-03-claude-nachmittags.md), Vergleichsbasis [ChatGPT 03.11. mittags](dossiers/2026-11-03-mittags.md) und [Claude 03.11. morgens](dossiers/2026-11-03-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 03.11. nachmittags:** 1 neue Kurzmeldung („Solarpark an der A4 in Merzenich: Bauausschuss berät über 36 Hektar Photovoltaik mit Batteriespeicher“, Vorlage 144/2026, live 14:54 Uhr), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Commits `1df9f20`, `bd7317d`. Eil-Prüfung 12:41 Uhr ohne Fund.
 
 **Umgesetzt am 03.11. morgens:** 1 neue Kurzmeldung („Jugendgremium Merzenich tagt am 4. November“, Rathaus, live 09:20 Uhr), 21 Termine bis 16.11. an der Quelle bestätigt, Heimat-Info-Kalender unverändert. Aufmacher bleibt die Folgemeldung zum Verkehrstod auf der L 264 (Stufe 1 vom 02.11.). Commits `7bd157f`, `7fb625f`.
 
@@ -10,6 +12,6 @@ Jüngstes Dossier: [03.11.2026, Claude-Morgenlauf](dossiers/2026-11-03-claude-mo
 
 **Automatisch online (03.11. mittags, Entscheidung Luis Kummer):** Feuerwehr-Automatik und Heimat-Info-Termine ohne Freigabe, Relevanz automatisch, „Neu in Merzenich“ oben in „Nachrichten aus Merzenich“ (Theme 21.26.0 live 11:18 Uhr). Feuerwehr 144/26 seit 11:13 Uhr online und in der Nachrichten-Sitemap. Eil-Prüfung alle zwei Stunden (06:40 bis 20:40 Uhr). Freigabe nur noch bei rechtlichem Risiko (CLAUDE-LAUF 3.8).
 
-**Offen:** zweite Meldung des Tages im Nachmittagslauf, Sammelseite „Martinszüge in Merzenich 2026“ (SEO-Bericht Abschnitt 5), `/umgebung/` nach dem stündlichen Lauf prüfen (Plugin 1.43.2 live seit 10:50 Uhr), Update Jugendgremium nach der Sitzung, Bürgersprechstunde Golzheim (30.10. oder 13.11.), VHS-Vortrag 10.11., Bildpools Unfall/Rettung/Tischtennis, Vertiefungen eigener kurzer Artikel.
+**Offen:** Jugendgremium-Update nach der Sitzung am 04.11., Bauausschuss 12.11. (Solarpark, Poolplatz, Bau-Turbo, Vorlage 92/2026) als Folgemeldung, Bücher- und Spielemarkt 8.11. an einer Quelle prüfen (gemeinde-merzenich.de HTTP 428 für Claude), VHS-Vortrag 10.11. (HTTP 404), Wochenvorschau 9.–15.11. mit den Martinszügen, Bildpool Solarenergie, Unfall, Rettung, Tischtennis.
 
 [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)

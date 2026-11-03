@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 97 |
-| uebernommen | 33 |
+| uebernommen | 34 |
 | gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
@@ -149,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-03 nachmittags (Claude): 1 neue Kurzmeldung (Solarpark an der A4: Vorlage 144/2026 für den Bauausschuss am 12.11., relevanz 2, live 14:54), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Eil-Prüfung 12:41 ohne Fund. – Commit 1df9f20
+- 2026-11-03 mittags (ChatGPT): Keine neue Themenkarte oder Terminänderung. Jugendgremium-Vorbericht vollständig gegen Tagesordnung, ICS und Vorlage135/2026 geprüft; Dokumentation weiter leer, keine neue Beschlussfassung. Beide Unfallartikel und Feuerwehr144-Sachtext ohne Korrektur. Morgendlicher Datierungsauftrag sichtbar erledigt: Feuerwehr144 zeigt03.11.11:13, CMS-Historie nicht geprüft. Pflichtlisten ohne neue örtliche Entwicklung; dienstägliche Fußballprüfung aktualisiert, SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen.
 - 2026-11-03 morgens (Claude): 1 neue Kurzmeldung (Jugendgremium tagt am 4.11., Rathaus-Vorschau, relevanz 2, live 09:20), 21 Termine bis 16.11. bestätigt, Heimat-Info-Kalender unverändert. Korrekturauftrag Feuerwehr 144/26 betrifft die Automatik (Generator setzt Einsatzdatum 12 Uhr als Veröffentlichung), offen für Luis. qa/pruefung: vorbestehender Fehler /umgebung/ aus SEO-Commit 4d96722. – Commit 7bd157f
 - 2026-11-03 morgens (ChatGPT): Keine neue Themenkarte oder Terminänderung. Neue Feuerwehrquelle144/26 bereits live, Unfalltod durch Claude verarbeitet; keine Dubletten. Beide Unfall-Sachtexte gegen Polizei-Originale ohne Sachkorrektur geprüft. Prüf-/Korrekturauftrag: Feuerwehrartikel zeigt Einsatzdatum27.10.12Uhr als Veröffentlichung;12Uhr ist technischer Ersatzwert, tatsächliche Veröffentlichungszeit im CMS ermitteln. Amtsblatt-Korrektur umgesetzt. Dienstägliche Fußballprüfung, keine neue belegte Entwicklung; SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld04.11.01Uhr, genaue Dauer offen.
-- 2026-11-02 nachmittags (Claude): Erster Routinelauf in der festen Redaktionssitzung. 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau stehen bereits als Handbeiträge im Live-Archiv, Mindesttakt 02.11. erfüllt), 1 Update (Unfall L 264: Fahrer gestorben, Polizei 02.11. 15:08), 1 Terminkorrektur (Amtsblatt-Abgabeschluss ganztägig, Auftrag ChatGPT), 2 neue Termine (Abgabeschlüsse 1.12., 29.12.). Commons-Bilddatei 429. – Commit 8fcc8c9
-- 2026-11-02 mittags (ChatGPT): Neue T2-Karte Einbruch Bahnstraße: Polizeimeldung11:54, unabhängige Ereignisbestätigung fehlt. Kalenderkorrektur Amtsblatt-Abgabeschluss: sichtbare12Uhr nur Platzhalter, Quelle nennt03.11. ohne Uhrzeit. TTC-Ergebnisnachtrag sachlich ohne Korrektur; Unfallartikel ohne Korrektur. Frühstücksfrist5.11.11:30 im Amtsblatt bestätigt und bereits von Claude umgesetzt. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld15Uhr, genaue Dauer offen.

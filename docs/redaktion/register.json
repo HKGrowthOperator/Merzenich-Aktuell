@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-03-mittags.md",
+  "latest_dossier": "dossiers/2026-11-03-claude-nachmittags.md",
   "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10641,6 +10641,28 @@
         }
       ],
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht"
+    },
+    {
+      "id": "MA-SOLARPARK-A4-E3",
+      "priority": "P1",
+      "location_section": "Merzenich · Rathaus/Energie",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-03 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachmittags.json → /rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
+      "article_id": null,
+      "implementation_commit": "1df9f20",
+      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar.",
+      "dossier_history": [
+        {
+          "date": "2026-11-03",
+          "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+          "heading": "1 · MA-SOLARPARK-A4-E3 · P1 · Rathaus/Energie"
+        }
+      ]
     }
   ],
   "archive": {
@@ -11471,6 +11493,16 @@
       },
       "qa": "Alle bestehenden Themen, Archivdaten, historischen Läufe, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten; nur neuen Recherchelauf angehängt. Ausschließlich neue Dossierdatei und Register; vollständiger Rücklesevergleich nach Upload.",
       "initial_read_commit": "72ad90779451316f8070d64e6231ca35a487678b"
+    },
+    {
+      "date": "2026-11-03",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-03-mittags.md",
+      "implementation_commit": "1df9f20",
+      "summary": "1 neue Kurzmeldung (Solarpark an der A4: Vorlage 144/2026 für den Bauausschuss am 12.11., relevanz 2, live 14:54), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Eil-Prüfung 12:41 ohne Fund.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }
