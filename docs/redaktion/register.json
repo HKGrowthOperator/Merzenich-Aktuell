@@ -11399,7 +11399,9 @@
           "article_retrieved_at": "2026-11-03T07:06:33+01:00",
           "implementation_evidence": "deploy/automatik-feuerwehr.mjs berlinIso: zeit||12:00; Artikel datum aus Einsatzdatum",
           "actual_publication_time": "offen, CMS-Abgleich nötig",
-          "implemented": false
+          "implemented": true,
+          "implemented_note": "03.11.2026 vormittags (Claude): Generator datiert mit der Anlagezeit nach dem Abruf, keine Ersatz-Uhrzeit; Paketdatum 144/26 = 2026-11-03T00:13:00+01:00 (Abruf heimatinfo.json im Automatik-Commit 03ac470, 23:13:25Z) mit datumKorrektur, ebenso 140/26 (2026-10-18T11:43, Commit 65f2818) und 141/26 (2026-10-21T12:16, Commit ce622c4). Der Abgleich übernimmt das Datum einmal (Plugin 1.43.0). Die exakte Freischaltzeit im CMS ist ohne Backend-Zugang nicht lesbar; die Anlagezeit ist der früheste belegte Zeitpunkt.",
+          "implementation_commit": "e2da1cf"
         }
       ],
       "resolved_prior_corrections": [

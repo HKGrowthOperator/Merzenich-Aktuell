@@ -2,6 +2,8 @@
 
 Stand 02.11.2026 · live Plugin 1.37.1, Theme 21.24.1 · Arbeitsplan für eine eigene Sitzung. Vorher lesen: `docs/GOOGLE-NEWS.md` (Stand 07.10.2026, was schon gebaut ist und was nur der Betreiber kann).
 
+**Fortschritt und Anleitung für den Betreiber:** `docs/SEO-GEO-BERICHT-2026-11-03.md` (Live-Prüfung 03.11.2026: was steht, was fehlt, wer was tut).
+
 **Ziel:** Bei Suchen rund um Merzenich und seine Ortsteile vorn stehen, in Google News und Discover laufen, und von KI-Suchen (ChatGPT, Perplexity, Google AI Overviews, Copilot) als Quelle für Merzenich genannt werden. Daraus sollen viele wiederkehrende Leserinnen und Leser werden.
 
 **Wer macht was:** Jede Aufgabe trägt eine Markierung.
