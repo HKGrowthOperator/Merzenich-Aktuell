@@ -33,7 +33,8 @@ const ALS_JSON = args.includes('--json');
 if (!paket) { console.error('Aufruf: --datum <JJJJ-MM-TT> --lauf <morgens|nachmittags> oder --paket <datei>'); process.exit(2); }
 if (!existsSync(join(wurzel, paket))) { console.log(`Kein Paket ${paket} (Nullfund?): nichts zu pruefen.`); process.exit(0); }
 
-const N = 8; const RUN_FEHLER = 12; const RUN_HINWEIS = 9; const ANTEIL_FEHLER = 0.10;
+// Strenger seit 03.11.2026 (Entscheidung Luis Kummer: nichts übernehmen, immer eigene Beiträge): 10 statt 12 Wörter, 6 statt 10 Prozent.
+const N = 8; const RUN_FEHLER = 10; const RUN_HINWEIS = 8; const ANTEIL_FEHLER = 0.06;
 const UA = 'MerzenichAktuell-Redaktion/1.0 (https://merzenich-aktuell.de)';
 const fehler = []; const hinweise = []; const ergebnis = [];
 

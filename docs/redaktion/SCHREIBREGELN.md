@@ -11,7 +11,7 @@ Seit 28.10.2026 gehen Claude-Beiträge ohne Freigabe online (CLAUDE-LAUF.md Absc
 Entscheidung Luis Kummer, 02.11.2026. Anlass: Vom 28.10. bis 02.11.2026 erschien keine redaktionelle Meldung, `news-sitemap.xml` war leer, Google News und Discover lagen bei null. Ursache waren Mindestlänge und Drei-Quellen-Regel ohne Mengenvorgabe: Trug ein Thema keine 800 Wörter, erschien nichts. Am 02.11. wurde ein Einbruch mit Polizeimitteilung auf T2 gesperrt, nur weil eine unabhängige Zweitquelle fehlte.
 
 - **Mindesttakt:** an jedem Tag mindestens **zwei Meldungen**, davon mindestens eine aus Blaulicht, Rathaus oder Termine-Vorschau. Jeder Lauf veröffentlicht **mindestens eine Meldung, wenn eine belegbare Nachricht existiert**. Ein Nullfund ist nur mit vollständigem Quellenprotokoll erlaubt (CLAUDE-LAUF.md Abschnitt 7). ⚙ Hinweis bei 24 Stunden ohne Meldung und bei weniger als zwei Meldungen am Lauftag
-- **Kurzmeldung** (`kurzmeldung`), 150 bis 350 Wörter, für: Einsatz (Polizei, Feuerwehr), Sperrung, Ratsbeschluss, Terminhinweis mit Einordnung (auch Wochenvorschau), Ergebnis vom Wochenende.
+- **Kurzmeldung** (`kurzmeldung`), seit 04.11.2026 **250 bis 450 Wörter in mindestens 4 Absätzen** (Blaulicht-Eilmeldung ab 200 Wörtern, 3 Absätze), für: Einsatz (Polizei, Feuerwehr), Sperrung, Ratsbeschluss, Terminhinweis mit Einordnung (auch Wochenvorschau), Ergebnis vom Wochenende. Entscheidung Luis Kummer 03.11.2026: „Beiträge länger … immer eigene Beiträge, redaktionell“. Jede Kurzmeldung hat neben dem Kern einen Absatz **Einordnung** (Vorgeschichte aus dem eigenen Archiv, frühere Vorlagen, Beschlüsse oder Zahlen) und einen Absatz **Wie es weitergeht** (nächster Termin, Frist, wer entscheidet, wo man mitreden kann). Außerhalb von Blaulicht ist sie die Ausnahme: Trägt die Quellenlage mit Vorgeschichte und Folgen einen Standardtext, wird es ein Standardtext. ⚙
 - **Eine offizielle Quelle reicht** (Abschnitt 3a Nr. 1: Polizei, Feuerwehr, Gemeinde, Kreis, Amtsblatt, Verband) oder eine Selbstauskunft des Vereins über eigene Termine und Ergebnisse. Die Zwei- und Drei-Quellen-Regel (Abschnitt 4) gilt für Kurzmeldungen nicht. ⚙
 - **Geprüft wird genauso wie bei Standard-Meldungen**: Prüfprotokoll mit mindestens drei Aussagen, jede Zahl darin, keine Privatpersonen, keine Hausnummern, keine Deutung als Tatsache. Was die Quelle nicht sagt, steht als offen im Text.
 - Der **Standard mit 800 Wörtern und mehr** bleibt für Hintergrund, Porträt, Analyse und alle Themen, deren Quellenlage es trägt. Eine Kurzmeldung kann im nächsten Lauf zum Standardtext ausgebaut werden (Update, kein zweiter Artikel).
@@ -41,7 +41,7 @@ Entscheidung in dieser Reihenfolge:
 
 | Typ | Mindestens | Ziel | Lesezeit |
 |---|---|---|---|
-| `kurzmeldung` | 150 Wörter, 3 Absätze; höchstens 350 | 200 bis 300 | 1 bis 2 Minuten |
+| `kurzmeldung` | 250 Wörter, 4 Absätze (Blaulicht-Eilmeldung 200 Wörter, 3 Absätze); höchstens 450, ab Paketen vom 04.11.2026 | 300 bis 400 | 2 Minuten |
 | `standard` | **800 Wörter, 7 Absätze** | 900 bis 1.300 | 4 bis 6 Minuten |
 | `vertiefung` | 1.100 Wörter, 8 Absätze | 1.200 bis 1.800 | 6 bis 9 Minuten |
 | `hintergrund` | 1.400 Wörter, 10 Absätze | 1.500 bis 2.500 | 7 bis 12 Minuten |
@@ -140,6 +140,8 @@ Ein `standard` wird `vertiefung`, wenn die zusätzliche Recherche mindestens dre
 ## 8. Eigene Formulierung, Zitate und Fremdtexte
 
 Jeder Text ist **neu geschrieben**: Aus den Quellen werden nur Fakten entnommen, Aufbau, Einstieg, Sätze und Gewichtung sind eigene redaktionelle Arbeit. Pressemitteilungen, Vereinstexte und Amtsblatt werden nicht nacherzählt oder umgestellt, sondern als Faktenbasis genutzt und mit weiteren Quellen zu einem eigenen Bericht verbunden.
+
+**Nie kopieren (Entscheidung Luis Kummer 03.11.2026):** Kein Satz aus einer Pressemitteilung, Vereinsseite, Instagram- oder Facebook-Beitrag, keinem anderen Medium (Aachener Zeitung, Radio Rur, news.de und andere) und keiner KI-Zusammenfassung wird übernommen, auch nicht umgestellt. Andere Medien sind nie Quelle, sondern höchstens Hinweis auf eine Originalquelle. Fotos aus sozialen Netzwerken werden nie verwendet. Die Prüfung ist seit 03.11.2026 strenger (höchstens 9 gleiche Wörter in Folge, höchstens 6 Prozent gleiche Wortfolgen je Quelle). Auch die Feuerwehr-Automatik zitiert höchstens zwei Sätze und nennt ihre Quelle im Text.
 
 Wörtliche Zitate höchstens zwei Sätze, in „…“, mit Urheber. ⚙ `node qa/eigenformulierung.mjs --datum <d> --lauf <l>` lädt alle Quellen und meldet einen Fehler bei 12 oder mehr gleichen Wörtern in Folge außerhalb eines Zitats oder wenn mehr als 10 Prozent der Wortfolgen gleich sind.
 

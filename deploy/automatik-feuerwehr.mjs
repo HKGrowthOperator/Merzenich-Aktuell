@@ -227,7 +227,8 @@ export function zitatAus(bericht, maxZeichen = 420) {
   const ohne = saetze.filter((s) => !relativ.test(s));
   const raus = [];
   for (const s of ohne.length ? ohne : saetze) {
-    if (raus.length >= 3 || raus.join(' ').length + s.length > maxZeichen) break;
+    // Höchstens zwei Sätze wörtlich (SCHREIBREGELN Abschnitt 8, seit 03.11.2026 auch für die Automatik).
+    if (raus.length >= 2 || raus.join(' ').length + s.length > maxZeichen) break;
     raus.push(s);
   }
   return raus.join(' ').replace(/"([^"]+)"/g, '‚$1‘').replace(/[„“]([^„“]+)“/g, '‚$1‘');
@@ -262,6 +263,9 @@ export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   const absatz1 = `Einsatzort war ${ortText}.${stichwortText}${e.kraefte.length ? ` Im Einsatz ${e.kraefte.length > 1 ? 'waren' : 'war'}: ${listeDeutsch(e.kraefte)}.` : ''}${widerspruch.length ? ' ' + widerspruch.join(' ') : ''}`;
   const absatz2 = `Die Feuerwehr schreibt dazu: „${zitat}“ Es war der ${e.nr}. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 20${e.jahr}.`;
 
+  // Quelle im Text (SCHREIBREGELN: jede Quelle genannt) und was die Redaktion übernommen hat (03.11.2026).
+  const grundlagen = [e.fw ? 'dem Einsatzbericht auf der Website der Freiwilligen Feuerwehr Merzenich' : '', e.hi ? `dem Beitrag der Feuerwehr in der Heimat-Info-App vom ${tagOhneWochentag(e.hi.beitragDatum || e.hi.datum)}` : ''].filter(Boolean);
+  const absatz3 = `Grundlage dieser Meldung ${grundlagen.length > 1 ? 'sind' : 'ist'} ${listeDeutsch(grundlagen)}; daraus stammen Einsatzort, Meldebild, Kräfte und die zitierten Sätze. Die Redaktion ergänzt die Meldung, wenn Feuerwehr oder Polizei mehr mitteilen.`;
   const fakten = [
     `Einsatz ${nummer} der Freiwilligen Feuerwehr Merzenich`,
     `Alarmierung: ${tag}${e.zeit ? `, ${e.zeit} Uhr` : ''}`,
@@ -280,7 +284,7 @@ export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   const m = {
     slug: `einsatz-${e.nr}-${slugTeil(was)}-${e.ortsteil}`,
     ressort: 'blaulicht', ortsteil: e.ortsteil, kicker: `Feuerwehr · ${nummer}`,
-    titel, dek, datum, artikeltyp: 'kurzmeldung', relevanz: relevanzVon(bildklasse), fakten, absaetze: [absatz1, absatz2], themen, bildklasse,
+    titel, dek, datum, artikeltyp: 'kurzmeldung', relevanz: relevanzVon(bildklasse), fakten, absaetze: [absatz1, absatz2, absatz3], themen, bildklasse,
     quelle: quellen[0], ...(quellen.length > 1 ? { weitereQuellen: quellen.slice(1) } : {}),
   };
   if (!datum) return { grund: 'kein Abrufzeitpunkt der Quelle (Datum der Meldung)' };

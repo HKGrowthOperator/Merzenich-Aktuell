@@ -65,6 +65,10 @@ const REGEL_AB = '2026-10-27';
 const REGEL_V3_AB = '2026-10-29';
 // Sichtbarkeitsplan 03.11.2026: Wer "merzenich" sucht, findet nur Titel mit "Merzenich" (19 von 25 Claude-Titeln hatten es nicht).
 const REGEL_TITEL_AB = '2026-11-03';
+// Laengere Beitraege (Entscheidung Luis Kummer 03.11.2026): Kurzmeldung ab Paketen vom 04.11. mindestens 250 Woerter
+// und 4 Absaetze (Blaulicht-Eilmeldung 200), hoechstens 450; darueber Standard.
+const REGEL_V4_AB = '2026-11-04';
+const V4_KURZ = { min: 250, minBlaulicht: 200, absaetze: 4, max: 450 };
 // Laenge (Luis Kummer 28.10.2026: „viel, viel laenger“, bisher ein bis zwei Minuten Lesezeit):
 // Mindestwoerter je Artikeltyp fuer Claude-Pakete ab REGEL_V3_AB (gut 200 Woerter je Leseminute).
 const V3_LAENGE = { kurzmeldung: [150, 3], standard: [800, 7], vertiefung: [1100, 8], hintergrund: [1400, 10] };
@@ -244,12 +248,16 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
       // Ab REGEL_V3_AB: laenger, mehr Quellen (SCHREIBREGELN.md Abschnitt Laenge und Quellen).
       const alleUrls = new Set(urls);
       if (alleUrls.size < 3 && !m.quellenausnahme && !kurzOffiziell) (v3 ? F : H)(b, `${alleUrls.size} Quelle(n); mindestens drei verschiedene Quellen (oder quellenausnahme mit Begruendung)`);
-      const [minW, minA] = V3_LAENGE[m.artikeltyp] || [0, 0];
+      const v4 = paketDatum(datei) >= REGEL_V4_AB || STRENG;
+      let [minW, minA] = V3_LAENGE[m.artikeltyp] || [0, 0];
+      if (v4 && m.artikeltyp === 'kurzmeldung') { minW = m.ressort === 'blaulicht' ? V4_KURZ.minBlaulicht : V4_KURZ.min; minA = m.ressort === 'blaulicht' ? 3 : V4_KURZ.absaetze; }
       if (woerter(m) < minW) (v3 ? F : H)(b, `${m.artikeltyp} mit ${woerter(m)} Woertern; Claude mindestens ${minW} (SCHREIBREGELN.md Abschnitt 1)`);
       if ((m.absaetze || []).length < minA) (v3 ? F : H)(b, `${m.artikeltyp} mit ${(m.absaetze || []).length} Absaetzen; Claude mindestens ${minA}`);
       if (v3) pruefprotokoll(b, m, urls);
       if (m.artikeltyp === 'kurzmeldung' && ['wirtschaft', 'menschen'].includes(m.ressort) && !m.service) H(b, `Kurzmeldung im Ressort ${m.ressort}; Kurzmeldungen sind fuer Einsatz, Sperrung, Ratsbeschluss, Terminhinweis und Ergebnis gedacht`);
-      if (m.artikeltyp === 'kurzmeldung' && woerter(m) > 350) H(b, `Kurzmeldung mit ${woerter(m)} Woertern (hoechstens 350); als standard fuehren, wenn die Quellenlage es traegt`);
+      const kurzMax = v4 ? V4_KURZ.max : 350;
+      if (m.artikeltyp === 'kurzmeldung' && woerter(m) > kurzMax) H(b, `Kurzmeldung mit ${woerter(m)} Woertern (hoechstens ${kurzMax}); als standard fuehren, wenn die Quellenlage es traegt`);
+      if (v4 && m.artikeltyp === 'kurzmeldung' && m.ressort !== 'blaulicht' && !m.service) H(b, 'Kurzmeldung ausserhalb von Blaulicht: Standard (800 Woerter) pruefen, Vorgeschichte aus Archiv und frueheren Unterlagen, Folgen fuer die Ortsteile, wie es weitergeht (SCHREIBREGELN Abschnitt 1)');
       bildPruefen(b, m, v3);
     }
     if (m.ressort === 'blaulicht') {

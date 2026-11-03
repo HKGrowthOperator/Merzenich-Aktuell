@@ -227,6 +227,16 @@ Lücken: Caritas und Sozialverbände nur über Pfarrbrief; Seniorenarbeit der Ge
 
 Lücke: kein eigener, maschinenlesbarer Veranstaltungskalender der Gemeinde (hinter JavaScript); Gastronomie, Kirmes, private Veranstalter nicht erfasst.
 
+**Breitenrecherche (seit 03.11.2026, CLAUDE-LAUF Phase 1, Schritt 3a):**
+
+| Zugang | Weg | Stand 03.11.2026 | Stufe |
+|---|---|---|---|
+| Websites aller Vereine aus `deploy/vereinsverzeichnis.json` (29 mit Website) | `node qa/vereinsseiten.mjs`, je Seite Start plus bis zu vier Unterseiten „Termine/Veranstaltungen/Events/Aktuelles“ | 27 HTTP 200; Schützen Golzheim HTTP 403, Förderverein KGS (Schulseite der Gemeinde) HTTP 428. Treffer vor allem bei den Karnevalsgesellschaften | D (Selbstauskunft) |
+| KG Jonge vom Berg, Veranstaltungskalender | https://jonge-vom-berg.de/events/ (ICS: `?ical=1`), Detailseiten `/event/<slug>/` | 26 Termine bis Februar 2027, bei Sessionseröffnung 11.11., Prinzenproklamation 13.11., Schlüsselübergabe, Damensitzung, Kindersitzung und Rosenmontagszug **ohne Ort** | D |
+| KG Mir hahle Poohl Golzheim | https://kg-mir-hahle-poohl.de/veranstaltungen/ mit Detailseiten | Termine mit Ort, Uhrzeit und Eintritt bis Rosenmontag 2027 | D |
+| Golzheim aktiv | https://golzheimaktiv.de/ | Bücher- und Spielemarkt 8.11. | D |
+| Instagram, Facebook (Gemeinde, Feuerwehr, Vereine, Kirchen, Gastronomie) | aus der Claude-Sitzung nicht lesbar: Instagram leitet auf die Anmeldung um, Facebook auf die Mobilseite mit Anmeldung (03.11.2026) | **ChatGPT liest diese Kanäle** (`vorlagen/chatgpt-auftrag.md`, Abschnitt SOZIALE KANÄLE); Claude bestätigt an Website, Heimat-Info oder Veranstalter. Keine Texte oder Bilder übernehmen | S (Hinweis) |
+
 ### 3.10 Wirtschaft / Arbeitsplätze / Immobilien (wirtschaft)
 
 | Quelle | Herausgeber | Basis-URL, Muster | Format | Belegt | Sperre / Umweg | Rhythmus (Ist) | Stufe |
