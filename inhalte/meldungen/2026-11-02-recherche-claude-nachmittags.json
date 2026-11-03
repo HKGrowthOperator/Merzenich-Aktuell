@@ -7,8 +7,8 @@
       "ressort": "blaulicht",
       "ortsteil": "girbelsrath",
       "kicker": "Blaulicht · Verkehr",
-      "titel": "Tödlicher Unfall in Merzenich: Autofahrer stirbt nach Aufprall auf der L 264 bei Girbelsrath",
-      "dek": "Der Autofahrer, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.",
+      "titel": "Tödlicher Unfall in Merzenich: 22-Jähriger aus Euskirchen stirbt nach Aufprall auf der L 264",
+      "dek": "Der 22 Jahre alte Autofahrer aus Euskirchen, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.",
       "datum": "2026-11-02T18:56:00+01:00",
       "artikeltyp": "kurzmeldung",
       "relevanz": 1,
@@ -28,7 +28,7 @@
       ],
       "bildklasse": "verkehr.unfall.rettung",
       "absaetze": [
-        "Der Unfall auf der Landstraße 264 bei Girbelsrath hat ein Todesopfer gefordert. Der Autofahrer, der in der Nacht zum Dienstag, 27. Oktober, mit seinem Wagen von der Fahrbahn abgekommen war, ist am Freitag, 30. Oktober, im Krankenhaus gestorben. Das hat die Polizei Düren am Montag, 2. November, bekanntgegeben.",
+        "Der Unfall auf der Landstraße 264 bei Girbelsrath hat ein Todesopfer gefordert. Der 22 Jahre alte Autofahrer aus Euskirchen, der in der Nacht zum Dienstag, 27. Oktober, mit seinem Wagen von der Fahrbahn abgekommen war, ist am Freitag, 30. Oktober, im Krankenhaus gestorben. Das hat die Polizei Düren am Montag, 2. November, bekanntgegeben.",
         "Nach der ersten Mitteilung der Polizei war der Mann am 27. Oktober gegen 2.44 Uhr auf der L 264 unterwegs, von Eschweiler über Feld kommend in Richtung B 264. In Höhe Girbelsrath geriet sein Auto aus bislang ungeklärter Ursache nach rechts von der Straße, stieß gegen einen Verkehrszeichenmast, einen Leitpfosten und einen Baum und wurde zurück auf die Fahrbahn geschleudert. Ein Rettungswagen brachte ihn mit schweren Verletzungen in eine Klinik. Für die Arbeit eines speziellen Teams zur Unfallaufnahme blieb die Landstraße bis gegen 7.50 Uhr voll gesperrt.",
         "Weshalb der Wagen von der Fahrbahn abkam, sagt die Polizei auch in ihrer neuen Mitteilung nicht; die Ermittlungen hatte das Verkehrskommissariat übernommen. Weitere Fahrzeuge nennt die Polizei nicht, sie spricht von einem Alleinunfall. Den ersten Bericht von Merzenich Aktuell über den Unfall haben wir um die Todesnachricht ergänzt."
       ],
@@ -37,6 +37,13 @@
         "Alleinunfall am 27.10.2026 gegen 2.44 Uhr auf der L 264 in Höhe Girbelsrath; Kollision mit Verkehrszeichenmast, Leitpfosten und Baum; Vollsperrung bis gegen 7.50 Uhr (Polizei Düren, 27.10.2026)"
       ],
       "pruefung": [
+        {
+          "aussage": "Der Fahrer war 22 Jahre alt und kam aus Euskirchen (Angaben der Polizei; Veröffentlichung nach SCHREIBREGELN Abschnitt 7, Entscheidung 03.11.2026).",
+          "belege": [
+            "https://www.presseportal.de/blaulicht/pm/8/6382725"
+          ],
+          "stelle": "Pressemitteilung vom 02.11.2026, 15:08 Uhr, Titel, erster und zweiter Satz"
+        },
         {
           "aussage": "Der Fahrer ist am Freitag, 30. Oktober, im Krankenhaus gestorben; die Polizei Düren gab das am Montag, 2. November, bekannt.",
           "belege": [

@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.5, Stand 02.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich. Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.7, Stand 03.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich, und für die Eil-Prüfung (Abschnitt 2a). Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -24,8 +24,18 @@ Weil niemand mehr gegenliest, trägt der Lauf die volle Verantwortung: Was nicht
 | etwa 07:15 und 12:05 | ChatGPT-Dossier morgens und mittags (`*-morgens.md`, `*-mittags.md`) |
 | 09:13 und 14:43 | Routine startet den Lauf in der festen Redaktionssitzung (mit Push-Rechten auf das Repository); Bezeichnung `morgens` vor 12 Uhr, sonst `nachmittags` |
 | stündlich Minute 7 | WordPress-Abgleich holt die Import-XML |
+| 06:40, 10:40, 12:40, 16:40, 18:40, 20:40 | Eil-Prüfung in der Redaktionssitzung (Abschnitt 2a); 09:13 und 14:43 übernehmen die beiden Läufe |
 
 Zielzeit je Lauf: 60 bis 90 Minuten. Die Containeruhr läuft in UTC; Zeiten im Dossier mit `TZ=Europe/Berlin date` bestimmen. Sommerzeit endet/beginnt am letzten Sonntag im Oktober/März.
+
+## 2a. Eil-Prüfung (Entscheidung Luis Kummer 03.11.2026)
+
+Zweck: Blaulicht und Eilmeldungen aus Merzenich vor den anderen online, spätestens etwa zwei Stunden nach der Quelle (Anlass: Polizei 02.11. 15:08 Uhr, Radio Rur, Aachener Zeitung und andere 1 bis 3 Stunden später, wir 18:56 Uhr; `docs/SICHTBARKEITSPLAN-2026-11.md`). Kein vollständiger Lauf: kein ChatGPT-Dossier, keine Kalenderpflege, kein Dossier.
+
+1. **Prüfen (höchstens 10 Minuten):** Polizei Düren, Dienststellenliste https://www.presseportal.de/blaulicht/nr/8 (Einträge seit dem letzten Lauf oder der letzten Eil-Prüfung, Ortszeile oder Vorspann mit Merzenich, Golzheim, Girbelsrath, Morschenich, Bürgewald); Feuerwehr Merzenich (Heimat-Info-Profil und https://feuerwehr-merzenich.de/einsaetze); Heimat-Info-Beiträge der Gemeinde (Sperrungen, Warnungen, Ausfälle). Bestand vorher prüfen: Quelle schon in `inhalte/meldungen` oder `docs/redaktion/register.json`, Einsatznummer schon gedeckt?
+2. **Nichts Neues:** sofort beenden, eine Zeile Antwort („Eil-Prüfung HH:MM: nichts Neues“), kein Commit.
+3. **Neues mit Nachrichtenwert:** Kurzmeldung nach SCHREIBREGELN (150 bis 350 Wörter, eigene Worte, offizielle Quelle, Prüfprotokoll, „Merzenich“ im Titel, Einordnung aus dem eigenen Archiv, wenn vorhanden), `relevanz` nach Abschnitt 0a, Paket `inhalte/meldungen/<datum>-recherche-claude-eil-<HHMM>.json`. Bild nach Phase 4a. Dann `node qa/redaktion-lauf.mjs`, `node qa/eigenformulierung.mjs --datum <d> --lauf eil-<HHMM>`, Kette zweimal und `--check`, Commit, **sofort pushen**, Abgleich anstoßen, Live-Nachweis (Artikel HTTP 200, Nachrichten-Sitemap). Register: `research_runs`-Eintrag mit `edition: "eil-HHMM"`; `latest.md` eine Zeile.
+4. Eine Feuerwehr-Meldung, die die Automatik schon als Entwurf angelegt hat, wird nicht doppelt geschrieben; dann nur prüfen, ob sie in den Freigaben wartet, und im nächsten Lauf berichten.
 
 ## 3. Was sofort sichtbar wird
 
@@ -199,6 +209,7 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
+| 3.7 | 03.11.2026 | Entscheidung Luis Kummer: Eil-Prüfung alle zwei Stunden zwischen den Läufen (Abschnitt 2a); „Merzenich“ in jedem Titel (`qa/redaktion-lauf.mjs`); Alter und Wohnort bei Blaulicht so, wie die Polizei sie nennt (SCHREIBREGELN Abschnitt 7) |
 | 3.6 | 02.11.2026 | Entscheidung Luis Kummer: Heimat-Info-Veranstaltungskalender der Gemeinde in jedem Lauf vollständig prüfen und zum Auffüllen des Terminkalenders nutzen (Phase 1a, Schritt 2a); Automatik-Termine bleiben Entwurf; Prüfung in `qa/redaktion-lauf.mjs` |
 | 3.5 | 02.11.2026 | Entscheidung Luis Kummer: Top-Meldung mit `relevanz` 1 wird automatisch Aufmacher (Plugin 1.41.0 löst festen Aufmacher ab), Folgemeldung bei neuer Entwicklung mit eigenem Nachrichtenwert |
 | 3.4 | 02.11.2026 | Entscheidung Luis Kummer: Sofort pushen, jeder fertige Schritt direkt auf main, Lauf endet mit sauberem Arbeitsverzeichnis; Störung „Push scheitert“ |

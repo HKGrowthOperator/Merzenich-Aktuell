@@ -134,7 +134,7 @@ Ein `standard` wird `vertiefung`, wenn die zusätzliche Recherche mindestens dre
 
 - Genannt werden dürfen Amts- und Funktionsträger in ihrer Funktion (Bürgermeister, Beigeordnete, Pfarrer, Wehrleiter, Vereinsvorsitzende, Trainer) und Menschen, die öffentlich auftreten (Referenten, Künstler).
 - Nie: Schüler, Verletzte, Beschuldigte, Anwohner, Brautpaare und Jubilare, private Gastgeber, Teilnehmer. Auch nicht, wenn die Gemeinde sie in Heimat-Info nennt.
-- Blaulicht: keine Hausnummern, keine Kennzeichen, keine Altersangaben mit Ort, die eine Person erkennbar machen. (⚙ Hinweis nur für das Muster „…straße/weg/platz + Zahl“; alles andere Selbstprüfung)
+- Blaulicht: keine Namen, keine Hausnummern, keine Kennzeichen. Alter und Wohnort von Beteiligten nur so, wie die Polizei sie in ihrer Pressemitteilung nennt, auch im Titel („22-Jähriger aus Euskirchen“); nichts darüber hinaus (Arbeitgeber, Familie, Fotos, Angaben aus sozialen Netzwerken). Entscheidung Luis Kummer 03.11.2026. (⚙ Hinweis nur für das Muster „…straße/weg/platz + Zahl“; alles andere Selbstprüfung)
 - Kontaktadressen nur als Funktionsadresse aus der Quelle.
 
 ## 8. Eigene Formulierung, Zitate und Fremdtexte
