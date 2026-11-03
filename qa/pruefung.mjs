@@ -424,6 +424,9 @@ function pruefeJavaScript() {
 function pruefeInterneLinks() {
   const site = join(wurzel, 'chatgpt-site');
   const tot = new Map();
+  // Pfade mit Weiterleitung in chatgpt-site/_redirects (z. B. /umgebung/ nur auf WordPress, 02.11.2026) sind gültige Ziele.
+  const umgeleitet = new Set((existsSync(join(site, '_redirects')) ? lies(join(site, '_redirects')) : '').split('\n')
+    .map((z) => z.trim()).filter((z) => z && !z.startsWith('#')).map((z) => z.split(/\s+/)[0]).filter((q) => q.startsWith('/') && !q.includes('*') && !q.includes(':')));
   for (const datei of dateienUnter('chatgpt-site', '.html')) {
     const html = lies(datei);
     for (const m of html.matchAll(/href="(\/[^"#?]*)/g)) {
@@ -431,7 +434,7 @@ function pruefeInterneLinks() {
       if (h.startsWith('//') || h.startsWith('/api/') || h.startsWith('/admin') || h.startsWith('/redaktion')) continue;
       if (/\.(?:xml|ics|json|css|js|svg|png|webp|jpg|jpeg|pdf|txt|ico|woff2?)$/.test(h)) continue;
       const ziel = join(site, h);
-      const ok = (existsSync(ziel) && (h.endsWith('/') ? existsSync(join(ziel, 'index.html')) : true)) || existsSync(ziel + '/index.html') || existsSync(ziel.replace(/\/$/, '') + '.html');
+      const ok = umgeleitet.has(h) || (existsSync(ziel) && (h.endsWith('/') ? existsSync(join(ziel, 'index.html')) : true)) || existsSync(ziel + '/index.html') || existsSync(ziel.replace(/\/$/, '') + '.html');
       if (!ok) { if (!tot.has(h)) tot.set(h, []); tot.get(h).push(datei.replace(wurzel + '/', '')); }
     }
   }

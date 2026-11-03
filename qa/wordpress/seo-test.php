@@ -102,7 +102,9 @@ $lang = str_repeat('Ausführliche Beschreibung des Abends mit Musik und Tanz. ',
 pruefe('Langer Text bleibt, wie er ist (gekürzt)', ma_seo_auffuellen($lang, 'Am 1.1.2027', 'X.'), ma_seo_kuerzen($lang));
 pruefe('Listen mit eigener Beschreibung (Immobilien, Jobs, Trauer, Familie, Betriebe)', array_map(fn($d) => mb_strlen($d[2]) >= 110 && mb_strlen($d[2]) <= 160, ma_seo_listen()), ['ma_property' => true, 'ma_job' => true, 'ma_obituary' => true, 'ma_family_notice' => true, 'ma_business' => true]);
 pruefe('/betriebe/ nicht mehr gleich betitelt wie /unternehmen/', ma_seo_listen()['ma_business'][1] !== ma_seo_ressorte()['unternehmen'][1], true);
-pruefe('Seitentexte Service, Diskussion, Archiv, Impressum, Heute 110 bis 160 Zeichen', array_values(array_map(fn($t) => mb_strlen($t) >= 110 && mb_strlen($t) <= 160, ma_seo_seitentexte())), [true, true, true, true, true]);
+// Jede Seite mit eigenem Text (seit 1.42.0 auch /umgebung/) hält 110 bis 160 Zeichen; die Anzahl wächst mit neuen Seiten.
+pruefe('Seitentexte Service, Diskussion, Archiv, Impressum, Heute, Umgebung 110 bis 160 Zeichen', array_values(array_map(fn($t) => mb_strlen($t) >= 110 && mb_strlen($t) <= 160, ma_seo_seitentexte())), array_fill(0, count(ma_seo_seitentexte()), true));
+pruefe('Seitentexte: mindestens sechs Seiten', count(ma_seo_seitentexte()) >= 6, true);
 
 echo "\nTeilen-Zuschnitte (teilen-bilder.php)\n";
 pruefe('3:2-Foto 1536×1024 → 16:9 1200×675 aus der Mitte', ma_seo_zuschnitt_masse(1536, 1024, 16, 9), ['x' => 0, 'y' => 80, 'w' => 1536, 'h' => 864, 'zw' => 1200, 'zh' => 675]);
