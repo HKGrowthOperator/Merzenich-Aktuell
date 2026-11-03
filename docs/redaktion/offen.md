@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 97 |
-| uebernommen | 32 |
-| gesperrt | 28 |
+| uebernommen | 33 |
+| gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 3 |
@@ -149,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-03 morgens (Claude): 1 neue Kurzmeldung (Jugendgremium tagt am 4.11., Rathaus-Vorschau, relevanz 2, live 09:20), 21 Termine bis 16.11. bestätigt, Heimat-Info-Kalender unverändert. Korrekturauftrag Feuerwehr 144/26 betrifft die Automatik (Generator setzt Einsatzdatum 12 Uhr als Veröffentlichung), offen für Luis. qa/pruefung: vorbestehender Fehler /umgebung/ aus SEO-Commit 4d96722. – Commit 7bd157f
 - 2026-11-03 morgens (ChatGPT): Keine neue Themenkarte oder Terminänderung. Neue Feuerwehrquelle144/26 bereits live, Unfalltod durch Claude verarbeitet; keine Dubletten. Beide Unfall-Sachtexte gegen Polizei-Originale ohne Sachkorrektur geprüft. Prüf-/Korrekturauftrag: Feuerwehrartikel zeigt Einsatzdatum27.10.12Uhr als Veröffentlichung;12Uhr ist technischer Ersatzwert, tatsächliche Veröffentlichungszeit im CMS ermitteln. Amtsblatt-Korrektur umgesetzt. Dienstägliche Fußballprüfung, keine neue belegte Entwicklung; SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld04.11.01Uhr, genaue Dauer offen.
 - 2026-11-02 nachmittags (Claude): Erster Routinelauf in der festen Redaktionssitzung. 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau stehen bereits als Handbeiträge im Live-Archiv, Mindesttakt 02.11. erfüllt), 1 Update (Unfall L 264: Fahrer gestorben, Polizei 02.11. 15:08), 1 Terminkorrektur (Amtsblatt-Abgabeschluss ganztägig, Auftrag ChatGPT), 2 neue Termine (Abgabeschlüsse 1.12., 29.12.). Commons-Bilddatei 429. – Commit 8fcc8c9
 - 2026-11-02 mittags (ChatGPT): Neue T2-Karte Einbruch Bahnstraße: Polizeimeldung11:54, unabhängige Ereignisbestätigung fehlt. Kalenderkorrektur Amtsblatt-Abgabeschluss: sichtbare12Uhr nur Platzhalter, Quelle nennt03.11. ohne Uhrzeit. TTC-Ergebnisnachtrag sachlich ohne Korrektur; Unfallartikel ohne Korrektur. Frühstücksfrist5.11.11:30 im Amtsblatt bestätigt und bereits von Claude umgesetzt. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld15Uhr, genaue Dauer offen.
-- 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung, erweitert um die verlorenen Claude-Läufe 30.10. nachmittags bis 02.11. morgens (Sitzungen ohne Push-Recht). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung, click-TT), 6 neue Termine aus Amtsblatt 11/2026, 2 geänderte Termine (Frühstück mit Anmeldefrist 5.11. beim Kindergottesdienst, Wortlaut Volkstrauertag), Kalender 60 Tage geprüft (28 von 30 Bestandsterminen, VHS 404, Amtsblatt-Index 428), Fußballtabelle in sport-current.json aktualisiert. Korrekturaufträge der sechs Dossiers: keine. T1-Karte Halloween veraltet. Commons 429, kein neues Foto. – Commit e53e231

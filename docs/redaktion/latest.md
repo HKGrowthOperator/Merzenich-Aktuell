@@ -1,11 +1,11 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [02.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-02-claude-nachmittags.md), Vergleichsbasis [ChatGPT 02.11. mittags](dossiers/2026-11-02-mittags.md) und [Claude-Morgenlauf 02.11. mit Nachholung der Läufe seit 30.10.](dossiers/2026-11-02-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [03.11.2026, Claude-Morgenlauf](dossiers/2026-11-03-claude-morgens.md), Vergleichsbasis [ChatGPT 03.11. morgens](dossiers/2026-11-03-morgens.md) und [Claude 02.11. nachmittags](dossiers/2026-11-02-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
 
-**Umgesetzt am 02.11. nachmittags:** 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau standen schon als Handbeiträge im Live-Archiv; Mindesttakt 02.11. damit erfüllt), 1 Update am Unfallartikel L 264 Girbelsrath (Fahrer am 30.10. gestorben, Polizei 02.11.), Korrektur Amtsblatt-Abgabeschluss 3.11. (ganztägig, per E-Mail), 2 neue Termine (Abgabeschlüsse 1.12. und 29.12.). Commit `8fcc8c9`. Morgens: TTC-Update, 8 neue Termine, Kalender bis 01.01.2027, Fußballtabelle (Commits `0e926b7`, `e53e231`).
+**Umgesetzt am 03.11. morgens:** 1 neue Kurzmeldung („Jugendgremium Merzenich tagt am 4. November“, Rathaus, live 09:20 Uhr), 21 Termine bis 16.11. an der Quelle bestätigt, Heimat-Info-Kalender unverändert. Aufmacher bleibt die Folgemeldung zum Verkehrstod auf der L 264 (Stufe 1 vom 02.11.). Commits `7bd157f`, `7fb625f`.
 
-**Systembefunde:** Routinen 09:13 und 14:43 laufen jetzt in der festen Redaktionssitzung; der 14:43-Lauf kam um 15:46 Uhr an. Handbeiträge in WordPress stehen nicht im Repository, `qa/redaktion-lauf.mjs` zählt sie beim Mindesttakt nicht mit. gemeinde-merzenich.de antwortet dieser Sitzung auf Unterseiten mit HTTP 428, vhs-rur-eifel.de mit HTTP 404, Commons-Bilddateien mit HTTP 429.
+**Systembefunde:** Die Feuerwehr-Automatik setzt das Einsatzdatum mit 12 Uhr als Veröffentlichungsdatum (Korrekturauftrag ChatGPT 03.11., Generator `deploy/automatik-feuerwehr.mjs`). `qa/pruefung.mjs` meldet seit dem SEO-Commit `4d96722` „/umgebung/ führt ins Leere“ (nur WordPress-Seite). SEO-KEYWORDS Regel 5 widerspricht der Folgemeldungsregel in SCHREIBREGELN 0a. gemeinde-merzenich.de antwortet dieser Sitzung mit HTTP 428, vhs-rur-eifel.de mit HTTP 404.
 
-**Offen:** Mindesttakt 03.11. (Kandidaten Jugendgremium 4.11., Kripo-Info und Lesung 5.11.), Tischtennis-Themenfoto, Vertiefungen eigener kurzer Artikel (ELW, Amprion, Pfarrer Galbierz, Jugendzeltplatz), Bürgersprechstunde Golzheim (30.10. oder 13.11.), VHS-Vortrag 10.11., Zweitquellen Seniorennachmittag und Wildpferdeexkursion, SC III Endstand.
+**Offen:** zweite Meldung des Tages im Nachmittagslauf, Update Jugendgremium nach der Sitzung, Entscheidungen zu Feuerwehr-Automatik, Folgemeldungsregel und `/umgebung/`, Bürgersprechstunde Golzheim (30.10. oder 13.11.), VHS-Vortrag 10.11., Bildpools Unfall/Rettung/Tischtennis, Vertiefungen eigener kurzer Artikel.
 
 [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)

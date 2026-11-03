@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-03-morgens.md",
-  "source_check_window": "03.11.2026 morgens Europe/Berlin; Direktabrufe 07:04:40–07:06:33, ergänzende Repository-Prüfung ca.07:07; tatsächliche Bereitstellung am bestätigten main-Ref/Commit samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-11-03-claude-morgens.md",
+  "source_check_window": "03.11.2026 morgens Europe/Berlin; Live-Abrufe 09:15 bis 09:19 Uhr.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3795,15 +3795,15 @@
       "priority": "P1",
       "location_section": "Merzenich · Rathaus/Jugend",
       "change_type": "Nachfassen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-03 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-morgens.json → /rathaus/jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten.",
+      "implementation_commit": "7bd157f",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten. | Claude 03.11. morgens: Kurzmeldung zur 4. Sitzung am 04.11. nach CLAUDE-LAUF 3.3 (offizielle Quelle trägt Kurzmeldung, T2 wegen Zweitquelle entfällt); Tagesordnung, Vorlage 135/2026 und termine.ics gelesen, leere Dokumentation im Text benannt; live 03.11., 09:20 Uhr (HTTP 200). Update nach der Sitzung mit Priorisierung, sobald veröffentlicht.",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -3828,6 +3828,12 @@
           "dossier": "dossiers/2026-10-28-morgens.md",
           "heading": "MA-JUGENDGREMIUM-STATUS",
           "check_scope": "Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung."
+        },
+        {
+          "date": "2026-11-03",
+          "dossier": "dossiers/2026-11-03-claude-morgens.md",
+          "heading": "1. Umgesetzt",
+          "check_scope": "RIS-Tagesordnung, Vorlage 135/2026, termine.ics"
         }
       ],
       "latest_research_dossier": "dossiers/2026-10-28-morgens.md",
@@ -11410,6 +11416,16 @@
         "result": "keine neue konkret belegte Entwicklung; SCIII-Endstand offen"
       },
       "qa": "Alle bestehenden Themen, Archivdaten, Claude-Notizen, Artikelpfade, Umsetzungscommits und historischen Läufe unverändert erhalten; nur neuen Lauf angehängt und Recherche-Einstieg aktualisiert. Vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-03",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-03-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-03-morgens.md",
+      "implementation_commit": "7bd157f",
+      "summary": "1 neue Kurzmeldung (Jugendgremium tagt am 4.11., Rathaus-Vorschau, relevanz 2, live 09:20), 21 Termine bis 16.11. bestätigt, Heimat-Info-Kalender unverändert. Korrekturauftrag Feuerwehr 144/26 betrifft die Automatik (Generator setzt Einsatzdatum 12 Uhr als Veröffentlichung), offen für Luis. qa/pruefung: vorbestehender Fehler /umgebung/ aus SEO-Commit 4d96722.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }
