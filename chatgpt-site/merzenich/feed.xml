@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Tue, 03 Nov 2026 13:49:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 03 Nov 2026 17:51:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/</guid>
+<pubDate>Tue, 03 Nov 2026 17:51:00 GMT</pubDate>
+<category>Vereine</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-15-30a6b323da.jpg" medium="image"><media:credit>Goltziusjester / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Jester Fool</media:description></media:content>
+</item>
 <item>
 <title>Solarpark an der A4 in Merzenich: Bauausschuss berät über 36 Hektar Photovoltaik mit Batteriespeicher</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Zum zweiten Mal gibt es in der Aula der Gesamtschule in Merzenich Impulse, Musik und Projektionen zu ökologischem Wandel und sozialem Miteinander.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
-</item>
-<item>
-<title>Krätzchensitzung zieht in die Weinberghalle: Gemeinde und drei KGs laden für den 23. Januar ein</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/kraetzchensitzung-weinberghalle-23-januar-2027/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/kraetzchensitzung-weinberghalle-23-januar-2027/</guid>
-<pubDate>Fri, 16 Oct 2026 07:08:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die gemeinsame Sitzung von Gemeinde und Karnevalsgesellschaften findet erstmals in der größeren Merzenicher Weinberghalle statt. Karten kosten 15 Euro.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-15-30a6b323da.jpg" medium="image"><media:credit>Goltziusjester / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Jester Fool</media:description></media:content>
 </item>
 </channel>
 </rss>

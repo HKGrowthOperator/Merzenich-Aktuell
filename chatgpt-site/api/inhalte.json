@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-03T14:49:00+01:00",
- "anzahl": 221,
+ "generated": "2026-11-03T18:51:00+01:00",
+ "anzahl": 222,
  "bestand": {
-  "gesamt": 221,
+  "gesamt": 222,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 74,
@@ -12,11 +12,11 @@
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
-   "vereine": 17,
+   "vereine": 18,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 151,
+   "merzenich": 152,
    "golzheim": 24,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 221,
+    "anzahl": 222,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -57,7 +57,7 @@
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 17,
+    "anzahl": 18,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 151,
+    "anzahl": 152,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-03-karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag",
+   "url": "/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
+   "titel": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag",
+   "teaser": "Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.",
+   "kicker": "Vereine · Karneval",
+   "ressort": "vereine",
+   "ressortLabel": "Vereine",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-03T18:51:00+01:00",
+   "aktualisiert": "2026-11-03T18:51:00+01:00",
+   "lesezeit": "4 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "karneval",
+     "label": "Karneval"
+    },
+    {
+     "slug": "kg-jonge-vom-berg",
+     "label": "KG Jonge vom Berg"
+    },
+    {
+     "slug": "kg-golzheim",
+     "label": "KG Mir hahle Poohl Golzheim"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-15-30a6b323da.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-15-30a6b323da-480.webp 480w, /assets/editorial-pools/themen/themen-15-30a6b323da-800.webp 800w, /assets/editorial-pools/themen/themen-15-30a6b323da-1200.webp 1200w, /assets/editorial-pools/themen/themen-15-30a6b323da.jpg 1920w",
+    "alt": "Jester Fool",
+    "width": 1920,
+    "height": 2560,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Goltziusjester / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-03-solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher",
    "url": "/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
@@ -9187,6 +9229,11 @@
  },
  "nebenmeldungen": [
   {
+   "id": "2026-11-03-karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag",
+   "url": "/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
+   "titel": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag"
+  },
+  {
    "id": "2026-11-03-jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv",
    "url": "/rathaus/jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv/",
    "titel": "Jugendgremium Merzenich tagt am 4. November: Wünsche vom Ortsfest und Nahverkehr auf der Tagesordnung"
@@ -9200,11 +9247,6 @@
    "id": "2026-11-02-toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02",
    "url": "/blaulicht/toedlicher-unfall-l264-girbelsrath-autofahrer-im-krankenhaus-gestorben-2026-11-02/",
    "titel": "Tödlicher Unfall in Merzenich: 22-Jähriger aus Euskirchen stirbt nach Aufprall auf der L 264"
-  },
-  {
-   "id": "2026-10-26-amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026",
-   "url": "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/",
-   "titel": "Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt"
   }
  ],
  "startseitenMotive": {
@@ -9234,7 +9276,7 @@
   "editorial-pools/feuerwehr/feuerwehr-15-78d45fb015": 1,
   "editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f": 1,
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
-  "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
+  "editorial-pools/kultur/kultur-01-8826d38c5d": 1,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/menschen/menschen-06-1835323b3c": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 1,
@@ -9244,7 +9286,7 @@
   "editorial-pools/themen/themen-08-5f0f3260df": 1,
   "editorial-pools/themen/themen-11-59fc252a23": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
-  "editorial-pools/themen/themen-15-30a6b323da": 1,
+  "editorial-pools/themen/themen-15-30a6b323da": 2,
   "editorial-pools/themen/themen-16-b1fd3ef820": 1,
   "editorial-pools/themen/themen-19-deb8f481da": 2,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
@@ -9266,7 +9308,7 @@
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3",
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91",
-  "editorial-pools/themen/themen-16-b1fd3ef820"
+  "editorial-pools/themen/themen-15-30a6b323da"
  ],
  "motivMax": 2
 }

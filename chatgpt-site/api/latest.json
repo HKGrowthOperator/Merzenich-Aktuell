@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-03T14:49:00+01:00",
-  "stand": "2026-11-03T14:49:00+01:00",
+  "generated": "2026-11-03T18:51:00+01:00",
+  "stand": "2026-11-03T18:51:00+01:00",
   "items": [
+    {
+      "title": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
+      "date": "2026-11-03T18:51:00+01:00",
+      "ressort": "vereine",
+      "ort": "merzenich",
+      "teaser": "Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-15-30a6b323da.jpg"
+    },
     {
       "title": "Solarpark an der A4 in Merzenich: Bauausschuss berät über 36 Hektar Photovoltaik mit Batteriespeicher",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
@@ -172,15 +181,6 @@
       "ort": "golzheim",
       "teaser": "Der Gemeinderat hat am 30. September einstimmig beschlossen, den Förderantrag für das Rheinische Revier mit der angepassten Entwurfsplanung einzureichen. Weil sich die Kosten verändert haben, soll die neue Variante im Bauausschuss noch einmal beraten werden.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
-    },
-    {
-      "title": "Gemeinderat tagt am 3. Dezember: die Sitzungstermine bis Jahresende",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/sitzungstermine-gemeinderat-3-dezember-2026/",
-      "date": "2026-10-25T22:22:00+01:00",
-      "ressort": "rathaus",
-      "ort": "merzenich",
-      "teaser": "Das Ratsinformationssystem nennt sechs Sitzungen bis Dezember, vom Jugendgremium am 4. November bis zum Gemeinderat am 3. Dezember.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg"
     }
   ],
   "events": [

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T13:50:31.643Z",
+  "updatedAt": "2026-11-03T17:55:10.847Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1556,6 +1556,15 @@
       "assignedAt": "2026-11-03T13:50:31.642Z",
       "articleId": "2026-11-03-solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher",
       "articleDate": "2026-11-03T14:49:00+01:00"
+    },
+    "/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/": {
+      "imageId": "web-themen-15-30a6b323",
+      "pool": "themen",
+      "motiv": "karneval",
+      "regel": "vereine.karneval",
+      "assignedAt": "2026-11-03T17:55:10.847Z",
+      "articleId": "2026-11-03-karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag",
+      "articleDate": "2026-11-03T18:51:00+01:00"
     }
   }
 }

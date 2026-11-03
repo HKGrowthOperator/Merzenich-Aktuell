@@ -53,9 +53,12 @@ async function quelleLaden(url) {
     const dir = mkdtempSync(join(tmpdir(), 'eigen-'));
     try {
       writeFileSync(join(dir, 'q.pdf'), daten);
-      const p = spawnSync('pdftotext', ['-layout', join(dir, 'q.pdf'), '-'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-      if (p.status !== 0) throw new Error('PDF nicht lesbar');
-      return p.stdout;
+      // Zweispaltige PDFs (Amtsblatt): -layout mischt die Spalten, ein kopierter Satz fiel dann unter die Grenze
+      // (Gegenprobe 03.11.2026: nur 8 statt 26 Wörter erkannt). Deshalb beide Lesarten, Zeilenumbrüche mit Trennstrich zusammengefügt.
+      const lies = (opts) => spawnSync('pdftotext', [...opts, join(dir, 'q.pdf'), '-'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+      const a = lies(['-layout']); const b = lies([]);
+      if (a.status !== 0 && b.status !== 0) throw new Error('PDF nicht lesbar');
+      return `${a.stdout || ''}\n${String(b.stdout || '').replace(/(\p{L})-\n(\p{Ll})/gu, '$1$2')}`;
     } finally { rmSync(dir, { recursive: true, force: true }); }
   }
   return htmlText(daten.toString('utf8'));
