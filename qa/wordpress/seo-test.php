@@ -180,6 +180,11 @@ $gt = ma_seo_graph(['typ' => 'thema', 'titel' => 'Polizei: Meldungen aus Merzeni
 $bt = $finde($gt, 'BreadcrumbList')['itemListElement'];
 pruefe('Thema: Brotkrumen Start und Thema mit item, nur die letzte Stufe ohne (Search Console 04.10.2026)', [count($bt), $bt[0]['item'] ?? '', $bt[1]['item'] ?? '', isset($bt[2]['item'])], [3, $HOME, $HOME . 'thema/', false]);
 pruefe('Seite: AboutPage mit dateModified und Brotkrumen', $finde($g, 'AboutPage')['dateModified'] === '2026-10-02T10:00:00+02:00' && $finde($g, 'BreadcrumbList') !== null, true);
+$faq = ma_seo_faq_aus_html('<p>Stand.</p><h2 id="a">Zeitachse</h2><ul><li>1939</li></ul><h2 id="b">Wie melde ich Sperrmüll an?</h2><p>Nur <a href="/x">online</a> &amp; ab 6 Uhr.</p><h2 id="c">Leer?</h2>');
+pruefe('FAQ aus HTML (1.48.0): nur Fragen mit Antwort, Klartext ohne Tags', $faq, [['Wie melde ich Sperrmüll an?', 'Nur online & ab 6 Uhr.']]);
+$gf = ma_seo_graph(['typ' => 'seite', 'titel' => 'Abfall', 'beschreibung' => 'x', 'url' => $HOME . 'abfall/', 'bild' => null, 'krumen' => [], 'faq' => $faq], $ORG);
+pruefe('Seite mit FAQ wird FAQPage mit Question und Answer', [$finde($gf, 'FAQPage')['mainEntity'][0]['name'] ?? '', $finde($gf, 'FAQPage')['mainEntity'][0]['acceptedAnswer']['text'] ?? ''], ['Wie melde ich Sperrmüll an?', 'Nur online & ab 6 Uhr.']);
+pruefe('FAQ-Seiten: Faktenseiten mit Fragen', ma_seo_faq_seiten(), ['merzenich-in-zahlen', 'abfall', 'strukturwandel']);
 pruefe('Graph ist gültiges JSON ohne leere Werte', !str_contains(json_encode($g), '""') && !str_contains(json_encode($g), 'null'), true);
 
 echo "\nGoogle-Bestätigungsdatei\n";

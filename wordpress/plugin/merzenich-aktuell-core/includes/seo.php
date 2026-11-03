@@ -409,7 +409,13 @@ function ma_seo_graph(array $k, array $o): array {
             $graph[] = ['@type' => 'CollectionPage', '@id' => $url . '#webpage', 'name' => $k['titel'], 'url' => $url, 'description' => $k['beschreibung'], 'isPartOf' => ['@id' => $home . '#website'], 'inLanguage' => 'de-DE', 'mainEntity' => ma_seo_itemlist($k['liste'] ?? [])];
             break;
         case 'seite': case 'eintrag':
-            $graph[] = ['@type' => $k['seitenart'] ?? 'WebPage', '@id' => $url . '#webpage', 'url' => $url, 'name' => $k['titel'], 'description' => $k['beschreibung'], 'isPartOf' => ['@id' => $home . '#website'], 'inLanguage' => 'de-DE', 'dateModified' => $k['geaendert'] ?? null];
+            $s = ['@type' => $k['seitenart'] ?? 'WebPage', '@id' => $url . '#webpage', 'url' => $url, 'name' => $k['titel'], 'description' => $k['beschreibung'], 'isPartOf' => ['@id' => $home . '#website'], 'inLanguage' => 'de-DE', 'dateModified' => $k['geaendert'] ?? null];
+            // Faktenseiten mit Fragen als Überschrift (1.48.0): FAQPage, damit KI-Suchen Frage und Antwort zuordnen.
+            if (!empty($k['faq'])) {
+                $s['@type'] = 'FAQPage';
+                $s['mainEntity'] = array_map(fn($f) => ['@type' => 'Question', 'name' => $f[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f[1]]], $k['faq']);
+            }
+            $graph[] = $s;
             break;
     }
     if (!empty($k['krumen']) && count($k['krumen']) > 1) {
@@ -417,6 +423,29 @@ function ma_seo_graph(array $k, array $o): array {
     }
     $graph = array_map(fn($e) => array_filter($e, fn($v) => $v !== null && $v !== '' && $v !== []), $graph);
     return ['@context' => 'https://schema.org', '@graph' => $graph];
+}
+
+/** Faktenseiten, deren Fragen als FAQPage ausgezeichnet werden (1.48.0). */
+function ma_seo_faq_seiten(): array {
+    return ['merzenich-in-zahlen', 'abfall', 'strukturwandel'];
+}
+
+/**
+ * Fragen und Antworten aus Seiten-HTML: jede h2, die auf „?“ endet, mit dem Klartext bis zur
+ * nächsten h2 als Antwort (höchstens 600 Zeichen). Reine Funktion, getestet in seo-test.php.
+ */
+function ma_seo_faq_aus_html(string $html): array {
+    $faq = [];
+    $teile = preg_split('~<h2\b[^>]*>~i', $html);
+    array_shift($teile);
+    foreach ($teile as $teil) {
+        [$frage, $rest] = array_pad(preg_split('~</h2>~i', $teil, 2), 2, '');
+        $frage = trim(html_entity_decode(strip_tags($frage), ENT_QUOTES, 'UTF-8'));
+        if (!str_ends_with($frage, '?')) continue;
+        $antwort = ma_seo_klartext($rest, 600);
+        if ($antwort !== '') $faq[] = [$frage, $antwort];
+    }
+    return $faq;
 }
 
 function ma_seo_itemlist(array $liste): array {
@@ -572,7 +601,8 @@ function ma_seo_kontext(): array {
         if ($o->post_parent) $krumen[] = [html_entity_decode(get_the_title($o->post_parent), ENT_QUOTES, 'UTF-8'), get_permalink($o->post_parent)];
         $krumen[] = [html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), null];
         $k = array_merge($k, ['typ' => $o->post_type === 'page' ? 'seite' : 'eintrag', 'titel' => $o->post_type === 'page' && isset(ma_seo_seitentitel()[$o->post_name]) ? ma_seo_seitentitel()[$o->post_name] : html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8'), 'beschreibung' => $o->post_type === 'page' && isset(ma_seo_seitentexte()[$o->post_name]) ? ma_seo_seitentexte()[$o->post_name] : ma_seo_kuerzen(trim($o->post_excerpt) !== '' ? $o->post_excerpt : $o->post_content), 'url' => get_permalink($o),
-            'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage', 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)
+            'krumen' => $krumen, 'bild' => ma_seo_bild($o), 'geaendert' => get_post_modified_time('c', false, $o), 'seitenart' => $arten[$o->post_name] ?? 'WebPage',
+            'faq' => $o->post_type === 'page' && in_array($o->post_name, ma_seo_faq_seiten(), true) ? ma_seo_faq_aus_html((string) $o->post_content) : [], 'index' => !in_array($o->post_type, ['ma_obituary', 'ma_family_notice'], true)
                 // Übernommene Stellen und Immobilien (Kopien der Portale, 1.26.0) nicht als eigene Inhalte werten.
                 && (string) get_post_meta($o->ID, 'ma_markt_id', true) === '']);
     } elseif (is_category() && $o instanceof WP_Term) {
