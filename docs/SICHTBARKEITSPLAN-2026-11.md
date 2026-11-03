@@ -42,7 +42,7 @@ Ohne diese Schritte bleibt alles andere unsichtbar. Anleitung im Detail: `docs/S
 | W4 | Lesezugang für die Redaktionssitzung (Dienstkonto als Umgebungsgeheimnis `GOOGLE_SERVICE_ACCOUNT_JSON`) | 15 Min. | Wöchentliche Zahlen in `docs/SEO-STAND.md` | offen |
 | W5 | Publisher Center anlegen, Rubriken als Feeds | 30 Min. | Publikation sichtbar, Logo da | **erledigt 02.11.**: Publikation „Merzenich Aktuell“ (Deutschland, Deutsch). Rubriken und Logos gibt es dort seit März 2025 nicht mehr; Google erzeugt die Publikationsseite selbst |
 | W6 | Bing Webmaster Tools aus der Search Console importieren | 10 Min. | Sitemaps in Bing, IndexNow-Einträge | **erledigt 02.11.**: Import aus der Search Console, beide Sitemaps „Success“ |
-| W7 | Alte Vorschauadresse löschen oder umleiten | 10 Min. | keine Antwort 503 mehr | offen; DNS liegt bei **All-Inkl (KAS)**, nicht bei IONOS: A-Eintrag `merzenichaktuell` → 167.233.76.202 (Coolify, keine App mehr) löschen |
+| W7 | ~~Alte Vorschauadresse löschen oder umleiten~~ | – | – | **gestrichen 03.11.2026 (Luis Kummer): Die alte Adresse `merzenichaktuell.hk-growthoperator.de` hat damit nichts zu tun. Nicht anfassen, nicht vorschlagen.** |
 
 ### 🪵 Stamm: schneller und treffender als die anderen (ab heute, Redaktion und Code)
 

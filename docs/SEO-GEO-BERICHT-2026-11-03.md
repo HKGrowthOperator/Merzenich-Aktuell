@@ -24,7 +24,7 @@ Kennzeichnung wie im Plan: **[Code]** setzt die Redaktionssitzung im Repository 
 | Ortsseiten | Titel und `Place`-Daten mit Wikidata gut; Einleitung nur etwa 25 Wörter | dünn |
 | Überschriften | H1 „Alle Meldungen“, „Heute & die nächsten Tage“, „Feuerwehr, Polizei und Rettungsdienst“ ohne „Merzenich“ | kleine Lücke |
 | `/umgebung/` | HTTP 404, weil Plugin 1.42.0 nie gebaut wurde; 1.43.0 ist live, die Seite entsteht beim nächsten stündlichen Lauf oder beim nächsten Besuch im Backend | wird von selbst behoben |
-| Alte Vorschauadresse | `merzenichaktuell.hk-growthoperator.de` antwortet mit 503 statt Weiterleitung | Betreiber |
+| Alte Vorschauadresse | gestrichen 03.11.2026 (Luis Kummer): hat damit nichts zu tun, nicht anfassen | – |
 
 ---
 
@@ -77,7 +77,7 @@ Was Google für die Reihenfolge in News und Top Stories wertet: Aktualität, reg
 | 9 | `llms-full.txt` fehlt | KI-Systeme lesen gern eine Volltextfassung der wichtigsten Seiten | Code | 1 Std. |
 | 10 | H1 ohne „Merzenich“ auf `/nachrichten/`, `/termine/`, `/blaulicht/` | Kleines Relevanzsignal, kostet nichts | Code (Theme) | 30 Min. |
 | 11 | Faktenseiten fehlen („Merzenich in Zahlen“, Notdienste, Abfuhr, Ortsteile, Strukturwandel) | Das sind die Seiten, die KI-Antworten zitieren | Redaktion, Code | je 1 Lauf |
-| 12 | Alte Vorschauadresse 503 | Doppelter Inhalt, falls Google sie noch kennt | Betreiber | 10 Min. |
+| 12 | ~~Alte Vorschauadresse~~ | gestrichen 03.11.2026 (Luis Kummer): nicht anfassen | – | – |
 
 ---
 
@@ -120,7 +120,7 @@ Zugangsdaten und Schlüssel gehören nie in den Chat und nie in eine Datei im Re
 
 ### F. Aufräumen bei IONOS (10 Minuten)
 
-1. Die alte Vorschauadresse `merzenichaktuell.hk-growthoperator.de` entweder im DNS löschen oder per 301 auf `https://merzenich-aktuell.de/` umleiten.
+1. ~~Alte Vorschauadresse~~: gestrichen am 03.11.2026 (Luis Kummer), hat damit nichts zu tun; nicht anfassen.
 2. **Entscheidung Seiten-Cache:** IONOS bietet für WordPress ein Performance-Paket, alternativ ein Cache-Plugin. Vorher mit der Redaktionssitzung testen, damit Werbung, Push-Hinweis und Freigaben weiter funktionieren.
 
 ---
