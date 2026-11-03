@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-02-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -129,6 +129,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Dossier: [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-17-morgens.md](dossiers/2026-10-17-morgens.md), [2026-10-18-morgens.md](dossiers/2026-10-18-morgens.md), [2026-10-19-morgens.md](dossiers/2026-10-19-morgens.md), [2026-10-20-morgens.md](dossiers/2026-10-20-morgens.md), [2026-10-21-morgens.md](dossiers/2026-10-21-morgens.md), [2026-10-22-morgens.md](dossiers/2026-10-22-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md)
 - Möglicher Bestand (Stichwort): `rueckblick-oldieabend-ortsfest-merzenich-2026` – Oldieabend und Ortsfest: Gemeinde blickt auf das Festwochenende im Ortskern zurück (2026-10-13, inhalte/meldungen/2026-10-13-recherche-chatgpt.json)
 - Möglicher Bestand (Stichwort): `ortsfest-oldieabend-team-ortsfest-ehrenamtliche-gesucht-2026` – Ortsfest und Oldieabend: Gemeinde sucht vier bis sechs Ehrenamtliche für ein „Team Ortsfest“ (2026-10-16, inhalte/meldungen/2026-10-16-amtsblatt-11.json)
+- Möglicher Bestand (Stichwort): `jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv` – Jugendgremium Merzenich tagt am 4. November: Wünsche vom Ortsfest und Nahverkehr auf der Tagesordnung (2026-11-03, inhalte/meldungen/2026-11-03-recherche-claude-morgens.json)
 - Möglicher Bestand (Stichwort): `ortsfest-oldieabend-2026-sperrung` – Oldieabend und Ortsfest: Ortskern von Freitag 16 Uhr bis Samstag 22 Uhr gesperrt (2026-09-28, inhalte/meldungen/2026-heimatinfo-vereine.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
@@ -148,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-03 morgens (ChatGPT): Keine neue Themenkarte oder Terminänderung. Neue Feuerwehrquelle144/26 bereits live, Unfalltod durch Claude verarbeitet; keine Dubletten. Beide Unfall-Sachtexte gegen Polizei-Originale ohne Sachkorrektur geprüft. Prüf-/Korrekturauftrag: Feuerwehrartikel zeigt Einsatzdatum27.10.12Uhr als Veröffentlichung;12Uhr ist technischer Ersatzwert, tatsächliche Veröffentlichungszeit im CMS ermitteln. Amtsblatt-Korrektur umgesetzt. Dienstägliche Fußballprüfung, keine neue belegte Entwicklung; SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld04.11.01Uhr, genaue Dauer offen.
 - 2026-11-02 nachmittags (Claude): Erster Routinelauf in der festen Redaktionssitzung. 0 neue Meldungen (Einbruch Bahnstraße und Wochenvorschau stehen bereits als Handbeiträge im Live-Archiv, Mindesttakt 02.11. erfüllt), 1 Update (Unfall L 264: Fahrer gestorben, Polizei 02.11. 15:08), 1 Terminkorrektur (Amtsblatt-Abgabeschluss ganztägig, Auftrag ChatGPT), 2 neue Termine (Abgabeschlüsse 1.12., 29.12.). Commons-Bilddatei 429. – Commit 8fcc8c9
 - 2026-11-02 mittags (ChatGPT): Neue T2-Karte Einbruch Bahnstraße: Polizeimeldung11:54, unabhängige Ereignisbestätigung fehlt. Kalenderkorrektur Amtsblatt-Abgabeschluss: sichtbare12Uhr nur Platzhalter, Quelle nennt03.11. ohne Uhrzeit. TTC-Ergebnisnachtrag sachlich ohne Korrektur; Unfallartikel ohne Korrektur. Frühstücksfrist5.11.11:30 im Amtsblatt bestätigt und bereits von Claude umgesetzt. VHS404, Golzheim-Konflikt offen. Bahn-Endefeld15Uhr, genaue Dauer offen.
 - 2026-11-02 morgens (Claude): Nachgeholter Morgenlauf in der festen Redaktionssitzung, erweitert um die verlorenen Claude-Läufe 30.10. nachmittags bis 02.11. morgens (Sitzungen ohne Push-Recht). 0 neue Meldungen (Nullfund), 1 Update (TTC-Ergebnisse, Tabellenführung, click-TT), 6 neue Termine aus Amtsblatt 11/2026, 2 geänderte Termine (Frühstück mit Anmeldefrist 5.11. beim Kindergottesdienst, Wortlaut Volkstrauertag), Kalender 60 Tage geprüft (28 von 30 Bestandsterminen, VHS 404, Amtsblatt-Index 428), Fußballtabelle in sport-current.json aktualisiert. Korrekturaufträge der sechs Dossiers: keine. T1-Karte Halloween veraltet. Commons 429, kein neues Foto. – Commit e53e231
-- 2026-11-02 morgens (ChatGPT): Neue Kalenderergänzung: Frühstück am 08.11. ab10:30 vor dem bekannten Kindergottesdienst um11 Uhr. Veranstalteroriginal gelesen; keine unabhängigen Quellen für Artikelkarte, T2 für Artikel. Keine neue Artikel-Themenkarte; Unfallartikel ohne Korrekturbedarf geprüft. VHS404, Golzheim-Konflikt und TTC-Prüfungen offen. Bahn-Endefeld geändert, Dauer unklar; keine konkrete Merzenicher Fahrt bestätigt.

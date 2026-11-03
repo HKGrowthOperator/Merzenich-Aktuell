@@ -1,0 +1,103 @@
+{
+  "hinweis": "Recherche vom 03.11.2026, Morgenlauf (Claude): Rathaus-Vorschau als Kurzmeldung nach SCHREIBREGELN.md Abschnitt 0 (Termin der nächsten sieben Tage mit Nachrichtenwert), nur offizielle Quellen aus dem Ratsinformationssystem.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Rathaus · Jugend",
+      "titel": "Jugendgremium Merzenich tagt am 4. November: Wünsche vom Ortsfest und Nahverkehr auf der Tagesordnung",
+      "dek": "Das erste Jugendgremium der Gemeinde berät am Mittwoch um 17 Uhr im Bürgerhaus, was es beim Ortsfest an Wünschen gesammelt hat. Welche Anliegen das sind, steht in der veröffentlichten Vorlage noch nicht.",
+      "datum": "2026-11-03T09:16:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 2,
+      "themen": [
+        [
+          "jugendgremium",
+          "Jugendgremium"
+        ],
+        [
+          "gemeinderat",
+          "Gemeinderat"
+        ],
+        [
+          "ortsfest",
+          "Ortsfest"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "absaetze": [
+        "Das Jugendgremium der Gemeinde Merzenich kommt am Mittwoch, 4. November, um 17 Uhr zu seiner vierten Sitzung zusammen. Sie findet im Bürgerhaus an der Burgstraße 9 statt. Nach der Tagesordnung im Ratsinformationssystem geht es unter anderem um Anliegen zum Nahverkehr und um die Ergebnisse des Ortsfestes; dazu kommen organisatorische Fragen, Gruppenarbeiten zu Projektthemen sowie Mitteilungen und Anfragen.",
+        "Für den Punkt Ortsfest hat das Büro des Bürgermeisters die Beschlussvorlage 135/2026 vom 21. Oktober vorgelegt. Darin heißt es, das erste Jugendgremium der Gemeinde habe sich im Sommer gebildet und sich beim Ortsfest am 3. Oktober auf dem Bürgerhausvorplatz zum ersten Mal öffentlich vorgestellt, um mit Jüngeren und Älteren ins Gespräch zu kommen und Anliegen aufzunehmen. Nach dem Vorschlag soll das Gremium empfehlen, den Bericht zur Kenntnis zu nehmen, die Punkte von Gemeinderat oder Verwaltung prüfen zu lassen, über das Ergebnis informiert zu werden und die vorrangigen Maßnahmen umzusetzen.",
+        "Was beim Ortsfest genau gesammelt wurde, lässt sich der veröffentlichten Fassung noch nicht entnehmen: Die Tabelle für die Anliegen und die Stellungnahme der Verwaltung ist leer, die Rangfolge soll erst in der Sitzung beraten und eingefügt werden. Danach ist der Gemeinderat am 3. Dezember an der Reihe. Die Vorlage ist für die Beratung in öffentlicher Sitzung vorgesehen."
+      ],
+      "fakten": [
+        "4. Sitzung des Jugendgremiums: Mittwoch, 04.11.2026, 17 Uhr, Bürgerhaus Merzenich, Burgstraße 9 (Ratsinformationssystem, Tagesordnung und Sitzungskalender)",
+        "Beschlussvorlage 135/2026 vom 21.10.2026 (BM-Büro): Beratung im Jugendgremium am 04.11.2026, danach Gemeinderat am 03.12.2026; Dokumentation und Priorisierung der Anliegen noch offen"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Das Jugendgremium tagt am Mittwoch, 4. November, um 17 Uhr zu seiner vierten Sitzung im Bürgerhaus Merzenich, Burgstraße 9.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfkxmXafKmQAUFs4nPrS_Ow",
+            "https://ratsinfo.gemeinde-merzenich.de/termine.ics"
+          ],
+          "stelle": "Tagesordnung „Jugendgremium, 4. Sitzung“, Kopf; termine.ics, Eintrag 04.11.2026"
+        },
+        {
+          "aussage": "Auf der Tagesordnung stehen unter anderem ÖPNV-Anliegen, Ergebnisse des Ortsfestes, organisatorische Angelegenheiten, Gruppenarbeiten zu Projektthemen sowie Mitteilungen und Anfragen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfkxmXafKmQAUFs4nPrS_Ow"
+          ],
+          "stelle": "Tagesordnung, TOP 4, 5, 6, 7 und 8"
+        },
+        {
+          "aussage": "Die Beschlussvorlage 135/2026 stammt vom BM-Büro und ist auf den 21. Oktober datiert.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf"
+          ],
+          "stelle": "Vorlage, Kopf (Fachbereich, Datum)"
+        },
+        {
+          "aussage": "Laut Vorlage hat sich das erste Jugendgremium im Sommer konstituiert und sich beim Ortsfest am 3. Oktober auf dem Bürgerhausvorplatz erstmals öffentlich vorgestellt, um mit Bürgerinnen und Bürgern ins Gespräch zu kommen und Anliegen aufzunehmen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf"
+          ],
+          "stelle": "Sachverhalt, Ausgangslage"
+        },
+        {
+          "aussage": "Der Beschlussvorschlag sieht vor: Bericht zur Kenntnis nehmen, Gemeinderat oder Verwaltung um Prüfung und Bericht bitten, Umsetzung der priorisierten Maßnahmen wünschen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf"
+          ],
+          "stelle": "Beschlussvorschlag, Nr. 1 bis 3"
+        },
+        {
+          "aussage": "Die Dokumentationstabelle ist in der veröffentlichten Fassung leer; die Priorisierung soll im Jugendgremium am 4. November beraten und eingefügt werden; Beratungsfolge danach Gemeinderat am 3. Dezember; Beratung in öffentlicher Sitzung.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf"
+          ],
+          "stelle": "Dokumentation, Priorisierung („<Vorschlag im Jugendgremium am 04.11. beraten und einfügen>“), Beratungsfolge, Kopf"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem: Tagesordnung „Jugendgremium, 4. Sitzung“ am 04.11.2026",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfkxmXafKmQAUFs4nPrS_Ow",
+        "stand": "2026-11-03"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Beschlussvorlage 135/2026 vom 21.10.2026 (BM-Büro, Export 26.10.2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-fdH_MYwjRBJaFu6L8YxE9zzkIMRYDWBzdXtbH4n9f/Beschlussvorlage_135-2026.pdf",
+          "stand": "2026-11-03"
+        },
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (termine.ics)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+          "stand": "2026-11-03"
+        }
+      ]
+    }
+  ]
+}
