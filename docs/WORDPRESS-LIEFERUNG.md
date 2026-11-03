@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
 
 ## Neu am 03.11.2026: Plugin 1.43.0, ehrliches Datum und Freigabe = Veröffentlichung
 
@@ -10,6 +10,8 @@ Anlass: Korrekturauftrag ChatGPT 03.11.2026. Feuerwehr 144/26 stand mit „Verö
 - **Datumskorrektur** (`includes/abgleich.php`, `ma_abgleich_datum_korrigieren`): `"datumKorrektur": true` an einer Meldung wird zum Importfeld `ma_datum_aus_stand`; der Abgleich übernimmt dann einmal das Datum des Pakets in den schon angelegten Beitrag (Verlauf: „Datum aus dem redaktionellen Stand korrigiert“). Gesetzt für 140/26 (18.10., 11:43 Uhr), 141/26 (21.10., 12:16 Uhr) und 144/26 (03.11., 00:13 Uhr): Anlagezeit laut Automatik-Commit beziehungsweise Abruf. Greift nicht, wenn der Text in WordPress von Hand geändert wurde.
 - **Freigabe = Veröffentlichung** (`ma_abgleich_freigabe_datum_jetzt`, Filter `wp_insert_post_data`, Priorität 40): Geht ein Entwurf aus dem Abgleich (Freigaben, Sammelfreigabe, KI direkt) online, gilt die Freigabezeit als Datum. Nur so landet eine freigegebene Meldung in der Nachrichten-Sitemap (48 Stunden), oben im Feed und bei Google News. Ein von Hand geändertes Datum und geplante Beiträge bleiben unberührt.
 - Tests: `qa/wordpress/abgleich-test.php` (Abschnitt „Datum“).
+- **Live 03.11.2026, 10:36 Uhr** (Selbst-Update, mit Theme 21.25.1). Datum von 140/26 und 141/26 um 10:40 Uhr korrigiert. **144/26 ist seitdem nicht öffentlich:** Der Beitrag war ohne Prüfhäkchen online; das Speichern der Datumskorrektur lief durch die Veröffentlichungssperre (`ma_publication_gate`) und setzte ihn auf Entwurf. Er steht in den Freigaben; mit der Freigabe gilt die Freigabezeit als Datum.
+- **1.43.1:** Die Datumskorrektur schreibt nur noch `post_date` und `post_date_gmt` (ohne `wp_update_post`) und ändert den Status nie.
 
 ## Neu am 02.11.2026: Plugin 1.41.0, Aufmacher automatisch
 

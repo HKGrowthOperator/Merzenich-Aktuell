@@ -397,9 +397,13 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
     }
     $p = get_post($id);
     if ($p && ma_abgleich_datum_korrigieren($e, (string) $p->post_date)) {
+        global $wpdb;
         $vorher = (string) $p->post_date;
-        $r = wp_update_post(['ID' => $id, 'post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt'], 'edit_date' => true], true);
-        if (is_wp_error($r) || !$r) $fehler[] = $e['titel'] . ' (Datum): ' . (is_wp_error($r) ? $r->get_error_message() : 'nicht korrigiert');
+        // Nur das Datum, nicht über wp_update_post (1.43.1): Das Speichern läuft durch die Veröffentlichungssperre und
+        // setzte am 03.11.2026 Feuerwehr 144/26 (online ohne Prüfhäkchen) auf Entwurf. Eine Datumskorrektur ändert den Status nie.
+        $r = $wpdb->update($wpdb->posts, ['post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt']], ['ID' => $id]);
+        clean_post_cache($id);
+        if ($r === false) $fehler[] = $e['titel'] . ' (Datum): nicht korrigiert';
         elseif (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Datum aus dem redaktionellen Stand korrigiert: ' . $vorher . ' → ' . $e['datum'], 0);
     }
     ma_abgleich_terme_setzen($id, $e['terme']);

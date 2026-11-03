@@ -13,7 +13,7 @@ Kennzeichnung wie im Plan: **[Code]** setzt die Redaktionssitzung im Repository 
 | Bereich | Stand | Bewertung |
 |---|---|---|
 | Technik für Google News | Nachrichten-Sitemap mit Bild, `NewsArticle`, `NewsMediaOrganization` mit allen Richtlinien-Seiten, große Bildvorschau erlaubt, Feed mit WebSub | gut |
-| Datum der Meldungen | Feuerwehr 140/26, 141/26 und 144/26 standen mit Einsatztag und erfundener 12 Uhr online, damit nie in der Nachrichten-Sitemap | heute behoben (Plugin 1.43.0, wirkt nach dem Selbst-Update) |
+| Datum der Meldungen | Feuerwehr 140/26, 141/26 und 144/26 standen mit Einsatztag und erfundener 12 Uhr online, damit nie in der Nachrichten-Sitemap | behoben (Plugin 1.43.0 live seit 10:36 Uhr); 144/26 wartet in den Freigaben |
 | Freigegebene Entwürfe | behielten das Paketdatum, kamen also oft zu alt online | heute behoben: Freigabezeit gilt als Veröffentlichung |
 | Takt | 4 Meldungen in den letzten 48 Stunden; Ziel laut Plan: jeden Tag mindestens 2 | ausbaufähig |
 | Auffindbarkeit | Bei Google nicht gemessen. In einer anderen Websuche (nicht Google) erscheint merzenich-aktuell.de für „Merzenich Nachrichten aktuell“ gar nicht; dort führen news.de („Polizei-News Merzenich, TT.MM.JJ: …“), Presseportal und die Gemeinde | Lücke, messen |
@@ -21,7 +21,7 @@ Kennzeichnung wie im Plan: **[Code]** setzt die Redaktionssitzung im Repository 
 | KI-Suchen (GEO) | `robots.txt` erlaubt GPTBot, ClaudeBot, PerplexityBot, Google-Extended und andere ausdrücklich; `llms.txt` da; `llms-full.txt` fehlt (404); Organisation ohne `sameAs` | mittel |
 | Ortsseiten | Titel und `Place`-Daten mit Wikidata gut; Einleitung nur etwa 25 Wörter | dünn |
 | Überschriften | H1 „Alle Meldungen“, „Heute & die nächsten Tage“, „Feuerwehr, Polizei und Rettungsdienst“ ohne „Merzenich“ | kleine Lücke |
-| `/umgebung/` | HTTP 404, weil Plugin 1.42.0 nie gebaut wurde; 1.43.0 baut gerade und bringt die Seite mit | wird mit dem Update behoben |
+| `/umgebung/` | HTTP 404, weil Plugin 1.42.0 nie gebaut wurde; 1.43.0 ist live, die Seite entsteht beim nächsten stündlichen Lauf oder beim nächsten Besuch im Backend | wird von selbst behoben |
 | Alte Vorschauadresse | `merzenichaktuell.hk-growthoperator.de` antwortet mit 503 statt Weiterleitung | Betreiber |
 
 ---
@@ -40,7 +40,7 @@ Was bei jeder Veröffentlichung schon automatisch passiert:
 
 Heute dazugekommen (Commits `e2da1cf`, `515af69`):
 
-- **Ehrliches Datum.** Die Feuerwehr-Automatik setzt als Datum den Zeitpunkt, an dem sie die Meldung anlegt, nicht mehr den Einsatztag mit 12 Uhr. 140/26, 141/26 und 144/26 werden beim nächsten Abgleich korrigiert. 144/26 rutscht dadurch für 48 Stunden in die Nachrichten-Sitemap.
+- **Ehrliches Datum.** Die Feuerwehr-Automatik setzt als Datum den Zeitpunkt, an dem sie die Meldung anlegt, nicht mehr den Einsatztag mit 12 Uhr. 140/26 und 141/26 sind seit 10:40 Uhr korrigiert. **144/26 ist seit der Korrektur nicht öffentlich:** Er war ohne Prüfhäkchen online, beim Speichern hat die Veröffentlichungssperre ihn auf Entwurf gesetzt. Er wartet in den Freigaben; nach der Freigabe trägt er die Freigabezeit und steht 48 Stunden in der Nachrichten-Sitemap. Plugin 1.43.1 korrigiert ein Datum künftig, ohne den Status anzufassen.
 - **Freigabe = Veröffentlichung.** Gibt jemand einen Entwurf aus dem Abgleich frei, gilt die Freigabezeit als Datum. Vorher konnte eine Meldung, die einen Tag in den Freigaben lag, schon bei Veröffentlichung zu alt für Google News sein.
 - **Folgemeldung statt nur Update** bei neuer Entwicklung (SEO-KEYWORDS Regel 5 jetzt gleich mit SCHREIBREGELN 0a). Nur eine neue Adresse mit neuem Datum kommt in die Nachrichten-Sitemap; ein Nachtrag an einer alten Adresse nicht.
 
@@ -193,7 +193,7 @@ Fehlt, in dieser Reihenfolge:
 
 ## 9. Nächste Schritte der Redaktionssitzung [Code, Redaktion]
 
-1. Selbst-Update auf Plugin 1.43.0 abwarten und prüfen: `/umgebung/` HTTP 200, Datum von 140/26, 141/26 und 144/26 korrigiert, 144/26 in der Nachrichten-Sitemap.
+1. Prüfen: `/umgebung/` HTTP 200 nach dem stündlichen Lauf; Plugin 1.43.1 live; 144/26 nach der Freigabe in der Nachrichten-Sitemap.
 2. Nachmittagslauf 03.11.: Sammelseite „Martinszüge in Merzenich 2026“ als Meldung mit allen Terminen aus dem Kalender; zweite Meldung des Tages.
 3. Nach Freigabe des Betreibers als ein Plugin- und Theme-Paket: `llms-full.txt`, H1 mit „Merzenich“ auf den Ressortseiten, `sameAs`-Feld für die Organisation, schnellere `/termine/` (Zwischenspeicher).
 4. Ortseinleitungen (100 bis 200 Wörter mit Fakten und Quellen) und die erste Faktenseite „Gemeinde Merzenich in Zahlen“.
