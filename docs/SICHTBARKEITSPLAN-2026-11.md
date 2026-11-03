@@ -32,15 +32,17 @@ Stand 03.11.2026. Anlass: Google-Suche „merzenich“ am 03.11.2026 um 10:26 Uh
 
 Ohne diese Schritte bleibt alles andere unsichtbar. Anleitung im Detail: `docs/SEO-GEO-BERICHT-2026-11-03.md`, Abschnitt 4.
 
-| # | Schritt | Dauer | Woran man sieht, dass es klappt |
-|---|---|---|---|
-| W1 | Auf dem Handy `site:merzenich-aktuell.de` und `merzenich aktuell` bei Google suchen, Bildschirmfoto an die Redaktionssitzung | 1 Min. | Zeigt, ob und wie viele Seiten im Index sind |
-| W2 | Search Console: Domain bestätigen, beide Sitemaps einreichen | 20 Min. | Sitemaps „Erfolgreich“, Seiten unter „Indexiert“ |
-| W3 | Search Console: URL-Prüfung → „Indexierung beantragen“ für Startseite, `/nachrichten/`, `/blaulicht/` und die drei neuesten Meldungen | 10 Min. | „URL ist auf Google“ |
-| W4 | Lesezugang für die Redaktionssitzung (Dienstkonto als Umgebungsgeheimnis `GOOGLE_SERVICE_ACCOUNT_JSON`) | 15 Min. | Wöchentliche Zahlen in `docs/SEO-STAND.md` |
-| W5 | Publisher Center anlegen, Rubriken als Feeds | 30 Min. | Publikation sichtbar, Logo da |
-| W6 | Bing Webmaster Tools aus der Search Console importieren | 10 Min. | Sitemaps in Bing, IndexNow-Einträge |
-| W7 | Alte Vorschauadresse bei IONOS löschen oder umleiten | 10 Min. | keine Antwort 503 mehr |
+**Stand 03.11.2026 mittags** (Sitzung „SEO GEO News-Plan“, Vault-Notiz „Merzenich Aktuell SEO und GEO“): W2, W3, W5 und W6 sind seit 02.11.2026 erledigt. Nicht noch einmal anlegen.
+
+| # | Schritt | Dauer | Woran man sieht, dass es klappt | Stand |
+|---|---|---|---|---|
+| W1 | Auf dem Handy `site:merzenich-aktuell.de` und `merzenich aktuell` bei Google suchen, Bildschirmfoto an die Redaktionssitzung | 1 Min. | Zeigt, ob und wie viele Seiten im Index sind | offen |
+| W2 | Search Console: Domain bestätigen, beide Sitemaps einreichen | 20 Min. | Sitemaps „Erfolgreich“, Seiten unter „Indexiert“ | **erledigt 02.11.**: Property URL-Präfix `https://merzenich-aktuell.de/` bestätigt (Konto merzenichaktuell@gmail.com); `wp-sitemap.xml` Erfolgreich, 442 Seiten; `news-sitemap.xml` Erfolgreich. Gemessen 04.–31.10.: 180 Klicks, 4.140 Impressionen, Pos. 8,6; 276 Seiten indexiert |
+| W3 | Search Console: URL-Prüfung → „Indexierung beantragen“ für Startseite, `/nachrichten/`, `/blaulicht/` und die drei neuesten Meldungen | 10 Min. | „URL ist auf Google“ | **erledigt 02.11.** für Start, `/heute/`, `/blaulicht/`, `/termine/`, `/nachrichten/` und die fünf Ortsseiten (alle waren schon indexiert) |
+| W4 | Lesezugang für die Redaktionssitzung (Dienstkonto als Umgebungsgeheimnis `GOOGLE_SERVICE_ACCOUNT_JSON`) | 15 Min. | Wöchentliche Zahlen in `docs/SEO-STAND.md` | offen |
+| W5 | Publisher Center anlegen, Rubriken als Feeds | 30 Min. | Publikation sichtbar, Logo da | **erledigt 02.11.**: Publikation „Merzenich Aktuell“ (Deutschland, Deutsch). Rubriken und Logos gibt es dort seit März 2025 nicht mehr; Google erzeugt die Publikationsseite selbst |
+| W6 | Bing Webmaster Tools aus der Search Console importieren | 10 Min. | Sitemaps in Bing, IndexNow-Einträge | **erledigt 02.11.**: Import aus der Search Console, beide Sitemaps „Success“ |
+| W7 | Alte Vorschauadresse löschen oder umleiten | 10 Min. | keine Antwort 503 mehr | offen; DNS liegt bei **All-Inkl (KAS)**, nicht bei IONOS: A-Eintrag `merzenichaktuell` → 167.233.76.202 (Coolify, keine App mehr) löschen |
 
 ### 🪵 Stamm: schneller und treffender als die anderen (ab heute, Redaktion und Code)
 
