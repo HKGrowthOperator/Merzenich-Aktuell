@@ -47,9 +47,9 @@ Ohne diese Schritte bleibt alles andere unsichtbar. Anleitung im Detail: `docs/S
 | # | Schritt | Stand |
 |---|---|---|
 | S1 | **„Merzenich“ in jedem Titel**, Ereignis in den ersten 60 Zeichen. `qa/redaktion-lauf.mjs` lässt ab 03.11. keinen Claude-Titel ohne „Merzenich“ durch. | **erledigt 03.11.**; die beiden L-264-Titel sind umgestellt |
-| S2 | **Eil-Prüfung:** Polizei, Feuerwehr und Heimat-Info stündlich prüfen; neue Merzenich-Meldung innerhalb von 60 Minuten online. Gestern hätte das 16:08 statt 18:56 Uhr bedeutet, vor allen anderen. | **Entscheidung Luis** (Häufigkeit, Zeitfenster) |
+| S2 | **Eil-Prüfung:** Polizei, Feuerwehr und Heimat-Info alle zwei Stunden prüfen (06:40, 10:40, 12:40, 16:40, 18:40, 20:40 Uhr; 09:13 und 14:43 übernehmen die Läufe), neue Merzenich-Meldung sofort schreiben und veröffentlichen. Gestern hätte das etwa 16:50 statt 18:56 Uhr bedeutet. | **beschlossen 03.11.** (Luis Kummer), Routine eingerichtet, erste Prüfung 12:40 Uhr; Ablauf: CLAUDE-LAUF Abschnitt 2a |
 | S3 | **Mehr als die Polizei:** jede Blaulicht-Meldung mit dem, was die Kopierer nicht haben: Feuerwehr und Polizei zusammen, Sperrung und Umleitung, Einordnung aus unserem Archiv (etwa: wie viele Unfälle auf der L 264 in diesem Jahr), Link auf die erste Meldung | Regel in den Läufen ab heute |
-| S4 | **Alter in Blaulicht-Titeln:** Die anderen schreiben „22-jähriger Euskirchener“. Unsere Regel verbietet Alter mit Ort. Ein Alter ohne Wohnort wäre ein Mittelweg. | **Entscheidung Luis** |
+| S4 | **Alter und Wohnort in Blaulicht-Meldungen** so, wie die Polizei sie nennt, auch im Titel; nie Namen, Hausnummern, Kennzeichen oder Angaben darüber hinaus (SCHREIBREGELN Abschnitt 7) | **beschlossen 03.11.** (Luis Kummer); Folgemeldung L 264 umgestellt |
 | S5 | **Takt:** jeden Tag mindestens zwei Meldungen, eine davon aus Blaulicht, Rathaus oder Termine | läuft |
 | S6 | **Freigaben am selben Tag:** Feuerwehr-Automatik und andere Entwürfe tragen seit Plugin 1.43.0 die Freigabezeit; je schneller freigegeben, desto eher in Google News | Luis, täglich |
 
@@ -74,7 +74,7 @@ Ohne diese Schritte bleibt alles andere unsichtbar. Anleitung im Detail: `docs/S
 
 | Nach | Ziel |
 |---|---|
-| 1 Woche | W1 bis W6 erledigt; jede neue Meldung mit „Merzenich“ im Titel; Blaulicht innerhalb von 60 Minuten (wenn S2 beschlossen) |
+| 1 Woche | W1 bis W6 erledigt; jede neue Meldung mit „Merzenich“ im Titel; Blaulicht spätestens etwa zwei Stunden nach der Quelle |
 | 4 Wochen | alle Meldungen im Index (Search Console); erste Einträge im Reiter „News“; 3 Links aus dem Ort |
 | 8 Wochen | Platz 1 „merzenich aktuell“; regelmäßig im Reiter „News“ bei Merzenich-Meldungen; 10 Links aus dem Ort |
 | 3 Monate | Seite 1 für „nachrichten merzenich“ und „blaulicht merzenich“; mindestens eine Meldung in Top Stories |
