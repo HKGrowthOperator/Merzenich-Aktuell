@@ -8,6 +8,8 @@ Jüngstes Dossier: [03.11.2026, Claude-Morgenlauf](dossiers/2026-11-03-claude-mo
 
 **Sichtbarkeit (03.11. mittags):** Google-Probe „merzenich“: wir fehlen unter „Alle“ und „News“. Plan: [docs/SICHTBARKEITSPLAN-2026-11.md](../SICHTBARKEITSPLAN-2026-11.md). Ab sofort Pflicht: „Merzenich“ in jedem Titel (`qa/redaktion-lauf.mjs` prüft ab 03.11.); Blaulicht mit Einordnung aus dem Archiv; die beiden L-264-Titel sind umgestellt.
 
-**Offen:** zweite Meldung des Tages im Nachmittagslauf, Sammelseite „Martinszüge in Merzenich 2026“ (SEO-Bericht Abschnitt 5), Feuerwehr 144/26 wartet in den Freigaben (seit der Datumskorrektur 10:40 Uhr nicht öffentlich, Freigabe durch Luis), `/umgebung/` nach dem stündlichen Lauf prüfen (Plugin 1.43.2 live seit 10:50 Uhr), Update Jugendgremium nach der Sitzung, Bürgersprechstunde Golzheim (30.10. oder 13.11.), VHS-Vortrag 10.11., Bildpools Unfall/Rettung/Tischtennis, Vertiefungen eigener kurzer Artikel.
+**Automatisch online (03.11. mittags, Entscheidung Luis Kummer):** Feuerwehr-Automatik und Heimat-Info-Termine ohne Freigabe, Relevanz automatisch, „Neu in Merzenich“ oben in „Nachrichten aus Merzenich“ (Theme 21.26.0 live 11:18 Uhr). Feuerwehr 144/26 seit 11:13 Uhr online und in der Nachrichten-Sitemap. Eil-Prüfung alle zwei Stunden (06:40 bis 20:40 Uhr). Freigabe nur noch bei rechtlichem Risiko (CLAUDE-LAUF 3.8).
+
+**Offen:** zweite Meldung des Tages im Nachmittagslauf, Sammelseite „Martinszüge in Merzenich 2026“ (SEO-Bericht Abschnitt 5), `/umgebung/` nach dem stündlichen Lauf prüfen (Plugin 1.43.2 live seit 10:50 Uhr), Update Jugendgremium nach der Sitzung, Bürgersprechstunde Golzheim (30.10. oder 13.11.), VHS-Vortrag 10.11., Bildpools Unfall/Rettung/Tischtennis, Vertiefungen eigener kurzer Artikel.
 
 [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)
