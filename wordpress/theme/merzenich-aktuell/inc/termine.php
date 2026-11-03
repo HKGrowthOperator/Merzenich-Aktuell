@@ -92,13 +92,30 @@ function ma21_termin_zeile(array $t): string {
 
 /** Ganze Seite /termine/ (archive-ma_event.php). */
 function ma21_termine_seite(): void {
+    echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Termine</span></nav>'
+        . '<span class="eyebrow">Kalender</span><h1>Termine in Merzenich: heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
+        . '<p class="count-line">' . (ma21_heute_da() ? '<a href="' . esc_url(home_url('/heute/')) . '">Was ist heute los?</a> · ' : '') . '<a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
+    // 21.27.0: Die Liste (bis 400 Termine mit Metadaten, Ort und Bild) kostete kalt 3,3 s, warm 1,2 s.
+    // Zwischenspeicher 10 Minuten, neu bei jeder Änderung eines Termins (Schlüssel enthält die letzte
+    // Änderung). Die Werbung darunter bleibt ungespeichert, damit sie weiter wechselt.
+    $schluessel = 'ma21_termine_' . md5((string) get_lastpostmodified('gmt', 'ma_event') . '|' . intdiv(time(), 600));
+    $html = get_transient($schluessel);
+    if (!is_string($html) || $html === '') {
+        ob_start();
+        ma21_termine_liste();
+        $html = (string) ob_get_clean();
+        set_transient($schluessel, $html, 15 * MINUTE_IN_SECONDS);
+    }
+    echo $html;
+    echo ma21_werbung_band();
+}
+
+/** Filter, kommende Termine und Archiv der Seite /termine/ (ohne Kopf und Werbung). */
+function ma21_termine_liste(): void {
     [$kommend, $vergangen] = ma21_termine_alle();
     $kategorien = array_values(array_unique(array_map(fn($t) => $t['kategorie'], $kommend)));
     sort($kategorien, SORT_LOCALE_STRING);
     $n = count($kommend);
-    echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Termine</span></nav>'
-        . '<span class="eyebrow">Kalender</span><h1>Termine in Merzenich: heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
-        . '<p class="count-line">' . (ma21_heute_da() ? '<a href="' . esc_url(home_url('/heute/')) . '">Was ist heute los?</a> · ' : '') . '<a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
     echo '<section class="section"><div class="shell"><div class="filter-controls" data-event-filters>'
         . '<div class="period-tabs" aria-label="Zeitraum"><button type="button" data-period="all" aria-pressed="true">Alle</button><button type="button" data-period="today" aria-pressed="false">Heute</button><button type="button" data-period="weekend" aria-pressed="false">Wochenende</button><button type="button" data-period="14" aria-pressed="false">Nächste 14 Tage</button></div>'
         . '<label>Ort<select data-event-place><option value="">Alle Ortsteile</option>';
@@ -117,7 +134,6 @@ function ma21_termine_seite(): void {
         echo '</ul></details>';
     }
     echo '</div></section>';
-    echo ma21_werbung_band();
 }
 
 /** Terminseite (single-ma_event.php), Markup wie deploy/termine.mjs seiteAusDaten(). */

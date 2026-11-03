@@ -62,6 +62,14 @@ $l2 = ma_seo_llms_txt($HOME, [], $neu);
 pruefe('llms.txt: Heute, Termine, Kalender (ICS), KI-Redaktion', str_contains($l2, "[Heute in Merzenich]({$HOME}heute/)") && str_contains($l2, "({$HOME}termine/kalender.ics)") && str_contains($l2, "[KI-Redaktion]({$HOME}ki-redaktion/)"), true);
 pruefe('llms.txt: höchstens zehn neueste Meldungen mit Datum', [substr_count($l2, "blaulicht/m-"), str_contains($l2, "- [Meldung 1]({$HOME}blaulicht/m-1/) (02.11.2026)"), str_contains($l2, 'Meldung 11')], [10, true, false]);
 pruefe('llms.txt: ohne Meldungen kein leerer Abschnitt', str_contains($l, '## Neueste Meldungen'), false);
+// 1.44.0: llms-full.txt mit Volltext.
+pruefe('llms.txt verlinkt den Volltext', str_contains($l, "({$HOME}llms-full.txt)"), true);
+$lv = ma_seo_llms_full_txt($HOME, ['Orte der Gemeinde Merzenich' => [['Golzheim', $HOME . 'ort/golzheim/', "Ortsteil im Norden.\nWikidata: https://www.wikidata.org/wiki/Q1284626"]], 'Seiten' => [], 'Neueste Meldungen' => [['Unfall (02.11.2026)', $HOME . 'blaulicht/u/', 'Text.'], ['Leer', $HOME . 'x/', '   ']]]);
+pruefe('llms-full.txt: Kopf, Ortsabschnitt mit Adresse und Wikidata', [str_starts_with($lv, '# Merzenich Aktuell – Volltext'), str_contains($lv, "### Golzheim\n\nAdresse: {$HOME}ort/golzheim/"), str_contains($lv, 'Q1284626')], [true, true, true]);
+pruefe('llms-full.txt: leere Abschnitte und leere Einträge fallen weg', [str_contains($lv, '## Seiten'), str_contains($lv, '### Leer'), str_contains($lv, '### Unfall (02.11.2026)')], [false, false, true]);
+pruefe('Klartext: ohne HTML, Shortcodes und Entities, Absätze bleiben', ma_seo_klartext('<p>Erster &amp; Satz.</p><p>Zweiter [ma_umgebung] Satz.</p>'), "Erster & Satz.\nZweiter Satz.");
+$kt = ma_seo_klartext(str_repeat('Ein ganzer Satz mit Inhalt. ', 50), 300);
+pruefe('Klartext: gekürzt am Satzende mit …', [mb_strlen($kt) <= 302, str_ends_with($kt, '. …')], [true, true]);
 
 echo "\nIndexNow\n";
 $key = ma_indexnow_key();

@@ -388,8 +388,36 @@ function ma_seo_llms_txt(string $home, array $seiten, array $neueste = []): stri
     $t .= "\n## Orte der Gemeinde Merzenich\n\n";
     foreach (ma_seo_orte() as $slug => $d) $t .= "- [{$d['name']}]({$home}ort/{$slug}/): {$d['beschreibung']}\n";
     if ($seiten) { $t .= "\n## Über die Redaktion\n\n"; foreach ($seiten as [$name, $url, $desc]) $t .= "- [{$name}]({$url})" . ($desc !== '' ? ": {$desc}" : '') . "\n"; }
-    $t .= "\n## Feeds und Sitemaps\n\n- [RSS]({$home}feed/)\n- [Sitemap]({$home}wp-sitemap.xml)\n- [News-Sitemap]({$home}news-sitemap.xml)\n";
+    $t .= "\n## Feeds und Sitemaps\n\n- [RSS]({$home}feed/)\n- [Sitemap]({$home}wp-sitemap.xml)\n- [News-Sitemap]({$home}news-sitemap.xml)\n- [Volltext für KI-Systeme]({$home}llms-full.txt)\n";
     return $t;
+}
+
+/**
+ * llms-full.txt (1.44.0, SEO-GEO-BERICHT 03.11.2026 Befund 9): Volltext der Orte, Redaktions- und
+ * Faktenseiten und der neuesten Meldungen, damit KI-Suchen Merzenich Aktuell zitieren können.
+ * $abschnitte: ['Orte' => [[titel, url, text], …], 'Seiten' => …, 'Neueste Meldungen' => …] (reine Funktion).
+ */
+function ma_seo_llms_full_txt(string $home, array $abschnitte): string {
+    $t = '# ' . MA_SEO_MARKE . " – Volltext\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\nKurzfassung mit allen Links: {$home}llms.txt. Jede Meldung nennt ihre Originalquelle; zitieren bitte mit Link auf die jeweilige Seite.\n";
+    foreach ($abschnitte as $name => $eintraege) {
+        $eintraege = array_values(array_filter((array) $eintraege, fn($e) => is_array($e) && trim((string) ($e[2] ?? '')) !== ''));
+        if (!$eintraege) continue;
+        $t .= "\n## {$name}\n";
+        foreach ($eintraege as [$titel, $url, $text]) $t .= "\n### {$titel}\n\nAdresse: {$url}\n\n" . trim(preg_replace("/\n{3,}/", "\n\n", (string) $text)) . "\n";
+    }
+    return $t;
+}
+
+/** Seitentext ohne HTML und Shortcodes, höchstens $max Zeichen (am Satzende gekürzt). */
+function ma_seo_klartext(string $html, int $max = 6000): string {
+    $t = function_exists('strip_shortcodes') ? strip_shortcodes($html) : preg_replace('/\[[^\]]*\]/', '', $html);
+    $t = preg_replace('#</(p|li|h[1-6]|tr)>#i', "\n", (string) $t);
+    $t = html_entity_decode(trim(preg_replace("/[ \t]+/", ' ', strip_tags((string) $t))), ENT_QUOTES, 'UTF-8');
+    $t = preg_replace("/\n\s*\n+/", "\n\n", preg_replace("/ *\n */", "\n", $t));
+    if (mb_strlen($t) <= $max) return $t;
+    $t = mb_substr($t, 0, $max);
+    $ende = max(mb_strrpos($t, '. ') ?: 0, mb_strrpos($t, "\n") ?: 0);
+    return rtrim($ende > $max / 2 ? mb_substr($t, 0, $ende + 1) : $t) . ' …';
 }
 
 /* ------------------------------------------------------------ Kontext der aktuellen Seite */
@@ -618,6 +646,7 @@ add_action('init', function (): void {
     add_rewrite_rule("^({$slugs})/(feed|rdf|rss|rss2|atom)/?$", 'index.php?category_name=$matches[1]&feed=$matches[2]', 'top');
     add_rewrite_rule('^news-sitemap\.xml$', 'index.php?ma_seo=news', 'top');
     add_rewrite_rule('^llms\.txt$', 'index.php?ma_seo=llms', 'top');
+    add_rewrite_rule('^llms-full\.txt$', 'index.php?ma_seo=llmsvoll', 'top');
     add_rewrite_rule('^suche/?$', 'index.php?ma_seo=suche', 'top');
     add_rewrite_rule('^([a-f0-9]{32})\.txt$', 'index.php?ma_seo=indexnow&ma_key=$matches[1]', 'top');
     add_rewrite_rule('^(google[a-f0-9]{16})\.html$', 'index.php?ma_seo=googledatei&ma_key=$matches[1]', 'top');
@@ -685,6 +714,26 @@ add_action('template_redirect', function (): void {
             if ($p instanceof WP_Post && $p->post_status === 'publish') $seiten[] = [$name, get_permalink($p), ma_seo_kuerzen($p->post_excerpt, 120)];
         }
         echo ma_seo_llms_txt(home_url('/'), $seiten, ma_seo_llms_neueste()); exit;
+    }
+    if ($was === 'llmsvoll') {
+        header('Content-Type: text/plain; charset=utf-8'); header('Cache-Control: public, max-age=3600');
+        $home = home_url('/');
+        $orte = [];
+        foreach (ma_seo_orte() as $slug => $d) $orte[] = [$d['name'], $home . 'ort/' . $slug . '/', $d['beschreibung'] . ' ' . ($d['seo'] ?? '') . (!empty($d['wikidata']) ? "\nWikidata: https://www.wikidata.org/wiki/{$d['wikidata']}" : '')];
+        // Faktenseiten (Plan 3.2) erscheinen, sobald sie veröffentlicht sind; vorher fehlen sie einfach.
+        $seiten = [];
+        foreach (['merzenich-in-zahlen', 'notdienste', 'abfuhr', 'ortsteile', 'strukturwandel', 'ueber-uns', 'grundsaetze', 'korrekturen', 'ki-redaktion', 'service', 'impressum'] as $slug) {
+            $p = get_page_by_path($slug, OBJECT, 'page');
+            if ($p instanceof WP_Post && $p->post_status === 'publish') $seiten[] = [html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), get_permalink($p), ma_seo_klartext(trim($p->post_excerpt . "\n\n" . $p->post_content))];
+        }
+        $meldungen = [];
+        foreach (get_posts(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 25, 'orderby' => 'date', 'order' => 'DESC']) as $p) {
+            if (function_exists('ma_ist_gesponsert') && ma_ist_gesponsert($p)) continue;
+            $quelle = (string) get_post_meta($p->ID, 'ma_source_url', true);
+            $meldungen[] = [html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8') . ' (' . get_post_time('d.m.Y', false, $p) . ')', get_permalink($p), ma_seo_klartext(trim($p->post_excerpt . "\n\n" . $p->post_content), 1200) . ($quelle !== '' ? "\nQuelle: {$quelle}" : '')];
+            if (count($meldungen) >= 15) break;
+        }
+        echo ma_seo_llms_full_txt($home, ['Orte der Gemeinde Merzenich' => $orte, 'Seiten' => $seiten, 'Neueste Meldungen' => $meldungen]); exit;
     }
 }, 1);
 
