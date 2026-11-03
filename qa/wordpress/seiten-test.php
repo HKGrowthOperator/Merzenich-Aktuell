@@ -29,7 +29,7 @@ function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $sol
 echo "Inhalt\n";
 $alle = '';
 foreach (ma_seiten() as $slug => $s) { $h = ma_seite_html($slug); $alle .= $h; if ($h === '' || $s['anriss'] === '' || $s['eyebrow'] === '') { $fehler++; echo "  FEHLER: $slug leer\n"; } }
-pruefe('20 Seiten mit Text, Anriss und Eyebrow (1.45.0: Merzenich in Zahlen)', count(ma_seiten()), 20);
+pruefe('22 Seiten mit Text, Anriss und Eyebrow (1.47.0: Abfall, Strukturwandel)', count(ma_seiten()), 22);
 pruefe('Keine Vorschau-Domain, kein Netlify-Formular, kein TODO', str_contains($alle, 'hk-growthoperator') || str_contains($alle, '/api/formular') || str_contains($alle, 'TODO') || str_contains($alle, 'kalender.ics'), false);
 pruefe('Formulare: Kontakt, Meldung, Termin, Werbung, Korrektur; Anzeigen über die Auswahl', [str_contains(ma_seite_kontakt(), '[ma_formular typ="kontakt"]'), str_contains(ma_seite_meldung_senden(), 'typ="meldung"'), str_contains(ma_seite_termin_melden(), 'typ="termin"'), str_contains(ma_seite_werben(), 'typ="werbung"'), str_contains(ma_seite_korrekturen(), 'typ="korrektur"'), str_contains(ma_seite_aufgeben(), '[ma_anzeige_aufgeben]'), !str_contains(ma_seite_aufgeben(), '[ma_formular') ], [true, true, true, true, true, true, true]);
 pruefe('Archiv, Diskussion, Redaktion und Themen nutzen ihre Shortcodes', [str_contains(ma_seite_archiv(), '[ma_archiv]'), str_contains(ma_seite_diskussion(), '[ma_diskussion]'), str_contains(ma_seite_redaktion(), '[ma_redaktion_meldungen]'), str_contains(ma_seite_themen(), '[ma_themen]')], [true, true, true, true]);
@@ -48,6 +48,11 @@ pruefe('Faktenseite: Stand, Fragen als Überschrift, Quellen zu Rat und Bürgerm
 pruefe('Faktenseite: Zahlen wie in den Quellen (Einwohner, Sitze, Ergebnis)', [str_contains($mz, '10.509'), str_contains($mz, '26 Sitze'), str_contains($mz, '57,2 Prozent')], [true, true, true]);
 pruefe('Faktenseite: keine Gedankenstriche', [str_contains($mz, ' – '), str_contains($mz, '—')], [false, false]);
 
+echo "\nAbfall und Strukturwandel (1.47.0)\n";
+$ab = ma_seite_abfall(); $sw = ma_seite_strukturwandel();
+pruefe('Abfall: Stand, sechs Fragen, Quelle der Gemeinde, Kalender und Sperrgut verlinkt', [str_contains($ab, 'Stand: 3. November 2026'), substr_count($ab, '<h2 id='), str_contains($ab, 'muellabfuhr-gemeinde-merzenich.php'), str_contains($ab, 'Abfallkalender-2026-Merzenich.pdf'), str_contains($ab, 'sperrgutanmeldung')], [true, 6, true, true, true]);
+pruefe('Strukturwandel: Zeitachse mit sechs Punkten und drei Quellen', [substr_count($sw, '<li><strong>'), str_contains($sw, 'morschenich.php'), str_contains($sw, 'uebergabe-foerderbescheid-mo-alt.php'), str_contains($sw, 'dokumentation-masterplan.php')], [6, true, true, true]);
+pruefe('Abfall und Strukturwandel: keine Gedankenstriche', [str_contains($ab . $sw, ' – '), str_contains($ab . $sw, '—')], [false, false]);
 echo "\nUmgebung (1.42.0)\n";
 pruefe('Umgebungsseite nutzt den Shortcode und verlinkt Nachrichten, Blaulicht, Termine', [str_contains(ma_seite_umgebung(), '[ma_umgebung]'), str_contains(ma_seite_umgebung(), 'href="/blaulicht/"'), str_contains(ma_seite_umgebung(), 'href="/termine/"')], [true, true, true]);
 $ug = ma_umgebung_html([
@@ -83,11 +88,11 @@ $GLOBALS['opt']['ma_seiten_stand']['kontakt']['version'] = '2026-01-01'; unset($
 pruefe('Ältere Fassung erkannt', ma_seite_status('kontakt'), 'veraltet');
 ma_seiten_abgleichen();
 pruefe('Unveränderte ältere Fassung wird gehoben', ma_seite_status('kontakt'), 'aktuell');
-pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 20);
+pruefe('Zweiter Abgleich legt nichts doppelt an', count($GLOBALS['posts']), 22);
 // Neue Seite bei gleicher Fassung (Live-Befund 02.10.: /thema/ fehlte, weil der Guard schon stand): Anzahl-Guard greift.
 $GLOBALS['opt']['ma_seiten_anzahl'] = 18; unset($GLOBALS['posts'][ma_seite_seite('thema')->ID]);
 ma_seiten_abgleichen();
-pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 20]);
+pruefe('Fehlende Seite wird trotz gesetztem Fassungs-Guard angelegt', [ma_seite_status('thema'), get_option('ma_seiten_anzahl')], ['aktuell', 22]);
 
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

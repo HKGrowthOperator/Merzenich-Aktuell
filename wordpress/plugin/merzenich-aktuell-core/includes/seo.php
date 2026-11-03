@@ -164,6 +164,8 @@ function ma_seo_seitentexte(): array {
         'heute' => 'Termine von heute und den nächsten sieben Tagen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, dazu die neuesten Meldungen.',
         // 1.42.0: „düren aktuell“, „niederzier aktuell“, „kreis düren aktuell“ (Google-Vorschläge 02.11.2026).
         'umgebung' => 'Nachrichten aus Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und dem Kreis Düren: Polizei, Verkehr, Rathaus und Termine, mit Link zur Originalquelle.',
+        'abfall' => 'Abfall in Merzenich: Abfuhrkalender 2026, Sperrmüll online anmelden, Elektroschrott, Schadstoffe in Rurbenden, Tonne tauschen. Mit Nummern und Quelle.',
+        'strukturwandel' => 'Morschenich, Bürgewald und Tagebau Hambach: Umsiedlung ab 2015, Erhalt 2020, 57 Mio. Euro Förderung, Ort der Zukunft. Zeitachse mit Quellen.',
         'merzenich-in-zahlen' => 'Merzenich in Zahlen: 10.509 Einwohner, 37,92 km², fünf Ortsteile, Bürgermeister Georg Gelhausen, 26 Sitze im Gemeinderat. Mit Stand und amtlicher Quelle.',
     ];
 }
@@ -174,7 +176,7 @@ function ma_seo_seitentexte(): array {
  * Frage, die Google selbst unter „Weitere Fragen“ zeigt.
  */
 function ma_seo_seitentitel(): array {
-    return ['heute' => 'Was ist heute in Merzenich los?', 'umgebung' => 'Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung', 'merzenich-in-zahlen' => 'Merzenich in Zahlen: Einwohner, Fläche, Bürgermeister, Gemeinderat'];
+    return ['heute' => 'Was ist heute in Merzenich los?', 'umgebung' => 'Düren, Niederzier, Kreis Düren aktuell: Nachrichten aus der Umgebung', 'merzenich-in-zahlen' => 'Merzenich in Zahlen: Einwohner, Fläche, Bürgermeister, Gemeinderat', 'abfall' => 'Abfall Merzenich: Abfuhrkalender 2026, Sperrmüll, Schadstoffe', 'strukturwandel' => 'Bürgewald, Morschenich, Tagebau Hambach: Strukturwandel in Merzenich'];
 }
 
 /** Zu kurze Beschreibung (unter 110 Zeichen) mit Angaben davor und einem Satz dahinter auffüllen. */
@@ -776,7 +778,7 @@ add_action('template_redirect', function (): void {
         }
         // Faktenseiten (Plan 3.2) erscheinen, sobald sie veröffentlicht sind; vorher fehlen sie einfach.
         $seiten = [];
-        foreach (['merzenich-in-zahlen', 'notdienste', 'abfuhr', 'ortsteile', 'strukturwandel', 'ueber-uns', 'grundsaetze', 'korrekturen', 'ki-redaktion', 'service', 'impressum'] as $slug) {
+        foreach (['merzenich-in-zahlen', 'strukturwandel', 'abfall', 'notdienste', 'ueber-uns', 'grundsaetze', 'korrekturen', 'ki-redaktion', 'service', 'impressum'] as $slug) {
             $p = get_page_by_path($slug, OBJECT, 'page');
             if ($p instanceof WP_Post && $p->post_status === 'publish') $seiten[] = [html_entity_decode(get_the_title($p), ENT_QUOTES, 'UTF-8'), get_permalink($p), ma_seo_klartext(trim($p->post_excerpt . "\n\n" . $p->post_content))];
         }

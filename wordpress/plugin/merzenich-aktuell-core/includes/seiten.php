@@ -42,6 +42,8 @@ function ma_seiten(): array {
         'thema' => ['titel' => 'Themen', 'eyebrow' => 'Themen', 'anriss' => 'Alle Themen und Schlagworte auf Merzenich Aktuell, nach Zahl der Meldungen.', 'html' => 'ma_seite_themen'],
         'heute' => ['titel' => 'Heute in Merzenich', 'eyebrow' => 'Heute', 'anriss' => 'Was ist heute in Merzenich los? Termine von heute und den nächsten sieben Tagen, dazu die neuesten Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.', 'html' => 'ma_seite_heute'],
         'merzenich-in-zahlen' => ['titel' => 'Gemeinde Merzenich in Zahlen', 'eyebrow' => 'Fakten', 'anriss' => 'Einwohner, Fläche, Ortsteile, Bürgermeister und Gemeinderat der Gemeinde Merzenich im Kreis Düren, mit Stand und amtlicher Quelle zu jeder Zahl.', 'html' => 'ma_seite_merzenich_in_zahlen'],
+        'abfall' => ['titel' => 'Abfall in Merzenich: Abfuhrkalender, Sperrmüll, Schadstoffe', 'eyebrow' => 'Service', 'anriss' => 'Abfuhrkalender 2026, Sperrmüll, Elektroschrott, Schadstoffe und Tonnentausch in der Gemeinde Merzenich: wer zuständig ist und wie man anmeldet, mit Quelle der Gemeinde.', 'html' => 'ma_seite_abfall'],
+        'strukturwandel' => ['titel' => 'Strukturwandel: Morschenich, Bürgewald und der Tagebau Hambach', 'eyebrow' => 'Fakten', 'anriss' => 'Vom Tagebau zum Ort der Zukunft: Umsiedlung von Morschenich, Erhalt von Bürgewald und Hambacher Forst, Förderung und Masterplan als Zeitachse mit Quellen.', 'html' => 'ma_seite_strukturwandel'],
         'umgebung' => ['titel' => 'Nachrichten aus der Umgebung', 'eyebrow' => 'Rund um Merzenich', 'anriss' => 'Was in Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und im Kreis Düren passiert: Polizei, Verkehr, Rathaus und Termine der letzten 30 Tage, jeweils mit Link zur Originalquelle.', 'html' => 'ma_seite_umgebung'],
         'whatsapp' => ['titel' => 'WhatsApp-Kanal', 'eyebrow' => 'Immer informiert', 'anriss' => 'Eilmeldungen, Blaulicht und die wichtigsten Termine aus der Gemeinde Merzenich als Broadcast direkt aufs Handy. Kein Gruppenchat, keine sichtbare Nummer.', 'html' => 'ma_seite_whatsapp'],
     ];
@@ -250,6 +252,56 @@ function ma_seite_merzenich_in_zahlen(): string {
         . '<p>Quelle: IT.NRW, <a href="https://wahlergebnisse.nrw/kommunalwahlen/2025/aktuell/pdf/a358040kw25.pdf" target="_blank" rel="noopener">Endgültiges Ergebnis der Gemeinderatswahl Merzenich 2025</a>. Was Rat und Ausschüsse beschließen: <a href="/rathaus/">Rathaus und Gemeinderat</a>.</p>'
         . '<h2 id="mehr">Wo finde ich mehr?</h2>'
         . '<p>Aktuelles aus der Gemeinde unter <a href="/nachrichten/">Nachrichten</a>, Einsätze unter <a href="/blaulicht/">Blaulicht</a>, Termine unter <a href="/termine/">Termine</a>. Amtliche Bekanntmachungen veröffentlicht die Gemeinde auf <a href="https://www.gemeinde-merzenich.de/" target="_blank" rel="noopener">gemeinde-merzenich.de</a>.</p>';
+}
+
+/**
+ * Abfall in Merzenich (1.47.0, Faktenseite Plan 3.2). Quelle: Gemeinde Merzenich, Seite
+ * „Müllentsorgung in der Gemeinde Merzenich“, gelesen am 03.11.2026. Nur Funktionsnummern,
+ * keine Namen von Beschäftigten (SCHREIBREGELN Abschnitt 7).
+ */
+function ma_seite_abfall(): string {
+    $q = '<a href="https://www.gemeinde-merzenich.de/aktuelles/info-texte/muellabfuhr-gemeinde-merzenich.php" target="_blank" rel="noopener">Gemeinde Merzenich, Müllentsorgung</a>';
+    return '<p><strong>Stand: 3. November 2026.</strong> Alle Angaben stammen von der Gemeinde Merzenich (Quelle: ' . $q . '). Termine des Schadstoffmobils stehen im jeweiligen Amtsblatt.</p>'
+        . '<h2 id="kalender">Wo finde ich den Abfuhrkalender 2026?</h2>'
+        . '<p>Die Gemeinde veröffentlicht den <a href="https://www.gemeinde-merzenich.de/bindata/abfall/Abfallkalender-2026-Merzenich.pdf" target="_blank" rel="noopener">Abfuhrkalender 2026 als PDF</a>. Abholtermine für Grünabfall und Bündelsammlungen meldet Merzenich Aktuell unter <a href="/termine/">Termine</a>.</p>'
+        . '<h2 id="probleme">Die Tonne wurde nicht geleert. Wen rufe ich an?</h2>'
+        . '<p>Das Abfuhrunternehmen Schönmackers Umweltdienste, Telefon 02237 9742-4502. Fragen zur Abfallberatung beantwortet die Gemeinde unter 02421 399-143.</p>'
+        . '<h2 id="sperrmuell">Wie melde ich Sperrmüll an?</h2>'
+        . '<p>Nur online bei Schönmackers über die <a href="https://www.schoenmackers.de/rund-um-service/sperrgutanmeldung/" target="_blank" rel="noopener">Sperrgutanmeldung</a>. Abgeholt wird am vereinbarten Tag ab 6 Uhr. Zum Sperrmüll zählt nur, was nicht in Tonne oder Müllsack passt; Wertstoffe, Altpapier, Glas, Elektroschrott, Grünabfall, Spiegel, Schadstoffe und Autoteile gehören nicht dazu.</p>'
+        . '<h2 id="elektroschrott">Wohin mit Elektroschrott?</h2>'
+        . '<p>Schönmackers holt Elektroaltgeräte kostenlos ab, nach Anmeldung unter 02464 9904-0; beim Anruf gibt es den Termin, abgeholt wird ab 6 Uhr. Selbst abgeben kann man haushaltsübliche Geräte kostenlos beim ELC Horm (Pfarrer-Pleus-Straße 46, Hürtgenwald-Horm) und bei der Deponie Warden (An der K 10, Alsdorf-Warden).</p>'
+        . '<h2 id="schadstoffe">Wohin mit Farben, Chemikalien und anderen Schadstoffen?</h2>'
+        . '<p>Zum Schadstoffmobil, dessen Termine im Amtsblatt stehen, oder zum Entsorgungszentrum Rurbenden, Neue Straße 26 in Niederzier: mittwochs und freitags von 10 bis 18 Uhr, samstags von 8 bis 16 Uhr. Bis 15 Kilogramm oder Liter je Anlieferung sind kostenfrei. An den Haltestellen des Schadstoffmobils darf nichts abgestellt werden. Beratung: AWA Abfallberatung, 02403 8766353.</p>'
+        . '<h2 id="tonnen">Wie tausche oder bestelle ich eine Tonne?</h2>'
+        . '<p>Restmüll-, Bio- und Papiertonne: Gemeinde Merzenich, Telefon 02421 399-0, mit dem Bestellformular der Gemeinde. Gelbe Tonne: Schönmackers, Telefon 0800 8884373.</p>';
+}
+
+/**
+ * Strukturwandel als Zeitachse (1.47.0, Faktenseite Plan 3.2). Quellen: Ortsteilseite Morschenich
+ * und Pressemitteilungen der Gemeinde Merzenich (Förderbescheid 14.06.2024, Masterplan), gelesen
+ * am 03.11.2026.
+ */
+function ma_seite_strukturwandel(): string {
+    $mo = '<a href="https://www.gemeinde-merzenich.de/politik/ortsteile/morschenich.php" target="_blank" rel="noopener">Gemeinde Merzenich, Ortsteil Morschenich</a>';
+    $fb = '<a href="https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/uebergabe-foerderbescheid-mo-alt.php" target="_blank" rel="noopener">Gemeinde Merzenich, „57 Millionen Euro für den Ort der Zukunft“</a>';
+    $mp = '<a href="https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/dokumentation-masterplan.php" target="_blank" rel="noopener">Gemeinde Merzenich, „Grünes Licht für den Masterplan Bürgewald“</a>';
+    return '<p><strong>Stand: 3. November 2026.</strong> Neues dazu steht unter <a href="/ort/buergewald/">Bürgewald</a>, <a href="/ort/morschenich/">Morschenich</a> und im Ressort <a href="/wirtschaft/">Wirtschaft</a>.</p>'
+        . '<h2 id="zeitachse">Zeitachse</h2><ul>'
+        . '<li><strong>1939 bis 1955:</strong> In Morschenich wird in einer Großversuchsanlage Braunkohle unter Tage gewonnen; die Förderung endet, weil sich kein rentables Verfahren findet.</li>'
+        . '<li><strong>Januar 2015:</strong> Die Umsiedlung beginnt. Weil das Dorf dem Tagebau Hambach weichen soll, entsteht zwischen Merzenich und Golzheim der neue Ort Morschenich-Neu.</li>'
+        . '<li><strong>2020:</strong> Die Umsiedlung ist fast abgeschlossen, da legt die Leitentscheidung der Landesregierung fest: Das alte Morschenich und der Hambacher Forst können bleiben.</li>'
+        . '<li><strong>14. Juni 2024:</strong> NRW-Ministerin Ina Scharrenbach übergibt den ersten Förderbescheid über rund 57 Millionen Euro für den Rückkauf und die Entwicklung des alten Dorfes.</li>'
+        . '<li><strong>6. Juli 2024:</strong> Mit dem Abschluss der Umsiedlung heißt der neue Ort Morschenich, das alte Dorf Bürgewald.</li>'
+        . '<li><strong>Ende 2025:</strong> Bis dahin soll laut Gemeinde der Masterplan Bürgewald fertig sein; danach werden die Planungen etwa für die technische Infrastruktur konkret.</li>'
+        . '</ul><p>Quellen: ' . $mo . '; ' . $fb . '; ' . $mp . '.</p>'
+        . '<h2 id="buergewald">Was passiert mit Bürgewald?</h2>'
+        . '<p>Die Gemeinde Merzenich hat das alte Dorf zurückgekauft und will es zum „Ort der Zukunft“ entwickeln. Gebaut werden soll klimaschonend, flächensparend und ressourcenschonend; die abgebrannte Kirche St. Lambertus soll wieder aufgebaut und ein Ort der Begegnung werden. Weil viele Gebäude lange leer standen, rechnet die Gemeinde zugleich mit Rückbau. Quelle: ' . $fb . '; ' . $mo . '.</p>'
+        . '<h2 id="geld">Wie viel Geld fließt in den Ort der Zukunft?</h2>'
+        . '<p>Nach dem Investitionsgesetz Kohleregion stehen für Grunderwerb, Sanierung und Entwicklung rund 90 Millionen Euro bereit. Die erste Bewilligung über rund 57 Millionen Euro umfasst 40,4 Millionen Euro für den Grunderwerb, 8,8 Millionen Euro für Initial- und Unterhaltungsmaßnahmen, 2 Millionen Euro für Gutachten und Konzepte, 2,1 Millionen Euro für Objektplanung und Bau sowie 3,8 Millionen Euro für Vermarktung und Projektmanagement. Davon kommen 51,3 Millionen Euro vom Bund und 4,3 Millionen Euro vom Land; die Gemeinde trägt 1,4 Millionen Euro selbst. Quelle: ' . $fb . '.</p>'
+        . '<h2 id="morschenich">Was ist in Morschenich entstanden?</h2>'
+        . '<p>Im neuen Ort gibt es mehr als 130 Grundstücke. Die Straßennamen folgen denen des alten Dorfes, und alle Häuser werden über Nahwärme aus einer Pelletheizung versorgt. Quelle: ' . $mo . '.</p>'
+        . '<h2 id="see">Was ist mit dem Hambacher See?</h2>'
+        . '<p>Bürgewald soll sich laut Landesregierung auch in Richtung des geplanten Hambacher Sees entwickeln, der der zweitgrößte See Deutschlands werden soll. Quelle: ' . $fb . '.</p>';
 }
 
 /** Orte der Umgebung in fester Reihenfolge (wie deploy/umkreis.mjs). */
