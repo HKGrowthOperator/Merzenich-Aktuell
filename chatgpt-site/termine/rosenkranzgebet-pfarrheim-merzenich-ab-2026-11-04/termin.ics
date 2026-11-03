@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:rosenkranzgebet-pfarrheim-merzenich-ab-2026-11-04@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261103T060000Z
 DTSTART:20261104T170000Z
 SUMMARY:Rosenkranzgebet wieder im Pfarrheim (ab 4. November)
 DESCRIPTION:Das wöchentliche Rosenkranzgebet wird ab dem 4. November nicht

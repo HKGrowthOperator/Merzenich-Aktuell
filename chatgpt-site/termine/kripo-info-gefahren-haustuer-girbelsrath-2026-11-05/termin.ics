@@ -9,7 +9,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:kripo-info-gefahren-haustuer-girbelsrath-2026-11-05@merzenich-aktuell.d
  e
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261103T060000Z
 DTSTART:20261105T140000Z
 SUMMARY:Kripo informiert in Girbelsrath über Gefahren an der Haustür
 DESCRIPTION:Die Dorfwerkstatt Girbelsrath lädt am Donnerstag\, 5. November
