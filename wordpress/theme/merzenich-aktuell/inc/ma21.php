@@ -1458,20 +1458,21 @@ function ma21_liste_kopf(): array {
     // Sammelseite eines roten Menütitels: Ressort als Dachzeile, Titel als Überschrift.
     if (($rs = ma21_rubrik_aktuell()) !== null) return [(string) $rs['ressortTitel'], (string) $rs['titel'], (string) $rs['beschreibung']];
     $o = get_queried_object();
+    // 21.27.0: „Merzenich“ in jeder H1 (SEO-GEO-BERICHT 03.11.2026, Befund 10; docs/SEO-KEYWORDS.md).
     $TEXTE = [
-        'blaulicht' => ['Blaulicht', 'Feuerwehr, Polizei und Rettungsdienst', 'Einsätze der Freiwilligen Feuerwehr Merzenich, Polizeimeldungen für das Gemeindegebiet und Verkehrsmeldungen, sachlich zusammengefasst und mit Originalquelle.'],
-        'rathaus' => ['Rathaus & Politik', 'Rathaus, Rat und Gemeinde', 'Beschlüsse, Bekanntmachungen und Projekte der Gemeinde Merzenich.'],
+        'blaulicht' => ['Blaulicht', 'Blaulicht Merzenich: Feuerwehr, Polizei und Rettungsdienst', 'Einsätze der Freiwilligen Feuerwehr Merzenich, Polizeimeldungen für das Gemeindegebiet und Verkehrsmeldungen, sachlich zusammengefasst und mit Originalquelle.'],
+        'rathaus' => ['Rathaus & Politik', 'Rathaus und Gemeinderat Merzenich', 'Beschlüsse, Bekanntmachungen und Projekte der Gemeinde Merzenich.'],
         'sport' => ['Sport', 'Sport in Merzenich', 'Spielberichte und Neues aus den Sportvereinen der Gemeinde.'],
         'leben' => ['Leben', 'Leben in Merzenich', 'Schule, Familie, Kirche, Senioren und Alltag in den fünf Orten.'],
-        'wirtschaft' => ['Wirtschaft', 'Wirtschaft und Arbeit', 'Betriebe, Arbeit, Infrastruktur und Strukturwandel im Rheinischen Revier.'],
-        'vereine' => ['Vereine', 'Aus den Vereinen', 'Meldungen, Feste und Termine der Vereine in Merzenich.'],
+        'wirtschaft' => ['Wirtschaft', 'Wirtschaft und Arbeit in Merzenich', 'Betriebe, Arbeit, Infrastruktur und Strukturwandel im Rheinischen Revier.'],
+        'vereine' => ['Vereine', 'Vereine in Merzenich', 'Meldungen, Feste und Termine der Vereine in Merzenich.'],
     ];
     if (is_category() && $o instanceof WP_Term && isset($TEXTE[$o->slug])) return $TEXTE[$o->slug];
     if (is_tax('ma_location') && $o instanceof WP_Term) return ['Ort', $o->name, $o->description ?: "Meldungen aus {$o->name}."];
     if (is_tag() && $o instanceof WP_Term) return [(string) (ma21_thema_ressort((string) $o->slug)['ressortTitel'] ?? 'Thema'), $o->name, $o->description ?: "Alle Meldungen zum Thema {$o->name}."];
     if (is_search()) return ma21_suche_kopf(trim((string) get_search_query(false)), (int) ($GLOBALS['wp_query']->found_posts ?? 0));
     if ($o instanceof WP_Term) return [$o->name, $o->name, $o->description];
-    return ['Nachrichten', 'Alle Meldungen', 'Alle Meldungen aus der Gemeinde Merzenich, die jüngste zuerst.'];
+    return ['Nachrichten', 'Nachrichten aus Merzenich', 'Alle Meldungen aus der Gemeinde Merzenich, die jüngste zuerst.'];
 }
 
 /**

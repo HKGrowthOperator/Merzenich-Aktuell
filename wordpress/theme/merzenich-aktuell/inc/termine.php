@@ -97,7 +97,7 @@ function ma21_termine_seite(): void {
     sort($kategorien, SORT_LOCALE_STRING);
     $n = count($kommend);
     echo '<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><span aria-current="page">Termine</span></nav>'
-        . '<span class="eyebrow">Kalender</span><h1>Heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
+        . '<span class="eyebrow">Kalender</span><h1>Termine in Merzenich: heute &amp; die nächsten Tage</h1><p class="desc">Feste, Kultur, Sport und Vereinsleben in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald.</p>'
         . '<p class="count-line">' . (ma21_heute_da() ? '<a href="' . esc_url(home_url('/heute/')) . '">Was ist heute los?</a> · ' : '') . '<a href="' . esc_url(home_url('/termine/kalender.ics')) . '">Kalender abonnieren</a> · <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a></p></div></div>';
     echo '<section class="section"><div class="shell"><div class="filter-controls" data-event-filters>'
         . '<div class="period-tabs" aria-label="Zeitraum"><button type="button" data-period="all" aria-pressed="true">Alle</button><button type="button" data-period="today" aria-pressed="false">Heute</button><button type="button" data-period="weekend" aria-pressed="false">Wochenende</button><button type="button" data-period="14" aria-pressed="false">Nächste 14 Tage</button></div>'
