@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T08:17:32.298Z",
+  "updatedAt": "2026-11-03T13:50:31.643Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1547,6 +1547,15 @@
       "assignedAt": "2026-11-03T08:17:32.298Z",
       "articleId": "2026-11-03-jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv",
       "articleDate": "2026-11-03T09:16:00+01:00"
+    },
+    "/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-03T13:50:31.642Z",
+      "articleId": "2026-11-03-solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher",
+      "articleDate": "2026-11-03T14:49:00+01:00"
     }
   }
 }
