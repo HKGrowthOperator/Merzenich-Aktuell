@@ -71,12 +71,15 @@ export function einsatzortZerlegen(text) {
 
 const DATUM_RE = /(\d{2})\.(\d{2})\.(\d{4})/;
 
-/** Zeitstempel in Ortszeit mit richtigem Versatz (+02:00 Sommer, +01:00 Winter). */
+/**
+ * Zeitstempel in Ortszeit mit richtigem Versatz (+02:00 Sommer, +01:00 Winter). Ohne Uhrzeit
+ * leer: Eine erfundene Uhrzeit (bis 03.11.2026 stand hier 12 Uhr) wäre eine unbelegte Angabe.
+ */
 export function berlinIso(datum, zeit = '') {
   const m = String(datum).match(DATUM_RE);
-  if (!m) return '';
+  if (!m || !/^\d{1,2}:\d{2}$/.test(String(zeit).trim())) return '';
   const [, d, mo, y] = m;
-  const [h, mi] = (zeit || '12:00').split(':');
+  const [h, mi] = String(zeit).trim().split(':');
   for (const off of ['+02:00', '+01:00']) {
     const iso = `${y}-${mo}-${d}T${h.padStart(2, '0')}:${mi.padStart(2, '0')}:00${off}`;
     const t = new Date(iso);
@@ -85,6 +88,24 @@ export function berlinIso(datum, zeit = '') {
     if (Number(teile.hour) === Number(h) && Number(teile.minute) === Number(mi)) return iso;
   }
   return '';
+}
+
+/** Zeitpunkt (z. B. Abrufzeit in UTC) als Ortszeit mit Versatz, minutengenau. */
+export function berlinIsoAusZeitpunkt(zeitpunkt) {
+  const t = new Date(zeitpunkt || '');
+  if (Number.isNaN(t.getTime())) return '';
+  const teile = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+    .formatToParts(t).map((p) => [p.type, p.value]));
+  return berlinIso(`${teile.day}.${teile.month}.${teile.year}`, `${teile.hour}:${teile.minute}`);
+}
+
+/**
+ * Datum der Meldung = Zeitpunkt, an dem die Automatik sie aus der abgerufenen Quelle anlegt
+ * (Korrekturauftrag 03.11.2026). Nicht der Einsatztag: Der steht als "Alarmierung" in Text und
+ * Fakten. Nicht die Beitragszeit der Feuerwehr: Vor dem Abruf gab es die Meldung bei uns noch nicht.
+ */
+export function meldungsDatum(abgerufen) {
+  return berlinIsoAusZeitpunkt(abgerufen);
 }
 
 /** "Sonntag, 4. Oktober 2026" fuer ein Datum TT.MM.JJJJ. */
@@ -205,7 +226,7 @@ const woerter = (m) => [m.dek, ...m.absaetze].join(' ').split(/\s+/).filter(Bool
 /* ------------------------------------------------------------ Meldung bauen */
 
 /** Meldung nach dem Schema von deploy/meldungen.mjs oder { grund } zum Ueberspringen. */
-export function meldungBauen(e, { stand, gueltigeKlassen } = {}) {
+export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   if (!e.ortsteil) return { grund: `Einsatzort „${[e.ort, e.strasse].filter(Boolean).join(' - ')}“ liegt in keinem Ortsteil (Autobahn, Landstraße oder Nachbarort)` };
   const bildklasse = bildklasseVon(e, gueltigeKlassen);
   if (!bildklasse) return { grund: `keine Bildklasse für das Stichwort „${e.meldung || e.stichwort}“` };
@@ -236,7 +257,7 @@ export function meldungBauen(e, { stand, gueltigeKlassen } = {}) {
   ];
   if (e.kraefte.length) fakten.push(`Eingesetzte Kräfte: ${e.kraefte.join(', ')}`);
 
-  const datum = berlinIso(e.datum, e.zeit) || (e.hi?.beitragDatum ? berlinIso(e.hi.beitragDatum, e.hi.beitragZeit) : '');
+  const datum = meldungsDatum(abgerufen);
   const quellen = [];
   if (e.fw) quellen.push({ name: `${ORGANISATION}, Einsatzbericht ${nummer}`, url: e.fw.url, stand });
   if (e.hi) quellen.push({ name: `${ORGANISATION}, Beitrag in der Heimat-Info-App vom ${e.hi.beitragDatum || e.hi.datum}`, url: e.hi.url, stand });
@@ -249,7 +270,7 @@ export function meldungBauen(e, { stand, gueltigeKlassen } = {}) {
     titel, dek, datum, artikeltyp: 'kurzmeldung', fakten, absaetze: [absatz1, absatz2], themen, bildklasse,
     quelle: quellen[0], ...(quellen.length > 1 ? { weitereQuellen: quellen.slice(1) } : {}),
   };
-  if (!datum) return { grund: 'kein Datum in den Quellen' };
+  if (!datum) return { grund: 'kein Abrufzeitpunkt der Quelle (Datum der Meldung)' };
   const n = woerter(m);
   if (n < MIN_WOERTER) return { grund: `nur ${n} Wörter (Kurzmeldung verlangt ${MIN_WOERTER})` };
   return { meldung: m };
@@ -308,7 +329,9 @@ function lauf() {
     if (!(alter >= 0 && alter <= FENSTER_TAGE)) continue;
     if (!gedeckt.has(e.jahr)) gedeckt.set(e.jahr, gedeckteNummern(wurzel, e.jahr));
     if (gedeckt.get(e.jahr).has(e.nr) || stand.feuerwehr[nummer]) continue;
-    const r = meldungBauen(e, { stand: abrufTag(e.fw ? feuerwehr.abgerufen : heimatinfo.abgerufen), gueltigeKlassen });
+    // Angelegt wird die Meldung nach dem letzten Abruf der verwendeten Quellen.
+    const abgerufen = [e.fw && feuerwehr.abgerufen, e.hi && heimatinfo.abgerufen].filter(Boolean).sort().pop() || '';
+    const r = meldungBauen(e, { stand: abrufTag(e.fw ? feuerwehr.abgerufen : heimatinfo.abgerufen), gueltigeKlassen, abgerufen });
     if (r.meldung) neu.push(r.meldung); else uebersprungen.push({ nummer, grund: r.grund });
   }
 

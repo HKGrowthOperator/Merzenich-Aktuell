@@ -209,6 +209,11 @@ const kiRelevanz = new Map(readdirSync(join(wurzel, 'inhalte', 'meldungen')).fil
   .flatMap((f) => (JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', f), 'utf8')).meldungen || [])
     .filter((x) => [1, 2, 3].includes(x.relevanz)).map((x) => [x.slug, String(x.relevanz)])));
 
+// Datumskorrektur (Plugin 1.43.0, Korrekturauftrag 03.11.2026): "datumKorrektur": true an einer Meldung
+// (jedes Paket) lässt den Abgleich das Datum des Pakets einmal in den schon angelegten Beitrag übernehmen.
+const datumKorrektur = new Set(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter((f) => f.endsWith('.json'))
+  .flatMap((f) => (JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', f), 'utf8')).meldungen || []).filter((x) => x.datumKorrektur === true).map((x) => x.slug)));
+
 for (const m of meldungen) {
   const { a, q, bild } = m;
   const tax = `<category domain="category" nicename="${xmlEsc(a.ressort)}">${cdata(a.ressortLabel)}</category>`
@@ -230,6 +235,7 @@ for (const m of meldungen) {
     + meta('ma_kicker', a.kicker || '')
     + (kiMeldungen.has(m.slug) ? meta('ma_herkunft', 'ki-redaktion') : '')
     + (kiRelevanz.has(m.slug) ? meta('ma_relevanz', kiRelevanz.get(m.slug)) : '')
+    + (datumKorrektur.has(m.slug) ? meta('ma_datum_aus_stand', '1') : '')
     // Zwei getrennte Freigaben (Plugin 1.19.0): redaktionelle Meldungen der statischen Seite stehen auf der Startseite.
     + meta('ma_startseite_freigabe', 'ja')
     + (bild ? meta('_thumbnail_id', String(bild.id)) + meta('ma_image_credit', bild.credit) + meta('ma_image_license', bild.lizenz)

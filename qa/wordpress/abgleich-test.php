@@ -43,6 +43,15 @@ pruefe('Geänderter Titel ändert den Hash, Pfad bleibt', [$e2['hash'] !== $e['h
 pruefe('Unlesbare Datei: keine Einträge, kein Abbruch', ma_abgleich_lesen('<html>kaputt')['eintraege'], []);
 pruefe('Fremdes XML ohne Kanal: leer', ma_abgleich_lesen('<?xml version="1.0"?><rss/>')['eintraege'], []);
 
+echo "\nDatum: Korrektur aus dem Stand, Freigabe = Veröffentlichung (1.43.0)\n";
+$k = ['typ' => 'post', 'datum' => '2026-11-03 00:13:00', 'datum_gmt' => '2026-11-02 23:13:00', 'meta' => ['ma_datum_aus_stand' => '1']];
+pruefe('Gekennzeichnet und abweichend: Datum aus dem Stand übernehmen', ma_abgleich_datum_korrigieren($k, '2026-10-27 12:00:00'), true);
+pruefe('Schon gleich: nichts tun (einmalig)', ma_abgleich_datum_korrigieren($k, '2026-11-03 00:13:00'), false);
+pruefe('Ohne Kennzeichen: Datum bleibt', ma_abgleich_datum_korrigieren(['meta' => []] + $k, '2026-10-27 12:00:00'), false);
+pruefe('Termin oder leeres Datum: nie', [ma_abgleich_datum_korrigieren(['typ' => 'ma_event'] + $k, 'x'), ma_abgleich_datum_korrigieren(['datum' => ''] + $k, 'x')], [false, false]);
+pruefe('Entwurf oder Prüfung aus dem Abgleich wird veröffentlicht: Freigabezeit', [ma_abgleich_freigabe_datum_jetzt('draft', 'publish', true, false), ma_abgleich_freigabe_datum_jetzt('pending', 'publish', true, false)], [true, true]);
+pruefe('Datum von Hand, Planung, schon online, eigener Beitrag: Datum bleibt', [ma_abgleich_freigabe_datum_jetzt('draft', 'publish', true, true), ma_abgleich_freigabe_datum_jetzt('draft', 'future', true, false), ma_abgleich_freigabe_datum_jetzt('publish', 'publish', true, false), ma_abgleich_freigabe_datum_jetzt('draft', 'publish', false, false)], [false, false, false, false]);
+
 echo "\nEntscheidung je Beitrag\n";
 pruefe('Noch nie abgeglichen: Stand übernehmen', ma_abgleich_entscheidung('neu', '', '', 'x'), 'uebernehmen');
 pruefe('Gleicher Hash: unverändert', ma_abgleich_entscheidung('a', 'a', 't', 'anders'), 'unveraendert');

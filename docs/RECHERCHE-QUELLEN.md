@@ -36,6 +36,10 @@ Quellen (Netzrichtlinie, HTTP 403). GitHub Actions erreicht sie. Deshalb:
 - **Nur Neues:** Nummer in keiner Meldung, keinem Artikel und keiner Seite
   (`inhalte/meldungen`, `site-source/content/artikel`, `chatgpt-site/blaulicht`),
   nicht in `deploy/automatik-stand.json`, Alarm höchstens 14 Tage alt.
+- **Datum der Meldung:** Zeitpunkt, an dem die Automatik sie nach dem Abruf
+  anlegt (seit 03.11.2026). Der Einsatztag steht in Vorspann und Fakten
+  („Alarmierung“), nie als Veröffentlichungsdatum; keine Ersatz-Uhrzeit. Mit der
+  Freigabe in WordPress gilt die Freigabezeit (Plugin 1.43.0).
 - **Text:** nur aus den Feldern der Quelle, dazu höchstens drei Sätze des
   Feuerwehrberichts als Zitat („Die Feuerwehr schreibt dazu: …“), ohne Sätze mit
   Ziffern (Hausnummern, Alter). Widersprechen sich die Quellen bei Datum oder

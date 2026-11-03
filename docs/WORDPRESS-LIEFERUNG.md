@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-2. November 2026 · Theme 21.25.0 · Core-Plugin 1.41.0 · live: 21.25.0 / 1.40.1, Selbst-Update aktiv (Historie unten)
+3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 03.11.2026: Plugin 1.43.0, ehrliches Datum und Freigabe = Veröffentlichung
+
+Anlass: Korrekturauftrag ChatGPT 03.11.2026. Feuerwehr 144/26 stand mit „Veröffentlicht 27.10.2026 · 12:00 Uhr“ online; 27.10. war der Einsatztag, 12 Uhr ein Ersatzwert der Automatik. Gleiches bei 140/26 und 141/26.
+
+- **Automatik** (`deploy/automatik-feuerwehr.mjs`): Datum der Meldung ist der Zeitpunkt, an dem die Automatik sie nach dem Abruf der Quellen anlegt (`meldungsDatum`, aus `abgerufen`). Der Einsatztag steht weiter in Vorspann und Fakten („Alarmierung: …“, mit Uhrzeit, wenn die Einsatzseite sie nennt). `berlinIso` setzt ohne Uhrzeit keinen Zeitstempel mehr. Test: `qa/automatik-feuerwehr-test.mjs`.
+- **Datumskorrektur** (`includes/abgleich.php`, `ma_abgleich_datum_korrigieren`): `"datumKorrektur": true` an einer Meldung wird zum Importfeld `ma_datum_aus_stand`; der Abgleich übernimmt dann einmal das Datum des Pakets in den schon angelegten Beitrag (Verlauf: „Datum aus dem redaktionellen Stand korrigiert“). Gesetzt für 140/26 (18.10., 11:43 Uhr), 141/26 (21.10., 12:16 Uhr) und 144/26 (03.11., 00:13 Uhr): Anlagezeit laut Automatik-Commit beziehungsweise Abruf. Greift nicht, wenn der Text in WordPress von Hand geändert wurde.
+- **Freigabe = Veröffentlichung** (`ma_abgleich_freigabe_datum_jetzt`, Filter `wp_insert_post_data`, Priorität 40): Geht ein Entwurf aus dem Abgleich (Freigaben, Sammelfreigabe, KI direkt) online, gilt die Freigabezeit als Datum. Nur so landet eine freigegebene Meldung in der Nachrichten-Sitemap (48 Stunden), oben im Feed und bei Google News. Ein von Hand geändertes Datum und geplante Beiträge bleiben unberührt.
+- Tests: `qa/wordpress/abgleich-test.php` (Abschnitt „Datum“).
 
 ## Neu am 02.11.2026: Plugin 1.41.0, Aufmacher automatisch
 

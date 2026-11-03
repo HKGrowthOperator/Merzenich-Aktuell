@@ -111,6 +111,36 @@ function ma_abgleich_entscheidung(string $hashNeu, string $hashAlt, string $text
     return $textAlt === $textJetzt ? 'aktualisieren' : 'von_hand';
 }
 
+/**
+ * Datum aus dem Stand erzwingen (1.43.0, Korrekturauftrag 03.11.2026): Ein schon angelegter Beitrag
+ * behält sein Datum, auch wenn das Paket ein anderes liefert. Kennzeichnet die Redaktion eine Meldung
+ * mit "datumKorrektur": true (Importfeld ma_datum_aus_stand), übernimmt der Abgleich das Datum des
+ * Pakets einmal. Anlass: Feuerwehr 144/26 stand mit Einsatztag und erfundener 12 Uhr online.
+ */
+function ma_abgleich_datum_korrigieren(array $e, string $postDatum): bool {
+    return ($e['typ'] ?? '') === 'post' && (string) ($e['meta']['ma_datum_aus_stand'] ?? '') === '1'
+        && ($e['datum'] ?? '') !== '' && ($e['datum_gmt'] ?? '') !== '' && $e['datum'] !== $postDatum;
+}
+
+/**
+ * Freigabe = Veröffentlichung (1.43.0): Ein Entwurf aus dem Abgleich trägt das Datum seines Pakets
+ * (Anlage, Quelle). Geht er erst mit der Freigabe online, gilt die Freigabezeit als Veröffentlichungsdatum.
+ * Erst dann steht die Meldung bei uns; nur so erscheint sie in der Nachrichten-Sitemap (48 Stunden),
+ * oben im Feed und bei Google News. Ein von Hand geändertes Datum (edit_date) bleibt.
+ */
+function ma_abgleich_freigabe_datum_jetzt(string $altStatus, string $neuStatus, bool $ausAbgleich, bool $datumVonHand): bool {
+    return $ausAbgleich && !$datumVonHand && in_array($altStatus, ['draft', 'pending'], true) && $neuStatus === 'publish';
+}
+add_filter('wp_insert_post_data', function (array $data, array $postarr): array {
+    $id = (int) ($postarr['ID'] ?? 0);
+    if (!$id || ($data['post_type'] ?? '') !== 'post') return $data;
+    $ausAbgleich = (string) get_post_meta($id, '_ma_abgleich_hash', true) !== '';
+    if (!ma_abgleich_freigabe_datum_jetzt((string) get_post_status($id), (string) ($data['post_status'] ?? ''), $ausAbgleich, !empty($postarr['edit_date']))) return $data;
+    $data['post_date'] = current_time('mysql');
+    $data['post_date_gmt'] = current_time('mysql', true);
+    return $data;
+}, 40, 2); // nach den Veröffentlichungssperren (20, 21, 30): nur was wirklich online geht
+
 /** Status eines neuen Beitrags: Meldungen als Entwurf in die Freigabe oder (Option) sofort veröffentlicht, KI-Meldungen mit Option „KI direkt“ veröffentlicht, Termine wie geliefert. */
 function ma_abgleich_status(array $e, bool $sofort, bool $kiDirekt = false): string {
     if ($e['typ'] === 'post') return $sofort || ($kiDirekt && ma_abgleich_ist_ki($e)) ? 'publish' : 'draft';
@@ -364,6 +394,13 @@ function ma_abgleich_aktualisieren(int $id, array $e, array $bilder, array &$feh
         if (is_wp_error($r) || !$r) { $fehler[] = $e['titel'] . ': ' . (is_wp_error($r) ? $r->get_error_message() : 'nicht aktualisiert'); return false; }
     } else {
         foreach ($meta as $k => $v) update_post_meta($id, $k, wp_slash($v));
+    }
+    $p = get_post($id);
+    if ($p && ma_abgleich_datum_korrigieren($e, (string) $p->post_date)) {
+        $vorher = (string) $p->post_date;
+        $r = wp_update_post(['ID' => $id, 'post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt'], 'edit_date' => true], true);
+        if (is_wp_error($r) || !$r) $fehler[] = $e['titel'] . ' (Datum): ' . (is_wp_error($r) ? $r->get_error_message() : 'nicht korrigiert');
+        elseif (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($id, 'Abgleich', 'Datum aus dem redaktionellen Stand korrigiert: ' . $vorher . ' → ' . $e['datum'], 0);
     }
     ma_abgleich_terme_setzen($id, $e['terme']);
     if ($e['bild'] && ma_abgleich_bild_fehlt($id, $e)) ma_abgleich_bild_setzen($id, $e, $bilder, $fehler);
