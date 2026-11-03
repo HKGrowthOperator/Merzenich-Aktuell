@@ -4,6 +4,8 @@ Stand 03.11.2026, gemessen an der Live-Seite zwischen 10:15 und 10:45 Uhr (Abruf
 
 **Grenze der Messung:** Ohne Zugang zur Search Console (`GOOGLE_SERVICE_ACCOUNT_JSON` ist in dieser Umgebung nicht gesetzt) gibt es keine Zahlen zu Klicks, Impressionen, Platzierungen oder indexierten Seiten. Alles unten ist technisch an der Seite gemessen. Rankings sind nicht gemessen, sondern begründet eingeschätzt.
 
+**Reihenfolge und Ziele:** `docs/SICHTBARKEITSPLAN-2026-11.md` (nach der Google-Probe „merzenich“ vom 03.11.2026).
+
 Kennzeichnung wie im Plan: **[Code]** setzt die Redaktionssitzung im Repository um, **[Redaktion]** betrifft die Redaktionsläufe, **[Betreiber]** geht nur in Google-, Bing-, IONOS- oder Social-Konten.
 
 ---

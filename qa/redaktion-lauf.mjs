@@ -63,6 +63,8 @@ const REGEL_AB = '2026-10-27';
 // Ab diesem Paketdatum (Entscheidung Luis Kummer 28.10.2026, Claude-Beitraege gehen direkt live):
 // Standardtext mindestens 450 Woerter, mindestens drei verschiedene Quellen, Bild passend zum Thema.
 const REGEL_V3_AB = '2026-10-29';
+// Sichtbarkeitsplan 03.11.2026: Wer "merzenich" sucht, findet nur Titel mit "Merzenich" (19 von 25 Claude-Titeln hatten es nicht).
+const REGEL_TITEL_AB = '2026-11-03';
 // Laenge (Luis Kummer 28.10.2026: „viel, viel laenger“, bisher ein bis zwei Minuten Lesezeit):
 // Mindestwoerter je Artikeltyp fuer Claude-Pakete ab REGEL_V3_AB (gut 200 Woerter je Leseminute).
 const V3_LAENGE = { kurzmeldung: [150, 3], standard: [800, 7], vertiefung: [1100, 8], hintergrund: [1400, 10] };
@@ -206,6 +208,13 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
     if (!RESSORTS.includes(m.ressort)) F(b, `Ressort ${m.ressort} unbekannt`);
     if (!ORTSTEILE.includes(m.ortsteil)) F(b, `Ortsteil ${m.ortsteil} unbekannt`);
     if (m.bildklasse && Object.keys(bildklassen).length && !bildklassen[m.bildklasse]) F(b, `Bildklasse ${m.bildklasse} fehlt in deploy/bildklassen.json`);
+    if (claude && (paketDatum(datei) >= REGEL_TITEL_AB || STRENG)) {
+      const t = String(m.titel || '');
+      const pos = t.search(/Merzenich/);
+      if (pos < 0 && /Kreis Düren/.test(t)) H(b, 'Titel ohne „Merzenich“ (nur „Kreis Düren“): Merzenich-Bezug in den Titel, wenn es einen gibt (docs/SEO-KEYWORDS.md Regel 1)');
+      else if (pos < 0) F(b, 'Titel ohne „Merzenich“: Wer „merzenich“ sucht, findet die Meldung nicht. „Merzenich“, „Merzenicher“ oder „Ortsteil (Merzenich)“ in den Titel (docs/SEO-KEYWORDS.md Regel 1)');
+      else if (pos > 60) H(b, `„Merzenich“ erst ab Zeichen ${pos}; besser in den ersten 60 Zeichen`);
+    }
     if (Number.isNaN(Date.parse(m.datum)) || !MIT_ZONE.test(m.datum || '')) F(b, `datum ohne Zeitzone oder unlesbar (${m.datum})`);
     else if (m.datum.slice(0, 10) > plusTag(heute, 1)) F(b, `datum ${m.datum} liegt mehr als einen Tag in der Zukunft`);
     if (v2) {

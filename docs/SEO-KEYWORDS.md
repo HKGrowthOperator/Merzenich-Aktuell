@@ -32,7 +32,7 @@ Nicht verfolgen: Anfragen ohne Bezug zum Angebot (Firmennamen der Werbekunden, �
 
 Gilt für alle Meldungen, ergänzt [docs/redaktion/SCHREIBREGELN.md](redaktion/SCHREIBREGELN.md) Abschnitt 2.
 
-1. **Ort und Ereignis vorn**, in den ersten 60 Zeichen: „Unfall auf der L 264 bei Girbelsrath: …“, „Polizeieinsatz am Bahnhof Merzenich: …“. So suchen die Leute (Vorschläge oben).
+1. **„Merzenich“ steht in jedem Titel, mit dem Ereignis in den ersten 60 Zeichen:** „Tödlicher Unfall in Merzenich: …“, „Polizeieinsatz am Bahnhof Merzenich: …“, Ortsteil als „Girbelsrath (Merzenich)“ oder „Merzenich-Girbelsrath“. Die meisten suchen nur „merzenich“; ein Titel nur mit Ortsteil („… bei Girbelsrath“) erscheint dort nicht (Google-Probe 03.11.2026: Radio Rur, Aachener Zeitung, AOL und dueren-magazin.de mit „Merzenich“ im Titel, wir ohne). Nur Themen ohne Merzenich-Bezug tragen stattdessen „Kreis Düren“. ⚙ `qa/redaktion-lauf.mjs` prüft das ab 03.11.2026.
 2. **Die Wörter der Suchenden** statt Amtssprache: Unfall, Polizeieinsatz, Brand, Sperrung, Stau, Feuerwehreinsatz, Termin, Veranstaltung. Straßennummer mit Leerzeichen und ohne („L 264“ im Text, „L264“ im SEO-Titel, falls nötig).
 3. **Ortsteil plus Gemeinde**, wenn der Ortsteil allein mehrdeutig ist: „Golzheim (Merzenich)“ statt nur „Golzheim“ (Golzheim in Düsseldorf).
 4. **Kein „heute“ im Titel**, das veraltet. Datum im ersten Satz; die Aktualität kommt aus der News-Sitemap und `datePublished`.
