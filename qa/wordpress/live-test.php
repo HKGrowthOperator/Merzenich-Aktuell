@@ -24,7 +24,8 @@ $a = ma_live_kennung('UA-A');
 pruefe('Kennung hat 16 Zeichen', strlen($a), 16);
 pruefe('gleicher Besucher am selben Tag = gleiche Kennung', ma_live_kennung('UA-A'), $a);
 pruefe('anderer Browser = andere Kennung', ma_live_kennung('UA-B') !== $a, true);
-pruefe('IP-Adresse steckt nicht in der Kennung', str_contains($a, '203'), false);
+// Nur Hex-Zeichen und nie die Adresse im Klartext. Früher: str_contains($a, '203'); ein zufälliger Hash mit "203" (Tagessalz) ließ den Build am 03.11.2026 scheitern.
+pruefe('IP-Adresse steckt nicht in der Kennung', [ctype_xdigit($a), str_contains($a, '203.0.113.7'), str_contains($a, '.')], [true, false, false]);
 $GLOBALS['tag'] = '2026-10-02';
 pruefe('am nächsten Tag nicht mehr zuzuordnen', ma_live_kennung('UA-A') !== $a, true);
 pruefe('nur ein Tageswert gespeichert (alter verworfen)', $GLOBALS['opt']['ma_live_salz']['tag'], '2026-10-02');
