@@ -48,9 +48,11 @@ Quellen (Netzrichtlinie, HTTP 403). GitHub Actions erreicht sie. Deshalb:
 - **Übersprungen** (steht in der Zusammenfassung des Laufs): Einsatzort ohne
   Ortsteil (Autobahn, Landstraße), kein Bericht, keine passende Bildklasse,
   unter 80 Wörtern.
-- **Veröffentlicht nichts.** Die Meldungen kommen über den Abgleich als Entwurf
-  in die Freigaben. Wer eine Meldung nicht will, legt sie in WordPress in den
-  Papierkorb; sie kommt nicht wieder.
+- **Veröffentlicht direkt** (seit 03.11.2026, Entscheidung Luis Kummer): Der
+  Abgleich stellt die Meldungen als Beitrag der KI-Redaktion online, Relevanz
+  aus der Bildklasse (2 Brand und Unfall mit Rettung, sonst 3), Titel mit
+  „Feuerwehr Merzenich“. Wer eine Meldung nicht will, legt sie in WordPress in
+  den Papierkorb; sie kommt nicht wieder.
 - Test mit echten Rohdaten: `node qa/automatik-feuerwehr-test.mjs`.
 
 **Quellenstand 13.10.2026:** Polizei/Presseportal liefert seit 10.10. nur

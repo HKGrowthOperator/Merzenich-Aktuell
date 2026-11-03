@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. November 2026 · Theme 21.25.1 · Core-Plugin 1.43.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+3. November 2026 · Theme 21.26.0 · Core-Plugin 1.43.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 03.11.2026 (mittags): Theme 21.26.0, alles automatisch online und „Neu in Merzenich“
+
+Vorgabe Betreiber 03.11.2026: „automatisch … nicht in die Freigaben …, je nach Wichtigkeit … und trotzdem alle neuen Artikel in die News-Spalte“.
+
+- **Feuerwehr-Automatik direkt online:** `deploy/wordpress-import.mjs` behandelt `*-feuerwehr-automatik.json` wie die Pakete der KI-Redaktion (`ma_herkunft = ki-redaktion`, `ma_relevanz`); mit der Option „KI-Redaktion direkt“ veröffentlicht der Abgleich neue Einsätze sofort und schaltet wartende Entwürfe frei (`ma_abgleich_ki_freischalten`), mit der Freigabezeit als Datum. Relevanz aus der Bildklasse (`relevanzVon`): 2 für Brand und Unfall mit Rettung, sonst 3. Titel: „Feuerwehr Merzenich: … (Einsatz N/26)“.
+- **Heimat-Info-Termine direkt online:** `deploy/automatik-termine.mjs` schreibt kein `"entwurf": true` mehr. Die zwei Entwürfe vom 02.11. bleiben, wie sie sind (der Abgleich ändert den Status bestehender Termine nie).
+- **„Neu in Merzenich“** (`inc/neueste.php`): Kopf der Spalte „Nachrichten aus Merzenich“, alle Meldungen der letzten 48 Stunden, neueste zuerst, mindestens 5, höchstens 10, nur Text; auch was oben im Aufmacher oder auf der Bühne steht. Stile in `assets/css/plattform.css`. Test: `qa/wordpress/neueste-test.php`.
+- In der Freigabe bleiben Einsendungen von Vereinen, Partnern und Firmen und Claude-Meldungen mit rechtlichem Risiko (`"zurFreigabe": true`).
 
 ## Neu am 03.11.2026: Plugin 1.43.0, ehrliches Datum und Freigabe = Veröffentlichung
 

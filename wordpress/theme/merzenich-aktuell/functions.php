@@ -7,6 +7,7 @@ require_once __DIR__ . '/inc/unternehmen.php';
 require_once __DIR__ . '/inc/termine.php';
 require_once __DIR__ . '/inc/einzel.php';
 require_once __DIR__ . '/inc/sport.php';
+require_once __DIR__ . '/inc/neueste.php';
 
 add_action('after_setup_theme', function(){
     add_theme_support('title-tag');

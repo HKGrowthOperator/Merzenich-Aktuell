@@ -371,3 +371,15 @@ img.bild-logo,.media--logo img{object-fit:contain!important;background:#fff;padd
 .ma-wa__motiv-titel{font-weight:800;margin:4px 0 6px}
 .ma-wa__meldung{background:#fdecec;border:1px solid #c0392b;border-radius:4px;padding:10px 14px;color:#7a1a12;font-weight:600}
 .ma-wa input[type=file]{max-width:100%}
+
+/* „Neu in Merzenich“ in der Spalte „Nachrichten aus Merzenich“ (21.26.0): alle neuen Meldungen, nur Text. */
+.desk .neueste{grid-column:1/-1;margin:0 0 28px;padding:14px 0 6px;border-bottom:1px solid var(--line,#e2e2e2)}
+.neueste-titel{font-size:13px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-red,#c8102e);margin:0 0 8px}
+.neueste-liste{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.neueste-liste li{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:baseline;gap:4px 12px;padding:9px 0;border-top:1px solid var(--line,#e2e2e2)}
+.neueste-liste li:first-child{border-top:0}
+.neueste-liste time{font-size:13px;font-weight:700;color:var(--ink,#111);white-space:nowrap;font-variant-numeric:tabular-nums}
+.neueste-rubrik{font-size:11px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:#676767;white-space:nowrap}
+.neueste-liste a{font-size:16px;font-weight:650;line-height:1.3;color:var(--ink,#111);text-decoration:none}
+.neueste-liste a:hover,.neueste-liste a:focus-visible{text-decoration:underline}
+@media(max-width:767px){.neueste-liste li{grid-template-columns:auto minmax(0,1fr)}.neueste-liste a{grid-column:1/-1;font-size:15px}}

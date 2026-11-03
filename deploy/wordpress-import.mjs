@@ -201,11 +201,13 @@ for (const b of [...anhaenge.values()].sort((x, y) => x.id - y.id)) {
 // Beiträge der KI-Redaktion (Claude-Redaktionslauf, Paketname mit "recherche-claude") tragen
 // ma_herkunft = ki-redaktion; das Plugin veröffentlicht sie mit der Option „KI-Redaktion direkt“
 // ohne Freigabe (Entscheidung Luis Kummer 28.10.2026). "zurFreigabe": true hält eine Meldung zurück.
-const kiMeldungen = new Set(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter((f) => f.endsWith('.json') && f.includes('recherche-claude'))
+// Seit 03.11.2026 (Entscheidung Luis Kummer) auch die Feuerwehr-Automatik: direkt online, sortiert nach relevanz.
+const direktPaket = (f) => f.endsWith('.json') && (f.includes('recherche-claude') || f.endsWith('-feuerwehr-automatik.json'));
+const kiMeldungen = new Set(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter(direktPaket)
   .flatMap((f) => (JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', f), 'utf8')).meldungen || []).filter((x) => x.zurFreigabe !== true).map((x) => x.slug)));
 // Relevanz der KI-Redaktion (Entscheidung Luis Kummer 02.11.2026): "relevanz": 1 macht eine Meldung zur Top-Meldung.
 // Das Plugin stellt frische Stufe-1-Meldungen als Aufmacher und löst einen festen Aufmacher ab (Plugin 1.41.0).
-const kiRelevanz = new Map(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter((f) => f.endsWith('.json') && f.includes('recherche-claude'))
+const kiRelevanz = new Map(readdirSync(join(wurzel, 'inhalte', 'meldungen')).filter(direktPaket)
   .flatMap((f) => (JSON.parse(readFileSync(join(wurzel, 'inhalte', 'meldungen', f), 'utf8')).meldungen || [])
     .filter((x) => [1, 2, 3].includes(x.relevanz)).map((x) => [x.slug, String(x.relevanz)])));
 

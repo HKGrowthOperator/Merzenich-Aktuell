@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Merzenich Aktuell - Termine aus dem Veranstaltungskalender der Gemeinde (Heimat-Info)
- * automatisch als Entwurf (Entscheidung Betreiber 02.11.2026: „Ja, als Entwurf“).
+ * automatisch, seit 03.11.2026 direkt veröffentlicht (Entscheidung Luis Kummer; vorher Entwurf, 02.11.2026).
  *
  * Liest die Rohdaten des Quellenabrufs (deploy/quellen-abruf.mjs, imports/quellen/heimatinfo.json):
  * die Liste https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen (kalender) und je
@@ -9,9 +9,9 @@
  *   Zurück / Titel / Veranstalter / veröffentlicht „TT.MM.JJJJ, HH:MM“ / Beginn „TT.MM.JJJJ HH:MM“
  *   (optional mit Ende) / Ort / Text ... / Veranstalter / Kategorie (Vereine, Kirchen, ...)
  * Daraus entstehen Termine in inhalte/termine/<heute>-heimatinfo-automatik.json, Schema wie die
- * übrigen Terminpakete (deploy/termine.mjs), jeweils mit "entwurf": true: Über den Abgleich
- * landen sie als Entwurf in den Freigaben (deploy/wordpress-import.mjs), die Redaktion prüft
- * und gibt frei.
+ * übrigen Terminpakete (deploy/termine.mjs), ohne "entwurf": Über den Abgleich erscheinen sie
+ * direkt im Kalender (deploy/wordpress-import.mjs); der Redaktionslauf prüft sie in der
+ * Kalenderpflege an der Quelle nach.
  *
  * Regeln:
  * - Nur was in der Quelle steht: Titel, Beginn, Ort, Veranstalter und Kategorie aus der
@@ -186,7 +186,7 @@ export function terminBauen(d, heute, vorhanden, stand = {}) {
       beschreibung,
       absaetze: [einladung, ...(z ? [`Aus der Ankündigung im Veranstaltungskalender: „${z}“`] : [])],
       quelle: { name: QUELLE_NAME, url: d.url, stand: heute },
-      entwurf: true,
+      // Seit 03.11.2026 direkt online (Entscheidung Luis Kummer); der Redaktionslauf prüft in der Kalenderpflege nach.
     },
   };
 }
@@ -218,7 +218,7 @@ function lauf() {
   console.log(`Automatik Termine: ${neu.length} neue Entwürfe, ${uebersprungen.length} übersprungen${trocken ? ' (trocken, nichts geschrieben)' : ''}.`);
 
   if (!trocken && neu.length) {
-    const paket = json(ziel, { hinweis: 'Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs). Alle Termine sind Entwürfe ("entwurf": true) und erscheinen erst nach Freigabe der Redaktion. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.', termine: [] });
+    const paket = json(ziel, { hinweis: 'Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs). Die Termine erscheinen direkt (Entscheidung Luis Kummer 03.11.2026); die Redaktion prüft sie in der Kalenderpflege nach. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.', termine: [] });
     paket.termine.push(...neu);
     writeFileSync(ziel, JSON.stringify(paket, null, 2) + '\n');
     for (const t of neu) stand.termine[t.quelle.url] = { slug: t.slug, datei: `inhalte/termine/${zielName}`, am: heute };

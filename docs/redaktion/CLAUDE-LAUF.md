@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.7, Stand 03.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich, und für die Eil-Prüfung (Abschnitt 2a). Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.8, Stand 03.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich, und für die Eil-Prüfung (Abschnitt 2a). Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -44,8 +44,9 @@ Geprüft in `deploy/wordpress-import.mjs`, im Plugin (`wordpress/plugin/merzenic
 | Was | Weg | Sichtbar |
 |---|---|---|
 | Claude-Meldungen (`inhalte/meldungen/*-recherche-claude-*.json`) | Import-XML, Typ `post`, Meta `ma_herkunft = ki-redaktion` | **veröffentlicht** beim nächsten Abgleich, sobald im Plugin die Option „Beiträge der KI-Redaktion direkt veröffentlichen“ an ist; bis dahin Entwurf in den Freigaben. `"zurFreigabe": true` hält eine Meldung gezielt als Entwurf zurück |
-| Andere Meldungen (Automatik, ChatGPT, Amtsblatt-Pakete) | Import-XML, Typ `post` | **Entwurf** in den Freigaben |
-| Termine (`inhalte/termine/`) | Import-XML, Typ `ma_event`, Status aus der XML | **veröffentlicht**, außer mit `"entwurf": true`; der Abgleich ändert den Status bestehender Termine nie |
+| Feuerwehr-Automatik (`inhalte/meldungen/*-feuerwehr-automatik.json`) | Import-XML, Typ `post`, Meta `ma_herkunft = ki-redaktion`, `ma_relevanz` aus der Bildklasse (2 Brand und Unfall mit Rettung, sonst 3) | **veröffentlicht** beim nächsten Abgleich (Entscheidung Luis Kummer 03.11.2026); der nächste Lauf prüft nach |
+| Andere Meldungen (ChatGPT, Amtsblatt-Pakete) und Einsendungen von Vereinen, Partnern, Firmen | Import-XML bzw. Backend | **Entwurf** in den Freigaben |
+| Termine (`inhalte/termine/`, auch Heimat-Info-Automatik seit 03.11.2026) | Import-XML, Typ `ma_event`, Status aus der XML | **veröffentlicht**, außer mit `"entwurf": true`; der Abgleich ändert den Status bestehender Termine nie |
 | **Änderungen an bestehenden Meldungen und Terminen** (Update, Nachtrag, Korrektur) | Abgleich überschreibt Titel, Text, Auszug und Importfelder im bestehenden Status | bei veröffentlichten Beiträgen **sofort** beim nächsten Abgleich; wurde der Beitrag in WordPress von Hand geändert, kommt die Änderung **gar nicht** an (Protokoll „von Hand geändert“) |
 | Artikelbild (Poolfoto) | Import-XML; das Plugin tauscht Poolfotos nach, solange die Redaktion sie nicht von Hand geändert hat | mit dem Abgleich |
 | Spielstand `chatgpt-site/api/sport-current.json` | Theme liest von GitHub, Zwischenspeicher 15 Minuten; ein mindestens gleich neuer Backend-Spielstand geht vor | **ohne Freigabe**, in der Regel binnen 15 Minuten |
@@ -55,7 +56,8 @@ Geprüft in `deploy/wordpress-import.mjs`, im Plugin (`wordpress/plugin/merzenic
 
 Daraus folgt verbindlich:
 
-- **Zur Freigabe statt live:** `"zurFreigabe": true` an der Meldung (bzw. `"entwurf": true` am Termin), wenn eine tragende Angabe nur aus einer **nicht offiziellen** Quelle stammt (eine offizielle Quelle nach SCHREIBREGELN.md Abschnitt 3a genügt für die Direktveröffentlichung), Quellen sich widersprechen, Personen oder Vorwürfe betroffen sind (Blaulicht mit Verdacht, Gericht, Kündigungen), oder ein Thema auf T2 steht. Begründung im Dossier.
+- **Grundsatz (Entscheidung Luis Kummer 03.11.2026): automatisch online, nach Wichtigkeit sortiert.** Was die KI-Redaktion schreibt und was die Automatik anlegt, geht ohne Freigabe online; `relevanz` 1 bis 3 bestimmt den Platz, „Neu in Merzenich“ zeigt jede neue Meldung. Unbelegtes wird weggelassen statt zur Freigabe gelegt; widersprüchliche Angaben stehen beide mit Quelle im Text.
+- **Zur Freigabe nur noch bei rechtlichem Risiko:** `"zurFreigabe": true`, wenn Vorwürfe oder Verdacht gegen erkennbare Personen ohne amtliche Quelle, Gerichtsverfahren oder Kündigungen betroffen sind, oder ein Thema auf T2 steht. Begründung im Dossier.
 - Spielstand und Umkreis nur mit Klartext-Belegen ändern und im Dossier mit Quelle und Zeitpunkt ausweisen.
 - Korrekturen an veröffentlichten Beiträgen sind sofort öffentlich: im Dossier und im Bericht ausdrücklich nennen, Hinweis „Korrigiert am …“ im Text, Protokoll „von Hand geändert“ beachten.
 - `editorial-current.json` und Marktdaten ändert die KI-Redaktion nicht.
@@ -209,6 +211,7 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
+| 3.8 | 03.11.2026 | Entscheidung Luis Kummer: Feuerwehr-Automatik und Heimat-Info-Termine direkt online, Relevanz aus der Bildklasse; Freigabe nur noch bei rechtlichem Risiko; „Neu in Merzenich“ in der Spalte „Nachrichten aus Merzenich“ (Theme 21.26.0) |
 | 3.7 | 03.11.2026 | Entscheidung Luis Kummer: Eil-Prüfung alle zwei Stunden zwischen den Läufen (Abschnitt 2a); „Merzenich“ in jedem Titel (`qa/redaktion-lauf.mjs`); Alter und Wohnort bei Blaulicht so, wie die Polizei sie nennt (SCHREIBREGELN Abschnitt 7) |
 | 3.6 | 02.11.2026 | Entscheidung Luis Kummer: Heimat-Info-Veranstaltungskalender der Gemeinde in jedem Lauf vollständig prüfen und zum Auffüllen des Terminkalenders nutzen (Phase 1a, Schritt 2a); Automatik-Termine bleiben Entwurf; Prüfung in `qa/redaktion-lauf.mjs` |
 | 3.5 | 02.11.2026 | Entscheidung Luis Kummer: Top-Meldung mit `relevanz` 1 wird automatisch Aufmacher (Plugin 1.41.0 löst festen Aufmacher ab), Folgemeldung bei neuer Entwicklung mit eigenem Nachrichtenwert |

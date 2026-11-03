@@ -4,7 +4,7 @@
  * Veranstaltungskalenders vom 02.11.2026 (qa/fixtures/automatik-termine.json):
  * Detailseite lesen (Titel, Veranstalter, Beginn, Ort, Text, Kategorie), Zeitangaben mit
  * Ende und ganztägig, Ortsteil und Umgebung, Zitat ohne Telefon/E-Mail, Termin im Schema von
- * deploy/termine.mjs mit "entwurf": true, Regeln für neu, doppelt, privat, vergangen.
+ * deploy/termine.mjs ohne "entwurf" (seit 03.11.2026 direkt), Regeln für neu, doppelt, privat, vergangen.
  * Aufruf: node qa/automatik-termine-test.mjs
  */
 import { readFileSync } from 'node:fs';
@@ -38,7 +38,7 @@ pruefe('Kategorien: Kirche, Brauchtum, Vereine', [kategorieVon(d[0]), kategorieV
 console.log('\nTermine');
 const leer = terminBauen(d[5], '2026-11-02', [], {});
 const t = leer.termin;
-pruefe('Schema von deploy/termine.mjs (Pflichtfelder) mit "entwurf": true', ['slug', 'titel', 'start', 'ort', 'ortsteil', 'kategorie', 'veranstalter', 'beschreibung', 'absaetze', 'quelle'].every((f) => t[f] && (!Array.isArray(t[f]) || t[f].length)) && t.entwurf === true, true);
+pruefe('Schema von deploy/termine.mjs (Pflichtfelder), direkt veröffentlicht (ohne "entwurf", seit 03.11.2026)', ['slug', 'titel', 'start', 'ort', 'ortsteil', 'kategorie', 'veranstalter', 'beschreibung', 'absaetze', 'quelle'].every((f) => t[f] && (!Array.isArray(t[f]) || t[f].length)) && t.entwurf === undefined, true);
 pruefe('Slug mit Ortsteil bei kurzem Titel, Quelle mit Link und Stand', [t.slug, t.quelle.url, t.quelle.stand], ['weihnachtsfeier-morschenich-2026-12-06', 'https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2', '2026-11-02']);
 pruefe('Text nur aus den Feldern der Quelle', t.absaetze[0], 'St. Lambertus Schützenbruderschaft Morschenich e.V. lädt am Sonntag, 6. Dezember 2026, 15:30 Uhr zu „Weihnachtsfeier“ ein. Ort: BWZ.');
 const kigo = terminBauen(d[0], '2026-11-02', [], {}).termin;

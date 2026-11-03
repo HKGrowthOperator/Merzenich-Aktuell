@@ -935,6 +935,8 @@ function ma21_block(string $name): string {
         foreach (array_values($l) as $i => $p) { $slot = $slotVon($art, $p, $i); $h .= ma21_karte($p, $g, 'h3', $slot, $fest($slot), $name, $i); }
         return "<div class=\"{$klasse}\">{$h}</div>";
     };
+    // Spalte „Nachrichten aus Merzenich“: oben alle neuen Meldungen (inc/neueste.php, 21.26.0).
+    if ($name === 'gemeinde' && function_exists('ma21_neueste_html')) $kopf .= ma21_neueste_html();
     return $rahmen("<section class=\"desk shell\" data-sektion=\"{$name}\">{$kopf}" . $reihe('desk-gross', $sek['gross'], 'l', 'gross') . $reihe('desk-mittel', $sek['mittel'], 'm', 'mittel') . $reihe('desk-zeilen', $sek['zeilen'], 's', 'zeilen') . '</section>');
 }
 

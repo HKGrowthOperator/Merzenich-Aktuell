@@ -185,6 +185,18 @@ export function zusammenfuehren(fw, hi) {
   return e;
 }
 
+/* ------------------------------------------------------------ Wichtigkeit */
+
+/**
+ * Relevanz der Startseite (1 hoch, 2 mittel, 3 niedrig) aus der Bildklasse, seit 03.11.2026
+ * (Entscheidung Luis Kummer: Automatik-Meldungen gehen direkt online, nach Wichtigkeit sortiert).
+ * Menschen in Gefahr, Brand und Unfall mit Rettung: 2. Türöffnung, Ölspur, Tier, Fehlalarm, Sturm: 3.
+ * Stufe 1 (Aufmacher) vergibt nur die Redaktion; die Automatik kennt Schwere und Folgen nicht.
+ */
+export function relevanzVon(bildklasse) {
+  return /^(verkehr\.unfall\.rettung|blaulicht\.feuer(\.flaeche)?)$/.test(String(bildklasse || '')) ? 2 : 3;
+}
+
 /* ------------------------------------------------------------ Bildklasse, Zitat */
 
 const BILDKLASSEN = [
@@ -239,7 +251,8 @@ export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   const tag = tagLang(e.datum);
   const ortText = e.strasse ? `${ortName}, ${e.strasse}` : ortName;
 
-  const titel = `${was} in ${ortName}: Einsatz ${nummer} der Feuerwehr`;
+  // „Feuerwehr Merzenich“ vorn (03.11.2026): Wer „merzenich“ oder „feuerwehr merzenich“ sucht, findet den Einsatz.
+  const titel = `Feuerwehr Merzenich: ${was} in ${ortName} (Einsatz ${nummer})`;
   const dek = `Die Freiwillige Feuerwehr Merzenich ist am ${tag}${e.zeit ? `, um ${e.zeit} Uhr` : ','} nach ${ortName} alarmiert worden. Die Meldung lautete „${was}“.`;
 
   const widerspruch = [];
@@ -267,7 +280,7 @@ export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   const m = {
     slug: `einsatz-${e.nr}-${slugTeil(was)}-${e.ortsteil}`,
     ressort: 'blaulicht', ortsteil: e.ortsteil, kicker: `Feuerwehr · ${nummer}`,
-    titel, dek, datum, artikeltyp: 'kurzmeldung', fakten, absaetze: [absatz1, absatz2], themen, bildklasse,
+    titel, dek, datum, artikeltyp: 'kurzmeldung', relevanz: relevanzVon(bildklasse), fakten, absaetze: [absatz1, absatz2], themen, bildklasse,
     quelle: quellen[0], ...(quellen.length > 1 ? { weitereQuellen: quellen.slice(1) } : {}),
   };
   if (!datum) return { grund: 'kein Abrufzeitpunkt der Quelle (Datum der Meldung)' };
@@ -342,7 +355,7 @@ function lauf() {
   console.log(`Automatik Feuerwehr: ${neu.length} neue Entwürfe, ${uebersprungen.length} übersprungen${trocken ? ' (trocken, nichts geschrieben)' : ''}.`);
 
   if (!trocken && neu.length) {
-    const paket = json(ziel, { hinweis: 'Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint in WordPress als Entwurf in den Freigaben; die Redaktion prüft und gibt frei.', redaktionsstandard: 2, meldungen: [] });
+    const paket = json(ziel, { hinweis: 'Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint direkt auf der Seite, sortiert nach relevanz (Entscheidung Luis Kummer 03.11.2026); die Redaktion prüft im nächsten Lauf nach.', redaktionsstandard: 2, meldungen: [] });
     paket.meldungen.push(...neu);
     writeFileSync(ziel, JSON.stringify(paket, null, 2) + '\n');
     for (const m of neu) stand.feuerwehr[m.kicker.replace('Feuerwehr · ', '')] = { slug: m.slug, datei: `inhalte/meldungen/${zielName}`, am: heute };
