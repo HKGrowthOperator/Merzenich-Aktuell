@@ -2,6 +2,8 @@
 
 Jüngstes Dossier: [03.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-03-claude-nachmittags.md), Vergleichsbasis [ChatGPT 03.11. mittags](dossiers/2026-11-03-mittags.md) und [Claude 03.11. morgens](dossiers/2026-11-03-claude-morgens.md). Offene Themen: [offen.md](offen.md).
 
+**Nachlauf 03.11. abends (Auftrag Luis Kummer: breiter recherchieren, länger und eigenständig schreiben):** Standardtext „Karneval in Merzenich 2026/27“ (861 Wörter, live 18:56 Uhr), 6 neue Karnevalstermine von den Vereinsseiten, Bücher- und Spielemarkt bestätigt. Neu: `node qa/vereinsseiten.mjs` (Phase 1, Schritt 3a), Instagram/Facebook über ChatGPT, Kurzmeldung ab 04.11. 250 bis 450 Wörter, strengere Eigenformulierung. Offen: Orte der KG Jonge vom Berg. Commit `a1dc22b`.
+
 **Umgesetzt am 03.11. nachmittags:** 1 neue Kurzmeldung („Solarpark an der A4 in Merzenich: Bauausschuss berät über 36 Hektar Photovoltaik mit Batteriespeicher“, Vorlage 144/2026, live 14:54 Uhr), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Commits `1df9f20`, `bd7317d`. Eil-Prüfung 12:41 Uhr ohne Fund.
 
 **Umgesetzt am 03.11. morgens:** 1 neue Kurzmeldung („Jugendgremium Merzenich tagt am 4. November“, Rathaus, live 09:20 Uhr), 21 Termine bis 16.11. an der Quelle bestätigt, Heimat-Info-Kalender unverändert. Aufmacher bleibt die Folgemeldung zum Verkehrstod auf der L 264 (Stufe 1 vom 02.11.). Commits `7bd157f`, `7fb625f`.

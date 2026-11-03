@@ -10663,6 +10663,28 @@
           "heading": "1 · MA-SOLARPARK-A4-E3 · P1 · Rathaus/Energie"
         }
       ]
+    },
+    {
+      "id": "MA-KARNEVAL-SESSION-2026-27",
+      "priority": "P1",
+      "location_section": "Gemeinde · Vereine/Karneval",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-03 abends Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachlauf.json → /vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
+      "article_id": null,
+      "implementation_commit": "a1dc22b",
+      "notes": "Claude 03.11. abends (Auftrag Luis Kummer: Breitenrecherche, längere eigene Beiträge): Standardtext 861 Wörter aus den Kalendern der KG Jonge vom Berg und der KG Mir hahle Poohl und dem Amtsblatt 11/2026; sechs neue Termine (inhalte/termine/2026-11-03-vereinsseiten-claude.json). Offen: Orte der KG Jonge vom Berg (Sessionseröffnung 11.11., Prinzenproklamation 13.11., Schlüsselübergabe, Damensitzung, Kindersitzung, Rosenmontagszug), Zugweg Golzheim; ChatGPT prüft Instagram und Facebook.",
+      "dossier_history": [
+        {
+          "date": "2026-11-03",
+          "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+          "heading": "Nachlauf · MA-KARNEVAL-SESSION-2026-27"
+        }
+      ]
     }
   ],
   "archive": {
@@ -11502,6 +11524,16 @@
       "compared_with": "dossiers/2026-11-03-mittags.md",
       "implementation_commit": "1df9f20",
       "summary": "1 neue Kurzmeldung (Solarpark an der A4: Vorlage 144/2026 für den Bauausschuss am 12.11., relevanz 2, live 14:54), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Eil-Prüfung 12:41 ohne Fund.",
+      "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-03",
+      "edition": "nachlauf",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-03-mittags.md",
+      "implementation_commit": "a1dc22b",
+      "summary": "Nachlauf auf Auftrag Luis Kummer (mehr recherchieren, Instagram und Landing-Pages, Termine, längere eigene Beiträge): qa/vereinsseiten.mjs über 29 Vereinsseiten und Vereinskalender; 6 neue Karnevalstermine, Bücher- und Spielemarkt bestätigt; Standardtext Karneval 2026/27 (861 Wörter, live 18:56). Instagram und Facebook verlangen Anmeldung, Auftrag an ChatGPT. Regeln: Kurzmeldung 250 bis 450 Wörter ab 04.11., Eigenformulierung strenger, zweispaltige PDFs korrekt gelesen.",
       "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
