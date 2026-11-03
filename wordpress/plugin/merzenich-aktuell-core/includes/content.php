@@ -155,25 +155,11 @@ function ma_filter_public_service_archives(WP_Query $query): void {
     // Listen zeigen nur Kommendes; die Einzelansicht eines vergangenen Termins bleibt erreichbar
     // (Archiv, Sitemap, Suchmaschinen; vorher 404 bei jedem alten Link).
     if (($post_type==='ma_event' || $query->is_post_type_archive('ma_event')) && !$query->is_singular()) {
-        $now=current_time('Y-m-d H:i:s');
+        // 1.45.1: IDs der kommenden Termine statt meta_query (includes/termine-abfrage.php); vorher 2 bis 4 s je Aufruf.
+        $ids = function_exists('ma_termine_kommend_ids') ? ma_termine_kommend_ids() : [];
         $query->set('posts_per_page',20);
-        $query->set('meta_key','ma_event_start');
-        $query->set('orderby','meta_value');
-        $query->set('order','ASC');
-        $query->set('meta_query',[
-            'relation'=>'OR',
-            ['key'=>'ma_event_end','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
-            [
-                'relation'=>'AND',
-                ['key'=>'ma_event_end','compare'=>'NOT EXISTS'],
-                ['key'=>'ma_event_start','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
-            ],
-            [
-                'relation'=>'AND',
-                ['key'=>'ma_event_end','value'=>'','compare'=>'='],
-                ['key'=>'ma_event_start','value'=>$now,'compare'=>'>=','type'=>'DATETIME'],
-            ],
-        ]);
+        $query->set('post__in',$ids ?: [0]);
+        $query->set('orderby','post__in');
     }
 }
 add_action('pre_get_posts','ma_filter_public_service_archives');

@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Merzenich Aktuell Core
  * Description: Redaktion, Orte, Termine, Wetter, Märkte, Werbung, Sport und Transparenz für Merzenich Aktuell.
- * Version: 1.45.0
+ * Version: 1.45.1
  * Author: Merzenich Aktuell
  * Requires PHP: 8.1
  */
 if (!defined('ABSPATH')) { exit; }
-define('MA_CORE_VERSION', '1.45.0');
+define('MA_CORE_VERSION', '1.45.1');
 define('MA_CORE_PATH', plugin_dir_path(__FILE__));
 define('MA_CORE_URL', plugin_dir_url(__FILE__));
 
@@ -18,6 +18,7 @@ define('MA_CORE_URL', plugin_dir_url(__FILE__));
 add_filter('extendify_load_library', '__return_false');
 
 require_once MA_CORE_PATH . 'includes/content.php';
+require_once MA_CORE_PATH . 'includes/termine-abfrage.php';
 require_once MA_CORE_PATH . 'includes/permalinks.php';
 require_once MA_CORE_PATH . 'includes/images.php';
 require_once MA_CORE_PATH . 'includes/fotoschluessel.php';
