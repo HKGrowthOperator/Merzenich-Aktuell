@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-03-claude-morgens.md",
-  "source_check_window": "03.11.2026 morgens Europe/Berlin; Live-Abrufe 09:15 bis 09:19 Uhr.",
+  "latest_dossier": "dossiers/2026-11-03-mittags.md",
+  "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11428,6 +11428,49 @@
       "implementation_commit": "7bd157f",
       "summary": "1 neue Kurzmeldung (Jugendgremium tagt am 4.11., Rathaus-Vorschau, relevanz 2, live 09:20), 21 Termine bis 16.11. bestätigt, Heimat-Info-Kalender unverändert. Korrekturauftrag Feuerwehr 144/26 betrifft die Automatik (Generator setzt Einsatzdatum 12 Uhr als Veröffentlichung), offen für Luis. qa/pruefung: vorbestehender Fehler /umgebung/ aus SEO-Commit 4d96722.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-03",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-03-mittags.md",
+      "compared_with": "dossiers/2026-11-03-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-03-claude-morgens.md",
+      "base_commit": "346c5e51291a1ae4c2a49184df83c95cf528af76",
+      "implementation_commit": null,
+      "summary": "Keine neue Themenkarte oder Terminänderung. Jugendgremium-Vorbericht vollständig gegen Tagesordnung, ICS und Vorlage135/2026 geprüft; Dokumentation weiter leer, keine neue Beschlussfassung. Beide Unfallartikel und Feuerwehr144-Sachtext ohne Korrektur. Morgendlicher Datierungsauftrag sichtbar erledigt: Feuerwehr144 zeigt03.11.11:13, CMS-Historie nicht geprüft. Pflichtlisten ohne neue örtliche Entwicklung; dienstägliche Fußballprüfung aktualisiert, SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "articles_checked": 4,
+      "repository_article_files_read": 31,
+      "repository_event_files_read": 10,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-03T12:05:30+01:00",
+      "source_check_window": "2026-11-03T12:06:04+01:00 bis2026-11-03T12:06:18+01:00; PDF-Sichtung ca.12:07",
+      "deadline": "2026-11-03T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung und Fristeinhaltung am bestätigten main-Ref/Commit samt Zeitstempel nachweisen, nicht vorweggenommen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "resolved_prior_corrections": [
+        {
+          "slug": "einsatz-144-verkehrsunfall-eingeklemmte-person-girbelsrath",
+          "verified_at": "2026-11-03T12:06:18+01:00",
+          "result": "Live-Anzeige geändert auf03.11.2026 11:13. Einsatzdatum separat im Text. CMS-Historie nicht geprüft.",
+          "scope": "sichtbare Artikel-Datierung"
+        }
+      ],
+      "football_check": {
+        "performed": true,
+        "primary": "FUSSBALL.DE SC Erste, SCIII, FC Golzheim, B2 Düren",
+        "secondary": "FuPa A/B2",
+        "result": "örtliche Tabellen und Ansetzungen gegenüber morgens unverändert; technische Symbol-/Zeitstempeländerungen keine Ergebnisse; SCIII-Endstand weiter offen"
+      },
+      "qa": "Alle bestehenden Themen, Archivdaten, historischen Läufe, Claude-Notizen, Artikelpfade und Umsetzungscommits unverändert erhalten; nur neuen Recherchelauf angehängt. Ausschließlich neue Dossierdatei und Register; vollständiger Rücklesevergleich nach Upload.",
+      "initial_read_commit": "72ad90779451316f8070d64e6231ca35a487678b"
     }
   ]
 }
