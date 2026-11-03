@@ -2,7 +2,7 @@
 name: Morschenich
 slug: morschenich
 order: 4
-description: Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.
+description: Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ zwischen Merzenich und Golzheim, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.
 einwohner: ""
 lat: 50.8365
 lng: 6.5185
@@ -15,7 +15,7 @@ facts:
 ---
 ## Ein junger Ort
 
-Morschenich ist der jüngste Ortsteil der Gemeinde. Weil das alte Dorf dem Tagebau Hambach weichen sollte, entstand westlich von Merzenich der Umsiedlungsort „Zwischen den Höfen“, den die ersten Familien ab 2015 bezogen. Bis zum 6. Juli 2024 hieß der Ort Morschenich-Neu; seitdem trägt er schlicht den Namen Morschenich, während das alte Dorf zu [Bürgewald](/buergewald/) wurde.
+Morschenich ist der jüngste Ortsteil der Gemeinde. Weil das alte Dorf dem Tagebau Hambach weichen sollte, entstand zwischen Merzenich und Golzheim der Umsiedlungsort „Zwischen den Höfen“, den die ersten Familien ab 2015 bezogen. Bis zum 6. Juli 2024 hieß der Ort Morschenich-Neu; seitdem trägt er schlicht den Namen Morschenich, während das alte Dorf zu [Bürgewald](/buergewald/) wurde.
 
 ## Mitte des Ortes
 

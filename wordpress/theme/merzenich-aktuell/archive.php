@@ -21,6 +21,8 @@ $suchbegriff = is_search() ? trim((string) get_search_query(false)) : '';
 $leereSuche = is_search() && $suchbegriff === '';
 ?>
 <div class="page-head<?php echo $ecke !== '' ? ' mit-ecke' : ''; ?>"><div class="shell"><div class="page-head-text"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><?php if ($eltern): ?><a href="<?php echo esc_url($eltern[1]); ?>"><?php echo esc_html($eltern[0]); ?></a><span class="sep">›</span><span aria-current="page"><?php echo esc_html($titel); ?></span><?php else: ?><span aria-current="page"><?php echo esc_html($eyebrow === 'Ort' || $eyebrow === 'Thema' ? $titel : $eyebrow); ?></span><?php endif; ?></nav><span class="eyebrow"><?php echo esc_html($eyebrow); ?></span><h1><?php echo esc_html($titel); ?></h1><?php if ($desc): ?><p class="desc"><?php echo esc_html($desc); ?></p><?php endif; ?><?php if (is_search()) echo ma21_suchfeld($suchbegriff); ?></div><?php echo $ecke; ?></div></div>
+<?php // 21.29.0: Ortsseiten mit Einleitung aus dem Plugin (Fakten der Gemeinde mit Quelle), nur auf der ersten Seite.
+if (is_tax('ma_location') && !is_paged() && function_exists('ma_seo_ort_einleitung_html') && ($o = get_queried_object()) instanceof WP_Term) echo ma_seo_ort_einleitung_html((string) $o->slug); ?>
 
 <section class="section"><div class="shell">
   <?php if ($sportTabellen && !is_paged()) echo ($sportDaten ? ma21_sport_modul($sportDaten) : '') ?: trim(ma21_vorlage('sport-modul.html')); ?>

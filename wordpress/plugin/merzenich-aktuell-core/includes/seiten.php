@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-10-29';
+const MA_SEITEN_VERSION = '2026-11-03';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -237,7 +237,7 @@ function ma_seite_merzenich_in_zahlen(): string {
         . '<p>Die Gemeinde ist <strong>37,92 Quadratkilometer</strong> groß. Daraus ergeben sich rund 277 Einwohner je Quadratkilometer (eigene Rechnung aus Einwohnerzahl und Fläche).</p>'
         . '<p>Quelle: Statistisches Bundesamt, Gemeindeverzeichnis (Stand 31. Dezember 2017), über <a href="https://www.wikidata.org/wiki/Q200044" target="_blank" rel="noopener">Wikidata Q200044</a>.</p>'
         . '<h2 id="ortsteile">Welche Ortsteile gehören zu Merzenich?</h2>'
-        . '<p>Zur Gemeinde gehören fünf Orte: <a href="/ort/merzenich/">Merzenich</a> mit dem Rathaus, <a href="/ort/golzheim/">Golzheim</a>, <a href="/ort/girbelsrath/">Girbelsrath</a>, <a href="/ort/morschenich/">Morschenich</a> und <a href="/ort/buergewald/">Bürgewald</a>. Bürgewald ist das alte Morschenich am Hambacher Forst; der neue Ort Morschenich entstand ab 2015 als Umsiedlungsort westlich von Merzenich.</p>'
+        . '<p>Zur Gemeinde gehören fünf Orte: <a href="/ort/merzenich/">Merzenich</a> mit dem Rathaus, <a href="/ort/golzheim/">Golzheim</a>, <a href="/ort/girbelsrath/">Girbelsrath</a>, <a href="/ort/morschenich/">Morschenich</a> und <a href="/ort/buergewald/">Bürgewald</a>. Bürgewald ist das alte Morschenich am Hambacher Forst; der neue Ort Morschenich entstand ab 2015 als Umsiedlungsort zwischen Merzenich und Golzheim.</p>'
         . '<h2 id="lage">Wo liegt Merzenich?</h2>'
         . '<p>Merzenich liegt im <strong>Kreis Düren</strong> in Nordrhein-Westfalen, zwischen Düren, Niederzier, Nörvenich, Elsdorf und Kerpen. Die Postleitzahl ist 52399, der amtliche Gemeindeschlüssel 05 3 58 040. Was in den Nachbarorten passiert, steht unter <a href="/umgebung/">Nachrichten aus der Umgebung</a>.</p>'
         . '<h2 id="buergermeister">Wer ist Bürgermeister von Merzenich?</h2>'

@@ -56,11 +56,60 @@ function ma_seo_orte(): array {
             'titel' => 'Golzheim aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Golzheim (Gemeinde Merzenich, Kreis Düren): Polizei, Feuerwehr, Unfälle, Schützen, Karneval, Schule und Termine, jeweils mit Quelle.'],
         'girbelsrath' => ['name' => 'Girbelsrath', 'beschreibung' => 'Ortsteil im Süden der Gemeinde mit der Kirche St. Amandus, Sportplatz, eigener Löschgruppe und aktivem Karnevalsverein inmitten der Feldflur Richtung Binsfeld.', 'lat' => 50.81185, 'lon' => 6.55163, 'wikidata' => 'Q1526685', 'wikipedia' => 'Girbelsrath',
             'titel' => 'Girbelsrath aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Girbelsrath (Gemeinde Merzenich, Kreis Düren): Unfälle auf der L 264, Polizei, Feuerwehr, Karneval, Sport und Termine, jeweils mit Quelle.'],
-        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ westlich von Merzenich, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.', 'wikidata' => 'Q19059925', 'wikipedia' => 'Morschenich',
+        'morschenich' => ['name' => 'Morschenich', 'beschreibung' => 'Der ab 2015 bezogene Umsiedlungsort „Zwischen den Höfen“ zwischen Merzenich und Golzheim, bis Juli 2024 Morschenich-Neu genannt, mit Bürgewaldzentrum, Kirche St. Lambertus und aktivem Vereinsleben.', 'wikidata' => 'Q19059925', 'wikipedia' => 'Morschenich',
             'titel' => 'Morschenich aktuell: Nachrichten, Blaulicht und Termine', 'seo' => 'Nachrichten aus Morschenich (Gemeinde Merzenich, Kreis Düren): Bürgewaldzentrum, Vereine, Polizei, Feuerwehr und Termine im Umsiedlungsort, mit Quelle.'],
         'buergewald' => ['name' => 'Bürgewald', 'beschreibung' => 'Das alte Morschenich am Rand des Hambacher Forsts, seit 6. Juli 2024 Bürgewald genannt und als „Ort der Zukunft“ von Gemeinde, Land NRW und RWE gemeinsam neu entwickelt.', 'wikidata' => 'Q1650249', 'wikipedia' => 'Bürgewald_(Merzenich)',
             'titel' => 'Bürgewald aktuell: Ort der Zukunft, Nachrichten und Termine', 'seo' => 'Nachrichten aus Bürgewald, dem alten Morschenich am Hambacher Forst (Gemeinde Merzenich): Ort der Zukunft, Strukturwandel, Bauflächen und Termine.'],
     ];
+}
+
+/**
+ * Einleitung der Ortsseiten (1.46.0, SEO-GEO-BERICHT 03.11.2026 Befund 7: vorher etwa 25 Wörter).
+ * Nur Angaben der Gemeinde Merzenich (Ortsteilseiten unter /politik/ortsteile/ und
+ * Pressemitteilung zum Förderbescheid), gelesen am 03.11.2026; in eigenen Worten.
+ * Je Ort: Absätze und Quellen [[Name, URL]]. Prüfung zweimal im Jahr (Ortsvorsteher nach Wahlen).
+ */
+function ma_seo_ort_einleitungen(): array {
+    $g = 'https://www.gemeinde-merzenich.de/politik/ortsteile/';
+    return [
+        'merzenich' => ['absaetze' => [
+            'Merzenich ist der Hauptort der Gemeinde: Hier laufen nach Angaben der Gemeinde die Fäden zusammen, knapp 7.000 Menschen leben im Ort. Mit 15,38 Quadratkilometern ist Merzenich auch der flächengrößte Ortsteil.',
+            'Erstmals genannt wird Merzenich 1225 in einer Urkunde des Grafen Otto von Neuenahr; 2025 feierte der Ort sein 800-jähriges Bestehen. Wahrzeichen ist die alte katholische Pfarrkirche, um 1300 erstmals erwähnt. Ihr hochgotischer Turm und Reste des spätgotischen Langhauses sind gesichert und stehen heute als Ruine inmitten eines Soldatenfriedhofs.',
+            'Die Gesamtschule trägt Merzenich gemeinsam mit Niederzier im Schulverband Niederzier/Merzenich. Das Trinkwasser für Merzenich und Morschenich kommt laut Gemeinde von den Stadtwerken Düren. Ortsvorsteher ist laut Gemeinde Dirk Guder.',
+        ], 'quellen' => [['Gemeinde Merzenich, Ortsteil Merzenich', $g . 'merzenich.php']]],
+        'golzheim' => ['absaetze' => [
+            'Golzheim ist laut Gemeinde der zweitgrößte Ortsteil: Rund 1.300 Menschen leben hier auf 11,31 Quadratkilometern. Erstmals erwähnt wird der Ort 1143 als Godelsheim, später als Goidelsheim (1373) und Goltsheim (1427). Der Name geht vermutlich auf einen fränkischen Personennamen zurück, das Heim des Gotolf oder Godulf.',
+            'Besiedelt war Golzheim schon in gallo-römischer Zeit. Ein 1933 gefundener römischer Sarkophag steht heute im Pfarrgarten vor der Fatimakapelle; in der Nähe kamen weitere römische Gräber, Reste einer Villa mit Hypokaustum und der Torso einer Jupiterstatue ans Licht. Im 14. Jahrhundert werden die Ahrburg und die Stachenburg genannt.',
+            'Seit dem 1. Juli 1969 gehört Golzheim zur Gemeinde Merzenich. Ortsvorsteher ist laut Gemeinde seit 2020 Ignaz Foerster.',
+        ], 'quellen' => [['Gemeinde Merzenich, Ortsteil Golzheim', $g . 'golzheim.php']]],
+        'girbelsrath' => ['absaetze' => [
+            'Girbelsrath liegt im Süden der Gemeinde; laut Gemeinde leben hier rund 1.200 Menschen auf 4,62 Quadratkilometern. Früher hieß der Ort Gerbätzräude, die Rodung des Gerbrecht. 1382 wurde das Dorf an den Erzbischof von Köln abgetreten, bis 1794 gehörte es zum Dingstuhl und Gericht Hambach im Amt Nörvenich. Im selben Jahr schlugen französische Truppen bei Girbelsrath die Österreicher.',
+            'Heute prägt das Gewerbe den Ort: Seit Anfang der 1970er Jahre sind auf ausgewiesenem Gewerbegelände laut Gemeinde rund 600 Arbeitsplätze entstanden. Der frühere Bürgermeister Matthias von den Driesch vermachte der Gemeinde den größten Teil seines Vermögens; der Erlös fördert soziale und kulturelle Zwecke für die Menschen in Girbelsrath.',
+            'Seit dem 1. Juli 1969 gehört Girbelsrath zu Merzenich. Ortsvorsteher ist laut Gemeinde Ralf Locker.',
+        ], 'quellen' => [['Gemeinde Merzenich, Ortsteil Girbelsrath', $g . 'girbelsrath.php']]],
+        'morschenich' => ['absaetze' => [
+            'Morschenich ist der jüngste Ort der Gemeinde. Weil das alte Dorf lange dem Tagebau Hambach weichen sollte, entstand zwischen Merzenich und Golzheim die Ortschaft Morschenich-Neu; die Umsiedlung begann im Januar 2015. Seit dem Abschluss der Umsiedlung im Juli 2024 heißt der neue Ort Morschenich, das alte Dorf Bürgewald.',
+            'Im Ort gibt es laut Gemeinde mehr als 130 Grundstücke. Die Straßennamen folgen denen des alten Dorfes, und alle Häuser werden über Nahwärme aus einer Pelletheizung versorgt.',
+            'Der Name ist alt: 1158 hieß der Ort Morsaz, die heutige Schreibweise ist seit 1775 belegt. Die Stiftung von Ludwig Rixen kommt nach dem Willen des Stifters jedes Jahr Menschen mit wenig Einkommen im Ort zugute. Ortsvorsteherin ist laut Gemeinde Inga Dohmes.',
+        ], 'quellen' => [['Gemeinde Merzenich, Ortsteil Morschenich', $g . 'morschenich.php']]],
+        'buergewald' => ['absaetze' => [
+            'Bürgewald ist das alte Morschenich am Rand des Hambacher Forsts. Lange sollte das Dorf dem Tagebau Hambach weichen. Mit der Leitentscheidung der Landesregierung 2020 stand fest, dass der Ort und der Hambacher Forst bleiben können. Seit dem 6. Juli 2024 trägt der alte Ort den Namen Bürgewald.',
+            'Die Gemeinde Merzenich hat den Ort zurückgekauft und entwickelt ihn zum „Ort der Zukunft“. Am 14. Juni 2024 übergab NRW-Ministerin Ina Scharrenbach den ersten Förderbescheid über rund 57 Millionen Euro, davon 40,4 Millionen Euro für den Grunderwerb. Insgesamt stehen laut Gemeinde rund 90 Millionen Euro bereit.',
+            'Gebaut werden soll klimaschonend und flächensparend; die abgebrannte Kirche St. Lambertus soll wieder aufgebaut werden. Weil viele Gebäude lange leer standen, rechnet die Gemeinde zugleich mit Rückbau.',
+        ], 'quellen' => [['Gemeinde Merzenich, Ortsteil Morschenich', $g . 'morschenich.php'], ['Gemeinde Merzenich, Pressemitteilung „57 Millionen Euro für den Ort der Zukunft“', 'https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/uebergabe-foerderbescheid-mo-alt.php']]],
+    ];
+}
+
+/** HTML der Einleitung einer Ortsseite (reine Funktion, ohne WordPress-Escaping). Leer, wenn der Ort keine hat. */
+function ma_seo_ort_einleitung_html(string $slug): string {
+    $e = ma_seo_ort_einleitungen()[$slug] ?? null;
+    $name = ma_seo_orte()[$slug]['name'] ?? '';
+    if (!$e || $name === '') return '';
+    $h = fn(string $s): string => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+    $html = '<section class="section ort-einleitung"><div class="shell"><div class="prose"><h2>Über ' . $h($name) . '</h2>';
+    foreach ($e['absaetze'] as $a) $html .= '<p>' . $h($a) . '</p>';
+    $html .= '<p class="quelle"><small>Quelle: ' . implode(' · ', array_map(fn($q) => '<a href="' . $h($q[1]) . '" target="_blank" rel="noopener">' . $h($q[0]) . '</a>', $e['quellen'])) . '. Stand: 3. November 2026.</small></p>';
+    return $html . '</div></div></section>';
 }
 
 /** sameAs eines Orts: Wikidata und deutsche Wikipedia (reine Funktion). */
@@ -720,7 +769,11 @@ add_action('template_redirect', function (): void {
         header('Content-Type: text/plain; charset=utf-8'); header('Cache-Control: public, max-age=3600');
         $home = home_url('/');
         $orte = [];
-        foreach (ma_seo_orte() as $slug => $d) $orte[] = [$d['name'], $home . 'ort/' . $slug . '/', $d['beschreibung'] . ' ' . ($d['seo'] ?? '') . (!empty($d['wikidata']) ? "\nWikidata: https://www.wikidata.org/wiki/{$d['wikidata']}" : '')];
+        foreach (ma_seo_orte() as $slug => $d) {
+            $e = ma_seo_ort_einleitungen()[$slug] ?? null;
+            $text = $e ? implode("\n\n", $e['absaetze']) . "\nQuelle: " . implode(', ', array_map(fn($q) => $q[1], $e['quellen'])) : $d['beschreibung'] . ' ' . ($d['seo'] ?? '');
+            $orte[] = [$d['name'], $home . 'ort/' . $slug . '/', $text . (!empty($d['wikidata']) ? "\nWikidata: https://www.wikidata.org/wiki/{$d['wikidata']}" : '')];
+        }
         // Faktenseiten (Plan 3.2) erscheinen, sobald sie veröffentlicht sind; vorher fehlen sie einfach.
         $seiten = [];
         foreach (['merzenich-in-zahlen', 'notdienste', 'abfuhr', 'ortsteile', 'strukturwandel', 'ueber-uns', 'grundsaetze', 'korrekturen', 'ki-redaktion', 'service', 'impressum'] as $slug) {
