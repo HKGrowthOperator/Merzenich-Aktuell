@@ -193,7 +193,7 @@ Fehlt, in dieser Reihenfolge:
 
 ## 9. Nächste Schritte der Redaktionssitzung [Code, Redaktion]
 
-1. Prüfen: `/umgebung/` HTTP 200 nach dem stündlichen Lauf; Plugin 1.43.1 live; 144/26 nach der Freigabe in der Nachrichten-Sitemap.
+1. Prüfen: `/umgebung/` HTTP 200 nach dem stündlichen Lauf (Plugin 1.43.2 live seit 10:50 Uhr); 144/26 nach der Freigabe in der Nachrichten-Sitemap.
 2. Nachmittagslauf 03.11.: Sammelseite „Martinszüge in Merzenich 2026“ als Meldung mit allen Terminen aus dem Kalender; zweite Meldung des Tages.
 3. Nach Freigabe des Betreibers als ein Plugin- und Theme-Paket: `llms-full.txt`, H1 mit „Merzenich“ auf den Ressortseiten, `sameAs`-Feld für die Organisation, schnellere `/termine/` (Zwischenspeicher).
 4. Ortseinleitungen (100 bis 200 Wörter mit Fakten und Quellen) und die erste Faktenseite „Gemeinde Merzenich in Zahlen“.
