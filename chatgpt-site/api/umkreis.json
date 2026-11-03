@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-02",
+ "stand": "2026-11-03",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Achtjähriges Kind bei Verkehrsunfall leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383053",
+   "datum": "2026-11-03",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Linnich: Einbruch in Einfamilienhaus - Die Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383049",
+   "datum": "2026-11-03",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Nideggen: Gefährliche Fahrmanöver und Drogenverdacht - Polizei stoppt 23-Jährigen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383059",
+   "datum": "2026-11-03",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
