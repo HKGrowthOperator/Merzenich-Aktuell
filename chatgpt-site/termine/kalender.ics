@@ -550,7 +550,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:buecher-spielemarkt-ig-golzheim-2026@merzenich-aktuell.de
-DTSTAMP:20261030T060000Z
+DTSTAMP:20261103T060000Z
 DTSTART:20261108T090000Z
 DTEND:20261108T150000Z
 SUMMARY:Bücher- und Spielemarkt der IG Golzheim aktiv
@@ -998,6 +998,39 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabes
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:tanzturnier-kg-jonge-vom-berg-weinberghalle-2027-01-09@merzenich-aktuel
+ l.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270109T080000Z
+DTEND:20270109T160000Z
+SUMMARY:Tanzturnier der KG Jonge vom Berg in der Weinberghalle
+DESCRIPTION:Die KG Jonge vom Berg richtet am Samstag\, 9. Januar 2027\, ihr
+  Tanzturnier in der Weinberghalle aus. Einlass ist um 7.30 Uhr\, die Wettb
+ ewerbe beginnen um 9 Uhr.\nVeranstalter: KG Jonge vom Berg 1975 e.V.\nhttp
+ s://merzenichaktuell.hk-growthoperator.de/termine/tanzturnier-kg-jonge-vom
+ -berg-weinberghalle-2027-01-09/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tanzturnier-kg-jo
+ nge-vom-berg-weinberghalle-2027-01-09/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10@merzenich-aktuel
+ l.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270110T100000Z
+SUMMARY:Karnevalistischer Frühschoppen der KG Golzheim
+DESCRIPTION:Die KG Mir hahle Poohl Golzheim empfängt am Sonntag\, 10. Janu
+ ar 2027\, ab 11 Uhr befreundete Karnevalsgesellschaften zum Frühschoppen 
+ in der Schützenhalle Golzheim. Der Eintritt ist frei.\nVeranstalter: KG M
+ ir hahle Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthopera
+ tor.de/termine/kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-karne
+ valistischer-fruehschoppen-2027-01-10/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:kraetzchensitzung-weinberghalle-2027-01-23@merzenich-aktuell.de
 DTSTAMP:20261016T060000Z
 DTSTART:20270123T130000Z
@@ -1011,6 +1044,66 @@ DESCRIPTION:„Karneval der leisen Töne“ erstmals in der Weinberghalle\;
 LOCATION:Weinberghalle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/kraetzchensitzung
  -weinberghalle-2027-01-23/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-kindersitzung-2027-01-30@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270130T133000Z
+SUMMARY:Kindersitzung der KG Golzheim
+DESCRIPTION:Kindersitzung der KG Mir hahle Poohl am Samstag\, 30. Januar 20
+ 27\, um 14.30 Uhr in der Schützenhalle Golzheim\; Einlass 13.30 Uhr\, Ein
+ tritt 4 Euro\, für Kinder ab einem Jahr 1 Euro.\nVeranstalter: KG Mir hah
+ le Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de
+ /termine/kg-golzheim-kindersitzung-2027-01-30/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kinde
+ rsitzung-2027-01-30/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-masken-moehneball-2027-02-04@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270204T160000Z
+SUMMARY:Masken- und Möhneball der KG Golzheim an Weiberfastnacht
+DESCRIPTION:An Weiberfastnacht\, Donnerstag\, 4. Februar 2027\, lädt die K
+ G Mir hahle Poohl Golzheim ab 17 Uhr zum Masken- und Möhneball in die Sch
+ ützenhalle ein\; der Eintritt kostet 5 Euro.\nVeranstalter: KG Mir hahle 
+ Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/kg-golzheim-masken-moehneball-2027-02-04/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-maske
+ n-moehneball-2027-02-04/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kg-golzheim-jeck-em-zelt-2027-02-06@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270206T180000Z
+SUMMARY:„Jeck em Zelt Jolzhem“ der KG Golzheim
+DESCRIPTION:Karnevalsparty „Jeck em Zelt Jolzhem“ am Samstag\, 6. Febru
+ ar 2027\, ab 19 Uhr an der Schützenhalle Golzheim\; Eintritt im Vorverkau
+ f 8 Euro.\nVeranstalter: KG Mir hahle Poohl Golzheim 1905 e.V.\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-jeck-em-zelt-2027-
+ 02-06/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-jeck-
+ em-zelt-2027-02-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rosenmontagszug-golzheim-2027-02-08@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270208T100000Z
+SUMMARY:Rosenmontagszug in Golzheim
+DESCRIPTION:Rosenmontagszug der KG Mir hahle Poohl am Montag\, 8. Februar 2
+ 027\; Beginn laut KG um 11 Uhr\, als Ort nennt die KG die Schützenhalle G
+ olzheim.\nVeranstalter: KG Mir hahle Poohl Golzheim 1905 e.V.\nhttps://mer
+ zenichaktuell.hk-growthoperator.de/termine/rosenmontagszug-golzheim-2027-0
+ 2-08/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/rosenmontagszug-g
+ olzheim-2027-02-08/
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

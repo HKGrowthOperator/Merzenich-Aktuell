@@ -1,0 +1,137 @@
+{
+ "hinweis": "Breitenrecherche vom 03.11.2026 (Claude): Karnevalstermine von den Veranstaltungsseiten der KG Mir hahle Poohl Golzheim und der KG Jonge vom Berg (qa/vereinsseiten.mjs), an den Detailseiten am 03.11.2026 gelesen. Selbstauskunft der Veranstalter; keine Privatpersonen, keine Telefonnummern.",
+ "termine": [
+  {
+   "slug": "tanzturnier-kg-jonge-vom-berg-weinberghalle-2027-01-09",
+   "titel": "Tanzturnier der KG Jonge vom Berg in der Weinberghalle",
+   "start": "2027-01-09T09:00:00+01:00",
+   "ende": "2027-01-09T17:00:00+01:00",
+   "ort": "Weinberghalle Merzenich",
+   "ortsteil": "Merzenich",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Jonge vom Berg 1975 e.V.",
+   "beschreibung": "Die KG Jonge vom Berg richtet am Samstag, 9. Januar 2027, ihr Tanzturnier in der Weinberghalle aus. Einlass ist um 7.30 Uhr, die Wettbewerbe beginnen um 9 Uhr.",
+   "absaetze": [
+    "Am Samstag, 9. Januar 2027, gehört die Weinberghalle in Merzenich den Tanzgarden: Die KG Jonge vom Berg lädt zu ihrem Tanzturnier ein. Laut Kalender des Vereins öffnet die Halle um 7.30 Uhr, um 9 Uhr beginnt das Turnier, das bis in den Nachmittag gegen 17 Uhr geplant ist.",
+    "Der Eintritt kostet für Erwachsene 6 Euro und für Kinder 3 Euro. Welche Gruppen antreten, nennt der Verein in seinem Kalender noch nicht."
+   ],
+   "quelle": {
+    "name": "KG Jonge vom Berg, Veranstaltungskalender „Tanzturnier 2027“ (Selbstauskunft des Veranstalters)",
+    "url": "https://jonge-vom-berg.de/event/tanzturnier-2023-2/",
+    "stand": "2026-11-03"
+   }
+  },
+  {
+   "slug": "kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10",
+   "titel": "Karnevalistischer Frühschoppen der KG Golzheim",
+   "start": "2027-01-10T11:00:00+01:00",
+   "ort": "Schützenhalle Golzheim",
+   "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "beschreibung": "Die KG Mir hahle Poohl Golzheim empfängt am Sonntag, 10. Januar 2027, ab 11 Uhr befreundete Karnevalsgesellschaften zum Frühschoppen in der Schützenhalle Golzheim. Der Eintritt ist frei.",
+   "absaetze": [
+    "Zum karnevalistischen Frühschoppen lädt die KG Mir hahle Poohl Golzheim am Sonntag, 10. Januar 2027, in die Schützenhalle an der Sankt-Sebastianus-Straße ein. Beginn ist um 11 Uhr, der Eintritt ist frei.",
+    "Nach Angaben der KG kommen zahlreiche befreundete Karnevalsgesellschaften zu Besuch; im Kalender der KG Jonge vom Berg aus Merzenich steht der Frühschoppen ebenfalls."
+   ],
+   "quelle": {
+    "name": "KG Mir hahle Poohl Golzheim, Veranstaltungsseite (Selbstauskunft des Veranstalters), Detailseite",
+    "url": "https://kg-mir-hahle-poohl.de/veranstaltung/karnevalistischer-fruehschoppen/",
+    "stand": "2026-11-03"
+   },
+   "links": [
+    [
+     "Alle Termine der KG Golzheim",
+     "https://kg-mir-hahle-poohl.de/veranstaltungen/"
+    ]
+   ]
+  },
+  {
+   "slug": "kg-golzheim-kindersitzung-2027-01-30",
+   "titel": "Kindersitzung der KG Golzheim",
+   "start": "2027-01-30T14:30:00+01:00",
+   "ort": "Schützenhalle Golzheim",
+   "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "beschreibung": "Kindersitzung der KG Mir hahle Poohl am Samstag, 30. Januar 2027, um 14.30 Uhr in der Schützenhalle Golzheim; Einlass 13.30 Uhr, Eintritt 4 Euro, für Kinder ab einem Jahr 1 Euro.",
+   "absaetze": [
+    "Für die jüngsten Jecken veranstaltet die KG Mir hahle Poohl Golzheim am Samstag, 30. Januar 2027, ihre Kindersitzung in der Schützenhalle Golzheim. Einlass ist um 13.30 Uhr, das Programm beginnt um 14.30 Uhr.",
+    "Erwachsene zahlen 4 Euro Eintritt, Kinder ab einem Jahr 1 Euro, so steht es auf der Veranstaltungsseite der KG."
+   ],
+   "quelle": {
+    "name": "KG Mir hahle Poohl Golzheim, Veranstaltungsseite (Selbstauskunft des Veranstalters), Detailseite",
+    "url": "https://kg-mir-hahle-poohl.de/veranstaltung/kindersitzung/",
+    "stand": "2026-11-03"
+   },
+   "links": [
+    [
+     "Alle Termine der KG Golzheim",
+     "https://kg-mir-hahle-poohl.de/veranstaltungen/"
+    ]
+   ]
+  },
+  {
+   "slug": "kg-golzheim-masken-moehneball-2027-02-04",
+   "titel": "Masken- und Möhneball der KG Golzheim an Weiberfastnacht",
+   "start": "2027-02-04T17:00:00+01:00",
+   "ort": "Schützenhalle Golzheim",
+   "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "beschreibung": "An Weiberfastnacht, Donnerstag, 4. Februar 2027, lädt die KG Mir hahle Poohl Golzheim ab 17 Uhr zum Masken- und Möhneball in die Schützenhalle ein; der Eintritt kostet 5 Euro.",
+   "absaetze": [
+    "Am Donnerstag, 4. Februar 2027, Weiberfastnacht, feiert die KG Mir hahle Poohl Golzheim ihren Masken- und Möhneball in der Schützenhalle Golzheim.",
+    "Beginn ist um 17 Uhr, der Eintritt kostet nach Angaben der KG 5 Euro."
+   ],
+   "quelle": {
+    "name": "KG Mir hahle Poohl Golzheim, Veranstaltungsseite (Selbstauskunft des Veranstalters)",
+    "url": "https://kg-mir-hahle-poohl.de/veranstaltungen/",
+    "stand": "2026-11-03"
+   }
+  },
+  {
+   "slug": "kg-golzheim-jeck-em-zelt-2027-02-06",
+   "titel": "„Jeck em Zelt Jolzhem“ der KG Golzheim",
+   "start": "2027-02-06T19:00:00+01:00",
+   "ort": "Schützenhalle Golzheim",
+   "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "beschreibung": "Karnevalsparty „Jeck em Zelt Jolzhem“ am Samstag, 6. Februar 2027, ab 19 Uhr an der Schützenhalle Golzheim; Eintritt im Vorverkauf 8 Euro.",
+   "absaetze": [
+    "Am Karnevalssamstag, 6. Februar 2027, steigt bei der KG Mir hahle Poohl Golzheim die Party „Jeck em Zelt Jolzhem“. Als Ort nennt die KG die Schützenhalle Golzheim an der Sankt-Sebastianus-Straße.",
+    "Beginn ist um 19 Uhr; der Eintritt kostet im Vorverkauf 8 Euro."
+   ],
+   "quelle": {
+    "name": "KG Mir hahle Poohl Golzheim, Veranstaltungsseite (Selbstauskunft des Veranstalters)",
+    "url": "https://kg-mir-hahle-poohl.de/veranstaltungen/",
+    "stand": "2026-11-03"
+   }
+  },
+  {
+   "slug": "rosenmontagszug-golzheim-2027-02-08",
+   "titel": "Rosenmontagszug in Golzheim",
+   "start": "2027-02-08T11:00:00+01:00",
+   "ort": "Schützenhalle Golzheim",
+   "adresse": "Sankt-Sebastianus-Straße 42, 52399 Merzenich",
+   "ortsteil": "Golzheim",
+   "kategorie": "Brauchtum",
+   "veranstalter": "KG Mir hahle Poohl Golzheim 1905 e.V.",
+   "beschreibung": "Rosenmontagszug der KG Mir hahle Poohl am Montag, 8. Februar 2027; Beginn laut KG um 11 Uhr, als Ort nennt die KG die Schützenhalle Golzheim.",
+   "absaetze": [
+    "Am Rosenmontag, 8. Februar 2027, zieht in Golzheim der Zug der KG Mir hahle Poohl. Die KG nennt 11 Uhr als Beginn und die Schützenhalle an der Sankt-Sebastianus-Straße als Ort.",
+    "Den Zugweg veröffentlicht die KG auf ihrer Veranstaltungsseite noch nicht; die Redaktion ergänzt ihn, sobald er feststeht."
+   ],
+   "quelle": {
+    "name": "KG Mir hahle Poohl Golzheim, Veranstaltungsseite (Selbstauskunft des Veranstalters)",
+    "url": "https://kg-mir-hahle-poohl.de/veranstaltungen/",
+    "stand": "2026-11-03"
+   }
+  }
+ ]
+}

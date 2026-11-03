@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kindersitzung der KG Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-kindersitzung-2027-01-30@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270130T133000Z
+SUMMARY:Kindersitzung der KG Golzheim
+DESCRIPTION:Kindersitzung der KG Mir hahle Poohl am Samstag\, 30. Januar 20
+ 27\, um 14.30 Uhr in der Schützenhalle Golzheim\; Einlass 13.30 Uhr\, Ein
+ tritt 4 Euro\, für Kinder ab einem Jahr 1 Euro.\nVeranstalter: KG Mir hah
+ le Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de
+ /termine/kg-golzheim-kindersitzung-2027-01-30/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-kinde
+ rsitzung-2027-01-30/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

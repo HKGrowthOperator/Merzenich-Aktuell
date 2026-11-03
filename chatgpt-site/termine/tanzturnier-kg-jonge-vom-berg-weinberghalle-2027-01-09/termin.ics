@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tanzturnier der KG Jonge vom Berg in der Weinberghalle
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:tanzturnier-kg-jonge-vom-berg-weinberghalle-2027-01-09@merzenich-aktuel
+ l.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270109T080000Z
+DTEND:20270109T160000Z
+SUMMARY:Tanzturnier der KG Jonge vom Berg in der Weinberghalle
+DESCRIPTION:Die KG Jonge vom Berg richtet am Samstag\, 9. Januar 2027\, ihr
+  Tanzturnier in der Weinberghalle aus. Einlass ist um 7.30 Uhr\, die Wettb
+ ewerbe beginnen um 9 Uhr.\nVeranstalter: KG Jonge vom Berg 1975 e.V.\nhttp
+ s://merzenichaktuell.hk-growthoperator.de/termine/tanzturnier-kg-jonge-vom
+ -berg-weinberghalle-2027-01-09/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tanzturnier-kg-jo
+ nge-vom-berg-weinberghalle-2027-01-09/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

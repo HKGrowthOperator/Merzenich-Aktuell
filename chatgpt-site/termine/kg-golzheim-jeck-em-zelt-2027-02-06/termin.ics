@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:„Jeck em Zelt Jolzhem“ der KG Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-jeck-em-zelt-2027-02-06@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270206T180000Z
+SUMMARY:„Jeck em Zelt Jolzhem“ der KG Golzheim
+DESCRIPTION:Karnevalsparty „Jeck em Zelt Jolzhem“ am Samstag\, 6. Febru
+ ar 2027\, ab 19 Uhr an der Schützenhalle Golzheim\; Eintritt im Vorverkau
+ f 8 Euro.\nVeranstalter: KG Mir hahle Poohl Golzheim 1905 e.V.\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-jeck-em-zelt-2027-
+ 02-06/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-jeck-
+ em-zelt-2027-02-06/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

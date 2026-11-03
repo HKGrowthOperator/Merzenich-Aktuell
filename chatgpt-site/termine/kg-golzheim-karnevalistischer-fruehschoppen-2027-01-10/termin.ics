@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Karnevalistischer Frühschoppen der KG Golzheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10@merzenich-aktuel
+ l.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270110T100000Z
+SUMMARY:Karnevalistischer Frühschoppen der KG Golzheim
+DESCRIPTION:Die KG Mir hahle Poohl Golzheim empfängt am Sonntag\, 10. Janu
+ ar 2027\, ab 11 Uhr befreundete Karnevalsgesellschaften zum Frühschoppen 
+ in der Schützenhalle Golzheim. Der Eintritt ist frei.\nVeranstalter: KG M
+ ir hahle Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthopera
+ tor.de/termine/kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-karne
+ valistischer-fruehschoppen-2027-01-10/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

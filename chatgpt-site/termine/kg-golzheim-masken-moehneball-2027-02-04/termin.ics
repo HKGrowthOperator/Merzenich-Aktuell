@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Masken- und Möhneball der KG Golzheim an Weiberfastnacht
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kg-golzheim-masken-moehneball-2027-02-04@merzenich-aktuell.de
+DTSTAMP:20261103T060000Z
+DTSTART:20270204T160000Z
+SUMMARY:Masken- und Möhneball der KG Golzheim an Weiberfastnacht
+DESCRIPTION:An Weiberfastnacht\, Donnerstag\, 4. Februar 2027\, lädt die K
+ G Mir hahle Poohl Golzheim ab 17 Uhr zum Masken- und Möhneball in die Sch
+ ützenhalle ein\; der Eintritt kostet 5 Euro.\nVeranstalter: KG Mir hahle 
+ Poohl Golzheim 1905 e.V.\nhttps://merzenichaktuell.hk-growthoperator.de/te
+ rmine/kg-golzheim-masken-moehneball-2027-02-04/
+LOCATION:Schützenhalle Golzheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kg-golzheim-maske
+ n-moehneball-2027-02-04/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
