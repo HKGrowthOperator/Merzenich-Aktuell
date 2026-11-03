@@ -33,7 +33,7 @@ Top-Meldung: keine neue Stufe 1. Ein Aufstellungsvorschlag ist noch kein Ratsbes
 ## 2. Sofort sichtbar
 
 - Neue Meldung Solarpark (direkt veröffentlicht), oben in „Neu in Merzenich“ und in der Nachrichten-Sitemap.
-- Nachtrag Martinszüge mit dem nächsten Abgleich (Text in WordPress nicht von Hand geändert).
+- Nachtrag Martinszüge: um 15:02 Uhr nach Abgleich-Anstoß noch nicht sichtbar. Er kommt mit dem nächsten Abgleich, sofern der Beitrag in WordPress nicht von Hand geändert wurde (dann Protokoll „von Hand geändert“); nächster Lauf prüft.
 - Termine: nur Quelle und Prüfstand Pluriversum.
 
 ## 3. Bewusst nicht umgesetzt
