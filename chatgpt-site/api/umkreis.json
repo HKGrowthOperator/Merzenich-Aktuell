@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-03",
+ "stand": "2026-11-04",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Von der Fahrbahn abgekommen - Beifahrer leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383952",
+   "datum": "2026-11-04",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Langerwehe: Zeugensuche nach Einbruch in Gaststätte",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383951",
+   "datum": "2026-11-04",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Vettweiß: Nicht alles was glänzt ist Gold",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6383953",
+   "datum": "2026-11-04",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",
