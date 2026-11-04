@@ -7,10 +7,10 @@
       "ressort": "rathaus",
       "ortsteil": "merzenich",
       "kicker": "Rathaus · Energie",
-      "titel": "Solarpark an der A4 in Merzenich: Bauausschuss berät über 36 Hektar Photovoltaik mit Batteriespeicher",
-      "dek": "Der Bauausschuss soll am 12. November empfehlen, einen Bebauungsplan für eine Freiflächen-Photovoltaikanlage an der Autobahn aufzustellen; RWE stellt das Vorhaben vor. Für Bürgewald prüft die Gemeinde eine Beteiligung an der Energieversorgung.",
+      "titel": "Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November",
+      "dek": "Nördlich der Autobahn will RWE auf rund 36 Hektar Solarmodule und einen großen Batteriespeicher bauen; angefahren würde das Gelände durch Bürgewald. Was in den Planungsunterlagen steht, was offen ist und wie es weitergeht.",
       "datum": "2026-11-03T14:49:00+01:00",
-      "artikeltyp": "kurzmeldung",
+      "artikeltyp": "standard",
       "relevanz": 2,
       "themen": [
         [
@@ -28,84 +28,141 @@
       ],
       "bildklasse": "rathaus.rat",
       "absaetze": [
-        "Entlang der Autobahn A4 in Merzenich soll ein Solarpark mit Batteriespeicher möglich werden. Der Bau-, Planungs- und Umweltausschuss der Gemeinde berät am Donnerstag, 12. November, um 18 Uhr im Ratssaal des Rathauses darüber, ob für das Gelände ein Bebauungsplan aufgestellt und der Flächennutzungsplan geändert wird. Grundlage ist die Beschlussvorlage 144/2026 der Verwaltung vom 29. Oktober, die im Ratsinformationssystem veröffentlicht ist.",
-        "Das Plangebiet liegt in der Gemarkung Merzenich im 500-Meter-Korridor entlang der Verkehrswege im Sinne des Erneuerbare-Energien-Gesetzes und umfasst nach dem ersten Entwurf rund 44 Hektar. Die Solarmodule sollen auf mehreren Teilflächen mit zusammen etwa 36 Hektar stehen. Wege und ein schon angelegter Korridor für Fledermäuse, der entlang der Verkehrstrassen bis zum Merzenicher Erbwald führt, bleiben mit einem Randstreifen frei; die frühere Hofstelle Lambertshof gehört nicht dazu.",
-        "Nach der Vorlage soll die Anlage ein Baustein im langfristigen Gesamtkonzept von RWE für den Bereich des Tagebaus Hambach sein. RWE und das Planungsbüro Tischmann Loh & Partner stellen das Vorhaben in der Sitzung vor, die Kosten des Verfahrens soll der Vorhabenträger tragen. Für Bürgewald, das als „Ort der Zukunft“ neu belebt wird, will die Gemeinde ein Beteiligungsmodell für die Energieversorgung prüfen. Das Projektteam Bürgewald und RWE haben darüber erste Gespräche geführt; umgesetzt werden soll es, wenn es sich energetisch und finanziell als sinnvoll erweist.",
-        "Nach dem Bauausschuss berät der Ausschuss für die Revitalisierung Bürgewalds am 26. November, entscheiden soll der Gemeinderat am 3. Dezember. Erst nach dem Aufstellungsbeschluss werden die Planunterlagen frühzeitig öffentlich ausgelegt; dann können Öffentlichkeit und Behörden Stellung nehmen. Kartierungen zum Artenschutz liegen laut Vorlage schon vor, ein Umweltbericht wird im Verfahren erstellt.",
-        "In derselben Sitzung stellt der neue Eigentümer des Areals der ehemaligen Kfz-Werkstatt sein Projekt „Poolplatz“ vor (Mitteilungsvorlage M142/2026). Außerdem geht es um Leitlinien der Gemeinde zum Gesetz zur Beschleunigung des Wohnungsbaus, dem sogenannten Bau-Turbo (Beschlussvorlage 142/2026), und um den Umbau der Grundschule Golzheim (138/2026)."
+        "Nördlich der Autobahn A4 will das Unternehmen RWE Wind Onshore & PV Deutschland in Merzenich einen Solarpark mit Batteriespeicher bauen. Nach der Kurzbegründung zum Planungsvorschlag, die der Bauausschuss zusammen mit der Beschlussvorlage 144/2026 bekommt, ist je nach Ausführung eine Spitzenleistung von rund 40 bis 45 Megawatt denkbar; der Speicher soll etwa 25 bis 30 Megawatt leisten. Der Bau-, Planungs- und Umweltausschuss berät am Donnerstag, 12. November, um 18 Uhr im Ratssaal des Rathauses, ob die Gemeinde dafür einen Bebauungsplan aufstellt und ihren Flächennutzungsplan ändert.",
+        "Zur Einordnung: Nach dem Energiesteckbrief der Gemeinde im Gigawattpakt Rheinisches Revier waren Ende 2023 im ganzen Gemeindegebiet Photovoltaikanlagen mit zusammen 5,44 Megawatt installiert. Der geplante Park allein hätte damit rund sieben- bis achtmal so viel Leistung wie alle Solaranlagen, die es zu diesem Stand in Merzenich gab. Wie viel Strom er im Jahr erzeugen soll, nennen die Unterlagen nicht. Die Gemeinde selbst hat laut Steckbrief 2024 auf acht eigenen Gebäuden, vor allem Kitas, Solaranlagen mit zusammen rund 70 Kilowatt Spitzenleistung und Batteriespeichern montiert, gefördert über das Landesprogramm progres.nrw.",
+        "Das Plangebiet liegt in der Gemarkung Merzenich südlich von Bürgewald, unmittelbar nördlich der A4 und der Werksbahn von RWE, der Hambachbahn. Südlich davon verläuft das Band aus Werksbahn, Autobahn und der Bahnstrecke Aachen–Köln, im Westen beginnt der Merzenicher Erbwald. Heute wird die Fläche überwiegend als Acker bewirtschaftet; ihre mittlere Bodenwertzahl liegt nach der Kurzbegründung unter dem Wert von 55 Punkten, der nach dem Landesentwicklungsplan NRW maßgeblich ist. Vorläufig umfasst das Plangebiet rund 44 Hektar, die Module sollen auf mehreren Teilflächen mit zusammen etwa 36 Hektar stehen.",
+        "Einen Bebauungsplan braucht das Vorhaben, weil es weit über den Streifen hinausreicht, in dem Solaranlagen ohne eigene Planung gebaut werden dürfen. Das Baugesetzbuch erlaubt sie im Außenbereich bis zu 200 Meter neben einer Autobahn, und an dieser Stelle schmälert die Werksbahn den Streifen noch. Im Flächennutzungsplan von 1992 ist das Gelände als Fläche für die Landwirtschaft eingetragen, überlagert von einer Fläche für den Abbau von Bodenschätzen. Bergrechtlich gehört es zum früheren Abbaugebiet des Tagebaus Hambach, für den es aber nicht mehr gebraucht wird. Im Sinne des Erneuerbare-Energien-Gesetzes liegt es im 500-Meter-Korridor entlang der Verkehrswege.",
+        "Quer durch das Gelände zieht sich ein 25 bis 50 Meter breiter Grünzug mit Grünland und Baumreihen. Er wurde als Leitstruktur für Fledermäuse angelegt und verbindet den Merzenicher Erbwald mit den Wäldern Vogelsang und Hambacher Forst; an ihm liegt der Buirer Fließ. Dieser Streifen soll mit einer Randzone frei bleiben und im Bebauungsplan als Fläche für Natur und Landschaft gesichert werden. FFH-, Natur- oder Landschaftsschutzgebiete berührt der Plan laut Kurzbegründung nicht, ebenso wenig Wasserschutz- oder Überschwemmungsgebiete. Im Regionalplan Köln ist die Fläche allgemeiner Freiraum- und Agrarbereich, der dem Schutz der Landschaft und der Erholung dient; der westlich angrenzende Eichen-Buchenwald ist im Biotopkataster des Landes als schutzwürdig verzeichnet. Klären muss das Verfahren Fragen zu den Grundwassermessstellen des Tagebaus; Kartierungen zum Artenschutz liegen schon vor, Bodendenkmäler und mögliche Kampfmittel werden untersucht.",
+        "Für Bürgewald ist der Plan gleich zweimal von Bedeutung. Die Zufahrt ist nach der Kurzbegründung voraussichtlich von Norden geplant: erst über die L 257, die Elsdorfer Straße, dann über die Oberstraße mitten durch den Ort und weiter auf einem Wirtschaftsweg Richtung Lambertshof. Mit wie viel Verkehr während des Baus zu rechnen ist, steht in den Unterlagen nicht. Zugleich will die Gemeinde prüfen, ob sich Bürgewald, das als „Ort der Zukunft“ neu belebt wird, an der Energieversorgung aus dem Solarpark beteiligen kann. Das Projektteam Bürgewald und RWE haben darüber erste Gespräche geführt; umgesetzt werden soll ein solches Modell, wenn es sich energetisch und finanziell als sinnvoll erweist. RWE und NRW Urban sollen sich dazu eng abstimmen.",
+        "Einspeisen könnte RWE den Strom nach der Kurzbegründung im Nordwesten des Standorts an der Hauptschaltanlage Hambach; andere Anschlüsse werden im Verfahren geprüft. Die frühere Hofstelle Lambertshof am Rand der Bahntrasse bleibt außerhalb des Plans. Unterzeichnet haben die Kurzbegründung am 28. Oktober die Solarsparte von RWE und das Planungsbüro Tischmann Loh & Partner, die das Vorhaben auch in der Sitzung vorstellen.",
+        "Wie es weitergeht: Nach dem Bauausschuss berät der Ausschuss für die Revitalisierung Bürgewalds am 26. November, entscheiden soll der Gemeinderat am 3. Dezember. Erst nach dem Aufstellungsbeschluss legt die Gemeinde die Planunterlagen frühzeitig öffentlich aus; dann können Bürgerinnen und Bürger sowie Behörden Stellung nehmen. Die Kosten des Verfahrens soll der Vorhabenträger tragen. Wann gebaut werden könnte, nennen die Unterlagen nicht.",
+        "Auf derselben Tagesordnung stehen das Projekt „Poolplatz“, mit dem der neue Eigentümer des Areals der ehemaligen Kfz-Werkstatt seine Pläne vorstellt (Mitteilungsvorlage M142/2026), Leitlinien der Gemeinde zum Gesetz zur Beschleunigung des Wohnungsbaus, dem sogenannten Bau-Turbo (Beschlussvorlage 142/2026), der Umbau der Grundschule Golzheim (138/2026) und ein Bericht zum Energiemanagement der gemeindeeigenen Gebäude (M139/2026).",
+        "Aktualisiert am 4. November 2026: ergänzt um die Angaben aus der Kurzbegründung zum Planungsvorschlag (Leistung, Netzanschluss, Lage, Naturschutz, Zufahrt) und den Vergleich mit dem Energiesteckbrief der Gemeinde."
       ],
       "fakten": [
-        "Bau-, Planungs- und Umweltausschuss, 5. Sitzung: Donnerstag, 12.11.2026, 18 Uhr, Ratssaal im Rathaus Merzenich (Tagesordnung, TOP 8)",
-        "Beschlussvorlage 144/2026 vom 29.10.2026: Aufstellung des Bebauungsplans „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“ und Änderung des Flächennutzungsplans",
-        "Plangebiet vorläufig rund 44 Hektar, PV-Teilflächen zusammen etwa 36 Hektar, mit Batteriespeicher",
-        "Beratungsfolge: Bauausschuss 12.11., Ausschuss für Revitalisierung Bürgewald 26.11., Gemeinderat 03.12.2026"
+        "Vorhabenträger: RWE Wind Onshore & PV Deutschland GmbH; Leistung rund 40 bis 45 MWp, Batteriespeicher etwa 25 bis 30 MW (Kurzbegründung vom 28.10.2026)",
+        "Plangebiet vorläufig rund 44 Hektar südlich von Bürgewald, nördlich von A4 und Hambachbahn; PV-Teilflächen etwa 36 Hektar",
+        "Zufahrt voraussichtlich über Elsdorfer Straße (L 257), Oberstraße und Wirtschaftsweg Richtung Lambertshof",
+        "Bauausschuss 12.11.2026, 18 Uhr, Ratssaal; Ausschuss für Revitalisierung Bürgewald 26.11.; Gemeinderat 03.12.2026",
+        "Zum Vergleich: alle PV-Anlagen in Merzenich Ende 2023 zusammen 5,44 MW (Energiesteckbrief, Datenquelle LANUV NRW)"
       ],
       "pruefung": [
         {
-          "aussage": "Der Bau-, Planungs- und Umweltausschuss tagt am Donnerstag, 12. November, um 18 Uhr im Ratssaal des Rathauses Merzenich (5. Sitzung); TOP 8 ist der Bebauungsplan für die Freiflächen-PV-Anlage entlang der A4.",
+          "aussage": "RWE Wind Onshore & PV Deutschland GmbH plant nördlich der A4 und der RWE-Werksbahn (Hambachbahn) eine Freiflächen-PV-Anlage mit Batteriespeicher; denkbar sind rund 40 bis 45 MWp, der Speicher soll etwa 25 bis 30 MW leisten; Kurzbegründung zur Beschlussvorlage 144/2026.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 1, Abschnitte 1 und letzter Absatz"
+        },
+        {
+          "aussage": "Bau-, Planungs- und Umweltausschuss am Donnerstag, 12. November, 18 Uhr, Ratssaal im Rathaus; TOP Bebauungsplan E3.",
           "belege": [
             "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10"
           ],
-          "stelle": "Tagesordnung, Kopf (Termin, Ort) und TOP 8"
+          "stelle": "Tagesordnung, Kopf und TOP 8"
         },
         {
-          "aussage": "Die Beschlussvorlage 144/2026 stammt vom 29. Oktober und sieht Bauausschuss 12.11., Ausschuss für Revitalisierung Bürgewald am 26. November und Gemeinderat am 3. Dezember vor.",
+          "aussage": "Photovoltaik im Gemeindegebiet Merzenich installiert 5,44 MW (Stand 31.12.2023, Datenquelle LANUV NRW); 40 bis 45 MWp entsprechen rund dem Sieben- bis Achtfachen; Jahresertrag des Parks nicht genannt.",
+          "belege": [
+            "https://www.rheinisches-revier.de/fileadmin/Content/Seitenstruktur/02_Rheinisches_Revier/08_Gigawattpakt/01_Allgemeines/Energiesteckbriefe/Merzenich.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Energiesteckbrief Merzenich, S. 1, Tabelle Stromerzeugung; Rechnung der Redaktion"
+        },
+        {
+          "aussage": "Lage in der Gemarkung Merzenich südlich von Bürgewald, nördlich von A4 und Werksbahn; im Süden Werksbahn, A4 und DB-Strecke Aachen/Düren–Köln, im Westen Merzenicher Erbwald; überwiegend Ackerbau; mittlere Bodenwertzahl unter 55 Punkten (LEP NRW); Plangebiet rund 44 ha, PV-Teilflächen etwa 36 ha.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRZK_H-B1DHeO8TCEk5I6h2PR7hRpgJZiot_Ss6OLuID/E3_PV_BESS-Hambach_Uebersicht_20261028.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 1 und S. 3; Übersichtsplan"
+        },
+        {
+          "aussage": "Privilegiert nach § 35 Abs. 1 Nr. 8 BauGB nur bis 200 Meter neben der Autobahn, durch die Werksbahn weiter reduziert, deshalb Bauleitplanung nötig; FNP von 1992: Fläche für die Landwirtschaft, überlagert von Fläche für Abgrabungen; ehemaliges Abbaugebiet des Tagebaus Hambach, nicht mehr benötigt; 500-m-Korridor nach § 48 EEG.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 2, Abschnitt 2, und S. 1"
+        },
+        {
+          "aussage": "Grünzug 25 bis 50 Meter breit als Leitstruktur für Fledermäuse zwischen Merzenicher Erbwald, Vogelsang und Hambacher Forst, mit dem Buirer Fließ; freizuhalten und nach § 9 Abs. 1 Nr. 20 BauGB zu sichern; keine FFH-, Natur- oder Landschaftsschutzgebiete, keine Wasserschutz- oder Überschwemmungsgebiete; Grundwassermessstellen des Tagebaus zu beachten; Artenschutzkartierungen liegen vor, Bodendenkmal- und Kampfmittelprüfung angestoßen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 4"
+        },
+        {
+          "aussage": "Erschließung voraussichtlich von Norden über die Elsdorfer Straße (L 257) und die Oberstraße durch Bürgewald und einen Wirtschaftsweg Richtung Lambertshof; Bauverkehr nicht beziffert.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 4, Erschließungsabsatz"
+        },
+        {
+          "aussage": "Beteiligungsmodell für die Energieversorgung Bürgewalds („Ort der Zukunft“) soll geprüft werden; erste Gespräche Projektteam Bürgewald und RWE; Umsetzung, wenn energetisch und finanziell sinnvoll; enge Abstimmung zwischen RWE und NRW Urban.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Vorlage 144/2026, Beschlussvorschlag Nr. 3 und Abschnitt Bürgewald; Kurzbegründung S. 4"
+        },
+        {
+          "aussage": "Netzanschluss grundsätzlich im Nordwesten an der Hauptschaltanlage Hambach, Alternativen werden geprüft; Hofstelle Lambertshof nicht einbezogen; Kurzbegründung datiert Merzenich, 28.10.2026, Verfasser RWE Renewables (Development Solar & BESS West) und Tischmann Loh & Partner; Vorstellung in der Sitzung durch RWE und das Büro.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
+          ],
+          "stelle": "Kurzbegründung zum Planungsvorschlag vom 28.10.2026, S. 1 und S. 4 (Schluss); Vorlage 144/2026, Schluss"
+        },
+        {
+          "aussage": "Beratungsfolge: Bauausschuss 12.11., Ausschuss für Revitalisierung Bürgewald am 26. November, Gemeinderat am 3. Dezember; nach dem Aufstellungsbeschluss frühzeitige Beteiligung und Offenlage nach §§ 3 Abs. 1 und 4 Abs. 1 BauGB; Verfahrenskosten trägt der Vorhabenträger; Vorlage 144/2026 vom 29.10.2026.",
           "belege": [
             "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
           ],
-          "stelle": "Vorlage 144/2026, Kopf (Datum, Beratungsfolge)"
+          "stelle": "Vorlage 144/2026, Kopf und Beschlussvorschlag Nr. 2 und 4"
         },
         {
-          "aussage": "Das Plangebiet in der Gemarkung Merzenich liegt im 500-Meter-Korridor entlang der Verkehrswege im Sinne des EEG, ist vorläufig rund 44 Hektar groß; die PV-Teilflächen umfassen zusammen etwa 36 Hektar; geplant ist ein Sondergebiet für Solarenergie einschließlich Batteriespeicher.",
-          "belege": [
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
-          ],
-          "stelle": "Vorlage 144/2026, Sachverhalt, S. 1 bis 2"
-        },
-        {
-          "aussage": "Wegeverbindungen und der bis zum Merzenicher Erbwald angelegte Fledermauskorridor bleiben mit Randzone frei; die ehemalige Hofstelle Lambertshof wird nicht einbezogen.",
-          "belege": [
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
-          ],
-          "stelle": "Vorlage 144/2026, Sachverhalt, S. 2"
-        },
-        {
-          "aussage": "Die Anlage soll in das langfristige Gesamtkonzept von RWE im Bereich des Tagebaus Hambach eingebunden werden; RWE und Tischmann Loh & Partner stellen das Vorhaben am 12.11. vor; die Verfahrenskosten trägt der Vorhabenträger.",
-          "belege": [
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
-          ],
-          "stelle": "Vorlage 144/2026, Beschlussvorschlag Nr. 4, Sachverhalt und Schluss"
-        },
-        {
-          "aussage": "Ein Beteiligungsmodell für die Energieversorgung Bürgewalds soll geprüft werden; Projektteam Bürgewald und RWE führten erste Gespräche; Umsetzung, sofern energetisch und finanziell sinnvoll; enge Abstimmung zwischen RWE und NRW Urban.",
-          "belege": [
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
-          ],
-          "stelle": "Vorlage 144/2026, Beschlussvorschlag Nr. 3 und Abschnitt „Mögliche Verknüpfung mit der Revitalisierung Bürgewalds“"
-        },
-        {
-          "aussage": "Nach dem Aufstellungsbeschluss folgen ortsübliche Bekanntmachung, frühzeitige Beteiligung und frühzeitige Offenlage nach §§ 3 Abs. 1 und 4 Abs. 1 BauGB; artenschutzfachliche Kartierungen liegen vor, ein Umweltbericht ist zu erstellen.",
-          "belege": [
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf"
-          ],
-          "stelle": "Vorlage 144/2026, Beschlussvorschlag Nr. 2, Sachverhalt S. 2"
-        },
-        {
-          "aussage": "Auf derselben Tagesordnung: Projekt „Poolplatz“ des neuen Eigentümers auf dem Areal der ehemaligen Kfz-Werkstatt (M142/2026), Bau-Turbo-Leitlinien (142/2026) und Umbau der Grundschule Golzheim (138/2026).",
+          "aussage": "Auf der Tagesordnung außerdem: Projekt „Poolplatz“ (M142/2026), Bau-Turbo-Leitlinien (142/2026), Umbau Grundschule Golzheim (138/2026), Sachstandsbericht Energie Management System (M139/2026); Aktualisierung am 4. November 2026.",
           "belege": [
             "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
             "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVosU9ukYlU0u6_fhQEWeGXznsXnANlUu_8PVlfSqyPw/Mitteilungsvorlage_M142-2026.pdf",
-            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-lrfvtKLbpti5yHmKox_pU1woscozfMRAgKgm2r78L/Beschlussvorlage_142-2026.pdf"
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-lrfvtKLbpti5yHmKox_pU1woscozfMRAgKgm2r78L/Beschlussvorlage_142-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZU-SS0zGbwAf4HfYgDfKDuZheBkUtVLuhFuw0UtGTrbA/Mitteilungsvorlage_M139-2026.pdf"
           ],
-          "stelle": "Tagesordnung TOP 6, 7 und 10; Mitteilungsvorlage M142/2026; Beschlussvorlage 142/2026"
+          "stelle": "Tagesordnung TOP 5, 6, 7 und 10"
+        },
+        {
+          "aussage": "Energiesteckbrief: 2024 acht neue PV-Anlagen mit Batteriespeicher auf kommunalen Liegenschaften, vor allem Kindertagesstätten, über progres.nrw, rund 70 Kilowatt-Peak; Regionalplan Köln: allgemeiner Freiraum- und Agrarbereich mit Schutz der Landschaft und landschaftsorientierter Erholung; westlich angrenzender Wald als Biotop BK-5105-009 Eichen-Buchenwald im Kataster schutzwürdiger Biotope.",
+          "belege": [
+            "https://www.rheinisches-revier.de/fileadmin/Content/Seitenstruktur/02_Rheinisches_Revier/08_Gigawattpakt/01_Allgemeines/Energiesteckbriefe/Merzenich.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf"
+          ],
+          "stelle": "Energiesteckbrief S. 2 „Unterstützungsmaßnahmen“; Kurzbegründung S. 4"
         }
       ],
       "quelle": {
         "name": "Gemeinde Merzenich, Beschlussvorlage 144/2026 vom 29.10.2026 (FB 3, Export 03.11.2026)",
         "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbJf_QX9ugNv-H7y-bcmVwfeG1oOBt6Hlm4i1u3kd-Pu/Beschlussvorlage_144-2026.pdf",
-        "stand": "2026-11-03"
+        "stand": "2026-11-04"
       },
       "weitereQuellen": [
+        {
+          "name": "RWE Renewables und Tischmann Loh & Partner: Kurzbegründung zum Planungsvorschlag Bebauungsplan „E 3 – Freiflächen PV entlang der A4“ und FNP-Änderung 1-24, 28.10.2026 (Anlage zu 144/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Übersichtsplan „E3 PV BESS Hambach“ vom 28.10.2026 (Anlage zu 144/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRZK_H-B1DHeO8TCEk5I6h2PR7hRpgJZiot_Ss6OLuID/E3_PV_BESS-Hambach_Uebersicht_20261028.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Gigawattpakt Rheinisches Revier: Energiesteckbrief Merzenich (Datenquelle LANUV NRW, Stand 31.12.2023)",
+          "url": "https://www.rheinisches-revier.de/fileadmin/Content/Seitenstruktur/02_Rheinisches_Revier/08_Gigawattpakt/01_Allgemeines/Energiesteckbriefe/Merzenich.pdf",
+          "stand": "2026-11-04"
+        },
         {
           "name": "Gemeinde Merzenich, Ratsinformationssystem: Tagesordnung Bau-, Planungs- und Umweltausschuss, 5. Sitzung, 12.11.2026",
           "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
@@ -120,6 +177,11 @@
           "name": "Gemeinde Merzenich, Beschlussvorlage 142/2026 vom 28.10.2026 (Leitlinien Bau-Turbo)",
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZe-lrfvtKLbpti5yHmKox_pU1woscozfMRAgKgm2r78L/Beschlussvorlage_142-2026.pdf",
           "stand": "2026-11-03"
+        },
+        {
+          "name": "Gemeinde Merzenich, Mitteilungsvorlage M139/2026 vom 23.10.2026 (Energie Management System)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZU-SS0zGbwAf4HfYgDfKDuZheBkUtVLuhFuw0UtGTrbA/Mitteilungsvorlage_M139-2026.pdf",
+          "stand": "2026-11-04"
         }
       ]
     }
