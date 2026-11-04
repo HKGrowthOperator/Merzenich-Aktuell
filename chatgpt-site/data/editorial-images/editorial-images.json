@@ -23486,6 +23486,34 @@
       "checksum": "f93a07d22ac903fef3a3334f667effad69892bed274080f9c8430e1837eca7bb"
     },
     {
+      "id": "web-themen-23-f5560260",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-23-f5560260b4.jpg",
+      "alt": "Solar Park in the morning mist, Dülmen , North Rhine-Westphalia , Germany",
+      "credit": "Symbolbild · Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AD%C3%BClmen%2C_Solarpark_--_2014_--_7060.jpg",
+      "sourceTitle": "File:Dülmen, Solarpark -- 2014 -- 7060.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/D%C3%BClmen%2C_Solarpark_--_2014_--_7060.jpg/1920px-D%C3%BClmen%2C_Solarpark_--_2014_--_7060.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsCheckedAt": "2026-11-04",
+      "tags": [
+        "symbolbild",
+        "thema",
+        "dülmen",
+        "solarpark"
+      ],
+      "width": 1920,
+      "height": 830,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "NRW",
+      "geprueft": true,
+      "checksum": "98f8acd4652cabd1973a4bf4ab119d811619155683a292b6e3e7f59d2bdb5ef1"
+    },
+    {
       "id": "web-menschen-01-686bb6fb",
       "pool": "menschen",
       "src": "/assets/editorial-pools/menschen/menschen-01-686bb6fb4c.jpg",

@@ -435,6 +435,12 @@
     "leben.energie.gas": {
       "titel": "Gasversorgung, Netzumstellung (H-Gas); ohne Gasmotiv nur Ortsansicht, kein Strommast",
       "motive": []
+    },
+    "leben.energie.solar": {
+      "titel": "Solarpark, Freiflächen-Photovoltaik, Batteriespeicher (Symbolbild, kein Foto des Merzenicher Projekts)",
+      "motive": [
+        "photovoltaik-freiflaeche"
+      ]
     }
   }
 }

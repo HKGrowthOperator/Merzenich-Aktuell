@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-03",
+ "stand": "2026-11-04",
  "quelle": "Wikimedia Commons",
  "mindest": 20,
  "pools": {
@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 22,
+  "themen": 23,
   "menschen": 20
  },
  "bilder": [
@@ -7597,6 +7597,20 @@
    "geprueft": true,
    "geprueftAm": "2026-10-28",
    "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-themen-23-f5560260",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-23-f5560260b4-1200.webp",
+   "alt": "Solar Park in the morning mist, Dülmen , North Rhine-Westphalia , Germany",
+   "credit": "Symbolbild · Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AD%C3%BClmen%2C_Solarpark_--_2014_--_7060.jpg",
+   "titel": "File:Dülmen, Solarpark -- 2014 -- 7060.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-04",
+   "ort": "NRW"
   },
   {
    "id": "web-menschen-01-686bb6fb",
