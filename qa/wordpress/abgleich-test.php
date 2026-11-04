@@ -93,5 +93,11 @@ pruefe('Reparatur: Entwurf oder ohne Abgleich bleibt unberührt', [ma_abgleich_h
 pruefe('Reparatur: alles gesetzt, nichts zu tun', ma_abgleich_haekchen_fehlend('publish', 'h', ['ma_date_verified' => '1', 'ma_place_verified' => '1', 'ma_human_reviewed' => '1']), []);
 pruefe('Echte Import-Datei: Meldungen tragen die Häkchen beim Anlegen, das Update nicht', [isset($post['meta']['ma_human_reviewed']), isset(ma_abgleich_meta_fuer_update($post['meta'])['ma_human_reviewed'])], [true, false]);
 
+echo "\nGeplant hängengebliebene Termine (1.48.1)\n";
+pruefe('Termin Geplant, Repository liefert veröffentlicht, aus dem Abgleich: freischalten', ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'unveraendert', true), true);
+pruefe('Auch nach Aktualisieren oder Übernehmen', [ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'aktualisieren', true), ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'uebernehmen', true)], [true, true]);
+pruefe('Von Hand geändert, nicht aus dem Abgleich, Entwurf geliefert: bleibt', [ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'von_hand', true), ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'unveraendert', false), ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'draft', 'unveraendert', true)], [false, false, false]);
+pruefe('Schon veröffentlicht, Entwurf in WordPress oder Meldung: nichts zu tun', [ma_abgleich_termin_freischalten_noetig('ma_event', 'publish', 'publish', 'unveraendert', true), ma_abgleich_termin_freischalten_noetig('ma_event', 'draft', 'publish', 'unveraendert', true), ma_abgleich_termin_freischalten_noetig('post', 'future', 'publish', 'unveraendert', true)], [false, false, false]);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

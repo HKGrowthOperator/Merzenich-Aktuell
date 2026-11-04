@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-3. November 2026 · Theme 21.26.0 · Core-Plugin 1.43.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+4. November 2026 · Theme 21.29.0 · Core-Plugin 1.48.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 04.11.2026: Plugin 1.48.1, Termine bleiben nicht auf „Geplant“ hängen
+
+Befund Morgenlauf 04.11.2026: Drei neue Termine standen in der Import-Datei, waren aber öffentlich nicht zu sehen (HTTP 404). Die Import-Datei datierte Termine auf den Prüftag 10:00 UTC; im Morgenlauf vor 11 Uhr angelegt, setzt WordPress sie auf „Geplant“ (`future`). Sichtbar werden sie erst, wenn der WordPress-Cron die geplante Veröffentlichung ausführt; das geschah nach 11 Uhr nicht.
+
+- **Import** (`deploy/wordpress-import.mjs`): Beitragsdatum eines Termins ist jetzt der Tagesbeginn des Prüftags (00:00 UTC), nie in der Zukunft.
+- **Abgleich** (`includes/abgleich.php`, `ma_abgleich_termin_freischalten_noetig`): Steht ein vom Abgleich angelegter Termin auf „Geplant“, das Repository liefert ihn als veröffentlicht und er ist nicht von Hand geändert, schaltet der nächste volle Lauf ihn frei (`wp_publish_post`, Zähler `termine_freigeschaltet`). Entwürfe, Papierkorb, von Hand geänderte Termine und Meldungen bleiben unberührt.
+- Tests: `qa/wordpress/abgleich-test.php` (Abschnitt „Geplant hängengebliebene Termine“).
 
 ## Neu am 03.11.2026 (mittags): Theme 21.26.0, alles automatisch online und „Neu in Merzenich“
 

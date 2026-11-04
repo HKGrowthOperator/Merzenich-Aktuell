@@ -429,6 +429,17 @@ function ma_abgleich_etag_norm(string $etag): string {
  * beim letzten vollständigen Lauf und der nichts offen gelassen und keinen Fehler
  * gemeldet hat. Ein stündlicher Lauf kostet dann eine Kopfanfrage statt 40 Sekunden.
  */
+/**
+ * „Geplant“ hängengeblieben (1.48.1, 04.11.2026): Ein Termin, den der Abgleich mit einem Datum in der Zukunft
+ * angelegt hat, steht in WordPress auf „Geplant“ (future) und erscheint erst, wenn der WordPress-Cron die
+ * geplante Veröffentlichung ausführt; live blieben drei Termine so über die geplante Zeit hinaus unsichtbar.
+ * Liefert das Repository den Termin als veröffentlicht und ist er nicht von Hand geändert, schaltet der
+ * Abgleich ihn frei. Entwürfe, Papierkorb, von Hand geänderte Termine und Meldungen bleiben unberührt.
+ */
+function ma_abgleich_termin_freischalten_noetig(string $typ, string $wpStatus, string $lieferStatus, string $entscheidung, bool $ausAbgleich): bool {
+    return $typ === 'ma_event' && $wpStatus === 'future' && $lieferStatus === 'publish' && $ausAbgleich && $entscheidung !== 'von_hand';
+}
+
 function ma_abgleich_ueberspringen(string $etagNeu, string $etagAlt, array $stand): bool {
     $neu = ma_abgleich_etag_norm($etagNeu); $alt = ma_abgleich_etag_norm($etagAlt);
     return $neu !== '' && $neu === $alt && empty($stand['offen']) && empty($stand['fehler']);
@@ -477,6 +488,10 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         elseif ($ent === 'aktualisieren') { if (ma_abgleich_aktualisieren($id, $e, $daten['bilder'], $erg['fehler'])) $erg['aktualisiert']++; }
         else $erg['von_hand'][] = $e['titel'];
         if (ma_abgleich_ki_freischalten($id, $e, $ent)) $erg['ki_veroeffentlicht'] = ($erg['ki_veroeffentlicht'] ?? 0) + 1;
+        if (ma_abgleich_termin_freischalten_noetig($p->post_type, (string) get_post_status($id), $e['status'], $ent, (string) get_post_meta($id, '_ma_abgleich_hash', true) !== '')) {
+            wp_publish_post($id);
+            $erg['termine_freigeschaltet'] = ($erg['termine_freigeschaltet'] ?? 0) + 1;
+        }
         // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
         if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && ma_abgleich_bild_fehlt($id, $e)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);
         // Anderes Themenbild im Repository: übernehmen, wenn das Bild nicht von Hand gewählt ist (1.34.0).
