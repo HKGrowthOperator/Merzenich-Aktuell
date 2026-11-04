@@ -11649,6 +11649,78 @@
       "implementation_commit": "b2009f6",
       "summary": "Solarpark zum Standardtext (827 Wörter) mit Themenfoto; neu Energiemanagement (Kurzmeldung, M139/2026) und Grundschule Golzheim (Standard 1.075 Wörter, 138/2026, eigener Fund mit Kostenvergleich); Kalender: 3 neue Termine (Morschenich, VHS Wien), 2 Heimat-Info-Entwürfe freigegeben, VHS Paris über Programmübersicht bestätigt; qa/vereinsseiten.mjs erkennt Listen unter Jahresüberschrift.",
       "publication": "Neue Meldungen und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-04",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-04-mittags.md",
+      "compared_with": "dossiers/2026-11-04-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-04-claude-morgens.md",
+      "base_commit": "1700ef0bbc6981449d7c8e697167ed65683c45f2",
+      "implementation_commit": null,
+      "summary": "Zwei neue Recherchekarten T2: DRK-Infoabend Krisenvorsorge am10.11.18:30 Bürgerhaus (Gemeindeankündigung neu10:34; zweite aktuelle Bestätigung fehlt); PV-Golzheim E1/FNP20, neu erschlossener Entwurf, Datumswiderspruch und unabhängige aktuelle Bestätigung offen. Zwei Korrekturhinweise: Energiemanagement und Solarpark nennen acht Gebäude, Quelle zählt acht PV-Anlagen ohne Gebäudezahl. Schulbau-Kostenvergleich geprüft und nachgerechnet. VHS-Paris über Programm-PDF bestätigt; JVB-Inhaltsfehler offen.",
+      "topics": 2,
+      "blocked_T2": 2,
+      "corrections_required": 2,
+      "articles_checked": 3,
+      "repository_article_files_read": 34,
+      "repository_event_files_read": 12,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-04T11:56:10+01:00",
+      "source_check_window": "2026-11-04T11:57:03+01:00 bis 2026-11-04T12:00:00+01:00; ergänzende Quellen-/Bildsichtung und Dokumentation ab12Uhr",
+      "deadline": "2026-11-04T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche erfolgreiche Bereitstellung am main-Ref und vollständigem Rücklesen im Abschluss mit Uhrzeit bestätigen.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "topic_updates": [
+        {
+          "id": "MA-DRK-KRISENVORSORGE-10112026",
+          "research_status": "T2",
+          "missing": "Zweite unabhängige aktuelle Bestätigung, Endzeit/Kosten; visuelle Bild-Endprüfung offen"
+        },
+        {
+          "id": "MA-PV-GOLZHEIM-E1-FNP20",
+          "research_status": "T2",
+          "missing": "Datumswiderspruch frühe Beteiligung; aktuelle unabhängige Bestätigung; keine laufende Offenlagefrist belegt"
+        }
+      ],
+      "correction_requests": [
+        {
+          "slug": "energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029",
+          "quote": "auf acht kommunalen Gebäuden",
+          "correct": "Quelle zählt acht PV-Anlagen auf kommunalen Liegenschaften, keine Zahl verschiedener Gebäude.",
+          "source": "https://www.rheinisches-revier.de/fileadmin/Content/Seitenstruktur/02_Rheinisches_Revier/08_Gigawattpakt/01_Allgemeines/Energiesteckbriefe/Merzenich.pdf",
+          "location": "S.2 Unterstützungsmaßnahmen",
+          "retrieved_at": "2026-11-04T11:57:03+01:00"
+        },
+        {
+          "slug": "solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher",
+          "quote": "auf acht eigenen Gebäuden",
+          "correct": "Quelle zählt acht PV-Anlagen auf kommunalen Liegenschaften, keine Zahl verschiedener Gebäude.",
+          "source": "https://www.rheinisches-revier.de/fileadmin/Content/Seitenstruktur/02_Rheinisches_Revier/08_Gigawattpakt/01_Allgemeines/Energiesteckbriefe/Merzenich.pdf",
+          "location": "S.2 Unterstützungsmaßnahmen",
+          "retrieved_at": "2026-11-04T11:57:11+01:00"
+        }
+      ],
+      "resolved_prior_checks": [
+        {
+          "subject": "VHS Paris 10.11.",
+          "result": "Vorläufige Programm-PDF der VHS gelesen: Y1712A,10.11.26,15:30–16:30,Seniorenhaus Marienhof. Alte404-Lücke für Sachtermin geschlossen; keine Terminänderung.",
+          "source": "https://www.dueren.de/assets/userfiles/pdf_bereich_familieundbildung/Vorlaeufige_Programmuebersicht.pdf",
+          "retrieved_at": "2026-11-04T11:58:03+01:00"
+        }
+      ],
+      "open_checks": [
+        "JVB liefert HTTP200 mit Site Unavailable",
+        "Golzheimer Sprechstundenkonflikt",
+        "SCIII-Endstand",
+        "M140-Daten nicht als heutiger Baustellenzustand bestätigt"
+      ],
+      "qa": "Alle bestehenden Themen, Archivdaten, Artikelpfade, Claude-Notizen, Umsetzungscommits und bisherigen Rechercheläufe unverändert erhalten; nur neuer Recherchelauf angehängt. Vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
