@@ -86,7 +86,11 @@ Offen: Bürgersprechstunde Golzheim (30.10. gegen 13.11.), Orte der Jonge-vom-Be
 
 ## 7. QA, Commit, Abgleich
 
-`node deploy/kette.mjs` je Schritt zweimal, `--check` unverändert; `node qa/pruefung.mjs` 0 Fehler; `node qa/redaktion-lauf.mjs --datum 2026-11-04 --lauf morgens` 0 Fehler nach diesem Dossier. Commits: `5969b40`, `2c5a224`, `179c885`, `001c7d7`, `b2009f6`, dieser Dossier-Commit. Abgleich und Live-Nachweis im Abschlussbericht.
+`node deploy/kette.mjs` je Schritt zweimal, `--check` unverändert; `node qa/pruefung.mjs` 0 Fehler; `node qa/redaktion-lauf.mjs --datum 2026-11-04 --lauf morgens` 0 Fehler nach diesem Dossier. Commits: `5969b40`, `2c5a224`, `179c885`, `001c7d7`, `b2009f6`, `8374b33`.
+
+Live-Nachweis (09:48 Uhr): Grundschule Golzheim, Energiemanagement und Solarpark (neuer Titel, Themenfoto) HTTP 200, alle drei in der Nachrichten-Sitemap, Golzheim und Energiemanagement oben in „Neu in Merzenich“. Freigegebene Termine 22.11. und 06.12. sowie VHS Paris HTTP 200. Abgleich-Anstoß 09:48 und 09:49 Uhr: `angestossen: false` (Workflow hatte schon angestoßen), nächster Lauf 10:05 Uhr.
+
+Befund: Die drei neuen Termine standen in der Import-Datei, blieben bis 10:15 Uhr aber HTTP 404. Ursache: Der Import datierte Termine auf den Prüftag 10:00 UTC (11:00 Uhr Berlin); im Morgenlauf vor 11 Uhr angelegt, setzt WordPress sie auf „Geplant“. Sie erscheinen um 11:00 Uhr. Korrektur in `deploy/wordpress-import.mjs`: Tagesbeginn 00:00 UTC; bestehende Termine ändert der Abgleich nicht.
 
 ## 8. Bildprüfung
 

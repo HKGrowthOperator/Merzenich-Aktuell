@@ -253,7 +253,9 @@ const entwurfTermine = new Set(readdirSync(join(wurzel, 'inhalte', 'termine')).f
 for (const { t, id, inhalt, ort } of termine) {
   // Beitragsdatum = Stand der Terminseite, nicht der Beginn: WordPress stellt ein
   // veröffentlichtes Datum in der Zukunft auf „Geplant“ und zeigt den Termin nicht.
-  const veroeffentlicht = t.stand ? new Date(`${t.stand}T10:00:00Z`) : t.start;
+  // Tagesbeginn (00:00 UTC) statt 10:00 UTC: Ein im Morgenlauf vor 11 Uhr angelegter
+  // Termin lag sonst bis 11 Uhr in der Zukunft und blieb „Geplant“ (04.11.2026).
+  const veroeffentlicht = t.stand ? new Date(`${t.stand}T00:00:00Z`) : t.start;
   const [lokal, gmt] = wpDatum(veroeffentlicht < t.start ? veroeffentlicht : t.start);
   items.push(`<item>${zeile('title', cdata(t.titel))}${zeile('link', xmlEsc(`${WP_URL}/termine/${t.slug}/`))}${zeile('dc:creator', cdata('redaktion'))}`
     + `<content:encoded>${cdata(inhalt)}</content:encoded><excerpt:encoded>${cdata(t.beschreibung || '')}</excerpt:encoded>`

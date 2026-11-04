@@ -1,3 +1,3 @@
 e217f99201c60465dcdbbb6151301c6089ea3ea25a8ca631f920e818aa052901  wordpress-delivery/merzenich-aktuell-theme.zip
 12cf5d359241b95dd8a46f3975ab04f56fbb60e067bd3bbce37d8a9921ad1e80  wordpress-delivery/merzenich-aktuell-core.zip
-df39acae4bffa41132d1cc8baac43ab1e3156107a21eb741b3c9177d4410bff3  wordpress-delivery/merzenich-aktuell-import.xml
+da4d9d42250a5b373f49583affec9960608597213530e13a1ce44e48633fd125  wordpress-delivery/merzenich-aktuell-import.xml
