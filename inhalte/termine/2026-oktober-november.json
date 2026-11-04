@@ -507,18 +507,23 @@
       "beschreibung": "Otmar Steinbicker nimmt das Publikum am Dienstag, 10. November, mit auf einen Gang durch die Stadtteile von Paris. Der VHS-Vortrag im Seniorenhaus Marienhof ist kostenlos.",
       "absaetze": [
         "Die VHS Rur-Eifel zeigt am Dienstag, 10. November 2026, von 15:30 bis 16:30 Uhr einen Vortrag über Paris. Er findet im Seniorenhaus Marienhof an der Burgstraße 12 in Merzenich statt, Referent ist Otmar Steinbicker.",
-        "Der Vortrag führt von der Île de la Cité über die Seine-Ufer und das Quartier Latin bis ins Marais und in die früheren Arbeiterviertel östlich des Canal Saint-Martin. Die Teilnahme ist kostenlos, die Kursnummer lautet Y1712A."
+        "Der Vortrag führt von der Île de la Cité über die Seine-Ufer und das Quartier Latin bis ins Marais und in die früheren Arbeiterviertel östlich des Canal Saint-Martin. Die Teilnahme ist kostenlos, die Kursnummer lautet Y1712A.",
+        "Nachtrag vom 4. November 2026: Die Website der VHS wird zurzeit neu aufgebaut, die Kursseite ist deshalb nicht erreichbar. In der vorläufigen Programmübersicht, die die VHS auf den Seiten der Stadt Düren veröffentlicht, steht der Vortrag unverändert für Dienstag, 10. November, 15.30 bis 16.30 Uhr; angemeldet wird online oder mit der Anmeldekarte der VHS."
       ],
       "links": [
         [
-          "Kursseite der VHS Rur-Eifel",
-          "https://www.vhs-rur-eifel.de/kurssuche/kurs/Paris/Y1712A"
+          "Vorläufige Programmübersicht der VHS Rur-Eifel (PDF)",
+          "https://www.dueren.de/assets/userfiles/pdf_bereich_familieundbildung/Vorlaeufige_Programmuebersicht.pdf"
+        ],
+        [
+          "Hinweis der VHS zum Neuaufbau ihrer Website",
+          "https://www.dueren.de/kultur-tourismus/veranstaltungen/veranstaltungskalender/veranstaltung/vhs-gestaltet-website-neu"
         ]
       ],
       "quelle": {
-        "name": "VHS Rur-Eifel, Kurs Y1712A",
-        "url": "https://www.vhs-rur-eifel.de/kurssuche/kurs/Paris/Y1712A",
-        "stand": "2026-10-05"
+        "name": "VHS Rur-Eifel, Vorläufige Programmübersicht (PDF auf dueren.de), Kurs Y1712A",
+        "url": "https://www.dueren.de/assets/userfiles/pdf_bereich_familieundbildung/Vorlaeufige_Programmuebersicht.pdf",
+        "stand": "2026-11-04"
       }
     },
     {

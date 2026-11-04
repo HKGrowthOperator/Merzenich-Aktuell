@@ -3,19 +3,23 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Weihnachtsfeier
+X-WR-CALNAME:Weihnachtsschießen und Weihnachtsfeier der Schützenbrudersch
+ aft Morschenich
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:weihnachtsfeier-morschenich-2026-12-06@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
-DTSTART:20261206T143000Z
-SUMMARY:Weihnachtsfeier
-DESCRIPTION:„Weihnachtsfeier“ am Sonntag\, 6. Dezember\, 15:30 Uhr. Ort
- : BWZ.\nVeranstalter: St. Lambertus Schützenbruderschaft Morschenich e.V.
- \nhttps://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfeier-mo
- rschenich-2026-12-06/
-LOCATION:BWZ
+DTSTAMP:20261104T060000Z
+DTSTART:20261206T140000Z
+SUMMARY:Weihnachtsschießen und Weihnachtsfeier der Schützenbruderschaft M
+ orschenich
+DESCRIPTION:Am Sonntag\, 6. Dezember\, lädt die St. Lambertus Schützenbru
+ derschaft in Morschenich ab 15 Uhr zum Weihnachtsschießen\; für 15.30 Uh
+ r kündigt sie im Veranstaltungskalender der Gemeinde ihre Weihnachtsfeier
+  am BWZ an\, dem Bürgewaldzentrum mit dem Schützenheim.\nVeranstalter: S
+ t. Lambertus Schützenbruderschaft Morschenich e.V.\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/weihnachtsfeier-morschenich-2026-12-06/
+LOCATION:Bürgewaldzentrum (BWZ) Morschenich\, Schützenheim
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfeier-m
  orschenich-2026-12-06/
 STATUS:CONFIRMED

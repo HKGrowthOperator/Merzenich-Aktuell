@@ -39,6 +39,14 @@ export function datumsTreffer(text, von = heute, bisDatum = bis) {
   for (const m of text.matchAll(/\b(\d{1,2})\.(\d{1,2})\.(20\d\d)\b/g)) add(+m[3], +m[2], +m[1], m.index);
   for (const m of text.matchAll(/\b(\d{1,2})\.\s?(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s(20\d\d)\b/gi)) add(+m[3], MONATE[m[2].toLowerCase()], +m[1], m.index);
   for (const m of text.matchAll(/DTSTART[^:\n]*:(20\d\d)(\d\d)(\d\d)/g)) add(+m[1], +m[2], +m[3], m.index);
+  // Terminlisten unter einer Jahresüberschrift („Termine 2026 … 15.11. Volkstrauertag“): Jahr aus der
+  // letzten Jahreszahl der vorigen 600 Zeichen (Schützenbruderschaft Morschenich, 04.11.2026).
+  for (const m of text.matchAll(/(?<![\d.])(\d{1,2})\.(\d{1,2})\.(?![\d])/g)) {
+    const t = +m[1], mo = +m[2];
+    if (t < 1 || t > 31 || mo < 1 || mo > 12) continue;
+    const jahre = [...text.slice(Math.max(0, m.index - 600), m.index).matchAll(/\b(20\d\d)\b/g)];
+    if (jahre.length) add(+jahre[jahre.length - 1][1], mo, t, m.index);
+  }
   return raus;
 }
 

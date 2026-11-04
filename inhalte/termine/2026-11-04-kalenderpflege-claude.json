@@ -1,0 +1,92 @@
+{
+  "hinweis": "Kalenderpflege und Breitenrecherche vom 04.11.2026, Morgenlauf (Claude): Termine von der Terminseite der St. Lambertus Schützenbruderschaft Morschenich (qa/vereinsseiten.mjs; Terminseite und Seite „Schützenheim“ am 04.11.2026 gelesen) und Bildvortrag der VHS Rur-Eifel aus deren vorläufiger Programmübersicht (dueren.de, 04.11.2026). Selbstauskunft des Veranstalters; keine Privatpersonen, keine Adressen von Mitgliedern. Vereinsinterne Termine (Bezirksjungschützenschießen in Rölsdorf, Nikolausrunde, Generalversammlung) nicht übernommen.",
+  "termine": [
+    {
+      "slug": "volkstrauertag-gedenken-friedhof-morschenich-2026-11-15",
+      "titel": "Volkstrauertag: Gedenkveranstaltung auf dem Friedhof Morschenich",
+      "start": "2026-11-15T11:30:00+01:00",
+      "ort": "Friedhof Morschenich",
+      "ortsteil": "Morschenich",
+      "kategorie": "Brauchtum",
+      "veranstalter": "St. Lambertus Schützenbruderschaft Morschenich 1458 e.V.",
+      "beschreibung": "Zum Volkstrauertag am Sonntag, 15. November, steht um 11.30 Uhr eine Gedenkveranstaltung auf dem Friedhof Morschenich im Terminplan der St. Lambertus Schützenbruderschaft. Die Schützen kommen in Uniform.",
+      "absaetze": [
+        "Am Volkstrauertag, Sonntag, 15. November 2026, gedenkt Morschenich auf dem Friedhof der Toten von Krieg und Gewaltherrschaft. Die St. Lambertus Schützenbruderschaft hat die Gedenkveranstaltung für 11.30 Uhr in ihren Terminplan eingetragen; die Mitglieder nehmen uniformiert teil.",
+        "Wer die Feier gestaltet und ob ein Kranz niedergelegt wird, steht auf der Seite der Bruderschaft nicht. Am selben Vormittag legt in Merzenich die KG Jonge vom Berg um 9.30 Uhr in der Alten Kirche einen Kranz nieder; beide Termine stehen in unserem Kalender."
+      ],
+      "links": [
+        [
+          "Terminseite der St. Lambertus Schützenbruderschaft Morschenich",
+          "https://www.schuetzen-morschenich.de/termine-.html"
+        ]
+      ],
+      "quelle": {
+        "name": "St. Lambertus Schützenbruderschaft Morschenich 1458 e.V., Terminseite „Termine 2026“ (Selbstauskunft des Veranstalters)",
+        "url": "https://www.schuetzen-morschenich.de/termine-.html",
+        "stand": "2026-11-04"
+      }
+    },
+    {
+      "slug": "adventsfenster-bwz-morschenich-2026-11-28",
+      "titel": "Adventsfenster am Bürgewaldzentrum in Morschenich",
+      "start": "2026-11-28T17:00:00+01:00",
+      "ort": "Bürgewaldzentrum (BWZ) Morschenich, Schützenheim",
+      "ortsteil": "Morschenich",
+      "kategorie": "Brauchtum",
+      "veranstalter": "St. Lambertus Schützenbruderschaft Morschenich 1458 e.V.",
+      "beschreibung": "Am Samstag vor dem ersten Advent, 28. November, öffnet die St. Lambertus Schützenbruderschaft ab 17 Uhr ein Adventsfenster am Bürgewaldzentrum (BWZ) in Morschenich, wo sie ihr Schützenheim hat.",
+      "absaetze": [
+        "Einen Tag vor dem ersten Advent lädt die St. Lambertus Schützenbruderschaft in Morschenich zum Adventsfenster ein: Laut Terminplan der Bruderschaft beginnt es am Samstag, 28. November 2026, ab 17 Uhr am BWZ. Gemeint ist das Bürgewaldzentrum an der Ellener Allee in Morschenich-Neu, in dem die Schützen ihr Vereinsheim haben.",
+        "Was es dort gibt, nennt die Bruderschaft noch nicht. Ihr Terminplan führt für den 6. Dezember außerdem das Weihnachtsschießen ab 15 Uhr."
+      ],
+      "links": [
+        [
+          "Terminseite der St. Lambertus Schützenbruderschaft Morschenich",
+          "https://www.schuetzen-morschenich.de/termine-.html"
+        ],
+        [
+          "Schützenheim im Bürgewaldzentrum (Seite der Bruderschaft)",
+          "https://www.schuetzen-morschenich.de/schuetzenheim.html"
+        ]
+      ],
+      "quelle": {
+        "name": "St. Lambertus Schützenbruderschaft Morschenich 1458 e.V., Terminseite „Termine 2026“ (Selbstauskunft des Veranstalters)",
+        "url": "https://www.schuetzen-morschenich.de/termine-.html",
+        "stand": "2026-11-04"
+      },
+      "adresse": "Ellener Allee, 52399 Merzenich-Morschenich"
+    },
+    {
+      "slug": "vhs-bildvortrag-wien-marienhof-2027-01-12",
+      "titel": "VHS-Bildvortrag „Wien“ im Seniorenhaus Marienhof",
+      "start": "2027-01-12T15:30:00+01:00",
+      "ende": "2027-01-12T16:30:00+01:00",
+      "ort": "Seniorenhaus Marienhof",
+      "adresse": "Burgstraße 12, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kultur",
+      "veranstalter": "VHS Rur-Eifel",
+      "beschreibung": "Nach Paris im November führt die Reihe der VHS Rur-Eifel im Seniorenhaus Marienhof am Dienstag, 12. Januar 2027, nach Wien. Der Bildvortrag mit Otmar Steinbicker ist kostenlos.",
+      "absaetze": [
+        "Die VHS Rur-Eifel setzt ihre Bildvorträge im Seniorenhaus Marienhof an der Burgstraße 12 in Merzenich fort: Am Dienstag, 12. Januar 2027, geht es von 15.30 bis 16.30 Uhr um Wien. Referent ist wie beim Paris-Vortrag im November Otmar Steinbicker.",
+        "Im Mittelpunkt stehen laut Programm die Bauten aus der Zeit der Habsburger, darunter Staatsoper, Rathaus, Parlament, Burgtheater, die großen Museen und die Hofburg, dazu Kirchen und Konditoreien der Innenstadt. Die Teilnahme ist kostenlos; angemeldet wird online oder mit der Anmeldekarte der VHS, Kursnummer Y1713B.",
+        "Die Website der VHS wird zurzeit neu aufgebaut. Bis dahin steht das Programm als vorläufige Übersicht auf den Seiten der Stadt Düren."
+      ],
+      "links": [
+        [
+          "Vorläufige Programmübersicht der VHS Rur-Eifel (PDF)",
+          "https://www.dueren.de/assets/userfiles/pdf_bereich_familieundbildung/Vorlaeufige_Programmuebersicht.pdf"
+        ],
+        [
+          "Hinweis der VHS zum Neuaufbau ihrer Website",
+          "https://www.dueren.de/kultur-tourismus/veranstaltungen/veranstaltungskalender/veranstaltung/vhs-gestaltet-website-neu"
+        ]
+      ],
+      "quelle": {
+        "name": "VHS Rur-Eifel, Vorläufige Programmübersicht (PDF auf dueren.de), Kurs Y1713B",
+        "url": "https://www.dueren.de/assets/userfiles/pdf_bereich_familieundbildung/Vorlaeufige_Programmuebersicht.pdf",
+        "stand": "2026-11-04"
+      }
+    }
+  ]
+}

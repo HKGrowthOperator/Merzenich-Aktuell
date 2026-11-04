@@ -1,5 +1,5 @@
 {
-  "hinweis": "Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs). Alle Termine sind Entwürfe (\"entwurf\": true) und erscheinen erst nach Freigabe der Redaktion. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.",
+  "hinweis": "Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs), am 02.11.2026 noch als Entwurf. Seit 03.11.2026 gehen Automatik-Termine ohne Freigabe online (Entscheidung Luis Kummer); beide Termine am 04.11.2026 an der Quelle nachgeprüft und freigegeben. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.",
   "termine": [
     {
       "slug": "gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22",
@@ -13,33 +13,58 @@
       "beschreibung": "„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am Sonntag, 22. November, 10:00 Uhr. Ort: Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier.",
       "absaetze": [
         "Evangelisches Gemeindezentrum Merzenich lädt am Sonntag, 22. November 2026, 10:00 Uhr zu „Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ ein. Ort: Bürgerhaus Niederzier, Kölnstraße 46, 52382 Niederzier.",
-        "Aus der Ankündigung im Veranstaltungskalender: „Wir gedenken der Verstorbenen und alle sind zum Abendmahl eingeladen.“"
+        "Aus der Ankündigung im Veranstaltungskalender: „Wir gedenken der Verstorbenen und alle sind zum Abendmahl eingeladen.“",
+        "Die Evangelische Gemeinde zu Düren führt den Gottesdienst in ihrem Kalender für den Bezirk Merzenich/Niederzier als Gottesdienst zum Totensonntag mit Gedenken an die Verstorbenen des vergangenen Jahres; es leitet Pfarrerin Heucher. Eine Woche vorher, am 15. November, feiert die Gemeinde um 10 Uhr bereits einen Gedenkgottesdienst im Gemeindehaus Merzenich."
       ],
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
         "url": "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717",
-        "stand": "2026-11-02"
+        "stand": "2026-11-04"
       },
-      "entwurf": true
+      "links": [
+        [
+          "Ankündigung im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717"
+        ],
+        [
+          "Termine der Evangelischen Gemeinde, Bezirk Merzenich",
+          "https://evangelischegemeinde-dueren.ekir.de/thema/bezirk-7-merzenich-nierzier/"
+        ]
+      ]
     },
     {
       "slug": "weihnachtsfeier-morschenich-2026-12-06",
-      "titel": "Weihnachtsfeier",
-      "start": "2026-12-06T15:30:00+01:00",
-      "ort": "BWZ",
+      "titel": "Weihnachtsschießen und Weihnachtsfeier der Schützenbruderschaft Morschenich",
+      "start": "2026-12-06T15:00:00+01:00",
+      "ort": "Bürgewaldzentrum (BWZ) Morschenich, Schützenheim",
       "ortsteil": "Morschenich",
       "kategorie": "Vereine",
       "veranstalter": "St. Lambertus Schützenbruderschaft Morschenich e.V.",
-      "beschreibung": "„Weihnachtsfeier“ am Sonntag, 6. Dezember, 15:30 Uhr. Ort: BWZ.",
+      "beschreibung": "Am Sonntag, 6. Dezember, lädt die St. Lambertus Schützenbruderschaft in Morschenich ab 15 Uhr zum Weihnachtsschießen; für 15.30 Uhr kündigt sie im Veranstaltungskalender der Gemeinde ihre Weihnachtsfeier am BWZ an, dem Bürgewaldzentrum mit dem Schützenheim.",
       "absaetze": [
-        "St. Lambertus Schützenbruderschaft Morschenich e.V. lädt am Sonntag, 6. Dezember 2026, 15:30 Uhr zu „Weihnachtsfeier“ ein. Ort: BWZ."
+        "Am Nikolaustag, Sonntag, 6. Dezember 2026, lädt die St. Lambertus Schützenbruderschaft Morschenich zu Weihnachtsschießen und Weihnachtsfeier ein. Laut Terminseite der Bruderschaft beginnt das Weihnachtsschießen ab 15 Uhr.",
+        "Im Veranstaltungskalender der Gemeinde in der Heimat-Info-App steht die Weihnachtsfeier für 15.30 Uhr am BWZ, dem Bürgewaldzentrum an der Ellener Allee in Morschenich-Neu, in dem die Bruderschaft ihr Schützenheim hat. Der Eintrag dort stammt von der Bruderschaft selbst."
       ],
       "quelle": {
-        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "name": "St. Lambertus Schützenbruderschaft Morschenich: Veranstaltungskalender der Gemeinde (Heimat-Info) und Terminseite „Termine 2026“ (Selbstauskunft des Veranstalters)",
         "url": "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2",
-        "stand": "2026-11-02"
+        "stand": "2026-11-04"
       },
-      "entwurf": true
+      "links": [
+        [
+          "Terminseite der St. Lambertus Schützenbruderschaft Morschenich",
+          "https://www.schuetzen-morschenich.de/termine-.html"
+        ],
+        [
+          "Weihnachtsfeier im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2"
+        ],
+        [
+          "Schützenheim im Bürgewaldzentrum (Seite der Bruderschaft)",
+          "https://www.schuetzen-morschenich.de/schuetzenheim.html"
+        ]
+      ],
+      "adresse": "Ellener Allee, 52399 Merzenich-Morschenich"
     }
   ]
 }

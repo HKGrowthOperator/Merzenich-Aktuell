@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Adventsfenster am Bürgewaldzentrum in Morschenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:adventsfenster-bwz-morschenich-2026-11-28@merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261128T160000Z
+SUMMARY:Adventsfenster am Bürgewaldzentrum in Morschenich
+DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, öffnet die S
+ t. Lambertus Schützenbruderschaft ab 17 Uhr ein Adventsfenster am Bürgew
+ aldzentrum (BWZ) in Morschenich\, wo sie ihr Schützenheim hat.\nVeranstal
+ ter: St. Lambertus Schützenbruderschaft Morschenich 1458 e.V.\nhttps://me
+ rzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bwz-morschenich
+ -2026-11-28/
+LOCATION:Bürgewaldzentrum (BWZ) Morschenich\, Schützenheim
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bw
+ z-morschenich-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

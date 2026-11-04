@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:VHS-Bildvortrag „Wien“ im Seniorenhaus Marienhof
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:vhs-bildvortrag-wien-marienhof-2027-01-12@merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20270112T143000Z
+DTEND:20270112T153000Z
+SUMMARY:VHS-Bildvortrag „Wien“ im Seniorenhaus Marienhof
+DESCRIPTION:Nach Paris im November führt die Reihe der VHS Rur-Eifel im Se
+ niorenhaus Marienhof am Dienstag\, 12. Januar 2027\, nach Wien. Der Bildvo
+ rtrag mit Otmar Steinbicker ist kostenlos.\nVeranstalter: VHS Rur-Eifel\nh
+ ttps://merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-wien-
+ marienhof-2027-01-12/
+LOCATION:Seniorenhaus Marienhof
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-bildvortrag-w
+ ien-marienhof-2027-01-12/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

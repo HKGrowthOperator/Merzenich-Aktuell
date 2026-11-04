@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Volkstrauertag: Gedenkveranstaltung auf dem Friedhof Morscheni
+ ch
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:volkstrauertag-gedenken-friedhof-morschenich-2026-11-15@merzenich-aktue
+ ll.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261115T103000Z
+SUMMARY:Volkstrauertag: Gedenkveranstaltung auf dem Friedhof Morschenich
+DESCRIPTION:Zum Volkstrauertag am Sonntag\, 15. November\, steht um 11.30 U
+ hr eine Gedenkveranstaltung auf dem Friedhof Morschenich im Terminplan der
+  St. Lambertus Schützenbruderschaft. Die Schützen kommen in Uniform.\nVe
+ ranstalter: St. Lambertus Schützenbruderschaft Morschenich 1458 e.V.\nhtt
+ ps://merzenichaktuell.hk-growthoperator.de/termine/volkstrauertag-gedenken
+ -friedhof-morschenich-2026-11-15/
+LOCATION:Friedhof Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/volkstrauertag-ge
+ denken-friedhof-morschenich-2026-11-15/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
