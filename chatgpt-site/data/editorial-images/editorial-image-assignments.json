@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T08:43:47.944Z",
+  "updatedAt": "2026-11-04T13:55:01.336Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1583,6 +1583,15 @@
       "assignedAt": "2026-11-04T08:43:47.943Z",
       "articleId": "2026-11-04-grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen",
       "articleDate": "2026-11-04T09:45:00+01:00"
+    },
+    "/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/": {
+      "imageId": "web-themen-06-bc6b8eed",
+      "pool": "themen",
+      "motiv": "baustelle",
+      "regel": "verkehr.baustelle",
+      "assignedAt": "2026-11-04T13:55:01.336Z",
+      "articleId": "2026-11-04-baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026",
+      "articleDate": "2026-11-04T15:35:00+01:00"
     }
   }
 }

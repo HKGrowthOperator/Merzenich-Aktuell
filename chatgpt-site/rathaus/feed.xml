@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 04 Nov 2026 08:45:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 04 Nov 2026 14:35:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Rathaus &amp; Politik</title><link>https://merzenichaktuell.hk-growthoperator.de/rathaus/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/</guid>
+<pubDate>Wed, 04 Nov 2026 14:35:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung berichtet dem Bauausschuss über fünf Tiefbaustellen: den Valdersweg, zwei durch Glasfaserarbeiten beschädigte Bäume, aufgebrochene Wirtschaftswege in Girbelsrath und die Suche nach Fördergeld für den Ausbau der Bahnstraße.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-06-bc6b8eed4f.jpg" medium="image"><media:credit>VSchagow / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Baustellenabsperrung Dohnaischer Platz, für Bau eines Abwassersammlers</media:description></media:content>
+</item>
 <item>
 <title>Grundschule Golzheim in Merzenich: Umbau kostet 12 Millionen Euro, Gemeinde soll rund 7,5 Millionen tragen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Georg Gelhausen beantwortet am 4. September von 18 bis 19 Uhr Fragen im Bürgewaldzentrum. Eine Anmeldung ist nicht erforderlich.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/aa69fa186a0719-360.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Ankündigung der Bürgersprechstunde in Morschenich</media:description></media:content>
-</item>
-<item>
-<title>Faire Woche: Müllsammelaktion und Naturangebote im September</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/faire-woche/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/faire-woche/</guid>
-<pubDate>Thu, 27 Aug 2026 07:32:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Merzenich beteiligt sich vom 11. bis 25. September an der Fairen Woche. Für den 20. September ist eine gemeindeweite Müllsammelaktion geplant.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/responsive/6dbd3a8d61b0e6-360.webp" medium="image"><media:credit>Gemeinde Merzenich / Heimat-Info</media:credit><media:description>Plakat der Fairen Woche in Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>
