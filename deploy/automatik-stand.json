@@ -42,6 +42,21 @@
       "slug": "weihnachtsfeier-morschenich-2026-12-06",
       "datei": "inhalte/termine/2026-11-02-heimatinfo-automatik.json",
       "am": "2026-11-02"
+    },
+    "https://www.heimat-info.de/veranstaltungen/0d9701e3-fddc-433a-91f1-dd9bdb724b8b": {
+      "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18",
+      "datei": "inhalte/termine/2026-11-04-heimatinfo-automatik.json",
+      "am": "2026-11-04"
+    },
+    "https://www.heimat-info.de/veranstaltungen/0bfa22f8-22d6-4fd4-89d4-e88fa903d7bd": {
+      "slug": "adventsliedersingen-merzenich-2026-11-29",
+      "datei": "inhalte/termine/2026-11-04-heimatinfo-automatik.json",
+      "am": "2026-11-04"
+    },
+    "https://www.heimat-info.de/veranstaltungen/65540fac-77fa-4a66-885c-b5dc02273332": {
+      "slug": "senior-innenadventsfeier-merzenich-2026-12-09",
+      "datei": "inhalte/termine/2026-11-04-heimatinfo-automatik.json",
+      "am": "2026-11-04"
     }
   },
   "umkreis": {

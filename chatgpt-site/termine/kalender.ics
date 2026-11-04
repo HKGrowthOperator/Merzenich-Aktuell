@@ -787,6 +787,23 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18
+ @merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261118T080000Z
+DTEND:20261118T100000Z
+SUMMARY:NEU: Frühstücks- und Spieletreff für Senior:innen
+DESCRIPTION:„NEU: Frühstücks- und Spieletreff für Senior:innen“ am M
+ ittwoch\, 18. November\, 9:00 Uhr. Ort: Ev. Gemeindehaus Merzenich\, Sever
+ in-Böhr-Str. 15.\nVeranstalter: Evangelisches Gemeindezentrum Merzenich\n
+ https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-und
+ -spieletreff-fuer-senior-innen-merzenich-2026-11-18/
+LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
+ und-spieletreff-fuer-senior-innen-merzenich-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
 DTSTAMP:20261104T060000Z
@@ -961,6 +978,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bw
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:adventsliedersingen-merzenich-2026-11-29@merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261129T170000Z
+SUMMARY:Adventsliedersingen
+DESCRIPTION:„Adventsliedersingen“ am Sonntag\, 29. November\, 18:00 Uhr
+ . Ort: Alte Kirche Merzenich.\nVeranstalter: Evangelisches Gemeindezentrum
+  Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/adventsl
+ iedersingen-merzenich-2026-11-29/
+LOCATION:Alte Kirche Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsliedersing
+ en-merzenich-2026-11-29/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:amtsblatt-abgabeschluss-2026-12-01@merzenich-aktuell.de
 DTSTAMP:20261102T060000Z
 DTSTART;VALUE=DATE:20261201
@@ -1004,6 +1035,21 @@ DESCRIPTION:Am Sonntag\, 6. Dezember\, lädt die St. Lambertus Schützenbru
 LOCATION:Bürgewaldzentrum (BWZ) Morschenich\, Schützenheim
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfeier-m
  orschenich-2026-12-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:senior-innenadventsfeier-merzenich-2026-12-09@merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261209T140000Z
+DTEND:20261209T163000Z
+SUMMARY:Senior:innenadventsfeier
+DESCRIPTION:„Senior:innenadventsfeier“ am Mittwoch\, 9. Dezember\, 15:0
+ 0 Uhr. Ort: Ev. Gemeindehaus\, Severin-Böhr-Str. 15.\nVeranstalter: Evang
+ elisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoper
+ ator.de/termine/senior-innenadventsfeier-merzenich-2026-12-09/
+LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/senior-innenadven
+ tsfeier-merzenich-2026-12-09/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

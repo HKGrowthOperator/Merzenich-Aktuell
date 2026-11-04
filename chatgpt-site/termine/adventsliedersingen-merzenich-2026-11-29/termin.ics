@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Adventsliedersingen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:adventsliedersingen-merzenich-2026-11-29@merzenich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261129T170000Z
+SUMMARY:Adventsliedersingen
+DESCRIPTION:„Adventsliedersingen“ am Sonntag\, 29. November\, 18:00 Uhr
+ . Ort: Alte Kirche Merzenich.\nVeranstalter: Evangelisches Gemeindezentrum
+  Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/adventsl
+ iedersingen-merzenich-2026-11-29/
+LOCATION:Alte Kirche Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsliedersing
+ en-merzenich-2026-11-29/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

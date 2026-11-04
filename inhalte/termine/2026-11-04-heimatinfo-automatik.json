@@ -1,0 +1,66 @@
+{
+  "hinweis": "Automatisch aus dem Veranstaltungskalender der Gemeinde in der Heimat-Info-App angelegt (deploy/automatik-termine.mjs). Die Termine erscheinen direkt (Entscheidung Luis Kummer 03.11.2026); die Redaktion prüft sie in der Kalenderpflege nach. Titel, Beginn, Ort und Veranstalter laut Quelle; private Termine werden nie angelegt.",
+  "termine": [
+    {
+      "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18",
+      "titel": "NEU: Frühstücks- und Spieletreff für Senior:innen",
+      "start": "2026-11-18T09:00:00+01:00",
+      "ende": "2026-11-18T11:00:00+01:00",
+      "ort": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
+      "adresse": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "„NEU: Frühstücks- und Spieletreff für Senior:innen“ am Mittwoch, 18. November, 9:00 Uhr. Ort: Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15.",
+      "absaetze": [
+        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 18. November 2026, 9:00 Uhr zu „NEU: Frühstücks- und Spieletreff für Senior:innen“ ein. Ort: Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15.",
+        "Aus der Ankündigung im Veranstaltungskalender: „Mittwochs von 9 - 11 Uhr Kontakt: Küsterin Inge Eismar, Tel.: 37713 Gerne zum Frühstück anmelden!“"
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/0d9701e3-fddc-433a-91f1-dd9bdb724b8b",
+        "stand": "2026-11-04"
+      }
+    },
+    {
+      "slug": "adventsliedersingen-merzenich-2026-11-29",
+      "titel": "Adventsliedersingen",
+      "start": "2026-11-29T18:00:00+01:00",
+      "ort": "Alte Kirche Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "„Adventsliedersingen“ am Sonntag, 29. November, 18:00 Uhr. Ort: Alte Kirche Merzenich.",
+      "absaetze": [
+        "Evangelisches Gemeindezentrum Merzenich lädt am Sonntag, 29. November 2026, 18:00 Uhr zu „Adventsliedersingen“ ein. Ort: Alte Kirche Merzenich.",
+        "Aus der Ankündigung im Veranstaltungskalender: „Wir singen alte und neue Adventslieder, hören adventliche Geschichten und haben Zeit zum Erzählen bei Kakao, Tee und Plätzchen. Es wäre schön, wenn Sie / Ihr etwas dazu mitbringt z.B. eine Thermoskanne Tee, Kakao oder ein paar Kekse und gerne auch eine Tasse.“"
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/0bfa22f8-22d6-4fd4-89d4-e88fa903d7bd",
+        "stand": "2026-11-04"
+      }
+    },
+    {
+      "slug": "senior-innenadventsfeier-merzenich-2026-12-09",
+      "titel": "Senior:innenadventsfeier",
+      "start": "2026-12-09T15:00:00+01:00",
+      "ende": "2026-12-09T17:30:00+01:00",
+      "ort": "Ev. Gemeindehaus, Severin-Böhr-Str. 15",
+      "adresse": "Ev. Gemeindehaus, Severin-Böhr-Str. 15",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "„Senior:innenadventsfeier“ am Mittwoch, 9. Dezember, 15:00 Uhr. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
+      "absaetze": [
+        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 9. Dezember 2026, 15:00 Uhr zu „Senior:innenadventsfeier“ ein. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
+        "Aus der Ankündigung im Veranstaltungskalender: „Kontakt: Inge Eismar, Tel. 37713 Wir freuen uns auch über neue Gesichter!“"
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/65540fac-77fa-4a66-885c-b5dc02273332",
+        "stand": "2026-11-04"
+      }
+    }
+  ]
+}
