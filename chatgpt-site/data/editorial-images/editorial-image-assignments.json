@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T08:26:48.560Z",
+  "updatedAt": "2026-11-04T08:43:47.944Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1574,6 +1574,15 @@
       "assignedAt": "2026-11-04T08:26:48.559Z",
       "articleId": "2026-11-04-energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029",
       "articleDate": "2026-11-04T09:24:00+01:00"
+    },
+    "/rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/": {
+      "imageId": "web-schule-03-dbb36132",
+      "pool": "schule",
+      "motiv": "klassenzimmer",
+      "regel": "leben.schule.anmeldung",
+      "assignedAt": "2026-11-04T08:43:47.943Z",
+      "articleId": "2026-11-04-grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen",
+      "articleDate": "2026-11-04T09:45:00+01:00"
     }
   }
 }

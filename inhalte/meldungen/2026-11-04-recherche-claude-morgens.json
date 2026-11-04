@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 04.11.2026, Morgenlauf (Claude): Rathaus-Meldung aus dem Ratsinformationssystem (Mitteilungsvorlage M139/2026) mit Einordnung aus dem Energiesteckbrief der Gemeinde; Karte MA-EMS-SACHSTAND-2026 aus dem ChatGPT-Dossier 04.11. morgens.",
+  "hinweis": "Recherche vom 04.11.2026, Morgenlauf (Claude): zwei Rathaus-Meldungen aus dem Ratsinformationssystem für den Bauausschuss am 12.11.2026 – Energiemanagement (Mitteilungsvorlage M139/2026, Kurzmeldung, Karte MA-EMS-SACHSTAND-2026 aus dem ChatGPT-Dossier 04.11. morgens) und Umbau der Grundschule Golzheim (Beschlussvorlage 138/2026 mit Anlagen, Standard, eigene Recherche als Folgemeldung zu GO-OGS-130-2026).",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -92,6 +92,188 @@
         {
           "name": "RWE Renewables und Tischmann Loh & Partner: Kurzbegründung zum Planungsvorschlag Bebauungsplan „E 3 – Freiflächen PV entlang der A4“, 28.10.2026 (Anlage zu 144/2026)",
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+          "stand": "2026-11-04"
+        }
+      ]
+    },
+    {
+      "slug": "grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen",
+      "ressort": "rathaus",
+      "ortsteil": "golzheim",
+      "kicker": "Rathaus · Schulbau",
+      "titel": "Grundschule Golzheim in Merzenich: Umbau kostet 12 Millionen Euro, Gemeinde soll rund 7,5 Millionen tragen",
+      "dek": "Die Bezirksregierung Köln hat erneut nachgefordert: Dach und Aufzug zählen nicht mehr zu den förderfähigen Kosten für die Offene Ganztagsschule. Der Bauausschuss berät die angepasste Planung am 12. November.",
+      "datum": "2026-11-04T09:45:00+01:00",
+      "artikeltyp": "standard",
+      "relevanz": 1,
+      "themen": [
+        [
+          "schule",
+          "Schule"
+        ],
+        [
+          "golzheim",
+          "Golzheim"
+        ],
+        [
+          "bauausschuss",
+          "Bauausschuss"
+        ],
+        [
+          "gemeindefinanzen",
+          "Gemeindefinanzen"
+        ]
+      ],
+      "bildklasse": "leben.schule.anmeldung",
+      "absaetze": [
+        "Für den Umbau der Grundschule in Golzheim legt die Verwaltung neue Zahlen vor, und sie zeigen, wie viel davon an der Gemeinde Merzenich hängen bleiben dürfte. Nach der neuen Kostenschätzung des Architekturbüros, die die Verwaltung dem Bau-, Planungs- und Umweltausschuss für seine Sitzung am Donnerstag, 12. November, vorlegt, liegt die Bausumme bei rund 12,0 Millionen Euro brutto. Gefördert wird davon nur der Teil, der auf die Räume der Offenen Ganztagsschule (OGS) entfällt: rund 5,05 Millionen Euro. Rechnet man den Eigenanteil von etwa zehn Prozent an diesem Teil und den nicht förderfähigen Schulbau zusammen, bleiben nach Angaben der Verwaltung rund 7,5 Millionen Euro bei der Gemeinde.",
+        "Auslöser ist eine zweite Runde von Nachforderungen der Bezirksregierung Köln. Deren Dezernat für die Förderung des Strukturwandels im Rheinischen Revier betreut das Programm „Ausbau ganztägiger Betreuungsangebote für Kinder in der Primarstufe im Rheinischen Revier“, aus dem Merzenich den Umbau mitfinanzieren will. Am 20. Oktober teilte die Behörde der Gemeinde per E-Mail mit, förderfähig seien nur Räume, die ausschließlich der OGS dienen, und nur Kosten, die sich diesen Räumen eindeutig zuordnen lassen, also vor allem Wände, Decken, Böden und die direkt zugehörigen Anschlüsse. Ausdrücklich ausgenommen hat sie das Dach des Gebäudes und den Aufzug, weil dieser das ganze Haus erschließt. Die überarbeiteten Unterlagen sollten bis zum 28. Oktober in Köln sein.",
+        "Nach Darstellung der Verwaltung ist das gelungen: Zusammen mit dem Kölner Büro KPS Architekten habe sie alle Finanzierungspläne und Kostenschätzungen fristgerecht nachgereicht. Bürgermeister Georg Gelhausen wandte sich nach der zweiten Nachforderung erneut an den Kölner Regierungspräsidenten, um das Unverständnis der Gemeinde darüber deutlich zu machen, dass jetzt selbst die Erneuerung des gesamten Dachs und der Aufzug nicht mehr gefördert werden sollen. Am Projekt will die Verwaltung trotzdem festhalten. Die Modernisierung der Golzheimer Schule sei trotz steigender Kosten eine nachhaltige Entscheidung für die Zukunft, gerade mit Blick auf die geplante energetische Sanierung sollten die verfügbaren Fördermittel genutzt werden.",
+        "Woher der Anstieg kommt, zeigt ein Vergleich der beiden Kostenschätzungen, die im Ratsinformationssystem der Gemeinde stehen. Ende September hatte die Verwaltung dem Gemeinderat ein Gesamtvolumen von 9,2 Millionen Euro genannt, davon 4,6 Millionen Euro für die reine OGS-Nutzung. In jener Schätzung standen die Baunebenkosten mit null Euro. Die neue Fassung vom 23. Oktober führt sie mit rund 2,85 Millionen Euro auf, darunter Architekten- und Ingenieurleistungen, Fachplanung und Aufgaben des Bauherrn. Die übrigen Kostengruppen für Bauwerk, Technik, Außenanlagen und Ausstattung sind in beiden Fassungen gleich hoch. Der Sprung von 9,2 auf 12,0 Millionen Euro geht nach unserer Rechnung damit vollständig auf die nun eingerechneten Baunebenkosten zurück.",
+        "Innerhalb der Schätzung haben sich zudem die Gewichte verschoben. Im September war ein Anteil des Dachs von rund 675.000 Euro dem OGS-Bereich zugerechnet, dazu der Aufzug mit 85.000 Euro und rund 174.000 Euro aus der Kostengruppe Herrichten und Erschließen. Diese zusammen rund 935.000 Euro stehen jetzt auf der Seite der Schulnutzung, die das Förderprogramm nicht abdeckt; das gesamte Dach ist dort mit gut 1,4 Millionen Euro angesetzt. Dass der förderfähige OGS-Teil trotzdem von 4,6 auf 5,05 Millionen Euro gestiegen ist, liegt an den Baunebenkosten: Auf ihn entfallen jetzt knapp 1,37 Millionen Euro davon.",
+        "Endgültig ist auch die neue Summe nicht. Das Architekturbüro weist in seiner Schätzung darauf hin, dass mehrere Grundlagen noch fehlen, darunter ein Baugrund- und ein Schadstoffgutachten, Untersuchungen am bestehenden Gebäude, die Entscheidung über die Art der Küche und die Planung der Außenanlagen. Außerdem geht es derzeit von Baupreissteigerungen von etwa 0,5 bis 1,0 Prozent pro Quartal aus. Müssten Speiseraum der Mensa, Flur und Bewegungsraum als Versammlungsstätte ausgeführt werden, könnten dort Mehrkosten von etwa 30 Prozent je Quadratmeter Nutzfläche hinzukommen. Die Schätzung bezieht sich auf den Umbau der Grundschule mit Sporthalle und Mensa an der Johann-Kaspar-Kratz-Straße, die Bruttogrundfläche beträgt knapp 2.000 Quadratmeter. Genauer werden die Zahlen erst mit der Kostenberechnung in der nächsten Planungsphase.",
+        "Der Streit um die Förderbedingungen läuft seit dem Spätsommer. Ihren ursprünglichen Antrag hatte die Gemeinde am 30. April eingereicht. Anfang September teilte die Bezirksregierung mit, die Förderrichtlinien seien konkretisiert worden: Mehrfach genutzte Räume, die Sporthalle und alle Räume, die nicht vollständig der OGS dienen, werden seither nicht mehr gefördert. Eine Fristverlängerung lehnte die Behörde ab; der geänderte Antrag ging am 29. September nach Köln, noch vor dem Ratsbeschluss. In ihrer Vorlage für den Rat nannte die Verwaltung die nachträgliche Änderung der Kriterien in einem laufenden Verfahren „beispiellos“. Der Städtetag und der Städte- und Gemeindebund Nordrhein-Westfalen hatten sich am 18. September gemeinsam an das Wirtschafts- und das Schulministerium des Landes gewandt. Eine strikte Trennung von Schul- und OGS-Bereich widerspreche der Wirklichkeit an vielen Schulen und den fachlichen Empfehlungen für den Ganztag. Viele Kommunen seien im Vertrauen auf die zuerst genannten Bedingungen in Vorleistung gegangen, zumal die Vorhaben bis Ende 2029 fertig sein müssen. Auch im Landtag ist das Programm Thema: In einer Kleinen Anfrage vom 16. Juli wollten drei SPD-Abgeordnete wissen, wie viel Geld darin steckt und ob die Mittel wie bei einem anderen Revier-Programm nach einem Schlüssel verteilt werden. Nach ihrer Darstellung hatte die Landesregierung im Wirtschaftsausschuss am 8. Juli erklärt, auch dieser Fördertopf sei gedeckelt.",
+        "Im Gemeinderat fand der geänderte Antrag am 30. September eine einstimmige Mehrheit, allerdings nicht ohne Kritik. Die SPD bemängelte, dass das Thema als Tischvorlage kam, als der Antrag bereits verschickt war. Die FDP hielt die neue Variante nicht für überzeugend und wollte sie erneut beraten, auch um Kosten zu sparen. Die Grünen stellten sich hinter das Vorhaben. Der Rat beschloss, die veränderte Planung in der nächsten Sitzungsrunde vorzustellen und zur Beratung zu stellen.",
+        "Das geschieht jetzt. KPS Architekten stellen die angepasste Planung am 12. November um 18 Uhr im Ratssaal des Rathauses vor und erläutern die Unterschiede zur Variante, die die Gemeinde im April beschlossen hatte. Der Ausschuss soll empfehlen, das Verfahren mit der neuen Variante fortzusetzen; abschließend befasst sich der Gemeinderat am 3. Dezember damit. Den Eigenanteil am OGS-Teil hat die Gemeinde nach der Septembervorlage im Haushalt 2026 abgesichert, der nicht geförderte Anteil des Schulbaus muss im Haushalt 2027 aufgenommen werden. Eine Förderzusage gibt es noch nicht. Erst wenn sie vorliegt, will die Verwaltung die Planung mit den Fachingenieuren bis zum Bauantrag ausarbeiten und den Antrag für die geplante Interimsanlage stellen."
+      ],
+      "fakten": [
+        "Beschlussvorlage 138/2026 vom 27.10.2026: Bausumme brutto 12.022.466,97 Euro, OGS-Anteil 5.047.915,20 Euro, erwarteter Gemeindeanteil rund 7,5 Mio. Euro",
+        "Nachforderung der Bezirksregierung Köln vom 20.10.2026: Dach (KG 360), Aufzug (KG 460) und Herrichten (KG 210) nicht förderfähig; Frist 28.10.2026",
+        "Vergleich der Kostenschätzungen: 29.09.2026 9.177.455,70 Euro ohne Baunebenkosten, 23.10.2026 mit Baunebenkosten von 2.845.011,27 Euro (Rechnung der Redaktion)",
+        "Beratung: Bau-, Planungs- und Umweltausschuss 12.11.2026, 18 Uhr, Ratssaal; Gemeinderat 03.12.2026"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Bausumme brutto 12.022.466,97 Euro (rund 12,0 Millionen, 12 Millionen); OGS-Anteil 5.047.915,20 Euro (rund 5,05 Millionen); Eigenanteil von ca. 10 % (zehn Prozent) zusätzlich zum nicht förderfähigen Schulbau, erwarteter Gemeindeanteil ca. 7,5 Mio. Euro; Beratung im Bau-, Planungs- und Umweltausschuss am 12.11.2026 (12. November), Gemeinderat 03.12.2026 (3. Dezember).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 138/2026, Kopf (Beratungsfolge) und Sachverhalt „Ausgangslage“"
+        },
+        {
+          "aussage": "Nachforderungen der Bezirksregierung am 20.10.2026 (20. Oktober): förderfähig nur Räume ausschließlich für die OGS und ihnen eindeutig zuzuordnende Kosten (Wände, Decken, Böden in KG 300, Anschlüsse in KG 400); Dach und Aufzug nicht förderfähig, Aufzug erschließt das Gesamtgebäude; Frist bis 28.10.2026 (28. Oktober); Absender Dezernat 37 – Förderung des Strukturwandels im Rheinischen Revier, Postfach foerderung.ganztag.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXFZPVT6RacD2R2Pq25ov2IFY6PxSS15LgYILUc5_q05/2026-10-21_Nachforderungen_Bezirksregierung_Koeln.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf"
+          ],
+          "stelle": "E-Mail der Bezirksregierung Köln vom 20.10.2026 (Anlage zu 138/2026); Vorlage 138/2026, Ausgangslage"
+        },
+        {
+          "aussage": "Unterlagen mit Unterstützung von KPS Architekten (Kastner Pichler Schorn Architekten, Köln) fristgerecht bis 28.10.2026 eingereicht; Bürgermeister Gelhausen nahm erneut Kontakt zum Regierungspräsidenten der Bezirksregierung Köln auf, um Unverständnis über die Streichung von Dacherneuerung und Aufzug auszudrücken; Votum: Umbau weiterverfolgen, nachhaltige Entscheidung, energetische Sanierung, Fördermittel nutzen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZelempL27hhmidt_A3txMBO9K6x09fXE4yStMmh2FHCl/KGSG_LP2_Kostenscha--tzung_Variante_01_20261026_2.pdf"
+          ],
+          "stelle": "Vorlage 138/2026, „Weiteres Vorgehen“ und „Votum der Verwaltung“; Kostenschätzung S. 1 (Entwurfsverfasser)",
+          "selbstauskunft": "Darstellung der Gemeindeverwaltung über ihr eigenes Vorgehen und den Kontakt des Bürgermeisters; im Text als Angabe der Verwaltung gekennzeichnet"
+        },
+        {
+          "aussage": "Kostenschätzung 29.09.2026: Gesamtkosten 9.177.455,70 Euro (9,2 Millionen), Baunebenkosten (KG 700) 0,00 Euro; OGS-Teil 4.613.047,97 Euro (4,6 Millionen). Kostenschätzung 23.10.2026: KG 700 2.845.011,27 Euro (rund 2,85 Millionen; u. a. 710 Bauherrenaufgaben, 730 Architekten- und Ingenieurleistungen, 740 Fachplanung), KG 200 bis 600 unverändert (362.062,75 / 6.632.674,63 / 1.482.283,22 / 503.004,60 / 197.430,50); 9.177.455,70 + 2.845.011,27 = 12.022.466,97 (Rechnung der Redaktion). Vorlage 130/2026: Gesamtvolumen 9,2 Mio., davon 4,6 Mio. reine OGS-Nutzung.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZWQg968GTOSnRRxCjvQXq0gQVBlBPtqKjJ2otl-236nv/10._KGSG_LP2_Kostenschaetzung_Variante_01.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZelempL27hhmidt_A3txMBO9K6x09fXE4yStMmh2FHCl/KGSG_LP2_Kostenscha--tzung_Variante_01_20261026_2.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVip4uyguiJdOIL3lEOduSZ0GyfzNlCrErMbILeZT2QF/Beschlussvorlage_130-2026.pdf"
+          ],
+          "stelle": "Kostenschätzung Variante 01 vom 29.09.2026, S. 2; Kostenschätzung vom 23./26.10.2026, S. 2 und S. 4; Vorlage 130/2026, Sachverhalt"
+        },
+        {
+          "aussage": "OGS-Teil September: Dächer (360) 675.424,18 Euro (rund 675.000), Förderanlagen/Aufzug (460) 85.000 Euro, KG 200 174.297,01 Euro (rund 174.000); Summe 934.721,19 Euro (rund 935.000, Rechnung der Redaktion). OGS-Teil Oktober: KG 200 0,00, KG 300 2.910.631,60 (vorher 3.586.055,78), KG 400 672.652,14 (vorher 757.652,14), KG 700 1.369.588,42 Euro (knapp 1,37 Millionen); Dächer gesamt 1.403.041,50 Euro (gut 1,4 Millionen) in der Schulnutzung; OGS-Teil von 4,6 auf 5,05 Millionen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZWQg968GTOSnRRxCjvQXq0gQVBlBPtqKjJ2otl-236nv/10._KGSG_LP2_Kostenschaetzung_Variante_01.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZelempL27hhmidt_A3txMBO9K6x09fXE4yStMmh2FHCl/KGSG_LP2_Kostenscha--tzung_Variante_01_20261026_2.pdf"
+          ],
+          "stelle": "Kostenschätzungen September und Oktober, Abschnitte „Schulnutzung“ und „OGS-Nutzung“, Kostengruppen 200, 360, 460, 700"
+        },
+        {
+          "aussage": "Ausstehend: Baugrundgutachten, Schadstoffgutachten, Bauteiluntersuchungen am Bestandsgebäude, Entscheidung über die Art der Küche, Planung Außenanlagen; Kostensteigerung etwa 0,5 % bis 1,0 % pro Quartal; bei Ausführung von Mensa-Speiseraum, Flur und Bewegungsraum als Versammlungsstätte Mehrkosten von etwa 30 % je m² Nutzfläche; Baumaßnahme KGS Golzheim, Umbau einer Grundschule mit Sporthalle und Mensa, Johann-Kaspar-Kratz-Straße 9; BGF 1.993,35 m² (knapp 2.000 Quadratmeter); Fortschreibung mit Kostenberechnung in Leistungsphase 3.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZelempL27hhmidt_A3txMBO9K6x09fXE4yStMmh2FHCl/KGSG_LP2_Kostenscha--tzung_Variante_01_20261026_2.pdf"
+          ],
+          "stelle": "Kostenschätzung vom 23.10.2026, S. 1, S. 5 (Anmerkungen) und S. 6 (Kostenkennwert, Versammlungsstätte)",
+          "selbstauskunft": "Schätzung des beauftragten Architekturbüros im Auftrag der Gemeinde; im Text als Angabe des Büros gekennzeichnet"
+        },
+        {
+          "aussage": "Förderantrag „Ausbau ganztägiger Betreuungsangebote für Kinder in der Primarstufe“ am 30.04.2026 (30. April) eingereicht; Anfang September Konkretisierung der Förderrichtlinien: multifunktionale Nutzung, Sporthalle und nicht zu 100 % von der OGS genutzte Räume nicht mehr förderfähig; Fristverlängerung abgelehnt; erneute Antragstellung bis 29.09.2026 (29. September), Einreichung vorbehaltlich des Ratsbeschlusses; Bewertung der Verwaltung: nachträgliche Modifizierung „beispiellos“; Eigenanteil OGS im Haushalt 2026 abgesichert, Nachfinanzierung im Haushalt 2027.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVip4uyguiJdOIL3lEOduSZ0GyfzNlCrErMbILeZT2QF/Beschlussvorlage_130-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf"
+          ],
+          "stelle": "Vorlage 130/2026, Ausgangslage, Weiteres Vorgehen, Finanzierung, Bewertung des Verfahrens; Vorlage 138/2026, Finanzielle Auswirkungen"
+        },
+        {
+          "aussage": "Gemeinsames Schreiben von Städtetag NRW und Städte- und Gemeindebund NRW vom 18.09.2026 (18. September) an die Staatssekretäre im Wirtschafts- und im Schulministerium NRW: geforderte bauliche Trennung von Schule und OGS widerspricht der Lebenswirklichkeit an Schulen und fachlichen Empfehlungen; Kommunen in Vorleistung; Fertigstellung der Maßnahmen bis 31.12.2029 (Ende 2029).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZYW23KZs8Z26tIOn_2xQTYw7ZKwovuMpNOgDonlP7LON/260918__Foerderaufruf_OGS_im_Rheinischen_Revier_Anlage_2_STN_Foerderprogramm_Ausbau_ganztaegiger_Betreuungsangebote_-1-.pdf"
+          ],
+          "stelle": "Stellungnahme vom 18.09.2026 (Anlage zu 130/2026), S. 1–2"
+        },
+        {
+          "aussage": "Gemeinderat 30.09.2026 (30. September), einstimmiger Beschluss: 1. Förderantrag mit angepasster Entwurfsplanung einreichen; 2. veränderte Entwurfsplanung in der nächsten Sitzungsrunde vorstellen und Gelegenheit zur Beratung geben; SPD-Kritik an Tischvorlage, FDP: neue Variante nicht überzeugend, Beratung und Einsparungen, Grüne stehen hinter dem Projekt.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZao1td9hi9oZyEAlwr_oWwvTec6V3psydPCAAfzAZI45/Beschlusstext_130-2026_-oeffentlich-_Gemeinderat_30.09.2026.pdf"
+          ],
+          "stelle": "Beschlussauszug aus der Niederschrift der 7. Sitzung des Gemeinderates, TOP 17"
+        },
+        {
+          "aussage": "KPS Architekten stellen die angepasste Neuplanung in der Sitzung vor und erläutern die Änderungen zur beschlossenen Variante 1 vom 29.04.2026 (April); Beschlussvorschlag: Ausschuss empfiehlt, das Verfahren mit der angepassten Variante durchzuführen; nach Förderzusage bauantragsreife Ausarbeitung und Antrag für die geplante Interimsanlage; Sitzung 12.11.2026, 18:00 Uhr (18 Uhr), Ratssaal, Rathaus.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10"
+          ],
+          "stelle": "Vorlage 138/2026, Beschlussvorschlag und Weiteres Vorgehen; Tagesordnung Bauausschuss, Kopf und TOP 7"
+        },
+        {
+          "aussage": "Kleine Anfrage 8430 (Drucksache 18/20566) vom 16.07.2026 (16. Juli) der SPD-Abgeordneten Teschlade, Kämmerling und Reh (drei SPD-Abgeordnete) zum Förderprogramm „Ausbau ganztägiger Betreuungsangebote für Kinder in der Primarstufe im Rheinischen Revier“: Frage nach der Höhe der Mittel und nach einer Verteilung nach Verteilungsschlüssel (wie beim Programm „Energetische Sanierung kommunaler Gebäude im Rheinischen Revier“); laut Anfrage erklärte die Landesregierung im Ausschuss für Wirtschaft, Industrie, Klimaschutz und Energie am 08.07.2026 (8. Juli), auch dieser Fördertopf sei gedeckelt.",
+          "belege": [
+            "https://opal.landtag.nrw.de/portal/WWW/dokumentenarchiv/Dokument/MMD18-20566.pdf"
+          ],
+          "stelle": "Landtag NRW, Drucksache 18/20566, S. 1 (Vorbemerkung, Fragen 1 bis 3)"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beschlussvorlage 138/2026 vom 27.10.2026: Umbau der Grundschule Golzheim, Sachstand nach erneuten Nachforderungen der Bezirksregierung",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVwtEBHKz__uETLwEswUJdjLz-ABfAfJ7sektyZB_Y77/Beschlussvorlage_138-2026.pdf",
+        "stand": "2026-11-04"
+      },
+      "weitereQuellen": [
+        {
+          "name": "KPS Architekten (Kastner Pichler Schorn): Kostenschätzung Variante 01 nach DIN 276, Stand 23.10.2026 (Anlage zu 138/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZelempL27hhmidt_A3txMBO9K6x09fXE4yStMmh2FHCl/KGSG_LP2_Kostenscha--tzung_Variante_01_20261026_2.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Bezirksregierung Köln, Dezernat 37: Nachforderungen zum Förderantrag OGS-Ausbau vom 20.10.2026 (Anlage zu 138/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXFZPVT6RacD2R2Pq25ov2IFY6PxSS15LgYILUc5_q05/2026-10-21_Nachforderungen_Bezirksregierung_Koeln.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Gemeinde Merzenich, Beschlussvorlage 130/2026 vom September 2026 (Nachforderungen der Bezirksregierung)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVip4uyguiJdOIL3lEOduSZ0GyfzNlCrErMbILeZT2QF/Beschlussvorlage_130-2026.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "KPS Architekten: Kostenschätzung Variante 01, Stand 29.09.2026 (Anlage zu 130/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZWQg968GTOSnRRxCjvQXq0gQVBlBPtqKjJ2otl-236nv/10._KGSG_LP2_Kostenschaetzung_Variante_01.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Gemeinde Merzenich, Beschlussauszug Gemeinderat vom 30.09.2026, TOP 17 (130/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZao1td9hi9oZyEAlwr_oWwvTec6V3psydPCAAfzAZI45/Beschlusstext_130-2026_-oeffentlich-_Gemeinderat_30.09.2026.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Städtetag NRW und Städte- und Gemeindebund NRW: Schreiben zum Förderprogramm „Ausbau ganztägiger Betreuungsangebote für Kinder in der Primarstufe im Rheinischen Revier“ vom 18.09.2026 (Anlage zu 130/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZYW23KZs8Z26tIOn_2xQTYw7ZKwovuMpNOgDonlP7LON/260918__Foerderaufruf_OGS_im_Rheinischen_Revier_Anlage_2_STN_Foerderprogramm_Ausbau_ganztaegiger_Betreuungsangebote_-1-.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem: Tagesordnung Bau-, Planungs- und Umweltausschuss, 5. Sitzung, 12.11.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Landtag Nordrhein-Westfalen, Drucksache 18/20566: Kleine Anfrage 8430 zum Förderprogramm „Ausbau ganztägiger Betreuungsangebote für Kinder in der Primarstufe im Rheinischen Revier“, 16.07.2026",
+          "url": "https://opal.landtag.nrw.de/portal/WWW/dokumentenarchiv/Dokument/MMD18-20566.pdf",
           "stand": "2026-11-04"
         }
       ]
