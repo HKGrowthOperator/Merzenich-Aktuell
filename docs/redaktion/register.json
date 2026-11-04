@@ -11535,6 +11535,56 @@
       "implementation_commit": "a1dc22b",
       "summary": "Nachlauf auf Auftrag Luis Kummer (mehr recherchieren, Instagram und Landing-Pages, Termine, längere eigene Beiträge): qa/vereinsseiten.mjs über 29 Vereinsseiten und Vereinskalender; 6 neue Karnevalstermine, Bücher- und Spielemarkt bestätigt; Standardtext Karneval 2026/27 (861 Wörter, live 18:56). Instagram und Facebook verlangen Anmeldung, Auftrag an ChatGPT. Regeln: Kurzmeldung 250 bis 450 Wörter ab 04.11., Eigenformulierung strenger, zweispaltige PDFs korrekt gelesen.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-04",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-04-morgens.md",
+      "compared_with": "dossiers/2026-11-03-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-03-claude-nachmittags.md",
+      "base_commit": "19e2cb2948994f5fc9511e6de6c65cccbd51bc61",
+      "implementation_commit": null,
+      "summary": "Zwei neue Recherchekarten, beide T2: Solarpark erstmals erschlossene Leistungs- und Erschließungsdetails aus bestehender Anlage; EMS-Abschlussprognose. Keine unabhängige Bestätigung. Solarpark und Jugendgremium vollständig ohne Sachkorrektur geprüft; Karneval teilweise offen wegen JVB-Inhaltsfehlern. Martinszug-Nachtrag geprüft. Keine neue Terminänderung.",
+      "topics": 2,
+      "blocked_T2": 2,
+      "corrections_required": 0,
+      "articles_checked": 2,
+      "articles_partially_checked": 2,
+      "repository_article_files_read": 33,
+      "repository_event_files_read": 11,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "research_started_at": "2026-11-04T07:05:00+01:00",
+      "source_check_window": "2026-11-04T07:06:33+01:00 bis 2026-11-04T07:15:15+01:00; ergänzende Sichtung und Dokumentation bis ca.07:18",
+      "deadline": "2026-11-04T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach erfolgreichem main-Ref-Update und vollständigem Rücklesen im Abschluss bestätigen; kein vorweggenommener Zeitstempel.",
+      "publication": "keine",
+      "implementation": "keine_Artikelumsetzung",
+      "source_check_status": "documented_partial_coverage",
+      "topic_updates": [
+        {
+          "id": "MA-SOLARPARK-A4-E3",
+          "research_status": "T2",
+          "scope": "Nur neue Ergänzungsrecherche zu Leistung/Erschließung; historischer umgesetzter T1-Grundartikel unverändert.",
+          "missing": "Zweite unabhängige Bestätigung der Projektangaben"
+        },
+        {
+          "id": "MA-EMS-SACHSTAND-2026",
+          "research_status": "T2",
+          "scope": "Neue Verwaltungsprognose; noch keine Fertigstellung.",
+          "missing": "Unabhängige Bestätigung, Originalbeschluss, Budget/Umfang; Bildsichtung offen"
+        }
+      ],
+      "open_checks": [
+        "JVB-Originale: HTTP200 mit Site Unavailable; Webstände teils ältere Jahresfassungen",
+        "VHS Paris HTTP404",
+        "Golzheimer Sprechstundenkonflikt",
+        "SCIII-Endstand",
+        "M140-Straßenstand nicht als heutiger Zustand bestätigt"
+      ],
+      "qa": "Bestehende Themen, Archivdaten, historische Läufe, Artikelpfade, Claude-Notizen und Umsetzungscommits unverändert; ausschließlich neuen Recherchelauf angehängt. Vollständiger Rücklesevergleich nach Upload."
     }
   ]
 }
