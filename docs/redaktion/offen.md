@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-03-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-04-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 97 |
-| uebernommen | 35 |
+| uebernommen | 37 |
 | gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
@@ -149,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-04 morgens (Claude): Solarpark zum Standardtext (827 Wörter) mit Themenfoto; neu Energiemanagement (Kurzmeldung, M139/2026) und Grundschule Golzheim (Standard 1.075 Wörter, 138/2026, eigener Fund mit Kostenvergleich); Kalender: 3 neue Termine (Morschenich, VHS Wien), 2 Heimat-Info-Entwürfe freigegeben, VHS Paris über Programmübersicht bestätigt; qa/vereinsseiten.mjs erkennt Listen unter Jahresüberschrift. – Commit b2009f6
+- 2026-11-04 morgens (ChatGPT): Zwei neue Recherchekarten, beide T2: Solarpark erstmals erschlossene Leistungs- und Erschließungsdetails aus bestehender Anlage; EMS-Abschlussprognose. Keine unabhängige Bestätigung. Solarpark und Jugendgremium vollständig ohne Sachkorrektur geprüft; Karneval teilweise offen wegen JVB-Inhaltsfehlern. Martinszug-Nachtrag geprüft. Keine neue Terminänderung.
 - 2026-11-03 nachlauf (Claude): Nachlauf auf Auftrag Luis Kummer (mehr recherchieren, Instagram und Landing-Pages, Termine, längere eigene Beiträge): qa/vereinsseiten.mjs über 29 Vereinsseiten und Vereinskalender; 6 neue Karnevalstermine, Bücher- und Spielemarkt bestätigt; Standardtext Karneval 2026/27 (861 Wörter, live 18:56). Instagram und Facebook verlangen Anmeldung, Auftrag an ChatGPT. Regeln: Kurzmeldung 250 bis 450 Wörter ab 04.11., Eigenformulierung strenger, zweispaltige PDFs korrekt gelesen. – Commit a1dc22b
 - 2026-11-03 nachmittags (Claude): 1 neue Kurzmeldung (Solarpark an der A4: Vorlage 144/2026 für den Bauausschuss am 12.11., relevanz 2, live 14:54), Nachtrag Martinszüge (Golzheim 17.30/18 Uhr laut Förderverein), Pluriversum 17.11. bestätigt, Heimat-Info-Kalender 6 Einträge alle bei uns. Mindesttakt 03.11.: 3 Meldungen. Eil-Prüfung 12:41 ohne Fund. – Commit 1df9f20
-- 2026-11-03 mittags (ChatGPT): Keine neue Themenkarte oder Terminänderung. Jugendgremium-Vorbericht vollständig gegen Tagesordnung, ICS und Vorlage135/2026 geprüft; Dokumentation weiter leer, keine neue Beschlussfassung. Beide Unfallartikel und Feuerwehr144-Sachtext ohne Korrektur. Morgendlicher Datierungsauftrag sichtbar erledigt: Feuerwehr144 zeigt03.11.11:13, CMS-Historie nicht geprüft. Pflichtlisten ohne neue örtliche Entwicklung; dienstägliche Fußballprüfung aktualisiert, SCIII-Endstand offen. VHS404, Golzheim-Konflikt offen.
-- 2026-11-03 morgens (Claude): 1 neue Kurzmeldung (Jugendgremium tagt am 4.11., Rathaus-Vorschau, relevanz 2, live 09:20), 21 Termine bis 16.11. bestätigt, Heimat-Info-Kalender unverändert. Korrekturauftrag Feuerwehr 144/26 betrifft die Automatik (Generator setzt Einsatzdatum 12 Uhr als Veröffentlichung), offen für Luis. qa/pruefung: vorbestehender Fehler /umgebung/ aus SEO-Commit 4d96722. – Commit 7bd157f

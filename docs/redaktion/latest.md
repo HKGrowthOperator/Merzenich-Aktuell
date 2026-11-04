@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [03.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-03-claude-nachmittags.md), Vergleichsbasis [ChatGPT 03.11. mittags](dossiers/2026-11-03-mittags.md) und [Claude 03.11. morgens](dossiers/2026-11-03-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [04.11.2026, Claude-Morgenlauf](dossiers/2026-11-04-claude-morgens.md), Vergleichsbasis [ChatGPT 04.11. morgens](dossiers/2026-11-04-morgens.md) und [Claude 03.11. nachmittags](dossiers/2026-11-03-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 04.11. morgens:** 2 neue Meldungen: „Grundschule Golzheim in Merzenich: Umbau kostet 12 Millionen Euro, Gemeinde soll rund 7,5 Millionen tragen“ (Standard, 1.075 Wörter, Vorlage 138/2026, eigener Fund mit Vergleich der Kostenschätzungen) und „Energiemanagement für Merzenichs Gemeindegebäude: Verwaltung erwartet Abschluss Ende 2026 statt bis 2029“ (Kurzmeldung, M139/2026). Solarpark an der A4 zum Standardtext ausgebaut (827 Wörter) mit Themenfoto. Kalender: 3 neue Termine (Volkstrauertag und Adventsfenster Morschenich, VHS Wien), 2 Heimat-Info-Entwürfe freigegeben, VHS Paris 10.11. über die vorläufige Programmübersicht bestätigt (VHS-Website im Umbau). Commits `5969b40`, `2c5a224`, `179c885`, `001c7d7`, `b2009f6`.
 
 **Nachlauf 03.11. abends (Auftrag Luis Kummer: breiter recherchieren, länger und eigenständig schreiben):** Standardtext „Karneval in Merzenich 2026/27“ (861 Wörter, live 18:56 Uhr), 6 neue Karnevalstermine von den Vereinsseiten, Bücher- und Spielemarkt bestätigt. Neu: `node qa/vereinsseiten.mjs` (Phase 1, Schritt 3a), Instagram/Facebook über ChatGPT, Kurzmeldung ab 04.11. 250 bis 450 Wörter, strengere Eigenformulierung. Offen: Orte der KG Jonge vom Berg. Commit `a1dc22b`.
 
@@ -14,6 +16,6 @@ Jüngstes Dossier: [03.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-03-clau
 
 **Automatisch online (03.11. mittags, Entscheidung Luis Kummer):** Feuerwehr-Automatik und Heimat-Info-Termine ohne Freigabe, Relevanz automatisch, „Neu in Merzenich“ oben in „Nachrichten aus Merzenich“ (Theme 21.26.0 live 11:18 Uhr). Feuerwehr 144/26 seit 11:13 Uhr online und in der Nachrichten-Sitemap. Eil-Prüfung alle zwei Stunden (06:40 bis 20:40 Uhr). Freigabe nur noch bei rechtlichem Risiko (CLAUDE-LAUF 3.8).
 
-**Offen:** Jugendgremium-Update nach der Sitzung am 04.11., Bauausschuss 12.11. (Solarpark, Poolplatz, Bau-Turbo, Vorlage 92/2026) als Folgemeldung, Bücher- und Spielemarkt 8.11. an einer Quelle prüfen (gemeinde-merzenich.de HTTP 428 für Claude), VHS-Vortrag 10.11. (HTTP 404), Wochenvorschau 9.–15.11. mit den Martinszügen, Bildpool Solarenergie, Unfall, Rettung, Tischtennis.
+**Offen:** Jugendgremium-Update nach der Sitzung am 04.11., Meldung aus M140/2026 (Tiefbau: Baustelle Valdersweg, Bahnstraße, Girbelsrath), Vorlage 92/2026 lesen, Bauausschuss 12.11. (Golzheim, Solarpark, Energiemanagement, Poolplatz, Bau-Turbo) als Folgemeldungen, Wochenvorschau 9.–15.11. mit den Martinszügen, Jonge-vom-Berg-Termine Januar 2027 mit Orten, Bildpool Unfall, Rettung, Tischtennis.
 
 [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)

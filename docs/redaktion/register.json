@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+  "latest_dossier": "dossiers/2026-11-04-claude-morgens.md",
   "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -7983,7 +7983,7 @@
       "article_path": "inhalte/meldungen/2026-10-25-recherche-claude.json → /rathaus/umbau-grundschule-golzheim-geaenderte-planung-bauausschuss-12-november-2026/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Beschlusstext 130/2026 als PDF gelesen",
+      "notes": "Neuer Rechercheeintrag; keine Publikation oder Claude-Verarbeitung belegt. | Claude 25.10.: Beschlusstext 130/2026 als PDF gelesen | Claude 04.11.: Nachtrag mit Hinweis auf die Folgemeldung GO-OGS-138-2026.",
       "dossier_history": [
         {
           "date": "2026-10-25",
@@ -8009,7 +8009,7 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
       "source_check_status": "detail_read",
       "refresh_note": "05.11.2026 / vor Bauausschuss",
@@ -10648,19 +10648,24 @@
       "location_section": "Merzenich · Rathaus/Energie",
       "change_type": "Neu",
       "text_status": "T1",
-      "image_status": "B0",
-      "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-03 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachmittags.json → /rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
       "article_id": null,
-      "implementation_commit": "1df9f20",
-      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar.",
+      "implementation_commit": "5969b40",
+      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224).",
       "dossier_history": [
         {
           "date": "2026-11-03",
           "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
           "heading": "1 · MA-SOLARPARK-A4-E3 · P1 · Rathaus/Energie"
+        },
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-morgens.md",
+          "heading": "1 · MA-SOLARPARK-A4-E3 · Ausbau Standard"
         }
       ]
     },
@@ -10683,6 +10688,55 @@
           "date": "2026-11-03",
           "dossier": "dossiers/2026-11-03-claude-nachmittags.md",
           "heading": "Nachlauf · MA-KARNEVAL-SESSION-2026-27"
+        }
+      ]
+    },
+    {
+      "id": "MA-EMS-SACHSTAND-2026",
+      "priority": "P2",
+      "location_section": "Merzenich · Rathaus/Energie",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-04-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-morgens.json → /rathaus/energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029/",
+      "article_id": null,
+      "implementation_commit": "179c885",
+      "notes": "Karte aus ChatGPT 04.11. morgens (T2). Claude 04.11. morgens: Mitteilungsvorlage M139/2026 vollständig gelesen (Fertigstellung Dezember 2026, Abnahme Januar 2027, geplant bis 2029; Ratsbeschluss 02.03.2023), Energiesteckbrief als Selbstauskunft der Gemeinde; Kurzmeldung, relevanz 3. Folgemeldung nach dem Bauausschuss 12.11.",
+      "dossier_history": [
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-morgens.md",
+          "heading": "MA-EMS-SACHSTAND-2026 · P2 · Rathaus/Energie"
+        },
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-morgens.md",
+          "heading": "1 · MA-EMS-SACHSTAND-2026"
+        }
+      ]
+    },
+    {
+      "id": "GO-OGS-138-2026",
+      "priority": "P1",
+      "location_section": "Golzheim · Rathaus/Schulbau",
+      "change_type": "Folgemeldung",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-04-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-morgens.json → /rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/",
+      "article_id": null,
+      "implementation_commit": "b2009f6",
+      "notes": "Eigener Fund Claude 04.11. morgens: Beschlussvorlage 138/2026 (TOP 7 Bauausschuss 12.11., Rat 03.12.) mit Kostenschätzung 23.10. und Nachforderung der Bezirksregierung 20.10.; Bausumme 12.022.466,97 Euro, OGS-Anteil 5.047.915,20 Euro, Gemeindeanteil rund 7,5 Mio.; Vergleich mit Schätzung 29.09. (Rechnung der Redaktion: Anstieg = Baunebenkosten). Standard 1.075 Wörter, relevanz 2 (Vorlage, kein Beschluss). Stufe 1 bei Ratsbeschluss oder Förderzusage.",
+      "dossier_history": [
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-morgens.md",
+          "heading": "1 · GO-OGS-138-2026 · Folgemeldung Grundschule Golzheim"
         }
       ]
     }
@@ -11585,6 +11639,16 @@
         "M140-Straßenstand nicht als heutiger Zustand bestätigt"
       ],
       "qa": "Bestehende Themen, Archivdaten, historische Läufe, Artikelpfade, Claude-Notizen und Umsetzungscommits unverändert; ausschließlich neuen Recherchelauf angehängt. Vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-04",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-04-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-04-morgens.md",
+      "implementation_commit": "b2009f6",
+      "summary": "Solarpark zum Standardtext (827 Wörter) mit Themenfoto; neu Energiemanagement (Kurzmeldung, M139/2026) und Grundschule Golzheim (Standard 1.075 Wörter, 138/2026, eigener Fund mit Kostenvergleich); Kalender: 3 neue Termine (Morschenich, VHS Wien), 2 Heimat-Info-Entwürfe freigegeben, VHS Paris über Programmübersicht bestätigt; qa/vereinsseiten.mjs erkennt Listen unter Jahresüberschrift.",
+      "publication": "Neue Meldungen und Termine direkt veröffentlicht"
     }
   ]
 }
