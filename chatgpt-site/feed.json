@@ -15,6 +15,23 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029/",
+      "title": "Energiemanagement für Merzenichs Gemeindegebäude: Verwaltung erwartet Abschluss Ende 2026 statt bis 2029",
+      "summary": "Das System, mit dem die Gemeinde Energie in ihren eigenen Gebäuden sparen will, soll im Dezember fertig sein. Mehrkosten gibt es laut Verwaltung bisher nicht; was es einspart, ist noch offen.",
+      "content_html": "<p>Das System, mit dem die Gemeinde Energie in ihren eigenen Gebäuden sparen will, soll im Dezember fertig sein. Mehrkosten gibt es laut Verwaltung bisher nicht; was es einspart, ist noch offen.</p>",
+      "date_published": "2026-11-04T09:24:00+01:00",
+      "date_modified": "2026-11-04T09:24:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+      "tags": [
+        "Rathaus & Politik",
+        "Merzenich",
+        "Energie",
+        "Bauausschuss",
+        "Gemeinderat"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
       "title": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag",
@@ -500,22 +517,6 @@
         "Blaulicht",
         "Merzenich",
         "Feuerwehr"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/",
-      "title": "Person hinter Tür in Golzheim: Einsatz 140/26 der Feuerwehr",
-      "summary": "Die Freiwillige Feuerwehr Merzenich ist am Freitag, 16. Oktober 2026, nach Golzheim alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
-      "content_html": "<p>Die Freiwillige Feuerwehr Merzenich ist am Freitag, 16. Oktober 2026, nach Golzheim alarmiert worden. Die Meldung lautete „Person hinter Tür“.</p>",
-      "date_published": "2026-10-18T11:43:00+02:00",
-      "date_modified": "2026-10-18T11:43:00+02:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f.jpg",
-      "tags": [
-        "Blaulicht",
-        "Golzheim",
-        "Feuerwehr",
-        "Rettungsdienst"
       ]
     }
   ]
