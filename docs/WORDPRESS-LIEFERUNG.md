@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. November 2026 · Theme 21.29.0 · Core-Plugin 1.48.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+4. November 2026 · Theme 21.29.0 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
 
 ## Neu am 04.11.2026: Plugin 1.48.1, Termine bleiben nicht auf „Geplant“ hängen
 
@@ -8,6 +8,7 @@ Befund Morgenlauf 04.11.2026: Drei neue Termine standen in der Import-Datei, war
 
 - **Import** (`deploy/wordpress-import.mjs`): Beitragsdatum eines Termins ist jetzt der Tagesbeginn des Prüftags (00:00 UTC), nie in der Zukunft.
 - **Abgleich** (`includes/abgleich.php`, `ma_abgleich_termin_freischalten_noetig`): Steht ein vom Abgleich angelegter Termin auf „Geplant“, das Repository liefert ihn als veröffentlicht und er ist nicht von Hand geändert, schaltet der nächste volle Lauf ihn frei (`wp_publish_post`, Zähler `termine_freigeschaltet`). Entwürfe, Papierkorb, von Hand geänderte Termine und Meldungen bleiben unberührt.
+- **1.48.2:** Dasselbe für Meldungen der KI-Redaktion bei „KI direkt“ (`ma_abgleich_ki_geplant_freischalten_noetig`); ein neuer, sofort veröffentlichter Beitrag mit Datum in der Zukunft bekommt beim Anlegen das aktuelle Datum (`ma_abgleich_datum_in_zukunft`). Anlass: Nachmittagslauf 04.11., Meldung mit Uhrzeit 15:35 Uhr um 14:5x Uhr gepusht. `qa/redaktion-lauf.mjs` meldet ein Claude-Meldungsdatum in der Zukunft (mehr als 10 Minuten) ab Paketen vom 04.11.2026 als Fehler.
 - Tests: `qa/wordpress/abgleich-test.php` (Abschnitt „Geplant hängengebliebene Termine“).
 
 ## Neu am 03.11.2026 (mittags): Theme 21.26.0, alles automatisch online und „Neu in Merzenich“

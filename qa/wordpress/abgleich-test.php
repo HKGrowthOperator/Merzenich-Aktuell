@@ -99,5 +99,10 @@ pruefe('Auch nach Aktualisieren oder Übernehmen', [ma_abgleich_termin_freischal
 pruefe('Von Hand geändert, nicht aus dem Abgleich, Entwurf geliefert: bleibt', [ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'von_hand', true), ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'publish', 'unveraendert', false), ma_abgleich_termin_freischalten_noetig('ma_event', 'future', 'draft', 'unveraendert', true)], [false, false, false]);
 pruefe('Schon veröffentlicht, Entwurf in WordPress oder Meldung: nichts zu tun', [ma_abgleich_termin_freischalten_noetig('ma_event', 'publish', 'publish', 'unveraendert', true), ma_abgleich_termin_freischalten_noetig('ma_event', 'draft', 'publish', 'unveraendert', true), ma_abgleich_termin_freischalten_noetig('post', 'future', 'publish', 'unveraendert', true)], [false, false, false]);
 
+pruefe('KI-Meldung Geplant, KI direkt an, aus dem Abgleich: freischalten (1.48.2)', ma_abgleich_ki_geplant_freischalten_noetig('post', 'future', true, true, 'unveraendert', true), true);
+pruefe('KI direkt aus, keine KI-Meldung, von Hand oder schon online: bleibt', [ma_abgleich_ki_geplant_freischalten_noetig('post', 'future', true, false, 'unveraendert', true), ma_abgleich_ki_geplant_freischalten_noetig('post', 'future', false, true, 'unveraendert', true), ma_abgleich_ki_geplant_freischalten_noetig('post', 'future', true, true, 'von_hand', true), ma_abgleich_ki_geplant_freischalten_noetig('post', 'publish', true, true, 'unveraendert', true)], [false, false, false, false]);
+$jetzt = strtotime('2026-11-04 13:57:00 UTC');
+pruefe('Datum in der Zukunft beim Anlegen: veröffentlicht ja, Entwurf und Vergangenheit nein', [ma_abgleich_datum_in_zukunft('publish', '2026-11-04 14:35:00', $jetzt), ma_abgleich_datum_in_zukunft('draft', '2026-11-04 14:35:00', $jetzt), ma_abgleich_datum_in_zukunft('publish', '2026-11-04 13:50:00', $jetzt), ma_abgleich_datum_in_zukunft('publish', '', $jetzt)], [true, false, false, false]);
+
 echo "\n" . ($fehler ? "$fehler Fehler" : 'Alle Prüfungen bestanden') . "\n";
 exit($fehler ? 1 : 0);

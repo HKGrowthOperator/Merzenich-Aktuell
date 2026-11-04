@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-04T15:35:00+01:00",
- "anzahl": 225,
+ "generated": "2026-11-04T14:55:00+01:00",
+ "anzahl": 226,
  "bestand": {
-  "gesamt": 225,
+  "gesamt": 226,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 74,
    "sport": 33,
-   "rathaus": 31,
+   "rathaus": 32,
    "leben": 49,
    "wirtschaft": 13,
    "tipp": 0,
@@ -17,7 +17,7 @@
   },
   "ortsteile": {
    "merzenich": 154,
-   "golzheim": 25,
+   "golzheim": 26,
    "girbelsrath": 26,
    "morschenich": 11,
    "buergewald": 9,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 225,
+    "anzahl": 226,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 31,
+    "anzahl": 32,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -69,7 +69,7 @@
     "liste": "gepflegt"
    },
    "/golzheim/": {
-    "anzahl": 25,
+    "anzahl": 26,
     "liste": "gepflegt"
    },
    "/girbelsrath/": {
@@ -102,6 +102,48 @@
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
   {
+   "id": "2026-11-04-solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026",
+   "url": "/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
+   "titel": "Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim, Bauausschuss berät Offenlage",
+   "teaser": "Auf rund zwölf Hektar zwischen Golzheim und Eschweiler über Feld sollen Solarmodule und ein Großbatteriespeicher entstehen. Der Bauausschuss soll am 12. November empfehlen, den Planentwurf öffentlich auszulegen.",
+   "kicker": "Rathaus · Energie",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "golzheim",
+   "datum": "2026-11-04T14:55:00+01:00",
+   "aktualisiert": "2026-11-04T14:55:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "solarenergie",
+     "label": "Solarenergie"
+    },
+    {
+     "slug": "golzheim",
+     "label": "Golzheim"
+    },
+    {
+     "slug": "bauausschuss",
+     "label": "Bauausschuss"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-23-f5560260b4.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-23-f5560260b4-480.webp 480w, /assets/editorial-pools/themen/themen-23-f5560260b4-800.webp 800w, /assets/editorial-pools/themen/themen-23-f5560260b4-1200.webp 1200w, /assets/editorial-pools/themen/themen-23-f5560260b4.jpg 1920w",
+    "alt": "Solar Park in the morning mist, Dülmen, North Rhine-Westphalia, Germany",
+    "width": 1920,
+    "height": 830,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
    "id": "2026-11-04-baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026",
    "url": "/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/",
    "titel": "Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter",
@@ -111,8 +153,8 @@
    "ressortLabel": "Rathaus & Politik",
    "ort": "MERZENICH",
    "ortsteil": "merzenich",
-   "datum": "2026-11-04T15:35:00+01:00",
-   "aktualisiert": "2026-11-04T15:35:00+01:00",
+   "datum": "2026-11-04T14:50:00+01:00",
+   "aktualisiert": "2026-11-04T14:50:00+01:00",
    "lesezeit": "4 Min. Lesezeit",
    "themen": [
     {
@@ -9357,11 +9399,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-04-baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026",
-  "url": "/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/",
-  "titel": "Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter"
+  "id": "2026-11-04-solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026",
+  "url": "/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
+  "titel": "Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim, Bauausschuss berät Offenlage"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-04-baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026",
+   "url": "/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/",
+   "titel": "Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter"
+  },
   {
    "id": "2026-11-04-grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen",
    "url": "/rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/",
@@ -9376,11 +9423,6 @@
    "id": "2026-11-03-karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag",
    "url": "/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
    "titel": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag"
-  },
-  {
-   "id": "2026-11-03-solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher",
-   "url": "/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
-   "titel": "Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November"
   }
  ],
  "startseitenMotive": {
@@ -9410,7 +9452,6 @@
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 1,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
-  "editorial-pools/menschen/menschen-06-1835323b3c": 1,
   "editorial-pools/schule/schule-03-dbb36132c8": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 1,
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
@@ -9422,7 +9463,7 @@
   "editorial-pools/themen/themen-15-30a6b323da": 2,
   "editorial-pools/themen/themen-16-b1fd3ef820": 1,
   "editorial-pools/themen/themen-19-deb8f481da": 2,
-  "editorial-pools/themen/themen-23-f5560260b4": 1,
+  "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-09-737ed00d34": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 2,

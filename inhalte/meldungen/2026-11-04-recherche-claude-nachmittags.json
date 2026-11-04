@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 04.11.2026, Nachmittagslauf (Claude): Rathaus-Meldung aus der Mitteilungsvorlage M140/2026 (Tiefbauangelegenheiten, Bauausschuss 12.11.2026) mit Einordnung aus den Seiten des WZV Neffeltal und des WVER, der Förderrichtlinie Straßenausbaubeiträge und dem NRW-Infrastrukturgesetz 2025 bis 2036. Offener Punkt aus dem Morgendossier (Verbandsbezeichnung) geklärt und im Text benannt.",
+  "hinweis": "Recherche vom 04.11.2026, Nachmittagslauf (Claude): Rathaus-Meldung aus der Mitteilungsvorlage M140/2026 (Tiefbauangelegenheiten, Bauausschuss 12.11.2026) mit Einordnung aus den Seiten des WZV Neffeltal und des WVER, der Förderrichtlinie Straßenausbaubeiträge und dem NRW-Infrastrukturgesetz 2025 bis 2036. Offener Punkt aus dem Morgendossier (Verbandsbezeichnung) geklärt und im Text benannt. Zweite Meldung: Kurzmeldung zur 20. FNP-Änderung (PV bei Golzheim, Vorlage 92/2026 mit Entwurfsbegründung, Karte MA-PV-GOLZHEIM-E1-FNP20 aus dem ChatGPT-Dossier 04.11. mittags; Datumswiderspruch der Vorlage im Text benannt).",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -9,7 +9,7 @@
       "kicker": "Rathaus · Straßen",
       "titel": "Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter",
       "dek": "Die Verwaltung berichtet dem Bauausschuss über fünf Tiefbaustellen: den Valdersweg, zwei durch Glasfaserarbeiten beschädigte Bäume, aufgebrochene Wirtschaftswege in Girbelsrath und die Suche nach Fördergeld für den Ausbau der Bahnstraße.",
-      "datum": "2026-11-04T15:35:00+01:00",
+      "datum": "2026-11-04T14:50:00+01:00",
       "artikeltyp": "standard",
       "relevanz": 2,
       "themen": [
@@ -171,6 +171,98 @@
         {
           "name": "Ministerium für Heimat, Kommunales, Bau und Digitalisierung NRW: Erläuterungen zum kommunalen pauschalen Förderbudget, Stand 30.03.2026",
           "url": "https://www.mhkbd.nrw/system/files/media/document/file/2026-04-15_faq_pauschalfoerderung_nrw-infrastrukturgesetz_2025_bis_2036_final.pdf",
+          "stand": "2026-11-04"
+        }
+      ]
+    },
+    {
+      "slug": "solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026",
+      "ressort": "rathaus",
+      "ortsteil": "golzheim",
+      "kicker": "Rathaus · Energie",
+      "titel": "Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim, Bauausschuss berät Offenlage",
+      "dek": "Auf rund zwölf Hektar zwischen Golzheim und Eschweiler über Feld sollen Solarmodule und ein Großbatteriespeicher entstehen. Der Bauausschuss soll am 12. November empfehlen, den Planentwurf öffentlich auszulegen.",
+      "datum": "2026-11-04T14:55:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 2,
+      "themen": [
+        [
+          "solarenergie",
+          "Solarenergie"
+        ],
+        [
+          "golzheim",
+          "Golzheim"
+        ],
+        [
+          "bauausschuss",
+          "Bauausschuss"
+        ]
+      ],
+      "bildklasse": "leben.energie.solar",
+      "absaetze": [
+        "Neben dem großen Solarpark an der A4 steht am Donnerstag, 12. November, ein zweites Photovoltaik-Projekt auf der Tagesordnung des Bau-, Planungs- und Umweltausschusses der Gemeinde Merzenich. Auf einer früheren Kiesabbaufläche zwischen Golzheim und Eschweiler über Feld soll eine Freiflächenanlage mit rund 15 Megawatt Spitzenleistung und einem Großbatteriespeicher entstehen. Nach der Beschlussvorlage 92/2026 umfasst die Fläche etwa zwölf Hektar. Im Flächennutzungsplan ist sie bisher als Fläche für die Landwirtschaft dargestellt; die 20. Änderung des Plans soll das ändern.",
+        "Die Fläche liegt laut Entwurfsbegründung nördlich von Eschweiler über Feld und grenzt im Osten an die L 327. Auf ihr wurde früher Kies abgebaut, danach wurde sie wieder verfüllt; heute ist sie eine Brache, an drei Seiten von einem zwei bis drei Meter hohen Erdwall umgeben. Schutzgebiete für Natur oder Landschaft berührt sie nach der Vorlage nicht. Angeschlossen werden soll die Anlage über das Mittelspannungsnetz, vorgesehen ist derzeit das Umspannwerk Nörvenich. Für den Batteriespeicher liegt laut Begründung bereits eine Einspeisezusage vor; die Zusage selbst ist nicht veröffentlicht.",
+        "Den Aufstellungsbeschluss hat der Gemeinderat am 10. Juli 2025 gefasst. Die frühzeitige Beteiligung von Öffentlichkeit und Behörden lief nach der Entwurfsbegründung vom 28. Juli bis 29. August 2025. In der Vorlage steht für den Beginn das Jahr 2026, was nicht zum Ende im August 2025 passt; die Begründung ist an dieser Stelle schlüssig. Jetzt soll der Ausschuss empfehlen, den Entwurf öffentlich auszulegen und die Behörden erneut zu beteiligen. Entscheiden soll der Gemeinderat am 3. Dezember. Erst mit der Offenlage können Bürgerinnen und Bürger zum Entwurf Stellung nehmen; einen Zeitraum dafür nennen die Unterlagen noch nicht.",
+        "Zur Einordnung: Das Projekt an der A4, das derselbe Ausschuss am 12. November berät, ist deutlich größer. Dort plant RWE nach der Kurzbegründung rund 40 bis 45 Megawatt Spitzenleistung mit einem eigenen Batteriespeicher. Beide Vorhaben sind getrennte Verfahren. Wer die Anlage bei Golzheim bauen und betreiben will, nennen die beiden gelesenen Unterlagen nicht. Die Sitzung beginnt um 18 Uhr im Ratssaal des Rathauses."
+      ],
+      "fakten": [
+        "Beschlussvorlage 92/2026 vom 21.08.2026: 20. Änderung des Flächennutzungsplans „Golzheim und Eschweiler über Feld“, ca. 15 MWp mit Großbatteriespeicher auf ca. 12 ha",
+        "Frühere Kiesabbaufläche, verfüllt, Brache; nördlich Eschweiler über Feld, östlich die L 327; Netzanschluss Umspannwerk Nörvenich vorgesehen",
+        "Aufstellungsbeschluss 10.07.2025; frühzeitige Beteiligung 28.07.–29.08.2025 (Vorlage nennt als Beginn 2026)",
+        "Bauausschuss 12.11.2026, 18 Uhr, Ratssaal; Gemeinderat 03.12.2026"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Vorlage 92/2026, Datum 21.08.2026: ca. 15 MWp starke PV-Freiflächenanlage inklusive Großbatteriespeichersystem auf ca. 12 ha (zwölf Hektar); bisher Fläche für die Landwirtschaft im Flächennutzungsplan; 20. Änderung des Flächennutzungsplanes; frühere Kiesbaufläche, wiederverfüllt, Brachfläche; keine Schutzgebiete; Beratung Bauausschuss 12.11.2026 (12. November), Gemeinderat 03.12.2026 (3. Dezember).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZanJKoHrh98cQQeOPCzVuq6QwWDdx4ZeObKDpMhxSEzx/Beschlussvorlage_92-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 92/2026, Kopf und Sachverhalt"
+        },
+        {
+          "aussage": "Entwurfsbegründung: Lage nördlich von Eschweiler über Feld, im Osten L 327; Erdwall 2,5–3 m (zwei bis drei Meter) an drei Seiten; Anschluss über Mittelspannungsnetz, Netzanschlusspunkt derzeit Umspannungswerk Nörvenich; für den Batteriespeicher Netzanschlussantrag bei der Westnetz GmbH, „Eine Einspeisezusage liegt vor.“; frühzeitige Beteiligung 28.07.2025 bis 29.08.2025 (28. Juli bis 29. August 2025).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZePGj3rMN6yeufrBSB1PhcaICS4Uo2ErExE25FQwXG2k/MZ04_2026.11.02_FNP_Begruendung_Entwurf.pdf"
+          ],
+          "stelle": "Entwurfsbegründung Stand 02.11.2026, Kapitel 1 (Verfahren), 2.1, 2.2 und Ver- und Entsorgung"
+        },
+        {
+          "aussage": "Aufstellungsbeschluss und Beschluss zur frühzeitigen Beteiligung am 10.07.2025 (10. Juli 2025) durch den Rat; Vorlage: frühzeitige Beteiligung „vom 28.07.2026 bis 29.08.2025“ (Jahr 2026 für den Beginn); Beschlussvorschlag: Veröffentlichung nach § 3 Abs. 2 BauGB und Beteiligung nach § 4 Abs. 2 BauGB.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZanJKoHrh98cQQeOPCzVuq6QwWDdx4ZeObKDpMhxSEzx/Beschlussvorlage_92-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZePGj3rMN6yeufrBSB1PhcaICS4Uo2ErExE25FQwXG2k/MZ04_2026.11.02_FNP_Begruendung_Entwurf.pdf"
+          ],
+          "stelle": "Vorlage 92/2026, Beschlussvorschlag und Verfahren; Begründung Kapitel 1"
+        },
+        {
+          "aussage": "A4-Projekt: RWE, rund 40 bis 45 MWp mit Batteriespeicher (Kurzbegründung zu 144/2026); Tagesordnung 12.11.2026, TOP 8 (A4) und TOP 9 (92/2026), 18:00 Uhr (18 Uhr), Ratssaal; Vorhabenträger der Golzheimer Anlage in Vorlage und Begründung nicht genannt.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10"
+          ],
+          "stelle": "Kurzbegründung E3, S. 1; Tagesordnung Bauausschuss, Kopf, TOP 8 und 9"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beschlussvorlage 92/2026 vom 21.08.2026: 20. Änderung des Flächennutzungsplans im Bereich Golzheim und Eschweiler über Feld",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZanJKoHrh98cQQeOPCzVuq6QwWDdx4ZeObKDpMhxSEzx/Beschlussvorlage_92-2026.pdf",
+        "stand": "2026-11-04"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Entwurfsbegründung zur 20. Änderung des Flächennutzungsplans, Stand 02.11.2026 (Anlage zu 92/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZePGj3rMN6yeufrBSB1PhcaICS4Uo2ErExE25FQwXG2k/MZ04_2026.11.02_FNP_Begruendung_Entwurf.pdf",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem: Tagesordnung Bau-, Planungs- und Umweltausschuss, 5. Sitzung, 12.11.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
+          "stand": "2026-11-04"
+        },
+        {
+          "name": "RWE Renewables und Tischmann Loh & Partner: Kurzbegründung zum Bebauungsplan „E 3 – Freiflächen PV entlang der A4“, 28.10.2026 (Anlage zu 144/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcB2GNqYwJzOrdTLRDPndshzHNyrdlErRGZNE8DFYiey/E3-FF-PV-entlangA4-FNPAe-1-24-Kurzbegruendung-21.pdf",
           "stand": "2026-11-04"
         }
       ]

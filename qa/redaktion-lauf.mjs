@@ -221,6 +221,8 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
     }
     if (Number.isNaN(Date.parse(m.datum)) || !MIT_ZONE.test(m.datum || '')) F(b, `datum ohne Zeitzone oder unlesbar (${m.datum})`);
     else if (m.datum.slice(0, 10) > plusTag(heute, 1)) F(b, `datum ${m.datum} liegt mehr als einen Tag in der Zukunft`);
+    // Claude-Meldung mit Uhrzeit in der Zukunft: WordPress stellt sie auf „Geplant“ statt online (04.11.2026).
+    else if (claude && paketDatum(datei) >= '2026-11-04' && Date.parse(m.datum) > Date.now() + 10 * 60 * 1000) F(b, `datum ${m.datum} liegt in der Zukunft: WordPress plant die Meldung nur ein; Uhrzeit der Fertigstellung eintragen`);
     if (v2) {
       const typ = ARTIKELTYPEN[m.artikeltyp];
       if (!typ) F(b, `artikeltyp ${m.artikeltyp} unbekannt`);

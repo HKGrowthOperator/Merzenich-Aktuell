@@ -296,6 +296,7 @@ function ma_abgleich_anlegen(array $e, array $bilder, array &$fehler): int {
     if ($status === 'publish' && ma_abgleich_ist_ki($e)) $meta = array_merge($meta, ma_abgleich_ki_haekchen());
     $daten = ['post_type' => $e['typ'], 'post_status' => $status, 'post_author' => ma_abgleich_autor(), 'post_title' => $e['titel'], 'post_content' => $e['inhalt'], 'post_excerpt' => $e['auszug'], 'post_name' => $e['slug'], 'post_date' => $e['datum'], 'post_date_gmt' => $e['datum_gmt'], 'comment_status' => $e['kommentare'], 'ping_status' => 'closed', 'meta_input' => $meta];
     if ($e['datum'] === '') unset($daten['post_date'], $daten['post_date_gmt']);
+    elseif (ma_abgleich_datum_in_zukunft($status, $e['datum_gmt'], time())) { $daten['post_date'] = current_time('mysql'); $daten['post_date_gmt'] = current_time('mysql', true); }
     $id = wp_insert_post(wp_slash($daten), true);
     if (is_wp_error($id) || !$id) { $fehler[] = $e['titel'] . ': ' . (is_wp_error($id) ? $id->get_error_message() : 'nicht angelegt'); return 0; }
     ma_abgleich_terme_setzen($id, $e['terme']);
@@ -440,6 +441,21 @@ function ma_abgleich_termin_freischalten_noetig(string $typ, string $wpStatus, s
     return $typ === 'ma_event' && $wpStatus === 'future' && $lieferStatus === 'publish' && $ausAbgleich && $entscheidung !== 'von_hand';
 }
 
+/**
+ * Dasselbe für Meldungen der KI-Redaktion (1.48.2): Mit „KI direkt“ legt der Abgleich sie veröffentlicht an;
+ * trägt die Meldung eine Uhrzeit in der Zukunft, stünde sie sonst auf „Geplant“.
+ */
+function ma_abgleich_ki_geplant_freischalten_noetig(string $typ, string $wpStatus, bool $istKi, bool $kiDirekt, string $entscheidung, bool $ausAbgleich): bool {
+    return $typ === 'post' && $wpStatus === 'future' && $istKi && $kiDirekt && $ausAbgleich && $entscheidung !== 'von_hand';
+}
+
+/** Neuer, sofort veröffentlichter Beitrag mit Datum in der Zukunft: Datum auf jetzt (1.48.2), sonst „Geplant“. */
+function ma_abgleich_datum_in_zukunft(string $status, string $datumGmt, int $jetzt): bool {
+    if ($status !== 'publish' || $datumGmt === '') return false;
+    $t = strtotime($datumGmt . ' UTC');
+    return $t !== false && $t > $jetzt;
+}
+
 function ma_abgleich_ueberspringen(string $etagNeu, string $etagAlt, array $stand): bool {
     $neu = ma_abgleich_etag_norm($etagNeu); $alt = ma_abgleich_etag_norm($etagAlt);
     return $neu !== '' && $neu === $alt && empty($stand['offen']) && empty($stand['fehler']);
@@ -491,6 +507,9 @@ function ma_abgleich_lauf(int $max = 20, bool $erzwingen = false): array {
         if (ma_abgleich_termin_freischalten_noetig($p->post_type, (string) get_post_status($id), $e['status'], $ent, (string) get_post_meta($id, '_ma_abgleich_hash', true) !== '')) {
             wp_publish_post($id);
             $erg['termine_freigeschaltet'] = ($erg['termine_freigeschaltet'] ?? 0) + 1;
+        } elseif (ma_abgleich_ki_geplant_freischalten_noetig($p->post_type, (string) get_post_status($id), ma_abgleich_ist_ki($e), ma_abgleich_ki_direkt(), $ent, (string) get_post_meta($id, '_ma_abgleich_hash', true) !== '')) {
+            wp_publish_post($id);
+            $erg['ki_veroeffentlicht'] = ($erg['ki_veroeffentlicht'] ?? 0) + 1;
         }
         // Fehlendes Beitragsbild nachholen, etwa wenn GitHub beim letzten Lauf nicht erreichbar war.
         if ($ent !== 'aktualisieren' && $ent !== 'von_hand' && $e['bild'] && ma_abgleich_bild_fehlt($id, $e)) ma_abgleich_bild_setzen($id, $e, $daten['bilder'], $erg['fehler']);

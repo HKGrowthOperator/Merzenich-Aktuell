@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T13:55:01.336Z",
+  "updatedAt": "2026-11-04T13:59:17.331Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1592,6 +1592,15 @@
       "assignedAt": "2026-11-04T13:55:01.336Z",
       "articleId": "2026-11-04-baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026",
       "articleDate": "2026-11-04T15:35:00+01:00"
+    },
+    "/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/": {
+      "imageId": "web-themen-23-f5560260",
+      "pool": "themen",
+      "motiv": "photovoltaik-freiflaeche",
+      "regel": "leben.energie.solar",
+      "assignedAt": "2026-11-04T13:59:17.331Z",
+      "articleId": "2026-11-04-solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026",
+      "articleDate": "2026-11-04T14:55:00+01:00"
     }
   }
 }
