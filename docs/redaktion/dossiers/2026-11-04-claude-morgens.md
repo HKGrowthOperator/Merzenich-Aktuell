@@ -90,7 +90,7 @@ Offen: Bürgersprechstunde Golzheim (30.10. gegen 13.11.), Orte der Jonge-vom-Be
 
 Live-Nachweis (09:48 Uhr): Grundschule Golzheim, Energiemanagement und Solarpark (neuer Titel, Themenfoto) HTTP 200, alle drei in der Nachrichten-Sitemap, Golzheim und Energiemanagement oben in „Neu in Merzenich“. Freigegebene Termine 22.11. und 06.12. sowie VHS Paris HTTP 200. Abgleich-Anstoß 09:48 und 09:49 Uhr: `angestossen: false` (Workflow hatte schon angestoßen), nächster Lauf 10:05 Uhr.
 
-Befund: Die drei neuen Termine standen in der Import-Datei, blieben bis 10:15 Uhr aber HTTP 404. Ursache: Der Import datierte Termine auf den Prüftag 10:00 UTC (11:00 Uhr Berlin); im Morgenlauf vor 11 Uhr angelegt, setzt WordPress sie auf „Geplant“. Sie erscheinen um 11:00 Uhr. Korrektur in `deploy/wordpress-import.mjs`: Tagesbeginn 00:00 UTC; bestehende Termine ändert der Abgleich nicht.
+Befund: Die drei neuen Termine standen in der Import-Datei, blieben bis 10:15 Uhr aber HTTP 404. Ursache: Der Import datierte Termine auf den Prüftag 10:00 UTC (11:00 Uhr Berlin); im Morgenlauf vor 11 Uhr angelegt, setzt WordPress sie auf „Geplant“. Um 11:19 Uhr waren sie trotz geplanter Zeit 11:00 Uhr weiter nicht sichtbar (WordPress-Cron veröffentlichte sie nicht). Korrekturen: `deploy/wordpress-import.mjs` datiert Termine auf den Tagesbeginn (00:00 UTC, `795a8ea`); Plugin 1.48.1 schaltet vom Abgleich angelegte, hängengebliebene „Geplant“-Termine frei (`473b60e`, Test in `qa/wordpress/abgleich-test.php`). Selbst-Update 11:25 Uhr, Abgleich angestoßen; alle drei Termine seit 11:27 Uhr HTTP 200.
 
 ## 8. Bildprüfung
 
