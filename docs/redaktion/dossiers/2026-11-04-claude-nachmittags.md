@@ -70,7 +70,7 @@ Commits: `8ccc212` (Korrekturen), `d6ae335` (DRK), `118106a` (Tiefbau), `1c65652
 
 Befund: Die Tiefbau-Meldung war zunächst mit 15:35 Uhr datiert und um etwa 14:55 Uhr gepusht; mit einem Datum in der Zukunft hätte WordPress sie wie die Termine am Morgen nur eingeplant. Korrigiert auf 14:50 Uhr; Plugin 1.48.2 und Prüfung in `qa/redaktion-lauf.mjs` verhindern das künftig.
 
-Abgleich-Anstoß 15:02 Uhr: `angestossen: true`. Live-Nachweis folgt als Nachtrag.
+Abgleich-Anstoß 15:02 Uhr: `angestossen: true`; Plugin 1.48.2 per Selbst-Update vor 15:05 Uhr live. Live-Nachweis 15:09/15:10 Uhr: Tiefbau, Solarpark Golzheim, DRK-Infoabend und Pluriversum-Workshop HTTP 200; beide neuen Meldungen in der Nachrichten-Sitemap und oben in „Neu in Merzenich“ (Platz 1 und 2); Korrekturen „acht neue Solaranlagen“ in Energiemanagement und Solarpark A4 live.
 
 ## 8. Bildprüfung
 
