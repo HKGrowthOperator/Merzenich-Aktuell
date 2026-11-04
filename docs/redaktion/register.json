@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-04-claude-morgens.md",
+  "latest_dossier": "dossiers/2026-11-04-claude-nachmittags.md",
   "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10651,11 +10651,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachmittags.json → /rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
       "article_id": null,
       "implementation_commit": "5969b40",
-      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto).",
+      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto). | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212.",
       "dossier_history": [
         {
           "date": "2026-11-03",
@@ -10666,6 +10666,11 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-morgens.md",
           "heading": "1 · MA-SOLARPARK-A4-E3 · Ausbau Standard"
+        },
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+          "heading": "1 · Korrektur MA-SOLARPARK-A4-E3"
         }
       ]
     },
@@ -10700,11 +10705,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-morgens.json → /rathaus/energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029/",
       "article_id": null,
       "implementation_commit": "179c885",
-      "notes": "Karte aus ChatGPT 04.11. morgens (T2). Claude 04.11. morgens: Mitteilungsvorlage M139/2026 vollständig gelesen (Fertigstellung Dezember 2026, Abnahme Januar 2027, geplant bis 2029; Ratsbeschluss 02.03.2023), Energiesteckbrief als Selbstauskunft der Gemeinde; Kurzmeldung, relevanz 3. Folgemeldung nach dem Bauausschuss 12.11. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Karte aus ChatGPT 04.11. morgens (T2). Claude 04.11. morgens: Mitteilungsvorlage M139/2026 vollständig gelesen (Fertigstellung Dezember 2026, Abnahme Januar 2027, geplant bis 2029; Ratsbeschluss 02.03.2023), Energiesteckbrief als Selbstauskunft der Gemeinde; Kurzmeldung, relevanz 3. Folgemeldung nach dem Bauausschuss 12.11. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212.",
       "dossier_history": [
         {
           "date": "2026-11-04",
@@ -10715,6 +10720,11 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-morgens.md",
           "heading": "1 · MA-EMS-SACHSTAND-2026"
+        },
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+          "heading": "1 · Korrektur MA-EMS-SACHSTAND-2026"
         }
       ]
     },
@@ -10739,6 +10749,55 @@
           "heading": "1 · GO-OGS-138-2026 · Folgemeldung Grundschule Golzheim"
         }
       ]
+    },
+    {
+      "id": "MA-TIEFBAU-M140-2026",
+      "priority": "P2",
+      "location_section": "Merzenich/Girbelsrath · Rathaus/Straßen",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-nachmittags.json → /rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/",
+      "article_id": null,
+      "implementation_commit": "118106a",
+      "notes": "Claude 04.11. nachmittags: Mitteilungsvorlage M140/2026 (Tiefbau, Bauausschuss 12.11.): Valdersweg Telekomschaden, Bäume Eichenstraße/Hauptstraße (SOCO), Wirtschaftswege Girbelsrath, Förderprüfung Bahnstraße; Verbandsbezeichnung „Wasserverband Eifel-Rur (WZV)“ gegen WZV Neffeltal/WVER geprüft und benannt; Einordnung Förderrichtlinie Straßenausbaubeiträge und NRW-Infrastrukturgesetz (Merzenich 4.799.525,90 Euro). Standard 830 Wörter.",
+      "dossier_history": [
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+          "heading": "1 · MA-TIEFBAU-M140-2026"
+        }
+      ]
+    },
+    {
+      "id": "MA-PV-GOLZHEIM-E1-FNP20",
+      "priority": "P2",
+      "location_section": "Golzheim · Rathaus/Energie",
+      "change_type": "Neu",
+      "notes": "Claude 04.11. nachmittags: Kurzmeldung mit amtlicher Quelle (92/2026, Entwurfsbegründung); Datumswiderspruch der Vorlage benannt, Einspeisezusage nur als Angabe der Begründung, Vorhabenträger nicht genannt.",
+      "dossier_history": [
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-mittags.md",
+          "heading": "MA-PV-GOLZHEIM-E1-FNP20 · P2"
+        },
+        {
+          "date": "2026-11-04",
+          "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+          "heading": "1 · MA-PV-GOLZHEIM-E1-FNP20"
+        }
+      ],
+      "workflow_status": "uebernommen",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-nachmittags.json → /rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
+      "article_id": null,
+      "implementation_commit": "1c65652"
     }
   ],
   "archive": {
@@ -11721,6 +11780,16 @@
         "M140-Daten nicht als heutiger Baustellenzustand bestätigt"
       ],
       "qa": "Alle bestehenden Themen, Archivdaten, Artikelpfade, Claude-Notizen, Umsetzungscommits und bisherigen Rechercheläufe unverändert erhalten; nur neuer Recherchelauf angehängt. Vollständiger Rücklesevergleich nach Upload."
+    },
+    {
+      "date": "2026-11-04",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-04-mittags.md",
+      "implementation_commit": "1c65652",
+      "summary": "Zwei Korrekturen (acht Anlagen statt Gebäude), neu Tiefbau M140/2026 (Standard 830 Wörter, WZV geklärt, Merzenich 4,8 Mio. aus NRW-Infrastrukturgesetz) und zweiter Solarpark bei Golzheim (Kurzmeldung, 92/2026); Termine DRK-Krisenvorsorge 10.11. und Pluriversum-Workshop 18.11.; Plugin 1.48.2 und QA gegen Meldungsdaten in der Zukunft.",
+      "publication": "Neue Meldungen und Termine direkt veröffentlicht"
     }
   ]
 }

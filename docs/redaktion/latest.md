@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [04.11.2026, Claude-Morgenlauf](dossiers/2026-11-04-claude-morgens.md), Vergleichsbasis [ChatGPT 04.11. morgens](dossiers/2026-11-04-morgens.md) und [Claude 03.11. nachmittags](dossiers/2026-11-03-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [04.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-04-claude-nachmittags.md), Vergleichsbasis [ChatGPT 04.11. mittags](dossiers/2026-11-04-mittags.md) und [Claude 04.11. morgens](dossiers/2026-11-04-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 04.11. nachmittags:** 2 neue Meldungen: „Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter“ (Standard, 830 Wörter, M140/2026; „WZV“ der Vorlage als WZV Neffeltal geklärt, Merzenich erhält 4.799.525,90 Euro aus dem NRW-Infrastrukturgesetz) und „Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim“ (Kurzmeldung, 92/2026, Datumswiderspruch benannt). Korrekturen: acht Anlagen statt „acht Gebäude“ in Energiemanagement und Solarpark A4. Termine: DRK-Infoabend Krisenvorsorge 10.11., Pluriversum-Workshop 18.11. Plugin 1.48.2 und `qa/redaktion-lauf.mjs` gegen Meldungsdaten in der Zukunft. Mindesttakt 04.11.: 4 Meldungen. Commits `8ccc212`, `d6ae335`, `118106a`, `1c65652`, `51fab98`.
 
 **Umgesetzt am 04.11. morgens:** 2 neue Meldungen: „Grundschule Golzheim in Merzenich: Umbau kostet 12 Millionen Euro, Gemeinde soll rund 7,5 Millionen tragen“ (Standard, 1.075 Wörter, Vorlage 138/2026, eigener Fund mit Vergleich der Kostenschätzungen) und „Energiemanagement für Merzenichs Gemeindegebäude: Verwaltung erwartet Abschluss Ende 2026 statt bis 2029“ (Kurzmeldung, M139/2026). Solarpark an der A4 zum Standardtext ausgebaut (827 Wörter) mit Themenfoto. Kalender: 3 neue Termine (Volkstrauertag und Adventsfenster Morschenich, VHS Wien), 2 Heimat-Info-Entwürfe freigegeben, VHS Paris 10.11. über die vorläufige Programmübersicht bestätigt (VHS-Website im Umbau). Commits `5969b40`, `2c5a224`, `179c885`, `001c7d7`, `b2009f6`.
 
@@ -16,6 +18,6 @@ Jüngstes Dossier: [04.11.2026, Claude-Morgenlauf](dossiers/2026-11-04-claude-mo
 
 **Automatisch online (03.11. mittags, Entscheidung Luis Kummer):** Feuerwehr-Automatik und Heimat-Info-Termine ohne Freigabe, Relevanz automatisch, „Neu in Merzenich“ oben in „Nachrichten aus Merzenich“ (Theme 21.26.0 live 11:18 Uhr). Feuerwehr 144/26 seit 11:13 Uhr online und in der Nachrichten-Sitemap. Eil-Prüfung alle zwei Stunden (06:40 bis 20:40 Uhr). Freigabe nur noch bei rechtlichem Risiko (CLAUDE-LAUF 3.8).
 
-**Offen:** Jugendgremium-Update nach der Sitzung am 04.11., Meldung aus M140/2026 (Tiefbau: Baustelle Valdersweg, Bahnstraße, Girbelsrath), Vorlage 92/2026 lesen, Bauausschuss 12.11. (Golzheim, Solarpark, Energiemanagement, Poolplatz, Bau-Turbo) als Folgemeldungen, Wochenvorschau 9.–15.11. mit den Martinszügen, Jonge-vom-Berg-Termine Januar 2027 mit Orten, Bildpool Unfall, Rettung, Tischtennis.
+**Offen:** Jugendgremium-Update nach der Sitzung am 04.11., Bauausschuss 12.11. (Golzheim, Solarpark, Energiemanagement, Poolplatz, Bau-Turbo) als Folgemeldungen, Wochenvorschau 9.–15.11. mit den Martinszügen, Jonge-vom-Berg-Termine Januar 2027 mit Orten, Bildpool Unfall, Rettung, Tischtennis.
 
 [Register](register.json) · [Regeln](README.md) · [Archiv](archiv.md)
