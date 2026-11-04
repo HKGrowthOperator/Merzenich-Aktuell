@@ -1,5 +1,5 @@
 {
-  "hinweis": "Kalenderpflege vom 04.11.2026, Nachmittagslauf (Claude): Ankündigung der Gemeinde Merzenich auf Heimat-Info vom 04.11.2026, 10:34 Uhr, am 04.11.2026 gelesen (Karte MA-DRK-KRISENVORSORGE-10112026 aus dem ChatGPT-Dossier 04.11. mittags). Amtliche Ankündigung der Gemeinde als Mitveranstalterin; keine Privatpersonen.",
+  "hinweis": "Kalenderpflege vom 04.11.2026, Nachmittagslauf (Claude): Ankündigung der Gemeinde Merzenich auf Heimat-Info vom 04.11.2026, 10:34 Uhr, am 04.11.2026 gelesen (Karte MA-DRK-KRISENVORSORGE-10112026 aus dem ChatGPT-Dossier 04.11. mittags). Amtliche Ankündigung der Gemeinde als Mitveranstalterin; keine Privatpersonen. Dazu der Pluriversum-Workshop am 18.11. aus dem Amtsblatt 11 (bisher nur im Text des Abendtermins erwähnt).",
   "termine": [
     {
       "slug": "infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11-10",
@@ -25,6 +25,37 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Rathaus-Info auf Heimat-Info vom 04.11.2026: „Private Krisenvorsorge – Das Deutsche Rote Kreuz informiert!“",
         "url": "https://www.heimat-info.de/beitraege/6b90fdb6-ad60-4e71-a466-90c774db0bc2",
+        "stand": "2026-11-04"
+      }
+    },
+    {
+      "slug": "pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18",
+      "titel": "„Pluriversum“-Workshop zu sozialem und ökologischem Engagement in der Gesamtschule",
+      "start": "2026-11-18T10:00:00+01:00",
+      "ende": "2026-11-18T12:00:00+01:00",
+      "ort": "Gesamtschule Niederzier/Merzenich",
+      "adresse": "Schulstraße, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kultur",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Am Morgen nach dem „Pluriversum“-Abend lädt die Gemeinde Merzenich am Mittwoch, 18. November, von 10 bis 12 Uhr zu einem Workshop in die Gesamtschule ein. Er steht Schülerinnen und Schülern und allen Interessierten offen.",
+      "absaetze": [
+        "Zum zweiten „Pluriversum“ der Gemeinde Merzenich gehört neben dem Abend am Dienstag, 17. November, auch ein Workshop am nächsten Morgen: Am Mittwoch, 18. November 2026, geht es von 10 bis 12 Uhr in der Gesamtschule um Möglichkeiten, sich sozial und ökologisch zu engagieren.",
+        "Der Workshop ist laut Amtsblatt für Schülerinnen und Schüler ebenso offen wie für alle anderen Interessierten. Leiten sollen ihn die Moderatorinnen und Moderatoren der Pluriversum-Reihe zusammen mit Verbänden aus der Region. Ob eine Anmeldung nötig ist, nennt die Ankündigung nicht."
+      ],
+      "links": [
+        [
+          "Amtsblatt Merzenich 11/2026, S. 4: Pluriversum",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=6"
+        ],
+        [
+          "Pluriversum im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/671697c5-6e42-41cd-8f80-11b2ee1894ea"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 4: „Gemeinde Merzenich lädt erneut ein zum „Pluriversum“!“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=6",
         "stand": "2026-11-04"
       }
     }

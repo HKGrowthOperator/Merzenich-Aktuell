@@ -787,6 +787,25 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
+ nich-aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261118T090000Z
+DTEND:20261118T110000Z
+SUMMARY:„Pluriversum“-Workshop zu sozialem und ökologischem Engagement
+  in der Gesamtschule
+DESCRIPTION:Am Morgen nach dem „Pluriversum“-Abend lädt die Gemeinde M
+ erzenich am Mittwoch\, 18. November\, von 10 bis 12 Uhr zu einem Workshop 
+ in die Gesamtschule ein. Er steht Schülerinnen und Schülern und allen In
+ teressierten offen.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichak
+ tuell.hk-growthoperator.de/termine/pluriversum-workshop-engagement-gesamts
+ chule-merzenich-2026-11-18/
+LOCATION:Gesamtschule Niederzier/Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-works
+ hop-engagement-gesamtschule-merzenich-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:senioren-nachmittag-ev-gemeindehaus-2026-11-18@merzenich-aktuell.de
 DTSTAMP:20261102T060000Z
 DTSTART:20261118T140000Z
