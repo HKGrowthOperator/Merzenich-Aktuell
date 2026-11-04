@@ -1,0 +1,32 @@
+{
+  "hinweis": "Kalenderpflege vom 04.11.2026, Nachmittagslauf (Claude): Ankündigung der Gemeinde Merzenich auf Heimat-Info vom 04.11.2026, 10:34 Uhr, am 04.11.2026 gelesen (Karte MA-DRK-KRISENVORSORGE-10112026 aus dem ChatGPT-Dossier 04.11. mittags). Amtliche Ankündigung der Gemeinde als Mitveranstalterin; keine Privatpersonen.",
+  "termine": [
+    {
+      "slug": "infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11-10",
+      "titel": "Infoabend „Private Krisenvorsorge“ des DRK im Bürgerhaus Merzenich",
+      "start": "2026-11-10T18:30:00+01:00",
+      "ort": "Bürgerhaus Merzenich",
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Info",
+      "veranstalter": "Deutsches Rotes Kreuz in Kooperation mit der Gemeinde Merzenich",
+      "beschreibung": "Was tun, wenn der Strom ausfällt oder ein Unwetter kommt? Am Dienstag, 10. November, informieren Fachleute des DRK-Katastrophenschutzes ab 18.30 Uhr im Bürgerhaus Merzenich über private Krisenvorsorge. Eine Anmeldung ist nicht nötig.",
+      "absaetze": [
+        "Das Deutsche Rote Kreuz lädt zusammen mit der Gemeinde Merzenich am Dienstag, 10. November 2026, zu einem Infoabend über private Krisenvorsorge ins Bürgerhaus an der Burgstraße ein. Bürgermeister Georg Gelhausen eröffnet den Abend um 18.30 Uhr.",
+        "Anlass sind Situationen wie ein Stromausfall oder extremes Wetter. Nach der Ankündigung der Gemeinde lässt sich vieles schon vorher mit wenig Aufwand vorbereiten; dazu können Besucherinnen und Besucher mit erfahrenen Fachleuten aus dem Katastrophenschutz des DRK sprechen.",
+        "Eine Anmeldung ist laut Gemeinde nicht erforderlich. Wann der Abend endet und ob Eintritt erhoben wird, steht in der Ankündigung nicht."
+      ],
+      "links": [
+        [
+          "Ankündigung der Gemeinde Merzenich (Heimat-Info, 04.11.2026)",
+          "https://www.heimat-info.de/beitraege/6b90fdb6-ad60-4e71-a466-90c774db0bc2"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Rathaus-Info auf Heimat-Info vom 04.11.2026: „Private Krisenvorsorge – Das Deutsche Rote Kreuz informiert!“",
+        "url": "https://www.heimat-info.de/beitraege/6b90fdb6-ad60-4e71-a466-90c774db0bc2",
+        "stand": "2026-11-04"
+      }
+    }
+  ]
+}

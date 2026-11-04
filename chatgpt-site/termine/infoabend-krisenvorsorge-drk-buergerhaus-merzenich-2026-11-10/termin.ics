@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Infoabend „Private Krisenvorsorge“ des DRK im Bürgerhaus 
+ Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11-10@merzenich
+ -aktuell.de
+DTSTAMP:20261104T060000Z
+DTSTART:20261110T173000Z
+SUMMARY:Infoabend „Private Krisenvorsorge“ des DRK im Bürgerhaus Merze
+ nich
+DESCRIPTION:Was tun\, wenn der Strom ausfällt oder ein Unwetter kommt? Am 
+ Dienstag\, 10. November\, informieren Fachleute des DRK-Katastrophenschutz
+ es ab 18.30 Uhr im Bürgerhaus Merzenich über private Krisenvorsorge. Ein
+ e Anmeldung ist nicht nötig.\nVeranstalter: Deutsches Rotes Kreuz in Koop
+ eration mit der Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoper
+ ator.de/termine/infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11
+ -10/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/infoabend-krisenv
+ orsorge-drk-buergerhaus-merzenich-2026-11-10/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
