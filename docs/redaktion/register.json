@@ -11867,6 +11867,54 @@
       "implementation_commit": "dee5f0f",
       "summary": "Korrektur Erdwall (Solarpark Golzheim); neu Bau-Turbo-Leitlinien (Standard 845 Wörter, 142/2026); Termine: Fristkonflikt Kindergottesdienst, Hinweis Senioren-Nachmittag, zwei Automatik-Termine ohne Name und Nummer; automatik-termine filtert „Kontakt:“ und Kurznummern.",
       "publication": "Neue Meldung und Termin-Nachträge direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-05",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-05-mittags.md",
+      "compared_with": "dossiers/2026-11-05-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-morgens.md",
+      "base_commit": "547fd20898727bc217fa9cd376c3f65f154cd962",
+      "implementation_commit": null,
+      "summary": "Bau-Turbo: Gemeindezustimmung nach §36a BauGB grundsätzlich drei Monate. Höhenschwellen laut Synopse >1 m bzw. >0,5 m. Zusätzlicher Präzisierungsbedarf bei Vorab-Abstimmung und Vertragsregel. PV-Erdwallkorrektur und Fristkonflikt-Nachtrag live bestätigt. Keine neuen örtlichen Themen oder Terminänderungen in den geprüften Wegen.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 2,
+      "articles_checked": 1,
+      "article_partial_checks": 1,
+      "repository_article_files_read": 36,
+      "repository_event_files_read": 14,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "05.11.2026, 12:05:59–12:06:55 Europe/Berlin",
+      "deadline": "2026-11-05T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit nach erfolgreichem Ref-Update im Abschluss festgehalten.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "correction_requests": [
+        {
+          "slug": "bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026",
+          "quote": "Laut Bundestag genügt stattdessen eine Prüfung der Gemeinde, die zwei Monate dauert",
+          "correct": "Grundsätzlich drei Monate für die Gemeindezustimmung ab Eingang des Ersuchens. Verlängerung nach §36a Abs.2 BauGB möglich.",
+          "source": "https://www.gesetze-im-internet.de/bbaug/__36a.html",
+          "retrieved_at": "2026-11-05T12:06:55+01:00"
+        },
+        {
+          "slug": "bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026",
+          "quote": "Gravierend ist eine Höhenabweichung beim Kreis ab einem Meter, in Merzenich ab einem halben.",
+          "correct": "Synopse Ziff.2.3 nennt >1 m und >0,5 m. Beispiel einer gravierenden Abweichung.",
+          "source": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZfVVXAkW207fJbzWe3TQ4EBCSKLVcOCPEm5W23twydp9/Anlage_3_-_Synopse.pdf",
+          "retrieved_at": "2026-11-05T12:06:08+01:00"
+        }
+      ],
+      "open_checks": [
+        "Jugendgremium: Niederschrift fehlt im gelesenen RIS-Weg",
+        "JVB HTTP 200 mit Inhaltsfehler",
+        "Frühstücksfrist und Senioren-Nachmittag weiterhin widersprüchlich",
+        "Bau-Turbo: Vertragsregel Ziff.1.4 und 8.1 klären"
+      ]
     }
   ]
 }
