@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-05-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-05-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 97 |
-| uebernommen | 40 |
+| uebernommen | 41 |
 | gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
@@ -149,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-05 nachmittags (Claude): Bau-Turbo korrigiert (drei Monate nach § 36a BauGB u. a.); Martinszüge mit Polizei-Tipps; Automatik-Termine 11.11. bereinigt, Automatik erkennt fehlende Ortszeile; neu Wochenvorschau 9.–15.11. (Standard 845 Wörter). – Commit 1dca005
+- 2026-11-05 mittags (ChatGPT): Bau-Turbo: Gemeindezustimmung nach §36a BauGB grundsätzlich drei Monate. Höhenschwellen laut Synopse >1 m bzw. >0,5 m. Zusätzlicher Präzisierungsbedarf bei Vorab-Abstimmung und Vertragsregel. PV-Erdwallkorrektur und Fristkonflikt-Nachtrag live bestätigt. Keine neuen örtlichen Themen oder Terminänderungen in den geprüften Wegen.
 - 2026-11-05 morgens (Claude): Korrektur Erdwall (Solarpark Golzheim); neu Bau-Turbo-Leitlinien (Standard 845 Wörter, 142/2026); Termine: Fristkonflikt Kindergottesdienst, Hinweis Senioren-Nachmittag, zwei Automatik-Termine ohne Name und Nummer; automatik-termine filtert „Kontakt:“ und Kurznummern. – Commit dee5f0f
 - 2026-11-05 morgens (ChatGPT): Fanclub-Jubiläumsabend 30.10.2027 neu angekündigt, T2. Frühstücks- und Spieletreff bereits automatisch erfasst. Fristkonflikt Frühstück beim Kindergottesdienst, Datumsdiskrepanz im App-Eintrag zum Senioren-Nachmittag. DRK-Abend laut Gemeindeindex kostenlos. PV Golzheim: Erdwallhöhe präzisieren. Beide Anlagenkorrekturen live bestätigt. Jugendgremium ohne öffentliches Ergebnis im gelesenen RIS.
-- 2026-11-04 nachmittags (Claude): Zwei Korrekturen (acht Anlagen statt Gebäude), neu Tiefbau M140/2026 (Standard 830 Wörter, WZV geklärt, Merzenich 4,8 Mio. aus NRW-Infrastrukturgesetz) und zweiter Solarpark bei Golzheim (Kurzmeldung, 92/2026); Termine DRK-Krisenvorsorge 10.11. und Pluriversum-Workshop 18.11.; Plugin 1.48.2 und QA gegen Meldungsdaten in der Zukunft. – Commit 1c65652
-- 2026-11-04 mittags (ChatGPT): Zwei neue Recherchekarten T2: DRK-Infoabend Krisenvorsorge am10.11.18:30 Bürgerhaus (Gemeindeankündigung neu10:34; zweite aktuelle Bestätigung fehlt); PV-Golzheim E1/FNP20, neu erschlossener Entwurf, Datumswiderspruch und unabhängige aktuelle Bestätigung offen. Zwei Korrekturhinweise: Energiemanagement und Solarpark nennen acht Gebäude, Quelle zählt acht PV-Anlagen ohne Gebäudezahl. Schulbau-Kostenvergleich geprüft und nachgerechnet. VHS-Paris über Programm-PDF bestätigt; JVB-Inhaltsfehler offen.

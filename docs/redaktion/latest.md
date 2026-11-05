@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [05.11.2026, Claude-Morgenlauf](dossiers/2026-11-05-claude-morgens.md), Vergleichsbasis [ChatGPT 05.11. morgens](dossiers/2026-11-05-morgens.md) und [Claude 04.11. nachmittags](dossiers/2026-11-04-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [05.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-05-claude-nachmittags.md), Vergleichsbasis [ChatGPT 05.11. mittags](dossiers/2026-11-05-mittags.md) und [Claude 05.11. morgens](dossiers/2026-11-05-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 05.11. nachmittags:** 1 neue Meldung „Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag“ (Standard, 845 Wörter). Bau-Turbo korrigiert: Zustimmung der Gemeinde gilt nach drei Monaten als erteilt (§ 36a BauGB), Höhenschwellen, Vorab-Abstimmung, Vertrag. Martinszüge mit Sicherheitstipps der Polizei. Automatik-Termine 11.11. bereinigt, Automatik erkennt fehlende Ortszeile. Mindesttakt 05.11.: 2 Meldungen. Commits `6ca324e`, `9a5f063`, `1dca005`.
 
 **Umgesetzt am 05.11. morgens:** 1 neue Meldung „Bau-Turbo in Merzenich: Wann die Gemeinde Wohnungen ohne Bebauungsplan erlauben will“ (Standard, 845 Wörter, 142/2026 mit Leitlinien und Synopse). Korrektur Erdwall 2,5 bis 3 Meter (Solarpark Golzheim). Termine: Fristkonflikt Kindergottesdienst 08.11., Hinweis Senioren-Nachmittag 18.11., zwei Automatik-Termine ohne Name und Nummer; Automatik-Filter verschärft. Commits `4e0646a`, `dee5f0f`.
 

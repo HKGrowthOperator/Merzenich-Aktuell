@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-05-claude-morgens.md",
+  "latest_dossier": "dossiers/2026-11-05-claude-nachmittags.md",
   "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -455,11 +455,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-28 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-05 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-16-amtsblatt-11.json",
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Dublette: Bons-Termine stehen seit 16.10. im Artikel; kein zweiter Artikel | ChatGPT 27.10. abends: MA-MARTINSZUEGE-2026, T1; Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs. Weiterarbeit: Gibt es Restbons oder weitere Verkaufsstellen? Keine Verfügbarkeit behaupten. Schlechtwetter-/Routenänderungen kurz vor den Zügen erneut prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1; Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich. Offen: Sind kurzfristige Änderungen oder Restbons veröffentlicht? Verkauf nicht als garantierten Vorrat darstellen. Historische Umsetzung bleibt erhalten.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: Dublette: Bons-Termine stehen seit 16.10. im Artikel; kein zweiter Artikel | ChatGPT 27.10. abends: MA-MARTINSZUEGE-2026, T1; Gemeindedetail vollständig gelesen. KGS-Martinsdetail nicht erreichbar; keine neue unabhängige Bestätigung des Schulablaufs. Weiterarbeit: Gibt es Restbons oder weitere Verkaufsstellen? Keine Verfügbarkeit behaupten. Schlechtwetter-/Routenänderungen kurz vor den Zügen erneut prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T1; Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich. Offen: Sind kurzfristige Änderungen oder Restbons veröffentlicht? Verkauf nicht als garantierten Vorrat darstellen. Historische Umsetzung bleibt erhalten. | Claude 05.11. nachmittags: Nachtrag Sicherheitstipps der Polizei (Pressemitteilung 05.11.), Commit 9a5f063.",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -548,6 +548,11 @@
           "dossier": "dossiers/2026-10-28-morgens.md",
           "heading": "MA-MARTINSZUEGE-2026",
           "check_scope": "Offizieller Heimat-Info-Volltext gelesen; Gemeindedetailabruf fehlgeschlagen, offizieller Alternativweg erfolgreich."
+        },
+        {
+          "date": "2026-11-05",
+          "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
+          "heading": "1 · Nachtrag Martinszüge"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -10813,16 +10818,43 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-05-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-05 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-05 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "dee5f0f",
-      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e.",
       "dossier_history": [
         {
           "date": "2026-11-05",
           "dossier": "dossiers/2026-11-05-claude-morgens.md",
           "heading": "1 · MA-BAUTURBO-142-2026"
+        },
+        {
+          "date": "2026-11-05",
+          "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
+          "heading": "1 · Korrektur Bau-Turbo"
+        }
+      ]
+    },
+    {
+      "id": "MA-WOCHENVORSCHAU-2026-46",
+      "priority": "P3",
+      "location_section": "Gemeinde · Termine",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-05 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-nachmittags.json → /leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/",
+      "article_id": null,
+      "implementation_commit": "1dca005",
+      "notes": "Claude 05.11. nachmittags: Wochenvorschau 9.–15.11. aus dem geprüften Terminkalender, Fortsetzung des Handbeitrags 2.–8.11.; Standard 845 Wörter, relevanz 3 (Service).",
+      "dossier_history": [
+        {
+          "date": "2026-11-05",
+          "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
+          "heading": "1 · MA-WOCHENVORSCHAU-2026-46"
         }
       ]
     }
@@ -11915,6 +11947,16 @@
         "Frühstücksfrist und Senioren-Nachmittag weiterhin widersprüchlich",
         "Bau-Turbo: Vertragsregel Ziff.1.4 und 8.1 klären"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-05-mittags.md",
+      "implementation_commit": "1dca005",
+      "summary": "Bau-Turbo korrigiert (drei Monate nach § 36a BauGB u. a.); Martinszüge mit Polizei-Tipps; Automatik-Termine 11.11. bereinigt, Automatik erkennt fehlende Ortszeile; neu Wochenvorschau 9.–15.11. (Standard 845 Wörter).",
+      "publication": "Neue Meldung, Korrektur und Nachträge direkt veröffentlicht"
     }
   ]
 }
