@@ -60,7 +60,7 @@ Fenster 05.–19.11.
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `6ca324e` (Korrektur Bau-Turbo), `9a5f063` (Martinszüge, Termine, Automatik), `1dca005` (Wochenvorschau), dieser Dossier-Commit. Live-Nachweis folgt als Nachtrag.
+Commits: `6ca324e` (Korrektur Bau-Turbo), `9a5f063` (Martinszüge, Termine, Automatik), `1dca005` (Wochenvorschau), `0333708` (Dossier). Live-Nachweis 15:11 Uhr: Wochenvorschau HTTP 200, in der Nachrichten-Sitemap und oben in „Neu in Merzenich“; Bau-Turbo-Korrektur („drei Monate“), Martinszug-Nachtrag und beide Termine vom 11.11. (ohne falschen Ort, ohne Nummer) live.
 
 ## 8. Bildprüfung
 
