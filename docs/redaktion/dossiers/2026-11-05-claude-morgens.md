@@ -63,7 +63,7 @@ Fenster 05.–19.11.
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `4e0646a` (Korrektur, Termine, Automatik-Filter), `dee5f0f` (Bau-Turbo), dieser Dossier-Commit. Live-Nachweis folgt als Nachtrag.
+Commits: `4e0646a` (Korrektur, Termine, Automatik-Filter), `dee5f0f` (Bau-Turbo), `96a6246` (Dossier). Live-Nachweis 09:27 Uhr: Bau-Turbo HTTP 200, in der Nachrichten-Sitemap und oben in „Neu in Merzenich“; Erdwall-Korrektur und Nachtrag Kindergottesdienst live; Frühstücks- und Spieletreff ohne Telefonnummer.
 
 ## 8. Bildprüfung
 
