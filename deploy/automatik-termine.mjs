@@ -87,7 +87,9 @@ export function detailLesen(seite) {
   const veranstalter = sauber(z[p - 1]);
   const titel = sauber(z.slice(z[0] === 'Zurück' ? 1 : 0, p - 1).join(' '));
   let i = p + 2;
-  const ort = z[i] && !/[.!?]$/.test(z[i]) && z[i].length <= 120 ? sauber(z[i++]) : '';
+  // Ohne Ortszeile folgt gleich der Text; eine Zeitangabe („Mittwochs von 9 - 11 Uhr“) ist kein Ort (05.11.2026).
+  const keinOrt = (s) => /[.!?]$/.test(s) || /\bUhr\b/.test(s) || /^(montags|dienstags|mittwochs|donnerstags|freitags|samstags|sonntags|täglich)\b/i.test(s) || /^Kontakt\s*:/i.test(s);
+  const ort = z[i] && !keinOrt(z[i]) && z[i].length <= 120 ? sauber(z[i++]) : '';
   const text = [];
   for (; i < z.length; i++) {
     if (z[i] === 'Weitere Beiträge des Profils' || z[i] === 'Beschreibung' || sauber(z[i]) === veranstalter) break;

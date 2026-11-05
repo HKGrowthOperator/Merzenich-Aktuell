@@ -3,27 +3,38 @@
   "termine": [
     {
       "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-11",
-      "titel": "NEU: Frühstücks- und Spieletreff für Senior:innen",
+      "titel": "Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evangelischen Gemeindehaus",
       "start": "2026-11-11T09:00:00+01:00",
       "ende": "2026-11-11T11:00:00+01:00",
-      "ort": "Mittwochs von 9 - 11 Uhr",
-      "adresse": "Mittwochs von 9 - 11 Uhr",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
-      "beschreibung": "„NEU: Frühstücks- und Spieletreff für Senior:innen“ am Mittwoch, 11. November, 9:00 Uhr. Ort: Mittwochs von 9 - 11 Uhr.",
+      "beschreibung": "Der neue Frühstücks- und Spieletreff des Evangelischen Gemeindezentrums für Seniorinnen und Senioren trifft sich mittwochs von 9 bis 11 Uhr, auch am 11. November. Anmeldung zum Frühstück erbeten.",
       "absaetze": [
-        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 11. November 2026, 9:00 Uhr zu „NEU: Frühstücks- und Spieletreff für Senior:innen“ ein. Ort: Mittwochs von 9 - 11 Uhr."
+        "Das Evangelische Gemeindezentrum Merzenich hat seinen neuen Frühstücks- und Spieletreff für Seniorinnen und Senioren auch für Mittwoch, 11. November 2026, von 9 bis 11 Uhr in den Veranstaltungskalender der Gemeinde eingetragen. Der Treff findet mittwochs statt; wer mitfrühstücken möchte, wird um Anmeldung gebeten.",
+        "Der Eintrag für den 11. November nennt keinen Ort. Für den 18. November gibt das Gemeindezentrum das Evangelische Gemeindehaus an der Severin-Böhr-Straße 15 an."
       ],
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
         "url": "https://www.heimat-info.de/veranstaltungen/a5c2217f-f8b2-4551-8e02-4a4eca29e5da",
         "stand": "2026-11-05"
-      }
+      },
+      "links": [
+        [
+          "Eintrag 11.11. im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/a5c2217f-f8b2-4551-8e02-4a4eca29e5da"
+        ],
+        [
+          "Eintrag 18.11. mit Ort (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/0d9701e3-fddc-433a-91f1-dd9bdb724b8b"
+        ]
+      ]
     },
     {
       "slug": "maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-11",
-      "titel": "Männergruppe / Skatrunde für Senioren",
+      "titel": "Männergruppe und Skatrunde für Senioren im Evangelischen Gemeindehaus",
       "start": "2026-11-11T09:00:00+01:00",
       "ende": "2026-11-11T11:00:00+01:00",
       "ort": "Ev. Gemeindehaus, Severin-Böhr-Str. 15",
@@ -31,10 +42,9 @@
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
-      "beschreibung": "„Männergruppe / Skatrunde für Senioren“ am Mittwoch, 11. November, 9:00 Uhr. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
+      "beschreibung": "Männergruppe und Skatrunde für Senioren, mittwochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus Merzenich, im Kalender zum 11. November.",
       "absaetze": [
-        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 11. November 2026, 9:00 Uhr zu „Männergruppe / Skatrunde für Senioren“ ein. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
-        "Aus der Ankündigung im Veranstaltungskalender: „Mittwochs von 9 – 11 Uhr“"
+        "Das Evangelische Gemeindezentrum Merzenich lädt Senioren zur Männergruppe mit Skatrunde ein: mittwochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus an der Severin-Böhr-Straße 15, im Veranstaltungskalender der Gemeinde für Mittwoch, 11. November 2026. Weitere Mitspieler sind laut Ankündigung willkommen."
       ],
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
