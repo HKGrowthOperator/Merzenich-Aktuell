@@ -3,19 +3,21 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Senior:innenadventsfeier
+X-WR-CALNAME:Adventsfeier für Seniorinnen und Senioren im Evangelischen Ge
+ meindehaus
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:senior-innenadventsfeier-merzenich-2026-12-09@merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261209T140000Z
 DTEND:20261209T163000Z
-SUMMARY:Senior:innenadventsfeier
-DESCRIPTION:„Senior:innenadventsfeier“ am Mittwoch\, 9. Dezember\, 15:0
- 0 Uhr. Ort: Ev. Gemeindehaus\, Severin-Böhr-Str. 15.\nVeranstalter: Evang
- elisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoper
- ator.de/termine/senior-innenadventsfeier-merzenich-2026-12-09/
+SUMMARY:Adventsfeier für Seniorinnen und Senioren im Evangelischen Gemeind
+ ehaus
+DESCRIPTION:Adventsfeier für Seniorinnen und Senioren am Mittwoch\, 9. Dez
+ ember\, 15 bis 17.30 Uhr im Evangelischen Gemeindehaus Merzenich.\nVeranst
+ alter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.h
+ k-growthoperator.de/termine/senior-innenadventsfeier-merzenich-2026-12-09/
 LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/senior-innenadven
  tsfeier-merzenich-2026-12-09/

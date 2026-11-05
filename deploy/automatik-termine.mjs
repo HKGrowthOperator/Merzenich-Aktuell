@@ -128,8 +128,9 @@ export function kategorieVon(d) {
 
 /** Höchstens drei Sätze der Ankündigung, ohne Telefonnummern, E-Mail-Adressen und Links. */
 export function zitat(text) {
-  const saetze = text.join(' ').split(/(?<=[.!?])\s+/).map((s) => s.trim()).filter((s) => s.length >= 20);
-  return saetze.filter((s) => !/@|https?:|www\.|\b0\d{2,5}\s*[/-]?\s*\d{2,}|\+49|telefon/i.test(s)).slice(0, 3).join(' ');
+  // Auch vor „Kontakt:“ trennen: Ankündigungen hängen Ansprechperson und Nummer oft ohne Satzende an (05.11.2026).
+  const saetze = text.join(' ').split(/(?<=[.!?])\s+|\s+(?=Kontakt\s*:)/i).map((s) => s.trim()).filter((s) => s.length >= 20);
+  return saetze.filter((s) => !/@|https?:|www\.|\b0\d{2,5}\s*[/-]?\s*\d{2,}|\+49|telefon|\bTel\.?\s*:?\s*\d|\bKontakt\s*:/i.test(s)).slice(0, 3).join(' ');
 }
 
 /** Wörter eines Titels für den Dublettenvergleich. */

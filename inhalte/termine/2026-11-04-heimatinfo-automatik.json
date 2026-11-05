@@ -3,7 +3,7 @@
   "termine": [
     {
       "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18",
-      "titel": "NEU: Frühstücks- und Spieletreff für Senior:innen",
+      "titel": "Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evangelischen Gemeindehaus",
       "start": "2026-11-18T09:00:00+01:00",
       "ende": "2026-11-18T11:00:00+01:00",
       "ort": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
@@ -11,15 +11,15 @@
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
-      "beschreibung": "„NEU: Frühstücks- und Spieletreff für Senior:innen“ am Mittwoch, 18. November, 9:00 Uhr. Ort: Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15.",
+      "beschreibung": "Neu im Evangelischen Gemeindehaus Merzenich: ein Frühstücks- und Spieletreff für Seniorinnen und Senioren, mittwochs von 9 bis 11 Uhr, im Kalender zum 18. November. Anmeldung zum Frühstück erbeten.",
       "absaetze": [
-        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 18. November 2026, 9:00 Uhr zu „NEU: Frühstücks- und Spieletreff für Senior:innen“ ein. Ort: Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15.",
-        "Aus der Ankündigung im Veranstaltungskalender: „Mittwochs von 9 - 11 Uhr Kontakt: Küsterin Inge Eismar, Tel.: 37713 Gerne zum Frühstück anmelden!“"
+        "Das Evangelische Gemeindezentrum Merzenich lädt Seniorinnen und Senioren neu zu einem Frühstücks- und Spieletreff ein. Der Treff ist mittwochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus an der Severin-Böhr-Straße 15; im Veranstaltungskalender der Gemeinde steht er für Mittwoch, 18. November 2026.",
+        "Wer mitfrühstücken möchte, wird um Anmeldung gebeten; die Kontaktdaten der Küsterin stehen in der Ankündigung des Gemeindezentrums."
       ],
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
         "url": "https://www.heimat-info.de/veranstaltungen/0d9701e3-fddc-433a-91f1-dd9bdb724b8b",
-        "stand": "2026-11-04"
+        "stand": "2026-11-05"
       }
     },
     {
@@ -38,12 +38,12 @@
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
         "url": "https://www.heimat-info.de/veranstaltungen/0bfa22f8-22d6-4fd4-89d4-e88fa903d7bd",
-        "stand": "2026-11-04"
+        "stand": "2026-11-05"
       }
     },
     {
       "slug": "senior-innenadventsfeier-merzenich-2026-12-09",
-      "titel": "Senior:innenadventsfeier",
+      "titel": "Adventsfeier für Seniorinnen und Senioren im Evangelischen Gemeindehaus",
       "start": "2026-12-09T15:00:00+01:00",
       "ende": "2026-12-09T17:30:00+01:00",
       "ort": "Ev. Gemeindehaus, Severin-Böhr-Str. 15",
@@ -51,16 +51,26 @@
       "ortsteil": "Merzenich",
       "kategorie": "Kirche",
       "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
-      "beschreibung": "„Senior:innenadventsfeier“ am Mittwoch, 9. Dezember, 15:00 Uhr. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
+      "beschreibung": "Adventsfeier für Seniorinnen und Senioren am Mittwoch, 9. Dezember, 15 bis 17.30 Uhr im Evangelischen Gemeindehaus Merzenich.",
       "absaetze": [
-        "Evangelisches Gemeindezentrum Merzenich lädt am Mittwoch, 9. Dezember 2026, 15:00 Uhr zu „Senior:innenadventsfeier“ ein. Ort: Ev. Gemeindehaus, Severin-Böhr-Str. 15.",
-        "Aus der Ankündigung im Veranstaltungskalender: „Kontakt: Inge Eismar, Tel. 37713 Wir freuen uns auch über neue Gesichter!“"
+        "Das Evangelische Gemeindezentrum Merzenich lädt am Mittwoch, 9. Dezember 2026, von 15 bis 17.30 Uhr zur Adventsfeier für Seniorinnen und Senioren ins Evangelische Gemeindehaus an der Severin-Böhr-Straße 15 ein. Neue Gesichter sind laut Ankündigung willkommen.",
+        "Im Eintrag des Senioren-Nachmittags vom 18. November nennt das Gemeindezentrum für denselben Mittwoch, 9. Dezember, 15 bis 17.30 Uhr, einen Vortrag über Chanukka, das jüdische Lichterfest. Ob beides zusammengehört, geht aus den Einträgen nicht hervor."
       ],
       "quelle": {
         "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
         "url": "https://www.heimat-info.de/veranstaltungen/65540fac-77fa-4a66-885c-b5dc02273332",
-        "stand": "2026-11-04"
-      }
+        "stand": "2026-11-05"
+      },
+      "links": [
+        [
+          "Ankündigung im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/65540fac-77fa-4a66-885c-b5dc02273332"
+        ],
+        [
+          "Senioren-Nachmittag mit Hinweis auf den 9. Dezember (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/43009e41-6805-4769-89b5-f5eb301cb93c"
+        ]
+      ]
     }
   ]
 }

@@ -551,16 +551,16 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:kindergottesdienst-ev-gemeindehaus-2026-11-08@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261108T100000Z
 SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
 DESCRIPTION:Pfarrerin Karin Heucher feiert am Sonntag\, 8. November\, um 11
   Uhr einen Kindergottesdienst im Evangelischen Gemeindehaus Merzenich. Ab 
- 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\; dafür bittet die G
- emeinde um Anmeldung bis Donnerstag\, 5. November\, 11.30 Uhr.\nVeranstalt
- er: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://merzenicha
- ktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeindehaus-202
- 6-11-08/
+ 10.30 Uhr gibt es vorher ein gemeinsames Frühstück\; für die Anmeldung 
+ dazu nennen Amtsblatt und Heimat-Info zwei verschiedene Fristen.\nVeransta
+ lter: Evangelische Gemeinde zu Düren\, Bezirk Merzenich\nhttps://merzenic
+ haktuell.hk-growthoperator.de/termine/kindergottesdienst-ev-gemeindehaus-2
+ 026-11-08/
 LOCATION:Evangelisches Gemeindehaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
  t-ev-gemeindehaus-2026-11-08/
@@ -789,15 +789,17 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18
  @merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261118T080000Z
 DTEND:20261118T100000Z
-SUMMARY:NEU: Frühstücks- und Spieletreff für Senior:innen
-DESCRIPTION:„NEU: Frühstücks- und Spieletreff für Senior:innen“ am M
- ittwoch\, 18. November\, 9:00 Uhr. Ort: Ev. Gemeindehaus Merzenich\, Sever
- in-Böhr-Str. 15.\nVeranstalter: Evangelisches Gemeindezentrum Merzenich\n
- https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-und
- -spieletreff-fuer-senior-innen-merzenich-2026-11-18/
+SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
+ gelischen Gemeindehaus
+DESCRIPTION:Neu im Evangelischen Gemeindehaus Merzenich: ein Frühstücks- 
+ und Spieletreff für Seniorinnen und Senioren\, mittwochs von 9 bis 11 Uhr
+ \, im Kalender zum 18. November. Anmeldung zum Frühstück erbeten.\nVeran
+ stalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell
+ .hk-growthoperator.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior
+ -innen-merzenich-2026-11-18/
 LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-18/
@@ -824,7 +826,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:senioren-nachmittag-ev-gemeindehaus-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261118T140000Z
 DTEND:20261118T160000Z
 SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
@@ -979,7 +981,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventsliedersingen-merzenich-2026-11-29@merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261129T170000Z
 SUMMARY:Adventsliedersingen
 DESCRIPTION:„Adventsliedersingen“ am Sonntag\, 29. November\, 18:00 Uhr
@@ -1039,14 +1041,15 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:senior-innenadventsfeier-merzenich-2026-12-09@merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261209T140000Z
 DTEND:20261209T163000Z
-SUMMARY:Senior:innenadventsfeier
-DESCRIPTION:„Senior:innenadventsfeier“ am Mittwoch\, 9. Dezember\, 15:0
- 0 Uhr. Ort: Ev. Gemeindehaus\, Severin-Böhr-Str. 15.\nVeranstalter: Evang
- elisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoper
- ator.de/termine/senior-innenadventsfeier-merzenich-2026-12-09/
+SUMMARY:Adventsfeier für Seniorinnen und Senioren im Evangelischen Gemeind
+ ehaus
+DESCRIPTION:Adventsfeier für Seniorinnen und Senioren am Mittwoch\, 9. Dez
+ ember\, 15 bis 17.30 Uhr im Evangelischen Gemeindehaus Merzenich.\nVeranst
+ alter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.h
+ k-growthoperator.de/termine/senior-innenadventsfeier-merzenich-2026-12-09/
 LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/senior-innenadven
  tsfeier-merzenich-2026-12-09/

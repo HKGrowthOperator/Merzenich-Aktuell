@@ -22,6 +22,8 @@ pruefe('Mehrtägig ohne Uhrzeit (ganztägig)', zeitLesen('28.11.2026 - 29.11.202
 pruefe('Kein Datum: nicht lesbar', zeitLesen('Golzheim'), null);
 pruefe('Emojis aus dem Titel', sauber('🏮 Sankt Martinsumzug in Golzheim 🏮'), 'Sankt Martinsumzug in Golzheim');
 pruefe('Zitat: höchstens drei Sätze, ohne Telefonnummer, E-Mail, Link', zitat(['Vor dem Gottesdienst gibt es ein gemeinsames Frühstück.', 'Anmeldung unter 02421 / 37713 bitte.', 'Fragen an info@example.de schicken.', 'Mehr unter https://example.de lesen.', 'Alle Kinder sind herzlich eingeladen.']), 'Vor dem Gottesdienst gibt es ein gemeinsames Frühstück. Alle Kinder sind herzlich eingeladen.');
+pruefe('Zitat: „Kontakt:“ mit Name und kurzer Nummer ohne Satzende fällt weg (05.11.2026)', zitat(['Mittwochs von 9 - 11 Uhr Kontakt: Küsterin Inge Eismar, Tel.: 37713 Gerne zum Frühstück anmelden!']), 'Mittwochs von 9 - 11 Uhr');
+pruefe('Zitat: „Tel. 37713“ fällt weg, übriger Satz bleibt', zitat(['Wir freuen uns auch über neue Gesichter!', 'Kontakt: Inge Eismar, Tel. 37713']), 'Wir freuen uns auch über neue Gesichter!');
 pruefe('Ähnliche Titel (gleiche Wörter), andere nicht', [aehnlich('Martinszug in Golzheim', 'Sankt Martinsumzug in Golzheim am 11. November 2026'), aehnlich('Gottesdienst mit Abendmahl', 'Ev. Gottesdienst: Gedenken an Verstorbene mit Abendmahl'), aehnlich('Weihnachtsfeier', 'Seniorennachmittag')], [true, true, false]);
 
 console.log('\nEchte Detailseiten (02.11.2026)');

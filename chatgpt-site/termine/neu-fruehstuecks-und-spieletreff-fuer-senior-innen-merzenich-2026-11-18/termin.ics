@@ -3,21 +3,24 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:NEU: Frühstücks- und Spieletreff für Senior:innen
+X-WR-CALNAME:Frühstücks- und Spieletreff für Seniorinnen und Senioren im
+  Evangelischen Gemeindehaus
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18
  @merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261105T060000Z
 DTSTART:20261118T080000Z
 DTEND:20261118T100000Z
-SUMMARY:NEU: Frühstücks- und Spieletreff für Senior:innen
-DESCRIPTION:„NEU: Frühstücks- und Spieletreff für Senior:innen“ am M
- ittwoch\, 18. November\, 9:00 Uhr. Ort: Ev. Gemeindehaus Merzenich\, Sever
- in-Böhr-Str. 15.\nVeranstalter: Evangelisches Gemeindezentrum Merzenich\n
- https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-und
- -spieletreff-fuer-senior-innen-merzenich-2026-11-18/
+SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
+ gelischen Gemeindehaus
+DESCRIPTION:Neu im Evangelischen Gemeindehaus Merzenich: ein Frühstücks- 
+ und Spieletreff für Seniorinnen und Senioren\, mittwochs von 9 bis 11 Uhr
+ \, im Kalender zum 18. November. Anmeldung zum Frühstück erbeten.\nVeran
+ stalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell
+ .hk-growthoperator.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior
+ -innen-merzenich-2026-11-18/
 LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-18/
