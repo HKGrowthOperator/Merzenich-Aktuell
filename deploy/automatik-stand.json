@@ -57,6 +57,16 @@
       "slug": "senior-innenadventsfeier-merzenich-2026-12-09",
       "datei": "inhalte/termine/2026-11-04-heimatinfo-automatik.json",
       "am": "2026-11-04"
+    },
+    "https://www.heimat-info.de/veranstaltungen/a5c2217f-f8b2-4551-8e02-4a4eca29e5da": {
+      "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-11",
+      "datei": "inhalte/termine/2026-11-05-heimatinfo-automatik.json",
+      "am": "2026-11-05"
+    },
+    "https://www.heimat-info.de/veranstaltungen/14702026-94f2-42f8-be89-1d3317829b93": {
+      "slug": "maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-11",
+      "datei": "inhalte/termine/2026-11-05-heimatinfo-automatik.json",
+      "am": "2026-11-05"
     }
   },
   "umkreis": {
@@ -95,6 +105,18 @@
     "https://www.presseportal.de/blaulicht/pm/8/6383951": {
       "datei": "inhalte/umkreis/2026-11-04-polizei-automatik.json",
       "am": "2026-11-04"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6384849": {
+      "datei": "inhalte/umkreis/2026-11-05-polizei-automatik.json",
+      "am": "2026-11-05"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6384840": {
+      "datei": "inhalte/umkreis/2026-11-05-polizei-automatik.json",
+      "am": "2026-11-05"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6384834": {
+      "datei": "inhalte/umkreis/2026-11-05-polizei-automatik.json",
+      "am": "2026-11-05"
     }
   }
 }

@@ -1,16 +1,16 @@
 {
  "hinweis": "Bestand der ausgelieferten Seite, erzeugt von deploy/sitemaps.mjs am Ende von deploy/kette.mjs.",
  "stand": "2026-11-05T09:23:00+01:00",
- "htmlSeiten": 625,
+ "htmlSeiten": 627,
  "artikel": 227,
- "termine": 92,
+ "termine": 94,
  "vereine": 0,
  "orte": 5,
  "themen": 193,
  "sitemaps": {
   "seiten": 36,
   "artikel": 227,
-  "termine": 92,
+  "termine": 94,
   "verzeichnis": 0,
   "news": 7
  }

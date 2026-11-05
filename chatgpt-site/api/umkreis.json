@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-04",
+ "stand": "2026-11-05",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Trickdiebstahl: Haustürschlüssel entwendet",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6384834",
+   "datum": "2026-11-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Langerwehe: Überholvorgang scheitert - Ein Leichtverletzter",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6384840",
+   "datum": "2026-11-05",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Polizei begleitet Martinszüge im Kreis Düren und gibt Sicherheitstipps",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6384849",
+   "datum": "2026-11-05",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
