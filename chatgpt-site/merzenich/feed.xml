@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 04 Nov 2026 13:55:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 08:23:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Bau-Turbo in Merzenich: Wann die Gemeinde Wohnungen ohne Bebauungsplan erlauben will</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/</guid>
+<pubDate>Thu, 05 Nov 2026 08:23:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Seit Herbst 2025 dürfen Gemeinden Wohnungsbau auch ohne Bebauungsplan zulassen. Merzenich will dafür feste Regeln: kleine Flächen, höchstens 25 Meter vom Ortsrand, ein Vertrag vor dem Antrag. Der Bauausschuss berät am 12. November.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-07-d923824479.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Ehemalige Merzenicher Windmühle</media:description></media:content>
-</item>
-<item>
-<title>Lebendiger Adventskalender 2026: Pfarrbüro sucht Gastgeber für Adventsfenster im Dezember</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/lebendiger-adventskalender-2026-gastgeber-gesucht/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/lebendiger-adventskalender-2026-gastgeber-gesucht/</guid>
-<pubDate>Fri, 16 Oct 2026 07:20:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>An verschiedenen Abenden im Dezember öffnet um 18 Uhr ein „Adventstürchen“ in der Gemeinde. Familien, Nachbarschaften, Vereine und Einzelne können Gastgeber sein.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
 </item>
 </channel>
 </rss>
