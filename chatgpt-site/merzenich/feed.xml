@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 05 Nov 2026 08:23:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 13:55:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/</guid>
+<pubDate>Thu, 05 Nov 2026 13:55:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Drei Martinszüge an drei Abenden, der Karneval beginnt, der Bauausschuss entscheidet über wichtige Vorhaben, und am Sonntag gedenken Merzenich und Morschenich der Toten der Kriege. Die Woche im Überblick.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-05-1ca58804a8.jpg" medium="image"><media:credit>Anubis85 KH / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>St. Martins fire in Mülheim-Kärlich, Germany</media:description></media:content>
+</item>
 <item>
 <title>Bau-Turbo in Merzenich: Wann die Gemeinde Wohnungen ohne Bebauungsplan erlauben will</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Geschichts- und Heimatverein lädt zum traditionellen Adventmarkt mit Handwerkskunst, Blasmusik und Besuch des Nikolaus ein. Der Eintritt ist frei.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
-</item>
-<item>
-<title>Tag der Modelleisenbahn: Wasserturm Merzenich öffnet am 21. November mit europäischen Zügen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/vereine/tag-der-modelleisenbahn-wasserturm-merzenich-21-november-2026/</guid>
-<pubDate>Fri, 16 Oct 2026 07:28:00 GMT</pubDate>
-<category>Vereine</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Geschichts- und Heimatverein und Pfadfinder zeigen deutsche, französische und weitere Modellzüge im Betrieb und erinnern an 55 Jahre Intercity.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-07-d923824479.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Ehemalige Merzenicher Windmühle</media:description></media:content>
 </item>
 </channel>
 </rss>

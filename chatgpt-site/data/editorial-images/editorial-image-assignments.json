@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T08:23:53.334Z",
+  "updatedAt": "2026-11-05T13:56:39.978Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1610,6 +1610,15 @@
       "assignedAt": "2026-11-05T08:23:53.334Z",
       "articleId": "2026-11-05-bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026",
       "articleDate": "2026-11-05T09:23:00+01:00"
+    },
+    "/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/": {
+      "imageId": "web-themen-05-1ca58804",
+      "pool": "themen",
+      "motiv": "martinsfeuer",
+      "regel": "leben.brauchtum",
+      "assignedAt": "2026-11-05T13:56:39.977Z",
+      "articleId": "2026-11-05-merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag",
+      "articleDate": "2026-11-05T14:55:00+01:00"
     }
   }
 }
