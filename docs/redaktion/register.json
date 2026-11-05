@@ -11790,6 +11790,46 @@
       "implementation_commit": "1c65652",
       "summary": "Zwei Korrekturen (acht Anlagen statt Gebäude), neu Tiefbau M140/2026 (Standard 830 Wörter, WZV geklärt, Merzenich 4,8 Mio. aus NRW-Infrastrukturgesetz) und zweiter Solarpark bei Golzheim (Kurzmeldung, 92/2026); Termine DRK-Krisenvorsorge 10.11. und Pluriversum-Workshop 18.11.; Plugin 1.48.2 und QA gegen Meldungsdaten in der Zukunft.",
       "publication": "Neue Meldungen und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-05",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-05-morgens.md",
+      "compared_with": "dossiers/2026-11-04-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-04-claude-nachmittags.md",
+      "base_commit": "e241dcb5e0e5ff9fcc99a9dc5cfe03c219e7269d",
+      "implementation_commit": null,
+      "summary": "Fanclub-Jubiläumsabend 30.10.2027 neu angekündigt, T2. Frühstücks- und Spieletreff bereits automatisch erfasst. Fristkonflikt Frühstück beim Kindergottesdienst, Datumsdiskrepanz im App-Eintrag zum Senioren-Nachmittag. DRK-Abend laut Gemeindeindex kostenlos. PV Golzheim: Erdwallhöhe präzisieren. Beide Anlagenkorrekturen live bestätigt. Jugendgremium ohne öffentliches Ergebnis im gelesenen RIS.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 1,
+      "articles_checked": 1,
+      "article_partial_checks": 3,
+      "repository_article_files_read": 35,
+      "repository_event_files_read": 14,
+      "new_or_changed_events": 2,
+      "complete_drafts": 0,
+      "source_check_window": "05.11.2026, 06:57:05–07:00:52 Europe/Berlin",
+      "deadline": "2026-11-05T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit nach erfolgreichem Ref-Update im Abschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "topic_updates": [
+        {
+          "id": "MA-FANCLUB-60-2027",
+          "research_status": "T2",
+          "missing": "Unabhängige Terminbestätigung, Einlass/Beginn, Preis und Programm. Visuelle Bildprüfung offen."
+        }
+      ],
+      "open_checks": [
+        "Frühstück Kindergottesdienst: 05.11. gegen 31.10., jeweils 11:30 Uhr",
+        "Senioren-Nachmittag: Kopf 18.11., Fließtext 09.12.",
+        "Jugendgremium: Ergebnis oder Niederschrift nicht gefunden",
+        "WVER HTTP 403, aktueller Valdersweg-Stand offen",
+        "JVB HTTP 200 mit Inhaltsfehler"
+      ]
     }
   ]
 }
