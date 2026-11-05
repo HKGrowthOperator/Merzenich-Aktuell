@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-04-claude-nachmittags.md",
+  "latest_dossier": "dossiers/2026-11-05-claude-morgens.md",
   "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10777,7 +10777,7 @@
       "priority": "P2",
       "location_section": "Golzheim · Rathaus/Energie",
       "change_type": "Neu",
-      "notes": "Claude 04.11. nachmittags: Kurzmeldung mit amtlicher Quelle (92/2026, Entwurfsbegründung); Datumswiderspruch der Vorlage benannt, Einspeisezusage nur als Angabe der Begründung, Vorhabenträger nicht genannt. | Live 04.11. 15:09 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Claude 04.11. nachmittags: Kurzmeldung mit amtlicher Quelle (92/2026, Entwurfsbegründung); Datumswiderspruch der Vorlage benannt, Einspeisezusage nur als Angabe der Begründung, Vorhabenträger nicht genannt. | Live 04.11. 15:09 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. morgens: Korrektur Erdwall „2,5 bis 3 Meter“ (Hinweis ChatGPT 05.11. morgens), Commit 4e0646a.",
       "dossier_history": [
         {
           "date": "2026-11-04",
@@ -10788,16 +10788,43 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
           "heading": "1 · MA-PV-GOLZHEIM-E1-FNP20"
+        },
+        {
+          "date": "2026-11-05",
+          "dossier": "dossiers/2026-11-05-claude-morgens.md",
+          "heading": "1 · Korrektur Erdwall"
         }
       ],
       "workflow_status": "uebernommen",
       "text_status": "T1",
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
-      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-05 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-nachmittags.json → /rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "1c65652"
+    },
+    {
+      "id": "MA-BAUTURBO-142-2026",
+      "priority": "P2",
+      "location_section": "Merzenich · Rathaus/Bauen",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-05-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-05 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
+      "article_id": null,
+      "implementation_commit": "dee5f0f",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss.",
+      "dossier_history": [
+        {
+          "date": "2026-11-05",
+          "dossier": "dossiers/2026-11-05-claude-morgens.md",
+          "heading": "1 · MA-BAUTURBO-142-2026"
+        }
+      ]
     }
   ],
   "archive": {
@@ -11830,6 +11857,16 @@
         "WVER HTTP 403, aktueller Valdersweg-Stand offen",
         "JVB HTTP 200 mit Inhaltsfehler"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-05-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-05-morgens.md",
+      "implementation_commit": "dee5f0f",
+      "summary": "Korrektur Erdwall (Solarpark Golzheim); neu Bau-Turbo-Leitlinien (Standard 845 Wörter, 142/2026); Termine: Fristkonflikt Kindergottesdienst, Hinweis Senioren-Nachmittag, zwei Automatik-Termine ohne Name und Nummer; automatik-termine filtert „Kontakt:“ und Kurznummern.",
+      "publication": "Neue Meldung und Termin-Nachträge direkt veröffentlicht"
     }
   ]
 }

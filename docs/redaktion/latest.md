@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [04.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-04-claude-nachmittags.md), Vergleichsbasis [ChatGPT 04.11. mittags](dossiers/2026-11-04-mittags.md) und [Claude 04.11. morgens](dossiers/2026-11-04-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [05.11.2026, Claude-Morgenlauf](dossiers/2026-11-05-claude-morgens.md), Vergleichsbasis [ChatGPT 05.11. morgens](dossiers/2026-11-05-morgens.md) und [Claude 04.11. nachmittags](dossiers/2026-11-04-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 05.11. morgens:** 1 neue Meldung „Bau-Turbo in Merzenich: Wann die Gemeinde Wohnungen ohne Bebauungsplan erlauben will“ (Standard, 845 Wörter, 142/2026 mit Leitlinien und Synopse). Korrektur Erdwall 2,5 bis 3 Meter (Solarpark Golzheim). Termine: Fristkonflikt Kindergottesdienst 08.11., Hinweis Senioren-Nachmittag 18.11., zwei Automatik-Termine ohne Name und Nummer; Automatik-Filter verschärft. Commits `4e0646a`, `dee5f0f`.
 
 **Umgesetzt am 04.11. nachmittags:** 2 neue Meldungen: „Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter“ (Standard, 830 Wörter, M140/2026; „WZV“ der Vorlage als WZV Neffeltal geklärt, Merzenich erhält 4.799.525,90 Euro aus dem NRW-Infrastrukturgesetz) und „Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim“ (Kurzmeldung, 92/2026, Datumswiderspruch benannt). Korrekturen: acht Anlagen statt „acht Gebäude“ in Energiemanagement und Solarpark A4. Termine: DRK-Infoabend Krisenvorsorge 10.11., Pluriversum-Workshop 18.11. Plugin 1.48.2 und `qa/redaktion-lauf.mjs` gegen Meldungsdaten in der Zukunft. Mindesttakt 04.11.: 4 Meldungen. Commits `8ccc212`, `d6ae335`, `118106a`, `1c65652`, `51fab98`.
 
