@@ -1,11 +1,11 @@
 {
  "quelle": "gemeinde",
- "abgerufen": "2026-11-06T12:57:14.076Z",
+ "abgerufen": "2026-11-06T20:53:58.599Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-11-06T12:57:06.947Z",
+   "abgerufen": "2026-11-06T20:53:51.718Z",
    "status": 200,
    "titel": "Aktuelles | Gemeinde Merzenich",
    "meta": {
@@ -23,7 +23,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#NzQ2ODQ0MzIy"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#MjE3MTczMDYx"
     },
     {
      "text": "Aktuelles Pressemitteilungen / News Auf dieser Seite finden Sie die aktuellen Pressemitteilungen und News rund um das Leben in der Gemeinde Merzenich. Ältere Pressemitteilungen können Sie demnächst üb",
@@ -31,7 +31,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#Njk2NjE1MTc2"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#MTAyMTQ1OTIwNw"
     }
    ],
    "bilder": []
@@ -39,7 +39,7 @@
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/",
-   "abgerufen": "2026-11-06T12:57:08.452Z",
+   "abgerufen": "2026-11-06T20:53:53.154Z",
    "status": 200,
    "titel": "Aktuelles | Gemeinde Merzenich",
    "meta": {
@@ -57,7 +57,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/#OTAzMTA4MjYx"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/#OTEyOTgyMjQ5"
     },
     {
      "text": "Aktuelles Pressemitteilungen / News Auf dieser Seite finden Sie die aktuellen Pressemitteilungen und News rund um das Leben in der Gemeinde Merzenich. Ältere Pressemitteilungen können Sie demnächst üb",
@@ -65,7 +65,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/#NjQ4OTgyNzYw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/#OTUwNDQzNzkx"
     }
    ],
    "bilder": []
@@ -75,7 +75,7 @@
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php",
-   "abgerufen": "2026-11-06T12:57:09.945Z",
+   "abgerufen": "2026-11-06T20:53:54.585Z",
    "status": 200,
    "titel": "Amtsblatt | Gemeinde Merzenich",
    "meta": {
@@ -274,7 +274,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php#Nzc2OTk0ODU0"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php#MTM4OTg0NjYw"
     },
     {
      "text": "Aktuelles Archiv Amtsblätter In diesem Archiv können Sie alte Amtsblätter ab 2014 einsehen oder auch herunterladen.",
@@ -282,7 +282,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php#OTI0MjY1Mzky"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php#ODYwMzk5NTg3"
     },
     {
      "text": "Aktuelles Informationen zum Amtsblatt Bitte reichen Sie Ihre Mitteilungen und Beiträge möglichst als Datei per eMail an Amtsblatt@gemeinde-merzenich.de ein.",
@@ -294,7 +294,7 @@
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-11-06T12:57:11.337Z",
+   "abgerufen": "2026-11-06T20:53:55.942Z",
    "status": 200,
    "titel": "Aktuelles | Gemeinde Merzenich",
    "meta": {
@@ -312,7 +312,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#MTI2MjE0MTQy"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#MTI5MTk2NzEy"
     },
     {
      "text": "Aktuelles Pressemitteilungen / News Auf dieser Seite finden Sie die aktuellen Pressemitteilungen und News rund um das Leben in der Gemeinde Merzenich. Ältere Pressemitteilungen können Sie demnächst üb",
@@ -320,7 +320,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#NzYxMzk2MDIz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/index.php#MzkzMzYxNjYx"
     }
    ],
    "bilder": []
@@ -328,7 +328,7 @@
   {
    "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php",
    "endUrl": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php",
-   "abgerufen": "2026-11-06T12:57:12.874Z",
+   "abgerufen": "2026-11-06T20:53:57.396Z",
    "status": 200,
    "titel": "Pressemitteilungen / News | Gemeinde Merzenich",
    "meta": {
@@ -348,7 +348,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjY4NTUyMTI"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzI4MzA2Mzg2"
     },
     {
      "text": "Aktuelles Gemeinde lädt wieder ein zum Pluriversum! Nach dem tollen Erfolg im Vorjahr lädt die Gemeinde Merzenich auch in diesem Jahr wieder zum Zukunfts-Event \"Pluriversum\" ein.",
@@ -356,7 +356,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODc5MTUxNDQz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTgwMTM4NjA1"
     },
     {
      "text": "Aktuelles Alle Martinsumzüge der Gemeinde im Überblick Auch in diesem Jahr gibt es wieder in allen Ortsteilen St. Martins-Umzüge. Hier finden Sie eine Übersicht über alle Termine.",
@@ -364,7 +364,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Mzg5NTExNzc"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Mjk0MjY1OTQ1"
     },
     {
      "text": "Aktuelles Sichern Sie sich Karten für die Krätzchensitzung 2027! Der Kartenvorverkauf für die kommende Krätzchensitzung am 23. Januar 2027 hat begonnen. Wie Sie an Tickets kommen, erfahren Sie hier.",
@@ -372,7 +372,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjMyMjc4MTgw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDM2MTA2MDE0"
     },
     {
      "text": "Service Darum Papier besser in die blaue Tonne Schönmackers Umweltdienste und die Gemeinde Merzenich bitten die Bürger darum, ihr Altpapier konsequent über die blaue Tonne zu entsorgen.",
@@ -380,7 +380,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Mzc5ODI2ODE1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjA2MjMyNzcx"
     },
     {
      "text": "Aktuelles Neue Flutlichtanlage für die Rhenania Dank des kommunalen Energiekonzepts (KEK) der Westenergie konnte jetzt eine neue Flutlichtanlage bei der Rhenania installiert werden.",
@@ -388,7 +388,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTc2MjkxMjI"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzUzNTQ2ODQz"
     },
     {
      "text": "Aktuelles Baustart für die neue Stromtrasse Der Netzbetreiber Amprion hat mit dem Bau der neuen Stromtrasse begonnen. Zwei neue Masten entstehen in der Gemeinde Merzenich.",
@@ -396,7 +396,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTA2MTAzMDA4NQ"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTk3MTYzMzM4"
     },
     {
      "text": "Service Alles rund um das Thema Hitzeschutz Auch in diesem Sommer haben wir wieder mit ungewöhnlich hohen Temperaturen zu kämpfen. Hier finden Sie ein paar hilfreiche Hitze-Tipps.",
@@ -404,7 +404,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTAwMjM1ODQxOQ"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzIzMDY4NDcz"
     },
     {
      "text": "Aktuelles Mehr Platz für die Girbelsrather Vereine Mit drei neuen Seecontainern wird den Girbelsrather Ortsvereinen an der Maarhalle mehr Lagerfläche zur Verfügung gestellt.",
@@ -412,7 +412,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTA0NzI0ODE0OA"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzkwODc5Mzk2"
     },
     {
      "text": "Aktuelles Erstes Jugendgremium in Merzenich gewählt Die Jugendlichen der Gemeinde Merzenich haben ihr erstes eigenes Gremium gewählt und 11 Kandidaten aufgestellt!",
@@ -420,7 +420,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDQ1MDY3MTk2"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODM0NTQ4NTUy"
     },
     {
      "text": "Service Die Chronik des 2026er-Gemeindehaushalts Der diesjährige Haushaltsentwurf der Gemeinde Merzenich hat einen langen Weg hinter sich. Hier finden Sie eine Chronik der letzten Monate.",
@@ -428,7 +428,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Mzc2ODQ5MjA4"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjIzMjkzMzU1"
     },
     {
      "text": "Aktuelles Helfen Sie mit beim Nahverkehrsplan Der Kreis Düren sucht in der Bevölkerung Ideen und Vorschläge für den neuen Nahverkehrsplan, der 2027 in Kraft treten soll.",
@@ -436,7 +436,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjgzODAzODE2"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzY5NTA3OTI2"
     },
     {
      "text": "Aktuelles Gemeindeprüfungsanstalt stellt Ergebnisse vor Die Gemeindeprüfungsanstalt hat im jüngsten Rechnungsprüfungsausschuss der Gemeinde Merzenich das Ergebnis ihrer Prüfungsergebnisse vorgestellt.",
@@ -444,7 +444,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDM1NzcyMzY1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTUwMzE5MDEx"
     },
     {
      "text": "Aktuelles Ehrenamtsfest 2025 - das sind die Preisträger! Über 100 Personen und Gruppen wurden jetzt wieder beim Ehrenamtsfest der Gemeinde Merzenich geehrt.",
@@ -452,7 +452,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjQ4NDk0ODA3"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTYyMjk1NDQy"
     },
     {
      "text": "Aktuelles Kleidertreff feiert seinen 10. Geburtstag! Der Kleidertreff an der Lindenstraße feiert runden Geburtstag! Seit zehn Jahren kann man dort Kleidung spenden und günstig erwerben.",
@@ -460,7 +460,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDE4NTI5OTg1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTA5MjgyNzAz"
     },
     {
      "text": "Aktuelles Das ist der neue Rat der Gemeinde Merzenich! Bei der konstituierenden Sitzung am 6. November 2025 wurden die Mitglieder des neuen Gemeinderates und der Bürgermeister vereidigt.",
@@ -468,7 +468,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTI0NjY4OTI5"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDAyODY1ODEw"
     },
     {
      "text": "Aktuelles Die ganze Gemeinde in einer App! Mit der Einführung der Heimat-Info App geht die Gemeinde Merzenich den nächsten Schritt bei der digitalen Kommunikation. So machen Sie mit.",
@@ -476,7 +476,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTYzMjQyOTM"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjA5NzY5MDA2"
     },
     {
      "text": "Aktuelles Bürgermeister feiert 40-jähriges Dienstjubiläum Georg Gelhausen feiert kurz nach seiner Wiederwahl zum Bürgermeister der Gemeinde Merzenich sein 40-jähriges Dienstjubiläum!",
@@ -484,7 +484,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTcyNzIxMjMw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDc0OTUyOTUy"
     },
     {
      "text": "Aktuelles Umbau Poolplatz startet im Frühjahr 2026 Der Förderbescheid über rund 5 Millionen Euro ist überreicht, die Neu- und Umgestaltung des Poolplatzes kann bald beginnen.",
@@ -492,7 +492,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NzMzOTU4NTM2"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzU5Nzg3NDM"
     },
     {
      "text": "Service Passfotos sind nur noch digital gültig Ab sofort sind bei der Beantragung von Ausweisen oder ähnlichen Dokumenten nur noch digitale Passfotos gültig. Hier erfahren Sie mehr.",
@@ -500,7 +500,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTE2OTAyNDEz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzU2MTY4MTE0"
     },
     {
      "text": "Aktuelles Mähroboter dürfen abends nicht mehr raus! Der Kreis Düren hat angeordnet, dass Mähroboter ab sofort zum Schutz für Igel nicht mehr in der Dämmerung und nachts eingesetzt werden dürfen!",
@@ -508,7 +508,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDE3NDIzMjA5"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTU4NTk0OTA2"
     },
     {
      "text": "Strukturwandel Grünes Licht für den Masterplan Bürgewald Der \"dynamische\" Masterplan für Bürgewald geht nach mehreren Beteiligungsveranstaltungen in seine entscheidende Phase.",
@@ -516,7 +516,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTAwMTY2Njgw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODE3MDY1NDgy"
     },
     {
      "text": "Service Ausweis abholen mittels PIN-Brief jetzt einfacher Das Innenministerium des Landes NRW hat die Modalitäten zur Abholung von Ausweisdokumenten angepasst und vereinfacht.",
@@ -524,7 +524,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODY2NTQyNDE4"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTM2OTE1Nzg1"
     },
     {
      "text": "Aktuelles Wir suchen Ihren Beitrag für den Klimaschutz! Westenergie und die Gemeinde Merzenich möchten auch in diesem Jahr wieder den Klimaschutzpreis vergeben. Bewerbungen sind ab sofort möglich.",
@@ -532,7 +532,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTAyNjc3NTM2MA"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTU0ODM0MjI"
     },
     {
      "text": "Service Das müssen Sie wissen zur Kommunalwahl! Daten, Termine, Links, Ergebnisse - hier erhalten Sie alle relevanten Informationen zur Kommunalwahl am 14. September 2025.",
@@ -540,7 +540,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDQ4ODQ2MTc0"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTkzMzA2MzE4"
     },
     {
      "text": "Aktuelles Die Gemeinde Merzenich blüht auf! Die Gemeinde Merzenich blüht auf! An vielen Stellen sorgen Blühflächen für den Erhalt des ökologischen Gleichgewichts!",
@@ -548,7 +548,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTczOTk5ODUz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzE1MjU0NjYz"
     },
     {
      "text": "Aktuelles Gemeinde vermittelt Hilfe für Familien Die Gemeinde Merzenich unterstützt den Bildungsdienstleiter low-tec bei der Armutsbekämpfung und Lebenssicherung von Familien.",
@@ -556,7 +556,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjExMzE0NjQz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODM2MTE4ODkz"
     },
     {
      "text": "Aktuelles Von Morschenich aus den Blick nach Köln genießen Zwei neue und vom Heimatscheck NRW geförderte Wellenliegen laden am Ortsrand von Morschenich zum Entspannen ein.",
@@ -564,7 +564,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODc0Mzk1NzU3"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODkwMTM2OTk3"
     },
     {
      "text": "Aktuelles Gemeinde vergibt wieder den Heimatpreis Auch in diesem Jahr vergibt die Gemeinde Merzenich wieder den Heimatpreis NRW. Bewerbungen können ab sofort eingereicht werden.",
@@ -572,7 +572,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTA0NDI5MTg4Mw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NzU5ODY3NzYz"
     },
     {
      "text": "Aktuelles Gemeinde ist Mitglied in NRW-Stiftung Der Beitritt der Gemeinde Merzenich zur NRW-Stiftung wurde am 8. April im Heimatmuseum mit der Einweihung einer besonderen Vitrine gefeiert.",
@@ -580,7 +580,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODI0ODY0MzI4"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDM5NDM2MjI3"
     },
     {
      "text": "Aktuelles Erste Ausstellung \"800 Jahre Merzenich\" Mit der Ausstellung „(M)eine Heimat – Merzenich in der Geschichte“ wurde am 12. März 2025 im Cubity Atlierhaus das Jubiläumsjahr eingeläutet!",
@@ -588,7 +588,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODY1NTg5NTU1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjgxNzQyNjg3"
     },
     {
      "text": "Aktuelles Klebe-Unsinn kostet viel Geld und ist gefährlich! Unbekannte übersäen Verkehrsschilder in Merzenich mit Aufklebern und verursachen dadurch hohe Kosten und gefährliche Situationen.",
@@ -596,7 +596,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjM4MTA0Nzg4"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTYxMDM5MTA1"
     },
     {
      "text": "Aktuelles Im Merzpark gilt jetzt Tempo 10 Nach Abschluss des Straßenausbaus im Merzpark wurde nun dort die finale Beschilderung montiert. Ab sofort gilt dort Schrittgeschwindigkeit.",
@@ -604,7 +604,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjE3NTcxNjEz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDM0NjA5MDEx"
     },
     {
      "text": "Aktuelles 130 Sternsinger segnen Merzenicher Rathaus Über 130 kleine Sternsinger - mehr als im Bundeskanzleramt in Berlin - besuchten jetzt das Merzenicher Rathaus.",
@@ -612,7 +612,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NzU4ODk5MDgy"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTU1NjE1ODUw"
     },
     {
      "text": "Aktuelles Heimatmuseum wird zum interessanten Lernort Das Heimatmuseum wird Dank eines Förderprogramms und des Einsatzes des Geschichts- und Heimatvereins zu einem interessanten Lernort.",
@@ -620,7 +620,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDYwNzE1MjM4"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NzE3MDgxOTA0"
     },
     {
      "text": "Aktuelles Spende für Kitas und Frühstückstreffs Der Dürener Charity Club lässt nach seiner Auflösung Spenden an die sieben Kitas und vier Frühstückstreff in der Gemeinde Merzenich zukommen.",
@@ -628,7 +628,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTE2ODA4NzI5"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDMwNzQ0MjA5"
     },
     {
      "text": "Aktuelles Standesbeamtinnen mit Sternchen! Iris Kurth und Miriam Bergsch legten jetzt in Bad Salzschlirf die Prüfung zur \"Urkundsperson\" und Standesbeamtin ab - mit Sternchen!",
@@ -636,7 +636,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTM3MjAyODA5"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTQ5MzAyODg5"
     },
     {
      "text": "Aktuelles Wer öffnet wann seine Türchen im Advent? Die katholische Pfarrgemeinde präsentiert auch in diesem Jahr wieder einen \"Lebendigen Adventskalender\" mit Teilnehmern aus der Gemeinde.",
@@ -644,7 +644,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjM1MjQ0Njg0"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NTA5MDQ4NDI1"
     },
     {
      "text": "Aktuelles Ehrenamtsfest 2024 - das sind die Preisträger Die Gemeinde Merzenich hat wieder den Ehrenamtspreis und den Heimatpreis verliehen. Über 100 Preisträger wurden geehrt.",
@@ -652,7 +652,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTg5ODU3Njcz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTA1NzMzMjMwMg"
     },
     {
      "text": "Aktuelles So kommen Sie an Baugrundstücke! Sie interessieren sich für ein Baugrundstück auf dem ehemaligen Sportplatz in Merzenich? Hier finden Sie alle Informationen!",
@@ -660,7 +660,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Njc4NjczODEy"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjYwNDc2MjMx"
     },
     {
      "text": "Aktuelles Sportplatz Merzenich wird jetzt erschlossen Jetzt geht es endlich los mit der Erschließung des alten Sportplatzes in Merzenich! Hier sollen 28 Ein- oder Mehrfamilienhäuser entstehen.",
@@ -668,7 +668,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTQ1OTUyNjc1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTcwNzk3NDk4"
     },
     {
      "text": "Aktuelles Zwei Silberdörfer aus der Gemeinde Wir freuen uns über zwei tolle Auszeichnungen für unsere Dörfer Morschenich und Girbelsrath. Sie wurden jetzt vom Kreis geehrt!",
@@ -676,7 +676,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTc0NDkzMzU3"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzMzMjUzNTA4"
     },
     {
      "text": "Aktuelles Herzlich Willkommen im Team der Gemeinde Die Gemeinde Merzenich begrüßt zum 1. August 2024 eine neue Kollegin sowie einen neuen Auszubildenden im Rathaus.",
@@ -684,7 +684,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTAxMTIyMDcy"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTAwMTA4NjYxNA"
     },
     {
      "text": "Aktuelles Jetzt bewerben für den Ehrenamtspreis 2024 Ab sofort kann man sich bei der Gemeinde Merzenich wieder für den Ehrenamtspreis bewerben. Anmeldefrist ist der 31. August 2024",
@@ -692,7 +692,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzQ5OTE2ODIz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODkxMDc1NDM4"
     },
     {
      "text": "Aktuelles Morschenich feiert grandiosen Neustart Der offizielle Abschluss der Umsiedlung wurde jetzt ganz groß in Morschenich gefeiert - mit einem Fest von Morschenichern für Morschenicher!",
@@ -700,7 +700,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Mzc1NTIwOTI3"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#OTkxMzIyNDY0"
     },
     {
      "text": "Aktuelles Der Weg ist frei für den Raum der Zukunft Der jetzt beschlossene Braunkohlenplan ermöglicht die frühzeitige Transformation des Tagebaus zu einem Raum der Zukunft!",
@@ -708,7 +708,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NDgyNTY4NjM1"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MTAyNTYyNzc0OQ"
     },
     {
      "text": "Aktuelles Einzeltickets ersetzen 4-Fahrten-Tickets Das beliebte 4-Fahrten-Ticket wird seitens des AVV eingestellt. Dafür gibt es ab dem 1. Juli vergünstigte Einzeltickets.",
@@ -716,7 +716,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjkwMjYwNjcz"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzU1MjM2OTA3"
     },
     {
      "text": "Aktuelles 57 Millionen Euro für den Ort der Zukunft Aus Braunkohledorf wird der Ort der Zukunft - Ministerin Scharrenbach hat den ersten Förderbescheid an die Gemeinde Merzenich überreicht.",
@@ -724,7 +724,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjIyNzE0Mjc3"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#NjY1NTYxOTAw"
     },
     {
      "text": "Aktuelles Kinder geschützt vor Sonne und Regen In der KGS Merzenich und der Kita Regenbogen wurden im Rahmen eines Förderprojektes Beschattungen zum Schutz vor Sonne und Regen installiert.",
@@ -732,7 +732,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#Njg3OTAzNTYw"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MjcxNTkzMzc5"
     },
     {
      "text": "Aktuelles Morschenich feiert Neustart Der Abschluss der Umsiedlung sowie die Umbenennung der Ortschaft Morschenich werden am 6. Juli mit einem Familienfest gefeiert.",
@@ -740,7 +740,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#MzU5ODc0NTg"
+     "href": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php#ODY1OTA5Njk"
     }
    ],
    "bilder": []
