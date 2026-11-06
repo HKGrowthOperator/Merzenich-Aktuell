@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-06-morgens.md",
-  "source_check_window": "06.11.2026, 07:05:29–07:11:39 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-06-mittags.md",
+  "source_check_window": "06.11.2026, 11:57:17–11:58:59 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -6391,6 +6391,12 @@
           "dossier": "dossiers/2026-11-06-morgens.md",
           "heading": "MA-PLURIVERSUM-1711 · P2 · Kultur/Bildung · Merzenich / Niederzier",
           "text_status": "T2"
+        },
+        {
+          "date": "2026-11-06",
+          "dossier": "dossiers/2026-11-06-mittags.md",
+          "heading": "MA-PLURIVERSUM-1711 · P2 · Kultur/Bildung · Merzenich / Niederzier",
+          "text_status": "T2"
         }
       ],
       "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
@@ -11995,6 +12001,40 @@
         "Frühstückstreff 11.11.: Ort im Veranstaltertext nicht angegeben",
         "Jugendgremium: kein Ergebnis im öffentlichen RIS-Vorgang",
         "Kindergottesdienst und Senioren-Nachmittag: fortbestehende Quellenkonflikte"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-06-mittags.md",
+      "compared_with": "dossiers/2026-11-06-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "a8a38b3d67ff6d766c1a65cf1ad97c6a2cc0c913",
+      "implementation_commit": null,
+      "summary": "Pluriversum: neuer datierter Veranstalterbeitrag nennt Niederzier für Abend und Workshop sowie 18:00 bzw. 11:00–13:00 Uhr. Ältere Terminangaben widersprechen; unabhängige Bestätigung fehlt (T2). Zwei Terminkorrekturen, übrige Korrekturhinweise aus dem Morgenlauf weiter offen.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 6,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "repository_area_files_read": 10,
+      "new_or_changed_events": 2,
+      "complete_drafts": 0,
+      "source_check_window": "06.11.2026, 11:57:17–11:58:59 Europe/Berlin",
+      "deadline": "2026-11-06T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit im bestätigten Laufabschluss nach Ref-Update dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Pluriversum: keine unabhängige Bestätigung, älterer App-Kalendereintrag widersprüchlich",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Frühstückstreff 11.11.: Ort im Veranstaltertext fehlt",
+        "Jugendgremium: kein Ergebnis im öffentlichen RIS-Vorgang",
+        "Kindergottesdienst, Senioren-Nachmittag, genaue Taizé-Kapelle und aktuelle Platzlage Erste Hilfe"
       ]
     }
   ]
