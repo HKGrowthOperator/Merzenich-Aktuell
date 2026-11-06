@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-05-claude-nachmittags.md",
-  "source_check_window": "03.11.2026 mittags Europe/Berlin; Direktabrufe 12:06:04–12:06:18, ergänzende PDF-Sichtung ca.12:07; tatsächliche Bereitstellung durch bestätigten main-Ref/Commit samt Zeitstempel.",
+  "latest_dossier": "dossiers/2026-11-06-morgens.md",
+  "source_check_window": "06.11.2026, 07:05:29–07:11:39 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -6385,6 +6385,12 @@
           "date": "2026-10-19",
           "dossier": "dossiers/2026-10-19-morgens.md",
           "heading": "13 · MA-PLURIVERSUM-1711 · P2 · Merzenich/Bildung · Termin · T2/B0"
+        },
+        {
+          "date": "2026-11-06",
+          "dossier": "dossiers/2026-11-06-morgens.md",
+          "heading": "MA-PLURIVERSUM-1711 · P2 · Kultur/Bildung · Merzenich / Niederzier",
+          "text_status": "T2"
         }
       ],
       "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
@@ -11957,6 +11963,39 @@
       "implementation_commit": "1dca005",
       "summary": "Bau-Turbo korrigiert (drei Monate nach § 36a BauGB u. a.); Martinszüge mit Polizei-Tipps; Automatik-Termine 11.11. bereinigt, Automatik erkennt fehlende Ortszeile; neu Wochenvorschau 9.–15.11. (Standard 845 Wörter).",
       "publication": "Neue Meldung, Korrektur und Nachträge direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-06",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-06-morgens.md",
+      "compared_with": "dossiers/2026-11-05-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "c8557cc5db098c19a18a8a7143626bcfbcf2ca50",
+      "implementation_commit": null,
+      "summary": "Pluriversum: Gemeindeangaben zu Standorten und Uhrzeiten widersprüchlich, T2. Korrekturhinweise für Wochenvorschau, Martinszug-Polizeinachtrag und Pluriversum-Einzelartikel. Neue Skatrunde und neuer Frühstückstreff-Link am 18.11. Fußballtabellen aktualisiert.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 6,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "new_or_changed_events": 6,
+      "complete_drafts": 0,
+      "source_check_window": "06.11.2026, 07:05:29–07:11:39 Europe/Berlin",
+      "deadline": "2026-11-06T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit nach bestätigtem main-Ref-Update im Abschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Pluriversum: verbindliche Zeiten und Schulstandorte für Abend und Workshop",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Frühstückstreff 11.11.: Ort im Veranstaltertext nicht angegeben",
+        "Jugendgremium: kein Ergebnis im öffentlichen RIS-Vorgang",
+        "Kindergottesdienst und Senioren-Nachmittag: fortbestehende Quellenkonflikte"
+      ]
     }
   ]
 }
