@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Schwer verletzter Fahrradfahrer nach Verkehrsunfall",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6385443",
+      "datum": "2026-11-06",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Einbruch in Tierfachmarkt - Die Polizei bittet um Hinweise",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6385442",
+      "datum": "2026-11-06",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Mann attackiert Frau in ihrer Wohnung - Die Polizei bittet um Hinweise",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6385441",
+      "datum": "2026-11-06",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
