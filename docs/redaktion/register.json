@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-07-morgens.md",
-  "source_check_window": "07.11.2026, 07:01:27–07:04:02 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-07-mittags.md",
+  "source_check_window": "07.11.2026, 11:58:01–12:02:06 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10891,6 +10891,28 @@
         }
       ],
       "notes": "Zwei Feuerwehrmeldungen zu Hunden. Keine unabhängige Ereignisbestätigung. 146/26: Datum im Kopf 05.11.2026, Text Freitagmorgen (06.11.2026). Hintergrundquellen ersetzen keinen Ereignisbeleg."
+    },
+    {
+      "id": "MA-S19-STELLWERK-07112026",
+      "priority": "P2",
+      "location_section": "alle Ortsteile/Verkehr/Bahnhof Merzenich",
+      "change_type": "neue_betriebsstoerung",
+      "text_status": "T2",
+      "image_status": "Commons-Dateiseite und Vorschau geprüft",
+      "dossier": "dossiers/2026-11-07-mittags.md",
+      "workflow_status": "gesperrt_unabhaengiger_beleg_fehlt",
+      "last_checked_at": "2026-11-07T12:02:06+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-11-07",
+          "dossier": "dossiers/2026-11-07-mittags.md",
+          "heading": "MA-S19-STELLWERK-07112026 · P2 · Verkehr · alle Ortsteile / Bahnhof Merzenich"
+        }
+      ],
+      "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen."
     }
   ],
   "archive": {
@@ -12093,6 +12115,42 @@
         "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
         "Jugendgremium: kein Ergebnis im gelesenen Vorgang",
         "Pluriversum und kirchliche Terminquellen: fortbestehende Konflikte"
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-07-mittags.md",
+      "compared_with": "dossiers/2026-11-07-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "de353dee12f644fecb355f8c84522d2be8de179c",
+      "implementation_commit": null,
+      "summary": "Neu: S19-Umleitung wegen Stellwerkstörung im Flughafenbereich, T2 mangels unabhängiger Ereignisbestätigung. Neuer Veranstalterhinweis zur Messe 07.11., 17:30 Uhr, Kapelle Morschenich. Hundeeinsätze und sechs Artikelkorrekturen unverändert offen.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 6,
+      "new_corrections_required": 0,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "repository_area_files_read": 11,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "source_check_window": "07.11.2026, 11:58:01–12:02:06 Europe/Berlin",
+      "deadline": "2026-11-07T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "S19-Störung: unabhängige Ereignisbestätigung, konkrete Merzenich-Abfahrten und Entstörungszeit",
+        "Hundeeinsätze: keine unabhängige Bestätigung, Datumswiderspruch bei 146/26",
+        "Sechs Artikelkorrekturen aus dem Vorlauf weiter offen",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Jugendgremium: kein Ergebnis im gelesenen Vorgang",
+        "Pluriversum und kirchliche Terminangaben: bestehende Quellenkonflikte"
       ]
     }
   ]
