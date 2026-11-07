@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-06-mittags.md",
-  "source_check_window": "06.11.2026, 11:57:17–11:58:59 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-07-morgens.md",
+  "source_check_window": "07.11.2026, 07:01:27–07:04:02 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10869,6 +10869,28 @@
           "heading": "1 · MA-WOCHENVORSCHAU-2026-46"
         }
       ]
+    },
+    {
+      "id": "MA-FEUERWEHR-145-146-26",
+      "priority": "P3",
+      "location_section": "Merzenich/Blaulicht/Tierrettung",
+      "change_type": "neue_einsatzberichte",
+      "text_status": "T2",
+      "image_status": "Commons-Dateiseite und Vorschau geprüft",
+      "dossier": "dossiers/2026-11-07-morgens.md",
+      "workflow_status": "gesperrt_quellen_und_datum",
+      "last_checked_at": "2026-11-07T07:04:02+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-11-07",
+          "dossier": "dossiers/2026-11-07-morgens.md",
+          "heading": "MA-FEUERWEHR-145-146-26 · P3 · Blaulicht/Tierrettung · Merzenich"
+        }
+      ],
+      "notes": "Zwei Feuerwehrmeldungen zu Hunden. Keine unabhängige Ereignisbestätigung. 146/26: Datum im Kopf 05.11.2026, Text Freitagmorgen (06.11.2026). Hintergrundquellen ersetzen keinen Ereignisbeleg."
     }
   ],
   "archive": {
@@ -12035,6 +12057,42 @@
         "Frühstückstreff 11.11.: Ort im Veranstaltertext fehlt",
         "Jugendgremium: kein Ergebnis im öffentlichen RIS-Vorgang",
         "Kindergottesdienst, Senioren-Nachmittag, genaue Taizé-Kapelle und aktuelle Platzlage Erste Hilfe"
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-07-morgens.md",
+      "compared_with": "dossiers/2026-11-06-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "1e87171398d9065ca02bdb8f23db9bfb2160e9db",
+      "implementation_commit": null,
+      "summary": "Neu: Feuerwehrberichte 145/26 (Hund im Gartentor) und 146/26 (freilaufender Hund, ins Tierheim gebracht), gemeinsame Themenkarte T2. Zweiter Bericht mit Datumswiderspruch. Sechs frühere Korrekturhinweise live weiter offen. Keine neuen lokalen Terminänderungen.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 6,
+      "new_corrections_required": 0,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "repository_area_files_read": 11,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "07.11.2026, 07:01:27–07:04:02 Europe/Berlin",
+      "deadline": "2026-11-07T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Feuerwehr 145/26 und 146/26: unabhängiger Ereignisbeleg fehlt",
+        "Feuerwehr 146/26: 05.11. im Kopf gegen Freitag 06.11. im Text",
+        "Sechs Korrekturhinweise aus dem Vorlauf noch sichtbar",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Jugendgremium: kein Ergebnis im gelesenen Vorgang",
+        "Pluriversum und kirchliche Terminquellen: fortbestehende Konflikte"
       ]
     }
   ]
