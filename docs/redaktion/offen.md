@@ -1,19 +1,18 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-08-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-08-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 44 |
+| uebernommen | 45 |
 | gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 3 |
 | veraltet | 1 |
-| gesperrt_unabhaengiger_beleg_fehlt | 1 |
 
 ## Offen (14)
 
@@ -150,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-08 nachmittags (Claude): Kein neues ChatGPT-Dossier, Pflichtquellen ohne Neues; Kurzmeldung S19-Störung (Stellwerk Köln, kein Halt am Flughafen) mit neuem Commons-Symbolfoto und Bildklasse verkehr.bahn; Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen. – Commit 319ba58
 - 2026-11-08 morgens (Claude): Nachhollauf nach Sitzungsausfall 05.11. abends bis 08.11. 12:40 (Läufe 06./07.11. und 16 Eil-Prüfungen ausgefallen). Sechs ChatGPT-Korrekturen umgesetzt (Wochenvorschau, Pluriversum, Martinszüge); neu: Kurzmeldung Feuerwehr 145–147/26 und Folgemeldung Pluriversum in Niederzier; Kalender 1 neu, 3 geändert, 20 bestätigt. – Commit 7712685
 - 2026-11-08 mittags (ChatGPT): Neu: Feuerwehr147/26 Türöffnung Steinpfahl, T2 mangels unabhängiger Bestätigung und offener Bildsichtung. S19-Update mit expliziten Haltausfällen, T2. Zusätzlicher Veranstalterbeleg für bekannten Gottesdienst15.11.; keine tatsächliche Terminänderung. Sechs alte Artikelkorrekturen weiter offen.
 - 2026-11-08 morgens (ChatGPT): S19-Störung fortgeschrieben: Umleitung jetzt Porz-Wahn–Köln Trimbornstraße, Ersatzbusse ergänzt. T2, tatsächliche Entstörungszeit und unabhängiger Ereignisbeleg fehlen. Sechs bekannte Artikelkorrekturen unverändert offen. Keine neuen örtlichen Themen oder Terminänderungen.
-- 2026-11-07 mittags (ChatGPT): Neu: S19-Umleitung wegen Stellwerkstörung im Flughafenbereich, T2 mangels unabhängiger Ereignisbestätigung. Neuer Veranstalterhinweis zur Messe 07.11., 17:30 Uhr, Kapelle Morschenich. Hundeeinsätze und sechs Artikelkorrekturen unverändert offen.

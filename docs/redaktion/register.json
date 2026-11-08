@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-08-claude-morgens.md",
+  "latest_dossier": "dossiers/2026-11-08-claude-nachmittags.md",
   "source_check_window": "08.11.2026, 12:05:09–12:09:21 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10917,14 +10917,14 @@
       "priority": "P2",
       "location_section": "alle Ortsteile/Verkehr/Bahnhof Merzenich",
       "change_type": "neue_betriebsstoerung",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "Commons-Dateiseite und Vorschau geprüft",
-      "dossier": "dossiers/2026-11-07-mittags.md",
-      "workflow_status": "gesperrt_unabhaengiger_beleg_fehlt",
-      "last_checked_at": "2026-11-08 morgens Europe/Berlin",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-08-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-08 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-08-recherche-claude-nachmittags.json → /leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
       "article_id": null,
-      "implementation_commit": null,
+      "implementation_commit": "319ba58",
       "dossier_history": [
         {
           "date": "2026-11-07",
@@ -10949,9 +10949,14 @@
           "date": "2026-11-08",
           "dossier": "dossiers/2026-11-08-claude-morgens.md",
           "heading": "3 · nicht umgesetzt"
+        },
+        {
+          "date": "2026-11-08",
+          "dossier": "dossiers/2026-11-08-claude-nachmittags.md",
+          "heading": "1 · MA-S19-STELLWERK-07112026"
         }
       ],
-      "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen. | Claude 08.11.: mobil.nrw 12:52 Uhr weiter gelistet (Ende-Feld 13:30, Ende nicht abschätzbar); nicht umgesetzt, kein Ereignis in Merzenich, Stand ändert sich stündlich."
+      "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen. | Claude 08.11.: mobil.nrw 12:52 Uhr weiter gelistet (Ende-Feld 13:30, Ende nicht abschätzbar); nicht umgesetzt, kein Ereignis in Merzenich, Stand ändert sich stündlich. | Claude 08.11. nachmittags: Kurzmeldung (295 Wörter) auf Grundlage mobil.nrw (offiziell, Stand 13:26 Uhr, gelesen 14:46 Uhr) und VRS (Linienweg); Widerspruch Ende-Feld 19:30 / Ende nicht abschätzbar benannt; Commons-Symbolfoto S-Bahn Porz-Wahn. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Nachtrag bei Entstörung."
     },
     {
       "id": "MA-FEUERWEHR-147-26",
@@ -12305,6 +12310,16 @@
       "implementation_commit": "7712685",
       "summary": "Nachhollauf nach Sitzungsausfall 05.11. abends bis 08.11. 12:40 (Läufe 06./07.11. und 16 Eil-Prüfungen ausgefallen). Sechs ChatGPT-Korrekturen umgesetzt (Wochenvorschau, Pluriversum, Martinszüge); neu: Kurzmeldung Feuerwehr 145–147/26 und Folgemeldung Pluriversum in Niederzier; Kalender 1 neu, 3 geändert, 20 bestätigt.",
       "publication": "Zwei neue Meldungen, drei Korrekturen und Terminänderungen direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-08",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-08-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-08-claude-morgens.md",
+      "implementation_commit": "319ba58",
+      "summary": "Kein neues ChatGPT-Dossier, Pflichtquellen ohne Neues; Kurzmeldung S19-Störung (Stellwerk Köln, kein Halt am Flughafen) mit neuem Commons-Symbolfoto und Bildklasse verkehr.bahn; Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

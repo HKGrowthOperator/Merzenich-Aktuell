@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [08.11.2026, Claude-Morgenlauf (Nachhollauf)](dossiers/2026-11-08-claude-morgens.md), Vergleichsbasis [ChatGPT 08.11. mittags](dossiers/2026-11-08-mittags.md) und [Claude 05.11. nachmittags](dossiers/2026-11-05-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [08.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-08-claude-nachmittags.md), davor [Claude 08.11. morgens (Nachhollauf)](dossiers/2026-11-08-claude-morgens.md); jüngstes ChatGPT-Dossier [08.11. mittags](dossiers/2026-11-08-mittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 08.11. nachmittags:** 1 neue Kurzmeldung „S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt“ (295 Wörter, mobil.nrw und VRS), neues Commons-Symbolfoto S-Bahn (Bildklasse `verkehr.bahn`). Sonst nichts Neues in den Pflichtquellen, Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen. Commit `319ba58`.
 
 **Umgesetzt am 08.11. (Nachhollauf, Start 12:42 Uhr):** Die Redaktionssitzung hing vom 05.11. abends bis 08.11. mittags; die Läufe am 06. und 07.11. und 16 Eil-Prüfungen sind ausgefallen, Mindesttakt 06./07.11. verfehlt. 2 neue Kurzmeldungen: „Drei Feuerwehreinsätze in Merzenich: Hund aus Gartentor befreit, Wohnung nach Hausnotruf geöffnet“ (145–147/26, 356 Wörter) und „Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier“ (320 Wörter). Korrigiert: Wochenvorschau 9.–15.11. (Girbelsrath Martinsfeier statt Umzug, Frühstückstreff ohne Ort, keine angekündigten Sperrungen, Pluriversum), Pluriversum-Artikel vom 16.10., Martinszüge. Kalender: Skatrunde 18.11. neu, 3 geändert, 20 bestätigt. Werkzeugpunkte: Feuerwehr-Automatik erkennt „Hund“ nicht, Termin-Automatik verwechselt gleichzeitige Termine am selben Ort. Commits `12e1944`, `7712685`, `f4bb6a8`.
 
