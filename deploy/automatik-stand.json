@@ -129,6 +129,14 @@
     "https://www.presseportal.de/blaulicht/pm/8/6385441": {
       "datei": "inhalte/umkreis/2026-11-06-polizei-automatik.json",
       "am": "2026-11-06"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6386118": {
+      "datei": "inhalte/umkreis/2026-11-08-polizei-automatik.json",
+      "am": "2026-11-08"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6386095": {
+      "datei": "inhalte/umkreis/2026-11-08-polizei-automatik.json",
+      "am": "2026-11-08"
     }
   }
 }

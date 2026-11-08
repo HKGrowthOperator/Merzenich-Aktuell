@@ -1,0 +1,21 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Verkehrsunfallflucht mit vier beschädigten Fahrzeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6386118",
+      "datum": "2026-11-08",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Verkehrsunfall mit schwer verletzter Person",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6386095",
+      "datum": "2026-11-08",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

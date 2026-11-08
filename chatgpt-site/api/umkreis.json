@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-06",
+ "stand": "2026-11-08",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,22 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Verkehrsunfall mit schwer verletzter Person",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6386095",
+   "datum": "2026-11-08",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Verkehrsunfallflucht mit vier beschädigten Fahrzeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6386118",
+   "datum": "2026-11-08",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
