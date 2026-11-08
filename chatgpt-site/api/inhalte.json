@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-08T12:56:00+01:00",
- "anzahl": 230,
+ "generated": "2026-11-08T14:47:00+01:00",
+ "anzahl": 231,
  "bestand": {
-  "gesamt": 230,
+  "gesamt": 231,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 33,
    "rathaus": 33,
-   "leben": 51,
+   "leben": 52,
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 158,
+   "merzenich": 159,
    "golzheim": 26,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 230,
+    "anzahl": 231,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 51,
+    "anzahl": 52,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 158,
+    "anzahl": 159,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
+   "url": "/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
+   "titel": "S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt",
+   "teaser": "Wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf werden die S-Bahnen der Linie S19 seit Samstagmorgen umgeleitet. Den Flughafen und die Frankfurter Straße in Köln fahren sie nicht an; wie lange, ist offen.",
+   "kicker": "Leben · Bahn",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-08T14:47:00+01:00",
+   "aktualisiert": "2026-11-08T14:47:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "bahn",
+     "label": "Bahn"
+    },
+    {
+     "slug": "verkehr",
+     "label": "Verkehr"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-24-960e0101ba.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-24-960e0101ba-480.webp 480w, /assets/editorial-pools/themen/themen-24-960e0101ba-800.webp 800w, /assets/editorial-pools/themen/themen-24-960e0101ba-1200.webp 1200w, /assets/editorial-pools/themen/themen-24-960e0101ba.jpg 1600w",
+    "alt": "S-Bahn EMU Class 423 at Porz-Wahn",
+    "width": 1600,
+    "height": 1200,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Qualle / Wikimedia Commons · CC BY 2.5",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-08-pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
    "url": "/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/",
@@ -9567,11 +9605,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-08-pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
-  "url": "/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/",
-  "titel": "Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier"
+  "id": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
+  "url": "/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
+  "titel": "S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-08-pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
+   "url": "/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/",
+   "titel": "Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier"
+  },
   {
    "id": "2026-11-08-feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026",
    "url": "/blaulicht/feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026/",
@@ -9586,11 +9629,6 @@
    "id": "2026-11-05-bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026",
    "url": "/rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
    "titel": "Bau-Turbo in Merzenich: Wann die Gemeinde Wohnungen ohne Bebauungsplan erlauben will"
-  },
-  {
-   "id": "2026-11-04-solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026",
-   "url": "/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
-   "titel": "Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim, Bauausschuss berät Offenlage"
   }
  ],
  "startseitenMotive": {
@@ -9634,6 +9672,7 @@
   "editorial-pools/themen/themen-16-b1fd3ef820": 1,
   "editorial-pools/themen/themen-19-deb8f481da": 2,
   "editorial-pools/themen/themen-23-f5560260b4": 2,
+  "editorial-pools/themen/themen-24-960e0101ba": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 1,
@@ -9643,7 +9682,6 @@
   "places/golzheim": 1,
   "places/merzenich": 1,
   "places/morschenich": 1,
-  "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
   "responsive/f507b5f3e2c7d3": 1
  },
@@ -9652,7 +9690,7 @@
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36",
   "editorial-pools/kultur/kultur-01-8826d38c5d",
   "editorial-pools/themen/themen-05-1ca58804a8",
-  "editorial-pools/themen/themen-23-f5560260b4"
+  "editorial-pools/themen/themen-24-960e0101ba"
  ],
  "motivMax": 2
 }

@@ -35,7 +35,7 @@
     "flaeche": 2,
     "verkehr": 20,
     "tipp": 21,
-    "themen": 23,
+    "themen": 24,
     "menschen": 20
   },
   "images": [
@@ -17209,6 +17209,33 @@
       "locality": "NRW",
       "geprueft": true,
       "checksum": "98f8acd4652cabd1973a4bf4ab119d811619155683a292b6e3e7f59d2bdb5ef1"
+    },
+    {
+      "id": "web-themen-24-960e0101",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-24-960e0101ba.jpg",
+      "alt": "S-Bahn EMU Class 423 at Porz-Wahn",
+      "credit": "Symbolbild · Qualle / Wikimedia Commons · CC BY 2.5",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A423194_Porz-Wahn_Nah.jpg",
+      "sourceTitle": "File:423194 Porz-Wahn Nah.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/423194_Porz-Wahn_Nah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "rightsCheckedAt": "2026-11-08",
+      "tags": [
+        "symbolbild",
+        "thema",
+        "423194"
+      ],
+      "width": 1600,
+      "height": 1200,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
+      "checksum": "f9b7af60ac2d5b705d597ad6f470ea06cc7159b5d07329e1d1c5e879568a1639"
     },
     {
       "id": "web-menschen-01-686bb6fb",

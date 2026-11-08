@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 08 Nov 2026 11:56:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</guid>
+<pubDate>Sun, 08 Nov 2026 13:47:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf werden die S-Bahnen der Linie S19 seit Samstagmorgen umgeleitet. Den Flughafen und die Frankfurter Straße in Köln fahren sie nicht an; wie lange, ist offen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-24-960e0101ba.jpg" medium="image"><media:credit>Qualle / Wikimedia Commons · CC BY 2.5</media:credit><media:description>S-Bahn EMU Class 423 at Porz-Wahn</media:description></media:content>
+</item>
 <item>
 <title>Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Das Ratsinformationssystem nennt sechs Sitzungen bis Dezember, vom Jugendgremium am 4. November bis zum Gemeinderat am 3. Dezember.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
-</item>
-<item>
-<title>Persönliches Budget: Aktionstag im Kreishaus am 5. November, Anmeldung über das Kreisportal noch möglich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:20:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Pressemitteilung nannte den 26. Oktober als Anmeldeschluss, das Anmeldeportal des Kreises nimmt Anmeldungen bis 2. November an.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
 </item>
 </channel>
 </rss>

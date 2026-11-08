@@ -382,6 +382,12 @@
         "seminarraum"
       ]
     },
+    "verkehr.bahn": {
+      "titel": "Bahn und S-Bahn: Störung, Zugausfall, Umleitung, Ersatzverkehr (Symbolbild, kein Foto des gemeldeten Ereignisses)",
+      "motive": [
+        "s-bahn"
+      ]
+    },
     "verkehr.baustelle": {
       "titel": "Baustelle, Fahrstreifensperrung oder Umleitung auf Straße und Autobahn; ohne lokales Motiv nur Ortsansicht",
       "motive": [

@@ -1,0 +1,82 @@
+{
+  "hinweis": "Nachmittagslauf 08.11.2026 (Claude, Routine 14:43). Störungsmeldung auf mobil.nrw um 12:52 und 14:46 Uhr gelesen (Stand der Meldung 13:26 Uhr), VRS-Haltestellen- und Linienseite 14:45 Uhr. ChatGPT führte die Störung als T2 (keine unabhängige Ereignisbestätigung); mobil.nrw ist offizielle Quelle, eine Kurzmeldung ist nach SCHREIBREGELN Abschnitt 0 gedeckt. Symbolfoto aus Commons neu im Pool themen.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Bahn",
+      "titel": "S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt",
+      "dek": "Wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf werden die S-Bahnen der Linie S19 seit Samstagmorgen umgeleitet. Den Flughafen und die Frankfurter Straße in Köln fahren sie nicht an; wie lange, ist offen.",
+      "datum": "2026-11-08T14:47:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "service": true,
+      "themen": [
+        [
+          "bahn",
+          "Bahn"
+        ],
+        [
+          "verkehr",
+          "Verkehr"
+        ]
+      ],
+      "bildklasse": "verkehr.bahn",
+      "absaetze": [
+        "Wer von Merzenich aus mit der S19 zum Flughafen Köln/Bonn fahren will, kommt derzeit nicht direkt ans Ziel. Nach der Störungsmeldung auf dem Verkehrsportal mobil.nrw ist die Strecke zwischen Köln Messe/Deutz und Troisdorf seit Samstag, 7. November, 8 Uhr beeinträchtigt. Als Grund nennt die Meldung ein defektes Stellwerk.",
+        "Die S-Bahnen der Linie S19 fahren deshalb zwischen Porz-Wahn und Köln Trimbornstraße in beiden Richtungen ohne Zwischenhalt über eine andere Strecke. Am Flughafen und an der Frankfurter Straße in Köln hält die S19 dadurch nicht. Zwischen Köln Messe/Deutz und Troisdorf sind vier Ersatzbusse im Einsatz, zwischen Köln Messe/Deutz und dem Flughafen zwei weitere, die für die ebenfalls betroffene Regionalexpresslinie RE 6 eingerichtet sind.",
+        "Wann die Störung behoben ist, lässt die Meldung offen. Im Text heißt es am Sonntag um 14.46 Uhr weiterhin, das Ende sei noch nicht abzuschätzen. Das Feld für das Ende nennt dagegen Sonntag, 19.30 Uhr; mittags hatte dort noch 13.30 Uhr gestanden. Fahrgäste sollten ihre Verbindung deshalb kurz vor der Abfahrt prüfen.",
+        "Für Merzenich ist die S19 die direkte Bahnverbindung nach Köln und zum Flughafen. Laut Verkehrsverbund Rhein-Sieg (VRS) hält sie am Bahnhof Merzenich und fährt über Horrem und Köln zum Flughafen, weiter nach Troisdorf, Siegburg/Bonn, Hennef und Au (Sieg). Unabhängig von der Störung in Köln fallen auf dem Abschnitt zwischen Blankenberg und Au wegen Sanierungsarbeiten noch bis 13. Dezember Züge aus.",
+        "Merzenich Aktuell ergänzt die Meldung, sobald die Strecke wieder frei ist."
+      ],
+      "fakten": [
+        "Störung seit Samstag, 7. November, 8 Uhr zwischen Köln Messe/Deutz und Troisdorf, Grund: defektes Stellwerk",
+        "S19 zwischen Porz-Wahn und Köln Trimbornstraße ohne Zwischenhalt umgeleitet; kein Halt am Flughafen und an der Frankfurter Straße",
+        "Ende offen (Stand Sonntag, 14.46 Uhr); Verbindung vor der Fahrt prüfen"
+      ],
+      "pruefung": [
+        {
+          "aussage": "mobil.nrw, Störung „Strecke zw. Köln Messe/Deutz und Troisdorf beeinträchtigt - Defektes Stellwerk“, Beginn 07.11.2026, 08:00 (7. November, 8 Uhr), Linien S 12, RE 6, RE 9 und S 19; Text: „Das Ende können wir leider noch nicht abschätzen“; Ende-Feld 08.11.2026, 19:30 (19.30 Uhr) beim Abruf 14:46 Uhr (14.46 Uhr), beim Abruf 12:52 Uhr 13:30 (13.30 Uhr); Meldungsstand 13:26 Uhr.",
+          "belege": [
+            "https://www.mobil.nrw/spnv-meldungen.html"
+          ],
+          "stelle": "SPNV-Meldungen, Eintrag „Defektes Stellwerk“ Köln Messe/Deutz–Troisdorf, Kopf und erster Absatz; gelesen 08.11.2026 12:52 und 14:46 Uhr"
+        },
+        {
+          "aussage": "S 19: zwischen Porz-Wahn und Köln Trimbornstraße in beide Richtungen ohne Zwischenhalt umgeleitet, Halte Köln/Bonn Flughafen und Köln Frankfurter Straße entfallen; SEV mit vier Bussen zwischen Köln Messe/Deutz und Troisdorf; RE 6: Teilausfälle Köln Messe/Deutz–Köln/Bonn Flughafen, SEV mit zwei Bussen zwischen Köln Messe/Deutz und Köln/Bonn Flughafen.",
+          "belege": [
+            "https://www.mobil.nrw/spnv-meldungen.html"
+          ],
+          "stelle": "SPNV-Meldungen, Absätze „RE 6 (RRX)“ und „S 19“, gelesen 08.11.2026 14:46 Uhr"
+        },
+        {
+          "aussage": "VRS: Haltestelle Merzenich Bf mit Linie S19; Linienverlauf S19 Düren - Horrem - Köln - Köln/Bonn Flughafen - Troisdorf - Siegburg/Bonn - Hennef - Au (Sieg); Fahrplanänderung 10.07.2026 bis 13.12.2026 (13. Dezember): Teilausfälle zwischen Blankenberg (Sieg) und Au (Sieg) wegen Sanierungsarbeiten.",
+          "belege": [
+            "https://www.vrs.de/his/haltestelle/de:05358:4738",
+            "https://www.vrs.de/lis/linie/de:nrw:s19:"
+          ],
+          "stelle": "VRS Haltestellenseite Merzenich Bf (Linienliste) und Linienseite S19 (Linienverlauf, Aktuelle Fahrplanänderungen), gelesen 08.11.2026 14:45 Uhr"
+        }
+      ],
+      "quelle": {
+        "name": "mobil.nrw, SPNV-Meldungen: „Strecke zw. Köln Messe/Deutz und Troisdorf beeinträchtigt – Defektes Stellwerk“ (Stand 08.11.2026, 13:26 Uhr)",
+        "url": "https://www.mobil.nrw/spnv-meldungen.html",
+        "stand": "2026-11-08"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Verkehrsverbund Rhein-Sieg (VRS), Haltestelle Merzenich Bf",
+          "url": "https://www.vrs.de/his/haltestelle/de:05358:4738",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Verkehrsverbund Rhein-Sieg (VRS), Linie S19: Linienverlauf und aktuelle Fahrplanänderungen",
+          "url": "https://www.vrs.de/lis/linie/de:nrw:s19:",
+          "stand": "2026-11-08"
+        }
+      ]
+    }
+  ]
+}

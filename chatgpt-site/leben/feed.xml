@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 08 Nov 2026 11:56:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</guid>
+<pubDate>Sun, 08 Nov 2026 13:47:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf werden die S-Bahnen der Linie S19 seit Samstagmorgen umgeleitet. Den Flughafen und die Frankfurter Straße in Köln fahren sie nicht an; wie lange, ist offen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-24-960e0101ba.jpg" medium="image"><media:credit>Qualle / Wikimedia Commons · CC BY 2.5</media:credit><media:description>S-Bahn EMU Class 423 at Porz-Wahn</media:description></media:content>
+</item>
 <item>
 <title>Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Das Kreisjahrbuch 2026 setzt den regionalen Wandel ins Zentrum – und nennt Bürgewald ausdrücklich als eines seiner Themen. Für Merzenich verbindet die Ausgabe damit Lokalgeschichte und die Frage, wie sich das Rheinische Revier nach dem Braunkohlezeitalter verändert.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/buergewald-1440.webp" medium="image"><media:credit>Antisyntagmatarchos / Wikimedia Commons · CC0</media:credit><media:description>Luftbild von Bürgewald, dem früheren Morschenich-Alt</media:description></media:content>
-</item>
-<item>
-<title>Schnullersäule kommt vom 12. bis 23. Oktober in die Kita St. Marien</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/schnullersaeule-kita-st-marien-merzenich-oktober-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/schnullersaeule-kita-st-marien-merzenich-oktober-2026/</guid>
-<pubDate>Sun, 04 Oct 2026 10:16:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Kinder können ihren Schnuller in der Kita St. Marien in Merzenich abgeben. Das Angebot der Frühen Hilfen des Kreises richtet sich auch an Familien, deren Kinder die Kita nicht besuchen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

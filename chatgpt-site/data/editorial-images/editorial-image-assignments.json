@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T11:58:20.619Z",
+  "updatedAt": "2026-11-08T13:48:46.781Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1637,6 +1637,15 @@
       "assignedAt": "2026-11-08T11:58:20.618Z",
       "articleId": "2026-11-08-feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026",
       "articleDate": "2026-11-08T12:55:00+01:00"
+    },
+    "/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/": {
+      "imageId": "web-themen-24-960e0101",
+      "pool": "themen",
+      "motiv": "s-bahn",
+      "regel": "verkehr.bahn",
+      "assignedAt": "2026-11-08T13:48:46.781Z",
+      "articleId": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
+      "articleDate": "2026-11-08T14:47:00+01:00"
     }
   }
 }
