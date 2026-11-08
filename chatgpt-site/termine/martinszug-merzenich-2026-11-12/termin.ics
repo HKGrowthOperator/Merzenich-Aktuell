@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:martinszug-merzenich-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:Martinszug in Merzenich
 DESCRIPTION:Der Martinszug startet um 18 Uhr an der Kirche an der Schulstra

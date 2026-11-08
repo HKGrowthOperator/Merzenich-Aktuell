@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11-10@merzenich
  -aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261110T173000Z
 SUMMARY:Infoabend „Private Krisenvorsorge“ des DRK im Bürgerhaus Merze
  nich

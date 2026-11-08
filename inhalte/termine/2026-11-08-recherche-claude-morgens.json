@@ -1,0 +1,32 @@
+{
+  "hinweis": "Kalenderpflege 08.11.2026, Nachhollauf (Claude): Heimat-Info-Veranstaltungskalender der Gemeinde Merzenich am 08.11.2026 um 12:44 Uhr gelesen. Die Automatik hatte die Skatrunde am 18.11. für den Frühstückstreff zur selben Zeit am selben Ort gehalten und deshalb nicht angelegt. Keine Privatpersonen; Kontaktnamen und Telefonnummern des Gemeindezentrums nicht übernommen.",
+  "termine": [
+    {
+      "slug": "maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-18",
+      "titel": "Männergruppe und Skatrunde für Senioren im Evangelischen Gemeindehaus",
+      "start": "2026-11-18T09:00:00+01:00",
+      "ende": "2026-11-18T11:00:00+01:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "Die Männergruppe mit Skatrunde für Senioren trifft sich mittwochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus Merzenich, auch am 18. November. Weitere Mitspieler sind willkommen.",
+      "absaetze": [
+        "Das Evangelische Gemeindezentrum Merzenich hat seine Männergruppe mit Skatrunde für Senioren auch für Mittwoch, 18. November 2026, in den Veranstaltungskalender der Gemeinde eingetragen. Gespielt wird von 9 bis 11 Uhr im Evangelischen Gemeindehaus an der Severin-Böhr-Straße; laut Ankündigung freut sich die Runde über weitere Mitspieler.",
+        "Zur selben Zeit trifft sich im Gemeindehaus der neue Frühstücks- und Spieletreff für Seniorinnen und Senioren (eigener Termin)."
+      ],
+      "links": [
+        [
+          "Eintrag im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/a8c9e12b-7d0c-447a-a649-292bc0d73250"
+        ]
+      ],
+      "quelle": {
+        "name": "Evangelisches Gemeindezentrum Merzenich, Veranstaltung „Männergruppe / Skatrunde für Senioren“ im Kalender der Gemeinde auf Heimat-Info vom 05.11.2026 (Selbstauskunft des Veranstalters)",
+        "url": "https://www.heimat-info.de/veranstaltungen/a8c9e12b-7d0c-447a-a649-292bc0d73250",
+        "stand": "2026-11-08"
+      }
+    }
+  ]
+}

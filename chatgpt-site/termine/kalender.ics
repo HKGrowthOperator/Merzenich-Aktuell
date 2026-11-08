@@ -488,7 +488,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:vhs-bildvortrag-paris-marienhof-2026-11-10@merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261110T143000Z
 DTEND:20261110T153000Z
 SUMMARY:VHS-Bildvortrag „Paris“ im Seniorenhaus Marienhof
@@ -505,7 +505,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:infoabend-krisenvorsorge-drk-buergerhaus-merzenich-2026-11-10@merzenich
  -aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261110T173000Z
 SUMMARY:Infoabend „Private Krisenvorsorge“ des DRK im Bürgerhaus Merze
  nich
@@ -562,7 +562,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinszug-golzheim-2026-11-11@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261111T163000Z
 SUMMARY:Martinszug in Golzheim
 DESCRIPTION:Um 17.30 Uhr Wortgottesdienst in der Pfarrkirche Golzheim\, um 
@@ -579,7 +579,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bauausschuss-sitzung-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:5. Sitzung des Bau-\, Planungs- und Umweltausschusses
 DESCRIPTION:Der Bau-\, Planungs- und Umweltausschuss tagt am Donnerstag\, 1
@@ -593,7 +593,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinszug-merzenich-2026-11-12@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261112T170000Z
 SUMMARY:Martinszug in Merzenich
 DESCRIPTION:Der Martinszug startet um 18 Uhr an der Kirche an der Schulstra
@@ -607,7 +607,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ttc-merzenich-jugend-vereinsmeisterschaften-2026-11-13@merzenich-aktuel
  l.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261113T163000Z
 DTEND:20261113T190000Z
 SUMMARY:Jugend-Vereinsmeisterschaften des TTC Merzenich (U15\, U19)
@@ -623,7 +623,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:martinsfeier-girbelsrath-2026-11-13@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261113T163000Z
 SUMMARY:Martinsfeier und Lichterfest in Girbelsrath
 DESCRIPTION:Martinsfeier um 17.30 Uhr in der Kirche\, danach Lichterfest mi
@@ -637,7 +637,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:erste-hilfe-kurs-golzheim-2026-11-14@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261114T080000Z
 DTEND:20261114T160000Z
 SUMMARY:Erste-Hilfe-Kurs der IG Golzheim aktiv im Pfarrheim Golzheim
@@ -653,7 +653,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261115T083000Z
 SUMMARY:Volkstrauertag: Kranzniederlegung in der Alten Kirche und Weckmanns
  chießen
@@ -686,7 +686,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:volkstrauertag-gedenken-friedhof-morschenich-2026-11-15@merzenich-aktue
  ll.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261115T103000Z
 SUMMARY:Volkstrauertag: Gedenkveranstaltung auf dem Friedhof Morschenich
 DESCRIPTION:Zum Volkstrauertag am Sonntag\, 15. November\, steht um 11.30 U
@@ -702,7 +702,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:taize-gottesdienst-morschenich-2026-11-15@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261115T160000Z
 SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
 DESCRIPTION:In der Lambertuskapelle Morschenich wird am Sonntag\, 15. Novem
@@ -753,6 +753,24 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-18@merzenich-ak
+ tuell.de
+DTSTAMP:20261108T060000Z
+DTSTART:20261118T080000Z
+DTEND:20261118T100000Z
+SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
+ haus
+DESCRIPTION:Die Männergruppe mit Skatrunde für Senioren trifft sich mittw
+ ochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus Merzenich\, auch am 18
+ . November. Weitere Mitspieler sind willkommen.\nVeranstalter: Evangelisch
+ es Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoperator.d
+ e/termine/maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-18/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/maennergruppe-ska
+ trunde-fuer-senioren-merzenich-2026-11-18/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
 DTSTAMP:20261108T060000Z
@@ -791,7 +809,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:mental-load-online-vortrag-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261118T170000Z
 DTEND:20261118T183000Z
 SUMMARY:Online-Vortrag „Mental Load“ des Kreises Düren
@@ -807,7 +825,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261119T090000Z
 DTEND:20261119T110000Z
 SUMMARY:Sprechstunde der Betreuungsbehörde im Rathaus
@@ -823,7 +841,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261119T170000Z
 SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
 DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
@@ -837,7 +855,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261121T120000Z
 DTEND:20261121T160000Z
 SUMMARY:Tag der Modelleisenbahn im Wasserturm
