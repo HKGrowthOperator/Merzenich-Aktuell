@@ -103,7 +103,7 @@ Arbeitsliste `node qa/redaktion-lauf.mjs --kalender` (08.11.2026 bis 07.01.2027,
 
 Commits: `12e1944` (Korrekturen und Termine), `7712685` (zwei Meldungen), `f4bb6a8` (Kalenderpflege; Rebase-Konflikt nur in `docs/SHA256SUMS.txt`, Stand von main übernommen, Kette neu), Dokumentation folgt. Abgleich angestoßen 12:59 Uhr (`angestossen: true`), wp-cron HTTP 200.
 
-Live-Nachweis 13:00 Uhr: beide neuen Meldungen HTTP 200, beide in der Nachrichten-Sitemap und oben in „Neu in Merzenich“ (Pluriversum vor Feuerwehr, dann Wochenvorschau und Bau-Turbo); Import-XML auf GitHub enthält beide Slugs, „Präzisiert am 8. November“ und die neue Pluriversum-Passage der Wochenvorschau. Korrekturen live: Wochenvorschau („Korrigiert am 8. November“), Pluriversum-Artikel („Aktualisiert am 8. November“), Martinszüge („Präzisiert am 8. November“); Termin 17.11. zeigt Niederzier und 18:00 Uhr, Workshop 11–13 Uhr. Skatrunde 18.11.: zum Zeitpunkt der Dossiererstellung noch 404 (Abgleich nach `f4bb6a8` steht aus), Nachweis unten.
+Live-Nachweis 13:00 Uhr: beide neuen Meldungen HTTP 200, beide in der Nachrichten-Sitemap und oben in „Neu in Merzenich“ (Pluriversum vor Feuerwehr, dann Wochenvorschau und Bau-Turbo); Import-XML auf GitHub enthält beide Slugs, „Präzisiert am 8. November“ und die neue Pluriversum-Passage der Wochenvorschau. Korrekturen live: Wochenvorschau („Korrigiert am 8. November“), Pluriversum-Artikel („Aktualisiert am 8. November“), Martinszüge („Präzisiert am 8. November“); Termin 17.11. zeigt Niederzier und 18:00 Uhr, Workshop 11–13 Uhr. Skatrunde 18.11.: nach dem Abgleich um 13:08 Uhr HTTP 200. Dokumentation `5af1106`.
 
 Freigaben im Backend: nicht geprüft (kein Zugang in dieser Sitzung bereitgestellt).
 
