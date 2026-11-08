@@ -524,18 +524,20 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-11
  @merzenich-aktuell.de
-DTSTAMP:20261105T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261111T080000Z
 DTEND:20261111T100000Z
-SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
- gelischen Gemeindehaus
+SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
+ ngelischen Gemeindezentrums
 DESCRIPTION:Der neue Frühstücks- und Spieletreff des Evangelischen Gemein
- dezentrums für Seniorinnen und Senioren trifft sich mittwochs von 9 bis 1
- 1 Uhr\, auch am 11. November. Anmeldung zum Frühstück erbeten.\nVeransta
- lter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk
- -growthoperator.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior-in
- nen-merzenich-2026-11-11/
-LOCATION:Evangelisches Gemeindehaus Merzenich
+ dezentrums Merzenich für Seniorinnen und Senioren ist auch für Mittwoch\
+ , 11. November\, von 9 bis 11 Uhr eingetragen. Der Eintrag nennt keinen Or
+ t\; eine Woche später trifft sich die Gruppe im Gemeindehaus an der Sever
+ in-Böhr-Straße. Anmeldung zum Frühstück erbeten.\nVeranstalter: Evange
+ lisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthopera
+ tor.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenic
+ h-2026-11-11/
+LOCATION:laut Veranstalter (Ort im Eintrag nicht genannt)
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-11/
 STATUS:CONFIRMED
@@ -543,7 +545,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-11@merzenich-ak
  tuell.de
-DTSTAMP:20261105T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261111T080000Z
 DTEND:20261111T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
@@ -668,7 +670,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ev-gottesdienst-gedenken-verstorbene-2026-11-15@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261115T090000Z
 SUMMARY:Evangelischer Gottesdienst mit Gedenken an die Verstorbenen
 DESCRIPTION:Am Sonntag\, 15. November\, feiert die Evangelische Gemeinde um
@@ -715,14 +717,18 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pluriversum-gesamtschule-merzenich-2026-11-17@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
-DTSTART:20261117T171500Z
-SUMMARY:„Pluriversum“: Impulse zu Klimaschutz und Zusammenhalt
-DESCRIPTION:Zweite Ausgabe des „Pluriversum“ mit entwicklungspolitische
- n Impulsen\, Musik und Projektionen\; eine Referentin wird live zugeschalt
- et.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growtho
- perator.de/termine/pluriversum-gesamtschule-merzenich-2026-11-17/
-LOCATION:Aula der Gesamtschule
+DTSTAMP:20261108T060000Z
+DTSTART:20261117T170000Z
+SUMMARY:„Pluriversum“ der Gemeinde Merzenich in der Gesamtschule Nieder
+ zier
+DESCRIPTION:Zweite Ausgabe des „Pluriversum“ der Gemeinde Merzenich mit
+  entwicklungspolitischen Impulsen\, Musik und Projektionen\, nach der jün
+ gsten Ankündigung ab 18 Uhr in der Aula der Gesamtschule in Niederzier. G
+ eändert: zunächst war die Aula an der Schulstraße in Merzenich um 18.15
+  Uhr angekündigt.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichakt
+ uell.hk-growthoperator.de/termine/pluriversum-gesamtschule-merzenich-2026-
+ 11-17/
+LOCATION:Aula der Gesamtschule\, Standort Niederzier
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
  tschule-merzenich-2026-11-17/
 STATUS:CONFIRMED
@@ -730,7 +736,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18
  @merzenich-aktuell.de
-DTSTAMP:20261105T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261118T080000Z
 DTEND:20261118T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
@@ -749,25 +755,26 @@ END:VEVENT
 BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
-DTSTAMP:20261104T060000Z
-DTSTART:20261118T090000Z
-DTEND:20261118T110000Z
-SUMMARY:„Pluriversum“-Workshop zu sozialem und ökologischem Engagement
-  in der Gesamtschule
-DESCRIPTION:Am Morgen nach dem „Pluriversum“-Abend lädt die Gemeinde M
- erzenich am Mittwoch\, 18. November\, von 10 bis 12 Uhr zu einem Workshop 
- in die Gesamtschule ein. Er steht Schülerinnen und Schülern und allen In
- teressierten offen.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichak
- tuell.hk-growthoperator.de/termine/pluriversum-workshop-engagement-gesamts
- chule-merzenich-2026-11-18/
-LOCATION:Gesamtschule Niederzier/Merzenich
+DTSTAMP:20261108T060000Z
+DTSTART:20261118T100000Z
+DTEND:20261118T120000Z
+SUMMARY:„Pluriversum“-Workshop der Gemeinde Merzenich zu sozialem und 
+ ökologischem Engagement in der Gesamtschule Niederzier
+DESCRIPTION:Am Tag nach dem „Pluriversum“-Abend lädt die Gemeinde Merz
+ enich am Mittwoch\, 18. November\, von 11 bis 13 Uhr zu einem Workshop in 
+ die Gesamtschule in Niederzier ein. Er steht Schülerinnen und Schülern u
+ nd allen Interessierten offen. Geändert: zunächst waren 10 bis 12 Uhr an
+ gekündigt.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk
+ -growthoperator.de/termine/pluriversum-workshop-engagement-gesamtschule-me
+ rzenich-2026-11-18/
+LOCATION:Gesamtschule\, Standort Niederzier
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-works
  hop-engagement-gesamtschule-merzenich-2026-11-18/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:senioren-nachmittag-ev-gemeindehaus-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261105T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261118T140000Z
 DTEND:20261118T160000Z
 SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
@@ -847,7 +854,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22@merzenich
  -aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261108T060000Z
 DTSTART:20261122T090000Z
 SUMMARY:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
 DESCRIPTION:„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am S

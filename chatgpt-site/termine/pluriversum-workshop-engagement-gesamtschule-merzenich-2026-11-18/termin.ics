@@ -3,25 +3,26 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:„Pluriversum“-Workshop zu sozialem und ökologischem Engag
- ement in der Gesamtschule
+X-WR-CALNAME:„Pluriversum“-Workshop der Gemeinde Merzenich zu sozialem 
+ und ökologischem Engagement in der Gesamtschule Niederzier
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
-DTSTAMP:20261104T060000Z
-DTSTART:20261118T090000Z
-DTEND:20261118T110000Z
-SUMMARY:„Pluriversum“-Workshop zu sozialem und ökologischem Engagement
-  in der Gesamtschule
-DESCRIPTION:Am Morgen nach dem „Pluriversum“-Abend lädt die Gemeinde M
- erzenich am Mittwoch\, 18. November\, von 10 bis 12 Uhr zu einem Workshop 
- in die Gesamtschule ein. Er steht Schülerinnen und Schülern und allen In
- teressierten offen.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichak
- tuell.hk-growthoperator.de/termine/pluriversum-workshop-engagement-gesamts
- chule-merzenich-2026-11-18/
-LOCATION:Gesamtschule Niederzier/Merzenich
+DTSTAMP:20261108T060000Z
+DTSTART:20261118T100000Z
+DTEND:20261118T120000Z
+SUMMARY:„Pluriversum“-Workshop der Gemeinde Merzenich zu sozialem und 
+ ökologischem Engagement in der Gesamtschule Niederzier
+DESCRIPTION:Am Tag nach dem „Pluriversum“-Abend lädt die Gemeinde Merz
+ enich am Mittwoch\, 18. November\, von 11 bis 13 Uhr zu einem Workshop in 
+ die Gesamtschule in Niederzier ein. Er steht Schülerinnen und Schülern u
+ nd allen Interessierten offen. Geändert: zunächst waren 10 bis 12 Uhr an
+ gekündigt.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk
+ -growthoperator.de/termine/pluriversum-workshop-engagement-gesamtschule-me
+ rzenich-2026-11-18/
+LOCATION:Gesamtschule\, Standort Niederzier
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-works
  hop-engagement-gesamtschule-merzenich-2026-11-18/
 STATUS:CONFIRMED

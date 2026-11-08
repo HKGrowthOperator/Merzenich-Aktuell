@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-05-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-08-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -13,6 +13,9 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | zur_abnahme | 5 |
 | in_bearbeitung | 3 |
 | veraltet | 1 |
+| gesperrt_quellen_und_datum | 1 |
+| gesperrt_unabhaengiger_beleg_fehlt | 1 |
+| gesperrt_unabhaengiger_beleg_und_bildpruefung | 1 |
 
 ## Offen (14)
 
@@ -149,7 +152,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
-- 2026-11-05 nachmittags (Claude): Bau-Turbo korrigiert (drei Monate nach § 36a BauGB u. a.); Martinszüge mit Polizei-Tipps; Automatik-Termine 11.11. bereinigt, Automatik erkennt fehlende Ortszeile; neu Wochenvorschau 9.–15.11. (Standard 845 Wörter). – Commit 1dca005
-- 2026-11-05 mittags (ChatGPT): Bau-Turbo: Gemeindezustimmung nach §36a BauGB grundsätzlich drei Monate. Höhenschwellen laut Synopse >1 m bzw. >0,5 m. Zusätzlicher Präzisierungsbedarf bei Vorab-Abstimmung und Vertragsregel. PV-Erdwallkorrektur und Fristkonflikt-Nachtrag live bestätigt. Keine neuen örtlichen Themen oder Terminänderungen in den geprüften Wegen.
-- 2026-11-05 morgens (Claude): Korrektur Erdwall (Solarpark Golzheim); neu Bau-Turbo-Leitlinien (Standard 845 Wörter, 142/2026); Termine: Fristkonflikt Kindergottesdienst, Hinweis Senioren-Nachmittag, zwei Automatik-Termine ohne Name und Nummer; automatik-termine filtert „Kontakt:“ und Kurznummern. – Commit dee5f0f
-- 2026-11-05 morgens (ChatGPT): Fanclub-Jubiläumsabend 30.10.2027 neu angekündigt, T2. Frühstücks- und Spieletreff bereits automatisch erfasst. Fristkonflikt Frühstück beim Kindergottesdienst, Datumsdiskrepanz im App-Eintrag zum Senioren-Nachmittag. DRK-Abend laut Gemeindeindex kostenlos. PV Golzheim: Erdwallhöhe präzisieren. Beide Anlagenkorrekturen live bestätigt. Jugendgremium ohne öffentliches Ergebnis im gelesenen RIS.
+- 2026-11-08 mittags (ChatGPT): Neu: Feuerwehr147/26 Türöffnung Steinpfahl, T2 mangels unabhängiger Bestätigung und offener Bildsichtung. S19-Update mit expliziten Haltausfällen, T2. Zusätzlicher Veranstalterbeleg für bekannten Gottesdienst15.11.; keine tatsächliche Terminänderung. Sechs alte Artikelkorrekturen weiter offen.
+- 2026-11-08 morgens (ChatGPT): S19-Störung fortgeschrieben: Umleitung jetzt Porz-Wahn–Köln Trimbornstraße, Ersatzbusse ergänzt. T2, tatsächliche Entstörungszeit und unabhängiger Ereignisbeleg fehlen. Sechs bekannte Artikelkorrekturen unverändert offen. Keine neuen örtlichen Themen oder Terminänderungen.
+- 2026-11-07 mittags (ChatGPT): Neu: S19-Umleitung wegen Stellwerkstörung im Flughafenbereich, T2 mangels unabhängiger Ereignisbestätigung. Neuer Veranstalterhinweis zur Messe 07.11., 17:30 Uhr, Kapelle Morschenich. Hundeeinsätze und sechs Artikelkorrekturen unverändert offen.
+- 2026-11-07 morgens (ChatGPT): Neu: Feuerwehrberichte 145/26 (Hund im Gartentor) und 146/26 (freilaufender Hund, ins Tierheim gebracht), gemeinsame Themenkarte T2. Zweiter Bericht mit Datumswiderspruch. Sechs frühere Korrekturhinweise live weiter offen. Keine neuen lokalen Terminänderungen.

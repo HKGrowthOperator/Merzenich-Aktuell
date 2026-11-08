@@ -3,19 +3,24 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:„Pluriversum“: Impulse zu Klimaschutz und Zusammenhalt
+X-WR-CALNAME:„Pluriversum“ der Gemeinde Merzenich in der Gesamtschule N
+ iederzier
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:pluriversum-gesamtschule-merzenich-2026-11-17@merzenich-aktuell.de
-DTSTAMP:20261103T060000Z
-DTSTART:20261117T171500Z
-SUMMARY:„Pluriversum“: Impulse zu Klimaschutz und Zusammenhalt
-DESCRIPTION:Zweite Ausgabe des „Pluriversum“ mit entwicklungspolitische
- n Impulsen\, Musik und Projektionen\; eine Referentin wird live zugeschalt
- et.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growtho
- perator.de/termine/pluriversum-gesamtschule-merzenich-2026-11-17/
-LOCATION:Aula der Gesamtschule
+DTSTAMP:20261108T060000Z
+DTSTART:20261117T170000Z
+SUMMARY:„Pluriversum“ der Gemeinde Merzenich in der Gesamtschule Nieder
+ zier
+DESCRIPTION:Zweite Ausgabe des „Pluriversum“ der Gemeinde Merzenich mit
+  entwicklungspolitischen Impulsen\, Musik und Projektionen\, nach der jün
+ gsten Ankündigung ab 18 Uhr in der Aula der Gesamtschule in Niederzier. G
+ eändert: zunächst war die Aula an der Schulstraße in Merzenich um 18.15
+  Uhr angekündigt.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichakt
+ uell.hk-growthoperator.de/termine/pluriversum-gesamtschule-merzenich-2026-
+ 11-17/
+LOCATION:Aula der Gesamtschule\, Standort Niederzier
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
  tschule-merzenich-2026-11-17/
 STATUS:CONFIRMED
