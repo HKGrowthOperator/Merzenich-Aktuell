@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T13:56:39.978Z",
+  "updatedAt": "2026-11-08T11:58:20.619Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1619,6 +1619,24 @@
       "assignedAt": "2026-11-05T13:56:39.977Z",
       "articleId": "2026-11-05-merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag",
       "articleDate": "2026-11-05T14:55:00+01:00"
+    },
+    "/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/": {
+      "imageId": "web-kultur-01-8826d38c",
+      "pool": "kultur",
+      "motiv": "veranstaltungssaal",
+      "regel": "leben.veranstaltung",
+      "assignedAt": "2026-11-08T11:57:29.656Z",
+      "articleId": "2026-11-08-pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
+      "articleDate": "2026-11-08T12:56:00+01:00"
+    },
+    "/blaulicht/feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026/": {
+      "imageId": "web-feuerwehr-17-06a888ad",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-11-08T11:58:20.618Z",
+      "articleId": "2026-11-08-feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026",
+      "articleDate": "2026-11-08T12:55:00+01:00"
     }
   }
 }

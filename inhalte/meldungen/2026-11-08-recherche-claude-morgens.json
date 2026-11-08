@@ -1,0 +1,240 @@
+{
+  "hinweis": "Nachhollauf 08.11.2026 (Routine 09:13, Start 12:42 Uhr nach Sitzungsausfall seit 05.11. abends), Claude. Feuerwehr Merzenich, Einsatzberichte 145/26, 146/26 und 147/26 auf Heimat-Info, am 08.11.2026 gelesen; Einordnung aus dem eigenen Archiv. Die Automatik hatte 145/26 und 146/26 übersprungen (keine Bildklasse für „Hund“). Dazu Folgemeldung „Pluriversum“: Gemeinde Merzenich, Beitrag auf Heimat-Info vom 06.11.2026 und Veranstaltungskalender, am 08.11.2026 gelesen, Amtsblatt Nr. 11 vom 16.10.2026 (älterer Stand).",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Blaulicht · Feuerwehr",
+      "titel": "Drei Feuerwehreinsätze in Merzenich: Hund aus Gartentor befreit, Wohnung nach Hausnotruf geöffnet",
+      "dek": "Zwischen Donnerstag und Samstag ist die Freiwillige Feuerwehr Merzenich dreimal im Hauptort ausgerückt: zweimal wegen eines Hundes, einmal, weil ein Mensch hinter einer verschlossenen Tür Hilfe brauchte.",
+      "datum": "2026-11-08T12:55:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "blaulicht",
+          "Blaulicht"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "absaetze": [
+        "Am Donnerstagnachmittag, 5. November, ist die Löschgruppe Merzenich in die Händelstraße gerufen worden. Ein Hund hatte sich dort mit einer Pfote in einem Gartentor verfangen und kam allein nicht mehr frei. Nach dem Bericht der Feuerwehr begannen die Einsatzkräfte sofort mit einer technischen Rettung, befreiten das Tier rasch und gaben es seinem Besitzer zurück. Die Wehr führt den Einsatz unter der Nummer 145/26 und dem Meldebild „Tier in Zwangslage“.",
+        "Mit einem zweiten Hund hatte es die Tagesalarmgruppe in der Schulstraße zu tun. Mitarbeiter des Bauhofs hatten das Tier frei herumlaufend angetroffen und festgehalten; die Feuerwehr übernahm es und brachte es ins Tierheim (Einsatz 146/26). Beim Datum widerspricht sich der Bericht: Im Kopf steht der 5. November, im Text ist vom Freitagmorgen die Rede, also vom 6. November.",
+        "Am Samstagabend, 7. November, erreichte die Leitstelle über einen Hausnotruf die Meldung, dass am Steinpfahl eine Person hinter einer verschlossenen Wohnungstür Hilfe brauchte. Ausgerückt sind die Löschgruppen Merzenich und Morschenich, dazu Kräfte des FTZ in Stockheim und der Rettungsdienst. Die Feuerwehr öffnete die Wohnung, ohne die Tür aufzubrechen, und übergab die Person dem Rettungsdienst (Einsatz 147/26). Wie es ihr geht, schreibt die Feuerwehr nicht.",
+        "Mit diesem Einsatz hat Merzenich Aktuell seit dem 5. September über sieben Einsätze mit dem Stichwort „Person hinter Tür“ berichtet, im Hauptort ebenso wie in Golzheim, Girbelsrath und Morschenich. Am Steinpfahl war die Wehr schon am 5. September im Einsatz; damals öffnete der Bewohner die Haustür noch selbst, bevor die Kräfte eingreifen mussten. In Morschenich betreuten die Einsatzkräfte am 3. Oktober eine Person durch das Fenster, bis ein Angehöriger mit dem Schlüssel kam. Einen frei laufenden Hund hatte die Tagesalarmgruppe zuletzt am 20. August an der L264 aufgenommen und ins Tierheim Düren gebracht, weil sich über den Chip kein Halter fand.",
+        "Ihre Einsätze meldet die Feuerwehr Merzenich zuerst in der Heimat-Info-App. Auf ihrer Website reichen die ausführlichen Einsatzberichte bislang bis zur Nummer 140/26 (Stand 8. November)."
+      ],
+      "fakten": [
+        "145/26, 5. November, Händelstraße: Hund mit Pfote im Gartentor, befreit, Löschgruppe Merzenich",
+        "146/26, Schulstraße: frei laufender Hund vom Bauhof gesichert, ins Tierheim; Datum 5. oder 6. November",
+        "147/26, 7. November abends, Steinpfahl: Hausnotruf, Wohnung ohne Gewalt geöffnet, Person an den Rettungsdienst übergeben"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Einsatz 145/26, Datum 05.11.2026 (5. November), Donnerstag Nachmittag, Stichwort TIN, Meldung „Hund im Gartentor“, Einsatzort Merzenich - Händelstraße, Löschgruppe Merzenich, Meldebild „Tier in Zwangslage“; Hund mit einer Pfote im Gartentor eingeklemmt, sofort technische Rettung, schnell befreit, dem Eigentümer übergeben.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/7b525257-bcda-4521-b8a5-8704d5855ea7"
+          ],
+          "stelle": "Feuerwehr Merzenich auf Heimat-Info, Beitrag vom 06.11.2026, 13:30 Uhr: Einsatzblock und Bericht",
+          "selbstauskunft": "Einsatzbericht der Freiwilligen Feuerwehr Merzenich über ihren eigenen Einsatz, veröffentlicht über ihr Profil in der Heimat-Info-App"
+        },
+        {
+          "aussage": "Einsatz 146/26, Kopf: Datum 05.11.2026 (5. November), Stichwort TIF, Meldung „Zugelaufener Hund“, Einsatzort Merzenich - Schulstraße, Tagesalarmgruppe; Text: „am Freitag Morgen“ (Freitag = 6. November) Tierfang, Mitarbeiter des Bauhof hatten einen freilaufenden Hund gesichert, Tier ins Tierheim gebracht.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/978800db-8698-4711-860c-8283071b761f"
+          ],
+          "stelle": "Feuerwehr Merzenich auf Heimat-Info, Beitrag vom 06.11.2026, 20:22 Uhr: Einsatzblock und Bericht; Widerspruch Kopf/Text",
+          "selbstauskunft": "Einsatzbericht der Freiwilligen Feuerwehr Merzenich über ihren eigenen Einsatz, veröffentlicht über ihr Profil in der Heimat-Info-App"
+        },
+        {
+          "aussage": "Einsatz 147/26, Datum 07.11.2026 (7. November), Samstag Abend, Stichwort PET, Meldung „Person hinter Tür“, Einsatzort Merzenich - Steinpfahl, Kräfte LG Merzenich, LG Morschenich, FTZ Stockheim, Rettungsdienst; über den Hausnotruf Meldung an die Leitstelle, Wohnung gewaltfrei geöffnet, Patient dem Rettungsdienst übergeben; kein Gesundheitszustand genannt.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/4c34e523-8088-4eec-a023-b3b4091d8003"
+          ],
+          "stelle": "Feuerwehr Merzenich auf Heimat-Info, Beitrag vom 08.11.2026, 10:33 Uhr: Einsatzblock und Bericht",
+          "selbstauskunft": "Einsatzbericht der Freiwilligen Feuerwehr Merzenich über ihren eigenen Einsatz, veröffentlicht über ihr Profil in der Heimat-Info-App"
+        },
+        {
+          "aussage": "Archiv: sieben Einsätze mit Stichwort „Person hinter Tür“ seit 5. September, über die Merzenich Aktuell berichtet hat: 123/26 Steinpfahl 5. September (Bewohner öffnete selbst), 130/26 Golzheim, 135/26 Girbelsrath, 137/26 Morschenich 3. Oktober (Person durchs Fenster betreut, Angehöriger mit Schlüssel), 138/26 Merzenich Steinweg, 140/26 Golzheim, 147/26 Steinpfahl.",
+          "belege": [
+            "https://merzenich-aktuell.de/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+            "https://merzenich-aktuell.de/blaulicht/einsatz-130-person-hinter-tuer-golzheim/",
+            "https://merzenich-aktuell.de/blaulicht/einsatz-135-person-hinter-tuer-girbelsrath/",
+            "https://merzenich-aktuell.de/blaulicht/einsatz-137-person-hinter-tuer-morschenich/",
+            "https://merzenich-aktuell.de/blaulicht/einsatz-138-person-hinter-tuer-merzenich/",
+            "https://merzenich-aktuell.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/"
+          ],
+          "stelle": "Eigene Meldungen im Archiv, je erster Absatz; alle am 08.11.2026 mit HTTP 200 abgerufen",
+          "selbstauskunft": "eigenes Archiv: frühere Meldungen von Merzenich Aktuell, jeweils auf Grundlage der Einsatzberichte der Feuerwehr Merzenich"
+        },
+        {
+          "aussage": "Einsatz 120/26: Tagesalarmgruppe am 20. August an der L264, freilaufender Hund von Passanten gesichert, Halter über Chip nicht ermittelbar, Hund ins Tierheim Düren.",
+          "belege": [
+            "https://merzenich-aktuell.de/blaulicht/einsatz-120-hund-l264/"
+          ],
+          "stelle": "Eigene Meldung im Archiv, erster Absatz",
+          "selbstauskunft": "eigenes Archiv: frühere Meldung von Merzenich Aktuell auf Grundlage des Einsatzberichts der Feuerwehr Merzenich"
+        },
+        {
+          "aussage": "Einsatzliste auf feuerwehr-merzenich.de reicht am 08.11.2026 (8. November) bis 140/26 Golzheim - Buirer Straße; neuere Einsätze nur auf Heimat-Info.",
+          "belege": [
+            "https://feuerwehr-merzenich.de/einsaetze"
+          ],
+          "stelle": "Einsatzliste, erster Eintrag, abgerufen 08.11.2026 12:45 Uhr"
+        }
+      ],
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 147/26 auf Heimat-Info vom 08.11.2026, 10:33 Uhr",
+        "url": "https://www.heimat-info.de/beitraege/4c34e523-8088-4eec-a023-b3b4091d8003",
+        "stand": "2026-11-08"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 145/26 auf Heimat-Info vom 06.11.2026, 13:30 Uhr",
+          "url": "https://www.heimat-info.de/beitraege/7b525257-bcda-4521-b8a5-8704d5855ea7",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Einsatzbericht 146/26 auf Heimat-Info vom 06.11.2026, 20:22 Uhr",
+          "url": "https://www.heimat-info.de/beitraege/978800db-8698-4711-860c-8283071b761f",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Freiwillige Feuerwehr Merzenich, Einsatzliste auf der Website",
+          "url": "https://feuerwehr-merzenich.de/einsaetze",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: „Person hinter Tür“ am Steinpfahl, Einsatz 123/26 (05.09.2026)",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-123-person-hinter-tuer-steinpfahl/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Einsatz 130/26 in Golzheim",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-130-person-hinter-tuer-golzheim/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Einsatz 135/26 in Girbelsrath",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-135-person-hinter-tuer-girbelsrath/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Türöffnung in Morschenich, Einsatz 137/26 (03.10.2026)",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-137-person-hinter-tuer-morschenich/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Einsatz 138/26 in Merzenich",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-138-person-hinter-tuer-merzenich/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Einsatz 140/26 in Golzheim",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-140-person-hinter-tuer-golzheim/",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: Freilaufender Hund an der L264, Einsatz 120/26 (20.08.2026)",
+          "url": "https://merzenich-aktuell.de/blaulicht/einsatz-120-hund-l264/",
+          "stand": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "slug": "pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Veranstaltung",
+      "titel": "Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier",
+      "dek": "Die Gemeinde Merzenich hat Ort und Zeiten ihres zweiten „Pluriversum“ geändert. Statt an der Schulstraße in Merzenich treffen sich die Gäste in der Aula am Standort Niederzier, der Workshop am Tag danach beginnt eine Stunde später.",
+      "datum": "2026-11-08T12:56:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "veranstaltungen",
+          "Veranstaltungen"
+        ],
+        [
+          "klimaschutz",
+          "Klimaschutz"
+        ]
+      ],
+      "bildklasse": "leben.veranstaltung",
+      "absaetze": [
+        "Wer sich das „Pluriversum“ der Gemeinde Merzenich vorgemerkt hat, muss umplanen. In einem Beitrag in der Heimat-Info-App vom 6. November nennt die Gemeinde als Ort für den Abend am Dienstag, 17. November, die Aula der Gesamtschule Am Weiherhof in Niederzier. Beginn ist nach dieser Ankündigung um 18 Uhr. Im Amtsblatt vom 16. Oktober hatte die Gemeinde noch die Aula an der Schulstraße in Merzenich und 18.15 Uhr angegeben.",
+        "Verschoben ist auch der Workshop am Mittwoch, 18. November: Nach der neuen Ankündigung dauert er von 11 bis 13 Uhr und findet wie der Abend am Niederzierer Standort statt; im Amtsblatt standen 10 bis 12 Uhr. Eingeladen sind Schülerinnen und Schüler und alle anderen Interessierten. Es geht um Wege, sich sozial und ökologisch zu engagieren; leiten sollen den Vormittag die Moderatoren der Pluriversum-Reihe gemeinsam mit Verbänden aus der Region.",
+        "Ganz einheitlich sind die Angaben der Gemeinde beim Abendbeginn noch nicht. Ihr Eintrag im Veranstaltungskalender der App führt inzwischen ebenfalls die Aula in Niederzier als Ort, im Kopf aber weiter 18.15 Uhr, und im Beschreibungstext darunter steht noch die Schulstraße in Merzenich. Wer pünktlich sein will, plant mit 18 Uhr.",
+        "Am Programm selbst ändert sich nach den Ankündigungen nichts. Es geht um Klimakrise, Artenverlust und wachsende Ungleichheit und darum, wie ökologischer Wandel gemeinsam gelingen kann, mit Impulsen aus aller Welt, Musik und Projektionen. Eine Referentin wird live zugeschaltet, danach bleibt Zeit für Gespräche und Vernetzung. Die Gemeinde lädt zum zweiten Mal zu diesem Format ein; die Sparkasse Düren unterstützt die Reihe.",
+        "Merzenich Aktuell hat seinen Bericht vom 16. Oktober und die beiden Termine im Kalender an den neuen Stand angepasst."
+      ],
+      "fakten": [
+        "Abend: Dienstag, 17. November 2026, ab 18 Uhr, Aula der Gesamtschule Am Weiherhof in Niederzier (Kalendereintrag: 18.15 Uhr)",
+        "Workshop: Mittwoch, 18. November, 11 bis 13 Uhr, Gesamtschule Niederzier, offen für alle",
+        "Bisher angekündigt (Amtsblatt 16. Oktober): Aula an der Schulstraße in Merzenich, 18.15 Uhr; Workshop 10 bis 12 Uhr"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Gemeinde-Beitrag vom 06.11.2026 (6. November), 09:30 Uhr: zweites Pluriversum Dienstag, 17. November 2026, ab 18 Uhr in der Aula der Gesamtschule Am Weiherhof in Niederzier; Workshop am nächsten Tag, 18. November 2026, von 11 bis 13 Uhr (11 Uhr, 13 Uhr), ebenfalls Gesamtschule Niederzier, offen für Schüler*innen und alle anderen Interessierten, geleitet von den Pluriversum-Moderator*innen und lokalen Verbänden aus der Region; Diana Flores Rojas live zugeschaltet; Sparkasse Düren unterstützt; Klimakrise, Artenverlust, wachsende Ungleichheit; Musik und Projektionen; Austausch und Vernetzung.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/93f8c611-df39-4544-bee9-38a3b6c6012a"
+          ],
+          "stelle": "Heimat-Info, Beitrag der Gemeinde Merzenich vom 06.11.2026, 09:30 Uhr, alle Absätze",
+          "selbstauskunft": "Ankündigung der Gemeinde Merzenich als Veranstalterin über ihr offizielles Profil („Die Rathaus-Infos“) in der Heimat-Info-App"
+        },
+        {
+          "aussage": "Amtsblatt Nr. 11 vom 16.10.2026 (16. Oktober): Pluriversum ab 18:15 Uhr (18.15 Uhr) in der Aula der Gesamtschule an der Schulstraße in Merzenich; Workshop 18. November 10 bis 12 Uhr; „zum zweiten Mal“.",
+          "belege": [
+            "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf"
+          ],
+          "stelle": "Amtsblatt 11/2026, PDF-Seite 6 (Heftseite 4), „Gemeinde Merzenich lädt erneut ein zum „Pluriversum“!“"
+        },
+        {
+          "aussage": "Veranstaltungskalender der Gemeinde: Kopf 17.11.2026 18:15 (18.15 Uhr), Ort „Aula der Gesamtschule Niederzier“; Beschreibung: ab 18:15 Uhr in der Aula der Gesamtschule an der Schulstraße in Merzenich.",
+          "belege": [
+            "https://www.heimat-info.de/veranstaltungen/671697c5-6e42-41cd-8f80-11b2ee1894ea"
+          ],
+          "stelle": "Heimat-Info, Veranstaltung „Pluriversum“ (eingetragen 21.10.2026), Kopf und Beschreibungstext, gelesen 08.11.2026 12:45 Uhr",
+          "selbstauskunft": "Ankündigung der Gemeinde Merzenich als Veranstalterin über ihr offizielles Profil („Die Rathaus-Infos“) in der Heimat-Info-App"
+        },
+        {
+          "aussage": "Merzenich Aktuell: Bericht vom 16. Oktober und die zwei Kalendertermine (17. und 18. November) am 8. November angepasst.",
+          "belege": [
+            "https://merzenich-aktuell.de/leben/pluriversum-17-november-2026-gesamtschule-merzenich/"
+          ],
+          "stelle": "eigener Artikel, Nachtrag vom 8. November; Commit 12e1944",
+          "selbstauskunft": "eigenes Archiv: Korrektur der Redaktion am 8. November 2026"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beitrag „„Pluriversum“! – Erleben Sie die Zukunft!“ auf Heimat-Info vom 06.11.2026, 09:30 Uhr",
+        "url": "https://www.heimat-info.de/beitraege/93f8c611-df39-4544-bee9-38a3b6c6012a",
+        "stand": "2026-11-08"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 4: „Gemeinde Merzenich lädt erneut ein zum „Pluriversum“!“ (älterer Stand)",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Gemeinde Merzenich, Veranstaltung „Pluriversum“ im Kalender auf Heimat-Info",
+          "url": "https://www.heimat-info.de/veranstaltungen/671697c5-6e42-41cd-8f80-11b2ee1894ea",
+          "stand": "2026-11-08"
+        },
+        {
+          "name": "Merzenich Aktuell: „Pluriversum“ der Gemeinde Merzenich (16.10.2026, aktualisiert 08.11.2026)",
+          "url": "https://merzenich-aktuell.de/leben/pluriversum-17-november-2026-gesamtschule-merzenich/",
+          "stand": "2026-11-08"
+        }
+      ]
+    }
+  ]
+}

@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 05 Nov 2026 13:55:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Nov 2026 11:56:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Pluriversum der Gemeinde Merzenich zieht um: Abend am 17. November in der Gesamtschule Niederzier</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/</guid>
+<pubDate>Sun, 08 Nov 2026 11:56:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Gemeinde Merzenich hat Ort und Zeiten ihres zweiten „Pluriversum“ geändert. Statt an der Schulstraße in Merzenich treffen sich die Gäste in der Aula am Standort Niederzier, der Workshop am Tag danach beginnt eine Stunde später.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg" medium="image"><media:credit>Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H</media:description></media:content>
+</item>
 <item>
 <title>Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Kinder können ihren Schnuller in der Kita St. Marien in Merzenich abgeben. Das Angebot der Frühen Hilfen des Kreises richtet sich auch an Familien, deren Kinder die Kita nicht besuchen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-10-9c5a4aeb44.jpg" medium="image"><media:credit>Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE</media:credit><media:description>Denkmalgeschütztes Fachwerkhaus am Lindenplatz in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>KGS Am Weinberg: Schulanmeldungen für 2027/28 vom 12. bis 15. Oktober</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/kgs-am-weinberg-schulanmeldung-2027-2028-oktober-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/kgs-am-weinberg-schulanmeldung-2027-2028-oktober-2026/</guid>
-<pubDate>Sun, 04 Oct 2026 10:14:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die KGS Am Weinberg nennt vier Anmeldetage für die Schulneulinge des Schuljahres 2027/28. Am 12. Oktober ist das Sekretariat dafür bis 15:30 Uhr geöffnet.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/schule/schule-05-800f5134d9.jpg" medium="image"><media:credit>Sebastian Martin Dicke / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Klassenzimmer des Louis-Baare-Berufskollegs</media:description></media:content>
 </item>
 </channel>
 </rss>
