@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-08-morgens.md",
-  "source_check_window": "08.11.2026, 07:06:16–07:08:47 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-08-mittags.md",
+  "source_check_window": "08.11.2026, 12:05:09–12:09:21 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10917,9 +10917,38 @@
           "heading": "MA-S19-STELLWERK-07112026 · P2 · Verkehr · alle Ortsteile / Bahnhof Merzenich",
           "text_status": "T2",
           "summary": "Fortgeschriebene S19-Störung mit geändertem Umleitungsabschnitt Porz-Wahn–Köln Trimbornstraße und ergänztem Ersatzverkehr."
+        },
+        {
+          "date": "2026-11-08",
+          "dossier": "dossiers/2026-11-08-mittags.md",
+          "heading": "MA-S19-STELLWERK-07112026 · P2 · Verkehr · alle Ortsteile / Bahnhof Merzenich",
+          "text_status": "T2",
+          "summary": "Flughafen und Frankfurter Straße im fortgeschriebenen Text ausdrücklich als entfallende Halte genannt; Buslinie161-Angabe entfallen. Ende weiterhin unklar."
         }
       ],
       "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen."
+    },
+    {
+      "id": "MA-FEUERWEHR-147-26",
+      "priority": "P3",
+      "location_section": "Merzenich/Blaulicht",
+      "change_type": "neuer_einsatzbericht",
+      "text_status": "T2",
+      "image_status": "Metadaten geprüft, Bildsichtung offen HTTP 403",
+      "dossier": "dossiers/2026-11-08-mittags.md",
+      "workflow_status": "gesperrt_unabhaengiger_beleg_und_bildpruefung",
+      "last_checked_at": "2026-11-08T12:06:56+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "dossier_history": [
+        {
+          "date": "2026-11-08",
+          "dossier": "dossiers/2026-11-08-mittags.md",
+          "heading": "MA-FEUERWEHR-147-26 · P3 · Blaulicht · Merzenich"
+        }
+      ],
+      "notes": "Türöffnung am Steinpfahl nach Hausnotruf. Ereignis 07.11., veröffentlicht 08.11.10:33. Unabhängige Ereignisbestätigung fehlt. Kreisquelle zur Funktion des FTZ bestätigt den Einsatz nicht."
     }
   ],
   "archive": {
@@ -12196,6 +12225,45 @@
         "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
         "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
         "Pluriversum und kirchliche Terminangaben: bestehende Quellenkonflikte"
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-08-mittags.md",
+      "compared_with": "dossiers/2026-11-08-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "a0288cccd2c35b484ca39b0740cf30403dc2f6b6",
+      "implementation_commit": null,
+      "summary": "Neu: Feuerwehr147/26 Türöffnung Steinpfahl, T2 mangels unabhängiger Bestätigung und offener Bildsichtung. S19-Update mit expliziten Haltausfällen, T2. Zusätzlicher Veranstalterbeleg für bekannten Gottesdienst15.11.; keine tatsächliche Terminänderung. Sechs alte Artikelkorrekturen weiter offen.",
+      "topics": 2,
+      "new_topics": 1,
+      "updated_topics": 1,
+      "blocked_T2": 2,
+      "corrections_required": 6,
+      "new_corrections_required": 0,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "repository_area_files_read": 11,
+      "new_or_changed_events": 0,
+      "event_source_updates": 1,
+      "complete_drafts": 0,
+      "source_check_window": "08.11.2026, 12:05:09–12:09:21 Europe/Berlin",
+      "deadline": "2026-11-08T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "147/26: unabhängige Ereignisbestätigung und Bildsichtung",
+        "S19: Entstörungszeit, Zugläufe und unabhängige Ereignisbestätigung",
+        "Hundeeinsätze: unabhängige Bestätigung fehlt, 146/26 mit Datumswiderspruch",
+        "Sechs Artikelkorrekturen weiter offen",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Jugendgremium sowie bekannte kirchliche und Pluriversum-Quellenkonflikte"
       ]
     }
   ]
