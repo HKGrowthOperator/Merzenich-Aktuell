@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-07-mittags.md",
-  "source_check_window": "07.11.2026, 11:58:01–12:02:06 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-08-morgens.md",
+  "source_check_window": "08.11.2026, 07:06:16–07:08:47 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10910,6 +10910,13 @@
           "date": "2026-11-07",
           "dossier": "dossiers/2026-11-07-mittags.md",
           "heading": "MA-S19-STELLWERK-07112026 · P2 · Verkehr · alle Ortsteile / Bahnhof Merzenich"
+        },
+        {
+          "date": "2026-11-08",
+          "dossier": "dossiers/2026-11-08-morgens.md",
+          "heading": "MA-S19-STELLWERK-07112026 · P2 · Verkehr · alle Ortsteile / Bahnhof Merzenich",
+          "text_status": "T2",
+          "summary": "Fortgeschriebene S19-Störung mit geändertem Umleitungsabschnitt Porz-Wahn–Köln Trimbornstraße und ergänztem Ersatzverkehr."
         }
       ],
       "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen."
@@ -12150,6 +12157,44 @@
         "Sechs Artikelkorrekturen aus dem Vorlauf weiter offen",
         "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
         "Jugendgremium: kein Ergebnis im gelesenen Vorgang",
+        "Pluriversum und kirchliche Terminangaben: bestehende Quellenkonflikte"
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-08-morgens.md",
+      "compared_with": "dossiers/2026-11-07-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-05-claude-nachmittags.md",
+      "base_commit": "0e32dce149effa3b8e4f164f42e9cb27fffcf293",
+      "implementation_commit": null,
+      "summary": "S19-Störung fortgeschrieben: Umleitung jetzt Porz-Wahn–Köln Trimbornstraße, Ersatzbusse ergänzt. T2, tatsächliche Entstörungszeit und unabhängiger Ereignisbeleg fehlen. Sechs bekannte Artikelkorrekturen unverändert offen. Keine neuen örtlichen Themen oder Terminänderungen.",
+      "topics": 1,
+      "updated_topics": 1,
+      "new_topics": 0,
+      "blocked_T2": 1,
+      "corrections_required": 6,
+      "new_corrections_required": 0,
+      "articles_checked": 0,
+      "article_partial_checks": 4,
+      "repository_article_files_read": 37,
+      "repository_event_files_read": 15,
+      "repository_area_files_read": 11,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "08.11.2026, 07:06:16–07:08:47 Europe/Berlin",
+      "deadline": "2026-11-08T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "S19: tatsächliches Ende, konkrete Zugläufe und zweite unabhängige Ereignisbestätigung",
+        "Hundeeinsätze: unabhängige Bestätigung fehlt, 146/26 mit Datumswiderspruch",
+        "Sechs bekannte Artikelkorrekturen weiter offen",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
         "Pluriversum und kirchliche Terminangaben: bestehende Quellenkonflikte"
       ]
     }
