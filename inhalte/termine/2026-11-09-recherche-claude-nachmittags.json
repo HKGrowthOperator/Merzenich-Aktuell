@@ -1,0 +1,31 @@
+{
+  "hinweis": "Kalenderpflege 09.11.2026, Nachmittagslauf (Claude, nachgeholt): Sitzungskalender des Ratsinformationssystems (termine.ics) um 18:48 Uhr gelesen; neue Sitzung des Jugendgremiums am 03.12.2026.",
+  "termine": [
+    {
+      "slug": "jugendgremium-sitzung-2026-12-03",
+      "titel": "5. Sitzung des Jugendgremiums (online)",
+      "start": "2026-12-03T18:00:00+01:00",
+      "ende": "2026-12-03T19:30:00+01:00",
+      "ort": "online",
+      "ortsteil": "Merzenich",
+      "kategorie": "Politik",
+      "veranstalter": "Gemeinde Merzenich",
+      "beschreibung": "Das Jugendgremium der Gemeinde Merzenich kommt am Donnerstag, 3. Dezember, um 18 Uhr zu seiner 5. Sitzung zusammen, laut Sitzungskalender online.",
+      "absaetze": [
+        "Laut Sitzungskalender der Gemeinde trifft sich das Jugendgremium am Donnerstag, 3. Dezember 2026, von 18 bis 19.30 Uhr zu seiner 5. Sitzung. Als Ort nennt der Kalender einen externen Termin, online.",
+        "Eine Tagesordnung war am 9. November im Ratsinformationssystem noch nicht veröffentlicht. Am selben Tag tagt um 17 Uhr der Gemeinderat."
+      ],
+      "links": [
+        [
+          "Sitzungstermin im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZY6s2v0GiRb5BfR35UBioTM"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (termine.ics) und Sitzungstermin",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+        "stand": "2026-11-09"
+      }
+    }
+  ]
+}

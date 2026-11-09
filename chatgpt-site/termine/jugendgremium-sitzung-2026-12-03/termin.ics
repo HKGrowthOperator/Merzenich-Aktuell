@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:5. Sitzung des Jugendgremiums (online)
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:jugendgremium-sitzung-2026-12-03@merzenich-aktuell.de
+DTSTAMP:20261109T060000Z
+DTSTART:20261203T170000Z
+DTEND:20261203T183000Z
+SUMMARY:5. Sitzung des Jugendgremiums (online)
+DESCRIPTION:Das Jugendgremium der Gemeinde Merzenich kommt am Donnerstag\, 
+ 3. Dezember\, um 18 Uhr zu seiner 5. Sitzung zusammen\, laut Sitzungskalen
+ der online.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk
+ -growthoperator.de/termine/jugendgremium-sitzung-2026-12-03/
+LOCATION:online
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
+ zung-2026-12-03/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
