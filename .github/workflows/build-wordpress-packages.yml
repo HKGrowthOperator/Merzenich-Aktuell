@@ -22,6 +22,12 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      # deploy/wp-pakete.mjs braucht Node (Theme mit static/, 09.11.2026).
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -48,9 +54,15 @@ jobs:
           for versuch in 1 2 3 4; do
             git fetch origin main
             git reset --hard origin/main
-            rm -f wordpress-delivery/merzenich-aktuell-theme.zip wordpress-delivery/merzenich-aktuell-core.zip
-            ( cd wordpress/theme && zip -X -qr ../../wordpress-delivery/merzenich-aktuell-theme.zip merzenich-aktuell )
-            ( cd wordpress/plugin && zip -X -qr ../../wordpress-delivery/merzenich-aktuell-core.zip merzenich-aktuell-core )
+            # Pakete genau wie von Hand: deploy/wp-pakete.mjs legt static/ (= chatgpt-site/assets ohne Fotos)
+            # ins Theme. Ohne static/ liefert der Server unter /assets/ alte, einmal nachgeladene Kopien
+            # (live 03.-09.11.2026: CSS vom 17.10., Handyansicht gestaucht).
+            node deploy/wp-pakete.mjs
+            # Waechter: Das Theme-Zip muss die aktuellen CSS-Buendel enthalten, sonst kein Zip und kein release.json.
+            for b in bundle-start.css bundle.css; do
+              unzip -p wordpress-delivery/merzenich-aktuell-theme.zip "merzenich-aktuell/static/$b" | cmp - "chatgpt-site/assets/$b" \
+                || { echo "Theme-Zip ohne aktuelles static/$b, Abbruch."; exit 1; }
+            done
             unzip -tq wordpress-delivery/merzenich-aktuell-theme.zip
             unzip -tq wordpress-delivery/merzenich-aktuell-core.zip
             # Ohne neue Pruefsummen beschreibt docs/SHA256SUMS.txt Archive, die es nicht mehr

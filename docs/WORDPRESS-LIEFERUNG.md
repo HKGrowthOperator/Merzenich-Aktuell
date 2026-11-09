@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-4. November 2026 · Theme 21.29.0 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+9. November 2026 · Theme 21.29.1 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 09.11.2026: Theme 21.29.1, Handyansicht wieder mit aktuellem CSS
+
+**Befund:** Seit dem 03.11. sah die Seite am Handy gestaucht aus: Anzeigen als kleines Bild mit Text daneben, die Spalten-Anzeige abgeschnitten. Die Seite verlangte `/assets/bundle-start.css?v=326dd8a9c9` (Stand 02.11.), der Server lieferte aber 272.515 Byte vom **17.10.** (`d94f29675`).
+
+**Ursache:** `/assets/` kommt zuerst aus dem Theme-Ordner `static/`, danach aus einmal nachgeladenen Kopien in `uploads/ma-assets/assets/`, die nie erneuert werden (`inc/ma21.php`, `mod_rewrite_rules`). `static/` ist nicht im Repository; es entsteht nur mit `node deploy/wp-pakete.mjs`. Die CI (`build-wordpress-packages.yml`) zippte das Theme ohne `static/` (72 statt rund 485 Dateien). Seit das Selbst-Update die CI-Pakete einspielt (ab Theme 21.26.0), fehlte `static/` live, und alle CSS- und JS-Dateien unter `/assets/` kamen aus den alten Kopien.
+
+**Behoben:** Die CI baut die Pakete jetzt mit `node deploy/wp-pakete.mjs`, genau wie von Hand: Theme mit `static/` ohne Fotos, Plugin ohne Anzeigenvideos (die lädt `ma_firmen_datei()` aus dem Repository). Ein Wächter bricht den Bau ab, wenn `static/bundle-start.css` oder `static/bundle.css` im Theme-Zip nicht mit `chatgpt-site/assets/` übereinstimmen; dann entsteht weder Zip noch `release.json`. Theme 21.29.1 ändert sonst nichts, die Version bringt nur das neue Paket per Selbst-Update.
+
 
 ## Neu am 04.11.2026: Plugin 1.48.1, Termine bleiben nicht auf „Geplant“ hängen
 
