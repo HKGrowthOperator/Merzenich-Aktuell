@@ -19,6 +19,8 @@ const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const wp = join(wurzel, 'wordpress');
 const ziel = join(wurzel, 'wordpress-delivery');
 const theme = join(wp, 'theme', 'merzenich-aktuell');
+// Bilder, die trotz der Foto-Grenze im Theme-Paket stehen (Pfad unter chatgpt-site/assets).
+const MARKENBILDER = ['marke/logo-04.png', 'img/og-default.jpg'];
 
 execFileSync('node', [join(wurzel, 'deploy', 'wp-theme.mjs')], { stdio: 'inherit' });
 rmSync(join(theme, 'static'), { recursive: true, force: true });
@@ -33,6 +35,10 @@ for (const [ordner, datei] of [[join(wp, 'plugin'), 'merzenich-aktuell-core'], [
   const ohne = datei === 'merzenich-aktuell-core' ? ['*/data/banner/*.mp4', '*/data/banner/*.webm']
     : ['*/static/*.webp', '*/static/*.jpg', '*/static/*.jpeg', '*/static/*.png'];
   execFileSync('zip', ['-qr', zip, datei, '-x', '*/.DS_Store', '*/archive-alt.php.orig', ...ohne], { cwd: ordner });
+  // Markenbilder trotzdem ins Theme (Logo 04, 09.11.2026): /assets/ liefert sie dann direkt aus static/.
+  // Nachgeladene Kopien in uploads/ma-assets würden nie erneuert, und eine fehlende Datei
+  // sperrt das Nachladen eine Stunde (ma21_asset_nachladen).
+  if (datei === 'merzenich-aktuell') execFileSync('zip', ['-q', zip, ...MARKENBILDER.map((d) => `merzenich-aktuell/static/${d}`)], { cwd: ordner });
   const groesse = statSync(zip).size;
   console.log(`${zip.replace(wurzel + '/', '')}: ${(groesse / 1048576).toFixed(1)} MB`);
   // Der Webserver (IONOS) lehnt Uploads ab etwa 8 MB mit 413 ab (gemessen 28.10.2026).

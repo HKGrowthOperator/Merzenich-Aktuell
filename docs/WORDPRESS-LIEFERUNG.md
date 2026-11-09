@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-9. November 2026 · Theme 21.29.2 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+9. November 2026 · Theme 21.30.0 · Core-Plugin 1.48.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 09.11.2026: Theme 21.30.0 und Plugin 1.48.3, finales Logo 04
+
+- **Logo überall:** Kopf, Handy-Menü, Fuß und die strukturierten Daten zeigen das freigegebene Logo 04. Es ist das unveränderte Original-PNG `assets/marke/logo-04.png`, 1348 × 692; Einzelheiten in `docs/branding/LOGO-04-FREIGABE-2026-11-09.md`.
+- **Vorschaubild:** `og-default.jpg` zeigt jetzt dieses Logo auf Weiß.
+- **Theme-Paket:** Logo und Vorschaubild liegen direkt im Theme unter `static/` (`deploy/wp-pakete.mjs`, `MARKENBILDER`). Nachgeladene Kopien würden nie erneuert, und eine fehlende Datei sperrt das Nachladen eine Stunde. Der CI-Wächter prüft beide Dateien zusätzlich zu den CSS-Bündeln.
+- **Test:** `qa/wordpress/kopf-test.php` prüft beim ausgeblendeten Vereine-Menü jetzt den Menülink `href="/vereine/"`. Eine Meldung unter `/vereine/<slug>/` im Ticker „Merzenich jetzt“ ließ den Test seit 09.11., 17:47 Uhr scheitern; damit blieb auch der Paketbau stehen.
 
 ## Neu am 09.11.2026: Theme 21.29.2, Termine im Kasten „Vor Ort“
 

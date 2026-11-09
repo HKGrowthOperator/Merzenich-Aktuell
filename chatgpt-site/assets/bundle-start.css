@@ -1690,6 +1690,28 @@ html body.single .cards-3 .news-card h3{-webkit-line-clamp:5;line-clamp:5}
 body.home .desk-mittel.weitere-meldungen__raster{margin-top:0}
 body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
 
+/* Markenlogo 04 (Freigabe Arun und Ordin 09.11.2026, docs/branding/LOGO-04-FREIGABE-2026-11-09.md).
+   assets/marke/logo-04.png ist das Original (1348 × 692, weißer Grund) und wird nur skaliert:
+   immer ganz, im Seitenverhältnis, nie beschnitten oder umgefärbt. Kopf und Fuß stehen auf Weiß.
+   Die Regeln stehen gesammelt hier und mit höherer Spezifität, weil ältere Dateien
+   (recovery.css, v20.css, editorial-audit.css) Logo und Kopfhöhe mit festen Werten setzen.
+   Am Handy bleibt der Kopf beim Scrollen stehen (kopf.js), deshalb dort moderat. */
+html body .masthead a.logo img{width:230px!important;max-width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:1348/692;object-fit:contain!important;object-position:left center;display:block;margin:0}
+html body .masthead{height:auto!important}
+html body .masthead .mast-inner{min-height:0!important;padding-block:8px}
+@media (max-width:900px){html body .masthead a.logo img{width:200px!important}}
+@media (max-width:767px){html body .masthead .mast-inner{padding-block:4px}html body .masthead a.logo img{width:170px!important}}
+@media (max-width:374px){html body .masthead a.logo img{width:150px!important}}
+@media (max-width:340px){html body .masthead a.logo img{width:136px!important}}
+/* Schublade: dunkler Grund, das Logo liegt auf einer hellen Fläche (nicht invertiert). */
+html body .drawer .panel-top .logo-flaeche{display:inline-flex;background:#fff;border-radius:8px;padding:6px 10px;line-height:0}
+html body .drawer .panel-top .logo-flaeche img{width:170px!important;height:auto!important;max-width:100%;aspect-ratio:1348/692;object-fit:contain}
+/* Fuß */
+html body .footer-brandline>a{flex:0 0 auto;line-height:0}
+html body .footer-brandline img{width:190px!important;height:auto!important;max-width:100%;aspect-ratio:1348/692;object-fit:contain}
+@media (max-width:767px){html body .footer-brandline img{width:150px!important}}
+@media print{html body .masthead a.logo img{width:200px!important}}
+
 /* ---- werbung.css ---- */
 /* Werbesystem: Gestaltung der Anzeigenrotation vom 24.09.2026 (cab41c4a,
    anzeigen-rotation.css), auf Wunsch des Auftraggebers unveraendert in allen

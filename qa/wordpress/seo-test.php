@@ -16,7 +16,7 @@ require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/teile
 $fehler = 0;
 function pruefe(string $name, $ist, $soll) { global $fehler; $ok = $ist === $soll; if (!$ok) $fehler++; printf("  %-66s %s\n", $name, $ok ? 'ok' : 'FEHLER (ist: ' . var_export($ist, true) . ')'); }
 $HOME = 'https://merzenich-aktuell.de/';
-$ORG = ['home' => $HOME, 'logo' => $HOME . 'assets/img/logo-on-light.png', 'bild' => $HOME . 'assets/img/og-default.jpg', 'sameas' => [], 'mitte' => [50.8317, 6.5361]];
+$ORG = ['home' => $HOME, 'logo' => $HOME . 'assets/marke/logo-04.png', 'bild' => $HOME . 'assets/img/og-default.jpg', 'sameas' => [], 'mitte' => [50.8317, 6.5361]];
 $typen = fn(array $g) => array_map(fn($e) => $e['@type'], $g['@graph']);
 $finde = fn(array $g, string $typ) => array_values(array_filter($g['@graph'], fn($e) => $e['@type'] === $typ))[0] ?? null;
 
@@ -193,7 +193,7 @@ pruefe('Inhalt exakt wie von Google verlangt', ma_seo_google_datei_inhalt('googl
 
 echo "\nGefunden werden (1.27.0)\n";
 $logo = $finde($g, 'NewsMediaOrganization')['logo'];
-$datei = getimagesize(__DIR__ . '/../../chatgpt-site/assets/img/logo-on-light.png');
+$datei = getimagesize(__DIR__ . '/../../chatgpt-site/assets/marke/logo-04.png');
 pruefe('Logo im Schema mit den echten Maßen der Datei', [$logo['width'], $logo['height']], [$datei[0], $datei[1]]);
 pruefe('WebSite mit anderen Schreibweisen des Namens', $finde($g, 'WebSite')['alternateName'], ['Merzenich-Aktuell', 'merzenich-aktuell.de']);
 pruefe('/heute/: Titel für Google ist die Frage, Beschreibung gesetzt', [ma_seo_seitentitel()['heute'], mb_strlen(ma_seo_seitentexte()['heute']) <= 155], ['Was ist heute in Merzenich los?', true]);

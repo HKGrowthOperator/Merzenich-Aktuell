@@ -24,3 +24,28 @@
 Überall wo bisher das Markenlogo zu sehen ist, erscheint **exakt die Version 04** aus `04-alle-drei.svg`, ohne grüne Umkreisung, ohne „04 | Gemeinsam“, ohne andere Ergänzungen. Alle bisherigen Funktionen bleiben erhalten.
 
 **Arbeitsauftrag:** Implementieren und testen; keine neue Entwurfsrunde starten.
+
+## Umsetzung (09.11.2026, Theme 21.30.0, Plugin 1.48.3)
+
+**Master:** Die Datei `04-alle-drei.svg` zeigt nicht das freigegebene Motiv. Sie enthält den alten Schriftzug mit groben Strich-Symbolen: Turm und Haus klein über der Schrift, die Kirche im „H“. Der Betreiber hat am 09.11. das Original als Bild geschickt und bestätigt: „Mein Anhang“. Verbindlich ist deshalb dieses Bild, Byte für Byte unverändert:
+
+- `artifacts/branding/2026-11-logo/04-final-original.png`: Archiv, PNG 1348 × 692, weißer Grund, sha256 `13caa3a26cd89ad906d0…`
+- `chatgpt-site/assets/marke/logo-04.png`: Web-Asset, identische Datei, live unter `/assets/marke/logo-04.png?v=<Inhalts-Hash>`
+
+`04-alle-drei.svg` und die Varianten 01, 02, 03 und 05 bleiben als Entwurfsarchiv liegen und sind nirgends auf der Website eingebunden.
+
+**Wo das Logo steht:**
+- **Kopf (Masthead) aller Seiten:** auf der Startseite in der H1. Breite 230 px am Desktop, 200 px bis 900 px, 170 px am Handy, 150 px bis 374 px, 136 px bis 340 px; Höhe immer automatisch im Seitenverhältnis.
+- **Handy-Menü (Schublade):** 170 px auf einer weißen Fläche, weil die Schublade dunkel ist. Das Logo selbst wird nicht umgefärbt.
+- **Fuß:** 190 px am Desktop, 150 px am Handy.
+- **Strukturierte Daten:** `logo` der Organisation in den statischen Seiten und im Plugin (`includes/seo.php`), 1348 × 692.
+
+Gesetzt wird das zentral über `deploy/kopf-theme-einbinden.mjs` für alle Seiten. Das CSS steht gesammelt am Ende von `chatgpt-site/assets/korrekturen.css`.
+
+**Ableitung, zur Freigabe vorgesehen:**
+- `chatgpt-site/assets/img/og-default.jpg`, das Vorschaubild für soziale Netze: 1200 × 630, weißer Grund, darauf das unveränderte Logo, proportional auf 1000 px Breite skaliert und mittig.
+- Sonst ist nichts hinzugefügt.
+
+**Unverändert, mit Begründung:**
+- Das Monogramm „M“ im eingeklappten Kopf und im Cookie-Hinweis, außerdem Favicon und App-Symbole. Das sind quadratische Zeichen; eine neue quadratische Fassung von Logo 04 wäre eine eigene Markenvariante, und die ist nicht freigegeben.
+- Anleitungs-PDF und -Video nutzen noch den alten Schriftzug. Sie gehören nicht zur Website.

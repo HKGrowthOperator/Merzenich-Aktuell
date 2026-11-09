@@ -19,10 +19,14 @@ foreach ($config['images'] as $bild) {
 }
 
 echo "\nLogos\n";
-foreach (['logo.png', 'logo-on-light.png'] as $logo) {
-    $g = getimagesize($assets . 'img/' . $logo);
-    pruefe("$logo unter 100 KB, Seitenverhältnis wie im Markup (600×169)", [filesize($assets . 'img/' . $logo) <= 100 * 1024, abs($g[0] / $g[1] - 600 / 169) < 0.02], [true, true]);
-}
+// Logo 04 (09.11.2026): das freigegebene Original unverändert, deshalb ohne Größengrenze; es lädt
+// einmal im Kopf, der Fuß nutzt dieselbe Datei aus dem Cache (loading="lazy").
+$logo04 = $assets . 'marke/logo-04.png';
+$g = getimagesize($logo04);
+pruefe('logo-04.png ist Byte für Byte das Original (artifacts/branding/2026-11-logo/04-final-original.png)', hash_file('sha256', $logo04), hash_file('sha256', __DIR__ . '/../../artifacts/branding/2026-11-logo/04-final-original.png'));
+pruefe('logo-04.png 1348×692, wie im Markup', [$g[0], $g[1]], [1348, 692]);
+$kopfV = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf.html');
+pruefe('Kopf, Schublade und Fuß zeigen kein altes Logo mehr', [substr_count($kopfV, 'logo-04.png'), substr_count($kopfV . file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/fuss.html'), 'img/logo')], [2, 0]);
 
 echo "\nMusterprofile laden die kleine Fassung\n";
 $markt = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/markt.php');

@@ -316,7 +316,7 @@ function ma_seo_graph(array $k, array $o): array {
     $home = $o['home'];
     $org = [
         '@type' => 'NewsMediaOrganization', '@id' => $home . '#organization', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_UNTERTITEL, 'url' => $home,
-        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 720, 'height' => 203], 'image' => $o['bild'],
+        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1348, 'height' => 692], 'image' => $o['bild'],
         'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
         'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'info@kbs-management.tv',
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Rheinstr. 78a', 'postalCode' => '51371', 'addressLocality' => 'Leverkusen', 'addressCountry' => 'DE']],
@@ -706,7 +706,7 @@ function ma_seo_head(): void {
     $z .= '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' . $e($titel) . '">' . ($k['beschreibung'] !== '' ? '<meta name="twitter:description" content="' . $e($k['beschreibung']) . '">' : '') . '<meta name="twitter:image" content="' . esc_url($b['url']) . '">' . "\n";
     if ($k['typ'] !== '404') {
         $sameas = ma_seo_sameas();
-        $graph = ma_seo_graph($k, ['home' => $home, 'logo' => home_url('/assets/img/logo-on-light.png'), 'bild' => ma_seo_standardbild()['url'], 'sameas' => $sameas, 'mitte' => ma_seo_mitte()]);
+        $graph = ma_seo_graph($k, ['home' => $home, 'logo' => home_url('/assets/marke/logo-04.png'), 'bild' => ma_seo_standardbild()['url'], 'sameas' => $sameas, 'mitte' => ma_seo_mitte()]);
         $z .= '<script type="application/ld+json">' . wp_json_encode($graph, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
     }
     echo $z;

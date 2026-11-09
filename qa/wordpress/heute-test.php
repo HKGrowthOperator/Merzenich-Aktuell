@@ -61,7 +61,7 @@ pruefe('Cockpit „Merzenich jetzt“ steht so in der Startseiten-Vorlage', str_
 
 echo "\nStartseite: genau eine H1, das Logo\n";
 $kopf = ma21_kopf_logo_h1((string) file_get_contents($v . 'kopf.html'));
-pruefe('Logo-Link steht in der H1 mit Namen und Thema als Alt-Text', [substr_count($kopf, '<h1'), str_contains($kopf, '<h1 class="logo-h1"><a class="logo" href="/"><img src="/assets/img/logo-on-light.png" alt="Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich im Kreis Düren" width="600" height="169"></a></h1>')], [1, true]);
+pruefe('Logo-Link (Logo 04) steht in der H1 mit Namen und Thema als Alt-Text', [substr_count($kopf, '<h1'), (bool) preg_match('#<h1 class="logo-h1"><a class="logo" href="/"><img src="/assets/marke/logo-04\.png\?v=[0-9a-f]{10}" alt="Merzenich Aktuell – Nachrichten aus der Gemeinde Merzenich im Kreis Düren" width="1348" height="692"></a></h1>#u', $kopf)], [1, true]);
 pruefe('Unterseiten-Kopf bleibt ohne H1', substr_count((string) file_get_contents($v . 'kopf-seite.html'), '<h1'), 0);
 pruefe('Startseiten-Vorlage hat selbst keine H1', substr_count((string) file_get_contents($v . 'startseite.html'), '<h1'), 0);
 $quelle = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/inc/ma21.php');
