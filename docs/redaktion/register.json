@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-08-claude-nachmittags.md",
-  "source_check_window": "08.11.2026, 12:05:09–12:09:21 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-09-morgens.md",
+  "source_check_window": "09.11.2026, 07:04:17–07:07:26 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10954,6 +10954,12 @@
           "date": "2026-11-08",
           "dossier": "dossiers/2026-11-08-claude-nachmittags.md",
           "heading": "1 · MA-S19-STELLWERK-07112026"
+        },
+        {
+          "date": "2026-11-09",
+          "dossier": "dossiers/2026-11-09-morgens.md",
+          "heading": "Aktualitätsprüfung S19, keine neue Themenkarte",
+          "summary": "Bisherige Deutz–Troisdorf-Störungsmeldung im aktuellen Feed nicht enthalten. Keine ausdrückliche Entstörungsmeldung oder neue Bestätigung des Regelbetriebs gefunden. Live-Artikel aktuell nicht abschließend prüfbar."
         }
       ],
       "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen. | Claude 08.11.: mobil.nrw 12:52 Uhr weiter gelistet (Ende-Feld 13:30, Ende nicht abschätzbar); nicht umgesetzt, kein Ereignis in Merzenich, Stand ändert sich stündlich. | Claude 08.11. nachmittags: Kurzmeldung (295 Wörter) auf Grundlage mobil.nrw (offiziell, Stand 13:26 Uhr, gelesen 14:46 Uhr) und VRS (Linienweg); Widerspruch Ende-Feld 19:30 / Ende nicht abschätzbar benannt; Commons-Symbolfoto S-Bahn Porz-Wahn. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Nachtrag bei Entstörung."
@@ -12320,6 +12326,44 @@
       "implementation_commit": "319ba58",
       "summary": "Kein neues ChatGPT-Dossier, Pflichtquellen ohne Neues; Kurzmeldung S19-Störung (Stellwerk Köln, kein Halt am Flughafen) mit neuem Commons-Symbolfoto und Bildklasse verkehr.bahn; Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-09",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-09-morgens.md",
+      "compared_with": "dossiers/2026-11-08-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-08-claude-nachmittags.md",
+      "base_commit": "3bf2739b2fd2736417f8802ab98bbbc82b6f1fe3",
+      "implementation_commit": null,
+      "summary": "Neu im Kalender: Adventausstellung Blumen Hüffelmann 13.–15.11., jeweils 11–16 Uhr. Drei neue Claude-Artikel und umgesetzte sechs Korrekturen nachgeprüft. S19-Störungsmeldung nicht mehr im Feed, Entstörung nicht bestätigt. Keine neuen Themenkarten.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "previous_corrections_resolved": 6,
+      "articles_checked": 0,
+      "article_partial_checks": 7,
+      "repository_article_files_read": 39,
+      "repository_event_files_read": 16,
+      "repository_area_files_read": 12,
+      "new_or_changed_events": 1,
+      "event_occurrences": 3,
+      "complete_drafts": 0,
+      "source_check_window": "09.11.2026, 07:04:17–07:07:26 Europe/Berlin",
+      "deadline": "2026-11-09T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "S19-Liveartikel: Feedmeldung fehlt, aktueller Betrieb und Entstörung nicht bestätigt",
+        "Feuerwehrartikel: nicht alle historischen Vergleichseinsätze erneut im Original geprüft",
+        "Jonge vom Berg: HTTP 200 mit Inhaltsfehler",
+        "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
+        "Pluriversum und kirchliche Terminangaben: verbliebene Quellenkonflikte",
+        "Wochenvorschau: aktuelle Kursplätze und genaue Taizé-Kapelle nicht abschließend bestätigt"
+      ]
     }
   ]
 }
