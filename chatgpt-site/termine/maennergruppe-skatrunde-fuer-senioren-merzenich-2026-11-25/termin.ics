@@ -3,7 +3,8 @@ VERSION:2.0
 PRODID:-//Merzenich Aktuell//Termine//DE
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Männergruppe / Skatrunde für Senioren
+X-WR-CALNAME:Männergruppe und Skatrunde für Senioren im Evangelischen Gem
+ eindehaus
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
@@ -12,13 +13,14 @@ UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-25@merzenich-ak
 DTSTAMP:20261109T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
-SUMMARY:Männergruppe / Skatrunde für Senioren
-DESCRIPTION:„Männergruppe / Skatrunde für Senioren“ am Mittwoch\, 25.
-  November\, 9:00 Uhr. Ort: Ev. Gemeindehaus\, Severin-Böhr-Str. 15.\nVera
- nstalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuel
- l.hk-growthoperator.de/termine/maennergruppe-skatrunde-fuer-senioren-merze
- nich-2026-11-25/
-LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
+SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
+ haus
+DESCRIPTION:Die Männergruppe mit Skatrunde für Senioren trifft sich mittw
+ ochs von 9 bis 11 Uhr im Evangelischen Gemeindehaus Merzenich\, auch am 25
+ . November. Weitere Mitspieler sind willkommen.\nVeranstalter: Evangelisch
+ es Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoperator.d
+ e/termine/maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-25/
+LOCATION:Evangelisches Gemeindehaus Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/maennergruppe-ska
  trunde-fuer-senioren-merzenich-2026-11-25/
 STATUS:CONFIRMED

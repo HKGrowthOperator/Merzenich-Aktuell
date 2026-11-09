@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T13:48:46.781Z",
+  "updatedAt": "2026-11-09T17:46:38.215Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1646,6 +1646,15 @@
       "assignedAt": "2026-11-08T13:48:46.781Z",
       "articleId": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
       "articleDate": "2026-11-08T14:47:00+01:00"
+    },
+    "/vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/": {
+      "imageId": "web-themen-20-72a84de4",
+      "pool": "themen",
+      "motiv": "papiertonne",
+      "regel": "gemeinde.abfall",
+      "assignedAt": "2026-11-09T17:46:38.214Z",
+      "articleId": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
+      "articleDate": "2026-11-09T18:46:00+01:00"
     }
   }
 }

@@ -1,0 +1,94 @@
+{
+  "hinweis": "Nachmittagslauf 09.11.2026 (Claude, nachgeholt; Routine 14:43, Start 18:41 Uhr nach Sitzungsausfall). Beitrag der Gemeinde Merzenich auf Heimat-Info vom 09.11.2026, 07:53 Uhr, um 18:44 Uhr gelesen; Amtsblatt 11/2026 S. 21 (Abfuhrtermine), Abfallkalender 2026 von Schönmackers. ChatGPT führte das Thema als T2 (keine unabhängige Bestätigung); die Gemeinde ist offizielle Quelle für ihre eigene Mitteilung, der Text gibt nur deren Inhalt wieder und benennt die offenen Punkte.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
+      "ressort": "vereine",
+      "ortsteil": "golzheim",
+      "kicker": "Vereine · Golzheim",
+      "titel": "Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung",
+      "dek": "Ab dem 1. Januar 2027 übernehmen nach einer Mitteilung im Profil der Gemeinde keine Vereine mehr die Papiersammlungen. Abgestimmt sei das mit der Gemeinde und dem Entsorger Schönmackers.",
+      "datum": "2026-11-09T18:46:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "vereine",
+          "Vereine"
+        ],
+        [
+          "abfall",
+          "Abfall"
+        ]
+      ],
+      "bildklasse": "gemeinde.abfall",
+      "absaetze": [
+        "Mehr als 40 Jahre lang haben die Schützen in Golzheim ehrenamtlich Altpapier gesammelt und damit ihre Vereinskasse aufgebessert. Damit ist Schluss. In einem Beitrag, den die Gemeinde Merzenich am Montagmorgen, 9. November, über ihr Profil in der Heimat-Info-App veröffentlicht hat, heißt es, die Sammlung ende „mit dem heutigen Tag“. Ab dem 1. Januar 2027 würden die Sammlungen nach Absprache mit der Gemeinde und dem Entsorgungsunternehmen Schönmackers nicht mehr von den Vereinen übernommen.",
+        "Der Text ist als Dank der Sammler formuliert: an alle Golzheimerinnen und Golzheimer, die ihr Papier gebündelt oder den Helfern ein Getränk hingestellt haben, und an die Landwirte, die die Sammlung früher mit Traktor und Anhänger begleiteten, als es die blaue Tonne noch nicht gab. Warum die Vereinssammlungen enden, wer das Papier vom kommenden Jahr an abholt und was das für die Vereinskassen bedeutet, steht nicht darin.",
+        "Laut Amtsblatt vom 16. Oktober war die jüngste Sammlung für Bürgewald, Morschenich und Golzheim am Samstag, 7. November, ab 6 Uhr angesetzt, für Merzenich und Girbelsrath tags zuvor. Der Abfallkalender 2026 von Schönmackers teilt die Gemeinde dafür in drei Bezirke ein und führt für Golzheim und Morschenich noch einen weiteren Termin am Samstag, 5. Dezember. Ob an diesem Tag noch gesammelt wird und von wem, geht aus den Quellen nicht hervor. Ebenso offen bleibt, ob die Änderung auch die Sammlungen in den anderen Ortsteilen betrifft.",
+        "Schon im Oktober hatten Gemeinde und Schönmackers darum gebeten, Papier und Pappe in die blaue Tonne zu geben, statt es lose oder gebündelt an die Straße zu legen; die Tonne wird mechanisch geleert. Sobald Gemeinde oder Entsorger die Regelung für 2027 bekanntgeben, ergänzt Merzenich Aktuell die Meldung."
+      ],
+      "fakten": [
+        "Schützen Golzheim: ehrenamtliche Papiersammlung seit mehr als 40 Jahren, endet laut Beitrag vom 9. November",
+        "Ab 1. Januar 2027 keine Sammlungen mehr durch Vereine (Absprache mit Gemeinde und Schönmackers)",
+        "Offen: Termin 5. Dezember, künftige Abholung, andere Ortsteile"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beitrag im Profil der Gemeinde Merzenich vom 09.11.2026 (9. November), 07:53 Uhr: „Nach über 40 Jahren endet mit dem heutigen Tag die ehrenamtlich durchgeführte Papiersammlung für die Schützen in Golzheim“; nach Rücksprache mit der Gemeinde Merzenich und dem Versorgungsunternehmen Schönmackers ab dem 01.01.2027 (1. Januar 2027) nicht mehr von den Vereinen durchgeführt; Dank an Golzheimer Bürgerinnen und Bürger (Bündeln, Getränk), an Landwirte mit Traktor und Anhänger vor der Blauen Tonne; Vereinskasse aufgebessert. Kein Grund, kein künftiger Abholer, kein Betrag genannt.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/fde69987-4a6c-4ac4-b316-9db5e1ff14e4"
+          ],
+          "stelle": "Heimat-Info, Beitrag „Vielen Dank für Euren Einsatz!“ der Gemeinde Merzenich, gesamter Text, gelesen 09.11.2026 18:44 Uhr",
+          "selbstauskunft": "Mitteilung im offiziellen Profil der Gemeinde Merzenich („Die Rathaus-Infos“), Text aus Sicht der Sammler formuliert"
+        },
+        {
+          "aussage": "Amtsblatt 11/2026 vom 16.10.2026 (16. Oktober), Abfuhrtermine: Papiersammlung ab 6.00 Uhr (6 Uhr); Samstag, 07.11.2026 (7. November) Bürgewald, Morschenich und Golzheim; Freitag, 06.11.2026 Merzenich und Girbelsrath.",
+          "belege": [
+            "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf"
+          ],
+          "stelle": "Amtsblatt 11/2026, PDF-Seite 21, Kasten „PAPIERSAMMLUNG“"
+        },
+        {
+          "aussage": "Schönmackers, Abfuhrtermine 2026 Gemeinde Merzenich: Papier A = Morschenich, Papier B = Golzheim, Papier C = Merzenich und Girbelsrath (drei Bezirke); November Sa 7 PPK A+B; Dezember Sa 5 (5. Dezember) PPK A+B, Fr 4 PPK C.",
+          "belege": [
+            "https://www.schoenmackers.de/wp-content/uploads/2025/12/Abfallkalender_Merzenich_2026.pdf"
+          ],
+          "stelle": "Abfallkalender Merzenich 2026, PDF-Seite 2, Legende und Spalten November/Dezember",
+          "selbstauskunft": "Abfuhrplan des von der Gemeinde beauftragten Entsorgers Schönmackers"
+        },
+        {
+          "aussage": "Eigene Meldung 15.10.2026 (Oktober): Gemeinde und Schönmackers bitten, Papier und Pappe in die Tonne zu geben statt lose oder gebündelt; Tonne wird mechanisch geleert.",
+          "belege": [
+            "https://merzenich-aktuell.de/leben/altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026/"
+          ],
+          "stelle": "eigener Artikel, erster und zweiter Absatz",
+          "selbstauskunft": "eigenes Archiv, Meldung nach Beitrag der Gemeinde vom 13.10.2026"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beitrag „Vielen Dank für Euren Einsatz!“ auf Heimat-Info vom 09.11.2026, 07:53 Uhr",
+        "url": "https://www.heimat-info.de/beitraege/fde69987-4a6c-4ac4-b316-9db5e1ff14e4",
+        "stand": "2026-11-09"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, PDF-Seite 21: Abfuhrtermine, Papiersammlung",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf",
+          "stand": "2026-11-09"
+        },
+        {
+          "name": "Schönmackers, Abfallkalender Gemeinde Merzenich 2026",
+          "url": "https://www.schoenmackers.de/wp-content/uploads/2025/12/Abfallkalender_Merzenich_2026.pdf",
+          "stand": "2026-11-09"
+        },
+        {
+          "name": "Merzenich Aktuell: „Altpapier bitte in die Tonne“ (15.10.2026)",
+          "url": "https://merzenich-aktuell.de/leben/altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026/",
+          "stand": "2026-11-09"
+        }
+      ]
+    }
+  ]
+}
