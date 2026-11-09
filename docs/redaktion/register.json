@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-09-morgens.md",
-  "source_check_window": "09.11.2026, 07:04:17–07:07:26 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-09-mittags.md",
+  "source_check_window": "09.11.2026, 12:04:55–12:10:00 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -801,7 +801,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Karte vom 25.10. ist damit nicht belegt. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 (15.10.) deckt den Inhalt der Seite. Gesperrt bis zu einer Quelle für die Behälterumstellung. | ChatGPT 27.10. abends: MA-PAPIERTONNE-2026, T1-B; Gemeindedetail gelesen; Kalender/App nicht ausgewertet. Weiterarbeit: Welcher Kalender gilt je Straße? Neue Ausgabe und Sonderabfuhren separat prüfen. Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Karte vom 25.10. ist damit nicht belegt. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 (15.10.) deckt den Inhalt der Seite. Gesperrt bis zu einer Quelle für die Behälterumstellung. | ChatGPT 27.10. abends: MA-PAPIERTONNE-2026, T1-B; Gemeindedetail gelesen; Kalender/App nicht ausgewertet. Weiterarbeit: Welcher Kalender gilt je Straße? Neue Ausgabe und Sonderabfuhren separat prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese.",
       "dossier_history": [
         {
           "date": "2026-10-14",
@@ -860,23 +860,30 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-PAPIERTONNE-2026",
           "check_scope": "Gemeindedetail gelesen; Kalender/App nicht ausgewertet."
+        },
+        {
+          "date": "2026-11-09",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-09-mittags.md",
+          "heading": "MA-PAPIERTONNE-2026",
+          "check_scope": "Gemeindeankündigung, Entsorgerkalender/FAQ, Gemeindehintergrund und Livebestand gelesen"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
-      "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
-      "latest_research_text_status": "T1-B",
-      "latest_research_scope": "Gemeindedetail gelesen; Kalender/App nicht ausgewertet.",
-      "refresh_note": "Vor einer Terminnennung.",
+      "latest_research_dossier": "dossiers/2026-11-09-mittags.md",
+      "latest_research_checked_at": "2026-11-09T12:10:00+01:00",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Neue Entwicklung; nur Gemeinde bestätigt Ende der Vereinssammlungen; unabhängiger Entsorgerkontext",
+      "refresh_note": "Erst nach unabhängiger Bestätigung und geklärter Anschlussregelung",
       "publication_status": "nicht_durch_diesen_Lauf_veroeffentlicht",
       "latest_research_review": {
-        "text": "T1-B",
-        "workflow": "vor_uebernahme_erneut_pruefen",
-        "applies_to": "Nur Recherche/Arbeitsfassung dieses Dossiers; historische Artikelumsetzung unverändert",
+        "text": "T2",
+        "workflow": "gesperrt",
+        "applies_to": "Neue Recherche vom 09.11.; historische Artikelumsetzung und Claude-Notizen bleiben erhalten",
         "image": {
-          "rights": "B0_keine_Artikelbildfreigabe",
-          "visual": "keine_konkrete_Artikelbildzuordnung_geprueft",
-          "download": "nicht_erfolgt",
-          "duplicate": "keine_neue_Artikelbildzuordnung",
+          "rights": "CC BY-SA 3.0; Commons-Metadaten über Wikibooks gelesen",
+          "visual": "Website-Fassung angesehen; Papiertonne ohne Personen, Kennzeichen oder Ortsnamen",
+          "download": "Website-Fassung zur Sichtprüfung",
+          "duplicate": "Bereits Bild des Bestandsartikels; Motiv papiertonne",
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
@@ -908,6 +915,19 @@
           "source_check_scope": "Gemeindedetail gelesen; Kalender/App nicht ausgewertet.",
           "open_questions": "Welcher Kalender gilt je Straße? Neue Ausgabe und Sonderabfuhren separat prüfen.",
           "refresh": "Vor einer Terminnennung.",
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-09",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-09-mittags.md",
+          "priority": "P2",
+          "change_type": "Neue Entwicklung",
+          "text_status": "T2",
+          "draft_complete": false,
+          "evidence_ref": "dossiers/2026-11-09-mittags.md → MA-PAPIERTONNE-2026",
+          "source_check_scope": "Fünf Primärseiten, zwei Herausgeber; nur Gemeinde bestätigt konkreten Wechsel",
+          "open_questions": "Unabhängige Bestätigung; letzte Vereinssammlung, Dezemberabfuhr, Anschlussregelung und Gebühren",
           "implementation": "keine_Artikelumsetzung"
         }
       ],
@@ -12363,6 +12383,43 @@
         "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
         "Pluriversum und kirchliche Terminangaben: verbliebene Quellenkonflikte",
         "Wochenvorschau: aktuelle Kursplätze und genaue Taizé-Kapelle nicht abschließend bestätigt"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-09-mittags.md",
+      "compared_with": "dossiers/2026-11-09-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-08-claude-nachmittags.md",
+      "base_commit": "13276a2ad82672841f980755c57d7c479e7a347e",
+      "implementation_commit": null,
+      "summary": "09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 0,
+      "article_partial_checks": 7,
+      "additional_inventory_articles_read": 1,
+      "repository_article_files_read": 39,
+      "repository_event_files_read": 16,
+      "repository_area_files_read": 12,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "09.11.2026, 12:04:55–12:10:00 Europe/Berlin",
+      "deadline": "2026-11-09T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Ref-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Papiersammlung: unabhängige Ereignisbestätigung fehlt; Schützen HTTP 403; letzter Tag und Anschluss offen",
+        "S19: aktueller Betrieb und Entstörung unbestätigt",
+        "Wochenvorschau: Vereinsquelle Site Unavailable, Kursplätze und genaue Taizé-Kapelle offen",
+        "Feuerwehr: nicht alle historischen Einsätze erneut im Original geprüft",
+        "Jugendgremium: öffentliches Ergebnis nicht gefunden",
+        "Pluriversum und Senioren: verbleibende Quellenkonflikte"
       ]
     }
   ]
