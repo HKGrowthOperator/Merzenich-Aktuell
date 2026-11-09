@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-09-mittags.md",
+  "latest_dossier": "dossiers/2026-11-09-claude-nachmittags.md",
   "source_check_window": "09.11.2026, 12:04:55–12:10:00 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -793,15 +793,15 @@
       "priority": "P2",
       "location_section": "Alle Kernorte · Umwelt/Service",
       "change_type": "Hintergrund",
-      "text_status": "T1-B",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "in_bearbeitung",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-09-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-09 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-09-recherche-claude-nachmittags.json → /vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Karte vom 25.10. ist damit nicht belegt. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 (15.10.) deckt den Inhalt der Seite. Gesperrt bis zu einer Quelle für die Behälterumstellung. | ChatGPT 27.10. abends: MA-PAPIERTONNE-2026, T1-B; Gemeindedetail gelesen; Kalender/App nicht ausgewertet. Weiterarbeit: Welcher Kalender gilt je Straße? Neue Ausgabe und Sonderabfuhren separat prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese.",
+      "implementation_commit": "7a33c763",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Karte vom 25.10. ist damit nicht belegt. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 (15.10.) deckt den Inhalt der Seite. Gesperrt bis zu einer Quelle für die Behälterumstellung. | ChatGPT 27.10. abends: MA-PAPIERTONNE-2026, T1-B; Gemeindedetail gelesen; Kalender/App nicht ausgewertet. Weiterarbeit: Welcher Kalender gilt je Straße? Neue Ausgabe und Sonderabfuhren separat prüfen. Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese. | Claude 09.11. (nachgeholt): Kurzmeldung (308 Wörter) nach Gemeinde-Beitrag 09.11. 07:53 Uhr, Amtsblatt S. 21, Schönmackers-Kalender; offene Punkte benannt (Grund, Abholer, 05.12., andere Ortsteile). Live 18:46 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "dossier_history": [
         {
           "date": "2026-10-14",
@@ -867,6 +867,11 @@
           "dossier": "dossiers/2026-11-09-mittags.md",
           "heading": "MA-PAPIERTONNE-2026",
           "check_scope": "Gemeindeankündigung, Entsorgerkalender/FAQ, Gemeindehintergrund und Livebestand gelesen"
+        },
+        {
+          "date": "2026-11-09",
+          "dossier": "dossiers/2026-11-09-claude-nachmittags.md",
+          "heading": "1 · MA-PAPIERTONNE-2026"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-09-mittags.md",
@@ -10941,7 +10946,7 @@
       "image_status": "Commons-Dateiseite und Vorschau geprüft",
       "dossier": "dossiers/2026-11-08-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-08 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-09 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-08-recherche-claude-nachmittags.json → /leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
       "article_id": null,
       "implementation_commit": "319ba58",
@@ -10980,9 +10985,14 @@
           "dossier": "dossiers/2026-11-09-morgens.md",
           "heading": "Aktualitätsprüfung S19, keine neue Themenkarte",
           "summary": "Bisherige Deutz–Troisdorf-Störungsmeldung im aktuellen Feed nicht enthalten. Keine ausdrückliche Entstörungsmeldung oder neue Bestätigung des Regelbetriebs gefunden. Live-Artikel aktuell nicht abschließend prüfbar."
+        },
+        {
+          "date": "2026-11-09",
+          "dossier": "dossiers/2026-11-09-claude-nachmittags.md",
+          "heading": "1 · Nachtrag MA-S19-STELLWERK-07112026"
         }
       ],
-      "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen. | Claude 08.11.: mobil.nrw 12:52 Uhr weiter gelistet (Ende-Feld 13:30, Ende nicht abschätzbar); nicht umgesetzt, kein Ereignis in Merzenich, Stand ändert sich stündlich. | Claude 08.11. nachmittags: Kurzmeldung (295 Wörter) auf Grundlage mobil.nrw (offiziell, Stand 13:26 Uhr, gelesen 14:46 Uhr) und VRS (Linienweg); Widerspruch Ende-Feld 19:30 / Ende nicht abschätzbar benannt; Commons-Symbolfoto S-Bahn Porz-Wahn. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Nachtrag bei Entstörung."
+      "notes": "mobil.nrw meldet S19-Umleitung Porz–Köln Frankfurter Straße, Bus 161 als Flughafenalternative. VRS belegt örtliche Anbindung, keine unabhängige Ereignisbestätigung. Ende-Feld 14:30 gegen Text unbestimmte Dauer. Stand vor Umsetzung erneut prüfen. | Claude 08.11.: mobil.nrw 12:52 Uhr weiter gelistet (Ende-Feld 13:30, Ende nicht abschätzbar); nicht umgesetzt, kein Ereignis in Merzenich, Stand ändert sich stündlich. | Claude 08.11. nachmittags: Kurzmeldung (295 Wörter) auf Grundlage mobil.nrw (offiziell, Stand 13:26 Uhr, gelesen 14:46 Uhr) und VRS (Linienweg); Widerspruch Ende-Feld 19:30 / Ende nicht abschätzbar benannt; Commons-Symbolfoto S-Bahn Porz-Wahn. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Nachtrag bei Entstörung. | Claude 09.11. (nachgeholt): Nachtrag Reparatur (mobil.nrw 08.11. 20:22 Uhr; 09.11. 18:42 Uhr keine Störung mehr), Titel und Vorspann angepasst, Commit 1b16fab2; live 18:50 Uhr."
     },
     {
       "id": "MA-FEUERWEHR-147-26",
@@ -12421,6 +12431,16 @@
         "Jugendgremium: öffentliches Ergebnis nicht gefunden",
         "Pluriversum und Senioren: verbleibende Quellenkonflikte"
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-09-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-09-mittags.md",
+      "implementation_commit": "7a33c763",
+      "summary": "Nachgeholt nach Sitzungsausfall 08.11. abends bis 09.11. 18:40 (Morgenlauf und vier Eil-Prüfungen ausgefallen). S19-Nachtrag (Stellwerk repariert); neu: Kurzmeldung Ende der Papiersammlung der Schützen Golzheim; Termin Jugendgremium 03.12.; Mindesttakt 09.11.: 1 Meldung.",
+      "publication": "Neue Meldung, Nachtrag und Termine direkt veröffentlicht"
     }
   ]
 }

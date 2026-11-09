@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [08.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-08-claude-nachmittags.md), davor [Claude 08.11. morgens (Nachhollauf)](dossiers/2026-11-08-claude-morgens.md); jüngstes ChatGPT-Dossier [08.11. mittags](dossiers/2026-11-08-mittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [09.11.2026, Claude-Nachmittagslauf (nachgeholt)](dossiers/2026-11-09-claude-nachmittags.md), Vergleichsbasis [ChatGPT 09.11. mittags](dossiers/2026-11-09-mittags.md) und [Claude 08.11. nachmittags](dossiers/2026-11-08-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 09.11. nachmittags (nachgeholt ab 18:41 Uhr):** Erneuter Sitzungsausfall vom 08.11. abends bis 09.11. 18:40 Uhr; Morgenlauf und vier Eil-Prüfungen ausgefallen. S19-Meldung mit Nachtrag (Stellwerk repariert). 1 neue Kurzmeldung „Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung“ (308 Wörter). Kalender: Jugendgremium 03.12. neu, Skatrunde 25.11. bereinigt. Mindesttakt 09.11.: 1 Meldung (verfehlt). Commits `1b16fab2`, `7a33c763`, `57b68c65`.
 
 **Umgesetzt am 08.11. nachmittags:** 1 neue Kurzmeldung „S19 aus Merzenich hält seit Samstag nicht am Flughafen: Stellwerk in Köln defekt“ (295 Wörter, mobil.nrw und VRS), neues Commons-Symbolfoto S-Bahn (Bildklasse `verkehr.bahn`). Sonst nichts Neues in den Pflichtquellen, Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen. Commit `319ba58`.
 
