@@ -1,11 +1,11 @@
 {
  "quelle": "jobs",
- "abgerufen": "2026-11-09T13:57:13.103Z",
+ "abgerufen": "2026-11-09T23:54:45.170Z",
  "listen": [
   {
    "url": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
    "endUrl": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php",
-   "abgerufen": "2026-11-09T13:57:08.191Z",
+   "abgerufen": "2026-11-09T23:54:39.931Z",
    "status": 200,
    "titel": "Stellenangebote | Gemeinde Merzenich",
    "meta": {
@@ -25,7 +25,7 @@
     },
     {
      "text": "",
-     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#Nzk1ODcyODc2"
+     "href": "https://www.gemeinde-merzenich.de/politik/stellenanngebote.php#MTUxNDk1NTMy"
     },
     {
      "text": "FINALE Stellenausschreibung FBL III ab Oktober 2026 (M000770251).pdf PDF -Datei 149,51 kB",
@@ -57,7 +57,7 @@
   {
    "url": "https://www.kreis-dueren.de/karriere",
    "endUrl": "https://www.kreis-dueren.de/karriere",
-   "abgerufen": "2026-11-09T13:57:10.166Z",
+   "abgerufen": "2026-11-09T23:54:42.127Z",
    "status": 200,
    "titel": "Arbeitgeber Kreis Düren – Dein JOB unser KREIS | Kreis Düren",
    "meta": {
@@ -73,7 +73,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#Nzk4MTM5NDU0"
+     "href": "https://www.kreis-dueren.de/karriere#Mzg4MDUyMjky"
     },
     {
      "text": "PDF -Datei 237,17 kB Stellenausschreibung der Kindertagesbetreuung Kreismäuse AöR: Aushilfe Kitaplatzvergabe (m/w/d) Bewerbungsfrist: 22.11.2026",
@@ -113,7 +113,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#NTcxNTY2Mzg2"
+     "href": "https://www.kreis-dueren.de/karriere#MjI0MTk2MTcy"
     },
     {
      "text": "Arbeitgeber Kreis Düren Duales Studium und Ausbildung Jetzt informieren und bewerben.",
@@ -121,7 +121,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#MTIwNTQyMjE2"
+     "href": "https://www.kreis-dueren.de/karriere#NTg5NTUzOTk2"
     },
     {
      "text": "Jobs & Karriere Kreisverwaltung Düren vorgestellt Was sind die Aufgaben einer Kreisverwaltung? Was die Vorteile des öffentlichen Dienstes? Wir als Arbeitgeber \"Kreis Düren\" bieten...",
@@ -129,7 +129,7 @@
     },
     {
      "text": "",
-     "href": "https://www.kreis-dueren.de/karriere#NzAyNjE4NTEy"
+     "href": "https://www.kreis-dueren.de/karriere#OTA5ODU3MDA5"
     },
     {
      "text": "Leitbild für die Kreisverwaltung Düren PDF -Datei 2,02 MB",
@@ -177,14 +177,14 @@
   {
    "url": "https://www.jobsdn.de/jobportal",
    "endUrl": "https://www.jobsdn.de/jobportal",
-   "abgerufen": "2026-11-09T13:57:11.903Z",
+   "abgerufen": "2026-11-09T23:54:43.968Z",
    "status": 200,
-   "titel": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
+   "titel": "Jobs im Kreis Düren – Stellenangebote & Ausbildung | jobsDN.de",
    "meta": {
-    "description": "Das Stellenportal für den Kreis Düren: freie Stellen, Ausbildungsplätze und Weiterbildungen aus der Region – kostenlos suchen, ohne Anmeldung, täglich aktuell.",
-    "og:title": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
-    "og:description": "Das Stellenportal für den Kreis Düren: freie Stellen, Ausbildungsplätze und Weiterbildungen aus der Region – kostenlos suchen, ohne Anmeldung, täglich aktuell.",
-    "og:site_name": "Kreis Düren - Stellenangebote - Bildungsangebote - Ihr Stellenportal",
+    "description": "Jobs im Kreis Düren: tagesaktuelle Stellen, Ausbildungsplätze und Weiterbildungen aus der Region. Das Stellenportal von job-com – kostenlos, ohne Anmeldung.",
+    "og:title": "Jobs im Kreis Düren – Stellenangebote & Ausbildung | jobsDN.de",
+    "og:description": "Jobs im Kreis Düren: tagesaktuelle Stellen, Ausbildungsplätze und Weiterbildungen aus der Region. Das Stellenportal von job-com – kostenlos, ohne Anmeldung.",
+    "og:site_name": "Jobs im Kreis Düren – Stellenangebote & Ausbildung | jobsDN.de",
     "og:locale": "de_DE",
     "og:type": "website",
     "og:url": "https://www.jobsdn.de/jobportal",
