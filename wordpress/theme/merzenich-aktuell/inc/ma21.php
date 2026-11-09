@@ -1136,7 +1136,11 @@ function ma21_foto_des_tages(): string {
 /** Kommende Termine (ma_event), nach Beginn sortiert. */
 function ma21_kommende_termine(int $n): array {
     $jetzt = current_time('Y-m-d\TH:i');
-    $q = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 50, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC']);
+    // Nur Termine ab 60 Tagen vor heute (mehrtägige laufen noch): Ohne Grenze holte die Abfrage die
+    // 50 ältesten Termine, und seit es mehr als 50 vergangene gibt, blieb die Liste leer (21.29.1).
+    $ab = wp_date('Y-m-d', time() - 60 * DAY_IN_SECONDS);
+    $q = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 50, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
+        'meta_query' => [['key' => 'ma_event_start', 'value' => $ab, 'compare' => '>=']]]);
     $raus = [];
     foreach ($q as $p) {
         $ende = get_post_meta($p->ID, 'ma_event_end', true) ?: substr((string) get_post_meta($p->ID, 'ma_event_start', true), 0, 10) . 'T23:59';

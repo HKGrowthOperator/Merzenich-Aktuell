@@ -1,6 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-9. November 2026 · Theme 21.29.1 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+9. November 2026 · Theme 21.29.2 · Core-Plugin 1.48.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 09.11.2026: Theme 21.29.2, Termine im Kasten „Vor Ort“
+
+Der Kasten „Vor Ort“ auf der Startseite zeigte „Gerade sind keine Termine eingetragen“. `ma21_kommende_termine()` holte die 50 ältesten Termine und filterte danach die kommenden; seit es mehr als 50 vergangene Termine gibt, blieb nichts übrig. Die Abfrage beginnt jetzt 60 Tage vor heute (mehrtägige Termine laufen noch). Das betrifft auch die Termin-Zählung der Startseite und die Termine auf Vereinsseiten.
+
+**Stand live:** Theme 21.29.1 kam am 09.11. um 17:44 Uhr per Selbst-Update; alle geprüften Dateien unter `/assets/` stimmen wieder mit dem Repository überein.
 
 ## Neu am 09.11.2026: Theme 21.29.1, Handyansicht wieder mit aktuellem CSS
 
