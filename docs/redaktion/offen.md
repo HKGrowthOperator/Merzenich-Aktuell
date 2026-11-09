@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-08-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-09-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -117,8 +117,8 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ### MA-PAPIERTONNE-2026 · P2 · T1-B/B0 · in_bearbeitung
 
-- Ort/Ressort: Alle Kernorte · Umwelt/Service; Art: Hintergrund; zuletzt geprüft: 2026-10-27 abends Europe/Berlin; Refresh: Vor einer Terminnennung.
-- Dossier: [2026-10-27-abends.md](dossiers/2026-10-27-abends.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-14-morgens.md](dossiers/2026-10-14-morgens.md), [2026-10-15-morgens.md](dossiers/2026-10-15-morgens.md), [2026-10-16-morgens.md](dossiers/2026-10-16-morgens.md), [2026-10-17-morgens.md](dossiers/2026-10-17-morgens.md), [2026-10-18-morgens.md](dossiers/2026-10-18-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md), [2026-10-26-claude-nachlauf.md](dossiers/2026-10-26-claude-nachlauf.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md)
+- Ort/Ressort: Alle Kernorte · Umwelt/Service; Art: Hintergrund; zuletzt geprüft: 2026-11-09T12:10:00+01:00; Refresh: Erst nach unabhängiger Bestätigung und geklärter Anschlussregelung
+- Dossier: [2026-11-09-mittags.md](dossiers/2026-11-09-mittags.md), [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-14-morgens.md](dossiers/2026-10-14-morgens.md), [2026-10-15-morgens.md](dossiers/2026-10-15-morgens.md), [2026-10-16-morgens.md](dossiers/2026-10-16-morgens.md), [2026-10-17-morgens.md](dossiers/2026-10-17-morgens.md), [2026-10-18-morgens.md](dossiers/2026-10-18-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md), [2026-10-26-claude-nachlauf.md](dossiers/2026-10-26-claude-nachlauf.md), [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md), [2026-10-27-abends.md](dossiers/2026-10-27-abends.md)
 - Quelle: https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen/papiertonne-gemeinde-merzenich.php (Gemeinde Merzenich / Schönmackers)
 - Möglicher Bestand (Stichwort): `altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026` – Altpapier bitte in die Tonne: Gemeinde und Schönmackers bitten um weniger lose Bündel (2026-10-15, inhalte/meldungen/2026-10-15-gemeinde-heimatinfo.json)
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 26.10. (Nachlauf): Gemeindeseite papiertonne-gemeinde-merzenich.php am 26.10. gelesen: Bitte, Altpapier in die vorhandene Tonne zu geben; keine Angabe zu 240-Liter-Behältern, 2027 oder Gebühren. Die Ka
@@ -149,7 +149,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-09 mittags (ChatGPT): 09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese.
+- 2026-11-09 morgens (ChatGPT): Neu im Kalender: Adventausstellung Blumen Hüffelmann 13.–15.11., jeweils 11–16 Uhr. Drei neue Claude-Artikel und umgesetzte sechs Korrekturen nachgeprüft. S19-Störungsmeldung nicht mehr im Feed, Entstörung nicht bestätigt. Keine neuen Themenkarten.
 - 2026-11-08 nachmittags (Claude): Kein neues ChatGPT-Dossier, Pflichtquellen ohne Neues; Kurzmeldung S19-Störung (Stellwerk Köln, kein Halt am Flughafen) mit neuem Commons-Symbolfoto und Bildklasse verkehr.bahn; Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen. – Commit 319ba58
 - 2026-11-08 morgens (Claude): Nachhollauf nach Sitzungsausfall 05.11. abends bis 08.11. 12:40 (Läufe 06./07.11. und 16 Eil-Prüfungen ausgefallen). Sechs ChatGPT-Korrekturen umgesetzt (Wochenvorschau, Pluriversum, Martinszüge); neu: Kurzmeldung Feuerwehr 145–147/26 und Folgemeldung Pluriversum in Niederzier; Kalender 1 neu, 3 geändert, 20 bestätigt. – Commit 7712685
-- 2026-11-08 mittags (ChatGPT): Neu: Feuerwehr147/26 Türöffnung Steinpfahl, T2 mangels unabhängiger Bestätigung und offener Bildsichtung. S19-Update mit expliziten Haltausfällen, T2. Zusätzlicher Veranstalterbeleg für bekannten Gottesdienst15.11.; keine tatsächliche Terminänderung. Sechs alte Artikelkorrekturen weiter offen.
-- 2026-11-08 morgens (ChatGPT): S19-Störung fortgeschrieben: Umleitung jetzt Porz-Wahn–Köln Trimbornstraße, Ersatzbusse ergänzt. T2, tatsächliche Entstörungszeit und unabhängiger Ereignisbeleg fehlen. Sechs bekannte Artikelkorrekturen unverändert offen. Keine neuen örtlichen Themen oder Terminänderungen.
