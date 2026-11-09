@@ -95,7 +95,8 @@ pruefe('Andere Themenseite: nichts markiert', substr_count(ma21_kopf_aktuell($vo
 $_SERVER['REQUEST_URI'] = '/rubrik/gibt-es-nicht/';
 pruefe('Unbekannte Sammelseite: keine Markierung', substr_count(ma21_kopf_aktuell($vorlage), 'aria-current'), 0);
 $_SERVER['REQUEST_URI'] = '/vereine/';
-pruefe('Vereine ausgeblendet: keine Markierung im Kopf (ma21_kopf_menue)', [substr_count(ma21_kopf_menue($vorlage), 'aria-current'), str_contains(ma21_kopf_menue($vorlage), '/vereine/')], [0, false]);
+// Nur der Menülink zählt: Im Ticker „Merzenich jetzt“ kann eine Meldung unter /vereine/<slug>/ stehen (09.11.2026).
+pruefe('Vereine ausgeblendet: keine Markierung im Kopf (ma21_kopf_menue)', [substr_count(ma21_kopf_menue($vorlage), 'aria-current'), str_contains(ma21_kopf_menue($vorlage), 'href="/vereine/"')], [0, false]);
 $GLOBALS['optionen'] = ['ma21_ausbau' => ['vereine' => true]];
 pruefe('Vereine eingeschaltet: „Vereine“ markiert (Leiste, Mehr-Menü, Schublade)', substr_count(ma21_kopf_menue($vorlage), '<a href="/vereine/" aria-current="page">'), 3);
 $GLOBALS['optionen'] = [];
