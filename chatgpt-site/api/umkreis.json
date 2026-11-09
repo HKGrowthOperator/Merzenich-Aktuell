@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-08",
+ "stand": "2026-11-09",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Alkoholisiert mit dem Pkw erwischt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6386593",
+   "datum": "2026-11-09",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Fahrzeugkontrolle in Düren zieht umfangreiche Maßnahmen nach sich",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6386589",
+   "datum": "2026-11-09",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Linnich: Einbruch in zwei Lagercontainer - Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6386584",
+   "datum": "2026-11-09",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",

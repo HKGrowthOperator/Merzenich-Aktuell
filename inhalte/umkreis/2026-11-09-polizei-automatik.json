@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Alkoholisiert mit dem Pkw erwischt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6386593",
+      "datum": "2026-11-09",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Fahrzeugkontrolle in Düren zieht umfangreiche Maßnahmen nach sich",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6386589",
+      "datum": "2026-11-09",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Linnich: Einbruch in zwei Lagercontainer - Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6386584",
+      "datum": "2026-11-09",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

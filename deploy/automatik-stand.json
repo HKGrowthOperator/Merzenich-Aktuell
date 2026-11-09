@@ -67,6 +67,11 @@
       "slug": "maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-11",
       "datei": "inhalte/termine/2026-11-05-heimatinfo-automatik.json",
       "am": "2026-11-05"
+    },
+    "https://www.heimat-info.de/veranstaltungen/7d1b5151-0bf2-482e-8b44-4c9bfde9e261": {
+      "slug": "maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-25",
+      "datei": "inhalte/termine/2026-11-09-heimatinfo-automatik.json",
+      "am": "2026-11-09"
     }
   },
   "umkreis": {
@@ -137,6 +142,18 @@
     "https://www.presseportal.de/blaulicht/pm/8/6386095": {
       "datei": "inhalte/umkreis/2026-11-08-polizei-automatik.json",
       "am": "2026-11-08"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6386593": {
+      "datei": "inhalte/umkreis/2026-11-09-polizei-automatik.json",
+      "am": "2026-11-09"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6386589": {
+      "datei": "inhalte/umkreis/2026-11-09-polizei-automatik.json",
+      "am": "2026-11-09"
+    },
+    "https://www.presseportal.de/blaulicht/pm/8/6386584": {
+      "datei": "inhalte/umkreis/2026-11-09-polizei-automatik.json",
+      "am": "2026-11-09"
     }
   }
 }
