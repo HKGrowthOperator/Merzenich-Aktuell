@@ -1,6 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-9. November 2026 · Theme 21.30.0 · Core-Plugin 1.48.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+9. November 2026 · Theme 21.30.1 · Core-Plugin 1.48.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 09.11.2026: Theme 21.30.1, Logo im Kopf ohne Sprung
+
+`editorial-audit.css` lädt spät (live nach etwa 4 s). Bis dahin schob der Flexkopf das Logo am Handy auf 148 px zusammen, danach sprang es auf 170 px (Layout-Verschiebung 0,056). Logo-Link (`flex:0 0 auto`) und Kopfzeile stehen jetzt schon im Bündel endgültig fest. Mit absichtlich verzögerter Datei bleibt nur noch eine Verschiebung von 0,004, und die kommt aus der Ressortleiste.
+
+**Stand live 21.30.0 / 1.48.3:** am 09.11. um 20:16 Uhr per Selbst-Update installiert. `/assets/marke/logo-04.png` antwortet mit 200 und `image/png`; die Bytes sind gleich dem Master. Das JSON-LD-Logo hat 1348 × 692. `og-default.jpg` und die CSS-Bündel sind gleich dem Repository.
 
 ## Neu am 09.11.2026: Theme 21.30.0 und Plugin 1.48.3, finales Logo 04
 

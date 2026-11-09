@@ -1698,9 +1698,11 @@ body.home .weitere-meldungen__raster>.bildraster-werbung{grid-column:1/-1}
    Am Handy bleibt der Kopf beim Scrollen stehen (kopf.js), deshalb dort moderat. */
 html body .masthead a.logo img{width:230px!important;max-width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:1348/692;object-fit:contain!important;object-position:left center;display:block;margin:0}
 html body .masthead{height:auto!important}
-html body .masthead .mast-inner{min-height:0!important;padding-block:8px}
+/* Endgültig schon vor editorial-audit.css (lädt spät): Logo-Link schrumpft nicht, Kopf als Flexzeile. */
+html body .masthead a.logo{flex:0 0 auto!important;max-width:none!important}
+html body .masthead .mast-inner{min-height:0!important;padding-top:8px!important;padding-bottom:8px!important;display:flex!important;align-items:center!important;height:auto!important}
 @media (max-width:900px){html body .masthead a.logo img{width:200px!important}}
-@media (max-width:767px){html body .masthead .mast-inner{padding-block:4px}html body .masthead a.logo img{width:170px!important}}
+@media (max-width:767px){html body .masthead .mast-inner{padding-top:4px!important;padding-bottom:4px!important}html body .masthead a.logo img{width:170px!important}}
 @media (max-width:374px){html body .masthead a.logo img{width:150px!important}}
 @media (max-width:340px){html body .masthead a.logo img{width:136px!important}}
 /* Schublade: dunkler Grund, das Logo liegt auf einer hellen Fläche (nicht invertiert). */
