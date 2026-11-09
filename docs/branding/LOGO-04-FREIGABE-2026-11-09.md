@@ -49,3 +49,21 @@ Gesetzt wird das zentral über `deploy/kopf-theme-einbinden.mjs` für alle Seite
 **Unverändert, mit Begründung:**
 - Das Monogramm „M“ im eingeklappten Kopf und im Cookie-Hinweis, außerdem Favicon und App-Symbole. Das sind quadratische Zeichen; eine neue quadratische Fassung von Logo 04 wäre eine eigene Markenvariante, und die ist nicht freigegeben.
 - Anleitungs-PDF und -Video nutzen noch den alten Schriftzug. Sie gehören nicht zur Website.
+
+## Live geprüft (09.11.2026, 20:27 Uhr, Theme 21.30.1, Plugin 1.48.3)
+
+Vorher und nachher: [Desktop](logo-04/logo04-desktop-vorher-nachher.png) und [Handy, Menü, Fuß](logo-04/logo04-handy-vorher-nachher.png).
+
+| Breite | Logo im Kopf | Kopfhöhe | Fuß-Logo |
+|---|---|---|---|
+| 1440 / 1180 | 230 × 118 | 134 (vorher 86) | 190 × 98 |
+| 820 | 200 × 103 | 119 | 190 × 98 |
+| 390 | 170 × 87 | 95 (vorher 64) | 150 × 77 |
+| 360 | 150 × 77 | 85 | 150 × 77 |
+| 320 | 136 × 70 | 78 | 150 × 77 |
+
+- **Seitenverhältnis:** überall 1,948 = 1348 : 692.
+- **Überlauf und Fehler:** kein waagrechter Überlauf. 0 Konsolenfehler auf Startseite, `/impressum/`, `/termine/` und `/unternehmen/`. Die 404-Seite meldet nur ihren eigenen Status.
+- **Layout-Verschiebung:** am Handy 0,004, vorher 0,006. Am Desktop 0,163, vorher 0,177; der Rest kommt aus der Ressortleiste, nicht vom Logo.
+- **Auslieferung:** `/assets/marke/logo-04.png` antwortet mit 200 und `image/png`, die Bytes sind gleich dem Master. Die Datei liegt im Theme unter `static/`, keine CSP- oder CORS-Fehler.
+- **Druckansicht:** Logo 200 × 103.
