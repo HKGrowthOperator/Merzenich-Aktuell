@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-10T09:20:00+01:00",
- "anzahl": 233,
+ "generated": "2026-11-10T14:48:00+01:00",
+ "anzahl": 234,
  "bestand": {
-  "gesamt": 233,
+  "gesamt": 234,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 34,
-   "rathaus": 33,
+   "rathaus": 34,
    "leben": 52,
    "wirtschaft": 13,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 160,
+   "merzenich": 161,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 233,
+    "anzahl": 234,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 33,
+    "anzahl": 34,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 160,
+    "anzahl": 161,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-10-bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo",
+   "url": "/rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
+   "titel": "Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo",
+   "teaser": "Am 12. November berät der Bau-, Planungs- und Umweltausschuss öffentlich über einige der größten Vorhaben der Gemeinde. Ein Überblick über die Tagesordnung und was zu jedem Punkt bekannt ist.",
+   "kicker": "Rathaus · Vorschau",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-10T14:48:00+01:00",
+   "aktualisiert": "2026-11-10T14:48:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "bauausschuss",
+     "label": "Bauausschuss"
+    },
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-10-fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
    "url": "/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/",
@@ -9681,15 +9719,20 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
-  "url": "/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
-  "titel": "S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen"
+  "id": "2026-11-10-bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo",
+  "url": "/rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
+  "titel": "Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo"
  },
  "nebenmeldungen": [
   {
    "id": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
    "url": "/vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/",
    "titel": "Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung"
+  },
+  {
+   "id": "2026-11-08-s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026",
+   "url": "/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
+   "titel": "S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen"
   },
   {
    "id": "2026-11-08-pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort",
@@ -9700,11 +9743,6 @@
    "id": "2026-11-08-feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026",
    "url": "/blaulicht/feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026/",
    "titel": "Drei Feuerwehreinsätze in Merzenich: Hund aus Gartentor befreit, Wohnung nach Hausnotruf geöffnet"
-  },
-  {
-   "id": "2026-11-05-merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag",
-   "url": "/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/",
-   "titel": "Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag"
   }
  ],
  "startseitenMotive": {
@@ -9752,19 +9790,19 @@
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 1,
-  "editorial-pools/wirtschaft/wirtschaft-05-94380a1858": 1,
   "places/buergewald": 1,
   "places/girbelsrath": 2,
   "places/golzheim": 1,
   "places/merzenich": 1,
   "places/morschenich": 1,
+  "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
   "responsive/f507b5f3e2c7d3": 1
  },
  "buehnenMotive": [
+  "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36",
   "editorial-pools/kultur/kultur-01-8826d38c5d",
-  "editorial-pools/themen/themen-05-1ca58804a8",
   "editorial-pools/themen/themen-20-72a84de410",
   "editorial-pools/themen/themen-24-960e0101ba"
  ],

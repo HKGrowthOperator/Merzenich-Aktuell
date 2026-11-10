@@ -137,7 +137,7 @@
   }
   if (!document.querySelector('script[data-ma-ressort-dropdowns]')) {
     const script = document.createElement('script');
-    script.src = '/assets/ressort-dropdowns.js?v=5f164128d5';
+    script.src = '/assets/ressort-dropdowns.js?v=a08c694b3a';
     script.defer = true;
     script.dataset.maRessortDropdowns = '1';
     document.head.append(script);

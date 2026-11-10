@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-10T09:20:00+01:00",
-  "stand": "2026-11-10T09:20:00+01:00",
+  "generated": "2026-11-10T14:48:00+01:00",
+  "stand": "2026-11-10T14:48:00+01:00",
   "items": [
+    {
+      "title": "Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
+      "date": "2026-11-10T14:48:00+01:00",
+      "ressort": "rathaus",
+      "ort": "merzenich",
+      "teaser": "Am 12. November berät der Bau-, Planungs- und Umweltausschuss öffentlich über einige der größten Vorhaben der Gemeinde. Ein Überblick über die Tagesordnung und was zu jedem Punkt bekannt ist.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
+    },
     {
       "title": "SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel",
       "url": "https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg"
-    },
-    {
-      "title": "Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
-      "date": "2026-10-26T17:30:00+01:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Gräbersegnungen in allen Ortsteilen am 31. Oktober und 1. November, das wöchentliche Rosenkranzgebet zieht ab dem 4. November zurück ins Pfarrheim, und die Caritas lädt pflegende Angehörige zu zwei Selbsthilfegruppen an die Lindenstraße.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg"
     }
   ],
   "events": [

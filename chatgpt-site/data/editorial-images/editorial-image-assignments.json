@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T08:20:17.589Z",
+  "updatedAt": "2026-11-10T13:49:30.898Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1664,6 +1664,15 @@
       "assignedAt": "2026-11-10T08:20:17.589Z",
       "articleId": "2026-11-10-fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
       "articleDate": "2026-11-10T09:20:00+01:00"
+    },
+    "/rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-10T13:49:30.897Z",
+      "articleId": "2026-11-10-bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo",
+      "articleDate": "2026-11-10T14:48:00+01:00"
     }
   }
 }
