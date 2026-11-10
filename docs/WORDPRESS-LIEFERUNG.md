@@ -13,6 +13,11 @@ Ordin teilte die Fußball-Meldung vom 10.11. in WhatsApp. Die Vorschau zeigte nu
 
 WhatsApp merkt sich eine misslungene Vorschau je Adresse eine Zeit lang. Zum Nachprüfen eine andere Meldung teilen oder an die Adresse `?wa=1` anhängen.
 
+**Stand live 1.48.4:** am 10.11. um 10:56 Uhr (MEZ) per Selbst-Update installiert.
+- Der Zuschnitt der Fußball-Meldung hat jetzt 135 KB statt 247 KB, weiterhin 1200 × 675 als JPEG.
+- Die Meldung trägt `og:image:secure_url` und `og:image:type`.
+- Unter den 40 neuesten Meldungen liegt kein Vorschaubild mehr über 150 KB (vorher 10). Der Nachlauf arbeitet die älteren Bilder über WP-Cron ab.
+
 ## Neu am 09.11.2026: Theme 21.30.1, Logo im Kopf ohne Sprung
 
 `editorial-audit.css` lädt spät (live nach etwa 4 s). Bis dahin schob der Flexkopf das Logo am Handy auf 148 px zusammen, danach sprang es auf 170 px (Layout-Verschiebung 0,056). Logo-Link (`flex:0 0 auto`) und Kopfzeile stehen jetzt schon im Bündel endgültig fest. Mit absichtlich verzögerter Datei bleibt nur noch eine Verschiebung von 0,004, und die kommt aus der Ressortleiste.
