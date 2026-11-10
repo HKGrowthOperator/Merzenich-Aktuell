@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-10-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-10-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 47 |
+| uebernommen | 48 |
 | gesperrt | 27 |
 | neu | 6 |
 | zur_abnahme | 5 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-10 nachmittags (Claude): Keine Korrekturen; Kurzmeldung Vorschau Bauausschuss 12.11.; Anbieterbeiträge (Tagespflege, Adventausstellung) nicht übernommen; Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen. – Commit d16371d5
 - 2026-11-10 mittags (ChatGPT): Fußballmeldung aus dem Morgenlauf an Originalberichten und Tabellen nachgeprüft. Keine neue belegte Korrektur, keine neuen Themenkarten und keine Terminänderungen. Offene Derbywertung, historischer S19-Reparaturbeleg und Teile der Artikel-/Vereinsprüfung ausdrücklich begrenzt.
 - 2026-11-10 morgens (Claude): Keine Korrekturen; Kurzmeldung Fußball-Spieltag 8.11. (SC Platz drei, Golzheim 2:2, Derby Girbelsrath ohne Gastgeber), Spielstand aktualisiert; Kalender bis 24.11. bestätigt. – Commit de270a71
 - 2026-11-10 morgens (ChatGPT): Neue Fußballergebnisse und offizieller Nichtantritt im Ortsderby als eine T2-Karte. Papierartikel und S19-Nachtrag geprüft, keine Wiederholung. Keine neue belegte Korrektur, Teilprüfungen ausdrücklich offen. Kein neuer/geänderter Termin 10.–23.11.
-- 2026-11-09 nachmittags (Claude): Nachgeholt nach Sitzungsausfall 08.11. abends bis 09.11. 18:40 (Morgenlauf und vier Eil-Prüfungen ausgefallen). S19-Nachtrag (Stellwerk repariert); neu: Kurzmeldung Ende der Papiersammlung der Schützen Golzheim; Termin Jugendgremium 03.12.; Mindesttakt 09.11.: 1 Meldung. – Commit 7a33c763

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-10-mittags.md",
+  "latest_dossier": "dossiers/2026-11-10-claude-nachmittags.md",
   "source_check_window": "10.11.2026, 12:05:28–12:06:07 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11087,6 +11087,28 @@
           "heading": "1 · MA-SONNTAGSSPORT-ERG-0811"
         }
       ]
+    },
+    {
+      "id": "MA-BAUAUSSCHUSS-12112026-VORSCHAU",
+      "priority": "P2",
+      "location_section": "Merzenich · Rathaus",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-10 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-10-recherche-claude-nachmittags.json → /rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
+      "article_id": null,
+      "implementation_commit": "d16371d5",
+      "notes": "Claude 10.11. nachmittags: Vorschau (Kurzmeldung) auf die 5. Sitzung des Bauausschusses am 12.11. nach Tagesordnung und den ausgewerteten Vorlagen. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "dossier_history": [
+        {
+          "date": "2026-11-10",
+          "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
+          "heading": "1 · MA-BAUAUSSCHUSS-12112026-VORSCHAU"
+        }
+      ]
     }
   ],
   "archive": {
@@ -12592,6 +12614,16 @@
         "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
         "Pluriversum- und Senioren-Kalenderkonflikte unverändert"
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-10-mittags.md",
+      "implementation_commit": "d16371d5",
+      "summary": "Keine Korrekturen; Kurzmeldung Vorschau Bauausschuss 12.11.; Anbieterbeiträge (Tagespflege, Adventausstellung) nicht übernommen; Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

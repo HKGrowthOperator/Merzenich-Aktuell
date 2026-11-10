@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [10.11.2026, Claude-Morgenlauf](dossiers/2026-11-10-claude-morgens.md), Vergleichsbasis [ChatGPT 10.11. morgens](dossiers/2026-11-10-morgens.md) und [Claude 09.11. nachmittags](dossiers/2026-11-09-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [10.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-10-claude-nachmittags.md), Vergleichsbasis [ChatGPT 10.11. mittags](dossiers/2026-11-10-mittags.md) und [Claude 10.11. morgens](dossiers/2026-11-10-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 10.11. nachmittags:** 1 neue Kurzmeldung „Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo“ (265 Wörter, Tagesordnung und Vorlagen). Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen. Commit `d16371d5`.
 
 **Umgesetzt am 10.11. morgens:** 1 neue Kurzmeldung „SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel“ (289 Wörter, FUSSBALL.DE und FuPa; Derby Girbelsrath–Morschenich als Nichtantritt der Gastgeber). Spielstand aktualisiert (nächstes Spiel 15.11. in Frenz). Kalender bis 24.11. bestätigt. Commits `de270a71`, `b86a2bfd`.
 
