@@ -503,6 +503,12 @@ function ma_seo_klartext(string $html, int $max = 6000): string {
 
 /* ------------------------------------------------------------ Kontext der aktuellen Seite */
 
+/** Bildtyp aus der Dateiendung für og:image:type (WhatsApp und Co. lesen ihn mit), leer bei Unbekanntem. */
+function ma_seo_bildtyp(string $url): string {
+    $endung = strtolower(pathinfo((string) parse_url($url, PHP_URL_PATH), PATHINFO_EXTENSION));
+    return ['jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png', 'webp' => 'image/webp', 'gif' => 'image/gif'][$endung] ?? '';
+}
+
 /** Standardbild (1200×630) und Logo liegen im Theme unter static/assets/img (Adresse /assets/…). */
 function ma_seo_standardbild(): array {
     return ['url' => home_url('/assets/img/og-default.jpg'), 'w' => 1200, 'h' => 630, 'alt' => MA_SEO_MARKE];
@@ -694,7 +700,8 @@ function ma_seo_head(): void {
     if ($k['beschreibung'] !== '') $z .= '<meta property="og:description" content="' . $e($k['beschreibung']) . '">' . "\n";
     if ($k['url'] !== '') $z .= '<meta property="og:url" content="' . esc_url($k['url']) . '">' . "\n";
     $b = $k['bild'];
-    $z .= '<meta property="og:image" content="' . esc_url($b['url']) . '">' . ($b['w'] ? '<meta property="og:image:width" content="' . (int) $b['w'] . '"><meta property="og:image:height" content="' . (int) $b['h'] . '">' : '') . '<meta property="og:image:alt" content="' . $e($b['alt']) . '">' . "\n";
+    $typ = ma_seo_bildtyp((string) $b['url']);
+    $z .= '<meta property="og:image" content="' . esc_url($b['url']) . '">' . (str_starts_with((string) $b['url'], 'https://') ? '<meta property="og:image:secure_url" content="' . esc_url($b['url']) . '">' : '') . ($typ !== '' ? '<meta property="og:image:type" content="' . $typ . '">' : '') . ($b['w'] ? '<meta property="og:image:width" content="' . (int) $b['w'] . '"><meta property="og:image:height" content="' . (int) $b['h'] . '">' : '') . '<meta property="og:image:alt" content="' . $e($b['alt']) . '">' . "\n";
     if ($k['og'] === 'article') {
         if ($k['veroeffentlicht']) $z .= '<meta property="article:published_time" content="' . $e($k['veroeffentlicht']) . '">';
         if ($k['geaendert']) $z .= '<meta property="article:modified_time" content="' . $e($k['geaendert']) . '">';

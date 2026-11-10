@@ -12,6 +12,11 @@
  * der Größen (WebP-Nachlauf) verliert sie so nicht, und das srcset der Seite
  * bleibt unverändert. ma_seo_bild() (seo.php) nimmt sie für og:image und
  * JSON-LD, sobald sie da sind; vorher bleibt alles wie bisher.
+ *
+ * Seit 1.48.4 höchstens 150 KB je Zuschnitt: WhatsApp verwirft Vorschaubilder
+ * um 300 KB ohne Meldung und zeigt dann nur das Seitensymbol (Fußball-Meldung
+ * vom 10.11.2026 mit 247 KB). Die Qualität sinkt dafür in Stufen von 82 bis 50.
+ * Ältere Zuschnitte (Stand 1) über der Grenze rechnet der Nachlauf einmal neu.
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -19,6 +24,9 @@ const MA_ZUSCHNITTE = ['16x9' => [16, 9], '4x3' => [4, 3], '1x1' => [1, 1]];
 const MA_ZUSCHNITT_BREITE = 1200;
 const MA_ZUSCHNITT_TYPEN = ['post', 'ma_event', 'ma_club', 'ma_job', 'ma_property', 'ma_tip', 'ma_business'];
 const MA_ZUSCHNITT_CRON = 'ma_zuschnitte_nachlauf';
+const MA_ZUSCHNITT_MAX_BYTES = 150000;
+const MA_ZUSCHNITT_QUALITAET = [82, 74, 66, 58, 50];
+const MA_ZUSCHNITT_STAND = 2;
 
 /**
  * Mittiger Ausschnitt im Seitenverhältnis $rw:$rh aus einem Bild $w×$h und die
@@ -47,6 +55,38 @@ function ma_seo_zuschnitte(int $id): array {
     return $aus;
 }
 
+/** Metaangabe eines Anhangs ist noch zu bearbeiten: keine Zuschnitte oder Stand vor der Größengrenze. */
+function ma_seo_zuschnitte_veraltet($z): bool {
+    if (!is_array($z)) return true;
+    if (!empty($z['fehlt'])) return false;
+    return (int) ($z['stand'] ?? 1) < MA_ZUSCHNITT_STAND;
+}
+
+/**
+ * Ein Zuschnitt muss (neu) entstehen: noch nicht versucht, Datei weg oder (alter
+ * Stand) größer als die Grenze. Ein zu kleines Bild (file leer) wird nicht erneut versucht.
+ */
+function ma_seo_zuschnitt_neu_noetig($eintrag, string $ordner, int $stand): bool {
+    if (!is_array($eintrag)) return true;
+    if ((string) ($eintrag['file'] ?? '') === '') return false;
+    $pfad = $ordner . '/' . $eintrag['file'];
+    if (!is_file($pfad)) return true;
+    return $stand < MA_ZUSCHNITT_STAND && (int) filesize($pfad) > MA_ZUSCHNITT_MAX_BYTES;
+}
+
+/** Speichert den zugeschnittenen Editor als JPEG, Qualität in Stufen abwärts bis zur Größengrenze (sonst die kleinste Fassung). */
+function ma_seo_zuschnitt_speichern($ed, string $pfad) {
+    $erg = null;
+    foreach (MA_ZUSCHNITT_QUALITAET as $q) {
+        $ed->set_quality($q);
+        $erg = $ed->save($pfad, 'image/jpeg');
+        if (is_wp_error($erg)) return $erg;
+        clearstatcache(true, (string) $erg['path']);
+        if ((int) @filesize((string) $erg['path']) <= MA_ZUSCHNITT_MAX_BYTES) break;
+    }
+    return $erg;
+}
+
 /** Erzeugt fehlende Zuschnitte eines Anhangs. Nicht mögliche (Bild zu klein) werden vermerkt und nicht erneut versucht. */
 function ma_seo_zuschnitte_erzeugen(int $id): void {
     $alt = get_post_meta($id, 'ma_zuschnitte', true);
@@ -58,32 +98,36 @@ function ma_seo_zuschnitte_erzeugen(int $id): void {
     $name0 = pathinfo($datei, PATHINFO_FILENAME);
     $neu = $alt;
     unset($neu['fehlt']);
+    $stand = (int) ($alt['stand'] ?? 1);
     // JPEG, nicht WebP (images.php stellt Uploads auf WebP um): nicht jeder Messenger zeigt WebP in der Vorschau.
     $nur_jpeg = static function (array $f): array { unset($f['image/jpeg']); return $f; };
     add_filter('image_editor_output_format', $nur_jpeg, PHP_INT_MAX);
     foreach (MA_ZUSCHNITTE as $name => [$rw, $rh]) {
-        if (isset($neu[$name]) && ($neu[$name]['file'] === '' || is_file($ordner . '/' . $neu[$name]['file']))) continue;
+        $vorher = $neu[$name] ?? null;
+        if (!ma_seo_zuschnitt_neu_noetig($vorher, $ordner, $stand)) continue;
+        // Scheitert das Neuberechnen eines vorhandenen (nur zu großen) Zuschnitts, bleibt der alte stehen.
+        $leer = is_array($vorher) && (string) ($vorher['file'] ?? '') !== '' && is_file($ordner . '/' . $vorher['file']) ? $vorher : ['file' => '', 'w' => 0, 'h' => 0];
         $m = ma_seo_zuschnitt_masse((int) $groesse[0], (int) $groesse[1], $rw, $rh);
         if (!$m) { $neu[$name] = ['file' => '', 'w' => 0, 'h' => 0]; continue; }
         $ed = wp_get_image_editor($datei);
-        if (is_wp_error($ed)) { $neu[$name] = ['file' => '', 'w' => 0, 'h' => 0]; continue; }
-        $ed->set_quality(82);
+        if (is_wp_error($ed)) { $neu[$name] = $leer; continue; }
         $erg = $ed->crop($m['x'], $m['y'], $m['w'], $m['h'], $m['zw'], $m['zh']);
-        if (!is_wp_error($erg)) $erg = $ed->save($ordner . '/' . $name0 . '-teilen-' . $name . '.jpg', 'image/jpeg');
-        $neu[$name] = is_wp_error($erg) ? ['file' => '', 'w' => 0, 'h' => 0] : ['file' => basename((string) $erg['path']), 'w' => (int) $erg['width'], 'h' => (int) $erg['height']];
+        if (!is_wp_error($erg)) $erg = ma_seo_zuschnitt_speichern($ed, $ordner . '/' . $name0 . '-teilen-' . $name . '.jpg');
+        $neu[$name] = is_wp_error($erg) ? $leer : ['file' => basename((string) $erg['path']), 'w' => (int) $erg['width'], 'h' => (int) $erg['height']];
     }
     remove_filter('image_editor_output_format', $nur_jpeg, PHP_INT_MAX);
+    $neu['stand'] = MA_ZUSCHNITT_STAND;
     if ($neu !== $alt) update_post_meta($id, 'ma_zuschnitte', $neu);
 }
 
-/** Beitragsbilder veröffentlichter Inhalte, denen die Zuschnitte noch fehlen. */
+/** Beitragsbilder veröffentlichter Inhalte, denen die Zuschnitte noch fehlen oder die noch auf altem Stand sind. */
 function ma_seo_zuschnitte_offen(int $limit = 20): array {
     $posts = get_posts(['post_type' => MA_ZUSCHNITT_TYPEN, 'post_status' => 'publish', 'posts_per_page' => -1, 'fields' => 'ids', 'orderby' => 'date', 'order' => 'DESC',
         'meta_query' => [['key' => '_thumbnail_id', 'compare' => 'EXISTS']], 'no_found_rows' => true]);
     $offen = [];
     foreach ($posts as $p) {
         $bild = (int) get_post_thumbnail_id($p);
-        if ($bild && !in_array($bild, $offen, true) && !is_array(get_post_meta($bild, 'ma_zuschnitte', true))) $offen[] = $bild;
+        if ($bild && !in_array($bild, $offen, true) && ma_seo_zuschnitte_veraltet(get_post_meta($bild, 'ma_zuschnitte', true))) $offen[] = $bild;
         if (count($offen) >= $limit) break;
     }
     return $offen;

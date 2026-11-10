@@ -121,6 +121,31 @@ pruefe('3:2-Foto 1536×1024 → 1:1 1024×1024, nicht hochgerechnet', ma_seo_zus
 pruefe('Hochformat 768×1085 → 16:9 768×432', array_slice(ma_seo_zuschnitt_masse(768, 1085, 16, 9), 4), ['zw' => 768, 'zh' => 432]);
 pruefe('Zu kleines Bild (200×150) → kein Zuschnitt', ma_seo_zuschnitt_masse(200, 150, 16, 9), null);
 
+echo "\nTeilen-Zuschnitte höchstens 150 KB (1.48.4, WhatsApp)\n";
+if (!function_exists('is_wp_error')) { function is_wp_error($x) { return $x instanceof WP_Error; } class WP_Error {} }
+$tmp = sys_get_temp_dir() . '/ma-zuschnitt-' . getmypid();
+@mkdir($tmp);
+file_put_contents("$tmp/gross.jpg", str_repeat('x', 247000));
+file_put_contents("$tmp/klein.jpg", str_repeat('x', 140000));
+pruefe('Metaangabe fehlt → bearbeiten', ma_seo_zuschnitte_veraltet(''), true);
+pruefe('Stand 1 → bearbeiten, Stand 2 → fertig', [ma_seo_zuschnitte_veraltet(['16x9' => ['file' => 'a.jpg']]), ma_seo_zuschnitte_veraltet(['stand' => 2])], [true, false]);
+pruefe('Original fehlt → nicht immer wieder versuchen', ma_seo_zuschnitte_veraltet(['fehlt' => true]), false);
+pruefe('Zuschnitt noch nie versucht → neu', ma_seo_zuschnitt_neu_noetig(null, $tmp, 1), true);
+pruefe('Bild zu klein (file leer) → nicht erneut versuchen', ma_seo_zuschnitt_neu_noetig(['file' => '', 'w' => 0, 'h' => 0], $tmp, 1), false);
+pruefe('Datei verschwunden → neu', ma_seo_zuschnitt_neu_noetig(['file' => 'weg.jpg'], $tmp, 2), true);
+pruefe('Alter Stand, 247 KB → neu rechnen; 140 KB → bleibt', [ma_seo_zuschnitt_neu_noetig(['file' => 'gross.jpg'], $tmp, 1), ma_seo_zuschnitt_neu_noetig(['file' => 'klein.jpg'], $tmp, 1)], [true, false]);
+pruefe('Neuer Stand: vorhandene Datei bleibt, auch wenn groß', ma_seo_zuschnitt_neu_noetig(['file' => 'gross.jpg'], $tmp, 2), false);
+// Editor-Attrappe: Dateigröße hängt an der Qualität (q × 3000 Byte), 82 → 246 KB, 50 → 150 KB.
+$ed = new class { public $q = 0; public $stufen = []; public function set_quality($q) { $this->q = $q; } public function save($pfad, $typ) { $this->stufen[] = $this->q; file_put_contents($pfad, str_repeat('x', $this->q * 3000)); return ['path' => $pfad, 'width' => 1200, 'height' => 675]; } };
+$erg = ma_seo_zuschnitt_speichern($ed, "$tmp/z.jpg");
+pruefe('Speichern: Qualität 82 → 74 → 66 → 58 → 50, bis höchstens 150 KB', [$ed->stufen, filesize("$tmp/z.jpg"), $erg['width']], [[82, 74, 66, 58, 50], 150000, 1200]);
+$ed2 = new class { public $stufen = []; public $q = 0; public function set_quality($q) { $this->q = $q; } public function save($pfad, $typ) { $this->stufen[] = $this->q; file_put_contents($pfad, str_repeat('x', $this->q * 1000)); return ['path' => $pfad, 'width' => 1200, 'height' => 675]; } };
+ma_seo_zuschnitt_speichern($ed2, "$tmp/z2.jpg");
+pruefe('Kleines Bild: bleibt bei Qualität 82', $ed2->stufen, [82]);
+pruefe('Fertige Zuschnitte: Stand-Merker taucht nicht als Bild auf', array_keys(array_filter(['16x9' => 1, '4x3' => 1, '1x1' => 1, 'stand' => 2], fn($k) => isset(MA_ZUSCHNITTE[$k]), ARRAY_FILTER_USE_KEY)), ['16x9', '4x3', '1x1']);
+array_map('unlink', glob("$tmp/*")); rmdir($tmp);
+pruefe('og:image:type aus der Endung', [ma_seo_bildtyp('https://x.de/a-teilen-16x9.jpg'), ma_seo_bildtyp('https://x.de/og.JPEG?v=2'), ma_seo_bildtyp('https://x.de/logo.png'), ma_seo_bildtyp('https://x.de/bild')], ['image/jpeg', 'image/jpeg', 'image/png', '']);
+
 $k['gesponsert'] = 'Musterfirma'; $k['quelle'] = ''; $k['bild'] = null; $k['tags'] = [];
 $a = $finde(ma_seo_graph($k, $ORG), 'NewsArticle');
 pruefe('Gesponsert: sponsor gesetzt, Auftraggeber als author; ohne Quelle/Bild/Tags keine leeren Felder', $a['sponsor']['name'] === 'Musterfirma' && $a['author'][0]['name'] === 'Musterfirma' && !isset($a['citation']) && !isset($a['image']) && !isset($a['keywords']), true);

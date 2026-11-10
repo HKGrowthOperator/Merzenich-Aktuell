@@ -1,6 +1,17 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-9. November 2026 · Theme 21.30.1 · Core-Plugin 1.48.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+10. November 2026 · Theme 21.30.1 · Core-Plugin 1.48.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 10.11.2026: Plugin 1.48.4, Vorschaubild in WhatsApp
+
+Ordin teilte die Fußball-Meldung vom 10.11. in WhatsApp. Die Vorschau zeigte nur das Seitensymbol („M“, `icon-180.png`), nicht das Artikelbild. Die Seite meldete das richtige `og:image` (16:9-Zuschnitt, 1200 × 675, 200, JPEG). Das Bild war aber 247 KB groß, nahe an der Grenze von etwa 300 KB, ab der WhatsApp Vorschaubilder ohne Meldung verwirft und auf das Symbol ausweicht. Unter 40 neuen Meldungen lagen 10 Zuschnitte über 150 KB.
+
+- **Kleinere Zuschnitte:** `includes/teilen-bilder.php` speichert die Teilen-Zuschnitte (16:9, 4:3, 1:1) höchstens 150 KB groß. Die JPEG-Qualität sinkt dafür in Stufen von 82 bis 50; die Breite bleibt 1200 px für Google Discover.
+- **Bestand:** Vorhandene Zuschnitte (ohne `stand: 2` in `ma_zuschnitte`) über der Grenze rechnet der vorhandene Nachlauf nach dem Update einmal neu, 20 Bilder je Minute, neueste Meldungen zuerst. Die Dateinamen bleiben.
+- **Zusätzliche Bildangaben:** Neben `og:image` stehen jetzt `og:image:secure_url` und `og:image:type`.
+- **Tests:** `qa/wordpress/seo-test.php`.
+
+WhatsApp merkt sich eine misslungene Vorschau je Adresse eine Zeit lang. Zum Nachprüfen eine andere Meldung teilen oder an die Adresse `?wa=1` anhängen.
 
 ## Neu am 09.11.2026: Theme 21.30.1, Logo im Kopf ohne Sprung
 
