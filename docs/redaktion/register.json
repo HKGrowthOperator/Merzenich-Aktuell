@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-10-claude-morgens.md",
-  "source_check_window": "10.11.2026, 07:03:14–07:06:20 Europe/Berlin; Commons ergänzend gegen 07:06",
+  "latest_dossier": "dossiers/2026-11-10-mittags.md",
+  "source_check_window": "10.11.2026, 12:05:28–12:06:07 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12555,6 +12555,43 @@
       "implementation_commit": "de270a71",
       "summary": "Keine Korrekturen; Kurzmeldung Fußball-Spieltag 8.11. (SC Platz drei, Golzheim 2:2, Derby Girbelsrath ohne Gastgeber), Spielstand aktualisiert; Kalender bis 24.11. bestätigt.",
       "publication": "Neue Meldung und Spielstand direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-10",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-10-mittags.md",
+      "compared_with": "dossiers/2026-11-10-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-10-claude-morgens.md",
+      "base_commit": "301af39364abf0e64098d7a834742a05be9106c5",
+      "implementation_commit": null,
+      "summary": "Fußballmeldung aus dem Morgenlauf an Originalberichten und Tabellen nachgeprüft. Keine neue belegte Korrektur, keine neuen Themenkarten und keine Terminänderungen. Offene Derbywertung, historischer S19-Reparaturbeleg und Teile der Artikel-/Vereinsprüfung ausdrücklich begrenzt.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 1,
+      "article_partial_checks": 8,
+      "repository_article_files_read": 41,
+      "repository_event_files_read": 18,
+      "repository_area_files_read": 13,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "10.11.2026, 12:05:28–12:06:07 Europe/Berlin",
+      "deadline": "2026-11-10T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Abschließende Derbywertung und unabhängige Herkunft der FuPa-Daten nicht bestätigt",
+        "S19: historischer Reparaturzeitpunkt und damalige Busregelung nicht erneut am heutigen Originalfeed verfügbar",
+        "Jonge vom Berg: HTTP 200 mit Site Unavailable, daher Vereinsangaben unvollständig geprüft",
+        "Feuerwehr: nicht alle historischen Vergleichseinsätze erneut im Original gelesen",
+        "Wochenvorschau: Kursplatzlage und genaue Taizé-Kapelle offen",
+        "Jugendgremium: kein Ergebnis im gelesenen öffentlichen Vorgang",
+        "Pluriversum- und Senioren-Kalenderkonflikte unverändert"
+      ]
     }
   ]
 }
