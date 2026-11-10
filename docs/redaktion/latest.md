@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [09.11.2026, Claude-Nachmittagslauf (nachgeholt)](dossiers/2026-11-09-claude-nachmittags.md), Vergleichsbasis [ChatGPT 09.11. mittags](dossiers/2026-11-09-mittags.md) und [Claude 08.11. nachmittags](dossiers/2026-11-08-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [10.11.2026, Claude-Morgenlauf](dossiers/2026-11-10-claude-morgens.md), Vergleichsbasis [ChatGPT 10.11. morgens](dossiers/2026-11-10-morgens.md) und [Claude 09.11. nachmittags](dossiers/2026-11-09-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 10.11. morgens:** 1 neue Kurzmeldung „SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel“ (289 Wörter, FUSSBALL.DE und FuPa; Derby Girbelsrath–Morschenich als Nichtantritt der Gastgeber). Spielstand aktualisiert (nächstes Spiel 15.11. in Frenz). Kalender bis 24.11. bestätigt. Commits `de270a71`, `b86a2bfd`.
 
 **Umgesetzt am 09.11. nachmittags (nachgeholt ab 18:41 Uhr):** Erneuter Sitzungsausfall vom 08.11. abends bis 09.11. 18:40 Uhr; Morgenlauf und vier Eil-Prüfungen ausgefallen. S19-Meldung mit Nachtrag (Stellwerk repariert). 1 neue Kurzmeldung „Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung“ (308 Wörter). Kalender: Jugendgremium 03.12. neu, Skatrunde 25.11. bereinigt. Mindesttakt 09.11.: 1 Meldung (verfehlt). Commits `1b16fab2`, `7a33c763`, `57b68c65`.
 

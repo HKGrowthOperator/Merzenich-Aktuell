@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-10-morgens.md",
+  "latest_dossier": "dossiers/2026-11-10-claude-morgens.md",
   "source_check_window": "10.11.2026, 07:03:14–07:06:20 Europe/Berlin; Commons ergänzend gegen 07:06",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11026,15 +11026,15 @@
       "priority": "P2",
       "location_section": "Merzenich, Golzheim, Girbelsrath, Morschenich · Sport",
       "change_type": "Neu ausgewerteter Spielblock",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-10-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-10T07:06:20+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-10-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-10 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-10-recherche-claude-morgens.json → /sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Spielblock 08.11.: SC-Erste laut DFB und FuPa 2:1; Golzheim laut FuPa 2:2; SC-II 6:2 und SC-III 1:10 bislang nur FuPa-Klartext. Ortsderby offiziell Nichtantritt HEIM, FuPa führt Wertung. Unabhängigkeit der Ergebnisbestätigung nicht nachgewiesen; Gründe/Rechtskraft der Wertung und Reserven offen. Keine Artikelumsetzung. Ältere Oktober-Ergebnisartikel betreffen andere Spieltage.",
+      "implementation_commit": "de270a71",
+      "notes": "Spielblock 08.11.: SC-Erste laut DFB und FuPa 2:1; Golzheim laut FuPa 2:2; SC-II 6:2 und SC-III 1:10 bislang nur FuPa-Klartext. Ortsderby offiziell Nichtantritt HEIM, FuPa führt Wertung. Unabhängigkeit der Ergebnisbestätigung nicht nachgewiesen; Gründe/Rechtskraft der Wertung und Reserven offen. Keine Artikelumsetzung. Ältere Oktober-Ergebnisartikel betreffen andere Spieltage. | Claude 10.11. morgens: Kurzmeldung nach FUSSBALL.DE-Spielberichten (offiziell) und FuPa-Tabellen; SC II/III und Grund des Nichtantritts nicht übernommen; Spielstand aktualisiert. Live 09:24 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "research_sources": [
         {
           "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2O4J1O000000VS5489BVVSI0HJHE",
@@ -11079,7 +11079,14 @@
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
-      }
+      },
+      "dossier_history": [
+        {
+          "date": "2026-11-10",
+          "dossier": "dossiers/2026-11-10-claude-morgens.md",
+          "heading": "1 · MA-SONNTAGSSPORT-ERG-0811"
+        }
+      ]
     }
   ],
   "archive": {
@@ -12538,6 +12545,16 @@
         "Wochenvorschau: Kursplatzlage und genaue Taizé-Kapelle offen",
         "Jugendgremium: öffentliches Ergebnis der vergangenen Sitzung nicht gefunden"
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-10-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-10-morgens.md",
+      "implementation_commit": "de270a71",
+      "summary": "Keine Korrekturen; Kurzmeldung Fußball-Spieltag 8.11. (SC Platz drei, Golzheim 2:2, Derby Girbelsrath ohne Gastgeber), Spielstand aktualisiert; Kalender bis 24.11. bestätigt.",
+      "publication": "Neue Meldung und Spielstand direkt veröffentlicht"
     }
   ]
 }
