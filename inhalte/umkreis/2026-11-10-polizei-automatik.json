@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Brand in Reihenhaus greift auf zwei Nachbarhäuser über - Hund verstirbt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6387649",
+      "datum": "2026-11-10",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Aldenhoven: Neunjähriger nach Kollision mit Pkw schwerverletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6387582",
+      "datum": "2026-11-10",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Langerwehe: Verdacht auf Jagdwilderei im Meroder Wald - Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6387577",
+      "datum": "2026-11-10",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
