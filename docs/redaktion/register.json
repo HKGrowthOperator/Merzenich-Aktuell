@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-09-claude-nachmittags.md",
-  "source_check_window": "09.11.2026, 12:04:55–12:10:00 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-10-morgens.md",
+  "source_check_window": "10.11.2026, 07:03:14–07:06:20 Europe/Berlin; Commons ergänzend gegen 07:06",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11020,6 +11020,66 @@
         }
       ],
       "notes": "Türöffnung am Steinpfahl nach Hausnotruf. Ereignis 07.11., veröffentlicht 08.11.10:33. Unabhängige Ereignisbestätigung fehlt. Kreisquelle zur Funktion des FTZ bestätigt den Einsatz nicht. | Claude 08.11. (Nachhollauf): gemeinsame Kurzmeldung 145–147/26 (356 Wörter); Feuerwehr als maßgebliche Quelle über eigene Einsätze (Selbstauskunft, CLAUDE-LAUF 3: Feuerwehrberichte gehen automatisch online), Datumswiderspruch 146/26 benannt, keine Gesundheitsangaben. Live 13:00 Uhr HTTP 200."
+    },
+    {
+      "id": "MA-SONNTAGSSPORT-ERG-0811",
+      "priority": "P2",
+      "location_section": "Merzenich, Golzheim, Girbelsrath, Morschenich · Sport",
+      "change_type": "Neu ausgewerteter Spielblock",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-10-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-10T07:06:20+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Spielblock 08.11.: SC-Erste laut DFB und FuPa 2:1; Golzheim laut FuPa 2:2; SC-II 6:2 und SC-III 1:10 bislang nur FuPa-Klartext. Ortsderby offiziell Nichtantritt HEIM, FuPa führt Wertung. Unabhängigkeit der Ergebnisbestätigung nicht nachgewiesen; Gründe/Rechtskraft der Wertung und Reserven offen. Keine Artikelumsetzung. Ältere Oktober-Ergebnisartikel betreffen andere Spieltage.",
+      "research_sources": [
+        {
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2O4J1O000000VS5489BVVSI0HJHE",
+          "publisher": "DFB",
+          "checked_at": "2026-11-10T07:04:09+01:00"
+        },
+        {
+          "url": "https://www.fupa.net/league/kreisliga-a-dueren",
+          "publisher": "FuPa",
+          "checked_at": "2026-11-10T07:04:09+01:00"
+        },
+        {
+          "url": "https://www.scmerzenich.de/home/aktuelles-1/spieltagbericht-08-26-27/",
+          "publisher": "SC Merzenich",
+          "scope": "älterer Kontext; keine neue Ergebnisbestätigung"
+        },
+        {
+          "url": "https://www.fussball.de/spiel/fc-rhenania-girbelsrath-sv-morschenich/-/spiel/031LRL279G000000VS5489BTVSRD0UH9",
+          "publisher": "DFB",
+          "checked_at": "2026-11-10T07:06:20+01:00"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-11-10-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primäre Ergebniswege und Vereinskontext; unabhängige Bestätigung nicht nachgewiesen",
+      "research_history": [
+        {
+          "date": "2026-11-10",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-10-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "CC BY-SA 4.0, Dietmar Rabich, 5472 × 3648; Commons gelesen",
+          "visual": "offen; Bildabruf HTTP 403",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -12441,6 +12501,43 @@
       "implementation_commit": "7a33c763",
       "summary": "Nachgeholt nach Sitzungsausfall 08.11. abends bis 09.11. 18:40 (Morgenlauf und vier Eil-Prüfungen ausgefallen). S19-Nachtrag (Stellwerk repariert); neu: Kurzmeldung Ende der Papiersammlung der Schützen Golzheim; Termin Jugendgremium 03.12.; Mindesttakt 09.11.: 1 Meldung.",
       "publication": "Neue Meldung, Nachtrag und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-10",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-10-morgens.md",
+      "compared_with": "dossiers/2026-11-09-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-09-claude-nachmittags.md",
+      "base_commit": "6f70f85f03003a5545f685407ee0aaf2af7c6572",
+      "implementation_commit": null,
+      "summary": "Neue Fußballergebnisse und offizieller Nichtantritt im Ortsderby als eine T2-Karte. Papierartikel und S19-Nachtrag geprüft, keine Wiederholung. Keine neue belegte Korrektur, Teilprüfungen ausdrücklich offen. Kein neuer/geänderter Termin 10.–23.11.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 1,
+      "article_partial_checks": 7,
+      "repository_article_files_read": 40,
+      "repository_event_files_read": 18,
+      "repository_area_files_read": 13,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "10.11.2026, 07:03:14–07:06:20 Europe/Berlin; Commons ergänzend gegen 07:06",
+      "deadline": "2026-11-10T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Fußball: unabhängige Ereignisbestätigung fehlt; Reserven nur FuPa-Klartext, Wertungsgrund/Rechtskraft offen",
+        "Bildsichtung offen: Fotoabruf HTTP 403; Metadaten gelesen",
+        "S19: historischer Reparaturzeitpunkt heute nicht erneut am Original verfügbar",
+        "Jonge vom Berg: HTTP 200 mit Site Unavailable",
+        "Feuerwehr: nicht alle historischen Vergleichseinsätze erneut am Original geprüft",
+        "Wochenvorschau: Kursplatzlage und genaue Taizé-Kapelle offen",
+        "Jugendgremium: öffentliches Ergebnis der vergangenen Sitzung nicht gefunden"
+      ]
     }
   ]
 }
