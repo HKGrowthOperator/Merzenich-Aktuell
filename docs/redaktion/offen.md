@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-09-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-10-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -8,7 +8,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 |---|---:|
 | archiv_refresh_noetig | 96 |
 | uebernommen | 46 |
-| gesperrt | 27 |
+| gesperrt | 28 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-10 morgens (ChatGPT): Neue Fußballergebnisse und offizieller Nichtantritt im Ortsderby als eine T2-Karte. Papierartikel und S19-Nachtrag geprüft, keine Wiederholung. Keine neue belegte Korrektur, Teilprüfungen ausdrücklich offen. Kein neuer/geänderter Termin 10.–23.11.
 - 2026-11-09 nachmittags (Claude): Nachgeholt nach Sitzungsausfall 08.11. abends bis 09.11. 18:40 (Morgenlauf und vier Eil-Prüfungen ausgefallen). S19-Nachtrag (Stellwerk repariert); neu: Kurzmeldung Ende der Papiersammlung der Schützen Golzheim; Termin Jugendgremium 03.12.; Mindesttakt 09.11.: 1 Meldung. – Commit 7a33c763
 - 2026-11-09 mittags (ChatGPT): 09.11.2026 mittags: Neue Gemeindeankündigung zum Ende der Vereinspapiersammlungen ab 01.01.2027, Golzheimer Schützen. T2: unabhängige Ereignisbestätigung fehlt; Schützenwege HTTP 403; Anschlussabfuhr und letzter Sammlungstag offen. Kontext vom Entsorger gelesen. Bestandsartikel altpapier-in-die-papiertonne-gemeinde-schoenmackers-2026 live gelesen; bei Freigabe Update. Keine Bestätigung der früheren Behälterthese.
 - 2026-11-09 morgens (ChatGPT): Neu im Kalender: Adventausstellung Blumen Hüffelmann 13.–15.11., jeweils 11–16 Uhr. Drei neue Claude-Artikel und umgesetzte sechs Korrekturen nachgeprüft. S19-Störungsmeldung nicht mehr im Feed, Entstörung nicht bestätigt. Keine neuen Themenkarten.
-- 2026-11-08 nachmittags (Claude): Kein neues ChatGPT-Dossier, Pflichtquellen ohne Neues; Kurzmeldung S19-Störung (Stellwerk Köln, kein Halt am Flughafen) mit neuem Commons-Symbolfoto und Bildklasse verkehr.bahn; Kalender unverändert. Mindesttakt 08.11.: 3 Meldungen. – Commit 319ba58

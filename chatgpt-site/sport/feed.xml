@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 09 Nov 2026 17:46:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 08:20:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Sport</title><link>https://merzenichaktuell.hk-growthoperator.de/sport/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/sport/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/</guid>
+<pubDate>Tue, 10 Nov 2026 08:20:00 GMT</pubDate>
+<category>Sport</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Aufsteiger aus Merzenich ist seit sechs Spielen ungeschlagen, Golzheim fällt nach dem Remis gegen Welldorf-Güsten auf Platz fünf zurück. Das Ortsderby in Girbelsrath fand nicht statt: Die Gastgeber traten nicht an.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-19-d26a753635.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
 <item>
 <title>Tischtennis: TTC Merzenich gewinnt beide Auswärtsspiele und führt die 2. Bezirksklasse an</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Zwei Spiele, zwei Siege, 7:2 Tore: Der SC 1919 Merzenich steht nach dem zweiten Spieltag an der Tabellenspitze. Am Sonntag geht es zum Nachbarn nach Golzheim.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-09-edd5b8c9c3.jpg" medium="image"><media:credit>Bálint Sallói / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
-</item>
-<item>
-<title>Zweite und dritte Mannschaft suchen den Anschluss</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-reserven-kreisliga-c/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/sc-merzenich-reserven-kreisliga-c/</guid>
-<pubDate>Fri, 04 Sep 2026 07:20:00 GMT</pubDate>
-<category>Sport</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Beim Datenstand vom 4. September führte die Erste die Kreisliga A an; stehen die beiden Reserveteams des SC Merzenich in der Kreisliga C im unteren Drittel. Am Sonntag sind beide im Einsatz.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-02-11b84171a8.jpg" medium="image"><media:credit>WaldiWuff / Wikimedia Commons · CC0</media:credit><media:description>Fußballplatz</media:description></media:content>
 </item>
 </channel>
 </rss>

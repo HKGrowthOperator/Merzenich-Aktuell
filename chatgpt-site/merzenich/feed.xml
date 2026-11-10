@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 09 Nov 2026 17:46:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 08:20:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/</guid>
+<pubDate>Tue, 10 Nov 2026 08:20:00 GMT</pubDate>
+<category>Sport</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der Aufsteiger aus Merzenich ist seit sechs Spielen ungeschlagen, Golzheim fällt nach dem Remis gegen Welldorf-Güsten auf Platz fünf zurück. Das Ortsderby in Girbelsrath fand nicht statt: Die Gastgeber traten nicht an.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-19-d26a753635.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
 <item>
 <title>S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Freiwillige Feuerwehr Merzenich ist am Montag, 19. Oktober 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Ölspur“.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/technik/technik-05-81cd88e925.jpg" medium="image"><media:credit>RandomDuck5000 / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Warnschild vor einer Ölspur</media:description></media:content>
-</item>
-<item>
-<title>LEADER an Inde und Rur: sieben neue Projekte, Ideen bis 27. Januar 2027</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/leader-inde-rur-sieben-neue-projekte-ideen-bis-januar-2027/</guid>
-<pubDate>Sat, 17 Oct 2026 14:00:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Lokale Aktionsgruppe hat sieben Projekte beschlossen und dafür rund 591.000 Euro gebunden. Rund 98.000 Euro sind noch frei; neue Projektideen nimmt das Regionalmanagement bis zum 27. Januar 2027 an.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

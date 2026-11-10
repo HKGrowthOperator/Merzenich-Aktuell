@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-09T18:46:00+01:00",
- "anzahl": 232,
+ "generated": "2026-11-10T09:20:00+01:00",
+ "anzahl": 233,
  "bestand": {
-  "gesamt": 232,
+  "gesamt": 233,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
-   "sport": 33,
+   "sport": 34,
    "rathaus": 33,
    "leben": 52,
    "wirtschaft": 13,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 159,
+   "merzenich": 160,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 232,
+    "anzahl": 233,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -33,7 +33,7 @@
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 33,
+    "anzahl": 34,
     "liste": "gepflegt"
    },
    "/rathaus/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 159,
+    "anzahl": 160,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-10-fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
+   "url": "/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/",
+   "titel": "SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel",
+   "teaser": "Der Aufsteiger aus Merzenich ist seit sechs Spielen ungeschlagen, Golzheim fällt nach dem Remis gegen Welldorf-Güsten auf Platz fünf zurück. Das Ortsderby in Girbelsrath fand nicht statt: Die Gastgeber traten nicht an.",
+   "kicker": "Sport · Fußball",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-10T09:20:00+01:00",
+   "aktualisiert": "2026-11-10T09:20:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "sport",
+     "label": "Sport"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/sport/sport-19-d26a753635.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-19-d26a753635-480.webp 480w, /assets/editorial-pools/sport/sport-19-d26a753635-800.webp 800w, /assets/editorial-pools/sport/sport-19-d26a753635-1200.webp 1200w, /assets/editorial-pools/sport/sport-19-d26a753635.jpg 1920w",
+    "alt": "Fußballplatz",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
    "url": "/vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/",

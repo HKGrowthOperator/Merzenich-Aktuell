@@ -1,0 +1,119 @@
+{
+  "hinweis": "Morgenlauf 10.11.2026 (Claude): Sport-Pflichtprüfung Dienstag. FUSSBALL.DE-Spielberichte (automatisch aus den offiziellen Spieldaten, 09.11.2026 08:24 und 08:34 Uhr), Spielseiten Golzheim–Welldorf und Girbelsrath–Morschenich, FuPa-Tabellen; um 09:20 bis 09:30 Uhr gelesen. Keine Spielernamen (Privatpersonen).",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
+      "ressort": "sport",
+      "ortsteil": "merzenich",
+      "kicker": "Sport · Fußball",
+      "titel": "SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei, Golzheim spielt 2:2 im Spitzenspiel",
+      "dek": "Der Aufsteiger aus Merzenich ist seit sechs Spielen ungeschlagen, Golzheim fällt nach dem Remis gegen Welldorf-Güsten auf Platz fünf zurück. Das Ortsderby in Girbelsrath fand nicht statt: Die Gastgeber traten nicht an.",
+      "datum": "2026-11-10T09:20:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "fussball",
+          "Fußball"
+        ],
+        [
+          "sport",
+          "Sport"
+        ]
+      ],
+      "bildklasse": "sport.spielbericht",
+      "absaetze": [
+        "Der SC 1919 Merzenich hat in der Kreisliga A Düren seinen nächsten Sieg eingefahren. Gegen den FC Düren 77 gewann die Mannschaft am Sonntag, 8. November, im heimischen Stadion mit 2:1, zur Pause stand es 1:0. Nach dem offiziellen Spielbericht auf FUSSBALL.DE fielen die Merzenicher Tore in der 15. und 58. Minute, Düren verkürzte erst in der 87. Minute per Elfmeter. Seit sechs Spielen ist der SC damit ungeschlagen und steht mit 27 Punkten und 48:17 Toren auf Platz drei, hinter dem SC Jülich/Hoengen (31) und dem BC Oberzier (28).",
+        "Im Spitzenspiel trennten sich der FC Golzheim und Grün-Weiß Welldorf-Güsten 2:2. Vor dem Spiel hatten beide Teams 25 Punkte. Die Gäste gingen in der Anfangsphase in Führung, Golzheim glich kurz vor der Pause aus und legte in der Nachspielzeit der ersten Hälfte das 2:1 nach. In der 77. Minute kam Welldorf zum Ausgleich. Mit 26 Punkten und 28:11 Toren rutscht Golzheim auf Platz fünf, Welldorf ist mit ebenfalls 26 Punkten Vierter, hat aber mit 54 Treffern die mit Abstand meisten Tore der Liga erzielt.",
+        "In der Kreisliga B, Staffel 2, sollte der FC Rhenania Girbelsrath das Ortsderby gegen den SV Morschenich bestreiten. FUSSBALL.DE führt die Partie als „Nichtantritt HEIM“, die Gastgeber haben also nicht gespielt. Einen Grund nennen weder die Verbandsseite noch FuPa. Wie das Spiel gewertet wird, steht bei FUSSBALL.DE noch nicht; FuPa vermerkt bereits ein Urteil mit 2:0 für Morschenich und führt die Morschenicher damit auf Platz zwei. Zwei Wochen zuvor hatte Morschenich das Derby gegen die zweite Mannschaft des FC Golzheim mit 8:4 gewonnen.",
+        "Am Sonntag, 15. November, ist der SC Merzenich um 15 Uhr beim JSV Frenz zu Gast, Golzheim tritt bei der Spvg. SW 1896 Düren an. Beide Termine nennen die Spielberichte von FUSSBALL.DE."
+      ],
+      "fakten": [
+        "SC Merzenich – FC Düren 77 2:1 (1:0), Platz drei, 27 Punkte, sechs Spiele ungeschlagen",
+        "FC Golzheim – Welldorf-Güsten 2:2 (2:1), Golzheim jetzt Fünfter mit 26 Punkten",
+        "Girbelsrath – Morschenich: Nichtantritt der Gastgeber, Wertung bei FUSSBALL.DE noch offen"
+      ],
+      "pruefung": [
+        {
+          "aussage": "FUSSBALL.DE, automatisch generierter Spielbericht 09.11.2026 08:34 Uhr: Kreisliga A, SC 1919 Merzenich – FC Düren 77 e.V. 2:1 (1:0), Merzenich; Tore 1:0 (15.), 2:0 (58. Minute), Elfmeter 1:2 (87. Minute); SC rangiert auf dem dritten Platz, 48 Tore, zweimal geschlagen, sechs Spiele ungeschlagen; nächster Sonntag 15:00 Uhr (15 Uhr) bei JSV Frenz (15. November). Spieltag 08.11.2026 (8. November).",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2O4J1O000000VS5489BVVSI0HJHE"
+          ],
+          "stelle": "Spielbericht, gesamter Text (offizielle Spieldaten des DFB)"
+        },
+        {
+          "aussage": "FuPa Tabelle Kreisliga A Düren (10.11.2026): 1. SC Jülich/SV Hoengen 31 Punkte, 2. Oberzier 28, 3. Merzenich 27 Punkte 48:17, 4. Welldorf 26 Punkte 54:19, 5. Golzheim 26 Punkte 28:11; vorher (eigene Meldung 25.10. und Tabelle 02.11.) Golzheim und Welldorf je 25 Punkte.",
+          "belege": [
+            "https://www.fupa.net/league/kreisliga-a-dueren/standing",
+            "https://www.fussball.de/spiel/fc-golzheim-sv-gruen-weiss-welldorf-guesten/-/spiel/031LREPAO8000000VS5489BTVSRD0UH9",
+            "https://merzenich-aktuell.de/sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/"
+          ],
+          "stelle": "FuPa Tabelle Gesamt; FUSSBALL.DE Spielseite Golzheim–Welldorf, Saisonstatistik (Platz 5/4, 26/26 Punkte, 28:11/54:19)",
+          "selbstauskunft": "Vorher-Stand aus eigenem Archiv (Meldung 25.10.) und Spielstand-Datei vom 02.11."
+        },
+        {
+          "aussage": "FUSSBALL.DE, automatisch generierter Spielbericht 09.11.2026 08:24 Uhr: FC Golzheim – SV Grün-Weiß Welldorf-Güsten 2:2 (2:1); Gäste führen in der achten Minute, Ausgleich 45., Golzheimer Führung in der Nachspielzeit der ersten Hälfte, Ausgleich 77. Minute; Golzheim fällt auf Platz fünf, Welldorf mit 26 Punkten Vierter, 54 Treffer bester Angriff der Kreisliga A; Golzheim am kommenden Sonntag bei der Spvg. SW 1896 Düren.",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2MA48S000000VS5489C0VTSKVGB0",
+            "https://www.fussball.de/spiel/fc-golzheim-sv-gruen-weiss-welldorf-guesten/-/spiel/031LREPAO8000000VS5489BTVSRD0UH9"
+          ],
+          "stelle": "Spielbericht, gesamter Text; Spielseite mit Saisonstatistik"
+        },
+        {
+          "aussage": "FUSSBALL.DE Spielseite Kreisliga B Staffel 2, 11. Spieltag, 08.11.2026: „FC Rhenania Girbelsrath Nichtantritt HEIM SV Morschenich“, Spielort Rasenplatz Girbelsrath; kein Grund genannt. FuPa Kreisliga B2, 11. Spieltag: „Girbelsrath Morschenich 0 2 Urteil“, Tabelle Morschenich Platz 2 mit 24 Punkten; FUSSBALL.DE-Statistik ohne Wertung (Morschenich 21 Punkte).",
+          "belege": [
+            "https://www.fussball.de/spiel/fc-rhenania-girbelsrath-sv-morschenich/-/spiel/031LRL279G000000VS5489BTVSRD0UH9",
+            "https://www.fupa.net/league/kreisliga-b-2-dueren"
+          ],
+          "stelle": "FUSSBALL.DE Spielkopf; FuPa Ligaseite, Spieltagsblock und Tabelle"
+        },
+        {
+          "aussage": "Eigene Meldung 25.10.2026: Morschenich gewinnt Derby gegen Golzheim II mit 8:4 (zwei Wochen vor dem 8. November).",
+          "belege": [
+            "https://merzenich-aktuell.de/sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/"
+          ],
+          "stelle": "eigener Artikel, dritter Absatz",
+          "selbstauskunft": "eigenes Archiv, Meldung nach offiziellen FUSSBALL.DE-Spielberichten"
+        }
+      ],
+      "quelle": {
+        "name": "FUSSBALL.DE, Spielbericht SC 1919 Merzenich – FC Düren 77 e.V. 2:1 (Kreisliga A Düren, automatisch erstellt am 09.11.2026)",
+        "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2O4J1O000000VS5489BVVSI0HJHE",
+        "stand": "2026-11-10"
+      },
+      "weitereQuellen": [
+        {
+          "name": "FUSSBALL.DE, Spielbericht FC Golzheim – SV Grün-Weiß Welldorf-Güsten 2:2 (automatisch erstellt am 09.11.2026)",
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032L2MA48S000000VS5489C0VTSKVGB0",
+          "stand": "2026-11-10"
+        },
+        {
+          "name": "FUSSBALL.DE, Spielseite FC Golzheim – SV Grün-Weiß Welldorf-Güsten",
+          "url": "https://www.fussball.de/spiel/fc-golzheim-sv-gruen-weiss-welldorf-guesten/-/spiel/031LREPAO8000000VS5489BTVSRD0UH9",
+          "stand": "2026-11-10"
+        },
+        {
+          "name": "FUSSBALL.DE, Spielseite FC Rhenania Girbelsrath – SV Morschenich (Kreisliga B Staffel 2)",
+          "url": "https://www.fussball.de/spiel/fc-rhenania-girbelsrath-sv-morschenich/-/spiel/031LRL279G000000VS5489BTVSRD0UH9",
+          "stand": "2026-11-10"
+        },
+        {
+          "name": "FuPa, Tabelle Kreisliga A Düren",
+          "url": "https://www.fupa.net/league/kreisliga-a-dueren/standing",
+          "stand": "2026-11-10"
+        },
+        {
+          "name": "FuPa, Kreisliga B2 Düren: Spieltag und Tabelle",
+          "url": "https://www.fupa.net/league/kreisliga-b-2-dueren",
+          "stand": "2026-11-10"
+        },
+        {
+          "name": "Merzenich Aktuell: Spieltag vom 25.10.2026",
+          "url": "https://merzenich-aktuell.de/sport/fussball-spieltag-merzenich-8-0-hambach-morschenich-8-4-golzheim-5-0-girbelsrath-2026-10-25/",
+          "stand": "2026-11-10"
+        }
+      ]
+    }
+  ]
+}

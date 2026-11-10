@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-09T17:46:38.215Z",
+  "updatedAt": "2026-11-10T08:20:17.589Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1655,6 +1655,15 @@
       "assignedAt": "2026-11-09T17:46:38.214Z",
       "articleId": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
       "articleDate": "2026-11-09T18:46:00+01:00"
+    },
+    "/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/": {
+      "imageId": "web-sport-19-d26a7536",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-11-10T08:20:17.589Z",
+      "articleId": "2026-11-10-fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
+      "articleDate": "2026-11-10T09:20:00+01:00"
     }
   }
 }
