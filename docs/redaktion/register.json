@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-10-claude-nachmittags.md",
-  "source_check_window": "10.11.2026, 12:05:28–12:06:07 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-11-morgens.md",
+  "source_check_window": "11.11.2026, 07:00:53–07:07:30 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11109,6 +11109,231 @@
           "heading": "1 · MA-BAUAUSSCHUSS-12112026-VORSCHAU"
         }
       ]
+    },
+    {
+      "id": "MA-ABGABEN-2027",
+      "priority": "P1",
+      "location_section": "gemeindeweit · Rathaus/Finanzen",
+      "change_type": "Neue öffentliche Vorlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-11T07:07:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Abwasser-, Realsteuer- und Hundesteuervorschläge konkretisiert; unabhängige konkrete Bestätigung fehlt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "heading": "MA-ABGABEN-2027"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-ALTE-KIRCHE-ENTGELTE-2027",
+      "priority": "P2",
+      "location_section": "Merzenich · Rathaus/Service",
+      "change_type": "Neue öffentliche Vorlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-11T07:07:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Höhere Trauentgelte vorgeschlagen; unabhängige Bestätigung und Buchungs-/Übergangsregelung fehlen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "heading": "MA-ALTE-KIRCHE-ENTGELTE-2027"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-UNTERKUNFTSGEBUEHREN-2027",
+      "priority": "P2",
+      "location_section": "gemeindeweit/Bürgewald · Soziales/Finanzen",
+      "change_type": "Neue öffentliche Vorlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-11T07:07:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "heading": "MA-UNTERKUNFTSGEBUEHREN-2027"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-BRANDSCHUTZPLAN-2026-FORTSCHREIBUNG",
+      "priority": "P1",
+      "location_section": "alle Ortsteile/Bürgewald · Feuerwehr/Rathaus",
+      "change_type": "Neue öffentliche Vorlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-11T07:07:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Überarbeiteter Plan; Brand-0-Eintreffzeit und weitere Risikogruppen differenzieren, keine pauschale Fristbehauptung. Fachliche Bestätigung offen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "heading": "MA-BRANDSCHUTZPLAN-2026-FORTSCHREIBUNG"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-DIGITAL-IKZ-2026",
+      "priority": "P2",
+      "location_section": "gemeindeweit · Rathaus/Service",
+      "change_type": "Neue öffentliche Vorlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-11T07:07:30+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-11",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-11-morgens.md",
+          "heading": "MA-DIGITAL-IKZ-2026"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -12624,6 +12849,45 @@
       "implementation_commit": "d16371d5",
       "summary": "Keine Korrekturen; Kurzmeldung Vorschau Bauausschuss 12.11.; Anbieterbeiträge (Tagespflege, Adventausstellung) nicht übernommen; Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-11",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-11-morgens.md",
+      "compared_with": "dossiers/2026-11-10-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-10-claude-nachmittags.md",
+      "base_commit": "f0eed256410e3c7d7496b55dc1ed47628f9bae40",
+      "implementation_commit": null,
+      "summary": "Neue RIS-Vorlagen: Abgaben 2027, Trauentgelte Alte Kirche, Unterkunftsgebühren, überarbeiteter Brandschutzplan, Digitalisierung/SSC. Fünf T2-Karten, keine neue belegte Artikelkorrektur. HFA-Tagesordnung konkretisiert, Terminzeit unverändert.",
+      "topics": 5,
+      "blocked_T2": 5,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 2,
+      "article_partial_checks": 8,
+      "repository_article_files_read": 42,
+      "repository_event_files_read": 18,
+      "repository_area_files_read": 14,
+      "new_or_changed_events": 1,
+      "event_change_scope": "Neue Tagesordnung, unveränderter HFA-Termin",
+      "complete_drafts": 0,
+      "source_check_window": "11.11.2026, 07:00:53–07:07:30 Europe/Berlin",
+      "deadline": "2026-11-11T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Unabhängige konkrete Bestätigung der fünf Vorlagenthemen fehlt; Beschlüsse ausstehend",
+        "Brandschutz: Anwendung der Risikogruppen fachlich bestätigen",
+        "Trauungen: Übergangs-/Buchungsregelung offen",
+        "Weitere Unterlagen Neuland, Kita-Patronat und Übernachtungssteuer nur Prüfpunkte ohne Freigabe",
+        "Historischer S19-Reparaturbeleg und abschließende Derbywertung offen",
+        "Vereinsquelle Jonge vom Berg: HTTP 200 mit Site Unavailable",
+        "Weitere Bildsichtprüfungen außer Rathaus offen",
+        "Keine neuen Ergebnisse des Jugendgremiums im gelesenen Vorgang"
+      ]
     }
   ]
 }
