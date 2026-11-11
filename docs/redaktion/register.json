@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-11-claude-morgens.md",
-  "source_check_window": "11.11.2026, 07:00:53–07:07:30 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-11-mittags.md",
+  "source_check_window": "11.11.2026, 12:02:04–12:04:16 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12904,6 +12904,45 @@
       "implementation_commit": "f9804cb4",
       "summary": "Keine Korrekturen; Standardartikel Abgaben 2027 (Abwasser, Hundesteuer, Hebesätze; Vorschläge für HFA 19.11.); vier weitere T2-Karten offen; Kalender an der Quelle bestätigt, unverändert.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-11",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-11-mittags.md",
+      "compared_with": "dossiers/2026-11-11-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-11-claude-morgens.md",
+      "base_commit": "c5fb71979ef41922816daf8b42a55b91955d341e",
+      "implementation_commit": null,
+      "summary": "Keine neue Themenkarte. Neuer Abgabenartikel mit Vorlagen, Kalkulation und Satzungsentwürfen abgeglichen; BdSt-Vergleich wegen HTTP 403 nicht erneut prüfbar. Heute aktualisierte Heimat-Info-Stempel ohne sachliche Terminänderung; Pluriversum-Konflikt bleibt. Keine neue belegte Artikelkorrektur, Teilprüfungen ausdrücklich begrenzt.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 1,
+      "article_partial_checks": 10,
+      "repository_article_files_read": 43,
+      "repository_event_files_read": 18,
+      "repository_area_files_read": 14,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "11.11.2026, 12:02:04–12:04:16 Europe/Berlin",
+      "deadline": "2026-11-11T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "BdSt-Erhebung Grundsteuer B: HTTP 403, Vergleichswerte des Abgabenartikels heute nicht erneut am Original geprüft",
+        "Unabhängige Bestätigung der fünf Morgenkarten weiterhin fehlend, vier Einzelthemen mittags nur Listenabgleich",
+        "Pluriversum: heute aktualisierter Kalenderstempel beseitigt Orts-/Zeitkonflikt nicht",
+        "Abschließende Derbywertung und unabhängige Herkunft der FuPa-Daten nicht bestätigt",
+        "S19: historische Reparaturmeldung und damalige Ersatzbusregelung nicht erneut im aktuellen Originalfeed verfügbar",
+        "Jonge vom Berg: HTTP 200 mit Site Unavailable, Vereinsprüfung unvollständig",
+        "Feuerwehr: historische Vergleichseinsätze nicht vollständig erneut gelesen; Wochenvorschau: Kursplatzlage/Taizé-Kapelle offen",
+        "Jugendgremium: kein neues Ergebnis im gelesenen öffentlichen Vorgang",
+        "Weitere Bildsichtprüfungen aus dem Morgendossier unverändert offen"
+      ]
     }
   ]
 }
