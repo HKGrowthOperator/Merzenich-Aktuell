@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-10",
+ "stand": "2026-11-11",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,38 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Pedelec-Fahrer bei Verkehrsunfall leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6388368",
+   "datum": "2026-11-11",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Pedelec-Fahrerin bei Abbiegeunfall leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6388365",
+   "datum": "2026-11-11",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Pkw-Brand greift auf weitere Fahrzeuge über",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6388372",
+   "datum": "2026-11-11",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Polizei warnt vor Betrugsmasche durch falsche Spendensammler - 1490 Euro erbeutet",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6388353",
+   "datum": "2026-11-11",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
