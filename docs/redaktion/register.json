@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-11-morgens.md",
+  "latest_dossier": "dossiers/2026-11-11-claude-morgens.md",
   "source_check_window": "11.11.2026, 07:00:53–07:07:30 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11115,15 +11115,15 @@
       "priority": "P1",
       "location_section": "gemeindeweit · Rathaus/Finanzen",
       "change_type": "Neue öffentliche Vorlagen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-11-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-11T07:07:30+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-11-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-11 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-11-recherche-claude-morgens.json → /rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Abwasser-, Realsteuer- und Hundesteuervorschläge konkretisiert; unabhängige konkrete Bestätigung fehlt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "implementation_commit": "f9804cb4",
+      "notes": "Abwasser-, Realsteuer- und Hundesteuervorschläge konkretisiert; unabhängige konkrete Bestätigung fehlt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: Standardartikel (820 Wörter) aus den Vorlagen 141, 131 und 101/2026 mit Anlagen und der BdSt-Erhebung Grundsteuer B 2026; durchgehend als Vorschläge gekennzeichnet, relevanz 2. Alte Sätze Grundsteuer A, Gewerbesteuer und Kleinkläranlagen nicht belegt, daher nicht genannt. Live 09:24 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA-Empfehlung 19.11., Ratsbeschluss 03.12.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11143,6 +11143,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-11-morgens.md",
           "heading": "MA-ABGABEN-2027"
+        },
+        {
+          "date": "2026-11-11",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-11-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -11168,7 +11174,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Höhere Trauentgelte vorgeschlagen; unabhängige Bestätigung und Buchungs-/Übergangsregelung fehlen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "Höhere Trauentgelte vorgeschlagen; unabhängige Bestätigung und Buchungs-/Übergangsregelung fehlen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11213,7 +11219,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11258,7 +11264,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Überarbeiteter Plan; Brand-0-Eintreffzeit und weitere Risikogruppen differenzieren, keine pauschale Fristbehauptung. Fachliche Bestätigung offen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "Überarbeiteter Plan; Brand-0-Eintreffzeit und weitere Risikogruppen differenzieren, keine pauschale Fristbehauptung. Fachliche Bestätigung offen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11303,7 +11309,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -12888,6 +12894,16 @@
         "Weitere Bildsichtprüfungen außer Rathaus offen",
         "Keine neuen Ergebnisse des Jugendgremiums im gelesenen Vorgang"
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-11-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-11-morgens.md",
+      "implementation_commit": "f9804cb4",
+      "summary": "Keine Korrekturen; Standardartikel Abgaben 2027 (Abwasser, Hundesteuer, Hebesätze; Vorschläge für HFA 19.11.); vier weitere T2-Karten offen; Kalender an der Quelle bestätigt, unverändert.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

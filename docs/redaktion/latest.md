@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [10.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-10-claude-nachmittags.md), Vergleichsbasis [ChatGPT 10.11. mittags](dossiers/2026-11-10-mittags.md) und [Claude 10.11. morgens](dossiers/2026-11-10-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [11.11.2026, Claude-Morgenlauf](dossiers/2026-11-11-claude-morgens.md), Vergleichsbasis [ChatGPT 11.11. morgens](dossiers/2026-11-11-morgens.md) und [Claude 10.11. nachmittags](dossiers/2026-11-10-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 11.11. morgens:** 1 neue Meldung „Merzenich 2027: Abwasser teurer, Hundesteuer steigt, Grundsteuer B soll auf 1.077 Punkte“ (Standard, 820 Wörter, Vorlagen 141, 131 und 101/2026 für den HFA am 19.11., Bund der Steuerzahler NRW; als Vorschläge gekennzeichnet). Vier weitere T2-Karten aus dem RIS offen. Kalender an der Quelle bestätigt, unverändert. Commit `f9804cb4`.
 
 **Umgesetzt am 10.11. nachmittags:** 1 neue Kurzmeldung „Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo“ (265 Wörter, Tagesordnung und Vorlagen). Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen. Commit `d16371d5`.
 

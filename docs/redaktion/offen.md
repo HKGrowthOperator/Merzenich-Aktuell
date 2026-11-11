@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-10-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-11-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 48 |
-| gesperrt | 27 |
+| uebernommen | 49 |
+| gesperrt | 31 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-11 morgens (Claude): Keine Korrekturen; Standardartikel Abgaben 2027 (Abwasser, Hundesteuer, Hebesätze; Vorschläge für HFA 19.11.); vier weitere T2-Karten offen; Kalender an der Quelle bestätigt, unverändert. – Commit f9804cb4
+- 2026-11-11 morgens (ChatGPT): Neue RIS-Vorlagen: Abgaben 2027, Trauentgelte Alte Kirche, Unterkunftsgebühren, überarbeiteter Brandschutzplan, Digitalisierung/SSC. Fünf T2-Karten, keine neue belegte Artikelkorrektur. HFA-Tagesordnung konkretisiert, Terminzeit unverändert.
 - 2026-11-10 nachmittags (Claude): Keine Korrekturen; Kurzmeldung Vorschau Bauausschuss 12.11.; Anbieterbeiträge (Tagespflege, Adventausstellung) nicht übernommen; Kalender unverändert. Mindesttakt 10.11.: 2 Meldungen. – Commit d16371d5
 - 2026-11-10 mittags (ChatGPT): Fußballmeldung aus dem Morgenlauf an Originalberichten und Tabellen nachgeprüft. Keine neue belegte Korrektur, keine neuen Themenkarten und keine Terminänderungen. Offene Derbywertung, historischer S19-Reparaturbeleg und Teile der Artikel-/Vereinsprüfung ausdrücklich begrenzt.
-- 2026-11-10 morgens (Claude): Keine Korrekturen; Kurzmeldung Fußball-Spieltag 8.11. (SC Platz drei, Golzheim 2:2, Derby Girbelsrath ohne Gastgeber), Spielstand aktualisiert; Kalender bis 24.11. bestätigt. – Commit de270a71
-- 2026-11-10 morgens (ChatGPT): Neue Fußballergebnisse und offizieller Nichtantritt im Ortsderby als eine T2-Karte. Papierartikel und S19-Nachtrag geprüft, keine Wiederholung. Keine neue belegte Korrektur, Teilprüfungen ausdrücklich offen. Kein neuer/geänderter Termin 10.–23.11.
