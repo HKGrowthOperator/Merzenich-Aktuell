@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T13:49:30.898Z",
+  "updatedAt": "2026-11-11T08:21:47.980Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1673,6 +1673,15 @@
       "assignedAt": "2026-11-10T13:49:30.897Z",
       "articleId": "2026-11-10-bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo",
       "articleDate": "2026-11-10T14:48:00+01:00"
+    },
+    "/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-11T08:21:47.980Z",
+      "articleId": "2026-11-11-merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung",
+      "articleDate": "2026-11-11T09:21:00+01:00"
     }
   }
 }

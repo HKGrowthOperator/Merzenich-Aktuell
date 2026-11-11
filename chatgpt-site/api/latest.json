@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-10T14:48:00+01:00",
-  "stand": "2026-11-10T14:48:00+01:00",
+  "generated": "2026-11-11T09:21:00+01:00",
+  "stand": "2026-11-11T09:21:00+01:00",
   "items": [
+    {
+      "title": "Merzenich 2027: Abwasser teurer, Hundesteuer steigt, Grundsteuer B soll auf 1.077 Punkte",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/",
+      "date": "2026-11-11T09:21:00+01:00",
+      "ressort": "rathaus",
+      "ort": "merzenich",
+      "teaser": "Die Verwaltung legt dem Haupt- und Finanzausschuss am 19. November ihre Vorschläge für die Abgaben im kommenden Jahr vor. Eine Musterfamilie soll für Abwasser fast 72 Euro mehr zahlen, Hundehalter in drei Schritten bis 2029 mehr. Entscheiden wird der Gemeinderat am 3. Dezember.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg"
+    },
     {
       "title": "Bauausschuss in Merzenich am Donnerstag: Grundschule Golzheim, zwei Solarparks und der Bau-Turbo",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-16-b1fd3ef820.jpg"
-    },
-    {
-      "title": "KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
-      "date": "2026-10-26T17:40:00+01:00",
-      "ressort": "wirtschaft",
-      "ort": "merzenich",
-      "teaser": "Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg"
     }
   ],
   "events": [
