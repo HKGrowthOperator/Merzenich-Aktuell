@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-11-mittags.md",
+  "latest_dossier": "dossiers/2026-11-11-claude-nachmittags.md",
   "source_check_window": "11.11.2026, 12:02:04–12:04:16 Europe/Berlin",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11219,7 +11219,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
+      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 11.11. nachmittags: Vorlage 145/2026 gelesen (195,72 € Häuser/Wohnungen, 290,66 € Container je Person und Monat; Verbrauch 39,50/36,66 €; ca. 230 Geflüchtete); bisherige Sätze und Kalkulationsanlage offen; Hausnummer aus der Vorlage nicht übernehmen.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11256,15 +11256,15 @@
       "priority": "P1",
       "location_section": "alle Ortsteile/Bürgewald · Feuerwehr/Rathaus",
       "change_type": "Neue öffentliche Vorlagen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-11-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-11T07:07:30+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-11-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-11 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-11-recherche-claude-nachmittags.json → /rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Überarbeiteter Plan; Brand-0-Eintreffzeit und weitere Risikogruppen differenzieren, keine pauschale Fristbehauptung. Fachliche Bestätigung offen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
+      "implementation_commit": "25c082de",
+      "notes": "Überarbeiteter Plan; Brand-0-Eintreffzeit und weitere Risikogruppen differenzieren, keine pauschale Fristbehauptung. Fachliche Bestätigung offen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 11.11. nachmittags: Standardartikel (956 Wörter) aus 40/2026 1. Ergänzung, Planentwurf 10.11.2026 und Kostenliste; Bürgewald 12 Minuten nur für Sonderkategorie „Brand 0“, Widerspruch zur Brand-1-Aufzählung benannt; Kosten als Schätzung der Verwaltung gekennzeichnet; relevanz 2. Live 14:51 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11284,6 +11284,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-11-morgens.md",
           "heading": "MA-BRANDSCHUTZPLAN-2026-FORTSCHREIBUNG"
+        },
+        {
+          "date": "2026-11-11",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-11-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -12943,6 +12949,16 @@
         "Jugendgremium: kein neues Ergebnis im gelesenen öffentlichen Vorgang",
         "Weitere Bildsichtprüfungen aus dem Morgendossier unverändert offen"
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-11-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-11-mittags.md",
+      "implementation_commit": "25c082de",
+      "summary": "Keine Korrekturen; Standardartikel Brandschutzbedarfsplan (Schutzziel, Bürgewald, Personal, Kostenliste); Kalender unverändert, Krätzchensitzung bestätigt. Mindesttakt 11.11.: 2 Meldungen.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }
