@@ -3,7 +3,7 @@
 
   // Wird von deploy/ressort-menue.mjs bei jedem Build auf den aktuellen
   // Inhalts-Hash gesetzt. Nicht entfernen: verhindert alte Menues im Browser-Cache.
-  const MENUE_URL = '/assets/ressort-menue.json?v=46b10d0032';
+  const MENUE_URL = '/assets/ressort-menue.json?v=986b4b86e7';
   const desktop = () => matchMedia('(min-width: 768px)').matches;
 
   const INTROS = {

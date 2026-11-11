@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T08:21:47.980Z",
+  "updatedAt": "2026-11-11T13:49:36.495Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1682,6 +1682,15 @@
       "assignedAt": "2026-11-11T08:21:47.980Z",
       "articleId": "2026-11-11-merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung",
       "articleDate": "2026-11-11T09:21:00+01:00"
+    },
+    "/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/": {
+      "imageId": "web-feuerwehr-19-1b61ac53",
+      "pool": "feuerwehr",
+      "motiv": "feuerwehrhaus",
+      "regel": "rathaus.feuerwehr",
+      "assignedAt": "2026-11-11T13:49:36.494Z",
+      "articleId": "2026-11-11-brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten",
+      "articleDate": "2026-11-11T14:48:00+01:00"
     }
   }
 }

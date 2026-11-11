@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 11 Nov 2026 08:21:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Nov 2026 13:48:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/</guid>
+<pubDate>Wed, 11 Nov 2026 13:48:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der überarbeitete Brandschutzbedarfsplan liegt dem Haupt- und Finanzausschuss am 19. November vor. Er legt fest, wie schnell die Feuerwehr in den Ortsteilen sein soll, zeigt Lücken bei den Mitgliedern und nennt Fahrzeuge und Gebäude, die bis 2031 anstehen. Die Verwaltung schätzt die zusätzlichen Kosten auf gut vier Millionen Euro.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Feuerwehrhaus mit Einsatzfahrzeugen</media:description></media:content>
+</item>
 <item>
 <title>Merzenich 2027: Abwasser teurer, Hundesteuer steigt, Grundsteuer B soll auf 1.077 Punkte</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Vier Neuntklässler und zwei Lehramtsstudentinnen wandern mit Bollerwagen und 150 Euro pro Person durch das Rheinland. In Merzenich lud der Bürgermeister sie zum Essen ein und schickte sie mit dem Bürgerbus nach Bürgewald.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-12-1e67d8491e.jpg" medium="image"><media:credit>J.-H. Janßen / Wikimedia Commons · CC0</media:credit><media:description>Fingerpost of the hiking trail Teutoschleife Dörenther Klippen through the nature reserve „Dorenthe Cliffs“ ( Naturschutzgebiet Dörenther Klippen ) near Ibbenbüren - Dörenthe, Kre</media:description></media:content>
-</item>
-<item>
-<title>Rund 120 Gäste beim Seniorennachmittag in der Weinberghalle</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/seniorennachmittag-weinberghalle-120-gaeste-oktober-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:12:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Kuchen, Akkordeon und ein Tanzauftritt der Kita-Kinder: Die Gemeinde hat ihre Seniorinnen und Senioren wieder in die Weinberghalle eingeladen. Getragen wurde der Nachmittag von Vereinen, Ehrenamtlichen und Sponsoren.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg" medium="image"><media:credit>Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H</media:description></media:content>
 </item>
 </channel>
 </rss>
