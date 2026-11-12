@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-11",
+ "stand": "2026-11-12",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,14 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Niederzier",
+   "rubrik": "Blaulicht",
+   "titel": "Pkw-Fahrer kommt von der Fahrbahn ab und prallt gegen geparkten Pkw",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6389224",
+   "datum": "2026-11-12",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
