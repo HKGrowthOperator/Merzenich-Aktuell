@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-12-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-12-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 51 |
-| gesperrt | 30 |
+| uebernommen | 52 |
+| gesperrt | 29 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-12 nachmittags (Claude): Keine Korrekturen; Kurzmeldung Ersthelfer-Ehrung (Kreis Düren); sieben Termine aus dem 16. Kulturkalender; Zeitkonflikte Weckmannschießen, Pluriversum, Krätzchensitzung offen. Mindesttakt 12.11.: 2 Meldungen. – Commit 3684e92f
+- 2026-11-12 mittags (ChatGPT): Keine neuen Themenkarten. Unterkunftsgebührenartikel mit Vorlage/Kalkulation geprüft, ohne Abweichung. Neu verlinkter Kulturkalender: Spielenachmittag 14.11. neu erfasst, Weckmannschießen 11 statt 11:30 Uhr als Quellenkonflikt; Pluriversum-Beginn weiterhin widersprüchlich. Frühstück 25.11. live bestätigt, Ort offen.
 - 2026-11-12 morgens (Claude): Keine Korrekturen; Kurzmeldung Unterkunftsgebühren 2027 (Vorschlag); zwei Termine Frühstückstreff neu; Termine bis 26.11. an der Quelle bestätigt. – Commit de7b8308
 - 2026-11-12 morgens (ChatGPT): Eine neue T2-Karte: Ehrung eines Merzenicher Corhelpers und AED-Nachsorge; unabhängige Bestätigung fehlt. Neu erfasster Frühstücks-/Spieletreff 25.11., konkrete Ortszeile fehlt. Brandschutzartikel anhand Plan und Kostentabelle geprüft; historische Teilbelege offen. Keine neue belegte Artikelkorrektur.
-- 2026-11-11 nachmittags (Claude): Keine Korrekturen; Standardartikel Brandschutzbedarfsplan (Schutzziel, Bürgewald, Personal, Kostenliste); Kalender unverändert, Krätzchensitzung bestätigt. Mindesttakt 11.11.: 2 Meldungen. – Commit 25c082de
-- 2026-11-11 mittags (ChatGPT): Keine neue Themenkarte. Neuer Abgabenartikel mit Vorlagen, Kalkulation und Satzungsentwürfen abgeglichen; BdSt-Vergleich wegen HTTP 403 nicht erneut prüfbar. Heute aktualisierte Heimat-Info-Stempel ohne sachliche Terminänderung; Pluriversum-Konflikt bleibt. Keine neue belegte Artikelkorrektur, Teilprüfungen ausdrücklich begrenzt.

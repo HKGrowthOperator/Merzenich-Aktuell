@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-12-mittags.md",
+  "latest_dossier": "dossiers/2026-11-12-claude-nachmittags.md",
   "source_check_window": "12.11.2026, 12:06:06–12:08:44 Europe/Berlin; ergänzender Original-Webabruf gegen 12:08",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11358,15 +11358,15 @@
       "priority": "P2",
       "location_section": "Merzenich · Leben/Ehrenamt",
       "change_type": "Neu erschlossene Kreismitteilung zur Ehrung",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B1",
-      "dossier": "dossiers/2026-11-12-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-12T07:07:34+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-12-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-12 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-12-recherche-claude-nachmittags.json → /leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Kreisbericht vom 11.11. und Zweckverbandsbericht vom 09.11. zur Ehrung am 07.11. in Stockheim: Merzenicher Ersthelfer und AED-Nachsorge, ohne Namen der Privatperson. Quellen aus demselben Projektverbund nicht als unabhängige Ereignisbestätigungen zählen. DRK ist unabhängiger Hintergrund, kein Beleg für konkrete Ehrung. Keine Artikelumsetzung durch diesen Lauf. | Claude 12.11. morgens: für den Nachmittagslauf vorgesehen (Kreis Düren als offizielle Quelle).",
+      "implementation_commit": "3684e92f",
+      "notes": "Kreisbericht vom 11.11. und Zweckverbandsbericht vom 09.11. zur Ehrung am 07.11. in Stockheim: Merzenicher Ersthelfer und AED-Nachsorge, ohne Namen der Privatperson. Quellen aus demselben Projektverbund nicht als unabhängige Ereignisbestätigungen zählen. DRK ist unabhängiger Hintergrund, kein Beleg für konkrete Ehrung. Keine Artikelumsetzung durch diesen Lauf. | Claude 12.11. morgens: für den Nachmittagslauf vorgesehen (Kreis Düren als offizielle Quelle). | Claude 12.11. nachmittags: Kurzmeldung (276 Wörter) aus der Kreismitteilung; Name des Geehrten nicht übernommen; Datum der Feierstunde nicht genannt (nicht in der Kreismitteilung). Live 14:52 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Bild: Rettungswagen innen (Symbolbild), AED-Foto wegen Commons-Ratenbegrenzung nicht importiert.",
       "latest_research_dossier": "dossiers/2026-11-12-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Kreis, Zweckverband und Projektseite als Primärquellen; DRK-Hintergrund; unabhängige konkrete Bestätigung fehlt",
@@ -11386,6 +11386,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-12-morgens.md",
           "heading": "MA-CORHELPER-EHRUNG-2026"
+        },
+        {
+          "date": "2026-11-12",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-12-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -13098,6 +13104,16 @@
         "Derbywertung, historischer S19-Reparaturbeleg, historische Brandschutz-Teilbelege und übrige Artikelteilprüfungen offen",
         "Spätere Krätzchensitzung: abweichender Beginn im neu verlinkten Kulturkalender, außerhalb des Terminfensters separat klären"
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-12-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-12-mittags.md",
+      "implementation_commit": "3684e92f",
+      "summary": "Keine Korrekturen; Kurzmeldung Ersthelfer-Ehrung (Kreis Düren); sieben Termine aus dem 16. Kulturkalender; Zeitkonflikte Weckmannschießen, Pluriversum, Krätzchensitzung offen. Mindesttakt 12.11.: 2 Meldungen.",
+      "publication": "Neue Meldung und Termine direkt veröffentlicht"
     }
   ]
 }
