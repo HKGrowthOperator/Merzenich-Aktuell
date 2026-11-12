@@ -1,11 +1,11 @@
 {
  "quelle": "schulen",
- "abgerufen": "2026-11-12T13:50:22.530Z",
+ "abgerufen": "2026-11-12T21:58:30.993Z",
  "listen": [
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-11-12T13:49:52.228Z",
+   "abgerufen": "2026-11-12T21:58:01.153Z",
    "status": 200,
    "titel": "Aktuelles | Startseite",
    "meta": {
@@ -24,7 +24,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTA3MDk3OTYwOA"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjY4MTMzNDg"
     },
     {
      "text": "Startseite Martinszug",
@@ -32,7 +32,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODA3NjQxODMw"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODYyNjk3NzU2"
     },
     {
      "text": "Aktuelles Tag der offenen Tür an der KGS Merzenich Am 25. September öffnete die KGS Merzenich am Weinberg von 9.00 bis 12.30 Uhr ihre Türen für die zukünftigen Erstklässlerinnen und Erstklässler.",
@@ -40,7 +40,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTc1MTkxMDY0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjMzNzMzNzA5"
     },
     {
      "text": "Aktuelles Sauer macht sicher – Kinder der vierten 21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.",
@@ -48,7 +48,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzU5NzMwOTI1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzIzMjYzNjg2"
     },
     {
      "text": "Aktuelles Tag der offenen Tür Am 26.09.26 findet der Tag der offenen Tür statt.",
@@ -56,7 +56,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODIzNjY4NTY"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTI1NTk0OTQ1"
     },
     {
      "text": "Aktuelles Eine große Show: Der Viertie-Gag 2026 Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.",
@@ -64,7 +64,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTcxNTk3ODE5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#Mjk1MjUyOTU"
     },
     {
      "text": "Aktuelles Verabschiedung der Vierties 07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.",
@@ -72,7 +72,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDUxODA2NDI1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzAzODE3NzQ0"
     },
     {
      "text": "Aktuelles Die mutigen Acht 07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.",
@@ -80,7 +80,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODE1NzI3NTIy"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTU4NDcwNTc3"
     },
     {
      "text": "Aktuelles Sporttag 2026: Ein Tag der Gemeinschaft 23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.",
@@ -88,7 +88,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjAzNzc5OTI"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTMyOTAxMTY4"
     },
     {
      "text": "Aktuelles Erstaunliches rund um die vier Elemente 23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann",
@@ -96,7 +96,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODgzNDA3NzY2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzA5Nzk4NDIw"
     },
     {
      "text": "Aktuelles Barfuß unterwegs: Der Kollegiumsausflug 20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.",
@@ -104,7 +104,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTY4MDY1NzEx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTE3MTk3NDA0"
     },
     {
      "text": "Aktuelles Grundschulmeisterschaften Fußball 17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.",
@@ -112,7 +112,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzI3ODYwODM3"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTAzMTk3NzAzOA"
     },
     {
      "text": "Aktuelles Die freiwillige Feuerwehr sorgt für Abkü 09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!",
@@ -120,7 +120,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTM0MjIzODU3"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjIwODIwODIy"
     },
     {
      "text": "Aktuelles Känguruwettbewerb 2026 19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.",
@@ -128,7 +128,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTIxOTI5OTU1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjQ0MTUzMjk"
     },
     {
      "text": "Aktuelles Neues Klettergerüst für die KGS Merzenic 19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.",
@@ -136,7 +136,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjY2MjQ0MDE2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjU0NTA4NzMz"
     },
     {
      "text": "Aktuelles Kreismeisterschaften Schwimmen 2026 07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.",
@@ -144,7 +144,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzUyOTQyODkx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODM2OTMyMDk1"
     },
     {
      "text": "Aktuelles Lernzeit an der KGS Merzenich geht in di 07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.",
@@ -152,7 +152,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzgyMTk4NjYw"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTU3NTg2ODU"
     },
     {
      "text": "Aktuelles Der Sponsorenlauf 2026 04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.",
@@ -160,7 +160,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTA2MjQwOTU4"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTc5MjM2NTY0"
     },
     {
      "text": "Aktuelles Karneval 2026: Ausgelassene Stimmung 03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
@@ -168,7 +168,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDkzMTYzNDQz"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODM2MDEwNzY5"
     }
    ],
    "bilder": []
@@ -176,7 +176,7 @@
   {
    "url": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
    "endUrl": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php",
-   "abgerufen": "2026-11-12T13:49:54.243Z",
+   "abgerufen": "2026-11-12T21:58:03.081Z",
    "status": 200,
    "titel": "Unsere Schule | KGS Golzheim",
    "meta": {
@@ -194,7 +194,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MjM3OTA5NTY4"
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#OTY0MTYwNTUx"
     },
     {
      "text": "Unsere Schule AG's und Angebote an der KGS Golzheim",
@@ -202,7 +202,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#OTI4NzUxOTc5"
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MTM2NDg5MzQ5"
     },
     {
      "text": "Unsere Schule Anmeldung",
@@ -218,7 +218,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#ODA3MzAxNzE1"
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#NDQ2MTQ0ODIy"
     },
     {
      "text": "Unsere Schule Betreuung (8-1) / Offene Ganztagsschule (OGS)",
@@ -230,7 +230,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#OTA5Mjg0NDIx"
+     "href": "https://kgs-golzheim.gemeinde-merzenich.de/rubrik-unsere-schule/index.php#MTAxNDczOTI0"
     },
     {
      "text": "Unsere Schule Termine",
@@ -248,7 +248,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/gemeinsam-erntedank-feiern.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/gemeinsam-erntedank-feiern.php",
-   "abgerufen": "2026-11-12T13:49:55.591Z",
+   "abgerufen": "2026-11-12T21:58:04.415Z",
    "status": 200,
    "titel": "Gemeinsam Erntedank feiern | Startseite",
    "meta": {
@@ -267,7 +267,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/gemeinsam-erntedank-feiern.php#OTE4NjA0Njkw"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/gemeinsam-erntedank-feiern.php#MTA2MDMzNzE4NA"
     }
    ],
    "bilder": []
@@ -275,7 +275,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php",
-   "abgerufen": "2026-11-12T13:49:57.005Z",
+   "abgerufen": "2026-11-12T21:58:05.800Z",
    "status": 200,
    "titel": "Aktuelles | Startseite",
    "meta": {
@@ -294,7 +294,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTAwMTY3NDYxMQ"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDE4NTA5ODA5"
     },
     {
      "text": "Startseite Martinszug",
@@ -302,7 +302,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzMzOTQxNTAx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODUwMTY3NTk"
     },
     {
      "text": "Aktuelles Tag der offenen Tür an der KGS Merzenich Am 25. September öffnete die KGS Merzenich am Weinberg von 9.00 bis 12.30 Uhr ihre Türen für die zukünftigen Erstklässlerinnen und Erstklässler.",
@@ -310,7 +310,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTk3MDQxNTA5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjkxNjY2Nzg"
     },
     {
      "text": "Aktuelles Sauer macht sicher – Kinder der vierten 21.09.2026 - Mit Zitronen im Gepäck und einer wichtigen Botschaft machten sich auch in diesem Jahr SchülerInnen [...] für mehr Sicherheit stark.",
@@ -318,7 +318,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjgxNTk3MzAz"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTIzMTQ4NzYw"
     },
     {
      "text": "Aktuelles Tag der offenen Tür Am 26.09.26 findet der Tag der offenen Tür statt.",
@@ -326,7 +326,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTE0MTczMzQ5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTUzNjEwMzU4"
     },
     {
      "text": "Aktuelles Eine große Show: Der Viertie-Gag 2026 Beim Abschluss-Gag der vierten Klassen am 10. Juli 2026 konnte das Kollegium der KGS mit seiner Performance bei der Lehrerprüfung überzeugen.",
@@ -334,7 +334,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzUyMjUzODAx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODcyNzM4MQ"
     },
     {
      "text": "Aktuelles Verabschiedung der Vierties 07.09.2026 - Am 16.07.2026 verabschiedete sich die KGS Merzenich von den diesjährigen Schulabgängerinnen und -abgängern.",
@@ -342,7 +342,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODcwMDkyNDg"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzYzMzA0ODg2"
     },
     {
      "text": "Aktuelles Die mutigen Acht 07.09.2026 - Anlässlich des vierten „Stoppt-Mobbing-Tags“ am 14. Juli 2026 brachten Schülerinnen der vierten Klassen ein [...] Theaterstück.",
@@ -350,7 +350,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTAwOTUzMjQ3NA"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjMzNDUxMzA4"
     },
     {
      "text": "Aktuelles Sporttag 2026: Ein Tag der Gemeinschaft 23.07.2026 - Am 8. Juli 2026 fand an der KGS Merzenich unser alljährlicher Sporttag statt. An diesem Tag stand nicht nur die Bewegung im Vordergrund.",
@@ -358,7 +358,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTkxNjg1Njg1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjgxMDgwNzY1"
     },
     {
      "text": "Aktuelles Erstaunliches rund um die vier Elemente 23.07.2026 - Die Wissensshow der Physikanten zieht die Kinder in ihren Bann",
@@ -366,7 +366,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzcyNDkwOTg5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTcxOTExMzA"
     },
     {
      "text": "Aktuelles Barfuß unterwegs: Der Kollegiumsausflug 20.07.2026 - Am 6. Juli 2026 fand an der KGS Merzenich der jährliche Kollegiumsausflug statt.",
@@ -374,7 +374,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDM3NDYyMjE4"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTc5NzA0NDEz"
     },
     {
      "text": "Aktuelles Grundschulmeisterschaften Fußball 17.07.26 - Am 8. Mai nahm unsere Grundschule mit 13 Kindern an den Fußball-Grundschulmeisterschaften in Düren teil.",
@@ -382,7 +382,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NzI4NDQyNjc0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODcyMDc2ODMw"
     },
     {
      "text": "Aktuelles Die freiwillige Feuerwehr sorgt für Abkü 09.07.2026 - Am 26. Juni 2026 hieß es an der KGS Merzenich: Bücher zu, Badesachen an!",
@@ -390,7 +390,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjM5ODMwNjg3"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjUxMjM1NzM0"
     },
     {
      "text": "Aktuelles Känguruwettbewerb 2026 19.05.2026 - Am 19. März 2026 nahmen 24 Kinder der dritten und vierten Klassen der KGS Merzenich am weltweiten Mathematikwettstreit teil.",
@@ -398,7 +398,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MTQyMDg4ODE"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NTM3OTEyMTA1"
     },
     {
      "text": "Aktuelles Neues Klettergerüst für die KGS Merzenic 19.05.2026 - Endlich hat das Warten für die SchülerInnen der KGS Merzenich ein Ende.",
@@ -406,7 +406,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NjAyNzA5MDM2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#Njc2MDA3Njky"
     },
     {
      "text": "Aktuelles Kreismeisterschaften Schwimmen 2026 07.05.2026 - Am 24. März 2026 nahmen 15 SchülerInnen der ersten bis vierten Klasse an den Grundschulkreismeisterschaften im Dürener Rurbad teil.",
@@ -414,7 +414,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#ODQ0OTkyNzE0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#OTM2NDEwODIy"
     },
     {
      "text": "Aktuelles Lernzeit an der KGS Merzenich geht in di 07.05.2026 - Seit dem 23. Februar 2026 werden die Hausaufgaben an der KGS Merzenich jeden Montag durch eine Projektlernzeit ersetzt.",
@@ -422,7 +422,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzczODc3MjU0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#NDkwMzUxMDUw"
     },
     {
      "text": "Aktuelles Der Sponsorenlauf 2026 04.05.26 - der Sponsorenlauf wurde in diesem Jahr aufgrund der Witterungsverhältnisse auf den 24. April 2026 verlegt.",
@@ -430,7 +430,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjcyNzQwMTE1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MzM1MzQ5MzYz"
     },
     {
      "text": "Aktuelles Karneval 2026: Ausgelassene Stimmung 03.05.26 - Mit ausgelassener Stimmung und bunten Kostümen trotzte die KGS Merzenich in diesem Jahr dem Regen und tristen Wetter an Karneval.",
@@ -438,7 +438,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#Mzk2ODkzNzU4"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/index.php#MjE5MzcwODQz"
     }
    ],
    "bilder": []
@@ -446,7 +446,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php",
-   "abgerufen": "2026-11-12T13:49:58.356Z",
+   "abgerufen": "2026-11-12T21:58:07.131Z",
    "status": 200,
    "titel": "Martinszug | Startseite",
    "meta": {
@@ -464,7 +464,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php#NTQ0NjMyMDAy"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/martinszug.php#NTMwNTIxNTA4"
     }
    ],
    "bilder": []
@@ -472,7 +472,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer-an-der-kgs-merzenich.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer-an-der-kgs-merzenich.php",
-   "abgerufen": "2026-11-12T13:49:59.714Z",
+   "abgerufen": "2026-11-12T21:58:08.463Z",
    "status": 200,
    "titel": "Tag der offenen Tür an der KGS Merzenich | Startseite",
    "meta": {
@@ -491,7 +491,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer-an-der-kgs-merzenich.php#MTI2MTkyODY1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer-an-der-kgs-merzenich.php#MzUyMjQ2NzM3"
     }
    ],
    "bilder": []
@@ -499,7 +499,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php",
-   "abgerufen": "2026-11-12T13:50:01.071Z",
+   "abgerufen": "2026-11-12T21:58:09.795Z",
    "status": 200,
    "titel": "Sauer macht sicher – Kinder der vierten Klassen bei der Zitronenaktion | Startseite",
    "meta": {
@@ -518,7 +518,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#OTU5NTkwMzM4"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#NDU0NjM2OTg1"
     },
     {
      "text": "",
@@ -526,7 +526,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#OTM5MjAxODY3"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sauer-macht-sicher-kinder-der-vierten-klassen-bei-der-zitronenaktion.php#MjM1MzM2ODkx"
     },
     {
      "text": "Video auf Instagram ansehen: Zitronenaktion (Öffnet in einem neuen Tab)",
@@ -538,7 +538,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php",
-   "abgerufen": "2026-11-12T13:50:02.416Z",
+   "abgerufen": "2026-11-12T21:58:11.127Z",
    "status": 200,
    "titel": "Tag der offenen Tür | Startseite",
    "meta": {
@@ -557,7 +557,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php#MTA2MDI5NDM2Mw"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/tag-der-offenen-tuer.php#Njg2MTk5NDU5"
     }
    ],
    "bilder": []
@@ -565,7 +565,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php",
-   "abgerufen": "2026-11-12T13:50:03.774Z",
+   "abgerufen": "2026-11-12T21:58:12.456Z",
    "status": 200,
    "titel": "Eine große Show: Der Viertie-Gag 2026 | Startseite",
    "meta": {
@@ -584,7 +584,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#MjU5MDQ3MTM"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#MzM0NTc5NTc0"
     },
     {
      "text": "",
@@ -592,7 +592,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#MjE3NjUzOTQx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/eine-grosse-show-der-viertie-gag-2026.php#NzE5NTI2ODU3"
     }
    ],
    "bilder": []
@@ -600,7 +600,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php",
-   "abgerufen": "2026-11-12T13:50:05.120Z",
+   "abgerufen": "2026-11-12T21:58:13.795Z",
    "status": 200,
    "titel": "Verabschiedung der Vierties | Startseite",
    "meta": {
@@ -619,7 +619,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#NzEzMzQ4NjMw"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#NzQ4ODc1NzU3"
     },
     {
      "text": "",
@@ -627,7 +627,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#NDYzODY1MjU2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/verabschiedung-der-vierties.php#ODQ4OTAyNTI3"
     }
    ],
    "bilder": []
@@ -635,7 +635,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php",
-   "abgerufen": "2026-11-12T13:50:06.470Z",
+   "abgerufen": "2026-11-12T21:58:15.129Z",
    "status": 200,
    "titel": "Die mutigen Acht: Theaterstück am vierten „Stoppt-Mobbing Tag“ zeigt, wie man sich gegen Mobbing verbünden kann | Startseite",
    "meta": {
@@ -654,7 +654,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php#ODgzNDM5NjI2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-mutigen-acht-theaterstueck-am-vierten-stoppt-mobbing-tag-zeigt-wie-man-sich-gegen-mobbing-verbuenden-kann.php#OTgyNjMxMDc4"
     }
    ],
    "bilder": []
@@ -662,7 +662,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php",
-   "abgerufen": "2026-11-12T13:50:07.822Z",
+   "abgerufen": "2026-11-12T21:58:16.463Z",
    "status": 200,
    "titel": "Sporttag 2026: Ein Tag der Gemeinschaft und des Fairplays | Startseite",
    "meta": {
@@ -681,7 +681,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#MTAwOTI1OTgzMA"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#MTA0NDU2NTU4Mw"
     },
     {
      "text": "",
@@ -689,7 +689,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#Njk1MDcxMzQ0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#MzAzNTMzMzQ4"
     },
     {
      "text": "",
@@ -697,7 +697,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#MjMzNTk5MzI4"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/sporttag-2026-ein-tag-der-gemeinschaft-und-des-fairplays.php#ODQ0NTE0NjQ5"
     }
    ],
    "bilder": []
@@ -705,7 +705,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php",
-   "abgerufen": "2026-11-12T13:50:09.168Z",
+   "abgerufen": "2026-11-12T21:58:17.796Z",
    "status": 200,
    "titel": "Erstaunliches rund um die vier Elemente | Startseite",
    "meta": {
@@ -724,7 +724,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php#OTQzMzkyNTg2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/erstaunliches-rund-um-die-vier-elemente.php#NTg3NTY1NTgz"
     }
    ],
    "bilder": []
@@ -732,7 +732,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php",
-   "abgerufen": "2026-11-12T13:50:10.523Z",
+   "abgerufen": "2026-11-12T21:58:19.129Z",
    "status": 200,
    "titel": "Barfuß unterwegs: Der Kollegiumsausflug 2026 | Startseite",
    "meta": {
@@ -751,7 +751,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#Mzc4NTc3NDcz"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#Njk4Mjk5NDIy"
     },
     {
      "text": "",
@@ -759,7 +759,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#NTcwNTIwOTI0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#NzAyNjY4NTQ"
     },
     {
      "text": "",
@@ -767,7 +767,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#NDY3MzU0NzQ5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/barfuss-unterwegs-der-kollegiumsausflug-2026.php#ODc1MDAyOTA4"
     }
    ],
    "bilder": []
@@ -775,7 +775,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php",
-   "abgerufen": "2026-11-12T13:50:11.870Z",
+   "abgerufen": "2026-11-12T21:58:20.465Z",
    "status": 200,
    "titel": "Grundschulmeisterschaften Fußball | Startseite",
    "meta": {
@@ -794,7 +794,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php#MTA0NjM4NDg1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/grundschulmeisterschaften-fussball.php#Mjg5NjM4MjQ4"
     }
    ],
    "bilder": []
@@ -802,7 +802,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php",
-   "abgerufen": "2026-11-12T13:50:13.222Z",
+   "abgerufen": "2026-11-12T21:58:21.799Z",
    "status": 200,
    "titel": "Die freiwillige Feuerwehr sorgt für Abkühlung an der KGS Merzenich | Startseite",
    "meta": {
@@ -821,7 +821,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#NjU0NDkwNDE0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#NDE3ODQyMTQ"
     },
     {
      "text": "",
@@ -829,7 +829,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#NDk3NDMwOTg"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/die-freiwillige-feuerwehr-sorgt-fuer-abkuehlung-an-der-kgs-merzenich.php#MTQzMjEyNTUw"
     }
    ],
    "bilder": []
@@ -837,7 +837,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php",
-   "abgerufen": "2026-11-12T13:50:14.571Z",
+   "abgerufen": "2026-11-12T21:58:23.130Z",
    "status": 200,
    "titel": "Känguruwettbewerb 2026 | Startseite",
    "meta": {
@@ -856,7 +856,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php#MTA0NDI2NTYyNQ"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kaenguruwettbewerb-2026.php#NTE0Mzk0NjQw"
     }
    ],
    "bilder": []
@@ -864,7 +864,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php",
-   "abgerufen": "2026-11-12T13:50:15.922Z",
+   "abgerufen": "2026-11-12T21:58:24.468Z",
    "status": 200,
    "titel": "Neues Klettergerüst für die KGS Merzenich | Startseite",
    "meta": {
@@ -883,7 +883,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php#ODgyMjAzNDg3"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/neues-klettergeruest-fuer-die-kgs-merzenich.php#NzY1MzgwOTI2"
     }
    ],
    "bilder": []
@@ -891,7 +891,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php",
-   "abgerufen": "2026-11-12T13:50:17.273Z",
+   "abgerufen": "2026-11-12T21:58:25.801Z",
    "status": 200,
    "titel": "Kreismeisterschaften Schwimmen 2026 | Startseite",
    "meta": {
@@ -906,7 +906,7 @@
    "links": [
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#NDI3NDUzODU5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#Mjk2MDUwMzYy"
     },
     {
      "text": "",
@@ -914,7 +914,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#NjYzOTI1MDI5"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/kreismeisterschaften-schwimmen-2026.php#NTM5ODk0MDk2"
     }
    ],
    "bilder": []
@@ -922,7 +922,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php",
-   "abgerufen": "2026-11-12T13:50:18.618Z",
+   "abgerufen": "2026-11-12T21:58:27.133Z",
    "status": 200,
    "titel": "Lernzeit an der KGS Merzenich geht in die zweite Runde | Startseite",
    "meta": {
@@ -941,7 +941,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php#MTg3ODEwMTIx"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/lernzeit-an-der-kgs-merzenich-geht-in-die-zweite-runde.php#MTAxMDMxNDg2Nw"
     }
    ],
    "bilder": []
@@ -949,7 +949,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php",
-   "abgerufen": "2026-11-12T13:50:19.977Z",
+   "abgerufen": "2026-11-12T21:58:28.463Z",
    "status": 200,
    "titel": "Der Sponsorenlauf 2026: Der Kälte zum Trotz für den guten Zweck | Startseite",
    "meta": {
@@ -968,7 +968,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#NzYyNTA2MzA2"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#MjQyNTY2NDA1"
     },
     {
      "text": "",
@@ -976,7 +976,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#MjMzNTcwMTA1"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/index.php#NzQwNjI4OTg5"
     }
    ],
    "bilder": []
@@ -984,7 +984,7 @@
   {
    "url": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php",
    "endUrl": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php",
-   "abgerufen": "2026-11-12T13:50:21.329Z",
+   "abgerufen": "2026-11-12T21:58:29.793Z",
    "status": 200,
    "titel": "Karneval 2026: Ausgelassene Stimmung, bunte Kostüme und viel Magie an der KGS Merzenich | Startseite",
    "meta": {
@@ -1003,7 +1003,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#NTU0MDAxNDE"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#MTI4ODA5MjEw"
     },
     {
      "text": "",
@@ -1011,7 +1011,7 @@
     },
     {
      "text": "",
-     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#Nzk0ODAzNDI0"
+     "href": "https://kgs.gemeinde-merzenich.de/aktuelles/news-2026/karneval-2026-ausgelassene-stimmung-bunte-kostueme-und-viel-magie-an-der-kgs-merzenich.php#OTM2ODMyMzMw"
     }
    ],
    "bilder": []
