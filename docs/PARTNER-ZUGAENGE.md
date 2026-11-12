@@ -10,7 +10,9 @@ Polizei, Feuerwehr, Rathaus, Makler, der Fußballverein (Sport liegt beim SC 191
 |---|---|---|---|
 | Polizei-Partner (`ma_polizei_partner`) | Polizei / Kreispolizeibehörde | Beiträge | Rubrik Blaulicht |
 | Feuerwehr-Partner (`ma_feuerwehr_partner`) | Feuerwehr / Löschgruppe | Beiträge | Rubrik Blaulicht |
+| Krankenhaus-Partner (`ma_krankenhaus_partner`, seit 1.48.5) | Krankenhaus / Rettungsdienst | Beiträge | Rubrik Blaulicht |
 | Rathaus-Partner (`ma_rathaus_partner`) | Gemeinde / Rathaus | Beiträge | Rubrik Rathaus & Politik |
+| Politik-Partner (`ma_politik_partner`, seit 1.48.5) | Partei / Fraktion | Beiträge | Rubrik Rathaus & Politik |
 | Sport-Partner (`ma_sport_partner`) | Fußballverein (SC 1919) | Beiträge | Rubrik Sport |
 | Vereins-Partner (`ma_vereine_partner`) | Verein / Initiative | Beiträge | Rubrik Vereine |
 | Unternehmens-Partner (`ma_wirtschaft_partner`) | Unternehmen | Beiträge, Unternehmensprofil, Tipp, Werbeanzeige | Eigener Unternehmenskanal `/unternehmen/<firma>/` (seit 1.28.0: Zugang mit Profil verknüpft, Beiträge automatisch im Kanal), `/unternehmen/`, Menü „Unternehmen“, `/betriebe/`, Werbeplätze |
@@ -47,7 +49,7 @@ Eine Seite anlegen (Vorschlag: „Partner-Zugang“) und den Shortcode einfügen
 [ma_partner_antrag]
 ```
 
-Mit Vorauswahl der Art: `[ma_partner_antrag typ="verein"]` – möglich sind `polizei`, `feuerwehr`, `rathaus`, `sport`, `verein`, `immobilien`, `unternehmen`. Das Formular fragt Organisation, Art, Ansprechperson, E-Mail, Telefon (freiwillig), Nachricht (freiwillig) und die Einwilligung zur Datenverarbeitung ab; es hat Nonce- und Spam-Schutz (verstecktes Feld, Mindestzeit). Die Unternehmensübersicht `/betriebe/` enthält das Formular bereits (Art „Unternehmen“ vorausgewählt).
+Mit Vorauswahl der Art: `[ma_partner_antrag typ="verein"]` – möglich sind `polizei`, `feuerwehr`, `krankenhaus`, `rathaus`, `politik`, `sport`, `verein`, `immobilien`, `unternehmen`. Das Formular fragt Organisation, Art, Ansprechperson, E-Mail, Telefon (freiwillig), Nachricht (freiwillig) und die Einwilligung zur Datenverarbeitung ab; es hat Nonce- und Spam-Schutz (verstecktes Feld, Mindestzeit). Die Unternehmensübersicht `/betriebe/` enthält das Formular bereits (Art „Unternehmen“ vorausgewählt).
 
 ## 3. Freigabe-Ablauf
 

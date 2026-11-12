@@ -1,6 +1,6 @@
 {
   "stand": "2026-11-02",
-  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media), dazu seit 02.11.2026 das HK Growth Webstudio (Auftrag Betreiber: nur Webstudio, Kennzeichnung „Anzeige“, Profil und Anzeigen; Angaben von hk-growthoperator.de und website.hk-growthoperator.de). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
+  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media), dazu seit 02.11.2026 das HK Growth Webstudio (Auftrag Betreiber: nur Webstudio, Kennzeichnung „Anzeige“, Profil und Anzeigen; Angaben von hk-growthoperator.de; die Webstudio-Seite lag bis 12.11.2026 unter website.hk-growthoperator.de). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
@@ -399,11 +399,10 @@
         "adresse": "Weststraße 2, 51709 Marienheide",
         "telefon": "+49 175 4547011",
         "email": "info@hk-growthoperator.de",
-        "website": "https://website.hk-growthoperator.de/",
+        "website": "https://hk-growthoperator.de/",
         "oeffnungszeiten": "",
-        "quelle": "Angaben laut website.hk-growthoperator.de und hk-growthoperator.de (Startseite, llms.txt), geprüft am 02.11.2026",
+        "quelle": "Angaben laut hk-growthoperator.de (Startseite, llms.txt), geprüft am 02.11.2026; die Webstudio-Seite ist am 12.11.2026 von website.hk-growthoperator.de dorthin umgezogen",
         "quellen": [
-          "https://website.hk-growthoperator.de/",
           "https://hk-growthoperator.de/",
           "https://hk-growthoperator.de/llms.txt"
         ],
@@ -411,7 +410,7 @@
         "text": "Das HK Growth Webstudio gehört zur HK Growth UG aus Marienheide. Laut Website entsteht eine Unternehmenswebsite in zwei bis vier Wochen bis zum Start, mit fertigen Texten, eigenem Design und einer technischen Grundlage, damit Google und KI-Suchen wie ChatGPT die Seite verstehen. Dazu kommen Terminbuchung und eine Automation, die jede Anfrage sofort weiterleitet. Den Festpreis nennt das Webstudio nach einem Erstgespräch.",
         "karte": {
           "knopf": "HK Growth Webstudio entdecken",
-          "ziel": "https://website.hk-growthoperator.de/"
+          "ziel": "https://hk-growthoperator.de/"
         },
         "logo": {
           "quelle": "https://hk-growthoperator.de/assets/brand/hk-growth-operator-logo-tight.png",
@@ -433,11 +432,11 @@
         ],
         "knopf": {
           "text": "HK Growth Webstudio besuchen",
-          "ziel": "https://website.hk-growthoperator.de/"
+          "ziel": "https://hk-growthoperator.de/"
         },
         "seo_titel": "HK Growth Webstudio Marienheide: Websites in 2 bis 4 Wochen",
         "seo_beschreibung": "HK Growth Webstudio aus Marienheide: Unternehmenswebsites mit Texten, Design, SEO, KI-Sichtbarkeit und Anfrage-Automation. Festpreis nach Erstgespräch.",
-        "quelle": "https://website.hk-growthoperator.de/"
+        "quelle": "https://hk-growthoperator.de/"
       },
       "anzeigen": [
         {
@@ -450,8 +449,8 @@
           "bild_breit": "hk-growth-webstudio-1-breit.jpg",
           "video_breit": "hk-growth-webstudio-1-breit.mp4",
           "alt": "Website des HK Growth Webstudio auf Laptop und Handy",
-          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
-          "quelle": "https://website.hk-growthoperator.de/",
+          "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://hk-growthoperator.de/",
           "stand": "2026-11-02c"
         },
         {
@@ -464,9 +463,9 @@
           "bild_breit": "hk-growth-webstudio-anfragen-breit.jpg",
           "video_breit": "hk-growth-webstudio-anfragen-breit.mp4",
           "alt": "Leistung „Terminbuchung und qualifizierte Anfragen“ auf der Website des HK Growth Webstudio",
-          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
-          "quelle": "https://website.hk-growthoperator.de/",
-          "ziel": "https://website.hk-growthoperator.de/#leistungen",
+          "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://hk-growthoperator.de/",
+          "ziel": "https://hk-growthoperator.de/#leistungen",
           "stand": "2026-11-02c"
         },
         {
@@ -479,9 +478,9 @@
           "bild_breit": "hk-growth-webstudio-automation-breit.jpg",
           "video_breit": "hk-growth-webstudio-automation-breit.mp4",
           "alt": "Ablauf nach der Anfrage mit Protokoll auf der Website des HK Growth Webstudio",
-          "nachweis": "Bildschirmansicht: website.hk-growthoperator.de; Nutzung mit Zusage laut Betreiber, 02.11.2026",
-          "quelle": "https://website.hk-growthoperator.de/",
-          "ziel": "https://website.hk-growthoperator.de/#automatisierung",
+          "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026",
+          "quelle": "https://hk-growthoperator.de/",
+          "ziel": "https://hk-growthoperator.de/#automatisierung",
           "stand": "2026-11-02c"
         }
       ]

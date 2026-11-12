@@ -1,6 +1,18 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-10. November 2026 · Theme 21.30.1 · Core-Plugin 1.48.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+12. November 2026 · Theme 21.30.2 · Core-Plugin 1.48.5 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 12.11.2026: Plugin 1.48.5 und Theme 21.30.2, HK-Link und Rollen Krankenhaus und Politik
+
+**HK Growth Webstudio:** Die Webstudio-Seite ist von `website.hk-growthoperator.de` auf `hk-growthoperator.de` umgezogen. Die alte Adresse antwortet nicht mehr (Zertifikatsfehler).
+- Ziele der drei Anzeigen (`/`, `#leistungen`, `#automatisierung`), Website und Quelle des Profils sowie Inhalt und Quelle des Beitrags habe ich am 12.11. live im Backend umgestellt. Die Anzeigen gelten seit dem Pausieren als im Backend bearbeitet, „Fehlende Entwürfe anlegen“ zieht sie nicht mehr nach.
+- Im Repository stehen die neuen Adressen in `data/firmen-entwuerfe.json` und `deploy/anzeigen.json`, damit `werbung.json` und `static/werbung.json` gleich sind (Theme 21.30.2).
+
+**Neue Partnerrollen** (`includes/partners.php`, Rollen-Stand 4):
+- **Krankenhaus-Partner** (`ma_krankenhaus_partner`): Krankenhaus oder Rettungsdienst, Beiträge in Blaulicht.
+- **Politik-Partner** (`ma_politik_partner`): Partei oder Fraktion, Beiträge in Rathaus & Politik.
+
+Beide stehen auch im Antragsformular (`typ="krankenhaus"`, `typ="politik"`) und haben eine eigene Funktion unter dem Autorennamen. Tests: `qa/wordpress/partner-kommentar-test.php`, `autoren-test.php`.
 
 ## Neu am 10.11.2026: Plugin 1.48.4, Vorschaubild in WhatsApp
 

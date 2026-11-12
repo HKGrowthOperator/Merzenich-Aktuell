@@ -106,6 +106,10 @@ pruefe('Feuerwehr-Rolle vorhanden',isset($pol['ma_feuerwehr_partner']),true);
 pruefe('Polizei landet in Blaulicht',$pol['ma_polizei_partner']['categories'],['blaulicht']);
 pruefe('Feuerwehr landet in Blaulicht',$pol['ma_feuerwehr_partner']['categories'],['blaulicht']);
 pruefe('Alte Blaulicht-Rolle bleibt, aber veraltet',!empty($pol['ma_blaulicht_partner']['veraltet']),true);
+// 12.11.2026 (Betreiber): Krankenhaus schreibt im Blaulicht, Politik unter Rathaus & Politik; beide neu vergebbar.
+pruefe('Krankenhaus-Rolle: nur Beiträge, landet in Blaulicht, nicht veraltet',[$pol['ma_krankenhaus_partner']['post_types'],$pol['ma_krankenhaus_partner']['categories'],empty($pol['ma_krankenhaus_partner']['veraltet'])],[['post'],['blaulicht'],true]);
+pruefe('Politik-Rolle: nur Beiträge, landet in Rathaus & Politik, nicht veraltet',[$pol['ma_politik_partner']['post_types'],$pol['ma_politik_partner']['categories'],empty($pol['ma_politik_partner']['veraltet'])],[['post'],['rathaus'],true]);
+pruefe('Rollen-Stand erhöht, damit add_role live läuft',(int)MA_PARTNER_ROLES_VERSION>=4,true);
 $GLOBALS['user']=new WP_User(9,['ma_feuerwehr_partner']);
 $d=ma_partner_force_pending(['post_type'=>'post','post_status'=>'publish'],[]);
 pruefe('Feuerwehr-Beitrag wird pending',$d['post_status'],'pending');

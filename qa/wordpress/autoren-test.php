@@ -19,6 +19,7 @@ pruefe('Person der Redaktion mit Funktion', ma_autor_art(['person' => true, 'nam
 pruefe('Person ohne Funktion heißt „Redaktion“', ma_autor_art(['person' => true, 'name' => 'Tivi'])['funktion'], 'Redaktion');
 pruefe('Polizei-Partner: Name ohne „(Partner)“, Funktion Polizei', array_slice(ma_autor_art(['partner' => true, 'rolle' => 'ma_polizei_partner', 'name' => 'Polizei Düren (Partner)']), 0, 3), ['art' => 'organisation', 'name' => 'Polizei Düren', 'funktion' => 'Polizei']);
 pruefe('Gemeinde-Partner heißt Gemeinde', ma_autor_art(['partner' => true, 'rolle' => 'ma_rathaus_partner', 'name' => 'Gemeinde Merzenich (Partner)'])['funktion'], 'Gemeinde');
+pruefe('Krankenhaus- und Politik-Partner mit eigener Funktion', [ma_autor_art(['partner' => true, 'rolle' => 'ma_krankenhaus_partner', 'name' => 'Krankenhaus Düren'])['funktion'], ma_autor_art(['partner' => true, 'rolle' => 'ma_politik_partner', 'name' => 'Fraktion X'])['funktion']], ['Krankenhaus', 'Politik']);
 pruefe('Sammelkonto (HK Growth) bleibt Redaktion', ma_autor_art(['name' => 'HK Growth'])['name'], 'Redaktion Merzenich Aktuell');
 pruefe('Person ohne Namen fällt auf Redaktion zurück', ma_autor_art(['person' => true, 'name' => '  '])['art'], 'redaktion');
 pruefe('Initialen', [ma_autor_initialen('Polizei Düren'), ma_autor_initialen('Tivi'), ma_autor_initialen('Anna-Lena Ört'), ma_autor_initialen('')], ['PD', 'T', 'AL', 'MA']);

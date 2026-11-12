@@ -26,8 +26,8 @@ const MA_AUTOR_REDAKTION = 'Redaktion Merzenich Aktuell';
 
 /** Bezeichnung je Partnerrolle (Zeile unter dem Namen). */
 const MA_AUTOR_ROLLEN = [
-    'ma_polizei_partner' => 'Polizei', 'ma_feuerwehr_partner' => 'Feuerwehr', 'ma_blaulicht_partner' => 'Blaulicht',
-    'ma_rathaus_partner' => 'Gemeinde', 'ma_sport_partner' => 'Verein', 'ma_vereine_partner' => 'Verein',
+    'ma_polizei_partner' => 'Polizei', 'ma_feuerwehr_partner' => 'Feuerwehr', 'ma_blaulicht_partner' => 'Blaulicht', 'ma_krankenhaus_partner' => 'Krankenhaus',
+    'ma_rathaus_partner' => 'Gemeinde', 'ma_politik_partner' => 'Politik', 'ma_sport_partner' => 'Verein', 'ma_vereine_partner' => 'Verein',
     'ma_wirtschaft_partner' => 'Unternehmen', 'ma_immobilien_partner' => 'Anbieter', 'ma_werbe_partner' => 'Anzeige',
 ];
 

@@ -15,7 +15,9 @@ function ma_partner_antrag_typen(): array {
     return [
         'polizei' => 'Polizei',
         'feuerwehr' => 'Feuerwehr',
+        'krankenhaus' => 'Krankenhaus / Rettungsdienst',
         'rathaus' => 'Rathaus',
+        'politik' => 'Politik (Partei / Fraktion)',
         'sport' => 'Sportverein (alle Sportarten)',
         'verein' => 'Verein',
         'immobilien' => 'Immobilien',
@@ -29,7 +31,9 @@ function ma_partner_antrag_rolle(string $typ): string {
     return [
         'polizei' => 'ma_polizei_partner',
         'feuerwehr' => 'ma_feuerwehr_partner',
+        'krankenhaus' => 'ma_krankenhaus_partner',
         'rathaus' => 'ma_rathaus_partner',
+        'politik' => 'ma_politik_partner',
         'sport' => 'ma_sport_partner',
         'verein' => 'ma_vereine_partner',
         'immobilien' => 'ma_immobilien_partner',

@@ -13,7 +13,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 // Hochzaehlen, wenn Rollen dazukommen: add_role laeuft dann beim naechsten Aufruf.
-if (!defined('MA_PARTNER_ROLES_VERSION')) define('MA_PARTNER_ROLES_VERSION', '3');
+if (!defined('MA_PARTNER_ROLES_VERSION')) define('MA_PARTNER_ROLES_VERSION', '4');
 
 function ma_partner_policies(): array {
     return [
@@ -26,6 +26,13 @@ function ma_partner_policies(): array {
         'ma_feuerwehr_partner' => [
             'label' => 'Feuerwehr-Partner',
             'description' => 'Feuerwehr / Löschgruppe',
+            'post_types' => ['post'],
+            'categories' => ['blaulicht'],
+        ],
+        // 12.11.2026 (Betreiber): Krankenhaus / Rettungsdienst schreibt im Blaulicht mit.
+        'ma_krankenhaus_partner' => [
+            'label' => 'Krankenhaus-Partner',
+            'description' => 'Krankenhaus / Rettungsdienst',
             'post_types' => ['post'],
             'categories' => ['blaulicht'],
         ],
@@ -48,6 +55,13 @@ function ma_partner_policies(): array {
         'ma_rathaus_partner' => [
             'label' => 'Rathaus-Partner',
             'description' => 'Gemeinde / Rathaus',
+            'post_types' => ['post'],
+            'categories' => ['rathaus'],
+        ],
+        // 12.11.2026 (Betreiber): Parteien und Fraktionen schreiben unter Rathaus & Politik.
+        'ma_politik_partner' => [
+            'label' => 'Politik-Partner',
+            'description' => 'Partei / Fraktion',
             'post_types' => ['post'],
             'categories' => ['rathaus'],
         ],
