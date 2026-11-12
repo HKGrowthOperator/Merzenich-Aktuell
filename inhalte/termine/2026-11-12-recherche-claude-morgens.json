@@ -1,0 +1,56 @@
+{
+  "hinweis": "Kalenderpflege 12.11.2026, Morgenlauf (Claude): Veranstaltungskalender der Gemeinde in Heimat-Info um 09:18 Uhr gelesen; zwei Einträge des Frühstücks- und Spieletreffs (25.11. und 02.12.) fehlten im Bestand (Termin-Automatik übernimmt gleichzeitige Einträge nicht).",
+  "termine": [
+    {
+      "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25",
+      "titel": "Frühstücks- und Spieletreff für Seniorinnen und Senioren des Evangelischen Gemeindezentrums",
+      "start": "2026-11-25T09:00:00+01:00",
+      "ende": "2026-11-25T11:00:00+01:00",
+      "ort": "laut Veranstalter (Ort im Eintrag nicht genannt)",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "Der Frühstücks- und Spieletreff des Evangelischen Gemeindezentrums Merzenich für Seniorinnen und Senioren ist für Mittwoch, 25. November, von 9 bis 11 Uhr eingetragen. Der Eintrag nennt keinen Ort; Anmeldung zum Frühstück erbeten.",
+      "absaetze": [
+        "Das Evangelische Gemeindezentrum Merzenich hat seinen Frühstücks- und Spieletreff für Seniorinnen und Senioren für Mittwoch, 25. November 2026, von 9 bis 11 Uhr in den Veranstaltungskalender der Gemeinde eingetragen. Wer mitfrühstücken möchte, wird um Anmeldung gebeten.",
+        "Der Eintrag für den 25. November nennt keinen Ort (geprüft am 12. November). Für den 18. November und den 2. Dezember gibt das Gemeindezentrum das Evangelische Gemeindehaus an der Severin-Böhr-Straße 15 an; die Männergruppe mit Skatrunde trifft sich am 25. November zur selben Zeit dort."
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31",
+        "stand": "2026-11-12"
+      },
+      "links": [
+        [
+          "Eintrag 25.11. im Veranstaltungskalender der Gemeinde (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31"
+        ],
+        [
+          "Eintrag 02.12. mit Ort (Heimat-Info)",
+          "https://www.heimat-info.de/veranstaltungen/6b9b9f9d-1c22-43b4-9b59-b982283a2e93"
+        ]
+      ]
+    },
+    {
+      "slug": "neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-02",
+      "titel": "Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evangelischen Gemeindehaus",
+      "start": "2026-12-02T09:00:00+01:00",
+      "ende": "2026-12-02T11:00:00+01:00",
+      "ort": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
+      "adresse": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelisches Gemeindezentrum Merzenich",
+      "beschreibung": "Frühstücks- und Spieletreff des Evangelischen Gemeindezentrums für Seniorinnen und Senioren am Mittwoch, 2. Dezember, von 9 bis 11 Uhr im Evangelischen Gemeindehaus. Anmeldung zum Frühstück erbeten.",
+      "absaetze": [
+        "Das Evangelische Gemeindezentrum Merzenich lädt Seniorinnen und Senioren am Mittwoch, 2. Dezember 2026, von 9 bis 11 Uhr zum Frühstücks- und Spieletreff in das Evangelische Gemeindehaus an der Severin-Böhr-Straße 15 ein. Der Treff findet mittwochs statt.",
+        "Wer mitfrühstücken möchte, wird um Anmeldung gebeten; die Kontaktdaten der Küsterin stehen in der Ankündigung des Gemeindezentrums."
+      ],
+      "quelle": {
+        "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich",
+        "url": "https://www.heimat-info.de/veranstaltungen/6b9b9f9d-1c22-43b4-9b59-b982283a2e93",
+        "stand": "2026-11-12"
+      }
+    }
+  ]
+}

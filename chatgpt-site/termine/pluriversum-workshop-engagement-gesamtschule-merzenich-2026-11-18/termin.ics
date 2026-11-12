@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
-DTSTAMP:20261108T060000Z
+DTSTAMP:20261112T060000Z
 DTSTART:20261118T100000Z
 DTEND:20261118T120000Z
 SUMMARY:„Pluriversum“-Workshop der Gemeinde Merzenich zu sozialem und 

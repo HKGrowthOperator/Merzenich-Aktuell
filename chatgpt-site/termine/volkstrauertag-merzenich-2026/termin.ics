@@ -9,7 +9,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
-DTSTAMP:20261108T060000Z
+DTSTAMP:20261112T060000Z
 DTSTART:20261115T083000Z
 SUMMARY:Volkstrauertag: Kranzniederlegung in der Alten Kirche und Weckmanns
  chießen

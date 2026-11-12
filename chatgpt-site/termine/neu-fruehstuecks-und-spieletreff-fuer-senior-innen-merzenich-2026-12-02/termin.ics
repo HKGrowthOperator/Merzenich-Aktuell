@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Frühstücks- und Spieletreff für Seniorinnen und Senioren im
+  Evangelischen Gemeindehaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-02
+ @merzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261202T080000Z
+DTEND:20261202T100000Z
+SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
+ gelischen Gemeindehaus
+DESCRIPTION:Frühstücks- und Spieletreff des Evangelischen Gemeindezentrum
+ s für Seniorinnen und Senioren am Mittwoch\, 2. Dezember\, von 9 bis 11 U
+ hr im Evangelischen Gemeindehaus. Anmeldung zum Frühstück erbeten.\nVera
+ nstalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senio
+ r-innen-merzenich-2026-12-02/
+LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
+ und-spieletreff-fuer-senior-innen-merzenich-2026-12-02/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

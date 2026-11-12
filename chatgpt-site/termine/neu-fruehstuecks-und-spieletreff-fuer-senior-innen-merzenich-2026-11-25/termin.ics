@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Frühstücks- und Spieletreff für Seniorinnen und Senioren de
+ s Evangelischen Gemeindezentrums
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25
+ @merzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261125T080000Z
+DTEND:20261125T100000Z
+SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
+ ngelischen Gemeindezentrums
+DESCRIPTION:Der Frühstücks- und Spieletreff des Evangelischen Gemeindezen
+ trums Merzenich für Seniorinnen und Senioren ist für Mittwoch\, 25. Nove
+ mber\, von 9 bis 11 Uhr eingetragen. Der Eintrag nennt keinen Ort\; Anmeld
+ ung zum Frühstück erbeten.\nVeranstalter: Evangelisches Gemeindezentrum 
+ Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/neu-frueh
+ stuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
+LOCATION:laut Veranstalter (Ort im Eintrag nicht genannt)
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
+ und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
