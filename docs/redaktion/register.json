@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-11-claude-nachmittags.md",
-  "source_check_window": "11.11.2026, 12:02:04–12:04:16 Europe/Berlin",
+  "latest_dossier": "dossiers/2026-11-12-morgens.md",
+  "source_check_window": "12.11.2026, 07:04:56–07:07:34 Europe/Berlin; Commons gegen 07:07",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11346,6 +11346,51 @@
         },
         "implementation": "keine_Artikelumsetzung"
       }
+    },
+    {
+      "id": "MA-CORHELPER-EHRUNG-2026",
+      "priority": "P2",
+      "location_section": "Merzenich · Leben/Ehrenamt",
+      "change_type": "Neu erschlossene Kreismitteilung zur Ehrung",
+      "text_status": "T2",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-12-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-12T07:07:34+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Kreisbericht vom 11.11. und Zweckverbandsbericht vom 09.11. zur Ehrung am 07.11. in Stockheim: Merzenicher Ersthelfer und AED-Nachsorge, ohne Namen der Privatperson. Quellen aus demselben Projektverbund nicht als unabhängige Ereignisbestätigungen zählen. DRK ist unabhängiger Hintergrund, kein Beleg für konkrete Ehrung. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-12-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Kreis, Zweckverband und Projektseite als Primärquellen; DRK-Hintergrund; unabhängige konkrete Bestätigung fehlt",
+      "research_history": [
+        {
+          "date": "2026-11-12",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-12-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-12",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-12-morgens.md",
+          "heading": "MA-CORHELPER-EHRUNG-2026"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:AED open cutout.jpg, Owain Davies, CC BY 3.0, 1880 × 2391 px; Originalbild angesehen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -12959,6 +13004,45 @@
       "implementation_commit": "25c082de",
       "summary": "Keine Korrekturen; Standardartikel Brandschutzbedarfsplan (Schutzziel, Bürgewald, Personal, Kostenliste); Kalender unverändert, Krätzchensitzung bestätigt. Mindesttakt 11.11.: 2 Meldungen.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-12",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-12-morgens.md",
+      "compared_with": "dossiers/2026-11-11-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-11-claude-nachmittags.md",
+      "base_commit": "07d457eb4bd6c01e0c65c5fb93589b7dabd98073",
+      "implementation_commit": null,
+      "summary": "Eine neue T2-Karte: Ehrung eines Merzenicher Corhelpers und AED-Nachsorge; unabhängige Bestätigung fehlt. Neu erfasster Frühstücks-/Spieletreff 25.11., konkrete Ortszeile fehlt. Brandschutzartikel anhand Plan und Kostentabelle geprüft; historische Teilbelege offen. Keine neue belegte Artikelkorrektur.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 1,
+      "article_partial_checks": 11,
+      "repository_article_files_read": 44,
+      "repository_event_files_read": 18,
+      "repository_area_files_read": 15,
+      "new_or_changed_events": 1,
+      "event_change_scope": "Neu im gelesenen Kalenderfenster: Frühstück 25.11.; Veranstaltungsort nicht bestätigt",
+      "complete_drafts": 0,
+      "source_check_window": "12.11.2026, 07:04:56–07:07:34 Europe/Berlin; Commons gegen 07:07",
+      "deadline": "2026-11-12T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Corhelper: unabhängige Bestätigung der lokalen Ehrung fehlt; keine Namen von Privatpersonen übernehmen",
+        "Frühstück 25.11.: keine Ortszeile im konkreten Eintrag, Profiladresse nicht als Ort ergänzen",
+        "Brandschutzartikel: historischer ELW-Ratsbeschluss und externe Methodikveröffentlichung nicht erneut am Original geprüft; fachliche Klärung Bürgewald offen",
+        "BdSt-PDF HTTP 403, Grundsteuer-Vergleichswerte nicht erneut am Original geprüft",
+        "Pluriversum und Senioren-Nachmittag: unveränderte Quellenwidersprüche trotz aktualisierter Kalenderstempel",
+        "Derbywertung, historischer S19-Reparaturbeleg, Teile der Vereins-/Artikelprüfung und weitere ältere Bildsichtungen offen",
+        "Jonge vom Berg: HTTP 200 mit Site Unavailable",
+        "Übrige offene Morgenkarten vom 11.11. heute nur Listenabgleich, keine neue Vollprüfung"
+      ]
     }
   ]
 }
