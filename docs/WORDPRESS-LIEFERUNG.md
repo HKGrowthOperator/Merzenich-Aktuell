@@ -10,6 +10,11 @@ Die finale Logo-Datei des Betreibers (7770 × 3984, durchsichtig) steht im Archi
 - **Tests:** `ladegewicht-test.php` prüft Original, Maße, Seitenverhältnis, Alphakanal und Größe; dazu `heute-test.php` und `seo-test.php`.
 - Details stehen in `docs/branding/LOGO-04-FREIGABE-2026-11-09.md`.
 
+**Stand live 21.30.3 / 1.48.6:** am 12.11. per Selbst-Update installiert.
+- Die Dateien sind live gleich dem Repository: `logo-04.png`, `og-default.jpg` und beide Bündel.
+- Kopf und Fuß tragen `?v=ef0c02729e` mit 1295 × 664; JSON-LD meldet 1295 × 664.
+- Gemessen bei 1440, 820, 390 und 320 px: Logo 230/200/170/136 px breit, Seitenverhältnis 1,950, Kopfhöhen und Layout-Verschiebung wie vorher, kein Überlauf, 0 Konsolenfehler.
+
 ## Neu am 12.11.2026: Plugin 1.48.5 und Theme 21.30.2, HK-Link und Rollen Krankenhaus und Politik
 
 **HK Growth Webstudio:** Die Webstudio-Seite ist von `website.hk-growthoperator.de` auf `hk-growthoperator.de` umgezogen. Die alte Adresse antwortet nicht mehr (Zertifikatsfehler).
