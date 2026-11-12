@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 12 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 13:46:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</guid>
+<pubDate>Thu, 12 Nov 2026 13:46:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Ein Merzenicher, der seit dem Start des Ersthelfer-Netzes „Region Aachen rettet“ dabei ist, wurde als Vertreter des Kreises Düren geehrt. Er sorgt außerdem dafür, dass Defibrillatoren nach ihrem Gebrauch rasch wieder bereitstehen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg" medium="image"><media:credit>Kaap bij Sneeuw / Wikimedia Commons · CC0</media:credit><media:description>Rettungswagen</media:description></media:content>
+</item>
 <item>
 <title>S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Wie soll kirchliches Leben im neuen Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß künftig aussehen? Am Donnerstagabend lädt St. Laurentius zum Mitreden ins Pfarrheim ein.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
-</item>
-<item>
-<title>Kreisjahrbuch 2026 nimmt Bürgewald und den Strukturwandel in den Blick</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/kreisjahrbuch-2026-buergewald-strukturwandel/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/kreisjahrbuch-2026-buergewald-strukturwandel/</guid>
-<pubDate>Sun, 04 Oct 2026 10:18:00 GMT</pubDate>
-<category>Leben</category>
-<category>Bürgewald</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Das Kreisjahrbuch 2026 setzt den regionalen Wandel ins Zentrum – und nennt Bürgewald ausdrücklich als eines seiner Themen. Für Merzenich verbindet die Ausgabe damit Lokalgeschichte und die Frage, wie sich das Rheinische Revier nach dem Braunkohlezeitalter verändert.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/buergewald-1440.webp" medium="image"><media:credit>Antisyntagmatarchos / Wikimedia Commons · CC0</media:credit><media:description>Luftbild von Bürgewald, dem früheren Morschenich-Alt</media:description></media:content>
 </item>
 </channel>
 </rss>

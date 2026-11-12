@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T08:16:54.427Z",
+  "updatedAt": "2026-11-12T13:47:15.916Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1700,6 +1700,15 @@
       "assignedAt": "2026-11-12T08:16:54.427Z",
       "articleId": "2026-11-12-merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag",
       "articleDate": "2026-11-12T09:16:00+01:00"
+    },
+    "/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/": {
+      "imageId": "web-blaulicht-05-ec25c697",
+      "pool": "blaulicht",
+      "motiv": "rettungswagen",
+      "regel": "leben.ersthilfe",
+      "assignedAt": "2026-11-12T13:47:15.915Z",
+      "articleId": "2026-11-12-ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026",
+      "articleDate": "2026-11-12T14:46:00+01:00"
     }
   }
 }

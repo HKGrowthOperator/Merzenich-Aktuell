@@ -1,0 +1,81 @@
+{
+  "hinweis": "Nachmittagslauf 12.11.2026 (Claude): Pressemitteilung des Kreises Düren vom 11.11.2026 (gelesen 12.11.2026 14:47 Uhr) und Projektseite „Region Aachen rettet“ (14:49 Uhr). Name des Geehrten als Privatperson nicht übernommen.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Ehrenamt",
+      "titel": "Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren",
+      "dek": "Ein Merzenicher, der seit dem Start des Ersthelfer-Netzes „Region Aachen rettet“ dabei ist, wurde als Vertreter des Kreises Düren geehrt. Er sorgt außerdem dafür, dass Defibrillatoren nach ihrem Gebrauch rasch wieder bereitstehen.",
+      "datum": "2026-11-12T14:46:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "ehrenamt",
+          "Ehrenamt"
+        ],
+        [
+          "gesundheit",
+          "Gesundheit"
+        ]
+      ],
+      "bildklasse": "leben.ersthilfe",
+      "absaetze": [
+        "Ein ehrenamtlicher Ersthelfer aus Merzenich ist für seinen Einsatz bei Herznotfällen ausgezeichnet worden. Das teilte der Kreis Düren am 11. November mit. Landrat Ralf Nolten ehrte den Merzenicher bei einer Feierstunde auf dem Campus Stockheim in Kreuzau als Vertreter des Kreises Düren. Insgesamt wurden sechs Helferinnen und Helfer aus der Region ausgezeichnet, je einer oder eine aus dem Kreis Düren, dem Kreis Euskirchen, dem Kreis Heinsberg und der Städteregion Aachen sowie zwei aus der Stadt Aachen.",
+        "Der Merzenicher gehört laut Kreis zu den sogenannten Corhelpern der ersten Stunde. Das sind ausgebildete Freiwillige, die sich in einer App registrieren und bei einem Herz-Kreislauf-Stillstand in ihrer Nähe zeitgleich mit dem Rettungsdienst alarmiert werden, um bis zu dessen Eintreffen mit der Wiederbelebung zu beginnen. Über den Einsatz als Ersthelfer hinaus kümmert er sich nach Angaben des Kreises darum, dass benutzte Defibrillatoren rasch wieder für den nächsten Notfall bereitstehen.",
+        "Hinter dem Netz steht die Initiative „Region Aachen rettet“. Getragen wird sie von den Rettungsdiensten in Aachen, in der Städteregion sowie in den Kreisen Düren, Heinsberg und Euskirchen, zusammen mit dem Region Aachen Zweckverband; gestartet ist sie vor fünf Jahren. Nach Angaben des Kreises sind allein im Kreis Düren mehr als 1.500 Corhelper registriert, in der ganzen Region mehr als 10.500. Zusammen haben sie schon an über 7.000 Notfällen mitgewirkt.",
+        "Weitere Ersthelfer werden gesucht. Wer einen Nachweis über eine Ausbildung in Wiederbelebung hat, kann sich über die App des Projekts anmelden und wird nach der Freischaltung in der ganzen Region alarmiert, also auch in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Der Kreis ruft zugleich alle dazu auf, einen Kurs in Wiederbelebung zu besuchen und im Notfall sofort die 112 zu wählen."
+      ],
+      "fakten": [
+        "Ersthelfer aus Merzenich vom Kreis Düren ausgezeichnet (Mitteilung vom 11.11.2026)",
+        "„Region Aachen rettet“: mehr als 1.500 Corhelper im Kreis Düren, mehr als 10.500 in der Region, mehr als 7.000 Einsätze",
+        "Anmeldung mit Nachweis über eine Wiederbelebungsausbildung über die App des Projekts"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Kreis Düren, 11.11.2026: Landrat Dr. Ralf Nolten ehrte für den Kreis Düren einen Corhelper aus Merzenich, „Corhelper der ersten Stunde“, kümmert sich darum, dass Defibrillatoren nach einem Einsatz schnell wieder einsatzbereit sind; sechs Ausgezeichnete (Stadt Aachen zwei, Städteregion Aachen, Kreis Euskirchen, Kreis Heinsberg, Kreis Düren je einer); Feierstunde im Rahmen des CPR-Dialogs auf dem Campus Stockheim in Kreuzau.",
+          "belege": [
+            "https://www.kreis-dueren.de/presse/corhelper_2026-11-11.php"
+          ],
+          "stelle": "Pressemitteilung „Von Herzen – für Herzen: Engagierte Ersthelfer ausgezeichnet“, Absätze 1 bis 5"
+        },
+        {
+          "aussage": "Kreis Düren, 11.11.2026: Initiative „Region Aachen rettet“ der Rettungsdienste der Kreise Düren, Euskirchen, Heinsberg, der Stadt Aachen, der Städteregion Aachen und des Region Aachen Zweckverbands; Projekt besteht seit fünf Jahren; mehr als 1.500 Corhelper im Kreis Düren, mehr als 10.500 in der Region, mehr als 7.000 Einsätze; Aufruf zu Wiederbelebungskurs und Notruf 112; weitere Lebensretter gesucht.",
+          "belege": [
+            "https://www.kreis-dueren.de/presse/corhelper_2026-11-11.php"
+          ],
+          "stelle": "Pressemitteilung, Absätze 3 bis 5"
+        },
+        {
+          "aussage": "Projektseite: geschulte Ersthelfer werden im Notfall parallel (zeitgleich) zum Rettungsdienst über die App alarmiert; Registrierung, Hochladen des Qualifikationsnachweises, nach Freischaltung Alarmierung in der gesamten Region Aachen (Stadt Aachen, Städteregion Aachen, Kreise Düren, Euskirchen, Heinsberg).",
+          "belege": [
+            "https://regionaachenrettet.de/",
+            "https://regionaachen.de/region-aachen-rettet-auszeichnung-fuer-menschen-die-leben-retten/"
+          ],
+          "stelle": "regionaachenrettet.de, Abschnitt „Prinzip – So funktioniert´s“; Bericht des Zweckverbands zur Auszeichnung",
+          "selbstauskunft": "Projektseite der Initiative selbst"
+        }
+      ],
+      "quelle": {
+        "name": "Kreis Düren, Pressemitteilung: Von Herzen – für Herzen: Engagierte Ersthelfer ausgezeichnet (11.11.2026)",
+        "url": "https://www.kreis-dueren.de/presse/corhelper_2026-11-11.php",
+        "stand": "2026-11-12"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Region Aachen rettet, Projektseite (Prinzip)",
+          "url": "https://regionaachenrettet.de/",
+          "stand": "2026-11-12"
+        },
+        {
+          "name": "Region Aachen Zweckverband, Bericht zur Auszeichnung",
+          "url": "https://regionaachen.de/region-aachen-rettet-auszeichnung-fuer-menschen-die-leben-retten/",
+          "stand": "2026-11-12"
+        }
+      ]
+    }
+  ]
+}

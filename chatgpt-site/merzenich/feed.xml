@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 12 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 13:46:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</guid>
+<pubDate>Thu, 12 Nov 2026 13:46:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Ein Merzenicher, der seit dem Start des Ersthelfer-Netzes „Region Aachen rettet“ dabei ist, wurde als Vertreter des Kreises Düren geehrt. Er sorgt außerdem dafür, dass Defibrillatoren nach ihrem Gebrauch rasch wieder bereitstehen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg" medium="image"><media:credit>Kaap bij Sneeuw / Wikimedia Commons · CC0</media:credit><media:description>Rettungswagen</media:description></media:content>
+</item>
 <item>
 <title>Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Pressemitteilung nannte den 26. Oktober als Anmeldeschluss, das Anmeldeportal des Kreises nimmt Anmeldungen bis 2. November an.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
-</item>
-<item>
-<title>Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:18:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Neuland Hambach und die RWE-Forschungsstelle Rekultivierung bieten in den Herbstferien einen Zusatztermin an. Anmeldung beim RWE-Besucherdienst, die Plätze sind begrenzt.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg" medium="image"><media:credit>Anıl Öztaş / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Schaufelradbagger 286 im Tagebau Hambach</media:description></media:content>
 </item>
 </channel>
 </rss>
