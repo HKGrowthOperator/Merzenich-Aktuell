@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T13:49:36.495Z",
+  "updatedAt": "2026-11-12T08:16:54.427Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1691,6 +1691,15 @@
       "assignedAt": "2026-11-11T13:49:36.494Z",
       "articleId": "2026-11-11-brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten",
       "articleDate": "2026-11-11T14:48:00+01:00"
+    },
+    "/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-12T08:16:54.427Z",
+      "articleId": "2026-11-12-merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag",
+      "articleDate": "2026-11-12T09:16:00+01:00"
     }
   }
 }

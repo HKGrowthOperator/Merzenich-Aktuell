@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 11 Nov 2026 13:48:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Rathaus &amp; Politik</title><link>https://merzenichaktuell.hk-growthoperator.de/rathaus/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/</guid>
+<pubDate>Thu, 12 Nov 2026 08:16:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung schlägt für 2027 zwei getrennte Sätze vor: 195,72 Euro je Person und Monat in Häusern und Wohnungen, 290,66 Euro in der Containeranlage, jeweils ohne Strom. Grund sind mehr Bewohner und die neue Lage in Bürgewald.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am 2. Oktober spielt „Eventuell eine Band“ auf dem Bürgerhausvorplatz, am 3. Oktober folgt das Ortsfest. Im Festbereich gilt ein Park-, Halte- und Durchfahrtsverbot.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Die Chronik des 2026er-Gemeindehaushalts</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/haushalt-2026-chronik/</guid>
-<pubDate>Thu, 03 Sep 2026 22:00:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Merzenich bringt erstmals ein Haushaltssicherungskonzept ein. Sechs öffentliche Vorberatungen gingen dem Entwurf voraus.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial/gemeinde-merzenich.png" medium="image"><media:credit>Gemeinde Merzenich · Heimat-Info</media:credit><media:description>Offizielles Zeichen der Gemeinde Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 11 Nov 2026 13:48:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/</guid>
+<pubDate>Thu, 12 Nov 2026 08:16:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung schlägt für 2027 zwei getrennte Sätze vor: 195,72 Euro je Person und Monat in Häusern und Wohnungen, 290,66 Euro in der Containeranlage, jeweils ohne Strom. Grund sind mehr Bewohner und die neue Lage in Bürgewald.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Neuland Hambach und die RWE-Forschungsstelle Rekultivierung bieten in den Herbstferien einen Zusatztermin an. Anmeldung beim RWE-Besucherdienst, die Plätze sind begrenzt.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg" medium="image"><media:credit>Anıl Öztaş / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Schaufelradbagger 286 im Tagebau Hambach</media:description></media:content>
-</item>
-<item>
-<title>17 Tage zu Fuß von Köln an die Grenze: Siegener Schüler machen Station in Merzenich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/menschen/siegener-schueler-fussmarsch-station-merzenich-buergewald-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:14:00 GMT</pubDate>
-<category>Menschen</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Vier Neuntklässler und zwei Lehramtsstudentinnen wandern mit Bollerwagen und 150 Euro pro Person durch das Rheinland. In Merzenich lud der Bürgermeister sie zum Essen ein und schickte sie mit dem Bürgerbus nach Bürgewald.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-12-1e67d8491e.jpg" medium="image"><media:credit>J.-H. Janßen / Wikimedia Commons · CC0</media:credit><media:description>Fingerpost of the hiking trail Teutoschleife Dörenther Klippen through the nature reserve „Dorenthe Cliffs“ ( Naturschutzgebiet Dörenther Klippen ) near Ibbenbüren - Dörenthe, Kre</media:description></media:content>
 </item>
 </channel>
 </rss>

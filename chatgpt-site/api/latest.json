@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-11T14:48:00+01:00",
-  "stand": "2026-11-11T14:48:00+01:00",
+  "generated": "2026-11-12T09:16:00+01:00",
+  "stand": "2026-11-12T09:16:00+01:00",
   "items": [
+    {
+      "title": "Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
+      "date": "2026-11-12T09:16:00+01:00",
+      "ressort": "rathaus",
+      "ort": "merzenich",
+      "teaser": "Die Verwaltung schlägt für 2027 zwei getrennte Sätze vor: 195,72 Euro je Person und Monat in Häusern und Wohnungen, 290,66 Euro in der Containeranlage, jeweils ohne Strom. Grund sind mehr Bewohner und die neue Lage in Bürgewald.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
+    },
     {
       "title": "Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/",
@@ -172,15 +181,6 @@
       "ort": "girbelsrath",
       "teaser": "Der 22 Jahre alte Autofahrer aus Euskirchen, der am 27. Oktober auf der Landstraße 264 in Höhe Girbelsrath gegen einen Baum geprallt war, ist tot. Er starb laut Polizei Düren am 30. Oktober im Krankenhaus.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg"
-    },
-    {
-      "title": "Unfall auf der L 264 bei Girbelsrath (Merzenich): Wagen prallt gegen Mast und Baum, Straße gesperrt",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/alleinunfall-l264-girbelsrath-autofahrer-schwer-verletzt-2026-10-27/",
-      "date": "2026-10-28T08:55:00+01:00",
-      "ressort": "blaulicht",
-      "ort": "girbelsrath",
-      "teaser": "Der Autofahrer, der am 27. Oktober gegen 2.44 Uhr auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt war, ist am 30. Oktober im Krankenhaus gestorben. Das teilte die Polizei Düren am 2. November mit.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg"
     }
   ],
   "events": [
