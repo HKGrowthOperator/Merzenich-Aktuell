@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-12-claude-morgens.md",
-  "source_check_window": "12.11.2026, 07:04:56–07:07:34 Europe/Berlin; Commons gegen 07:07",
+  "latest_dossier": "dossiers/2026-11-12-mittags.md",
+  "source_check_window": "12.11.2026, 12:06:06–12:08:44 Europe/Berlin; ergänzender Original-Webabruf gegen 12:08",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -13059,6 +13059,45 @@
       "implementation_commit": "de7b8308",
       "summary": "Keine Korrekturen; Kurzmeldung Unterkunftsgebühren 2027 (Vorschlag); zwei Termine Frühstückstreff neu; Termine bis 26.11. an der Quelle bestätigt.",
       "publication": "Neue Meldung und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-12",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-12-mittags.md",
+      "compared_with": "dossiers/2026-11-12-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-12-claude-morgens.md",
+      "base_commit": "e198268cde744f2f46bf67a1e91fd58527063cae",
+      "implementation_commit": null,
+      "summary": "Keine neuen Themenkarten. Unterkunftsgebührenartikel mit Vorlage/Kalkulation geprüft, ohne Abweichung. Neu verlinkter Kulturkalender: Spielenachmittag 14.11. neu erfasst, Weckmannschießen 11 statt 11:30 Uhr als Quellenkonflikt; Pluriversum-Beginn weiterhin widersprüchlich. Frühstück 25.11. live bestätigt, Ort offen.",
+      "topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 2,
+      "article_partial_checks": 11,
+      "repository_article_files_read": 45,
+      "repository_event_files_read": 19,
+      "repository_area_files_read": 15,
+      "new_or_changed_events": 1,
+      "event_change_scope": "Neuer Spielenachmittag 14.11.; zwei zusätzliche Quellen-/Zeitkonflikte, keine gesicherte Terminverschiebung",
+      "complete_drafts": 0,
+      "source_check_window": "12.11.2026, 12:06:06–12:08:44 Europe/Berlin; ergänzender Original-Webabruf gegen 12:08",
+      "deadline": "2026-11-12T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Weckmannschießen 15.11.: Kulturkalender 11 Uhr, Vereinsdetailseite 11:30 Uhr; Veranstaltungsidentität/Beginn klären",
+        "Pluriversum: Kulturkalender und Kalenderkopf 18:15 Uhr gegenüber Gemeindemitteilung 18 Uhr; Textortkonflikt bleibt",
+        "Frühstück 25.11.: live HTTP 200, Veranstaltungsort weiterhin nicht genannt",
+        "Jonge vom Berg: Direktabrufe Site Unavailable, einzelner ergänzender Original-Webabruf erfolgreich; keine vollständige Vereinsprüfung",
+        "BdSt-Erhebung HTTP 403; Grundsteuervergleich nicht erneut am Original geprüft",
+        "Corhelper-Karte weiter T2, keine neue unabhängige Bestätigung; keine Privatnamen übernehmen",
+        "Derbywertung, historischer S19-Reparaturbeleg, historische Brandschutz-Teilbelege und übrige Artikelteilprüfungen offen",
+        "Spätere Krätzchensitzung: abweichender Beginn im neu verlinkten Kulturkalender, außerhalb des Terminfensters separat klären"
+      ]
     }
   ]
 }
