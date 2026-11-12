@@ -151,14 +151,16 @@ const MEGA = '<details class="nav-more mega"><summary>Mehr</summary><div class="
 const MONO_V = (() => { const h = assetHash('/assets/marke/monogramm.svg'); return h ? `?v=${h}` : ''; })();
 const MONOGRAMM_LINK = `<a class="compact-brand" href="/" aria-label="Merzenich Aktuell – Startseite"><img class="ma-monogramm" src="/assets/marke/monogramm.svg${MONO_V}" width="35" height="35" alt=""></a>`;
 const MONOGRAMM_RE = /<a class="compact-brand" href="\/"(?: aria-label="[^"]*")?>\s*<img\b[^>]*>\s*<\/a>/;
-// Markenlogo 04 (Freigabe Arun und Ordin 09.11.2026, docs/branding/LOGO-04-FREIGABE-2026-11-09.md):
-// das Original-PNG unverändert (assets/marke/logo-04.png, 1348 × 692, weißer Grund) mit Inhalts-Hash.
+// Markenlogo 04 (Freigabe Arun und Ordin 09.11.2026, docs/branding/LOGO-04-FREIGABE-2026-11-09.md),
+// finale Fassung vom 12.11.2026: assets/marke/logo-04.png ist das Original
+// (artifacts/branding/2026-11-logo/final-2026-11-12-original.png, 7770 × 3984, durchsichtig)
+// nur proportional auf 1/6 verkleinert (1295 × 664), mit Inhalts-Hash.
 // Kopf und Fuß stehen auf Weiß; in der dunklen Schublade liegt es auf einer hellen Fläche,
 // das Logo selbst wird nie umgefärbt. alt bleibt „Merzenich Aktuell“: ma21.php macht daraus
 // auf der Startseite die H1.
 const LOGO_PFAD = '/assets/marke/logo-04.png';
 const LOGO_V = (() => { const h = assetHash(LOGO_PFAD); return h ? `?v=${h}` : ''; })();
-const logoImg = (extra = '') => `<img src="${LOGO_PFAD}${LOGO_V}" alt="Merzenich Aktuell" width="1348" height="692"${extra}>`;
+const logoImg = (extra = '') => `<img src="${LOGO_PFAD}${LOGO_V}" alt="Merzenich Aktuell" width="1295" height="664"${extra}>`;
 const LOGO_KOPF_RE = /(<a class="logo" href="\/" aria-label="[^"]*">)<img\b[^>]*><\/a>/;
 const LOGO_SCHUBLADE_RE = /<div class="panel-top">(?:<span class="logo-flaeche">)?<img\b[^>]*>(?:<\/span>)?/;
 const LOGO_FUSS_RE = /(<div class="footer-brandline"><a href="\/">)<img\b[^>]*><\/a>/;
@@ -181,7 +183,7 @@ for (const pfad of seiten) {
   html = html.replace(LOGO_KOPF_RE, (m, a) => a + logoImg() + '</a>');
   html = html.replace(LOGO_SCHUBLADE_RE, () => '<div class="panel-top"><span class="logo-flaeche">' + logoImg() + '</span>');
   html = html.replace(LOGO_FUSS_RE, (m, a) => a + logoImg(' loading="lazy"') + '</a>');
-  html = html.replace(LOGO_LD_RE, (m, basis) => `"logo":{"@type":"ImageObject","url":"${basis}/assets/marke/logo-04.png","width":1348,"height":692}`);
+  html = html.replace(LOGO_LD_RE, (m, basis) => `"logo":{"@type":"ImageObject","url":"${basis}/assets/marke/logo-04.png","width":1295,"height":664}`);
   // FAVICON-PNG-FALLBACK: aktuelles M.-Markenzeichen aus der Wortmarke.\n  // SVG + PNG werden ueber ihren Inhalts-Hash versioniert, damit Safari/Chrome/Google\n  // nach Markenupdates nicht ein altes, lang gecachtes Icon behalten.\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/avatar-1024\\.png(?:\\?[^"]*)?" type="image\\/png" sizes="1024x1024">\\s*/g, '');\n  html = html.replace(/<link rel="icon" href="\\/assets\\/img\\/favicon\\.svg(?:\\?[^"]*)?" type="image\\/svg\\+xml"(?: sizes="any")?>/, '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" sizes="any">\\n<link rel="icon" href="/assets/img/avatar-1024.png" type="image/png" sizes="1024x1024">');\n  // Fundament zuerst: vor style.css, nicht dahinter (siehe SYSTEM_ANKER).
   if (!html.includes('/assets/system.css')) {
     if (!SYSTEM_ANKER.test(html)) { fehler++; console.error('kein style.css-Anker: ' + pfad); continue; }

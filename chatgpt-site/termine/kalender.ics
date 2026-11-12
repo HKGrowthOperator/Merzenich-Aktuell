@@ -7,36 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:rixen-stiftung-kuratorium-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
-DTSTART:20261013T160000Z
-SUMMARY:Sitzung des Kuratoriums Rixen-Stiftung (nicht öffentlich)
-DESCRIPTION:Der Ausschuss „Kuratorium Rixen-Stiftung“ tagt am Dienstag\
- , 13. Oktober\, um 18 Uhr im Rathaus. Die Sitzung ist nicht öffentlich.\n
- Veranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperat
- or.de/termine/rixen-stiftung-kuratorium-2026/
-LOCATION:Fraktionsraum A\, Rathaus Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/rixen-stiftung-ku
- ratorium-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:vhs-vortrag-mietrecht-vermietende-2026-10-13@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
-DTSTART:20261013T170000Z
-DTEND:20261013T183000Z
-SUMMARY:VHS-Vortrag „Mietrecht für Vermietende“
-DESCRIPTION:Eine Rechtsanwältin erklärt am Dienstag\, 13. Oktober\, Vermi
- eterinnen und Vermietern die Grundlagen des Wohnraummietrechts. Die Verans
- taltung der VHS Rur-Eifel ist kostenlos.\nVeranstalter: VHS Rur-Eifel in K
- ooperation mit dem Familienzentrum Merzenich\nhttps://merzenichaktuell.hk-
- growthoperator.de/termine/vhs-vortrag-mietrecht-vermietende-2026-10-13/
-LOCATION:Familienzentrum Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/vhs-vortrag-mietr
- echt-vermietende-2026-10-13/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:senioren-nachmittag-ev-gemeindehaus-2026-10-14@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261014T130000Z

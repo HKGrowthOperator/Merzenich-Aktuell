@@ -67,3 +67,15 @@ Vorher und nachher: [Desktop](logo-04/logo04-desktop-vorher-nachher.png) und [Ha
 - **Layout-Verschiebung:** am Handy 0,004, vorher 0,006. Am Desktop 0,163, vorher 0,177; der Rest kommt aus der Ressortleiste, nicht vom Logo.
 - **Auslieferung:** `/assets/marke/logo-04.png` antwortet mit 200 und `image/png`, die Bytes sind gleich dem Master. Die Datei liegt im Theme unter `static/`, keine CSP- oder CORS-Fehler.
 - **Druckansicht:** Logo 200 × 103.
+
+
+## Finale Fassung 12.11.2026
+
+Der Betreiber hat am 12.11.2026 die finale Datei geschickt („Neues Logo final“, `merzenich-logo-vectorize.png`). Sie zeigt dasselbe Motiv, sauber nachgezeichnet, auf durchsichtigem Grund.
+
+- **Original:** `artifacts/branding/2026-11-logo/final-2026-11-12-original.png`, Byte für Byte wie geliefert: 7770 × 3984 px, RGBA, 432 KB. Die Fassung vom 09.11. (`04-final-original.png`) bleibt als Vorgänger im Archiv.
+- **Auf der Website:** `chatgpt-site/assets/marke/logo-04.png`, das Original nur proportional auf genau 1/6 verkleinert (1295 × 664 px, Lanczos, durchsichtig, 158 KB). Nicht nachgezeichnet, nicht beschnitten, nicht umgefärbt. In voller Größe bräuchte das Bild beim Anzeigen etwa 124 MB Arbeitsspeicher; das kann Handys überfordern.
+- **Pfad und Maße:** Der Pfad bleibt, der Inhalts-Hash im Verweis wechselt (`?v=…`). Markup, CSS (`aspect-ratio:1295/664`) und JSON-LD tragen 1295 × 664. Breiten unverändert: 230 px Desktop, 200 px bis 900 px, 170 px Handy, 150/136 px sehr schmal; Fuß 190/150 px.
+- **Hintergründe:** Kopf und Fuß sind weiß; in der dunklen Handy-Schublade liegt das Logo weiter auf der weißen Fläche.
+- **og-default.jpg:** neu aus dem Original, 1200 × 630, Logo 1000 px breit, mittig auf Weiß.
+- Favicon und App-Symbole („M“) bleiben unverändert.

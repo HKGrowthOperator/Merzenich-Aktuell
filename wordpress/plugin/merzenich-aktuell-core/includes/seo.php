@@ -316,7 +316,7 @@ function ma_seo_graph(array $k, array $o): array {
     $home = $o['home'];
     $org = [
         '@type' => 'NewsMediaOrganization', '@id' => $home . '#organization', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_UNTERTITEL, 'url' => $home,
-        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1348, 'height' => 692], 'image' => $o['bild'],
+        'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1295, 'height' => 664], 'image' => $o['bild'],
         'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
         'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'info@kbs-management.tv',
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Rheinstr. 78a', 'postalCode' => '51371', 'addressLocality' => 'Leverkusen', 'addressCountry' => 'DE']],

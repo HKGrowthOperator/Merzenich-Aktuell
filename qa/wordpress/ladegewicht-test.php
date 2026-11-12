@@ -19,12 +19,16 @@ foreach ($config['images'] as $bild) {
 }
 
 echo "\nLogos\n";
-// Logo 04 (09.11.2026): das freigegebene Original unverändert, deshalb ohne Größengrenze; es lädt
-// einmal im Kopf, der Fuß nutzt dieselbe Datei aus dem Cache (loading="lazy").
+// Logo 04, finale Fassung (12.11.2026): Das Original (7770 × 3984, durchsichtig) liegt unverändert im
+// Archiv; ausgeliefert wird es nur proportional auf 1/6 verkleinert. Es lädt einmal im Kopf, der Fuß
+// nutzt dieselbe Datei aus dem Cache (loading="lazy").
 $logo04 = $assets . 'marke/logo-04.png';
 $g = getimagesize($logo04);
-pruefe('logo-04.png ist Byte für Byte das Original (artifacts/branding/2026-11-logo/04-final-original.png)', hash_file('sha256', $logo04), hash_file('sha256', __DIR__ . '/../../artifacts/branding/2026-11-logo/04-final-original.png'));
-pruefe('logo-04.png 1348×692, wie im Markup', [$g[0], $g[1]], [1348, 692]);
+$orig = getimagesize(__DIR__ . '/../../artifacts/branding/2026-11-logo/final-2026-11-12-original.png');
+pruefe('Original im Archiv: 7770×3984, wie geliefert', [$orig[0], $orig[1]], [7770, 3984]);
+pruefe('logo-04.png 1295×664, wie im Markup', [$g[0], $g[1]], [1295, 664]);
+pruefe('logo-04.png im Seitenverhältnis des Originals (±0,1 %)', abs(($g[0] / $g[1]) / ($orig[0] / $orig[1]) - 1) < 0.001, true);
+pruefe('logo-04.png mit Alphakanal (durchsichtig) und höchstens 300 KB', [ord(substr((string) file_get_contents($logo04, false, null, 25, 1), 0, 1)), filesize($logo04) <= 300000], [6, true]);
 $kopfV = (string) file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/kopf.html');
 pruefe('Kopf, Schublade und Fuß zeigen kein altes Logo mehr', [substr_count($kopfV, 'logo-04.png'), substr_count($kopfV . file_get_contents(__DIR__ . '/../../wordpress/theme/merzenich-aktuell/vorlagen/fuss.html'), 'img/logo')], [2, 0]);
 

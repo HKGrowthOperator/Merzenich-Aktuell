@@ -1,6 +1,14 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-12. November 2026 · Theme 21.30.2 · Core-Plugin 1.48.5 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+12. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 12.11.2026: Theme 21.30.3 und Plugin 1.48.6, finales Logo
+
+Die finale Logo-Datei des Betreibers (7770 × 3984, durchsichtig) steht im Archiv unter `artifacts/branding/2026-11-logo/final-2026-11-12-original.png`. Auf der Seite liegt sie proportional auf 1/6 verkleinert als `assets/marke/logo-04.png` (1295 × 664, 158 KB statt 347 KB).
+- **Theme 21.30.3:** Kopf, Schublade und Fuß in allen Seiten und Vorlagen über `deploy/kopf-theme-einbinden.mjs`, dazu CSS, `og-default.jpg` und die Bündel.
+- **Plugin 1.48.6:** JSON-LD-Logo mit 1295 × 664.
+- **Tests:** `ladegewicht-test.php` prüft Original, Maße, Seitenverhältnis, Alphakanal und Größe; dazu `heute-test.php` und `seo-test.php`.
+- Details stehen in `docs/branding/LOGO-04-FREIGABE-2026-11-09.md`.
 
 ## Neu am 12.11.2026: Plugin 1.48.5 und Theme 21.30.2, HK-Link und Rollen Krankenhaus und Politik
 
