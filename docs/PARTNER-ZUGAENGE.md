@@ -31,6 +31,23 @@ Für alle Partner gilt:
 
 Jeder Partner sieht im Dashboard zuerst den Kasten „So geht's“ und links den Menüpunkt **Hilfe**: Erklärvideo, Anleitung als PDF (`assets/hilfe/anleitung-zugang.pdf`), häufige Fragen, Kontakt und den Knopf für die geführte Tour im Editor. Veröffentlichte Beiträge ändern Partner über „Änderung vorschlagen“; die veröffentlichte Fassung bleibt, bis die Redaktion den Vorschlag freigibt. Das Video wird einmal in die Mediathek geladen und unter der Option `ma_hilfe_video` (Medien-ID) eingetragen.
 
+### Angelegte Zugänge (12.11.2026, Vorgabe Betreiber)
+
+Alle 11 sind mit einer Testanmeldung geprüft. Die Passwörter hat nur der Betreiber (PDF, persönlich weitergeben). Die vier Zugänge `partner-…` gab es seit dem 30.09. ohne E-Mail und ohne Beiträge; sie haben am 12.11. eine E-Mail-Adresse und ein neues Passwort bekommen.
+
+| Bereich | Benutzername | Rolle | E-Mail |
+|---|---|---|---|
+| Blaulicht | `partner-polizei` | Polizei-Partner | poststelle.dueren@polizei.nrw.de (öffentliches Postfach der KPB Düren) |
+| Blaulicht | `partner-feuerwehr` | Feuerwehr-Partner | presse@fwmrz.de (Presse, laut feuerwehr-merzenich.de) |
+| Blaulicht | `krankenhaus` | Krankenhaus-Partner | Platzhalter |
+| Politik | `politik1`, `politik2` | Politik-Partner | Platzhalter |
+| Gemeinde/Rathaus | `partner-rathaus` | Rathaus-Partner | amtsblatt@gemeinde-merzenich.de (Postfach für Amtsblatt-Beiträge) |
+| Gemeinde/Rathaus | `gemeinde2` | Rathaus-Partner | Platzhalter |
+| Sport | `partner-sport`, `sport2` | Sport-Partner | Platzhalter |
+| Admin | `admin1`, `admin2` | Administrator | Platzhalter |
+
+Platzhalter heißen `zugang-<benutzername>@merzenich-aktuell.de`. Sie werden beim Übergeben im Profil durch die echte Adresse ersetzt; vorher kommen keine Freigabe-Mails an. Daneben bestehen 42 Vereins- und 21 Sportvereins-Zugänge (ohne E-Mail), Almera Clean, KBS, ASS Elektrotechnik, die Sammelzugänge `partner-unternehmen` und `partner-immobilien` sowie die Administratoren `admin`, `HK Growth` und das IONOS-Konto.
+
 ## 2. Zugang anlegen (Administration)
 
 1. Anfrage prüfen. Anträge kommen über das Formular `[ma_partner_antrag]` per E-Mail an die Administrationsadresse (Einstellungen → Allgemein → „E-Mail-Adresse der Administration“). Ein Konto wird dabei **nicht** automatisch angelegt.

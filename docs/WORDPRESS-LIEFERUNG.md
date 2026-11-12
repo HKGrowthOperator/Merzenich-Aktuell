@@ -14,6 +14,10 @@
 
 Beide stehen auch im Antragsformular (`typ="krankenhaus"`, `typ="politik"`) und haben eine eigene Funktion unter dem Autorennamen. Tests: `qa/wordpress/partner-kommentar-test.php`, `autoren-test.php`.
 
+**Stand live 1.48.5 / 21.30.2:** am 12.11. per Selbst-Update installiert. Live gibt es keine Verweise mehr auf `website.hk-growthoperator.de`. Die drei Anzeigen führen mit `target="_blank"` und `rel="sponsored noopener"` auf `hk-growthoperator.de`; alle drei Ziele antworten mit 200.
+
+**Zugänge am 12.11.** (Vorgabe Betreiber, Übersicht in `docs/PARTNER-ZUGAENGE.md`): 11 Schreib-Zugänge, alle mit erfolgreicher Testanmeldung. Die Passwörter hat nur der Betreiber, als PDF, nicht im Repository.
+
 ## Neu am 10.11.2026: Plugin 1.48.4, Vorschaubild in WhatsApp
 
 Ordin teilte die Fußball-Meldung vom 10.11. in WhatsApp. Die Vorschau zeigte nur das Seitensymbol („M“, `icon-180.png`), nicht das Artikelbild. Die Seite meldete das richtige `og:image` (16:9-Zuschnitt, 1200 × 675, 200, JPEG). Das Bild war aber 247 KB groß, nahe an der Grenze von etwa 300 KB, ab der WhatsApp Vorschaubilder ohne Meldung verwirft und auf das Symbol ausweicht. Unter 40 neuen Meldungen lagen 10 Zuschnitte über 150 KB.
