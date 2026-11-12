@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Inklusive Weihnachtsfeier im Bürgerhaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ism-weihnachtsfeier-buergerhaus-merzenich-2026-12-06@merzenich-aktuell.
+ de
+DTSTAMP:20261112T060000Z
+DTSTART:20261206T130000Z
+SUMMARY:Inklusive Weihnachtsfeier im Bürgerhaus
+DESCRIPTION:Der Verein Inklusives Soziales Miteinander feiert am Sonntag\, 
+ 6. Dezember\, ab 14 Uhr im Bürgerhaus eine gemeinsame Weihnachtsfeier fü
+ r Menschen mit und ohne Behinderung. Anmeldung beim Verein erforderlich.\n
+ Veranstalter: Inklusives Soziales Miteinander (ISM)\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/ism-weihnachtsfeier-buergerhaus-merzenich
+ -2026-12-06/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ism-weihnachtsfei
+ er-buergerhaus-merzenich-2026-12-06/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tannenbaumschmücken am Lindenplatz
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:tannenbaumschmuecken-lindenplatz-sc-merzenich-2026-11-27@merzenich-aktu
+ ell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261127T160000Z
+SUMMARY:Tannenbaumschmücken am Lindenplatz
+DESCRIPTION:Der SC Merzenich richtet in diesem Jahr das traditionelle Tanne
+ nbaumschmücken am Lindenplatz aus\, mit Live-Musik\, Programm für Kinder
+  und Besuch des Weihnachtsmanns. Beginn 17 Uhr.\nVeranstalter: SC Merzenic
+ h\nhttps://merzenichaktuell.hk-growthoperator.de/termine/tannenbaumschmuec
+ ken-lindenplatz-sc-merzenich-2026-11-27/
+LOCATION:Lindenplatz Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tannenbaumschmuec
+ ken-lindenplatz-sc-merzenich-2026-11-27/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Theater der Weinbergschnecken: „Schneewittchens Geburtstag
+ “
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-11-28@m
+ erzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261128T140000Z
+SUMMARY:Theater der Weinbergschnecken: „Schneewittchens Geburtstag“
+DESCRIPTION:Die Theatergruppe „Die Weinbergschnecken“ zeigt am Samstag\
+ , 28. November\, um 15 Uhr in der Weinberghalle ihr neues Stück „Schnee
+ wittchens Geburtstag“. Eintritt Kinder 2 Euro\, Erwachsene 4 Euro\, nur 
+ Tageskasse.\nVeranstalter: Theatergruppe „Die Weinbergschnecken“ (För
+ derverein der KGS Merzenich)\nhttps://merzenichaktuell.hk-growthoperator.d
+ e/termine/weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-
+ 11-28/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/weinbergschnecken
+ -schneewittchens-geburtstag-weinberghalle-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

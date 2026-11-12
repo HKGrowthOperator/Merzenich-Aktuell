@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Eröffnung des Golzheimer Adventskalenders
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:golzheimer-adventskalender-eroeffnung-weihnachtswiese-2026-11-28@merzen
+ ich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261128T170000Z
+SUMMARY:Eröffnung des Golzheimer Adventskalenders
+DESCRIPTION:Die Golzheimer Krippenbauer stellen am Samstag\, 28. November\,
+  ab 18 Uhr auf der Weihnachtswiese an der Buirer Straße den Golzheimer Ad
+ ventskalender vor\; der Erlös geht an die Jugendarbeit der Marianischen S
+ chützenbruderschaft.\nVeranstalter: Golzheimer Krippenbauer\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/golzheimer-adventskalender-eroef
+ fnung-weihnachtswiese-2026-11-28/
+LOCATION:Weihnachtswiese an der Buirer Straße
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/golzheimer-advent
+ skalender-eroeffnung-weihnachtswiese-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

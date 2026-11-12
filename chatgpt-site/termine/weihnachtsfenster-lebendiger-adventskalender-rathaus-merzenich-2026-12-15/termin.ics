@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Weihnachtsfenster der Gemeinde am Rathaus (Lebendiger Adventsk
+ alender)
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:weihnachtsfenster-lebendiger-adventskalender-rathaus-merzenich-2026-12-
+ 15@merzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261215T170000Z
+SUMMARY:Weihnachtsfenster der Gemeinde am Rathaus (Lebendiger Adventskalend
+ er)
+DESCRIPTION:Die Gemeinde Merzenich beteiligt sich wieder am „Lebendigen A
+ dventskalender“: Am Dienstag\, 15. Dezember\, um 18 Uhr öffnet am Ratha
+ us ihr Weihnachtsfenster mit Live-Musik und Gedichten.\nVeranstalter: Geme
+ inde Merzenich mit der Katholischen Kirchengemeinde\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/weihnachtsfenster-lebendiger-adventskalen
+ der-rathaus-merzenich-2026-12-15/
+LOCATION:Rathaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfenster
+ -lebendiger-adventskalender-rathaus-merzenich-2026-12-15/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

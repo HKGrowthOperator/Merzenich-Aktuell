@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Adventfeier der St. Sebastianus Schützenbruderschaft im Schü
+ tzenheim
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:adventfeier-schuetzenbruderschaft-merzenich-2026-11-27@merzenich-aktuel
+ l.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261127T180000Z
+SUMMARY:Adventfeier der St. Sebastianus Schützenbruderschaft im Schützenh
+ eim
+DESCRIPTION:Die St. Sebastianus Schützenbruderschaft Merzenich lädt am Fr
+ eitag\, 27. November\, ab 19 Uhr zur Adventfeier ins Schützenheim an der 
+ Schulstraße ein.\nVeranstalter: St. Sebastianus Schützenbruderschaft Mer
+ zenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/adventfeier-
+ schuetzenbruderschaft-merzenich-2026-11-27/
+LOCATION:Schützenheim an der Schulstraße
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventfeier-schue
+ tzenbruderschaft-merzenich-2026-11-27/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

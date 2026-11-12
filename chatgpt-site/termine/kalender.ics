@@ -621,6 +621,22 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/erste-hilfe-kurs-
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:ism-inklusiver-spielenachmittag-buergerhaus-merzenich-2026-11-14@merzen
+ ich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261114T140000Z
+SUMMARY:Inklusiver Spielenachmittag im Bürgerhaus
+DESCRIPTION:Der Verein Inklusives Soziales Miteinander lädt Menschen mit u
+ nd ohne Behinderung am Samstag\, 14. November\, ab 15 Uhr zum gemeinsamen 
+ Basteln und Spielen ins Bürgerhaus ein.\nVeranstalter: Inklusives Soziale
+ s Miteinander (ISM)\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /ism-inklusiver-spielenachmittag-buergerhaus-merzenich-2026-11-14/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ism-inklusiver-sp
+ ielenachmittag-buergerhaus-merzenich-2026-11-14/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:volkstrauertag-merzenich-2026@merzenich-aktuell.de
 DTSTAMP:20261112T060000Z
 DTSTART:20261115T083000Z
@@ -824,7 +840,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
-DTSTAMP:20261108T060000Z
+DTSTAMP:20261112T060000Z
 DTSTART:20261121T120000Z
 DTEND:20261121T160000Z
 SUMMARY:Tag der Modelleisenbahn im Wasserturm
@@ -922,8 +938,41 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/ausschuss-revital
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:tannenbaumschmuecken-lindenplatz-sc-merzenich-2026-11-27@merzenich-aktu
+ ell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261127T160000Z
+SUMMARY:Tannenbaumschmücken am Lindenplatz
+DESCRIPTION:Der SC Merzenich richtet in diesem Jahr das traditionelle Tanne
+ nbaumschmücken am Lindenplatz aus\, mit Live-Musik\, Programm für Kinder
+  und Besuch des Weihnachtsmanns. Beginn 17 Uhr.\nVeranstalter: SC Merzenic
+ h\nhttps://merzenichaktuell.hk-growthoperator.de/termine/tannenbaumschmuec
+ ken-lindenplatz-sc-merzenich-2026-11-27/
+LOCATION:Lindenplatz Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/tannenbaumschmuec
+ ken-lindenplatz-sc-merzenich-2026-11-27/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:adventfeier-schuetzenbruderschaft-merzenich-2026-11-27@merzenich-aktuel
+ l.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261127T180000Z
+SUMMARY:Adventfeier der St. Sebastianus Schützenbruderschaft im Schützenh
+ eim
+DESCRIPTION:Die St. Sebastianus Schützenbruderschaft Merzenich lädt am Fr
+ eitag\, 27. November\, ab 19 Uhr zur Adventfeier ins Schützenheim an der 
+ Schulstraße ein.\nVeranstalter: St. Sebastianus Schützenbruderschaft Mer
+ zenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/adventfeier-
+ schuetzenbruderschaft-merzenich-2026-11-27/
+LOCATION:Schützenheim an der Schulstraße
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventfeier-schue
+ tzenbruderschaft-merzenich-2026-11-27/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261112T060000Z
 DTSTART:20261128T130000Z
 SUMMARY:Adventmarkt im Heimatmuseum
 DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
@@ -933,6 +982,24 @@ DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
 LOCATION:Heimatmuseum Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
  tmuseum-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-11-28@m
+ erzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261128T140000Z
+SUMMARY:Theater der Weinbergschnecken: „Schneewittchens Geburtstag“
+DESCRIPTION:Die Theatergruppe „Die Weinbergschnecken“ zeigt am Samstag\
+ , 28. November\, um 15 Uhr in der Weinberghalle ihr neues Stück „Schnee
+ wittchens Geburtstag“. Eintritt Kinder 2 Euro\, Erwachsene 4 Euro\, nur 
+ Tageskasse.\nVeranstalter: Theatergruppe „Die Weinbergschnecken“ (För
+ derverein der KGS Merzenich)\nhttps://merzenichaktuell.hk-growthoperator.d
+ e/termine/weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-
+ 11-28/
+LOCATION:Weinberghalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/weinbergschnecken
+ -schneewittchens-geburtstag-weinberghalle-2026-11-28/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -949,6 +1016,23 @@ DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, öffnet die S
 LOCATION:Bürgewaldzentrum (BWZ) Morschenich\, Schützenheim
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bw
  z-morschenich-2026-11-28/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:golzheimer-adventskalender-eroeffnung-weihnachtswiese-2026-11-28@merzen
+ ich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261128T170000Z
+SUMMARY:Eröffnung des Golzheimer Adventskalenders
+DESCRIPTION:Die Golzheimer Krippenbauer stellen am Samstag\, 28. November\,
+  ab 18 Uhr auf der Weihnachtswiese an der Buirer Straße den Golzheimer Ad
+ ventskalender vor\; der Erlös geht an die Jugendarbeit der Marianischen S
+ chützenbruderschaft.\nVeranstalter: Golzheimer Krippenbauer\nhttps://merz
+ enichaktuell.hk-growthoperator.de/termine/golzheimer-adventskalender-eroef
+ fnung-weihnachtswiese-2026-11-28/
+LOCATION:Weihnachtswiese an der Buirer Straße
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/golzheimer-advent
+ skalender-eroeffnung-weihnachtswiese-2026-11-28/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -1029,6 +1113,23 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/jugendgremium-sit
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:ism-weihnachtsfeier-buergerhaus-merzenich-2026-12-06@merzenich-aktuell.
+ de
+DTSTAMP:20261112T060000Z
+DTSTART:20261206T130000Z
+SUMMARY:Inklusive Weihnachtsfeier im Bürgerhaus
+DESCRIPTION:Der Verein Inklusives Soziales Miteinander feiert am Sonntag\, 
+ 6. Dezember\, ab 14 Uhr im Bürgerhaus eine gemeinsame Weihnachtsfeier fü
+ r Menschen mit und ohne Behinderung. Anmeldung beim Verein erforderlich.\n
+ Veranstalter: Inklusives Soziales Miteinander (ISM)\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/ism-weihnachtsfeier-buergerhaus-merzenich
+ -2026-12-06/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ism-weihnachtsfei
+ er-buergerhaus-merzenich-2026-12-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:weihnachtsfeier-morschenich-2026-12-06@merzenich-aktuell.de
 DTSTAMP:20261104T060000Z
 DTSTART:20261206T140000Z
@@ -1059,6 +1160,24 @@ DESCRIPTION:Adventsfeier für Seniorinnen und Senioren am Mittwoch\, 9. Dez
 LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/senior-innenadven
  tsfeier-merzenich-2026-12-09/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:weihnachtsfenster-lebendiger-adventskalender-rathaus-merzenich-2026-12-
+ 15@merzenich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261215T170000Z
+SUMMARY:Weihnachtsfenster der Gemeinde am Rathaus (Lebendiger Adventskalend
+ er)
+DESCRIPTION:Die Gemeinde Merzenich beteiligt sich wieder am „Lebendigen A
+ dventskalender“: Am Dienstag\, 15. Dezember\, um 18 Uhr öffnet am Ratha
+ us ihr Weihnachtsfenster mit Live-Musik und Gedichten.\nVeranstalter: Geme
+ inde Merzenich mit der Katholischen Kirchengemeinde\nhttps://merzenichaktu
+ ell.hk-growthoperator.de/termine/weihnachtsfenster-lebendiger-adventskalen
+ der-rathaus-merzenich-2026-12-15/
+LOCATION:Rathaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfenster
+ -lebendiger-adventskalender-rathaus-merzenich-2026-12-15/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -1131,7 +1250,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:kg-golzheim-karnevalistischer-fruehschoppen-2027-01-10@merzenich-aktuel
  l.de
-DTSTAMP:20261103T060000Z
+DTSTAMP:20261112T060000Z
 DTSTART:20270110T100000Z
 SUMMARY:Karnevalistischer Frühschoppen der KG Golzheim
 DESCRIPTION:Die KG Mir hahle Poohl Golzheim empfängt am Sonntag\, 10. Janu

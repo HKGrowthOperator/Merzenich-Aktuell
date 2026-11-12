@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Inklusiver Spielenachmittag im Bürgerhaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:ism-inklusiver-spielenachmittag-buergerhaus-merzenich-2026-11-14@merzen
+ ich-aktuell.de
+DTSTAMP:20261112T060000Z
+DTSTART:20261114T140000Z
+SUMMARY:Inklusiver Spielenachmittag im Bürgerhaus
+DESCRIPTION:Der Verein Inklusives Soziales Miteinander lädt Menschen mit u
+ nd ohne Behinderung am Samstag\, 14. November\, ab 15 Uhr zum gemeinsamen 
+ Basteln und Spielen ins Bürgerhaus ein.\nVeranstalter: Inklusives Soziale
+ s Miteinander (ISM)\nhttps://merzenichaktuell.hk-growthoperator.de/termine
+ /ism-inklusiver-spielenachmittag-buergerhaus-merzenich-2026-11-14/
+LOCATION:Bürgerhaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/ism-inklusiver-sp
+ ielenachmittag-buergerhaus-merzenich-2026-11-14/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
