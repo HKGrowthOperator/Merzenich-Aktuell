@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [11.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-11-claude-nachmittags.md), Vergleichsbasis [ChatGPT 11.11. mittags](dossiers/2026-11-11-mittags.md) und [Claude 11.11. morgens](dossiers/2026-11-11-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [12.11.2026, Claude-Morgenlauf](dossiers/2026-11-12-claude-morgens.md), Vergleichsbasis [ChatGPT 12.11. morgens](dossiers/2026-11-12-morgens.md) und [Claude 11.11. nachmittags](dossiers/2026-11-11-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 12.11. morgens:** 1 neue Kurzmeldung „Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen“ (324 Wörter, Vorlage 145/2026 mit Kalkulation). 2 neue Termine (Frühstückstreff 25.11. und 02.12.), 20 Termine an der Quelle bestätigt. Commit `de7b8308`.
 
 **Umgesetzt am 11.11. nachmittags:** 1 neue Meldung „Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen“ (Standard, 956 Wörter, Vorlage 40/2026 1. Ergänzung, Planentwurf vom 10.11., Kostenliste der Verwaltung). Kalender unverändert. Mindesttakt 11.11.: 2 Meldungen. Commit `25c082de`.
 

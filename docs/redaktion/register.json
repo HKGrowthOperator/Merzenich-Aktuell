@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-12-morgens.md",
+  "latest_dossier": "dossiers/2026-11-12-claude-morgens.md",
   "source_check_window": "12.11.2026, 07:04:56–07:07:34 Europe/Berlin; Commons gegen 07:07",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11211,15 +11211,15 @@
       "priority": "P2",
       "location_section": "gemeindeweit/Bürgewald · Soziales/Finanzen",
       "change_type": "Neue öffentliche Vorlagen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-11-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-11T07:07:30+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-12-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-12 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-12-recherche-claude-morgens.json → /rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 11.11. nachmittags: Vorlage 145/2026 gelesen (195,72 € Häuser/Wohnungen, 290,66 € Container je Person und Monat; Verbrauch 39,50/36,66 €; ca. 230 Geflüchtete); bisherige Sätze und Kalkulationsanlage offen; Hausnummer aus der Vorlage nicht übernehmen.",
+      "implementation_commit": "de7b8308",
+      "notes": "Getrennte Pauschalen nach Unterkunftsart vorgeschlagen; Kalkulation unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 11.11. nachmittags: Vorlage 145/2026 gelesen (195,72 € Häuser/Wohnungen, 290,66 € Container je Person und Monat; Verbrauch 39,50/36,66 €; ca. 230 Geflüchtete); bisherige Sätze und Kalkulationsanlage offen; Hausnummer aus der Vorlage nicht übernehmen. | Claude 12.11. morgens: Kurzmeldung (324 Wörter) aus 145/2026 und ANL_1; als Vorschlag gekennzeichnet; Hausnummer aus der Vorlage nicht übernommen; bisherige Sätze offen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11239,6 +11239,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-11-morgens.md",
           "heading": "MA-UNTERKUNFTSGEBUEHREN-2027"
+        },
+        {
+          "date": "2026-11-12",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-12-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -11360,7 +11366,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Kreisbericht vom 11.11. und Zweckverbandsbericht vom 09.11. zur Ehrung am 07.11. in Stockheim: Merzenicher Ersthelfer und AED-Nachsorge, ohne Namen der Privatperson. Quellen aus demselben Projektverbund nicht als unabhängige Ereignisbestätigungen zählen. DRK ist unabhängiger Hintergrund, kein Beleg für konkrete Ehrung. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "Kreisbericht vom 11.11. und Zweckverbandsbericht vom 09.11. zur Ehrung am 07.11. in Stockheim: Merzenicher Ersthelfer und AED-Nachsorge, ohne Namen der Privatperson. Quellen aus demselben Projektverbund nicht als unabhängige Ereignisbestätigungen zählen. DRK ist unabhängiger Hintergrund, kein Beleg für konkrete Ehrung. Keine Artikelumsetzung durch diesen Lauf. | Claude 12.11. morgens: für den Nachmittagslauf vorgesehen (Kreis Düren als offizielle Quelle).",
       "latest_research_dossier": "dossiers/2026-11-12-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Kreis, Zweckverband und Projektseite als Primärquellen; DRK-Hintergrund; unabhängige konkrete Bestätigung fehlt",
@@ -13043,6 +13049,16 @@
         "Jonge vom Berg: HTTP 200 mit Site Unavailable",
         "Übrige offene Morgenkarten vom 11.11. heute nur Listenabgleich, keine neue Vollprüfung"
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-12-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-12-morgens.md",
+      "implementation_commit": "de7b8308",
+      "summary": "Keine Korrekturen; Kurzmeldung Unterkunftsgebühren 2027 (Vorschlag); zwei Termine Frühstückstreff neu; Termine bis 26.11. an der Quelle bestätigt.",
+      "publication": "Neue Meldung und Termine direkt veröffentlicht"
     }
   ]
 }

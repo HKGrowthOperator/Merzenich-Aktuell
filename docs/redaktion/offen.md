@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-11-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-12-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 50 |
+| uebernommen | 51 |
 | gesperrt | 30 |
 | neu | 6 |
 | zur_abnahme | 5 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-12 morgens (Claude): Keine Korrekturen; Kurzmeldung Unterkunftsgebühren 2027 (Vorschlag); zwei Termine Frühstückstreff neu; Termine bis 26.11. an der Quelle bestätigt. – Commit de7b8308
+- 2026-11-12 morgens (ChatGPT): Eine neue T2-Karte: Ehrung eines Merzenicher Corhelpers und AED-Nachsorge; unabhängige Bestätigung fehlt. Neu erfasster Frühstücks-/Spieletreff 25.11., konkrete Ortszeile fehlt. Brandschutzartikel anhand Plan und Kostentabelle geprüft; historische Teilbelege offen. Keine neue belegte Artikelkorrektur.
 - 2026-11-11 nachmittags (Claude): Keine Korrekturen; Standardartikel Brandschutzbedarfsplan (Schutzziel, Bürgewald, Personal, Kostenliste); Kalender unverändert, Krätzchensitzung bestätigt. Mindesttakt 11.11.: 2 Meldungen. – Commit 25c082de
 - 2026-11-11 mittags (ChatGPT): Keine neue Themenkarte. Neuer Abgabenartikel mit Vorlagen, Kalkulation und Satzungsentwürfen abgeglichen; BdSt-Vergleich wegen HTTP 403 nicht erneut prüfbar. Heute aktualisierte Heimat-Info-Stempel ohne sachliche Terminänderung; Pluriversum-Konflikt bleibt. Keine neue belegte Artikelkorrektur, Teilprüfungen ausdrücklich begrenzt.
-- 2026-11-11 morgens (Claude): Keine Korrekturen; Standardartikel Abgaben 2027 (Abwasser, Hundesteuer, Hebesätze; Vorschläge für HFA 19.11.); vier weitere T2-Karten offen; Kalender an der Quelle bestätigt, unverändert. – Commit f9804cb4
-- 2026-11-11 morgens (ChatGPT): Neue RIS-Vorlagen: Abgaben 2027, Trauentgelte Alte Kirche, Unterkunftsgebühren, überarbeiteter Brandschutzplan, Digitalisierung/SSC. Fünf T2-Karten, keine neue belegte Artikelkorrektur. HFA-Tagesordnung konkretisiert, Terminzeit unverändert.
