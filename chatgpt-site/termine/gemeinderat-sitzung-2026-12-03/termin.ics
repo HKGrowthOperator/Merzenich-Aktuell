@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
-DTSTAMP:20261112T060000Z
+DTSTAMP:20261113T060000Z
 DTSTART:20261203T160000Z
 SUMMARY:8. Sitzung des Gemeinderates
 DESCRIPTION:Der Gemeinderat tagt am Donnerstag\, 3. Dezember\, um 17 Uhr im
