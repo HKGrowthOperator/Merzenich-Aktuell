@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-12-claude-nachmittags.md",
-  "source_check_window": "12.11.2026, 12:06:06–12:08:44 Europe/Berlin; ergänzender Original-Webabruf gegen 12:08",
+  "latest_dossier": "dossiers/2026-11-13-morgens.md",
+  "source_check_window": "13.11.2026, 07:05:06–07:07:25 Europe/Berlin; ergänzende Commons-/Original-Webprüfung gegen 07:06",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11403,6 +11403,51 @@
         },
         "implementation": "keine_Artikelumsetzung"
       }
+    },
+    {
+      "id": "MA-FUSSBALL-GIRB-SWD-2911",
+      "priority": "P3",
+      "location_section": "Girbelsrath · Sport",
+      "change_type": "Neue Spielplanentwicklung und Quellenwiderspruch",
+      "text_status": "T2",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-13-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-13T07:07:25+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "FuPa-Chronik 12.11. meldet Girbelsrath–SW Düren am 29.11. von 14:30 auf 13 Uhr. Offizielle FUSSBALL.DE-Seiten führen ebenfalls 13 Uhr, aber SW Düren II als Heimteam und Düren als Spielstätte; FuPa weiterhin Girbelsrath zuerst. Kein Spielort/Heimrecht freigegeben. Datenabhängigkeit ungeklärt, dritte eigenständige Ereignisquelle fehlt. Außerhalb des aktuellen Kalenderfensters. Keine Artikelumsetzung durch diesen Lauf.",
+      "latest_research_dossier": "dossiers/2026-11-13-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "FuPa-Chronik/Clubspielplan und offizielle Mannschafts-/Spielseiten gelesen; Heimrecht widersprüchlich",
+      "research_history": [
+        {
+          "date": "2026-11-13",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-13-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-13",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-13-morgens.md",
+          "heading": "MA-FUSSBALL-GIRB-SWD-2911"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:Artificial turf (5064316111).jpg, Håkan Dahlström, CC BY 2.0, 5616 × 3744 px; Vorschau angesehen, Motiv fussball",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -13114,6 +13159,46 @@
       "implementation_commit": "3684e92f",
       "summary": "Keine Korrekturen; Kurzmeldung Ersthelfer-Ehrung (Kreis Düren); sieben Termine aus dem 16. Kulturkalender; Zeitkonflikte Weckmannschießen, Pluriversum, Krätzchensitzung offen. Mindesttakt 12.11.: 2 Meldungen.",
       "publication": "Neue Meldung und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-13",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-13-morgens.md",
+      "compared_with": "dossiers/2026-11-12-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-12-claude-nachmittags.md",
+      "base_commit": "666febf0d4a4e0fb1d95caeccf059a8d6b066342",
+      "implementation_commit": null,
+      "summary": "Eine neue T2-Karte zur Spielplanänderung Girbelsrath/SW Düren II am 29.11.: Beginn 13 Uhr, Heimrecht/Platz zwischen FuPa und offiziellen Verbandsseiten widersprüchlich. Kein neuer öffentlicher Bauausschuss-Ergebnisbeleg. Corhelper-Artikel geprüft; sieben neue Kulturkalender-Termine live HTTP 200. Keine neue bestätigte Terminänderung im 14-Tage-Fenster.",
+      "topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 3,
+      "article_partial_checks": 11,
+      "repository_article_files_read": 46,
+      "repository_event_files_read": 20,
+      "repository_area_files_read": 16,
+      "new_or_changed_events": 0,
+      "live_event_proofs": 7,
+      "complete_drafts": 0,
+      "source_check_window": "13.11.2026, 07:05:06–07:07:25 Europe/Berlin; ergänzende Commons-/Original-Webprüfung gegen 07:06",
+      "deadline": "2026-11-13T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Girbelsrath/SW Düren II: Heimrecht und Spielstätte widersprüchlich; dritte eigenständige Ereignisquelle/unabhängige Bestätigung fehlt",
+        "Bauausschuss 12.11.: kein neuer öffentlicher Ergebnisbeleg im gelesenen RIS",
+        "Weckmannschießen, Pluriversum und Senioren-Nachmittag: bekannte Zeit-/Ort-/Datumskonflikte unverändert",
+        "Frühstück 25.11.: konkrete Ortszeile fehlt",
+        "Derbywertung und historischer S19-Reparaturbeleg weiterhin offen",
+        "BdSt-PDF HTTP 403; Grundsteuervergleich nicht erneut am Original geprüft",
+        "Jonge vom Berg: direkte Fehlerseite, einzelne Original-Detailseite im normalen Webabruf lesbar; Vereinsprüfung unvollständig",
+        "Brandschutz: historische Teilbelege und fachliche Bestätigung weiterhin offen",
+        "Trauentgelte und Digitalisierung/SSC nur Listenabgleich, keine neue vollständige Einzelprüfung"
+      ]
     }
   ]
 }
