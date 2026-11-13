@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-12",
+ "stand": "2026-11-13",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Pkw nach Fahrradunfall flüchtig - Die Polizei bittet um Hinweise",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6389793",
+   "datum": "2026-11-13",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Unfallflucht nach Zusammenstoß mit E-Scooter - Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6389795",
+   "datum": "2026-11-13",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Zeugensuche nach Einbrüchen in Baucontainer in Vettweiß",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6389791",
+   "datum": "2026-11-13",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Niederzier",
    "rubrik": "Blaulicht",
