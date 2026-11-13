@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-13-mittags.md",
+  "latest_dossier": "dossiers/2026-11-13-claude-nachmittags.md",
   "source_check_window": "13.11.2026, 11:58:18–12:01:46 Europe/Berlin; ergänzende Original-/Commons-Webprüfung bis etwa 12:03",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11327,7 +11327,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
+      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3).",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11483,7 +11483,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung.",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3).",
       "latest_research_dossier": "dossiers/2026-11-13-mittags.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Polizeimitteilung vollständig gelesen, Dienststellenliste und erfolglose Behörden-/unabhängige Quellensuche dokumentiert",
@@ -11515,6 +11515,29 @@
         },
         "implementation": "keine_Artikelumsetzung"
       }
+    },
+    {
+      "id": "MA-WOCHENVORSCHAU-2026-47",
+      "priority": "P3",
+      "location_section": "Gemeinde · Termine",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-13-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-13 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-13-recherche-claude-nachmittags.json → /leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+      "article_id": null,
+      "implementation_commit": "03ccda03",
+      "notes": "Claude 13.11. nachmittags: Wochenvorschau 16.–22.11. (807 Wörter), Termine am 12./13.11. an der Quelle bestätigt; HFA-Vorlagen mit Zahlen aus Einzelartikeln, Übernachtungssteuer (104/2026) neu ausgewertet. Live 15:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "dossier_history": [
+        {
+          "date": "2026-11-13",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-13-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
     }
   ],
   "archive": {
@@ -13320,6 +13343,16 @@
         "Trauungen: konkrete Vergleichsorte und Übergang bereits gebuchter Termine offen",
         "Neue Buntstift-Bildsichtung offen; direkte Commons-Vorschaubilder HTTP 403"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-13-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-13-mittags.md",
+      "implementation_commit": "03ccda03",
+      "summary": "Keine Korrekturen; Wochenvorschau 16.–22.11. (Standard); Kalender unverändert; Bauausschuss-Ergebnisse weiter offen. Mindesttakt 13.11.: 2 Meldungen.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

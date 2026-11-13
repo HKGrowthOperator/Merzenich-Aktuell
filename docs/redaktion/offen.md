@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-13-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-13-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 53 |
-| gesperrt | 29 |
+| uebernommen | 54 |
+| gesperrt | 30 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-13 nachmittags (Claude): Keine Korrekturen; Wochenvorschau 16.–22.11. (Standard); Kalender unverändert; Bauausschuss-Ergebnisse weiter offen. Mindesttakt 13.11.: 2 Meldungen. – Commit 03ccda03
+- 2026-11-13 mittags (ChatGPT): Neu: Weihnachtsmalwettbewerb der Polizei (T2, Regeln/unabhängige Quelle fehlen). Neue Entwicklung zur Fußball-Morgenkarte: FuPa-Clubspielplan nun ebenfalls SW Düren II zuerst, T2 bleibt. Neuer Gemeindebeitrag bestätigt Pluriversum 18 Uhr/Niederzier, Kalenderkonflikt bleibt. Trauentgeltartikel geprüft, keine Abweichung in bestätigten Angaben. Kein Bauausschuss-Ergebnisbeleg.
 - 2026-11-13 morgens (Claude): Keine Korrekturen; Kurzmeldung Trauentgelte Alte Kirche (Vorschlag); Bauausschuss-Ergebnisse noch nicht veröffentlicht; Kalender unverändert. – Commit 4c25764c
 - 2026-11-13 morgens (ChatGPT): Eine neue T2-Karte zur Spielplanänderung Girbelsrath/SW Düren II am 29.11.: Beginn 13 Uhr, Heimrecht/Platz zwischen FuPa und offiziellen Verbandsseiten widersprüchlich. Kein neuer öffentlicher Bauausschuss-Ergebnisbeleg. Corhelper-Artikel geprüft; sieben neue Kulturkalender-Termine live HTTP 200. Keine neue bestätigte Terminänderung im 14-Tage-Fenster.
-- 2026-11-12 nachmittags (Claude): Keine Korrekturen; Kurzmeldung Ersthelfer-Ehrung (Kreis Düren); sieben Termine aus dem 16. Kulturkalender; Zeitkonflikte Weckmannschießen, Pluriversum, Krätzchensitzung offen. Mindesttakt 12.11.: 2 Meldungen. – Commit 3684e92f
-- 2026-11-12 mittags (ChatGPT): Keine neuen Themenkarten. Unterkunftsgebührenartikel mit Vorlage/Kalkulation geprüft, ohne Abweichung. Neu verlinkter Kulturkalender: Spielenachmittag 14.11. neu erfasst, Weckmannschießen 11 statt 11:30 Uhr als Quellenkonflikt; Pluriversum-Beginn weiterhin widersprüchlich. Frühstück 25.11. live bestätigt, Ort offen.
