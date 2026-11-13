@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-13-claude-morgens.md",
-  "source_check_window": "13.11.2026, 07:05:06–07:07:25 Europe/Berlin; ergänzende Commons-/Original-Webprüfung gegen 07:06",
+  "latest_dossier": "dossiers/2026-11-13-mittags.md",
+  "source_check_window": "13.11.2026, 11:58:18–12:01:46 Europe/Berlin; ergänzende Original-/Commons-Webprüfung bis etwa 12:03",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11419,19 +11419,27 @@
       "image_status": "B1",
       "dossier": "dossiers/2026-11-13-morgens.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-13T07:07:25+01:00",
+      "last_checked_at": "2026-11-13T12:07:08+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "FuPa-Chronik 12.11. meldet Girbelsrath–SW Düren am 29.11. von 14:30 auf 13 Uhr. Offizielle FUSSBALL.DE-Seiten führen ebenfalls 13 Uhr, aber SW Düren II als Heimteam und Düren als Spielstätte; FuPa weiterhin Girbelsrath zuerst. Kein Spielort/Heimrecht freigegeben. Datenabhängigkeit ungeklärt, dritte eigenständige Ereignisquelle fehlt. Außerhalb des aktuellen Kalenderfensters. Keine Artikelumsetzung durch diesen Lauf. | Claude 13.11. morgens: nicht umgesetzt (Heimrecht/Spielort widersprüchlich, außerhalb 14 Tage).",
-      "latest_research_dossier": "dossiers/2026-11-13-morgens.md",
+      "notes": "FuPa-Chronik 12.11. meldet Girbelsrath–SW Düren am 29.11. von 14:30 auf 13 Uhr. Offizielle FUSSBALL.DE-Seiten führen ebenfalls 13 Uhr, aber SW Düren II als Heimteam und Düren als Spielstätte; FuPa weiterhin Girbelsrath zuerst. Kein Spielort/Heimrecht freigegeben. Datenabhängigkeit ungeklärt, dritte eigenständige Ereignisquelle fehlt. Außerhalb des aktuellen Kalenderfensters. Keine Artikelumsetzung durch diesen Lauf. | Claude 13.11. morgens: nicht umgesetzt (Heimrecht/Spielort widersprüchlich, außerhalb 14 Tage). | ChatGPT 13.11. mittags: Neu zeigt auch der FuPa-Clubspielplan SW Düren II vor Girbelsrath; aktuelle Verbands-/Clubanzeigen stimmen beim Heimteam überein. Alte Chronikbezeichnung unverändert. T2 bleibt: unabhängige Bestätigung und dritte eigenständige Ereignisquelle fehlen. Keine Umsetzung.",
+      "latest_research_dossier": "dossiers/2026-11-13-mittags.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "FuPa-Chronik/Clubspielplan und offizielle Mannschafts-/Spielseiten gelesen; Heimrecht widersprüchlich",
+      "latest_research_scope": "Aktuelle FuPa-Clubreihenfolge an offizielle Spielpläne angeglichen; historische Chronikbezeichnung unverändert, Herkunft nicht unabhängig bestätigt",
       "research_history": [
         {
           "date": "2026-11-13",
           "edition": "morgens",
           "dossier": "dossiers/2026-11-13-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-13",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-13-mittags.md",
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
@@ -11443,6 +11451,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-13-morgens.md",
           "heading": "MA-FUSSBALL-GIRB-SWD-2911"
+        },
+        {
+          "date": "2026-11-13",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-13-mittags.md",
+          "heading": "MA-FUSSBALL-GIRB-SWD-2911"
         }
       ],
       "latest_research_review": {
@@ -11450,6 +11464,53 @@
         "workflow": "gesperrt",
         "image": {
           "rights": "File:Artificial turf (5064316111).jpg, Håkan Dahlström, CC BY 2.0, 5616 × 3744 px; Vorschau angesehen, Motiv fussball",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung",
+        "scope": "Heimteam in aktuellen Anzeigen nun übereinstimmend; T2 wegen Quellenabhängigkeit und fehlender dritter Ereignisquelle"
+      }
+    },
+    {
+      "id": "MA-POLIZEI-MALWETTBEWERB-2026",
+      "priority": "P3",
+      "location_section": "Gemeindeweit · Leben / Familie",
+      "change_type": "Neue kreisweite Polizeiankündigung",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-13-mittags.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-13T12:07:08+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung.",
+      "latest_research_dossier": "dossiers/2026-11-13-mittags.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Polizeimitteilung vollständig gelesen, Dienststellenliste und erfolglose Behörden-/unabhängige Quellensuche dokumentiert",
+      "research_history": [
+        {
+          "date": "2026-11-13",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-13-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-13",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-13-mittags.md",
+          "heading": "MA-POLIZEI-MALWETTBEWERB-2026"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:Colored Pencils.jpg, Alessandro (Metadaten Alessandro Muiesan), CC BY 2.0, 1280 × 853 px",
+          "visual_check": "offen",
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
@@ -13215,6 +13276,50 @@
       "implementation_commit": "4c25764c",
       "summary": "Keine Korrekturen; Kurzmeldung Trauentgelte Alte Kirche (Vorschlag); Bauausschuss-Ergebnisse noch nicht veröffentlicht; Kalender unverändert.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-13",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-13-mittags.md",
+      "compared_with": "dossiers/2026-11-13-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-13-claude-morgens.md",
+      "base_commit": "1a73d9a9fbc3927a28b823a205a9bf46f2e9d0b1",
+      "implementation_commit": null,
+      "summary": "Neu: Weihnachtsmalwettbewerb der Polizei (T2, Regeln/unabhängige Quelle fehlen). Neue Entwicklung zur Fußball-Morgenkarte: FuPa-Clubspielplan nun ebenfalls SW Düren II zuerst, T2 bleibt. Neuer Gemeindebeitrag bestätigt Pluriversum 18 Uhr/Niederzier, Kalenderkonflikt bleibt. Trauentgeltartikel geprüft, keine Abweichung in bestätigten Angaben. Kein Bauausschuss-Ergebnisbeleg.",
+      "topics": 2,
+      "new_topics": 1,
+      "updated_topics": 1,
+      "blocked_T2": 2,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 4,
+      "article_partial_checks": 11,
+      "repository_article_files_read": 47,
+      "repository_event_files_read": 20,
+      "repository_area_files_read": 16,
+      "new_or_changed_events": 0,
+      "new_organizer_confirmations": 1,
+      "complete_drafts": 0,
+      "source_check_window": "13.11.2026, 11:58:18–12:01:46 Europe/Berlin; ergänzende Original-/Commons-Webprüfung bis etwa 12:03",
+      "prepared_at": "2026-11-13T12:07:08+01:00",
+      "deadline": "2026-11-13T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert; Upload noch nicht aus dem Vorbereitungszeitpunkt ableiten.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Malwettbewerb: unabhängige Bestätigung, dritte inhaltliche Quelle und gesonderte Teilnahmebedingungen fehlen; Behörden-Webabruf HTTP 503",
+        "Girbelsrath/SW Düren II: aktuelle Heimteamanzeigen nun übereinstimmend, historische Chronikbezeichnung und Datenabhängigkeit ungeklärt; dritte Ereignisquelle fehlt",
+        "Bauausschuss 12.11.: kein neues öffentliches Ergebnis im gelesenen RIS",
+        "Pluriversum, Weckmannschießen und Senioren-Nachmittag: bekannte Kalenderkonflikte bleiben",
+        "Frühstück 25.11.: konkreter Veranstaltungsort fehlt",
+        "BdSt PDF HTTP 403, Grundsteuervergleich nicht erneut am Original geprüft",
+        "Derbywertung, historischer S19-Reparaturbeleg und historische Brandschutzbelege offen",
+        "Jonge vom Berg: direkt Site Unavailable trotz HTTP 200; einzelne normale Original-Detailseite lesbar, Vereinsprüfung unvollständig",
+        "Trauungen: konkrete Vergleichsorte und Übergang bereits gebuchter Termine offen",
+        "Neue Buntstift-Bildsichtung offen; direkte Commons-Vorschaubilder HTTP 403"
+      ]
     }
   ]
 }
