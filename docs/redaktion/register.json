@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-13-morgens.md",
+  "latest_dossier": "dossiers/2026-11-13-claude-morgens.md",
   "source_check_window": "13.11.2026, 07:05:06–07:07:25 Europe/Berlin; ergänzende Commons-/Original-Webprüfung gegen 07:06",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11166,15 +11166,15 @@
       "priority": "P2",
       "location_section": "Merzenich · Rathaus/Service",
       "change_type": "Neue öffentliche Vorlagen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-11-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-11T07:07:30+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-13-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-13 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-13-recherche-claude-morgens.json → /rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Höhere Trauentgelte vorgeschlagen; unabhängige Bestätigung und Buchungs-/Übergangsregelung fehlen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen.",
+      "implementation_commit": "4c25764c",
+      "notes": "Höhere Trauentgelte vorgeschlagen; unabhängige Bestätigung und Buchungs-/Übergangsregelung fehlen. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 13.11. morgens: Kurzmeldung (272 Wörter) aus Vorlage 150/2026; Vorschlag; Buchungsübergang nicht behauptet. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11194,6 +11194,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-11-morgens.md",
           "heading": "MA-ALTE-KIRCHE-ENTGELTE-2027"
+        },
+        {
+          "date": "2026-11-13",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-13-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -11417,7 +11423,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "FuPa-Chronik 12.11. meldet Girbelsrath–SW Düren am 29.11. von 14:30 auf 13 Uhr. Offizielle FUSSBALL.DE-Seiten führen ebenfalls 13 Uhr, aber SW Düren II als Heimteam und Düren als Spielstätte; FuPa weiterhin Girbelsrath zuerst. Kein Spielort/Heimrecht freigegeben. Datenabhängigkeit ungeklärt, dritte eigenständige Ereignisquelle fehlt. Außerhalb des aktuellen Kalenderfensters. Keine Artikelumsetzung durch diesen Lauf.",
+      "notes": "FuPa-Chronik 12.11. meldet Girbelsrath–SW Düren am 29.11. von 14:30 auf 13 Uhr. Offizielle FUSSBALL.DE-Seiten führen ebenfalls 13 Uhr, aber SW Düren II als Heimteam und Düren als Spielstätte; FuPa weiterhin Girbelsrath zuerst. Kein Spielort/Heimrecht freigegeben. Datenabhängigkeit ungeklärt, dritte eigenständige Ereignisquelle fehlt. Außerhalb des aktuellen Kalenderfensters. Keine Artikelumsetzung durch diesen Lauf. | Claude 13.11. morgens: nicht umgesetzt (Heimrecht/Spielort widersprüchlich, außerhalb 14 Tage).",
       "latest_research_dossier": "dossiers/2026-11-13-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "FuPa-Chronik/Clubspielplan und offizielle Mannschafts-/Spielseiten gelesen; Heimrecht widersprüchlich",
@@ -13199,6 +13205,16 @@
         "Brandschutz: historische Teilbelege und fachliche Bestätigung weiterhin offen",
         "Trauentgelte und Digitalisierung/SSC nur Listenabgleich, keine neue vollständige Einzelprüfung"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-13-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-13-morgens.md",
+      "implementation_commit": "4c25764c",
+      "summary": "Keine Korrekturen; Kurzmeldung Trauentgelte Alte Kirche (Vorschlag); Bauausschuss-Ergebnisse noch nicht veröffentlicht; Kalender unverändert.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

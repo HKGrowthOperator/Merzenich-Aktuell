@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [12.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-12-claude-nachmittags.md), Vergleichsbasis [ChatGPT 12.11. mittags](dossiers/2026-11-12-mittags.md) und [Claude 12.11. morgens](dossiers/2026-11-12-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [13.11.2026, Claude-Morgenlauf](dossiers/2026-11-13-claude-morgens.md), Vergleichsbasis [ChatGPT 13.11. morgens](dossiers/2026-11-13-morgens.md) und [Claude 12.11. nachmittags](dossiers/2026-11-12-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 13.11. morgens:** 1 neue Kurzmeldung „Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige“ (272 Wörter, Vorlage 150/2026). Kalender unverändert, Bauausschuss-Ergebnisse noch nicht veröffentlicht. Commit `4c25764c`.
 
 **Umgesetzt am 12.11. nachmittags:** 1 neue Kurzmeldung „Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren“ (276 Wörter, Kreis Düren). 7 neue Termine aus dem 16. Kulturkalender der Gemeinde. Mindesttakt 12.11.: 2 Meldungen. Commit `3684e92f`.
 
