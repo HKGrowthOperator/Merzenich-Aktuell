@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 12 Nov 2026 13:46:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Nov 2026 08:17:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/</guid>
+<pubDate>Fri, 13 Nov 2026 08:17:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Alte Kirche ist als Trauort gefragt wie nie, inzwischen kommen mehr Paare von außerhalb als aus der Gemeinde. Die Verwaltung schlägt ab 2027 höhere Entgelte vor und rechnet mit rund 5.000 Euro Mehreinnahmen im Jahr.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Kreis Düren vergibt zum dritten Mal bis zu vier Stipendien von je 6.000 Euro für angehende Meisterinnen und Meister. Bedingung: nach der Prüfung mindestens fünf Jahre im Kreis arbeiten.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
-</item>
-<item>
-<title>Eicheln für den Hürtgenwald: erster Sammeltermin fiel dem Sturm zum Opfer, zweiter am 6. November</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/</guid>
-<pubDate>Sun, 25 Oct 2026 21:36:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Nach dem Waldbrand im August sollen Eicheln aus der Region die Wiederbewaldung anstoßen. Der Termin am Freitag wurde wegen Sturmböen abgesagt; am 6. November geht es an der Burg Laufenburg weiter.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-08-5f0f3260df.jpg" medium="image"><media:credit>NobbiP / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Eicheln am Baum der Stieleiche, Quercus robur in Celle</media:description></media:content>
 </item>
 </channel>
 </rss>

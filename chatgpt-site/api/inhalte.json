@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-12T14:46:00+01:00",
- "anzahl": 238,
+ "generated": "2026-11-13T09:17:00+01:00",
+ "anzahl": 239,
  "bestand": {
-  "gesamt": 238,
+  "gesamt": 239,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 34,
-   "rathaus": 37,
+   "rathaus": 38,
    "leben": 53,
    "wirtschaft": 13,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 165,
+   "merzenich": 166,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 238,
+    "anzahl": 239,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 37,
+    "anzahl": 38,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 165,
+    "anzahl": 166,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
+   "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
+   "titel": "Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige",
+   "teaser": "Die Alte Kirche ist als Trauort gefragt wie nie, inzwischen kommen mehr Paare von außerhalb als aus der Gemeinde. Die Verwaltung schlägt ab 2027 höhere Entgelte vor und rechnet mit rund 5.000 Euro Mehreinnahmen im Jahr.",
+   "kicker": "Rathaus · Standesamt",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-13T09:17:00+01:00",
+   "aktualisiert": "2026-11-13T09:17:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    },
+    {
+     "slug": "steuern",
+     "label": "Steuern und Gebühren"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-12-ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026",
    "url": "/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/",
@@ -9875,9 +9913,9 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-12-merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag",
-  "url": "/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
-  "titel": "Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen"
+  "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
+  "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
+  "titel": "Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige"
  },
  "nebenmeldungen": [
   {
@@ -9886,14 +9924,14 @@
    "titel": "Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren"
   },
   {
+   "id": "2026-11-12-merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag",
+   "url": "/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
+   "titel": "Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen"
+  },
+  {
    "id": "2026-11-11-brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten",
    "url": "/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/",
    "titel": "Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen"
-  },
-  {
-   "id": "2026-11-11-merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung",
-   "url": "/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/",
-   "titel": "Merzenich 2027: Abwasser teurer, Hundesteuer steigt, Grundsteuer B soll auf 1.077 Punkte"
   },
   {
    "id": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
