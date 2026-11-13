@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-13T09:17:00+01:00",
- "anzahl": 239,
+ "generated": "2026-11-13T15:20:00+01:00",
+ "anzahl": 240,
  "bestand": {
-  "gesamt": 239,
+  "gesamt": 240,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 34,
    "rathaus": 38,
-   "leben": 53,
+   "leben": 54,
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 166,
+   "merzenich": 167,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 239,
+    "anzahl": 240,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 53,
+    "anzahl": 54,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 166,
+    "anzahl": 167,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
+   "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+   "titel": "Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn",
+   "teaser": "In der Woche nach dem Volkstrauertag lädt die Gemeinde zum zweiten Pluriversum, der Haupt- und Finanzausschuss berät über höhere Abgaben und den neuen Brandschutzplan, im Wasserturm fahren die Modellbahnen. Ein Überblick über die Termine der Woche.",
+   "kicker": "Termine · Wochenvorschau",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-13T15:20:00+01:00",
+   "aktualisiert": "2026-11-13T15:20:00+01:00",
+   "lesezeit": "4 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "termine",
+     "label": "Termine"
+    },
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    },
+    {
+     "slug": "pluriversum",
+     "label": "Pluriversum"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg",
+    "srcset": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-480.webp 480w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-800.webp 800w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp 1200w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg 1600w",
+    "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
+    "width": 1600,
+    "height": 1060,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
    "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
@@ -9913,11 +9955,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
-  "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
-  "titel": "Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige"
+  "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
+  "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+  "titel": "Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
+   "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
+   "titel": "Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige"
+  },
   {
    "id": "2026-11-12-ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026",
    "url": "/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/",
@@ -9932,11 +9979,6 @@
    "id": "2026-11-11-brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten",
    "url": "/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/",
    "titel": "Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen"
-  },
-  {
-   "id": "2026-11-09-papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich",
-   "url": "/vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/",
-   "titel": "Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung"
   }
  ],
  "startseitenMotive": {
@@ -9972,6 +10014,7 @@
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
   "editorial-pools/themen/themen-05-1ca58804a8": 1,
   "editorial-pools/themen/themen-06-bc6b8eed4f": 1,
+  "editorial-pools/themen/themen-08-5f0f3260df": 1,
   "editorial-pools/themen/themen-11-59fc252a23": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
   "editorial-pools/themen/themen-15-30a6b323da": 2,
@@ -9981,7 +10024,6 @@
   "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/themen/themen-24-960e0101ba": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
-  "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 1,
   "places/buergewald": 1,
   "places/girbelsrath": 2,
@@ -9997,7 +10039,7 @@
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3",
   "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382",
-  "editorial-pools/themen/themen-20-72a84de410"
+  "editorial-pools/kultur/kultur-01-8826d38c5d"
  ],
  "motivMax": 2
 }

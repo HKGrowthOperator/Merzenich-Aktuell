@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 13 Nov 2026 08:17:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Nov 2026 14:20:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/</guid>
+<pubDate>Fri, 13 Nov 2026 14:20:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>In der Woche nach dem Volkstrauertag lädt die Gemeinde zum zweiten Pluriversum, der Haupt- und Finanzausschuss berät über höhere Abgaben und den neuen Brandschutzplan, im Wasserturm fahren die Modellbahnen. Ein Überblick über die Termine der Woche.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg" medium="image"><media:credit>Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H</media:description></media:content>
+</item>
 <item>
 <title>Ersthelfer aus Merzenich ausgezeichnet: Kreis Düren ehrt Einsatz für Wiederbelebung und Defibrillatoren</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am Dienstag, 6. Oktober, macht der DRK-Blutspendedienst West Station im Bürgerhaus an der Burgstraße 9. Für die Spende wird um eine vorherige Terminreservierung gebeten.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
-</item>
-<item>
-<title>„Orte von Kirche“: Infoabend am 8. Oktober im Pfarrheim Merzenich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/orte-von-kirche-infoabend-merzenich-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/orte-von-kirche-infoabend-merzenich-2026/</guid>
-<pubDate>Sun, 04 Oct 2026 10:28:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Wie soll kirchliches Leben im neuen Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß künftig aussehen? Am Donnerstagabend lädt St. Laurentius zum Mitreden ins Pfarrheim ein.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
 </item>
 </channel>
 </rss>

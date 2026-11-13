@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:17:42.239Z",
+  "updatedAt": "2026-11-13T14:22:19.125Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1718,6 +1718,15 @@
       "assignedAt": "2026-11-13T08:17:42.239Z",
       "articleId": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
       "articleDate": "2026-11-13T09:17:00+01:00"
+    },
+    "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/": {
+      "imageId": "web-kultur-01-8826d38c",
+      "pool": "kultur",
+      "motiv": "veranstaltungssaal",
+      "regel": "leben.veranstaltung",
+      "assignedAt": "2026-11-13T14:22:19.124Z",
+      "articleId": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
+      "articleDate": "2026-11-13T15:20:00+01:00"
     }
   }
 }
