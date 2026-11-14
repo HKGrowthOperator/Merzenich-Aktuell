@@ -1,0 +1,76 @@
+{
+  "hinweis": "Morgenlauf 14.11.2026 (Claude): Mitteilung der Kreispolizeibehörde Düren vom 13.11.2026 08:56 Uhr im Presseportal, gelesen 14.11.2026 09:15 Uhr. Behördenseite und Teilnahmebedingungen (dueren.polizei.nrw) am 14.11. um 09:15 Uhr mit Bot-Prüfung (HTTP 503), nicht umgangen.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Familie",
+      "titel": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen",
+      "dek": "Unter dem Motto „Weihnachten auf Streife“ sucht die Kreispolizei wieder Bilder von Kindern bis elf Jahre. Vier Gewinnerinnen und Gewinner bekommen kurz vor Weihnachten Besuch mit dem Streifenwagen.",
+      "datum": "2026-11-14T09:16:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "polizei",
+          "Polizei"
+        ],
+        [
+          "familie",
+          "Familie"
+        ]
+      ],
+      "bildklasse": "leben.polizei.aktion",
+      "absaetze": [
+        "Die Kreispolizeibehörde Düren ruft wieder zu ihrem Weihnachtsmalwettbewerb auf, an dem auch Kinder aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald teilnehmen können. Das Motto lautet „Weihnachten auf Streife“: Gemalt werden darf alles, was Kindern dazu einfällt, ob ein geschmückter Streifenwagen, eine Fahrt durch den Schnee oder eine Begegnung mit dem Weihnachtsmann. Mitmachen dürfen Kinder bis elf Jahre. Im vergangenen Jahr kamen nach Angaben der Polizei Bilder von 105 Kindern, so viele wie nie zuvor.",
+        "Einsendeschluss ist der 14. Dezember. Die Bilder gehen per Post an die Pressestelle der Kreispolizeibehörde in Düren, Aachener Straße, Stichwort „Malwettbewerb“, oder eingescannt per E-Mail an die Pressestelle mit diesem Betreff.",
+        "Damit die Polizei die Bilder zuordnen kann, gehören bei einer Einzelteilnahme Name, Alter und Adresse des Kindes dazu, außerdem eine Rufnummer von Mutter, Vater oder anderen Erziehungsberechtigten, entweder auf der Rückseite, auf einem beigelegten Zettel oder in der E-Mail. Auch Kita-Gruppen und Schulklassen können gemeinsam mitmachen. Dann kommen die Bilder in einem Umschlag, auf jedem stehen Name und Alter des Kindes, dazu die Telefonnummer einer Erzieherin, eines Erziehers oder der Lehrkraft.",
+        "Eine Jury der Polizei wählt vier Bilder aus. Nach der Mitteilung stellt die Polizei ausgewählte Bilder an den Adventssonntagen in ihren Kanälen in den sozialen Netzwerken vor. Am 22. Dezember besuchen Polizistinnen und Polizisten die Gewinnerinnen und Gewinner mit dem Streifenwagen und bringen den Preis vorbei: einzelne Kinder zu Hause, bei einer Gruppe wird ein Besuch mit der Kita oder Schule vereinbart. Die vollständigen Teilnahmebedingungen und Hinweise zum Datenschutz stehen nach Angaben der Polizei auf ihrer Internetseite; diese war am Samstagmorgen für uns nicht abrufbar."
+      ],
+      "fakten": [
+        "Weihnachtsmalwettbewerb „Weihnachten auf Streife“ der Polizei Düren für Kinder bis elf Jahre",
+        "Einsendeschluss 14. Dezember 2026, per Post oder E-Mail an die Pressestelle",
+        "vier Gewinnerbilder, Besuch mit dem Streifenwagen am 22. Dezember"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Polizei Düren, 13.11.2026: Weihnachtsmalwettbewerb, Motto „Weihnachten auf Streife“, Kinder im Alter von 0 bis 11 Jahren (bis elf Jahre); Vorjahr 105 Kinder, Teilnehmerrekord; Motive wie geschmückter Streifenwagen, Streifenfahrt im Schnee, Begegnung mit dem Weihnachtsmann.",
+          "belege": [
+            "https://www.presseportal.de/blaulicht/pm/8/6389777"
+          ],
+          "stelle": "Pressemitteilung, Absätze 1 und 2"
+        },
+        {
+          "aussage": "Einsendung bis 14. Dezember 2026 per Post an Kreispolizeibehörde Düren, Pressestelle, Stichwort „Malwettbewerb“, Aachener Straße 28, 52349 Düren, oder eingescannt per E-Mail mit Betreff „Malwettbewerb“; bei Einzeleinsendung Name, Alter, vollständige Anschrift des Kindes und Telefonnummer der Eltern; Sammelteilnahme von Schulklassen und Kita-Gruppen mit Name und Alter auf jedem Bild und Telefonnummer der Lehrkraft oder Erzieherin/Erzieher. Angaben auf der Rückseite, auf einem beigefügten Zettel oder in der E-Mail.",
+          "belege": [
+            "https://www.presseportal.de/blaulicht/pm/8/6389777"
+          ],
+          "stelle": "Pressemitteilung, Absätze 3 bis 5"
+        },
+        {
+          "aussage": "Jury wählt vier Gewinnerbilder; am 22. Dezember 2026 Besuch mit dem Streifenwagen, Einzelteilnehmer zu Hause, bei Sammelteilnahme Kontakt mit Lehrkraft/Betreuungsperson; Teilnahmebedingungen und Datenschutz auf der Website der Kreispolizeibehörde; Website am 14.11. 09:15 Uhr mit Bot-Prüfung (HTTP 503), nicht umgangen. Gewinnerbilder werden an den Adventssonntagen auf den Social-Media-Kanälen vorgestellt.",
+          "belege": [
+            "https://www.presseportal.de/blaulicht/pm/8/6389777",
+            "https://www.presseportal.de/blaulicht/nr/8"
+          ],
+          "stelle": "Pressemitteilung, Absätze 6 und 7; Dienststellenliste (Veröffentlichung 13.11.2026 08:56 Uhr)",
+          "selbstauskunft": "Abrufversuch der Redaktion am Samstagmorgen"
+        }
+      ],
+      "quelle": {
+        "name": "Polizei Düren: Weihnachten auf Streife – Polizei Düren startet Weihnachtsmalwettbewerb 2026 (Presseportal, 13.11.2026)",
+        "url": "https://www.presseportal.de/blaulicht/pm/8/6389777",
+        "stand": "2026-11-14"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Presseportal, Meldungen der Polizei Düren",
+          "url": "https://www.presseportal.de/blaulicht/nr/8",
+          "stand": "2026-11-14"
+        }
+      ]
+    }
+  ]
+}

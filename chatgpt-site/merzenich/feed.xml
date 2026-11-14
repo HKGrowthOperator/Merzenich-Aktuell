@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 13 Nov 2026 14:20:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 14 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</guid>
+<pubDate>Sat, 14 Nov 2026 08:16:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Unter dem Motto „Weihnachten auf Streife“ sucht die Kreispolizei wieder Bilder von Kindern bis elf Jahre. Vier Gewinnerinnen und Gewinner bekommen kurz vor Weihnachten Besuch mit dem Streifenwagen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Polizeiwache in Nordrhein-Westfalen</media:description></media:content>
+</item>
 <item>
 <title>Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Nachtrag vom 2. November: Die erste Mannschaft siegte am 29. Oktober 9:1 bei den TTF Weisweiler/Wenau IV und am 30. Oktober 8:2 bei TTC Mersch-Pattern IV. Laut click-TT steht sie mit 21:3 Punkten an der Tabellenspitze.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-08-c10997cd29.jpg" medium="image"><media:credit>TUBS / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Sporthalle</media:description></media:content>
-</item>
-<item>
-<title>Amtsblatt 12/2026 erscheint am 13. November: Beiträge bis 3. November einreichen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/amtsblatt-12-2026-abgabeschluss-3-november/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/amtsblatt-12-2026-abgabeschluss-3-november/</guid>
-<pubDate>Sun, 25 Oct 2026 21:26:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Vereine und Einrichtungen, die Termine oder Mitteilungen im nächsten Amtsblatt der Gemeinde unterbringen wollen, haben bis Dienstag, 3. November, Zeit.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
 </item>
 </channel>
 </rss>

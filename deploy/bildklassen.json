@@ -453,6 +453,13 @@
       "motive": [
         "rettungswagen"
       ]
+    },
+    "leben.polizei.aktion": {
+      "titel": "Mitmachaktion oder Wettbewerb der Polizei für Familien (Symbolbild Polizeifahrzeug, kein Foto der Aktion)",
+      "motive": [
+        "streifenwagen",
+        "polizeimotorrad"
+      ]
     }
   }
 }

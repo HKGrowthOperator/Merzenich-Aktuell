@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-13T15:20:00+01:00",
- "anzahl": 240,
+ "generated": "2026-11-14T09:16:00+01:00",
+ "anzahl": 241,
  "bestand": {
-  "gesamt": 240,
+  "gesamt": 241,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 34,
    "rathaus": 38,
-   "leben": 54,
+   "leben": 55,
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 167,
+   "merzenich": 168,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 240,
+    "anzahl": 241,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 54,
+    "anzahl": 55,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 167,
+    "anzahl": 168,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+   "url": "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
+   "titel": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen",
+   "teaser": "Unter dem Motto „Weihnachten auf Streife“ sucht die Kreispolizei wieder Bilder von Kindern bis elf Jahre. Vier Gewinnerinnen und Gewinner bekommen kurz vor Weihnachten Besuch mit dem Streifenwagen.",
+   "kicker": "Leben · Familie",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-14T09:16:00+01:00",
+   "aktualisiert": "2026-11-14T09:16:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "polizei",
+     "label": "Polizei"
+    },
+    {
+     "slug": "familie",
+     "label": "Familie"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg",
+    "srcset": "/assets/editorial-pools/polizei/polizei-10-b2dae76ca0-480.webp 480w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-800.webp 800w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0-1200.webp 1200w, /assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg 1920w",
+    "alt": "Polizeiwache in Nordrhein-Westfalen",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
    "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
@@ -9955,11 +9993,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
-  "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
-  "titel": "Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn"
+  "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+  "url": "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
+  "titel": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
+   "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+   "titel": "Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn"
+  },
   {
    "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
    "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
@@ -9974,11 +10017,6 @@
    "id": "2026-11-12-merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag",
    "url": "/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
    "titel": "Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen"
-  },
-  {
-   "id": "2026-11-11-brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten",
-   "url": "/rathaus/brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten/",
-   "titel": "Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen"
   }
  ],
  "startseitenMotive": {
@@ -10001,7 +10039,6 @@
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3": 2,
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91": 1,
-  "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
   "editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f": 1,
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36": 1,
@@ -10009,6 +10046,7 @@
   "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 2,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
+  "editorial-pools/polizei/polizei-10-b2dae76ca0": 1,
   "editorial-pools/schule/schule-03-dbb36132c8": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 1,
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
@@ -10038,8 +10076,8 @@
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3",
-  "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382",
-  "editorial-pools/kultur/kultur-01-8826d38c5d"
+  "editorial-pools/kultur/kultur-01-8826d38c5d",
+  "editorial-pools/polizei/polizei-10-b2dae76ca0"
  ],
  "motivMax": 2
 }

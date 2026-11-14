@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T14:22:19.125Z",
+  "updatedAt": "2026-11-14T08:17:39.620Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1727,6 +1727,15 @@
       "assignedAt": "2026-11-13T14:22:19.124Z",
       "articleId": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
       "articleDate": "2026-11-13T15:20:00+01:00"
+    },
+    "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/": {
+      "imageId": "web-polizei-10-b2dae76c",
+      "pool": "polizei",
+      "motiv": "polizeimotorrad",
+      "regel": "leben.polizei.aktion",
+      "assignedAt": "2026-11-14T08:17:39.620Z",
+      "articleId": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+      "articleDate": "2026-11-14T09:16:00+01:00"
     }
   }
 }

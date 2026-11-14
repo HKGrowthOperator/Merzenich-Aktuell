@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 13 Nov 2026 14:20:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 14 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</guid>
+<pubDate>Sat, 14 Nov 2026 08:16:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Unter dem Motto „Weihnachten auf Streife“ sucht die Kreispolizei wieder Bilder von Kindern bis elf Jahre. Vier Gewinnerinnen und Gewinner bekommen kurz vor Weihnachten Besuch mit dem Streifenwagen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Polizeiwache in Nordrhein-Westfalen</media:description></media:content>
+</item>
 <item>
 <title>Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Einsatzleitwagen der Freiwilligen Feuerwehr stammt aus dem Jahr 1999. Der Gemeinderat hat die Verwaltung einstimmig beauftragt, ein neues Fahrzeug zu beschaffen, zugeschnitten auf die Einsatzführung vor Ort. Ob ein Auftrag inzwischen erteilt ist, geht aus den veröffentlichten Unterlagen nicht hervor.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-05-64a62b437a.jpg" medium="image"><media:credit>TUBS / Wikimedia Commons · gemeinfrei</media:credit><media:description>Feuerwehrhaus mit Einsatzfahrzeugen</media:description></media:content>
-</item>
-<item>
-<title>„Mental Load“: Online-Vortrag des Kreises am 18. November ist ausgebucht</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:40:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Wer in der Familie an alles denken muss, trägt eine unsichtbare Last. Ein Familientherapeut der SkF-Beratungsstelle Düren zeigt im Online-Vortrag des Kreises, wie sich Verantwortung fairer verteilen lässt. Die Plätze sind inzwischen vergeben.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg" medium="image"><media:credit>Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H</media:description></media:content>
 </item>
 </channel>
 </rss>
