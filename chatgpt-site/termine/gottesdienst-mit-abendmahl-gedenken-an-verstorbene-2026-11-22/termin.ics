@@ -9,7 +9,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22@merzenich
  -aktuell.de
-DTSTAMP:20261113T060000Z
+DTSTAMP:20261114T060000Z
 DTSTART:20261122T090000Z
 SUMMARY:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
 DESCRIPTION:„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am S

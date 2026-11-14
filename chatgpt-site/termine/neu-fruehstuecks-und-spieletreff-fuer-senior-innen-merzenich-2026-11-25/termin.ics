@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25
  @merzenich-aktuell.de
-DTSTAMP:20261113T060000Z
+DTSTAMP:20261114T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
