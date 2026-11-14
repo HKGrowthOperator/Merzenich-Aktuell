@@ -1,0 +1,13 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Nach Angriff auf Frau in ihrer Wohnung - Die Polizei fahndet öffentlich mit einem Phantombild des Tatverdächtigen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6390432",
+      "datum": "2026-11-14",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
