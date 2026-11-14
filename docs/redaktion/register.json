@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-14-claude-morgens.md",
-  "source_check_window": "14.11.2026, 07:05:22–07:13:34 Europe/Berlin; ergänzende Original-/Commons-Webabrufe etwa 07:05–07:13",
+  "latest_dossier": "dossiers/2026-11-14-mittags.md",
+  "source_check_window": "14.11.2026, 11:57:31–12:01:36 Europe/Berlin; Livebild 12:00:09, ergänzende Original-/Commons-Webprüfung etwa 11:59–12:01",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11479,14 +11479,14 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-14 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-14T12:07:06+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
       "implementation_commit": "45ee6ad4",
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
-      "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten.",
+      "latest_research_dossier": "dossiers/2026-11-14-mittags.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "Neue Quellenentwicklung: offizielle Teilnahme-/Datenschutzbedingungen erstmals direkt lesbar; Widersprüche und fehlende Unabhängigkeit dokumentiert",
+      "latest_research_scope": "Artikel-/Bildprüfung: Sachangaben gedeckt, Bildbeschreibung und Alt-Text bestätigt falsch; Quellenabhängigkeit und Regelwidersprüche bleiben offen",
       "research_history": [
         {
           "date": "2026-11-13",
@@ -11502,6 +11502,15 @@
           "dossier": "dossiers/2026-11-14-morgens.md",
           "text_status": "T2",
           "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "correction_required": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
           "implementation": "keine_Artikelumsetzung"
         }
       ],
@@ -11523,6 +11532,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-14-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "heading": "KORREKTUREN – Bildbeschreibung/Alt-Text Malwettbewerb"
         }
       ],
       "latest_research_review": {
@@ -11534,8 +11549,38 @@
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung",
-        "scope": "Regeln gelesen; keine unabhängige Freigabe, Bildsichtung weiterhin offen"
-      }
+        "scope": "Regeln gelesen; keine unabhängige Freigabe, Bildsichtung weiterhin offen",
+        "article_image_audit": {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "status": "offen",
+          "confirmed": true,
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "slug": "weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
+          "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
+          "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
+          "checked_at": "2026-11-14T12:07:06+01:00",
+          "implementation": "keine_Websiteaenderung"
+        }
+      },
+      "correction_history": [
+        {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "status": "offen",
+          "confirmed": true,
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "slug": "weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
+          "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
+          "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
+          "checked_at": "2026-11-14T12:07:06+01:00",
+          "implementation": "keine_Websiteaenderung"
+        }
+      ]
     },
     {
       "id": "MA-WOCHENVORSCHAU-2026-47",
@@ -11566,17 +11611,17 @@
       "location_section": "Gemeindeweit / Pendelverkehr · Verkehr",
       "change_type": "Neue Betriebsstörung im Regionalverkehr",
       "image_status": "B0",
-      "notes": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen. | Claude 14.11. morgens: nicht umgesetzt (siehe Dossier Abschnitt 3).",
+      "notes": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen. | Claude 14.11. morgens: nicht umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. mittags: Morgenmeldung im aktuellen Direktabruf des Betriebsfeeds nicht mehr enthalten. Kein eigener lesbarer Entstörungsbeleg; weder Fortdauer noch gesichertes Ende ableiten. Suchauszüge derselben Quelle zeigen teils frühere/ineinander übergehende Meldungsstände; keine neue S19-Betroffenheit oder Ersatzbuslage daraus behaupten. Keine neue Themenkarte, T2 bleibt.",
       "text_status": "T2",
       "dossier": "dossiers/2026-11-14-morgens.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-14T07:16:41+01:00",
+      "last_checked_at": "2026-11-14T12:07:06+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
+      "latest_research_dossier": "dossiers/2026-11-14-mittags.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen.",
+      "latest_research_scope": "Nur Bestandskontrolle: Eintrag nicht mehr im aktuellen Feed, Entstörung nicht separat belegt; kein aktueller Artikelauftrag",
       "research_history": [
         {
           "date": "2026-11-14",
@@ -11585,6 +11630,15 @@
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung",
+          "scope": "Feed-Abwesenheit ohne Entstörungsbeleg"
         }
       ],
       "dossier_history": [
@@ -11593,6 +11647,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-14-morgens.md",
           "heading": "MA-BAHN-DUEREN-HORREM-WEICHE-1411"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-14-mittags.md",
+          "heading": "Kontrollvermerk Bahn, keine neue Themenkarte"
         }
       ],
       "latest_research_review": {
@@ -11603,7 +11663,8 @@
           "visual_check": "offen",
           "integration": "nicht_erfolgt"
         },
-        "implementation": "keine_Artikelumsetzung"
+        "implementation": "keine_Artikelumsetzung",
+        "scope": "Keine aktuelle Fortdauer oder Entstörung belegt; T2 bleibt"
       }
     },
     {
@@ -13523,6 +13584,69 @@
       "implementation_commit": "45ee6ad4",
       "summary": "Keine Korrekturen; Service-Kurzmeldung Weihnachtsmalwettbewerb der Polizei; Kalender unverändert.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-14",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-14-mittags.md",
+      "compared_with": "dossiers/2026-11-14-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-14-claude-morgens.md",
+      "base_commit": "05527f3a098284bfbf43355261bf869d2787e32f",
+      "implementation_commit": null,
+      "summary": "Eine bestätigte Korrektur: Bildbeschreibung/Alt-Text des neuen Malwettbewerbsartikels nennen Polizeiwache, tatsächlich Polizeimotorrad (Livebild und Commons geprüft). Neuer Gottesdiensttermin Morschenich heute 17:30 Uhr. Keine neue Themenkarte. Bahn-Morgenmeldung nicht mehr im aktuellen Feed, Entstörung nicht belegt; offene Quellen-/Artikelprüfungen dokumentiert.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "topic_rechecks": 2,
+      "retained_T2_topics": 3,
+      "corrections_required": 1,
+      "new_corrections_required": 1,
+      "correction_ids": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "articles_checked": 5,
+      "article_partial_checks": 12,
+      "repository_article_files_read": 49,
+      "repository_event_files_read": 20,
+      "repository_area_files_read": 17,
+      "new_or_changed_events": 1,
+      "new_events": [
+        {
+          "title": "Wortgottesdienst mit Kommunionausteilung",
+          "date": "2026-11-14",
+          "time": "17:30",
+          "place": "St.-Lambertus-Kapelle in Morschenich, laut Veranstaltertext",
+          "organizer": "St. Lambertus Kapelle Morschenich",
+          "source": "https://www.heimat-info.de/beitraege/27e440ee-d48e-43ba-8a6a-a6a3edd507ce",
+          "source_checked_at": "2026-11-14T11:58:54+01:00",
+          "independence": "Einzelner Veranstalterbeleg",
+          "end_time": null
+        }
+      ],
+      "complete_drafts": 0,
+      "source_check_window": "14.11.2026, 11:57:31–12:01:36 Europe/Berlin; Livebild 12:00:09, ergänzende Original-/Commons-Webprüfung etwa 11:59–12:01",
+      "prepared_at": "2026-11-14T12:07:06+01:00",
+      "deadline": "2026-11-14T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert; Vorbereitungszeit ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Malwettbewerb: bestätigte Bildbeschreibung/Alt-Text korrigieren; Artikel und Umsetzungscommit erhalten, keine Websiteänderung durch Recherche",
+        "Regelwidersprüche bei Benachrichtigung/Datenbausteinen und fehlende unabhängige Bestätigung der Aktion bleiben",
+        "Düren–Horrem: Morgenmeldung im aktuellen Feed nicht mehr enthalten, Entstörung nicht separat belegt; keine aktuelle S19-Aussage aus Suchauszügen",
+        "Gottesdienst 14.11. Morschenich 17:30 Uhr: einzelner Veranstalterbeleg, Endzeit/Anmeldung nicht genannt, vor Anlage nochmals Bestand prüfen",
+        "Bauausschuss 12.11. ohne neuen öffentlichen Ergebnisbeleg im gelesenen RIS",
+        "Gemeinde-Martinsmitteilung, Förderverein-Golzheim-Termin und historischer Frühstückseintrag weiterhin HTTP 404; zugehörige Artikelprüfung unvollständig",
+        "BdSt-PDF HTTP 403, Vergleichswerte nicht erneut am Original geprüft",
+        "Jonge vom Berg direkt Site Unavailable trotz HTTP 200, normale einzelne Original-Detailseite lesbar; Vereinsprüfung unvollständig",
+        "Pluriversum, Weckmannschießen und Senioren-Nachmittag: bekannte Kalenderkonflikte; Frühstück 25.11. Ortszeile fehlt",
+        "Derbywertung, unabhängige Sportdatenherkunft, historische S19-Reparaturmeldung und historische Brandschutzbelege offen",
+        "LAG-Seiten zunächst Lese-Timeout, erneuter Abruf erfolgreich; kein neuer Merzenicher Förderaufruf",
+        "Buntstiftmotiv aus Morgenkarte weiterhin ohne abgeschlossene Bildsichtfreigabe"
+      ]
     }
   ]
 }
