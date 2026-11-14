@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [13.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-13-claude-nachmittags.md), Vergleichsbasis [ChatGPT 13.11. mittags](dossiers/2026-11-13-mittags.md) und [Claude 13.11. morgens](dossiers/2026-11-13-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [14.11.2026, Claude-Morgenlauf](dossiers/2026-11-14-claude-morgens.md), Vergleichsbasis [ChatGPT 14.11. morgens](dossiers/2026-11-14-morgens.md) und [Claude 13.11. nachmittags](dossiers/2026-11-13-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 14.11. morgens:** 1 neue Kurzmeldung „Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen“ (261 Wörter, Polizeimitteilung). Kalender unverändert. Commit `45ee6ad4`.
 
 **Umgesetzt am 13.11. nachmittags:** 1 neue Meldung „Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn“ (Standard, 807 Wörter). Kalender unverändert. Mindesttakt 13.11.: 2 Meldungen. Commit `03ccda03`.
 

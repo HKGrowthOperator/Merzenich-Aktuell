@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-14-morgens.md",
+  "latest_dossier": "dossiers/2026-11-14-claude-morgens.md",
   "source_check_window": "14.11.2026, 07:05:22–07:13:34 Europe/Berlin; ergänzende Original-/Commons-Webabrufe etwa 07:05–07:13",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11475,15 +11475,15 @@
       "priority": "P3",
       "location_section": "Gemeindeweit · Leben / Familie",
       "change_type": "Neue kreisweite Polizeiankündigung",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
-      "dossier": "dossiers/2026-11-13-mittags.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-14T07:16:41+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-14-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-14 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar.",
+      "implementation_commit": "45ee6ad4",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Neue Quellenentwicklung: offizielle Teilnahme-/Datenschutzbedingungen erstmals direkt lesbar; Widersprüche und fehlende Unabhängigkeit dokumentiert",
@@ -11517,6 +11517,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-14-morgens.md",
           "heading": "MA-POLIZEI-MALWETTBEWERB-2026"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-14-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -11560,7 +11566,7 @@
       "location_section": "Gemeindeweit / Pendelverkehr · Verkehr",
       "change_type": "Neue Betriebsstörung im Regionalverkehr",
       "image_status": "B0",
-      "notes": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen.",
+      "notes": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen. | Claude 14.11. morgens: nicht umgesetzt (siehe Dossier Abschnitt 3).",
       "text_status": "T2",
       "dossier": "dossiers/2026-11-14-morgens.md",
       "workflow_status": "gesperrt",
@@ -11606,7 +11612,7 @@
       "location_section": "Merzenich · Sport",
       "change_type": "Neue Tabellenentwicklung nach Konkurrenzspiel",
       "image_status": "B1",
-      "notes": "Offizielle SC-Seite und FuPa führen SC Merzenich nun auf Tabellenplatz 4 bei 27 Punkten. Offizieller automatischer Bericht und Ligenseite führen Welldorf–Oberzier 1:0. Verbandsbestand keine unabhängigen Quellen; FuPa-Datenherkunft ungeklärt, dritter eigenständiger Ereignisbeleg fehlt. T2. Frühere Rangangabe des Spieltagsartikels zum 08.11. historisch korrekt, keine rückwirkende Korrektur daraus. Aktuellen Sportstand/Nachtrag prüfen, keine Dublette.",
+      "notes": "Offizielle SC-Seite und FuPa führen SC Merzenich nun auf Tabellenplatz 4 bei 27 Punkten. Offizieller automatischer Bericht und Ligenseite führen Welldorf–Oberzier 1:0. Verbandsbestand keine unabhängigen Quellen; FuPa-Datenherkunft ungeklärt, dritter eigenständiger Ereignisbeleg fehlt. T2. Frühere Rangangabe des Spieltagsartikels zum 08.11. historisch korrekt, keine rückwirkende Korrektur daraus. Aktuellen Sportstand/Nachtrag prüfen, keine Dublette. | Claude 14.11. morgens: nicht umgesetzt (siehe Dossier Abschnitt 3).",
       "related_article_slug": "fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
       "text_status": "T2",
       "dossier": "dossiers/2026-11-14-morgens.md",
@@ -13507,6 +13513,16 @@
         "Derbywertung, historischer S19-Reparaturbeleg, historische Brandschutzbelege offen",
         "Neuer Förderaufruf für Merzenich nicht aus Eschweiler-Infoabend ableiten; neue Weichen-/Buntstift-Bildsichtung offen"
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-14-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-14-morgens.md",
+      "implementation_commit": "45ee6ad4",
+      "summary": "Keine Korrekturen; Service-Kurzmeldung Weihnachtsmalwettbewerb der Polizei; Kalender unverändert.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }
