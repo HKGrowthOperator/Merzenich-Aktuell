@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-13-claude-nachmittags.md",
-  "source_check_window": "13.11.2026, 11:58:18–12:01:46 Europe/Berlin; ergänzende Original-/Commons-Webprüfung bis etwa 12:03",
+  "latest_dossier": "dossiers/2026-11-14-morgens.md",
+  "source_check_window": "14.11.2026, 07:05:22–07:13:34 Europe/Berlin; ergänzende Original-/Commons-Webabrufe etwa 07:05–07:13",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11479,19 +11479,27 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-13-mittags.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-13T12:07:08+01:00",
+      "last_checked_at": "2026-11-14T07:16:41+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3).",
-      "latest_research_dossier": "dossiers/2026-11-13-mittags.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar.",
+      "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "Polizeimitteilung vollständig gelesen, Dienststellenliste und erfolglose Behörden-/unabhängige Quellensuche dokumentiert",
+      "latest_research_scope": "Neue Quellenentwicklung: offizielle Teilnahme-/Datenschutzbedingungen erstmals direkt lesbar; Widersprüche und fehlende Unabhängigkeit dokumentiert",
       "research_history": [
         {
           "date": "2026-11-13",
           "edition": "mittags",
           "dossier": "dossiers/2026-11-13-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
@@ -11503,6 +11511,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-13-mittags.md",
           "heading": "MA-POLIZEI-MALWETTBEWERB-2026"
+        },
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
+          "heading": "MA-POLIZEI-MALWETTBEWERB-2026"
         }
       ],
       "latest_research_review": {
@@ -11513,7 +11527,8 @@
           "visual_check": "offen",
           "integration": "nicht_erfolgt"
         },
-        "implementation": "keine_Artikelumsetzung"
+        "implementation": "keine_Artikelumsetzung",
+        "scope": "Regeln gelesen; keine unabhängige Freigabe, Bildsichtung weiterhin offen"
       }
     },
     {
@@ -11538,6 +11553,99 @@
           "heading": "1. Umgesetzt"
         }
       ]
+    },
+    {
+      "id": "MA-BAHN-DUEREN-HORREM-WEICHE-1411",
+      "priority": "P2",
+      "location_section": "Gemeindeweit / Pendelverkehr · Verkehr",
+      "change_type": "Neue Betriebsstörung im Regionalverkehr",
+      "image_status": "B0",
+      "notes": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen.",
+      "text_status": "T2",
+      "dossier": "dossiers/2026-11-14-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-14T07:16:41+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "mobil.nrw meldet am 14.11. um 06:48 Uhr RE 1/RE 9 zwischen Düren und Horrem wegen Weichenreparatur beeinträchtigt. Im Abruf 07:13:34 weiterhin sichtbar. Endfeld 09:00 Uhr gegenüber Fließtext Ende nicht abschätzbar: kein gesichertes Ende behaupten. Keine S19-Betroffenheit, keine Ersatzbusse oder Vollsperrung belegt. Zuginfo HTTP 200 nur Seitentitel lesbar; unabhängiger Ereignisbeleg und Drittquelle fehlen. Vor Umsetzung Betriebsstand erneut prüfen.",
+      "research_history": [
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
+          "heading": "MA-BAHN-DUEREN-HORREM-WEICHE-1411"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:Railway switch lever 01.jpg, Bengt Oberger, CC BY-SA 3.0, 3872 × 2592 px",
+          "visual_check": "offen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-SC-TABELLE-1411",
+      "priority": "P3",
+      "location_section": "Merzenich · Sport",
+      "change_type": "Neue Tabellenentwicklung nach Konkurrenzspiel",
+      "image_status": "B1",
+      "notes": "Offizielle SC-Seite und FuPa führen SC Merzenich nun auf Tabellenplatz 4 bei 27 Punkten. Offizieller automatischer Bericht und Ligenseite führen Welldorf–Oberzier 1:0. Verbandsbestand keine unabhängigen Quellen; FuPa-Datenherkunft ungeklärt, dritter eigenständiger Ereignisbeleg fehlt. T2. Frühere Rangangabe des Spieltagsartikels zum 08.11. historisch korrekt, keine rückwirkende Korrektur daraus. Aktuellen Sportstand/Nachtrag prüfen, keine Dublette.",
+      "related_article_slug": "fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08",
+      "text_status": "T2",
+      "dossier": "dossiers/2026-11-14-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-14T07:16:41+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "latest_research_dossier": "dossiers/2026-11-14-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Offizielle SC-Seite und FuPa führen SC Merzenich nun auf Tabellenplatz 4 bei 27 Punkten. Offizieller automatischer Bericht und Ligenseite führen Welldorf–Oberzier 1:0. Verbandsbestand keine unabhängigen Quellen; FuPa-Datenherkunft ungeklärt, dritter eigenständiger Ereignisbeleg fehlt. T2. Frühere Rangangabe des Spieltagsartikels zum 08.11. historisch korrekt, keine rückwirkende Korrektur daraus. Aktuellen Sportstand/Nachtrag prüfen, keine Dublette.",
+      "research_history": [
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-14",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-14-morgens.md",
+          "heading": "MA-SC-TABELLE-1411"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:Artificial turf (5064316111).jpg, Håkan Dahlström, CC BY 2.0, 5616 × 3744 px",
+          "visual_check": "frühere Sichtprüfung im Morgendossier 13.11.; Metadaten 14.11. erneut gelesen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
     }
   ],
   "archive": {
@@ -13353,6 +13461,52 @@
       "implementation_commit": "03ccda03",
       "summary": "Keine Korrekturen; Wochenvorschau 16.–22.11. (Standard); Kalender unverändert; Bauausschuss-Ergebnisse weiter offen. Mindesttakt 13.11.: 2 Meldungen.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-14",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-14-morgens.md",
+      "compared_with": "dossiers/2026-11-13-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-13-claude-nachmittags.md",
+      "base_commit": "58eccbda7248c72fc9e8ec625fe3e0174ca7fa56",
+      "implementation_commit": null,
+      "summary": "Neu: Weichenreparatur Düren–Horrem bei RE 1/RE 9 und SC Merzenich jetzt Tabellenrang vier. Malwettbewerb-Karte aktualisiert: Behördenartikel/Teilnahmebedingungen jetzt lesbar. Drei T2-Karten, keine unabhängige Freigabe. Regionaler Förder-Infoabend erstmals erfasst, Modelleisenbahn bestätigt. Neue Wochenvorschau geprüft, historische Grenzen/404-Quellen ausdrücklich dokumentiert.",
+      "topics": 3,
+      "new_topics": 2,
+      "updated_topics": 1,
+      "blocked_T2": 3,
+      "corrections_required": 0,
+      "new_corrections_required": 0,
+      "articles_checked": 4,
+      "article_partial_checks": 12,
+      "repository_article_files_read": 48,
+      "repository_event_files_read": 20,
+      "repository_area_files_read": 17,
+      "new_or_changed_events": 1,
+      "event_change_scope": "Erstmals erfasster regionaler Infoabend in Eschweiler; keine Merzenicher Förderfrist abgeleitet",
+      "new_organizer_confirmations": 1,
+      "complete_drafts": 0,
+      "source_check_window": "14.11.2026, 07:05:22–07:13:34 Europe/Berlin; ergänzende Original-/Commons-Webabrufe etwa 07:05–07:13",
+      "prepared_at": "2026-11-14T07:16:41+01:00",
+      "deadline": "2026-11-14T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert; Vorbereitungszeit ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Weichenstörung: vor Umsetzung erneut live prüfen, Ende unbekannt, keine S19-Betroffenheit belegt; unabhängige Bestätigung und Drittbeleg fehlen",
+        "SC-Tabelle: unabhängige Bestätigung und dritter eigenständiger Ereignisbeleg fehlen; historische Rangangabe nicht als Fehler ausgeben",
+        "Malwettbewerb: Regeln jetzt gelesen, Widersprüche bei Benachrichtigung/Datenbausteinen und Quellenabhängigkeit bleiben",
+        "Bauausschuss 12.11. ohne neuen öffentlichen Ergebnisbeleg im gelesenen RIS",
+        "Gemeinde-Martinsmitteilung, Förderverein-Golzheim-Termin und historischer Frühstückseintrag heute HTTP 404; Artikelprüfung dazu unvollständig",
+        "BdSt-PDF HTTP 403, Vergleichswerte nicht erneut am Original geprüft",
+        "Wochenvorschau: heutiger Mental-Load-Ausgebuchtstatus bestätigt, Zeitpunkt Ende Oktober nicht historisch erneut belegt; Betriebszahlen der Übernachtungssteuer nur erste KI-Recherche der Verwaltung",
+        "Pluriversum, Weckmannschießen und Senioren-Nachmittag: bekannte Kalenderkonflikte; Frühstück 25.11. Ortszeile fehlt",
+        "Jonge vom Berg direkt Fehlerseite trotz HTTP 200, normale einzelne Original-Detailseite lesbar; Vereinsprüfung unvollständig",
+        "Derbywertung, historischer S19-Reparaturbeleg, historische Brandschutzbelege offen",
+        "Neuer Förderaufruf für Merzenich nicht aus Eschweiler-Infoabend ableiten; neue Weichen-/Buntstift-Bildsichtung offen"
+      ]
     }
   ]
 }
