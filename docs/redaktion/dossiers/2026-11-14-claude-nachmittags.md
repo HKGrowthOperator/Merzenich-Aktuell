@@ -67,7 +67,9 @@ Heimat-Info-Veranstaltungskalender um 14:50 Uhr gelesen (dieselben 10 Einträge 
 
 Commits: `d4e035d8` (Bildkorrektur), `afc7a455` (Meldung), `82bb2474` (Termin), je Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (Stand von main, Kette neu), Dokumentation folgt. Abgleich 14:46 Uhr `angestossen: true`, danach `angestossen: false` (Lauf schon angestoßen, nächster planmäßig 15:05 Uhr).
 
-Live-Nachweis: Import-XML auf GitHub enthält Meldung und Termin (3 Treffer) seit 14:50 Uhr. Meldung und Bildkorrektur um 14:50 Uhr auf der Website noch nicht sichtbar (HTTP 404 bzw. alte Bildunterschrift); Nachweis nach dem Abgleich siehe Nachtrag.
+Live-Nachweis: Import-XML auf GitHub enthält Meldung und Termin (3 Treffer) seit 14:50 Uhr. Nachtrag 14:54 Uhr: Meldung seit 14:53 Uhr HTTP 200 und oben in „Neu in Merzenich“; Termin Morschenich HTTP 200; in der Nachrichten-Sitemap um 14:54 Uhr noch nicht enthalten (Sitemap mit 10 Minuten Zwischenspeicher, `max-age=600`).
+
+**Bildkorrektur live nicht wirksam:** Die Import-XML trägt jetzt beim Foto den Alt-Text „Polizeimotorrad“, die Live-Seite zeigt um 14:54 Uhr weiter „Polizeiwache in Nordrhein-Westfalen“. Ursache im Plugin (`includes/abgleich.php`, `ma_abgleich_bild_veraltet`): Der Abgleich tauscht bei bestehenden Beiträgen nur dann etwas aus, wenn sich die Bilddatei ändert; den Alt-Text eines schon angelegten Anhangs (`_wp_attachment_image_alt`) zieht er nicht nach. Abhilfe: Plugin-Änderung (Alt-Text bestehender Poolanhänge mit dem Import abgleichen) oder Alt-Text einmalig im Backend ändern. Beides außerhalb dieses Laufs (kein Backend-Zugang, Plugin-Auslieferung nicht automatisch); als Werkzeugpunkt gemeldet.
 
 ## 8. Bildprüfung
 
@@ -87,4 +89,4 @@ Live-Nachweis: Import-XML auf GitHub enthält Meldung und Termin (3 Treffer) sei
 - Sport Dienstag 17.11.: Ergebnisse vom 15.11., Tabelle.
 - HFA 19.11.: Empfehlungen nach der Sitzung.
 - Zeitkonflikte Weckmannschießen (15.11., morgen), Senioren-Nachmittag, Krätzchensitzung.
-- Werkzeugpunkte (Feuerwehr-Automatik „Hund“, Termin-Automatik gleichzeitige Termine, Heimat-Info-Kalender Seite 2) warten auf Entscheidung.
+- Werkzeugpunkte (Feuerwehr-Automatik „Hund“, Termin-Automatik gleichzeitige Termine, Heimat-Info-Kalender Seite 2, neu: Abgleich übernimmt geänderte Alt-Texte bestehender Poolanhänge nicht) warten auf Entscheidung.
