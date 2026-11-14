@@ -102,6 +102,10 @@ const MOTIV_ALT = {
   tennisplatz: 'Tennisplatz',
   stadion: 'Stadion',
   rettungswagen: 'Rettungswagen',
+  // 14.11.2026: Polizeipool zeigt nicht nur Wachen; Motiv vor Poolangabe.
+  polizeimotorrad: 'Polizeimotorrad',
+  polizeihubschrauber: 'Polizeihubschrauber',
+  streifenwagen: 'Streifenwagen der Polizei',
   oelspur: 'Warnschild vor einer Ölspur',
   rathaus: 'Rathaus',
 };
