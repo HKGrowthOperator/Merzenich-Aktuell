@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Wortgottesdienst mit Kommunionausteilung in der St.-Lambertus-
+ Kapelle Morschenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:wortgottesdienst-st-lambertus-kapelle-morschenich-2026-11-14@merzenich-
+ aktuell.de
+DTSTAMP:20261114T060000Z
+DTSTART:20261114T163000Z
+SUMMARY:Wortgottesdienst mit Kommunionausteilung in der St.-Lambertus-Kapel
+ le Morschenich
+DESCRIPTION:Wortgottesdienst mit Kommunionausteilung am Samstag\, 14. Novem
+ ber\, um 17.30 Uhr in der St.-Lambertus-Kapelle in Morschenich\, geleitet 
+ vom Diakon\, mit Orgelbegleitung.\nVeranstalter: St. Lambertus Kapelle Mor
+ schenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/wortgottes
+ dienst-st-lambertus-kapelle-morschenich-2026-11-14/
+LOCATION:St.-Lambertus-Kapelle Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wortgottesdienst-
+ st-lambertus-kapelle-morschenich-2026-11-14/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
