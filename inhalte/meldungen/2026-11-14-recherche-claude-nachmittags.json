@@ -1,0 +1,88 @@
+{
+  "hinweis": "Nachmittagslauf 14.11.2026 (Claude): Beschlussvorlagen 146/2026 (02.11.2026) und 134/2026 (09.10.2026) für den Haupt- und Finanzausschuss am 19.11.2026, im Ratsinformationssystem am 14.11.2026 um 14:47 Uhr gelesen. Vorschläge, keine Beschlüsse; Konzept und Förderantrag als Anlagen nicht ausgewertet.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Rathaus · Verwaltung",
+      "titel": "Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde",
+      "dek": "Die Verwaltung schlägt vor, dass sich Merzenich mindestens fünf Jahre an einem gemeinsamen Dienstleistungszentrum mehrerer Kommunen beteiligt. Zugleich legt sie die Ergebnisse eines Digitalisierungschecks vor.",
+      "datum": "2026-11-14T14:47:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "verwaltung",
+          "Verwaltung"
+        ],
+        [
+          "digitalisierung",
+          "Digitalisierung"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "absaetze": [
+        "Die Gemeinde Merzenich soll sich an einem sogenannten Shared Service Center im Kreis Düren beteiligen, einem gemeinsamen Dienstleistungszentrum mehrerer Kommunen. Das schlägt die Verwaltung mit der Vorlage 146/2026 vor, die der Haupt- und Finanzausschuss am Donnerstag, 19. November, berät; entscheiden soll der Gemeinderat am 3. Dezember. Die Bürgermeisterinnen und Bürgermeister im Kreis hatten nach der Vorlage mehrheitlich beschlossen, das geförderte Projekt anzugehen. Grundsätzlich wollen sich 13 Kommunen anschließen, den Förderantrag soll die Stadt Jülich stellen.",
+        "Als Begründung nennt die Verwaltung mehr Aufgaben und Vorschriften, fehlende Fachkräfte und knappe Kassen, die gerade kleinere Kommunen unter Druck setzten. Geplant ist, einzelne Aufgaben jeweils bei einer Kommune zu bündeln, nicht immer mit allen Beteiligten. Merzenich soll sich für mindestens fünf Jahre verpflichten. Als erstes gemeinsames Kompetenzzentrum ist die Untere Denkmalbehörde vorgesehen, als zweites soll die Kalkulation von Gebühren geprüft werden. Später könnten weitere Felder dazukommen, etwa der kommunale Ordnungsdienst. Die Verwaltung soll nach einem positiven Förderbescheid die nötigen Vereinbarungen unterschreiben dürfen.",
+        "In derselben Sitzung stellt der kommunale IT-Dienstleister kdvz Rhein-Erft-Rur die Ergebnisse eines Digitalisierungschecks der Verwaltung vor (Vorlage 134/2026). Einige Schritte sind nach der Vorlage schon beauftragt: neue Laptops mit Dockingstationen, eine neue Telefonanlage über den Verband, der Messenger des Bundes für die interne Kommunikation und einheitliche Briefvorlagen. Weitere Maßnahmen will die Verwaltung gemeinsam mit Kreuzau, Niederzier und Langerwehe angehen.",
+        "Mehrkosten gegenüber den bisherigen Ansätzen erwartet die Verwaltung dabei nach eigener Aussage nicht. Weil sie auf ein teures Bürger-Service-Portal verzichtet, könne eher Geld eingespart werden."
+      ],
+      "fakten": [
+        "Shared Service Center im Kreis Düren: grundsätzlich 13 Kommunen, Förderantrag über die Stadt Jülich",
+        "Merzenich soll sich mindestens fünf Jahre beteiligen; zuerst Untere Denkmalbehörde, dann Prüfung Gebührenkalkulation",
+        "Digitalisierungscheck mit der kdvz Rhein-Erft-Rur; laut Verwaltung keine Mehrkosten",
+        "HFA 19.11.; Gemeinderat am 3. Dezember"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Vorlage 146/2026 vom 02.11.2026: HFA 19.11.2026 (19. November), Gemeinderat 03.12.2026 (3. Dezember); Beteiligung am Shared Service Center für mindestens 5 Jahre (fünf Jahre), verbindliche Stellung des Förderantrags durch die Stadt Jülich; Runde der Hauptverwaltungsbeamtinnen und -beamten im Kreis Düren mehrheitlich; 13 Kommunen schließen sich grundsätzlich an; Ermächtigung zur Unterzeichnung bei positivem Förderbescheid.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXO2dEwHl9qjWSmHF4jREB_srNjCts2eqkyK9L3M2feo/Beschlussvorlage_146-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 146/2026, Beschlussvorschlag Ziffern 1 bis 3 und Ausgangslage"
+        },
+        {
+          "aussage": "Vorlage 146/2026: Begründung steigende Aufgabenanforderungen, Vorgaben, Fachkräftemangel, angespannte Haushaltslagen, besonders kleinere Kommunen; thematische Zusammenschlüsse auch einer Teilmenge, Verankerung in unterschiedlichen Kommunen; erstes Kompetenzzentrum Untere Denkmalbehörde, zweites Gebührenkalkulation zu prüfen; weitere Themenfelder z. B. Kommunaler Ordnungsdienst.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXO2dEwHl9qjWSmHF4jREB_srNjCts2eqkyK9L3M2feo/Beschlussvorlage_146-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 146/2026, Ziffer 4 und Sachverhalt"
+        },
+        {
+          "aussage": "Vorlage 134/2026 vom 09.10.2026: Digitalisierungscheck mit der kdvz rhein-erft-rur (Drs. 84/2025); bereits beauftragt: Ersatzbeschaffung Laptop/Dockingstation (Drs. 85/2026), Umstieg auf Verbandstelefonanlage SwyxIT, BundesMessenger, einheitliche Word-Vorlagen (OKE) mit IT.NRW; Zusammenarbeit mit Kreuzau, Niederzier und Langerwehe; keine Mehrkosten gegenüber bisherigen Ansätzen erwartet, wegen Verzicht auf das kostenintensive Bürger-Service-Portal eher Einsparung; HFA-Tagesordnung TOP 9 und 14.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZQryjaQ2t4FAby60k2hwjClK0x6RssGISh5L_okD6QBD/Beschlussvorlage_134-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+            "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/"
+          ],
+          "stelle": "Beschlussvorlage 134/2026, Seiten 1 bis 3; Tagesordnung; eigene Wochenvorschau",
+          "selbstauskunft": "Tagesordnung im Ratsinformationssystem und eigenes Archiv"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beschlussvorlage 146/2026: Grundsatzbeschluss Shared Service Center",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXO2dEwHl9qjWSmHF4jREB_srNjCts2eqkyK9L3M2feo/Beschlussvorlage_146-2026.pdf",
+        "stand": "2026-11-14"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Beschlussvorlage 134/2026: Digitalisierungscheck",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZQryjaQ2t4FAby60k2hwjClK0x6RssGISh5L_okD6QBD/Beschlussvorlage_134-2026.pdf",
+          "stand": "2026-11-14"
+        },
+        {
+          "name": "Gemeinde Merzenich, Haupt- und Finanzausschuss 19.11.2026, Tagesordnung",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+          "stand": "2026-11-14"
+        },
+        {
+          "name": "Merzenich Aktuell: Wochenvorschau 16. bis 22. November",
+          "url": "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+          "stand": "2026-11-14"
+        }
+      ]
+    }
+  ]
+}

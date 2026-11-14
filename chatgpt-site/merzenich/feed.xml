@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 14 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 14 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</guid>
+<pubDate>Sat, 14 Nov 2026 13:47:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung schlägt vor, dass sich Merzenich mindestens fünf Jahre an einem gemeinsamen Dienstleistungszentrum mehrerer Kommunen beteiligt. Zugleich legt sie die Ergebnisse eines Digitalisierungschecks vor.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Nachts fährt zwischen Düren und Köln bis Freitag nur ein Gleis, in den Nächten zum 27. und 28. Oktober fällt auch die S 19 ab Merzenich aus. In Düren ist die Bismarckstraße stadteinwärts gesperrt, und auf der A4 wird an zwei Stellen gearbeitet.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-07-fe61f0f669.jpg" medium="image"><media:credit>CrocodileRobert / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Here you see an environmental protection area in lower saxony, northern Germany. It is named &quot;Moor aside Buxtehude&quot;. The sand wall is the preparation for a highway passing the area</media:description></media:content>
-</item>
-<item>
-<title>Tischtennis: TTC Merzenich gewinnt beide Auswärtsspiele und führt die 2. Bezirksklasse an</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/</guid>
-<pubDate>Sun, 25 Oct 2026 21:30:00 GMT</pubDate>
-<category>Sport</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Nachtrag vom 2. November: Die erste Mannschaft siegte am 29. Oktober 9:1 bei den TTF Weisweiler/Wenau IV und am 30. Oktober 8:2 bei TTC Mersch-Pattern IV. Laut click-TT steht sie mit 21:3 Punkten an der Tabellenspitze.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-08-c10997cd29.jpg" medium="image"><media:credit>TUBS / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Sporthalle</media:description></media:content>
 </item>
 </channel>
 </rss>

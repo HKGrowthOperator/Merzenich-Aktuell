@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T08:17:39.620Z",
+  "updatedAt": "2026-11-14T13:47:35.101Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1736,6 +1736,15 @@
       "assignedAt": "2026-11-14T08:17:39.620Z",
       "articleId": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
       "articleDate": "2026-11-14T09:16:00+01:00"
+    },
+    "/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-14T13:47:35.100Z",
+      "articleId": "2026-11-14-merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
+      "articleDate": "2026-11-14T14:47:00+01:00"
     }
   }
 }

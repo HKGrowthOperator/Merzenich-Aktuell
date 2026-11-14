@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 14 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 14 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Rathaus &amp; Politik</title><link>https://merzenichaktuell.hk-growthoperator.de/rathaus/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</guid>
+<pubDate>Sat, 14 Nov 2026 13:47:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung schlägt vor, dass sich Merzenich mindestens fünf Jahre an einem gemeinsamen Dienstleistungszentrum mehrerer Kommunen beteiligt. Zugleich legt sie die Ergebnisse eines Digitalisierungschecks vor.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die zweite Sitzung des Ausschusses für Wirtschaftsförderung und Strukturentwicklung ist für Donnerstag, 15. Oktober, 18 Uhr im Merzenicher Ratssaal angesetzt.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Gemeinderat kommt am 30. September zu seiner 7. Sitzung zusammen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/gemeinderat-7-sitzung-2026-09-30/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/gemeinderat-7-sitzung-2026-09-30/</guid>
-<pubDate>Mon, 28 Sep 2026 10:00:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Der Rat der Gemeinde Merzenich tagt am Mittwoch um 18 Uhr im Ratssaal am Valdersweg. Die Tagesordnung steht im Ratsinformationssystem.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
 </item>
 </channel>
 </rss>
