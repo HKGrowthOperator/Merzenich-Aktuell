@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-15-morgens.md",
+  "latest_dossier": "dossiers/2026-11-15-claude-morgens.md",
   "source_check_window": "15.11.2026, 06:58:47–07:03:29 Europe/Berlin; Livebild 07:00:12, ergänzende Original-/Commons-Webprüfung bis etwa 07:03:31",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11789,7 +11789,7 @@
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Neues Ergebnis vom 14.11.: offizieller lesbarer automatischer Bericht und FuPa führen Langerwehe II–Girbelsrath 3:0 (Halbzeit 1:0 laut Bericht). Mannschaftsseite bestätigt Zuordnung/Termin. Datenabhängigkeit FuPa/Verband ungeklärt; dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen. T2, keine Artikelumsetzung. Keine Spielernamen oder qualitative/Serienbewertung aus automatisch generiertem Bericht übernehmen. Alter Derby-Nichtantritt ist anderer Vorgang.",
+      "notes": "Neues Ergebnis vom 14.11.: offizieller lesbarer automatischer Bericht und FuPa führen Langerwehe II–Girbelsrath 3:0 (Halbzeit 1:0 laut Bericht). Mannschaftsseite bestätigt Zuordnung/Termin. Datenabhängigkeit FuPa/Verband ungeklärt; dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen. T2, keine Artikelumsetzung. Keine Spielernamen oder qualitative/Serienbewertung aus automatisch generiertem Bericht übernehmen. Alter Derby-Nichtantritt ist anderer Vorgang. | Claude 15.11. morgens: in die Sportmeldung am Dienstag.",
       "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Automatischer Verbandsbericht, FuPa B2 und offizielle Mannschaftsseiten vollständig zum Ergebnis-/Terminbeleg gelesen; Unabhängigkeit nicht bestätigt",
@@ -11822,6 +11822,29 @@
         },
         "implementation": "keine_Artikelumsetzung"
       }
+    },
+    {
+      "id": "MA-KITA-PATRONAT-2026",
+      "priority": "P2",
+      "location_section": "Gemeinde · Rathaus/Finanzen",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-15-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-15 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-morgens.json → /rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
+      "article_id": null,
+      "implementation_commit": "848da92d",
+      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12.",
+      "dossier_history": [
+        {
+          "date": "2026-11-15",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-15-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
     }
   ],
   "archive": {
@@ -13814,6 +13837,16 @@
         "Bahn Düren–Horrem vom Vortag weiter nicht im Feed; Entstörung nicht separat belegt",
         "Malwettbewerb-Regelwidersprüche und fehlende unabhängige Bestätigung der Aktion bleiben"
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-15-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-15-morgens.md",
+      "implementation_commit": "848da92d",
+      "summary": "Bildfehler Malwettbewerb live weiter offen (Werkzeugpunkt); Kurzmeldung Patronatserklärung Kita-Gesellschaft; Kalender unverändert.",
+      "publication": "Neue Meldung direkt veröffentlicht"
     }
   ]
 }

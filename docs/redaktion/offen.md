@@ -1,14 +1,14 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-14-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-15-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 56 |
-| gesperrt | 30 |
+| uebernommen | 57 |
+| gesperrt | 31 |
 | neu | 6 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
@@ -141,7 +141,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-15 morgens (Claude): Bildfehler Malwettbewerb live weiter offen (Werkzeugpunkt); Kurzmeldung Patronatserklärung Kita-Gesellschaft; Kalender unverändert. – Commit 848da92d
+- 2026-11-15 morgens (ChatGPT): Neu: Girbelsrath-Niederlage bei Langerwehe II im Ergebnis-/Verbandsbericht, eine T2-Karte. Bekannte falsche Live-Bildbeschreibung beim Malwettbewerb trotz Repo-Korrektur weiter vorhanden, kein neuer Fehler gezählt. SSC-/Digitalisierungsartikel am Vorlagenkern geprüft, ohne Abweichung; Grenzen dokumentiert. Keine neue belegte Terminänderung.
 - 2026-11-14 nachmittags (Claude): Korrektur Bildbeschreibung Polizeipool; Kurzmeldung Shared Service Center und Digitalisierungscheck; Termin Wortgottesdienst Morschenich. Mindesttakt 14.11.: 2 Meldungen. – Commit afc7a455
 - 2026-11-14 mittags (ChatGPT): Eine bestätigte Korrektur: Bildbeschreibung/Alt-Text des neuen Malwettbewerbsartikels nennen Polizeiwache, tatsächlich Polizeimotorrad (Livebild und Commons geprüft). Neuer Gottesdiensttermin Morschenich heute 17:30 Uhr. Keine neue Themenkarte. Bahn-Morgenmeldung nicht mehr im aktuellen Feed, Entstörung nicht belegt; offene Quellen-/Artikelprüfungen dokumentiert.
-- 2026-11-14 morgens (Claude): Keine Korrekturen; Service-Kurzmeldung Weihnachtsmalwettbewerb der Polizei; Kalender unverändert. – Commit 45ee6ad4
-- 2026-11-14 morgens (ChatGPT): Neu: Weichenreparatur Düren–Horrem bei RE 1/RE 9 und SC Merzenich jetzt Tabellenrang vier. Malwettbewerb-Karte aktualisiert: Behördenartikel/Teilnahmebedingungen jetzt lesbar. Drei T2-Karten, keine unabhängige Freigabe. Regionaler Förder-Infoabend erstmals erfasst, Modelleisenbahn bestätigt. Neue Wochenvorschau geprüft, historische Grenzen/404-Quellen ausdrücklich dokumentiert.
