@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-15-mittags.md",
+  "latest_dossier": "dossiers/2026-11-15-claude-nachmittags.md",
   "source_check_window": "15.11.2026, 12:06:31–12:07:43 Europe/Berlin; Livebild 12:08:53 mit anschließender Sichtung; ergänzende Original-Webprüfung gegen 12:08",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -1880,11 +1880,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-10-25",
+      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
       "article_path": "inhalte/termine/2026-10-25-recherche-claude.json → /termine/seniorenweihnacht-kreis-dueren-2026-11-24/",
       "article_id": null,
       "implementation_commit": "7e268d6",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: nur als Termin",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 25.10.: nur als Termin | Claude 15.11. nachmittags: in der Advents-Übersicht (MA-ADVENT-2026) genannt; Kreismitteilung vom 19.10.2026 (Restkarten, Beginn 15 Uhr, Einlass 14 Uhr) am 15.11. erneut gelesen.",
       "dossier_history": [
         {
           "date": "2026-10-21",
@@ -1900,6 +1900,12 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-nachlauf-claude.md",
           "heading": "Zusammengeführt mit Claude-Nachlauf"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     },
@@ -1974,11 +1980,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-10-27 abends Europe/Berlin",
+      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert. | Claude 15.11. nachmittags: In der Advents-Übersicht nur belegte Einzeltermine: Weihnachtsfenster der Gemeinde am Rathaus 15.12. (Amtsblatt 11/2026, Lebendiger Adventskalender auf Initiative der katholischen Kirchengemeinde), Adventsfenster Schützen am Bürgewaldzentrum 28.11. (Terminplan), Golzheimer Adventskalender 28.11. (Kulturkalender). Eine Gastgeberliste 2026 ist weiter nicht veröffentlicht; Sperre für eine eigene Meldung zur Reihe bleibt.",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -2049,6 +2055,12 @@
           "dossier": "dossiers/2026-10-27-abends.md",
           "heading": "MA-ADVENTFENSTER-2026",
           "check_scope": "Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet."
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -2208,15 +2220,15 @@
       "priority": "P2",
       "location_section": "Merzenich/Kultur",
       "change_type": "Termin",
-      "text_status": "T1-B",
-      "image_status": "B0",
+      "text_status": "T1",
+      "image_status": "B2",
       "dossier": "dossiers/2026-10-25-morgens.md",
-      "workflow_status": "neu",
-      "last_checked_at": null,
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-nachmittags.json → /leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.",
+      "implementation_commit": "4d822e16",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 15.11. nachmittags: Adventmarkt des Geschichts- und Heimatvereins (28.11. ab 14 Uhr, 29.11. 11 bis 18 Uhr) nach Vereinsbeitrag in Heimat-Info und Kulturkalender in der Advents-Übersicht (MA-ADVENT-2026).",
       "dossier_history": [
         {
           "date": "2026-10-19",
@@ -2252,6 +2264,12 @@
           "date": "2026-10-25",
           "dossier": "dossiers/2026-10-25-morgens.md",
           "heading": "22 · MA-ADVENTMARKT-2811 · P2 · Merzenich/Kultur · Termin · T1-B/B0"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     },
@@ -11898,6 +11916,29 @@
         "limits": "Abschlussentwurf/Prüfbericht, Haushaltsoriginal und unabhängige Bestätigung offen",
         "text_status": "T2"
       }
+    },
+    {
+      "id": "MA-ADVENT-2026",
+      "priority": "P3",
+      "location_section": "Gemeinde · Termine/Brauchtum",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-nachmittags.json → /leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
+      "article_id": null,
+      "implementation_commit": "4d822e16",
+      "notes": "Claude 15.11. nachmittags: Advents-Übersicht 24.11. bis 20.12. (Standard, 808 Wörter, 12 Quellen, 8 Prüfeinträge) aus 16. Kulturkalender, Amtsblatt 11/2026, Terminplan Schützen Morschenich, Heimat-Info und Kreis Düren; Zeitkonflikte Senioren-Adventsfeier 09.12. und Krätzchensitzung im Text benannt. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "dossier_history": [
+        {
+          "date": "2026-11-15",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
     }
   ],
   "archive": {
@@ -13943,6 +13984,16 @@
         "Bahn-Entstörung nicht separat bestätigt; Zuginfo hier nur Titel lesbar",
         "Fußball-Datenunabhängigkeit, Drittquelle und abschließende Derbywertung weiter offen"
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-15-mittags.md",
+      "implementation_commit": "4d822e16",
+      "summary": "ChatGPT mittags ohne neue Korrektur (Bildbeschreibung Malwettbewerb live weiter offen, Werkzeugpunkt); Standardmeldung Advent in Merzenich 24.11. bis 20.12.; Termin Skatrunde 02.12. neu (Kalenderseite 1 verschoben). Mindesttakt 15.11.: 2 Meldungen.",
+      "publication": "Neue Meldung und neuer Termin direkt veröffentlicht"
     }
   ]
 }

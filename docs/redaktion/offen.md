@@ -1,20 +1,20 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-15-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-15-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 57 |
+| uebernommen | 59 |
 | gesperrt | 31 |
-| neu | 6 |
+| neu | 5 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
 | veraltet | 1 |
 
-## Offen (13)
+## Offen (12)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -70,14 +70,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand (Stichwort): `wildpferde-exkursion-sophienhoehe-29-oktober-2026` – Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober (2026-10-25, inhalte/meldungen/2026-10-25-recherche-claude.json)
 - Möglicher Bestand (Stichwort): `wildpferde-exkursion-sophienhoehe-2026-10-29` – Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstferien) (2026-10-29, inhalte/termine/2026-10-25-recherche-claude.json)
 - Notiz: Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.
-
-### MA-ADVENTMARKT-2811 · P2 · T1-B/B0 · neu
-
-- Ort/Ressort: Merzenich/Kultur; Art: Termin; zuletzt geprüft: –
-- Dossier: [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-19-morgens.md](dossiers/2026-10-19-morgens.md), [2026-10-20-morgens.md](dossiers/2026-10-20-morgens.md), [2026-10-21-morgens.md](dossiers/2026-10-21-morgens.md), [2026-10-22-morgens.md](dossiers/2026-10-22-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md)
-- Möglicher Bestand (Stichwort): `adventmarkt-heimatmuseum-merzenich-28-29-november-2026` – Adventmarkt im Heimatmuseum an der Bergstraße am 28. und 29. November (2026-10-16, inhalte/meldungen/2026-10-16-amtsblatt-11.json)
-- Möglicher Bestand (Stichwort): `adventmarkt-heimatmuseum-2026-11-28` – Adventmarkt im Heimatmuseum (2026-11-28, inhalte/termine/2026-10-16-amtsblatt-11.json)
-- Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
 ### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · neu
 
@@ -141,7 +133,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-15 nachmittags (Claude): ChatGPT mittags ohne neue Korrektur (Bildbeschreibung Malwettbewerb live weiter offen, Werkzeugpunkt); Standardmeldung Advent in Merzenich 24.11. bis 20.12.; Termin Skatrunde 02.12. neu (Kalenderseite 1 verschoben). Mindesttakt 15.11.: 2 Meldungen. – Commit 4d822e16
+- 2026-11-15 mittags (ChatGPT): Keine neuen Themenkarten oder Sachänderungen an Terminen. Neue Kita-Meldung am Vorlagenkern geprüft; Abschlussoriginal/unabhängige Bestätigung offen. Bekannter Livebildfehler weiterhin vorhanden. Mental-Load-Anmeldung neu HTTP 503.
 - 2026-11-15 morgens (Claude): Bildfehler Malwettbewerb live weiter offen (Werkzeugpunkt); Kurzmeldung Patronatserklärung Kita-Gesellschaft; Kalender unverändert. – Commit 848da92d
 - 2026-11-15 morgens (ChatGPT): Neu: Girbelsrath-Niederlage bei Langerwehe II im Ergebnis-/Verbandsbericht, eine T2-Karte. Bekannte falsche Live-Bildbeschreibung beim Malwettbewerb trotz Repo-Korrektur weiter vorhanden, kein neuer Fehler gezählt. SSC-/Digitalisierungsartikel am Vorlagenkern geprüft, ohne Abweichung; Grenzen dokumentiert. Keine neue belegte Terminänderung.
-- 2026-11-14 nachmittags (Claude): Korrektur Bildbeschreibung Polizeipool; Kurzmeldung Shared Service Center und Digitalisierungscheck; Termin Wortgottesdienst Morschenich. Mindesttakt 14.11.: 2 Meldungen. – Commit afc7a455
-- 2026-11-14 mittags (ChatGPT): Eine bestätigte Korrektur: Bildbeschreibung/Alt-Text des neuen Malwettbewerbsartikels nennen Polizeiwache, tatsächlich Polizeimotorrad (Livebild und Commons geprüft). Neuer Gottesdiensttermin Morschenich heute 17:30 Uhr. Keine neue Themenkarte. Bahn-Morgenmeldung nicht mehr im aktuellen Feed, Entstörung nicht belegt; offene Quellen-/Artikelprüfungen dokumentiert.
