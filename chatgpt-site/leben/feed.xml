@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 15 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</guid>
+<pubDate>Sun, 15 Nov 2026 13:47:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Von der Seniorenweihnacht des Kreises über das Tannenbaumschmücken am Lindenplatz bis zur Weihnachtsshow in der Weinberghalle: In den Ortsteilen der Gemeinde stehen in den nächsten Wochen viele Adventsveranstaltungen an. Ein Überblick mit Zeiten, Orten und Eintrittspreisen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
+</item>
 <item>
 <title>Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Bürgerinnen und Bürger, Vereine und Initiativen können bis 30. November Projektideen beim Landesamt LANUK einreichen. Der Kreis Düren mit Merzenich gehört zum Gebiet.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
-</item>
-<item>
-<title>„Unser Dorf hat Zukunft“: Kreis Düren sucht interessierte Orte für 2027</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/unser-dorf-hat-zukunft-kreis-dueren-2027-interesse/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/unser-dorf-hat-zukunft-kreis-dueren-2027-interesse/</guid>
-<pubDate>Tue, 06 Oct 2026 07:18:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Für den nächsten Dorfwettbewerb bittet der Kreis Düren schon jetzt um unverbindliche Interessenbekundungen. Auch für Dorfgemeinschaften im Merzenicher Gemeindegebiet kann das interessant sein.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-1440.webp" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Historisches Fachwerkhaus im Ortskern von Merzenich</media:description></media:content>
 </item>
 </channel>
 </rss>

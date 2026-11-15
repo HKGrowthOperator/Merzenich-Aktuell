@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-15T09:16:00+01:00",
-  "stand": "2026-11-15T09:16:00+01:00",
+  "generated": "2026-11-15T14:47:00+01:00",
+  "stand": "2026-11-15T14:47:00+01:00",
   "items": [
+    {
+      "title": "Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
+      "date": "2026-11-15T14:47:00+01:00",
+      "ressort": "leben",
+      "ort": "merzenich",
+      "teaser": "Von der Seniorenweihnacht des Kreises über das Tannenbaumschmücken am Lindenplatz bis zur Weihnachtsshow in der Weinberghalle: In den Ortsteilen der Gemeinde stehen in den nächsten Wochen viele Adventsveranstaltungen an. Ein Überblick mit Zeiten, Orten und Eintrittspreisen.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg"
+    },
     {
       "title": "Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Die Verwaltung berichtet dem Bauausschuss über fünf Tiefbaustellen: den Valdersweg, zwei durch Glasfaserarbeiten beschädigte Bäume, aufgebrochene Wirtschaftswege in Girbelsrath und die Suche nach Fördergeld für den Ausbau der Bahnstraße.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-06-bc6b8eed4f.jpg"
-    },
-    {
-      "title": "Grundschule Golzheim in Merzenich: Umbau kostet 12 Millionen Euro, Gemeinde soll rund 7,5 Millionen tragen",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/",
-      "date": "2026-11-04T09:45:00+01:00",
-      "ressort": "rathaus",
-      "ort": "golzheim",
-      "teaser": "Die Bezirksregierung Köln hat erneut nachgefordert: Dach und Aufzug zählen nicht mehr zu den förderfähigen Kosten für die Offene Ganztagsschule. Der Bauausschuss berät die angepasste Planung am 12. November.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/schule/schule-03-dbb36132c8.jpg"
     }
   ],
   "events": [

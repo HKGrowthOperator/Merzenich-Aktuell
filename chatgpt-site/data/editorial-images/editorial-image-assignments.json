@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T08:16:51.092Z",
+  "updatedAt": "2026-11-15T13:48:35.988Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1754,6 +1754,15 @@
       "assignedAt": "2026-11-15T08:16:51.092Z",
       "articleId": "2026-11-15-merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
       "articleDate": "2026-11-15T09:16:00+01:00"
+    },
+    "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/": {
+      "imageId": "web-veranstaltungen-18-246e60a7",
+      "pool": "veranstaltungen",
+      "motiv": "adventskalender",
+      "regel": "leben.brauchtum.advent",
+      "assignedAt": "2026-11-15T13:48:35.988Z",
+      "articleId": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
+      "articleDate": "2026-11-15T14:47:00+01:00"
     }
   }
 }

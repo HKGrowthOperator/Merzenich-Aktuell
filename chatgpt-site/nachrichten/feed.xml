@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 15 Nov 2026 08:16:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 13:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</guid>
+<pubDate>Sun, 15 Nov 2026 13:47:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Von der Seniorenweihnacht des Kreises über das Tannenbaumschmücken am Lindenplatz bis zur Weihnachtsshow in der Weinberghalle: In den Ortsteilen der Gemeinde stehen in den nächsten Wochen viele Adventsveranstaltungen an. Ein Überblick mit Zeiten, Orten und Eintrittspreisen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Town hall (from the Marktstraße) with christmas decoration, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
+</item>
 <item>
 <title>Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
-</item>
-<item>
-<title>Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/</guid>
-<pubDate>Mon, 26 Oct 2026 16:30:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Gräbersegnungen in allen Ortsteilen am 31. Oktober und 1. November, das wöchentliche Rosenkranzgebet zieht ab dem 4. November zurück ins Pfarrheim, und die Caritas lädt pflegende Angehörige zu zwei Selbsthilfegruppen an die Lindenstraße.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
 </item>
 </channel>
 </rss>
