@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-14-claude-nachmittags.md",
-  "source_check_window": "14.11.2026, 11:57:31–12:01:36 Europe/Berlin; Livebild 12:00:09, ergänzende Original-/Commons-Webprüfung etwa 11:59–12:01",
+  "latest_dossier": "dossiers/2026-11-15-morgens.md",
+  "source_check_window": "15.11.2026, 06:58:47–07:03:29 Europe/Berlin; Livebild 07:00:12, ergänzende Original-/Commons-Webprüfung bis etwa 07:03:31",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11323,20 +11323,29 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-14 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-15T07:08:43+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-nachmittags.json → /rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/",
       "article_id": null,
       "implementation_commit": "afc7a455",
-      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | Claude 14.11. nachmittags: Kurzmeldung (242 Wörter) aus 146/2026 und 134/2026; Vorschlag; Förderung offen.",
-      "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
+      "notes": "Digitalcheck und SSC-Vorschlag; Rollout, Förderung und verbindliche Umsetzung unabhängig nicht bestätigt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: nicht umgesetzt (Lauf für MA-ABGABEN-2027 genutzt); vor dem HFA 19.11. einplanen. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | Claude 14.11. nachmittags: Kurzmeldung (242 Wörter) aus 146/2026 und 134/2026; Vorschlag; Förderung offen. | ChatGPT 15.11. morgens: Neue SSC-/Digitalisierungs-Kurzmeldung vollständig gelesen und Vorlagenkern mit 146/2026, 134/2026 sowie HFA-Tagesordnung abgeglichen, ohne Abweichung im geprüften Kern. Keine-Mehrkosten-Aussage bezieht sich auf Digitalisierungscheck als Verwaltungsprognose, kein gesichertes SSC-Kostenversprechen. Konzept/Förderantrag, Digitalanlagen und frühere Beschlüsse nicht neu ausgewertet; Förderung/Umsetzung nicht unabhängig bestätigt. Keine neue Karte/Dublette.",
+      "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
+      "latest_research_scope": "Artikelprüfung des Vorlagenkerns ohne Abweichung; Anlagen, historische Teilbelege und unabhängige Förderungsklärung offen",
       "research_history": [
         {
           "date": "2026-11-11",
           "edition": "morgens",
           "dossier": "dossiers/2026-11-11-morgens.md",
           "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "text_status": "T2",
+          "scope": "Artikelprüfung, kein neuer Themenvorschlag",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
         }
@@ -11353,6 +11362,12 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-14-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "heading": "KORREKTUREN – Prüfung SSC-/Digitalisierungsartikel"
         }
       ],
       "latest_research_review": {
@@ -11362,7 +11377,13 @@
           "rights": "Commons-Metadaten im Dossier; Rathaus-Sichtprüfung erfolgt, weitere Bilder offen",
           "integration": "nicht_erfolgt"
         },
-        "implementation": "keine_Artikelumsetzung"
+        "implementation": "keine_Artikelumsetzung",
+        "article_audit": {
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "checked_at": "2026-11-15T07:08:43+01:00",
+          "result": "Keine Abweichung im geprüften Vorlagenkern",
+          "limits": "Konzept/Förderantrag, Digitalanlagen, frühere Beschlüsse und unabhängige Finanzierung/Umsetzung nicht neu geprüft"
+        }
       }
     },
     {
@@ -11485,14 +11506,14 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-14T12:07:06+01:00",
+      "last_checked_at": "2026-11-15T07:08:43+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
       "implementation_commit": "45ee6ad4",
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs.",
-      "latest_research_dossier": "dossiers/2026-11-14-mittags.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche.",
+      "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
       "latest_research_text_status": "T2",
-      "latest_research_scope": "Artikel-/Bildprüfung: Sachangaben gedeckt, Bildbeschreibung und Alt-Text bestätigt falsch; Quellenabhängigkeit und Regelwidersprüche bleiben offen",
+      "latest_research_scope": "Live-Nachprüfung des bekannten Bildfehlers: weiterhin offen; Repo-Korrektur nicht als Live-Erledigung ausgegeben",
       "research_history": [
         {
           "date": "2026-11-13",
@@ -11517,6 +11538,15 @@
           "text_status": "T2",
           "draft_complete": false,
           "correction_required": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "known_correction_still_open": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
           "implementation": "keine_Artikelumsetzung"
         }
       ],
@@ -11544,6 +11574,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-14-mittags.md",
           "heading": "KORREKTUREN – Bildbeschreibung/Alt-Text Malwettbewerb"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "heading": "KORREKTUREN – bekannter Bildfehler weiterhin live"
         }
       ],
       "latest_research_review": {
@@ -11558,16 +11594,18 @@
         "scope": "Regeln gelesen; keine unabhängige Freigabe, Bildsichtung weiterhin offen",
         "article_image_audit": {
           "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
-          "status": "offen",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "checked_at": "2026-11-15T07:08:43+01:00",
+          "status": "offen_live",
           "confirmed": true,
-          "dossier": "dossiers/2026-11-14-mittags.md",
-          "slug": "weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
           "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
           "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
           "correct_description": "Polizeimotorrad als Symbolbild",
+          "article_read_at": "2026-11-15T06:59:39+01:00",
+          "image_read_at": "2026-11-15T07:00:12+01:00",
           "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
           "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
-          "checked_at": "2026-11-14T12:07:06+01:00",
+          "repository_implementation_commit": "d4e035d8",
           "implementation": "keine_Websiteaenderung"
         }
       },
@@ -11584,6 +11622,24 @@
           "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
           "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
           "checked_at": "2026-11-14T12:07:06+01:00",
+          "implementation": "keine_Websiteaenderung"
+        }
+      ],
+      "correction_verifications": [
+        {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "checked_at": "2026-11-15T07:08:43+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
+          "article_read_at": "2026-11-15T06:59:39+01:00",
+          "image_read_at": "2026-11-15T07:00:12+01:00",
+          "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
+          "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
+          "repository_implementation_commit": "d4e035d8",
           "implementation": "keine_Websiteaenderung"
         }
       ]
@@ -11715,6 +11771,53 @@
         "image": {
           "rights": "File:Artificial turf (5064316111).jpg, Håkan Dahlström, CC BY 2.0, 5616 × 3744 px",
           "visual_check": "frühere Sichtprüfung im Morgendossier 13.11.; Metadaten 14.11. erneut gelesen",
+          "integration": "nicht_erfolgt"
+        },
+        "implementation": "keine_Artikelumsetzung"
+      }
+    },
+    {
+      "id": "MA-FUSSBALL-GIRB-LANGERWEHE-1411",
+      "priority": "P3",
+      "location_section": "Girbelsrath · Sport",
+      "change_type": "Neues Spielergebnis",
+      "text_status": "T2",
+      "image_status": "B1",
+      "dossier": "dossiers/2026-11-15-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-15T07:08:43+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neues Ergebnis vom 14.11.: offizieller lesbarer automatischer Bericht und FuPa führen Langerwehe II–Girbelsrath 3:0 (Halbzeit 1:0 laut Bericht). Mannschaftsseite bestätigt Zuordnung/Termin. Datenabhängigkeit FuPa/Verband ungeklärt; dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen. T2, keine Artikelumsetzung. Keine Spielernamen oder qualitative/Serienbewertung aus automatisch generiertem Bericht übernehmen. Alter Derby-Nichtantritt ist anderer Vorgang.",
+      "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
+      "latest_research_text_status": "T2",
+      "latest_research_scope": "Automatischer Verbandsbericht, FuPa B2 und offizielle Mannschaftsseiten vollständig zum Ergebnis-/Terminbeleg gelesen; Unabhängigkeit nicht bestätigt",
+      "research_history": [
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-15",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-15-morgens.md",
+          "heading": "MA-FUSSBALL-GIRB-LANGERWEHE-1411"
+        }
+      ],
+      "latest_research_review": {
+        "text": "T2",
+        "workflow": "gesperrt",
+        "image": {
+          "rights": "File:Artificial turf (5064316111).jpg, Håkan Dahlström, CC BY 2.0, 5616 × 3744 px",
+          "visual_check": "Sichtprüfung aus Morgendossier 13.11. weiterverwendet; Commons-Metadaten 15.11. etwa 07:03:31 erneut gelesen",
+          "motif": "fussball",
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
@@ -13663,6 +13766,54 @@
       "implementation_commit": "afc7a455",
       "summary": "Korrektur Bildbeschreibung Polizeipool; Kurzmeldung Shared Service Center und Digitalisierungscheck; Termin Wortgottesdienst Morschenich. Mindesttakt 14.11.: 2 Meldungen.",
       "publication": "Neue Meldung, Korrektur und Termin direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-15",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-15-morgens.md",
+      "compared_with": "dossiers/2026-11-14-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-14-claude-nachmittags.md",
+      "base_commit": "7f9be76a8e09b450baafcc875d169619711b3ae1",
+      "implementation_commit": null,
+      "summary": "Neu: Girbelsrath-Niederlage bei Langerwehe II im Ergebnis-/Verbandsbericht, eine T2-Karte. Bekannte falsche Live-Bildbeschreibung beim Malwettbewerb trotz Repo-Korrektur weiter vorhanden, kein neuer Fehler gezählt. SSC-/Digitalisierungsartikel am Vorlagenkern geprüft, ohne Abweichung; Grenzen dokumentiert. Keine neue belegte Terminänderung.",
+      "topics": 1,
+      "new_topics": 1,
+      "updated_topics": 0,
+      "blocked_T2": 1,
+      "article_topic_rechecks": 2,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "articles_checked": 6,
+      "article_partial_checks": 12,
+      "repository_article_files_read": 50,
+      "repository_event_files_read": 21,
+      "repository_area_files_read": 18,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "15.11.2026, 06:58:47–07:03:29 Europe/Berlin; Livebild 07:00:12, ergänzende Original-/Commons-Webprüfung bis etwa 07:03:31",
+      "prepared_at": "2026-11-15T07:08:43+01:00",
+      "deadline": "2026-11-15T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung nach bestätigtem main-Update im Laufabschluss dokumentiert; Vorbereitungszeit ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Girbelsrath-Spielergebnis: dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen, T2",
+        "Bekannte falsche Live-Bildbeschreibung/Alt-Text im Malwettbewerbsartikel weiterhin vorhanden; Repository-Korrektur d4e035d8 nicht als Live-Erledigung zählen",
+        "SSC-/Digitalisierungsartikel: Vorlagenkern geprüft; Anlagen, historische Beschlüsse, Finanzierung und verbindliche Umsetzung nicht unabhängig bestätigt",
+        "Bauausschuss 12.11. ohne neuen öffentlichen Ergebnisbeleg im gelesenen RIS",
+        "Heute Weckmannschießen: Kulturkalender 11 Uhr, Vereinsdetail 11:30 Uhr; Konflikt offen",
+        "Pluriversum, Senioren-Nachmittag und Frühstück 25.11.: bekannte Zeit-/Ort-/Datumslücken bleiben",
+        "BdSt-PDF HTTP 403; drei historische Martins-/Terminseiten HTTP 404, Artikelprüfung dazu unvollständig",
+        "Jonge vom Berg direkt Site Unavailable trotz HTTP 200; einzelne normale Original-Detailseite lesbar, keine vollständige Vereinsprüfung",
+        "Historischer S19-Reparaturbeleg, historische Brandschutzbelege und abschließende Derbywertung offen",
+        "Bahn Düren–Horrem vom Vortag weiter nicht im Feed; Entstörung nicht separat belegt",
+        "Malwettbewerb-Regelwidersprüche und fehlende unabhängige Bestätigung der Aktion bleiben"
+      ]
     }
   ]
 }
