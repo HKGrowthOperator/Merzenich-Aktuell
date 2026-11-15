@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-15-claude-morgens.md",
-  "source_check_window": "15.11.2026, 06:58:47–07:03:29 Europe/Berlin; Livebild 07:00:12, ergänzende Original-/Commons-Webprüfung bis etwa 07:03:31",
+  "latest_dossier": "dossiers/2026-11-15-mittags.md",
+  "source_check_window": "15.11.2026, 12:06:31–12:07:43 Europe/Berlin; Livebild 12:08:53 mit anschließender Sichtung; ergänzende Original-Webprüfung gegen 12:08",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11506,12 +11506,12 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-15T07:08:43+01:00",
+      "last_checked_at": "2026-11-15T12:12:23+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
       "implementation_commit": "45ee6ad4",
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche.",
-      "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche. | ChatGPT 15.11. mittags: Bekannter Livebildfehler erneut bestätigt, Bildunterschrift/Alt-Text Polizeiwache weiterhin falsch; neu geladenes und angesehenes Symbolfoto zeigt Polizeimotorrad, bytegleich zum Morgen. Repo-Umsetzung d4e035d8 nicht als Live-Erledigung zählen. Keine neue Korrektur.",
+      "latest_research_dossier": "dossiers/2026-11-15-mittags.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Live-Nachprüfung des bekannten Bildfehlers: weiterhin offen; Repo-Korrektur nicht als Live-Erledigung ausgegeben",
       "research_history": [
@@ -11548,6 +11548,14 @@
           "draft_complete": false,
           "known_correction_still_open": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-15-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
       "dossier_history": [
@@ -11580,6 +11588,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-15-morgens.md",
           "heading": "KORREKTUREN – bekannter Bildfehler weiterhin live"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-15-mittags.md",
+          "heading": "KORREKTUREN – Livebildprüfung"
         }
       ],
       "latest_research_review": {
@@ -11639,6 +11653,20 @@
           "image_read_at": "2026-11-15T07:00:12+01:00",
           "evidence_image": "https://merzenich-aktuell.de/wp-content/uploads/2026/09/polizei-10-b2dae76ca0.webp",
           "evidence_original": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Lambertikirchplatz,_Motorrad_--_2019_--_3594.jpg",
+          "repository_implementation_commit": "d4e035d8",
+          "implementation": "keine_Websiteaenderung"
+        },
+        {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "dossier": "dossiers/2026-11-15-mittags.md",
+          "checked_at": "2026-11-15T12:12:23+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "article_read_at": "2026-11-15T12:07:37+01:00",
+          "image_read_at": "2026-11-15T12:08:53+01:00",
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
           "repository_implementation_commit": "d4e035d8",
           "implementation": "keine_Websiteaenderung"
         }
@@ -11832,19 +11860,44 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-15-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-15 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-15T12:12:23+01:00",
       "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-morgens.json → /rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
       "article_id": null,
       "implementation_commit": "848da92d",
-      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12.",
+      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12. | ChatGPT 15.11. mittags: Neue Claude-Meldung vollständig live/repo gelesen und Vorlagenkern mit 136/2026, Erklärungsentwurf und HFA-Agenda abgeglichen; keine Abweichung darin. Abschlussentwurf/Prüfbericht, Haushaltsoriginal, konkrete Kita-Liste und unabhängige Bestätigung nicht separat gelesen. Recherche T2, keine neue Themenkarte; bestehende Umsetzung und Claude-T1 erhalten.",
       "dossier_history": [
         {
           "date": "2026-11-15",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-15-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-15",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-15-mittags.md",
+          "heading": "KORREKTUREN – Artikelprüfung Kita-Patronat"
         }
-      ]
+      ],
+      "latest_research_dossier": "dossiers/2026-11-15-mittags.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-15",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-15-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_article_audit": {
+        "dossier": "dossiers/2026-11-15-mittags.md",
+        "checked_at": "2026-11-15T12:12:23+01:00",
+        "result": "Keine Korrekturen im geprüften Vorlagenkern",
+        "limits": "Abschlussentwurf/Prüfbericht, Haushaltsoriginal und unabhängige Bestätigung offen",
+        "text_status": "T2"
+      }
     }
   ],
   "archive": {
@@ -13847,6 +13900,49 @@
       "implementation_commit": "848da92d",
       "summary": "Bildfehler Malwettbewerb live weiter offen (Werkzeugpunkt); Kurzmeldung Patronatserklärung Kita-Gesellschaft; Kalender unverändert.",
       "publication": "Neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-15",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-15-mittags.md",
+      "compared_with": "dossiers/2026-11-15-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-15-claude-morgens.md",
+      "base_commit": "979dd228d9a846b6bf27ea0b0a44cbce348deff3",
+      "implementation_commit": null,
+      "summary": "Keine neuen Themenkarten oder Sachänderungen an Terminen. Neue Kita-Meldung am Vorlagenkern geprüft; Abschlussoriginal/unabhängige Bestätigung offen. Bekannter Livebildfehler weiterhin vorhanden. Mental-Load-Anmeldung neu HTTP 503.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "article_topic_rechecks": 2,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 51,
+      "repository_event_files_read": 21,
+      "repository_area_files_read": 18,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "15.11.2026, 12:06:31–12:07:43 Europe/Berlin; Livebild 12:08:53 mit anschließender Sichtung; ergänzende Original-Webprüfung gegen 12:08",
+      "prepared_at": "2026-11-15T12:12:23+01:00",
+      "deadline": "2026-11-15T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellung nach erfolgreichem main-Update durch bestätigten Commitzeitpunkt im Laufabschluss nachgewiesen; Vorbereitungszeit kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Malwettbewerb-Bildbeschreibung/Alt-Text live weiterhin falsch",
+        "Kita-Abschlussentwurf und Prüfbericht selbst sowie unabhängige Bestätigung fehlen; Recherche T2, veröffentlichter Claude-Status erhalten",
+        "Bauausschuss-Ergebnisse und historische Teilbelege offen",
+        "Terminkonflikte Pluriversum und Senioren, fehlender Frühstücksort 25.11. und Weckmann-Beginn unverändert",
+        "BdSt HTTP 403, drei historische Quellen HTTP 404, Mental-Load-Anmeldung HTTP 503; Artikelprüfung ausdrücklich unvollständig",
+        "Vereinsdirektseiten Site Unavailable trotz HTTP 200; normaler Detail-Webabruf lesbar",
+        "Bahn-Entstörung nicht separat bestätigt; Zuginfo hier nur Titel lesbar",
+        "Fußball-Datenunabhängigkeit, Drittquelle und abschließende Derbywertung weiter offen"
+      ]
     }
   ]
 }
