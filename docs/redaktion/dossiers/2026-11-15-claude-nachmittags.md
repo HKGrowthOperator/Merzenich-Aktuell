@@ -73,7 +73,7 @@ Werkzeugpunkt „Heimat-Info-Kalender Seite 2“ bestätigt sich: Die erste Kale
 
 Commits: `4d822e16` (Meldung), `3256e1f9` (Termin; Rebase-Konflikt nur in `docs/SHA256SUMS.txt`, Stand von main, Kette neu), Dokumentation folgt. Abgleich 14:49 Uhr `angestossen: true`; wp-cron HTTP 200.
 
-Live-Nachweis 14:50 Uhr: Meldung HTTP 200 (Titel wie im Repository), in der Nachrichten-Sitemap, in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub (2 Treffer), oben in „Neu in Merzenich“ (3 Verweise auf der Startseite). Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“: Der Abgleich zieht Alt-Texte bestehender Poolanhänge nicht nach ([Dossier 14.11. nachmittags](2026-11-14-claude-nachmittags.md), Abschnitt 7); Entscheidung Luis Kummer offen.
+Live-Nachweis 14:50 Uhr: Meldung HTTP 200 (Titel wie im Repository), in der Nachrichten-Sitemap, in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub (2 Treffer), oben in „Neu in Merzenich“ (3 Verweise auf der Startseite). Termin Skatrunde 02.12.: um 14:57 Uhr in der Import-XML auf GitHub, live nach dem planmäßigen Abgleich um 15:05 Uhr seit 15:07 Uhr HTTP 200. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“: Der Abgleich zieht Alt-Texte bestehender Poolanhänge nicht nach ([Dossier 14.11. nachmittags](2026-11-14-claude-nachmittags.md), Abschnitt 7); Entscheidung Luis Kummer offen.
 
 ## 8. Bildprüfung
 
