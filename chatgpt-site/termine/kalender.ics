@@ -1027,6 +1027,24 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-02@merzenich-ak
+ tuell.de
+DTSTAMP:20261115T060000Z
+DTSTART:20261202T080000Z
+DTEND:20261202T100000Z
+SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
+ haus
+DESCRIPTION:Die Männergruppe mit Skatrunde für Senioren trifft sich auch 
+ am Mittwoch\, 2. Dezember\, von 9 bis 11 Uhr im Evangelischen Gemeindehaus
+  Merzenich. Neue Mitspieler sind willkommen.\nVeranstalter: Evangelisches 
+ Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/t
+ ermine/maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-02/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/maennergruppe-ska
+ trunde-fuer-senioren-merzenich-2026-12-02/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
 DTSTAMP:20261115T060000Z
 DTSTART:20261203T160000Z
