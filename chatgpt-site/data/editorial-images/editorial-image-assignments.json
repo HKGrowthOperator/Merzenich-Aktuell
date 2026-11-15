@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T13:47:35.101Z",
+  "updatedAt": "2026-11-15T08:16:51.092Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1745,6 +1745,15 @@
       "assignedAt": "2026-11-14T13:47:35.100Z",
       "articleId": "2026-11-14-merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
       "articleDate": "2026-11-14T14:47:00+01:00"
+    },
+    "/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-15T08:16:51.092Z",
+      "articleId": "2026-11-15-merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
+      "articleDate": "2026-11-15T09:16:00+01:00"
     }
   }
 }

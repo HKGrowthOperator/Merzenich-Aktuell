@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 14 Nov 2026 13:47:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</guid>
+<pubDate>Sun, 15 Nov 2026 08:16:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die gemeindeeigene Kindertageseinrichtungen Merzenich gGmbH hat 2024 einen Fehlbetrag von gut 428.000 Euro gemacht und ist bilanziell überschuldet. Der Wirtschaftsprüfer verlangt deshalb eine Patronatserklärung der Gemeinde.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Kreis Düren will den knapp 11.500 Quadratmeter großen Jugendzeltplatz in Hürtgenwald-Kleinhau verkaufen. Ein Käufer muss anerkannter Träger der Jugendhilfe sein und zusagen, dass Vereine und Verbände den Platz weiter buchen können.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-11-59fc252a23.jpg" medium="image"><media:credit>Granpar / Wikimedia Commons · CC BY 3.0</media:credit><media:description>Jugendzeltplatz Am Stürzenhardter Brückle</media:description></media:content>
-</item>
-<item>
-<title>Bahn, Bismarckstraße, A4: Was Pendler aus Merzenich in dieser Woche wissen müssen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26/</guid>
-<pubDate>Sun, 25 Oct 2026 21:32:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Nachts fährt zwischen Düren und Köln bis Freitag nur ein Gleis, in den Nächten zum 27. und 28. Oktober fällt auch die S 19 ab Merzenich aus. In Düren ist die Bismarckstraße stadteinwärts gesperrt, und auf der A4 wird an zwei Stellen gearbeitet.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-07-fe61f0f669.jpg" medium="image"><media:credit>CrocodileRobert / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Here you see an environmental protection area in lower saxony, northern Germany. It is named &quot;Moor aside Buxtehude&quot;. The sand wall is the preparation for a highway passing the area</media:description></media:content>
 </item>
 </channel>
 </rss>

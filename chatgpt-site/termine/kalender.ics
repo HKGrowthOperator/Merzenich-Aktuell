@@ -7,34 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:wirtschaftsausschuss-2026-10-15@merzenich-aktuell.de
-DTSTAMP:20261003T060000Z
-DTSTART:20261015T160000Z
-SUMMARY:2. Sitzung: Wirtschaftsförderung und Strukturentwicklung
-DESCRIPTION:Zweite Sitzung des Ausschusses für Wirtschaftsförderung und S
- trukturentwicklung\, Donnerstag\, 15. Oktober\, 18 Uhr im Ratssaal.\nVeran
- stalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de
- /termine/wirtschaftsausschuss-2026-10-15/
-LOCATION:Ratssaal der Gemeinde Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/wirtschaftsaussch
- uss-2026-10-15/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:vortrag-zwangsarbeit-2026@merzenich-aktuell.de
-DTSTAMP:20260927T060000Z
-DTSTART:20261015T170000Z
-SUMMARY:Vortrag „Zwangsarbeit in Merzenich“
-DESCRIPTION:Die Historikerin Inga Mehlert-Garms stellt neue Forschungen zur
-  Zwangsarbeit in Merzenich vor.\nVeranstalter: Katholische Kirchengemeinde
-  St. Laurentius Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/t
- ermine/vortrag-zwangsarbeit-2026/
-LOCATION:Pfarrheim Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/vortrag-zwangsarb
- eit-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:oekumenischer-frauengottesdienst-merzenich-2026@merzenich-aktuell.de
 DTSTAMP:20261014T060000Z
 DTSTART:20261016T160000Z

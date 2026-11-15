@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-14T14:47:00+01:00",
- "anzahl": 242,
+ "generated": "2026-11-15T09:16:00+01:00",
+ "anzahl": 243,
  "bestand": {
-  "gesamt": 242,
+  "gesamt": 243,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 34,
-   "rathaus": 39,
+   "rathaus": 40,
    "leben": 55,
    "wirtschaft": 13,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 169,
+   "merzenich": 170,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 242,
+    "anzahl": 243,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 39,
+    "anzahl": 40,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 169,
+    "anzahl": 170,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-15-merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
+   "url": "/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
+   "titel": "Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen",
+   "teaser": "Die gemeindeeigene Kindertageseinrichtungen Merzenich gGmbH hat 2024 einen Fehlbetrag von gut 428.000 Euro gemacht und ist bilanziell überschuldet. Der Wirtschaftsprüfer verlangt deshalb eine Patronatserklärung der Gemeinde.",
+   "kicker": "Rathaus · Kitas",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-15T09:16:00+01:00",
+   "aktualisiert": "2026-11-15T09:16:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    },
+    {
+     "slug": "kita",
+     "label": "Kitas"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-14-merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
    "url": "/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/",
@@ -10031,11 +10069,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-14-merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
-  "url": "/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/",
-  "titel": "Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde"
+  "id": "2026-11-15-merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
+  "url": "/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
+  "titel": "Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-14-merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026",
+   "url": "/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/",
+   "titel": "Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde"
+  },
   {
    "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
    "url": "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
@@ -10045,11 +10088,6 @@
    "id": "2026-11-13-merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn",
    "url": "/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
    "titel": "Merzenich vom 16. bis 22. November: Pluriversum, Haupt- und Finanzausschuss und Tag der Modelleisenbahn"
-  },
-  {
-   "id": "2026-11-13-merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag",
-   "url": "/rathaus/merzenich-alte-kirche-trauung-entgelt-2027-150-250-euro-vorschlag/",
-   "titel": "Heiraten in der Alten Kirche Merzenich soll teurer werden: 150 Euro für Paare aus dem Ort, 250 Euro für Auswärtige"
   },
   {
    "id": "2026-11-12-ersthelfer-merzenich-corhelper-ausgezeichnet-kreis-dueren-region-aachen-rettet-2026",

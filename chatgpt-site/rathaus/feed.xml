@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 14 Nov 2026 13:47:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Rathaus &amp; Politik</title><link>https://merzenichaktuell.hk-growthoperator.de/rathaus/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/rathaus/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</guid>
+<pubDate>Sun, 15 Nov 2026 08:16:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die gemeindeeigene Kindertageseinrichtungen Merzenich gGmbH hat 2024 einen Fehlbetrag von gut 428.000 Euro gemacht und ist bilanziell überschuldet. Der Wirtschaftsprüfer verlangt deshalb eine Patronatserklärung der Gemeinde.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</link>
@@ -328,17 +339,6 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Gemeinde hat die Sitzung des Ausschusses „Kuratorium Rixen-Stiftung“ für Dienstag, 13. Oktober, um 18 Uhr bekannt gemacht. Alle Punkte stehen im nichtöffentlichen Teil.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
-</item>
-<item>
-<title>Wirtschafts- und Strukturausschuss trifft sich am 15. Oktober</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/wirtschaftsausschuss-sitzung-2026-10-15/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/wirtschaftsausschuss-sitzung-2026-10-15/</guid>
-<pubDate>Sat, 03 Oct 2026 16:29:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die zweite Sitzung des Ausschusses für Wirtschaftsförderung und Strukturentwicklung ist für Donnerstag, 15. Oktober, 18 Uhr im Merzenicher Ratssaal angesetzt.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
 </item>
 </channel>

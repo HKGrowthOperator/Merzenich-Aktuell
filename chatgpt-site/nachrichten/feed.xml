@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sat, 14 Nov 2026 13:47:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 08:16:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/</guid>
+<pubDate>Sun, 15 Nov 2026 08:16:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die gemeindeeigene Kindertageseinrichtungen Merzenich gGmbH hat 2024 einen Fehlbetrag von gut 428.000 Euro gemacht und ist bilanziell überschuldet. Der Wirtschaftsprüfer verlangt deshalb eine Patronatserklärung der Gemeinde.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
+</item>
 <item>
 <title>Merzenich soll Aufgaben mit anderen Kommunen im Kreis Düren bündeln: zuerst die Denkmalbehörde</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-shared-service-center-kreis-dueren-denkmalbehoerde-digitalisierungscheck-2026/</link>
@@ -328,17 +339,6 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Gräbersegnungen in allen Ortsteilen am 31. Oktober und 1. November, das wöchentliche Rosenkranzgebet zieht ab dem 4. November zurück ins Pfarrheim, und die Caritas lädt pflegende Angehörige zu zwei Selbsthilfegruppen an die Lindenstraße.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
-</item>
-<item>
-<title>Pfarrer Andreas Galbierz gibt die Leitung der Pfarrei St. Laurentius zum 31. Januar 2027 ab</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/</guid>
-<pubDate>Mon, 26 Oct 2026 16:20:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Im Pfarrbrief informiert der Pfarrer die Gemeinden Merzenich und Niederzier persönlich: Auf Bitten des Bistums Aachen legt er die Leitung beider Pfarreien nieder und verlässt Niederzier. Im Pastoralen Raum soll künftig Pfarrer Gerd Kraus aus Vettweiß die Leitung übernehmen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
 </item>
 </channel>

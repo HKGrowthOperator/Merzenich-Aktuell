@@ -1,0 +1,89 @@
+{
+  "hinweis": "Morgenlauf 15.11.2026 (Claude): Beschlussvorlage 136/2026 vom 21.10.2026 mit Entwurf der Patronatserklärung für den Haupt- und Finanzausschuss am 19.11.2026, im Ratsinformationssystem am 15.11.2026 um 09:16 Uhr gelesen. Vorschlag, kein Beschluss.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Rathaus · Kitas",
+      "titel": "Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen",
+      "dek": "Die gemeindeeigene Kindertageseinrichtungen Merzenich gGmbH hat 2024 einen Fehlbetrag von gut 428.000 Euro gemacht und ist bilanziell überschuldet. Der Wirtschaftsprüfer verlangt deshalb eine Patronatserklärung der Gemeinde.",
+      "datum": "2026-11-15T09:16:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "haushalt",
+          "Haushalt"
+        ],
+        [
+          "kita",
+          "Kitas"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "absaetze": [
+        "Die Gemeinde Merzenich soll sich verpflichten, sämtliche Verluste ihrer eigenen Kita-Gesellschaft zu decken. Das sieht die Vorlage 136/2026 vor, die der Haupt- und Finanzausschuss am Donnerstag, 19. November, berät; beschließen soll der Gemeinderat am 3. Dezember. Die Kindertageseinrichtungen Merzenich gGmbH gehört vollständig der Gemeinde und betreibt nach der Vorlage mehrere Kitas im Gemeindegebiet.",
+        "Anlass ist der Jahresabschluss für 2024. Nach dem Entwurf hat die Gesellschaft in dem Jahr einen Fehlbetrag von 428.442,04 Euro gemacht. Ihr Eigenkapital ist dadurch negativ, die Gesellschaft ist damit bilanziell überschuldet. Damit sie dauerhaft zahlungsfähig bleibt, verlangt die beauftragte Wirtschaftsprüfungsgesellschaft eine sogenannte Patronatserklärung der Gemeinde. Darin sagt Merzenich zu, für alle während der Laufzeit entstehenden Verluste und Verbindlichkeiten der Gesellschaft aufzukommen, so lange sie die alleinige Gesellschafterin ist.",
+        "Die Verwaltung erklärt, die Einnahmen der Gesellschaft reichten wegen der Art, wie Kindertagesbetreuung finanziert wird, nicht aus, um ihre Kosten zu decken. Der Ausgleich der Verluste steht deshalb schon seit 2023 im Haushalt der Gemeinde. Wirtschaftlich kommt eine solche Erklärung nach der Vorlage einer Bürgschaft gleich, weil daraus in späteren Jahren Zahlungspflichten entstehen können. Wie hoch diese sein werden, nennt die Vorlage nicht; bei den jährlichen Kosten steht „unterschiedlich“.",
+        "Bevor der Bürgermeister die Erklärung unterschreiben darf, muss die Gemeinde den Beschluss der Kommunalaufsicht anzeigen und mindestens einen Monat warten. Der Ausschuss tagt um 18 Uhr öffentlich im Ratssaal; auf derselben Sitzung stehen auch höhere Gebühren und Steuern für 2027 auf der Tagesordnung."
+      ],
+      "fakten": [
+        "Kindertageseinrichtungen Merzenich gGmbH: Jahresfehlbetrag 2024 laut Entwurf 428.442,04 Euro, negatives Eigenkapital",
+        "Vorschlag: uneingeschränkte Patronatserklärung der Gemeinde, solange sie Alleingesellschafterin ist",
+        "Verlustausgleich steht seit 2023 im Gemeindehaushalt",
+        "HFA 19.11., 18 Uhr; Gemeinderat am 3. Dezember"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Vorlage 136/2026 vom 21.10.2026: HFA 19.11.2026 (19. November), Gemeinderat 03.12.2026 (3. Dezember); uneingeschränkte Patronatserklärung, Verluste und Verbindlichkeiten vollumfänglich decken, solange Alleingesellschafterin; Gemeinde alleinige Gesellschafterin; Gesellschaft betreibt mehrere Kindertageseinrichtungen in der Gemeinde.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVeOCCaaPRdq4hPlNM-C43DF4xKT5HvuccUDfWgQkwWs/Beschlussvorlage_136-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 136/2026, Beschlussvorschlag und Ausgangslage"
+        },
+        {
+          "aussage": "Entwurf Jahresabschluss zum 31.12.2024: Jahresfehlbetrag 428.442,04 € (gut 428.000); negatives Eigenkapital, bilanzielle Überschuldung; Wirtschaftsprüfungsgesellschaft fordert Patronatserklärung; Erträge reichen wegen Finanzierungsstruktur nicht aus; Verlustausgleiche seit Haushaltsjahr 2023 veranschlagt; wirtschaftlich einer Bürgschaft gleich; jährliche Kosten „unterschiedlich“.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVeOCCaaPRdq4hPlNM-C43DF4xKT5HvuccUDfWgQkwWs/Beschlussvorlage_136-2026.pdf"
+          ],
+          "stelle": "Beschlussvorlage 136/2026, Anlass, rechtliche Würdigung, finanzielle Auswirkungen"
+        },
+        {
+          "aussage": "Anzeige an die Kommunalaufsicht nach § 87 Abs. 2 und 3 GO NRW, Abgabe frühestens nach Ablauf der Monatsfrist (einen Monat); Entwurf der Erklärung: Gemeinde kommt für Verluste und Verbindlichkeiten während der Laufzeit vollumfänglich auf, solange sie zu einhundert Prozent Gesellschafterin ist; HFA 18 Uhr Ratssaal, weitere Abgabenvorlagen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVeOCCaaPRdq4hPlNM-C43DF4xKT5HvuccUDfWgQkwWs/Beschlussvorlage_136-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZSbG-Dv5DwwSj0-Z3xhfU0F4XuX52oA-LcLFj64sKSC0/Patronatserklaerung.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+            "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/"
+          ],
+          "stelle": "Beschlussvorlage Ziffer 3 und weiteres Verfahren; Anlage Patronatserklärung; Tagesordnung; eigene Wochenvorschau",
+          "selbstauskunft": "Tagesordnung im Ratsinformationssystem und eigenes Archiv"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beschlussvorlage 136/2026: Patronatserklärung zugunsten der Kindertageseinrichtungen Merzenich gGmbH",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVeOCCaaPRdq4hPlNM-C43DF4xKT5HvuccUDfWgQkwWs/Beschlussvorlage_136-2026.pdf",
+        "stand": "2026-11-15"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Entwurf der Patronatserklärung (Anlage zu 136/2026)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZSbG-Dv5DwwSj0-Z3xhfU0F4XuX52oA-LcLFj64sKSC0/Patronatserklaerung.pdf",
+          "stand": "2026-11-15"
+        },
+        {
+          "name": "Gemeinde Merzenich, Haupt- und Finanzausschuss 19.11.2026, Tagesordnung",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+          "stand": "2026-11-15"
+        },
+        {
+          "name": "Merzenich Aktuell: Wochenvorschau 16. bis 22. November",
+          "url": "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+          "stand": "2026-11-15"
+        }
+      ]
+    }
+  ]
+}
