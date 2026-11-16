@@ -1,6 +1,6 @@
 # Merzenich Aktuell – Nachmittagslauf (Claude), 16. November 2026
 
-Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.9). Routine „14:43“ in der festen Redaktionssitzung, Bearbeitung 14:45 bis 15:10 Uhr (Europe/Berlin; Live-Nachweis nach dem Abgleich, siehe Abschnitt 7). Vergleichsbasis: [Claude 16.11. morgens](2026-11-16-claude-morgens.md), seither neu [ChatGPT 16.11. mittags](2026-11-16-mittags.md). main vor dem Lauf: `0cf5100a`. Eil-Prüfungen 10:41 und 12:41 Uhr ohne Fund.
+Umsetzungsdossier nach `docs/redaktion/CLAUDE-LAUF.md` (Version 3.9). Routine „14:43“ in der festen Redaktionssitzung, Bearbeitung 14:45 bis 15:09 Uhr (Europe/Berlin). Vergleichsbasis: [Claude 16.11. morgens](2026-11-16-claude-morgens.md), seither neu [ChatGPT 16.11. mittags](2026-11-16-mittags.md). main vor dem Lauf: `0cf5100a`. Eil-Prüfungen 10:41 und 12:41 Uhr ohne Fund.
 
 ## 0. Kurzfassung in Zahlen
 
@@ -81,7 +81,7 @@ Heimat-Info-Veranstaltungskalender um 14:58 Uhr erneut gelesen (dieselben 10 IDs
 
 Commits: `6d1447e1` (Korrektur Sport), `27aada39` (Meldung), `fe28fa62` (Termine), `8e8930c7` (Updates Advent und Kita), `97c77a43` (Nachtrag Pluriversum), je Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (Stand von main, Kette neu); Dokumentation folgt. Abgleich 14:47 Uhr `angestossen: true` (Korrektur), danach planmäßig 15:45 Uhr; wp-cron HTTP 200.
 
-Live-Nachweis: folgt als Nachtrag nach dem Abgleich um 15:45 Uhr. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“ (ChatGPT mittags): Werkzeugpunkt, Entscheidung Luis Kummer offen.
+Live-Nachweis 15:08 Uhr (Abgleich früher als planmäßig, nach Anstoß): Übernachtungssteuer-Meldung HTTP 200, in der Nachrichten-Sitemap, auf der Startseite in „Neu in Merzenich“ (3 Verweise); Korrektur in der Sportmeldung live („bleibt der SC Vierter“); Nachträge live in der Advents-Übersicht („Nachtrag vom 16. November“), der Kita-Meldung („sechs Kitas“) und der Pluriversum-Meldung („18.45 Uhr“); neue Termine AWO 11.12., Taizé 06.12. und 03.01., Kindergottesdienst 13.12. je HTTP 200. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“ (ChatGPT mittags): Werkzeugpunkt, Entscheidung Luis Kummer offen.
 
 ## 8. Bildprüfung
 
