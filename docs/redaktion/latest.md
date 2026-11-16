@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [15.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-15-claude-nachmittags.md), Vergleichsbasis [ChatGPT 15.11. mittags](dossiers/2026-11-15-mittags.md) und [Claude 15.11. morgens](dossiers/2026-11-15-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [16.11.2026, Claude-Morgenlauf](dossiers/2026-11-16-claude-morgens.md), Vergleichsbasis [ChatGPT 16.11. morgens](dossiers/2026-11-16-morgens.md) und [Claude 15.11. nachmittags](dossiers/2026-11-15-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 16.11. morgens:** 1 neue Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (318 Wörter, FUSSBALL.DE und FuPa), Spielstand aktualisiert. 21 Termine bis 29.11. an der Quelle bestätigt. Amtsblatt 12 noch nicht erschienen. Commits `507e8f12`, `4afd926b`, `60af284d`.
 
 **Umgesetzt am 15.11. nachmittags:** 1 neue Meldung „Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember“ (Standard, 808 Wörter, Kulturkalender, Amtsblatt 11/2026, Vereine, Kreis Düren). 1 neuer Termin (Skatrunde 02.12.). Mindesttakt 15.11.: 2 Meldungen. Commits `4d822e16`, `3256e1f9`.
 

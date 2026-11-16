@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-16-morgens.md",
+  "latest_dossier": "dossiers/2026-11-16-claude-morgens.md",
   "source_check_window": "16.11.2026, 06:58:17–06:59:49 Europe/Berlin; Sportergänzung bis 07:00:11, RIS-Wiederabruf 07:00:26, Livebilder 07:00:57/07:01:05 mit anschließender Sichtung; ergänzende Original-Webprüfung bis etwa 07:02",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11855,15 +11855,15 @@
       "priority": "P3",
       "location_section": "Girbelsrath · Sport",
       "change_type": "Neues Spielergebnis",
-      "text_status": "T2",
-      "image_status": "B1",
+      "text_status": "T1",
+      "image_status": "B2",
       "dossier": "dossiers/2026-11-15-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-15T07:08:43+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-16 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-morgens.json → /sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neues Ergebnis vom 14.11.: offizieller lesbarer automatischer Bericht und FuPa führen Langerwehe II–Girbelsrath 3:0 (Halbzeit 1:0 laut Bericht). Mannschaftsseite bestätigt Zuordnung/Termin. Datenabhängigkeit FuPa/Verband ungeklärt; dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen. T2, keine Artikelumsetzung. Keine Spielernamen oder qualitative/Serienbewertung aus automatisch generiertem Bericht übernehmen. Alter Derby-Nichtantritt ist anderer Vorgang. | Claude 15.11. morgens: in die Sportmeldung am Dienstag.",
+      "implementation_commit": "507e8f12",
+      "notes": "Neues Ergebnis vom 14.11.: offizieller lesbarer automatischer Bericht und FuPa führen Langerwehe II–Girbelsrath 3:0 (Halbzeit 1:0 laut Bericht). Mannschaftsseite bestätigt Zuordnung/Termin. Datenabhängigkeit FuPa/Verband ungeklärt; dritter eigenständiger Ereignisbeleg und zwei unabhängige Bestätigungen fehlen. T2, keine Artikelumsetzung. Keine Spielernamen oder qualitative/Serienbewertung aus automatisch generiertem Bericht übernehmen. Alter Derby-Nichtantritt ist anderer Vorgang. | Claude 15.11. morgens: in die Sportmeldung am Dienstag. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr.",
       "latest_research_dossier": "dossiers/2026-11-15-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Automatischer Verbandsbericht, FuPa B2 und offizielle Mannschaftsseiten vollständig zum Ergebnis-/Terminbeleg gelesen; Unabhängigkeit nicht bestätigt",
@@ -11883,6 +11883,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-15-morgens.md",
           "heading": "MA-FUSSBALL-GIRB-LANGERWEHE-1411"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-16-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -11998,15 +12004,15 @@
       "priority": "P3",
       "location_section": "Merzenich / Golzheim / Morschenich · Sport",
       "change_type": "Neue Sonntagsergebnisse",
-      "text_status": "T2",
-      "image_status": "B1",
+      "text_status": "T1",
+      "image_status": "B2",
       "dossier": "dossiers/2026-11-16-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-16T07:05:14+01:00",
-      "article_path": null,
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-16 morgens Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-morgens.json → /sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen.",
+      "implementation_commit": "507e8f12",
+      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr.",
       "latest_research_dossier": "dossiers/2026-11-16-morgens.md",
       "latest_research_text_status": "T2",
       "research_history": [
@@ -12025,6 +12031,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-16-morgens.md",
           "heading": "MA-SONNTAGSSPORT-ERG-1511"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-16-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -14136,6 +14148,16 @@
         "Feuerwehr-Website hat ältere bereits veröffentlichte Meldungen nachgezogen; keine neue Einsatzkarte",
         "Bahn: neue regionale Meldungen nicht als S19-/Merzenich-Sperre übernehmen, Entstörung historischer Düren–Horrem-Meldung nicht separat bestätigt"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-16-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-16-morgens.md",
+      "implementation_commit": "507e8f12",
+      "summary": "ChatGPT morgens ohne neue Korrektur (Bildbeschreibung Malwettbewerb live weiter offen, Werkzeugpunkt); Kurzmeldung Fußball-Wochenende 14./15.11. mit Spielstand; 21 Termine bis 29.11. an der Quelle bestätigt; Amtsblatt 12 noch nicht erschienen.",
+      "publication": "Neue Meldung und Spielstand direkt veröffentlicht"
     }
   ]
 }
