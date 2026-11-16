@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Sun, 15 Nov 2026 13:47:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 16 Nov 2026 08:23:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/</guid>
+<pubDate>Mon, 16 Nov 2026 08:23:00 GMT</pubDate>
+<category>Sport</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Golzheim spielt 2:2 bei SW Düren und bleibt mit dem SC punktgleich, Girbelsrath verliert 0:3 in Langerwehe.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-19-d26a753635.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Fußballplatz</media:description></media:content>
+</item>
 <item>
 <title>Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-16-b1fd3ef820.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>High-voltage overhead power lines (pylon construction) close to Westerkappeln substation, Westerkappeln, North Rhine-Westphalia, Germany</media:description></media:content>
-</item>
-<item>
-<title>KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/</guid>
-<pubDate>Mon, 26 Oct 2026 16:40:00 GMT</pubDate>
-<category>Wirtschaft</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
 </item>
 </channel>
 </rss>

@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-15T14:47:00+01:00",
- "anzahl": 244,
+ "generated": "2026-11-16T09:23:00+01:00",
+ "anzahl": 245,
  "bestand": {
-  "gesamt": 244,
+  "gesamt": 245,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
-   "sport": 34,
+   "sport": 35,
    "rathaus": 40,
    "leben": 56,
    "wirtschaft": 13,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 171,
+   "merzenich": 172,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 244,
+    "anzahl": 245,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -33,7 +33,7 @@
     "liste": "gepflegt"
    },
    "/sport/": {
-    "anzahl": 34,
+    "anzahl": 35,
     "liste": "gepflegt"
    },
    "/rathaus/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 171,
+    "anzahl": 172,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-16-fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15",
+   "url": "/sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/",
+   "titel": "SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3",
+   "teaser": "Golzheim spielt 2:2 bei SW Düren und bleibt mit dem SC punktgleich, Girbelsrath verliert 0:3 in Langerwehe.",
+   "kicker": "Sport · Fußball",
+   "ressort": "sport",
+   "ressortLabel": "Sport",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-16T09:23:00+01:00",
+   "aktualisiert": "2026-11-16T09:23:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "fussball",
+     "label": "Fußball"
+    },
+    {
+     "slug": "sport",
+     "label": "Sport"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/sport/sport-19-d26a753635.jpg",
+    "srcset": "/assets/editorial-pools/sport/sport-19-d26a753635-480.webp 480w, /assets/editorial-pools/sport/sport-19-d26a753635-800.webp 800w, /assets/editorial-pools/sport/sport-19-d26a753635-1200.webp 1200w, /assets/editorial-pools/sport/sport-19-d26a753635.jpg 1920w",
+    "alt": "Fußballplatz",
+    "width": 1920,
+    "height": 1280,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
    "url": "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",

@@ -1,0 +1,134 @@
+{
+  "hinweis": "Morgenlauf 16.11.2026 (Claude): Spielberichte von FUSSBALL.DE vom 15.11.2026 (automatisch aus den offiziellen DFB-Spieldaten), Mannschaftsseite SC 1919 Merzenich mit Tabelle und FuPa-Tabellen und -Spieltage, gelesen am 16.11.2026 zwischen 09:25 und 09:40 Uhr. Keine Spielernamen.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15",
+      "ressort": "sport",
+      "ortsteil": "merzenich",
+      "kicker": "Sport · Fußball",
+      "titel": "SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3",
+      "dek": "Golzheim spielt 2:2 bei SW Düren und bleibt mit dem SC punktgleich, Girbelsrath verliert 0:3 in Langerwehe.",
+      "datum": "2026-11-16T09:23:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "fussball",
+          "Fußball"
+        ],
+        [
+          "sport",
+          "Sport"
+        ]
+      ],
+      "bildklasse": "sport.spielbericht",
+      "fakten": [
+        "JSV Frenz – SC 1919 Merzenich 1:0 (0:0), SC jetzt Vierter mit 27 Punkten",
+        "Spvg. SW 1896 Düren – FC Golzheim 2:2 (2:2), Golzheim Fünfter mit 27 Punkten",
+        "SV Morschenich – FC Inden/Altdorf 4:3 (2:3), Kreisliga B Staffel 2",
+        "TuS 08 Langerwehe II – FC Rhenania Girbelsrath 3:0 (1:0) am 14. November"
+      ],
+      "absaetze": [
+        "Der SC 1919 Merzenich hat in der Kreisliga A Düren am Sonntag, 15. November, beim JSV Frenz mit 0:1 verloren. Nach torloser erster Hälfte fiel das einzige Tor laut offiziellem Spielbericht auf FUSSBALL.DE in der 83. Minute. Damit endet für den Aufsteiger eine Serie von sechs Spielen ohne Niederlage, Frenz gewann nach acht sieglosen Partien wieder. Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz.",
+        "Punktgleich dahinter steht der FC Golzheim nach einem 2:2 bei der Spvg. SW 1896 Düren. Alle Tore fielen vor der Pause: Düren führte ab der siebten Minute, Golzheim glich in der 15. Minute aus, lag eine Minute später wieder hinten und kam per Elfmeter zum 2:2. Golzheim ist seit vier Spielen ungeschlagen, steht wegen der schlechteren Tordifferenz aber auf Rang fünf. Vorn liegt der SC Jülich/Hoengen mit 34 Punkten vor Welldorf-Güsten (29) und Oberzier (28).",
+        "In der Kreisliga B, Staffel 2, gewann der SV Morschenich das Spitzenspiel gegen den FC Inden/Altdorf mit 4:3. Die Gäste führten zur Pause 3:2, Morschenich drehte die Partie mit Toren in der 63. und 69. Minute. Den Tabellenplatz geben die Quellen unterschiedlich an, weil das ausgefallene Derby in Girbelsrath vom 8. November verschieden gezählt wird: FuPa rechnet ein Urteil mit 2:0 für Morschenich ein und führt den SV mit 27 Punkten vor Inden/Altdorf (25). Der Spielbericht von FUSSBALL.DE nennt Rang zwei.",
+        "Der FC Rhenania Girbelsrath verlor schon am Samstag, 14. November, bei der zweiten Mannschaft des TuS 08 Langerwehe mit 0:3, zur Pause stand es 0:1. Es war die vierte Niederlage in Folge; mit drei Punkten aus acht Spielen ist Girbelsrath laut FuPa Vorletzter.",
+        "Girbelsrath spielt am Freitag, 20. November, um 19.30 Uhr bei Viktoria Arnoldsweiler II. Der SC Merzenich empfängt am Sonntag, 29. November, um 15 Uhr den SV SW Huchem-Stammeln, Golzheim trifft am selben Tag auf Borussia Freialdenhoven. Morschenich spielt am 6. Dezember zu Hause gegen Rhenania Mariaweiler."
+      ],
+      "pruefung": [
+        {
+          "aussage": "FUSSBALL.DE, automatischer Spielbericht 15.11.2026 20:14 Uhr: Kreisliga A, JSV Frenz – SC 1919 Merzenich 1:0 (0:0), Spielort Inden; Führung in der 83. Minute; Frenz nach acht Spielen ohne Sieg; SC belegt mit 27 Punkten den vierten Tabellenplatz, neun Siege, drei Niederlagen; nächstes Spiel 29.11.2026, 15:00 Uhr (15 Uhr) gegen SV SW Huchem-Stammeln. Mannschaftsseite: „Letztes Spiel: So, 15.11.2026 15:00 JSV Frenz – SC 1919 Merzenich“, „Nächstes Spiel: So, 29.11.2026 15:00 SC 1919 Merzenich – SV SW Huchem-Stammeln“ (Heimspiel). Vorher laut eigener Meldung vom 10.11.: Platz drei, sechs Spiele ungeschlagen. FuPa-Liveticker nennt die 82. Minute. Aus Merzenicher Sicht also 0:1.",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NARUNU0000000VS5489C0VTSKVGB0",
+            "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+            "https://merzenich-aktuell.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/"
+          ],
+          "stelle": "Spielbericht, gesamter Text; Mannschaftsseite, Kopfbereich Letztes/Nächstes Spiel; eigene Meldung, erster Absatz",
+          "selbstauskunft": "Vorher-Stand (Platz drei, sechs Spiele ungeschlagen) aus der eigenen Meldung vom 10.11.2026 nach FUSSBALL.DE"
+        },
+        {
+          "aussage": "FUSSBALL.DE, automatischer Spielbericht 15.11.2026 20:14 Uhr: Spvg. SW 1896 Düren – FC Golzheim 2:2 (2:2); 1:0 in der siebten Minute, 1:1 (15.), eine Minute später 2:1, Elfmeter zum 2:2 (Bericht: 47. Minute, FuPa-Liveticker: 45.; Halbzeitstand laut Bericht 2:2, „Am Ende blieb es bei den Treffern aus der ersten Halbzeit“); Golzheim behält den fünften Platz, seit vier Partien unbesiegt, nur einmal geschlagen; am 29.11.2026 gegen Borussia Freialdenhoven. Tabelle FUSSBALL.DE und FuPa (16.11.2026): 1. SC Jülich/Hoengen 34, 2. Welldorf-Güsten 29, 3. Oberzier 28, 4. Merzenich 27 (48:18, Differenz 30), 5. Golzheim 27 (30:13, Differenz 17).",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NB90G1K000000VS5489BVVSI0HJHE",
+            "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+            "https://www.fupa.net/league/kreisliga-a-dueren/standing",
+            "https://www.fupa.net/league/kreisliga-a-dueren"
+          ],
+          "stelle": "Spielbericht, gesamter Text; Tabelle auf der SC-Mannschaftsseite; FuPa Tabelle Gesamt und Spieltagsblock 12. Spieltag"
+        },
+        {
+          "aussage": "FUSSBALL.DE, automatischer Spielbericht 15.11.2026 18:34 Uhr: Kreisliga B Staffel 2, SV Morschenich – FC Inden/Altdorf 09/21 4:3 (2:3) gegen den Tabellenführer; Morschenicher Tore in der 63. und 69. Minute; Morschenich „liegt nun auf Rang zwei“, 53 Treffer; nächstes Spiel 06.12.2026 (6. Dezember) zu Hause gegen Rhenania Mariaweiler. FuPa Tabelle B2 (16.11.2026): 1. Morschenich 27 Punkte, 55:23; 2. Inden/Altdorf 25. Eigene Meldung 10.11.: FuPa vermerkt für das Derby Girbelsrath–Morschenich am 8. November „0 2 Urteil“, FUSSBALL.DE führt „Nichtantritt HEIM“ ohne Wertung. Halbzeit 2:3 aus Morschenicher Sicht, die Gäste führten also 3:2; FuPa-Urteil für das Derby aus Morschenicher Sicht 2:0.",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NBB9FES000000VS5489C0VTSKVGB0",
+            "https://www.fupa.net/league/kreisliga-b-2-dueren/standing",
+            "https://merzenich-aktuell.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/"
+          ],
+          "stelle": "Spielbericht, gesamter Text; FuPa Tabelle Gesamt; eigene Meldung, dritter Absatz",
+          "selbstauskunft": "Derby-Wertung aus der eigenen Meldung vom 10.11.2026 (FUSSBALL.DE-Spielkopf und FuPa-Spieltagsblock)"
+        },
+        {
+          "aussage": "FUSSBALL.DE, automatischer Spielbericht 15.11.2026 17:47 Uhr: Kreisliga B Staffel 2, TuS 08 Langerwehe II – FC Rhenania Girbelsrath 3:0 (1:0), Spielort Langerwehe; FuPa Spieltagsblock: 12. Spieltag, 14.11.2026 (Samstag, 14. November), Langerwehe II – Girbelsrath 3:0; Girbelsrath vier Niederlagen am Stück, 14 geschossene Treffer; „Kommenden Freitag (19:30 Uhr)“ auswärts bei Viktoria Arnoldsweiler II, also Freitag, 20. November, 19.30 Uhr. FuPa Tabelle B2: 13. Girbelsrath, 8 Spiele (acht Spielen), 1 Sieg, 14:33, 3 Punkte (drei Punkten); 14. 1. FC Düren II, 3 Punkte. Aus Girbelsrather Sicht 0:3, zur Pause 0:1.",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032N26ABUO000000VS5489BVVSI0HJHE",
+            "https://www.fupa.net/league/kreisliga-b-2-dueren",
+            "https://www.fupa.net/league/kreisliga-b-2-dueren/standing"
+          ],
+          "stelle": "Spielbericht, gesamter Text; FuPa Spieltagsblock 14.11. und Tabelle Gesamt"
+        }
+      ],
+      "quelle": {
+        "name": "FUSSBALL.DE, Spielbericht JSV Frenz – SC 1919 Merzenich 1:0 (Kreisliga A Düren, automatisch erstellt am 15.11.2026)",
+        "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NARUNU0000000VS5489C0VTSKVGB0",
+        "stand": "2026-11-16"
+      },
+      "weitereQuellen": [
+        {
+          "name": "FUSSBALL.DE, Spielbericht Spvg. SW 1896 Düren – FC Golzheim 2:2 (automatisch erstellt am 15.11.2026)",
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NB90G1K000000VS5489BVVSI0HJHE",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FUSSBALL.DE, Spielbericht SV Morschenich – FC Inden/Altdorf 09/21 4:3 (automatisch erstellt am 15.11.2026)",
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032NBB9FES000000VS5489C0VTSKVGB0",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FUSSBALL.DE, Spielbericht TuS 08 Langerwehe II – FC Rhenania Girbelsrath 3:0 (automatisch erstellt am 15.11.2026)",
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032N26ABUO000000VS5489BVVSI0HJHE",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FUSSBALL.DE, Mannschaftsseite SC 1919 Merzenich mit Tabelle Kreisliga A",
+          "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FuPa, Kreisliga A Düren: Tabelle",
+          "url": "https://www.fupa.net/league/kreisliga-a-dueren/standing",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FuPa, Kreisliga A Düren: 12. Spieltag",
+          "url": "https://www.fupa.net/league/kreisliga-a-dueren",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FuPa, Kreisliga B2 Düren: Tabelle",
+          "url": "https://www.fupa.net/league/kreisliga-b-2-dueren/standing",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FuPa, Kreisliga B2 Düren: 12. Spieltag",
+          "url": "https://www.fupa.net/league/kreisliga-b-2-dueren",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "Merzenich Aktuell: SC Merzenich springt nach 2:1 gegen Düren 77 auf Platz drei (10.11.2026)",
+          "url": "https://merzenich-aktuell.de/sport/fussball-merzenich-2-1-dueren-77-platz-drei-golzheim-2-2-welldorf-derby-girbelsrath-nichtantritt-2026-11-08/",
+          "stand": "2026-11-16"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T13:48:35.988Z",
+  "updatedAt": "2026-11-16T08:24:28.449Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1763,6 +1763,15 @@
       "assignedAt": "2026-11-15T13:48:35.988Z",
       "articleId": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
       "articleDate": "2026-11-15T14:47:00+01:00"
+    },
+    "/sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/": {
+      "imageId": "web-sport-19-d26a7536",
+      "pool": "sport",
+      "motiv": "fussball",
+      "regel": "sport.spielbericht",
+      "assignedAt": "2026-11-16T08:24:28.448Z",
+      "articleId": "2026-11-16-fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15",
+      "articleDate": "2026-11-16T09:23:00+01:00"
     }
   }
 }
