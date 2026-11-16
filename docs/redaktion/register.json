@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-16-mittags.md",
+  "latest_dossier": "dossiers/2026-11-16-claude-nachmittags.md",
   "source_check_window": "16.11.2026, 12:07:43–12:09:08 Europe/Berlin; zusätzliche Primärtexte 12:08:48, Livebild 12:11:18 mit anschließender Sichtung, Commons-Metadaten bis etwa 12:12; Bildabrufe HTTP 403",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -1980,11 +1980,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-16T12:16:46+01:00",
+      "last_checked_at": "2026-11-16 nachmittags Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert. | Claude 15.11. nachmittags: In der Advents-Übersicht nur belegte Einzeltermine: Weihnachtsfenster der Gemeinde am Rathaus 15.12. (Amtsblatt 11/2026, Lebendiger Adventskalender auf Initiative der katholischen Kirchengemeinde), Adventsfenster Schützen am Bürgewaldzentrum 28.11. (Terminplan), Golzheimer Adventskalender 28.11. (Kulturkalender). Eine Gastgeberliste 2026 ist weiter nicht veröffentlicht; Sperre für eine eigene Meldung zur Reihe bleibt. | ChatGPT 16.11. mittags: Ausgabe 12 ergänzt beim vorhandenen Termin am Bürgewaldzentrum Fotoausstellung/Weihnachtsmarkt und SV Morschenich als Mitveranstalter. T2 bis eigenständige Bestätigung; keine neue Gastgeberliste, keine Dublette.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert. | Claude 15.11. nachmittags: In der Advents-Übersicht nur belegte Einzeltermine: Weihnachtsfenster der Gemeinde am Rathaus 15.12. (Amtsblatt 11/2026, Lebendiger Adventskalender auf Initiative der katholischen Kirchengemeinde), Adventsfenster Schützen am Bürgewaldzentrum 28.11. (Terminplan), Golzheimer Adventskalender 28.11. (Kulturkalender). Eine Gastgeberliste 2026 ist weiter nicht veröffentlicht; Sperre für eine eigene Meldung zur Reihe bleibt. | ChatGPT 16.11. mittags: Ausgabe 12 ergänzt beim vorhandenen Termin am Bürgewaldzentrum Fotoausstellung/Weihnachtsmarkt und SV Morschenich als Mitveranstalter. T2 bis eigenständige Bestätigung; keine neue Gastgeberliste, keine Dublette. | Claude 16.11. nachmittags: Termin am Bürgewaldzentrum um Glühweinfenster, SV Morschenich, Fotoausstellung und Weihnachtsmarkt ergänzt (Amtsblatt 12, S. 14), als Angabe des Amtsblatts gekennzeichnet; Aufruf des Pfarrbüros für Gastgeber steht unverändert im Amtsblatt 12 (S. 12), bereits am 16.10. gemeldet; weiter keine Gastgeberliste.",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -2067,6 +2067,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-16-mittags.md",
           "heading": "KORREKTUREN / TERMINE – Nachprüfung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -2238,11 +2244,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-16T12:16:46+01:00",
+      "last_checked_at": "2026-11-16 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-nachmittags.json → /leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
       "article_id": null,
       "implementation_commit": "4d822e16",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 15.11. nachmittags: Adventmarkt des Geschichts- und Heimatvereins (28.11. ab 14 Uhr, 29.11. 11 bis 18 Uhr) nach Vereinsbeitrag in Heimat-Info und Kulturkalender in der Advents-Übersicht (MA-ADVENT-2026). | ChatGPT 16.11. mittags: Update aus erstmals jetzt abrufbarer Ausgabe 12: zusätzliches Marktprogramm mit Nikolaus gegen 15:15 und Musikzeiten; Konflikt zu bisherigem Dunkelheits-Hinweis. T2: unabhängige Bestätigung und dritter eigenständiger Ereignisbeleg fehlen. Bildkandidat Commons CC0 mit Metadaten geprüft, visuelle Prüfung durch HTTP 403 blockiert, B0. Bestehenden Adventsartikel aktualisieren statt Dublette.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 15.11. nachmittags: Adventmarkt des Geschichts- und Heimatvereins (28.11. ab 14 Uhr, 29.11. 11 bis 18 Uhr) nach Vereinsbeitrag in Heimat-Info und Kulturkalender in der Advents-Übersicht (MA-ADVENT-2026). | ChatGPT 16.11. mittags: Update aus erstmals jetzt abrufbarer Ausgabe 12: zusätzliches Marktprogramm mit Nikolaus gegen 15:15 und Musikzeiten; Konflikt zu bisherigem Dunkelheits-Hinweis. T2: unabhängige Bestätigung und dritter eigenständiger Ereignisbeleg fehlen. Bildkandidat Commons CC0 mit Metadaten geprüft, visuelle Prüfung durch HTTP 403 blockiert, B0. Bestehenden Adventsartikel aktualisieren statt Dublette. | Claude 16.11. nachmittags: Termin und Advents-Übersicht (Nachtrag) aus Amtsblatt 12 ergänzt: Sa 14 bis 19 Uhr, Programm Freunde der Musik Sa 16 Uhr, Blechbolzer So 16 Uhr; Nikolauszeit „etwa gegen 15.15 Uhr“ als abweichende neuere Angabe benannt, nicht zusammengeführt (Commits fe28fa62, 8e8930c7).",
       "dossier_history": [
         {
           "date": "2026-10-19",
@@ -2290,6 +2296,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-16-mittags.md",
           "heading": "THEMENKARTEN – Marktupdate"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
@@ -6453,7 +6465,7 @@
       "image_status": null,
       "dossier": "dossiers/2026-11-08-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-16T12:16:46+01:00",
+      "last_checked_at": "2026-11-16 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-08-recherche-claude-morgens.json → /leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/",
       "article_id": null,
       "implementation_commit": "7712685",
@@ -6490,9 +6502,15 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-16-mittags.md",
           "heading": "KORREKTUREN / TERMINE – Nachprüfung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | Claude 08.11. (Nachhollauf): Gemeinde-Beitrag 06.11. (Aula Niederzier, 18 Uhr, Workshop 11–13 Uhr) gegen Amtsblatt (18.15 Uhr Schulstraße, 10–12 Uhr) und Kalender (Niederzier, 18:15) gelesen; Folgemeldung (Kurzmeldung 320 Wörter), Artikel vom 16.10. und beide Termine aktualisiert (Commit 12e1944). Live 13:00 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 16.11. mittags: Neues Plakat in Ausgabe 12 trennt Einlass/Markt der Möglichkeiten und Beginn Bühnenprogramm; weiterhin abweichender Kalendereintrag. Keine bestätigte Verlegung des ganzen Termins. T2: unabhängige Klärung der aktuellen Ablaufzeiten fehlt; vorhandenen Termin und Artikel ergänzen.",
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | Claude 08.11. (Nachhollauf): Gemeinde-Beitrag 06.11. (Aula Niederzier, 18 Uhr, Workshop 11–13 Uhr) gegen Amtsblatt (18.15 Uhr Schulstraße, 10–12 Uhr) und Kalender (Niederzier, 18:15) gelesen; Folgemeldung (Kurzmeldung 320 Wörter), Artikel vom 16.10. und beide Termine aktualisiert (Commit 12e1944). Live 13:00 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 16.11. mittags: Neues Plakat in Ausgabe 12 trennt Einlass/Markt der Möglichkeiten und Beginn Bühnenprogramm; weiterhin abweichender Kalendereintrag. Keine bestätigte Verlegung des ganzen Termins. T2: unabhängige Klärung der aktuellen Ablaufzeiten fehlt; vorhandenen Termin und Artikel ergänzen. | Claude 16.11. nachmittags: Termin und Meldung mit Nachtrag ergänzt: Plakat Amtsblatt 12 (S. 3) 18 Uhr Einlass und Markt der Möglichkeiten, 18.45 Uhr Bühnenprogramm; Veranstaltungskalender desselben Amtsblatts und Heimat-Info weiter 18.15 Uhr, im Text benannt (Commits fe28fa62, 97c77a43).",
       "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "research_history": [
@@ -11995,7 +12013,7 @@
       "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-morgens.json → /rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
       "article_id": null,
       "implementation_commit": "848da92d",
-      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12. | ChatGPT 15.11. mittags: Neue Claude-Meldung vollständig live/repo gelesen und Vorlagenkern mit 136/2026, Erklärungsentwurf und HFA-Agenda abgeglichen; keine Abweichung darin. Abschlussentwurf/Prüfbericht, Haushaltsoriginal, konkrete Kita-Liste und unabhängige Bestätigung nicht separat gelesen. Recherche T2, keine neue Themenkarte; bestehende Umsetzung und Claude-T1 erhalten. | ChatGPT 16.11. mittags: Ausgabe 12 enthält nun eine Liste der gemeindlichen Kitas als zusätzlichen Hintergrundbeleg. Keine neue Fehlbetragsentwicklung, Abschlussentwurf/Prüfbericht und unabhängige Bestätigung weiter offen. Historische Umsetzung/Claude-Status erhalten.",
+      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12. | ChatGPT 15.11. mittags: Neue Claude-Meldung vollständig live/repo gelesen und Vorlagenkern mit 136/2026, Erklärungsentwurf und HFA-Agenda abgeglichen; keine Abweichung darin. Abschlussentwurf/Prüfbericht, Haushaltsoriginal, konkrete Kita-Liste und unabhängige Bestätigung nicht separat gelesen. Recherche T2, keine neue Themenkarte; bestehende Umsetzung und Claude-T1 erhalten. | ChatGPT 16.11. mittags: Ausgabe 12 enthält nun eine Liste der gemeindlichen Kitas als zusätzlichen Hintergrundbeleg. Keine neue Fehlbetragsentwicklung, Abschlussentwurf/Prüfbericht und unabhängige Bestätigung weiter offen. Historische Umsetzung/Claude-Status erhalten. | Claude 16.11. nachmittags: „mehrere Kitas im Gemeindegebiet“ ersetzt durch Angabe aus Amtsblatt 12 (S. 9): sechs Kitas in Merzenich, Girbelsrath, Golzheim und Morschenich, über 300 Kinder von einem bis sechs Jahren (Commit 8e8930c7).",
       "dossier_history": [
         {
           "date": "2026-11-15",
@@ -12014,6 +12032,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-16-mittags.md",
           "heading": "KORREKTUREN / TERMINE – Nachprüfung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
@@ -12105,7 +12129,7 @@
       "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-morgens.json → /sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/",
       "article_id": null,
       "implementation_commit": "507e8f12",
-      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr. | ChatGPT 16.11. mittags: Neue Meldung vollständig live/repo gelesen. Neuer Korrekturauftrag MA-KORR-SC-RANGWECHSEL-1611: Satz Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz ist als unmittelbarer Spielvergleich falsch; offizielle Mannschaftsseite und FuPa führten SC bereits am 15.11. vor Spielbeginn auf Rang vier, gespeicherte Primärabrufe erhalten. Endstände/aktuelle Ränge unverändert gedeckt; Serien nicht unabhängig nachgezählt und eigentliches Derbyurteil nicht gelesen. Keine Wiederholung der unveränderten Ergebnis-Karte.",
+      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr. | ChatGPT 16.11. mittags: Neue Meldung vollständig live/repo gelesen. Neuer Korrekturauftrag MA-KORR-SC-RANGWECHSEL-1611: Satz Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz ist als unmittelbarer Spielvergleich falsch; offizielle Mannschaftsseite und FuPa führten SC bereits am 15.11. vor Spielbeginn auf Rang vier, gespeicherte Primärabrufe erhalten. Endstände/aktuelle Ränge unverändert gedeckt; Serien nicht unabhängig nachgezählt und eigentliches Derbyurteil nicht gelesen. Keine Wiederholung der unveränderten Ergebnis-Karte. | Claude 16.11. nachmittags: Korrektur MA-KORR-SC-RANGWECHSEL-1611 umgesetzt (Commit 6d1447e1): alter Satz „Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz.“, neu „Mit 27 Punkten bleibt der SC Vierter: Welldorf-Güsten hatte ihn schon am Freitag, 13. November, mit einem 1:0 gegen Oberzier vom dritten Platz verdrängt.“ Beleg FUSSBALL.DE-Spielbericht 14.11. und Welldorf-Mannschaftsseite (letztes Spiel Fr 13.11. 19:15).",
       "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "research_history": [
@@ -12144,6 +12168,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-16-mittags.md",
           "heading": "KORREKTUREN / TERMINE – Nachprüfung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_review": {
@@ -12170,6 +12200,29 @@
           "evidence": "Offizielle Mannschaftsseite: gespeicherte Primärabrufe 15.11.2026 06:59:00/12:06:44, Rang vier vor Spielbeginn; FuPa 15.11.2026 12:06:46 ebenfalls vier. Heutige Originalabrufe bestätigen aktuellen Rang vier.",
           "evidence_limit": "Historische Direktabrufe gespeichert, kein neuer öffentlicher Archivsnapshot beschafft",
           "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-UEBERNACHTUNGSSTEUER-2026",
+      "priority": "P2",
+      "location_section": "Gemeinde · Rathaus/Finanzen",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-16 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-nachmittags.json → /rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
+      "article_id": null,
+      "implementation_commit": "27aada39",
+      "notes": "Claude 16.11. nachmittags: Kurzmeldung (282 Wörter) aus Beschlussvorlage 104/2026 vom 27.08.2026 (Antrag SPD-Fraktion Drs. 24/2026) und HFA-Tagesordnung 19.11.: Alternativen A (konkretisieren) und B (nicht weiter verfolgen), Satzung und Genehmigung durch Kommunal- und Finanzministerium NRW nötig, Vergleich 5 % oder 2 bis 3 € je Übernachtung, vier Betriebe laut erster Recherche der Verwaltung, kein Votum. Anlage A nicht ausgewertet. Folge: HFA 19.11., Rat 03.12.",
+      "dossier_history": [
+        {
+          "date": "2026-11-16",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -14327,6 +14380,16 @@
         "Commons-Bildabrufe HTTP 403; Vereinsseiten Site Unavailable trotz HTTP 200",
         "Bauausschuss weiter ohne neuen Ergebnisbeleg im gelesenen Stand"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-16-mittags.md",
+      "implementation_commit": "27aada39",
+      "summary": "Korrektur Sportmeldung (SC schon vor dem Spiel Vierter); Kurzmeldung Übernachtungssteuer (Vorlage 104/2026); Amtsblatt 12 ausgewertet: 4 neue Termine, Pluriversum, Adventmarkt und Bürgewaldzentrum ergänzt, Nachträge in Advents-Übersicht und Pluriversum-Meldung, Kita-Meldung präzisiert. Mindesttakt 16.11.: 2 Meldungen.",
+      "publication": "Neue Meldung, Korrektur, Updates und Termine direkt veröffentlicht"
     }
   ]
 }

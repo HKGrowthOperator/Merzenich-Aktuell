@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [16.11.2026, Claude-Morgenlauf](dossiers/2026-11-16-claude-morgens.md), Vergleichsbasis [ChatGPT 16.11. morgens](dossiers/2026-11-16-morgens.md) und [Claude 15.11. nachmittags](dossiers/2026-11-15-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [16.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-16-claude-nachmittags.md), Vergleichsbasis [ChatGPT 16.11. mittags](dossiers/2026-11-16-mittags.md) und [Claude 16.11. morgens](dossiers/2026-11-16-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 16.11. nachmittags:** 1 neue Kurzmeldung „Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft“ (282 Wörter, Vorlage 104/2026). Korrektur der Sportmeldung (SC schon vor dem Spiel Vierter). Amtsblatt 12 ausgewertet: 4 neue Termine, 3 ergänzt, Nachträge in Advents-Übersicht und Pluriversum-Meldung, Kita-Meldung präzisiert. Mindesttakt 16.11.: 2 Meldungen. Commits `6d1447e1`, `27aada39`, `fe28fa62`, `8e8930c7`, `97c77a43`.
 
 **Umgesetzt am 16.11. morgens:** 1 neue Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (318 Wörter, FUSSBALL.DE und FuPa), Spielstand aktualisiert. 21 Termine bis 29.11. an der Quelle bestätigt. Amtsblatt 12 noch nicht erschienen. Commits `507e8f12`, `4afd926b`, `60af284d`.
 
