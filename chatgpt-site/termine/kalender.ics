@@ -634,12 +634,11 @@ DTSTART:20261117T170000Z
 SUMMARY:„Pluriversum“ der Gemeinde Merzenich in der Gesamtschule Nieder
  zier
 DESCRIPTION:Zweite Ausgabe des „Pluriversum“ der Gemeinde Merzenich mit
-  entwicklungspolitischen Impulsen\, Musik und Projektionen\, nach der jün
- gsten Ankündigung ab 18 Uhr in der Aula der Gesamtschule in Niederzier. G
- eändert: zunächst war die Aula an der Schulstraße in Merzenich um 18.15
-  Uhr angekündigt.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichakt
- uell.hk-growthoperator.de/termine/pluriversum-gesamtschule-merzenich-2026-
- 11-17/
+  entwicklungspolitischen Impulsen\, Musik und Projektionen in der Aula der
+  Gesamtschule in Niederzier: laut Plakat im Amtsblatt Nr. 12 um 18 Uhr Ein
+ lass und „Markt der Möglichkeiten“\, um 18.45 Uhr Beginn des Bühnenp
+ rogramms.\nVeranstalter: Gemeinde Merzenich\nhttps://merzenichaktuell.hk-g
+ rowthoperator.de/termine/pluriversum-gesamtschule-merzenich-2026-11-17/
 LOCATION:Aula der Gesamtschule\, Standort Niederzier
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/pluriversum-gesam
  tschule-merzenich-2026-11-17/
@@ -901,11 +900,13 @@ BEGIN:VEVENT
 UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
 DTSTAMP:20261116T060000Z
 DTSTART:20261128T130000Z
+DTEND:20261128T180000Z
 SUMMARY:Adventmarkt im Heimatmuseum
-DESCRIPTION:Traditioneller Adventmarkt mit Handwerkskunst\, Speisen\, Getr
- änken und Blasmusik\; am Sonntag ab 11 Uhr geöffnet. Eintritt frei.\nVer
- anstalter: Geschichts- und Heimatverein Merzenich\nhttps://merzenichaktuel
- l.hk-growthoperator.de/termine/adventmarkt-heimatmuseum-2026-11-28/
+DESCRIPTION:Adventmarkt des Geschichts- und Heimatvereins mit Kunsthandwerk
+ \, Holzspielzeug\, Honig und Spirituosen\, Kaffee und Kuchen: Samstag 14 b
+ is 19 Uhr\, Sonntag 11 bis 18 Uhr. Eintritt frei.\nVeranstalter: Geschicht
+ s- und Heimatverein Merzenich\nhttps://merzenichaktuell.hk-growthoperator.
+ de/termine/adventmarkt-heimatmuseum-2026-11-28/
 LOCATION:Heimatmuseum Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventmarkt-heima
  tmuseum-2026-11-28/
@@ -934,12 +935,12 @@ UID:adventsfenster-bwz-morschenich-2026-11-28@merzenich-aktuell.de
 DTSTAMP:20261116T060000Z
 DTSTART:20261128T160000Z
 SUMMARY:Adventsfenster am Bürgewaldzentrum in Morschenich
-DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, öffnet die S
- t. Lambertus Schützenbruderschaft ab 17 Uhr ein Adventsfenster am Bürgew
- aldzentrum (BWZ) in Morschenich\, wo sie ihr Schützenheim hat.\nVeranstal
- ter: St. Lambertus Schützenbruderschaft Morschenich 1458 e.V.\nhttps://me
- rzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bwz-morschenich
- -2026-11-28/
+DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, laden die St.
+  Lambertus Schützenbruderschaft und der SV Morschenich ab 17 Uhr am Bürg
+ ewaldzentrum zum Adventsfenster mit Glühwein\, Fotoausstellung und Weihna
+ chtsmarkt ein.\nVeranstalter: St. Lambertus Schützenbruderschaft Morschen
+ ich 1458 e.V. und SV Morschenich\nhttps://merzenichaktuell.hk-growthoperat
+ or.de/termine/adventsfenster-bwz-morschenich-2026-11-28/
 LOCATION:Bürgewaldzentrum (BWZ) Morschenich\, Schützenheim
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/adventsfenster-bw
  z-morschenich-2026-11-28/
@@ -1092,6 +1093,20 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfeier-m
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:taize-gottesdienst-morschenich-2026-12-06@merzenich-aktuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20261206T160000Z
+SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
+DESCRIPTION:Am zweiten Advent\, Sonntag\, 6. Dezember\, wird um 17 Uhr in M
+ orschenich wieder ein Taizé-Gottesdienst gefeiert.\nVeranstalter: Katholi
+ sche Pfarrgemeinden Merzenich und Niederzier\nhttps://merzenichaktuell.hk-
+ growthoperator.de/termine/taize-gottesdienst-morschenich-2026-12-06/
+LOCATION:Lambertuskapelle Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/taize-gottesdiens
+ t-morschenich-2026-12-06/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:senior-innenadventsfeier-merzenich-2026-12-09@merzenich-aktuell.de
 DTSTAMP:20261105T060000Z
 DTSTART:20261209T140000Z
@@ -1105,6 +1120,39 @@ DESCRIPTION:Adventsfeier für Seniorinnen und Senioren am Mittwoch\, 9. Dez
 LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/senior-innenadven
  tsfeier-merzenich-2026-12-09/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:awo-weihnachtsfeier-senioren-brauhaus-merzenich-2026-12-11@merzenich-ak
+ tuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20261211T143000Z
+SUMMARY:Weihnachtsfeier der AWO für Seniorinnen und Senioren im Merzeniche
+ r Brauhaus
+DESCRIPTION:Die AWO Merzenich lädt die Seniorinnen und Senioren der Gemein
+ de am Freitag\, 11. Dezember\, zur Weihnachtsfeier ins Merzenicher Brauhau
+ s ein\; Beginn 15.30 Uhr\, Einlass ab 14.30 Uhr. Höchstens 60 Plätze\, A
+ nmeldung nötig.\nVeranstalter: AWO Merzenich\nhttps://merzenichaktuell.hk
+ -growthoperator.de/termine/awo-weihnachtsfeier-senioren-brauhaus-merzenich
+ -2026-12-11/
+LOCATION:Merzenicher Brauhaus
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/awo-weihnachtsfei
+ er-senioren-brauhaus-merzenich-2026-12-11/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kindergottesdienst-ev-gemeindehaus-2026-12-13@merzenich-aktuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20261213T100000Z
+SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
+DESCRIPTION:Am dritten Advent\, Sonntag\, 13. Dezember\, feiert die evangel
+ ische Gemeinde um 11 Uhr Kindergottesdienst im Gemeindehaus\; vorher gibt 
+ es ab 10.30 Uhr ein gemeinsames Frühstück.\nVeranstalter: Evangelische G
+ emeinde zu Düren\, Bezirk Merzenich\nhttps://merzenichaktuell.hk-growthop
+ erator.de/termine/kindergottesdienst-ev-gemeindehaus-2026-12-13/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
+ t-ev-gemeindehaus-2026-12-13/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -1173,6 +1221,20 @@ DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 8. Januar 2027\
 LOCATION:Gemeinde Merzenich\, Amtsblatt-Redaktion (per E-Mail)
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/amtsblatt-abgabes
  chluss-2026-12-29/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:taize-gottesdienst-morschenich-2027-01-03@merzenich-aktuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20270103T160000Z
+SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
+DESCRIPTION:Am Sonntag\, 3. Januar 2027\, wird um 17 Uhr in Morschenich ein
+  Taizé-Gottesdienst gefeiert.\nVeranstalter: Katholische Pfarrgemeinden M
+ erzenich und Niederzier\nhttps://merzenichaktuell.hk-growthoperator.de/ter
+ mine/taize-gottesdienst-morschenich-2027-01-03/
+LOCATION:Lambertuskapelle Morschenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/taize-gottesdiens
+ t-morschenich-2027-01-03/
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT

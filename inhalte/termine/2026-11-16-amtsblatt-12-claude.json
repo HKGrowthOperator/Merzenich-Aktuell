@@ -1,0 +1,110 @@
+{
+  "hinweis": "Kalenderpflege 16.11.2026, Nachmittagslauf (Claude): Amtsblatt der Gemeinde Merzenich Nr. 12 vom 13.11.2026 (PDF, erstellt 13.11.2026, am 16.11.2026 um 14:47 Uhr gelesen); Termine bis 60 Tage, die im Bestand fehlten. Sonntagscafé 06.12. nicht aufgenommen (Ort nicht genannt).",
+  "termine": [
+    {
+      "slug": "awo-weihnachtsfeier-senioren-brauhaus-merzenich-2026-12-11",
+      "titel": "Weihnachtsfeier der AWO für Seniorinnen und Senioren im Merzenicher Brauhaus",
+      "start": "2026-12-11T15:30:00+01:00",
+      "ort": "Merzenicher Brauhaus",
+      "adresse": "Bergstraße 22, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Senioren",
+      "veranstalter": "AWO Merzenich",
+      "beschreibung": "Die AWO Merzenich lädt die Seniorinnen und Senioren der Gemeinde am Freitag, 11. Dezember, zur Weihnachtsfeier ins Merzenicher Brauhaus ein; Beginn 15.30 Uhr, Einlass ab 14.30 Uhr. Höchstens 60 Plätze, Anmeldung nötig.",
+      "absaetze": [
+        "Am Freitag, 11. Dezember 2026, feiert die AWO Merzenich mit den Seniorinnen und Senioren der Gemeinde Weihnachten. Beginn ist um 15.30 Uhr im Merzenicher Brauhaus an der Bergstraße, Einlass ab 14.30 Uhr. Geplant sind Musik, ein kleines Weihnachtsprogramm und Bewirtung; traditionell werden die älteste Bürgerin und der älteste Bürger unter den Gästen geehrt.",
+        "Weil im Brauhaus nur 60 Plätze zur Verfügung stehen, ist eine Anmeldung erforderlich; berücksichtigt wird nach Eingang. Angemeldet wird telefonisch dienstags ab 18 Uhr beim Kassierer der AWO, die Nummer steht im Amtsblatt Nr. 12 (S. 16)."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 12 vom 13.11.2026, S. 16",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=18"
+        ],
+        [
+          "AWO Merzenich",
+          "https://www.awo-merzenich.de"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 14 (Veranstaltungskalender) und S. 16: „Weihnachtsfeier der AWO Merzenich“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=18",
+        "stand": "2026-11-16"
+      }
+    },
+    {
+      "slug": "taize-gottesdienst-morschenich-2026-12-06",
+      "titel": "Taizé-Gottesdienst in der Lambertuskapelle Morschenich",
+      "start": "2026-12-06T17:00:00+01:00",
+      "ort": "Lambertuskapelle Morschenich",
+      "ortsteil": "Morschenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinden Merzenich und Niederzier",
+      "beschreibung": "Am zweiten Advent, Sonntag, 6. Dezember, wird um 17 Uhr in Morschenich wieder ein Taizé-Gottesdienst gefeiert.",
+      "absaetze": [
+        "Die Taizé-Gottesdienste in Morschenich gehen weiter: Der nächste ist am Sonntag, 6. Dezember 2026, um 17 Uhr in der Kapelle in Morschenich-Neu. Die Gottesdienstform mit viel Gesang, Gebeten und Stille steht allen christlichen Konfessionen offen.",
+        "Nach diesem Termin folgt laut Amtsblatt Nr. 12 der nächste Taizé-Gottesdienst am 3. Januar 2027."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 12 vom 13.11.2026, S. 11",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=13"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 11: „Einladung zu Taizé-Gottesdiensten in Morschenich-Neu“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=13",
+        "stand": "2026-11-16"
+      }
+    },
+    {
+      "slug": "taize-gottesdienst-morschenich-2027-01-03",
+      "titel": "Taizé-Gottesdienst in der Lambertuskapelle Morschenich",
+      "start": "2027-01-03T17:00:00+01:00",
+      "ort": "Lambertuskapelle Morschenich",
+      "ortsteil": "Morschenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Katholische Pfarrgemeinden Merzenich und Niederzier",
+      "beschreibung": "Am Sonntag, 3. Januar 2027, wird um 17 Uhr in Morschenich ein Taizé-Gottesdienst gefeiert.",
+      "absaetze": [
+        "Am Sonntag, 3. Januar 2027, um 17 Uhr lädt die katholische Kirchengemeinde wieder zum Taizé-Gottesdienst in die Kapelle in Morschenich-Neu ein. Die Gottesdienstform mit viel Gesang, Gebeten und Stille steht allen christlichen Konfessionen offen."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 12 vom 13.11.2026, S. 11",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=13"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 11: „Einladung zu Taizé-Gottesdiensten in Morschenich-Neu“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=13",
+        "stand": "2026-11-16"
+      }
+    },
+    {
+      "slug": "kindergottesdienst-ev-gemeindehaus-2026-12-13",
+      "titel": "Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus",
+      "start": "2026-12-13T11:00:00+01:00",
+      "ort": "Evangelisches Gemeindehaus Merzenich",
+      "adresse": "Severin-Böhr-Straße 15, 52399 Merzenich",
+      "ortsteil": "Merzenich",
+      "kategorie": "Kirche",
+      "veranstalter": "Evangelische Gemeinde zu Düren, Bezirk Merzenich",
+      "beschreibung": "Am dritten Advent, Sonntag, 13. Dezember, feiert die evangelische Gemeinde um 11 Uhr Kindergottesdienst im Gemeindehaus; vorher gibt es ab 10.30 Uhr ein gemeinsames Frühstück.",
+      "absaetze": [
+        "Am dritten Advent, Sonntag, 13. Dezember 2026, lädt die evangelische Gemeinde um 11 Uhr zum Kindergottesdienst in das Gemeindehaus an der Severin-Böhr-Straße ein. Ab 10.30 Uhr gibt es vorher ein gemeinsames Frühstück.",
+        "Für das Frühstück bittet die Gemeinde um Anmeldung bei der Küsterin. Die im Amtsblatt Nr. 12 genannte Anmeldefrist „bis 31.10.“ liegt vor dem Erscheinen des Amtsblatts; wer teilnehmen möchte, fragt am besten direkt im Gemeindebüro nach."
+      ],
+      "links": [
+        [
+          "Amtsblatt Nr. 12 vom 13.11.2026, S. 13",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=15"
+        ]
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 13: Mitteilungen der Evangelischen Gemeinde, „Kindergottesdienst“",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=15",
+        "stand": "2026-11-16"
+      }
+    }
+  ]
+}

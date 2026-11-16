@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kindergottesdienst mit Frühstück im Evangelischen Gemeindeha
+ us
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:kindergottesdienst-ev-gemeindehaus-2026-12-13@merzenich-aktuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20261213T100000Z
+SUMMARY:Kindergottesdienst mit Frühstück im Evangelischen Gemeindehaus
+DESCRIPTION:Am dritten Advent\, Sonntag\, 13. Dezember\, feiert die evangel
+ ische Gemeinde um 11 Uhr Kindergottesdienst im Gemeindehaus\; vorher gibt 
+ es ab 10.30 Uhr ein gemeinsames Frühstück.\nVeranstalter: Evangelische G
+ emeinde zu Düren\, Bezirk Merzenich\nhttps://merzenichaktuell.hk-growthop
+ erator.de/termine/kindergottesdienst-ev-gemeindehaus-2026-12-13/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/kindergottesdiens
+ t-ev-gemeindehaus-2026-12-13/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

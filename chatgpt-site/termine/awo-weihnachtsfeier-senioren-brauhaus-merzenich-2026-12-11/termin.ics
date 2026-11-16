@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Weihnachtsfeier der AWO für Seniorinnen und Senioren im Merze
+ nicher Brauhaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:awo-weihnachtsfeier-senioren-brauhaus-merzenich-2026-12-11@merzenich-ak
+ tuell.de
+DTSTAMP:20261116T060000Z
+DTSTART:20261211T143000Z
+SUMMARY:Weihnachtsfeier der AWO für Seniorinnen und Senioren im Merzeniche
+ r Brauhaus
+DESCRIPTION:Die AWO Merzenich lädt die Seniorinnen und Senioren der Gemein
+ de am Freitag\, 11. Dezember\, zur Weihnachtsfeier ins Merzenicher Brauhau
+ s ein\; Beginn 15.30 Uhr\, Einlass ab 14.30 Uhr. Höchstens 60 Plätze\, A
+ nmeldung nötig.\nVeranstalter: AWO Merzenich\nhttps://merzenichaktuell.hk
+ -growthoperator.de/termine/awo-weihnachtsfeier-senioren-brauhaus-merzenich
+ -2026-12-11/
+LOCATION:Merzenicher Brauhaus
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/awo-weihnachtsfei
+ er-senioren-brauhaus-merzenich-2026-12-11/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

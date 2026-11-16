@@ -100,10 +100,10 @@
    "ortsteil": "Umgebung",
    "kategorie": "Kultur",
    "veranstalter": "Gemeinde Merzenich",
-   "beschreibung": "Zweite Ausgabe des „Pluriversum“ der Gemeinde Merzenich mit entwicklungspolitischen Impulsen, Musik und Projektionen, nach der jüngsten Ankündigung ab 18 Uhr in der Aula der Gesamtschule in Niederzier. Geändert: zunächst war die Aula an der Schulstraße in Merzenich um 18.15 Uhr angekündigt.",
+   "beschreibung": "Zweite Ausgabe des „Pluriversum“ der Gemeinde Merzenich mit entwicklungspolitischen Impulsen, Musik und Projektionen in der Aula der Gesamtschule in Niederzier: laut Plakat im Amtsblatt Nr. 12 um 18 Uhr Einlass und „Markt der Möglichkeiten“, um 18.45 Uhr Beginn des Bühnenprogramms.",
    "absaetze": [
     "Die Gemeinde Merzenich lädt am Dienstag, 17. November 2026, zum zweiten „Pluriversum“ ein. Nach ihrem Beitrag in der Heimat-Info-App vom 6. November beginnt der Abend um 18 Uhr in der Aula der Gesamtschule Am Weiherhof in Niederzier. Es geht um entwicklungspolitische Impulse, Klimaschutz und sozialen Zusammenhalt, begleitet von Musik und Projektionen; eine Referentin wird live zugeschaltet, danach ist Zeit für Austausch.",
-    "Geändert am 8. November: Amtsblatt Nr. 11 vom 16. Oktober und der erste Kalendereintrag nannten 18.15 Uhr und die Aula an der Schulstraße in Merzenich. Der Kalendereintrag der Gemeinde nennt inzwischen die Aula in Niederzier, als Beginn aber weiter 18.15 Uhr. Am 18. November folgt von 11 bis 13 Uhr ein Workshop in der Gesamtschule Niederzier (eigener Termin)."
+    "Geändert am 8. November: Amtsblatt Nr. 11 vom 16. Oktober und der erste Kalendereintrag nannten 18.15 Uhr und die Aula an der Schulstraße in Merzenich. Ergänzt am 16. November: Das Plakat im Amtsblatt Nr. 12 vom 13. November nennt 18 Uhr für Einlass und einen „Markt der Möglichkeiten“ und 18.45 Uhr für den Beginn des Bühnenprogramms; der Veranstaltungskalender im selben Amtsblatt und der Kalendereintrag der Gemeinde führen weiter 18.15 Uhr. Am 18. November folgt von 11 bis 13 Uhr ein Workshop in der Gesamtschule Niederzier (eigener Termin)."
    ],
    "artikel": "/leben/pluriversum-17-november-2026-gesamtschule-merzenich/",
    "links": [
@@ -114,6 +114,10 @@
     [
      "Pluriversum im Veranstaltungskalender der Gemeinde (Heimat-Info)",
      "https://www.heimat-info.de/veranstaltungen/671697c5-6e42-41cd-8f80-11b2ee1894ea"
+    ],
+    [
+     "Amtsblatt Nr. 12 vom 13.11.2026, S. 3 (Plakat mit Ablauf)",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=5"
     ]
    ],
    "quelle": {
@@ -152,16 +156,27 @@
    "ortsteil": "Merzenich",
    "kategorie": "Brauchtum",
    "veranstalter": "Geschichts- und Heimatverein Merzenich",
-   "beschreibung": "Traditioneller Adventmarkt mit Handwerkskunst, Speisen, Getränken und Blasmusik; am Sonntag ab 11 Uhr geöffnet. Eintritt frei.",
+   "beschreibung": "Adventmarkt des Geschichts- und Heimatvereins mit Kunsthandwerk, Holzspielzeug, Honig und Spirituosen, Kaffee und Kuchen: Samstag 14 bis 19 Uhr, Sonntag 11 bis 18 Uhr. Eintritt frei.",
    "absaetze": [
-    "Der Adventmarkt im Heimatmuseum an der Bergstraße 1 beginnt am Samstag, 28. November 2026, um 14 Uhr und öffnet am Sonntag, 29. November, ab 11 Uhr.",
-    "Es gibt Handwerkskunst, Speisen und Getränke sowie Blasmusik unter dem Tannenbaum. Am Samstag kommt gegen Einbruch der Dunkelheit der Nikolaus. Der Eintritt ist frei."
+    "Der Adventmarkt im Heimatmuseum an der Bergstraße 1 ist laut Veranstaltungskalender im Amtsblatt Nr. 12 am Samstag, 28. November 2026, von 14 bis 19 Uhr und am Sonntag, 29. November, von 11 bis 18 Uhr geöffnet. Angeboten werden unter anderem Kunsthandwerk, Holzspielzeug, Honig und Spirituosen, dazu Kaffee und Kuchen sowie warme Speisen und Getränke. Der Eintritt ist frei.",
+    "Nach der Ankündigung im Amtsblatt Nr. 12 singen am Samstag ab 16 Uhr die Merzenicher Freunde der Musik adventliche Lieder, am Sonntag spielen ab 16 Uhr die Berzbuirer Blechbolzer. Den Besuch des Nikolaus bei den Kindern nennt dieselbe Ankündigung für Samstag „etwa gegen 15.15 Uhr“; Amtsblatt Nr. 11 und der Beitrag des Vereins hatten ihn für den Einbruch der Dunkelheit angekündigt."
    ],
    "quelle": {
-    "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 27: „Adventmarkt im Heimatmuseum“",
-    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=29",
+    "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 14 und 15: Veranstaltungskalender und „Im Heimatmuseum Merzenich in der Adventszeit starten“",
+    "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=17",
     "stand": "2026-11-16"
-   }
+   },
+   "ende": "2026-11-28T19:00:00+01:00",
+   "links": [
+    [
+     "Amtsblatt Nr. 12 vom 13.11.2026, S. 14 (Veranstaltungskalender) und S. 15 (Ankündigung)",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=17"
+    ],
+    [
+     "Amtsblatt Nr. 11 vom 16.10.2026, S. 27",
+     "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=29"
+    ]
+   ]
   },
   {
    "slug": "kraetzchensitzung-weinberghalle-2027-01-23",
