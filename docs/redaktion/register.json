@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-16-claude-morgens.md",
-  "source_check_window": "16.11.2026, 06:58:17–06:59:49 Europe/Berlin; Sportergänzung bis 07:00:11, RIS-Wiederabruf 07:00:26, Livebilder 07:00:57/07:01:05 mit anschließender Sichtung; ergänzende Original-Webprüfung bis etwa 07:02",
+  "latest_dossier": "dossiers/2026-11-16-mittags.md",
+  "source_check_window": "16.11.2026, 12:07:43–12:09:08 Europe/Berlin; zusätzliche Primärtexte 12:08:48, Livebild 12:11:18 mit anschließender Sichtung, Commons-Metadaten bis etwa 12:12; Bildabrufe HTTP 403",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -1980,11 +1980,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-10-25-abends.md",
       "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert. | Claude 15.11. nachmittags: In der Advents-Übersicht nur belegte Einzeltermine: Weihnachtsfenster der Gemeinde am Rathaus 15.12. (Amtsblatt 11/2026, Lebendiger Adventskalender auf Initiative der katholischen Kirchengemeinde), Adventsfenster Schützen am Bürgewaldzentrum 28.11. (Terminplan), Golzheimer Adventskalender 28.11. (Kulturkalender). Eine Gastgeberliste 2026 ist weiter nicht veröffentlicht; Sperre für eine eigene Meldung zur Reihe bleibt.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-ADVENTFENSTER-2026, T2; Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet. Weiterarbeit: Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief? Historische Umsetzung und Commit bleiben unverändert. | Claude 15.11. nachmittags: In der Advents-Übersicht nur belegte Einzeltermine: Weihnachtsfenster der Gemeinde am Rathaus 15.12. (Amtsblatt 11/2026, Lebendiger Adventskalender auf Initiative der katholischen Kirchengemeinde), Adventsfenster Schützen am Bürgewaldzentrum 28.11. (Terminplan), Golzheimer Adventskalender 28.11. (Kulturkalender). Eine Gastgeberliste 2026 ist weiter nicht veröffentlicht; Sperre für eine eigene Meldung zur Reihe bleibt. | ChatGPT 16.11. mittags: Ausgabe 12 ergänzt beim vorhandenen Termin am Bürgewaldzentrum Fotoausstellung/Weihnachtsmarkt und SV Morschenich als Mitveranstalter. T2 bis eigenständige Bestätigung; keine neue Gastgeberliste, keine Dublette.",
       "dossier_history": [
         {
           "date": "2026-10-17",
@@ -2061,6 +2061,12 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "KORREKTUREN / TERMINE – Nachprüfung"
         }
       ],
       "last_repository_checked_at": "2026-10-25T18:15:32+01:00",
@@ -2143,9 +2149,17 @@
           "open_questions": "Gibt es eine aktuelle Ausschreibung, Anmeldefrist und Gastgeberliste 2026? Wo erscheint der neue Pfarrbrief?",
           "refresh": "Vor einem Adventshinweis; spätestens 03.11.2026.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-10-27-abends.md",
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "latest_research_checked_at": "2026-10-27 abends Europe/Berlin",
       "latest_research_scope": "Detailtext und Bildbeschriftungen gelesen, Kalenderbild nicht transkribiert und nicht als 2026 umgedeutet.",
@@ -2224,11 +2238,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-15 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-nachmittags.json → /leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
       "article_id": null,
       "implementation_commit": "4d822e16",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 15.11. nachmittags: Adventmarkt des Geschichts- und Heimatvereins (28.11. ab 14 Uhr, 29.11. 11 bis 18 Uhr) nach Vereinsbeitrag in Heimat-Info und Kulturkalender in der Advents-Übersicht (MA-ADVENT-2026).",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | Claude 15.11. nachmittags: Adventmarkt des Geschichts- und Heimatvereins (28.11. ab 14 Uhr, 29.11. 11 bis 18 Uhr) nach Vereinsbeitrag in Heimat-Info und Kulturkalender in der Advents-Übersicht (MA-ADVENT-2026). | ChatGPT 16.11. mittags: Update aus erstmals jetzt abrufbarer Ausgabe 12: zusätzliches Marktprogramm mit Nikolaus gegen 15:15 und Musikzeiten; Konflikt zu bisherigem Dunkelheits-Hinweis. T2: unabhängige Bestätigung und dritter eigenständiger Ereignisbeleg fehlen. Bildkandidat Commons CC0 mit Metadaten geprüft, visuelle Prüfung durch HTTP 403 blockiert, B0. Bestehenden Adventsartikel aktualisieren statt Dublette.",
       "dossier_history": [
         {
           "date": "2026-10-19",
@@ -2270,8 +2284,28 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-15-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "THEMENKARTEN – Marktupdate"
         }
-      ]
+      ],
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_image_status": "B0",
+      "latest_research_scope": "Updatekarte gesperrt; Quellenkonflikt, unabhängige Bestätigung und Bildsichtung offen"
     },
     {
       "id": "MA-AMPRION-BAUSTART",
@@ -6419,7 +6453,7 @@
       "image_status": null,
       "dossier": "dossiers/2026-11-08-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-08 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": "inhalte/meldungen/2026-11-08-recherche-claude-morgens.json → /leben/pluriversum-merzenich-17-november-2026-gesamtschule-niederzier-neuer-ort/",
       "article_id": null,
       "implementation_commit": "7712685",
@@ -6450,9 +6484,27 @@
           "date": "2026-11-08",
           "dossier": "dossiers/2026-11-08-claude-morgens.md",
           "heading": "1 · MA-PLURIVERSUM-1711"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "KORREKTUREN / TERMINE – Nachprüfung"
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | Claude 08.11. (Nachhollauf): Gemeinde-Beitrag 06.11. (Aula Niederzier, 18 Uhr, Workshop 11–13 Uhr) gegen Amtsblatt (18.15 Uhr Schulstraße, 10–12 Uhr) und Kalender (Niederzier, 18:15) gelesen; Folgemeldung (Kurzmeldung 320 Wörter), Artikel vom 16.10. und beide Termine aktualisiert (Commit 12e1944). Live 13:00 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“."
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | Claude 08.11. (Nachhollauf): Gemeinde-Beitrag 06.11. (Aula Niederzier, 18 Uhr, Workshop 11–13 Uhr) gegen Amtsblatt (18.15 Uhr Schulstraße, 10–12 Uhr) und Kalender (Niederzier, 18:15) gelesen; Folgemeldung (Kurzmeldung 320 Wörter), Artikel vom 16.10. und beide Termine aktualisiert (Commit 12e1944). Live 13:00 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 16.11. mittags: Neues Plakat in Ausgabe 12 trennt Einlass/Markt der Möglichkeiten und Beginn Bühnenprogramm; weiterhin abweichender Kalendereintrag. Keine bestätigte Verlegung des ganzen Termins. T2: unabhängige Klärung der aktuellen Ablaufzeiten fehlt; vorhandenen Termin und Artikel ergänzen.",
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     },
     {
       "id": "KD-STETTERNICH-1610",
@@ -11524,12 +11576,12 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-16T07:05:14+01:00",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
       "implementation_commit": "45ee6ad4",
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche. | ChatGPT 15.11. mittags: Bekannter Livebildfehler erneut bestätigt, Bildunterschrift/Alt-Text Polizeiwache weiterhin falsch; neu geladenes und angesehenes Symbolfoto zeigt Polizeimotorrad, bytegleich zum Morgen. Repo-Umsetzung d4e035d8 nicht als Live-Erledigung zählen. Keine neue Korrektur. | ChatGPT 16.11. morgens: Bekannter Bildfehler im erneut gelesenen Liveartikel weiterhin vorhanden: Bildunterschrift/Alt-Text Polizeiwache, tatsächlich Polizeimotorrad. Livebild neu geladen und angesehen. Historische Repo-Korrektur und Claude-Hinweise erhalten; keine neue Korrektur, keine Websiteänderung.",
-      "latest_research_dossier": "dossiers/2026-11-16-morgens.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche. | ChatGPT 15.11. mittags: Bekannter Livebildfehler erneut bestätigt, Bildunterschrift/Alt-Text Polizeiwache weiterhin falsch; neu geladenes und angesehenes Symbolfoto zeigt Polizeimotorrad, bytegleich zum Morgen. Repo-Umsetzung d4e035d8 nicht als Live-Erledigung zählen. Keine neue Korrektur. | ChatGPT 16.11. morgens: Bekannter Bildfehler im erneut gelesenen Liveartikel weiterhin vorhanden: Bildunterschrift/Alt-Text Polizeiwache, tatsächlich Polizeimotorrad. Livebild neu geladen und angesehen. Historische Repo-Korrektur und Claude-Hinweise erhalten; keine neue Korrektur, keine Websiteänderung. | ChatGPT 16.11. mittags: Bekannter Bildfehler live erneut bestätigt: Polizeiwache in Bildunterschrift/Alt-Text, tatsächlich Polizeimotorrad; Bild neu geladen und angesehen. Kein neuer Fehler gezählt, Repo-Korrektur d4e035d8 und Claude-Notizen erhalten.",
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Live-Nachprüfung des bekannten Bildfehlers: weiterhin offen; Repo-Korrektur nicht als Live-Erledigung ausgegeben",
       "research_history": [
@@ -11582,6 +11634,14 @@
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
       "dossier_history": [
@@ -11626,6 +11686,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-16-morgens.md",
           "heading": "KORREKTUREN – Livebildprüfung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "KORREKTUREN / TERMINE – Nachprüfung"
         }
       ],
       "latest_research_review": {
@@ -11714,6 +11780,19 @@
           "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
           "correct_description": "Polizeimotorrad als Symbolbild",
           "repository_implementation_commit": "d4e035d8",
+          "implementation": "keine_Websiteaenderung"
+        },
+        {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "checked_at": "2026-11-16T12:16:46+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "article_read_at": "2026-11-16T12:08:50+01:00",
+          "image_read_at": "2026-11-16T12:11:18+01:00",
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
           "implementation": "keine_Websiteaenderung"
         }
       ]
@@ -11912,11 +11991,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-15-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-15T12:12:23+01:00",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": "inhalte/meldungen/2026-11-15-recherche-claude-morgens.json → /rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
       "article_id": null,
       "implementation_commit": "848da92d",
-      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12. | ChatGPT 15.11. mittags: Neue Claude-Meldung vollständig live/repo gelesen und Vorlagenkern mit 136/2026, Erklärungsentwurf und HFA-Agenda abgeglichen; keine Abweichung darin. Abschlussentwurf/Prüfbericht, Haushaltsoriginal, konkrete Kita-Liste und unabhängige Bestätigung nicht separat gelesen. Recherche T2, keine neue Themenkarte; bestehende Umsetzung und Claude-T1 erhalten.",
+      "notes": "Claude 15.11. morgens: eigener Fund aus HFA-Tagesordnung; Kurzmeldung (234 Wörter) aus Vorlage 136/2026 und Erklärungsentwurf; Fehlbetrag 2024 428.442,04 € laut Entwurf; Vorschlag. Live 09:19 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA 19.11., Rat 03.12. | ChatGPT 15.11. mittags: Neue Claude-Meldung vollständig live/repo gelesen und Vorlagenkern mit 136/2026, Erklärungsentwurf und HFA-Agenda abgeglichen; keine Abweichung darin. Abschlussentwurf/Prüfbericht, Haushaltsoriginal, konkrete Kita-Liste und unabhängige Bestätigung nicht separat gelesen. Recherche T2, keine neue Themenkarte; bestehende Umsetzung und Claude-T1 erhalten. | ChatGPT 16.11. mittags: Ausgabe 12 enthält nun eine Liste der gemeindlichen Kitas als zusätzlichen Hintergrundbeleg. Keine neue Fehlbetragsentwicklung, Abschlussentwurf/Prüfbericht und unabhängige Bestätigung weiter offen. Historische Umsetzung/Claude-Status erhalten.",
       "dossier_history": [
         {
           "date": "2026-11-15",
@@ -11929,15 +12008,29 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-15-mittags.md",
           "heading": "KORREKTUREN – Artikelprüfung Kita-Patronat"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "KORREKTUREN / TERMINE – Nachprüfung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-11-15-mittags.md",
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "research_history": [
         {
           "date": "2026-11-15",
           "edition": "mittags",
           "dossier": "dossiers/2026-11-15-mittags.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
@@ -12008,18 +12101,26 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-16-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-16 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-16T12:16:46+01:00",
       "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-morgens.json → /sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/",
       "article_id": null,
       "implementation_commit": "507e8f12",
-      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr.",
-      "latest_research_dossier": "dossiers/2026-11-16-morgens.md",
+      "notes": "Ergebnisse 15.11.2026: JSV Frenz–SC Merzenich 1:0 (0:0), SW Düren–FC Golzheim 2:2 (2:2), SV Morschenich–Inden/Altdorf 4:3 (2:3), aus lesbaren automatischen Verbandsberichten. FuPa stimmt in Endständen überein, unabhängige Herkunft nicht bestätigt. T2: zwei unabhängige Bestätigungen/dritter eigenständiger Ereignisbeleg fehlen. Widersprüchliche Minuten-/Halbzeit-/Serienaussagen dokumentiert, nicht übernehmen; keine Spielernamen/Verletzungsdaten. Alter Artikel zum vorherigen Spieltag und Girbelsrath-Samstagsergebnis separate Vorgänge, vor Umsetzung geplante Claude-Sportübersicht abgleichen. | Claude 16.11. morgens: Kurzmeldung „SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3“ (313 Wörter) aus den offiziellen FUSSBALL.DE-Spielberichten (DFB-Spieldaten, SCHREIBREGELN Abschnitt 0), Mannschaftsseite mit Tabelle und FuPa; Endstände und Tabelle in beiden Quellen gleich; keine Spielernamen, keine Serienaussagen aus den Automatikberichten; Torminuten übereinstimmend oder ausdrücklich dem Spielbericht zugeschrieben, Minute des 2:1 in Düren weggelassen (Bericht 16., FuPa 30.); Widerspruch Tabellenplatz Morschenich (FuPa mit Derby-Urteil Platz 1, FUSSBALL.DE Rang zwei) im Text benannt. Live 09:28 Uhr. | ChatGPT 16.11. mittags: Neue Meldung vollständig live/repo gelesen. Neuer Korrekturauftrag MA-KORR-SC-RANGWECHSEL-1611: Satz Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz ist als unmittelbarer Spielvergleich falsch; offizielle Mannschaftsseite und FuPa führten SC bereits am 15.11. vor Spielbeginn auf Rang vier, gespeicherte Primärabrufe erhalten. Endstände/aktuelle Ränge unverändert gedeckt; Serien nicht unabhängig nachgezählt und eigentliches Derbyurteil nicht gelesen. Keine Wiederholung der unveränderten Ergebnis-Karte.",
+      "latest_research_dossier": "dossiers/2026-11-16-mittags.md",
       "latest_research_text_status": "T2",
       "research_history": [
         {
           "date": "2026-11-16",
           "edition": "morgens",
           "dossier": "dossiers/2026-11-16-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
@@ -12037,6 +12138,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-16-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-16",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "heading": "KORREKTUREN / TERMINE – Nachprüfung"
         }
       ],
       "latest_research_review": {
@@ -12049,7 +12156,22 @@
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
-      }
+      },
+      "correction_requests": [
+        {
+          "id": "MA-KORR-SC-RANGWECHSEL-1611",
+          "dossier": "dossiers/2026-11-16-mittags.md",
+          "checked_at": "2026-11-16T12:16:46+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "wrong": "Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz.",
+          "correct": "Der SC stand bereits vor dem Spiel auf Rang vier und bleibt mit 27 Punkten dort.",
+          "article_read_at": "2026-11-16T12:09:06+01:00",
+          "evidence": "Offizielle Mannschaftsseite: gespeicherte Primärabrufe 15.11.2026 06:59:00/12:06:44, Rang vier vor Spielbeginn; FuPa 15.11.2026 12:06:46 ebenfalls vier. Heutige Originalabrufe bestätigen aktuellen Rang vier.",
+          "evidence_limit": "Historische Direktabrufe gespeichert, kein neuer öffentlicher Archivsnapshot beschafft",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     }
   ],
   "archive": {
@@ -14158,6 +14280,53 @@
       "implementation_commit": "507e8f12",
       "summary": "ChatGPT morgens ohne neue Korrektur (Bildbeschreibung Malwettbewerb live weiter offen, Werkzeugpunkt); Kurzmeldung Fußball-Wochenende 14./15.11. mit Spielstand; 21 Termine bis 29.11. an der Quelle bestätigt; Amtsblatt 12 noch nicht erschienen.",
       "publication": "Neue Meldung und Spielstand direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-16",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-16-mittags.md",
+      "compared_with": "dossiers/2026-11-16-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-16-claude-morgens.md",
+      "base_commit": "4776f052354ba6546db83ab3491e1fceaafba9fa",
+      "implementation_commit": null,
+      "summary": "Amtsblatt 12 neu abrufbar: T2-Updatekarte Adventmarkt, neue Programmdetails Pluriversum und Bürgewaldzentrum. Neue Rangkorrektur im heutigen Sportartikel, bekannter Livebildfehler bleibt. Neue Polizeimeldungen ohne konkreten Merzenichbezug; Mental-Load-Anmeldung wieder lesbar/ausgebucht.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-SC-RANGWECHSEL-1611"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 53,
+      "repository_event_files_read": 22,
+      "repository_area_files_read": 18,
+      "new_or_changed_events": 3,
+      "event_change_scope": "Programmergänzungen/Quellenwidersprüche, keine bestätigte Absage oder Verlegung",
+      "complete_drafts": 0,
+      "source_check_window": "16.11.2026, 12:07:43–12:09:08 Europe/Berlin; zusätzliche Primärtexte 12:08:48, Livebild 12:11:18 mit anschließender Sichtung, Commons-Metadaten bis etwa 12:12; Bildabrufe HTTP 403",
+      "prepared_at": "2026-11-16T12:16:46+01:00",
+      "deadline": "2026-11-16T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung am bestätigten main-Commit im Laufabschluss; Vorbereitungszeit kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Neue SC-Rangkorrektur live offen; historische Primärabrufe vor Spielbeginn als Beleg, kein öffentlicher Archivsnapshot beschafft",
+        "Malwettbewerb-Bildbeschreibung/Alt-Text weiter live falsch",
+        "Adventmarkt: Nikolauszeit widerspricht alter Ankündigung, unabhängige Bestätigung/third source und Bildsichtung fehlen, T2/B0",
+        "Pluriversum Einlass/Bühnenbeginn präzisiert, abweichender Kalender weiter offen",
+        "BWZ-Programmergänzung nicht unabhängig bestätigt",
+        "Eigentliches Derbyurteil und unabhängige Serienprüfung im Sportartikel fehlen",
+        "BdSt HTTP 403, historische drei Quellen HTTP 404; zugehörige Artikelprüfung unvollständig",
+        "Commons-Bildabrufe HTTP 403; Vereinsseiten Site Unavailable trotz HTTP 200",
+        "Bauausschuss weiter ohne neuen Ergebnisbeleg im gelesenen Stand"
+      ]
     }
   ]
 }
