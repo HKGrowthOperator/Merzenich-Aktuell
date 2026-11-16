@@ -24,7 +24,7 @@
       ],
       "bildklasse": "rathaus.rat",
       "absaetze": [
-        "Die Gemeinde Merzenich soll sich verpflichten, sämtliche Verluste ihrer eigenen Kita-Gesellschaft zu decken. Das sieht die Vorlage 136/2026 vor, die der Haupt- und Finanzausschuss am Donnerstag, 19. November, berät; beschließen soll der Gemeinderat am 3. Dezember. Die Kindertageseinrichtungen Merzenich gGmbH gehört vollständig der Gemeinde und betreibt nach der Vorlage mehrere Kitas im Gemeindegebiet.",
+        "Die Gemeinde Merzenich soll sich verpflichten, sämtliche Verluste ihrer eigenen Kita-Gesellschaft zu decken. Das sieht die Vorlage 136/2026 vor, die der Haupt- und Finanzausschuss am Donnerstag, 19. November, berät; beschließen soll der Gemeinderat am 3. Dezember. Die Kindertageseinrichtungen Merzenich gGmbH gehört vollständig der Gemeinde und betreibt laut Amtsblatt sechs Kitas in Merzenich, Girbelsrath, Golzheim und Morschenich, in denen über 300 Kinder zwischen einem und sechs Jahren betreut werden.",
         "Anlass ist der Jahresabschluss für 2024. Nach dem Entwurf hat die Gesellschaft in dem Jahr einen Fehlbetrag von 428.442,04 Euro gemacht. Ihr Eigenkapital ist dadurch negativ, die Gesellschaft ist damit bilanziell überschuldet. Damit sie dauerhaft zahlungsfähig bleibt, verlangt die beauftragte Wirtschaftsprüfungsgesellschaft eine sogenannte Patronatserklärung der Gemeinde. Darin sagt Merzenich zu, für alle während der Laufzeit entstehenden Verluste und Verbindlichkeiten der Gesellschaft aufzukommen, so lange sie die alleinige Gesellschafterin ist.",
         "Die Verwaltung erklärt, die Einnahmen der Gesellschaft reichten wegen der Art, wie Kindertagesbetreuung finanziert wird, nicht aus, um ihre Kosten zu decken. Der Ausgleich der Verluste steht deshalb schon seit 2023 im Haushalt der Gemeinde. Wirtschaftlich kommt eine solche Erklärung nach der Vorlage einer Bürgschaft gleich, weil daraus in späteren Jahren Zahlungspflichten entstehen können. Wie hoch diese sein werden, nennt die Vorlage nicht; bei den jährlichen Kosten steht „unterschiedlich“.",
         "Bevor der Bürgermeister die Erklärung unterschreiben darf, muss die Gemeinde den Beschluss der Kommunalaufsicht anzeigen und mindestens einen Monat warten. Der Ausschuss tagt um 18 Uhr öffentlich im Ratssaal; auf derselben Sitzung stehen auch höhere Gebühren und Steuern für 2027 auf der Tagesordnung."
@@ -60,6 +60,13 @@
           ],
           "stelle": "Beschlussvorlage Ziffer 3 und weiteres Verfahren; Anlage Patronatserklärung; Tagesordnung; eigene Wochenvorschau",
           "selbstauskunft": "Tagesordnung im Ratsinformationssystem und eigenes Archiv"
+        },
+        {
+          "aussage": "Amtsblatt Nr. 12 vom 13.11.2026, S. 9 (Kindergärten): „In der Gemeinde Merzenich unterhält die Kindertageseinrichtung Merzenich gGmbH zurzeit 6 Kindertageseinrichtungen (KiTas) in den Ortsteilen Merzenich, Girbelsrath, Golzheim und Morschenich. In diesen Einrichtungen werden insgesamt über 300 Kinder im Alter von 1 - 6 Jahren … betreut.“ (sechs Kitas, einem und sechs Jahren)",
+          "belege": [
+            "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=11"
+          ],
+          "stelle": "Amtsblatt S. 9, Kasten „Kindertageseinrichtungen Merzenich gGmbH“"
         }
       ],
       "quelle": {
@@ -82,6 +89,11 @@
           "name": "Merzenich Aktuell: Wochenvorschau 16. bis 22. November",
           "url": "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
           "stand": "2026-11-15"
+        },
+        {
+          "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 9: Kindertageseinrichtungen Merzenich gGmbH",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=11",
+          "stand": "2026-11-16"
         }
       ]
     }
