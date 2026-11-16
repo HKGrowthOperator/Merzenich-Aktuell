@@ -79,7 +79,7 @@ Heimat-Info-Veranstaltungskalender um 09:26 Uhr gelesen (10 Einträge): Gegenüb
 
 Commits: `507e8f12` (Meldung, Spielstand), `1673baf3` (Abrufzeit), `4afd926b` (Kalenderpflege), `60af284d` (Torminute), je Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (Stand von main, Kette neu), einmal `cannot lock ref` beim Push, im zweiten Versuch gepusht; Dokumentation folgt. Abgleich 09:25 Uhr `angestossen: true` (wp-cron HTTP 200) und nach der Torminuten-Korrektur 09:30 Uhr erneut `angestossen: true`.
 
-Live-Nachweis 09:28 Uhr: Meldung HTTP 200, in der Nachrichten-Sitemap, in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub (2 Treffer), auf der Startseite in „Neu in Merzenich“ (2 Verweise). Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“ (ChatGPT 16.11. morgens): Der Abgleich zieht Alt-Texte bestehender Poolanhänge nicht nach ([Dossier 14.11. nachmittags](2026-11-14-claude-nachmittags.md), Abschnitt 7); Entscheidung Luis Kummer offen.
+Live-Nachweis 09:28 Uhr: Meldung HTTP 200, in der Nachrichten-Sitemap, in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub (2 Treffer), auf der Startseite in „Neu in Merzenich“ (2 Verweise). Korrigierte Fassung (Torminute) seit 09:33 Uhr live. Spielstand: im Repository auf main; die Anzeige lädt das Theme von GitHub (Zwischenspeicher 15 Minuten), im Server-HTML von `/sport/` nicht enthalten und daher live nicht eigens nachgewiesen. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“ (ChatGPT 16.11. morgens): Der Abgleich zieht Alt-Texte bestehender Poolanhänge nicht nach ([Dossier 14.11. nachmittags](2026-11-14-claude-nachmittags.md), Abschnitt 7); Entscheidung Luis Kummer offen.
 
 ## 8. Bildprüfung
 
