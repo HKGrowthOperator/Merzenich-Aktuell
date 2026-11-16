@@ -1,0 +1,97 @@
+{
+  "hinweis": "Nachmittagslauf 16.11.2026 (Claude): Beschlussvorlage 104/2026 vom 27.08.2026 (Antrag SPD-Fraktion, Drs. 24/2026) und Tagesordnung des Haupt- und Finanzausschusses am 19.11.2026, im Ratsinformationssystem am 16.11.2026 um 14:49 Uhr gelesen. Anlage A (Tatbestandsmerkmale) nicht ausgewertet. Vorschlag, kein Beschluss.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
+      "ressort": "rathaus",
+      "ortsteil": "merzenich",
+      "kicker": "Rathaus · Finanzen",
+      "titel": "Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft",
+      "dek": "Die Verwaltung hält die Steuer für eine realistische Einnahmequelle, findet aber nur vier Beherbergungsbetriebe in der Gemeinde. Der Haupt- und Finanzausschuss soll am 19. November zwischen zwei Wegen wählen.",
+      "datum": "2026-11-16T14:50:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "haushalt",
+          "Haushalt"
+        ],
+        [
+          "steuern",
+          "Steuern und Gebühren"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "fakten": [
+        "Vorlage 104/2026 vom 27. August 2026 auf Antrag der SPD-Fraktion",
+        "Haupt- und Finanzausschuss 19. November, Gemeinderat 3. Dezember 2026",
+        "Vergleichskommunen: 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Übernachtung",
+        "Verwaltung findet ein Hotel und zwei Gästehäuser in Merzenich sowie eine Monteurunterkunft in Golzheim"
+      ],
+      "absaetze": [
+        "Soll die Gemeinde Merzenich eine Steuer auf Übernachtungen erheben? Darüber berät der Haupt- und Finanzausschuss am Donnerstag, 19. November, um 18 Uhr im Ratssaal; der Gemeinderat soll am 3. Dezember folgen. Den Anstoß gab ein Antrag der SPD-Fraktion aus den Haushaltsberatungen, in denen die Politik neben Einsparungen auch neue Einnahmen gesucht hat. Das Ergebnis der Prüfung hat die Verwaltung in der Beschlussvorlage 104/2026 vom 27. August zusammengefasst.",
+        "Rechtlich wäre der Weg lang. Der Rat müsste eine eigene Satzung beschließen, und weil es in Nordrhein-Westfalen keine landesweite Übernachtungssteuer gibt, müssten das Kommunal- und das Finanzministerium des Landes die Einführung genehmigen. Wie hoch die Steuer ausfallen könnte, lässt die Vorlage offen. Sie nennt als Orientierung Kommunen in den Kreisen Düren und Euskirchen, die 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Person und Nacht verlangen; möglich wäre auch ein Betrag je Wohnmobil.",
+        "Der Haken liegt in der Zahl der Betriebe. Übernachtungszahlen liegen der Verwaltung nicht vor. Eine erste Recherche fand ein Hotel und zwei Gästehäuser mit Ferien- und Monteurwohnungen in Merzenich sowie eine Monteurunterkunft in Golzheim. Dem stünde ein spürbarer Aufwand gegenüber: ein Register der Betriebe, ein Steuerkonto für jeden Vermieter, Erklärungsformulare und neue Schnittstellen in der Verwaltungssoftware.",
+        "Die Verwaltung nennt die Steuer eine realistische Möglichkeit, zusätzliche Einnahmen zu erzielen, legt sich aber nicht fest. Nach Alternative A soll sie die Steuer konkretisieren, bei den Betrieben Zahlen erfragen, Angebote des IT-Dienstleisters einholen und ihren eigenen Aufwand schätzen. Nach Alternative B wird die Prüfung wegen der wenigen Betriebe aus Wirtschaftlichkeitsgründen beendet.",
+        "In derselben Sitzung stehen auch die Abgaben für 2027 auf der Tagesordnung, darunter die Grundsteuer B und die Hundesteuer. Eine Übernachtungssteuer käme frühestens nach weiteren Beschlüssen und der Genehmigung durch das Land."
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beschlussvorlage 104/2026, Datum 27.08.2026 (27. August), FB 1: „Einführung einer Übernachtungssteuer - Prüfung, rechtliche Herleitung, Information, hier: Antrag der SPD-Fraktion an den HFA Drs. 24/2026“; Beratungsfolge Haupt- und Finanzausschuss 19.11.2026 (19. November), Gemeinderat 03.12.2026 (3. Dezember); Ausgangslage: im Rahmen der Haushaltsberatungen neben Einsparmöglichkeiten auch optionale Einnahmemöglichkeiten. HFA-Tagesordnung: Sitzung 19.11.2026, 18:00 Uhr (18 Uhr), Rathaus, Ratssaal, öffentlich.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ"
+          ],
+          "stelle": "Vorlage S. 1 (Kopf, Betreff, Beratungsfolge, Ausgangslage); Tagesordnung, Kopf"
+        },
+        {
+          "aussage": "Vorlage 104/2026, S. 2: Beherbergungssteuersatzung durch den Rat notwendig; § 2 Abs. 2 KAG NRW: bei einer im Land nicht erhobenen Steuer Genehmigung des für Kommunales zuständigen Ministeriums und des Finanzministeriums; „Orientiert man sich an Kommunen im Kreis Düren bzw. Kreis Euskirchen, die entsprechende Steuern erheben, werden Steuersätze von 5% des für die Beherbergung geschuldeten Entgelts fällig oder aber 2,00 bis 3,00 € je Übernachtung pro Person (altersabhängig) oder pro Fahrzeug“ (5 Prozent, 2 bis 3 Euro).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf"
+          ],
+          "stelle": "Vorlage S. 2, Abschnitte 1.1 bis 1.4"
+        },
+        {
+          "aussage": "Vorlage 104/2026, S. 2 bis 3: keine Übernachtungszahlen bei der Verwaltung; Aufwand: Beherbergungsregister, Steuerkonto je Betreiber, Steuererklärungsformular/Online-Verfahren, Schnittstellen zu Kassensystem und Fachanwendungen. Votum der Verwaltung: „realistische Möglichkeit, Einnahmen für die Gemeinde zu realisieren“; erste KI-Recherche: ein aktiver Hotelbetrieb in Merzenich (1), zwei Gästehäuser mit FeWo/Monteurswohnungen in Merzenich (2), eine Monteurunterkunft in Golzheim (1); Entscheidung den politischen Gremien überlassen.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf"
+          ],
+          "stelle": "Vorlage S. 2 bis 3, Abschnitte 2.1 bis 2.5 und Votum der Verwaltung"
+        },
+        {
+          "aussage": "Vorlage 104/2026, S. 1, Beschlussvorschlag: Alternative A (Verwaltung konkretisiert, erfragt Zahlen bei den Betrieben, fragt Angebote beim IT-Dienstleister an, ermittelt den Aufwand überschlägig), Alternative B (weitere Prüfung aus Wirtschaftlichkeitsgründen und wegen der kleinen Zahl an Beherbergungsbetrieben nicht weiter verfolgen). HFA-Tagesordnung 19.11.: auch Abgaben 2027 (Vorlagen 141, 131, 101/2026, eigene Meldung vom 11.11. zur Grundsteuer B und Hundesteuer).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+            "https://merzenich-aktuell.de/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/"
+          ],
+          "stelle": "Vorlage S. 1, Beschlussvorschlag; Tagesordnung; eigene Meldung 11.11.",
+          "selbstauskunft": "Bezug auf die eigene Meldung zu den Abgaben 2027 vom 11.11.2026, Vorlagen im Ratsinformationssystem"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beschlussvorlage 104/2026 „Einführung einer Übernachtungssteuer“ (27.08.2026)",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf",
+        "stand": "2026-11-16"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem: Tagesordnung Haupt- und Finanzausschuss am 19.11.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "Merzenich Aktuell: Abgaben 2027 (11.11.2026)",
+          "url": "https://merzenich-aktuell.de/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "Merzenich Aktuell: Wochenvorschau 16. bis 22. November (13.11.2026)",
+          "url": "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
+          "stand": "2026-11-16"
+        }
+      ]
+    }
+  ]
+}

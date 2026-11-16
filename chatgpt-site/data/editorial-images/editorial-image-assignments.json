@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T08:24:28.449Z",
+  "updatedAt": "2026-11-16T13:50:38.332Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1772,6 +1772,15 @@
       "assignedAt": "2026-11-16T08:24:28.448Z",
       "articleId": "2026-11-16-fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15",
       "articleDate": "2026-11-16T09:23:00+01:00"
+    },
+    "/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-16T13:50:38.332Z",
+      "articleId": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
+      "articleDate": "2026-11-16T14:50:00+01:00"
     }
   }
 }

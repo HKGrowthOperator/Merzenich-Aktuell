@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Mon, 16 Nov 2026 08:23:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 16 Nov 2026 13:50:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/</guid>
+<pubDate>Mon, 16 Nov 2026 13:50:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Verwaltung hält die Steuer für eine realistische Einnahmequelle, findet aber nur vier Beherbergungsbetriebe in der Gemeinde. Der Haupt- und Finanzausschuss soll am 19. November zwischen zwei Wegen wählen.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>SC Merzenich verliert 0:1 in Frenz, Morschenich schlägt Tabellenführer Inden/Altdorf 4:3</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/sport/fussball-merzenich-0-1-frenz-morschenich-4-3-inden-altdorf-golzheim-2-2-sw-dueren-2026-11-15/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Der Autofahrer, der am 27. Oktober gegen 2.44 Uhr auf der Landstraße 264 in Höhe Girbelsrath von der Fahrbahn abgekommen und gegen einen Mast, einen Leitpfosten und einen Baum geprallt war, ist am 30. Oktober im Krankenhaus gestorben. Das teilte die Polizei Düren am 2. November mit.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/unfall/unfall-01-d28ac4c922.jpg" medium="image"><media:credit>Huhu Uet / Wikimedia Commons · CC BY 3.0</media:credit><media:description>Verkehrsunfall mit einer schwerverletzten Person auf der Landstraße L261 im Kreis Pinneberg, Deutschland</media:description></media:content>
-</item>
-<item>
-<title>Neue 380-kV-Leitung: Amprion baut bei Merzenich, Radweg am S-Bahnhof gesperrt</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/</guid>
-<pubDate>Mon, 26 Oct 2026 17:30:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Zwischen Oberzier und Blatzheim ersetzt Amprion die alte Höchstspannungsleitung durch eine stärkere mit vier Stromkreisen. Im Gemeindegebiet laufen die Arbeiten an Baustraßen und Mastfundamenten; bis Mitte 2027 ist mit Baustellenverkehr auf der L 264, dem Steinweg und Auf der Heide zu rechnen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-16-b1fd3ef820.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>High-voltage overhead power lines (pylon construction) close to Westerkappeln substation, Westerkappeln, North Rhine-Westphalia, Germany</media:description></media:content>
 </item>
 </channel>
 </rss>
