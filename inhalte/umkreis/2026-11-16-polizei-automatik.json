@@ -1,0 +1,45 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Falscher Wasserwerker bestiehlt Bewohnerin - Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391328",
+      "datum": "2026-11-16",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Frontalzusammenstoß auf der Kreuzung",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391327",
+      "datum": "2026-11-16",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Alkoholisiert auf den vorausfahrenden Pkw aufgefahren",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391326",
+      "datum": "2026-11-16",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Zwei Personen nach Wohnungsbrand leichtverletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391325",
+      "datum": "2026-11-16",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Einbrüche in Düren und Hürtgenwald - Die Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391323",
+      "datum": "2026-11-16",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
