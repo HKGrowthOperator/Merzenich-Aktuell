@@ -30,7 +30,7 @@
         "TuS 08 Langerwehe II – FC Rhenania Girbelsrath 3:0 (1:0) am 14. November"
       ],
       "absaetze": [
-        "Der SC 1919 Merzenich hat in der Kreisliga A Düren am Sonntag, 15. November, beim JSV Frenz mit 0:1 verloren. Nach torloser erster Hälfte fiel das einzige Tor laut offiziellem Spielbericht auf FUSSBALL.DE in der 83. Minute. Damit endet für den Aufsteiger eine Serie von sechs Spielen ohne Niederlage, Frenz gewann nach acht sieglosen Partien wieder. Mit 27 Punkten rutscht der SC vom dritten auf den vierten Platz.",
+        "Der SC 1919 Merzenich hat in der Kreisliga A Düren am Sonntag, 15. November, beim JSV Frenz mit 0:1 verloren. Nach torloser erster Hälfte fiel das einzige Tor laut offiziellem Spielbericht auf FUSSBALL.DE in der 83. Minute. Damit endet für den Aufsteiger eine Serie von sechs Spielen ohne Niederlage, Frenz gewann nach acht sieglosen Partien wieder. Mit 27 Punkten bleibt der SC Vierter: Welldorf-Güsten hatte ihn schon am Freitag, 13. November, mit einem 1:0 gegen Oberzier vom dritten Platz verdrängt.",
         "Punktgleich dahinter steht der FC Golzheim nach einem 2:2 bei der Spvg. SW 1896 Düren. Alle Tore fielen vor der Pause: Düren führte ab der siebten Minute, Golzheim glich in der 15. Minute aus, geriet danach erneut in Rückstand und kam noch vor der Halbzeit per Elfmeter zum 2:2. Golzheim ist seit vier Spielen ungeschlagen, steht wegen der schlechteren Tordifferenz aber auf Rang fünf. Vorn liegt der SC Jülich/Hoengen mit 34 Punkten vor Welldorf-Güsten (29) und Oberzier (28).",
         "In der Kreisliga B, Staffel 2, gewann der SV Morschenich das Spitzenspiel gegen den FC Inden/Altdorf mit 4:3. Die Gäste führten zur Pause 3:2, Morschenich drehte die Partie laut Spielbericht mit Toren in der 63. und 69. Minute. Den Tabellenplatz geben die Quellen unterschiedlich an, weil das ausgefallene Derby in Girbelsrath vom 8. November verschieden gezählt wird: FuPa rechnet ein Urteil mit 2:0 für Morschenich ein und führt den SV mit 27 Punkten vor Inden/Altdorf (25). Der Spielbericht von FUSSBALL.DE nennt Rang zwei.",
         "Der FC Rhenania Girbelsrath verlor schon am Samstag, 14. November, bei der zweiten Mannschaft des TuS 08 Langerwehe mit 0:3, zur Pause stand es 0:1. Es war die vierte Niederlage in Folge; mit drei Punkten aus acht Spielen ist Girbelsrath laut FuPa Vorletzter.",
@@ -75,6 +75,14 @@
             "https://www.fupa.net/league/kreisliga-b-2-dueren/standing"
           ],
           "stelle": "Spielbericht, gesamter Text; FuPa Spieltagsblock 14.11. und Tabelle Gesamt"
+        },
+        {
+          "aussage": "FUSSBALL.DE, automatischer Spielbericht 14.11.2026 07:04 Uhr: Kreisliga A, SV Grün-Weiß Welldorf-Güsten – BC Oberzier 1:0 (1:0); Welldorf-Mannschaftsseite: „Letztes Spiel: Fr, 13.11.2026 19:15“ gegen BC Oberzier (Freitag, 13. November). Damit stand Welldorf schon vor dem Sonntag mit 29 Punkten vor dem SC (27), der SC vor seinem Spiel in Frenz auf Platz vier (laut SC-Mannschaftsseite am 14.11.2026 07:05 Uhr, Dossier ChatGPT 14.11. morgens); vorher Platz drei laut eigener Meldung vom 10.11.",
+          "belege": [
+            "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032MO19VT8000000VS5489BVVSI0HJHE",
+            "https://www.fussball.de/mannschaft/sv-gruen-weiss-welldorf-guesten-sv-gruen-weiss-welldorf-guesten-mittelrhein/-/saison/2627/team-id/011MI90MIK000000VTVG0001VTR8C1K7"
+          ],
+          "stelle": "Spielbericht, Kopf und erster Absatz; Welldorf-Mannschaftsseite, Kopfbereich „Letztes Spiel“"
         }
       ],
       "quelle": {
@@ -101,6 +109,16 @@
         {
           "name": "FUSSBALL.DE, Mannschaftsseite SC 1919 Merzenich mit Tabelle Kreisliga A",
           "url": "https://www.fussball.de/mannschaft/sc-1919-merzenich-sc-merzenich-mittelrhein/-/saison/2627/team-id/011MIEKMN4000000VTVG0001VTR8C1K7",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FUSSBALL.DE, Spielbericht SV Grün-Weiß Welldorf-Güsten – BC Oberzier 1:0 (automatisch erstellt am 14.11.2026)",
+          "url": "https://www.fussball.de/mgc.newsdetail/-/article-uuid/032MO19VT8000000VS5489BVVSI0HJHE",
+          "stand": "2026-11-16"
+        },
+        {
+          "name": "FUSSBALL.DE, Mannschaftsseite SV Grün-Weiß Welldorf-Güsten",
+          "url": "https://www.fussball.de/mannschaft/sv-gruen-weiss-welldorf-guesten-sv-gruen-weiss-welldorf-guesten-mittelrhein/-/saison/2627/team-id/011MI90MIK000000VTVG0001VTR8C1K7",
           "stand": "2026-11-16"
         },
         {
