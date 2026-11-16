@@ -7,20 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:seniorennachmittag-2026@merzenich-aktuell.de
-DTSTAMP:20260903T060000Z
-DTSTART:20261017T123000Z
-DTEND:20261017T153000Z
-SUMMARY:Seniorennachmittag der Gemeinde
-DESCRIPTION:Live-Musik\, Kaffee und Kuchen. Anmeldung per Coupon\, Eintritt
-  5 Euro\, Fahrdienst auf Wunsch.\nVeranstalter: Gemeinde Merzenich\nhttps:
- //merzenichaktuell.hk-growthoperator.de/termine/seniorennachmittag-2026/
-LOCATION:Weinberghalle Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/seniorennachmitta
- g-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:kg-golzheim-kartenvorverkauf-kostuemsitzung-2026@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261018T080000Z
