@@ -8,7 +8,7 @@
       "ortsteil": "merzenich",
       "kicker": "Rathaus · Finanzen",
       "titel": "Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft",
-      "dek": "Die Verwaltung hält die Steuer für eine realistische Einnahmequelle, findet aber nur vier Beherbergungsbetriebe in der Gemeinde. Der Haupt- und Finanzausschuss soll am 19. November zwischen zwei Wegen wählen.",
+      "dek": "Die Verwaltung hält die Steuer für eine realistische Einnahmequelle, kommt bei einer ersten Recherche aber nur auf vier Beherbergungsbetriebe in der Gemeinde. Der Haupt- und Finanzausschuss soll am 19. November zwischen zwei Wegen wählen.",
       "datum": "2026-11-16T14:50:00+01:00",
       "artikeltyp": "kurzmeldung",
       "relevanz": 3,
@@ -27,14 +27,14 @@
         "Vorlage 104/2026 vom 27. August 2026 auf Antrag der SPD-Fraktion",
         "Haupt- und Finanzausschuss 19. November, Gemeinderat 3. Dezember 2026",
         "Vergleichskommunen: 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Übernachtung",
-        "Verwaltung findet ein Hotel und zwei Gästehäuser in Merzenich sowie eine Monteurunterkunft in Golzheim"
+        "Erste Recherche der Verwaltung: ein Hotel und zwei Gästehäuser in Merzenich sowie eine Monteurunterkunft in Golzheim"
       ],
       "absaetze": [
         "Soll die Gemeinde Merzenich eine Steuer auf Übernachtungen erheben? Darüber berät der Haupt- und Finanzausschuss am Donnerstag, 19. November, um 18 Uhr im Ratssaal; der Gemeinderat soll am 3. Dezember folgen. Den Anstoß gab ein Antrag der SPD-Fraktion aus den Haushaltsberatungen, in denen die Politik neben Einsparungen auch neue Einnahmen gesucht hat. Das Ergebnis der Prüfung hat die Verwaltung in der Beschlussvorlage 104/2026 vom 27. August zusammengefasst.",
-        "Rechtlich wäre der Weg lang. Der Rat müsste eine eigene Satzung beschließen, und weil es in Nordrhein-Westfalen keine landesweite Übernachtungssteuer gibt, müssten das Kommunal- und das Finanzministerium des Landes die Einführung genehmigen. Wie hoch die Steuer ausfallen könnte, lässt die Vorlage offen. Sie nennt als Orientierung Kommunen in den Kreisen Düren und Euskirchen, die 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Person und Nacht verlangen; möglich wäre auch ein Betrag je Wohnmobil.",
-        "Der Haken liegt in der Zahl der Betriebe. Übernachtungszahlen liegen der Verwaltung nicht vor. Eine erste Recherche fand ein Hotel und zwei Gästehäuser mit Ferien- und Monteurwohnungen in Merzenich sowie eine Monteurunterkunft in Golzheim. Dem stünde ein spürbarer Aufwand gegenüber: ein Register der Betriebe, ein Steuerkonto für jeden Vermieter, Erklärungsformulare und neue Schnittstellen in der Verwaltungssoftware.",
+        "Rechtlich bräuchte es zunächst eine eigene Satzung des Rates. Nach Darstellung der Verwaltung müssten außerdem das Kommunal- und das Finanzministerium des Landes zustimmen, weil es in Nordrhein-Westfalen keine landesweite Übernachtungssteuer gebe. Andere Kommunen sehen das anders: Die Stadt Hilden etwa schreibt in einer Ratsvorlage, die Steuer sei landesweit zugelassen, seit beide Ministerien 2010 die Kölner Satzung genehmigt haben. Zur Höhe nennt die Vorlage Vergleichswerte aus den Kreisen Düren und Euskirchen: 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Person und Nacht. Eine Anlage mit möglichen Satzungsinhalten nimmt beispielhaft 5 Prozent und für Wohnmobilstellplätze 2 Euro je Nacht an; zahlen würden die Gäste, einziehen müssten die Betriebe.",
+        "Der Haken liegt in der Zahl der Betriebe. Übernachtungszahlen liegen der Verwaltung nicht vor. Eine erste Recherche der Verwaltung, nach eigener Angabe mit Hilfe künstlicher Intelligenz, fand ein Hotel und zwei Gästehäuser mit Ferien- und Monteurwohnungen in Merzenich sowie eine Monteurunterkunft in Golzheim. Dem stünde ein spürbarer Aufwand gegenüber: ein Register der Betriebe, ein Steuerkonto für jeden Vermieter, Erklärungsformulare und neue Schnittstellen in der Verwaltungssoftware.",
         "Die Verwaltung nennt die Steuer eine realistische Möglichkeit, zusätzliche Einnahmen zu erzielen, legt sich aber nicht fest. Nach Alternative A soll sie die Steuer konkretisieren, bei den Betrieben Zahlen erfragen, Angebote des IT-Dienstleisters einholen und ihren eigenen Aufwand schätzen. Nach Alternative B wird die Prüfung wegen der wenigen Betriebe aus Wirtschaftlichkeitsgründen beendet.",
-        "In derselben Sitzung stehen auch die Abgaben für 2027 auf der Tagesordnung, darunter die Grundsteuer B und die Hundesteuer. Eine Übernachtungssteuer käme frühestens nach weiteren Beschlüssen und der Genehmigung durch das Land."
+        "In derselben Sitzung stehen auch die Abgaben für 2027 auf der Tagesordnung, darunter die Grundsteuer B und die Hundesteuer. Eine Übernachtungssteuer käme frühestens nach weiteren Beschlüssen und einer Satzung des Rates; ob zusätzlich das Land zustimmen muss, wäre dabei zu klären."
       ],
       "pruefung": [
         {
@@ -68,6 +68,22 @@
           ],
           "stelle": "Vorlage S. 1, Beschlussvorschlag; Tagesordnung; eigene Meldung 11.11.",
           "selbstauskunft": "Bezug auf die eigene Meldung zu den Abgaben 2027 vom 11.11.2026, Vorlagen im Ratsinformationssystem"
+        },
+        {
+          "aussage": "Anlage A zu Drs. 104/2026 („Mögliche Definitionen und Inhalte einer Satzung (auszugsweise)“): Steuerschuldner ist der Beherbergungsgast, Betreiber ist Steuerentrichtungspflichtiger (einziehen, abführen); Steuersatz „5 v. H. des für die Beherbergungsleistung geschuldeten Entgelts“ (5 Prozent), Wohnmobilstellplatz „2,00 Euro je Wohnmobilstellplatz und Nacht“ (2 Euro). Hauptvorlage S. 2: „Da es keine generelle Beherbergungssteuer im Land NRW gibt, ist eine Genehmigung der Landesministerien bei der Ersteinführung in der Gemeinde Merzenich erforderlich“; S. 4: „Eine erste KI-Recherche hat zu folgendem Ergebnis geführt“.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZUN8N_xBeQmHt0hq-tyuTfKMjYe9dkMDsaRBuxkiHBIY/ANL_A_Abstimmungssachverhalte.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdI9zqsUW4vHmaMWbrm3opAQLNtOjiKstB5ZIJ8uFgJD/Beschlussvorlage_104-2026.pdf"
+          ],
+          "stelle": "Anlage A, Abschnitte Steuerschuldner, Steuerentrichtungspflichtiger, Bemessungsgrundlage und Steuersatz; Vorlage S. 2 (1.1) und S. 4 (Votum)"
+        },
+        {
+          "aussage": "Stadt Hilden, Sitzungsvorlage WP 20-25 SV 20/268/1 (Beherbergungssteuer), Prüfungsergebnis der Verwaltung: „Mit der seinerzeit vom Ministerium für Inneres und Kommunales sowie vom Finanzministerium des Landes Nordrhein-Westfalen erfolgten Genehmigung der Kölner Satzung über die Erhebung einer Kulturförderabgabe ist diese Steuer als örtliche Aufwandssteuer landesweit zugelassen.“ Stadt Köln: Satzung zur Kulturförderabgabe, „vom Ministerium für Inneres und Kommunales sowie vom Finanzministerium des Landes Nordrhein-Westfalen am 9. September 2010 genehmigt“ (2010).",
+          "belege": [
+            "https://gi.hilden.de/bi/vo0050.asp?__kvonr=10533",
+            "https://www.stadt-koeln.de/service/produkte/01051/index.html"
+          ],
+          "stelle": "Hilden: Vorlage, Abschnitt „Prüfungsergebnis der Verwaltung“; Köln: Abschnitt „Rechtliche Voraussetzungen“"
         }
       ],
       "quelle": {
@@ -90,6 +106,21 @@
           "name": "Merzenich Aktuell: Wochenvorschau 16. bis 22. November (13.11.2026)",
           "url": "https://merzenich-aktuell.de/leben/merzenich-16-bis-22-november-2026-pluriversum-haupt-finanzausschuss-modelleisenbahn/",
           "stand": "2026-11-16"
+        },
+        {
+          "name": "Gemeinde Merzenich, Anlage A zur Vorlage 104/2026: Mögliche Definitionen und Inhalte einer Satzung",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZUN8N_xBeQmHt0hq-tyuTfKMjYe9dkMDsaRBuxkiHBIY/ANL_A_Abstimmungssachverhalte.pdf",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Stadt Hilden, Sitzungsvorlage SV 20/268/1: Einführung einer Beherbergungssteuer",
+          "url": "https://gi.hilden.de/bi/vo0050.asp?__kvonr=10533",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Stadt Köln, Kulturförderabgabe: Rechtliche Voraussetzungen",
+          "url": "https://www.stadt-koeln.de/service/produkte/01051/index.html",
+          "stand": "2026-11-17"
         }
       ]
     }
