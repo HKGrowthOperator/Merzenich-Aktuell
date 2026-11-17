@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [16.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-16-claude-nachmittags.md), Vergleichsbasis [ChatGPT 16.11. mittags](dossiers/2026-11-16-mittags.md) und [Claude 16.11. morgens](dossiers/2026-11-16-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [17.11.2026, Claude-Morgenlauf](dossiers/2026-11-17-claude-morgens.md), Vergleichsbasis [ChatGPT 17.11. morgens](dossiers/2026-11-17-morgens.md) und [Claude 16.11. nachmittags](dossiers/2026-11-16-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 17.11. morgens:** Korrektur der Übernachtungssteuer-Meldung (Genehmigungspflicht als Auffassung der Verwaltung, Gegenposition Hilden/Köln, Beispielsätze aus Anlage A). Keine neue Meldung. 22 Termine bis 01.12. an der Quelle bestätigt. Commits `3fa1783d`, `8fdc2bc4`.
 
 **Umgesetzt am 16.11. nachmittags:** 1 neue Kurzmeldung „Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft“ (282 Wörter, Vorlage 104/2026). Korrektur der Sportmeldung (SC schon vor dem Spiel Vierter). Amtsblatt 12 ausgewertet: 4 neue Termine, 3 ergänzt, Nachträge in Advents-Übersicht und Pluriversum-Meldung, Kita-Meldung präzisiert. Mindesttakt 16.11.: 2 Meldungen. Commits `6d1447e1`, `27aada39`, `fe28fa62`, `8e8930c7`, `97c77a43`.
 

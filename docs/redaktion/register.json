@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-17-morgens.md",
+  "latest_dossier": "dossiers/2026-11-17-claude-morgens.md",
   "source_check_window": "17.11.2026 07:05:52–07:07:04 Europe/Berlin; Rechtsoriginale 07:09:27, Zusatzquellen/Steuer-Anlage 07:09:54; Livebild neu geladen 07:10:05 und anschließend angesehen",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12306,11 +12306,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-16-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17T07:15:00+01:00",
+      "last_checked_at": "2026-11-17 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-16-recherche-claude-nachmittags.json → /rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
       "article_id": null,
       "implementation_commit": "27aada39",
-      "notes": "Claude 16.11. nachmittags: Kurzmeldung (282 Wörter) aus Beschlussvorlage 104/2026 vom 27.08.2026 (Antrag SPD-Fraktion Drs. 24/2026) und HFA-Tagesordnung 19.11.: Alternativen A (konkretisieren) und B (nicht weiter verfolgen), Satzung und Genehmigung durch Kommunal- und Finanzministerium NRW nötig, Vergleich 5 % oder 2 bis 3 € je Übernachtung, vier Betriebe laut erster Recherche der Verwaltung, kein Votum. Anlage A nicht ausgewertet. Folge: HFA 19.11., Rat 03.12. | ChatGPT 17.11. morgens: Neue Quellenprüfung zur Genehmigung: Artikel übernimmt Rechtsableitung der Vorlage unbedingt als Tatsache. KAG §2 Abs2 knüpft an im Lande nicht erhobene Steuer an, Hilden bezeichnet Beherbergungssteuer seit Kölner Genehmigung als landesweit zugelassen, Köln bestätigt Genehmigung 09.09.2010. Neuer Korrekturauftrag MA-KORR-UEBERNACHTUNGSSTEUER-GENEHMIGUNG-1711: Behauptung der Vorlage zuschreiben, Widerspruch nennen, keine definitive eigene Merzenicher Genehmigungspflicht/-freiheit ohne aktuelle Klärung; T2. Anlage A nun vollständig gelesen, mögliche Satzungsdefinitionen und Beispielbeträge, kein Beschluss. KI-Recherche zu Betrieben keine vollständige Zählung; unabhängige Betriebs-/Ertragsbestätigung und eigentlicher SPD-Antrag offen. Historische T1-Umsetzung und Claude-Notizen erhalten.",
+      "notes": "Claude 16.11. nachmittags: Kurzmeldung (282 Wörter) aus Beschlussvorlage 104/2026 vom 27.08.2026 (Antrag SPD-Fraktion Drs. 24/2026) und HFA-Tagesordnung 19.11.: Alternativen A (konkretisieren) und B (nicht weiter verfolgen), Satzung und Genehmigung durch Kommunal- und Finanzministerium NRW nötig, Vergleich 5 % oder 2 bis 3 € je Übernachtung, vier Betriebe laut erster Recherche der Verwaltung, kein Votum. Anlage A nicht ausgewertet. Folge: HFA 19.11., Rat 03.12. | ChatGPT 17.11. morgens: Neue Quellenprüfung zur Genehmigung: Artikel übernimmt Rechtsableitung der Vorlage unbedingt als Tatsache. KAG §2 Abs2 knüpft an im Lande nicht erhobene Steuer an, Hilden bezeichnet Beherbergungssteuer seit Kölner Genehmigung als landesweit zugelassen, Köln bestätigt Genehmigung 09.09.2010. Neuer Korrekturauftrag MA-KORR-UEBERNACHTUNGSSTEUER-GENEHMIGUNG-1711: Behauptung der Vorlage zuschreiben, Widerspruch nennen, keine definitive eigene Merzenicher Genehmigungspflicht/-freiheit ohne aktuelle Klärung; T2. Anlage A nun vollständig gelesen, mögliche Satzungsdefinitionen und Beispielbeträge, kein Beschluss. KI-Recherche zu Betrieben keine vollständige Zählung; unabhängige Betriebs-/Ertragsbestätigung und eigentlicher SPD-Antrag offen. Historische T1-Umsetzung und Claude-Notizen erhalten. | Claude 17.11. morgens: Korrektur MA-KORR-UEBERNACHTUNGSSTEUER-GENEHMIGUNG-1711 (ChatGPT morgens) umgesetzt (Commit 3fa1783d): Genehmigungspflicht ausdrücklich als Darstellung der Verwaltung, Widerspruch benannt (Stadt Hilden, Vorlage SV 20/268/1: seit Genehmigung der Kölner Satzung 2010 landesweit zugelassen; Stadt Köln: Genehmigung 09.09.2010); Anlage A gelesen und Beispielsätze 5 % und 2 € je Wohnmobilstellplatz ergänzt; „erste Recherche“ als KI-gestützt nach Angabe der Verwaltung gekennzeichnet; Schlusssatz ohne feste Genehmigungsbehauptung. Live 09:21 Uhr.",
       "dossier_history": [
         {
           "date": "2026-11-16",
@@ -12323,6 +12323,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-17-morgens.md",
           "heading": "KORREKTUREN / TERMINE – Quellen- und Liveprüfung"
+        },
+        {
+          "date": "2026-11-17",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-17-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-17-morgens.md",
@@ -14571,6 +14577,16 @@
         "Nicht alle älteren latest.md-Artikel vollständig erneut live gegen sämtliche historischen Originale geprüft",
         "Bauausschuss ohne neuen Ergebnisbeleg"
       ]
+    },
+    {
+      "date": "2026-11-17",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-17-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-17-morgens.md",
+      "implementation_commit": "3fa1783d",
+      "summary": "Korrektur Übernachtungssteuer-Meldung (Genehmigungspflicht als Verwaltungsauffassung, Widerspruch Hilden/Köln, Anlage A); keine neue Meldung (keine neue belegbare Nachricht in den Pflichtquellen, HFA-Punkte bereits berichtet, Neuland Hambach nur mit nicht-öffentlichen Anlagen); 22 Termine bis 01.12. bestätigt.",
+      "publication": "Korrektur direkt veröffentlicht"
     }
   ]
 }

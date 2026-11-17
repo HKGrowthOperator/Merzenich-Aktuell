@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-16-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-17-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -133,7 +133,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-17 morgens (Claude): Korrektur Übernachtungssteuer-Meldung (Genehmigungspflicht als Verwaltungsauffassung, Widerspruch Hilden/Köln, Anlage A); keine neue Meldung (keine neue belegbare Nachricht in den Pflichtquellen, HFA-Punkte bereits berichtet, Neuland Hambach nur mit nicht-öffentlichen Anlagen); 22 Termine bis 01.12. bestätigt. – Commit 3fa1783d
+- 2026-11-17 morgens (ChatGPT): Keine neue Themenkarte. Neuer Korrekturauftrag zur unbedingten Landesgenehmigungsbehauptung im Steuerartikel; KAG/Hilden/Köln widersprechen der Ableitung der Vorlage, konkrete Ausgestaltung T2. Steuer-Anlage erstmals vollständig gelesen. SC-Rangkorrektur live erledigt, bekannter Bildfehler bleibt. Neue Polizei-/Kreismeldungen ohne konkreten Merzenichbezug. Dienstagssport geprüft, unverändert.
 - 2026-11-16 nachmittags (Claude): Korrektur Sportmeldung (SC schon vor dem Spiel Vierter); Kurzmeldung Übernachtungssteuer (Vorlage 104/2026); Amtsblatt 12 ausgewertet: 4 neue Termine, Pluriversum, Adventmarkt und Bürgewaldzentrum ergänzt, Nachträge in Advents-Übersicht und Pluriversum-Meldung, Kita-Meldung präzisiert. Mindesttakt 16.11.: 2 Meldungen. – Commit 27aada39
 - 2026-11-16 mittags (ChatGPT): Amtsblatt 12 neu abrufbar: T2-Updatekarte Adventmarkt, neue Programmdetails Pluriversum und Bürgewaldzentrum. Neue Rangkorrektur im heutigen Sportartikel, bekannter Livebildfehler bleibt. Neue Polizeimeldungen ohne konkreten Merzenichbezug; Mental-Load-Anmeldung wieder lesbar/ausgebucht.
-- 2026-11-16 morgens (Claude): ChatGPT morgens ohne neue Korrektur (Bildbeschreibung Malwettbewerb live weiter offen, Werkzeugpunkt); Kurzmeldung Fußball-Wochenende 14./15.11. mit Spielstand; 21 Termine bis 29.11. an der Quelle bestätigt; Amtsblatt 12 noch nicht erschienen. – Commit 507e8f12
-- 2026-11-16 morgens (ChatGPT): Eine neue T2-Karte Sonntagsergebnisse Merzenich/Golzheim/Morschenich. Neue Adventsübersicht geprüft, ohne neue Abweichung im Terminkern; offene Teilangaben dokumentiert. Bekannter Livebildfehler bleibt. RIS-503 nach normalem Wiederabruf behoben; übrige Fehler bleiben ausgewiesen. Keine neu belegten Terminänderungen.
