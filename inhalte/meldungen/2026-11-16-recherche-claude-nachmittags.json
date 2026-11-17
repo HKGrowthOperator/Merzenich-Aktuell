@@ -34,7 +34,8 @@
         "Rechtlich bräuchte es zunächst eine eigene Satzung des Rates. Nach Darstellung der Verwaltung müssten außerdem das Kommunal- und das Finanzministerium des Landes zustimmen, weil es in Nordrhein-Westfalen keine landesweite Übernachtungssteuer gebe. Andere Kommunen sehen das anders: Die Stadt Hilden etwa schreibt in einer Ratsvorlage, die Steuer sei landesweit zugelassen, seit beide Ministerien 2010 die Kölner Satzung genehmigt haben. Zur Höhe nennt die Vorlage Vergleichswerte aus den Kreisen Düren und Euskirchen: 5 Prozent des Übernachtungspreises oder 2 bis 3 Euro je Person und Nacht. Eine Anlage mit möglichen Satzungsinhalten nimmt beispielhaft 5 Prozent und für Wohnmobilstellplätze 2 Euro je Nacht an; zahlen würden die Gäste, einziehen müssten die Betriebe.",
         "Der Haken liegt in der Zahl der Betriebe. Übernachtungszahlen liegen der Verwaltung nicht vor. Eine erste Recherche der Verwaltung, nach eigener Angabe mit Hilfe künstlicher Intelligenz, fand ein Hotel und zwei Gästehäuser mit Ferien- und Monteurwohnungen in Merzenich sowie eine Monteurunterkunft in Golzheim. Dem stünde ein spürbarer Aufwand gegenüber: ein Register der Betriebe, ein Steuerkonto für jeden Vermieter, Erklärungsformulare und neue Schnittstellen in der Verwaltungssoftware.",
         "Die Verwaltung nennt die Steuer eine realistische Möglichkeit, zusätzliche Einnahmen zu erzielen, legt sich aber nicht fest. Nach Alternative A soll sie die Steuer konkretisieren, bei den Betrieben Zahlen erfragen, Angebote des IT-Dienstleisters einholen und ihren eigenen Aufwand schätzen. Nach Alternative B wird die Prüfung wegen der wenigen Betriebe aus Wirtschaftlichkeitsgründen beendet.",
-        "In derselben Sitzung stehen auch die Abgaben für 2027 auf der Tagesordnung, darunter die Grundsteuer B und die Hundesteuer. Eine Übernachtungssteuer käme frühestens nach weiteren Beschlüssen und einer Satzung des Rates; ob zusätzlich das Land zustimmen muss, wäre dabei zu klären."
+        "In derselben Sitzung stehen auch die Abgaben für 2027 auf der Tagesordnung, darunter die Grundsteuer B und die Hundesteuer. Eine Übernachtungssteuer käme frühestens nach weiteren Beschlüssen und einer Satzung des Rates; ob zusätzlich das Land zustimmen muss, wäre dabei zu klären.",
+        "Korrigiert am 17. November: Die Genehmigung durch das Land ist die Auffassung der Verwaltung, keine feststehende Rechtslage."
       ],
       "pruefung": [
         {
@@ -84,6 +85,14 @@
             "https://www.stadt-koeln.de/service/produkte/01051/index.html"
           ],
           "stelle": "Hilden: Vorlage, Abschnitt „Prüfungsergebnis der Verwaltung“; Köln: Abschnitt „Rechtliche Voraussetzungen“"
+        },
+        {
+          "aussage": "Korrekturhinweis: Text am 17.11.2026 (17. November) korrigiert (Genehmigungspflicht als Auffassung der Verwaltung, Gegenposition Hilden, Anlage A); Anlass Korrekturauftrag im ChatGPT-Dossier vom 17.11.2026 morgens, Belege siehe Einträge zu Anlage A, Hilden und Köln.",
+          "belege": [
+            "https://gi.hilden.de/bi/vo0050.asp?__kvonr=10533"
+          ],
+          "stelle": "Hilden, Prüfungsergebnis der Verwaltung",
+          "selbstauskunft": "Korrekturdatum aus dem eigenen Redaktionsprotokoll (Dossier 2026-11-17-claude-morgens)"
         }
       ],
       "quelle": {
