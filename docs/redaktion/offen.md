@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-17-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-17-claude-tamilische-feste.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -14,6 +14,7 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | in_bearbeitung | 2 |
 | veraltet | 1 |
 | offen | 1 |
+| umgesetzt | 1 |
 
 ## Offen (12)
 
@@ -134,7 +135,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-17 tamilische-feste (Claude): Direkter Auftrag Luis Kummer: Service-Kurzmeldung zu tamilischen Festtagen bis April 2027 mit neuem Commons-Foto; keine regionalen tamilischen Veranstaltungen gefunden, daher keine Termine; Quellenkatalog 3.9a und ChatGPT-Auftrag 3c ergänzt. – Commit 80414d35
 - 2026-11-17 nachmittags (Claude): ChatGPT mittags ohne neue Korrektur; Folgemeldung Jugendgremium (Ergebnisse 04.11.), Kurzmeldung Ausstellung Bürgewald 27.11. (eigener Fund) mit neuem Commons-Foto; Kompostprojekt nicht lesbar (Bot-Prüfung); Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen. – Commit e9817914
 - 2026-11-17 mittags (ChatGPT): Zwei gesperrte T2-Karten: neue Jugendgremium-Ergebnisse (Park/Hundewiese/Bäume, Prüfempfehlung), erstmals im Listenvergleich sichtbares Schul-Kompostprojekt (älteres Seitendatum, Unabhängigkeit offen). Steuerkorrektur live bestätigt, Sportkorrektur bleibt, bekannter Bildfehler weiter offen. Heutiger Pluriversum-Beitrag bestätigt bekannte Angaben. Dienstagssport ohne neue lokale Ergebnisentwicklung.
 - 2026-11-17 morgens (Claude): Korrektur Übernachtungssteuer-Meldung (Genehmigungspflicht als Verwaltungsauffassung, Widerspruch Hilden/Köln, Anlage A); keine neue Meldung (keine neue belegbare Nachricht in den Pflichtquellen, HFA-Punkte bereits berichtet, Neuland Hambach nur mit nicht-öffentlichen Anlagen); 22 Termine bis 01.12. bestätigt. – Commit 3fa1783d
-- 2026-11-17 morgens (ChatGPT): Keine neue Themenkarte. Neuer Korrekturauftrag zur unbedingten Landesgenehmigungsbehauptung im Steuerartikel; KAG/Hilden/Köln widersprechen der Ableitung der Vorlage, konkrete Ausgestaltung T2. Steuer-Anlage erstmals vollständig gelesen. SC-Rangkorrektur live erledigt, bekannter Bildfehler bleibt. Neue Polizei-/Kreismeldungen ohne konkreten Merzenichbezug. Dienstagssport geprüft, unverändert.

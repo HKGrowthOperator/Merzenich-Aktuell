@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+  "latest_dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
   "source_check_window": "17.11.2026 12:06:23–12:07:49 Europe/Berlin Hauptabrufe; Zusatzquellen 12:07:21, technischer Polizei-Fehler mit normalem Wiederholungsabruf 12:08:26 behoben; Jugend/Kompost 12:08:52–12:08:57, Hintergrund 12:09:49, Sitzungsköpfe 12:11:24; Livebild 12:07:26 mit anschließender Sichtung; Commons-Originale 12:10:09/12:10:14 HTTP403",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12555,6 +12555,29 @@
           "heading": "1. Umgesetzt"
         }
       ]
+    },
+    {
+      "id": "MA-TAMILISCHE-FESTE-2026",
+      "priority": "P3",
+      "location_section": "Merzenich/Region · Leben, Kultur",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
+      "workflow_status": "umgesetzt",
+      "last_checked_at": "2026-11-17 15:20 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-tamilische-feste.json → /leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
+      "article_id": null,
+      "implementation_commit": "80414d35",
+      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live-Nachweis nach Abgleich 16:05 Uhr.",
+      "dossier_history": [
+        {
+          "date": "2026-11-17",
+          "edition": "claude-tamilische-feste",
+          "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
     }
   ],
   "archive": {
@@ -14837,6 +14860,16 @@
       "implementation_commit": "e9817914",
       "summary": "ChatGPT mittags ohne neue Korrektur; Folgemeldung Jugendgremium (Ergebnisse 04.11.), Kurzmeldung Ausstellung Bürgewald 27.11. (eigener Fund) mit neuem Commons-Foto; Kompostprojekt nicht lesbar (Bot-Prüfung); Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen.",
       "publication": "Zwei neue Meldungen, Nachträge und Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-17",
+      "edition": "tamilische-feste",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
+      "compared_with": "dossiers/2026-11-17-claude-nachmittags.md",
+      "implementation_commit": "80414d35",
+      "summary": "Direkter Auftrag Luis Kummer: Service-Kurzmeldung zu tamilischen Festtagen bis April 2027 mit neuem Commons-Foto; keine regionalen tamilischen Veranstaltungen gefunden, daher keine Termine; Quellenkatalog 3.9a und ChatGPT-Auftrag 3c ergänzt.",
+      "publication": "Eine neue Meldung direkt veröffentlicht"
     }
   ]
 }

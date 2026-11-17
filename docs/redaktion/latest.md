@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [17.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-17-claude-nachmittags.md), Vergleichsbasis [ChatGPT 17.11. mittags](dossiers/2026-11-17-mittags.md) und [Claude 17.11. morgens](dossiers/2026-11-17-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [17.11.2026, Claude-Sonderauftrag Tamilische Feste](dossiers/2026-11-17-claude-tamilische-feste.md), davor [Claude-Nachmittagslauf 17.11.](dossiers/2026-11-17-claude-nachmittags.md), Vergleichsbasis [ChatGPT 17.11. mittags](dossiers/2026-11-17-mittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 17.11., Sonderauftrag Tamilische Feste (Luis Kummer):** 1 neue Service-Kurzmeldung „Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar“ (304 Wörter, Drik Panchang Köln, Feiertagsliste Zentralbank Sri Lanka) mit neuem Commons-Foto. Keine Veranstaltung tamilischer Gruppen im Dürener Raum gefunden, daher keine Termine. Daueraufgabe: `QUELLEN.md` 3.9a, ChatGPT-Auftrag 3c. Commit `80414d35`.
 
 **Umgesetzt am 17.11. nachmittags:** 2 neue Kurzmeldungen: „Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten“ (260 Wörter, Niederschrift 04.11.) und „Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen“ (242 Wörter, neues Commons-Foto Morschenich-Alt). Termin Ausstellung 27.11. neu, Jugendgremium 03.12. ergänzt; Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen. Commits `e9817914`, `144022bb`, `25c92bd4`, `208867ae`.
 
