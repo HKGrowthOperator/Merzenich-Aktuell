@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-16T14:50:00+01:00",
- "anzahl": 246,
+ "generated": "2026-11-17T14:46:00+01:00",
+ "anzahl": 247,
  "bestand": {
-  "gesamt": 246,
+  "gesamt": 247,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 35,
-   "rathaus": 41,
+   "rathaus": 42,
    "leben": 56,
    "wirtschaft": 13,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 173,
+   "merzenich": 174,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 11,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 246,
+    "anzahl": 247,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 41,
+    "anzahl": 42,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 173,
+    "anzahl": 174,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
+   "url": "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
+   "titel": "Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten",
+   "teaser": "Die Wünsche vom Ortsfest stehen jetzt fest: Das Gremium bittet Rat und Verwaltung einstimmig, sie zu prüfen. Der Gemeinderat berät am 3. Dezember.",
+   "kicker": "Rathaus · Jugend",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-17T14:46:00+01:00",
+   "aktualisiert": "2026-11-17T14:46:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "jugendgremium",
+     "label": "Jugendgremium"
+    },
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    },
+    {
+     "slug": "ortsfest",
+     "label": "Ortsfest"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
    "url": "/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
@@ -10183,20 +10225,20 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
-  "url": "/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
-  "titel": "Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft"
+  "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
+  "url": "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
+  "titel": "Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
+   "url": "/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
+   "titel": "Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft"
+  },
   {
    "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
    "url": "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
    "titel": "Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember"
-  },
-  {
-   "id": "2026-11-15-merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag",
-   "url": "/rathaus/merzenich-kita-ggmbh-fehlbetrag-2024-patronatserklaerung-gemeinde-vorschlag/",
-   "titel": "Kita-Gesellschaft der Gemeinde Merzenich überschuldet: Gemeinde soll unbegrenzt für Verluste einstehen"
   },
   {
    "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",

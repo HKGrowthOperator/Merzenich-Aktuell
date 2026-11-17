@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T13:50:38.332Z",
+  "updatedAt": "2026-11-17T13:46:58.936Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1781,6 +1781,15 @@
       "assignedAt": "2026-11-16T13:50:38.332Z",
       "articleId": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
       "articleDate": "2026-11-16T14:50:00+01:00"
+    },
+    "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-17T13:46:58.936Z",
+      "articleId": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
+      "articleDate": "2026-11-17T14:46:00+01:00"
     }
   }
 }
