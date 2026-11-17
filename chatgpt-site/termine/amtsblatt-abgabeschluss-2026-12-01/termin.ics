@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:amtsblatt-abgabeschluss-2026-12-01@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART;VALUE=DATE:20261201
 SUMMARY:Abgabeschluss für das Amtsblatt vom 11. Dezember
 DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 11. Dezember\, 

@@ -615,7 +615,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:pluriversum-gesamtschule-merzenich-2026-11-17@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261117T170000Z
 SUMMARY:„Pluriversum“ der Gemeinde Merzenich in der Gesamtschule Nieder
  zier
@@ -633,7 +633,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-18
  @merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261118T080000Z
 DTEND:20261118T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
@@ -652,7 +652,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-18@merzenich-ak
  tuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261118T080000Z
 DTEND:20261118T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
@@ -670,7 +670,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:pluriversum-workshop-engagement-gesamtschule-merzenich-2026-11-18@merze
  nich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261118T100000Z
 DTEND:20261118T120000Z
 SUMMARY:„Pluriversum“-Workshop der Gemeinde Merzenich zu sozialem und 
@@ -689,7 +689,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:senioren-nachmittag-ev-gemeindehaus-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261118T140000Z
 DTEND:20261118T160000Z
 SUMMARY:Senioren-Nachmittag im Evangelischen Gemeindehaus
@@ -706,7 +706,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:mental-load-online-vortrag-2026-11-18@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261118T170000Z
 DTEND:20261118T183000Z
 SUMMARY:Online-Vortrag „Mental Load“ des Kreises Düren
@@ -722,7 +722,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sprechstunde-betreuungsbehoerde-rathaus-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261119T090000Z
 DTEND:20261119T110000Z
 SUMMARY:Sprechstunde der Betreuungsbehörde im Rathaus
@@ -738,7 +738,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:haupt-finanzausschuss-sitzung-2026-11-19@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261119T170000Z
 SUMMARY:10. Sitzung des Haupt- und Finanzausschusses
 DESCRIPTION:Der Haupt- und Finanzausschuss trifft sich am Donnerstag\, 19. 
@@ -752,7 +752,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:tag-der-modelleisenbahn-wasserturm-2026-11-21@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261121T120000Z
 DTEND:20261121T160000Z
 SUMMARY:Tag der Modelleisenbahn im Wasserturm
@@ -769,7 +769,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22@merzenich
  -aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261122T090000Z
 SUMMARY:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
 DESCRIPTION:„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am S
@@ -784,7 +784,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:seniorenweihnacht-kreis-dueren-2026-11-24@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261124T140000Z
 DTEND:20261124T163000Z
 SUMMARY:13. Seniorenweihnacht des Kreises Düren
@@ -801,7 +801,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25
  @merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
@@ -820,7 +820,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-25@merzenich-ak
  tuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
@@ -837,7 +837,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261126T170000Z
 SUMMARY:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
 DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
@@ -852,7 +852,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:tannenbaumschmuecken-lindenplatz-sc-merzenich-2026-11-27@merzenich-aktu
  ell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261127T160000Z
 SUMMARY:Tannenbaumschmücken am Lindenplatz
 DESCRIPTION:Der SC Merzenich richtet in diesem Jahr das traditionelle Tanne
@@ -868,7 +868,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adventfeier-schuetzenbruderschaft-merzenich-2026-11-27@merzenich-aktuel
  l.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261127T180000Z
 SUMMARY:Adventfeier der St. Sebastianus Schützenbruderschaft im Schützenh
  eim
@@ -884,7 +884,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261128T130000Z
 DTEND:20261128T180000Z
 SUMMARY:Adventmarkt im Heimatmuseum
@@ -901,7 +901,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-11-28@m
  erzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261128T140000Z
 SUMMARY:Theater der Weinbergschnecken: „Schneewittchens Geburtstag“
 DESCRIPTION:Die Theatergruppe „Die Weinbergschnecken“ zeigt am Samstag\
@@ -918,7 +918,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventsfenster-bwz-morschenich-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261128T160000Z
 SUMMARY:Adventsfenster am Bürgewaldzentrum in Morschenich
 DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, laden die St.
@@ -935,7 +935,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:golzheimer-adventskalender-eroeffnung-weihnachtswiese-2026-11-28@merzen
  ich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261128T170000Z
 SUMMARY:Eröffnung des Golzheimer Adventskalenders
 DESCRIPTION:Die Golzheimer Krippenbauer stellen am Samstag\, 28. November\,
@@ -951,7 +951,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventsliedersingen-merzenich-2026-11-29@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART:20261129T170000Z
 SUMMARY:Adventsliedersingen
 DESCRIPTION:„Adventsliedersingen“ am Sonntag\, 29. November\, 18:00 Uhr
@@ -965,7 +965,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:amtsblatt-abgabeschluss-2026-12-01@merzenich-aktuell.de
-DTSTAMP:20261102T060000Z
+DTSTAMP:20261117T060000Z
 DTSTART;VALUE=DATE:20261201
 SUMMARY:Abgabeschluss für das Amtsblatt vom 11. Dezember
 DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 11. Dezember\, 
