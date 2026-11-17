@@ -1,5 +1,5 @@
 {
-  "hinweis": "Nachmittagslauf 17.11.2026 (Claude): Auszüge aus der Niederschrift der 4. Sitzung des Jugendgremiums vom 04.11.2026 (TOP 3 bis 9, Beschluss zu 135/2026), am 17.11.2026 exportiert und um 14:44 Uhr im Ratsinformationssystem gelesen; Folgemeldung zur Vorschau vom 03.11.2026. Keine Namen von Mitgliedern.",
+  "hinweis": "Nachmittagslauf 17.11.2026 (Claude): Auszüge aus der Niederschrift der 4. Sitzung des Jugendgremiums vom 04.11.2026 (TOP 3 bis 9, Beschluss zu 135/2026), am 17.11.2026 exportiert und um 14:44 Uhr im Ratsinformationssystem gelesen; Folgemeldung zur Vorschau vom 03.11.2026. Keine Namen von Mitgliedern. Zweite Meldung: Beitrag der Gemeinde in Heimat-Info vom 17.11.2026 13:05 Uhr (Ausstellung Bürgewald), gelesen 14:50 Uhr; Künstlernamen bewusst nicht übernommen.",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -125,6 +125,112 @@
         {
           "name": "Gemeinde Merzenich, Sitzungskalender im Ratsinformationssystem (ICS)",
           "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+          "stand": "2026-11-17"
+        }
+      ]
+    },
+    {
+      "slug": "ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
+      "ressort": "leben",
+      "ortsteil": "morschenich",
+      "kicker": "Leben · Kultur",
+      "titel": "Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen",
+      "dek": "Drei Künstlerinnen und Künstler haben im früheren Morschenich-Alt fotografiert, gefilmt und gestaltet. Die Gemeinde zeigt die Arbeiten am Freitag, 27. November, ab 16 Uhr öffentlich.",
+      "datum": "2026-11-17T14:51:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "themen": [
+        [
+          "buergewald",
+          "Bürgewald"
+        ],
+        [
+          "strukturwandel",
+          "Strukturwandel"
+        ],
+        [
+          "kreis-dueren",
+          "Kreis Düren"
+        ]
+      ],
+      "bildklasse": "leben.buergewald",
+      "fakten": [
+        "Öffentliche Ausstellung am Freitag, 27. November 2026, ab 16 Uhr im Ratssaal",
+        "Fotografie, Film und bildende Kunst über Bürgewald, das frühere Morschenich-Alt",
+        "Ausschuss für Revitalisierung Bürgewald tagt am Vortag, 26. November, um 18 Uhr",
+        "Haupt- und Finanzausschuss berät am 19. November über den Wirtschaftsplan 2027/2028 der Neuland Hambach GmbH"
+      ],
+      "absaetze": [
+        "Die Gemeinde Merzenich lädt am Freitag, 27. November, ab 16 Uhr zu einer öffentlichen Ausstellung in den Ratssaal des Rathauses ein. Gezeigt werden Arbeiten über Bürgewald, den Ortsteil, der früher Morschenich-Alt hieß.",
+        "Laut der Ankündigung, die die Gemeinde am Dienstag, 17. November, in ihrem Kanal in der Heimat-Info-App veröffentlicht hat, haben sich drei Künstlerinnen und Künstler in dem Ort umgesehen, der jahrelang weitgehend leer stand. Ihre Fotos, Filme und Bilder handeln davon, wie Natur, verfallende Häuser und die Protestbewegung das Dorf geprägt haben. Die Gemeinde verspricht ungewohnte Sichtweisen auf die Vergangenheit von Bürgewald und auf seinen Neubeginn.",
+        "Wie lange die Ausstellung zu sehen ist und ob Eintritt verlangt wird, steht in der Ankündigung nicht. Auch ein Ende des Abends nennt die Gemeinde nicht.",
+        "Die Geschichte von Bürgewald ist eng mit dem Tagebau Hambach und dem Strukturwandel im Rheinischen Revier verbunden; auch das Kreisjahrbuch 2026 des Kreises Düren hat dem Ort einen Beitrag gewidmet. Einen Tag vor der Ausstellung, am Donnerstag, 26. November, tagt um 18 Uhr im Ratssaal der Ausschuss für Revitalisierung Bürgewald. Eine Tagesordnung war im Ratsinformationssystem am 17. November noch nicht veröffentlicht.",
+        "Um die Zukunft der Region geht es auch im Haupt- und Finanzausschuss am Donnerstag, 19. November: Er soll den Wirtschafts- und Stellenplan 2027/2028 der Neuland Hambach GmbH genehmigen. Die Verwaltung empfiehlt das, weil die Projekte des Strukturwandels nach ihren Worten für die künftige Entwicklung der Gemeinde von enormer Bedeutung sind. Die Zahlen dazu stehen in nicht öffentlichen Anlagen."
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beitrag der Gemeinde Merzenich (offizielles Gemeindeprofil) in Heimat-Info vom 17.11.2026, 13:05 Uhr (Dienstag, 17. November): „In Bürgewald (ehemals Morschenich-Alt) haben [drei Namen] die Spuren des jahrelangen Leerstands erkundet. Mit Fotografie, Film und bildender Kunst zeigen sie, wie Natur, Verfall und Protestkultur den Ort verändert haben.“ „Entstanden sind eindrucksvolle Arbeiten, die neue Blickwinkel auf die Geschichte und den Neuanfang Bürgewalds eröffnen.“ „öffentlichen Ausstellung! Freitag, 27. November 2026, ab 16 Uhr, Ratssaal der Gemeinde Merzenich“ (27. November, 16 Uhr); keine Angaben zu Dauer, Ende oder Eintritt; Hashtags u. a. #TagebauHambach #strukturwandel.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/72cdf5c6-c7d2-4132-8dbe-dee79c1fd295"
+          ],
+          "stelle": "Beitrag, gesamter Text",
+          "selbstauskunft": "Offizielles Profil der Gemeinde Merzenich in der Heimat-Info-App (Kontakt buergermeister@gemeinde-merzenich.de), am 17.11.2026 um 14:50 Uhr gelesen"
+        },
+        {
+          "aussage": "Ratsinfo termine.ics: Ausschuss für Revitalisierung Bürgewald, 26.11.2026 (Donnerstag, 26. November), 18:00 Uhr (18 Uhr), Rathaus, Ratssaal. Sitzungsseite, gelesen 17.11.2026 (17. November): „Zum gewählten Termin liegt keine Tagesordnung vor.“",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8"
+          ],
+          "stelle": "Sitzungskalender; Sitzungsseite"
+        },
+        {
+          "aussage": "Kreis Düren, 22.09.2026: Kreisjahrbuch 2026 „Eine Region im Aufbruch“ nennt Bürgewald ausdrücklich als Thema; eigene Meldung vom 04.10.2026: Ortsteil, dessen jüngere Geschichte eng mit dem Braunkohletagebau und den Veränderungen im Rheinischen Revier verbunden ist (Tagebau Hambach laut Gemeindebeitrag).",
+          "belege": [
+            "https://kreis-dueren.de/presse/kreisjahrbuch_2026-09-22.php",
+            "https://merzenich-aktuell.de/leben/kreisjahrbuch-2026-buergewald-strukturwandel/",
+            "https://www.heimat-info.de/beitraege/72cdf5c6-c7d2-4132-8dbe-dee79c1fd295"
+          ],
+          "stelle": "Kreis-Pressemitteilung; eigene Meldung; Hashtags des Gemeindebeitrags",
+          "selbstauskunft": "Einordnung aus der eigenen Meldung vom 04.10.2026 nach der Kreis-Pressemitteilung"
+        },
+        {
+          "aussage": "Beschlussvorlage 151/2026 vom 06.11.2026: Haupt- und Finanzausschuss 19.11.2026 (Donnerstag, 19. November), Gemeinderat 03.12.2026; Genehmigung des Wirtschaftsplans, Stellenplans und der mittelfristigen Finanzplanung 2027/2028 der Neuland Hambach GmbH; Votum: „Die Verwaltung spricht sich für die Genehmigung … aus, da die Projekte des Strukturwandels von enormer Bedeutung für die künftige Entwicklung der Gemeinde sind.“ Anlagen nicht öffentlich; jährliche Kosten „lt. Anlage“.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTNr64pOAqrSbVwwS6MNRwm5jGJHCtguFSP_DHIWHkPk/Beschlussvorlage_151-2026.pdf"
+          ],
+          "stelle": "Vorlage S. 1 bis 2"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich, Beitrag in Heimat-Info vom 17.11.2026: „Ein verlassenes Dorf. Drei Künstler:innen. Drei Perspektiven.“",
+        "url": "https://www.heimat-info.de/beitraege/72cdf5c6-c7d2-4132-8dbe-dee79c1fd295",
+        "stand": "2026-11-17"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem: Sitzungskalender (ICS)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Gemeinde Merzenich, Ratsinformationssystem: Ausschuss für Revitalisierung Bürgewald, 26.11.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Kreis Düren: Kreisjahrbuch 2026 erschienen (22.09.2026)",
+          "url": "https://kreis-dueren.de/presse/kreisjahrbuch_2026-09-22.php",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Merzenich Aktuell: Kreisjahrbuch 2026 nimmt Bürgewald und den Strukturwandel in den Blick (04.10.2026)",
+          "url": "https://merzenich-aktuell.de/leben/kreisjahrbuch-2026-buergewald-strukturwandel/",
+          "stand": "2026-11-17"
+        },
+        {
+          "name": "Gemeinde Merzenich, Beschlussvorlage 151/2026 (Neuland Hambach GmbH)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTNr64pOAqrSbVwwS6MNRwm5jGJHCtguFSP_DHIWHkPk/Beschlussvorlage_151-2026.pdf",
           "stand": "2026-11-17"
         }
       ]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:46:58.936Z",
+  "updatedAt": "2026-11-17T13:56:10.624Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1790,6 +1790,15 @@
       "assignedAt": "2026-11-17T13:46:58.936Z",
       "articleId": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
       "articleDate": "2026-11-17T14:46:00+01:00"
+    },
+    "/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/": {
+      "imageId": "web-themen-25-7e1a7afd",
+      "pool": "themen",
+      "motiv": "morschenich-alt-leerstand",
+      "regel": "leben.buergewald",
+      "assignedAt": "2026-11-17T13:56:10.623Z",
+      "articleId": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
+      "articleDate": "2026-11-17T14:51:00+01:00"
     }
   }
 }

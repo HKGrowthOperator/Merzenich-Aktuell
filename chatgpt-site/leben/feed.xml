@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Tue, 17 Nov 2026 13:46:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 17 Nov 2026 13:51:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/</guid>
+<pubDate>Tue, 17 Nov 2026 13:51:00 GMT</pubDate>
+<category>Leben</category>
+<category>Morschenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Drei Künstlerinnen und Künstler haben im früheren Morschenich-Alt fotografiert, gefilmt und gestaltet. Die Gemeinde zeigt die Arbeiten am Freitag, 27. November, ab 16 Uhr öffentlich.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-25-7e1a7afdf3.jpg" medium="image"><media:credit>Stefan Oberreuter / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Eine der Hauptstraßen des Geisterortes Morschenich bei Merzenich. Leerstand bedingt durch den Tagebau Hambach der RWE</media:description></media:content>
+</item>
 <item>
 <title>Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am 3., 10. und 17. November geht es jeweils von 19 bis 21 Uhr um Katastrophenschutz, private Notfallvorsorge und die Rolle von Dorfgemeinschaften in Krisen. Die Teilnahme per Zoom ist kostenlos.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
-</item>
-<item>
-<title>Ideenwettbewerb „Mit Tatkraft“: 5.000 oder 10.000 Euro für Projekte im Rheinischen Revier</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/</guid>
-<pubDate>Tue, 13 Oct 2026 05:00:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Bürgerinnen und Bürger, Vereine und Initiativen können bis 30. November Projektideen beim Landesamt LANUK einreichen. Der Kreis Düren mit Merzenich gehört zum Gebiet.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
 </item>
 </channel>
 </rss>

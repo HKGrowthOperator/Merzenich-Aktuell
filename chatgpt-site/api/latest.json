@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-17T14:46:00+01:00",
-  "stand": "2026-11-17T14:46:00+01:00",
+  "generated": "2026-11-17T14:51:00+01:00",
+  "stand": "2026-11-17T14:51:00+01:00",
   "items": [
+    {
+      "title": "Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
+      "date": "2026-11-17T14:51:00+01:00",
+      "ressort": "leben",
+      "ort": "morschenich",
+      "teaser": "Drei Künstlerinnen und Künstler haben im früheren Morschenich-Alt fotografiert, gefilmt und gestaltet. Die Gemeinde zeigt die Arbeiten am Freitag, 27. November, ab 16 Uhr öffentlich.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-25-7e1a7afdf3.jpg"
+    },
     {
       "title": "Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Zwischen Donnerstag und Samstag ist die Freiwillige Feuerwehr Merzenich dreimal im Hauptort ausgerückt: zweimal wegen eines Hundes, einmal, weil ein Mensch hinter einer verschlossenen Tür Hilfe brauchte.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/feuerwehr/feuerwehr-17-06a888ad36.jpg"
-    },
-    {
-      "title": "Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/",
-      "date": "2026-11-05T14:55:00+01:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Martinszüge in Golzheim und Merzenich, eine Martinsfeier in Girbelsrath, der Karneval beginnt, der Bauausschuss entscheidet über wichtige Vorhaben, und am Sonntag gedenken Merzenich und Morschenich der Toten der Kriege. Die Woche im Überblick.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-05-1ca58804a8.jpg"
     }
   ],
   "events": [

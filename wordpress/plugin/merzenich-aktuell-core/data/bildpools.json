@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 24,
+  "themen": 25,
   "menschen": 20
  },
  "bilder": [
@@ -7625,6 +7625,20 @@
    "geprueft": true,
    "geprueftAm": "2026-11-08",
    "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-themen-25-7e1a7afd",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-25-7e1a7afdf3-1200.webp",
+   "alt": "Eine der Hauptstraßen des Geisterortes Morschenich bei Merzenich. Leerstand bedingt durch den Tagebau Hambach der RWE.",
+   "credit": "Symbolbild · Stefan Oberreuter / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AUnterstra%C3%9Fe_Morschenich_01_Juli_2021.jpg",
+   "titel": "File:Unterstraße Morschenich 01 Juli 2021.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-17",
+   "ort": "Merzenich"
   },
   {
    "id": "web-menschen-01-686bb6fb",
