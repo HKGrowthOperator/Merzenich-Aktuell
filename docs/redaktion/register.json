@@ -12541,12 +12541,12 @@
       "text_status": "T1",
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
-      "workflow_status": "zur_abnahme",
+      "workflow_status": "uebernommen",
       "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
       "article_id": null,
       "implementation_commit": "25c92bd4",
-      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben.",
+      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar.",
       "dossier_history": [
         {
           "date": "2026-11-17",

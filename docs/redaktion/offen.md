@@ -7,15 +7,15 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 62 |
+| uebernommen | 63 |
 | gesperrt | 30 |
-| zur_abnahme | 6 |
 | neu | 5 |
+| zur_abnahme | 5 |
 | in_bearbeitung | 2 |
 | veraltet | 1 |
 | offen | 1 |
 
-## Offen (13)
+## Offen (12)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -131,17 +131,6 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Dossier: [2026-10-25-morgens.md](dossiers/2026-10-25-morgens.md), [2026-10-22-morgens.md](dossiers/2026-10-22-morgens.md), [2026-10-23-morgens.md](dossiers/2026-10-23-morgens.md), [2026-10-24-morgens.md](dossiers/2026-10-24-morgens.md)
 - Möglicher Bestand: keiner gefunden
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
-
-### MA-AUSSTELLUNG-BUERGEWALD-2711 · P3 · T1/B2 · zur_abnahme
-
-- Ort/Ressort: Morschenich/Bürgewald · Kultur; Art: Neu; zuletzt geprüft: 2026-11-17 nachmittags Europe/Berlin
-- Dossier: [2026-11-17-claude-nachmittags.md](dossiers/2026-11-17-claude-nachmittags.md)
-- Artikelpfad: inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/
-- Möglicher Bestand (Stichwort): `kreisjahrbuch-2026-buergewald-strukturwandel` – Kreisjahrbuch 2026 nimmt Bürgewald und den Strukturwandel in den Blick (2026-10-04, inhalte/meldungen/2026-10-04-deep-research.json)
-- Möglicher Bestand (Stichwort): `siegener-schueler-fussmarsch-station-merzenich-buergewald-2026` – 17 Tage zu Fuß von Köln an die Grenze: Siegener Schüler machen Station in Merzenich (2026-10-25, inhalte/meldungen/2026-10-25-recherche-claude.json)
-- Möglicher Bestand (Stichwort): `brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten` – Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen (2026-11-11, inhalte/meldungen/2026-11-11-recherche-claude-nachmittags.json)
-- Möglicher Bestand (Stichwort): `ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026` – Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen (2026-11-17, inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json)
-- Notiz: Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einor
 
 ## Jüngste Läufe
 

@@ -73,7 +73,7 @@ Heimat-Info-Veranstaltungskalender um 14:49 Uhr erneut gelesen (dieselben 10 IDs
 
 Commits: `e9817914` (Jugendgremium), `144022bb` (Nachtrag, Termin), `25c92bd4` (Ausstellung, Termin, Foto), `208867ae` (Korrekturhinweise), je Rebase-Konflikt nur in `docs/SHA256SUMS.txt` (Stand von main, Kette neu); Dokumentation folgt. Abgleich 14:47 Uhr `angestossen: true`, danach planmäßig 15:05 Uhr; wp-cron HTTP 200.
 
-Live-Nachweis: Jugendgremium-Meldung 14:58 Uhr HTTP 200. Ausstellungs-Meldung um 14:58 Uhr noch 404 (vor dem Abgleich um 15:05 Uhr); Nachtrag folgt. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“: Werkzeugpunkt, Entscheidung Luis Kummer offen.
+Live-Nachweis: Jugendgremium-Meldung 14:58 Uhr HTTP 200. Ausstellungs-Meldung um 14:58 Uhr noch 404, nach dem Abgleich seit 15:05 Uhr HTTP 200, in der Nachrichten-Sitemap, in „Neu in Merzenich“ (3 Verweise), mit dem neuen Foto (themen-25, Credit Stefan Oberreuter); Termin Ausstellung 27.11. HTTP 200. Bildbeschreibung im Malwettbewerb-Artikel live weiter „Polizeiwache in Nordrhein-Westfalen“: Werkzeugpunkt, Entscheidung Luis Kummer offen.
 
 ## 8. Bildprüfung
 
