@@ -7,14 +7,13 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 63 |
+| uebernommen | 64 |
 | gesperrt | 30 |
 | neu | 5 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
 | veraltet | 1 |
 | offen | 1 |
-| umgesetzt | 1 |
 
 ## Offen (12)
 

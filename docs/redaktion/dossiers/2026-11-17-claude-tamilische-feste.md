@@ -68,9 +68,9 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `80414d35` (Meldung, Bild), Dokumentation in diesem Commit. Nächster stündlicher Abgleich 16:05 Uhr.
+Commits: `80414d35` (Meldung, Bild), `3e598486` (Dokumentation). Abgleich durch Anstoß vorgezogen (planmäßig 16:05 Uhr).
 
-Live-Nachweis: folgt nach dem Abgleich um 16:05 Uhr (Artikel HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, Foto).
+Live-Nachweis 15:18 Uhr: Artikel `/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/` HTTP 200, Titel und Daten im Text (unter anderem „Freitag, 22. Januar“), Foto mit deutschem Alt-Text „Öllampen zum tamilischen Lichterfest Karthigai Deepam“ und Bildnachweis „Gitakart / Wikimedia Commons · CC BY-SA 3.0“; Startseite zeigt die Meldung, Nachrichten-Sitemap führt sie an erster Stelle (erster Abruf aus dem Zwischenspeicher noch ohne Eintrag).
 
 ## 8. Bildprüfung
 
@@ -83,4 +83,3 @@ Live-Nachweis: folgt nach dem Abgleich um 16:05 Uhr (Artikel HTTP 200, Nachricht
 - Daueraufgabe (Luis Kummer 17.11.): in jeder Breitenrecherche nach Veranstaltungen tamilischer Gruppen im Dürener Raum suchen (`QUELLEN.md` 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin.
 - Luis Kummer fragen, ob er tamilische Vereine, einen Tempel oder eine Tamil-Schule im Kreis Düren kennt.
 - Karthigai Deepam 24.11.: keine Folgemeldung nötig, außer es kündigt sich eine Feier in der Region an.
-- Live-Nachweis nach dem Abgleich 16:05 Uhr nachtragen.

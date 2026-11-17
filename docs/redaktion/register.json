@@ -12564,12 +12564,12 @@
       "text_status": "T1",
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
-      "workflow_status": "umgesetzt",
-      "last_checked_at": "2026-11-17 15:20 Europe/Berlin",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-17 15:18 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-tamilische-feste.json → /leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
       "article_id": null,
       "implementation_commit": "80414d35",
-      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live-Nachweis nach Abgleich 16:05 Uhr.",
+      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live 15:18 Uhr HTTP 200, Startseite, Nachrichten-Sitemap, Foto mit deutschem Alt-Text.",
       "dossier_history": [
         {
           "date": "2026-11-17",
