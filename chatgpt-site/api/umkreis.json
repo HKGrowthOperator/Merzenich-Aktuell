@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-16",
+ "stand": "2026-11-17",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,14 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Radfahrer bei Verkehrsunfall auf der B56 leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6391961",
+   "datum": "2026-11-17",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",
