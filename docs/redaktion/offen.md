@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-17-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-17-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -9,12 +9,13 @@ Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.m
 | archiv_refresh_noetig | 96 |
 | uebernommen | 62 |
 | gesperrt | 30 |
+| zur_abnahme | 6 |
 | neu | 5 |
-| zur_abnahme | 5 |
 | in_bearbeitung | 2 |
 | veraltet | 1 |
+| offen | 1 |
 
-## Offen (12)
+## Offen (13)
 
 Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne erneute Primärprüfung, T2 Freigabebedingung offen, T0 gesperrt/unvollständig. „Möglicher Bestand“ nennt Artikel mit gleicher Quelle oder gleichem Stichwort; vor Umsetzung lesen (Update statt Doppelartikel).
 
@@ -131,9 +132,20 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Möglicher Bestand: keiner gefunden
 - Notiz: Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen.
 
+### MA-AUSSTELLUNG-BUERGEWALD-2711 · P3 · T1/B2 · zur_abnahme
+
+- Ort/Ressort: Morschenich/Bürgewald · Kultur; Art: Neu; zuletzt geprüft: 2026-11-17 nachmittags Europe/Berlin
+- Dossier: [2026-11-17-claude-nachmittags.md](dossiers/2026-11-17-claude-nachmittags.md)
+- Artikelpfad: inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/
+- Möglicher Bestand (Stichwort): `kreisjahrbuch-2026-buergewald-strukturwandel` – Kreisjahrbuch 2026 nimmt Bürgewald und den Strukturwandel in den Blick (2026-10-04, inhalte/meldungen/2026-10-04-deep-research.json)
+- Möglicher Bestand (Stichwort): `siegener-schueler-fussmarsch-station-merzenich-buergewald-2026` – 17 Tage zu Fuß von Köln an die Grenze: Siegener Schüler machen Station in Merzenich (2026-10-25, inhalte/meldungen/2026-10-25-recherche-claude.json)
+- Möglicher Bestand (Stichwort): `brandschutzbedarfsplan-merzenich-2026-schutzziel-feuerwehrhaus-golzheim-buergewald-hilfsfrist-kosten` – Brandschutzplan für Merzenich: Feuerwehr verfehlt Zeitziel, Golzheim soll neues Feuerwehrhaus bekommen (2026-11-11, inhalte/meldungen/2026-11-11-recherche-claude-nachmittags.json)
+- Möglicher Bestand (Stichwort): `ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026` – Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen (2026-11-17, inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json)
+- Notiz: Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einor
+
 ## Jüngste Läufe
 
+- 2026-11-17 nachmittags (Claude): ChatGPT mittags ohne neue Korrektur; Folgemeldung Jugendgremium (Ergebnisse 04.11.), Kurzmeldung Ausstellung Bürgewald 27.11. (eigener Fund) mit neuem Commons-Foto; Kompostprojekt nicht lesbar (Bot-Prüfung); Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen. – Commit e9817914
+- 2026-11-17 mittags (ChatGPT): Zwei gesperrte T2-Karten: neue Jugendgremium-Ergebnisse (Park/Hundewiese/Bäume, Prüfempfehlung), erstmals im Listenvergleich sichtbares Schul-Kompostprojekt (älteres Seitendatum, Unabhängigkeit offen). Steuerkorrektur live bestätigt, Sportkorrektur bleibt, bekannter Bildfehler weiter offen. Heutiger Pluriversum-Beitrag bestätigt bekannte Angaben. Dienstagssport ohne neue lokale Ergebnisentwicklung.
 - 2026-11-17 morgens (Claude): Korrektur Übernachtungssteuer-Meldung (Genehmigungspflicht als Verwaltungsauffassung, Widerspruch Hilden/Köln, Anlage A); keine neue Meldung (keine neue belegbare Nachricht in den Pflichtquellen, HFA-Punkte bereits berichtet, Neuland Hambach nur mit nicht-öffentlichen Anlagen); 22 Termine bis 01.12. bestätigt. – Commit 3fa1783d
 - 2026-11-17 morgens (ChatGPT): Keine neue Themenkarte. Neuer Korrekturauftrag zur unbedingten Landesgenehmigungsbehauptung im Steuerartikel; KAG/Hilden/Köln widersprechen der Ableitung der Vorlage, konkrete Ausgestaltung T2. Steuer-Anlage erstmals vollständig gelesen. SC-Rangkorrektur live erledigt, bekannter Bildfehler bleibt. Neue Polizei-/Kreismeldungen ohne konkreten Merzenichbezug. Dienstagssport geprüft, unverändert.
-- 2026-11-16 nachmittags (Claude): Korrektur Sportmeldung (SC schon vor dem Spiel Vierter); Kurzmeldung Übernachtungssteuer (Vorlage 104/2026); Amtsblatt 12 ausgewertet: 4 neue Termine, Pluriversum, Adventmarkt und Bürgewaldzentrum ergänzt, Nachträge in Advents-Übersicht und Pluriversum-Meldung, Kita-Meldung präzisiert. Mindesttakt 16.11.: 2 Meldungen. – Commit 27aada39
-- 2026-11-16 mittags (ChatGPT): Amtsblatt 12 neu abrufbar: T2-Updatekarte Adventmarkt, neue Programmdetails Pluriversum und Bürgewaldzentrum. Neue Rangkorrektur im heutigen Sportartikel, bekannter Livebildfehler bleibt. Neue Polizeimeldungen ohne konkreten Merzenichbezug; Mental-Load-Anmeldung wieder lesbar/ausgebucht.

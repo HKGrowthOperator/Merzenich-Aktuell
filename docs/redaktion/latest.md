@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [17.11.2026, Claude-Morgenlauf](dossiers/2026-11-17-claude-morgens.md), Vergleichsbasis [ChatGPT 17.11. morgens](dossiers/2026-11-17-morgens.md) und [Claude 16.11. nachmittags](dossiers/2026-11-16-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [17.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-17-claude-nachmittags.md), Vergleichsbasis [ChatGPT 17.11. mittags](dossiers/2026-11-17-mittags.md) und [Claude 17.11. morgens](dossiers/2026-11-17-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 17.11. nachmittags:** 2 neue Kurzmeldungen: „Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten“ (260 Wörter, Niederschrift 04.11.) und „Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen“ (242 Wörter, neues Commons-Foto Morschenich-Alt). Termin Ausstellung 27.11. neu, Jugendgremium 03.12. ergänzt; Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen. Commits `e9817914`, `144022bb`, `25c92bd4`, `208867ae`.
 
 **Umgesetzt am 17.11. morgens:** Korrektur der Übernachtungssteuer-Meldung (Genehmigungspflicht als Auffassung der Verwaltung, Gegenposition Hilden/Köln, Beispielsätze aus Anlage A). Keine neue Meldung. 22 Termine bis 01.12. an der Quelle bestätigt. Commits `3fa1783d`, `8fdc2bc4`.
 

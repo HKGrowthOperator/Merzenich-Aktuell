@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-17-mittags.md",
+  "latest_dossier": "dossiers/2026-11-17-claude-nachmittags.md",
   "source_check_window": "17.11.2026 12:06:23–12:07:49 Europe/Berlin Hauptabrufe; Zusatzquellen 12:07:21, technischer Polizei-Fehler mit normalem Wiederholungsabruf 12:08:26 behoben; Jugend/Kompost 12:08:52–12:08:57, Hintergrund 12:09:49, Sitzungsköpfe 12:11:24; Livebild 12:07:26 mit anschließender Sichtung; Commons-Originale 12:10:09/12:10:14 HTTP403",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -3909,14 +3909,14 @@
       "location_section": "Merzenich · Rathaus/Jugend",
       "change_type": "Nachfassen",
       "text_status": "T1",
-      "image_status": "B0",
+      "image_status": "B2",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17T12:16:08+01:00",
-      "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-morgens.json → /rathaus/jugendgremium-merzenich-sitzung-4-november-2026-ortsfest-oepnv/",
+      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
       "article_id": null,
-      "implementation_commit": "7bd157f",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten. | Claude 03.11. morgens: Kurzmeldung zur 4. Sitzung am 04.11. nach CLAUDE-LAUF 3.3 (offizielle Quelle trägt Kurzmeldung, T2 wegen Zweitquelle entfällt); Tagesordnung, Vorlage 135/2026 und termine.ics gelesen, leere Dokumentation im Text benannt; live 03.11., 09:20 Uhr (HTTP 200). Update nach der Sitzung mit Priorisierung, sobald veröffentlicht. | ChatGPT 17.11. mittags: Neue öffentliche Niederschrifts-/Beschlussauszüge der Sitzung 04.11. jetzt im Vergleich mit Export 17.11. abrufbar. TOP5 nennt Calisthenics-Park, eingezäunte Hundewiese, Erhalt Bahnstraßenbäume; TOP5.1 einstimmige Prüf-/Rückmeldeempfehlung, kein Rats-/Baubeschluss. T2-Updatekarte: nur kommunale Dokumente, unabhängige Ereignisbestätigungen und eigenständige Drittquelle fehlen. Rangfolge, Flächen, Kosten/Ratsreaktion offen. TOP6 Endzeit online 03.12. widerspricht ICS-Ende; weitere Jahresdaten im Protokoll ungeklärt. Bestehenden Vorschauartikel aktualisieren statt Dublette. Commons Rathaus-Metadaten gelesen, Original HTTP403, B0 ohne neue visuelle Freigabe.",
+      "implementation_commit": "e9817914",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten. | Claude 03.11. morgens: Kurzmeldung zur 4. Sitzung am 04.11. nach CLAUDE-LAUF 3.3 (offizielle Quelle trägt Kurzmeldung, T2 wegen Zweitquelle entfällt); Tagesordnung, Vorlage 135/2026 und termine.ics gelesen, leere Dokumentation im Text benannt; live 03.11., 09:20 Uhr (HTTP 200). Update nach der Sitzung mit Priorisierung, sobald veröffentlicht. | ChatGPT 17.11. mittags: Neue öffentliche Niederschrifts-/Beschlussauszüge der Sitzung 04.11. jetzt im Vergleich mit Export 17.11. abrufbar. TOP5 nennt Calisthenics-Park, eingezäunte Hundewiese, Erhalt Bahnstraßenbäume; TOP5.1 einstimmige Prüf-/Rückmeldeempfehlung, kein Rats-/Baubeschluss. T2-Updatekarte: nur kommunale Dokumente, unabhängige Ereignisbestätigungen und eigenständige Drittquelle fehlen. Rangfolge, Flächen, Kosten/Ratsreaktion offen. TOP6 Endzeit online 03.12. widerspricht ICS-Ende; weitere Jahresdaten im Protokoll ungeklärt. Bestehenden Vorschauartikel aktualisieren statt Dublette. Commons Rathaus-Metadaten gelesen, Original HTTP403, B0 ohne neue visuelle Freigabe. | Claude 17.11. nachmittags: Folgemeldung „Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten“ (Kurzmeldung, 260 Wörter) aus den Niederschrift-Auszügen TOP 3 bis 9 und Beschluss 135/2026 (exportiert 17.11., gelesen 14:44 Uhr; offizielle Quelle); Datumswidersprüche (Protokoll 30.09.2025, Landtagsbesuch 22.01.2026) nicht übernommen bzw. als unklar benannt; Endzeit 03.12. (19 vs. 19.30 Uhr) benannt; keine Namen von Mitgliedern. Vorschau vom 03.11. mit Nachtrag und Verweis; Termin 03.12. ergänzt. Commits e9817914, 144022bb. Live 14:58 Uhr HTTP 200.",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -3953,6 +3953,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-17-mittags.md",
           "heading": "THEMENKARTEN – neue Jugend-Ergebnisse"
+        },
+        {
+          "date": "2026-11-17",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-17-mittags.md",
@@ -12468,17 +12474,23 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-17-mittags.md",
       "workflow_status": "offen",
-      "last_checked_at": "2026-11-17T12:16:08+01:00",
+      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung.",
+      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen.",
       "dossier_history": [
         {
           "date": "2026-11-17",
           "edition": "mittags",
           "dossier": "dossiers/2026-11-17-mittags.md",
           "heading": "MA-KOMPOST-KGS-2026"
+        },
+        {
+          "date": "2026-11-17",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "research_history": [
@@ -12518,6 +12530,29 @@
           "publisher": "Kreis Düren",
           "checked_at": "2026-11-17T12:09:49+01:00",
           "scope": "Nur Hintergrund, keine aktuelle örtliche Ereignisbestätigung"
+        }
+      ]
+    },
+    {
+      "id": "MA-AUSSTELLUNG-BUERGEWALD-2711",
+      "priority": "P3",
+      "location_section": "Morschenich/Bürgewald · Kultur",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+      "workflow_status": "zur_abnahme",
+      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
+      "article_id": null,
+      "implementation_commit": "25c92bd4",
+      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben.",
+      "dossier_history": [
+        {
+          "date": "2026-11-17",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -14792,6 +14827,16 @@
         "BdSt403 und drei historische404; zugehörige Artikelprüfungen unvollständig",
         "Vereinsseiten Site Unavailable trotz200; nicht alle älteren latest.md-Artikel erneut vollständig live geprüft"
       ]
+    },
+    {
+      "date": "2026-11-17",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-17-mittags.md",
+      "implementation_commit": "e9817914",
+      "summary": "ChatGPT mittags ohne neue Korrektur; Folgemeldung Jugendgremium (Ergebnisse 04.11.), Kurzmeldung Ausstellung Bürgewald 27.11. (eigener Fund) mit neuem Commons-Foto; Kompostprojekt nicht lesbar (Bot-Prüfung); Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen.",
+      "publication": "Zwei neue Meldungen, Nachträge und Termine direkt veröffentlicht"
     }
   ]
 }
