@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:56:10.624Z",
+  "updatedAt": "2026-11-17T14:11:23.708Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1799,6 +1799,15 @@
       "assignedAt": "2026-11-17T13:56:10.623Z",
       "articleId": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
       "articleDate": "2026-11-17T14:51:00+01:00"
+    },
+    "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/": {
+      "imageId": "web-themen-26-233a92d4",
+      "pool": "themen",
+      "motiv": "oellampen-karthigai",
+      "regel": "leben.kultur.tamilisch",
+      "assignedAt": "2026-11-17T14:11:23.707Z",
+      "articleId": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
+      "articleDate": "2026-11-17T15:10:00+01:00"
     }
   }
 }

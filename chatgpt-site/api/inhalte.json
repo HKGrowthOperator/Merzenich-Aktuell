@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-17T14:51:00+01:00",
- "anzahl": 248,
+ "generated": "2026-11-17T15:10:00+01:00",
+ "anzahl": 249,
  "bestand": {
-  "gesamt": 248,
+  "gesamt": 249,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 35,
    "rathaus": 42,
-   "leben": 57,
+   "leben": 58,
    "wirtschaft": 13,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 174,
+   "merzenich": 175,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 12,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 248,
+    "anzahl": 249,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 57,
+    "anzahl": 58,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 174,
+    "anzahl": 175,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
+   "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
+   "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar",
+   "teaser": "Lichterfest, Erntedank und Neujahr: Die wichtigsten tamilischen Festtage bis April 2027 im Überblick, mit den Daten für Köln und für Sri Lanka.",
+   "kicker": "Leben · Kultur",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-17T15:10:00+01:00",
+   "aktualisiert": "2026-11-17T15:10:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "kultur",
+     "label": "Kultur"
+    },
+    {
+     "slug": "feste",
+     "label": "Feste"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-26-233a92d40a.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-26-233a92d40a-480.webp 480w, /assets/editorial-pools/themen/themen-26-233a92d40a-800.webp 800w, /assets/editorial-pools/themen/themen-26-233a92d40a-1200.webp 1200w, /assets/editorial-pools/themen/themen-26-233a92d40a.jpg 1920w",
+    "alt": "Öllampen zum tamilischen Lichterfest Karthigai Deepam",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Gitakart / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
    "url": "/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
@@ -10267,11 +10305,16 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
-  "url": "/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
-  "titel": "Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen"
+  "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
+  "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
+  "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
+   "url": "/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
+   "titel": "Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen"
+  },
   {
    "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
    "url": "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
@@ -10286,11 +10329,6 @@
    "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
    "url": "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
    "titel": "Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember"
-  },
-  {
-   "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
-   "url": "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
-   "titel": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen"
   }
  ],
  "startseitenMotive": {
@@ -10317,7 +10355,6 @@
   "editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f": 1,
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36": 1,
   "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382": 1,
-  "editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8": 1,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
   "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/polizei/polizei-10-b2dae76ca0": 1,
@@ -10335,6 +10372,7 @@
   "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/themen/themen-24-960e0101ba": 1,
   "editorial-pools/themen/themen-25-7e1a7afdf3": 1,
+  "editorial-pools/themen/themen-26-233a92d40a": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 2,
   "places/buergewald": 1,
@@ -10349,8 +10387,8 @@
  "buehnenMotive": [
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
-  "editorial-pools/polizei/polizei-10-b2dae76ca0",
   "editorial-pools/themen/themen-25-7e1a7afdf3",
+  "editorial-pools/themen/themen-26-233a92d40a",
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc"
  ],
  "motivMax": 2

@@ -35,7 +35,7 @@
     "flaeche": 2,
     "verkehr": 20,
     "tipp": 21,
-    "themen": 25,
+    "themen": 26,
     "menschen": 20
   },
   "images": [
@@ -17264,6 +17264,34 @@
       "locality": "Merzenich",
       "geprueft": true,
       "checksum": "c04653a19d1e2ce7e405543e427e61ccdbdc4a639cffce4f6173709d0ddec2f2"
+    },
+    {
+      "id": "web-themen-26-233a92d4",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-26-233a92d40a.jpg",
+      "alt": "During the month of oct-nov karthigai thirunal falls every year, its a celebration of Lights and people of tamilnadu decorate their houses with agal / brass lamps.",
+      "credit": "Symbolbild · Gitakart / Wikimedia Commons · CC BY-SA 3.0",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKathigai_Thirunal.JPG",
+      "sourceTitle": "File:Kathigai Thirunal.JPG",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Kathigai_Thirunal.JPG/1920px-Kathigai_Thirunal.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsCheckedAt": "2026-11-17",
+      "tags": [
+        "symbolbild",
+        "thema",
+        "kathigai",
+        "thirunal"
+      ],
+      "width": 1600,
+      "height": 1200,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
+      "checksum": "ce3cb77569c26906a55a9a454936f680c699203af3789d8ab4bcf03edd8f1b12"
     },
     {
       "id": "web-menschen-01-686bb6fb",

@@ -108,6 +108,8 @@ const MOTIV_ALT = {
   streifenwagen: 'Streifenwagen der Polizei',
   oelspur: 'Warnschild vor einer Ölspur',
   rathaus: 'Rathaus',
+  // 17.11.2026: englische Commons-Beschreibung, deutscher Motivtext.
+  'oellampen-karthigai': 'Öllampen zum tamilischen Lichterfest Karthigai Deepam',
 };
 const ENGLISCH = /\b(the|of|and|with|street|near|view|house|church|road|square|germany|north rhine|open pit|mine|from)\b/i;
 const FREMDSCHRIFT = /[^\u0000-\u024f\u2000-\u206f\u20ac]/;

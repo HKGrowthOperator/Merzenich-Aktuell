@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Tue, 17 Nov 2026 13:51:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 17 Nov 2026 14:10:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/</guid>
+<pubDate>Tue, 17 Nov 2026 14:10:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Lichterfest, Erntedank und Neujahr: Die wichtigsten tamilischen Festtage bis April 2027 im Überblick, mit den Daten für Köln und für Sri Lanka.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-26-233a92d40a.jpg" medium="image"><media:credit>Gitakart / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Öllampen zum tamilischen Lichterfest Karthigai Deepam</media:description></media:content>
+</item>
 <item>
 <title>Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Gemeinde Merzenich hat am 6. Oktober Bilanz zu Oldieabend und Ortsfest vom 2. und 3. Oktober gezogen. Sie dankt Vereinen, Sponsoren und Gästen aus der Partnerstadt Quiévrechain.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923.jpg" medium="image"><media:credit>Sir James / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Deutschland, Biedenkopf: Grenzgang; historisches Heimatfest. Großes Festzelt &quot;auf der Bleiche&quot;; Festplatz am Lahnufer</media:description></media:content>
-</item>
-<item>
-<title>Krisenvorsorge: Kostenlose Online-Seminarreihe an drei Dienstagabenden im November</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/online-seminarreihe-krisenvorsorge-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/online-seminarreihe-krisenvorsorge-november-2026/</guid>
-<pubDate>Tue, 13 Oct 2026 05:30:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Am 3., 10. und 17. November geht es jeweils von 19 bis 21 Uhr um Katastrophenschutz, private Notfallvorsorge und die Rolle von Dorfgemeinschaften in Krisen. Die Teilnahme per Zoom ist kostenlos.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-19-deb8f481da.jpg" medium="image"><media:credit>Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de</media:credit><media:description>Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum</media:description></media:content>
 </item>
 </channel>
 </rss>
