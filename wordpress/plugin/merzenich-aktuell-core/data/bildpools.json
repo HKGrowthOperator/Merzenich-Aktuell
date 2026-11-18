@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 26,
+  "themen": 25,
   "menschen": 20
  },
  "bilder": [
@@ -7639,20 +7639,6 @@
    "geprueft": true,
    "geprueftAm": "2026-11-17",
    "ort": "Merzenich"
-  },
-  {
-   "id": "web-themen-26-233a92d4",
-   "pool": "themen",
-   "datei": "/assets/editorial-pools/themen/themen-26-233a92d40a-1200.webp",
-   "alt": "During the month of oct-nov karthigai thirunal falls every year, its a celebration of Lights and people of tamilnadu decorate their houses with agal / brass lamps.",
-   "credit": "Symbolbild · Gitakart / Wikimedia Commons · CC BY-SA 3.0",
-   "quelle": "https://commons.wikimedia.org/wiki/File%3AKathigai_Thirunal.JPG",
-   "titel": "File:Kathigai Thirunal.JPG",
-   "lizenz": "CC BY-SA 3.0",
-   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-   "geprueft": true,
-   "geprueftAm": "2026-11-17",
-   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-menschen-01-686bb6fb",

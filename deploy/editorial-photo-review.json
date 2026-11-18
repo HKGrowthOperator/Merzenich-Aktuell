@@ -4028,6 +4028,12 @@
       "grund": "Aus Titel: Taiwan / U-Bahn, kein lokales Alarm-/Einsatzmotiv",
       "pruefung": "Titel- und Themenmetadaten",
       "runde": "2026-10-16"
+    },
+    {
+      "pool": "themen",
+      "nr": 26,
+      "titel": "File:Kathigai Thirunal.JPG",
+      "grund": "Kein Bezug zu Merzenich: Tamil-Meldung am 18.11.2026 auf Wunsch des Betreibers zurückgezogen"
     }
   ],
   "freigegeben": [
@@ -4345,7 +4351,6 @@
     "File:Blick vomTechniker-Raum über die Sesselreihen und die Tisch- und Stuhlgruppen zur Bühne bei Aufräum-Beleuchtung, die breitere Publikumsfront vor dem Podium ist hier noch kaum zu erahnen.jpg",
     "File:Dülmen, Solarpark -- 2014 -- 7060.jpg",
     "File:423194 Porz-Wahn Nah.jpg",
-    "File:Unterstraße Morschenich 01 Juli 2021.jpg",
-    "File:Kathigai Thirunal.JPG"
+    "File:Unterstraße Morschenich 01 Juli 2021.jpg"
   ]
 }

@@ -1,6 +1,6 @@
 # KI-Redaktion Merzenich Aktuell: Laufdefinition (Claude)
 
-Version 3.9, Stand 03.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich, und für die Eil-Prüfung (Abschnitt 2a). Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
+Version 3.10, Stand 18.11.2026. Verbindlich für jeden Redaktionslauf der KI-Redaktion (Claude Code), zweimal täglich, und für die Eil-Prüfung (Abschnitt 2a). Bei Widerspruch gilt: [PROJECT.md](../../PROJECT.md) vor diesem Dokument, dieses Dokument vor [README.md](README.md) und den Dossiers. Schreib- und Prüfregeln: [SCHREIBREGELN.md](SCHREIBREGELN.md). Quellen: [QUELLEN.md](QUELLEN.md). Register und Dossiers: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md). Vorlagen: [vorlagen/](vorlagen/). Auftrag an ChatGPT: [vorlagen/chatgpt-auftrag.md](vorlagen/chatgpt-auftrag.md).
 
 **In einem Satz:** Die KI-Redaktion recherchiert, schreibt belegte, redaktionelle Artikel mit passendem Bild, baut, prüft, committet und dokumentiert; **ihre eigenen Beiträge gehen ohne Freigabe online** (Entscheidung Luis Kummer, 28.10.2026). Beiträge anderer (Feuerwehr- und Umkreis-Automatik, Vereine, Partner, ChatGPT-Pakete) laufen weiter über die WordPress-Freigaben.
 
@@ -170,6 +170,7 @@ Nach [vorlagen/abschlussbericht.md](vorlagen/abschlussbericht.md) an Luis: Zahle
 
 - [ ] Korrekturaufträge der neuen Dossiers zu Claude-Artikeln erledigt oder begründet offen
 - [ ] Mindesttakt: mindestens eine Meldung in diesem Lauf, wenn eine belegbare Nachricht existiert; Tagesziel zwei (Live-Archiv gezählt)
+- [ ] Jede neue Meldung und jeder neue Termin mit Ortsbezug zur Gemeinde (SCHREIBREGELN.md 0b), Feld `ortsbezug` gesetzt; Themen ohne Ortsbezug stehen im Dossier unter „Bewusst nicht umgesetzt“
 - [ ] Jede neue oder geänderte Meldung: Mindestwerte, drei Quellen (Kurzmeldung: eine offizielle), `stand` = Lesedatum, jede Quelle im Text genannt
 - [ ] Jede neue Meldung mindestens 800 Wörter (Standard) oder 150 bis 350 (Kurzmeldung), in eigenen Worten (`qa/eigenformulierung.mjs` 0 Fehler), Prüfprotokoll vollständig
 - [ ] Jede neue Meldung mit passendem Themenbild, Bild selbst angesehen, Lizenz frei, Tabelle „Bildprüfung“ im Dossier
@@ -217,6 +218,7 @@ Neue Meldungen nach Typ, durchschnittliche Wortzahl, Anteil Standard und länger
 | 2.0 | 27.10.2026 | Vollständige Laufdefinition mit Phasen, Abnahmen, Störungen; `qa/redaktion-lauf.mjs`; QUELLEN.md, SCHREIBREGELN.md, REGISTER-SCHEMA.md, Vorlagen |
 | 3.1 | 28.10.2026 | Länge (Standard ab 800 Wörtern), Prüfdefinition mit Prüfprotokoll `pruefung`, Eigenformulierung (`qa/eigenformulierung.mjs`), Bildprüfung je Artikel im Dossier |
 | 3.2 | 30.10.2026 | Phase 1a Kalenderpflege (60 Tage, neu/geändert/abgesagt/bestätigt, `"abgesagt": true`, Prüfstand `quelle.stand`), ChatGPT-Termine 60 Tage, Läufe in fester Redaktionssitzung |
+| 3.10 | 18.11.2026 | Entscheidung des Betreibers: Ortsbezug ist Pflicht (SCHREIBREGELN.md 0b, Feld `ortsbezug`, Prüfung in `qa/redaktion-lauf.mjs` ab Paketen vom 19.11.); Daueraufgabe „Tamilische Feste“ (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c) gestrichen; Tamil-Meldung und neun ältere Meldungen ohne Ortsbezug zurückgezogen |
 | 3.9 | 03.11.2026 | Entscheidung Luis Kummer: Breitenrecherche (Vereinsseiten mit `qa/vereinsseiten.mjs`, Instagram und Facebook über ChatGPT), Automatik redaktionell ausbauen (Phase 1, 3a und 3b); Kurzmeldung 250 bis 450 Wörter mit Einordnung, nie kopieren, strengere Eigenformulierung (SCHREIBREGELN 0, 1, 8) |
 | 3.8 | 03.11.2026 | Entscheidung Luis Kummer: Feuerwehr-Automatik und Heimat-Info-Termine direkt online, Relevanz aus der Bildklasse; Freigabe nur noch bei rechtlichem Risiko; „Neu in Merzenich“ in der Spalte „Nachrichten aus Merzenich“ (Theme 21.26.0) |
 | 3.7 | 03.11.2026 | Entscheidung Luis Kummer: Eil-Prüfung alle zwei Stunden zwischen den Läufen (Abschnitt 2a); „Merzenich“ in jedem Titel (`qa/redaktion-lauf.mjs`); Alter und Wohnort bei Blaulicht so, wie die Polizei sie nennt (SCHREIBREGELN Abschnitt 7) |

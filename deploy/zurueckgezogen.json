@@ -1,0 +1,20 @@
+{
+  "zweck": "Zurückgezogene Beiträge und Termine. deploy/zurueckziehen.mjs entfernt sie samt aller Verweise aus der statischen Kopie (Kette). Live liegen sie im WordPress-Papierkorb und kommen beim Abgleich nicht wieder.",
+  "eintraege": [
+    { "pfad": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/wirtschaft/ki-workshop-kmu-kreis-dueren-22-oktober-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/online-seminarreihe-krisenvorsorge-november-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/leben/e-tour-de-rur/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/termine/mental-load-online-vortrag-2026-11-18/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/termine/ki-roadshow-ihk-dueren-2026-11-06/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/termine/eichel-sammelaktion-huertgenwald-2026-11-06/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/termine/wildpferde-exkursion-sophienhoehe-2026-10-29/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/termine/seniorenweihnacht-kreis-dueren-2026-11-24/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" }
+  ]
+}

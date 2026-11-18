@@ -37,6 +37,8 @@
  *     Dossier docs/redaktion/dossiers/<datum>-claude-<lauf>.md vorhanden, research_runs mit
  *     date und edition, latest_dossier zeigt darauf, latest.md nennt das Dossier.
  *     Ausserdem Fehler: Meldungspaket des Laufs fehlt und das Dossier meldet keinen Nullfund.
+ *   A2 Ortsbezug (ab REGEL_ORT_AB, 19.11.2026): jede Meldung in Claude-Paketen braucht `ortsbezug`, einen Satz
+ *     mit Ort der Gemeinde oder Merzenicher Einrichtung; Wendungen wie „für Merzenich und Region“ zählen nicht.
  *   E Geheimnisse in docs/redaktion und inhalte (Passwortzuweisungen, Tokens).
  * Hinweise: Mindesttakt (24 Stunden ohne Meldung im Repository; mit --datum weniger als zwei
  *   Meldungen an dem Tag), Kurzmeldung ueber 350 Woerter, Muster „Strasse + Hausnummer“ in Blaulicht-Texten, nur eine Quell-Domain,
@@ -46,6 +48,7 @@ import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { ortsbezugPruefen } from './lib-ortsbezug.mjs';
 
 const args = process.argv.slice(2);
 const opt = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : undefined; };
@@ -68,6 +71,9 @@ const REGEL_TITEL_AB = '2026-11-03';
 // Laengere Beitraege (Entscheidung Luis Kummer 03.11.2026): Kurzmeldung ab Paketen vom 04.11. mindestens 250 Woerter
 // und 4 Absaetze (Blaulicht-Eilmeldung 200), hoechstens 450; darueber Standard.
 const REGEL_V4_AB = '2026-11-04';
+// Ortsbezug (Betreiber 18.11.2026, SCHREIBREGELN.md 0b): ab Paketen vom 19.11. braucht jede Claude-Meldung
+// das Feld `ortsbezug` mit konkretem Bezug zur Gemeinde (qa/lib-ortsbezug.mjs). Anlass: Tamil-Meldung vom 17.11.
+const REGEL_ORT_AB = '2026-11-19';
 const V4_KURZ = { min: 250, minBlaulicht: 200, absaetze: 4, max: 450 };
 // Laenge (Luis Kummer 28.10.2026: „viel, viel laenger“, bisher ein bis zwei Minuten Lesezeit):
 // Mindestwoerter je Artikeltyp fuer Claude-Pakete ab REGEL_V3_AB (gut 200 Woerter je Leseminute).
@@ -212,6 +218,7 @@ for (const { datei, daten } of jsonDateien('inhalte/meldungen')) {
     if (!RESSORTS.includes(m.ressort)) F(b, `Ressort ${m.ressort} unbekannt`);
     if (!ORTSTEILE.includes(m.ortsteil)) F(b, `Ortsteil ${m.ortsteil} unbekannt`);
     if (m.bildklasse && Object.keys(bildklassen).length && !bildklassen[m.bildklasse]) F(b, `Bildklasse ${m.bildklasse} fehlt in deploy/bildklassen.json`);
+    if (claude && (paketDatum(datei) >= REGEL_ORT_AB || STRENG)) { const ort = ortsbezugPruefen(m.ortsbezug); if (ort) F(b, ort); }
     if (claude && (paketDatum(datei) >= REGEL_TITEL_AB || STRENG)) {
       const t = String(m.titel || '');
       const pos = t.search(/Merzenich/);

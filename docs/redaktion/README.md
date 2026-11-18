@@ -8,7 +8,7 @@ Alle verfügbaren vollständigen Dossiers vom 13.–25.10. stehen im [Archiv](ar
 
 ## Claude-Redaktionslauf
 
-Der zweimal tägliche Lauf der KI-Redaktion folgt [CLAUDE-LAUF.md](CLAUDE-LAUF.md) (Version 2.0). Regeln: [SCHREIBREGELN.md](SCHREIBREGELN.md), Quellen: [QUELLEN.md](QUELLEN.md), Register: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md), Vorlagen: [vorlagen/](vorlagen/). Maschinelle Prüfung: `node qa/redaktion-lauf.mjs`. Bei Widerspruch zu diesem README gilt CLAUDE-LAUF.md.
+Der zweimal tägliche Lauf der KI-Redaktion folgt [CLAUDE-LAUF.md](CLAUDE-LAUF.md) (Version 2.0). Regeln: [SCHREIBREGELN.md](SCHREIBREGELN.md), Quellen: [QUELLEN.md](QUELLEN.md), Register: [REGISTER-SCHEMA.md](REGISTER-SCHEMA.md), Vorlagen: [vorlagen/](vorlagen/). Maschinelle Prüfung: `node qa/redaktion-lauf.mjs`. Ortsbezug ist Pflicht (seit 18.11.2026): nur Meldungen und Termine mit Bezug zur Gemeinde Merzenich, Regeln in [SCHREIBREGELN.md](SCHREIBREGELN.md) Abschnitt 0b, Feld `ortsbezug` je Meldung. Bei Widerspruch zu diesem README gilt CLAUDE-LAUF.md.
 
 ## Einstieg bei jeder Redaktionsaufgabe
 

@@ -1,19 +1,19 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-18-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-18-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 67 |
-| gesperrt | 30 |
+| uebernommen | 60 |
+| gesperrt | 37 |
 | neu | 5 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
+| offen | 2 |
 | veraltet | 1 |
-| offen | 1 |
 
 ## Offen (12)
 
@@ -68,8 +68,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 - Dossier: [2026-10-27-morgens.md](dossiers/2026-10-27-morgens.md)
 - Quelle: https://www.neuland-hambach.de/projekte/besucher-und-informationszentrum-sophienhoehe (NEULAND HAMBACH)
 - Quelle: https://www.neuland-hambach.de/aktuelles/artikel/die-sophienhoehe-bekommt-ihr-besucherzentrum-biz (NEULAND HAMBACH)
-- Möglicher Bestand (Stichwort): `wildpferde-exkursion-sophienhoehe-29-oktober-2026` – Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober (2026-10-25, inhalte/meldungen/2026-10-25-recherche-claude.json)
-- Möglicher Bestand (Stichwort): `wildpferde-exkursion-sophienhoehe-2026-10-29` – Wildpferdeexkursion auf die Sophienhöhe (Zusatztermin Herbstferien) (2026-10-29, inhalte/termine/2026-10-25-recherche-claude.json)
+- Möglicher Bestand: keiner gefunden
 - Notiz: Neu erschlossener Recherchevorgang; keine Veröffentlichung oder Artikelumsetzung durch diesen Lauf.
 
 ### MA-FBL3-JOB-1511 · P2 · T1-B/B0 · neu
@@ -134,7 +133,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-18 mittags (ChatGPT): Keine neue Themenkarte. Neuer Korrektur-/Klärungsauftrag: Bürgewald-Artikel übergeht Delegation bei Außenbereichsvorhaben; Leitlinien 2.1/2.2 widersprüchlich. HFA-Korrektur live bestätigt, Motorrad-Bildtext weiter falsch. Neu sichtbare Seniorentermine bereits vorhanden und sachlich unverändert. Festkalender-Originalprüfung durch403/503 begrenzt.
 - 2026-11-18 morgens (Claude): Korrektur Ausstellung (HFA empfiehlt Neuland-Plan nur); Standard „Bürgewald-Ausschuss in Merzenich“ (891 Wörter) zu ARB 26.11. mit Solarpark A4, Bau-Turbo und Vermarktung; Kalender: Gemeinderat 3.12. jetzt 18 Uhr, Tagesordnungen HFA/ARB, Wunschbaum 21.11., 22 Termine bestätigt; Jülicher Tamilen-Verein in QUELLEN 3.9a. Mindesttakt 18.11.: 1. – Commit 4d85e4e7
 - 2026-11-18 morgens (ChatGPT): T2-Update Bau-Turbo: zusätzliche Beratung im Bürgewald-Ausschuss, neue öffentliche Tagesordnung und Ergänzung gelesen. Neuer Korrekturauftrag: HFA empfiehlt Neuland-Plan-Genehmigung statt selbst abschließend zu genehmigen. T0-Wunschbaum-Hinweis21.11. mit unbekanntem Veranstalter. Neuer Festkalender-Originalabgleich wegen403/503/Timeout unvollständig; bekannter Bildtextfehler bleibt.
 - 2026-11-17 tamilische-feste (Claude): Direkter Auftrag Luis Kummer: Service-Kurzmeldung zu tamilischen Festtagen bis April 2027 mit neuem Commons-Foto; keine regionalen tamilischen Veranstaltungen gefunden, daher keine Termine; Quellenkatalog 3.9a und ChatGPT-Auftrag 3c ergänzt. – Commit 80414d35
-- 2026-11-17 nachmittags (Claude): ChatGPT mittags ohne neue Korrektur; Folgemeldung Jugendgremium (Ergebnisse 04.11.), Kurzmeldung Ausstellung Bürgewald 27.11. (eigener Fund) mit neuem Commons-Foto; Kompostprojekt nicht lesbar (Bot-Prüfung); Korrekturhinweise in zwei Meldungen nachgetragen. Mindesttakt 17.11.: 2 Meldungen. – Commit e9817914

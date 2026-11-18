@@ -693,15 +693,6 @@
       "articleId": "2026-10-19-einsatz-141-oelspur-merzenich",
       "articleDate": "2026-10-19T12:00:00+02:00"
     },
-    "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/": {
-      "imageId": "web-wirtschaft-05-94380a18",
-      "pool": "wirtschaft",
-      "motiv": "tagebau",
-      "regel": "rathaus.tagebau",
-      "assignedAt": "2026-10-25T22:01:25.705Z",
-      "articleId": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
-      "articleDate": "2026-10-25T22:18:00+01:00"
-    },
     "/sport/ttc-merzenich-androcup-31-oktober-auswaertsspiele-2026/": {
       "imageId": "web-sport-08-c10997cd",
       "pool": "sport",
@@ -1161,15 +1152,6 @@
       "articleId": "2026-10-06-msg-hitnight-schuetzenhalle-golzheim-10-oktober-2026",
       "articleDate": "2026-10-06T09:17:00+02:00"
     },
-    "/leben/online-seminarreihe-krisenvorsorge-november-2026/": {
-      "imageId": "web-themen-19-deb8f481",
-      "pool": "themen",
-      "motiv": "seminarraum",
-      "regel": "leben.vorsorge",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-13-online-seminarreihe-krisenvorsorge-november-2026",
-      "articleDate": "2026-10-13T07:30:00+02:00"
-    },
     "/rathaus/haushalt-2027-zeitplan-merzenich/": {
       "imageId": "web-aktuell-05-85b961cd",
       "pool": "aktuell",
@@ -1232,15 +1214,6 @@
       "assignedAt": "2026-10-28T09:39:03.891Z",
       "articleId": "2026-10-14-ganztag-grundschulen-kreis-dueren-kooperationsvereinbarung-2026",
       "articleDate": "2026-10-14T13:20:00+02:00"
-    },
-    "/wirtschaft/ki-workshop-kmu-kreis-dueren-22-oktober-2026/": {
-      "imageId": "web-themen-19-deb8f481",
-      "pool": "themen",
-      "motiv": "seminarraum",
-      "regel": "wirtschaft.weiterbildung",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-14-ki-workshop-kmu-kreis-dueren-22-oktober-2026",
-      "articleDate": "2026-10-14T13:30:00+02:00"
     },
     "/leben/fos-polizei-bewerbung-schuljahr-2027-2028-dueren/": {
       "imageId": "web-schule-13-cfbe8f31",
@@ -1449,24 +1422,6 @@
       "articleId": "2026-10-25-verkehr-ferienwoche-bahn-dueren-koeln-bismarckstrasse-a4-2026-10-26",
       "articleDate": "2026-10-25T22:32:00+01:00"
     },
-    "/vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/": {
-      "imageId": "web-themen-11-59fc252a",
-      "pool": "themen",
-      "motiv": "zeltplatz",
-      "regel": "vereine.jugend",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-25-jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026",
-      "articleDate": "2026-10-25T22:34:00+01:00"
-    },
-    "/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/": {
-      "imageId": "web-themen-08-5f0f3260",
-      "pool": "themen",
-      "motiv": "eicheln",
-      "regel": "umwelt.wald",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-25-eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt",
-      "articleDate": "2026-10-25T22:36:00+01:00"
-    },
     "/wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/": {
       "imageId": "web-themen-19-deb8f481",
       "pool": "themen",
@@ -1476,15 +1431,6 @@
       "articleId": "2026-10-25-meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026",
       "articleDate": "2026-10-25T22:38:00+01:00"
     },
-    "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/": {
-      "imageId": "web-kultur-01-8826d38c",
-      "pool": "kultur",
-      "motiv": "veranstaltungssaal",
-      "regel": "leben.veranstaltung",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-25-mental-load-online-vortrag-kreis-dueren-18-november-2026",
-      "articleDate": "2026-10-25T22:40:00+01:00"
-    },
     "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/": {
       "imageId": "web-kirchedetail-01-995c6c09",
       "pool": "kirchedetail",
@@ -1493,15 +1439,6 @@
       "assignedAt": "2026-10-28T09:39:03.891Z",
       "articleId": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
       "articleDate": "2026-10-26T17:30:00+01:00"
-    },
-    "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/": {
-      "imageId": "web-themen-19-deb8f481",
-      "pool": "themen",
-      "motiv": "seminarraum",
-      "regel": "wirtschaft.weiterbildung",
-      "assignedAt": "2026-10-28T09:39:03.891Z",
-      "articleId": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
-      "articleDate": "2026-10-26T17:40:00+01:00"
     },
     "/leben/amprion-stromtrasse-oberzier-blatzheim-bauarbeiten-merzenich-radweg-s-bahnhof-2026/": {
       "imageId": "web-themen-16-b1fd3ef8",
@@ -1799,15 +1736,6 @@
       "assignedAt": "2026-11-17T13:56:10.623Z",
       "articleId": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
       "articleDate": "2026-11-17T14:51:00+01:00"
-    },
-    "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/": {
-      "imageId": "web-themen-26-233a92d4",
-      "pool": "themen",
-      "motiv": "oellampen-karthigai",
-      "regel": "leben.kultur.tamilisch",
-      "assignedAt": "2026-11-17T14:11:23.707Z",
-      "articleId": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
-      "articleDate": "2026-11-17T15:10:00+01:00"
     },
     "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/": {
       "imageId": "web-themen-25-7e1a7afd",

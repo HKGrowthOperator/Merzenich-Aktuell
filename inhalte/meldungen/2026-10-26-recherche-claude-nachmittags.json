@@ -194,53 +194,6 @@
           "stand": "2026-10-26"
         }
       ]
-    },
-    {
-      "slug": "ki-roadshow-ihk-aachen-dueren-6-november-2026",
-      "ressort": "wirtschaft",
-      "ortsteil": "merzenich",
-      "kicker": "Wirtschaft · Weiterbildung",
-      "titel": "KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe",
-      "dek": "Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.",
-      "datum": "2026-10-26T17:40:00+01:00",
-      "artikeltyp": "kurzmeldung",
-      "themen": [
-        [
-          "kuenstliche-intelligenz",
-          "Künstliche Intelligenz"
-        ],
-        [
-          "ihk",
-          "IHK"
-        ],
-        [
-          "kreis-dueren",
-          "Kreis Düren"
-        ]
-      ],
-      "bildklasse": "wirtschaft.weiterbildung",
-      "fakten": [
-        "KI-Roadshow der IHK Aachen: Freitag, 6.11.2026, 9 bis 11 Uhr, CO_SPACE.DN in Düren; kostenfrei; Schwerpunkte Datenanalyse, Kundenservice, Prozessoptimierung",
-        "Unterstützt von der Wirtschaftsförderung des Kreises Düren und der WIN.DN; Mitteilung des Kreises vom 26.10.2026",
-        "Weitere Stationen laut IHK: Alsdorf 9.10., Euskirchen 27.10., Heinsberg 16.11.2026; Zielgruppe kleine und mittlere Unternehmen und Start-ups, branchenoffen",
-        "Inhalte laut IHK: praxisnahe Anwendungsbeispiele, Einordnung von Nutzen und Aufwand, Datenschutz und AI Act, Fördermöglichkeiten; Anmeldung über die IHK-Veranstaltungsseite"
-      ],
-      "absaetze": [
-        "Die KI-Roadshow der IHK Aachen kommt am Freitag, 6. November, nach Düren. Von 9 bis 11 Uhr zeigen Fachleute im CO_SPACE.DN kleinen und mittleren Unternehmen anhand konkreter Beispiele, wo Künstliche Intelligenz im Betriebsalltag unterstützen kann und worauf es beim Einstieg ankommt. Schwerpunkte des Dürener Termins sind Datenanalyse, Kundenservice und Prozessoptimierung. Die Wirtschaftsförderung des Kreises Düren und die WIN.DN unterstützen die Veranstaltung vor Ort, wie der Kreis am Montag mitteilte.",
-        "Die Teilnahme ist kostenfrei und branchenoffen. Neben Anwendungsbeispielen für typische Aufgaben in Verwaltung und Produktion geht es um eine realistische Einschätzung von Nutzen, Aufwand und Voraussetzungen, um Rahmenbedingungen wie Datenschutz und den AI Act sowie um einen Überblick über Fördermittel. Düren ist eine von vier Stationen der Roadshow; die weiteren liegen in Alsdorf, Euskirchen und Heinsberg. Die Anmeldung läuft über die Veranstaltungsseite der IHK Aachen."
-      ],
-      "quelle": {
-        "name": "Kreis Düren, Mitteilung vom 26.10.2026: „Künstliche Intelligenz für Unternehmen“ (KI-Roadshow)",
-        "url": "https://www.kreis-dueren.de/presse/ki-roadshow_2026-10-26.php",
-        "stand": "2026-10-26"
-      },
-      "weitereQuellen": [
-        {
-          "name": "IHK Aachen, Veranstaltungsseite „KI-Roadshow: Praxisnah. Standortnah. Verständlich. Machbar“ mit Terminen und Anmeldung",
-          "url": "https://www.ihk.de/aachen/innovation/digitalisierung/ki-ropadshow-7153252",
-          "stand": "2026-10-26"
-        }
-      ]
     }
   ]
 }

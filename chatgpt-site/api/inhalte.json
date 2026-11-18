@@ -1,22 +1,22 @@
 {
  "generated": "2026-11-18T09:25:00+01:00",
- "anzahl": 250,
+ "anzahl": 240,
  "bestand": {
-  "gesamt": 250,
+  "gesamt": 240,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 35,
    "rathaus": 43,
-   "leben": 58,
-   "wirtschaft": 13,
+   "leben": 51,
+   "wirtschaft": 11,
    "tipp": 0,
    "menschen": 7,
-   "vereine": 19,
+   "vereine": 18,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 175,
+   "merzenich": 165,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 13,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 250,
+    "anzahl": 240,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,11 +41,11 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 58,
+    "anzahl": 51,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 13,
+    "anzahl": 11,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -57,7 +57,7 @@
     "liste": "gepflegt"
    },
    "/vereine/": {
-    "anzahl": 19,
+    "anzahl": 18,
     "liste": "kein Feed"
    },
    "/kultur/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 175,
+    "anzahl": 165,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -141,44 +141,6 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Stefan Oberreuter / Wikimedia Commons · CC BY-SA 4.0",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
-   "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
-   "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar",
-   "teaser": "Lichterfest, Erntedank und Neujahr: Die wichtigsten tamilischen Festtage bis April 2027 im Überblick, mit den Daten für Köln und für Sri Lanka.",
-   "kicker": "Leben · Kultur",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-11-17T15:10:00+01:00",
-   "aktualisiert": "2026-11-17T15:10:00+01:00",
-   "lesezeit": "2 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "kultur",
-     "label": "Kultur"
-    },
-    {
-     "slug": "feste",
-     "label": "Feste"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-26-233a92d40a.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-26-233a92d40a-480.webp 480w, /assets/editorial-pools/themen/themen-26-233a92d40a-800.webp 800w, /assets/editorial-pools/themen/themen-26-233a92d40a-1200.webp 1200w, /assets/editorial-pools/themen/themen-26-233a92d40a.jpg 1920w",
-    "alt": "Öllampen zum tamilischen Lichterfest Karthigai Deepam",
-    "width": 1920,
-    "height": 1440,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Gitakart / Wikimedia Commons · CC BY-SA 3.0",
     "symbol": true,
     "stufe": "B"
    },
@@ -1524,48 +1486,6 @@
    "abgerufen": ""
   },
   {
-   "id": "2026-10-26-ki-roadshow-ihk-aachen-dueren-6-november-2026",
-   "url": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/",
-   "titel": "KI-Roadshow der IHK macht am 6. November in Düren Station: kostenlos für kleine Betriebe",
-   "teaser": "Datenanalyse, Kundenservice und Prozessoptimierung: In zwei Stunden im CO_SPACE.DN zeigt die IHK Aachen mit der Wirtschaftsförderung des Kreises, wo Künstliche Intelligenz im Betriebsalltag hilft. Anmeldung online.",
-   "kicker": "Wirtschaft · Weiterbildung",
-   "ressort": "wirtschaft",
-   "ressortLabel": "Wirtschaft",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-26T17:40:00+01:00",
-   "aktualisiert": "2026-10-26T17:40:00+01:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "kuenstliche-intelligenz",
-     "label": "Künstliche Intelligenz"
-    },
-    {
-     "slug": "ihk",
-     "label": "IHK"
-    },
-    {
-     "slug": "kreis-dueren",
-     "label": "Kreis Düren"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
-    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
-    "width": 1920,
-    "height": 1440,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
    "id": "2026-10-26-allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026",
    "url": "/leben/allerheiligen-rosenkranz-pfarrheim-sonntagscafe-selbsthilfe-pfarrbrief-november-2026/",
    "titel": "Allerheiligen, Rosenkranz im Pfarrheim, Sonntagscafé: Was der Pfarrbrief für den November ankündigt",
@@ -1696,48 +1616,6 @@
    "abgerufen": ""
   },
   {
-   "id": "2026-10-25-mental-load-online-vortrag-kreis-dueren-18-november-2026",
-   "url": "/leben/mental-load-online-vortrag-kreis-dueren-18-november-2026/",
-   "titel": "„Mental Load“: Online-Vortrag des Kreises am 18. November ist ausgebucht",
-   "teaser": "Wer in der Familie an alles denken muss, trägt eine unsichtbare Last. Ein Familientherapeut der SkF-Beratungsstelle Düren zeigt im Online-Vortrag des Kreises, wie sich Verantwortung fairer verteilen lässt. Die Plätze sind inzwischen vergeben.",
-   "kicker": "Leben · Familie",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-25T22:40:00+01:00",
-   "aktualisiert": "2026-10-25T22:40:00+01:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "familie",
-     "label": "Familie"
-    },
-    {
-     "slug": "kreis-dueren",
-     "label": "Kreis Düren"
-    },
-    {
-     "slug": "vortrag",
-     "label": "Vortrag"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg",
-    "srcset": "/assets/editorial-pools/kultur/kultur-01-8826d38c5d-480.webp 480w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-800.webp 800w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d-1200.webp 1200w, /assets/editorial-pools/kultur/kultur-01-8826d38c5d.jpg 1600w",
-    "alt": "Impressionen vom und im Theater am Küchengarten (TAK) in Hannover, der Kabarettbühne im denkmalgeschützten Sockelgeschoss der 1927 unter Karl Elkart erbauten Städtischen Bäder in H",
-    "width": 1600,
-    "height": 1060,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Foto: Bernd Schwabe in Hannover / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
    "id": "2026-10-25-meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026",
    "url": "/wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/",
    "titel": "Meisterstipendium des Kreises: 6.000 Euro, Bewerbung noch bis Samstag",
@@ -1773,90 +1651,6 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-10-25-eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt",
-   "url": "/leben/eichel-sammelaktion-huertgenwald-6-november-2026-erster-termin-sturm-abgesagt/",
-   "titel": "Eicheln für den Hürtgenwald: erster Sammeltermin fiel dem Sturm zum Opfer, zweiter am 6. November",
-   "teaser": "Nach dem Waldbrand im August sollen Eicheln aus der Region die Wiederbewaldung anstoßen. Der Termin am Freitag wurde wegen Sturmböen abgesagt; am 6. November geht es an der Burg Laufenburg weiter.",
-   "kicker": "Leben · Umwelt",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-25T22:36:00+01:00",
-   "aktualisiert": "2026-10-25T22:36:00+01:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "wald",
-     "label": "Wald"
-    },
-    {
-     "slug": "kreis-dueren",
-     "label": "Kreis Düren"
-    },
-    {
-     "slug": "ehrenamt",
-     "label": "Ehrenamt"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-08-5f0f3260df.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-08-5f0f3260df-480.webp 480w, /assets/editorial-pools/themen/themen-08-5f0f3260df-800.webp 800w, /assets/editorial-pools/themen/themen-08-5f0f3260df-1200.webp 1200w, /assets/editorial-pools/themen/themen-08-5f0f3260df.jpg 1920w",
-    "alt": "Eicheln am Baum der Stieleiche, Quercus robur in Celle",
-    "width": 1920,
-    "height": 1280,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "NobbiP / Wikimedia Commons · CC BY-SA 3.0",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-10-25-jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026",
-   "url": "/vereine/jugendzeltplatz-finkenheide-kreis-sucht-traeger-bis-20-november-2026/",
-   "titel": "Jugendzeltplatz Finkenheide: Kreis sucht bis 20. November einen neuen Träger",
-   "teaser": "Der Kreis Düren will den knapp 11.500 Quadratmeter großen Jugendzeltplatz in Hürtgenwald-Kleinhau verkaufen. Ein Käufer muss anerkannter Träger der Jugendhilfe sein und zusagen, dass Vereine und Verbände den Platz weiter buchen können.",
-   "kicker": "Vereine · Jugend",
-   "ressort": "vereine",
-   "ressortLabel": "Vereine",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-25T22:34:00+01:00",
-   "aktualisiert": "2026-10-25T22:34:00+01:00",
-   "lesezeit": "2 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "jugend",
-     "label": "Jugend"
-    },
-    {
-     "slug": "kreis-dueren",
-     "label": "Kreis Düren"
-    },
-    {
-     "slug": "zeltlager",
-     "label": "Zeltlager"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-11-59fc252a23.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-11-59fc252a23-480.webp 480w, /assets/editorial-pools/themen/themen-11-59fc252a23-800.webp 800w, /assets/editorial-pools/themen/themen-11-59fc252a23-1200.webp 1200w, /assets/editorial-pools/themen/themen-11-59fc252a23.jpg 1920w",
-    "alt": "Jugendzeltplatz Am Stürzenhardter Brückle",
-    "width": 1920,
-    "height": 1080,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Granpar / Wikimedia Commons · CC BY 3.0",
     "symbol": true,
     "stufe": "B"
    },
@@ -2139,48 +1933,6 @@
     "fit": "",
     "badge": "Symbolbild",
     "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-10-25-wildpferde-exkursion-sophienhoehe-29-oktober-2026",
-   "url": "/leben/wildpferde-exkursion-sophienhoehe-29-oktober-2026/",
-   "titel": "Wildpferde und Hambachsee: kostenlose Exkursion auf die Sophienhöhe am 29. Oktober",
-   "teaser": "Neuland Hambach und die RWE-Forschungsstelle Rekultivierung bieten in den Herbstferien einen Zusatztermin an. Anmeldung beim RWE-Besucherdienst, die Plätze sind begrenzt.",
-   "kicker": "Leben · Ferientipp",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-25T22:18:00+01:00",
-   "aktualisiert": "2026-10-25T22:18:00+01:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "sophienhoehe",
-     "label": "Sophienhöhe"
-    },
-    {
-     "slug": "tagebausee-hambach",
-     "label": "Tagebausee Hambach"
-    },
-    {
-     "slug": "herbstferien",
-     "label": "Herbstferien"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg",
-    "srcset": "/assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-480.webp 480w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-800.webp 800w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858-1200.webp 1200w, /assets/editorial-pools/wirtschaft/wirtschaft-05-94380a1858.jpg 1920w",
-    "alt": "Schaufelradbagger 286 im Tagebau Hambach",
-    "width": 1920,
-    "height": 1280,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Anıl Öztaş / Wikimedia Commons · CC BY-SA 4.0",
     "symbol": true,
     "stufe": "B"
    },
@@ -2493,14 +2245,14 @@
     }
    ],
    "bild": {
-    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
-    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
-    "alt": "Rathaus der Gemeinde Merzenich",
+    "src": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-13-33d9d347f2.jpg 1920w",
+    "alt": "Katholische Pfarrkirche St. Laurentius in Merzenich",
     "width": 1920,
-    "height": 1253,
+    "height": 1280,
     "fit": "",
     "badge": "Ortsansicht",
-    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "credit": "Käthe und Bernd Limburg / Wikimedia Commons · CC BY-SA 3.0 DE",
     "symbol": true,
     "stufe": "O"
    },
@@ -3222,48 +2974,6 @@
    "abgerufen": ""
   },
   {
-   "id": "2026-10-14-ki-workshop-kmu-kreis-dueren-22-oktober-2026",
-   "url": "/wirtschaft/ki-workshop-kmu-kreis-dueren-22-oktober-2026/",
-   "titel": "Kostenloser KI-Workshop für Betriebe: Anmeldung bis Sonntag",
-   "teaser": "Wirtschaftsförderung des Kreises und KI.NRW laden am 22. Oktober kleine und mittelständische Unternehmen nach Düren ein. Die Plätze sind begrenzt.",
-   "kicker": "Wirtschaft · Workshop",
-   "ressort": "wirtschaft",
-   "ressortLabel": "Wirtschaft",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-14T13:30:00+02:00",
-   "aktualisiert": "2026-10-14T13:30:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "wirtschaft",
-     "label": "Wirtschaft"
-    },
-    {
-     "slug": "kuenstliche-intelligenz",
-     "label": "Künstliche Intelligenz"
-    },
-    {
-     "slug": "kreis-dueren",
-     "label": "Kreis Düren"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
-    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
-    "width": 1920,
-    "height": 1440,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
    "id": "2026-10-14-ganztag-grundschulen-kreis-dueren-kooperationsvereinbarung-2026",
    "url": "/leben/ganztag-grundschulen-kreis-dueren-kooperationsvereinbarung-2026/",
    "titel": "Ganztag an Grundschulen: Kreis und Kommunen regeln Zusammenarbeit",
@@ -3768,48 +3478,6 @@
    "abgerufen": ""
   },
   {
-   "id": "2026-10-13-online-seminarreihe-krisenvorsorge-november-2026",
-   "url": "/leben/online-seminarreihe-krisenvorsorge-november-2026/",
-   "titel": "Krisenvorsorge: Kostenlose Online-Seminarreihe an drei Dienstagabenden im November",
-   "teaser": "Am 3., 10. und 17. November geht es jeweils von 19 bis 21 Uhr um Katastrophenschutz, private Notfallvorsorge und die Rolle von Dorfgemeinschaften in Krisen. Die Teilnahme per Zoom ist kostenlos.",
-   "kicker": "Vorsorge · Termin",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-13T07:30:00+02:00",
-   "aktualisiert": "2026-10-13T07:30:00+02:00",
-   "lesezeit": "2 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "krisenvorsorge",
-     "label": "Krisenvorsorge"
-    },
-    {
-     "slug": "ehrenamt",
-     "label": "Ehrenamt"
-    },
-    {
-     "slug": "veranstaltungen",
-     "label": "Veranstaltungen"
-    }
-   ],
-   "bild": {
-    "src": "/assets/editorial-pools/themen/themen-19-deb8f481da.jpg",
-    "srcset": "/assets/editorial-pools/themen/themen-19-deb8f481da-480.webp 480w, /assets/editorial-pools/themen/themen-19-deb8f481da-800.webp 800w, /assets/editorial-pools/themen/themen-19-deb8f481da-1200.webp 1200w, /assets/editorial-pools/themen/themen-19-deb8f481da.jpg 1920w",
-    "alt": "Das Dominikanerkloster Sankt Albert in der Rheindorfer Burg, Bornheim - Walberberg – Seminarraum",
-    "width": 1920,
-    "height": 1440,
-    "fit": "",
-    "badge": "Symbolbild",
-    "credit": "Eckhard Henkel / Wikimedia Commons · CC BY-SA 3.0 de",
-    "symbol": true,
-    "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
    "id": "2026-10-13-sc-merzenich-d1-sonderliga-jugend-oktober-2026",
    "url": "/sport/sc-merzenich-d1-sonderliga-jugend-oktober-2026/",
    "titel": "SC Merzenich: D1-Junioren gewinnen ihre Qualifikationsgruppe und spielen um die Kreismeisterschaft",
@@ -3847,48 +3515,6 @@
     "credit": "BikeMike / Wikimedia Commons · CC0",
     "symbol": true,
     "stufe": "B"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
-   "id": "2026-10-13-ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026",
-   "url": "/leben/ideenwettbewerb-mit-tatkraft-rheinisches-revier-2026/",
-   "titel": "Ideenwettbewerb „Mit Tatkraft“: 5.000 oder 10.000 Euro für Projekte im Rheinischen Revier",
-   "teaser": "Bürgerinnen und Bürger, Vereine und Initiativen können bis 30. November Projektideen beim Landesamt LANUK einreichen. Der Kreis Düren mit Merzenich gehört zum Gebiet.",
-   "kicker": "Rheinisches Revier · Wettbewerb",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-10-13T07:00:00+02:00",
-   "aktualisiert": "2026-10-13T07:00:00+02:00",
-   "lesezeit": "2 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "strukturwandel",
-     "label": "Strukturwandel"
-    },
-    {
-     "slug": "ehrenamt",
-     "label": "Ehrenamt"
-    },
-    {
-     "slug": "vereine",
-     "label": "Vereine"
-    }
-   ],
-   "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
-    "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
-    "symbol": true,
-    "stufe": "O"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -7394,48 +7020,6 @@
    "abgerufen": ""
   },
   {
-   "id": "2026-08-29-e-tour-de-rur",
-   "url": "/leben/e-tour-de-rur/",
-   "titel": "E-Tour de Rur: LEADER-Region wirbt für Ausflüge mit dem E-Bike",
-   "teaser": "Die LAG weist auf E-Bike-Mietstationen und Ziele wie Schloss Kellenberg und die Alte Synagoge Rödingen hin.",
-   "kicker": "Freizeit",
-   "ressort": "leben",
-   "ressortLabel": "Leben",
-   "ort": "MERZENICH",
-   "ortsteil": "merzenich",
-   "datum": "2026-08-29T10:02:00+02:00",
-   "aktualisiert": "2026-08-29T10:02:00+02:00",
-   "lesezeit": "1 Min. Lesezeit",
-   "themen": [
-    {
-     "slug": "e-bike",
-     "label": "E-Bike"
-    },
-    {
-     "slug": "rur",
-     "label": "Rur"
-    },
-    {
-     "slug": "ausflug",
-     "label": "Ausflug"
-    }
-   ],
-   "bild": {
-    "src": "/assets/responsive/0d1318d52ebcdf-300.webp",
-    "srcset": "/assets/responsive/0d1318d52ebcdf-240.webp 240w, /assets/responsive/0d1318d52ebcdf-300.webp 300w",
-    "alt": "E-Tour de Rur, Radfahren in der Region",
-    "width": 300,
-    "height": 375,
-    "fit": "",
-    "badge": "Quellenmotiv",
-    "credit": "LAG Rheinisches Revier an Inde und Rur / Heimat-Info",
-    "symbol": false,
-    "stufe": "A"
-   },
-   "undatiert": false,
-   "abgerufen": ""
-  },
-  {
    "id": "2026-08-27-faire-woche",
    "url": "/rathaus/faire-woche/",
    "titel": "Faire Woche: Müllsammelaktion und Naturangebote im September",
@@ -10357,11 +9941,6 @@
  },
  "nebenmeldungen": [
   {
-   "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
-   "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
-   "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar"
-  },
-  {
    "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
    "url": "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
    "titel": "Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten"
@@ -10375,6 +9954,11 @@
    "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
    "url": "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
    "titel": "Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember"
+  },
+  {
+   "id": "2026-11-14-weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember",
+   "url": "/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
+   "titel": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen"
   }
  ],
  "startseitenMotive": {
@@ -10395,6 +9979,7 @@
   "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
+  "editorial-pools/aktuell/aktuell-13-33d9d347f2": 1,
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3": 2,
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91": 1,
   "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
@@ -10409,22 +9994,23 @@
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
   "editorial-pools/themen/themen-05-1ca58804a8": 1,
   "editorial-pools/themen/themen-06-bc6b8eed4f": 1,
-  "editorial-pools/themen/themen-11-59fc252a23": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
   "editorial-pools/themen/themen-15-30a6b323da": 2,
-  "editorial-pools/themen/themen-19-deb8f481da": 2,
+  "editorial-pools/themen/themen-16-b1fd3ef820": 1,
+  "editorial-pools/themen/themen-19-deb8f481da": 1,
   "editorial-pools/themen/themen-20-72a84de410": 1,
   "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/themen/themen-24-960e0101ba": 1,
   "editorial-pools/themen/themen-25-7e1a7afdf3": 2,
-  "editorial-pools/themen/themen-26-233a92d40a": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
+  "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 2,
   "places/buergewald": 1,
-  "places/girbelsrath": 2,
+  "places/girbelsrath": 1,
   "places/golzheim": 1,
   "places/merzenich": 1,
   "places/morschenich": 1,
+  "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
   "responsive/5191bb10b6a3de": 1,
   "responsive/f507b5f3e2c7d3": 1
@@ -10432,8 +10018,8 @@
  "buehnenMotive": [
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
+  "editorial-pools/polizei/polizei-10-b2dae76ca0",
   "editorial-pools/themen/themen-25-7e1a7afdf3",
-  "editorial-pools/themen/themen-26-233a92d40a",
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc"
  ],
  "motivMax": 2

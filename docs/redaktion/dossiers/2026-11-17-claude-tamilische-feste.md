@@ -83,3 +83,7 @@ Live-Nachweis 15:18 Uhr: Artikel `/leben/tamilische-feste-2026-2027-karthigai-de
 - Daueraufgabe (Luis Kummer 17.11.): in jeder Breitenrecherche nach Veranstaltungen tamilischer Gruppen im Dürener Raum suchen (`QUELLEN.md` 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin.
 - Luis Kummer fragen, ob er tamilische Vereine, einen Tempel oder eine Tamil-Schule im Kreis Düren kennt.
 - Karthigai Deepam 24.11.: keine Folgemeldung nötig, außer es kündigt sich eine Feier in der Region an.
+
+## Nachtrag 18.11.2026: zurückgezogen
+
+Der Betreiber hat die Meldung am 18.11.2026 als ohne Bezug zu Merzenich beanstandet („was nichts mit dem Ort zu tun hat, raus, immer“). Der Beitrag liegt im Papierkorb und kommt beim Abgleich nicht wieder, das Meldungspaket ist entfernt, das Register-Thema `MA-TAMILISCHE-FESTE-2026` steht auf `gesperrt`. Das Commons-Foto „Kathigai Thirunal.JPG“ ist aus dem Symbolbild-Pool `themen` genommen. Die Daueraufgabe aus diesem Auftrag (`QUELLEN.md` 3.9a, ChatGPT-Auftrag 3c) ist gestrichen; an ihre Stelle tritt die Pflichtregel Ortsbezug (`SCHREIBREGELN.md` 0b).

@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-12. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+18. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.7 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 18.11.2026: Plugin 1.48.7, Ortsbezug
+
+Auf Wunsch des Betreibers sind zehn Beiträge und fünf Termine ohne Bezug zu Merzenich zurückgezogen (WordPress-Papierkorb, der Abgleich holt sie nicht zurück). Regel: `docs/redaktion/SCHREIBREGELN.md` Abschnitt 0b.
+- **Plugin 1.48.7:** `data/bildpools.json` ohne das Foto `themen-26` (Öllampen zu Karthigai Deepam); der Pool `themen` hat 25 Fotos. Sonst keine Codeänderung.
+- **Statische Kopie:** `deploy/zurueckziehen.mjs` (Kette) entfernt die Seiten aus `deploy/zurueckgezogen.json` samt Feed-Zeilen, Listenpunkten, JSON-LD-Einträgen und Weiterleitungen.
+- **Prüfung:** `qa/redaktion-lauf.mjs` verlangt ab Paketen vom 19.11. je Claude-Meldung das Feld `ortsbezug` (`qa/lib-ortsbezug.mjs`, Test `qa/ortsbezug-test.mjs`).
 
 ## Neu am 12.11.2026: Theme 21.30.3 und Plugin 1.48.6, finales Logo
 

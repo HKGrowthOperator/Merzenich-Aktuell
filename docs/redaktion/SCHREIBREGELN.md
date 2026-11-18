@@ -27,6 +27,20 @@ Entscheidung Luis Kummer, 02.11.2026: Oben auf der Startseite steht automatisch 
 - Voraussetzungen für den Aufmacherplatz (Theme): kein Sport, kein Tipp, echtes Themenfoto mit mindestens 480 px Breite (keine Ortsansicht). Sport bleibt auch mit Stufe 1 in der Sportrubrik.
 - **Folgemeldung statt nur Update:** Eine neue Entwicklung mit eigenem Nachrichtenwert zu einem älteren Artikel (Tod nach einem Unfall, Festnahme, Urteil, Beschluss, Absage, Ergebnis) wird eine **neue Kurzmeldung** mit neuem Datum, damit sie als Nachricht erscheint (Startseite, News-Sitemap). Der ältere Artikel bekommt einen Nachtrag mit Hinweis auf die Folgemeldung; sein Titel beschreibt dann das ursprüngliche Ereignis, damit keine zwei gleichlautenden Überschriften stehen. Kleine Ergänzungen (Uhrzeit, Ort, Korrektur) bleiben ein Update (Abschnitt 5). Abgestimmt mit `docs/SEO-KEYWORDS.md` Regel 5 (03.11.2026).
 
+## 0b. Ortsbezug (Pflicht)
+
+Entscheidung des Betreibers, 18.11.2026: „Was nichts mit dem Ort zu tun hat, raus, immer.“ Anlass war die Meldung „Tamilische Feste für Merzenich und Region“ vom 17.11.2026 ohne jeden Bezug zur Gemeinde; sie, neun ältere Meldungen und fünf Termine ohne Ortsbezug wurden am 18.11. zurückgezogen.
+
+- **Erlaubt** ist eine Meldung oder ein Termin nur, wenn mindestens eines zutrifft:
+  1. Das Ereignis spielt in der Gemeinde Merzenich (Merzenich, Golzheim, Girbelsrath, Morschenich, Bürgewald).
+  2. Merzenicher Einrichtungen, Vereine, Gremien, Betriebe oder die Gemeinde selbst sind beteiligt, auch bei Spielen oder Auftritten anderswo.
+  3. Ein Kreis- oder Landesthema betrifft Merzenicher ausdrücklich und praktisch: Service und Fristen (Kita-Navigator, Müll, Amtsblatt), Verkehr und Sperrungen, Wahlen, Regeln, die hier gelten.
+- **Nicht erlaubt:** Feste, Kultur, Ausflüge, Wirtschafts- und Bildungsangebote anderswo ohne Merzenicher Beteiligung; Online-Vorträge und Förderaufrufe ohne Bezug zur Gemeinde; allgemeine Kalender- oder Feiertagsübersichten. Ein Zusatz wie „für Merzenich und Region“, „auch für Merzenich“ oder „Kreis Düren, also auch Merzenich“ stellt keinen Ortsbezug her.
+- **Regionales** gehört nur in den Block „Umgebung“ (Abschnitt 11), nie als eigene Meldung.
+- **Feld `ortsbezug`** (Pflicht in Claude-Paketen ab 19.11.2026): ein Satz, was konkret in der Gemeinde passiert oder wen in Merzenich es betrifft, mit Ortsteil oder Merzenicher Einrichtung. `qa/redaktion-lauf.mjs` prüft das (`qa/lib-ortsbezug.mjs`); fehlt es oder bleibt nach Abzug der Wendungen oben kein Ort, ist das ein Fehler.
+- **Im Zweifel:** nicht veröffentlichen, im Dossier unter „Bewusst nicht umgesetzt“ mit Grund „kein Ortsbezug“.
+- **Zurückziehen**, wenn doch etwas ohne Ortsbezug online ist: Beitrag oder Termin in WordPress in den Papierkorb (der Abgleich holt ihn nicht zurück), Eintrag aus dem Paket unter `inhalte/` nehmen, Register-Thema auf `gesperrt` mit Grund, Pfad in `deploy/zurueckgezogen.json` eintragen. `deploy/zurueckziehen.mjs` (Teil der Kette) entfernt dann Seite und alle Verweise aus der statischen Kopie.
+
 ## 1. Welcher Artikeltyp?
 
 Entscheidung in dieser Reihenfolge:
@@ -165,6 +179,7 @@ Deutsch, kurze Sätze, aktive Verben. Zahlen deutsch (257.039 Euro, 18 Uhr, 3. D
 
 ## 13. Selbstprüfung je Meldung vor dem Build
 
+0. Ortsbezug: Spielt es in der Gemeinde, ist eine Merzenicher Einrichtung beteiligt oder betrifft es Merzenicher ausdrücklich (Abschnitt 0b)? Sonst nicht schreiben.
 1. Jede Zahl an der Primärquelle gelesen?
 2. Jedes Datum mit Wochentag geprüft?
 3. Jede Gegenwartsaussage zum Lesedatum belegt?
