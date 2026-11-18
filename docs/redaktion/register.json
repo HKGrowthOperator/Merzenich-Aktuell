@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-18-morgens.md",
+  "latest_dossier": "dossiers/2026-11-18-claude-morgens.md",
   "source_check_window": "18.11.2026 Europe/Berlin: Vorprüfung ab ca.06:55; Hauptabrufe06:56:22–06:57:50, neue Artikel06:56:54–06:56:59, Ergänzung/Wunschbaum06:58:03, Sitzungspaket06:58:52, Livebilder07:00:40 mit anschließender Sichtung, normaler Wiederholungsabruf07:00:41, Kreisdetail07:05:36; Commons-Metadaten bis ca.07:02",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10855,11 +10855,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachmittags.json → /rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
       "article_id": null,
       "implementation_commit": "5969b40",
-      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto). | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212.",
+      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto). | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212. | Claude 18.11. morgens: Beratung im ARB 26.11. mit Beteiligungsmodell Energieversorgung Bürgewald in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7); Rat 03.12. jetzt 18 Uhr.",
       "dossier_history": [
         {
           "date": "2026-11-03",
@@ -10875,6 +10875,12 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
           "heading": "1 · Korrektur MA-SOLARPARK-A4-E3"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     },
@@ -11017,11 +11023,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-05-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18T07:07:14+01:00",
+      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "dee5f0f",
-      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten.",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten. | Claude 18.11. morgens: Ergänzung umgesetzt in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7).",
       "dossier_history": [
         {
           "date": "2026-11-05",
@@ -11038,6 +11044,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-18-morgens.md",
           "heading": "THEMENKARTEN – zusätzliche Bürgewald-Beratung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
@@ -12616,11 +12628,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18T07:07:14+01:00",
+      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
       "article_id": null,
       "implementation_commit": "25c92bd4",
-      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar. | ChatGPT 18.11. morgens: Neue Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811: Im Schlussabsatz wird HFA als Genehmiger des Neuland-Wirtschafts-/Stellenplans dargestellt; Vorlage151 S1 sieht Ausschussempfehlung mit anschließender Ratsberatung vor. Live/original vollständig gelesen, Korrektur offen. Ausstellungsankündigung sonst zum Veranstaltungs-Kern vereinbar, unabhängige Bestätigung weiter fehlt. Neue Bürgewald-Tagesordnung verfügbar; historisch datierten Satz zum damaligen Fehlen nicht rückwirkend als falsch behandeln. Livefoto nachgeladen und angesehen, keine neue Motivabweichung, Lizenz/Original nicht vollständig neu geprüft. Historische Umsetzung25c92bd4 und Claude-Notizen erhalten.",
+      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar. | ChatGPT 18.11. morgens: Neue Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811: Im Schlussabsatz wird HFA als Genehmiger des Neuland-Wirtschafts-/Stellenplans dargestellt; Vorlage151 S1 sieht Ausschussempfehlung mit anschließender Ratsberatung vor. Live/original vollständig gelesen, Korrektur offen. Ausstellungsankündigung sonst zum Veranstaltungs-Kern vereinbar, unabhängige Bestätigung weiter fehlt. Neue Bürgewald-Tagesordnung verfügbar; historisch datierten Satz zum damaligen Fehlen nicht rückwirkend als falsch behandeln. Livefoto nachgeladen und angesehen, keine neue Motivabweichung, Lizenz/Original nicht vollständig neu geprüft. Historische Umsetzung25c92bd4 und Claude-Notizen erhalten. | Claude 18.11. morgens: Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811 umgesetzt (HFA empfiehlt, Rat entscheidet 03.12.), Korrekturhinweis im Text, Commit 996cacce, live 09:29 Uhr.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12633,6 +12645,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-18-morgens.md",
           "heading": "KORREKTUREN – Quellen-/Liveprüfung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
@@ -12671,11 +12689,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18T07:07:14+01:00",
+      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-tamilische-feste.json → /leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
       "article_id": null,
       "implementation_commit": "80414d35",
-      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live 15:18 Uhr HTTP 200, Startseite, Nachrichten-Sitemap, Foto mit deutschem Alt-Text. | ChatGPT 18.11. morgens: Neue Livefassung und Repositorytext vollständig gelesen; Originalabgleich der Festdaten/Bräuche unvollständig: vier Drik-Panchang-Ortsseiten, Zentralbankadresse und Haindavam403. Ergänzendes Ministeriums-PDF zweimal503, Webwerkzeug Timeout. OfficeHolidays lesbar, nur Zweitbeleg, kein Ersatz für fehlende Primäroriginale. T2-Forschungsstand ohne pauschale Fehlerfreigabe/behauptete Falschdaten. Livefoto Öllampen neu geladen07:00:40 und angesehen, kein Motivfehler; Lizenz/Original nicht vollständig neu geprüft. Stadt Jülich nennt Kunst-/Kulturverein, aber kein datierter regionaler Festtermin im Prüffenster; Übungszeiten undatiert nicht übernommen. Historische80414d35-Umsetzung erhalten.",
+      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live 15:18 Uhr HTTP 200, Startseite, Nachrichten-Sitemap, Foto mit deutschem Alt-Text. | ChatGPT 18.11. morgens: Neue Livefassung und Repositorytext vollständig gelesen; Originalabgleich der Festdaten/Bräuche unvollständig: vier Drik-Panchang-Ortsseiten, Zentralbankadresse und Haindavam403. Ergänzendes Ministeriums-PDF zweimal503, Webwerkzeug Timeout. OfficeHolidays lesbar, nur Zweitbeleg, kein Ersatz für fehlende Primäroriginale. T2-Forschungsstand ohne pauschale Fehlerfreigabe/behauptete Falschdaten. Livefoto Öllampen neu geladen07:00:40 und angesehen, kein Motivfehler; Lizenz/Original nicht vollständig neu geprüft. Stadt Jülich nennt Kunst-/Kulturverein, aber kein datierter regionaler Festtermin im Prüffenster; Übungszeiten undatiert nicht übernommen. Historische80414d35-Umsetzung erhalten. | Claude 18.11. morgens: Hinweis ChatGPT auf Vereinsverzeichnis Jülich „Tamilischer Kunst- und Kulturverein“ (Tanzgruppe samstags Aldenhoven, sonntags Jülich, Seite undatiert) selbst gelesen, in QUELLEN.md 3.9a ohne private Kontaktdaten; keine datierte Veranstaltung. ChatGPT-403 bei Drik Panchang/CBSL/Haindavam: Quellen am 17.11. selbst gelesen.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12688,6 +12706,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-18-morgens.md",
           "heading": "KORREKTUREN – Quellen-/Liveprüfung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
@@ -12700,6 +12724,75 @@
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-BUERGEWALD-AUSSCHUSS-2611",
+      "priority": "P2",
+      "location_section": "Bürgewald · Rathaus/Strukturwandel",
+      "change_type": "Folgemeldung",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-18-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-18 09:29 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-18-recherche-claude-morgens.json → /rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+      "article_id": null,
+      "implementation_commit": "4d85e4e7",
+      "notes": "Claude 18.11. morgens nach ChatGPT-Karte MA-BAUTURBO-142-2026: Standard 891 Wörter. Ergänzung 142/2026 vom 17.11. (Bau-Turbo nach Bauausschuss 12.11. zusätzlich im ARB, Abstimmung mit „Sonderambitionen“ Bürgewald, Drs. 6/2026 und 29/2026), Vorlage 144/2026 Solarpark E3 mit Beteiligungsmodell Energieversorgung Bürgewald, M144/2026 NRW.URBAN-Bericht, Titel der nichtöffentlichen TOP 8 bis 14; Einordnung NRW.URBAN-Projektseite. Keine Beschlüsse behauptet. Live 09:29 Uhr HTTP 200, Sitemap, „Neu in Merzenich“, Foto themen-25. Folgemeldung nach ARB 26.11. und Rat 03.12.",
+      "dossier_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811",
+      "priority": "P2",
+      "location_section": "Bürgewald · Kultur/Rathaus",
+      "change_type": "Korrektur",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-18-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-18 09:29 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
+      "article_id": null,
+      "implementation_commit": "996cacce",
+      "notes": "ChatGPT 18.11. morgens: HFA genehmigt nicht selbst, sondern empfiehlt (Vorlage 151/2026 „Der Haupt- und Finanzausschuss empfiehlt:“). Claude 18.11. morgens umgesetzt mit Korrekturhinweis; live 09:29 Uhr.",
+      "dossier_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-WUNSCHBAUM-2111",
+      "priority": "P3",
+      "location_section": "Merzenich · Leben/Senioren",
+      "change_type": "Termin",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-18-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-18 09:15 Europe/Berlin",
+      "article_path": "inhalte/termine/2026-11-18-recherche-claude-morgens.json → /termine/ (Termin wunschbaum-weihnachtsaktion-seniorenheime-fussballhalle-merzenich-2026-11-21)",
+      "article_id": null,
+      "implementation_commit": "230e24ae",
+      "notes": "Gemeindebeitrag Heimat-Info 17.11. 12:50 Uhr: Wunschbaum für Seniorenheime der Region, Sa. 21.11. ab 11 Uhr, Fußballhalle Merzenich, Auf der Heide; eine Woche, solange Wünsche übrig. Veranstalter, Abgabeort und -frist nicht genannt (im Termin offen vermerkt). Keine Meldung.",
+      "dossier_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -15056,6 +15149,16 @@
         "Zuginfo nur Seitentitel, Vereinsseiten SiteUnavailable trotz200",
         "Nicht alle älteren latest.md-Artikel erneut vollständig live gegen sämtliche Originale geprüft"
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-18-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-18-morgens.md",
+      "implementation_commit": "4d85e4e7",
+      "summary": "Korrektur Ausstellung (HFA empfiehlt Neuland-Plan nur); Standard „Bürgewald-Ausschuss in Merzenich“ (891 Wörter) zu ARB 26.11. mit Solarpark A4, Bau-Turbo und Vermarktung; Kalender: Gemeinderat 3.12. jetzt 18 Uhr, Tagesordnungen HFA/ARB, Wunschbaum 21.11., 22 Termine bestätigt; Jülicher Tamilen-Verein in QUELLEN 3.9a. Mindesttakt 18.11.: 1.",
+      "publication": "Eine neue Meldung, eine Korrektur, ein neuer und drei geänderte Termine direkt veröffentlicht"
     }
   ]
 }

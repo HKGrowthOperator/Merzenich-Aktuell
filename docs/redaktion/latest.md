@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [17.11.2026, Claude-Sonderauftrag Tamilische Feste](dossiers/2026-11-17-claude-tamilische-feste.md), davor [Claude-Nachmittagslauf 17.11.](dossiers/2026-11-17-claude-nachmittags.md), Vergleichsbasis [ChatGPT 17.11. mittags](dossiers/2026-11-17-mittags.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [18.11.2026, Claude-Morgenlauf](dossiers/2026-11-18-claude-morgens.md), Vergleichsbasis [ChatGPT 18.11. morgens](dossiers/2026-11-18-morgens.md) und [Claude-Sonderauftrag Tamilische Feste 17.11.](dossiers/2026-11-17-claude-tamilische-feste.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 18.11. morgens:** 1 neuer Standardartikel „Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch“ (891 Wörter, Ratsinformationssystem, NRW.URBAN). Korrektur Ausstellungsartikel (HFA empfiehlt Neuland-Plan nur, Rat entscheidet 3.12.). Kalender: Gemeinderat 3.12. jetzt 18 Uhr, Tagesordnungen HFA und Bürgewald-Ausschuss, Wunschbaum 21.11. neu, 22 Termine bestätigt. Commits `996cacce`, `4d85e4e7`, `230e24ae`.
 
 **Umgesetzt am 17.11., Sonderauftrag Tamilische Feste (Luis Kummer):** 1 neue Service-Kurzmeldung „Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar“ (304 Wörter, Drik Panchang Köln, Feiertagsliste Zentralbank Sri Lanka) mit neuem Commons-Foto. Keine Veranstaltung tamilischer Gruppen im Dürener Raum gefunden, daher keine Termine. Daueraufgabe: `QUELLEN.md` 3.9a, ChatGPT-Auftrag 3c. Commit `80414d35`.
 
