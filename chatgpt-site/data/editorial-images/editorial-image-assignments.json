@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T14:11:23.708Z",
+  "updatedAt": "2026-11-18T08:22:00.225Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1808,6 +1808,15 @@
       "assignedAt": "2026-11-17T14:11:23.707Z",
       "articleId": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
       "articleDate": "2026-11-17T15:10:00+01:00"
+    },
+    "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/": {
+      "imageId": "web-themen-25-7e1a7afd",
+      "pool": "themen",
+      "motiv": "morschenich-alt-leerstand",
+      "regel": "leben.buergewald",
+      "assignedAt": "2026-11-18T08:22:00.225Z",
+      "articleId": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
+      "articleDate": "2026-11-18T09:25:00+01:00"
     }
   }
 }

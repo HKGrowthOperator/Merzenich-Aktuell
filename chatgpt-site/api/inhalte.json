@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-17T15:10:00+01:00",
- "anzahl": 249,
+ "generated": "2026-11-18T09:25:00+01:00",
+ "anzahl": 250,
  "bestand": {
-  "gesamt": 249,
+  "gesamt": 250,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 35,
-   "rathaus": 42,
+   "rathaus": 43,
    "leben": 58,
    "wirtschaft": 13,
    "tipp": 0,
@@ -19,13 +19,13 @@
    "merzenich": 175,
    "golzheim": 27,
    "girbelsrath": 26,
-   "morschenich": 12,
+   "morschenich": 13,
    "buergewald": 9,
    "region": 0
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 249,
+    "anzahl": 250,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 42,
+    "anzahl": 43,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -77,7 +77,7 @@
     "liste": "gepflegt"
    },
    "/morschenich/": {
-    "anzahl": 12,
+    "anzahl": 13,
     "liste": "gepflegt"
    },
    "/buergewald/": {
@@ -101,6 +101,52 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
+   "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+   "titel": "Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch",
+   "teaser": "Nach dem Bauausschuss beraten auch die Fachpolitiker für Bürgewald über den geplanten Solarpark und die Bau-Turbo-Regeln. Für den Ort wird ein Energie-Beteiligungsmodell geprüft, nicht öffentlich geht es um den ersten Vermarktungsabschnitt.",
+   "kicker": "Rathaus · Bürgewald",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "morschenich",
+   "datum": "2026-11-18T09:25:00+01:00",
+   "aktualisiert": "2026-11-18T09:25:00+01:00",
+   "lesezeit": "4 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "buergewald",
+     "label": "Bürgewald"
+    },
+    {
+     "slug": "strukturwandel",
+     "label": "Strukturwandel"
+    },
+    {
+     "slug": "photovoltaik",
+     "label": "Photovoltaik"
+    },
+    {
+     "slug": "bauen",
+     "label": "Bauen und Wohnen"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-25-7e1a7afdf3.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-25-7e1a7afdf3-480.webp 480w, /assets/editorial-pools/themen/themen-25-7e1a7afdf3-800.webp 800w, /assets/editorial-pools/themen/themen-25-7e1a7afdf3-1200.webp 1200w, /assets/editorial-pools/themen/themen-25-7e1a7afdf3.jpg 1920w",
+    "alt": "Eine der Hauptstraßen des Geisterortes Morschenich bei Merzenich. Leerstand bedingt durch den Tagebau Hambach der RWE",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Stefan Oberreuter / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
    "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
@@ -10305,15 +10351,15 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
-  "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
-  "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar"
+  "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
+  "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+  "titel": "Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch"
  },
  "nebenmeldungen": [
   {
-   "id": "2026-11-17-ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026",
-   "url": "/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
-   "titel": "Kunst über Bürgewald: Ausstellung im Merzenicher Ratssaal zeigt den verlassenen Ort mit anderen Augen"
+   "id": "2026-11-17-tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich",
+   "url": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
+   "titel": "Tamilische Feste für Merzenich und Region: Karthigai Deepam am 24. November, Pongal im Januar"
   },
   {
    "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
@@ -10366,12 +10412,11 @@
   "editorial-pools/themen/themen-11-59fc252a23": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
   "editorial-pools/themen/themen-15-30a6b323da": 2,
-  "editorial-pools/themen/themen-16-b1fd3ef820": 1,
   "editorial-pools/themen/themen-19-deb8f481da": 2,
   "editorial-pools/themen/themen-20-72a84de410": 1,
   "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/themen/themen-24-960e0101ba": 1,
-  "editorial-pools/themen/themen-25-7e1a7afdf3": 1,
+  "editorial-pools/themen/themen-25-7e1a7afdf3": 2,
   "editorial-pools/themen/themen-26-233a92d40a": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 2,
