@@ -1,0 +1,45 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Auffahrunfall im Kreuzungsbereich - eine Person leicht verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6392946",
+      "datum": "2026-11-18",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Langerwehe: Warnung Spendenaufforderung mittels EC-Karte - Die Polizei sucht Zeugen nach Betrugsversuch",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6392945",
+      "datum": "2026-11-18",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Kreuzau: Telefonbetrüger mit \"Schockanruf\" trotz Warnungen erneut erfolgreich",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6392944",
+      "datum": "2026-11-18",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Alkoholisierter Pkw-Fahrer übersieht Polizeikontrolle",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6392943",
+      "datum": "2026-11-18",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Langerwehe: Einbruch in Baucontainer - Zeugen gesucht",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6392942",
+      "datum": "2026-11-18",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
