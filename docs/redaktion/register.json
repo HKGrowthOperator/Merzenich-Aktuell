@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
-  "source_check_window": "17.11.2026 12:06:23–12:07:49 Europe/Berlin Hauptabrufe; Zusatzquellen 12:07:21, technischer Polizei-Fehler mit normalem Wiederholungsabruf 12:08:26 behoben; Jugend/Kompost 12:08:52–12:08:57, Hintergrund 12:09:49, Sitzungsköpfe 12:11:24; Livebild 12:07:26 mit anschließender Sichtung; Commons-Originale 12:10:09/12:10:14 HTTP403",
+  "latest_dossier": "dossiers/2026-11-18-morgens.md",
+  "source_check_window": "18.11.2026 Europe/Berlin: Vorprüfung ab ca.06:55; Hauptabrufe06:56:22–06:57:50, neue Artikel06:56:54–06:56:59, Ergänzung/Wunschbaum06:58:03, Sitzungspaket06:58:52, Livebilder07:00:40 mit anschließender Sichtung, normaler Wiederholungsabruf07:00:41, Kreisdetail07:05:36; Commons-Metadaten bis ca.07:02",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -3912,11 +3912,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-10-25-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
       "article_id": null,
       "implementation_commit": "e9817914",
-      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten. | Claude 03.11. morgens: Kurzmeldung zur 4. Sitzung am 04.11. nach CLAUDE-LAUF 3.3 (offizielle Quelle trägt Kurzmeldung, T2 wegen Zweitquelle entfällt); Tagesordnung, Vorlage 135/2026 und termine.ics gelesen, leere Dokumentation im Text benannt; live 03.11., 09:20 Uhr (HTTP 200). Update nach der Sitzung mit Priorisierung, sobald veröffentlicht. | ChatGPT 17.11. mittags: Neue öffentliche Niederschrifts-/Beschlussauszüge der Sitzung 04.11. jetzt im Vergleich mit Export 17.11. abrufbar. TOP5 nennt Calisthenics-Park, eingezäunte Hundewiese, Erhalt Bahnstraßenbäume; TOP5.1 einstimmige Prüf-/Rückmeldeempfehlung, kein Rats-/Baubeschluss. T2-Updatekarte: nur kommunale Dokumente, unabhängige Ereignisbestätigungen und eigenständige Drittquelle fehlen. Rangfolge, Flächen, Kosten/Ratsreaktion offen. TOP6 Endzeit online 03.12. widerspricht ICS-Ende; weitere Jahresdaten im Protokoll ungeklärt. Bestehenden Vorschauartikel aktualisieren statt Dublette. Commons Rathaus-Metadaten gelesen, Original HTTP403, B0 ohne neue visuelle Freigabe. | Claude 17.11. nachmittags: Folgemeldung „Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten“ (Kurzmeldung, 260 Wörter) aus den Niederschrift-Auszügen TOP 3 bis 9 und Beschluss 135/2026 (exportiert 17.11., gelesen 14:44 Uhr; offizielle Quelle); Datumswidersprüche (Protokoll 30.09.2025, Landtagsbesuch 22.01.2026) nicht übernommen bzw. als unklar benannt; Endzeit 03.12. (19 vs. 19.30 Uhr) benannt; keine Namen von Mitgliedern. Vorschau vom 03.11. mit Nachtrag und Verweis; Termin 03.12. ergänzt. Commits e9817914, 144022bb. Live 14:58 Uhr HTTP 200.",
+      "notes": "Aus Morgendossier übernommen; Artikelbestand und Quellen vor Umsetzung erneut abgleichen. | ChatGPT 27.10. abends: MA-JUGENDGREMIUM-STATUS, T2; Zweiseitiges Original vollständig gelesen; Übersicht verknüpft 04.11., 17 Uhr. Kalenderrendering/ICS liefern keine auswertbare vollständige Einladung. Weiterarbeit: Welche konkreten Anliegen, Prioritäten und Kosten werden vorgelegt? Liegt eine vollständige Einladung/Tagesordnung vor? Wurde die Anlage inzwischen ergänzt? Historische Umsetzung und Commit bleiben unverändert. | ChatGPT 28.10. morgens: T2; Start, Vorlagenliste, Kalender und PDF gelesen. ICS nicht auswertbar, Kalender nur Filter; keine vollständige neue Einladung. Offen: Welche ausgefüllten Anliegen/Anlagen liegen vor? Welche Punkte werden öffentlich beraten? Historische Umsetzung bleibt erhalten. | Claude 03.11. morgens: Kurzmeldung zur 4. Sitzung am 04.11. nach CLAUDE-LAUF 3.3 (offizielle Quelle trägt Kurzmeldung, T2 wegen Zweitquelle entfällt); Tagesordnung, Vorlage 135/2026 und termine.ics gelesen, leere Dokumentation im Text benannt; live 03.11., 09:20 Uhr (HTTP 200). Update nach der Sitzung mit Priorisierung, sobald veröffentlicht. | ChatGPT 17.11. mittags: Neue öffentliche Niederschrifts-/Beschlussauszüge der Sitzung 04.11. jetzt im Vergleich mit Export 17.11. abrufbar. TOP5 nennt Calisthenics-Park, eingezäunte Hundewiese, Erhalt Bahnstraßenbäume; TOP5.1 einstimmige Prüf-/Rückmeldeempfehlung, kein Rats-/Baubeschluss. T2-Updatekarte: nur kommunale Dokumente, unabhängige Ereignisbestätigungen und eigenständige Drittquelle fehlen. Rangfolge, Flächen, Kosten/Ratsreaktion offen. TOP6 Endzeit online 03.12. widerspricht ICS-Ende; weitere Jahresdaten im Protokoll ungeklärt. Bestehenden Vorschauartikel aktualisieren statt Dublette. Commons Rathaus-Metadaten gelesen, Original HTTP403, B0 ohne neue visuelle Freigabe. | Claude 17.11. nachmittags: Folgemeldung „Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten“ (Kurzmeldung, 260 Wörter) aus den Niederschrift-Auszügen TOP 3 bis 9 und Beschluss 135/2026 (exportiert 17.11., gelesen 14:44 Uhr; offizielle Quelle); Datumswidersprüche (Protokoll 30.09.2025, Landtagsbesuch 22.01.2026) nicht übernommen bzw. als unklar benannt; Endzeit 03.12. (19 vs. 19.30 Uhr) benannt; keine Namen von Mitgliedern. Vorschau vom 03.11. mit Nachtrag und Verweis; Termin 03.12. ergänzt. Commits e9817914, 144022bb. Live 14:58 Uhr HTTP 200. | ChatGPT 18.11. morgens: Neue Folgemeldung live mit Niederschriftsauszügen abgeglichen; Wünsche/Prüfempfehlung und offene Daten/Endzeit im Text benannt, keine neue Abweichung im gelesenen Kern. T2-Forschungsgrenze unabhängige Bestätigung weiterhin offen. Kein neuer Themenkarten-Aufguss. Historischee9817914-Umsetzung/Artikelpfade erhalten.",
       "dossier_history": [
         {
           "date": "2026-10-24",
@@ -3959,9 +3959,15 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "KORREKTUREN – Quellen-/Liveprüfung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-11-17-mittags.md",
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_checked_at": "2026-11-17T12:16:08+01:00",
       "latest_research_scope": "Neue Ergebnisunterlagen, T2 mangels unabhängiger Bestätigung/Drittquelle; kein Ratsbeschluss, keine Umsetzung",
@@ -4000,6 +4006,14 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-17-mittags.md",
           "priority": "P2",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
@@ -11003,11 +11017,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-05-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-05 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "dee5f0f",
-      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e.",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten.",
       "dossier_history": [
         {
           "date": "2026-11-05",
@@ -11018,8 +11032,28 @@
           "date": "2026-11-05",
           "dossier": "dossiers/2026-11-05-claude-nachmittags.md",
           "heading": "1 · Korrektur Bau-Turbo"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "THEMENKARTEN – zusätzliche Bürgewald-Beratung"
         }
-      ]
+      ],
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "latest_research_image_status": "B2",
+      "latest_research_scope": "Neue zusätzliche ARB-Beratung; T2 wegen Ereignis-Unabhängigkeit/Drittquelle; Symbolfoto vorhandener Rathauspool visuell+Metadaten geprüft"
     },
     {
       "id": "MA-WOCHENVORSCHAU-2026-46",
@@ -11644,12 +11678,12 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-14-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17T12:16:08+01:00",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": "inhalte/meldungen/2026-11-14-recherche-claude-morgens.json → /leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
       "article_id": null,
       "implementation_commit": "45ee6ad4",
-      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche. | ChatGPT 15.11. mittags: Bekannter Livebildfehler erneut bestätigt, Bildunterschrift/Alt-Text Polizeiwache weiterhin falsch; neu geladenes und angesehenes Symbolfoto zeigt Polizeimotorrad, bytegleich zum Morgen. Repo-Umsetzung d4e035d8 nicht als Live-Erledigung zählen. Keine neue Korrektur. | ChatGPT 16.11. morgens: Bekannter Bildfehler im erneut gelesenen Liveartikel weiterhin vorhanden: Bildunterschrift/Alt-Text Polizeiwache, tatsächlich Polizeimotorrad. Livebild neu geladen und angesehen. Historische Repo-Korrektur und Claude-Hinweise erhalten; keine neue Korrektur, keine Websiteänderung. | ChatGPT 16.11. mittags: Bekannter Bildfehler live erneut bestätigt: Polizeiwache in Bildunterschrift/Alt-Text, tatsächlich Polizeimotorrad; Bild neu geladen und angesehen. Kein neuer Fehler gezählt, Repo-Korrektur d4e035d8 und Claude-Notizen erhalten. | ChatGPT 17.11. morgens: Bekannter Bildfehler weiterhin live: Polizeiwache in Bildunterschrift/Alt-Text, tatsächlich Motorrad. Livebild neu geladen 07:10:05 und angesehen. Keine neue Korrektur gezählt, keine Websiteänderung. Repo-Umsetzung d4e035d8 und Claude-Notizen erhalten. | ChatGPT 17.11. mittags: Bekannter Fehler im Liveartikel bleibt: Polizeiwache statt Polizeimotorrad in Caption/Alt. Livebild 12:07:26 neu geladen und danach angesehen. Kein neuer Fehler gezählt; historische Repositorykorrektur und Claude-Notizen erhalten, keine Websiteänderung.",
-      "latest_research_dossier": "dossiers/2026-11-17-mittags.md",
+      "notes": "Weihnachtsmalwettbewerb laut neuer Polizeimitteilung. Einziger inhaltlicher Veranstalterbeleg; Dienststellenliste kein unabhängiger Zweitbeleg. Behördenwebseite im normalen Webabruf HTTP 503, gesonderte Teilnahmebedingungen nicht ermittelt. Dritte Quelle und unabhängige Bestätigung fehlen. Keine konkrete Merzenicher Beteiligung behauptet, keine Privatnamen. Commons-Buntstifte: Lizenz/Abmessungen geprüft, abschließende Bildsichtung offen (direkt HTTP 403). Keine Artikelumsetzung. | Claude 13.11. nachmittags: nicht als eigene Meldung umgesetzt (siehe Dossier Abschnitt 3). | ChatGPT 14.11. morgens: Behördenartikel und verlinktes Teilnahme-/Datenschutz-PDF jetzt direkt HTTP 200 lesbar. Wohnsitz-/Altersregel, Teilnahmezeitraum und gestaffelte Auswahl konkret geprüft. Benachrichtigungsfrist und Social-Media-Datenbausteine widersprüchlich/unklar. Alle Belege derselben Polizei, unabhängig bestätigende Quelle und dritter eigenständiger Ereignisbeleg fehlen. T2 bleibt. Presseportal direkt technischer Fehlertext trotz HTTP 200, im normalen Original-Webabruf lesbar. | Claude 14.11. morgens: Service-Kurzmeldung (261 Wörter) aus der Polizeimitteilung im Presseportal; Behördenseite/PDF mit Bot-Prüfung nicht umgangen; Widersprüche der Bedingungen nicht übernommen. Live 09:20 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | ChatGPT 14.11. mittags: Artikel vollständig gelesen und Sachangaben mit Polizeimitteilung abgeglichen. Bestätigte Korrektur: Live-Bildunterschrift und Alt-Text sagen Polizeiwache in Nordrhein-Westfalen; Bilddatei und Commons-Original zeigen Polizeimotorrad am Lambertikirchplatz in Münster. Bildbeschreibung/Alt-Text korrigieren, Symbolkennzeichnung erhalten. Keine Websiteänderung durch Recherche. Behördenartikel/PDF hier wieder lesbar, gegenüber morgens unverändert; historische 503-Selbstauskunft um 09:15 nicht widerlegt. Regelwidersprüche und fehlende unabhängige Bestätigung bleiben. Claude-Umsetzung/Artikelpfad/Commit erhalten. | Claude 14.11. nachmittags: Bildbeschreibung korrigiert (Polizeimotorrad statt Polizeiwache), Commit d4e035d8, Ursache pauschale Poolbeschreibung in deploy/symbolbilder.mjs. | ChatGPT 15.11. morgens: Bekannten Bildkorrekturauftrag erneut live geprüft. Bildunterschrift und Alt-Text weiterhin Polizeiwache in Nordrhein-Westfalen, neu geladene/angesehene Datei weiterhin Polizeimotorrad. Repository-Korrektur d4e035d8 und Claude-Notiz erhalten; keine erfolgreiche Live-Umsetzung daraus abgeleitet. Keine neue Korrektur gezählt, bekannter Auftrag live offen. Sachangaben und Regel-PDF ohne neue Sachänderung; keine Websiteänderung durch Recherche. | ChatGPT 15.11. mittags: Bekannter Livebildfehler erneut bestätigt, Bildunterschrift/Alt-Text Polizeiwache weiterhin falsch; neu geladenes und angesehenes Symbolfoto zeigt Polizeimotorrad, bytegleich zum Morgen. Repo-Umsetzung d4e035d8 nicht als Live-Erledigung zählen. Keine neue Korrektur. | ChatGPT 16.11. morgens: Bekannter Bildfehler im erneut gelesenen Liveartikel weiterhin vorhanden: Bildunterschrift/Alt-Text Polizeiwache, tatsächlich Polizeimotorrad. Livebild neu geladen und angesehen. Historische Repo-Korrektur und Claude-Hinweise erhalten; keine neue Korrektur, keine Websiteänderung. | ChatGPT 16.11. mittags: Bekannter Bildfehler live erneut bestätigt: Polizeiwache in Bildunterschrift/Alt-Text, tatsächlich Polizeimotorrad; Bild neu geladen und angesehen. Kein neuer Fehler gezählt, Repo-Korrektur d4e035d8 und Claude-Notizen erhalten. | ChatGPT 17.11. morgens: Bekannter Bildfehler weiterhin live: Polizeiwache in Bildunterschrift/Alt-Text, tatsächlich Motorrad. Livebild neu geladen 07:10:05 und angesehen. Keine neue Korrektur gezählt, keine Websiteänderung. Repo-Umsetzung d4e035d8 und Claude-Notizen erhalten. | ChatGPT 17.11. mittags: Bekannter Fehler im Liveartikel bleibt: Polizeiwache statt Polizeimotorrad in Caption/Alt. Livebild 12:07:26 neu geladen und danach angesehen. Kein neuer Fehler gezählt; historische Repositorykorrektur und Claude-Notizen erhalten, keine Websiteänderung. | ChatGPT 18.11. morgens: Bekannter Bildtextfehler weiter live: Caption/Alt nennen Polizeiwache, neu geladenes und angesehenes Bild07:00:40 zeigt Motorrad. Kein neuer Fehler gezählt; Repositorykorrektur d4e035d8 und Claude-Notizen erhalten. Keine Websiteänderung.",
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Live-Nachprüfung des bekannten Bildfehlers: weiterhin offen; Repo-Korrektur nicht als Live-Erledigung ausgegeben",
       "research_history": [
@@ -11727,6 +11761,14 @@
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
       "dossier_history": [
@@ -11789,6 +11831,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-17-mittags.md",
           "heading": "KORREKTUREN – Live-Nachprüfung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "KORREKTUREN – Quellen-/Liveprüfung"
         }
       ],
       "latest_research_review": {
@@ -11911,6 +11959,18 @@
           "status": "offen_live",
           "confirmed": true,
           "image_read_at": "2026-11-17T12:07:26+01:00",
+          "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
+          "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
+          "correct_description": "Polizeimotorrad als Symbolbild",
+          "implementation": "keine_Websiteaenderung"
+        },
+        {
+          "id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "checked_at": "2026-11-18T07:07:14+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "image_read_at": "2026-11-18T07:00:40+01:00",
           "wrong_caption": "Polizeiwache in Nordrhein-Westfalen.",
           "wrong_alt": "Polizeiwache in Nordrhein-Westfalen",
           "correct_description": "Polizeimotorrad als Symbolbild",
@@ -12474,11 +12534,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-17-mittags.md",
       "workflow_status": "offen",
-      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen.",
+      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen. | ChatGPT 18.11. morgens: Gemeinde-Detailseite heute normal200 lesbar und gegenüber gespeicherter Mittagsfassung17.11. unverändert; allein wieder möglicher Abruf ist keine neue Entwicklung. Keine neue Themenkarte. Unabhängige örtliche Bestätigung/Drittquelle und Projektdaten weiter offen, T2. Keine Sperre umgangen und kein Artikel umgesetzt.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12491,6 +12551,12 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "KORREKTUREN – Quellen-/Liveprüfung"
         }
       ],
       "research_history": [
@@ -12501,9 +12567,17 @@
           "text_status": "T2",
           "draft_complete": false,
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ],
-      "latest_research_dossier": "dossiers/2026-11-17-mittags.md",
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_image_status": "B0",
       "research_sources": [
@@ -12542,17 +12616,49 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
       "article_id": null,
       "implementation_commit": "25c92bd4",
-      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar.",
+      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar. | ChatGPT 18.11. morgens: Neue Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811: Im Schlussabsatz wird HFA als Genehmiger des Neuland-Wirtschafts-/Stellenplans dargestellt; Vorlage151 S1 sieht Ausschussempfehlung mit anschließender Ratsberatung vor. Live/original vollständig gelesen, Korrektur offen. Ausstellungsankündigung sonst zum Veranstaltungs-Kern vereinbar, unabhängige Bestätigung weiter fehlt. Neue Bürgewald-Tagesordnung verfügbar; historisch datierten Satz zum damaligen Fehlen nicht rückwirkend als falsch behandeln. Livefoto nachgeladen und angesehen, keine neue Motivabweichung, Lizenz/Original nicht vollständig neu geprüft. Historische Umsetzung25c92bd4 und Claude-Notizen erhalten.",
       "dossier_history": [
         {
           "date": "2026-11-17",
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "KORREKTUREN – Quellen-/Liveprüfung"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ],
+      "correction_requests": [
+        {
+          "id": "MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "checked_at": "2026-11-18T07:07:14+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "wrong_reference": "Wörtliche beanstandete Aussage im Dossier, erste Korrekturtabellenzeile",
+          "description": "Artikel setzt HFA-Genehmigung statt einer Empfehlung an den Rat voraus",
+          "correct": "Haupt- und Finanzausschuss soll laut Vorlage die Genehmigung empfehlen; anschließend ist der Gemeinderat in der Beratungsfolge vorgesehen.",
+          "evidence": "Vorlage151/2026 PDF-S1, Beratungsfolge und Beschlussvorschlag; Liveartikel letzter Absatz; Abruf jeweils18.11.06:56:54",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -12565,17 +12671,35 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-17 15:18 Europe/Berlin",
+      "last_checked_at": "2026-11-18T07:07:14+01:00",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-tamilische-feste.json → /leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/",
       "article_id": null,
       "implementation_commit": "80414d35",
-      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live 15:18 Uhr HTTP 200, Startseite, Nachrichten-Sitemap, Foto mit deutschem Alt-Text.",
+      "notes": "Auftrag Luis Kummer 17.11.2026 („Tamilische Feiertage, tamilische Feste, so wie auch was im Dachraum an Terminen ansteht von Tamilen“; „Dachraum“ als Dürener Raum gelesen). Service-Kurzmeldung (304 Wörter): Karthigai Deepam 24.11.2026, Thai Pongal 14.01.2027 (Köln; Indien/Sri Lanka 15.01.), Thaipusam 22.01., Maha Shivaratri 06.03., Neujahr 14.04.2027; Drik Panchang Ort Köln, Feiertagsliste Zentralbank Sri Lanka. Keine datierte Veranstaltung tamilischer Gruppen in der Region gefunden, daher keine Termine (Festtage ohne Ort/Veranstalter). DAUERAUFGABE: in jeder Breitenrecherche nach tamilischen Vereinen, Tempeln, Tamil-Schulen im Kreis Düren suchen (QUELLEN.md 3.9a, ChatGPT-Auftrag 3c); Fund mit Ort und Uhrzeit wird Termin. Neues Commons-Foto „Kathigai Thirunal.JPG“ (CC BY-SA 3.0), Bildklasse leben.kultur.tamilisch. Live 15:18 Uhr HTTP 200, Startseite, Nachrichten-Sitemap, Foto mit deutschem Alt-Text. | ChatGPT 18.11. morgens: Neue Livefassung und Repositorytext vollständig gelesen; Originalabgleich der Festdaten/Bräuche unvollständig: vier Drik-Panchang-Ortsseiten, Zentralbankadresse und Haindavam403. Ergänzendes Ministeriums-PDF zweimal503, Webwerkzeug Timeout. OfficeHolidays lesbar, nur Zweitbeleg, kein Ersatz für fehlende Primäroriginale. T2-Forschungsstand ohne pauschale Fehlerfreigabe/behauptete Falschdaten. Livefoto Öllampen neu geladen07:00:40 und angesehen, kein Motivfehler; Lizenz/Original nicht vollständig neu geprüft. Stadt Jülich nennt Kunst-/Kulturverein, aber kein datierter regionaler Festtermin im Prüffenster; Übungszeiten undatiert nicht übernommen. Historische80414d35-Umsetzung erhalten.",
       "dossier_history": [
         {
           "date": "2026-11-17",
           "edition": "claude-tamilische-feste",
           "dossier": "dossiers/2026-11-17-claude-tamilische-feste.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "heading": "KORREKTUREN – Quellen-/Liveprüfung"
+        }
+      ],
+      "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
+      "latest_research_text_status": "T2",
+      "research_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-18-morgens.md",
+          "text_status": "T2",
+          "draft_complete": false,
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     }
@@ -14870,6 +14994,68 @@
       "implementation_commit": "80414d35",
       "summary": "Direkter Auftrag Luis Kummer: Service-Kurzmeldung zu tamilischen Festtagen bis April 2027 mit neuem Commons-Foto; keine regionalen tamilischen Veranstaltungen gefunden, daher keine Termine; Quellenkatalog 3.9a und ChatGPT-Auftrag 3c ergänzt.",
       "publication": "Eine neue Meldung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-18",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-18-morgens.md",
+      "compared_with": "dossiers/2026-11-17-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-17-claude-tamilische-feste.md",
+      "also_read_claude": "dossiers/2026-11-17-claude-nachmittags.md",
+      "base_commit": "e73e2b859586bd68adc601ddbd9c24772c102606",
+      "implementation_commit": null,
+      "summary": "T2-Update Bau-Turbo: zusätzliche Beratung im Bürgewald-Ausschuss, neue öffentliche Tagesordnung und Ergänzung gelesen. Neuer Korrekturauftrag: HFA empfiehlt Neuland-Plan-Genehmigung statt selbst abschließend zu genehmigen. T0-Wunschbaum-Hinweis21.11. mit unbekanntem Veranstalter. Neuer Festkalender-Originalabgleich wegen403/503/Timeout unvollständig; bekannter Bildtextfehler bleibt.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 56,
+      "repository_event_files_read": 24,
+      "repository_area_files_read": 20,
+      "new_or_changed_events": 1,
+      "new_event_hints": 1,
+      "event_change_scope": "Vorhandene ARB-Sitzung um Tagesordnung ergänzen; zusätzlicher Wunschbaum-Hinweis T0, keine freigegebene Kalenderübernahme",
+      "event_hints": [
+        {
+          "id": "MA-WUNSCHBAUM-2111",
+          "status": "T0",
+          "date": "2026-11-21",
+          "time": "11:00",
+          "place": "Fußballhalle in Merzenich, Auf der Heide67",
+          "organizer": null,
+          "source": "https://www.heimat-info.de/beitraege/99fc3d31-26d8-4c27-8d73-223688d31fd8",
+          "open": "Veranstalter/Rückgabefrist und unabhängige Bestätigung/Drittquelle fehlen; Hallenprimärseiten403",
+          "publication": "keine"
+        }
+      ],
+      "complete_drafts": 0,
+      "source_check_window": "18.11.2026 Europe/Berlin: Vorprüfung ab ca.06:55; Hauptabrufe06:56:22–06:57:50, neue Artikel06:56:54–06:56:59, Ergänzung/Wunschbaum06:58:03, Sitzungspaket06:58:52, Livebilder07:00:40 mit anschließender Sichtung, normaler Wiederholungsabruf07:00:41, Kreisdetail07:05:36; Commons-Metadaten bis ca.07:02",
+      "prepared_at": "2026-11-18T07:07:14+01:00",
+      "deadline": "2026-11-18T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung und Fristeinhaltung im bestätigten main-Commitabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "HFA-/Neuland-Zuständigkeitskorrektur neu live offen",
+        "Bekannter Malwettbewerb-Bildtext/Alt weiter falsch",
+        "Bau-Turbo: unabhängige Ereignisbestätigungen/Drittquelle fehlen, kein endgültiger Ratsbeschluss",
+        "Wunschbaum T0: Veranstalter, Abgabe-/Rückgabedaten, unabhängige Bestätigung/Drittquelle fehlen, Hallenquellen403",
+        "Festkalender: Drik4Seiten/CBSL/Haindavam403, Ministerium2x503/WebTimeout; vollständige Originalprüfung nicht möglich",
+        "Kita-Abschlussentwurf/Prüfbericht, Steuerdetailfrage, Derbyurteil und unabhängige Seriennachzählung weiter offen",
+        "BdSt403, frühere Pluriversum-/Martins-/Vereinsseiten404; alter Detailtermin404, keine Absage daraus abgeleitet",
+        "Zuginfo nur Seitentitel, Vereinsseiten SiteUnavailable trotz200",
+        "Nicht alle älteren latest.md-Artikel erneut vollständig live gegen sämtliche Originale geprüft"
+      ]
     }
   ]
 }
