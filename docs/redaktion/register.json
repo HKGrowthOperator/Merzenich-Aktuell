@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-18-claude-morgens.md",
-  "source_check_window": "18.11.2026 Europe/Berlin: Vorprüfung ab ca.06:55; Hauptabrufe06:56:22–06:57:50, neue Artikel06:56:54–06:56:59, Ergänzung/Wunschbaum06:58:03, Sitzungspaket06:58:52, Livebilder07:00:40 mit anschließender Sichtung, normaler Wiederholungsabruf07:00:41, Kreisdetail07:05:36; Commons-Metadaten bis ca.07:02",
+  "latest_dossier": "dossiers/2026-11-18-mittags.md",
+  "source_check_window": "18.11.2026 Europe/Berlin: Start11:56; Hauptabrufe11:57:06–11:58:48, neuer Artikel/NRW.URBAN11:57:27; Kontrollabrufe12:01:01–12:01:07; Livebilder12:01:23/12:01:35 anschließend gesichtet.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11065,7 +11065,15 @@
         }
       ],
       "latest_research_image_status": "B2",
-      "latest_research_scope": "Neue zusätzliche ARB-Beratung; T2 wegen Ereignis-Unabhängigkeit/Drittquelle; Symbolfoto vorhandener Rathauspool visuell+Metadaten geprüft"
+      "latest_research_scope": "Neue zusätzliche ARB-Beratung; T2 wegen Ereignis-Unabhängigkeit/Drittquelle; Symbolfoto vorhandener Rathauspool visuell+Metadaten geprüft",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-18T12:04:46+01:00",
+          "dossier": "dossiers/2026-11-18-mittags.md",
+          "research_status": "T2",
+          "finding": "Keine neue Vorhabenentwicklung seit morgens; zusätzliche Beratung inzwischen von Claude umgesetzt. Neu festgestellte Quellenwidersprüche im Korrekturabschnitt dokumentiert, keine unveränderte Themenkarte."
+        }
+      ]
     },
     {
       "id": "MA-WOCHENVORSCHAU-2026-46",
@@ -12748,6 +12756,14 @@
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-18T12:04:46+01:00",
+          "dossier": "dossiers/2026-11-18-mittags.md",
+          "research_status": "T2",
+          "finding": "Neuer Korrektur-/Klärungsauftrag MA-KORR-BAUTURBO-AUSSENBEREICH-1811: pauschale politische Zuständigkeit ohne Delegation; Leitlinien 2.1/2.2 widersprüchlich. Historische Umsetzung und T1-Feld bleiben erhalten; keine unabhängige Bestätigung der aktuellen Beratung/Solarparameter durch bloße NRW.URBAN-Kontextquelle."
+        }
       ]
     },
     {
@@ -12771,6 +12787,14 @@
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-18T12:04:46+01:00",
+          "dossier": "dossiers/2026-11-18-mittags.md",
+          "verification_status": "live_confirmed",
+          "finding": "Livekorrektur und sichtbarer Hinweis gegen Vorlage151/2026 bestätigt; Umsetzung996cacce erhalten."
+        }
       ]
     },
     {
@@ -12793,6 +12817,32 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-BAUTURBO-AUSSENBEREICH-1811",
+      "priority": "P2",
+      "location_section": "Bürgewald/Gemeinde · Rathaus/Bauen",
+      "change_type": "Korrektur / Quellenwiderspruch",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-18-mittags.md",
+      "workflow_status": "offen",
+      "last_checked_at": "2026-11-18T12:04:46+01:00",
+      "article_path": "inhalte/meldungen/2026-11-18-recherche-claude-morgens.json → /rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Siehe KORREKTUREN im Dossier: Einschränkung durch Delegationsregel fehlt im Artikel. Entwurf 2.1 und2.2 widersprüchlich; Pauschalisierung beseitigen, keine verbindliche Auslegung erfinden. Keine neue Änderung des Vorhabens, keine Artikel-/CMS-Änderung durch Recherche.",
+      "source": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcPAuUDf1tTiyLtDpYcVCGNgKQeGmdK_N_bJ21yz13hoR7o3089KkUpDHdY62oKjNg/Gesamtes_Sitzungspaket.pdf",
+      "source_locator": "PDF-S.20, Gemeindeleitlinien Nr.2.1/2.2",
+      "source_retrieved_at": "2026-11-18T11:58:45+01:00",
+      "dossier_history": [
+        {
+          "date": "2026-11-18",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-18-mittags.md",
+          "heading": "KORREKTUREN"
         }
       ]
     }
@@ -15159,6 +15209,54 @@
       "implementation_commit": "4d85e4e7",
       "summary": "Korrektur Ausstellung (HFA empfiehlt Neuland-Plan nur); Standard „Bürgewald-Ausschuss in Merzenich“ (891 Wörter) zu ARB 26.11. mit Solarpark A4, Bau-Turbo und Vermarktung; Kalender: Gemeinderat 3.12. jetzt 18 Uhr, Tagesordnungen HFA/ARB, Wunschbaum 21.11., 22 Termine bestätigt; Jülicher Tamilen-Verein in QUELLEN 3.9a. Mindesttakt 18.11.: 1.",
       "publication": "Eine neue Meldung, eine Korrektur, ein neuer und drei geänderte Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-18",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-18-mittags.md",
+      "compared_with": "dossiers/2026-11-18-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-18-claude-morgens.md",
+      "base_commit": "600ec5ce6441ef0d0712e84fd23ec5754883ed2b",
+      "implementation_commit": null,
+      "summary": "Keine neue Themenkarte. Neuer Korrektur-/Klärungsauftrag: Bürgewald-Artikel übergeht Delegation bei Außenbereichsvorhaben; Leitlinien 2.1/2.2 widersprüchlich. HFA-Korrektur live bestätigt, Motorrad-Bildtext weiter falsch. Neu sichtbare Seniorentermine bereits vorhanden und sachlich unverändert. Festkalender-Originalprüfung durch403/503 begrenzt.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-BAUTURBO-AUSSENBEREICH-1811"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "corrections_verified_live": [
+        "MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811"
+      ],
+      "repository_article_files_read": 57,
+      "repository_event_files_read": 25,
+      "repository_area_files_read": 20,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "18.11.2026 Europe/Berlin: Start11:56; Hauptabrufe11:57:06–11:58:48, neuer Artikel/NRW.URBAN11:57:27; Kontrollabrufe12:01:01–12:01:07; Livebilder12:01:23/12:01:35 anschließend gesichtet.",
+      "prepared_at": "2026-11-18T12:04:46+01:00",
+      "deadline": "2026-11-18T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit und Fristeinhaltung erst im bestätigten main-Upload/Laufabschluss; prepared_at ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Bau-Turbo: Zuständigkeitswiderspruch Nr.2.1/2.2; keine verbindliche Auslegung, unabhängige Ereignisbestätigung/Drittquelle fehlen",
+        "Malwettbewerb-Bildtext/Alt weiter falsch",
+        "Festkalender: vier Drik-Seiten/CBSL/Haindavam403, Ministerium zweimal503; Originalabgleich unvollständig",
+        "Wunschbaum: Veranstalter/Rückgabefrist und unabhängige Bestätigung/Drittquelle fehlen; Hallenquellen403",
+        "Kita-Prüfbericht, konkrete Steuer-Genehmigungsfrage, Derbyurteil/Seriennachzählung offen",
+        "BdSt403, historische Gemeinde-/Terminseiten404, Vereinsseiten SiteUnavailable trotz200; betroffene Artikelprüfungen unvollständig",
+        "Frühstück25.11. ohne Ort im Veranstaltungstext; Profilanschrift nicht automatisch Veranstaltungsort",
+        "Nicht alle älteren latest.md-Artikel vollständig erneut live gegen sämtliche Originale geprüft; Zuginfo nur Seitentitel"
+      ]
     }
   ]
 }
