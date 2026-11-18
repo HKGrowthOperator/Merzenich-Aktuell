@@ -80,7 +80,7 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 Commits: `996cacce` (Korrektur), `4d85e4e7` (Meldung), `230e24ae` (Kalender), Dokumentation in diesem Commit. Abgleich nach jedem Commit angestoßen (`angestossen: true`), zuletzt 09:29 Uhr; wp-cron HTTP 200.
 
-Live-Nachweis 09:29 Uhr: neue Meldung HTTP 200 mit Text (unter anderem „Sonderambitionen“, „Vorkaufsoptionisten“) und Foto `themen-25-7e1a7afdf3`, in der Nachrichten-Sitemap, unter „Neu in Merzenich“ auf der Startseite und in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub. Korrektur im Ausstellungsartikel live („Er soll dem Gemeinderat empfehlen …“, „Korrigiert am 18. November“).
+Live-Nachweis 09:29 Uhr: neue Meldung HTTP 200 mit Text (unter anderem „Sonderambitionen“, „Vorkaufsoptionisten“) und Foto `themen-25-7e1a7afdf3`, in der Nachrichten-Sitemap, unter „Neu in Merzenich“ auf der Startseite und in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub. Korrektur im Ausstellungsartikel live („Er soll dem Gemeinderat empfehlen …“, „Korrigiert am 18. November“). Termine 09:31 Uhr live: Wunschbaum auf /termine/ mit offen vermerktem Veranstalter; Terminseite `/termine/gemeinderat-sitzung-2026-12-03/` HTTP 200 mit 18 Uhr und Änderungshinweis.
 
 ## 8. Bildprüfung
 
@@ -100,7 +100,7 @@ Live-Nachweis 09:29 Uhr: neue Meldung HTTP 200 mit Text (unter anderem „Sonder
 - Mindesttakt 18.11.: 1 Meldung; Nachmittagslauf.
 - HFA 19.11.: Empfehlungen nach der Sitzung als Folgemeldungen (Abgaben, Übernachtungssteuer, Neuland, Kita, Brandschutzbedarfsplan).
 - Bauausschuss 12.11.: Niederschrift abwarten (Grundschule Golzheim, Solarparks).
-- Gemeinderat 3.12.: Tagesordnung abwarten; Live-Termin mit 18 Uhr nach dem nächsten Abgleich prüfen.
+- Gemeinderat 3.12.: Tagesordnung abwarten (Termin live mit 18 Uhr).
 - Wunschbaum: Veranstalter und Abgabefrist nachtragen, sobald belegt.
 - Tamilischer Kunst- und Kulturverein: Luis Kummer fragen, ob Kontakt gewünscht; keine Termine ohne datierte Ankündigung.
 - Werkzeugpunkte (Alt-Text bestehender Poolanhänge im Abgleich, Feuerwehr-Automatik „Hund“, Termin-Automatik gleichzeitige Termine, Heimat-Info-Kalender Seite 2) warten auf Entscheidung.
