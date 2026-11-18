@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [18.11.2026, Claude-Morgenlauf](dossiers/2026-11-18-claude-morgens.md), Vergleichsbasis [ChatGPT 18.11. morgens](dossiers/2026-11-18-morgens.md) und [Claude-Sonderauftrag Tamilische Feste 17.11.](dossiers/2026-11-17-claude-tamilische-feste.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [18.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-18-claude-nachmittags.md), Vergleichsbasis [ChatGPT 18.11. mittags](dossiers/2026-11-18-mittags.md) und [Claude 18.11. morgens](dossiers/2026-11-18-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 18.11. nachmittags:** Keine neue Meldung (keine belegbare Nachricht mit Ortsbezug). Korrektur im Bürgewald-Artikel: Bau-Turbo-Zuständigkeit im Außenbereich (Nr. 2.1 und 2.2 der Leitlinien). 20 Termine bis 3.12. bestätigt. Neue Betreiberregel Ortsbezug angewendet. Commits `5b2f625a`, `52700568`.
 
 **Umgesetzt am 18.11. morgens:** 1 neuer Standardartikel „Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch“ (891 Wörter, Ratsinformationssystem, NRW.URBAN). Korrektur Ausstellungsartikel (HFA empfiehlt Neuland-Plan nur, Rat entscheidet 3.12.). Kalender: Gemeinderat 3.12. jetzt 18 Uhr, Tagesordnungen HFA und Bürgewald-Ausschuss, Wunschbaum 21.11. neu, 22 Termine bestätigt. Commits `996cacce`, `4d85e4e7`, `230e24ae`.
 
