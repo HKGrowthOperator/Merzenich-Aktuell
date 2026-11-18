@@ -657,7 +657,7 @@
       "quelle": {
         "name": "Amtsblatt der Gemeinde Merzenich Nr. 8 vom 24.07.2026, „Kreis berät in Merzenich“",
         "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_08_2026-web.pdf",
-        "stand": "2026-11-17"
+        "stand": "2026-11-18"
       }
     },
     {
@@ -672,9 +672,13 @@
       "beschreibung": "Der Haupt- und Finanzausschuss trifft sich am Donnerstag, 19. November, um 18 Uhr im Ratssaal zu seiner 10. Sitzung.",
       "absaetze": [
         "Der Haupt- und Finanzausschuss der Gemeinde Merzenich tagt laut Sitzungskalender am Donnerstag, 19. November 2026, um 18 Uhr. Es ist seine 10. Sitzung, Ort ist der Ratssaal am Valdersweg 1.",
-        "Am 5. Oktober war die Tagesordnung noch nicht veröffentlicht. Der Gemeinderat folgt laut Kalender am 3. Dezember."
+        "Die Tagesordnung ist im Ratsinformationssystem veröffentlicht (gelesen am 18. November). Öffentlich beraten werden unter anderem der Brandschutzbedarfsplan, die Hundesteuer, eine mögliche Übernachtungssteuer, die Hebesätze für Grund- und Gewerbesteuer 2027, die Abwassergebühren, die Gebühren für Unterkünfte für Geflüchtete und Obdachlose, eine Patronatserklärung für die Kita-Gesellschaft, der Wirtschaftsplan der Neuland Hambach GmbH, ein Shared Service Center mit dem Kreis Düren und die Entgelte für Trauungen in der Alten Kirche. Der Gemeinderat folgt am 3. Dezember."
       ],
       "links": [
+        [
+          "Tagesordnung im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ"
+        ],
         [
           "Sitzungskalender im Ratsinformationssystem",
           "https://ratsinfo.gemeinde-merzenich.de/termine"
@@ -683,7 +687,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZeNGW_iph5xLaB12p2a-DIQ",
-        "stand": "2026-11-17"
+        "stand": "2026-11-18"
       }
     },
     {
@@ -698,9 +702,13 @@
       "beschreibung": "Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerstag, 26. November, um 18 Uhr im Ratssaal zu seiner 6. Sitzung zusammen.",
       "absaetze": [
         "Laut Sitzungskalender der Gemeinde tagt der Ausschuss für Revitalisierung Bürgewald am Donnerstag, 26. November 2026, um 18 Uhr im Ratssaal des Rathauses am Valdersweg 1. Es ist seine 6. Sitzung.",
-        "Eine Tagesordnung lag am 5. Oktober noch nicht vor. Sie erscheint im Ratsinformationssystem."
+        "Die Tagesordnung hat die Gemeinde mit Datum vom 17. November bekannt gemacht. Öffentlich geht es um den Bebauungsplan für einen Solarpark an der Autobahn A4, die Leitlinien zum Bau-Turbo und einen Bericht von NRW.URBAN über Sachstände und Vergaben. Im nichtöffentlichen Teil stehen unter anderem Baufeldpässe für den ersten Vermarktungsabschnitt, Grundstückskäufe und Erbbaurechtsverträge."
       ],
       "links": [
+        [
+          "Tagesordnung im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8"
+        ],
         [
           "Sitzungskalender im Ratsinformationssystem",
           "https://ratsinfo.gemeinde-merzenich.de/termine"
@@ -709,7 +717,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungstermin",
         "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZe4NO84-QR9fnSV92Lvc6Y8",
-        "stand": "2026-11-17"
+        "stand": "2026-11-18"
       }
     }
   ]

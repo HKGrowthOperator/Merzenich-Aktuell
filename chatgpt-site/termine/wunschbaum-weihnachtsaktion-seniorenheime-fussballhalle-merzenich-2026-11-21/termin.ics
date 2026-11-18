@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Wunschbaum-Weihnachtsaktion für Seniorenheime: Eröffnung in 
+ der Fußballhalle Merzenich
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:wunschbaum-weihnachtsaktion-seniorenheime-fussballhalle-merzenich-2026-
+ 11-21@merzenich-aktuell.de
+DTSTAMP:20261118T060000Z
+DTSTART:20261121T100000Z
+SUMMARY:Wunschbaum-Weihnachtsaktion für Seniorenheime: Eröffnung in der F
+ ußballhalle Merzenich
+DESCRIPTION:Am Samstag\, 21. November\, ab 11 Uhr wird in der Fußballhalle
+  Merzenich ein Wunschbaum mit Weihnachtswünschen von Bewohnerinnen und Be
+ wohnern aus Seniorenheimen der Region eröffnet. Wer möchte\, sucht sich 
+ einen Wunsch aus und erfüllt ihn.\nVeranstalter: Wunschbaum-Aktion „Gem
+ einsam gegen Einsam“ (Veranstalter in der Ankündigung nicht namentlich 
+ genannt\; Hinweis der Gemeinde Merzenich)\nhttps://merzenichaktuell.hk-gro
+ wthoperator.de/termine/wunschbaum-weihnachtsaktion-seniorenheime-fussballh
+ alle-merzenich-2026-11-21/
+LOCATION:Fußballhalle Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/wunschbaum-weihna
+ chtsaktion-seniorenheime-fussballhalle-merzenich-2026-11-21/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

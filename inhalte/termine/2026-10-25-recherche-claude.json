@@ -197,7 +197,7 @@
       "quelle": {
         "name": "Kreis Düren, Pressemitteilung vom 20.10.2026",
         "url": "https://www.kreis-dueren.de/presse/vortrag-mental-load_2026-10-20.php",
-        "stand": "2026-11-17"
+        "stand": "2026-11-18"
       }
     },
     {
@@ -224,24 +224,28 @@
       "quelle": {
         "name": "Kreis Düren, Mitteilung vom 30.09.2026 (Restkarten, Listendatum 19.10.2026)",
         "url": "https://www.kreis-dueren.de/presse/seniorenweihnacht_2026-09-30.php",
-        "stand": "2026-11-17"
+        "stand": "2026-11-18"
       }
     },
     {
       "slug": "gemeinderat-sitzung-2026-12-03",
       "titel": "8. Sitzung des Gemeinderates",
-      "start": "2026-12-03T17:00:00+01:00",
+      "start": "2026-12-03T18:00:00+01:00",
       "ort": "Rathaus Merzenich, Ratssaal",
       "adresse": "Valdersweg 1, 52399 Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Politik",
       "veranstalter": "Gemeinde Merzenich",
-      "beschreibung": "Der Gemeinderat tagt am Donnerstag, 3. Dezember, um 17 Uhr im Ratssaal; die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssystem.",
+      "beschreibung": "Der Gemeinderat tagt am Donnerstag, 3. Dezember, um 18 Uhr im Ratssaal; die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssystem.",
       "absaetze": [
-        "Laut Sitzungskalender des Ratsinformationssystems tritt der Gemeinderat am Donnerstag, 3. Dezember 2026, um 17 Uhr im Ratssaal des Rathauses zusammen. Es ist die letzte eingetragene Ratssitzung des Jahres.",
-        "Am 25. Oktober lag im Ratsinformationssystem noch keine Tagesordnung vor. Die Sitzungsnummer folgt der Zählung der Niederschriften (7. Sitzung am 30.09.2026)."
+        "Laut Sitzungskalender des Ratsinformationssystems tritt der Gemeinderat am Donnerstag, 3. Dezember 2026, um 18 Uhr im Ratssaal des Rathauses zusammen. Es ist seine 8. Sitzung und die letzte eingetragene Ratssitzung des Jahres.",
+        "Geändert am 18. November: Bis zum 17. November stand im Sitzungskalender 17 Uhr als Beginn, seit dem 18. November 18 Uhr. Eine Tagesordnung lag am 18. November noch nicht vor. Beraten soll der Rat unter anderem über die Leitlinien zum Bau-Turbo und den Solarpark an der A4."
       ],
       "links": [
+        [
+          "Sitzungsseite im Ratsinformationssystem",
+          "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUGwKZgRgIQ7L6aLimbkVj4"
+        ],
         [
           "Sitzungskalender im Ratsinformationssystem",
           "https://ratsinfo.gemeinde-merzenich.de/termine"
@@ -250,7 +254,7 @@
       "quelle": {
         "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (Kalenderexport)",
         "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
-        "stand": "2026-11-15"
+        "stand": "2026-11-18"
       }
     }
   ]
