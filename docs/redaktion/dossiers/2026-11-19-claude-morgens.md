@@ -74,7 +74,7 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 Commits: `ab6f7723` (Meldungen), `ae253e38` (Kalender), Dokumentation in diesem Commit. Abgleich 09:19 Uhr `angestossen: true`; nächster planmäßiger Abgleich 10:05 Uhr.
 
-Live-Nachweis 09:23 Uhr: beide Meldungen HTTP 200 mit Text (unter anderem „6.835.327“, „Steinmetzbetriebe“) und Rathausfotos, beide in der Nachrichten-Sitemap, unter „Neu in Merzenich“ auf der Startseite und in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub. Neue Termine folgen mit dem Abgleich um 10:05 Uhr.
+Live-Nachweis 09:23 Uhr: beide Meldungen HTTP 200 mit Text (unter anderem „6.835.327“, „Steinmetzbetriebe“) und Rathausfotos, beide in der Nachrichten-Sitemap, unter „Neu in Merzenich“ auf der Startseite und in `wordpress-delivery/merzenich-aktuell-import.xml` auf GitHub. Neue Termine 09:27 Uhr live: `/termine/fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-09/` und `/termine/maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-09/` HTTP 200.
 
 ## 8. Bildprüfung
 
@@ -94,7 +94,6 @@ Live-Nachweis 09:23 Uhr: beide Meldungen HTTP 200 mit Text (unter anderem „6.8
 
 - HFA 19.11.: Ergebnisse als Folgemeldungen, sobald Beschlusstexte oder Niederschrift vorliegen (Abgaben, Übernachtungssteuer, Neuland, Kita, Brandschutzbedarfsplan, Trauungen, Shared Service Center).
 - Haushalt: Unterschied der Planwerte (5.686.372 gegenüber 6.835.327 Euro) bei Gelegenheit klären.
-- Neue Termine 9.12. live nachweisen (Abgleich 10:05 Uhr).
 - Girbelsrath Fr. 20.11. (Freitagsprüfung Sport).
 - Bauausschuss 12.11.: Niederschrift; Gemeinderat 3.12.: Tagesordnung (Haushaltsentwurf 2027).
 - Werkzeugpunkte (Alt-Text bestehender Poolanhänge im Abgleich, Feuerwehr-Automatik „Hund“, Termin-Automatik gleichzeitige Termine, Heimat-Info-Kalender Seite 2) warten auf Entscheidung.
