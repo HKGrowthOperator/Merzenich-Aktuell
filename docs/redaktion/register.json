@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-18-claude-nachmittags.md",
-  "source_check_window": "18.11.2026 Europe/Berlin: Start11:56; Hauptabrufe11:57:06–11:58:48, neuer Artikel/NRW.URBAN11:57:27; Kontrollabrufe12:01:01–12:01:07; Livebilder12:01:23/12:01:35 anschließend gesichtet.",
+  "latest_dossier": "dossiers/2026-11-19-morgens.md",
+  "source_check_window": "19.11.2026 Europe/Berlin: Startab07:04; Hauptabrufe07:07:02–07:07:54; neue Dokumente/Gesetze07:08:15; Finanzanlagen07:08:53; öffentlicher Historien-Suchweg07:09:04; Bilder07:09:22/07:09:29 anschließend gesichtet; Commons-Metadaten im Web gegen07:08.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12856,6 +12856,96 @@
           "dossier": "dossiers/2026-11-18-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-19T07:13:43+01:00",
+          "dossier": "dossiers/2026-11-19-morgens.md",
+          "verification_status": "live_confirmed",
+          "finding": "Delegationsregel/Quellenwiderspruch und Korrekturhinweis im Liveartikel bestätigt; Umsetzung5b2f625a und alle historischen Felder erhalten. Keine verbindliche Auslegung des Entwurfs."
+        }
+      ]
+    },
+    {
+      "id": "MA-HAUSHALT-M148-2026",
+      "priority": "P2",
+      "location_section": "Gemeinde Merzenich · Rathaus/Finanzen",
+      "change_type": "neuer öffentlicher Sachstandsbeleg",
+      "text_status": "T2",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-19-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-19T07:13:43+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neue öffentliche Mitteilung und Finanzanlagen. Planwert der Mitteilung/Erläuterung weicht vom Ansatz der Gesamtergebnisrechnung ab. VorberichtM113/2026 nicht beschafft, keine neue Ergebnisverbesserung gegenüber Vorbericht belegt; keine wesentliche Veränderung laut Verwaltung. Unabhängige zweite Quelle fehlt. Nur Gesamtergebnisrechnung PDF-S.1 der umfangreichen Tabellenanlage ausgewertet, keine Vollprüfung aller Produktseiten.",
+      "sources": [
+        {
+          "key": "m148",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZXiXhI5TZc2M4Nns5jFmwv-I5LiT-9p81GSzs5FIaA8d/Mitteilungsvorlage_M148-2026.pdf",
+          "at": "2026-11-19T07:08:15+01:00",
+          "status": 200
+        }
+      ],
+      "image_candidate": {
+        "file": "File:Merzenich Rathaus.JPG",
+        "author": "Papa1234 laut Commons Summary; Uploadhistorie Karl-Heinz Jansen",
+        "license": "public domain / PD-self",
+        "width": 1024,
+        "height": 768,
+        "motif_id": "rathaus-merzenich",
+        "checked_at": "2026-11-19T07:09:29+01:00",
+        "verification": "Commons-Metadaten im Web lesbar; direkter Seitenabruf403. Vorhandenes Poolbild geladen und anschließend visuell geprüft; kein direkter Commons-Originalfotoabruf behauptet."
+      },
+      "dossier_history": [
+        {
+          "date": "2026-11-19",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-19-morgens.md",
+          "heading": "THEMENKARTEN"
+        }
+      ]
+    },
+    {
+      "id": "MA-UMSATZSTEUER-M149-2026",
+      "priority": "P2",
+      "location_section": "Gemeinde Merzenich · Rathaus/Finanzen und Service",
+      "change_type": "neuer öffentlicher Sachstandsbeleg",
+      "text_status": "T2",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-19-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-19T07:13:43+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neue kommunale Sachstandsmitteilung/Einnahmenliste. Amtliche Normtexte als zweiter Herausgeber bestätigen nur den Rechtsrahmen, nicht unabhängig örtliche Umsetzung/Bewertungen. Konkrete Satzung/Gebührenbeträge, Liste/Grababräumungen und tatsächliche Umstellung offen. Keine pauschale Verteuerung aller Gebühren oder Steuerquote behaupten.",
+      "sources": [
+        {
+          "key": "m149",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZVrP5gxLaAOVfIJx6TbpzpxO8OhIxVhqyPx6HJe75COj/Mitteilungsvorlage_M149-2026.pdf",
+          "at": "2026-11-19T07:08:15+01:00",
+          "status": 200
+        }
+      ],
+      "image_candidate": {
+        "file": "File:Merzenich Rathaus.JPG",
+        "author": "Papa1234 laut Commons Summary; Uploadhistorie Karl-Heinz Jansen",
+        "license": "public domain / PD-self",
+        "width": 1024,
+        "height": 768,
+        "motif_id": "rathaus-merzenich",
+        "checked_at": "2026-11-19T07:09:29+01:00",
+        "verification": "Commons-Metadaten im Web lesbar; direkter Seitenabruf403. Vorhandenes Poolbild geladen und anschließend visuell geprüft; kein direkter Commons-Originalfotoabruf behauptet."
+      },
+      "dossier_history": [
+        {
+          "date": "2026-11-19",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-19-morgens.md",
+          "heading": "THEMENKARTEN"
+        }
       ]
     }
   ],
@@ -15279,6 +15369,52 @@
       "implementation_commit": "5b2f625a",
       "summary": "Neue Betreiberregel Ortsbezug (SCHREIBREGELN 0b, CLAUDE-LAUF 3.10) gelesen und auf die heutigen Inhalte angewendet; Korrektur Bürgewald-Artikel (Bau-Turbo-Zuständigkeit im Außenbereich); keine neue belegbare Nachricht mit Ortsbezug (Nullfund für neue Meldungen); 20 Termine bestätigt. Mindesttakt 18.11.: 1.",
       "publication": "Eine Korrektur direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-19",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-19-morgens.md",
+      "compared_with": "dossiers/2026-11-18-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-18-claude-nachmittags.md",
+      "base_commit": "47f807ab1cc5bca61ff71ece4928f517972c79d3",
+      "implementation_commit": null,
+      "summary": "Zwei neue T2-Karten: HaushaltsabwicklungM148/2026 (Planwerte widersprüchlich, Vorbericht/Unabhängigkeit fehlen) und kommunale UmsatzsteuerumstellungM149/2026 (örtliche Umsetzung nicht unabhängig bestätigt, konkrete Satzung/Beträge offen). Bau-Turbo-Korrektur live bestätigt, bekannter Motorrad-Bildtext weiter falsch. Keine neuen Termine; Betreiber-Rückzüge erhalten, keine Festkalenderrecherche ohne Ortsbezug.",
+      "topics": 2,
+      "new_topics": 2,
+      "updated_topics": 0,
+      "blocked_T2": 2,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "corrections_verified_live": [
+        "MA-KORR-BAUTURBO-AUSSENBEREICH-1811"
+      ],
+      "repository_article_files_read": 56,
+      "repository_event_files_read": 25,
+      "repository_area_files_read": 21,
+      "new_or_changed_events": 0,
+      "event_change_scope": "Neue Sachstandsunterlagen zur bestehenden HFA-Sitzung, kein neuer Termin oder geänderte Zeit/Ort.",
+      "complete_drafts": 0,
+      "source_check_window": "19.11.2026 Europe/Berlin: Startab07:04; Hauptabrufe07:07:02–07:07:54; neue Dokumente/Gesetze07:08:15; Finanzanlagen07:08:53; öffentlicher Historien-Suchweg07:09:04; Bilder07:09:22/07:09:29 anschließend gesichtet; Commons-Metadaten im Web gegen07:08.",
+      "prepared_at": "2026-11-19T07:13:43+01:00",
+      "deadline": "2026-11-19T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellungszeit/Fristeinhaltung im bestätigten main-Uploadabschluss, Vorbereitungszeit kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Haushalt: unterschiedliche Planwerte, fehlender Original-Vorbericht/Unabhängigkeit; nur Gesamtergebnisrechnung der Tabellenanlage ausgewertet",
+        "Umsatzsteuer: örtliche Bewertung/Umsetzung nicht unabhängig bestätigt; konkrete Satzung/Gebührenbeträge fehlen",
+        "Motorrad-Bildcaption/Alt weiter falsch",
+        "Wunschbaum-Veranstalter/Rückgabe und Frühstücksort offen; Hallenquellen403",
+        "Kita-Abschluss/Prüfbericht, konkrete Steuer-Genehmigungsfrage, Derbyurteil und unabhängige Serienzählung offen",
+        "BdSt-Vergleich403; historische Originale nicht sämtlich erneut vollständig gelesen; Zuginfo nur Seitentitel",
+        "Kein neuer Sitzungs-Ergebnisbeleg vor bevorstehendem HFA; Bauausschuss-Niederschrift/Ratstagesordnung im geprüften Weg nicht neu vorhanden"
+      ]
     }
   ]
 }
