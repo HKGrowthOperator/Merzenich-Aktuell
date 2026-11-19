@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Männergruppe und Skatrunde für Senioren im Evangelischen Gem
+ eindehaus
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-09@merzenich-ak
+ tuell.de
+DTSTAMP:20261119T060000Z
+DTSTART:20261209T080000Z
+DTEND:20261209T100000Z
+SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
+ haus
+DESCRIPTION:Die Männergruppe mit Skatrunde für Senioren trifft sich am Mi
+ ttwoch\, 9. Dezember\, von 9 bis 11 Uhr im Evangelischen Gemeindehaus Merz
+ enich. Neue Mitspieler sind willkommen.\nVeranstalter: Evangelisches Gemei
+ ndezentrum Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termin
+ e/maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-09/
+LOCATION:Evangelisches Gemeindehaus Merzenich
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/maennergruppe-ska
+ trunde-fuer-senioren-merzenich-2026-12-09/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
