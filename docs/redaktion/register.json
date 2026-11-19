@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-19-claude-morgens.md",
-  "source_check_window": "19.11.2026 Europe/Berlin: Startab07:04; Hauptabrufe07:07:02–07:07:54; neue Dokumente/Gesetze07:08:15; Finanzanlagen07:08:53; öffentlicher Historien-Suchweg07:09:04; Bilder07:09:22/07:09:29 anschließend gesichtet; Commons-Metadaten im Web gegen07:08.",
+  "latest_dossier": "dossiers/2026-11-19-mittags.md",
+  "source_check_window": "19.11.2026 Europe/Berlin: Start12:01; Hauptabrufe12:02:45–12:03:36; neue Artikel/M12812:03:12; Kompostdetail12:03:44; Haushaltschronik/Ratstermin/alter Artikel12:04:02; vier Polizeivolltexte12:04:30; Bilder12:05:13–12:05:24 anschließend gesichtet.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12625,6 +12625,14 @@
           "checked_at": "2026-11-17T12:09:49+01:00",
           "scope": "Nur Hintergrund, keine aktuelle örtliche Ereignisbestätigung"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-19T12:08:44+01:00",
+          "dossier": "dossiers/2026-11-19-mittags.md",
+          "research_status": "T2",
+          "finding": "Neuer Gemeinde-Beitrag in Heimat-Info19.11.09:56 vollständig gelesen, inhaltlich Wiederholung des bekannten Gemeindetextes; keine neue Projektentwicklung, keine unabhängige zweite Bestätigung/Drittquelle, deshalb keine neue Themenkarte."
+        }
       ]
     },
     {
@@ -12911,6 +12919,14 @@
           "dossier": "dossiers/2026-11-19-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-19T12:08:44+01:00",
+          "dossier": "dossiers/2026-11-19-mittags.md",
+          "research_status": "T2",
+          "finding": "Neue Livefassung vollständig gegen Mitteilung/Erläuterung und Gesamtergebnisrechnung S.1 geprüft; Planwertkonflikt im Text benannt. Ergänzende Chronik/M128 an Primärtexten gelesen. Keine unabhängige aktuelle Bestätigung/kein Vorbericht, Recherche bleibtT2 trotz historischer Claude-Umsetzung."
+        }
       ]
     },
     {
@@ -12957,6 +12973,40 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-19-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-19T12:08:44+01:00",
+          "dossier": "dossiers/2026-11-19-mittags.md",
+          "research_status": "T2",
+          "finding": "Neue Livefassung mit Mitteilung/Anlage und amtlichen Normen im Kern vereinbar; kein konkreter neuer Preis behauptet. Örtliche Einzelbewertung/Umsetzung und neue konkrete Satzung nicht unabhängig bestätigt; Recherche bleibtT2, historische Umsetzung erhalten."
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-HAUSHALTSZEITPLAN-RAT-1911",
+      "priority": "P2",
+      "location_section": "Merzenich · Rathaus/Haushalt",
+      "change_type": "Aktualisierungsauftrag alter Terminverweis",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-19-mittags.md",
+      "workflow_status": "offen",
+      "last_checked_at": "2026-11-19T12:08:44+01:00",
+      "article_path": "inhalte/meldungen/2026-10-13-recherche-chatgpt.json → /rathaus/haushalt-2027-zeitplan-merzenich/",
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Siehe KORREKTUREN im Dossier: ältere Live-/Repositorypassage nennt für Rat03.12. weiterhin17 Uhr, aktueller Originaltermin/ICS18 Uhr. Terminpassage aktualisieren, historischen Kalenderstand nicht rückwirkend als damals falsch bewerten. Kalenderbestand bereits18 Uhr; keine neue zweite Terminverschiebung. Keine Artikel-/CMS-Änderung durch Recherche.",
+      "source": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUGwKZgRgIQ7L6aLimbkVj4",
+      "source_locator": "Terminblock Gemeinderat8.Sitzung03.12.2026,18:00Uhr; Liveartikel zweiter Absatz",
+      "source_retrieved_at": "2026-11-19T12:04:02+01:00",
+      "dossier_history": [
+        {
+          "date": "2026-11-19",
+          "edition": "mittags",
+          "dossier": "dossiers/2026-11-19-mittags.md",
+          "heading": "KORREKTUREN"
         }
       ]
     }
@@ -15437,6 +15487,52 @@
       "implementation_commit": "ab6f7723",
       "summary": "Zwei Kurzmeldungen zu Mitteilungen für den HFA 19.11.: Haushaltsprognose 2026 (3,4 statt 5,7 Mio. Euro Defizit, Planwertwiderspruch benannt) und Umsatzsteuer der Gemeinde ab 2027; Kalender: zwei neue Seniorentermine 9.12., HFA ergänzt, 20 bestätigt. Mindesttakt 19.11.: 2.",
       "publication": "Zwei neue Meldungen und zwei neue Termine direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-19",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-19-mittags.md",
+      "compared_with": "dossiers/2026-11-19-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-19-claude-morgens.md",
+      "base_commit": "a9a36d48107b3d18680a6d08edc8245288d4d51e",
+      "implementation_commit": null,
+      "summary": "Keine neue Themenkarte/keine neuen Termine. Neuer Aktualisierungsauftrag: alter Haushalts-Zeitplanartikel nennt noch17 Uhr für Rat03.12., aktueller Originaltermin18 Uhr; Kalender schon korrekt. Neue Finanzartikel gegen Primäroriginale geprüft, RecherchegrenzenT2 unverändert. Neuer Kompost-Gemeindebeitrag nur Wiederholung, nicht unabhängig. Motorrad-Bildtext weiterhin falsch.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-HAUSHALTSZEITPLAN-RAT-1911"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 57,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 21,
+      "new_or_changed_events": 0,
+      "event_change_scope": "Alter Artikelverweis aktualisieren, Kalenderbeginn bereits korrekt. Keine neu belegte zweite Verschiebung; Termin außerhalb14Tage.",
+      "complete_drafts": 0,
+      "source_check_window": "19.11.2026 Europe/Berlin: Start12:01; Hauptabrufe12:02:45–12:03:36; neue Artikel/M12812:03:12; Kompostdetail12:03:44; Haushaltschronik/Ratstermin/alter Artikel12:04:02; vier Polizeivolltexte12:04:30; Bilder12:05:13–12:05:24 anschließend gesichtet.",
+      "prepared_at": "2026-11-19T12:08:44+01:00",
+      "deadline": "2026-11-19T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Fristeinhaltung im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Alter Haushalts-Zeitplanartikel: überholten Ratsbeginn aktualisieren",
+        "Motorrad-Bildunterschrift/Alt weiter falsch",
+        "Haushalts-Planwertkonflikt/Vorbericht/Unabhängigkeit und konkrete Umsatzsteuer-Einzelumsetzung/Satzung/Beträge offen; keine neuen Karten zu unveränderten Punkten",
+        "Kompost: neuer Verbreitungsweg durch denselben Herausgeber, unabhängige örtliche Bestätigung/Drittquelle und Projektdetails fehlen",
+        "Wunschbaum-Veranstalter/Rückgabefrist, Frühstücksort offen; Hallenquellen403",
+        "Kita-Prüfbericht, konkrete Steuer-Genehmigungsfrage, Derbyurteil/Serienkontrolle offen",
+        "BdSt403, übrige ältere Artikel nicht sämtlich erneut vollständig gegen alle Originale geprüft; Zuginfo nur Seitentitel",
+        "Keine neuen HFA-Ergebnisse vor bevorstehender Sitzung, Bauausschuss-Niederschrift und Ratstagesordnung im geprüften Weg nicht neu vorhanden"
+      ]
     }
   ]
 }
