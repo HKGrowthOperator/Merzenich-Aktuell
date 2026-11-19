@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T08:22:00.225Z",
+  "updatedAt": "2026-11-19T08:17:41.986Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1745,6 +1745,24 @@
       "assignedAt": "2026-11-18T08:22:00.225Z",
       "articleId": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
       "articleDate": "2026-11-18T09:25:00+01:00"
+    },
+    "/rathaus/merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-19T08:17:41.985Z",
+      "articleId": "2026-11-19-merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss",
+      "articleDate": "2026-11-19T09:30:00+01:00"
+    },
+    "/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-19T08:17:41.985Z",
+      "articleId": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
+      "articleDate": "2026-11-19T09:35:00+01:00"
     }
   }
 }

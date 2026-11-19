@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-18T09:25:00+01:00",
- "anzahl": 240,
+ "generated": "2026-11-19T09:18:00+01:00",
+ "anzahl": 242,
  "bestand": {
-  "gesamt": 240,
+  "gesamt": 242,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 75,
    "sport": 35,
-   "rathaus": 43,
+   "rathaus": 45,
    "leben": 51,
    "wirtschaft": 11,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 165,
+   "merzenich": 167,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 13,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 240,
+    "anzahl": 242,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 43,
+    "anzahl": 45,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 165,
+    "anzahl": 167,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,82 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
+   "url": "/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
+   "titel": "Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen",
+   "teaser": "Ab Januar muss die Gemeinde für etliche Leistungen Umsatzsteuer berechnen. Die Friedhofsgebühren sollen Anfang 2027 angepasst werden.",
+   "kicker": "Rathaus · Finanzen",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-19T09:18:00+01:00",
+   "aktualisiert": "2026-11-19T09:18:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "steuern",
+     "label": "Steuern und Gebühren"
+    },
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-11-19-merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss",
+   "url": "/rathaus/merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss/",
+   "titel": "Haushalt Merzenich 2026: Verwaltung erwartet 3,4 statt 5,7 Millionen Euro Defizit",
+   "teaser": "Der Finanzbericht für den Haupt- und Finanzausschuss zeigt ein kleineres Minus als geplant. Endgültig ist die Zahl noch nicht.",
+   "kicker": "Rathaus · Finanzen",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-19T09:17:00+01:00",
+   "aktualisiert": "2026-11-19T09:17:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    },
+    {
+     "slug": "buergewald",
+     "label": "Bürgewald"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e-1200.webp 1200w, /assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg 1920w",
+    "alt": "Rathaus in Merzenich",
+    "width": 1920,
+    "height": 1253,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
    "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
@@ -9935,20 +10011,20 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
-  "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
-  "titel": "Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch"
+  "id": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
+  "url": "/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
+  "titel": "Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen"
  },
  "nebenmeldungen": [
   {
-   "id": "2026-11-17-jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026",
-   "url": "/rathaus/jugendgremium-merzenich-calisthenics-park-hundewiese-baeume-bahnstrasse-empfehlung-rat-2026/",
-   "titel": "Jugendgremium Merzenich wünscht sich Calisthenics-Park und Hundewiese und will die Bäume an der Bahnstraße retten"
+   "id": "2026-11-19-merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss",
+   "url": "/rathaus/merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss/",
+   "titel": "Haushalt Merzenich 2026: Verwaltung erwartet 3,4 statt 5,7 Millionen Euro Defizit"
   },
   {
-   "id": "2026-11-16-merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026",
-   "url": "/rathaus/merzenich-uebernachtungssteuer-pruefung-haupt-finanzausschuss-19-november-2026/",
-   "titel": "Übernachtungssteuer für Merzenich? Ausschuss entscheidet, ob die Verwaltung weiter prüft"
+   "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
+   "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+   "titel": "Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch"
   },
   {
    "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
