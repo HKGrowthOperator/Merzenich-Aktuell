@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-19-mittags.md",
+  "latest_dossier": "dossiers/2026-11-19-claude-nachmittags.md",
   "source_check_window": "19.11.2026 Europe/Berlin: Start12:01; Hauptabrufe12:02:45–12:03:36; neue Artikel/M12812:03:12; Kompostdetail12:03:44; Haushaltschronik/Ratstermin/alter Artikel12:04:02; vier Polizeivolltexte12:04:30; Bilder12:05:13–12:05:24 anschließend gesichtet.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12554,11 +12554,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-17-mittags.md",
       "workflow_status": "offen",
-      "last_checked_at": "2026-11-18T07:07:14+01:00",
+      "last_checked_at": "2026-11-19 15:01 Europe/Berlin",
       "article_path": null,
       "article_id": null,
       "implementation_commit": null,
-      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen. | ChatGPT 18.11. morgens: Gemeinde-Detailseite heute normal200 lesbar und gegenüber gespeicherter Mittagsfassung17.11. unverändert; allein wieder möglicher Abruf ist keine neue Entwicklung. Keine neue Themenkarte. Unabhängige örtliche Bestätigung/Drittquelle und Projektdaten weiter offen, T2. Keine Sperre umgangen und kein Artikel umgesetzt.",
+      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen. | ChatGPT 18.11. morgens: Gemeinde-Detailseite heute normal200 lesbar und gegenüber gespeicherter Mittagsfassung17.11. unverändert; allein wieder möglicher Abruf ist keine neue Entwicklung. Keine neue Themenkarte. Unabhängige örtliche Bestätigung/Drittquelle und Projektdaten weiter offen, T2. Keine Sperre umgangen und kein Artikel umgesetzt. | Claude 19.11. nachmittags: Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr gelesen (lesbar), Kurzmeldung 296 Wörter geschrieben, aber verschoben: kein zulässiges Foto (Keyhole-Fotos auf Commons nur aus dem Ausland, Importfilter; Commons HTTP 429). Entwurf docs/redaktion/entwuerfe/2026-11-19-kompost-kgs-merzenich.json; Veröffentlichung im Morgenlauf 20.11.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12577,6 +12577,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-18-morgens.md",
           "heading": "KORREKTUREN – Quellen-/Liveprüfung"
+        },
+        {
+          "date": "2026-11-19",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
+          "heading": "3. Bewusst nicht umgesetzt"
         }
       ],
       "research_history": [
@@ -12992,12 +12998,12 @@
       "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-11-19-mittags.md",
-      "workflow_status": "offen",
-      "last_checked_at": "2026-11-19T12:08:44+01:00",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-19 14:49 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-13-recherche-chatgpt.json → /rathaus/haushalt-2027-zeitplan-merzenich/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Siehe KORREKTUREN im Dossier: ältere Live-/Repositorypassage nennt für Rat03.12. weiterhin17 Uhr, aktueller Originaltermin/ICS18 Uhr. Terminpassage aktualisieren, historischen Kalenderstand nicht rückwirkend als damals falsch bewerten. Kalenderbestand bereits18 Uhr; keine neue zweite Terminverschiebung. Keine Artikel-/CMS-Änderung durch Recherche.",
+      "implementation_commit": "49e5d7d8",
+      "notes": "Siehe KORREKTUREN im Dossier: ältere Live-/Repositorypassage nennt für Rat03.12. weiterhin17 Uhr, aktueller Originaltermin/ICS18 Uhr. Terminpassage aktualisieren, historischen Kalenderstand nicht rückwirkend als damals falsch bewerten. Kalenderbestand bereits18 Uhr; keine neue zweite Terminverschiebung. Keine Artikel-/CMS-Änderung durch Recherche. | Claude 19.11. nachmittags: Ratsbeginn 18 Uhr eingesetzt, Aktualisierungshinweis mit Verweis auf Haushaltsprognose 2026, Faktenliste angepasst; live 14:49 Uhr.",
       "source": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUGwKZgRgIQ7L6aLimbkVj4",
       "source_locator": "Terminblock Gemeinderat8.Sitzung03.12.2026,18:00Uhr; Liveartikel zweiter Absatz",
       "source_retrieved_at": "2026-11-19T12:04:02+01:00",
@@ -13007,6 +13013,12 @@
           "edition": "mittags",
           "dossier": "dossiers/2026-11-19-mittags.md",
           "heading": "KORREKTUREN"
+        },
+        {
+          "date": "2026-11-19",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -15533,6 +15545,16 @@
         "BdSt403, übrige ältere Artikel nicht sämtlich erneut vollständig gegen alle Originale geprüft; Zuginfo nur Seitentitel",
         "Keine neuen HFA-Ergebnisse vor bevorstehender Sitzung, Bauausschuss-Niederschrift und Ratstagesordnung im geprüften Weg nicht neu vorhanden"
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-19-mittags.md",
+      "implementation_commit": "49e5d7d8",
+      "summary": "Aktualisierung Haushalt-2027-Zeitplan (Rat 3.12. 18 Uhr); Kompost-Meldung KGS Merzenich fertig, aber mangels zulässigem Foto (Commons-Drosselung, Auslandsfilter) auf den Morgenlauf 20.11. verschoben; Kalender 20 Termine bestätigt. Keine neue Meldung (Nullfund in diesem Lauf). Mindesttakt 19.11.: 2.",
+      "publication": "Eine Aktualisierung direkt veröffentlicht"
     }
   ]
 }

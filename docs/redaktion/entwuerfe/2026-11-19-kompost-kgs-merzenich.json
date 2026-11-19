@@ -1,0 +1,78 @@
+{
+  "hinweis": "Recherche vom 19.11.2026, Nachmittagslauf (Claude): Kurzmeldung nach dem Beitrag der Gemeinde Merzenich in Heimat-Info vom 19.11.2026, 09:56 Uhr (gelesen 14:46 Uhr); Register MA-KOMPOST-KGS-2026. Namen von Lehrerin und Vereinsmitglied nicht übernommen.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Schule",
+      "titel": "Grundschule in Merzenich: Garten-AG baut Komposter nach afrikanischem Vorbild",
+      "dek": "Die Kinder der Garten-AG der KGS Merzenich haben über den Sommer einen Keyhole-Komposter aus Weidenzweigen gebaut. Im April soll er die erste Erde liefern.",
+      "datum": "2026-11-19T14:55:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "ortsbezug": "Die Garten-AG der Grundschule KGS Merzenich hat im Schulgarten in Merzenich einen Komposter gebaut; die Gemeinde Merzenich berichtet darüber.",
+      "themen": [
+        [
+          "schule",
+          "Schule"
+        ],
+        [
+          "umwelt",
+          "Umwelt"
+        ]
+      ],
+      "bildklasse": "leben.schule.garten",
+      "absaetze": [
+        "Im Schulgarten der Grundschule KGS Merzenich steht ein neuer Komposter, den die Kinder der Garten-AG selbst gebaut haben. Darüber berichtet die Gemeinde Merzenich am Donnerstag, 19. November, in ihrem Kanal in der Heimat-Info-App. Den ganzen Sommer über haben die Kinder nach Angaben der Gemeinde an dem Projekt gearbeitet. Begleitet wurden sie von ihrer AG-Leiterin und von einem Diplom-Biologen, der Schatzmeister des Dürener Vereins „Migranten bauen Brücken“ ist.",
+        "Inzwischen haben die Kinder den Garten für den Winter vorbereitet und den Komposter noch einmal mit Laub gefüllt. Im April 2027 soll es weitergehen; dann, so die Gemeinde, sollte aus dem Kompost fertige Erde geworden sein.",
+        "Gebaut ist die Anlage nach dem Prinzip „Kenia Keyhole“. Von oben gesehen erinnert sie an ein Schlüsselloch: In der Mitte liegt der Zugang zum Komposthaufen, außen herum ein Ring zum Bepflanzen. Entwickelt wurde der Typ nach der Darstellung der Gemeinde in Kenia, heute nutzen ihn viele Länder Afrikas. Für Grundschulen eigne er sich, weil er klein und leicht zu bearbeiten sei und trotzdem viel Ertrag bringe. Dort betreuen meist zwei Kinder ein Beet, und die Ernte geht an die Schulkantine. Der Merzenicher Komposter besteht nur aus Weidenzweigen, die im Sommer beim Rückschnitt angefallen sind.",
+        "Nach der Beschreibung im Gemeindebeitrag bringt der Verein „Migranten bauen Brücken“ Menschen aus Deutschland und Afrika zusammen, damit sie Wissen austauschen, vor allem in Handwerk, Landwirtschaft und Medizin. Mit dem Schulprojekt wolle man auch zeigen, dass Kinder überall auf der Welt an ähnlichen Aufgaben arbeiten und gemeinsam lernen, die Umwelt zu schützen. Was das Projekt gekostet hat und wer es bezahlt, steht in dem Beitrag nicht."
+      ],
+      "fakten": [
+        "Garten-AG der KGS Merzenich baut Komposter im Schulgarten",
+        "Bauweise „Kenia Keyhole“, nur aus Weidenzweigen vom Rückschnitt",
+        "Unterstützt vom Dürener Verein „Migranten bauen Brücken“",
+        "Weiter geht es im April 2027"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beitrag der Gemeinde Merzenich (offizielles Gemeindeprofil) in Heimat-Info vom 19.11.2026, 09:56 Uhr (Donnerstag, 19. November): „den ganzen Sommer über haben die Kinder der Garten AG der #GrundschuleMerzenich an diesem tollen Projekt gearbeitet“; unterstützt von der Lehrerin/AG-Leiterin und einem Vertreter des Vereins „Migranten bauen Brücken“ („Schatzmeister des Vereins und Diplom-Biologe“, Namen nicht übernommen); „Kürzlich wurde der Garten winterfest gemacht und der Komposter noch einmal gut mit Laub gefüllt. Im April nächsten Jahres geht es weiter, dann sollte der Kompost fertige Erde liefern.“ (April 2027); „Schulgarten der KGS Merzenich“.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2"
+          ],
+          "stelle": "Gemeindebeitrag",
+          "selbstauskunft": "Beitrag des offiziellen Profils der Gemeinde Merzenich in Heimat-Info, am 19.11.2026 um 14:46 Uhr vollständig gelesen; Detailseite der Gemeinde-Website liefert HTTP 428 (Bot-Prüfung), nicht umgangen"
+        },
+        {
+          "aussage": "Derselbe Beitrag: Typ „Kenia Keyhole“, „von oben mit seinem Zugang zum Kompost und dem umlaufenden Ring zur Bepflanzung wie ein Schlüsselloch“, „in Kenia entwickelt“, „in vielen afrikanischen Ländern verwendet“, „eignet sich sehr gut für Grundschulen, da er wegen seiner geringen Größe gut bearbeitet werden kann und dennoch hohe Ernten liefert“, „meist von zwei Schülern betreut“, Ernten für Schulkantinen; „nur aus Weidenzweigen gebaut, die im Sommer beim notwendigen Rückschnitt anfallen“; Verein „vermittelt Kontakte zwischen Menschen in Deutschland und Afrika zum Wissens- und Kulturaustausch“, Fokus „handwerklichen, landwirtschaftlichen und medizinischen Berufen“; Kosten nicht genannt.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2"
+          ],
+          "stelle": "Gemeindebeitrag",
+          "selbstauskunft": "Beitrag des offiziellen Profils der Gemeinde Merzenich in Heimat-Info, gelesen 19.11.2026 14:46 Uhr; Angaben zum Komposter-Typ als Darstellung der Gemeinde gekennzeichnet"
+        },
+        {
+          "aussage": "Pressemitteilungsliste der Gemeinde Merzenich (gemeinde-merzenich.de, Abruf der Actions-Rohdaten imports/quellen/gemeinde.json am 18.11.2026 um 23:37 Uhr): Eintrag „Tolles Kompostprojekt an der Grundschule – Die Garten AG der Grundschule Merzenich hat gemeinsam mit dem Verein Migranten bauen Brücken ein tolles Kompostprojekt umgesetzt!“ Detailseite aus der Sitzung HTTP 428 (Bot-Prüfung), nicht umgangen.",
+          "belege": [
+            "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php"
+          ],
+          "stelle": "Pressemitteilungsliste, Teaser"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich in Heimat-Info: „Garten AG baut Komposter im Schulgarten“ (19.11.2026)",
+        "url": "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2",
+        "stand": "2026-11-19"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich: Pressemitteilungen / News, Eintrag „Tolles Kompostprojekt an der Grundschule“ (Abruf über die Quellen-Rohdaten vom 18.11.2026)",
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php",
+          "stand": "2026-11-18"
+        }
+      ]
+    }
+  ]
+}

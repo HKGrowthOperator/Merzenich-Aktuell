@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-19-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-19-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 63 |
+| uebernommen | 64 |
 | gesperrt | 37 |
 | neu | 5 |
 | zur_abnahme | 5 |
@@ -133,7 +133,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-19 nachmittags (Claude): Aktualisierung Haushalt-2027-Zeitplan (Rat 3.12. 18 Uhr); Kompost-Meldung KGS Merzenich fertig, aber mangels zulässigem Foto (Commons-Drosselung, Auslandsfilter) auf den Morgenlauf 20.11. verschoben; Kalender 20 Termine bestätigt. Keine neue Meldung (Nullfund in diesem Lauf). Mindesttakt 19.11.: 2. – Commit 49e5d7d8
+- 2026-11-19 mittags (ChatGPT): Keine neue Themenkarte/keine neuen Termine. Neuer Aktualisierungsauftrag: alter Haushalts-Zeitplanartikel nennt noch17 Uhr für Rat03.12., aktueller Originaltermin18 Uhr; Kalender schon korrekt. Neue Finanzartikel gegen Primäroriginale geprüft, RecherchegrenzenT2 unverändert. Neuer Kompost-Gemeindebeitrag nur Wiederholung, nicht unabhängig. Motorrad-Bildtext weiterhin falsch.
 - 2026-11-19 morgens (Claude): Zwei Kurzmeldungen zu Mitteilungen für den HFA 19.11.: Haushaltsprognose 2026 (3,4 statt 5,7 Mio. Euro Defizit, Planwertwiderspruch benannt) und Umsatzsteuer der Gemeinde ab 2027; Kalender: zwei neue Seniorentermine 9.12., HFA ergänzt, 20 bestätigt. Mindesttakt 19.11.: 2. – Commit ab6f7723
 - 2026-11-19 morgens (ChatGPT): Zwei neue T2-Karten: HaushaltsabwicklungM148/2026 (Planwerte widersprüchlich, Vorbericht/Unabhängigkeit fehlen) und kommunale UmsatzsteuerumstellungM149/2026 (örtliche Umsetzung nicht unabhängig bestätigt, konkrete Satzung/Beträge offen). Bau-Turbo-Korrektur live bestätigt, bekannter Motorrad-Bildtext weiter falsch. Keine neuen Termine; Betreiber-Rückzüge erhalten, keine Festkalenderrecherche ohne Ortsbezug.
-- 2026-11-18 nachmittags (Claude): Neue Betreiberregel Ortsbezug (SCHREIBREGELN 0b, CLAUDE-LAUF 3.10) gelesen und auf die heutigen Inhalte angewendet; Korrektur Bürgewald-Artikel (Bau-Turbo-Zuständigkeit im Außenbereich); keine neue belegbare Nachricht mit Ortsbezug (Nullfund für neue Meldungen); 20 Termine bestätigt. Mindesttakt 18.11.: 1. – Commit 5b2f625a
-- 2026-11-18 mittags (ChatGPT): Keine neue Themenkarte. Neuer Korrektur-/Klärungsauftrag: Bürgewald-Artikel übergeht Delegation bei Außenbereichsvorhaben; Leitlinien 2.1/2.2 widersprüchlich. HFA-Korrektur live bestätigt, Motorrad-Bildtext weiter falsch. Neu sichtbare Seniorentermine bereits vorhanden und sachlich unverändert. Festkalender-Originalprüfung durch403/503 begrenzt.
