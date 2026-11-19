@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 19 Nov 2026 08:18:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Nov 2026 22:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/</guid>
+<pubDate>Thu, 19 Nov 2026 22:47:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg" medium="image"><media:credit>Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rettungswagen im Einsatz</media:description></media:content>
+</item>
 <item>
 <title>Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/</link>
@@ -328,17 +339,6 @@
 <category>Merzenich</category>
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Gräbersegnungen in allen Ortsteilen am 31. Oktober und 1. November, das wöchentliche Rosenkranzgebet zieht ab dem 4. November zurück ins Pfarrheim, und die Caritas lädt pflegende Angehörige zu zwei Selbsthilfegruppen an die Lindenstraße.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
-</item>
-<item>
-<title>Pfarrer Andreas Galbierz gibt die Leitung der Pfarrei St. Laurentius zum 31. Januar 2027 ab</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/pfarrer-galbierz-legt-leitung-st-laurentius-merzenich-zum-31-januar-2027-nieder/</guid>
-<pubDate>Mon, 26 Oct 2026 16:20:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Im Pfarrbrief informiert der Pfarrer die Gemeinden Merzenich und Niederzier persönlich: Auf Bitten des Bistums Aachen legt er die Leitung beider Pfarreien nieder und verlässt Niederzier. Im Pastoralen Raum soll künftig Pfarrer Gerd Kraus aus Vettweiß die Leitung übernehmen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
 </item>
 </channel>

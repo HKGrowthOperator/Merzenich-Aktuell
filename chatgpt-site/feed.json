@@ -15,6 +15,22 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
+      "title": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)",
+      "summary": "Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "content_html": "<p>Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.</p>",
+      "date_published": "2026-11-19T23:47:00+01:00",
+      "date_modified": "2026-11-19T23:47:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg",
+      "tags": [
+        "Blaulicht",
+        "Merzenich",
+        "Feuerwehr",
+        "Rettungsdienst"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
       "title": "Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen",
@@ -492,23 +508,6 @@
         "Energie",
         "Bauausschuss",
         "Gemeinderat"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/karneval-merzenich-2026-2027-termine-sessionseroeffnung-sitzungen-rosenmontag/",
-      "title": "Karneval in Merzenich 2026/27: Die Termine der drei Karnevalsvereine von der Sessionseröffnung bis Rosenmontag",
-      "summary": "Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.",
-      "content_html": "<p>Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.</p>",
-      "date_published": "2026-11-03T18:51:00+01:00",
-      "date_modified": "2026-11-03T18:51:00+01:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-15-30a6b323da.jpg",
-      "tags": [
-        "Vereine",
-        "Merzenich",
-        "Karneval",
-        "KG Jonge vom Berg",
-        "KG Mir hahle Poohl Golzheim"
       ]
     }
   ]

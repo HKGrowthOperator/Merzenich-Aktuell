@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 19 Nov 2026 08:18:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Nov 2026 22:47:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Blaulicht</title><link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/blaulicht/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/</guid>
+<pubDate>Thu, 19 Nov 2026 22:47:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg" medium="image"><media:credit>Frank Vincentz / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rettungswagen im Einsatz</media:description></media:content>
+</item>
 <item>
 <title>Drei Feuerwehreinsätze in Merzenich: Hund aus Gartentor befreit, Wohnung nach Hausnotruf geöffnet</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/feuerwehr-merzenich-hund-gartentor-tierheim-tueroeffnung-steinpfahl-november-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Die Feuerwehr rückte am 20. August mit Vollalarm zu einer Wohnanlage aus. Ursache war ein Topf auf dem Herd.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/technik/technik-18-1eea351292.jpg" medium="image"><media:credit>TWGThewikiguy / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>This is the Prodex firescape, addressable firealarm panel. It is made by Hedegren security</media:description></media:content>
-</item>
-<item>
-<title>Freilaufender Hund an der L264: Feuerwehr bringt ihn ins Tierheim</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-120-hund-l264/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-120-hund-l264/</guid>
-<pubDate>Thu, 20 Aug 2026 09:41:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Bürgewald</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Passanten hatten den Hund am 20. August gesichert. Über den Chip ließ sich kein Halter finden.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/rettung/rettung-02-141ce68b97.jpg" medium="image"><media:credit>Theo Crazzolara / Wikimedia Commons · CC BY-SA 2.0</media:credit><media:description>Katze im Baum</media:description></media:content>
 </item>
 </channel>
 </rss>

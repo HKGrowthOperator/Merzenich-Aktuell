@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-19T09:18:00+01:00",
-  "stand": "2026-11-19T09:18:00+01:00",
+  "generated": "2026-11-19T23:47:00+01:00",
+  "stand": "2026-11-19T23:47:00+01:00",
   "items": [
+    {
+      "title": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
+      "date": "2026-11-19T23:47:00+01:00",
+      "ressort": "blaulicht",
+      "ort": "merzenich",
+      "teaser": "Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-13-f2236bb05e.jpg"
+    },
     {
       "title": "Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Der Aufsteiger aus Merzenich ist seit sechs Spielen ungeschlagen, Golzheim fällt nach dem Remis gegen Welldorf-Güsten auf Platz fünf zurück. Das Ortsderby in Girbelsrath fand nicht statt: Die Gastgeber traten nicht an.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/sport/sport-19-d26a753635.jpg"
-    },
-    {
-      "title": "Merzenich: Schützen in Golzheim beenden nach über 40 Jahren ihre Papiersammlung",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/vereine/papiersammlung-schuetzen-golzheim-endet-vereine-2027-merzenich/",
-      "date": "2026-11-09T18:46:00+01:00",
-      "ressort": "vereine",
-      "ort": "golzheim",
-      "teaser": "Ab dem 1. Januar 2027 übernehmen nach einer Mitteilung im Profil der Gemeinde keine Vereine mehr die Papiersammlungen. Abgestimmt sei das mit der Gemeinde und dem Entsorger Schönmackers.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-20-72a84de410.jpg"
     }
   ],
   "events": [

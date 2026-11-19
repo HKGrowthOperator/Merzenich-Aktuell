@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T08:17:41.986Z",
+  "updatedAt": "2026-11-19T22:48:57.579Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1763,6 +1763,15 @@
       "assignedAt": "2026-11-19T08:17:41.985Z",
       "articleId": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
       "articleDate": "2026-11-19T09:35:00+01:00"
+    },
+    "/blaulicht/einsatz-148-person-hinter-tuer-merzenich/": {
+      "imageId": "web-blaulicht-13-f2236bb0",
+      "pool": "blaulicht",
+      "motiv": "feuerwehrhaus",
+      "regel": "blaulicht.rettung.tuer",
+      "assignedAt": "2026-11-19T22:48:57.579Z",
+      "articleId": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
+      "articleDate": "2026-11-19T23:47:00+01:00"
     }
   }
 }

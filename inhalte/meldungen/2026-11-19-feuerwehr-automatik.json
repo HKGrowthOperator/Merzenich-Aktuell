@@ -1,0 +1,45 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint direkt auf der Seite, sortiert nach relevanz (Entscheidung Luis Kummer 03.11.2026); die Redaktion prüft im nächsten Lauf nach.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-148-person-hinter-tuer-merzenich",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 148/26",
+      "titel": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Donnerstag, 19. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Person hinter Tür“.",
+      "datum": "2026-11-19T23:47:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "fakten": [
+        "Einsatz 148/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Donnerstag, 19. November 2026",
+        "Einsatzort: Merzenich, In der Lohe",
+        "Meldung: Person hinter Tür",
+        "Eingesetzte Kräfte: Löschgruppe Merzenich, Feuerschutztechnisches Zentrum Stockheim, Rettungsdienst"
+      ],
+      "absaetze": [
+        "Einsatzort war Merzenich, In der Lohe. Das Einsatzstichwort lautete „PET“. Im Einsatz waren: Löschgruppe Merzenich, Feuerschutztechnisches Zentrum Stockheim und Rettungsdienst.",
+        "Die Feuerwehr schreibt dazu: „Feuerwehr und Rettungsdienst wurden am Donnerstag Vormittag zu einer Person hinter verschlossener Tür alarmiert. Vor Ort wurde die Wohnungstüre durch die Einsatzkräfte gewaltsam geöffnet.“ Es war der 148. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026.",
+        "Grundlage dieser Meldung ist dem Beitrag der Feuerwehr in der Heimat-Info-App vom 19. November 2026; daraus stammen Einsatzort, Meldebild, Kräfte und die zitierten Sätze. Die Redaktion ergänzt die Meldung, wenn Feuerwehr oder Polizei mehr mitteilen."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ],
+        [
+          "rettungsdienst",
+          "Rettungsdienst"
+        ]
+      ],
+      "bildklasse": "blaulicht.rettung.tuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 19.11.2026",
+        "url": "https://www.heimat-info.de/beitraege/244d1fe4-317b-4fb7-a3c3-4a598bd77832",
+        "stand": "2026-11-19"
+      }
+    }
+  ]
+}

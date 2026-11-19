@@ -30,6 +30,11 @@
       "slug": "einsatz-144-verkehrsunfall-eingeklemmte-person-girbelsrath",
       "datei": "inhalte/meldungen/2026-11-03-feuerwehr-automatik.json",
       "am": "2026-11-03"
+    },
+    "148/26": {
+      "slug": "einsatz-148-person-hinter-tuer-merzenich",
+      "datei": "inhalte/meldungen/2026-11-19-feuerwehr-automatik.json",
+      "am": "2026-11-19"
     }
   },
   "termine": {
