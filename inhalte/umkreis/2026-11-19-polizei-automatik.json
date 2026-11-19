@@ -1,0 +1,37 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Gebrauchtwagen von Händlerparkplatz entwendet",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6394002",
+      "datum": "2026-11-19",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Bargeld aus Aufenthaltsraum gestohlen - die Polizei bittet um Hinweise",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6393890",
+      "datum": "2026-11-19",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Einbruch in Einfamilienhaus - Die Polizei sucht Zeugen",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6393887",
+      "datum": "2026-11-19",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Zeugensuche nach Raub in Düren",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6393886",
+      "datum": "2026-11-19",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

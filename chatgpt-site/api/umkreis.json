@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-18",
+ "stand": "2026-11-19",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,38 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Bargeld aus Aufenthaltsraum gestohlen - die Polizei bittet um Hinweise",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6393890",
+   "datum": "2026-11-19",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Einbruch in Einfamilienhaus - Die Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6393887",
+   "datum": "2026-11-19",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Gebrauchtwagen von Händlerparkplatz entwendet",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6394002",
+   "datum": "2026-11-19",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Zeugensuche nach Raub in Düren",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6393886",
+   "datum": "2026-11-19",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",
