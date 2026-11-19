@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-19-morgens.md",
+  "latest_dossier": "dossiers/2026-11-19-claude-morgens.md",
   "source_check_window": "19.11.2026 Europe/Berlin: Startab07:04; Hauptabrufe07:07:02–07:07:54; neue Dokumente/Gesetze07:08:15; Finanzanlagen07:08:53; öffentlicher Historien-Suchweg07:09:04; Bilder07:09:22/07:09:29 anschließend gesichtet; Commons-Metadaten im Web gegen07:08.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12871,15 +12871,15 @@
       "priority": "P2",
       "location_section": "Gemeinde Merzenich · Rathaus/Finanzen",
       "change_type": "neuer öffentlicher Sachstandsbeleg",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B2",
-      "dossier": "dossiers/2026-11-19-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-19T07:13:43+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-19-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-19 09:23 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-19-recherche-claude-morgens.json → /rathaus/merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neue öffentliche Mitteilung und Finanzanlagen. Planwert der Mitteilung/Erläuterung weicht vom Ansatz der Gesamtergebnisrechnung ab. VorberichtM113/2026 nicht beschafft, keine neue Ergebnisverbesserung gegenüber Vorbericht belegt; keine wesentliche Veränderung laut Verwaltung. Unabhängige zweite Quelle fehlt. Nur Gesamtergebnisrechnung PDF-S.1 der umfangreichen Tabellenanlage ausgewertet, keine Vollprüfung aller Produktseiten.",
+      "implementation_commit": "ab6f7723",
+      "notes": "Neue öffentliche Mitteilung und Finanzanlagen. Planwert der Mitteilung/Erläuterung weicht vom Ansatz der Gesamtergebnisrechnung ab. VorberichtM113/2026 nicht beschafft, keine neue Ergebnisverbesserung gegenüber Vorbericht belegt; keine wesentliche Veränderung laut Verwaltung. Unabhängige zweite Quelle fehlt. Nur Gesamtergebnisrechnung PDF-S.1 der umfangreichen Tabellenanlage ausgewertet, keine Vollprüfung aller Produktseiten. | Claude 19.11. morgens: Kurzmeldung 323 Wörter nach M148/2026, Anmerkungen und Finanzbericht S. 1; Planwertwiderspruch (5.686.372 vs. 6.835.327 Euro) im Text als offene Frage benannt; Haushaltssicherung und Entwurf 2027 (3.12.) aus eigenem Archiv. Offizielle Quelle trägt Kurzmeldung (CLAUDE-LAUF 3.3). Live 09:23 Uhr HTTP 200, Sitemap, „Neu in Merzenich“.",
       "sources": [
         {
           "key": "m148",
@@ -12904,6 +12904,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-19-morgens.md",
           "heading": "THEMENKARTEN"
+        },
+        {
+          "date": "2026-11-19",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-19-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     },
@@ -12912,15 +12918,15 @@
       "priority": "P2",
       "location_section": "Gemeinde Merzenich · Rathaus/Finanzen und Service",
       "change_type": "neuer öffentlicher Sachstandsbeleg",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B2",
-      "dossier": "dossiers/2026-11-19-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-19T07:13:43+01:00",
-      "article_path": null,
+      "dossier": "dossiers/2026-11-19-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-19 09:23 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-19-recherche-claude-morgens.json → /rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Neue kommunale Sachstandsmitteilung/Einnahmenliste. Amtliche Normtexte als zweiter Herausgeber bestätigen nur den Rechtsrahmen, nicht unabhängig örtliche Umsetzung/Bewertungen. Konkrete Satzung/Gebührenbeträge, Liste/Grababräumungen und tatsächliche Umstellung offen. Keine pauschale Verteuerung aller Gebühren oder Steuerquote behaupten.",
+      "implementation_commit": "ab6f7723",
+      "notes": "Neue kommunale Sachstandsmitteilung/Einnahmenliste. Amtliche Normtexte als zweiter Herausgeber bestätigen nur den Rechtsrahmen, nicht unabhängig örtliche Umsetzung/Bewertungen. Konkrete Satzung/Gebührenbeträge, Liste/Grababräumungen und tatsächliche Umstellung offen. Keine pauschale Verteuerung aller Gebühren oder Steuerquote behaupten. | Claude 19.11. morgens: Kurzmeldung 273 Wörter nach M149/2026 und Anlage; keine Preis- oder Gebührenerhöhung behauptet; Gesetzestext nicht selbst gelesen, daher nicht als Beleg. Live 09:23 Uhr HTTP 200, Sitemap, „Neu in Merzenich“.",
       "sources": [
         {
           "key": "m149",
@@ -12945,6 +12951,12 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-19-morgens.md",
           "heading": "THEMENKARTEN"
+        },
+        {
+          "date": "2026-11-19",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-19-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -15415,6 +15427,16 @@
         "BdSt-Vergleich403; historische Originale nicht sämtlich erneut vollständig gelesen; Zuginfo nur Seitentitel",
         "Kein neuer Sitzungs-Ergebnisbeleg vor bevorstehendem HFA; Bauausschuss-Niederschrift/Ratstagesordnung im geprüften Weg nicht neu vorhanden"
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-19-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-19-morgens.md",
+      "implementation_commit": "ab6f7723",
+      "summary": "Zwei Kurzmeldungen zu Mitteilungen für den HFA 19.11.: Haushaltsprognose 2026 (3,4 statt 5,7 Mio. Euro Defizit, Planwertwiderspruch benannt) und Umsatzsteuer der Gemeinde ab 2027; Kalender: zwei neue Seniorentermine 9.12., HFA ergänzt, 20 bestätigt. Mindesttakt 19.11.: 2.",
+      "publication": "Zwei neue Meldungen und zwei neue Termine direkt veröffentlicht"
     }
   ]
 }

@@ -1,6 +1,8 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [18.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-18-claude-nachmittags.md), Vergleichsbasis [ChatGPT 18.11. mittags](dossiers/2026-11-18-mittags.md) und [Claude 18.11. morgens](dossiers/2026-11-18-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [19.11.2026, Claude-Morgenlauf](dossiers/2026-11-19-claude-morgens.md), Vergleichsbasis [ChatGPT 19.11. morgens](dossiers/2026-11-19-morgens.md) und [Claude 18.11. nachmittags](dossiers/2026-11-18-claude-nachmittags.md). Offene Themen: [offen.md](offen.md).
+
+**Umgesetzt am 19.11. morgens:** 2 neue Kurzmeldungen: „Haushalt Merzenich 2026: Verwaltung erwartet 3,4 statt 5,7 Millionen Euro Defizit“ (323 Wörter, M148/2026) und „Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen“ (273 Wörter, M149/2026). Kalender: zwei neue Seniorentermine 9.12., HFA ergänzt, 20 Termine bestätigt. Commits `ab6f7723`, `ae253e38`.
 
 **Umgesetzt am 18.11. nachmittags:** Keine neue Meldung (keine belegbare Nachricht mit Ortsbezug). Korrektur im Bürgewald-Artikel: Bau-Turbo-Zuständigkeit im Außenbereich (Nr. 2.1 und 2.2 der Leitlinien). 20 Termine bis 3.12. bestätigt. Neue Betreiberregel Ortsbezug angewendet. Commits `5b2f625a`, `52700568`.
 
