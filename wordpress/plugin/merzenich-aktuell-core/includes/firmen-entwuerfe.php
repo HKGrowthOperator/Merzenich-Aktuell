@@ -175,7 +175,10 @@ function ma_firmen_datei(string $ordner, string $datei): string {
     if (is_file($pfad)) return $pfad;
     $kopie = trailingslashit((string) wp_upload_dir(null, false)['basedir']) . 'ma-firmen/' . $ordner . '/' . $datei;
     clearstatcache(true, $kopie);
-    if (is_file($kopie) && filemtime($kopie) > time() - DAY_IN_SECONDS) return $kopie;
+    // Kopie gilt einen Tag, aber nie über ein Plugin-Update hinweg (20.11.2026): Ist die mitgelieferte
+    // firmen-entwuerfe.json neuer als die Kopie, kann es ein neu gebautes Video gleichen Namens geben.
+    $stand = (int) @filemtime(MA_CORE_PATH . 'data/firmen-entwuerfe.json');
+    if (is_file($kopie) && filemtime($kopie) > max(time() - DAY_IN_SECONDS, $stand)) return $kopie;
     $sperre = 'ma_firmen_fehlt_' . md5($ordner . '/' . $datei);
     if (get_transient($sperre)) return is_file($kopie) ? $kopie : '';
     $r = wp_remote_get(MA_FIRMEN_REPO_DATEN . $ordner . '/' . rawurlencode($datei), ['timeout' => 30]);

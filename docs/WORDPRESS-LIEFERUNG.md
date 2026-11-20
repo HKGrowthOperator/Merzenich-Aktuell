@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026 abends: Plugin 1.50.2, Videos nach Neubau
+
+- **Fehler behoben:** Anzeigenvideos holt das Plugin aus dem Repository und hält die Kopie einen Tag. Am selben Tag neu gebaute Videos gleichen Namens wurden deshalb nicht übernommen (live liefen nach 1.50.1 neue Standbilder mit alten Videos). Eine Kopie gilt jetzt nur, solange sie jünger ist als die mitgelieferte `data/firmen-entwuerfe.json`; nach jedem Plugin-Update werden die Videos neu geholt (`ma_firmen_datei`, Test in `firmen-datei-test.php`).
 
 ## Neu am 20.11.2026 abends: Plugin 1.50.1, Feinschliff der Werbung
 

@@ -42,6 +42,12 @@ pruefe('zweiter Aufruf: Kopie, kein neuer Abruf', count($GLOBALS['abrufe']), 1);
 touch($kopie, time() - 2 * 86400);
 $GLOBALS['antworten'][$R . 'banner/merzlicht-1.mp4'] = ['code' => 200, 'body' => 'VIDEO2'];
 pruefe('Kopie älter als ein Tag: neu geholt', [ma_firmen_datei('banner', 'merzlicht-1.mp4'), file_get_contents($kopie), count($GLOBALS['abrufe'])], [$kopie, 'VIDEO2', 2]);
+// Plugin-Update am selben Tag (20.11.2026): Video gleichen Namens neu gebaut, die Kopie ist älter als die mitgelieferte Datei.
+@mkdir($tmp . '/plugin/data', 0777, true); file_put_contents($tmp . '/plugin/data/firmen-entwuerfe.json', '{}');
+touch($kopie, time() - 3600); touch($tmp . '/plugin/data/firmen-entwuerfe.json', time() - 60);
+$GLOBALS['antworten'][$R . 'banner/merzlicht-1.mp4'] = ['code' => 200, 'body' => 'VIDEO3'];
+pruefe('Kopie älter als die Firmen-Datei des Plugins: neu geholt', [file_get_contents(ma_firmen_datei('banner', 'merzlicht-1.mp4')), count($GLOBALS['abrufe'])], ['VIDEO3', 3]);
+$GLOBALS['antworten'][$R . 'banner/merzlicht-1.mp4'] = ['code' => 200, 'body' => 'VIDEO2']; file_put_contents($kopie, 'VIDEO2'); @unlink($tmp . '/plugin/data/firmen-entwuerfe.json');
 touch($kopie, time() - 2 * 86400);
 $GLOBALS['antworten'][$R . 'banner/merzlicht-1.mp4'] = new WP_Error();
 pruefe('GitHub antwortet nicht: alte Kopie gilt weiter', [ma_firmen_datei('banner', 'merzlicht-1.mp4'), file_get_contents($kopie)], [$kopie, 'VIDEO2']);
