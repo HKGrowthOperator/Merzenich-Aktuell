@@ -80,7 +80,7 @@ pruefe('ma21_werbung: ohne Plugin oder ohne Anzeige leer', isset($f[1]) && subst
 $js = (string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/assets/ressort-dropdowns.js');
 pruefe('Menü (WordPress): ohne laufende Anzeige keine Musteranzeige', str_contains($js, "if (wp && typeof wp === 'object' && !liste.length) return '';"), true);
 $anz = json_decode((string) file_get_contents(dirname(__DIR__, 2) . '/deploy/anzeigen.json'), true);
-pruefe('statische Kopie: dreizehn echte Motive (seit 02.11.2026 mit drei von HK Growth), Label „Anzeige“, keine Demo-Motive', [count($anz['motive']), $anz['label'], count(array_filter($anz['motive'], fn($m) => str_starts_with($m['id'], 'demo-')))], [13, 'Anzeige', 0]);
+pruefe('statische Kopie: elf echte Motive (drei von HK Growth; KBS seit 20.11.2026 nicht mehr), Label „Anzeige“, keine Demo-Motive', [count($anz['motive']), $anz['label'], count(array_filter($anz['motive'], fn($m) => str_starts_with($m['id'], 'demo-')))], [11, 'Anzeige', 0]);
 pruefe('statische Kopie: kein „Musteranzeige“ auf der Startseite', str_contains((string) file_get_contents(dirname(__DIR__, 2) . '/chatgpt-site/index.html'), 'Musteranzeige'), false);
 
 echo "\nRotation und Video\n";

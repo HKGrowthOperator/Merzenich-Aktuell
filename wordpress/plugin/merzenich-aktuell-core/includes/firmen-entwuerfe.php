@@ -9,8 +9,9 @@
  *   Einwilligung bleibt es Entwurf (Sperre in business.php); die Redaktion setzt
  *   den Haken erst, wenn das Unternehmen zugestimmt hat. Jedes Profil aus der
  *   Datei ist ein Unternehmenskanal (ma_business_kanal), auch ohne Beitrag.
- *   „nur_name“: Profil nur mit dem Namen (keine Adresse, kein Logo, kein
- *   Beitrag), bis der Betreiber Angaben schickt; nichts wird dazu erfunden.
+ *   „nur_name“: Profil ohne belegten Ort und ohne Kontaktangaben; nichts wird
+ *   dazu erfunden. Logo und Beitrag nur, wenn sie vom Unternehmen oder vom
+ *   Betreiber kommen (AJ Sports seit 20.11.2026).
  * - Ein Werbebeitrag je Unternehmen, gesponsert und verknüpft mit dem Profil
  *   (ma_business_id), nicht auf der Startseite, als Entwurf. Kennzeichnung nach
  *   „art“: test (kostenfreier Testeintrag, testeintrag.php), anzeige oder
@@ -408,13 +409,31 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
             if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($pid, 'Logo freigegeben', $nachweis);
         }
     }
-    if ($einwilligung) {
-        // Leere Profilfelder aus der Datei ergänzen (28.10.2026: Merzlicht bekam die Branche erst nach dem Anlegen),
-        // ohne vorhandene Angaben zu überschreiben.
+    // Leere Profilfelder aus der Datei ergänzen (28.10.2026: Merzlicht bekam die Branche erst nach dem Anlegen),
+    // ohne vorhandene Angaben zu überschreiben. Seit 20.11.2026 auch bei einer späteren Logo-Freigabe, wenn die
+    // Einwilligung schon besteht (AJ Sports: Angaben kamen nach der Zusage).
+    $ergaenzen = function () use ($p, $pid): void {
         foreach (['branche', 'ortsteil', 'ort', 'adresse', 'telefon', 'email', 'website'] as $feld) {
             $wert = (string) ($p[$feld] ?? '');
             if ($wert !== '' && (string) get_post_meta($pid, 'ma_business_' . $feld, true) === '') update_post_meta($pid, 'ma_business_' . $feld, $wert);
         }
+    };
+    // Der Werbebeitrag (erster Beitrag der Datei) geht zur Prüfung in die Freigaben; dort setzt die Redaktion die
+    // Prüfhäkchen und veröffentlicht (Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf (Review 20.10.2026).
+    $vorlegen = function () use ($f, $pid, $name, $nachweis, &$log): void {
+        $bid = ma_firmen_vorhanden('post', (string) ($f['beitrag']['slug'] ?? ''));
+        if ($bid && get_post_status($pid) === 'publish' && get_post_status($bid) === 'draft') {
+            wp_update_post(['ID' => $bid, 'post_status' => 'pending']);
+            $log[] = $name . ': Werbebeitrag liegt in den Freigaben zur Prüfung.';
+            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Zur Freigabe vorgelegt', 'Einwilligung des Unternehmens eingetragen: ' . $nachweis);
+        }
+    };
+    if (!$einwilligung && (string) get_post_meta($pid, 'ma_business_consent', true) === '1') {
+        $ergaenzen();
+        $vorlegen();
+    }
+    if ($einwilligung) {
+        $ergaenzen();
         if ((string) get_post_meta($pid, 'ma_business_consent', true) !== '1') {
             update_post_meta($pid, 'ma_business_consent', '1');
             update_post_meta($pid, 'ma_business_consent_by', $wer);
@@ -426,14 +445,7 @@ function ma_firmen_zusage_eintragen(string $slug, string $nachweis, bool $einwil
             $r = wp_update_post(['ID' => $pid, 'post_status' => 'publish'], true);
             $log[] = $name . (!is_wp_error($r) && get_post_status($pid) === 'publish' ? ': Einwilligung eingetragen, Profil veröffentlicht.' : ': Einwilligung eingetragen, Profil aber nicht veröffentlicht.');
         } else $log[] = $name . ': Einwilligung eingetragen, Profil war schon veröffentlicht.';
-        // Der Werbebeitrag (erster Beitrag der Datei) geht zur Prüfung in die Freigaben; dort setzt die Redaktion die
-        // Prüfhäkchen und veröffentlicht (Sperre in freigabe.php). Zusatzbeiträge bleiben Entwurf (Review 20.10.2026).
-        $bid = ma_firmen_vorhanden('post', (string) ($f['beitrag']['slug'] ?? ''));
-        if ($bid && get_post_status($pid) === 'publish' && get_post_status($bid) === 'draft') {
-            wp_update_post(['ID' => $bid, 'post_status' => 'pending']);
-            $log[] = $name . ': Werbebeitrag liegt in den Freigaben zur Prüfung.';
-            if (function_exists('ma_verlauf_eintragen')) ma_verlauf_eintragen($bid, 'Zur Freigabe vorgelegt', 'Einwilligung des Unternehmens eingetragen: ' . $nachweis);
-        }
+        $vorlegen();
         // Werbebanner erst, wenn das Profil veröffentlicht ist (Einwilligung wirksam).
         if (get_post_status($pid) === 'publish') $log = array_merge($log, ma_firmen_banner_anlegen($f, $pid));
     }

@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-18. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.7 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.8 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026: Plugin 1.48.8, KBS als Firma raus, AJ Sports mit Logo und Trikot-Beitrag
+
+Auftrag des Betreibers: Die Einträge von KBS als Firma gehen raus; Impressum, Datenschutz, Kontaktadresse und Fuß bleiben. AJ Sports bekommt Logo, Beitrag und neue Werbung.
+- **Plugin 1.48.8:**
+  - `data/firmen-entwuerfe.json`: KBS unter `frueher`; Logo und Banner von KBS sind entfernt.
+  - AJ Sports bekommt Logo (`data/logos/aj-sports.png`, vom Betreiber), Branche, den Beitrag `aj-sports-neue-trikotlinie-sc-merzenich` und Anzeige 1 mit dem Trikot-Motiv (`data/banner/aj-sports-1-v3*`).
+  - „Zusage eintragen“ ergänzt bei schon eingetragener Einwilligung auch mit dem Logo-Haken leere Profilfelder und legt den Werbebeitrag in die Freigaben.
+- **Statische Kopie:** KBS-Anzeigen aus `deploy/anzeigen.json` und `site-source` entfernt; Anzeige `aj-sports-1` mit dem Trikot.
+- **Bild:** KI-Visualisierung eines Trikots des SC 1919 Merzenich mit Wappen (Einverständnis des Vereins laut Betreiber) und AJ-Sports-Logo. Im Bild steht „KI-Visualisierung · Entwurf“, dazu Bildnachweis und Text; Originale liegen in `artifacts/firmen/`.
 
 ## Neu am 18.11.2026: Plugin 1.48.7, Ortsbezug
 

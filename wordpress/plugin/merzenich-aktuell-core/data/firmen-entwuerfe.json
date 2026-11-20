@@ -1,6 +1,6 @@
 {
-  "stand": "2026-11-02",
-  "hinweis": "Fünf Unternehmen (Auftrag Betreiber 24.10. und 28.10.2026, ersetzen Bäckerei Wirtz, Hasberg und Porschen Media), dazu seit 02.11.2026 das HK Growth Webstudio (Auftrag Betreiber: nur Webstudio, Kennzeichnung „Anzeige“, Profil und Anzeigen; Angaben von hk-growthoperator.de; die Webstudio-Seite lag bis 12.11.2026 unter website.hk-growthoperator.de). Stammdaten von Almera Clean, KBS Management und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall; von AJ Sports liegt nur der Name vor. Werbung für alle fünf (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
+  "stand": "2026-11-20",
+  "hinweis": "Unternehmen auf Merzenich Aktuell (Aufträge Betreiber 24.10., 28.10. und 02.11.2026; Bäckerei Wirtz, Hasberg und Porschen Media sind früher eingetragene Betriebe). KBS Management als Firma am 20.11.2026 zurückgezogen (Auftrag Betreiber: nur die Einträge als Firma, Impressum bleibt); Profil, Beitrag und Anzeigen gehen mit „Firma zurückziehen“ auf Entwurf. HK Growth Webstudio seit 02.11.2026 (nur Webstudio, Kennzeichnung „Anzeige“, Angaben von hk-growthoperator.de; die Webstudio-Seite lag bis 12.11.2026 unter website.hk-growthoperator.de). Stammdaten von Almera Clean und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall. AJ Sports seit 20.11.2026 mit Logo und Beitrag zur neuen Trikotlinie für den SC 1919 Merzenich (Angaben und Logo laut Betreiber, Bild als KI-Visualisierung gekennzeichnet); Ort und Kontakt liegen noch nicht vor, daher weiter „nur_name“ (kein Ort, keine Kontaktangaben). Werbung (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
     "tage": 30,
@@ -18,6 +18,10 @@
     {
       "slug": "porschen-media-girbelsrath",
       "titel": "Porschen Media"
+    },
+    {
+      "slug": "kbs-management",
+      "titel": "KBS Management GmbH"
     }
   ],
   "firmen": [
@@ -99,92 +103,6 @@
           "alt": "Wischmopp, Eimer mit Reinigungsmitteln und Reinigung eines Tisches",
           "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026",
           "quelle": "https://www.almera-clean.de/",
-          "stand": "2026-11-02c"
-        }
-      ]
-    },
-    {
-      "art": "eigen",
-      "herausgeberin": true,
-      "profil": {
-        "slug": "kbs-management",
-        "titel": "KBS Management GmbH",
-        "firmenname": "KBS Management GmbH",
-        "branche": "App- und Softwareentwicklung",
-        "ortsteil": "",
-        "ort": "Leverkusen",
-        "adresse": "Rheinstr. 78a, 51371 Leverkusen",
-        "telefon": "",
-        "email": "info@kbs-management.tv",
-        "website": "https://kbs-management.tv/",
-        "oeffnungszeiten": "",
-        "quelle": "Angaben laut kbs-management.tv (Startseite und Impressum), geprüft am 24.10.2026",
-        "quellen": [
-          "https://kbs-management.tv/",
-          "https://kbs-management.tv/impressum/"
-        ],
-        "kurz": "Beratungsunternehmen aus Leverkusen für App- und Softwareentwicklung, Broadcast- und IT-Beratung. Herausgeberin von Merzenich Aktuell.",
-        "text": "Die KBS Management GmbH aus Leverkusen entwickelt nach eigenen Angaben Apps und Software für Mobilgeräte, Web und Desktop und berät zu Broadcast- und IT-Themen. Zu ihren Projekten zählen laut Website unter anderem CRM- und ERP-Systeme sowie Plattformen für Video auf Abruf. Die KBS Management GmbH ist die Herausgeberin von Merzenich Aktuell.",
-        "karte": {
-          "knopf": "KBS Management entdecken",
-          "ziel": "https://kbs-management.tv/"
-        },
-        "logo": {
-          "quelle": "https://kbs-management.tv/wp-content/themes/kbs/kbs-logo.png",
-          "art": "PNG von der Unternehmenswebsite (weiß), für helle Flächen dunkel eingefärbt und zugeschnitten",
-          "rechte": "offen",
-          "alt": "Logo KBS Management GmbH",
-          "datei": "kbs-management.png"
-        }
-      },
-      "beitrag": {
-        "slug": "kbs-management-apps-software-it-beratung",
-        "titel": "Apps, Software und IT-Beratung: KBS Management aus Leverkusen",
-        "anriss": "In eigener Sache: Die KBS Management GmbH, Herausgeberin von Merzenich Aktuell, entwickelt Apps und Software und berät zu Broadcast- und IT-Themen.",
-        "absaetze": [
-          "<strong>In eigener Sache:</strong> Die KBS Management GmbH ist die Herausgeberin von Merzenich Aktuell. An dieser Stelle stellt sie ihre Arbeit vor.",
-          "Das Unternehmen mit Sitz in der Rheinstraße in Leverkusen entwickelt nach eigenen Angaben Anwendungen für Mobilgeräte, Web und Desktop sowie Software nach Maß. Dazu kommen Beratung zu Broadcast-Technik und zur Verbreitung von Inhalten sowie IT-Beratung.",
-          "Zu den Projekten zählen laut Website unter anderem CRM- und ERP-Systeme und Plattformen für Video auf Abruf.",
-          "<strong>Kontakt:</strong> Rheinstr. 78a, 51371 Leverkusen, E-Mail info@kbs-management.tv."
-        ],
-        "knopf": {
-          "text": "KBS Management besuchen",
-          "ziel": "https://kbs-management.tv/"
-        },
-        "seo_titel": "KBS Management GmbH: Apps, Software und IT-Beratung",
-        "seo_beschreibung": "KBS Management GmbH aus Leverkusen, Herausgeberin von Merzenich Aktuell: App- und Softwareentwicklung, Broadcast- und IT-Beratung.",
-        "quelle": "https://kbs-management.tv/"
-      },
-      "werbung": {
-        "max": 5
-      },
-      "anzeigen": [
-        {
-          "id": "kbs-management-1",
-          "zeile": "KBS Management · in eigener Sache",
-          "titel": "Apps und Software nach Maß.",
-          "text": "App- und Softwareentwicklung aus Leverkusen, von der Herausgeberin von Merzenich Aktuell.",
-          "bild": "kbs-management-1-v2.jpg",
-          "video": "kbs-management-1-v2.mp4",
-          "bild_breit": "kbs-management-1-v2-breit.jpg",
-          "video_breit": "kbs-management-1-v2-breit.mp4",
-          "alt": "Animiertes Logo von KBS Management",
-          "nachweis": "Animation: KBS Management (Website des Unternehmens)",
-          "quelle": "https://kbs-management.tv/",
-          "stand": "2026-11-02c"
-        },
-        {
-          "id": "kbs-management-2",
-          "zeile": "KBS Management · in eigener Sache",
-          "titel": "Broadcast- und IT-Beratung.",
-          "text": "Für Sender, Videoplattformen und Medienhäuser.",
-          "bild": "kbs-management-2-v2.jpg",
-          "video": "kbs-management-2-v2.mp4",
-          "bild_breit": "kbs-management-2-v2-breit.jpg",
-          "video_breit": "kbs-management-2-v2-breit.mp4",
-          "alt": "Mischpult in einem Fernsehstudio",
-          "nachweis": "Foto: KBS Management (Website des Unternehmens)",
-          "quelle": "https://kbs-management.tv/",
           "stand": "2026-11-02c"
         }
       ]
@@ -337,16 +255,23 @@
         "slug": "aj-sports",
         "titel": "AJ Sports",
         "firmenname": "AJ Sports Entertainment",
-        "branche": "",
+        "branche": "Trikots und Sportbekleidung",
         "ortsteil": "",
         "adresse": "",
         "telefon": "",
         "email": "",
         "website": "",
         "oeffnungszeiten": "",
-        "quelle": "Name laut Betreiber (Auftrag 24.10.2026); weitere Angaben folgen",
-        "kurz": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen.",
-        "text": "AJ Sports Entertainment ist auf Merzenich Aktuell mit Anzeigen vertreten. Weitere Angaben zum Unternehmen folgen."
+        "quelle": "Angaben laut Betreiber (Aufträge 24.10. und 20.11.2026): neue Trikotlinie für den SC 1919 Merzenich, Logo vom Betreiber übermittelt; Ort und Kontakt liegen noch nicht vor",
+        "kurz": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich und ist auf Merzenich Aktuell mit Anzeigen vertreten.",
+        "text": "AJ Sports Entertainment arbeitet an einer neuen Trikotlinie für den SC 1919 Merzenich, mit Einverständnis des Vereins. Ein erster Entwurf ist als KI-Visualisierung im Unternehmenskanal zu sehen. Ort und Kontakt des Unternehmens folgen.",
+        "logo": {
+          "quelle": "Logo-Datei vom Betreiber übermittelt (20.11.2026)",
+          "art": "PNG, schwarze Schrift; weißer Rand abgeschnitten, Hintergrund durchsichtig, Form und Farbe unverändert",
+          "rechte": "offen",
+          "alt": "Logo AJ Sports",
+          "datei": "aj-sports.png"
+        }
       },
       "werbung": {
         "max": 5
@@ -354,18 +279,19 @@
       "anzeigen": [
         {
           "id": "aj-sports-1",
-          "zeile": "AJ Sports",
-          "titel": "AJ Sports Entertainment",
-          "text": "Partner des Sports und von Merzenich Aktuell.",
-          "bild": "aj-sports-1-v2.jpg",
-          "video": "aj-sports-1-v2.mp4",
-          "bild_breit": "aj-sports-1-v2-breit.jpg",
-          "video_breit": "aj-sports-1-v2-breit.mp4",
-          "alt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+          "zeile": "AJ Sports · Neue Trikotlinie",
+          "titel": "Neue Trikotlinie für den SC Merzenich.",
+          "text": "Erster Entwurf von AJ Sports Entertainment, als KI-Bild gezeigt.",
+          "bild": "aj-sports-1-v3.jpg",
+          "video": "aj-sports-1-v3.mp4",
+          "bild_breit": "aj-sports-1-v3-breit.jpg",
+          "video_breit": "aj-sports-1-v3-breit.mp4",
+          "alt": "Rotes Trikot des SC 1919 Merzenich mit Wappen und AJ-Sports-Logo, Entwurf (KI-Bild)",
+          "nachweis": "KI-Bild (Entwurf), erstellt für AJ Sports Entertainment",
           "ki": true,
-          "knopf": "Zum Profil",
-          "stand": "2026-11-02c"
+          "knopf": "Zum Beitrag",
+          "stand": "2026-11-20",
+          "ziel": "https://merzenich-aktuell.de/wirtschaft/aj-sports-neue-trikotlinie-sc-merzenich/"
         },
         {
           "id": "aj-sports-2",
@@ -382,7 +308,24 @@
           "knopf": "Zum Profil",
           "stand": "2026-11-02c"
         }
-      ]
+      ],
+      "beitrag": {
+        "slug": "aj-sports-neue-trikotlinie-sc-merzenich",
+        "titel": "Neue Trikotlinie für den SC Merzenich: AJ Sports zeigt einen ersten Entwurf",
+        "anriss": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich. Ein erster Entwurf als KI-Visualisierung zeigt die Richtung: Rot, Weiß und Schwarz aus dem Vereinswappen.",
+        "absaetze": [
+          "AJ Sports Entertainment arbeitet an einer neuen Trikotlinie für den SC 1919 Merzenich. Der Verein ist mit dem Vorhaben einverstanden, auch damit, dass sein Wappen auf den Entwürfen steht.",
+          "Das Bild zu diesem Beitrag ist eine <strong>KI-Visualisierung</strong> und kein Foto eines fertigen Trikots. Es zeigt, in welche Richtung die Gestaltung gehen kann. Schnitt, Stoff und Einzelheiten des fertigen Trikots können davon abweichen.",
+          "Entstanden ist die Visualisierung für diesen Beitrag mit einem KI-Bildprogramm. Als Vorlagen dienten das Wappen des Vereins und das Logo von AJ Sports, damit beide so aussehen wie im Original.",
+          "Die Farben stammen aus dem Wappen des Vereins: kräftiges Rot als Grundfarbe, dazu Weiß und Schwarz. Der Entwurf hat einen weißen V-Kragen mit schwarzem Innenrand und weiße Bündchen an den Ärmeln. An den Seiten laufen weiße Einsätze mit schwarz-weißen Schrägstreifen; sie greifen den gestreiften Schild aus dem Wappen auf. Im Rot der Vorderseite liegt ein feines Streifenmuster.",
+          "Auf der linken Brust sitzt das Wappen als gesticktes Abzeichen: der rote Ring mit „Sport-Club 1919“ und „Merzenich“, darin der rote Schild mit dem weißen Doppeladler und der schwarz-weiß gestreifte Schild. Auf der rechten Brust steht das Logo von AJ Sports.",
+          "Der SC 1919 Merzenich ist der größte Sportverein der Gemeinde. Laut Verein hat er 17 Mannschaften, 14 davon im Juniorenbereich; die erste Mannschaft spielt in der Kreisliga A. Zu Hause ist der Verein auf dem Sportplatz am Bürgewaldzentrum, wo seit Juni 2025 eine Videowall steht, die Spielstände und Ergebnisse zeigen kann.",
+          "Für welche Mannschaften die neue Trikotlinie gedacht ist, wann sie fertig ist und wie Mitglieder und Eltern bestellen können, liegt noch nicht vor. Neue Angaben von AJ Sports erscheinen hier im Unternehmenskanal."
+        ],
+        "seo_titel": "Neue Trikotlinie für den SC Merzenich: Entwurf von AJ Sports",
+        "seo_beschreibung": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich. Erster Entwurf als KI-Visualisierung in Rot, Weiß und Schwarz.",
+        "quelle": "https://www.scmerzenich.de/"
+      }
     },
     {
       "art": "anzeige",

@@ -65,9 +65,9 @@ console.log('Auswahl (reine Funktionen)');
   pruefe('Nächste: eine Firma allein dreht weiter', wahl.naechste(['a', 'a'], 0, []), 1);
 }
 
-console.log('Rotation über alle Plätze (6 Firmen, 13 Anzeigen, 8 Plätze, 200 Wechsel)');
+console.log('Rotation über alle Plätze (5 Firmen, 11 Anzeigen, 8 Plätze, 200 Wechsel)');
 // Reihenfolge wie vom Server (gemischt): nie zwei gleiche nebeneinander.
-const reihe = ['hk', 'alm', 'kbs', 'ass', 'mer', 'aj', 'hk', 'alm', 'kbs', 'ass', 'mer', 'aj', 'hk'];
+const reihe = ['hk', 'alm', 'ass', 'mer', 'aj', 'hk', 'alm', 'ass', 'mer', 'aj', 'hk'];
 for (const zufall of [[0], [0.5], [0.13, 0.77, 0.41, 0.9, 0.05, 0.62, 0.33, 0.21]]) {
   const w = welt(Array.from({ length: 8 }, () => reihe), zufall);
   const start = w.sicht();
@@ -78,9 +78,9 @@ for (const zufall of [[0], [0.5], [0.13, 0.77, 0.41, 0.9, 0.05, 0.62, 0.33, 0.21
     w.takt();
     const jetzt = w.sicht();
     jetzt.forEach((f, i) => { if (f === vorher[i]) gleichNacheinander++; });
-    // Mehr Plätze (8) als Firmen (6): zwei Paare dürfen sich teilen, mehr nicht.
+    // Mehr Plätze (8) als Firmen (5): drei Paare dürfen sich teilen, mehr nicht.
     const doppelt = jetzt.length - new Set(jetzt).size;
-    if (doppelt > jetzt.length - 6) gleichzeitig++;
+    if (doppelt > jetzt.length - 5) gleichzeitig++;
     vorher = jetzt;
   }
   pruefe(`Zufall ${JSON.stringify(zufall).slice(0, 20)}: Start ohne gleiche Firma auf Nachbarplätzen`, nachbarnGleich, 0);

@@ -158,13 +158,6 @@
     "enabled": true,
     "banners": [
       {
-        "id": "kbs",
-        "name": "KBS Management GmbH",
-        "url": "https://kbs-management.tv/",
-        "image": "",
-        "alt": "KBS Management GmbH — Consulting, Leverkusen"
-      },
-      {
         "id": "aj",
         "name": "AJ Sports Entertainment",
         "url": "",

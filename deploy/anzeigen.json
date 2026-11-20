@@ -17,19 +17,6 @@
       "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
     },
     {
-      "id": "kbs-management-1",
-      "kunde": "KBS Management GmbH",
-      "typ": "firma",
-      "eyebrow": "KBS Management · in eigener Sache",
-      "headline": "Apps und Software nach Maß.",
-      "text": "App- und Softwareentwicklung aus Leverkusen, von der Herausgeberin von Merzenich Aktuell.",
-      "cta": "Website",
-      "ziel": "https://kbs-management.tv/",
-      "bild": "/assets/anzeigen/kbs-management-1-v2.jpg",
-      "bildAlt": "Animiertes Logo von KBS Management",
-      "nachweis": "Animation: KBS Management (Website des Unternehmens)"
-    },
-    {
       "id": "ass-elektrotechnik-1",
       "kunde": "ASS Elektrotechnik",
       "typ": "firma",
@@ -60,14 +47,14 @@
       "id": "aj-sports-1",
       "kunde": "AJ Sports Entertainment",
       "typ": "firma",
-      "eyebrow": "AJ Sports",
-      "headline": "AJ Sports Entertainment",
-      "text": "Partner des Sports und von Merzenich Aktuell.",
+      "eyebrow": "AJ Sports · Neue Trikotlinie",
+      "headline": "Neue Trikotlinie für den SC Merzenich.",
+      "text": "Erster Entwurf von AJ Sports Entertainment, als KI-Bild gezeigt.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
-      "bild": "/assets/anzeigen/aj-sports-1-v2.jpg",
-      "bildAlt": "Zuschauer am Flutlichtplatz am Abend (KI-Bild)",
-      "nachweis": "KI-Bild (Symbolbild), erstellt für Merzenich Aktuell",
+      "bild": "/assets/anzeigen/aj-sports-1-v3.jpg",
+      "bildAlt": "Rotes Trikot des SC 1919 Merzenich mit Wappen und AJ-Sports-Logo, Entwurf (KI-Bild)",
+      "nachweis": "KI-Bild (Entwurf), erstellt für AJ Sports Entertainment",
       "ki": true
     },
     {
@@ -82,19 +69,6 @@
       "bild": "/assets/anzeigen/almera-clean-2-v2.jpg",
       "bildAlt": "Wischmopp, Eimer mit Reinigungsmitteln und Reinigung eines Tisches",
       "nachweis": "Foto: Almera Clean (Website des Unternehmens), Nutzung mit Zusage laut Betreiber, 28.10.2026"
-    },
-    {
-      "id": "kbs-management-2",
-      "kunde": "KBS Management GmbH",
-      "typ": "firma",
-      "eyebrow": "KBS Management · in eigener Sache",
-      "headline": "Broadcast- und IT-Beratung.",
-      "text": "Für Sender, Videoplattformen und Medienhäuser.",
-      "cta": "Website",
-      "ziel": "https://kbs-management.tv/",
-      "bild": "/assets/anzeigen/kbs-management-2-v2.jpg",
-      "bildAlt": "Mischpult in einem Fernsehstudio",
-      "nachweis": "Foto: KBS Management (Website des Unternehmens)"
     },
     {
       "id": "ass-elektrotechnik-2",
