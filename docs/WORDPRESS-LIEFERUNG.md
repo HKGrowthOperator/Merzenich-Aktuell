@@ -9,7 +9,7 @@ Auftrag des Betreibers: Die Einträge von KBS als Firma gehen raus; Impressum, D
   - `data/firmen-entwuerfe.json`: KBS unter `frueher`; Logo und Banner von KBS sind entfernt.
   - AJ Sports bekommt Logo (`data/logos/aj-sports.png`, vom Betreiber), Branche, den Beitrag `aj-sports-neue-trikotlinie-sc-merzenich` und Anzeige 1 mit dem Trikot-Motiv (`data/banner/aj-sports-1-v3*`).
   - „Zusage eintragen“ ergänzt bei schon eingetragener Einwilligung auch mit dem Logo-Haken leere Profilfelder und legt den Werbebeitrag in die Freigaben.
-- **Plugin 1.48.9:** Die Trikot-Anzeige hat den eigenen Schlüssel `aj-sports-trikot`. Die bisherige Anzeige 1 von AJ Sports galt als im Backend bearbeitet (Pausieren am 02. und 10.11.), deshalb legt „Fehlende Entwürfe anlegen“ die neue Anzeige an und schaltet die alte ab.
+- **Plugin 1.48.9:** Die Trikot-Anzeige hat den eigenen Schlüssel `aj-sports-trikot`; „Fehlende Entwürfe anlegen“ hat sie neu angelegt (ID 4557008) und die bisherige Anzeige 1 abgeschaltet. Die alte Anzeige (ID 4556726) steht auf Entwurf; gelöscht ist nichts.
 - **Statische Kopie:** KBS-Anzeigen aus `deploy/anzeigen.json` und `site-source` entfernt; Anzeige `aj-sports-1` mit dem Trikot.
 - **Bild:** KI-Visualisierung eines Trikots des SC 1919 Merzenich mit Wappen (Einverständnis des Vereins laut Betreiber) und AJ-Sports-Logo. Im Bild steht „KI-Visualisierung · Entwurf“, dazu Bildnachweis und Text; Originale liegen in `artifacts/firmen/`.
 
