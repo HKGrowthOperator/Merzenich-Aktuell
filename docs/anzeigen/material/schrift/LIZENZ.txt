@@ -1,0 +1,6 @@
+Schriften für die Anzeigen (docs/anzeigen/bauen.mjs, Stil „marke“), Stand 20.11.2026.
+Alle unter der SIL Open Font License 1.1 (https://openfontlicense.org), geladen über Google Fonts (Latin-Teilmenge):
+  poppins-600/700/800.woff2   Poppins (Indian Type Foundry)      ASS Elektrotechnik, Merzlicht
+  raleway.woff2               Raleway (variabel)                 Almera Clean (Schrift der Firmenwebsite)
+  barlowcondensed-700/800     Barlow Condensed (Jeremy Tribby)   AJ Sports
+  inter.woff2, fraunces.woff2 Inter, Fraunces (variabel)         HK Growth Webstudio (Schriften der Firmenwebsite)

@@ -1,17 +1,119 @@
 {
-  "hinweis": "Anzeigenvideos, zweite Fassung (02.11.2026), gebaut von docs/anzeigen/bauen.mjs in 16:9 und breit (3,5 : 1). bilder = [Datei in docs/anzeigen/material, Fokuspunkt \"x% y%\", Bewegung heran|schwenk|schwenk-|zurueck]. flaechen = leuchtende Bildschirme als Vielecke [[x, y], ...], lichter = [x, y, radius], alles in Prozent des Fotos. crf = Qualität (höher = kleinere Datei, Standard 28). nur = nur dieses Format bauen. Seit 20.11.2026 sind alle Firmenmotive außer HK Growth mit Higgsfield erzeugt (Bild GPT Image 2.6, Video Kling 3.0, Stil film mit standbild_bild) und als KI-Bild gekennzeichnet; HK Growth zeigt Ansichten der eigenen Website.",
-  "dauer": 8,
-  "motive": [
-    {"id": "almera-clean-fenster", "stil": "film", "video": "ki/almera-clean-fenster.mp4", "standbild_bild": "ki/almera-clean-fenster-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "50% 22%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "almera-clean-waesche", "stil": "film", "video": "ki/almera-clean-waesche.mp4", "standbild_bild": "ki/almera-clean-waesche-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "50% 62%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "ass-elektrotechnik-verteiler", "stil": "film", "video": "ki/ass-elektrotechnik-verteiler.mp4", "standbild_bild": "ki/ass-elektrotechnik-verteiler-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "45% 45%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "ass-elektrotechnik-licht", "stil": "film", "video": "ki/ass-elektrotechnik-licht.mp4", "standbild_bild": "ki/ass-elektrotechnik-licht-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "60% 45%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "merzlicht-videowall", "stil": "film", "video": "ki/merzlicht-videowall.mp4", "standbild_bild": "ki/merzlicht-videowall-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "45% 40%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "merzlicht-spieltag", "stil": "film", "video": "ki/merzlicht-spieltag.mp4", "standbild_bild": "ki/merzlicht-spieltag-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "62% 42%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "aj-sports-flutlicht", "stil": "film", "video": "ki/aj-sports-flutlicht.mp4", "standbild_bild": "ki/aj-sports-flutlicht-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "40% 55%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "aj-sports-trikot", "stil": "film", "video": "ki/aj-sports-trikot.mp4", "standbild_bild": "ki/aj-sports-trikot-bild.jpg", "ab": 0, "bis": 4.8, "ueberblendung": 0.2, "start": 0.2, "standbild": 0, "fps": 24, "fokus": "50% 6%", "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"},
-    {"id": "hk-growth-webstudio-1", "stil": "geraet", "nur": "breit", "bild": "hk/desktop.jpg", "handy": "hk/handy.jpg", "lauf": 1400},
-    {"id": "hk-growth-webstudio-anfragen", "stil": "geraet", "nur": "breit", "bild": "hk/anfragen.jpg", "handy": "hk/handy.jpg", "handyStart": 200},
-    {"id": "hk-growth-webstudio-automation", "stil": "geraet", "nur": "breit", "bild": "hk/automation.jpg", "handy": "hk/handy.jpg", "handyStart": 580}
-  ]
+ "hinweis": "Anzeigenvideos, gebaut von docs/anzeigen/bauen.mjs in 16:9 und breit (3,5 : 1). Seit 20.11.2026 (Vorgabe Betreiber: echt statt gestellt) Stil marke: echte Firmenfotos, wo es sie gibt, sonst Logo, Firmenfarben und Schrift der Firmenwebsite, Layouts in docs/anzeigen/marken.mjs, keine KI-Szenen. Ausnahme aj-sports-trikot: KI-Entwurf des Trikots (Stil film, gekennzeichnet). bilder/bild = Datei in docs/anzeigen/material, fokus = Ausschnitt „x% y%“, zentrum = Ziel der Kamerafahrt im Foto, zoom = Stärke der Fahrt, panel = Farbfläche mit Logo im breiten Format. nur = nur dieses Format bauen.",
+ "dauer": 8,
+ "motive": [
+  {
+   "id": "ass-elektrotechnik-wagen",
+   "stil": "marke",
+   "layout": "foto",
+   "bild": "ass/wagen.jpg",
+   "fokus": "50% 60%",
+   "zentrum": "40% 46%",
+   "zoom": 1.07,
+   "panel": {
+    "farbe": "#1b365d",
+    "logo": "logos/ass-weiss.png",
+    "logo_h": 150,
+    "zeile": "Am Dürener Weg · Düren",
+    "breite": 1.25
+   },
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Foto von asselektrotechnik.de (Firmenwagen), Logo und Firmenblau"
+  },
+  {
+   "id": "ass-elektrotechnik-team",
+   "stil": "marke",
+   "layout": "foto",
+   "bild": "ass/ruecken.jpg",
+   "fokus": "64% 40%",
+   "zentrum": "64% 72%",
+   "zoom": 1.1,
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Foto von asselektrotechnik.de (Monteur im Firmenshirt, von hinten)",
+   "panel": {
+    "farbe": "#1b365d",
+    "logo": "logos/ass-weiss.png",
+    "logo_h": 150,
+    "zeile": "Beratung und Planung",
+    "breite": 1.25,
+    "seite": "rechts"
+   }
+  },
+  {
+   "id": "almera-clean-leistungen",
+   "stil": "marke",
+   "layout": "almera",
+   "variante": "leistungen",
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Logo, Farben und Schrift der Firmenwebsite, Leistungen und Anschrift laut Profil"
+  },
+  {
+   "id": "almera-clean-kontakt",
+   "stil": "marke",
+   "layout": "almera",
+   "variante": "kontakt",
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Logo, Farben und Schrift der Firmenwebsite, Telefon laut Firmenwebsite"
+  },
+  {
+   "id": "merzlicht-wand",
+   "stil": "marke",
+   "layout": "merzlicht_wand",
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Videowall als Zeichnung, Logo von hk-growthoperator.de; echtes Foto der Wall folgt vom Betreiber"
+  },
+  {
+   "id": "merzlicht-marke",
+   "stil": "marke",
+   "layout": "merzlicht_marke",
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Logo von hk-growthoperator.de, Angebot und Ort laut Profil"
+  },
+  {
+   "id": "aj-sports-marke",
+   "stil": "marke",
+   "layout": "aj",
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Logo AJ Sports (vom Betreiber), Streifen wie am Trikot-Entwurf"
+  },
+  {
+   "id": "hk-growth-webstudio-verein",
+   "stil": "marke",
+   "layout": "hk_referenz",
+   "bild": "hk/ccrr-desktop.jpg",
+   "handy": "hk/ccrr-handy.jpg",
+   "adresse": "ccrr.de",
+   "lauf": 1500,
+   "handyLauf": 900,
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): echte Website ccrr.de (Referenz auf hk-growthoperator.de), Bildschirmfoto 20.11.2026",
+   "crf": 31
+  },
+  {
+   "id": "hk-growth-webstudio-shop",
+   "stil": "marke",
+   "layout": "hk_referenz",
+   "bild": "hk/plant-desktop.jpg",
+   "handy": "hk/plant-handy.jpg",
+   "adresse": "plantceylon.com",
+   "lauf": 1500,
+   "handyLauf": 900,
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): echte Website plantceylon.com (Referenz auf hk-growthoperator.de), Bildschirmfoto 20.11.2026",
+   "crf": 31
+  },
+  {
+   "id": "aj-sports-trikot",
+   "stil": "film",
+   "video": "ki/aj-sports-trikot.mp4",
+   "standbild_bild": "ki/aj-sports-trikot-bild.jpg",
+   "ab": 0,
+   "bis": 4.8,
+   "ueberblendung": 0.2,
+   "start": 0.2,
+   "standbild": 0,
+   "fps": 24,
+   "fokus": "50% 6%",
+   "hinweis": "Higgsfield 20.11.2026: Bild GPT Image 2.6, Video Kling 3.0 (5 s, Start- gleich Endbild), KI-Bild gekennzeichnet"
+  },
+  {
+   "id": "hk-growth-webstudio-anfragen",
+   "stil": "geraet",
+   "nur": "breit",
+   "bild": "hk/anfragen.jpg",
+   "handy": "hk/handy.jpg",
+   "handyStart": 200
+  }
+ ]
 }

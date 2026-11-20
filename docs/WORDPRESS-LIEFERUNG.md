@@ -1,6 +1,17 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.3 · Core-Plugin 1.49.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.3 · Core-Plugin 1.50.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026: Plugin 1.50.0, Werbung echt statt gestellt
+
+Vorgabe des Betreibers am selben Tag: Die KI-Motive wirkten gestellt. Die Anzeigen zeigen jetzt die Firmen selbst.
+- **ASS Elektrotechnik:** echte Fotos von asselektrotechnik.de (Monteur vor dem Firmenwagen, Monteur im Firmenshirt), im breiten Format mit Farbfläche in Firmenblau und Logo. Ruhige Kamerafahrt über das Foto, keine KI.
+- **Almera Clean:** Logo, Petrol und Mint und die Schrift Raleway der Firmenwebsite; „Gebäude, Fenster, Wäsche“ mit Anschrift und eine Anzeige mit der Telefonnummer der Website. Fotos der Firma gibt es nicht; die Website zeigt Stockbilder.
+- **Merzlicht:** Logo von hk-growthoperator.de (Referenzen), vom Betreiber bestätigt; auch im Profil (Logo-Haken). Eine Anzeige zeigt die Videowall als Zeichnung mit wechselndem Bildschirm, die zweite das Logo mit Angebot und Ort. Ein echtes Foto der Wall schickt der Betreiber.
+- **AJ Sports:** Trikot-Entwurf bleibt (einziges KI-Bild, gekennzeichnet); die zweite Anzeige zeigt Logo, Schrift und rot-weiße Streifen wie am Trikot.
+- **HK Growth Webstudio:** echte Referenzen von hk-growthoperator.de im Browser und auf dem Handy (Citroën-Club Rhein-Ruhr, PlantCeylon), mit Adresse in der Leiste; „Anfragen“ bleibt. Kein Hinweis auf Merzenich Aktuell als Referenz (Vorgabe 02.11.2026).
+- **Einbau:** neuer Stil `marke` in `docs/anzeigen/bauen.mjs`, Layouts in `docs/anzeigen/marken.mjs`, Material unter `docs/anzeigen/material/` (`ass/`, `logos/`, `schrift/` mit Lizenzhinweis, `hk/`). Standbild scharf als Bildschirmfoto der Seite in Postergröße.
+- **Live:** neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab; die alten stehen danach auf Entwurf. Merzlicht-Logo über „Zusage eintragen“ mit Logo-Haken.
 
 ## Neu am 20.11.2026: Plugin 1.49.0, Werbung mit Higgsfield
 

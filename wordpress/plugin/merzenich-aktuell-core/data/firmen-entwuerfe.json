@@ -1,5 +1,5 @@
 {
-  "stand": "2026-11-20",
+  "stand": "2026-11-20b",
   "hinweis": "Unternehmen auf Merzenich Aktuell (Aufträge Betreiber 24.10., 28.10. und 02.11.2026; Bäckerei Wirtz, Hasberg und Porschen Media sind früher eingetragene Betriebe). KBS Management als Firma am 20.11.2026 zurückgezogen (Auftrag Betreiber: nur die Einträge als Firma, Impressum bleibt); Profil, Beitrag und Anzeigen gehen mit „Firma zurückziehen“ auf Entwurf. HK Growth Webstudio seit 02.11.2026 (nur Webstudio, Kennzeichnung „Anzeige“, Angaben von hk-growthoperator.de; die Webstudio-Seite lag bis 12.11.2026 unter website.hk-growthoperator.de). Stammdaten von Almera Clean und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall. AJ Sports seit 20.11.2026 mit Logo und Beitrag zur neuen Trikotlinie für den SC 1919 Merzenich (Angaben und Logo laut Betreiber, Bild als KI-Visualisierung gekennzeichnet); Ort und Kontakt liegen noch nicht vor, daher weiter „nur_name“ (kein Ort, keine Kontaktangaben). Werbung (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
@@ -78,32 +78,32 @@
       },
       "anzeigen": [
         {
-          "id": "almera-clean-fenster",
-          "zeile": "Almera Clean · Gebäudereinigung aus Merzenich",
-          "titel": "Klare Fenster, saubere Räume.",
-          "text": "Gebäude- und Fensterreinigung aus Merzenich, Angebote auf Anfrage.",
-          "bild": "almera-clean-fenster.jpg",
-          "video": "almera-clean-fenster.mp4",
-          "bild_breit": "almera-clean-fenster-breit.jpg",
-          "video_breit": "almera-clean-fenster-breit.mp4",
-          "alt": "Fensterreiniger zieht einen Abzieher über eine Glasfassade (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
-          "stand": "2026-11-20"
+          "id": "almera-clean-leistungen",
+          "zeile": "Almera Clean · Gebäude, Fenster, Wäsche",
+          "titel": "Reinigung aus Merzenich.",
+          "text": "Almera Clean reinigt Gebäude und Fenster und übernimmt die Wäsche.",
+          "bild": "almera-clean-leistungen.jpg",
+          "video": "almera-clean-leistungen.mp4",
+          "bild_breit": "almera-clean-leistungen-breit.jpg",
+          "video_breit": "almera-clean-leistungen-breit.mp4",
+          "alt": "Anzeige von Almera Clean: Gebäude, Fenster, Wäsche, Kettenweg 1 in Merzenich",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo, Farben und Schrift von Almera Clean (almera-clean.de)",
+          "quelle": "https://www.almera-clean.de/",
+          "stand": "2026-11-20b"
         },
         {
-          "id": "almera-clean-waesche",
-          "zeile": "Almera Clean · Kettenweg 1, Merzenich",
-          "titel": "Wäscheservice aus Merzenich.",
-          "text": "Wäsche, Gebäude und Fenster: Almera Clean übernimmt die Reinigung.",
-          "bild": "almera-clean-waesche.jpg",
-          "video": "almera-clean-waesche.mp4",
-          "bild_breit": "almera-clean-waesche-breit.jpg",
-          "video_breit": "almera-clean-waesche-breit.mp4",
-          "alt": "Frisch gefaltete Handtücher und Bettwäsche in einer Wäscherei (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
-          "stand": "2026-11-20"
+          "id": "almera-clean-kontakt",
+          "zeile": "Almera Clean · Angebot anfragen",
+          "titel": "Angebot einfach anfragen.",
+          "text": "Gebäudereinigung, Fensterreinigung und Wäscheservice vom Kettenweg in Merzenich.",
+          "bild": "almera-clean-kontakt.jpg",
+          "video": "almera-clean-kontakt.mp4",
+          "bild_breit": "almera-clean-kontakt-breit.jpg",
+          "video_breit": "almera-clean-kontakt-breit.mp4",
+          "alt": "Anzeige von Almera Clean mit Logo und Telefonnummer 0176 814 124 41",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo, Farben und Schrift von Almera Clean (almera-clean.de)",
+          "quelle": "https://www.almera-clean.de/",
+          "stand": "2026-11-20b"
         }
       ]
     },
@@ -162,32 +162,32 @@
       },
       "anzeigen": [
         {
-          "id": "ass-elektrotechnik-verteiler",
+          "id": "ass-elektrotechnik-wagen",
           "zeile": "ASS Elektrotechnik · Meisterbetrieb aus Düren",
-          "titel": "Elektrik vom Meisterbetrieb.",
-          "text": "Elektrotechnik mit Beratung und Planung für jedes Projekt.",
-          "bild": "ass-elektrotechnik-verteiler.jpg",
-          "video": "ass-elektrotechnik-verteiler.mp4",
-          "bild_breit": "ass-elektrotechnik-verteiler-breit.jpg",
-          "video_breit": "ass-elektrotechnik-verteiler-breit.mp4",
-          "alt": "Hände eines Elektrikers am ordentlich verdrahteten Verteilerkasten (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
-          "stand": "2026-11-20"
+          "titel": "Ihr Elektriker aus Düren.",
+          "text": "Meisterbetrieb für Smart Home, Licht, Kommunikations- und Sicherheitstechnik.",
+          "bild": "ass-elektrotechnik-wagen.jpg",
+          "video": "ass-elektrotechnik-wagen.mp4",
+          "bild_breit": "ass-elektrotechnik-wagen-breit.jpg",
+          "video_breit": "ass-elektrotechnik-wagen-breit.mp4",
+          "alt": "Monteur von ASS Elektrotechnik vor dem Firmenwagen mit Logo",
+          "nachweis": "Foto: ASS Elektrotechnik (asselektrotechnik.de), Gestaltung Merzenich Aktuell; Nutzung mit Zusage laut Betreiber",
+          "quelle": "https://www.asselektrotechnik.de/",
+          "stand": "2026-11-20b"
         },
         {
-          "id": "ass-elektrotechnik-licht",
-          "zeile": "ASS Elektrotechnik · Smart Home und Beleuchtung",
-          "titel": "Licht und Technik, die mitdenken.",
-          "text": "Smart Home, Beleuchtung, Kommunikations- und Sicherheitstechnik aus Düren.",
-          "bild": "ass-elektrotechnik-licht.jpg",
-          "video": "ass-elektrotechnik-licht.mp4",
-          "bild_breit": "ass-elektrotechnik-licht-breit.jpg",
-          "video_breit": "ass-elektrotechnik-licht-breit.mp4",
-          "alt": "Frau bedient am Abend eine Lichtsteuerung an der Wohnzimmerwand (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
-          "stand": "2026-11-20"
+          "id": "ass-elektrotechnik-team",
+          "zeile": "ASS Elektrotechnik · Beratung und Planung",
+          "titel": "Elektrik vom Meisterbetrieb.",
+          "text": "Beratung und Planung für jedes Projekt, Am Dürener Weg in Düren.",
+          "bild": "ass-elektrotechnik-team.jpg",
+          "video": "ass-elektrotechnik-team.mp4",
+          "bild_breit": "ass-elektrotechnik-team-breit.jpg",
+          "video_breit": "ass-elektrotechnik-team-breit.mp4",
+          "alt": "Monteur im Shirt von ASS Elektrotechnik, von hinten",
+          "nachweis": "Foto: ASS Elektrotechnik (asselektrotechnik.de), Gestaltung Merzenich Aktuell; Nutzung mit Zusage laut Betreiber",
+          "quelle": "https://www.asselektrotechnik.de/",
+          "stand": "2026-11-20b"
         }
       ]
     },
@@ -210,41 +210,46 @@
         "text": "Unter dem Namen Merzlicht, angelehnt an den nahen Merzpark, laufen Werbeclips und Bilder auf der Videowall am Sportplatz des SC 1919 Merzenich am Bürgewaldzentrum. Die Wall zeigt beidseitig: zum Sportplatz und zum Merzpark. Die Werbeeinnahmen finanzieren die Videowall mit, die im Juni 2025 eingeweiht wurde und Spielstände, Ergebnisse und Höhepunkte vom Platz zeigen kann.",
         "quellen": [
           "https://www.scmerzenich.de/newsarchiv/archiv-saison-25-26/videowall-am-b%C3%BCrgewaldzentrum/"
-        ]
+        ],
+        "logo": {
+          "quelle": "https://hk-growthoperator.de/assets/img/logos/merzlicht.png (Referenzen), vom Betreiber als Logo bestätigt (20.11.2026)",
+          "art": "PNG, Schrift Nachtblau mit gelbem Punkt, Hintergrund durchsichtig, Form und Farbe unverändert",
+          "rechte": "offen",
+          "alt": "Logo Merzlicht",
+          "datei": "merzlicht.png"
+        }
       },
       "werbung": {
         "max": 5
       },
       "anzeigen": [
         {
-          "id": "merzlicht-videowall",
+          "id": "merzlicht-wand",
           "zeile": "Merzlicht · Videowall am Bürgewaldzentrum",
           "titel": "Ihre Werbung auf der Videowall.",
           "text": "Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.",
-          "bild": "merzlicht-videowall.jpg",
-          "video": "merzlicht-videowall.mp4",
-          "bild_breit": "merzlicht-videowall-breit.jpg",
-          "video_breit": "merzlicht-videowall-breit.mp4",
-          "alt": "LED-Videowall neben einem Fußballplatz unter Flutlicht (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
+          "bild": "merzlicht-wand.jpg",
+          "video": "merzlicht-wand.mp4",
+          "bild_breit": "merzlicht-wand-breit.jpg",
+          "video_breit": "merzlicht-wand-breit.mp4",
+          "alt": "Zeichnung der Videowall von Merzlicht, auf dem Bildschirm wechseln Logo und Angebot",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht (Zeichnung, kein Foto)",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20"
+          "stand": "2026-11-20b"
         },
         {
-          "id": "merzlicht-spieltag",
-          "zeile": "Merzlicht · Werbeclips und Bilder",
-          "titel": "Am Spieltag im Blick.",
-          "text": "Werbeclips und Bilder auf der Videowall am Sportplatz, in beide Richtungen sichtbar.",
-          "bild": "merzlicht-spieltag.jpg",
-          "video": "merzlicht-spieltag.mp4",
-          "bild_breit": "merzlicht-spieltag-breit.jpg",
-          "video_breit": "merzlicht-spieltag-breit.mp4",
-          "alt": "Zuschauer von hinten am Spielfeld, daneben eine Videowall (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
+          "id": "merzlicht-marke",
+          "zeile": "Merzlicht · Sportplatz Bürgewaldzentrum",
+          "titel": "Gesehen vom Spielfeld und vom Merzpark.",
+          "text": "Die Videowall am Sportplatz zeigt Clips und Bilder in beide Richtungen.",
+          "bild": "merzlicht-marke.jpg",
+          "video": "merzlicht-marke.mp4",
+          "bild_breit": "merzlicht-marke-breit.jpg",
+          "video_breit": "merzlicht-marke-breit.mp4",
+          "alt": "Logo von Merzlicht, Werbung auf der Videowall am Sportplatz Bürgewaldzentrum",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20"
+          "stand": "2026-11-20b"
         }
       ]
     },
@@ -294,19 +299,18 @@
           "stand": "2026-11-20"
         },
         {
-          "id": "aj-sports-flutlicht",
+          "id": "aj-sports-marke",
           "zeile": "AJ Sports Entertainment",
-          "titel": "Für den Sport in Merzenich.",
-          "text": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich.",
-          "bild": "aj-sports-flutlicht.jpg",
-          "video": "aj-sports-flutlicht.mp4",
-          "bild_breit": "aj-sports-flutlicht-breit.jpg",
-          "video_breit": "aj-sports-flutlicht-breit.mp4",
-          "alt": "Fußball auf nassem Rasen unter Flutlicht, daneben ein rotes Trikot (KI-Bild)",
-          "nachweis": "KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell",
-          "ki": true,
+          "titel": "Trikots und Sportbekleidung.",
+          "text": "AJ Sports Entertainment entwickelt die neue Trikotlinie für den SC 1919 Merzenich.",
+          "bild": "aj-sports-marke.jpg",
+          "video": "aj-sports-marke.mp4",
+          "bild_breit": "aj-sports-marke-breit.jpg",
+          "video_breit": "aj-sports-marke-breit.mp4",
+          "alt": "Logo von AJ Sports mit rot-weißen Streifen",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo von AJ Sports",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20"
+          "stand": "2026-11-20b"
         }
       ],
       "beitrag": {
@@ -383,18 +387,19 @@
       },
       "anzeigen": [
         {
-          "id": "hk-growth-webstudio-1",
-          "zeile": "HK Growth Webstudio · Websites",
-          "titel": "Zeit für eine neue Website?",
-          "text": "Ihre Unternehmenswebsite in 2 bis 4 Wochen, sichtbar bei Google und in KI-Suchen.",
-          "bild": "hk-growth-webstudio-1.jpg",
-          "video": "hk-growth-webstudio-1.mp4",
-          "bild_breit": "hk-growth-webstudio-1-breit.jpg",
-          "video_breit": "hk-growth-webstudio-1-breit.mp4",
-          "alt": "Website des HK Growth Webstudio auf Laptop und Handy",
-          "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026",
-          "quelle": "https://hk-growthoperator.de/",
-          "stand": "2026-11-02c"
+          "id": "hk-growth-webstudio-verein",
+          "zeile": "HK Growth Webstudio · Referenz Verein",
+          "titel": "Websites für Vereine.",
+          "text": "Referenz: der Citroën-Club Rhein-Ruhr, mit Terminen, Clubs und Mitgliederbereich auf einer Seite.",
+          "bild": "hk-growth-webstudio-verein.jpg",
+          "video": "hk-growth-webstudio-verein.mp4",
+          "bild_breit": "hk-growth-webstudio-verein-breit.jpg",
+          "video_breit": "hk-growth-webstudio-verein-breit.mp4",
+          "alt": "Website des Citroën-Club Rhein-Ruhr im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
+          "nachweis": "Bildschirmansicht ccrr.de, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion",
+          "quelle": "https://www.ccrr.de/",
+          "ziel": "https://hk-growthoperator.de/#referenzen",
+          "stand": "2026-11-20b"
         },
         {
           "id": "hk-growth-webstudio-2",
@@ -412,19 +417,19 @@
           "stand": "2026-11-02c"
         },
         {
-          "id": "hk-growth-webstudio-3",
-          "zeile": "HK Growth Webstudio · Automation",
-          "titel": "Jede Anfrage sofort bei Ihnen.",
-          "text": "Einordnen, weiterleiten, bestätigen, nachfassen: Die Automation nach der Anfrage läuft von selbst.",
-          "bild": "hk-growth-webstudio-automation.jpg",
-          "video": "hk-growth-webstudio-automation.mp4",
-          "bild_breit": "hk-growth-webstudio-automation-breit.jpg",
-          "video_breit": "hk-growth-webstudio-automation-breit.mp4",
-          "alt": "Ablauf nach der Anfrage mit Protokoll auf der Website des HK Growth Webstudio",
-          "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026",
-          "quelle": "https://hk-growthoperator.de/",
-          "ziel": "https://hk-growthoperator.de/#automatisierung",
-          "stand": "2026-11-02c"
+          "id": "hk-growth-webstudio-shop",
+          "zeile": "HK Growth Webstudio · Referenz Shop",
+          "titel": "Vom ersten Klick zur Bestellung.",
+          "text": "Referenz: PlantCeylon. Baum auswählen, online bestellen, Nachweis per Video.",
+          "bild": "hk-growth-webstudio-shop.jpg",
+          "video": "hk-growth-webstudio-shop.mp4",
+          "bild_breit": "hk-growth-webstudio-shop-breit.jpg",
+          "video_breit": "hk-growth-webstudio-shop-breit.mp4",
+          "alt": "Website von PlantCeylon im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
+          "nachweis": "Bildschirmansicht plantceylon.com, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion",
+          "quelle": "https://plantceylon.com/",
+          "ziel": "https://hk-growthoperator.de/#referenzen",
+          "stand": "2026-11-20b"
         }
       ]
     }

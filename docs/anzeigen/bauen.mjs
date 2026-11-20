@@ -15,6 +15,9 @@
  *   film     vorhandenes Video (seit 20.11.2026 die Higgsfield-Videos, Start- = Endbild), Schleife mit kurzer
  *            Überblendung; mit „standbild_bild“ kommt das Standbild scharf aus dem Ausgangsbild
  *   geraet   Website im Browserfenster und auf dem Handy (HK Growth Webstudio), nur breit
+ *   marke    (seit 20.11.2026, Vorgabe Betreiber: echt statt gestellt) echte Firmenfotos, Logo, Firmenfarben
+ *            und Schrift der Firmenwebsite, ruhige Bewegung ohne KI; Layouts in docs/anzeigen/marken.mjs.
+ *            Standbild scharf als Bildschirmfoto der Seite in Postergröße (Playwright).
  * Fotos liegen in docs/anzeigen/material/ (verkleinert, Nutzung laut Nachweis in firmen-entwuerfe.json).
  * Das Foto deckt das Bild wie object-fit: cover mit dem Fokuspunkt (object-position); die
  * Ausschnitte rechnet dieses Skript selbst, damit Licht und Flächen genau auf dem Foto sitzen.
@@ -28,6 +31,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, statS
 import { execFileSync } from 'node:child_process';
 import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+import { LAYOUTS } from './marken.mjs';
 
 const HIER = dirname(fileURLToPath(import.meta.url));
 const MATERIAL = join(HIER, 'material');
@@ -66,8 +71,8 @@ function welt(id, datei, rw, rh, f, ursprung, extra = '', klasse = 'welt') {
   const { w, h } = masse(join(MATERIAL, datei));
   const d = deckung(w, h, rw, rh, fokus(f));
   const [fx, fy] = fokus(f);
-  // Drehpunkt: Fokus (heran, zurueck, detail) oder Mitte des Rahmens (schwenk).
-  const o = ursprung === 'mitte' ? [r2((rw / 2 - d.left) / d.width * 100), r2((rh / 2 - d.top) / d.height * 100)] : [r2(fx * 100), r2(fy * 100)];
+  // Drehpunkt: Fokus (heran, zurueck, detail), Mitte des Rahmens (schwenk) oder ein Punkt im Foto („64% 73%“).
+  const o = /^\d{1,3}% \d{1,3}%$/.test(ursprung || '') ? fokus(ursprung).map((v) => r2(v * 100)) : ursprung === 'mitte' ? [r2((rw / 2 - d.left) / d.width * 100), r2((rh / 2 - d.top) / d.height * 100)] : [r2(fx * 100), r2(fy * 100)];
   return `<div class="${klasse}" id="${id}" style="left:${d.left}px;top:${d.top}px;width:${d.width}px;height:${d.height}px;transform-origin:${o[0]}% ${o[1]}%"><img src="${basename(datei)}" alt="">${extra}</div>`;
 }
 
@@ -204,7 +209,23 @@ function geraet(m, fmt) {
   return seite(fmt, inhalt, stil, anim);
 }
 
-const STILE = { sequenz, split, detail, licht, geraet };
+// marke: Layout aus marken.mjs (Fotos, Logos und Schriften liegen unter material/).
+const HILFE = { welt, masse: (d) => masse(join(MATERIAL, d)), r2, get T() { return T; } };
+const markeTeile = (m, fmt) => LAYOUTS[m.layout](m, fmt, HILFE);
+function marke(m, fmt) { const r = markeTeile(m, fmt); return seite(fmt, r.inhalt, r.stil, r.anim); }
+
+const STILE = { sequenz, split, detail, licht, geraet, marke };
+
+// Standbild der Marke: Seite in Postergröße fotografieren (Schrift und Logos scharf), Zeitpunkt 0.
+function markeStandbild(ordner, fmt, aus) {
+  const skript = `const { chromium } = require(${JSON.stringify(createRequire(import.meta.url).resolve('playwright'))});
+(async () => { const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: ${fmt.w}, height: ${fmt.h} }, deviceScaleFactor: ${fmt.poster[0] / fmt.w} });
+await p.goto(${JSON.stringify('file://' + join(ordner, 'index.html'))}, { waitUntil: 'networkidle' });
+await p.evaluate(async () => { await document.fonts.ready; await Promise.all([...document.images].map((i) => i.decode().catch(() => {}))); window.__timelines.root.seek(0); });
+await p.waitForTimeout(300); await p.locator('#root').screenshot({ path: ${JSON.stringify(join(ordner, 'standbild.png'))} }); await b.close(); })();`;
+  execFileSync(process.execPath, ['-e', skript], { stdio: 'inherit' });
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', join(ordner, 'standbild.png'), '-vf', `scale=${fmt.poster[0]}:${fmt.poster[1]}:flags=lanczos`, '-q:v', '4', aus]);
+}
 
 // Zwei Fassungen: MP4/H.264 (alle Browser) und WebM/VP9 (meist kleiner).
 function kodieren(ein, aus, fmt, crf, fps = FPS) {
@@ -217,6 +238,7 @@ function kodieren(ein, aus, fmt, crf, fps = FPS) {
 function standbild(m, fmt, aus, roh) {
   const [pw, ph] = fmt.poster;
   const q = ['-q:v', '5'];
+  if (m.stil === 'marke') { markeStandbild(dirname(roh), fmt, aus); return; }
   if (m.stil === 'geraet') { execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', roh, '-frames:v', '1', ...q, aus]); return; }
   // film mit „standbild_bild“ (20.11.2026, Higgsfield): Standbild scharf aus dem Ausgangsbild des Videos
   // (gleicher Ausschnitt und Fokus), statt aus einem kleineren Videobild.
@@ -278,7 +300,8 @@ for (const m of MOTIVE) {
     const nurKodieren = process.argv.includes('--nur-kodieren') && existsSync(roh);
     if (m.stil === 'film') { if (!nurKodieren) film(m, fmt, roh); }
     else {
-      for (const d of [...(m.bilder || []).map((b) => b[0]), m.bild, m.handy].filter(Boolean)) copyFileSync(join(MATERIAL, d), join(ordner, basename(d)));
+      const extra = m.stil === 'marke' ? markeTeile(m, fmt).dateien : [];
+      for (const d of [...(m.bilder || []).map((b) => b[0]), m.bild, m.handy, ...extra].filter(Boolean)) copyFileSync(join(MATERIAL, d), join(ordner, basename(d)));
       writeFileSync(join(ordner, 'index.html'), STILE[m.stil](m, fmt));
       if (!nurKodieren) execFileSync('npx', ['--yes', 'hyperframes@0.8.192', 'render', '-o', 'roh.mp4', '--fps', String(FPS), '--quiet'], { cwd: ordner, stdio: 'inherit' });
     }
