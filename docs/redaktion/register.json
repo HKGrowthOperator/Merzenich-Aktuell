@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-19-claude-nachmittags.md",
-  "source_check_window": "19.11.2026 Europe/Berlin: Start12:01; Hauptabrufe12:02:45–12:03:36; neue Artikel/M12812:03:12; Kompostdetail12:03:44; Haushaltschronik/Ratstermin/alter Artikel12:04:02; vier Polizeivolltexte12:04:30; Bilder12:05:13–12:05:24 anschließend gesichtet.",
+  "latest_dossier": "dossiers/2026-11-20-morgens.md",
+  "source_check_window": "20.11.2026 Europe/Berlin: Beginn06:56; Hauptabrufe06:58:13–06:59:16; Bau-Ergebnisse06:59:04; Warnung06:59:09 und07:05:22; Zusatzdokumente07:03:05; ältere Projektartikel07:04:14; Bildabrufe07:03:07/07:04:49, Sichtung07:09; Rathausmetadaten07:12.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -10882,6 +10882,14 @@
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neu: einstimmige Empfehlung; Flächenbegriffe Protokoll40ha vs Präsentation44ha/36ha nicht geklärt, kein finaler Ratsbeschluss. T2.",
+          "related_id": "MA-SOLARPARK-A4-E3"
+        }
       ]
     },
     {
@@ -10936,6 +10944,14 @@
           "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
           "heading": "1 · Korrektur MA-EMS-SACHSTAND-2026"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neu: Anbieter nennt drei integrierte Liegenschaften, keine bezifferten realisierten Einsparungen. Historische Planstände erhalten; Recherche T2.",
+          "related_id": "MA-EMS-SACHSTAND-2026"
+        }
       ]
     },
     {
@@ -10957,6 +10973,14 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-morgens.md",
           "heading": "1 · GO-OGS-138-2026 · Folgemeldung Grundschule Golzheim"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neu: einstimmige Fortsetzungsempfehlung, geleistete Planungskosten. Förder-/Einreichungsstatus und Umsetzung offen; T2.",
+          "related_id": "GO-OGS-138-2026"
         }
       ]
     },
@@ -11012,7 +11036,15 @@
       "last_checked_at": "2026-11-05 morgens Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-nachmittags.json → /rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
       "article_id": null,
-      "implementation_commit": "1c65652"
+      "implementation_commit": "1c65652",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neu: einstimmige FNP-Veröffentlichungsempfehlung, keine Baugenehmigung. T2 wegen fehlender unabhängiger Bestätigung.",
+          "related_id": "MA-PV-GOLZHEIM-E1-FNP20"
+        }
+      ]
     },
     {
       "id": "MA-BAUTURBO-142-2026",
@@ -11072,6 +11104,12 @@
           "dossier": "dossiers/2026-11-18-mittags.md",
           "research_status": "T2",
           "finding": "Keine neue Vorhabenentwicklung seit morgens; zusätzliche Beratung inzwischen von Claude umgesetzt. Neu festgestellte Quellenwidersprüche im Korrekturabschnitt dokumentiert, keine unveränderte Themenkarte."
+        },
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neu: Diskussion6WE und einstimmige Empfehlung, genaue Fassung/Schwellenabgrenzung offen. Zuständigkeitskorrektur bleibt erhalten. T2.",
+          "related_id": "MA-BAUTURBO-142-2026"
         }
       ]
     },
@@ -11299,6 +11337,14 @@
           "date": "2026-11-10",
           "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
           "heading": "1 · MA-BAUAUSSCHUSS-12112026-VORSCHAU"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Neue öffentliche Niederschrift und Beschlusstexte gelesen. Einstimmige Empfehlungen Schule/Solar/FNP/Bauturbo, Poolplatz-Projektstand, EMS. Aktuelle Recherche T2: kommunale Auszüge nicht unabhängig; siehe Dossierkonflikte und Updateziele.",
+          "related_id": "MA-BAUAUSSCHUSS-12112026-VORSCHAU"
         }
       ]
     },
@@ -11996,6 +12042,14 @@
           "correct_description": "Polizeimotorrad als Symbolbild",
           "implementation": "keine_Websiteaenderung"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Weiter offen: Polizeiwachecaption/alt trotz Motorradbild. Livebild frisch geladen/gesichtet.",
+          "related_id": "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+        }
       ]
     },
     {
@@ -12638,6 +12692,12 @@
           "dossier": "dossiers/2026-11-19-mittags.md",
           "research_status": "T2",
           "finding": "Neuer Gemeinde-Beitrag in Heimat-Info19.11.09:56 vollständig gelesen, inhaltlich Wiederholung des bekannten Gemeindetextes; keine neue Projektentwicklung, keine unabhängige zweite Bestätigung/Drittquelle, deshalb keine neue Themenkarte."
+        },
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Keine neue Nachricht; deutscher Commons-Kompostkandidat SdickeCCBYSA4.0 4320px gefunden, Original403, visuell ungeprüftB0. Unabhängigkeit/Drittquelle weiterfehlendT2, Claude-Entwurf nicht überschrieben.",
+          "related_id": "MA-KOMPOST-KGS-2026"
         }
       ]
     },
@@ -13019,6 +13079,36 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-20T07:12:55+01:00",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "result": "Erledigung live bestätigt:18Uhr und Aktualisierungshinweis; Umsetzung49e5d7d8 erhalten.",
+          "related_id": "MA-KORR-HAUSHALTSZEITPLAN-RAT-1911"
+        }
+      ]
+    },
+    {
+      "id": "MA-DAUERREGEN-20112026",
+      "priority": "P1",
+      "location_section": "Gemeinde/alle Ortsteile · Wetter/Blaulicht",
+      "change_type": "Neu",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-20-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-20T07:12:55+01:00",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft.",
+      "dossier_history": [
+        {
+          "date": "2026-11-20",
+          "dossier": "dossiers/2026-11-20-morgens.md",
+          "heading": "MA-DAUERREGEN-20112026 · P1 · T2/B0"
         }
       ]
     }
@@ -15555,6 +15645,50 @@
       "implementation_commit": "49e5d7d8",
       "summary": "Aktualisierung Haushalt-2027-Zeitplan (Rat 3.12. 18 Uhr); Kompost-Meldung KGS Merzenich fertig, aber mangels zulässigem Foto (Commons-Drosselung, Auslandsfilter) auf den Morgenlauf 20.11. verschoben; Kalender 20 Termine bestätigt. Keine neue Meldung (Nullfund in diesem Lauf). Mindesttakt 19.11.: 2.",
       "publication": "Eine Aktualisierung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-20",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-20-morgens.md",
+      "compared_with": "dossiers/2026-11-19-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-19-claude-nachmittags.md",
+      "base_commit": "7e97c69f1b293903d357b267a2d26686ba9d0ab8",
+      "implementation_commit": null,
+      "summary": "Neu: amtliche Dauerregenwarnung; neue Bauausschuss-Niederschrift als gemeinsame Updatekarte zu Schule, Solarplanungen, Poolplatz, Bauturbo,EMS. BeideKartenT2. HFA-Ergebnisse fehlen. Feuerwehreinsatz148 bereits automatischveröffentlicht. HaushaltRatzeitlivekorrigiert, bekannterMotorradbildtextweiteroffen.",
+      "topics": 2,
+      "new_topics": 1,
+      "updated_topics": 1,
+      "blocked_T2": 2,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 58,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 22,
+      "new_or_changed_events": 0,
+      "event_change_scope": "AbsetzungGolzheim20Nov19:30 neu ausdrücklich dokumentiert, aber schon im letztenMittagsabruf vorhanden; Ort/Veranstalterdetail ungeprüftT0. Keine neu belegte Änderung kommunalerTermine.",
+      "complete_drafts": 0,
+      "source_check_window": "20.11.2026 Europe/Berlin: Beginn06:56; Hauptabrufe06:58:13–06:59:16; Bau-Ergebnisse06:59:04; Warnung06:59:09 und07:05:22; Zusatzdokumente07:03:05; ältere Projektartikel07:04:14; Bildabrufe07:03:07/07:04:49, Sichtung07:09; Rathausmetadaten07:12.",
+      "prepared_at": "2026-11-20T07:12:55+01:00",
+      "deadline": "2026-11-20T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Fristeinhaltung im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "NeueKarten: unabhängige aktuelle Bestätigungen fehlen; keineT1Freigabe",
+        "DWD vorUmsetzungerneutlesen, keinebelegtenlokalenSchäden",
+        "Bauausschuss: Schul-Förderantrag/Fristnachweis, PoolplatzGenehmigung/Stellplätze/Jahr, Solarflächen, BauturboSchwellen/Fassung offen",
+        "HFA-Ergebnisse/Ratstagesordnung fehlen",
+        "KompostT2/B0: deutscherBildkandidatOriginal403/ungeprüft, weiterhinunabhängigeBestätigung/Drittquellefehlt",
+        "Motorradbildtextliveweiterfalsch",
+        "Haushaltsplanwertkonflikt/Vorbericht, UmsatzsteuerEinzelumsetzung/Satzung, KitaPrüfbericht, Derbywertung/Serienkontrolle unverändertoffen",
+        "BdSt/Hallenquellen403, ZuginfonurTitel, keinevollständigeOriginalprüfungalleraltenArtikel"
+      ]
     }
   ]
 }
