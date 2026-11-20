@@ -19,6 +19,10 @@
  * wenn es läuft (bis dahin steht das Bild darunter). Kein Video bei „Bewegung
  * reduzieren“ oder Datensparmodus; seit 02.11.2026 auch am Handy.
  * window.maAdPlatz(platz) richtet nachgeladene Plätze ein (endlos.js).
+ *
+ * Vorladen (20.11.2026): Die Bilder versteckter Anzeigen laden „lazy“ erst beim Wechsel,
+ * die Fläche stand dann kurz grau. Für einen Platz im Bild lädt jetzt das Bild der
+ * voraussichtlich nächsten Anzeige vorab, nur in der Fassung, die der Platz zeigt.
  */
 (function () {
   'use strict';
@@ -92,6 +96,14 @@
     return raus;
   }
 
+  // Bild einer Anzeige vorab laden: breit, wenn der Platz breit ist (wie bei den Videos), sonst 16:9.
+  function vorladen(platz, item) {
+    if (!item || typeof item.querySelector !== 'function') return;
+    var breit = platz.clientWidth >= 840 && item.querySelector('img.ma-ad-bild-breit');
+    var img = item.querySelector(breit ? 'img.ma-ad-bild-breit' : 'img.ma-ad-bild');
+    if (img && img.getAttribute('loading') === 'lazy') img.setAttribute('loading', 'eager');
+  }
+
   function einrichten(el) {
     if (el.getAttribute('data-ma-ad-bereit')) return;
     var items = el.querySelectorAll('.ma-ad__item');
@@ -105,6 +117,7 @@
       Array.prototype.forEach.call(items, function (it, n) { it.hidden = n !== i; });
       el.setAttribute('data-ma-ad-current', String(i));
       videos(el, items[i], p.imBild);
+      if (rotiert && p.imBild) vorladen(el, items[wahl.naechste(firmen, i, belegt(p, true))]);
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (eintraege) {
@@ -117,6 +130,7 @@
           return;
         }
         videos(el, items[p.aktiv], p.imBild);
+        if (p.imBild && rotiert) vorladen(el, items[wahl.naechste(firmen, p.aktiv, belegt(p, true))]);
       }, { rootMargin: '120px 0px' }).observe(el);
     } else {
       p.imBild = true;

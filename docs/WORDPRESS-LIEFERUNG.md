@@ -1,17 +1,34 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.1 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026 abends: Plugin 1.50.1, Feinschliff der Werbung
+
+Zwei unabhängige Prüfungen (Gestaltung; Code und Text), danach alle neun Motive im Stil `marke` neu gebaut.
+- **HK Growth (Vorgabe Betreiber):** Schild „Referenz“ und die Seite des Citroën-Club Rhein-Ruhr sind raus. Neu sind eigene Software und KI-Automation:
+  - DealUno (deal-uno.de, eigenes Produkt) als „Software, die zu Ihrem Betrieb passt.“
+  - HK Growth OS (ki.hk-growthoperator.de) als „KI, die Abläufe übernimmt.“
+  - Das HK-Logo steht jetzt im Bild. Der Logostreifen der OS-Seite (dort das KBS-Logo) ist aus dem Bildschirmfoto geschnitten.
+  - „Anfragen“ bleibt.
+- **Gestaltung:**
+  - Almera: Gruppen mittig, „Telefon“ statt Wiederholung der Überschrift, Telefon auch im breiten Band.
+  - ASS: Logo beschnitten und größer wirkend, Farbfläche rechts deckt abgeschnittene Schrift und eine fremde Tafel ab; ruhigere Fahrt ohne angeschnittenen Kopf.
+  - Merzlicht: LED-Bildschirm ohne gezeichnetes Gestell und Rasen, Logo nicht mehr hochskaliert, keine Wiederholungen der Überschrift.
+  - AJ Sports: rote Trikotkante mit zwei hellen Linien statt Absperrband; Kartenüberschrift „Für den Sport in Merzenich.“, Text „eine neue Trikotlinie“.
+- **Technik:**
+  - Rotator lädt das Bild der nächsten Anzeige vorab (`assets/ad-rotation.js`), die Fläche steht beim Wechsel nicht mehr grau.
+  - `marken.mjs` maskiert Angaben aus `motive.json`.
 
 ## Neu am 20.11.2026: Plugin 1.50.0 und Theme 21.30.4, Werbung echt statt gestellt
 
 Vorgabe des Betreibers am selben Tag: Die KI-Motive wirkten gestellt. Die Anzeigen zeigen jetzt die Firmen selbst.
-- **ASS Elektrotechnik:** echte Fotos von asselektrotechnik.de (Monteur vor dem Firmenwagen, Monteur im Firmenshirt), im breiten Format mit Farbfläche in Firmenblau und Logo. Ruhige Kamerafahrt über das Foto, keine KI.
+- **ASS Elektrotechnik:** echte Fotos von asselektrotechnik.de (Monteur vor dem Firmenwagen, Mitarbeiter im Firmenshirt), im breiten Format mit Farbfläche in Firmenblau und Logo. Ruhige Kamerafahrt über das Foto, keine KI.
 - **Almera Clean:** Logo, Petrol und Mint und die Schrift Raleway der Firmenwebsite; „Gebäude, Fenster, Wäsche“ mit Anschrift und eine Anzeige mit der Telefonnummer der Website. Fotos der Firma gibt es nicht; die Website zeigt Stockbilder.
 - **Merzlicht:** Logo von hk-growthoperator.de (Referenzen), vom Betreiber bestätigt; auch im Profil (Logo-Haken). Eine Anzeige zeigt die Videowall als Zeichnung mit wechselndem Bildschirm, die zweite das Logo mit Angebot und Ort. Ein echtes Foto der Wall schickt der Betreiber.
 - **AJ Sports:** Trikot-Entwurf bleibt (einziges KI-Bild, gekennzeichnet); die zweite Anzeige zeigt Logo, Schrift und rot-weiße Streifen wie am Trikot.
 - **HK Growth Webstudio:** echte Referenzen von hk-growthoperator.de im Browser und auf dem Handy (Citroën-Club Rhein-Ruhr, PlantCeylon), mit Adresse in der Leiste; „Anfragen“ bleibt. Kein Hinweis auf Merzenich Aktuell als Referenz (Vorgabe 02.11.2026).
 - **Einbau:** neuer Stil `marke` in `docs/anzeigen/bauen.mjs`, Layouts in `docs/anzeigen/marken.mjs`, Material unter `docs/anzeigen/material/` (`ass/`, `logos/`, `schrift/` mit Lizenzhinweis, `hk/`). Standbild scharf als Bildschirmfoto der Seite in Postergröße.
-- **Live:** neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab; die alten stehen danach auf Entwurf. Merzlicht-Logo über „Zusage eintragen“ mit Logo-Haken.
+- **Live:** neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab (Schaltung aus); auf Entwurf gesetzt habe ich sie danach von Hand per REST, gelöscht wird nichts. Merzlicht-Logo über „Zusage eintragen“ mit Logo-Haken.
 - **Theme 21.30.4:** Profilseiten der Betriebe zeigen das Logo als Profilbild ganz auf hellem Grund (`inc/einzel.php`, Merkmal `ma_firmen_logo_datei`); bisher schnitt die Bildfläche die Logos zu (AJ Sports, Almera, ASS, Merzlicht).
 
 ## Neu am 20.11.2026: Plugin 1.49.0, Werbung mit Higgsfield
@@ -21,7 +38,7 @@ Vorgabe des Betreibers am selben Tag: Die KI-Motive wirkten gestellt. Die Anzeig
   - Die Texte sind überarbeitet. HK Growth bleibt unverändert.
 - **Einbau:** `docs/anzeigen/bauen.mjs` (Stil `film` mit `standbild_bild`) baut Bild und Video aus `docs/anzeigen/material/ki/` in 16:9 und breit nach `data/banner/`.
 - **Material:** Altes Material von Almera und ASS und die alten KI-Bilder sind entfernt; Prompts liegen in `artifacts/werbung-2026-11/PROMPTS.md`.
-- **Live:** Neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab, die alten stehen danach auf Entwurf.
+- **Live:** Neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab (Schaltung aus); auf Entwurf gesetzt habe ich sie danach von Hand per REST.
 
 ## Neu am 20.11.2026: Plugin 1.48.8 und 1.48.9, KBS als Firma raus, AJ Sports mit Logo und Trikot-Beitrag
 

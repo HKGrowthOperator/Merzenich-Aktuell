@@ -13,9 +13,10 @@
    "panel": {
     "farbe": "#1b365d",
     "logo": "logos/ass-weiss.png",
-    "logo_h": 150,
+    "logo_h": 120,
     "zeile": "Am Dürener Weg · Düren",
-    "breite": 1.25
+    "breite": 1.45,
+    "seite": "rechts"
    },
    "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Foto von asselektrotechnik.de (Firmenwagen), Logo und Firmenblau"
   },
@@ -25,15 +26,15 @@
    "layout": "foto",
    "bild": "ass/ruecken.jpg",
    "fokus": "64% 40%",
-   "zentrum": "64% 72%",
-   "zoom": 1.1,
+   "zentrum": "64% 55%",
+   "zoom": 1.06,
    "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Foto von asselektrotechnik.de (Monteur im Firmenshirt, von hinten)",
    "panel": {
     "farbe": "#1b365d",
     "logo": "logos/ass-weiss.png",
-    "logo_h": 150,
+    "logo_h": 120,
     "zeile": "Beratung und Planung",
-    "breite": 1.25,
+    "breite": 1.4,
     "seite": "rechts"
    }
   },
@@ -70,28 +71,28 @@
    "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): Logo AJ Sports (vom Betreiber), Streifen wie am Trikot-Entwurf"
   },
   {
-   "id": "hk-growth-webstudio-verein",
+   "id": "hk-growth-webstudio-software",
    "stil": "marke",
    "layout": "hk_referenz",
-   "bild": "hk/ccrr-desktop.jpg",
-   "handy": "hk/ccrr-handy.jpg",
-   "adresse": "ccrr.de",
-   "lauf": 1500,
-   "handyLauf": 900,
-   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): echte Website ccrr.de (Referenz auf hk-growthoperator.de), Bildschirmfoto 20.11.2026",
-   "crf": 31
+   "bild": "hk/uno-desktop.jpg",
+   "handy": "hk/uno-handy.jpg",
+   "adresse": "deal-uno.de",
+   "lauf": 900,
+   "handyLauf": 700,
+   "crf": 31,
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): DealUno, eigenes Software-Produkt von HK Growth (laut hk-growthoperator.de), Bildschirmfoto 20.11.2026"
   },
   {
-   "id": "hk-growth-webstudio-shop",
+   "id": "hk-growth-webstudio-ki",
    "stil": "marke",
    "layout": "hk_referenz",
-   "bild": "hk/plant-desktop.jpg",
-   "handy": "hk/plant-handy.jpg",
-   "adresse": "plantceylon.com",
-   "lauf": 1500,
-   "handyLauf": 900,
-   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): echte Website plantceylon.com (Referenz auf hk-growthoperator.de), Bildschirmfoto 20.11.2026",
-   "crf": 31
+   "bild": "hk/os-desktop.jpg",
+   "handy": "hk/os-handy.jpg",
+   "adresse": "ki.hk-growthoperator.de",
+   "lauf": 900,
+   "handyLauf": 700,
+   "crf": 31,
+   "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): HK Growth OS, KI-Betriebssystem von HK Growth, Bildschirmfoto 20.11.2026 ohne Logostreifen (dort KBS)"
   },
   {
    "id": "aj-sports-trikot",

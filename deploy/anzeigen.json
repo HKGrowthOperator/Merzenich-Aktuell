@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Werbesystem der statischen Kopie: dieselben Anzeigen wie auf WordPress (Firmen aus wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json, Bilder unter /assets/anzeigen/). Seit 28.10.2026 keine Musteranzeigen mehr (Auftrag Betreiber). Seit 20.11.2026 (Vorgabe Betreiber: echt statt gestellt) mit echten Firmenfotos, Logos und Firmenfarben gestaltet (docs/anzeigen/marken.mjs); einziges KI-Bild ist der Trikot-Entwurf von AJ Sports, gekennzeichnet. HK Growth zeigt echte Referenz-Websites. Aktive Flächen: Startseite Band 1-6, Bühne, Servicespalte, Sportseite, Unternehmen und Artikelseiten. Keine Preise.",
+  "_hinweis": "Werbesystem der statischen Kopie: dieselben Anzeigen wie auf WordPress (Firmen aus wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json, Bilder unter /assets/anzeigen/). Seit 28.10.2026 keine Musteranzeigen mehr (Auftrag Betreiber). Seit 20.11.2026 (Vorgabe Betreiber: echt statt gestellt) mit echten Firmenfotos, Logos und Firmenfarben gestaltet (docs/anzeigen/marken.mjs); einziges KI-Bild ist der Trikot-Entwurf von AJ Sports, gekennzeichnet. HK Growth zeigt eigene Software (DealUno) und das KI-Betriebssystem HK Growth OS. Aktive Flächen: Startseite Band 1-6, Bühne, Servicespalte, Sportseite, Unternehmen und Artikelseiten. Keine Preise.",
   "werbungAn": true,
   "rotationSekunden": 14,
   "motive": [
@@ -39,8 +39,8 @@
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
       "bild": "/assets/anzeigen/merzlicht-wand.jpg",
-      "bildAlt": "Zeichnung der Videowall von Merzlicht, auf dem Bildschirm wechseln Logo und Angebot",
-      "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht (Zeichnung, kein Foto)"
+      "bildAlt": "LED-Bildschirm der Videowall von Merzlicht, darauf wechseln Logo und Angebot",
+      "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht (Grafik, kein Foto)"
     },
     {
       "id": "aj-sports-trikot",
@@ -79,7 +79,7 @@
       "cta": "Website",
       "ziel": "https://www.asselektrotechnik.de/",
       "bild": "/assets/anzeigen/ass-elektrotechnik-team.jpg",
-      "bildAlt": "Monteur im Shirt von ASS Elektrotechnik, von hinten",
+      "bildAlt": "Mitarbeiter im Shirt von ASS Elektrotechnik, von hinten",
       "nachweis": "Foto: ASS Elektrotechnik (asselektrotechnik.de), Gestaltung Merzenich Aktuell; Nutzung mit Zusage laut Betreiber"
     },
     {
@@ -100,26 +100,26 @@
       "kunde": "AJ Sports Entertainment",
       "typ": "firma",
       "eyebrow": "AJ Sports Entertainment",
-      "headline": "Trikots und Sportbekleidung.",
-      "text": "AJ Sports Entertainment entwickelt die neue Trikotlinie für den SC 1919 Merzenich.",
+      "headline": "Für den Sport in Merzenich.",
+      "text": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich.",
       "cta": "Zum Unternehmen",
       "ziel": "/unternehmen/",
       "bild": "/assets/anzeigen/aj-sports-marke.jpg",
-      "bildAlt": "Logo von AJ Sports mit rot-weißen Streifen",
+      "bildAlt": "Logo von AJ Sports, Schriftzug „Trikots und Sportbekleidung“, rote Kante mit zwei hellen Linien",
       "nachweis": "Gestaltung Merzenich Aktuell mit Logo von AJ Sports"
     },
     {
-      "id": "hk-growth-webstudio-verein",
+      "id": "hk-growth-webstudio-software",
       "kunde": "HK Growth Webstudio",
       "typ": "firma",
-      "eyebrow": "HK Growth Webstudio · Referenz Verein",
-      "headline": "Websites für Vereine.",
-      "text": "Referenz: der Citroën-Club Rhein-Ruhr, mit Terminen, Clubs und Mitgliederbereich auf einer Seite.",
+      "eyebrow": "HK Growth Webstudio · Software",
+      "headline": "Software, die zu Ihrem Betrieb passt.",
+      "text": "Individuelle Software und KI-Automationen, zum Beispiel DealUno, unser eigenes CRM für den Vertrieb.",
       "cta": "Website",
       "ziel": "https://hk-growthoperator.de/#referenzen",
-      "bild": "/assets/anzeigen/hk-growth-webstudio-verein.jpg",
-      "bildAlt": "Website des Citroën-Club Rhein-Ruhr im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
-      "nachweis": "Bildschirmansicht ccrr.de, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion"
+      "bild": "/assets/anzeigen/hk-growth-webstudio-software.jpg",
+      "bildAlt": "Website von DealUno, eigenes Software-Produkt von HK Growth, im Browser und auf dem Handy",
+      "nachweis": "Bildschirmansicht deal-uno.de (eigenes Produkt laut hk-growthoperator.de); Gestaltung: Redaktion"
     },
     {
       "id": "hk-growth-webstudio-2",
@@ -135,17 +135,17 @@
       "nachweis": "Bildschirmansicht: Webstudio-Seite (heute hk-growthoperator.de); Nutzung mit Zusage laut Betreiber, 02.11.2026"
     },
     {
-      "id": "hk-growth-webstudio-shop",
+      "id": "hk-growth-webstudio-ki",
       "kunde": "HK Growth Webstudio",
       "typ": "firma",
-      "eyebrow": "HK Growth Webstudio · Referenz Shop",
-      "headline": "Vom ersten Klick zur Bestellung.",
-      "text": "Referenz: PlantCeylon. Baum auswählen, online bestellen, Nachweis per Video.",
+      "eyebrow": "HK Growth Webstudio · KI-Automation",
+      "headline": "KI, die Abläufe übernimmt.",
+      "text": "HK Growth OS bereitet Vorgänge von der Anfrage bis zur Rechnung vor. Ihr Team prüft und gibt frei.",
       "cta": "Website",
-      "ziel": "https://hk-growthoperator.de/#referenzen",
-      "bild": "/assets/anzeigen/hk-growth-webstudio-shop.jpg",
-      "bildAlt": "Website von PlantCeylon im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
-      "nachweis": "Bildschirmansicht plantceylon.com, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion"
+      "ziel": "https://ki.hk-growthoperator.de/",
+      "bild": "/assets/anzeigen/hk-growth-webstudio-ki.jpg",
+      "bildAlt": "Website von HK Growth OS, dem KI-Betriebssystem von HK Growth, im Browser und auf dem Handy",
+      "nachweis": "Bildschirmansicht ki.hk-growthoperator.de (HK Growth OS); Gestaltung: Redaktion"
     }
   ],
   "label": "Anzeige"

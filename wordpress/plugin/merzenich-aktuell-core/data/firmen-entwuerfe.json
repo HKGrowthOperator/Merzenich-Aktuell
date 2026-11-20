@@ -1,5 +1,5 @@
 {
-  "stand": "2026-11-20b",
+  "stand": "2026-11-20c",
   "hinweis": "Unternehmen auf Merzenich Aktuell (Aufträge Betreiber 24.10., 28.10. und 02.11.2026; Bäckerei Wirtz, Hasberg und Porschen Media sind früher eingetragene Betriebe). KBS Management als Firma am 20.11.2026 zurückgezogen (Auftrag Betreiber: nur die Einträge als Firma, Impressum bleibt); Profil, Beitrag und Anzeigen gehen mit „Firma zurückziehen“ auf Entwurf. HK Growth Webstudio seit 02.11.2026 (nur Webstudio, Kennzeichnung „Anzeige“, Angaben von hk-growthoperator.de; die Webstudio-Seite lag bis 12.11.2026 unter website.hk-growthoperator.de). Stammdaten von Almera Clean und ASS Elektrotechnik auf den Unternehmenswebsites geprüft; Merzlicht laut Bericht des SC 1919 Merzenich zur Videowall. AJ Sports seit 20.11.2026 mit Logo und Beitrag zur neuen Trikotlinie für den SC 1919 Merzenich (Angaben und Logo laut Betreiber, Bild als KI-Visualisierung gekennzeichnet); Ort und Kontakt liegen noch nicht vor, daher weiter „nur_name“ (kein Ort, keine Kontaktangaben). Werbung (Auftrag 28.10. abends): je zwei Anzeigen mit Foto und Video-Schleife auf allen Werbeplätzen (anzeigen), Fotos von den Websites der Unternehmen bzw. KI-Bilder für Merzlicht und AJ Sports; jeder Zugang darf bis zu 5 eigene Anzeigen einreichen (werbung.max). Profil und Beiträge bleiben Entwurf, bis die Einwilligung mit Nachweis eingetragen ist; das Logo wird erst nach eingetragener Logo-Freigabe übernommen, das Werbebanner mit der Einwilligung angelegt. Firmenbeiträge erscheinen nur unter „Unternehmen“ (firmenbeitraege.php). Früher eingetragene Betriebe nimmt „Firma zurückziehen“ von der Seite.",
   "test": {
     "preis_cent": 0,
@@ -89,7 +89,7 @@
           "alt": "Anzeige von Almera Clean: Gebäude, Fenster, Wäsche, Kettenweg 1 in Merzenich",
           "nachweis": "Gestaltung Merzenich Aktuell mit Logo, Farben und Schrift von Almera Clean (almera-clean.de)",
           "quelle": "https://www.almera-clean.de/",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         },
         {
           "id": "almera-clean-kontakt",
@@ -103,7 +103,7 @@
           "alt": "Anzeige von Almera Clean mit Logo und Telefonnummer 0176 814 124 41",
           "nachweis": "Gestaltung Merzenich Aktuell mit Logo, Farben und Schrift von Almera Clean (almera-clean.de)",
           "quelle": "https://www.almera-clean.de/",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         }
       ]
     },
@@ -173,7 +173,7 @@
           "alt": "Monteur von ASS Elektrotechnik vor dem Firmenwagen mit Logo",
           "nachweis": "Foto: ASS Elektrotechnik (asselektrotechnik.de), Gestaltung Merzenich Aktuell; Nutzung mit Zusage laut Betreiber",
           "quelle": "https://www.asselektrotechnik.de/",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         },
         {
           "id": "ass-elektrotechnik-team",
@@ -184,10 +184,10 @@
           "video": "ass-elektrotechnik-team.mp4",
           "bild_breit": "ass-elektrotechnik-team-breit.jpg",
           "video_breit": "ass-elektrotechnik-team-breit.mp4",
-          "alt": "Monteur im Shirt von ASS Elektrotechnik, von hinten",
+          "alt": "Mitarbeiter im Shirt von ASS Elektrotechnik, von hinten",
           "nachweis": "Foto: ASS Elektrotechnik (asselektrotechnik.de), Gestaltung Merzenich Aktuell; Nutzung mit Zusage laut Betreiber",
           "quelle": "https://www.asselektrotechnik.de/",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         }
       ]
     },
@@ -232,10 +232,10 @@
           "video": "merzlicht-wand.mp4",
           "bild_breit": "merzlicht-wand-breit.jpg",
           "video_breit": "merzlicht-wand-breit.mp4",
-          "alt": "Zeichnung der Videowall von Merzlicht, auf dem Bildschirm wechseln Logo und Angebot",
-          "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht (Zeichnung, kein Foto)",
+          "alt": "LED-Bildschirm der Videowall von Merzlicht, darauf wechseln Logo und Angebot",
+          "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht (Grafik, kein Foto)",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         },
         {
           "id": "merzlicht-marke",
@@ -249,7 +249,7 @@
           "alt": "Logo von Merzlicht, Werbung auf der Videowall am Sportplatz Bürgewaldzentrum",
           "nachweis": "Gestaltung Merzenich Aktuell mit Logo von Merzlicht",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         }
       ]
     },
@@ -301,16 +301,16 @@
         {
           "id": "aj-sports-marke",
           "zeile": "AJ Sports Entertainment",
-          "titel": "Trikots und Sportbekleidung.",
-          "text": "AJ Sports Entertainment entwickelt die neue Trikotlinie für den SC 1919 Merzenich.",
+          "titel": "Für den Sport in Merzenich.",
+          "text": "AJ Sports Entertainment entwickelt eine neue Trikotlinie für den SC 1919 Merzenich.",
           "bild": "aj-sports-marke.jpg",
           "video": "aj-sports-marke.mp4",
           "bild_breit": "aj-sports-marke-breit.jpg",
           "video_breit": "aj-sports-marke-breit.mp4",
-          "alt": "Logo von AJ Sports mit rot-weißen Streifen",
+          "alt": "Logo von AJ Sports, Schriftzug „Trikots und Sportbekleidung“, rote Kante mit zwei hellen Linien",
           "nachweis": "Gestaltung Merzenich Aktuell mit Logo von AJ Sports",
           "knopf": "Zum Profil",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         }
       ],
       "beitrag": {
@@ -387,19 +387,19 @@
       },
       "anzeigen": [
         {
-          "id": "hk-growth-webstudio-verein",
-          "zeile": "HK Growth Webstudio · Referenz Verein",
-          "titel": "Websites für Vereine.",
-          "text": "Referenz: der Citroën-Club Rhein-Ruhr, mit Terminen, Clubs und Mitgliederbereich auf einer Seite.",
-          "bild": "hk-growth-webstudio-verein.jpg",
-          "video": "hk-growth-webstudio-verein.mp4",
-          "bild_breit": "hk-growth-webstudio-verein-breit.jpg",
-          "video_breit": "hk-growth-webstudio-verein-breit.mp4",
-          "alt": "Website des Citroën-Club Rhein-Ruhr im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
-          "nachweis": "Bildschirmansicht ccrr.de, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion",
-          "quelle": "https://www.ccrr.de/",
+          "id": "hk-growth-webstudio-software",
+          "zeile": "HK Growth Webstudio · Software",
+          "titel": "Software, die zu Ihrem Betrieb passt.",
+          "text": "Individuelle Software und KI-Automationen, zum Beispiel DealUno, unser eigenes CRM für den Vertrieb.",
+          "bild": "hk-growth-webstudio-software.jpg",
+          "video": "hk-growth-webstudio-software.mp4",
+          "bild_breit": "hk-growth-webstudio-software-breit.jpg",
+          "video_breit": "hk-growth-webstudio-software-breit.mp4",
+          "alt": "Website von DealUno, eigenes Software-Produkt von HK Growth, im Browser und auf dem Handy",
+          "nachweis": "Bildschirmansicht deal-uno.de (eigenes Produkt laut hk-growthoperator.de); Gestaltung: Redaktion",
+          "quelle": "https://deal-uno.de/",
           "ziel": "https://hk-growthoperator.de/#referenzen",
-          "stand": "2026-11-20b"
+          "stand": "2026-11-20c"
         },
         {
           "id": "hk-growth-webstudio-2",
@@ -417,19 +417,19 @@
           "stand": "2026-11-02c"
         },
         {
-          "id": "hk-growth-webstudio-shop",
-          "zeile": "HK Growth Webstudio · Referenz Shop",
-          "titel": "Vom ersten Klick zur Bestellung.",
-          "text": "Referenz: PlantCeylon. Baum auswählen, online bestellen, Nachweis per Video.",
-          "bild": "hk-growth-webstudio-shop.jpg",
-          "video": "hk-growth-webstudio-shop.mp4",
-          "bild_breit": "hk-growth-webstudio-shop-breit.jpg",
-          "video_breit": "hk-growth-webstudio-shop-breit.mp4",
-          "alt": "Website von PlantCeylon im Browser und auf dem Handy, Referenz von HK Growth Webstudio",
-          "nachweis": "Bildschirmansicht plantceylon.com, Referenz laut hk-growthoperator.de (Zusammenarbeit & Projekte); Gestaltung: Redaktion",
-          "quelle": "https://plantceylon.com/",
-          "ziel": "https://hk-growthoperator.de/#referenzen",
-          "stand": "2026-11-20b"
+          "id": "hk-growth-webstudio-ki",
+          "zeile": "HK Growth Webstudio · KI-Automation",
+          "titel": "KI, die Abläufe übernimmt.",
+          "text": "HK Growth OS bereitet Vorgänge von der Anfrage bis zur Rechnung vor. Ihr Team prüft und gibt frei.",
+          "bild": "hk-growth-webstudio-ki.jpg",
+          "video": "hk-growth-webstudio-ki.mp4",
+          "bild_breit": "hk-growth-webstudio-ki-breit.jpg",
+          "video_breit": "hk-growth-webstudio-ki-breit.mp4",
+          "alt": "Website von HK Growth OS, dem KI-Betriebssystem von HK Growth, im Browser und auf dem Handy",
+          "nachweis": "Bildschirmansicht ki.hk-growthoperator.de (HK Growth OS); Gestaltung: Redaktion",
+          "quelle": "https://ki.hk-growthoperator.de/",
+          "ziel": "https://ki.hk-growthoperator.de/",
+          "stand": "2026-11-20c"
         }
       ]
     }
