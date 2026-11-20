@@ -8,7 +8,7 @@
       "ortsteil": "merzenich",
       "kicker": "Blaulicht · Wetter",
       "titel": "Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen",
-      "dek": "Für den Kreis Düren gilt eine amtliche Unwetterwarnung. Bis zum Abend werden noch einmal rund 35 Liter Regen je Quadratmeter erwartet.",
+      "dek": "Für den Kreis Düren gilt bis 22 Uhr eine amtliche Unwetterwarnung; rund 35 Liter Regen je Quadratmeter werden noch erwartet. Für die Nacht zum Samstag warnt der Wetterdienst zusätzlich vor Glätte.",
       "datum": "2026-11-20T09:18:00+01:00",
       "artikeltyp": "kurzmeldung",
       "relevanz": 1,
@@ -28,13 +28,15 @@
         "Der Deutsche Wetterdienst (DWD) warnt für den Kreis Düren und damit auch für die Gemeinde Merzenich vor ergiebigem Dauerregen. Die amtliche Unwetterwarnung gilt nach dem Stand von Freitag, 20. November, 9.12 Uhr, bis Freitagabend um 22 Uhr. Bisher hat der Wetterdienst im Warngebiet 60 bis 90 Liter Regen je Quadratmeter beobachtet. Mit Unterbrechungen sollen noch einmal etwa 35 Liter hinzukommen, in Staulagen bis zu 45 Liter.",
         "Der DWD sieht große Gefahr, dass Straßen und Unterführungen sowie Gebäude in der Nähe von Bächen und Flüssen überflutet werden; auch Erdrutsche seien möglich. Er rät, überflutete und gefährdete Stellen zu meiden, im Straßenverkehr vorsichtig zu fahren und mit Behinderungen zu rechnen. Wer kann, solle vorbeugend Hochwasserschutz treffen. Droht ein Keller vollzulaufen oder steht schon Wasser darin, solle man ihn sofort verlassen. Über die Hochwasserlage informiert das Portal hochwasserzentralen.de.",
         "Der Kreis Düren hatte die Warnung schon am Donnerstag, 19. November, weitergegeben. Damals galt sie ab 11.44 Uhr; erwartet wurden zu diesem Zeitpunkt noch 40 bis 60 Liter je Quadratmeter, in Staulagen bis 70 Liter.",
-        "Einsätze wegen des Regens in Merzenich sind bislang nicht bekannt. Die Einsatzübersichten der Freiwilligen Feuerwehr Merzenich auf ihrer Website und in der Heimat-Info-App verzeichneten am Freitagmorgen um 9.17 Uhr als jüngsten Einsatz eine Türöffnung vom Donnerstagvormittag; ein Unwettereinsatz war nicht darunter. Auch die Polizei Düren hatte bis dahin keine Meldung zu Folgen des Regens in der Gemeinde veröffentlicht. Merzenich Aktuell berichtet, falls sich das ändert."
+        "Einsätze wegen des Regens in Merzenich sind bislang nicht bekannt. Die Einsatzübersichten der Freiwilligen Feuerwehr Merzenich auf ihrer Website und in der Heimat-Info-App verzeichneten am Freitagmorgen um 9.17 Uhr als jüngsten Einsatz eine Türöffnung vom Donnerstagvormittag; ein Unwettereinsatz war nicht darunter. Auch die Polizei Düren hatte bis dahin keine Meldung zu Folgen des Regens in der Gemeinde veröffentlicht. Merzenich Aktuell berichtet, falls sich das ändert.",
+        "Aktualisiert am 20. November: Nach dem Stand von 14.38 Uhr hält der DWD die Unwetterwarnung bis 22 Uhr aufrecht; Mengen und Hinweise sind unverändert. Neu warnt er für die Nacht zum Samstag, 21. November, von 0 bis 9 Uhr vor Glätte und vor leichtem Frost zwischen 0 und minus 3 Grad. Er rät, im Straßenverkehr vorsichtig zu fahren und Pflanzen oder Leitungen bei Bedarf vor Frost zu schützen. Die Feuerwehr Merzenich hatte bis 14.48 Uhr keinen Einsatz wegen des Regens veröffentlicht, die Polizei Düren keine Meldung zu Regenfolgen in der Gemeinde."
       ],
       "fakten": [
         "Amtliche Unwetterwarnung vor ergiebigem Dauerregen für den Kreis Düren bis Freitag, 20. November, 22 Uhr",
         "Bisher 60 bis 90 Liter je Quadratmeter beobachtet, weitere rund 35 Liter erwartet, in Staulagen bis 45 Liter",
         "Gefahr von Überflutungen und Erdrutschen",
-        "Keine regenbedingten Einsätze der Feuerwehr Merzenich bis 20. November, 9.17 Uhr"
+        "Keine regenbedingten Einsätze der Feuerwehr Merzenich bis 20. November, 9.17 Uhr",
+        "DWD-Stand 20. November, 14.38 Uhr: Unwetterwarnung unverändert bis 22 Uhr; für den 21. November von 0 bis 9 Uhr Warnung vor Glätte und Frost (0 bis minus 3 Grad)"
       ],
       "pruefung": [
         {
@@ -69,6 +71,16 @@
           ],
           "stelle": "Einsatzübersichten",
           "selbstauskunft": "Eigene Abrufe der Feuerwehrseiten und des Presseportals am 20.11.2026 um 9.17 Uhr; Fehlen eines Einsatzes nur für diesen Zeitpunkt festgestellt"
+        },
+        {
+          "aussage": "DWD-Warnungen (warnings.json), Datenstand 20.11.2026 14:38:28 Uhr (14.38 Uhr), gelesen 14:48 Uhr: Warnzelle 105358000 „Kreis Düren“: (1) „Amtliche UNWETTERWARNUNG vor ERGIEBIGEM DAUERREGEN“, Stufe 4, Ende 20.11. 22:00 Uhr (22 Uhr), Beschreibung wörtlich wie um 9.12 Uhr (60 bis 90, um 35, bis 45 l/m²). (2) „Amtliche WARNUNG vor GLÄTTE“, Stufe 2, 21.11.2026 (Samstag, 21. November) 00:00 bis 09:00 Uhr (0 bis 9 Uhr), „Es besteht Glättegefahr.“, Handlungsempfehlung „Verhalten im Straßenverkehr anpassen“. (3) „Amtliche WARNUNG vor FROST“, Stufe 2, gleicher Zeitraum, „Es tritt leichter Frost zwischen 0 °C und -3 °C auf.“ (minus 3 Grad), Empfehlung „ggf. Frostschutzmaßnahmen ergreifen“, Hinweis auf mögliche Frostschäden. Feuerwehr Website (bis 147/26) und Heimat-Info-Profil (bis 148/26) 14:48 Uhr (14.48 Uhr) ohne Regeneinsatz; Polizei Düren nr/8 14:48 Uhr: jüngste Meldung 20.11. 09:30 Uhr, keine zu Regenfolgen in Merzenich.",
+          "belege": [
+            "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+            "https://feuerwehr-merzenich.de/einsaetze",
+            "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege",
+            "https://www.presseportal.de/blaulicht/nr/8"
+          ],
+          "stelle": "warnings[105358000]; Einsatzübersichten; Dienststellenliste"
         }
       ],
       "quelle": {
@@ -95,6 +107,11 @@
         {
           "name": "Freiwillige Feuerwehr Merzenich in Heimat-Info: Beiträge",
           "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Polizei Düren: Pressemitteilungen (Presseportal, Dienststelle 8)",
+          "url": "https://www.presseportal.de/blaulicht/nr/8",
           "stand": "2026-11-20"
         }
       ]
