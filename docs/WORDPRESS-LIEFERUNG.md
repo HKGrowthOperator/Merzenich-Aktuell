@@ -1,6 +1,15 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.3 · Core-Plugin 1.48.9 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.3 · Core-Plugin 1.49.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026: Plugin 1.49.0, Werbung mit Higgsfield
+
+- **Anzeigen:** Almera Clean, ASS Elektrotechnik, Merzlicht und AJ Sports haben neue Anzeigen. Sie sind gekennzeichnet als „KI-Bild“, auch im Alt-Text und im Nachweis.
+  - Die Bilder sind mit Higgsfield GPT Image 2.6 erzeugt, die Videos mit Kling 3.0 (5 s, nahtlose Schleife).
+  - Die Texte sind überarbeitet. HK Growth bleibt unverändert.
+- **Einbau:** `docs/anzeigen/bauen.mjs` (Stil `film` mit `standbild_bild`) baut Bild und Video aus `docs/anzeigen/material/ki/` in 16:9 und breit nach `data/banner/`.
+- **Material:** Altes Material von Almera und ASS und die alten KI-Bilder sind entfernt; Prompts liegen in `artifacts/werbung-2026-11/PROMPTS.md`.
+- **Live:** Neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab, die alten stehen danach auf Entwurf.
 
 ## Neu am 20.11.2026: Plugin 1.48.8 und 1.48.9, KBS als Firma raus, AJ Sports mit Logo und Trikot-Beitrag
 

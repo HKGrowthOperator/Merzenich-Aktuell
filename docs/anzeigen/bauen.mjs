@@ -12,7 +12,8 @@
  *   split    drei Fotos als Bahnen, die sich schrittweise verschieben (16:9 zwei, breit drei sichtbar)
  *   detail   ein Foto: heran an den Fokuspunkt und zurück
  *   licht    ein Foto mit ruhigen Licht- und Bildschirmeffekten (flaechen, lichter), ohne Farbkreisel
- *   film     vorhandenes Video der Firma (KBS-Intro), ausgeschnitten ohne Schwarzblende, Schleife mit Überblendung
+ *   film     vorhandenes Video (seit 20.11.2026 die Higgsfield-Videos, Start- = Endbild), Schleife mit kurzer
+ *            Überblendung; mit „standbild_bild“ kommt das Standbild scharf aus dem Ausgangsbild
  *   geraet   Website im Browserfenster und auf dem Handy (HK Growth Webstudio), nur breit
  * Fotos liegen in docs/anzeigen/material/ (verkleinert, Nutzung laut Nachweis in firmen-entwuerfe.json).
  * Das Foto deckt das Bild wie object-fit: cover mit dem Fokuspunkt (object-position); die
@@ -217,6 +218,13 @@ function standbild(m, fmt, aus, roh) {
   const [pw, ph] = fmt.poster;
   const q = ['-q:v', '5'];
   if (m.stil === 'geraet') { execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', roh, '-frames:v', '1', ...q, aus]); return; }
+  // film mit „standbild_bild“ (20.11.2026, Higgsfield): Standbild scharf aus dem Ausgangsbild des Videos
+  // (gleicher Ausschnitt und Fokus), statt aus einem kleineren Videobild.
+  if (m.stil === 'film' && m.standbild_bild) {
+    const src = join(MATERIAL, m.standbild_bild), { w, h } = masse(src), c = ausschnitt(w, h, pw / ph, fokus(m.fokus));
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-frames:v', '1', '-vf', `crop=${c.w}:${c.h}:${c.x}:${c.y},scale=${pw}:${ph}:flags=lanczos`, ...q, aus]);
+    return;
+  }
   if (m.stil === 'film') {
     const a = pw / ph, src = join(MATERIAL, m.video), { w, h } = masse(src), c = ausschnitt(w, h, a, fokus(m.fokus));
     execFileSync('ffmpeg', ['-v', 'error', '-y', '-ss', String(m.standbild ?? 4), '-i', src, '-frames:v', '1', '-vf', `crop=${c.w}:${c.h}:${c.x}:${c.y},scale=${pw}:${ph}:flags=lanczos`, ...q, aus]);

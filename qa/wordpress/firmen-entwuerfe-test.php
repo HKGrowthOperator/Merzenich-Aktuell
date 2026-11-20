@@ -74,7 +74,7 @@ pruefe('Art je Firma: Anzeige (auch HK Growth, Vorgabe 02.11.2026)', array_map('
 pruefe('keine Firma als Herausgeberin markiert (KBS-Einträge am 20.11.2026 zurückgezogen)', array_map(fn($f) => !empty($f['herausgeberin']), $firmen), [false, false, false, false, false]);
 pruefe('Werbekontingent: alle fünf 5 Anzeigen', array_map(fn($f) => $f['werbung']['max'] ?? null, $firmen), [5, 5, 5, 5, 5]);
 pruefe('je Firma zwei Anzeigen, HK Growth drei (Vorgabe Betreiber 02.11.2026)', array_map(fn($f) => count(ma_firmen_anzeigen($f)), $firmen), [2, 2, 2, 2, 3]);
-pruefe('KI-Bilder nur bei Merzlicht und AJ Sports', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[false, false], [false, false], [true, true], [true, true], [false, false, false]]);
+pruefe('KI-Bilder (Higgsfield, 20.11.2026) bei allen außer HK Growth', array_map(fn($f) => array_map(fn($a) => !empty($a['ki']), $f['anzeigen']), $firmen), [[true, true], [true, true], [true, true], [true, true], [false, false, false]]);
 foreach ($firmen as $f) foreach (ma_firmen_anzeigen($f) as $i => $a) {
     $n = $f['profil']['titel'] . ' ' . ($i + 1);
     pruefe("$n: Überschrift, Satz, Zeile oben, Alt-Text, Nachweis", count(array_filter([$a['titel'] ?? '', $a['text'] ?? '', $a['zeile'] ?? '', $a['alt'] ?? '', $a['nachweis'] ?? ''], fn($v) => trim((string) $v) !== '')), 5);
@@ -102,7 +102,7 @@ foreach ($firmen as $f) {
     pruefe("$n: SEO-Beschreibung höchstens 160 Zeichen", mb_strlen($b['seo_beschreibung']) <= 160, true);
 }
 pruefe('AJ Sports: Beitrag zur Trikotlinie, Bild als KI-Visualisierung genannt, Logo laut Betreiber', [str_contains($firmen[3]['beitrag']['titel'], 'Trikotlinie'), str_contains(implode(' ', $firmen[3]['beitrag']['absaetze']), 'KI-Visualisierung'), $firmen[3]['profil']['logo']['datei']], [true, true, 'aj-sports.png']);
-pruefe('AJ Sports Anzeige 1: Trikot-Motiv als KI-Bild, Knopf und Ziel zum Beitrag', [$firmen[3]['anzeigen'][0]['bild'], $firmen[3]['anzeigen'][0]['ki'], $firmen[3]['anzeigen'][0]['knopf'], str_ends_with($firmen[3]['anzeigen'][0]['ziel'], '/' . $firmen[3]['beitrag']['slug'] . '/')], ['aj-sports-1-v3.jpg', true, 'Zum Beitrag', true]);
+pruefe('AJ Sports Anzeige 1: Trikot-Motiv als KI-Bild, Knopf und Ziel zum Beitrag', [$firmen[3]['anzeigen'][0]['bild'], $firmen[3]['anzeigen'][0]['ki'], $firmen[3]['anzeigen'][0]['knopf'], str_ends_with($firmen[3]['anzeigen'][0]['ziel'], '/' . $firmen[3]['beitrag']['slug'] . '/')], ['aj-sports-trikot.jpg', true, 'Zum Beitrag', true]);
 pruefe('ASS Elektrotechnik: Sitz Düren, Meisterbetrieb, Logo und Beitrag', [$firmen[1]['profil']['ort'], str_contains($firmen[1]['profil']['branche'], 'Meisterbetrieb'), $firmen[1]['profil']['logo']['datei'], $firmen[1]['beitrag']['slug'] !== ''], ['Düren', true, 'ass-elektrotechnik.png', true]);
 // HK Growth Webstudio (02.11.2026): nur Webstudio, gekennzeichnet nur als „Anzeige“ (Vorgabe Betreiber), Klick auf die Website.
 pruefe('HK Growth Webstudio: Sitz Marienheide, Website als Ziel, Logo, Zeile ohne „in eigener Sache“', [$firmen[4]['profil']['ort'], $firmen[4]['profil']['website'], $firmen[4]['profil']['logo']['datei'], count(array_filter($firmen[4]['anzeigen'], fn($a) => stripos($a['zeile'], 'eigener Sache') !== false || isset($a['knopf'])))], ['Marienheide', 'https://hk-growthoperator.de/', 'hk-growth.png', 0]);
@@ -199,16 +199,16 @@ $ads = array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad
 $adId = (int) array_key_first($ads); $ad = $ads[$adId] ?? [];
 $m = fn(string $k) => get_post_meta($adId, $k);
 pruefe('Merzlicht: Profil veröffentlicht, Logo-Haken ohne Logo ignoriert', [$GLOBALS['posts'][104]['post_status'], get_post_meta(104, 'ma_business_logo_rechte'), str_contains(implode(' ', $log), 'Logo')], ['publish', '', false]);
-pruefe('Merzlicht: zwei Werbebanner, mit festem Motiv-Schlüssel markiert', [count($ads), array_values(array_map(fn($id) => get_post_meta($id, 'ma_firmen_banner'), array_keys($ads)))], [2, ['merzlicht:merzlicht-1', 'merzlicht:merzlicht-2']]);
+pruefe('Merzlicht: zwei Werbebanner, mit festem Motiv-Schlüssel markiert', [count($ads), array_values(array_map(fn($id) => get_post_meta($id, 'ma_firmen_banner'), array_keys($ads)))], [2, ['merzlicht:merzlicht-videowall', 'merzlicht:merzlicht-spieltag']]);
 pruefe('Banner 1 (Firma ohne Website): veröffentlicht, aktiv, Knopf zum Profil, ohne Ende, mit Profil', [$ad['post_status'] ?? '', $ad['post_title'] ?? '', $m('ma_ad_active'), $m('ma_ad_url'), $m('ma_ad_knopf'), $m('ma_ad_end'), $m('ma_business_id')], ['publish', 'Ihre Werbung auf der Videowall.', '1', 'https://merzenich-aktuell.de/unternehmen/merzlicht/', 'Zum Profil', '', '104']);
 pruefe('Zusage ergänzt leere Branche, eigene Angaben bleiben', [get_post_meta(104, 'ma_business_branche'), get_post_meta(104, 'ma_business_ortsteil')], ['Werbung auf der Videowall', 'golzheim']);
 pruefe('Banner im Stil der Anzeigen: Zeile oben und Satz, als KI-Bild gekennzeichnet', [$m('ma_ad_sponsor'), $ad['post_excerpt'] ?? '', $m('ma_ad_ki')], ['Merzlicht · Videowall am Bürgewaldzentrum', 'Am Sportplatz Bürgewaldzentrum, sichtbar zum Spielfeld und zum Merzpark.', '1']);
 pruefe('Plätze: sechs Startseiten-Bänder, unter Artikeln, Unternehmensspalte', array_merge([$m('ma_ad_slot')], $GLOBALS['weitere'][$adId]['ma_ad_slot_weitere'] ?? []), ma_firmen_banner_plaetze());
 $bild = (int) ($GLOBALS['meta'][$adId]['_thumbnail_id'] ?? 0);
-pruefe('Bannerbild aus data/banner als Beitragsbild (Merkmal mit Prüfsumme), Alt-Text, Nachweis', [strtok(get_post_meta($bild, 'ma_firmen_banner_datei'), '#'), get_post_meta($bild, '_wp_attachment_image_alt'), get_post_meta($bild, 'ma_image_credit')], ['merzlicht-1-v2.jpg', 'LED-Videowall am Sportplatz in der Dämmerung (KI-Bild)', 'KI-Bild (Symbolbild), erstellt für Merzenich Aktuell']);
-pruefe('Video-Schleife aus data/banner in der Mediathek, MP4 und WebM', [strtok(get_post_meta((int) $m('ma_ad_video'), 'ma_firmen_banner_datei'), '#'), strtok(get_post_meta((int) $m('ma_ad_video_webm'), 'ma_firmen_banner_datei'), '#')], ['merzlicht-1-v2.mp4', 'merzlicht-1-v2.webm']);
+pruefe('Bannerbild aus data/banner als Beitragsbild (Merkmal mit Prüfsumme), Alt-Text, Nachweis', [strtok(get_post_meta($bild, 'ma_firmen_banner_datei'), '#'), get_post_meta($bild, '_wp_attachment_image_alt'), get_post_meta($bild, 'ma_image_credit')], ['merzlicht-videowall.jpg', 'LED-Videowall neben einem Fußballplatz unter Flutlicht (KI-Bild)', 'KI-Bild (Symbolbild), erstellt mit Higgsfield für Merzenich Aktuell']);
+pruefe('Video-Schleife aus data/banner in der Mediathek, MP4 und WebM', [strtok(get_post_meta((int) $m('ma_ad_video'), 'ma_firmen_banner_datei'), '#'), strtok(get_post_meta((int) $m('ma_ad_video_webm'), 'ma_firmen_banner_datei'), '#')], ['merzlicht-videowall.mp4', 'merzlicht-videowall.webm']);
 // Breite Fassung für die Werbebänder (02.11.2026): Standbild, Video, WebM.
-pruefe('breite Fassung aus data/banner: Bild, Video und WebM', array_map(fn($k) => strtok((string) get_post_meta((int) $m($k), 'ma_firmen_banner_datei'), '#'), ['ma_ad_bild_breit', 'ma_ad_video_breit', 'ma_ad_video_breit_webm']), ['merzlicht-1-v2-breit.jpg', 'merzlicht-1-v2-breit.mp4', 'merzlicht-1-v2-breit.webm']);
+pruefe('breite Fassung aus data/banner: Bild, Video und WebM', array_map(fn($k) => strtok((string) get_post_meta((int) $m($k), 'ma_firmen_banner_datei'), '#'), ['ma_ad_bild_breit', 'ma_ad_video_breit', 'ma_ad_video_breit_webm']), ['merzlicht-videowall-breit.jpg', 'merzlicht-videowall-breit.mp4', 'merzlicht-videowall-breit.webm']);
 pruefe('Rückmeldung: beide Banner laufen', [str_contains(implode(' ', $log), 'Merzlicht, Anzeige 1: läuft.'), str_contains(implode(' ', $log), 'Merzlicht, Anzeige 2: läuft.')], [true, true]);
 $n = count($GLOBALS['posts']); $medien = $GLOBALS['medien'];
 $log = ma_firmen_zusage_eintragen('merzlicht', 'noch einmal', true, false);
@@ -237,11 +237,11 @@ pruefe('Banner im Papierkorb: nichts neu angelegt', [str_contains(implode(' ', m
 $GLOBALS['posts'][701] = ['post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'Eigener Titel', 'post_date_gmt' => '2026-10-28 10:00:00', 'post_modified_gmt' => '2026-10-28 12:00:00', 'meta_input' => ['ma_firmen_banner' => 'ass-elektrotechnik', 'ma_business_id' => '102', 'ma_ad_active' => '1']];
 $GLOBALS['posts'][102]['post_status'] = 'publish'; $GLOBALS['meta'][102]['ma_business_consent'] = '1';
 $log = ma_firmen_zusage_eintragen('ass-elektrotechnik', 'x', true, false);
-$assNeu = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-2', ARRAY_FILTER_USE_BOTH));
+$assNeu = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-licht', ARRAY_FILTER_USE_BOTH));
 pruefe('Firma mit Website: Klick führt direkt zur Website, Knopf „Zur Website“', [get_post_meta($assNeu, 'ma_ad_url'), get_post_meta($assNeu, 'ma_ad_knopf')], ['https://www.asselektrotechnik.de/', 'Zur Website']);
 pruefe('altes Banner, später von Hand geändert: nicht überschrieben', [str_contains(implode(' ', $log), 'ASS Elektrotechnik, Anzeige 1: im Backend bearbeitet'), $GLOBALS['posts'][701]['post_title']], [true, 'Eigener Titel']);
 // Endgültig gelöschtes Banner wird nicht neu angelegt.
-$ass2 = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-2', ARRAY_FILTER_USE_BOTH));
+$ass2 = (int) array_key_first(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_firmen_banner') === 'ass-elektrotechnik:ass-elektrotechnik-licht', ARRAY_FILTER_USE_BOTH));
 ma_firmen_banner_geloescht_merken($ass2); unset($GLOBALS['posts'][$ass2]);
 $log = ma_firmen_zusage_eintragen('ass-elektrotechnik', 'x', true, false);
 pruefe('endgültig gelöschtes Banner: nicht neu angelegt', [str_contains(implode(' ', $log), 'Anzeige 2: wurde gelöscht'), count(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_business_id') === '102', ARRAY_FILTER_USE_BOTH))], [true, 1]);
