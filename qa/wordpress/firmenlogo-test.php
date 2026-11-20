@@ -68,6 +68,10 @@ pruefe('CSS: Logo-Kasten fest 88 × 44, Bild darin ganz (kein Abschneiden des ru
 pruefe('CSS: Firmenzeile mit Logo bekommt eine 72-px-Spalte (kein Überlappen)', str_contains($css, '.ressort-firmen__firma:has(.ressort-firmen__logo--bild){grid-template-columns:72px minmax(0,1fr)}'), true);
 pruefe('„Neu von Unternehmen“: Logo-Karte mit eigener Klasse', str_contains($js, "item.bild.logo ? ' ressort-dropdown__story-image--logo'"), true);
 
+// Profilseite eines Betriebs (20.11.2026): das Logo als Profilbild ganz zeigen, nicht beschnitten (Merzlicht-Schriftzug).
+$einzel = (string) file_get_contents($wurzel . '/wordpress/theme/merzenich-aktuell/inc/einzel.php');
+pruefe('Profilseite: Logo (Merkmal ma_firmen_logo_datei) mit bild-logo und media--logo', [str_contains($einzel, "get_post_meta((int) get_post_thumbnail_id(\$p->ID), 'ma_firmen_logo_datei', true)"), str_contains($einzel, "' media--logo'"), str_contains($einzel, "' class=\"bild-logo\"'")], [true, true, true]);
+
 echo "Logo-Dateien im Plugin\n";
 $d = json_decode((string) file_get_contents($wurzel . '/wordpress/plugin/merzenich-aktuell-core/data/firmen-entwuerfe.json'), true);
 foreach ($d['firmen'] as $x) {

@@ -107,8 +107,10 @@ function ma21_anzeige_einzel(WP_Post $p): void {
     // Bild nur, wenn die Anzeige ein echtes Foto hat; nie eine Ersatzgrafik.
     $bild = function_exists('ma_content_image') ? ma_content_image($p, 'large') : [];
     $zeigeBild = !empty($bild['url']) && empty($bild['is_fallback']) && $p->post_type !== 'ma_obituary';
+    // Firmenlogo als Profilbild (Merkmal ma_firmen_logo_datei, 21.30.4): ganz auf hellem Grund statt beschnitten.
+    $logo = $zeigeBild && $p->post_type === 'ma_business' && (string) get_post_meta((int) get_post_thumbnail_id($p->ID), 'ma_firmen_logo_datei', true) !== '';
     if ($zeigeBild) {
-        echo '<figure class="art-figure' . (!empty($bild['is_fallback']) ? ' art-figure--symbol' : '') . '"><div class="media"><img src="' . esc_url($bild['url']) . '" alt="' . esc_attr((string) ($bild['alt'] ?? '')) . '" loading="lazy" decoding="async"></div>'
+        echo '<figure class="art-figure' . (!empty($bild['is_fallback']) ? ' art-figure--symbol' : '') . '"><div class="media' . ($logo ? ' media--logo' : '') . '"><img src="' . esc_url($bild['url']) . '" alt="' . esc_attr((string) ($bild['alt'] ?? '')) . '" loading="lazy" decoding="async"' . ($logo ? ' class="bild-logo"' : '') . '></div>'
             . '<figcaption><span>' . (!empty($bild['is_fallback']) ? '<span class="figure-badge">Symbolbild</span> · ' : '') . esc_html(function_exists('ma_image_caption') ? ma_image_caption($bild) : (string) ($bild['credit'] ?? '')) . '</span></figcaption></figure>';
     }
     $inhalt = apply_filters('the_content', $p->post_content);

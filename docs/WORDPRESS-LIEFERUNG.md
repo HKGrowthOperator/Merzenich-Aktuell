@@ -1,8 +1,8 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.3 · Core-Plugin 1.50.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.0 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
 
-## Neu am 20.11.2026: Plugin 1.50.0, Werbung echt statt gestellt
+## Neu am 20.11.2026: Plugin 1.50.0 und Theme 21.30.4, Werbung echt statt gestellt
 
 Vorgabe des Betreibers am selben Tag: Die KI-Motive wirkten gestellt. Die Anzeigen zeigen jetzt die Firmen selbst.
 - **ASS Elektrotechnik:** echte Fotos von asselektrotechnik.de (Monteur vor dem Firmenwagen, Monteur im Firmenshirt), im breiten Format mit Farbfläche in Firmenblau und Logo. Ruhige Kamerafahrt über das Foto, keine KI.
@@ -12,6 +12,7 @@ Vorgabe des Betreibers am selben Tag: Die KI-Motive wirkten gestellt. Die Anzeig
 - **HK Growth Webstudio:** echte Referenzen von hk-growthoperator.de im Browser und auf dem Handy (Citroën-Club Rhein-Ruhr, PlantCeylon), mit Adresse in der Leiste; „Anfragen“ bleibt. Kein Hinweis auf Merzenich Aktuell als Referenz (Vorgabe 02.11.2026).
 - **Einbau:** neuer Stil `marke` in `docs/anzeigen/bauen.mjs`, Layouts in `docs/anzeigen/marken.mjs`, Material unter `docs/anzeigen/material/` (`ass/`, `logos/`, `schrift/` mit Lizenzhinweis, `hk/`). Standbild scharf als Bildschirmfoto der Seite in Postergröße.
 - **Live:** neue Schlüssel; „Fehlende Entwürfe anlegen“ legt die neuen Anzeigen an und schaltet die alten ab; die alten stehen danach auf Entwurf. Merzlicht-Logo über „Zusage eintragen“ mit Logo-Haken.
+- **Theme 21.30.4:** Profilseiten der Betriebe zeigen das Logo als Profilbild ganz auf hellem Grund (`inc/einzel.php`, Merkmal `ma_firmen_logo_datei`); bisher schnitt die Bildfläche die Logos zu (AJ Sports, Almera, ASS, Merzlicht).
 
 ## Neu am 20.11.2026: Plugin 1.49.0, Werbung mit Higgsfield
 
