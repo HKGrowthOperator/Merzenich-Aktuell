@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:ausstellung-buergewald-ratssaal-merzenich-2026-11-27@merzenich-aktuell.
  de
-DTSTAMP:20261119T060000Z
+DTSTAMP:20261120T060000Z
 DTSTART:20261127T150000Z
 SUMMARY:Ausstellung „Bürgewald“: Fotografie\, Film und Kunst im Ratssa
  al
