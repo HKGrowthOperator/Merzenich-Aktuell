@@ -224,7 +224,7 @@ pruefe('Banner ohne Bild (Übernahme gescheitert): Bild wird nachgetragen', [str
 $GLOBALS['posts'][700] = ['post_type' => 'ma_ad', 'post_status' => 'publish', 'post_title' => 'AJ Sports Entertainment', 'meta_input' => ['ma_firmen_banner' => 'aj-sports', 'ma_business_id' => '105', 'ma_ad_active' => '1']];
 ma_firmen_zusage_eintragen('aj-sports', 'Zusage laut Betreiber, 24.10.2026', true, false);
 $aj = array_keys(array_filter($GLOBALS['posts'], fn($p, $id) => $p['post_type'] === 'ma_ad' && get_post_meta($id, 'ma_business_id') === '105', ARRAY_FILTER_USE_BOTH));
-pruefe('AJ Sports: altes Banner wird Anzeige 1, dazu Anzeige 2', [count($aj), get_post_meta(700, 'ma_firmen_banner'), get_post_meta(700, 'ma_ad_video') !== ''], [2, 'aj-sports:aj-sports-1', true]);
+pruefe('AJ Sports: altes Banner wird Anzeige 1, dazu Anzeige 2', [count($aj), get_post_meta(700, 'ma_firmen_banner'), get_post_meta(700, 'ma_ad_video') !== ''], [2, 'aj-sports:aj-sports-trikot', true]);
 // Logo und Angaben kommen nach der Einwilligung (20.11.2026, AJ Sports): nur der Logo-Haken; leere Felder werden
 // ergänzt, der Werbebeitrag geht in die Freigaben, „nur Name“ bleibt (kein erfundener Ort).
 $GLOBALS['posts'][106]['post_status'] = 'draft'; $GLOBALS['meta'][105]['ma_business_branche'] = '';
