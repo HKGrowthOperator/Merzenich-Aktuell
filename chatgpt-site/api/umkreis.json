@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-19",
+ "stand": "2026-11-20",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Gemeinsamer Kontrolleinsatz rund um den Dürener Bahnhof",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6394429",
+   "datum": "2026-11-20",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Nach Unfall geflüchtet - und von der Polizei gefasst",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6394430",
+   "datum": "2026-11-20",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Vettweiß: Wohnungseinbruch in Soller - Die Polizei sucht Zeugen",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6394427",
+   "datum": "2026-11-20",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
