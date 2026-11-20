@@ -1,6 +1,6 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [19.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-19-claude-nachmittags.md), Vergleichsbasis [ChatGPT 19.11. mittags](dossiers/2026-11-19-mittags.md) und [Claude 19.11. morgens](dossiers/2026-11-19-claude-morgens.md). Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [20.11.2026, Claude-Morgenlauf](dossiers/2026-11-20-claude-morgens.md), Vergleichsbasis [ChatGPT 20.11. morgens](dossiers/2026-11-20-morgens.md) und [Claude 19.11. nachmittags](dossiers/2026-11-19-claude-nachmittags.md). Drei Meldungen: Unwetterwarnung Dauerregen, Garten-AG KGS Merzenich, Bauausschuss-Ergebnisse. Offene Themen: [offen.md](offen.md).
 
 **Umgesetzt am 19.11. nachmittags:** Aktualisierung „Haushalt 2027: Entwurf soll am 3. Dezember in den Merzenicher Gemeinderat kommen“ (Rat jetzt 18 Uhr). Kompost-Meldung der KGS Merzenich fertig, mangels zulässigem Foto auf den Morgenlauf 20.11. verschoben (Entwurf `docs/redaktion/entwuerfe/`). 20 Termine bestätigt. Commit `49e5d7d8`.
 

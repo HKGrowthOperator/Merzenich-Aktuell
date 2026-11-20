@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-20-morgens.md",
+  "latest_dossier": "dossiers/2026-11-20-claude-morgens.md",
   "source_check_window": "20.11.2026 Europe/Berlin: Beginn06:56; Hauptabrufe06:58:13–06:59:16; Bau-Ergebnisse06:59:04; Warnung06:59:09 und07:05:22; Zusatzdokumente07:03:05; ältere Projektartikel07:04:14; Bildabrufe07:03:07/07:04:49, Sichtung07:09; Rathausmetadaten07:12.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -10855,11 +10855,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-03-recherche-claude-nachmittags.json → /rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/",
       "article_id": null,
       "implementation_commit": "5969b40",
-      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto). | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212. | Claude 18.11. morgens: Beratung im ARB 26.11. mit Beteiligungsmodell Energieversorgung Bürgewald in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7); Rat 03.12. jetzt 18 Uhr.",
+      "notes": "Claude 03.11. nachmittags: Beschlussvorlage 144/2026 vom 29.10. (Bebauungsplan „E3 Freiflächen-PV-Anlage entlang der Autobahn A4“, FNP-Änderung 1-24, rund 44 ha Plangebiet, etwa 36 ha PV mit Batteriespeicher, RWE-Gesamtkonzept Tagebau Hambach, Beteiligungsmodell Energieversorgung Bürgewald) im RIS gefunden; Bauausschuss 12.11., Revitalisierung Bürgewald 26.11., Gemeinderat 03.12. Kurzmeldung, live 14:54 Uhr. Folgemeldung nach der Sitzung am 12.11.; Anlagen (Kurzbegründung, Übersicht) nicht abrufbar. | Claude 04.11. morgens: zum Standardtext ausgebaut (827 Wörter, Titel „Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November“), Kurzbegründung und Übersichtsplan jetzt gelesen; Symbolfoto Commons „Dülmen, Solarpark -- 2014 -- 7060.jpg“ (2c5a224). | Ausbau live 04.11. 09:48 Uhr (Titel und Foto). | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212. | Claude 18.11. morgens: Beratung im ARB 26.11. mit Beteiligungsmodell Energieversorgung Bürgewald in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7); Rat 03.12. jetzt 18 Uhr. | Claude 20.11. morgens: Vorstellung und Empfehlung im Ausschuss (Beschlusstext 144/2026), Flächenangaben widersprüchlich; in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-03",
@@ -10881,6 +10881,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
         }
       ],
       "research_verifications": [
@@ -10923,11 +10929,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-04 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-morgens.json → /rathaus/energiemanagement-gemeinde-merzenich-gebaeude-fertig-ende-2026-statt-2029/",
       "article_id": null,
       "implementation_commit": "179c885",
-      "notes": "Karte aus ChatGPT 04.11. morgens (T2). Claude 04.11. morgens: Mitteilungsvorlage M139/2026 vollständig gelesen (Fertigstellung Dezember 2026, Abnahme Januar 2027, geplant bis 2029; Ratsbeschluss 02.03.2023), Energiesteckbrief als Selbstauskunft der Gemeinde; Kurzmeldung, relevanz 3. Folgemeldung nach dem Bauausschuss 12.11. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212.",
+      "notes": "Karte aus ChatGPT 04.11. morgens (T2). Claude 04.11. morgens: Mitteilungsvorlage M139/2026 vollständig gelesen (Fertigstellung Dezember 2026, Abnahme Januar 2027, geplant bis 2029; Ratsbeschluss 02.03.2023), Energiesteckbrief als Selbstauskunft der Gemeinde; Kurzmeldung, relevanz 3. Folgemeldung nach dem Bauausschuss 12.11. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 04.11. nachmittags: Korrektur „acht Gebäude“ → acht Anlagen auf kommunalen Liegenschaften (Hinweis ChatGPT 04.11. mittags), Commit 8ccc212. | Claude 20.11. morgens: Sachstand: drei Liegenschaften (Beschlusstext M139/2026); in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-04",
@@ -10943,6 +10949,12 @@
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
           "heading": "1 · Korrektur MA-EMS-SACHSTAND-2026"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
         }
       ],
       "research_verifications": [
@@ -10963,16 +10975,22 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-04 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-morgens.json → /rathaus/grundschule-golzheim-merzenich-umbau-12-millionen-euro-gemeindeanteil-7-5-millionen/",
       "article_id": null,
       "implementation_commit": "b2009f6",
-      "notes": "Eigener Fund Claude 04.11. morgens: Beschlussvorlage 138/2026 (TOP 7 Bauausschuss 12.11., Rat 03.12.) mit Kostenschätzung 23.10. und Nachforderung der Bezirksregierung 20.10.; Bausumme 12.022.466,97 Euro, OGS-Anteil 5.047.915,20 Euro, Gemeindeanteil rund 7,5 Mio.; Vergleich mit Schätzung 29.09. (Rechnung der Redaktion: Anstieg = Baunebenkosten). Standard 1.075 Wörter, relevanz 2 (Vorlage, kein Beschluss). Stufe 1 bei Ratsbeschluss oder Förderzusage. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Eigener Fund Claude 04.11. morgens: Beschlussvorlage 138/2026 (TOP 7 Bauausschuss 12.11., Rat 03.12.) mit Kostenschätzung 23.10. und Nachforderung der Bezirksregierung 20.10.; Bausumme 12.022.466,97 Euro, OGS-Anteil 5.047.915,20 Euro, Gemeindeanteil rund 7,5 Mio.; Vergleich mit Schätzung 29.09. (Rechnung der Redaktion: Anstieg = Baunebenkosten). Standard 1.075 Wörter, relevanz 2 (Vorlage, kein Beschluss). Stufe 1 bei Ratsbeschluss oder Förderzusage. | Live 04.11. 09:48 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. morgens: Ausschuss empfiehlt dem Rat den Umbau (Beschlusstext 138/2026); in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-04",
           "dossier": "dossiers/2026-11-04-claude-morgens.md",
           "heading": "1 · GO-OGS-138-2026 · Folgemeldung Grundschule Golzheim"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
         }
       ],
       "research_verifications": [
@@ -11011,7 +11029,7 @@
       "priority": "P2",
       "location_section": "Golzheim · Rathaus/Energie",
       "change_type": "Neu",
-      "notes": "Claude 04.11. nachmittags: Kurzmeldung mit amtlicher Quelle (92/2026, Entwurfsbegründung); Datumswiderspruch der Vorlage benannt, Einspeisezusage nur als Angabe der Begründung, Vorhabenträger nicht genannt. | Live 04.11. 15:09 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. morgens: Korrektur Erdwall „2,5 bis 3 Meter“ (Hinweis ChatGPT 05.11. morgens), Commit 4e0646a.",
+      "notes": "Claude 04.11. nachmittags: Kurzmeldung mit amtlicher Quelle (92/2026, Entwurfsbegründung); Datumswiderspruch der Vorlage benannt, Einspeisezusage nur als Angabe der Begründung, Vorhabenträger nicht genannt. | Live 04.11. 15:09 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. morgens: Korrektur Erdwall „2,5 bis 3 Meter“ (Hinweis ChatGPT 05.11. morgens), Commit 4e0646a. | Claude 20.11. morgens: 20. FNP-Änderung empfohlen (Beschlusstext 92/2026); in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-04",
@@ -11027,13 +11045,19 @@
           "date": "2026-11-05",
           "dossier": "dossiers/2026-11-05-claude-morgens.md",
           "heading": "1 · Korrektur Erdwall"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
         }
       ],
       "workflow_status": "uebernommen",
       "text_status": "T1",
       "image_status": "B2",
       "dossier": "dossiers/2026-11-04-claude-nachmittags.md",
-      "last_checked_at": "2026-11-05 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-04-recherche-claude-nachmittags.json → /rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "1c65652",
@@ -11055,11 +11079,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-05-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "dee5f0f",
-      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten. | Claude 18.11. morgens: Ergänzung umgesetzt in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7).",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten. | Claude 18.11. morgens: Ergänzung umgesetzt in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7). | Claude 20.11. morgens: Leitlinien mit „Änderung auf 6 Wohneinheiten“ empfohlen (Beschlusstext 142/2026), Schwelle offen; in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-05",
@@ -11082,6 +11106,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
@@ -11327,16 +11357,22 @@
       "image_status": "B1",
       "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-10 nachmittags Europe/Berlin",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-10-recherche-claude-nachmittags.json → /rathaus/bauausschuss-merzenich-12-november-2026-vorschau-grundschule-golzheim-solarparks-bau-turbo/",
       "article_id": null,
       "implementation_commit": "d16371d5",
-      "notes": "Claude 10.11. nachmittags: Vorschau (Kurzmeldung) auf die 5. Sitzung des Bauausschusses am 12.11. nach Tagesordnung und den ausgewerteten Vorlagen. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Claude 10.11. nachmittags: Vorschau (Kurzmeldung) auf die 5. Sitzung des Bauausschusses am 12.11. nach Tagesordnung und den ausgewerteten Vorlagen. Live 14:50 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. morgens: Folgemeldung mit den Ergebnissen (Standard, 874 Wörter) nach öffentlicher Niederschrift und sechs Beschlusstexten; Widersprüche (Solarfläche 40/44/36 ha, Poolplatz-Baubeginn ohne Jahr, Bau-Turbo „6 Wohneinheiten“) benannt. Live 09:26 Uhr HTTP 200, Commit 96e72812.",
       "dossier_history": [
         {
           "date": "2026-11-10",
           "dossier": "dossiers/2026-11-10-claude-nachmittags.md",
           "heading": "1 · MA-BAUAUSSCHUSS-12112026-VORSCHAU"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "research_verifications": [
@@ -11346,7 +11382,9 @@
           "result": "Neue öffentliche Niederschrift und Beschlusstexte gelesen. Einstimmige Empfehlungen Schule/Solar/FNP/Bauturbo, Poolplatz-Projektstand, EMS. Aktuelle Recherche T2: kommunale Auszüge nicht unabhängig; siehe Dossierkonflikte und Updateziele.",
           "related_id": "MA-BAUAUSSCHUSS-12112026-VORSCHAU"
         }
-      ]
+      ],
+      "followup_article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/",
+      "followup_commit": "96e72812"
     },
     {
       "id": "MA-ABGABEN-2027",
@@ -12604,15 +12642,15 @@
       "priority": "P3",
       "location_section": "Merzenich · Schule/Umwelt",
       "change_type": "Neu",
-      "text_status": "T2",
-      "image_status": "B0",
-      "dossier": "dossiers/2026-11-17-mittags.md",
-      "workflow_status": "offen",
-      "last_checked_at": "2026-11-19 15:01 Europe/Berlin",
-      "article_path": null,
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-20-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /leben/grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen. | ChatGPT 18.11. morgens: Gemeinde-Detailseite heute normal200 lesbar und gegenüber gespeicherter Mittagsfassung17.11. unverändert; allein wieder möglicher Abruf ist keine neue Entwicklung. Keine neue Themenkarte. Unabhängige örtliche Bestätigung/Drittquelle und Projektdaten weiter offen, T2. Keine Sperre umgangen und kein Artikel umgesetzt. | Claude 19.11. nachmittags: Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr gelesen (lesbar), Kurzmeldung 296 Wörter geschrieben, aber verschoben: kein zulässiges Foto (Keyhole-Fotos auf Commons nur aus dem Ausland, Importfilter; Commons HTTP 429). Entwurf docs/redaktion/entwuerfe/2026-11-19-kompost-kgs-merzenich.json; Veröffentlichung im Morgenlauf 20.11.",
+      "implementation_commit": "d1493fb2",
+      "notes": "Erstmals im heutigen Gemeindelistenvergleich sichtbar: Schulgarten-Kompostanlage nach Keyhole-Prinzip, begleitet vom Verein Migranten bauen Brücken. Seitendatum 11.11., geändert 17.11.; kein Nachweis heutigen Baus/erster Veröffentlichung. Gemeinde ist einzige konkrete örtliche Ereignisquelle; Vereins-/Kreisquellen nur Hintergrund. T2: unabhängige zweite Bestätigung und dritter eigenständiger Ereignisbeleg fehlen, Projektzeit/Kosten/Umfang offen. Kein Artikel im gelesenen Meldungsbestand/Register gefunden. Commons File:KeyHole Bercy.jpg, Popolon, CCBYSA4,1280x720, neuer Motivvorschlag schulgarten-kompost-keyhole; Original HTTP403, B0 ohne visuelle Freigabe. Keine Artikelumsetzung. | Claude 17.11. nachmittags: Detailseite der Gemeinde (kompostprojekt-merzenich-2026.php) liefert HTTP 428 mit Bot-Prüfung (JavaScript), nicht umgangen; kein Text gelesen, keine Umsetzung. Bei Lesbarkeit (Actions-Rohdaten oder Heimat-Info) erneut prüfen. | ChatGPT 18.11. morgens: Gemeinde-Detailseite heute normal200 lesbar und gegenüber gespeicherter Mittagsfassung17.11. unverändert; allein wieder möglicher Abruf ist keine neue Entwicklung. Keine neue Themenkarte. Unabhängige örtliche Bestätigung/Drittquelle und Projektdaten weiter offen, T2. Keine Sperre umgangen und kein Artikel umgesetzt. | Claude 19.11. nachmittags: Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr gelesen (lesbar), Kurzmeldung 296 Wörter geschrieben, aber verschoben: kein zulässiges Foto (Keyhole-Fotos auf Commons nur aus dem Ausland, Importfilter; Commons HTTP 429). Entwurf docs/redaktion/entwuerfe/2026-11-19-kompost-kgs-merzenich.json; Veröffentlichung im Morgenlauf 20.11. | Claude 20.11. morgens: Entwurf vom 19.11. veröffentlicht (297 Wörter, Relevanz 3), Gemeindebeitrag 09:17 Uhr unverändert; Text gibt nur den Bericht der Gemeinde wieder und nennt sie als Absender. Foto Komposthaufen in einem Garten an der Straße Donnerbecke.jpg (Sdicke, CC BY-SA 4.0) über den Bildimport geladen und selbst angesehen (keine Personen, Schilder, Kennzeichen). Live 09:23 Uhr HTTP 200.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12637,6 +12675,12 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
           "heading": "3. Bewusst nicht umgesetzt"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "research_history": [
@@ -13095,20 +13139,26 @@
       "priority": "P1",
       "location_section": "Gemeinde/alle Ortsteile · Wetter/Blaulicht",
       "change_type": "Neu",
-      "text_status": "T2",
-      "image_status": "B0",
-      "dossier": "dossiers/2026-11-20-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-20T07:12:55+01:00",
-      "article_path": null,
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-20-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft.",
+      "implementation_commit": "d1493fb2",
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
       "dossier_history": [
         {
           "date": "2026-11-20",
           "dossier": "dossiers/2026-11-20-morgens.md",
           "heading": "MA-DAUERREGEN-20112026 · P1 · T2/B0"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-20-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -15689,6 +15739,16 @@
         "Haushaltsplanwertkonflikt/Vorbericht, UmsatzsteuerEinzelumsetzung/Satzung, KitaPrüfbericht, Derbywertung/Serienkontrolle unverändertoffen",
         "BdSt/Hallenquellen403, ZuginfonurTitel, keinevollständigeOriginalprüfungalleraltenArtikel"
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-20-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-20-morgens.md",
+      "implementation_commit": "d1493fb2, 96e72812, 5d7a61bb",
+      "summary": "Drei Meldungen: Unwetterwarnung Dauerregen (Relevanz 1), Garten-AG KGS Merzenich (aus Entwurf 19.11.), Bauausschuss-Ergebnisse (Standard, 874 Wörter). Zwei neue Commons-Fotos (Starkregen, Komposthaufen) selbst angesehen. Kalender 19 Termine bis 03.12. bestätigt. Polizei-Unfall Düren-Heerweg ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 3.",
+      "publication": "Drei Meldungen direkt veröffentlicht"
     }
   ]
 }
