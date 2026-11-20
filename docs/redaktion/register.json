@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-20-mittags.md",
+  "latest_dossier": "dossiers/2026-11-20-claude-nachmittags.md",
   "source_check_window": "20.11.2026 Europe/Berlin: Laufbeginn12:01; Hauptabrufe12:02:28–12:03:04; neueHeimatInfo/Polizeivolltexte12:03:13; DSEEVeranstalter12:03:30; Kontext12:04:28; Livebilder12:04:49–12:05:09, anschließend12:05gesichtet.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -13163,11 +13163,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-20-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
+      "last_checked_at": "2026-11-20 15:00 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
       "article_id": null,
       "implementation_commit": "d1493fb2",
-      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“.",
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288.",
       "dossier_history": [
         {
           "date": "2026-11-20",
@@ -13179,6 +13179,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-20-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+          "heading": "1. Umgesetzt (Aktualisierung)"
         }
       ],
       "research_verifications": [
@@ -13194,20 +13200,26 @@
       "priority": "P2",
       "location_section": "Merzenich · Wirtschaft",
       "change_type": "Neu",
-      "text_status": "T2",
-      "image_status": "B0",
-      "dossier": "dossiers/2026-11-20-mittags.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-20T12:09:13+01:00",
-      "article_path": null,
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-20 15:00 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-nachmittags.json → /wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "NeuerGemeindebeitrag20Nov10Uhr: HR²Gutachterbüro,15neueArbeitsplätze. UnabhängigeBestätigung/tragfähigeDrittquelle/Unternehmensidentitätfehlen. PresseindexkeinTreffer,UBAnurKontext. CommonsSchimmelfotoCCBYSA3DE1200px,Original403/ungeprüftB0.",
+      "implementation_commit": "15445c22, 06bad5a0",
+      "notes": "NeuerGemeindebeitrag20Nov10Uhr: HR²Gutachterbüro,15neueArbeitsplätze. UnabhängigeBestätigung/tragfähigeDrittquelle/Unternehmensidentitätfehlen. PresseindexkeinTreffer,UBAnurKontext. CommonsSchimmelfotoCCBYSA3DE1200px,Original403/ungeprüftB0. | Claude 20.11. nachmittags: Kurzmeldung (295 Wörter, Relevanz 3) nach dem Gemeindebeitrag als offizieller Quelle; Unternehmensangaben gekennzeichnet, Umfang der 15 Stellen und Betriebsbeginn als offen benannt; keine Unternehmernamen, keine Hausnummer. Quellenausnahme (Gemeinde-Website HTTP 428). Bild: Commons „CM Messung Probenbereitung.jpg“ (Cschirp, CC BY-SA 3.0 de), selbst angesehen, Klasse wirtschaft.sachverstaendige.feuchte; bewusst kein Schimmelfoto.",
       "dossier_history": [
         {
           "date": "2026-11-20",
           "dossier": "dossiers/2026-11-20-mittags.md",
           "heading": "MA-HR2-SACHVERSTAENDIGE-20112026"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     },
@@ -13216,20 +13228,26 @@
       "priority": "P2",
       "location_section": "Merzenich · Rathaus",
       "change_type": "Präzisierungsauftrag",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": null,
       "dossier": "dossiers/2026-11-20-mittags.md",
-      "workflow_status": "offen",
-      "last_checked_at": "2026-11-20T12:09:13+01:00",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-20 15:00 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "NeuerArtikelbehauptetAbstimmungenSchule/Solar/Bauturboam3Dez. Ratsterminbestätigt, Tagesordnungfehlt: konkretesAbstimmungsdatumunbelegt, nichtalsfalschbewiesen. Erwartungsstandkennzeichnen; Poolplatz/EMSkeinebeschlossenenProjekte. BestehendeArtikelumsetzung96e72812unverändert.",
+      "implementation_commit": "017c0a2f",
+      "notes": "NeuerArtikelbehauptetAbstimmungenSchule/Solar/Bauturboam3Dez. Ratsterminbestätigt, Tagesordnungfehlt: konkretesAbstimmungsdatumunbelegt, nichtalsfalschbewiesen. Erwartungsstandkennzeichnen; Poolplatz/EMSkeinebeschlossenenProjekte. BestehendeArtikelumsetzung96e72812unverändert. | Claude 20.11. nachmittags: Beschlussvorlagen 138, 92, 142, 144/2026 gelesen: „Vorgesehene Beratungsfolge … Gemeinderat 03.12.2026“. Text präzisiert: Rat am 3.12. als vorgesehener Beratungsschritt, Tagesordnung noch offen; Poolplatz und EMS nur Berichte; Dek ohne „grünes Licht“; Korrekturvermerk. Commit 017c0a2f.",
       "dossier_history": [
         {
           "date": "2026-11-20",
           "dossier": "dossiers/2026-11-20-mittags.md",
           "heading": "MA-KORR-BAUAUSSCHUSS-RATSTERMIN-2011"
+        },
+        {
+          "date": "2026-11-20",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -15866,6 +15884,16 @@
         "Haushaltsplanwert/Vorbericht, SteuerEinzelumsetzung/KitaPrüfbericht/Derbyurteil/Serienkontrolleoffen",
         "BdSt/Hallenquellen403, ZuginfonurTitel, nichtalleälterenLiveartikelvollständigneugeprüft"
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-20-mittags.md",
+      "implementation_commit": "017c0a2f, 2ce71288, 15445c22, 06bad5a0",
+      "summary": "Neue Kurzmeldung Gutachterbüro HR² im Gewerbegebiet (15 Arbeitsplätze laut Gemeinde, Commons-Foto Feuchtemessung). Korrektur Bauausschuss-Folgemeldung (Rat 3.12. nur vorgesehene Beratungsfolge). Aktualisierung Unwetterwarnung (DWD 14:38 Uhr, Glätte/Frost in der Nacht). Kalender 19 Termine bestätigt; DSEE-Online-Termine ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 4.",
+      "publication": "Eine Meldung, eine Korrektur, eine Aktualisierung direkt veröffentlicht"
     }
   ]
 }
